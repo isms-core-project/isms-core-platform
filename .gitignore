@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.whl
+
+# Virtual Environments
+.env
+.venv
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+
+# Sensitive Data
+*secret*
+*password*
+*token*
+*.pem
+*.key
+credentials*
+config.ini
+
+# Temporary Files
+*.tmp
+*.log
+*.bak
+*.swp
+temp/
+tmp/
+
+# Excel Lock Files
+~$*.xlsx
+~$*.xls
+
+# Test outputs
+test_output/
+*_test_*.xlsx
