@@ -56,7 +56,7 @@ test_output/
 *_test_*.xlsx
 
 # IDE and Workspace
-.code-workspace
+*.code-workspace
 .vscode/
 .idea/
 .obsidian/
