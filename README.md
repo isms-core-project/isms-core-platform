@@ -239,9 +239,9 @@ ISMS CORE is currently in private development. Contribution guidelines will be p
 **Gregory Griffin**  
 Built in Bamboo Land 🎋
 
+**Contact:** Gregory Griffin  
 **Email:** admin@gregorygriffin.org  
 **Linkedin:** https://www.linkedin.com/in/ggriffinorg/
-**GitHub:** https://github.com/ggriffinorg
 
 ---
 
