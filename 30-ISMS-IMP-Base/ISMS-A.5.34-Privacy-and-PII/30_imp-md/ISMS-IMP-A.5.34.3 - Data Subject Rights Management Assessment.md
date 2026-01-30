@@ -1,9 +1,6 @@
 # ISMS-IMP-A.5.34.3 - Data Subject Rights Management Assessment
-## PART I: USER COMPLETION GUIDE
-
-**Audience:** Data Protection Officer (DPO), Privacy Officers, Customer Service Teams, IT Support
-
----
+## Assessment Specification with User Completion Guide
+### ISO/IEC 27001:2022 Control A.5.34: Privacy and Protection of PII
 
 ## Document Control
 
@@ -11,20 +8,18 @@
 |-----------|-------|
 | **Document ID** | ISMS-IMP-A.5.34.3 |
 | **Version** | 1.0 |
-| **Assessment Area** | Data Subject Rights (DSR) Management, Request Handling, SLA Compliance, Rights Exercise Procedures |
-| **Related Policy** | ISMS-POL-A.5.34, Section 2.3 (Data Subject Rights) |
-| **Purpose** | Assess implementation of data subject rights procedures under GDPR Articles 15-22 and Swiss FADP, ensuring timely and compliant handling of access, rectification, erasure, portability, objection, and restriction requests |
-| **Target Audience** | Data Protection Officer (DPO), Privacy Officers, Data Protection Coordinators, IT Support, Customer Service, Compliance Officers, Auditors, Workbook Developers |
-| **Assessment Type** | Operational & Procedural - Request Management Assessment |
-| **Review Cycle** | Quarterly or After Process Changes |
-| **Created Date** | [Date] |
-| **Last Updated** | [Date] |
+| **Assessment Area** | Data Subject Rights (DSR) Request Management and GDPR Articles 15-22 Compliance |
+| **Related Policy** | ISMS-POL-A.5.34, Section 2.3 (Data Subject Rights Management) |
+| **Purpose** | Guide users through DSR request tracking, SLA compliance monitoring (30-day deadline per Article 12), identity verification, and exception handling for GDPR Articles 15-22 rights |
+| **Target Audience** | DPO/Privacy Officers, Privacy Team, Customer Service, Legal Counsel, IT Teams, Compliance Officers, Auditors |
+| **Assessment Type** | Operational & Compliance |
+| **Review Cycle** | Monthly for SLA tracking, Annual for process assessment |
 
 ### Version History
 
 | Version | Date | Changes | Author |
 |---------|------|---------|--------|
-| 1.0 | [Date] | Initial user guide for DSR Management assessment workbook | ISMS Implementation Team |
+| 1.0 | [Date] | Initial specification for DSR Management assessment workbook | ISMS Implementation Team |
 
 ---
 

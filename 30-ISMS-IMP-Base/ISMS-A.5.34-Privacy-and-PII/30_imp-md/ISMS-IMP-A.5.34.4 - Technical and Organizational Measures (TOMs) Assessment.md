@@ -2,28 +2,26 @@
 ## Assessment Specification with User Completion Guide
 ### ISO/IEC 27001:2022 Control A.5.34: Privacy and Protection of PII
 
----
-
 ## Document Control
 
 | Attribute | Value |
 |-----------|-------|
 | **Document ID** | ISMS-IMP-A.5.34.4 |
 | **Version** | 1.0 |
-| **Assessment Area** | Technical and Organizational Measures (TOMs) for PII Protection |
+| **Assessment Area** | Technical and Organizational Measures (TOMs) Assessment per GDPR Article 32 |
 | **Related Policy** | ISMS-POL-A.5.34, Section 2.4 (Technical and Organizational Measures) |
-| **Purpose** | Assess implementation and effectiveness of security controls protecting PII processing per GDPR Art. 32, Swiss FADP Art. 8, ISO 27001:2022 Control A.5.34 |
-| **Target Audience** | CISO, DPO, Security Architects, System Administrators, Compliance Officers, Auditors |
-| **Assessment Type** | Control Implementation & Gap Analysis |
-| **Review Cycle** | Annual or After Significant Changes |
-| **Created Date** | [Date] |
-| **Last Updated** | [Date] |
+| **Purpose** | Guide users through systematic evaluation of 20 GDPR Article 32 security measures, calculate compliance scoring, and identify gaps in pseudonymization, encryption, availability, and resilience controls |
+| **Target Audience** | DPO/Privacy Officers, CISO, IT Security Teams, System Administrators, Cloud Architects, Compliance Officers, Auditors |
+| **Assessment Type** | Technical Security Assessment |
+| **Review Cycle** | Quarterly or after security architecture changes |
 
 ### Version History
 
 | Version | Date | Changes | Author |
 |---------|------|---------|--------|
-| 1.0 | [Date] | Initial TOMs assessment specification | ISMS Implementation Team |
+| 1.0 | [Date] | Initial specification for TOMs assessment workbook | ISMS Implementation Team |
+
+---
 
 ### Document Structure
 
@@ -5282,4 +5280,4 @@ if __name__ == "__main__":
 
 **Quality Level:** REFERENCE QUALITY - Developer-ready specifications with exact formulas, conditional formatting, and Python implementation.
 
-**IMP-A.5.34.4 v2.0 CORRECTION: COMPLETE** ✅
+**END OF ISMS-IMP-A.5.34.4**

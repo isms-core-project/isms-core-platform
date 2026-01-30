@@ -2,8 +2,6 @@
 ## Assessment Specification with User Completion Guide
 ### ISO/IEC 27001:2022 Control A.5.34: Privacy and Protection of PII
 
----
-
 ## Document Control
 
 | Attribute | Value |
@@ -22,6 +20,8 @@
 | Version | Date | Changes | Author |
 |---------|------|---------|--------|
 | 1.0 | [Date] | Initial specification for PII Identification assessment workbook | ISMS Implementation Team |
+
+---
 
 ### Document Structure
 

@@ -2,26 +2,26 @@
 ## Assessment Specification with User Completion Guide
 ### ISO/IEC 27001:2022 Control A.5.34: Privacy and Protection of PII
 
----
-
 ## Document Control
 
 | Attribute | Value |
 |-----------|-------|
 | **Document ID** | ISMS-IMP-A.5.34.2 |
 | **Version** | 1.0 |
-| **Assessment Area** | Legal Basis for Processing, Lawful Processing, Legitimate Interest Assessments (LIA), Consent Management |
-| **Related Policy** | ISMS-POL-A.5.34, Section 2.2 (Legal Basis for PII Processing) |
-| **Purpose** | Assess and document legal basis for all PII processing activities to ensure compliance with GDPR Article 6, Swiss FADP Article 34, and ISO 27001:2022 Control A.5.34 |
-| **Target Audience** | Privacy Officers/DPO, Legal Counsel, Data Protection Coordinators, Business Process Owners, Compliance Officers, Auditors, Workbook Developers |
-| **Assessment Type** | Legal & Operational - Processing Activity Assessment |
-| **Review Cycle** | Annually or When New Processing Activities Introduced |
+| **Assessment Area** | Legal Basis Assessment, Legitimate Interest Assessments (LIAs), and Consent Management |
+| **Related Policy** | ISMS-POL-A.5.34, Section 2.2 (Legal Basis and Lawful Processing) |
+| **Purpose** | Guide users through GDPR Article 6 legal basis documentation, Legitimate Interest Assessments (LIAs), consent validity evaluation, and special category data safeguards (Article 9) |
+| **Target Audience** | DPO/Privacy Officers, Legal Counsel, Business Owners, Marketing Teams, Compliance Officers, Auditors |
+| **Assessment Type** | Legal & Compliance |
+| **Review Cycle** | Annual or upon new processing activities |
 
 ### Version History
 
 | Version | Date | Changes | Author |
 |---------|------|---------|--------|
 | 1.0 | [Date] | Initial specification for Legal Basis assessment workbook | ISMS Implementation Team |
+
+---
 
 ### Document Structure
 
