@@ -158,7 +158,7 @@ For proprietary use, SaaS hosting, or enterprise support without AGPL obligation
 
 ## 🎯 Origin Story
 
-**December 31, 2024:** CISO requests help with inadequate A.8.24 (Cryptography) control using traditional Word document template.
+**December 31, 2025:** CISO requests help with inadequate A.8.24 (Cryptography) control using traditional Word document template.
 
 **Engineer's response:** "This is terrible. I could rebuild the entire thing in the time it would take me to understand what they were trying to do."
 
