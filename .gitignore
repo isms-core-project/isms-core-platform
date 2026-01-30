@@ -55,10 +55,8 @@ tmp/
 test_output/
 *_test_*.xlsx
 
-# Test outputs
-.obsidian
-
 # IDE and Workspace
+.code-workspace
 .vscode/
 .idea/
 .obsidian/
