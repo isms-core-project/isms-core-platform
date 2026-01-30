@@ -56,10 +56,10 @@ test_output/
 *_test_*.xlsx
 
 # IDE and Workspace
-*.code-workspace
 .vscode/
 .idea/
 .obsidian/
+*.code-workspace
 *.swp
 *.swo
 *~
