@@ -206,7 +206,7 @@ ISMS CORE demonstrates that general-purpose AI (Claude) can excel at specialized
 - **ISMS-Controls-SSE-QA-Status.md** - Implementation tracking (all 93 controls)
 - **Control Policies** (10_pol-md/) - Policy requirements and governance
 - **Implementation Guides** (20_imp-md/) - Technical procedures and assessments
-- **Automation Scripts** (10_generator_master/) - Python workbook generators
+- **Automation Scripts** (10_generator-master/) - Python workbook generators
 
 ---
 
