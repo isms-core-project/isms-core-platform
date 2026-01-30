@@ -152,7 +152,7 @@ For proprietary use, SaaS hosting, or enterprise support without AGPL obligation
 
 **Contact:** Gregory Griffin  
 **Email:** admin@gregorygriffin.org  
-**Web:** https://gregorygriffin.org
+**Linkedin:** https://www.linkedin.com/in/ggriffinorg/
 
 ---
 
