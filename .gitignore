@@ -57,3 +57,11 @@ test_output/
 
 # Test outputs
 .obsidian
+
+# IDE and Workspace
+.vscode/
+.idea/
+.obsidian/
+*.swp
+*.swo
+*~
