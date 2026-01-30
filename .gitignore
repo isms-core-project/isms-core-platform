@@ -54,3 +54,6 @@ tmp/
 # Test outputs
 test_output/
 *_test_*.xlsx
+
+# Test outputs
+.obsidian
