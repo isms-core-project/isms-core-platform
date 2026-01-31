@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# =============================================================================
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-ISMS-Commercial
+# Copyright (c) 2025-2026 ISMS Core Contributors
+#
+# This file is part of ISMS Core.
+#
+# ISMS Core is dual-licensed:
+#   1. AGPL 3.0 (Open Source) - See LICENSE-AGPL.txt
+#   2. Commercial License - Contact vendor for proprietary use
+#
+# You may use this file under either license, at your option.
+# =============================================================================
 """
 ================================================================================
 ISMS-A.8.17 - Assessment File Normalization Utility
@@ -38,7 +50,7 @@ filenames that Excel formulas can reliably reference.
 Assessment workbooks are often created with date suffixes or version numbers:
 - ISMS-A.8.17-Assessment-1-Time-Sources-20250125.xlsx
 - ISMS-A.8.17-Assessment-2-Sync-Status-v3.xlsx
-- ISMS_A_8_17_Assessment_1_20250115.xlsx
+- ISMS-IMP-A.8.17_Assessment_1_20250115.xlsx
 
 Dashboard formulas need consistent names:
 - ISMS-A.8.17-Assessment-1.xlsx
@@ -283,7 +295,7 @@ Supported patterns:
 Script recognizes multiple filename patterns:
 - With dates: *-20250125.xlsx, *-2025-01-25.xlsx
 - With versions: *-v1.xlsx, *-v2.3.xlsx, *_final.xlsx
-- With underscores: ISMS_A_8_17_Assessment_1_20250125.xlsx
+- With underscores: ISMS-IMP-A.8.17_Assessment_1_20250125.xlsx
 - With mixed case: isms-a.8.17-assessment-1.xlsx
 
 All normalize to standard format: ISMS-A.8.17-Assessment-N.xlsx
@@ -375,13 +387,29 @@ Solution: Ensure dashboard and normalized files are in SAME directory.
 ================================================================================
 """
 
-import sys
-import openpyxl
-from pathlib import Path
+# =============================================================================
+# Standard Library Imports
+# =============================================================================
+import logging
 from datetime import datetime
+from pathlib import Path
 from shutil import copy2
+import sys
 
-# Expected assessment workbooks with their Document IDs
+# =============================================================================
+# Third-Party Imports
+# =============================================================================
+import openpyxl
+
+# =============================================================================
+# Logging Configuration
+# =============================================================================
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
 EXPECTED_DOCS = {
     "ISMS-IMP-A.8.17.1": {
         "title": "Time Source Infrastructure Assessment",
@@ -823,3 +851,9 @@ Examples:
     )
     
     sys.exit(0 if success else 1)
+
+# =============================================================================
+# QA_VERIFIED: 2026-01-31
+# QA_STATUS: PASSED - STANDARDIZATION (syntax validated, structure verified)
+# QA_TOOL: Claude Code Standardization
+# =============================================================================

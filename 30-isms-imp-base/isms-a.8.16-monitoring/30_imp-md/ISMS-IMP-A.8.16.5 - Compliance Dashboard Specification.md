@@ -1,10 +1,10 @@
-# ISMS-IMP-A.8.16.5 - Compliance Dashboard Specification
-## Dashboard Consolidation & Executive Reporting Guide
+**ISMS-IMP-A.8.16.5 - Compliance Dashboard Specification**
+**Assessment Specification with User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.8.16: Monitoring Activities
 
 ---
 
-## Document Control
+**Document Control**
 
 | Attribute | Value |
 |-----------|-------|
@@ -47,13 +47,16 @@ This document consists of two parts:
   - Automated Update Procedures
   - Integration Testing Procedures
 
+
 ---
 
 **IMPLEMENTATION NOTE:**
 
 This dashboard is the FINAL INTEGRATION POINT for Control A.8.16:
+
 - **Input:** Data from ISMS-IMP-A.8.16.1, A.8.16.2, A.8.16.3, A.8.16.4
 - **Output:** Executive dashboard with compliance metrics, trend analysis, gap prioritization
+
 
 **All 4 source assessments MUST be completed before dashboard can be generated.**
 
@@ -74,88 +77,94 @@ This dashboard is the FINAL INTEGRATION POINT for Control A.8.16:
 5. **What evidence supports compliance?** (Audit trail to assessment workbooks)
 
 **The Dashboard Consolidates:**
+
 - **From A.8.16.1:** Monitoring infrastructure inventory, platform capabilities, resilience
 - **From A.8.16.2:** Baseline coverage, detection rule effectiveness, MITRE ATT&CK coverage
 - **From A.8.16.3:** Asset/network/identity/application coverage, blind spot identification
 - **From A.8.16.4:** Alert management metrics, SLA compliance, investigation quality
+
 
 ## Why This Dashboard Matters
 
 **The Consolidation Problem:**
 
 Without a consolidated dashboard:
+
 - 4 separate assessment workbooks (A.8.16.1-4) → Data scattered
 - Management asks "Are we compliant?" → No single answer
 - Auditors ask "Show me evidence" → Provide 4 workbooks (overwhelming)
 - Trend analysis difficult (manually comparing across quarters)
 
+
 **This dashboard solves:**
+
 - ✅ **Single Source of Truth:** One dashboard showing overall A.8.16 compliance
 - ✅ **Executive Visibility:** Management sees key metrics without diving into assessments
 - ✅ **Audit Readiness:** Consolidated evidence package for auditors
 - ✅ **Trend Analysis:** Automated quarter-over-quarter comparison
 - ✅ **Gap Prioritization:** Consolidated gap list prioritized by risk
 
+
 ## Dashboard Sections Overview
 
-**Section 1: Executive Summary (Sheet 2)**
+**Sheet 2: Executive Summary**
+
 - Overall compliance score (0-100%)
 - Compliance status by assessment area (Infrastructure, Baselines, Coverage, Alert Management)
 - Top 5 critical gaps requiring immediate attention
 - Trend indicators (improving ↑, stable →, degrading ↓)
 
-**Section 2: Infrastructure Metrics (Sheet 3)**
-- Data from A.8.16.1: Platform count, capability scores, resilience assessment
-- Coverage: % systems monitored, log collection status
-- Infrastructure gaps and remediation status
 
-**Section 3: Baseline & Detection Metrics (Sheet 4)**
-- Data from A.8.16.2: Baseline coverage %, detection rule count, MITRE ATT&CK coverage
-- Detection effectiveness: TP rate, FP rate, detection testing results
-- Tuning priorities
+**Sheet 3: Compliance Matrix**
 
-**Section 4: Coverage Metrics (Sheet 5)**
-- Data from A.8.16.3: Asset coverage %, network coverage %, identity coverage %, application coverage %
-- Coverage by criticality tier (Tier 1: __%, Tier 2: __%, Tier 3: __%)
-- Blind spots with risk assessment
+- Detailed compliance matrix mapping policy requirements to implementation status
+- Data from A.8.16.1-4: Platform capabilities, baseline coverage, detection rules, alert management
+- Compliance percentage by requirement category
 
-**Section 5: Alert Management Metrics (Sheet 6)**
-- Data from A.8.16.4: Alert volume, SLA compliance %, investigation quality
-- Mean Time metrics (MTTD, MTTT, MTTR)
-- Alert quality trends (TP/FP rates over time)
 
-**Section 6: Consolidated Gaps & Remediation (Sheet 7)**
+**Sheet 4: KPIs (Key Performance Indicators)**
+
+- Coverage KPIs: Critical systems monitored %, network coverage %, identity coverage %
+- Detection KPIs: Baseline coverage %, detection rate, false positive rate
+- Response KPIs: MTTD, MTTR, SLA compliance %
+- Operational KPIs: Log sources integrated, active detection rules
+
+
+**Sheet 5: Gap Remediation Tracker**
+
 - All gaps from A.8.16.1-4 consolidated
 - Prioritized by risk (Critical → High → Medium → Low)
 - Ownership and target dates
 - Remediation status tracking
+- Budget and resource requirements
 
-**Section 7: Trend Analysis (Sheet 8)**
+
+**Sheet 6: Trend Analysis**
+
 - Quarter-over-quarter comparison
 - Compliance score trending (current vs. previous 4 quarters)
 - Key metric trends (coverage, detection, SLA compliance)
 - Improvement velocity
 
-**Section 8: Evidence Register (Sheet 9)**
+
+**Sheet 7: Evidence & Approvals**
+
 - Links to source assessment workbooks
 - Document version tracking
 - Assessment completion dates
-- Approver information
-
-**Section 9: Approval Sign-Off (Sheet 10)**
-- CISO / Security Management approval
-- Date of dashboard generation
+- CISO / Security Management approval sign-off
 - Next review date (monthly update, quarterly full review)
+
 
 ## How This Relates to Source Assessments
 
 | Source Assessment | Data Extracted | Dashboard Sheet |
 |-------------------|----------------|-----------------|
-| **A.8.16.1** - Infrastructure | Platform count, capability scores, resilience, log source coverage | Sheet 3: Infrastructure Metrics |
-| **A.8.16.2** - Baselines & Detection | Baseline coverage %, detection rules, MITRE coverage, TP/FP rates | Sheet 4: Baseline & Detection Metrics |
-| **A.8.16.3** - Coverage | Asset/network/identity/app coverage %, blind spots | Sheet 5: Coverage Metrics |
-| **A.8.16.4** - Alert Management | Alert volume, SLA compliance, MTTR, investigation quality | Sheet 6: Alert Management Metrics |
-| **ALL** | Gaps, remediation plans, compliance status | Sheet 7: Consolidated Gaps<br>Sheet 8: Trend Analysis |
+| **A.8.16.1** - Infrastructure | Platform count, capability scores, resilience, log source coverage | Sheet 3: Compliance Matrix |
+| **A.8.16.2** - Baselines & Detection | Baseline coverage %, detection rules, MITRE coverage, TP/FP rates | Sheet 3: Compliance Matrix, Sheet 4: KPIs |
+| **A.8.16.3** - Coverage | Asset/network/identity/app coverage %, blind spots | Sheet 3: Compliance Matrix, Sheet 4: KPIs |
+| **A.8.16.4** - Alert Management | Alert volume, SLA compliance, MTTR, investigation quality | Sheet 3: Compliance Matrix, Sheet 4: KPIs |
+| **ALL** | Gaps, remediation plans, compliance status | Sheet 5: Gap Remediation Tracker, Sheet 6: Trend Analysis |
 
 ## How to Use This Document
 
@@ -164,11 +173,13 @@ Without a consolidated dashboard:
 **You are the PRIMARY USERS** of this dashboard.
 
 **Your Role:**
+
 - Review monthly dashboard updates
 - Track compliance score trends
 - Monitor gap remediation progress
 - Present to executive leadership / board
 - Make resource allocation decisions based on metrics
+
 
 **Expected Time:** 2-3 hours monthly (dashboard review + management actions)
 
@@ -177,10 +188,12 @@ Without a consolidated dashboard:
 **Dashboard is your audit evidence package.**
 
 **Your Role:**
+
 - Maintain dashboard updates (monthly)
 - Prepare for audits (point to dashboard as evidence)
 - Track compliance status
 - Coordinate gap remediation across teams
+
 
 **Expected Time:** 4-6 hours monthly (dashboard update + coordination)
 
@@ -189,10 +202,12 @@ Without a consolidated dashboard:
 **Dashboard provides high-level visibility.**
 
 **Your Role:**
+
 - Review quarterly (or when presented by CISO)
 - Understand overall monitoring effectiveness
 - Approve resources for gap remediation
 - Monitor compliance trends
+
 
 **Expected Time:** 30-60 minutes quarterly (dashboard review meeting)
 
@@ -201,20 +216,21 @@ Without a consolidated dashboard:
 **Dashboard provides compliance overview with drill-down to source assessments.**
 
 **Your Role:**
+
 - Review dashboard as initial compliance evidence
 - Validate metrics against source assessments (A.8.16.1-4)
 - Verify gap remediation tracking
 - Assess continuous improvement
 
+
 **Expected Time:** 2-4 hours (dashboard review + spot-check source data)
 
 ---
 
-# PART I: USER GUIDE
+# PART I: USER COMPLETION GUIDE
+# Dashboard Overview
 
-## 1. Dashboard Overview
-
-### 1.1 Purpose & Scope
+## Purpose & Scope
 
 **Dashboard Name:** ISMS-IMP-A.8.16.5 - Monitoring Activities Compliance Dashboard
 
@@ -222,112 +238,140 @@ Without a consolidated dashboard:
 Provide a single, consolidated view of ISO/IEC 27001:2022 Control A.8.16 (Monitoring Activities) compliance status, effectiveness metrics, gaps, and trends.
 
 **Scope:**
+
 - Consolidates data from all 4 assessment workbooks (A.8.16.1-4)
 - Provides compliance scoring (0-100% per assessment area, overall score)
 - Tracks gaps and remediation progress
 - Shows trends over time (quarterly comparison)
 - Supports executive reporting and audit evidence
 
+
 **What Dashboard Does NOT Do:**
+
 - Does NOT replace source assessments (those remain the detailed evidence)
 - Does NOT collect new data (only consolidates existing assessment data)
 - Does NOT provide tactical implementation guidance (see A.8.16.1-4 for that)
 
-### 1.2 Key Principle: Single Source of Truth
+
+## Key Principle: Single Source of Truth
 
 **Dashboard = Aggregated View of A.8.16 Compliance**
 
 All data on dashboard is DERIVED from source assessments:
+
 - Infrastructure metrics ← A.8.16.1
 - Baseline/Detection metrics ← A.8.16.2
 - Coverage metrics ← A.8.16.3
 - Alert management metrics ← A.8.16.4
 
+
 **If dashboard shows a gap, source assessment has the details.**
 
 **Traceability is critical:** Dashboard metrics must link back to source data for audit verification.
 
-### 1.3 Dashboard Update Frequency
+## Dashboard Update Frequency
 
 **Monthly Updates (Light):**
+
 - Update alert management metrics (A.8.16.4 data changes monthly)
 - Update gap remediation status (track progress)
 - Refresh trend charts
 - **Time Required:** 2-4 hours
 
+
 **Quarterly Reviews (Comprehensive):**
+
 - Re-run all 4 assessments (A.8.16.1-4)
 - Full dashboard refresh with new data
 - Trend analysis (compare to previous quarter)
 - Management review meeting
 - **Time Required:** 8-12 hours (assessment updates + dashboard refresh)
 
+
 **Annual Deep Dive:**
+
 - Complete re-assessment of all areas
 - Validate compliance scoring methodology
 - Update dashboard structure if needed
 - **Time Required:** 20-30 hours (full assessment cycle)
 
+
 ---
 
-## 2. Prerequisites
+# Prerequisites
 
 Before generating dashboard, MUST have:
 
-### 2.1 Completed Source Assessments
+## Completed Source Assessments
 
 **REQUIRED (All 4 MUST be complete):**
+
 - ✅ **ISMS-IMP-A.8.16.1** - Monitoring Infrastructure Assessment (completed, approved)
 - ✅ **ISMS-IMP-A.8.16.2** - Baseline & Detection Assessment (completed, approved)
 - ✅ **ISMS-IMP-A.8.16.3** - Coverage Assessment (completed, approved)
 - ✅ **ISMS-IMP-A.8.16.4** - Alert Management & Response Assessment (completed, approved)
 
+
 **Validation:**
 Each assessment workbook should:
+
 - Have completion date within last 90 days (for initial dashboard)
 - Have approval signatures (3-level approval complete)
 - Have no "TBD" or placeholder values
 - Have evidence register filled
 
-### 2.2 Data Quality Requirements
+
+## Data Quality Requirements
 
 **Source Assessment Data Must Be:**
+
 - **Accurate:** Verified, not estimated
 - **Current:** <90 days old for initial dashboard
 - **Complete:** All required sheets filled
 - **Consistent:** No contradictions between assessments
 
+
 **Quality Gate:**
 Before dashboard generation, validate:
+
 - A.8.16.1, Sheet 3 (Log Sources) matches A.8.16.3, Sheet 2 (Asset Coverage)
 - A.8.16.2, Sheet 5 (Detection Rules) referenced in A.8.16.4, Sheet 2 (Alert Sources)
 - Platform names consistent across all assessments
 
-### 2.3 Technical Requirements
+
+## Technical Requirements
 
 **Software:**
+
 - Microsoft Excel 2016+ or Excel Online (with external workbook linking)
 - OR: Python 3.8+ with pandas, openpyxl (for script-based dashboard generation)
 
+
 **File Access:**
+
 - All 4 source assessment workbooks accessible (same directory or shared location)
 - Write access to dashboard output location
 
+
 **Skills:**
+
 - Excel: Basic formulas, external references, pivot tables
 - OR Python: Data manipulation, Excel file I/O
 
+
 ---
 
-## 3. Dashboard Implementation Workflow
+# Dashboard Implementation Workflow
 
-### Phase 1: Preparation (1-2 hours)
+## Phase 1: Preparation (1-2 hours)
 
 **Activities:**
 1. **Validate Source Assessments:**
+
    - Verify all 4 assessments complete and approved
    - Check data quality (no TBD, no placeholders)
    - Validate cross-assessment consistency
+
 
 2. **Organize Files:**
    ```
@@ -342,70 +386,89 @@ Before dashboard generation, validate:
    ```
 
 3. **Determine Dashboard Generation Method:**
+
    - **Option A:** Excel with external references (manual, easier for small updates)
    - **Option B:** Python script (automated, better for recurring updates)
 
+
 **Deliverables:**
+
 - Validated source assessment workbooks
 - File structure organized
 - Dashboard generation method selected
 
+
 **Timeline:** 1-2 hours
 
-### Phase 2: Data Extraction (2-4 hours)
+## Phase 2: Data Extraction (2-4 hours)
 
 **Activities:**
 
 **1. Extract Infrastructure Metrics (from A.8.16.1):**
+
    - Platform count (Sheet 2, count of rows)
    - Average capability score (Sheet 2, Column H average)
    - Resilience status (Sheet 4, summary metrics)
    - Log source coverage (Sheet 3, % monitored)
 
+
 **2. Extract Baseline & Detection Metrics (from A.8.16.2):**
+
    - Baseline coverage % (Sheet 2/3/4, coverage summary)
    - Detection rule count (Sheet 5, total active rules)
    - MITRE ATT&CK coverage % (Sheet 5, coverage matrix)
    - Detection effectiveness (Sheet 6, TP rate, FP rate)
 
+
 **3. Extract Coverage Metrics (from A.8.16.3):**
+
    - Asset coverage % by tier (Sheet 2, Tier 1/2/3 coverage)
    - Network coverage % (Sheet 3, segments monitored)
    - Identity coverage % (Sheet 4, accounts monitored)
    - Application coverage % (Sheet 5, apps monitored)
    - Blind spot count (Sheets 2-5, unmonitored critical assets)
 
+
 **4. Extract Alert Management Metrics (from A.8.16.4):**
+
    - Alert volume (Sheet 2, daily average)
    - SLA compliance % (Sheet 3, overall compliance)
    - MTTR (Sheet 3, mean time to respond)
    - Investigation quality (Sheet 4, playbook coverage)
    - Alert quality (Sheet 6, TP/FP rates)
 
+
 **5. Consolidate Gaps (from ALL assessments):**
+
    - Extract all gaps from A.8.16.1, Sheet 7
    - Extract all gaps from A.8.16.2, Sheet 7
    - Extract all gaps from A.8.16.3, Sheet 5
    - Extract all gaps from A.8.16.4, Sheet 5
    - Deduplicate and prioritize
 
+
 **Deliverables:**
+
 - Extracted metrics in staging format (Excel or CSV)
 - Gap inventory consolidated
 - Data quality validated
 
+
 **Timeline:** 2-4 hours
 
-### Phase 3: Dashboard Generation (3-5 hours)
+## Phase 3: Dashboard Generation (3-5 hours)
 
 **Activities:**
 
 **1. Create Dashboard Workbook:**
+
    - Generate new Excel workbook
    - Create all sheets (Sheets 2-10 per specification)
    - Set up data validation and formatting
 
+
 **2. Populate Metrics:**
+
    - **Sheet 2 (Executive Summary):**
      - Calculate compliance scores per area
      - Overall compliance score
@@ -422,62 +485,77 @@ Before dashboard generation, validate:
      - Apply risk prioritization formula
      - Track remediation status
    
-   - **Sheet 8 (Trend Analysis):**
+   - **Sheet 6 (Trend Analysis):**
      - If historical data exists, import previous quarters
      - Calculate trends
      - Generate trend charts
 
+
 **3. Link to Source Assessments:**
+
    - Hyperlinks from dashboard metrics to source sheets
    - External workbook references (if using Excel linking)
    - File path documentation
 
+
 **4. Quality Check:**
+
    - Verify all metrics populated
    - Check formula calculations
    - Validate trend analysis
    - Test drill-down links
 
+
 **Deliverables:**
+
 - Completed dashboard workbook
 - Metric validation report
 - Link verification complete
 
+
 **Timeline:** 3-5 hours
 
-### Phase 4: Review & Approval (1-2 weeks)
+## Phase 4: Review & Approval (1-2 weeks)
 
 **Activities:**
 
 **1. Internal Review (Compliance Officer):**
+
    - Verify metrics match source assessments
    - Check compliance scoring logic
    - Validate gap prioritization
    - Test trend analysis
 
+
 **2. Management Review (CISO / Security Manager):**
+
    - Review executive summary
    - Validate top gaps
    - Assess overall compliance status
    - Approve for distribution
 
+
 **3. Distribution:**
+
    - Share with executive leadership
    - Provide to auditors (if audit in progress)
    - Archive for quarterly comparison
 
+
 **Deliverables:**
+
 - Approved dashboard
 - Distribution to stakeholders
 - Archive for historical tracking
+
 
 **Timeline:** 5-10 business days (review + approval)
 
 ---
 
-## 4. Compliance Scoring Framework
+# Compliance Scoring Framework
 
-### 4.1 Scoring Methodology
+## Scoring Methodology
 
 **Overall Compliance Score = Weighted Average of 4 Assessment Areas**
 
@@ -490,22 +568,26 @@ Before dashboard generation, validate:
 
 **Overall Score = (Infrastructure × 0.20) + (Baselines × 0.25) + (Coverage × 0.30) + (Alert Mgmt × 0.25)**
 
-### 4.2 Area Scoring Formulas
+## Area Scoring Formulas
 
 **Infrastructure Score (A.8.16.1):**
 ```
 Metrics:
+
 - Platform Capability: Average capability score from A.8.16.1, Sheet 2, Column H (0-100)
 - Resilience: % platforms with redundancy (A.8.16.1, Sheet 4)
 - Log Source Coverage: % Tier 1 systems monitored (A.8.16.1, Sheet 3)
+
 
 Formula:
 Infrastructure Score = (Platform Capability × 0.3) + (Resilience × 0.3) + (Log Coverage × 0.4)
 
 Example:
+
 - Platform Capability: 75/100
 - Resilience: 80% (8/10 platforms have redundancy)
 - Log Coverage: 95% (Tier 1 coverage)
+
 
 Infrastructure Score = (75 × 0.3) + (80 × 0.3) + (95 × 0.4) = 84.5
 ```
@@ -513,17 +595,21 @@ Infrastructure Score = (75 × 0.3) + (80 × 0.3) + (95 × 0.4) = 84.5
 **Baselines & Detection Score (A.8.16.2):**
 ```
 Metrics:
+
 - Baseline Coverage: % Tier 1 systems with baselines (A.8.16.2, Sheets 2/3/4)
 - MITRE ATT&CK Coverage: % tactics covered (A.8.16.2, Sheet 5)
 - Detection Effectiveness: Average TP rate (A.8.16.2, Sheet 6)
+
 
 Formula:
 Baselines Score = (Baseline Coverage × 0.4) + (MITRE Coverage × 0.3) + (Detection Effectiveness × 0.3)
 
 Example:
+
 - Baseline Coverage: 90%
 - MITRE Coverage: 65%
 - Detection Effectiveness: 80% TP rate
+
 
 Baselines Score = (90 × 0.4) + (65 × 0.3) + (80 × 0.3) = 79.5
 ```
@@ -531,19 +617,23 @@ Baselines Score = (90 × 0.4) + (65 × 0.3) + (80 × 0.3) = 79.5
 **Coverage Score (A.8.16.3):**
 ```
 Metrics:
+
 - Asset Coverage Tier 1: % critical assets monitored (A.8.16.3, Sheet 2)
 - Asset Coverage Tier 2: % high assets monitored
 - Network Coverage: % critical network segments monitored (A.8.16.3, Sheet 3)
 - Identity Coverage: % privileged accounts monitored (A.8.16.3, Sheet 4)
 
+
 Formula:
 Coverage Score = (Tier 1 Coverage × 0.5) + (Tier 2 Coverage × 0.2) + (Network × 0.15) + (Identity × 0.15)
 
 Example:
+
 - Tier 1 Coverage: 100%
 - Tier 2 Coverage: 85%
 - Network Coverage: 90%
 - Identity Coverage: 95%
+
 
 Coverage Score = (100 × 0.5) + (85 × 0.2) + (90 × 0.15) + (95 × 0.15) = 94.75
 ```
@@ -551,17 +641,21 @@ Coverage Score = (100 × 0.5) + (85 × 0.2) + (90 × 0.15) + (95 × 0.15) = 94.7
 **Alert Management Score (A.8.16.4):**
 ```
 Metrics:
+
 - SLA Compliance: % alerts meeting SLA (A.8.16.4, Sheet 3)
 - Investigation Quality: % with playbooks (A.8.16.4, Sheet 4)
 - Alert Quality: Inverse of FP rate (100 - FP%) (A.8.16.4, Sheet 6)
+
 
 Formula:
 Alert Mgmt Score = (SLA Compliance × 0.4) + (Investigation Quality × 0.3) + (Alert Quality × 0.3)
 
 Example:
+
 - SLA Compliance: 92%
 - Investigation Quality: 85%
 - Alert Quality: 100 - 25% FP = 75%
+
 
 Alert Mgmt Score = (92 × 0.4) + (85 × 0.3) + (75 × 0.3) = 84.3
 ```
@@ -573,7 +667,7 @@ Overall = (84.5 × 0.20) + (79.5 × 0.25) + (94.75 × 0.30) + (84.3 × 0.25)
 Overall = 16.9 + 19.875 + 28.425 + 21.075 = 86.275 ≈ 86%
 ```
 
-### 4.3 Compliance Status Interpretation
+## Compliance Status Interpretation
 
 | Score Range | Status | Interpretation | Action Required |
 |-------------|--------|----------------|-----------------|
@@ -585,22 +679,22 @@ Overall = 16.9 + 19.875 + 28.425 + 21.075 = 86.275 ≈ 86%
 
 ---
 
-## 5. Executive Reporting Templates
+# Executive Reporting Templates
 
-### 5.1 Monthly Executive Summary (1-Page)
+## Monthly Executive Summary (1-Page)
 
 **Template:**
 
 ```markdown
 # ISO 27001:2022 Control A.8.16 - Monitoring Activities
-## Monthly Dashboard Summary
+# Monthly Dashboard Summary
 **Period:** [Month YYYY]  
 **Report Date:** [DD.MM.YYYY]  
 **Prepared By:** [Security Team]
 
 ---
 
-### Overall Compliance Status
+## Overall Compliance Status
 
 **Compliance Score:** [XX]% (⬆️ +2% from last month)
 
@@ -608,7 +702,7 @@ Overall = 16.9 + 19.875 + 28.425 + 21.075 = 86.275 ≈ 86%
 
 ---
 
-### Key Metrics
+## Key Metrics
 
 | Metric | Current | Target | Status |
 |--------|---------|--------|--------|
@@ -619,7 +713,7 @@ Overall = 16.9 + 19.875 + 28.425 + 21.075 = 86.275 ≈ 86%
 
 ---
 
-### Top 5 Gaps Requiring Attention
+## Top 5 Gaps Requiring Attention
 
 1. **[Gap Name]** - Priority: Critical - Owner: [Name] - Due: [Date]
 2. **[Gap Name]** - Priority: High - Owner: [Name] - Due: [Date]
@@ -629,30 +723,36 @@ Overall = 16.9 + 19.875 + 28.425 + 21.075 = 86.275 ≈ 86%
 
 ---
 
-### Trend Analysis
+## Trend Analysis
 
 **Improving:**
+
 - Alert FP rate decreased from 35% to 28% (tuning effective)
 - MTTR decreased from 145 min to 122 min (process improvements)
 
+
 **Attention Needed:**
+
 - Alert volume increased 15% (investigate cause)
 - 2 Tier 1 systems still unmonitored (target 100%)
 
+
 ---
 
-### Actions Required
+## Actions Required
 
 **Management Decision:**
+
 - Approve budget for 2 additional monitoring licenses (close Tier 1 gaps)
 - Resource allocation: Assign Detection Engineer to high-FP rule tuning
+
 
 **Next Review:** [Date - typically first week of next month]
 ```
 
 ---
 
-### 5.2 Quarterly Board Report (Executive Presentation)
+## Quarterly Board Report (Executive Presentation)
 
 **Slide 1: Executive Summary**
 ```
@@ -735,9 +835,9 @@ Future:
 
 ---
 
-## 6. Trend Analysis Procedures
+# Trend Analysis Procedures
 
-### 6.1 Quarter-over-Quarter Comparison
+## Quarter-over-Quarter Comparison
 
 **Purpose:** Track if monitoring capabilities improving, stable, or degrading
 
@@ -779,81 +879,99 @@ Change: +5% ⬆️
 Trend: Improving
 ```
 
-### 6.2 Trend Visualization
+## Trend Visualization
 
-**Dashboard Sheet 8 includes:**
+**Dashboard Sheet 6 includes:**
 
 **1. Compliance Score Line Chart:**
+
 - X-axis: Quarters (Q1 2025, Q2 2025, ..., Q1 2026)
 - Y-axis: Compliance % (0-100%)
 - Target line at 90% (policy requirement)
 - Trend line showing trajectory
 
+
 **2. Coverage Heatmap:**
+
 - Rows: Asset Types (Servers, Network, Endpoints, Cloud, Databases)
 - Columns: Quarters
 - Color: Red (<60%), Yellow (60-80%), Green (>80%)
 - Shows coverage improving over time
 
+
 **3. Alert Quality Trend:**
+
 - Dual-axis chart
 - Line 1: FP Rate % (decreasing = good)
 - Line 2: TP Rate % (increasing = good)
 - Shows tuning effectiveness
 
+
 **4. Gap Remediation Velocity:**
+
 - Bar chart by quarter
 - Gaps opened (new gaps identified)
 - Gaps closed (remediated)
 - Net gaps (open - closed)
 - Shows if backlog growing or shrinking
 
-### 6.3 Trend Interpretation
+
+## Trend Interpretation
 
 **Improving Trends (Positive):**
+
 - Compliance score increasing quarter-over-quarter
 - Coverage % increasing (more assets monitored)
 - FP rate decreasing (detection tuning working)
 - SLA compliance improving (process maturity)
 - Gap count decreasing (remediation effective)
 
+
 **Degrading Trends (Negative - Requires Attention):**
+
 - Compliance score decreasing (new gaps faster than remediation)
 - Coverage % decreasing (systems added faster than monitoring)
 - FP rate increasing (rules degrading, need tuning)
 - SLA compliance degrading (capacity issues)
 - Gap count increasing (identification outpacing remediation)
 
+
 **Stable Trends:**
+
 - Metrics flat quarter-over-quarter
 - Can be positive (if already compliant)
 - Can be negative (if stalled at non-compliant level)
 
+
 ---
 
-## 7. Common Implementation Pitfalls
+# Common Implementation Pitfalls
 
-### Pitfall 1: Source Assessments Not Current
+## Pitfall 1: Source Assessments Not Current
 
 **The Mistake:**
 Generate dashboard from assessments that are 6-12 months old → Dashboard shows outdated state.
 
 **Reality Check:**
 IT environments change constantly:
+
 - New systems deployed (not in old coverage assessment)
 - Detection rules tuned (old FP rates)
 - Infrastructure changes (platforms added/removed)
 - Alert volumes shifted
 
+
 **How to Avoid:**
+
 - Dashboard generation requires source assessments <90 days old
 - Monthly updates for A.8.16.4 (alert management changes fastest)
 - Quarterly refresh of ALL assessments
 - Document assessment dates prominently on dashboard
 
+
 ---
 
-### Pitfall 2: Inconsistent Data Between Assessments
+## Pitfall 2: Inconsistent Data Between Assessments
 
 **The Mistake:**
 A.8.16.1 says "500 systems monitored"  
@@ -862,11 +980,14 @@ A.8.16.3 says "480 assets in inventory"
 
 **Reality Check:**
 Without cross-validation:
+
 - Dashboard calculations incorrect (using inconsistent denominators)
 - Auditors spot discrepancies (credibility loss)
 - Trend analysis meaningless (comparing apples to oranges)
 
+
 **How to Avoid:**
+
 - Cross-validate before dashboard generation:
   - Platform names consistent across A.8.16.1-4
   - Asset counts match between A.8.16.1 and A.8.16.3
@@ -874,69 +995,85 @@ Without cross-validation:
 - Create data dictionary (standard terms, definitions)
 - Single data source where possible (e.g., CMDB for asset count)
 
+
 ---
 
-### Pitfall 3: Compliance Scoring Weights Not Organization-Specific
+## Pitfall 3: Compliance Scoring Weights Not Organization-Specific
 
 **The Mistake:**
 Use default weights (30% coverage, 25% detection, etc.) without considering organizational priorities.
 
 **Reality Check:**
 Different organizations have different risk profiles:
+
 - Regulated industry (healthcare, finance) → Coverage weight higher (35%)
 - Mature SOC → Alert management weight higher (30%)
 - New monitoring program → Infrastructure weight higher (30%)
 
+
 **How to Avoid:**
+
 - Review scoring weights with CISO / Security Management
 - Adjust based on organizational risk appetite
 - Document weight rationale
 - Re-evaluate annually
 
+
 **Example Customization:**
 ```
 Healthcare Organization (strict regulatory requirements):
+
 - Coverage: 35% (must monitor all systems handling PHI)
 - Baselines & Detection: 25%
 - Alert Management: 25%
 - Infrastructure: 15%
 
+
 Mature Tech Company (advanced threat detection focus):
+
 - Coverage: 25%
 - Baselines & Detection: 35% (mature detection program)
 - Alert Management: 30% (SOC excellence)
 - Infrastructure: 10% (already mature)
+
 ```
 
 ---
 
-### Pitfall 4: Dashboard Becomes Stale (No Updates)
+## Pitfall 4: Dashboard Becomes Stale (No Updates)
 
 **The Mistake:**
 Generate dashboard once for audit → Never update → Dashboard shows Q1 data in Q4.
 
 **Reality Check:**
 Without regular updates:
+
 - Management sees outdated data (makes decisions on old info)
 - Gaps appear closed on dashboard but actually still open
 - Trend analysis impossible (need time-series data)
 
+
 **How to Avoid:**
+
 - **Monthly cadence:** Update A.8.16.4 data, gap status
 - **Quarterly cadence:** Refresh all 4 assessments, full dashboard update
 - **Calendar automation:** Recurring task for dashboard updates
 - **Ownership:** Assign specific person (Compliance Officer, SOC Manager)
 
+
 **Dashboard Update Checklist:**
 ```
 Monthly Update (1st week of month):
+
 - [ ] Extract latest alert management data (A.8.16.4, Sheet 6)
 - [ ] Update gap remediation status (Sheet 7)
 - [ ] Refresh compliance score
 - [ ] Update trend charts
 - [ ] Review with CISO
 
+
 Quarterly Update (after quarter end):
+
 - [ ] Re-run A.8.16.1 assessment
 - [ ] Re-run A.8.16.2 assessment
 - [ ] Re-run A.8.16.3 assessment
@@ -945,26 +1082,31 @@ Quarterly Update (after quarter end):
 - [ ] Quarter-over-quarter trend analysis
 - [ ] Management review meeting
 - [ ] Archive previous quarter dashboard
+
 ```
 
 ---
 
-### Pitfall 5: No Drill-Down from Dashboard to Source Data
+## Pitfall 5: No Drill-Down from Dashboard to Source Data
 
 **The Mistake:**
 Dashboard shows "Coverage: 85%" → Executive asks "Which 15% isn't covered?" → No link to details.
 
 **Reality Check:**
 Dashboard without traceability:
+
 - Can't answer follow-up questions
 - Auditors can't verify metrics
 - Management can't prioritize based on details
 
+
 **How to Avoid:**
+
 - **Hyperlinks:** Every metric on dashboard links to source assessment sheet
 - **Documentation:** Document which source sheet provides each metric
 - **File References:** Dashboard documents file paths to source assessments
 - **Validation:** Test drill-down paths before distribution
+
 
 **Example:**
 ```
@@ -977,19 +1119,23 @@ Hyperlink → A.8.16.1, Sheet 2, Row 40 (Capability Average)
 
 ---
 
-### Pitfall 6: Gaps Not Prioritized by Risk
+## Pitfall 6: Gaps Not Prioritized by Risk
 
 **The Mistake:**
 List all gaps in dashboard without priority → Management doesn't know what to address first.
 
 **Reality Check:**
 50 gaps listed alphabetically:
+
 - Which are critical (Tier 1 unmonitored)?
 - Which are low priority (Tier 4 optional)?
 - Resource allocation unclear
 
+
 **How to Avoid:**
+
 - **Risk Prioritization Formula:**
+
   ```
   Risk Score = (Criticality × Data Classification × Regulatory Impact)
   
@@ -1016,9 +1162,10 @@ List all gaps in dashboard without priority → Management doesn't know what to 
   - Yellow: Risk Score 15-25 (High)
   - Green: Risk Score <15 (Medium/Low)
 
+
 ---
 
-### Pitfall 7: Trend Analysis Compares Incomparable Data
+## Pitfall 7: Trend Analysis Compares Incomparable Data
 
 **The Mistake:**
 Q1 assessment used 500 assets baseline  
@@ -1027,15 +1174,19 @@ Q2 assessment used 650 assets baseline
 
 **Reality Check:**
 Trend analysis must account for:
+
 - Asset inventory changes (systems added/removed)
 - Detection rule changes (rules added/disabled)
 - Scope changes (cloud resources added)
 
+
 **How to Avoid:**
+
 - **Normalize Metrics Where Possible:**
   - Coverage: Track absolute count AND percentage
   - Document scope changes
   - Trend commentary explains denominator changes
+
 
 **Example:**
 ```
@@ -1051,19 +1202,22 @@ Interpretation:
 
 ---
 
-### Pitfall 8: Dashboard Too Complex for Executive Audience
+## Pitfall 8: Dashboard Too Complex for Executive Audience
 
 **The Mistake:**
 Dashboard has 50 metrics, 20 charts, 10 tabs → Executive gets lost in detail.
 
 **Reality Check:**
 Executives need:
+
 - Single overall score (compliant? yes/no/partial)
 - Top 3-5 issues requiring decision
 - Trend (better or worse)
 - Investment needed
 
+
 **How to Avoid:**
+
 - **Sheet 2 (Executive Summary) = 1-Page View:**
   - Overall compliance score (big number, color-coded)
   - 3-5 bullet points (key metrics)
@@ -1071,6 +1225,7 @@ Executives need:
   - 1-2 trend charts
 - **Detail sheets for drilling down (Sheets 3-8)**
 - **Executive summary can standalone** (rest is supporting detail)
+
 
 **Good Executive Summary:**
 ```
@@ -1097,11 +1252,11 @@ Infrastructure Capability: 75/100 (calculated via weighted average of Sheet 2, C
 
 ---
 
-## 8. Quality Validation Checklist
+# Quality Validation Checklist
 
 **Before Distributing Dashboard:**
 
-### Data Accuracy
+## Data Accuracy
 
 - [ ] All 4 source assessments completed and approved
 - [ ] Source assessment dates within acceptable range (<90 days for initial)
@@ -1109,7 +1264,8 @@ Infrastructure Capability: 75/100 (calculated via weighted average of Sheet 2, C
 - [ ] No "TBD", "#REF!", or "#N/A" errors in dashboard
 - [ ] Formulas calculate correctly (manually verify key calculations)
 
-### Completeness
+
+## Completeness
 
 - [ ] All dashboard sheets populated (Sheets 2-10)
 - [ ] Executive summary complete with overall score
@@ -1118,7 +1274,8 @@ Infrastructure Capability: 75/100 (calculated via weighted average of Sheet 2, C
 - [ ] Trend analysis populated (if historical data available)
 - [ ] Evidence register complete with source assessment file paths
 
-### Consistency
+
+## Consistency
 
 - [ ] Platform names consistent across all sections
 - [ ] Asset counts match between Infrastructure and Coverage sections
@@ -1126,14 +1283,16 @@ Infrastructure Capability: 75/100 (calculated via weighted average of Sheet 2, C
 - [ ] Gap counts in consolidated sheet match sum of individual assessment gaps
 - [ ] Date formats consistent (DD.MM.YYYY throughout)
 
-### Traceability
+
+## Traceability
 
 - [ ] Every metric has hyperlink to source assessment
 - [ ] Source file paths documented and accessible
 - [ ] Drill-down links tested and working
 - [ ] Evidence register includes all source documents
 
-### Compliance Scoring
+
+## Compliance Scoring
 
 - [ ] Scoring formula documented and reviewed
 - [ ] Weights sum to 100% (Infrastructure 20% + Baselines 25% + Coverage 30% + Alert 25% = 100%)
@@ -1141,14 +1300,16 @@ Infrastructure Capability: 75/100 (calculated via weighted average of Sheet 2, C
 - [ ] Overall score between 0-100%
 - [ ] Status interpretation correct (>90% = Compliant, 80-89% = Substantially, etc.)
 
-### Trend Analysis
+
+## Trend Analysis
 
 - [ ] Quarterly comparison data present (if not first dashboard, skip)
 - [ ] Trend direction indicators correct (⬆️ improving, → stable, ⬇️ degrading)
 - [ ] Charts display correctly (no missing data, axes labeled)
 - [ ] Trend commentary explains changes
 
-### Gap Management
+
+## Gap Management
 
 - [ ] All gaps consolidated from 4 assessments
 - [ ] Gaps prioritized by risk score
@@ -1157,7 +1318,8 @@ Infrastructure Capability: 75/100 (calculated via weighted average of Sheet 2, C
 - [ ] Target dates set per policy (Critical <30 days, High <90 days)
 - [ ] Remediation status tracked
 
-### Presentation Quality
+
+## Presentation Quality
 
 - [ ] Executive summary fits on 1 page
 - [ ] Charts clear and labeled
@@ -1165,20 +1327,23 @@ Infrastructure Capability: 75/100 (calculated via weighted average of Sheet 2, C
 - [ ] No spelling errors
 - [ ] Professional formatting
 
-### Approval
+
+## Approval
 
 - [ ] Compliance Officer reviewed and validated data
 - [ ] Security Manager / CISO reviewed executive summary
 - [ ] Approval signatures obtained (if required)
 - [ ] Version control (dashboard dated, version number)
 
+
 ---
 
-## 9. Review & Approval
+# Review & Approval
 
 **Dashboard Review Process:**
 
 **Level 1: Data Validation (Compliance Officer)**
+
 - **Focus:** Metric accuracy, source data validation
 - **Timeline:** 1-2 business days
 - **Criteria:**
@@ -1186,7 +1351,9 @@ Infrastructure Capability: 75/100 (calculated via weighted average of Sheet 2, C
   - Formulas calculate correctly
   - No data errors or inconsistencies
 
+
 **Level 2: Management Review (CISO / Security Manager)**
+
 - **Focus:** Compliance status, gap prioritization, trend interpretation
 - **Timeline:** 2-3 business days
 - **Criteria:**
@@ -1195,7 +1362,9 @@ Infrastructure Capability: 75/100 (calculated via weighted average of Sheet 2, C
   - Trend analysis reasonable
   - Executive summary clear and actionable
 
+
 **Level 3: Executive Presentation (Optional - for Board/C-Suite)**
+
 - **Focus:** Strategic implications, investment needs
 - **Timeline:** As needed (quarterly board meetings)
 - **Criteria:**
@@ -1203,13 +1372,16 @@ Infrastructure Capability: 75/100 (calculated via weighted average of Sheet 2, C
   - Investment needs justified
   - Risk implications understood
 
+
 **Total Timeline:** 3-5 business days (review + approval)
 
 **Post-Approval:**
+
 - Distribute to stakeholders (management, compliance, auditors)
 - Archive for quarterly comparison
 - Schedule next update (monthly or quarterly)
 - Track gap remediation progress
+
 
 ---
 
@@ -1218,12 +1390,12 @@ Infrastructure Capability: 75/100 (calculated via weighted average of Sheet 2, C
 # PART II: TECHNICAL SPECIFICATION
 
 # ISMS-IMP-A.8.16.5 - Compliance Dashboard Specification
-## Excel Workbook Layout Specification
-### ISO/IEC 27001:2022 Control A.8.16: Monitoring Activities
+# Excel Workbook Layout Specification
+## ISO/IEC 27001:2022 Control A.8.16: Monitoring Activities
 
 ---
 
-## Document Overview
+# Document Overview
 
 **Document ID:** ISMS-IMP-A.8.16.5  
 **Assessment Area:** Overall Compliance Dashboard & Master Metrics  
@@ -1234,7 +1406,7 @@ Infrastructure Capability: 75/100 (calculated via weighted average of Sheet 2, C
 
 ---
 
-## Workbook Structure
+# Workbook Structure
 
 **Total Sheets:** 7
 1. Instructions & Legend
@@ -1247,13 +1419,13 @@ Infrastructure Capability: 75/100 (calculated via weighted average of Sheet 2, C
 
 ---
 
-## Sheet 2: Executive Summary
+# Sheet 2: Executive Summary
 
-### Header
+## Header
 **Title:** "MONITORING ACTIVITIES - EXECUTIVE SUMMARY"  
 **Subtitle:** "ISO/IEC 27001:2022 Control A.8.16 Compliance Status"
 
-### Section 1: Overall Compliance Score (Rows 3-12)
+## Section 1: Overall Compliance Score (Rows 3-12)
 
 **Visual Compliance Gauge:**
 ```
@@ -1272,7 +1444,7 @@ Next Review:         DD.MM.YYYY
 | IMP-A.8.16.4 | Alert Management | Formula | Formula | ↑/→/↓ |
 | **OVERALL** | **All Domains** | **Formula** | **Formula** | **↑/→/↓** |
 
-### Section 2: Critical Metrics Summary (Rows 16-30)
+## Section 2: Critical Metrics Summary (Rows 16-30)
 
 | Metric | Current | Target | Status |
 |--------|---------|--------|--------|
@@ -1293,31 +1465,33 @@ Next Review:         DD.MM.YYYY
 | Active Detection Rules | Formula | Target | Formula |
 | SOC Analyst Coverage | Formula | 24/7 | Formula |
 
-### Section 3: Top 5 Strengths (Rows 34-42)
+## Section 3: Top 5 Strengths (Rows 34-42)
 | Rank | Strength | Evidence |
 |------|----------|----------|
 | 1 | [Auto-populated from assessments] | [Link to evidence] |
 | 2 | ... | ... |
 
-### Section 4: Top 5 Gaps (Rows 45-53)
+## Section 4: Top 5 Gaps (Rows 45-53)
 | Priority | Gap | Risk | Remediation Target |
 |----------|-----|------|-------------------|
 | Critical | [Auto-populated] | High | DD.MM.YYYY |
 
-### Section 5: Management Recommendations (Rows 56-68)
+## Section 5: Management Recommendations (Rows 56-68)
+
 - Investment priorities
 - Resource needs
 - Strategic improvements
 - Compliance actions
 
+
 ---
 
-## Sheet 3: Detailed Compliance Matrix
+# Sheet 3: Detailed Compliance Matrix
 
-### Header
+## Header
 **Title:** "DETAILED COMPLIANCE MATRIX"
 
-### Matrix Structure (Rows 3-150)
+## Matrix Structure (Rows 3-150)
 
 **Column Headers:**
 | Col | Header | Width |
@@ -1336,6 +1510,7 @@ Next Review:         DD.MM.YYYY
 | L | Notes | 25 |
 
 **Requirements Mapped:**
+
 - All requirements from S2.1 (Infrastructure) - ~25 requirements
 - All requirements from S2.2 (Baseline & Detection) - ~30 requirements
 - All requirements from S2.3 (Alert Management) - ~25 requirements
@@ -1343,12 +1518,15 @@ Next Review:         DD.MM.YYYY
 - All requirements from S3 (Roles) - ~10 requirements
 - **Total: ~105 requirement rows**
 
+
 **Auto-Population from Assessment Workbooks:**
+
 - Import compliance status from IMP-A.8.16.1 through IMP-A.8.16.4
 - Aggregate to policy requirement level
 - Flag gaps and non-compliance
 
-### Compliance Scoring (Formula-driven)
+
+## Compliance Scoring (Formula-driven)
 ```
 Compliant Count: =COUNTIF(G:G,"✅ Compliant")
 Partial Count: =COUNTIF(G:G,"⚠️ Partial")
@@ -1358,9 +1536,9 @@ Overall %: =Compliant/(Compliant+Partial+Non-Compliant)*100
 
 ---
 
-## Sheet 4: Key Performance Indicators (KPIs)
+# Sheet 4: Key Performance Indicators (KPIs)
 
-### Section 1: Coverage KPIs (Rows 3-20)
+## Section 1: Coverage KPIs (Rows 3-20)
 
 | KPI | Current | Target | Baseline | Trend (3mo) | Status |
 |-----|---------|--------|----------|-------------|--------|
@@ -1374,7 +1552,7 @@ Overall %: =Compliant/(Compliant+Partial+Non-Compliant)*100
 | Log Volume (GB/day) | [Input] | Capacity | [Historical] | Chart | Status |
 | Log Collection Reliability % | [Input] | >99% | [Historical] | Chart | Status |
 
-### Section 2: Detection KPIs (Rows 23-42)
+## Section 2: Detection KPIs (Rows 23-42)
 
 | KPI | Current | Target | Baseline | Trend | Status |
 |-----|---------|--------|----------|-------|--------|
@@ -1389,7 +1567,7 @@ Overall %: =Compliant/(Compliant+Partial+Non-Compliant)*100
 | False Positive Rate % | [Input] | <25% | [Historical] | Chart | Status |
 | Rules Requiring Tuning (Count) | [Input] | <10 | [Historical] | Chart | Status |
 
-### Section 3: Response KPIs (Rows 45-65)
+## Section 3: Response KPIs (Rows 45-65)
 
 | KPI | Current | Target | Baseline | Trend | Status |
 |-----|---------|--------|----------|-------|--------|
@@ -1408,7 +1586,7 @@ Overall %: =Compliant/(Compliant+Partial+Non-Compliant)*100
 | Escalation Rate % | [Input] | Target | [Historical] | Chart | Status |
 | False Escalation Rate % | [Input] | <10% | [Historical] | Chart | Status |
 
-### Section 4: Operational KPIs (Rows 68-85)
+## Section 4: Operational KPIs (Rows 68-85)
 
 | KPI | Current | Target | Baseline | Trend | Status |
 |-----|---------|--------|----------|-------|--------|
@@ -1425,15 +1603,16 @@ Overall %: =Compliant/(Compliant+Partial+Non-Compliant)*100
 
 ---
 
-## Sheet 5: Gap Analysis & Remediation Tracker
+# Sheet 5: Gap Analysis & Remediation Tracker
 
-### Section 1: Gap Inventory (Rows 3-60)
+## Section 1: Gap Inventory (Rows 3-60)
 
 | Gap ID | Source Assessment | Gap Category | Description | Risk | Impact | Remediation Plan | Owner | Target Date | Budget | Status | % Complete | Last Updated |
 |--------|-------------------|--------------|-------------|------|--------|------------------|-------|-------------|--------|--------|------------|--------------|
 | [Auto-populated from IMP-A.8.16.1-4] | | | | | | | | | | | | |
 
 **Gap Categories:**
+
 - Infrastructure Gap
 - Baseline Gap
 - Coverage Gap
@@ -1442,7 +1621,8 @@ Overall %: =Compliant/(Compliant+Partial+Non-Compliant)*100
 - Process Gap
 - Resource Gap
 
-### Section 2: Gap Summary by Category (Rows 63-75)
+
+## Section 2: Gap Summary by Category (Rows 63-75)
 | Category | Total | Critical | High | Medium | Low | Open | In Progress | Resolved |
 |----------|-------|----------|------|--------|-----|------|-------------|----------|
 | Infrastructure | Formula | Formula | Formula | Formula | Formula | Formula | Formula | Formula |
@@ -1451,13 +1631,15 @@ Overall %: =Compliant/(Compliant+Partial+Non-Compliant)*100
 | Alert Management | Formula | Formula | Formula | Formula | Formula | Formula | Formula | Formula |
 | **TOTAL** | Formula | Formula | Formula | Formula | Formula | Formula | Formula | Formula |
 
-### Section 3: Remediation Timeline (Rows 78-95)
+## Section 3: Remediation Timeline (Rows 78-95)
+
 - Gantt chart style timeline
 - Gaps by month
 - Critical path items highlighted
 - Resource allocation
 
-### Section 4: Risk Heat Map (Rows 98-110)
+
+## Section 4: Risk Heat Map (Rows 98-110)
 ```
                 Impact
             Low  Med  High
@@ -1469,9 +1651,9 @@ Low
 
 ---
 
-## Sheet 6: Trend Analysis
+# Sheet 6: Trend Analysis
 
-### Section 1: Compliance Trend (Rows 3-18)
+## Section 1: Compliance Trend (Rows 3-18)
 **Monthly compliance % over 12 months**
 | Month | Overall % | Infrastructure % | Baseline % | Coverage % | Alert Mgmt % |
 |-------|-----------|------------------|------------|-----------|--------------|
@@ -1481,8 +1663,9 @@ Low
 
 **Line chart showing trends**
 
-### Section 2: KPI Trends (Rows 21-45)
+## Section 2: KPI Trends (Rows 21-45)
 **Key metrics over time (12 months):**
+
 - Critical system coverage %
 - Detection rate %
 - False positive rate %
@@ -1490,13 +1673,14 @@ Low
 - MTTR (Critical)
 - SLA compliance %
 
-### Section 3: Gap Closure Rate (Rows 48-60)
+
+## Section 3: Gap Closure Rate (Rows 48-60)
 **Monthly gap remediation tracking:**
 | Month | New Gaps | Closed Gaps | Net Change | Total Open |
 |-------|----------|-------------|------------|------------|
 | ... | | | | |
 
-### Section 4: Incident Detection Effectiveness (Rows 63-75)
+## Section 4: Incident Detection Effectiveness (Rows 63-75)
 **Quarterly analysis:**
 | Quarter | Incidents Detected by Monitoring | Incidents Missed | Detection Rate % | Lessons Learned |
 |---------|----------------------------------|------------------|------------------|-----------------|
@@ -1504,37 +1688,44 @@ Low
 
 ---
 
-## Sheet 7: Evidence Register & Approvals
+# Sheet 7: Evidence Register & Approvals
 
-### Section 1: Evidence Register (Rows 3-102)
+## Section 1: Evidence Register (Rows 3-102)
 **100 rows for evidence tracking**
 
 | Evidence ID | Evidence Type | Description | Related Requirement | Source Assessment | Date Collected | Collected By | Location/Link | Verification Status | Verified By | Verification Date | Notes |
 |-------------|---------------|-------------|-------------------|-------------------|----------------|--------------|---------------|-------------------|-------------|------------------|-------|
 
-### Section 2: Approval Workflow (Rows 105-130)
+## Section 2: Approval Workflow (Rows 105-130)
 
 **Assessment Prepared By:**
+
 - Name: [Input]
 - Title: [Input]
 - Date: [Input]
 - Signature: [Space for signature]
 
+
 **Reviewed By (SOC Lead):**
+
 - Name: [Input]
 - Title: [Input]
 - Review Comments: [Multi-line text]
 - Date: [Input]
 - Signature: [Space]
+
 
 **Reviewed By (Security Engineering):**
+
 - Name: [Input]
 - Title: [Input]
 - Review Comments: [Multi-line text]
 - Date: [Input]
 - Signature: [Space]
 
+
 **Approved By (CISO):**
+
 - Name: [Input]
 - Title: [Input]
 - Approval Decision: [Dropdown: Approved, Approved with Conditions, Rejected]
@@ -1542,21 +1733,26 @@ Low
 - Date: [Input]
 - Signature: [Space]
 
+
 **Executive Acknowledgment (Optional):**
+
 - Name: [Input]
 - Title: [Input]
 - Date: [Input]
 - Signature: [Space]
 
+
 ---
 
-## Data Import Instructions
+# Data Import Instructions
 
 **This workbook is designed to aggregate data from:**
+
 - ISMS-IMP-A.8.16.1_Monitoring_Infrastructure_YYYYMMDD.xlsx
 - ISMS-IMP-A.8.16.2_Baseline_Detection_YYYYMMDD.xlsx
 - ISMS-IMP-A.8.16.3_Coverage_Assessment_YYYYMMDD.xlsx
 - ISMS-IMP-A.8.16.4_Alert_Management_YYYYMMDD.xlsx
+
 
 **Import Method:**
 1. Manual copy-paste from Summary Dashboards
@@ -1564,9 +1760,11 @@ Low
 3. Python script to aggregate (advanced)
 
 **Formula References:**
+
 - Use INDIRECT() for dynamic workbook references
 - Use INDEX/MATCH for lookups across workbooks
 - Implement data validation to prevent manual errors
+
 
 ---
 
@@ -1574,11 +1772,11 @@ Low
 
 ---
 
-## Integration Testing Procedures
+# Integration Testing Procedures
 
 **Before deploying dashboard to production, test:**
 
-### Test 1: Data Import Validation
+## Test 1: Data Import Validation
 
 **Procedure:**
 1. Place all 4 source assessment workbooks in same directory
@@ -1590,7 +1788,7 @@ Low
 
 ---
 
-### Test 2: Formula Validation
+## Test 2: Formula Validation
 
 **Procedure:**
 1. Manually calculate overall compliance score from components
@@ -1602,7 +1800,7 @@ Low
 
 ---
 
-### Test 3: Trend Analysis Test
+## Test 3: Trend Analysis Test
 
 **Procedure:**
 1. If historical data exists, verify quarter-over-quarter calculations
@@ -1613,7 +1811,7 @@ Low
 
 ---
 
-### Test 4: Hyperlink / Drill-Down Test
+## Test 4: Hyperlink / Drill-Down Test
 
 **Procedure:**
 1. Click 10 random metrics on dashboard
@@ -1624,15 +1822,17 @@ Low
 
 ---
 
-### Test 5: Gap Consolidation Test
+## Test 5: Gap Consolidation Test
 
 **Procedure:**
 1. Count gaps in each source assessment:
+
    - A.8.16.1 gaps: ___
    - A.8.16.2 gaps: ___
    - A.8.16.3 gaps: ___
    - A.8.16.4 gaps: ___
    - Total: ___
+
 
 2. Count gaps in dashboard consolidated gaps sheet: ___
 
@@ -1642,7 +1842,7 @@ Low
 
 ---
 
-### Test 6: Update Procedure Test
+## Test 6: Update Procedure Test
 
 **Procedure:**
 1. Modify data in one source assessment (change a metric)
@@ -1654,9 +1854,9 @@ Low
 
 ---
 
-## Maintenance Procedures
+# Maintenance Procedures
 
-### Monthly Maintenance (1-2 hours)
+## Monthly Maintenance (1-2 hours)
 
 **Tasks:**
 1. Update A.8.16.4 data (latest month alert management metrics)
@@ -1666,6 +1866,7 @@ Low
 5. Distribute to stakeholders
 
 **Checklist:**
+
 - [ ] Extract latest A.8.16.4, Sheet 6 (Alert Quality Metrics)
 - [ ] Update gaps remediation status (Sheet 7)
 - [ ] Recalculate compliance score
@@ -1673,9 +1874,10 @@ Low
 - [ ] Review executive summary
 - [ ] Distribute updated dashboard
 
+
 ---
 
-### Quarterly Maintenance (8-12 hours)
+## Quarterly Maintenance (8-12 hours)
 
 **Tasks:**
 1. Re-run all 4 source assessments (A.8.16.1-4)
@@ -1685,6 +1887,7 @@ Low
 5. Archive previous quarter dashboard
 
 **Checklist:**
+
 - [ ] Update A.8.16.1 (Infrastructure) - verify platforms, log sources
 - [ ] Update A.8.16.2 (Baselines) - verify detection rules, MITRE coverage
 - [ ] Update A.8.16.3 (Coverage) - verify asset/network/identity/app coverage
@@ -1694,9 +1897,10 @@ Low
 - [ ] Create quarterly presentation for management
 - [ ] Archive previous quarter dashboard for historical tracking
 
+
 ---
 
-### Annual Maintenance (2-3 days)
+## Annual Maintenance (2-3 days)
 
 **Tasks:**
 1. Complete re-assessment of all areas (deep dive)
@@ -1706,6 +1910,7 @@ Low
 5. Executive review and planning for next year
 
 **Checklist:**
+
 - [ ] Deep-dive assessment of all 4 areas (not just refresh)
 - [ ] Review scoring weights with CISO (adjust if needed)
 - [ ] Update dashboard template if new requirements
@@ -1713,9 +1918,10 @@ Low
 - [ ] Executive presentation with annual trends
 - [ ] Planning for next year improvements
 
+
 ---
 
-## Automated Dashboard Generation
+# Automated Dashboard Generation
 
 **For organizations preferring automation over manual Excel:**
 
@@ -1726,23 +1932,28 @@ Python scripts can automate dashboard generation by:
 4. Creating trend analysis from historical data
 
 **Advantages:**
+
 - Consistent dashboard generation
 - Faster updates (monthly/quarterly)
 - Reduced manual errors
 - Repeatable process
 
+
 **Disadvantages:**
+
 - Initial development time
 - Maintenance required if source structure changes
 - Requires Python expertise
+
 
 Python automation code available as separate script: `generate_a816_5_compliance_dashboard.py`
 
 ---
 
-## Document Change Log
+# Document Change Log
 
 **Version 2.0 (22.01.2026):**
+
 - Added comprehensive Part I: User Guide (1,217 lines)
 - Enhanced with dashboard implementation workflow
 - Added compliance scoring framework with examples
@@ -1752,16 +1963,19 @@ Python automation code available as separate script: `generate_a816_5_compliance
 - Enhanced quality validation checklist
 - Added integration testing and maintenance procedures
 
+
 **Version 1.0 (Original):**
+
 - Technical specification only (353 lines)
 - Sheet structures and column definitions
 - Basic dashboard layout
 
+
 ---
 
-## Appendix: Quick Reference
+# Appendix: Quick Reference
 
-### Compliance Scoring Weights (Default)
+## Compliance Scoring Weights (Default)
 
 | Area | Weight | Rationale |
 |------|--------|-----------|
@@ -1774,7 +1988,7 @@ Python automation code available as separate script: `generate_a816_5_compliance
 
 ---
 
-### Compliance Status Thresholds
+## Compliance Status Thresholds
 
 | Score | Status | Action |
 |-------|--------|--------|
@@ -1786,7 +2000,7 @@ Python automation code available as separate script: `generate_a816_5_compliance
 
 ---
 
-### Update Frequency
+## Update Frequency
 
 | Update Type | Frequency | Effort | Tasks |
 |-------------|-----------|--------|-------|
@@ -1796,55 +2010,20 @@ Python automation code available as separate script: `generate_a816_5_compliance
 
 ---
 
-### Key Dashboard Sheets
+## Key Dashboard Sheets
 
 | Sheet | Purpose | Data Source |
 |-------|---------|-------------|
+| **Sheet 1** | Instructions & Legend | N/A |
 | **Sheet 2** | Executive Summary | Calculated from Sheets 3-6 |
-| **Sheet 3** | Infrastructure Metrics | A.8.16.1 |
-| **Sheet 4** | Baseline & Detection Metrics | A.8.16.2 |
-| **Sheet 5** | Coverage Metrics | A.8.16.3 |
-| **Sheet 6** | Alert Management Metrics | A.8.16.4 |
-| **Sheet 7** | Consolidated Gaps | All A.8.16.1-4 |
-| **Sheet 8** | Trend Analysis | Historical dashboards |
-| **Sheet 9** | Evidence Register | Source assessment files |
-| **Sheet 10** | Approval Sign-Off | Management approval |
+| **Sheet 3** | Compliance Matrix | A.8.16.1-4 |
+| **Sheet 4** | KPIs | A.8.16.1-4 |
+| **Sheet 5** | Gap Remediation Tracker | All A.8.16.1-4 |
+| **Sheet 6** | Trend Analysis | Historical dashboards |
+| **Sheet 7** | Evidence & Approvals | Source assessment files, Management approval |
 
 ---
 
-## END OF DOCUMENT
-
-**Total Length:** ~1,600 lines
-
-**Document Status:** COMPLETE - Ready for implementation
-
-**This completes the ISO 27001:2022 Control A.8.16 documentation suite.**
-
 ---
 
-## A.8.16 Documentation Suite - Complete
-
-**All 5 Documents Delivered:**
-
-1. ✅ **ISMS-IMP-A.8.16.1** - Monitoring Infrastructure Assessment (1,731 lines)
-2. ✅ **ISMS-IMP-A.8.16.2** - Baseline & Detection Assessment (2,307 lines)
-3. ✅ **ISMS-IMP-A.8.16.3** - Coverage Assessment (2,132 lines)
-4. ✅ **ISMS-IMP-A.8.16.4** - Alert Management & Response Assessment (2,417 lines)
-5. ✅ **ISMS-IMP-A.8.16.5** - Compliance Dashboard Specification (1,600 lines - this document)
-
-**Total Documentation:** 10,187 lines of comprehensive, audit-ready Control A.8.16 implementation guidance.
-
-**Coverage:**
-- Infrastructure inventory and capabilities
-- Baseline establishment and detection effectiveness
-- Monitoring coverage across assets, networks, identities, applications
-- Alert handling procedures and SLA tracking
-- Consolidated compliance dashboard with executive reporting
-
-**Ready for:**
-- ISO 27001:2022 certification audit
-- Ongoing compliance monitoring
-- Continuous improvement tracking
-- Executive and board reporting
-
----
+*Where bamboo antennas actually work.* 🎋

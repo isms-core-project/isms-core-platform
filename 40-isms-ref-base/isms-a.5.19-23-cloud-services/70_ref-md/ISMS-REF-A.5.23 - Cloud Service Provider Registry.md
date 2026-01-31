@@ -1,5 +1,5 @@
-# ISMS-REF-A.5.23 — Cloud Service Provider Reference Registry
-## Authoritative Reference for Third-Party Cloud & SaaS Provider Assessment
+**ISMS-REF-A.5.23 — Cloud Service Provider Reference Registry**
+**Authoritative Reference for Third-Party Cloud & SaaS Provider Assessment**
 
 ---
 
@@ -13,7 +13,7 @@
 
 ---
 
-## Document Control
+**Document Control**
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
@@ -22,32 +22,38 @@
 **Review Cycle**: Semi-Annual (or upon significant provider landscape changes)  
 **Next Review Date**: [Approval Date + 6 months]  
 **Approvers**: 
+
 - Chief Information Security Officer (CISO)
 - IT Operations Manager
 - Procurement/Vendor Management
+
+
 
 **Distribution**: ISMS stakeholders, system owners, procurement, vendor management  
 **Referenced By**: ISMS-POL-A.5.19 through A.5.23, ISMS-POL-A.8.10, supplier assessments
 
 ---
 
-## 1. Purpose
+**Purpose**
 
 This document provides the **authoritative reference registry** of cloud service providers and SaaS platforms commonly encountered in organizational IT environments.
 
 **Usage:**
+
 - Pre-populate assessment workbooks (A.5.23, A.8.10, etc.)
 - Standardize provider categorization across ISMS
 - Enable consistent vendor risk assessment
 - Support data deletion and retention compliance (A.8.10)
 
+
+
 **Key Principle:** This registry is **vendor-neutral for policy purposes** — it catalogs providers for assessment, not endorsement. Organizations document THEIR specific usage and configurations.
 
 ---
 
-## 2. Provider Classification Framework
+# Provider Classification Framework
 
-### 2.1 Service Model Categories
+**Service Model Categories**
 
 | Code | Model | Description |
 |------|-------|-------------|
@@ -60,7 +66,7 @@ This document provides the **authoritative reference registry** of cloud service
 | **IDaaS** | Identity as a Service | Identity and access management |
 | **CDN** | Content Delivery Network | Edge caching and delivery |
 
-### 2.2 Assessment Priority Tiers
+## Assessment Priority Tiers
 
 | Tier | Priority | Criteria | Assessment Frequency |
 |------|----------|----------|---------------------|
@@ -75,7 +81,7 @@ This document provides the **authoritative reference registry** of cloud service
 | **Tier 9** | High | HR & Finance (PII-heavy) | Semi-Annual |
 | **Tier 10** | Regional | Swiss/EU regional providers | Semi-Annual |
 
-### 2.3 Data Sensitivity Indicators
+## Data Sensitivity Indicators
 
 | Indicator | Description | Deletion Priority |
 |-----------|-------------|-------------------|
@@ -87,9 +93,9 @@ This document provides the **authoritative reference registry** of cloud service
 
 ---
 
-## 3. Provider Registry
+# Provider Registry
 
-### 3.1 Tier 1: Hyperscalers (Critical)
+## Tier 1: Hyperscalers (Critical)
 
 Core cloud infrastructure providers with global presence.
 
@@ -102,14 +108,17 @@ Core cloud infrastructure providers with global presence.
 | **Google Workspace** | SaaS | USA (EU regions) | Gmail, Drive, Docs, Meet | 🔴🟡 | A.5.23, A.8.10 |
 
 **Assessment Notes:**
+
 - All Tier 1 providers offer EU data residency options
 - Require Data Processing Agreements (DPA) with SCCs
 - Deletion capabilities well-documented but verify retention in backups
 - Cryptographic erasure typically available
 
+
+
 ---
 
-### 3.2 Tier 2: Major Enterprise Providers (Critical)
+## Tier 2: Major Enterprise Providers (Critical)
 
 Enterprise-grade platforms for business operations.
 
@@ -122,13 +131,16 @@ Enterprise-grade platforms for business operations.
 | **ServiceNow** | SaaS | USA (EU regions) | ITSM, Workflows, CMDB | 🟡 | A.5.23, A.8.10 |
 
 **Assessment Notes:**
+
 - SAP headquartered in EU (Germany) — favorable for GDPR
 - Oracle and Salesforce require careful DPA review
 - ServiceNow CMDB may contain infrastructure secrets
 
+
+
 ---
 
-### 3.3 Tier 3: Infrastructure & Security Providers (High)
+## Tier 3: Infrastructure & Security Providers (High)
 
 CDN, edge security, and alternative IaaS providers.
 
@@ -144,13 +156,16 @@ CDN, edge security, and alternative IaaS providers.
 | **Vultr** | IaaS | USA | VMs, Storage, Kubernetes | 🟡 | A.5.23, A.8.10 |
 
 **Assessment Notes:**
+
 - OVHcloud and Hetzner are EU-headquartered (GDPR-favorable)
 - CDN providers cache data at edge — deletion propagation important
 - Cloudflare R2 is S3-compatible — verify deletion mechanisms
 
+
+
 ---
 
-### 3.4 Tier 4: Backup & Storage Specialists (High)
+## Tier 4: Backup & Storage Specialists (High)
 
 Dedicated backup, archive, and object storage providers.
 
@@ -166,14 +181,17 @@ Dedicated backup, archive, and object storage providers.
 | **Box** | SaaS | USA | Content Management | 🔴🟡 | A.5.23, A.8.10 |
 
 **Assessment Notes:**
+
 - Backup providers are CRITICAL for A.8.10 — data persists in backups after primary deletion
 - Verify backup retention periods align with deletion requirements
 - Immutable backup features may conflict with deletion obligations
 - Veeam has Swiss presence (favorable for Swiss organizations)
 
+
+
 ---
 
-### 3.5 Tier 5: Communication & Collaboration (High)
+## Tier 5: Communication & Collaboration (High)
 
 Messaging, video conferencing, and team collaboration platforms.
 
@@ -188,14 +206,17 @@ Messaging, video conferencing, and team collaboration platforms.
 | **Monday.com** | SaaS | Israel | Projects, Workflows | 🟡 | A.5.23, A.8.10 |
 
 **Assessment Notes:**
+
 - Collaboration platforms accumulate significant PII over time
 - Meeting recordings require explicit deletion policies
 - Slack/Teams message retention often conflicts with deletion requirements
 - Atlassian headquartered in Australia — verify data residency
 
+
+
 ---
 
-### 3.6 Tier 6: DevOps & Development Platforms (Medium)
+## Tier 6: DevOps & Development Platforms (Medium)
 
 Source code, CI/CD, and container platforms.
 
@@ -209,14 +230,17 @@ Source code, CI/CD, and container platforms.
 | **Terraform Cloud** | SaaS | USA (HashiCorp) | State Files, Workspaces | 🟡🔴 | A.5.23, A.8.10 |
 
 **Assessment Notes:**
+
 - Source code repositories may contain secrets (API keys, credentials)
 - Terraform state files often contain sensitive infrastructure details
 - Container images may embed secrets — deletion must cover all layers
 - GitLab has EU entity (Netherlands) — verify data processing location
 
+
+
 ---
 
-### 3.7 Tier 7: Database & Analytics (Medium)
+## Tier 7: Database & Analytics (Medium)
 
 Managed database and data analytics platforms.
 
@@ -231,14 +255,17 @@ Managed database and data analytics platforms.
 | **Supabase** | DBaaS | USA | PostgreSQL, Storage | 🔴🟡 | A.5.23, A.8.10 |
 
 **Assessment Notes:**
+
 - Data warehouses (Snowflake, Databricks) often aggregate PII from multiple sources
 - Elasticsearch indices used for logging may contain PII — verify retention
 - Database backups and point-in-time recovery complicate deletion
 - Elastic has EU presence (Netherlands)
 
+
+
 ---
 
-### 3.8 Tier 8: Security & Identity (High - Sensitive)
+## Tier 8: Security & Identity (High - Sensitive)
 
 Security operations and identity management platforms.
 
@@ -253,14 +280,17 @@ Security operations and identity management platforms.
 | **New Relic** | SaaS | USA | APM, Logs, Monitoring | 🟡 | A.5.23, A.8.10 |
 
 **Assessment Notes:**
+
 - Identity providers (Okta, Auth0) store user PII — critical for GDPR deletion
 - SIEM/log platforms aggregate data from entire infrastructure
 - EDR telemetry may contain sensitive endpoint data
 - Log retention policies must align with deletion requirements
 
+
+
 ---
 
-### 3.9 Tier 9: HR & Finance (High - PII Heavy)
+## Tier 9: HR & Finance (High - PII Heavy)
 
 Human resources and financial management platforms.
 
@@ -276,15 +306,18 @@ Human resources and financial management platforms.
 | **PayPal** | SaaS | USA | Payments | 🔴🟠 | A.5.23, A.8.10 |
 
 **Assessment Notes:**
+
 - HR systems contain extensive employee PII — GDPR deletion rights apply
 - Personio is EU-headquartered (Germany) — favorable for GDPR
 - Payment processors (Stripe, PayPal) have PCI DSS retention requirements
 - Financial systems have statutory retention requirements that may override deletion
 - Stripe has EU entity (Ireland)
 
+
+
 ---
 
-### 3.10 Tier 10: Swiss/EU Regional Providers (Regional)
+## Tier 10: Swiss/EU Regional Providers (Regional)
 
 Providers with Swiss or EU headquarters/data centers.
 
@@ -299,17 +332,20 @@ Providers with Swiss or EU headquarters/data centers.
 | **Scaleway** | IaaS | France | Cloud, Storage | 🟡 | A.5.23, A.8.10 |
 
 **Assessment Notes:**
+
 - Swiss providers (Exoscale, Infomaniak, Proton, Tresorit) subject to Swiss FADP
 - No US CLOUD Act exposure for Swiss-only providers
 - Proton and Tresorit use end-to-end encryption — verify deletion of encrypted data
 - German/French providers subject to EU GDPR (favorable)
 - STACKIT is Schwarz Group (Lidl/Kaufland) — enterprise-grade German cloud
 
+
+
 ---
 
-## 4. Registry Summary
+# Registry Summary
 
-### 4.1 Provider Count by Tier
+## Provider Count by Tier
 
 | Tier | Category | Count | Priority |
 |------|----------|-------|----------|
@@ -325,7 +361,7 @@ Providers with Swiss or EU headquarters/data centers.
 | 10 | Swiss/EU Regional | 7 | Regional |
 | **TOTAL** | | **68** | |
 
-### 4.2 Provider Count by Headquarters Region
+## Provider Count by Headquarters Region
 
 | Region | Count | Notes |
 |--------|-------|-------|
@@ -334,7 +370,7 @@ Providers with Swiss or EU headquarters/data centers.
 | Switzerland | 4 | FADP-native, no CLOUD Act |
 | Other (Israel, Australia, New Zealand) | 6 | Verify adequacy decisions |
 
-### 4.3 Provider Count by Data Sensitivity
+## Provider Count by Data Sensitivity
 
 | Sensitivity | Count | Deletion Priority |
 |-------------|-------|-------------------|
@@ -345,9 +381,9 @@ Providers with Swiss or EU headquarters/data centers.
 
 ---
 
-## 5. Assessment Integration
+# Assessment Integration
 
-### 5.1 Related ISMS Controls
+## Related ISMS Controls
 
 | Control | Integration Point |
 |---------|-------------------|
@@ -359,7 +395,7 @@ Providers with Swiss or EU headquarters/data centers.
 | **A.8.10** | Information Deletion |
 | **A.8.24** | Use of Cryptography |
 
-### 5.2 Excel Workbook Pre-Population
+## Excel Workbook Pre-Population
 
 This registry SHALL be used to pre-populate:
 
@@ -368,7 +404,7 @@ This registry SHALL be used to pre-populate:
 3. **Supplier Risk Register** — Vendor risk assessments
 4. **Data Processing Register** — GDPR Article 30 records
 
-### 5.3 Dropdown Configuration
+## Dropdown Configuration
 
 **Provider Name Dropdown** (68 entries + custom):
 ```
@@ -416,17 +452,20 @@ Custom
 
 ---
 
-## 6. Maintenance
+# Maintenance
 
-### 6.1 Update Triggers
+## Update Triggers
 
 This registry SHALL be updated when:
+
 - New cloud provider is adopted by the organization
 - Provider undergoes significant change (acquisition, policy change)
 - New regulatory requirements affect provider assessment
 - Semi-annual review cycle
 
-### 6.2 Change Log
+
+
+**Change Log**
 
 | Date | Change | Author |
 |------|--------|--------|
@@ -434,7 +473,7 @@ This registry SHALL be updated when:
 
 ---
 
-## Appendix A: Quick Reference Card
+# Appendix A: Quick Reference Card
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -478,3 +517,4 @@ This registry SHALL be updated when:
 ---
 
 **END OF DOCUMENT**
+*Where bamboo antennas actually work.* 🎋

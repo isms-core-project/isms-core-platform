@@ -1,0 +1,108 @@
+[
+  {
+    "file": "/Users/greg/Files/Factory/factory_claude_ai/10-ISMS-SCR-Base/ISMS-A.8.9-Configuration-Management/10_generator-master/ISMS-IMP-A.8.9.1_Baseline_Configuration_Assessment_20260130.xlsx",
+    "timestamp": "2026-01-30T20:24:32.576767",
+    "status": "PASS",
+    "summary": {
+      "total_formulas": 1215,
+      "errors": 0,
+      "warnings": 0,
+      "sheets_with_formulas": 8
+    },
+    "issues": [],
+    "formula_count_by_sheet": {
+      "Asset_Inventory": 300,
+      "Baseline_Repository": 50,
+      "Baseline_Coverage_Matrix": 439,
+      "Approval_Tracking": 100,
+      "Documentation_Assessment": 180,
+      "Version_Control": 50,
+      "Deviation_Register": 50,
+      "Metrics_Summary": 46
+    }
+  },
+  {
+    "file": "/Users/greg/Files/Factory/factory_claude_ai/10-ISMS-SCR-Base/ISMS-A.8.9-Configuration-Management/10_generator-master/ISMS-IMP-A.8.X.X_..._Assessment_20260130.xlsx",
+    "timestamp": "2026-01-30T20:24:33.762332",
+    "status": "PASS",
+    "summary": {
+      "total_formulas": 1216,
+      "errors": 0,
+      "warnings": 0,
+      "sheets_with_formulas": 8
+    },
+    "issues": [],
+    "formula_count_by_sheet": {
+      "Monitoring_Coverage_Register": 300,
+      "Drift_Detection_Log": 300,
+      "Monitoring_Tool_Inventory": 1,
+      "Drift_Remediation_Tracking": 450,
+      "False_Positive_Register": 75,
+      "Monitoring_Effectiveness_Metrics": 30,
+      "Coverage_Gap_Analysis": 40,
+      "Drift_Trend_Analysis": 20
+    }
+  },
+  {
+    "file": "/Users/greg/Files/Factory/factory_claude_ai/10-ISMS-SCR-Base/ISMS-A.8.9-Configuration-Management/10_generator-master/ISMS_A_8_9_4_Security_Hardening_Assessment_20260130.xlsx",
+    "timestamp": "2026-01-30T20:24:34.744748",
+    "status": "PASS",
+    "summary": {
+      "total_formulas": 5829,
+      "errors": 0,
+      "warnings": 0,
+      "sheets_with_formulas": 10
+    },
+    "issues": [],
+    "formula_count_by_sheet": {
+      "Hardening_Standard_Register": 30,
+      "Asset_Type_Hardening_Matrix": 202,
+      "Asset_Hardening_Assessment": 300,
+      "Control_Compliance_Detail": 2000,
+      "Exception_Management": 250,
+      "Remediation_Tracking": 500,
+      "Compliance_Dashboard": 41,
+      "Gap_Prioritization": 2200,
+      "Evidence_Register": 300,
+      "Approval_Sign_Off": 6
+    }
+  },
+  {
+    "file": "/Users/greg/Files/Factory/factory_claude_ai/10-ISMS-SCR-Base/ISMS-A.8.9-Configuration-Management/10_generator-master/ISMS_A_8_9_5_Compliance_Dashboard_20260130.xlsx",
+    "timestamp": "2026-01-30T20:24:37.841584",
+    "status": "FAIL",
+    "summary": {
+      "total_formulas": 2136,
+      "errors": 2,
+      "warnings": 0,
+      "sheets_with_formulas": 7
+    },
+    "issues": [
+      {
+        "type": "PARSE",
+        "severity": "ERROR",
+        "message": "Parse error: ('Not a valid formula:\\n%s', \"=('[ISMS-IMP-A.8.9.1.xlsx]Compliance_Dashboard'!B5*0.2+'[ISMS-IMP-A.8.",
+        "sheet": "Overall_Compliance_Dashboard",
+        "cell": "B6",
+        "formula": "=('[ISMS-IMP-A.8.9.1.xlsx]Compliance_Dashboard'!B5*0.2+'[ISMS-IMP-A.8.9.2.xlsx]Change_Summary'!B10*0"
+      },
+      {
+        "type": "PARSE",
+        "severity": "ERROR",
+        "message": "Parse error: Not a valid formula:\n%s",
+        "sheet": "Overall_Compliance_Dashboard",
+        "cell": "C15",
+        "formula": "==AVERAGE('[ISMS-IMP-A.8.9.1.xlsx]Compliance_Dashboard'!B5,'[ISMS-IMP-A.8.9.2.xlsx]Change_Summary'!B"
+      }
+    ],
+    "formula_count_by_sheet": {
+      "Workbook_Integration_Settings": 22,
+      "Overall_Compliance_Dashboard": 19,
+      "Asset_Compliance_Summary": 1200,
+      "Gap_Prioritization": 750,
+      "Trend_Analysis": 41,
+      "Evidence_Register": 100,
+      "Approval_Sign_Off": 4
+    }
+  }
+]

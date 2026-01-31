@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# =============================================================================
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-ISMS-Commercial
+# Copyright (c) 2025-2026 ISMS Core Contributors
+#
+# This file is part of ISMS Core.
+#
+# ISMS Core is dual-licensed:
+#   1. AGPL 3.0 (Open Source) - See LICENSE-AGPL.txt
+#   2. Commercial License - Contact vendor for proprietary use
+#
+# You may use this file under either license, at your option.
+# =============================================================================
 """
 ================================================================================
 ISMS-A.8.15 - Excel Workbook Sanity Checker
@@ -114,11 +126,11 @@ unprofessional and causing users to question data integrity.
 
 **Validation Scope:**
 Works with all A.8.15 assessment workbooks:
-- ISMS_A_8_15_1_Log_Source_Inventory_Assessment_YYYYMMDD.xlsx
-- ISMS_A_8_15_2_Log_Collection_Centralization_Assessment_YYYYMMDD.xlsx
-- ISMS_A_8_15_3_Log_Protection_Retention_Assessment_YYYYMMDD.xlsx
-- ISMS_A_8_15_4_Log_Analysis_Review_Assessment_YYYYMMDD.xlsx
-- ISMS_A_8_15_5_Logging_Compliance_Dashboard_YYYYMMDD.xlsx
+- ISMS-IMP-A.8.15.1_Log_Source_Inventory_Assessment_YYYYMMDD.xlsx
+- ISMS-IMP-A.8.15.2_Log_Collection_Centralization_Assessment_YYYYMMDD.xlsx
+- ISMS-IMP-A.8.15.3_Log_Protection_Retention_Assessment_YYYYMMDD.xlsx
+- ISMS-IMP-A.8.15.4_Log_Analysis_Review_Assessment_YYYYMMDD.xlsx
+- ISMS-IMP-A.8.15.5_Logging_Compliance_Dashboard_YYYYMMDD.xlsx
 
 **Output:**
 - Diagnostic report with issue categorization (Critical/Warning/Info)
@@ -176,23 +188,23 @@ USAGE
 
 Basic Usage:
     # Check single workbook
-    python3 excel_sanity_check_a815.py ISMS_A_8_15_1_Log_Source_Inventory_Assessment_20250124.xlsx
+    python3 excel_sanity_check_a815.py ISMS-IMP-A.8.15.1_Log_Source_Inventory_Assessment_20250124.xlsx
 
 Advanced Usage:
     # Check with verbose output
-    python3 excel_sanity_check_a815.py --verbose ISMS_A_8_15_1_*.xlsx
+    python3 excel_sanity_check_a815.py --verbose ISMS-IMP-A.8.15.1_*.xlsx
     
     # Check and generate remediation report
-    python3 excel_sanity_check_a815.py --report detailed ISMS_A_8_15_1_*.xlsx
+    python3 excel_sanity_check_a815.py --report detailed ISMS-IMP-A.8.15.1_*.xlsx
     
     # Check specific issue categories only
-    python3 excel_sanity_check_a815.py --check formulas,validation ISMS_A_8_15_1_*.xlsx
+    python3 excel_sanity_check_a815.py --check formulas,validation ISMS-IMP-A.8.15.1_*.xlsx
     
     # Check all A.8.15 workbooks in directory
-    python3 excel_sanity_check_a815.py ISMS_A_8_15_*.xlsx
+    python3 excel_sanity_check_a815.py ISMS-IMP-A.8.15_*.xlsx
     
     # Generate JSON report for CI/CD integration
-    python3 excel_sanity_check_a815.py --format json ISMS_A_8_15_1_*.xlsx
+    python3 excel_sanity_check_a815.py --format json ISMS-IMP-A.8.15.1_*.xlsx
 
 Command-Line Options:
     FILENAME               Path to Excel workbook to check (required)
@@ -224,7 +236,7 @@ Typical Workflow:
        python3 generate_a815_1_log_source_inventory.py
     
     2. Run sanity check:
-       python3 excel_sanity_check_a815.py ISMS_A_8_15_1_Log_Source_Inventory_Assessment_20250124.xlsx
+       python3 excel_sanity_check_a815.py ISMS-IMP-A.8.15.1_Log_Source_Inventory_Assessment_20250124.xlsx
     
     3. If issues found, review diagnostic report
     
@@ -413,16 +425,28 @@ XML specification (ECMA-376) or file Microsoft support ticket.
 ================================================================================
 """
 
-import sys
+# =============================================================================
+# Standard Library Imports
+# =============================================================================
+import logging
 import re
+import sys
+
+# =============================================================================
+# Third-Party Imports
+# =============================================================================
 from openpyxl import load_workbook
 from openpyxl.utils import get_column_letter
 
-
-# ============================================================================
-# WORKBOOK TYPE DETECTION
-# ============================================================================
-
+# =============================================================================
+# Logging Configuration
+# =============================================================================
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
 def detect_workbook_type(filename):
     """Detect which A.8.15 workbook type this is based on filename."""
     filename_lower = filename.lower()
@@ -958,3 +982,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+# =============================================================================
+# QA_VERIFIED: 2026-01-31
+# QA_STATUS: PASSED - STANDARDIZATION (syntax validated, structure verified)
+# QA_TOOL: Claude Code Standardization
+# =============================================================================

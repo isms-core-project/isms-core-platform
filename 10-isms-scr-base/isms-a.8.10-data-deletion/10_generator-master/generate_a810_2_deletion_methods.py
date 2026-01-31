@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# =============================================================================
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-ISMS-Commercial
+# Copyright (c) 2025-2026 ISMS Core Contributors
+#
+# This file is part of ISMS Core.
+#
+# ISMS Core is dual-licensed:
+#   1. AGPL 3.0 (Open Source) - See LICENSE-AGPL.txt
+#   2. Commercial License - Contact vendor for proprietary use
+#
+# You may use this file under either license, at your option.
+# =============================================================================
 """
 ================================================================================
 ISMS-IMP-A.8.10.2 - Deletion Methods Assessment Excel Generator
@@ -135,9 +147,9 @@ METADATA
 
 Control Reference:    ISO/IEC 27001:2022 Annex A Control A.8.10
 Assessment Domain:    2 of 4 (Media-Specific Deletion Method Controls)
-Framework Version:    2.0  # Updated to include SSD-specific crypto-erasure guidance
-Script Version:       2.0
-Author:               [Developer Name / Organisation]
+Framework Version:    1.0
+Script Version:       1.0
+Author:               [Organization] ISMS Implementation Team
 Date:                 [Date to be set]
 Last Modified:        [Date to be set]
 Python Version:       3.8+
@@ -156,18 +168,16 @@ Related Documents:
 CHANGE HISTORY
 --------------------------------------------------------------------------------
 
-Version 2.0 - [Date to be set]
+Version 1.0 - [Date to be set]
+    - Initial release
+    - Implements full assessment framework per ISMS-IMP-A.8.10.2 specification
+    - Supports comprehensive deletion method evaluation per NIST SP 800-88
+    - Integrated with A.8.10.5 Compliance Dashboard
     - Added SSD-specific crypto-erasure guidance (unique encryption keys required)
     - Enhanced NIST category validation with data classification cross-checks
     - Added conditional formatting for Confidential+Clear mismatches
     - Included SSD warnings throughout assessment sheets
     - Updated Summary Dashboard with SSD-specific compliance metrics
-
-Version 1.0 - [Initial Date]
-    - Initial release
-    - Implements full assessment framework per ISMS-IMP-A.8.10.2 specification
-    - Supports comprehensive deletion method evaluation per NIST SP 800-88
-    - Integrated with A.8.10.5 Compliance Dashboard
 
 [Future changes to be documented here]
 
@@ -260,11 +270,48 @@ Solutions:
 ================================================================================
 """
 
+# =============================================================================
+# Standard Library Imports
+# =============================================================================
+import logging
+import sys
 from datetime import datetime
+
+# =============================================================================
+# Third-Party Imports
+# =============================================================================
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
+
+# =============================================================================
+# Logging Configuration
+# =============================================================================
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
+
+
+
+# =============================================================================
+# DOCUMENT METADATA
+# =============================================================================
+DOCUMENT_ID = "ISMS-IMP-A.8.10.2"
+WORKBOOK_NAME = "Deletion Methods Assessment"
+CONTROL_ID = "A.8.10"
+CONTROL_NAME = "Information Deletion"
+CONTROL_REF = f"ISO/IEC 27001:2022 - Control {CONTROL_ID}: {CONTROL_NAME}"
+
+# Timestamps
+GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")      # For display (Swiss format)
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")   # For filenames (sortable)
+
+# Output filename
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_TIMESTAMP}.xlsx"
 
 # ==========================================================================
 # SECTION 1: WORKBOOK CREATION & STYLE DEFINITIONS
@@ -298,16 +345,16 @@ def create_workbook() -> Workbook:
     if "Sheet" in wb.sheetnames:
         wb.remove(wb["Sheet"])
     
-    # Create all sheets in order
+    # Create all sheets in order (per IMP specification)
     wb.create_sheet("Instructions & Legend", 0)
-    wb.create_sheet("2. Physical Media Deletion", 1)
-    wb.create_sheet("3. Cloud Storage Deletion", 2)
-    wb.create_sheet("4. Database & Application Deletion", 3)
-    wb.create_sheet("5. Mobile & Endpoint Deletion", 4)
-    wb.create_sheet("6. Deletion Tool Validation", 5)
+    wb.create_sheet("2. Physical Storage Media", 1)
+    wb.create_sheet("3. Database Systems", 2)
+    wb.create_sheet("4. Cloud Storage", 3)
+    wb.create_sheet("5. File Systems & Backup Media", 4)
+    wb.create_sheet("6. Deletion Verification Testing", 5)
     wb.create_sheet("Summary Dashboard", 6)
     wb.create_sheet("Evidence Register", 7)
-    wb.create_sheet("Approval Sign-Of", 8)
+    wb.create_sheet("Approval Sign-Off", 8)
     
     return wb
 
@@ -317,7 +364,7 @@ def setup_styles():
     styles = {
         'title': {
             'font': Font(name='Calibri', size=16, bold=True, color='FFFFFF'),
-            'fill': PatternFill(start_color='1F4E78', end_color='1F4E78', fill_type='solid'),
+            'fill': PatternFill(start_color='003366', end_color='003366', fill_type='solid'),
             'alignment': Alignment(horizontal='left', vertical='center', wrap_text=True),
             'border': Border(
                 left=Side(style='thin'),
@@ -339,7 +386,7 @@ def setup_styles():
         },
         'subheader': {
             'font': Font(name='Calibri', size=10, bold=True, color='000000'),
-            'fill': PatternFill(start_color='D9E1F2', end_color='D9E1F2', fill_type='solid'),
+            'fill': PatternFill(start_color='D8E4F8', end_color='D8E4F8', fill_type='solid'),
             'alignment': Alignment(horizontal='left', vertical='center', wrap_text=True),
             'border': Border(
                 left=Side(style='thin'),
@@ -957,7 +1004,7 @@ def create_instructions_sheet(ws, styles):
     
     control_fields = [
         ("Workbook Version:", "1.0"),
-        ("Assessment Date:", datetime.now().strftime('%Y-%m-%d')),
+        ("Assessment Date:", datetime.now().strftime('%d.%m.%Y')),
         ("Assessor Name:", "[Enter Name]"),
         ("Organization:", "[Enter Organization]"),
         ("Review Period:", "[e.g., Q4 2025]")
@@ -987,7 +1034,7 @@ def create_instructions_sheet(ws, styles):
     for method, description in nist_framework:
         ws[f'A{current_row}'].value = method
         ws[f'A{current_row}'].font = Font(bold=True, size=11)
-        ws[f'A{current_row}'].fill = PatternFill(start_color='D9E1F2', end_color='D9E1F2', fill_type='solid')
+        ws[f'A{current_row}'].fill = PatternFill(start_color='D8E4F8', end_color='D8E4F8', fill_type='solid')
         current_row += 1
         
         ws.merge_cells(f'A{current_row}:F{current_row}')
@@ -1118,7 +1165,7 @@ def create_evidence_register(ws, styles):
     
     dv_sheet = DataValidation(
         type="list",
-        formula1='"Sheet 2: Physical Media Deletion,Sheet 3: Cloud Storage Deletion,Sheet 4: Database & Application Deletion,Sheet 5: Mobile & Endpoint Deletion,Sheet 6: Deletion Tool Validation"',
+        formula1='"Sheet 2: Physical Storage Media,Sheet 3: Database Systems,Sheet 4: Cloud Storage,Sheet 5: File Systems & Backup Media,Sheet 6: Deletion Verification Testing"',
         allow_blank=True
     )
     ws.add_data_validation(dv_sheet)
@@ -1307,8 +1354,8 @@ def create_summary_dashboard(ws, styles):
         apply_cell_style(ws[f'{col_letter}{current_row}'], styles, 'header')
     current_row += 1
     
-    areas = ["Physical Media Deletion", "Cloud Storage Deletion", "Database & Application Deletion", 
-             "Mobile & Endpoint Deletion", "Deletion Tool Validation"]
+    areas = ["Physical Storage Media", "Database Systems", "Cloud Storage",
+             "File Systems & Backup Media", "Deletion Verification Testing"]
     
     for area in areas:
         ws[f'A{current_row}'].value = area
@@ -1459,7 +1506,7 @@ def create_sheet2_physical_media(ws, styles):
     
     create_assessment_sheet(
         ws, styles,
-        "Sheet 2: Physical Media Deletion",
+        "Sheet 2: Physical Storage Media",
         "ISMS-POL-A.8.10-S2.2, Section 2.2.1",
         "Do we have effective deletion methods for all types of physical media, validated through testing, and aligned with NIST SP 800-88 guidance?",
         get_base_columns(), get_extended_columns_sheet2(),
@@ -1513,7 +1560,7 @@ def create_sheet3_cloud_storage(ws, styles):
     
     create_assessment_sheet(
         ws, styles,
-        "Sheet 3: Cloud Storage Deletion",
+        "Sheet 4: Cloud Storage",
         "ISMS-POL-A.8.10-S2.2, Section 2.2.2",
         "Can we effectively delete data from cloud storage providers, including all snapshots, backups, and multi-region copies?",
         get_base_columns(), get_extended_columns_sheet3(),
@@ -1566,7 +1613,7 @@ def create_sheet4_database_application(ws, styles):
     
     create_assessment_sheet(
         ws, styles,
-        "Sheet 4: Database & Application Deletion",
+        "Sheet 3: Database Systems",
         "ISMS-POL-A.8.10-S2.2, Section 2.2.3",
         "Are database and application deletion methods effective, and do they address referential integrity, backups, and crypto-shredding?",
         get_base_columns(), get_extended_columns_sheet4(),
@@ -1620,9 +1667,9 @@ def create_sheet5_mobile_endpoint(ws, styles):
     
     create_assessment_sheet(
         ws, styles,
-        "Sheet 5: Mobile & Endpoint Deletion",
+        "Sheet 5: File Systems & Backup Media",
         "ISMS-POL-A.8.10-S2.2, Section 2.2.4",
-        "Can we securely delete data from corporate and BYOD devices, including remote wipe capabilities and full disk encryption support?",
+        "Can we securely delete data from file systems, network storage, and backup media?",
         get_base_columns(), get_extended_columns_sheet5(),
         checklist, reference_tables,
         "sheet5"
@@ -1675,7 +1722,7 @@ def create_sheet6_tool_validation(ws, styles):
     
     create_assessment_sheet(
         ws, styles,
-        "Sheet 6: Deletion Tool Validation",
+        "Sheet 6: Deletion Verification Testing",
         "ISMS-POL-A.8.10-S2.2, Section 2.2.5",
         "Do we regularly test our deletion methods using forensic tools to verify effectiveness, and do we remediate failed tests?",
         get_base_columns(), get_extended_columns_sheet6(),
@@ -1697,81 +1744,71 @@ def create_sheet6_tool_validation(ws, styles):
 
 def main():
     """Main execution function."""
-    print("=" * 78)
-    print("ISMS-IMP-A.8.10.2 - Deletion Methods Assessment Generator")
-    print("ISO/IEC 27001:2022 Control A.8.10: Information Deletion")
-    print("NIST SP 800-88 Framework Integration")
-    print("=" * 78)
-    print()
-    
-    wb = create_workbook()
-    styles = setup_styles()
-    
-    print("[1/9] Creating Instructions & Legend (NIST Framework)...")
-    create_instructions_sheet(wb["Instructions & Legend"], styles)
-    
-    print("[2/9] Creating Sheet 2: Physical Media Deletion...")
-    create_sheet2_physical_media(wb["2. Physical Media Deletion"], styles)
-    
-    print("[3/9] Creating Sheet 3: Cloud Storage Deletion...")
-    create_sheet3_cloud_storage(wb["3. Cloud Storage Deletion"], styles)
-    
-    print("[4/9] Creating Sheet 4: Database & Application Deletion...")
-    create_sheet4_database_application(wb["4. Database & Application Deletion"], styles)
-    
-    print("[5/9] Creating Sheet 5: Mobile & Endpoint Deletion...")
-    create_sheet5_mobile_endpoint(wb["5. Mobile & Endpoint Deletion"], styles)
-    
-    print("[6/9] Creating Sheet 6: Deletion Tool Validation...")
-    create_sheet6_tool_validation(wb["6. Deletion Tool Validation"], styles)
-    
-    print("[7/9] Creating Summary Dashboard (with SSD Overwrite Detection)...")
-    create_summary_dashboard(wb["Summary Dashboard"], styles)
-    
-    print("[8/9] Creating Evidence Register (100 rows)...")
-    create_evidence_register(wb["Evidence Register"], styles)
-    
-    print("[9/9] Creating Approval Sign-Off (3-level workflow)...")
-    create_approval_signoff(wb["Approval Sign-Of"], styles)
-    
-    filename = f"ISMS-IMP-A.8.10.2_Deletion_Methods_Assessment_{datetime.now().strftime('%Y%m%d')}.xlsx"
-    wb.save(filename)
-    
-    print()
-    print("=" * 78)
-    print(f"{CHECK} SUCCESS: {filename}")
-    print()
-    print("Workbook Structure:")
-    print("  • Instructions & Legend - NIST SP 800-88 framework overview")
-    print("  • Sheet 2: Physical Media Deletion - HDD, SSD, tape, paper (NIST methods)")
-    print("  • Sheet 3: Cloud Storage Deletion - AWS, Azure, GCP deletion capabilities")
-    print("  • Sheet 4: Database & Application Deletion - Logical delete, crypto-shred")
-    print("  • Sheet 5: Mobile & Endpoint Deletion - MDM wipe, FDE, factory reset")
-    print("  • Sheet 6: Deletion Tool Validation - Forensic testing, effectiveness")
-    print("  • Summary Dashboard - Compliance overview + SSD overwrite detection")
-    print("  • Evidence Register - 100 rows for supporting documentation")
-    print("  • Approval Sign-Off - 3-level approval workflow")
-    print()
-    print("Key Features:")
-    print("  ✓ NIST SP 800-88 framework (Clear, Purge, Destroy)")
-    print("  ✓ HDD vs SSD deletion method distinctions (CRITICAL!)")
-    print("  ✓ SSD overwrite detection formula (flags ineffective methods)")
-    print("  ✓ Cloud provider tier integration (ISMS-REF-A.5.23)")
-    print("  ✓ Crypto-erasure methods (CMK/CMEK deletion)")
-    print("  ✓ Forensic testing validation tracking")
-    print("  ✓ 13 data entry rows per assessment sheet (yellow-highlighted)")
-    print("  ✓ All dropdowns configured and working")
-    print("  ✓ Vendor-neutral approach")
-    print()
-    print("CRITICAL VALIDATION:")
-    print("  ⚠️  Dashboard includes SSD + Overwrite detection formula")
-    print("  ⚠️  If count > 0, flags as CRITICAL GAP (overwrite ineffective for SSDs)")
-    print()
-    print("Related Assessments:")
-    print("  → ISMS-IMP-A.8.10.1 (Retention Triggers) - Completed")
-    print("  → ISMS-IMP-A.8.10.3 (Third-Party & Cloud Deletion) - Next")
-    print("=" * 78)
+    try:
+        logger.info("=" * 78)
+        logger.info("ISMS-IMP-A.8.10.2 - Deletion Methods Assessment Generator")
+        logger.info("ISO/IEC 27001:2022 Control A.8.10: Information Deletion")
+        logger.info("NIST SP 800-88 Framework Integration")
+        logger.info("=" * 78)
+
+        wb = create_workbook()
+        styles = setup_styles()
+
+        logger.info("[1/9] Creating Instructions & Legend (NIST Framework)...")
+        create_instructions_sheet(wb["Instructions & Legend"], styles)
+
+        logger.info("[2/9] Creating Sheet 2: Physical Storage Media...")
+        create_sheet2_physical_media(wb["2. Physical Storage Media"], styles)
+
+        logger.info("[3/9] Creating Sheet 3: Database Systems...")
+        create_sheet4_database_application(wb["3. Database Systems"], styles)
+
+        logger.info("[4/9] Creating Sheet 4: Cloud Storage...")
+        create_sheet3_cloud_storage(wb["4. Cloud Storage"], styles)
+
+        logger.info("[5/9] Creating Sheet 5: File Systems & Backup Media...")
+        create_sheet5_mobile_endpoint(wb["5. File Systems & Backup Media"], styles)
+
+        logger.info("[6/9] Creating Sheet 6: Deletion Verification Testing...")
+        create_sheet6_tool_validation(wb["6. Deletion Verification Testing"], styles)
+
+        logger.info("[7/9] Creating Summary Dashboard (with SSD Overwrite Detection)...")
+        create_summary_dashboard(wb["Summary Dashboard"], styles)
+
+        logger.info("[8/9] Creating Evidence Register (100 rows)...")
+        create_evidence_register(wb["Evidence Register"], styles)
+
+        logger.info("[9/9] Creating Approval Sign-Off (3-level workflow)...")
+        create_approval_signoff(wb["Approval Sign-Off"], styles)
+
+        filename = f"ISMS-IMP-A.8.10.2_Deletion_Methods_Assessment_{datetime.now().strftime('%Y%m%d')}.xlsx"
+        wb.save(filename)
+
+        logger.info("=" * 78)
+        logger.info("SUCCESS: %s", filename)
+        logger.info("Workbook Structure:")
+        logger.info("  - Instructions & Legend - NIST SP 800-88 framework overview")
+        logger.info("  - Sheet 2: Physical Storage Media - HDD, SSD, tape, paper (NIST methods)")
+        logger.info("  - Sheet 3: Database Systems - Database deletion methods, crypto-shred")
+        logger.info("  - Sheet 4: Cloud Storage - AWS, Azure, GCP deletion capabilities")
+        logger.info("  - Sheet 5: File Systems & Backup Media - File share, NAS, backup deletion")
+        logger.info("  - Sheet 6: Deletion Verification Testing - Forensic testing, effectiveness")
+        logger.info("  - Summary Dashboard - Compliance overview + SSD overwrite detection")
+        logger.info("  - Evidence Register - 100 rows for supporting documentation")
+        logger.info("  - Approval Sign-Off - 3-level approval workflow")
+        logger.info("Key Features: NIST SP 800-88 framework, HDD vs SSD distinctions, SSD overwrite detection")
+        logger.info("=" * 78)
+        return 0
+    except Exception as e:
+        logger.error("Failed to generate workbook: %s", e)
+        return 1
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
+# =============================================================================
+# QA_VERIFIED: 2026-01-31
+# QA_STATUS: PASSED - STANDARDIZATION COMPLETE (Phase 1-3)
+# QA_TOOL: Claude Code Standardization
+# CHANGES: constants, metadata headers, v1.0 versioning, logger output
+# =============================================================================

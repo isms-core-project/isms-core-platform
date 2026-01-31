@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# =============================================================================
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-ISMS-Commercial
+# Copyright (c) 2025-2026 ISMS Core Contributors
+#
+# This file is part of ISMS Core.
+#
+# ISMS Core is dual-licensed:
+#   1. AGPL 3.0 (Open Source) - See LICENSE-AGPL.txt
+#   2. Commercial License - Contact vendor for proprietary use
+#
+# You may use this file under either license, at your option.
+# =============================================================================
 """
 ================================================================================
 ISMS-IMP-A.8.23.5 - Compliance Summary Dashboard Excel Generator
@@ -185,7 +197,7 @@ Control Reference:    ISO/IEC 27001:2022 Annex A Control A.8.23
 Assessment Domain:    5 (Consolidation & Executive Oversight)
 Framework Version:    1.0
 Script Version:       1.0
-Author:               [Developer Name / Organisation]
+Author:               [Organization] ISMS Implementation Team
 Date:                 [Date to be set]
 Last Modified:        [Date to be set]
 Python Version:       3.8+
@@ -316,7 +328,41 @@ This dashboard helps you avoid fooling yourself about compliance status.
 ================================================================================
 """
 
+# =============================================================================
+# Standard Library Imports
+# =============================================================================
+import logging
+import sys
+
+# =============================================================================
+# Logging Configuration
+# =============================================================================
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
+
+
 from datetime import datetime
+# =============================================================================
+# DOCUMENT METADATA
+# =============================================================================
+DOCUMENT_ID = "ISMS-IMP-A.8.23.5"
+WORKBOOK_NAME = "Compliance Summary Dashboard"
+CONTROL_ID = "A.8.23"
+CONTROL_NAME = "Web Filtering"
+CONTROL_REF = f"ISO/IEC 27001:2022 - Control {CONTROL_ID}: {CONTROL_NAME}"
+
+# Timestamps
+GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")      # For display (Swiss format)
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")   # For filenames (sortable)
+
+# Output filename
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_TIMESTAMP}.xlsx"
+
+
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
@@ -329,7 +375,6 @@ WARNING = "\u26A0"         # ⚠️
 CLIPBOARD = "\u1F4CB"      # 📋
 TRIANGLE = "\u25B8"        # ▸
 BULLET = "\u2022"          # •
-
 
 
 # ============================================================================
@@ -1782,94 +1827,94 @@ def create_approval_signoff(ws, styles):
 
 def main():
     """Main execution function - orchestrates workbook creation."""
-    print("=" * 80)
-    print("ISMS-IMP-A.8.23.5 - Compliance Summary Dashboard Generator")
-    print("ISO/IEC 27001:2022 Control A.8.23: Web Filtering")
-    print("=" * 80)
-    print("\n🎯 Systems Engineering Approach - Consolidated Oversight Dashboard")
-    print("   This dashboard pulls live data from 4 assessment workbooks\n")
+    logger.info("=" * 80)
+    logger.info("ISMS-IMP-A.8.23.5 - Compliance Summary Dashboard Generator")
+    logger.info("ISO/IEC 27001:2022 Control A.8.23: Web Filtering")
+    logger.info("=" * 80)
+    logger.info("\n🎯 Systems Engineering Approach - Consolidated Oversight Dashboard")
+    logger.info("   This dashboard pulls live data from 4 assessment workbooks\n")
 
     wb = create_workbook()
     styles = setup_styles()
 
-    print("\n[1/9] Creating Executive Dashboard sheet...")
+    logger.info("\n[1/9] Creating Executive Dashboard sheet...")
     create_executive_dashboard(wb["Executive Dashboard"], styles)
 
-    print("[2/9] Creating Gap Analysis sheet...")
+    logger.info("[2/9] Creating Gap Analysis sheet...")
     create_gap_analysis(wb["Gap Analysis"], styles)
 
-    print("[3/9] Creating Risk Register sheet...")
+    logger.info("[3/9] Creating Risk Register sheet...")
     create_risk_register(wb["Risk Register"], styles)
 
-    print("[4/9] Creating Remediation Roadmap sheet...")
+    logger.info("[4/9] Creating Remediation Roadmap sheet...")
     create_remediation_roadmap(wb["Remediation Roadmap"], styles)
 
-    print("[5/9] Creating KPIs & Metrics sheet...")
+    logger.info("[5/9] Creating KPIs & Metrics sheet...")
     create_kpis_metrics(wb["KPIs & Metrics"], styles)
 
-    print("[6/9] Creating Evidence Register sheet...")
+    logger.info("[6/9] Creating Evidence Register sheet...")
     create_evidence_register(wb["Evidence Register"], styles)
 
-    print("[7/9] Creating Action Items & Follow-up sheet...")
+    logger.info("[7/9] Creating Action Items & Follow-up sheet...")
     create_action_items(wb["Action Items & Follow-up"], styles)
 
-    print("[8/9] Creating Audit & Compliance Log sheet...")
+    logger.info("[8/9] Creating Audit & Compliance Log sheet...")
     create_audit_log(wb["Audit & Compliance Log"], styles)
 
-    print("[9/9] Creating Approval Sign-Off sheet...")
+    logger.info("[9/9] Creating Approval Sign-Off sheet...")
     create_approval_signoff(wb["Approval Sign-Off"], styles)
 
     filename = f"ISMS-IMP-A.8.23.5_Compliance_Summary_Dashboard_{datetime.now().strftime('%Y%m%d')}.xlsx"
     wb.save(filename)
 
-    print(f"\n\u2705 SUCCESS: {filename}")
-    print("\n" + "=" * 80)
-    print("COMPLIANCE SUMMARY DASHBOARD - COMPLETE")
-    print("=" * 80)
-    print("\nWorkbook Structure (9 Sheets):")
-    print("  1. Executive Dashboard - Overall compliance with external links to source workbooks")
-    print("  2. Gap Analysis - 200 gap entries consolidated from all 4 assessments")
-    print("  3. Risk Register - 100 risk entries with inherent/residual scoring")
-    print("  4. Remediation Roadmap - 200 remediation items with timeline tracking")
-    print("  5. KPIs & Metrics - 50+ KPIs across 6 categories")
-    print("  6. Evidence Register - 500 evidence entries with retention tracking")
-    print("  7. Action Items & Follow-up - 200 action items with status tracking")
-    print("  8. Audit & Compliance Log - 100 audit records")
-    print("  9. Approval Sign-Off - Multi-level approval workflow")
+    logger.info(f"\n\u2705 SUCCESS: {filename}")
+    logger.info("\n" + "=" * 80)
+    logger.info("COMPLIANCE SUMMARY DASHBOARD - COMPLETE")
+    logger.info("=" * 80)
+    logger.info("\nWorkbook Structure (9 Sheets):")
+    logger.info("  1. Executive Dashboard - Overall compliance with external links to source workbooks")
+    logger.info("  2. Gap Analysis - 200 gap entries consolidated from all 4 assessments")
+    logger.info("  3. Risk Register - 100 risk entries with inherent/residual scoring")
+    logger.info("  4. Remediation Roadmap - 200 remediation items with timeline tracking")
+    logger.info("  5. KPIs & Metrics - 50+ KPIs across 6 categories")
+    logger.info("  6. Evidence Register - 500 evidence entries with retention tracking")
+    logger.info("  7. Action Items & Follow-up - 200 action items with status tracking")
+    logger.info("  8. Audit & Compliance Log - 100 audit records")
+    logger.info("  9. Approval Sign-Off - Multi-level approval workflow")
     
-    print("\nExternal Links Configuration:")
-    print("  \u2022 Dashboard references 4 normalized source workbooks:")
-    print("    - ISMS-IMP-A.8.23.1.xlsx (Filtering Infrastructure)")
-    print("    - ISMS-IMP-A.8.23.2.xlsx (Network Coverage)")
-    print("    - ISMS-IMP-A.8.23.3.xlsx (Policy Configuration)")
-    print("    - ISMS-IMP-A.8.23.4.xlsx (Monitoring & Response)")
+    logger.info("\nExternal Links Configuration:")
+    logger.info("  \u2022 Dashboard references 4 normalized source workbooks:")
+    logger.info("    - ISMS-IMP-A.8.23.1.xlsx (Filtering Infrastructure)")
+    logger.info("    - ISMS-IMP-A.8.23.2.xlsx (Network Coverage)")
+    logger.info("    - ISMS-IMP-A.8.23.3.xlsx (Policy Configuration)")
+    logger.info("    - ISMS-IMP-A.8.23.4.xlsx (Monitoring & Response)")
     
-    print("\nIMPORTANT SETUP STEPS:")
-    print("  1. Run normalization script FIRST:")
-    print("     python3 normalize_assessment_files_a823.py")
-    print()
-    print("  2. Place this dashboard in the Dashboard_Sources folder")
-    print("     alongside the 4 normalized source workbooks")
-    print()
-    print("  3. Open dashboard and click 'Update Links' when prompted")
-    print()
-    print("  4. Executive Dashboard will auto-populate with compliance data!")
-    print()
-    print("  5. Complete manual entry sections:")
-    print("     - Gap Analysis (consolidated gaps)")
-    print("     - Risk Register (identified risks)")
-    print("     - Remediation Roadmap (action plans)")
-    print("     - KPIs (current metric values)")
-    print("     - Evidence Register (supporting documentation)")
-    print()
-    print("=" * 80)
-    print("\n🎄 ALL 5 WEB FILTERING ASSESSMENT TOOLS COMPLETE! 🎄")
-    print("\nYou now have:")
-    print("  \u2705 4 Assessment workbooks (Infrastructure, Coverage, Policy, Monitoring)")
-    print("  \u2705 1 Normalization script (prepares files for dashboard)")
-    print("  \u2705 1 Consolidated dashboard (executive oversight)")
-    print("\n🎯 Evidence > Theater - This is Systems Engineering, not Cargo Cult!")
-    print("=" * 80 + "\n")
+    logger.info("\nIMPORTANT SETUP STEPS:")
+    logger.info("  1. Run normalization script FIRST:")
+    logger.info("     python3 normalize_assessment_files_a823.py")
+    logger.info("")
+    logger.info("  2. Place this dashboard in the Dashboard_Sources folder")
+    logger.info("     alongside the 4 normalized source workbooks")
+    logger.info("")
+    logger.info("  3. Open dashboard and click 'Update Links' when prompted")
+    logger.info("")
+    logger.info("  4. Executive Dashboard will auto-populate with compliance data!")
+    logger.info("")
+    logger.info("  5. Complete manual entry sections:")
+    logger.info("     - Gap Analysis (consolidated gaps)")
+    logger.info("     - Risk Register (identified risks)")
+    logger.info("     - Remediation Roadmap (action plans)")
+    logger.info("     - KPIs (current metric values)")
+    logger.info("     - Evidence Register (supporting documentation)")
+    logger.info("")
+    logger.info("=" * 80)
+    logger.info("\n🎄 ALL 5 WEB FILTERING ASSESSMENT TOOLS COMPLETE! 🎄")
+    logger.info("\nYou now have:")
+    logger.info("  \u2705 4 Assessment workbooks (Infrastructure, Coverage, Policy, Monitoring)")
+    logger.info("  \u2705 1 Normalization script (prepares files for dashboard)")
+    logger.info("  \u2705 1 Consolidated dashboard (executive oversight)")
+    logger.info("\n🎯 Evidence > Theater - This is Systems Engineering, not Cargo Cult!")
+    logger.info("=" * 80 + "\n")
 
 
 if __name__ == "__main__":
@@ -1879,3 +1924,10 @@ if __name__ == "__main__":
 # ============================================================================
 # END OF SCRIPT - COMPLETE COMPLIANCE SUMMARY DASHBOARD GENERATOR
 # ============================================================================
+
+# =============================================================================
+# QA_VERIFIED: 2026-01-31
+# QA_STATUS: PASSED - STANDARDIZATION COMPLETE (Phase 1-3)
+# QA_TOOL: Claude Code Standardization
+# CHANGES: constants, metadata headers, v1.0 versioning, logger output
+# =============================================================================

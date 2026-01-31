@@ -1,10 +1,10 @@
-# ISMS-IMP-A.8.1-7-18-19-S4 - Software Control Process
-## Assessment Specification with User Completion Guide
-### ISO/IEC 27001:2022 Controls A.8.1, A.8.7, A.8.18, A.8.19: Endpoint Security Framework
+**ISMS-IMP-A.8.1-7-18-19-S4 - Software Control Process**
+**Assessment Specification with User Completion Guide**
+### ISO/IEC 27001:2022 Control A.8.1: User Endpoint Devices
 
 ---
 
-## Document Control
+**Document Control**
 
 | Attribute | Value |
 |-----------|-------|
@@ -44,6 +44,7 @@ This document consists of two parts:
   - Cell Styling Reference
   - Appendix: Python Developer Notes
 
+
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -66,35 +67,46 @@ This assessment evaluates [Organization]'s software installation controls and ap
 - How is patch compliance tracked?
 - What gaps exist in software controls?
 
+
 #### Key Principle
 
 **Software control is PREVENTIVE, not detective-only:**
+
 - ❌ Detective: "We scan for unauthorized software and remove it"
 - ✅ Preventive: "Application controls prevent unauthorized installation, scanning validates"
+
 
 This assessment verifies both preventive controls (application whitelisting) and detective controls (software inventory scanning).
 
 #### What You'll Document
 
 **Approved Software:**
+
 - Master approved software list with categories
 - Version requirements and exceptions
 - Approval workflows and ownership
 
+
 **Installed Software:**
+
 - Per-endpoint software inventory
 - Unauthorized software detections
 - Software installation control status
 
+
 **Application Control:**
+
 - Application control technology deployed
 - Enforcement mode (audit vs. enforce)
 - Policy coverage and effectiveness
 
+
 **Patch Compliance:**
+
 - Software vulnerability status
 - Patch deployment timelines
 - Critical/high severity patch compliance
+
 
 #### How This Relates to Other Assessments
 
@@ -123,6 +135,7 @@ This assessment verifies both preventive controls (application whitelisting) and
 - **Monthly updates:** 3-4 hours (unauthorized software scanning)
 - **Quarterly updates:** 6-8 hours (full assessment with approval list review)
 
+
 ### Expected Outputs
 
 Upon completion, you will have:
@@ -144,40 +157,56 @@ Upon completion, you will have:
 ### Information You'll Need
 
 #### 1. Endpoint Inventory
+
 - **From S1:** Complete endpoint inventory
 - Required: Device name, OS type, ownership model, criticality
 
+
 #### 2. Software Inventory Tools Access
+
 - Access to software inventory systems (Intune, Jamf, SCCM, third-party tools)
 - Ability to export software inventory reports
 - Access to application control consoles (AppLocker, allowlisting solutions)
 
+
 #### 3. Documentation
+
 - Approved software list (if exists)
 - Software approval process/workflow
 - Application control policies
 - Change management procedures
 - Patch management procedures
 
+
 #### 4. Software Data
+
 - Software inventory exports (all endpoints)
 - Application control deployment status
 - Patch compliance reports
 - Software approval records (last 12 months)
 
+
 ### Tools You'll Use
 
 **Software Inventory:**
+
 - Microsoft Intune, Jamf Pro, SCCM, Kandji, or third-party inventory tools
 
+
 **Application Control:**
+
 - Windows AppLocker, macOS Gatekeeper, Linux SELinux/AppArmor, third-party allowlisting
 
+
 **Vulnerability Management:**
+
 - Qualys, Tenable, Rapid7, or endpoint protection with vulnerability scanning
 
+
 **Change Management:**
+
 - ServiceNow, Jira, or ticketing system with software approval workflow
+
 
 ### Access Requirements
 
@@ -186,6 +215,7 @@ Upon completion, you will have:
 - Read access to vulnerability management platforms
 - Read access to change management tickets
 - Access to evidence repositories
+
 
 ---
 
@@ -337,22 +367,26 @@ Upon completion, you will have:
 Document the master approved software list with categories, versions, and approval workflow.
 
 #### What to Document
+
 - Approved software list (mandatory, role-specific, optional)
 - Prohibited software list
 - Version requirements
 - Approval workflow and ownership
 - Software categories and business justification
 
+
 #### How to Complete
 
 **Step 1: Gather Existing Lists**
 
 Collect from multiple sources:
+
 - IT Operations (standard software list)
 - Security team (approved security tools)
 - Procurement (licensed software)
 - Department heads (role-specific software)
 - Previous assessments or audits
+
 
 **Step 2: Categorize Software**
 
@@ -399,22 +433,27 @@ PROHIBITED: Not allowed under any circumstances (P2P, unlicensed software, malwa
 ```
 
 **Approval Authorities:**
+
 - Mandatory software: CIO or CISO approval
 - Role-specific software: Department head + security review
 - Optional software: Manager + security review
 - Prohibited software: Cannot be approved (exception requires CISO + legal)
 
+
 **Step 5: Define Version Requirements**
 
 **Version Strategies:**
+
 - **Latest Only:** Security-critical software (browsers, security tools)
 - **Latest or N-1:** Standard applications (Office, Adobe)
 - **Specific Version:** Legacy systems, vendor-locked integrations
 - **Any Supported:** Software with long support lifecycles
 
+
 **Step 6: Document Prohibited Software**
 
 **Common Prohibited Categories:**
+
 - Peer-to-peer file sharing (BitTorrent, etc.)
 - Remote access tools not approved (TeamViewer without approval)
 - Personal cloud storage (Dropbox without approval - shadow IT)
@@ -422,6 +461,7 @@ PROHIBITED: Not allowed under any circumstances (P2P, unlicensed software, malwa
 - Known malicious software
 - Cryptocurrency miners
 - Hacking/penetration tools (without authorized use)
+
 
 #### Common Mistakes to Avoid
 
@@ -445,6 +485,7 @@ PROHIBITED: Not allowed under any circumstances (P2P, unlicensed software, malwa
 - [ ] Security review dates current (≤12 months)
 - [ ] Role-specific software mapped to roles
 
+
 ---
 
 ### Sheet 2: Installed_Software
@@ -455,28 +496,34 @@ Document actual software installed across all endpoints to enable comparison aga
 #### What to Document
 
 For the organization as a whole:
+
 - Complete software inventory across all endpoints
 - Software prevalence (how many endpoints have each software)
 - Version distribution
 - Installation source/method
+
 
 #### How to Complete
 
 **Step 1: Export Software Inventory**
 
 From software inventory tools:
+
 - Microsoft Intune: Discovered Apps report
 - Jamf Pro: Computer Inventory > Applications
 - SCCM: Asset Intelligence or software inventory
 - Third-party tools: Software inventory export
 
+
 **Export should include:**
+
 - Endpoint name
 - Software name
 - Software version
 - Publisher/vendor
 - Installation date
 - Installation path
+
 
 **Step 2: Normalize Software Names**
 
@@ -499,40 +546,48 @@ From software inventory tools:
 **Step 3: Aggregate Software Inventory**
 
 **Create software summary:**
+
 - Unique software list (deduplicated, normalized)
 - Endpoint count per software (how many endpoints have it)
 - Version distribution per software
 - Most common version
+
 
 **Example:**
 ```
 Software: Google Chrome
 Endpoints with this software: 847
 Versions detected:
+
   - 120.0.6099.109: 623 endpoints (73.6%)
   - 119.0.6045.199: 198 endpoints (23.4%)
   - 118.0.5993.117: 26 endpoints (3.0%)
+
 Most common version: 120.0.6099.109
 ```
 
 **Step 4: Document Installation Methods**
 
 How was software installed?
+
 - Centrally deployed (SCCM, Intune, Jamf)
 - User self-installed (download and install)
 - Pre-installed (OEM image)
 - Unknown
+
 
 **Why it matters:** Centrally deployed = controlled, user self-installed = may be unauthorized
 
 **Step 5: Flag High-Risk Software**
 
 Automatically flag:
+
 - Software with known vulnerabilities (check CVE databases)
 - Software past end-of-life (EOL)
 - Very old versions (>2 years outdated)
 - Common shadow IT (Dropbox, TeamViewer, personal VPNs)
 - Developer tools on non-dev endpoints
+
 
 #### Common Mistakes to Avoid
 
@@ -555,6 +610,7 @@ Automatically flag:
 - [ ] BYOD handled appropriately (privacy-respecting)
 - [ ] No missing endpoints from S1 inventory
 
+
 ---
 
 ### Sheet 3: Unauthorized_Software
@@ -565,10 +621,12 @@ Identify software installed on endpoints that is not on the approved list.
 #### What to Document
 
 For each unauthorized software:
+
 - Software name and version
 - Endpoints where detected
 - Risk assessment
 - Approval path or removal plan
+
 
 #### How to Complete
 
@@ -586,12 +644,14 @@ For each software in Sheet 2 (Installed_Software):
 **Step 2: Categorize Unauthorized Software**
 
 **Categories:**
+
 - **Unapproved but likely safe:** Common productivity tools, not yet reviewed
 - **Shadow IT:** Cloud services, collaboration tools bypassing IT
 - **High-risk:** Remote access, P2P, potentially malicious
 - **Obsolete/EOL:** Old software past end-of-life
 - **Unlicensed:** Commercial software without valid licenses
 - **Development tools:** On non-developer endpoints
+
 
 **Step 3: Assess Risk Per Software**
 
@@ -618,30 +678,38 @@ LOW: Common tools, low security impact, awaiting approval
 **For Each Unauthorized Software:**
 
 **Option 1: Approve**
+
 - Software is safe and useful
 - Submit for approval workflow
 - Add to approved list (Sheet 1)
 - Document retroactive approval
 
+
 **Option 2: Remove**
+
 - Software is risky or unnecessary
 - Create removal plan
 - Notify affected users
 - Execute removal
 - Verify removal
 
+
 **Option 3: Exception**
+
 - Software needed for specific use case
 - Cannot be approved broadly
 - Grant time-limited exception
 - Document compensating controls
 - Periodic re-evaluation
 
+
 **Option 4: Migrate**
+
 - Functionality exists in approved alternative
 - User training on approved alternative
 - Remove unauthorized software
 - Monitor for reinstallation
+
 
 **Step 5: Document Per Unauthorized Software**
 
@@ -695,6 +763,7 @@ Unauthorized Software by Category: Shadow IT, EOL, etc.
 - [ ] Target dates realistic
 - [ ] No blanket decisions without analysis
 
+
 ---
 
 ### Sheet 4: Application_Control
@@ -705,10 +774,12 @@ Assess application control technology deployment and effectiveness.
 #### What to Document
 
 For each endpoint:
+
 - Application control technology deployed
 - Enforcement mode (audit vs. enforce)
 - Policy coverage
 - Effectiveness testing results
+
 
 #### How to Complete
 
@@ -717,25 +788,33 @@ For each endpoint:
 **By Operating System:**
 
 **Windows:**
+
 - AppLocker (built-in)
 - Windows Defender Application Control (WDAC)
 - Third-party allowlisting (Carbon Black, Bit9, etc.)
 
+
 **macOS:**
+
 - Gatekeeper (built-in)
 - XProtect (built-in)
 - MDM application restrictions
 - Third-party allowlisting
 
+
 **Linux:**
+
 - SELinux (Security-Enhanced Linux)
 - AppArmor
 - Third-party allowlisting
 
+
 **Mobile (iOS/Android):**
+
 - MDM application restrictions
 - Enterprise app catalogs
 - App store restrictions
+
 
 **Step 2: Document Per-Endpoint Status**
 
@@ -756,16 +835,20 @@ For each endpoint:
 **Step 3: Understand Enforcement Modes**
 
 **Audit Mode:**
+
 - Logs violations but doesn't block
 - Good for testing before enforcement
 - Provides visibility without business disruption
 - **NOT compliant** for production
 
+
 **Enforce Mode:**
+
 - Blocks unauthorized software
 - User cannot bypass (without admin)
 - May cause legitimate application failures
 - **Required** for compliance
+
 
 **Step 4: Test Effectiveness**
 
@@ -773,25 +856,32 @@ For each endpoint:
 ```
 1. Select sample endpoints (5-10 per OS type)
 2. Attempt to install unauthorized software
+
    - Use standard user account (not admin)
    - Try common software not on allowlist
+
 3. Document results:
+
    - Blocked successfully? ✅
    - User received clear error message? ✅
    - Event logged? ✅
    - Installed despite controls? ❌ (FAIL)
+
 ```
 
 **Common Test Software:**
+
 - Firefox (if not approved, Chrome is)
 - 7-Zip
 - VLC Media Player
 - Unauthorized browser extensions
 - PowerShell scripts (if script control enabled)
 
+
 **Step 5: Assess Policy Coverage**
 
 **What Should Be Controlled:**
+
 - ✅ Executables (.exe, .com)
 - ✅ Scripts (.ps1, .vbs, .bat, .sh)
 - ✅ Installers (.msi, .dmg, .pkg)
@@ -799,26 +889,33 @@ For each endpoint:
 - ✅ Browser extensions
 - ✅ Mobile apps (on mobile devices)
 
+
 **Common Coverage Gaps:**
+
 - ❌ Scripts not controlled (users run PowerShell)
 - ❌ Installers not controlled (users run .msi)
 - ❌ Browser extensions not controlled (Chrome extensions installed freely)
 - ❌ Portable apps not controlled (users run from USB)
 
+
 **Step 6: Document Exceptions**
 
 **Exception Categories:**
+
 - Developer endpoints (need to compile/test code)
 - Administrative workstations (need admin tools)
 - Specialized workstations (CAD, video editing, etc.)
 - Temporary exceptions (testing, troubleshooting)
 
+
 **For Each Exception:**
+
 - Justification
 - Compensating controls
 - Approval authority
 - Time limit (if temporary)
 - Re-evaluation date
+
 
 **Step 7: Calculate Metrics**
 
@@ -828,9 +925,11 @@ Enforcement Mode %: (Endpoints in Enforce / Endpoints with Controls) × 100
 Effectiveness Rate: (Tests Passed / Tests Conducted) × 100
 
 Targets:
+
 - Deployment: ≥95%
 - Enforcement: ≥90% (some audit mode acceptable for pilot)
 - Effectiveness: 100% (all tests should pass)
+
 ```
 
 #### Common Mistakes to Avoid
@@ -856,6 +955,7 @@ Targets:
 - [ ] Metrics calculated correctly
 - [ ] Gaps identified (audit mode, coverage gaps)
 
+
 ---
 
 ### Sheet 5: Patch_Compliance
@@ -866,26 +966,32 @@ Verify software is patched and up-to-date per policy requirements.
 #### What to Document
 
 For software inventory:
+
 - Software versions vs. latest available
 - Patch compliance status
 - Vulnerability status (CVEs)
 - Patch deployment timelines
+
 
 #### How to Complete
 
 **Step 1: Review Patch Requirements**
 
 From policy:
+
 - **Critical vulnerabilities:** Patch within 7 days
 - **High vulnerabilities:** Patch within 30 days
 - **Medium vulnerabilities:** Patch within 90 days
 - **Low vulnerabilities:** Patch within 180 days or next maintenance window
 
+
 **Step 2: Export Vulnerability Data**
 
 From vulnerability management tools:
+
 - Qualys, Tenable, Rapid7, or endpoint protection with vulnerability scanning
 - Export should include: Software name, version, CVE IDs, severity, age
+
 
 **Step 3: Map Software to Vulnerabilities**
 
@@ -921,14 +1027,17 @@ High Patch Compliance %: (High patched ≤30 days / Total High) × 100
 Overall Patch Compliance %: Weighted average
 
 Targets:
+
 - Critical: ≥95%
 - High: ≥90%
 - Medium: ≥80%
+
 ```
 
 **Step 6: Identify Patch Blockers**
 
 **Common Blockers:**
+
 - Application compatibility (patch breaks critical application)
 - Change freeze period (no changes during busy season)
 - Testing requirements (patch must be tested before deployment)
@@ -936,11 +1045,14 @@ Targets:
 - Resource constraints (no time to patch)
 - Legacy systems (cannot be patched, compensating controls needed)
 
+
 **For Each Blocker:**
+
 - Document specific issue
 - Identify compensating controls
 - Set realistic timeline
 - Get management approval if exceeding SLA
+
 
 **Step 7: Track Patch Deployment**
 
@@ -979,6 +1091,7 @@ Document where each software is in this workflow.
 - [ ] EOL software identified
 - [ ] Patch deployment automated (where possible)
 
+
 ---
 
 ### Sheet 6: Software_Control_Gaps
@@ -1005,6 +1118,7 @@ Consolidate all gaps in software controls with prioritized remediation plans.
 - From Sheet 4: Application control gaps
 - From Sheet 5: Patch compliance failures
 
+
 **Step 2: Create Gap Register**
 
 For EACH gap:
@@ -1030,26 +1144,34 @@ For EACH gap:
 **Step 3: Assess Risk Level**
 
 **Critical:**
+
 - No application control deployed
 - Critical vulnerabilities >30 days overdue
 - High-risk unauthorized software (malware, remote access)
 - EOL software with active exploits
 
+
 **High:**
+
 - Application control in audit mode only
 - High vulnerabilities >60 days overdue
 - Shadow IT with data access
 - No approved software list
 
+
 **Medium:**
+
 - Unauthorized software (low risk)
 - Medium vulnerabilities >120 days overdue
 - Application control gaps (scripts not controlled)
 
+
 **Low:**
+
 - Minor version mismatches
 - Low vulnerabilities >180 days overdue
 - Process documentation gaps
+
 
 **Step 4: Develop Remediation Plans**
 
@@ -1091,6 +1213,7 @@ Using risk/effort matrix similar to S3.
 - [ ] Resources identified
 - [ ] Priority assigned
 
+
 ---
 
 ### Sheet 7: Evidence_Register
@@ -1108,6 +1231,7 @@ Centralized evidence repository for audit.
 - Approval workflow records
 - Effectiveness test results
 
+
 #### How to Complete
 
 Similar to S3, Sheet 7. Document all evidence collected.
@@ -1120,6 +1244,7 @@ Similar to S3, Sheet 7. Document all evidence collected.
 - [ ] Audit ready
 - [ ] Sanitized
 
+
 ---
 
 ### Sheet 8: Software_Control_Dashboard
@@ -1130,12 +1255,14 @@ Executive summary dashboard with key metrics.
 #### What to Document
 
 **Summary Metrics:**
+
 - Approved software list completeness
 - Unauthorized software count
 - Application control deployment %
 - Application control enforcement %
 - Patch compliance %
 - Critical gaps
+
 
 #### How to Complete
 
@@ -1154,25 +1281,31 @@ Overall Status: Green/Yellow/Red
 **Thresholds:**
 
 **Green:**
+
 - Approved list exists and current
 - Unauthorized software ≤5% of total
 - Application control deployed ≥95%
 - Application control enforced ≥90%
 - Critical patch compliance ≥95%
 
+
 **Yellow:**
+
 - Approved list outdated (>12 months)
 - Unauthorized software 5-10%
 - Application control deployed 85-94%
 - Application control enforced 75-89%
 - Critical patch compliance 85-94%
 
+
 **Red:**
+
 - No approved list
 - Unauthorized software >10%
 - Application control <85%
 - Application control enforcement <75%
 - Critical patch compliance <85%
+
 
 #### Quality Checklist
 
@@ -1180,6 +1313,255 @@ Overall Status: Green/Yellow/Red
 - [ ] Thresholds applied
 - [ ] Executive summary clear
 - [ ] Recommended actions specific
+
+
+---
+
+### Sheet 9: Vulnerability_Management
+
+#### Purpose
+Track vulnerability status of deployed software and patch management effectiveness.
+
+#### What to Document
+
+**Software Vulnerabilities:**
+
+- Software name and version
+- CVE IDs associated with version
+- Severity (Critical/High/Medium/Low)
+- Patch available (Yes/No)
+- Patch deployed (Yes/No)
+- Days since patch release
+- Risk level
+
+**Patch Compliance:**
+
+- Total software instances requiring patches
+- Patched instances
+- Unpatched instances with justification
+- Patch deployment timeline
+- Known exploits in wild
+
+#### How to Complete
+
+**Step 1: Identify Vulnerable Software**
+
+From vulnerability scans (Nessus, Qualys):
+
+- Software name and version: [name]
+- CVE IDs: [list]
+- Severity: [Critical/High/Medium/Low]
+- Affected endpoint count: [count]
+
+**Step 2: Determine Patch Status**
+
+- Patch available? Yes/No
+- Patch version: [version]
+- Release date: [date]
+- Days since release: [number]
+
+**Step 3: Track Patch Deployment**
+
+- Approved for deployment: Yes/No
+- Deployment start date: [date]
+- Target completion: [date]
+- Deployed endpoint count: [count]
+- Remaining unpatched: [count]
+- Blocking issues: [if any]
+
+**Step 4: Assign Risk Rating**
+
+For unpatched vulnerabilities:
+
+- Risk level: Critical/High/Medium/Low
+- Known exploit? Yes/No
+- Business impact if exploited: [description]
+- Compensating controls: [if any]
+- Remediation target: [date]
+
+#### Common Mistakes to Avoid
+
+❌ Not tracking vulnerability age
+❌ Patches approved but not deployed
+❌ No prioritization of critical issues
+❌ Not investigating why patches blocked
+❌ EOL software with known vulnerabilities
+
+#### Quality Checklist
+
+- [ ] All software scanned for vulnerabilities
+- [ ] CVEs identified and linked
+- [ ] Patch status current (<7 days)
+- [ ] Unpatched instances justified
+- [ ] Risk levels assigned
+- [ ] Remediation dates realistic
+
+---
+
+### Sheet 10: Licensing_Compliance
+
+#### Purpose
+Ensure software licensing compliance and cost optimization.
+
+#### What to Document
+
+**License Status:**
+
+- Software name and version
+- License type (perpetual/subscription/trial)
+- Licensed count (seats/devices)
+- Deployed count (actual usage)
+- License expiration date
+- License cost per unit
+- Total license cost
+- Compliance status (over/under/compliant)
+
+**Vendor Information:**
+
+- Vendor name
+- Support tier and expiration
+- Renewal terms
+- Cost optimization opportunities
+
+#### How to Complete
+
+**Step 1: Inventory Licensed Software**
+
+For each approved software:
+
+- Software name: [name]
+- Version: [version]
+- License type: [Perpetual/Annual/Monthly/Trial]
+- Licensed count: [number]
+- Deployed count: [number]
+
+**Step 2: Verify License Compliance**
+
+- Licensed ≥ Deployed? Yes/No
+- If no, variance: [count] unlicensed instances
+- Risk: Audit liability, vendor audit risk
+- Remediation: Purchase additional licenses or remove
+
+**Step 3: Track License Expiration**
+
+- Expiration date: [date]
+- Days until expiration: [number]
+- Renewal process: [vendor-specific]
+- Renewal cost: [amount]
+- Budget approved? Yes/No
+
+**Step 4: Calculate Licensing Costs**
+
+- License cost per unit: [cost]
+- Total licensed: [count] × [cost] = [total]
+- Support costs: [amount]
+- Annual cost: [total]
+
+**Step 5: Identify Cost Optimization**
+
+- Unused licenses: [count] (potential savings)
+- Negotiated discount opportunity: Yes/No
+- Alternative solution evaluation: Yes/No
+- Consolidation opportunities: [if any]
+
+#### Common Mistakes to Avoid
+
+❌ Deployed > Licensed (audit risk)
+❌ Not tracking license expiration
+❌ No renewal planning
+❌ Paying for unused licenses
+❌ Mixed license agreement versions
+
+#### Quality Checklist
+
+- [ ] All software licenses inventoried
+- [ ] Licensed vs. deployed verified
+- [ ] Expiration dates tracked
+- [ ] No over-deployment
+- [ ] Renewal timeline established
+- [ ] Cost optimization identified
+
+---
+
+### Sheet 11: Capability_Requirements
+
+#### Purpose
+Define and assess required software control capabilities vs. current deployment.
+
+#### What to Document
+
+**Required Capabilities:**
+
+- Application whitelisting (required/desired)
+- Application blacklisting (required/desired)
+- Script execution control (required/desired)
+- Privilege elevation control (required/desired)
+- DLL injection prevention (required/desired)
+- Unauthorized installation blocking (required/desired)
+- License compliance enforcement (required/desired)
+
+**Deployment Assessment:**
+
+- Solution 1: Capabilities provided
+- Coverage (% of endpoints)
+- Configuration gaps
+- Feature gaps
+
+#### How to Complete
+
+**Step 1: Define Required Capabilities**
+
+For Corporate endpoints:
+
+- Application control method: [Whitelist/Blacklist/Hybrid]
+- Script execution control: [Required/Desired]
+- Privilege elevation: [Restricted/Monitored/Allow]
+- Unauthorized installation: [Block/Alert/Monitor]
+- Performance acceptable: [Yes/No threshold]
+
+For BYOD endpoints:
+
+- Lighter control approach
+- Mobile app restrictions
+- Work container isolation
+
+**Step 2: Assess Current Deployment**
+
+- Solution deployed: [name and version]
+- Capability 1: [Implemented/Partial/Not Implemented]
+- Capability 2: [Implemented/Partial/Not Implemented]
+- Coverage: [X% of endpoints]
+- Configuration mode: [Enforce/Audit/Monitor]
+
+**Step 3: Map Capability Gaps**
+
+- Missing capability: [name]
+- Endpoint impact: [count] ([%])
+- Risk impact: Critical/High/Medium/Low
+- Mitigation: Upgrade/Different solution/Accept
+
+**Step 4: Plan Remediation**
+
+- Upgrade existing solution: Timeline
+- Deploy additional solution: Scope
+- Accept gap with compensating control: Approval
+
+#### Common Mistakes to Avoid
+
+❌ Requirements too vague
+❌ Over-specifying nice-to-have features
+❌ No gap prioritization
+❌ Outdated solution information
+❌ No performance impact assessment
+
+#### Quality Checklist
+
+- [ ] All required capabilities defined
+- [ ] Current capabilities documented
+- [ ] Gaps clearly identified
+- [ ] Risk levels assigned
+- [ ] Performance acceptable
+- [ ] Remediation plans assigned
 
 ---
 
@@ -1294,6 +1676,7 @@ Overall Status: Green/Yellow/Red
 - [ ] Evidence registered
 - [ ] Dashboard calculated
 
+
 ### Accuracy (12 items)
 
 - [ ] Software names normalized
@@ -1307,6 +1690,7 @@ Overall Status: Green/Yellow/Red
 - [ ] No copy-paste errors
 - [ ] Dashboard matches source data
 
+
 ### Honesty (8 items)
 
 - [ ] Approved list complete (not aspirational)
@@ -1317,6 +1701,7 @@ Overall Status: Green/Yellow/Red
 - [ ] Risk levels realistic
 - [ ] Remediation timelines realistic
 
+
 ### Evidence (6 items)
 
 - [ ] Approved list documented
@@ -1325,6 +1710,7 @@ Overall Status: Green/Yellow/Red
 - [ ] Vulnerability scan reports
 - [ ] Approval workflow records
 - [ ] All evidence sanitized
+
 
 ### Remediation (6 items)
 
@@ -1335,12 +1721,14 @@ Overall Status: Green/Yellow/Red
 - [ ] Resources identified
 - [ ] Priority assigned
 
+
 ### Integration (5 items)
 
 - [ ] Change management integrated
 - [ ] Vulnerability management integrated
 - [ ] Patch management integrated
 - [ ] Inventory tools verified working
+
 
 ### Stakeholder Input (4 items)
 
@@ -1349,12 +1737,14 @@ Overall Status: Green/Yellow/Red
 - [ ] Security engineering reviewed
 - [ ] Management reviewed
 
+
 ### Consistency (4 items)
 
 - [ ] No contradictions
 - [ ] Software names consistent
 - [ ] Compliance status matches evidence
 - [ ] Dashboard matches details
+
 
 ---
 
@@ -1367,17 +1757,21 @@ Overall Status: Green/Yellow/Red
 **Reviewer:** IT Operations Lead or Change Manager
 
 **Focus:**
+
 - Software inventory accuracy
 - Approved list completeness
 - Application control verification
 - Patch compliance data
 
+
 **Checklist:**
+
 - [ ] Software inventory comprehensive
 - [ ] Approved list realistic
 - [ ] Unauthorized software accurately identified
 - [ ] Application control status verified
 - [ ] Patch data current
+
 
 **Outcome:** Approve → Level 2 / Request Changes
 
@@ -1386,15 +1780,19 @@ Overall Status: Green/Yellow/Red
 **Reviewer:** Information Security Manager or Compliance Officer
 
 **Focus:**
+
 - Policy compliance
 - Risk assessments
 - Evidence quality
 
+
 **Checklist:**
+
 - [ ] All requirements addressed
 - [ ] Risk levels justified
 - [ ] Gaps documented with plans
 - [ ] Evidence audit-ready
+
 
 **Outcome:** Approve → Level 3 / Request Changes
 
@@ -1403,15 +1801,19 @@ Overall Status: Green/Yellow/Red
 **Reviewer:** CISO, IT Director, or CTO
 
 **Focus:**
+
 - Strategic alignment
 - Resource allocation
 - Risk acceptance
 
+
 **Checklist:**
+
 - [ ] Gap priorities acceptable
 - [ ] Remediation funded
 - [ ] Accepted risks documented
 - [ ] Timelines realistic
+
 
 **Outcome:** Approve / Request Changes / Escalate
 
@@ -1433,16 +1835,19 @@ Overall Status: Green/Yellow/Red
 
 **File Name:** `Software_Controls_Assessment.xlsx`
 
-**Sheets (8 total):**
+**Sheets (12 total):**
 1. Instructions & Legend
 2. Approved_Software
-3. Installed_Software
+3. Software_Inventory
 4. Unauthorized_Software
 5. Application_Control
-6. Patch_Compliance
-7. Software_Control_Gaps
-8. Evidence_Register
-9. Software_Control_Dashboard
+6. Change_Control
+7. Vulnerability_Management
+8. Licensing_Compliance
+9. Capability_Requirements
+10. Evidence_Register
+11. Gap_Analysis
+12. Approval_Sign_Off
 
 ---
 
@@ -1553,15 +1958,19 @@ Security Review Currency:
 ### Conditional Formatting
 
 **Category Column (D):**
+
 - If "Mandatory" → Light blue #D9E1F2
 - If "Role-Specific" → Light green #E2EFDA
 - If "Optional" → Light yellow #FFF2CC
 - If "Prohibited" → Red #FFC7CE
 
+
 **Security Review Date Column (J):**
+
 - If ≤6 months → Green #C6EFCE
 - If 6-12 months → Yellow #FFEB9C
 - If >12 months or blank → Red #FFC7CE
+
 
 ---
 
@@ -1619,13 +2028,17 @@ Risk Flags:
 ### Conditional Formatting
 
 **On Approved List Column (M):**
+
 - If "✅ Yes" → Green #C6EFCE
 - If "❌ No" → Red #FFC7CE
 
+
 **Risk Flag Column (L):**
+
 - If "None" → Green #C6EFCE
 - If "Shadow IT" → Yellow #FFEB9C
 - If "EOL" or "High-Risk" or "Vulnerable" → Red #FFC7CE
+
 
 ---
 
@@ -1691,15 +2104,19 @@ By Status:
 ### Conditional Formatting
 
 **Risk Level Column (H):**
+
 - If "Critical" → Dark red #C00000, white text
 - If "High" → Red #FFC7CE
 - If "Medium" → Yellow #FFEB9C
 - If "Low" → Green #C6EFCE
 
+
 **Status Column (R):**
+
 - If "Open" → Red #FFC7CE
 - If "In Progress" → Yellow #FFEB9C
 - If "Resolved" → Green #C6EFCE
+
 
 ---
 
@@ -1777,24 +2194,32 @@ Targets:
 ### Conditional Formatting
 
 **Deployment Status Column (D):**
+
 - If "🟢 Deployed" → Green #C6EFCE
 - If "🟡 Partial" → Yellow #FFEB9C
 - If "🔴 Not Deployed" → Red #FFC7CE
 
+
 **Enforcement Mode Column (E):**
+
 - If "Enforce" → Green #C6EFCE
 - If "Audit" → Yellow #FFEB9C
 - If "Disabled" → Red #FFC7CE
 
+
 **Compliance Status Column (N):**
+
 - If "✅ Compliant" → Green #C6EFCE
 - If "⚠️ Audit Mode" → Yellow #FFEB9C
 - If "❌ Non-Compliant" → Red #FFC7CE
 
+
 **Effectiveness Test Result Column (L):**
+
 - If "✅ Pass" → Green #C6EFCE
 - If "❌ Fail" → Red #FFC7CE
 - If "Not Tested" → Light gray #D9D9D9
+
 
 ---
 
@@ -1868,26 +2293,34 @@ Targets:
 ### Conditional Formatting
 
 **Version Status Column (D):**
+
 - If "Current" → Green #C6EFCE
 - If "Outdated" → Yellow #FFEB9C
 - If "EOL" → Red #FFC7CE
 
+
 **Highest Severity Column (F):**
+
 - If "Critical" → Dark red #C00000, white text
 - If "High" → Red #FFC7CE
 - If "Medium" → Yellow #FFEB9C
 - If "Low" → Light yellow #FFF2CC
 - If "None" → Green #C6EFCE
 
+
 **Patch Status Column (L):**
+
 - If "✅ Compliant" or "N/A" → Green #C6EFCE
 - If "⚠️ Overdue" → Yellow #FFEB9C
 - If "🔴 Critical Overdue" → Dark red #C00000, white text
 
+
 **Days Overdue Column (J):**
+
 - If ≤0 → Green #C6EFCE
 - If 1-30 → Yellow #FFEB9C
 - If >30 → Red #FFC7CE
+
 
 ---
 
@@ -2027,10 +2460,12 @@ Row 3: "Executive Summary - [=Instructions!B8]"
 ```
 
 **Formulas:**
+
 - Approved List: Check if Sheet 2 has entries
 - Unauthorized Software: From Sheet 4 summary
 - Application Control Deployment: From Sheet 5 metrics
 - Patch Compliance: From Sheet 6 metrics
+
 
 **Overall Status Logic:**
 ```
@@ -2066,9 +2501,11 @@ Immediate, short-term, long-term actions
 ### Conditional Formatting
 
 **Overall Status:**
+
 - If "🟢 GREEN" → Dark green #00B050, white text, 16pt bold
 - If "🟡 YELLOW" → Yellow #FFC000, black text, 16pt bold
 - If "🔴 RED" → Dark red #C00000, white text, 16pt bold
+
 
 ---
 
@@ -2208,4 +2645,10 @@ def detect_unauthorized(installed_list, approved_list):
 
 ---
 
-**END OF PART II**
+**END OF SPECIFICATION**
+
+---
+
+*"There are children playing in the streets who could solve some of my top problems in physics, because they have modes of sensory perception that I lost long ago."*
+— J. Robert Oppenheimer
+*Where bamboo antennas actually work.* 🎋

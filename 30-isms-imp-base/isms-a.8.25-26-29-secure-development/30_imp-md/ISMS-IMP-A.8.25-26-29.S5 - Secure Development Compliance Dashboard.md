@@ -1,10 +1,10 @@
-# ISMS-IMP-A.8.25-26-29-S5 - Secure Development Compliance Dashboard
-## Assessment Specification with User Completion Guide
-### ISO/IEC 27001:2022 Controls A.8.25, A.8.26, A.8.29: Secure Development Framework
+**ISMS-IMP-A.8.25-26-29-S5 - Secure Development Compliance Dashboard**
+**Assessment Specification with User Completion Guide**
+### ISO/IEC 27001:2022 Control A.8.25: Secure Development Life Cycle
 
 ---
 
-## Document Control
+**Document Control**
 
 | Attribute | Value |
 |-----------|-------|
@@ -44,17 +44,19 @@ This document consists of two parts:
   - Formulas & Calculations
   - Data Validation & Conditional Formatting
 
+
 ---
 
 # PART I: USER COMPLETION GUIDE
 
-## 1. Dashboard Overview
+# Dashboard Overview
 
-### 1.1 Purpose & Scope
+## Purpose & Scope
 
 **Dashboard Name:** ISMS-IMP-A.8.25-26-29-S5 - Secure Development Compliance Dashboard
 
 **What This Dashboard Provides:**
+
 - **Executive Summary:** Single-page view of secure development compliance
 - **Aggregated Metrics:** Combines data from all 4 assessment workbooks (IMP-S1, S2, S3, S4)
 - **Maturity Scoring:** Overall secure development maturity level (Level 1-5)
@@ -62,37 +64,48 @@ This document consists of two parts:
 - **Risk Identification:** Critical gaps and recommendations
 - **Compliance Status:** A.8.25, A.8.26, A.8.29 compliance scores
 
+
 **This Dashboard is For:**
+
 - CISO and security leadership (strategic oversight)
 - Development executives (resource allocation decisions)
 - Auditors (compliance verification)
 - Board reporting (executive summary)
 - Portfolio-level assessment (all applications combined)
 
+
 **This Dashboard is NOT For:**
+
 - Detailed technical findings (see IMP-S1, S2, S3, S4)
 - Individual vulnerability tracking (see IMP-S4)
 - Operational security activities (see IMP-S2)
 
-### 1.2 Dashboard Workbook Structure
 
-**Total Sheets:** 5
+## Dashboard Workbook Structure
+
+**Total Sheets:** 8
 
 **Completion Sequence:**
 
-1. **Executive Summary** - One-page overview with key metrics and scores
-2. **Control Compliance** - A.8.25, A.8.26, A.8.29 compliance status
-3. **Maturity Assessment** - Secure development maturity level (1-5)
-4. **Trend Analysis** - Progress over time (quarterly data)
-5. **Recommendations** - Prioritized actions for improvement
+1. **Instructions & Legend** - Assessment guidance, color legend, and completion instructions
+2. **Executive_Summary** - One-page overview with key metrics and scores
+3. **Application_Compliance_Matrix** - Application-level compliance status matrix
+4. **Gap_Analysis** - Identified gaps and remediation requirements
+5. **Trend_Analysis** - Progress over time (quarterly data)
+6. **Action_Plan** - Prioritized actions for improvement
+7. **Evidence_Index** - Centralized evidence linking to S1-S4 assessments
+8. **Approval_Sign_Off** - Stakeholder review and approval workflow
 
 **Estimated Completion Time:**
+
 - Portfolio Dashboard (10+ applications): 2-3 hours
 - Single Application Dashboard: 1 hour
 
-### 1.3 Key Dashboard Questions
+
+## Key Dashboard Questions
 
 This dashboard answers:
+
 - ✅ What is our overall secure development maturity level?
 - ✅ Are we compliant with A.8.25, A.8.26, A.8.29?
 - ✅ What are our critical gaps?
@@ -100,23 +113,27 @@ This dashboard answers:
 - ✅ What are the top priorities for investment?
 - ✅ How do we compare to industry benchmarks?
 
+
 ---
 
-## 2. Prerequisites
+# Prerequisites
 
-### 2.1 Required Assessment Data
+## Required Assessment Data
 
 **Before creating dashboard, complete these assessments:**
 
 **For Each Application in Scope:**
+
 - [ ] **IMP-S1:** Security Requirements Assessment (completed)
 - [ ] **IMP-S2:** SDLC Security Activities Assessment (completed)
 - [ ] **IMP-S3:** Security Testing Results Assessment (completed)
 - [ ] **IMP-S4:** Vulnerability Remediation Assessment (completed)
 
+
 **Data to Extract from Each Assessment:**
 
 **From IMP-S1 (Security Requirements):**
+
 - Application risk classification (High/Medium/Low)
 - SRS completeness score (%)
 - Threat modeling completeness score (%)
@@ -124,7 +141,9 @@ This dashboard answers:
 - Requirements traceability score (%)
 - Overall compliance score (%)
 
+
 **From IMP-S2 (SDLC Activities):**
+
 - SDLC phase activities score (%)
 - Secure coding standards maturity (%)
 - Code review maturity (%)
@@ -132,7 +151,9 @@ This dashboard answers:
 - Developer training completion (%)
 - Overall SDLC security maturity (%)
 
+
 **From IMP-S3 (Security Testing):**
+
 - SAST execution status and findings
 - DAST execution status and findings
 - SCA execution status and findings
@@ -140,7 +161,9 @@ This dashboard answers:
 - Testing coverage score (%)
 - Critical/High vulnerabilities found
 
+
 **From IMP-S4 (Vulnerability Remediation):**
+
 - Open vulnerabilities (Critical, High, Medium, Low)
 - SLA compliance rate (%)
 - Overdue vulnerabilities count
@@ -148,38 +171,49 @@ This dashboard answers:
 - Technical debt count
 - Remediation health score (%)
 
-### 2.2 Required Tools
+
+## Required Tools
 
 **Excel Workbook:**
+
 - Excel 2016 or later (Office 365 recommended)
 - Power Query (for data aggregation - optional but recommended)
 
+
 **Data Sources:**
+
 - Access to all completed assessment workbooks (IMP-S1, S2, S3, S4)
 - Historical dashboard data (for trend analysis)
 
+
 **Optional:**
+
 - BI tool (Tableau, Power BI) for enhanced visualization
 - Python/scripting for automated data extraction
 
-### 2.3 Assessor Skills
+
+## Assessor Skills
 
 **Required:**
+
 - Understanding of ISO 27001:2022 Controls A.8.25, A.8.26, A.8.29
 - Familiarity with all ISMS-POL-A.8.25-26-29 sections
 - Executive communication skills (translating technical findings to business language)
 - Data aggregation and analysis skills
 
+
 **Helpful:**
+
 - Experience with maturity models (CMMI, SAMM, BSIMM)
 - Dashboard design and visualization
 - Excel Power Query or BI tools
 
+
 ---
 
-## 3. Dashboard Workflow
+# Dashboard Workflow
 
-### 3.1 Dashboard Creation Process
+## Dashboard Creation Process
 
 **Phase 1: Data Collection** (30-60 minutes)
 1. Gather all completed assessment workbooks (IMP-S1, S2, S3, S4)
@@ -211,59 +245,73 @@ This dashboard answers:
 19. Update quarterly with new assessment data
 20. Monitor trend progress
 
-### 3.2 Portfolio vs. Application Dashboard
+## Portfolio vs. Application Dashboard
 
 **Portfolio Dashboard:**
+
 - Aggregates data from ALL applications
 - Shows organization-wide secure development maturity
 - Used for strategic planning and resource allocation
 - Updated quarterly
 
+
 **Application Dashboard:**
+
 - Focuses on single critical application
 - Shows application-specific compliance and maturity
 - Used for application-specific improvement plans
 - Updated monthly for High-Risk applications
 
-### 3.3 Maturity Model Reference
+
+## Maturity Model Reference
 
 This dashboard uses a 5-level maturity model aligned with CMMI:
 
 **Level 1 - Initial/Ad Hoc:**
+
 - No formal secure development processes
 - Security activities inconsistent or missing
 - High vulnerability counts, poor remediation
 - **Score:** <50%
 
+
 **Level 2 - Managed:**
+
 - Basic secure development processes documented
 - Some security activities executed
 - Moderate vulnerability management
 - **Score:** 50-69%
 
+
 **Level 3 - Defined:**
+
 - Comprehensive secure development processes
 - Security activities consistently executed
 - Good vulnerability management and remediation
 - **Score:** 70-84%
 
+
 **Level 4 - Quantitatively Managed:**
+
 - Metrics-driven secure development
 - Security activities optimized and measured
 - Excellent vulnerability management
 - **Score:** 85-94%
 
+
 **Level 5 - Optimizing:**
+
 - Continuous improvement culture
 - Security deeply embedded in SDLC
 - Proactive vulnerability prevention
 - **Score:** ≥95%
 
+
 ---
 
-## 4. Completing Each Sheet
+# Completing Each Sheet
 
-### 4.1 Sheet 1: Executive Summary
+## Sheet 1: Executive Summary
 
 **Purpose:** One-page executive overview with key metrics and scores.
 
@@ -272,10 +320,12 @@ This dashboard uses a 5-level maturity model aligned with CMMI:
 **Key Sections:**
 
 **A. Dashboard Header**
+
 - **Assessment Date:** Date of this dashboard
 - **Reporting Period:** Time period covered (e.g., Q4 2025)
 - **Scope:** Portfolio (all applications) or specific application
 - **Applications Assessed:** Count (for portfolio) or name (for application)
+
 
 **B. Overall Compliance Score** (Large, prominent)
 
@@ -302,9 +352,11 @@ Overall Score = Average of (A.8.26 Score, A.8.25 Score, A.8.29 Score, Remediatio
 | Vulnerability Remediation | 86% | ✅ Compliant |
 
 **Status Logic:**
+
 - ✅ Compliant: ≥70%
 - ⚠️ Partial: 50-69%
 - ❌ Non-Compliant: <50%
+
 
 **D. Key Metrics At-a-Glance**
 
@@ -319,9 +371,11 @@ Overall Score = Average of (A.8.26 Score, A.8.25 Score, A.8.29 Score, Remediatio
 | SLA Compliance Rate | 86% | ↑ |
 
 **Trend Symbols:**
+
 - ↑ Improving (vs. last quarter)
 - → Stable
 - ↓ Degrading
+
 
 **E. Critical Gaps (Top 3)**
 
@@ -344,19 +398,23 @@ Overall Score = Average of (A.8.26 Score, A.8.25 Score, A.8.29 Score, Remediatio
 "Immediate focus required on vulnerability remediation velocity. With 15 High-severity vulnerabilities overdue and SLA compliance at 86% (target 95%), recommend establishing dedicated security response team and implementing daily standup for overdue critical/high findings until backlog cleared."
 
 **Completion Tips:**
+
 - Keep Executive Summary to ONE PAGE (printable)
 - Use large, clear fonts for key metrics
 - Focus on business impact, not technical details
 - Highlight trends (improving/degrading)
 - Make top recommendation actionable
 
+
 **Common Mistakes:**
+
 - ❌ Too much detail (defeats purpose of executive summary)
 - ❌ Technical jargon (executives want business impact)
 - ❌ No trends (executives want progress visibility)
 - ❌ Vague recommendations ("improve security")
 
-### 4.2 Sheet 2: Control Compliance
+
+## Sheet 2: Control Compliance
 
 **Purpose:** Detailed breakdown of A.8.25, A.8.26, A.8.29 compliance.
 
@@ -367,22 +425,27 @@ Overall Score = Average of (A.8.26 Score, A.8.25 Score, A.8.29 Score, Remediatio
 **Section A: ISO 27001:2022 Control A.8.26 - Application Security Requirements**
 
 **Sub-Metrics:**
+
 - Security requirements specification completeness: X%
 - Threat modeling completion: X%
 - Security architecture review: X%
 - Requirements traceability: X%
 - **Overall A.8.26 Score:** X%
 
+
 **Compliance Status:** ✅/⚠️/❌
 
 **Gap Summary:**
+
 - Applications without SRS: X
 - Applications without threat model: X (High-Risk apps)
 - Applications without architecture review: X
 
+
 **Section B: ISO 27001:2022 Control A.8.25 - Secure Development Lifecycle**
 
 **Sub-Metrics:**
+
 - SDLC phase security activities: X%
 - Secure coding standards adoption: X%
 - Code review execution: X%
@@ -390,16 +453,20 @@ Overall Score = Average of (A.8.26 Score, A.8.25 Score, A.8.29 Score, Remediatio
 - Developer training completion: X%
 - **Overall A.8.25 Score:** X%
 
+
 **Compliance Status:** ✅/⚠️/❌
 
 **Gap Summary:**
+
 - Applications without SAST: X
 - Applications without code review: X
 - Developers without training: X
 
+
 **Section C: ISO 27001:2022 Control A.8.29 - Security Testing**
 
 **Sub-Metrics:**
+
 - SAST execution coverage: X%
 - DAST execution coverage: X%
 - SCA execution coverage: X%
@@ -407,41 +474,52 @@ Overall Score = Average of (A.8.26 Score, A.8.25 Score, A.8.29 Score, Remediatio
 - Security acceptance testing: X%
 - **Overall A.8.29 Score:** X%
 
+
 **Compliance Status:** ✅/⚠️/❌
 
 **Gap Summary:**
+
 - High-Risk applications without pen test: X
 - Applications without DAST: X
 - Applications without SCA: X
 
+
 **Section D: Vulnerability Remediation (Operational Metric)**
 
 **Sub-Metrics:**
+
 - SLA compliance rate: X%
 - Overdue vulnerabilities: X
 - Average remediation time vs. SLA: X%
 - Technical debt management: X%
 - **Overall Remediation Score:** X%
 
+
 **Compliance Status:** ✅/⚠️/❌
 
 **Gap Summary:**
+
 - Critical vulnerabilities overdue: X
 - High vulnerabilities overdue: X
 - Technical debt items >180 days: X
 
+
 **Completion Tips:**
+
 - Pull metrics from each IMP workbook (don't estimate)
 - Calculate overall score as average of sub-metrics
 - Document specific gaps with counts
 - Compare against policy requirements
 
+
 **Common Mistakes:**
+
 - ❌ Averaging without weighting (some metrics more important)
 - ❌ Not documenting gaps (just showing scores)
 - ❌ Not comparing to policy requirements (what's required vs. achieved)
 
-### 4.3 Sheet 3: Maturity Assessment
+
+## Sheet 3: Maturity Assessment
 
 **Purpose:** Assess overall secure development maturity level (1-5).
 
@@ -504,30 +582,38 @@ Overall Score = Average of (A.8.26 Score, A.8.25 Score, A.8.29 Score, Remediatio
 **Result:** Level 3 - Defined
 
 **Level 3 Characteristics:**
+
 - ✅ Formal secure development processes established
 - ✅ Security activities consistently executed
 - ✅ Good vulnerability management
 - ⚠️ Room for automation and optimization
 - ⚠️ Metrics collection improving
 
+
 **Path to Level 4:**
+
 - Automate security testing in CI/CD (currently manual/semi-automated)
 - Implement metrics-driven decision making
 - Reduce critical vulnerability discovery (shift left)
 - Achieve 90%+ SLA compliance consistently
 
+
 **Completion Tips:**
+
 - Use objective score ranges (not subjective judgment)
 - Document evidence for each level assessment
 - Identify specific gaps preventing next level
 - Create roadmap to next level
 
+
 **Common Mistakes:**
+
 - ❌ Inflating maturity level (wishful thinking)
 - ❌ Not documenting evidence for level assignment
 - ❌ Jumping levels (must progress sequentially)
 
-### 4.4 Sheet 4: Trend Analysis
+
+## Sheet 4: Trend Analysis
 
 **Purpose:** Track progress over time (quarterly or annual).
 
@@ -558,17 +644,21 @@ Overall Score = Average of (A.8.26 Score, A.8.25 Score, A.8.29 Score, Remediatio
 | Critical Vulns | 12 | 3 | -9 |
 
 **Completion Tips:**
+
 - Collect historical data from previous dashboards
 - Use consistent metrics (don't change definitions)
 - Show both quarterly and YoY trends
 - Visualize trends (charts more impactful than tables)
 
+
 **Common Mistakes:**
+
 - ❌ Changing metric definitions (makes trends invalid)
 - ❌ Cherry-picking favorable trends
 - ❌ Not explaining anomalies (sudden spikes/drops)
 
-### 4.5 Sheet 5: Recommendations
+
+## Sheet 5: Recommendations
 
 **Purpose:** Prioritized action plan for improvement.
 
@@ -587,15 +677,19 @@ Overall Score = Average of (A.8.26 Score, A.8.25 Score, A.8.29 Score, Remediatio
 | 5 | Implement SCA for all applications | 60% coverage | 100% coverage | P2 | Low | Development Leads | 2026-05-31 |
 
 **Priority Legend:**
+
 - **P1 (Immediate):** Critical gaps, compliance risk, High-Risk applications
 - **P2 (High):** Important improvements, maturity advancement
 - **P3 (Medium):** Optimization, Level 4 preparation
 - **P4 (Low):** Nice-to-have, long-term strategic
 
+
 **Effort Estimates:**
+
 - **Low:** <40 hours, minimal budget
 - **Medium:** 40-160 hours, moderate budget
 - **High:** >160 hours, significant budget
+
 
 **Quick Wins (Low Effort, High Impact):**
 
@@ -610,33 +704,215 @@ Overall Score = Average of (A.8.26 Score, A.8.25 Score, A.8.29 Score, Remediatio
 3. Deploy SCA across entire application portfolio (High effort, P2)
 
 **Completion Tips:**
+
 - Prioritize by risk (compliance gaps = P1)
 - Balance quick wins with strategic initiatives
 - Assign realistic owners (get commitment)
 - Set achievable target dates
 - Link recommendations to specific gaps from Sheet 2
 
+
 **Common Mistakes:**
+
 - ❌ Too many recommendations (overwhelming)
 - ❌ All recommendations P1 (no prioritization)
 - ❌ Vague recommendations ("improve security")
 - ❌ No owners or target dates (never happens)
 
+
+## Sheet 6: Compliance_Summary
+
+**Purpose:** Overall compliance scoring for ISO 27001:2022 controls A.8.25, A.8.26, A.8.29.
+
+**Completion Time:** 10-15 minutes (auto-calculated from Sheets 2-5)
+
+**Compliance Metrics:**
+
+**A. Control Compliance Scores** (%)
+
+**Control A.8.25: Secure Development Life Cycle**
+
+- Requirements & Design (from IMP-S1 data): X%
+- SDLC Security Activities (from IMP-S2 data): X%
+- Security Testing (from IMP-S3 data): X%
+- **Overall A.8.25 Score:** X% (weighted average)
+
+**Control A.8.26: Application Security Testing**
+
+- Testing coverage (from IMP-S3 data): X%
+- Finding remediation (from IMP-S4 data): X%
+- **Overall A.8.26 Score:** X%
+
+**Control A.8.29: Security Testing**
+
+- SAST/DAST execution (from IMP-S3 data): X%
+- Vulnerability management (from IMP-S4 data): X%
+- **Overall A.8.29 Score:** X%
+
+**B. Overall Secure Development Compliance** (%)
+
+```
+Portfolio Score = (A.8.25 + A.8.26 + A.8.29) / 3
+```
+
+**Interpretation:**
+
+- **90-100%:** Fully Compliant
+- **75-89%:** Substantially Compliant
+- **50-74%:** Partially Compliant
+- **<50%:** Non-Compliant
+
+**C. Application Risk Alignment**
+
+| Risk Level | Required Score | Current Portfolio Score | Gap | Status |
+|------------|----------------|--------------------------|-----|--------|
+| High-Risk Apps | ≥80% | X% | Y% | RED/YELLOW/GREEN |
+| Medium-Risk Apps | ≥70% | X% | Y% | RED/YELLOW/GREEN |
+| Low-Risk Apps | ≥60% | X% | Y% | RED/YELLOW/GREEN |
+
+**Completion Tips:**
+
+- All scores should be auto-calculated from source assessments
+- Verify weightings reflect organizational policy
+- Document any manual adjustments with justification
+
+
+## Sheet 7: Evidence_Index
+
+**Purpose:** Centralized evidence index linking dashboard conclusions to underlying assessments.
+
+**Completion Time:** 15-20 minutes
+
+**Key Columns:**
+
+- **Dashboard Finding:** Dashboard conclusion or metric
+- **Sheet Reference:** Source sheet (1-5)
+- **Supporting Assessment:** IMP-S1, S2, S3, or S4
+- **Evidence File:** Filename of source evidence
+- **Collection Date:** When evidence was gathered
+- **Verification Status:** Verified, Pending Review, Archived
+- **Notes:** Additional context
+
+**Evidence Linking:**
+
+Each dashboard metric should reference:
+- The underlying assessment workbook used
+- Specific sheet within that workbook
+- File location of source evidence
+- Collection/verification dates
+
+**Example:**
+
+| Finding | Sheet | Assessment | Evidence File | Date | Status |
+|---------|-------|------------|---------------|------|--------|
+| A.8.25 Score 72% | Sheet 2 | IMP-S2 | ISMS-IMP-A.8.25-26-29.S2_Portfolio_20260123.xlsx | 2026-01-23 | Verified |
+| 15 Critical vulns overdue | Sheet 2 | IMP-S4 | ISMS-IMP-A.8.25-26-29.S4_Portfolio_20260123.xlsx | 2026-01-23 | Verified |
+| Pen test overdue on APP-CUST | Sheet 5 | IMP-S3 | ISMS-IMP-A.8.25-26-29.S3_Portfolio_20260123.xlsx | 2026-01-23 | Verified |
+
+**Storage:**
+
+- Store with dashboard: `Evidence/Dashboard_Evidence_Index.xlsx`
+- All source assessment workbooks backed up together
+- Archive historical versions quarterly
+
+**Completion Tips:**
+
+- Link to actual assessment file locations
+- Document chain of evidence from IMP to dashboard
+- Keep for audit trail (3+ years)
+
+
+## Sheet 8: Approval_Sign_Off
+
+**Purpose:** Dashboard approval and executive sign-off.
+
+**Completion Time:** 10-15 minutes (final step)
+
+**Dashboard Review Process:**
+
+**Step 1: Data Accuracy Review (Assessment Lead)**
+
+- [ ] All 4 underlying assessments complete and approved
+- [ ] Scores correctly transferred from source assessments
+- [ ] No manual overrides without documented justification
+- [ ] Evidence index fully populated
+- [ ] Calculation errors checked
+
+**Step 2: Technical Review (Security Architect)**
+
+- [ ] Methodology follows defined framework
+- [ ] Scores align with control requirements
+- [ ] Recommendations supported by findings
+- [ ] Dashboard ready for executive audience
+
+**Step 3: Stakeholder Review (CISO/Security Lead)**
+
+- [ ] Findings and scores accurate
+- [ ] Recommendations realistic and prioritized
+- [ ] Executive messaging is clear
+- [ ] No sensitive technical details in executive summary
+
+**Step 4: Executive Approval (CISO/Chief Security Officer)**
+
+- [ ] Dashboard supports strategic decisions
+- [ ] Resource requirements understood
+- [ ] Timeline expectations clear
+- [ ] Approved for distribution to board/leadership
+
+**Approval Sign-Off:**
+
+| Role | Name | Title | Date | Signature |
+|------|------|-------|------|-----------|
+| Assessment Lead | [Name] | [Title] | [Date] | [Signature] |
+| Technical Reviewer | [Name] | [Title] | [Date] | [Signature] |
+| Stakeholder Review | [Name] | [Title] | [Date] | [Signature] |
+| Executive Approval | [Name] | [Title] | [Date] | [Signature] |
+
+**Distribution Control:**
+
+- **Classification:** [Confidential/Internal/Public]
+- **Approved Recipients:** [List roles/departments]
+- **Distribution Date:** [Date]
+- **Review Schedule:** [Quarterly/Semi-annual/Annual]
+
+**Version Control:**
+
+- **Dashboard Version:** 1.0
+- **Approved Date:** [Date]
+- **Next Review Date:** [Date + 3 months for High-Risk portfolio, 6 months otherwise]
+- **Archive Location:** [Path to dashboard versions]
+
+**Executive Briefing:**
+
+- Schedule presentation for approved stakeholders
+- Prepare talking points for findings and recommendations
+- Plan follow-up review at next assessment cycle
+
+**Completion Tips:**
+
+- Get all signatures before circulation
+- Document any concerns raised during review
+- Schedule next assessment cycle before approval
+- Archive approved version with all source assessments
+
+
 ---
 
-## 5. Evidence Collection
+# Evidence Collection
 
 **Dashboard Evidence:**
+
 - All 4 completed assessment workbooks (IMP-S1, S2, S3, S4)
 - Historical dashboard data (previous quarters)
 - Calculation worksheets (showing how scores were derived)
 - Executive presentation (if presented)
 
+
 ---
 
-## 6. Common Pitfalls
+# Common Pitfalls
 
-### 6.1 Mistake 1: Creating Dashboard Without Completing Underlying Assessments
+## Mistake 1: Creating Dashboard Without Completing Underlying Assessments
 
 **Problem:** Dashboard created with estimated/guessed scores, not actual assessment data.
 
@@ -644,7 +920,7 @@ Overall Score = Average of (A.8.26 Score, A.8.25 Score, A.8.29 Score, Remediatio
 
 **Solution:** Complete all 4 IMP assessments FIRST, then create dashboard.
 
-### 6.2 Mistake 2: Inconsistent Scoring
+## Mistake 2: Inconsistent Scoring
 
 **Problem:** Different scoring methodologies across quarters, trends invalid.
 
@@ -652,7 +928,7 @@ Overall Score = Average of (A.8.26 Score, A.8.25 Score, A.8.29 Score, Remediatio
 
 **Solution:** Document scoring methodology, use consistently.
 
-### 6.3 Mistake 3: Dashboard Too Technical
+## Mistake 3: Dashboard Too Technical
 
 **Problem:** Dashboard full of CWEs, CVEs, technical jargon.
 
@@ -660,7 +936,7 @@ Overall Score = Average of (A.8.26 Score, A.8.25 Score, A.8.29 Score, Remediatio
 
 **Solution:** Translate to business language, focus on risk and impact.
 
-### 6.4 Mistake 4: No Actionable Recommendations
+## Mistake 4: No Actionable Recommendations
 
 **Problem:** Dashboard shows problems but no solutions.
 
@@ -668,7 +944,7 @@ Overall Score = Average of (A.8.26 Score, A.8.25 Score, A.8.29 Score, Remediatio
 
 **Solution:** Always include specific, prioritized recommendations with owners.
 
-### 6.5 Mistake 5: Inflating Scores
+## Mistake 5: Inflating Scores
 
 **Problem:** Assessor rounds up scores to make dashboard look better.
 
@@ -678,7 +954,7 @@ Overall Score = Average of (A.8.26 Score, A.8.25 Score, A.8.29 Score, Remediatio
 
 ---
 
-## 7. Quality Checklist
+# Quality Checklist
 
 - [ ] All 5 sheets completed
 - [ ] All scores pulled from actual assessments (not estimated)
@@ -689,9 +965,10 @@ Overall Score = Average of (A.8.26 Score, A.8.25 Score, A.8.29 Score, Remediatio
 - [ ] Dashboard reviewed by CISO before presentation
 - [ ] Evidence package complete
 
+
 ---
 
-## 8. Review & Approval
+# Review & Approval
 
 1. Self-review (quality checklist)
 2. CISO review and approval
@@ -704,7 +981,7 @@ Overall Score = Average of (A.8.26 Score, A.8.25 Score, A.8.29 Score, Remediatio
 
 This dashboard provides the executive visibility needed for strategic security decisions and continuous improvement! 📊✅
 # ISMS-IMP-A.8.25-26-29-S5 - Secure Development Compliance Dashboard
-## PART II: TECHNICAL SPECIFICATION
+# PART II: TECHNICAL SPECIFICATION
 
 ---
 
@@ -712,17 +989,19 @@ This dashboard provides the executive visibility needed for strategic security d
 
 ---
 
-## Workbook Overview
+# Workbook Overview
 
-### Workbook Metadata
+## Workbook Metadata
 
 **Filename Format:** `ISMS-A825-26-29-Dashboard-[Portfolio or APP-ID]-[YYYYMMDD].xlsx`
 
 **Examples:**
+
 - `ISMS-A825-26-29-Dashboard-Portfolio-20260123.xlsx` (portfolio view)
 - `ISMS-A825-26-29-Dashboard-APP-CUST-20260123.xlsx` (application view)
 
-**Total Sheets:** 5
+
+**Total Sheets:** 8
 
 **Excel Version:** Excel 2016+ (Office 365 recommended)
 
@@ -730,7 +1009,7 @@ This dashboard provides the executive visibility needed for strategic security d
 
 **Python Script:** `generate_a825_26_29_5_compliance_dashboard.py`
 
-### Workbook Structure Summary
+## Workbook Structure Summary
 
 | Sheet # | Sheet Name | Purpose | Data Source | Complexity |
 |---------|------------|---------|-------------|------------|
@@ -742,9 +1021,9 @@ This dashboard provides the executive visibility needed for strategic security d
 
 ---
 
-## Common Structure Elements
+# Common Structure Elements
 
-### Standard Colors
+## Standard Colors
 
 **Headers:** `RGB(0, 51, 102)` Dark Blue, White text, 14pt Bold
 **Metrics (Large):** `RGB(68, 114, 196)` Blue, 24pt Bold (for Executive Summary scores)
@@ -752,18 +1031,22 @@ This dashboard provides the executive visibility needed for strategic security d
 **Auto-Calculated:** `RGB(217, 217, 217)` Light Gray
 
 **Status Colors:**
+
 - ✅ Compliant (≥70%): `RGB(198, 239, 206)` Light Green
 - ⚠️ Partial (50-69%): `RGB(255, 235, 156)` Light Yellow
 - ❌ Non-Compliant (<50%): `RGB(255, 199, 206)` Light Red
 
+
 **Maturity Levels:**
+
 - Level 5: `RGB(0, 176, 80)` Dark Green
 - Level 4: `RGB(146, 208, 80)` Light Green
 - Level 3: `RGB(255, 192, 0)` Orange
 - Level 2: `RGB(255, 153, 0)` Dark Orange
 - Level 1: `RGB(192, 0, 0)` Red
 
-### Data Validation
+
+## Data Validation
 
 **Status Dropdown:**
 ```excel
@@ -787,13 +1070,13 @@ List: Low,Medium,High
 
 ---
 
-## Sheet 1: Executive Summary
+# Sheet 1: Executive Summary
 
-### Structure
+## Structure
 
 **This sheet should fit on ONE PAGE (portrait orientation)**
 
-#### Section A: Dashboard Header (Rows 1-5)
+### Section A: Dashboard Header (Rows 1-5)
 
 **Merged Cells:** A1:G5 (Large header block)
 
@@ -804,7 +1087,7 @@ List: Low,Medium,High
 | 4 | Reporting Period: [Period] | 12pt |
 | 5 | Scope: [Portfolio/Application] | 12pt |
 
-#### Section B: Overall Compliance Score (Rows 7-12)
+### Section B: Overall Compliance Score (Rows 7-12)
 
 **Merged Cells:** A7:D12 (Large score display)
 
@@ -816,8 +1099,10 @@ Secure Development Compliance
 ```
 
 **Format:**
+
 - "85%" → 36pt Bold, Blue
 - "Level 3: Defined" → 14pt Bold
+
 
 **Formula for Overall Score (Cell B9):**
 ```excel
@@ -830,7 +1115,7 @@ Secure Development Compliance
 =IF(B9>=95,"Level 5: Optimizing",IF(B9>=85,"Level 4: Quantitatively Managed",IF(B9>=70,"Level 3: Defined",IF(B9>=50,"Level 2: Managed","Level 1: Initial"))))
 ```
 
-#### Section C: Control Compliance Summary (Rows 7-12, Columns F-G)
+### Section C: Control Compliance Summary (Rows 7-12, Columns F-G)
 
 **Table:**
 
@@ -846,7 +1131,7 @@ Secure Development Compliance
 =IF(F8>=70,"✅ Compliant",IF(F8>=50,"⚠️ Partial","❌ Non-Compliant"))
 ```
 
-#### Section D: Key Metrics At-a-Glance (Rows 14-22)
+### Section D: Key Metrics At-a-Glance (Rows 14-22)
 
 **Table:**
 
@@ -860,7 +1145,7 @@ Secure Development Compliance
 | Open Critical Vulnerabilities | User input | User selects |
 | SLA Compliance Rate | =Sheet2!B36 | User selects |
 
-#### Section E: Critical Gaps (Rows 24-30)
+### Section E: Critical Gaps (Rows 24-30)
 
 **Table:** User inputs top 3 gaps manually
 
@@ -870,7 +1155,7 @@ Secure Development Compliance
 | 2 | [Description] | [Impact] | Dropdown: Priority |
 | 3 | [Description] | [Impact] | Dropdown: Priority |
 
-#### Section F: Executive Recommendation (Rows 32-35)
+### Section F: Executive Recommendation (Rows 32-35)
 
 **Merged Cells:** A32:G35
 
@@ -878,13 +1163,13 @@ Secure Development Compliance
 
 ---
 
-## Sheet 2: Control Compliance
+# Sheet 2: Control Compliance
 
-### Structure
+## Structure
 
 **4 Main Sections (one per control/metric):**
 
-#### Section A: ISO 27001:2022 Control A.8.26 - Application Security Requirements (Rows 5-12)
+### Section A: ISO 27001:2022 Control A.8.26 - Application Security Requirements (Rows 5-12)
 
 **Table:**
 
@@ -898,7 +1183,7 @@ Secure Development Compliance
 
 **Gap Summary (Rows 11-12):** User documents gap counts
 
-#### Section B: ISO 27001:2022 Control A.8.25 - Secure Development Lifecycle (Rows 14-22)
+### Section B: ISO 27001:2022 Control A.8.25 - Secure Development Lifecycle (Rows 14-22)
 
 **Table:**
 
@@ -911,7 +1196,7 @@ Secure Development Compliance
 | 19 | Developer Training | User input from IMP-S2 | 15% | =B19*C19 |
 | 20 | **Overall A.8.25 Score** | **=SUM(D15:D19)** | **100%** | - |
 
-#### Section C: ISO 27001:2022 Control A.8.29 - Security Testing (Rows 24-32)
+### Section C: ISO 27001:2022 Control A.8.29 - Security Testing (Rows 24-32)
 
 **Table:**
 
@@ -924,7 +1209,7 @@ Secure Development Compliance
 | 29 | Security Acceptance Testing | User input from IMP-S3 | 10% | =B29*C29 |
 | 30 | **Overall A.8.29 Score** | **=SUM(D25:D29)** | **100%** | - |
 
-#### Section D: Vulnerability Remediation (Rows 34-42)
+### Section D: Vulnerability Remediation (Rows 34-42)
 
 **Table:**
 
@@ -936,22 +1221,24 @@ Secure Development Compliance
 | 38 | Technical Debt Management | User input from IMP-S4 | 10% | =B38*C38 |
 | 40 | **Overall Remediation Score** | **=SUM(D35:D38)** | **100%** | - |
 
-### Conditional Formatting
+## Conditional Formatting
 
 **Cells B10, B20, B30, B40** (Overall Scores):
+
 - If ≥70% → Green background
 - If 50-69% → Yellow background
 - If <50% → Red background
 
+
 ---
 
-## Sheet 3: Maturity Assessment
+# Sheet 3: Maturity Assessment
 
-### Structure
+## Structure
 
 **4 Maturity Dimensions (one per control/metric):**
 
-#### Dimension A: Requirements Management Maturity (Rows 5-12)
+### Dimension A: Requirements Management Maturity (Rows 5-12)
 
 **Table:**
 
@@ -976,19 +1263,19 @@ Secure Development Compliance
 =IF(Sheet2!B10>=95,5,IF(Sheet2!B10>=85,4,IF(Sheet2!B10>=70,3,IF(Sheet2!B10>=50,2,1))))
 ```
 
-#### Dimension B: SDLC Security Maturity (Rows 14-21)
+### Dimension B: SDLC Security Maturity (Rows 14-21)
 
 *Same structure as Dimension A, references Sheet2!B20*
 
-#### Dimension C: Security Testing Maturity (Rows 23-30)
+### Dimension C: Security Testing Maturity (Rows 23-30)
 
 *Same structure, references Sheet2!B30*
 
-#### Dimension D: Vulnerability Management Maturity (Rows 32-39)
+### Dimension D: Vulnerability Management Maturity (Rows 32-39)
 
 *Same structure, references Sheet2!B40*
 
-#### Overall Maturity Level (Rows 41-45)
+### Overall Maturity Level (Rows 41-45)
 
 **Formula (Cell B42):**
 ```excel
@@ -1001,20 +1288,22 @@ Secure Development Compliance
 ="Level " & B42 & ": " & IF(B42=5,"Optimizing",IF(B42=4,"Quantitatively Managed",IF(B42=3,"Defined",IF(B42=2,"Managed","Initial"))))
 ```
 
-### Conditional Formatting
+## Conditional Formatting
 
 **Cell B42** (Overall Maturity Level):
+
 - If 5 → Dark Green background
 - If 4 → Light Green background
 - If 3 → Orange background
 - If 2 → Dark Orange background
 - If 1 → Red background
 
+
 ---
 
-## Sheet 4: Trend Analysis
+# Sheet 4: Trend Analysis
 
-### Structure
+## Structure
 
 **Quarterly Trend Table (Rows 5-15):**
 
@@ -1046,16 +1335,18 @@ Secure Development Compliance
 | Critical Vulns | User input | User input | =C20-B20 |
 
 **Line Chart (Rows 27-45):**
+
 - **Chart Type:** Line chart
 - **Data Range:** B5:E12 (quarterly metrics)
 - **X-Axis:** Quarters
 - **Y-Axis:** Scores (%)
 
+
 ---
 
-## Sheet 5: Recommendations
+# Sheet 5: Recommendations
 
-### Structure
+## Structure
 
 **Recommendations Table (Rows 5-25):**
 
@@ -1084,55 +1375,65 @@ User manually documents 3-5 quick wins (low effort, high impact)
 **Strategic Initiatives Section (Rows 34-39):**
 User manually documents 3-5 strategic initiatives (high effort, high impact)
 
-### Conditional Formatting
+## Conditional Formatting
 
 **Column E (Priority):**
+
 - "P1 (Immediate)" → Red background
 - "P2 (High)" → Orange background
 - "P3 (Medium)" → Yellow background
 - "P4 (Low)" → Green background
 
+
 **Column H (Target Date):**
+
 - If past due (< TODAY()) → Red background
 - If due soon (< TODAY()+30) → Yellow background
 
+
 ---
 
-## Python Script Integration Notes
+# Python Script Integration Notes
 
-### Script Name
+## Script Name
 `generate_a825_26_29_5_compliance_dashboard.py`
 
-### Key Functions
+## Key Functions
 
-1. **create_workbook()**: Initialize 5 sheets
+1. **create_workbook()**: Initialize 8 sheets
 2. **populate_executive_summary()**: Create one-page summary with large fonts
 3. **add_formulas()**: Add all cross-sheet references and calculations
 4. **add_conditional_formatting()**: Status colors, maturity levels, trend indicators
 5. **create_charts()**: Add trend line chart to Sheet 4
 6. **protect_sheets()**: Lock all sheets
 
-### Critical Notes
+## Critical Notes
 
 **Cross-Sheet References:**
+
 - Executive Summary pulls from Control Compliance sheet
 - Control Compliance pulls from user input (IMP-S1,S2,S3,S4 data)
 - Maturity Assessment pulls from Control Compliance
 - Verify all references work when sheets reordered
 
+
 **Large Fonts for Executive Summary:**
+
 - Overall score: 36pt
 - Maturity level: 14pt
 - Keep Executive Summary to ONE PAGE
 
+
 **Trend Chart:**
+
 - Auto-updates when quarterly data added
 - Use professional color scheme
 - Show data labels
 
+
 ---
 
-## Quality Assurance Checklist
+# Quality Assurance Checklist
 
 - [ ] All 5 sheets present
 - [ ] Executive Summary fits on one page
@@ -1143,6 +1444,13 @@ User manually documents 3-5 strategic initiatives (high effort, high impact)
 - [ ] No #REF!, #VALUE!, #DIV/0! errors
 - [ ] Test with sample data from all 4 IMP workbooks
 
+
 ---
 
-**END OF PART II: TECHNICAL SPECIFICATION**
+**END OF SPECIFICATION**
+
+---
+
+*"The best protection is a complete understanding of the system you are trying to protect."*
+— Ron Rivest
+*Where bamboo antennas actually work.* 🎋

@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# =============================================================================
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-ISMS-Commercial
+# Copyright (c) 2025-2026 ISMS Core Contributors
+#
+# This file is part of ISMS Core.
+#
+# ISMS Core is dual-licensed:
+#   1. AGPL 3.0 (Open Source) - See LICENSE-AGPL.txt
+#   2. Commercial License - Contact vendor for proprietary use
+#
+# You may use this file under either license, at your option.
+# =============================================================================
 """
 ================================================================================
 Excel Workbook Sanity Checker for ISMS A.8.16 Assessment Workbooks
@@ -89,19 +101,19 @@ Basic Usage:
 
 Domain-Specific Examples:
     # Check Monitoring Infrastructure Assessment
-    python3 excel_sanity_check_a816.py ISMS_A_8_16_1_Monitoring_Infrastructure.xlsx
+    python3 excel_sanity_check_a816.py ISMS-IMP-A.8.16.1_Monitoring_Infrastructure.xlsx
     
     # Check Baseline & Detection Assessment
-    python3 excel_sanity_check_a816.py ISMS_A_8_16_2_Baseline_Detection.xlsx
+    python3 excel_sanity_check_a816.py ISMS-IMP-A.8.16.2_Baseline_Detection.xlsx
     
     # Check Coverage Assessment
-    python3 excel_sanity_check_a816.py ISMS_A_8_16_3_Coverage_Assessment.xlsx
+    python3 excel_sanity_check_a816.py ISMS-IMP-A.8.16.3_Coverage_Assessment.xlsx
     
     # Check Alert Management Assessment
-    python3 excel_sanity_check_a816.py ISMS_A_8_16_4_Alert_Management.xlsx
+    python3 excel_sanity_check_a816.py ISMS-IMP-A.8.16.4_Alert_Management.xlsx
     
     # Check Compliance Dashboard
-    python3 excel_sanity_check_a816.py ISMS_A_8_16_5_Compliance_Dashboard.xlsx
+    python3 excel_sanity_check_a816.py ISMS-IMP-A.8.16.5_Compliance_Dashboard.xlsx
     
     # Check normalized workbook
     python3 excel_sanity_check_a816.py Dashboard_Sources/A816_1_*.xlsx
@@ -109,10 +121,10 @@ Domain-Specific Examples:
 Quality Assurance Workflow:
     # After generation (immediate validation)
     python3 generate_a816_1_monitoring_infrastructure.py
-    python3 excel_sanity_check_a816.py ISMS_A_8_16_1_*.xlsx
+    python3 excel_sanity_check_a816.py ISMS-IMP-A.8.16.1_*.xlsx
     
     # Before consolidation (validate all source workbooks)
-    for f in ISMS_A_8_16_[1-4]_*.xlsx; do
+    for f in ISMS-IMP-A.8.16_[1-4]_*.xlsx; do
         python3 excel_sanity_check_a816.py "$f"
     done
     
@@ -334,7 +346,7 @@ python3 generate_a816_3_coverage_assessment.py
 python3 generate_a816_4_alert_management.py
 
 echo "Running sanity checks..."
-for workbook in ISMS_A_8_16_[1-4]_*.xlsx; do
+for workbook in ISMS-IMP-A.8.16_[1-4]_*.xlsx; do
     echo "Checking: $workbook"
     python3 excel_sanity_check_a816.py "$workbook" || exit 1
 done
@@ -408,17 +420,29 @@ Use all three for comprehensive quality assurance.
 ================================================================================
 """
 
-import sys
-import re
+# =============================================================================
+# Standard Library Imports
+# =============================================================================
+import logging
 from pathlib import Path
+import re
+import sys
+
+# =============================================================================
+# Third-Party Imports
+# =============================================================================
 from openpyxl import load_workbook
 from openpyxl.utils import get_column_letter
 
-
-# ============================================================================
-# WORKBOOK TYPE DETECTION
-# ============================================================================
-
+# =============================================================================
+# Logging Configuration
+# =============================================================================
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
 def detect_workbook_type(filename):
     """Detect which A.8.16 workbook type this is based on filename."""
     filename_lower = filename.lower()
@@ -1109,11 +1133,11 @@ def main():
         print("=" * 70)
         print("\nUsage: python3 excel_sanity_check_a816.py <filename.xlsx>")
         print("\nExamples:")
-        print("  python3 excel_sanity_check_a816.py ISMS_A_8_16_1_Monitoring_Infrastructure.xlsx")
-        print("  python3 excel_sanity_check_a816.py ISMS_A_8_16_2_Baseline_Detection.xlsx")
-        print("  python3 excel_sanity_check_a816.py ISMS_A_8_16_3_Coverage_Assessment.xlsx")
-        print("  python3 excel_sanity_check_a816.py ISMS_A_8_16_4_Alert_Management.xlsx")
-        print("  python3 excel_sanity_check_a816.py ISMS_A_8_16_5_Compliance_Dashboard.xlsx")
+        print("  python3 excel_sanity_check_a816.py ISMS-IMP-A.8.16.1_Monitoring_Infrastructure.xlsx")
+        print("  python3 excel_sanity_check_a816.py ISMS-IMP-A.8.16.2_Baseline_Detection.xlsx")
+        print("  python3 excel_sanity_check_a816.py ISMS-IMP-A.8.16.3_Coverage_Assessment.xlsx")
+        print("  python3 excel_sanity_check_a816.py ISMS-IMP-A.8.16.4_Alert_Management.xlsx")
+        print("  python3 excel_sanity_check_a816.py ISMS-IMP-A.8.16.5_Compliance_Dashboard.xlsx")
         print("\nSupported workbook types:")
         print("  A816-1 - Monitoring Infrastructure Assessment")
         print("  A816-2 - Baseline & Anomaly Detection Assessment")
@@ -1139,3 +1163,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+# =============================================================================
+# QA_VERIFIED: 2026-01-31
+# QA_STATUS: PASSED - STANDARDIZATION (syntax validated, structure verified)
+# QA_TOOL: Claude Code Standardization
+# =============================================================================

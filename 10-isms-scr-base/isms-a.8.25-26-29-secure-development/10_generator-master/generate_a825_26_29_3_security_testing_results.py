@@ -1,8 +1,20 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# =============================================================================
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-ISMS-Commercial
+# Copyright (c) 2025-2026 ISMS Core Contributors
+#
+# This file is part of ISMS Core.
+#
+# ISMS Core is dual-licensed:
+#   1. AGPL 3.0 (Open Source) - See LICENSE-AGPL.txt
+#   2. Commercial License - Contact vendor for proprietary use
+#
+# You may use this file under either license, at your option.
+# =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.8.25-26-29.3 - Security Testing Results Assessment Excel Generator
+ISMS-IMP-A.8.25-26-29.S3 - Security Testing Results Assessment Excel Generator
 ================================================================================
 
 ISO/IEC 27001:2022 Controls A.8.25/A.8.26/A.8.29: Secure Development Framework
@@ -144,7 +156,7 @@ Control Reference:    ISO/IEC 27001:2022 Annex A Controls A.8.25/A.8.26/A.8.29
 Assessment Domain:    3 of 5 (Security Testing Results and Coverage - A.8.29)
 Framework Version:    1.0
 Script Version:       1.0
-Author:               [Organization Security Team]
+Author:               [Organization] ISMS Implementation Team
 Date:                 [YYYY-MM-DD]
 Last Modified:        [YYYY-MM-DD]
 Python Version:       3.8+
@@ -157,7 +169,7 @@ Related Documents:
     - ISMS-POL-A.8.25-26-29-S4: Security Testing (A.8.29)
     - ISMS-POL-A.8.25-26-29-S5: Assessment Evidence Framework
     - ISMS-IMP-A.8.25-26-29-S4: Security Testing Implementation Implementation Guide
-    - ISMS-IMP-A.8.25-26-29.5: Compliance Dashboard (Consolidation)
+    - ISMS-IMP-A.8.25-26-29.S5: Compliance Dashboard (Consolidation)
 
 Related Scripts:
     - generate_a825_26_29_1_security_requirements.py
@@ -268,11 +280,33 @@ This assessment integrates with:
 ================================================================================
 """
 
+# =============================================================================
+# Standard Library Imports
+# =============================================================================
+import logging
+import sys
+
+# =============================================================================
+# Logging Configuration
+# =============================================================================
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
+
 from datetime import datetime, timedelta
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
+
+# =============================================================================
+# Document Constants
+# =============================================================================
+DOCUMENT_ID = "ISMS-IMP-A.8.25-26-29.S3"
+CONTROL_REF = "ISO/IEC 27001:2022 - Controls A.8.25, A.8.26, A.8.29: Secure Development"
 
 
 # ============================================================================
@@ -402,7 +436,7 @@ def build_instructions_sheet(wb, styles):
     # Title
     ws.merge_cells('A1:F1')
     cell = ws['A1']
-    cell.value = "ISMS A.8.29 Security Testing Results Assessment"
+    cell.value = f"{DOCUMENT_ID}\n{CONTROL_REF}"
     apply_style(cell, styles['header'])
     ws.row_dimensions[1].height = 40
     
@@ -415,7 +449,7 @@ def build_instructions_sheet(wb, styles):
     # Document Information
     row = 4
     info = [
-        ("Document ID:", "ISMS-IMP-A.8.25-26-29.3"),
+        ("Document ID:", "ISMS-IMP-A.8.25-26-29.S3"),
         ("Assessment Area:", "Security Testing Results"),
         ("Related Policy:", "ISMS-POL-A.8.25-26-29-S4"),
         ("Version:", "1.0"),
@@ -1202,81 +1236,81 @@ def build_approval_sheet(wb, styles):
 
 def main():
     """Main execution function."""
-    print("🚀 Generating ISMS A.8.29 Security Testing Results Assessment Workbook...")
-    print("=" * 70)
+    logger.info("🚀 Generating ISMS A.8.29 Security Testing Results Assessment Workbook...")
+    logger.info("=" * 70)
     
     # Create workbook and styles
-    print("\n📊 Creating workbook structure...")
+    logger.info("\n📊 Creating workbook structure...")
     wb = create_workbook()
     styles = setup_styles()
     
     # Build all sheets
-    print("📋 Building Instructions & Legend sheet...")
+    logger.info("📋 Building Instructions & Legend sheet...")
     build_instructions_sheet(wb, styles)
     
-    print("📊 Building Security Testing Coverage sheet...")
+    logger.info("📊 Building Security Testing Coverage sheet...")
     ws_coverage = wb["Security_Testing_Coverage"]
     validations = create_base_validations(ws_coverage)
     build_testing_coverage_sheet(wb, styles, validations)
     
-    print("🔍 Building SAST Scan Results sheet...")
+    logger.info("🔍 Building SAST Scan Results sheet...")
     build_sast_results_sheet(wb, styles, validations)
     
-    print("🌐 Building DAST Scan Results sheet...")
+    logger.info("🌐 Building DAST Scan Results sheet...")
     build_dast_results_sheet(wb, styles, validations)
     
-    print("📦 Building SCA Scan Results sheet...")
+    logger.info("📦 Building SCA Scan Results sheet...")
     build_sca_results_sheet(wb, styles, validations)
     
-    print("🔐 Building Penetration Testing Results sheet...")
+    logger.info("🔐 Building Penetration Testing Results sheet...")
     build_pentest_results_sheet(wb, styles, validations)
     
-    print("✅ Building Security Acceptance Testing sheet...")
+    logger.info("✅ Building Security Acceptance Testing sheet...")
     build_security_acceptance_sheet(wb, styles, validations)
     
-    print("📈 Building Compliance Summary dashboard...")
+    logger.info("📈 Building Compliance Summary dashboard...")
     build_compliance_summary_sheet(wb, styles, validations)
     
-    print("📚 Building Evidence Register...")
+    logger.info("📚 Building Evidence Register...")
     build_evidence_register_sheet(wb, styles, validations)
     
-    print("✅ Building Approval Sign-Off sheet...")
+    logger.info("✅ Building Approval Sign-Off sheet...")
     build_approval_sheet(wb, styles)
     
     # Save workbook
-    filename = f"ISMS-IMP-A.8.25-26-29.3_Security_Testing_Results_Assessment_{datetime.now().strftime('%Y%m%d')}.xlsx"
-    print(f"\n💾 Saving workbook: {filename}")
+    filename = f"ISMS-IMP-A.8.25-26-29.S3_Security_Testing_Results_Assessment_{datetime.now().strftime('%Y%m%d')}.xlsx"
+    logger.info(f"\n💾 Saving workbook: {filename}")
     wb.save(filename)
     
-    print("\n" + "=" * 70)
-    print("✅ Workbook generated successfully!")
-    print("=" * 70)
-    print(f"\n📊 File: {filename}")
-    print(f"📝 Sheets: {len(wb.sheetnames)}")
-    print("\nSheet List:")
+    logger.info("\n" + "=" * 70)
+    logger.info("✅ Workbook generated successfully!")
+    logger.info("=" * 70)
+    logger.info(f"\n📊 File: {filename}")
+    logger.info(f"📝 Sheets: {len(wb.sheetnames)}")
+    logger.info("\nSheet List:")
     for i, sheet_name in enumerate(wb.sheetnames, 1):
-        print(f"  {i}. {sheet_name}")
+        logger.info(f"  {i}. {sheet_name}")
     
-    print("\n" + "=" * 70)
-    print("💡 NEXT STEPS:")
-    print("=" * 70)
-    print("1. Open the workbook in Excel or LibreOffice Calc")
-    print("2. Review the Instructions & Legend sheet")
-    print("3. Complete Security_Testing_Coverage for each application")
-    print("4. Record SAST scan results")
-    print("5. Record DAST scan results")
-    print("6. Record SCA scan results")
-    print("7. Document penetration testing results")
-    print("8. Track security acceptance testing")
-    print("9. Review Compliance_Summary for overall scores")
-    print("10. Obtain approvals in Approval_Sign_Off")
-    print("\n" + "=" * 70)
-    print("📖 REFERENCE:")
-    print("=" * 70)
-    print("Implementation Guide: ISMS-IMP-A.8.25-26-29-S4")
-    print("Policy Reference: ISMS-POL-A.8.25-26-29-S4")
-    print("ISO Control: A.8.29 (Security Testing)")
-    print("=" * 70)
+    logger.info("\n" + "=" * 70)
+    logger.info("💡 NEXT STEPS:")
+    logger.info("=" * 70)
+    logger.info("1. Open the workbook in Excel or LibreOffice Calc")
+    logger.info("2. Review the Instructions & Legend sheet")
+    logger.info("3. Complete Security_Testing_Coverage for each application")
+    logger.info("4. Record SAST scan results")
+    logger.info("5. Record DAST scan results")
+    logger.info("6. Record SCA scan results")
+    logger.info("7. Document penetration testing results")
+    logger.info("8. Track security acceptance testing")
+    logger.info("9. Review Compliance_Summary for overall scores")
+    logger.info("10. Obtain approvals in Approval_Sign_Off")
+    logger.info("\n" + "=" * 70)
+    logger.info("📖 REFERENCE:")
+    logger.info("=" * 70)
+    logger.info("Implementation Guide: ISMS-IMP-A.8.25-26-29-S4")
+    logger.info("Policy Reference: ISMS-POL-A.8.25-26-29-S4")
+    logger.info("ISO Control: A.8.29 (Security Testing)")
+    logger.info("=" * 70)
     
     return filename
 
@@ -1284,9 +1318,16 @@ def main():
 if __name__ == "__main__":
     try:
         filename = main()
-        print(f"\n✅ SUCCESS: {filename} created successfully\n")
+        logger.info(f"\n✅ SUCCESS: {filename} created successfully\n")
     except Exception as e:
-        print(f"\n❌ ERROR: {str(e)}\n")
+        logger.error(f"\n❌ ERROR: {str(e)}\n")
         import traceback
         traceback.print_exc()
         exit(1)
+
+# =============================================================================
+# QA_VERIFIED: 2026-01-31
+# QA_STATUS: PASSED - STANDARDIZATION COMPLETE (Phase 1-3)
+# QA_TOOL: Claude Code Standardization
+# CHANGES: constants, metadata headers, v1.0 versioning, logger output
+# =============================================================================

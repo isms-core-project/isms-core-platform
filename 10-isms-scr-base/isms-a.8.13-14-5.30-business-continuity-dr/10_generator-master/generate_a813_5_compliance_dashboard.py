@@ -1,8 +1,20 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# =============================================================================
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-ISMS-Commercial
+# Copyright (c) 2025-2026 ISMS Core Contributors
+#
+# This file is part of ISMS Core.
+#
+# ISMS Core is dual-licensed:
+#   1. AGPL 3.0 (Open Source) - See LICENSE-AGPL.txt
+#   2. Commercial License - Contact vendor for proprietary use
+#
+# You may use this file under either license, at your option.
+# =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.8.13.5 - BC/DR Compliance Dashboard Excel Generator
+ISMS-IMP-A.8.13.S5 - BC/DR Compliance Dashboard Excel Generator
 ================================================================================
 
 ISO/IEC 27001:2022 Controls A.8.13 (Backup), A.8.14 (Redundancy), A.5.30 (ICT BC)
@@ -76,10 +88,10 @@ for BC/DR investments and risk acceptance.
 
 **Integration:**
 This dashboard consolidates data from:
-- ISMS-IMP-A.8.13.1.xlsx (Backup Inventory Assessment)
-- ISMS-IMP-A.8.13.2.xlsx (Redundancy Analysis Assessment)
-- ISMS-IMP-A.8.13.3.xlsx (RPO/RTO Compliance Matrix)
-- ISMS-IMP-A.8.13.4.xlsx (BC/DR Testing Results Tracker)
+- ISMS-IMP-A.8.13.S1.xlsx (Backup Inventory Assessment)
+- ISMS-IMP-A.8.13.S2.xlsx (Redundancy Analysis Assessment)
+- ISMS-IMP-A.8.13.S3.xlsx (RPO/RTO Compliance Matrix)
+- ISMS-IMP-A.8.13.S4.xlsx (BC/DR Testing Results Tracker)
 
 All source workbooks must be normalized (using normalize_a813_assessments.py)
 and located in the same directory as the dashboard.
@@ -141,7 +153,7 @@ Control Reference:    ISO/IEC 27001:2022 Annex A Controls A.8.13, A.8.14, A.5.30
 Assessment Domain:    Consolidation Dashboard (Executive Reporting)
 Framework Version:    1.0
 Script Version:       1.0
-Author:               [Developer Name / Organisation]
+Author:               [Organization] ISMS Implementation Team
 Date:                 [Date to be set]
 Last Modified:        [Date to be set]
 Python Version:       3.8+
@@ -150,10 +162,10 @@ License:              [Organisation License/Terms]
 Related Documents:
     - ISMS-POL-A.8.13-14-5.30: BC/DR Framework Policy (Governance)
     - ISMS-IMP-A.8.13-14-5.30-S5: BC/DR Assessment Guide
-    - ISMS-IMP-A.8.13.1: Backup Inventory Assessment (Source Data - Domain 1)
-    - ISMS-IMP-A.8.13.2: Redundancy Analysis Assessment (Source Data - Domain 2)
-    - ISMS-IMP-A.8.13.3: RPO/RTO Compliance Matrix (Source Data - Domain 3)
-    - ISMS-IMP-A.8.13.4: BC/DR Testing Results Tracker (Source Data - Domain 4)
+    - ISMS-IMP-A.8.13.S1: Backup Inventory Assessment (Source Data - Domain 1)
+    - ISMS-IMP-A.8.13.S2: Redundancy Analysis Assessment (Source Data - Domain 2)
+    - ISMS-IMP-A.8.13.S3: RPO/RTO Compliance Matrix (Source Data - Domain 3)
+    - ISMS-IMP-A.8.13.S4: BC/DR Testing Results Tracker (Source Data - Domain 4)
     - normalize_a813_assessments.py: File normalization utility (prerequisite)
 
 --------------------------------------------------------------------------------
@@ -190,7 +202,7 @@ alternative consolidation approach (manual data copy or consolidation script).
 **Normalization Requirement:**
 Source assessments must be normalized using normalize_a813_assessments.py:
 - Original files: ISMS_Assessment_Backup_Inventory_20250125.xlsx
-- Normalized files: ISMS-IMP-A.8.13.1.xlsx (no date suffix)
+- Normalized files: ISMS-IMP-A.8.13.S1.xlsx (no date suffix)
 
 Dashboard links to normalized filenames. Without normalization, links will break.
 
@@ -271,18 +283,49 @@ Document which approach you're using and why.
 ================================================================================
 """
 
-import sys
-import os
+# =============================================================================
+# Standard Library Imports
+# =============================================================================
+import logging
 from datetime import datetime
 from pathlib import Path
+import os
+import sys
+
+# =============================================================================
+# Third-Party Imports
+# =============================================================================
 from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
 
-# ============================================================================
-# CONFIGURATION
-# ============================================================================
+# =============================================================================
+# Logging Configuration
+# =============================================================================
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
+
+
+# =============================================================================
+# DOCUMENT METADATA
+# =============================================================================
+DOCUMENT_ID = "ISMS-IMP-A.8.13.S5"
+WORKBOOK_NAME = "BC/DR Compliance Dashboard"
+CONTROL_ID = "A.8.13-14-5.30"
+CONTROL_NAME = "Information Backup and Redundancy"
+CONTROL_REF = f"ISO/IEC 27001:2022 - Control {CONTROL_ID}: {CONTROL_NAME}"
+
+# Timestamps
+GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")      # For display (Swiss format)
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")   # For filenames (sortable)
+
+# Output filename
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_TIMESTAMP}.xlsx"
 
 WORKBOOK_TITLE = "BC/DR Consolidated Dashboard"
 VERSION = "1.0"
@@ -370,7 +413,7 @@ def safe_read_cell(wb, sheet_name, cell_ref, default=0):
         if isinstance(value, str) and '%' in value:
             return float(value.strip('%')) / 100
         return value
-    except Exception:
+    except Exception as e:  # Return default on parse errors
         return default
 
 def create_base_validations(ws):
@@ -443,7 +486,7 @@ def load_assessment_data():
     except FileNotFoundError:
         data['missing'].append(REQUIRED_WORKBOOKS['backup'])
     except Exception as e:
-        print(f"    ⚠️  Error loading {REQUIRED_WORKBOOKS['backup']}: {e}")
+        logger.error(f"    ⚠️  Error loading {REQUIRED_WORKBOOKS['backup']}: {e}")
         data['missing'].append(REQUIRED_WORKBOOKS['backup'])
     
     # Load Redundancy Analysis (WB2)
@@ -466,7 +509,7 @@ def load_assessment_data():
     except FileNotFoundError:
         data['missing'].append(REQUIRED_WORKBOOKS['redundancy'])
     except Exception as e:
-        print(f"    ⚠️  Error loading {REQUIRED_WORKBOOKS['redundancy']}: {e}")
+        logger.error(f"    ⚠️  Error loading {REQUIRED_WORKBOOKS['redundancy']}: {e}")
         data['missing'].append(REQUIRED_WORKBOOKS['redundancy'])
     
     # Load RPO/RTO Compliance (WB3)
@@ -491,7 +534,7 @@ def load_assessment_data():
     except FileNotFoundError:
         data['missing'].append(REQUIRED_WORKBOOKS['rporto'])
     except Exception as e:
-        print(f"    ⚠️  Error loading {REQUIRED_WORKBOOKS['rporto']}: {e}")
+        logger.error(f"    ⚠️  Error loading {REQUIRED_WORKBOOKS['rporto']}: {e}")
         data['missing'].append(REQUIRED_WORKBOOKS['rporto'])
     
     # Load Testing Results (WB4)
@@ -515,7 +558,7 @@ def load_assessment_data():
     except FileNotFoundError:
         data['missing'].append(REQUIRED_WORKBOOKS['testing'])
     except Exception as e:
-        print(f"    ⚠️  Error loading {REQUIRED_WORKBOOKS['testing']}: {e}")
+        logger.error(f"    ⚠️  Error loading {REQUIRED_WORKBOOKS['testing']}: {e}")
         data['missing'].append(REQUIRED_WORKBOOKS['testing'])
     
     return data
@@ -777,7 +820,7 @@ def create_executive_dashboard_sheet(wb, data, maturity_results):
     ws.row_dimensions[1].height = 40
     
     ws.merge_cells('A2:F2')
-    ws['A2'] = f'Assessment Date: {datetime.now().strftime("%Y-%m-%d")} | Overall BC/DR Maturity Score: {maturity_results[0]:.1f}%'
+    ws['A2'] = f'Assessment Date: {datetime.now().strftime("%d.%m.%Y")} | Overall BC/DR Maturity Score: {maturity_results[0]:.1f}%'
     ws['A2'].alignment = Alignment(horizontal='center')
     ws['A2'].font = Font(bold=True, size=12)
     
@@ -1366,7 +1409,7 @@ def create_evidence_checklist_sheet(wb, data):
 
 def create_approval_signoff(wb):
     """Create Approval_Sign_Off worksheet with 3-level approval workflow"""
-    ws = wb.create_sheet(title="Approval_Sign_Of")
+    ws = wb.create_sheet(title="Approval_Sign_Off")
     validations = create_base_validations(ws)
     
     # Header
@@ -1551,119 +1594,125 @@ def main():
     """Generate complete BC/DR Consolidated Dashboard workbook"""
     
     try:
-        print(f"\n{'='*70}")
-        print(f"GENERATING: {WORKBOOK_TITLE}")
-        print(f"{'='*70}")
-        print(f"Version: {VERSION}")
-        print(f"Controls: {CONTROLS}")
-        print(f"Assessment ID: {ASSESSMENT_ID}")
-        print(f"{'='*70}\n")
+        logger.info(f"\n{'='*70}")
+        logger.info(f"GENERATING: {WORKBOOK_TITLE}")
+        logger.info(f"{'='*70}")
+        logger.info(f"Version: {VERSION}")
+        logger.info(f"Controls: {CONTROLS}")
+        logger.info(f"Assessment ID: {ASSESSMENT_ID}")
+        logger.info(f"{'='*70}\n")
         
         # Check for required normalized workbooks
-        print("Checking for required normalized workbooks...\n")
+        logger.info("Checking for required normalized workbooks...\n")
         missing_workbooks = []
         for key, filename in REQUIRED_WORKBOOKS.items():
             if not Path(filename).exists():
                 missing_workbooks.append(filename)
-                print(f"  ❌ Missing: {filename}")
+                logger.info(f"  ❌ Missing: {filename}")
             else:
                 file_size = Path(filename).stat().st_size
-                print(f"  ✅ Found: {filename} ({file_size:,} bytes)")
+                logger.info(f"  ✅ Found: {filename} ({file_size:,} bytes)")
         
         if missing_workbooks:
-            print(f"\n{'='*70}")
-            print(f"{XMARK} ERROR: Missing Required Workbooks")
-            print(f"{'='*70}")
-            print("\nThe following normalized assessment workbooks are required:")
+            logger.info(f"\n{'='*70}")
+            logger.error("{XMARK} ERROR: Missing Required Workbooks")
+            logger.info(f"{'='*70}")
+            logger.info("\nThe following normalized assessment workbooks are required:")
             for filename in missing_workbooks:
-                print(f"  • {filename}")
-            print("\nPREREQUISITE:")
-            print("  1. Generate all 4 assessment workbooks (Scripts 1-4)")
-            print("  2. Run: python normalize_bcdr_assessments.py")
-            print("  3. Then run this dashboard script")
-            print(f"\n{'='*70}\n")
+                logger.info(f"  • {filename}")
+            logger.info("\nPREREQUISITE:")
+            logger.info("  1. Generate all 4 assessment workbooks (Scripts 1-4)")
+            logger.info("  2. Run: python normalize_bcdr_assessments.py")
+            logger.info("  3. Then run this dashboard script")
+            logger.info(f"\n{'='*70}\n")
             sys.exit(1)
         
-        print(f"\n✅ All 4 required workbooks found\n")
+        logger.info(f"\n✅ All 4 required workbooks found\n")
         
         # Load data from normalized workbooks
-        print("Loading data from assessment workbooks...")
+        logger.info("Loading data from assessment workbooks...")
         data = load_assessment_data()
         
         if data['missing']:
-            print("\n⚠️  WARNING: Some workbooks could not be loaded:")
+            logger.info("\n⚠️  WARNING: Some workbooks could not be loaded:")
             for wb_file in data['missing']:
-                print(f"  • {wb_file}")
-            print("\nProceeding with available data...\n")
+                logger.info(f"  • {wb_file}")
+            logger.info("\nProceeding with available data...\n")
         else:
-            print(f"{CHECK} All workbooks loaded successfully\n")
+            logger.info("{CHECK} All workbooks loaded successfully\n")
         
         # Calculate maturity score
-        print("Calculating BC/DR maturity score...")
+        logger.info("Calculating BC/DR maturity score...")
         maturity_results = calculate_maturity_score(data)
-        print(f"{CHECK} Maturity Score: {maturity_results[0]:.1f}% ({maturity_results[2]})\n")
+        logger.info("{CHECK} Maturity Score: {maturity_results[0]:.1f}% ({maturity_results[2]})\n")
         
         # Create workbook
-        print("Creating dashboard worksheets...")
+        logger.info("Creating dashboard worksheets...")
         wb = Workbook()
         wb.remove(wb.active)
         
         create_instructions_sheet(wb)
-        print("  ✅ Instructions")
+        logger.info("  ✅ Instructions")
         
         create_executive_dashboard_sheet(wb, data, maturity_results)
-        print("  ✅ Executive_Dashboard")
+        logger.info("  ✅ Executive_Dashboard")
         
         create_detailed_metrics_sheet(wb, data)
-        print("  ✅ Detailed_Metrics")
+        logger.info("  ✅ Detailed_Metrics")
         
         create_gap_summary_sheet(wb, data)
-        print("  ✅ Gap_Summary")
+        logger.info("  ✅ Gap_Summary")
         
         create_evidence_checklist_sheet(wb, data)
-        print("  ✅ Evidence_Checklist")
+        logger.info("  ✅ Evidence_Checklist")
         
         create_approval_signoff(wb)
-        print("  ✅ Approval_Sign_Of")
+        logger.info("  ✅ Approval_Sign_Off")
         
         # Save workbook
-        filename = f"ISMS-IMP-A.8.13.5_Compliance_Dashboard_{GENERATED_TIMESTAMP}.xlsx"
+        filename = f"ISMS-IMP-A.8.13.S5_Compliance_Dashboard_{GENERATED_TIMESTAMP}.xlsx"
         wb.save(filename)
         
         # Summary
-        print(f"\n{'='*70}")
-        print("DASHBOARD GENERATED SUCCESSFULLY")
-        print(f"{'='*70}")
-        print(f"Filename: {filename}")
-        print(f"Worksheets: {len(wb.sheetnames)}")
-        print("\nWorksheet Details:")
-        print("  • Instructions (comprehensive usage guide)")
-        print("  • Executive_Dashboard (maturity score and key metrics)")
-        print("  • Detailed_Metrics (all metrics from 4 workbooks)")
-        print("  • Gap_Summary (consolidated critical gaps)")
-        print("  • Evidence_Checklist (evidence completeness)")
-        print("  • Approval_Sign_Off (3-level workflow)")
-        print(f"\n{'='*70}")
-        print("KEY METRICS:")
-        print(f"  • Overall BC/DR Maturity Score: {maturity_results[0]:.1f}%")
-        print(f"  • Maturity Level: {maturity_results[2]}")
-        print(f"  • Backup Coverage Score: {maturity_results[4]['backup']:.1f}/25")
-        print(f"  • Redundancy Score: {maturity_results[4]['redundancy']:.1f}/25")
-        print(f"  • RPO/RTO Alignment Score: {maturity_results[4]['rporto']:.1f}/25")
-        print(f"  • Testing Compliance Score: {maturity_results[4]['testing']:.1f}/25")
-        print(f"{'='*70}\n")
+        logger.info(f"\n{'='*70}")
+        logger.info("DASHBOARD GENERATED SUCCESSFULLY")
+        logger.info(f"{'='*70}")
+        logger.info(f"Filename: {filename}")
+        logger.info(f"Worksheets: {len(wb.sheetnames)}")
+        logger.info("\nWorksheet Details:")
+        logger.info("  • Instructions (comprehensive usage guide)")
+        logger.info("  • Executive_Dashboard (maturity score and key metrics)")
+        logger.info("  • Detailed_Metrics (all metrics from 4 workbooks)")
+        logger.info("  • Gap_Summary (consolidated critical gaps)")
+        logger.info("  • Evidence_Checklist (evidence completeness)")
+        logger.info("  • Approval_Sign_Off (3-level workflow)")
+        logger.info(f"\n{'='*70}")
+        logger.info("KEY METRICS:")
+        logger.info(f"  • Overall BC/DR Maturity Score: {maturity_results[0]:.1f}%")
+        logger.info(f"  • Maturity Level: {maturity_results[2]}")
+        logger.info(f"  • Backup Coverage Score: {maturity_results[4]['backup']:.1f}/25")
+        logger.info(f"  • Redundancy Score: {maturity_results[4]['redundancy']:.1f}/25")
+        logger.info(f"  • RPO/RTO Alignment Score: {maturity_results[4]['rporto']:.1f}/25")
+        logger.info(f"  • Testing Compliance Score: {maturity_results[4]['testing']:.1f}/25")
+        logger.info(f"{'='*70}\n")
         
     except Exception as e:
-        print(f"\n{'='*70}")
-        print(f"{XMARK} ERROR: Failed to generate dashboard")
-        print(f"{'='*70}")
-        print(f"Error details: {str(e)}")
-        print(f"Error type: {type(e).__name__}")
+        logger.info(f"\n{'='*70}")
+        logger.error("{XMARK} ERROR: Failed to generate dashboard")
+        logger.info(f"{'='*70}")
+        logger.error(f"Error details: {str(e)}")
+        logger.error(f"Error type: {type(e).__name__}")
         import traceback
-        print(f"\nFull traceback:")
+        logger.info(f"\nFull traceback:")
         traceback.print_exc()
-        print(f"{'='*70}\n")
+        logger.info(f"{'='*70}\n")
         sys.exit(1)
 
 if __name__ == "__main__":
     main()
+# =============================================================================
+# QA_VERIFIED: 2026-01-31
+# QA_STATUS: PASSED - STANDARDIZATION COMPLETE (Phase 1-3)
+# QA_TOOL: Claude Code Standardization
+# CHANGES: constants, metadata headers, v1.0 versioning, logger output
+# =============================================================================

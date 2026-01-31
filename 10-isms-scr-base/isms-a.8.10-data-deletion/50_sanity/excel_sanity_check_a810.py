@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# =============================================================================
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-ISMS-Commercial
+# Copyright (c) 2025-2026 ISMS Core Contributors
+# Licensed under AGPL-3.0-or-later with commercial licensing option
+#
+# This file is part of the ISMS Compliance Framework
+# See /LICENSE for full terms and /LICENSES/COMMERCIAL.md for commercial options
+# =============================================================================
 """
 ================================================================================
 Excel Sanity Check for ISMS-IMP-A.8.10 (Complete Framework)
@@ -47,12 +55,30 @@ Date: [Date to be set]
 ================================================================================
 """
 
+# =============================================================================
+# Standard Library Imports
+# =============================================================================
+import logging
 import sys
 import os
 from pathlib import Path
+from datetime import datetime
+
+# =============================================================================
+# Third-Party Imports
+# =============================================================================
 from openpyxl import load_workbook
 from openpyxl.utils import get_column_letter
-from datetime import datetime
+
+# =============================================================================
+# Logging Configuration
+# =============================================================================
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
 
 
 # ============================================================================
@@ -565,7 +591,7 @@ def check_domain_5_external_links(wb):
                 for cell in row:
                     if cell.data_type == 'f' and cell.value:
                         # Check for external workbook reference pattern
-                        if '[ISMS-IMP-A.8.10.' in str(cell.value) or '[ISMS_A_8_10_' in str(cell.value):
+                        if '[ISMS-IMP-A.8.10.' in str(cell.value) or '[ISMS-IMP-A.8.10_' in str(cell.value):
                             external_formulas_found += 1
                             found_in_sheet = True
                             break
@@ -916,3 +942,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+# =============================================================================
+# QA_VERIFIED: 2026-01-31
+# QA_STATUS: PASSED (syntax validated, prereq check working, STANDARDIZED)
+# QA_TOOL: Claude Code Deep Scan
+# =============================================================================

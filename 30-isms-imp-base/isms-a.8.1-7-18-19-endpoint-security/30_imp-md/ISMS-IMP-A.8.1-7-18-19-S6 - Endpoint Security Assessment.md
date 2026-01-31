@@ -1,10 +1,10 @@
-# ISMS-IMP-A.8.1-7-18-19-S6 - Endpoint Security Assessment
-## Assessment Specification with User Completion Guide
-### ISO/IEC 27001:2022 Controls A.8.1, A.8.7, A.8.18, A.8.19: Endpoint Security Framework
+**ISMS-IMP-A.8.1-7-18-19-S6 - Endpoint Security Assessment**
+**Assessment Specification with User Completion Guide**
+### ISO/IEC 27001:2022 Control A.8.1: User Endpoint Devices
 
 ---
 
-## Document Control
+**Document Control**
 
 | Attribute | Value |
 |-----------|-------|
@@ -44,6 +44,7 @@ This document consists of two parts:
   - Cell Styling Reference
   - Appendix: Python Developer Notes
 
+
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -65,47 +66,62 @@ This is the **MASTER ASSESSMENT** that consolidates all endpoint security assess
 - What actions are required to achieve compliance?
 - Are we ready for ISO 27001 audit?
 
+
 #### Key Principle
 
 **This is the EXECUTIVE VIEW of endpoint security:**
+
 - ❌ Component: "S3 shows 87% malware coverage"
 - ✅ Integrated: "Overall endpoint security is Yellow: 87% malware coverage, 23 unprotected critical endpoints, remediation by Q2"
+
 
 This assessment provides the **single source of truth** for endpoint security compliance status.
 
 #### What You'll Consolidate
 
 **From S1 (Endpoint Discovery):**
+
 - Total endpoint inventory
 - Endpoint classification and criticality
 - Endpoint management coverage
 
+
 **From S2 (Security Baselines):**
+
 - Baseline compliance per endpoint type
 - Configuration drift
 - Encryption coverage
 
+
 **From S3 (Malware Protection):**
+
 - Anti-malware/EDR coverage
 - Signature currency
 - Scan compliance
 
+
 **From S4 (Software Controls):**
+
 - Approved software list completeness
 - Unauthorized software count
 - Application control deployment
 - Patch compliance
 
+
 **From S5 (Privileged Utilities):**
+
 - Privileged utility access controls
 - Usage monitoring
 - Security bypass tool status
 
+
 **Plus:**
+
 - Cross-control gap analysis
 - Risk prioritization
 - Consolidated remediation roadmap
 - Executive dashboard
+
 
 #### How This Relates to Other Assessments
 
@@ -134,6 +150,7 @@ This assessment provides the **single source of truth** for endpoint security co
 - **Quarterly updates:** 3-4 hours (refresh from updated S1-S5)
 - **Annual audit prep:** 6-8 hours (comprehensive review with evidence)
 
+
 ### Expected Outputs
 
 Upon completion, you will have:
@@ -155,11 +172,13 @@ Upon completion, you will have:
 #### 1. Completed Assessments S1-S5
 
 **CRITICAL:** S6 is a consolidation document. You **must** have completed:
+
 - ✅ S1 - Endpoint Discovery Process
 - ✅ S2 - Security Baseline Implementation
 - ✅ S3 - Malware Protection Deployment
 - ✅ S4 - Software Control Process
 - ✅ S5 - Privileged Utility Management
+
 
 **If any assessment is missing or outdated (>90 days), complete/update it first.**
 
@@ -173,6 +192,7 @@ Upon completion, you will have:
 - All gap registers (S1-S5 Sheet 6/7)
 - All evidence registers (S1-S5 Sheet 7/8)
 
+
 #### 3. Management Context
 
 - Organizational risk appetite
@@ -181,17 +201,22 @@ Upon completion, you will have:
 - Regulatory requirements
 - Audit schedule
 
+
 ### Tools You'll Use
 
 **Data Sources:**
+
 - S1-S5 assessment workbooks
 - ISMS policy documents
 - Management dashboards
 
+
 **Analysis Tools:**
+
 - Excel (for consolidation)
 - Risk assessment framework
 - Gap analysis methodology
+
 
 ### Access Requirements
 
@@ -199,6 +224,7 @@ Upon completion, you will have:
 - Access to ISMS repository
 - Access to management decision records
 - Access to budget/resource planning documents
+
 
 ---
 
@@ -356,34 +382,42 @@ Consolidate compliance metrics from S1-S5 into single view per control.
 #### What to Document
 
 **For EACH Control (A.8.1, A.8.7, A.8.18, A.8.19):**
+
 - Key metrics from relevant assessments
 - Compliance status (Green/Yellow/Red)
 - Compliance percentage
 - Critical gaps count
 - Evidence references
 
+
 #### How to Complete
 
 **Step 1: Import S1 Metrics (A.8.1 - User Endpoint Devices)**
 
 **From S1 Dashboard:**
+
 - Total endpoints
 - Endpoint classification distribution (corporate/BYOD/contractor)
 - Criticality distribution (critical/high/medium/low)
 - Management coverage % (MDM/agent enrollment)
 
+
 **From S2 Dashboard (related to A.8.1):**
+
 - Baseline compliance % by endpoint type
 - Encryption coverage % (FDE, file-level)
 - Secure disposal compliance %
 
+
 **A.8.1 Compliance Calculation:**
 ```
 A.8.1 Compliance = Weighted Average of:
+
   - Endpoint inventory completeness (10%)
   - Management coverage (20%)
   - Baseline compliance (40%)
   - Encryption coverage (30%)
+
 
 Thresholds:
   Green: ≥95%
@@ -394,19 +428,23 @@ Thresholds:
 **Step 2: Import S3 Metrics (A.8.7 - Protection Against Malware)**
 
 **From S3 Dashboard:**
+
 - Overall malware protection coverage %
 - Corporate coverage %, BYOD coverage %
 - Signature currency %
 - Scan compliance % (full scans, quick scans)
 - Detection effectiveness metrics
 
+
 **A.8.7 Compliance Calculation:**
 ```
 A.8.7 Compliance = Weighted Average of:
+
   - Protection coverage (40%)
   - Signature currency (30%)
   - Scan compliance (20%)
   - Detection effectiveness (10%)
+
 
 Thresholds:
   Green: ≥95% coverage, ≥95% signature currency, ≥90% scan compliance
@@ -417,6 +455,7 @@ Thresholds:
 **Step 3: Import S5 Metrics (A.8.18 - Use of Privileged Utility Programs)**
 
 **From S5 Dashboard:**
+
 - Total privileged utilities
 - Access control deployment %
 - Enforcement %
@@ -424,14 +463,17 @@ Thresholds:
 - Approval workflow compliance %
 - Security bypass tools (uncontrolled count)
 
+
 **A.8.18 Compliance Calculation:**
 ```
 A.8.18 Compliance = Composite of:
+
   - Access control deployed ≥95%
   - Enforcement mode ≥95%
   - Logging/monitoring ≥95%
   - Approval workflow 100%
   - Security bypass tools: 0 uncontrolled
+
 
 Thresholds:
   Green: All criteria met
@@ -442,6 +484,7 @@ Thresholds:
 **Step 4: Import S4 Metrics (A.8.19 - Installation of Software)**
 
 **From S4 Dashboard:**
+
 - Approved software list exists (Yes/No)
 - Unauthorized software count
 - Unauthorized software % of total
@@ -450,14 +493,17 @@ Thresholds:
 - Critical patch compliance %
 - High patch compliance %
 
+
 **A.8.19 Compliance Calculation:**
 ```
 A.8.19 Compliance = Composite of:
+
   - Approved list exists and current
   - Unauthorized software ≤5%
   - Application control deployed ≥95%
   - Application control enforced ≥90%
   - Critical patch compliance ≥95%
+
 
 Thresholds:
   Green: All criteria met
@@ -482,9 +528,11 @@ Overall Status = Worst of (A.8.1, A.8.7, A.8.18, A.8.19)
 **Step 6: Document Compliance Evidence**
 
 **For Each Control:**
+
 - Evidence references (which assessments, which sheets)
 - Date of evidence
 - Evidence completeness (%)
+
 
 #### Common Mistakes to Avoid
 
@@ -504,6 +552,7 @@ Overall Status = Worst of (A.8.1, A.8.7, A.8.18, A.8.19)
 - [ ] Evidence references documented
 - [ ] No data >90 days old
 
+
 ---
 
 ### Sheet 2: Consolidated_Gaps
@@ -514,22 +563,27 @@ Master gap register consolidating all gaps from S1-S5.
 #### What to Document
 
 All gaps from:
+
 - S1 Sheet 6 (Discovery & Inventory gaps)
 - S2 Sheet 6 (Baseline & Encryption gaps)
 - S3 Sheet 6 (Protection Coverage gaps)
 - S4 Sheet 7 (Software Control gaps)
 - S5 Sheet 7 (Privileged Utility gaps)
 
+
 Plus:
+
 - Deduplication (same gap in multiple assessments)
 - Re-prioritization in consolidated view
 - Cross-control dependencies
+
 
 #### How to Complete
 
 **Step 1: Import All Gaps**
 
 **From Each Assessment (S1-S5):**
+
 - Gap ID
 - Gap description
 - Source assessment
@@ -539,55 +593,72 @@ Plus:
 - Target date
 - Status
 
+
 **Step 2: Deduplicate Gaps**
 
 **Common Duplicates:**
+
 - Unmanaged endpoints (appears in S1, S2, S3)
 - Missing encryption (appears in S2, but impacts S1 compliance)
 - Application control gaps (appears in S4, S5)
 
+
 **Deduplication Strategy:**
+
 - Keep one entry per unique gap
 - Reference all assessments where gap appears
 - Use highest risk level if different across assessments
+
 
 **Step 3: Re-Prioritize in Consolidated View**
 
 **Priority Criteria (Consolidated):**
 
 **P1 - Critical (Immediate, ≤30 days):**
+
 - Uncontrolled security bypass tools
 - Unprotected critical endpoints (no malware protection)
 - Critical vulnerabilities >30 days overdue
 - No application control on production endpoints
 - Major compliance failures (audit blockers)
 
+
 **P2 - High (≤90 days):**
+
 - Yellow status controls (need to reach Green)
 - High-risk gaps with workarounds
 - Unauthorized software on critical endpoints
 - Missing encryption on high-criticality endpoints
 
+
 **P3 - Medium (≤180 days):**
+
 - Process improvements (approval workflows, recertification)
 - Medium-risk technical gaps
 - Documentation updates
 
+
 **P4 - Low (Backlog):**
+
 - Nice-to-have improvements
 - Low-risk gaps with strong compensating controls
+
 
 **Step 4: Identify Cross-Control Dependencies**
 
 **Example Dependencies:**
+
 - Can't enforce application control (S4) until endpoints managed (S1)
 - Can't monitor privileged utilities (S5) until logging centralized
 - Baseline compliance (S2) depends on endpoint management (S1)
 
+
 **Document:**
+
 - Gap ID
 - Depends on (other Gap IDs)
 - Blocks (other Gap IDs)
+
 
 **Step 5: Calculate Gap Metrics**
 
@@ -633,6 +704,7 @@ Resolution Rate: [Resolved / Total × 100] %
 - [ ] Gap metrics calculated
 - [ ] No gaps lost in consolidation
 
+
 ---
 
 ### Sheet 3: Cross_Control_Risk
@@ -643,10 +715,12 @@ Identify amplified risks from gap combinations across multiple controls.
 #### What to Document
 
 **Risk Scenarios from Gap Combinations:**
+
 - Unprotected + Unpatched + Unauthorized Software
 - No Application Control + Privileged Access Uncontrolled
 - Unmanaged + Unencrypted + Unprotected
 - Missing Baseline + No Monitoring + No Software Controls
+
 
 #### How to Complete
 
@@ -655,9 +729,11 @@ Identify amplified risks from gap combinations across multiple controls.
 **Query Pattern:**
 ```
 Endpoints WHERE:
+
   - A.8.7 Coverage = Unprotected AND
   - A.8.19 Patch Status = Critical Vulnerabilities AND
   - A.8.19 Unauthorized Software > 0
+
 
 Result: Endpoints with TRIPLE RISK (no protection, vulnerable, unauthorized software)
 ```
@@ -665,48 +741,62 @@ Result: Endpoints with TRIPLE RISK (no protection, vulnerable, unauthorized soft
 **Common High-Risk Cohorts:**
 
 **Cohort 1: Unmanaged + Unprotected**
+
 - Not enrolled in MDM/endpoint management (S1)
 - No malware protection (S3)
 - Risk: Cannot deploy security controls, vulnerable to malware
 
+
 **Cohort 2: Unencrypted + Unprotected + Mobile**
+
 - Laptops without encryption (S2)
 - No malware protection (S3)
 - Mobile/remote workers
 - Risk: Data loss if device lost/stolen + malware infection
 
+
 **Cohort 3: Critical Endpoints + Multiple Gaps**
+
 - Criticality = Critical (S1)
 - Missing any protection (S3) OR missing app control (S4) OR privileged utilities uncontrolled (S5)
 - Risk: High-value target with weak defenses
 
+
 **Cohort 4: No Application Control + Privileged Access**
+
 - Application control not deployed (S4)
 - Users with privileged utility access (S5)
 - Risk: Privileged users can install anything, including malicious tools
 
+
 **Cohort 5: Stale Signatures + No Patching + Unauthorized Software**
+
 - Anti-malware signatures >7 days (S3)
 - Critical vulnerabilities unpatched >30 days (S4)
 - Unauthorized software detected (S4)
 - Risk: Outdated defenses + vulnerable software + potentially malicious software
 
+
 **Step 2: Assess Cumulative Risk**
 
 **For Each Cohort:**
+
 - Endpoint count
 - Business impact (what if all compromised)
 - Attack likelihood
 - Cumulative risk score
+
 
 **Risk Scoring:**
 ```
 Cumulative Risk = (Impact × Likelihood) + Gap Multiplier
 
 Gap Multiplier:
+
   1 gap: ×1.0
   2 gaps: ×1.5
   3 gaps: ×2.0
+
   4+ gaps: ×3.0
 
 Result:
@@ -719,6 +809,7 @@ Result:
 **Step 3: Document Cross-Control Scenarios**
 
 **For Each Scenario:**
+
 - Scenario ID
 - Description (gap combination)
 - Affected endpoints (count and list)
@@ -729,12 +820,15 @@ Result:
 - Owner
 - Target date
 
+
 **Step 4: Prioritize Remediation**
 
 **Prioritization:**
+
 - Start with scenarios affecting Critical endpoints
 - Address scenarios with highest cumulative risk
 - Quick wins (scenarios fixable with single remediation)
+
 
 #### Common Mistakes to Avoid
 
@@ -753,6 +847,7 @@ Result:
 - [ ] Mitigation strategies defined
 - [ ] Prioritization based on risk + feasibility
 
+
 ---
 
 ### Sheet 4: Remediation_Roadmap
@@ -763,12 +858,14 @@ Consolidated, sequenced remediation plan with phases, owners, resources.
 #### What to Document
 
 **Remediation organized by:**
+
 - Priority (P1/P2/P3/P4)
 - Phase (Q1/Q2/Q3/Q4 or Timeline)
 - Control area (A.8.1/A.8.7/A.8.18/A.8.19)
 - Dependencies
 - Resource requirements
 - Management commitments
+
 
 #### How to Complete
 
@@ -777,82 +874,108 @@ Consolidated, sequenced remediation plan with phases, owners, resources.
 **Instead of 147 individual gaps, create remediation PROJECTS:**
 
 **Project 1: Endpoint Management Enrollment**
+
 - Addresses: S1 gaps (unmanaged endpoints)
 - Enables: S2 (baseline deployment), S3 (protection deployment), S4 (app control)
 - Priority: P1
 - Timeline: Q1
 
+
 **Project 2: Malware Protection Deployment**
+
 - Addresses: S3 gaps (protection coverage)
 - Dependencies: Project 1 (endpoints must be managed)
 - Priority: P1
 - Timeline: Q1-Q2
 
+
 **Project 3: Application Control Rollout**
+
 - Addresses: S4 gaps (application control)
 - Dependencies: Project 1
 - Priority: P2
 - Timeline: Q2-Q3
 
+
 **Project 4: Privileged Access Management (PAM)**
+
 - Addresses: S5 gaps (privileged utility controls)
 - Priority: P2
 - Timeline: Q2-Q3
 
+
 **Project 5: Encryption Deployment**
+
 - Addresses: S2 gaps (encryption)
 - Priority: P2
 - Timeline: Q2-Q3
 
+
 **Project 6: Patch Management Improvements**
+
 - Addresses: S4 gaps (patch compliance)
 - Priority: P2
 - Timeline: Ongoing (process improvement)
 
+
 **Project 7: Process & Documentation**
+
 - Addresses: Approval workflows, recertification, documentation
 - Priority: P3
 - Timeline: Q3-Q4
 
+
 **Step 2: Sequence Projects**
 
 **Sequencing Considerations:**
+
 - Dependencies (must complete A before starting B)
 - Quick wins (high impact, low effort - do early)
 - Resource constraints (can't do everything at once)
 - Business cycles (avoid during busy seasons)
 
+
 **Example Sequence:**
 ```
 Q1 (Immediate):
+
   - Project 1: Endpoint Management (foundation)
   - Project 2: Malware Protection (start after Project 1 phase 1)
 
+
 Q2 (Short-term):
+
   - Project 2: Malware Protection (complete)
   - Project 3: Application Control (pilot)
   - Project 4: PAM (design)
   - Project 5: Encryption (pilot)
 
+
 Q3 (Medium-term):
+
   - Project 3: Application Control (rollout)
   - Project 4: PAM (deploy)
   - Project 5: Encryption (rollout)
   - Project 6: Patch Management (improve process)
 
+
 Q4 (Long-term):
+
   - Project 7: Process improvements
   - Project 3/4/5: Complete and optimize
+
 ```
 
 **Step 3: Assign Ownership & Resources**
 
 **For Each Project:**
+
 - **Owner:** IT Operations Manager, Security Engineering Lead, etc.
 - **Team:** Who works on it (FTEs, contractors)
 - **Budget:** Licensing, consulting, hardware, training
 - **Timeline:** Start date, milestones, completion date
 - **Success Metrics:** How to measure success
+
 
 **Example:**
 ```
@@ -861,42 +984,54 @@ Owner: Security Engineering Manager
 Team: 2 security engineers, 1 endpoint engineer, help desk support
 Budget: $150K (EDR licensing 500 endpoints × $50/yr × 3 years)
 Timeline: 
+
   - Q1 W1-2: Pilot (50 endpoints)
   - Q1 W3-8: Rollout phase 1 (250 endpoints)
   - Q2 W1-8: Rollout phase 2 (200 endpoints)
   - Q2 W9: Complete
+
 Success Metrics: 
+
   - Coverage ≥98%
   - Signature currency ≥95%
   - User satisfaction ≥4/5
+
 ```
 
 **Step 4: Get Management Commitment**
 
 **For Budget/Resources:**
+
 - Total budget required across all projects
 - Resource allocation (people, time)
 - Expected ROI or risk reduction
 - Management approval
 
+
 **For Timeline:**
+
 - Realistic given resources
 - Accounts for other initiatives
 - Includes contingency (10-20%)
 - Management sign-off
 
+
 **Step 5: Define Milestones & Tracking**
 
 **Milestone Examples:**
+
 - Project 1: 100 endpoints enrolled in MDM (Q1 W4)
 - Project 2: EDR deployed to 50% of endpoints (Q1 end)
 - Project 3: Application control enforced on pilot group (Q2 W6)
 
+
 **Tracking:**
+
 - Monthly status updates
 - Risk/issue escalation
 - Budget tracking
 - Milestone completion
+
 
 #### Common Mistakes to Avoid
 
@@ -918,6 +1053,7 @@ Success Metrics:
 - [ ] Management commitment obtained
 - [ ] Tracking mechanism established
 
+
 ---
 
 ### Sheet 5: Evidence_Package
@@ -934,6 +1070,7 @@ All evidence from S1-S5 Evidence Registers, organized by control (A.8.1, A.8.7, 
 **Step 1: Import Evidence from S1-S5**
 
 **From Each Assessment:**
+
 - Evidence ID
 - Evidence type
 - Description
@@ -942,33 +1079,46 @@ All evidence from S1-S5 Evidence Registers, organized by control (A.8.1, A.8.7, 
 - Collection date
 - Verification status
 
+
 **Step 2: Organize by Control**
 
 **A.8.1 Evidence:**
+
 - From S1 (endpoint inventory, management coverage)
 - From S2 (baseline configs, encryption evidence)
 
+
 **A.8.7 Evidence:**
+
 - From S3 (protection coverage reports, signature status, scan compliance)
 
+
 **A.8.18 Evidence:**
+
 - From S5 (privileged utility inventory, access controls, usage logs, approval records)
 
+
 **A.8.19 Evidence:**
+
 - From S4 (approved software list, unauthorized software reports, app control configs, patch compliance)
+
 
 **Step 3: Verify Audit Readiness**
 
 **For Each Evidence Item:**
+
 - Recent (≤90 days for operational data, ≤1 year for policies)
 - Complete (not redacted beyond sanitization)
 - Accessible (auditor can retrieve)
 - Verified (spot-checked for accuracy)
 
+
 **Step 4: Create Evidence Index**
 
 **Evidence Index:**
+
 - Control → Requirement → Evidence Item(s) → Storage Location
+
 
 **Example:**
 ```
@@ -987,6 +1137,7 @@ A.8.7 - Protection Against Malware
 - [ ] Storage locations documented
 - [ ] No missing evidence
 
+
 ---
 
 ### Sheet 6: Executive_Dashboard
@@ -1002,6 +1153,7 @@ One-page executive summary with overall status, metrics, critical gaps, and reco
 - Top 10 critical gaps
 - Recommended actions (immediate, short-term, long-term)
 - Management decisions required
+
 
 #### How to Complete
 
@@ -1033,13 +1185,16 @@ One-page executive summary with overall status, metrics, critical gaps, and reco
 - Uncontrolled security bypass tools: [X]
 - P1 gaps: [X]
 
+
 **Step 3: Top 10 Critical Gaps**
 
 From Sheet 2 (Consolidated Gaps), list top 10 P1/P2 gaps with:
+
 - Gap description
 - Risk level
 - Owner
 - Target date
+
 
 **Step 4: Executive Summary (Narrative)**
 
@@ -1048,10 +1203,12 @@ From Sheet 2 (Consolidated Gaps), list top 10 P1/P2 gaps with:
 [Organization]'s endpoint security posture is [GREEN/YELLOW/RED] as of [Date].
 
 Controls Status:
+
 - A.8.1 (Endpoint Devices): [Status] - [brief summary]
 - A.8.7 (Malware Protection): [Status] - [brief summary]
 - A.8.18 (Privileged Utilities): [Status] - [brief summary]
 - A.8.19 (Software Controls): [Status] - [brief summary]
+
 
 Critical Issues:
 1. [Top issue]
@@ -1096,6 +1253,466 @@ Management Actions Required:
 - [ ] Recommended actions specific and actionable
 - [ ] Management decisions clearly stated
 
+
+---
+
+### Sheet 7: Risk_Prioritization
+
+#### Purpose
+Prioritize identified gaps and risks across all endpoint security controls (S1-S5).
+
+#### What to Document
+
+**Risk Ranking:**
+
+- Gap ID
+- Control area (S1/S2/S3/S4/S5)
+- Risk description
+- Risk severity (Critical/High/Medium/Low)
+- Business impact
+- Affected endpoints
+- Exploitability
+- Priority score
+
+**Prioritization Rationale:**
+
+- Risk factors considered
+- Weighting methodology
+- Tie-breaker criteria
+- Alignment with organizational risk tolerance
+
+#### How to Complete
+
+**Step 1: Consolidate All Gaps**
+
+From S1-S5:
+
+- S1 gaps: [list with risk]
+- S3 gaps: [list with risk]
+- S4 gaps: [list with risk]
+- S5 gaps: [list with risk]
+- Total gap count: [count]
+
+**Step 2: Define Risk Criteria**
+
+**Critical:**
+
+- Security bypass possible
+- Widespread vulnerability exploitation risk
+- Affects >25% of endpoints
+- Known active exploits
+
+**High:**
+
+- Significant control weakness
+- Affects 10-25% of endpoints
+- Potential for exploitation
+- Compensating controls insufficient
+
+**Medium:**
+
+- Control gap with limited impact
+- Affects 5-10% of endpoints
+- Exploitation requires specific conditions
+- Workarounds available
+
+**Low:**
+
+- Minor gap or configuration issue
+- Affects <5% of endpoints
+- Difficult to exploit
+- Minimal business impact
+
+**Step 3: Calculate Priority Scores**
+
+```
+Priority Score = (Severity × 5) + (Impact × 3) + (Exploitability × 2)
+
+Severity: Critical=5, High=4, Medium=3, Low=2, Informational=1
+Impact: High=5, Medium=3, Low=1
+Exploitability: High=5, Medium=3, Low=1
+
+Sort by Score (descending)
+```
+
+**Step 4: Create Risk Heat Map**
+
+- X-axis: Likelihood (Low/Medium/High)
+- Y-axis: Impact (Low/Medium/High)
+- Plot each gap by position
+- Identify critical quadrant gaps
+
+**Step 5: Map to Remediation Timeline**
+
+- Tier 1 (Critical): Immediate (7 days)
+- Tier 2 (High): 30 days
+- Tier 3 (Medium): 90 days
+- Tier 4 (Low): 180 days
+
+#### Common Mistakes to Avoid
+
+❌ Treating all gaps equally
+❌ No documented prioritization criteria
+❌ Risk criteria too vague
+❌ No business impact assessment
+❌ Prioritization not aligned with risk appetite
+
+#### Quality Checklist
+
+- [ ] All gaps included
+- [ ] Risk criteria clearly defined
+- [ ] Severity assigned to all gaps
+- [ ] Business impact documented
+- [ ] Priority scores calculated
+- [ ] Heat map visualized
+- [ ] Management alignment obtained
+
+---
+
+### Sheet 8: Remediation_Tracking
+
+#### Purpose
+Track remediation progress across all identified gaps and maintain accountability.
+
+#### What to Document
+
+**Remediation Status:**
+
+- Gap ID and description
+- Priority tier
+- Owner/responsible party
+- Target completion date
+- Current status (Not Started/In Progress/Blocked/Completed)
+- % Complete
+- Actual completion date
+
+**Progress Metrics:**
+
+- Total gaps: [count]
+- On schedule: [count] ([%])
+- At risk: [count] ([%])
+- Blocked: [count] ([%])
+- Completed: [count] ([%])
+
+**Issue Tracking:**
+
+- Blockers
+- Resource constraints
+- Escalations needed
+- Change requests
+
+#### How to Complete
+
+**Step 1: Create Remediation Plan**
+
+For each gap:
+
+- Remediation action: [specific task]
+- Owner: [team/person]
+- Target date: [date]
+- Resource needs: [budget/staff/tools]
+- Success criteria: [measurable outcome]
+- Dependencies: [other gaps/projects]
+
+**Step 2: Baseline Planning**
+
+- Tier 1 (Critical) target: [date - 7 days from approval]
+- Tier 2 (High) target: [date - 30 days]
+- Tier 3 (Medium) target: [date - 90 days]
+- Tier 4 (Low) target: [date - 180 days]
+
+**Step 3: Track Progress**
+
+Weekly updates:
+
+- Status: Not Started/In Progress/Blocked/Completed
+- % Complete: [0-100%]
+- Next steps: [by date]
+- Blockers/issues: [if any]
+- Updated completion date: [if changed]
+
+**Step 4: Escalate Blockers**
+
+If blocked or off-track:
+
+- Issue description: [what's blocking]
+- Impact: Delay of [X days]
+- Escalation: [name/date]
+- Resolution required: [what's needed]
+
+**Step 5: Track Completion**
+
+When remediation complete:
+
+- Actual completion date: [date]
+- Verification method: [how verified]
+- Verification date: [date]
+- Verification evidence: [document/screenshot]
+- Sign-off: [owner/manager]
+
+#### Common Mistakes to Avoid
+
+❌ Plans created but never tracked
+❌ Status not updated regularly
+❌ Blockers escalated too late
+❌ No accountability assigned
+❌ No evidence of completion
+
+#### Quality Checklist
+
+- [ ] All gaps have remediation plans
+- [ ] Owners assigned
+- [ ] Target dates realistic
+- [ ] Status updated weekly
+- [ ] Blockers tracked and escalated
+- [ ] Completion verified
+- [ ] Overall progress measured
+
+---
+
+### Sheet 9: Trend_Analysis
+
+#### Purpose
+Track key metrics trends over time to measure improvement and identify emerging patterns.
+
+#### What to Document
+
+**Trend Metrics:**
+
+- Metric name
+- Measurement period (monthly/quarterly)
+- Current value
+- Previous value
+- Change (absolute and %)
+- Trend direction (improving/stable/declining)
+- Threshold/target
+- Status vs. target
+
+**Key Trend Lines:**
+
+- Overall compliance status
+- Gap closure rate
+- Endpoint protection coverage
+- Vulnerability remediation time
+- Incident rate
+
+**Seasonal/Cyclical Patterns:**
+
+- Peak risk periods
+- Resource availability patterns
+- Patch deployment cycles
+
+#### How to Complete
+
+**Step 1: Define Key Metrics**
+
+**Control S1 - Endpoint Discovery:**
+
+- Endpoint inventory accuracy: [%]
+- Inventory update frequency: [days]
+- Inventory completeness: [%]
+
+**Control S3 - Malware Protection:**
+
+- Protection coverage: [%]
+- Signature currency: [%]
+- Scan compliance: [%]
+- Detection rate: [per 1000 endpoints]
+
+**Control S4 - Software Control:**
+
+- Approved software list: [count items]
+- Unauthorized software rate: [per 1000 endpoints]
+- Patch compliance: [%]
+
+**Control S5 - Privileged Utility:**
+
+- Controlled utilities: [count]
+- Access certification currency: [% current]
+- Unauthorized access attempts: [per month]
+
+**Control S6 - Overall:**
+
+- Compliance status: [%]
+- Gap closure rate: [gaps/month]
+- Remediation average time: [days]
+
+**Step 2: Collect Historical Data**
+
+- Period 1 (baseline): [date] - [values]
+- Period 2: [date] - [values]
+- Period 3: [date] - [values]
+- Current: [date] - [values]
+
+**Step 3: Calculate Trends**
+
+For each metric:
+
+- Change from previous: [+/-X%]
+- Change from baseline: [+/-X%]
+- Trend: Improving/Stable/Declining
+- Trend rate: [X% per period]
+
+**Step 4: Create Visualizations**
+
+- Line graph: Metric over time
+- Identify inflection points
+- Mark major events (deployments, incidents)
+- Forecast based on trend
+
+**Step 5: Analyze Patterns**
+
+- Improvement drivers: [what caused positive trend]
+- Risk factors: [what caused negative trend]
+- Seasonal patterns: [if any]
+- Emerging issues: [early warning signs]
+
+#### Common Mistakes to Avoid
+
+❌ Insufficient historical data
+❌ Inconsistent measurement methodology
+❌ No context for metric changes
+❌ Seasonal variation not considered
+❌ Trends not linked to actions
+
+#### Quality Checklist
+
+- [ ] Key metrics identified
+- [ ] Historical data available (3+ periods)
+- [ ] Measurement methodology consistent
+- [ ] Current values accurate
+- [ ] Trends calculated correctly
+- [ ] Visualizations clear
+- [ ] Pattern analysis complete
+
+---
+
+### Sheet 10: Evidence_Register
+
+#### Purpose
+Centralized registry of all evidence collected across S1-S6 assessments for audit traceability.
+
+#### What to Document
+
+**Evidence Inventory:**
+
+- Evidence ID
+- Evidence type
+- Control reference (S1-S6)
+- Description
+- Source system/document
+- Collection date
+- Collector
+- Location (storage path)
+- Verification date
+- Verification status (Verified/Unverified)
+- Expires/Refresh date
+
+**Evidence Status:**
+
+- Total evidence items: [count]
+- Verified: [count] ([%])
+- Current (within 30 days): [count] ([%])
+- Expiring soon (30-60 days): [count]
+- Expired: [count]
+
+#### How to Complete
+
+**Step 1: Consolidate Evidence**
+
+From S1-S5 evidence registers and this assessment:
+
+- S1 evidence: [count] items
+- S3 evidence: [count] items
+- S4 evidence: [count] items
+- S5 evidence: [count] items
+- S6 evidence: [count] items
+- Total: [count] items
+
+**Step 2: Register Each Item**
+
+For every piece of evidence:
+
+- Evidence type: [Screenshot/Report/Log/Configuration/Documentation]
+- Control: [S1/S3/S4/S5/S6]
+- Description: [What does it prove]
+- Location: [File path/URL/System]
+- Collection date: [date]
+- Collector: [name/team]
+- Sanitization: [Redacted items (if any)]
+
+**Step 3: Verify Evidence**
+
+- Evidence still exists: Yes/No
+- Evidence current: Yes/No (if >30 days, refresh needed)
+- Evidence accessible: Yes/No
+- Evidence complete: Yes/No
+
+**Step 4: Set Refresh Schedule**
+
+- Operational data (logs, reports): Refresh every 30 days
+- Configuration data: Refresh every 90 days
+- Documentation: Refresh when changed
+- Screenshots: Refresh every 60 days
+
+**Step 5: Organize Evidence**
+
+```
+Evidence Storage Structure:
+
+/Audit Evidence/
+├── S1 - Endpoint Discovery/
+│   ├── Inventory Exports/
+│   ├── Scan Reports/
+│   └── Asset Count/
+├── S3 - Malware Protection/
+│   ├── Coverage Reports/
+│   ├── Scan History/
+│   └── Detection Logs/
+├── S4 - Software Control/
+│   ├── Approved List/
+│   ├── Patch Reports/
+│   └── Scan Results/
+├── S5 - Privileged Utility/
+│   ├── Policies/
+│   ├── Access Reviews/
+│   └── Usage Logs/
+└── S6 - Assessment/
+    ├── Consolidated Findings/
+    ├── Remediation Plans/
+    └── Management Approvals/
+```
+
+**Step 6: Document Sanitization**
+
+Evidence sanitization tracking:
+
+- Original location: [path]
+- Redacted items: [IPs, usernames, secrets]
+- Retained items: [timestamps, versions, metrics]
+- Sanitized location: [path]
+- Sanitization date: [date]
+
+#### Common Mistakes to Avoid
+
+❌ Evidence scattered across systems
+❌ Collection dates unknown
+❌ Outdated evidence used
+❌ Evidence not sanitized
+❌ No traceability chain
+❌ Evidence expiration not tracked
+
+#### Quality Checklist
+
+- [ ] All evidence consolidated
+- [ ] Evidence locations documented
+- [ ] Collection dates recorded
+- [ ] Verification status tracked
+- [ ] Refresh schedule defined
+- [ ] Evidence properly organized
+- [ ] Sanitization documented
+- [ ] Traceability verified
+
 ---
 
 ## Evidence Collection
@@ -1103,11 +1720,13 @@ Management Actions Required:
 ### Required Evidence Types
 
 **Consolidated Evidence:**
+
 - All evidence from S1-S5 (organized by control)
 - This assessment (S6) itself
 - Management approval records
 - Remediation project plans
 - Budget approvals
+
 
 ---
 
@@ -1210,6 +1829,7 @@ Management Actions Required:
 - [ ] Executive summary written
 - [ ] Management approval obtained
 
+
 ### Accuracy (10 items)
 
 - [ ] S1-S5 data current (≤90 days)
@@ -1223,6 +1843,7 @@ Management Actions Required:
 - [ ] Timeline realistic
 - [ ] Budget estimates reasonable
 
+
 ### Honesty (8 items)
 
 - [ ] Overall status reflects worst control
@@ -1234,6 +1855,7 @@ Management Actions Required:
 - [ ] Limitations stated clearly
 - [ ] Management decisions required identified
 
+
 ### Evidence (5 items)
 
 - [ ] All S1-S5 evidence consolidated
@@ -1241,6 +1863,7 @@ Management Actions Required:
 - [ ] Evidence audit-ready
 - [ ] Evidence index created
 - [ ] Storage locations accessible
+
 
 ### Remediation (8 items)
 
@@ -1253,6 +1876,7 @@ Management Actions Required:
 - [ ] Milestones defined
 - [ ] Management committed
 
+
 ### Executive Communication (6 items)
 
 - [ ] Executive dashboard one-page
@@ -1262,6 +1886,7 @@ Management Actions Required:
 - [ ] Recommended actions specific
 - [ ] Decisions required stated
 
+
 ### Integration (5 items)
 
 - [ ] All 4 controls integrated
@@ -1270,6 +1895,7 @@ Management Actions Required:
 - [ ] No contradictions between sources
 - [ ] Holistic view achieved
 
+
 ### Auditability (5 items)
 
 - [ ] Traceability to source assessments
@@ -1277,6 +1903,7 @@ Management Actions Required:
 - [ ] Compliance claims supported
 - [ ] Gap remediation tracked
 - [ ] Approval records documented
+
 
 ---
 
@@ -1289,12 +1916,15 @@ Management Actions Required:
 **Reviewer:** CISO or Information Security Manager
 
 **Focus:**
+
 - Compliance status accurate
 - Risk assessment appropriate
 - Remediation plan feasible
 - Evidence package complete
 
+
 **Checklist:**
+
 - [ ] All 4 controls assessed
 - [ ] Overall status justified
 - [ ] Critical gaps identified
@@ -1302,21 +1932,27 @@ Management Actions Required:
 - [ ] Budget requirements documented
 - [ ] Evidence audit-ready
 
+
 **Outcome:**
+
 - Approve → Level 2
 - Request Changes → Return
+
 
 #### Level 2: Executive Approval
 
 **Reviewer:** CIO, IT Director, or Executive Committee
 
 **Focus:**
+
 - Strategic alignment
 - Resource commitment
 - Risk acceptance
 - Compliance timeline
 
+
 **Checklist:**
+
 - [ ] Remediation plan approved
 - [ ] Budget allocated
 - [ ] Resources committed
@@ -1324,10 +1960,13 @@ Management Actions Required:
 - [ ] Risk acceptance decisions documented
 - [ ] Audit readiness confirmed
 
+
 **Outcome:**
+
 - Approve → Assessment Complete
 - Request Changes → Return
 - Escalate → Board/CEO (if major issues)
+
 
 ### Post-Approval Actions
 
@@ -1348,14 +1987,18 @@ Management Actions Required:
 
 **File Name:** `Endpoint_Security_Assessment_Consolidated.xlsx`
 
-**Sheets (6 total):**
+**Sheets (11 total):**
 1. Instructions & Legend
-2. Consolidated_Compliance
-3. Consolidated_Gaps
-4. Cross_Control_Risk
-5. Remediation_Roadmap
-6. Evidence_Package
-7. Executive_Dashboard
+2. Master_Compliance_Matrix
+3. A81_Device_Compliance
+4. A87_Protection_Compliance
+5. A818_Utility_Compliance
+6. A819_Software_Compliance
+7. Risk_Prioritization
+8. Remediation_Tracking
+9. Trend_Analysis
+10. Evidence_Register
+11. Approval_Sign_Off
 
 ---
 
@@ -1521,14 +2164,18 @@ Status Logic: Worst of (A.8.1, A.8.7, A.8.18, A.8.19)
 ### Conditional Formatting
 
 **Status Column:**
+
 - If 🟢 → Green #C6EFCE
 - If 🟡 → Yellow #FFEB9C
 - If 🔴 → Red #FFC7CE
 
+
 **Compliance % Column:**
+
 - If ≥95% → Green #C6EFCE
 - If 85-94% → Yellow #FFEB9C
 - If <85% → Red #FFC7CE
+
 
 ---
 
@@ -1664,9 +2311,11 @@ Likelihood Score (1-10):
   1-3: Low likelihood, requires specific conditions
 
 Gap Multiplier:
+
   1 gap: ×1.0
   2 gaps: ×1.5
   3 gaps: ×2.0
+
   4+ gaps: ×3.0
 
 Cumulative Risk = (Impact × Likelihood) × Gap Multiplier
@@ -1704,16 +2353,20 @@ Highest Cumulative Risk:         [=MAX(L4:L53)]
 ### Conditional Formatting
 
 **Risk Level Column (M):**
+
 - If "Critical" → Dark red #C00000, white text
 - If "High" → Red #FFC7CE
 - If "Medium" → Yellow #FFEB9C
 - If "Low" → Green #C6EFCE
 
+
 **Cumulative Risk Column (L):**
+
 - If ≥200 → Dark red #C00000, white text
 - If 100-199 → Red #FFC7CE
 - If 50-99 → Yellow #FFEB9C
 - If <50 → Green #C6EFCE
+
 
 ---
 
@@ -1792,20 +2445,26 @@ Average Project Duration:        [=AVERAGE(N4:N33)] days
 ### Conditional Formatting
 
 **Status Column (Q):**
+
 - If "Complete" → Green #C6EFCE
 - If "In Progress" → Yellow #FFEB9C
 - If "Not Started" → Light gray #D9D9D9
 
+
 **RAG Status Column (S):**
+
 - If "🟢 On Track" → Green #C6EFCE
 - If "🟡 At Risk" → Yellow #FFEB9C
 - If "🔴 Blocked" → Red #FFC7CE
 
+
 **% Complete Column (R):**
+
 - If 100% → Green #C6EFCE
 - If 75-99% → Light green #E2EFDA
 - If 25-74% → Yellow #FFEB9C
 - If 0-24% → Red #FFC7CE
+
 
 ---
 
@@ -1871,13 +2530,17 @@ Target: 100% Audit Ready
 ### Conditional Formatting
 
 **Verification Status Column (K):**
+
 - If "Verified" → Green #C6EFCE
 - If "Pending" → Yellow #FFEB9C
 - If "Not Verified" → Red #FFC7CE
 
+
 **Audit Ready Column (L):**
+
 - If "Yes" → Green #C6EFCE
 - If "No" → Red #FFC7CE
+
 
 ---
 
@@ -1997,9 +2660,11 @@ MANAGEMENT ACTIONS REQUIRED:
 ### Conditional Formatting
 
 **Overall Status (Row 7):**
+
 - If "🟢 GREEN" → Dark green #00B050, white text, 24pt bold
 - If "🟡 YELLOW" → Yellow #FFC000, black text, 24pt bold
 - If "🔴 RED" → Dark red #C00000, white text, 24pt bold
+
 
 ---
 
@@ -2124,3 +2789,13 @@ def deduplicate_gaps(gaps):
 **END OF PART II**
 
 **END OF ENDPOINT SECURITY FRAMEWORK IMPLEMENTATION SUITE (S1-S6)**
+
+---
+
+**END OF SPECIFICATION**
+
+---
+
+*"Quantum mechanics is certainly imposing. But an inner voice tells me that this is not yet the real thing."*
+— Alain Aspect, paraphrasing Einstein
+*Where bamboo antennas actually work.* 🎋

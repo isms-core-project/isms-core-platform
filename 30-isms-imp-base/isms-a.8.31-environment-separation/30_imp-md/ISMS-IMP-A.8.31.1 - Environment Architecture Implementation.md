@@ -1,10 +1,10 @@
-# ISMS-IMP-A.8.31.1 - Environment Architecture Assessment
-## Assessment Specification with User Completion Guide
+**ISMS-IMP-A.8.31.1 - Environment Architecture Assessment**
+**Assessment Specification with User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.8.31: Separation of Development, Test and Production Environments
 
 ---
 
-## Document Control
+**Document Control**
 
 | Attribute | Value |
 |-----------|-------|
@@ -44,6 +44,7 @@ This document consists of two parts:
   - Cell Styling Reference
   - Integration Points
 
+
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -64,6 +65,7 @@ This assessment documents the ARCHITECTURE and SEPARATION MECHANISMS for your de
 - Are environments properly isolated from each other?
 - What gaps exist between deployed architecture and policy requirements?
 
+
 #### Key Principle
 
 This assessment is **completely technology-agnostic and platform-independent**. You document YOUR specific infrastructure (whether on-premises VLANs, AWS multi-account, Azure subscriptions, Kubernetes namespaces, or hybrid), and verify separation against generic policy requirements.
@@ -78,6 +80,7 @@ This assessment is **completely technology-agnostic and platform-independent**. 
 - Configuration consistency (staging mirrors production)
 - Separation compliance gaps and remediation plans
 - Supporting evidence for audit
+
 
 #### How This Relates to Other A.8.31 Assessments
 
@@ -108,10 +111,12 @@ This assessment (A.8.31.1) MUST be completed first - you can't assess access con
 - Access to infrastructure admin consoles
 - Understanding of data classification and handling
 
+
 #### Time Commitment
 
 - **Initial assessment:** 8-12 hours per application/system (for comprehensive architecture review)
 - **Quarterly updates:** 2-3 hours per system (update configurations, verify separation)
+
 
 ### Expected Outputs
 
@@ -143,6 +148,7 @@ Before starting this assessment, gather:
 - Access to virtualization platforms (VMware, Hyper-V, Kubernetes)
 - Database admin access (for database instance inventory)
 
+
 #### 2. Documentation
 
 - Current network architecture diagrams
@@ -150,6 +156,7 @@ Before starting this assessment, gather:
 - VLAN assignment documentation
 - Firewall rule documentation
 - Infrastructure as Code (IaC) configurations (Terraform, CloudFormation, ARM templates)
+
 
 #### 3. Configuration Data
 
@@ -160,12 +167,14 @@ Before starting this assessment, gather:
 - Database instance inventory
 - Secret management system inventory (PAM vault, HashiCorp Vault, etc.)
 
+
 #### 4. Policy Requirements
 
 - ISMS-POL-A.8.31, Section 2.1 (Environment Architecture Requirements)
 - ISMS-POL-A.8.31, Section 2.3 (Data Handling Requirements)
 - ISMS-POL-A.8.31, Section 2.4 (Environment Promotion Requirements)
 - ISMS-POL-00 (Regulatory Applicability Framework)
+
 
 ### Required Tools
 
@@ -176,13 +185,16 @@ Before starting this assessment, gather:
 - Screen capture tools (for evidence screenshots)
 - Firewall/network scanner (optional, for verification testing)
 
+
 ### Dependencies
 
 This assessment has NO dependencies - it's the first assessment in the A.8.31 series and must be completed before others.
 
 However, outputs from this assessment are INPUT to:
+
 - A.8.31.2 (Access Control) - Needs environment list from Sheet 1
 - A.8.31.3 (Compliance Dashboard) - Consolidates architecture + access data
+
 
 ---
 
@@ -219,150 +231,195 @@ However, outputs from this assessment are INPUT to:
 #### Phase 1: Preparation (30-60 minutes)
 
 **Activities:**
+
 - Gather all prerequisite information
 - Obtain necessary infrastructure access
 - Review policy requirements (ISMS-POL-A.8.31, Section 2.1)
 - Identify team members to involve
 - Schedule assessment completion timeline
 
+
 **Outputs:**
+
 - Assessment team identified
 - Access credentials obtained
 - Documentation collected
 - Timeline established
 
+
 #### Phase 2: Environment Inventory (1-2 hours)
 
 **Activities:**
+
 - Complete Sheet 1: Environment Inventory
 - Document every environment tier (dev, test, staging, prod)
 - Identify all applications/systems in scope
 - Define environment purpose and characteristics
 - Document environment naming conventions
 
+
 **Outputs:**
+
 - Complete environment inventory
 - Environment tier definitions
 - Naming convention documentation
 
+
 **Common Pitfalls to Avoid:**
+
 - ❌ Forgetting "shadow" environments (developer sandbox, hotfix)
 - ❌ Not documenting decommissioned environments (security risk)
 - ❌ Inconsistent naming (prod1, production, live-app)
 
+
 #### Phase 3: Network Separation Assessment (2-3 hours)
 
 **Activities:**
+
 - Complete Sheet 2: Network Separation
 - Document VLANs, VPCs, subnets per environment
 - Export firewall rules showing inter-environment blocking
 - Verify default deny between environments
 - Document allowed cross-environment traffic (monitoring, CI/CD)
 
+
 **Outputs:**
+
 - Network segmentation matrix
 - Firewall rule documentation
 - Network isolation verification results
 
+
 **Common Pitfalls to Avoid:**
+
 - ❌ Assuming firewall rules are correct without verification
 - ❌ Missing allowed exceptions (monitoring, backup, CI/CD)
 - ❌ Not testing actual network isolation
 
+
 #### Phase 4: Infrastructure Separation Assessment (2-3 hours)
 
 **Activities:**
+
 - Complete Sheet 3: Infrastructure Separation
 - Document compute resources per environment (servers, VMs, containers)
 - Document cloud accounts/subscriptions per environment
 - Document database separation (separate instances per environment)
 - Document storage separation (S3 buckets, file shares)
 
+
 **Outputs:**
+
 - Infrastructure inventory matrix
 - Cloud account/subscription structure
 - Database instance inventory
 - Storage separation documentation
 
+
 **Common Pitfalls to Avoid:**
+
 - ❌ Shared database instances with logical separation only (weak)
 - ❌ Missing backup/DR infrastructure separation
 - ❌ Shared storage buckets across environments
 
+
 #### Phase 5: Data Separation Verification (1-2 hours)
 
 **Activities:**
+
 - Complete Sheet 4: Data Separation
 - Verify NO production data in development environments
 - Verify NO production data in testing environments
 - Document data anonymization procedures (if used in test)
 - Document synthetic data generation (if used in test)
 
+
 **Outputs:**
+
 - Data separation compliance matrix
 - Data anonymization documentation
 - Production data leak verification
 
+
 **Common Pitfalls to Avoid:**
+
 - ❌ Production database dumps in dev/test (MAJOR VIOLATION)
 - ❌ Production backups used for testing
 - ❌ Production API keys in dev configuration files
 
+
 #### Phase 6: Credential Separation Verification (1-2 hours)
 
 **Activities:**
+
 - Complete Sheet 5: Credential Separation
 - Verify unique credentials per environment
 - Verify production credentials stored in PAM vault (NOT in code)
 - Verify no shared credentials between environments
 - Document secret management system
 
+
 **Outputs:**
+
 - Credential inventory per environment
 - PAM vault documentation
 - Shared credential violations identified
 
+
 **Common Pitfalls to Avoid:**
+
 - ❌ Same database password in dev and production (MAJOR VIOLATION)
 - ❌ Production API keys hardcoded in application code
 - ❌ Shared service accounts across environments
 
+
 #### Phase 7: Configuration Consistency Assessment (1-2 hours)
 
 **Activities:**
+
 - Complete Sheet 6: Configuration Consistency
 - Compare staging configuration to production
 - Measure configuration drift
 - Verify Infrastructure as Code (IaC) usage
 - Document configuration management process
 
+
 **Outputs:**
+
 - Configuration drift report
 - IaC compliance assessment
 - Configuration management documentation
 
+
 **Common Pitfalls to Avoid:**
+
 - ❌ Significant drift between staging and production (>10%)
 - ❌ Manual changes to production not reflected in IaC
 - ❌ No automated drift detection
 
+
 #### Phase 8: Gap Analysis (1-2 hours)
 
 **Activities:**
+
 - Complete Sheet 7: Gap Analysis
 - Review all previous sheets for non-compliance
 - Document each gap with severity rating
 - Propose remediation for each gap
 - Estimate remediation effort and timeline
 
+
 **Outputs:**
+
 - Comprehensive gap analysis
 - Risk-prioritized remediation plan
 - Timeline for gap closure
 
+
 #### Phase 9: Evidence Collection (1-2 hours)
 
 **Activities:**
+
 - Complete Sheet 8: Evidence Register
 - Collect network diagrams
 - Export firewall rules
@@ -370,33 +427,44 @@ However, outputs from this assessment are INPUT to:
 - Export database instance lists
 - Document PAM vault configuration
 
+
 **Outputs:**
+
 - Complete evidence package
 - Audit-ready documentation
+
 
 #### Phase 10: Review & Approval (variable)
 
 **Activities:**
+
 - Internal team review
 - IT Operations Manager approval
 - Cloud Architect approval
 - CISO approval
 
+
 **Outputs:**
+
 - Approved assessment
 - Action items assigned
+
 
 #### Phase 11: Maintenance (ongoing)
 
 **Activities:**
+
 - Quarterly assessment updates
 - Update after infrastructure changes
 - Track gap remediation progress
 - Monitor continuous compliance
 
+
 **Outputs:**
+
 - Up-to-date assessment
 - Compliance trend analysis
+
 
 ---
 
@@ -413,9 +481,11 @@ However, outputs from this assessment are INPUT to:
 **Time:** 5-10 minutes
 
 **Tips:**
+
 - Use current date for "Assessment Date"
 - Include your name and role for "Completed By"
 - Read the full instructions before starting
+
 
 ---
 
@@ -424,6 +494,7 @@ However, outputs from this assessment are INPUT to:
 **What to do:**
 1. List every environment tier (dev, test, staging, prod)
 2. For each environment, document:
+
    - Environment name
    - Purpose (what it's used for)
    - Primary users (who accesses it)
@@ -431,13 +502,16 @@ However, outputs from this assessment are INPUT to:
    - Availability target (SLA)
    - Status (deployed, planned, decommissioned)
 
+
 **Time:** 30-60 minutes
 
 **Tips:**
+
 - Include ALL environments, even temporary ones
 - Document shadow environments (developer sandboxes)
 - Use consistent naming convention
 - Note decommissioned environments (for historical audit trail)
+
 
 **Example Entry:**
 | Environment | Purpose | Primary Users | Data Type | Availability | Status |
@@ -461,10 +535,12 @@ However, outputs from this assessment are INPUT to:
 **Time:** 2-3 hours
 
 **Tips:**
+
 - Export actual firewall rules (don't assume they're correct)
 - Test network isolation (ping, telnet from dev to prod should FAIL)
 - Document ALL allowed exceptions with business justification
 - Use network diagrams as supporting evidence
+
 
 **Example Entry:**
 | Environment | Network Segment | VLAN/VPC | Firewall Rules | Allowed From | Evidence |
@@ -488,10 +564,12 @@ However, outputs from this assessment are INPUT to:
 **Time:** 2-3 hours
 
 **Tips:**
+
 - For cloud: Separate AWS accounts or Azure subscriptions = STRONG separation
 - For on-premises: Separate physical/virtual servers per environment
 - Check for shared database instances (WEAK separation)
 - Verify backup infrastructure is also separated
+
 
 **Example Entry:**
 | Environment | Compute | Cloud Account | Database | Storage | Separation Quality |
@@ -515,10 +593,12 @@ However, outputs from this assessment are INPUT to:
 **Time:** 1-2 hours
 
 **Tips:**
+
 - This is a CRITICAL compliance requirement
 - Production database dumps in dev/test = MAJOR VIOLATION
 - Use data discovery tools to scan for production data
 - Document data anonymization technique (if used in test)
+
 
 **Example Entry:**
 | Environment | Production Data Present? | Data Type | Anonymization Used? | Violations | Evidence |
@@ -529,9 +609,11 @@ However, outputs from this assessment are INPUT to:
 | Development | ❌ No | Synthetic test data | N/A | None | dev-database-schema.sql |
 
 **CRITICAL VIOLATIONS TO DOCUMENT:**
+
 - ❌ Production database dumps restored to dev/test
 - ❌ Production API keys in dev configuration
 - ❌ Production customer data used for testing
+
 
 ---
 
@@ -547,10 +629,12 @@ However, outputs from this assessment are INPUT to:
 **Time:** 1-2 hours
 
 **Tips:**
+
 - Same password in dev and prod = MAJOR VIOLATION
 - Production credentials must be in PAM vault (NOT in code, config files, environment variables)
 - Check application code for hardcoded credentials
 - Verify secret rotation policies
+
 
 **Example Entry:**
 | Credential Type | Dev | Test | Staging | Production | Shared? | Prod in PAM? | Evidence |
@@ -560,9 +644,11 @@ However, outputs from this assessment are INPUT to:
 | Service account | dev_svc@example.com | test_svc@example.com | staging_svc@example.com | prod_svc@example.com | ❌ No (unique per env) | ✅ Yes | iam-policy-export.json |
 
 **CRITICAL VIOLATIONS TO DOCUMENT:**
+
 - ❌ Same database password used in dev and production
 - ❌ Production API keys hardcoded in application code
 - ❌ Production credentials in environment variables (not PAM vault)
+
 
 ---
 
@@ -578,10 +664,12 @@ However, outputs from this assessment are INPUT to:
 **Time:** 1-2 hours
 
 **Tips:**
+
 - Staging should mirror production configuration (≤5% drift)
 - Use IaC (Terraform, CloudFormation) to enforce consistency
 - Detect drift with automated tools (terraform plan, AWS Config)
 - Document intentional differences (e.g., smaller instance sizes in staging)
+
 
 **Example Entry:**
 | Configuration Item | Production | Staging | Match? | Drift % | IaC Managed? | Evidence |
@@ -599,21 +687,25 @@ However, outputs from this assessment are INPUT to:
 1. Review all previous sheets
 2. Identify any non-compliance with policy requirements
 3. Document each gap with:
+
    - Description of gap
    - Policy requirement violated
    - Risk severity (High/Medium/Low)
    - Proposed remediation
    - Estimated effort
    - Target completion date
+
 4. Prioritize gaps by risk severity
 
 **Time:** 1-2 hours
 
 **Tips:**
+
 - Be honest about gaps (audit will find them anyway)
 - Prioritize High severity gaps first
 - Provide realistic remediation timelines
 - Include compensating controls if remediation delayed
+
 
 **Example Entry:**
 | Gap ID | Description | Policy Violated | Severity | Remediation | Effort | Target Date | Owner |
@@ -630,20 +722,24 @@ However, outputs from this assessment are INPUT to:
 **What to do:**
 1. Document all supporting evidence
 2. For each evidence item, record:
+
    - Evidence type (diagram, export, screenshot, report)
    - Description
    - File name/location
    - Date collected
    - Related requirement
+
 3. Attach evidence files or provide accessible links
 
 **Time:** 1-2 hours
 
 **Tips:**
+
 - Organize evidence in a shared folder
 - Use descriptive file names (network-diagram-2024-01.pdf, not diagram.pdf)
 - Include date in file names for version control
 - Screenshot cloud console views with timestamp visible
+
 
 **Example Entry:**
 | Evidence ID | Type | Description | File Name | Date | Related Requirement | Location |
@@ -672,17 +768,21 @@ However, outputs from this assessment are INPUT to:
 ### Evidence Quality Standards
 
 **Good Evidence:**
+
 - ✅ Time-stamped (shows when collected)
 - ✅ Attributed (who collected it)
 - ✅ Verifiable (auditor can reproduce)
 - ✅ Complete (covers all requirements)
 - ✅ Organized (easy to find and review)
 
+
 **Poor Evidence:**
+
 - ❌ Undated screenshots
 - ❌ Unclear what it demonstrates
 - ❌ Missing context
 - ❌ Can't be verified
+
 
 ### Evidence Collection Tips
 
@@ -754,9 +854,11 @@ vault kv list secret/prod/
 **Impact:** Audit finding, incomplete security posture
 
 **Solution:**
+
 - Survey all teams for undocumented environments
 - Check cloud account/subscription list for orphaned accounts
 - Include decommissioned environments (mark as "Decommissioned" but document them)
+
 
 ---
 
@@ -767,9 +869,11 @@ vault kv list secret/prod/
 **Impact:** False sense of security, audit finding if rules don't match documentation
 
 **Solution:**
+
 - Export ACTUAL firewall rules from devices
 - Test network isolation (ping/telnet from dev to prod should FAIL)
 - Schedule penetration testing to verify isolation
+
 
 ---
 
@@ -780,10 +884,12 @@ vault kv list secret/prod/
 **Impact:** MAJOR compliance violation, data breach risk, regulatory penalty
 
 **Solution:**
+
 - Use data discovery tools to scan dev/test environments
 - Implement data anonymization for any production data used in test
 - Strictly prohibit production database dumps in dev/test
 - Generate synthetic test data instead
+
 
 ---
 
@@ -794,10 +900,12 @@ vault kv list secret/prod/
 **Impact:** MAJOR security vulnerability, audit finding
 
 **Solution:**
+
 - Generate unique credentials per environment
 - Store production credentials in PAM vault only
 - Rotate production credentials immediately
 - Scan application code for hardcoded credentials
+
 
 ---
 
@@ -828,10 +936,12 @@ curl http://prod-app:9090/metrics  # Should SUCCEED (allowed)
 **Impact:** Testing in staging doesn't validate production changes, deployment failures
 
 **Solution:**
+
 - Use Infrastructure as Code (Terraform, CloudFormation) for both staging and prod
 - Detect drift with `terraform plan` regularly
 - Document intentional differences (e.g., instance size for cost optimization)
 - Keep application configuration identical (different instance size OK, different app config NOT OK)
+
 
 ---
 
@@ -861,38 +971,48 @@ evidence/
 Before submitting your assessment for approval, verify:
 
 ### Completeness
+
 - [ ] All sheets completed (1-9)
 - [ ] All environments documented (including shadow/decommissioned)
 - [ ] All separation mechanisms documented (network, infrastructure, data, credentials)
 - [ ] All gaps identified and documented
 - [ ] All evidence collected and organized
 
+
 ### Accuracy
+
 - [ ] Network separation verified by actual firewall rule export (not assumptions)
 - [ ] Infrastructure separation verified by actual cloud account/VM inventory
 - [ ] Data separation verified (no production data in dev/test confirmed)
 - [ ] Credential separation verified (unique per environment, prod in PAM confirmed)
 - [ ] Configuration consistency measured (actual drift % calculated)
 
+
 ### Evidence Quality
+
 - [ ] All evidence files time-stamped
 - [ ] Evidence organized in structured folder
 - [ ] Evidence file names descriptive and dated
 - [ ] Evidence register complete with file locations
 - [ ] Evidence accessible to reviewers/auditors
 
+
 ### Risk Assessment
+
 - [ ] All gaps documented with severity rating
 - [ ] High severity gaps have remediation plans
 - [ ] Remediation timelines realistic
 - [ ] Gap owners assigned
 - [ ] Compensating controls documented (if remediation delayed)
 
+
 ### Policy Compliance
+
 - [ ] Assessment addresses all requirements from ISMS-POL-A.8.31, Section 2.1
 - [ ] Any policy deviations documented as gaps
 - [ ] Exceptions properly documented with approvals
 - [ ] Regulatory requirements addressed (FINMA, DORA, NIS2 if applicable)
+
 
 ---
 
@@ -901,40 +1021,52 @@ Before submitting your assessment for approval, verify:
 ### Three-Level Approval Workflow
 
 #### Level 1: Technical Review
+
 - **Reviewer:** IT Operations Manager or Cloud Architect
 - **Focus:** Technical accuracy, completeness
 - **Timeline:** 2-3 business days
 - **Outcome:** Approve, Request Changes, or Reject
 
+
 **Review Criteria:**
+
 - Is the environment inventory complete?
 - Are separation mechanisms accurately documented?
 - Is evidence sufficient and verifiable?
 - Are gaps realistic and properly prioritized?
 
+
 #### Level 2: Security Review
+
 - **Reviewer:** CISO or Information Security Manager
 - **Focus:** Security compliance, risk assessment
 - **Timeline:** 2-3 business days
 - **Outcome:** Approve, Request Changes, or Reject
 
+
 **Review Criteria:**
+
 - Do gaps represent acceptable risk?
 - Are remediation timelines appropriate for risk severity?
 - Is evidence sufficient for audit?
 - Are compensating controls adequate?
 
+
 #### Level 3: Executive Approval
+
 - **Reviewer:** CTO or VP Engineering
 - **Focus:** Strategic alignment, resource allocation
 - **Timeline:** 1-2 business days
 - **Outcome:** Approve or Request Changes
 
+
 **Review Criteria:**
+
 - Are remediation resource requirements acceptable?
 - Do timelines align with business priorities?
 - Is risk posture acceptable?
 - Are there budget implications?
+
 
 ### Approval Documentation
 
@@ -954,35 +1086,43 @@ Document approvals in Sheet 9 (Evidence Register):
 ### Quarterly Updates
 
 **Every 3 months, update:**
+
 - Sheet 2: Environment Inventory (new environments added?)
 - Sheet 3: Network Separation (firewall rule changes?)
 - Sheet 4: Infrastructure Separation (new infrastructure deployed?)
 - Sheet 7: Gap Analysis (gaps remediated? new gaps?)
 - Sheet 9: Evidence Register (refresh dated evidence)
 
+
 **Time required:** 2-3 hours
 
 ### Trigger-Based Updates
 
 **Update immediately after:**
+
 - New environment deployed (add to inventory)
 - Infrastructure change (cloud account added, VM deployed)
 - Firewall rule change (refresh network separation documentation)
 - Security incident (document as gap if related to environment separation)
 - Audit finding (document as gap, track remediation)
 
+
 ### Continuous Compliance Monitoring
 
 **Automated monitoring:**
+
 - AWS Config rules for VPC peering (should be zero between dev/test and prod)
 - Azure Policy for VNet peering restrictions
 - IaC drift detection (terraform plan scheduled weekly)
 - Data discovery scans (scan dev/test for production data monthly)
 
+
 **Manual spot checks:**
+
 - Quarterly penetration testing (network isolation verification)
 - Quarterly credential audit (verify unique per environment)
 - Quarterly configuration drift assessment (staging vs production)
+
 
 ---
 
@@ -994,7 +1134,7 @@ Document approvals in Sheet 9 (Evidence Register):
 
 ### Overview
 
-The Environment Architecture Assessment workbook consists of 9 sheets:
+The Environment Architecture Assessment workbook consists of 10 sheets:
 
 1. **Instructions_Legend** - Metadata, instructions, status legend
 2. **Environment_Inventory** - All environments (dev, test, staging, prod)
@@ -1005,6 +1145,7 @@ The Environment Architecture Assessment workbook consists of 9 sheets:
 7. **Configuration_Consistency** - Staging vs production drift
 8. **Gap_Analysis** - Non-compliance identification and remediation
 9. **Evidence_Register** - Supporting documentation inventory
+10. **Approval_Sign_Off** - Multi-level approval workflow and signatures
 
 ---
 
@@ -1019,6 +1160,7 @@ The Environment Architecture Assessment workbook consists of 9 sheets:
 - **Row 2 (Merged A2:G2):** Subtitle
   - Text: "ISO/IEC 27001:2022 - Control A.8.31: Separation of Development, Test and Production Environments"
   - Style: Medium blue header (4472C4), white text, centered, 30px height
+
 
 ### Document Information Block (Rows 4-12)
 
@@ -1040,6 +1182,7 @@ The Environment Architecture Assessment workbook consists of 9 sheets:
 
 - **Row 14:** "How to Use This Workbook" (bold, underlined)
 - **Rows 15-24:** Numbered instructions (1-10)
+
 
 ```
 1. Complete Environment_Inventory for ALL environments (including shadow/decommissioned)
@@ -1068,6 +1211,7 @@ The Environment Architecture Assessment workbook consists of 9 sheets:
 
 - **Row 34:** "Acceptable Evidence (Examples)" (bold, underlined)
 - **Rows 35-48:** Bulleted list with checkmarks
+
 
 ```
 ✓ Network architecture diagrams showing environment segmentation
@@ -1101,6 +1245,7 @@ Document all environment tiers in SDLC (development, testing, staging, productio
 - **Row 2 (Merged A2:H2):** "Document ALL environments in SDLC - include shadow environments and decommissioned systems"
   - Style: Light blue (B4C7E7), dark text, centered, 25px height
 
+
 ### Column Headers (Row 4)
 
 | Column | Header | Width | Data Type |
@@ -1119,6 +1264,7 @@ Document all environment tiers in SDLC (development, testing, staging, productio
 ### Data Validation (Dropdowns)
 
 **Column B: Environment Tier**
+
 - Development
 - Testing/QA
 - Staging/Pre-Production
@@ -1128,14 +1274,18 @@ Document all environment tiers in SDLC (development, testing, staging, productio
 - Decommissioned
 - Other
 
+
 **Column E: Data Type**
+
 - Synthetic (generated test data)
 - Anonymized (production data anonymized)
 - Production Data
 - Mixed (VIOLATION if prod + non-prod)
 - None
 
+
 **Column F: Availability Target**
+
 - Best Effort (no SLA)
 - 95% (business hours)
 - 99% (24x7)
@@ -1143,12 +1293,15 @@ Document all environment tiers in SDLC (development, testing, staging, productio
 - 99.9% (24x7 production)
 - 99.99% (mission critical)
 
+
 **Column G: Status**
+
 - ✅ Deployed
 - ⚠️ Partial
 - ❌ Decommissioned
 - 📋 Planned
 - N/A
+
 
 ### Sample Data (Rows 5-8)
 
@@ -1164,12 +1317,14 @@ Document all environment tiers in SDLC (development, testing, staging, productio
 Yellow-filled cells (FFEB9C) for user data entry.
 
 **Critical Notes to Include:**
+
 - Document ALL environments, including:
   - Shadow environments (developer sandboxes)
   - Temporary environments (hotfix, demo)
   - Decommissioned environments (for audit trail)
 - Note any environments where production data is present (VIOLATION if dev/test)
 - Document access restrictions per environment
+
 
 ---
 
@@ -1185,6 +1340,7 @@ Document network segmentation mechanisms (VLANs, VPCs, firewall rules) that sepa
   
 - **Row 2 (Merged A2:H2):** "Document VLANs/VPCs, firewall rules, and network isolation mechanisms - verify default DENY between environments"
   - Style: Light blue (B4C7E7), dark text, centered, 25px height
+
 
 ### Column Headers (Row 4)
 
@@ -1205,19 +1361,25 @@ Document network segmentation mechanisms (VLANs, VPCs, firewall rules) that sepa
 ### Data Validation (Dropdowns)
 
 **Column A: Environment**
+
 - Dynamically populated from Sheet 2, Column A (environment names)
 
+
 **Column F: Default Policy to Other Envs**
+
 - ✅ DENY (all traffic blocked - correct)
 - ⚠️ ALLOW (traffic allowed - VIOLATION)
 - ⚠️ Partial (some traffic allowed without justification)
 - N/A
 
+
 **Column H: Separation Quality**
+
 - ✅ Strong (physical/account-level separation)
 - ⚠️ Adequate (VLAN/namespace separation)
 - ❌ Weak (logical only, shared infrastructure)
 - ❌ None (no separation - VIOLATION)
+
 
 ### Sample Data (Rows 5-8)
 
@@ -1231,15 +1393,19 @@ Document network segmentation mechanisms (VLANs, VPCs, firewall rules) that sepa
 ### Critical Requirements
 
 **Firewall Rules must demonstrate:**
+
 - Default DENY between dev/test → production
 - Default DENY between test → production
 - Only explicitly allowed exceptions (monitoring, backup, CI/CD)
 - All exceptions must have business justification
 
+
 **Evidence Required:**
+
 - Actual firewall rule export (not documentation)
 - Network diagram showing segmentation
 - Penetration test results (network isolation verification)
+
 
 ---
 
@@ -1255,6 +1421,7 @@ Document infrastructure separation mechanisms (compute, cloud accounts, database
   
 - **Row 2 (Merged A2:I2):** "Document compute, cloud accounts, databases, and storage - verify NO shared infrastructure between environments"
   - Style: Light blue (B4C7E7), dark text, centered, 25px height
+
 
 ### Column Headers (Row 4)
 
@@ -1275,22 +1442,28 @@ Document infrastructure separation mechanisms (compute, cloud accounts, database
 ### Data Validation (Dropdowns)
 
 **Column F: Shared Infrastructure?**
+
 - ❌ No (completely separate - correct)
 - ⚠️ Yes (shared compute - weak separation)
 - ⚠️ Yes (shared database instance - VIOLATION)
 - ⚠️ Yes (shared storage - risk)
 
+
 **Column G: Separation Level**
+
 - ✅ Account-Level (separate AWS account/Azure subscription)
 - ✅ Strong (separate VMs/instances, separate databases)
 - ⚠️ Namespace-Level (Kubernetes namespaces, VMs on shared hardware)
 - ❌ Logical Only (shared database, logical schema separation - VIOLATION)
 
+
 **Column H: Compliance Status**
+
 - ✅ Compliant
 - ⚠️ Partial
 - ❌ Non-Compliant
 - 📋 Remediation Planned
+
 
 ### Sample Data (Rows 5-8)
 
@@ -1304,16 +1477,20 @@ Document infrastructure separation mechanisms (compute, cloud accounts, database
 ### Critical Requirements
 
 **Infrastructure Separation must ensure:**
+
 - Separate cloud accounts/subscriptions per environment (AWS, Azure, GCP)
 - Separate database instances (NOT logical separation on same instance)
 - Separate storage (S3 buckets, file shares, volumes)
 - No shared compute between production and non-production
 
+
 **Evidence Required:**
+
 - Cloud account/subscription list (AWS CLI, Azure CLI, gcloud)
 - Database instance inventory (separate instances verified)
 - Storage inventory (separate buckets/shares verified)
 - Virtualization/container platform inventory (namespace/cluster list)
+
 
 ---
 
@@ -1329,6 +1506,7 @@ Verify NO production data in development/testing environments. Critical complian
   
 - **Row 2 (Merged A2:H2):** "CRITICAL REQUIREMENT: Production data MUST NOT be present in development or testing environments"
   - Style: Light red (FFC7CE), dark text, bold, centered, 25px height
+
 
 ### Column Headers (Row 4)
 
@@ -1349,27 +1527,35 @@ Verify NO production data in development/testing environments. Critical complian
 ### Data Validation (Dropdowns)
 
 **Column B: Production Data Present?**
+
 - ❌ No (correct for dev/test)
 - ✅ Yes (only acceptable for production)
 - ⚠️ Unknown (requires verification)
 - ❌ Yes (VIOLATION if dev/test)
 
+
 **Column C: Data Type Used**
+
 - Synthetic (generated test data)
 - Anonymized (production data anonymized per policy)
 - Production Data (only acceptable in production)
 - None
 
+
 **Column D: Anonymization Used?**
+
 - N/A (synthetic data, no anonymization needed)
 - ✅ Yes (production data anonymized)
 - ❌ No (using production data without anonymization - VIOLATION)
 
+
 **Column H: Compliance Status**
+
 - ✅ Compliant (no prod data in dev/test)
 - ❌ MAJOR VIOLATION (prod data in dev/test)
 - ⚠️ Verification Needed
 - 📋 Remediation In Progress
+
 
 ### Sample Data (Rows 5-8)
 
@@ -1383,22 +1569,28 @@ Verify NO production data in development/testing environments. Critical complian
 ### Critical Violations to Document
 
 **MAJOR VIOLATIONS** (immediate remediation required):
+
 - ❌ Production database dumps restored to dev/test
 - ❌ Production backups used for testing
 - ❌ Production customer data copied to dev/test
 - ❌ Production API keys in dev configuration files
 
+
 **Verification Methods:**
+
 - Data discovery tool scans (Informatica, BigID, OneTrust)
 - Database content analysis (sample queries)
 - Configuration file review (grep for production credentials)
 - Application code review (search for production API keys)
 
+
 **Evidence Required:**
+
 - Data discovery scan results
 - Data anonymization procedure documentation
 - Synthetic data generator configuration
 - Verification test results
+
 
 ---
 
@@ -1414,6 +1606,7 @@ Verify unique credentials per environment and production credentials in PAM vaul
   
 - **Row 2 (Merged A2:I2):** "Verify unique credentials per environment - production credentials MUST be in PAM vault (NOT in code/config files)"
   - Style: Light blue (B4C7E7), dark text, centered, 25px height
+
 
 ### Column Headers (Row 4)
 
@@ -1434,24 +1627,30 @@ Verify unique credentials per environment and production credentials in PAM vaul
 ### Data Validation (Dropdowns)
 
 **Column F: Unique Per Environment?**
+
 - ✅ Yes (unique credentials per environment - correct)
 - ❌ No (shared credentials - VIOLATION)
 - ⚠️ Partial (some shared, some unique)
 - ⚠️ Unknown (requires audit)
 
+
 **Column G: Production in PAM Vault?**
+
 - ✅ Yes (stored in PAM vault - correct)
 - ❌ No (in code/config files - MAJOR VIOLATION)
 - ❌ No (in environment variables - VIOLATION)
 - ⚠️ Partial (some in vault, some not)
 - N/A (not production)
 
+
 **Column H: Compliance Status**
+
 - ✅ Compliant
 - ❌ MAJOR VIOLATION (shared credentials)
 - ❌ MAJOR VIOLATION (prod credentials not in PAM)
 - ⚠️ Partial
 - 📋 Remediation In Progress
+
 
 ### Sample Data (Rows 5-10)
 
@@ -1466,12 +1665,15 @@ Verify unique credentials per environment and production credentials in PAM vaul
 ### Critical Violations to Document
 
 **MAJOR VIOLATIONS** (immediate remediation required):
+
 - ❌ Same database password used in dev and production
 - ❌ Production credentials hardcoded in application code
 - ❌ Production credentials in environment variables (not PAM vault)
 - ❌ Production API keys committed to source code repository
 
+
 **PAM Vault Requirements:**
+
 - All production credentials stored in PAM vault (HashiCorp Vault, CyberArk, AWS Secrets Manager, Azure Key Vault)
 - Production credentials NEVER in:
   - Application code (hardcoded)
@@ -1479,11 +1681,14 @@ Verify unique credentials per environment and production credentials in PAM vaul
   - Environment variables (unless retrieving from PAM)
   - Source code repositories (Git)
 
+
 **Evidence Required:**
+
 - PAM vault configuration screenshots
 - Credential inventory showing separation
 - Application code review (no hardcoded credentials)
 - Source code repository scan results (no secrets)
+
 
 ---
 
@@ -1499,6 +1704,7 @@ Assess configuration drift between staging and production environments.
   
 - **Row 2 (Merged A2:H2):** "Staging SHOULD mirror production configuration (target ≤5% drift) - measure and document drift"
   - Style: Light blue (B4C7E7), dark text, centered, 25px height
+
 
 ### Column Headers (Row 4)
 
@@ -1519,24 +1725,32 @@ Assess configuration drift between staging and production environments.
 ### Data Validation (Dropdowns)
 
 **Column D: Match?**
+
 - ✅ Yes (identical)
 - ⚠️ Partial (intentional difference, e.g., instance size)
 - ❌ No (unintentional drift)
 
+
 **Column F: IaC Managed?**
+
 - ✅ Yes (Terraform, CloudFormation, ARM template)
 - ⚠️ Partial (some IaC, some manual)
 - ❌ No (manual configuration - risk)
 
+
 **Column G: Drift Acceptable?**
+
 - ✅ Yes (intentional, e.g., cost optimization)
 - ❌ No (should be identical, drift is issue)
 - ⚠️ Under Review
 
+
 **Column H: Compliance Status**
+
 - ✅ Compliant (≤5% drift or justified)
 - ⚠️ Acceptable (5-10% drift, documented)
 - ❌ Non-Compliant (>10% drift or critical mismatch)
+
 
 ### Sample Data (Rows 5-10)
 
@@ -1553,20 +1767,26 @@ Assess configuration drift between staging and production environments.
 **Drift % = (Number of Different Configurations / Total Configurations) × 100**
 
 **Example:**
+
 - Total configuration items: 50
 - Items that differ: 3
 - Drift % = (3 / 50) × 100 = 6%
 
+
 **Acceptable Drift:**
+
 - ✅ ≤5% = Compliant (minor differences, mostly intentional)
 - ⚠️ 5-10% = Acceptable (document justification)
 - ❌ >10% = Non-Compliant (remediation required)
 
+
 **Evidence Required:**
+
 - IaC configuration files (Terraform, CloudFormation)
 - `terraform plan` output showing drift detection
 - AWS Config drift reports
 - Configuration comparison reports
+
 
 ---
 
@@ -1582,6 +1802,7 @@ Document all non-compliance areas, risk severity, and remediation plans.
   
 - **Row 2 (Merged A2:J2):** "Document ALL gaps in environment separation - prioritize by risk severity and create remediation plans"
   - Style: Light red (FFC7CE), dark text, bold, centered, 25px height
+
 
 ### Column Headers (Row 4)
 
@@ -1603,17 +1824,21 @@ Document all non-compliance areas, risk severity, and remediation plans.
 ### Data Validation (Dropdowns)
 
 **Column D: Risk Severity**
+
 - 🔴 High (immediate remediation required)
 - 🟡 Medium (remediation within 90 days)
 - 🟢 Low (remediation within 180 days)
 - ⚪ Info (awareness, no remediation)
 
+
 **Column J: Status**
+
 - 📋 Identified (not started)
 - 🔄 In Progress (remediation underway)
 - ✅ Remediated (completed, verified)
 - ⏸️ On Hold (dependencies or approvals)
 - ❌ Risk Accepted (executive decision to accept)
+
 
 ### Sample Data (Rows 5-10)
 
@@ -1634,10 +1859,12 @@ Document all non-compliance areas, risk severity, and remediation plans.
 | 🟢 Low | Namespace-level separation (adequate but not strong), manual processes | Within 180 days |
 
 **Evidence Required:**
+
 - Gap identification documentation
 - Risk assessment justification
 - Remediation plan documentation
 - Completion verification (before/after screenshots)
+
 
 ---
 
@@ -1653,6 +1880,7 @@ Central registry of all supporting evidence for audit traceability.
   
 - **Row 2 (Merged A2:H2):** "Document ALL supporting evidence - organize in structured folder with descriptive filenames and dates"
   - Style: Light blue (B4C7E7), dark text, centered, 25px height
+
 
 ### Column Headers (Row 4)
 
@@ -1672,6 +1900,7 @@ Central registry of all supporting evidence for audit traceability.
 ### Data Validation (Dropdowns)
 
 **Column B: Evidence Type**
+
 - Network Diagram
 - Firewall Export
 - Screenshot
@@ -1683,7 +1912,9 @@ Central registry of all supporting evidence for audit traceability.
 - Approval Record
 - Other
 
+
 **Column G: Related Sheet**
+
 - Sheet 2: Environment_Inventory
 - Sheet 3: Network_Separation
 - Sheet 4: Infrastructure_Separation
@@ -1692,6 +1923,7 @@ Central registry of all supporting evidence for audit traceability.
 - Sheet 7: Configuration_Consistency
 - Sheet 8: Gap_Analysis
 - Multiple Sheets
+
 
 ### Sample Data (Rows 5-15)
 
@@ -1729,11 +1961,110 @@ evidence/
 `[Evidence-ID]-[description]-[YYYY-MM].[extension]`
 
 **Evidence Quality Checklist:**
+
 - [ ] Time-stamped (date visible in file or filename)
 - [ ] Descriptive filename (not "screenshot.png")
 - [ ] Organized in evidence folder
 - [ ] Accessible to reviewers/auditors
 - [ ] Supports specific requirement
+
+
+---
+
+## Sheet 10: Approval_Sign_Off
+
+### Purpose
+Multi-level approval workflow and formal sign-off for the assessment.
+
+### Header Section (Rows 1-2)
+
+- **Row 1 (Merged A1:F1):** "APPROVAL & SIGN-OFF"
+  - Style: Dark blue (003366), white text, bold, centered, 35px height
+
+- **Row 2 (Merged A2:F2):** "Formal approval workflow - Assessment requires three-level approval before finalization"
+  - Style: Light blue (B4C7E7), dark text, centered, 25px height
+
+
+### Assessment Summary (Rows 4-10)
+
+| Row | Attribute | Value |
+|-----|-----------|-------|
+| 4 | Assessment ID: | ISMS-IMP-A.8.31.1 |
+| 5 | Assessment Name: | Environment Architecture Assessment |
+| 6 | Assessment Date: | [From Sheet 1] |
+| 7 | Completed By: | [From Sheet 1] |
+| 8 | Total Environments Assessed: | [Count from Sheet 2] |
+| 9 | Total Gaps Identified: | [Count from Sheet 8] |
+| 10 | Overall Compliance Status: | [Summary status] |
+
+
+### Approval Workflow (Rows 12-25)
+
+**Level 1: Technical Review (Rows 14-17)**
+
+| Column | Header | Width | Data Type |
+|--------|--------|-------|-----------|
+| A | Reviewer Role | 25 | Text |
+| B | Reviewer Name | 25 | Text (user input) |
+| C | Review Date | 15 | Date (user input) |
+| D | Decision | 15 | Dropdown |
+| E | Comments | 50 | Text (user input) |
+| F | Signature | 20 | Text (user input) |
+
+**Dropdown for Decision:**
+- Approved
+- Approved with Comments
+- Request Changes
+- Rejected
+
+
+**Level 1 Reviewers:**
+| Role | Name | Date | Decision | Comments | Signature |
+|------|------|------|----------|----------|-----------|
+| IT Operations Manager | [User Input] | [User Input] | [Dropdown] | [User Input] | [User Input] |
+| Cloud Architect | [User Input] | [User Input] | [Dropdown] | [User Input] | [User Input] |
+
+**Level 2: Security Review (Rows 19-21)**
+
+| Role | Name | Date | Decision | Comments | Signature |
+|------|------|------|----------|----------|-----------|
+| Information Security Manager | [User Input] | [User Input] | [Dropdown] | [User Input] | [User Input] |
+| CISO | [User Input] | [User Input] | [Dropdown] | [User Input] | [User Input] |
+
+**Level 3: Executive Approval (Rows 23-25)**
+
+| Role | Name | Date | Decision | Comments | Signature |
+|------|------|------|----------|----------|-----------|
+| CTO / VP Engineering | [User Input] | [User Input] | [Dropdown] | [User Input] | [User Input] |
+
+
+### Approval Status Summary (Rows 27-30)
+
+| Metric | Value | Status |
+|--------|-------|--------|
+| Level 1 (Technical) Status | [Auto-calculated] | [✅/⚠️/❌] |
+| Level 2 (Security) Status | [Auto-calculated] | [✅/⚠️/❌] |
+| Level 3 (Executive) Status | [Auto-calculated] | [✅/⚠️/❌] |
+| **Overall Approval Status** | [Auto-calculated] | [✅ Approved / ⚠️ Pending / ❌ Not Approved] |
+
+
+### Conditional Approval Notes (Rows 32-38)
+
+**Row 32:** "Conditional Approval Notes" (bold, underlined)
+
+**Rows 33-38:** User input text area (yellow fill)
+- Document any conditions attached to approval
+- Document required follow-up actions
+- Document timeline for conditional requirements
+
+
+### Next Assessment Date (Rows 40-42)
+
+| Attribute | Value |
+|-----------|-------|
+| Next Scheduled Assessment: | [User Input: Date] |
+| Assessment Frequency: | Quarterly |
+| Trigger-Based Review: | After major infrastructure changes |
 
 ---
 
@@ -1770,6 +2101,7 @@ evidence/
 - **Data rows:** Thin border all sides (#D9D9D9)
 - **Section separators:** Medium border top (#000000)
 
+
 ---
 
 ## Integration Points
@@ -1781,21 +2113,27 @@ evidence/
 ### Output to Other Assessments
 
 **To ISMS-IMP-A.8.31.2 (Access Control):**
+
 - Environment list from Sheet 2 (Environment_Inventory)
 - Required for access control matrix
 
+
 **To ISMS-IMP-A.8.31.3 (Compliance Dashboard):**
+
 - All gap data from Sheet 8 (Gap_Analysis)
 - Compliance status from all sheets
 - Required for consolidated compliance scoring
 
+
 ### Output to Python Scripts
 
 **generate_a831_1_environment_architecture.py** generates this workbook:
+
 - Creates all 9 sheets with proper structure
 - Applies cell styling and data validation
 - Includes sample data for reference
 - Exports to `.xlsx` format
+
 
 ---
 
@@ -1804,18 +2142,28 @@ evidence/
 **File Name:** `A831-1-Environment-Architecture-Assessment-YYYY-MM-DD.xlsx`
 
 **Properties:**
+
 - Title: ISMS-IMP-A.8.31.1 - Environment Architecture Assessment
 - Subject: ISO/IEC 27001:2022 Control A.8.31
 - Author: [Organization] ISMS Team
 - Comments: Technology-agnostic environment separation assessment
 - Keywords: ISO27001, A.8.31, environment separation, SDLC, dev/test/prod
 
+
 **Protection:**
+
 - Sheet structure protected (prevent accidental deletion)
 - User input cells unlocked (yellow cells editable)
 - Formula cells locked
 - Header rows locked
 
+
 ---
 
-**END OF PART II: TECHNICAL SPECIFICATION**
+**END OF SPECIFICATION**
+
+---
+
+*"The security of a cryptographic system lies entirely in the key."*
+— Ron Rivest
+*Where bamboo antennas actually work.* 🎋

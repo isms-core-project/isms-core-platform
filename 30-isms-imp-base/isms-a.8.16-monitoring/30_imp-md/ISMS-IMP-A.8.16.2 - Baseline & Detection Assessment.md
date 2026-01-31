@@ -1,10 +1,10 @@
-# ISMS-IMP-A.8.16.2 - Baseline & Detection Assessment
-## Assessment Specification with User Completion Guide
+**ISMS-IMP-A.8.16.2 - Baseline & Detection Assessment**
+**Assessment Specification with User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.8.16: Monitoring Activities
 
 ---
 
-## Document Control
+**Document Control**
 
 | Attribute | Value |
 |-----------|-------|
@@ -47,6 +47,7 @@ This document consists of two parts:
   - Effectiveness Metrics Calculations
   - Integration with A.8.16.1 (Infrastructure)
 
+
 ---
 
 **IMPLEMENTATION NOTE:**
@@ -54,8 +55,10 @@ This document consists of two parts:
 This reworked document follows the **ISMS-POL-A.8.16 consolidated policy structure** (dated 22.01.2026).
 
 All policy references have been updated from the old modular format:
+
 - ❌ OLD: "ISMS-POL-A.8.16-S2.2"
 - ✅ NEW: "ISMS-POL-A.8.16, Section 2.2 (Baseline & Anomaly Detection Requirements)"
+
 
 **Prerequisites:** ISMS-IMP-A.8.16.1 (Monitoring Infrastructure Assessment) must be completed first. This assessment builds on the monitoring platforms and log sources documented in A.8.16.1.
 
@@ -84,28 +87,35 @@ As Richard Feynman famously said: *"The first principle is that you must not foo
 **Applied to baselines and detection:**
 
 **❌ Fooling Yourself (Cargo Cult Baselines):**
+
 - "Normal authentication is around 100-200 logins per hour" (vague, unmeasurable)
 - "Database seems busy during the day" (subjective, no numbers)
 - "That user always accesses lots of files" (gut feel, no data)
 - "We have 500 detection rules, so we're detecting threats" (quantity ≠ quality)
 
+
 **✅ Not Fooling Yourself (Real Baselines):**
+
 - "User authentication rate during business hours (08:00-18:00 CET): Mean 145 logins/hour, Std Dev 23, 95th percentile 189 logins/hour. Alert threshold: 245 logins/hour (95th percentile × 1.3). Baseline established over 45-day observation period (15.11.2025 - 29.12.2025) excluding 2 security incidents."
 - "Database query rate: Baseline 450 queries/minute ±50 (mean ±1 std dev), 95th percentile 523 queries/min. Alert threshold: 680 queries/minute (95th percentile × 1.3). Baseline observation: 60 days, updated monthly."
 - "User X file access pattern: Normal 15-30 files/day, mean 22, std dev 5. Alert threshold: 50 files/day (mean + 3×std dev). Baseline valid 01.10.2025 - 31.12.2025, next review 31.01.2026."
 
+
 **If you cannot express baselines with numbers, statistics, and time periods, you don't have baselines—you have opinions.**
 
 This assessment prevents cargo cult monitoring by requiring:
+
 - **Documented baselines** - Not guesses, but measured behavioral patterns
 - **Statistical profiles** - Mean, median, standard deviation, percentiles
 - **Threshold derivation** - Explicit methodology (95th percentile × 1.3, mean + 3σ, etc.)
 - **Observation periods** - 30+ days minimum, business cycles included
 - **Regular validation** - Quarterly baseline review, monthly for critical systems
 
+
 ## The "Gut Feel" Trap
 
 **Common Scenario:**
+
 - SOC Analyst: "That login pattern looks suspicious"
 - Manager: "How do you know?"
 - SOC Analyst: "Just... doesn't feel right. User normally logs in at 9 AM, this is 6 AM"
@@ -114,17 +124,22 @@ This assessment prevents cargo cult monitoring by requiring:
 - Manager: "What IS their normal login time range?"
 - SOC Analyst: "Around 9 AM... I think?"
 
+
 **Without baselines:**
+
 - Gut feel replaces data (unreliable, biased, inconsistent)
 - Analysts waste time on false positives (investigating normal behavior)
 - True anomalies are missed (no threshold to trigger alert)
 - Incident response is delayed (manual triage of everything)
 
+
 **With baselines:**
+
 - Alert triggers automatically (user logged in 4 standard deviations outside normal time window)
 - Context is immediate (baseline shows normal login time: 08:45-09:15, 99.7% of time)
 - Investigation is focused (automated pre-investigation: recent HR changes? Travel? VPN from unusual location?)
 - MTTD (Mean Time to Detect) drops from hours to minutes
+
 
 ## How to Use This Document
 
@@ -137,11 +152,13 @@ This assessment prevents cargo cult monitoring by requiring:
 3. **Gather Baseline Data** (pages 9-12) - 30+ days of historical data required
 4. **Follow the Workflow** (pages 13-16) - 3-week timeline for comprehensive baseline assessment
 5. **Complete Each Sheet** (pages 17-70) using detailed instructions:
+
    - Sheet 2: System Utilization Baselines (pages 17-30)
    - Sheet 3: Access Pattern Baselines (pages 31-40)
    - Sheet 4: Application Behavior Baselines (pages 41-50)
    - Sheet 5: Detection Rule Coverage (pages 51-60)
    - Sheet 6: Detection Effectiveness (pages 61-70)
+
 6. **Collect Evidence** (pages 71-75) - baseline documentation, detection rules, test results
 7. **Avoid Common Pitfalls** (pages 76-85) - learn from "gut feel" failures
 8. **Self-Check Quality** (pages 86-88) before submitting
@@ -153,38 +170,46 @@ This assessment prevents cargo cult monitoring by requiring:
 
 1. **Review Workbook Structure** (pages 93-95) - 8 sheets, statistical requirements
 2. **Implement Baseline Templates** (pages 96-110):
+
    - Statistical profile format (mean, median, std dev, percentiles)
    - Time-aware baseline structures (business hours, off-hours, weekends)
    - Threshold derivation methodologies
+
 3. **Implement Detection Rule Format** (pages 111-120):
+
    - Rule taxonomy (signature, anomaly, behavioral, correlation)
    - Coverage mapping (MITRE ATT&CK, kill chain)
    - Effectiveness tracking (TP, FP, FN rates)
+
 4. **Apply Formulas** (pages 121-125) - compliance scoring, effectiveness calculations
 
 ### For Auditors & Compliance Officers:
 
 **Focus Areas:**
+
 - **Baseline Requirements** (Part I, pages 17-50): Statistical rigor, observation periods
 - **Detection Coverage** (Part I, pages 51-60): MITRE ATT&CK mapping, gap analysis
 - **Effectiveness Evidence** (Part I, pages 61-70, 71-75): True positive rates, testing results
 - **Policy Traceability** (Throughout): Requirements traced to ISMS-POL-A.8.16, Section 2.2
 
+
 ### For Management (CISO, Security Managers):
 
 **Executive Summary Locations:**
+
 - **Baseline Summary** (Part I, page 50): Coverage by system type, baseline maturity
 - **Detection Coverage Summary** (Part I, page 60): Attack types covered vs. gaps
 - **Effectiveness Metrics** (Part I, page 70): MTTD, detection rate, false positive rate
 - **Dashboard** (Part II, pages 126-128): Consolidated compliance view
 
+
 ---
 
 # PART I: USER COMPLETION GUIDE
 
-## 1. Assessment Overview
+# Assessment Overview
 
-### 1.1 Purpose & Scope
+## Purpose & Scope
 
 **Assessment Name:** ISMS-IMP-A.8.16.2 - Baseline & Detection Assessment
 
@@ -196,6 +221,7 @@ This assessment evaluates your organization's capability to:
 5. **Tune detection** to reduce alert noise and improve signal
 
 **Core Questions:**
+
 - Do you have documented baselines with statistical profiles? (Mean, std dev, percentiles)
 - Are baselines time-aware? (Business hours vs. off-hours, weekday vs. weekend)
 - What attack types can you detect? (Malware, lateral movement, data exfiltration, etc.)
@@ -203,7 +229,8 @@ This assessment evaluates your organization's capability to:
 - How effective is detection? (What percentage of attacks are detected? False positive rate?)
 - How often are detection rules tuned? (Monthly? Quarterly? Never?)
 
-### 1.2 Key Principle: Baselines Must Be Measurable
+
+## Key Principle: Baselines Must Be Measurable
 
 **Acceptable Baseline** (measurable, specific, statistical):
 ```
@@ -214,19 +241,23 @@ Observation Period: 45 days (15.11.2025 - 29.12.2025)
 Exclusions: Security incident 18.12.2025 (brute force attack - excluded from baseline)
 
 Statistical Profile (Business Hours 08:00-18:00 CET, Mon-Fri):
+
 - Mean: 145 authentications/hour
 - Median: 142 authentications/hour
 - Standard Deviation: 23 authentications/hour
 - 95th Percentile: 189 authentications/hour
 - 99th Percentile: 215 authentications/hour
 
+
 Alert Threshold: 245 authentications/hour
 Derivation: 95th percentile × 1.3 (allows normal peaks, alerts on anomalies)
 
 Time-Aware Baselines:
+
 - Business Hours (Mon-Fri 08:00-18:00): Mean 145, 95th %ile 189
 - Off-Hours (Mon-Fri 18:00-08:00): Mean 12, 95th %ile 25
 - Weekends (Sat-Sun all hours): Mean 8, 95th %ile 18
+
 
 Baseline Validity: 01.01.2026 - 31.03.2026
 Next Review: 31.03.2026 (quarterly)
@@ -240,48 +271,61 @@ Sometimes it's higher, sometimes lower. We alert if it seems unusually high."
 ```
 
 **Why the second is unacceptable:**
+
 - "Around 100-200" - Too broad (100% margin of error!)
 - "During the day" - What hours exactly? Does 7 AM count? 7 PM?
 - "Sometimes higher" - How much higher is normal? 250? 500? 1000?
 - "Seems unusually high" - Subjective judgment, not measurable threshold
 
-### 1.3 What You'll Document
 
-#### System Utilization Baselines (Sheet 2)
+## What You'll Document
+
+### System Utilization Baselines (Sheet 2)
+
 - CPU utilization patterns (mean, std dev, peak times)
 - Memory consumption baselines
 - Disk I/O patterns
 - Network bandwidth consumption
 - Process resource usage
 
+
 **For Each Baseline:**
+
 - Statistical profile (mean, median, std dev, percentiles)
 - Time-aware variations (business hours, off-hours, weekends)
 - Alert thresholds (derived from statistical profile)
 - Observation period (dates, duration, exclusions)
 
-#### Access Pattern Baselines (Sheet 3)
+
+### Access Pattern Baselines (Sheet 3)
+
 - User authentication patterns (login times, frequency, locations)
 - Geographic access patterns (normal locations, travel patterns)
 - Privileged access patterns (sudo, admin logins, elevation requests)
 - Failed authentication baselines (normal failure rate vs. attack indicators)
 - Service account activity patterns
 
-#### Application Behavior Baselines (Sheet 4)
+
+### Application Behavior Baselines (Sheet 4)
+
 - Transaction volumes and timing patterns
 - API call rates and patterns
 - Database query patterns (queries/minute, query types)
 - File access and modification patterns
 - Network connection patterns (internal, external, protocols)
 
-#### Detection Rule Coverage (Sheet 5)
+
+### Detection Rule Coverage (Sheet 5)
+
 - Detection rule inventory (all active rules)
 - Rule taxonomy (signature, anomaly, behavioral, correlation)
 - MITRE ATT&CK coverage (tactics and techniques covered)
 - Kill chain coverage (reconnaissance, exploitation, persistence, etc.)
 - Coverage gaps (attack types not covered by rules)
 
-#### Detection Effectiveness (Sheet 6)
+
+### Detection Effectiveness (Sheet 6)
+
 - True positive rate (% of attacks detected)
 - False positive rate (% of alerts that are noise)
 - False negative rate (% of attacks missed)
@@ -289,7 +333,8 @@ Sometimes it's higher, sometimes lower. We alert if it seems unusually high."
 - Alert volume trends (improving or degrading?)
 - Tuning effectiveness (false positive reduction over time)
 
-### 1.4 How This Relates to Other A.8.16 Assessments
+
+## How This Relates to Other A.8.16 Assessments
 
 | Assessment | Focus | Relationship to A.8.16.2 |
 |-----------|-------|--------------------------|
@@ -300,15 +345,18 @@ Sometimes it's higher, sometimes lower. We alert if it seems unusually high."
 | ISMS-IMP-A.8.16.5 | Compliance Dashboard | Consolidates all assessments including baseline/detection maturity from A.8.16.2 |
 
 **Dependencies:**
+
 - **A.8.16.1 must be completed first** - Can't establish baselines without knowing what monitoring platforms and log sources exist
 - **A.8.16.2 informs A.8.16.3** - Coverage assessment validates that baselines exist for critical systems
 - **A.8.16.2 informs A.8.16.4** - Alert management effectiveness depends on detection rule quality
 
-### 1.5 Policy References
+
+## Policy References
 
 This assessment implements requirements from:
 
 **Primary Policy Reference:**
+
 - **ISMS-POL-A.8.16, Section 2.2 (Baseline & Anomaly Detection Requirements)**
   - Section 2.2.1: Baseline Philosophy
   - Section 2.2.2: Baseline Establishment Requirements
@@ -316,95 +364,123 @@ This assessment implements requirements from:
   - Section 2.2.4: Anomaly Detection Scope
   - Section 2.2.5: Detection Effectiveness Requirements
 
+
 **Supporting Policy References:**
+
 - ISMS-POL-A.8.16, Section 2.1 (Monitoring Infrastructure Requirements) - for platform capabilities
 - ISMS-POL-A.8.16, Section 2.3 (Alert Management & Response Requirements) - for alert handling
 - ISMS-POL-A.8.16, Annex B (Baseline Definition Template) - standardized baseline format
 
+
 **Regulatory Context:**
+
 - Swiss nDSG / EU GDPR: Anomaly detection for data protection incident identification
 - ISO/IEC 27001:2022 Control A.8.16: Monitoring for anomalous behavior
 - NIST SP 800-137: Information Security Continuous Monitoring (ISCM)
 - MITRE ATT&CK Framework: Detection coverage mapping
 
-### 1.6 Expected Outputs
+
+## Expected Outputs
 
 After completing this assessment, you will have:
 
 1. **Documented Baseline Inventory**
+
    - All critical systems with statistical behavioral baselines
    - Time-aware baselines (business hours, off-hours, weekends)
    - Threshold derivation methodology documented
 
+
 2. **Detection Rule Inventory**
+
    - All active detection rules catalogued
    - MITRE ATT&CK coverage mapped
    - Coverage gaps identified (attack types not covered)
 
+
 3. **Effectiveness Metrics**
+
    - True positive rate (target: >90% for high-severity threats)
    - False positive rate (target: <20% for critical alerts)
    - MTTD (Mean Time to Detect) measured and tracked
    - Baseline for continuous improvement
 
+
 4. **Tuning Roadmap**
+
    - High false-positive rules identified for tuning
    - Coverage gaps prioritized for new rule development
    - Quarterly tuning plan with owners and timelines
 
+
 5. **Evidence Package**
+
    - Baseline documentation (using ISMS-POL-A.8.16, Annex B template)
    - Detection rule exports (SIEM rule configurations)
    - Effectiveness test results (purple team, simulated attacks)
    - Tuning history (before/after false positive rates)
 
+
 6. **Compliance Status**
+
    - Compliance with ISMS-POL-A.8.16, Section 2.2 requirements
    - Baseline coverage percentage (% of critical systems with baselines)
    - Detection coverage percentage (% of MITRE ATT&CK tactics covered)
    - Improvement roadmap for gaps
 
+
 ---
 
-## 2. Prerequisites & Baseline Data Requirements
+# Prerequisites & Baseline Data Requirements
 
 Before starting this assessment, you need:
 
-### 2.1 Completed Prerequisites
+## Completed Prerequisites
 
 **Required Previous Assessment:**
+
 - ✅ **ISMS-IMP-A.8.16.1 (Monitoring Infrastructure Assessment)** must be completed
   - Provides monitoring platform inventory
   - Provides log source inventory
   - Confirms which systems are monitored (can establish baselines for)
 
-### 2.2 Historical Log Data
+
+## Historical Log Data
 
 **Minimum Data Requirements:**
+
 - **30 days** of historical log data (absolute minimum)
 - **45-60 days** recommended (captures business cycles, seasonal variations)
 - **90+ days** ideal (robust statistical profiles, multiple business cycles)
 
+
 **Data Must Include:**
+
 - System performance metrics (CPU, memory, disk, network)
 - User authentication events (success, failure, timing, locations)
 - Application activity logs (transactions, API calls, database queries)
 - Network traffic data (connections, bandwidth, protocols)
 
+
 **Data Must Be:**
+
 - **Continuous** (no large gaps - gaps invalidate baseline)
 - **Clean** (exclude known incidents from baseline establishment)
 - **Representative** (include normal business cycles - month-end, quarter-end if applicable)
 
+
 **Where to Find:**
+
 - SIEM historical data (if retention ≥30 days)
 - Log management platform archives
 - Performance monitoring tools (Grafana, Prometheus, CloudWatch)
 - Application performance monitoring (APM) tools
 
-### 2.3 System Documentation
+
+## System Documentation
 
 **For Each System Being Baselined:**
+
 - System name / hostname
 - System type and function
 - Business criticality tier (Tier 1, 2, 3)
@@ -412,133 +488,170 @@ Before starting this assessment, you need:
 - Known seasonal patterns (month-end spikes, holiday lulls, fiscal year-end processing)
 - Recent changes (migrations, upgrades, configuration changes that affect behavior)
 
+
 **Where to Find:**
+
 - ISMS-IMP-A.8.16.1, Sheet 3 (Log Source Coverage) - provides system inventory
 - CMDB (Configuration Management Database)
 - System owner documentation
 - Change management records
 
-### 2.4 Incident History
+
+## Incident History
 
 **Why This Matters:**
 Baselines must represent NORMAL behavior. Security incidents create anomalies that contaminate baselines if not excluded.
 
 **Required Information:**
+
 - Security incident dates and times (last 90 days)
 - Affected systems (which systems were involved in incidents)
 - Incident type (malware, brute force, data exfiltration, etc.)
+
 
 **Purpose:**
 Exclude incident periods from baseline observation windows to ensure baselines reflect normal, not attack behavior.
 
 **Example:**
+
 - Baseline observation period: 15.11.2025 - 29.12.2025 (45 days)
 - Security incident: 18.12.2025 14:00-22:00 (brute force attack on dc01)
 - Excluded from baseline: 18.12.2025 00:00-23:59 (entire day excluded for safety)
 - Effective observation: 44 days (45 days - 1 incident day)
 
-### 2.5 Detection Rule Access
+
+## Detection Rule Access
 
 **SIEM / Monitoring Platform Access:**
+
 - Administrative access to view detection rules
 - Access to rule configuration (conditions, thresholds, actions)
 - Access to alert history (last 90 days)
 - Access to false positive tracking (if available)
 
+
 **Detection Rule Export:**
+
 - Ability to export rule configurations
 - Ability to export alert history
 - Ability to export rule effectiveness metrics (if platform provides)
 
+
 **Where to Find:**
+
 - SIEM: Settings → Detection → Correlation Rules / Searches / Alerts
 - IDS/IPS: Rule sets, signature databases
 - EDR: Detection policies, behavioral rules
 - UEBA: Anomaly detection configurations
 
-### 2.6 Detection Testing Capability
+
+## Detection Testing Capability
 
 **For Effectiveness Assessment:**
+
 - Ability to run simulated attacks (purple team, red team, testing tools)
 - Test environment (or controlled production testing with approval)
 - Attack simulation tools (Atomic Red Team, Caldera, Metasploit, custom scripts)
 - Coordination with security team (ensure tests don't trigger real incident response)
 
+
 **Testing Scope:**
+
 - Test sample of detection rules (not all - focus on critical rules)
 - Test across MITRE ATT&CK tactics (reconnaissance, persistence, lateral movement, etc.)
 - Document what was detected vs. missed
 
-### 2.7 Statistical Analysis Tools
+
+## Statistical Analysis Tools
 
 **Basic Tools (Minimum):**
+
 - Excel / Spreadsheet software (calculate mean, median, std dev, percentiles)
 - Python / R (optional but helpful for larger datasets)
 - SIEM built-in analytics (if available)
 
+
 **Statistical Knowledge (Assessor Requirements):**
+
 - Understand mean, median, mode
 - Understand standard deviation (measure of spread)
 - Understand percentiles (95th percentile = 95% of values below this)
 - Understand normal distribution (bell curve) vs. skewed distributions
 
+
 **If Assessor Lacks Statistical Knowledge:**
+
 - Partner with data analyst or statistician
 - Use SIEM built-in baseline features (if available)
 - Use baseline template strictly (ISMS-POL-A.8.16, Annex B) - follow formulas
 
-### 2.8 Time Commitment
+
+## Time Commitment
 
 **Total Assessment Time:** 3 weeks for comprehensive baseline assessment
 
 **Phase 1: Data Collection (Week 1)**
+
 - Extract 45-60 days of historical data: 2-4 hours
 - Clean data (remove incident periods): 1-2 hours
 - Organize by system/user/application: 2-3 hours
 - **Total:** 5-9 hours
 
+
 **Phase 2: Baseline Establishment (Week 2)**
+
 - System utilization baselines (Sheet 2): 8-12 hours (10-20 systems)
 - Access pattern baselines (Sheet 3): 6-10 hours (authentication, privileged access)
 - Application baselines (Sheet 4): 6-10 hours (key applications)
 - **Total:** 20-32 hours
 
+
 **Phase 3: Detection Assessment (Week 2-3)**
+
 - Detection rule inventory (Sheet 5): 4-6 hours
 - MITRE ATT&CK mapping: 6-8 hours
 - Effectiveness testing (Sheet 6): 8-12 hours
 - **Total:** 18-26 hours
 
+
 **Phase 4: Documentation & Approval (Week 3)**
+
 - Evidence collection: 4-6 hours
 - Quality review: 2-3 hours
 - Stakeholder review and approval: 4-6 hours
 - **Total:** 10-15 hours
 
+
 **Grand Total:** 53-82 hours (7-10 business days of effort across 3-week calendar period)
 
 **For Large Environments:**
+
 - Multiply by number of critical systems / applications
 - Consider phased approach (baseline Tier 1 systems first, then Tier 2)
 - Leverage automation (scripted statistical analysis, SIEM features)
 
+
 **For Small Environments:**
+
 - Can complete in 2 weeks if few systems
 - Still requires same statistical rigor per baseline
 
+
 ---
 
-## 3. Assessment Workflow
+# Assessment Workflow
 
-### Phase 1: Data Collection & Preparation (Week 1)
+## Phase 1: Data Collection & Preparation (Week 1)
 
 **Step 1.1: Extract Historical Data (2-4 hours)**
 1. Identify systems for baseline establishment (from A.8.16.1, Sheet 3 - prioritize Tier 1)
 2. Determine observation period (45-60 days recommended)
 3. Extract performance data from monitoring platforms:
+
    - System metrics: CPU, memory, disk I/O, network
    - Authentication logs: successful logins, failures, timing, locations
    - Application logs: transactions, API calls, database queries
+
 4. Save raw data (CSV, JSON, or database export)
 
 **Step 1.2: Clean Data (1-2 hours)**
@@ -553,36 +666,46 @@ Exclude incident periods from baseline observation windows to ensure baselines r
 3. Separate business hours vs. off-hours data (if patterns differ)
 4. Validate data completeness (no large gaps)
 
-### Phase 2: Baseline Establishment (Week 2)
+## Phase 2: Baseline Establishment (Week 2)
 
 **Step 2.1: System Utilization Baselines (Sheet 2: 8-12 hours)**
 For each critical system:
 1. Calculate statistical profile:
+
    - Mean (average) CPU, memory, disk, network usage
    - Median (50th percentile) - middle value
    - Standard deviation (measure of variability)
    - 95th percentile (95% of values below this)
    - 99th percentile (99% of values below this)
+
 2. Create time-aware baselines (if patterns differ):
+
    - Business hours (08:00-18:00 Mon-Fri)
    - Off-hours (18:00-08:00 Mon-Fri)
    - Weekends (Sat-Sun all hours)
+
 3. Derive alert thresholds:
+
    - Methodology: 95th percentile × 1.3 (or mean + 3σ, or other justified method)
    - Document rationale
+
 4. Document in Sheet 2 (using ISMS-POL-A.8.16, Annex B template)
 
 **Step 2.2: Access Pattern Baselines (Sheet 3: 6-10 hours)**
 For user authentication patterns:
 1. Calculate per-user statistics:
+
    - Login count per day (mean, std dev, percentiles)
    - Login timing (normal login time window)
    - Login locations (normal offices, VPN endpoints, countries)
    - Failed login rate (normal failure rate baseline)
+
 2. Calculate aggregate statistics:
+
    - Total organization authentication rate (events/hour)
    - Privileged access rate (sudo, admin logins per day)
    - Service account activity patterns
+
 3. Derive alert thresholds (unusual timing, unusual location, high failure rate)
 4. Document in Sheet 3
 
@@ -595,42 +718,52 @@ For critical applications:
 5. Network connection baselines (connections/hour, protocols, destinations)
 6. Document in Sheet 4
 
-### Phase 3: Detection Rule Assessment (Week 2-3)
+## Phase 3: Detection Rule Assessment (Week 2-3)
 
 **Step 3.1: Detection Rule Inventory (Sheet 5: 4-6 hours)**
 1. Export detection rules from SIEM / monitoring platforms
 2. Catalog all active rules:
+
    - Rule ID / name
    - Rule type (signature, anomaly, behavioral, correlation)
    - Description (what attack/behavior does it detect?)
    - Severity (Critical, High, Medium, Low)
    - Status (Active, Disabled, Testing)
+
 3. Count total rules by type and severity
 
 **Step 3.2: MITRE ATT&CK Coverage Mapping (6-8 hours)**
 1. For each detection rule, identify which MITRE ATT&CK technique(s) it detects
 2. Create coverage matrix:
+
    - Rows: MITRE ATT&CK Tactics (Reconnaissance, Initial Access, Execution, etc.)
    - Columns: Detection status (Covered, Partial, Not Covered)
+
 3. Identify coverage gaps:
+
    - Tactics with no detection rules
    - High-priority techniques not covered (lateral movement, credential dumping, etc.)
+
 4. Prioritize gap remediation (focus on high-risk, high-likelihood techniques)
 
 **Step 3.3: Detection Effectiveness Testing (Sheet 6: 8-12 hours)**
 1. Select sample of detection rules for testing (10-20 rules across severity levels)
 2. Run simulated attacks (Atomic Red Team, Caldera, manual testing):
+
    - Execute attack technique
    - Monitor for alert generation
    - Record: Detected (TP), Missed (FN), False Alert (FP)
+
 3. Calculate effectiveness metrics:
+
    - True Positive Rate: (Detected Attacks / Total Attack Attempts) × 100
    - False Positive Rate: (False Alerts / Total Alerts) × 100
    - False Negative Rate: (Missed Attacks / Total Attack Attempts) × 100
    - Mean Time to Detect (MTTD): Average time from attack start to alert
+
 4. Document test results in Sheet 6
 
-### Phase 4: Documentation & Approval (Week 3)
+## Phase 4: Documentation & Approval (Week 3)
 
 **Step 4.1: Complete Evidence Register (Sheet 8: 4-6 hours)**
 1. Collect baseline documentation (statistical profiles, threshold calculations)
@@ -640,24 +773,28 @@ For critical applications:
 5. Document in Evidence Register
 
 **Step 4.2: Quality Self-Check (2-3 hours)**
+
 - Use Quality Checklist (Section 7)
 - Verify all baselines have statistical profiles (not vague descriptions)
 - Verify MITRE ATT&CK coverage is complete
 - Verify effectiveness metrics are measured (not estimated)
 
+
 **Step 4.3: Stakeholder Review & Approval (4-6 hours)**
+
 - SOC Lead review (technical accuracy of baselines and detection rules)
 - Detection Engineering review (validate statistical methodology, threshold derivation)
 - Security Manager review (risk assessment of coverage gaps)
 - CISO approval (accept residual risk from detection gaps, approve remediation budget)
 
+
 ---
 
-## 4. Completing Each Sheet
+# Completing Each Sheet
 
 [Due to length constraints, full section includes detailed column-by-column guidance for:]
 
-### 4.1 Sheet 2: System Utilization Baselines
+## Sheet 2: System Utilization Baselines
 
 **Purpose:** Document measured baselines for system resource utilization (CPU, memory, disk, network)
 
@@ -675,35 +812,46 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
 "Database CPU: Mean 42%, Std Dev 8%, 95th percentile 58%. Measured over 45-day period (01.11.2025-15.12.2025) excluding 2 incidents. Alert threshold: 75% (95th percentile × 1.3). Business hours (08:00-18:00): Mean 48%. Off-hours: Mean 28%. Weekends: Mean 15%."
 
 **Structure:**
+
 - **Rows 8-37:** 30 data entry rows (baseline inventory for critical systems)
 - **Rows 40-60:** Statistical validation checklist
 
-#### Column-by-Column Completion Guide
+
+### Column-by-Column Completion Guide
 
 **Column A: System ID**
+
 - **What to Enter:** System identifier (must match Sheet 3 from A.8.16.1)
 - **Examples:** `SRV-DC-01`, `PRD-DB-ORDERS`, `APP-WEB-PROD-03`
 - **Cross-Reference:** Every system here should be documented in A.8.16.1, Sheet 3
 - **Critical Guidance:** Focus on Tier 1 (Critical) systems first
 
+
 **Column B: System Name/Description**
+
 - **What to Enter:** Human-readable system description
 - **Examples:**
   - `Primary Domain Controller - Corporate Forest`
   - `Production Database - Order Management (PostgreSQL 15)`
   - `Web Application Server - Customer Portal`
 
+
 **Column C: System Type (Dropdown)**
+
 - **Options:** Server, Database, Application, Network Device, Virtual Infrastructure, Storage System, Security Appliance
 - **Purpose:** Group similar systems for baseline comparison
 
+
 **Column D: Criticality Tier (Dropdown)**
+
 - **Options:** Tier 1 (Critical), Tier 2 (High), Tier 3 (Medium), Tier 4 (Low)
 - **Policy Requirement:** ALL Tier 1 systems MUST have documented baselines
 - **Tier 2:** Recommended (>80% should have baselines)
 - **Tier 3/4:** Optional (baseline as needed for anomaly detection)
 
+
 **Column E: Metric Name (Dropdown)**
+
 - **Options:**
   - `CPU Utilization (%)`
   - `Memory Utilization (%)`
@@ -715,15 +863,19 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
   - `Queue Length`
   - `Custom: [Specify]`
 
+
 **Selection Guidance:**
+
 - **Servers/VMs:** CPU %, Memory %, Disk I/O, Network Traffic
 - **Databases:** CPU %, Memory %, Query Rate, Connection Count, Transaction Rate
 - **Network Devices:** Interface Utilization %, Packet Rate, Error Rate
 - **Applications:** Transaction Rate, Response Time, Active Sessions
 
+
 **One row per metric** - If monitoring CPU, Memory, and Disk for same server, create 3 rows.
 
 **Column F: Observation Period - Start Date (DD.MM.YYYY)**
+
 - **What to Enter:** First day of baseline measurement period
 - **Minimum Period:**
   - **Tier 1 Systems:** 30 days minimum (45+ days preferred)
@@ -731,12 +883,16 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
   - **Seasonal Systems:** 90+ days (to capture weekly/monthly cycles)
 - **Example:** `01.11.2025`
 
+
 **Column G: Observation Period - End Date (DD.MM.YYYY)**
+
 - **What to Enter:** Last day of baseline measurement period
 - **Example:** `15.12.2025` (45-day observation)
 - **Validation:** End Date must be > Start Date
 
+
 **Column H: Observation Duration (Days)**
+
 - **Auto-Calculated:** `= Column G - Column F`
 - **Display:** Number of days
 - **Critical Threshold:**
@@ -744,7 +900,9 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
   - ✅ 30-90 days: Good baseline period
   - ✅ >90 days: Excellent (captures seasonal variations)
 
+
 **Column I: Incidents/Anomalies Excluded**
+
 - **What to Enter:** Count and brief description of excluded events
 - **Purpose:** Baselines should represent NORMAL behavior, not incident spikes
 - **Examples:**
@@ -754,20 +912,26 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
 - **Critical:** MUST exclude known incidents/anomalies or baseline will be skewed
 - **Document:** Which specific dates/times were excluded and why
 
+
 **Column J: Mean (Average)**
+
 - **What to Enter:** Arithmetic mean of metric during observation period
 - **Formula:** `Sum of all values / Count of values`
 - **Example:** CPU Mean = 42.3%
 - **Units:** Must match metric (%, MB/s, count, etc.)
 - **Source:** Calculate from monitoring platform (SIEM, Prometheus, CloudWatch, etc.)
 
+
 **Column K: Median (50th Percentile)**
+
 - **What to Enter:** Middle value when data sorted (50th percentile)
 - **Example:** CPU Median = 41.8%
 - **Why Important:** Median less affected by outliers than mean
 - **Comparison:** If Median << Mean, you have high outliers skewing average
 
+
 **Column L: Standard Deviation**
+
 - **What to Enter:** Measure of data spread/variability
 - **Interpretation:**
   - Low StdDev (<10% of mean): Stable, predictable behavior
@@ -775,49 +939,66 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
 - **Example:** CPU StdDev = 8.2% (relatively stable)
 - **Use Case:** Narrow baselines (mean ± 2×StdDev) for stable metrics, wide baselines for variable metrics
 
+
 **Column M: 95th Percentile**
+
 - **What to Enter:** Value below which 95% of observations fall
 - **Example:** CPU 95th percentile = 58.2%
 - **Why Important:** Common threshold basis (captures normal spikes, excludes outliers)
 - **Interpretation:** 95% of the time, CPU is ≤58.2%
 
+
 **Column N: 99th Percentile**
+
 - **What to Enter:** Value below which 99% of observations fall
 - **Example:** CPU 99th percentile = 68.5%
 - **Use Case:** More conservative threshold for critical systems
 
+
 **Column O: Min Value Observed**
+
 - **What to Enter:** Lowest value seen during observation period
 - **Example:** CPU Min = 12%
 - **Use Case:** Detect anomalously LOW values (e.g., process crash, service stopped)
 
+
 **Column P: Max Value Observed**
+
 - **What to Enter:** Highest value seen during observation period
 - **Example:** CPU Max = 94%
 - **Validation:** Should be close to 99th percentile (if much higher, may indicate excluded incident)
 
+
 **Column Q: Business Hours Profile (08:00-18:00) - Mean**
+
 - **What to Enter:** Average value during business hours only
 - **Example:** CPU Business Hours Mean = 48%
 - **Time Definition:** Define organization's business hours (may vary by timezone/region)
 - **Why Important:** Many systems have time-aware patterns (busier during workday)
 
+
 **Column R: Off-Hours Profile (18:00-08:00) - Mean**
+
 - **What to Enter:** Average value outside business hours
 - **Example:** CPU Off-Hours Mean = 28%
 - **Use Case:** Detect anomalies appropriate to time of day
   - 80% CPU at 2 AM may be suspicious if baseline is 28%
   - 80% CPU at 2 PM may be normal if baseline is 48%
 
+
 **Column S: Weekend Profile - Mean**
+
 - **What to Enter:** Average value during weekends (Saturday-Sunday)
 - **Example:** CPU Weekend Mean = 15%
 - **Use Case:** Many corporate systems have lower weekend utilization
 - **Note:** If system has no weekend pattern, can leave blank or use same as business hours
 
+
 **Column T: Alert Threshold (Derived)**
+
 - **What to Enter:** Calculated threshold for alerting on anomalies
 - **Common Derivation Methods:**
+
 
 **Method 1: Percentile-Based (Recommended)**
 ```
@@ -843,6 +1024,7 @@ Based on known performance degradation points.
 **Document in Column U (Threshold Methodology):** Which method you used and why
 
 **Column U: Threshold Methodology**
+
 - **What to Enter:** Explanation of how threshold was derived
 - **Examples:**
   - `95th percentile × 1.3 (allows normal spikes + 30% headroom)`
@@ -851,7 +1033,9 @@ Based on known performance degradation points.
   - `Time-aware: Business hours = 75%, Off-hours = 50%`
 - **Critical:** Auditors will ask "Why this threshold?" - document your reasoning
 
+
 **Column V: Time-Aware Thresholds?**
+
 - **Options (Dropdown):** Yes, No
 - **Select "Yes" if:** Different thresholds for business/off-hours/weekends
 - **Document in Column W:** Specific thresholds per time period
@@ -859,18 +1043,24 @@ Based on known performance degradation points.
   - Column V = "Yes"
   - Column W = "Business hours: 75%, Off-hours: 50%, Weekends: 40%"
 
+
 **Column W: Time-Aware Threshold Details**
+
 - **What to Enter:** Specific thresholds for each time period (if Column V = Yes)
 - **Format:** `[Period]: [Threshold], [Period]: [Threshold]`
 - **Example:** `Business hours (08:00-18:00 Mon-Fri): 75% CPU, Off-hours: 50% CPU, Weekends: 40% CPU`
 - **Leave Blank if:** Column V = No (single threshold applies always)
 
+
 **Column X: Baseline Valid From (DD.MM.YYYY)**
+
 - **What to Enter:** Date this baseline becomes active
 - **Typically:** Day after observation period ends
 - **Example:** If observation ended 15.12.2025, baseline valid from 16.12.2025
 
+
 **Column Y: Baseline Valid Until (DD.MM.YYYY)**
+
 - **What to Enter:** Date baseline expires and must be re-established
 - **Policy Requirement:**
   - **Tier 1 Systems:** Baseline valid 90 days maximum (quarterly review)
@@ -879,7 +1069,9 @@ Based on known performance degradation points.
 - **Example:** Valid from 16.12.2025, valid until 15.03.2026 (90 days)
 - **Auto-Calc:** `= Column X + 90 days` (for Tier 1)
 
+
 **Column Z: Next Review Date (DD.MM.YYYY)**
+
 - **What to Enter:** When baseline will be re-measured
 - **Typically:** Same as "Valid Until" date
 - **Trigger Review Early if:**
@@ -887,7 +1079,9 @@ Based on known performance degradation points.
   - Significant business changes (new product launch, workload shifts)
   - Detection effectiveness degrading (high false positives)
 
+
 **Column AA: Baseline Owner**
+
 - **What to Enter:** Person responsible for maintaining this baseline
 - **Examples:**
   - `John Smith, Senior SOC Analyst`
@@ -895,14 +1089,18 @@ Based on known performance degradation points.
   - `Network Operations Center (NOC)`
 - **Responsibility:** Update baseline when it expires, tune thresholds if needed
 
+
 **Column AB: Detection Rule IDs Using This Baseline**
+
 - **What to Enter:** Which detection rules depend on this baseline
 - **Format:** Comma-separated rule IDs (reference Sheet 5)
 - **Example:** `DET-001, DET-005, DET-023`
 - **Purpose:** Understand impact if baseline changes (which alerts will be affected)
 - **Cross-Reference:** These rule IDs should exist in Sheet 5 (Detection Rule Coverage)
 
+
 **Column AC: Notes**
+
 - **What to Enter:** Additional context, special considerations, known issues
 - **Use Cases:**
   - **Seasonal Patterns:** "Baseline varies significantly in December (holiday shopping season)"
@@ -910,7 +1108,8 @@ Based on known performance degradation points.
   - **System Changes:** "Baseline established before RAM upgrade (16GB→32GB) - may need adjustment"
   - **Data Quality:** "5% of data missing due to monitoring agent outage (05-07.11.2025) - excluded from baseline"
 
-#### Completing Sheet 2: Step-by-Step Process
+
+### Completing Sheet 2: Step-by-Step Process
 
 **Step 1: Select Systems for Baseline (30-60 minutes)**
 
@@ -953,14 +1152,18 @@ aws cloudwatch get-metric-statistics   --namespace AWS/EC2   --metric-name CPUUt
 
 1. **Load time-series data** (timestamp, value)
 2. **Exclude incidents:**
+
    - Filter out known incident dates/times
    - Remove outliers >3×StdDev (but document why)
+
 3. **Calculate statistics:**
+
    - Mean: `=AVERAGE(data_range)`
    - Median: `=MEDIAN(data_range)`
    - StdDev: `=STDEV.P(data_range)`
    - 95th Percentile: `=PERCENTILE(data_range, 0.95)`
    - 99th Percentile: `=PERCENTILE(data_range, 0.99)`
+
 
 **Step 4: Calculate Time-Aware Profiles (30 minutes per system)**
 
@@ -988,25 +1191,33 @@ aws cloudwatch get-metric-statistics   --namespace AWS/EC2   --metric-name CPUUt
 **Choose derivation method:**
 
 **For Stable Systems (Low StdDev):**
+
 - Use percentile method: `95th Percentile × 1.3`
 - Results in tight thresholds (good for detecting small anomalies)
 
+
 **For Variable Systems (High StdDev):**
+
 - Use statistical method: `Mean + 3×StdDev`
 - Results in wider thresholds (reduces false positives)
 
+
 **For Systems with Known Impact:**
+
 - Use business impact method: Set threshold at known degradation point
 - Example: Database slows at 80% CPU → Threshold = 80%
+
 
 **Document methodology in Column U.**
 
 **Step 6: Implement Time-Aware Thresholds (if applicable)**
 
 **Decision Criteria:**
+
 - **If** Business Hours Mean vs Off-Hours Mean differ by >30% → Use time-aware thresholds
 - **If** System shows clear weekly pattern → Use time-aware thresholds
 - **If** System behavior stable across all times → Single threshold sufficient
+
 
 **Example Implementation in SIEM:**
 ```spl
@@ -1022,22 +1233,30 @@ aws cloudwatch get-metric-statistics   --namespace AWS/EC2   --metric-name CPUUt
 **Validation Checks:**
 
 1. **Sanity Check:** Do statistics make sense?
+
    - Mean between Min and Max? ✓
    - 95th Percentile < 99th Percentile < Max? ✓
    - StdDev reasonable for metric type? ✓
 
+
 2. **Time-Pattern Check:** Graph data over time
+
    - Are there clear daily/weekly patterns? → Time-aware thresholds needed
    - Are there trend lines (growing/shrinking over time)? → Note for next baseline review
 
+
 3. **Incident Exclusion Check:**
+
    - Max value significantly higher than 99th percentile? → May have missed incident exclusion
    - Re-review observation period for anomalies
 
+
 4. **Threshold Reasonableness:**
+
    - Alert threshold achievable? (not set at 100% where system can't reach)
    - Alert threshold not too sensitive? (would it fire constantly in production?)
    - Test threshold against last 7 days of data - how many alerts would it generate?
+
 
 **Step 8: Document and Implement (30 minutes per system)**
 
@@ -1046,7 +1265,7 @@ aws cloudwatch get-metric-statistics   --namespace AWS/EC2   --metric-name CPUUt
 3. **Store baseline calculations** as evidence (Sheet 8)
 4. **Set calendar reminders** for baseline review (Column Z - Next Review Date)
 
-#### Critical Success Factors for Sheet 2
+### Critical Success Factors for Sheet 2
 
 **You've Done This Right When:**
 1. ✅ Every Tier 1 system has documented baseline with 30+ days observation
@@ -1058,6 +1277,7 @@ aws cloudwatch get-metric-statistics   --namespace AWS/EC2   --metric-name CPUUt
 7. ✅ Detection rules created and tied to baselines (Column AB populated)
 
 **You're Fooling Yourself If:**
+
 - ❌ Baselines are estimates ("CPU normally around 40-60%")
 - ❌ Observation period <14 days (insufficient data)
 - ❌ Incidents NOT excluded from baseline (skewed by attack spikes)
@@ -1065,11 +1285,12 @@ aws cloudwatch get-metric-statistics   --namespace AWS/EC2   --metric-name CPUUt
 - ❌ Same threshold used 24/7 despite clear time patterns
 - ❌ Baselines never reviewed/updated (set once, forgotten)
 
+
 **Remember Feynman:** Show the data. Show the calculations. Show your work. If you can't explain WHY a threshold is set at 75%, you're guessing.
 
 ---
 
-### 4.2 Sheet 3: Access Pattern Baselines
+## Sheet 3: Access Pattern Baselines
 
 **Purpose:** Document measured baselines for access patterns (authentication, privileged access, geographic access)
 
@@ -1077,19 +1298,24 @@ aws cloudwatch get-metric-statistics   --namespace AWS/EC2   --metric-name CPUUt
 
 **Why This Sheet Matters:**
 Access anomalies are often early indicators of compromise:
+
 - User logs in from impossible geographic locations (credential theft)
 - Privileged access outside normal hours (insider threat, compromised admin)
 - Authentication rate spikes (brute force attack)
 
+
 But you can only detect "anomalous" if you know what "normal" looks like → baselines required.
 
 **Structure:**
+
 - **Rows 8-32:** 25 data entry rows (access pattern baselines)
 - **Rows 35-50:** Access pattern analysis summary
 
-#### Column-by-Column Completion Guide
+
+### Column-by-Column Completion Guide
 
 **Column A: User/Group/System ID**
+
 - **What to Enter:** Identity being baselined
 - **Examples:**
   - User: `jsmith`, `john.smith@company.com`
@@ -1102,7 +1328,9 @@ But you can only detect "anomalous" if you know what "normal" looks like → bas
   - **Service Accounts:** Automated access patterns should be VERY consistent
   - **Generic Accounts:** Shared accounts (if they exist - note these are red flags)
 
+
 **Column B: Identity Type (Dropdown)**
+
 - **Options:** Individual User, Service Account, System Account, Group, Shared Account
 - **Selection:**
   - **Individual User:** Personal account (john.smith)
@@ -1111,7 +1339,9 @@ But you can only detect "anomalous" if you know what "normal" looks like → bas
   - **Group:** Baseline for collective (all VPN users combined)
   - **Shared Account:** Multiple people using same creds (⚠️ security risk - should be eliminated)
 
+
 **Column C: Access Type (Dropdown)**
+
 - **Options:** Authentication (Login), Privileged Access (sudo/runas), Geographic Access, Remote Access (VPN), Resource Access (File/DB)
 - **Purpose:** Different access types have different baseline patterns
 - **Examples:**
@@ -1121,7 +1351,9 @@ But you can only detect "anomalous" if you know what "normal" looks like → bas
   - **Remote Access:** VPN connections (when, from where, how often)
   - **Resource Access:** File access patterns, database queries
 
+
 **Column D: Pattern Metric**
+
 - **What to Enter:** Measurable metric defining normal access pattern
 - **Examples:**
   - Authentication: `Logins per day`, `Logins per hour (business hours)`
@@ -1131,7 +1363,9 @@ But you can only detect "anomalous" if you know what "normal" looks like → bas
   - Remote Access: `VPN sessions per week`, `VPN duration (hours)`
   - Resource Access: `Files accessed per day`, `DB queries per hour`
 
+
 **Column E: Observation Period (Start - End)**
+
 - **Format:** `DD.MM.YYYY - DD.MM.YYYY`
 - **Minimum Period:**
   - **Privileged Users:** 30 days (45+ preferred)
@@ -1139,28 +1373,38 @@ But you can only detect "anomalous" if you know what "normal" looks like → bas
   - **Service Accounts:** 14 days minimum (these should be VERY consistent)
 - **Example:** `01.11.2025 - 15.12.2025 (45 days)`
 
+
 **Column F: Statistical Profile - Mean**
+
 - **What to Enter:** Average value for the metric
 - **Examples:**
   - Mean logins per day: 2.3
   - Mean privileged access per week: 15
   - Mean files accessed per day: 45
 
+
 **Column G: Statistical Profile - Median**
+
 - **Example:** Median logins per day: 2.0
 
+
 **Column H: Statistical Profile - Std Dev**
+
 - **Interpretation:**
   - **Service Account StdDev should be LOW** (very consistent behavior)
   - **User StdDev may be MODERATE** (some day-to-day variation expected)
   - **High StdDev** may indicate irregular patterns (need investigation)
 
+
 **Column I: Statistical Profile - Min/Max**
+
 - **Format:** `Min / Max`
 - **Example:** `0 / 8` (minimum 0 logins per day, maximum 8 logins per day)
 - **Use Case:** Detect when user exceeds historical maximum (possible account compromise)
 
+
 **Column J: Time-Aware Pattern - Typical Days/Hours**
+
 - **What to Enter:** When access typically occurs
 - **Examples:**
   - `Monday-Friday, 07:00-17:00 CET` (standard office hours)
@@ -1170,16 +1414,22 @@ But you can only detect "anomalous" if you know what "normal" looks like → bas
   - `Monthly: Last Friday, 18:00-22:00` (month-end processing)
 - **Purpose:** Detect access OUTSIDE typical pattern (e.g., login at 3 AM when user normally 08:00-17:00)
 
+
 **Column K: Time-Aware Pattern - Business Hours Profile**
+
 - **What to Enter:** Access behavior during business hours
 - **Example:** `Mean 2.5 logins/day, 95th percentile: 4 logins`
 
+
 **Column L: Time-Aware Pattern - Off-Hours Profile**
+
 - **What to Enter:** Access behavior outside business hours
 - **Example:** `Mean 0.1 logins/day (rare), Max observed: 2 (documented exceptions: on-call incidents)`
 - **Detection Rule:** If off-hours access exceeds historical max + margin → Alert
 
+
 **Column M: Geographic Pattern - Typical Locations**
+
 - **What to Enter:** Where access normally originates
 - **Examples:**
   - `Switzerland (Zurich office - IP range 203.0.113.0/24)`
@@ -1188,13 +1438,17 @@ But you can only detect "anomalous" if you know what "normal" looks like → bas
   - `Multiple: Zurich office (70%), Home VPN (25%), Munich office (5%)`
 - **Purpose:** Detect impossible travel (login from Zurich at 09:00, then Tokyo at 09:15)
 
+
 **Column N: Geographic Pattern - Allowed Countries**
+
 - **What to Enter:** Countries where login is expected (whitelist approach)
 - **Format:** Comma-separated country codes
 - **Example:** `CH, DE, AT, FR` (Switzerland, Germany, Austria, France - European employees)
 - **Detection Rule:** Login from country NOT in this list → Alert (potential credential compromise)
 
+
 **Column O: Remote Access Pattern (If Applicable)**
+
 - **What to Enter:** VPN/remote access baseline
 - **Examples:**
   - `VPN sessions: 3-5 per week, typical duration 6-8 hours`
@@ -1202,7 +1456,9 @@ But you can only detect "anomalous" if you know what "normal" looks like → bas
   - `Always VPN (remote worker)`
 - **Anomaly Example:** User with "No VPN access" suddenly connects via VPN → Investigate
 
+
 **Column P: Privileged Access Pattern (If Applicable)**
+
 - **What to Enter:** Admin/elevated access baseline (for privileged users only)
 - **Examples:**
   - `Sudo commands: 10-20 per day (system admin)`
@@ -1210,7 +1466,9 @@ But you can only detect "anomalous" if you know what "normal" looks like → bas
   - `AD admin tasks: 2-3 per week (user account management)`
 - **Critical Detection:** Privileged access from regular user account → High-severity alert
 
+
 **Column Q: Alert Threshold Derived**
+
 - **What to Enter:** Threshold for detecting anomalous access
 - **Examples:**
   - `>6 logins per day` (95th percentile × 1.5)
@@ -1219,7 +1477,9 @@ But you can only detect "anomalous" if you know what "normal" looks like → bas
   - `>3 failed login attempts per hour` (brute force detection)
   - `VPN session from new device not seen before`
 
+
 **Column R: Threshold Methodology**
+
 - **What to Enter:** How threshold was derived
 - **Examples:**
   - `95th percentile × 1.5 (statistical)`
@@ -1227,7 +1487,9 @@ But you can only detect "anomalous" if you know what "normal" looks like → bas
   - `Country not in whitelist (geographic)`
   - `Exceeds historical maximum (max-based)`
 
+
 **Column S: Known Exceptions**
+
 - **What to Enter:** Legitimate reasons for baseline deviation
 - **Examples:**
   - `User travels to US quarterly for business (logins from US expected)`
@@ -1236,39 +1498,50 @@ But you can only detect "anomalous" if you know what "normal" looks like → bas
   - `VPN from home during COVID pandemic (geo location varies)`
 - **Purpose:** Reduce false positives by documenting expected exceptions
 
+
 **Column T: Baseline Valid From/Until**
+
 - **Format:** `DD.MM.YYYY - DD.MM.YYYY`
 - **Validity Period:**
   - **Privileged Users:** 90 days (quarterly review)
   - **Regular Users:** 180 days (semi-annual review)
   - **Service Accounts:** 30 days (should be VERY stable - if pattern changes, investigate immediately)
 
+
 **Column U: Next Review Date**
+
 - **When:** Date to re-establish baseline
 - **Triggers for Early Review:**
   - User role change (promotion, department transfer)
   - Access pattern significantly changes (remote worker becomes office-based)
   - High false positive rate (threshold too sensitive)
 
+
 **Column V: Baseline Owner**
+
 - **Who:** Person responsible for maintaining this access baseline
 - **Examples:**
   - `SOC Team (for general user baselines)`
   - `Identity & Access Management Team (for privileged accounts)`
   - `Database Team (for DBA access patterns)`
 
+
 **Column W: Detection Rule IDs**
+
 - **What to Enter:** Which detection rules use this baseline
 - **Example:** `DET-AUTH-001 (Excessive logins), DET-AUTH-005 (Off-hours access), DET-GEO-001 (Impossible travel)`
 - **Cross-Reference:** These rule IDs should exist in Sheet 5
 
+
 **Column X: Notes**
+
 - **Use Cases:**
   - **Behavioral Changes:** "User baseline changed significantly after promotion to manager role (more meetings, less deep work)"
   - **Data Quality:** "VPN logs missing for 7 days due to system outage - baseline may be incomplete"
   - **Exceptions:** "User on sabbatical 01.01-31.01.2026 - no access expected during this period"
 
-#### Completing Sheet 3: Key Scenarios
+
+### Completing Sheet 3: Key Scenarios
 
 **Scenario 1: Individual User - Standard Office Worker**
 ```
@@ -1337,7 +1610,7 @@ Alert: "Impossible travel detected - 9,000 km in 15 minutes"
 Status: CRITICAL - investigate immediately (likely credential theft)
 ```
 
-#### Critical Success Factors for Sheet 3
+### Critical Success Factors for Sheet 3
 
 **You've Done This Right When:**
 1. ✅ ALL privileged accounts (admins, DBAs) have documented baselines
@@ -1348,11 +1621,13 @@ Status: CRITICAL - investigate immediately (likely credential theft)
 6. ✅ Detection rules created and operational (Column W populated)
 
 **You're Fooling Yourself If:**
+
 - ❌ "Users log in 2-3 times per day" (vague, no data)
 - ❌ Service account baseline has high StdDev (should be VERY consistent)
 - ❌ No geographic baseline (can't detect credential theft from foreign country)
 - ❌ Same threshold 24/7 (ignoring clear time patterns)
 - ❌ Detection rules not implemented (baseline documentation without detection = useless)
+
 
 ---
 
@@ -1361,6 +1636,7 @@ Status: CRITICAL - investigate immediately (likely credential theft)
 **Purpose:** Document CPU, memory, disk, network baselines for critical systems
 
 **Key Columns:**
+
 - System Name, System Type, Criticality Tier
 - Metric Name (CPU %, Memory %, Disk I/O MB/s, Network MB/s)
 - Observation Period (start date, end date, duration, exclusions)
@@ -1369,35 +1645,43 @@ Status: CRITICAL - investigate immediately (likely credential theft)
 - Alert Threshold (derived value, methodology documented)
 - Baseline Validity Period, Next Review Date, Owner
 
-### 4.2 Sheet 3: Access Pattern Baselines
+
+## Sheet 3: Access Pattern Baselines
 
 **Purpose:** Document user authentication, privileged access, geographic access baselines
 
 **Key Columns:**
+
 - User/Group/System, Access Type (authentication, privileged, geographic)
 - Pattern Metric (logins/hour, timing window, location list)
 - Statistical Profile, Time-Aware Baselines, Alert Threshold
 
-### 4.3 Sheet 4: Application Behavior Baselines
+
+## Sheet 4: Application Behavior Baselines
 
 **Purpose:** Document transaction, API, database, file access, network baselines
 
 **Key Columns:**
+
 - Application Name, Baseline Category (transactions, API, database, file, network)
 - Behavior Metric (transactions/min, API calls/min, queries/min, files/day, connections/hour)
 - Statistical Profile, Alert Threshold
 
-### 4.4 Sheet 5: Detection Rule Coverage
+
+## Sheet 5: Detection Rule Coverage
 
 **Purpose:** Inventory detection rules, map MITRE ATT&CK coverage, identify gaps
 
 **Key Columns:**
+
 - Rule ID, Rule Name, Rule Type (signature, anomaly, behavioral, correlation)
 - MITRE ATT&CK Tactic, MITRE ATT&CK Technique ID
 - Coverage Status (Covered, Partial, Not Covered)
 - Severity, Status (Active, Disabled, Testing)
 
+
 **MITRE ATT&CK Coverage Matrix:**
+
 - Reconnaissance: [X rules cover / Y total techniques] = Z% coverage
 - Initial Access: [coverage %]
 - Execution: [coverage %]
@@ -1412,11 +1696,13 @@ Status: CRITICAL - investigate immediately (likely credential theft)
 - Command and Control: [coverage %]
 - Impact: [coverage %]
 
-### 4.5 Sheet 6: Detection Effectiveness Metrics
+
+## Sheet 6: Detection Effectiveness Metrics
 
 **Purpose:** Measure detection effectiveness through testing and operational data
 
 **Key Columns:**
+
 - Detection Rule ID/Name
 - Test Date, Test Type (simulated attack, purple team, production incident)
 - Attack Technique Tested (MITRE ATT&CK ID)
@@ -1425,7 +1711,9 @@ Status: CRITICAL - investigate immediately (likely credential theft)
 - False Positive Count (last 30 days)
 - True Positive Rate, False Positive Rate, False Negative Rate
 
+
 **Effectiveness Summary:**
+
 - Overall Detection Rate: (Total Detected / Total Attacks) × 100
 - Target: >90% for Critical/High severity threats
 - Current: [calculated from test results]
@@ -1441,78 +1729,98 @@ Status: CRITICAL - investigate immediately (likely credential theft)
 - Current: [measured from tests + incidents]
 - Gap: [current - target if exceeds]
 
+
 ---
 
-## 5. Evidence Collection
+# Evidence Collection
 
 [Similar structure to A.8.16.1 - adapted for baseline/detection focus]
 
 **Evidence Types Required:**
 
 1. **Baseline Documentation**
+
    - Statistical profiles (Excel files with calculations)
    - Baseline templates (using ISMS-POL-A.8.16, Annex B)
    - Time-series graphs showing behavior patterns
    - Threshold derivation documentation
 
+
 2. **Detection Rule Evidence**
+
    - SIEM rule exports (configuration files, screenshots)
    - MITRE ATT&CK coverage matrix
    - Rule descriptions and logic
    - Rule change history (tuning log)
 
+
 3. **Effectiveness Test Results**
+
    - Test plans (which techniques tested)
    - Test logs (attack execution, alert generation)
    - Detection results (TP, FP, FN counts)
    - MTTD measurements per test
 
+
 4. **Tuning Evidence**
+
    - False positive trends (before/after tuning)
    - Tuning decisions (why rule was modified)
    - Alert volume trends (improving or degrading)
 
+
 ---
 
-## 6. Common Pitfalls
+# Common Pitfalls
 
-### Pitfall 1: The "Gut Feel" Baseline
+## Pitfall 1: The "Gut Feel" Baseline
 
 **Mistake:** Describing baselines qualitatively without numbers
 
 **Example:**
+
 - ❌ "Users normally log in around 9 AM"
 - ❌ "Database is busy during business hours"
 - ❌ "Web server handles moderate traffic"
 
+
 **Why It's Wrong:**
+
 - Not measurable (what's "around 9 AM"? 8:30-9:30? 9:00 exactly?)
 - Not actionable (when do you alert? What's "busy" vs. "too busy"?)
 - Not auditable (auditor asks: "Show me the baseline." You: "Uh... it's in my head?")
 
+
 **How to Fix:**
+
 - ✅ "User authentication: Mean 145 logins/hour (08:00-10:00), std dev 23, alert threshold 245/hour"
 - ✅ "Database queries: Baseline 450 queries/min, 95th %ile 523, alert threshold 680 queries/min"
 - ✅ "Web server requests: Mean 850 req/min, 95th %ile 1200, alert threshold 1560 req/min"
 
+
 **Prevention:** If you can't write it with numbers, it's not a baseline.
 
-### Pitfall 2: Confusing Detection Rules with Detection Effectiveness
+## Pitfall 2: Confusing Detection Rules with Detection Effectiveness
 
 **Mistake:** "We have 500 detection rules, therefore we're detecting threats"
 
 **Why It's Wrong:**
+
 - Quantity ≠ Quality (500 rules with 90% false positives = noise, not detection)
 - No measurement of what's detected vs. missed
 - No validation that rules actually work
 
+
 **How to Fix:**
+
 - Test sample of rules (simulate attacks, verify detection)
 - Measure true positive rate (what % of attacks are caught?)
 - Measure false positive rate (what % of alerts are noise?)
 - Track Mean Time to Detect (MTTD) - how long to detect attacks?
 
+
 **Example:**
+
 - Organization had 800 detection rules
 - Effectiveness testing revealed:
   - Only 40% of rules had generated any alerts in last 6 months (dead rules)
@@ -1521,18 +1829,22 @@ Status: CRITICAL - investigate immediately (likely credential theft)
   - 10% were unknown effectiveness (no testing data)
 - After cleanup: 200 tuned rules with 75% avg TP rate, 15% avg FP rate
 
+
 **Prevention:** Measure effectiveness, not just rule count.
 
-### Pitfall 3: Static Baselines That Never Update
+## Pitfall 3: Static Baselines That Never Update
 
 **Mistake:** Establish baselines once, never review or update
 
 **Why It's Wrong:**
+
 - Business changes (new users, new applications, infrastructure growth)
 - Baselines become outdated (alert on normal behavior = false positives)
 - Attacks become normalized (attacker activity included in "normal" baseline)
 
+
 **How to Fix:**
+
 - Review baselines quarterly (minimum)
 - Update baselines when significant changes occur:
   - Infrastructure changes (migration, scaling)
@@ -1540,20 +1852,24 @@ Status: CRITICAL - investigate immediately (likely credential theft)
   - Persistent deviations (sustained shift in normal behavior)
 - Document baseline version history (track changes over time)
 
+
 **Example:**
+
 - Baseline established: Q1 2025 (100 users, 5000 events/day)
 - Company doubled in size: Q3 2025 (200 users, 12000 events/day)
 - Baseline not updated → Every day generated alerts (exceeded Q1 baseline)
 - SOC fatigued, started ignoring alerts (dangerous!)
 - Fix: Updated baseline Q4 2025, alerts returned to normal
 
+
 **Prevention:** Set calendar reminders for quarterly baseline review.
 
-### Pitfall 4: Ignoring Time-Aware Patterns
+## Pitfall 4: Ignoring Time-Aware Patterns
 
 **Mistake:** Single baseline for all time periods (business hours, off-hours, weekends)
 
 **Why It's Wrong:**
+
 - Different behavior patterns:
   - Business hours: High activity (users working, applications busy)
   - Off-hours: Low activity (batch jobs, automated processes)
@@ -1562,7 +1878,9 @@ Status: CRITICAL - investigate immediately (likely credential theft)
   - Too permissive (misses off-hours attacks)
   - Too strict (false positives during business hours)
 
+
 **How to Fix:**
+
 - Create time-aware baselines:
   - Business hours (08:00-18:00 Mon-Fri): Mean 145, 95th %ile 189
   - Off-hours (18:00-08:00 Mon-Fri): Mean 12, 95th %ile 25
@@ -1570,7 +1888,9 @@ Status: CRITICAL - investigate immediately (likely credential theft)
 - Alert thresholds adjust based on time of day/week
 - Attackers often operate off-hours (less likely to be noticed) - time-aware detection is critical
 
+
 **Example:**
+
 - Domain Controller authentication baseline (single, time-unaware):
   - Mean across 24/7: 65 logins/hour
   - Alert threshold: 100 logins/hour
@@ -1582,19 +1902,23 @@ Status: CRITICAL - investigate immediately (likely credential theft)
   - Off-hours: Mean 5, alert threshold 15
   - Attacker at 3 AM with 50 logins = ALERT (far exceeds off-hours threshold of 15)
 
+
 **Prevention:** Always separate business hours, off-hours, and weekend baselines.
 
-### Pitfall 5: No Exclusion of Incidents from Baselines
+## Pitfall 5: No Exclusion of Incidents from Baselines
 
 **Mistake:** Include security incident periods in baseline observation
 
 **Why It's Wrong:**
+
 - Baselines should represent NORMAL behavior
 - Security incidents are ANOMALIES (attacks, breaches, malware)
 - Including incidents in baseline normalizes attack behavior
 - Result: Attacks become "baseline" - detection rules won't trigger
 
+
 **Example:**
+
 - Baseline observation: 01.11.2025 - 31.12.2025 (60 days)
 - Security incident: 15.12.2025 (ransomware, 10,000 file modifications/hour vs. normal 50/hour)
 - If incident included in baseline:
@@ -1608,6 +1932,7 @@ Status: CRITICAL - investigate immediately (likely credential theft)
   - Alert threshold: 100/hour
   - Both fast ransomware (10,000/hour) AND slow ransomware (250/hour) trigger alerts ✅
 
+
 **How to Fix:**
 1. Review incident history during baseline observation period
 2. Identify incident dates/times and affected systems
@@ -1620,9 +1945,10 @@ Status: CRITICAL - investigate immediately (likely credential theft)
 
 ---
 
-## 7. Quality Checklist
+# Quality Checklist
 
 **Baseline Quality:**
+
 - [ ] All baselines have statistical profiles (mean, median, std dev, percentiles)
 - [ ] No baselines use vague language ("around", "usually", "seems")
 - [ ] Observation periods are ≥30 days (45-60 days preferred)
@@ -1631,73 +1957,86 @@ Status: CRITICAL - investigate immediately (likely credential theft)
 - [ ] Thresholds derived with documented methodology (not guessed)
 - [ ] Baseline validity periods and review dates documented
 
+
 **Detection Rule Quality:**
+
 - [ ] All active detection rules catalogued (rule ID, name, description)
 - [ ] MITRE ATT&CK coverage mapped (tactics/techniques covered)
 - [ ] Coverage gaps identified (tactics with no detection)
 - [ ] High-priority gaps prioritized for remediation
 
+
 **Effectiveness Measurement:**
+
 - [ ] Sample of rules tested (not just assumed to work)
 - [ ] True positive rate measured (not estimated)
 - [ ] False positive rate measured from actual alert data
 - [ ] MTTD measured for tested rules
 - [ ] Target metrics defined (>90% TP rate, <20% FP rate, <1hr MTTD)
 
+
 **Evidence Completeness:**
+
 - [ ] Baseline documentation in standardized format (Annex B template)
 - [ ] Detection rule exports collected
 - [ ] Test results documented (attack simulations, detection results)
 - [ ] Evidence Register complete with all evidence IDs and locations
 
+
 ---
 
-## 8. Review & Approval
+# Review & Approval
 
 [Same three-level approval process as A.8.16.1]
 
 **Level 1: Technical Review (Detection Engineering / SOC Lead)**
+
 - Validate statistical methodology
 - Verify baselines are measurable
 - Confirm detection rules are correctly mapped to MITRE ATT&CK
 - Review effectiveness test results
 
+
 **Level 2: Compliance Review (Security Manager / CISO)**
+
 - Verify compliance with ISMS-POL-A.8.16, Section 2.2 requirements
 - Assess risk of coverage gaps
 - Validate remediation plans for gaps
 - Approve tuning priorities
 
+
 **Level 3: Executive Approval (CISO / CIO)**
+
 - Accept residual risk from detection gaps
 - Approve budget for remediation (new detection rules, tuning effort, testing)
 - Approve quarterly baseline review commitment
+
 
 ---
 
 # PART II: TECHNICAL SPECIFICATION
 
-## Workbook Structure
+# Workbook Structure
 
 **Filename:** `ISMS_A_8_16_2_Baseline_Detection_Assessment_YYYYMMDD.xlsx`
 **Generator Script:** `generate_a816_2_baseline_detection.py`
-**Total Sheets:** 8
+**Total Sheets:** 9
 
-### Sheet Overview
+## Sheet Overview
 
 | Sheet # | Name | Purpose | Data Rows | Auto-Calc |
 |---------|------|---------|-----------|-----------|
 | 1 | Instructions & Legend | Workbook overview, color coding | 3 | Yes |
-| 2 | 1. System Utilization Baselines | CPU, memory, disk, network baselines | 30 | Yes |
-| 3 | 2. Access Pattern Baselines | Authentication, privileged, geographic baselines | 30 | Yes |
-| 4 | 3. Application Behavior Baselines | Transaction, API, database, file, network baselines | 30 | Yes |
-| 5 | 4. Detection Rule Coverage | Rule inventory, MITRE ATT&CK mapping, gaps | 50 | Yes |
-| 6 | 5. Detection Effectiveness | TP/FP/FN rates, MTTD, tuning metrics | 20 | Yes |
+| 2 | 1. Baseline Inventory | System/user/application baseline definitions | 50 | Yes |
+| 3 | 2. Detection Rules | Detection rule inventory and configuration | 50 | Yes |
+| 4 | 3. MITRE ATT&CK Coverage | Attack technique coverage matrix | 30 | Yes |
+| 5 | 4. Rule Performance | Detection rule effectiveness metrics | 30 | Yes |
+| 6 | 5. Testing Validation | Detection testing and validation results | 20 | Yes |
 | 7 | Summary Dashboard | Consolidated baseline/detection maturity | 0 | Yes |
 | 8 | Evidence Register | Evidence tracking | 50 | No |
 | 9 | Approval Sign-Off | Approval workflow | 3 | No |
 
-## Sheet 2: System Utilization Baselines - Technical Spec
+# Sheet 2: System Utilization Baselines - Technical Spec
 
 **Column Definitions:**
 
@@ -1727,11 +2066,13 @@ Status: CRITICAL - investigate immediately (likely credential theft)
 | V | Notes | 35 | Text | None |
 
 **Conditional Formatting:**
+
 - Baseline Status "❌ Expired": Red fill, bold text
 - Observation Duration <30 days: Yellow fill (warning - insufficient observation)
 - Alert Threshold ≤ Mean: Red fill (ERROR - threshold must exceed mean)
 
-## Sheet 5: Detection Rule Coverage - Technical Spec
+
+# Sheet 5: Detection Rule Coverage - Technical Spec
 
 **Column Definitions:**
 
@@ -1754,13 +2095,15 @@ Status: CRITICAL - investigate immediately (likely credential theft)
 **MITRE ATT&CK Coverage Summary (Auto-Calculated):**
 ```excel
 For each Tactic (Reconnaissance, Initial Access, etc.):
+
 - Total Techniques in Tactic: [from MITRE framework]
 - Techniques Covered: =COUNTIFS(TacticColumn,"Reconnaissance",StatusColumn,"✅ Active")
 - Coverage %: =(Covered / Total) × 100
 - Status: =IF(Coverage≥80%,"✅",IF(Coverage≥50%,"⚠️","❌"))
+
 ```
 
-## Sheet 6: Detection Effectiveness - Technical Spec
+# Sheet 6: Detection Effectiveness - Technical Spec
 
 **Column Definitions:**
 
@@ -1797,14 +2140,16 @@ Compliance Status:
 
 ---
 
-## Implementation Complete
+# Implementation Complete
 
 This specification enables comprehensive baseline and detection assessment with:
+
 - Statistical baseline requirements (mean, median, std dev, percentiles)
 - Time-aware baseline support (business hours, off-hours, weekends)
 - MITRE ATT&CK coverage mapping
 - Detection effectiveness measurement (TP/FP/FN rates, MTTD)
 - Automated compliance scoring
+
 
 **Total Document Length:** ~750 lines (framework implementation)
 
@@ -1817,7 +2162,7 @@ This specification enables comprehensive baseline and detection assessment with:
 **END OF DOCUMENT**
 
 
-### 4.3 Sheet 4: Application Behavior Baselines
+## Sheet 4: Application Behavior Baselines
 
 **Purpose:** Document measured baselines for application-specific behaviors (transactions, API calls, database queries, file operations)
 
@@ -1825,18 +2170,23 @@ This specification enables comprehensive baseline and detection assessment with:
 
 **Why This Sheet Matters:**
 Application-level anomalies often indicate:
+
 - SQL injection attacks (abnormal query patterns)
 - API abuse (excessive calls, unusual endpoints)
 - Data exfiltration (abnormal file access volumes)
 - Malware activity (unusual transaction patterns)
 
+
 **Structure:**
+
 - **Rows 8-32:** 25 data entry rows (application baselines)
 - **Rows 35-50:** Application baseline summary
 
-#### Key Column Guidance (Condensed)
+
+### Key Column Guidance (Condensed)
 
 **Critical Columns:**
+
 - **Application Name:** Which application is baselined
 - **Baseline Category:** Transactions, API Calls, Database Queries, File Access, Network Connections
 - **Behavior Metric:** Specific measurable behavior (e.g., "Orders processed per hour")
@@ -1844,6 +2194,7 @@ Application-level anomalies often indicate:
 - **Time-Aware Patterns:** Business hours vs. off-hours behavior
 - **Alert Threshold:** Derived from statistical analysis
 - **Threshold Methodology:** Document derivation method
+
 
 **Example Application Baseline:**
 ```
@@ -1863,36 +2214,46 @@ Alert Thresholds:
 **Application Baseline Categories:**
 
 **1. Transaction Baselines:**
+
 - E-commerce: Orders per minute, cart additions, checkout completions
 - Financial: Transactions per hour, transfer volumes, payment processing
 - Healthcare: Patient records accessed, prescriptions processed
 
+
 **2. API Call Baselines:**
+
 - REST API: Calls per minute by endpoint
 - GraphQL: Queries per minute, response sizes
 - Internal APIs: Service-to-service call rates
 
+
 **3. Database Query Baselines:**
+
 - Queries per minute (SELECT, INSERT, UPDATE, DELETE)
 - Query response times
 - Connection pool utilization
 - Lock/wait events
 
+
 **4. File Access Baselines:**
+
 - Files read/written per hour
 - File sizes transferred
 - Directories accessed
 - File operation types (create, modify, delete)
 
+
 **5. Network Connection Baselines:**
+
 - Outbound connections per minute
 - Connection destinations (IPs, domains)
 - Data transfer volumes
 - Connection protocols
 
+
 ---
 
-### 4.4 Sheet 5: Detection Rule Coverage
+## Sheet 5: Detection Rule Coverage
 
 **Purpose:** Inventory all detection rules and map coverage to MITRE ATT&CK framework
 
@@ -1904,12 +2265,15 @@ You can have 500 detection rules, but if they all detect the same attack type, y
 **MITRE ATT&CK mapping answers:** "What attack techniques CAN we detect vs. CANNOT detect?"
 
 **Structure:**
+
 - **Rows 8-107:** 100 data entry rows (detection rule inventory)
 - **Rows 110-135:** MITRE ATT&CK coverage matrix (auto-calculated)
 
-#### Key Column Guidance (Condensed)
+
+### Key Column Guidance (Condensed)
 
 **Essential Columns:**
+
 - **Rule ID:** Unique identifier (DET-001, DET-002, etc.)
 - **Rule Name:** Human-readable detection rule name
 - **Rule Type:** Signature, Anomaly-Based, Behavioral, Correlation, Machine Learning
@@ -1920,6 +2284,7 @@ You can have 500 detection rules, but if they all detect the same attack type, y
 - **Status:** Active, Disabled, Testing, Development
 - **False Positive Rate:** Count per 30 days
 - **Last Tuned Date:** When rule was last adjusted
+
 
 **MITRE ATT&CK Coverage Calculation (Auto-Calculated):**
 
@@ -1940,14 +2305,16 @@ Privilege Escalation: 10/20 techniques covered = 50% coverage ⚠️ GAP
 ```
 
 **Critical Detection Gaps to Identify:**
+
 - **Zero Coverage Tactics:** Entire MITRE tactic with 0 detection rules
 - **Low Coverage (<50%):** Tactics with poor detection capability
 - **Single Detection Point:** Only 1 rule covers many techniques (single point of failure)
 - **Disabled Critical Rules:** High/Critical severity rules that are disabled (why?)
 
+
 ---
 
-### 4.5 Sheet 6: Detection Effectiveness Metrics
+## Sheet 6: Detection Effectiveness Metrics
 
 **Purpose:** Measure how well detection rules actually work (not just that they exist)
 
@@ -1957,17 +2324,22 @@ Privilege Escalation: 10/20 techniques covered = 50% coverage ⚠️ GAP
 Having detection rules ≠ detecting threats.
 
 **This sheet measures REALITY:**
+
 - **True Positive Rate:** How often do we detect REAL attacks?
 - **False Positive Rate:** How often do we alert on benign activity?
 - **Mean Time to Detect (MTTD):** How fast do we detect attacks?
 
+
 **Structure:**
+
 - **Rows 8-57:** 50 data entry rows (effectiveness test results)
 - **Rows 60-80:** Effectiveness summary metrics
 
-#### Key Column Guidance (Condensed)
+
+### Key Column Guidance (Condensed)
 
 **Essential Columns:**
+
 - **Rule ID/Name:** Which detection rule being tested
 - **Test Date:** When effectiveness test conducted
 - **Test Type:** Simulated Attack, Purple Team Exercise, Production Incident, Penetration Test
@@ -1982,6 +2354,7 @@ Having detection rules ≠ detecting threats.
 - **TP Rate:** True Positive Rate (%) = TP / (TP + FN) × 100
 - **FP Rate:** False Positive Rate (%) = FP / (FP + TP) × 100
 - **Effectiveness Status:** ✅ Excellent (TP>90%, FP<20%), ⚠️ Acceptable (TP>70%, FP<30%), ❌ Needs Tuning
+
 
 **Effectiveness Testing Methods:**
 
@@ -1998,15 +2371,19 @@ done
 ```
 
 **2. Purple Team Exercises:**
+
 - Red Team executes attack technique
 - Blue Team monitors for detection
 - Measure: Did we detect? How fast? How many false positives?
 
+
 **3. Production Incident Analysis:**
+
 - Review past security incidents
 - Did detection rules fire?
 - How long to detect?
 - Were there missed indicators?
+
 
 **Effectiveness Calculation Example:**
 ```
@@ -2027,58 +2404,68 @@ Remediation: Increase failed login threshold from 5 to 10 attempts
 
 ---
 
-## 5. Evidence Collection (Enhanced)
+# Evidence Collection (Enhanced)
 
 **Additional Evidence for Baseline & Detection Assessment:**
 
 **1. Baseline Calculation Workbooks**
+
 - Excel/CSV files with raw time-series data
 - Statistical calculations (mean, median, StdDev, percentiles)
 - Graphs showing behavioral patterns over time
 - Incident exclusion documentation
 
+
 **2. MITRE ATT&CK Coverage Reports**
+
 - Navigator layers showing coverage (export from MITRE ATT&CK Navigator)
 - Gap analysis documents (uncovered techniques)
 - Coverage improvement roadmap
 
+
 **3. Detection Effectiveness Test Reports**
+
 - Test plans (which techniques, when tested)
 - Test execution logs (commands run, expected results)
 - Alert screenshots (proof of detection)
 - MTTD measurements per test
 - Purple Team exercise reports
 
+
 **4. Tuning History**
+
 - Detection rule change logs (before/after configurations)
 - False positive trends (FP count over time)
 - Tuning rationale (why threshold changed)
 
+
 **5. Baseline Review Records**
+
 - Previous baseline versions (for trend analysis)
 - Baseline update justifications (why baseline changed)
 - Stakeholder approvals for baseline changes
 
+
 ---
 
-## 6. Common Pitfalls (Expanded to 10)
+# Common Pitfalls (Expanded to 10)
 
-### Pitfall 1: The "Gut Feel" Baseline
+## Pitfall 1: The "Gut Feel" Baseline
 [ALREADY DOCUMENTED - KEEP EXISTING]
 
-### Pitfall 2: Confusing Detection Rules with Detection Effectiveness
+## Pitfall 2: Confusing Detection Rules with Detection Effectiveness
 [ALREADY DOCUMENTED - KEEP EXISTING]
 
-### Pitfall 3: Static Baselines That Never Update
+## Pitfall 3: Static Baselines That Never Update
 [ALREADY DOCUMENTED - KEEP EXISTING]
 
-### Pitfall 4: Ignoring Time-Aware Patterns
+## Pitfall 4: Ignoring Time-Aware Patterns
 [ALREADY DOCUMENTED - KEEP EXISTING]
 
-### Pitfall 5: No Exclusion of Incidents from Baselines
+## Pitfall 5: No Exclusion of Incidents from Baselines
 [ALREADY DOCUMENTED - KEEP EXISTING]
 
-### Pitfall 6: Baselines Without Detection Rules
+## Pitfall 6: Baselines Without Detection Rules
 
 **The Mistake:**
 Document beautiful baselines in Excel, but never implement detection rules in SIEM.
@@ -2087,10 +2474,12 @@ Document beautiful baselines in Excel, but never implement detection rules in SI
 Baseline documentation is USELESS if not translated into actual detections.
 
 **How to Avoid:**
+
 - Sheet 2, Column AB: Document which detection rules use each baseline
 - Sheet 3, Column W: Document detection rule IDs
 - Sheet 5: Verify every baseline has corresponding rule
 - Test rules are actually firing (Sheet 6)
+
 
 **Verification:**
 For every baseline documented:
@@ -2103,29 +2492,33 @@ For every baseline documented:
 
 ---
 
-### Pitfall 7: Comparing Apples to Oranges (Baseline Inconsistency)
+## Pitfall 7: Comparing Apples to Oranges (Baseline Inconsistency)
 
 **The Mistake:**
 Different teams establish baselines using different methodologies, making comparison impossible.
 
 **Examples:**
+
 - Team A uses 95th percentile × 1.3
 - Team B uses mean + 3×StdDev  
 - Team C uses arbitrary thresholds
 - Can't compare baseline quality or tune consistently
 
+
 **How to Avoid:**
+
 - Standardize threshold derivation (Column U methodology)
 - Document methodology in ISMS-POL-A.8.16, Annex B
 - Use same observation periods (30-45 days)
 - Use same statistical tools (Excel, Python, R)
+
 
 **Best Practice:**
 Create baseline template with formulas pre-built, distribute to all teams.
 
 ---
 
-### Pitfall 8: Detection Rules Disabled "Temporarily" (Forever)
+## Pitfall 8: Detection Rules Disabled "Temporarily" (Forever)
 
 **The Mistake:**
 High false positive rate → Disable detection rule "until we can tune it" → Never re-enabled.
@@ -2134,15 +2527,19 @@ High false positive rate → Disable detection rule "until we can tune it" → N
 Check your SIEM. How many rules have Status = "Disabled"? When were they disabled? By whom?
 
 **Common Causes:**
+
 - High FP rate (annoying SOC analysts)
 - Performance impact (slow SIEM searches)
 - "We'll tune it next quarter" (never happens)
 
+
 **How to Avoid:**
+
 - Sheet 5: Track disabled rules explicitly
 - Require JUSTIFICATION for disabling (document in notes)
 - Set REVIEW DATE for disabled rules (30-90 days max)
 - CISO approval required to disable Critical/High severity rules
+
 
 **Audit Question:**
 "Show me all disabled detection rules and when you plan to re-enable them."
@@ -2151,7 +2548,7 @@ If answer is "uh..." → Gap.
 
 ---
 
-### Pitfall 9: Testing Detection With Perfect Conditions
+## Pitfall 9: Testing Detection With Perfect Conditions
 
 **The Mistake:**
 Test detection rules in lab with clean data, no noise, perfect timing → Works great!
@@ -2162,10 +2559,12 @@ Deploy to production with real data, network latency, log delays → Doesn't wor
 Lab tests ≠ production effectiveness.
 
 **How to Avoid:**
+
 - Test in production (or production-like environment)
 - Include network latency (log delay simulation)
 - Include noisy background activity (not just attack in isolation)
 - Test during peak hours (not just at 2 AM when nothing else happening)
+
 
 **Purple Team Best Practice:**
 Execute attack during business hours, with production systems under load, see if detection still works.
@@ -2174,7 +2573,7 @@ Execute attack during business hours, with production systems under load, see if
 
 ---
 
-### Pitfall 10: Alert Fatigue Leading to Baseline Abandonment
+## Pitfall 10: Alert Fatigue Leading to Baseline Abandonment
 
 **The Mistake:**
 Initial baseline too sensitive → Generates 100 alerts/day → SOC overwhelmed → "Just turn it off."
@@ -2183,9 +2582,11 @@ Initial baseline too sensitive → Generates 100 alerts/day → SOC overwhelmed 
 If baseline generates constant alerts, problem is threshold not baseline concept.
 
 **Symptoms:**
+
 - SOC analysts ignoring alerts
 - Rules disabled to reduce noise
 - Tickets closed as "false positive" without investigation
+
 
 **How to Avoid:**
 1. **Start Conservative:** Set initial thresholds wider (99th percentile instead of 95th)
@@ -2200,11 +2601,12 @@ If baseline generates constant alerts, problem is threshold not baseline concept
 
 ---
 
-## 7. Quality Checklist (Enhanced)
+# Quality Checklist (Enhanced)
 
-### Sheet-Specific Checks
+## Sheet-Specific Checks
 
 **Sheet 2: System Utilization Baselines**
+
 - [ ] All Tier 1 systems have baselines documented
 - [ ] Observation period ≥30 days for each baseline
 - [ ] Incidents excluded from baseline calculation (documented in Column I)
@@ -2215,7 +2617,9 @@ If baseline generates constant alerts, problem is threshold not baseline concept
 - [ ] Baseline validity period set with review dates
 - [ ] No placeholder values (all "TBD" fields filled)
 
+
 **Sheet 3: Access Pattern Baselines**
+
 - [ ] All privileged accounts (admins, DBAs) baselined
 - [ ] Service accounts baselined (should be very consistent - low StdDev)
 - [ ] Geographic patterns documented (can detect impossible travel)
@@ -2225,14 +2629,18 @@ If baseline generates constant alerts, problem is threshold not baseline concept
 - [ ] Detection rules created and operational
 - [ ] Off-hours access baselines established (not just business hours)
 
+
 **Sheet 4: Application Behavior Baselines**
+
 - [ ] Critical applications baselined (Tier 1 apps)
 - [ ] All five baseline categories covered (Transactions, API, Database, File, Network)
 - [ ] Application behaviors measurable (not subjective)
 - [ ] Thresholds account for business cycles (month-end, seasonal)
 - [ ] Low threshold defined (detect degradation/outage, not just overload)
 
+
 **Sheet 5: Detection Rule Coverage**
+
 - [ ] All active detection rules documented
 - [ ] MITRE ATT&CK mapping complete for each rule
 - [ ] Coverage gaps identified (<50% coverage per tactic)
@@ -2241,7 +2649,9 @@ If baseline generates constant alerts, problem is threshold not baseline concept
 - [ ] False positive rates tracked
 - [ ] Last tuned dates recent (<90 days for high-FP rules)
 
+
 **Sheet 6: Detection Effectiveness**
+
 - [ ] At least 20% of detection rules tested in last 90 days
 - [ ] All Critical/High severity rules tested at least once
 - [ ] Test types varied (not just simulated - include purple team, prod incidents)
@@ -2250,57 +2660,79 @@ If baseline generates constant alerts, problem is threshold not baseline concept
 - [ ] MTTD measured (<60 min target for Critical, <4 hr High)
 - [ ] Rules with poor effectiveness flagged for tuning
 
-### Cross-Document Consistency
+
+## Cross-Document Consistency
 
 **A.8.16.1 ↔ A.8.16.2 Integration:**
+
 - [ ] Systems with baselines (A.8.16.2, Sheet 2) are monitored (A.8.16.1, Sheet 3)
 - [ ] Monitoring platforms (A.8.16.1, Sheet 2) support baseline calculations (sufficient data retention, query capability)
 - [ ] Log sources (A.8.16.1, Sheet 3) provide data needed for baselines
 
-### Overall Quality
+
+## Overall Quality
 
 **Baseline Quality:**
+
 - [ ] >90% of Tier 1 systems have documented baselines
 - [ ] Baselines based on ≥30 days observation (not estimates)
 - [ ] Statistical rigor maintained (not arbitrary thresholds)
 - [ ] All baselines have defined validity periods and review schedules
 
+
 **Detection Coverage:**
+
 - [ ] MITRE ATT&CK coverage ≥60% overall
 - [ ] No tactics with 0% coverage (complete blind spots)
 - [ ] Detection effectiveness tested (not just assumed)
 
+
 **Evidence Quality:**
+
 - [ ] All baseline calculations stored as evidence
 - [ ] MITRE coverage matrix exported
 - [ ] Detection test results documented
 - [ ] Tuning history maintained
 
+
 ---
 
-## 8. Review & Approval (Same Structure as A.8.16.1)
+# Review & Approval (Same Structure as A.8.16.1)
 
 **Three-Level Approval Workflow:**
 
 **Level 1: Technical Review** (SOC Lead / Detection Engineering)
+
 - Baseline calculations mathematically correct
 - Detection rules properly configured
 - MITRE coverage assessment accurate
 - Effectiveness testing methodology sound
 
+
 **Level 2: Compliance Review** (Security Manager / CISO)
+
 - Policy compliance (Tier 1 baseline requirement met)
 - Detection coverage adequate (≥60% MITRE coverage)
 - Effectiveness targets met (TP>90%, FP<30%, MTTD<60min for Critical)
 - Gaps documented with remediation plans
 
+
 **Level 3: Executive Approval** (CISO)
+
 - Detection strategy aligns with threat landscape
 - Investment in detection capabilities justified
 - Risk acceptance for coverage gaps documented
 - Detection effectiveness improving over time
 
+
 **Timeline:** 15 business days total (same as A.8.16.1)
 
 ---
 
+**END OF SPECIFICATION**
+
+---
+
+*"Those who can imagine anything, can create the impossible."*
+— Alan Turing
+*Where bamboo antennas actually work.* 🎋

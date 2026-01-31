@@ -1,10 +1,10 @@
-# ISMS-IMP-A.5.23.S4 - Ongoing Governance & Risk Management
-## Assessment Specification with User Completion Guide
-### ISO/IEC 27001:2022 Control A.5.23: Cloud Services Security
+**ISMS-IMP-A.5.23.S4 - Ongoing Governance & Risk Management**
+**Assessment Specification with User Completion Guide**
+### ISO/IEC 27001:2022 Control A.5.23: Information Security for Use of Cloud Services
 
 ---
 
-## Document Control
+**Document Control**
 
 | Attribute | Value |
 |-----------|-------|
@@ -47,6 +47,7 @@ This document consists of two parts:
   - Cell Styling Reference
   - Integration Points
 
+
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -72,47 +73,61 @@ Cloud security is NOT a one-time implementation—it requires ongoing vigilance.
 #### Key Governance Areas Assessed
 
 **1. Access Review & Recertification (Sheet 2)**
+
 - Quarterly access reviews for all cloud services
 - Orphan account detection and remediation
 - Privileged access recertification
 - Service account ownership verification
 
+
 **2. Change Management (Sheet 3)**
+
 - Provider-initiated changes (service updates, acquisitions, policy changes)
 - Organization-initiated changes (configuration updates, integrations)
 - Emergency change tracking
 - Change impact assessment and rollback capability
 
+
 **3. Incident Management (Sheet 4)**
+
 - Security incident detection and response
 - Vendor breach notification procedures
 - Incident lessons learned and remediation
 - Post-incident security improvements
 
+
 **4. Business Continuity & Disaster Recovery (Sheet 5)**
+
 - BC/DR plan existence and testing
 - Recovery Time Objective (RTO) / Recovery Point Objective (RPO) validation
 - Failover testing for critical services
 - Annual BC/DR plan review
 
+
 **5. Vendor Risk Monitoring (Sheet 6)**
+
 - Ongoing vendor security posture assessment
 - Certification expiry tracking (ISO 27001, SOC 2)
 - Vendor security incidents and breach notifications
 - Financial health monitoring for critical vendors
 - Sub-processor change tracking
 
+
 **6. Exit Strategy Review (Sheet 7)**
+
 - Annual exit plan validation
 - Proof-of-concept (PoC) migration testing for critical services
 - Alternative provider viability assessment
 - Exit trigger condition monitoring
 
+
 **7. Jurisdictional Risk Assessment (Sheet 8)**
+
 - Ongoing monitoring of US CLOUD Act exposure
 - Transfer mechanism validity (SCCs, BCRs, TIAs)
 - Vendor jurisdiction changes (acquisitions, data center moves)
 - Regulatory landscape changes
+
 
 ---
 
@@ -193,30 +208,38 @@ IT Operations Manager → Compliance Officer → CISO
 **Quarterly Deliverables:**
 
 **1. Completed Assessment Workbook (ISMS-IMP-A.5.23.S4_Governance_YYYYMMDD.xlsx):**
+
 - All 6 governance assessment sheets complete (Sheets 2-7)
 - Jurisdictional risk sheet updated (Sheet 8)
 - Evidence register populated with audit trails (Sheet 10)
 - Approval sign-offs from IT Ops, Compliance, CISO (Sheet 11)
 
+
 **2. Governance Metrics Summary:**
+
 - Access review completion rate (target: 100%)
 - Orphan accounts remediated (target: <24 hours)
 - Change success rate (target: >95%)
 - BC/DR tests completed (target: 100% for critical services)
 - Vendor risk escalations (flagged for CISO review)
 
+
 **3. Gap Remediation Plan:**
+
 - Overdue access reviews → Target completion dates
 - Untested BC/DR plans → Test scheduling
 - High-risk vendor concerns → Mitigation actions or vendor replacement plan
 - Jurisdictional risks → TIA completion or risk acceptance
 
+
 **4. Continuous Monitoring Evidence:**
+
 - Access review reports (quarterly)
 - Change management tickets (ongoing)
 - Incident response tickets (as needed)
 - BC/DR test reports (annual minimum, quarterly for critical)
 - Vendor performance scorecards (quarterly)
+
 
 ---
 
@@ -225,6 +248,7 @@ IT Operations Manager → Compliance Officer → CISO
 **What "Good" Looks Like:**
 
 **Implementer Perspective:**
+
 - ✅ 100% of services have completed quarterly access reviews
 - ✅ Zero orphan accounts older than 24 hours
 - ✅ All critical services have tested BC/DR plans (annual minimum)
@@ -232,13 +256,16 @@ IT Operations Manager → Compliance Officer → CISO
 - ✅ All changes documented with impact assessment and rollback plan
 - ✅ Evidence is current (<90 days old for quarterly items)
 
+
 **Auditor Perspective:**
+
 - ✅ Timestamps on evidence match claimed dates (not backdated)
 - ✅ Access review sign-offs from actual managers (not admin on their behalf)
 - ✅ BC/DR test results show actual testing (not just "plan reviewed")
 - ✅ Incident lessons learned show actionable improvements (not "no issues found")
 - ✅ Vendor risk assessments reference objective evidence (certifications, breach notifications, not just "vendor is good")
 - ✅ Jurisdictional risk assessments updated when vendor circumstances change
+
 
 ---
 
@@ -255,9 +282,11 @@ IT Operations Manager → Compliance Officer → CISO
 | **Total** | 3-4 weeks | From kickoff to CISO sign-off |
 
 **Resource Requirements:**
+
 - **Personnel:** 6-8 stakeholders (see Section 1.3)
 - **Tools:** Access to cloud admin consoles, ITSM system, SIEM, vendor portals
 - **Budget:** Minimal (staff time only, unless BC/DR testing requires vendor support)
+
 
 ---
 
@@ -362,13 +391,17 @@ WEEK BEFORE QUARTERLY ASSESSMENT KICKOFF
   DEADLINE: [4 weeks from kickoff]
   
   Your assigned responsibilities:
+
   - [Role]: [Sheet Name] - [Key deliverables]
   
+
   Prerequisites:
+
   - Review last quarter's findings (attached)
   - Ensure access to [relevant systems]
   - Block [X hours] over next 3 weeks
   
+
   Questions? Reply to this email.
   
   Thanks,
@@ -487,12 +520,12 @@ WEEK BEFORE QUARTERLY ASSESSMENT KICKOFF
 | Sheet | Primary Data Source | Secondary Sources | Refresh Frequency |
 |-------|---------------------|-------------------|-------------------|
 | **2. Access Review** | IAM system (user lists, last login) | Manager attestations | Quarterly |
-| **3. Change Mgmt** | ITSM tickets, vendor emails | Cloud provider release notes | Continuous |
-| **4. Incidents** | Incident tickets, SIEM alerts | Post-incident reports | Continuous |
-| **5. BC/DR** | BC plan documents, test reports | Vendor SLA docs | Annual + quarterly validation |
-| **6. Vendor Risk** | Vendor portals, SecurityScorecard | Financial databases (D&B) | Quarterly |
-| **7. Exit Strategy** | Exit plan docs, PoC test results | Alternative vendor assessments | Annual |
-| **8. Jurisdictional** | Vendor announcements, DPA updates | Legal/DPO assessments | Quarterly |
+| **3. Change Management** | ITSM tickets, vendor emails | Cloud provider release notes | Continuous |
+| **4. Incident Management** | Incident tickets, SIEM alerts | Post-incident reports | Continuous |
+| **5. Business Continuity** | BC plan documents, test reports | Vendor SLA docs | Annual + quarterly validation |
+| **6. Vendor Risk Monitoring** | Vendor portals, SecurityScorecard | Financial databases (D&B) | Quarterly |
+| **7. Exit Strategy Review** | Exit plan docs, PoC test results | Alternative vendor assessments | Annual |
+| **8. Jurisdictional Risk** | Vendor announcements, DPA updates | Legal/DPO assessments | Quarterly |
 
 **Integration with Other Systems:**
 ```
@@ -622,17 +655,17 @@ Fix: Multi-stakeholder collaboration (see Section 1.3), clear ownership per shee
 
 | Sheet | What It Assesses | Who Owns It | Update Frequency | Critical for Audit? |
 |-------|------------------|-------------|------------------|---------------------|
-| **1. Instructions** | How to use workbook | Coordinator | Once (at start) | No |
+| **Instructions & Legend** | How to use workbook | Coordinator | Once (at start) | No |
 | **2. Access Review** | Access still appropriate? | Access Control Admin | Quarterly | ✅ YES |
-| **3. Change Mgmt** | Changes controlled? | IT Operations | Continuous + quarterly summary | ✅ YES |
-| **4. Incidents** | Incidents managed? | IR Coordinator | Continuous + quarterly summary | ✅ YES |
-| **5. BC/DR** | Recovery capability validated? | BC Planner | Annual + quarterly check | ✅ YES |
-| **6. Vendor Risk** | Vendor posture maintained? | Vendor Manager / Risk Mgr | Quarterly | ✅ YES |
-| **7. Exit Strategy** | Exit plan viable? | IT Ops / Architect | Annual | ⚠️ MEDIUM |
-| **8. Jurisdictional** | Transfer mechanisms valid? | DPO / Legal | Quarterly | ✅ YES |
-| **9. Dashboard** | Overall compliance? | Auto-calculated | Real-time | ✅ YES |
-| **10. Evidence** | Proof available? | All contributors | Continuous | ✅ YES |
-| **11. Approval** | Sign-offs obtained? | Coordinator | End of quarter | ✅ YES |
+| **3. Change Management** | Changes controlled? | IT Operations | Continuous + quarterly summary | ✅ YES |
+| **4. Incident Management** | Incidents managed? | IR Coordinator | Continuous + quarterly summary | ✅ YES |
+| **5. Business Continuity** | Recovery capability validated? | BC Planner | Annual + quarterly check | ✅ YES |
+| **6. Vendor Risk Monitoring** | Vendor posture maintained? | Vendor Manager / Risk Mgr | Quarterly | ✅ YES |
+| **7. Exit Strategy Review** | Exit plan viable? | IT Ops / Architect | Annual | ⚠️ MEDIUM |
+| **8. Jurisdictional Risk** | Transfer mechanisms valid? | DPO / Legal | Quarterly | ✅ YES |
+| **9. Summary Dashboard** | Overall compliance? | Auto-calculated | Real-time | ✅ YES |
+| **10. Evidence Register** | Proof available? | All contributors | Continuous | ✅ YES |
+| **11. Approval Sign-Of** | Sign-offs obtained? | Coordinator | End of quarter | ✅ YES |
 
 ---
 
@@ -680,16 +713,20 @@ Each assessment sheet (2-8) has 7 additional columns (R-X) tailored to that gove
 **Examples by Sheet:**
 
 **Sheet 2 (Access Review):**
+
 - ✅ Compliant: Access review completed on-time, no orphans found, manager sign-off obtained
 - ⚠️ Partial: Review completed but 3 orphan accounts found, remediation in progress
 - ❌ Non-Compliant: Review overdue by 45 days, no action taken
 - N/A: Service doesn't have user access (API-only integration)
 
+
 **Sheet 4 (Incidents):**
+
 - ✅ Compliant: Incident detected, responded to within SLA, lessons learned documented
 - ⚠️ Partial: Incident responded to but lessons learned not yet documented
 - ❌ Non-Compliant: Incident occurred but no formal response, no ticket created
 - N/A: No incidents this quarter
+
 
 **Implementer Perspective:**
 *"Don't mark something compliant just because you want it to be. If evidence is missing, it's Partial at best. Auditors will check."*
@@ -704,43 +741,51 @@ Each assessment sheet (2-8) has 7 additional columns (R-X) tailored to that gove
 **General Evidence Principles:**
 
 **✅ Good Evidence:**
+
 - **Timestamped:** Evidence shows when activity occurred
 - **Objective:** Third-party report, system screenshot, signed document (not just "we did it")
 - **Specific:** Links to exact service, exact date, exact finding
 - **Recent:** <90 days old for quarterly items, <365 days for annual
 - **Retrievable:** Stored in accessible location, not on someone's laptop
 
+
 **❌ Poor Evidence:**
+
 - "Trust me, we do access reviews" (no documentation)
 - Screenshot with no timestamp or context
 - "We have a BC plan" (but can't produce it or show it was tested)
 - Vendor marketing material claiming "99.99% uptime" (without actual SLA report)
+
 
 **Evidence by Sheet:**
 
 | Sheet | Required Evidence Type | Example |
 |-------|------------------------|---------|
 | **2. Access Review** | Access review report with manager sign-off | PDF export from IAM system showing users reviewed, orphans found, manager signature |
-| **3. Change Mgmt** | Change ticket with approval and outcome | ServiceNow ticket #CHG-12345 showing approval chain, implementation, validation |
-| **4. Incidents** | Incident ticket + post-incident report | Jira ticket SEC-2024-089 + lessons learned doc with action items |
-| **5. BC/DR** | BC plan document + test report | BC Plan v2.3 (dated) + Test Report showing RTO achieved (screenshots) |
-| **6. Vendor Risk** | Vendor certification + validity check | ISO 27001 cert (PDF) + screenshot from cert authority showing validity |
-| **7. Exit Strategy** | Exit plan + PoC test results | Exit plan doc v1.2 + migration PoC report (data extracted successfully) |
-| **8. Jurisdictional** | DPA + TIA (if US vendor) + legal review | Signed DPA with SCC annexes + TIA signed by Legal/DPO |
+| **3. Change Management** | Change ticket with approval and outcome | ServiceNow ticket #CHG-12345 showing approval chain, implementation, validation |
+| **4. Incident Management** | Incident ticket + post-incident report | Jira ticket SEC-2024-089 + lessons learned doc with action items |
+| **5. Business Continuity** | BC plan document + test report | BC Plan v2.3 (dated) + Test Report showing RTO achieved (screenshots) |
+| **6. Vendor Risk Monitoring** | Vendor certification + validity check | ISO 27001 cert (PDF) + screenshot from cert authority showing validity |
+| **7. Exit Strategy Review** | Exit plan + PoC test results | Exit plan doc v1.2 + migration PoC report (data extracted successfully) |
+| **8. Jurisdictional Risk** | DPA + TIA (if US vendor) + legal review | Signed DPA with SCC annexes + TIA signed by Legal/DPO |
 
 ---
 
 **END OF SECTIONS 1-3 (~1,000 lines)**
 
 This first delivery covers:
+
 - ✅ Document Control
 - ✅ Section 1: Assessment Overview
 - ✅ Section 2: Prerequisites & Preparation
 - ✅ Section 3: Understanding the Assessment Sheets
 
+
 **Next delivery will cover:**
+
 - Section 4: Completing Each Sheet (Detailed Guidance) - Sheets 2-8
 - Section 5: Evidence Collection Guide
+
 
 **Ready for next part?** 🚀
 
@@ -784,12 +829,13 @@ This first delivery covers:
 
 **Step 1: Prepare for Review**
 ```
-1. Log into Azure AD admin center
+1. Log into Entra ID admin center
 2. Export user list: Users → All Users → Download users
 3. Export last sign-in report: Users → Sign-in logs → Last 90 days
-4. Run orphan detection query:
-   Get-AzureADUser -Filter "accountEnabled eq true" | 
-   Where {$_.UserPrincipalName -like "*#EXT#*" -or $_.OnPremisesSecurityIdentifier -eq $null}
+4. Run orphan detection query (Microsoft Graph PowerShell):
+   Connect-MgGraph -Scopes "User.Read.All"
+   Get-MgUser -All -Filter "accountEnabled eq true" |
+   Where-Object {$_.UserPrincipalName -like "*#EXT#*" -or $_.OnPremisesSecurityIdentifier -eq $null}
 ```
 
 **Step 2: Fill Base Columns**
@@ -836,15 +882,19 @@ Q: 2026-01-15
 ```
 
 **Evidence to Collect:**
+
 - IAM system export (user list with last login dates)
 - Orphan account detection report
 - Manager attestation emails (signed)
 - Remediation tickets (account disablement proof)
 
+
 **Common Pitfalls:**
+
 - ❌ Marking "Passed" when orphans were found (even if remediated—that's "Issues Found")
 - ❌ Not documenting orphan remediation (auditors will ask for disable timestamps)
 - ❌ Manager attestations collected but not dated (need timestamps)
+
 
 ---
 
@@ -953,15 +1003,19 @@ Q: 2026-01-18
 ```
 
 **Evidence to Collect:**
+
 - Change tickets (all 3) with CAB approval timestamps
 - Rollback plans (documented in tickets)
 - Rollback test results (for CHG-10234, CHG-10567)
 - Post-implementation review notes (for emergency CHG-10899)
 
+
 **Common Pitfalls:**
+
 - ❌ Not tracking provider-initiated changes (AWS announces new features—still needs documentation)
 - ❌ Emergency changes marked "Compliant" (always Partial if testing bypassed, even if acceptable)
 - ❌ No evidence of post-implementation review for emergency changes
+
 
 ---
 
@@ -1046,10 +1100,12 @@ Q: 2026-01-12 (lessons learned meeting date)
 ```
 
 **Evidence to Collect:**
+
 - Incident ticket (SEC-2026-042) with full timeline
 - Post-incident report with lessons learned
 - Action item tracker (showing 2/3 complete)
 - MFA enforcement evidence (screenshots of Salesforce admin console)
+
 
 **Special Case: No Incidents This Quarter**
 ```
@@ -1157,6 +1213,7 @@ Q: 2025-12-05
 ```
 
 **Evidence to Collect:**
+
 - BC/DR plan document (dated, version-controlled)
 - Test report with:
   - Test scenario description
@@ -1164,6 +1221,7 @@ Q: 2025-12-05
   - Screenshots of failover process
   - Issues found and resolutions
   - Sign-off from BC team and service owner
+
 
 **Special Case: Service Without BC Plan (Medium/Low Criticality)**
 ```
@@ -1282,16 +1340,20 @@ Q: 2026-01-20 (quarterly check date)
 ```
 
 **Evidence to Collect:**
+
 - ISO 27001 certificate (PDF from trust portal)
 - SOC 2 Type II report (request from vendor if not public)
 - Vendor incident log (screenshots of status page + emails)
 - Sub-processor list (from DPA)
 - QBR meeting notes (if applicable)
 
+
 **Common Pitfalls:**
+
 - ❌ Trusting vendor claims without verifying (download certs, don't just check website)
 - ❌ Not tracking cert expiry dates (certification lapses can occur between reviews)
 - ❌ Ignoring vendor "minor" incidents (patterns matter—5 minor incidents = problem)
+
 
 ---
 
@@ -1342,9 +1404,11 @@ Q: 2026-01-20 (quarterly check date)
 1. Test date: 2025-10-15
 2. Test scope: Migrate 5 sample repositories to GitLab test instance
 3. Test results:
+
    - Repository migration: Successful (all commits, branches, tags preserved)
    - CI/CD migration: Partial (70% of pipelines migrated, 30% require manual adjustment)
    - Secrets management: Manual migration required
+
 4. Test outcome: Partial success (migration viable but requires effort)
 ```
 
@@ -1388,6 +1452,7 @@ Q: 2025-10-15 (PoC test date)
 ```
 
 **Evidence to Collect:**
+
 - Exit plan document (version-controlled, dated)
 - Alternative provider assessments (GitLab/Bitbucket capability comparison)
 - PoC test report:
@@ -1397,6 +1462,7 @@ Q: 2025-10-15 (PoC test date)
   - Effort estimates
   - Screenshots of migrated repositories
 - Exit trigger monitoring process (email forwarding rules, status page subscriptions)
+
 
 **Special Case: Low/Medium Criticality Services (PoC Not Required)**
 ```
@@ -1473,9 +1539,11 @@ H: ✅ Compliant (plan adequate for Medium criticality service)
 ```
 1. Customer-managed keys: No (Salesforce Shield Encryption uses Salesforce-managed keys)
 2. Compensating controls:
+
    - Data residency: EU-only Hyperforce instance
    - SCC: Current EU template
    - TIA: Documented risk acceptance
+
 ```
 
 **Step 4: Fill Columns**
@@ -1505,28 +1573,36 @@ L-P: (blank)
 Q: 2026-01-18 (quarterly review date)
 
 **Evidence to Collect:**
+
 - DPA with SCCs (signed document)
 - TIA (Transfer Impact Assessment signed by Legal + DPO)
 - Risk acceptance memo (CISO/DPO signature)
 - Data residency verification (Salesforce Hyperforce instance configuration screenshot)
 
+
 **Common Pitfalls:**
+
 - ❌ Assuming US vendor = automatic CLOUD Act violation (EU data residency + mitigations can be acceptable)
 - ❌ Using outdated SCC template (Schrems II invalidated old templates)
 - ❌ TIA not renewed annually (risk landscape changes)
 - ❌ No risk acceptance documentation (DPO/CISO must formally accept residual risk)
+
 
 ---
 
 **END OF SECTION 4 (~1,000 lines)**
 
 This delivery covers:
+
 - ✅ Section 4: Completing Each Sheet (Detailed Guidance) - All 7 sheets (2-8)
 
+
 **Next delivery will cover:**
+
 - Section 5: Evidence Collection Guide
 - Section 6: Common Pitfalls & How to Avoid Them
 - Section 7: Quality Checklist
+
 
 **Ready for next part?** 🚀
 
@@ -1701,21 +1777,23 @@ Format: Email thread PDF or attestation form
 Example: /evidence/access_reviews/Q1_2026/manager_attestations/IT_dept_attestation.pdf
 ```
 
-**Quick Collect Method:**
-```bash
-# Azure AD example
-1. Export user list:
-   Get-AzureADUser -All $true | Select UserPrincipalName, DisplayName, AccountEnabled, 
-   LastSignInDateTime | Export-Csv "M365_users_2026-01-15.csv"
+**Quick Collect Method (Microsoft Graph PowerShell):**
+```powershell
+# Entra ID example
+Connect-MgGraph -Scopes "User.Read.All", "AuditLog.Read.All"
 
-2. Run orphan detection:
-   Get-AzureADUser -Filter "accountEnabled eq true" | 
-   Where {(Get-Date) - $_.LastSignInDateTime -gt 90} |
-   Export-Csv "M365_orphans_2026-01-15.csv"
+# 1. Export user list:
+Get-MgUser -All | Select-Object UserPrincipalName, DisplayName, AccountEnabled,
+   SignInActivity | Export-Csv "M365_users_2026-01-15.csv" -NoTypeInformation
 
-3. Generate report, save as PDF with screenshot of admin console
-4. Collect manager email confirmations
-5. Archive all in /evidence/access_reviews/Q1_2026/
+# 2. Run orphan detection:
+Get-MgUser -All -Filter "accountEnabled eq true" |
+   Where-Object {$_.SignInActivity.LastSignInDateTime -lt (Get-Date).AddDays(-90)} |
+   Export-Csv "M365_orphans_2026-01-15.csv" -NoTypeInformation
+
+# 3. Generate report, save as PDF with screenshot of admin console
+# 4. Collect manager email confirmations
+# 5. Archive all in /evidence/access_reviews/Q1_2026/
 ```
 
 ---
@@ -2087,9 +2165,11 @@ Week 4: Panic, incomplete assessment, missing evidence, delayed approval
 ```
 
 **Impact:**
+
 - Rushed assessment (errors, missed items)
 - No time for remediation
 - Approval delays (CISO unavailable at deadline)
+
 
 **Fix:**
 ```
@@ -2111,9 +2191,11 @@ Auditor checks current state: Finds gap, questions all "Compliant" statuses
 ```
 
 **Impact:**
+
 - False compliance claims
 - Audit findings
 - Loss of credibility
+
 
 **Fix:**
 ```
@@ -2139,8 +2221,10 @@ Auditor: *Marks as Non-Compliant due to unverified claim*
 ```
 
 **Impact:**
+
 - Failed audit check
 - Undetected incidents (security gaps)
+
 
 **Fix:**
 ```
@@ -2161,13 +2245,17 @@ Access review completed: 5 orphan accounts found
 Assessor marks status: "⚠️ Partial" 
 Evidence: Access review report showing orphans
 Gap description: "5 orphans identified"
+
 3 months later: Same 5 orphans still active (forgotten)
+
 ```
 
 **Impact:**
+
 - Security vulnerability (terminated employee access)
 - Repeated quarterly findings
 - Compliance failure
+
 
 **Fix:**
 ```
@@ -2175,9 +2263,11 @@ Gap description: "5 orphans identified"
 ☐ Policy requires: <24 hours to disable
 ☐ Don't close assessment until remediation complete
 ☐ Evidence MUST show both detection AND remediation:
+
    - Access review report (orphans found)
    - Remediation tickets (accounts disabled)
    - Verification screenshot (accounts now disabled in IAM system)
+
 ```
 
 ---
@@ -2196,9 +2286,11 @@ Auditor: "Emergency process requires post-review within 48 hours - Non-Compliant
 ```
 
 **Impact:**
+
 - Policy violation
 - Missed lessons learned
 - Audit finding
+
 
 **Fix:**
 ```
@@ -2206,11 +2298,13 @@ Auditor: "Emergency process requires post-review within 48 hours - Non-Compliant
 ☐ Block 1 hour for post-review meeting
 ☐ Document even if outcome is "everything went well"
 ☐ Template questions:
+
    - Was emergency process necessary? (Could we have used normal CAB?)
    - What went well?
    - What went poorly?
    - How can we prevent similar emergencies?
    - Process improvements needed?
+
 ```
 
 ---
@@ -2229,9 +2323,11 @@ Auditor: *Marks Non-Compliant*
 ```
 
 **Impact:**
+
 - BC plan may not work when actually needed
 - Audit failure
 - Unproven RTO/RPO
+
 
 **Fix:**
 ```
@@ -2243,13 +2339,17 @@ BC/DR "Test" MUST include:
 ☐ Screenshots or system logs proving recovery occurred
 
 Acceptable test levels:
+
 - Full DR region failover (best)
 - Partial failover (test environment)
 - Backup restore to test environment (minimum)
 
+
 NOT acceptable:
+
 - Reading the plan document
 - Discussion of "what we would do"
+
 ```
 
 ---
@@ -2267,9 +2367,11 @@ Auditor: "You're required to monitor quarterly"
 ```
 
 **Impact:**
+
 - Vendor using expired certification (marketing fraud)
 - Compliance violation
 - Vendor risk not managed
+
 
 **Fix:**
 ```
@@ -2291,16 +2393,20 @@ Auditor: "You're required to monitor quarterly"
 ```
 DPO verbally says: "Salesforce US CLOUD Act risk is acceptable given mitigations"
 Assessor marks: "Risk Acceptance: Accepted"
+
 6 months later: Data breach investigation
+
 Regulator: "Show us documented risk acceptance for US data transfer"
 [Organization]: "It was verbal..."
 Regulator: *GDPR Article 32 violation fine*
 ```
 
 **Impact:**
+
 - Regulatory violation
 - No legal defense
 - Potential fines
+
 
 **Fix:**
 ```
@@ -2334,9 +2440,11 @@ Auditor: *Non-Compliant*
 ```
 
 **Impact:**
+
 - Vendor lock-in (no viable exit path)
 - Cannot respond to vendor issues (price hikes, security incidents, acquisition)
 - Policy violation
+
 
 **Fix:**
 ```
@@ -2369,8 +2477,10 @@ Actually approved: Week 10 (7 weeks delay)
 ```
 
 **Impact:**
+
 - Assessment data stale (6+ weeks old at approval)
 - Audit cycle broken (Q2 starts before Q1 approved)
+
 
 **Fix:**
 ```
@@ -2676,9 +2786,11 @@ IT Ops Manager signs and forwards to Compliance Officer.
 **⚠️ Approved with Conditions:**
 ```
 Example conditions:
+
 - "Approved provided that orphan account remediation completed by [date]"
 - "Approved contingent on BC/DR test for AWS RDS scheduled by [date]"
 - "Approved with condition: Emergency change post-review completed within 5 days"
+
 
 Conditions documented in Column J (Gap Description) and tracked separately.
 ```
@@ -2686,10 +2798,12 @@ Conditions documented in Column J (Gap Description) and tracked separately.
 **❌ Rejected:**
 ```
 Example rejection reasons:
+
 - "Access review evidence is placeholder document (not actual IAM export)"
 - "BC/DR test claimed but no test report provided"
 - "Change tickets referenced don't exist in ServiceNow"
 - "Remediation timelines unrealistic (300-hour project scheduled for 2 days)"
+
 
 Return to Assessment Coordinator with specific items to fix.
 Do not proceed to Compliance review until issues resolved.
@@ -2757,9 +2871,11 @@ Compliance Officer signs and forwards to CISO.
 **⚠️ Approved with Conditions:**
 ```
 Example conditions:
+
 - "Approved provided DPO signs jurisdictional risk acceptance by [date]"
 - "Approved contingent on TIA renewal for Salesforce completed by [date]"
 - "Approved with condition: DORA exit plan testing completed within 90 days"
+
 
 Conditions tracked in separate tracking sheet (not just in comments).
 ```
@@ -2767,10 +2883,12 @@ Conditions tracked in separate tracking sheet (not just in comments).
 **❌ Rejected:**
 ```
 Example rejection reasons:
+
 - "TIA for US vendor is expired (GDPR compliance risk)"
 - "DORA exit testing requirement not met for Critical financial services"
 - "Risk acceptance for jurisdictional risk lacks DPO signature"
 - "Evidence insufficient for audit (screenshots without timestamps)"
+
 
 Return to Assessment Coordinator with compliance gaps to address.
 ```
@@ -2820,9 +2938,11 @@ ACCOUNTABILITY (3 items)
 **✅ Final Approval:**
 ```
 Assessment complete. CISO signature authorizes:
+
 - Current risk posture acceptance
 - Remediation budget allocation
 - Continuation of quarterly governance cycle
+
 
 File assessment as official quarterly record.
 Export metrics to IMP-5.23.5 (Dashboard).
@@ -2831,9 +2951,11 @@ Export metrics to IMP-5.23.5 (Dashboard).
 **⚠️ Approved with Executive Conditions:**
 ```
 Example conditions:
+
 - "Approved with condition: High-risk vendor [X] to be replaced by Q3"
 - "Approved contingent on hiring additional IAM admin for sustainable access reviews"
 - "Approved with requirement: DORA exit testing to be budgeted in Q2"
+
 
 Executive conditions trigger separate project planning (not just task tracking).
 ```
@@ -2841,10 +2963,12 @@ Executive conditions trigger separate project planning (not just task tracking).
 **❌ Rejected (Rare):**
 ```
 CISO rejection indicates significant concerns, typically:
+
 - Risk posture unacceptable (too many critical gaps)
 - Remediation plans lack credibility
 - Major regulatory compliance issue not addressed
 - Resource requirements exceed available budget significantly
+
 
 Requires executive discussion before resubmission.
 ```
@@ -2964,16 +3088,20 @@ Requires executive discussion before resubmission.
 **Priority 1: Configuration Management Database (CMDB)**
 
 **What to Integrate:**
+
 - Column B (Cloud_Service_Name) → CMDB CI (Configuration Item)
 - Column C (Vendor_Name) → CMDB Supplier entity
 - Column F (Service_Criticality) → CMDB Business Impact rating
 - Sheet 2 (Access Review) → CMDB Service Owner field
 - Sheet 6 (Vendor Risk) → CMDB Vendor Risk Score
 
+
 **Integration Method:**
+
 - **Manual:** Weekly export from this workbook → import to CMDB (error-prone)
 - **Automated (Preferred):** Python script reads Excel, updates CMDB via API
 - **Bidirectional:** CMDB is source of truth, this workbook for governance details
+
 
 **Example API Integration (Python):**
 
@@ -3007,14 +3135,18 @@ for row in range(7, 31):  # Data rows 7-30
 **Priority 2: IT Service Management (ITSM) / Ticketing System**
 
 **What to Integrate:**
+
 - Sheet 3 (Change Management) → ITSM Change Records
 - Sheet 4 (Incident Management) → ITSM Incident Records
 - Column M (Exception_ID) → ITSM Exception/Risk Ticket
 
+
 **Integration Method:**
+
 - **Automated ticket creation:** Python script reads non-compliant items → creates ITSM tickets
 - **Bidirectional sync:** ITSM ticket status updates Excel "Status" column
 - **Governance triggers:** ITSM change/incident events trigger governance assessment updates
+
 
 **Example ITSM Integration (ServiceNow):**
 
@@ -3052,28 +3184,36 @@ for row in range(7, 31):
 **Priority 3: Risk Management System**
 
 **What to Integrate:**
+
 - Sheet 6 (Vendor Risk) → Risk Register entries
 - Column N (Risk_ID) → Risk Management System risk ID
 - Column O (Compensating_Controls) → Risk mitigation controls
 
+
 **Integration Method:**
+
 - Export vendor risk ratings → import to enterprise risk register
 - Link governance gaps to operational risks
 - Trigger risk reassessment when vendor risk rating changes
+
 
 ---
 
 **Priority 4: Vendor Management Portal**
 
 **What to Integrate:**
+
 - Sheet 6 (Vendor Risk) → Vendor Management System vendor profiles
 - Sheet 3 (Change Management) → Vendor Change Notifications
 - Column W (Last_Assessment_Date) → Vendor reassessment schedule
 
+
 **Integration Method:**
+
 - Automated vendor risk score sync
 - Vendor certification expiry alerts from vendor portal → update Sheet 6 Column U
 - Vendor security incident feeds → auto-populate Sheet 4 Column R
+
 
 ---
 
@@ -3293,23 +3433,29 @@ Q4: MEASURE
 IMPROVEMENT INITIATIVE: Automate Access Review Reminders
 
 Current State (Manual):
+
 - Coordinator manually emails service owners quarterly
 - 40% of reminders ignored, requiring follow-up
 - Average 2 weeks to complete all access reviews
 - High coordinator overhead
 
+
 Proposed State (Automated):
+
 - Python script reads Sheet 2, checks last review dates
 - Auto-generates reminder emails to service owners
 - Tracks responses and sends escalation emails if overdue
 - Updates Excel when reviews submitted
 - Dashboard shows real-time completion status
 
+
 ROI Analysis:
+
 - Development time: 8 hours (one-time)
 - Time saved per quarter: 6 hours (coordinator time)
 - Improved completion rate: 40% → 80%
 - Payback period: < 2 quarters
+
 
 Approval Status: ✅ APPROVED (CISO 01.02.2026)
 Implementation: Q2 2026
@@ -3381,10 +3527,12 @@ WORKBOOK NAMING CONVENTION:
 ISMS-IMP-A.5.23.S4_Governance_[YYYY-MM-DD].xlsx
 
 Examples:
+
 - ISMS-IMP-A.5.23.S4_Governance_2026-01-20.xlsx (Q1 2026 assessment)
 - ISMS-IMP-A.5.23.S4_Governance_2026-04-20.xlsx (Q2 2026 assessment)
 - ISMS-IMP-A.5.23.S4_Governance_2026-07-20.xlsx (Q3 2026 assessment)
 - ISMS-IMP-A.5.23.S4_Governance_2026-10-20.xlsx (Q4 2026 assessment)
+
 ```
 
 **Archive Location:**
@@ -3403,9 +3551,11 @@ Examples:
 ```
 
 **Retention Policy:**
+
 - **Current + 2 years:** Full workbooks retained
 - **3-5 years:** Archive (compress to ZIP, store evidence separately)
 - **>5 years:** Dispose per retention schedule (retain only approved/signed PDFs)
+
 
 ---
 
@@ -3470,41 +3620,54 @@ Examples:
 ### 10.3 Related ISMS Documents
 
 **Policy Layer:**
+
 - ISMS-POL-A.5.19-23: Supplier & Cloud Services Security Policy (Master)
 - ISMS-POL-A.5.19-23-S4: Supplier Monitoring & Change Management
 - ISMS-POL-A.5.19-23-S5: Cloud Services Security (Section 6: Operational Management)
 - ISMS-POL-A.5.19-23-S6: Assessment Methodology & Automation
 
+
 **Assessment Layer (Upstream Dependencies):**
+
 - ISMS-IMP-A.5.23.S1: Cloud Service Inventory & Classification
 - ISMS-IMP-A.5.23.S2: Vendor Due Diligence & Contracts
 - ISMS-IMP-A.5.23.S3: Secure Configuration & Deployment
 
+
 **Assessment Layer (Downstream Consumers):**
+
 - ISMS-IMP-A.5.23.S5: Compliance Monitoring & Exit Planning
 
+
 **Related Controls:**
+
 - ISMS-POL-A.5.24-28: Information Security Incident Management
 - ISMS-POL-A.5.30: ICT Readiness for Business Continuity
 - ISMS-POL-A.8.8: Management of Technical Vulnerabilities
 
+
 **Procedures:**
+
 - ISMS Incident Management Procedure
 - ISMS Change Management Procedure
 - ISMS Access Review Procedure
 - ISMS Business Continuity Plan
+
 
 ---
 
 ### 10.4 External Standards & Regulations
 
 **International Standards:**
+
 - ISO/IEC 27001:2022 - Information Security Management Systems (Control A.5.23)
 - ISO/IEC 27002:2022 - Information Security Controls (Guidance for A.5.23)
 - ISO/IEC 27005:2022 - Information Security Risk Management
 - ISO 22301:2019 - Business Continuity Management Systems
 
+
 **Regulatory Frameworks:**
+
 - **DORA (Digital Operational Resilience Act):** EU Regulation 2022/2554 - Applies to financial entities
   - Article 15: ICT risk management framework
   - Article 16: ICT-related incident management
@@ -3519,11 +3682,14 @@ Examples:
   - Allows US government to compel US companies to produce data stored anywhere
   - Addressed in Sheet 7 (Jurisdictional Risk Assessment)
 
+
 **Compliance Frameworks:**
+
 - CIS Controls v8 - Center for Internet Security benchmarks
 - NIST Cybersecurity Framework (CSF)
 - SOC 2 Type II - Service Organization Control audit reports
 - PCI DSS 4.0 - Payment Card Industry Data Security Standard
+
 
 ---
 
@@ -3546,39 +3712,49 @@ Examples:
 **Assess your organization's governance maturity level:**
 
 **Level 1: Initial (Ad Hoc)**
+
 - Governance activities are reactive, not systematic
 - Access reviews happen only when someone complains
 - No centralized tracking of changes or incidents
 - Vendor risk assessments done at onboarding only
 - **Improvement Target:** Implement quarterly access reviews, basic change tracking
 
+
 **Level 2: Repeatable (Documented)**
+
 - Governance activities follow documented procedures
 - Quarterly access reviews conducted for critical services
 - Changes tracked in spreadsheet or ticketing system
 - Vendor risk monitored annually
 - **Improvement Target:** Automate reminders, integrate with CMDB/ITSM
 
+
 **Level 3: Defined (Standardized)**
+
 - Governance framework standardized across all cloud services
 - Automated reminders for access reviews, BC tests
 - Integration with CMDB, ITSM, risk management systems
 - Vendor risk scoring methodology consistent
 - **Improvement Target:** Metrics-driven improvement, predictive analytics
 
+
 **Level 4: Managed (Measured)**
+
 - Governance KPIs tracked and reported to management
 - Continuous improvement based on metrics
 - Vendor risk scoring incorporates external threat intel
 - BC/DR testing includes multi-vendor failover scenarios
 - **Improvement Target:** Full automation, AI-assisted risk assessment
 
+
 **Level 5: Optimized (Continuous Improvement)**
+
 - Governance is fully automated with human oversight
 - Predictive analytics identify risks before they materialize
 - Industry-leading governance practices
 - Governance framework continuously evolves
 - **Maintain excellence, share best practices**
+
 
 ---
 
@@ -3747,7 +3923,7 @@ TOOL/WORKBOOK TECHNICAL ISSUES:
 ---
 
 # ISMS-IMP-A.5.23.S4 - Ongoing Governance & Risk Management
-## PART II: TECHNICAL SPECIFICATION - Section 1 of 4
+# PART II: TECHNICAL SPECIFICATION - Section 1 of 4
 
 ---
 
@@ -3769,9 +3945,9 @@ TOOL/WORKBOOK TECHNICAL ISSUES:
 
 ---
 
-## 1. Workbook Structure Overview
+# Workbook Structure Overview
 
-### 1.1 Sheet Architecture (11 Sheets)
+## Sheet Architecture (11 Sheets)
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -3830,19 +4006,21 @@ TOOL/WORKBOOK TECHNICAL ISSUES:
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
-### 1.2 Version Control
+## Version Control
 
 | Version | Date | Changes | Sheets Affected |
 |---------|------|---------|-----------------|
 | **1.0** | [Date] | Initial release (10 sheets) | All (original) |
 
 **Key v2.1 Enhancements:**
+
 - **NEW Sheet 7:** Exit Strategy Annual Review + PoC Testing (DORA Art. 28.6 requirement)
 - **Sheet 8:** Jurisdictional Risk
 - **Sheet 9:** Dashboard +1 table for exit strategy readiness
 - **Sheet 11:** +DPO and CRO approval sections
 
-### 1.3 Regulatory Compliance Coverage
+
+## Regulatory Compliance Coverage
 
 | Regulation | Affected Sheets | Key Requirements |
 |------------|----------------|------------------|
@@ -3853,9 +4031,9 @@ TOOL/WORKBOOK TECHNICAL ISSUES:
 
 ---
 
-## 2. Cell Styling Reference
+# Cell Styling Reference
 
-### 2.1 Style Definitions
+## Style Definitions
 
 All styles use **NEW object creation per cell** to avoid Excel "shared object" repair warnings.
 
@@ -3867,13 +4045,14 @@ All styles use **NEW object creation per cell** to avoid Excel "shared object" r
 | **input_cell** | Calibri 10, Black | Light Yellow (FFFFCC) | Left, Wrap | Editable data cells (Rows 5-30) |
 | **warning** | Calibri 10, Bold, Red | Light Orange (FFEB9C) | Left, Wrap | Warning messages |
 
-### 2.2 Border Standards
+## Border Standards
 
 - **All cells:** Thin borders (1px solid) on all sides
 - **Merged cells:** Apply border to entire merged range
 - **Data rows:** Consistent thin borders for professional appearance
 
-### 2.3 Row Heights
+
+## Row Heights
 
 | Row Type | Height (points) | Rationale |
 |----------|-----------------|-----------|
@@ -3883,9 +4062,10 @@ All styles use **NEW object creation per cell** to avoid Excel "shared object" r
 | Column Headers (Row 4) | 15 (default) | Standard header height |
 | Data Rows (5-30) | 15 (default) | Auto-adjust based on content |
 
-### 2.4 Column Widths
+## Column Widths
 
 **Base columns (A-Q)** - Standard across all governance sheets (Sheets 2-6):
+
 - Column A (Assessment_ID): 14
 - Column B (Cloud_Service_Name): 28
 - Column C (Vendor_Name): 22
@@ -3904,13 +4084,14 @@ All styles use **NEW object creation per cell** to avoid Excel "shared object" r
 - Column P (Responsible_Team): 20
 - Column Q (Target_Remediation_Date): 18
 
+
 **Extended columns (R-X)** - Vary by sheet (see individual sheet specs)
 
 ---
 
-## 3. Base Column Definitions (A-Q)
+# Base Column Definitions (A-Q)
 
-### 3.1 Standard Columns for ALL Governance Assessment Sheets
+## Standard Columns for ALL Governance Assessment Sheets
 
 These 17 columns (A-Q) are **identical** across Sheets 2-6 to enable dashboard consolidation.
 
@@ -3934,7 +4115,7 @@ These 17 columns (A-Q) are **identical** across Sheets 2-6 to enable dashboard c
 | **P** | Responsible_Team | 20 | Dropdown | IT Operations, Cloud Ops, Security, Compliance, Risk Management | - | Team responsible for remediation |
 | **Q** | Target_Remediation_Date | 18 | Date | - | - | Target date to close gap (if remediation needed) |
 
-### 3.2 Data Validation Rules (Base Columns)
+## Data Validation Rules (Base Columns)
 
 **Dropdowns implemented via `openpyxl.worksheet.datavalidation.DataValidation`:**
 
@@ -3994,7 +4175,7 @@ ws.add_data_validation(responsible_team_dv)
 responsible_team_dv.add("P5:P30")
 ```
 
-### 3.3 UTF-8 Symbol Encoding
+## UTF-8 Symbol Encoding
 
 **Status symbols used in dropdowns:**
 
@@ -4006,9 +4187,9 @@ XMARK = '\u274C'      # ❌ Red X (Non-Compliant)
 
 ---
 
-## 4. Sheet 1: Instructions & Legend
+# Sheet 1: Instructions & Legend
 
-### 4.1 Purpose & Layout
+## Purpose & Layout
 
 **Sheet Name:** `Instructions & Legend`
 
@@ -4016,7 +4197,7 @@ XMARK = '\u274C'      # ❌ Red X (Non-Compliant)
 
 **Layout:** Free-form text layout with merged cells, no data validation (read-only reference).
 
-### 4.2 Sheet Structure
+## Sheet Structure
 
 ```
 ┌───────────────────────────────────────────────────────────────┐
@@ -4052,11 +4233,11 @@ XMARK = '\u274C'      # ❌ Red X (Non-Compliant)
 └───────────────────────────────────────────────────────────────┘
 ```
 
-### 4.3 Key Content Sections
+## Key Content Sections
 
-#### 4.3.1 Document Information
+### Document Information
 
-| Field | Value | Notes |
+| Attribute | Value | Notes |
 |-------|-------|-------|
 | Document ID | ISMS-IMP-A.5.23.S4 | Fixed |
 | Assessment Area | Ongoing Governance & Risk Management | Fixed |
@@ -4067,7 +4248,7 @@ XMARK = '\u274C'      # ❌ Red X (Non-Compliant)
 | Organization | [Input field] | Yellow fill, user-editable |
 | Review Cycle | Quarterly (+ Annual Exit Review) | Fixed |
 
-#### 4.3.2 How to Use This Workbook
+### How to Use This Workbook
 
 **Instructions (summary):**
 1. Reference ISMS-IMP-A.5.23.S1 (Inventory) for service list
@@ -4080,25 +4261,25 @@ XMARK = '\u274C'      # ❌ Red X (Non-Compliant)
 8. Review evidence register for completeness
 9. Obtain sequential approvals (IT Ops → Compliance → DPO → CRO → CISO)
 
-#### 4.3.3 Sheet Navigation Guide
+### Sheet Navigation Guide
 
 **11-Sheet Overview:**
 
 | Sheet # | Sheet Name | Purpose | Review Frequency |
 |---------|------------|---------|------------------|
 | 1 | Instructions & Legend | Orientation | Read first |
-| 2 | Access Review | Quarterly access recertification | Quarterly |
-| 3 | Change Management | Provider/config change tracking | Quarterly + ongoing |
-| 4 | Incident Management | Security/availability incidents | Quarterly + ongoing |
-| 5 | Business Continuity | BC/DR testing, RTO/RPO validation | Quarterly + annual full test |
-| 6 | Vendor Risk Monitoring | Ongoing vendor assessment | Quarterly + triggered |
-| 7 | Exit Strategy Review | Annual exit plan + PoC testing (DORA) | **Annually** |
-| 8 | Jurisdictional Risk | CLOUD Act exposure (US vendors) | Quarterly + triggered |
-| 9 | Summary Dashboard | Compliance metrics, gaps | Auto-calculated |
-| 10 | Evidence Register | Evidence tracking | As evidence collected |
-| 11 | Approval Sign-Off | 5-stage approval workflow | After assessment complete |
+| 2 | 2. Access Review | Quarterly access recertification | Quarterly |
+| 3 | 3. Change Management | Provider/config change tracking | Quarterly + ongoing |
+| 4 | 4. Incident Management | Security/availability incidents | Quarterly + ongoing |
+| 5 | 5. Business Continuity | BC/DR testing, RTO/RPO validation | Quarterly + annual full test |
+| 6 | 6. Vendor Risk Monitoring | Ongoing vendor assessment | Quarterly + triggered |
+| 7 | 7. Exit Strategy Review | Annual exit plan + PoC testing (DORA) | **Annually** |
+| 8 | 8. Jurisdictional Risk | CLOUD Act exposure (US vendors) | Quarterly + triggered |
+| 9 | 9. Summary Dashboard | Compliance metrics, gaps | Auto-calculated |
+| 10 | 10. Evidence Register | Evidence tracking | As evidence collected |
+| 11 | 11. Approval Sign-Of | 5-stage approval workflow | After assessment complete |
 
-#### 4.3.4 Status Legend
+### Status Legend
 
 | Symbol | Status | Definition | Usage |
 |--------|--------|------------|-------|
@@ -4107,7 +4288,7 @@ XMARK = '\u274C'      # ❌ Red X (Non-Compliant)
 | ❌ | Non-Compliant | Governance activity fails requirements, remediation required | Use when governance item is missing/inadequate |
 | N/A | Not Applicable | Governance item not relevant to this service/environment | Use when governance item doesn't apply |
 
-#### 4.3.5 Evidence Requirements
+### Evidence Requirements
 
 **Acceptable Evidence Types by Governance Area:**
 
@@ -4122,11 +4303,13 @@ XMARK = '\u274C'      # ❌ Red X (Non-Compliant)
 | Jurisdictional Risk | Legal assessment memo | DPO/Legal opinion on CLOUD Act exposure |
 
 **Evidence Location Format:**
+
 - **File share:** `\\fileserver\ISMS\Evidence\A.5.23.4\[Service_Name]\[Governance_Area]\[Filename]`
 - **SharePoint:** `https://[org].sharepoint.com/sites/ISMS/Evidence/A.5.23.4/[Service]/[File]`
 - **ITSM:** Ticket IDs (INC-###, CHG-###, RITM-###)
 
-#### 4.3.6 Regulatory Applicability Guide (v2.1 UPDATE)
+
+### Regulatory Applicability Guide (v2.1 UPDATE)
 
 **When to Complete Regulatory Sheets/Columns:**
 
@@ -4150,7 +4333,7 @@ Otherwise:
   └─ Sheet 7 is OPTIONAL (but recommended as best practice)
 ```
 
-#### 4.3.7 Version History
+### Version History
 
 | Version | Date | Changes |
 |---------|------|---------|
@@ -4158,9 +4341,9 @@ Otherwise:
 
 ---
 
-## 5. Sheet 2: Access Review & Recertification
+# Sheet 2: Access Review & Recertification
 
-### 5.1 Purpose & Layout
+## Purpose & Layout
 
 **Sheet Name:** `2. Access Review`
 
@@ -4170,7 +4353,7 @@ Otherwise:
 
 **Assessment Question:** "Are access reviews conducted quarterly with admin/privileged access recertified and documented?"
 
-### 5.2 Column Structure (A-X, 24 columns)
+## Column Structure (A-X, 24 columns)
 
 **Base Columns (A-Q):** Standard 17 columns (see Section 3)
 
@@ -4188,7 +4371,7 @@ Otherwise:
 | **W** | JIT_Access_Used | 16 | Dropdown | Yes, No, N/A | Is Just-In-Time (JIT) access used for admin privileges? |
 | **X** | Next_Review_Due | 18 | Date | Formula: `=R+90` | Next quarterly review date (90 days from last) |
 
-### 5.3 Data Validation Rules (Extended Columns)
+## Data Validation Rules (Extended Columns)
 
 ```python
 # Admin Count (Column S)
@@ -4238,7 +4421,7 @@ ws.add_data_validation(jit_access_dv)
 jit_access_dv.add("W5:W30")
 ```
 
-### 5.4 Section Headers
+## Section Headers
 
 ```
 Row 1 (merged A1:X1):
@@ -4250,7 +4433,7 @@ Row 2 (merged A2:X2):
    admin/privileged access recertified and documented?"
 ```
 
-### 5.5 Compliance Checklist (Rows 33+)
+## Compliance Checklist (Rows 33+)
 
 **Checklist Items (15 items):**
 
@@ -4272,7 +4455,7 @@ Row 2 (merged A2:X2):
 | 14 | Access review metrics reported to CISO quarterly | Access metrics dashboard |
 | 15 | Automated reminders sent to service owners before due date | Reminder email logs |
 
-### 5.6 Example Data Row
+## Example Data Row
 
 **Row 7 (Example - AWS Production Account):**
 
@@ -4303,15 +4486,19 @@ Row 2 (merged A2:X2):
 | W | Yes | JIT via AWS IAM Identity Center |
 | X | 15.04.2026 | Next review due (90 days) |
 
-### 5.7 Integration Points
+## Integration Points
 
 **Exports to Sheet 9 (Dashboard):**
+
 - Column I (Status): Access review compliance metrics
 - Column R (Last_Review_Date): Overdue review tracking
 - Column T (Admin_Recertified): Admin recertification compliance
 
+
 **Exports to Sheet 10 (Evidence Register):**
+
 - Column J (Evidence_Location): Access review evidence tracking
+
 
 ---
 
@@ -4322,7 +4509,7 @@ Row 2 (merged A2:X2):
 ---
 
 # ISMS-IMP-A.5.23.S4 - Ongoing Governance & Risk Management
-## PART II: TECHNICAL SPECIFICATION - Sections 2-4 of 4
+# PART II: TECHNICAL SPECIFICATION - Sections 2-4 of 4
 
 ---
 
@@ -4334,11 +4521,11 @@ Row 2 (merged A2:X2):
 
 ---
 
-## SECTION 2: SHEETS 3-6 (GOVERNANCE ACTIVITIES)
+# SECTION 2: SHEETS 3-6 (GOVERNANCE ACTIVITIES)
 
-### Sheet 3: Change Management
+## Sheet 3: Change Management
 
-#### 3.1 Purpose & Layout
+### Purpose & Layout
 
 **Sheet Name:** `3. Change Management`
 
@@ -4348,7 +4535,7 @@ Row 2 (merged A2:X2):
 
 **Assessment Question:** "Are all cloud service changes following change management process with proper approvals?"
 
-#### 3.2 Column Structure (A-X, 24 columns)
+### Column Structure (A-X, 24 columns)
 
 **Base Columns (A-Q):** Standard 17 columns
 
@@ -4366,7 +4553,7 @@ Row 2 (merged A2:X2):
 | **W** | Post_Change_Review_Done | 20 | Dropdown | Yes, No, Pending |
 | **X** | Security_Impact_Assessed | 20 | Dropdown | Yes, No, N/A |
 
-#### 3.3 Compliance Checklist (15 items)
+### Compliance Checklist (15 items)
 
 ```
 ☐ Change management process documented for cloud services
@@ -4388,9 +4575,9 @@ Row 2 (merged A2:X2):
 
 ---
 
-### Sheet 4: Incident Management
+## Sheet 4: Incident Management
 
-#### 4.1 Purpose & Layout
+### Purpose & Layout
 
 **Sheet Name:** `4. Incident Management`
 
@@ -4400,7 +4587,7 @@ Row 2 (merged A2:X2):
 
 **Assessment Question:** "Are cloud service incidents detected, responded to, and documented per incident management procedures?"
 
-#### 4.2 Column Structure (A-X, 24 columns)
+### Column Structure (A-X, 24 columns)
 
 **Base Columns (A-Q):** Standard 17 columns
 
@@ -4418,7 +4605,7 @@ Row 2 (merged A2:X2):
 | **W** | Customer_Impact | 18 | Dropdown | Yes, No, Unknown |
 | **X** | Lessons_Learned_Captured | 20 | Dropdown | Yes, No, Pending |
 
-#### 4.3 Compliance Checklist (30 items - REGULATORY ENHANCED)
+### Compliance Checklist (30 items - REGULATORY ENHANCED)
 
 **Base Items (15):**
 ```
@@ -4472,9 +4659,9 @@ Row 2 (merged A2:X2):
 
 ---
 
-### Sheet 5: Business Continuity
+## Sheet 5: Business Continuity
 
-#### 5.1 Purpose & Layout
+### Purpose & Layout
 
 **Sheet Name:** `5. Business Continuity`
 
@@ -4484,7 +4671,7 @@ Row 2 (merged A2:X2):
 
 **Assessment Question:** "Are BC/DR plans tested annually with RTO/RPO achievement verified?"
 
-#### 5.2 Column Structure (A-X, 24 columns)
+### Column Structure (A-X, 24 columns)
 
 **Base Columns (A-Q):** Standard 17 columns
 
@@ -4502,7 +4689,7 @@ Row 2 (merged A2:X2):
 | **W** | RPO_Achieved_Hours | 18 | Decimal | ≥0 |
 | **X** | Next_Test_Due | 16 | Date | Formula: `=R5+365` |
 
-#### 5.3 Compliance Checklist (15 items)
+### Compliance Checklist (15 items)
 
 ```
 ☐ BC/DR plan documented for Critical/High services
@@ -4524,9 +4711,9 @@ Row 2 (merged A2:X2):
 
 ---
 
-### Sheet 6: Vendor Risk Monitoring
+## Sheet 6: Vendor Risk Monitoring
 
-#### 6.1 Purpose & Layout
+### Purpose & Layout
 
 **Sheet Name:** `6. Vendor Risk Monitoring`
 
@@ -4536,7 +4723,7 @@ Row 2 (merged A2:X2):
 
 **Assessment Question:** "Is cloud vendor risk monitored continuously with reassessment triggered by changes?"
 
-#### 6.2 Column Structure (A-X, 24 columns)
+### Column Structure (A-X, 24 columns)
 
 **Base Columns (A-Q):** Standard 17 columns
 
@@ -4554,7 +4741,7 @@ Row 2 (merged A2:X2):
 | **W** | Last_Assessment_Date | 18 | Date | - |
 | **X** | Reassessment_Trigger_Met | 20 | Dropdown | Yes, No |
 
-#### 6.3 Compliance Checklist (15 items)
+### Compliance Checklist (15 items)
 
 ```
 ☐ Vendor risk assessment performed at onboarding
@@ -4576,11 +4763,11 @@ Row 2 (merged A2:X2):
 
 ---
 
-## SECTION 3: SHEETS 7-9 (ANNUAL REVIEWS + DASHBOARD)
+# SECTION 3: SHEETS 7-9 (ANNUAL REVIEWS + DASHBOARD)
 
-### Sheet 7: Exit Strategy Annual Review & PoC Testing (NEW v2.1)
+## Sheet 7: Exit Strategy Annual Review & PoC Testing (NEW v2.1)
 
-#### 7.1 Purpose & Layout
+### Purpose & Layout
 
 **Sheet Name:** `7. Exit Strategy Review`
 
@@ -4592,7 +4779,7 @@ Row 2 (merged A2:X2):
 
 **Assessment Question:** "Is the exit strategy reviewed annually with PoC testing demonstrating feasibility?"
 
-#### 7.2 Column Structure (A-N, 14 columns)
+### Column Structure (A-N, 14 columns)
 
 | Column | Field Name | Width | Type | Validation | Description |
 |--------|-----------|-------|-----------|------------|-------------|
@@ -4611,7 +4798,7 @@ Row 2 (merged A2:X2):
 | **M** | Responsible_Team | 20 | Dropdown | IT Operations, Cloud Ops, Business Continuity | Who owns exit plan |
 | **N** | Next_PoC_Test_Due | 18 | Date | Formula: `=I5+365` | Next PoC test |
 
-#### 7.3 Compliance Checklist (12 items - DORA-specific)
+### Compliance Checklist (12 items - DORA-specific)
 
 ```
 ☐ Exit strategy documented for all cloud services (DORA Art. 28.6)
@@ -4628,7 +4815,7 @@ Row 2 (merged A2:X2):
 ☐ Exit readiness status reported to senior management/board
 ```
 
-#### 7.4 Example Data Row
+### Example Data Row
 
 **Row 5 (Example - Salesforce CRM):**
 
@@ -4651,9 +4838,9 @@ Row 2 (merged A2:X2):
 
 ---
 
-### Sheet 8: Jurisdictional Risk Assessment (CLOUD Act)
+## Sheet 8: Jurisdictional Risk Assessment (CLOUD Act)
 
-#### 8.1 Purpose & Layout
+### Purpose & Layout
 
 **Sheet Name:** `8. Jurisdictional Risk`
 
@@ -4665,7 +4852,7 @@ Row 2 (merged A2:X2):
 
 **Assessment Question:** "For US-nexus providers, what is the jurisdictional risk and what mitigations are in place?"
 
-#### 8.2 Column Structure (A-T, 20 columns)
+### Column Structure (A-T, 20 columns)
 
 | Column | Field Name | Width | Type | Validation | Description |
 |--------|-----------|-------|-----------|------------|-------------|
@@ -4690,20 +4877,26 @@ Row 2 (merged A2:X2):
 | **S** | Evidence_ID | 14 | Text | - | Link to evidence register |
 | **T** | Notes | 35 | Text | - | Additional context |
 
-#### 8.3 Applicability
+### Applicability
 
 **Complete this sheet ONLY IF:**
+
 - Cloud provider has US nexus (HQ, subsidiary, or significant US operations)
 
+
 **Examples of US-nexus providers:**
+
 - Microsoft, AWS, Google Cloud, Oracle Cloud, Salesforce, Adobe, Snowflake, ServiceNow, Workday, Okta, Zoom, Slack, Box, Dropbox, etc.
 
+
 **Skip this sheet if:**
+
 - Provider is EU/EEA-only (OVH, Hetzner, IONOS)
 - Provider is Swiss (Proton, Infomaniak)
 - Provider is UK-only with no US parent
 
-#### 8.4 Example Data Row
+
+### Example Data Row
 
 **Row 5 (Example - Microsoft 365 with EU Data Boundary):**
 
@@ -4732,9 +4925,9 @@ Row 2 (merged A2:X2):
 
 ---
 
-### Sheet 9: Summary Dashboard
+## Sheet 9: Summary Dashboard
 
-#### 9.1 Purpose & Layout
+### Purpose & Layout
 
 **Sheet Name:** `9. Summary Dashboard`
 
@@ -4742,7 +4935,7 @@ Row 2 (merged A2:X2):
 
 **Layout:** Read-only formulas, no user input (except references to other sheets).
 
-#### 9.2 Dashboard Structure (3 Main Tables)
+### Dashboard Structure (3 Main Tables)
 
 **TABLE 1: Governance Compliance Summary (Rows 4-10)**
 
@@ -4778,7 +4971,7 @@ Row 2 (merged A2:X2):
 | **AI Act** | AI Systems Requiring Active Monitoring | `=COUNTIF('6. Vendor Risk Monitoring'!I5:I30,"<>N/A")` | Info |
 | **CLOUD Act** | US-Nexus Providers (High/Critical Risk) | `=COUNTIF('8. Jurisdictional Risk'!N5:N30,"High")+COUNTIF('8. Jurisdictional Risk'!N5:N30,"Critical")` | `=IF(C28>0,"⚠️ Review","✅ OK")` |
 
-#### 9.3 Overall Governance Health Score
+### Overall Governance Health Score
 
 **Row 33 (Weighted Score):**
 ```
@@ -4793,11 +4986,11 @@ Legend:
 
 ---
 
-## SECTION 4: SHEETS 10-11 + INTEGRATION
+# SECTION 4: SHEETS 10-11 + INTEGRATION
 
-### Sheet 10: Evidence Register
+## Sheet 10: Evidence Register
 
-#### 10.1 Purpose & Layout
+### Purpose & Layout
 
 **Sheet Name:** `10. Evidence Register`
 
@@ -4805,7 +4998,7 @@ Legend:
 
 **Evidence ID Prefix:** `EV-GOV-###`
 
-#### 10.2 Column Structure (A-M, 13 columns)
+### Column Structure (A-M, 13 columns)
 
 | Column | Field Name | Width | Type | Validation | Description |
 |--------|-----------|-------|-----------|------------|-------------|
@@ -4823,23 +5016,25 @@ Legend:
 | **L** | Verification_Status | 20 | Dropdown | Verified, Pending, Invalid, Missing | Evidence quality status |
 | **M** | Notes | 35 | Text | - | Additional context |
 
-#### 10.3 Conditional Formatting
+### Conditional Formatting
 
 **Verification Status (Column L):**
+
 - "Verified" → Green fill (C6EFCE)
 - "Pending" → Yellow fill (FFEB9C)
 - "Invalid" → Orange fill (FFC7CE)
 - "Missing" → Red fill (FF0000), white text
 
-#### 10.4 Data Rows
+
+### Data Rows
 
 **Rows:** 5-124 (120 evidence entries capacity)
 
 ---
 
-### Sheet 11: Approval Sign-Off
+## Sheet 11: Approval Sign-Off
 
-#### 11.1 Purpose & Layout
+### Purpose & Layout
 
 **Sheet Name:** `11. Approval Sign-Of`  *(Note: typo in sheet name matches Python generator)*
 
@@ -4852,9 +5047,10 @@ Legend:
 4. Chief Risk Officer (CRO) Review
 5. CISO Approval (final authorization)
 
-#### 11.2 Approval Workflow Structure
+### Approval Workflow Structure
 
 **Assessment Summary (Rows 4-12):**
+
 - Document ID: ISMS-IMP-A.5.23.S4
 - Assessment Period: [Input]
 - Overall Compliance Rate: `='9. Summary Dashboard'!G10`
@@ -4865,9 +5061,11 @@ Legend:
 - Exit Strategies Not Tested: `='9. Summary Dashboard'!B19` (NEW v2.1)
 - Assessment Status: [Dropdown: Draft, Ready for Review, In Approval, Approved, Requires Remediation]
 
+
 **Approval Sections (Rows 14+):**
 
 **1. IT OPERATIONS REVIEW (Rows 14-22)**
+
 - Reviewed By (IT Ops Manager): [Input]
 - Review Date: [Date]
 - Technical Accuracy: [Dropdown: Verified, Issues Found, Incomplete]
@@ -4876,7 +5074,9 @@ Legend:
 - IT Ops Comments: [Long text]
 - IT Ops Approval: [Dropdown: Approved, Approved with Conditions, Rejected]
 
+
 **2. COMPLIANCE OFFICER REVIEW (Rows 24-32)**
+
 - Reviewed By (Compliance Officer): [Input]
 - Review Date: [Date]
 - Governance Framework Compliance: [Dropdown: Compliant, Partially, Non-Compliant]
@@ -4885,7 +5085,9 @@ Legend:
 - Compliance Comments: [Long text]
 - Compliance Approval: [Dropdown: Approved, Approved with Conditions, Rejected]
 
+
 **3. DPO REVIEW (Rows 34-42)**
+
 - Reviewed By (DPO): [Input]
 - Review Date: [Date]
 - Data Protection Compliance: [Dropdown: Compliant, Partially Compliant, Non-Compliant]
@@ -4894,7 +5096,9 @@ Legend:
 - DPO Comments: [Long text]
 - DPO Approval: [Dropdown: Approved, Approved with Conditions, Rejected]
 
+
 **4. CRO REVIEW (Rows 44-52)**
+
 - Reviewed By (CRO): [Input]
 - Review Date: [Date]
 - Enterprise Risk Acceptance: [Dropdown: Approved, Conditionally Approved, Rejected]
@@ -4903,7 +5107,9 @@ Legend:
 - CRO Comments: [Long text]
 - CRO Approval: [Dropdown: Approved, Approved with Conditions, Rejected]
 
+
 **5. CISO APPROVAL (Rows 54-62)**
+
 - Reviewed By (CISO): [Input]
 - Review Date: [Date]
 - Overall Security Posture: [Dropdown: Strong, Acceptable, Needs Improvement, Unacceptable]
@@ -4912,17 +5118,20 @@ Legend:
 - CISO Comments: [Long text]
 - **FINAL DECISION**: [Dropdown: **Approved, Approved with Conditions, Rejected - Remediation Required, Deferred**]
 
+
 **Next Review Details (Rows 64-68):**
+
 - Next Review Date: `=B57+90` (90 days after CISO approval)
 - Next Review Type: [Dropdown: Quarterly, Annual, Triggered]
 - Review Owner: [Input]
 - Calendar Invite Sent: [Dropdown: Yes, No]
 
+
 ---
 
-### Integration Points
+## Integration Points
 
-#### Integration with Other ISMS Assessments
+### Integration with Other ISMS Assessments
 
 **Imports FROM:**
 
@@ -4942,36 +5151,46 @@ Legend:
 | IMP-A.5.23.5 (Compliance) | High-risk vendors (Sheet 6) | Risk heatmap generation |
 | IMP-A.5.23.5 (Compliance) | Exit strategy readiness (Sheet 7) | Exit planning dashboard |
 
-#### Integration with Organizational Systems
+### Integration with Organizational Systems
 
 **CMDB (Configuration Management Database):**
+
 - Export: Cloud service governance status → CMDB compliance field
 - Import: Service owner changes → Update Sheet 2 responsible teams
 
+
 **ITSM (IT Service Management):**
+
 - Export: Non-compliant items → Auto-create ITSM remediation tickets
 - Import: Change ticket IDs → Populate Sheet 3 change references
 - Import: Incident ticket IDs → Populate Sheet 4 incident references
 
+
 **Risk Management System:**
+
 - Export: Vendor risk ratings (Sheet 6) → Enterprise risk register
 - Export: Jurisdictional risks (Sheet 8) → Operational risk register
 - Import: Risk IDs → Column N (Risk_ID) across all sheets
 
+
 **IAM (Identity & Access Management):**
+
 - Import: Access review reports → Evidence for Sheet 2
 - Import: Admin account counts → Sheet 2 Column S
 
+
 **Vendor Management Portal:**
+
 - Import: Vendor cert expiry dates → Sheet 6 Column U
 - Import: Vendor security incidents → Sheet 6 Column S
 - Export: Vendor risk ratings → Vendor portal dashboards
 
+
 ---
 
-### Quality Assurance Procedures
+## Quality Assurance Procedures
 
-#### Pre-Distribution QA Checklist
+### Pre-Distribution QA Checklist
 
 ```
 ☐ Generator Script Validation
@@ -5018,7 +5237,7 @@ Legend:
   └─ Legend/help text accurate
 ```
 
-#### Post-Completion QA
+### Post-Completion QA
 
 **Before approval submission:**
 ```
@@ -5053,7 +5272,7 @@ Legend:
 
 ---
 
-### Workbook-Level Specifications
+## Workbook-Level Specifications
 
 **File Naming Convention:**
 ```
@@ -5074,12 +5293,15 @@ wb.properties.version = "2.1"
 ```
 
 **Sheet Protection:**
+
 - **Protected Sheets:** 2-8 (assessment sheets), 9 (dashboard), 10 (evidence register)
 - **Locked Cells:** Column A (Assessment_ID formulas), Dashboard formulas
 - **Unlocked Cells:** All yellow input cells, Column J (Evidence_Location)
 - **Allow:** Select unlocked cells, Select locked cells, Format cells
 
+
 **Print Settings (All Assessment Sheets):**
+
 - Page orientation: Landscape
 - Paper size: A4
 - Scaling: Fit to 1 page wide × auto tall
@@ -5087,16 +5309,21 @@ wb.properties.version = "2.1"
 - Print gridlines: Yes
 - Print quality: High
 
+
 **Freeze Panes:**
+
 - **Assessment Sheets (2-8):** Row 5 frozen (headers rows 1-4 visible when scrolling)
 - **Dashboard (9):** Row 4 frozen (table headers visible)
 - **Evidence Register (10):** Row 5 frozen
 - **Approval (11):** No freeze
 
+
 **Expected File Size:**
+
 - Empty workbook: ~200-250 KB
 - Fully populated: ~1.5-2.5 MB (depends on evidence volume)
 - With images: Up to 10 MB (if screenshots embedded)
+
 
 ---
 
@@ -5106,4 +5333,10 @@ wb.properties.version = "2.1"
 
 ---
 
-**END OF COMPLETE DOCUMENT**
+**END OF SPECIFICATION**
+
+---
+
+*"Nature uses only the longest threads to weave her patterns, so that each small piece of her fabric reveals the organization of the entire tapestry."*
+— Richard Feynman
+*Where bamboo antennas actually work.* 🎋

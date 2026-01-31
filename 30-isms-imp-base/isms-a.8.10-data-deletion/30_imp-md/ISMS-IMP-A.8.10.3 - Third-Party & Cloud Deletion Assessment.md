@@ -1,6 +1,8 @@
-# ISMS-IMP-A.8.10.3 - Third-Party & Cloud Deletion Assessment
+**ISMS-IMP-A.8.10.3 - Third-Party & Cloud Deletion Assessment**
+**Assessment Specification with User Completion Guide**
+### ISO/IEC 27001:2022 Control A.8.10: Information Deletion
 
-## Document Control
+**Document Control**
 
 | Attribute | Value |
 |-----------|-------|
@@ -27,9 +29,9 @@
 
 ---
 
-## 1. Assessment Overview
+# Assessment Overview
 
-### 1.1 What This Assessment Measures
+## What This Assessment Measures
 
 This assessment evaluates [Organization]'s **third-party and cloud service provider deletion capabilities** to ensure data stored with external vendors is properly deleted when retention periods expire, in compliance with ISO/IEC 27001:2022 Control A.8.10, GDPR Article 28 processor obligations, and contractual deletion requirements.
 
@@ -43,7 +45,7 @@ This assessment evaluates [Organization]'s **third-party and cloud service provi
 
 **Assessment Output:** Excel workbook with ~100-200 data points documenting cloud provider deletion capabilities, vendor contract compliance, deletion certificates received, and remediation plans for vendors without adequate deletion procedures.
 
-### 1.2 Why This Matters
+## Why This Matters
 
 **ISO 27001:2022 Control A.8.10 Requirement:**
 > *"Information stored in information systems, devices or in any other storage media should be deleted when no longer required."*
@@ -53,9 +55,11 @@ This assessment evaluates [Organization]'s **third-party and cloud service provi
 **GDPR Article 28 - Processor Obligations:**
 
 Under GDPR, cloud providers and SaaS vendors are typically "processors" of personal data. Article 28 requires:
+
 - **Deletion Assistance:** Processors must assist controller in ensuring deletion of personal data
 - **Return or Deletion:** Upon termination, processor must delete or return all personal data
 - **Subprocessor Management:** Controllers must be informed of all subprocessors handling data
+
 
 **Business Impact:**
 
@@ -65,25 +69,31 @@ Under GDPR, cloud providers and SaaS vendors are typically "processors" of perso
 - **Shadow IT Risk:** Unapproved cloud services with organizational data = uncontrolled deletion
 - **Compliance Audit Failures:** No deletion certificates from vendors = cannot prove compliance
 
+
 **Real-World Scenarios:**
+
 - SaaS vendor bankruptcy → Customer data sold to creditors (no deletion)
 - Cloud provider "delete" delays months → Data accessible during delay period
 - Subprocessor not disclosed → Data processed in unexpected jurisdiction, deletion unverified
 - Free cloud service (Google Drive, Dropbox) → No enterprise deletion SLA, data persists indefinitely
 - M&A activity → Acquired vendor changes data handling, deletion policies void
 
-### 1.3 Who Should Complete This Assessment
+
+## Who Should Complete This Assessment
 
 **Primary Responsibility:** Vendor Management / Procurement / Cloud Administrator
 
 **Required Knowledge:**
+
 - [Organization]'s cloud service inventory (AWS, Azure, GCP, SaaS applications)
 - Vendor contract terms and data processing agreements (DPAs)
 - GDPR Article 28 processor obligations
 - Cloud provider deletion policies and capabilities
 - Subprocessor disclosure requirements
 
+
 **Support Roles:**
+
 - **Legal Counsel:** For contract review and deletion clause sufficiency
 - **Data Protection Officer (DPO):** For GDPR Article 28 compliance and subprocessor management
 - **Cloud Administrators:** For cloud provider deletion verification and testing
@@ -91,11 +101,13 @@ Under GDPR, cloud providers and SaaS vendors are typically "processors" of perso
 - **Procurement:** For vendor contract negotiation and SLA management
 - **Information Security:** For Shadow IT identification and risk assessment
 
-### 1.4 Time Estimate
+
+## Time Estimate
 
 **Total Assessment Time:** 8-12 hours (depending on vendor count and contract complexity)
 
 **Breakdown:**
+
 - **Cloud Provider Inventory (2-3 hours):** Identify all cloud services and providers
 - **Vendor Contract Review (3-4 hours):** Review DPAs for deletion clauses and SLAs
 - **Deletion Capability Assessment (2-3 hours):** Document provider deletion methods and verification
@@ -104,9 +116,10 @@ Under GDPR, cloud providers and SaaS vendors are typically "processors" of perso
 - **Evidence Collection (1 hour):** Gather contracts, certificates, audit reports
 - **Quality Review (1 hour):** Final validation and approval preparation
 
+
 **Pro Tip:** If [Organization] has >50 cloud/SaaS vendors, consider prioritizing by data sensitivity (assess Confidential/Restricted data vendors first).
 
-### 1.5 Connection to Policy
+## Connection to Policy
 
 This assessment implements **ISMS-POL-A.8.10, Section 2.3 (Third-Party & Cloud Deletion)** which defines mandatory requirements for:
 
@@ -117,10 +130,11 @@ This assessment implements **ISMS-POL-A.8.10, Section 2.3 (Third-Party & Cloud D
 - **Subprocessor Disclosure:** All subprocessors identified and assessed for deletion capabilities
 - **Shadow IT Prohibition:** Unapproved cloud services with organizational data not permitted
 
+
 **Policy Authority:** Chief Information Security Officer (CISO) / Data Protection Officer (DPO) / Chief Procurement Officer (CPO)  
 **Compliance Status:** Mandatory for all vendors processing Confidential or Restricted data, or personal data subject to GDPR
 
-### 1.6 Critical: GDPR Article 28 Processor Obligations
+## Critical: GDPR Article 28 Processor Obligations
 
 **⚠️ IMPORTANT - Controller vs. Processor Responsibilities:**
 
@@ -143,19 +157,22 @@ Under GDPR, [Organization] is typically the "controller" (determines purposes an
 > "The processor shall not engage another processor without prior specific or general written authorization of the controller..."
 
 **Critical Implication:**
+
 - [Organization] cannot outsource GDPR compliance responsibility to vendors
 - If vendor fails to delete data, [Organization] is liable under GDPR
 - Vendor deletion capabilities MUST be verified, not assumed
 
+
 ---
 
-## 2. Prerequisites
+# Prerequisites
 
-### 2.1 Access Required
+## Access Required
 
 Before starting this assessment, ensure you have access to:
 
 **Documentation:**
+
 - [ ] Cloud service inventory (all IaaS, PaaS, SaaS in use)
 - [ ] Vendor contracts and data processing agreements (DPAs)
 - [ ] Cloud provider deletion policies (AWS, Azure, GCP whitepapers)
@@ -164,41 +181,52 @@ Before starting this assessment, ensure you have access to:
 - [ ] ISMS-REF-A.5.23 Cloud Service Provider Registry (if available)
 - [ ] Shadow IT detection reports (CASB, network logs, expense reports)
 
+
 **Systems:**
+
 - [ ] Cloud provider management consoles (AWS, Azure, GCP, etc.)
 - [ ] SaaS application admin portals (Salesforce, Workday, HubSpot, etc.)
 - [ ] Contract management system (for vendor agreements)
 - [ ] Vendor management platform (if available)
 - [ ] Cloud Access Security Broker (CASB) - if deployed
 
+
 **Stakeholders:**
+
 - [ ] Legal Counsel (for contract interpretation)
 - [ ] Procurement team (for vendor contract access)
 - [ ] Cloud administrators (for deletion testing)
 - [ ] Business Unit Owners (for SaaS application inventory)
 
-### 2.2 Required Knowledge
+
+## Required Knowledge
 
 **Regulatory & Legal:**
+
 - Understanding of GDPR Article 28 (processor obligations)
 - Understanding of GDPR Article 17 (right to erasure)
 - Understanding of data processing agreement (DPA) structure
 - Subprocessor disclosure requirements
 - Cross-border data transfer implications on deletion
 
+
 **Technical:**
+
 - Cloud provider deletion mechanisms (IaaS, PaaS, SaaS)
 - SaaS application data export and deletion capabilities
 - API-based deletion vs. manual deletion processes
 - Deletion verification methods (certificates, audit logs)
 
+
 **Contractual:**
+
 - Standard deletion clauses in DPAs
 - Service Level Agreements (SLAs) for deletion timelines
 - Data return vs. deletion options
 - Vendor liability for deletion failures
 
-### 2.3 Pre-Assessment Checklist
+
+## Pre-Assessment Checklist
 
 Complete these tasks before beginning the assessment:
 
@@ -211,13 +239,14 @@ Complete these tasks before beginning the assessment:
 - [ ] **Review vendor audit reports** (SOC 2 Type II, ISO 27001) for deletion procedures
 - [ ] **Schedule vendor meetings** for providers without clear deletion documentation
 
+
 **Critical:** If [Organization] lacks a complete cloud service inventory, allow additional time (20-30 hours) to conduct discovery before assessment.
 
 ---
 
-## 3. Assessment Workflow
+# Assessment Workflow
 
-### 3.1 Workflow Overview
+## Workflow Overview
 
 ```
 Step 1: Cloud Provider Deletion Assessment (Sheet 2)
@@ -237,9 +266,9 @@ Step 7: Review Summary Dashboard (Sheet 7)
 Step 8: Quality Check & Approval (Sheet 9)
 ```
 
-### 3.2 Step-by-Step Instructions
+## Step-by-Step Instructions
 
-#### Step 1: Cloud Provider Deletion Assessment (Sheet 2)
+### Step 1: Cloud Provider Deletion Assessment (Sheet 2)
 
 **Objective:** Document deletion capabilities for major cloud infrastructure providers (IaaS, PaaS)
 
@@ -253,45 +282,57 @@ Step 8: Quality Check & Approval (Sheet 9)
 **Major Cloud Providers to Consider:**
 
 **Infrastructure as a Service (IaaS):**
+
 - AWS (EC2, S3, EBS, RDS)
 - Microsoft Azure (VMs, Blob Storage, SQL Database)
 - Google Cloud Platform (Compute Engine, Cloud Storage, Cloud SQL)
 - Alibaba Cloud
 - Oracle Cloud Infrastructure
 
+
 **Platform as a Service (PaaS):**
+
 - AWS (Lambda, DynamoDB, Aurora)
 - Azure (App Service, Cosmos DB, Functions)
 - GCP (App Engine, Firestore, Cloud Run)
 - Heroku
 - DigitalOcean
 
+
 **Provider-Specific Deletion Capabilities:**
 
 **AWS:**
+
 - **Deletion Method:** API (DeleteObject, TerminateInstances), Lifecycle Policies, Manual
 - **Verification:** CloudTrail audit logs, S3 deletion markers, API responses
 - **Crypto-Shred:** Customer Master Keys (CMK) deletion → data unrecoverable
 - **SLA:** Immediate deletion intent, eventual consistency across regions
 
+
 **Azure:**
+
 - **Deletion Method:** API (Delete Blob, Delete VM), Lifecycle Management, Manual
 - **Soft Delete:** BEWARE - Blob soft delete retains "deleted" data 1-365 days (default 7)
 - **Verification:** Azure Monitor / Activity Logs, deletion confirmation
 - **Crypto-Shred:** Customer-Managed Keys (CMK) deletion → data unrecoverable
 
+
 **Google Cloud Platform:**
+
 - **Deletion Method:** API (Delete Object, Delete Instance), Lifecycle Policies, Manual
 - **Verification:** Cloud Audit Logs, deletion confirmation
 - **Crypto-Shred:** Customer-Managed Encryption Keys (CMEK) destruction → data unrecoverable
 
+
 **Quality Check:**
+
 - Are soft delete features disabled or accounted for in retention calculations?
 - Is crypto-shred capability documented and tested?
 - Have deletion certificates been requested from providers?
 - Is multi-region data deletion verified (not just single region)?
 
-#### Step 2: SaaS Application Deletion (Sheet 3)
+
+### Step 2: SaaS Application Deletion (Sheet 3)
 
 **Objective:** Assess deletion capabilities for Software-as-a-Service applications
 
@@ -305,60 +346,80 @@ Step 8: Quality Check & Approval (Sheet 9)
 **Common SaaS Categories:**
 
 **Customer Relationship Management (CRM):**
+
 - Salesforce, HubSpot, Microsoft Dynamics 365, Zoho CRM
 - **Deletion:** Admin UI (bulk delete), API (programmatic), Support ticket (account closure)
 - **Risk:** CRM data often has dependencies (contacts, opportunities, cases) - partial deletion risk
 
+
 **Human Resources (HR):**
+
 - Workday, SAP SuccessFactors, BambooHR, ADP
 - **Deletion:** Typically requires support ticket (employee data sensitive)
 - **Compliance:** GDPR Article 17 applies to employee data (ex-employees can request erasure)
 
+
 **Marketing Automation:**
+
 - HubSpot, Marketo, Mailchimp, Pardot
 - **Deletion:** Admin UI (unsubscribe + delete), API
 - **GDPR:** High risk - marketing lists often shared with third parties (subprocessors)
 
+
 **Collaboration & Productivity:**
+
 - Microsoft 365, Google Workspace, Slack, Zoom
 - **Deletion:** Admin UI (user deletion), API
 - **Risk:** Data scattered across multiple services (email, drive, chat, calendar)
 
+
 **Finance & Accounting:**
+
 - QuickBooks Online, Xero, NetSuite, Concur
 - **Deletion:** Often restricted (legal retention requirements for financial records)
 - **Compliance:** Financial data retention mandated by law (cannot delete per GDPR if legal obligation exists)
 
+
 **SaaS Deletion Challenges:**
 
 **Challenge 1: No Self-Service Deletion**
+
 - Many SaaS apps require support ticket to delete data
 - **Response Time:** 30-90 days typical (may exceed GDPR 30-day timeline)
 - **Verification:** No deletion certificate, must trust vendor's confirmation email
 
+
 **Challenge 2: Data Export Limitations**
+
 - Some SaaS apps limit data export (preventing verification before deletion)
 - **Example:** Zoom meeting recordings may not be fully exportable
 - **Mitigation:** Test data export before committing to SaaS vendor
 
+
 **Challenge 3: Soft Delete / Retention Periods**
+
 - SaaS apps often have soft delete (30-90 day retention after "deletion")
 - **Example:** Salesforce recycle bin (15 days), Office 365 deleted items (30 days)
 - **Compliance:** Document retention periods in assessment
 
+
 **Challenge 4: Third-Party Integrations**
+
 - SaaS data synchronized to other services (Zapier, integrations)
 - **Risk:** Deleting from primary SaaS doesn't delete from integrated services
 - **Mitigation:** Map all integrations, delete from integrated services first
 
+
 **Quality Check:**
+
 - Have all SaaS applications been identified (check expense reports, SSO logs)?
 - Is deletion procedure documented (not assumed)?
 - Has data export been tested (required for GDPR data portability + verification)?
 - Are soft delete / retention periods documented?
 - Have integrations been mapped (data may exist in multiple SaaS)?
 
-#### Step 3: Vendor Contract Review (Sheet 4)
+
+### Step 3: Vendor Contract Review (Sheet 4)
 
 **Objective:** Assess vendor contracts for deletion clauses, SLAs, and compliance
 
@@ -372,29 +433,35 @@ Step 8: Quality Check & Approval (Sheet 9)
 **Deletion Clause Assessment Criteria:**
 
 **✅ Strong Deletion Clause:**
+
 - Specifies deletion method (secure deletion, NIST standards)
 - Includes deletion timeline SLA (typically 30-90 days)
 - Requires deletion certificate or audit log evidence
 - Covers all subprocessors
 - Includes penalty for non-compliance
 
+
 **Example Strong Clause:**
 > "Upon termination or at Controller's request, Processor shall delete all personal data within 30 days using NIST SP 800-88 Purge or Destroy methods. Processor shall provide Controller with a signed Certificate of Deletion confirming deletion from all systems including backups and subprocessors. Failure to delete within SLA results in liquidated damages of [amount] per day."
 
 **⚠️ Weak Deletion Clause:**
+
 - Vague language ("reasonable efforts to delete")
 - No deletion timeline specified
 - No verification method (no certificate, no audit logs)
 - Excludes backups or subprocessors
 - No penalty for non-compliance
 
+
 **Example Weak Clause:**
 > "Processor will make reasonable efforts to delete data upon request, subject to legal and technical limitations. Deletion may take up to 180 days. Processor retains data in backups per retention policy."
 
 **❌ Missing Deletion Clause:**
+
 - Contract has no deletion language
 - Standard terms & conditions only (no DPA)
 - Free tier / consumer-grade service (no enterprise SLA)
+
 
 **Deletion SLA Benchmarks:**
 
@@ -408,25 +475,31 @@ Step 8: Quality Check & Approval (Sheet 9)
 **Certificate of Deletion:**
 
 **Best Practice:** Vendor provides signed certificate confirming:
+
 - Data deleted from production systems
 - Data deleted from backups
 - Data deleted from all subprocessors
 - Deletion method used (NIST category)
 - Deletion date and responsible person signature
 
+
 **Alternative Verification:** If no certificate, vendor provides:
+
 - Audit log exports showing deletion events
 - SOC 2 Type II report describing deletion procedures
 - ISO 27001 certification with deletion controls
 
+
 **Quality Check:**
+
 - All vendor contracts reviewed (not just major vendors - small vendors are high risk)?
 - Deletion clauses assessed for strength (not just presence)?
 - SLAs documented and reasonable for GDPR compliance?
 - Certificate of deletion available or alternative verification method defined?
 - Penalty clauses for non-compliance included in contracts?
 
-#### Step 4: Subprocessor Mapping (Sheet 5)
+
+### Step 4: Subprocessor Mapping (Sheet 5)
 
 **Objective:** Identify all subprocessors handling organizational data
 
@@ -443,8 +516,10 @@ Step 8: Quality Check & Approval (Sheet 9)
 A subprocessor is a third party engaged by the processor (your vendor) to process personal data on behalf of the controller (your organization).
 
 **Examples:**
+
 - **Primary Vendor:** Salesforce (CRM)
 - **Subprocessors:** AWS (hosting), Heroku (platform), Tableau (analytics)
+
 
 **GDPR Requirements:**
 1. **Disclosure:** Processor must inform controller of all subprocessors (GDPR Article 28.2)
@@ -455,24 +530,32 @@ A subprocessor is a third party engaged by the processor (your vendor) to proces
 **Subprocessor Deletion Challenges:**
 
 **Challenge 1: Undisclosed Subprocessors**
+
 - Vendor uses subprocessors not disclosed in DPA
 - **Risk:** Data in unknown locations, deletion unverified
 - **Example:** SaaS vendor uses CDN for performance, CDN not disclosed
 
+
 **Challenge 2: Multi-Tier Subprocessing**
+
 - Subprocessor engages sub-subprocessor
 - **Risk:** Data distributed across multiple tiers, deletion complexity
 - **Example:** AWS (subprocessor) uses third-party data centers (sub-subprocessor)
 
+
 **Challenge 3: No Direct Deletion Control**
+
 - Primary vendor relies on subprocessor for deletion
 - **Risk:** Deletion delay, no verification from subprocessor
 - **Example:** SaaS vendor deletes from database, but AWS S3 lifecycle deletion delayed
 
+
 **Challenge 4: Shared Infrastructure**
+
 - Subprocessor hosts multiple tenants on shared infrastructure
 - **Risk:** Data co-location, deletion verification difficult
 - **Example:** Multi-tenant SaaS database - deletion must not affect other tenants
+
 
 **Subprocessor Assessment Questions:**
 
@@ -484,13 +567,15 @@ For each subprocessor, ask:
 5. **Verification:** Can primary vendor provide deletion evidence from subprocessor?
 
 **Quality Check:**
+
 - All subprocessors disclosed by vendors have been identified?
 - Subprocessor functions documented (not just names)?
 - Subprocessor deletion capabilities assessed (not assumed to match primary vendor)?
 - Primary vendor liability for subprocessor deletion confirmed in contract?
 - Multi-tier subprocessing identified and assessed?
 
-#### Step 5: Shadow IT Assessment (Sheet 6)
+
+### Step 5: Shadow IT Assessment (Sheet 6)
 
 **Objective:** Identify unapproved cloud services containing organizational data
 
@@ -506,77 +591,105 @@ For each subprocessor, ask:
 Shadow IT refers to cloud services and applications used by employees without IT department approval or knowledge. This creates uncontrolled data storage and deletion risk.
 
 **Examples:**
+
 - Employee uses personal Dropbox to share customer files
 - Marketing team subscribes to unapproved analytics platform
 - Developer uses free cloud database for testing (forgets to delete test data)
 - Department purchases SaaS without IT review (no DPA, no deletion clause)
 
+
 **Shadow IT Discovery Methods:**
 
 **Method 1: Cloud Access Security Broker (CASB)**
+
 - CASB monitors network traffic, identifies cloud service usage
 - **Example Tools:** Netskope, McAfee MVISION Cloud, Palo Alto Prisma Access
 - **Coverage:** High (detects most cloud services)
 
+
 **Method 2: Expense Report Analysis**
+
 - Review expense reports for SaaS subscriptions
 - **Coverage:** Medium (misses free tier services, personal credit cards)
 
+
 **Method 3: Network Traffic Analysis**
+
 - Firewall logs, DNS queries to cloud service domains
 - **Coverage:** Medium (encrypted traffic limits visibility)
 
+
 **Method 4: SSO / Identity Provider Logs**
-- Review SSO logs (Okta, Azure AD) for unapproved applications
+
+- Review SSO logs (Okta, Entra ID) for unapproved applications
 - **Coverage:** Low (only detects services using SSO)
 
+
 **Method 5: User Surveys / Interviews**
+
 - Ask employees what cloud services they use
 - **Coverage:** Low (relies on self-reporting)
+
 
 **Shadow IT Deletion Risks:**
 
 **Risk 1: No Deletion Control**
+
 - Free tier / consumer services have no enterprise deletion SLA
 - **Example:** Google Drive free account - no deletion certificate available
 
+
 **Risk 2: Personal Accounts**
+
 - Employee uses personal email for work
 - **Risk:** Employee leaves, data remains in personal account indefinitely
 
+
 **Risk 3: No Data Processing Agreement**
+
 - Unapproved service = no DPA = no deletion obligations
 - **GDPR Risk:** No contractual basis for vendor to delete data
 
+
 **Risk 4: Data Co-Mingling**
+
 - Work and personal data mixed in unapproved service
 - **Risk:** Cannot delete work data without affecting personal data
+
 
 **Shadow IT Remediation Options:**
 
 **Option 1: Migrate to Approved Service**
+
 - Export data from Shadow IT service
 - Import to approved, DPA-compliant service
 - Delete from Shadow IT service (verify if possible)
 
+
 **Option 2: Formalize Usage**
+
 - Upgrade to enterprise tier with DPA
 - Add vendor to approved vendor list
 - Document deletion capabilities
 
+
 **Option 3: Prohibit and Delete**
+
 - Policy: Immediate data deletion from unapproved service
 - User training on approved alternatives
 - Monitor for recurrence
 
+
 **Quality Check:**
+
 - Shadow IT discovery methods deployed (not relying on one method)?
 - All discovered Shadow IT services documented (even low-risk ones)?
 - Data sensitivity assessed for each Shadow IT service?
 - Remediation plan defined (migrate, formalize, or delete)?
 - User training planned to prevent future Shadow IT?
 
-#### Step 6: Evidence Collection (Sheet 8)
+
+### Step 6: Evidence Collection (Sheet 8)
 
 **Objective:** Link supporting documentation to third-party deletion assessments
 
@@ -589,43 +702,56 @@ Shadow IT refers to cloud services and applications used by employees without IT
 **Evidence Types:**
 
 **Vendor Contracts:**
+
 - Data Processing Agreements (DPAs) with deletion clauses
 - Service Level Agreements (SLAs) for deletion timelines
 - Master Service Agreements (MSAs)
 - Subprocessor disclosure notices
 
+
 **Deletion Certificates:**
+
 - Vendor-signed certificates of deletion
 - Cloud provider deletion confirmation emails
 - Audit log exports showing deletion events
 
+
 **Audit Reports:**
+
 - SOC 2 Type II reports (deletion controls tested)
 - ISO 27001 certificates (deletion procedures)
 - Cloud provider compliance reports
 
+
 **Technical Documentation:**
+
 - Cloud provider deletion policy whitepapers (AWS, Azure, GCP)
 - SaaS application deletion procedures (from vendor documentation)
 - API documentation for programmatic deletion
 
+
 **Verification Evidence:**
+
 - Screenshots of deletion configurations (lifecycle policies)
 - Crypto-shred key destruction logs
 - CASB reports (Shadow IT discovery)
 
+
 **Quality Check:**
+
 - Every cloud provider / vendor has supporting evidence?
 - Deletion certificates collected where available?
 - Contracts reviewed and deletion clauses extracted?
 - Subprocessor disclosures on file?
 - Shadow IT discovery reports documented?
 
-#### Step 7: Review Summary Dashboard (Sheet 7)
+
+### Step 7: Review Summary Dashboard (Sheet 7)
 
 **Objective:** Validate overall third-party deletion compliance and identify critical gaps
 
 **The Summary Dashboard auto-calculates:**
+
 - Overall third-party deletion compliance percentage
 - Count of vendors with strong deletion clauses
 - Count of vendors without deletion SLAs
@@ -633,17 +759,21 @@ Shadow IT refers to cloud services and applications used by employees without IT
 - Shadow IT count and data sensitivity
 - Critical gaps requiring immediate remediation
 
+
 **Review Questions:**
+
 - Does overall compliance % reflect your understanding of vendor deletion capabilities?
 - Are any vendors with Confidential/Restricted data missing deletion clauses? (High risk)
 - Have all subprocessors been identified and assessed?
 - Is Shadow IT count acceptable, or does it indicate policy enforcement gap?
 
-#### Step 8: Quality Check & Approval (Sheet 9)
+
+### Step 8: Quality Check & Approval (Sheet 9)
 
 **Objective:** Final validation and three-level approval workflow
 
 **Self-Check Before Submitting for Approval:**
+
 - [ ] All cloud providers and SaaS vendors documented (no major services omitted)
 - [ ] Vendor contracts reviewed for deletion clauses and SLAs
 - [ ] Deletion certificates requested from major providers
@@ -653,6 +783,7 @@ Shadow IT refers to cloud services and applications used by employees without IT
 - [ ] Status indicators accurate (not aspirational)
 - [ ] Gaps and remediation plans realistic and resourced
 
+
 **Approval Workflow:**
 1. **Level 1: Technical/Operational** - Cloud Administrator / Vendor Manager validates vendor inventory and deletion capabilities
 2. **Level 2: Management** - CISO/DPO approves remediation plans and contract renegotiation priorities
@@ -660,9 +791,9 @@ Shadow IT refers to cloud services and applications used by employees without IT
 
 ---
 
-## 4. Question-by-Question Guidance
+# Question-by-Question Guidance
 
-### 4.1 Cloud Provider Deletion (Sheet 2)
+## Cloud Provider Deletion (Sheet 2)
 
 **Q: How do I verify cloud provider deletion if I can't access their data centers?**
 A: Multiple verification methods:
@@ -676,10 +807,12 @@ A: Multiple verification methods:
 
 **Q: What's the difference between AWS "delete" and "crypto-shred"?**
 A:
+
 - **Standard Delete:** Removes object, but data may persist in backend systems until overwritten
 - **Crypto-Shred:** Destroys encryption key (CMK), rendering encrypted data mathematically unrecoverable
 - **Speed:** Crypto-shred instant (key deletion), standard delete gradual (eventual consistency)
 - **Verification:** Crypto-shred easily verified (key status = PendingDeletion), standard delete requires audit logs
+
 
 **Recommendation:** Use crypto-shred for Confidential/Restricted data in cloud storage.
 
@@ -693,26 +826,32 @@ A: Cloud storage replicates data across multiple regions/data centers. When you 
 
 **Q: Should I disable Azure Blob "soft delete" feature?**
 A: Depends on use case:
+
 - **Soft Delete Enabled (7-30 days):** Provides recovery window, but "deleted" data persists
 - **GDPR Consideration:** If data subject requests erasure, soft delete retention adds to response time
 - **Recommendation:** Disable soft delete for compliance-critical storage accounts, or document retention period in GDPR response timelines
 
-### 4.2 SaaS Application Deletion (Sheet 3)
+
+## SaaS Application Deletion (Sheet 3)
 
 **Q: Can I delete data from Salesforce myself, or do I need to contact support?**
 A: Salesforce offers both:
+
 - **Admin UI:** Bulk delete records, contacts, opportunities (limited to 200 at a time)
 - **API:** Programmatic deletion (no limits, recommended for large-scale deletion)
 - **Data Loader:** Desktop tool for bulk deletion (up to 5M records)
 - **Support Ticket:** For account closure or deletion of system-level data
 
+
 **For GDPR erasure requests:** API or Data Loader preferred (faster, verifiable via audit logs).
 
 **Q: What if SaaS vendor says they "can't" delete data?**
 A: Red flag - investigate further:
+
 - **Legal Retention:** If vendor has legal obligation to retain (financial records, tax data), deletion may be legitimately restricted
 - **Technical Limitation:** Vendor may lack deletion capability (legacy system) - this is a compliance risk
 - **Policy Limitation:** Vendor policy may prohibit deletion during contract term - negotiate exception for GDPR
+
 
 **Action:** If vendor cannot delete, consider:
 1. Contract renegotiation (add deletion clause)
@@ -728,14 +867,17 @@ A: Multi-step deletion process:
 5. **Verify:** Check all integrated systems confirm deletion
 
 **Common Integration Deletion Gaps:**
+
 - ❌ Delete from SaaS, but integrated data warehouse still has copy
 - ❌ Delete records, but attachments/files remain in document storage
 - ❌ Delete customer, but marketing platform still has email address
 
-### 4.3 Vendor Contract Assessment (Sheet 4)
+
+## Vendor Contract Assessment (Sheet 4)
 
 **Q: What if vendor refuses to add deletion clause to contract?**
 A: Assess vendor criticality and data sensitivity:
+
 - **High-Risk Scenario:** Vendor processes Confidential/Restricted data, refuses deletion clause
   - **Action:** Replace vendor (find alternative with proper DPA)
   - **Justification:** GDPR Article 28 requires processor deletion assistance
@@ -744,24 +886,29 @@ A: Assess vendor criticality and data sensitivity:
 - **Low-Risk Scenario:** Vendor processes Public data, no deletion clause
   - **Action:** Acceptable (Public data = no GDPR deletion requirement)
 
+
 **Q: What's a reasonable deletion SLA?**
 A: Depends on use case:
+
 - **GDPR Data Subject Request:** 30 days maximum (GDPR Article 12.3)
 - **Contract Termination:** 30-90 days acceptable
 - **Routine Deletion (Retention Expiration):** 90 days acceptable
 - **Cloud Infrastructure (API):** Immediate (within minutes/hours)
 
+
 **Negotiation Tip:** If vendor proposes >90 day SLA, negotiate down or require interim deletion confirmation (e.g., production deletion in 30 days, backup deletion in 90 days).
 
 **Q: Should deletion certificate be signed or is email confirmation sufficient?**
 A: For audit purposes:
+
 - **Ideal:** Signed certificate on vendor letterhead (legally binding)
 - **Acceptable:** Email confirmation from authorized vendor representative (saved to evidence register)
 - **Insufficient:** Automated system confirmation with no human verification
 
+
 **Audit Readiness:** Auditors prefer signed certificates, but email from authorized person (CFO, CTO, Legal) is typically acceptable.
 
-### 4.4 Subprocessor Mapping (Sheet 5)
+## Subprocessor Mapping (Sheet 5)
 
 **Q: How do I find out who my vendor's subprocessors are?**
 A: Multiple sources:
@@ -774,9 +921,11 @@ A: Multiple sources:
 
 **Q: What if subprocessor list changes frequently?**
 A: GDPR allows "general authorization" with notification:
+
 - **General Authorization:** Controller authorizes vendor to use subprocessors, subject to notification
 - **Notification:** Vendor must inform controller before engaging new subprocessor
 - **Objection Period:** Controller has reasonable time to object (typically 30 days)
+
 
 **Action:** Review vendor notification emails for subprocessor changes, assess deletion impact.
 
@@ -785,19 +934,25 @@ A: Primary vendor is responsible (GDPR Article 28.4):
 > "Where a processor engages another processor for carrying out specific processing activities on behalf of the controller, the same data protection obligations as set out in the contract or other legal act between the controller and the processor... shall be imposed on that other processor..."
 
 **However:** Controller (you) should verify that:
+
 - Primary vendor has contractual deletion obligations with subprocessors
 - Primary vendor can demonstrate subprocessor deletion compliance
 
+
 **Best Practice:** In DPA with primary vendor, require clause: "Vendor is responsible for ensuring all subprocessors delete data per same SLA and verification requirements."
 
-### 4.5 Shadow IT Assessment (Sheet 6)
+## Shadow IT Assessment (Sheet 6)
 
 **Q: How do I prevent Shadow IT without blocking employee productivity?**
 A: Balance security and usability:
 1. **Approved Alternatives:** Provide approved cloud services that meet employee needs
+
    - Example: Approved file sharing (OneDrive, Box) so employees don't use Dropbox
+
 2. **Easy Approval Process:** Make it easy for employees to request new cloud services
+
    - Fast-track approval for low-risk services
+
 3. **User Training:** Explain risks of Shadow IT (data loss, compliance violations)
 4. **CASB Monitoring:** Deploy CASB to detect Shadow IT without blocking (visibility first)
 5. **Graduated Response:** Warn first, block if persistent violations
@@ -807,28 +962,33 @@ A: Immediate action required:
 1. **Assess Risk:** What data is in Shadow IT service? How sensitive?
 2. **Contain:** Prevent additional data upload if possible (CASB block rule)
 3. **Migrate or Delete:** 
+
    - If service useful: Upgrade to enterprise tier, add DPA, migrate to approved account
    - If service unnecessary: Export data, delete from Shadow IT service, delete Shadow IT account
+
 4. **Document:** Record in assessment, track remediation completion
 5. **User Training:** Retrain user on approved services and Shadow IT policy
 
 **Q: Do I need to assess free tier / trial accounts?**
 A: Yes - free tier accounts are high risk:
+
 - **No DPA:** Consumer terms of service, no GDPR processor obligations
 - **No Deletion SLA:** Vendor may retain data indefinitely
 - **No Support:** Cannot request deletion certificate or escalate issues
+
 
 **Action:** Identify all free tier usage, upgrade to enterprise tier or migrate to approved service.
 
 ---
 
-## 5. Evidence Collection
+# Evidence Collection
 
-### 5.1 What Evidence to Collect
+## What Evidence to Collect
 
 For each assessment area, gather supporting documentation:
 
 **Cloud Provider Deletion:**
+
 - Cloud provider deletion policy documents (AWS, Azure, GCP whitepapers)
 - Data Processing Agreements (DPAs) with deletion clauses
 - Deletion certificates or confirmation emails
@@ -836,51 +996,66 @@ For each assessment area, gather supporting documentation:
 - Crypto-shred key destruction logs
 - SOC 2 Type II / ISO 27001 reports
 
+
 **SaaS Application Deletion:**
+
 - SaaS vendor DPAs with deletion clauses
 - Deletion procedure documentation (from vendor support docs)
 - Deletion confirmation emails (from past deletions)
 - Data export capabilities test results
 - Integration mapping (where SaaS data is synchronized)
 
+
 **Vendor Contract Assessment:**
+
 - All vendor contracts with data processing agreements
 - Deletion clause excerpts (extracted and documented)
 - SLA documentation (deletion timelines)
 - Penalty clauses for non-compliance
 - Amendment history (if deletion clauses added post-contract)
 
+
 **Subprocessor Mapping:**
+
 - Subprocessor disclosure notices from vendors
 - Subprocessor list updates (email notifications)
 - Subprocessor DPAs (if available)
 - Vendor compliance reports documenting subprocessor management
 
+
 **Shadow IT Assessment:**
+
 - CASB reports (cloud service discovery)
 - Expense report analysis results
 - Network traffic analysis (cloud service domains)
 - User survey results (self-reported cloud usage)
 - Remediation tracking (migration or deletion completion)
 
-### 5.2 Evidence Storage & Retention
+
+## Evidence Storage & Retention
 
 **Where to Store Evidence:**
+
 - Centralized evidence repository (ISMS document management)
 - Contract management system (for vendor agreements)
 - Compliance management platform
 
+
 **Evidence Retention Period:**
+
 - Vendor contracts: Duration of contract + 7 years (for legal disputes)
 - Deletion certificates: 7 years (to demonstrate historical compliance)
 - Audit reports: 4 years (ISO 27001 certification cycle)
 
+
 **Evidence Protection:**
+
 - Access controls: Limited to ISMS team, Legal, Procurement, auditors
 - Encryption: Contracts may contain sensitive commercial terms
 - Integrity: Hash/checksum for contracts to detect tampering
 
-### 5.3 Audit-Readiness Tips
+
+## Audit-Readiness Tips
 
 **What Auditors Will Look For:**
 1. **Vendor Inventory Completeness:** All cloud/SaaS vendors identified?
@@ -891,6 +1066,7 @@ For each assessment area, gather supporting documentation:
 6. **High-Risk Vendors:** Confidential/Restricted data vendors have strong deletion clauses?
 
 **Common Audit Findings (And How to Avoid Them):**
+
 - ❌ **"Vendor contracts missing deletion clauses"** → Renegotiate contracts, prioritize high-risk vendors
 - ❌ **"Subprocessors not disclosed"** → Request subprocessor lists from all vendors, document in assessment
 - ❌ **"No deletion verification from vendors"** → Request deletion certificates or implement audit log verification
@@ -898,123 +1074,150 @@ For each assessment area, gather supporting documentation:
 - ❌ **"Free tier / consumer services in use"** → Upgrade to enterprise tier or migrate to approved service
 - ❌ **"No deletion SLAs"** → Negotiate SLAs in contract renewals, document acceptable timelines
 
+
 ---
 
-## 6. Common Pitfalls
+# Common Pitfalls
 
-### 6.1 Assuming Cloud Provider Deletion = Immediate
+## Assuming Cloud Provider Deletion = Immediate
 
 **Pitfall:** Believing cloud "delete" instantly removes data from all systems
 
 **Reality:**
+
 - **Multi-Region Replication:** Data replicated across regions, deletion propagates gradually
 - **Soft Delete:** Azure Blob soft delete, AWS S3 versioning - "deleted" data retained
 - **Backup Systems:** Cloud provider backups may retain deleted data for days/weeks
 - **Eventual Consistency:** Data accessible from some regions during deletion propagation
 
+
 **Scenario:**
+
 - Customer requests GDPR erasure
 - Organization deletes from AWS S3 immediately
 - Data still accessible from EU region for 30 minutes (multi-region replication lag)
 - **Result:** Technical GDPR violation (data not immediately erased)
 
+
 **Prevention:**
+
 - Document deletion propagation timelines in GDPR response procedures
 - Disable soft delete for compliance-critical accounts
 - Use crypto-shred (key destruction) for immediate cryptographic erasure
 - Verify deletion across all regions, not just primary region
 
-### 6.2 Not Reviewing Vendor Subprocessor Changes
+
+## Not Reviewing Vendor Subprocessor Changes
 
 **Pitfall:** Vendor engages new subprocessor, organization unaware
 
 **Scenario:**
+
 - SaaS vendor sends email: "We're adding Acme Analytics as subprocessor"
 - Email goes to procurement inbox, ignored
 - Acme Analytics processes customer data without organization's knowledge
 - Acme Analytics has no deletion clause, data retained indefinitely
 - **Result:** GDPR Article 28 violation (subprocessor not authorized, deletion unverified)
 
+
 **Prevention:**
+
 - Centralize subprocessor notification emails (route to DPO/vendor management)
 - Review subprocessor changes quarterly
 - Maintain subprocessor register (updated when notification received)
 - Exercise objection right if subprocessor lacks adequate deletion procedures
 
-### 6.3 Shadow IT Data Leakage
+
+## Shadow IT Data Leakage
 
 **Pitfall:** Employees use unapproved cloud services, data persists after employee departure
 
 **Scenario:**
+
 - Employee uses personal Google Drive to collaborate on customer presentation
 - Employee leaves company, personal Google Drive account remains active
 - Customer data persists in ex-employee's personal account indefinitely
 - **Result:** Data breach, GDPR violation, no deletion control
 
+
 **Prevention:**
+
 - CASB deployment (detect Shadow IT in real-time)
 - Offboarding procedure: Require employees to confirm no work data in personal accounts
 - User training: Explain Shadow IT risks and approved alternatives
 - Technical controls: Block high-risk cloud services at firewall/proxy
 
-### 6.4 Free Tier / Trial SaaS Without DPA
+
+## Free Tier / Trial SaaS Without DPA
 
 **Pitfall:** Using free tier SaaS for production data without data processing agreement
 
 **Scenario:**
+
 - Marketing team uses HubSpot free tier for lead tracking
 - No DPA (consumer terms of service apply)
 - Company needs to delete leads per GDPR request
 - HubSpot free tier: No deletion SLA, no support, no deletion certificate
 - **Result:** Cannot prove deletion, GDPR compliance gap
 
+
 **Prevention:**
+
 - Prohibit free tier usage for business data (policy)
 - Require enterprise tier with DPA for all SaaS
 - CASB detection of free tier usage (alert IT/procurement)
 - Quarterly review of SaaS subscriptions (expense reports)
 
-### 6.5 Vendor Lock-In Due to Deletion Restrictions
+
+## Vendor Lock-In Due to Deletion Restrictions
 
 **Pitfall:** Vendor contract prohibits deletion during contract term, preventing vendor change
 
 **Scenario:**
+
 - Organization contracts with niche SaaS vendor
 - Contract clause: "Data deletion only permitted after contract termination"
 - SaaS vendor performance degrades, organization wants to switch vendors
 - Cannot delete data to move to competitor (contract restriction)
 - **Result:** Vendor lock-in, stuck with poor service
 
+
 **Prevention:**
+
 - Negotiate deletion rights during contract term (for GDPR compliance)
 - Include data portability clause (export data in standard format)
 - Avoid long-term contracts without exit clauses
 - Review contract terms before signing (Legal + IT review)
 
-### 6.6 Subprocessor Deletion Gaps
+
+## Subprocessor Deletion Gaps
 
 **Pitfall:** Primary vendor deletes data, but subprocessor retains copy
 
 **Scenario:**
+
 - SaaS vendor uses AWS as subprocessor (hosting)
 - Organization requests deletion, SaaS vendor deletes from application database
 - SaaS vendor does NOT delete AWS S3 backups (outside application)
 - Data persists in AWS S3 indefinitely
 - **Result:** Incomplete deletion, GDPR violation
 
+
 **Prevention:**
+
 - In DPA, require clause: "Vendor responsible for deletion from ALL subprocessors"
 - Request deletion certificate covering primary vendor + all subprocessors
 - For critical data, require vendor to provide subprocessor deletion evidence
 - Audit vendor deletion procedures (SOC 2 Type II should test subprocessor deletion)
 
+
 ---
 
-## 7. Quality Checklist
+# Quality Checklist
 
 Before submitting assessment for approval, verify:
 
-### 7.1 Completeness
+## Completeness
 
 - [ ] All cloud providers documented (IaaS, PaaS)
 - [ ] All SaaS applications documented (check SSO logs, expense reports)
@@ -1023,7 +1226,8 @@ Before submitting assessment for approval, verify:
 - [ ] Shadow IT discovery conducted (CASB, expense reports, network logs)
 - [ ] Evidence register populated with contracts and certificates
 
-### 7.2 Contractual Compliance
+
+## Contractual Compliance
 
 - [ ] All vendor DPAs include deletion clauses
 - [ ] Deletion SLAs documented and reasonable (≤90 days typical)
@@ -1031,7 +1235,8 @@ Before submitting assessment for approval, verify:
 - [ ] Subprocessor disclosure requirements met
 - [ ] Penalty clauses for deletion non-compliance included
 
-### 7.3 Technical Verification
+
+## Technical Verification
 
 - [ ] Cloud provider deletion methods documented (API, lifecycle, crypto-shred)
 - [ ] SaaS deletion procedures tested or documented
@@ -1039,32 +1244,36 @@ Before submitting assessment for approval, verify:
 - [ ] Multi-region deletion verified (not just single region)
 - [ ] Soft delete features disabled or documented
 
-### 7.4 GDPR Compliance
+
+## GDPR Compliance
 
 - [ ] GDPR Article 28 processor obligations met (deletion assistance)
 - [ ] Subprocessors authorized and disclosed
 - [ ] Deletion timelines compatible with GDPR Article 17 (30-60 days)
 - [ ] Data return vs. deletion options documented
 
-### 7.5 Risk Management
+
+## Risk Management
 
 - [ ] High-risk vendors identified (Confidential/Restricted data, weak deletion clause)
 - [ ] Shadow IT remediated or documented with mitigation plan
 - [ ] Free tier / consumer services upgraded or replaced
 - [ ] Vendor lock-in risks assessed (deletion restrictions in contracts)
 
-### 7.6 Audit Readiness
+
+## Audit Readiness
 
 - [ ] Traceability: Control → Policy → Assessment → Evidence
 - [ ] Evidence locations accessible to auditors
 - [ ] Deletion certificates on file (or alternative verification documented)
 - [ ] No obvious compliance gaps that would result in audit finding
 
+
 ---
 
-## 8. Review & Approval
+# Review & Approval
 
-### 8.1 Self-Review
+## Self-Review
 
 Before submitting for formal approval, conduct self-review:
 
@@ -1075,24 +1284,30 @@ Before submitting for formal approval, conduct self-review:
 5. **Evidence Check:** Can you locate all referenced contracts and certificates?
 6. **Stakeholder Validation:** Share draft with Legal, Procurement, Cloud Administrators
 
-### 8.2 Approval Workflow (Sheet 9)
+## Approval Workflow (Sheet 9)
 
 **Level 1: Technical/Operational Approval**
+
 - **Approver:** Cloud Administrator / Vendor Management / IT Operations Manager
 - **Validates:** Vendor inventory completeness, deletion capability accuracy
 - **Approval Criteria:** Assessment accurately reflects current cloud/vendor deletion posture
 
+
 **Level 2: Management Approval**
+
 - **Approver:** Chief Information Security Officer / Data Protection Officer / Chief Procurement Officer
 - **Validates:** Contract adequacy, GDPR Article 28 compliance, remediation plans
 - **Approval Criteria:** Vendor contracts meet deletion requirements, remediation adequately resourced
 
+
 **Level 3: Executive Approval**
+
 - **Approver:** Chief Executive Officer / Chief Risk Officer / General Counsel
 - **Validates:** Overall third-party deletion risk, vendor lock-in risks
 - **Approval Criteria:** Executive leadership acknowledges vendor deletion compliance status and commits to contract renegotiation where needed
 
-### 8.3 Post-Approval Actions
+
+## Post-Approval Actions
 
 Once all three levels approve:
 
@@ -1113,7 +1328,7 @@ Once all three levels approve:
 **Continue to PART II: TECHNICAL SPECIFICATION (Deliverable 2) for detailed Excel workbook structure, column definitions, validation rules, and Python script integration points.**
 
 # ISMS-IMP-A.8.10.3 - Third-Party & Cloud Deletion Assessment
-## DELIVERABLE 2: PART II - TECHNICAL SPECIFICATION
+# DELIVERABLE 2: PART II - TECHNICAL SPECIFICATION
 
 ---
 
@@ -1122,9 +1337,9 @@ Once all three levels approve:
 
 ---
 
-## 1. Workbook Structure Overview
+# Workbook Structure Overview
 
-### 1.1 Sheet Organization (9 Sheets Total)
+## Sheet Organization (9 Sheets Total)
 
 | Sheet # | Sheet Name | Purpose | Rows | User Entry |
 |---------|------------|---------|------|------------|
@@ -1140,7 +1355,7 @@ Once all three levels approve:
 
 **Total Data Entry Points:** ~100-200 (depending on vendor count)
 
-### 1.2 Workbook Flow
+## Workbook Flow
 
 ```
 Sheet 1 (Instructions) → Orientation
@@ -1154,31 +1369,35 @@ Sheet 7 (Summary Dashboard) → Vendor Risk Validation
 Sheet 9 (Approval Sign-Off) → Authorization
 ```
 
-### 1.3 Integration with ISMS-REF-A.5.23 Cloud Service Provider Registry
+## Integration with ISMS-REF-A.5.23 Cloud Service Provider Registry
 
 **CRITICAL:** This assessment integrates with **ISMS-REF-A.5.23 - Cloud Service Provider Registry** which provides:
+
 - Cloud provider tier ratings (Tier 1: Enterprise, Tier 2: Mid-Market, Tier 3: Small/Niche)
 - Deletion capability ratings by provider
 - Standard DPA templates by provider
 - Recommended deletion verification methods
+
 
 **If ISMS-REF-A.5.23 available:** Reference provider tiers in Column R (Sheet 2)
 **If ISMS-REF-A.5.23 not available:** Manually assess provider deletion capabilities
 
 ---
 
-## 2. Sheet 1: Instructions & Legend
+# Sheet 1: Instructions & Legend
 
-### 2.1 Purpose
+## Purpose
 Provide clear guidance on workbook usage, GDPR Article 28 processor obligations, and third-party deletion requirements.
 
-### 2.2 Content Sections
+## Content Sections
 
 **Section 1: Assessment Overview (Rows 3-12)**
+
 - Document ID, version, related policy
 - Purpose and scope
 - Target audience
 - Review cycle and date
+
 
 **Section 2: GDPR Article 28 - Processor Obligations (Rows 14-40)**
 
@@ -1203,11 +1422,13 @@ Provide clear guidance on workbook usage, GDPR Article 28 processor obligations,
 | **Unknown** | - Deletion capability not assessed<br>- No DPA | Shadow IT, unapproved services | Critical |
 
 **Section 4: How to Use This Workbook (Rows 60-72)**
+
 - Step-by-step workflow
 - Color coding explanation
 - Validation rules
 - Evidence linking
 - ISMS-REF-A.5.23 integration (if available)
+
 
 **Section 5: Color Legend (Rows 74-85)**
 
@@ -1223,14 +1444,15 @@ Provide clear guidance on workbook usage, GDPR Article 28 processor obligations,
 
 ---
 
-## 3. Sheet 2: Cloud Provider Deletion
+# Sheet 2: Cloud Provider Deletion
 
-### 3.1 Purpose
+## Purpose
 Document deletion capabilities for cloud infrastructure providers (IaaS, PaaS).
 
-### 3.2 Sheet Layout
+## Sheet Layout
 
 **Header Section (Rows 1-9):**
+
 - Row 1: Sheet title "2. Cloud Provider Deletion Capabilities"
 - Row 2: Assessment objective
 - Row 3: Instructions for completion
@@ -1239,18 +1461,23 @@ Document deletion capabilities for cloud infrastructure providers (IaaS, PaaS).
 - Row 8: Reminder: "Verify multi-region deletion propagation"
 - Row 9: Column headers (frozen)
 
+
 **Data Entry Section (Rows 10-22):**
+
 - 13 rows for cloud providers (yellow fill)
 - Pre-populated example in Row 10 (editable)
 - Rows 11-22 blank for user entry
 
+
 **Reference Section (Rows 24-75):**
+
 - Cloud provider deletion policies (AWS, Azure, GCP)
 - Crypto-shred implementation guide
 - Deletion verification methods
 - ISMS-REF-A.5.23 integration notes (if available)
 
-### 3.3 Column Definitions (17 standard + 3 extended = 20 total)
+
+## Column Definitions (17 standard + 3 extended = 20 total)
 
 | Column | Header | Width | Type | Purpose |
 |--------|--------|-------|------|---------|
@@ -1275,7 +1502,7 @@ Document deletion capabilities for cloud infrastructure providers (IaaS, PaaS).
 | S | Deletion SLA (Days) | 20 | Number | Contractual deletion timeline (0 for immediate) |
 | T | Multi-Region Verified | 20 | Dropdown | Yes / No / Single Region Only / N/A |
 
-### 3.4 Data Validation Rules
+## Data Validation Rules
 
 **Column D - Deletion Method Available:**
 ```
@@ -1293,9 +1520,11 @@ Dropdown: ✅ Compliant, ⚠️ Partial, ❌ Non-Compliant, N/A
 ```
 
 **Compliance Logic:**
+
 - ✅ Compliant: API or Crypto-Shred available + Verification method implemented + SLA ≤90 days
 - ⚠️ Partial: Manual deletion available + Some verification + SLA 90-180 days
 - ❌ Non-Compliant: Support ticket only OR no verification OR SLA >180 days
+
 
 **Column M - Risk Level:**
 ```
@@ -1321,11 +1550,13 @@ Number (integer): 0 (immediate), 1-365
 ```
 
 **Benchmarks:**
+
 - 0: Immediate (API deletion, crypto-shred)
 - 1-30: Excellent (enterprise cloud providers)
 - 31-90: Acceptable (mid-market providers)
 - 91-180: Borderline (requires justification)
 - >180: Non-compliant (unless legal retention requirement)
+
 
 **Column T - Multi-Region Verified:**
 ```
@@ -1334,28 +1565,36 @@ Dropdown: Yes, No, Single Region Only, N/A
 
 **Purpose:** Ensure deletion propagates across all geographic regions where data is replicated.
 
-### 3.5 Conditional Formatting
+## Conditional Formatting
 
 **Status Column (F):**
+
 - ✅ Compliant: Green fill (RGB: 198, 239, 206)
 - ⚠️ Partial: Yellow fill (RGB: 255, 235, 156)
 - ❌ Non-Compliant: Red fill (RGB: 255, 199, 206)
 
+
 **Deletion SLA Exceeds Thresholds:**
+
 - If Column S > 180 days: Red fill (non-compliant)
 - If Column S 91-180 days: Yellow fill (borderline)
 - If Column S ≤90 days: No special formatting (acceptable)
 
+
 **No Verification Method:**
+
 - If Column E = "None": Orange fill on entire row (high risk - cannot verify deletion)
 
+
 **Risk Level Column (M):**
+
 - Critical: Red fill (RGB: 255, 199, 206)
 - High: Orange fill (RGB: 255, 230, 153)
 - Medium: Yellow fill (RGB: 255, 242, 204)
 - Low: No special formatting
 
-### 3.6 Reference Tables (Rows 24-75)
+
+## Reference Tables (Rows 24-75)
 
 **Table 1: Cloud Provider Deletion Policies (Rows 26-50)**
 
@@ -1414,14 +1653,15 @@ Dropdown: Yes, No, Single Region Only, N/A
 
 ---
 
-## 4. Sheet 3: SaaS Application Deletion
+# Sheet 3: SaaS Application Deletion
 
-### 4.1 Purpose
+## Purpose
 Assess deletion capabilities for Software-as-a-Service applications.
 
-### 4.2 Sheet Layout
+## Sheet Layout
 
 **Header Section (Rows 1-9):**
+
 - Row 1: Sheet title "3. SaaS Application Deletion Capabilities"
 - Row 2: Assessment objective
 - Row 3: Instructions for completion
@@ -1430,16 +1670,21 @@ Assess deletion capabilities for Software-as-a-Service applications.
 - Row 8: Warning: "Check for data in integrations (Zapier, APIs) before deletion"
 - Row 9: Column headers (frozen)
 
+
 **Data Entry Section (Rows 10-22):**
+
 - 13 rows for SaaS applications (yellow fill)
 - Focus: Deletion accessibility and verification
 
+
 **Reference Section (Rows 24-70):**
+
 - SaaS category deletion challenges
 - Common SaaS deletion procedures
 - Integration mapping guidance
 
-### 4.3 Column Definitions (Standard A-Q + Extended R-T)
+
+## Column Definitions (Standard A-Q + Extended R-T)
 
 **Columns A-Q:** Same as Sheet 2 (standard columns)
 
@@ -1451,7 +1696,7 @@ Assess deletion capabilities for Software-as-a-Service applications.
 | S | Deletion Procedure | 35 | Dropdown | API / Admin UI / Support Ticket / Unknown |
 | T | Data Export Capability | 25 | Dropdown | Full Export Available / Partial Export / No Export / Unknown |
 
-### 4.4 Data Validation Rules (Extended Columns)
+## Data Validation Rules (Extended Columns)
 
 **Column R - Application Category:**
 ```
@@ -1464,10 +1709,12 @@ Dropdown: API (Programmatic), Admin UI (Self-Service), Support Ticket (Vendor As
 ```
 
 **Compliance Preference:**
+
 - **Best:** API (automated, verifiable via logs)
 - **Acceptable:** Admin UI (self-service, but manual)
 - **Problematic:** Support Ticket (slow, no direct control)
 - **Critical:** Unknown (high risk - deletion capability not verified)
+
 
 **Column T - Data Export Capability:**
 ```
@@ -1476,7 +1723,7 @@ Dropdown: Full Export Available, Partial Export, No Export, Unknown
 
 **GDPR Relevance:** Data export required for GDPR Article 20 (data portability) and enables deletion verification (export before delete, verify export complete, then delete).
 
-### 4.5 Reference Tables (Rows 24-70)
+## Reference Tables (Rows 24-70)
 
 **Table 1: SaaS Deletion Challenges by Category (Rows 26-48)**
 
@@ -1492,49 +1739,60 @@ Dropdown: Full Export Available, Partial Export, No Export, Unknown
 **Table 2: Common SaaS Deletion Procedures (Rows 50-65)**
 
 **Salesforce:**
+
 - **Bulk Delete:** Admin UI (200 records max), Data Loader (5M records)
 - **API:** REST/SOAP API (DELETE method)
 - **Account Closure:** Support ticket (complete org deletion)
 - **Verification:** Audit logs (setup audit trail), recycle bin check
 
+
 **Microsoft 365:**
+
 - **User Deletion:** Admin Center (soft delete 30 days, then hard delete)
 - **Mailbox Deletion:** Exchange Admin Center
 - **OneDrive Deletion:** SharePoint Admin Center (files retained 30 days in recycle bin)
 - **Verification:** Compliance Center audit logs
 
+
 **Google Workspace:**
+
 - **User Deletion:** Admin Console (soft delete 20 days, then hard delete)
 - **Drive Deletion:** User deletion includes Drive files
 - **Shared Drive:** Manual deletion required (not automatically deleted with user)
 - **Verification:** Admin audit logs
 
+
 **HubSpot:**
+
 - **Contact Deletion:** Contacts menu (bulk delete)
 - **Engagement Deletion:** Manual or API
 - **Account Closure:** Support ticket
 - **Verification:** Email confirmation from support
 
+
 **Table 3: SaaS Integration Mapping (Rows 67-70)**
 
 **Common Integration Points:**
+
 - Zapier automations (data synchronized to other services)
 - Native integrations (CRM ↔ Marketing, HR ↔ Payroll)
 - API connections (custom integrations, data warehouse)
 - Single Sign-On (SSO) - not data sync, but access audit trail
 
+
 **Deletion Order:** Delete from downstream integrations FIRST, then delete from source SaaS (prevents re-synchronization).
 
 ---
 
-## 5. Sheet 4: Vendor Contract Assessment
+# Sheet 4: Vendor Contract Assessment
 
-### 5.1 Purpose
+## Purpose
 Assess vendor contracts for deletion clauses, SLAs, and GDPR Article 28 compliance.
 
-### 5.2 Sheet Layout
+## Sheet Layout
 
 **Header Section (Rows 1-9):**
+
 - Row 1: Sheet title "4. Vendor Contract & DPA Assessment"
 - Row 2: Assessment objective
 - Row 3: Instructions for completion
@@ -1543,17 +1801,22 @@ Assess vendor contracts for deletion clauses, SLAs, and GDPR Article 28 complian
 - Row 8: Requirement: "All vendors processing personal data must have DPA with deletion clause"
 - Row 9: Column headers (frozen)
 
+
 **Data Entry Section (Rows 10-22):**
+
 - 13 rows for vendor contracts (yellow fill)
 - Focus: Contractual adequacy
 
+
 **Reference Section (Rows 24-80):**
+
 - Strong vs. weak deletion clause examples
 - GDPR Article 28 DPA requirements
 - Deletion SLA benchmarks
 - Contract negotiation tips
 
-### 5.3 Column Definitions (Standard A-Q + Extended R-T)
+
+## Column Definitions (Standard A-Q + Extended R-T)
 
 **Columns A-Q:** Same as Sheet 2 (standard columns)
 
@@ -1565,7 +1828,7 @@ Assess vendor contracts for deletion clauses, SLAs, and GDPR Article 28 complian
 | S | Deletion SLA (Days) | 20 | Number | Contractual deletion timeline (blank if not specified) |
 | T | Certificate of Deletion Provision | 30 | Dropdown | Required / Optional / Not Provided / Unknown |
 
-### 5.4 Data Validation Rules (Extended Columns)
+## Data Validation Rules (Extended Columns)
 
 **Column R - DPA Deletion Clause Strength:**
 ```
@@ -1575,21 +1838,27 @@ Dropdown: Strong, Weak, Missing, N/A (No Personal Data)
 **Strength Criteria:**
 
 **Strong:**
+
 - Specifies deletion method (NIST standards, secure deletion)
 - Includes deletion SLA (≤90 days typical)
 - Requires deletion certificate or audit log evidence
 - Covers all subprocessors
 - Includes penalty for non-compliance
 
+
 **Weak:**
+
 - Vague language ("reasonable efforts")
 - No specific deletion timeline
 - No verification method
 - Excludes backups or subprocessors
 
+
 **Missing:**
+
 - Contract has no deletion clause
 - Consumer terms of service (no DPA)
+
 
 **Column S - Deletion SLA (Days):**
 ```
@@ -1601,7 +1870,7 @@ Number (integer): 0-365 (blank if not specified in contract)
 Dropdown: Required (contractually mandated), Optional (available upon request), Not Provided, Unknown
 ```
 
-### 5.5 Reference Tables (Rows 24-80)
+## Reference Tables (Rows 24-80)
 
 **Table 1: Strong Deletion Clause Example (Rows 26-40)**
 
@@ -1642,6 +1911,7 @@ Vendor is not liable for data retained in backups or by third-party subcontracto
 ```
 
 **Issues:**
+
 - ❌ Vague language ("reasonable commercial efforts")
 - ❌ Long SLA (180 days - exceeds GDPR 30-day recommendation)
 - ❌ Excludes backups (GDPR violation if personal data persists)
@@ -1649,9 +1919,11 @@ Vendor is not liable for data retained in backups or by third-party subcontracto
 - ❌ No verification method
 - ❌ No liability for failure
 
+
 **Table 3: GDPR Article 28 DPA Requirements (Rows 52-70)**
 
 **Required DPA Clauses (Beyond Deletion):**
+
 - Processing instructions (controller specifies purposes and means)
 - Confidentiality obligations (processor employees bound by confidentiality)
 - Security measures (appropriate technical and organizational measures)
@@ -1660,6 +1932,7 @@ Vendor is not liable for data retained in backups or by third-party subcontracto
 - **Deletion or return** (upon termination)
 - Audit rights (controller can audit processor compliance)
 - International transfers (if applicable, safeguards required)
+
 
 **Table 4: Deletion SLA Benchmarks (Rows 72-80)**
 
@@ -1672,14 +1945,15 @@ Vendor is not liable for data retained in backups or by third-party subcontracto
 
 ---
 
-## 6. Sheet 5: Subprocessor Mapping
+# Sheet 5: Subprocessor Mapping
 
-### 6.1 Purpose
+## Purpose
 Identify all subprocessors handling organizational data and assess deletion risk.
 
-### 6.2 Sheet Layout
+## Sheet Layout
 
 **Header Section (Rows 1-9):**
+
 - Row 1: Sheet title "5. Subprocessor Mapping & Deletion Assessment"
 - Row 2: Assessment objective
 - Row 3: Instructions for completion
@@ -1688,16 +1962,21 @@ Identify all subprocessors handling organizational data and assess deletion risk
 - Row 8: Reminder: "Primary vendor liable for subprocessor deletion failures"
 - Row 9: Column headers (frozen)
 
+
 **Data Entry Section (Rows 10-22):**
+
 - 13 rows for subprocessors (yellow fill)
 - Focus: Subprocessor identification and control
 
+
 **Reference Section (Rows 24-65):**
+
 - Subprocessor disclosure sources
 - Multi-tier subprocessing risks
 - Primary vendor liability framework
 
-### 6.3 Column Definitions (Standard A-Q + Extended R-T)
+
+## Column Definitions (Standard A-Q + Extended R-T)
 
 **Columns A-Q:** Same as Sheet 2 (standard columns)
 
@@ -1709,7 +1988,7 @@ Identify all subprocessors handling organizational data and assess deletion risk
 | S | Subprocessor Function | 30 | Dropdown | Hosting / Analytics / Support / Payment Processing / Other |
 | T | Primary Vendor Control Over Deletion | 35 | Dropdown | Direct Control / Coordinates Deletion / No Control / Unknown |
 
-### 6.4 Data Validation Rules (Extended Columns)
+## Data Validation Rules (Extended Columns)
 
 **Column R - Primary Vendor:**
 ```
@@ -1727,12 +2006,14 @@ Dropdown: Direct Control (Primary vendor can delete from subprocessor), Coordina
 ```
 
 **Compliance:**
+
 - **Direct Control:** Ideal - primary vendor deletes from subprocessor directly
 - **Coordinates Deletion:** Acceptable - primary vendor instructs subprocessor, receives confirmation
 - **No Control:** High Risk - subprocessor deletion independent, may not occur
 - **Unknown:** Critical Risk - deletion process not documented
 
-### 6.5 Reference Tables (Rows 24-65)
+
+## Reference Tables (Rows 24-65)
 
 **Table 1: Subprocessor Disclosure Sources (Rows 26-38)**
 
@@ -1745,9 +2026,11 @@ Dropdown: Direct Control (Primary vendor can delete from subprocessor), Coordina
 | **Direct Request to Vendor** | Email legal/compliance contact | On request | High |
 
 **Examples:**
+
 - **Salesforce:** https://www.salesforce.com/company/legal/third-party-subprocessors/
 - **AWS:** https://aws.amazon.com/compliance/sub-processors/
 - **Microsoft:** https://aka.ms/Online_Services_Subprocessor_List
+
 
 **Table 2: Multi-Tier Subprocessing Example (Rows 40-52)**
 
@@ -1775,27 +2058,32 @@ Deletion Flow:
 **Table 3: Undisclosed Subprocessor Risks (Rows 54-65)**
 
 **Scenario: Vendor Uses Undisclosed Subprocessor**
+
 - Vendor contracts with new subprocessor without notifying controller
 - Controller requests deletion, unaware of new subprocessor
 - Vendor deletes from known systems, but data persists in undisclosed subprocessor
 - **Result:** Incomplete deletion, GDPR violation
 
+
 **Prevention:**
+
 - DPA clause: "Vendor must notify controller 30 days before engaging new subprocessor"
 - Regular subprocessor list review (quarterly)
 - Exercise objection right if subprocessor lacks adequate deletion capabilities
 - Audit vendor compliance (SOC 2 Type II should test subprocessor management)
 
+
 ---
 
-## 7. Sheet 6: Shadow IT Assessment
+# Sheet 6: Shadow IT Assessment
 
-### 7.1 Purpose
+## Purpose
 Identify unapproved cloud services containing organizational data and assess remediation priority.
 
-### 7.2 Sheet Layout
+## Sheet Layout
 
 **Header Section (Rows 1-9):**
+
 - Row 1: Sheet title "6. Shadow IT Discovery & Remediation"
 - Row 2: Assessment objective
 - Row 3: Instructions for completion
@@ -1804,16 +2092,21 @@ Identify unapproved cloud services containing organizational data and assess rem
 - Row 8: Warning: "Shadow IT = No deletion control, high GDPR risk"
 - Row 9: Column headers (frozen)
 
+
 **Data Entry Section (Rows 10-22):**
+
 - 13 rows for Shadow IT services (yellow fill)
 - Focus: Discovery and remediation planning
 
+
 **Reference Section (Rows 24-70):**
+
 - Shadow IT discovery methods
 - Remediation options
 - User training recommendations
 
-### 7.3 Column Definitions (Standard A-Q + Extended R-T)
+
+## Column Definitions (Standard A-Q + Extended R-T)
 
 **Columns A-Q:** Same as Sheet 2 (standard columns)
 
@@ -1825,7 +2118,7 @@ Identify unapproved cloud services containing organizational data and assess rem
 | S | Data Sensitivity Assessment | 25 | Dropdown | Confidential/Restricted / Internal / Public / Unknown |
 | T | Remediation Option | 30 | Dropdown | Migrate to Approved Service / Formalize (Add DPA) / Prohibit & Delete / Under Review |
 
-### 7.4 Data Validation Rules (Extended Columns)
+## Data Validation Rules (Extended Columns)
 
 **Column R - Discovery Method:**
 ```
@@ -1838,10 +2131,12 @@ Dropdown: Confidential/Restricted, Internal, Public, Unknown (requires investiga
 ```
 
 **Risk Priority:**
+
 - **Confidential/Restricted:** Critical priority (immediate remediation)
 - **Internal:** High priority (remediate within 90 days)
 - **Public:** Medium priority (formalize or accept risk)
 - **Unknown:** High priority (assess data sensitivity first, then remediate)
+
 
 **Column T - Remediation Option:**
 ```
@@ -1858,7 +2153,7 @@ Dropdown: Migrate to Approved Service, Formalize (Upgrade to Enterprise + DPA), 
 | **Internal** | Paid / No DPA | **Formalize** (add DPA) |
 | **Public** | Any | **Accept Risk** or **Formalize** |
 
-### 7.5 Reference Tables (Rows 24-70)
+## Reference Tables (Rows 24-70)
 
 **Table 1: Shadow IT Discovery Methods Comparison (Rows 26-45)**
 
@@ -1875,16 +2170,21 @@ Dropdown: Migrate to Approved Service, Formalize (Upgrade to Enterprise + DPA), 
 **Table 2: Shadow IT Remediation Process (Rows 47-60)**
 
 **Step 1: Discovery**
+
 - Deploy CASB or run expense report analysis
 - Identify all unapproved cloud services
 - Document in assessment (Sheet 6)
 
+
 **Step 2: Data Sensitivity Assessment**
+
 - For each Shadow IT service, determine: What data is stored?
 - Classify data (Confidential, Internal, Public)
 - Prioritize remediation (Confidential = highest priority)
 
+
 **Step 3: Remediation Planning**
+
 - **Option A: Migrate to Approved Service**
   - Export data from Shadow IT service
   - Import to approved, DPA-compliant service
@@ -1902,15 +2202,20 @@ Dropdown: Migrate to Approved Service, Formalize (Upgrade to Enterprise + DPA), 
   - User training on approved alternatives
   - Monitor for recurrence (CASB alerts)
 
+
 **Step 4: User Training**
+
 - Explain Shadow IT risks (data loss, compliance violations, no deletion control)
 - Provide approved alternatives (list of approved cloud services)
 - Simplify approval process (reduce temptation to bypass)
 
+
 **Step 5: Ongoing Monitoring**
+
 - CASB continuous monitoring
 - Quarterly expense report review
 - Annual user surveys
+
 
 **Table 3: Common Shadow IT Services (Rows 62-70)**
 
@@ -1924,18 +2229,20 @@ Dropdown: Migrate to Approved Service, Formalize (Upgrade to Enterprise + DPA), 
 
 ---
 
-## 8. Sheet 7: Summary Dashboard
+# Sheet 7: Summary Dashboard
 
-### 8.1 Purpose
+## Purpose
 Aggregate third-party deletion compliance metrics and identify critical vendor risks.
 
-### 8.2 Sheet Layout
+## Sheet Layout
 
 **Header Section (Rows 1-5):**
+
 - Row 1: Sheet title "7. Summary Dashboard - Third-Party Deletion Compliance"
 - Row 2: Assessment period and version
 - Row 3: Generated date (auto-populated)
 - Row 5: Overall compliance status indicator (colored)
+
 
 **Section 1: Overall Compliance Summary (Rows 7-20)**
 
@@ -1949,10 +2256,12 @@ Aggregate third-party deletion compliance metrics and identify critical vendor r
 | Shadow IT Services Identified | =COUNTA(Sheet6!A10:A22) | Formula |
 
 **Compliance Percentage Color Coding:**
+
 - ≥90%: Green fill (excellent)
 - 80-89%: Yellow fill (acceptable)
 - 70-79%: Orange fill (needs improvement)
 - <70%: Red fill (unacceptable)
+
 
 **Section 2: Vendor Risk by Category (Rows 22-38)**
 
@@ -1965,9 +2274,11 @@ Aggregate third-party deletion compliance metrics and identify critical vendor r
 **Section 3: Critical Gaps Requiring Immediate Attention (Rows 40-55)**
 
 Auto-populated table pulling rows where:
+
 - (Data Classification = "Confidential" OR "Restricted") AND (DPA Deletion Clause = "Weak" OR "Missing") OR
 - (Deletion SLA > 90 days) OR
 - (Status = "❌ Non-Compliant" AND Risk Level = "Critical" OR "High")
+
 
 | Vendor | Classification | DPA Strength | Deletion SLA | Gap | Target Completion |
 |--------|---------------|--------------|--------------|-----|-------------------|
@@ -1992,11 +2303,12 @@ Auto-populated table pulling rows where:
 
 ---
 
-## 9. Sheet 8: Evidence Register
+# Sheet 8: Evidence Register
 
 (Same structure as previous assessments - 100 rows, auto-numbered EV-001 through EV-100)
 
 **Evidence Types Specific to Third-Party Assessment:**
+
 - Vendor contracts (DPAs)
 - Deletion clause excerpts
 - Deletion certificates
@@ -2006,62 +2318,73 @@ Auto-populated table pulling rows where:
 - Vendor email confirmations
 - Audit log exports
 
+
 ---
 
-## 10. Sheet 9: Approval Sign-Off
+# Sheet 9: Approval Sign-Off
 
 (Same three-level approval structure as previous assessments)
 
 **Approval Focus for Third-Party Assessment:**
+
 - Level 1: Vendor inventory completeness, deletion capability accuracy
 - Level 2: Contract adequacy, GDPR Article 28 compliance, remediation resourcing
 - Level 3: Overall vendor deletion risk, contract renegotiation commitments
 
+
 ---
 
-## 11. Conditional Formatting Rules
+# Conditional Formatting Rules
 
 (Standard status column formatting + assessment-specific rules)
 
 **Additional Rules for Third-Party Assessment:**
 
-### 11.1 Weak/Missing DPA Deletion Clause (Sheet 4)
+## Weak/Missing DPA Deletion Clause (Sheet 4)
 
 **Rule: Confidential/Restricted Data + Weak/Missing DPA**
+
 - Condition: Column B = "Confidential" OR "Restricted" AND Column R = "Weak" OR "Missing"
 - Format: Fill color RGB(255, 150, 150) - Bright red, Bold
 - Applies to: Entire row
 - Reason: High GDPR risk - sensitive data with inadequate contractual deletion protection
 
-### 11.2 Deletion SLA Exceeds GDPR Timeline (Sheet 2, Sheet 3, Sheet 4)
+
+## Deletion SLA Exceeds GDPR Timeline (Sheet 2, Sheet 3, Sheet 4)
 
 **Rule: Deletion SLA > 90 Days**
+
 - Condition: Column S > 90
 - Format: Fill color RGB(255, 199, 206) - Light red
 - Applies to: Column S
 - Reason: May not meet GDPR Article 17 data subject request timeline (30 days)
 
-### 11.3 Shadow IT with Sensitive Data (Sheet 6)
+
+## Shadow IT with Sensitive Data (Sheet 6)
 
 **Rule: Shadow IT Confidential/Restricted**
+
 - Condition: Column S = "Confidential/Restricted"
 - Format: Fill color RGB(255, 150, 150) - Bright red, Bold, White text
 - Applies to: Entire row
 - Reason: Critical priority - immediate remediation required
 
-### 11.4 No Deletion Verification Method (Sheet 2, Sheet 3)
+
+## No Deletion Verification Method (Sheet 2, Sheet 3)
 
 **Rule: Verification Method = None**
+
 - Condition: Column E = "None"
 - Format: Fill color RGB(255, 230, 153) - Orange
 - Applies to: Entire row
 - Reason: Cannot verify deletion occurred - high audit risk
 
+
 ---
 
-## 12. Summary Dashboard Formulas
+# Summary Dashboard Formulas
 
-### 12.1 Overall Compliance Calculation
+## Overall Compliance Calculation
 
 **Total Vendors Assessed:**
 ```excel
@@ -2085,7 +2408,7 @@ Auto-populated table pulling rows where:
    (COUNTA(Sheet4!F10:F22)-COUNTIF(Sheet4!F10:F22,"N/A"))*100)
 ```
 
-### 12.2 Shadow IT Metrics
+## Shadow IT Metrics
 
 **Shadow IT Services Identified:**
 ```excel
@@ -2103,7 +2426,7 @@ Auto-populated table pulling rows where:
    (COUNTIF(Sheet6!T10:T22,"Migrate*")+COUNTIF(Sheet6!T10:T22,"Prohibit*"))/Shadow_IT_Total*100)
 ```
 
-### 12.3 Subprocessor Coverage
+## Subprocessor Coverage
 
 **Vendors with Disclosed Subprocessors:**
 ```excel
@@ -2117,36 +2440,44 @@ Auto-populated table pulling rows where:
 
 ---
 
-## 13. Python Script Integration
+# Python Script Integration
 
 **Script:** `generate_a810_3_third_party_cloud.py`
 
 **Key Customization Points:**
+
 - ISMS-REF-A.5.23 integration (if available - populate Provider Tier dropdown)
 - Vendor-specific deletion clause examples in reference tables
 - CASB integration (if organization uses specific CASB, add vendor-specific guidance)
 - Shadow IT service list (update common services table per organization patterns)
 
+
 ---
 
-## 14. Integration with ISMS-REF-A.5.23
+# Integration with ISMS-REF-A.5.23
 
 **If Cloud Service Provider Registry Available:**
 
 **Column R (Sheet 2) - Provider Tier:**
+
 - Option: "See ISMS-REF-A.5.23" (dropdown value)
 - On selection, user cross-references cloud provider registry for tier rating
 - Registry provides: Deletion capability rating, recommended verification methods, standard DPA templates
 
+
 **Benefits:**
+
 - Consistency across assessments (same provider rated consistently)
 - Pre-vetted deletion capabilities (reduce assessment time)
 - Reference architecture (standard deletion patterns by provider)
 
+
 **If Registry Not Available:**
+
 - Manual tier assessment per this workbook's criteria
 - Document assessment in Notes column
 - Consider creating ISMS-REF-A.5.23 for future assessments
+
 
 ---
 
@@ -2154,7 +2485,7 @@ Auto-populated table pulling rows where:
 
 ---
 
-## Document Assembly Instructions
+# Document Assembly Instructions
 
 **To create the complete ISMS-IMP-A.8.10.3 v1.0 document:**
 
@@ -2195,6 +2526,7 @@ ISMS-IMP-A.8.10.3 - Third-Party & Cloud Deletion Assessment v1.0
 ```
 
 **Quality Checks Before Finalizing:**
+
 - [ ] All GDPR Article 28 references accurate
 - [ ] Cloud provider deletion policies current (AWS, Azure, GCP)
 - [ ] Strong vs. weak deletion clause examples clear
@@ -2204,6 +2536,13 @@ ISMS-IMP-A.8.10.3 - Third-Party & Cloud Deletion Assessment v1.0
 - [ ] All dates in DD.MM.YYYY format
 - [ ] Consistent use of [Organization] placeholder
 
+
 ---
 
-**End of Technical Specification**
+**END OF SPECIFICATION**
+
+---
+
+*"Entanglement is not just a theoretical curiosity; it is the key resource for quantum information processing."*
+— Alain Aspect
+*Where bamboo antennas actually work.* 🎋

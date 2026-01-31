@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# =============================================================================
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-ISMS-Commercial
+# Copyright (c) 2025-2026 ISMS Core Contributors
+#
+# This file is part of ISMS Core.
+#
+# ISMS Core is dual-licensed:
+#   1. AGPL 3.0 (Open Source) - See LICENSE-AGPL.txt
+#   2. Commercial License - Contact vendor for proprietary use
+#
+# You may use this file under either license, at your option.
+# =============================================================================
 """
 ================================================================================
 Excel Workbook Sanity Checker - ISMS A.8.11 Assessment Workbooks
@@ -23,7 +35,7 @@ Identifies common openpyxl-generated Excel issues that trigger repair warnings:
 - Quality assurance validation before consolidation
 
 **Usage:**
-    python3 excel_sanity_check_a811.py ISMS_IMP_A_8_11_X_Assessment_YYYYMMDD.xlsx
+    python3 excel_sanity_check_a811.py ISMS-IMP-A.8.11_X_Assessment_YYYYMMDD.xlsx
     
     Works with any A.8.11 assessment workbook (domains 1-5)
 
@@ -42,19 +54,30 @@ Requirements:
 ================================================================================
 """
 
-import sys
-import os
+# =============================================================================
+# Standard Library Imports
+# =============================================================================
+import logging
+from datetime import datetime
 from pathlib import Path
+import os
+import sys
+
+# =============================================================================
+# Third-Party Imports
+# =============================================================================
 from openpyxl import load_workbook
 from openpyxl.utils import get_column_letter
-from datetime import datetime
 
-
-# ============================================================================
-# CONFIGURATION
-# ============================================================================
-
-# Expected workbook structures for A.8.11 Data Masking
+# =============================================================================
+# Logging Configuration
+# =============================================================================
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
 WORKBOOK_SPECS = {
     "Domain_1": {
         "pattern": "ISMS-IMP-A.8.11.1",
@@ -741,3 +764,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+# =============================================================================
+# QA_VERIFIED: 2026-01-31
+# QA_STATUS: PASSED - STANDARDIZATION (syntax validated, structure verified)
+# QA_TOOL: Claude Code Standardization
+# =============================================================================

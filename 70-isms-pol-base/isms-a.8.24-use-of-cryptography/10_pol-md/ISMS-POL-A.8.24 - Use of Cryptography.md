@@ -1,8 +1,8 @@
-# ISMS-POL-A.8.24 — Use of Cryptography
+**ISMS-POL-A.8.24 — Use of Cryptography**
 
 ---
 
-## Document Control
+**Document Control**
 
 | Field | Value |
 |-------|-------|
@@ -28,1104 +28,757 @@
 **Next Review Date**: [Effective Date + 12 months]  
 
 **Approval Chain**:
+
 - Primary: Chief Information Security Officer (CISO)
 - Secondary: Chief Information Officer (CIO)
 - Compliance: Legal/Compliance Officer
 - Final Authority: Executive Management (GL)
 
+
+
 **Related Documents**: 
+
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.8.24-1 (Data Transmission Assessment)
-- ISMS-IMP-A.8.24-2 (Data Storage Assessment)
-- ISMS-IMP-A.8.24-3 (Authentication Assessment)
-- ISMS-IMP-A.8.24-4 (Key Management Assessment)
-- ISMS-IMP-A.8.24-5 (Compliance Summary Dashboard)
-- ISMS-CTX-A.8.24 (Cryptographic Landscape Reference - Technical Context)
-- ISMS-REF-A.5.23 (Cloud Service Provider Registry)
+- ISMS-IMP-A.8.24 (Implementation Guidance Suite)
 - ISO/IEC 27001:2022 Control A.8.24
+
+
 
 ---
 
 ## Executive Summary
 
-This policy establishes [Organization]'s requirements for cryptographic controls to protect the confidentiality, integrity, authenticity, and non-repudiation of information in accordance with ISO/IEC 27001:2022 Control A.8.24.
+This policy establishes [Organization]'s requirements for cryptographic controls to protect information confidentiality, integrity, and authenticity in accordance with ISO/IEC 27001:2022 Control A.8.24.
 
-**Scope**: This policy applies to all information assets classified as Internal, Confidential, or Restricted; all cryptographic implementations including encryption, digital signatures, and key management; and all organizational personnel, contractors, and third parties processing organizational information.
+**Scope**: This policy applies to all information assets, systems, and personnel handling classified information (Internal, Confidential, or Restricted).
 
-**Purpose**: Define organizational requirements for cryptographic control implementation and governance. This policy establishes WHAT cryptographic protection is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.24 suite.
+**Purpose**: Define organizational requirements for cryptographic control selection, implementation, and governance. This policy establishes WHAT cryptographic protection is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.24.
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS, HIPAA, SOX, DORA, NIS2, FINMA) apply where [Organization]'s business activities trigger applicability.
-
-**Key Changes in Version 2.0**:
-- Corrected regulatory tier assignments per ISMS-POL-00 (HIPAA and SOX moved to Tier 2 - Conditional Applicability)
-- Removed technical annexes (algorithm tables, cloud deployment guidance) - now referenced from ISMS-CTX-A.8.24 and ISMS-IMP-A.8.24-2
-- Streamlined policy to core requirements with clear references to implementation guidance
-- Strengthened separation between policy (WHAT/WHO) and implementation (HOW)
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
 
 ---
 
-## 1. Control Alignment & Scope
+**Control Alignment & Scope**
 
-### 1.1 ISO/IEC 27001:2022 Control A.8.24
+**ISO/IEC 27001:2022 Control A.8.24**
 
 **ISO/IEC 27001:2022 Annex A.8.24 - Use of Cryptography**
 
 > *A policy on the use of cryptographic controls for protection of information should be developed and implemented.*
 
-**Control Objective**: Establish organizational policy for cryptographic controls protecting information confidentiality, integrity, authenticity, and non-repudiation throughout the information lifecycle.
+**Control Objective**: Establish organizational policy for cryptographic controls protecting information throughout its lifecycle.
 
 **This Policy Addresses**:
-- Cryptographic requirements based on data classification and organizational risk appetite
-- Data transmission encryption requirements (TLS, VPN, email, protocols)
-- Data storage encryption requirements (databases, files, backups, removable media)
-- Authentication requirements (certificates, digital signatures, PKI)
-- Key management requirements (generation, storage, rotation, destruction)
+
+- Cryptographic control requirements based on data classification
 - Organizational roles and responsibilities for cryptographic governance
 - Exception and incident management frameworks
 - Integration with [Organization]'s risk assessment and treatment processes
 
-### 1.2 What This Policy Does
+
+
+## What This Policy Does
 
 This policy:
-- **Defines** cryptographic control requirements aligned with data classification and regulatory obligations
-- **Establishes** governance framework for cryptographic decision-making and accountability
-- **Specifies** mandatory cryptographic protections for data in transit and at rest
-- **References** applicable regulatory requirements per ISMS-POL-00
-- **Identifies** organizational roles and responsibilities for cryptographic controls
 
-### 1.3 What This Policy Does NOT Do
+- **Defines** cryptographic control requirements aligned with data classification
+- **Establishes** governance framework for cryptographic decision-making
+- **Specifies** accountability for cryptographic control implementation
+- **References** applicable regulatory requirements per ISMS-POL-00
+
+
+
+## What This Policy Does NOT Do
 
 This policy does NOT:
+
 - **Specify technical implementation details** (see ISMS-IMP-A.8.24 Implementation Guides)
-- **Define specific cryptographic algorithms or parameters** (see ISMS-CTX-A.8.24 Cryptographic Landscape Reference)
+- **Define approved algorithms or key lengths** (see ISMS-IMP-A.8.24 Technical Standards)
 - **Provide system-specific configuration procedures** (see ISMS-IMP-A.8.24 Assessment Guides)
-- **Select cryptographic technologies or vendors** (technology selection based on [Organization]'s risk assessment)
 - **Replace risk assessment** (cryptographic controls selected based on [Organization]'s risk treatment)
-- **Define detailed incident response procedures** (integrated with organizational incident response)
-- **Establish exception request workflows** (exception management framework defined in Section 4)
+
+
 
 **Rationale**: Separating policy requirements from implementation guidance enables:
-- Policy stability despite evolving cryptographic landscape and algorithm deprecations
-- Technical agility for algorithm updates and technology changes without policy revision
+
+- Policy stability despite evolving cryptographic standards
+- Technical agility for algorithm updates without policy revision
 - Clear distinction between governance (policy) and execution (implementation)
-- Focused audit scope (auditors audit policy compliance, not technical implementation details)
 
-**Document Structure**:
-- **ISMS-POL-A.8.24** (THIS DOCUMENT): Policy requirements (WHAT and WHO)
-- **ISMS-IMP-A.8.24-1 through IMP-5**: Implementation guidance (HOW)
-- **ISMS-CTX-A.8.24**: Technical reference for algorithms, cipher suites, industry standards (non-ISMS informational document)
 
-### 1.4 Scope
+
+## Scope
 
 **This policy applies to**:
-- All information assets classified as Internal, Confidential, or Restricted per [Organization]'s data classification scheme
-- All systems, applications, networks, and services processing, storing, or transmitting organizational information
-- All cryptographic implementations including encryption (symmetric and asymmetric), hashing, digital signatures, and key management
-- All organizational personnel (employees, contractors, temporary staff) with access to organizational information
-- All third-party service providers, cloud services, and outsourced operations handling organizational data
-- All deployment models (on-premises infrastructure, hybrid environments, cloud services)
+
+- All information assets classified as Internal, Confidential, or Restricted
+- All systems, applications, networks, and services processing organizational information
+- All cryptographic implementations (encryption, hashing, digital signatures, key management)
+- All personnel (employees, contractors, third parties) with access to organizational information
+- All third-party services handling organizational data
+
+
 
 **Out of Scope**:
-- Public information (unclassified data requiring no cryptographic protection)
-- Consumer-grade encryption for personal use (unless processing organizational data)
-- Cryptographic research and development (covered under separate R&D policies)
-- Product-embedded cryptography where [Organization] has no configuration control (assessed during procurement)
 
-### 1.5 Regulatory Applicability
+- Public information (no cryptographic protection required)
+- Non-cryptographic security controls (covered by other ISMS policies)
+
+
+
+## Regulatory Applicability
 
 Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicability Framework)**. 
 
 **Tier 1: Mandatory Compliance**
 
-[Organization] MUST comply with these regulations based on jurisdiction and business operations:
-
-**Swiss Federal Data Protection Act (nDSG/FADP)**
-- **Applicability**: All operations in Switzerland
-- **Key Requirements**: Art. 8 (Appropriate technical and organizational measures including encryption)
-- **ISMS Impact**: Data protection by design, encryption of personal data, data breach notification
-
-**EU General Data Protection Regulation (GDPR)**
-- **Applicability**: When processing personal data of EU residents
-- **Key Requirements**: Art. 32 (Security of processing - encryption and pseudonymization)
-- **ISMS Impact**: Technical and organizational measures (TOMs), encryption requirements, data breach response
-
-**ISO/IEC 27001:2022**
-- **Applicability**: Required for ISO 27001 certification
-- **Key Requirements**: Control A.8.24 (Use of Cryptography) - establish and implement cryptographic policy
-- **ISMS Impact**: This policy document fulfills Control A.8.24 policy requirement
+| Regulation | Applicability | Key Requirements |
+|------------|---------------|------------------|
+| **Swiss nDSG** | All Swiss operations | Art. 8 - Appropriate technical measures including encryption |
+| **EU GDPR** | When processing EU personal data | Art. 32 - Encryption of personal data as security measure |
+| **ISO/IEC 27001:2022** | Certification scope | Control A.8.24 - Documented policy and implementation |
 
 **Tier 2: Conditional Applicability**
 
-These regulations apply ONLY when specific conditions are met. [Organization] must assess applicability based on business activities:
+Apply only when specific business conditions trigger applicability:
 
-**PCI DSS (Payment Card Industry Data Security Standard)** [If processing payment card data]
-- **Applicability Trigger**: Processing, storing, or transmitting payment card data
-- **Key Requirements**: 
-  - Requirement 3.4: Render PAN unreadable (encryption, truncation, hashing)
-  - Requirement 3.5: Protect cryptographic keys
-  - Requirement 4.1: Encrypt transmission of cardholder data over open, public networks
-- **ISMS Impact**: Cardholder data encryption (at rest and in transit), key management procedures
-- **Applicability Assessment**: See ISMS-POL-00 Section 4.1
+| Regulation | Trigger Condition | Cryptographic Requirements |
+|-----------|-------------------|----------------------------|
+| **PCI DSS v4.0** | Processing payment card data | Strong cryptography for cardholder data, key management controls |
+| **FINMA** | Swiss regulated financial institution | Encryption per FINMA Circular 2023/1 Margin 62 |
+| **DORA** | EU financial services entity | ICT system encryption, crypto agility |
+| **NIS2** | Essential/important entity (EU) | Encryption as cybersecurity risk management measure |
 
-**HIPAA (Health Insurance Portability and Accountability Act)** [If processing US healthcare data]
-- **Applicability Trigger**: Processing Protected Health Information (PHI) of US persons
-- **Key Requirements** (Addressable Safeguards):
-  - 45 CFR § 164.312(a)(2)(iv): Encryption and decryption (addressable - risk assessment required)
-  - 45 CFR § 164.312(e)(2)(ii): Encryption of ePHI in transit (addressable - risk assessment required)
-- **ISMS Impact**: Risk-based encryption decisions for PHI, documented risk assessments where encryption not implemented
-- **Note**: HIPAA encryption requirements are "addressable" not "required" - risk assessment determines implementation
-- **Applicability Assessment**: See ISMS-POL-00 Section 4.2
+**Tier 3: Informational Guidance**
 
-**SOX (Sarbanes-Oxley Act)** [If US publicly traded company]
-- **Applicability Trigger**: [Organization] is publicly traded company subject to US securities regulations
-- **Key Requirements**: Section 404 (Internal controls over financial reporting - ITGC requirements)
-- **ISMS Impact**: IT General Controls (ITGC) for financial data integrity, access controls, audit trails
-- **Note**: SOX does not mandate specific cryptographic controls but requires appropriate safeguards for financial data integrity
-- **Applicability Assessment**: See ISMS-POL-00 Section 4.6
+These frameworks inform implementation but do not constitute mandatory compliance unless contractually required:
 
-**DORA (Digital Operational Resilience Act)** [If EU financial services entity]
-- **Applicability Trigger**: EU financial entity (credit institutions, investment firms, payment institutions, etc.)
-- **Key Requirements**: Art. 9, 10 (ICT risk management framework including encryption)
-- **ISMS Impact**: ICT risk management, encryption for financial data, third-party risk management
-- **Applicability Assessment**: See ISMS-POL-00 Section 4.4
+- NIST SP 800-57 (Key Management)
+- BSI TR-02102 (Cryptographic Mechanisms)
+- ENISA (Algorithms and Key Sizes)
+- OWASP (Cryptographic Storage)
 
-**NIS2 (Network and Information Security Directive)** [If essential/important entity in EU]
-- **Applicability Trigger**: Designated as essential or important entity under NIS2 scope
-- **Key Requirements**: Art. 21 (Cybersecurity risk management measures including encryption)
-- **ISMS Impact**: Cybersecurity measures, incident handling, supply chain security
-- **Applicability Assessment**: See ISMS-POL-00 Section 4.5
 
-**FINMA (Swiss Financial Market Supervisory Authority)** [If Swiss-regulated financial institution]
-- **Applicability Trigger**: [Organization] is supervised by FINMA (banks, insurance, securities dealers, etc.)
-- **Key Requirements**: FINMA Circular 2008/21 (Operational Risks in Banks - IT security requirements)
-- **ISMS Impact**: Information security framework, encryption requirements, outsourcing controls
-- **Applicability Assessment**: See ISMS-POL-00 Section 4.7
 
-**Tier 3: Informational Reference / Best Practice Alignment**
-
-These frameworks provide technical guidance and are used for implementation decisions but do NOT constitute mandatory compliance requirements unless contractually specified:
-
-**NIST (National Institute of Standards and Technology) Publications**
-- NIST SP 800-52 Rev. 2: Guidelines for TLS Implementations
-- NIST SP 800-57 Part 1 Rev. 5: Key Management Recommendations
-- NIST SP 800-131A Rev. 2: Transitioning the Use of Cryptographic Algorithms
-- NIST SP 800-175B Rev. 1: Guideline for Using Cryptographic Standards
-
-**BSI (Bundesamt für Sicherheit in der Informationstechnik) - German Federal Office for Information Security**
-- BSI TR-02102-1: Cryptographic Mechanisms - Recommendations and Key Lengths
-- BSI TR-02102-2: Use of TLS
-- BSI TR-02102-4: Use of Secure Shell (SSH)
-
-**Other Technical Standards**
-- CIS Controls (Center for Internet Security)
-- OWASP (Open Web Application Security Project) - Application security best practices
-- ISO/IEC 18033: Encryption Algorithms
-
-**United States Federal Requirements**
-
-References to US federal frameworks (FISMA, FIPS, FedRAMP, NIST cybersecurity requirements) apply ONLY where [Organization] has explicit US federal contractual obligations.
-
-**US Federal Frameworks Classification**:
-- **FISMA (Federal Information Security Management Act)**: Mandatory ONLY for US federal agencies and federal contractors
-- **FIPS 140-2/140-3 (Federal Information Processing Standards)**: Cryptographic module validation required ONLY for US federal systems
-- **FedRAMP (Federal Risk and Authorization Management Program)**: Applicable ONLY when providing cloud services to US federal agencies
-
-**Applicability Determination**: Per ISMS-POL-00 Section 5 (US Federal Requirements), these frameworks are informational reference unless:
-1. [Organization] has explicit US federal government contracts requiring compliance, OR
-2. Customer contracts specifically mandate FIPS 140-2/3 validated cryptographic modules
-
-**Default Classification**: Tier 3 (Informational Reference) unless contractually required, in which case treated as Tier 1 (Mandatory) for specific systems/services covered by contract.
-
-**For Complete Regulatory Framework**: See ISMS-POL-00 (Regulatory Applicability Framework) for detailed categorization, applicability triggers, and assessment methodology.
-
-### 1.6 Integration with Risk Management
-
-Cryptographic control selection and implementation are integrated with [Organization]'s risk management process (ISO/IEC 27001:2022 Clause 6).
-
-**Risk Assessment Inputs**:
-- Data classification and sensitivity assessment
-- Threat modeling (data in transit, data at rest, authentication)
-- Regulatory applicability determination (per ISMS-POL-00)
-- Business impact analysis (confidentiality, integrity, availability)
-- Technical feasibility and operational constraints
-
-**Risk Treatment Outputs**:
-- Cryptographic control selection (encryption, hashing, digital signatures)
-- Algorithm and key length decisions (referenced from ISMS-CTX-A.8.24)
-- Key management approach (HSM, cloud KMS, software-based)
-- Exception and compensating control approvals
-
-**Continuous Improvement**:
-- Algorithm deprecation monitoring (NIST, BSI, CA/Browser Forum)
-- Cryptographic agility planning (transition to post-quantum cryptography)
-- Periodic reassessment of cryptographic controls (quarterly minimum)
+**Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent requirements apply where multiple regulations overlap.
 
 ---
 
-## 2. Roles and Responsibilities
+# Cryptographic Requirements Framework
 
-### 2.1 Governance Structure
+## Data Classification-Based Requirements
 
-Cryptographic control governance follows [Organization]'s ISMS governance framework with clear accountability for policy, implementation, and operational management.
+[Organization] implements cryptographic controls based on data classification as defined in ISMS-POL-A.5.12 (Information Classification Policy).
 
-**Decision Authority Hierarchy**:
-1. **Executive Management**: Approves cryptographic policy and accepts residual risks
-2. **CISO**: Owns cryptographic policy, approves exceptions, manages cryptographic risk
-3. **CIO**: Implements cryptographic controls, allocates resources, manages operations
-4. **System Owners**: Responsible for cryptographic control implementation in their systems
-5. **Security Team**: Provides technical expertise, monitors compliance, manages incidents
+**Protection Requirements by Classification**:
 
-### 2.2 Cryptographic Control Roles
+| Classification | Data in Transit | Data at Rest | Authentication | Key Management |
+|----------------|-----------------|--------------|----------------|----------------|
+| **Public** | Not required | Not required | Standard | N/A |
+| **Internal** | Recommended | Recommended | Standard | Standard |
+| **Confidential** | **Required** | **Required** | Strong | Enhanced |
+| **Restricted** | **Required (Strong)** | **Required (Strong)** | Strong + MFA | HSM/KMS Required |
 
-**Chief Information Security Officer (CISO)**
+**Implementation Note**: Specific cryptographic algorithms, key lengths, and technical configurations are defined in ISMS-IMP-A.8.24 Technical Standards. [Organization] maintains technical standards separately from policy to enable cryptographic agility.
 
-**Accountabilities**:
-- Owns and maintains this cryptographic policy
-- Approves cryptographic control exceptions and compensating controls
-- Reviews cryptographic risk assessments and treatment decisions
-- Monitors regulatory changes affecting cryptographic requirements
-- Reports cryptographic compliance status to Executive Management
+## Cryptographic Control Categories
 
-**Authorities**:
-- Mandate cryptographic control implementation for systems processing Confidential/Restricted data
-- Approve or reject exception requests
-- Require remediation of non-compliant cryptographic implementations
-- Escalate unresolved cryptographic risks to Executive Management
+[Organization] implements cryptographic controls in the following categories:
 
-**Responsibilities**:
-- Annual policy review and update
-- Cryptographic algorithm deprecation monitoring
-- Exception approval within 10 business days
-- Quarterly cryptographic compliance reporting
+**Data Transmission Protection**:
+
+- Network communications encryption (TLS/SSL with cipher suites supporting Perfect Forward Secrecy where technically feasible, VPN, wireless)
+- Application-level encryption (HTTPS, SFTP, secure email)
+- Database connection encryption
+- API security
+
+
+
+**Data Storage Protection**:
+
+- Full disk encryption (mobile devices, laptops)
+- Database encryption (Transparent Data Encryption, column-level)
+- Backup encryption (keys stored separately from backup media and production keys per A.8.13 backup segregation requirements. Verification procedure documented in ISMS-IMP-A.8.24-2 Data Storage Assessment and ISMS-IMP-A.8.13 Backup Procedures)
+- Cloud storage encryption
+- Removable media encryption
+
+
+
+**Authentication & Identity**:
+
+- Password hashing (not plaintext storage)
+- Multi-factor authentication mechanisms
+- Digital signatures
+- Certificate-based authentication
+
+
+
+**Key Management**:
+
+- Cryptographic key lifecycle (generation, storage, distribution, rotation, destruction)
+- Key-data separation
+- Hardware Security Modules (HSM) or Key Management Services (KMS) for high-security keys
+
+
+
+**Third-Party Cryptographic Requirements**:
+Third-party services handling Confidential or Restricted data must demonstrate cryptographic controls equivalent to this policy. Verification occurs during vendor security assessment per ISMS-POL-A.5.19 (Supplier Security Policy).
+
+**Verification Mechanism**: Third-party cryptographic compliance is verified through [Organization]'s vendor security assessment process, which includes questionnaire completion, evidence review, and attestation validation prior to contract execution and annually thereafter.
+
+**Contractual Requirements by Data Classification**:
+
+| Data Classification | Cryptographic Requirement | Evidence Required |
+|---------------------|---------------------------|-------------------|
+| **Internal** | Encryption in transit recommended | Self-attestation acceptable |
+| **Confidential** | Encryption required (transit and rest) | SOC 2 Type II or ISO 27001 certificate |
+| **Restricted** | Strong encryption required, HSM/KMS for keys | SOC 2 Type II + penetration test report, or ISO 27001 + independent attestation |
+
+**Acceptable Third-Party Attestations**: SOC 2 Type II (Security Trust Criteria), ISO/IEC 27001 certification, CSA STAR Level 2, or equivalent independent audit. Self-attestation accepted only for Internal classification data.
+
+**Evidence Recency Requirements**:
+
+Third-party cryptographic attestations must cover audit period within:
+
+- **SOC 2 Type II**: Report date within 12 months of [Organization] assessment date. Audit period ending within 18 months acceptable if vendor confirms no material changes.
+
+- **ISO 27001 Certificate**: Certificate validity confirmed via certification body registry. Expired certificates not acceptable.
+
+- **Penetration Test Reports**: Report date within 12 months of assessment.
+
+
+**Vendor Change Notification**: Contractual requirement for vendors to notify [Organization] within 30 days of material changes to cryptographic implementations, triggering reassessment regardless of annual schedule.
+
+**Implementation Guidance**: Detailed procedures for each category are documented in ISMS-IMP-A.8.24 Implementation Guides (Data Transmission, Data Storage, Authentication, Key Management).
+
+## Cryptographic Agility
+
+[Organization] systems shall be designed to support algorithm replacement without major system re-architecture.
+
+**Requirements**:
+
+- Cryptographic algorithms should be configurable (not hardcoded where feasible)
+- Systems should support multiple algorithm versions during migration periods
+- [Organization] maintains algorithm lifecycle states (Approved, Deprecated, Prohibited)
+- Algorithm deprecation triggers formal migration process
+- System Owners receive formal notification minimum 180 days prior to algorithm prohibition to enable migration planning. Critical systems supporting Restricted data receive 270-day advance notice.
+
+
+**Deprecation Communication Process**:
+
+1. **IT Security Team** publishes algorithm deprecation notice in ISMS-CTX-A.8.24 with timeline
+2. **CISO** issues formal communication to all System Owners via [Communication Platform - email/Confluence/SharePoint] with:
+
+   - Affected algorithm details
+   - Deprecation timeline (180/270 days)
+   - Migration resources (ISMS-IMP-A.8.24 guidance)
+   - Acknowledgment request
+
+3. **System Owners** acknowledge receipt within 14 days and submit migration plan within 30 days
+4. **IT Security Team** tracks acknowledgments and migration plans in deprecation register
+
+**Non-Acknowledgment Escalation**: System Owners not acknowledging within 14 days receive CISO escalation. Non-response after 30 days triggers Executive Management escalation.
+
+
+**Rationale**: Cryptographic standards evolve due to cryptanalysis advances, regulatory changes, and post-quantum cryptography migration. Crypto-agile systems reduce risk and cost of algorithm transitions.
+
+**Process**: Algorithm lifecycle management procedures are defined in ISMS-IMP-A.8.24 Technical Standards.
+
+## Certificate Lifecycle Management
+
+[Organization] manages TLS/SSL and other digital certificates in accordance with industry standards and certificate authority requirements.
+
+**Requirements**:
+
+- Public-facing TLS certificates comply with CA/Browser Forum Baseline Requirements for validity periods. As of this policy version, the maximum validity period is 398 days (per CA/Browser Forum Ballot SC31). Current validity requirements are maintained in ISMS-CTX-A.8.24 Technical Reference.
+- Internal certificate validity periods are defined in ISMS-IMP-A.8.24 based on risk assessment and operational requirements.
+- Certificate renewal processes appropriate to certificate lifetime (automated renewal for short-lived certificates)
+- Certificate expiration monitoring and alerting
+- Private key protection
+- Certificate revocation capability (OCSP/CRL)
+
+
+
+**Industry Context**: Certificate lifetime requirements change periodically due to CA/Browser Forum policy updates and browser vendor requirements. [Organization] monitors industry developments and adapts certificate management processes accordingly. Current CA/Browser Forum requirements are tracked in ISMS-CTX-A.8.24.
+
+**Implementation**: Certificate management procedures are defined in ISMS-IMP-A.8.24 Key Management Assessment.
+
+## Prohibited Practices
+
+The following practices are **strictly prohibited**:
+
+- Plaintext storage of passwords or cryptographic keys
+- Use of cryptographically broken algorithms (MD5, DES, RC4 for confidentiality)
+- Transmission of Confidential or Restricted data without encryption
+- Storage of encryption keys alongside encrypted data without separation
+- Development of custom cryptographic algorithms without cryptographic expertise
+- Bypassing or disabling cryptographic controls without formal exception approval
+
+
 
 ---
 
-**Chief Information Officer (CIO)**
-
-**Accountabilities**:
-- Implements cryptographic controls in [Organization]'s infrastructure
-- Provides resources (budget, personnel, tools) for cryptographic implementation
-- Ensures operational readiness of cryptographic systems (key management, certificate lifecycle)
-- Manages cryptographic technology selection and vendor relationships
-
-**Authorities**:
-- Select cryptographic technologies and vendors (within policy constraints)
-- Allocate budget for cryptographic infrastructure (HSM, KMS, certificates)
-- Approve technical implementation approaches
-- Manage cryptographic operations team
-
-**Responsibilities**:
-- Implement policy-mandated cryptographic controls
-- Maintain cryptographic infrastructure availability and performance
-- Coordinate with CISO on cryptographic risk treatment
-- Execute approved exception remediation plans
-
----
-
-**System Owners (Application Owners, Database Owners, Infrastructure Owners)**
+# Governance & Accountability
 
-**Accountabilities**:
-- Implement cryptographic controls for systems under their ownership
-- Maintain compliance with cryptographic policy requirements
-- Document cryptographic implementation (algorithms, key management, configurations)
-- Report cryptographic compliance status via assessment workbooks
-
-**Authorities**:
-- Select specific cryptographic implementations (within policy and technical standards)
-- Request exceptions for systems with unique constraints
-- Define system-specific cryptographic requirements (beyond policy minimums)
+## Roles & Responsibilities
 
-**Responsibilities**:
-- Complete ISMS-IMP-A.8.24 assessment workbooks quarterly
-- Maintain evidence of cryptographic control implementation
-- Remediate identified cryptographic gaps within approved timelines
-- Coordinate with Security Team for cryptographic incident response
+**Chief Information Security Officer (CISO)**:
 
----
+- Policy ownership and strategic direction
+- Cryptographic exception approvals (technical)
+- Regulatory compliance oversight
+- Algorithm deprecation authority
 
-**Security Team (Security Engineers, Security Architects)**
 
-**Accountabilities**:
-- Provides cryptographic technical expertise and guidance
-- Monitors cryptographic control compliance across [Organization]
-- Manages cryptographic incidents (compromised keys, algorithm vulnerabilities)
-- Maintains ISMS-CTX-A.8.24 (Cryptographic Landscape Reference)
 
-**Authorities**:
-- Recommend cryptographic technologies and configurations
-- Review and validate cryptographic implementations
-- Escalate non-compliance to CISO
-- Declare cryptographic incidents
+**Information Security Manager**:
 
-**Responsibilities**:
-- Support System Owners with cryptographic implementation guidance
-- Monitor algorithm deprecation announcements (NIST, BSI, CA/Browser Forum)
-- Update ISMS-CTX-A.8.24 as industry standards evolve
-- Conduct cryptographic control assessments and audits
-- Respond to cryptographic security incidents
-
----
-
-**Legal/Compliance Officer**
+- Day-to-day policy implementation coordination
+- Technical guidance to System Owners
+- Assessment program management
+- Incident coordination
 
-**Accountabilities**:
-- Monitors regulatory changes affecting cryptographic requirements
-- Assesses cryptographic compliance with applicable regulations
-- Supports exception approval process (regulatory impact assessment)
-
-**Authorities**:
-- Flag regulatory non-compliance to CISO and Executive Management
-- Recommend policy updates for regulatory alignment
-- Require cryptographic controls for contractual obligations
-
-**Responsibilities**:
-- Update ISMS-POL-00 (Regulatory Applicability Framework) for cryptographic regulations
-- Review exception requests for regulatory impact
-- Support internal and external audits on cryptographic compliance
-
----
 
-**Third-Party Service Providers (Cloud Providers, Managed Service Providers, SaaS Vendors)**
 
-**Accountabilities**:
-- Implement cryptographic controls per contractual requirements
-- Provide evidence of cryptographic implementation (SOC 2, ISO 27001 certificates)
-- Notify [Organization] of cryptographic incidents or algorithm deprecations affecting services
+**System Owners**:
 
-**Authorities**:
-- Manage cryptographic infrastructure within their service boundaries
-- Select cryptographic implementations (subject to [Organization] approval for Restricted data)
-
-**Responsibilities**:
-- Maintain encryption of [Organization] data at rest and in transit
-- Provide access to key management interfaces (customer-managed keys)
-- Report cryptographic compliance status via attestations or audits
-- Coordinate with [Organization] for cryptographic incident response
+- Cryptographic control implementation for their systems
+- Risk assessment participation
+- Assessment and audit participation
+- Remediation plan execution
 
-**Evaluation**: See ISMS-REF-A.5.23 (Cloud Service Provider Registry) for cryptographic requirements in vendor contracts.
 
-### 2.3 Accountability Matrix
 
-| Role | Policy Ownership | Exception Approval | Implementation | Monitoring | Incident Response |
-|------|------------------|-------------------|----------------|------------|-------------------|
-| **Executive Management** | Approve | Final Authority | Fund | Review Reports | Informed |
-| **CISO** | Own | Primary Approval | Define Requirements | Oversight | Coordinate |
-| **CIO** | Support | Recommend | Execute | Operational | Support |
-| **System Owners** | Comply | Request | Implement | Report Status | Execute |
-| **Security Team** | Support | Recommend | Advise | Monitor | Lead Technical Response |
-| **Legal/Compliance** | Regulatory Input | Regulatory Review | N/A | Compliance Audit | Legal Support |
-
----
+**IT Security Team**:
 
-## 3. Policy Requirements
+- Technical implementation support
+- Key management infrastructure (HSM/KMS)
+- Cryptographic assessment execution
+- Algorithm monitoring
 
-### 3.1 Data Classification and Cryptographic Requirements
 
-Cryptographic control requirements are determined by data classification per [Organization]'s data classification scheme.
-
-**Data Classification Mapping**:
-
-| Data Classification | Confidentiality Impact | Example Data Types | Cryptographic Requirements |
-|---------------------|----------------------|-------------------|---------------------------|
-| **Restricted** | Critical - Severe damage if disclosed | Trade secrets, financial records, patient data, cryptographic keys | MANDATORY encryption (transit AND rest), customer-managed keys, AES-256 minimum |
-| **Confidential** | High - Significant damage if disclosed | Employee data, customer contracts, internal financial data | MANDATORY encryption (transit AND rest), AES-128/256 acceptable |
-| **Internal** | Moderate - Limited damage if disclosed | Internal documentation, operational procedures, project plans | RECOMMENDED encryption based on risk assessment |
-| **Public** | None - Intended for public disclosure | Marketing materials, public website content, press releases | OPTIONAL - No cryptographic requirements |
-
-**Key Principle**: Higher data classification → Stronger cryptographic controls and key management requirements.
-
-### 3.2 Data Transmission Encryption Requirements
-
-**Objective**: Protect data confidentiality and integrity during transmission across networks.
-
-**Policy Requirements by Data Classification**:
-
-**Restricted Data Transmission**:
-- MANDATORY TLS 1.2 minimum (TLS 1.3 preferred) for all network transmission
-- MANDATORY VPN or equivalent encryption for remote access
-- MANDATORY end-to-end encryption for email containing Restricted data (S/MIME or PGP)
-- MANDATORY digital signatures for authentication and non-repudiation where required
-- PROHIBITED unencrypted transmission under any circumstances
-
-**Confidential Data Transmission**:
-- MANDATORY TLS 1.2 minimum for web services and APIs
-- MANDATORY encryption for file transfer (SFTP, FTPS, or HTTPS)
-- MANDATORY VPN for remote access to Confidential data
-- RECOMMENDED email encryption (S/MIME or PGP)
-- PROHIBITED unencrypted transmission over public networks
-
-**Internal Data Transmission**:
-- MANDATORY TLS 1.2 minimum for web services exposing Internal data over public networks
-- RECOMMENDED encryption for file transfer
-- RECOMMENDED VPN for remote access
-- Unencrypted transmission acceptable within secured internal networks (risk assessment required)
-
-**Public Data Transmission**:
-- RECOMMENDED HTTPS for integrity and authentication (not required for confidentiality)
-- No mandatory encryption requirements
-
-**Protocol-Specific Requirements**:
-
-| Protocol/Service | Minimum Encryption | Acceptable Use | Prohibited Use |
-|------------------|-------------------|----------------|----------------|
-| **HTTPS/TLS** | TLS 1.2 (TLS 1.3 preferred) | All web services, APIs, internal applications | TLS 1.0, TLS 1.1, SSL v2/v3 |
-| **Email** | TLS 1.2 (transport), S/MIME/PGP (end-to-end) | All email transmission | Unencrypted SMTP for Restricted data |
-| **File Transfer** | SFTP, FTPS, or HTTPS | All file transfers containing organizational data | FTP (unencrypted), HTTP file transfer |
-| **VPN** | IPsec or TLS-based VPN (OpenVPN, WireGuard) | All remote access to organizational networks | PPTP, L2TP without IPsec |
-| **SSH** | SSH-2 with RSA-2048+ or Ed25519 keys | Server administration, secure shell access | SSH-1, password-only authentication |
-| **RDP** | RDP with TLS 1.2, NLA (Network Level Authentication) | Remote desktop access | Unencrypted RDP, RDP over public networks without VPN |
-| **Database** | TLS 1.2 for client-server connections | All database connections over networks | Unencrypted database protocols (MySQL, PostgreSQL, MSSQL without TLS) |
-| **Wireless** | WPA3 (WPA2-Enterprise acceptable) | Organizational WiFi networks | WEP, WPA, WPA2-Personal, open networks |
-
-**Implementation Guidance**: See ISMS-IMP-A.8.24-1 (Data Transmission Assessment) for detailed configuration procedures, cipher suite selection, certificate management, and compliance verification.
-
-**Technical Reference**: See ISMS-CTX-A.8.24 (Cryptographic Landscape Reference) for algorithm status, TLS cipher suites, and industry standards evolution.
-
-### 3.3 Data Storage Encryption Requirements
-
-**Objective**: Protect data confidentiality at rest against unauthorized access, theft, or loss.
-
-**Policy Requirements by Data Classification**:
-
-**Restricted Data Storage**:
-- MANDATORY full disk encryption (FDE) or volume encryption for all storage (mobile devices, laptops, servers)
-- MANDATORY database Transparent Data Encryption (TDE) or equivalent
-- MANDATORY file-level or application-level encryption for cloud storage
-- MANDATORY customer-managed keys (CMEK) or customer-held keys (HYOK) for cloud storage
-- MANDATORY backup encryption with separate key storage
-- MANDATORY AES-256 minimum encryption algorithm
-- MANDATORY key escrow and recovery procedures
-
-**Confidential Data Storage**:
-- MANDATORY encryption for mobile devices and laptops (BitLocker, FileVault, LUKS)
-- MANDATORY database TDE or column-level encryption
-- MANDATORY encryption for cloud storage (customer-managed keys preferred)
-- MANDATORY backup encryption
-- AES-128 or AES-256 acceptable
-- MANDATORY key escrow for business-owned devices
-
-**Internal Data Storage**:
-- RECOMMENDED encryption for mobile devices and laptops
-- RECOMMENDED database encryption for sensitive Internal data
-- RECOMMENDED encryption for cloud storage
-- Risk assessment determines encryption requirements
-- Encryption REQUIRED for portable storage (USB drives, external disks)
-
-**Public Data Storage**:
-- OPTIONAL - No encryption requirements
-- May use encryption for integrity protection or operational consistency
-
-**Storage Type-Specific Requirements**:
-
-| Storage Type | Restricted Data | Confidential Data | Internal Data |
-|--------------|----------------|------------------|---------------|
-| **Mobile Devices** | MANDATORY FDE (iOS, Android encryption) | MANDATORY FDE | RECOMMENDED |
-| **Laptops/Workstations** | MANDATORY (BitLocker, FileVault, LUKS) | MANDATORY | RECOMMENDED |
-| **Servers** | MANDATORY (volume/disk encryption) | MANDATORY | Risk-based |
-| **Databases** | MANDATORY (TDE, column-level, field-level) | MANDATORY (TDE minimum) | Risk-based |
-| **Cloud Storage** | MANDATORY (CMEK/HYOK) | MANDATORY (CMEK preferred) | RECOMMENDED |
-| **Backups** | MANDATORY (AES-256) | MANDATORY | RECOMMENDED |
-| **Removable Media** | MANDATORY (BitLocker To Go, encrypted devices) | MANDATORY | MANDATORY |
-
-**Cloud Deployment Encryption Requirements**:
-
-**On-Premises Deployment**:
-- [Organization] controls all encryption infrastructure (HSM, KMS)
-- Full device/volume encryption for servers and storage
-- Database TDE enabled for all databases containing Confidential/Restricted data
-
-**Hybrid Deployment**:
-- Encryption required in both on-premises and cloud environments
-- Key synchronization or separate key management per environment
-- Cross-environment data transfer requires encryption in transit
-
-**Cloud Deployment**:
-- Cloud provider encryption-at-rest enabled for all storage services
-- Customer-managed keys (CMEK/BYOK) REQUIRED for Restricted data
-- Customer-managed keys (CMEK/BYOK) PREFERRED for Confidential data
-- Cloud-service-managed keys (CSEK/PMK) acceptable for Internal data with risk acceptance
-- Customer-held keys (HYOK) REQUIRED for Restricted data with regulatory key custody requirements
-
-**Implementation Guidance**: See ISMS-IMP-A.8.24-2 (Data Storage Assessment) for:
-- Detailed encryption configuration procedures
-- Cloud encryption architecture patterns (Section 5.8)
-- Key management model selection (PMK/CMEK/HYOK)
-- Deployment model considerations (on-premises, hybrid, cloud)
-- Platform-specific guidance (BitLocker, FileVault, LUKS, TDE, Cloud KMS)
-
-**Technical Reference**: See ISMS-CTX-A.8.24 for encryption algorithms, key lengths, and maturity status.
-
-### 3.4 Authentication and Digital Signature Requirements
-
-**Objective**: Ensure authenticity, non-repudiation, and integrity through cryptographic authentication mechanisms.
-
-**Password-Based Authentication**:
-- Passwords MUST be hashed using approved algorithms (see ISMS-CTX-A.8.24 for current recommendations)
-- Password storage MUST NOT use reversible encryption
-- PROHIBITED: Plain text storage, weak hashing (MD5, SHA-1 for password hashing), symmetric encryption of passwords
-
-**Multi-Factor Authentication (MFA)**:
-- MANDATORY for all access to Restricted data
-- MANDATORY for all administrative/privileged access
-- RECOMMENDED for access to Confidential data
-- MFA mechanisms: Time-based OTP (TOTP), hardware tokens, biometrics, certificate-based authentication
-
-**Digital Certificates and PKI**:
-- Public TLS certificates MUST be issued by trusted Certificate Authority (CA)
-- Internal PKI certificates for internal services acceptable with proper CA hierarchy
-- Certificate validity periods aligned with CA/Browser Forum requirements (public certificates) or organizational policy (internal certificates)
-- Certificate lifecycle management REQUIRED (issuance, renewal, revocation)
-
-**Digital Signatures**:
-- REQUIRED for code signing (software releases, scripts)
-- REQUIRED for document signing where legal non-repudiation needed
-- REQUIRED for email authentication (S/MIME, PGP) for Restricted data
-- Signature algorithms per ISMS-CTX-A.8.24 current recommendations
-
-**Biometric Authentication**:
-- Acceptable as MFA factor (combined with password/PIN)
-- Biometric data MUST be stored as cryptographic hash or template (not raw biometric)
-- PROHIBITED: Reversible storage of biometric data
-
-**Implementation Guidance**: See ISMS-IMP-A.8.24-3 (Authentication Assessment) for:
-- Password hashing algorithm selection and configuration
-- MFA implementation procedures
-- Certificate lifecycle management
-- Digital signature procedures
-- Biometric authentication requirements
-
-**Technical Reference**: See ISMS-CTX-A.8.24 for hash functions, signature algorithms, and key lengths.
-
-### 3.5 Key Management Requirements
-
-**Objective**: Protect cryptographic keys throughout their lifecycle to prevent unauthorized access, compromise, or loss.
-
-**Key Generation**:
-- Cryptographic keys MUST be generated using cryptographically secure random number generators (CSPRNG)
-- Key generation MUST occur in secure environment (HSM, TPM, or trusted key management system)
-- Weak or predictable key generation PROHIBITED
-
-**Key Storage**:
-- **Restricted Data Keys**: MUST be stored in Hardware Security Module (HSM) or equivalent tamper-resistant device
-- **Confidential Data Keys**: MUST be stored in HSM, Trusted Platform Module (TPM), or cloud KMS with customer-managed keys
-- **Internal Data Keys**: MAY be stored in software-based key management system with appropriate access controls
-- PROHIBITED: Plaintext key storage, hardcoded keys in application code, keys in version control systems
-
-**Key Rotation**:
-- **Encryption Keys**: Rotation frequency based on data classification and risk assessment (annual minimum for Restricted data)
-- **TLS Certificates**: Per certificate validity period (public certificates per CA/Browser Forum requirements)
-- **SSH Keys**: Annual rotation minimum for administrative access keys
-- **API Keys/Tokens**: 90-day rotation recommended, 180-day maximum for Confidential data access
-
-**Key Escrow and Recovery**:
-- MANDATORY for business-owned device encryption keys (BitLocker, FileVault recovery keys)
-- MANDATORY for data encryption keys protecting Restricted/Confidential data
-- Escrow system MUST have access controls and audit logging
-- Key recovery procedures MUST be tested annually
-
-**Key Destruction**:
-- Keys MUST be securely destroyed when no longer needed
-- Cryptographic erasure or physical destruction of key material
-- Destruction MUST be logged and verifiable
-- Retention aligned with data retention policies and legal requirements
-
-**Key Separation**:
-- Encryption keys MUST be stored separately from encrypted data
-- Key management systems MUST NOT be co-located with application servers
-- Multi-party control (split knowledge, dual control) REQUIRED for Restricted data key access
-
-**Implementation Guidance**: See ISMS-IMP-A.8.24-4 (Key Management Assessment) for:
-- Key lifecycle procedures (generation, storage, rotation, destruction)
-- HSM/KMS selection and configuration
-- Key escrow and recovery procedures
-- Cloud key management (AWS KMS, Azure Key Vault, GCP KMS)
-- Key rotation schedules and automation
-
-**Technical Reference**: See ISMS-CTX-A.8.24 for key length recommendations and algorithm lifecycle.
-
-### 3.6 Cryptographic Agility
-
-**Objective**: Enable [Organization] to adapt to evolving cryptographic landscape, algorithm deprecations, and emerging threats (including post-quantum cryptography).
-
-**Algorithm Lifecycle Monitoring**:
-- Security Team MUST monitor algorithm deprecation announcements from authoritative sources:
-  - NIST (National Institute of Standards and Technology)
-  - BSI (Bundesamt für Sicherheit in der Informationstechnik)
-  - CA/Browser Forum (for TLS certificates)
-  - IETF (Internet Engineering Task Force)
-  - Browser vendors (Chrome, Firefox, Safari, Edge root programs)
-
-**Deprecation Response**:
-- When algorithm deprecation announced: Risk assessment within 30 days
-- Migration planning required for deprecated algorithms affecting Confidential/Restricted data
-- Migration execution timeline based on deprecation severity and organizational risk
-
-**Post-Quantum Cryptography Readiness**:
-- Monitor NIST post-quantum cryptography standardization progress
-- Assess organizational systems for post-quantum migration requirements
-- Plan for hybrid cryptography during transition period (classical + post-quantum)
-
-**Cryptographic Inventory**:
-- Maintain inventory of cryptographic implementations (algorithms, key lengths, systems)
-- Quarterly review of cryptographic inventory for deprecated algorithms
-- Assessment workbooks (ISMS-IMP-A.8.24-1 through IMP-4) document current cryptographic status
-
-**Technical Reference**: ISMS-CTX-A.8.24 (Cryptographic Landscape Reference) documents:
-- Algorithm lifecycle status (Modern, Legacy, Deprecated, Obsolete)
-- Industry standards evolution
-- Post-quantum cryptography status
-- Certificate validity trends
-
-**Note**: ISMS-CTX-A.8.24 is a non-ISMS technical reference document maintained by Security Team. Updates to CTX do NOT require policy revision.
-
----
-
-## 4. Exception Management
-
-### 4.1 Exception Policy
-
-Cryptographic policy requirements are mandatory for systems processing Internal, Confidential, or Restricted data. Exceptions may be granted only when:
-- Technical constraints prevent policy-compliant implementation, AND
-- Compensating controls reduce risk to acceptable levels, AND
-- Exception is documented, approved, and time-limited
-
-**Prohibited Exceptions**:
-- Exceptions that violate mandatory regulatory requirements (Tier 1 per ISMS-POL-00)
-- Exceptions for Restricted data without compensating controls
-- Permanent exceptions without periodic review
-- Exceptions based solely on cost or convenience
-
-**Exception Principles**:
-- Exceptions are temporary measures, not permanent solutions
-- Remediation planning is mandatory for all approved exceptions
-- Exceptions expire and require renewal (maximum 12 months)
-- Exception inventory maintained and reviewed quarterly
-
-### 4.2 Exception Request Process
-
-**Step 1: Exception Request Submission**
-
-System Owner submits exception request documenting:
-- System/application/service requiring exception
-- Specific policy requirement(s) that cannot be met
-- Data classification of affected data
-- Technical or business justification for exception
-- Proposed compensating controls
-- Risk assessment (likelihood and impact of not implementing policy requirement)
-- Remediation plan with target completion date
-- Budget and resource requirements for remediation
-
-**Exception Request Template**: Available from Security Team
-
-**Step 2: Security Team Review**
-
-Security Team reviews exception request within 5 business days:
-- Validates technical justification
-- Assesses proposed compensating controls
-- Evaluates risk assessment
-- Recommends approval, conditional approval, or rejection
-- Escalates to CISO with recommendation
-
-**Step 3: CISO Approval Decision**
-
-CISO approves or rejects exception within 10 business days:
-- **Approved**: Exception granted with conditions, expiration date, and review schedule
-- **Conditional Approval**: Exception granted pending specific conditions (e.g., additional compensating controls)
-- **Rejected**: Exception denied, policy-compliant implementation required
-
-**Step 4: Exception Documentation**
-
-Approved exceptions documented in Exception Register:
-- Exception ID (unique identifier)
-- Approval date and expiration date
-- System/service covered by exception
-- Specific policy requirements waived
-- Compensating controls implemented
-- Risk acceptance (residual risk documented)
-- Remediation plan and milestones
-- Review schedule (quarterly minimum)
-
-**Step 5: Exception Monitoring**
-
-Security Team monitors exception status:
-- Quarterly review of compensating control effectiveness
-- Remediation progress tracking
-- Exception expiration alerts (60 days before expiration)
-- Annual exception report to Executive Management
-
-### 4.3 Compensating Controls
-
-When policy-compliant cryptographic controls cannot be implemented, compensating controls reduce risk to acceptable levels.
-
-**Acceptable Compensating Controls (Examples)**:
-- **Network segmentation**: Isolate non-compliant systems in restricted network segments with enhanced monitoring
-- **Enhanced access controls**: Multi-factor authentication, privileged access management, just-in-time access
-- **Data minimization**: Reduce data classification (e.g., anonymization, pseudonymization) to lower encryption requirements
-- **Application-level encryption**: Encrypt sensitive fields at application layer if database TDE unavailable
-- **Physical security**: Enhanced physical security for systems with unencrypted storage (locked facilities, biometric access)
-- **Monitoring and alerting**: Enhanced security monitoring, SIEM correlation, anomaly detection
-- **Time-limited access**: Restrict access to non-compliant systems to specific time windows with logging
-
-**Unacceptable Compensating Controls**:
-- Policy acknowledgment or user training alone (does not reduce technical risk)
-- Antivirus or endpoint protection (does not replace encryption)
-- Backup-only encryption (does not protect primary data)
-- Obscurity or obfuscation (not cryptographically secure)
-
-**Compensating Control Assessment**:
-- Security Team validates compensating controls provide equivalent risk reduction
-- Compensating controls must be verifiable and auditable
-- Annual review of compensating control effectiveness
-
-### 4.4 Exception Review and Renewal
-
-**Quarterly Exception Review**:
-- Security Team reviews all active exceptions
-- Validates compensating controls remain effective
-- Tracks remediation progress against milestones
-- Escalates overdue remediation to CISO
-
-**Exception Expiration and Renewal**:
-- Exceptions expire after 12 months maximum
-- Renewal requires updated exception request (same approval process)
-- Renewal NOT automatic - requires re-justification
-- Repeated renewals trigger escalation to Executive Management
-
-**Exception Closure**:
-- Exception closed when policy-compliant implementation completed
-- Exception closed when system/service decommissioned
-- Closure documented in Exception Register
-- Lessons learned captured for future implementations
-
-### 4.5 Exception Reporting
-
-**Quarterly Report to CISO**:
-- Active exceptions count and risk summary
-- Overdue remediation items
-- New exceptions requested/approved/rejected
-- Exception trends and patterns
-
-**Annual Report to Executive Management**:
-- Exception inventory and risk profile
-- Remediation completion rate
-- Systemic issues requiring policy or resource changes
-- Recommendations for exception reduction
-
----
-
-## 5. Assessment and Compliance
-
-### 5.1 Compliance Verification Methodology
-
-[Organization] verifies cryptographic policy compliance through structured assessment process using ISMS-IMP-A.8.24 assessment workbooks.
-
-**Assessment Framework**:
-- **IMP-A.8.24-1**: Data Transmission Assessment (HTTPS/TLS, Email, File Transfer, VPN, SSH, RDP, APIs, Database, Wireless, Cloud)
-- **IMP-A.8.24-2**: Data Storage Assessment (Mobile Devices, Laptops, Servers, Databases, Cloud Storage, Backups, Removable Media)
-- **IMP-A.8.24-3**: Authentication Assessment (Password Hashing, MFA, Certificates, Digital Signatures, Biometrics)
-- **IMP-A.8.24-4**: Key Management Assessment (Key Generation, Storage, Rotation, Escrow, Destruction)
-- **IMP-A.8.24-5**: Compliance Summary Dashboard (Consolidated view across all assessments)
+
+**Development Teams**:
+
+- Secure cryptographic implementation in applications
+- Use of approved cryptographic libraries
+- Security code review participation
+- Vulnerability remediation
+
+
+
+**Legal/Compliance**:
+
+- Regulatory requirement interpretation
+- External audit coordination
+- Regulatory notification (if incidents occur)
+
+
+
+**Key Ownership vs System Ownership**:
+
+[Organization] distinguishes between:
+
+- **Key Owners**: Authorize key creation and define key usage policies (governance)
+- **Key Custodians**: Execute physical key management operations (HSM administration, key generation)
+- **System Owners**: Operate systems using keys (do not manage keys directly)
+
+
+
+This separation ensures accountability, segregation of duties, and clear audit trails.
+
+## Assessment & Compliance Verification
+
+**Assessment Approach**: [Organization] conducts cryptographic control assessments using structured methodology covering:
+
+- Data Transmission controls
+- Data Storage controls
+- Authentication mechanisms
+- Key Management practices
+
+
 
 **Assessment Frequency**:
-- **Quarterly**: All systems processing Confidential or Restricted data
-- **Annually**: All systems processing Internal data
-- **Triggered**: After major infrastructure changes, security incidents, or regulatory updates
 
-### 5.2 Assessment Process
+- **Initial**: Within 90 days of policy approval or new system deployment
+- **Regular**: Annual minimum
+- **Triggered**: After significant system changes, security incidents, or algorithm deprecations
 
-**Step 1: Assessment Planning** (Security Team + System Owners)
-- Identify systems and services in scope
-- Assign assessment responsibilities by system/service area
-- Distribute assessment workbooks (Excel templates generated via Python scripts)
-- Schedule assessment completion deadline (typically 30 days)
 
-**Step 2: Data Collection** (System Owners)
-- Complete assessment workbooks for assigned systems
-- Document current cryptographic implementation status
-- Identify compliance gaps (✅ Compliant / ⚠️ Partial / ❌ Non-Compliant)
-- Collect evidence (configuration screenshots, reports, certificates)
-- Document exceptions and compensating controls
 
-**Step 3: Gap Analysis** (System Owners + Security Team)
-- Review identified gaps against policy requirements
-- Assess gap severity (High/Medium/Low based on data classification and risk)
-- Validate compensating controls if applicable
-- Develop remediation plans for non-compliant items
+**Continuous Monitoring**:
 
-**Step 4: Remediation Planning** (System Owners)
-- Document remediation actions required
-- Assign responsible persons and target completion dates
-- Identify budget and resource requirements
-- Prioritize remediation based on risk (High priority: Restricted data gaps)
+Between scheduled assessments, [Organization] employs automated monitoring for:
 
-**Step 5: Dashboard Consolidation** (Security Team)
-- Consolidate assessment workbooks into ISMS-IMP-A.8.24-5 Dashboard
-- Calculate overall compliance percentage
-- Identify top gaps requiring immediate attention
-- Generate executive summary for CISO
+- **Prohibited Algorithm Detection**: Weekly vulnerability scans using [Tool Name - to be specified in ISMS-IMP-A.8.24] to detect MD5, DES, RC4, or other prohibited algorithms in production systems. Findings trigger immediate assessment per "Triggered Assessment" criteria above.
 
-**Step 6: Review and Approval** (CISO)
-- Review consolidated dashboard and gap analysis
-- Approve remediation plans and timelines
-- Escalate critical gaps to Executive Management if needed
-- Track remediation progress through quarterly reviews
+- **Certificate Expiration**: Automated monitoring via [Certificate Management System - to be specified] with alerts at 60 days, 30 days, and 7 days prior to expiration. Alert recipients defined in ISMS-IMP-A.8.24-4 (Key Management Assessment).
 
-### 5.3 Compliance Scoring
+- **TLS Configuration Drift**: Monthly TLS cipher suite scans to detect configuration changes enabling weak ciphers. Deviations from approved configurations (ISMS-CTX-A.8.24) trigger compliance assessment.
 
-**Compliance Calculation**:
-```
-Compliance % = (Compliant Items / Total Applicable Items) × 100
 
-Where:
-- Compliant Items: Items marked ✅ Compliant
-- Total Applicable Items: All items excluding N/A (Not Applicable)
-- Partial (⚠️) and Non-Compliant (❌) count as non-compliant
-```
+**Monitoring Evidence**: Automated scan logs retained in [Security Information and Event Management (SIEM) system / Evidence Repository - to be specified] for minimum 12 months. Monitoring system operational status verified quarterly by IT Security Team.
 
-**Compliance Targets**:
-- **Mature ISMS**: ≥90% overall compliance
-- **New ISMS**: ≥70% compliance in first year, ≥85% by year two, ≥90% by year three
-- **Restricted Data Systems**: ≥95% compliance (higher bar for highest sensitivity)
-- **Confidential Data Systems**: ≥90% compliance
-- **Internal Data Systems**: ≥80% compliance
+**Note**: Specific monitoring tool selection and configuration procedures documented in ISMS-IMP-A.8.24 Implementation Guides to enable technical flexibility without policy revision.
 
-**Compliance Status Definitions**:
-- **✅ Compliant**: Fully meets policy requirements, no gaps identified
-- **⚠️ Partial**: Some requirements met, minor gaps exist, remediation planned
-- **❌ Non-Compliant**: Does not meet policy requirements, significant gaps, immediate remediation required
-- **N/A**: Not applicable to this system/service (excluded from compliance calculation)
 
-### 5.4 Evidence Requirements
+**Significant System Changes** (triggering assessment) include:
 
-**Assessment Evidence Types**:
-- Configuration files and screenshots (TLS settings, encryption settings, certificate configurations)
-- System reports (BitLocker status, MDM encryption reports, database TDE status)
-- Cloud provider configurations (KMS settings, S3 encryption policies, encryption-at-rest verification)
-- Certificate inventories (TLS certificates, code signing certificates, expiration tracking)
-- Key management documentation (key rotation logs, escrow verification, HSM/KMS configurations)
-- Audit logs (cryptographic operations, key access, certificate lifecycle events)
-- Vendor attestations (SOC 2 reports, ISO 27001 certificates for cloud/SaaS providers)
+- Major version upgrades to cryptographic libraries or TLS implementations
+- Migration to new infrastructure (cloud, on-premises, hybrid changes)
+- Integration of new third-party services handling Confidential/Restricted data
+- Changes to key management infrastructure (HSM/KMS)
+- Deployment of new applications processing Confidential/Restricted data
+- Algorithm deprecation affecting systems in scope
 
-**Evidence Storage**:
-- Evidence files stored in [Organization]'s evidence repository
-- Evidence naming convention: `EV-[IMP-Section]-[System]-[Date]-[Type].[ext]`
-- Evidence retention: Audit cycle + 1 year minimum
-- Evidence access control: Restricted to Security Team, System Owners, and Auditors
-- Evidence sanitization: Remove sensitive data (encryption keys, passwords) before storage
 
-**Evidence Traceability**:
-- Each assessment workbook references evidence file locations
-- Evidence Register maintained in IMP-A.8.24 documents
-- Evidence linked to specific policy requirements for audit trail
 
-### 5.5 Incident Response
+**Assessment Tools**: [Organization] uses ISMS-IMP-A.8.24 Assessment Workbooks to systematically verify compliance, document evidence, and track remediation.
+
+**Evidence Collection**: Assessments collect the following evidence types:
+
+- **Configuration Evidence**: Screenshots, exports, or configuration files demonstrating cryptographic settings
+- **System Reports**: Automated scan results, TLS configuration reports, cipher suite analysis
+- **Certificate Inventories**: Complete listing of certificates with expiration dates and key specifications
+- **Key Management Records**: Key rotation logs, access control records, HSM audit logs
+- **Third-Party Attestations**: Vendor SOC 2 reports, ISO 27001 certificates, security questionnaire responses
+
+
+**Evidence Sampling Methodology**:
+
+For assessments covering multiple systems:
+
+- **100% Coverage Required**:
+  - Certificate inventories (all certificates must be tracked)
+  - HSM/KMS access controls (all privileged accounts audited)
+  - Prohibited algorithm detection (automated scans provide complete coverage)
+  - Systems processing Restricted data (no sampling permitted)
+
+- **Statistical Sampling Permitted**:
+  - Configuration evidence for homogeneous system groups (e.g., 30 identical web servers configured from single template)
+  - Sample size calculated per ISMS-IMP-A.8.24 Assessment Methodology to achieve 95% confidence level
+  - Minimum sample: 10% of population or 5 systems, whichever is greater
+  - Non-homogeneous systems require individual assessment
+
+- **Risk-Based Prioritization**: Systems processing Restricted data receive enhanced scrutiny (100% coverage). Systems processing only Internal data may use sampling where automated validation is unavailable.
+
+
+**Auditor Access**: Full inventory and automated scan results provided to auditors. Sample selection methodology documented in assessment workbook to demonstrate statistical validity.
+
+
+**Compliance Calculation**: Compliance score = (Implemented Controls / Applicable Controls) x 100%
+
+**Compliance Targets by Data Classification**:
+
+| Data Classification | Minimum Compliance | Target Compliance |
+|---------------------|-------------------|-------------------|
+| **Internal** | 70% | 85% |
+| **Confidential** | 85% | 95% |
+| **Restricted** | 95% | 100% |
+
+**Compliance Calculation Methodology**:
+
+- **Required Controls**: Must be implemented for 100% compliance. Non-implementation constitutes policy violation requiring exception approval per Section 3.3.
+
+- **Recommended Controls**: Included in compliance scoring. Systems implementing recommended controls receive credit toward compliance percentage; systems not implementing receive neutral score (neither credit nor violation). Recommended controls enable exceeding minimum compliance thresholds.
+
+- **Compliance Score Formula**:
+  - Required Controls Score = (Implemented Required / Total Required) x 100%
+  - Recommended Controls Score = (Implemented Recommended / Total Recommended) x 100%
+  - Overall Score = (Required Score x 70%) + (Recommended Score x 30%)
+
+- **Example**: System processing Internal data:
+  - All Required controls implemented (100% Required Score)
+  - No Recommended controls implemented (0% Recommended Score)
+  - Overall: (100% x 70%) + (0% x 30%) = 70% (meets minimum threshold)
+
+
+  Same system with Recommended controls:
+
+  - All Required controls implemented (100% Required Score)
+  - All Recommended controls implemented (100% Recommended Score)
+  - Overall: (100% x 70%) + (100% x 30%) = 100% (exceeds target)
+
+
+**Rationale**: "Recommended" status reflects risk-based approach where encryption provides security value but organizational risk tolerance permits exceptions for Internal classification without formal approval process. Required controls address regulatory obligations (Tier 1); Recommended controls address defense-in-depth best practices (Tier 3).
+
+**Evidence Storage**: Assessment evidence is retained in [Organization]'s ISMS evidence repository for minimum 3 years (or regulatory retention period if longer). Evidence is classified as Confidential and access-controlled.
+
+**Non-Compliance Management**: Assessment findings are classified by severity (Critical, High, Medium, Low) with defined remediation timelines. Gaps requiring risk acceptance follow the exception process (Section 3.3).
+
+## Exception Management
+
+**Exception Request Requirements**:
+
+Exceptions to cryptographic policy requirements require:
+
+- Documented business or technical justification
+- Risk assessment (likelihood, impact, residual risk)
+- Compensating controls (where feasible)
+- Timeline for achieving full compliance
+- Formal approval per authority matrix
+
+
+
+**Approval Authority**:
+
+- **Technical exceptions** (algorithm, configuration): CISO approval
+- **Policy-level exceptions** (requirement waiver): Executive Management approval
+- **Maximum duration**: 12 months
+- **Renewal**: Requires updated risk assessment and justification
+- **Maximum renewals**: 2 renewals permitted (36 months total maximum exception duration)
+- **Third expiration**: After two renewals, exception cannot be extended. System must achieve compliance or be decommissioned. Escalation to Executive Management required.
+
+
+**Renewal Limit Enforcement**:
+
+Exception tracking system (ISMS Gap Register or equivalent) automatically flags exceptions approaching renewal limits:
+
+- **First Renewal Alert**: 90 days before 12-month expiration
+- **Second Renewal Alert**: 60 days before 24-month expiration
+- **Final Expiration Notice**: 90 days before 36-month expiration with explicit statement "NO FURTHER RENEWALS PERMITTED"
+
+
+System Owners receive escalating communications. At 36-month expiration, exception automatically closes and system enters non-compliance status pending remediation or decommissioning.
+
+
+**Monitoring**: Active exceptions reviewed quarterly by CISO. Compensating control effectiveness verified. Exceptions revoked if risk profile changes or compensating controls fail.
+
+**Exception Template**: ISMS-IMP-A.8.24 Exception Request Form provides standardized documentation format.
+
+## Incident Response
 
 **Cryptographic Incidents** include:
-- Compromised cryptographic keys (encryption keys, signing keys, TLS private keys)
-- Algorithm vulnerabilities (e.g., POODLE, BEAST, Heartbleed)
-- Certificate compromise or unauthorized issuance
-- Cryptographic implementation flaws (weak random number generation, implementation bugs)
-- Unauthorized key access or key management system breach
-- Loss of key escrow/recovery capability
 
-**Incident Response Process**:
-1. **Detection**: Security Team identifies cryptographic incident or receives report
-2. **Classification**: Assess incident severity based on data classification and scope
-3. **Containment**: Revoke compromised keys/certificates, disable affected cryptographic implementations
-4. **Eradication**: Replace compromised keys, patch vulnerable implementations, update configurations
-5. **Recovery**: Restore cryptographic controls, verify integrity of encrypted data
-6. **Lessons Learned**: Document incident, update procedures, improve detection capabilities
+- Key compromise or suspected compromise
+- Certificate private key exposure
+- Unauthorized access to encrypted data
+- Discovery of prohibited algorithms in production
+- Cryptographic control failures
 
-**Incident Reporting**:
-- All cryptographic incidents reported to CISO within 24 hours
-- High-severity incidents (Restricted data exposure risk) escalated to Executive Management immediately
-- Regulatory breach notification if incident affects personal data (GDPR Art. 33, nDSG Art. 24)
 
-**Post-Incident Actions**:
-- Root cause analysis for all cryptographic incidents
-- Assessment of affected systems (determine scope of compromise)
-- Remediation plan to prevent recurrence
-- Update cryptographic inventory and risk assessment
-- Consider policy updates if incident reveals systemic gaps
 
-### 5.6 Continuous Improvement
+**Severity Classification**:
 
-**Quarterly Cryptographic Review** (Security Team + CISO):
-- Review assessment results and compliance trends
-- Analyze exception requests and remediation progress
-- Monitor algorithm deprecation announcements
-- Update ISMS-CTX-A.8.24 (Cryptographic Landscape Reference) as needed
-- Identify systemic issues and improvement opportunities
+- **Critical**: Confirmed compromise of production encryption keys, certificate private keys, or HSM/KMS access credentials. Response: 4 hours.
+- **High**: Suspected key compromise, discovery of prohibited algorithms protecting Confidential/Restricted data, or cryptographic control failure affecting multiple systems. Response: 24 hours.
+- **Medium**: Discovery of deprecated algorithms, certificate expiration causing service disruption, or isolated control failures. Response: 48 hours.
+- **Low**: Policy deviations without active exploitation, minor configuration drift. Response: 72 hours.
 
-**Annual Policy Review** (CISO + Legal/Compliance):
-- Comprehensive policy review against current regulatory landscape
-- Update ISMS-POL-A.8.24 for regulatory changes (reference ISMS-POL-00 updates)
-- Review cryptographic technology trends and emerging threats
-- Assess post-quantum cryptography readiness
-- Validate policy remains aligned with organizational risk appetite
 
-**Metrics and KPIs**:
-- Overall cryptographic compliance percentage (quarterly trend)
-- Mean time to remediate cryptographic gaps (by severity)
-- Exception count and age (active exceptions aging analysis)
-- Incident count and type (cryptographic incident trends)
-- Certificate expiration management (certificates expiring in next 30/60/90 days)
-- Algorithm deprecation response time (time from announcement to migration completion)
 
-**Benchmarking and Maturity Assessment**:
-- Compare cryptographic maturity against industry standards (CIS Controls, NIST CSF)
-- Assess cryptographic capability maturity (ad-hoc → managed → optimized)
-- Identify maturity gaps and improvement roadmap
-- Align cryptographic improvements with ISMS continuous improvement (ISO 27001 Clause 10)
+If response timelines cannot be met, escalate to CISO (for High/Medium/Low severity) or CEO (for Critical severity) within the original timeline window.
 
----
+**Response Process**:
+1. **Detection & Reporting**: Immediate notification to IT Security Team
+2. **Assessment**: Severity determination (Critical, High, Medium, Low)
+3. **Containment**: Key rotation timeline based on severity (4 hours to 72 hours)
+4. **Recovery**: New key generation, data re-encryption, system updates
+5. **Post-Incident**: Root cause analysis, preventive measures, regulatory notification (if applicable)
 
-## 6. Related Documents and References
+**Detailed Procedures**: ISMS-IMP-A.8.24 Incident Response Guide provides incident classification criteria, response workflows, and regulatory notification requirements.
 
-### 6.1 Internal ISMS Documents
+## Policy Governance
 
-**Policy Framework**:
-- ISMS-POL-00: Regulatory Applicability Framework (defines Tier 1/2/3 categorization)
-- ISO/IEC 27001:2022 Clause 6: Risk Management (cryptographic control selection)
-- [Organization] Data Classification Policy (defines Restricted/Confidential/Internal/Public)
+**Policy Review**:
 
-**Implementation Guidance (ISMS-IMP-A.8.24 Suite)**:
-- ISMS-IMP-A.8.24-1: Data Transmission Assessment (detailed procedures for TLS, VPN, email, protocols)
-- ISMS-IMP-A.8.24-2: Data Storage Assessment (encryption-at-rest, cloud encryption, deployment models)
-- ISMS-IMP-A.8.24-3: Authentication Assessment (password hashing, MFA, certificates, digital signatures)
-- ISMS-IMP-A.8.24-4: Key Management Assessment (key lifecycle, HSM/KMS, rotation, escrow)
-- ISMS-IMP-A.8.24-5: Compliance Summary Dashboard (consolidated compliance reporting)
+- **Frequency**: Annual minimum
+- **Triggers**: Regulatory changes, major incidents, algorithm deprecations, CA/Browser Forum baseline changes, organizational changes
+- **Reviewers**: CISO, IT Security Team, Legal/Compliance, selected System Owners
+- **Approval**: CISO (technical), Executive Management (strategic)
 
-**Technical Reference (Non-ISMS)**:
-- ISMS-CTX-A.8.24: Cryptographic Landscape Reference (algorithm tables, cipher suites, key lengths, industry standards)
 
-**Cloud Service Management**:
-- ISMS-REF-A.5.23: Cloud Service Provider Registry (cryptographic requirements in vendor evaluation)
 
-### 6.2 External Standards and Frameworks
+**Technical Standards Review**:
 
-**Regulatory References** (per ISMS-POL-00):
-- Swiss Federal Data Protection Act (nDSG/FADP) - SR 235.1
-- EU GDPR - Regulation (EU) 2016/679
-- ISO/IEC 27001:2022 - Control A.8.24
-- PCI DSS - Payment Card Industry Data Security Standard (if applicable)
-- HIPAA - 45 CFR Part 164 (if applicable)
-- DORA - Regulation (EU) 2022/2554 (if applicable)
-- NIS2 - Directive (EU) 2022/2555 (if applicable)
+- **Frequency**: Semi-annual (cryptographic landscape evolves rapidly)
+- **Authority**: IT Security Team proposes updates, CISO approves
+- **Note**: Technical standard updates (ISMS-IMP-A.8.24) do not require policy revision
 
-**Technical Standards** (Informational Reference):
-- NIST SP 800-52 Rev. 2: Guidelines for TLS Implementations
-- NIST SP 800-57 Part 1 Rev. 5: Recommendation for Key Management
-- NIST SP 800-131A Rev. 2: Transitioning the Use of Cryptographic Algorithms
-- BSI TR-02102-1: Cryptographic Mechanisms - Recommendations and Key Lengths
-- BSI TR-02102-2: Use of Transport Layer Security (TLS)
-- IETF RFC 8446: The Transport Layer Security (TLS) Protocol Version 1.3
-- CA/Browser Forum Baseline Requirements for TLS Certificates
 
-### 6.3 Document Hierarchy
-```
-ISMS Cryptographic Control Framework
 
-┌─────────────────────────────────────────────────────────────┐
-│  ISMS-POL-A.8.24 (THIS DOCUMENT)                           │
-│  Policy Requirements (WHAT and WHO)                         │
-│  - Data classification-based requirements                   │
-│  - Roles and responsibilities                               │
-│  - Exception management                                     │
-└─────────────────────────────────────────────────────────────┘
-                            │
-        ┌───────────────────┴───────────────────┬─────────────────────┐
-        ▼                                       ▼                     ▼
-┌──────────────────┐                 ┌──────────────────┐  ┌──────────────────┐
-│  ISMS-IMP-A.8.24 │                 │ ISMS-CTX-A.8.24  │  │  ISMS-POL-00     │
-│  Implementation  │                 │ Technical Context │  │  Regulatory      │
-│  Guidance (HOW)  │                 │ (Non-ISMS)       │  │  Framework       │
-│                  │                 │                  │  │                  │
-│  - IMP-1: Data   │                 │ - Algorithm      │  │  - Tier 1/2/3    │
-│    Transmission  │                 │   Tables         │  │    Categories    │
-│  - IMP-2: Data   │                 │ - Cipher Suites  │  │  - Applicability │
-│    Storage       │                 │ - Key Lengths    │  │    Triggers      │
-│  - IMP-3: Auth   │                 │ - Industry       │  │                  │
-│  - IMP-4: Keys   │                 │   Standards      │  │                  │
-│  - IMP-5: Dashboard                │                  │  │                  │
-└──────────────────┘                 └──────────────────┘  └──────────────────┘
-        │
-        ▼
-┌──────────────────────────────────────────────────────────────┐
-│  Assessment Workbooks (Excel)                                │
-│  - Generated via Python scripts                              │
-│  - Quarterly compliance verification                         │
-│  - Evidence collection and gap analysis                      │
-└──────────────────────────────────────────────────────────────┘
-```
+**Policy Updates**:
+
+- **Minor** (clarifications, references): CISO approval, 30-day communication
+- **Major** (scope changes, new requirements): Full approval chain, 90-day implementation
+- **Emergency** (critical vulnerabilities): CISO approval, immediate communication
+
+
+
+**Communication**: Policy published in ISMS document repository. Changes communicated organization-wide. Training provided for significant changes.
 
 ---
 
-## 7. Policy Maintenance
+# Implementation & References
 
-### 7.1 Review Schedule
+## Integration with ISMS
 
-**Annual Review** (CISO + Legal/Compliance):
-- Comprehensive policy review
-- Regulatory landscape assessment (reference ISMS-POL-00 updates)
-- Cryptographic technology evolution assessment
-- Risk appetite alignment verification
-- Executive Management approval of policy updates
+This policy integrates with [Organization]'s Information Security Management System:
 
-**Quarterly Review** (CISO + Security Team):
-- Monitor regulatory changes affecting cryptographic requirements
-- Review exception inventory and remediation progress
-- Assess algorithm deprecation impact
-- Update ISMS-POL-00 reference if regulatory tiers change
+**Risk Assessment** (ISO 27001 Clause 6.1):
 
-**Triggered Review**:
-- Major regulatory change (new Tier 1 mandatory requirement)
-- Significant algorithm deprecation (e.g., TLS 1.2 deprecation announcement)
-- Cryptographic incident revealing policy gap
-- Organizational changes (merger, acquisition, new service offerings)
-- Failed audit findings related to cryptographic policy
+- Cryptographic controls selected based on [Organization]'s risk assessment
+- Data classification determines minimum cryptographic requirements
+- Risk treatment plans document cryptographic control implementation
 
-### 7.2 Update Process
 
-**Minor Updates** (e.g., clarifications, reference updates):
-- CISO approval sufficient
-- Update version to X.Y (minor version increment)
-- Communicate to System Owners and Security Team
-- No re-approval by Executive Management required
 
-**Major Updates** (e.g., new requirements, scope changes, regulatory additions):
-- CISO drafts update
-- Legal/Compliance review for regulatory impact
-- CIO review for operational impact
-- Executive Management approval required
-- Update version to X.0 (major version increment)
-- Communication to all stakeholders
-- Training update if significant changes
+**Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
-### 7.3 Communication and Training
+- Control A.8.24 applicability justified in [Organization]'s SoA
+- Implementation status tracked and reported
 
-**Policy Distribution**:
-- Policy portal (primary publication location)
-- Email notification to all System Owners upon approval/update
-- Security Team briefing on policy changes
-- CISO briefing to Executive Management
 
-**Training Requirements**:
-- Annual security awareness training includes cryptographic policy overview
-- Role-specific training for System Owners (assessment workbook completion)
-- Technical training for Security Team (cryptographic implementation guidance)
-- New hire onboarding includes cryptographic policy acknowledgment
+
+**Related Controls**:
+
+- A.5.10 (Acceptable Use of Information): Defines data classification
+- A.5.14 (Information Transfer): Encryption requirements for data transmission
+- A.5.15 (Access Control): Integrates with key access controls
+- A.8.9 (Configuration Management): Cryptographic configuration management
+- A.8.13 (Information Backup): Backup encryption key storage segregation. A.8.24 defines encryption requirements; A.8.13 defines backup procedures including key-data separation verification
+- A.8.15 (Logging): Cryptographic event logging
+- A.8.23 (Web Filtering): Secure communications for web traffic
+
+
+
+**Stacked Control Integration**:
+
+A.8.24 (Use of Cryptography) stacks with related controls to provide comprehensive protection:
+
+| Stacked Control | Integration Point | A.8.24 Contribution |
+|-----------------|-------------------|---------------------|
+| **A.5.14** (Information Transfer) | Data transmission security | A.8.24 specifies encryption algorithms; A.5.14 specifies transfer procedures |
+| **A.8.20** (Networks Security) | Network encryption | A.8.24 defines TLS/VPN requirements; A.8.20 defines network architecture |
+| **A.8.25** (Secure Development Lifecycle) | Application cryptography | A.8.24 defines approved libraries; A.8.25 defines integration into SDLC |
+
+Assessment of A.8.24 should reference stacked control assessments for complete coverage.
+
+## Implementation Resources
+
+**Implementation Document Structure** (ISMS-IMP-A.8.24 Suite):
+
+| Document ID | Title | Purpose | Content |
+|-------------|-------|---------|---------|
+| **ISMS-IMP-A.8.24-1** | Data Transmission Assessment | Verify encryption controls for data in transit | TLS/SSL configuration, VPN settings, wireless encryption, API security, cipher suite verification |
+| **ISMS-IMP-A.8.24-2** | Data Storage Assessment | Verify encryption controls for data at rest | Full disk encryption, database encryption, backup encryption, cloud storage encryption, key separation |
+| **ISMS-IMP-A.8.24-3** | Authentication Assessment | Verify cryptographic authentication mechanisms | Password hashing algorithms, MFA implementation, certificate-based authentication, digital signatures |
+| **ISMS-IMP-A.8.24-4** | Key Management Assessment | Verify key lifecycle management | Key generation, storage, distribution, rotation, backup, destruction, HSM/KMS configuration |
+| **ISMS-IMP-A.8.24-5** | Compliance Summary Dashboard | Consolidated compliance reporting | Aggregated scores across all domains, gap analysis, regulatory mapping, remediation tracking |
+
+**Technical Reference Document** (ISMS-CTX-A.8.24):
+
+ISMS-CTX-A.8.24 (Cryptographic Technical Reference) is established as a non-ISMS technical reference document providing:
+
+- Current approved cryptographic algorithms and key lengths
+- TLS/SSL cipher suite configurations and version requirements
+- Password hashing parameters (iterations, salt requirements)
+- Certificate validity periods and CA/Browser Forum current requirements
+- Algorithm deprecation schedules and migration timelines
+- Post-quantum cryptography readiness guidance
+
+
+
+**Document Control Status**: ISMS-CTX-A.8.24 is NOT subject to ISMS formal document control. This separation enables rapid technical updates without policy change management overhead.
+
+**Governance**: IT Security Team updates ISMS-CTX-A.8.24 as cryptographic standards evolve. CISO reviews semi-annually for accuracy and completeness.
+
+**Rationale**: Cryptographic technical standards change more frequently than policy (algorithm deprecations, new CA/Browser Forum requirements, emerging threats). Separation ensures policy stability while maintaining current technical guidance.
+
+**Version Control & Change Management**:
+
+While ISMS-CTX-A.8.24 is not subject to ISMS formal approval workflow, it maintains:
+
+- **Version Numbering**: Semantic versioning (MAJOR.MINOR.PATCH)
+- **Publication Location**: Single authoritative source in [ISMS Repository / Confluence / SharePoint]
+- **Change Communication**: Major version changes (algorithm deprecations, cipher suite updates) communicated to all System Owners via [Communication Platform]. Minor/patch changes (clarifications, reference updates) noted in repository changelog.
+- **Historical Versions**: Previous versions archived for audit trail. Current version clearly marked.
+
+
+**Audit Trail**: ISMS-CTX-A.8.24 change log maintained showing date, version, changes, and IT Security Team reviewer.
+
+**Assessment Tools**:
+
+- Excel-based assessment workbooks with automated compliance calculations
+- Evidence registers
+- Gap analysis templates
+- Remediation tracking
+
+
+
+## Regulatory Mapping
+
+This policy addresses cryptographic requirements from:
+
+| Requirement Category | Swiss nDSG | EU GDPR | ISO 27001 | PCI DSS* | FINMA* | DORA/NIS2* |
+|---------------------|-----------|---------|-----------|---------|--------|------------|
+| Encryption at rest | Art. 8 | Art. 32 | A.8.24 | Req. 3.5 | Circ. 2023/1 | ICT Risk Mgmt |
+| Encryption in transit | Art. 8 | Art. 32 | A.8.24 | Req. 4.2 | Circ. 2023/1 | Secure Comms |
+| Key management | Art. 8 | Art. 32 | A.8.24 | Req. 3.6 | Circ. 2023/1 | Key Controls |
+| Algorithm strength | Best Practice | Art. 32 | A.8.24 | Strong Crypto | Risk-Based | Crypto Agility |
+
+*Conditional applicability per ISMS-POL-00
+
+**Note**: Specific regulatory interpretation and compliance verification procedures are documented in ISMS-IMP-A.8.24 Compliance Summary Dashboard.
+
+## Training & Awareness
+
+**Security Awareness** (All Personnel):
+
+- Annual training module on cryptographic controls
+- Data classification and encryption requirements
+- Incident reporting procedures
+
+
+
+**Technical Training** (Developers, IT Staff):
+
+- Secure cryptographic implementation
+- Approved cryptographic libraries and APIs
+- Common cryptographic vulnerabilities
+
+
+
+**Operational Training** (IT Operations):
+
+- Key management procedures
+- Certificate lifecycle management
+- Cryptographic incident response
+
+
 
 ---
 
-## Approval Record
+# Definitions
 
-| Role | Name | Date | Signature |
-|------|------|------|-----------|
-| **Chief Information Security Officer (CISO)** | [Name] | [Date] | __________ |
-| **Chief Information Officer (CIO)** | [Name] | [Date] | __________ |
-| **Legal/Compliance Officer** | [Name] | [Date] | __________ |
-| **Executive Management (GL)** | [Name] | [Date] | __________ |
+**Cryptographic Control**: Hardware or software mechanism using cryptographic algorithms to protect information confidentiality, integrity, or authenticity.
+
+**Approved Algorithm**: Cryptographic algorithm meeting [Organization]'s security standards as defined in ISMS-IMP-A.8.24 Technical Standards.
+
+**Key Management**: Processes for cryptographic key lifecycle including generation, storage, distribution, rotation, backup, and destruction.
+
+**Hardware Security Module (HSM)**: Tamper-resistant hardware device for secure cryptographic key storage and operations.
+
+**Key Management Service (KMS)**: Software or cloud service for centralized cryptographic key management.
+
+**Crypto Agility**: Organizational capability to rapidly change cryptographic algorithms without major system re-architecture.
+
+**Data Classification**: [Organization]'s categorization of information based on confidentiality, integrity, and availability requirements (Public, Internal, Confidential, Restricted).
+
+**Perfect Forward Secrecy (PFS)**: Cryptographic property where compromise of long-term keys does not compromise past session keys.
+
+**Certificate Authority (CA)**: Trusted entity issuing digital certificates for public key infrastructure.
+
+---
+
+# Approval Record
+
+| Role | Name | Date |
+|------|------|------|
+| **Chief Information Security Officer (CISO)** | [Name] | [Date] |
+| **Chief Information Officer (CIO)** | [Name] | [Date] |
+| **Legal/Compliance Officer** | [Name] | [Date] |
+| **Executive Management (GL)** | [Name] | [Date] |
 
 ---
 
@@ -1133,4 +786,7 @@ ISMS Cryptographic Control Framework
 
 ---
 
-*This policy establishes cryptographic control requirements. Implementation procedures are documented in ISMS-IMP-A.8.24 suite. Technical reference is available in ISMS-CTX-A.8.24.*
+*ISMS-POL-A.8.24 v1.0 | Use of Cryptography*
+*This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.8.24.*
+
+<!-- QA_VERIFIED: 2026-01-31 -->

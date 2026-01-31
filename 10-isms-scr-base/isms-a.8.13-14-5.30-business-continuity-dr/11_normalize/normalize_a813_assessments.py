@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# =============================================================================
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-ISMS-Commercial
+# Copyright (c) 2025-2026 ISMS Core Contributors
+#
+# This file is part of ISMS Core.
+#
+# ISMS Core is dual-licensed:
+#   1. AGPL 3.0 (Open Source) - See LICENSE-AGPL.txt
+#   2. Commercial License - Contact vendor for proprietary use
+#
+# You may use this file under either license, at your option.
+# =============================================================================
 """
 ================================================================================
 ISMS A.8.13/14/5.30 - Assessment File Normalization Utility
@@ -33,7 +45,7 @@ DESCRIPTION
 --------------------------------------------------------------------------------
 
 This script normalizes BC/DR assessment file names to enable external workbook
-formula linking in the ISMS-IMP-A.8.13.5 BC/DR Compliance Dashboard. It scans
+formula linking in the ISMS-IMP-A.8.13.S5 BC/DR Compliance Dashboard. It scans
 for completed assessments, validates document IDs, and creates normalized copies
 with standardized names.
 
@@ -56,9 +68,9 @@ Before normalization (date/version-specific names):
 - RPO_RTO_Compliance_Final.xlsx
 
 After normalization (stable names for dashboard linking):
-- ISMS-IMP-A.8.13.1.xlsx
-- ISMS-IMP-A.8.13.2.xlsx
-- ISMS-IMP-A.8.13.3.xlsx
+- ISMS-IMP-A.8.13.S1.xlsx
+- ISMS-IMP-A.8.13.S2.xlsx
+- ISMS-IMP-A.8.13.S3.xlsx
 
 Dashboard external formulas reference normalized names, remaining stable across
 file updates.
@@ -67,10 +79,10 @@ file updates.
 - Checks for presence of "Instructions" or "Instructions & Legend" sheet
 - Locates "Document ID:" field in sheet (rows 3-25, column B)
 - Validates Document ID matches one of:
-  * ISMS-IMP-A.8.13.1 (Backup Inventory)
-  * ISMS-IMP-A.8.13.2 (Redundancy Analysis)
-  * ISMS-IMP-A.8.13.3 (RPO/RTO Compliance)
-  * ISMS-IMP-A.8.13.4 (Testing Results)
+  * ISMS-IMP-A.8.13.S1 (Backup Inventory)
+  * ISMS-IMP-A.8.13.S2 (Redundancy Analysis)
+  * ISMS-IMP-A.8.13.S3 (RPO/RTO Compliance)
+  * ISMS-IMP-A.8.13.S4 (Testing Results)
 - Reports files that cannot be validated
 
 **Output:**
@@ -123,10 +135,10 @@ Command-Line Options:
 
 Output Files:
     Normalized assessment workbooks:
-        - ISMS-IMP-A.8.13.1.xlsx (Backup Inventory)
-        - ISMS-IMP-A.8.13.2.xlsx (Redundancy Analysis)
-        - ISMS-IMP-A.8.13.3.xlsx (RPO/RTO Compliance)
-        - ISMS-IMP-A.8.13.4.xlsx (Testing Results)
+        - ISMS-IMP-A.8.13.S1.xlsx (Backup Inventory)
+        - ISMS-IMP-A.8.13.S2.xlsx (Redundancy Analysis)
+        - ISMS-IMP-A.8.13.S3.xlsx (RPO/RTO Compliance)
+        - ISMS-IMP-A.8.13.S4.xlsx (Testing Results)
     
     Normalization manifest:
         - Normalization_Manifest_YYYYMMDD_HHMMSS.txt
@@ -159,11 +171,11 @@ License:              [Organisation License/Terms]
 Related Documents:
     - ISMS-POL-A.8.13-14-5.30: BC/DR Framework Policy (Governance)
     - ISMS-IMP-A.8.13-14-5.30-S5: BC/DR Assessment Guide
-    - ISMS-IMP-A.8.13.1: Backup Inventory Assessment (Source File)
-    - ISMS-IMP-A.8.13.2: Redundancy Analysis Assessment (Source File)
-    - ISMS-IMP-A.8.13.3: RPO/RTO Compliance Matrix (Source File)
-    - ISMS-IMP-A.8.13.4: BC/DR Testing Results Tracker (Source File)
-    - ISMS-IMP-A.8.13.5: BC/DR Compliance Dashboard (Target for linking)
+    - ISMS-IMP-A.8.13.S1: Backup Inventory Assessment (Source File)
+    - ISMS-IMP-A.8.13.S2: Redundancy Analysis Assessment (Source File)
+    - ISMS-IMP-A.8.13.S3: RPO/RTO Compliance Matrix (Source File)
+    - ISMS-IMP-A.8.13.S4: BC/DR Testing Results Tracker (Source File)
+    - ISMS-IMP-A.8.13.S5: BC/DR Compliance Dashboard (Target for linking)
 
 Related Scripts:
     - generate_a813_1_backup_inventory.py
@@ -191,7 +203,7 @@ IMPORTANT NOTES
 
 **Why Normalization is Required:**
 Excel external workbook formulas reference specific filenames:
-    ='[ISMS-IMP-A.8.13.1.xlsx]Backup_Inventory'!$B$15
+    ='[ISMS-IMP-A.8.13.S1.xlsx]Backup_Inventory'!$B$15
 
 If source files have date suffixes or version numbers, formula references break
 when files are updated. Normalization creates stable filenames.
@@ -263,8 +275,8 @@ BC_DR_Assessments/
 │   ├── ISMS_Assessment_Redundancy_20250125.xlsx
 │   └── ...
 ├── Dashboard_Sources/               # Normalized files for linking
-│   ├── ISMS-IMP-A.8.13.1.xlsx
-│   ├── ISMS-IMP-A.8.13.2.xlsx
+│   ├── ISMS-IMP-A.8.13.S1.xlsx
+│   ├── ISMS-IMP-A.8.13.S2.xlsx
 │   └── ...
 └── Dashboard/
     └── ISMS_Assessment_BCDR_Dashboard.xlsx
@@ -302,13 +314,20 @@ This normalization approach is simplest and most maintainable.
 ================================================================================
 """
 
-import os
-import sys
-import shutil
-import argparse
+# =============================================================================
+# Standard Library Imports
+# =============================================================================
+import logging
 from datetime import datetime
 from pathlib import Path
+import argparse
+import os
+import shutil
+import sys
 
+# =============================================================================
+# Third-Party Imports
+# =============================================================================
 try:
     import openpyxl
 except ImportError:
@@ -318,26 +337,37 @@ except ImportError:
 
 
 # =============================================================================
+# Logging Configuration
+# =============================================================================
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
+
+
+# =============================================================================
 # CONFIGURATION
 # =============================================================================
 
 # Expected document IDs and titles from assessment workbooks
 EXPECTED_DOCS = {
-    "ISMS-IMP-A.8.13.1": {
+    "ISMS-IMP-A.8.13.S1": {
         "title": "Backup Inventory & Coverage Assessment",
-        "normalized": "ISMS-IMP-A.8.13.1.xlsx"
+        "normalized": "ISMS-IMP-A.8.13.S1.xlsx"
     },
-    "ISMS-IMP-A.8.13.2": {
+    "ISMS-IMP-A.8.13.S2": {
         "title": "Redundancy Analysis & SPOF Assessment",
-        "normalized": "ISMS-IMP-A.8.13.2.xlsx"
+        "normalized": "ISMS-IMP-A.8.13.S2.xlsx"
     },
-    "ISMS-IMP-A.8.13.3": {
+    "ISMS-IMP-A.8.13.S3": {
         "title": "RPO/RTO Compliance Matrix",
-        "normalized": "ISMS-IMP-A.8.13.3.xlsx"
+        "normalized": "ISMS-IMP-A.8.13.S3.xlsx"
     },
-    "ISMS-IMP-A.8.13.4": {
+    "ISMS-IMP-A.8.13.S4": {
         "title": "BC/DR Testing Results Tracker",
-        "normalized": "ISMS-IMP-A.8.13.4.xlsx"
+        "normalized": "ISMS-IMP-A.8.13.S4.xlsx"
     },
 }
 
@@ -718,3 +748,9 @@ Examples:
 
 if __name__ == '__main__':
     main()
+
+# =============================================================================
+# QA_VERIFIED: 2026-01-31
+# QA_STATUS: PASSED - STANDARDIZATION (syntax validated, structure verified)
+# QA_TOOL: Claude Code Standardization
+# =============================================================================

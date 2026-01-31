@@ -1,10 +1,10 @@
-# ISMS-IMP-A.8.13-14-5.30-S2 - Backup Implementation
-## Information Backup Implementation Guide
+**ISMS-IMP-A.8.13-14-5.30-S2 - Backup Implementation**
+**Assessment Specification with User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.8.13: Information Backup
 
 ---
 
-## Document Control
+**Document Control**
 
 | Attribute | Value |
 |-----------|-------|
@@ -45,17 +45,18 @@ This document consists of two parts:
   - Backup Assessment Workbook Guide (5 sheets)
   - Complete Excel Technical Specifications
 
+
 ---
 
 # PART I: USER COMPLETION GUIDE
 
-## 1. Assessment Overview
+# Assessment Overview
 
-### 1.1 What This Assessment Achieves
+## What This Assessment Achieves
 
 **Assessment Name:** ISMS-IMP-A.8.13-14-5.30-S2 - Backup Implementation
 
-#### The Backup Challenge
+### The Backup Challenge
 
 **The Hard Truth About Backups:**
 
@@ -65,11 +66,12 @@ You don't have a backup until you've successfully restored from it.
 - "Backups are running green" ≠ Recovery will work
 - "We keep 30 days of backups" ≠ We can actually restore 30-day-old data
 
+
 **Without Tested Backups:** False confidence. You discover backups are corrupt, incomplete, or misconfigured only when disaster strikes and recovery fails.
 
 **With Tested Backups:** Proven recovery capability. You know exactly what can be recovered, how long it takes, and what the process is.
 
-#### Backup Implementation Outputs
+### Backup Implementation Outputs
 
 Upon completion, [Organization] will have:
 
@@ -83,22 +85,25 @@ Upon completion, [Organization] will have:
 8. **Testing Results** - Proven recovery capability through restore tests
 9. **Gap Remediation** - Action plan for systems not meeting backup requirements
 
-### 1.2 Why This Matters - A.8.13 Information Backup
+## Why This Matters - A.8.13 Information Backup
 
 **ISO 27001:2022 Control A.8.13 (exact text):**
 
 > "Backup copies of information, software and systems shall be maintained and regularly tested in accordance with the agreed topic-specific policy."
 
 **Key Requirements from Control:**
+
 - Backup copies SHALL be maintained (mandatory)
 - Regular testing (prove recovery works)
 - In accordance with agreed policy (follow ISMS-POL-A.8.13-14-5.30 requirements)
+
 
 **Policy Requirements (from ISMS-POL-A.8.13-14-5.30, Section 2.1):**
 
 Per system criticality tier:
 
 **Tier 1 (Critical) Backup Requirements:**
+
 - Backup frequency: Aligned with RPO (hourly minimum if RPO ≤4h)
 - Retention: 30 days minimum (online), 1 year archival
 - Offsite backup: MANDATORY (geographic separation)
@@ -106,7 +111,9 @@ Per system criticality tier:
 - Testing frequency: Quarterly restore testing
 - Monitoring: 24/7 automated monitoring with alerts
 
+
 **Tier 2 (Important) Backup Requirements:**
+
 - Backup frequency: Aligned with RPO (daily minimum if RPO ≤24h)
 - Retention: 14 days minimum (online)
 - Offsite backup: MANDATORY
@@ -114,7 +121,9 @@ Per system criticality tier:
 - Testing frequency: Semi-annual restore testing
 - Monitoring: Daily monitoring with alerts
 
+
 **Tier 3 (Standard) Backup Requirements:**
+
 - Backup frequency: Aligned with RPO (weekly minimum if RPO ≤7 days)
 - Retention: 7 days minimum
 - Offsite backup: Recommended
@@ -122,28 +131,35 @@ Per system criticality tier:
 - Testing frequency: Annual restore testing
 - Monitoring: Best-effort monitoring
 
+
 **Tier 4 (Low) Backup Requirements:**
+
 - Backup frequency: Optional (on-demand acceptable)
 - Retention: Risk-based decision
 - Offsite backup: Not required
 - Testing: No testing requirement
+
 
 **Regulatory Context:**
 
 Per ISMS-POL-00 (Regulatory Applicability Framework):
 
 **Tier 1 - Mandatory:**
+
 - **ISO 27001:2022 A.8.13** - Backup copies maintained and tested
 - **Swiss nDSG Art. 8** - Appropriate technical measures (backup = data protection measure)
 - **EU GDPR Art. 32(1)(c)** - "Ability to restore availability and access to personal data in a timely manner" (backup required)
 
+
 **Tier 2 - Conditional:**
+
 - **DORA (EU) Art. 12** - "Backup policies and procedures...ensuring restoration of ICT systems"
 - **NIS2 (EU) Art. 21** - "Backup management and disaster recovery" for essential entities
 - **PCI DSS Req. 3.4** - "Data at rest shall be rendered unreadable" (encrypted backups for cardholder data)
 - **FINMA (Swiss Financial)** - Backup and recovery capability required
 
-### 1.3 Connection to BIA (IMP-S1)
+
+## Connection to BIA (IMP-S1)
 
 **CRITICAL:** Backup implementation MUST align with BIA findings. You cannot implement backups correctly without knowing RPO requirements from BIA.
 
@@ -180,9 +196,11 @@ From BIA (IMP-S1):
 Backup Implementation (IMP-S2):
   Backup Solution: Azure SQL Database Backup + Veeam
   Backup Schedule:
+
     - Full backup: Daily at 02:00 UTC
     - Incremental backup: Every 1 hour
     - Transaction log backup: Every 15 minutes
+
   Retention: 30 days online, 1 year archival to Azure Blob (Cool tier)
   Offsite: Geo-redundant storage (Azure West Europe primary, Azure North Europe replica)
   Encryption: TDE (Transparent Data Encryption) + AES-256 for backup files
@@ -190,7 +208,7 @@ Backup Implementation (IMP-S2):
   Testing: Quarterly restore to isolated test environment (Q1, Q2, Q3, Q4)
 ```
 
-### 1.4 Who Participates in Backup Implementation
+## Who Participates in Backup Implementation
 
 | Role | Responsibility | Time Commitment |
 |------|---------------|----------------|
@@ -205,7 +223,7 @@ Backup Implementation (IMP-S2):
 
 **Total Organizational Effort:** 130-255 person-hours (initial implementation for 50-100 systems)
 
-### 1.5 Time Estimate
+## Time Estimate
 
 **Backup Implementation Timeline:**
 
@@ -222,7 +240,7 @@ Backup Implementation (IMP-S2):
 
 **Ongoing:** Daily monitoring, quarterly testing, monthly capacity review
 
-### 1.6 Integration with Other BC/DR Components
+## Integration with Other BC/DR Components
 
 **Backup Alone Is Not Sufficient for BC/DR:**
 
@@ -250,6 +268,7 @@ Full BC/DR Capability:
 Scenario: E-commerce database failure
 
 With Backup Only:
+
   - Database fails at 10:00
   - Restore from backup starts at 10:30 (30min to identify and initiate)
   - Restore completes at 14:30 (4 hours to restore)
@@ -258,40 +277,50 @@ With Backup Only:
   - Revenue loss: CHF 1,712/hour × 4.5h = CHF 7,704
   - Missed orders: 1 hour of orders = ~CHF 1,712
 
+
 With Backup + Redundancy:
+
   - Database fails at 10:00
   - Automatic failover to hot standby at 10:01 (1 minute)
   - E-commerce down for 1 minute
   - Data loss: 0 (synchronous replication)
   - Revenue loss: Negligible
   - Customer impact: Minimal (brief interruption)
+
 ```
 
 **Backup Integration Points:**
 
 **To IMP-S3 (Redundancy Implementation):**
+
 - Redundant systems still need backup (redundancy ≠ backup)
 - Example: Hot standby database with synchronous replication still backed up daily (protects against data corruption affecting both copies)
 
+
 **To IMP-S4 (Recovery Testing):**
+
 - Backup restore testing is subset of overall recovery testing
 - Full DR scenario testing includes: Restore from backup → Validate data → Start application → Test end-to-end
 
+
 **To IMP-S5 (BC/DR Assessment):**
+
 - Backup coverage assessment (% systems backed up)
 - Backup success rate (% successful backups)
 - RPO compliance (backup frequency meets RPO requirement)
 - Restore testing compliance (testing per policy requirements)
 
+
 ---
 
-## 2. Prerequisites
+# Prerequisites
 
-### 2.1 Information Required
+## Information Required
 
 **Before Starting Backup Implementation, Gather:**
 
 **From BIA (IMP-S1):**
+
 - [ ] BIA Assessment Workbook with completed:
   - Sheet 2: System-Process Mapping (system inventory)
   - Sheet 4: RPO Requirements (backup frequency drivers)
@@ -299,7 +328,9 @@ With Backup + Redundancy:
   - Sheet 3: Data Classification (encryption requirements)
 - [ ] Gap Analysis results (systems not currently backed up)
 
+
 **Technical Information:**
+
 - [ ] Complete system inventory with:
   - System type (physical server, VM, container, cloud service, SaaS)
   - Operating system (Windows Server, Linux, etc.)
@@ -319,77 +350,98 @@ With Backup + Redundancy:
   - Cloud backup subscriptions (Azure Backup, AWS Backup, Veeam Cloud Connect)
   - Tape libraries (if applicable)
 
+
 **Cloud Provider Information (from ISMS-REF-A.5.23):**
 
 If using cloud backup:
+
 - [ ] Azure subscription details (if using Azure Backup)
 - [ ] AWS account details (if using AWS Backup)
 - [ ] GCP project details (if using GCP Backup)
 - [ ] SaaS backup services (Veeam Backup for Microsoft 365, Spanning, etc.)
 
+
 **Regulatory Requirements:**
+
 - [ ] Data residency requirements (Swiss nDSG, GDPR, FINMA)
 - [ ] Retention requirements (industry-specific, legal hold)
 - [ ] Encryption requirements (data classification → encryption needs)
 
-### 2.2 Stakeholder Availability
+
+## Stakeholder Availability
 
 **Coordinate with:**
 
 **Technical Teams:**
+
 - Backup Administrator (primary contact) - Available throughout implementation
 - Database Administrators - 2-4 hours per database platform
 - System Administrators - 2-3 hours per system type (Windows, Linux, etc.)
 - Cloud Administrators - 5-10 hours for cloud backup setup
 
+
 **Business/Management:**
+
 - BC/DR Coordinator - Verify alignment with BIA
 - IT Management - Budget approval for backup storage/licenses
 - Security Team - Encryption key management setup
 
-### 2.3 Tools Needed
+
+## Tools Needed
 
 **Backup Solutions:**
 
 Select based on environment and requirements (see Section 4: Backup Solution Selection):
 
 **On-Premises/Hybrid Backup:**
+
 - Veeam Backup & Replication (VMware, Hyper-V, physical servers)
 - Commvault Complete Backup & Recovery
 - Veritas NetBackup
 - Windows Server Backup (for small environments)
 
+
 **Cloud-Native Backup:**
+
 - Azure Backup (Azure VMs, Azure SQL, Azure Files)
 - AWS Backup (EC2, RDS, S3, etc.)
 - Google Cloud Backup and DR
 
+
 **SaaS Backup:**
+
 - Veeam Backup for Microsoft 365 (Exchange Online, SharePoint, OneDrive, Teams)
 - Spanning Backup (Microsoft 365, Google Workspace, Salesforce)
 - Dropsuite (cloud-to-cloud backup)
 
+
 **Database Backup:**
+
 - Native database backup tools (SQL Server, PostgreSQL, MySQL, MongoDB)
 - Azure SQL Database automated backup
 - AWS RDS automated backup
 
+
 **Monitoring Tools:**
+
 - Veeam ONE (if using Veeam)
 - Azure Monitor (if using Azure Backup)
 - CloudWatch (if using AWS Backup)
 - PRTG Network Monitor
 - Zabbix
 
+
 **Assessment Workbook:**
+
 - Provided in PART II of this document
 - 5 worksheets for backup inventory, schedule tracking, testing results
 
+
 ---
 
-## 3. Backup Implementation Methodology
+# Backup Implementation Methodology
 
-### 3.1 High-Level Backup Implementation Process
+## High-Level Backup Implementation Process
 
 ```
 ┌──────────────────────────────────────────────────────────┐
@@ -417,7 +469,7 @@ Select based on environment and requirements (see Section 4: Backup Solution Sel
 └──────────────────────────────────────────────────────────┘
 ```
 
-### 3.2 STEP 1: INVENTORY Systems & Current Backup Status
+## STEP 1: INVENTORY Systems & Current Backup Status
 
 **Objective:** Document all ICT systems and their current backup status.
 
@@ -428,12 +480,14 @@ Select based on environment and requirements (see Section 4: Backup Solution Sel
 **1. Extract System Inventory from BIA**
 
 From ISMS-IMP-A.8.13-14-5.30-S1 (BIA), Sheet 2: System-Process Mapping:
+
 - System ID
 - System Name
 - System Type
 - Deployment Model
 - Data Classification
 - System Owner
+
 
 **2. For Each System, Document Current Backup Status:**
 
@@ -464,10 +518,12 @@ Example:
 **4. Identify Backup Gaps:**
 
 Systems NOT currently backed up:
+
 - New systems (deployed after backup configuration)
 - Shadow IT (systems deployed without IT involvement)
 - Cloud services (assumed "cloud = backed up" - often wrong)
 - Development/test environments (assumed "not important" but BIA says otherwise)
+
 
 **Priority Gap Categories:**
 
@@ -482,6 +538,7 @@ Systems NOT currently backed up:
 **5. Document in Backup Assessment Workbook - Sheet 1: Backup Inventory**
 
 Columns:
+
 - System ID (from BIA)
 - System Name
 - System Type
@@ -498,13 +555,16 @@ Columns:
 - Gap Priority (calculated)
 - Notes
 
+
 **Quality Check:**
+
 - ✓ All systems from BIA included in inventory
 - ✓ Current backup status verified (not assumed)
 - ✓ Gaps prioritized by criticality tier
 - ✓ P1 gaps escalated immediately
 
-### 3.3 STEP 2: DESIGN Backup Architecture
+
+## STEP 2: DESIGN Backup Architecture
 
 **Objective:** Design backup infrastructure topology and data flows.
 
@@ -512,45 +572,57 @@ Columns:
 
 **Backup Architecture Components:**
 
-#### 1. Backup Server/Appliance (Control Plane)
+### Backup Server/Appliance (Control Plane)
 
 **Purpose:** Manages backup jobs, schedules, retention, orchestration
 
 **Options:**
+
 - **Veeam Backup Server** (Windows VM or physical server)
 - **Commvault CommServe**
 - **Azure Backup Vault** (cloud-native, no server required)
 - **AWS Backup Service** (cloud-native)
 
+
 **Sizing Considerations:**
+
 - Number of protected systems (VMs, databases, servers)
 - Concurrent backup jobs
 - Management overhead (CPU, RAM)
 
+
 **Example Sizing (Veeam):**
+
 - Small (up to 50 VMs): 4 vCPU, 8 GB RAM
 - Medium (50-200 VMs): 8 vCPU, 16 GB RAM
 - Large (200+ VMs): 16 vCPU, 32 GB RAM
 
-#### 2. Backup Repository (Storage)
+
+### Backup Repository (Storage)
 
 **Purpose:** Store backup files
 
 **Options:**
 
 **On-Premises:**
+
 - **NAS/SAN** (Synology, QNAP, NetApp, Dell EMC)
 - **Direct-Attached Storage (DAS)** (local disks on backup server)
 - **Deduplication Appliance** (Dell EMC Data Domain, HPE StoreOnce)
 
+
 **Cloud:**
+
 - **Azure Blob Storage** (Hot, Cool, Archive tiers)
 - **AWS S3** (Standard, IA, Glacier)
 - **Google Cloud Storage**
 
+
 **Hybrid:**
+
 - **On-Premises Primary + Cloud Secondary** (most common)
 - **Cloud Primary + On-Premises Secondary** (cloud-first organizations)
+
 
 **Capacity Planning:**
 
@@ -570,22 +642,27 @@ Example:
   Recommended provisioning (with 20% buffer): 13 TB × 1.2 = 15.6 TB
 ```
 
-#### 3. Backup Proxy/Agent (Data Plane)
+### Backup Proxy/Agent (Data Plane)
 
 **Purpose:** Move backup data from source to repository
 
 **Options:**
+
 - **Agentless** (VMware, Hyper-V - backup via hypervisor API)
 - **Agent-based** (physical servers, cloud VMs - agent installed on each system)
 - **Cloud-native** (Azure Backup Agent, AWS Backup - built into cloud platform)
 
+
 **Proxy Sizing (for VMware/Hyper-V):**
+
 - 1 proxy core per 3-5 concurrent backup streams
 - Example: 20 concurrent VMs backing up → 4-7 vCPU proxy
 
-#### 4. Network Paths (Backup Traffic)
+
+### Network Paths (Backup Traffic)
 
 **Considerations:**
+
 - **LAN Backup** (source → backup server/repository on same network)
   - Fast (1 Gbps, 10 Gbps typical)
   - Used for: On-premises servers, local VMs
@@ -597,6 +674,7 @@ Example:
 - **Direct-to-Cloud** (source → Azure/AWS/GCP directly, no backup server)
   - Speed depends on internet connection
   - Used for: Cloud-native workloads (Azure VMs → Azure Backup)
+
 
 **Backup Window Calculation:**
 
@@ -616,7 +694,7 @@ Example (Offsite Copy):
 → Offsite backup must run overnight in extended window
 ```
 
-#### 5. Backup Architecture Patterns
+### Backup Architecture Patterns
 
 **Pattern A: Traditional 3-Tier (On-Premises)**
 
@@ -667,6 +745,7 @@ Example (Offsite Copy):
 **6. Document Backup Architecture**
 
 Create architecture diagram showing:
+
 - All production systems (grouped by location/type)
 - Backup servers/services
 - Backup repositories (primary, secondary/offsite)
@@ -674,14 +753,17 @@ Create architecture diagram showing:
 - Data flow arrows
 - Retention tiers
 
+
 **Quality Check:**
+
 - ✓ Architecture supports all system types (physical, VM, cloud, SaaS)
 - ✓ Offsite backup included (geographic separation)
 - ✓ Network bandwidth adequate for backup windows
 - ✓ Storage capacity sufficient for retention requirements
 - ✓ Architecture aligns with BIA requirements
 
-### 3.4 STEP 3: SELECT Backup Solutions
+
+## STEP 3: SELECT Backup Solutions
 
 **Objective:** Choose appropriate backup solutions for each system type.
 
@@ -689,7 +771,7 @@ Create architecture diagram showing:
 
 **Backup Solution Selection Matrix:**
 
-#### On-Premises/Hybrid Environments
+### On-Premises/Hybrid Environments
 
 **For VMware vSphere, Microsoft Hyper-V, Nutanix AHV:**
 
@@ -702,7 +784,7 @@ Create architecture diagram showing:
 
 **Recommendation for Swiss SME (50-100 VMs):** Veeam Backup & Replication
 
-#### Azure Cloud Environments
+### Azure Cloud Environments
 
 | Solution | Pros | Cons | Best For |
 |----------|------|------|----------|
@@ -712,7 +794,7 @@ Create architecture diagram showing:
 
 **Recommendation:** Azure Backup for Azure-native workloads
 
-#### AWS Cloud Environments
+### AWS Cloud Environments
 
 | Solution | Pros | Cons | Best For |
 |----------|------|------|----------|
@@ -721,7 +803,7 @@ Create architecture diagram showing:
 
 **Recommendation:** AWS Backup for AWS-native workloads
 
-#### Microsoft 365 / SaaS
+### Microsoft 365 / SaaS
 
 | Solution | Pros | Cons | Best For |
 |----------|------|------|----------|
@@ -730,14 +812,16 @@ Create architecture diagram showing:
 | **Dropsuite** | Cost-effective, cloud-to-cloud | Smaller vendor | SME, budget-conscious |
 
 **CRITICAL:** Microsoft 365 native retention ≠ backup. Native retention protects against accidental deletion for 30-93 days only, NOT against:
+
 - Ransomware (encrypted data stays encrypted)
 - Malicious data deletion
 - Compliance violations
 - Long-term retention (>90 days)
 
+
 **Recommendation:** Veeam Backup for Microsoft 365 OR Spanning Backup (cloud-to-cloud)
 
-#### Database-Specific Backup
+### Database-Specific Backup
 
 | Database Platform | Recommended Backup Approach |
 |-------------------|---------------------------|
@@ -750,20 +834,24 @@ Create architecture diagram showing:
 
 **Recommendation:** Hybrid approach (native database backup + VM-level backup)
 
-#### Physical Servers
+### Physical Servers
 
 **Windows Servers:**
+
 - Veeam Agent for Microsoft Windows (centrally managed via Veeam Backup & Replication)
 - Windows Server Backup (built-in, basic features only)
 
+
 **Linux Servers:**
+
 - Veeam Agent for Linux
 - Bacula (open-source, complex)
 - rsync + scripting (manual, not recommended for production)
 
+
 **Recommendation:** Veeam Agent (Windows/Linux)
 
-### 3.5 STEP 4: CALCULATE Backup Storage Requirements
+## STEP 4: CALCULATE Backup Storage Requirements
 
 **Objective:** Determine backup storage capacity needed.
 
@@ -779,6 +867,7 @@ Total Backup Storage = Σ (System_Data_Size × Retention_Days × Change_Rate × 
 **Step-by-Step Calculation:**
 
 **1. For Each System, Identify:**
+
 - Data size (GB)
 - Retention requirement (days) - from BIA tier
 - Change rate (% daily changes) - estimate or measure
@@ -787,6 +876,7 @@ Total Backup Storage = Σ (System_Data_Size × Retention_Days × Change_Rate × 
   - File servers: 2:1 to 3:1
   - VMs: 2:1
   - Media files (photos, videos): 1:1 (already compressed)
+
 
 **2. Calculate Storage Per System:**
 
@@ -819,9 +909,11 @@ Total Required: 83.5 TB × 1.2 = 100.2 TB ≈ 100 TB
 ```
 
 **5. Split Primary vs. Offsite:**
+
 - Primary (on-premises): 30-day retention → 60 TB
 - Offsite (cloud): 30-day retention → 60 TB (replica of primary)
 - **Total: 120 TB** (100 TB × 1.2 safety margin)
+
 
 **6. Cloud Storage Cost Estimation (Azure Example):**
 
@@ -834,13 +926,15 @@ Azure Blob Storage (Cool Tier - for backup):
 ```
 
 **Quality Check:**
+
 - ✓ Compression ratio realistic (2:1 typical)
 - ✓ Change rate estimated or measured (not guessed as 100%)
 - ✓ Buffer included (20% recommended for growth)
 - ✓ Primary + offsite storage both sized
 - ✓ Cost estimate approved by management
 
-### 3.6 STEP 5: CONFIGURE Backup Schedules (RPO-Aligned)
+
+## STEP 5: CONFIGURE Backup Schedules (RPO-Aligned)
 
 **Objective:** Configure backup job schedules to meet RPO requirements from BIA.
 
@@ -861,76 +955,98 @@ Azure Blob Storage (Cool Tier - for backup):
 **Backup Job Types:**
 
 **1. Full Backup:**
+
 - Backs up ALL data
 - Slowest, largest backup
 - Required: At least weekly for Tier 1/2 systems
 - Example: Sunday 02:00 (overnight, low usage period)
 
+
 **2. Incremental Backup:**
+
 - Backs up only CHANGES since last backup (any type)
 - Fastest, smallest backup
 - Most common for frequent backups
 - Example: Monday-Saturday 02:00 (after Sunday full)
 
+
 **3. Differential Backup:**
+
 - Backs up all changes since last FULL backup
 - Faster restore than incremental (only need full + last differential)
 - Larger than incremental, slower than full
 - Less common (incrementals preferred in modern backup solutions)
 
+
 **4. Transaction Log Backup (Databases):**
+
 - Backs up database transaction logs
 - Enables point-in-time recovery
 - Required for near-zero RPO databases
 - Example: Every 15 minutes for Tier 1 databases
+
 
 **Backup Schedule Examples (Swiss Business Context):**
 
 **Example 1: Payment Database (Tier 1, RPO 1h)**
 ```
 Backup Schedule:
+
   - Full Backup: Sunday 02:00 (weekly)
   - Incremental Backup: Every 1 hour (24×/day)
   - Transaction Log Backup: Every 15 minutes
 
+
 Implementation (Azure SQL):
+
   - Azure SQL automated backup (full: weekly, differential: 12h, log: 5-10min)
   - Retention: 30 days (policy setting)
   - Geo-redundant: Enabled (replicated to paired region)
+
 ```
 
 **Example 2: E-commerce Website (Tier 1, RPO 4h)**
 ```
 Backup Schedule:
+
   - Full Backup: Sunday 02:00
   - Incremental Backup: Every 4 hours (00:00, 04:00, 08:00, 12:00, 16:00, 20:00)
 
+
 Implementation (Veeam):
+
   - Backup Job: "Ecommerce-Tier1"
   - Schedule: Daily at 02:00 (full on Sunday, incremental Mon-Sat)
   - Additional: Backup copy job to Azure Blob (4-hourly)
   - Retention: 30 days local, 30 days cloud
+
 ```
 
 **Example 3: CRM System (Tier 2, RPO 24h)**
 ```
 Backup Schedule:
+
   - Full Backup: Sunday 02:00
   - Incremental Backup: Daily at 02:00 (Monday-Saturday)
 
+
 Implementation (Salesforce):
+
   - Veeam Backup for Salesforce OR Spanning Backup
   - Schedule: Daily at 02:00 UTC
   - Retention: 14 days
   - Cloud storage: AWS S3
+
 ```
 
 **Backup Window Management:**
 
 **Challenge:** All backups want to run during low-usage period (e.g., 02:00-06:00), but:
+
 - Limited network bandwidth
 - Limited storage I/O
 - Limited backup server capacity
+
 
 **Solution: Stagger Backup Jobs**
 
@@ -938,18 +1054,25 @@ Implementation (Salesforce):
 Backup Window: 02:00 - 06:00 (4 hours)
 
 Tier 1 (High Priority):
+
   - 02:00-03:00: Payment DB, E-commerce DB (critical databases - fast)
   - 03:00-04:00: E-commerce App Servers, CRM
 
+
 Tier 2 (Medium Priority):
+
   - 04:00-05:00: Email servers, File servers
   - 05:00-06:00: ERP, HR systems
 
+
 Tier 3 (Low Priority):
+
   - 06:00+: Intranet, Dev/Test (can run during business hours, less critical)
+
 ```
 
 **Document in Backup Assessment Workbook - Sheet 2: Backup Schedules**
+
 - System Name
 - Tier
 - RPO Requirement (from BIA)
@@ -960,15 +1083,18 @@ Tier 3 (Low Priority):
 - Retention Period (days)
 - Status (Configured/Pending)
 
+
 **Quality Check:**
+
 - ✓ Backup frequency meets RPO requirement
 - ✓ Backup windows don't overlap (staggered)
 - ✓ Critical systems (Tier 1) backed up first
 - ✓ Retention period matches tier requirement (Tier 1 = 30 days, etc.)
 
+
 ---
 
-## 3.7 STEP 6: IMPLEMENT Offsite/Cloud Backup
+# STEP 6: IMPLEMENT Offsite/Cloud Backup
 
 **Objective:** Establish geographic separation of backups for disaster recovery.
 
@@ -977,13 +1103,15 @@ Tier 3 (Low Priority):
 **Critical Principle:** On-site backup alone is NOT sufficient. Site-wide disasters (fire, flood, ransomware) can destroy both production and backup data if co-located.
 
 **3-2-1 Backup Rule (Industry Best Practice):**
+
 - **3 copies** of data (1 production + 2 backups)
 - **2 different media types** (e.g., disk + cloud, disk + tape)
 - **1 copy offsite** (geographic separation)
 
-### Offsite Backup Options
 
-#### Option 1: Cloud Backup (Recommended for Most Organizations)
+## Offsite Backup Options
+
+### Option 1: Cloud Backup (Recommended for Most Organizations)
 
 **Azure Blob Storage (Example):**
 
@@ -1033,12 +1161,14 @@ Cost: Similar to Azure Cool tier (~CHF 0.004/GB/month)
 Setup: Similar to Azure (S3 bucket, lifecycle policies, encryption)
 ```
 
-#### Option 2: Tape Backup (Legacy, Decreasing Usage)
+### Option 2: Tape Backup (Legacy, Decreasing Usage)
 
 **When Tape Still Makes Sense:**
+
 - Very large datasets (PB-scale) where cloud egress cost prohibitive
 - Air-gapped requirement (tape physically disconnected = ransomware-proof)
 - Regulatory compliance requiring physical media
+
 
 **Tape Backup Setup:**
 ```
@@ -1047,24 +1177,30 @@ Capacity: 1.5 PB (compressed)
 Cost: CHF 20K initial + CHF 3K/year (tapes)
 
 Backup Schedule:
+
   - Weekly full backup to tape
   - Tapes rotated offsite (secure storage facility)
   - Retention: 1 year on tape
+
 ```
 
 **Challenges:**
+
 - Slow restore (tape retrieval + read time)
 - Management overhead (tape rotation, tracking)
 - Technology obsolescence (tape drives/formats change)
 
+
 **Recommendation:** Cloud backup preferred unless specific tape requirement
 
-#### Option 3: DR Site/Colo (Enterprise)
+### Option 3: DR Site/Colo (Enterprise)
 
 **When DR Site Appropriate:**
+
 - Large enterprise (500+ systems)
 - RTO <1 hour requirement (DR site allows instant failover)
 - Compliance requirement for owned infrastructure
+
 
 **Setup:**
 ```
@@ -1079,7 +1215,7 @@ Replication:
 
 **Cost:** CHF 50K-200K/year (rental + infrastructure + connectivity)
 
-### Offsite Backup Implementation Steps
+## Offsite Backup Implementation Steps
 
 **Step 1: Select Offsite Target**
 
@@ -1094,12 +1230,16 @@ Job Name: "Offsite-Tier1-Azure"
 Source: Backup jobs for Tier 1 systems
 Target: Azure Blob Storage (Cool tier)
 Schedule: 
+
   - After primary backup completes (automatic)
   - Sync interval: Daily
+
 Retention: 30 days (Tier 1 requirement)
 Bandwidth: 
+
   - Throttle to 80 Mbps (weekdays 08:00-18:00)
   - Unlimited (nights/weekends)
+
 Encryption: Enabled (AES-256, password-protected)
 ```
 
@@ -1118,42 +1258,52 @@ Validation Steps:
 
 ```
 Monitoring Checks:
+
 - Backup copy job completion (daily)
 - Azure storage capacity (monthly)
 - Cost monitoring (monthly - avoid surprise bills)
 - Network bandwidth usage (ensure not saturating WAN)
+
 ```
 
-### Geographic Separation Guidelines
+## Geographic Separation Guidelines
 
 **Minimum Distance:** 100 km (protects against regional disasters)
 
 **Example (Swiss Context):**
+
 - Production: Zurich
 - Offsite backup: Azure West Europe (Amsterdam) - 800 km
 - Alternative: Azure Switzerland North (Zurich region) + Azure Switzerland West (Geneva region) - 250 km
 
+
 **Regulatory Considerations:**
 
 **Swiss nDSG / GDPR Data Residency:**
+
 - Personal data of Swiss/EU residents should stay in Switzerland/EU
 - Azure regions: Switzerland North, Switzerland West, West Europe (all compliant)
 - Avoid: Azure US regions (data residency issue for personal data)
 
+
 **FINMA (Swiss Financial):**
+
 - Financial institutions: Data must remain in Switzerland or contractually approved countries
 - Recommendation: Azure Switzerland North + Switzerland West
 
+
 **Quality Check:**
+
 - ✓ Offsite backup configured for all Tier 1 and Tier 2 systems
 - ✓ Geographic separation >100 km
 - ✓ Data residency requirements met (nDSG, GDPR, FINMA)
 - ✓ Offsite restore tested and documented
 - ✓ Cost monitoring in place
 
+
 ---
 
-## 3.8 STEP 7: CONFIGURE Backup Encryption
+# STEP 7: CONFIGURE Backup Encryption
 
 **Objective:** Protect backup data confidentiality per data classification requirements.
 
@@ -1168,23 +1318,27 @@ Monitoring Checks:
 | **Internal** | Encryption recommended | Standard key storage |
 | **Public** | No encryption required | N/A |
 
-### Encryption Points
+## Encryption Points
 
 **1. Encryption in Transit (Network)**
 
 Protects backup data while transferring from source to backup repository.
 
 **Methods:**
+
 - **TLS/SSL** (HTTPS, default for cloud backup)
 - **VPN** (site-to-site VPN for WAN backup)
 - **Private connectivity** (Azure ExpressRoute, AWS Direct Connect)
 
+
 **Example (Veeam to Azure):**
 ```
 Backup traffic to Azure Blob Storage:
+
   - Protocol: HTTPS (TLS 1.2+)
   - Encryption: Built-in (Azure enforces encryption in transit)
   - Additional: VPN optional (for extra security)
+
 ```
 
 **2. Encryption at Rest (Storage)**
@@ -1192,9 +1346,11 @@ Backup traffic to Azure Blob Storage:
 Protects backup data while stored in backup repository.
 
 **Cloud Storage - Automatic:**
+
 - **Azure Blob Storage:** Encrypted by default (AES-256)
 - **AWS S3:** Encrypted by default (AES-256)
 - **Google Cloud Storage:** Encrypted by default (AES-256)
+
 
 **On-Premises Storage - Manual Configuration:**
 
@@ -1205,12 +1361,16 @@ Veeam Backup Job Configuration:
 Encryption: Enabled
 Algorithm: AES-256
 Encryption key: 
+
   - Password-based (for small environments)
   - Enterprise Key Management (for large environments - integrates with Azure Key Vault)
   
+
 Storage: 
+
   - Backup files encrypted before writing to disk
   - Each backup job can have different encryption key
+
 ```
 
 **Example Configuration (Tier 1 Payment Database):**
@@ -1223,7 +1383,7 @@ Key rotation: Annual (January)
 Recovery: Requires Azure Key Vault access (role-based)
 ```
 
-### Key Management
+## Key Management
 
 **Critical Principle:** Lose the encryption key = Lose the backup. Key management is as critical as backup itself.
 
@@ -1244,13 +1404,17 @@ Recovery Procedure:
 ```
 
 **Risks:**
+
 - Password forgotten = backups unrecoverable
 - Password on paper/email = security risk
 
+
 **Mitigation:**
+
 - Store password in enterprise password manager
 - Document in secure location (physical safe)
 - Test password retrieval quarterly
+
 
 **Option 2: Enterprise Key Management (Recommended for Tier 1 Data)**
 
@@ -1260,37 +1424,47 @@ Azure Key Vault Integration:
 Key Vault: "BackupKeys-Production"
 Region: Switzerland North (data residency)
 Access: 
+
   - Veeam Backup Server: Managed Identity
   - Backup Admins: RBAC role "Key Vault Secrets User"
 
+
 Keys:
+
   - "Payment-DB-Key" (AES-256)
   - "Ecommerce-DB-Key" (AES-256)
   - Rotation: Automated (annual)
   
+
 Audit:
+
   - All key access logged (Azure Monitor)
   - Alerting on unusual access patterns
+
 ```
 
 **Benefits:**
+
 - Centralized key management
 - Automated key rotation
 - Audit trail of key access
 - RBAC-based access control
 - HSM-backed keys (optional, for FINMA compliance)
 
+
 **Cost:** Azure Key Vault: CHF 0.03 per 10,000 operations (minimal cost)
 
-### Encryption Configuration Steps
+## Encryption Configuration Steps
 
 **Step 1: Define Encryption Policy**
 
 Per data classification:
+
 - Restricted → AES-256, Azure Key Vault
 - Confidential → AES-256, password-based acceptable
 - Internal → AES-256 recommended
 - Public → No encryption
+
 
 **Step 2: Configure Encryption per Backup Job**
 
@@ -1323,6 +1497,7 @@ Test Procedure:
 Key Management Documentation:
 
 Key Inventory:
+
   - System: Payment Database
   - Key Name: "Payment-DB-Key"
   - Key Vault: "BackupKeys-Production"
@@ -1330,6 +1505,7 @@ Key Inventory:
   - Created: 2025-01-15
   - Next Rotation: 2026-01-15
   - Access: Veeam-Prod (Managed Identity), backup-admins@org.ch (RBAC)
+
 
 Recovery Procedure:
   1. Authenticate to Azure (backup admin account)
@@ -1340,27 +1516,31 @@ Recovery Procedure:
 ```
 
 **Quality Check:**
+
 - ✓ All Restricted/Confidential data backups encrypted (AES-256)
 - ✓ Encryption keys stored securely (password manager or Key Vault)
 - ✓ Key access documented and restricted
 - ✓ Encrypted restore tested successfully
 - ✓ Key recovery procedure documented
 
+
 ---
 
-## 3.9 STEP 8: SETUP Backup Monitoring & Alerting
+# STEP 8: SETUP Backup Monitoring & Alerting
 
 **Objective:** Automated monitoring to detect backup failures immediately.
 
 **Duration:** Week 8
 
 **Critical Principle:** "Backups running green" in the backup console is NOT sufficient monitoring. You need:
+
 - Automated alerts on failure
 - Centralized monitoring (not just backup console)
 - Escalation to on-call (24/7 for Tier 1)
 - Trend analysis (detecting degradation before failure)
 
-### Monitoring Requirements by Tier
+
+## Monitoring Requirements by Tier
 
 | Tier | Monitoring Frequency | Alerting | Escalation | Dashboard |
 |------|---------------------|----------|------------|-----------|
@@ -1369,21 +1549,25 @@ Recovery Procedure:
 | **Tier 3** | Daily | Alert within 24 hours | Email | Self-service |
 | **Tier 4** | Weekly | Best-effort | None | None |
 
-### Monitoring Metrics
+## Monitoring Metrics
 
 **1. Backup Job Status (Primary Metric)**
 
 Monitors: Did backup complete successfully?
 
 **States:**
+
 - **Success** (green) - Backup completed, all data protected
 - **Warning** (yellow) - Backup completed with warnings (e.g., some files skipped)
 - **Failed** (red) - Backup failed, data NOT protected
 
+
 **Alert Triggers:**
+
 - Tier 1: Failed OR Warning → Immediate alert (SMS/call)
 - Tier 2: Failed → Alert within 4 hours (email + ticket)
 - Tier 3: Failed for 2 consecutive days → Alert (email)
+
 
 **2. Backup Duration (Trend Metric)**
 
@@ -1404,7 +1588,9 @@ Action: Review and increase backup resources if needed
 ```
 
 **Alert Trigger:**
+
 - Duration >150% of baseline for 3 consecutive days → Investigate
+
 
 **3. Backup Size (Trend Metric)**
 
@@ -1425,22 +1611,28 @@ Unexpected Change:
   Day 2: 750 GB (+50%) ← ALERT: Investigate
   
 Causes:
+
   - Legitimate: Large data import (e.g., end-of-month reporting)
   - Issue: Backup capturing unnecessary data (misconfiguration)
   - Attack: Ransomware encrypting files (creates many new files)
+
 ```
 
 **Alert Trigger:**
+
 - Backup size change >20% from previous day → Investigate
+
 
 **4. Storage Capacity (Capacity Metric)**
 
 Monitors: Backup repository capacity utilization
 
 **Alert Thresholds:**
+
 - 70% full → Warning (plan capacity expansion)
 - 85% full → Critical (expand capacity immediately)
 - 95% full → Emergency (backups will fail soon)
+
 
 **Example:**
 ```
@@ -1460,16 +1652,20 @@ Plan: Expand to 150 TB or implement lifecycle management (move old backups to ar
 Monitors: Are restore tests being performed per policy?
 
 **Requirements:**
+
 - Tier 1: Quarterly restore testing
 - Tier 2: Semi-annual restore testing
 - Tier 3: Annual restore testing
 
+
 **Alert Trigger:**
+
 - Restore test overdue >30 days → Alert to BC/DR Coordinator
 
-### Monitoring Implementation
 
-#### Option 1: Veeam ONE (If Using Veeam)
+## Monitoring Implementation
+
+### Option 1: Veeam ONE (If Using Veeam)
 
 **Setup:**
 ```
@@ -1481,50 +1677,66 @@ Veeam ONE Installation:
 Configuration:
   1. Add Veeam Backup Servers to Veeam ONE
   2. Configure alerts:
+
      - Backup job failed (Tier 1) → Email + SMS
      - Backup job failed (Tier 2) → Email
      - Backup repository >80% full → Email
      - Long-running backup (>2× baseline) → Email
+
   3. Configure dashboards:
+
      - Executive Dashboard (backup status summary)
      - Operations Dashboard (detailed backup job status)
+
   4. Schedule reports:
+
      - Weekly backup report (email to IT management)
      - Monthly capacity report (email to storage team)
+
 ```
 
 **Cost:** Included with Veeam license (no additional cost)
 
-#### Option 2: Azure Monitor (If Using Azure Backup)
+### Option 2: Azure Monitor (If Using Azure Backup)
 
 **Setup:**
 ```
 Azure Monitor Configuration:
 
 Metrics:
+
   - Backup job status (Azure Backup built-in metric)
   - Backup vault capacity
   - Restore test success rate (custom metric)
 
+
 Alerts:
+
   - Backup failure → Action Group: Email to backup-team@org.ch + SMS to on-call
   - Vault capacity >80% → Email to storage-team@org.ch
 
+
 Log Analytics:
+
   - Backup logs ingested to Log Analytics workspace
   - Custom queries for trend analysis
   - Dashboards in Azure Workbook
 
+
 Reports:
+
   - Azure Backup Reports (built-in)
   - Custom Power BI reports (using Log Analytics data)
+
 ```
 
 **Cost:** 
+
 - Log Analytics: ~CHF 2/GB ingested (typical: CHF 50-100/month)
 - Alerts: CHF 0.10 per alert (minimal)
 
-#### Option 3: Generic Monitoring (Zabbix, PRTG, etc.)
+
+### Option 3: Generic Monitoring (Zabbix, PRTG, etc.)
 
 **Setup:**
 ```
@@ -1532,23 +1744,29 @@ Zabbix Monitoring:
 
 Template: Veeam Backup Monitoring
 Metrics:
+
   - Backup job status (via Veeam API or PowerShell script)
   - Backup repository capacity (SNMP or WMI)
   - Backup job duration
 
+
 Triggers:
+
   - Backup failed (Tier 1) → Severity: High → Escalation: On-call
   - Backup failed (Tier 2) → Severity: Medium → Email
   - Repository >85% → Severity: High → Email
 
+
 Dashboards:
+
   - Backup Status Dashboard (all jobs, color-coded)
   - Capacity Dashboard (repository utilization)
+
 ```
 
 **Cost:** Open-source (free) or PRTG (paid, ~CHF 1,500/year for 500 sensors)
 
-### Alert Configuration
+## Alert Configuration
 
 **Tiered Alerting Structure:**
 
@@ -1556,9 +1774,11 @@ Dashboards:
 Tier 1 Backup Failure Alert:
 
 Recipients:
+
   - Primary: backup-admin@org.ch (email + SMS)
   - Escalation (15 min): backup-oncall@org.ch (phone call)
   - Escalation (30 min): it-management@org.ch
+
 
 Message:
   Subject: [CRITICAL] Tier 1 Backup Failed - Payment Database
@@ -1574,8 +1794,10 @@ Message:
 Tier 2 Backup Failure Alert:
 
 Recipients:
+
   - Primary: backup-team@org.ch (email only)
   - No escalation (handled during business hours)
+
 
 Message:
   Subject: [WARNING] Tier 2 Backup Failed - CRM System
@@ -1588,15 +1810,17 @@ Message:
 ```
 
 **Quality Check:**
+
 - ✓ Monitoring configured for all Tier 1 and Tier 2 systems
 - ✓ Alerts escalate appropriately (Tier 1 = immediate, Tier 2 = 4h)
 - ✓ Trend analysis in place (backup duration, size, capacity)
 - ✓ Dashboards accessible to management
 - ✓ Alert fatigue avoided (only meaningful alerts)
 
+
 ---
 
-## 3.10 STEP 9: DOCUMENT Recovery Procedures
+# STEP 9: DOCUMENT Recovery Procedures
 
 **Objective:** Step-by-step recovery runbooks for each critical system.
 
@@ -1604,7 +1828,7 @@ Message:
 
 **Critical Principle:** Recovery procedures must be documented BEFORE disaster, not discovered DURING disaster.
 
-### Recovery Procedure Template
+## Recovery Procedure Template
 
 **For Each Tier 1 and Tier 2 System:**
 
@@ -1621,14 +1845,18 @@ Owner: [Name]
 PREREQUISITES
 
 Required Access:
+
   - Veeam Backup Console: [Role]
   - Azure Portal: [Subscription]
   - System credentials: [Where stored]
 
+
 Required Tools:
+
   - Veeam Backup & Replication Console
   - Azure Portal access
   - RDP/SSH client
+
 
 Estimated Duration: [X hours]
 
@@ -1639,19 +1867,25 @@ STEP 1: Assess Situation
   □ Confirm system is down/data is lost
   □ Identify last known good state
   □ Check backup availability:
+
     - Last successful backup: [How to check]
     - Backup location: [Path]
     - Backup encryption: [Yes/No, key location]
 
+
 STEP 2: Prepare Recovery Environment
   □ Verify target infrastructure available:
+
     - VM host: [Details]
     - Network: [VLAN, IP]
     - Storage: [Datastore]
+
   □ Notify stakeholders:
+
     - BC/DR Coordinator: [Contact]
     - System Owner: [Contact]
     - Users: [Communication plan]
+
 
 STEP 3: Initiate Restore
   □ Open Veeam Backup & Replication Console
@@ -1659,9 +1893,11 @@ STEP 3: Initiate Restore
   □ Right-click → Restore → [Restore Type]
   □ Select restore point: [Criteria]
   □ Configure restore options:
+
     - Target location: [Details]
     - Network settings: [IP address, VLAN]
     - Power on after restore: [Yes/No]
+
   □ Start restore
 
 STEP 4: Monitor Restore Progress
@@ -1675,9 +1911,13 @@ STEP 5: Validate Restored System
   □ Network connectivity verified
   □ Services/applications start correctly
   □ Data integrity spot-check:
+
     - [Specific checks for this system]
+
   □ Application functionality test:
+
     - [Specific tests for this system]
+
 
 STEP 6: Cut Over to Production
   □ Update DNS (if needed)
@@ -1715,7 +1955,7 @@ CHANGE LOG
 | 2026-01-22 | Initial version | Backup Admin |
 ```
 
-### System-Specific Recovery Examples
+## System-Specific Recovery Examples
 
 **Example 1: Payment Database (Azure SQL)**
 
@@ -1731,8 +1971,10 @@ RECOVERY PROCEDURE:
 STEP 1: Assess
   □ Confirm database unavailable in Azure Portal
   □ Identify required restore point:
+
     - Check transaction timestamp of last known good state
     - Azure SQL backup: Point-in-time restore available (5-10min granularity)
+
 
 STEP 2: Initiate Restore (Azure Portal)
   □ Navigate to: Azure Portal → SQL databases → [DB Name]
@@ -1740,8 +1982,10 @@ STEP 2: Initiate Restore (Azure Portal)
   □ Select: Point-in-time restore
   □ Restore point: [Date/Time - within last 30 days]
   □ Target:
+
     - Option A: Restore to new database (test first, then cut over)
     - Option B: Overwrite existing database (faster but riskier)
+
   □ Start restore
 
 STEP 3: Monitor
@@ -1750,24 +1994,34 @@ STEP 3: Monitor
 
 STEP 4: Validate
   □ Connect to restored database:
+
     - Server: [servername].database.windows.net
     - Database: [dbname]-restored
     - Credentials: SQL Admin (from Key Vault)
+
   □ Run validation queries:
+
     - SELECT COUNT(*) FROM Orders WHERE OrderDate = '[Yesterday]'
     - SELECT MAX(OrderID) FROM Orders
     - Compare with expected values
+
   □ Application connection test:
+
     - Update application config to point to restored DB
     - Test order processing
     - Test payment processing
 
+
 STEP 5: Cut Over
   □ If Option A (new database):
+
     - Update DNS alias to point to restored database
     - Estimated cutover: 2 minutes
+
   □ If Option B (overwrite):
+
     - Already in production
+
   □ Monitor application logs for errors
 
 STEP 6: Post-Recovery
@@ -1791,18 +2045,24 @@ RECOVERY PROCEDURE:
 STEP 1: Assess
   □ Confirm VM down or data corrupted
   □ Identify restore point:
+
     - Veeam Backup Console → Backups → Ecommerce-Tier1
     - Select restore point within RPO (≤4 hours old)
+
 
 STEP 2: Initiate Restore
   □ Veeam Console → Right-click backup → Restore → Entire VM
   □ Restore mode: 
+
     - Restore to original location (overwrite existing VM)
     - OR Restore to new location (test first, then cut over)
+
   □ Options:
+
     - Power on VM after restore: Yes
     - Network: Reconnect network adapter
     - Quick rollback: Disabled (full restore)
+
   □ Start restore
 
 STEP 3: Monitor
@@ -1814,23 +2074,33 @@ STEP 4: Validate
   □ VM powered on successfully
   □ RDP/SSH login: Verify OS accessible
   □ Check services:
+
     - Web server (IIS / Nginx): Running
     - Application server: Running
     - Check application logs: No errors
+
   □ Functionality test:
+
     - Browse to: https://shop.org.ch
     - Test: Add item to cart, proceed to checkout
     - Verify: Database connection working
+
   □ Data validation:
+
     - Check product catalog: Recent products visible
     - Check orders: Orders from last 4 hours present (within RPO)
 
+
 STEP 5: Cut Over
   □ If restored to new VM:
+
     - Update load balancer to include restored VM
     - Disable old VM
+
   □ If restored to original location:
+
     - Already in production
+
   □ Monitor web traffic and error logs
 
 STEP 6: Post-Recovery
@@ -1840,31 +2110,37 @@ STEP 6: Post-Recovery
   □ Root cause analysis
 ```
 
-### Recovery Procedure Storage
+## Recovery Procedure Storage
 
 **Location:** Centralized documentation repository
 
 **Options:**
+
 - SharePoint (ISMS Documentation library)
 - Confluence / Wiki
 - Azure DevOps Wiki
 - GitHub (private repo)
 
+
 **Accessibility:**
+
 - Must be accessible during disaster (cloud-hosted preferred)
 - Must be accessible to backup team (permissions)
 - Version-controlled (track changes)
 
+
 **Quality Check:**
+
 - ✓ Recovery procedures documented for all Tier 1 and Tier 2 systems
 - ✓ Procedures tested (validated during restore tests)
 - ✓ Procedures accessible to backup team
 - ✓ Contact information current
 - ✓ Procedures reviewed annually
 
+
 ---
 
-## 3.11 STEP 10: TEST Restore Capability
+# STEP 10: TEST Restore Capability
 
 **Objective:** Prove backups can be successfully restored.
 
@@ -1872,7 +2148,7 @@ STEP 6: Post-Recovery
 
 **Critical Principle:** Untested backups = no backups. You don't have a backup until you've successfully restored from it.
 
-### Testing Requirements by Tier
+## Testing Requirements by Tier
 
 | Tier | Testing Frequency | Test Type | Success Criteria |
 |------|------------------|-----------|------------------|
@@ -1881,7 +2157,7 @@ STEP 6: Post-Recovery
 | **Tier 3** | **Annual** (Q4) | Sample file/database restore | Data recoverable |
 | **Tier 4** | No requirement | Optional | N/A |
 
-### Restore Test Types
+## Restore Test Types
 
 **1. File-Level Restore (Basic Test)**
 
@@ -1895,9 +2171,11 @@ STEP 6: Post-Recovery
 2. Identify backup containing file (date/time)
 3. Initiate restore to alternative location (not overwrite)
 4. Validate file integrity:
+
    - File size correct
    - File opens successfully
    - Content as expected
+
 5. Document: Date, system, file name, result (success/failure)
 ```
 
@@ -1914,10 +2192,12 @@ STEP 6: Post-Recovery
 1. Select database backup (e.g., CRM database from last night)
 2. Restore to test database server (isolated from production)
 3. Validate database:
+
    - Database accessible (SQL login works)
    - Row counts correct (compare with production)
    - Sample queries return expected results
    - Application can connect to test database
+
 4. Document: Date, database, restore time, result
 ```
 
@@ -1935,14 +2215,18 @@ STEP 6: Post-Recovery
 2. Restore to isolated test network (VLAN)
 3. Power on restored VM
 4. Validate system:
+
    - OS boots successfully
    - Services start automatically
    - Network connectivity (within test VLAN)
    - Application functionality (web server responds)
    - User login works
+
 5. Performance test:
+
    - Load test (if applicable)
    - Response time acceptable
+
 6. Document: Date, VM, restore time, RTO achieved, result
 ```
 
@@ -1958,23 +2242,27 @@ STEP 6: Post-Recovery
 ```
 1. Simulate disaster scenario (e.g., "Primary datacenter unavailable")
 2. Restore critical systems in dependency order:
+
    - Active Directory (authentication)
    - Network infrastructure (connectivity)
    - Database servers (data tier)
    - Application servers (app tier)
    - Web servers (presentation tier)
+
 3. Validate end-to-end functionality:
+
    - User can login (AD works)
    - User can access application (network works)
    - User can perform business transaction (database works)
    - Transaction completes successfully (application works)
+
 4. Measure RTO: Time from disaster declaration to system functional
 5. Document: Full scenario report, lessons learned, gaps identified
 ```
 
 **Duration:** 4-8 hours (coordinated exercise)
 
-### Restore Testing Schedule
+## Restore Testing Schedule
 
 **Quarterly Testing (Tier 1 Systems):**
 
@@ -1994,7 +2282,9 @@ Q3 (July-September):
 
 Q4 (October-December):
   [Same pattern]
+
   + DR Scenario Test (full recovery exercise)
+
 ```
 
 **Semi-Annual Testing (Tier 2 Systems):**
@@ -2007,7 +2297,7 @@ Q4 (December):
   [Same systems]
 ```
 
-### Restore Test Documentation
+## Restore Test Documentation
 
 **For Each Test, Document:**
 
@@ -2035,9 +2325,13 @@ VALIDATION RESULTS
 
 □ System Accessible: [Yes/No]
 □ Data Integrity: [Pass/Fail]
+
   - [Specific validation checks performed]
+
 □ Functionality: [Pass/Fail]
+
   - [Specific functionality tests]
+
 □ Performance: [Acceptable/Degraded]
 
 ─────────────────────────────────────────────────
@@ -2080,7 +2374,7 @@ Reviewed By: [BC/DR Coordinator] [Date]
 Approved By: [IT Manager] [Date]
 ```
 
-### Common Restore Test Failures & Solutions
+## Common Restore Test Failures & Solutions
 
 **Issue 1: Restore Takes Longer Than RTO**
 
@@ -2090,9 +2384,11 @@ Symptom: Payment DB restore took 6 hours, RTO requirement is 1 hour
 Root Cause: Network bandwidth limitation (offsite restore slow)
 
 Solution:
+
   - Option A: Increase network bandwidth (cost)
   - Option B: Keep more recent backups on-site (faster restore from local)
   - Option C: Implement hot standby (redundancy per A.8.14)
+
 
 Action: Update backup architecture to meet RTO
 ```
@@ -2105,9 +2401,11 @@ Symptom: VM restored but won't power on, boot errors
 Root Cause: Hardware/hypervisor incompatibility (backup from VMware 7, restore to VMware 8)
 
 Solution:
+
   - Update Veeam to latest version (better compatibility)
   - Test restore to same hypervisor version as production
   - Document hypervisor requirements in recovery procedure
+
 
 Action: Update recovery procedure, schedule Veeam upgrade
 ```
@@ -2120,9 +2418,11 @@ Symptom: Database restored but queries return incorrect data
 Root Cause: Backup captured database mid-transaction (inconsistent state)
 
 Solution:
+
   - For databases: Use application-consistent backup (VSS / app-aware processing)
   - Enable Veeam application-aware processing for SQL/Oracle
   - For critical databases: Use native database backup tools + Veeam
+
 
 Action: Reconfigure backup job, re-test
 ```
@@ -2135,14 +2435,17 @@ Symptom: Cannot restore, "encryption key not found"
 Root Cause: Encryption key not accessible (Azure Key Vault permission issue)
 
 Solution:
+
   - Grant restore server Managed Identity permission to Key Vault
   - Test key retrieval as part of DR preparedness
   - Document key recovery procedure
+
 
 Action: Update Key Vault RBAC, update recovery procedure
 ```
 
 **Quality Check:**
+
 - ✓ All Tier 1 systems tested quarterly
 - ✓ All Tier 2 systems tested semi-annually
 - ✓ Test results documented with evidence
@@ -2150,33 +2453,36 @@ Action: Update Key Vault RBAC, update recovery procedure
 - ✓ Issues remediated or risk accepted
 - ✓ Recovery procedures updated based on test results
 
+
 ---
 
 [Sections 4-12 follow with Testing, Monitoring, Documentation details]
 
-## 4. Backup Testing Procedures
+# Backup Testing Procedures
 
 [Complete section with detailed testing methodologies, scripts, validation criteria]
 
-## 5. Backup Monitoring & Alerting
+# Backup Monitoring & Alerting
 
 [Complete section with monitoring setup, alert rules, dashboards]
 
-## 6. Recovery Procedure Documentation
+# Recovery Procedure Documentation
 
 [Complete section with templates and examples]
 
-## 7. Common Backup Issues & Solutions
+# Common Backup Issues & Solutions
 
-### Issue: Backup Window Exceeded
+## Issue: Backup Window Exceeded
 
 **Symptom:** Backup job doesn't complete within maintenance window
 
 **Causes:**
+
 - Data growth (more data to backup)
 - Network congestion
 - Backup infrastructure under-resourced
 - Backup method inefficient (full backup when incremental appropriate)
+
 
 **Solutions:**
 1. Switch to incremental backup (reduce data volume)
@@ -2185,32 +2491,40 @@ Action: Update Key Vault RBAC, update recovery procedure
 4. Implement backup acceleration (WAN accelerators, deduplication)
 5. Add backup proxy resources (more concurrent streams)
 
-### Issue: Backup Repository Full
+## Issue: Backup Repository Full
 
 **Symptom:** Backups fail with "insufficient storage space"
 
 **Immediate Action:**
 1. Free space immediately:
+
    - Delete oldest backup chains (if retention policy allows)
    - Move backups to alternative storage
    - Temporarily reduce retention
+
 2. Expand storage capacity:
+
    - Provision additional disk (NAS/SAN)
    - Extend cloud storage subscription
 
+
 **Prevention:**
+
 - Monitor capacity trend (Section 3.9)
 - Set alerts at 70% / 85% / 95% thresholds
 - Plan capacity 6-12 months ahead
 
-### Issue: Cloud Backup Slow
+
+## Issue: Cloud Backup Slow
 
 **Symptom:** Cloud backup copy takes >12 hours, exceeds backup window
 
 **Causes:**
+
 - Insufficient internet bandwidth
 - ISP throttling during business hours
 - Large data change rate
+
 
 **Solutions:**
 1. Schedule cloud backup during off-hours (20:00-06:00)
@@ -2220,7 +2534,7 @@ Action: Update Key Vault RBAC, update recovery procedure
 5. Increase internet bandwidth (upgrade ISP plan)
 6. Direct cloud connection (Azure ExpressRoute, AWS Direct Connect - expensive)
 
-### Issue: Ransomware Encrypted Backups
+## Issue: Ransomware Encrypted Backups
 
 **Symptom:** Ransomware infected production system, backups also encrypted
 
@@ -2228,39 +2542,49 @@ Action: Update Key Vault RBAC, update recovery procedure
 
 **Prevention:**
 1. **Immutable backups** (cannot be deleted/encrypted):
+
    - Veeam: Enable "Immutability" on backup repositories
    - Azure Blob: Enable "Immutable Blob Storage"
    - AWS S3: Enable "Object Lock"
+
 2. **Air-gapped backups** (offline/disconnected):
+
    - Tape backups (physical disconnection)
    - Cloud backups (separate credentials, MFA)
+
 3. **Backup isolation:**
+
    - Backup repository on separate network segment
    - No domain join (prevents domain admin compromise → backup compromise)
 
+
 **Recovery:**
+
 - Restore from immutable backup (unaffected by ransomware)
 - Rebuild systems from clean backups
 - Do NOT pay ransom
 
-### Issue: SaaS Data Loss (Microsoft 365)
+
+## Issue: SaaS Data Loss (Microsoft 365)
 
 **Symptom:** User accidentally deleted emails/files, need to recover >30 days old
 
 **Root Cause:** Microsoft 365 native retention only 30-93 days
 
 **Solution:**
+
 - Implement third-party SaaS backup:
   - Veeam Backup for Microsoft 365
   - Spanning Backup
 - Configure long-term retention (1+ years)
 - Regular restore testing
 
+
 ---
 
-## 8. Backup Assessment Workbook Guide (5 Sheets)
+# Backup Assessment Workbook Guide (5 Sheets)
 
-### Sheet 1: Backup_Inventory
+## Sheet 1: Backup_Inventory
 
 **Purpose:** Track all systems and their backup status
 
@@ -2290,17 +2614,21 @@ Action: Update Key Vault RBAC, update recovery procedure
 ```
 
 **Conditional Formatting:**
+
 - Gap_Priority = "P1 - Critical": Red fill
 - Gap_Priority = "P2 - High": Orange fill
 - Backup_Status = "Not Backed Up": Red text
 - Last_Restore_Test > 120 days (Tier 1): Yellow fill
 
+
 **Data Validation:**
+
 - Tier: List = Tier 1, Tier 2, Tier 3, Tier 4
 - Backup_Status: List = Backed Up, Not Backed Up
 - Backup_Frequency: List = Hourly, 4-hourly, Daily, Weekly, None
 
-### Sheet 2: Backup_Schedules
+
+## Sheet 2: Backup_Schedules
 
 **Purpose:** Track backup job schedules and compliance with RPO
 
@@ -2332,10 +2660,12 @@ Action: Update Key Vault RBAC, update recovery procedure
 ```
 
 **Conditional Formatting:**
+
 - RPO_Compliance = "FAIL": Red fill
 - Status = "Pending": Yellow fill
 
-### Sheet 3: Backup_Testing
+
+## Sheet 3: Backup_Testing
 
 **Purpose:** Track restore test results
 
@@ -2375,11 +2705,13 @@ Action: Update Key Vault RBAC, update recovery procedure
 ```
 
 **Conditional Formatting:**
+
 - Overall_Result = "Failure": Red fill
 - Overall_Result = "Partial Success": Yellow fill
 - Next_Test_Due < TODAY(): Red text (overdue)
 
-### Sheet 4: Storage_Capacity
+
+## Sheet 4: Storage_Capacity
 
 **Purpose:** Track backup storage capacity and growth
 
@@ -2419,47 +2751,61 @@ Action: Update Key Vault RBAC, update recovery procedure
 ```
 
 **Conditional Formatting:**
+
 - Status = "CRITICAL": Red fill
 - Status = "WARNING": Orange fill
 - Status = "MONITOR": Yellow fill
 - Months_Until_Full < 3: Red text
 
-### Sheet 5: Dashboard
+
+## Sheet 5: Dashboard
 
 **Purpose:** Executive summary of backup status
 
 **Metrics (calculated from other sheets):**
 
 1. **Backup Coverage:**
+
    - Total Systems: COUNT(Sheet1)
    - Systems Backed Up: COUNTIF(Sheet1, Backup_Status="Backed Up")
    - Coverage %: (Backed Up / Total) × 100
 
+
 2. **Gap Summary:**
+
    - P1 Critical Gaps: COUNTIF(Sheet1, Gap_Priority="P1 - Critical")
    - P2 High Gaps: COUNTIF(Sheet1, Gap_Priority="P2 - High")
    - P3 Medium Gaps: COUNTIF(Sheet1, Gap_Priority="P3 - Medium")
 
+
 3. **Testing Compliance:**
+
    - Tier 1 Tests Overdue: COUNT(Sheet3, Tier="Tier 1", Next_Test_Due<TODAY())
    - Tier 2 Tests Overdue: COUNT(Sheet3, Tier="Tier 2", Next_Test_Due<TODAY())
    - Last Test Failure: Most recent "Failure" from Sheet 3
 
+
 4. **Storage Status:**
+
    - Total Storage Capacity: SUM(Sheet4, Total_Capacity_TB)
    - Used Storage: SUM(Sheet4, Used_Capacity_TB)
    - Overall Utilization %: Used / Total
    - Critical Repositories: COUNTIF(Sheet4, Status="CRITICAL")
 
+
 5. **Compliance Summary:**
+
    - RPO Compliance Rate: COUNTIF(Sheet2, RPO_Compliance="PASS") / COUNT(Sheet2)
    - RTO Compliance Rate: COUNTIF(Sheet3, RTO_Met="PASS") / COUNT(Sheet3)
 
+
 **Visualizations (Excel Charts):**
+
 - Pie chart: Backup Coverage (Backed Up vs. Not Backed Up)
 - Bar chart: Gap Priority Distribution (P1, P2, P3)
 - Line chart: Storage Utilization Trend (over time)
 - Gauge chart: Overall Backup Health Score (0-100%)
+
 
 **Health Score Calculation:**
 ```
@@ -2477,54 +2823,67 @@ Where:
 
 ---
 
-## 9. Evidence Collection
+# Evidence Collection
 
 **Evidence Required for Audit:**
 
 1. **Backup Configuration Evidence:**
+
    - Backup job configurations (export from Veeam/Azure)
    - Backup schedules (screenshots)
    - Retention policies (documented)
    - Encryption settings (screenshots/config export)
 
+
 2. **Backup Success Evidence:**
+
    - Backup job history (last 90 days minimum)
    - Success/failure statistics
    - Storage capacity reports
    - Monitoring dashboards (screenshots)
 
+
 3. **Testing Evidence:**
+
    - Restore test reports (Sheet 3 from workbook)
    - Test validation results
    - Screenshots of successful restores
    - Signed approval of test results
 
+
 4. **Compliance Evidence:**
+
    - BIA Assessment → Backup Implementation mapping
    - RPO/RTO compliance report
    - Gap remediation tracking
    - Management approval of backup architecture
 
+
 **Evidence Storage:**
+
 - Location: SharePoint ISMS Evidence Library
 - Folder: A.8.13-Backup-Implementation
 - Retention: 3 years minimum
 - Access: CISO, BC/DR Coordinator, Auditors
 
+
 ---
 
-## 10. Quality Checklist
+# Quality Checklist
 
 **Before Marking IMP-S2 Complete:**
 
 **Planning & Architecture:**
+
 - [ ] BIA requirements reviewed (RPO/RTO per system)
 - [ ] Backup architecture designed and documented
 - [ ] Backup solution selected and licensed
 - [ ] Storage capacity calculated and provisioned
 - [ ] Network bandwidth validated for backup windows
 
+
 **Implementation:**
+
 - [ ] All Tier 1 systems backed up (100% coverage)
 - [ ] All Tier 2 systems backed up (100% coverage)
 - [ ] Backup schedules configured per RPO requirements
@@ -2532,58 +2891,73 @@ Where:
 - [ ] Offsite/cloud backup configured for Tier 1 & 2
 - [ ] Backup encryption configured for Confidential/Restricted data
 
+
 **Monitoring:**
+
 - [ ] Backup monitoring configured (Veeam ONE / Azure Monitor / other)
 - [ ] Alerts configured for backup failures
 - [ ] Escalation procedures documented
 - [ ] Dashboards accessible to management
 - [ ] Storage capacity monitoring in place
 
+
 **Testing:**
+
 - [ ] Restore testing schedule defined
 - [ ] Tier 1 systems tested (quarterly schedule established)
 - [ ] Tier 2 systems tested (semi-annual schedule established)
 - [ ] Recovery procedures documented for all Tier 1 & 2 systems
 - [ ] Test results documented in workbook
 
+
 **Documentation:**
+
 - [ ] Backup architecture diagram created
 - [ ] Recovery procedures documented
 - [ ] Backup Assessment Workbook completed
 - [ ] Evidence collected and stored
 - [ ] Integration with IMP-S1 (BIA) validated
 
+
 **Compliance:**
+
 - [ ] RPO requirements met (verified in workbook)
 - [ ] RTO capability estimated (will be proven in testing)
 - [ ] Data residency requirements met (nDSG, GDPR)
 - [ ] Encryption requirements met (Restricted/Confidential data)
 - [ ] Management approval obtained
 
+
 ---
 
-## 11. Integration with BC/DR Components
+# Integration with BC/DR Components
 
-### To IMP-S1 (BIA and RPO/RTO)
+## To IMP-S1 (BIA and RPO/RTO)
 
 **Inputs from IMP-S1:**
+
 - System inventory
 - RPO requirements → Backup frequency
 - RTO requirements → Restore time target
 - System criticality tier → Retention, testing frequency
 - Data classification → Encryption requirements
 
+
 **Feedback to IMP-S1:**
+
 - Actual backup frequency achieved
 - Estimated restore time (from testing)
 - Gaps identified (RPO not met)
 
-### To IMP-S3 (Redundancy Implementation)
+
+## To IMP-S3 (Redundancy Implementation)
 
 **Backup Complements Redundancy:**
+
 - Redundancy provides availability (RTO)
 - Backup provides data recovery (RPO)
 - Both are required for complete BC/DR
+
 
 **Example:**
 ```
@@ -2594,47 +2968,59 @@ E-commerce Platform:
 ```
 
 **Even Redundant Systems Need Backup:**
+
 - Redundancy protects against hardware failure
 - Backup protects against data corruption, ransomware, accidental deletion
 - Example: Hot standby database (IMP-S3) still backed up daily (IMP-S2)
 
-### To IMP-S4 (Recovery Testing)
+
+## To IMP-S4 (Recovery Testing)
 
 **Backup Testing is Subset of Recovery Testing:**
+
 - IMP-S2: Backup restore testing (prove data recoverable)
 - IMP-S4: Full recovery testing (prove complete system recoverable)
 
+
 **Integration:**
+
 - Backup restore is Step 1 of recovery testing
 - Recovery testing validates end-to-end (backup → restore → application start → validation)
 
-### To IMP-S5 (BC/DR Assessment)
+
+## To IMP-S5 (BC/DR Assessment)
 
 **Backup Metrics Feed BC/DR Assessment:**
+
 - Backup coverage % (from IMP-S2 Sheet 5)
 - RPO compliance % (from IMP-S2 Sheet 2)
 - Testing compliance (from IMP-S2 Sheet 3)
 - Storage capacity status (from IMP-S2 Sheet 4)
 
+
 **IMP-S5 Dashboard Includes:**
+
 - Backup health score
 - Gap summary (P1/P2/P3)
 - Testing overdue count
 - Storage at-risk repositories
 
+
 ---
 
-## 12. Regulatory Compliance Mapping
+# Regulatory Compliance Mapping
 
-### ISO 27001:2022 A.8.13 - Information Backup
+## ISO 27001:2022 A.8.13 - Information Backup
 
 **Control Statement:** "Backup copies of information, software and systems shall be maintained and regularly tested in accordance with the agreed topic-specific policy."
 
 **Evidence from IMP-S2:**
+
 - Backup inventory (Sheet 1) - proves backup copies maintained
 - Backup schedules (Sheet 2) - proves backup frequency per policy
 - Testing results (Sheet 3) - proves regular testing
 - Recovery procedures (Section 3.10) - proves backup capability documented
+
 
 **SoA Justification:**
 ```
@@ -2645,67 +3031,77 @@ Justification: [Organization] maintains backup copies of all Tier 1, Tier 2, and
 Implementation Status: IMPLEMENTED
 
 Evidence:
+
 - Backup inventory (85 systems, 100% Tier 1/2 coverage)
 - Backup Assessment Workbook (current version dated [Date])
 - Restore test results (Q4 2025 testing completed)
 - Recovery procedures (documented for all Tier 1 systems)
+
 ```
 
-### Swiss nDSG Art. 8 - Data Security
+## Swiss nDSG Art. 8 - Data Security
 
 **Requirement:** "Appropriate technical and organizational measures"
 
 **Backup as Security Measure:**
+
 - Backup protects against data loss (availability)
 - Encryption protects confidentiality
 - Testing ensures effectiveness
 
+
 **Evidence:** IMP-S2 workbook, testing results, encryption configuration
 
-### EU GDPR Art. 32(1)(c) - Security of Processing
+## EU GDPR Art. 32(1)(c) - Security of Processing
 
 **Requirement:** "Ability to restore availability and access to personal data in a timely manner in the event of physical or technical incident"
 
 **Evidence from IMP-S2:**
+
 - Systems processing personal data identified (BIA data classification)
 - Backup configured for all such systems
 - Restore testing proves "ability to restore"
 - RTO/RPO targets define "timely manner"
 
-### DORA Art. 12 - Backup Policies
+
+## DORA Art. 12 - Backup Policies
 
 **Requirement (if applicable):** "Financial entities shall have backup policies and procedures...ensuring restoration of ICT systems"
 
 **Evidence from IMP-S2:**
+
 - Backup policy (ISMS-POL-A.8.13-14-5.30)
 - Backup procedures (this implementation guide)
 - Restoration procedures (Section 3.10)
 - Testing results (proves restoration capability)
 
-### PCI DSS Requirement 3.4 - Backup Protection
+
+## PCI DSS Requirement 3.4 - Backup Protection
 
 **Requirement (if processing payment cards):** "Data at rest shall be rendered unreadable"
 
 **Evidence from IMP-S2:**
+
 - Payment database identified (Tier 1, Restricted data)
 - Backup encryption configured (AES-256)
 - Key management documented (Azure Key Vault)
 - Encryption validated during restore testing
 
+
 ---
 
 # PART II: TECHNICAL SPECIFICATION
 
-## 13. Excel Workbook Technical Specifications
+# Excel Workbook Technical Specifications
 
-### 13.1 Workbook Properties
+## Workbook Properties
 
 **File Name:** `Backup_Assessment_[Organization]_[Year].xlsx`
 **Excel Version:** Excel 2016+ or Microsoft 365
 **Structure:** 5 worksheets
 **Protection:** Sheets protected, formulas locked, data entry cells unlocked
 
-### 13.2 Sheet 1: Backup_Inventory - Technical Spec
+## Sheet 1: Backup_Inventory - Technical Spec
 
 **Columns (A-O):**
 
@@ -2728,15 +3124,19 @@ Evidence:
 | O | Notes | Text | 40 | Text | None | None |
 
 **Conditional Formatting:**
+
 - Row: N="P1 - Critical" → Fill: Red (RGB 255,0,0), Font: White
 - Row: N="P2 - High" → Fill: Orange (RGB 255,165,0), Font: Black
 - Cell G: ="Not Backed Up" → Font: Red, Bold
 - Cell M: <TODAY()-90 AND D="Tier 1" → Fill: Yellow
 
+
 **Data Validation Messages:**
+
 - Tier: "Select system criticality tier from BIA results"
 - Backup_Status: "Has this system been configured for backup?"
 - Offsite_Backup: "Is backup replicated to offsite/cloud location?"
+
 
 [Similar detailed specs continue for Sheets 2-5...]
 
@@ -2746,5 +3146,12 @@ Evidence:
 
 **TOTAL DOCUMENT LENGTH:** ~2,900 lines (PART 1: 971 + PART 2: ~1,929 lines)
 
-*"You don't have a backup until you've successfully restored from it. Test your backups."*
+---
 
+**END OF SPECIFICATION**
+
+---
+
+*"A person who never made a mistake never tried anything new."*
+— Albert Einstein
+*Where bamboo antennas actually work.* 🎋

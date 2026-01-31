@@ -1,10 +1,10 @@
-# ISMS-IMP-A.5.7.3 - Intelligence Integration & Distribution Assessment
-## Assessment Specification with User Completion Guide
+**ISMS-IMP-A.5.7.3 - Intelligence Integration & Distribution Assessment**
+**Assessment Specification with User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.5.7: Threat Intelligence
 
 ---
 
-## Document Control
+**Document Control**
 
 | Attribute | Value |
 |-----------|-------|
@@ -22,7 +22,7 @@
 
 | Version | Date | Changes | Author |
 |---------|------|---------|--------|
-| 1.0 | [Date] | Initial consolidated specification (15 sheets) | ISMS Implementation Team |
+| 1.0 | [Date] | Initial consolidated specification (17 sheets) | ISMS Implementation Team |
 
 ### Document Structure
 
@@ -40,13 +40,14 @@ This document consists of two parts:
   - Review & Approval
 
 - **PART II: TECHNICAL SPECIFICATION**
-  - Excel Workbook Structure (15 sheets)
+  - Excel Workbook Structure (17 sheets)
   - Sheet-by-Sheet Specifications
   - Integration Architecture
   - IOC Deployment Workflows
   - Prevention Tracking Methodology
   - Risk Assessment Updates (ISO 27001 Clause 6.1)
   - Incident-TI Integration (Controls A.5.24-5.28)
+
 
 ---
 
@@ -72,39 +73,50 @@ This assessment evaluates how effectively threat intelligence is INTEGRATED into
 - **CRITICAL**: What business decisions were driven by TI? (Sheet 15 - MANDATORY audit evidence)
 - How effective is the feedback loop from consumers back to producers?
 
+
 #### Key Principle
 
 This assessment is **integration and distribution-focused**. You document HOW intelligence flows INTO security tools and OUT to stakeholders - not how intelligence is collected (A.5.7.1) or analyzed (A.5.7.2), but where it goes and what happens with it.
 
 **CRITICAL COMPLIANCE NOTE**: Sheets 7, 13, 14, and 15 provide MANDATORY audit evidence required by:
+
 - ISO 27001:2022 Control A.5.7 (threat intelligence effectiveness)
 - ISO 27001:2022 Clause 6.1 (risk assessment updates - Sheet 13)
 - ISO 27001:2022 Controls A.5.24-5.28 (incident management integration - Sheet 14)
 
+
 #### What You'll Document
 
 **Tool Integration:**
+
 - Security tool integration matrix (SIEM, EDR, firewalls, proxies, email gateways)
 - IOC deployment tracking and effectiveness
 - SIEM integration details (rules, queries, alerts)
 - EDR integration details (IOC deployment, detections)
 
+
 **Dissemination:**
+
 - Stakeholder registry (who needs intelligence?)
 - Distribution channels (email, portal, API, briefings)
 - Distribution tracking (who received what?)
 - Feedback collection (is intelligence useful?)
 
+
 **MANDATORY Audit Evidence (CRITICAL):**
+
 - **Sheet 7: Prevention_Tracking** - ≥3 validated prevented incidents per quarter
 - **Sheet 13: Risk_Assessment_Updates** - ≥3 risk assessment updates per quarter (Clause 6.1)
 - **Sheet 14: Incident_TI_Integration** - ≥70% of P1/P2 incidents use TI (Controls A.5.24-5.28)
 - **Sheet 15: Intelligence_Driven_Decisions** - ≥5 documented business decisions per quarter
 
+
 **Operational Tracking:**
+
 - Integration metrics and KPIs
 - Threat hunting campaigns driven by TI
 - Dissemination effectiveness
+
 
 #### How This Relates to Other A.5.7 Assessments
 
@@ -139,6 +151,7 @@ This assessment (A.5.7.3) is the OPERATIONAL DEPLOYMENT - it consumes intelligen
 - Understanding of risk assessment methodologies (ISO 27001 Clause 6.1)
 - Ability to document business decisions and their intelligence basis
 
+
 #### Time Commitment
 
 - **Initial assessment:** 12-18 hours (comprehensive integration review across 15 sheets)
@@ -148,6 +161,7 @@ This assessment (A.5.7.3) is the OPERATIONAL DEPLOYMENT - it consumes intelligen
 - **Risk updates (Sheet 13):** As needed when intelligence triggers risk changes
 - **Incident tracking (Sheet 14):** Ongoing (document TI usage in each P1/P2 incident)
 - **Decision tracking (Sheet 15):** As needed when intelligence drives business decisions
+
 
 ### Expected Outputs
 
@@ -188,6 +202,7 @@ Before starting this assessment, gather:
 - Incident management system access (for Sheet 14)
 - Executive decision documentation (for Sheet 15)
 
+
 #### 2. Documentation
 
 - Security tool architecture diagrams
@@ -201,6 +216,7 @@ Before starting this assessment, gather:
 - Incident response records with TI usage
 - Executive meeting minutes referencing TI-driven decisions
 
+
 #### 3. Historical Data
 
 - IOC deployment logs (past 90 days minimum)
@@ -212,6 +228,7 @@ Before starting this assessment, gather:
 - **CRITICAL**: Incident records showing TI usage
 - **CRITICAL**: Business decision records mentioning threat intelligence
 
+
 #### 4. Policy Requirements
 
 - **ISMS-POL-A.5.7, Section 2.3** (Intelligence Dissemination Requirements)
@@ -220,6 +237,7 @@ Before starting this assessment, gather:
 - **ISMS-POL-A.5.7, Section 2.7** (Effectiveness Measurement Requirements) - Prevention tracking
 - **ISO 27001:2022 Clause 6.1** (Risk Assessment) - Referenced in Sheet 13
 - **ISO 27001:2022 Controls A.5.24-5.28** (Incident Management) - Referenced in Sheet 14
+
 
 ### Required Tools
 
@@ -230,17 +248,22 @@ Before starting this assessment, gather:
 - Incident management system access
 - Meeting minutes or decision logs access
 
+
 ### Dependencies
 
 This assessment depends on:
+
 - **A.5.7.1 (Sources Assessment)** - Source IDs referenced in IOC deployment
 - **A.5.7.2 (Collection & Analysis)** - VTL records and IOCs consumed for deployment
 
+
 Outputs from this assessment feed into:
+
 - **A.5.7.4 (Effectiveness Dashboard)** - Prevention metrics, integration metrics consolidated
 - **A.5.7.5 (Standalone Dashboard)** - Prevention and decision metrics for executives
 - **Risk Management Process** - Sheet 13 updates feed into risk register
 - **Incident Management Process** - Sheet 14 tracks TI usage effectiveness
+
 
 ---
 
@@ -310,30 +333,36 @@ Outputs from this assessment feed into:
 
 **Steps:**
 1. List EVERY security tool in [Organization]'s environment:
+
    - SIEM (Splunk, QRadar, Sentinel, etc.)
    - EDR/XDR (CrowdStrike, SentinelOne, Carbon Black, etc.)
    - Firewalls (Palo Alto, Fortinet, Cisco, etc.)
    - Web proxies (Zscaler, Squid, Blue Coat, etc.)
-   - Email gateways (Proofpoint, Mimecast, O365 ATP, etc.)
+   - Email gateways (Proofpoint, Mimecast, Microsoft Defender for Office 365, etc.)
    - DNS security (Cisco Umbrella, Infoblox, etc.)
    - Cloud security (CASB, CSPM)
+
 2. For each tool:
+
    - Document TI integration status (Integrated, Manual, Planned, None)
    - Document integration method (API, Feed, Manual, Email)
    - Document IOC types supported (IP, Domain, Hash, URL, Email)
    - Assess automation level (Fully_Automated, Semi_Automated, Manual)
    - Document update frequency (Real-time, Hourly, Daily, Weekly)
    - Assess integration maturity (High, Medium, Low)
+
 3. Identify integration gaps (tools not receiving TI)
 4. Create action items for critical integration gaps
 
 **Deliverable:** Complete tool integration matrix
 
 **Quality Check:**
+
 - ✓ All production security tools documented
 - ✓ Integration status current (not aspirational)
 - ✓ Critical tools (SIEM, EDR) have High maturity integration
 - ✓ Gaps identified with remediation plans
+
 
 ---
 
@@ -343,6 +372,7 @@ Outputs from this assessment feed into:
 
 **Steps:**
 1. For each IOC deployed to security tools:
+
    - Assign unique IOC_ID
    - Document IOC type (IP, Domain, Hash, URL, Email, etc.)
    - Document IOC value
@@ -351,26 +381,33 @@ Outputs from this assessment feed into:
    - Document deployment date and expiration
    - List tools where deployed (SIEM, EDR, Firewall, etc.)
    - Track deployment status (Active, Expired, False_Positive, Removed)
+
 2. Track hits/detections:
+
    - Count of detections/blocks
    - First hit date
    - Last hit date
    - Actions taken when hit
+
 3. Calculate effectiveness metrics:
+
    - Hit rate (% of IOCs with detections)
    - False positive rate
    - Average time to first hit
+
 4. Review and remove expired or false positive IOCs
 5. Link to prevented incidents (Sheet 7) when IOCs block attacks
 
 **Deliverable:** Running log of all deployed IOCs with hit tracking
 
 **Quality Check:**
+
 - ✓ All deployed IOCs documented
 - ✓ Hit tracking current (updated weekly)
 - ✓ Expired IOCs removed promptly
 - ✓ False positives documented and addressed
 - ✓ Prevention linkage maintained (IOC hit → prevented incident)
+
 
 ---
 
@@ -380,6 +417,7 @@ Outputs from this assessment feed into:
 
 **Steps:**
 1. Document EVERY method used to distribute threat intelligence:
+
    - Email distribution lists
    - Portal/wiki access
    - API feeds
@@ -387,27 +425,34 @@ Outputs from this assessment feed into:
    - Chat channels (Slack, Teams)
    - Ticketing system integrations
    - SMS/mobile alerts
+
 2. For each channel:
+
    - Document channel type and description
    - List target audiences
    - Document distribution frequency
    - Assess automation level
    - Document access controls/permissions
    - Assess effectiveness
+
 3. Map channels to intelligence types:
+
    - Strategic intelligence → Executive briefings
    - Tactical intelligence → SOC email distribution
    - Technical IOCs → API feeds to security tools
    - Urgent alerts → SMS + Slack
+
 4. Identify channel gaps or inefficiencies
 
 **Deliverable:** Complete dissemination channel inventory
 
 **Quality Check:**
+
 - ✓ All distribution methods documented
 - ✓ Appropriate channels for each audience
 - ✓ Automation maximized (reduce manual distribution)
 - ✓ Access controls appropriate (TLP compliance)
+
 
 ---
 
@@ -417,28 +462,34 @@ Outputs from this assessment feed into:
 
 **Steps:**
 1. Identify ALL stakeholders who need threat intelligence:
+
    - **Technical**: SOC analysts, incident responders, network security, system admins
    - **Management**: CISO, security managers, IT managers
    - **Executive**: C-suite, board members
    - **Risk Management**: Risk officers, compliance team
    - **Business Units**: As appropriate (e.g., fraud team for financial threats)
+
 2. For each stakeholder:
+
    - Document name and role
    - Document intelligence needs (what topics/types?)
    - Document preferred channels
    - Document distribution frequency preference
    - Document TLP clearance level
    - Assess engagement level (Active, Passive, Unresponsive)
+
 3. Map stakeholders to intelligence requirements (from A.5.7.2)
 4. Identify stakeholders not receiving appropriate intelligence
 
 **Deliverable:** Complete stakeholder registry with intelligence needs
 
 **Quality Check:**
+
 - ✓ All relevant stakeholders documented
 - ✓ Intelligence needs match stakeholder roles
 - ✓ Executive stakeholders included (for Sheet 15)
 - ✓ Engagement levels assessed honestly
+
 
 ---
 
@@ -448,6 +499,7 @@ Outputs from this assessment feed into:
 
 **Steps:**
 1. For each intelligence product distributed (from A.5.7.2):
+
    - Document Product_ID (link to A.5.7.2 Sheet 5)
    - Document distribution date
    - List stakeholders who received it
@@ -455,21 +507,26 @@ Outputs from this assessment feed into:
    - Track acknowledgment/read receipts
    - Document actions taken by recipients
    - Collect feedback/comments
+
 2. Track distribution metrics:
+
    - Distribution timeliness (how quickly distributed after production?)
    - Reach (% of intended audience received it)
    - Acknowledgment rate
    - Action rate (% who acted on intelligence)
+
 3. Identify distribution failures or delays
 4. Adjust distribution lists based on engagement
 
 **Deliverable:** Running log of all intelligence distributions
 
 **Quality Check:**
+
 - ✓ All products distributed tracked
 - ✓ Distribution timeliness monitored (target: <4 hours after production)
 - ✓ Acknowledgment tracked (shows stakeholder engagement)
 - ✓ Actions documented (demonstrates value)
+
 
 ---
 
@@ -492,69 +549,89 @@ A prevented incident is a situation where:
 **EXAMPLES OF PREVENTED INCIDENTS:**
 
 ✅ **Example 1: IOC Blocking**
+
 - Intelligence: IOC (malicious IP 192.0.2.100) from commercial TI feed
 - Action: IP blocked at firewall
 - Evidence: Firewall logs show 47 connection attempts from 192.0.2.100 (all blocked)
 - Validation: IP confirmed malicious by 3 other sources, used in active campaign
 - **Qualifies**: Yes - demonstrable blocking of malicious activity
 
+
 ✅ **Example 2: Emergency Patching**
+
 - Intelligence: CVE-2025-12345 actively exploited (VTL record from A.5.7.2)
 - Action: Emergency patching of 15 servers in 48 hours
 - Evidence: Vulnerability scan before/after, patch deployment logs
 - Validation: Exploit attempts seen in honeypot after patching
 - **Qualifies**: Yes - patched before exploitation
 
+
 ✅ **Example 3: Phishing Campaign Block**
+
 - Intelligence: Phishing campaign targeting financial sector (from ISAC)
 - Action: Email gateway rules updated to block specific indicators
 - Evidence: 127 phishing emails blocked over 3 days
 - Validation: Samples match intelligence, malicious payload confirmed
 - **Qualifies**: Yes - mass phishing prevented
 
+
 ❌ **Non-Example 1: Routine IOC Blocking**
+
 - Intelligence: Generic IOC list update (not threat-specific)
 - Action: IOC feed refreshed (routine process)
 - Evidence: No hits detected
 - **Does NOT Qualify**: No specific threat prevented
 
+
 ❌ **Non-Example 2: Assumed Prevention**
+
 - Intelligence: General threat advisory ("ransomware increasing")
 - Action: Security awareness training conducted
 - Evidence: Training attendance records
 - **Does NOT Qualify**: No specific incident prevented (general hygiene)
 
+
 **STEPS TO DOCUMENT PREVENTED INCIDENT:**
 
 1. **Identify the Intelligence**:
+
    - What specific threat intelligence was received?
    - Source intelligence ID (from A.5.7.1 or A.5.7.2)
    - Intelligence date
    - Confidence level
 
+
 2. **Document the Preventive Action**:
+
    - What specific action was taken?
    - When was action taken?
    - Who authorized/executed the action?
    - Systems/processes affected
 
+
 3. **Collect Evidence**:
+
    - **REQUIRED**: Logs showing blocked attempts (firewall, SIEM, EDR, email gateway)
    - **REQUIRED**: "Before" state showing vulnerability/exposure
    - **REQUIRED**: "After" state showing protection
    - **RECOMMENDED**: External validation (other sources confirming threat)
    - **RECOMMENDED**: Stakeholder communications (approvals, notifications)
 
+
 4. **Validate the Prevention**:
+
    - How do you know attack would have succeeded?
    - What was the potential business impact?
    - Were there actual attack attempts after prevention?
    - Can prevention be independently verified?
 
+
 5. **Document in Sheet 7**:
+
    - Complete all required columns
    - Attach evidence files
    - Calculate prevented incident value (optional but recommended)
+
 
 **COLUMNS TO COMPLETE:**
 
@@ -595,22 +672,27 @@ A prevented incident is a situation where:
 - [ ] Stakeholders informed
 - [ ] Lessons learned documented
 
+
 **QUARTERLY TARGET**: ≥3 prevented incidents per quarter
 
 **If Target Not Met**:
+
 - Document why (lack of actionable intelligence? lack of threats? detection gaps?)
 - Review intelligence sources for actionability
 - Assess security posture (are there other preventions not documented?)
 - Create action items to improve prevention documentation
 
+
 **Deliverable:** ≥3 validated prevented incidents per quarter with complete evidence
 
 **Quality Check:**
+
 - ✓ Each prevention has complete evidence package
 - ✓ Business impact justified (not exaggerated, not minimized)
 - ✓ Confidence level appropriate to evidence quality
 - ✓ Quarterly target met (≥3)
 - ✓ Lessons learned actionable
+
 
 ---
 
@@ -620,17 +702,21 @@ A prevented incident is a situation where:
 
 **Steps:**
 1. For each intelligence product distributed (from Sheet 6):
+
    - Solicit feedback from recipients (surveys, emails, conversations)
    - Document feedback received
    - Rate feedback: Positive, Neutral, Negative
    - Categorize feedback: Timeliness, Relevance, Actionability, Quality, Format
    - Document requested improvements
    - Track actions taken based on feedback
+
 2. Calculate feedback metrics:
+
    - Response rate (% who provide feedback)
    - Satisfaction score
    - Actionability score
    - Timeliness score
+
 3. Identify systemic issues from feedback patterns
 4. Implement improvements based on feedback
 5. Close the loop (inform stakeholders of improvements)
@@ -638,10 +724,12 @@ A prevented incident is a situation where:
 **Deliverable:** Running feedback log with improvement actions
 
 **Quality Check:**
+
 - ✓ Feedback solicited for all major distributions
 - ✓ Response rate ≥30% (target)
 - ✓ Negative feedback analyzed and addressed
 - ✓ Improvements implemented and communicated
+
 
 ---
 
@@ -651,6 +739,7 @@ A prevented incident is a situation where:
 
 **Steps:**
 1. Calculate monthly KPIs:
+
    - Tools integrated (count from Sheet 2)
    - IOCs deployed (count from Sheet 3)
    - IOC hit rate (% with detections)
@@ -659,6 +748,7 @@ A prevented incident is a situation where:
    - **Prevention tracking**: Prevented incidents MTD/QTD (from Sheet 7)
    - Feedback response rate
    - Average distribution timeliness
+
 2. Compare actual vs. target for each metric
 3. Identify below-target metrics requiring attention
 4. Update trends (month-over-month)
@@ -666,10 +756,12 @@ A prevented incident is a situation where:
 **Deliverable:** Complete integration metrics dashboard
 
 **Quality Check:**
+
 - ✓ All KPIs calculated accurately
 - ✓ Targets from policy documented
 - ✓ Below-target metrics have action items
 - ✓ Prevention tracking current (Sheet 7 drives this metric)
+
 
 ---
 
@@ -679,27 +771,33 @@ A prevented incident is a situation where:
 
 **Steps:**
 1. Document SIEM threat intelligence integration:
+
    - Correlation rules using TI
    - IOC lookups/enrichment
    - Threat feed integrations
    - Alert generation based on TI
    - Dashboard visualizations
+
 2. For each TI-enabled SIEM capability:
+
    - Document rule/query name
    - Document TI source used
    - Track alert volume
    - Track true positive rate
    - Track MTTR (mean time to respond)
+
 3. Assess SIEM integration maturity
 4. Identify SIEM integration gaps
 
 **Deliverable:** Complete SIEM integration deep-dive
 
 **Quality Check:**
+
 - ✓ All TI-enabled SIEM rules documented
 - ✓ Alert volumes tracked
 - ✓ True positive rates acceptable (≥70% target)
 - ✓ Integration gaps identified with remediation plans
+
 
 ---
 
@@ -709,27 +807,33 @@ A prevented incident is a situation where:
 
 **Steps:**
 1. Document EDR threat intelligence integration:
+
    - IOC deployment to endpoints
    - Custom detection rules based on TI
    - Behavioral detections using TTP intelligence
    - Threat hunting queries using TI
    - Automated response actions
+
 2. For each TI-enabled EDR capability:
+
    - Document capability name
    - Document TI source used
    - Track detection volume
    - Track containment actions
    - Track false positive rate
+
 3. Assess EDR integration maturity
 4. Identify EDR integration gaps
 
 **Deliverable:** Complete EDR integration deep-dive
 
 **Quality Check:**
+
 - ✓ All TI-enabled EDR capabilities documented
 - ✓ Detection volumes tracked
 - ✓ False positive rates acceptable (≤10% target)
 - ✓ Integration gaps identified with remediation plans
+
 
 ---
 
@@ -739,6 +843,7 @@ A prevented incident is a situation where:
 
 **Steps:**
 1. For each TI-driven threat hunt:
+
    - Assign unique Campaign_ID
    - Document hunt hypothesis (based on which intelligence?)
    - Document hunt methodology
@@ -746,20 +851,25 @@ A prevented incident is a situation where:
    - Track hunt results (findings)
    - Document actions taken
    - Calculate hunt ROI (time invested vs. value of findings)
+
 2. Link hunts to threat intelligence:
+
    - Which intelligence triggered hunt?
    - Which TTPs were hunted?
    - Which IOCs were searched?
+
 3. Track hunt effectiveness metrics
 4. Share hunt results with stakeholders
 
 **Deliverable:** Complete threat hunting campaign tracker
 
 **Quality Check:**
+
 - ✓ All TI-driven hunts documented
 - ✓ Hunt hypotheses clear and intelligence-based
 - ✓ Results documented (even if nothing found)
 - ✓ Lessons learned captured for future hunts
+
 
 ---
 
@@ -773,79 +883,105 @@ A prevented incident is a situation where:
 
 **ISO 27001 CLAUSE 6.1 REQUIREMENT**:
 Organizations must regularly review and update their risk assessment based on changes in:
+
 - Threat landscape
 - Vulnerabilities discovered
 - Business context changes
 - Control effectiveness
+
 
 **Threat intelligence is a PRIMARY INPUT to this process.**
 
 **WHEN TO UPDATE RISK ASSESSMENT BASED ON TI:**
 
 ✅ **Trigger 1: New Threat Actor Targeting Organization's Sector**
+
 - Intelligence: Threat actor profile (from A.5.7.2 Sheet 12) shows targeting of [Organization]'s sector
 - Action: Update risk assessment to reflect new threat actor capability/motivation
 - Example: APT group now targeting financial sector → increase likelihood ratings
 
+
 ✅ **Trigger 2: High-CVSS Vulnerability with Active Exploitation**
+
 - Intelligence: VTL record (from A.5.7.2 Sheet 8) shows CVSS ≥8.0 with active exploitation
 - Action: Update risk assessment for affected systems/data
 - Example: CVE-2025-12345 (CVSS 9.3) actively exploited → increase risk rating for web servers
 
+
 ✅ **Trigger 3: Campaign Targeting Similar Organizations**
+
 - Intelligence: Campaign tracking (from A.5.7.2 Sheet 13) shows attacks on similar organizations
 - Action: Update risk assessment based on campaign TTPs and targets
 - Example: Ransomware campaign targeting healthcare providers → reassess data backup risks
 
+
 ✅ **Trigger 4: Control Effectiveness Change**
+
 - Intelligence: Prevention tracking (from A.5.7.3 Sheet 7) demonstrates control effectiveness
 - Action: Update risk assessment to reflect improved control effectiveness
 - Example: 5 incidents prevented by TI → reduce likelihood ratings
 
+
 ✅ **Trigger 5: Intelligence-Driven Decision Implementation**
+
 - Intelligence: Business decision (from Sheet 15) implements new security control
 - Action: Update risk assessment to reflect new control
 - Example: Cloud security posture management deployed → reduce cloud misconfig risks
 
+
 **STEPS TO DOCUMENT RISK ASSESSMENT UPDATE:**
 
 1. **Identify the Intelligence Trigger**:
+
    - What threat intelligence prompted the risk update?
    - Reference source (A.5.7.1 source, A.5.7.2 VTL/actor/campaign, A.5.7.3 prevention)
    - Intelligence date
    - Intelligence summary
 
+
 2. **Identify the Risk(s) Affected**:
+
    - Which risk(s) in the risk register are impacted?
    - Risk ID and description
    - Previous risk rating (Likelihood × Impact)
 
+
 3. **Assess the Change**:
+
    - What changed? (Likelihood? Impact? Control effectiveness?)
    - Why did it change? (new threat? new vulnerability? new control?)
    - Direction of change (Increased risk? Decreased risk?)
 
+
 4. **Calculate New Risk Rating**:
+
    - New likelihood rating (1-5)
    - New impact rating (1-5)
    - New risk score (Likelihood × Impact)
    - Risk level (Critical: 20-25, High: 15-19, Medium: 8-14, Low: 1-7)
 
+
 5. **Document Treatment Decision**:
+
    - Treat (implement new controls)
    - Tolerate (accept the risk)
    - Transfer (insurance, outsourcing)
    - Terminate (eliminate the activity)
 
+
 6. **Obtain Approval**:
+
    - Risk Owner approval
    - CISO approval
    - Executive approval (if Critical risk)
 
+
 7. **Update Risk Register**:
+
    - Update official risk register in risk management system
    - Document intelligence source in risk register notes
    - Link to this assessment (Sheet 13 record)
+
 
 **COLUMNS TO COMPLETE:**
 
@@ -881,14 +1017,17 @@ Organizations must regularly review and update their risk assessment based on ch
 **QUARTERLY TARGET**: ≥3 risk assessment updates per quarter
 
 **If Target Not Met**:
+
 - Review: Is threat intelligence informing risk management?
 - Check: Are intelligence teams and risk management teams communicating?
 - Assess: Are intelligence findings being escalated appropriately?
 - Action: Establish formal intelligence → risk management workflow
 
+
 **Deliverable:** ≥3 documented risk assessment updates per quarter with evidence of risk register updates
 
 **Quality Check:**
+
 - ✓ Intelligence trigger clearly documented
 - ✓ Risk rating calculations correct
 - ✓ Treatment decisions appropriate to risk level
@@ -896,6 +1035,7 @@ Organizations must regularly review and update their risk assessment based on ch
 - ✓ Risk register actually updated (not just Sheet 13)
 - ✓ Quarterly target met (≥3)
 - ✓ Evidence collected (before/after risk ratings, approvals)
+
 
 ---
 
@@ -908,11 +1048,13 @@ Organizations must regularly review and update their risk assessment based on ch
 **KPI TARGET**: ≥70% of P1/P2 incidents use threat intelligence
 
 **ISO 27001 CONTROLS A.5.24-5.28 REQUIREMENTS**:
+
 - A.5.24: Incident response planning
 - A.5.25: Assessment and decision on information security events
 - A.5.26: Response to information security incidents
 - A.5.27: Learning from information security incidents
 - A.5.28: Collection of evidence
+
 
 **Threat intelligence must be integrated into incident response process.**
 
@@ -923,71 +1065,93 @@ Document for EVERY P1 (Critical) and P2 (High) incident. Optional for P3/P4.
 **WHAT QUALIFIES AS "THREAT INTELLIGENCE USE":**
 
 ✅ **Example 1: IOC Correlation**
+
 - Incident: Suspicious network connection detected
 - TI Usage: IOC matched from threat feed (IOC-2026-001)
 - Outcome: Confirmed malicious, isolated system
 - **Qualifies**: Yes - TI enabled detection and rapid response
 
+
 ✅ **Example 2: TTP Identification**
+
 - Incident: Ransomware encryption detected
 - TI Usage: Attack patterns matched known ransomware group from threat actor profile
 - Outcome: Identified RansomX group, knew decryption impossible, paid ransom avoided
 - **Qualifies**: Yes - TI informed response strategy
 
+
 ✅ **Example 3: Intelligence-Driven Hunting**
+
 - Incident: Compromised credential discovered
 - TI Usage: Threat hunt using campaign intelligence found lateral movement
 - Outcome: Contained before data exfiltration
 - **Qualifies**: Yes - TI drove proactive discovery
 
+
 ✅ **Example 4: Attribution and Strategy**
+
 - Incident: Targeted phishing campaign
 - TI Usage: Attribution to known APT group, understood objectives
 - Outcome: Informed communication strategy and law enforcement engagement
 - **Qualifies**: Yes - TI shaped response approach
 
+
 ❌ **Non-Example 1: TI Consulted But Not Used**
+
 - Incident: Malware outbreak
 - TI Usage: Checked threat feeds, no relevant intelligence
 - Outcome: Responded using standard playbook
 - **Does NOT Qualify**: TI was available but didn't inform response
 
+
 ❌ **Non-Example 2: Post-Incident Only**
+
 - Incident: Data breach discovered
 - TI Usage: Post-mortem analysis using TI
 - Outcome: TI used for lessons learned only
 - **Does NOT Qualify**: TI not used during active response
 
+
 **STEPS TO DOCUMENT INCIDENT-TI INTEGRATION:**
 
 1. **Identify the Incident**:
+
    - Incident ID from incident management system
    - Incident classification (P1, P2, P3, P4)
    - Incident date and detection time
    - Incident summary
 
+
 2. **Document TI Usage**:
+
    - HOW was threat intelligence used?
    - WHEN in the incident lifecycle? (Detection, Analysis, Containment, Eradication, Recovery)
    - WHICH intelligence? (IOC ID, VTL ID, threat actor profile, campaign)
    - WHO used the intelligence? (SOC analyst, IR lead, etc.)
 
+
 3. **Assess TI Effectiveness**:
+
    - Did TI improve incident response?
    - Time saved by using TI?
    - Better decisions made because of TI?
    - What would have been different without TI?
 
+
 4. **Document Outcome**:
+
    - Incident resolution
    - Response time metrics
    - Business impact
    - Lessons learned
 
+
 5. **Calculate Metrics**:
+
    - % of P1/P2 incidents using TI (target: ≥70%)
    - Average MTTR (Mean Time To Respond) for TI-informed vs. non-TI incidents
    - TI effectiveness rating
+
 
 **COLUMNS TO COMPLETE:**
 
@@ -1027,21 +1191,25 @@ TI Usage Rate = (P1/P2 Incidents with TI_Used="Yes") / (Total P1/P2 Incidents) �
 ```
 
 **If Target Not Met**:
+
 - Review: Is threat intelligence accessible to incident responders?
 - Check: Are IR playbooks integrated with TI workflows?
 - Assess: Do IR analysts know how to access/use TI?
 - Train: Conduct TI-for-IR training sessions
 - Action: Establish formal TI → IR integration workflow
 
+
 **Deliverable:** Documented TI usage for all P1/P2 incidents, ≥70% showing TI usage
 
 **Quality Check:**
+
 - ✓ All P1/P2 incidents documented
 - ✓ TI usage accurately described (not exaggerated)
 - ✓ TI effectiveness honestly assessed
 - ✓ Quarterly target met (≥70%)
 - ✓ Gaps identified when TI not used
 - ✓ Evidence collected (incident records, TI references)
+
 
 ---
 
@@ -1064,75 +1232,99 @@ A decision where:
 **EXAMPLES OF INTELLIGENCE-DRIVEN DECISIONS:**
 
 ✅ **Example 1: Security Tool Acquisition**
+
 - Intelligence: Multiple threat campaigns exploiting lack of EDR visibility
 - Decision: Approved CHF 150K budget for EDR deployment
 - Approver: CTO
 - **Qualifies**: Yes - strategic security investment driven by threat landscape
 
+
 ✅ **Example 2: Cloud Security Posture Change**
+
 - Intelligence: Nation-state actor targeting cloud misconfigurations in sector
 - Decision: Accelerated cloud security posture management (CSPM) implementation
 - Approver: CISO + VP Engineering
 - **Qualifies**: Yes - architectural decision based on specific threat intelligence
 
+
 ✅ **Example 3: Geographic Expansion Pause**
+
 - Intelligence: Active cyber operations in target expansion region
 - Decision: Delayed market expansion by 6 months until threat subsides
 - Approver: CEO + Board
 - **Qualifies**: Yes - business strategy decision based on geopolitical threat intelligence
 
+
 ✅ **Example 4: Vendor Security Requirements**
+
 - Intelligence: Supply chain attacks increasing, targeting specific vendor types
 - Decision: New vendor security assessment requirements implemented
 - Approver: CISO + Procurement VP
 - **Qualifies**: Yes - policy decision based on threat trend
 
+
 ✅ **Example 5: Incident Response Process Change**
+
 - Intelligence: Ransomware group never provides working decryptors (from A.5.7.2)
 - Decision: Updated IR playbook - never negotiate, always restore from backup
 - Approver: CISO
 - **Qualifies**: Yes - operational policy change based on threat actor intelligence
 
+
 ❌ **Non-Example 1: Routine Security Hygiene**
+
 - Intelligence: General phishing threats increasing
 - Decision: Conducted security awareness training (already scheduled)
 - **Does NOT Qualify**: Routine activity, not a strategic decision
 
+
 ❌ **Non-Example 2: TI-Informed But Not TI-Driven**
+
 - Intelligence: Threat landscape reviewed during annual planning
 - Decision: Maintained existing security budget
 - **Does NOT Qualify**: TI was context, not primary driver
 
+
 **STEPS TO DOCUMENT INTELLIGENCE-DRIVEN DECISION:**
 
 1. **Identify the Intelligence**:
+
    - What specific threat intelligence informed the decision?
    - Source(s) of intelligence
    - Intelligence date and summary
    - Why was this intelligence significant?
 
+
 2. **Document the Decision**:
+
    - What decision was made?
    - Who made the decision? (Decision-maker name and role)
    - When was the decision made?
    - What was the decision rationale?
 
+
 3. **Assess Decision Impact**:
+
    - What resources were committed? (budget, staff, time)
    - What operational changes resulted?
    - What risk reduction was achieved?
    - What business value was created?
 
+
 4. **Track Implementation**:
+
    - Decision implementation status
    - Implementation timeline
    - Responsible party
    - Verification of completion
 
+
 5. **Measure Outcomes**:
+
    - Was the decision effective?
    - Lessons learned
    - Would make same decision again?
+
 
 **COLUMNS TO COMPLETE:**
 
@@ -1167,15 +1359,18 @@ A decision where:
 **QUARTERLY TARGET**: ≥5 documented intelligence-driven decisions per quarter
 
 **If Target Not Met**:
+
 - Review: Is threat intelligence reaching decision-makers?
 - Check: Are executive briefings including actionable intelligence?
 - Assess: Are intelligence findings translated to business language?
 - Train: Educate executives on interpreting threat intelligence
 - Action: Establish formal TI → executive decision-making workflow
 
+
 **Deliverable:** ≥5 documented intelligence-driven decisions per quarter with evidence of decision records
 
 **Quality Check:**
+
 - ✓ Intelligence clearly identified and significant
 - ✓ Decision genuinely intelligence-driven (not routine)
 - ✓ Executive/senior management involved
@@ -1183,6 +1378,7 @@ A decision where:
 - ✓ Implementation tracked
 - ✓ Quarterly target met (≥5)
 - ✓ Evidence collected (meeting minutes, approvals, budget docs)
+
 
 ---
 
@@ -1193,6 +1389,7 @@ A decision where:
 **Approval Workflow:**
 
 **Level 1: Security Operations Manager**
+
 - Reviews assessment for completeness and accuracy
 - Verifies tool integration documentation accurate
 - Confirms IOC deployment tracking current
@@ -1200,7 +1397,9 @@ A decision where:
 - **CRITICAL**: Verifies Sheets 7, 13, 14, 15 meet quarterly targets
 - Signs off on operational accuracy
 
+
 **Level 2: CISO**
+
 - Reviews assessment for policy compliance
 - Verifies integration metrics meet targets
 - **CRITICAL**: Reviews prevention tracking (Sheet 7) - ≥3 per quarter
@@ -1210,12 +1409,15 @@ A decision where:
 - Reviews high-impact action items
 - Signs off on strategic approval
 
+
 **Level 3: Executive Management (if required)**
+
 - Required if major integration gaps identified requiring investment
 - Required if quarterly KPI targets not met
 - Reviews intelligence-driven decisions (Sheet 15 should include some executive decisions)
 - Approves resources for integration improvements
 - Signs off on executive approval
+
 
 **Deliverable:** Fully approved assessment workbook with all MANDATORY audit evidence
 
@@ -1236,15 +1438,18 @@ A decision where:
 **Example:** `ISMS_A_5_7_3_Integration_Distribution_Assessment_20260121.xlsx`
 
 **Workbook Settings:**
+
 - Format: Excel 2016+ (.xlsx)
 - Calculation: Automatic
 - Protection: Sheets protected (only yellow cells editable)
 - Macros: None (VBA-free for security)
 - External Links: References to A.5.7.1 sources, A.5.7.2 intelligence products
 
+
 **Total Sheets:** 15
 
 **Tab Colors:**
+
 - Instructions: Blue (#4472C4)
 - Integration (Sheets 2-3): Yellow (#FFD966)
 - Dissemination (Sheets 4-6): Orange (#FFA500)
@@ -1255,19 +1460,22 @@ A decision where:
 - **Risk/Incident/Decisions (Sheets 13-15): Red (#C00000) - AUDIT CRITICAL**
 - Metadata: Gray (#D9D9D9)
 
+
 **CRITICAL AUDIT EVIDENCE SHEETS:**
+
 - **Sheet 7: Prevention_Tracking** - ≥3 prevented incidents per quarter
 - **Sheet 13: Risk_Assessment_Updates** - ≥3 risk updates per quarter (ISO 27001 Clause 6.1)
 - **Sheet 14: Incident_TI_Integration** - ≥70% P1/P2 incidents use TI (Controls A.5.24-5.28)
 - **Sheet 15: Intelligence_Driven_Decisions** - ≥5 decisions per quarter
 
+
 ---
 
 ## Sheet-by-Sheet Technical Specifications
 
-## 5. Sheet Specifications
+# Sheet Specifications
 
-### 5.1 Sheet 2: Tool_Integration_Matrix
+## Sheet 2: Tool_Integration_Matrix
 
 **Purpose**: Document TI integration across security stack
 
@@ -1301,36 +1509,46 @@ A decision where:
 **Integration Maturity Levels**:
 
 Fully_Integrated:
+
 - Automated data flow
 - No manual intervention
 - Error handling in place
 - Documented and monitored
 
+
 Partially_Integrated:
+
 - Some automation
 - Requires manual steps
 - Limited error handling
 - Basic documentation
 
+
 Planned:
+
 - Requirements defined
 - Resources allocated
 - Timeline established
 
+
 Not_Integrated:
+
 - No integration
 - May be future consideration
 
 
+
 **Conditional Formatting**:
+
 - Integration_Status "Fully_Integrated" → Green
 - Integration_Status "Not_Integrated" → Red
 - Sync_Errors > 5 → Yellow background
 - Effectiveness_Rating "Poor" → Red text
 
+
 ---
 
-### 5.2 Sheet 3: IOC_Deployment
+## Sheet 3: IOC_Deployment
 
 **Purpose**: Track IOC deployment and detection effectiveness
 
@@ -1374,21 +1592,25 @@ ELSE: "Monitoring"
 
 
 **IOC Lifecycle Management** (calculated fields):
+
 - Days since deployment
 - Days until expiration
 - Hit rate (hits per day)
 - FP rate (FP hits / total hits)
 
+
 **Conditional Formatting**:
+
 - Status "Active" + Expiration within 7 days → Orange
 - Status "Expired" → Gray background
 - False_Positive "Yes" → Red background
 - Hits_Last_7_Days > 0 → Green highlight
 - Effectiveness_Rating "Ineffective" → Red text
 
+
 ---
 
-### 5.3 Sheet 4: Dissemination_Channels
+## Sheet 4: Dissemination_Channels
 
 **Purpose**: Document intelligence distribution methods
 
@@ -1418,14 +1640,16 @@ ELSE: "Monitoring"
 | Notes | Text | Free text | No | Primary dissemination channel for SOC |
 
 **Conditional Formatting**:
+
 - Active_Status "Deprecated" → Gray
 - Average_Engagement_Score < 3 → Yellow background
 - Effectiveness_Rating "Poor" → Red text
 - Average_Open_Rate > 75 → Green highlight
 
+
 ---
 
-### 5.4 Sheet 5: Stakeholder_Registry
+## Sheet 5: Stakeholder_Registry
 
 **Purpose**: Manage intelligence consumer database
 
@@ -1452,13 +1676,15 @@ ELSE: "Monitoring"
 | Notes | Text | Free text | No | Key stakeholder for ransomware intelligence |
 
 **Conditional Formatting**:
+
 - Status "Departed" → Gray background
 - Engagement_Level "Inactive" → Yellow
 - Average_Feedback_Rating >= 4.5 → Green highlight
 
+
 ---
 
-### 5.5 Sheet 6: Distribution_Tracking
+## Sheet 6: Distribution_Tracking
 
 **Purpose**: Track intelligence distribution and engagement
 
@@ -1499,13 +1725,15 @@ ELSE: "Not_Engaged"
 
 
 **Conditional Formatting**:
+
 - Delivery_Status "Failed" or "Bounced" → Red
 - Action_Taken "Yes" → Green highlight
 - Engagement_Score "High" → Green
 - Engagement_Score "Low" → Yellow
 
+
 ---
-### 5.6 Sheet 7: Prevention_Tracking ⚠️ **CRITICAL AUDIT EVIDENCE**
+## Sheet 7: Prevention_Tracking ⚠️ **CRITICAL AUDIT EVIDENCE**
 
 **Purpose**: Document prevented incidents per ISMS-POL-A.5.7, Section 2.7 (Effectiveness Measurement Requirements)
 
@@ -1550,26 +1778,32 @@ Time_to_Remediation = (Action_Date + Action_Time) - (TI_Alert_Date + TI_Alert_Ti
 Convert to hours with 1 decimal.
 
 **Conditional Formatting**:
+
 - CVSS_Base_Score >= 9.0 → Red background (Critical prevented)
 - CVSS_Base_Score >= 7.0 → Orange background (High prevented)
 - Validation_Evidence empty → Yellow background (needs validation)
 - Time_to_Remediation > 72 hours → Orange background (slow response)
 
+
 **Validation Rules**:
+
 - After_Date must be >= Action_Date
 - Validation_Date must be >= After_Date
 - All "Evidence" fields must be non-empty for audit
 
+
 **Audit Evidence Requirements**:
+
 - **Before_Evidence**: Vulnerability scan showing affected systems
 - **TI_Alert_Details**: Documented threat intelligence that triggered action
 - **After_Evidence**: Validation that vulnerability was remediated
 - **Validation_Evidence**: Proof no exploitation occurred
 - **Quarterly Target**: Minimum 3 fully documented preventions
 
+
 ---
 
-### 5.7 Sheet 8: Feedback_Collection
+## Sheet 8: Feedback_Collection
 
 **Purpose**: Capture and analyze stakeholder feedback
 
@@ -1603,14 +1837,16 @@ Convert to hours with 1 decimal.
 | Notes | Text | Free text | No | Stakeholder is highly engaged, key consumer |
 
 **Feedback Analysis** (summary section):
+
 - Average ratings by category
 - Sentiment analysis (positive/negative comments)
 - Common improvement themes
 - Most engaged stakeholders
 
+
 ---
 
-### 5.8 Sheet 9: Integration_Metrics
+## Sheet 9: Integration_Metrics
 
 **Purpose**: KPIs for integration and dissemination effectiveness
 
@@ -1651,7 +1887,7 @@ Convert to hours with 1 decimal.
 
 ---
 
-### 5.9 Sheet 10: SIEM_Integration_Details
+## Sheet 10: SIEM_Integration_Details
 
 **Purpose**: Detailed SIEM integration tracking for primary security tool
 
@@ -1682,14 +1918,16 @@ Convert to hours with 1 decimal.
 | Notes | Text | Free text | No | Primary threat feed for malware detection |
 
 **Conditional Formatting**:
+
 - Integration_Health "Down" → Red background
 - Integration_Health "Degraded" → Yellow background
 - True_Positive_Rate < 50% → Yellow background
 - Last_Successful_Pull > 24 hours ago → Orange background
 
+
 ---
 
-### 5.10 Sheet 11: EDR_Integration_Details
+## Sheet 11: EDR_Integration_Details
 
 **Purpose**: Detailed EDR integration tracking for endpoint security
 
@@ -1722,13 +1960,15 @@ Convert to hours with 1 decimal.
 | Notes | Text | Free text | No | Excellent integration, low FP rate |
 
 **Conditional Formatting**:
+
 - Integration_Health "Down" → Red background
 - Integration_Health "Degraded" → Yellow background
 - False_Positive_Rate > 20% → Yellow background
 - Detections_Last_30d > 0 → Green highlight
 
+
 ---
-### 5.11 Sheet 12: Threat_Hunting_Campaigns
+## Sheet 12: Threat_Hunting_Campaigns
 
 **Purpose**: Track TI-driven proactive threat hunting activities
 
@@ -1761,21 +2001,25 @@ Convert to hours with 1 decimal.
 | Notes | Text | Max 500 chars | No | Good proactive hunt, validated defensive posture |
 
 **Conditional Formatting**:
+
 - Outcome "Findings_Malicious" → Red background
 - Outcome "Findings_Benign" → Yellow background
 - Status "Active" → Blue highlight
 - Time_Invested_Hours > 40 → Orange (resource intensive)
 
+
 **Hunt Effectiveness Metrics**:
+
 - Total hunts per quarter
 - % hunts with findings
 - Average time per hunt
 - Detection rules created
 - Incidents discovered
 
+
 ---
 
-### 5.12 Sheet 13: Risk_Assessment_Updates ⚠️ **CRITICAL AUDIT EVIDENCE**
+## Sheet 13: Risk_Assessment_Updates ⚠️ **CRITICAL AUDIT EVIDENCE**
 
 **Purpose**: Document Clause 6.1 integration per ISMS-POL-A.5.7, Section 2.4 (Risk Assessment Integration Requirements)
 
@@ -1822,35 +2066,43 @@ Convert to hours with 1 decimal.
 **Risk Rating Calculation** (simplified matrix):
 
 Impact vs. Likelihood Matrix:
+
 - Critical = Very_High Impact + (High or Very_High Likelihood)
 - High = High Impact + (Medium or High Likelihood) OR Very_High Impact + Low Likelihood
 - Medium = Medium Impact + Medium Likelihood
 - Low = Low Impact or Very_Low Impact with Low/Very_Low Likelihood
 
 
+
 **Conditional Formatting**:
+
 - Risk_After_Rating "Critical" → Red background
 - CVSS_Base_Score >= 9.0 → Red text
 - Treatment_Status "Delayed" → Yellow background
 - CRO_Approval_Date missing → Red background (blocking audit)
 - Treatment_Completion_Date > Treatment_Deadline → Orange (missed deadline)
 
+
 **Validation Rules**:
+
 - CRO_Review_Date required for all updates
 - CRO_Approval_Date required within 48 hours of Review_Date
 - Treatment_Completion_Date required if Status = Completed
 - Validation_Evidence required for all Completed treatments
 
+
 **Audit Evidence Requirements**:
+
 - **TI_Report linkage**: Threat intelligence that triggered update
 - **Risk_Rating changes**: Documented rationale with CVSS context
 - **CRO approval**: Chief Risk Officer formal sign-off (Clause 6.1 requirement)
 - **Treatment evidence**: Proof of risk treatment completion
 - **Quarterly target**: Minimum 3 risk updates with full audit trail
 
+
 ---
 
-### 5.13 Sheet 14: Incident_TI_Integration ⚠️ **CRITICAL AUDIT EVIDENCE**
+## Sheet 14: Incident_TI_Integration ⚠️ **CRITICAL AUDIT EVIDENCE**
 
 **Purpose**: Track TI usage in incident response per ISMS-POL-A.5.7, Section 2.5 (Incident Management Integration Requirements)
 
@@ -1900,28 +2152,34 @@ Time_Saved_Estimate_Hours = Manual estimate by responder
 
 
 **Conditional Formatting**:
+
 - Incident_Priority "P1" AND TI_Used "No" → Red background (missed opportunity)
 - TI_Value_Assessment "Critical" → Green highlight
 - CVSS_Base_Score >= 9.0 → Red text
 - Time_Saved_Estimate_Hours > 10 → Green highlight (significant value)
 - Investigation_Duration_Hours > 48 → Yellow (prolonged investigation)
 
+
 **Validation Rules**:
+
 - If TI_Used = "Yes" or "Partial": TI_Reports_Referenced required
 - If TI_Used = "Yes" or "Partial": TI_Value_Assessment required
 - If TI_Used = "Yes" or "Partial": TI_Impact_Description required
 - P1/P2 incidents with TI_Used "No" require justification in Notes
 
+
 **Audit Evidence Requirements**:
+
 - **P1/P2 TI usage tracking**: ≥70% must have TI_Used = "Yes"
 - **TI value quantification**: Time saved, faster containment, better eradication
 - **IOC matching**: Direct evidence of TI-to-detection pipeline effectiveness
 - **Feedback loop**: TI_Feedback_Provided shows bidirectional intelligence flow
 - **Quarterly KPI**: Calculate (Count P1/P2 with TI_Used="Yes") / (Total P1/P2) >= 70%
 
+
 ---
 
-### 5.14 Sheet 15: Intelligence_Driven_Decisions ⚠️ **CRITICAL AUDIT EVIDENCE**
+## Sheet 15: Intelligence_Driven_Decisions ⚠️ **CRITICAL AUDIT EVIDENCE**
 
 **Purpose**: Document business decisions based on TI per ISMS-POL-A.5.7, Section 2.7 (Effectiveness Measurement Requirements)
 
@@ -1969,25 +2227,32 @@ Time_Saved_Estimate_Hours = Manual estimate by responder
 ROI_Estimate = (Cost_Avoidance_Estimate) / (Investment_Required_CHF)
 
 Where Cost_Avoidance_Estimate is based on:
+
 - Potential incident costs prevented
 - Business disruption avoided
 - Reputation protection
 
 
+
 **Conditional Formatting**:
+
 - Decision_Maker_Level "C-Suite" → Green highlight (executive buy-in)
 - Investment_Required > 100,000 CHF → Yellow (significant investment)
 - Implementation_Status "Cancelled" → Gray background
 - ROI_Estimate >= 3.0x → Green (strong ROI)
 - CVSS_Base_Score >= 9.0 → Red text (critical vulnerability addressed)
 
+
 **Validation Rules**:
+
 - Decision_Maker_Level "C-Suite" required for Investment > 50,000 CHF
 - Implementation_Complete_Date required if Status = "Completed"
 - Outcome_Assessment required if Status = "Completed"
 - Success_Metrics required for all decisions
 
+
 **Audit Evidence Requirements**:
+
 - **TI linkage**: Direct connection to threat intelligence report
 - **Executive involvement**: Decision_Maker and stakeholder documentation
 - **Business justification**: Risk addressed, business impact, expected benefits
@@ -1995,10 +2260,78 @@ Where Cost_Avoidance_Estimate is based on:
 - **Quarterly target**: Minimum 5 documented decisions with full audit trail
 - **Strategic value**: Demonstrate TI drives business and security decisions
 
----
-## 6. Assessment Methodology
 
-### 6.1 Tool Integration Assessment
+---
+
+## Sheet 16: Action_Items
+
+**Purpose**: Track identified issues, gaps, and remediation actions from the assessment
+
+**Column Specifications**:
+
+| Column | Data Type | Validation | Required | Example |
+|--------|-----------|------------|----------|---------|
+| Item_ID | Text | Auto-generated (ACT-NNN) | Yes | ACT-001 |
+| Category | Dropdown | Integration_Gap, Process_Improvement, Documentation, Training, Tool_Configuration | Yes | Integration_Gap |
+| Description | Text | Free text (max 500 chars) | Yes | EDR integration missing for endpoint group B |
+| Priority | Dropdown | Critical, High, Medium, Low | Yes | High |
+| Source_Sheet | Text | Sheet name reference | Yes | Tool_Integration_Matrix |
+| Assigned_To | Text | Name/email | Yes | soc.lead@example.com |
+| Due_Date | Date | DD.MM.YYYY | Yes | 15.03.2025 |
+| Status | Dropdown | Open, In_Progress, Completed, Deferred, Cancelled | Yes | Open |
+| Completion_Date | Date | DD.MM.YYYY | No | N/A |
+| Resolution_Notes | Text | Max 500 chars | No | N/A |
+| Evidence_Link | Text | URL or file path | No | N/A |
+
+**Conditional Formatting**:
+
+- Priority "Critical" + Status "Open" -> Red background
+- Due_Date < Today AND Status != "Completed" -> Yellow background
+- Status "Completed" -> Green highlight
+
+
+---
+
+## Sheet 17: Metadata
+
+**Purpose**: Document workbook metadata, version history, and assessment summary
+
+**Content Sections**:
+
+1. **Document Information**
+   - Document ID: ISMS-IMP-A.5.7.3
+   - Version: 1.0
+   - Control Reference: ISO/IEC 27001:2022 Control A.5.7
+   - Assessment Type: Integration & Distribution Assessment
+
+2. **Generation Information**
+   - Generated Date: [Auto-populated]
+   - Generator Version: 1.0
+   - Framework Version: 1.0
+
+3. **Assessment Summary**
+   - Total Sheets: 17
+   - Sheets Completed: [Count]
+   - Overall Status: [Draft/In_Review/Approved]
+   - Last Modified: [Date]
+   - Modified By: [Name]
+
+4. **Approval Workflow**
+   - Prepared By: [Name/Date]
+   - Reviewed By: [Name/Date]
+   - Approved By: [Name/Date]
+
+5. **Related Documents**
+   - ISMS-POL-A.5.7
+   - ISMS-IMP-A.5.7.1 through A.5.7.5
+   - Cross-control references
+
+
+---
+
+# Assessment Methodology
+
+## Tool Integration Assessment
 
 - Inventory all security tools
 - Assess current integration status
@@ -2007,7 +2340,8 @@ Where Cost_Avoidance_Estimate is based on:
 - Develop integration roadmap
 - Track detailed SIEM/EDR integration (Sheets 10-11)
 
-### 6.2 IOC Effectiveness Assessment
+
+## IOC Effectiveness Assessment
 
 - Track IOC deployment lifecycle
 - Monitor hit rates and false positives
@@ -2015,7 +2349,8 @@ Where Cost_Avoidance_Estimate is based on:
 - Retire ineffective IOCs
 - Continuous quality improvement
 
-### 6.3 Dissemination Effectiveness Assessment
+
+## Dissemination Effectiveness Assessment
 
 - Analyze engagement metrics
 - Collect stakeholder feedback
@@ -2023,7 +2358,8 @@ Where Cost_Avoidance_Estimate is based on:
 - Optimize distribution strategy
 - Tailor content to audience
 
-### 6.4 Prevention Tracking (Sheet 7)
+
+## Prevention Tracking (Sheet 7)
 
 - Document prevented incidents with before/after evidence
 - Validate prevention through SIEM/EDR/scanning evidence
@@ -2031,7 +2367,8 @@ Where Cost_Avoidance_Estimate is based on:
 - Achieve quarterly KPI: ≥3 validated preventions
 - Prepare full audit evidence packages
 
-### 6.5 Risk Assessment Integration (Sheet 13)
+
+## Risk Assessment Integration (Sheet 13)
 
 - Track TI-driven risk register updates (Clause 6.1)
 - Document risk rating changes with CVSS quantification
@@ -2039,7 +2376,8 @@ Where Cost_Avoidance_Estimate is based on:
 - Achieve quarterly KPI: ≥3 risk updates with audit trail
 - Link threat intelligence to risk management framework
 
-### 6.6 Incident Response Integration (Sheet 14)
+
+## Incident Response Integration (Sheet 14)
 
 - Track TI usage in all P1/P2 incidents
 - Quantify TI value (time saved, faster containment)
@@ -2047,7 +2385,8 @@ Where Cost_Avoidance_Estimate is based on:
 - Achieve quarterly KPI: ≥70% P1/P2 incidents use TI
 - Establish bidirectional TI feedback loop
 
-### 6.7 Intelligence-Driven Decisions (Sheet 15)
+
+## Intelligence-Driven Decisions (Sheet 15)
 
 - Document C-suite and VP-level decisions based on TI
 - Quantify business impact and ROI
@@ -2055,7 +2394,8 @@ Where Cost_Avoidance_Estimate is based on:
 - Achieve quarterly KPI: ≥5 documented decisions
 - Demonstrate strategic value of threat intelligence program
 
-### 6.8 Threat Hunting (Sheet 12)
+
+## Threat Hunting (Sheet 12)
 
 - Conduct proactive TI-driven threat hunts
 - Document hunt hypotheses and methodologies
@@ -2063,11 +2403,12 @@ Where Cost_Avoidance_Estimate is based on:
 - Create new detection rules from hunt findings
 - Build threat hunting capability
 
+
 ---
 
-## 7. Integration Points
+# Integration Points
 
-### 7.1 From Control 5.7.2 (Collection & Analysis)
+## From Control 5.7.2 (Collection & Analysis)
 
 - Intelligence_Production → Distribution_Tracking.Product_ID
 - Intelligence_Production → Prevention_Tracking.Threat_Report_ID
@@ -2078,41 +2419,47 @@ Where Cost_Avoidance_Estimate is based on:
 - VulnerabilityThreatLink → IOC_Deployment (vulnerability-related IOCs)
 - VulnerabilityThreatLink → Prevention_Tracking.CVE_ID
 
-### 7.2 To Control 5.7.1 (Sources)
+
+## To Control 5.7.1 (Sources)
 
 - IOC effectiveness data → Source quality evaluation
 - Feedback on source-specific intelligence → Source ratings
 - Prevention tracking → Source value quantification
 - Incident TI integration → Source actionability assessment
 
-### 7.3 To Control 5.7.4 (Dashboard)
+
+## To Control 5.7.4 (Dashboard)
 
 - All 15 sheets → External references for program-level KPIs
 - Critical evidence sheets (7, 13, 14, 15) → Dashboard KPI tracking
 
-### 7.4 To Control 8.8 (Vulnerability Management)
+
+## To Control 8.8 (Vulnerability Management)
 
 - IOCs related to vulnerabilities → 8.8 compromise assessment
 - Tool integration status → 8.8 detection capabilities
 - Prevention_Tracking → 8.8 emergency patching validation
 - Risk_Assessment_Updates → 8.8 vulnerability prioritization
 
-### 7.5 To Controls A.5.24-5.28 (Incident Management)
+
+## To Controls A.5.24-5.28 (Incident Management)
 
 - Incident_TI_Integration → A.5.24-5.28 incident response evidence
 - IOC matches → Incident detection documentation
 - Threat hunting findings → Proactive incident prevention
 
-### 7.6 To Clause 6.1 (Risk Assessment)
+
+## To Clause 6.1 (Risk Assessment)
 
 - Risk_Assessment_Updates → Clause 6.1 mandatory risk register updates
 - CRO approval tracking → Clause 6.1 governance evidence
 
+
 ---
 
-## 8. Evidence Requirements
+# Evidence Requirements
 
-### 8.1 Standard Evidence
+## Standard Evidence
 
 - Integration documentation and diagrams
 - IOC deployment logs
@@ -2121,9 +2468,11 @@ Where Cost_Avoidance_Estimate is based on:
 - Tool configuration evidence
 - Incident correlation reports
 
-### 8.2 Critical Audit Evidence
+
+## Critical Audit Evidence
 
 **Sheet 7 - Prevention_Tracking**:
+
 - Before-state vulnerability scans
 - Threat intelligence alerts that triggered action
 - After-state clean scans
@@ -2131,32 +2480,39 @@ Where Cost_Avoidance_Estimate is based on:
 - Time-to-remediation calculations
 - Minimum 3 fully documented preventions per quarter
 
+
 **Sheet 13 - Risk_Assessment_Updates**:
+
 - Threat intelligence reports triggering risk updates
 - Risk rating change calculations with CVSS context
 - CRO review and approval signatures
 - Risk treatment completion evidence
 - Minimum 3 risk updates with CRO approval per quarter
 
+
 **Sheet 14 - Incident_TI_Integration**:
+
 - Incident records with TI usage documentation
 - IOC match evidence
 - Time-saved quantification
 - P1/P2 incident TI usage rate ≥70%
 - Bidirectional TI feedback examples
 
+
 **Sheet 15 - Intelligence_Driven_Decisions**:
+
 - Executive decision documentation
 - Business justification and ROI calculations
 - Implementation tracking and success metrics
 - Minimum 5 C-suite/VP decisions per quarter
 - Strategic TI program value demonstration
 
+
 ---
 
-## 9. Completion Instructions
+# Completion Instructions
 
-### 9.1 Initial Assessment
+## Initial Assessment
 
 **Phase 1: Core Integration (Sheets 1-6)** - 2 days
 1. Document all Tool_Integration entries (Sheet 2)
@@ -2180,23 +2536,30 @@ Where Cost_Avoidance_Estimate is based on:
 
 **Estimated Total Time**: 5-7 days for comprehensive initial assessment
 
-### 9.2 Ongoing Management
+## Ongoing Management
 
 **Daily**:
+
 - IOC deployment tracking (Sheet 3)
 - SIEM/EDR integration health monitoring (Sheets 10-11)
 
+
 **Weekly**:
+
 - Distribution tracking (Sheet 6)
 - Feedback collection (Sheet 8)
 - Tool integration status updates (Sheet 2)
 
+
 **Monthly**:
+
 - Metrics review (Sheet 9)
 - Dissemination channel performance (Sheet 4)
 - Stakeholder engagement analysis (Sheet 5)
 
+
 **Quarterly** (CRITICAL for audit):
+
 - Prevention tracking documentation (Sheet 7) - Target: ≥3 preventions
 - Risk assessment updates (Sheet 13) - Target: ≥3 updates with CRO approval
 - Incident-TI integration assessment (Sheet 14) - Target: ≥70% P1/P2 usage
@@ -2205,11 +2568,12 @@ Where Cost_Avoidance_Estimate is based on:
 - Full assessment workbook review and validation
 - Dashboard consolidation (Control 5.7.4)
 
+
 ---
 
-## 10. Validation Rules
+# Validation Rules
 
-### 10.1 Standard Validation
+## Standard Validation
 
 - All Active IOCs must be deployed to >= 1 tool
 - Expired IOCs must have Status updated
@@ -2217,34 +2581,43 @@ Where Cost_Avoidance_Estimate is based on:
 - Tool integration with "Fully_Integrated" must have automation
 - Critical IOCs (Severity=Critical) must deploy within 4 hours
 
-### 10.2 Critical Evidence Validation
+
+## Critical Evidence Validation
 
 **Sheet 7 - Prevention_Tracking**:
+
 - All Evidence fields (Before, TI Alert, After, Validation) must be non-empty
 - Validation_Date >= After_Date >= Action_Date
 - Time_to_Remediation must be auto-calculated
 - Quarterly count >= 3 validated preventions
 
+
 **Sheet 13 - Risk_Assessment_Updates**:
+
 - CRO_Review_Date required for ALL updates
 - CRO_Approval_Date within 48 hours of Review_Date
 - Validation_Evidence required for Completed treatments
 - Quarterly count >= 3 updates with CRO signatures
 
+
 **Sheet 14 - Incident_TI_Integration**:
+
 - P1/P2 incidents with TI_Used="No" require justification in Notes
 - TI_Used="Yes" requires: TI_Reports_Referenced, TI_Value_Assessment, TI_Impact_Description
 - Quarterly P1/P2 TI usage rate >= 70%
 
+
 **Sheet 15 - Intelligence_Driven_Decisions**:
+
 - Investment > 50,000 CHF requires Decision_Maker_Level="C-Suite"
 - Status="Completed" requires Outcome_Assessment
 - Success_Metrics required for ALL decisions
 - Quarterly count >= 5 documented decisions
 
+
 ---
 
-## 11. Quarterly KPI Summary
+# Quarterly KPI Summary
 
 | KPI | Target | Sheet | Audit Criticality |
 |-----|--------|-------|-------------------|
@@ -2262,9 +2635,10 @@ Where Cost_Avoidance_Estimate is based on:
 
 ---
 
-## 12. Related Documents
+# Related Documents
 
 **Policy Framework**:
+
 - **ISMS-POL-A.5.7** (Threat Intelligence Policy) - Consolidated single policy document
 - **ISMS-POL-A.5.7, Section 2.3** (Intelligence Dissemination Requirements)
 - **ISMS-POL-A.5.7, Section 2.4** (Risk Assessment Integration Requirements) - **References Sheet 13**
@@ -2272,25 +2646,31 @@ Where Cost_Avoidance_Estimate is based on:
 - **ISMS-POL-A.5.7, Section 2.7** (Effectiveness Measurement Requirements) - **References Sheets 7, 15**
 - **ISMS-POL-A.5.7, Section 3.1** (Roles & Responsibilities)
 
+
 **Implementation Specifications**:
+
 - ISMS-IMP-A.5.7.1 (Threat Intelligence Sources Assessment)
 - ISMS-IMP-A.5.7.2 (Intelligence Collection & Analysis Assessment)
 - ISMS-IMP-A.5.7.4 (Threat Intelligence Effectiveness Dashboard)
 
+
 **Cross-Control Integration**:
+
 - ISMS-IMP-A.8.8 (Vulnerability Management) - **Integration with Prevention_Tracking**
 - Tool-specific integration guides
 - Incident response procedures (A.5.24-5.28)
 - Risk management framework (Clause 6.1)
 
----
-
 
 ---
 
-## Related Documents
+
+---
+
+# Related Documents
 
 **Policy Framework:**
+
 - **ISMS-POL-A.5.7** (Threat Intelligence Policy) - Consolidated single policy document
 - **ISMS-POL-A.5.7, Section 2.3** (Intelligence Dissemination Requirements)
 - **ISMS-POL-A.5.7, Section 2.4** (Risk Assessment Integration Requirements) - **References Sheet 13**
@@ -2298,30 +2678,36 @@ Where Cost_Avoidance_Estimate is based on:
 - **ISMS-POL-A.5.7, Section 2.7** (Effectiveness Measurement Requirements) - **References Sheets 7, 15**
 - **ISMS-POL-A.5.7, Section 3.1** (Roles & Responsibilities)
 
+
 **Implementation Specifications:**
+
 - **ISMS-IMP-A.5.7.1** (Threat Intelligence Sources Assessment) - Source IDs referenced
 - **ISMS-IMP-A.5.7.2** (Intelligence Collection & Analysis Assessment) - VTL records, IOCs, intelligence products consumed
 - **ISMS-IMP-A.5.7.4** (Effectiveness Dashboard) - Integration metrics consolidated
 - **ISMS-IMP-A.5.7.5** (Standalone Dashboard) - Prevention and decision metrics for executives
 
+
 **Cross-Control Integration:**
+
 - **ISMS-IMP-A.8.8** (Vulnerability Management) - VTL records feed into prevention tracking
 - **ISO 27001:2022 Clause 6.1** (Risk Assessment) - **Sheet 13 MANDATORY integration**
 - **ISO 27001:2022 Controls A.5.24-5.28** (Incident Management) - **Sheet 14 MANDATORY integration**
 
+
 **Standards References:**
+
 - ISO/IEC 27001:2022 Annex A Control A.5.7
 - ISO/IEC 27002:2022 Control 5.7 Implementation Guidance
 - ISO/IEC 27001:2022 Clause 6.1 (Actions to address risks and opportunities)
 - ISO/IEC 27001:2022 Controls A.5.24-5.28 (Incident management)
 
+
 ---
 
 **END OF SPECIFICATION**
 
-**Audit Evidence Package Requirements:**
-For Sheets 7, 13, 14, 15 (MANDATORY), maintain comprehensive evidence:
-- Sheet 7: Firewall/SIEM/EDR logs showing blocked attempts, before/after assessments, stakeholder notifications
-- Sheet 13: Risk register snapshots (before/after), threat intelligence reports, approval records
-- Sheet 14: Incident records showing TI references, IR timelines, TI correlation screenshots
-- Sheet 15: Meeting minutes, budget approvals, executive communications referencing intelligence
+---
+
+*"The opposite of a correct statement is a false statement. But the opposite of a profound truth may well be another profound truth."*
+— Niels Bohr
+*Where bamboo antennas actually work.* 🎋

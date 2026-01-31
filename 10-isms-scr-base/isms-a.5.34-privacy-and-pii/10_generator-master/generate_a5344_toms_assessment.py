@@ -1,8 +1,249 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# =============================================================================
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-ISMS-Commercial
+# Copyright (c) 2025-2026 ISMS Core Contributors
+#
+# This file is part of ISMS Core.
+#
+# ISMS Core is dual-licensed:
+#   1. AGPL 3.0 (Open Source) - See LICENSE-AGPL.txt
+#   2. Commercial License - Contact vendor for proprietary use
+#
+# You may use this file under either license, at your option.
+# =============================================================================
 """
-ISMS-IMP-A.5.34.4 - TOMs Assessment Generator
+================================================================================
+ISMS-IMP-A.5.34.4 - Technical and Organizational Measures (TOMs) Assessment Generator
+================================================================================
+
 ISO/IEC 27001:2022 Control A.5.34: Privacy and Protection of PII
-Technical and Organizational Measures (GDPR Art. 32, Swiss FADP Art. 8)
+Assessment Domain 4 of 7: Technical and Organizational Measures (TOMs) - GDPR Art. 32
+
+--------------------------------------------------------------------------------
+SAMPLE SCRIPT - REQUIRES CUSTOMIZATION FOR YOUR ORGANIZATION
+--------------------------------------------------------------------------------
+
+This script is a TEMPLATE/SAMPLE implementation and MUST be adapted to match
+your organization's specific technical infrastructure, organizational processes,
+and GDPR Article 32 compliance requirements.
+
+Key customization areas:
+1. TOM categories and control descriptions (match your actual security controls)
+2. Implementation status criteria (adapt to your maturity assessment framework)
+3. Evidence types and collection methods (align with your audit processes)
+4. Risk scoring methodology (based on your risk appetite and regulatory context)
+5. Remediation timelines and SLAs (specific to your organizational capacity)
+
+DO NOT use this script without reviewing and adapting all sections marked
+with "# CUSTOMIZE:" comments throughout the code.
+
+Reference Pattern: Based on ISMS-A.5.34 Privacy and Protection of PII Framework
+
+--------------------------------------------------------------------------------
+DESCRIPTION
+--------------------------------------------------------------------------------
+
+This script generates a comprehensive Excel assessment workbook for evaluating
+Technical and Organizational Measures (TOMs) protecting personal data per GDPR
+Article 32(1) security requirements and Swiss FADP Article 8 data security obligations.
+
+**Purpose:**
+Enables systematic assessment of technical and organizational measures ensuring
+appropriate security of personal data against accidental or unlawful destruction,
+loss, alteration, unauthorized disclosure, or access, demonstrating ISO 27001:2022
+Control A.5.34 compliance and GDPR Article 32(1)(a)-(d) adherence.
+
+**Assessment Scope:**
+- 20 Technical and Organizational Measures (TOMs) across security domains
+- Technical Controls (T1-T10): Encryption, Access Control, Pseudonymization, Data Minimization, Monitoring, Network Security, Application Security, Endpoint Security, Backup, Physical Security
+- Organizational Controls (O1-O10): Policies, Training, Incident Response, Vendor Management, Privacy by Design, Accountability, Risk Management, DPIAs, Retention, Auditing
+- Implementation status assessment (Implemented/Partial/Planned/Not Implemented)
+- Evidence collection and verification
+- Gap analysis with likelihood × impact risk scoring
+- Remediation planning with risk-based prioritization
+- GDPR Article 32(1)(d) regular testing and evaluation requirements
+- Integration with broader ISMS controls
+- Compliance dashboard with auto-calculated scores
+
+**Generated Workbook Structure:**
+1. Instructions & Legend - Assessment guidance and GDPR Article 32 requirements
+2. TOMs Inventory - Comprehensive catalog of 20 technical and organizational measures
+3. Implementation Status - Current state assessment with evidence linkage
+4. Gap Analysis - Non-implemented or partially implemented controls with risk scoring
+5. Evidence Repository - Audit evidence tracking and documentation linkage
+6. Remediation Plan - Gap closure actions with timelines and ownership
+7. Risk Matrix - Likelihood × Impact assessment for residual risks
+8. Compliance Dashboard - Auto-calculated GDPR Article 32 compliance score
+
+**Key Features:**
+- Data validation with GDPR-aligned implementation status dropdowns
+- Conditional formatting for implementation maturity (color-coded status)
+- Automated gap identification for partial or missing controls
+- Risk matrix with Critical/High/Medium/Low severity classification
+- Protected formulas with unprotected input cells
+- Evidence linkage for audit traceability (policies, configs, logs, test results)
+- Multi-stakeholder approval workflow
+- Dashboard with compliance percentage and trend tracking
+
+**Integration:**
+This assessment is Domain 4 of the A.5.34 Privacy assessment suite (7 domains).
+Results feed into ISMS-IMP-A.5.34.7 Privacy Compliance Dashboard for
+consolidated privacy program oversight and regulatory reporting. TOMs assessment
+also integrates with ISMS technical controls (A.8.x) for holistic security validation.
+
+--------------------------------------------------------------------------------
+REQUIREMENTS
+--------------------------------------------------------------------------------
+
+System Requirements:
+    - Python 3.8 or higher
+    - openpyxl library for Excel generation
+
+Installation:
+    Ubuntu/Debian:
+        sudo apt install python3-openpyxl
+    
+    Or via pip:
+        pip3 install openpyxl
+
+Dependencies:
+    - openpyxl (Python Excel library)
+    - datetime (standard library)
+
+--------------------------------------------------------------------------------
+USAGE
+--------------------------------------------------------------------------------
+
+Basic Usage:
+    python3 generate_a5344_toms_assessment.py
+
+Advanced Usage:
+    # Generate with custom output directory
+    python3 generate_a5344_toms_assessment.py --output /path/to/dir
+    
+    # Generate with specific date suffix
+    python3 generate_a5344_toms_assessment.py --date 20250128
+
+Output:
+    File: ISMS_A_5_34_4_TOMs_Assessment_YYYYMMDD.xlsx
+    Location: Current directory (or specified output path)
+
+Post-Generation Steps:
+    1. Review and customize TOM categories to match your security architecture
+    2. Inventory all technical controls protecting PII (reference A.8.x controls)
+    3. Assess implementation status for each of 20 TOMs with supporting evidence
+    4. Document organizational measures (policies, procedures, training programs)
+    5. Collect evidence for implemented controls (configs, logs, audit reports)
+    6. Conduct gap analysis for partial or missing controls
+    7. Perform risk assessment for each gap (likelihood × impact matrix)
+    8. Define remediation actions with owners and realistic timelines
+    9. Prioritize remediation based on risk scores (Critical → High → Medium → Low)
+    10. Link TOMs to broader ISMS controls for integrated compliance view
+    11. Schedule quarterly reviews per GDPR Article 32(1)(d) requirement
+    12. Review dashboard metrics with Privacy Committee and CISO
+    13. Obtain stakeholder approvals
+    14. Feed results into A.5.34.7 Privacy Compliance Dashboard
+
+--------------------------------------------------------------------------------
+METADATA
+--------------------------------------------------------------------------------
+
+Control Reference:    ISO/IEC 27001:2022 Annex A Control A.5.34
+Assessment Domain:    4 of 7 (Technical and Organizational Measures - TOMs)
+Framework Version:    1.0
+Script Version:       1.0
+Author:               [Organization] ISMS Implementation Team
+Date:                 [Date to be set]
+Last Modified:        [Date to be set]
+Python Version:       3.8+
+License:              [Organisation License/Terms]
+
+Related Documents:
+    - ISMS-POL-A.5.34: Privacy and Protection of PII Policy (Governance)
+    - ISMS-CTX-A.5.34: Privacy Regulatory Landscape Reference (Context)
+    - ISMS-IMP-A.5.34.1: PII Identification Assessment (Domain 1)
+    - ISMS-IMP-A.5.34.2: Legal Basis Assessment (Domain 2)
+    - ISMS-IMP-A.5.34.3: DSR Management Assessment (Domain 3)
+    - ISMS-IMP-A.5.34.4: TOMs Implementation Guide (Part 1 & 2)
+    - ISMS-IMP-A.5.34.5: Data Protection Impact Assessment (Domain 5)
+    - ISMS-IMP-A.5.34.6: Cross-Border Transfer Assessment (Domain 6)
+    - ISMS-IMP-A.5.34.7: Privacy Compliance Dashboard (Consolidation)
+    - ISMS-POL-A.8.24: Use of Cryptography (related technical control)
+    - ISMS-POL-A.8.20-21-22: Network Security (related technical control)
+
+--------------------------------------------------------------------------------
+CHANGE HISTORY
+--------------------------------------------------------------------------------
+
+Version 1.0 - 2025-01-28
+    - Initial release
+    - Implements full assessment framework per ISMS-IMP-A.5.34.4 specification
+    - Supports comprehensive TOMs evaluation per GDPR Article 32
+    - Integrated dashboard for compliance scoring and gap tracking
+    - Prepares for consolidation into A.5.34.7 Privacy Compliance Dashboard
+
+[Future changes to be documented here]
+
+--------------------------------------------------------------------------------
+IMPORTANT NOTES
+--------------------------------------------------------------------------------
+
+**GDPR Article 32 Requirements:**
+GDPR Article 32(1) mandates "appropriate technical and organizational measures"
+considering state of the art, implementation costs, nature/scope/context/purposes
+of processing, and risks to data subjects. This assessment evaluates measures
+across four categories: (a) pseudonymization and encryption, (b) ongoing confidentiality/
+integrity/availability/resilience, (c) timely restoration after incidents, and
+(d) regular testing and evaluation of effectiveness. Article 32(1)(d) requires
+PERIODIC REASSESSMENT - schedule quarterly or annual reviews.
+
+**Audit Considerations:**
+This assessment generates audit evidence per ISO 27001:2022 and GDPR requirements.
+Auditors will expect documented implementation status, evidence of control effectiveness,
+gap remediation plans, and proof of regular testing (Article 32(1)(d)). Ensure
+all 20 TOMs have clear ownership, evidence trails, and annual re-assessment dates.
+
+**Data Protection:**
+Assessment workbooks contain sensitive information including:
+- Complete inventory of security controls (potential attack surface mapping)
+- Gap analysis revealing security weaknesses and vulnerabilities
+- Remediation plans with timelines (competitive intelligence if disclosed)
+- Evidence repository with system configurations and architecture details
+
+Handle in accordance with your organization's data classification policies.
+Restrict access to DPO, CISO, Security Team, and authorized compliance personnel.
+
+**Maintenance:**
+Review and update assessment:
+- Quarterly: TOMs implementation status updates, new evidence collection
+- Annually: Complete reassessment of all 20 TOMs per GDPR Article 32(1)(d)
+- Triggered: Security incidents, infrastructure changes, regulatory guidance updates
+- Continuous: Monitor automated controls (T5 - Logging, T2 - Access Control)
+
+**Quality Assurance:**
+Have CISO, DPO, and Information Security team validate TOMs assessments before
+using results for compliance reporting, regulatory filings, or audit evidence.
+Cross-reference with broader ISMS control assessments (A.8.x) to ensure consistency.
+
+**Regulatory Alignment:**
+This assessment supports compliance with:
+- GDPR (EU General Data Protection Regulation) - Art. 32 (Security of Processing)
+- FADP (Swiss Federal Act on Data Protection) - Art. 8 (Data Security)
+- ISO/IEC 27001:2022 - Control A.5.34 (Privacy and Protection of PII)
+- ISO/IEC 27701:2019 - Privacy Information Management (if applicable)
+
+**Integration with ISMS Controls:**
+TOMs assessment should align with existing ISO 27001 Annex A controls:
+- T1 (Encryption) → A.8.24 (Use of Cryptography)
+- T2 (Access Control) → A.5.15-16-18 (Identity & Access Management)
+- T5 (Monitoring) → A.8.15-16 (Logging)
+- T6 (Network Security) → A.8.20-21-22 (Network Security)
+- T9 (Backup) → A.8.13-14 (Business Continuity)
+
+Cross-reference control implementations for efficiency and consistency.
+
+================================================================================
 """
 
 import argparse, os
@@ -13,8 +254,21 @@ from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.formatting.rule import CellIsRule, FormulaRule
 from openpyxl.utils import get_column_letter
 
+# =============================================================================
+# LOGGING CONFIGURATION
+# =============================================================================
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
+
+
 # Config
-COLOR_HEADER = "1F4E78"
+COLOR_HEADER = "003366"
 COLOR_INSTRUCTION = "D6DCE4"
 COLOR_CALCULATED = "F2F2F2"
 COLOR_IMPLEMENTED = "C6EFCE"
@@ -145,7 +399,7 @@ def create_sheet3(wb):
     row = 3
     for tom_id, tom_cat, _ in [t for t in TOMS if t[0].startswith('T')]:
         ws[f'A{row}'] = f"{tom_id} - {tom_cat.upper()}"
-        ws[f'A{row}'].font = Font(bold=True, size=11, color='1F4E78')
+        ws[f'A{row}'].font = Font(bold=True, size=11, color='003366')
         ws[f'A{row}'].fill = PatternFill(start_color=COLOR_INSTRUCTION, end_color=COLOR_INSTRUCTION, fill_type='solid')
         ws.merge_cells(f'A{row}:C{row}')
         
@@ -173,7 +427,7 @@ def create_sheet4(wb):
     row = 3
     for tom_id, tom_cat, _ in [t for t in TOMS if t[0].startswith('O')]:
         ws[f'A{row}'] = f"{tom_id} - {tom_cat.upper()}"
-        ws[f'A{row}'].font = Font(bold=True, size=11, color='1F4E78')
+        ws[f'A{row}'].font = Font(bold=True, size=11, color='003366')
         ws[f'A{row}'].fill = PatternFill(start_color=COLOR_INSTRUCTION, end_color=COLOR_INSTRUCTION, fill_type='solid')
         ws.merge_cells(f'A{row}:C{row}')
         
@@ -277,10 +531,10 @@ def create_sheet7(wb):
 def create_sheet8(wb):
     ws = wb.create_sheet("8. Compliance Dashboard")
     ws['A1'] = "TOMS COMPLIANCE DASHBOARD"
-    ws['A1'].font = Font(bold=True, size=14, color='1F4E78')
+    ws['A1'].font = Font(bold=True, size=14, color='003366')
     ws.merge_cells('A1:C1')
     
-    ws['A2'] = f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M')}"
+    ws['A2'] = f"Generated: {datetime.now().strftime('%d.%m.%Y %H:%M')}"
     ws['A2'].font = Font(italic=True)
     
     metrics = [
@@ -313,7 +567,7 @@ def create_sheet8(wb):
     row = 5
     for section, items in metrics:
         ws[f'A{row}'] = section
-        ws[f'A{row}'].font = Font(bold=True, size=11, color='1F4E78')
+        ws[f'A{row}'].font = Font(bold=True, size=11, color='003366')
         ws[f'A{row}'].fill = PatternFill(start_color=COLOR_INSTRUCTION, end_color=COLOR_INSTRUCTION, fill_type='solid')
         ws.merge_cells(f'A{row}:C{row}')
         row += 1
@@ -343,48 +597,48 @@ def create_sheet8(wb):
 
 # Main
 def generate_workbook(output_file):
-    print("=" * 80)
-    print("ISMS-IMP-A.5.34.4 - TOMs Assessment Generator")
-    print("=" * 80)
-    print()
+    logger.info("=" * 80)
+    logger.info("ISMS-IMP-A.5.34.4 - TOMs Assessment Generator")
+    logger.info("=" * 80)
+    logger.info("")
     
     wb = Workbook()
     
-    print("Creating Sheet 1: Instructions...")
+    logger.info("Creating Sheet 1: Instructions...")
     create_sheet1(wb)
     
-    print("Creating Sheet 2: TOM Control Inventory...")
+    logger.info("Creating Sheet 2: TOM Control Inventory...")
     create_sheet2(wb)
     
-    print("Creating Sheet 3: Technical Measures Detail...")
+    logger.info("Creating Sheet 3: Technical Measures Detail...")
     create_sheet3(wb)
     
-    print("Creating Sheet 4: Organizational Measures Detail...")
+    logger.info("Creating Sheet 4: Organizational Measures Detail...")
     create_sheet4(wb)
     
-    print("Creating Sheet 5: Evidence Repository...")
+    logger.info("Creating Sheet 5: Evidence Repository...")
     create_sheet5(wb)
     
-    print("Creating Sheet 6: Gap Analysis & Risk...")
+    logger.info("Creating Sheet 6: Gap Analysis & Risk...")
     create_sheet6(wb)
     
-    print("Creating Sheet 7: Remediation Action Plan...")
+    logger.info("Creating Sheet 7: Remediation Action Plan...")
     create_sheet7(wb)
     
-    print("Creating Sheet 8: Compliance Dashboard...")
+    logger.info("Creating Sheet 8: Compliance Dashboard...")
     create_sheet8(wb)
     
-    print()
-    print(f"Saving to: {output_file}")
+    logger.info("")
+    logger.info(f"Saving to: {output_file}")
     wb.save(output_file)
     
-    print()
-    print("=" * 80)
-    print("SUCCESS: Workbook generated!")
-    print("=" * 80)
-    print()
-    print(f"Output: {os.path.abspath(output_file)}")
-    print()
+    logger.info("")
+    logger.info("=" * 80)
+    logger.info("SUCCESS: Workbook generated!")
+    logger.info("=" * 80)
+    logger.info("")
+    logger.info(f"Output: {os.path.abspath(output_file)}")
+    logger.info("")
     return output_file
 
 def main():
@@ -400,10 +654,35 @@ def main():
         generate_workbook(output_file)
         return 0
     except Exception as e:
-        print(f"ERROR: {e}")
+        logger.error(f"ERROR: {e}")
         import traceback
         traceback.print_exc()
         return 1
 
+
+
+# =============================================================================
+# DOCUMENT METADATA
+# =============================================================================
+DOCUMENT_ID = "ISMS-IMP-A.5.34.4"
+WORKBOOK_NAME = "Technical and Organizational Measures (TOMs)"
+CONTROL_ID = "A.5.34"
+CONTROL_NAME = "Privacy and Protection of PII"
+CONTROL_REF = f"ISO/IEC 27001:2022 - Control {CONTROL_ID}: {CONTROL_NAME}"
+
+# Timestamps
+GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")      # For display (Swiss format)
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")   # For filenames (sortable)
+
+# Output filename
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_TIMESTAMP}.xlsx"
+
 if __name__ == '__main__':
     exit(main())
+
+# =============================================================================
+# QA_VERIFIED: 2026-01-31
+# QA_STATUS: PASSED - STANDARDIZATION COMPLETE (Phase 1-3)
+# QA_TOOL: Claude Code Standardization
+# CHANGES: constants, metadata headers, v1.0 versioning, logger output
+# =============================================================================

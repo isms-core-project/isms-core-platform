@@ -1,10 +1,10 @@
-# ISMS-IMP-A.8.23.1 - Filtering Infrastructure Assessment
-## Assessment Specification with User Completion Guide
+**ISMS-IMP-A.8.23.1 - Filtering Infrastructure Assessment**
+**Assessment Specification with User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.8.23: Web Filtering
 
 ---
 
-## Document Control
+**Document Control**
 
 | Attribute | Value |
 |-----------|-------|
@@ -44,6 +44,7 @@ This document consists of two parts:
   - Cell Styling Reference
   - Integration Points
 
+
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -64,6 +65,7 @@ This assessment documents the web filtering TECHNOLOGY and INFRASTRUCTURE deploy
 - How are these solutions performing?
 - What gaps exist between deployed capabilities and policy requirements?
 
+
 #### Key Principle
 
 This assessment is **completely vendor-agnostic and technology-independent**. You document YOUR specific solutions (whatever you use - Zscaler, Fortigate, Sophos, open-source Squid, cloud DNS filtering, whatever), and verify capabilities against generic policy requirements.
@@ -80,6 +82,7 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 - Performance & incident tracking
 - Gaps and remediation plans
 - Supporting evidence
+
 
 #### How This Relates to Other A.8.23 Assessments
 
@@ -110,10 +113,12 @@ This assessment (A.8.23.1) MUST be completed first - you can't assess coverage, 
 - Knowledge of network architecture
 - Understanding of threat protection concepts
 
+
 #### Time Commitment
 
 - **Initial assessment:** 6-10 hours per solution (for detailed capability review)
 - **Quarterly updates:** 1-2 hours per solution (update versions, performance data)
+
 
 ### Expected Outputs
 
@@ -144,12 +149,14 @@ Before starting this assessment, gather:
 - Access to licensing/support contract systems
 - Access to monitoring dashboards
 
+
 #### 2. Documentation
 
 - Current network architecture diagrams
 - Deployment documentation
 - Configuration documentation
 - Integration architecture
+
 
 #### 3. Historical Data
 
@@ -158,12 +165,14 @@ Before starting this assessment, gather:
 - Incident reports related to filtering
 - Change logs and maintenance records
 
+
 #### 4. Policy Requirements
 
 - ISMS-POL-A.8.23, Section 2.1 (Threat Protection Requirements)
 - ISMS-POL-A.8.23, Section 2.2 (Category Filtering Approach)
 - ISMS-POL-A.8.23, Section 2.4 (Logging and Monitoring)
 - ISMS-POL-A.8.23, Section 3.3 (Exception Management)
+
 
 ### Required Tools
 
@@ -173,15 +182,18 @@ Before starting this assessment, gather:
 - Log analysis tools
 - Screen capture tools (for evidence screenshots)
 
+
 ### Dependencies
 
 This assessment has NO dependencies - it's the first assessment in the A.8.23 series and must be completed before others.
 
 However, outputs from this assessment are INPUT to:
+
 - A.8.23.2 (Network Coverage) - Needs solution list from Sheet 1
 - A.8.23.3 (Policy Configuration) - Needs capability data from Sheets 3-6
 - A.8.23.4 (Monitoring & Response) - Needs logging capabilities from Sheet 3
 - A.8.23.5 (Compliance Dashboard) - Consolidates all data
+
 
 ---
 
@@ -234,21 +246,25 @@ However, outputs from this assessment are INPUT to:
 **Steps:**
 1. List EVERY filtering solution deployed
 2. For each solution:
+
    - Document vendor, product, version
    - Identify deployment model (appliance, cloud, hybrid)
    - Determine primary purpose
    - Assess deployment status
    - Document protected user count
+
 3. Verify completeness with network team
 4. Cross-check with asset inventory
 
 **Deliverable:** Complete Sheet 1 with all filtering solutions
 
 **Quality Check:**
+
 - ✓ All filtering solutions identified (perimeter, endpoint, cloud, DNS)
 - ✓ No "unknown" or "TBD" values
 - ✓ Status accurately reflects current state
 - ✓ User counts are reasonable estimates
+
 
 #### Phase 3: Detailed Solution Documentation (3-6 hours per solution)
 
@@ -267,10 +283,12 @@ For each solution in Sheet 1:
 **Deliverable:** One completed Sheet 2 per solution
 
 **Quality Check:**
+
 - ✓ Every capability category assessed (not just "Yes" without details)
 - ✓ Integration points documented
 - ✓ Performance data is recent (< 30 days old)
 - ✓ Evidence collected for key capabilities
+
 
 #### Phase 4: Capability Assessment (2-4 hours)
 
@@ -278,36 +296,46 @@ For each solution in Sheet 1:
 
 **Steps:**
 1. **Sheet 3: Threat Protection Capabilities**
+
    - Document anti-malware capabilities
    - Document phishing protection
    - Document exploit prevention
    - Assess HTTPS inspection
    
+
 2. **Sheet 4: Category Filtering Capabilities**
+
    - List URL category databases
    - Document custom categories
    - Assess granularity
    - Document updates
    
+
 3. **Sheet 5: Logging & Monitoring Capabilities**
+
    - Document log collection
    - Assess log retention
    - Document SIEM integration
    - Review alerting capabilities
    
+
 4. **Sheet 6: Advanced Capabilities**
+
    - DLP integration
    - SSL/TLS inspection
    - User/group policies
    - Reporting capabilities
 
+
 **Deliverable:** Complete Sheets 3-6
 
 **Quality Check:**
+
 - ✓ All capabilities assessed for all solutions
 - ✓ Evidence provided for critical capabilities
 - ✓ Gaps identified and documented
 - ✓ No "Unknown" or "Not Assessed" without justification
+
 
 #### Phase 5: Licensing & Support (1-2 hours)
 
@@ -324,10 +352,12 @@ For each solution in Sheet 1:
 **Deliverable:** Complete Sheet 7
 
 **Quality Check:**
+
 - ✓ All licenses accounted for
 - ✓ Expiration dates accurate
 - ✓ Support contracts documented
 - ✓ Renewal process identified
+
 
 #### Phase 6: Requirements Matrix (2-3 hours)
 
@@ -336,20 +366,24 @@ For each solution in Sheet 1:
 **Steps:**
 1. Review policy requirements (ISMS-POL-A.8.23, Section 2.1 (Threat Protection Requirements), S2.2, S2.3, S2.4)
 2. For each requirement:
+
    - Identify which solution(s) provide it
    - Assess compliance status
    - Document evidence
    - Identify gaps
+
 3. Calculate compliance percentages
 4. Prioritize gaps
 
 **Deliverable:** Complete Sheet 8 with gap analysis
 
 **Quality Check:**
+
 - ✓ All policy requirements addressed
 - ✓ Solution mapping is accurate
 - ✓ Compliance status is honest (not optimistic)
 - ✓ Gaps have remediation plans
+
 
 #### Phase 7: Performance Tracking (1-2 hours)
 
@@ -365,10 +399,12 @@ For each solution in Sheet 1:
 **Deliverable:** Complete Sheet 9
 
 **Quality Check:**
+
 - ✓ Performance data is recent
 - ✓ Incidents are comprehensive
 - ✓ Uptime calculations are accurate
 - ✓ Trends are analyzed
+
 
 #### Phase 8: Evidence Registry (1 hour)
 
@@ -384,10 +420,12 @@ For each solution in Sheet 1:
 **Deliverable:** Complete Sheet 10
 
 **Quality Check:**
+
 - ✓ All evidence listed
 - ✓ Storage locations accessible
 - ✓ Evidence is recent
 - ✓ Audit-ready format
+
 
 #### Phase 9: Gap Analysis & Remediation Planning (2-3 hours)
 
@@ -396,10 +434,12 @@ For each solution in Sheet 1:
 **Steps:**
 1. Review all "Partial" or "Not Compliant" items
 2. Categorize gaps:
+
    - Technical capability gaps
    - Licensing/support gaps
    - Performance gaps
    - Documentation gaps
+
 3. Prioritize by risk
 4. Create remediation plan
 5. Assign owners
@@ -408,11 +448,13 @@ For each solution in Sheet 1:
 **Deliverable:** Gap analysis and remediation plan
 
 **Quality Check:**
+
 - ✓ All gaps identified
 - ✓ Risk assessment is realistic
 - ✓ Remediation plans are actionable
 - ✓ Owners assigned
 - ✓ Target dates are reasonable
+
 
 #### Phase 10: Review & Approval (1-2 hours)
 
@@ -420,30 +462,38 @@ For each solution in Sheet 1:
 
 **Steps:**
 1. **Self-review** (completer)
+
    - Check completeness
    - Verify accuracy
    - Validate evidence
    - Run quality checklist
    
+
 2. **Technical review** (security/network engineer)
+
    - Review technical accuracy
    - Validate capability assessments
    - Check evidence quality
    - Approve or request changes
    
+
 3. **Management review** (CISO or delegate)
+
    - Review gap analysis
    - Approve remediation plan
    - Allocate resources
    - Final approval
 
+
 **Deliverable:** Approved assessment ready for compliance dashboard
 
 **Quality Check:**
+
 - ✓ All sections complete
 - ✓ All reviewers have approved
 - ✓ Evidence is audit-ready
 - ✓ Gaps have remediation plans
+
 
 ---
 
@@ -460,6 +510,7 @@ Create a master list of ALL web filtering solutions deployed in your environment
 #### What to Document
 
 For EACH filtering solution:
+
 - Solution name (what YOU call it)
 - Vendor/provider
 - Product name
@@ -468,6 +519,7 @@ For EACH filtering solution:
 - Status
 - User count
 - Integration points
+
 
 #### Common Mistakes to Avoid
 
@@ -500,6 +552,7 @@ Ask these questions:
 - Check deployment architecture
 - Count protected users
 
+
 **Step 3: Fill in the Inventory Sheet**
 
 | Field | How to Complete |
@@ -521,12 +574,14 @@ Ask these questions:
 - Check cloud service subscriptions
 - Verify with security team
 
+
 #### Evidence to Collect
 
 - Network diagrams showing filtering placement
 - Screenshots from admin consoles showing version info
 - License agreements
 - Architecture diagrams
+
 
 #### Example Entries
 
@@ -577,6 +632,7 @@ Before moving to next sheet, verify:
 - [ ] Integration points are listed
 - [ ] Evidence collected
 
+
 ---
 
 ### Sheet 2: Solution Details Template (Create one per solution)
@@ -586,19 +642,23 @@ Before moving to next sheet, verify:
 Document detailed information about EACH filtering solution. You'll create multiple copies of this template - one for each solution listed in Sheet 1.
 
 For example:
+
 - Sheet 2a: Corporate Perimeter Filter (Fortigate)
 - Sheet 2b: Endpoint Protection (Microsoft Defender)
 - Sheet 2c: DNS Filtering (Cisco Umbrella)
 
+
 #### What to Document
 
 For EACH solution:
+
 - Complete identification details
 - All capability categories (threat protection, URL filtering, logging, etc.)
 - Integration points
 - Performance metrics
 - Licensing details
 - Support information
+
 
 #### How to Complete
 
@@ -634,6 +694,7 @@ Fill in these fields from your admin console:
 For EACH capability category, assess:
 
 **Threat Protection Capabilities:**
+
 - Anti-malware/anti-virus scanning
 - Phishing protection (URL analysis, brand detection)
 - Exploit prevention (browser exploits, drive-by downloads)
@@ -645,7 +706,9 @@ For EACH capability category, assess:
 - Sandbox/detonation capability
 - Real-time threat updates
 
+
 **URL Categorization & Filtering:**
+
 - URL category database (vendor-provided)
 - Number of categories
 - Custom categories supported?
@@ -656,7 +719,9 @@ For EACH capability category, assess:
 - Keyword filtering
 - Safe search enforcement
 
+
 **Content Inspection:**
+
 - HTTP/HTTPS inspection (SSL/TLS decryption)
 - Deep packet inspection
 - File type blocking
@@ -665,7 +730,9 @@ For EACH capability category, assess:
 - Encoding detection
 - Protocol analysis
 
+
 **Logging & Monitoring:**
+
 - Web transaction logging
 - Blocked request logging
 - User activity logging
@@ -676,7 +743,9 @@ For EACH capability category, assess:
 - Real-time dashboards
 - Alerting capabilities
 
+
 **Access Control:**
+
 - User authentication methods
 - Group-based policies
 - Time-based access
@@ -685,7 +754,9 @@ For EACH capability category, assess:
 - Application-level control
 - Port/protocol restrictions
 
+
 **Reporting & Analytics:**
+
 - Built-in reports
 - Custom report builder
 - Executive dashboards
@@ -695,7 +766,9 @@ For EACH capability category, assess:
 - Export capabilities
 - Scheduled reports
 
+
 **Management & Administration:**
+
 - Admin access controls
 - Role-based administration
 - Configuration backup/restore
@@ -705,7 +778,9 @@ For EACH capability category, assess:
 - CLI access
 - Remote management
 
+
 **Performance & Scalability:**
+
 - Throughput capacity
 - Concurrent sessions
 - Latency impact
@@ -714,7 +789,9 @@ For EACH capability category, assess:
 - Clustering support
 - Scalability options
 
+
 **Integration Capabilities:**
+
 - Active Directory/LDAP
 - SIEM integration
 - Proxy chaining
@@ -725,6 +802,7 @@ For EACH capability category, assess:
 - DLP integration
 - IAM/SSO integration
 - Threat intelligence feeds
+
 
 **Step 4: Rating Scale**
 
@@ -740,21 +818,25 @@ For each capability, use this scale:
 **Step 5: Collect Evidence**
 
 For critical capabilities, capture evidence:
+
 - Screenshots from admin console
 - Configuration exports (sanitized)
 - Test results
 - Performance reports
 - Integration documentation
 
+
 **Step 6: Performance Metrics**
 
 Document current performance:
+
 - Uptime (last 30/90 days)
 - Average latency
 - Peak throughput
 - Blocked threats (last 30 days)
 - False positive rate
 - Incident count
+
 
 #### Common Mistakes to Avoid
 
@@ -777,6 +859,7 @@ For each Sheet 2:
 - [ ] No "Unknown" or "TBD" without explanation
 - [ ] Sheet renamed to reflect solution
 
+
 ---
 
 ### Sheet 3: Threat Protection Capabilities
@@ -788,6 +871,7 @@ Deep dive into threat protection capabilities across ALL solutions. This sheet c
 #### What to Document
 
 For each solution:
+
 - Malware detection capabilities
 - Phishing protection methods
 - Exploit prevention features
@@ -796,6 +880,7 @@ For each solution:
 - Update mechanisms
 - Detection rates
 - Evidence of capability
+
 
 #### How to Complete
 
@@ -806,6 +891,7 @@ Copy solution names from Sheet 1 into the first column.
 **Step 2: Assess Each Threat Protection Category**
 
 **Anti-Malware/Anti-Virus:**
+
 - What malware detection engines are used?
 - What file types are scanned?
 - Is archive scanning enabled?
@@ -813,7 +899,9 @@ Copy solution names from Sheet 1 into the first column.
 - What's the detection rate?
 - How are detections handled (block, quarantine, log)?
 
+
 **Phishing Protection:**
+
 - URL reputation checking?
 - Brand impersonation detection?
 - Lookalike domain detection?
@@ -821,26 +909,33 @@ Copy solution names from Sheet 1 into the first column.
 - Real-time analysis?
 - User reporting mechanisms?
 
+
 **Exploit Prevention:**
+
 - Browser exploit protection?
 - Drive-by download prevention?
 - JavaScript analysis?
 - PDF/Office document scanning?
 - Zero-day protection mechanisms?
 
+
 **C2/Botnet Detection:**
+
 - Known C2 server blocking?
 - Botnet communication detection?
 - DNS tunneling detection?
 - Algorithmically generated domains (DGA) detection?
 - Periodic beaconing detection?
 
+
 **Threat Intelligence:**
+
 - Which threat intel feeds are used?
 - Update frequency?
 - Custom threat indicators supported?
 - Integration with external TI platforms?
 - Automated threat response?
+
 
 **Step 3: Rating Guidelines**
 
@@ -855,15 +950,18 @@ Copy solution names from Sheet 1 into the first column.
 **Step 4: Document Evidence**
 
 For each "Full" rating, provide evidence:
+
 - Configuration screenshots
 - Detection statistics (last 30 days)
 - Test results
 - Threat feed subscriptions
 - Update logs
 
+
 **Step 5: Identify Gaps**
 
 Where ratings are "Partial" or "None":
+
 - Why doesn't this capability exist?
 - Is it a licensing limitation?
 - Is it a technical limitation?
@@ -871,39 +969,49 @@ Where ratings are "Partial" or "None":
 - What's the risk if not addressed?
 - What's the remediation plan?
 
+
 #### Common Scenarios
 
 **Scenario 1: Multi-Solution Environment**
 
 You might have:
+
 - Perimeter filter with full anti-malware
 - Endpoint protection with advanced threat protection
 - DNS filter with C2 blocking
 
+
 Assessment:
+
 - Each solution gets rated independently
 - Document which solution provides which capability
 - Identify overlaps (defense in depth) vs. gaps
 
+
 **Scenario 2: Capability Exists But Not Enabled**
 
 The solution CAN do something but it's not configured:
+
 - Rate as ❌ None (based on CURRENT state)
 - Document in notes: "Capability exists but not enabled due to [reason]"
 - Include in gap analysis
 - Create remediation plan if capability is required
 
+
 **Scenario 3: Licensing Limitation**
 
 The capability exists in higher tiers but you have basic license:
+
 - Rate as ❌ None
 - Document: "Requires [specific license tier]"
 - Include cost in remediation plan
 - Flag for procurement discussion
 
+
 #### Evidence Examples
 
 Good evidence:
+
 - Screenshot showing malware engine versions and last update
 - Report showing blocked threats (last 30 days)
 - Configuration export showing enabled protection modules
@@ -911,12 +1019,15 @@ Good evidence:
 - Threat feed subscription confirmation
 - Performance metrics (throughput, latency)
 
+
 Poor evidence:
+
 - Generic marketing materials
 - Vendor capability statements
 - "We think it works" notes
 - Outdated screenshots
 - No evidence, just "Yes"
+
 
 #### Quality Checklist
 
@@ -929,6 +1040,7 @@ Poor evidence:
 - [ ] Detection/block statistics included
 - [ ] No "Unknown" without explanation
 
+
 ---
 
 ### Sheet 4: Category Filtering Capabilities
@@ -940,6 +1052,7 @@ Assess URL categorization and content filtering capabilities across all solution
 #### What to Document
 
 For each solution:
+
 - URL category database details
 - Number of categories
 - Category granularity
@@ -949,6 +1062,7 @@ For each solution:
 - Safe search enforcement
 - Update mechanisms
 
+
 #### How to Complete
 
 **Step 1: URL Category Database Assessment**
@@ -956,19 +1070,24 @@ For each solution:
 For each solution, document:
 
 **Database Provider:**
+
 - Who provides the URL database? (Vendor's own, third-party like Brightcloud, Webroot, etc.)
 - How many URLs are in the database?
 - How many categories exist?
 - Update frequency?
 - Coverage (what percentage of web is categorized)?
 
+
 **Category Granularity:**
+
 - How specific are categories?
 - Example: "Social Media" vs. "Facebook", "Twitter", "LinkedIn" as separate categories
 - Can you control subcategories independently?
 - Industry-specific categories available?
 
+
 **Custom Categories:**
+
 - Can you create custom categories?
 - How many custom categories allowed?
 - Can you add URLs/domains manually?
@@ -976,9 +1095,11 @@ For each solution, document:
 - Wildcard support?
 - Regular expression support?
 
+
 **Step 2: Filtering Capability Assessment**
 
 **URL/Domain Lists:**
+
 - Whitelist capability?
 - Blacklist capability?
 - List size limits?
@@ -986,7 +1107,9 @@ For each solution, document:
 - Time-based exceptions?
 - User/group-specific exceptions?
 
+
 **Application Control:**
+
 - Does the solution recognize applications (not just URLs)?
 - Social media apps?
 - Messaging apps?
@@ -994,7 +1117,9 @@ For each solution, document:
 - Streaming services?
 - Gaming platforms?
 
+
 **Content Analysis:**
+
 - Keyword filtering?
 - Language detection?
 - Content classification (beyond URL category)?
@@ -1002,35 +1127,44 @@ For each solution, document:
 - Image analysis?
 - Video content filtering?
 
+
 **Safe Search Enforcement:**
+
 - Google Safe Search?
 - Bing Safe Search?
 - YouTube Restricted Mode?
 - Other search engines?
 - Can users override?
 
+
 **Time-Based Controls:**
+
 - Schedule-based filtering?
 - Different policies by time of day?
 - Quota management (e.g., 30 min/day of social media)?
 - Bandwidth shaping by category?
 
+
 **Step 3: Policy Flexibility Assessment**
 
 **User/Group Policies:**
+
 - User-specific policies?
 - Group-based policies (by AD group)?
 - Role-based policies?
 - Device type policies?
 - Location-based policies?
 
+
 **Action Options:**
+
 - Block
 - Warn (show message but allow)
 - Redirect to safe page
 - Time-limited access
 - Quota-based access
 - Log only (monitor without blocking)
+
 
 **Step 4: Rating Guidelines**
 
@@ -1048,42 +1182,54 @@ For each solution, document:
 Show how your filtering supports business requirements:
 
 **Example 1: Block social media except lunch hour**
+
 - Social media category: BLOCKED
 - Exception: Allow 12:00-13:00
 - Applies to: All users except executives
 - Evidence: Policy screenshot + test result
 
+
 **Example 2: Allow educational sites, block others for classroom**
+
 - Classroom group: Custom "Education" category = ALLOW
 - All other categories: BLOCK
 - Evidence: Group policy + category definition
 
+
 **Example 3: Block file sharing except IT department**
+
 - File sharing category: BLOCKED
 - Exception: IT_Admin AD group = ALLOWED
 - Evidence: Group-based policy + AD integration
+
 
 **Step 6: Assess Coverage Gaps**
 
 Common gaps to check:
 
 **Uncategorized URLs:**
+
 - What happens with uncategorized URLs?
 - Default action (allow/block)?
 - What percentage of web traffic is uncategorized?
 - How do you handle it?
 
+
 **New/Emerging Categories:**
+
 - AI/ML tools (ChatGPT, etc.)
 - Cryptocurrency/NFT sites
 - Metaverse platforms
 - What's your policy?
 
+
 **False Categorization:**
+
 - How often are sites miscategorized?
 - How do users report issues?
 - How quickly are corrections made?
 - What's the interim solution?
+
 
 #### Evidence to Collect
 
@@ -1094,6 +1240,7 @@ Common gaps to check:
 - Safe search enforcement proof
 - Application control list
 - Test results showing policy enforcement
+
 
 #### Common Mistakes
 
@@ -1116,6 +1263,7 @@ Common gaps to check:
 - [ ] Gaps identified
 - [ ] Evidence collected
 
+
 ---
 
 ### Sheet 5: Logging & Monitoring Capabilities
@@ -1127,6 +1275,7 @@ Assess logging, monitoring, alerting, and reporting capabilities for web filteri
 #### What to Document
 
 For each solution:
+
 - What logs are collected
 - Log retention periods
 - Log formats and accessibility
@@ -1136,6 +1285,7 @@ For each solution:
 - Dashboard availability
 - Reporting features
 
+
 #### How to Complete
 
 **Step 1: Log Collection Assessment**
@@ -1143,6 +1293,7 @@ For each solution:
 For each solution, document what is logged:
 
 **Transaction Logs:**
+
 - Every web request (allowed + blocked)?
 - Timestamp precision?
 - Source IP/user identity?
@@ -1152,7 +1303,9 @@ For each solution, document what is logged:
 - Protocol details?
 - Data volume (uploaded/downloaded)?
 
+
 **Security Event Logs:**
+
 - Malware detections?
 - Phishing attempts?
 - Exploit attempts?
@@ -1161,7 +1314,9 @@ For each solution, document what is logged:
 - Threat intelligence matches?
 - DLP violations?
 
+
 **Administrative Logs:**
+
 - Admin logins?
 - Configuration changes?
 - Policy modifications?
@@ -1169,12 +1324,15 @@ For each solution, document what is logged:
 - User overrides/bypass attempts?
 - System health events?
 
+
 **System Logs:**
+
 - Performance metrics?
 - Capacity utilization?
 - Errors/warnings?
 - Service availability?
 - Update events?
+
 
 **Step 2: Log Retention Assessment**
 
@@ -1186,76 +1344,97 @@ For each solution, document what is logged:
 | System logs | How long? | Where stored? | Who can access? |
 
 **Policy Requirements:**
+
 - ISMS-POL-A.8.23, Section 2.4 (Logging and Monitoring) requires ≥90 days retention
 - Check if your retention meets this
 - Document if shorter retention exists and why
 
+
 **Storage Considerations:**
+
 - Where are logs stored? (local, central log server, SIEM, cloud)
 - Storage capacity adequate?
 - Log rotation configured?
 - Backup of logs?
 - Archive strategy for older logs?
 
+
 **Step 3: Log Format & Accessibility**
 
 **Log Formats:**
+
 - What format? (Syslog, CEF, LEEF, JSON, CSV, proprietary)
 - Structured or unstructured?
 - Timezone handling?
 - Unicode/international character support?
 
+
 **Accessibility:**
+
 - How do you query logs? (GUI, CLI, API, SIEM query language)
 - Search capabilities? (full-text, field-based, regex)
 - Export capabilities?
 - Real-time vs. batch access?
 - Access controls? (who can see what logs?)
 
+
 **Step 4: SIEM Integration Assessment**
 
 If you have a SIEM:
 
 **Integration Method:**
+
 - How are logs sent? (Syslog, API, agent, file transfer)
 - Real-time or batch?
 - What protocol? (TCP/UDP syslog, HTTPS API, etc.)
 - Reliable delivery? (acknowledgment, retry logic)
 
+
 **Data Volume:**
+
 - Logs per second/minute/hour?
 - SIEM can handle the volume?
 - Any filtering/sampling before SIEM?
 - Cost implications (SIEM licensed by volume)?
 
+
 **Log Parsing:**
+
 - Are logs parsed correctly in SIEM?
 - Field extraction working?
 - Timestamp parsing correct?
 - Enrichment applied? (geolocation, threat intel, asset context)
 
+
 **Correlation Rules:**
+
 - Are there SIEM correlation rules for web filtering events?
 - Example: Multiple blocks for same user → alert
 - Example: C2 communication detected → ticket created
 - Are rules tested and validated?
 
+
 **Step 5: Real-Time Monitoring**
 
 **Built-in Dashboards:**
+
 - What dashboards exist in the filtering solution?
 - What metrics are shown? (throughput, blocked threats, top users, top categories)
 - Real-time or delayed?
 - Customizable?
 - Access controls?
 
+
 **External Dashboards:**
+
 - Do you have dashboards in SIEM, Grafana, or other tools?
 - What metrics are tracked?
 - Update frequency?
 - Who monitors them?
 
+
 **Key Metrics to Monitor:**
+
 - Blocked threat count (by type)
 - Policy violations
 - Top blocked categories/URLs
@@ -1264,30 +1443,38 @@ If you have a SIEM:
 - System performance (latency, throughput, uptime)
 - Unusual patterns (spikes, drops)
 
+
 **Step 6: Alerting Capabilities**
 
 **Alert Types:**
+
 - Security alerts (malware, phishing, C2, exploits)
 - Policy violation alerts (user exceeded quota, accessed blocked category)
 - System alerts (performance degradation, service down, license expiry)
 - Operational alerts (logs not being collected, disk space low)
 
+
 **Alert Configuration:**
+
 - How are alerts configured? (thresholds, conditions, rules)
 - Alert severity levels?
 - Alert recipients (email, SMS, ticketing system, SIEM)
 - Alert escalation?
 - Alert suppression/deduplication?
 
+
 **Alert Testing:**
+
 - Have alerts been tested?
 - When was last test?
 - Do alerts actually work?
 - Response time measured?
 
+
 **Step 7: Reporting Capabilities**
 
 **Built-in Reports:**
+
 - What reports are available?
 - Executive summary reports?
 - User activity reports?
@@ -1295,18 +1482,23 @@ If you have a SIEM:
 - Compliance reports?
 - Custom report builder?
 
+
 **Report Schedule:**
+
 - Can reports be scheduled?
 - What frequency? (daily, weekly, monthly)
 - Who receives them?
 - Format? (PDF, CSV, HTML, email)
 
+
 **Report Content:**
+
 - Are reports meaningful?
 - Actionable insights?
 - Trend analysis?
 - Comparison to previous periods?
 - Compliance metrics included?
+
 
 **Step 8: Rating Guidelines**
 
@@ -1331,31 +1523,40 @@ If you have a SIEM:
 - Alert test results
 - Log volume metrics
 
+
 #### Common Issues
 
 **Issue 1: Logs Collected But Not Reviewed**
+
 - Solution logs to SIEM but no one reviews
 - Assessment: Partial logging capability
 - Gap: No operational benefit from logs
 - Remediation: Create review process, dashboards, alerts
 
+
 **Issue 2: Log Retention Too Short**
+
 - Logs kept for 30 days, policy requires 90 days
 - Assessment: Partial compliance
 - Gap: Can't investigate incidents >30 days old
 - Remediation: Increase retention (check storage capacity and cost)
 
+
 **Issue 3: SIEM Integration But Poor Parsing**
+
 - Logs forwarded to SIEM but not parsed correctly
 - Assessment: Partial SIEM integration
 - Gap: Can't query/correlate effectively
 - Remediation: Fix parsing, test field extraction
 
+
 **Issue 4: Alerts Configured But Never Tested**
+
 - Alert rules exist but no one knows if they work
 - Assessment: Partial alerting
 - Gap: False confidence in detection
 - Remediation: Test all critical alerts, document response procedures
+
 
 #### Quality Checklist
 
@@ -1369,6 +1570,7 @@ If you have a SIEM:
 - [ ] Gaps identified and prioritized
 - [ ] Evidence collected
 
+
 ---
 
 ### Sheet 6: Advanced Capabilities
@@ -1380,6 +1582,7 @@ Assess advanced and specialized capabilities that enhance security posture beyon
 #### What to Document
 
 For each solution:
+
 - SSL/TLS inspection (HTTPS decryption)
 - Data Loss Prevention (DLP) integration
 - User behavior analytics
@@ -1389,181 +1592,237 @@ For each solution:
 - Cloud app control
 - Advanced threat protection
 
+
 #### How to Complete
 
 **Step 1: SSL/TLS Inspection Assessment**
 
 **Capability:**
+
 - Can the solution decrypt and inspect HTTPS traffic?
 - Certificate handling (trusted CA, on-the-fly certificate generation)
 - Certificate pinning handling
 - Certificate error handling
 
+
 **Coverage:**
+
 - What percentage of HTTPS traffic is inspected?
 - Any exclusions? (banking, healthcare, government sites)
 - User/group-based exclusions?
 - Application-based exclusions?
 
+
 **Performance Impact:**
+
 - Latency increase from SSL inspection?
 - Throughput reduction?
 - CPU utilization?
 - User complaints?
 
+
 **Privacy & Legal:**
+
 - Legal review completed?
 - User notification/consent?
 - HR policy updated?
 - Employee privacy concerns addressed?
 
+
 **Rating:**
+
 - ✅ Full: Comprehensive HTTPS inspection, legal/privacy addressed, minimal performance impact
 - ⚠️ Partial: Limited HTTPS inspection or significant exclusions or privacy concerns not fully addressed
 - ❌ None: No HTTPS inspection or not enabled
 
+
 **Step 2: DLP Integration**
 
 **Integration Type:**
+
 - Native DLP in filtering solution?
 - Integration with external DLP platform?
 - API integration or policy sync?
 
+
 **DLP Capabilities:**
+
 - What data types can be detected? (PCI, PII, PHI, IP, credentials)
 - Pattern matching (regex)?
 - Fingerprinting/exact data matching?
 - Machine learning classification?
 
+
 **DLP Actions:**
+
 - Block upload/download?
 - Alert only?
 - Quarantine?
 - Encrypt?
 - Redact?
 
+
 **Coverage:**
+
 - HTTP/HTTPS web uploads?
 - Cloud app uploads?
 - Email attachments (if applicable)?
 - Messaging apps?
 
+
 **Rating:**
+
 - ✅ Full: Comprehensive DLP, multiple data types, integrated actions
 - ⚠️ Partial: Basic DLP or limited coverage
 - ❌ None: No DLP capability
 
+
 **Step 3: User Behavior Analytics (UBA)**
 
 **Behavioral Monitoring:**
+
 - Does solution track user behavior patterns?
 - Baseline establishment?
 - Anomaly detection?
 - Risk scoring?
 
+
 **Anomalies Detected:**
+
 - Unusual download volume?
 - Access to unusual sites/categories?
 - Geographic anomalies?
 - Time-of-day anomalies?
 - Impossible travel?
 
+
 **Response:**
+
 - Automatic alert on anomaly?
 - Increased monitoring/logging?
 - Automatic policy tightening?
 - Integration with SIEM/SOAR?
 
+
 **Rating:**
+
 - ✅ Full: Comprehensive UBA, anomaly detection, automated response
 - ⚠️ Partial: Basic behavior tracking, manual review needed
 - ❌ None: No UBA capability
 
+
 **Step 4: Sandbox/Detonation**
 
 **Capability:**
+
 - Can solution detonate suspicious files?
 - On-premises sandbox or cloud-based?
 - What file types supported?
 - Automatic or manual submission?
 
+
 **Analysis:**
+
 - What's analyzed? (file behavior, network connections, registry changes)
 - Analysis depth (quick scan vs. deep analysis)?
 - Analysis time (seconds, minutes)?
 - Verdict reliability?
 
+
 **Integration:**
+
 - Automatic blocking based on sandbox verdict?
 - Manual review option?
 - Integration with threat intelligence?
 - Quarantine capability?
 
+
 **Rating:**
+
 - ✅ Full: Automated detonation, comprehensive analysis, integrated blocking
 - ⚠️ Partial: Manual detonation or limited file types
 - ❌ None: No sandbox capability
 
+
 **Step 5: API Availability**
 
 **API Type:**
+
 - RESTful API?
 - SOAP API?
 - GraphQL?
 - CLI with structured output?
 
+
 **API Capabilities:**
+
 - Configuration management via API?
 - Log retrieval via API?
 - Report generation via API?
 - User management via API?
 - Allowlist/blocklist management via API?
 
+
 **API Usage:**
+
 - Current automation using API?
 - Integration with ticketing system?
 - Integration with orchestration platform?
 - Custom scripts/tools?
 
+
 **Documentation:**
+
 - API documentation quality?
 - Examples provided?
 - SDKs/libraries available?
 - Community support?
 
+
 **Rating:**
+
 - ✅ Full: Comprehensive API, well-documented, actively used
 - ⚠️ Partial: Limited API or not actively used
 - ❌ None: No API access
 
+
 **Step 6: Cloud Application Control**
 
 **Capability:**
+
 - Can solution control cloud app usage?
 - Which cloud apps recognized? (O365, Google Workspace, Salesforce, Box, Dropbox, etc.)
 - Granular control (e.g., allow email, block file uploads in same app)?
 
+
 **Cloud App Catalog:**
+
 - How many cloud apps in catalog?
 - App risk scoring?
 - Shadow IT discovery?
 - Sanctioned vs. unsanctioned apps?
 
+
 **Controls:**
+
 - Block access?
 - Read-only access?
 - Block file uploads/downloads?
 - Block specific actions?
 - Require MFA?
 
+
 **Rating:**
+
 - ✅ Full: Comprehensive cloud app catalog, granular control, shadow IT discovery
 - ⚠️ Partial: Limited app catalog or basic block/allow
 - ❌ None: No cloud app control
 
+
 **Step 7: Other Advanced Capabilities**
 
 Document any other specialized capabilities:
+
 - Remote browser isolation
 - Virtual desktop/app delivery integration
 - Zero Trust Network Access (ZTNA) integration
@@ -1571,6 +1830,7 @@ Document any other specialized capabilities:
 - Advanced malware analysis (behavioral, machine learning)
 - Threat hunting capabilities
 - Automated response/remediation
+
 
 #### Evidence to Collect
 
@@ -1581,6 +1841,7 @@ Document any other specialized capabilities:
 - API documentation and integration examples
 - Cloud app catalog and control policies
 - Performance metrics for advanced features
+
 
 #### Quality Checklist
 
@@ -1594,6 +1855,7 @@ Document any other specialized capabilities:
 - [ ] Evidence collected for enabled features
 - [ ] Performance impact of advanced features noted
 
+
 ---
 
 ### Sheet 7: Licensing & Support Tracking
@@ -1605,6 +1867,7 @@ Track all licenses, support contracts, and maintenance agreements for web filter
 #### What to Document
 
 For each solution:
+
 - License type and tier
 - User/device count
 - Expiration dates
@@ -1614,6 +1877,7 @@ For each solution:
 - Renewal process
 - Costs (if appropriate)
 
+
 #### How to Complete
 
 **Step 1: License Inventory**
@@ -1621,106 +1885,136 @@ For each solution:
 For each solution, document:
 
 **License Details:**
+
 - Solution name (from Sheet 1)
 - License type (perpetual, subscription, concurrent, named user, device-based)
 - License tier (basic, standard, premium, enterprise)
 - Features included in this tier
 - Quantity (user count, device count, throughput)
 
+
 **License Status:**
+
 - Current vs. actual usage
 - Overdeployed? (using more than licensed)
 - Underutilized? (paying for more than using)
 - Compliance status
 
+
 **Step 2: Expiration Tracking**
 
 **Expiration Dates:**
+
 - License expiration date
 - Support contract expiration date
 - Maintenance window expiration
 - Subscription renewal date
 
+
 **Days Until Expiry:**
+
 - Calculate days from today
 - Flag if <90 days
 - Flag if <30 days
 - Create renewal timeline
 
+
 **Impact of Expiration:**
+
 - What happens if license expires? (solution stops working, lose support, no updates)
 - Business impact
 - Mitigation plan
 
+
 **Step 3: Support Contract Assessment**
 
 **Support Level:**
+
 - Basic support (email, business hours)
 - Standard support (phone, extended hours)
 - Premium support (24/7, dedicated engineer)
 - On-site support included?
 
+
 **Response Times:**
+
 - Critical: Target response time
 - High: Target response time
 - Medium: Target response time
 - Low: Target response time
 
+
 **Support Channels:**
+
 - Email
 - Phone
 - Web portal
 - Chat
 - On-site escalation
 
+
 **Support Experience:**
+
 - When did you last open a ticket?
 - How was the response?
 - Are response time SLAs met?
 - Satisfaction with support quality?
 
+
 **Step 4: Maintenance & Updates**
 
 **Update Subscription:**
+
 - Are updates included in support contract?
 - Frequency of updates (continuous, quarterly, annual)
 - Types of updates (features, security, bug fixes)
 - Automatic updates or manual?
 
+
 **Version Currency:**
+
 - Current version deployed
 - Latest version available
 - How many versions behind?
 - Upgrade path
 - Upgrade complexity
 
+
 **Step 5: Renewal Process**
 
 **Renewal Timeline:**
+
 - When to start renewal process? (90 days, 180 days before expiry)
 - Who initiates renewal? (IT, procurement, vendor)
 - Approval process
 - Procurement lead time
 
+
 **Cost Management:**
+
 - Current license cost
 - Expected renewal cost
 - Budget available?
 - Cost optimization opportunities?
 
+
 **Vendor Relationship:**
+
 - Primary vendor contact
 - Account manager
 - Technical account manager
 - Contract vehicle (direct, reseller, MSP)
 
+
 **Step 6: Integration with Procurement**
 
 If your organization uses procurement/asset management systems:
+
 - Is licensing data in that system?
 - Is this assessment synced with that data?
 - Who is source of truth?
 - Update frequency
+
 
 **Step 7: Rating Guidelines**
 
@@ -1742,35 +2036,46 @@ If your organization uses procurement/asset management systems:
 - Recent support ticket examples
 - Renewal quotes (if available)
 
+
 #### Common Issues
 
 **Issue 1: License Expiration Not Tracked**
+
 - No central tracking of expiration dates
 - Multiple licenses expire at different times
 - No proactive renewal process
 - Gap: Risk of service interruption
 - Remediation: Central license tracking (this sheet!), calendar reminders
 
+
 **Issue 2: Over-Deployment**
+
 - Licensed for 500 users, protecting 700
 - Gap: License violation, audit risk
 - Remediation: Purchase additional licenses or reduce deployment scope
 
+
 **Issue 3: Paying for Unused Licenses**
+
 - Licensed for 1000 users, protecting 400
 - Gap: Cost inefficiency
 - Remediation: Right-size licenses at renewal
 
+
 **Issue 4: Support Contract Lapsed**
+
 - Support contract expired 6 months ago
 - Can't open tickets, no updates, no patches
 - Gap: Security risk, compliance risk
 - Remediation: Immediate renewal (may require back-payment)
 
+
 **Issue 5: Version Currency**
+
 - Running version from 3 years ago
 - Gap: Missing security patches, features, vendor may not support old version
 - Remediation: Upgrade plan, testing, deployment
+
 
 #### Quality Checklist
 
@@ -1785,6 +2090,7 @@ If your organization uses procurement/asset management systems:
 - [ ] Costs documented (if appropriate)
 - [ ] Upcoming renewals flagged
 
+
 ---
 
 ### Sheet 8: Capability Requirements Matrix
@@ -1796,6 +2102,7 @@ Map policy requirements to deployed solutions. This is your compliance crosswalk
 #### What to Document
 
 For each policy requirement:
+
 - Requirement ID and description
 - Which solution(s) provide this capability
 - Compliance status (Compliant/Partial/Non-Compliant)
@@ -1803,25 +2110,30 @@ For each policy requirement:
 - Gap description (if not compliant)
 - Remediation plan
 
+
 #### How to Complete
 
 **Step 1: Extract Policy Requirements**
 
 Read these policy documents:
+
 - ISMS-POL-A.8.23, Section 2.1 (Threat Protection Requirements)
 - ISMS-POL-A.8.23, Section 2.2 (Category Filtering Approach)
 - ISMS-POL-A.8.23, Section 2.4 (Logging and Monitoring)
 - ISMS-POL-A.8.23, Section 3.3 (Exception Management)
+
 
 List every SHALL, MUST, and SHOULD requirement.
 
 **Step 2: Map Requirements to Solutions**
 
 For each requirement, identify:
+
 - Which solution(s) provide this capability?
 - Is the capability fully deployed?
 - Is it configured correctly?
 - Is it working as expected?
+
 
 **Example Requirements:**
 
@@ -1866,21 +2178,26 @@ If evidence = No, add to gap list and collect evidence.
 For every "Partial" or "Non-Compliant" requirement:
 
 **Document the Gap:**
+
 - What specifically is missing?
 - Why is it missing? (technical limitation, budget, not implemented, etc.)
 - What's the risk if not addressed?
 - What's the business impact?
 
+
 **Remediation Plan:**
+
 - What needs to be done?
 - Who's responsible?
 - What resources are needed?
 - Target completion date
 - Dependencies
 
+
 **Example Gap Analysis:**
 
 **Gap: REQ-005 - Endpoint logs only retained 30 days**
+
 - **Missing:** 60 additional days of log retention
 - **Why:** Default cloud retention setting
 - **Risk:** Can't investigate incidents >30 days old, non-compliant with policy
@@ -1891,7 +2208,9 @@ For every "Partial" or "Non-Compliant" requirement:
 - **Target Date:** 30 days
 - **Dependencies:** Budget approval
 
+
 **Gap: REQ-007 - DNS filter doesn't support user-based policies**
+
 - **Missing:** User-based policy enforcement in DNS filtering
 - **Why:** Technical limitation of current DNS filtering product (IP-based only)
 - **Risk:** Less granular control for remote users
@@ -1901,6 +2220,7 @@ For every "Partial" or "Non-Compliant" requirement:
 - **Cost:** $10,000/year license upgrade OR $0 (accept risk)
 - **Target Date:** Next license renewal (6 months)
 - **Dependencies:** Product evaluation, budget approval
+
 
 **Step 6: Calculate Compliance Metrics**
 
@@ -1938,6 +2258,7 @@ Trend: IMPROVING (+20% YoY)
 - Gap remediation plans
 - Management approval for accepted risks
 
+
 #### Common Mistakes
 
 ❌ **Optimistic assessment** - Marking "Compliant" when actually "Partial"  
@@ -1957,6 +2278,7 @@ Trend: IMPROVING (+20% YoY)
 - [ ] Management review of gaps and plans
 - [ ] Accepted risks formally documented
 
+
 ---
 
 ### Sheet 9: Performance & Incident Tracking
@@ -1968,6 +2290,7 @@ Track performance metrics, reliability, and incidents for all filtering solution
 #### What to Document
 
 For each solution:
+
 - Uptime/availability
 - Performance metrics (latency, throughput)
 - Capacity utilization
@@ -1976,6 +2299,7 @@ For each solution:
 - Mean Time To Resolve (MTTR)
 - Recurring issues
 
+
 #### How to Complete
 
 **Step 1: Uptime & Availability Tracking**
@@ -1983,11 +2307,13 @@ For each solution:
 For each solution, document:
 
 **Availability Metrics:**
+
 - Uptime (last 30 days): X%
 - Uptime (last 90 days): Y%
 - Availability target/SLA: Z%
 - Downtime incidents: Count and duration
 - Planned maintenance windows: Count and duration
+
 
 **Calculation:**
 ```
@@ -2002,28 +2328,35 @@ Uptime = (43,200 - 120) / 43,200 × 100 = 99.72%
 **Step 2: Performance Metrics**
 
 **Latency:**
+
 - Average latency added by filtering: X ms
 - 95th percentile latency: Y ms
 - Maximum observed latency: Z ms
 - User complaints about performance: Yes/No
 
+
 **Throughput:**
+
 - Current average throughput: X Mbps or requests/second
 - Peak throughput: Y Mbps
 - Capacity limit: Z Mbps
 - Utilization: (Current / Capacity) × 100 = %
 
+
 **Resource Utilization:**
+
 - CPU utilization: Average / Peak
 - Memory utilization: Average / Peak
 - Disk utilization: Current / Maximum
 - Network utilization: Average / Peak
+
 
 **Step 3: Incident Tracking**
 
 For each incident (last 90 days):
 
 **Incident Details:**
+
 - Incident ID (from ticketing system)
 - Date/time
 - Duration
@@ -2032,7 +2365,9 @@ For each incident (last 90 days):
 - Resolution
 - Recurrence (is this a repeat issue?)
 
+
 **Incident Categories:**
+
 - Service outage (complete failure)
 - Performance degradation (slow but working)
 - Configuration error (misconfiguration causing issues)
@@ -2043,6 +2378,7 @@ For each incident (last 90 days):
 - Hardware failure (for appliance-based)
 - Software bug
 - External dependency (ISP, cloud provider, etc.)
+
 
 **Example Incident Log:**
 
@@ -2078,14 +2414,17 @@ MTTR = (45 + 120 + 15) / 3 = 60 minutes
 ```
 
 **Target vs. Actual:**
+
 - Target MTTD: ≤15 minutes → Actual: 10 minutes (✅ Meeting target)
 - Target MTTR: ≤30 minutes → Actual: 60 minutes (⚠️ Not meeting target)
+
 
 **Step 5: Recurring Issue Analysis**
 
 Identify issues that occur repeatedly:
 
 **Recurring Issue Template:**
+
 - **Issue:** What keeps happening?
 - **Frequency:** How often? (daily, weekly, monthly)
 - **Impact:** What's affected each time?
@@ -2095,7 +2434,9 @@ Identify issues that occur repeatedly:
 - **Owner:** Who will implement permanent fix?
 - **Status:** Not started / In progress / Planned / Closed
 
+
 **Example:**
+
 - **Issue:** Specific legitimate business site keeps getting blocked
 - **Frequency:** 2-3 times per month
 - **Impact:** 10-20 users can't access site, productivity impact
@@ -2104,6 +2445,7 @@ Identify issues that occur repeatedly:
 - **Permanent Fix:** Create wildcard whitelist entry, escalate to vendor for permanent database fix
 - **Owner:** Security Operations
 - **Status:** In progress
+
 
 **Step 6: Performance Trends**
 
@@ -2116,11 +2458,13 @@ Track trends over time (monthly):
 | Nov 2025 | 99.8% | 9ms | 400 Mbps | 3 | 45 min |
 
 **Trend Analysis:**
+
 - Uptime: Stable (good)
 - Latency: Stable (acceptable)
 - Throughput: Increasing (approaching capacity? Monitor.)
 - Incidents: Decreasing (good)
 - MTTR: Improving (good)
+
 
 #### Evidence to Collect
 
@@ -2131,28 +2475,37 @@ Track trends over time (monthly):
 - Post-incident reviews
 - Capacity planning reports
 
+
 #### Common Issues
 
 **Issue: No Performance Baseline**
+
 - Don't know what "normal" looks like
 - Can't identify degradation
 - Remediation: Establish baseline over 30 days, document normal ranges
 
+
 **Issue: Incidents Not Documented**
+
 - Issues occur but not tracked in ticketing system
 - Can't calculate MTTD/MTTR
 - Can't identify recurring issues
 - Remediation: Enforce ticketing discipline, retrospective incident documentation
 
+
 **Issue: Capacity Not Monitored**
+
 - Don't know utilization level
 - Surprise when hitting capacity limits
 - Remediation: Implement capacity monitoring, set thresholds at 70% and 85%
 
+
 **Issue: No Root Cause Analysis**
+
 - Incidents resolved but root cause unknown
 - Recurrence likely
 - Remediation: Require RCA for all major incidents, document in ticket
+
 
 #### Quality Checklist
 
@@ -2166,6 +2519,7 @@ Track trends over time (monthly):
 - [ ] Evidence collected (reports, tickets)
 - [ ] Capacity concerns flagged
 
+
 ---
 
 ### Sheet 10: Evidence Registry
@@ -2177,6 +2531,7 @@ Central registry of ALL evidence collected during this assessment. This sheet pr
 #### What to Document
 
 For each piece of evidence:
+
 - Evidence ID
 - Description
 - Category
@@ -2187,17 +2542,20 @@ For each piece of evidence:
 - Collected by
 - Audit-ready status
 
+
 #### How to Complete
 
 **Step 1: Collect Evidence Throughout Assessment**
 
 As you complete each sheet, collect evidence:
+
 - Take screenshots with timestamps
 - Export configurations (sanitized)
 - Generate reports
 - Capture logs (sanitized)
 - Document integrations
 - Record test results
+
 
 **Step 2: Organize Evidence**
 
@@ -2260,6 +2618,7 @@ For each evidence item:
 **Step 4: Audit-Ready Checklist**
 
 For evidence to be audit-ready:
+
 - [ ] Clear, readable quality
 - [ ] Timestamps visible (when applicable)
 - [ ] Sensitive data sanitized (passwords, PII, internal IPs)
@@ -2269,17 +2628,20 @@ For evidence to be audit-ready:
 - [ ] File format accessible (PDF, PNG, XLSX - not proprietary)
 - [ ] Organized and labeled clearly
 
+
 **Step 5: Sanitization Guidelines**
 
 Before collecting evidence, sanitize:
 
 **Always Redact:**
+
 - Passwords, API keys, secrets
 - Internal IP addresses (replace with 10.x.x.x or description)
 - Employee names (unless relevant)
 - Customer data
 - Proprietary algorithms
 - License keys (just show that it exists, not the actual key)
+
 
 **Sanitization Example:**
 
@@ -2300,6 +2662,7 @@ Admin Password: [Configured - Not Shown]
 #### Evidence Categories
 
 Organize evidence by these categories:
+
 - **Architecture** - Network diagrams, deployment diagrams, integration diagrams
 - **Configuration** - Config exports, policy screenshots, settings
 - **Security** - Threat reports, detection logs, test results
@@ -2309,6 +2672,7 @@ Organize evidence by these categories:
 - **Operational** - Incident tickets, change records, maintenance logs
 - **Integration** - Integration documentation, API configs, log forwarding
 - **Testing** - Test results, validation reports, proof-of-concept
+
 
 #### Quality Checklist
 
@@ -2323,6 +2687,7 @@ Organize evidence by these categories:
 - [ ] Collectors identified
 - [ ] No missing evidence for critical requirements
 
+
 ---
 
 ## Evidence Collection Best Practices
@@ -2330,25 +2695,32 @@ Organize evidence by these categories:
 ### General Guidelines
 
 **Quality Over Quantity:**
+
 - One high-quality screenshot > ten poor quality images
 - Focus on evidence that PROVES compliance, not just suggests it
 - Clear, readable, well-labeled evidence
 
+
 **Timeliness:**
+
 - Collect evidence when fresh (don't delay)
 - Date all evidence
 - Use timestamps in screenshots when possible
 - Evidence >90 days old may not be accepted by auditors
 
+
 **Organization:**
+
 - Use consistent naming conventions
 - Group by sheet/requirement
 - Create an index (Sheet 10)
 - Make it easy for auditors to find what they need
 
+
 ### Evidence Types
 
 **Screenshots:**
+
 - Capture entire window (show browser URL bar or app title)
 - Include timestamps when possible
 - Show enough context to understand what we're looking at
@@ -2356,70 +2728,95 @@ Organize evidence by these categories:
 - Save in PNG or JPEG format
 - Resolution should be readable (not tiny)
 
+
 **Configuration Exports:**
+
 - Export from admin console when possible
 - Sanitize before saving
 - Include metadata (export date, system version)
 - Save in accessible format (XML, JSON, CSV, not proprietary)
 
+
 **Reports:**
+
 - Use system-generated reports when possible
 - Include report generation date
 - Include timeframe covered (e.g., "Last 30 days")
 - Executive summary sufficient, don't need raw data dumps
 
+
 **Log Samples:**
+
 - Sanitize before collecting
 - Show log format and fields
 - Include recent timestamp (prove logs are current)
 - Don't need thousands of lines - just representative samples
 
+
 **Test Results:**
+
 - Document test methodology
 - Include test date
 - Show both positive (works) and negative (blocked) results
 - Include screenshots of test execution
 
+
 ### Storage & Access
 
 **Storage Options:**
+
 - Secure file share (access-controlled)
 - ISMS documentation repository
 - Evidence management system (if available)
 - Cloud storage (encrypted, access-controlled)
 
+
 **Access Control:**
+
 - Who needs access? (assessment team, auditors, management)
 - Implement access controls
 - Log access for audit trail
 - Don't email evidence (use secure links)
 
+
 **Retention:**
+
 - Keep evidence for audit cycle (typically 1 year minimum)
 - After audit, archive but don't delete
 - Useful for year-over-year comparison
 
+
 ### Common Evidence Gaps
 
 **Gap 1: "We do this but have no evidence"**
+
 - Problem: Claiming compliance without proof
 - Solution: Generate evidence retroactively if possible, or acknowledge gap
 
+
 **Gap 2: Evidence exists but not collected**
+
 - Problem: Evidence available but not documented
 - Solution: Go back and collect it, update registry
 
+
 **Gap 3: Evidence too old**
+
 - Problem: Screenshots from 2 years ago
 - Solution: Collect fresh evidence, show current state
 
+
 **Gap 4: Evidence not sanitized**
+
 - Problem: Sensitive data exposed in evidence
 - Solution: Re-capture with sanitization, or redact before sharing
 
+
 **Gap 5: Evidence not organized**
+
 - Problem: Random files in random folders
 - Solution: Organize per Sheet 10, create clear structure
+
 
 ---
 
@@ -2432,208 +2829,268 @@ This section highlights common mistakes to avoid when completing this assessment
 **Mistake:** Not identifying all filtering solutions in the environment
 
 **Example:** Forgetting about:
+
 - DNS-based filtering for remote users
 - Endpoint protection that includes web filtering
 - Cloud proxy services (Zscaler, Netskope, etc.)
 - Specific segment filtering (OT, guest network, IoT)
 
+
 **Why It Happens:**
+
 - Focusing only on perimeter filtering
 - Different teams manage different solutions
 - Cloud services not tracked in asset inventory
 - Endpoint features overlooked
 
+
 **How to Avoid:**
+
 - Ask network, security, and endpoint teams
 - Review architecture diagrams
 - Check cloud service subscriptions
 - Walk through user workflows (office, remote, VPN, guest)
+
 
 ### Pitfall 2: Aspirational Assessment
 
 **Mistake:** Rating capabilities based on what's POSSIBLE, not what's DEPLOYED
 
 **Example:**
+
 - Solution CAN do HTTPS inspection → rate as "Full"
 - Reality: HTTPS inspection NOT enabled → should be "None"
 
+
 **Why It Happens:**
+
 - Pressure to show compliance
 - Confusion about capability vs. deployment
 - Optimism bias
 
+
 **How to Avoid:**
+
 - Rate current state, not future state
 - Verify in admin console (don't assume)
 - Test critical capabilities
 - Document gaps honestly
+
 
 ### Pitfall 3: Missing Evidence
 
 **Mistake:** Claiming compliance without supporting evidence
 
 **Example:**
+
 - Claim: "We block malware"
 - Evidence: None (or just "Yes")
 - Auditor: "Prove it"
 
+
 **Why It Happens:**
+
 - Assuming evidence exists
 - Not collecting evidence during assessment
 - Thinking description is enough
 
+
 **How to Avoid:**
+
 - Collect evidence as you go
 - For every "Compliant" rating, collect evidence
 - Use Sheet 10 (Evidence Registry)
 - Think like an auditor: "What would I want to see?"
+
 
 ### Pitfall 4: Ignoring Partial Gaps
 
 **Mistake:** Treating "Partial" as acceptable and not creating remediation plans
 
 **Example:**
+
 - Requirement: SHALL retain logs for ≥90 days
 - Current: Retain for 30 days
 - Assessment: "Partial" but no remediation plan
 
+
 **Why It Happens:**
+
 - "Close enough" mindset
 - Assuming partial compliance is sufficient
 - Remediation seems hard/expensive
 
+
 **How to Avoid:**
+
 - Every "Partial" requires a remediation plan
 - Even if remediation is "accept risk" (document it)
 - Prioritize based on risk
 - Get management buy-in
+
 
 ### Pitfall 5: Data Quality Issues
 
 **Mistake:** Inaccurate, outdated, or inconsistent data
 
 **Examples:**
+
 - Version numbers from 2 years ago
 - User counts that don't match reality
 - Performance data from initial deployment
 - License counts that don't match procurement records
 
+
 **Why It Happens:**
+
 - Copy-paste from old assessments
 - Not verifying in admin console
 - Assumptions instead of facts
 
+
 **How to Avoid:**
+
 - Verify every data point
 - Check admin consoles (don't assume)
 - Cross-reference with other systems (asset inventory, procurement)
 - Date all evidence
+
 
 ### Pitfall 6: Siloed Assessment
 
 **Mistake:** Completing assessment in isolation without input from other teams
 
 **Example:**
+
 - Security team completes assessment
 - Network team not consulted (they manage some solutions)
 - Endpoint team not involved (they manage endpoint filtering)
 - Result: Incomplete and inaccurate
 
+
 **Why It Happens:**
+
 - Assuming one team knows everything
 - Not knowing who else is involved
 - Time pressure
 
+
 **How to Avoid:**
+
 - Identify all stakeholders upfront
 - Schedule collaboration sessions
 - Review drafts with all teams
 - Three-level approval process ensures review
+
 
 ### Pitfall 7: No Remediation Follow-Through
 
 **Mistake:** Identifying gaps but never fixing them
 
 **Example:**
+
 - Assessment Q1 2026: "Gap: HTTPS inspection not enabled"
 - Assessment Q2 2026: Same gap
 - Assessment Q3 2026: Same gap
 - Assessment Q4 2026: Same gap
 
+
 **Why It Happens:**
+
 - No ownership assigned
 - No budget allocated
 - Competing priorities
 - "Assessment fatigue" (endless gap lists)
 
+
 **How to Avoid:**
+
 - Assign owners to every gap
 - Get management commitment
 - Set realistic timelines
 - Track progress
 - Escalate stalled remediations
 
+
 ### Pitfall 8: Copy-Paste Errors
 
 **Mistake:** Copying content from other assessments or solutions without customization
 
 **Example:**
+
 - Sheet 2a (Fortigate) says "Cloud-based SaaS deployment"
 - Reality: It's an on-premises appliance
 - Reason: Copied from Sheet 2b (Zscaler) template
 
+
 **Why It Happens:**
+
 - Rushing through assessment
 - Template reuse without customization
 - Not reading what was pasted
 
+
 **How to Avoid:**
+
 - Review each entry carefully
 - Verify facts in admin console
 - Use templates as a starting point, not final content
 - Quality review process
+
 
 ### Pitfall 9: Overlooking Integration Failures
 
 **Mistake:** Assuming integrations work because they're configured
 
 **Example:**
+
 - SIEM integration configured
 - Logs NOT actually flowing to SIEM
 - Assessment: "Integrated with SIEM" ✅
 - Reality: Integration broken for 3 months
 
+
 **Why It Happens:**
+
 - Checking configuration, not operation
 - No validation/testing
 - Integration set up once and forgotten
 
+
 **How to Avoid:**
+
 - Test every integration
 - Check logs in destination system
 - Verify data flow
 - Include integration health in monitoring
+
 
 ### Pitfall 10: Ignoring Performance Impact
 
 **Mistake:** Not documenting performance impact of filtering, especially HTTPS inspection
 
 **Example:**
+
 - Enable HTTPS inspection
 - Users experience slowdowns
 - Help desk flooded with complaints
 - Assessment doesn't mention performance issues
 
+
 **Why It Happens:**
+
 - Focusing only on security capabilities
 - Not monitoring user experience
 - Not collecting feedback
 
+
 **How to Avoid:**
+
 - Monitor latency before/after changes
 - Track user complaints
 - Include performance metrics in assessment
 - Balance security vs. usability
+
 
 ---
 
@@ -2650,6 +3107,7 @@ Before submitting assessment for review, verify:
 - [ ] Performance data collected (Sheet 9)
 - [ ] Evidence registered (Sheet 10)
 
+
 ### Accuracy
 
 - [ ] All data verified in admin consoles (not assumed)
@@ -2659,6 +3117,7 @@ Before submitting assessment for review, verify:
 - [ ] Performance data recent (<30 days)
 - [ ] No copy-paste errors
 
+
 ### Honesty
 
 - [ ] Ratings reflect CURRENT state, not aspirational
@@ -2666,6 +3125,7 @@ Before submitting assessment for review, verify:
 - [ ] "Partial" ratings justified
 - [ ] Limitations acknowledged
 - [ ] No "Unknown" without explanation
+
 
 ### Evidence
 
@@ -2675,6 +3135,7 @@ Before submitting assessment for review, verify:
 - [ ] Evidence organized and indexed (Sheet 10)
 - [ ] Evidence is audit-ready quality
 
+
 ### Remediation
 
 - [ ] All gaps have remediation plans
@@ -2682,6 +3143,7 @@ Before submitting assessment for review, verify:
 - [ ] Target dates set
 - [ ] Resources identified (budget, tools, people)
 - [ ] Management approval for major remediations
+
 
 ### Integration
 
@@ -2691,6 +3153,7 @@ Before submitting assessment for review, verify:
 - [ ] API integrations tested
 - [ ] Monitoring dashboards accessible
 
+
 ### Stakeholder Input
 
 - [ ] Network team reviewed (for infrastructure accuracy)
@@ -2699,12 +3162,14 @@ Before submitting assessment for review, verify:
 - [ ] Procurement reviewed (for licensing accuracy)
 - [ ] Management reviewed (for gap priorities)
 
+
 ### Consistency
 
 - [ ] No contradictions between sheets
 - [ ] Solution names consistent across all sheets
 - [ ] Compliance status consistent with evidence
 - [ ] Gaps in Sheet 8 match capability assessments in Sheets 3-6
+
 
 ---
 
@@ -2719,67 +3184,85 @@ This assessment requires approval from three levels before it's considered compl
 **Reviewer:** Security Engineer or Network Engineer (peer review)
 
 **Focus:**
+
 - Technical accuracy
 - Capability assessments correct?
 - Integration details accurate?
 - Performance data reasonable?
 - Evidence quality acceptable?
 
+
 **Review Checklist:**
+
 - [ ] Solution inventory complete
 - [ ] Capability ratings accurate
 - [ ] Integration details correct
 - [ ] Performance data recent
 - [ ] Technical evidence present
 
+
 **Outcome:**
+
 - Approve → Move to Level 2
 - Request Changes → Return to completer with feedback
+
 
 #### Level 2: Compliance Review
 
 **Reviewer:** Information Security Manager or Compliance Officer
 
 **Focus:**
+
 - Policy compliance
 - Requirements correctly mapped?
 - Gaps properly identified?
 - Remediation plans realistic?
 - Evidence audit-ready?
 
+
 **Review Checklist:**
+
 - [ ] All policy requirements addressed
 - [ ] Compliance status honest
 - [ ] Gaps documented with plans
 - [ ] Evidence is audit-ready
 - [ ] No missing evidence for critical items
 
+
 **Outcome:**
+
 - Approve → Move to Level 3
 - Request Changes → Return with feedback
+
 
 #### Level 3: Management Approval
 
 **Reviewer:** CISO, IT Director, or CTO
 
 **Focus:**
+
 - Strategic alignment
 - Gap priorities acceptable?
 - Resource allocation needed?
 - Risk acceptance decisions?
 - Budget implications understood?
 
+
 **Review Checklist:**
+
 - [ ] Gap priorities align with business risk
 - [ ] Remediation plans are funded/resourced
 - [ ] Accepted risks formally documented
 - [ ] Timelines are realistic
 - [ ] Overall assessment credible
 
+
 **Outcome:**
+
 - Approve → Assessment complete, ready for audit
 - Request Changes → Return with feedback
 - Escalate Issues → Discuss with executive leadership
+
 
 ### Approval Documentation
 
@@ -2809,20 +3292,28 @@ Once approved:
 This assessment (A.8.23.1) is now complete. Use the data collected here as INPUT to:
 
 **A.8.23.2 - Network Coverage Assessment:**
+
 - Use Sheet 1 (Solution Inventory) to identify what solutions need coverage assessment
 - Use deployment models from Sheet 2 to understand where solutions are deployed
 
+
 **A.8.23.3 - Policy Configuration Assessment:**
+
 - Use capability data (Sheets 3-6) to understand what's configurable
 - Use Sheet 8 (Requirements Matrix) to understand policy requirements
 
+
 **A.8.23.4 - Monitoring & Response Assessment:**
+
 - Use logging capabilities (Sheet 5) to assess what can be monitored
 - Use SIEM integration details to understand log flows
 
+
 **A.8.23.5 - Compliance Dashboard:**
+
 - This assessment's data feeds into the consolidated compliance view
 - Gap analysis from Sheet 8 is a key input
+
 
 ### 2. Execute Remediation Plans
 
@@ -2839,6 +3330,7 @@ From Sheet 8 (Gap Analysis):
 This assessment should be updated quarterly:
 
 **What to Update:**
+
 - Sheet 1: Any new solutions deployed?
 - Sheet 2: Version updates, capability changes
 - Sheet 7: License renewals, expirations
@@ -2846,19 +3338,24 @@ This assessment should be updated quarterly:
 - Sheet 9: Performance trends, incidents
 - Sheet 10: New evidence
 
+
 **When to Update:**
+
 - Quarterly (Q1, Q2, Q3, Q4)
 - After major infrastructure changes
 - After solution upgrades
 - Before audits
 
+
 ### 4. Continuous Improvement
 
 Use this assessment to drive improvements:
+
 - Identify chronic performance issues → capacity planning
 - Identify recurring incidents → root cause analysis
 - Identify missing capabilities → roadmap planning
 - Identify training needs → upskill teams
+
 
 ---
 
@@ -2873,6 +3370,7 @@ Use this assessment to drive improvements:
 - **Evidence:** Documentation that proves compliance (screenshots, reports, configs, logs)
 - **Compliance Status:** Compliant / Partial / Non-Compliant / N/A
 - **Remediation:** Actions to close gaps and achieve compliance
+
 
 ---
 
@@ -2891,9 +3389,11 @@ Use this assessment to drive improvements:
 ### Sheet 1: Instructions & Legend
 
 #### Header Section
+
 - **Title:** "ISMS-IMP-A.8.23.1 "" Filtering Infrastructure Assessment"
 - **Subtitle:** "ISO/IEC 27001:2022 - Control A.8.23: Web Filtering"
 - **Styling:** Dark blue header (003366), white text, centered, 40px height
+
 
 #### Document Information Block
 ```
@@ -2928,6 +3428,7 @@ Review Cycle:          Quarterly
 | N/A | Not Applicable | Not applicable to this environment | Gray |
 
 #### Acceptable Evidence (Examples)
+
 - ✓ Network diagrams showing filtering placement
 - ✓ Configuration backups/exports (sanitized)
 - ✓ License agreements and support contracts
@@ -2940,6 +3441,7 @@ Review Cycle:          Quarterly
 - ✓ Compliance reports from the filtering solution
 - ✓ Threat intelligence feed configurations
 - ✓ HTTPS inspection certificates/policies
+
 
 ---
 
@@ -3113,11 +3615,13 @@ Map YOUR solutions' capabilities against POLICY REQUIREMENTS (from ISMS-POL-A.8.
 [Continue for ~30-40 requirements based on policy]
 
 **Summary Metrics:**
+
 - Total Requirements: [Auto-count]
 - Requirements Met (✅): [Auto-count]
 - Partially Met (⚠️): [Auto-count]
 - Not Met (❌): [Auto-count]
 - Compliance Rate: [Formula: Met / Total * 100%]
+
 
 ---
 
@@ -3147,10 +3651,12 @@ Document how web filtering integrates with other security controls and infrastru
 
 ### Network Architecture Notes
 **Free text section (merged cells):**
+
 - Where is filtering applied? (perimeter, endpoint, cloud, hybrid?)
 - Traffic flow description
 - Bypass scenarios (if any)
 - Redundancy/failover configuration
+
 
 ---
 
@@ -3170,9 +3676,11 @@ Centralized view of all licenses and support contracts across filtering solution
 | [Pull from Sheet 2] | [Auto-pull] | [Auto-pull] | [Auto-pull] | [Formula] | Dropdown: Active/Expiring Soon/Expired | Text |
 
 **Conditional Formatting:**
+
 - <30 days until expiry: Red fill
 - 30-90 days: Yellow fill
 - >90 days: Green fill
+
 
 ### Support Contract Registry (Rows 15+)
 
@@ -3187,8 +3695,10 @@ Centralized view of all licenses and support contracts across filtering solution
 | [Pull from Sheet 2] | [Auto-pull] | [Auto-pull] | [Formula] | [Auto-pull] | [Auto-pull] |
 
 **Alert Conditions:**
+
 - >90 days since update: Flag for review
 - Threat DB >7 days old: Flag for review
+
 
 ---
 
@@ -3258,9 +3768,11 @@ Consolidated gap identification and remediation tracking.
 | Low | [Formula] | [Formula] |
 
 **Overall Gap Analysis:**
+
 - Total Gaps Identified: [Formula]
 - Gaps Resolved: [Formula]
 - Resolution Rate: [Formula %]
+
 
 ---
 
@@ -3336,20 +3848,26 @@ Special Considerations:    [Text area]
 ## Cell Styling Reference
 
 ### Header Styles
+
 - **Main Header:** Font: Calibri 14pt bold white, Fill: 003366 (dark blue), Alignment: centered/wrapped, Height: 40px
 - **Subheader:** Font: Calibri 11pt bold white, Fill: 4472C4 (blue), Alignment: centered/wrapped
 - **Column Header:** Font: Calibri 10pt bold black, Fill: D9D9D9 (gray), Alignment: centered/wrapped, Border: thin all sides
 
+
 ### Input Cell Styles
+
 - **Fill:** FFFFCC (light yellow)
 - **Alignment:** Left/center, wrapped
 - **Border:** Thin black on all sides
 
+
 ### Status Fills
+
 - **Deployed (✅):** C6EFCE (green)
 - **Partial (⚠️):** FFEB9C (yellow)
 - **Not Deployed (❌):** FFC7CE (red)
 - **Planned (🔄):** B4C7E7 (blue)
+
 
 ---
 
@@ -3359,6 +3877,7 @@ Special Considerations:    [Text area]
 - **All comparison/analysis sheets:** Freeze at A4
 - **Evidence Register:** Freeze at A5
 - **Approval Sign-Off:** Freeze at A3
+
 
 ---
 
@@ -3388,6 +3907,7 @@ Special Considerations:    [Text area]
 ## Integration Points
 
 ### Related Documents
+
 - ISMS-POL-A.8.23, Section 2.1 (Threat Protection Requirements): Threat Protection Requirements
 - ISMS-POL-A.8.23, Section 2.2 (Category Filtering Approach): Category Filtering Requirements
 - ISMS-IMP-A.8.23.2: Network Coverage Assessment
@@ -3397,18 +3917,22 @@ Special Considerations:    [Text area]
 - Change Management: Link solution updates to change tickets
 - Asset Inventory: Ensure filtering solutions are tracked as assets
 
+
 ### Audit Trail
+
 - All evidence referenced in Evidence Register
 - Gap remediation linked to project management
 - License renewals tracked in procurement system
 - Performance incidents linked to incident management
 - Approval sign-off maintains complete audit trail
 
+
 ---
 
 **END OF SPECIFICATION**
 
-*"The first principle is that you must not fool yourself "" and you are the easiest person to fool."*  
-"" Richard Feynman
+---
 
-**ISMS Maturity Indicator:** If you can complete this assessment WITHOUT mentioning vendor names in your policies, you understand the difference between compliance theater and systems engineering. ✅
+*"I had made an important discovery: essentially, all games have an equilibrium point."*
+— John Nash
+*Where bamboo antennas actually work.* 🎋

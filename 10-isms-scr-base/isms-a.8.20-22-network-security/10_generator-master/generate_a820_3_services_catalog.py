@@ -1,8 +1,20 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# =============================================================================
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-ISMS-Commercial
+# Copyright (c) 2025-2026 ISMS Core Contributors
+#
+# This file is part of ISMS Core.
+#
+# ISMS Core is dual-licensed:
+#   1. AGPL 3.0 (Open Source) - See LICENSE-AGPL.txt
+#   2. Commercial License - Contact vendor for proprietary use
+#
+# You may use this file under either license, at your option.
+# =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.8.20-21-22.3 - Network Services Catalog Generator
+ISMS-IMP-A.8.20-21-22.S3 - Network Services Catalog Generator
 ================================================================================
 
 ISO/IEC 27001:2022 Controls A.8.20, A.8.21, A.8.22: Network Security Framework
@@ -151,7 +163,7 @@ Assessment Domain:    3 of 6 (Network Services Inventory and Security Assessment
 Primary Control:      A.8.21 (Security of Network Services)
 Framework Version:    1.0
 Script Version:       1.0
-Author:               [Developer Name / Organisation]
+Author:               [Organization] ISMS Implementation Team
 Date:                 [Date to be set]
 Last Modified:        [Date to be set]
 Python Version:       3.8+
@@ -316,6 +328,22 @@ This assessment integrates with other ISO 27001 controls:
 ================================================================================
 """
 
+# =============================================================================
+# Standard Library Imports
+# =============================================================================
+import logging
+import sys
+
+# =============================================================================
+# Logging Configuration
+# =============================================================================
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
+
 import sys
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -328,8 +356,8 @@ try:
     from openpyxl.chart import PieChart, BarChart, Reference
     from openpyxl.formatting.rule import CellIsRule
 except ImportError as e:
-    print(f"❌ ERROR: Required library not found: {e}")
-    print("📦 Install required libraries: pip install openpyxl")
+    logger.error(f"❌ ERROR: Required library not found: {e}")
+    logger.info("📦 Install required libraries: pip install openpyxl")
     sys.exit(1)
 
 
@@ -338,7 +366,9 @@ except ImportError as e:
 # ============================================================================
 
 WORKBOOK_NAME = "Network Services Catalog & Security Assessment"
-GENERATED_DATE = datetime.now().strftime("%Y-%m-%d")
+DOCUMENT_ID = "ISMS-IMP-A.8.20-21-22.S3"
+CONTROL_REF = "ISO/IEC 27001:2022 - Controls A.8.20, A.8.21, A.8.22: Network Security"
+GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")
 GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
 
 # Service catalog constants
@@ -557,12 +587,12 @@ def create_instructions_sheet(ws, styles):
     
     ws.title = "Instructions & Guide"
     
-    # Title
+    # Title with Document ID and ISO Control Reference
     ws.merge_cells("A1:H1")
     cell = ws["A1"]
-    cell.value = "Network Services Catalog - Instructions & Guide"
+    cell.value = f"{DOCUMENT_ID}  -  {WORKBOOK_NAME}\n{CONTROL_REF}"
     apply_style(cell, styles["title"])
-    ws.row_dimensions[1].height = 30
+    ws.row_dimensions[1].height = 40
     
     # Document Information
     ws.merge_cells("A3:B3")
@@ -1751,17 +1781,17 @@ def create_service_dependencies_sheet(ws, styles):
 
 def main():
     """Main execution function - orchestrates workbook creation."""
-    print("=" * 80)
-    print("ISMS-IMP-A.8.20-21-22 - Network Services Catalog Generator")
-    print("ISO/IEC 27001:2022 Control A.8.21 (Security of Network Services)")
-    print("=" * 80)
-    print("\n🎯 Systems Engineering Approach: Service-by-Service Security")
-    print("📊 Comprehensive Coverage: DNS, DHCP, NTP, Proxy, LB, AAA, SNMP, Syslog")
-    print("🔒 Audit-Ready: Compliance scoring and gap tracking")
-    print("\n" + "─" * 80)
+    logger.info("=" * 80)
+    logger.info("ISMS-IMP-A.8.20-21-22 - Network Services Catalog Generator")
+    logger.info("ISO/IEC 27001:2022 Control A.8.21 (Security of Network Services)")
+    logger.info("=" * 80)
+    logger.info("\n🎯 Systems Engineering Approach: Service-by-Service Security")
+    logger.info("📊 Comprehensive Coverage: DNS, DHCP, NTP, Proxy, LB, AAA, SNMP, Syslog")
+    logger.info("🔒 Audit-Ready: Compliance scoring and gap tracking")
+    logger.info("\n" + "─" * 80)
     
     # Create workbook
-    print("\n[Phase 1] Initializing workbook structure...")
+    logger.info("\n[Phase 1] Initializing workbook structure...")
     wb = Workbook()
     
     if "Sheet" in wb.sheetnames:
@@ -1783,94 +1813,101 @@ def main():
     for name in sheet_names:
         wb.create_sheet(title=name)
     
-    print(f"✅ Workbook created with {len(sheet_names)} sheets")
+    logger.info(f"✅ Workbook created with {len(sheet_names)} sheets")
     
     # Setup styles and validations
-    print("\n[Phase 2] Setting up styles and data validations...")
+    logger.info("\n[Phase 2] Setting up styles and data validations...")
     styles = setup_styles()
     validations = create_data_validations()
-    print("✅ Styles and validations configured")
+    logger.info("✅ Styles and validations configured")
     
     # Create all sheets
-    print("\n[Phase 3] Generating assessment sheets...")
+    logger.info("\n[Phase 3] Generating assessment sheets...")
     
-    print("  [1/10] Creating Instructions & Guide...")
+    logger.info("  [1/10] Creating Instructions & Guide...")
     create_instructions_sheet(wb["Instructions & Guide"], styles)
-    print("  ✅ Instructions complete")
+    logger.info("  ✅ Instructions complete")
     
-    print("  [2/10] Creating Services_Catalog...")
+    logger.info("  [2/10] Creating Services_Catalog...")
     create_services_catalog_sheet(wb["Services_Catalog"], styles, validations)
-    print(f"  ✅ Services catalog complete ({SERVICE_ROW_COUNT} service entries)")
+    logger.info(f"  ✅ Services catalog complete ({SERVICE_ROW_COUNT} service entries)")
     
-    print("  [3/10] Creating DNS_Security_Assessment...")
+    logger.info("  [3/10] Creating DNS_Security_Assessment...")
     create_dns_security_sheet(wb["DNS_Security_Assessment"], styles, validations)
-    print(f"  ✅ DNS assessment complete ({DNS_ASSESSMENT_ROWS} DNS services)")
+    logger.info(f"  ✅ DNS assessment complete ({DNS_ASSESSMENT_ROWS} DNS services)")
     
-    print("  [4/10] Creating DHCP_Security_Assessment...")
+    logger.info("  [4/10] Creating DHCP_Security_Assessment...")
     create_dhcp_security_sheet(wb["DHCP_Security_Assessment"], styles, validations)
-    print(f"  ✅ DHCP assessment complete ({DHCP_ASSESSMENT_ROWS} DHCP services)")
+    logger.info(f"  ✅ DHCP assessment complete ({DHCP_ASSESSMENT_ROWS} DHCP services)")
     
-    print("  [5/10] Creating NTP_Security_Assessment...")
+    logger.info("  [5/10] Creating NTP_Security_Assessment...")
     create_ntp_security_sheet(wb["NTP_Security_Assessment"], styles, validations)
-    print(f"  ✅ NTP assessment complete ({NTP_ASSESSMENT_ROWS} NTP services)")
+    logger.info(f"  ✅ NTP assessment complete ({NTP_ASSESSMENT_ROWS} NTP services)")
     
-    print("  [6/10] Creating Proxy_Security_Assessment...")
+    logger.info("  [6/10] Creating Proxy_Security_Assessment...")
     create_proxy_security_sheet(wb["Proxy_Security_Assessment"], styles, validations)
-    print(f"  ✅ Proxy assessment complete ({PROXY_ASSESSMENT_ROWS} proxy services)")
+    logger.info(f"  ✅ Proxy assessment complete ({PROXY_ASSESSMENT_ROWS} proxy services)")
     
-    print("  [7/10] Creating Additional_Services...")
+    logger.info("  [7/10] Creating Additional_Services...")
     create_additional_services_sheet(wb["Additional_Services"], styles, validations)
-    print(f"  ✅ Additional services complete ({ADDITIONAL_SERVICE_ROWS} services)")
+    logger.info(f"  ✅ Additional services complete ({ADDITIONAL_SERVICE_ROWS} services)")
     
-    print("  [8/10] Creating Service_Compliance_Summary...")
+    logger.info("  [8/10] Creating Service_Compliance_Summary...")
     create_service_compliance_summary_sheet(wb["Service_Compliance_Summary"], styles)
-    print("  ✅ Compliance summary complete")
+    logger.info("  ✅ Compliance summary complete")
     
-    print("  [9/10] Creating Gap_Analysis...")
+    logger.info("  [9/10] Creating Gap_Analysis...")
     create_gap_analysis_sheet(wb["Gap_Analysis"], styles, validations)
-    print(f"  ✅ Gap analysis complete ({GAP_ROW_COUNT} gap tracking rows)")
+    logger.info(f"  ✅ Gap analysis complete ({GAP_ROW_COUNT} gap tracking rows)")
     
-    print("  [10/10] Creating Service_Dependencies...")
+    logger.info("  [10/10] Creating Service_Dependencies...")
     create_service_dependencies_sheet(wb["Service_Dependencies"], styles)
-    print("  ✅ Service dependencies complete")
+    logger.info("  ✅ Service dependencies complete")
     
     # Save workbook
-    print("\n[Phase 4] Finalizing and saving workbook...")
-    filename = f"ISMS-IMP-A.8.20-21-22.3_Network_Services_Catalog_{GENERATED_TIMESTAMP}.xlsx"
+    logger.info("\n[Phase 4] Finalizing and saving workbook...")
+    filename = f"ISMS-IMP-A.8.20-21-22.S3_Network_Services_Catalog_{GENERATED_TIMESTAMP}.xlsx"
     
     try:
         wb.save(filename)
-        print(f"✅ SUCCESS: {filename}")
+        logger.info(f"✅ SUCCESS: {filename}")
     except Exception as e:
-        print(f"❌ ERROR saving workbook: {e}")
+        logger.error(f"❌ ERROR saving workbook: {e}")
         return 1
     
     # Summary
-    print("\n" + "=" * 80)
-    print("📋 WORKBOOK STRUCTURE SUMMARY")
-    print("=" * 80)
-    print("\n📊 Assessment Sheets:")
-    print(f"  • Services_Catalog ({SERVICE_ROW_COUNT} master service entries)")
-    print(f"  • DNS_Security_Assessment ({DNS_ASSESSMENT_ROWS} rows, 9 controls)")
-    print(f"  • DHCP_Security_Assessment ({DHCP_ASSESSMENT_ROWS} rows, 7 controls)")
-    print(f"  • NTP_Security_Assessment ({NTP_ASSESSMENT_ROWS} rows, 5 controls)")
-    print(f"  • Proxy_Security_Assessment ({PROXY_ASSESSMENT_ROWS} rows, 7 controls)")
-    print(f"  • Additional_Services ({ADDITIONAL_SERVICE_ROWS} rows, 6 controls)")
-    print("\n📈 Analysis & Reporting:")
-    print("  • Service_Compliance_Summary (metrics, pie chart)")
-    print(f"  • Gap_Analysis ({GAP_ROW_COUNT} gap tracking rows)")
-    print("  • Service_Dependencies (dependency mapping)")
-    print("\n" + "=" * 80)
-    print("🚀 NEXT STEPS:")
-    print("  1. Complete Services_Catalog (all network services)")
-    print("  2. Assess each service type in dedicated sheets")
-    print("  3. Document gaps in Gap_Analysis")
-    print("  4. Map dependencies in Service_Dependencies")
-    print("  5. Review Service_Compliance_Summary")
-    print("\n" + "=" * 80 + "\n")
+    logger.info("\n" + "=" * 80)
+    logger.info("📋 WORKBOOK STRUCTURE SUMMARY")
+    logger.info("=" * 80)
+    logger.info("\n📊 Assessment Sheets:")
+    logger.info(f"  • Services_Catalog ({SERVICE_ROW_COUNT} master service entries)")
+    logger.info(f"  • DNS_Security_Assessment ({DNS_ASSESSMENT_ROWS} rows, 9 controls)")
+    logger.info(f"  • DHCP_Security_Assessment ({DHCP_ASSESSMENT_ROWS} rows, 7 controls)")
+    logger.info(f"  • NTP_Security_Assessment ({NTP_ASSESSMENT_ROWS} rows, 5 controls)")
+    logger.info(f"  • Proxy_Security_Assessment ({PROXY_ASSESSMENT_ROWS} rows, 7 controls)")
+    logger.info(f"  • Additional_Services ({ADDITIONAL_SERVICE_ROWS} rows, 6 controls)")
+    logger.info("\n📈 Analysis & Reporting:")
+    logger.info("  • Service_Compliance_Summary (metrics, pie chart)")
+    logger.info(f"  • Gap_Analysis ({GAP_ROW_COUNT} gap tracking rows)")
+    logger.info("  • Service_Dependencies (dependency mapping)")
+    logger.info("\n" + "=" * 80)
+    logger.info("🚀 NEXT STEPS:")
+    logger.info("  1. Complete Services_Catalog (all network services)")
+    logger.info("  2. Assess each service type in dedicated sheets")
+    logger.info("  3. Document gaps in Gap_Analysis")
+    logger.info("  4. Map dependencies in Service_Dependencies")
+    logger.info("  5. Review Service_Compliance_Summary")
+    logger.info("\n" + "=" * 80 + "\n")
     
     return 0
 
 
 if __name__ == "__main__":
     sys.exit(main())
+
+# =============================================================================
+# QA_VERIFIED: 2026-01-31
+# QA_STATUS: PASSED - STANDARDIZATION COMPLETE (Phase 1-3)
+# QA_TOOL: Claude Code Standardization
+# CHANGES: constants, metadata headers, v1.0 versioning, logger output
+# =============================================================================

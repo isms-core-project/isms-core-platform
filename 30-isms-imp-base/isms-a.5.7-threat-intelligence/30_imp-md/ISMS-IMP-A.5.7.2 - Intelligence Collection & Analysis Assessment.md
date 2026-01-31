@@ -1,10 +1,10 @@
-# ISMS-IMP-A.5.7.2 - Intelligence Collection & Analysis Assessment
-## Assessment Specification with User Completion Guide
+**ISMS-IMP-A.5.7.2 - Intelligence Collection & Analysis Assessment**
+**Assessment Specification with User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.5.7: Threat Intelligence
 
 ---
 
-## Document Control
+**Document Control**
 
 | Attribute | Value |
 |-----------|-------|
@@ -45,6 +45,7 @@ This document consists of two parts:
   - Integration Points
   - CVSS Integration Details
 
+
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -68,6 +69,7 @@ This assessment evaluates [Organization]'s CAPABILITY to collect, analyze, and p
 - What tools do we use for analysis?
 - How mature are our intelligence processes?
 
+
 #### Key Principle
 
 This assessment is **operational and process-focused**. You document YOUR actual workflows, methodologies, and capabilities - not what sources you have (that's A.5.7.1) or where you distribute intelligence (that's A.5.7.3).
@@ -85,6 +87,7 @@ This assessment is **operational and process-focused**. You document YOUR actual
 - Analysis tools inventory
 - Process maturity assessment
 - Action items for capability improvements
+
 
 #### How This Relates to Other A.5.7 Assessments
 
@@ -116,11 +119,13 @@ This assessment (A.5.7.2) is the CORE operational intelligence capability assess
 - Experience with threat actor profiling and campaign tracking
 - Understanding of intelligence production methodologies
 
+
 #### Time Commitment
 
 - **Initial assessment:** 10-15 hours (comprehensive capability review across 14 sheets)
 - **Quarterly updates:** 3-5 hours (update metrics, VTL records, campaigns, production tracking)
 - **VTL maintenance:** Ongoing (create records as threats emerge - 15-30 min per record)
+
 
 ### Expected Outputs
 
@@ -157,6 +162,7 @@ Before starting this assessment, gather:
 - MITRE ATT&CK Navigator or equivalent
 - Analysis tools (OSINT collection, malware sandboxes, etc.)
 
+
 #### 2. Documentation
 
 - Intelligence requirements from stakeholders (if documented)
@@ -167,6 +173,7 @@ Before starting this assessment, gather:
 - Campaign tracking notes or documents
 - Tool architecture diagrams
 
+
 #### 3. Historical Data
 
 - Intelligence products produced (last 90 days minimum)
@@ -176,11 +183,13 @@ Before starting this assessment, gather:
 - VTL records created (if any exist)
 - Campaign tracking data
 
+
 #### 4. Policy Requirements
 
 - **ISMS-POL-A.5.7, Section 2.1** (Intelligence Collection Requirements)
 - **ISMS-POL-A.5.7, Section 2.2** (Intelligence Analysis and Production Requirements)
 - **ISMS-POL-A.5.7, Section 2.6** (Vulnerability Management Integration Requirements - VTL schema)
+
 
 ### Required Tools
 
@@ -190,16 +199,21 @@ Before starting this assessment, gather:
 - Access to NVD (National Vulnerability Database) for CVSS validation
 - Screen capture tools (for evidence screenshots)
 
+
 ### Dependencies
 
 This assessment depends on:
+
 - **A.5.7.1 (Sources Assessment)** - Source IDs and capabilities must be documented first
 - VTL records reference sources from A.5.7.1
 
+
 However, outputs from this assessment are INPUT to:
+
 - **A.5.7.3 (Integration & Distribution)** - VTL records (Sheet 8) feed into IOC deployment
 - **A.5.7.4 (Effectiveness Dashboard)** - Quality metrics (Sheet 7) consolidated
 - **A.8.8 (Vulnerability Management)** - VTL records trigger emergency patching workflows
+
 
 ---
 
@@ -264,6 +278,7 @@ However, outputs from this assessment are INPUT to:
 **Steps:**
 1. List EVERY intelligence requirement your organization has
 2. For each requirement:
+
    - Classify type (Strategic, Tactical, Operational, Technical)
    - Define what information is needed
    - Identify priority (Critical, High, Medium, Low)
@@ -271,16 +286,19 @@ However, outputs from this assessment are INPUT to:
    - Identify threat categories
    - List which sources (from A.5.7.1) provide coverage
    - Assess coverage status (Adequate, Minimal, Gap)
+
 3. Identify collection gaps where requirements are not met
 4. Create remediation plans for critical gaps
 
 **Deliverable:** Complete Sheet 2 with all intelligence requirements documented
 
 **Quality Check:**
+
 - ✓ All organizational intelligence needs documented
 - ✓ Critical requirements have ≥2 sources (redundancy)
 - ✓ Gaps identified with remediation plans
 - ✓ Stakeholder needs represented
+
 
 ---
 
@@ -290,11 +308,13 @@ However, outputs from this assessment are INPUT to:
 
 **Steps:**
 1. For each intelligence source (from A.5.7.1):
+
    - Document data format (STIX, JSON, CSV, etc.)
    - Document update frequency
    - Document coverage (geographic, sector, threat types)
    - Document integration status (automated vs. manual)
    - Document quality rating
+
 2. Map sources to collection methods
 3. Document integration platforms (TIP, SIEM, etc.)
 4. Identify collection bottlenecks or issues
@@ -302,10 +322,12 @@ However, outputs from this assessment are INPUT to:
 **Deliverable:** Complete Sheet 3 with collection workflows mapped
 
 **Quality Check:**
+
 - ✓ All sources from A.5.7.1 documented
 - ✓ Automation status clear (automated vs. manual)
 - ✓ Integration points documented
 - ✓ Quality issues flagged
+
 
 ---
 
@@ -316,21 +338,25 @@ However, outputs from this assessment are INPUT to:
 **Steps:**
 1. Log RAW intelligence as it arrives (daily activity)
 2. For each intelligence item:
+
    - Assign unique Log_ID
    - Document source and timestamp
    - Classify intelligence type (IOC, Vulnerability, Campaign, etc.)
    - Assess priority and confidence level
    - Assign to analyst for processing
    - Set analysis deadline
+
 3. Track processing status (Pending, In_Analysis, Completed, Discarded)
 
 **Deliverable:** Running log of all raw intelligence ingested
 
 **Quality Check:**
+
 - ✓ All high-priority intelligence logged within 1 hour of receipt
 - ✓ Critical intelligence assigned immediately
 - ✓ Analysis deadlines set appropriately (Critical: same day, High: 2 days, etc.)
 - ✓ No intelligence "lost" without logging
+
 
 ---
 
@@ -340,11 +366,14 @@ However, outputs from this assessment are INPUT to:
 
 **Steps:**
 1. Document EVERY intelligence product created:
+
    - Strategic reports (quarterly threat landscape, adversary trends)
    - Tactical briefs (campaign analysis, threat actor profiles)
    - Technical alerts (IOC feeds, vulnerability advisories)
    - Operational intelligence (hunting hypotheses, detection rules)
+
 2. For each product:
+
    - Document production date and author
    - Identify target audience
    - Track distribution method
@@ -352,15 +381,18 @@ However, outputs from this assessment are INPUT to:
    - Measure timeliness (expected vs. actual delivery)
    - Collect stakeholder feedback (quality ratings)
    - Document actions implemented (was it used?)
+
 3. Calculate production metrics monthly
 
 **Deliverable:** Complete record of all intelligence products
 
 **Quality Check:**
+
 - ✓ All products documented (no shadow intelligence)
 - ✓ Timeliness tracked (≥80% delivered on time per policy)
 - ✓ Stakeholder feedback collected
 - ✓ Actionability demonstrated (intelligence used in decisions)
+
 
 ---
 
@@ -371,20 +403,24 @@ However, outputs from this assessment are INPUT to:
 **Steps:**
 1. Map intelligence sources to MITRE ATT&CK techniques
 2. For each technique (200+ techniques in Enterprise matrix):
+
    - Identify if intelligence coverage exists
    - List which sources provide coverage
    - Assess detection capability (High, Medium, Low, None)
    - Document if technique seen in wild recently
    - Prioritize gaps based on threat model
+
 3. Generate gap remediation plans for critical techniques
 
 **Deliverable:** Complete MITRE ATT&CK coverage assessment
 
 **Quality Check:**
+
 - ✓ All 14 tactics assessed
 - ✓ Priority techniques have ≥2 sources
 - ✓ Recently-used techniques (last 90 days) have detection capability
 - ✓ Critical gaps have action items
+
 
 ---
 
@@ -394,6 +430,7 @@ However, outputs from this assessment are INPUT to:
 
 **Steps:**
 1. Calculate monthly KPIs:
+
    - Active collection sources (count from Sheet 3)
    - Average intelligence timeliness (from Sheet 5)
    - Requirements coverage percentage (from Sheet 2)
@@ -404,6 +441,7 @@ However, outputs from this assessment are INPUT to:
    - MITRE technique coverage (from Sheet 6)
    - Threat actor profiles maintained (from Sheet 12)
    - Campaigns tracked (from Sheet 13)
+
 2. Compare actual vs. target for each KPI
 3. Identify below-target metrics requiring attention
 4. Update trends (month-over-month)
@@ -411,10 +449,12 @@ However, outputs from this assessment are INPUT to:
 **Deliverable:** Complete quality dashboard with all KPIs
 
 **Quality Check:**
+
 - ✓ All KPIs calculated accurately
 - ✓ Targets from policy documented
 - ✓ Below-target metrics have action items
 - ✓ Trends tracked for executive visibility
+
 
 ---
 
@@ -436,10 +476,13 @@ However, outputs from this assessment are INPUT to:
 **HOW to create VTL record:**
 
 1. **Identify the Vulnerability:**
+
    - CVE identifier (CVE-YYYY-NNNNN)
    - If no CVE, use internal ID (INT-YYYY-NNNNN)
 
+
 2. **Obtain CVSS Score:**
+
    - **Preferred**: CVSS 4.0 from NVD (https://nvd.nist.gov)
    - **Acceptable**: CVSS 3.1 from NVD or vendor advisory
    - **Required Fields**:
@@ -447,7 +490,9 @@ However, outputs from this assessment are INPUT to:
      * CVSS_Base_Score (0.0-10.0, one decimal)
      * CVSS_Vector (full vector string)
 
+
 3. **Document Threat Intelligence:**
+
    - Threat actor (if known): e.g., "APT28 (Fancy Bear)"
    - Threat actor type: Nation-State, Organized_Crime, Hacktivist, etc.
    - Exploitation status: No_Known_Exploit, PoC_Available, Active_Exploitation, Mass_Exploitation
@@ -456,31 +501,42 @@ However, outputs from this assessment are INPUT to:
    - IOCs: IP addresses, domains, file hashes
    - TTPs: MITRE ATT&CK technique IDs (e.g., T1190, T1059)
 
+
 4. **Assess Risk Impact:**
+
    - Critical assets affected: Yes/No
    - Affected systems count: Number of vulnerable systems in [Organization]
    - Business impact: What would happen if exploited?
    - Related incidents: Any incidents already occurred?
 
+
 5. **AUTO-CALCULATED Priority Score:**
+
    - Formula: CVSS_Base_Score + Exploitation_Bonus + Critical_Assets_Bonus + Actor_Bonus (capped at 10.0)
    - DO NOT enter manually - this calculates automatically
 
+
 6. **Determine Remediation Urgency:**
+
    - **Critical**: CVSS ≥8.0 AND Mass_Exploitation AND Critical_Assets_Affected
    - **High**: CVSS ≥7.0 AND Active_Exploitation
    - **Medium**: CVSS ≥4.0 OR PoC_Available
    - **Low**: CVSS <4.0 AND No_Known_Exploit
 
+
 7. **Track Remediation:**
+
    - Remediation status: Open, In_Progress, Patched, Mitigated, Risk_Accepted, Verified
    - Assigned to: Team or person responsible
    - Link to vulnerability management system (A.8.8)
 
+
 **VTL Integration with Control A.8.8:**
+
 - VTL records automatically flag in vulnerability management dashboard
 - High CVSS + active exploitation triggers emergency patching workflow
 - Remediation status syncs bidirectionally between A.5.7.2 (Sheet 8) and A.8.8
+
 
 **Example VTL Record:**
 
@@ -499,12 +555,14 @@ Assigned To: Infrastructure Team
 **Deliverable:** VTL records for all actively exploited vulnerabilities
 
 **Quality Check:**
+
 - ✓ All CVSS scores from authoritative source (NVD preferred)
 - ✓ CVSS vectors complete (not just base scores)
 - ✓ Exploitation status verified (not assumed)
 - ✓ Critical/High urgency records have assignments
 - ✓ Priority Score auto-calculated (not manual entry)
 - ✓ Integration with A.8.8 validated
+
 
 ---
 
@@ -514,6 +572,7 @@ Assigned To: Infrastructure Team
 
 **Steps:**
 1. Assess maturity across capability areas:
+
    - Intelligence requirements management
    - Collection automation
    - Analysis methodologies
@@ -522,12 +581,15 @@ Assigned To: Infrastructure Team
    - Integration with security operations
    - Analyst training and development
    - Tool maturity and integration
+
 2. Use maturity levels (1-5):
+
    - **Level 1 - Initial**: Ad hoc, reactive, undocumented
    - **Level 2 - Repeatable**: Some processes defined but inconsistent
    - **Level 3 - Defined**: Documented processes, generally followed
    - **Level 4 - Managed**: Measured, monitored, controlled
    - **Level 5 - Optimizing**: Continuous improvement, industry-leading
+
 3. Provide evidence for each maturity rating
 4. Identify gaps between current and target maturity
 5. Create improvement roadmap
@@ -535,10 +597,12 @@ Assigned To: Infrastructure Team
 **Deliverable:** Complete process maturity assessment with improvement plan
 
 **Quality Check:**
+
 - ✓ Honest assessment (not aspirational)
 - ✓ Evidence provided for each rating
 - ✓ Improvement targets realistic (typically +1 level per year)
 - ✓ Executive buy-in for maturity improvements
+
 
 ---
 
@@ -548,29 +612,35 @@ Assigned To: Infrastructure Team
 
 **Steps:**
 1. Document EVERY tool used for threat intelligence analysis:
+
    - **TI Platforms**: MISP, ThreatConnect, Anomali, etc.
    - **OSINT Collection**: Maltego, Spiderfoot, Shodan, etc.
    - **Malware Analysis**: Sandboxes, disassemblers, debuggers
    - **Visualization**: MITRE ATT&CK Navigator, link analysis tools
    - **Data Processing**: Python scripts, SIEM queries, SQL databases
    - **Collaboration**: Wikis, Slack, ticketing systems
+
 2. For each tool:
+
    - Document purpose and use cases
    - Assess utilization (high, medium, low)
    - Document licensing and costs
    - Assess analyst skill level with tool
    - Identify integration points
    - Note any limitations or issues
+
 3. Identify tool gaps or redundancies
 4. Plan tool consolidation or acquisitions
 
 **Deliverable:** Complete analysis tools inventory
 
 **Quality Check:**
+
 - ✓ All tools documented (including scripts and manual processes)
 - ✓ Costs tracked for budget planning
 - ✓ Utilization assessed honestly
 - ✓ Integration architecture clear
+
 
 ---
 
@@ -580,6 +650,7 @@ Assigned To: Infrastructure Team
 
 **Steps:**
 1. For each threat actor relevant to [Organization]:
+
    - **Identification**: Name, aliases, attribution (nation-state, group)
    - **Motivation**: Financial gain, espionage, disruption, etc.
    - **Target Profile**: Which sectors, regions, organizations
@@ -589,6 +660,7 @@ Assigned To: Infrastructure Team
    - **Campaigns**: Historical campaigns attributed to actor
    - **Indicators**: IOCs associated with actor
    - **Intelligence Sources**: Which sources track this actor
+
 2. Update profiles when new intelligence emerges
 3. Link actors to active campaigns (Sheet 13)
 4. Link actors to VTL records (Sheet 8) when exploitation attributed
@@ -596,10 +668,12 @@ Assigned To: Infrastructure Team
 **Deliverable:** Maintained threat actor knowledge base
 
 **Quality Check:**
+
 - ✓ Actors relevant to [Organization]'s threat model
 - ✓ Profiles updated when new intelligence available
 - ✓ Attribution confidence documented (Confirmed, Likely, Suspected)
 - ✓ Cross-references to campaigns and VTL records
+
 
 ---
 
@@ -609,6 +683,7 @@ Assigned To: Infrastructure Team
 
 **Steps:**
 1. For each active threat campaign:
+
    - **Campaign Name**: Descriptive name or codename
    - **Threat Actor**: Attribution to known actor (if possible)
    - **Discovery Date**: When campaign first detected
@@ -622,6 +697,7 @@ Assigned To: Infrastructure Team
    - **Affected Organizations**: Known victims
    - **Intelligence Sources**: Which sources reporting on campaign
    - **[Organization] Risk**: Assessment of risk to [Organization] (High, Medium, Low)
+
 2. Update campaigns as intelligence evolves
 3. Mark campaigns "Concluded" when no longer active
 4. Link campaigns to VTL records when vulnerabilities exploited
@@ -629,11 +705,13 @@ Assigned To: Infrastructure Team
 **Deliverable:** Active campaign tracking dashboard
 
 **Quality Check:**
+
 - ✓ All active campaigns documented
 - ✓ [Organization] risk assessed for each campaign
 - ✓ IOCs extracted and ready for deployment (feeds into A.5.7.3)
 - ✓ VTL linkage maintained (campaign exploiting CVE-XXXX)
 - ✓ Status updated regularly (weekly for active campaigns)
+
 
 ---
 
@@ -643,6 +721,7 @@ Assigned To: Infrastructure Team
 
 **Steps:**
 1. For each analyst on TI team:
+
    - Document role and hire date
    - List certifications (GCTI, GIAC, CISSP, etc.)
    - Track training completed and hours (YTD and annual target)
@@ -655,6 +734,7 @@ Assigned To: Infrastructure Team
    - Document current workload
    - Track production metrics (reports authored, VTL records created)
    - Assess quality rating
+
 2. Identify skill gaps across team
 3. Create training plans to close gaps
 4. Monitor training completion vs. targets
@@ -662,10 +742,12 @@ Assigned To: Infrastructure Team
 **Deliverable:** Complete analyst skills matrix
 
 **Quality Check:**
+
 - ✓ All analysts documented
 - ✓ Training on track (actual ≥ target)
 - ✓ Skill gaps identified with training plans
 - ✓ Workload balanced (no "Overloaded" analysts)
+
 
 ---
 
@@ -676,6 +758,7 @@ Assigned To: Infrastructure Team
 **Steps:**
 1. Review all assessment sheets (2-9, 11-13) for identified gaps
 2. For each gap, create action item with:
+
    - Description of gap
    - Impact assessment (High, Medium, Low)
    - Source sheet reference
@@ -683,21 +766,26 @@ Assigned To: Infrastructure Team
    - Target completion date
    - Status (Not Started, In Progress, Completed, Blocked)
    - Notes and progress updates
+
 3. Prioritize action items:
+
    - **Critical**: Prevents meeting policy requirements, high risk
    - **High**: Significant capability gap, impacts effectiveness
    - **Medium**: Improvement opportunity, non-critical
    - **Low**: Nice-to-have enhancement
+
 4. Track progress weekly
 5. Update status regularly
 
 **Deliverable:** Complete action items register with progress tracking
 
 **Quality Check:**
+
 - ✓ All gaps from Sheets 2-9, 11-13 captured
 - ✓ High/Critical items have owners and target dates
 - ✓ Status current (updated weekly)
 - ✓ Completed items have verification notes
+
 
 ---
 
@@ -708,25 +796,31 @@ Assigned To: Infrastructure Team
 **Approval Workflow:**
 
 **Level 1: Threat Intelligence Team Lead**
+
 - Reviews assessment for completeness and accuracy
 - Verifies all sheets populated correctly
 - Confirms VTL records (Sheet 8) operational and accurate
 - Confirms campaign tracking (Sheet 13) current
 - Signs off on operational accuracy
 
+
 **Level 2: CISO**
+
 - Reviews assessment for policy compliance
 - Verifies quality metrics (Sheet 7) meet targets
 - Reviews VTL integration with Control A.8.8
 - Reviews high-impact action items (Sheet 10)
 - Signs off on strategic approval
 
+
 **Level 3: Executive Management (if required)**
+
 - Required if major capability gaps identified
 - Required if significant budget needed for improvements
 - Reviews analyst capability gaps and training needs
 - Approves resources for capability improvements
 - Signs off on executive approval
+
 
 **Deliverable:** Fully approved assessment workbook
 
@@ -739,6 +833,7 @@ Assigned To: Infrastructure Team
 **User Action:** READ ONLY - No data entry required
 
 **What's Provided:**
+
 - Workbook overview (14 sheets)
 - Data entry instructions
 - CVSS integration guidance for VTL records (Sheet 8)
@@ -748,20 +843,25 @@ Assigned To: Infrastructure Team
 - Contact information for Threat Intelligence Team
 - Link to policy framework (ISMS-POL-A.5.7)
 
+
 **Key Concepts:**
 
 **VulnerabilityThreatLink (VTL) Schema:**
+
 - **Purpose**: Link CVE vulnerabilities to active threat intelligence
 - **CVSS Integration**: Uses CVSS 4.0 (preferred) or 3.1 for severity scoring
 - **Priority Scoring**: Auto-calculated from CVSS + threat factors
 - **Integration**: Bidirectional sync with Control A.8.8 vulnerability management
 - **Emergency Triggers**: CVSS ≥8.0 + Mass Exploitation + Critical Assets = Emergency patching
 
+
 **Intelligence Types:**
+
 - **Strategic**: Long-term trends, adversary capabilities, geopolitical context
 - **Operational**: Campaign analysis, TTP documentation, hunt hypotheses
 - **Tactical**: IOCs, detection rules, immediate defensive actions
 - **Technical**: Malware analysis, exploit details, vulnerability advisories
+
 
 ---
 
@@ -793,15 +893,19 @@ Assigned To: Infrastructure Team
 | **Notes** | Free text | Primary coverage from commercial TI platform |
 
 **Tips:**
+
 - Start with Critical and High priority requirements
 - Requirements should reflect stakeholder needs (SOC, IR, executives, risk management)
 - Ensure Critical requirements have ≥2 sources (redundancy)
 - Be specific in descriptions (not just "ransomware intelligence" but "ransomware campaigns targeting financial sector in DACH region")
 
+
 **Conditional Formatting:**
+
 - Coverage_Status "Gap" → Red (critical issue)
 - Coverage_Status "Minimal" → Yellow (single point of failure)
 - Priority "Critical" + Coverage_Status "Gap" → Bold red (immediate attention)
+
 
 ---
 
@@ -833,10 +937,12 @@ Assigned To: Infrastructure Team
 | **Notes** | Free text | Critical source for APT intelligence |
 
 **Tips:**
+
 - Pull source list from A.5.7.1 (don't retype)
 - Focus on HOW intelligence is collected (automated vs. manual)
 - Document actual integration status (not aspirational)
 - Update quality ratings based on recent performance
+
 
 ---
 
@@ -865,14 +971,18 @@ Assigned To: Infrastructure Team
 | **Notes** | Free text | Requires urgent analysis, emergency patching likely |
 
 **Tips:**
+
 - Log Critical intelligence within 15 minutes of receipt
 - Set realistic analysis deadlines (Critical: same day, High: 2 days, Medium: 1 week)
 - Track everything (don't lose intelligence in email or Slack)
 - Update Processed_Status as analysis progresses
 
+
 **Conditional Formatting:**
+
 - Priority "Critical" + Status "Pending" → Red (urgent action needed)
 - Analysis_Deadline overdue → Bold red
+
 
 ---
 
@@ -906,15 +1016,19 @@ Assigned To: Infrastructure Team
 | **Notes** | Free text | Led to emergency patching of 15 servers |
 
 **Tips:**
+
 - Document EVERY product (even internal notes if distributed)
 - Collect stakeholder feedback actively (don't assume)
 - Track actionability (was intelligence actually used?)
 - Celebrate successes (High impact products with actions implemented)
 
+
 **Conditional Formatting:**
+
 - Timeliness_Met "No" → Yellow (missed deadline)
 - Quality_Score "Poor" → Red (quality issue)
 - Impact_Rating "High" + Actions_Implemented > 0 → Green (success!)
+
 
 ---
 
@@ -927,6 +1041,7 @@ Assigned To: Infrastructure Team
 **Structure:** Matrix with tactics and techniques
 
 **Columns:**
+
 - **MITRE_Tactic**: Dropdown (14 tactics)
 - **MITRE_Technique_ID**: Technique ID (e.g., T1190)
 - **Technique_Name**: Technique name
@@ -937,15 +1052,20 @@ Assigned To: Infrastructure Team
 - **Priority_For_Coverage**: Dropdown (Critical, High, Medium, Low)
 - **Gap_Remediation_Plan**: If Gap: what's the plan?
 
+
 **Tips:**
+
 - Use MITRE ATT&CK Navigator for visualization
 - Focus on techniques seen in wild (last 90 days) first
 - Prioritize based on [Organization]'s threat model
 - Critical gaps = technique seen recently + no coverage + high impact
 
+
 **Conditional Formatting:**
+
 - Coverage_Status "Gap" + Priority "Critical" → Red
 - Detection_Capability "None" + Last_Seen < 90 days → Orange
+
 
 ---
 
@@ -971,15 +1091,19 @@ Assigned To: Infrastructure Team
 | **Campaigns_Tracked_Active** | Sheet 13 | ≥3 | Count active campaigns |
 
 **Tips:**
+
 - Calculate monthly, track trends
 - Compare actual vs. target for each metric
 - Below-target metrics require action items
 - Present to CISO monthly
 
+
 **Conditional Formatting:**
+
 - Status "Below Target" → Red
 - Status "At Target" → Green
 - Status "Above Target" → Dark Green
+
 
 ---
 
@@ -1030,29 +1154,37 @@ Assigned To: Infrastructure Team
 ```
 Priority_Score = MIN(10, 
   CVSS_Base_Score 
+
   + IF(Exploitation_Status="Mass_Exploitation", 2, IF("Active_Exploitation", 1, 0))
   + IF(Critical_Assets_Affected="Yes", 2, 0)
   + IF(Threat_Actor_Type="Nation-State", 1, 0)
+
 )
 ```
 
 **CVSS Vector Examples:**
+
 - **CVSS 4.0**: `CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N`
 - **CVSS 3.1**: `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H`
 
+
 **CVSS Sources:**
+
 - **NVD** (National Vulnerability Database): https://nvd.nist.gov
 - **Vendor Advisories**: Vendor-published CVSS scores
 - **CISA KEV**: https://www.cisa.gov/known-exploited-vulnerabilities-catalog
 - **Threat Intelligence Platforms**: Commercial TI feeds with CVSS
 
+
 **Conditional Formatting:**
+
 - **CVSS ≥9.0** → Red (#DC143C) - Critical
 - **CVSS 7.0-8.9** → Orange (#FF8C00) - High
 - **CVSS 4.0-6.9** → Yellow (#FFD700) - Medium
 - **CVSS <4.0** → Green (#90EE90) - Low
 - **CVSS ≥9.0 + Mass_Exploitation** → BRIGHT RED + BOLD (Emergency!)
 - **CVSS ≥7.0 + Active_Exploitation** → RED + BOLD
+
 
 **Integration Workflow with Control A.8.8:**
 1. TI analyst discovers active exploitation → Creates VTL record with CVSS
@@ -1064,11 +1196,13 @@ Priority_Score = MIN(10,
 7. TI analyst verifies remediation
 
 **Tips:**
+
 - Use CVSS 4.0 when available (preferred)
 - Copy full CVSS vector (not just base score)
 - Verify exploitation status (don't assume)
 - Update as threat evolves (exploitation status may change)
 - Link to related incidents (demonstrates value)
+
 
 ---
 
@@ -1099,6 +1233,7 @@ Priority_Score = MIN(10,
 | 5 | Optimizing | Continuous improvement, industry-leading |
 
 **Columns:**
+
 - **Capability_Area**
 - **Current_Maturity_Level** (1-5)
 - **Evidence** (what demonstrates this level?)
@@ -1107,11 +1242,14 @@ Priority_Score = MIN(10,
 - **Improvement_Actions** (what's needed to reach target?)
 - **Target_Date** (when will target be reached?)
 
+
 **Tips:**
+
 - Be honest (not aspirational) - auditors will verify
 - Provide specific evidence for each rating
 - Target improvements realistically (typically +1 level per year)
 - Focus on high-impact capability areas first
+
 
 ---
 
@@ -1138,6 +1276,7 @@ Priority_Score = MIN(10,
 | **Verification** | How will completion be verified? | Re-assess Sheet 6, verify T1190 has ≥2 sources |
 
 **Action Item Sources:**
+
 - **Sheet 2**: Coverage gaps (requirements with no sources)
 - **Sheet 3**: Collection issues (manual processes that should be automated)
 - **Sheet 4**: Analyst skill gaps, training deficits
@@ -1150,22 +1289,29 @@ Priority_Score = MIN(10,
 - **Sheet 12**: Threat actor intelligence gaps
 - **Sheet 13**: Campaign monitoring gaps
 
+
 **Priority Definitions:**
+
 - **P1-Critical**: Policy violation, complete capability gap, active risk
 - **P2-High**: Significant gap impacting effectiveness
 - **P3-Medium**: Improvement opportunity, non-critical
 - **P4-Low**: Nice-to-have enhancement
 
+
 **Tips:**
+
 - Create action items immediately when gaps identified
 - Assign to person with authority to resolve
 - Update status weekly (minimum for P1/P2)
 - Verify completion before marking "Completed"
 
+
 **Conditional Formatting:**
+
 - Priority "P1-Critical" → Red background
 - Target_Date overdue + Status ≠ "Completed" → Bold red
 - Status "Blocked" → Yellow background
+
 
 ---
 
@@ -1193,10 +1339,12 @@ Priority_Score = MIN(10,
 | **Notes** | Free text | Core platform, all analysts trained |
 
 **Tips:**
+
 - Include scripts and manual processes (not just commercial tools)
 - Be honest about utilization (low-use tools may be candidates for retirement)
 - Document skill levels honestly (identifies training needs)
 - Identify integration gaps
+
 
 ---
 
@@ -1230,10 +1378,12 @@ Priority_Score = MIN(10,
 | **Notes** | Free text | Active targeting of government entities in Europe |
 
 **Tips:**
+
 - Focus on actors relevant to [Organization]'s threat model
 - Update when new intelligence emerges
 - Link to campaigns (Sheet 13) and VTL records (Sheet 8)
 - Document threat level to [Organization] realistically
+
 
 ---
 
@@ -1269,11 +1419,13 @@ Priority_Score = MIN(10,
 | **Notes** | Free text | Campaign primarily targeting government, low direct risk |
 
 **Tips:**
+
 - Update Active campaigns weekly (at minimum)
 - Mark "Concluded" when campaign no longer active
 - Link CVEs to VTL records (Sheet 8)
 - Assess risk to [Organization] honestly
 - Extract IOCs for deployment (feeds into A.5.7.3)
+
 
 ---
 
@@ -1284,6 +1436,7 @@ Priority_Score = MIN(10,
 **Purpose:** Document provenance and version control
 
 **What's Included:**
+
 - Workbook generation date/time
 - Generator script version
 - Assessment version number
@@ -1292,6 +1445,7 @@ Priority_Score = MIN(10,
 - Total sheets in workbook
 - Named ranges defined
 - Change log
+
 
 ---
 
@@ -1302,60 +1456,80 @@ Priority_Score = MIN(10,
 **Per Assessment Phase:**
 
 **Phase 2 (Intelligence Requirements):**
+
 - Stakeholder interviews documenting intelligence needs
 - Risk assessment showing threat-based requirements
 - Executive directives or board mandates
 
+
 **Phase 3 (Collection Workflows):**
+
 - TIP integration architecture diagrams
 - API configuration screenshots
 - STIX feed examples
 - Collection automation scripts
 
+
 **Phase 5 (Production Tracking):**
+
 - Sample intelligence products (redact sensitive)
 - Stakeholder feedback emails or surveys
 - Metrics showing production volume and timeliness
 
+
 **Phase 6 (MITRE Mapping):**
+
 - ATT&CK Navigator exports showing coverage
 - Gap analysis spreadsheets
 - Prioritization matrices
 
+
 **Phase 7 (Quality Metrics):**
+
 - Monthly KPI dashboards
 - Trend charts (month-over-month)
 - Executive reports showing metrics
 
+
 **Phase 8 (VTL Records):**
+
 - NVD CVSS score screenshots
 - Threat intelligence reports documenting exploitation
 - Vulnerability scan results showing affected systems
 - Emergency patching approvals/communications
 - Remediation verification (patch deployment confirmations)
 
+
 **Phase 9 (Process Maturity):**
+
 - Process documentation showing maturity level
 - Training completion records
 - Tool integration architecture
 - Quality assurance reports
 
+
 **Phase 11 (Analysis Tools):**
+
 - Tool architecture diagrams
 - License agreements
 - Integration configurations
 - Training materials
 
+
 **Phase 12 (Threat Actor Profiles):**
+
 - Intelligence reports on actors
 - Attribution analysis
 - TTP mapping documentation
 
+
 **Phase 13 (Campaign Tracking):**
+
 - Campaign intelligence reports
 - IOC extraction worksheets
 - Risk assessments
 - Monitoring dashboards
+
 
 ### Evidence Storage
 
@@ -1391,19 +1565,23 @@ Evidence/
 **Problem:** VTL records created without proper CVSS validation or threat intelligence verification
 
 **Symptoms:**
+
 - CVSS scores don't match NVD
 - Exploitation status unverified (assumed)
 - Missing CVSS vectors (only base scores)
 - No threat actor attribution
 - No IOCs documented
 
+
 **Solution:**
+
 - ALWAYS verify CVSS from NVD (https://nvd.nist.gov)
 - Copy full CVSS vector (not just score)
 - Verify exploitation status from multiple sources
 - Document threat actor if known (even if low confidence)
 - Extract all available IOCs
 - Link to source intelligence reports (Evidence_Link)
+
 
 ---
 
@@ -1412,17 +1590,21 @@ Evidence/
 **Problem:** VTL records created but not integrated with vulnerability management
 
 **Symptoms:**
+
 - Vulnerability team unaware of active exploitation
 - Emergency patching not triggered
 - Remediation_Status never updated
 - No bidirectional sync between A.5.7.2 and A.8.8
 
+
 **Solution:**
+
 - Establish integration workflow with vulnerability management team
 - Share VTL Critical/High records immediately (within 4 hours)
 - Track remediation status updates from A.8.8
 - Hold weekly syncs between TI and vulnerability teams
 - Demonstrate integration in audits (key compliance requirement)
+
 
 ---
 
@@ -1431,17 +1613,21 @@ Evidence/
 **Problem:** Sheet 13 filled in once but never updated
 
 **Symptoms:**
+
 - Campaigns marked "Active" but concluded months ago
 - No updates in Last_Updated field
 - Risk assessments outdated
 - IOCs not extracted for deployment
 
+
 **Solution:**
+
 - Update Active campaigns WEEKLY (minimum)
 - Mark campaigns "Concluded" when no longer active (don't leave orphaned)
 - Refresh risk assessments as campaigns evolve
 - Extract IOCs for deployment to A.5.7.3
 - Hold regular campaign review meetings
+
 
 ---
 
@@ -1450,17 +1636,21 @@ Evidence/
 **Problem:** Sheet 9 maturity levels not supported by evidence
 
 **Symptoms:**
+
 - Claims Level 4 "Managed" but no metrics exist
 - Claims Level 5 "Optimizing" but no continuous improvement
 - Auditor challenges maturity ratings
 - Cannot provide documentation
 
+
 **Solution:**
+
 - Be honest (not aspirational) in maturity ratings
 - Collect evidence BEFORE claiming maturity level
 - Document processes before claiming Level 3+
 - Track metrics before claiming Level 4+
 - Implement continuous improvement before claiming Level 5
+
 
 ---
 
@@ -1469,17 +1659,21 @@ Evidence/
 **Problem:** Sheet 4 shows skill gaps but no training plans
 
 **Symptoms:**
+
 - Training_Hours below target for multiple analysts
 - Critical skills (MITRE ATT&CK, CVSS) at Novice/Intermediate
 - No training budget allocated
 - Skills gaps same year-over-year
 
+
 **Solution:**
+
 - Create individual training plans for each analyst
 - Budget for training (conferences, certifications, courses)
 - Track training completion monthly
 - Measure skill improvement (re-assess annually)
 - Tie training to career development
+
 
 ---
 
@@ -1502,6 +1696,7 @@ Evidence/
 - [ ] **Sheet 12:** Threat actor profiles for relevant adversaries
 - [ ] **Sheet 13:** Active campaigns tracked and current
 
+
 ### Data Quality
 
 - [ ] No "TBD", "Unknown", or blank required fields
@@ -1513,6 +1708,7 @@ Evidence/
 - [ ] Analyst training hours current (YTD)
 - [ ] All formulas calculate correctly
 
+
 ### Evidence
 
 - [ ] VTL records have NVD screenshots for CVSS validation
@@ -1521,6 +1717,7 @@ Evidence/
 - [ ] MITRE coverage has ATT&CK Navigator exports
 - [ ] Process maturity has supporting documentation
 - [ ] Tools inventory has architecture diagrams
+
 
 ### Policy Compliance
 
@@ -1532,12 +1729,14 @@ Evidence/
 - [ ] MITRE technique coverage ≥70%
 - [ ] VTL records integrate with A.8.8 (bidirectional)
 
+
 ### Integration
 
 - [ ] Sources reference A.5.7.1 source IDs correctly
 - [ ] VTL records ready for use by A.5.7.3 (IOC deployment)
 - [ ] Quality metrics ready for A.5.7.4 dashboard consolidation
 - [ ] Integration with A.8.8 operational and verified
+
 
 ### Approvals
 
@@ -1546,6 +1745,7 @@ Evidence/
 - [ ] Executive Management approved (if required)
 - [ ] Approval dates documented
 - [ ] Approval signatures obtained
+
 
 ---
 
@@ -1556,6 +1756,7 @@ Evidence/
 **Level 1: Threat Intelligence Team Lead**
 
 **Responsibilities:**
+
 - Review assessment for completeness and operational accuracy
 - Verify all sheets populated correctly
 - Confirm VTL records operational and CVSS-validated
@@ -1564,11 +1765,14 @@ Evidence/
 - Review process maturity assessment
 - Sign off on operational accuracy
 
+
 **Approval Criteria:**
+
 - All required sheets complete
 - Quality checklist passed
 - Evidence collected
 - Integration with A.5.7.1 and A.8.8 verified
+
 
 **Timeline:** 3-5 business days after submission
 
@@ -1577,6 +1781,7 @@ Evidence/
 **Level 2: CISO**
 
 **Responsibilities:**
+
 - Review assessment for policy compliance
 - Verify quality metrics meet targets (Sheet 7)
 - Review VTL integration with Control A.8.8
@@ -1586,12 +1791,15 @@ Evidence/
 - Provide strategic guidance on capability development
 - Sign off on strategic approval
 
+
 **Approval Criteria:**
+
 - Policy compliance verified
 - Quality metrics meet or exceed targets
 - VTL integration operational
 - Critical action items have owners and realistic timelines
 - Process improvement roadmap approved
+
 
 **Timeline:** 5 business days after Team Lead approval
 
@@ -1600,22 +1808,28 @@ Evidence/
 **Level 3: Executive Management (if required)**
 
 **Trigger Conditions:**
+
 - Major capability gaps requiring significant investment
 - Analyst skill gaps requiring hiring or major training budget
 - Process maturity improvements requiring organizational change
 - Integration with A.8.8 requiring cross-team coordination and resources
 
+
 **Responsibilities:**
+
 - Review business justification for capability investments
 - Approve budget for tools, training, or personnel
 - Provide strategic direction on program development
 - Approve cross-organizational integration initiatives
 
+
 **Approval Criteria:**
+
 - Business case justified
 - Budget approved
 - Strategic alignment confirmed
 - Resources allocated
+
 
 **Timeline:** 10 business days after CISO approval
 
@@ -1648,15 +1862,18 @@ Evidence/
 **Example:** `ISMS_A_5_7_2_Collection_Analysis_Assessment_20260121.xlsx`
 
 **Workbook Settings:**
+
 - Format: Excel 2016+ (.xlsx)
 - Calculation: Automatic
 - Protection: Sheets protected (only yellow cells editable)
 - Macros: None (VBA-free for security)
 - External Links: References to ISMS-IMP-A.5.7.1 source IDs
 
+
 **Total Sheets:** 14
 
 **Tab Colors:**
+
 - Instructions: Blue (#4472C4)
 - Requirements & Collection (Sheets 2-4): Yellow (#FFD966)
 - Production & Analysis (Sheets 5-6): Orange (#FFA500)
@@ -1666,17 +1883,19 @@ Evidence/
 - Tools & Intelligence (Sheets 11-13): Teal (#00B0F0)
 - Metadata: Gray (#D9D9D9)
 
+
 ---
 
 ## Sheet-by-Sheet Technical Specifications
 
-## 5. Sheet Specifications
+# Sheet Specifications
 
-### 5.1 Sheet 1: Instructions
+## Sheet 1: Instructions
 
 **Purpose**: Guide users through the workbook structure and data entry requirements
 
 **Content**:
+
 - Workbook overview (14 sheets)
 - Data entry instructions
 - CVSS integration in Sheet 8
@@ -1685,9 +1904,10 @@ Evidence/
 - Color coding legend
 - Contact information for Threat Intelligence Team
 
+
 ---
 
-### 5.2 Sheet 2: Intelligence_Requirements
+## Sheet 2: Intelligence_Requirements
 
 **Purpose**: Map collection capabilities to intelligence requirements
 
@@ -1715,13 +1935,15 @@ Evidence/
 | Notes | Text | Free text | No | Primary coverage from commercial TI platform |
 
 **Conditional Formatting**:
+
 - Coverage_Status "Gap" → Red background
 - Coverage_Status "Minimal" → Yellow background
 - Priority "Critical" + Coverage_Status "Gap" → Bold red background
 
+
 ---
 
-### 5.3 Sheet 3: Collection_Sources
+## Sheet 3: Collection_Sources
 
 **Purpose**: Document intelligence collection sources and their characteristics
 
@@ -1747,13 +1969,15 @@ Evidence/
 | Notes | Text | Free text | No | Critical source for APT intelligence |
 
 **Conditional Formatting**:
+
 - Integration_Status "Deprecated" → Gray background
 - Contract_Expiry within 60 days → Yellow background
 - Data_Quality_Rating "Poor" → Red background
 
+
 ---
 
-### 5.4 Sheet 4: Raw_Intelligence_Log
+## Sheet 4: Raw_Intelligence_Log
 
 **Purpose**: Track raw intelligence ingestion for audit trail
 
@@ -1776,12 +2000,14 @@ Evidence/
 | Notes | Text | Free text | No | Requires urgent analysis |
 
 **Conditional Formatting**:
+
 - Priority "Critical" + Processed_Status "Pending" → Red background
 - Analysis_Deadline overdue → Bold red
 
+
 ---
 
-### 5.5 Sheet 5: Intelligence_Production
+## Sheet 5: Intelligence_Production
 
 **Purpose**: Track intelligence products and quality metrics
 
@@ -1811,19 +2037,22 @@ Evidence/
 | Notes | Text | Free text | No | Led to emergency patching of 15 servers |
 
 **Conditional Formatting**:
+
 - Timeliness_Met "No" → Yellow background
 - Quality_Score "Poor" → Red background
 - Impact_Rating "High" + Actions_Implemented > 0 → Green background
 
+
 ---
 
-### 5.6 Sheet 6: Coverage_Matrix
+## Sheet 6: Coverage_Matrix
 
 **Purpose**: Map MITRE ATT&CK technique coverage
 
 **Structure**: Matrix format with tactics and techniques
 
 **Columns**:
+
 - MITRE_Tactic (Column A)
 - MITRE_Technique_ID (Column B)
 - Technique_Name (Column C)
@@ -1834,13 +2063,16 @@ Evidence/
 - Priority_For_Coverage (Dropdown: Critical, High, Medium, Low)
 - Gap_Remediation_Plan (Text)
 
+
 **Conditional Formatting**:
+
 - Coverage_Status "Gap" + Priority "Critical" → Red background
 - Detection_Capability "None" + Last_Seen_In_Wild < 90 days → Orange background
 
+
 ---
 
-### 5.7 Sheet 7: Quality_Metrics
+## Sheet 7: Quality_Metrics
 
 **Purpose**: Track key performance indicators
 
@@ -1860,22 +2092,26 @@ Evidence/
 | Campaigns_Tracked_Active | Number | Formula | Auto | From Sheet 13 |
 
 **Conditional Formatting**:
+
 - Status "Below Target" → Red background
 - Status "At Target" → Green background
 
+
 ---
 
-### 5.8 Sheet 8: Vulnerability_Linked_Threats (CVSS INTEGRATED)
+## Sheet 8: Vulnerability_Linked_Threats (CVSS INTEGRATED)
 
 **PURPOSE**: **CRITICAL INTEGRATION WITH CONTROL 8.8 + CVSS SCORING**
 
 This sheet implements the VulnerabilityThreatLink schema with CVSS integration for quantified risk-based prioritization.
 
 **CVSS Integration**: 
+
 - ✅ Added CVSS_Version column (3)
 - ✅ Added CVSS_Base_Score column (4)
 - ✅ Added CVSS_Vector column (5)
 - ✅ Priority_Score now AUTO-CALCULATED from CVSS + threat factors
+
 
 **Column Specifications** (24 columns, expanded from 21):
 
@@ -1910,19 +2146,26 @@ This sheet implements the VulnerabilityThreatLink schema with CVSS integration f
 
 =MIN(10, 
     [CVSS_Base_Score] 
+
     + IF([Exploitation_Status]="Mass_Exploitation", 2, 
+
          IF([Exploitation_Status]="Active_Exploitation", 1, 0))
+
     + IF([Critical_Assets_Affected]="Yes", 2, 0)
     + IF([Threat_Actor_Type]="Nation-State", 1, 0)
+
 )
 
 
 **Example Calculations**:
+
 - CVSS 9.3 + Mass Exploitation (2) + Critical Assets (2) + Nation-State (1) = 14.3 → **Capped at 10.0**
 - CVSS 6.5 + Active Exploitation (1) + No Critical Assets (0) + Organized Crime (0) = **7.5**
 - CVSS 4.2 + PoC Available (0) + Critical Assets (2) + Opportunistic (0) = **6.2**
 
+
 **Conditional Formatting (CVSS-based)**:
+
 - **CVSS_Base_Score >= 9.0** → Red background (Critical severity)
 - **CVSS_Base_Score >= 7.0 AND < 9.0** → Orange background (High severity)
 - **CVSS_Base_Score >= 4.0 AND < 7.0** → Yellow background (Medium severity)
@@ -1932,6 +2175,7 @@ This sheet implements the VulnerabilityThreatLink schema with CVSS integration f
 - Exploitation_Status "Active" + Critical_Assets "Yes" → Bright red background
 - Remediation_Status "Verified" → Green background
 - Remediation_Status "Open" + Priority >= 8 → Bold red
+
 
 **Integration Workflow**:
 1. TI analyst discovers active exploitation → Creates VTL record with CVSS score
@@ -1944,7 +2188,7 @@ This sheet implements the VulnerabilityThreatLink schema with CVSS integration f
 
 ---
 
-### 5.9 Sheet 9: Analyst_Capabilities
+## Sheet 9: Analyst_Capabilities
 
 **Purpose**: Track analyst skills and training
 
@@ -1974,13 +2218,15 @@ This sheet implements the VulnerabilityThreatLink schema with CVSS integration f
 | Notes | Text | Free text | No | Strong OSINT and reporting skills |
 
 **Conditional Formatting**:
+
 - Workload_Current "Overloaded" → Red background
 - Training_On_Track "No" → Yellow background
 - Quality_Rating "Needs_Improvement" → Orange background
 
+
 ---
 
-### 5.10 Sheet 10: Action_Items
+## Sheet 10: Action_Items
 
 **Purpose**: Track improvement actions from assessments
 
@@ -2004,9 +2250,11 @@ This sheet implements the VulnerabilityThreatLink schema with CVSS integration f
 | Notes | Text | Free text | No | Evaluating 3 potential vendors |
 
 **Conditional Formatting**:
+
 - Priority "Critical" + Status "Open" → Red background
 - Due_Date overdue + Status != "Completed" → Bold red
 - Status "Completed" → Green background
+
 
 ---### 5.11 Sheet 11: Analysis_Tools
 
@@ -2034,11 +2282,14 @@ This sheet implements the VulnerabilityThreatLink schema with CVSS integration f
 | Notes | Text | Max 500 chars | No | Free tool from MITRE, essential for TTP mapping |
 
 **Conditional Formatting**:
+
 - Integration_Status "Deprecated" → Gray background
 - Training_Required "Yes" + Training_Status shows incomplete (e.g., "3/8") → Yellow background
 - CVSS_Support "Yes" → Green background
 
+
 **Tool Categories Explained**:
+
 - **TIP**: Threat Intelligence Platform (e.g., MISP, OpenCTI, ThreatConnect)
 - **SIEM**: Security Information and Event Management (e.g., Splunk, QRadar)
 - **Malware_Analysis**: Malware sandboxes and analysis tools (e.g., Cuckoo, ANY.RUN)
@@ -2047,9 +2298,10 @@ This sheet implements the VulnerabilityThreatLink schema with CVSS integration f
 - **Visualization**: Data visualization tools (e.g., ATT&CK Navigator, D3.js)
 - **Scripting**: Automation and scripting environments (e.g., Python, PowerShell)
 
+
 ---
 
-### 5.12 Sheet 12: Threat_Actor_Profiles
+## Sheet 12: Threat_Actor_Profiles
 
 **Purpose**: Maintain profiles of known threat actors targeting organization or sector
 
@@ -2079,18 +2331,22 @@ This sheet implements the VulnerabilityThreatLink schema with CVSS integration f
 | Notes | Text | Max 1000 chars | No | GRU Unit 26165, targets government and defense sectors |
 
 **Conditional Formatting**:
+
 - Targeting_Our_Org "Confirmed" → Red background
 - Targeting_Our_Org "Suspected" + Targeting_Our_Sector "Yes" → Orange background
 - Sophistication_Level "Advanced" + Targeting_Our_Sector "Yes" → Yellow background
 - Last_Activity within 90 days + Targeting_Our_Sector "Yes" → Bold
 
+
 **Integration with Other Sheets**:
+
 - **Sheet 8 (VTL)**: Threat_Actor field can reference Actor_Name from this sheet
 - **Sheet 13 (Campaign_Tracking)**: Actor_ID used for VLOOKUP
 
+
 ---
 
-### 5.13 Sheet 13: Campaign_Tracking
+## Sheet 13: Campaign_Tracking
 
 **Purpose**: Track and analyze threat campaigns over time
 
@@ -2137,24 +2393,29 @@ This sheet implements the VulnerabilityThreatLink schema with CVSS integration f
 *Note: This is a simplified representation; actual implementation may require array formulas or helper columns*
 
 **Conditional Formatting**:
+
 - Campaign_Status "Active" + Our_Org_Targeted "Confirmed" → Red background
 - Campaign_Status "Active" + Our_Org_Targeted "Suspected" → Orange background
 - Threat_Level "Critical" → Red text, bold
 - Incidents_Our_Org > 0 → Orange background
 - CVEs_CVSS_Max >= 9.0 → Red background (Critical vulnerabilities)
 
+
 **Integration with Other Sheets**:
+
 - **Sheet 8 (VTL)**: CVE data flows to calculate CVEs_CVSS_Max
 - **Sheet 12 (Threat_Actor_Profiles)**: Actor_ID VLOOKUP for Actor_Name
 - **Sheet 3 (Collection_Sources)**: Intelligence_Sources reference
 
+
 ---
 
-### 5.14 Sheet 14: Metadata
+## Sheet 14: Metadata
 
 **Purpose**: Workbook generation and versioning information
 
 **Content**:
+
 - Workbook version: 2.0
 - Generation date
 - Generator script version
@@ -2164,20 +2425,24 @@ This sheet implements the VulnerabilityThreatLink schema with CVSS integration f
 - Review schedule
 - Contact information
 
+
 ---
 
-## 6. Data Validation Rules
+# Data Validation Rules
 
-### 6.1 Standard Dropdowns
+## Standard Dropdowns
 
 **Priority Levels**:
+
 - Critical
 - High
 - Medium
 - Low
 - Info (where applicable)
 
+
 **Status Values**:
+
 - Open
 - In_Progress
 - Completed
@@ -2185,29 +2450,39 @@ This sheet implements the VulnerabilityThreatLink schema with CVSS integration f
 - Cancelled
 - Verified
 
+
 **Confidence Levels**:
+
 - High
 - Medium
 - Low
 - Unconfirmed
 
+
 **Yes/No/Unknown**:
+
 - Yes
 - No
 - Unknown
 - N/A (where applicable)
 
+
 **CVSS Versions**:
+
 - 4.0
 - 3.1
 
+
 **Exploitation Status**:
+
 - No_Known_Exploit
 - PoC_Available
 - Active_Exploitation
 - Mass_Exploitation
 
+
 **Threat Actor Types**:
+
 - Nation-State
 - Organized_Crime
 - Hacktivist
@@ -2215,11 +2490,12 @@ This sheet implements the VulnerabilityThreatLink schema with CVSS integration f
 - Opportunistic
 - Unknown
 
+
 ---
 
-## 7. Integration Points
+# Integration Points
 
-### 7.1 Control 5.7 Internal Links
+## Control 5.7 Internal Links
 
 - Sheet 2 (Intelligence_Requirements) ↔ Sheet 3 (Collection_Sources)
 - Sheet 3 (Collection_Sources) ↔ Sheet 5 (Intelligence_Production)
@@ -2232,11 +2508,13 @@ This sheet implements the VulnerabilityThreatLink schema with CVSS integration f
 - All sheets → Sheet 10 (Action_Items)
 - All sheets → Sheet 14 (Metadata)
 
-### 7.2 External Integration: Control 8.8 (Vulnerability Management)
+
+## External Integration: Control 8.8 (Vulnerability Management)
 
 **Bidirectional Data Flow via Sheet 8 (VTL)**:
 
 **5.7 → 8.8 (Threat Context)**:
+
 - Vulnerability_ID (with CVSS)
 - CVSS_Version, CVSS_Base_Score, CVSS_Vector
 - Threat_Actor
@@ -2248,29 +2526,35 @@ This sheet implements the VulnerabilityThreatLink schema with CVSS integration f
 - Priority_Score (auto-calculated from CVSS)
 - Business_Impact
 
+
 **8.8 → 5.7 (Remediation Status)**:
+
 - Remediation_Status
 - Remediation_Urgency
 - Assigned_To
 - Affected_Systems_Count
 - Related_Incidents
 
+
 **Emergency Patching Trigger**:
+
 - IF CVSS_Base_Score >= 9.0 AND Exploitation_Status = "Mass_Exploitation"
 - IF CVSS_Base_Score >= 7.0 AND Exploitation_Status = "Active_Exploitation" AND Critical_Assets_Affected = "Yes"
 - Auto-escalates to Control 8.8 emergency patching workflow
 
-### 7.3 External Integration: Control 5.7.1 (Source Assessment)
+
+## External Integration: Control 5.7.1 (Source Assessment)
 
 - Sheet 3 (Collection_Sources) references Source_IDs from 5.7.1
 - Sheet 8 (VTL) Intelligence_Source field references 5.7.1 sources
 - Sheet 13 (Campaign_Tracking) Intelligence_Sources references 5.7.1
 
+
 ---
 
-## 8. Formulas Reference
+# Formulas Reference
 
-### 8.1 Priority_Score Auto-Calculation (Sheet 8, Column 16)
+## Priority_Score Auto-Calculation (Sheet 8, Column 16)
 
 **Excel Formula**:
 excel
@@ -2292,31 +2576,33 @@ excel
 6. **Cap**: MIN(result, 10.0)
 
 **Rationale**:
+
 - Quantifies risk using industry-standard CVSS
 - Adds context-specific threat intelligence factors
 - Caps at 10.0 to maintain consistency
 - Auto-updates when any input changes
 
-### 8.2 Coverage_Status (Sheet 2, Column 12)
+
+## Coverage_Status (Sheet 2, Column 12)
 
 excel
 =IF(COUNTA(H5:J5)>=2, "Adequate", 
     IF(COUNTA(H5:J5)=1, "Minimal", "Gap"))
 
 
-### 8.3 Timeliness_Met (Sheet 5, Column 14)
+## Timeliness_Met (Sheet 5, Column 14)
 
 excel
 =IF(M5<=L5, "Yes", "No")
 
 
-### 8.4 Actor_Name VLOOKUP (Sheet 13, Column 4)
+## Actor_Name VLOOKUP (Sheet 13, Column 4)
 
 excel
 =IFERROR(VLOOKUP(C5, 'Threat_Actor_Profiles'!A:B, 2, FALSE), "Unknown")
 
 
-### 8.5 CVEs_CVSS_Max (Sheet 13, Column 16)
+## CVEs_CVSS_Max (Sheet 13, Column 16)
 
 excel
 # Simplified - actual implementation may vary
@@ -2328,9 +2614,9 @@ excel
 
 ---
 
-## 9. Conditional Formatting Rules
+# Conditional Formatting Rules
 
-### 9.1 CVSS-Based Severity (Sheet 8)
+## CVSS-Based Severity (Sheet 8)
 
 | CVSS Range | Color | Severity |
 |------------|-------|----------|
@@ -2340,10 +2626,12 @@ excel
 | 0.0 - 3.9 | Green (#90EE90) | Low |
 
 **Emergency Highlight**:
+
 - CVSS >= 9.0 + Exploitation = "Mass_Exploitation" → **BRIGHT RED + BOLD**
 - CVSS >= 7.0 + Exploitation = "Active_Exploitation" → **RED + BOLD**
 
-### 9.2 Status-Based Formatting
+
+## Status-Based Formatting
 
 | Condition | Format | Applies To |
 |-----------|--------|------------|
@@ -2355,9 +2643,9 @@ excel
 
 ---
 
-## 10. Quality Assurance
+# Quality Assurance
 
-### 10.1 Validation Checks
+## Validation Checks
 
 **Pre-Deployment**:
 1. ✅ All 14 sheets present
@@ -2384,9 +2672,9 @@ excel
 
 ---
 
-## 11. Change History
+# Change History
 
-### v1.0 ([Date])
+## v1.0 ([Date])
 
 **Initial Release**:
 1. 14-sheet workbook covering intelligence collection and analysis
@@ -2399,32 +2687,40 @@ excel
 
 ---
 
-## 12. Usage Guidelines
+# Usage Guidelines
 
-### 12.1 Data Entry Workflow
+## Data Entry Workflow
 
 1. **Initial Setup**:
+
    - Sheet 2: Define intelligence requirements
    - Sheet 3: Document collection sources
    - Sheet 11: Document analysis tools
    - Sheet 12: Build threat actor profiles
 
+
 2. **Daily Operations**:
+
    - Sheet 4: Log raw intelligence
    - Sheet 8: Create VTL records (with CVSS)
    - Sheet 13: Track campaigns
 
+
 3. **Regular Production**:
+
    - Sheet 5: Document intelligence products
    - Sheet 9: Update analyst capabilities
    - Sheet 10: Track action items
 
+
 4. **Periodic Review**:
+
    - Sheet 6: MITRE coverage assessment
    - Sheet 7: Quality metrics review
    - Sheet 9: Process maturity assessment
 
-### 12.2 CVSS Data Entry (Sheet 8)
+
+## CVSS Data Entry (Sheet 8)
 
 **Required Fields**:
 1. Vulnerability_ID (CVE or internal)
@@ -2438,77 +2734,101 @@ excel
 **Priority_Score Auto-Calculates** - do NOT enter manually!
 
 **CVSS Vector Examples**:
+
 - **CVSS 4.0**: `CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N`
 - **CVSS 3.1**: `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H`
 
+
 **Source for CVSS Scores**:
+
 - NVD (National Vulnerability Database): https://nvd.nist.gov
 - Vendor security advisories
 - Commercial threat intelligence feeds
 - CISA KEV (Known Exploited Vulnerabilities): https://www.cisa.gov/known-exploited-vulnerabilities-catalog
 
-### 12.3 Maintenance Schedule
+
+## Maintenance Schedule
 
 **Daily**:
+
 - Update Sheet 4 (Raw Intelligence Log)
 - Update Sheet 8 (VTL) for new exploitations
 - Monitor Sheet 13 (Campaign Tracking) for active campaigns
 
+
 **Weekly**:
+
 - Review Sheet 7 (Quality Metrics)
 - Update Sheet 10 (Action Items) progress
 - Review Sheet 8 for remediation status updates
 
+
 **Monthly**:
+
 - Review Sheet 2 (Intelligence Requirements) coverage
 - Assess Sheet 9 (Process Maturity)
 - Update Sheet 12 (Threat Actor Profiles)
 
+
 **Quarterly**:
+
 - Complete Sheet 6 (MITRE Mapping) assessment
 - Review Sheet 3 (Collection Sources) contracts
 - Update Sheet 11 (Analysis Tools) inventory
 
+
 ---
 
-## 13. Audit Evidence
+# Audit Evidence
 
 This workbook provides audit evidence for:
 
 **ISO 27001:2022 Control A.5.7**:
+
 - Intelligence requirements documentation (Sheet 2)
 - Collection capabilities (Sheet 3)
 - Analysis methodologies (Sheet 6)
 - Quality metrics (Sheet 7)
 - Process maturity (Sheet 9)
 
+
 **Control A.5.7 ↔ A.8.8 Integration**:
+
 - Vulnerability-threat linkage (Sheet 8 with CVSS)
 - Quantified risk scoring (Priority_Score formula)
 - Emergency patching triggers (CVSS + exploitation)
 - Remediation tracking (bidirectional data flow)
 
+
 **Key Features**:
+
 - CVSS-based prioritization evidence
 - Threat actor intelligence maintenance
 - Campaign tracking and analysis
 - Tool inventory and training records
 
+
 ---
 
-## 14. Support & Contact
+# Support & Contact
 
 **Workbook Issues**:
+
 - Threat Intelligence Team Lead
 - Email: ti-team@[organization].com
 
+
 **Technical Issues**:
+
 - ISMS Implementation Team
 - Email: isms@[organization].com
 
+
 **Policy Questions**:
+
 - Information Security Manager
 - Refer to: ISMS-POL-A.5.7 (Threat Intelligence Policy)
+
 
 ---
 
@@ -2517,33 +2837,46 @@ This workbook provides audit evidence for:
 
 ---
 
-## Related Documents
+# Related Documents
 
 **Policy Framework:**
+
 - **ISMS-POL-A.5.7** (Threat Intelligence Policy) - Consolidated single policy document
 - **ISMS-POL-A.5.7, Section 2.1** (Intelligence Collection Requirements)
 - **ISMS-POL-A.5.7, Section 2.2** (Intelligence Analysis and Production Requirements)
 - **ISMS-POL-A.5.7, Section 2.6** (Vulnerability Management Integration Requirements) - VTL schema
 - **ISMS-POL-A.5.7, Section 2.7** (Effectiveness Measurement Requirements)
 
+
 **Implementation Specifications:**
+
 - **ISMS-IMP-A.5.7.1** (Threat Intelligence Sources Assessment) - Source IDs referenced
 - **ISMS-IMP-A.5.7.3** (Integration & Distribution Assessment) - VTL records feed IOC deployment
 - **ISMS-IMP-A.5.7.4** (Effectiveness Dashboard) - Quality metrics consolidated
 - **ISMS-IMP-A.5.7.5** (Standalone Dashboard) - Production metrics used
 
+
 **Cross-Control Integration:**
+
 - **ISMS-IMP-A.8.8** (Vulnerability Management) - VTL bidirectional integration (CRITICAL)
 - **ISMS-POL-A.8.8** (Vulnerability Management Policy) - VulnerabilityThreatLink schema
 
+
 **Standards References:**
+
 - ISO/IEC 27001:2022 Annex A Control A.5.7
 - ISO/IEC 27002:2022 Control 5.7 Implementation Guidance
 - MITRE ATT&CK Framework v18.1 (Enterprise)
 - CVSS 4.0 Specification (FIRST)
 - CVSS 3.1 Specification (FIRST)
 
+
 ---
 
 **END OF SPECIFICATION**
 
+---
+
+*"How wonderful that we have met with a paradox. Now we have some hope of making progress."*
+— Niels Bohr
+*Where bamboo antennas actually work.* 🎋

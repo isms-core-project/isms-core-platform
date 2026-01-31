@@ -1,9 +1,10 @@
-# ISMS-IMP-A.5.23.S5 - Compliance Monitoring Dashboard
-## PART I: USER COMPLETION GUIDE
+**ISMS-IMP-A.5.23.S5 - Compliance Monitoring Dashboard**
+**Assessment Specification with User Completion Guide**
+### ISO/IEC 27001:2022 Control A.5.23: Information Security for Use of Cloud Services
 
 ---
 
-## Document Control
+**Document Control**
 
 | Attribute | Value |
 |-----------|-------|
@@ -30,6 +31,7 @@
 ### What This Document Provides
 
 **Part I: User Completion Guide** (~4,500 lines target)
+
 - Dashboard overview and architecture
 - Source workbook prerequisites and validation
 - Step-by-step dashboard generation procedures
@@ -40,7 +42,9 @@
 - Quality assurance and troubleshooting
 - Appendices, glossary, and regulatory references
 
+
 **Part II: Technical Specification** (~4,000 lines target)
+
 - Python generator script architecture breakdown
 - Complete output workbook specification (3 sheets)
 - Data extraction algorithms and formulas
@@ -49,19 +53,24 @@
 - Testing and validation procedures
 - Extension and customization guidance
 
+
 ### Target Audience
 
 **Primary Users:**
+
 - **CISO / CIO:** Executive oversight of cloud exit strategy compliance
 - **Risk Committee:** Quarterly compliance reporting and risk escalation
 - **Compliance Officer:** Dashboard generation, validation, and evidence management
 - **DPO (Data Protection Officer):** Cross-border data transfer risk monitoring
 
+
 **Secondary Users:**
+
 - **Internal Auditors:** ISO 27001 A.5.23 audit evidence
 - **External Auditors:** Third-party compliance verification
 - **Board of Directors:** Annual strategic risk reporting
 - **IT Operations:** Remediation action planning and tracking
+
 
 ### Dual Perspective Approach
 
@@ -105,30 +114,35 @@
 
 ---
 
-# PART I: USER GUIDE
+# PART I: USER COMPLETION GUIDE
+# Dashboard Overview
 
-## 1. Dashboard Overview
-
-### 1.1 Purpose & Scope
+## Purpose & Scope
 
 **What This Dashboard Does:**
+
 - **Consolidates** data from FOUR source workbooks (IMP-A.5.23.1 through A.5.23.4)
 - **Validates** exit strategy compliance against policy targets
 - **Monitors** DORA Article 28.6 PoC testing requirements
 - **Identifies** high-risk services requiring immediate attention
 - **Provides** actionable recommendations for executive decision-making
 
+
 **What This Dashboard Does NOT Do:**
+
 - Does NOT replace detailed assessments (use IMP-A.5.23.1-4 for that)
 - Does NOT collect new data (it reads existing workbooks)
 - Does NOT have manual input fields (100% auto-generated)
 
+
 **Target Audience:**
+
 - **Primary:** CISO, CIO, Risk Committee
 - **Secondary:** Compliance Officer, DPO, IT Management
 - **Tertiary:** Auditors (for compliance overview)
 
-### 1.2 Dashboard Architecture
+
+## Dashboard Architecture
 
 **Source Workbooks (Inputs):**
 
@@ -169,13 +183,13 @@
 ┌──────────────────────────────────────────────────────────────────┐
 │              OUTPUT: DASHBOARD WORKBOOK (3 Sheets)               │
 ├──────────────────────────────────────────────────────────────────┤
-│  Sheet 1: Exit Strategy Dashboard                               │
+│  1. Exit Strategy Dashboard                                     │
 │           - Exit strategy coverage metrics                       │
 │           - DORA PoC testing compliance                          │
-│  Sheet 2: Risk Overview                                         │
+│  2. Risk Overview                                               │
 │           - High-risk services list                              │
 │           - Critical lock-in services                            │
-│  Sheet 3: Recommendations                                       │
+│  3. Recommendations                                             │
 │           - Actionable findings                                  │
 │           - Priority-ranked remediation items                    │
 └──────────────────────────────────────────────────────────────────┘
@@ -189,9 +203,9 @@ Example: ISMS-IMP-A.5.23.S5_Dashboard_20260120.xlsx
 
 ---
 
-## 2. Prerequisites & Setup
+# Prerequisites & Setup
 
-### 2.1 Required Source Workbooks
+## Required Source Workbooks
 
 **Before running the dashboard generator, ensure ALL FOUR source workbooks exist:**
 
@@ -203,29 +217,37 @@ Example: ISMS-IMP-A.5.23.S5_Dashboard_20260120.xlsx
 | IMP-A.5.23.4 | `ISMS-IMP-A.5.23.S4_Governance_*.xlsx` | ✅ Must have Sheet 7 (Exit Strategy Review) |
 
 **Critical Requirement:**
+
 - Workbooks MUST be in the same directory as the generator script
 - Workbooks MUST be the most recent versions (check timestamps)
 - Workbooks MUST be complete (not in-progress drafts)
 
-### 2.2 Data Quality Requirements
+
+## Data Quality Requirements
 
 **IMP-A.5.23.1 (Inventory) - Sheet 4:**
+
 - All services must have `Exit Strategy Type` (Column R)
 - All services must have `Lock-In Risk` assessment (Column X)
 - Critical services must have `Export Tested` status (Column U)
 
+
 **IMP-A.5.23.4 (Governance) - Sheet 7:**
+
 - Critical services must have `PoC Test Result` (Column J)
 - `PoC Testing Required?` must be set for Critical services (Column H)
 - `PoC Test Next Due` must be populated (Column N)
 
+
 **Data Quality Validation:**
 The generator script performs automatic validation and will:
+
 - ✅ **PASS:** If all required data present
 - ⚠️ **WARNING:** If optional data missing (continues generation)
 - ❌ **FAIL:** If critical sheets or columns missing (stops generation)
 
-### 2.3 Python Environment Setup
+
+## Python Environment Setup
 
 **Requirements:**
 ```bash
@@ -233,15 +255,17 @@ pip install openpyxl
 ```
 
 **System Requirements:**
+
 - Python 3.8+
 - 50 MB free disk space (for dashboard workbook)
 - Source workbooks accessible (same directory or specify path)
 
+
 ---
 
-## 3. Generating the Dashboard
+# Generating the Dashboard
 
-### 3.1 Running the Generator Script
+## Running the Generator Script
 
 **Command:**
 ```bash
@@ -317,7 +341,7 @@ DASHBOARD GENERATION
 ================================================================================
 ```
 
-### 3.2 Troubleshooting Generation Failures
+## Troubleshooting Generation Failures
 
 **Common Issues:**
 
@@ -338,13 +362,13 @@ print(f"   Row {row}: {service_name} -> {exit_strategy}")
 
 ---
 
-## 4. Reading the Dashboard
+# Reading the Dashboard
 
-### 4.1 Sheet 1: Exit Strategy Dashboard
+## Sheet 1: Exit Strategy Dashboard
 
 **Purpose:** Monitor compliance with exit strategy policy targets.
 
-#### Section 1: Exit Strategy Coverage Metrics
+### Section 1: Exit Strategy Coverage Metrics
 
 **Table Layout:**
 
@@ -363,15 +387,21 @@ print(f"   Row {row}: {service_name} -> {exit_strategy}")
 **How to Read:**
 
 **✅ Green Checkmark:** Compliant with policy target
+
 - Example: On-Premises = 3.1% (target: <5%) → ✅ Good
 
+
 **⚠️ Yellow Warning:** Approaching policy limit or minor deviation
+
 - Example: Cloud-to-Cloud = 87.5% (target: ≥90%) → ⚠️ Close to target but not quite there
 - **Action:** Monitor, trend toward compliance
 
+
 **❌ Red X:** Non-compliant, requires immediate action
+
 - Example: CRITICAL Lock-In Risk = 1 (target: 0) → ❌ Unacceptable
 - **Action:** Escalate to CISO, implement mitigation immediately
+
 
 **Exit Strategy Types Explained:**
 
@@ -383,11 +413,13 @@ print(f"   Row {row}: {service_name} -> {exit_strategy}")
 | **Not Determined** | Exit strategy not yet defined | Temporary state for new services only | 0% (complete within 90 days) |
 
 **Why These Targets?**
+
 - **Cloud-to-Cloud 90%+:** Maximizes flexibility, minimizes lock-in to specific infrastructure
 - **Hybrid 5-10%:** Allows for data sovereignty edge cases without over-committing to on-prem
 - **On-Premises <5%:** On-prem defeats cloud benefits; only acceptable if TCO justifies it
 
-#### Section 2: DORA PoC Testing Compliance
+
+### Section 2: DORA PoC Testing Compliance
 
 **Table Layout:**
 
@@ -402,18 +434,24 @@ print(f"   Row {row}: {service_name} -> {exit_strategy}")
 **How to Read:**
 
 **Critical Services:** Services with `Service_Criticality = Critical` in inventory
+
 - These MUST have exit strategies tested via Proof-of-Concept (PoC) annually
 - DORA Article 28.6 requirement for financial institutions
 
+
 **PoC Test Result Values:**
+
 - **Pass:** PoC successfully demonstrated data export and service migration
 - **Not Tested:** PoC never conducted (violation if >365 days old)
 - **In Progress:** PoC started but not completed (counts as "Overdue" if past due date)
 - **Fail:** PoC attempted but failed (requires remediation plan)
 
+
 **Overdue Calculation:**
+
 - Script compares `PoC Test Next Due` date (Column N in IMP-5.23.4 Sheet 7) against today's date
 - If Next Due < Today AND Result ≠ Pass → **Overdue** (escalate to CISO)
+
 
 **Example Interpretation:**
 ```
@@ -422,13 +460,15 @@ PoC Not Tested: 1 service
 PoC Overdue: 1 service
 
 EXECUTIVE ACTION REQUIRED:
+
 - Service A: PoC never tested → Schedule PoC within 30 days
 - Service B: PoC overdue (last test 14 months ago) → Immediate PoC retest
+
 ```
 
 ---
 
-### 4.2 Sheet 2: Risk Overview
+## Sheet 2: Risk Overview
 
 **Purpose:** List all high-risk services requiring immediate attention.
 
@@ -452,20 +492,24 @@ EXECUTIVE ACTION REQUIRED:
 
 1. **Sort by Risk Factors column** (most ❌ to fewest)
 2. **Prioritize services with:**
+
    - Critical Lock-In Risk = Critical
    - PoC Result = Fail or Not Tested
    - Export Tested = No (for Critical services)
    - Exit Strategy = On-Premises (without TCO justification)
 
+
 3. **Executive Actions:**
+
    - Critical Lock-In → Immediate migration planning (add to risk register)
    - PoC Fail → Root cause analysis, remediation plan to CISO
    - Export Not Tested → Schedule export test within 30 days
    - On-Premises without justification → Re-evaluate strategy or document TCO
 
+
 ---
 
-### 4.3 Sheet 3: Recommendations
+## Sheet 3: Recommendations
 
 **Purpose:** Priority-ranked actionable recommendations for executive decision-making.
 
@@ -520,9 +564,9 @@ PRIORITY 3: MEDIUM - NEXT 6 MONTHS
 
 ---
 
-## 5. Dashboard Refresh Frequency
+# Dashboard Refresh Frequency
 
-### 5.1 Recommended Schedule
+## Recommended Schedule
 
 | Frequency | Trigger | Rationale |
 |-----------|---------|-----------|
@@ -532,7 +576,7 @@ PRIORITY 3: MEDIUM - NEXT 6 MONTHS
 | **Pre-Audit** | 2 weeks before ISO 27001 audit | Evidence preparation |
 | **Board Meeting** | Week before Risk Committee / Board meeting | Executive reporting |
 
-### 5.2 Dashboard Lifecycle
+## Dashboard Lifecycle
 
 ```
 Week 1: Generate Source Workbooks
@@ -560,9 +604,9 @@ Week 4: Action Planning
 
 ---
 
-## 6. Executive Reporting
+# Executive Reporting
 
-### 6.1 CISO/CIO Monthly Report Template
+## CISO/CIO Monthly Report Template
 
 **Subject:** Cloud Exit Strategy Compliance - [MONTH] [YEAR]
 
@@ -583,15 +627,19 @@ High Priority (Next 90 Days):
 ```
 
 **Detailed Metrics:**
+
 - Attach: Sheet 1 (Exit Strategy Dashboard) screenshot
 - Attach: Sheet 2 (Risk Overview) filtered to Critical/High risks only
 
+
 **Recommendations:**
+
 - Copy from Sheet 3 (Recommendations), Priority 1-2 only
+
 
 **Next Review:** [DATE] (Quarterly cycle)
 
-### 6.2 Board of Directors Reporting
+## Board of Directors Reporting
 
 **For Risk Committee / Board Audit Committee:**
 
@@ -640,9 +688,9 @@ BOARD ACTION REQUESTED:
 
 ---
 
-## 7. Quality Assurance
+# Quality Assurance
 
-### 7.1 Dashboard Validation Checklist
+## Dashboard Validation Checklist
 
 **Before presenting dashboard to executives, validate:**
 
@@ -684,7 +732,7 @@ BOARD ACTION REQUESTED:
   └─ Executive summary prepared
 ```
 
-### 7.2 Common Validation Issues
+## Common Validation Issues
 
 | Issue | Symptom | Root Cause | Fix |
 |-------|---------|------------|-----|
@@ -696,9 +744,9 @@ BOARD ACTION REQUESTED:
 
 ---
 
-## 8. Integration & Maintenance
+# Integration & Maintenance
 
-### 8.1 Integration with Risk Management
+## Integration with Risk Management
 
 **Export Dashboard Findings to Risk Register:**
 
@@ -708,7 +756,7 @@ BOARD ACTION REQUESTED:
 | PoC testing overdue [Service] | RISK-REG-002: DORA non-compliance | DPO | PoC scheduled Q2 2026 |
 | On-prem strategy >5% | RISK-STR-003: Exit strategy deviation | CIO | Revalidate TCO justification |
 
-### 8.2 Integration with Audit Management
+## Integration with Audit Management
 
 **For ISO 27001 Audits:**
 
@@ -728,7 +776,7 @@ BOARD ACTION REQUESTED:
 3. **PoC Test Reports:** Actual test documentation (referenced in evidence column)
 4. **Remediation Plan:** For any services with overdue/failed PoC tests
 
-### 8.3 Dashboard Archive & Retention
+## Dashboard Archive & Retention
 
 **Retention Policy:**
 ```
@@ -752,9 +800,9 @@ Annual Archives: 7 years retention (ISO 27001 requirement)
 
 ---
 
-## 9. Troubleshooting & FAQs
+# Troubleshooting & FAQs
 
-### 9.1 Frequently Asked Questions
+## Frequently Asked Questions
 
 **Q: Why does the dashboard show 0 services?**
 A: The source workbook (IMP-5.23.1) Sheet 4 is empty. Complete the inventory assessment first.
@@ -780,7 +828,7 @@ A: Add services to IMP-5.23.1 Sheet 4 (inventory), complete their exit strategy 
 **Q: What if a service has a failed PoC test?**
 A: This is flagged as Critical in the dashboard. Immediate actions: (1) Root cause analysis, (2) Remediation plan, (3) Retest within 90 days, (4) Document in risk register.
 
-### 9.2 Advanced Customization
+## Advanced Customization
 
 **Extending Dashboard to Include Additional Metrics:**
 
@@ -796,9 +844,9 @@ A: This is flagged as Critical in the dashboard. Immediate actions: (1) Root cau
 
 ---
 
-## 10. Appendices
+# Appendices
 
-### 10.1 Glossary
+## Glossary
 
 | Term | Definition |
 |------|------------|
@@ -809,7 +857,7 @@ A: This is flagged as Critical in the dashboard. Immediate actions: (1) Root cau
 | **PoC Testing** | Proof-of-Concept test demonstrating feasibility of data export and service migration |
 | **Source Workbook** | One of the 4 input workbooks (IMP-A.5.23.1 through A.5.23.4) |
 
-### 10.2 Related Documents
+## Related Documents
 
 | Document ID | Title | Relationship |
 |-------------|-------|--------------|
@@ -818,7 +866,7 @@ A: This is flagged as Critical in the dashboard. Immediate actions: (1) Root cau
 | ISMS-IMP-A.5.23.S4 | Ongoing Governance & Risk Management | Source data for PoC testing |
 | ISMS-IMP-A.5.23.0 | Exit Strategy Framework Spec | Technical specification for exit framework |
 
-### 10.3 Regulatory References
+## Regulatory References
 
 | Regulation | Article/Section | Requirement |
 |------------|-----------------|-------------|
@@ -830,9 +878,9 @@ A: This is flagged as Critical in the dashboard. Immediate actions: (1) Root cau
 
 # PART II: TECHNICAL SPECIFICATION
 
-## 1. Script Architecture
+# Script Architecture
 
-### 1.1 Python Script Structure
+## Python Script Structure
 
 **File:** `generate_reg_a523_5_compliance_dashboard.py` (~900 lines)
 
@@ -867,7 +915,7 @@ A: This is flagged as Critical in the dashboard. Immediate actions: (1) Root cau
 #   - main()
 ```
 
-### 1.2 Data Flow Diagram
+## Data Flow Diagram
 
 ```
 INPUT VALIDATION
@@ -899,9 +947,9 @@ OUTPUT
 
 ---
 
-## 2. Output Workbook Specification
+# Output Workbook Specification
 
-### 2.1 Sheet 1: Exit Strategy Dashboard
+## Sheet 1: Exit Strategy Dashboard
 
 **Sheet Name:** `1. Exit Strategy Dashboard`
 
@@ -950,11 +998,13 @@ Row 19-24: POC TESTING METRICS
 ```
 
 **Column Widths:**
+
 - A: 35 (Metric names)
 - B: 12 (Values)
 - C: 15 (Percentages)
 - D: 12 (Status symbols)
 - E: 25 (Policy targets)
+
 
 **Conditional Formatting:**
 
@@ -966,7 +1016,7 @@ Row 19-24: POC TESTING METRICS
 
 ---
 
-### 2.2 Sheet 2: Risk Overview
+## Sheet 2: Risk Overview
 
 **Sheet Name:** `2. Risk Overview`
 
@@ -988,10 +1038,10 @@ Row 19-24: POC TESTING METRICS
 **Filtering Logic:**
 ```python
 # Include service in Risk Overview if ANY of:
-# 1. Lock-In Risk = "High" or "Critical"
-# 2. PoC Result = "Fail" or "Not Tested" (for Critical services)
-# 3. Export Tested = "No" (for Critical services)
-# 4. Exit Strategy = "On-Premises" (without TCO justification)
+# Lock-In Risk = "High" or "Critical"
+# PoC Result = "Fail" or "Not Tested" (for Critical services)
+# Export Tested = "No" (for Critical services)
+# Exit Strategy = "On-Premises" (without TCO justification)
 ```
 
 **Row Sorting:** By number of ❌ symbols (descending) - highest risk first
@@ -1010,7 +1060,7 @@ Risk Factors: ❌ Critical lock-in, ❌ PoC failed, ⚠️ On-prem strategy, ⚠
 
 ---
 
-### 2.3 Sheet 3: Recommendations
+## Sheet 3: Recommendations
 
 **Sheet Name:** `3. Recommendations`
 
@@ -1063,9 +1113,9 @@ Row Y: PRIORITY 3 HEADER
 
 ---
 
-## 3. Data Extraction Specification
+# Data Extraction Specification
 
-### 3.1 Exit Strategy Data Extraction
+## Exit Strategy Data Extraction
 
 **Source:** IMP-A.5.23.1, Sheet 4 (Cloud Security Services)
 
@@ -1139,7 +1189,7 @@ for row in range(start_row, ws.max_row + 1):
 
 ---
 
-### 3.2 PoC Testing Data Extraction
+## PoC Testing Data Extraction
 
 **Source:** IMP-A.5.23.4, Sheet 7 (Exit Strategy Review)
 
@@ -1207,9 +1257,9 @@ for row in range(start_row, ws.max_row + 1):
 
 ---
 
-## 4. Schema Validation
+# Schema Validation
 
-### 4.1 Required Sheets Validation
+## Required Sheets Validation
 
 **Function:** `validate_workbook_schema(filepath, schema)`
 
@@ -1244,9 +1294,9 @@ ValueError: Missing required sheet '7. Exit Strategy Review' in ISMS-IMP-A.5.23.
 
 ---
 
-## 5. File Naming & Metadata
+# File Naming & Metadata
 
-### 5.1 Output File Naming
+## Output File Naming
 
 **Pattern:** `ISMS-IMP-A.5.23.S5_Dashboard_YYYYMMDD.xlsx`
 
@@ -1254,7 +1304,7 @@ ValueError: Missing required sheet '7. Exit Strategy Review' in ISMS-IMP-A.5.23.
 
 **Timestamp:** Uses `datetime.now().strftime("%Y%m%d")`
 
-### 5.2 Workbook Metadata
+## Workbook Metadata
 
 ```python
 wb.properties.title = "ISMS-IMP-A.5.23.S5 Compliance Dashboard"
@@ -1268,9 +1318,9 @@ wb.properties.version = "2.0"
 
 ---
 
-## 6. Known Limitations & Future Enhancements
+# Known Limitations & Future Enhancements
 
-### 6.1 Current Limitations
+## Current Limitations
 
 | Limitation | Workaround | Future Enhancement |
 |------------|------------|-------------------|
@@ -1279,25 +1329,31 @@ wb.properties.version = "2.0"
 | No email automation | Manual distribution | Auto-email dashboard to stakeholders |
 | Fixed policy targets (90% cloud-to-cloud) | Edit Python script | Add config file for targets |
 
-### 6.2 Roadmap
+## Roadmap
 
 **Version 2.1 (Q2 2026):**
+
 - Add vendor concentration risk metrics (from IMP-5.23.2)
 - Add configuration compliance summary (from IMP-5.23.3)
 
+
 **Version 2.2 (Q3 2026):**
+
 - Quarterly trend charts (compare last 4 quarters)
 - Email automation (send dashboard to distribution list)
 
+
 **Version 3.0 (Q4 2026):**
+
 - Real-time dashboard (web-based, not Excel)
 - Integration with CMDB/ITSM for live data
 
+
 ---
 
-## 7. Testing & Validation
+# Testing & Validation
 
-### 7.1 Unit Test Cases
+## Unit Test Cases
 
 **Test 1: Empty Inventory**
 ```
@@ -1327,7 +1383,7 @@ Expected: Warning message, PoC metrics = 0
 Actual: ✅ PASS (warning logged)
 ```
 
-### 7.2 Integration Test
+## Integration Test
 
 **Full End-to-End Test:**
 ```
@@ -1341,4 +1397,10 @@ Result: ✅ PASS
 
 ---
 
-**END OF DOCUMENTATION**
+**END OF SPECIFICATION**
+
+---
+
+*"Science is the belief in the ignorance of experts."*
+— Richard Feynman
+*Where bamboo antennas actually work.* 🎋

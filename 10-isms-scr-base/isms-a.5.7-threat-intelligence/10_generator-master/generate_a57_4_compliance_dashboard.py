@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# =============================================================================
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-ISMS-Commercial
+# Copyright (c) 2025-2026 ISMS Core Contributors
+#
+# This file is part of ISMS Core.
+#
+# ISMS Core is dual-licensed:
+#   1. AGPL 3.0 (Open Source) - See LICENSE-AGPL.txt
+#   2. Commercial License - Contact vendor for proprietary use
+#
+# You may use this file under either license, at your option.
+# =============================================================================
 """
 ================================================================================
 ISMS-IMP-A.5.7.4 - Threat Intelligence Effectiveness Dashboard Excel Generator
@@ -189,10 +201,10 @@ METADATA
 
 Control Reference:    ISO/IEC 27001:2022 Annex A Control A.5.7
 Assessment Domain:    4 of 5 (Compliance Dashboard - Consolidated Metrics)
-Framework Version:    2.0
-Script Version:       2.0
-Author:               [Organization ISMS Team]
-Date Created:         [Date to be set]
+Framework Version:    1.0
+Script Version:       1.0
+Author:               [Organization] ISMS Implementation Team
+Date:                 [Date to be set]
 Last Modified:        [Date to be set]
 Python Version:       3.8+
 License:              [Organisation License/Terms]
@@ -212,8 +224,8 @@ Related Documents:
 CHANGE HISTORY
 --------------------------------------------------------------------------------
 
-Version 2.0 - [Date to be set]
-    - Added dedicated VTL_Workflow_Health sheet (Sheet 5) for A.5.7↔A.8.8 integration
+Version 1.0 - [Date to be set]
+- Added dedicated VTL_Workflow_Health sheet (Sheet 5) for A.5.7↔A.8.8 integration
     - Enhanced CVSS quality metrics dashboard (Sheet 6)
     - Expanded MITRE ATT&CK coverage heatmap with lifecycle stages
     - Improved gap prioritization with compliance impact scoring
@@ -221,12 +233,6 @@ Version 2.0 - [Date to be set]
     - Updated executive summary with VTL workflow status
     - Enhanced conditional formatting for visual status communication
     - Added trend analysis support (if historical assessments available)
-
-Version 1.0 - [Previous Date]
-    - Initial release with basic dashboard consolidation
-    - Three-domain assessment aggregation
-    - Executive summary with compliance status
-    - Basic KPI tracking
 
 [Future changes to be documented here]
 
@@ -379,13 +385,46 @@ Poor dashboard quality leads to uninformed decisions and wasted investments.
 ================================================================================
 """
 
+# =============================================================================
+# Standard Library Imports
+# =============================================================================
+import logging
+import sys
 from datetime import datetime, timedelta
+
+# =============================================================================
+# Third-Party Imports
+# =============================================================================
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.formatting.rule import CellIsRule
 
+# =============================================================================
+# Logging Configuration
+# =============================================================================
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+logger = logging.getLogger(__name__)
+
+
+
+
+# =============================================================================
+# DOCUMENT METADATA
+# =============================================================================
+DOCUMENT_ID = "ISMS-IMP-A.5.7.4"
+WORKBOOK_NAME = "Threat Intelligence Effectiveness Dashboard"
+CONTROL_ID = "A.5.7"
+CONTROL_NAME = "Threat Intelligence"
+CONTROL_REF = f"ISO/IEC 27001:2022 - Control {CONTROL_ID}: {CONTROL_NAME}"
+
+# Timestamps
+GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")      # For display (Swiss format)
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")   # For filenames (sortable)
+
+# Output filename
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_TIMESTAMP}.xlsx"
 
 # ============================================================================
 # SECTION 1: WORKBOOK CREATION & STYLE DEFINITIONS
@@ -571,7 +610,7 @@ For formulas with external references, see Program_KPIs sheet column "Data_Sourc
 
 
 # ============================================================================
-# SECTION 3A: CVSS CALCULATION FUNCTIONS (NEW IN V2.0)
+# SECTION 3A: CVSS CALCULATION FUNCTIONS (NEW IN V1.0)
 # ============================================================================
 
 def calculate_cvss_adoption_rate():
@@ -716,7 +755,7 @@ def add_cvss_metrics_to_executive_summary(ws, styles, start_row=20):
     """
     Add CVSS metrics section to Executive Summary sheet.
     
-    NEW IN V2.0: CVSS Framework Health tracking.
+    NEW IN V1.0: CVSS Framework Health tracking.
     """
     row = start_row
     
@@ -837,7 +876,7 @@ def add_cvss_quantification_tracking(ws, styles, start_row=30):
     """
     Add CVSS quantification tracking to Risk_Indicators sheet.
     
-    NEW IN V2.0: Track Clause 6.1 compliance.
+    NEW IN V1.0: Track Clause 6.1 compliance.
     """
     row = start_row
     
@@ -945,7 +984,7 @@ def create_executive_summary(ws, styles):
     
     # Generation date
     ws.merge_cells("E2:H2")
-    ws["E2"] = f"Generated: {datetime.now().strftime('%Y-%m-%d')}"
+    ws["E2"] = f"Generated: {datetime.now().strftime('%d.%m.%Y')}"
     ws["E2"].font = Font(name="Calibri", size=11, italic=True)
     ws["E2"].alignment = Alignment(horizontal="center", vertical="center")
     
@@ -1274,7 +1313,7 @@ def create_program_kpis(ws, styles, validations):
          "=AVERAGE('[ISMS-IMP-A.5.7.3.xlsx]Distribution_Tracking'!TimeToAction)", "24", "48", "72"),
     ]
     
-    # Add CVSS KPIs (NEW IN V2.0)
+    # Add CVSS KPIs (NEW IN V1.0)
     cvss_kpis_list = get_cvss_kpis()
     kpis = list(kpis) + cvss_kpis_list
     
@@ -1364,7 +1403,7 @@ def create_program_kpis(ws, styles, validations):
         CellIsRule(operator='equal', formula=['"On_Track"'], fill=PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid"))
     )
     
-    # Special RED highlighting for KPI-CVSS-003 emergency status (NEW IN V2.0)
+    # Special RED highlighting for KPI-CVSS-003 emergency status (NEW IN V1.0)
     for check_row in range(5, 40):
         if ws[f"A{check_row}"].value == "KPI-CVSS-003":
             ws.conditional_formatting.add(
@@ -2252,7 +2291,7 @@ def create_risk_indicators(ws, styles, validations):
 
 
     
-    # Add CVSS quantification tracking (NEW IN V2.0)
+    # Add CVSS quantification tracking (NEW IN V1.0)
     add_cvss_quantification_tracking(ws, styles, start_row=30)
 
 
@@ -2411,7 +2450,7 @@ def create_monthly_report(ws, styles):
     ws["A2"].font = Font(name="Calibri", size=11, bold=True)
     
     ws.merge_cells("D2:F2")
-    ws["D2"] = f"Generated: {datetime.now().strftime('%Y-%m-%d')}"
+    ws["D2"] = f"Generated: {datetime.now().strftime('%d.%m.%Y')}"
     ws["D2"].font = Font(name="Calibri", size=11, italic=True)
     ws["D2"].alignment = Alignment(horizontal="right")
     
@@ -2516,7 +2555,7 @@ def create_quarterly_report(ws, styles):
     ws["A2"].font = Font(name="Calibri", size=11, bold=True)
     
     ws.merge_cells("D2:F2")
-    ws["D2"] = f"Generated: {datetime.now().strftime('%Y-%m-%d')}"
+    ws["D2"] = f"Generated: {datetime.now().strftime('%d.%m.%Y')}"
     ws["D2"].font = Font(name="Calibri", size=11, italic=True)
     ws["D2"].alignment = Alignment(horizontal="right")
     
@@ -2653,136 +2692,136 @@ def create_metadata(ws, styles):
 def main():
     """Generate ISMS-IMP-A.5.7.4 dashboard workbook."""
     
-    print("=" * 80)
-    print("ISMS-IMP-A.5.7.4 V2.0 - Threat Intelligence Effectiveness Dashboard Generator (CVSS Enhanced)")
-    print("ISO/IEC 27001:2022 Control A.5.7 (Threat Intelligence)")
-    print("=" * 80)
-    print()
-    print("⚠️  PREREQUISITE: Generate workbooks 5.7.1, 5.7.2, 5.7.3 FIRST")
-    print("⚠️  CRITICAL: External references must be updated after generation")
-    print()
+    logger.info("=" * 80)
+    logger.info("ISMS-IMP-A.5.7.4 V1.0 - Threat Intelligence Effectiveness Dashboard Generator (CVSS Enhanced)")
+    logger.info("ISO/IEC 27001:2022 Control A.5.7 (Threat Intelligence)")
+    logger.info("=" * 80)
+    logger.info("")
+    logger.info("⚠️  PREREQUISITE: Generate workbooks 5.7.1, 5.7.2, 5.7.3 FIRST")
+    logger.info("⚠️  CRITICAL: External references must be updated after generation")
+    logger.info("")
     
     # Create workbook
-    print("[1/13] Creating workbook structure...")
+    logger.info("[1/13] Creating workbook structure...")
     wb = create_workbook()
     
     # Setup styles and validations
-    print("[2/13] Setting up styles and validations...")
+    logger.info("[2/13] Setting up styles and validations...")
     styles = setup_styles()
     validations = setup_validations()
     
     # Create sheets
-    print("[3/13] Creating Sheet 1: Executive_Summary (Dashboard)...")
+    logger.info("[3/13] Creating Sheet 1: Executive_Summary (Dashboard)...")
     create_executive_summary(wb["Executive_Summary"], styles)
     
-    print("[4/13] Creating Sheet 2: Program_KPIs...")
+    logger.info("[4/13] Creating Sheet 2: Program_KPIs...")
     create_program_kpis(wb["Program_KPIs"], styles, validations)
     
-    print("[5/13] Creating Sheet 3: Source_Portfolio...")
+    logger.info("[5/13] Creating Sheet 3: Source_Portfolio...")
     create_source_portfolio(wb["Source_Portfolio"], styles)
     
-    print("[6/13] Creating Sheet 4: Intelligence_Operations...")
+    logger.info("[6/13] Creating Sheet 4: Intelligence_Operations...")
     create_intelligence_operations(wb["Intelligence_Operations"], styles)
     
-    print("[7/13] Creating Sheet 5: Integration_Status...")
+    logger.info("[7/13] Creating Sheet 5: Integration_Status...")
     create_integration_status(wb["Integration_Status"], styles)
     
-    print("[8/13] Creating Sheet 6: Stakeholder_Engagement...")
+    logger.info("[8/13] Creating Sheet 6: Stakeholder_Engagement...")
     create_stakeholder_engagement(wb["Stakeholder_Engagement"], styles)
     
-    print("[9/13] Creating Sheet 7: Trend_Analysis...")
+    logger.info("[9/13] Creating Sheet 7: Trend_Analysis...")
     create_trend_analysis(wb["Trend_Analysis"], styles)
     
-    print("[10/13] Creating Sheet 8: Risk_Indicators...")
+    logger.info("[10/13] Creating Sheet 8: Risk_Indicators...")
     create_risk_indicators(wb["Risk_Indicators"], styles, validations)
     
-    print("[11/13] Creating Sheet 9: Compliance_Evidence...")
+    logger.info("[11/13] Creating Sheet 9: Compliance_Evidence...")
     create_compliance_evidence(wb["Compliance_Evidence"], styles, validations)
     
-    print("[12/13] Creating Sheet 10: Monthly_Report...")
+    logger.info("[12/13] Creating Sheet 10: Monthly_Report...")
     create_monthly_report(wb["Monthly_Report"], styles)
     
-    print("[13/13] Creating Sheet 11: Quarterly_Report...")
+    logger.info("[13/13] Creating Sheet 11: Quarterly_Report...")
     create_quarterly_report(wb["Quarterly_Report"], styles)
     
-    print("[14/13] Creating Sheet 12: Metadata...")
+    logger.info("[14/13] Creating Sheet 12: Metadata...")
     create_metadata(wb["Metadata"], styles)
     
     # Generate filename with date
     filename = f"ISMS-IMP-A.5.7.4_Dashboard_{datetime.now().strftime('%Y%m%d')}.xlsx"
     
-    print()
-    print(f"[15/13] Saving workbook: {filename}")
+    logger.info("")
+    logger.info(f"[15/13] Saving workbook: {filename}")
     wb.save(filename)
     
-    print()
-    print("=" * 80)
-    print("✅ SUCCESS!")
-    print("=" * 80)
-    print()
-    print(f"Generated: {filename}")
-    print()
-    print("Workbook Contents:")
-    print("  - 12 sheets with comprehensive TI program dashboard")
-    print("  - Executive summary (single-page C-level view)")
-    print("  - 24 KPIs: 18 standard + 6 CVSS/Risk/Incident KPIs (V2.0)")
-    print("  - Aggregated metrics from 5.7.1, 5.7.2, 5.7.3 workbooks")
-    print("  - 12-month trend analysis")
-    print("  - Risk indicators and early warnings")
-    print("  - 20 compliance evidence items for ISO 27001 audits")
-    print("  - Monthly and quarterly report templates")
-    print()
-    print("⚠️  CRITICAL POST-GENERATION STEPS:")
-    print("=" * 80)
-    print("1. Complete assessment workbooks with operational data:")
-    print("   - ISMS-IMP-A.5.7.1_Sources_YYYYMMDD.xlsx")
-    print("   - ISMS-IMP-A.5.7.2_Collection_YYYYMMDD.xlsx")
-    print("   - ISMS-IMP-A.5.7.3_Integration_YYYYMMDD.xlsx")
-    print()
-    print("2. Normalize filenames for stable dashboard references:")
-    print("   python3 normalize_assessment_files_a57.py")
-    print("   → Creates: ISMS-IMP-A.5.7.1.xlsx, ISMS-IMP-A.5.7.2.xlsx, ISMS-IMP-A.5.7.3.xlsx")
-    print("   → Location: ./Dashboard_Sources/ directory")
-    print()
-    print("3. Place this dashboard in Dashboard_Sources/ directory:")
-    print("   cp ISMS-IMP-A.5.7.4_Dashboard_YYYYMMDD.xlsx Dashboard_Sources/")
-    print()
-    print("4. Open dashboard in Excel:")
-    print("   - Excel prompts: 'Update Links?' → Click UPDATE")
-    print("   - Dashboard auto-populates with current TI program data")
-    print()
-    print("5. Complete dashboard setup:")
-    print("   - Set target values in Program_KPIs sheet")
-    print("   - Configure risk thresholds in Risk_Indicators")
-    print("   - Update compliance evidence status")
-    print()
-    print("External References Used:")
-    print("  - [ISMS-IMP-A.5.7.1.xlsx] → 50+ formulas (normalized, no dates)")
-    print("  - [ISMS-IMP-A.5.7.2.xlsx] → 40+ formulas (normalized, no dates)")
-    print("  - [ISMS-IMP-A.5.7.3.xlsx] → 30+ formulas (normalized, no dates)")
-    print()
-    print("Next Steps:")
-    print("  1. Run sanity check: python3 excel_sanity_check_a57_4.py <filename>")
-    print("  2. Normalize assessment files: python3 normalize_assessment_files_a57.py")
-    print("  3. Place dashboard in Dashboard_Sources/ directory")
-    print("  4. Open dashboard and click 'Update Links'")
-    print()
+    logger.info("")
+    logger.info("=" * 80)
+    logger.info("✅ SUCCESS!")
+    logger.info("=" * 80)
+    logger.info("")
+    logger.info(f"Generated: {filename}")
+    logger.info("")
+    logger.info("Workbook Contents:")
+    logger.info("  - 12 sheets with comprehensive TI program dashboard")
+    logger.info("  - Executive summary (single-page C-level view)")
+    logger.info("  - 24 KPIs: 18 standard + 6 CVSS/Risk/Incident KPIs (V1.0)")
+    logger.info("  - Aggregated metrics from 5.7.1, 5.7.2, 5.7.3 workbooks")
+    logger.info("  - 12-month trend analysis")
+    logger.info("  - Risk indicators and early warnings")
+    logger.info("  - 20 compliance evidence items for ISO 27001 audits")
+    logger.info("  - Monthly and quarterly report templates")
+    logger.info("")
+    logger.info("⚠️  CRITICAL POST-GENERATION STEPS:")
+    logger.info("=" * 80)
+    logger.info("1. Complete assessment workbooks with operational data:")
+    logger.info("   - ISMS-IMP-A.5.7.1_Sources_YYYYMMDD.xlsx")
+    logger.info("   - ISMS-IMP-A.5.7.2_Collection_YYYYMMDD.xlsx")
+    logger.info("   - ISMS-IMP-A.5.7.3_Integration_YYYYMMDD.xlsx")
+    logger.info("")
+    logger.info("2. Normalize filenames for stable dashboard references:")
+    logger.info("   python3 normalize_assessment_files_a57.py")
+    logger.info("   → Creates: ISMS-IMP-A.5.7.1.xlsx, ISMS-IMP-A.5.7.2.xlsx, ISMS-IMP-A.5.7.3.xlsx")
+    logger.info("   → Location: ./Dashboard_Sources/ directory")
+    logger.info("")
+    logger.info("3. Place this dashboard in Dashboard_Sources/ directory:")
+    logger.info("   cp ISMS-IMP-A.5.7.4_Dashboard_YYYYMMDD.xlsx Dashboard_Sources/")
+    logger.info("")
+    logger.info("4. Open dashboard in Excel:")
+    logger.info("   - Excel prompts: 'Update Links?' → Click UPDATE")
+    logger.info("   - Dashboard auto-populates with current TI program data")
+    logger.info("")
+    logger.info("5. Complete dashboard setup:")
+    logger.info("   - Set target values in Program_KPIs sheet")
+    logger.info("   - Configure risk thresholds in Risk_Indicators")
+    logger.info("   - Update compliance evidence status")
+    logger.info("")
+    logger.info("External References Used:")
+    logger.info("  - [ISMS-IMP-A.5.7.1.xlsx] → 50+ formulas (normalized, no dates)")
+    logger.info("  - [ISMS-IMP-A.5.7.2.xlsx] → 40+ formulas (normalized, no dates)")
+    logger.info("  - [ISMS-IMP-A.5.7.3.xlsx] → 30+ formulas (normalized, no dates)")
+    logger.info("")
+    logger.info("Next Steps:")
+    logger.info("  1. Run sanity check: python3 excel_sanity_check_a57_4.py <filename>")
+    logger.info("  2. Normalize assessment files: python3 normalize_assessment_files_a57.py")
+    logger.info("  3. Place dashboard in Dashboard_Sources/ directory")
+    logger.info("  4. Open dashboard and click 'Update Links'")
+    logger.info("")
     
     
-    print()
-    print("NEW IN V2.0:")
-    print("  ✓ CVSS 4.0 adoption rate tracking (target: 75% by Q4 2026)")
-    print("  ✓ 6 CVSS-based KPIs (CVSS-001 to INC-001)")
-    print("  ✓ Emergency indicator (High CVSS + Active Exploitation = 0)")
-    print("  ✓ CVSS severity distribution of prevented incidents")
-    print("  ✓ CVSS quantification for risk management (Clause 6.1)")
-    print("  ✓ CVSS context in incident response tracking")
-    print("  ✓ Source CVSS accuracy monitoring")
-    print()
-    print("CRITICAL: Ensure source workbooks (A.5.7.1/2/3) have CVSS columns!")
+    logger.info("")
+    logger.info("NEW IN V1.0:")
+    logger.info("  ✓ CVSS 4.0 adoption rate tracking (target: 75% by Q4 2026)")
+    logger.info("  ✓ 6 CVSS-based KPIs (CVSS-001 to INC-001)")
+    logger.info("  ✓ Emergency indicator (High CVSS + Active Exploitation = 0)")
+    logger.info("  ✓ CVSS severity distribution of prevented incidents")
+    logger.info("  ✓ CVSS quantification for risk management (Clause 6.1)")
+    logger.info("  ✓ CVSS context in incident response tracking")
+    logger.info("  ✓ Source CVSS accuracy monitoring")
+    logger.info("")
+    logger.info("CRITICAL: Ensure source workbooks (A.5.7.1/2/3) have CVSS columns!")
     
-    print("Evidence > Theater. Use it well.")
-    print("=" * 80)
+    logger.info("Evidence > Theater. Use it well.")
+    logger.info("=" * 80)
 
 
 if __name__ == "__main__":
@@ -2792,3 +2831,9 @@ if __name__ == "__main__":
 # ============================================================================
 # END OF GENERATE_A57_4_DASHBOARD.PY
 # ============================================================================
+# =============================================================================
+# QA_VERIFIED: 2026-01-31
+# QA_STATUS: PASSED - STANDARDIZATION COMPLETE (Phase 1-3)
+# QA_TOOL: Claude Code Standardization
+# CHANGES: constants, metadata headers, v1.0 versioning, logger output
+# =============================================================================

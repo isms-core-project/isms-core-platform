@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# =============================================================================
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-ISMS-Commercial
+# Copyright (c) 2025-2026 ISMS Core Contributors
+#
+# This file is part of ISMS Core.
+#
+# ISMS Core is dual-licensed:
+#   1. AGPL 3.0 (Open Source) - See LICENSE-AGPL.txt
+#   2. Commercial License - Contact vendor for proprietary use
+#
+# You may use this file under either license, at your option.
+# =============================================================================
 """
 ================================================================================
 ISMS-A.8.24 - Complete Assessment Workflow Orchestration
@@ -149,7 +161,7 @@ System Requirements:
 Installation:
     Ubuntu/Debian:
         sudo apt install python3-openpyxl
-    
+
     Or via pip:
         pip3 install openpyxl
 
@@ -187,28 +199,28 @@ Basic Usage:
 Advanced Usage:
     # Incremental workflow (skip generation, assumes assessments exist)
     python3 complete_workflow_824.py --incremental
-    
+
     # Validation only (no execution, just quality checks)
     python3 complete_workflow_824.py --validate-only
-    
+
     # Dry run (simulate without writing files)
     python3 complete_workflow_824.py --dry-run
-    
+
     # Specify working directory
     python3 complete_workflow_824.py --work-dir /path/to/working/directory
-    
+
     # Skip specific stages
     python3 complete_workflow_824.py --skip-generation --skip-normalization
-    
+
     # Enable email notifications on completion
     python3 complete_workflow_824.py --notify-email admin@example.com
-    
+
     # Generate PDF executive summary
     python3 complete_workflow_824.py --pdf-summary
-    
+
     # Verbose logging for troubleshooting
     python3 complete_workflow_824.py --verbose
-    
+
     # Interactive mode (pause at quality gates for approval)
     python3 complete_workflow_824.py --interactive
 
@@ -256,19 +268,19 @@ Output Files:
         ISMS_A_8_24_3_Authentication_Assessment_YYYYMMDD.xlsx
         ISMS_A_8_24_4_Key_Management_Assessment_YYYYMMDD.xlsx
         ISMS_A_8_24_5_Compliance_Dashboard_YYYYMMDD.xlsx (template)
-    
+
     Validation Reports:
         A824_Workflow_Pre_Generation_Validation_YYYYMMDD.txt
         A824_Workflow_Post_Generation_Validation_YYYYMMDD.txt
         A824_Workflow_Normalization_Report_YYYYMMDD.txt
         A824_Workflow_Post_Consolidation_Validation_YYYYMMDD.txt
-    
+
     Dashboard:
         ISMS_A_8_24_5_Compliance_Dashboard_YYYYMMDD.xlsx (populated)
-    
+
     Workflow Log:
         A824_Complete_Workflow_Log_YYYYMMDD.txt (comprehensive workflow log)
-    
+
     Executive Summary:
         A824_Executive_Summary_YYYYMMDD.pdf (if --pdf-summary used)
 
@@ -278,13 +290,13 @@ Workflow Examples:
        python3 complete_workflow_824.py --verbose --backup --interactive
        [Wait for human completion of assessments]
        python3 complete_workflow_824.py --incremental --pdf-summary
-    
+
     2. Quarterly reassessment:
        python3 complete_workflow_824.py --incremental --notify-email ciso@example.com
-    
+
     3. Pre-audit validation:
        python3 complete_workflow_824.py --validate-only --verbose
-    
+
     4. Testing before production:
        python3 complete_workflow_824.py --dry-run --verbose
 
@@ -346,7 +358,7 @@ IMPORTANT NOTES
 
 **Workflow Philosophy - "Don't Fool Yourself" Engineering:**
 This script embodies Richard Feynman's principle: "The first principle is that
-you must not fool yourself—and you are the easiest person to fool."
+you must not fool yourself-and you are the easiest person to fool."
 
 Quality gates aren't bureaucracy - they prevent you from consolidating garbage
 data into a compliance dashboard that gives false confidence. Each quality gate
@@ -355,7 +367,7 @@ exists because someone, somewhere, learned a painful lesson.
 **Quality Gates Are Not Optional:**
 Temptation will arise to use --continue-on-warning to "just get it done."
 Resist. Quality gates exist to catch errors BEFORE they become audit findings
-or security incidents. 
+or security incidents.
 
 A quality gate warning means something is wrong. Fix it, don't override it.
 
@@ -470,7 +482,7 @@ Backups stored with _backup_YYYYMMDD suffix for recovery.
 Workflow supports compliance evidence generation for:
 - ISO 27001:2022 Control A.8.24 certification
 - PCI DSS cryptographic requirements (Requirement 4, 8)
-- HIPAA encryption accountability (§164.312(a)(2)(iv))
+- HIPAA encryption accountability (164.312(a)(2)(iv))
 - GDPR encryption as appropriate safeguard (Article 32)
 - SOC 2 Type II cryptographic controls
 
@@ -498,177 +510,214 @@ Automation is a tool, not a substitute for human review and judgment.
 ================================================================================
 """
 
-import subprocess
+# =============================================================================
+# Standard Library Imports
+# =============================================================================
+import logging
 import sys
 import os
+import shutil
+import subprocess
 from datetime import datetime
 
+# =============================================================================
+# Logging Configuration
+# =============================================================================
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
+
+
 def run_command(cmd, description):
-    """Run a command and report status"""
-    print(f"\n{'='*80}")
-    print(f"{description}")
-    print(f"{'='*80}")
-    print(f"Command: {' '.join(cmd)}")
-    print()
-    
+    """Run a command and report status."""
+    logger.info("=" * 80)
+    logger.info("%s", description)
+    logger.info("=" * 80)
+    logger.info("Command: %s", ' '.join(cmd))
+
     result = subprocess.run(cmd, capture_output=True, text=True)
-    
+
     if result.returncode == 0:
         # Show last 10 lines of output
         lines = result.stdout.strip().split('\n')
         for line in lines[-10:]:
-            print(line)
-        print(f"\n✅ {description} - SUCCESS")
+            logger.info("%s", line)
+        logger.info("%s - SUCCESS", description)
         return True
     else:
-        print(f"\n❌ {description} - FAILED")
-        print(result.stderr)
+        logger.error("%s - FAILED", description)
+        logger.error("%s", result.stderr)
         return False
 
+
 def main():
-    print("="*80)
-    print("ISMS A.8.24 CRYPTOGRAPHY ASSESSMENT - COMPLETE WORKFLOW")
-    print("="*80)
-    print(f"Started: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print()
-    print("This will:")
-    print("  1. Generate 4 assessment workbooks")
-    print("  2. Populate them with comprehensive demo data")
-    print("  3. Generate consolidated dashboard")
-    print("  4. Populate dashboard with gaps, risks, remediation, evidence")
-    print()
-    print("Estimated time: 2-3 minutes")
-    print("="*80)
-    
-    input("\nPress ENTER to start...")
-    
-    # Step 1: Generate assessment workbooks
-    print("\n\n" + "🔷"*40)
-    print("PHASE 1: GENERATING ASSESSMENT WORKBOOKS")
-    print("🔷"*40)
-    
-    workbooks = [
-        ("generate_a824_1_data_transmission_assessment.py", "Data Transmission Workbook"),
-        ("generate_a824_2_data_storage_assessment.py", "Data Storage Workbook"),
-        ("generate_a824_3_authentication_assessment.py", "Authentication Workbook"),
-        ("generate_a824_4_key_management_assessment.py", "Key Management Workbook"),
-    ]
-    
-    for script, name in workbooks:
-        if not run_command([sys.executable, script], f"Generating {name}"):
-            print("\n❌ Workflow failed. Aborting.")
+    """Main workflow orchestration function."""
+    try:
+        logger.info("=" * 80)
+        logger.info("ISMS A.8.24 CRYPTOGRAPHY ASSESSMENT - COMPLETE WORKFLOW")
+        logger.info("=" * 80)
+        logger.info("Started: %s", datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+        logger.info("")
+        logger.info("This will:")
+        logger.info("  1. Generate 4 assessment workbooks")
+        logger.info("  2. Populate them with comprehensive demo data")
+        logger.info("  3. Generate consolidated dashboard")
+        logger.info("  4. Populate dashboard with gaps, risks, remediation, evidence")
+        logger.info("")
+        logger.info("Estimated time: 2-3 minutes")
+        logger.info("=" * 80)
+
+        input("\nPress ENTER to start...")
+
+        # Step 1: Generate assessment workbooks
+        logger.info("")
+        logger.info("PHASE 1: GENERATING ASSESSMENT WORKBOOKS")
+        logger.info("=" * 80)
+
+        workbooks = [
+            ("generate_a824_1_data_transmission_assessment.py", "Data Transmission Workbook"),
+            ("generate_a824_2_data_storage_assessment.py", "Data Storage Workbook"),
+            ("generate_a824_3_authentication_assessment.py", "Authentication Workbook"),
+            ("generate_a824_4_key_management_assessment.py", "Key Management Workbook"),
+        ]
+
+        for script, name in workbooks:
+            if not run_command([sys.executable, script], f"Generating {name}"):
+                logger.error("Workflow failed. Aborting.")
+                return 1
+
+        # Step 2: Populate assessment workbooks
+        logger.info("")
+        logger.info("PHASE 2: POPULATING ASSESSMENT WORKBOOKS")
+        logger.info("=" * 80)
+
+        populations = [
+            ("populate_a824_1_data_transmission.py", "ISMS-IMP-A.8.24.1_Data_Transmission_20260113.xlsx", "Data Transmission"),
+            ("populate_a824_2_data_storage.py", "ISMS-IMP-A.8.24.2_Data_Storage_20260113.xlsx", "Data Storage"),
+            ("populate_a824_3_authentication.py", "ISMS-IMP-A.8.24.3_Authentication_20260113.xlsx", "Authentication"),
+            ("populate_a824_4_key_management.py", "ISMS-IMP-A.8.24.4_Key_Management_20260113.xlsx", "Key Management"),
+        ]
+
+        for script, workbook, name in populations:
+            if not run_command([sys.executable, script, workbook], f"Populating {name}"):
+                logger.error("Workflow failed. Aborting.")
+                return 1
+
+        # Step 3: Normalize filenames
+        logger.info("")
+        logger.info("PHASE 3: NORMALIZING FILENAMES")
+        logger.info("=" * 80)
+
+        normalizations = [
+            ("ISMS-IMP-A.8.24.1_Data_Transmission_20260113.xlsx", "ISMS-IMP-A.8.24.1.xlsx"),
+            ("ISMS-IMP-A.8.24.2_Data_Storage_20260113.xlsx", "ISMS-IMP-A.8.24.2.xlsx"),
+            ("ISMS-IMP-A.8.24.3_Authentication_20260113.xlsx", "ISMS-IMP-A.8.24.3.xlsx"),
+            ("ISMS-IMP-A.8.24.4_Key_Management_20260113.xlsx", "ISMS-IMP-A.8.24.4.xlsx"),
+        ]
+
+        for source, target in normalizations:
+            if os.path.exists(source):
+                shutil.copy(source, target)
+                logger.info("  %s -> %s", source, target)
+
+        logger.info("Filenames normalized")
+
+        # Step 4: Generate dashboard
+        logger.info("")
+        logger.info("PHASE 4: GENERATING CONSOLIDATED DASHBOARD")
+        logger.info("=" * 80)
+
+        if not run_command([sys.executable, "generate_a824_5_compliance_summary_dashboard.py"], "Generating Dashboard"):
+            logger.error("Workflow failed. Aborting.")
             return 1
-    
-    # Step 2: Populate assessment workbooks
-    print("\n\n" + "🔶"*40)
-    print("PHASE 2: POPULATING ASSESSMENT WORKBOOKS")
-    print("🔶"*40)
-    
-    populations = [
-        ("populate_a824_1_data_transmission.py", "ISMS-IMP-A.8.24.1_Data_Transmission_20260113.xlsx", "Data Transmission"),
-        ("populate_a824_2_data_storage.py", "ISMS-IMP-A.8.24.2_Data_Storage_20260113.xlsx", "Data Storage"),
-        ("populate_a824_3_authentication.py", "ISMS-IMP-A.8.24.3_Authentication_20260113.xlsx", "Authentication"),
-        ("populate_a824_4_key_management.py", "ISMS-IMP-A.8.24.4_Key_Management_20260113.xlsx", "Key Management"),
-    ]
-    
-    for script, workbook, name in populations:
-        if not run_command([sys.executable, script, workbook], f"Populating {name}"):
-            print("\n❌ Workflow failed. Aborting.")
+
+        # Step 5: Populate dashboard comprehensively
+        logger.info("")
+        logger.info("PHASE 5: POPULATING DASHBOARD (COMPREHENSIVE)")
+        logger.info("=" * 80)
+
+        if not run_command([sys.executable, "consolidate_a824_dashboard.py", "ISMS-IMP-A.8.24.5_Compliance_Summary_Dashboard_20260113.xlsx"], "Populating Dashboard"):
+            logger.error("Workflow failed. Aborting.")
             return 1
-    
-    # Step 3: Normalize filenames
-    print("\n\n" + "🔷"*40)
-    print("PHASE 3: NORMALIZING FILENAMES")
-    print("🔷"*40)
-    
-    normalizations = [
-        ("ISMS-IMP-A.8.24.1_Data_Transmission_20260113.xlsx", "ISMS-IMP-A.8.24.1.xlsx"),
-        ("ISMS-IMP-A.8.24.2_Data_Storage_20260113.xlsx", "ISMS-IMP-A.8.24.2.xlsx"),
-        ("ISMS-IMP-A.8.24.3_Authentication_20260113.xlsx", "ISMS-IMP-A.8.24.3.xlsx"),
-        ("ISMS-IMP-A.8.24.4_Key_Management_20260113.xlsx", "ISMS-IMP-A.8.24.4.xlsx"),
-    ]
-    
-    for source, target in normalizations:
-        if os.path.exists(source):
-            import shutil
-            shutil.copy(source, target)
-            print(f"  ✓ {source} → {target}")
-    
-    print("\n✅ Filenames normalized")
-    
-    # Step 4: Generate dashboard
-    print("\n\n" + "🔶"*40)
-    print("PHASE 4: GENERATING CONSOLIDATED DASHBOARD")
-    print("🔶"*40)
-    
-    if not run_command([sys.executable, "generate_a824_5_compliance_summary_dashboard.py"], "Generating Dashboard"):
-        print("\n❌ Workflow failed. Aborting.")
+
+        # Final summary
+        logger.info("")
+        logger.info("=" * 80)
+        logger.info("WORKFLOW COMPLETE - ALL FILES GENERATED AND POPULATED!")
+        logger.info("=" * 80)
+        logger.info("Completed: %s", datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+        logger.info("")
+        logger.info("Generated Files:")
+        logger.info("=" * 80)
+
+        files = [
+            "ISMS-IMP-A.8.24.1_Data_Transmission_20260113.xlsx",
+            "ISMS-IMP-A.8.24.2_Data_Storage_20260113.xlsx",
+            "ISMS-IMP-A.8.24.3_Authentication_20260113.xlsx",
+            "ISMS-IMP-A.8.24.4_Key_Management_20260113.xlsx",
+            "ISMS-IMP-A.8.24.5_Compliance_Summary_Dashboard_20260113.xlsx",
+        ]
+
+        logger.info("")
+        logger.info("1. ASSESSMENT WORKBOOKS (Fully Populated):")
+        for f in files[:4]:
+            if os.path.exists(f):
+                size = os.path.getsize(f) / 1024
+                logger.info("   %s (%.1f KB)", f, size)
+
+        logger.info("")
+        logger.info("2. CONSOLIDATED DASHBOARD (Fully Populated):")
+        if os.path.exists(files[4]):
+            size = os.path.getsize(files[4]) / 1024
+            logger.info("   %s (%.1f KB)", files[4], size)
+
+        logger.info("")
+        logger.info("Dashboard Contents:")
+        logger.info("   - Gap Analysis: ~60 identified gaps")
+        logger.info("   - Risk Register: ~23 security risks")
+        logger.info("   - Remediation Roadmap: ~60 action items")
+        logger.info("   - Evidence Register: 110 evidence documents")
+        logger.info("   - KPIs & Metrics: Ready for manual entry")
+        logger.info("   - Executive Dashboard: Auto-calculated compliance %%")
+
+        logger.info("")
+        logger.info("CISO Presentation Status:")
+        logger.info("   - All workbooks populated with realistic data")
+        logger.info("   - Evidence documentation comprehensive")
+        logger.info("   - Gaps and risks identified and prioritized")
+        logger.info("   - Remediation roadmap with timelines")
+        logger.info("   - Approval workflows complete")
+        logger.info("   - Professional quality throughout")
+
+        logger.info("")
+        logger.info("Next Steps:")
+        logger.info("   1. Open ISMS-IMP-A.8.24.5_Compliance_Summary_Dashboard_20260113.xlsx")
+        logger.info("   2. Update external links (Excel will prompt)")
+        logger.info("   3. Review Executive Dashboard compliance percentages")
+        logger.info("   4. Customize any manual entry sections as needed")
+        logger.info("   5. Present to CISO for project approval!")
+
+        logger.info("")
+        logger.info("=" * 80)
+        logger.info("Ready for CISO Presentation! Good luck!")
+        logger.info("=" * 80)
+
+        return 0
+
+    except Exception as e:
+        logger.error("Workflow failed with exception: %s", str(e))
         return 1
-    
-    # Step 5: Populate dashboard comprehensively
-    print("\n\n" + "🔷"*40)
-    print("PHASE 5: POPULATING DASHBOARD (COMPREHENSIVE)")
-    print("🔷"*40)
-    
-    if not run_command([sys.executable, "consolidate_a824_dashboard.py", "ISMS-IMP-A.8.24.5_Compliance_Summary_Dashboard_20260113.xlsx"], "Populating Dashboard"):
-        print("\n❌ Workflow failed. Aborting.")
-        return 1
-    
-    # Final summary
-    print("\n\n" + "="*80)
-    print("🎉 WORKFLOW COMPLETE - ALL FILES GENERATED AND POPULATED!")
-    print("="*80)
-    print(f"\nCompleted: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print("\n📁 Generated Files:")
-    print("="*80)
-    
-    files = [
-        "ISMS-IMP-A.8.24.1_Data_Transmission_20260113.xlsx",
-        "ISMS-IMP-A.8.24.2_Data_Storage_20260113.xlsx",
-        "ISMS-IMP-A.8.24.3_Authentication_20260113.xlsx",
-        "ISMS-IMP-A.8.24.4_Key_Management_20260113.xlsx",
-        "ISMS-IMP-A.8.24.5_Compliance_Summary_Dashboard_20260113.xlsx",
-    ]
-    
-    print("\n1. ASSESSMENT WORKBOOKS (Fully Populated):")
-    for f in files[:4]:
-        if os.path.exists(f):
-            size = os.path.getsize(f) / 1024
-            print(f"   ✓ {f} ({size:.1f} KB)")
-    
-    print("\n2. CONSOLIDATED DASHBOARD (Fully Populated):")
-    if os.path.exists(files[4]):
-        size = os.path.getsize(files[4]) / 1024
-        print(f"   ✓ {files[4]} ({size:.1f} KB)")
-    
-    print("\n📊 Dashboard Contents:")
-    print("   • Gap Analysis: ~60 identified gaps")
-    print("   • Risk Register: ~23 security risks")
-    print("   • Remediation Roadmap: ~60 action items")
-    print("   • Evidence Register: 110 evidence documents")
-    print("   • KPIs & Metrics: Ready for manual entry")
-    print("   • Executive Dashboard: Auto-calculated compliance %")
-    
-    print("\n🎯 CISO Presentation Status:")
-    print("   ✅ All workbooks populated with realistic data")
-    print("   ✅ Evidence documentation comprehensive")
-    print("   ✅ Gaps and risks identified and prioritized")
-    print("   ✅ Remediation roadmap with timelines")
-    print("   ✅ Approval workflows complete")
-    print("   ✅ Professional quality throughout")
-    
-    print("\n📝 Next Steps:")
-    print("   1. Open ISMS-IMP-A.8.24.5_Compliance_Summary_Dashboard_20260113.xlsx")
-    print("   2. Update external links (Excel will prompt)")
-    print("   3. Review Executive Dashboard compliance percentages")
-    print("   4. Customize any manual entry sections as needed")
-    print("   5. Present to CISO for project approval!")
-    
-    print("\n" + "="*80)
-    print("🚀 Ready for CISO Presentation! Good luck!")
-    print("="*80 + "\n")
-    
-    return 0
+
 
 if __name__ == "__main__":
     sys.exit(main())
+
+# =============================================================================
+# QA_VERIFIED: 2026-01-31
+# QA_STATUS: PASSED (standardized: license, imports, logging, exit codes)
+# QA_TOOL: Claude Code Deep Scan
+# STANDARDIZATION: v1.0 - AGPL-3.0/Commercial dual-license
+# =============================================================================

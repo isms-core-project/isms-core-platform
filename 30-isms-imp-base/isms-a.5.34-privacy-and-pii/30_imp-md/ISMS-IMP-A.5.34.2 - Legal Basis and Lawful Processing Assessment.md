@@ -1,8 +1,8 @@
-# ISMS-IMP-A.5.34.2 - Legal Basis and Lawful Processing Assessment
-## Assessment Specification with User Completion Guide
+**ISMS-IMP-A.5.34.2 - Legal Basis and Lawful Processing Assessment**
+**Assessment Specification with User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.5.34: Privacy and Protection of PII
 
-## Document Control
+**Document Control**
 
 | Attribute | Value |
 |-----------|-------|
@@ -45,10 +45,12 @@ This document consists of two parts:
   - Integration Points
   - Python Script Architecture
 
+
 **Target Audiences:**
 
 - **Part I:** Assessment users (DPO, Legal Counsel, Business Process Owners)
 - **Part II:** Workbook developers (Python/Excel script maintainers)
+
 
 ---
 
@@ -58,19 +60,21 @@ This document consists of two parts:
 
 ---
 
-## 1. Assessment Overview
+# Assessment Overview
 
-### 1.1 Purpose & Scope
+## Purpose & Scope
 
 **Assessment Name:** ISMS-IMP-A.5.34.2 - Legal Basis and Lawful Processing Assessment
 
-#### What This Assessment Covers
+### What This Assessment Covers
 
 This assessment evaluates [Organization]'s **legal basis for all PII processing activities** to ensure lawful processing under:
+
 - ISO/IEC 27001:2022 Control A.5.34
 - GDPR Article 6 (Lawfulness of processing)
 - GDPR Article 9 (Special category data)
 - Swiss FADP Articles 6, 30, 31, 34
+
 
 **Core Assessment Components:**
 1. **Legal Basis Inventory** - GDPR Art. 6 basis documented for each processing activity
@@ -82,7 +86,7 @@ This assessment evaluates [Organization]'s **legal basis for all PII processing 
 
 **Assessment Scope:** All PII processing activities identified in ISMS-IMP-A.5.34.1 (PII Identification Assessment) and documented in the Record of Processing Activities (ROPA).
 
-#### What You'll Document
+### What You'll Document
 
 - ✅ **Legal basis (GDPR Art. 6)** for EVERY processing activity
 - ✅ **Legal basis (GDPR Art. 9)** for special category data (sensitive PII)
@@ -93,7 +97,8 @@ This assessment evaluates [Organization]'s **legal basis for all PII processing 
 - ✅ **Evidence repository** for audit readiness
 - ✅ **Approved assessment** with DPO and Legal Counsel sign-offs
 
-#### How This Relates to Other A.5.34 Assessments
+
+### How This Relates to Other A.5.34 Assessments
 
 | Assessment | Focus | Relationship to A.5.34.2 |
 |------------|-------|--------------------------|
@@ -106,9 +111,9 @@ This assessment evaluates [Organization]'s **legal basis for all PII processing 
 
 **Context Note:** This assessment REQUIRES completed ISMS-IMP-A.5.34.1 (PII Identification) as input. You cannot document legal basis without first identifying all processing activities.
 
-### 1.2 Who Should Complete This Assessment
+## Who Should Complete This Assessment
 
-#### Primary Stakeholders
+### Primary Stakeholders
 
 1. **Data Protection Officer (DPO) / Privacy Officer** - Leads assessment, validates legal basis, approves LIAs
 2. **Legal Counsel** - Reviews legal basis interpretations, validates contractual necessity claims, ensures regulatory compliance
@@ -116,7 +121,7 @@ This assessment evaluates [Organization]'s **legal basis for all PII processing 
 4. **Data Protection Coordinators** - Facilitate assessment completion, coordinate with business units
 5. **Compliance Officers** - Ensure alignment with broader compliance programs
 
-#### Required Skills
+### Required Skills
 
 - Understanding of GDPR Articles 6 and 9 legal basis framework
 - Familiarity with [Organization]'s processing activities (from ROPA)
@@ -124,7 +129,8 @@ This assessment evaluates [Organization]'s **legal basis for all PII processing 
 - Knowledge of consent management requirements (GDPR Article 7)
 - Understanding of data subject rights and exemptions
 
-#### Time Commitment
+
+### Time Commitment
 
 - **Initial assessment:** 8-12 hours (depending on processing complexity)
   - Small organization (10-20 processing activities): 8-10 hours
@@ -132,7 +138,8 @@ This assessment evaluates [Organization]'s **legal basis for all PII processing 
   - Large organization (50+ processing activities): 15-25+ hours
 - **Quarterly updates:** 2-4 hours (verify no changes, update for new processing)
 
-### 1.3 Expected Outputs
+
+## Expected Outputs
 
 Upon completion, you will have:
 
@@ -147,38 +154,42 @@ Upon completion, you will have:
 
 ---
 
-## 2. Prerequisites
+# Prerequisites
 
-### 2.1 Information You'll Need
+## Information You'll Need
 
 Before starting this assessment, gather:
 
-#### 1. ROPA from ISMS-IMP-A.5.34.1
+### ROPA from ISMS-IMP-A.5.34.1
 
 - Complete Record of Processing Activities
 - Processing purposes, PII categories, data subjects
 - Recipients (internal departments, external processors, third parties)
 
-#### 2. Privacy Notices and Policies
+
+### Privacy Notices and Policies
 
 - Customer privacy notice (website, terms of service)
 - Employee privacy notice (handbook, HR policies)
 - Data subject information (GDPR Articles 13/14 notices)
 
-#### 3. Consent Records (if applicable)
+
+### Consent Records (if applicable)
 
 - Consent capture mechanisms (forms, checkboxes, opt-in processes)
 - Consent logs and audit trails
 - Consent withdrawal processes
 
-#### 4. Contracts and Agreements
+
+### Contracts and Agreements
 
 - Customer contracts (if relying on contract as legal basis)
 - Employment contracts (for employee data processing)
 - Data Processing Agreements (DPAs) with processors
 - Third-party data sharing agreements
 
-#### 5. Legal Obligations Register (if applicable)
+
+### Legal Obligations Register (if applicable)
 
 - Laws requiring specific data processing
   - Employment law (payroll, social security)
@@ -186,11 +197,13 @@ Before starting this assessment, gather:
   - Anti-money laundering (KYC/AML requirements)
   - Sector regulations (healthcare, financial services, etc.)
 
-### 2.2 Access Required
+
+## Access Required
 
 You will need access to:
 
 **Documents:**
+
 - [ ] Record of Processing Activities (ROPA) from ISMS-IMP-A.5.34.1
 - [ ] Privacy notices and policies
 - [ ] Consent forms and mechanisms
@@ -198,23 +211,29 @@ You will need access to:
 - [ ] Data processing agreements (DPAs)
 - [ ] Legal obligations register
 
+
 **Systems:**
+
 - [ ] Consent management platform (if applicable)
 - [ ] Customer relationship management (CRM) system
 - [ ] HR management system (HRIS)
 - [ ] Marketing automation platforms
 - [ ] Document management system (contracts, policies)
 
+
 **People:**
+
 - [ ] Legal Counsel (for legal basis interpretation)
 - [ ] Business Process Owners (for processing necessity assessment)
 - [ ] Marketing/Sales Leads (for consent management)
 - [ ] HR Lead (for employee data processing)
 - [ ] IT/System Owners (for technical implementation validation)
 
-### 2.3 Tools and Resources
+
+## Tools and Resources
 
 **Assessment Workbook:** Excel workbook (generated by `generate_a5342_legal_basis_assessment.py`) containing:
+
 - Sheet 1: Instructions & Legend
 - Sheet 2: Legal Basis Inventory
 - Sheet 3: Legitimate Interest Assessments (LIA)
@@ -224,12 +243,16 @@ You will need access to:
 - Sheet 7: Dashboard
 - Sheet 8: Approval & Sign-Off
 
+
 **Supporting Tools** (optional):
+
 - **Consent management platform** - Automated consent logging (OneTrust, Cookiebot, etc.)
 - **Contract management system** - Centralized contract repository
 - **Legal obligation tracking** - Regulatory requirement mapping
 
+
 **Reference Materials:**
+
 - ISMS-POL-A.5.34 Section 2.2 (Legal Basis framework)
 - ISMS-CTX-A.5.34 (Privacy regulatory landscape - GDPR/FADP guidance)
 - [ICO Guidance: Lawful basis for processing](https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/lawful-basis-for-processing/)
@@ -237,11 +260,12 @@ You will need access to:
 - [CNIL Guidance: Legitimate Interest](https://www.cnil.fr/en/sheet-ndeg-6-legitimate-interest)
 - Swiss FDPIC guidance on FADP legal basis
 
+
 ---
 
-## 3. Legal Basis Selection Framework
+# Legal Basis Selection Framework
 
-### 3.1 GDPR Article 6 - Lawful Processing
+## GDPR Article 6 - Lawful Processing
 
 **CRITICAL:** Processing is only lawful if AT LEAST ONE of the following applies:
 
@@ -254,19 +278,24 @@ You will need access to:
 | **(e) Public Task** | Public authority performing official function | Organization must have public authority status | No - public function |
 | **(f) Legitimate Interest** | Processing necessary for legitimate interests (controller or third party) | Requires balancing test (LIA) - controller's interests vs. data subject's rights | Yes - Art. 21 objection right |
 
-### 3.2 Legal Basis Decision Tree
+## Legal Basis Decision Tree
 
 **Step 1: Is there a legal obligation requiring this processing?**
+
 - YES → Legal Basis = **Legal Obligation (Art. 6(1)(c))**
 - NO → Continue to Step 2
 
+
 **Step 2: Is this processing objectively necessary to perform a contract with the data subject?**
+
 - YES → Legal Basis = **Contract (Art. 6(1)(b))**
   - ⚠️ **Important:** "Necessary" means the contract cannot be performed without it
   - ❌ **Not acceptable:** Using contract for optional extras or marketing
 - NO → Continue to Step 3
 
+
 **Step 3: Can you obtain freely given, specific, informed consent?**
+
 - YES, and consent is appropriate → Legal Basis = **Consent (Art. 6(1)(a))**
   - ⚠️ **Caution:** Consent is rarely appropriate for:
     - Employee data (power imbalance)
@@ -274,14 +303,17 @@ You will need access to:
     - Processing where refusal has negative consequences
 - NO → Continue to Step 4
 
+
 **Step 4: Is there a legitimate interest for processing?**
+
 - YES → Legal Basis = **Legitimate Interest (Art. 6(1)(f))**
   - ✅ **Required:** Complete Legitimate Interest Assessment (LIA) with balancing test
   - ✅ **Required:** Provide opt-out mechanism where appropriate
   - ❌ **Not for public authorities:** Public authorities cannot use legitimate interest for official tasks
 - NO → Processing may not be lawful (seek Legal Counsel advice)
 
-### 3.3 Common Misconceptions
+
+## Common Misconceptions
 
 **❌ WRONG → ✅ CORRECT**
 
@@ -293,11 +325,12 @@ You will need access to:
 | "Privacy policy = Legal basis" | Privacy policy informs about legal basis but does NOT establish legal basis |
 | "We always use consent to be safe" | Consent is NOT always appropriate (power imbalance, public authority, service condition) |
 
-### 3.4 GDPR Article 9 - Special Category Data
+## GDPR Article 9 - Special Category Data
 
 **If processing involves special category data (Sensitive PII):**
 
 Special categories (GDPR Art. 9(1)):
+
 - Racial or ethnic origin
 - Political opinions
 - Religious or philosophical beliefs
@@ -307,6 +340,7 @@ Special categories (GDPR Art. 9(1)):
 - Health data
 - Sex life or sexual orientation
 - **Swiss FADP adds:** Data concerning the private sphere
+
 
 **Additional legal basis required under GDPR Article 9(2):**
 
@@ -329,9 +363,9 @@ Special categories (GDPR Art. 9(1)):
 
 ---
 
-## 4. Assessment Workflow
+# Assessment Workflow
 
-### High-Level Process
+## High-Level Process
 
 ```
 1. IMPORT ROPA (from ISMS-IMP-A.5.34.1)
@@ -351,9 +385,9 @@ Special categories (GDPR Art. 9(1)):
 8. REVIEW & APPROVE (DPO and Legal Counsel sign-off)
 ```
 
-### Detailed Workflow
+## Detailed Workflow
 
-#### Phase 1: Preparation (1-2 hours)
+### Phase 1: Preparation (1-2 hours)
 
 **Objective:** Set up assessment and gather inputs
 
@@ -367,38 +401,46 @@ Special categories (GDPR Art. 9(1)):
 
 **Deliverable:** Assessment plan with stakeholder schedule
 
-#### Phase 2: Legal Basis Documentation (3-5 hours)
+### Phase 2: Legal Basis Documentation (3-5 hours)
 
 **Objective:** Assign GDPR Art. 6 legal basis to each processing activity
 
 **Steps:**
 1. **Import Processing Activities (Sheet 2):**
+
    - Copy all ROPA entries from ISMS-IMP-A.5.34.1
    - Include Activity ID, Activity Name, Processing Purpose
    - This ensures no processing is missed
 
+
 2. **For EACH processing activity:**
+
    - Review processing purpose and data subjects
    - Apply legal basis decision tree (Section 3.2)
    - Select appropriate legal basis from dropdown
    - Document justification in "Legal Basis Justification" field
 
+
 3. **Validate Selection:**
+
    - For **Consent:** Can data subject freely refuse without negative consequences?
    - For **Contract:** Is processing objectively necessary (not just convenient)?
    - For **Legal Obligation:** What law mandates this processing?
    - For **Legitimate Interest:** Is controller's interest legitimate and proportionate?
 
+
 **Deliverable:** Sheet 2 (Legal Basis Inventory) complete with legal basis for all activities
 
 **Quality Check:**
+
 - ✓ Every processing activity has assigned legal basis
 - ✓ Legal basis matches processing purpose (not generic)
 - ✓ Special category data has BOTH Art. 6 AND Art. 9 basis
 - ✓ Consent-based processing meets Art. 7 requirements
 - ✓ Contractual necessity is objectively justified
 
-#### Phase 3: Legitimate Interest Assessments (2-4 hours)
+
+### Phase 3: Legitimate Interest Assessments (2-4 hours)
 
 **Objective:** Complete LIA balancing test for Art. 6(1)(f) processing
 
@@ -406,31 +448,41 @@ Special categories (GDPR Art. 9(1)):
 
 **Steps:**
 1. **Create LIA Entry (Sheet 3):**
+
    - Assign unique LIA identifier (LIA-2024-001, LIA-2024-002, etc.)
    - Link to processing activity from Sheet 2
+
 
 2. **Complete Three-Part Test:**
 
    **Part 1: Purpose Test**
+
    - What is controller's legitimate interest?
    - Is interest real and present (not speculative)?
    - Is it lawful?
 
+
    **Part 2: Necessity Test**
+
    - Is processing necessary for legitimate interest?
    - Could controller achieve interest through less intrusive means?
    - Is processing proportionate?
 
+
    **Part 3: Balancing Test**
+
    - What is impact on data subject?
    - Do data subjects expect this processing?
    - What safeguards mitigate impact?
    - Does controller's interest outweigh data subject's rights?
 
+
 3. **Document Balancing Test Result:**
+
    - **Pass:** Processing may proceed under legitimate interest
    - **Pass with Conditions:** Processing allowed only if additional safeguards implemented
    - **Fail:** Processing NOT justified; use different legal basis or cease processing
+
 
 **Deliverable:** Sheet 3 (Legitimate Interest Assessments) complete with LIAs
 
@@ -443,7 +495,7 @@ Special categories (GDPR Art. 9(1)):
 | Employee monitoring (email, internet) | Security and compliance | **Pass with Conditions** - Proportionate monitoring, transparent |
 | CCTV surveillance | Property security | **Pass** - Clear signage, limited retention, access controls |
 
-#### Phase 4: Consent Management Review (1-2 hours)
+### Phase 4: Consent Management Review (1-2 hours)
 
 **Objective:** Validate GDPR Art. 7 compliance for consent-based processing
 
@@ -451,31 +503,39 @@ Special categories (GDPR Art. 9(1)):
 
 **Steps:**
 1. **Consent Inventory (Sheet 4):**
+
    - List all consent-based processing activities
    - Document consent mechanism (web form, checkbox, email opt-in)
    - Record consent date and data subject identifier
 
+
 2. **Validate Consent Against GDPR Art. 7:**
+
    - ✅ **Freely Given:** No negative consequences for refusal?
    - ✅ **Specific:** Consent for specific purpose (not bundled)?
    - ✅ **Informed:** Data subject aware of purpose, identity, rights?
    - ✅ **Unambiguous:** Clear affirmative action (not pre-ticked boxes)?
    - ✅ **Withdrawable:** Can consent be withdrawn as easily as given?
 
+
 3. **Document Consent Validity:**
+
    - Valid: All Art. 7 requirements met
    - Invalid: One or more requirements not met (document which)
+
 
 **Deliverable:** Sheet 4 (Consent Management) complete with consent validation
 
 **Invalid Consent Examples:**
+
 - ❌ Pre-ticked checkboxes
 - ❌ Consent bundled with terms of service acceptance
 - ❌ Employer requesting employee consent (power imbalance)
 - ❌ No clear information about purpose
 - ❌ Difficult to withdraw (requires phone call vs. single click)
 
-#### Phase 5: Special Category Processing (30-60 minutes)
+
+### Phase 5: Special Category Processing (30-60 minutes)
 
 **Objective:** Document GDPR Art. 9 legal basis for sensitive PII
 
@@ -484,36 +544,45 @@ Special categories (GDPR Art. 9(1)):
 **Steps:**
 1. Review Sheet 2 (Legal Basis Inventory) - filter for special category data (Column G = "Yes")
 2. For EACH special category processing activity:
+
    - Confirm GDPR Art. 6 legal basis documented (required)
    - Select GDPR Art. 9 legal basis from dropdown (required)
    - Document Art. 9 justification
 
+
 3. Common Art. 9 scenarios:
+
    - **Employee health data:** Art. 9(2)(b) - Employment law
    - **Medical records:** Art. 9(2)(h) - Healthcare
    - **Biometric authentication:** Art. 9(2)(a) - Explicit consent
    - **Diversity monitoring:** Art. 9(2)(g) - Substantial public interest
 
+
 **Deliverable:** Sheet 2 updated with Art. 9 legal basis for special category processing
 
 **Quality Check:**
+
 - ✓ Special category data has BOTH Art. 6 AND Art. 9 legal basis
 - ✓ Art. 9 basis is appropriate for processing context
 - ✓ Additional safeguards documented (encryption, access controls)
 
-#### Phase 6: Gap Analysis (1-2 hours)
+
+### Phase 6: Gap Analysis (1-2 hours)
 
 **Objective:** Identify processing without valid legal basis
 
 **Steps:**
 1. **Review Sheet 2** for incomplete or invalid legal basis:
+
    - No legal basis assigned
    - Consent invalid (failed Art. 7 validation in Sheet 4)
    - Legitimate interest without LIA (missing Sheet 3 entry)
    - Contract legal basis not objectively necessary
    - Special category data without Art. 9 basis
 
+
 2. **For EACH gap, document in Sheet 5:**
+
    - Gap description (what's wrong?)
    - Affected processing activity
    - Risk level (Critical / High / Medium / Low)
@@ -521,11 +590,14 @@ Special categories (GDPR Art. 9(1)):
    - Owner (who will fix it?)
    - Target completion date
 
+
 3. **Risk Rating Guidelines:**
+
    - **Critical:** Unlawful processing (no valid legal basis)
    - **High:** Invalid consent or missing LIA for business-critical processing
    - **Medium:** Legal basis unclear or requires Legal Counsel validation
    - **Low:** Minor documentation gaps
+
 
 **Deliverable:** Sheet 5 (Legal Basis Gaps) with all identified gaps
 
@@ -535,34 +607,40 @@ Special categories (GDPR Art. 9(1)):
 3. "Processing sensitive health data with only Art. 6 basis - missing Art. 9 basis"
 4. "Legitimate interest claimed for profiling but no LIA documented"
 
-#### Phase 7: Evidence Collection (1-2 hours)
+### Phase 7: Evidence Collection (1-2 hours)
 
 **Objective:** Gather supporting documentation for audit trail
 
 **Steps:**
 1. For key legal basis claims, collect evidence:
+
    - **Consent:** Consent forms, consent logs, withdrawal process documentation
    - **Contract:** Customer contracts, terms of service
    - **Legal Obligation:** Statutory citations, regulatory guidance
    - **Legitimate Interest:** Completed LIAs, safeguard documentation
    - **Special Category:** Art. 9 legal basis evidence (employment law, healthcare regulations)
 
+
 2. Store evidence in organized structure and register in Sheet 6:
+
    - Evidence ID
    - Evidence type (contract, consent log, LIA, etc.)
    - Description
    - File location
    - Related processing activities
 
+
 **Deliverable:** Sheet 6 (Evidence Repository) populated with evidence links
 
 **Quality Check:**
+
 - ✓ All critical processing has supporting evidence
 - ✓ LIAs documented and DPO-approved
 - ✓ Consent logs available for consent-based processing
 - ✓ Evidence is current (<12 months old)
 
-#### Phase 8: Review & Approval (2-3 hours)
+
+### Phase 8: Review & Approval (2-3 hours)
 
 **Objective:** Validate assessment completeness and obtain sign-off
 
@@ -570,210 +648,264 @@ Special categories (GDPR Art. 9(1)):
 1. **Self-Review:** Complete quality checklist (Section 6 below)
 
 2. **DPO Review:**
+
    - Review all legal basis assignments (Sheet 2)
    - Validate LIA balancing tests (Sheet 3)
    - Verify consent compliance (Sheet 4)
    - Assess gap severity and remediation plans (Sheet 5)
 
+
 3. **Legal Counsel Review:**
+
    - Validate legal basis interpretations
    - Review contractual necessity claims
    - Confirm legal obligation citations
    - Approve LIAs for high-risk processing
 
+
 4. **Sign-Off (Sheet 8):**
+
    - DPO: Assessment methodology, legal basis validity
    - Legal Counsel: Legal interpretations, regulatory compliance
    - Business Process Owners: Processing purpose accuracy
    - Executive Sponsor: Final approval, gap remediation support
 
+
 **Deliverable:** Sheet 8 complete with all required sign-offs
 
 ---
 
-## 5. Common Pitfalls
+# Common Pitfalls
 
-### Pitfall 1: Using Consent When Inappropriate
+## Pitfall 1: Using Consent When Inappropriate
 
 **Mistake:** Defaulting to consent as legal basis when other bases more appropriate
 
 **Examples:**
+
 - ❌ Employer requesting employee consent for payroll processing (power imbalance)
 - ❌ Website requiring consent to terms of service (should be contract)
 - ❌ Public authority using consent for statutory function (should be public task or legal obligation)
 
+
 **Why It Happens:**
+
 - Consent seems "safer" (but isn't if invalid)
 - Misunderstanding of GDPR hierarchy (no preferred legal basis)
 - Not recognizing power imbalances
 
+
 **How to Avoid:**
+
 - Always check if legal obligation or contract applies first
 - Recognize power imbalances (employer-employee, authority-citizen)
 - Understand that invalid consent = unlawful processing
 
+
 **Assessment Impact:** Invalid consent = data subject can withdraw → processing must cease → business disruption
 
-### Pitfall 2: Over-Claiming Contractual Necessity
+## Pitfall 2: Over-Claiming Contractual Necessity
 
 **Mistake:** Claiming contract legal basis for processing that's not objectively necessary
 
 **Examples:**
+
 - ❌ "We need email for account = contract" when email is only used for marketing
 - ❌ "Data profiling is necessary to provide service" when service functions without it
 - ❌ "We collect all data fields in contract for future use" when not needed for current contract
 
+
 **Why It Happens:**
+
 - Confusing "useful for business" with "necessary for contract"
 - Drafting contracts to include unnecessary data processing
 - Not applying strict necessity test
 
+
 **How to Avoid:**
+
 - Ask: "Can we perform the contract WITHOUT this processing?"
 - If yes → NOT contractual necessity
 - If no → Document why objectively necessary
 - Review EDPB Guidelines 2/2019 on Art. 6(1)(b)
 
+
 **Assessment Impact:** Invalid contractual claims = supervisory authority enforcement = potential fines
 
-### Pitfall 3: Legitimate Interest Without LIA
+## Pitfall 3: Legitimate Interest Without LIA
 
 **Mistake:** Claiming legitimate interest without documented balancing test
 
 **Examples:**
+
 - ❌ "Fraud prevention = legitimate interest" (correct basis but needs LIA)
 - ❌ "Direct marketing = legitimate interest" (may be valid but requires documented balancing)
 - ❌ "We have legitimate business reasons" (not sufficient without LIA)
 
+
 **Why It Happens:**
+
 - Assuming legitimate interest is self-evident
 - Not understanding LIA requirement (mandatory per GDPR Recital 47)
 - Thinking business justification = legal basis
 
+
 **How to Avoid:**
+
 - ALWAYS complete LIA for legitimate interest processing
 - Document three-part test (purpose, necessity, balancing)
 - Obtain DPO approval for LIA
 - Review ICO guidance on legitimate interest
 
+
 **Assessment Impact:** Legitimate interest without LIA = non-compliant → data subject objection rights → processing must cease
 
-### Pitfall 4: Missing Art. 9 Basis for Special Category Data
+## Pitfall 4: Missing Art. 9 Basis for Special Category Data
 
 **Mistake:** Processing special category data with only Art. 6 legal basis
 
 **Examples:**
+
 - ❌ Processing employee health data with only "contract" (Art. 6) - missing Art. 9(2)(b)
 - ❌ Biometric authentication with only "legitimate interest" - missing Art. 9(2)(a) explicit consent
 - ❌ Diversity monitoring with only "consent" - missing Art. 9(2)(g) substantial public interest
 
+
 **Why It Happens:**
+
 - Not recognizing special category data
 - Forgetting Art. 9 requires additional legal basis
 - Assuming Art. 6 basis is sufficient
 
+
 **How to Avoid:**
+
 - Always check if PII includes special categories (health, biometric, racial origin, etc.)
 - Remember: Special category requires BOTH Art. 6 AND Art. 9
 - Review GDPR Art. 9(2) options carefully
 
+
 **Assessment Impact:** Special category processing without Art. 9 basis = serious GDPR violation = potential supervisory authority investigation
 
-### Pitfall 5: Inadequate Data Subject Information
+## Pitfall 5: Inadequate Data Subject Information
 
 **Mistake:** Not informing data subjects of legal basis
 
 **Examples:**
+
 - ❌ Privacy notice says "we process for various purposes" (too vague)
 - ❌ No mention of legal basis in privacy notice
 - ❌ Generic "legitimate interest" without explaining actual interest
 
+
 **Why It Happens:**
+
 - Not understanding GDPR Art. 13/14 transparency requirements
 - Copying generic privacy notice templates
 - Not updating notices when legal basis changes
 
+
 **How to Avoid:**
+
 - Privacy notice must specify legal basis for EACH purpose
 - Explain legitimate interests in clear language
 - Update notices when processing changes
 - Validate transparency compliance in Sheet 2
 
+
 **Assessment Impact:** Lack of transparency = GDPR Art. 13/14 violation = supervisory authority enforcement
 
-### Pitfall 6: Consent Bundling
+## Pitfall 6: Consent Bundling
 
 **Mistake:** Bundling consent with other agreements or multiple purposes
 
 **Examples:**
+
 - ❌ "By accepting terms of service, you consent to marketing emails"
 - ❌ Single checkbox for "I consent to data processing for service delivery, marketing, and analytics"
 - ❌ Consent as condition of service when not objectively necessary
 
+
 **Why It Happens:**
+
 - Attempting to maximize consent coverage
 - Not understanding "specific" and "freely given" requirements
 - Convenience over compliance
 
+
 **How to Avoid:**
+
 - Separate consent from terms of service
 - Separate consent for each distinct purpose
 - Never make consent a condition of service unless objectively necessary
 - Validate consent specificity in Sheet 4
 
+
 **Assessment Impact:** Bundled consent = invalid consent = unlawful processing
 
-### Pitfall 7: No Withdrawal Mechanism
+## Pitfall 7: No Withdrawal Mechanism
 
 **Mistake:** Making consent difficult or impossible to withdraw
 
 **Examples:**
+
 - ❌ Must call customer service to withdraw (when consent given via website)
 - ❌ No clear "unsubscribe" link in marketing emails
 - ❌ Withdrawal requires justification or multi-step process
 
+
 **Why It Happens:**
+
 - Not implementing technical mechanisms for withdrawal
 - Business reluctance to enable easy opt-out
 - Misunderstanding GDPR Art. 7(3) "as easy to withdraw as to give"
 
+
 **How to Avoid:**
+
 - Implement withdrawal mechanism before collecting consent
 - Make withdrawal as easy as giving consent (single click)
 - Automated processing of withdrawal requests
 - Validate withdrawal mechanism in Sheet 4
 
+
 **Assessment Impact:** Difficult withdrawal = invalid consent = supervisory authority complaints
 
-### Pitfall 8: Legal Obligation Without Citation
+## Pitfall 8: Legal Obligation Without Citation
 
 **Mistake:** Claiming legal obligation without citing specific law
 
 **Examples:**
+
 - ❌ "We process for legal compliance" (which law?)
 - ❌ "Industry best practices require this" (best practices ≠ legal obligation)
 - ❌ "Auditors told us to keep records" (audit recommendation ≠ legal requirement)
 
+
 **Why It Happens:**
+
 - Confusing legal requirements with business practices
 - Not researching actual legal obligations
 - Assuming compliance standards = laws
 
+
 **How to Avoid:**
+
 - Cite specific legal provisions (e.g., "Swiss AHVG Art. 134" or "GDPR Art. 82")
 - Verify with Legal Counsel that law mandates processing
 - Maintain legal obligations register
 - Document statutory citations in Sheet 2
 
+
 **Assessment Impact:** False legal obligation claims = invalid legal basis = processing without lawful basis
 
 ---
 
-## 6. Quality Checklist
+# Quality Checklist
 
 Complete this checklist before seeking approvals:
 
-### Sheet 2: Legal Basis Inventory
+## Sheet 2: Legal Basis Inventory
 
 - [ ] All processing activities from ROPA included (no processing missed)
 - [ ] Legal basis (GDPR Art. 6) assigned for EVERY activity
@@ -786,7 +918,8 @@ Complete this checklist before seeking approvals:
 - [ ] Compliance status determined (Compliant / Requires Review / Gap)
 - [ ] No processing activities with "Gap" status lacking remediation plan
 
-### Sheet 3: Legitimate Interest Assessments
+
+## Sheet 3: Legitimate Interest Assessments
 
 - [ ] LIA completed for ALL legitimate interest processing (Sheet 2 references)
 - [ ] Purpose test documented (legitimate interest identified)
@@ -798,7 +931,8 @@ Complete this checklist before seeking approvals:
 - [ ] DPO approval obtained for all LIAs
 - [ ] Failed LIAs have alternative legal basis or processing ceased
 
-### Sheet 4: Consent Management
+
+## Sheet 4: Consent Management
 
 - [ ] All consent-based processing from Sheet 2 validated
 - [ ] Consent mechanisms documented (web form, checkbox, email opt-in)
@@ -812,7 +946,8 @@ Complete this checklist before seeking approvals:
 - [ ] Consent logs available (audit trail of consent capture)
 - [ ] Withdrawal mechanism documented and tested
 
-### Sheet 5: Legal Basis Gaps
+
+## Sheet 5: Legal Basis Gaps
 
 - [ ] All gaps from Sheets 2-4 documented
 - [ ] Risk level assigned for each gap (Critical / High / Medium / Low)
@@ -822,7 +957,8 @@ Complete this checklist before seeking approvals:
 - [ ] Critical gaps have immediate action plans (weeks, not months)
 - [ ] No critical gaps without executive awareness
 
-### Sheet 6: Evidence Repository
+
+## Sheet 6: Evidence Repository
 
 - [ ] Evidence collected for critical legal basis claims
 - [ ] Consent logs available for consent-based processing
@@ -832,7 +968,8 @@ Complete this checklist before seeking approvals:
 - [ ] Evidence is current (<12 months old where applicable)
 - [ ] Evidence stored in secure, access-controlled location
 
-### Sheet 7: Dashboard
+
+## Sheet 7: Dashboard
 
 - [ ] Dashboard metrics reviewed and reasonable
 - [ ] Legal basis coverage = 100% (all processing has assigned basis)
@@ -840,7 +977,8 @@ Complete this checklist before seeking approvals:
 - [ ] LIA completion rate = 100% (all legitimate interest has LIA)
 - [ ] Consent validity rate acceptable (>95% valid)
 
-### Sheet 8: Approval & Sign-Off
+
+## Sheet 8: Approval & Sign-Off
 
 - [ ] All required approvers identified (DPO, Legal Counsel, Business Owners, Executive)
 - [ ] Review meetings scheduled
@@ -849,7 +987,8 @@ Complete this checklist before seeking approvals:
 - [ ] Legal Counsel approval obtained (mandatory)
 - [ ] Executive sponsor approval obtained
 
-### Cross-Sheet Validation
+
+## Cross-Sheet Validation
 
 - [ ] Sheet 2 legal basis matches Sheet 3 LIA entries (for legitimate interest)
 - [ ] Sheet 2 consent status matches Sheet 4 consent validation
@@ -857,7 +996,8 @@ Complete this checklist before seeking approvals:
 - [ ] Sheet 6 evidence links to Sheet 2 activities
 - [ ] No orphaned entries (data in sheets without source reference)
 
-### Overall Assessment Quality
+
+## Overall Assessment Quality
 
 - [ ] Assessment completed by qualified personnel (DPO involvement)
 - [ ] No placeholder text or dummy data
@@ -866,11 +1006,12 @@ Complete this checklist before seeking approvals:
 - [ ] Assessment language clear and professional (audit-ready)
 - [ ] No contradictory statements between sheets
 
+
 ---
 
-## 7. Review & Approval
+# Review & Approval
 
-### 7.1 Self-Review
+## Self-Review
 
 Before presenting to stakeholders:
 1. Complete Quality Checklist (Section 6 above) - all items checked
@@ -879,44 +1020,50 @@ Before presenting to stakeholders:
 4. Confirm all consent-based processing meets Art. 7 requirements
 5. Validate special category data has Art. 9 basis
 
-### 7.2 DPO Review (Mandatory)
+## DPO Review (Mandatory)
 
 **Schedule:** 1-2 hour review meeting with DPO
 
 **DPO Reviews:**
+
 - **Legal Basis Validity:** Is each legal basis appropriate for processing context?
 - **LIA Quality:** Do balancing tests withstand scrutiny?
 - **Consent Compliance:** Do consent mechanisms meet GDPR Art. 7?
 - **Special Category Compliance:** Is Art. 9 basis valid for sensitive PII?
 - **Gap Severity:** Are critical gaps accurately rated?
 
+
 **Outcome:** DPO approval or list of required corrections
 
-### 7.3 Legal Counsel Review (Mandatory)
+## Legal Counsel Review (Mandatory)
 
 **Schedule:** 1 hour review with Legal Counsel
 
 **Legal Reviews:**
+
 - **Legal Interpretation:** Are legal basis assignments legally sound?
 - **Contractual Necessity:** Are contract claims objectively justified?
 - **Legal Obligations:** Are statutory citations accurate?
 - **LIA Legal Risk:** Do LIAs expose organization to legal challenges?
 - **Consent Legal Validity:** Are consent mechanisms legally enforceable?
 
+
 **Outcome:** Legal approval or required corrections
 
-### 7.4 Business Owner Review
+## Business Owner Review
 
 **Schedule:** 30-60 minute review with affected Business Process Owners
 
 **Business Owners Review:**
+
 - **Processing Purpose Accuracy:** Is processing purpose correctly described?
 - **Necessity Justification:** Is processing actually necessary for stated purpose?
 - **Operational Feasibility:** Can business implement remediation plans?
 
+
 **Outcome:** Business owner confirmation
 
-### 7.5 Executive Briefing
+## Executive Briefing
 
 **Schedule:** 15-30 minute presentation to Executive Sponsor
 
@@ -929,7 +1076,7 @@ Before presenting to stakeholders:
 
 **Outcome:** Executive approval and remediation budget allocation
 
-### 7.6 Final Sign-Off (Sheet 8)
+## Final Sign-Off (Sheet 8)
 
 After all reviews complete:
 1. Update Sheet 8 with approver names and dates
@@ -940,26 +1087,32 @@ After all reviews complete:
 
 ---
 
-## 8. Next Steps After Completion
+# Next Steps After Completion
 
-### 8.1 Immediate Actions
+## Immediate Actions
 
 1. **Update Privacy Notices**
+
    - Ensure data subjects informed of legal basis for all processing
    - Update website privacy policy
    - Revise consent forms if needed
 
+
 2. **Begin Gap Remediation**
+
    - Prioritize Critical and High risk gaps
    - Assign resources and budget
    - Track progress weekly (update Sheet 5)
 
+
 3. **Update ROPA (ISMS-IMP-A.5.34.1)**
+
    - Add legal basis column to ROPA
    - Document legal basis from this assessment
    - Ensure consistency across assessments
 
-### 8.2 Integration with Downstream Assessments
+
+## Integration with Downstream Assessments
 
 This assessment provides foundation for:
 
@@ -967,37 +1120,44 @@ This assessment provides foundation for:
 - **ISMS-IMP-A.5.34.5 (DPIA):** Legal basis influences DPIA necessity and risk rating
 - **ISMS-IMP-A.5.34.6 (Cross-Border Transfers):** Legal basis affects transfer mechanisms
 
-### 8.3 Ongoing Maintenance
+
+## Ongoing Maintenance
 
 **Quarterly Updates (2-4 hours):**
+
 - Review Sheet 2 for new processing activities
 - Validate legal basis still applicable
 - Re-assess LIAs if circumstances changed
 - Monitor consent withdrawal rates
 
+
 **Triggered Updates:**
+
 - **New processing activity:** Assess legal basis before launch
 - **Processing purpose change:** Re-evaluate legal basis validity
 - **Regulatory change:** Review if new law impacts legal basis
 - **Data subject objections:** If multiple objections, review LIA
 
+
 **Annual Validation (Full Re-Assessment):**
+
 - Complete reassessment of all legal bases
 - Refresh LIAs (circumstances may have changed)
 - Re-validate consent compliance
 - Obtain fresh sign-offs (Sheet 8)
 
+
 ---
 
-## PART II: TECHNICAL SPECIFICATION (Sheets 1-4)
+# PART II: TECHNICAL SPECIFICATION (Sheets 1-4)
 
 **Audience:** Workbook developers (Python/Excel script maintainers), Technical implementation teams
 
 ---
 
-## 1. Workbook Structure Overview
+# Workbook Structure Overview
 
-### 1.1 File Naming Convention
+## File Naming Convention
 
 **Format:** `ISMS_A_5_34_2_Legal_Basis_Assessment_YYYYMMDD.xlsx`
 
@@ -1005,7 +1165,7 @@ This assessment provides foundation for:
 
 **Rationale:** Date suffix enables version tracking and audit trail
 
-### 1.2 Sheet Architecture
+## Sheet Architecture
 
 | Sheet # | Sheet Name | Purpose | Row Estimate | Columns | Protected |
 |---------|-----------|---------|--------------|---------|-----------|
@@ -1026,9 +1186,9 @@ This assessment provides foundation for:
 
 ---
 
-## 2. Cell Styling Reference
+# Cell Styling Reference
 
-### 2.1 Color Scheme
+## Color Scheme
 
 | Style Element | Hex Color | RGB | Usage |
 |--------------|-----------|-----|-------|
@@ -1048,7 +1208,7 @@ This assessment provides foundation for:
 | **LIA Failed** | #C00000 | 192, 0, 0 | Balancing test failed (white text) |
 | **Special Category** | #FF6600 | 255, 102, 0 | Art. 9 processing (white text) |
 
-### 2.2 Font Specifications
+## Font Specifications
 
 | Element | Font | Size | Weight | Color |
 |---------|------|------|--------|-------|
@@ -1060,7 +1220,7 @@ This assessment provides foundation for:
 | **Calculated** | Calibri | 11pt | Regular | #595959 (dark gray) |
 | **Error Text** | Calibri | 11pt | Bold | #C00000 (red) |
 
-### 2.3 Border Specifications
+## Border Specifications
 
 | Element | Border Style | Color |
 |---------|--------------|-------|
@@ -1068,7 +1228,7 @@ This assessment provides foundation for:
 | **Data Cells** | All sides, thin | #D9D9D9 (light gray) |
 | **Section Dividers** | Bottom, thick | #1F4E78 (dark blue) |
 
-### 2.4 Alignment Specifications
+## Alignment Specifications
 
 | Element | Horizontal | Vertical | Wrap Text |
 |---------|-----------|----------|-----------|
@@ -1081,13 +1241,13 @@ This assessment provides foundation for:
 
 ---
 
-## 3. SHEET 1: Instructions & Legend
+# SHEET 1: Instructions & Legend
 
-### 3.1 Purpose
+## Purpose
 
 Embedded user guide and legal basis framework reference (read-only).
 
-### 3.2 Layout Structure
+## Layout Structure
 
 **Row 1:** Sheet title  
 **Rows 2-10:** Assessment overview  
@@ -1097,7 +1257,7 @@ Embedded user guide and legal basis framework reference (read-only).
 **Rows 71-90:** Conditional formatting legend  
 **Rows 91-100:** Support contacts  
 
-### 3.3 Header Section
+## Header Section
 
 | Row | Cell Range | Content | Styling |
 |-----|-----------|---------|---------|
@@ -1105,7 +1265,7 @@ Embedded user guide and legal basis framework reference (read-only).
 | **2** | **A2:G2** (merged) | "ISO/IEC 27001:2022 Control A.5.34 - Privacy and Protection of PII" | Subtitle style (11pt, dark blue text, light blue fill #D6DCE4) |
 | **3** | **A3:G3** (merged) | "" | Blank separator |
 
-### 3.4 Section 1: Assessment Overview (Rows 4-10)
+## Section 1: Assessment Overview (Rows 4-10)
 
 | Row | Cell | Content | Styling |
 |-----|------|---------|---------|
@@ -1121,7 +1281,7 @@ Embedded user guide and legal basis framework reference (read-only).
 | **10** | **A10** | "Review Cycle:" | Bold |
 | **10** | **B10:G10** (merged) | "Annual or when processing activities change" | Normal |
 
-### 3.5 Section 2: Legal Basis Selection Framework (Rows 12-30)
+## Section 2: Legal Basis Selection Framework (Rows 12-30)
 
 | Row | Cell Range | Content | Styling |
 |-----|-----------|---------|---------|
@@ -1144,7 +1304,7 @@ Embedded user guide and legal basis framework reference (read-only).
 
 **Note:** Rows 16, 18, 20, 22, 24, 26 are blank separators (height 10px)
 
-### 3.6 Section 3: Dropdown Reference (Rows 32-55)
+## Section 3: Dropdown Reference (Rows 32-55)
 
 | Row | Cell Range | Content |
 |-----|-----------|---------|
@@ -1164,7 +1324,7 @@ Embedded user guide and legal basis framework reference (read-only).
 | **52** | **A52** | "Risk Levels (Gaps):" |
 | **53** | **B53:G53** (merged) | "Critical, High, Medium, Low" |
 
-### 3.7 Section 4: Conditional Formatting Legend (Rows 57-75)
+## Section 4: Conditional Formatting Legend (Rows 57-75)
 
 | Row | Columns A-B | Column C | Description (Columns D-G) |
 |-----|------------|----------|---------------------------|
@@ -1178,7 +1338,7 @@ Embedded user guide and legal basis framework reference (read-only).
 | **65** | "LIA Failed" | Fill: #C00000 (dark red), Font: #FFFFFF (white) | "Balancing test failed - data subject rights prevail" |
 | **66** | "Special Category Data" | Fill: #FF6600 (orange), Font: #FFFFFF (white) | "GDPR Article 9 processing - requires additional basis" |
 
-### 3.8 Section 5: Support Contacts (Rows 77-85)
+## Section 5: Support Contacts (Rows 77-85)
 
 | Row | Cell | Content |
 |-----|------|---------|
@@ -1193,7 +1353,7 @@ Embedded user guide and legal basis framework reference (read-only).
 | **82** | **B82:G82** (merged) | "[Email]" |
 | **84** | **A84:G84** (merged) | "For assistance with legal basis interpretation, LIA validation, or consent compliance, contact DPO." |
 
-### 3.9 Column Widths
+## Column Widths
 
 | Column | Width |
 |--------|-------|
@@ -1205,34 +1365,34 @@ Embedded user guide and legal basis framework reference (read-only).
 | F | 25 |
 | G | 25 |
 
-### 3.10 Cell Protection
+## Cell Protection
 
 **All Cells Locked:** Yes (entire sheet read-only)
 **Sheet Protection:** Yes, password `privacy2024`
 
 ---
 
-## 4. SHEET 2: Legal Basis Inventory
+# SHEET 2: Legal Basis Inventory
 
-### 4.1 Purpose
+## Purpose
 
 Document GDPR Article 6 legal basis for ALL PII processing activities.
 
-### 4.2 Layout Structure
+## Layout Structure
 
 **Row 1:** Sheet title  
 **Row 2:** Instructions  
 **Row 3:** Column headers  
 **Rows 4+:** Data entry (processing activities)
 
-### 4.3 Header Section
+## Header Section
 
 | Row | Cell Range | Content | Styling |
 |-----|-----------|---------|---------|
 | **1** | **A1:O1** (merged) | "LEGAL BASIS INVENTORY" | Title style |
 | **2** | **A2:O2** (merged) | "Document GDPR Article 6 legal basis for ALL processing activities from ROPA. Special category data (sensitive PII) requires BOTH Article 6 AND Article 9 legal basis." | Subtitle style |
 
-### 4.4 Column Definitions (Row 3)
+## Column Definitions (Row 3)
 
 | Col | Letter | Header | Width | Data Type | Validation | Formula |
 |-----|--------|--------|-------|-----------|------------|---------|
@@ -1254,7 +1414,7 @@ Document GDPR Article 6 legal basis for ALL PII processing activities.
 
 **Header Row Styling:** White text, dark blue fill #1F4E78, bold, centered, wrapped
 
-### 4.5 Dropdown Lists
+## Dropdown Lists
 
 **Column D - Legal Basis (GDPR Art. 6):**
 ```
@@ -1334,7 +1494,7 @@ Gap - Missing LIA
 Gap - Missing Art. 9 Basis
 ```
 
-### 4.6 Data Validation Rules
+## Data Validation Rules
 
 | Column | Range | Validation Type | Rule | Error Message |
 |--------|-------|----------------|------|---------------|
@@ -1350,7 +1510,7 @@ Gap - Missing Art. 9 Basis
 | **N** | N4:N500 | List | Compliance Status dropdown | "Select compliance status" |
 | **O** | O4:O500 | Required (Conditional) | Not blank if N contains "Gap" | "Remediation plan required for gaps" |
 
-### 4.7 Conditional Formatting Rules
+## Conditional Formatting Rules
 
 **Rule 1: Compliance status highlighting**
 
@@ -1403,44 +1563,48 @@ Gap - Missing Art. 9 Basis
 
 **Interpretation:** Legitimate interest processing without LIA = non-compliant
 
-### 4.8 Cell Protection
+## Cell Protection
 
 **Locked Cells:**
+
 - Rows 1-3 (Headers)
 - Column N (Compliance Status) - calculated based on data completeness
 
+
 **Unlocked Cells:**
+
 - Columns A-M, O (Rows 4-500)
+
 
 **Sheet Protection:** Password: `privacy2024`
 
-### 4.9 Freeze Panes
+## Freeze Panes
 
 **Freeze:** Row 3 and Column A
 
 ---
 
-## 5. SHEET 3: Legitimate Interest Assessments (LIA)
+# SHEET 3: Legitimate Interest Assessments (LIA)
 
-### 5.1 Purpose
+## Purpose
 
 Document three-part balancing test for GDPR Article 6(1)(f) processing.
 
-### 5.2 Layout Structure
+## Layout Structure
 
 **Row 1:** Sheet title  
 **Row 2:** Instructions  
 **Row 3:** Column headers  
 **Rows 4+:** LIA entries
 
-### 5.3 Header Section
+## Header Section
 
 | Row | Cell Range | Content | Styling |
 |-----|-----------|---------|---------|
 | **1** | **A1:Q1** (merged) | "LEGITIMATE INTEREST ASSESSMENTS (LIA)" | Title style |
 | **2** | **A2:Q2** (merged) | "Complete three-part balancing test for ALL processing using Legitimate Interest as legal basis. GDPR Recital 47 and Article 6(1)(f) require documented assessment." | Subtitle style |
 
-### 5.4 Column Definitions (Row 3)
+## Column Definitions (Row 3)
 
 | Col | Letter | Header | Width | Data Type | Validation | Formula |
 |-----|--------|--------|-------|-----------|------------|---------|
@@ -1466,7 +1630,7 @@ Document three-part balancing test for GDPR Article 6(1)(f) processing.
 
 **Section Break Columns (D, H, K):** Merge cells vertically for visual separation, dark gray fill #808080, white text, bold
 
-### 5.5 Dropdown Lists
+## Dropdown Lists
 
 **Column F - Beneficiary:**
 ```
@@ -1519,15 +1683,19 @@ No
 Pending
 ```
 
-### 5.6 Formulas
+## Formulas
 
 **Column A (LIA ID):**
+
 - **Cell A4:** `="LIA-"&TEXT(YEAR(TODAY()),"0000")&"-"&TEXT(ROW()-3,"000")`
 - **Example output:** `LIA-2026-001`, `LIA-2026-002`
 - **Fill down to A100**
 
+
 **Column O (Balancing Test Result) - Auto-Calculated:**
+
 - **Cell O4:**
+
 ```excel
 =IF(AND(G4="Yes",I4="Yes",M4="Minimal Impact"),
   "Pass - Legitimate Interest Prevails",
@@ -1539,16 +1707,20 @@ Pending
 ```
 
 **Logic:**
+
 - **Pass:** Legitimate + Necessary + Minimal Impact
 - **Pass with Conditions:** Legitimate + Necessary + (Limited or Significant Impact) + Safeguards documented
 - **Fail:** Not Legitimate OR Not Necessary OR High Impact
 - **Default:** Pass with Conditions
 
+
 **Column Q (Assessment Date):**
+
 - **Cell Q4:** `=TODAY()`
 - Updates when file opened (volatile function)
 
-### 5.7 Data Validation Rules
+
+## Data Validation Rules
 
 | Column | Range | Validation Type | Rule | Error Message |
 |--------|-------|----------------|------|---------------|
@@ -1564,7 +1736,7 @@ Pending
 | **N** | N4:N100 | Required | Not blank | "Safeguards must be documented" |
 | **P** | P4:P100 | List | Yes/No/Pending | "DPO approval required" |
 
-### 5.8 Conditional Formatting Rules
+## Conditional Formatting Rules
 
 **Rule 1: Balancing test result highlighting**
 
@@ -1596,46 +1768,50 @@ Pending
 
 **Interpretation:** High impact may fail balancing test
 
-### 5.9 Cell Protection
+## Cell Protection
 
 **Locked Cells:**
+
 - Rows 1-3 (Headers)
 - Column A (LIA ID)
 - Column O (Balancing Test Result) - calculated
 - Column Q (Assessment Date) - auto-populated
 
+
 **Unlocked Cells:**
+
 - Columns B-N, P (Rows 4-100)
+
 
 **Sheet Protection:** Password: `privacy2024`
 
-### 5.10 Freeze Panes
+## Freeze Panes
 
 **Freeze:** Row 3 and Column A
 
 ---
 
-## 6. SHEET 4: Consent Management
+# SHEET 4: Consent Management
 
-### 6.1 Purpose
+## Purpose
 
 Validate GDPR Article 7 compliance for consent-based processing.
 
-### 6.2 Layout Structure
+## Layout Structure
 
 **Row 1:** Sheet title  
 **Row 2:** Instructions  
 **Row 3:** Column headers  
 **Rows 4+:** Consent entries
 
-### 6.3 Header Section
+## Header Section
 
 | Row | Cell Range | Content | Styling |
 |-----|-----------|---------|---------|
 | **1** | **A1:Q1** (merged) | "CONSENT MANAGEMENT" | Title style |
 | **2** | **A2:Q2** (merged) | "Validate GDPR Article 7 compliance for ALL consent-based processing. Consent must be: freely given, specific, informed, unambiguous, and withdrawable." | Subtitle style |
 
-### 6.4 Column Definitions (Row 3)
+## Column Definitions (Row 3)
 
 | Col | Letter | Header | Width | Data Type | Validation | Formula |
 |-----|--------|--------|-------|-----------|------------|---------|
@@ -1659,7 +1835,7 @@ Validate GDPR Article 7 compliance for consent-based processing.
 
 **Header Row Styling:** White text, dark blue fill #1F4E78, bold, centered, wrapped
 
-### 6.5 Dropdown Lists
+## Dropdown Lists
 
 **Column E - Consent Mechanism:**
 ```
@@ -1701,15 +1877,19 @@ Yes
 No
 ```
 
-### 6.6 Formulas
+## Formulas
 
 **Column A (Consent ID):**
+
 - **Cell A4:** `="CONSENT-"&TEXT(YEAR(TODAY()),"0000")&"-"&TEXT(ROW()-3,"000")`
 - **Example output:** `CONSENT-2026-001`, `CONSENT-2026-002`
 - **Fill down to A200**
 
+
 **Column K (Consent Validity) - Auto-Calculated:**
+
 - **Cell K4:**
+
 ```excel
 =IF(F4="No","Invalid - Not Freely Given",
   IF(G4="No","Invalid - Not Specific",
@@ -1722,11 +1902,13 @@ No
 ```
 
 **Logic:**
+
 - If any criterion = "No" → Specific invalidity reason
 - If all criteria = "Yes" → "Valid"
 - If any "Uncertain" → "Requires Review"
 
-### 6.7 Data Validation Rules
+
+## Data Validation Rules
 
 | Column | Range | Validation Type | Rule | Error Message |
 |--------|-------|----------------|------|---------------|
@@ -1740,7 +1922,7 @@ No
 | **N** | N4:N200 | Required | Not blank | "Consent records location required" |
 | **O** | O4:O200 | List | Yes/No | "Indicate if audit trail exists" |
 
-### 6.8 Conditional Formatting Rules
+## Conditional Formatting Rules
 
 **Rule 1: Consent validity highlighting**
 
@@ -1772,45 +1954,49 @@ No
 
 **Interpretation:** Any "No" in Art. 7 criteria = consent invalid
 
-### 6.9 Cell Protection
+## Cell Protection
 
 **Locked Cells:**
+
 - Rows 1-3 (Headers)
 - Column A (Consent ID)
 - Column K (Consent Validity) - calculated
 
+
 **Unlocked Cells:**
+
 - Columns B-J, L-Q (Rows 4-200)
+
 
 **Sheet Protection:** Password: `privacy2024`
 
-### 6.10 Freeze Panes
+## Freeze Panes
 
 **Freeze:** Row 3 and Column A
 
 ---
 
-## 7. SHEET 5: Legal Basis Gaps
+# SHEET 5: Legal Basis Gaps
 
-### 7.1 Purpose
+## Purpose
 
 Track processing activities without valid legal basis (auto-populated from Sheet 2).
 
-### 7.2 Layout Structure
+## Layout Structure
 
 **Row 1:** Sheet title  
 **Row 2:** Instructions  
 **Row 3:** Column headers  
 **Rows 4+:** Gap entries (auto-populated from Sheet 2 where Compliance Status contains "Gap")
 
-### 7.3 Header Section
+## Header Section
 
 | Row | Cell Range | Content | Styling |
 |-----|-----------|---------|---------|
 | **1** | **A1:L1** (merged) | "LEGAL BASIS GAPS" | Title style |
 | **2** | **A2:L2** (merged) | "Processing activities without valid legal basis. Prioritize remediation by risk level: Critical (immediate), High (weeks), Medium (months), Low (next review cycle)." | Subtitle style |
 
-### 7.4 Column Definitions (Row 3)
+## Column Definitions (Row 3)
 
 | Col | Letter | Header | Width | Data Type | Validation | Formula |
 |-----|--------|--------|-------|-----------|------------|---------|
@@ -1829,7 +2015,7 @@ Track processing activities without valid legal basis (auto-populated from Sheet
 
 **Header Row Styling:** White text, dark blue fill #1F4E78, bold, centered, wrapped
 
-### 7.5 Dropdown Lists
+## Dropdown Lists
 
 **Column D - Gap Type:**
 ```
@@ -1859,7 +2045,7 @@ Resolved
 Accepted (Risk Accepted)
 ```
 
-### 7.6 Auto-Population Logic
+## Auto-Population Logic
 
 **Python Script Logic:**
 ```python
@@ -1904,7 +2090,7 @@ def auto_assess_risk(row):
 **Manual Population Alternative:**
 Users can manually copy rows from Sheet 2 where Column N (Compliance Status) contains "Gap" text.
 
-### 7.7 Data Validation Rules
+## Data Validation Rules
 
 | Column | Range | Validation Type | Rule | Error Message |
 |--------|-------|----------------|------|---------------|
@@ -1917,7 +2103,7 @@ Users can manually copy rows from Sheet 2 where Column N (Compliance Status) con
 | **J** | J4:J100 | List | Status dropdown | "Select status" |
 | **K** | K4:K100 | Date (Conditional) | Valid date, only if J="Resolved" | "Actual completion date required for resolved gaps" |
 
-### 7.8 Conditional Formatting Rules
+## Conditional Formatting Rules
 
 **Rule 1: Risk-based row highlighting**
 
@@ -1951,44 +2137,48 @@ Users can manually copy rows from Sheet 2 where Column N (Compliance Status) con
 
 **Interpretation:** Target date passed but gap not resolved = escalation needed
 
-### 7.9 Cell Protection
+## Cell Protection
 
 **Locked Cells:**
+
 - Rows 1-3 (Headers)
 - Columns A-C (auto-populated from Sheet 2)
 
+
 **Unlocked Cells:**
+
 - Columns D-L (Rows 4-100)
+
 
 **Sheet Protection:** Password: `privacy2024`
 
-### 7.10 Freeze Panes
+## Freeze Panes
 
 **Freeze:** Row 3 and Column A
 
 ---
 
-## 8. SHEET 6: Evidence Repository
+# SHEET 6: Evidence Repository
 
-### 8.1 Purpose
+## Purpose
 
 Centralized evidence tracking for legal basis documentation.
 
-### 8.2 Layout Structure
+## Layout Structure
 
 **Row 1:** Sheet title  
 **Row 2:** Instructions  
 **Row 3:** Column headers  
 **Rows 4+:** Evidence entries
 
-### 8.3 Header Section
+## Header Section
 
 | Row | Cell Range | Content | Styling |
 |-----|-----------|---------|---------|
 | **1** | **A1:J1** (merged) | "EVIDENCE REPOSITORY" | Title style |
 | **2** | **A2:J2** (merged) | "Register all supporting documentation for legal basis claims. Link evidence to specific processing activities for audit trail." | Subtitle style |
 
-### 8.4 Column Definitions (Row 3)
+## Column Definitions (Row 3)
 
 | Col | Letter | Header | Width | Data Type | Validation | Formula |
 |-----|--------|--------|-------|-----------|------------|---------|
@@ -2005,7 +2195,7 @@ Centralized evidence tracking for legal basis documentation.
 
 **Header Row Styling:** White text, dark blue fill #1F4E78, bold, centered, wrapped
 
-### 8.5 Dropdown Lists
+## Dropdown Lists
 
 **Column B - Evidence Type:**
 ```
@@ -2034,14 +2224,16 @@ Expired
 Requires Update
 ```
 
-### 8.6 Formulas
+## Formulas
 
 **Column A (Evidence ID):**
+
 - **Cell A4:** `="EVID-A532-"&TEXT(ROW()-3,"000")`
 - **Example output:** `EVID-A532-001`, `EVID-A532-002`
 - **Fill down to A300**
 
-### 8.7 Data Validation Rules
+
+## Data Validation Rules
 
 | Column | Range | Validation Type | Rule | Error Message |
 |--------|-------|----------------|------|---------------|
@@ -2052,7 +2244,7 @@ Requires Update
 | **F** | F4:F300 | Date | Valid date | "Enter evidence date" |
 | **H** | H4:H300 | List | Verification Status dropdown | "Select verification status" |
 
-### 8.8 Conditional Formatting Rules
+## Conditional Formatting Rules
 
 **Rule 1: Verification status highlighting**
 
@@ -2075,30 +2267,34 @@ Requires Update
 
 **Interpretation:** Evidence older than 2 years may need refresh
 
-### 8.9 Cell Protection
+## Cell Protection
 
 **Locked Cells:**
+
 - Rows 1-3 (Headers)
 - Column A (Evidence ID)
 
+
 **Unlocked Cells:**
+
 - Columns B-J (Rows 4-300)
+
 
 **Sheet Protection:** Password: `privacy2024`
 
-### 8.10 Freeze Panes
+## Freeze Panes
 
 **Freeze:** Row 3 and Column A
 
 ---
 
-## 9. SHEET 7: Dashboard
+# SHEET 7: Dashboard
 
-### 9.1 Purpose
+## Purpose
 
 Executive summary with auto-calculated compliance metrics (fully calculated, read-only).
 
-### 9.2 Layout Structure
+## Layout Structure
 
 **Row 1:** Dashboard title  
 **Rows 3-15:** Section 1 - Legal Basis Coverage  
@@ -2109,13 +2305,13 @@ Executive summary with auto-calculated compliance metrics (fully calculated, rea
 **Rows 64-72:** Section 6 - Evidence Status  
 **Rows 74-80:** Section 7 - Overall Compliance Score
 
-### 9.3 Header Section
+## Header Section
 
 | Row | Cell Range | Content | Styling |
 |-----|-----------|---------|---------|
 | **1** | **A1:G1** (merged) | "LEGAL BASIS AND LAWFUL PROCESSING - COMPLIANCE DASHBOARD" | Title style (16pt, white text, dark blue fill #1F4E78, height 50px) |
 
-### 9.4 Section 1: Legal Basis Coverage (Rows 3-15)
+## Section 1: Legal Basis Coverage (Rows 3-15)
 
 | Row | Cell | Label | Cell | Formula | Display Format | Styling |
 |-----|------|-------|------|---------|----------------|---------|
@@ -2132,12 +2328,14 @@ Executive summary with auto-calculated compliance metrics (fully calculated, rea
 | **15** | **B15** | "  - Missing LIA:" | **C15** | `=COUNTIF('Legal Basis Inventory'!N4:N500,"Gap - Missing LIA")` | Number | Fill: #FFC7CE (light red) |
 
 **Column Widths:**
+
 - Column A: 40
 - Column B: 25
 - Column C: 15
 - Columns D-G: 20 each
 
-### 9.5 Section 2: Legal Basis Distribution (Rows 17-28)
+
+## Section 2: Legal Basis Distribution (Rows 17-28)
 
 | Row | Cell | Label | Cell | Formula | Display Format |
 |-----|------|-------|------|---------|----------------|
@@ -2151,7 +2349,7 @@ Executive summary with auto-calculated compliance metrics (fully calculated, rea
 | **25** | **B25** | "- Legitimate Interest (Art. 6(1)(f)):" | **C25** | `=COUNTIF('Legal Basis Inventory'!D4:D500,"Legitimate Interest (GDPR Art. 6(1)(f))")` | Number |
 | **27** | **A27** | "Special Category Processing (Art. 9):" | **B27** | `=COUNTIF('Legal Basis Inventory'!G4:G500,"Yes")` | Number, Fill: #FF6600 (orange), Font: #FFFFFF (white), Bold |
 
-### 9.6 Section 3: Consent Management (Rows 30-40)
+## Section 3: Consent Management (Rows 30-40)
 
 | Row | Cell | Label | Cell | Formula | Display Format |
 |-----|------|-------|------|---------|----------------|
@@ -2164,7 +2362,7 @@ Executive summary with auto-calculated compliance metrics (fully calculated, rea
 | **38** | **B38** | "- Requires Review:" | **C38** | `=COUNTIF('Consent Management'!K4:K200,"Requires Review")` | Number | Fill: #FFEB9C (yellow) |
 | **40** | **A40** | "Consent Validity Rate:" | **B40** | `=IF(B33>0,C36/B33,0)` | Percentage, 1 decimal | Bold, Conditional (see 9.11) |
 
-### 9.7 Section 4: Legitimate Interest Assessments (Rows 42-52)
+## Section 4: Legitimate Interest Assessments (Rows 42-52)
 
 | Row | Cell | Label | Cell | Formula | Display Format |
 |-----|------|-------|------|---------|----------------|
@@ -2178,7 +2376,7 @@ Executive summary with auto-calculated compliance metrics (fully calculated, rea
 | **51** | **B51** | "- Fail:" | **C51** | `=COUNTIF('Legitimate Interest Assessments'!O4:O100,"Fail - Data Subject's Rights Prevail")` | Number | Fill: #C00000 (dark red), Font: #FFFFFF (white), Bold |
 | **53** | **A53** | "DPO Approved LIAs:" | **B53** | `=COUNTIF('Legitimate Interest Assessments'!P4:P100,"Yes")` | Number |
 
-### 9.8 Section 5: Gap Analysis (Rows 55-63)
+## Section 5: Gap Analysis (Rows 55-63)
 
 | Row | Cell | Label | Cell | Formula | Display Format |
 |-----|------|-------|------|---------|----------------|
@@ -2194,7 +2392,7 @@ Executive summary with auto-calculated compliance metrics (fully calculated, rea
 | **67** | **B67** | "- In Progress:" | **C67** | `=COUNTIF('Legal Basis Gaps'!J4:J100,"In Progress")` | Number | Fill: #FFEB9C (yellow) |
 | **68** | **B68** | "- Open:" | **C68** | `=COUNTIF('Legal Basis Gaps'!J4:J100,"Open")` | Number | Fill: #FFC7CE (light red), Bold |
 
-### 9.9 Section 6: Evidence Status (Rows 70-76)
+## Section 6: Evidence Status (Rows 70-76)
 
 | Row | Cell | Label | Cell | Formula | Display Format |
 |-----|------|-------|------|---------|----------------|
@@ -2205,7 +2403,7 @@ Executive summary with auto-calculated compliance metrics (fully calculated, rea
 | **75** | **B75** | "- Pending:" | **C75** | `=COUNTIF('Evidence Repository'!H4:H300,"Pending Verification")` | Number | Fill: #FFEB9C (yellow) |
 | **76** | **B76** | "- Expired/Requires Update:" | **C76** | `=COUNTIFS('Evidence Repository'!H4:H300,"Expired")+COUNTIF('Evidence Repository'!H4:H300,"Requires Update")` | Number | Fill: #FFC7CE (light red) |
 
-### 9.10 Section 7: Overall Compliance Score (Rows 78-86)
+## Section 7: Overall Compliance Score (Rows 78-86)
 
 | Row | Cell | Label | Cell | Formula | Display Format |
 |-----|------|-------|------|---------|----------------|
@@ -2218,11 +2416,13 @@ Executive summary with auto-calculated compliance metrics (fully calculated, rea
 | **86** | **A86** | "📊 OVERALL COMPLIANCE SCORE:" | **B86** | `=(B80*0.30)+(B81*0.25)+(B82*0.25)+(B83*0.15)+(B84*0.05)` | Percentage, 1 decimal, LARGE FONT (16pt), Bold |
 
 **Weighting Rationale:**
+
 - Legal Basis Coverage: 30% (most critical)
 - Consent Validity: 25% (GDPR Art. 7 compliance)
 - LIA Completion: 25% (Art. 6(1)(f) compliance)
 - Gap Remediation: 15% (continuous improvement)
 - Evidence Coverage: 5% (audit readiness)
+
 
 **Score Interpretation (displayed in C86:G86):**
 
@@ -2233,7 +2433,7 @@ Executive summary with auto-calculated compliance metrics (fully calculated, rea
 | **E86** | `=IF(AND(B86>=0.5,B86<0.75),"⚠️ FAIR - Work Needed","")` | Text | Fill: #FFEB9C (yellow), Bold |
 | **F86** | `=IF(B86<0.5,"❌ POOR - Major Issues","")` | Text | Fill: #C00000 (red), Font: #FFFFFF (white), Bold |
 
-### 9.11 Conditional Formatting (Dashboard-Specific)
+## Conditional Formatting (Dashboard-Specific)
 
 **Rule 1: Compliance score coloring**
 
@@ -2256,25 +2456,27 @@ Executive summary with auto-calculated compliance metrics (fully calculated, rea
 
 **Priority:** 2
 
-### 9.12 Cell Protection
+## Cell Protection
 
 **All Cells Locked (Read-Only Dashboard):**
+
 - Entire sheet protected, no unlocked cells
 - Password: `privacy2024`
 
-### 9.13 Freeze Panes
+
+## Freeze Panes
 
 **Freeze:** Row 2 (keep title visible when scrolling)
 
 ---
 
-## 10. SHEET 8: Approval & Sign-Off
+# SHEET 8: Approval & Sign-Off
 
-### 10.1 Purpose
+## Purpose
 
 Stakeholder validation and formal approval documentation.
 
-### 10.2 Layout Structure
+## Layout Structure
 
 **Row 1:** Sheet title  
 **Row 2:** Instructions  
@@ -2282,14 +2484,14 @@ Stakeholder validation and formal approval documentation.
 **Rows 4-7:** Pre-populated required signatories  
 **Rows 8+:** Additional signatories if needed
 
-### 10.3 Header Section
+## Header Section
 
 | Row | Cell Range | Content | Styling |
 |-----|-----------|---------|---------|
 | **1** | **A1:G1** (merged) | "ASSESSMENT APPROVAL & SIGN-OFF" | Title style |
 | **2** | **A2:G2** (merged) | "Required approvals from DPO, Legal Counsel, and Business Process Owners. Assessment not complete until all required signatures obtained." | Subtitle style |
 
-### 10.4 Column Definitions (Row 3)
+## Column Definitions (Row 3)
 
 | Col | Letter | Header | Width | Data Type | Validation |
 |-----|--------|--------|-------|-----------|------------|
@@ -2303,7 +2505,7 @@ Stakeholder validation and formal approval documentation.
 
 **Header Row Styling:** Same as previous sheets
 
-### 10.5 Pre-Populated Required Approvals (Rows 4-7)
+## Pre-Populated Required Approvals (Rows 4-7)
 
 | Row | Col A (Role) | Col E (Approval Scope) |
 |-----|-------------|------------------------|
@@ -2323,11 +2525,13 @@ required_signatories = [
 ```
 
 **Row Styling:**
+
 - Column A (Role): Fill: #D9D9D9 (light gray), Bold, Locked
 - Column E (Approval Scope): Fill: #F2F2F2 (light gray), Locked
 - Columns B-D, F-G: Fill: #FFFFFF (white), Unlocked for user entry
 
-### 10.6 Dropdown Lists
+
+## Dropdown Lists
 
 **Signatory Role (Column A) - Optional for rows 8+:**
 ```
@@ -2341,7 +2545,7 @@ Executive Sponsor
 Other
 ```
 
-### 10.7 Data Validation Rules
+## Data Validation Rules
 
 | Column | Range | Validation Type | Rule | Error Message |
 |--------|-------|----------------|------|---------------|
@@ -2350,7 +2554,7 @@ Other
 | **D** | D4:D20 | Date | Valid date, not future | "Enter signature date (not future)" |
 | **G** | G4:G20 | Email (Optional) | Valid email format if entered | "Enter valid email address" |
 
-### 10.8 Conditional Formatting Rules
+## Conditional Formatting Rules
 
 **Rule 1: Unsigned required approvals (CRITICAL)**
 
@@ -2370,53 +2574,64 @@ Other
 
 **Priority:** 2
 
-### 10.9 Cell Protection
+## Cell Protection
 
 **Locked Cells:**
+
 - Rows 1-3 (Headers)
 - Column A, Rows 4-7 (Pre-populated required roles)
 - Column E, Rows 4-7 (Pre-populated approval scopes)
 
+
 **Unlocked Cells:**
+
 - Columns B-D, F-G, Rows 4-20
 - Column A, Rows 8-20 (additional approvers)
 - Column E, Rows 8-20 (additional approval scopes)
 
+
 **Sheet Protection:** Password: `privacy2024`
 
-### 10.10 Freeze Panes
+## Freeze Panes
 
 **Freeze:** Row 3
 
 ---
 
-## 11. Python Script Architecture
+# Python Script Architecture
 
-### 11.1 Script Structure Overview
+## Script Structure Overview
 
 **File:** `generate_a5342_legal_basis_assessment.py`
 
 **Architecture:**
 ```
 1. IMPORTS & DEPENDENCIES
+
    - openpyxl (Excel generation)
    - datetime (timestamps)
    - argparse (CLI interface)
 
+
 2. CONFIGURATION (# CUSTOMIZE: markers)
+
    - Color scheme (hex codes)
    - Dropdown lists
    - Protection password
    - Default values
 
+
 3. UTILITY FUNCTIONS
+
    - create_header_row(ws, headers, row_num)
    - add_dropdown_validation(ws, cell_range, values)
    - add_conditional_formatting(ws, cell_range, rules)
    - apply_cell_styling(cell, style_name)
    - protect_sheet(ws, password, unlocked_ranges)
 
+
 4. SHEET CREATION FUNCTIONS
+
    - create_sheet1_instructions(wb)
    - create_sheet2_legal_basis_inventory(wb)
    - create_sheet3_lia(wb)
@@ -2426,20 +2641,25 @@ Other
    - create_sheet7_dashboard(wb)
    - create_sheet8_approval(wb)
 
+
 5. MAIN WORKBOOK GENERATION
+
    - generate_workbook(output_path, date_suffix)
      - Create workbook
      - Call all sheet creation functions
      - Save workbook
      - Print confirmation
 
+
 6. CLI INTERFACE
+
    - main()
    - argparse configuration
    - Error handling
+
 ```
 
-### 11.2 Key Implementation Patterns
+## Key Implementation Patterns
 
 **Pattern 1: Auto-generated IDs**
 ```python
@@ -2494,7 +2714,7 @@ ws.conditional_formatting.add(
 )
 ```
 
-### 11.3 Customization Points
+## Customization Points
 
 All sections marked with `# CUSTOMIZE:` comments:
 
@@ -2535,9 +2755,9 @@ WEIGHT_EVIDENCE = 0.05  # Evidence coverage
 
 ---
 
-## 12. Integration with A.5.34.7 Privacy Compliance Dashboard
+# Integration with A.5.34.7 Privacy Compliance Dashboard
 
-### 12.1 Data Export Points
+## Data Export Points
 
 **Sheet 7 (Dashboard) - Key Cells for Consolidation:**
 
@@ -2554,7 +2774,7 @@ WEIGHT_EVIDENCE = 0.05  # Evidence coverage
 | Critical Gaps | C60 | `=COUNTIF('Legal Basis Gaps'!E4:E100,"Critical")` | Critical risk count |
 | Overall Compliance Score | B86 | `=(B80*0.30)+(B81*0.25)+(B82*0.25)+(B83*0.15)+(B84*0.05)` | A.5.34.2 compliance % |
 
-### 12.2 Consolidation Script Usage
+## Consolidation Script Usage
 
 **Script:** `consolidate_a534_dashboard.py`
 
@@ -2577,9 +2797,9 @@ consolidated_ws['C25'] = compliance_score
 
 ---
 
-## 13. Testing and Validation
+# Testing and Validation
 
-### 13.1 Unit Testing
+## Unit Testing
 
 **Test Each Sheet Creation Function:**
 ```python
@@ -2599,7 +2819,7 @@ def test_legal_basis_inventory_sheet():
     assert len(ws.conditional_formatting._cf_rules) > 0
 ```
 
-### 13.2 Integration Testing
+## Integration Testing
 
 **Generate Complete Workbook and Verify:**
 1. Open in Excel (not just Python)
@@ -2609,7 +2829,7 @@ def test_legal_basis_inventory_sheet():
 5. Test conditional formatting applies
 6. Test protection prevents structure changes but allows data entry
 
-### 13.3 Validation Checklist
+## Validation Checklist
 
 - [ ] All 8 sheets created
 - [ ] Sheet names correct ("Legal Basis Inventory", etc.)
@@ -2622,13 +2842,14 @@ def test_legal_basis_inventory_sheet():
 - [ ] File opens in Excel 2016+
 - [ ] File size reasonable (<5MB for empty workbook)
 
+
 ---
 
 **END OF PART II: TECHNICAL SPECIFICATION (Sheets 5-8) + Python Architecture**
 
 ---
 
-## Document Assembly Instructions
+# Document Assembly Instructions
 
 **To create the complete ISMS-IMP-A.5.34.2 v1.0 document:**
 
@@ -2669,6 +2890,7 @@ ISMS-IMP-A.5.34.2 - Legal Basis and Lawful Processing Assessment v1.0
 ```
 
 **Quality Verification:**
+
 - ✅ All cell references are EXACT (A4, B5, C6, not "Column A")
 - ✅ All formulas are EXACT Excel syntax
 - ✅ All hex colors are specified (#1F4E78, #C6EFCE, #FFC7CE)
@@ -2679,8 +2901,15 @@ ISMS-IMP-A.5.34.2 - Legal Basis and Lawful Processing Assessment v1.0
 - ✅ Python script architecture provides complete implementation pattern
 - ✅ Integration with consolidation dashboard (A.5.34.7) documented
 
+
 **This is now REFERENCE QUALITY - Python developer can implement directly from this specification with zero interpretation required.**
 
 ---
 
-**END OF ISMS-IMP-A.5.34.2**
+**END OF SPECIFICATION**
+
+---
+
+*"Natural science does not simply describe and explain nature; it describes nature as exposed to our method of questioning."*
+— Werner Heisenberg
+*Where bamboo antennas actually work.* 🎋

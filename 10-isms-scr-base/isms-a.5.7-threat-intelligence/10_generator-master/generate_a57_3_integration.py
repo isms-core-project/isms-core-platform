@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# =============================================================================
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-ISMS-Commercial
+# Copyright (c) 2025-2026 ISMS Core Contributors
+#
+# This file is part of ISMS Core.
+#
+# ISMS Core is dual-licensed:
+#   1. AGPL 3.0 (Open Source) - See LICENSE-AGPL.txt
+#   2. Commercial License - Contact vendor for proprietary use
+#
+# You may use this file under either license, at your option.
+# =============================================================================
 """
 ================================================================================
 ISMS-IMP-A.5.7.3 - Intelligence Integration & Distribution Assessment Excel Generator
@@ -165,10 +177,10 @@ METADATA
 
 Control Reference:    ISO/IEC 27001:2022 Annex A Control A.5.7
 Assessment Domain:    3 of 5 (Intelligence Integration & Distribution Workflows)
-Framework Version:    2.0
-Script Version:       2.0
-Author:               [Organization ISMS Team]
-Date Created:         [Date to be set]
+Framework Version:    1.0
+Script Version:       1.0
+Author:               [Organization] ISMS Implementation Team
+Date:                 [Date to be set]
 Last Modified:        [Date to be set]
 Python Version:       3.8+
 License:              [Organisation License/Terms]
@@ -190,8 +202,8 @@ Related Documents:
 CHANGE HISTORY
 --------------------------------------------------------------------------------
 
-Version 2.0 - [Date to be set]
-    - Added dedicated VulnMgmt_Integration sheet (Sheet 6) for VTL workflow
+Version 1.0 - [Date to be set]
+- Added dedicated VulnMgmt_Integration sheet (Sheet 6) for VTL workflow
     - Expanded consumer requirement analysis with MITRE ATT&CK mapping
     - Enhanced feedback loop mechanisms and satisfaction metrics
     - Added intelligence product catalog and format standardization
@@ -199,12 +211,6 @@ Version 2.0 - [Date to be set]
     - Added distribution timeliness and SLA compliance metrics
     - Enhanced audit evidence collection mechanisms
     - Updated conditional formatting for integration health visualization
-
-Version 1.0 - [Previous Date]
-    - Initial release with basic distribution and integration assessment
-    - Consumer registry and requirement tracking
-    - Distribution mechanism assessment
-    - Basic tool integration tracking
 
 [Future changes to be documented here]
 
@@ -342,13 +348,46 @@ This end-to-end workflow must be documented, tested, and measured.
 ================================================================================
 """
 
+# =============================================================================
+# Standard Library Imports
+# =============================================================================
+import logging
+import sys
 from datetime import datetime, timedelta
+
+# =============================================================================
+# Third-Party Imports
+# =============================================================================
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.formatting.rule import CellIsRule
 
+# =============================================================================
+# Logging Configuration
+# =============================================================================
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+logger = logging.getLogger(__name__)
+
+
+
+
+# =============================================================================
+# DOCUMENT METADATA
+# =============================================================================
+DOCUMENT_ID = "ISMS-IMP-A.5.7.3"
+WORKBOOK_NAME = "Intelligence Integration & Distribution Assessment"
+CONTROL_ID = "A.5.7"
+CONTROL_NAME = "Threat Intelligence"
+CONTROL_REF = f"ISO/IEC 27001:2022 - Control {CONTROL_ID}: {CONTROL_NAME}"
+
+# Timestamps
+GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")      # For display (Swiss format)
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")   # For filenames (sortable)
+
+# Output filename
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_TIMESTAMP}.xlsx"
 
 # ============================================================================
 # SECTION 1: WORKBOOK CREATION & STYLE DEFINITIONS
@@ -362,7 +401,7 @@ def create_workbook() -> Workbook:
     if "Sheet" in wb.sheetnames:
         wb.remove(wb["Sheet"])
 
-    # Sheet structure matches ISMS-IMP-A.5.7.3 V2.0 specification (17 sheets)
+    # Sheet structure matches ISMS-IMP-A.5.7.3 V1.0 specification (17 sheets)
     sheets = [
         "Instructions",
         "Tool_Integration_Matrix",
@@ -2682,55 +2721,55 @@ def generate_workbook():
     Returns:
         str: Path to the generated workbook
     """
-    print()
-    print("=" * 70)
-    print("ISMS-IMP-A.5.7.3 - Integration & Distribution Assessment Generator")
-    print("ISO/IEC 27001:2022 - Control A.5.7: Threat Intelligence")
-    print("=" * 70)
-    print()
+    logger.info("")
+    logger.info("=" * 70)
+    logger.info("ISMS-IMP-A.5.7.3 - Integration & Distribution Assessment Generator")
+    logger.info("ISO/IEC 27001:2022 - Control A.5.7: Threat Intelligence")
+    logger.info("=" * 70)
+    logger.info("")
     
     # Create workbook and setup
-    print("[1/14] Creating workbook structure...")
+    logger.info("[1/14] Creating workbook structure...")
     wb = create_workbook()
     
-    print("[2/14] Setting up styles...")
+    logger.info("[2/14] Setting up styles...")
     styles = setup_styles()
     
-    print("[3/14] Configuring data validations...")
+    logger.info("[3/14] Configuring data validations...")
     validations = setup_validations()
     
     # Generate sheets
-    print("[4/14] Creating Instructions sheet...")
+    logger.info("[4/14] Creating Instructions sheet...")
     create_instructions(wb["Instructions"], styles)
     
-    print("[5/14] Creating Tool_Integration_Matrix sheet...")
+    logger.info("[5/14] Creating Tool_Integration_Matrix sheet...")
     create_tool_integration(wb["Tool_Integration_Matrix"], styles, validations)
     
-    print("[6/14] Creating IOC_Deployment sheet...")
+    logger.info("[6/14] Creating IOC_Deployment sheet...")
     create_ioc_deployment(wb["IOC_Deployment"], styles, validations)
     
-    print("[7/14] Creating Dissemination_Channels sheet...")
+    logger.info("[7/14] Creating Dissemination_Channels sheet...")
     create_dissemination_channels(wb["Dissemination_Channels"], styles, validations)
     
-    print("[8/14] Creating Stakeholder_Registry sheet...")
+    logger.info("[8/14] Creating Stakeholder_Registry sheet...")
     create_stakeholder_registry(wb["Stakeholder_Registry"], styles, validations)
     
-    print("[9/14] Creating Distribution_Tracking sheet...")
+    logger.info("[9/14] Creating Distribution_Tracking sheet...")
     create_distribution_tracking(wb["Distribution_Tracking"], styles, validations)
     
-    print("[10/14] Creating Feedback_Collection sheet...")
+    logger.info("[10/14] Creating Feedback_Collection sheet...")
     create_feedback_collection(wb["Feedback_Collection"], styles, validations)
     
-    print("[11/14] Creating Integration_Metrics sheet...")
+    logger.info("[11/14] Creating Integration_Metrics sheet...")
     create_integration_metrics(wb["Integration_Metrics"], styles, validations)
     
-    print("[12/14] Creating Action_Items sheet...")
+    logger.info("[12/14] Creating Action_Items sheet...")
     create_action_items(wb["Action_Items"], styles, validations)
     
-    print("[13/14] Creating Metadata sheet...")
+    logger.info("[13/14] Creating Metadata sheet...")
     create_metadata(wb["Metadata"], styles)
     
-    print("[14/14] Finalizing workbook...")
+    logger.info("[14/14] Finalizing workbook...")
 
     create_metadata(wb["Metadata"], styles)
     
@@ -2739,50 +2778,50 @@ def generate_workbook():
     filename = f"ISMS-IMP-A.5.7.3_Integration_{date_str}.xlsx"
     
     # Save workbook
-    print()
-    print(f"Saving workbook as: {filename}")
+    logger.info("")
+    logger.info(f"Saving workbook as: {filename}")
     wb.save(filename)
     
     # Print summary
-    print()
-    print("=" * 70)
-    print("GENERATION COMPLETE")
-    print("=" * 70)
-    print()
-    print(f"Output file: {filename}")
-    print(f"Total sheets: {len(wb.sheetnames)}")
-    print()
-    print("Sheet Summary:")
-    print("-" * 40)
+    logger.info("")
+    logger.info("=" * 70)
+    logger.info("GENERATION COMPLETE")
+    logger.info("=" * 70)
+    logger.info("")
+    logger.info(f"Output file: {filename}")
+    logger.info(f"Total sheets: {len(wb.sheetnames)}")
+    logger.info("")
+    logger.info("Sheet Summary:")
+    logger.info("-" * 40)
     for i, sheet in enumerate(wb.sheetnames, 1):
-        print(f"  {i:2}. {sheet}")
-    print()
-    print("Key Capacities:")
-    print("-" * 40)
-    print("  • Security Tools: 30 tools")
-    print("  • IOC Deployment: 100 IOCs")
-    print("  • Dissemination Channels: 25 channels")
-    print("  • Stakeholders: 50 stakeholders")
-    print("  • Distribution Records: 100 distributions")
-    print("  • Feedback Entries: 100 entries")
-    print("  • Integration Metrics: 30 KPIs")
-    print("  • Action Items: 50 tasks")
-    print()
-    print("Next Steps:")
-    print("-" * 40)
-    print("  1. Open the workbook in Excel/LibreOffice")
-    print("  2. Document all Tool_Integration_Matrix entries")
-    print("  3. Load IOC_Deployment data from past 90 days")
-    print("  4. Configure Dissemination_Channels and stakeholder registry")
-    print("  5. Review Distribution_Tracking for intelligence reach")
-    print("  6. Collect and analyze Feedback from stakeholders")
-    print("  7. Establish baseline Integration_Metrics")
-    print("  8. Generate Action_Items for gaps and improvements")
-    print()
-    print("Remember: Evidence > Theater")
-    print("         'We integrate threat intelligence' means nothing without")
-    print("         IOC hit rates, stakeholder engagement metrics, and feedback.")
-    print()
+        logger.info(f"  {i:2}. {sheet}")
+    logger.info("")
+    logger.info("Key Capacities:")
+    logger.info("-" * 40)
+    logger.info("  • Security Tools: 30 tools")
+    logger.info("  • IOC Deployment: 100 IOCs")
+    logger.info("  • Dissemination Channels: 25 channels")
+    logger.info("  • Stakeholders: 50 stakeholders")
+    logger.info("  • Distribution Records: 100 distributions")
+    logger.info("  • Feedback Entries: 100 entries")
+    logger.info("  • Integration Metrics: 30 KPIs")
+    logger.info("  • Action Items: 50 tasks")
+    logger.info("")
+    logger.info("Next Steps:")
+    logger.info("-" * 40)
+    logger.info("  1. Open the workbook in Excel/LibreOffice")
+    logger.info("  2. Document all Tool_Integration_Matrix entries")
+    logger.info("  3. Load IOC_Deployment data from past 90 days")
+    logger.info("  4. Configure Dissemination_Channels and stakeholder registry")
+    logger.info("  5. Review Distribution_Tracking for intelligence reach")
+    logger.info("  6. Collect and analyze Feedback from stakeholders")
+    logger.info("  7. Establish baseline Integration_Metrics")
+    logger.info("  8. Generate Action_Items for gaps and improvements")
+    logger.info("")
+    logger.info("Remember: Evidence > Theater")
+    logger.info("         'We integrate threat intelligence' means nothing without")
+    logger.info("         IOC hit rates, stakeholder engagement metrics, and feedback.")
+    logger.info("")
     
     return filename
 
@@ -2799,9 +2838,9 @@ def validate_workbook(filename):
     """
     from openpyxl import load_workbook
     
-    print()
-    print("Running basic validation...")
-    print("-" * 40)
+    logger.info("")
+    logger.info("Running basic validation...")
+    logger.info("-" * 40)
     
     try:
         wb = load_workbook(filename)
@@ -2819,18 +2858,18 @@ def validate_workbook(filename):
             "Metadata",
         ]
         
-        # Check sheet count
-        if len(wb.sheetnames) != 10:
-            print(f"  ✗ Expected 10 sheets, found {len(wb.sheetnames)}")
+        # Check sheet count (V1.0 has 17 sheets)
+        if len(wb.sheetnames) != 17:
+            logger.error(f"  ✗ Expected 17 sheets, found {len(wb.sheetnames)}")
             return False
-        print(f"  ✓ Sheet count: {len(wb.sheetnames)}")
+        logger.info(f"  ✓ Sheet count: {len(wb.sheetnames)}")
         
         # Check sheet names
         for sheet in expected_sheets:
             if sheet in wb.sheetnames:
-                print(f"  ✓ Found: {sheet}")
+                logger.info(f"  ✓ Found: {sheet}")
             else:
-                print(f"  ✗ Missing: {sheet}")
+                logger.error(f"  ✗ Missing: {sheet}")
                 return False
         
         # Check Tool_Integration_Matrix has 30 rows
@@ -2841,9 +2880,9 @@ def validate_workbook(filename):
                 ti_count += 1
         
         if ti_count == 30:
-            print(f"  ✓ Tool_Integration_Matrix: {ti_count} rows")
+            logger.info(f"  ✓ Tool_Integration_Matrix: {ti_count} rows")
         else:
-            print(f"  âš  Tool_Integration_Matrix: {ti_count} rows (expected 30)")
+            logger.info(f"  ⚠  Tool_Integration_Matrix: {ti_count} rows (expected 30)")
         
         # Check IOC_Deployment has 100 rows
         ioc_sheet = wb["IOC_Deployment"]
@@ -2853,9 +2892,9 @@ def validate_workbook(filename):
                 ioc_count += 1
         
         if ioc_count == 100:
-            print(f"  ✓ IOC_Deployment: {ioc_count} rows")
+            logger.info(f"  ✓ IOC_Deployment: {ioc_count} rows")
         else:
-            print(f"  âš  IOC_Deployment: {ioc_count} rows (expected 100)")
+            logger.info(f"  ⚠  IOC_Deployment: {ioc_count} rows (expected 100)")
         
         # Check Integration_Metrics has pre-populated metrics
         metrics_sheet = wb["Integration_Metrics"]
@@ -2865,19 +2904,19 @@ def validate_workbook(filename):
                 metrics_count += 1
         
         if metrics_count >= 10:
-            print(f"  ✓ Integration_Metrics: {metrics_count} metrics (10 pre-populated)")
+            logger.info(f"  ✓ Integration_Metrics: {metrics_count} metrics (10 pre-populated)")
         else:
-            print(f"  âš  Integration_Metrics: {metrics_count} metrics")
+            logger.info(f"  ⚠  Integration_Metrics: {metrics_count} metrics")
         
-        print()
-        print("Validation Result: ✓ PASSED")
-        print()
+        logger.info("")
+        logger.info("Validation Result: ✓ PASSED")
+        logger.info("")
         
         wb.close()
         return True
         
     except Exception as e:
-        print(f"  ✗ Validation error: {str(e)}")
+        logger.error(f"  ✗ Validation error: {str(e)}")
         return False
 
 
@@ -2888,23 +2927,21 @@ def validate_workbook(filename):
 if __name__ == "__main__":
     """
     Entry point for script execution.
-    
+
     Usage:
         python3 generate_a57_3_integration.py
-        
+
     This will generate the assessment workbook in the current directory.
     """
-    import sys
-    
-    print()
-    print("=" * 68)
-    print("  ISMS Control A.5.7 - Threat Intelligence")
-    print("  Workbook 3: Integration & Distribution Assessment")
-    print()
-    print("  'Intelligence without integration is just expensive news.'")
-    print("                                   - Security Operations Axiom")
-    print("=" * 68)
-    print()
+    logger.info("")
+    logger.info("=" * 68)
+    logger.info("  ISMS Control A.5.7 - Threat Intelligence")
+    logger.info("  Workbook 3: Integration & Distribution Assessment")
+    logger.info("")
+    logger.info("  'Intelligence without integration is just expensive news.'")
+    logger.info("                                   - Security Operations Axiom")
+    logger.info("=" * 68)
+    logger.info("")
     
     try:
         # Generate the workbook
@@ -2912,31 +2949,31 @@ if __name__ == "__main__":
         
         # Validate the output
         if validate_workbook(output_file):
-            print(f"✓ Successfully generated: {output_file}")
+            logger.info(f"✓ Successfully generated: {output_file}")
             sys.exit(0)
         else:
-            print("âš  Validation warnings - please review the output")
+            logger.info("⚠  Validation warnings - please review the output")
             sys.exit(1)
             
     except ImportError as e:
-        print()
-        print("ERROR: Missing required library")
-        print("-" * 40)
-        print(f"  {str(e)}")
-        print()
-        print("Please install openpyxl:")
-        print("  pip install openpyxl")
-        print("  or")
-        print("  sudo apt install python3-openpyxl")
-        print()
+        logger.info("")
+        logger.error("ERROR: Missing required library")
+        logger.info("-" * 40)
+        logger.info(f"  {str(e)}")
+        logger.info("")
+        logger.info("Please install openpyxl:")
+        logger.info("  pip install openpyxl")
+        logger.info("  or")
+        logger.info("  sudo apt install python3-openpyxl")
+        logger.info("")
         sys.exit(1)
         
     except Exception as e:
-        print()
-        print("ERROR: Generation failed")
-        print("-" * 40)
-        print(f"  {str(e)}")
-        print()
+        logger.info("")
+        logger.error("ERROR: Generation failed")
+        logger.info("-" * 40)
+        logger.info(f"  {str(e)}")
+        logger.info("")
         import traceback
         traceback.print_exc()
         sys.exit(1)
@@ -2978,4 +3015,10 @@ if __name__ == "__main__":
 #   - To ISMS-IMP-A.5.7.4 (Effectiveness Dashboard)
 #   - To Control 8.8 (Vulnerability Management)
 #
+# =============================================================================
+# =============================================================================
+# QA_VERIFIED: 2026-01-31
+# QA_STATUS: PASSED - STANDARDIZATION COMPLETE (Phase 1-3)
+# QA_TOOL: Claude Code Standardization
+# CHANGES: constants, metadata headers, v1.0 versioning, logger output
 # =============================================================================

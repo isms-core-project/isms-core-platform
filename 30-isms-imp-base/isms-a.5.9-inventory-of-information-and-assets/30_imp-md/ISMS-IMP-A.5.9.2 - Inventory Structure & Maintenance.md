@@ -1,10 +1,10 @@
-# ISMS-IMP-A.5.9.2 - Inventory Maintenance
-## Assessment Specification with User Completion Guide (PART I)
-### ISO/IEC 27001:2022 Control A.5.9: Inventory of Information and Assets
+**ISMS-IMP-A.5.9.2 - Inventory Maintenance**
+**Assessment Specification with User Completion Guide**
+### ISO/IEC 27001:2022 Control A.5.9: Inventory of Information and Other Associated Assets
 
 ---
 
-## Document Control
+**Document Control**
 
 | Attribute | Value |
 |-----------|-------|
@@ -44,10 +44,12 @@ This document consists of two parts:
   - Cell Styling Reference
   - Python Script Implementation
 
+
 **Target Audiences:**
 
 - **Part I:** Assessment users (Security Team, IT Operations, CMDB Administrators)
 - **Part II:** Workbook developers (Python/Excel script maintainers)
+
 
 ---
 
@@ -69,6 +71,7 @@ This assessment documents HOW [Organization] structures and maintains its asset 
 - **Maintenance Workflows**: Who updates what? When? How?
 - **Data Quality**: How is accuracy and currency maintained?
 
+
 **Key Principle**: Discovery finds assets (IMP-A.5.9-1). Maintenance keeps the inventory accurate and current over time. Without maintenance, inventory degrades rapidly.
 
 ### Why This Matters
@@ -80,6 +83,7 @@ This assessment verifies [Organization]'s compliance with:
 - **ISMS-POL-A.5.9, Requirement A.5.9-R3**: Mandatory inventory attributes
 - **ISMS-POL-A.5.9, Section 2.5**: Currency standards (maximum staleness by asset type)
 - **ISMS-POL-A.5.9, Requirement A.5.9-R6**: Integration with other ISMS processes
+
 
 **From Implementer Perspective**: Provides systematic procedures to keep inventory current without excessive manual effort.
 
@@ -110,10 +114,12 @@ This assessment covers **4 maintenance domains**:
 7. **Evidence Register**: Documentation of procedures, integration configs, review records
 
 **Compliance Metrics Generated**:
+
 - Update timeliness (% within SLA)
 - Integration health (sync success rate)
 - Data quality score (accuracy, completeness, currency)
 - Review compliance (% reviews on schedule)
+
 
 ---
 
@@ -122,13 +128,16 @@ This assessment covers **4 maintenance domains**:
 ### What You Need Before Starting
 
 **1. Access to Inventory Systems**:
+
 - Asset inventory system(s) (CMDB, spreadsheets, database)
 - CMDB if deployed (ServiceNow, BMC, Device42, etc.)
 - HR system (for personnel asset integration)
 - Procurement/finance system (for asset acquisition tracking)
 - Document management system (for information assets)
 
+
 **2. Personnel**:
+
 - **Security Team**: Leads assessment, consolidates findings
 - **IT Operations**: Provides CMDB/inventory system details
 - **CMDB Administrator**: Documents structure, integration, workflows
@@ -136,23 +145,30 @@ This assessment covers **4 maintenance domains**:
 - **Integration Engineers**: Document API connections, data flows
 - **HR Representative**: Explain HR system integration (if applicable)
 
+
 **3. Documentation**:
+
 - Inventory system architecture diagrams
 - Data flow diagrams (inventory ↔ other systems)
 - Integration configuration documentation
 - Update procedure documents (if formalized)
 - Previous assessment (if exists - for comparison)
 
+
 **4. System Access**:
+
 - Read access to inventory system(s)
 - Access to integration logs/dashboards
 - Access to CMDB configuration settings
 - API documentation for integrations
 
+
 **5. Time Allocation**:
+
 - **Initial Assessment**: 15-25 hours (varies by inventory complexity)
 - **Quarterly Updates**: 4-6 hours (once procedures documented)
 - **Evidence Collection**: 3-5 hours per quarter
+
 
 ---
 
@@ -211,10 +227,12 @@ Phase 6: Review & Approval (Day 16)
 **Purpose**: Provides overview and guidance for completing this workbook.
 
 **What to Do**:
+
 - Read the instructions completely before starting
 - Note the assessment scope and objectives
 - Understand the color coding and validation rules
 - Review the workflow diagram
+
 
 **No data entry required** - informational only.
 
@@ -225,11 +243,13 @@ Phase 6: Review & Approval (Day 16)
 **Purpose**: Document where inventory data is stored and how it's organized.
 
 **What This Sheet Captures**:
+
 - Systems holding inventory data (CMDB, spreadsheets, databases)
 - Schema/structure for each system (tables, fields, relationships)
 - Mapping to policy mandatory attributes (Section 2.3)
 - Access controls and permissions
 - Version control and backup procedures
+
 
 **Column Definitions**:
 
@@ -255,11 +275,14 @@ Phase 6: Review & Approval (Day 16)
 **How to Complete**:
 
 1. **Identify All Inventory Systems**:
+
    - Start with primary system (likely CMDB if you have one)
    - Include ALL systems with inventory data (even spreadsheets!)
    - Don't forget: Document repos, procurement systems, specialized tools
 
+
 2. **Example 1: ServiceNow CMDB**:
+
    - **Inventory System**: "ServiceNow CMDB"
    - **System Type**: CMDB
    - **Asset Categories Stored**: "IT Infrastructure (servers, storage, networking, endpoints), Applications"
@@ -276,7 +299,9 @@ Phase 6: Review & Approval (Day 16)
    - **Documentation Location**: "ServiceNow docs.servicenow.com/cmdb, internal wiki: confluence.company.com/cmdb"
    - **Responsible Party**: "CMDB Administrator, IT Operations Team"
 
+
 3. **Example 2: Asset Tracking Spreadsheet (if CMDB doesn't exist)**:
+
    - **Inventory System**: "Asset_Inventory_Master.xlsx"
    - **System Type**: Spreadsheet
    - **Asset Categories Stored**: "All categories (Information, IT, Applications, Physical, Personnel)"
@@ -293,7 +318,9 @@ Phase 6: Review & Approval (Day 16)
    - **Documentation Location**: "SharePoint: /sites/InfoSec/Asset_Inventory/README.md"
    - **Responsible Party**: "Information Security Manager"
 
+
 4. **Example 3: HR System (Personnel Assets)**:
+
    - **Inventory System**: "Workday HRIS"
    - **System Type**: SaaS Platform
    - **Asset Categories Stored**: "Personnel Assets (roles, competencies)"
@@ -309,13 +336,16 @@ Phase 6: Review & Approval (Day 16)
    - **Documentation Location**: "doc.workday.com, internal: /integrations/workday-api"
    - **Responsible Party**: "HR Systems Team, integration managed by IT"
 
+
 **Common Pitfalls**:
+
 - ❌ Only documenting the "official" inventory system (missing shadow spreadsheets)
 - ✅ Document ALL systems with inventory data, even informal ones
 - ❌ Assuming CMDB has all required attributes (often missing: classification, retention period)
 - ✅ Map CMDB fields to policy attributes, identify gaps
 - ❌ Not documenting access controls (auditors will ask!)
 - ✅ Clearly describe who can view/edit inventory
+
 
 **Completeness Check**: Every system holding inventory data should have a row in this sheet.
 
@@ -326,11 +356,13 @@ Phase 6: Review & Approval (Day 16)
 **Purpose**: Document what triggers inventory updates and how updates are performed.
 
 **What This Sheet Captures**:
+
 - Update triggers (events causing inventory changes)
 - Workflows for each trigger type
 - Responsible parties for each update type
 - SLAs for update timeliness
 - Manual vs. automated update procedures
+
 
 **Column Definitions**:
 
@@ -357,6 +389,7 @@ Phase 6: Review & Approval (Day 16)
 1. **Asset Acquisition Triggers**:
 
 **Example: New Server Deployed**
+
 - **Update Trigger**: "New physical or virtual server deployed to production"
 - **Trigger Category**: Asset Acquisition
 - **Asset Categories Affected**: "IT Infrastructure - Servers"
@@ -372,7 +405,9 @@ Phase 6: Review & Approval (Day 16)
 - **Integration Dependencies**: "ServiceNow Discovery, Change Management module"
 - **Last Review Date**: [Date]
 
+
 **Example: New SaaS Application Procured**
+
 - **Update Trigger**: "New SaaS application purchased/subscribed"
 - **Trigger Category**: Asset Acquisition
 - **Asset Categories Affected**: "Applications - SaaS Service"
@@ -388,9 +423,11 @@ Phase 6: Review & Approval (Day 16)
 - **Integration Dependencies**: "Expense report system (Concur), ServiceNow Catalog"
 - **Last Review Date**: [Date]
 
+
 2. **Asset Modification Triggers**:
 
 **Example: Server Configuration Change**
+
 - **Update Trigger**: "Server configuration modified (OS patch, application install, settings change)"
 - **Trigger Category**: Configuration Change
 - **Asset Categories Affected**: "IT Infrastructure - Servers"
@@ -405,7 +442,9 @@ Phase 6: Review & Approval (Day 16)
 - **Evidence Location**: "Change Management tickets, CMDB version history"
 - **Integration Dependencies**: "ServiceNow Discovery, Change Management"
 
+
 **Example: Asset Owner Change**
+
 - **Update Trigger**: "Asset owner changes (employee role change, transfer, departure)"
 - **Trigger Category**: Ownership Change
 - **Asset Categories Affected**: "All categories (any owned asset)"
@@ -420,9 +459,11 @@ Phase 6: Review & Approval (Day 16)
 - **Evidence Location**: "ServiceNow ownership transfer requests, email confirmations"
 - **Integration Dependencies**: "HR system (for employee status), Email"
 
+
 3. **Asset Disposal Triggers**:
 
 **Example: Server Decommissioned**
+
 - **Update Trigger**: "Server decommissioned and removed from production"
 - **Trigger Category**: Asset Disposal
 - **Asset Categories Affected**: "IT Infrastructure - Servers"
@@ -437,9 +478,11 @@ Phase 6: Review & Approval (Day 16)
 - **Evidence Location**: "Change Management tickets, CMDB audit log, disposal records"
 - **Integration Dependencies**: "Change Management, Physical asset disposal process"
 
+
 4. **Scheduled Review Triggers**:
 
 **Example: Annual Owner Review**
+
 - **Update Trigger**: "Scheduled annual review by asset owner"
 - **Trigger Category**: Scheduled Review
 - **Asset Categories Affected**: "All categories"
@@ -454,13 +497,16 @@ Phase 6: Review & Approval (Day 16)
 - **Evidence Location**: "Review schedule, attestation forms, email confirmations"
 - **Integration Dependencies**: "Email, inventory reporting system"
 
+
 **Common Pitfalls**:
+
 - ❌ Only documenting "official" update procedures (missing ad-hoc manual updates)
 - ✅ Document both formal and informal update methods
 - ❌ Setting unrealistic SLAs (e.g., "real-time" for manual processes)
 - ✅ SLAs should match actual capability and policy requirements
 - ❌ Not measuring SLA achievement (no metrics = can't improve)
 - ✅ Track actual update timeliness, calculate compliance percentage
+
 
 **Completeness Check**: Every trigger type from Policy Section 2.5.3 should be documented.
 
@@ -471,12 +517,14 @@ Phase 6: Review & Approval (Day 16)
 **Purpose**: Document how inventory integrates with other systems (CMDB, HR, procurement).
 
 **What This Sheet Captures**:
+
 - System-to-system integrations
 - Data flow direction (one-way, bi-directional)
 - Integration method (API, file transfer, database sync)
 - Synchronization frequency and schedule
 - Reconciliation procedures
 - Integration health monitoring
+
 
 **Column Definitions**:
 
@@ -505,6 +553,7 @@ Phase 6: Review & Approval (Day 16)
 1. **CMDB Integration** (if applicable):
 
 **Example: ServiceNow Discovery → CMDB**
+
 - **Integration Name**: "ServiceNow Discovery Auto-Population"
 - **Source System**: "ServiceNow Discovery (Discovery & Service Mapping module)"
 - **Target System**: "ServiceNow CMDB"
@@ -522,7 +571,9 @@ Phase 6: Review & Approval (Day 16)
 - **Responsible Party**: "CMDB Administrator, IT Operations"
 - **Documentation Location**: "ServiceNow instance: /discovery_configs, Internal wiki: /cmdb/discovery"
 
+
 **Example: CMDB ↔ Change Management**
+
 - **Integration Name**: "CMDB-Change Management Integration"
 - **Source System**: "ServiceNow CMDB"
 - **Target System**: "ServiceNow Change Management"
@@ -539,9 +590,11 @@ Phase 6: Review & Approval (Day 16)
 - **Health Monitoring**: "ServiceNow integration health dashboard"
 - **Responsible Party**: "CMDB Administrator, Change Management Team"
 
+
 2. **HR System Integration** (for personnel assets):
 
 **Example: Workday → Personnel Asset Inventory**
+
 - **Integration Name**: "HR Competency Extract"
 - **Source System**: "Workday HRIS"
 - **Target System**: "Asset Inventory (Personnel Assets sheet)"
@@ -560,9 +613,11 @@ Phase 6: Review & Approval (Day 16)
 - **Documentation Location**: "Confluence: /integrations/workday-api, Code repo: github.com/org/workday-integration"
 - **Notes**: "Privacy-compliant: Only aggregated competency data, no PII transferred"
 
+
 3. **Procurement Integration** (for asset acquisition):
 
 **Example: Procurement System → IT Asset Inventory**
+
 - **Integration Name**: "Procurement Purchase Order Feed"
 - **Source System**: "SAP Procurement"
 - **Target System**: "CMDB / Asset Inventory"
@@ -581,9 +636,11 @@ Phase 6: Review & Approval (Day 16)
 - **Documentation Location**: "SAP export config: /sap/procurement/exports/, Import script: /scripts/import_po_to_cmdb.py"
 - **Notes**: "Known issue: Serial numbers often missing in PO, requires manual follow-up"
 
+
 4. **No Integration Example** (manual process):
 
 **Example: Information Assets → Document Repository**
+
 - **Integration Name**: "N/A - Manual Process"
 - **Source System**: "SharePoint Document Libraries"
 - **Target System**: "Asset Inventory (Information Assets sheet)"
@@ -602,13 +659,16 @@ Phase 6: Review & Approval (Day 16)
 - **Documentation Location**: "Internal wiki: /procedures/sharepoint-inventory-update"
 - **Notes**: "Target for automation in 2026 (SharePoint API integration planned)"
 
+
 **Common Pitfalls**:
+
 - ❌ Assuming integrations "just work" (no monitoring, no reconciliation)
 - ✅ Document actual sync success rate, monitor health, reconcile regularly
 - ❌ Not documenting manual processes (they're still integrations!)
 - ✅ Even "manual export/import" is a data flow that should be documented
 - ❌ Ignoring failed syncs (errors pile up over time)
 - ✅ Track failures, document error handling, fix root causes
+
 
 **Completeness Check**: Every system integration mentioned in Sheet 2 should have a row here.
 
@@ -619,11 +679,13 @@ Phase 6: Review & Approval (Day 16)
 **Purpose**: Document how data quality is maintained in the inventory.
 
 **What This Sheet Captures**:
+
 - Data validation rules (prevent bad data entry)
 - Review procedures (periodic checks for accuracy)
 - Error detection and correction workflows
 - Data quality metrics and monitoring
 - Owner responsibilities for data quality
+
 
 **Column Definitions**:
 
@@ -647,6 +709,7 @@ Phase 6: Review & Approval (Day 16)
 1. **Data Validation Rules**:
 
 **Example: Asset ID Uniqueness**
+
 - **Quality Control Type**: Data Validation Rule
 - **Control Description**: "Enforce unique Asset ID across entire inventory (prevent duplicates)"
 - **Applies To**: "All inventory systems, Asset ID field"
@@ -659,7 +722,9 @@ Phase 6: Review & Approval (Day 16)
 - **Last Assessed**: [Date]
 - **Evidence Location**: "CMDB schema definition, Spreadsheet conditional formatting rules"
 
+
 **Example: Owner Field Required**
+
 - **Quality Control Type**: Mandatory Field
 - **Control Description**: "Owner field cannot be empty (Policy Requirement A.5.9-R4: 100% owner assignment)"
 - **Applies To**: "All inventory systems, Owner field"
@@ -672,7 +737,9 @@ Phase 6: Review & Approval (Day 16)
 - **Last Assessed**: [Date]
 - **Evidence Location**: "CMDB field configuration, monthly data quality report"
 
+
 **Example: Date Format Validation**
+
 - **Quality Control Type**: Format Check
 - **Control Description**: "Dates must be in DD.MM.YYYY format per policy"
 - **Applies To**: "All date fields (Last Discovery Date, Last Review Date, Target Date, etc.)"
@@ -684,9 +751,11 @@ Phase 6: Review & Approval (Day 16)
 - **Measurement Method**: "Spot check random sample of date fields"
 - **Last Assessed**: [Date]
 
+
 2. **Periodic Reviews**:
 
 **Example: Owner Annual Attestation**
+
 - **Quality Control Type**: Owner Attestation
 - **Control Description**: "Asset owners review and attest to accuracy of inventory records annually (Policy Section 2.5.3)"
 - **Applies To**: "All asset categories"
@@ -700,7 +769,9 @@ Phase 6: Review & Approval (Day 16)
 - **Evidence Location**: "Attestation tracking spreadsheet, signed attestation forms, email archives"
 - **Notes**: "Target: 95% completion by Q2 2026, implement automated reminders"
 
+
 **Example: Quarterly Accuracy Sampling**
+
 - **Quality Control Type**: Periodic Review
 - **Control Description**: "Security Team samples 5% of inventory records quarterly, validates accuracy against source systems"
 - **Applies To**: "All asset categories (stratified random sample)"
@@ -714,9 +785,11 @@ Phase 6: Review & Approval (Day 16)
 - **Evidence Location**: "Quarterly accuracy reports, sampling methodology documentation"
 - **Notes**: "Q4 2025 sample: 98% accuracy for IT assets, 94% for Information assets"
 
+
 3. **Automated Checks**:
 
 **Example: Staleness Detection**
+
 - **Quality Control Type**: Automated Check
 - **Control Description**: "Daily script identifies records exceeding maximum staleness per Policy Section 2.5.3"
 - **Applies To**: "All inventory systems, Last Updated field"
@@ -730,7 +803,9 @@ Phase 6: Review & Approval (Day 16)
 - **Evidence Location**: "Script: /scripts/check_inventory_staleness.py, Daily reports: /reports/staleness/"
 - **Notes**: "Thresholds from Policy: Critical=daily, High=3 days, Standard=7 days, Low=30 days"
 
+
 **Example: CMDB-Discovery Reconciliation**
+
 - **Quality Control Type**: Reconciliation
 - **Control Description**: "Weekly comparison: CMDB server CIs vs. Discovery scan results, identify discrepancies"
 - **Applies To**: "CMDB, IT Infrastructure - Servers"
@@ -743,9 +818,11 @@ Phase 6: Review & Approval (Day 16)
 - **Last Assessed**: [Date]
 - **Evidence Location**: "ServiceNow reconciliation reports, CMDB health dashboard"
 
+
 4. **Duplicate Detection**:
 
 **Example: Duplicate Asset Detection**
+
 - **Quality Control Type**: Duplicate Detection
 - **Control Description**: "Monthly scan for potential duplicate assets (same name, similar attributes)"
 - **Applies To**: "All inventory systems"
@@ -759,13 +836,16 @@ Phase 6: Review & Approval (Day 16)
 - **Evidence Location**: "Duplicate detection reports, resolution tracking log"
 - **Notes**: "Common false positive: 'Laptop-001' in different locations (same model, not duplicate)"
 
+
 **Common Pitfalls**:
+
 - ❌ Implementing controls but not measuring effectiveness
 - ✅ Track control performance, calculate metrics, demonstrate improvement
 - ❌ Relying only on automated checks (need manual reviews too)
 - ✅ Combine automated validation with periodic human verification
 - ❌ Ignoring validation errors (users work around controls)
 - ✅ Monitor failed validation attempts, fix root causes
+
 
 **Completeness Check**: All quality dimensions from Policy Section 2.5 should have controls.
 
@@ -776,11 +856,13 @@ Phase 6: Review & Approval (Day 16)
 **Purpose**: Aggregate metrics on maintenance effectiveness.
 
 **What This Sheet Captures**:
+
 - Update timeliness (% within SLA)
 - Integration health (sync success rates)
 - Data quality scores (accuracy, completeness, currency)
 - Review compliance (% reviews completed on time)
 - Trending over time
+
 
 **This sheet is MOSTLY auto-populated** from other sheets, similar to Completeness Analysis in IMP-A.5.9-1.
 
@@ -803,6 +885,7 @@ Phase 6: Review & Approval (Day 16)
 **Example Metrics**:
 
 1. **Update Timeliness**:
+
    - Metric: "% of updates within SLA (weighted across all trigger types)"
    - Target: 95%
    - Current: 89% (Q4 2025)
@@ -810,7 +893,9 @@ Phase 6: Review & Approval (Day 16)
    - Trend: Stable (was 88% Q3)
    - Remediation: "Focus on SaaS app onboarding (only 78% compliant), automate reminder emails"
 
+
 2. **Integration Health**:
+
    - Metric: "Average sync success rate across all integrations"
    - Target: 98%
    - Current: 96% (Q4 2025)
@@ -818,20 +903,25 @@ Phase 6: Review & Approval (Day 16)
    - Trend: Improved (was 93% Q3)
    - Remediation: "Fix SAP procurement CSV format issues (causing 89% success rate)"
 
+
 3. **Data Quality - Accuracy**:
+
    - Metric: "Accuracy % from quarterly sampling (stratified)"
    - Target: 95%
    - Current: 96% (Q4 2025 sample)
    - Compliance Status: ✅ Compliant
    - Trend: Improved (was 94% Q3)
 
+
 4. **Review Compliance**:
+
    - Metric: "% of annual owner reviews completed on time"
    - Target: 95%
    - Current: 73% (Q4 2025)
    - Compliance Status: ❌ Non-Compliant
    - Trend: Degraded (was 78% Q3)
    - Remediation: "Implement automated reminders at T-14 days and T-7 days, escalate to management at T+7 days overdue"
+
 
 ---
 
@@ -840,11 +930,13 @@ Phase 6: Review & Approval (Day 16)
 **Purpose**: Document all evidence related to maintenance procedures.
 
 **What This Sheet Captures**:
+
 - Procedure documentation (update workflows, integration configs)
 - System configurations (validation rules, access controls)
 - Review records (attestations, audit reports, sampling results)
 - Metrics reports (SLA achievement, integration health, data quality)
 - Evidence metadata for audit trail
+
 
 **Column Definitions**: (Similar to IMP-A.5.9-1 Evidence Register)
 
@@ -886,8 +978,10 @@ Phase 6: Review & Approval (Day 16)
 **Why It Fails**: Auditors will find the actual process, gaps between documented and actual create audit findings.
 
 **Solution**: Document ACTUAL procedures, even if imperfect:
+
 - ❌ "All updates automated via API"
 - ✅ "Most updates automated (94%), some manual (6% - SaaS apps, special cases)"
+
 
 ### Pitfall 2: Not Measuring SLA Compliance
 
@@ -896,9 +990,11 @@ Phase 6: Review & Approval (Day 16)
 **Why It Fails**: Can't improve what you don't measure.
 
 **Solution**: Track actual update times, calculate compliance percentage:
+
 - Pull sample of updates (e.g., 100 from last quarter)
 - Measure time from trigger to inventory update
 - Calculate % within SLA
+
 
 ### Pitfall 3: Assuming Integrations "Just Work"
 
@@ -907,9 +1003,11 @@ Phase 6: Review & Approval (Day 16)
 **Why It Fails**: Silent failures accumulate, inventory drifts from reality.
 
 **Solution**:
+
 - Monitor every integration (success rate, error logs)
 - Reconcile periodically (compare source vs. target, identify discrepancies)
 - Document ACTUAL sync success rate (not theoretical)
+
 
 ### Pitfall 4: Over-Engineering for Year 1
 
@@ -918,9 +1016,11 @@ Phase 6: Review & Approval (Day 16)
 **Why It Fails**: Automation takes time, Year 1 focus is demonstrating the process exists.
 
 **Solution**: Document current state honestly:
+
 - Manual processes are acceptable for Year 1 if documented
 - "Manual entry, quarterly review" is compliant
 - Plan automation roadmap for Year 2+
+
 
 ### Pitfall 5: Not Documenting Manual Processes
 
@@ -929,8 +1029,10 @@ Phase 6: Review & Approval (Day 16)
 **Why It Fails**: Manual processes are still processes, need documentation.
 
 **Solution**: Document manual workflows too:
+
 - "Monthly: Security Manager exports SharePoint inventory to Excel, manual comparison with Asset Inventory, updates noted, changes made"
 - Even if manual, it's documented and repeatable
+
 
 ### Pitfall 6: Ignoring Data Quality Drift
 
@@ -939,9 +1041,11 @@ Phase 6: Review & Approval (Day 16)
 **Why It Fails**: Users find workarounds, data quality degrades over time.
 
 **Solution**:
+
 - Periodically test validation rules (try to enter bad data, should be blocked)
 - Sample data quality (5-10% quarterly)
 - Track data quality metrics over time
+
 
 ### Pitfall 7: No Owner Accountability
 
@@ -950,9 +1054,11 @@ Phase 6: Review & Approval (Day 16)
 **Why It Fails**: Owners forget they own assets, inventory becomes stale.
 
 **Solution**:
+
 - Annual (minimum) owner review requirement
 - Track attestation completion
 - Escalate non-compliance to management
+
 
 ---
 
@@ -969,6 +1075,7 @@ Before submitting this assessment, verify:
 - [ ] Access controls documented
 - [ ] Backup procedures documented
 
+
 ### Update Procedure Checks
 
 - [ ] All trigger types from policy documented
@@ -977,6 +1084,7 @@ Before submitting this assessment, verify:
 - [ ] Responsible parties assigned
 - [ ] SLA achievement measured (percentage calculated)
 - [ ] Failure handling procedures documented
+
 
 ### Integration Checks
 
@@ -988,6 +1096,7 @@ Before submitting this assessment, verify:
 - [ ] Integration health monitored (success rates tracked)
 - [ ] Manual processes documented (if applicable)
 
+
 ### Data Quality Checks
 
 - [ ] Validation rules documented
@@ -996,6 +1105,7 @@ Before submitting this assessment, verify:
 - [ ] Error detection and correction workflows documented
 - [ ] Data quality metrics tracked
 - [ ] Control effectiveness measured
+
 
 ### Metrics Checks
 
@@ -1006,6 +1116,7 @@ Before submitting this assessment, verify:
 - [ ] Trends vs. previous quarter documented
 - [ ] Remediation actions defined (if non-compliant)
 
+
 ### Evidence Checks
 
 - [ ] Procedure documents collected
@@ -1015,6 +1126,7 @@ Before submitting this assessment, verify:
 - [ ] Evidence metadata complete
 - [ ] Evidence stored securely
 
+
 ### Cross-Cutting Checks
 
 - [ ] All required fields completed
@@ -1023,6 +1135,7 @@ Before submitting this assessment, verify:
 - [ ] Remediation plans are specific and actionable
 - [ ] Responsible parties assigned for all items
 
+
 ---
 
 ## Review & Approval
@@ -1030,39 +1143,50 @@ Before submitting this assessment, verify:
 ### Review Process
 
 **Step 1: Self-Review** (Assessment Preparer)
+
 - Complete quality checklist above
 - Fix any identified issues
 - Prepare summary for reviewers
 
+
 **Step 2: Technical Review** (CMDB Administrator, IT Operations)
+
 - Validate integration documentation is accurate
 - Confirm update procedures match reality
 - Verify system configurations documented correctly
 - Sign off on technical accuracy
 
+
 **Step 3: Security Review** (Information Security Manager)
+
 - Review compliance against policy requirements
 - Assess metric targets and achievement
 - Verify data quality controls are sufficient
 - Check evidence quality
 - Prepare summary for CISO
 
+
 **Step 4: CISO Approval**
+
 - Review maintenance effectiveness metrics
 - Assess compliance status (on-target or at-risk)
 - Approve remediation plans and resource allocation
 - Escalate significant gaps to Executive Management if necessary
 - Sign approval
 
+
 **Step 5: Submission to Compliance Dashboard**
+
 - Export metrics to dashboard consolidation workbook
 - Update ISMS-IMP-A.5.9.5 (Compliance Dashboard)
 - Archive assessment workbook
 - Store evidence per retention policy
 
+
 ### Approval Criteria
 
 **Approve** if:
+
 - ✅ All inventory systems documented
 - ✅ Update procedures documented for all trigger types
 - ✅ SLA achievement ≥80% overall
@@ -1070,18 +1194,23 @@ Before submitting this assessment, verify:
 - ✅ Data quality ≥85% (minimum acceptable, 95% target)
 - ✅ Evidence quality rated "Complete" or "Partial"
 
+
 **Conditional Approval** (with remediation plan) if:
+
 - ⚠️ SLA achievement 70-79%
 - ⚠️ Integration health 80-89%
 - ⚠️ Data quality 75-84%
 - ⚠️ Remediation plans need refinement
 
+
 **Reject** if:
+
 - ❌ Major systems undocumented
 - ❌ SLA achievement <70%
 - ❌ Integration health <80%
 - ❌ Data quality <75%
 - ❌ No remediation plans for critical gaps
+
 
 ### Approval Record
 
@@ -1128,12 +1257,14 @@ This section provides complete technical specifications for developers creating 
 ### Workbook Metadata
 
 **Workbook Properties**:
+
 - **Title**: ISMS A.5.9 Inventory Maintenance Assessment
 - **Subject**: ISO/IEC 27001:2022 Control A.5.9 - Inventory Maintenance
 - **Author**: [Organization] ISMS Implementation Team
 - **Company**: [Organization]
 - **Created**: [Generation Date]
 - **Version**: 1.0
+
 
 **Workbook Protection**: Same as IMP-A.5.9-1
 
@@ -1189,11 +1320,13 @@ Provide comprehensive user guide for completing the maintenance assessment.
 ### Layout Structure
 
 Same pattern as IMP-A.5.9-1 Sheet 1:
+
 - Title and version info (Rows 1-10)
 - Assessment overview (Rows 12-25)
 - Workflow diagram (Rows 27-45)
 - Color coding legend (Rows 47-60)
 - Support information (Rows 62-75)
+
 
 ### Implementation Notes
 
@@ -1239,6 +1372,7 @@ def create_instructions_sheet(ws):
 - All cells: Locked
 - Sheet protection: Enabled
 - Allow: Select locked cells only
+
 
 ---
 
@@ -2372,8 +2506,10 @@ ws.add_data_validation(dv_evidence_format)
 ### Conditional Formatting
 
 Same as IMP-A.5.9-1 Evidence Register:
+
 - Access Restriction: Red for "Restricted", Orange for "Confidential"
 - Evidence Quality: Green for "Complete", Yellow for "Partial", Red for "Insufficient"
+
 
 ---
 
@@ -2616,11 +2752,13 @@ if __name__ == '__main__':
 **CSV Export from Sheet 6 (Maintenance Metrics)**:
 
 Required columns for dashboard consolidation:
+
 - Metric Category
 - Metric Name
 - Current Value
 - Compliance Status
 - Trend
+
 
 **Export procedure**:
 1. Select rows 3-14 in Maintenance Metrics sheet
@@ -2642,6 +2780,10 @@ Data Quality,Mandatory Attribute Completeness %,94%,⚠️ At Risk,Improved
 
 ---
 
-**END OF ISMS-IMP-A.5.9.2 PART II - TECHNICAL SPECIFICATION**
+**END OF SPECIFICATION**
 
-*"Structure is foundation. Integration is connection. Quality is confidence."*
+---
+
+*"Truth and clarity are complementary."*
+— Niels Bohr
+*Where bamboo antennas actually work.* 🎋

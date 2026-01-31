@@ -1,10 +1,10 @@
-# ISMS-IMP-A.5.9.1 - Asset Identification & Discovery
-## Assessment Specification with User Completion Guide
-### ISO/IEC 27001:2022 Control A.5.9: Inventory of Information and Assets
+**ISMS-IMP-A.5.9.1 - Asset Identification & Discovery**
+**Assessment Specification with User Completion Guide**
+### ISO/IEC 27001:2022 Control A.5.9: Inventory of Information and Other Associated Assets
 
 ---
 
-## Document Control
+**Document Control**
 
 | Attribute | Value |
 |-----------|-------|
@@ -46,10 +46,12 @@ This document consists of two parts:
   - Cell Styling Reference
   - Python Script Integration
 
+
 **Target Audiences:**
 
 - **Part I:** Assessment users (Security Team, IT Operations, System Owners, Information Owners)
 - **Part II:** Workbook developers (Python/Excel script maintainers)
+
 
 ---
 
@@ -71,6 +73,7 @@ This assessment documents HOW [Organization] identifies and discovers assets acr
 - **Physical Assets**: What facilities, media, and equipment exist?
 - **Personnel Assets**: What key roles and competencies exist?
 
+
 **Key Principle**: You cannot protect what you do not know you have. This assessment verifies that [Organization] has systematic procedures to discover assets and that the inventory is complete (no missing assets).
 
 ### Why This Matters
@@ -80,6 +83,7 @@ This assessment verifies [Organization]'s compliance with:
 - **ISO/IEC 27001:2022 Control A.5.9**: Inventory of Information and Other Associated Assets
 - **ISMS-POL-A.5.9, Requirement A.5.9-R1**: [Organization] SHALL maintain an inventory of information and associated assets
 - **ISMS-POL-A.5.9, Section 2.5.1**: Completeness standard (95% for critical, 90% for standard)
+
 
 **From Implementer Perspective**: Provides systematic methodology to find ALL assets so nothing is missed.
 
@@ -112,10 +116,12 @@ This assessment covers **5 discovery domains** aligned with policy asset categor
 8. **Evidence Register**: Documentation of discovery activities and findings
 
 **Compliance Metrics Generated**:
+
 - Discovery coverage percentage by category
 - Completeness score (discovered vs. inventoried)
 - Gap count and severity
 - Evidence completeness score
+
 
 ---
 
@@ -124,6 +130,7 @@ This assessment covers **5 discovery domains** aligned with policy asset categor
 ### What You Need Before Starting
 
 **1. Access to Asset Sources**:
+
 - CMDB or IT asset management system (if exists)
 - Procurement/purchasing system
 - HR system (for personnel assets only - roles/competencies, NOT personal data)
@@ -131,29 +138,38 @@ This assessment covers **5 discovery domains** aligned with policy asset categor
 - Cloud service inventory (AWS, Azure, GCP management consoles if applicable)
 - Network management tools (for infrastructure discovery)
 
+
 **2. Personnel**:
+
 - **Security Team**: Leads assessment, consolidates findings
 - **IT Operations**: Provides IT infrastructure discovery data
 - **System Owners**: Identify applications and information assets
 - **Facilities Team**: Support physical asset discovery
 - **HR Representative**: Provide personnel asset information (generically)
 
+
 **3. Documentation**:
+
 - Network topology diagrams (if available)
 - Data flow diagrams (if available)
 - Organizational chart (for competency mapping)
 - Previous inventory (if exists - for comparison)
 
+
 **4. Tools** (optional but recommended):
+
 - Network discovery tools (Nmap, network scanners)
 - Vulnerability scanners (often have asset discovery features)
 - Cloud asset inventory tools (cloud provider native tools)
 - Software inventory tools (license management systems)
 
+
 **5. Time Allocation**:
+
 - **Initial Discovery**: 20-40 hours (varies greatly by organization size and complexity)
 - **Quarterly Updates**: 4-8 hours (once processes established)
 - **Evidence Collection**: 4-8 hours per quarter
+
 
 ---
 
@@ -205,10 +221,12 @@ Phase 5: Review & Approval (Day 15)
 **Purpose**: Provides overview and guidance for completing this workbook.
 
 **What to Do**:
+
 - Read the instructions completely before starting
 - Note the assessment scope and objectives
 - Understand the color coding and validation rules
 - Review the workflow diagram
+
 
 **No data entry required** - informational only.
 
@@ -219,12 +237,14 @@ Phase 5: Review & Approval (Day 15)
 **Purpose**: Document procedures for discovering information assets (databases, documents, IP, configurations).
 
 **What This Sheet Captures**:
+
 - Discovery methods used for each information asset category
 - Sources consulted (systems, repositories, documentation)
 - Frequency of discovery activities
 - Responsible parties
 - Completeness assessment results
 - Identified gaps
+
 
 **Column Definitions**:
 
@@ -250,6 +270,7 @@ Phase 5: Review & Approval (Day 15)
 **How to Complete**:
 
 1. **Start with Structured Data (Databases)**:
+
    - **Example**: "Production PostgreSQL databases discovered via database catalog queries"
    - **Discovery Method**: System Query
    - **Discovery Source**: "PostgreSQL system catalogs (pg_database, information_schema)"
@@ -265,7 +286,9 @@ Phase 5: Review & Approval (Day 15)
    - **Remediation Plan**: "Add missing databases to inventory by [date]"
    - **Evidence Reference**: "DISC-001" (create entry in Evidence Register)
 
+
 2. **Continue with Unstructured Documents**:
+
    - Consider file servers, SharePoint sites, document management systems
    - **Example**: "Contract documents in legal repository"
    - **Discovery Method**: Repository Analysis
@@ -273,7 +296,9 @@ Phase 5: Review & Approval (Day 15)
    - **Discovery Tool**: "SharePoint API or manual review"
    - **Completeness Note**: Document repositories are challenging - focus on HIGH-VALUE documents (contracts, legal, IP), not every individual file
 
+
 3. **Process Each Information Asset Category**:
+
    - Structured Data (databases, data warehouses)
    - Unstructured Documents (file servers, DMS, SharePoint)
    - Records & Archives (compliance retention systems)
@@ -283,13 +308,16 @@ Phase 5: Review & Approval (Day 15)
    - Communication Records (email archives, chat logs)
    - Business Intelligence (BI tools, reports, dashboards)
 
+
 **Common Pitfalls**:
+
 - ❌ Trying to inventory every single file (millions of files is not feasible)
 - ✅ Focus on HIGH-VALUE information assets and logical groupings
 - ❌ Ignoring configuration files (these are critical for recovery!)
 - ✅ Document configuration repositories, IaC templates, system configs
 - ❌ Forgetting about archived data
 - ✅ Check backup systems, archive storage, offline media
+
 
 **Completeness Target**: ≥95% for Critical information assets, ≥90% for Standard
 
@@ -300,6 +328,7 @@ Phase 5: Review & Approval (Day 15)
 **Purpose**: Document procedures for discovering IT infrastructure assets (servers, storage, networking, endpoints).
 
 **What This Sheet Captures**:
+
 - Discovery methods for each IT infrastructure category
 - Automated scanning tools and configurations
 - CMDB integration status
@@ -307,6 +336,7 @@ Phase 5: Review & Approval (Day 15)
 - Endpoint inventory completeness
 - Cloud infrastructure discovery
 - Physical datacenter assets
+
 
 **Column Definitions**:
 
@@ -334,6 +364,7 @@ Phase 5: Review & Approval (Day 15)
 **How to Complete**:
 
 1. **Physical Servers**:
+
    - **Discovery Method**: Network Scan + Physical Audit (for datacenters)
    - **Discovery Tool**: "Nmap, Qualys, or datacenter inventory system"
    - **Discovery Scope**: "Production datacenter: 10.1.0.0/16, DR site: 10.2.0.0/16"
@@ -343,48 +374,63 @@ Phase 5: Review & Approval (Day 15)
    - **Verification Method**: "Cross-reference scan with asset tags, serial numbers"
    - **False Positive Rate**: Typically 5-10% (printers, IoT devices, etc.)
 
+
 2. **Virtual Machines**:
+
    - **Discovery Method**: Hypervisor Query
    - **Discovery Tool**: "VMware vCenter API / Hyper-V PowerShell / Cloud provider CLI"
    - **Frequency**: Daily (automated query)
    - **Verification**: Compare with hypervisor management console
 
+
 3. **Containers**:
+
    - **Discovery Method**: Container Orchestrator API
    - **Discovery Tool**: "Kubernetes API / Docker API / Registry query"
    - **Note**: Container discovery is challenging due to ephemeral nature
    - **Approach**: Focus on container IMAGES and persistent services, not individual container instances
 
+
 4. **Storage Systems**:
+
    - **Discovery Method**: SNMP Poll + Admin Console
    - **Discovery Tool**: "SAN management tools, NAS admin consoles"
    - **Include**: SAN, NAS, file servers, backup systems, cloud storage buckets
 
+
 5. **Network Infrastructure**:
+
    - **Discovery Method**: SNMP Poll + Network Management System
    - **Discovery Tool**: "Network management platform (SolarWinds, PRTG, Nagios, etc.)"
    - **Scope**: Routers, switches, firewalls, load balancers, WAFs, VPN concentrators, wireless APs
    - **Verification**: Physical datacenter walk-through quarterly
 
+
 6. **Endpoints**:
+
    - **Discovery Method**: Agent-Based (if endpoint management deployed)
    - **Discovery Tool**: "MDM, SCCM, Jamf, endpoint management agent"
    - **Challenge**: BYOD and unmanaged devices
    - **Approach**: Define what's IN SCOPE (company-owned, managed BYOD) vs. OUT OF SCOPE (personal devices)
 
+
 7. **Cloud Infrastructure**:
+
    - **Discovery Method**: Cloud Provider API
    - **Discovery Tool**: "AWS Config, Azure Resource Graph, GCP Asset Inventory"
    - **Frequency**: Daily (cloud changes rapidly)
    - **Verification**: Cloud security posture management tools
 
+
 **Common Pitfalls**:
+
 - ❌ Only scanning accessible networks (missing DMZ, management networks)
 - ✅ Scan ALL network segments including out-of-band management
 - ❌ Ignoring ephemeral cloud resources
 - ✅ Focus on persistent resources, document ephemeral patterns
 - ❌ Missing endpoints outside corporate network
 - ✅ Document endpoint management coverage, note gaps (remote workers, etc.)
+
 
 **Completeness Target**: ≥98% for IT infrastructure (more stable than information)
 
@@ -395,12 +441,14 @@ Phase 5: Review & Approval (Day 15)
 **Purpose**: Document procedures for discovering applications and software assets.
 
 **What This Sheet Captures**:
+
 - Business application inventory methods
 - SaaS service discovery and license tracking
 - Custom developed application catalog
 - Software license management integration
 - API and integration service mapping
 - Development tool inventory
+
 
 **Column Definitions**:
 
@@ -428,48 +476,62 @@ Phase 5: Review & Approval (Day 15)
 **How to Complete**:
 
 1. **Business Applications** (ERP, CRM, HR systems, etc.):
+
    - **Discovery Method**: License Management System + Procurement Records
    - **Discovery Source**: "Software asset management tool, procurement database"
    - **Example**: "SAP ERP, Salesforce CRM, Workday HRIS"
    - **License Tracking**: Should be "Yes - Automated" or "Yes - Manual"
    - **Usage Monitoring**: Check if usage logs available
 
+
 2. **SaaS Services**:
+
    - **Discovery Method**: Cloud SSO Logs + Expense Reports
-   - **Discovery Source**: "Okta/Azure AD app catalog, corporate credit card statements"
+   - **Discovery Source**: "Okta/Entra ID app catalog, corporate credit card statements"
    - **Challenge**: Shadow IT (users signing up for services without approval)
    - **Shadow IT Risk**: Assess based on industry (High for tech companies, Medium for others)
    - **Verification**: Cloud access security broker (CASB) if deployed
 
+
 3. **Custom Developed Applications**:
+
    - **Discovery Method**: Development Repository + Deployment Records
    - **Discovery Source**: "GitHub/GitLab organization, CI/CD pipelines, server deployments"
    - **Discovery Tool**: "Git repository API, deployment tracking"
    - **Include**: Web apps, mobile apps, internal tools, APIs
 
+
 4. **Mobile Applications**:
+
    - **Discovery Method**: Mobile Device Management (MDM)
    - **Discovery Source**: "MDM console (Jamf, Intune, MobileIron)"
    - **Scope**: Company-developed and approved third-party apps
 
+
 5. **APIs and Integration Services**:
+
    - **Discovery Method**: API Gateway Logs + Integration Platform
    - **Discovery Source**: "API management platform, integration middleware"
    - **Example**: "REST APIs, SOAP services, message queues"
    - **Note**: Often overlooked but critical for data flow understanding
 
+
 6. **Development Tools**:
+
    - **Discovery Method**: License Management + Software Inventory
    - **Discovery Source**: "IDE licenses, DevOps tool licenses, compiler licenses"
    - **Example**: "Visual Studio, IntelliJ IDEA, Docker Desktop licenses"
 
+
 **Common Pitfalls**:
+
 - ❌ Only tracking "official" apps (missing shadow IT)
 - ✅ Multiple discovery methods to catch shadow IT (SSO logs, expense reports, network traffic analysis)
 - ❌ Ignoring APIs and integration services
 - ✅ Map data flows, document API inventory
 - ❌ Forgetting about mobile apps
 - ✅ Use MDM to track managed mobile apps
+
 
 **Completeness Target**: ≥90% for applications (shadow IT makes 100% unrealistic)
 
@@ -480,11 +542,13 @@ Phase 5: Review & Approval (Day 15)
 **Purpose**: Document procedures for discovering physical assets supporting operations.
 
 **What This Sheet Captures**:
+
 - Facility and datacenter inventory methods
 - Removable media tracking procedures
 - Physical security equipment inventory
 - Paper document and printed material procedures
 - Asset tag verification processes
+
 
 **Column Definitions**:
 
@@ -511,20 +575,25 @@ Phase 5: Review & Approval (Day 15)
 **How to Complete**:
 
 1. **Facilities** (Buildings, Offices, Datacenters):
+
    - **Discovery Method**: Facilities Management System + Physical Audit
    - **Discovery Frequency**: Annually (full audit) + Quarterly (changes)
    - **What to Document**: All facilities within ISMS scope
    - **Include**: Office locations, datacenters, server rooms, wiring closets
    - **Asset Tagging**: Typically N/A for buildings
 
+
 2. **Datacenter Infrastructure** (Racks, Power, Cooling):
+
    - **Discovery Method**: Physical Audit + Datacenter Management System
    - **Discovery Frequency**: Quarterly
    - **Include**: Server racks, UPS systems, HVAC equipment, fire suppression
    - **Asset Tagging**: Yes (physical labels on racks, equipment)
    - **Verification**: Walk-through with facilities team
 
+
 3. **Removable Media** (USB drives, External drives, Backup tapes):
+
    - **Discovery Method**: Media Log + Physical Audit
    - **Discovery Frequency**: Monthly for backup tapes, Quarterly for other media
    - **Challenge**: Removable media often untracked or lost
@@ -532,13 +601,17 @@ Phase 5: Review & Approval (Day 15)
    - **Include**: USB drives, external hard drives, backup tapes, optical media, SD cards
    - **Critical**: Track WHO has media, WHERE it is, WHEN last verified
 
+
 4. **Physical Security Equipment**:
+
    - **Discovery Method**: Security System Inventory + Physical Audit
    - **Include**: Access control readers, surveillance cameras, alarm systems, locks
    - **Frequency**: Quarterly
    - **Responsible Party**: Physical security team or facilities
 
+
 5. **Paper Documents and Printed Materials**:
+
    - **Discovery Method**: Document Register + Physical Audit
    - **Challenge**: Virtually impossible to inventory every piece of paper
    - **Approach**: Focus on HIGH-VALUE paper documents:
@@ -548,18 +621,23 @@ Phase 5: Review & Approval (Day 15)
      - Classified documents (if applicable)
    - **Frequency**: Annually (full audit), Monthly (sensitive document register review)
 
+
 6. **Other Equipment** (Printers, Scanners, Specialized Equipment):
+
    - **Discovery Method**: Asset Tag Scan + Procurement Records
    - **Asset Tagging**: Yes - barcode or RFID preferred
    - **Tracking System**: Physical asset management system
 
+
 **Common Pitfalls**:
+
 - ❌ Trying to inventory every piece of paper (not feasible)
 - ✅ Focus on high-value documents with retention requirements
 - ❌ Forgetting about removable media (USB drives, backup tapes)
 - ✅ Implement strict check-in/check-out procedures for removable media
 - ❌ Not physically verifying assets (trusting old records)
 - ✅ Conduct physical walk-throughs quarterly
+
 
 **Completeness Target**: ≥90% for physical assets (some drift is expected)
 
@@ -570,11 +648,13 @@ Phase 5: Review & Approval (Day 15)
 **Purpose**: Document procedures for identifying key roles and competencies (NOT individual persons).
 
 **What This Sheet Captures**:
+
 - Critical role identification procedures
 - Specialized competency mapping
 - Succession planning alignment
 - Competency gap analysis
 - Training and certification tracking
+
 
 **CRITICAL PRIVACY NOTE**: This sheet documents ROLES and COMPETENCIES, never individual person records. Focus is on "what capabilities does [Organization] need and have" not "who are the people."
 
@@ -601,6 +681,7 @@ Phase 5: Review & Approval (Day 15)
 **How to Complete**:
 
 1. **Executive Roles**:
+
    - **Example**: "Chief Information Security Officer (CISO)"
    - **Category**: Executive Role
    - **Business Criticality**: Critical
@@ -609,7 +690,9 @@ Phase 5: Review & Approval (Day 15)
    - **Required Capacity**: 1 (minimum)
    - **Succession Plan**: Should be "Yes - Documented" for C-level
 
+
 2. **Technical Roles**:
+
    - **Example**: "Database Administrator (DBA) Competency"
    - **Category**: Technical Role
    - **Business Criticality**: High (if databases are critical to operations)
@@ -618,7 +701,9 @@ Phase 5: Review & Approval (Day 15)
    - **Required Capacity**: 2 (minimum for 24/7 coverage)
    - **Capacity Gap**: 3 - 2 = +1 (surplus, good)
 
+
 3. **Regulatory Roles**:
+
    - **Example**: "Data Protection Officer (DPO)"
    - **Category**: Regulatory Role
    - **Business Criticality**: Critical (if GDPR/nDSG applies)
@@ -626,7 +711,9 @@ Phase 5: Review & Approval (Day 15)
    - **Current Capacity**: 1
    - **Succession Plan**: Document succession or external DPO backup
 
+
 4. **Specialized Competencies**:
+
    - **Example**: "Legacy COBOL Programming"
    - **Category**: Specialized Competency
    - **Business Criticality**: Assess based on legacy system importance
@@ -634,27 +721,34 @@ Phase 5: Review & Approval (Day 15)
    - **Risk**: Single point of failure
    - **Remediation**: Knowledge transfer, documentation, or system modernization
 
+
 5. **Certifications**:
+
    - **Example**: "CISSP Certification"
    - **Category**: Certification
    - **Current Capacity**: 2 (two staff hold CISSP)
    - **Required Capacity**: Depends on client requirements or internal standards
    - **Training Available**: Yes - External (ISC2 training)
 
+
 6. **Language Skills**:
+
    - **Example**: "Mandarin Language Fluency"
    - **Category**: Language Skill
    - **Business Criticality**: Depends on customer/supplier base
    - **Current Capacity**: 1
    - **Note**: Only track business-critical languages
 
+
 **Common Pitfalls**:
+
 - ❌ Recording individual person names (privacy violation!)
 - ✅ Record roles/competencies generically: "Senior Network Engineer (2 FTE)"
 - ❌ Ignoring succession planning (what if key person leaves?)
 - ✅ Document succession for all critical roles
 - ❌ Only tracking executive roles
 - ✅ Include technical specialists, regulatory roles, unique competencies
+
 
 **Completeness Target**: 100% accuracy for personnel assets (critical roles MUST be documented)
 
@@ -665,10 +759,12 @@ Phase 5: Review & Approval (Day 15)
 **Purpose**: Aggregate discovery results, calculate coverage metrics, and identify gaps across all categories.
 
 **What This Sheet Captures**:
+
 - Overall inventory completeness by category
 - Gap prioritization by severity
 - Remediation progress tracking
 - Trending over time (compare to previous quarters)
+
 
 **Column Definitions**:
 
@@ -696,27 +792,35 @@ Phase 5: Review & Approval (Day 15)
 This sheet is largely **AUTO-POPULATED** from the other discovery sheets. Your role is to:
 
 1. **Review Auto-Calculated Metrics**:
+
    - Verify completeness percentages make sense
    - Check gap counts align with your understanding
 
+
 2. **Set Remediation Status**:
+
    - For each category with gaps, set status:
      - "Not Started": Haven't begun addressing gaps
      - "In Progress": Actively working on adding missing assets
      - "Completed": All gaps closed
      - "Blocked": Waiting on resources, approvals, or technical issues
 
+
 3. **Set Target Closure Dates**:
+
    - Critical gaps: Within 30 days
    - High gaps: Within 60 days
    - Medium gaps: Within 90 days
    - Low gaps: Within 180 days or next planned inventory cycle
 
+
 4. **Document Trends** (for quarterly updates):
+
    - Compare current quarter to previous quarter
    - "Improved": Completeness % increased
    - "Stable": Completeness % within 2% (no significant change)
    - "Degraded": Completeness % decreased (investigate why!)
+
 
 **Interpretation Guide**:
 
@@ -745,12 +849,14 @@ Action: Add 3 discovered databases to inventory by [date]
 **Purpose**: Document all evidence collected during discovery activities for audit trail.
 
 **What This Sheet Captures**:
+
 - Discovery scan outputs and reports
 - Physical audit photos and documentation
 - Interview notes and meeting minutes
 - System queries and API outputs
 - Reconciliation reports
 - Evidence metadata and storage locations
+
 
 **Column Definitions**:
 
@@ -776,6 +882,7 @@ Action: Add 3 discovered databases to inventory by [date]
 For each discovery activity, create evidence record:
 
 1. **Network Scan Evidence**:
+
    - **Evidence ID**: DISC-001
    - **Evidence Type**: Scan Output
    - **Related Domain**: IT Infrastructure
@@ -790,7 +897,9 @@ For each discovery activity, create evidence record:
    - **Evidence Quality**: Complete
    - **Related Sheet**: Sheet 3 - IT Infrastructure Discovery
 
+
 2. **Database Query Evidence**:
+
    - **Evidence ID**: DISC-002
    - **Evidence Type**: Query Result
    - **Related Domain**: Information Assets
@@ -799,7 +908,9 @@ For each discovery activity, create evidence record:
    - **Evidence Format**: CSV
    - **Retention Period**: 3 Years
 
+
 3. **Physical Audit Evidence**:
+
    - **Evidence ID**: DISC-003
    - **Evidence Type**: Photo
    - **Related Domain**: Physical Assets
@@ -808,7 +919,9 @@ For each discovery activity, create evidence record:
    - **Evidence Format**: Photo (JPEG/PNG)
    - **Retention Period**: 3 Years
 
+
 4. **SaaS Discovery Evidence**:
+
    - **Evidence ID**: DISC-004
    - **Evidence Type**: System Export
    - **Related Domain**: Applications
@@ -817,7 +930,9 @@ For each discovery activity, create evidence record:
    - **Evidence Format**: JSON
    - **Retention Period**: 3 Years
 
+
 5. **HR Competency Report**:
+
    - **Evidence ID**: DISC-005
    - **Evidence Type**: System Export
    - **Related Domain**: Personnel Assets
@@ -827,18 +942,23 @@ For each discovery activity, create evidence record:
    - **Access Restriction**: Restricted (even anonymized, treat carefully)
    - **Retention Period**: 3 Years
 
+
 **Evidence Storage Best Practices**:
+
 - Store evidence centrally (SharePoint, document management system)
 - Organize by assessment period (Q1-2026, Q2-2026, etc.)
 - Restrict access (only security team and auditors)
 - Back up evidence (part of overall backup strategy)
 - Maintain chain of custody for audit purposes
 
+
 **Retention Periods** (per policy and regulatory requirements):
+
 - Audit evidence: 7 years minimum (ISO 27001 requirement)
 - Discovery scans: 3 years (sufficient for trend analysis)
 - Photos: 3 years
 - HR data: Check local data protection laws (typically 3-7 years)
+
 
 ---
 
@@ -847,48 +967,62 @@ For each discovery activity, create evidence record:
 ### What Evidence to Collect
 
 **Discovery Scans and Reports**:
+
 - Network scan outputs (Nmap, vulnerability scanner reports)
 - CMDB extracts or queries
 - Cloud API outputs (AWS Config, Azure Resource Graph)
 - Database catalog queries
 - Software inventory reports
 
+
 **Physical Audit Documentation**:
+
 - Photos of datacenter racks (with visible asset tags)
 - Physical audit checklists (signed)
 - Asset tag scan results (if RFID/barcode system)
 - Walk-through observation notes
 
+
 **System Queries and Exports**:
+
 - Hypervisor VM lists
 - Container registry inventories
-- SaaS application catalogs (Okta, Azure AD)
+- SaaS application catalogs (Okta, Entra ID)
 - License management system exports
 - Procurement records
 
+
 **Reconciliation Reports**:
+
 - Discovered vs. Inventoried comparison
 - Gap analysis reports
 - Variance explanations
 
+
 **Meeting and Interview Documentation**:
+
 - Meeting minutes from discovery coordination meetings
 - Interview notes from system owners
 - Email correspondence related to discovery
 
+
 ### How to Collect Evidence
 
 **1. Automated Collection** (Preferred):
+
 - Schedule automated scans (daily, weekly, monthly per frequency)
 - Export results to central repository automatically
 - Use APIs to extract data programmatically
 - Maintain version history (compare current vs. previous scans)
 
+
 **2. Manual Collection** (When Necessary):
+
 - Conduct physical walk-throughs with camera or tablet
 - Document observations in structured forms
 - Collect signatures on audit checklists
 - Scan paper documents to PDF
+
 
 **3. Evidence Organization**:
 ```
@@ -914,32 +1048,40 @@ For each discovery activity, create evidence record:
 ```
 
 **4. Chain of Custody**:
+
 - Record WHO collected evidence
 - Record WHEN evidence was collected
 - Record WHERE evidence came from (source system)
 - Record HOW evidence was collected (method, tool)
 - Maintain evidence log (the Evidence Register sheet)
 
+
 ### Evidence Quality Criteria
 
 **Complete Evidence**:
+
 - ✅ Covers all asset categories
 - ✅ Includes metadata (date, source, collector)
 - ✅ Machine-readable format where possible (CSV, JSON, XML)
 - ✅ Sufficient detail for verification
 - ✅ Properly stored with access controls
 
+
 **Partial Evidence**:
+
 - ⚠️ Covers some but not all categories
 - ⚠️ Missing metadata
 - ⚠️ Format makes analysis difficult (unstructured text)
 - ⚠️ Requires supplementary information to interpret
 
+
 **Insufficient Evidence**:
+
 - ❌ Major categories missing
 - ❌ No metadata (can't verify currency)
 - ❌ Cannot be independently verified
 - ❌ Lost or corrupted files
+
 
 ---
 
@@ -954,8 +1096,10 @@ For each discovery activity, create evidence record:
 **Solution**: Focus on HIGH-VALUE and CRITICAL assets. Use grouping for low-risk commodity items.
 
 **Example**: 
+
 - ❌ "Inventory every employee's email (millions of messages)"
 - ✅ "Inventory email system (Exchange/Gmail) + archive system + retention policies"
+
 
 ### Pitfall 2: One-Time Discovery Exercise
 
@@ -964,9 +1108,11 @@ For each discovery activity, create evidence record:
 **Why It Fails**: Assets change constantly (new servers, new apps, people leave).
 
 **Solution**: Establish PERIODIC discovery cadence per policy:
+
 - Critical assets: Quarterly minimum
 - Standard assets: Semi-annually minimum
 - Low-risk assets: Annually minimum
+
 
 ### Pitfall 3: Only Automated Discovery
 
@@ -975,8 +1121,10 @@ For each discovery activity, create evidence record:
 **Why It Fails**: Not all assets are discoverable by network scans (offline systems, air-gapped networks, physical media, paper documents, personnel competencies).
 
 **Solution**: Combine automated and manual methods:
+
 - Automated: Network scans, API queries, CMDB extracts
 - Manual: Physical audits, interviews, document review
+
 
 ### Pitfall 4: Ignoring Shadow IT
 
@@ -985,10 +1133,12 @@ For each discovery activity, create evidence record:
 **Why It Fails**: Users increasingly adopt SaaS without IT approval. These unapproved apps process company data.
 
 **Solution**: Multiple discovery methods:
-- SSO logs (Okta, Azure AD)
+
+- SSO logs (Okta, Entra ID)
 - Corporate credit card statements
 - Network traffic analysis (CASB)
 - User surveys
+
 
 ### Pitfall 5: Privacy Violations in Personnel Assets
 
@@ -997,8 +1147,10 @@ For each discovery activity, create evidence record:
 **Why It Fails**: Violates GDPR/nDSG privacy requirements.
 
 **Solution**: Document ROLES and COMPETENCIES only:
+
 - ❌ "John Smith - Senior DBA, hired 2015, salary €80K"
 - ✅ "Database Administrator competency (3 qualified staff)"
+
 
 ### Pitfall 6: Not Documenting Discovery Limitations
 
@@ -1007,9 +1159,11 @@ For each discovery activity, create evidence record:
 **Why It Fails**: Auditors will find gaps. Better to acknowledge limitations upfront.
 
 **Solution**: Document what you CAN'T discover:
+
 - "Network scans cannot detect offline or powered-off systems"
 - "Shadow IT discovery limited to corporate SSO; personal subscriptions not visible"
 - "Paper document inventory limited to high-value contracts; routine correspondence not tracked"
+
 
 ### Pitfall 7: Poor Evidence Quality
 
@@ -1018,10 +1172,12 @@ For each discovery activity, create evidence record:
 **Why It Fails**: Evidence without context is useless. Auditors need to verify evidence currency and authenticity.
 
 **Solution**: Use Evidence Register sheet religiously:
+
 - Every piece of evidence gets unique ID
 - Record collection date, collector, source
 - Store evidence centrally with access controls
 - Maintain chain of custody
+
 
 ### Pitfall 8: Not Validating Discovery Results
 
@@ -1030,10 +1186,12 @@ For each discovery activity, create evidence record:
 **Why It Fails**: Scans have false positives (printers detected as servers) and false negatives (firewalled systems not detected).
 
 **Solution**: Validate discoveries:
+
 - Cross-reference scan results with CMDB
 - Physical verification for critical assets
 - Interview system owners
 - Test-spot random sample (5-10% of assets)
+
 
 ---
 
@@ -1050,6 +1208,7 @@ Before submitting this assessment, verify:
 - [ ] Evidence collected for each discovery method
 - [ ] Evidence Register populated with all evidence items
 
+
 ### Accuracy Checks
 
 - [ ] Asset counts verified (spot-check against source systems)
@@ -1057,6 +1216,7 @@ Before submitting this assessment, verify:
 - [ ] Gap counts align with understanding (manual review)
 - [ ] Severity assessments are realistic (Critical/High/Medium/Low)
 - [ ] False positive rates estimated (especially for network scans)
+
 
 ### Compliance Checks
 
@@ -1066,6 +1226,7 @@ Before submitting this assessment, verify:
 - [ ] Target dates set for gap closure (Critical: 30 days, High: 60 days, Medium: 90 days)
 - [ ] Non-compliant categories escalated to CISO
 
+
 ### Evidence Checks
 
 - [ ] Evidence exists for each discovery activity
@@ -1074,12 +1235,14 @@ Before submitting this assessment, verify:
 - [ ] Evidence retention periods set per policy
 - [ ] Evidence quality assessed (Complete/Partial/Insufficient)
 
+
 ### Privacy Checks (Critical!)
 
 - [ ] Personnel assets documented as ROLES, not persons
 - [ ] No individual names in personnel sheet
 - [ ] HR data anonymized appropriately
 - [ ] Sensitive evidence marked "Restricted" or "Confidential"
+
 
 ### Review Checks
 
@@ -1089,12 +1252,14 @@ Before submitting this assessment, verify:
 - [ ] Facilities Team validated physical asset discovery
 - [ ] HR reviewed personnel asset approach (privacy compliance)
 
+
 ### Documentation Checks
 
 - [ ] All required fields completed (no blank mandatory fields)
 - [ ] Notes provided for unusual situations
 - [ ] Trends documented (if quarterly update)
 - [ ] Remediation plans are specific and actionable
+
 
 ---
 
@@ -1103,39 +1268,50 @@ Before submitting this assessment, verify:
 ### Review Process
 
 **Step 1: Self-Review** (Assessment Preparer)
+
 - Complete quality checklist above
 - Fix any identified issues
 - Prepare summary for reviewers
 
+
 **Step 2: Technical Review** (IT Operations, System Owners)
+
 - Validate discovery methods are appropriate
 - Confirm asset counts are reasonable
 - Verify technical evidence is sufficient
 - Sign off on IT infrastructure, application, and information asset sections
 
+
 **Step 3: Security Review** (Information Security Manager)
+
 - Review completeness against policy requirements
 - Assess gap severity and remediation plans
 - Verify evidence quality
 - Check privacy compliance (especially personnel assets)
 - Prepare summary for CISO
 
+
 **Step 4: CISO Approval**
+
 - Review executive summary
 - Assess compliance status (on-target or at-risk)
 - Approve remediation plans and resource allocation
 - Escalate critical gaps to Executive Management if necessary
 - Sign approval
 
+
 **Step 5: Submission to Compliance Dashboard**
+
 - Export metrics to dashboard consolidation workbook
 - Update ISMS-IMP-A.5.9.5 (Compliance Dashboard)
 - Archive assessment workbook
 - Store evidence per retention policy
 
+
 ### Approval Criteria
 
 **Approve** if:
+
 - ✅ All discovery domains completed
 - ✅ Critical assets ≥85% completeness (minimum acceptable, 95% target)
 - ✅ Standard assets ≥80% completeness (minimum acceptable, 90% target)
@@ -1143,18 +1319,23 @@ Before submitting this assessment, verify:
 - ✅ Remediation plans exist for all gaps
 - ✅ Privacy compliance verified
 
+
 **Conditional Approval** (with remediation plan) if:
+
 - ⚠️ Critical assets 75-84% completeness
 - ⚠️ Standard assets 70-79% completeness
 - ⚠️ Some evidence gaps but major evidence exists
 - ⚠️ Remediation plans need refinement
 
+
 **Reject** if:
+
 - ❌ Critical assets <75% completeness
 - ❌ Standard assets <70% completeness
 - ❌ Major evidence gaps or insufficient evidence
 - ❌ No remediation plans for critical gaps
 - ❌ Privacy violations identified
+
 
 ### Approval Record
 
@@ -1199,6 +1380,7 @@ This section provides detailed specifications for developers creating or maintai
 ### Workbook Metadata
 
 **Workbook Properties**:
+
 - **Title**: ISMS A.5.9 Asset Discovery Assessment
 - **Subject**: ISO/IEC 27001:2022 Control A.5.9 - Asset Identification & Discovery
 - **Author**: [Organization] ISMS Implementation Team
@@ -1206,10 +1388,13 @@ This section provides detailed specifications for developers creating or maintai
 - **Created**: [Generation Date]
 - **Version**: 1.0
 
+
 **Workbook Protection**:
+
 - Structure protected (users cannot add/delete/rename sheets)
 - Windows protected (workbook cannot be resized/moved)
 - Password: (optional, if [Organization] requires)
+
 
 ### Sheet Summary
 
@@ -1225,12 +1410,14 @@ This section provides detailed specifications for developers creating or maintai
 | 8 | Evidence Register | Evidence documentation | Yes | None | Partial |
 
 **Sheet Protection Strategy**:
+
 - **Full Protection**: Instructions sheet (read-only, no user input)
 - **Partial Protection**: All other sheets
   - Formula cells: Locked (users cannot modify)
   - Input cells: Unlocked (users can enter data)
   - Headers: Locked
   - Data validation: Applied to input cells
+
 
 ---
 
@@ -1242,6 +1429,7 @@ Provide user guide, workflow diagram, and color coding legend. Fully read-only.
 ### Layout Structure
 
 **Rows 1-10: Title and Overview**
+
 - A1: "ISMS A.5.9 Asset Discovery Assessment" (merged A1:P1)
   - Font: Calibri, 18pt, Bold, RGB(0,51,102)
   - Alignment: Center, Middle
@@ -1258,7 +1446,9 @@ Provide user guide, workflow diagram, and color coding legend. Fully read-only.
   - Wrap text: Yes
   - Row height: Auto
 
+
 **Rows 12-25: Workflow Diagram**
+
 - A12: "Assessment Workflow" (merged A12:P12)
   - Font: Calibri, 14pt, Bold, RGB(0,51,102)
 
@@ -1270,7 +1460,9 @@ Provide user guide, workflow diagram, and color coding legend. Fully read-only.
   - Phase 5: Review & Approval (E18:H21)
   - Each phase box: Border RGB(79,129,189), Fill RGB(220,230,241)
 
+
 **Rows 27-40: Quick Start Guide**
+
 - A27: "Quick Start Guide" (merged A27:P27)
   - Font: Calibri, 14pt, Bold, RGB(0,51,102)
 
@@ -1278,7 +1470,9 @@ Provide user guide, workflow diagram, and color coding legend. Fully read-only.
   - Font: Calibri, 11pt
   - Line spacing: 1.5
 
+
 **Rows 42-50: Color Coding Legend**
+
 - A42: "Color Coding Legend" (merged A42:P42)
   - Font: Calibri, 14pt, Bold, RGB(0,51,102)
 
@@ -1306,7 +1500,9 @@ Provide user guide, workflow diagram, and color coding legend. Fully read-only.
   - Fill: RGB(255,199,206)
   - Font: RGB(156,0,6)
 
+
 **Rows 52-60: Support Information**
+
 - A52: "Need Help?" (merged A52:P52)
   - Font: Calibri, 14pt, Bold, RGB(0,51,102)
 
@@ -1314,14 +1510,19 @@ Provide user guide, workflow diagram, and color coding legend. Fully read-only.
 - A55: "Policy Reference: ISMS-POL-A.5.9"
 - A56: "Related Assessments: ISMS-IMP-A.5.9.2 through A.5.9-5"
 
+
 ### Sheet Protection
+
 - All cells: Locked
 - Sheet Protection: Enabled
 - Allow: Select locked cells only
 - Password: (optional)
 
+
 ### Column Widths
+
 - All columns: 12 (provides ~100 character width for merged A:P)
+
 
 ---
 
@@ -1354,21 +1555,26 @@ Document discovery procedures for information assets (databases, documents, IP, 
 ### Header Row (Row 1)
 
 **Styling for all headers (A1:P1)**:
+
 - Font: Calibri, 11pt, Bold, White (RGB 255,255,255)
 - Fill: RGB(0,51,102) - Dark blue
 - Alignment: Center, Middle, Wrap text
 - Border: All borders, White, Medium
 - Row height: 30px
 
+
 ### Data Rows (Rows 2-51)
 
 **Row 2**: Freeze pane row (freeze after row 2 so headers always visible)
 
 **Rows 3-51**: Data entry rows (49 rows for data)
+
 - Row height: 20px
 - All cells: Border RGB(191,191,191), Thin
 
+
 **Column A - Asset Category**:
+
 - Data validation: List
 - Source: "Structured Data,Unstructured Documents,Records & Archives,Intellectual Property,Configuration & Parameters,Authentication & Cryptographic,Communication Records,Business Intelligence"
 - Input message: "Select information asset category"
@@ -1376,7 +1582,9 @@ Document discovery procedures for information assets (databases, documents, IP, 
 - Cell style: Normal
 - Protection: Unlocked
 
+
 **Column B - Discovery Method**:
+
 - Data validation: List
 - Source: "Automated Scan,Manual Review,System Query,Document Search,Repository Analysis,Vendor Documentation,Interview"
 - Input message: "How are assets in this category discovered?"
@@ -1384,21 +1592,27 @@ Document discovery procedures for information assets (databases, documents, IP, 
 - Cell style: Normal
 - Protection: Unlocked
 
+
 **Column C - Discovery Source**:
+
 - Data type: Text
 - Format: General
 - Cell style: Normal
 - Protection: Unlocked
 - Input message: "Specify system, repository, or location (e.g., 'PostgreSQL system catalogs')"
 
+
 **Column D - Discovery Tool**:
+
 - Data type: Text
 - Format: General
 - Cell style: Normal
 - Protection: Unlocked
 - Input message: "Tool name/version or 'Manual'"
 
+
 **Column E - Frequency**:
+
 - Data validation: List
 - Source: "Real-time,Daily,Weekly,Monthly,Quarterly,Annually,Ad-hoc"
 - Input message: "How often is discovery performed?"
@@ -1406,14 +1620,18 @@ Document discovery procedures for information assets (databases, documents, IP, 
 - Cell style: Normal
 - Protection: Unlocked
 
+
 **Column F - Responsible Party**:
+
 - Data type: Text
 - Format: General
 - Cell style: Normal
 - Protection: Unlocked
 - Input message: "Role or team name (e.g., 'Database Team')"
 
+
 **Column G - Last Discovery Date**:
+
 - Data validation: Date
 - Formula: `=G3<=TODAY()`
 - Allow: Date
@@ -1425,7 +1643,9 @@ Document discovery procedures for information assets (databases, documents, IP, 
 - Cell style: Normal
 - Protection: Unlocked
 
+
 **Column H - Assets Discovered**:
+
 - Data validation: Whole number
 - Minimum: 0
 - Maximum: 999999
@@ -1435,7 +1655,9 @@ Document discovery procedures for information assets (databases, documents, IP, 
 - Cell style: Normal
 - Protection: Unlocked
 
+
 **Column I - Assets Inventoried**:
+
 - Data validation: Whole number
 - Minimum: 0
 - Maximum: 999999
@@ -1445,7 +1667,9 @@ Document discovery procedures for information assets (databases, documents, IP, 
 - Cell style: Normal
 - Protection: Unlocked
 
+
 **Column J - Coverage %**:
+
 - Formula in J3: `=IF(H3=0,0,I3/H3*100)`
 - Copy formula down to J51
 - Number format: 0.0"%"
@@ -1454,7 +1678,9 @@ Document discovery procedures for information assets (databases, documents, IP, 
 - Protection: Locked
 - Conditional formatting (see below)
 
+
 **Column K - Gap Count**:
+
 - Formula in K3: `=H3-I3`
 - Copy formula down to K51
 - Number format: #,##0
@@ -1463,7 +1689,9 @@ Document discovery procedures for information assets (databases, documents, IP, 
 - Protection: Locked
 - Conditional formatting (see below)
 
+
 **Column L - Gap Severity**:
+
 - Data validation: List
 - Source: "Critical,High,Medium,Low"
 - Input message: "Assess impact of missing assets"
@@ -1472,14 +1700,18 @@ Document discovery procedures for information assets (databases, documents, IP, 
 - Protection: Unlocked
 - Conditional formatting (see below)
 
+
 **Column M - Remediation Plan**:
+
 - Data type: Text
 - Format: General
 - Cell style: Normal, Wrap text
 - Protection: Unlocked
 - Input message: "How will gaps be addressed?"
 
+
 **Column N - Target Date**:
+
 - Data validation: Date
 - Formula: `=N3>=TODAY()`
 - Allow: Date
@@ -1492,22 +1724,28 @@ Document discovery procedures for information assets (databases, documents, IP, 
 - Protection: Unlocked
 - Conditional formatting (see below)
 
+
 **Column O - Evidence Reference**:
+
 - Data type: Text
 - Format: General
 - Cell style: Normal
 - Protection: Unlocked
 - Input message: "Reference to Evidence Register (e.g., 'DISC-001')"
 
+
 **Column P - Notes**:
+
 - Data type: Text
 - Format: General
 - Cell style: Normal, Wrap text
 - Protection: Unlocked
 
+
 ### Conditional Formatting Rules
 
 **Rule 1: Coverage % - Green (Compliant)**
+
 - Applies to: J3:J51
 - Condition: Cell value >= 95
 - Format:
@@ -1515,7 +1753,9 @@ Document discovery procedures for information assets (databases, documents, IP, 
   - Font: RGB(0,97,0) - Dark green, Bold
 - Stop if true: No
 
+
 **Rule 2: Coverage % - Yellow (At Risk)**
+
 - Applies to: J3:J51
 - Condition: AND(Cell value >= 85, Cell value < 95)
 - Format:
@@ -1523,7 +1763,9 @@ Document discovery procedures for information assets (databases, documents, IP, 
   - Font: RGB(156,87,0) - Dark orange, Bold
 - Stop if true: No
 
+
 **Rule 3: Coverage % - Red (Non-Compliant)**
+
 - Applies to: J3:J51
 - Condition: AND(Cell value > 0, Cell value < 85)
 - Format:
@@ -1531,42 +1773,54 @@ Document discovery procedures for information assets (databases, documents, IP, 
   - Font: RGB(156,0,6) - Dark red, Bold
 - Stop if true: No
 
+
 **Rule 4: Gap Count - Green (No Gaps)**
+
 - Applies to: K3:K51
 - Condition: Cell value = 0
 - Format:
   - Fill: RGB(198,239,206) - Light green
 - Stop if true: Yes
 
+
 **Rule 5: Gap Count - Yellow (Small Gaps)**
+
 - Applies to: K3:K51
 - Condition: AND(Cell value >= 1, Cell value <= 5)
 - Format:
   - Fill: RGB(255,235,156) - Light yellow
 - Stop if true: Yes
 
+
 **Rule 6: Gap Count - Red (Large Gaps)**
+
 - Applies to: K3:K51
 - Condition: Cell value > 5
 - Format:
   - Fill: RGB(255,199,206) - Light red
 - Stop if true: Yes
 
+
 **Rule 7: Gap Severity - Critical**
+
 - Applies to: L3:L51
 - Condition: Cell value = "Critical"
 - Format:
   - Font: RGB(156,0,6) - Dark red, Bold
 - Stop if true: No
 
+
 **Rule 8: Gap Severity - High**
+
 - Applies to: L3:L51
 - Condition: Cell value = "High"
 - Format:
   - Font: RGB(255,102,0) - Orange, Bold
 - Stop if true: No
 
+
 **Rule 9: Target Date - Overdue**
+
 - Applies to: N3:N51
 - Condition: AND(Cell value <> "", Cell value < TODAY())
 - Format:
@@ -1574,13 +1828,16 @@ Document discovery procedures for information assets (databases, documents, IP, 
   - Font: RGB(156,0,6) - Dark red, Bold
 - Stop if true: No
 
+
 ### Sheet Protection
+
 - Headers (Row 1): Locked
 - Formula cells (J3:K51): Locked
 - Input cells (A3:I51, L3:P51): Unlocked
 - Protection enabled
 - Allow: Select locked cells, Select unlocked cells, Format cells, Sort, Filter, Use AutoFilter
 - Password: (optional)
+
 
 ---
 
@@ -1618,42 +1875,58 @@ Same styling as Sheet 2, extended to columns A1:R1
 ### Data Rows (Rows 2-51)
 
 **Column A - Infrastructure Category**:
+
 - Data validation: List
 - Source: "Physical Servers,Virtual Machines,Containers,Storage Systems,Backup Infrastructure,Network Infrastructure,Endpoints,Cloud Infrastructure,Security Appliances"
 
+
 **Column B - Discovery Method**:
+
 - Data validation: List
 - Source: "Network Scan,Agent-Based,Agentless Scan,Cloud API,Hypervisor Query,CMDB,Physical Audit,SNMP Poll"
 
+
 **Column E - Frequency**:
+
 - Data validation: List
 - Source: "Real-time,Daily,Weekly,Monthly,Quarterly"
 
+
 **Column I - Coverage %**:
+
 - Formula in I3: `=IF(G3=0,0,H3/G3*100)`
 - Number format: 0.0"%"
 - Conditional formatting: Same as Sheet 2 (green >=98%, yellow 88-97%, red <88%)
 
+
 **Column J - Gap Count**:
+
 - Formula in J3: `=G3-H3`
 - Number format: #,##0
 - Conditional formatting: Same as Sheet 2
 
+
 **Column K - Gap Severity**:
+
 - Data validation: List
 - Source: "Critical,High,Medium,Low"
 - Conditional formatting: Same as Sheet 2
 
+
 **Column L - False Positive Rate %**:
+
 - Data validation: Decimal
 - Minimum: 0
 - Maximum: 100
 - Number format: 0.0"%"
 - Input message: "Percentage of discovered assets that are invalid (e.g., printers detected as servers)"
 
+
 **Column P - Target Date**:
+
 - Same as Sheet 2
 - Conditional formatting: Same as Sheet 2 (overdue = red)
+
 
 **All other columns**: Similar patterns to Sheet 2
 
@@ -1696,41 +1969,57 @@ Same styling as Sheet 2, extended to A1:R1
 ### Data Rows (Rows 2-51)
 
 **Column A - Application Category**:
+
 - Data validation: List
 - Source: "Business Application,SaaS Service,Custom Development,Mobile App,API/Integration,Development Tool,Collaboration Platform"
 
+
 **Column B - Discovery Method**:
+
 - Data validation: List
 - Source: "License Management System,Procurement Records,Software Inventory Tool,Cloud SSO Logs,Expense Reports,User Survey,Development Repository"
 
+
 **Column E - Frequency**:
+
 - Data validation: List
 - Source: "Real-time,Monthly,Quarterly,Annually,Upon Procurement"
 
+
 **Column I - Coverage %**:
+
 - Formula in I3: `=IF(G3=0,0,H3/G3*100)`
 - Number format: 0.0"%"
 - Conditional formatting: Green >=90%, Yellow 80-89%, Red <80%
 
+
 **Column J - Gap Count**:
+
 - Formula in J3: `=G3-H3`
 - Number format: #,##0
 
+
 **Column K - License Tracking**:
+
 - Data validation: List
 - Source: "Yes - Automated,Yes - Manual,No,N/A"
 
+
 **Column L - Usage Monitoring**:
+
 - Data validation: List
 - Source: "Yes - Active Monitoring,Yes - Periodic Review,No"
 
+
 **Column M - Shadow IT Risk**:
+
 - Data validation: List
 - Source: "High,Medium,Low,None"
 - Conditional formatting:
   - "High": RGB(255,199,206) fill, RGB(156,0,6) font, Bold
   - "Medium": RGB(255,235,156) fill, RGB(156,87,0) font, Bold
   - "Low": RGB(198,239,206) fill, RGB(0,97,0) font
+
 
 **All other columns**: Similar patterns to previous sheets
 
@@ -1772,29 +2061,41 @@ Same styling as Sheet 2, extended to A1:Q1
 ### Data Rows (Rows 2-51)
 
 **Column A - Physical Asset Category**:
+
 - Data validation: List
 - Source: "Facilities,Datacenter Infrastructure,Removable Media,Physical Security Equipment,Paper Documents,Printed Materials,Other Equipment"
 
+
 **Column B - Discovery Method**:
+
 - Data validation: List
 - Source: "Physical Audit,Asset Tag Scan,Procurement Records,Facilities Management System,Media Log,Document Register"
 
+
 **Column C - Discovery Frequency**:
+
 - Data validation: List
 - Source: "Monthly,Quarterly,Semi-Annually,Annually"
 
+
 **Column G - Coverage %**:
+
 - Formula in G3: `=IF(E3=0,0,F3/E3*100)`
 - Number format: 0.0"%"
 - Conditional formatting: Green >=90%, Yellow 80-89%, Red <80%
 
+
 **Column H - Gap Count**:
+
 - Formula in H3: `=E3-F3`
 - Number format: #,##0
 
+
 **Column K - Asset Tagging**:
+
 - Data validation: List
 - Source: "Yes - RFID,Yes - Barcode,Yes - Manual Label,No"
+
 
 **All other columns**: Similar patterns to previous sheets
 
@@ -1829,6 +2130,7 @@ Document discovery procedures for key roles and competencies (privacy-compliant)
 | 15 | O | Notes | 30 | Text | Input | No |
 
 ### Header Row (Row 1)
+
 - Same styling as Sheet 2, extended to A1:O1
 - **IMPORTANT**: Add merged cell above headers (Row 0 if possible, or use comment):
   - Text: "⚠️ PRIVACY NOTE: Document ROLES/COMPETENCIES, never individual person names!"
@@ -1836,9 +2138,11 @@ Document discovery procedures for key roles and competencies (privacy-compliant)
   - Font: RGB(156,0,0) - Dark red, Bold
   - Border: RGB(255,0,0) - Red, Thick
 
+
 ### Data Rows (Rows 2-51)
 
 **Column A - Role/Competency**:
+
 - Data type: Text
 - Format: General
 - Input message: "Enter role or competency (e.g., 'Database Administrator - 3 staff'), NOT person names"
@@ -1846,33 +2150,45 @@ Document discovery procedures for key roles and competencies (privacy-compliant)
 - Font: Calibri, 11pt
 - Protection: Unlocked
 
+
 **Column B - Category**:
+
 - Data validation: List
 - Source: "Executive Role,Technical Role,Regulatory Role,Specialized Competency,Language Skill,Certification"
 
+
 **Column C - Business Criticality**:
+
 - Data validation: List
 - Source: "Critical,High,Medium,Low"
 
+
 **Column D - Discovery Method**:
+
 - Data validation: List
 - Source: "Org Chart Analysis,Job Description Review,Competency Matrix,HR System,Succession Plan,Manager Interview"
 
+
 **Column E - Current Capacity**:
+
 - Data validation: Whole number
 - Minimum: 0
 - Maximum: 9999
 - Input message: "Number of people with this capability (e.g., 3 for 'three DBAs')"
 - Number format: #,##0
 
+
 **Column F - Required Capacity**:
+
 - Data validation: Whole number
 - Minimum: 0
 - Maximum: 9999
 - Input message: "Minimum number needed for operations"
 - Number format: #,##0
 
+
 **Column G - Capacity Gap**:
+
 - Formula in G3: `=E3-F3`
 - Number format: +#,##0;-#,##0;0 (shows + for positive, - for negative)
 - Font: Calibri, 11pt, Bold
@@ -1883,16 +2199,21 @@ Document discovery procedures for key roles and competencies (privacy-compliant)
   - Value = 0: RGB(255,235,156) fill (just enough)
   - Value < 0: RGB(255,199,206) fill (shortage, risk)
 
+
 **Column H - Succession Plan**:
+
 - Data validation: List
 - Source: "Yes - Documented,Yes - Informal,No"
 - Conditional formatting:
   - IF(H3="No" AND C3="Critical", RGB(255,199,206) fill, RGB(156,0,6) font, Bold)
   - IF(H3="No" AND C3="High", RGB(255,235,156) fill, RGB(156,87,0) font, Bold)
 
+
 **Column I - Training Available**:
+
 - Data validation: List
 - Source: "Yes - Internal,Yes - External,No,Unknown"
+
 
 **All other columns**: Similar patterns to previous sheets
 
@@ -1943,6 +2264,7 @@ This sheet has FEWER data rows (one row per asset category) rather than 50 rows.
 **Row 9**: **Overall Summary** (aggregate across all categories)
 
 **Column A - Asset Category**:
+
 - Row 3: "Information Assets"
 - Row 4: "IT Infrastructure"
 - Row 5: "Applications"
@@ -1953,7 +2275,9 @@ This sheet has FEWER data rows (one row per asset category) rather than 50 rows.
 - Fill: RGB(242,242,242)
 - Protection: Locked
 
+
 **Column B - Target Completeness %**:
+
 - Row 3 formula: `=95` (Critical information assets)
 - Row 4 formula: `=98` (IT infrastructure)
 - Row 5 formula: `=90` (Applications)
@@ -1964,7 +2288,9 @@ This sheet has FEWER data rows (one row per asset category) rather than 50 rows.
 - Fill: RGB(242,242,242)
 - Protection: Locked
 
+
 **Column C - Current Completeness %**:
+
 - Row 3 formula: `=IFERROR(AVERAGE('Info Asset Discovery'!J:J),0)`
 - Row 4 formula: `=IFERROR(AVERAGE('IT Infrastructure Discovery'!I:I),0)`
 - Row 5 formula: `=IFERROR(AVERAGE('Application Discovery'!I:I),0)`
@@ -1977,14 +2303,18 @@ This sheet has FEWER data rows (one row per asset category) rather than 50 rows.
 - Protection: Locked
 - Conditional formatting: Same green/yellow/red rules based on target
 
+
 **Column D - Gap vs. Target**:
+
 - Formula in D3: `=C3-B3`
 - Copy down to D7
 - Row 9 formula: `=C9-B9`
 - Number format: +0.0%;-0.0%;0.0%
 - Protection: Locked
 
+
 **Column E - Compliance Status**:
+
 - Formula in E3: `=IF(C3>=B3,"✅ Compliant",IF(C3>=B3-10,"⚠️ At Risk","❌ Non-Compliant"))`
 - Copy down to E7
 - Row 9: Same formula referencing C9, B9
@@ -1995,7 +2325,9 @@ This sheet has FEWER data rows (one row per asset category) rather than 50 rows.
   - Contains "⚠️": RGB(255,235,156) fill
   - Contains "❌": RGB(255,199,206) fill
 
+
 **Column F - Total Assets Discovered**:
+
 - Row 3 formula: `=SUM('Info Asset Discovery'!H:H)`
 - Row 4 formula: `=SUM('IT Infrastructure Discovery'!G:G)`
 - Row 5 formula: `=SUM('Application Discovery'!G:G)`
@@ -2006,7 +2338,9 @@ This sheet has FEWER data rows (one row per asset category) rather than 50 rows.
 - Fill: RGB(242,242,242)
 - Protection: Locked
 
+
 **Column G - Total Assets Inventoried**:
+
 - Row 3 formula: `=SUM('Info Asset Discovery'!I:I)`
 - Row 4 formula: `=SUM('IT Infrastructure Discovery'!H:H)`
 - Row 5 formula: `=SUM('Application Discovery'!H:H)`
@@ -2017,14 +2351,18 @@ This sheet has FEWER data rows (one row per asset category) rather than 50 rows.
 - Fill: RGB(242,242,242)
 - Protection: Locked
 
+
 **Column H - Gap Count**:
+
 - Formula in H3: `=F3-G3`
 - Copy down to H7
 - Row 9 formula: `=F9-G9`
 - Number format: #,##0
 - Protection: Locked
 
+
 **Column I - Critical Gaps**:
+
 - Row 3 formula: `=COUNTIF('Info Asset Discovery'!L:L,"Critical")`
 - Row 4 formula: `=COUNTIF('IT Infrastructure Discovery'!K:K,"Critical")`
 - Row 5 formula: `=COUNTIF('Application Discovery'!K:K,"Critical")`
@@ -2035,25 +2373,37 @@ This sheet has FEWER data rows (one row per asset category) rather than 50 rows.
 - Font: RGB(156,0,6), Bold if >0
 - Protection: Locked
 
+
 **Column J - High Gaps**:
+
 - Similar to Column I, counting "High"
 
+
 **Column K - Medium Gaps**:
+
 - Similar to Column I, counting "Medium"
 
+
 **Column L - Low Gaps**:
+
 - Similar to Column I, counting "Low"
 
+
 **Column M - Remediation Status**:
+
 - Data validation: List
 - Source: "Not Started,In Progress,Completed,Blocked"
 - Protection: Unlocked
 
+
 **Column N - Target Closure Date**:
+
 - Data validation: Date
 - Protection: Unlocked
 
+
 **Column O - Trend vs. Last Quarter**:
+
 - Data validation: List
 - Source: "Improved,Stable,Degraded,N/A (first assessment)"
 - Protection: Unlocked
@@ -2061,13 +2411,17 @@ This sheet has FEWER data rows (one row per asset category) rather than 50 rows.
   - "Improved": RGB(198,239,206) fill
   - "Degraded": RGB(255,199,206) fill
 
+
 **Column P - Notes**:
+
 - Data type: Text
 - Protection: Unlocked
+
 
 ### Charts
 
 **Chart 1: Coverage by Category**
+
 - Type: Clustered Column Chart
 - Data source: A2:C7 (Category, Target %, Current %)
 - Position: Below data rows
@@ -2075,24 +2429,31 @@ This sheet has FEWER data rows (one row per asset category) rather than 50 rows.
 - Y-axis: 0-100%
 - Legend: Target vs. Current
 
+
 **Chart 2: Gap Severity Distribution**
+
 - Type: Stacked Bar Chart
 - Data source: A2:A7, I2:L7 (Category, Critical/High/Medium/Low)
 - Position: Right of Chart 1
 - Title: "Discovery Gaps by Severity"
 - Colors: Critical=Red, High=Orange, Medium=Yellow, Low=Green
 
+
 **Chart 3: Compliance Status**
+
 - Type: Pie Chart
 - Data source: COUNT of compliance statuses in E3:E7
 - Position: Below Chart 1
 - Title: "Overall Compliance Status Distribution"
 - Colors: Green (Compliant), Yellow (At Risk), Red (Non-Compliant)
 
+
 ### Sheet Protection
+
 - All formula cells (A3:L9): Locked
 - Input cells (M3:P9): Unlocked
 - Protection enabled
+
 
 ---
 
@@ -2126,6 +2487,7 @@ Same styling as Sheet 2, extended to A1:N1
 ### Data Rows (Rows 2-101)
 
 **Column A - Evidence ID**:
+
 - Data validation: Custom formula
 - Formula: `=AND(LEN(A3)=8,LEFT(A3,5)="DISC-",ISNUMBER(VALUE(RIGHT(A3,3))))`
 - Input message: "Format: DISC-NNN (e.g., DISC-001)"
@@ -2133,41 +2495,56 @@ Same styling as Sheet 2, extended to A1:N1
 - Format example shown in cell comment
 - Protection: Unlocked
 
+
 **Column B - Evidence Type**:
+
 - Data validation: List
 - Source: "Scan Output,Audit Report,Query Result,Interview Notes,Photo,System Export,Reconciliation Report,Meeting Minutes"
 
+
 **Column C - Related Domain**:
+
 - Data validation: List
 - Source: "Information Assets,IT Infrastructure,Applications,Physical Assets,Personnel Assets,Multiple Domains"
 
+
 **Column E - Collection Date**:
+
 - Data validation: Date
 - Maximum: `=TODAY()`
 - Number format: DD.MM.YYYY
 
+
 **Column I - Evidence Format**:
+
 - Data validation: List
 - Source: "PDF,Excel,CSV,JSON,XML,Photo (JPEG/PNG),Text,Other"
 
+
 **Column J - Retention Period**:
+
 - Data validation: List
 - Source: "1 Year,3 Years,5 Years,7 Years,Permanent"
 
+
 **Column K - Access Restriction**:
+
 - Data validation: List
 - Source: "Public,Internal,Confidential,Restricted"
 - Conditional formatting:
   - "Restricted": RGB(255,199,206) fill, RGB(156,0,6) font, Bold
   - "Confidential": RGB(255,235,156) fill, RGB(156,87,0) font, Bold
 
+
 **Column L - Evidence Quality**:
+
 - Data validation: List
 - Source: "Complete,Partial,Insufficient"
 - Conditional formatting:
   - "Complete": RGB(198,239,206) fill
   - "Partial": RGB(255,235,156) fill
   - "Insufficient": RGB(255,199,206) fill
+
 
 **All other columns**: Text format, unlocked
 
@@ -2260,70 +2637,94 @@ Sheet 7, Cell C9: =AVERAGE(C3:C7)
 ### Font Specifications
 
 **Headers**:
+
 - Family: Calibri
 - Size: 11pt
 - Weight: Bold
 - Color: White (RGB 255,255,255)
 
+
 **Body Text (Input cells)**:
+
 - Family: Calibri
 - Size: 11pt
 - Weight: Normal
 - Color: Black (RGB 0,0,0)
 
+
 **Formula Cells**:
+
 - Family: Calibri
 - Size: 11pt
 - Weight: Bold (for calculated values)
 - Color: Dark Grey (RGB 128,128,128)
 
+
 **Title (Instructions sheet)**:
+
 - Family: Calibri
 - Size: 18pt
 - Weight: Bold
 - Color: Dark Blue (RGB 0,51,102)
 
+
 ### Border Specifications
 
 **Header Borders**:
+
 - All sides: White (RGB 255,255,255)
 - Weight: Medium
 - Style: Continuous
 
+
 **Data Cell Borders**:
+
 - All sides: Grey (RGB 191,191,191)
 - Weight: Thin
 - Style: Continuous
 
+
 **Input Cell Borders** (to distinguish from formula cells):
+
 - All sides: Blue (RGB 79,129,189)
 - Weight: Thin
 - Style: Continuous
 
+
 ### Alignment Specifications
 
 **Headers**:
+
 - Horizontal: Center
 - Vertical: Middle
 - Wrap text: Yes
 
+
 **Input Cells (Text)**:
+
 - Horizontal: Left
 - Vertical: Top
 - Wrap text: Yes (for long text columns like Notes, Remediation Plan)
 - Indent: 1
 
+
 **Input Cells (Numbers)**:
+
 - Horizontal: Right
 - Vertical: Top
 
+
 **Input Cells (Dates)**:
+
 - Horizontal: Center
 - Vertical: Top
 
+
 **Formula Cells**:
+
 - Horizontal: Center (for percentages, counts)
 - Vertical: Middle
+
 
 ---
 
@@ -3035,10 +3436,12 @@ if __name__ == '__main__':
 ```
 
 **Note**: The Python script above provides the complete structure and demonstrates implementation for the Info Asset Discovery sheet. The other sheets follow identical patterns with adjusted:
+
 - Column headers
 - Validation lists
 - Formula columns
 - Conditional formatting thresholds
+
 
 Due to response length constraints, the full implementation of sheets 3-8 follows the exact same pattern shown in `create_info_asset_sheet()` with respective column adjustments per the technical specifications above.
 
@@ -3051,11 +3454,13 @@ Due to response length constraints, the full implementation of sheets 3-8 follow
 **CSV Export from Sheet 7 (Completeness Analysis)**:
 
 Required columns for dashboard consolidation:
+
 - Asset Category
 - Current Completeness %
 - Compliance Status
 - Gap Count (by severity)
 - Remediation Status
+
 
 **Export procedure**:
 1. Select rows 3-7 in Completeness Analysis sheet
@@ -3073,6 +3478,10 @@ IT Infrastructure,98,97.8,⚠️ At Risk,8,0,2,4,2,In Progress
 
 ---
 
-**END OF ISMS-IMP-A.5.9.1 TECHNICAL SPECIFICATION**
+**END OF SPECIFICATION**
 
-*"Systematic discovery. Evidence-based verification. Audit-ready documentation."*
+---
+
+*"No, no, you're not thinking; you're just being logical."*
+— Niels Bohr
+*Where bamboo antennas actually work.* 🎋

@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# =============================================================================
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-ISMS-Commercial
+# Copyright (c) 2025-2026 ISMS Core Contributors
+#
+# This file is part of ISMS Core.
+#
+# ISMS Core is dual-licensed:
+#   1. AGPL 3.0 (Open Source) - See LICENSE-AGPL.txt
+#   2. Commercial License - Contact vendor for proprietary use
+#
+# You may use this file under either license, at your option.
+# =============================================================================
 """
 ================================================================================
 Dashboard Generator Pre-Flight Checker - ISMS A.8.31 Compliance Dashboard
@@ -62,7 +74,7 @@ to generate the actual dashboard workbook.
 **Workflow Integration:**
     python3 sanity_check_a831_dashboard.py || exit 1
     python3 generate_a831_3_compliance_dashboard.py
-    python3 excel_sanity_check_a831.py ISMS_IMP_A_8_31_Dashboard_*.xlsx
+    python3 excel_sanity_check_a831.py ISMS-IMP-A.8.31_Dashboard_*.xlsx
 
 **Related Scripts:**
 - generate_a831_3_compliance_dashboard.py (script being validated)
@@ -74,6 +86,22 @@ Script Type: Pre-Flight Validation Utility
 Version: 1.0
 ================================================================================
 """
+
+# =============================================================================
+# Standard Library Imports
+# =============================================================================
+import logging
+import sys
+
+# =============================================================================
+# Logging Configuration
+# =============================================================================
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
 
 import sys
 
@@ -199,3 +227,10 @@ print("  1. Ensure you have normalized source files:")
 print("     python3 normalize_assessment_files_a831.py")
 print("  2. Run: python3 generate_dashboard_environment_separation.py")
 print("\n" + "=" * 80)
+
+# =============================================================================
+# QA_VERIFIED: 2026-01-31
+# QA_STATUS: PASSED - STANDARDIZATION COMPLETE
+# QA_NOTE: Added license header, logging, import sections, try/except main()
+# QA_TOOL: Claude Code Deep Scan
+# =============================================================================

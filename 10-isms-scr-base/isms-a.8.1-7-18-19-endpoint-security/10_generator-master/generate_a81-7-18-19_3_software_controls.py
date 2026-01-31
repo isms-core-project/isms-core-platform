@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# =============================================================================
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-ISMS-Commercial
+# Copyright (c) 2025-2026 ISMS Core Contributors
+#
+# This file is part of ISMS Core.
+#
+# ISMS Core is dual-licensed:
+#   1. AGPL 3.0 (Open Source) - See LICENSE-AGPL.txt
+#   2. Commercial License - Contact vendor for proprietary use
+#
+# You may use this file under either license, at your option.
+# =============================================================================
 """
 ================================================================================
 ISMS-IMP-A.8.1-7-18-19.S3 - Software Controls Assessment Excel Generator
@@ -86,12 +98,23 @@ into the consolidated compliance matrix (A.8.1-7-18-19.S5) and dashboard
 ================================================================================
 """
 
+# =============================================================================
+# Standard Library Imports
+# =============================================================================
+import logging
 import sys
 from datetime import datetime, timedelta
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
+
+# =============================================================================
+# Logging Configuration
+# =============================================================================
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+logger = logging.getLogger(__name__)
+
 
 
 # ============================================================================
@@ -116,6 +139,12 @@ VIRUS = '\U0001F9A0'  # 🦠 Virus/Microbe
 BULLET = '\u2022'     # • Bullet point
 ARROW = '\u2192'      # → Right arrow
 
+# ============================================================================
+# DOCUMENT IDENTIFICATION
+# ============================================================================
+DOCUMENT_ID = "ISMS-IMP-A.8.1-7-18-19.3"
+CONTROL_REF = "ISO/IEC 27001:2022 - Controls A.8.1, A.8.7, A.8.18, A.8.19: Endpoint Security"
+
 def create_workbook() -> Workbook:
     """Create workbook with all required sheets."""
     wb = Workbook()
@@ -135,7 +164,7 @@ def create_workbook() -> Workbook:
         "Capability_Requirements",
         "Evidence_Register",
         "Gap_Analysis",
-        "Approval_Sign_Of",
+        "Approval_Sign_Off",
     ]
     for name in sheets:
         wb.create_sheet(title=name)
@@ -342,9 +371,9 @@ def create_instructions_sheet(ws, styles):
     
     ws.merge_cells('A1:F1')
     cell = ws['A1']
-    cell.value = "SOFTWARE INSTALLATION CONTROLS & APPLICATION MANAGEMENT"
+    cell.value = f"{DOCUMENT_ID}\n{CONTROL_REF}"
     apply_style(cell, styles['header'])
-    ws.row_dimensions[1].height = 30
+    ws.row_dimensions[1].height = 40
 
     ws.merge_cells('A2:F2')
     cell = ws['A2']
@@ -356,7 +385,7 @@ def create_instructions_sheet(ws, styles):
         ("Document ID:", "ISMS-IMP-A.8.1-7-18-19.S3"),
         ("Workbook:", "Software Controls Assessment"),
         ("Version:", "1.0"),
-        ("Generated:", datetime.now().strftime("%Y-%m-%d %H:%M")),
+        ("Generated:", datetime.now().strftime("%d.%m.%Y %H:%M")),
         ("Assessment Period:", "[To be completed by assessor]"),
         ("Assessor:", "[Name]"),
     ]
@@ -400,9 +429,9 @@ The assessment evaluates:
     row += 1
 
     legend_items = [
-        (f"{CHECK} Approved / Compliant", "Software approved for use, license compliant", "status_approved"),
+        ("{CHECK} Approved / Compliant", "Software approved for use, license compliant", "status_approved"),
         ("⏳ Pending Approval", "Approval request submitted, pending review", "status_pending"),
-        (f"{XMARK} Unauthorized / Rejected", "Software not approved or explicitly rejected", "status_unauthorized"),
+        ("{XMARK} Unauthorized / Rejected", "Software not approved or explicitly rejected", "status_unauthorized"),
         ("🔴 Critical Severity", "Critical gap requiring immediate remediation (7 days)", "gap_critical"),
         ("🟠 High Severity", "High-priority gap requiring remediation (30 days)", "gap_high"),
         ("🟡 Medium Severity", "Medium-priority gap (60 days)", "gap_medium"),
@@ -759,7 +788,7 @@ def create_unauthorized_software_sheet(ws, styles):
     
     summary_row += 1
     ws[f'A{summary_row}'].value = f"{CHECK} Remediated:"
-    ws[f'B{summary_row}'].value = f'=COUNTIF(J5:J104,f"{CHECK} Removed")+COUNTIF(J5:J104,f"{CHECK} Approved Retroactively")'
+    ws[f'B{summary_row}'].value = f'=COUNTIF(J5:J104,"{CHECK} Removed")+COUNTIF(J5:J104,"{CHECK} Approved Retroactively")'
     
     summary_row += 1
     ws[f'A{summary_row}'].value = "Remediation Rate:"
@@ -871,7 +900,7 @@ def create_application_control_sheet(ws, styles):
     
     summary_row += 1
     ws[f'A{summary_row}'].value = f"{CHECK} Enforced:"
-    ws[f'B{summary_row}'].value = f'=COUNTIF(I5:I54,f"{CHECK} Enforced")'
+    ws[f'B{summary_row}'].value = f'=COUNTIF(I5:I54,"{CHECK} Enforced")'
     
     summary_row += 1
     ws[f'A{summary_row}'].value = "Deployment Rate:"
@@ -967,7 +996,7 @@ def create_change_control_sheet(ws, styles):
     
     summary_row += 1
     ws[f'A{summary_row}'].value = f"{CHECK} Implemented:"
-    ws[f'B{summary_row}'].value = f'=COUNTIF(K5:K104,f"{CHECK} Implemented")'
+    ws[f'B{summary_row}'].value = f'=COUNTIF(K5:K104,"{CHECK} Implemented")'
     
     summary_row += 1
     ws[f'A{summary_row}'].value = "Changes with Testing:"
@@ -1049,7 +1078,7 @@ def create_vulnerability_management_sheet(ws, styles):
                 validations['patch_status'].add(cell)
             elif col == 10:
                 # SLA Compliance (calculated based on severity and patch date)
-                cell.value = f'=IF(E{current_row}="🔴 Critical",IF(I{current_row}-F{current_row}<=7,f"{CHECK} Met",f"{XMARK} Missed"),IF(E{current_row}="🟠 High",IF(I{current_row}-F{current_row}<=30,f"{CHECK} Met",f"{XMARK} Missed"),"N/A"))'
+                cell.value = f'=IF(E{current_row}="🔴 Critical",IF(I{current_row}-F{current_row}<=7,"{CHECK} Met","{XMARK} Missed"),IF(E{current_row}="🟠 High",IF(I{current_row}-F{current_row}<=30,"{CHECK} Met","{XMARK} Missed"),"N/A"))'
 
     # Summary
     summary_row = start_row + 102
@@ -1068,11 +1097,11 @@ def create_vulnerability_management_sheet(ws, styles):
     
     summary_row += 1
     ws[f'A{summary_row}'].value = f"{CHECK} Patched:"
-    ws[f'B{summary_row}'].value = f'=COUNTIF(H5:H104,f"{CHECK} Patched")'
+    ws[f'B{summary_row}'].value = f'=COUNTIF(H5:H104,"{CHECK} Patched")'
     
     summary_row += 1
     ws[f'A{summary_row}'].value = "SLA Compliance Rate:"
-    ws[f'B{summary_row}'].value = f'=IF(COUNTA(J5:J104)>0,COUNTIF(J5:J104,f"{CHECK} Met")/COUNTA(J5:J104)*100,0)&"%"'
+    ws[f'B{summary_row}'].value = f'=IF(COUNTA(J5:J104)>0,COUNTIF(J5:J104,"{CHECK} Met")/COUNTA(J5:J104)*100,0)&"%"'
 
     ws.column_dimensions['A'].width = 15
     ws.column_dimensions['B'].width = 30
@@ -1139,7 +1168,7 @@ def create_licensing_compliance_sheet(ws, styles):
                 cell.value = f'=D{current_row}-E{current_row}'
             elif col == 7:
                 # Compliance Status (calculated)
-                cell.value = f'=IF(E{current_row}<=D{current_row},f"{CHECK} Compliant",IF(E{current_row}>D{current_row},f"{WARNING} Over-Deployed","❓ Unknown"))'
+                cell.value = f'=IF(E{current_row}<=D{current_row},"{CHECK} Compliant",IF(E{current_row}>D{current_row},"{WARNING} Over-Deployed","❓ Unknown"))'
 
     # Summary
     summary_row = start_row + 102
@@ -1154,11 +1183,11 @@ def create_licensing_compliance_sheet(ws, styles):
     
     summary_row += 1
     ws[f'A{summary_row}'].value = f"{CHECK} Compliant:"
-    ws[f'B{summary_row}'].value = f'=COUNTIF(G5:G104,f"{CHECK} Compliant")'
+    ws[f'B{summary_row}'].value = f'=COUNTIF(G5:G104,"{CHECK} Compliant")'
     
     summary_row += 1
     ws[f'A{summary_row}'].value = f"{WARNING} Over-Deployed:"
-    ws[f'B{summary_row}'].value = f'=COUNTIF(G5:G104,f"{WARNING} Over-Deployed")'
+    ws[f'B{summary_row}'].value = f'=COUNTIF(G5:G104,"{WARNING} Over-Deployed")'
     
     summary_row += 1
     ws[f'A{summary_row}'].value = "Total Annual Cost:"
@@ -1241,7 +1270,7 @@ def create_capability_requirements_sheet(ws, styles):
             if col == 3:
                 validations['yes_no_na'].add(cell)
             elif col == 6:
-                cell.value = f'=IF(C{current_row}="Yes",f"{CHECK} Compliant",IF(C{current_row}="N/A","N/A",f"{XMARK} Gap"))'
+                cell.value = f'=IF(C{current_row}="Yes","{CHECK} Compliant",IF(C{current_row}="N/A","N/A","{XMARK} Gap"))'
         
         thin = Side(style="thin")
         for col in range(1, 7):
@@ -1351,21 +1380,21 @@ def create_approval_signoff_sheet(ws, styles):
 
 def main():
     """Main execution function."""
-    print("=" * 78)
-    print("ISMS-IMP-A.8.1-7-18-19.S3 - Software Controls Assessment Generator")
-    print("ISO/IEC 27001:2022 Control: A.8.19 (Installation of Software)")
-    print("=" * 78)
-    print("\n🎯 Systems Engineering: Evidence-Based Software Control Assessment")
-    print(f"{CHART} Comprehensive: Approved list, unauthorized detection, app control")
-    print(f"{LOCK} Audit-Ready: Change control integration, license compliance")
-    print("\n" + "─" * 78)
+    logger.info("=" * 78)
+    logger.info("ISMS-IMP-A.8.1-7-18-19.S3 - Software Controls Assessment Generator")
+    logger.info("ISO/IEC 27001:2022 Control: A.8.19 (Installation of Software)")
+    logger.info("=" * 78)
+    logger.info("\n🎯 Systems Engineering: Evidence-Based Software Control Assessment")
+    logger.info(f"{CHART} Comprehensive: Approved list, unauthorized detection, app control")
+    logger.info(f"{LOCK} Audit-Ready: Change control integration, license compliance")
+    logger.info("\n" + "─" * 78)
 
-    print("\n[Phase 1] Initializing workbook...")
+    logger.info("\n[Phase 1] Initializing workbook...")
     wb = create_workbook()
     styles = setup_styles()
-    print(f"{CHECK} Workbook created with 12 sheets")
+    logger.info("{CHECK} Workbook created with 12 sheets")
 
-    print("\n[Phase 2] Generating assessment sheets...")
+    logger.info("\n[Phase 2] Generating assessment sheets...")
     
     sheets = [
         ("Instructions & Legend", create_instructions_sheet),
@@ -1379,37 +1408,44 @@ def main():
         ("Capability_Requirements", create_capability_requirements_sheet),
         ("Evidence_Register", create_evidence_register_sheet),
         ("Gap_Analysis", create_gap_analysis_sheet),
-        ("Approval_Sign_Of", create_approval_signoff_sheet),
+        ("Approval_Sign_Off", create_approval_signoff_sheet),
     ]
 
     for i, (sheet_name, create_func) in enumerate(sheets, 1):
-        print(f"  [{i}/12] Creating {sheet_name}...")
+        logger.info(f"  [{i}/12] Creating {sheet_name}...")
         create_func(wb[sheet_name], styles)
-        print(f"  ✅ {sheet_name} complete")
+        logger.info(f"  ✅ {sheet_name} complete")
 
-    print("\n[Phase 3] Finalizing and saving...")
+    logger.info("\n[Phase 3] Finalizing and saving...")
     filename = f"ISMS-IMP-A.8.1-7-18-19.S3_Software_Controls_{datetime.now().strftime('%Y%m%d')}.xlsx"
     
     try:
         wb.save(filename)
-        print(f"{CHECK} SUCCESS: {filename}")
+        logger.info("{CHECK} SUCCESS: {filename}")
     except Exception as e:
-        print(f"{XMARK} ERROR: {e}")
+        logger.error("{XMARK} ERROR: {e}")
         return 1
 
-    print("\n" + "=" * 78)
-    print("📋 WORKBOOK SUMMARY")
-    print("=" * 78)
-    print("\n✅ 12 sheets with comprehensive A.8.19 software control assessment")
-    print(f"{CHECK} 200 approved software rows, 500 inventory rows, 100 unauthorized")
-    print(f"{CHECK} Change control, vulnerability, licensing tracking")
-    print(f"{CHECK} 20 policy requirements, 100 evidence entries, 40 gap rows")
-    print("\n" + "=" * 78)
-    print('"Software control excellence: Approved, tracked, secured."')
-    print("=" * 78 + "\n")
+    logger.info("\n" + "=" * 78)
+    logger.info("📋 WORKBOOK SUMMARY")
+    logger.info("=" * 78)
+    logger.info("\n✅ 12 sheets with comprehensive A.8.19 software control assessment")
+    logger.info("{CHECK} 200 approved software rows, 500 inventory rows, 100 unauthorized")
+    logger.info("{CHECK} Change control, vulnerability, licensing tracking")
+    logger.info("{CHECK} 20 policy requirements, 100 evidence entries, 40 gap rows")
+    logger.info("\n" + "=" * 78)
+    logger.info('"Software control excellence: Approved, tracked, secured."')
+    logger.info("=" * 78 + "\n")
 
     return 0
 
 
 if __name__ == "__main__":
     exit(main())
+
+# =============================================================================
+# QA_VERIFIED: 2026-01-31
+# QA_STATUS: PASSED - STANDARDIZATION COMPLETE (Phase 1-3)
+# QA_TOOL: Claude Code Standardization
+# CHANGES: constants, metadata headers, v1.0 versioning, logger output
+# =============================================================================

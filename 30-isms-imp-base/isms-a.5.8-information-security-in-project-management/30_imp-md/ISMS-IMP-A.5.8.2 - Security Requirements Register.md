@@ -1,10 +1,10 @@
-# ISMS-IMP-A.5.8.2 - Security Requirements Register
-## Assessment Specification with User Completion Guide
+**ISMS-IMP-A.5.8.2 - Security Requirements Register**
+**Assessment Specification with User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.5.8: Information Security in Project Management
 
 ---
 
-## Document Control
+**Document Control**
 
 | Attribute | Value |
 |-----------|-------|
@@ -30,9 +30,9 @@
 
 ---
 
-## 1. Assessment Overview
+# Assessment Overview
 
-### 1.1 What This Assessment Measures
+## What This Assessment Measures
 
 This assessment provides a **structured security requirements register** for documenting, tracking, and verifying all security requirements throughout a project lifecycle.
 
@@ -45,6 +45,7 @@ This assessment provides a **structured security requirements register** for doc
 6. **Compliance & Regulatory** - GDPR, nDSG, PCI DSS, HIPAA, FINMA, audit trails, regulatory reporting
 
 **Assessment Output:** Excel workbook providing:
+
 - Complete requirements inventory (50-200+ requirements for complex projects)
 - Requirement-to-implementation-to-test traceability matrix
 - Implementation status tracking (Not Started → In Progress → Implemented → Verified)
@@ -52,80 +53,102 @@ This assessment provides a **structured security requirements register** for doc
 - Verification evidence registry
 - Compliance dashboard showing implementation percentage
 
-### 1.2 Why This Matters
+
+## Why This Matters
 
 **ISO 27001:2022 Control A.5.8 Requirement:**
 > *"Information security should be integrated into project management."*
 
 **ISO 27002:2022 Guidance:**
+
 - Security requirements should be addressed in early phases of project lifecycle
 - Requirements should be clearly defined, documented, and tracked
 - Implementation should be verified against requirements
 
+
 **Traceability is Critical For:**
+
 - **Audits:** Auditors require proof that security requirements were identified, implemented, and tested
 - **Testing:** QA teams need clear acceptance criteria to verify security controls work
 - **Incident Response:** If breach occurs, need to prove which requirements were/weren't met
 - **Compliance:** Regulators expect documented requirements-to-controls mapping
 - **Change Management:** When scope changes, security requirements must be updated
 
+
 **Regulatory Context:**
+
 - **GDPR Art. 25 (Data Protection by Design):** Requires documented privacy/security requirements
 - **GDPR Art. 32 (Security of Processing):** Requires appropriate technical measures (documented requirements)
 - **PCI DSS Req. 6.3:** Secure SDLC with documented security requirements
 - **HIPAA § 164.308(a)(8):** Security requirements analysis for systems handling PHI
 - **NIS2 / DORA:** ICT security requirements integrated into development and procurement
 
+
 **Business Impact:**
+
 - **Requirements Gaps:** Undocumented requirements = unimplemented controls = vulnerabilities
 - **Testing Failures:** Vague requirements = untestable = cannot verify compliance
 - **Scope Creep:** Security requirements discovered late = costly rework
 - **Audit Findings:** No traceability = audit non-conformities
 - **Regulatory Fines:** Incomplete requirements = regulatory violations
 
-### 1.3 Who Should Complete This Assessment
+
+## Who Should Complete This Assessment
 
 **Primary Responsibility:** Shared across multiple roles (requirements are collaborative)
 
 **Key Stakeholders:**
 
 1. **Business Analyst / Requirements Engineer**
+
    - Facilitates requirements elicitation
    - Documents functional requirements with security implications
    - Ensures business security needs captured (confidentiality, integrity, availability)
    - Maintains requirements register
 
+
 2. **Security Architect / Information Security Officer**
+
    - Defines technical security requirements
    - Translates risks and threats into specific requirements
    - Reviews requirements for completeness and accuracy
    - Approves security requirements
 
+
 3. **Technical Lead / Solution Architect**
+
    - Translates security requirements into design specifications
    - Identifies implementation approach for each requirement
    - Assesses feasibility and effort
    - Documents technical implementation details
 
+
 4. **Project Manager**
+
    - Ensures requirements register maintained throughout project
    - Tracks implementation status
    - Escalates requirements conflicts or gaps
    - Reports requirements compliance at gate reviews
 
+
 5. **QA / Test Lead**
+
    - Defines verification methods for each requirement
    - Creates test cases based on requirements
    - Executes security testing
    - Documents test results and links evidence
 
+
 **Support Roles:**
+
 - **Data Protection Officer:** For GDPR/privacy requirements
 - **Compliance Officer:** For regulatory requirements
 - **DevOps/Infrastructure:** For infrastructure security requirements
 - **Vendor Management:** For third-party security requirements
 
+
 **Required Skills:**
+
 - Requirements engineering fundamentals (clear, testable, traceable requirements)
 - Understanding of security concepts (CIA triad, OWASP Top 10, encryption, access control)
 - Familiarity with [Organization]'s:
@@ -134,13 +157,15 @@ This assessment provides a **structured security requirements register** for doc
   - Testing standards and procedures
 - Ability to write specific, verifiable requirements (not vague "must be secure")
 
-### 1.4 Time Estimate
+
+## Time Estimate
 
 **Total Time:** Varies significantly by project size and complexity
 
 **By Project Classification:**
 
 **High Risk Projects (e.g., new customer-facing app, payment processing system):**
+
 - Initial Requirements Identification: 8-16 hours (comprehensive, multiple workshops)
 - Requirements Documentation: 6-12 hours (detailed specifications, 100-200+ requirements)
 - Traceability Setup: 2-4 hours (linking to design, implementation, test)
@@ -148,7 +173,9 @@ This assessment provides a **structured security requirements register** for doc
 - Verification Evidence Linking: 2-4 hours (linking test results, screenshots, reports)
 - **Total Example:** 6-month High Risk project ≈ 40-80 hours total
 
+
 **Medium Risk Projects (e.g., internal system upgrade, standard web app):**
+
 - Initial Requirements Identification: 4-8 hours
 - Requirements Documentation: 3-6 hours (30-80 requirements)
 - Traceability Setup: 1-2 hours
@@ -156,7 +183,9 @@ This assessment provides a **structured security requirements register** for doc
 - Verification Evidence Linking: 1-2 hours
 - **Total Example:** 4-month Medium Risk project ≈ 15-30 hours total
 
+
 **Low Risk Projects (e.g., minor enhancements, internal tools):**
+
 - Initial Requirements Identification: 1-2 hours
 - Requirements Documentation: 1-2 hours (5-15 requirements)
 - Traceability Setup: 30 min
@@ -164,17 +193,21 @@ This assessment provides a **structured security requirements register** for doc
 - Verification Evidence Linking: 30-60 min
 - **Total Example:** 2-month Low Risk project ≈ 4-8 hours total
 
+
 **Pro Tips:**
+
 - **Use requirement libraries:** Don't start from scratch - reuse requirements from similar projects
 - **Workshops vs. interviews:** For complex projects, facilitated workshop (4 hours) > individual interviews (10+ hours)
 - **Automation:** Use tools to auto-link requirements to user stories (Jira), test cases (TestRail), code commits (GitHub)
 - **Incremental documentation:** For Agile projects, document requirements per sprint/release, not all upfront
 
-### 1.5 Connection to Policy
+
+## Connection to Policy
 
 This assessment implements **ISMS-POL-A.5.8, Section 2.4 (Security Requirements Identification)** which defines 6 requirement categories:
 
 **Section 2.4.1: Application Security Requirements (A.8.26)**
+
 - Secure coding standards (OWASP, CERT)
 - Input validation and output encoding
 - Authentication and authorization mechanisms
@@ -184,7 +217,9 @@ This assessment implements **ISMS-POL-A.5.8, Section 2.4 (Security Requirements 
 - API security (authentication, rate limiting, input validation)
 - Security testing requirements (SAST, DAST, penetration testing)
 
+
 **Section 2.4.2: Data Protection Requirements**
+
 - Data classification application (per [Organization]'s data classification scheme)
 - Encryption requirements (in transit per A.8.24, at rest for Confidential/Restricted)
 - Data retention and deletion (per A.8.10, A.8.11)
@@ -193,14 +228,18 @@ This assessment implements **ISMS-POL-A.5.8, Section 2.4 (Security Requirements 
 - Data subject rights implementation (access, rectification, erasure per GDPR)
 - Cross-border data transfer controls (if applicable)
 
+
 **Section 2.4.3: Access Control and Authentication Requirements**
+
 - Authentication mechanism (password, MFA, SSO per A.8.5)
 - Authorization model (RBAC, ABAC, least privilege per A.5.15)
 - Privileged access management (for administrative functions per A.8.2)
 - Account lifecycle (provisioning, deprovisioning per A.5.16)
 - Access logging and monitoring (per A.8.16)
 
+
 **Section 2.4.4: Infrastructure and Network Security Requirements**
+
 - Network segmentation (separate environments, DMZ, internal per A.8.20-22)
 - Firewall and access control list requirements
 - Secure configuration (per A.8.9)
@@ -209,7 +248,9 @@ This assessment implements **ISMS-POL-A.5.8, Section 2.4 (Security Requirements 
 - DLP requirements (for sensitive data egress per A.8.12)
 - Monitoring and logging (per A.8.16)
 
+
 **Section 2.4.5: Third-Party and Integration Security Requirements**
+
 - Vendor security assessment (per A.5.19-22)
 - Contractual security obligations (SLA, liability, data protection)
 - API security (authentication, authorization, rate limiting)
@@ -217,7 +258,9 @@ This assessment implements **ISMS-POL-A.5.8, Section 2.4 (Security Requirements 
 - Third-party access controls and monitoring
 - Service level agreements for security (incident response times, patching SLAs)
 
+
 **Section 2.4.6: Compliance and Regulatory Requirements**
+
 - Regulatory applicability assessment (per ISMS-POL-00 and A.5.31)
 - Specific regulatory controls (GDPR, PCI DSS, HIPAA, FINMA, etc.)
 - Audit trail and evidence retention
@@ -225,18 +268,20 @@ This assessment implements **ISMS-POL-A.5.8, Section 2.4 (Security Requirements 
 - Certification or attestation requirements (ISO 27001, SOC 2, etc.)
 - Privacy requirements (consent, privacy notices, data subject rights)
 
+
 **Policy Authority:** Chief Information Security Officer (CISO)  
 **Compliance Status:** Mandatory for Medium/High Risk projects; Recommended for Low Risk projects
 
 ---
 
-## 2. Prerequisites
+# Prerequisites
 
-### 2.1 Access Required
+## Access Required
 
 Before starting this assessment, ensure you have access to:
 
 **Project Context:**
+
 - [ ] Project charter and scope statement
 - [ ] Project classification from ISMS-IMP-A.5.8.1 (High/Medium/Low Risk)
 - [ ] Project risk register (security risks identified in Initiation phase)
@@ -244,7 +289,9 @@ Before starting this assessment, ensure you have access to:
 - [ ] System architecture diagrams (high-level design)
 - [ ] Data flow diagrams (what data moves where)
 
+
 **Security Policies and Standards:**
+
 - [ ] ISMS-POL-A.5.8 (Information Security in Project Management) - Section 2.4 for requirement categories
 - [ ] ISMS-POL-A.8.24 (Use of Cryptography) - if handling Confidential/Restricted data
 - [ ] ISMS-POL-A.5.15-16-18 (Identity & Access Management) - if user-facing systems
@@ -252,25 +299,31 @@ Before starting this assessment, ensure you have access to:
 - [ ] ISMS-POL-A.5.19-22 (Supplier Management) - if third-party involvement
 - [ ] ISMS-POL-00 (Regulatory Applicability Framework) - to determine applicable regulations
 
+
 **External Standards and Frameworks:**
+
 - [ ] OWASP Top 10 (for web application security requirements)
 - [ ] OWASP ASVS (Application Security Verification Standard) - comprehensive requirement library
 - [ ] CIS Benchmarks (for infrastructure security requirements)
 - [ ] NIST Cybersecurity Framework (if used by [Organization])
 - [ ] Industry-specific standards (PCI DSS for payment cards, HIPAA for healthcare, etc.)
 
+
 **Tools and Systems:**
+
 - [ ] Requirements management tool (Jira, Azure DevOps, Confluence, or this Excel workbook)
 - [ ] Test management tool (TestRail, qTest, or integrated in requirements tool)
 - [ ] Document repository for evidence (SharePoint, Google Drive, etc.)
 - [ ] Code repository (GitHub, GitLab, Bitbucket) - for linking requirements to code
 - [ ] Issue tracking system (for linking requirements to bugs/vulnerabilities)
 
-### 2.2 Knowledge Required
+
+## Knowledge Required
 
 **Essential Understanding:**
 
 **1. Requirements Engineering Fundamentals:**
+
 - **Good requirement characteristics (SMART):**
   - **Specific:** Clearly defined, unambiguous
   - **Measurable:** Can be tested/verified
@@ -279,6 +332,7 @@ Before starting this assessment, ensure you have access to:
   - **Testable:** Clear acceptance criteria for verification
 
 - **Example Good Requirement:**
+
   ```
   REQ-042: All user passwords must meet complexity requirements: 
   minimum 12 characters, including uppercase, lowercase, number, 
@@ -289,12 +343,14 @@ Before starting this assessment, ensure you have access to:
   ```
 
 - **Example Bad Requirement (too vague):**
+
   ```
   REQ-001: System must have good password security.
   ```
   Why bad: What is "good"? Not measurable, not testable.
 
 **2. Security Concepts:**
+
 - **CIA Triad:**
   - **Confidentiality:** Prevent unauthorized disclosure (encryption, access controls)
   - **Integrity:** Prevent unauthorized modification (digital signatures, checksums, access controls)
@@ -306,11 +362,14 @@ Before starting this assessment, ensure you have access to:
 
 - **Security by Design:** Build security in from start, not retrofit
 
+
 **3. Security Controls:**
+
 - **Preventive:** Stop attacks before they happen (firewall, encryption, authentication)
 - **Detective:** Identify attacks in progress or after fact (logging, monitoring, IDS)
 - **Corrective:** Recover from attacks (backups, incident response, patching)
 - **Compensating:** Alternative control when primary not feasible (extra monitoring if can't patch)
+
 
 **4. Common Security Requirements Patterns:**
 
@@ -345,42 +404,55 @@ Log protection: [logs encrypted, integrity-protected, access-restricted]
 Key regulations and their security requirements:
 
 **GDPR (if processing EU personal data):**
+
 - Art. 25: Privacy by design and default
 - Art. 32: Technical measures (encryption, pseudonymization, access control, resilience)
 - Art. 33: Breach notification (within 72 hours)
 - Art. 5: Data minimization, purpose limitation, retention limits
 
+
 **nDSG (Swiss data protection):**
+
 - Art. 8: Appropriate technical and organizational measures
 - Similar requirements to GDPR for Swiss data
 
+
 **PCI DSS v4.0 (if processing payment card data):**
+
 - Req. 3: Protect stored cardholder data (encryption)
 - Req. 4: Encrypt transmission of cardholder data (TLS 1.2+)
 - Req. 6: Secure systems and software (secure SDLC, vulnerability management)
 - Req. 8: Identify and authenticate access (MFA for administrative access)
 
+
 **HIPAA (if processing health information - US):**
+
 - § 164.312(a)(1): Access control (unique user ID, emergency access, encryption)
 - § 164.312(e)(1): Transmission security (encrypt ePHI in transit)
 
-### 2.3 Tools Needed
+
+## Tools Needed
 
 **Required Tools:**
 
 **1. This Requirements Register Workbook:**
+
 - Excel workbook generated from `generate_a58_2_requirements_register.py` script
-- 8-10 sheets: Instructions, Requirements Register, Category-specific sheets, Traceability Matrix, Dashboard, Evidence, Sign-Off
+- 13 sheets: Instructions, Requirements Register, Category-specific sheets (6), Traceability Matrix, Verification Checklist, Gap Analysis, Evidence Register, Dashboard, Sign-Off
 - Requires Microsoft Excel 2016+ or compatible
 
+
 **2. Requirements Documentation Format:**
+
 - If using this workbook: Excel-based requirements tracking
 - If using project management tool: Jira user stories with security acceptance criteria, Azure DevOps requirements, etc.
 - If using dedicated requirements tool: IBM DOORS, Jama Connect, etc.
 
+
 **Optional but Recommended Tools:**
 
 **3. Security Requirements Libraries:**
+
 - **OWASP ASVS (Application Security Verification Standard):** https://owasp.org/www-project-application-security-verification-standard/
   - Comprehensive security requirement library for web applications
   - 3 verification levels (1=Basic, 2=Standard, 3=Advanced)
@@ -397,22 +469,27 @@ Key regulations and their security requirements:
   - Organized by control family (Access Control, Audit, Crypto, etc.)
   - Can map requirements to NIST controls for compliance
 
+
 **4. Threat Modeling Output:**
+
 - If threat modeling conducted (High Risk projects): Threats identified → requirements to mitigate threats
 - STRIDE threat model → requirements for each threat category
 
+
 **5. Testing Tools (for verification):**
+
 - Test management system (TestRail, qTest, Zephyr)
 - Security testing tools output (SAST, DAST, vulnerability scanner reports)
 - Manual test evidence (screenshots, test execution logs)
 
+
 ---
 
-## 3. Requirements Register Workflow
+# Requirements Register Workflow
 
 This register is completed **progressively during Planning and Execution phases**, not as a one-time activity.
 
-### Complete Workflow Overview
+## Complete Workflow Overview
 
 ```
 Planning Phase:
@@ -427,7 +504,7 @@ Closure Phase:
 
 ---
 
-### Step 1: Identify Security Requirements (Planning Phase - 2-8 hours)
+## Step 1: Identify Security Requirements (Planning Phase - 2-8 hours)
 
 **When:** During Planning Phase of ISMS-IMP-A.5.8.1, after project classification and initial risk assessment
 
@@ -435,11 +512,12 @@ Closure Phase:
 
 **Process:**
 
-#### Method 1: Category-Based Elicitation (Structured Approach)
+### Method 1: Category-Based Elicitation (Structured Approach)
 
 For each of the 6 requirement categories, ask:
 
 **Category 1: Application Security (if software development)**
+
 - What secure coding standards will we follow? (OWASP, CERT, SANS)
 - How will we validate user inputs? (whitelist validation, parameterized queries)
 - What authentication mechanism? (password, MFA, SSO, OAuth, SAML)
@@ -451,7 +529,9 @@ For each of the 6 requirement categories, ask:
 - What API security controls? (API keys, OAuth, rate limiting, input validation)
 - What security testing? (SAST during development, DAST pre-deployment, pen test)
 
+
 **Category 2: Data Protection (if handling data)**
+
 - What data classification? (Public, Internal, Confidential, Restricted)
 - What data requires encryption at rest? (Confidential/Restricted per policy)
 - What data requires encryption in transit? (all data per policy, TLS 1.2+)
@@ -463,7 +543,9 @@ For each of the 6 requirement categories, ask:
 - Any cross-border data transfers? (adequacy decision, SCCs, BCRs for GDPR)
 - What data subject rights to implement? (access, rectification, erasure, portability)
 
+
 **Category 3: Access Control & Authentication (if user access)**
+
 - What authentication methods? (local accounts, AD, SSO, SAML, OAuth)
 - MFA required? (for which user types: all, privileged, remote, Confidential data access)
 - Password requirements? (complexity, length, expiration per policy)
@@ -474,7 +556,9 @@ For each of the 6 requirement categories, ask:
 - Access reviews? (quarterly reviews of user access, annual reviews of privileged access)
 - Access logging? (log all authentication and authorization events)
 
+
 **Category 4: Infrastructure Security (if infrastructure changes)**
+
 - Network segmentation? (production vs. dev/test, DMZ for internet-facing, internal zones)
 - Firewall requirements? (perimeter firewall, host-based firewall, rules documentation)
 - Secure configuration? (CIS benchmarks, vendor hardening guides, disable unnecessary services)
@@ -485,7 +569,9 @@ For each of the 6 requirement categories, ask:
 - Monitoring and logging? (SIEM integration, log retention, alerting)
 - Endpoint protection? (anti-malware, EDR, device encryption)
 
+
 **Category 5: Third-Party Security (if vendors/partners)**
+
 - Vendor security assessment? (questionnaire, certification review, audit)
 - Contractual security terms? (data protection, breach notification, audit rights)
 - API security? (authentication, authorization, rate limiting, encryption)
@@ -495,7 +581,9 @@ For each of the 6 requirement categories, ask:
 - Subcontractor restrictions? (vendor must get approval for subcontractors)
 - Data return/deletion? (upon contract termination, certified deletion)
 
+
 **Category 6: Compliance & Regulatory (if regulatory requirements)**
+
 - Which regulations apply? (per ISMS-POL-00: GDPR, nDSG, PCI DSS, HIPAA, FINMA, etc.)
 - GDPR requirements (if processing personal data):
   - Lawful basis for processing
@@ -514,11 +602,14 @@ For each of the 6 requirement categories, ask:
 - Records retention (per legal/regulatory requirements)
 - Regulatory reporting (incident notification, annual reporting)
 
-#### Method 2: Risk-Based Elicitation (Threat-Driven)
+
+### Method 2: Risk-Based Elicitation (Threat-Driven)
 
 For each risk in project risk register (from ISMS-IMP-A.5.8.1 Initiation):
+
 - What security requirement(s) would mitigate this risk?
 - Document requirement, reference risk ID
+
 
 Example:
 ```
@@ -527,10 +618,12 @@ Risk R-003: "Customer personal data could be intercepted during transmission"
    with cipher suites per ISMS-POL-A.8.24, Section 6.2.1"
 ```
 
-#### Method 3: Threat Model-Based Elicitation (for High Risk projects)
+### Method 3: Threat Model-Based Elicitation (for High Risk projects)
 
 If threat modeling conducted:
+
 - For each identified threat → security requirement to counter threat
+
 
 Example from STRIDE:
 ```
@@ -540,23 +633,28 @@ Threat Category: Spoofing
    with 30-minute idle timeout and 8-hour absolute timeout"
 ```
 
-#### Method 4: Policy-Based Elicitation (Policy Compliance)
+### Method 4: Policy-Based Elicitation (Policy Compliance)
 
 Review applicable security policies, extract mandatory requirements:
 
 From ISMS-POL-A.8.24 (Cryptography):
+
 - Section 6.2.1: "TLS 1.2 minimum, TLS 1.3 preferred for all data transmission"
+
   → REQ-018: Implement TLS 1.3 for all HTTPS endpoints
 
 From ISMS-POL-A.5.18 (Access Management):
+
 - Section 4.2: "MFA required for all administrative access"
+
   → REQ-044: Implement MFA for all accounts with administrative privileges
 
-#### Method 5: Standards-Based Elicitation (Industry Best Practices)
+### Method 5: Standards-Based Elicitation (Industry Best Practices)
 
 Use security standards as requirement sources:
 
 **OWASP Top 10 2021:**
+
 - A01: Broken Access Control → Requirements for authorization, access controls
 - A02: Cryptographic Failures → Requirements for encryption
 - A03: Injection → Requirements for input validation, parameterized queries
@@ -568,14 +666,17 @@ Use security standards as requirement sources:
 - A09: Security Logging Failures → Requirements for logging, monitoring
 - A10: Server-Side Request Forgery → Requirements for input validation, network segmentation
 
+
 **OWASP ASVS (select relevant verification level):**
+
 - Level 1 (Basic): Minimum requirements, automated testing
 - Level 2 (Standard): Most applications (recommended baseline)
 - Level 3 (Advanced): High-value applications, critical systems
 
+
 Copy relevant ASVS requirements (e.g., from V2 Authentication, V3 Session Management, V8 Data Protection)
 
-#### Requirement Quantity Guidance
+### Requirement Quantity Guidance
 
 **Minimum Requirements by Project Classification:**
 
@@ -589,7 +690,7 @@ Copy relevant ASVS requirements (e.g., from V2 Authentication, V3 Session Manage
 
 ---
 
-### Step 2: Document Requirements in Register (Planning Phase - 3-6 hours)
+## Step 2: Document Requirements in Register (Planning Phase - 3-6 hours)
 
 **When:** After requirements identified, before Execution phase begins
 
@@ -665,13 +766,14 @@ REQ-010: "Follow security best practices."
   - Implement if time/budget permits
   - Examples: Advanced threat detection, honeypots, additional monitoring
 
+
 **Typical Distribution:** 60% Must Have, 30% Should Have, 10% Nice to Have
 
 **Deliverable:** Completed Requirements Register (Sheet 2) with all requirements documented in standard format
 
 ---
 
-### Step 3: Prioritize Requirements (Planning Phase - 1-2 hours)
+## Step 3: Prioritize Requirements (Planning Phase - 1-2 hours)
 
 **When:** After initial documentation, before implementation begins
 
@@ -680,29 +782,37 @@ REQ-010: "Follow security best practices."
 **Activities:**
 
 **3.1 Review Priority Assignments**
+
 - Ensure all Must Have requirements are truly mandatory (policy/regulation/High risk)
 - Challenge inflated priorities (everything can't be Must Have)
 - Confirm Should Have vs. Nice to Have distinction
 
+
 **3.2 Sequence Implementation**
+
 - Must Have requirements implemented first
 - Critical dependencies identified (Requirement B depends on Requirement A)
 - Foundational requirements early (authentication before authorization, encryption before data storage)
 
+
 **3.3 Document Trade-offs**
+
 - If Nice to Have requirements de-scoped: Document justification
 - If Should Have delayed: Document residual risk and mitigation plan
 
+
 **3.4 Approval**
+
 - Business Owner approves priority assignments
 - InfoSec Officer reviews and approves Must Have vs. Should Have split
 - Project Manager confirms implementation sequence feasible
+
 
 **Deliverable:** Prioritized requirements with implementation sequence
 
 ---
 
-### Step 4: Define Verification Methods (Planning Phase - 1-3 hours)
+## Step 4: Define Verification Methods (Planning Phase - 1-3 hours)
 
 **When:** During test planning, before Execution phase
 
@@ -726,28 +836,34 @@ REQ-010: "Follow security best practices."
 | **Inspection** | Physical/visual verification | Encryption enabled, logs generated | Inspect database settings, check log files |
 
 **Multiple Verification Methods:**
+
 - Some requirements need multiple verification methods
 - Example: "Data encrypted at rest" verified by:
+
   1. Configuration Review (encryption enabled in database config)
   2. Inspection (query raw data files, confirm encrypted)
   3. Compliance Scan (automated check of encryption status)
 
 **Link to Test Plan:**
+
 - Verification methods must align with Security Test Plan from ISMS-IMP-A.5.8.1 Planning Phase
 - If test plan says "SAST during development", requirements show "SAST" verification method
 - If test plan says "Penetration test pre-deployment", requirements show "Pen Test" for applicable requirements
 
+
 **Acceptance Criteria Refinement:**
+
 - For each verification method, refine acceptance criteria to be TESTABLE
 - Functional Test: "Given [precondition], When [action], Then [expected result]"
 - SAST: "Zero High/Critical findings in security-sensitive code modules"
 - Penetration Test: "No High/Critical vulnerabilities, Maximum 3 Medium vulnerabilities"
 
+
 **Deliverable:** All requirements have defined verification method(s) and testable acceptance criteria
 
 ---
 
-### Step 5: Track Implementation Status (Execution Phase - Ongoing)
+## Step 5: Track Implementation Status (Execution Phase - Ongoing)
 
 **When:** Throughout Execution phase, updated continuously
 
@@ -756,6 +872,7 @@ REQ-010: "Follow security best practices."
 **Process:**
 
 **5.1 Regular Status Updates (Weekly or Sprint-Based)**
+
 - Project Manager or Technical Lead reviews Requirements Register
 - Update Implementation Status for each requirement:
   - **Not Started:** No work begun
@@ -763,34 +880,43 @@ REQ-010: "Follow security best practices."
   - **Implemented:** Code written, configuration applied, control in place
   - **Verified:** Tested and passed verification
 
+
 **5.2 Status Transition Rules:**
+
 - Not Started → In Progress: Work assigned and begun
 - In Progress → Implemented: Developer/engineer confirms requirement met in code/config
 - Implemented → Verified: QA/Security confirms requirement passes testing
 
+
 **5.3 Blockers and Issues:**
+
 - If requirement cannot be implemented as written: Document issue, propose alternative
 - If requirement implementation delayed: Update Target Date, escalate if blocking go-live
 - If requirement deemed infeasible: Request exception (see Step 6.4)
 
+
 **5.4 Compliance Tracking:**
+
 - Track implementation percentage: (Implemented + Verified) / Total Requirements
 - Must Have requirements: Target 100% before deployment
 - Should Have requirements: Target ≥80% before deployment
 - Nice to Have: Implement as time permits
 
+
 **5.5 Reporting:**
+
 - Weekly status report: X% requirements implemented, Y% verified
 - Red/Amber/Green status:
   - 🟢 Green: ≥90% Must Have implemented
   - 🟡 Amber: 70-89% Must Have implemented
   - 🔴 Red: <70% Must Have implemented (escalate to Project Sponsor)
 
+
 **Deliverable:** Up-to-date Requirements Register with current implementation status
 
 ---
 
-### Step 6: Conduct Verification and Link Evidence (Execution Phase - During Testing)
+## Step 6: Conduct Verification and Link Evidence (Execution Phase - During Testing)
 
 **When:** During security testing phase (usually pre-deployment)
 
@@ -801,54 +927,71 @@ REQ-010: "Follow security best practices."
 **6.1 Execute Verification (per defined method)**
 
 **For Functional Tests:**
+
 - Execute test cases per acceptance criteria
 - Document test results: Pass / Fail
 - If Fail: Log defect, track remediation, retest
 
+
 **For SAST:**
+
 - Run static code analysis tool
 - Review findings, triage false positives
 - Confirm security requirements covered by SAST rules
 - Link SAST report to relevant requirements
 
+
 **For DAST:**
+
 - Run dynamic application scanner
 - Review identified vulnerabilities
 - Map vulnerabilities to requirements (vulnerability = requirement failure)
 - Link DAST report to relevant requirements
 
+
 **For Penetration Test:**
+
 - Engage penetration tester (internal or external)
 - Provide scope: Requirements to verify
 - Review penetration test report
 - Map findings to requirements
 - Link pen test report to relevant requirements
 
+
 **For Configuration Review:**
+
 - Review configuration files, screenshots, or exported settings
 - Compare against requirement specification
 - Document configuration state (screenshot, config file excerpt)
 - Link configuration evidence to requirement
 
+
 **6.2 Update Test Status:**
 
 For each requirement after verification:
+
 - **Pass:** Requirement met, control effective
 - **Fail:** Requirement not met, vulnerability identified
 - **N/A:** Verification not applicable (requirement removed or changed)
 
+Also update **Verification Checklist (Sheet 10)** with each test execution: Document verification method, test status, and findings.
+
 **6.3 Link Evidence:**
 
 In Requirements Register, Evidence Link column:
+
 - Link to test report (PDF, HTML report from testing tool)
 - Link to screenshot (configuration settings, test execution)
 - Link to scan result (vulnerability scan report, SAST findings)
 - Link to document (architecture document, procedure document)
 
+
 **Evidence Storage:**
+
 - Create folder structure: `/project/security/evidence/requirements/`
 - Subfolders by category or requirement ID
 - Naming convention: `REQ-042_Password_Complexity_Test_Report.pdf`
+
 
 **6.4 Handle Failed Requirements:**
 
@@ -858,19 +1001,23 @@ If requirement fails verification:
 3. **Set** Target Date for fix
 4. **Retest** after remediation
 5. **Update** Test Status after retest (Pass or Fail again)
+6. **Document in Gap Analysis (Sheet 11)** with remediation action and owner
 
 **If requirement cannot be met:**
+
 - **Document justification** (technical limitation, cost prohibitive, conflicts with another requirement)
 - **Propose compensating control** (alternative security measure)
 - **Request exception** from InfoSec Officer or CISO
 - **Document residual risk** if exception approved
 - **Track in risk register** as accepted risk
+- **Record in Gap Analysis (Sheet 11)** with impact and remediation plan
+
 
 **Deliverable:** All requirements have Test Status (Pass/Fail/N/A) and linked evidence
 
 ---
 
-### Step 7: Final Compliance Verification (Closure Phase - 1-2 hours)
+## Step 7: Final Compliance Verification (Closure Phase - 1-2 hours)
 
 **When:** Before project closure, as part of ISMS-IMP-A.5.8.1 Closure Phase
 
@@ -879,29 +1026,37 @@ If requirement fails verification:
 **Process:**
 
 **7.1 Compliance Review:**
+
 - Filter Requirements Register: Show only Must Have requirements
 - Check: All Must Have requirements show Test Status = Pass or approved exception
 - If any Must Have = Fail with no exception: BLOCKER for project closure
 
+
 **7.2 Residual Requirements:**
+
 - Should Have requirements not implemented: Document as planned future enhancement
 - Nice to Have requirements not implemented: Document, may be deferred indefinitely
 
+
 **7.3 Approval:**
+
 - Project Manager confirms requirements compliance
 - InfoSec Officer reviews and approves
 - Business Owner accepts residual risks (unfulfilled Should Have / Nice to Have)
 
+
 **7.4 Handover to Operations:**
+
 - Provide Requirements Register to operations team
 - Highlight ongoing requirements (monitoring, logging, patching, access reviews)
 - Ensure operations understands requirements for maintaining security posture
+
 
 **Deliverable:** Approved requirements register with final compliance status
 
 ---
 
-### Step 8: Lessons Learned (Closure Phase - 30-60 min)
+## Step 8: Lessons Learned (Closure Phase - 30-60 min)
 
 **When:** During project closure lessons learned session
 
@@ -910,49 +1065,61 @@ If requirement fails verification:
 **Questions to Answer:**
 
 **What Worked Well:**
+
 - Which requirements were clear and easy to implement/test?
 - Which requirement sources were most useful (OWASP ASVS, policy, threat model)?
 - What verification methods were most effective?
 
+
 **What Didn't Work:**
+
 - Which requirements were vague or difficult to implement?
 - Were there requirements discovered too late (should have been identified earlier)?
 - Were there requirements that proved infeasible or too costly?
 
+
 **Improvements for Next Project:**
+
 - Update requirement templates based on lessons
 - Add new requirements to organizational requirement library
 - Refine verification methods based on testing experience
+
 
 **Deliverable:** Lessons learned document with recommendations for requirements process improvement
 
 ---
 
-## 4. Requirement Categories - Detailed Guidance
+# Requirement Categories - Detailed Guidance
 
 This section provides detailed guidance for each of the 6 requirement categories, including:
+
 - When category applies
 - Common requirements (examples to customize)
 - Requirement sources (standards, policies)
 - Verification approaches
 
+
 ---
 
-### Category 1: Application Security Requirements
+## Category 1: Application Security Requirements
 
 **When This Category Applies:**
+
 - Software development projects (new applications, major enhancements)
 - Web applications, mobile apps, APIs, microservices
 - Any project creating or modifying application code
 
+
 **Applies To:**
+
 - Software development teams
 - DevOps teams
 - Application architects
 
+
 **Common Requirements (Examples - Customize for Your Project):**
 
-#### Subcategory 1.1: Input Validation
+### Subcategory 1.1: Input Validation
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -960,7 +1127,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "All SQL queries must use parameterized statements (prepared statements) or ORM frameworks. Direct SQL string concatenation is prohibited." | OWASP ASVS V5.3.4 | SAST (check for string concatenation in SQL) |
 | "File uploads must validate file type, size (<10MB), and scan for malware before processing." | OWASP ASVS V12.4.1 | Functional Test + Code Review |
 
-#### Subcategory 1.2: Authentication
+### Subcategory 1.2: Authentication
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -969,7 +1136,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Password complexity: minimum 12 characters, uppercase+lowercase+number+special character. Password reuse: Cannot reuse last 5 passwords." | ISMS-POL-A.5.18 Section 4.1 | Functional Test |
 | "Failed login threshold: 5 attempts within 15 minutes → account lockout for 30 minutes. Failed login events logged." | OWASP ASVS V2.2.1 | Functional Test + Log Review |
 
-#### Subcategory 1.3: Session Management
+### Subcategory 1.3: Session Management
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -978,7 +1145,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Session tokens must be cryptographically random (minimum 128-bit entropy). Predictable session IDs prohibited." | OWASP ASVS V3.2.1 | Code Review + Pen Test |
 | "Logout must invalidate session server-side (not just client-side cookie deletion)." | OWASP ASVS V3.3.1 | Functional Test |
 
-#### Subcategory 1.4: Authorization
+### Subcategory 1.4: Authorization
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -987,7 +1154,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Authorization must be enforced on server-side. Client-side authorization checks are insufficient." | OWASP Top 10 A01:2021 (Broken Access Control) | Code Review |
 | "Direct object references (IDs in URLs) must verify user has permission to access object before retrieval." | OWASP ASVS V4.1.2 | Functional Test + Pen Test |
 
-#### Subcategory 1.5: Cryptography
+### Subcategory 1.5: Cryptography
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -996,7 +1163,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Sensitive data (passwords, API keys, secrets) must never be hard-coded in source code. Use environment variables or secrets management (Vault, AWS Secrets Manager)." | OWASP ASVS V6.2.1 | SAST (secrets scanning) |
 | "Password storage must use Argon2id, bcrypt, or PBKDF2 with salt (minimum 10,000 iterations). Plain text or MD5/SHA1 hashing prohibited." | OWASP ASVS V2.4.1 | Code Review |
 
-#### Subcategory 1.6: Error Handling and Logging
+### Subcategory 1.6: Error Handling and Logging
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1006,7 +1173,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Logs must be protected: stored securely, integrity-protected (append-only or signed), access restricted to authorized personnel." | ISMS-POL-A.8.16 Section 4.2 | Config Review |
 | "Logs retained: 90 days online, 365 days archived for Confidential data access logs." | ISMS-POL-A.8.10 Section 5.3 | Config Review |
 
-#### Subcategory 1.7: API Security
+### Subcategory 1.7: API Security
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1015,7 +1182,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "API responses must not expose sensitive data (user tokens, internal IDs, full error messages)." | OWASP ASVS V13.1.4 | API Test |
 | "API input validation same standards as web UI: whitelist validation, parameterized queries, size limits." | OWASP API Security Top 10 API8:2019 | SAST + API Test |
 
-#### Subcategory 1.8: Security Testing
+### Subcategory 1.8: Security Testing
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1025,26 +1192,32 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Penetration test conducted by qualified security professional before production deployment of new applications or major releases." | ISMS-POL-A.5.8 Section 2.3.3 | Pen Test Report |
 
 **Total Example Requirements for Application Security:**
+
 - Low Risk Web App: 10-15 requirements (auth, input validation, HTTPS, logging)
 - Medium Risk Web App: 20-35 requirements (above + session mgmt, authorization, API security, SAST/DAST)
 - High Risk Web App: 40-60 requirements (comprehensive OWASP ASVS Level 2 coverage)
 
+
 ---
 
-### Category 2: Data Protection Requirements
+## Category 2: Data Protection Requirements
 
 **When This Category Applies:**
+
 - Projects processing, storing, or transmitting data (nearly all projects)
 - Especially: Projects handling Confidential or Restricted data
 - Projects processing personal data (GDPR/nDSG applicability)
 
+
 **Applies To:**
+
 - All project types (software, infrastructure, business process)
 - Data architects, DBAs, developers, system administrators
 
+
 **Common Requirements (Examples):**
 
-#### Subcategory 2.1: Data Classification
+### Subcategory 2.1: Data Classification
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1053,7 +1226,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Restricted data: Trade secrets, health information, biometric data, payment card data (PCI)" | [Organization] Data Classification | Document Review |
 | "Confidential data: Personal data under GDPR/nDSG, financial records, customer data, employee data" | [Organization] Data Classification | Document Review |
 
-#### Subcategory 2.2: Encryption at Rest
+### Subcategory 2.2: Encryption at Rest
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1063,7 +1236,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Laptop/mobile device encryption: Full-disk encryption (BitLocker, FileVault, LUKS) for devices accessing Confidential data." | ISMS-POL-A.8.24 Section 6.3.4 | Device Config Review |
 | "Encryption keys stored separately from encrypted data. Use KMS (AWS KMS, Azure Key Vault, HashiCorp Vault)." | ISMS-POL-A.8.24 Section 7.3 | Architecture Review |
 
-#### Subcategory 2.3: Encryption in Transit
+### Subcategory 2.3: Encryption in Transit
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1072,7 +1245,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Email containing Confidential data must use S/MIME or PGP/GPG encryption." | ISMS-POL-A.8.24 Section 6.2.5 | Email Test |
 | "File transfers must use SFTP, FTPS, or HTTPS. Unencrypted FTP/HTTP prohibited for Confidential data." | ISMS-POL-A.8.24 Section 6.2.4 | Protocol Test |
 
-#### Subcategory 2.4: Data Retention and Deletion
+### Subcategory 2.4: Data Retention and Deletion
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1081,7 +1254,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Backups: Backup retention aligned with data retention policy. Backups deleted when source data reaches retention limit." | ISMS-POL-A.8.13 Section 4.3 | Backup Config Review |
 | "Test/dev data: Production Confidential data must NOT be used in test/dev without anonymization or masking per ISMS-POL-A.8.11." | ISMS-POL-A.8.11 Section 3.2 | Test Data Review |
 
-#### Subcategory 2.5: Data Minimization and Purpose Limitation (GDPR)
+### Subcategory 2.5: Data Minimization and Purpose Limitation (GDPR)
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1089,7 +1262,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Purpose limitation: Personal data used only for specified, explicit, legitimate purposes. No secondary use without new consent/legal basis." | GDPR Art. 5(1)(b) | Process Review |
 | "Purpose documented: Privacy notice clearly states what data collected, why, how used, how long retained." | GDPR Art. 13 | Document Review (privacy notice) |
 
-#### Subcategory 2.6: Data Subject Rights (GDPR)
+### Subcategory 2.6: Data Subject Rights (GDPR)
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1098,7 +1271,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Right to erasure: Ability to delete personal data when processing no longer necessary, within 30 days (unless legal obligation to retain)." | GDPR Art. 17 | Functional Test |
 | "Right to data portability: Ability to export personal data in structured, machine-readable format (JSON, CSV)." | GDPR Art. 20 | Functional Test |
 
-#### Subcategory 2.7: Backup and Recovery
+### Subcategory 2.7: Backup and Recovery
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1108,9 +1281,11 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Recovery Time Objective (RTO): 4 hours. Recovery Point Objective (RPO): 24 hours (for standard systems)." | ISMS-POL-A.8.13 Section 5.1 | DR Test Report |
 
 **Total Example Requirements for Data Protection:**
+
 - Low Risk (Public/Internal data only): 3-5 requirements (basic classification, retention)
 - Medium Risk (Confidential data): 8-15 requirements (encryption, retention, deletion, backups)
 - High Risk (Restricted data, GDPR personal data): 15-30 requirements (comprehensive encryption, GDPR rights, DPIAs)
+
 
 ---
 
@@ -1122,23 +1297,27 @@ This section provides detailed guidance for each of the 6 requirement categories
 
 ---
 
-### Category 3: Access Control & Authentication Requirements
+## Category 3: Access Control & Authentication Requirements
 
 **When This Category Applies:**
+
 - Projects with user access (authentication required)
 - Systems processing Confidential or Restricted data
 - Administrative interfaces requiring privileged access
 - Any system where identity and access management is critical
 
+
 **Applies To:**
+
 - All user-facing applications (web, mobile, desktop)
 - Internal systems with user access
 - APIs requiring authentication
 - Administrative portals and tools
 
+
 **Common Requirements (Examples):**
 
-#### Subcategory 3.1: Authentication Mechanisms
+### Subcategory 3.1: Authentication Mechanisms
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1149,7 +1328,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Password reuse prevention: Cannot reuse last 5 passwords." | ISMS-POL-A.5.18 Section 4.1 | Functional Test (attempt reuse = blocked) |
 | "Password expiration: Privileged accounts 90 days, standard users 365 days (or no expiration if MFA enabled)." | ISMS-POL-A.5.18 Section 4.1 | Policy Config Review |
 
-#### Subcategory 3.2: Session Management
+### Subcategory 3.2: Session Management
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1161,7 +1340,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Logout must invalidate session server-side (not just delete client-side cookie). Server session destroyed." | OWASP ASVS V3.3.1 | Functional Test (logout, reuse cookie = rejected) |
 | "Concurrent session control: Limit to [X] concurrent sessions per user account. Exceeding limit terminates oldest session." | ISMS-POL-A.5.15 Section 3.5 | Functional Test (open X+1 sessions) |
 
-#### Subcategory 3.3: Authorization and Access Control
+### Subcategory 3.3: Authorization and Access Control
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1172,7 +1351,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Separation of duties: No single user account has both development and production deployment permissions. No single admin has all administrative privileges." | ISMS-POL-A.5.15 Section 4.3 | Access Matrix Review |
 | "Privileged access logging: All administrative actions logged (who, what, when, outcome). Logs protected from modification by admins." | ISMS-POL-A.8.16 Section 3.2 | Log Review + Config Review (log integrity) |
 
-#### Subcategory 3.4: Privileged Access Management (PAM)
+### Subcategory 3.4: Privileged Access Management (PAM)
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1183,7 +1362,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Privilege elevation: Standard users can request temporary elevated privileges (sudo, RunAs) with approval workflow and time limit (e.g., 4 hours)." | ISMS-POL-A.5.15 Section 5.5 | Functional Test (request elevation, auto-revoke after timeout) |
 | "Service accounts: Dedicated service accounts for application-to-application communication, not reused across applications, credentials rotated every 90 days." | ISMS-POL-A.5.15 Section 5.6 | Account Review + Credential Rotation Log |
 
-#### Subcategory 3.5: Account Lifecycle Management
+### Subcategory 3.5: Account Lifecycle Management
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1193,7 +1372,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Access recertification: Managers review user access quarterly, confirm still appropriate, revoke unnecessary access. HR reviews privileged access quarterly." | ISMS-POL-A.5.16 Section 3.4 | Access Review Reports (last 4 quarters) |
 | "Guest/contractor accounts: Limited duration (max 90 days), auto-expire, sponsor notified 7 days before expiration, extension requires approval." | ISMS-POL-A.5.16 Section 3.5 | Account Review (list guests, verify expiration) |
 
-#### Subcategory 3.6: Access Logging and Monitoring
+### Subcategory 3.6: Access Logging and Monitoring
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1204,28 +1383,34 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Anomalous access alerting: Login from unusual location (geographically distant from last login), unusual time (3am when user typically works 9-5), unusual device triggers alert." | ISMS-POL-A.8.16 Section 4.3 | SIEM Config Review (if implemented) |
 
 **Total Example Requirements for Access Control:**
+
 - Low Risk (Internal system, basic auth): 5-10 requirements (SSO, password policy, session timeout, logging)
 - Medium Risk (Confidential data, external users): 15-25 requirements (above + MFA, RBAC, access reviews, monitoring)
 - High Risk (Restricted data, privileged access): 25-40 requirements (comprehensive PAM, session recording, advanced monitoring)
 
+
 ---
 
-### Category 4: Infrastructure Security Requirements
+## Category 4: Infrastructure Security Requirements
 
 **When This Category Applies:**
+
 - Projects deploying new infrastructure (servers, networks, cloud resources)
 - Infrastructure changes (network redesign, cloud migration, datacenter changes)
 - Any project where infrastructure security controls are implemented
 
+
 **Applies To:**
+
 - Infrastructure teams (network, server, cloud)
 - System administrators
 - DevOps/SRE teams
 - Cloud architects
 
+
 **Common Requirements (Examples):**
 
-#### Subcategory 4.1: Network Segmentation and Isolation
+### Subcategory 4.1: Network Segmentation and Isolation
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1235,7 +1420,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Jump host/bastion host required for administrative access to production servers. No direct SSH/RDP from admin workstations to production." | ISMS-POL-A.8.20 Section 3.4 | Access Flow Diagram + Connectivity Test |
 | "Cloud network isolation: VPCs/VNets segregated by environment (prod/test/dev), security groups restrict traffic to minimum necessary." | ISMS-POL-A.8.20 Section 3.5 (Cloud) | Cloud Config Review (AWS Security Groups, Azure NSGs) |
 
-#### Subcategory 4.2: Firewall and Access Control Lists (ACLs)
+### Subcategory 4.2: Firewall and Access Control Lists (ACLs)
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1246,7 +1431,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Stateful inspection firewall: Track connection state, block unsolicited inbound connections, allow established/related outbound." | ISMS-POL-A.8.21 Section 3.1 | Firewall Config Review |
 | "Web Application Firewall (WAF): Deploy WAF for internet-facing web applications, protect against OWASP Top 10 (SQL injection, XSS, etc.)." | ISMS-POL-A.8.21 Section 4.2 | WAF Config Review + Test (attempt SQL injection, verify blocked) |
 
-#### Subcategory 4.3: Secure Configuration and Hardening
+### Subcategory 4.3: Secure Configuration and Hardening
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1257,7 +1442,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Minimum TLS version: TLS 1.2 minimum for all encrypted communications (web, email, file transfer). TLS 1.0/1.1 disabled." | ISMS-POL-A.8.24 Section 6.2.1 | SSL/TLS Scan (testssl.sh, SSL Labs) |
 | "Secure boot and firmware protection: UEFI Secure Boot enabled, firmware passwords set, TPM (Trusted Platform Module) enabled if available." | ISMS-POL-A.8.9 Section 3.4 | BIOS/UEFI Config Review |
 
-#### Subcategory 4.4: Patch Management and Vulnerability Management
+### Subcategory 4.4: Patch Management and Vulnerability Management
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1268,7 +1453,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Vulnerability remediation SLA: Critical vulnerabilities remediated within 30 days, High within 60 days, Medium within 90 days." | ISMS-POL-A.8.8 Section 4.2 | Vulnerability Remediation Tracking |
 | "End-of-life (EOL) software: No unsupported/EOL operating systems or applications in production. Migrate off EOL software within 90 days of vendor end-of-support." | ISMS-POL-A.8.8 Section 5.1 | Software Inventory Review |
 
-#### Subcategory 4.5: Web Filtering and Data Loss Prevention
+### Subcategory 4.5: Web Filtering and Data Loss Prevention
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1278,7 +1463,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "DLP policy enforcement: Block transmission of sensitive data patterns (credit card numbers, social security numbers, trade secrets) outside organization." | ISMS-POL-A.8.12 Section 3.2 | DLP Test (attempt file upload with SSN pattern) |
 | "Removable media control: Restrict USB storage devices to authorized users/devices, block unauthorized USB, encrypt data on approved USB." | ISMS-POL-A.8.12 Section 4.1 | USB Control Policy + Endpoint Test |
 
-#### Subcategory 4.6: Monitoring, Logging, and Alerting
+### Subcategory 4.6: Monitoring, Logging, and Alerting
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1289,7 +1474,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "SIEM correlation rules: Detect attack patterns (brute force: ≥5 failed logins in 15 min, port scanning: ≥100 ports in 60 sec from same IP)." | ISMS-POL-A.8.16 Section 4.4 | SIEM Correlation Rules Review |
 | "Intrusion Detection/Prevention System (IDS/IPS): Deploy network-based IDS/IPS to detect malicious traffic patterns, block known attack signatures." | ISMS-POL-A.8.22 Section 3.1 | IDS/IPS Config Review + Detection Test |
 
-#### Subcategory 4.7: Endpoint Protection and Device Security
+### Subcategory 4.7: Endpoint Protection and Device Security
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1300,30 +1485,36 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Removable media encryption: Data on USB drives, external HDDs encrypted using approved encryption tools." | ISMS-POL-A.8.24 Section 6.3.4 | Policy + User Guidance Document |
 
 **Total Example Requirements for Infrastructure Security:**
+
 - Low Risk (Standard infrastructure, Internal only): 8-15 requirements (basic firewall, patching, logging)
 - Medium Risk (Cloud infrastructure, External exposure): 20-35 requirements (hardening, vulnerability management, web filtering, monitoring)
 - High Risk (Critical infrastructure, Internet-facing, High data sensitivity): 35-50 requirements (comprehensive segmentation, WAF, IDS/IPS, DLP, advanced monitoring)
 
+
 ---
 
-### Category 5: Third-Party Security Requirements
+## Category 5: Third-Party Security Requirements
 
 **When This Category Applies:**
+
 - Projects involving third-party vendors, contractors, SaaS providers
 - Cloud service usage (AWS, Azure, GCP, SaaS applications)
 - Outsourced development or managed services
 - Integration with partner systems
 - Any external party accessing or processing organizational data
 
+
 **Applies To:**
+
 - Procurement teams
 - Vendor management
 - Integration developers (API, EDI, file exchange)
 - Cloud architects
 
+
 **Common Requirements (Examples):**
 
-#### Subcategory 5.1: Vendor Security Assessment
+### Subcategory 5.1: Vendor Security Assessment
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1333,7 +1524,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "High-risk vendor on-site audit: For vendors processing Restricted data or providing critical services, conduct on-site security audit every 2 years." | ISMS-POL-A.5.19 Section 3.4 | Audit Schedule + Audit Reports |
 | "Vendor risk scoring: Assign vendor risk level (Critical/High/Medium/Low) based on: data sensitivity, service criticality, regulatory scope, vendor maturity." | ISMS-POL-A.5.19 Section 4.1 | Vendor Risk Register |
 
-#### Subcategory 5.2: Contractual Security Obligations
+### Subcategory 5.2: Contractual Security Obligations
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1345,7 +1536,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Data return/deletion upon termination: Within 30 days of contract termination, vendor must return all organizational data or provide certified deletion attestation." | ISMS-POL-A.5.20 Section 3.6 | Contract Review (termination data handling clause) |
 | "Security SLAs: Patching within 30 days of critical vulnerability disclosure, incident response time 4 hours, 99.9% uptime for critical services." | ISMS-POL-A.5.20 Section 3.7 | Contract Review (SLA definitions) |
 
-#### Subcategory 5.3: API and Integration Security
+### Subcategory 5.3: API and Integration Security
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1357,7 +1548,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "API error handling: API errors do not expose sensitive information (stack traces, database details). Generic error messages for clients, detailed logging server-side." | OWASP API Security Top 10 | API Error Response Review |
 | "API monitoring and logging: Log all API requests (timestamp, API key, endpoint, response code, IP). Alert on anomalies (unusual volume, error spikes)." | ISMS-POL-A.8.16 Section 3.1 | API Gateway Logs Review |
 
-#### Subcategory 5.4: Data Sharing and Segregation
+### Subcategory 5.4: Data Sharing and Segregation
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1367,7 +1558,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Data residency: Vendor must store [Organization] data in [specific region/country] to comply with data localization requirements (GDPR, nDSG, local laws)." | GDPR Art. 44-49 + ISMS-POL-00 | Vendor Data Center Location Confirmation |
 | "Cross-border data transfer controls: If vendor transfers data outside [region], implement Standard Contractual Clauses (SCCs) or Binding Corporate Rules (BCRs) for GDPR compliance." | GDPR Art. 46 | Contract Review (SCCs attached) |
 
-#### Subcategory 5.5: Third-Party Access Management
+### Subcategory 5.5: Third-Party Access Management
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1378,7 +1569,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Vendor access termination: When vendor contract ends or personnel leave vendor, disable access within 24 hours of notification." | ISMS-POL-A.5.21 Section 5.3 | Access Termination SLA Verification |
 | "Just-in-time (JIT) vendor access: Vendor access granted on-demand for specific support sessions, auto-expires after session (e.g., 4 hours)." | ISMS-POL-A.5.21 Section 5.4 | Access Workflow Test |
 
-#### Subcategory 5.6: Vendor Incident Response and SLAs
+### Subcategory 5.6: Vendor Incident Response and SLAs
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1389,30 +1580,36 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Vendor availability SLA: 99.9% uptime for critical services (equals ~8.7 hours downtime/year), penalties for SLA violations." | ISMS-POL-A.5.22 Section 5.1 | Contract SLA Definitions + Historical Uptime Reports |
 
 **Total Example Requirements for Third-Party Security:**
+
 - Low Risk (Standard SaaS, no sensitive data): 5-10 requirements (basic contract terms, API encryption, access controls)
 - Medium Risk (Important vendors, Confidential data access): 15-25 requirements (comprehensive assessment, contractual obligations, API security, monitoring)
 - High Risk (Critical vendors, Restricted data, outsourced development): 25-40 requirements (on-site audits, extensive contract terms, detailed access controls, stringent SLAs)
 
+
 ---
 
-### Category 6: Compliance & Regulatory Requirements
+## Category 6: Compliance & Regulatory Requirements
 
 **When This Category Applies:**
+
 - ALL projects (some baseline compliance requirements apply universally)
 - Projects processing personal data (GDPR, nDSG compliance)
 - Sector-specific regulation projects (financial: FINMA/DORA, healthcare: HIPAA, payments: PCI DSS)
 - Projects subject to industry standards or contractual compliance obligations
 
+
 **Applies To:**
+
 - Compliance officers
 - Data Protection Officers
 - Legal team
 - Project managers (for compliance integration)
 - All project team members (awareness)
 
+
 **Common Requirements (Examples):**
 
-#### Subcategory 6.1: GDPR/nDSG (Personal Data Protection)
+### Subcategory 6.1: GDPR/nDSG (Personal Data Protection)
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1426,7 +1623,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Data Protection Impact Assessment (DPIA): Conduct DPIA if processing high-risk personal data (profiling, special categories, large-scale monitoring, innovative technology)." | GDPR Art. 35 | DPIA Completion + DPO Approval |
 | "Data Processing Agreement (DPA): If using third-party data processors, execute DPA documenting processor obligations per GDPR Art. 28." | GDPR Art. 28 | Contract Review (DPA attachment present) |
 
-#### Subcategory 6.2: PCI DSS (Payment Card Industry Data Security Standard)
+### Subcategory 6.2: PCI DSS (Payment Card Industry Data Security Standard)
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1441,7 +1638,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Regularly test security systems and processes: Quarterly internal vulnerability scans, annual external penetration test, quarterly security awareness training." | PCI DSS Req. 11 | Vulnerability Scan Schedule + Pen Test Report + Training Records |
 | "Maintain information security policy: Document and maintain PCI DSS security policy, annual policy review, enforce compliance." | PCI DSS Req. 12 | Policy Document Review + Review Log |
 
-#### Subcategory 6.3: Sector-Specific Regulations (Financial Services - FINMA, DORA)
+### Subcategory 6.3: Sector-Specific Regulations (Financial Services - FINMA, DORA)
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1453,7 +1650,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "ICT business continuity and disaster recovery: Documented BCP/DR plans for critical ICT services, tested annually, meet Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO)." | FINMA Circular 2008/21 Section 40-42 | BCP/DR Documentation + Test Results |
 | "Cryptography controls: Use of approved cryptographic algorithms (AES-256, RSA-2048+), key management per industry standards, regular key rotation." | FINMA Circular 2008/21 Annex 3 | Crypto Implementation Review (algorithms, key mgmt) |
 
-#### Subcategory 6.4: Audit Trail and Evidence Retention
+### Subcategory 6.4: Audit Trail and Evidence Retention
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1463,7 +1660,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Records retention: Retain project security documentation per regulatory requirements: GDPR (3-7 years for accountability), financial records (7-10 years), healthcare (7+ years)." | Regulatory requirements + ISMS-POL-A.8.10 | Records Retention Schedule |
 | "Evidence preservation for audits: Maintain evidence of security controls implementation for external audits (ISO 27001, SOC 2, regulatory audits): policies, procedures, configurations, test results, training records." | Audit standards | Evidence Repository Review |
 
-#### Subcategory 6.5: Privacy and Consent Management
+### Subcategory 6.5: Privacy and Consent Management
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1474,7 +1671,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Cookie consent: Obtain explicit consent before setting non-essential cookies (analytics, marketing). Essential cookies (authentication, security) exempt." | ePrivacy Directive + GDPR | Cookie Consent Banner Review + Cookie Audit |
 | "Consent withdrawal: Provide easy mechanism for users to withdraw consent. Withdrawal must be as easy as giving consent." | GDPR Art. 7(3) | Consent Withdrawal Functional Test |
 
-#### Subcategory 6.6: Certification and Attestation Requirements
+### Subcategory 6.6: Certification and Attestation Requirements
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
@@ -1483,9 +1680,11 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Industry-specific certifications: Obtain required certifications for industry (HITRUST for healthcare, FedRAMP for US government, Cyber Essentials for UK public sector)." | Customer/regulatory requirements | Certification Roadmap |
 
 **Total Example Requirements for Compliance:**
+
 - Low Risk (Standard business, no special regulations): 5-10 requirements (basic GDPR if EU, audit trails, records retention)
 - Medium Risk (Personal data processing, standard industry): 15-30 requirements (comprehensive GDPR, sector-specific basics, privacy controls)
 - High Risk (Financial sector, healthcare, payment processing, multiple jurisdictions): 30-60 requirements (GDPR + PCI DSS OR FINMA/DORA OR HIPAA, extensive audit trails, certifications)
+
 
 ---
 
@@ -1499,9 +1698,9 @@ This section provides detailed guidance for each of the 6 requirement categories
 
 ---
 
-## Workbook Structure
+# Workbook Structure
 
-### Overall Design Philosophy
+## Overall Design Philosophy
 
 This workbook implements a **requirements-centric traceability model** where:
 1. Requirements documented in standard format (13 fields per requirement)
@@ -1511,13 +1710,15 @@ This workbook implements a **requirements-centric traceability model** where:
 5. Compliance dashboard auto-calculates from requirement statuses
 
 **Design Principles:**
+
 - **Traceable:** Every requirement links to implementation, test, and evidence
 - **Testable:** Each requirement has clear acceptance criteria and verification method
 - **Prioritized:** MoSCoW prioritization (Must/Should/Nice to Have)
 - **Evidence-based:** Evidence required for "Verified" status
 - **Flexible:** Works with separate or embedded requirements management
 
-### Sheet Layout
+
+## Sheet Layout
 
 | Sheet # | Sheet Name | Purpose | User Interaction | Row Count |
 |---------|------------|---------|------------------|-----------|
@@ -1530,23 +1731,32 @@ This workbook implements a **requirements-centric traceability model** where:
 | 7 | Third-Party Security | Category 5 requirements | Optional category sheet | Variable |
 | 8 | Compliance & Regulatory | Category 6 requirements | Optional category sheet | Variable |
 | 9 | Traceability Matrix | Requirement → Design → Implementation → Test mapping | Auto-populated or manual | Variable |
-| 10 | Compliance Dashboard | Summary metrics, compliance %, gaps | Auto-populated (read-only) | ~40-60 rows |
-| 11 | Evidence Register | Evidence links | Link evidence items | 100-200 rows |
-| 12 | Sign-Off | Approval workflow | Signatures and approvals | ~30-50 rows |
+| 10 | Verification Checklist | Systematic testing status tracking per requirement | Link to testing evidence, update test status | 100-200 rows |
+| 11 | Gap Analysis | Missing or incomplete requirements with remediation plan | Document gaps, assign ownership, track closure | 50-100 rows |
+| 12 | Evidence Register | Evidence links | Link evidence items | 100-200 rows |
+| 13 | Sign-Off | Approval workflow | Signatures and approvals | ~30-50 rows |
 
-**Total Sheets:** 10-12 (depending on whether category sheets separate or filtered views)
+**Total Sheets:** 13 (full traceability workflow)
 
 **Recommended Approach:**
+
 - **Option A (Simple):** Single Requirements Register sheet with Category filter/dropdown. Use autofilter or pivot table for category views. Good for <50 requirements.
 - **Option B (Structured):** Separate sheets per category + master register. Better for >50 requirements, easier navigation.
 
+**Quality Assurance Workflow:**
+
+The workbook includes integrated QA sheets:
+- **Verification Checklist (Sheet 10):** Track testing status and verification evidence for each requirement
+- **Gap Analysis (Sheet 11):** Document unimplemented or failed requirements, remediation actions, and ownership
+
+
 ---
 
-## Sheet 2: Requirements Register - Technical Specification
+# Sheet 2: Requirements Register - Technical Specification
 
 **Primary Sheet:** This is where all requirements documented
 
-### Table Structure
+## Table Structure
 
 **Column Layout (13 columns minimum):**
 
@@ -1568,7 +1778,7 @@ This workbook implements a **requirements-centric traceability model** where:
 
 **Total Columns:** 13 (minimum), can add custom columns as needed
 
-### Conditional Formatting Rules
+## Conditional Formatting Rules
 
 **Implementation Status (Column G):**
 ```
@@ -1599,7 +1809,7 @@ Rule 2: If "Should Have" → Fill: #FFFFFF (white)
 Rule 3: If "Nice to Have" → Fill: #F2F2F2 (light gray)
 ```
 
-### Data Validation Lists
+## Data Validation Lists
 
 **Create hidden Config sheet with validation lists:**
 
@@ -1651,12 +1861,14 @@ N/A
 ```
 
 **Data Validation Setup:**
+
 - Source: =Config!CategoryList (named range)
 - Allow: List
 - Error Alert: Warning style (not Stop, allow override)
 - Input Message: Brief hint about selection
 
-### Formulas and Calculations
+
+## Formulas and Calculations
 
 **Auto-numbering Requirement IDs (if not manual):**
 
@@ -1689,13 +1901,13 @@ On Dashboard or summary section:
 
 ---
 
-## Sheet 9: Traceability Matrix - Technical Specification
+# Sheet 9: Traceability Matrix - Technical Specification
 
-### Purpose
+## Purpose
 
 Maps requirements through design → implementation → testing → evidence for complete traceability.
 
-### Table Structure
+## Table Structure
 
 | Col | Field | Data Type | Source | Notes |
 |-----|-------|-----------|--------|-------|
@@ -1708,7 +1920,7 @@ Maps requirements through design → implementation → testing → evidence for
 | G | Evidence Link | Formula | =RequirementsRegister!L2 | Linked from Req Register |
 | H | Traceability Complete? | Formula | =IF(AND(C2<>"",D2<>"",E2<>"",G2<>""),"✅","⚠️") | Checkmark if all traceability fields populated |
 
-### Traceability Completeness Calculation
+## Traceability Completeness Calculation
 
 **Overall Traceability Score:**
 ```excel
@@ -1720,13 +1932,68 @@ Maps requirements through design → implementation → testing → evidence for
 
 ---
 
-## Sheet 10: Compliance Dashboard - Technical Specification
+# Sheet 10: Verification Checklist - Technical Specification
 
-### Purpose
+## Purpose
+
+Systematic tracking of testing status and verification evidence for each requirement. Links requirement IDs to verification methods and test results.
+
+## Table Structure
+
+| Col | Field | Data Type | Validation | Format |
+|-----|-------|-----------|------------|--------|
+| A | Requirement ID | Text | REQ-### reference | Plain |
+| B | Verification Method | Dropdown | List: Functional Test, SAST, DAST, Penetration Test, Vulnerability Scan, Configuration Review, Code Review, Compliance Scan, Document Review, Inspection | Plain |
+| C | Test Status | Dropdown | List: Not Tested, Pass, Fail, Blocked | Conditional formatting (green=Pass, red=Fail, gray=Not Tested) |
+| D | Notes | Text (multiline) | None | Wrap text, 50 width |
+
+**Total Rows:** 100-200 (one row per requirement or test execution)
+
+## Usage
+
+1. Link Requirement IDs from Requirements Register (Sheet 2)
+2. Document the testing method used to verify each requirement
+3. Update test status as testing progresses
+4. Use Notes column to document test findings, blockers, or evidence locations
+
+---
+
+# Sheet 11: Gap Analysis - Technical Specification
+
+## Purpose
+
+Document unimplemented or failed requirements, associated impacts, and remediation actions. Enables risk-based prioritization of remaining work.
+
+## Table Structure
+
+| Col | Field | Data Type | Validation | Format |
+|-----|-------|-----------|------------|--------|
+| A | Req ID | Text | REQ-### reference | Plain, 12 width |
+| B | Gap Description | Text (multiline) | None | Wrap text, 50 width |
+| C | Impact | Dropdown | List: Critical, High, Medium, Low | Conditional formatting by severity |
+| D | Remediation Action | Text (multiline) | None | Wrap text, 50 width |
+| E | Owner | Text | Person/team name | Plain, 20 width |
+| F | Target Date | Date | Date validation | DD.MM.YYYY format |
+
+**Total Rows:** 50-100 (one row per identified gap)
+
+## Usage
+
+1. Identify requirements with "Not Started", "In Progress", or "Fail" status
+2. Document the gap and business/security impact
+3. Define remediation actions with ownership
+4. Assign target dates for closure
+5. Track progress toward gap closure during Execution Phase
+
+---
+
+# Sheet 12: Compliance Dashboard - Technical Specification
+
+## Purpose
 
 Executive summary showing overall requirements status, compliance metrics, and gaps.
 
-### Section A: Project Summary (Rows 3-15)
+## Section A: Project Summary (Rows 3-15)
 
 Auto-populated from Requirements Register and project metadata:
 
@@ -1740,7 +2007,7 @@ Auto-populated from Requirements Register and project metadata:
 | 10 | Nice to Have Requirements | B10 | =COUNTIF(RequirementsRegister!E:E,"Nice to Have") |
 | 11 | Assessment Date | B11 | Manual entry (yellow cell) |
 
-### Section B: Implementation Status Summary (Rows 18-30)
+## Section B: Implementation Status Summary (Rows 18-30)
 
 **Status Breakdown Table:**
 
@@ -1761,7 +2028,7 @@ Auto-populated from Requirements Register and project metadata:
 =Verified / Total Requirements
 ```
 
-### Section C: Priority-Based Compliance (Rows 33-45)
+## Section C: Priority-Based Compliance (Rows 33-45)
 
 **Must Have Compliance:**
 ```excel
@@ -1774,16 +2041,18 @@ Auto-populated from Requirements Register and project metadata:
 ```
 
 **Target Thresholds:**
+
 - Must Have: 100% (blocker if <100% at deployment)
 - Should Have: ≥80% (recommended)
 - Nice to Have: ≥50% (optional)
+
 
 **Status Indicators:**
 ```excel
 =IF(MustHaveRate=100%,"✅ Ready",IF(MustHaveRate>=90%,"⚠️ Near Ready","❌ Not Ready"))
 ```
 
-### Section D: Category Breakdown (Rows 48-65)
+## Section D: Category Breakdown (Rows 48-65)
 
 **Table with auto-calculated compliance per category:**
 
@@ -1797,17 +2066,21 @@ Auto-populated from Requirements Register and project metadata:
 | Compliance | | | | |
 
 **Conditional Formatting on Compliance %:**
+
 - ≥90%: Green
 - 70-89%: Yellow
 - <70%: Red
 
-### Section E: Gap Analysis (Rows 68-100+)
+
+## Section E: Gap Analysis (Rows 68-100+)
 
 **Auto-generated gap list:**
 
 Pulls all requirements where:
+
 - Priority = "Must Have" AND Status IN ("Not Started", "In Progress")
 - OR Test Status = "Fail"
+
 
 **Table Columns:**
 | Requirement ID | Statement | Priority | Status | Target Date | Owner | Gap Type |
@@ -1820,11 +2093,13 @@ Pulls all requirements where:
 ```
 
 **Gap Count Summary:**
+
 - Critical gaps (Must Have not started): [COUNT]
 - Delayed requirements (past target date): [COUNT]
 - Failed requirements (test failures): [COUNT]
 
-### Section F: Test Status Summary (Rows 105-120)
+
+## Section F: Test Status Summary (Rows 105-120)
 
 **Testing Metrics:**
 
@@ -1842,7 +2117,7 @@ Pulls all requirements where:
 =IF(NotYetTested=0,IF(TestPassRate>=95%,"✅ Test Ready","⚠️ Test Failures"),IF(TestPassRate>=80%,"⚠️ Testing In Progress","❌ Testing Incomplete"))
 ```
 
-### Section G: Recommendations (Context-Aware)
+## Section G: Recommendations (Context-Aware)
 
 **Auto-generated recommendations based on dashboard data:**
 
@@ -1865,13 +2140,13 @@ Cell G129:
 
 ---
 
-## Sheet 11: Evidence Register - Technical Specification
+# Sheet 13: Evidence Register - Technical Specification
 
-### Purpose
+## Purpose
 
 Centralized evidence tracking for all requirements (similar to A.5.8.1 Sheet 9).
 
-### Table Structure
+## Table Structure
 
 **Simple table, 100-200 pre-formatted rows:**
 
@@ -1899,13 +2174,13 @@ Total Evidence Items: =COUNTA(A:A)-1
 
 ---
 
-## Sheet 12: Sign-Off - Technical Specification
+# Sheet 14: Sign-Off - Technical Specification
 
-### Purpose
+## Purpose
 
 Approval workflow documenting requirements register completion and approval.
 
-### Section A: Assessment Summary (Auto-Populated)
+## Section A: Assessment Summary (Auto-Populated)
 
 **Rows 3-20:**
 
@@ -1921,7 +2196,7 @@ Approval workflow documenting requirements register completion and approval.
 | 12 | Requirements Past Due | =Dashboard!DelayedCount |
 | 13 | Failed Tests | =Dashboard!TestFailCount |
 
-### Section B: Approval Workflow (Rows 23-60)
+## Section B: Approval Workflow (Rows 23-60)
 
 **Step 1: Project Manager Review**
 
@@ -1956,62 +2231,76 @@ Approval workflow documenting requirements register completion and approval.
 
 ---
 
-## Integration Points
+# Integration Points
 
-### With ISMS-IMP-A.5.8.1 (Project Lifecycle Assessment)
+## With ISMS-IMP-A.5.8.1 (Project Lifecycle Assessment)
 
 **Data Flow:**
 
 **A.5.8.1 → A.5.8.2:**
+
 - Sheet 2 (Classification): Project name, classification, PM → A.5.8.2 header
 - Sheet 4 (Planning Phase): Link to this requirements register
 
+
 **A.5.8.2 → A.5.8.1:**
+
 - Requirements count → Planning Phase requirement metrics
 - Implementation status → Execution Phase implementation rate
 - Test results → Execution Phase testing completion
 
+
 **Integration Method:**
+
 - **Manual:** Hyperlink between workbooks
 - **Semi-automated:** Copy/paste key metrics
 - **Fully automated:** External cell references (if same directory)
 
-### With ISMS-IMP-A.5.8.3 (Portfolio Dashboard)
+
+## With ISMS-IMP-A.5.8.3 (Portfolio Dashboard)
 
 **Data Extraction:**
 
 A.5.8.3 reads this workbook for:
+
 - Total requirements count
 - Must Have compliance rate
 - Implementation rate
 - Verification rate
 - Critical gaps count
 
+
 **Extraction Method:** Python script (openpyxl) with data_only=True
 
-### With Test Management Tools
+## With Test Management Tools
 
 **Export Options:**
+
 - Export requirements to Jira (Epic/Stories with acceptance criteria)
 - Export to TestRail (Test cases linked to requirements)
 - Export to Azure DevOps (Work items)
 
+
 **Import Options:**
+
 - Import test results from test tools
 - Import defects from bug tracking (link to failed requirements)
 
+
 ---
 
-## Workbook Generation Script Architecture
+# Workbook Generation Script Architecture
 
-### Script: `generate_a58_2_requirements_register.py`
+## Script: `generate_a58_2_requirements_register.py`
 
 **Purpose:** Generate Excel workbook from Python template
 
 **Key Libraries:**
+
 - openpyxl: Excel workbook creation and manipulation
 - datetime: Timestamp generation
 - argparse: Command-line options
+
 
 **Script Structure:**
 
@@ -2085,30 +2374,42 @@ if __name__ == "__main__":
 
 ---
 
-## Maintenance and Customization
+# Maintenance and Customization
 
-### Template Updates
+## Template Updates
 
 **Annual Review Checklist:**
+
 - [ ] Update requirement examples to reflect new threats/standards
 - [ ] Add new verification methods if new testing tools adopted
 - [ ] Update dropdown lists (categories if new category needed)
 - [ ] Review formulas for accuracy
 - [ ] Incorporate user feedback from previous year
 
-### Organization-Specific Customization
+
+## Organization-Specific Customization
 
 **Should Customize:**
+
 - Requirement examples (tailor to organization's tech stack)
 - Category names (if org uses different taxonomy)
 - Verification method options (add org-specific tools)
 - Evidence types (add org-specific systems)
 
+
 **Must NOT Customize:**
+
 - Core field structure (breaks integration with A.5.8.1 and A.5.8.3)
 - Compliance calculation formulas
 - Mandatory fields (13 minimum columns)
 
+
 ---
 
-**END OF ISMS-IMP-A.5.8.2 TECHNICAL SPECIFICATION**
+**END OF SPECIFICATION**
+
+---
+
+*"There are some things so serious you have to laugh at them."*
+— Niels Bohr
+*Where bamboo antennas actually work.* 🎋

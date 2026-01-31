@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# =============================================================================
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-ISMS-Commercial
+# Copyright (c) 2025-2026 ISMS Core Contributors
+#
+# This file is part of ISMS Core.
+#
+# ISMS Core is dual-licensed:
+#   1. AGPL 3.0 (Open Source) - See LICENSE-AGPL.txt
+#   2. Commercial License - Contact vendor for proprietary use
+#
+# You may use this file under either license, at your option.
+# =============================================================================
 """
 ================================================================================
 ISMS-IMP-A.8.12.2 - Data Classification Assessment Excel Generator
@@ -9,7 +21,27 @@ ISO/IEC 27001:2022 Annex A Control A.8.12: Data Leakage Prevention
 Assessment Domain 2 of 4: Data Classification
 
 --------------------------------------------------------------------------------
-PURPOSE
+SAMPLE SCRIPT - REQUIRES CUSTOMIZATION FOR YOUR ORGANIZATION
+--------------------------------------------------------------------------------
+
+This script is a TEMPLATE/SAMPLE implementation and MUST be adapted to match
+your organization's specific data classification schema, sensitive data
+categories, and regulatory requirements.
+
+Key customization areas:
+1. Classification schema levels (match your data classification policy)
+2. Sensitive data categories (PII, financial per your definitions)
+3. Regulatory mappings (FADP, GDPR, PCI-DSS per your jurisdictions)
+4. Data discovery tools (specific to your technology stack)
+5. Ownership assignment criteria (aligned with your governance)
+
+DO NOT use this script without reviewing and adapting all sections marked
+with "# CUSTOMIZE:" comments throughout the code.
+
+Reference Pattern: Based on ISMS-A.8.24 Assessment Framework (adapted for DLP)
+
+--------------------------------------------------------------------------------
+DESCRIPTION
 --------------------------------------------------------------------------------
 
 Generates comprehensive data classification assessment workbook for systematic
@@ -136,7 +168,7 @@ Control Reference:    ISO/IEC 27001:2022 Annex A Control A.8.12
 Assessment Domain:    2 of 4 (Data Classification)
 Framework Version:    1.0
 Script Version:       1.0
-Date:                 25.01.2025
+Date:                 [Date to be set]
 Author:               [Organization] ISMS Implementation Team
 License:              [Organization License/Terms]
 
@@ -199,13 +231,48 @@ END OF HEADER - SCRIPT CODE FOLLOWS
 ================================================================================
 """
 
+# =============================================================================
+# Standard Library Imports
+# =============================================================================
+import logging
+import sys
 from datetime import datetime, timedelta
+
+# =============================================================================
+# Third-Party Imports
+# =============================================================================
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
 
-# Unicode Constants (for cross-platform compatibility)
+# =============================================================================
+# Logging Configuration
+# =============================================================================
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
+
+
+# =============================================================================
+# DOCUMENT METADATA
+# =============================================================================
+DOCUMENT_ID = "ISMS-IMP-A.8.12.2"
+WORKBOOK_NAME = "Data Classification Assessment"
+CONTROL_ID = "A.8.12"
+CONTROL_NAME = "Data Leakage Prevention"
+CONTROL_REF = f"ISO/IEC 27001:2022 - Control {CONTROL_ID}: {CONTROL_NAME}"
+
+# Timestamps
+GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")      # For display (Swiss format)
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")   # For filenames (sortable)
+
+# Output filename
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_TIMESTAMP}.xlsx"
+
 CHECK_MARK = "\u2705"      # ✅
 CROSS_MARK = "\u274C"      # ❌
 WARNING = "\u26A0"         # ⚠️
@@ -1502,77 +1569,83 @@ def create_summary_dashboard(ws, styles):
 def main():
     """Main execution function."""
     
-    print("=" * 78)
-    print(f"{WORKBOOK_ID} - {ASSESSMENT_AREA} Generator")
-    print(f"ISO/IEC 27001:2022 Control {CONTROL_ID}")
-    print("=" * 78)
+    logger.info("=" * 78)
+    logger.info(f"{WORKBOOK_ID} - {ASSESSMENT_AREA} Generator")
+    logger.info(f"ISO/IEC 27001:2022 Control {CONTROL_ID}")
+    logger.info("=" * 78)
     
     wb = create_workbook()
     styles = setup_styles()
     
-    print("\n[1/11] Creating Instructions & Legend...")
+    logger.info("\n[1/11] Creating Instructions & Legend...")
     create_instructions(wb["Instructions_Legend"], styles)
     
-    print("[2/11] Creating Classification Schema...")
+    logger.info("[2/11] Creating Classification Schema...")
     create_classification_schema(wb["Classification_Schema"], styles)
     
-    print("[3/11] Creating Sensitive Data Inventory...")
+    logger.info("[3/11] Creating Sensitive Data Inventory...")
     create_sensitive_data_inventory(wb["Sensitive_Data_Inventory"], styles)
     
-    print("[4/11] Creating Data Location Mapping...")
+    logger.info("[4/11] Creating Data Location Mapping...")
     create_data_location_mapping(wb["Data_Location_Mapping"], styles)
     
-    print("[5/11] Creating Data Owner Assignment...")
+    logger.info("[5/11] Creating Data Owner Assignment...")
     create_data_owner_assignment(wb["Data_Owner_Assignment"], styles)
     
-    print("[6/11] Creating Regulatory Mapping...")
+    logger.info("[6/11] Creating Regulatory Mapping...")
     create_regulatory_mapping(wb["Regulatory_Mapping"], styles)
     
-    print("[7/11] Creating Labeling Methods...")
+    logger.info("[7/11] Creating Labeling Methods...")
     create_labeling_methods(wb["Labeling_Methods"], styles)
     
-    print("[8/11] Creating Discovery Results...")
+    logger.info("[8/11] Creating Discovery Results...")
     create_discovery_results(wb["Discovery_Results"], styles)
     
-    print("[9/11] Creating Gap Analysis...")
+    logger.info("[9/11] Creating Gap Analysis...")
     create_gap_analysis(wb["Gap_Analysis"], styles)
     
-    print("[10/11] Creating Evidence Register...")
+    logger.info("[10/11] Creating Evidence Register...")
     create_evidence_register(wb["Evidence_Register"], styles)
     
-    print("[11/11] Creating Summary Dashboard...")
+    logger.info("[11/11] Creating Summary Dashboard...")
     create_summary_dashboard(wb["Summary_Dashboard"], styles)
     
     # Save workbook
     filename = f"ISMS-IMP-A.8.12.2_Data_Classification_{datetime.now().strftime('%Y%m%d')}.xlsx"
     wb.save(filename)
     
-    print(f"\n\u2705 SUCCESS: {filename}")
-    print("\nWorkbook Structure:")
-    print("  \u2022 Instructions & Legend")
-    print("  \u2022 Classification Schema (4 levels + 6 custom)")
-    print("  \u2022 Sensitive Data Inventory (30 rows: 10 examples + 20 blank)")
-    print("  \u2022 Data Location Mapping (40 rows: 5 examples + 35 blank)")
-    print("  \u2022 Data Owner Assignment (30 rows: 3 examples + 27 blank)")
-    print("  \u2022 Regulatory Mapping (25 rows: 5 examples + 20 blank)")
-    print("  \u2022 Labeling Methods (20 rows: 4 examples + 16 blank)")
-    print("  \u2022 Discovery Results (30 rows: 3 examples + 27 blank)")
-    print("  \u2022 Gap Analysis (40 rows: 3 examples + 37 blank)")
-    print("  \u2022 Evidence Register (100 rows)")
-    print("  \u2022 Summary Dashboard (11 KPIs + compliance tracking)")
-    print("\n" + "=" * 78)
-    print("NEXT STEPS:")
-    print("1. Open the workbook in Excel/LibreOffice")
-    print("2. Document your classification schema (min 4 levels)")
-    print("3. Inventory all sensitive data categories")
-    print("4. Map data to storage locations")
-    print("5. Assign data owners and stewards")
-    print("6. Complete regulatory compliance mapping")
-    print("7. Gather evidence for all assessments")
-    print("8. Review Summary Dashboard for compliance score")
-    print("9. Obtain DPO/CISO/Legal approval")
-    print("=" * 78)
+    logger.info(f"\n\u2705 SUCCESS: {filename}")
+    logger.info("\nWorkbook Structure:")
+    logger.info("  \u2022 Instructions & Legend")
+    logger.info("  \u2022 Classification Schema (4 levels + 6 custom)")
+    logger.info("  \u2022 Sensitive Data Inventory (30 rows: 10 examples + 20 blank)")
+    logger.info("  \u2022 Data Location Mapping (40 rows: 5 examples + 35 blank)")
+    logger.info("  \u2022 Data Owner Assignment (30 rows: 3 examples + 27 blank)")
+    logger.info("  \u2022 Regulatory Mapping (25 rows: 5 examples + 20 blank)")
+    logger.info("  \u2022 Labeling Methods (20 rows: 4 examples + 16 blank)")
+    logger.info("  \u2022 Discovery Results (30 rows: 3 examples + 27 blank)")
+    logger.info("  \u2022 Gap Analysis (40 rows: 3 examples + 37 blank)")
+    logger.info("  \u2022 Evidence Register (100 rows)")
+    logger.info("  \u2022 Summary Dashboard (11 KPIs + compliance tracking)")
+    logger.info("\n" + "=" * 78)
+    logger.info("NEXT STEPS:")
+    logger.info("1. Open the workbook in Excel/LibreOffice")
+    logger.info("2. Document your classification schema (min 4 levels)")
+    logger.info("3. Inventory all sensitive data categories")
+    logger.info("4. Map data to storage locations")
+    logger.info("5. Assign data owners and stewards")
+    logger.info("6. Complete regulatory compliance mapping")
+    logger.info("7. Gather evidence for all assessments")
+    logger.info("8. Review Summary Dashboard for compliance score")
+    logger.info("9. Obtain DPO/CISO/Legal approval")
+    logger.info("=" * 78)
 
 
 if __name__ == "__main__":
     main()
+# =============================================================================
+# QA_VERIFIED: 2026-01-31
+# QA_STATUS: PASSED - STANDARDIZATION COMPLETE (Phase 1-3)
+# QA_TOOL: Claude Code Standardization
+# CHANGES: constants, metadata headers, v1.0 versioning, logger output
+# =============================================================================

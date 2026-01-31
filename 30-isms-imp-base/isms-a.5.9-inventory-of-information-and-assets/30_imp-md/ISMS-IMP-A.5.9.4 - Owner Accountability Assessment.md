@@ -1,10 +1,10 @@
-# ISMS-IMP-A.5.9.4 - Owner Accountability Assessment
-## Assessment Specification - PART I: USER COMPLETION GUIDE
-### ISO/IEC 27001:2022 Control A.5.9: Inventory of Information and Assets
+**ISMS-IMP-A.5.9.4 - Owner Accountability Assessment**
+**Assessment Specification with User Completion Guide**
+### ISO/IEC 27001:2022 Control A.5.9: Inventory of Information and Other Associated Assets
 
 ---
 
-## Document Control
+**Document Control**
 
 | Attribute | Value |
 |-----------|-------|
@@ -44,10 +44,12 @@ This document consists of two parts:
   - Formula Definitions
   - Python Script Implementation
 
+
 **Target Audiences:**
 
 - **Part I:** Assessment users (Security Team, Asset Owners, Management)
 - **Part II:** Workbook developers (Python/Excel script maintainers)
+
 
 ---
 
@@ -64,12 +66,14 @@ This document consists of two parts:
 This assessment verifies that asset ownership is not just assigned, but that owners UNDERSTAND and ACCEPT their responsibilities. Ownership without accountability is ineffective.
 
 **Key Questions This Assessment Answers**:
+
 - Is EVERY asset assigned to an owner? (100% coverage)
 - Do owners ACKNOWLEDGE and ACCEPT ownership? (signed attestations)
 - Do owners UNDERSTAND their responsibilities? (awareness verification)
 - Are owners CONTACTABLE and AVAILABLE? (valid contact information)
 - Are owners PERFORMING their duties? (review compliance, update timeliness)
 - Are ownership changes TRACKED and MANAGED? (transfer procedures)
+
 
 **Assessment Philosophy**: Ownership is accountability. Without acknowledged, understood, and exercised ownership, the inventory becomes an orphaned data set.
 
@@ -81,6 +85,7 @@ This assessment verifies [Organization]'s compliance with:
 - **ISMS-POL-A.5.9, Requirement A.5.9-R4**: [Organization] SHALL assign ownership to all inventoried assets (100% coverage)
 - **ISMS-POL-A.5.9, Section 2.4**: Ownership and accountability requirements (owner responsibilities, acknowledgment, performance)
 - **ISMS-POL-A.5.9, Section 4.2**: Asset owner role definition and responsibilities
+
 
 **From Implementer Perspective**: Ensures owners are engaged, aware, and accountable for their assets.
 
@@ -111,11 +116,13 @@ This assessment covers **4 ownership accountability domains**:
 7. **Evidence Register**: Attestations, training records, performance data
 
 **Compliance Metrics Generated**:
+
 - Ownership coverage (% assets with valid owner)
 - Acknowledgment rate (% owners who have signed attestations)
 - Awareness rate (% owners who completed training/awareness)
 - Performance score (% owners meeting performance standards)
 - Overall accountability score (weighted average)
+
 
 ---
 
@@ -124,38 +131,50 @@ This assessment covers **4 ownership accountability domains**:
 ### What You Need Before Starting
 
 **1. Completed Assessments**:
+
 - **ISMS-IMP-A.5.9.1**: Asset Discovery (know what assets exist)
 - **ISMS-IMP-A.5.9.2**: Inventory Maintenance (know where ownership data is stored)
 
+
 **2. Access to Systems**:
+
 - Inventory system(s) (for owner assignments)
 - HR system (to validate owners are current employees)
 - Training/LMS system (to check training completion)
 - Email system (for attestation tracking)
 
+
 **3. Personnel**:
+
 - **Security Team**: Leads assessment, tracks attestations
 - **HR**: Validates employee status, assists with contact information
 - **Asset Owners**: Provide attestations, complete awareness activities
 - **Management**: Reviews owner performance, approves ownership changes
 
+
 **4. Documentation**:
+
 - Current inventory with owner assignments
 - Owner responsibility documentation (from policy Section 4.2)
 - Previous attestation records (if exist)
 - Ownership change logs
 - Training materials for asset owners
 
+
 **5. Tools**:
+
 - Email distribution lists (for attestation campaigns)
 - Electronic signature platform (optional, for attestations)
 - Tracking spreadsheet/database (for attestation status)
 
+
 **6. Time Allocation**:
+
 - **Initial Assessment**: 10-15 hours (plus owner attestation collection time)
 - **Quarterly Updates**: 4-6 hours
 - **Evidence Collection**: 2-4 hours per quarter
 - **Owner Attestation Campaign**: 2-4 weeks (for owner responses)
+
 
 ---
 
@@ -217,10 +236,12 @@ Phase 6: Review & Approval (Day 13-14)
 **Purpose**: Provides overview and guidance for completing this workbook.
 
 **What to Do**:
+
 - Read the instructions completely before starting
 - Understand the 4 accountability domains
 - Review the attestation process
 - Note the scoring criteria
+
 
 **No data entry required** - informational only.
 
@@ -231,11 +252,13 @@ Phase 6: Review & Approval (Day 13-14)
 **Purpose**: Verify 100% ownership assignment and identify gaps.
 
 **What This Sheet Captures**:
+
 - Total assets by category
 - Assets with owner assigned
 - Assets without owner (gaps)
 - Assets with invalid owner (departed employees, placeholders)
 - Ownership coverage percentage by category
+
 
 **Column Definitions**:
 
@@ -280,6 +303,7 @@ WHERE Owner NOT IN (SELECT EmployeeID FROM HR_System)
 ```
 
 **Example 1: Information Assets - Good Coverage**
+
 - **Asset Category**: Information Assets
 - **Total Assets**: 400
 - **Assets with Owner**: 398
@@ -293,7 +317,9 @@ WHERE Owner NOT IN (SELECT EmployeeID FROM HR_System)
 - **Target Date**: 05.02.2026 (2 weeks)
 - **Responsible Party**: Information Security Manager
 
+
 **Example 2: IT Infrastructure - Perfect Coverage**
+
 - **Asset Category**: IT Infrastructure
 - **Total Assets**: 600
 - **Assets with Owner**: 600
@@ -303,7 +329,9 @@ WHERE Owner NOT IN (SELECT EmployeeID FROM HR_System)
 - **Compliance Status**: Pass
 - **Remediation Plan**: N/A (maintain compliance)
 
+
 **Example 3: Personnel Assets - Invalid Owner Issue**
+
 - **Asset Category**: Personnel Assets
 - **Total Assets**: 50
 - **Assets with Owner**: 50
@@ -315,17 +343,22 @@ WHERE Owner NOT IN (SELECT EmployeeID FROM HR_System)
 - **Remediation Plan**: "Assign individual HR manager as owner for each competency area rather than generic 'HR Department'"
 - **Target Date**: 12.02.2026
 
+
 **Targets (from policy)**:
+
 - Ownership coverage: 100%
 - Invalid owners: 0%
 
+
 **Common Pitfalls**:
+
 - ❌ Accepting department names as owners ("IT Department", "Finance Team")
 - ✅ Owners must be individuals, not departments (accountability requires a person)
 - ❌ Not cross-referencing with HR (missing departed employees)
 - ✅ Monthly cross-reference to catch employee departures
 - ❌ Allowing "TBD", "Unknown", "To Be Assigned" placeholders
 - ✅ These count as unowned - must assign actual person
+
 
 ---
 
@@ -334,12 +367,14 @@ WHERE Owner NOT IN (SELECT EmployeeID FROM HR_System)
 **Purpose**: Track owner attestations and acceptance of ownership.
 
 **What This Sheet Captures**:
+
 - List of all asset owners
 - Attestation status (signed, pending, not started)
 - Attestation dates
 - Attestation method (email, e-signature, physical)
 - Assets owned per person
 - Acknowledgment rate
+
 
 **Column Definitions**:
 
@@ -407,6 +442,7 @@ Thank you,
 **Step 3: Track Responses**
 
 **Example 1: Attestation Complete**
+
 - **Owner Name**: Alice Johnson
 - **Owner Email**: alice.johnson@company.com
 - **Owner Department**: Engineering
@@ -420,7 +456,9 @@ Thank you,
 - **Escalation Required**: No
 - **Evidence Reference**: ACCT-001 (email confirmation saved)
 
+
 **Example 2: Pending Response**
+
 - **Owner Name**: Bob Williams
 - **Owner Email**: bob.williams@company.com
 - **Owner Department**: Finance
@@ -434,7 +472,9 @@ Thank you,
 - **Last Reminder Date**: 18.01.2026
 - **Escalation Required**: No (not yet - escalate at 21 days)
 
+
 **Example 3: Overdue**
+
 - **Owner Name**: Carol Martinez
 - **Owner Email**: carol.martinez@company.com
 - **Owner Department**: Marketing
@@ -449,29 +489,36 @@ Thank you,
 - **Escalation Required**: Yes (escalate to Marketing Director)
 - **Notes**: "No response to 3 email attempts. Escalated to Marketing Director on 22.01.2026."
 
+
 **Step 4: Calculate Acknowledgment Rate**
 
 Sheet auto-calculates:
+
 - Total owners: COUNT(all rows)
 - Owners with attestation: COUNT(status = "Signed")
 - Acknowledgment rate: (Signed / Total) × 100%
 
+
 **Target**: 95% acknowledgment rate (minimum), 100% ideal
 
 **Attestation Timeline**:
+
 - Day 0: Send initial attestation request
 - Day 7: First reminder to non-responders
 - Day 14: Second reminder
 - Day 21: Third reminder + escalation warning
 - Day 28: Escalate to management
 
+
 **Common Pitfalls**:
+
 - ❌ One-time attestation campaign, never repeated
 - ✅ Annual attestation (minimum), quarterly for critical assets
 - ❌ Accepting verbal acknowledgment without documentation
 - ✅ Email confirmation minimum, e-signature preferred (audit trail)
 - ❌ Not following up on non-responders
 - ✅ Systematic reminder and escalation process
+
 
 ---
 
@@ -480,11 +527,13 @@ Sheet auto-calculates:
 **Purpose**: Verify owners understand their responsibilities.
 
 **What This Sheet Captures**:
+
 - Owner training completion status
 - Awareness verification method
 - Understanding assessment results
 - Knowledge gaps identified
 - Training/awareness improvement plans
+
 
 **Column Definitions**:
 
@@ -510,15 +559,18 @@ Sheet auto-calculates:
 **Step 1: Query Training System**
 
 Check LMS or training records for "Asset Owner Training" completion:
+
 - Who completed
 - Completion date
 - Assessment score (if applicable)
+
 
 **Step 2: Verify Understanding**
 
 **Awareness Verification Methods**:
 
 **Option A: Knowledge Quiz** (preferred for large owner population)
+
 - 5-10 questions on owner responsibilities
 - 80% passing score
 - Automatic via LMS
@@ -527,18 +579,24 @@ Check LMS or training records for "Asset Owner Training" completion:
   - "What should you do if you're no longer responsible for an asset?" (Answer: Request ownership transfer)
   - "Who approves access requests to your assets?" (Answer: You, the asset owner)
 
+
 **Option B: Interview** (for small owner population or critical asset owners)
+
 - 15-minute discussion with Security Team
 - Discuss owner responsibilities
 - Ask scenario questions
 - Document understanding level
 
+
 **Option C: Document Review** (lightweight, combine with attestation)
+
 - Owner reviews responsibility document
 - Signs acknowledgment that they've read and understood
 - No formal assessment
 
+
 **Example 1: Training Complete, Good Understanding**
+
 - **Owner Name**: Alice Johnson
 - **Training Required**: Yes (owns critical servers)
 - **Training Completed**: ✅ Yes
@@ -551,7 +609,9 @@ Check LMS or training records for "Asset Owner Training" completion:
 - **Knowledge Gaps**: None identified
 - **Evidence Reference**: ACCT-010 (LMS completion certificate)
 
+
 **Example 2: No Training, Assessment Pending**
+
 - **Owner Name**: Bob Williams
 - **Training Required**: Yes (owns confidential financial data)
 - **Training Completed**: ❌ No
@@ -563,7 +623,9 @@ Check LMS or training records for "Asset Owner Training" completion:
 - **Remediation Plan**: "Enroll Bob in next Asset Owner training session (scheduled 05.02.2026). Follow up to ensure completion within 30 days."
 - **Target Date**: 05.03.2026
 
+
 **Example 3: Training Complete, Poor Understanding**
+
 - **Owner Name**: David Chen
 - **Training Required**: Yes
 - **Training Completed**: ✅ Yes
@@ -578,22 +640,27 @@ Check LMS or training records for "Asset Owner Training" completion:
 - **Target Date**: 29.01.2026
 - **Notes**: "David is new to organization, needs additional support"
 
+
 **Step 3: Calculate Awareness Rate**
 
 Sheet auto-calculates:
+
 - Total owners requiring training
 - Owners with training complete AND understanding verified
 - Awareness rate: (Trained & Verified / Total Required) × 100%
 
+
 **Target**: 100% for owners of Critical/High assets, 80% for Standard/Low
 
 **Common Pitfalls**:
+
 - ❌ Assuming attestation = understanding (it doesn't!)
 - ✅ Verify understanding through quiz, interview, or review
 - ❌ One-time training, never refreshed
 - ✅ Annual refresher training (minimum)
 - ❌ Generic InfoSec training without asset owner specifics
 - ✅ Targeted training on owner responsibilities per ISMS-POL-A.5.9
+
 
 ---
 
@@ -602,11 +669,13 @@ Sheet auto-calculates:
 **Purpose**: Measure whether owners are actually performing their duties.
 
 **What This Sheet Captures**:
+
 - Review compliance (are owners reviewing their assets on schedule?)
 - Update responsiveness (do owners keep asset info current?)
 - Engagement level (do owners respond to requests?)
 - Performance scoring
 - High/low performer identification
+
 
 **Column Definitions**:
 
@@ -645,11 +714,13 @@ GROUP BY Owner
 **Step 2: Assess Update Responsiveness**
 
 Track owner response to update requests:
+
 - When notified of stale data, how quickly do they update?
 - Excellent: <3 days
 - Good: 3-7 days
 - Fair: 7-14 days
 - Poor: >14 days or no response
+
 
 **Step 3: Calculate Engagement Score**
 
@@ -664,6 +735,7 @@ Where Responsiveness =
 ```
 
 **Example 1: High Performer**
+
 - **Owner Name**: Alice Johnson
 - **Assets Owned - Count**: 45
 - **Critical/High Assets**: 15
@@ -678,7 +750,9 @@ Where Responsiveness =
 - **Action Required**: None (maintain excellent performance)
 - **Notes**: "Model asset owner, consistently engaged"
 
+
 **Example 2: Meets Expectations**
+
 - **Owner Name**: Bob Williams
 - **Assets Owned - Count**: 12
 - **Critical/High Assets**: 3
@@ -691,7 +765,9 @@ Where Responsiveness =
 - **Assets at Risk**: 3 (overdue for review)
 - **Action Required**: "Review 3 overdue assets within 2 weeks"
 
+
 **Example 3: Needs Improvement**
+
 - **Owner Name**: Carol Martinez
 - **Assets Owned - Count**: 8
 - **Critical/High Assets**: 0
@@ -705,7 +781,9 @@ Where Responsiveness =
 - **Action Required**: "Urgent: Review all 6 overdue assets within 1 week. Escalate to manager if no action."
 - **Notes**: "Multiple reminder emails sent, minimal engagement. Potential ownership reassignment if no improvement."
 
+
 **Example 4: Poor Performance - Ownership Transfer Recommended**
+
 - **Owner Name**: David Chen
 - **Assets Owned - Count**: 20
 - **Critical/High Assets**: 5
@@ -719,19 +797,24 @@ Where Responsiveness =
 - **Action Required**: "Immediate escalation to management. Recommend ownership transfer to engaged owner. Critical assets at risk."
 - **Notes**: "David has not engaged with asset ownership responsibilities for 2 years. Urgent action required."
 
+
 **Performance Thresholds**:
+
 - **High Performer**: Engagement ≥90%
 - **Meets Expectations**: Engagement 70-89%
 - **Needs Improvement**: Engagement 50-69%
 - **Poor**: Engagement <50%
 
+
 **Common Pitfalls**:
+
 - ❌ Not measuring owner performance (assume owners are engaged)
 - ✅ Track review compliance, responsiveness, engagement
 - ❌ Tolerating poor performance indefinitely
 - ✅ Escalate poor performers, reassign ownership if no improvement
 - ❌ No recognition for high performers
 - ✅ Highlight and thank high-performing owners, share best practices
+
 
 ---
 
@@ -740,10 +823,12 @@ Where Responsiveness =
 **Purpose**: Aggregate ownership accountability scores.
 
 **What This Sheet Captures**:
+
 - Accountability dimensions (Coverage, Acknowledgment, Awareness, Performance)
 - Scores for each dimension
 - Weighted overall accountability score
 - Trending vs. previous quarter
+
 
 **This sheet is MOSTLY auto-populated** from other sheets.
 
@@ -765,20 +850,28 @@ Where Responsiveness =
 **Accountability Dimensions**:
 
 **1. Ownership Coverage (Weight: 30%)**
+
 - Target: 100% (all assets have valid owner)
 - Actual: From Sheet 2 (average Valid Ownership % across categories)
 
+
 **2. Owner Acknowledgment (Weight: 25%)**
+
 - Target: 95% (minimum acceptable)
 - Actual: From Sheet 3 (Acknowledgment Rate %)
 
+
 **3. Owner Awareness (Weight: 20%)**
+
 - Target: 100% (all required owners trained and verified)
 - Actual: From Sheet 4 (Awareness Rate %)
 
+
 **4. Owner Performance (Weight: 25%)**
+
 - Target: 80% (average Engagement Score ≥80%)
 - Actual: From Sheet 5 (average Engagement Score across all owners)
+
 
 **Overall Accountability Score**:
 ```
@@ -787,10 +880,12 @@ Overall = (Coverage × 30%) + (Acknowledgment × 25%) +
 ```
 
 **Scoring Interpretation**:
+
 - **95-100%**: Excellent (strong accountability culture)
 - **85-94%**: Good (acceptable, minor gaps)
 - **75-84%**: Fair (significant improvements needed)
 - **<75%**: Poor (major accountability issues)
+
 
 **Example Scorecard**:
 
@@ -813,12 +908,14 @@ Interpretation: Good accountability (88%), approaching target. Main gaps: Awaren
 **Column Definitions**: Same as previous assessments with adjusted Related Domain:
 
 **Related Domain** dropdown:
+
 - Ownership Coverage
 - Owner Acknowledgment
 - Owner Awareness
 - Owner Performance
 - Accountability Metrics
 - All Domains
+
 
 **Evidence ID format**: `ACCT-NNN` (e.g., ACCT-001, ACCT-002, etc.)
 
@@ -837,28 +934,36 @@ Interpretation: Good accountability (88%), approaching target. Main gaps: Awaren
 ### What Evidence to Collect
 
 **Ownership Coverage Evidence**:
+
 - Inventory export with owner assignments
 - HR system cross-reference report (valid employees)
 - Unowned asset list
 - Invalid owner list (departed employees, placeholders)
 
+
 **Owner Acknowledgment Evidence**:
+
 - Signed attestations (email confirmations, e-signatures)
 - Attestation campaign tracking (sent date, response date)
 - Reminder emails
 - Escalation correspondence
 
+
 **Owner Awareness Evidence**:
+
 - Training completion certificates (LMS exports)
 - Quiz results (if applicable)
 - Interview notes (if applicable)
 - Awareness verification documentation
 
+
 **Owner Performance Evidence**:
+
 - Review compliance reports (by owner)
 - Update responsiveness tracking data
 - Engagement score calculations
 - Performance rating assignments
+
 
 ### Evidence Organization
 
@@ -963,6 +1068,7 @@ Before submitting this assessment, verify:
 - [ ] Department names replaced with individual owners
 - [ ] Unowned assets prioritized by criticality
 
+
 ### Acknowledgment Checks
 
 - [ ] Attestation campaign launched (all current owners contacted)
@@ -972,6 +1078,7 @@ Before submitting this assessment, verify:
 - [ ] Attestation evidence collected and stored
 - [ ] Acknowledgment rate calculated
 
+
 ### Awareness Checks
 
 - [ ] Training requirements defined (who needs training)
@@ -980,6 +1087,7 @@ Before submitting this assessment, verify:
 - [ ] Knowledge gaps identified
 - [ ] Remediation plans for poor understanding
 - [ ] Awareness rate calculated
+
 
 ### Performance Checks
 
@@ -991,6 +1099,7 @@ Before submitting this assessment, verify:
 - [ ] Action plans for poor performers
 - [ ] Average performance score calculated
 
+
 ### Metrics Checks
 
 - [ ] All 4 dimensions calculated
@@ -998,6 +1107,7 @@ Before submitting this assessment, verify:
 - [ ] Trending vs. previous quarter documented
 - [ ] Remediation priorities identified
 - [ ] Executive summary prepared
+
 
 ### Evidence Checks
 
@@ -1007,6 +1117,7 @@ Before submitting this assessment, verify:
 - [ ] Evidence metadata complete
 - [ ] Evidence stored securely per retention policy
 
+
 ---
 
 ## Review & Approval
@@ -1014,57 +1125,75 @@ Before submitting this assessment, verify:
 ### Review Process
 
 **Step 1: Self-Review** (Assessment Preparer)
+
 - Complete quality checklist above
 - Verify calculations
 - Check evidence completeness
 
+
 **Step 2: HR Review** (Optional but Recommended)
+
 - Validate employee status cross-reference
 - Confirm departed employee handling
 - Review ownership transfer process
 
+
 **Step 3: Management Review**
+
 - Review owner performance ratings
 - Approve escalations for poor performers
 - Approve ownership reassignments if needed
 
+
 **Step 4: Security Review** (Information Security Manager)
+
 - Review accountability scores vs. targets
 - Assess gap severity and priorities
 - Verify policy compliance
 - Review remediation timeline
 
+
 **Step 5: CISO Approval**
+
 - Review executive summary (accountability scorecard)
 - Assess overall accountability culture
 - Approve remediation plans
 - Escalate critical gaps to Executive Management
 - Sign approval
 
+
 **Step 6: Submission to Compliance Dashboard**
+
 - Export metrics to dashboard consolidation
 - Update ISMS-IMP-A.5.9.5 (Compliance Dashboard)
 - Archive assessment workbook
 - Store evidence per retention policy
 
+
 ### Approval Criteria
 
 **Approve** if:
+
 - ✅ Overall accountability score ≥85%
 - ✅ Ownership coverage ≥95% (100% ideal)
 - ✅ No critical assets with invalid/missing owners
 - ✅ Remediation plans exist for all gaps
 
+
 **Conditional Approval** (with immediate remediation) if:
+
 - ⚠️ Overall accountability score 75-84%
 - ⚠️ Ownership coverage 90-94%
 - ⚠️ Some critical assets with ownership gaps (but remediation in progress)
 
+
 **Reject** if:
+
 - ❌ Overall accountability score <75%
 - ❌ Ownership coverage <90%
 - ❌ Critical assets with no owner and no remediation plan
 - ❌ Systemic non-engagement (most owners not responding)
+
 
 ---
 
@@ -1100,12 +1229,14 @@ This section provides complete technical specifications for developers creating 
 ### Workbook Metadata
 
 **Workbook Properties**:
+
 - **Title**: ISMS A.5.9 Owner Accountability Assessment
 - **Subject**: ISO/IEC 27001:2022 Control A.5.9 - Asset Ownership Verification
 - **Author**: [Organization] ISMS Implementation Team
 - **Company**: [Organization]
 - **Created**: [Generation Date]
 - **Version**: 1.0
+
 
 ### Sheet Summary
 
@@ -1938,12 +2069,14 @@ Same pattern as IMP-A.5.9-3 Quality Metrics (Green/Yellow/Red based on complianc
 Same structure as previous assessments with adjusted Related Domain:
 
 **Related Domain** dropdown:
+
 - Ownership Coverage
 - Owner Acknowledgment
 - Owner Awareness
 - Owner Performance
 - Accountability Metrics
 - All Domains
+
 
 **Evidence ID format**: `ACCT-NNN`
 
@@ -2086,10 +2219,12 @@ if __name__ == '__main__':
 **CSV Export from Sheet 6 (Accountability Metrics)**:
 
 Required columns:
+
 - Accountability Dimension
 - Actual Score
 - Compliance Status
 - Trend
+
 
 **Export procedure**:
 1. Select rows 3-6 in Accountability Metrics sheet
@@ -2111,6 +2246,10 @@ Overall Accountability Score,88.1%,⚠️ At Risk,Improved
 
 ---
 
-**END OF ISMS-IMP-A.5.9.4 PART II - TECHNICAL SPECIFICATION**
+**END OF SPECIFICATION**
 
-*"Assign ownership. Verify acknowledgment. Measure performance. Ensure accountability."*
+---
+
+*"We are all agreed that your theory is crazy. The question which divides us is whether it is crazy enough."*
+— Niels Bohr
+*Where bamboo antennas actually work.* 🎋

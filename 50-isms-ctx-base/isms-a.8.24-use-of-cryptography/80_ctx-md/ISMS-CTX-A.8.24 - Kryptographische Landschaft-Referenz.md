@@ -1,9 +1,9 @@
-# ISMS-CTX-A.8.24 — Kryptographische Landschaft-Referenz
-## Industrie-Algorithmen und Cipher Suite Übersicht (Nicht-ISMS Technische Referenz)
+**ISMS-CTX-A.8.24 — Kryptographische Landschaft-Referenz**
+**Industrie-Algorithmen und Cipher Suite Übersicht (Nicht-ISMS Technische Referenz)**
 
 ---
 
-## Dokumentenlenkung
+**Dokumentenlenkung**
 
 | Feld | Wert |
 |------|------|
@@ -43,14 +43,17 @@ Dieses Dokument dient ausschliesslich zu Informations- und Sensibilisierungszwec
 - Dieses Dokument schreibt NICHT die Verwendung, das Verbot oder die Konfiguration spezifischer kryptographischer Algorithmen, Ciphers, Protokolle, Tools oder Plattformen vor.
 - Dieses Dokument überschreibt oder erweitert KEINE ISMS-Richtlinie.
 
+
 Alle bindenden kryptographischen Anforderungen, Verpflichtungen und Governance-Entscheidungen sind ausschliesslich in **ISMS-POL-A.8.24 (Kryptografie)** und anderen genehmigten ISMS-Dokumentationen definiert.
 
 Dieses Dokument dient ausschliesslich als technische Referenz für:
+
 - Beschreibung häufig anzutreffender kryptographischer Algorithmen und Cipher Suites
 - Verfolgung der Evolution von Industrie-Standards und Algorithmen-Lebenszyklus-Status
 - Unterstützung der Sensibilisierung für kryptographische Agilität
 - Information technischer Diskussionen und zukünftiger Implementierungsplanung
 - **Dieses Dokument darf NICHT als Audit-Nachweis für Implementierungen verwendet werden**
+
 
 Die Verwendung dieses Dokuments impliziert keine Implementierung, Compliance oder operative Reife.
 
@@ -59,9 +62,9 @@ Dieses Dokument übersteigt absichtlich den Detaillierungsgrad, der für ISO/IEC
 
 ---
 
-## 1. Dokumentenzweck und Geltungsbereich
+# Dokumentenzweck und Geltungsbereich
 
-### 1.1 Zweck
+## Zweck
 
 Dieses Dokument bietet eine technische Übersicht der kryptographischen Algorithmen-Landschaft, die häufig in modernen Informationssystemen anzutreffen ist. Es dient zur Unterstützung von:
 
@@ -70,9 +73,11 @@ Dieses Dokument bietet eine technische Übersicht der kryptographischen Algorith
 - Kontext für kryptographische Entscheidungsfindung
 - Zukünftiger Implementierungsplanungs-Diskussionen
 
-### 1.2 Was dieses Dokument NICHT ist
+
+## Was dieses Dokument NICHT ist
 
 Dieses Dokument:
+
 - Definiert NICHT [Organisation]s genehmigte oder verbotene Algorithmen
 - Etabliert KEINE obligatorischen Implementierungsanforderungen
 - Schafft KEINE Compliance-Verpflichtungen oder Audit-Kriterien
@@ -80,26 +85,29 @@ Dieses Dokument:
 - Schreibt KEINE spezifischen Cipher Suite Konfigurationen vor
 - Etabliert KEINE Key Management Verfahren
 
-### 1.3 Beziehung zum ISMS
+
+## Beziehung zum ISMS
 
 Dieses Dokument ist eine **nicht-bindende technische Referenz**. Alle kryptographischen Kontrollanforderungen sind ausschliesslich in ISMS-POL-A.8.24 definiert.
 
 Implementierungsentscheidungen werden durch separate Verfahren dokumentiert, basierend auf Risikobewertung, operativem Kontext und regulatorischen Anforderungen.
 
-### 1.4 Inhaltsorganisation
+## Inhaltsorganisation
 
 Diese Referenz organisiert kryptographische Algorithmen nach Funktion:
+
 - Symmetrische Verschlüsselung (Datenvertraulichkeit)
 - Asymmetrische Verschlüsselung (Key Exchange, digitale Signaturen)
 - Hash-Funktionen (Datenintegrität, Authentifizierung)
 - TLS/SSL Cipher Suites (sichere Kommunikation)
 - Schlüssellängen und Algorithmen-Reifegrad-Status
 
+
 ---
 
-## 2. Symmetrische Verschlüsselungs-Algorithmen
+# Symmetrische Verschlüsselungs-Algorithmen
 
-### 2.1 Block Ciphers
+## Block Ciphers
 
 Symmetrische Block Ciphers, die häufig in modernen Systemen anzutreffen sind:
 
@@ -113,12 +121,14 @@ Symmetrische Block Ciphers, die häufig in modernen Systemen anzutreffen sind:
 | **Twofish** | 128-bit | 128, 192, 256-bit | Modern aber weniger verbreitet | Alternative zu AES |
 
 **Industrie-Beobachtungen**:
+
 - AES ist der dominante Standard für symmetrische Verschlüsselung global
 - ChaCha20 gewinnt an Akzeptanz in ressourcenbeschränkten Umgebungen
 - 3DES von NIST deprecated (nach 2023 in den meisten Kontexten nicht mehr erlaubt)
 - DES gilt seit Ende der 1990er Jahre als kryptographisch gebrochen
 
-### 2.2 Block Cipher Betriebsmodi
+
+## Block Cipher Betriebsmodi
 
 Häufige Modi für den Betrieb von Block Ciphers:
 
@@ -132,11 +142,13 @@ Häufige Modi für den Betrieb von Block Ciphers:
 | **XTS** | Nein | Ja | Modern | Festplatten-Verschlüsselung (BitLocker, dm-crypt) |
 
 **Industrie-Beobachtungen**:
+
 - AEAD-Modi (GCM, CCM) stark bevorzugt für neue Implementierungen
 - CBC-Modus benötigt sorgfältige Implementierung zur Vermeidung von Schwachstellen
 - ECB-Modus bietet unzureichende Sicherheit für die meisten Applikationen
 
-### 2.3 Stream Ciphers
+
+## Stream Ciphers
 
 | Cipher | Schlüssellänge | Status | Häufige Anwendungsfälle |
 |--------|----------------|--------|-------------------------|
@@ -145,14 +157,16 @@ Häufige Modi für den Betrieb von Block Ciphers:
 | **Salsa20** | 128, 256-bit | Modern | ChaCha20 Vorgänger |
 
 **Industrie-Beobachtungen**:
+
 - RC4 formal deprecated in allen grösseren Protokollen (TLS, WPA, etc.)
 - ChaCha20 zunehmend als AES-Alternative für Performance adoptiert
 
+
 ---
 
-## 3. Asymmetrische Verschlüsselungs-Algorithmen
+# Asymmetrische Verschlüsselungs-Algorithmen
 
-### 3.1 Public Key Algorithmen
+## Public Key Algorithmen
 
 Asymmetrische Algorithmen, die häufig anzutreffen sind:
 
@@ -167,12 +181,14 @@ Asymmetrische Algorithmen, die häufig anzutreffen sind:
 | **RSA-1024** | 1024-bit | Obsolet, deprecated | Nur historische Referenz |
 
 **Industrie-Beobachtungen**:
+
 - RSA-2048 Minimum für neue Deployments (NIST, CA/Browser Forum)
 - RSA-3072 zunehmend adoptiert für langlebige Schlüssel (5+ Jahre Lebensdauer)
 - ECC (ECDSA, EdDSA) bietet äquivalente Sicherheit mit kleineren Schlüsselgrössen
 - Ed25519 gewinnt an Akzeptanz für SSH und moderne Protokolle
 
-### 3.2 Schlüssellängen-Äquivalenz
+
+## Schlüssellängen-Äquivalenz
 
 Ungefähre Sicherheits-Äquivalenz zwischen Algorithmen-Familien:
 
@@ -187,9 +203,9 @@ Ungefähre Sicherheits-Äquivalenz zwischen Algorithmen-Familien:
 
 ---
 
-## 4. Hash-Funktionen und Message Authentication
+# Hash-Funktionen und Message Authentication
 
-### 4.1 Kryptographische Hash-Funktionen
+## Kryptographische Hash-Funktionen
 
 Hash-Funktionen, die häufig anzutreffen sind:
 
@@ -204,11 +220,13 @@ Hash-Funktionen, die häufig anzutreffen sind:
 | **MD5** | 128-bit | Obsolet, gebrochen | Nur historische Referenz, deprecated 2004 |
 
 **Industrie-Beobachtungen**:
+
 - SHA-256 Minimum für neue Implementierungen (Zertifikate, Signaturen)
 - SHA-1 deprecated für Zertifikate (2017), Git-Migration laufend
 - MD5 gilt als kryptographisch gebrochen, nur für Nicht-Sicherheits-Verwendung geeignet (Checksummen)
 
-### 4.2 Message Authentication Codes (MAC)
+
+## Message Authentication Codes (MAC)
 
 | Algorithmus | Basiert auf | Output-Grösse | Status |
 |-------------|-------------|---------------|--------|
@@ -219,7 +237,7 @@ Hash-Funktionen, die häufig anzutreffen sind:
 | **HMAC-SHA1** | SHA-1 | 160-bit | Legacy, wird ausgemustert |
 | **HMAC-MD5** | MD5 | 128-bit | Obsolet |
 
-### 4.3 Password Hashing Funktionen
+## Password Hashing Funktionen
 
 Spezialisierte Funktionen für Password Storage:
 
@@ -233,18 +251,20 @@ Spezialisierte Funktionen für Password Storage:
 | **MD5 (raw)** | General Hash | Obsolet | Ungeeignet für Passwords |
 
 **Industrie-Beobachtungen**:
+
 - Password Hashing benötigt Key Derivation Functions (KDFs) mit Work Factor
 - Raw Hash-Funktionen (SHA-256, MD5) ungeeignet für Password Storage
 - Argon2id empfohlen für neue Implementierungen (OWASP)
 
+
 ---
 
-## 5. TLS/SSL Cipher Suites
+# TLS/SSL Cipher Suites
 
 **Wichtiger Hinweis zu Cipher Suite Auflistungen**:
 Die untenstehenden TLS Cipher Suite Beispiele sind illustrativ und nicht-exhaustiv. Sie dienen zur Erklärung von häufigen Industrie-Konstruktionen und Namenskonventionen. Sie repräsentieren NICHT genehmigte, geforderte oder erwartete Konfigurationen innerhalb von [Organisation].
 
-### 5.1 TLS 1.3 Cipher Suites
+## TLS 1.3 Cipher Suites
 
 TLS 1.3 vereinfachtes Cipher Suite Design (5 standardisierte Suites):
 
@@ -257,11 +277,13 @@ TLS 1.3 vereinfachtes Cipher Suite Design (5 standardisierte Suites):
 | **TLS_AES_128_CCM_8_SHA256** | ECDHE | AES-128-CCM (8-byte Tag) | Modern, Constrained Devices |
 
 **Industrie-Beobachtungen**:
+
 - TLS 1.3 entfernt Cipher Suite Negotiation-Komplexität
 - Alle TLS 1.3 Suites bieten Forward Secrecy (ECDHE obligatorisch)
 - Alle TLS 1.3 Suites bieten Authenticated Encryption (AEAD)
 
-### 5.2 TLS 1.2 Cipher Suites (Ausgewählte häufige Beispiele)
+
+## TLS 1.2 Cipher Suites (Ausgewählte häufige Beispiele)
 
 TLS 1.2 Cipher Suite Beispiele (nicht-exhaustiv, nur beschreibend):
 
@@ -277,12 +299,14 @@ TLS 1.2 Cipher Suite Beispiele (nicht-exhaustiv, nur beschreibend):
 | **TLS_RSA_WITH_RC4_128_SHA** | RSA | RSA | RC4 | SHA-1 | Obsolet, gebrochen |
 
 **Industrie-Beobachtungen**:
+
 - ECDHE bietet Forward Secrecy (empfohlen)
 - AEAD-Modi (GCM, Poly1305) bevorzugt gegenüber CBC + HMAC
 - RSA Key Exchange (kein ECDHE) fehlt Forward Secrecy
 - CBC-Modus anfällig für Padding Oracle Angriffe bei nicht sorgfältiger Implementierung
 
-### 5.3 Deprecated/Obsolete Protokolle und Cipher Suites
+
+## Deprecated/Obsolete Protokolle und Cipher Suites
 
 | Protokoll/Cipher | Deprecated | Grund |
 |------------------|------------|-------|
@@ -298,9 +322,9 @@ TLS 1.2 Cipher Suite Beispiele (nicht-exhaustiv, nur beschreibend):
 
 ---
 
-## 6. Schlüssellängen und Algorithmen-Lebenszyklus
+# Schlüssellängen und Algorithmen-Lebenszyklus
 
-### 6.1 Häufig referenzierte Schlüssellängen in Industrie-Leitlinien
+## Häufig referenzierte Schlüssellängen in Industrie-Leitlinien
 
 Häufig referenzierte Schlüssellängen in Industrie-Leitlinien (NIST, BSI, ENISA):
 
@@ -315,7 +339,7 @@ Häufig referenzierte Schlüssellängen in Industrie-Leitlinien (NIST, BSI, ENIS
 
 **Quelle**: NIST SP 800-57 Part 1 Rev. 5, BSI TR-02102-1
 
-### 6.2 Algorithmen-Lebenszyklus-Status
+## Algorithmen-Lebenszyklus-Status
 
 Klassifizierung von Algorithmen-Reife und Adoptions-Status:
 
@@ -328,7 +352,7 @@ Klassifizierung von Algorithmen-Reife und Adoptions-Status:
 | **Obsolet** | Kryptographisch gebrochen oder stark geschwächt | DES, MD5 (Sicherheits-Verwendung), RC4, SHA-1 (Zertifikate) |
 | **Emerging** | Standardisiert aber limitiertes Deployment | Post-Quantum Algorithmen (ML-KEM, ML-DSA) |
 
-### 6.3 Post-Quantum Cryptography Status
+## Post-Quantum Cryptography Status
 
 NIST Post-Quantum Cryptography (PQC) Standardisierung:
 
@@ -340,16 +364,18 @@ NIST Post-Quantum Cryptography (PQC) Standardisierung:
 | **FN-DSA** (Falcon) | Digital Signature | In Evaluation | Lattice-basiert, kompakte Signaturen |
 
 **Industrie-Beobachtungen**:
+
 - Post-Quantum Algorithmen werden standardisiert aber noch nicht weit deployed
 - Hybrid-Modi (PQC + klassisch) erwartet während Übergangsperiode
 - TLS 1.3 Hybrid Key Exchange (X25519 + ML-KEM) in Entwicklung
 - Certificate Authorities beginnen PQC Trial-Ausstellung
 
+
 ---
 
-## 7. Zertifikats-Gültigkeit und Lebenszyklus-Trends
+# Zertifikats-Gültigkeit und Lebenszyklus-Trends
 
-### 7.1 Historische Zertifikats-Gültigkeits-Evolution
+## Historische Zertifikats-Gültigkeits-Evolution
 
 Public TLS-Zertifikats-Maximum-Gültigkeitsperioden:
 
@@ -361,7 +387,7 @@ Public TLS-Zertifikats-Maximum-Gültigkeitsperioden:
 | 2017-2020 | 825 Tage (~27 Monate) | CA/Browser Forum Ballot 193 |
 | 2020-heute | 398 Tage (~13 Monate) | CA/Browser Forum Ballot SC-31 |
 
-### 7.2 Zukünftige Zertifikats-Gültigkeit (Ballot SC-081v3)
+## Zukünftige Zertifikats-Gültigkeit (Ballot SC-081v3)
 
 CA/Browser Forum Ballot SC-081v3 (verabschiedet April 2025):
 
@@ -372,17 +398,19 @@ CA/Browser Forum Ballot SC-081v3 (verabschiedet April 2025):
 | 15. März 2029 | 47 Tage | 10 Tage |
 
 **Industrie-Beobachtungen**:
+
 - Zertifikats-Lebenszeiten reduzieren sich zur Verbesserung von Sicherheit und Agilität
 - Kürzere Lebenszeiten erhöhen die Wichtigkeit von automatisiertem Lifecycle Management
 - Private/interne PKI nicht Gegenstand von CA/Browser Forum Anforderungen
+
 
 **Hinweis zu interner PKI**: Interne Zertifikats-Richtlinien werden durch Risikobewertung und operativen Kontext bestimmt und nicht automatisch von Public-Trust-Anforderungen abgeleitet. Organisationen können kürzere oder längere Lebenszeiten basierend auf ihrer spezifischen Sicherheitsposture und operativen Bedürfnissen wählen.
 
 ---
 
-## 8. Standards und Referenz-Quellen
+# Standards und Referenz-Quellen
 
-### 8.1 Autoritative Standards-Organisationen
+## Autoritative Standards-Organisationen
 
 | Organisation | Fokusbereich | Schlüssel-Publikationen |
 |--------------|-------------|------------------------|
@@ -393,56 +421,68 @@ CA/Browser Forum Ballot SC-081v3 (verabschiedet April 2025):
 | **CA/Browser Forum** | Certificate Authority Standards | Baseline Requirements, Ballots |
 | **ISO/IEC JTC 1/SC 27** | Informationssicherheits-Standards | ISO/IEC 18033 (Verschlüsselungs-Algorithmen) |
 
-### 8.2 Schlüssel-Referenz-Dokumente
+## Schlüssel-Referenz-Dokumente
 
 **NIST Publikationen**:
+
 - FIPS 140-2/140-3: Security Requirements for Cryptographic Modules
 - NIST SP 800-52 Rev. 2: Guidelines for TLS Implementations
 - NIST SP 800-57 Part 1 Rev. 5: Key Management Recommendations
 - NIST SP 800-131A Rev. 2: Transitioning the Use of Cryptographic Algorithms
 - NIST SP 800-175B Rev. 1: Guideline for Using Cryptographic Standards
 
+
 **BSI Publikationen**:
+
 - TR-02102-1: Kryptographische Verfahren - Empfehlungen und Schlüssellängen
 - TR-02102-2: Verwendung von TLS
 - TR-02102-3: Geeignete kryptographische Algorithmen
 - TR-02102-4: Verwendung von Secure Shell (SSH)
 
+
 **IETF RFCs**:
+
 - RFC 8446: The Transport Layer Security (TLS) Protocol Version 1.3
 - RFC 5246: The Transport Layer Security (TLS) Protocol Version 1.2
 - RFC 8017: PKCS #1: RSA Cryptography Specifications Version 2.2
 - RFC 8032: Edwards-Curve Digital Signature Algorithm (EdDSA)
 
+
 **CA/Browser Forum**:
+
 - Baseline Requirements for TLS Certificates
 - Extended Validation Guidelines
 - Code Signing Requirements
 - S/MIME Requirements
 
-### 8.3 Algorithmen-Deprecation-Tracking
+
+## Algorithmen-Deprecation-Tracking
 
 Organisationen verfolgen Algorithmen-Status häufig durch:
+
 - NIST Cryptographic Algorithm Validation Program (CAVP)
 - NIST Deprecated Algorithm List
 - Browser Vendor Security Policies (Chrome, Firefox, Safari, Edge Root Programs)
 - CA/Browser Forum Ballot Tracking
 - Vendor Security Bulletins (OpenSSL, Microsoft, Apple, etc.)
 
+
 ---
 
-## 9. Dokumenten-Wartung
+# Dokumenten-Wartung
 
-### 9.1 Update-Auslöser
+## Update-Auslöser
 
 Dieses Referenzdokument kann aktualisiert werden, wenn:
+
 - Grössere Algorithmen-Standardisierung erfolgt (NIST, IETF RFCs)
 - Signifikante Algorithmen-Deprecations angekündigt werden
 - TLS/SSL Protokoll-Updates publiziert werden
 - Post-Quantum Cryptography Deployment-Meilensteine erreicht werden
 - CA/Browser Forum Baseline Requirement-Änderungen erfolgen
 
-### 9.2 Verantwortlichkeit
+
+## Verantwortlichkeit
 
 **Dokumenten-Eigentümer**: Security Architecture / Kryptographie SME  
 **Review-Frequenz**: Jährlich oder nach Bedarf  
@@ -450,19 +490,23 @@ Dieses Referenzdokument kann aktualisiert werden, wenn:
 
 ---
 
-## 10. Beziehung zu ISMS-POL-A.8.24
+# Beziehung zu ISMS-POL-A.8.24
 
 Dieses Dokument bietet **technischen Kontext**, der informieren kann:
+
 - Sensibilisierung für kryptographische Agilität (ISMS-POL-A.8.24 Abschnitt 2.6)
 - Algorithmen-Auswahl-Diskussionen während Implementierungsplanung
 - Risikobewertung von Legacy-kryptographischen Systemen
 - Verständnis der Industrie-Standards-Evolution
 
+
 Dieses Dokument:
+
 - Überschreibt oder erweitert NICHT ISMS-POL-A.8.24 Anforderungen
 - Etabliert KEINE obligatorischen Algorithmen-Auswahlen
 - Schafft KEINE Compliance-Verpflichtungen
 - Definiert NICHT genehmigte/verbotene Algorithmen für [Organisation]
+
 
 Alle kryptographischen Kontrollanforderungen sind ausschliesslich in ISMS-POL-A.8.24 definiert und werden durch separate Verfahren implementiert, basierend auf Risikobewertung und operativem Kontext.
 
@@ -471,3 +515,4 @@ Alle kryptographischen Kontrollanforderungen sind ausschliesslich in ISMS-POL-A.
 **ENDE DES DOKUMENTS**
 
 *Dies ist ein technisches Referenzdokument ausschliesslich zu Sensibilisierungszwecken. Es etabliert keine ISMS-Anforderungen oder schafft Compliance-Verpflichtungen.*
+*Where bamboo antennas actually work.* 🎋

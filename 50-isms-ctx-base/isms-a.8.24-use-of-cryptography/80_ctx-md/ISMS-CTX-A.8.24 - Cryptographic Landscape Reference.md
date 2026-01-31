@@ -1,9 +1,9 @@
-# ISMS-CTX-A.8.24 — Cryptographic Landscape Reference
-## Industry Algorithm and Cipher Suite Overview (Non-ISMS Technical Reference)
+**ISMS-CTX-A.8.24 — Cryptographic Landscape Reference**
+**Industry Algorithm and Cipher Suite Overview (Non-ISMS Technical Reference)**
 
 ---
 
-## Document Control
+**Document Control**
 
 | Field | Value |
 |-------|-------|
@@ -43,14 +43,17 @@ This document is provided for informational and awareness purposes only.
 - This document does NOT mandate the use, prohibition, or configuration of specific cryptographic algorithms, ciphers, protocols, tools, or platforms.
 - This document does NOT override or extend any ISMS policy.
 
+
 All binding cryptographic requirements, obligations, and governance decisions are defined exclusively in **ISMS-POL-A.8.24 (Use of Cryptography)** and other approved ISMS documentation.
 
 This document serves solely as a technical reference to:
+
 - Describe commonly encountered cryptographic algorithms and cipher suites
 - Track industry standards evolution and algorithm lifecycle status
 - Support cryptographic agility awareness
 - Inform technical discussions and future implementation planning
 - **This document must not be used as audit evidence of implementation**
+
 
 Use of this document does not imply implementation, compliance, or operational maturity.
 
@@ -59,9 +62,9 @@ This document intentionally exceeds the level of detail required for ISO/IEC 270
 
 ---
 
-## 1. Document Purpose and Scope
+# Document Purpose and Scope
 
-### 1.1 Purpose
+## Purpose
 
 This document provides a technical overview of the cryptographic algorithm landscape commonly encountered in modern information systems. It is intended to support:
 
@@ -70,9 +73,11 @@ This document provides a technical overview of the cryptographic algorithm lands
 - Context for cryptographic decision-making
 - Future implementation planning discussions
 
-### 1.2 What This Document Is NOT
+
+## What This Document Is NOT
 
 This document does NOT:
+
 - Define [Organization]'s approved or prohibited algorithms
 - Establish mandatory implementation requirements
 - Create compliance obligations or audit criteria
@@ -80,26 +85,29 @@ This document does NOT:
 - Mandate specific cipher suite configurations
 - Establish key management procedures
 
-### 1.3 Relationship to ISMS
+
+## Relationship to ISMS
 
 This document is a **non-binding technical reference**. All cryptographic control requirements are defined exclusively in ISMS-POL-A.8.24.
 
 Implementation decisions are documented through separate procedures based on risk assessment, operational context, and regulatory requirements.
 
-### 1.4 Content Organization
+## Content Organization
 
 This reference organizes cryptographic algorithms by function:
+
 - Symmetric encryption (data confidentiality)
 - Asymmetric encryption (key exchange, digital signatures)
 - Hash functions (data integrity, authentication)
 - TLS/SSL cipher suites (secure communications)
 - Key lengths and algorithm maturity status
 
+
 ---
 
-## 2. Symmetric Encryption Algorithms
+# Symmetric Encryption Algorithms
 
-### 2.1 Block Ciphers
+## Block Ciphers
 
 Symmetric block ciphers commonly encountered in modern systems:
 
@@ -113,12 +121,14 @@ Symmetric block ciphers commonly encountered in modern systems:
 | **Twofish** | 128-bit | 128, 192, 256-bit | Modern but less common | Alternative to AES |
 
 **Industry Observations**:
+
 - AES is the dominant standard for symmetric encryption globally
 - ChaCha20 gaining adoption in resource-constrained environments
 - 3DES deprecated by NIST (disallowed after 2023 in most contexts)
 - DES considered cryptographically broken since late 1990s
 
-### 2.2 Block Cipher Modes of Operation
+
+## Block Cipher Modes of Operation
 
 Common modes for operating block ciphers:
 
@@ -132,11 +142,13 @@ Common modes for operating block ciphers:
 | **XTS** | No | Yes | Modern | Disk encryption (BitLocker, dm-crypt) |
 
 **Industry Observations**:
+
 - AEAD modes (GCM, CCM) strongly preferred for new implementations
 - CBC mode requires careful implementation to avoid vulnerabilities
 - ECB mode provides insufficient security for most applications
 
-### 2.3 Stream Ciphers
+
+## Stream Ciphers
 
 | Cipher | Key Length | Status | Common Use Cases |
 |--------|------------|--------|------------------|
@@ -145,14 +157,16 @@ Common modes for operating block ciphers:
 | **Salsa20** | 128, 256-bit | Modern | ChaCha20 predecessor |
 
 **Industry Observations**:
+
 - RC4 formally deprecated across all major protocols (TLS, WPA, etc.)
 - ChaCha20 increasingly adopted as AES alternative for performance
 
+
 ---
 
-## 3. Asymmetric Encryption Algorithms
+# Asymmetric Encryption Algorithms
 
-### 3.1 Public Key Algorithms
+## Public Key Algorithms
 
 Asymmetric algorithms commonly encountered:
 
@@ -167,12 +181,14 @@ Asymmetric algorithms commonly encountered:
 | **RSA-1024** | 1024-bit | Obsolete, deprecated | Historical reference only |
 
 **Industry Observations**:
+
 - RSA-2048 minimum for new deployments (NIST, CA/Browser Forum)
 - RSA-3072 increasingly adopted for long-term keys (5+ year lifetime)
 - ECC (ECDSA, EdDSA) provides equivalent security with smaller key sizes
 - Ed25519 gaining adoption for SSH and modern protocols
 
-### 3.2 Key Length Equivalence
+
+## Key Length Equivalence
 
 Approximate security equivalence between algorithm families:
 
@@ -187,9 +203,9 @@ Approximate security equivalence between algorithm families:
 
 ---
 
-## 4. Hash Functions and Message Authentication
+# Hash Functions and Message Authentication
 
-### 4.1 Cryptographic Hash Functions
+## Cryptographic Hash Functions
 
 Hash functions commonly encountered:
 
@@ -204,11 +220,13 @@ Hash functions commonly encountered:
 | **MD5** | 128-bit | Obsolete, broken | Historical reference only, deprecated 2004 |
 
 **Industry Observations**:
+
 - SHA-256 minimum for new implementations (certificates, signatures)
 - SHA-1 deprecated for certificates (2017), git migration ongoing
 - MD5 considered cryptographically broken, suitable only for non-security use (checksums)
 
-### 4.2 Message Authentication Codes (MAC)
+
+## Message Authentication Codes (MAC)
 
 | Algorithm | Based On | Output Size | Status |
 |-----------|----------|-------------|--------|
@@ -219,7 +237,7 @@ Hash functions commonly encountered:
 | **HMAC-SHA1** | SHA-1 | 160-bit | Legacy, being phased out |
 | **HMAC-MD5** | MD5 | 128-bit | Obsolete |
 
-### 4.3 Password Hashing Functions
+## Password Hashing Functions
 
 Specialized functions for password storage:
 
@@ -233,18 +251,20 @@ Specialized functions for password storage:
 | **MD5 (raw)** | General hash | Obsolete | Unsuitable for passwords |
 
 **Industry Observations**:
+
 - Password hashing requires key derivation functions (KDFs) with work factor
 - Raw hash functions (SHA-256, MD5) unsuitable for password storage
 - Argon2id recommended for new implementations (OWASP)
 
+
 ---
 
-## 5. TLS/SSL Cipher Suites
+# TLS/SSL Cipher Suites
 
 **Important Note on Cipher Suite Listings**:
 The TLS cipher suite examples below are illustrative and non-exhaustive. They are provided to explain common industry constructions and naming conventions only. They do not represent approved, required, or expected configurations within [Organization].
 
-### 5.1 TLS 1.3 Cipher Suites
+## TLS 1.3 Cipher Suites
 
 TLS 1.3 simplified cipher suite design (5 standardized suites):
 
@@ -257,11 +277,13 @@ TLS 1.3 simplified cipher suite design (5 standardized suites):
 | **TLS_AES_128_CCM_8_SHA256** | ECDHE | AES-128-CCM (8-byte tag) | Modern, constrained devices |
 
 **Industry Observations**:
+
 - TLS 1.3 removes cipher suite negotiation complexity
 - All TLS 1.3 suites provide forward secrecy (ECDHE mandatory)
 - All TLS 1.3 suites provide authenticated encryption (AEAD)
 
-### 5.2 TLS 1.2 Cipher Suites (Selected Common Examples)
+
+## TLS 1.2 Cipher Suites (Selected Common Examples)
 
 TLS 1.2 cipher suite examples (non-exhaustive, descriptive only):
 
@@ -277,12 +299,14 @@ TLS 1.2 cipher suite examples (non-exhaustive, descriptive only):
 | **TLS_RSA_WITH_RC4_128_SHA** | RSA | RSA | RC4 | SHA-1 | Obsolete, broken |
 
 **Industry Observations**:
+
 - ECDHE provides forward secrecy (recommended)
 - AEAD modes (GCM, Poly1305) preferred over CBC + HMAC
 - RSA key exchange (no ECDHE) lacks forward secrecy
 - CBC mode vulnerable to padding oracle attacks if not carefully implemented
 
-### 5.3 Deprecated/Obsolete Protocols and Cipher Suites
+
+## Deprecated/Obsolete Protocols and Cipher Suites
 
 | Protocol/Cipher | Deprecated | Reason |
 |-----------------|------------|--------|
@@ -298,9 +322,9 @@ TLS 1.2 cipher suite examples (non-exhaustive, descriptive only):
 
 ---
 
-## 6. Key Lengths and Algorithm Lifecycle
+# Key Lengths and Algorithm Lifecycle
 
-### 6.1 Commonly Referenced Key Lengths in Industry Guidance
+## Commonly Referenced Key Lengths in Industry Guidance
 
 Commonly referenced key lengths in industry guidance (NIST, BSI, ENISA):
 
@@ -315,7 +339,7 @@ Commonly referenced key lengths in industry guidance (NIST, BSI, ENISA):
 
 **Source**: NIST SP 800-57 Part 1 Rev. 5, BSI TR-02102-1
 
-### 6.2 Algorithm Lifecycle Status
+## Algorithm Lifecycle Status
 
 Classification of algorithm maturity and adoption status:
 
@@ -328,7 +352,7 @@ Classification of algorithm maturity and adoption status:
 | **Obsolete** | Cryptographically broken or severely weakened | DES, MD5 (security use), RC4, SHA-1 (certificates) |
 | **Emerging** | Standardized but limited deployment | Post-quantum algorithms (ML-KEM, ML-DSA) |
 
-### 6.3 Post-Quantum Cryptography Status
+## Post-Quantum Cryptography Status
 
 NIST Post-Quantum Cryptography (PQC) standardization:
 
@@ -340,16 +364,18 @@ NIST Post-Quantum Cryptography (PQC) standardization:
 | **FN-DSA** (Falcon) | Digital Signature | Under consideration | Lattice-based, compact signatures |
 
 **Industry Observations**:
+
 - Post-quantum algorithms being standardized but not yet widely deployed
 - Hybrid modes (PQC + classical) expected during transition period
 - TLS 1.3 hybrid key exchange (X25519 + ML-KEM) under development
 - Certificate authorities beginning PQC trial issuance
 
+
 ---
 
-## 7. Certificate Validity and Lifecycle Trends
+# Certificate Validity and Lifecycle Trends
 
-### 7.1 Historical Certificate Validity Evolution
+## Historical Certificate Validity Evolution
 
 Public TLS certificate maximum validity periods:
 
@@ -361,7 +387,7 @@ Public TLS certificate maximum validity periods:
 | 2017-2020 | 825 days (~27 months) | CA/Browser Forum Ballot 193 |
 | 2020-present | 398 days (~13 months) | CA/Browser Forum Ballot SC-31 |
 
-### 7.2 Future Certificate Validity (Ballot SC-081v3)
+## Future Certificate Validity (Ballot SC-081v3)
 
 CA/Browser Forum Ballot SC-081v3 (passed April 2025):
 
@@ -372,17 +398,19 @@ CA/Browser Forum Ballot SC-081v3 (passed April 2025):
 | March 15, 2029 | 47 days | 10 days |
 
 **Industry Observations**:
+
 - Certificate lifetimes reducing to improve security and agility
 - Shorter lifetimes increase importance of automated lifecycle management
 - Private/internal PKI not subject to CA/Browser Forum requirements
+
 
 **Note on Internal PKI**: Internal certificate policies are determined by risk assessment and operational context and are not derived automatically from public-trust requirements. Organizations may choose shorter or longer lifetimes based on their specific security posture and operational needs.
 
 ---
 
-## 8. Standards and Reference Sources
+# Standards and Reference Sources
 
-### 8.1 Authoritative Standards Bodies
+## Authoritative Standards Bodies
 
 | Organization | Focus Area | Key Publications |
 |--------------|------------|------------------|
@@ -393,56 +421,68 @@ CA/Browser Forum Ballot SC-081v3 (passed April 2025):
 | **CA/Browser Forum** | Certificate authority standards | Baseline Requirements, ballots |
 | **ISO/IEC JTC 1/SC 27** | Information security standards | ISO/IEC 18033 (encryption algorithms) |
 
-### 8.2 Key Reference Documents
+## Key Reference Documents
 
 **NIST Publications**:
+
 - FIPS 140-2/140-3: Security Requirements for Cryptographic Modules
 - NIST SP 800-52 Rev. 2: Guidelines for TLS Implementations
 - NIST SP 800-57 Part 1 Rev. 5: Key Management Recommendations
 - NIST SP 800-131A Rev. 2: Transitioning the Use of Cryptographic Algorithms
 - NIST SP 800-175B Rev. 1: Guideline for Using Cryptographic Standards
 
+
 **BSI Publications**:
+
 - TR-02102-1: Cryptographic Mechanisms - Recommendations and Key Lengths
 - TR-02102-2: Use of TLS
 - TR-02102-3: Suitable Cryptographic Algorithms
 - TR-02102-4: Use of Secure Shell (SSH)
 
+
 **IETF RFCs**:
+
 - RFC 8446: The Transport Layer Security (TLS) Protocol Version 1.3
 - RFC 5246: The Transport Layer Security (TLS) Protocol Version 1.2
 - RFC 8017: PKCS #1: RSA Cryptography Specifications Version 2.2
 - RFC 8032: Edwards-Curve Digital Signature Algorithm (EdDSA)
 
+
 **CA/Browser Forum**:
+
 - Baseline Requirements for TLS Certificates
 - Extended Validation Guidelines
 - Code Signing Requirements
 - S/MIME Requirements
 
-### 8.3 Algorithm Deprecation Tracking
+
+## Algorithm Deprecation Tracking
 
 Organizations commonly monitor algorithm status through:
+
 - NIST Cryptographic Algorithm Validation Program (CAVP)
 - NIST Deprecated Algorithm List
 - Browser vendor security policies (Chrome, Firefox, Safari, Edge root programs)
 - CA/Browser Forum ballot tracking
 - Vendor security bulletins (OpenSSL, Microsoft, Apple, etc.)
 
+
 ---
 
-## 9. Document Maintenance
+# Document Maintenance
 
-### 9.1 Update Triggers
+## Update Triggers
 
 This reference document may be updated when:
+
 - Major algorithm standardization occurs (NIST, IETF RFCs)
 - Significant algorithm deprecations announced
 - TLS/SSL protocol updates published
 - Post-quantum cryptography deployment milestones reached
 - CA/Browser Forum baseline requirement changes
 
-### 9.2 Responsibility
+
+## Responsibility
 
 **Document Owner**: Security Architecture / Cryptography SME  
 **Review Frequency**: Annual or as needed  
@@ -450,19 +490,23 @@ This reference document may be updated when:
 
 ---
 
-## 10. Relationship to ISMS-POL-A.8.24
+# Relationship to ISMS-POL-A.8.24
 
 This document provides **technical context** that may inform:
+
 - Cryptographic agility awareness (ISMS-POL-A.8.24 Section 2.6)
 - Algorithm selection discussions during implementation planning
 - Risk assessment of legacy cryptographic systems
 - Understanding of industry standards evolution
 
+
 This document does NOT:
+
 - Override or extend ISMS-POL-A.8.24 requirements
 - Establish mandatory algorithm selections
 - Create compliance obligations
 - Define approved/prohibited algorithms for [Organization]
+
 
 All cryptographic control requirements are defined exclusively in ISMS-POL-A.8.24 and implemented through separate procedures based on risk assessment and operational context.
 
@@ -471,3 +515,4 @@ All cryptographic control requirements are defined exclusively in ISMS-POL-A.8.2
 **END OF DOCUMENT**
 
 *This is a technical reference document for awareness purposes only. It does not establish ISMS requirements or create compliance obligations.*
+*Where bamboo antennas actually work.* 🎋

@@ -1,8 +1,8 @@
-# ISMS-IMP-A.5.34.1 - PII Identification and Classification Assessment
-## Assessment Specification with User Completion Guide
+**ISMS-IMP-A.5.34.1 - PII Identification and Classification Assessment**
+**Assessment Specification with User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.5.34: Privacy and Protection of PII
 
-## Document Control
+**Document Control**
 
 | Attribute | Value |
 |-----------|-------|
@@ -43,10 +43,12 @@ This document consists of two parts:
   - Cell Styling Reference
   - Integration Points
 
+
 **Target Audiences:**
 
 - **Part I:** Assessment users (DPO, Data Owners, System Owners, Compliance Officers, Auditors)
 - **Part II:** Workbook developers (Python/Excel script maintainers)
+
 
 ---
 
@@ -56,13 +58,13 @@ This document consists of two parts:
 
 ---
 
-## 1. Assessment Overview
+# Assessment Overview
 
-### 1.1 Purpose & Scope
+## Purpose & Scope
 
 **Assessment Name:** ISMS-IMP-A.5.34.1 - PII Identification and Classification Assessment
 
-#### What This Assessment Covers
+### What This Assessment Covers
 
 This assessment documents the **WHAT** and **WHERE** of PII processing - the foundational inventory that answers:
 
@@ -74,11 +76,12 @@ This assessment documents the **WHAT** and **WHERE** of PII processing - the fou
 - What legal basis justifies each processing activity?
 - What safeguards protect PII during cross-border transfers?
 
-#### Key Principle
+
+### Key Principle
 
 This assessment is **completely vendor-agnostic and technology-independent**. You document YOUR specific systems (whatever you use - Salesforce, SAP, custom databases, spreadsheets, email, paper files) and verify compliance against generic GDPR/FADP requirements.
 
-#### What You'll Document
+### What You'll Document
 
 - ✅ **Complete PII system inventory** listing all systems containing personal data
 - ✅ **PII classification** for each system (Basic/Sensitive/Criminal Offense)
@@ -90,7 +93,8 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 - ✅ **Evidence register** linking documentation to audit artifacts
 - ✅ **Approved assessment** with DPO and stakeholder sign-offs
 
-#### How This Relates to Other A.5.34 Assessments
+
+### How This Relates to Other A.5.34 Assessments
 
 | Assessment | Focus | Relationship to A.5.34.1 |
 |------------|-------|--------------------------|
@@ -103,9 +107,9 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 
 **Context Note:** This assessment (A.5.34.1) MUST be completed first - it provides the foundational PII inventory and ROPA that all other privacy assessments depend on.
 
-### 1.2 Who Should Complete This Assessment
+## Who Should Complete This Assessment
 
-#### Primary Stakeholders
+### Primary Stakeholders
 
 1. **Data Protection Officer (DPO) / Privacy Officer** - Leads assessment, ensures GDPR Article 30 compliance, validates ROPA completeness
 2. **Chief Information Security Officer (CISO) / Security Team** - Provides technical PII discovery support (DLP scans, database queries, system documentation)
@@ -113,7 +117,7 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 4. **Data Owners / Business Process Owners** - Define data processing purposes, legal bases, retention requirements
 5. **Legal / Compliance Officer** - Validate legal basis accuracy, confirm cross-border transfer mechanisms
 
-#### Required Skills
+### Required Skills
 
 - Understanding of GDPR Article 30 and Swiss FADP requirements
 - Knowledge of [Organization]'s IT infrastructure and system landscape
@@ -121,7 +125,8 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 - Ability to interview system owners and business stakeholders
 - Technical understanding to read system documentation and data flow diagrams
 
-#### Time Commitment
+
+### Time Commitment
 
 - **Initial assessment:** 20-40 hours (depending on organization size and system complexity)
   - Small organization (1-10 systems, 1-50 employees): 10-20 hours
@@ -129,7 +134,8 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
   - Large organization (50+ systems, 250+ employees): 40-80+ hours
 - **Quarterly updates:** 2-4 hours (verify no changes, update for new systems)
 
-### 1.3 Expected Outputs
+
+## Expected Outputs
 
 Upon completion, you will have:
 
@@ -145,13 +151,13 @@ Upon completion, you will have:
 
 ---
 
-## 2. Prerequisites
+# Prerequisites
 
-### 2.1 Information You'll Need
+## Information You'll Need
 
 Before starting this assessment, gather:
 
-#### 1. System Documentation
+### System Documentation
 
 - IT asset inventory (from ISMS-POL-A.5.9 if available)
 - System architecture diagrams
@@ -160,7 +166,8 @@ Before starting this assessment, gather:
 - Cloud service subscriptions (SaaS platforms)
 - Third-party processor list
 
-#### 2. Data Flow Documentation
+
+### Data Flow Documentation
 
 - Network diagrams showing system interconnections
 - API integrations and data exchange protocols
@@ -168,7 +175,8 @@ Before starting this assessment, gather:
 - Cross-border data transfer records
 - Vendor/processor contracts (for data sharing agreements)
 
-#### 3. Business Process Information
+
+### Business Process Information
 
 - Business process documentation (what activities use PII)
 - HR processes (employee data lifecycle)
@@ -176,7 +184,8 @@ Before starting this assessment, gather:
 - Marketing processes (campaigns, analytics, advertising)
 - Vendor management processes (procurement, payments)
 
-#### 4. Legal/Compliance Documentation
+
+### Legal/Compliance Documentation
 
 - Privacy notices and policies
 - Data Processing Agreements (DPA) with processors
@@ -185,7 +194,8 @@ Before starting this assessment, gather:
 - GDPR Article 30 ROPA (if existing - for validation/update)
 - Legal obligations register (employment law, tax law, sector regulations)
 
-#### 5. Technical Discovery Tools
+
+### Technical Discovery Tools
 
 - Data Loss Prevention (DLP) scan results
 - Database discovery tool outputs
@@ -193,33 +203,41 @@ Before starting this assessment, gather:
 - Cloud access security broker (CASB) reports
 - Identity and Access Management (IAM) logs
 
-### 2.2 Access Required
+
+## Access Required
 
 You will need access to:
 
 **Systems:**
+
 - [ ] Administrative access to key systems (or coordination with system administrators)
 - [ ] Database query access for PII column identification
 - [ ] Cloud platform admin consoles (AWS, Azure, GCP, SaaS applications)
 - [ ] File share and document management systems
 - [ ] Email system (for correspondence records, mailing lists)
 
+
 **Documents:**
+
 - [ ] IT architecture documentation repository
 - [ ] Vendor contracts and DPAs
 - [ ] Privacy notice templates and published versions
 - [ ] Legal obligations register
 - [ ] Previous ROPA (if exists)
 
+
 **People:**
+
 - [ ] Ability to interview system owners and data owners
 - [ ] Access to HR, Sales, Marketing, Finance directors for process understanding
 - [ ] Coordination with Legal/Compliance for regulatory interpretation
 - [ ] Support from IT/Security for technical discovery
 
-### 2.3 Tools and Resources
+
+## Tools and Resources
 
 **Assessment Workbook:** Excel workbook (generated by `generate_a5341_pii_identification_assessment.py`) containing:
+
 - Sheet 1: Instructions & Legend
 - Sheet 2: PII System Inventory
 - Sheet 3: PII Data Flow Mapping
@@ -229,13 +247,17 @@ You will need access to:
 - Sheet 7: Dashboard
 - Sheet 8: Approval & Sign-Off
 
+
 **Supporting Tools** (optional but highly recommended):
+
 - **Data Loss Prevention (DLP)** - Automated PII scanning (e.g., Microsoft Purview, Symantec DLP, Digital Guardian)
 - **Database discovery tools** - Identify PII columns in databases (e.g., BigID, OneTrust Discovery, IBM Guardium)
 - **Data mapping software** - Visualize data flows (e.g., OneTrust DataGuidance, TrustArc, Collibra)
 - **Collaboration tools** - Document findings (SharePoint, Confluence, Notion)
 
+
 **Reference Materials:**
+
 - ISMS-POL-A.5.34 Section 2.1 (PII classification framework)
 - ISMS-CTX-A.5.34 (Privacy regulatory landscape - GDPR/FADP guidance)
 - GDPR Article 30 text (ROPA requirements)
@@ -243,11 +265,12 @@ You will need access to:
 - ICO Guidance: ["Guide to the GDPR - Documentation"](https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/documentation/)
 - EDPB Guidelines 07/2020 on Article 30 ROPA
 
+
 ---
 
-## 3. Assessment Workflow
+# Assessment Workflow
 
-### High-Level Process
+## High-Level Process
 
 ```
 1. PREPARE (Gather prerequisites, set up assessment team)
@@ -267,9 +290,9 @@ You will need access to:
 8. REVIEW & APPROVE (DPO validation, stakeholder sign-off)
 ```
 
-### Detailed Workflow
+## Detailed Workflow
 
-#### Phase 1: Preparation (1-2 hours)
+### Phase 1: Preparation (1-2 hours)
 
 **Objective:** Set up assessment foundation
 
@@ -283,33 +306,40 @@ You will need access to:
 
 **Deliverable:** Assessment plan with system owner interview schedule
 
-#### Phase 2: PII System Discovery (5-15 hours)
+### Phase 2: PII System Discovery (5-15 hours)
 
 **Objective:** Identify ALL systems processing PII
 
 **Steps:**
 1. **Automated Discovery:**
+
    - Run DLP scans across file shares, email, databases
    - Execute database discovery tools to identify PII columns
    - Review CASB reports for cloud application usage
    - Analyze IAM logs for system access patterns
 
+
 2. **Manual Discovery:**
+
    - Review IT asset inventory (ISMS-POL-A.5.9)
    - Interview system owners using discovery questionnaire
    - Review vendor contracts for processor relationships
    - Walk through business processes (HR, Sales, Marketing, Finance)
 
+
 3. **Inventory Creation (Sheet 2):**
+
    - List EVERY system containing PII (don't miss any!)
    - Document system owner, type, purpose
    - Estimate data volume (approximate record counts)
    - Note hosting location (on-premises, cloud provider, geographic region)
    - Identify access levels (who can access, how many users)
 
+
 **Deliverable:** Complete Sheet 2 (PII System Inventory) with all systems listed
 
 **Quality Check:**
+
 - ✓ All obvious systems captured (CRM, HRIS, email, file shares)
 - ✓ Cloud services documented (SaaS subscriptions)
 - ✓ Shadow IT identified (unapproved cloud usage)
@@ -317,20 +347,25 @@ You will need access to:
 - ✓ Backup systems documented (backups contain PII too!)
 - ✓ Development/test environments captured (may contain production PII copies)
 
-#### Phase 3: PII Classification (3-6 hours)
+
+### Phase 3: PII Classification (3-6 hours)
 
 **Objective:** Classify PII sensitivity for each system
 
 **Steps:**
 1. Review PII classification framework (ISMS-POL-A.5.34 Section 2.1):
+
    - **Basic PII:** Name, email, phone, address, account numbers
    - **Sensitive PII (GDPR Art. 9):** Health data, biometrics, genetic data, racial/ethnic origin, political opinions, religious beliefs, trade union membership, sex life/orientation, private sphere (FADP-specific)
    - **Criminal Offense Data (GDPR Art. 10):** Criminal convictions, criminal charges, criminal history
 
+
 2. For EACH system in Sheet 2, determine:
+
    - What PII categories does this system contain?
    - What is the highest PII classification? (If system contains both Basic and Sensitive, classify as Sensitive)
    - If Sensitive PII, what specific types? (e.g., health data, biometric authentication)
+
 
 3. Apply classification decision tree:
 ```
@@ -354,17 +389,20 @@ Does system contain names, contact details, generic user data?
 **Deliverable:** Sheet 2 complete with PII Classification column populated
 
 **Common Mistakes to Avoid:**
+
 - ❌ Under-classifying: "Employee birthdates are just Basic PII" → Wrong if combined with health insurance data
 - ❌ Over-classifying: "All customer data is Sensitive" → No, unless it contains GDPR Art. 9 categories
 - ❌ Forgetting backups: Backups inherit classification of source system
 - ❌ Ignoring aggregation: Multiple Basic PII fields together can create profiling risk
 
-#### Phase 4: Data Flow Mapping (4-8 hours)
+
+### Phase 4: Data Flow Mapping (4-8 hours)
 
 **Objective:** Document how PII moves through and across organizational boundaries
 
 **Steps:**
 1. For EACH system in Sheet 2, identify:
+
    - **Inbound flows:** Where does PII come from?
      - Data subject (directly from individual via form, registration)
      - Other internal systems (API, database sync, file transfer)
@@ -382,33 +420,41 @@ Does system contain names, contact details, generic user data?
      - Cross-border transfers (data leaving CH/EU)
      - Data subject (portability requests, account exports)
 
+
 2. For CROSS-BORDER transfers, document:
+
    - Source country (where data originates)
    - Destination country (where data is transferred to)
    - Transfer mechanism (SCCs, BCRs, Adequacy Decision, Derogation)
    - Processor name and contract reference
 
+
 3. Complete Sheet 3 (PII Data Flow Mapping):
+
    - One row per data flow
    - Link to source/destination systems (use System Names from Sheet 2)
    - Document transfer mechanism, frequency, volume
    - Flag cross-border transfers for TIA (Transfer Impact Assessment) in A.5.34.6
 
+
 **Deliverable:** Sheet 3 complete with all significant data flows mapped
 
 **Quality Check:**
+
 - ✓ All systems have at least one inbound flow (where does data come from?)
 - ✓ Cross-border transfers identified (look for cloud providers with global infrastructure)
 - ✓ Processor relationships documented (cloud SaaS, outsourced functions)
 - ✓ API integrations captured (check application logs, API gateways)
 - ✓ Manual data exports noted (spreadsheet downloads, report generation)
 
-#### Phase 5: ROPA Creation (6-12 hours)
+
+### Phase 5: ROPA Creation (6-12 hours)
 
 **Objective:** Create GDPR Article 30 compliant Record of Processing Activities
 
 **GDPR Article 30 Requirements:**
 The ROPA must document:
+
 - Name and contact details of controller (and DPO if applicable)
 - Purposes of processing
 - Categories of data subjects
@@ -418,13 +464,17 @@ The ROPA must document:
 - Retention periods (or criteria to determine)
 - Technical and organizational measures (general description)
 
+
 **Steps:**
 1. **Group systems into processing activities:**
+
    - One processing activity may span multiple systems
    - Example: "Employee Management" activity includes HRIS, payroll, time tracking, email
    - Example: "Customer Relationship Management" activity includes CRM, marketing automation, support tickets
 
+
 2. **For EACH processing activity, document in Sheet 4:**
+
    - Activity name and purpose (why are we processing this data?)
    - Data subjects (employees, customers, vendors, job applicants, website visitors)
    - PII categories processed (from Sheet 2 system inventory)
@@ -434,20 +484,26 @@ The ROPA must document:
    - Retention period (how long data is kept, or criteria for deletion)
    - Security measures (reference to TOMs assessment A.5.34.4)
 
+
 3. **Validate legal basis:**
+
    - Every processing activity MUST have a valid legal basis under GDPR Article 6
    - For Sensitive PII, additional legal basis required under GDPR Article 9
    - If legal basis unclear, flag for Legal/Compliance review
 
+
 4. **Cross-reference with existing ROPA (if applicable):**
+
    - Compare new ROPA against previous version
    - Identify new processing activities (flag for review)
    - Identify ceased processing (mark as inactive)
    - Update changed processing purposes or PII categories
 
+
 **Deliverable:** Sheet 4 (ROPA) complete with all processing activities documented
 
 **Quality Check:**
+
 - ✓ Every system from Sheet 2 is included in at least one ROPA entry
 - ✓ Every processing activity has a documented legal basis
 - ✓ Sensitive PII has GDPR Article 9 legal basis (not just Article 6)
@@ -455,19 +511,23 @@ The ROPA must document:
 - ✓ Cross-border transfers reference Sheet 3 data flows
 - ✓ Retention periods are specific (not "as long as necessary")
 
-#### Phase 6: Gap Analysis (2-4 hours)
+
+### Phase 6: Gap Analysis (2-4 hours)
 
 **Objective:** Identify non-compliant processing and prioritize remediation
 
 **Steps:**
 1. **Review Sheet 2, 3, 4 for gaps:**
+
    - Systems without clear PII classification
    - Processing activities without valid legal basis
    - Cross-border transfers without adequate safeguards
    - Data flows with no documented purpose
    - Systems with "unknown" hosting location or owner
 
+
 2. **For EACH gap, document in Sheet 5:**
+
    - Gap description (what's missing or non-compliant?)
    - System or activity affected
    - Risk level (Critical / High / Medium / Low based on impact and likelihood)
@@ -475,33 +535,40 @@ The ROPA must document:
    - Owner (who will fix it?)
    - Target completion date (risk-based prioritization)
 
+
 3. **Risk Rating Guidelines:**
+
    - **Critical:** Unlawful processing (no legal basis, inadequate safeguards for Sensitive PII)
    - **High:** Significant compliance gap (cross-border transfers without SCCs, inaccurate ROPA)
    - **Medium:** Process improvement needed (incomplete documentation, missing evidence)
    - **Low:** Minor deficiency (formatting inconsistencies, unclear descriptions)
 
+
 **Deliverable:** Sheet 5 (PII Discovery Gaps) with all identified gaps and remediation plans
 
 **Common Gaps:**
+
 - "We collect PII but don't have a legal basis documented"
 - "We transfer data to US-based cloud provider but don't have SCCs in place"
 - "We keep customer data indefinitely without defined retention period"
 - "Shadow IT discovered - unapproved SaaS application with customer data"
 - "Development environment contains production PII without proper access controls"
 
-#### Phase 7: Evidence Collection (2-4 hours)
+
+### Phase 7: Evidence Collection (2-4 hours)
 
 **Objective:** Link assessment to supporting audit documentation
 
 **Steps:**
 1. For key assertions in Sheets 2-5, collect evidence:
+
    - **System inventory:** Screenshots of system admin consoles, architecture diagrams
    - **PII classification:** DLP scan reports, database schema documentation
    - **Data flows:** API integration documentation, network diagrams, processor contracts
    - **ROPA entries:** Privacy notices, consent forms, DPAs with processors
    - **Cross-border transfers:** SCCs signed with vendors, adequacy decision documentation
    - **Legal basis:** Legitimate Interest Assessments (LIAs), consent records, legal obligations register
+
 
 2. Store evidence in organized structure:
    ```
@@ -522,22 +589,26 @@ The ROPA must document:
    ```
 
 3. Register evidence in Sheet 6:
+
    - Evidence ID (unique identifier)
    - Related sheet/row (link evidence to specific assertion)
    - Evidence type (screenshot, document, report, contract)
    - File location (path to evidence file)
    - Evidence date (when evidence was created/captured)
 
+
 **Deliverable:** Sheet 6 (Evidence Register) populated with links to all supporting documentation
 
 **Quality Check:**
+
 - ✓ Every "Critical" system has supporting evidence
 - ✓ Cross-border transfers have SCC or BCR documentation
 - ✓ Sensitive PII processing has GDPR Article 9 legal basis evidence
 - ✓ Evidence is recent (<90 days old) or clearly dated
 - ✓ File paths are accessible to auditors
 
-#### Phase 8: Review & Approval (2-3 hours)
+
+### Phase 8: Review & Approval (2-3 hours)
 
 **Objective:** Validate assessment completeness and obtain stakeholder sign-off
 
@@ -545,29 +616,35 @@ The ROPA must document:
 1. **Self-Review:** Complete quality checklist (Section 6 below)
 
 2. **DPO Review:** 
+
    - Schedule review meeting with DPO
    - Walk through ROPA (Sheet 4) for GDPR Article 30 compliance
    - Discuss critical gaps and remediation timeline
    - Validate legal basis for all processing activities
 
+
 3. **Stakeholder Review:**
+
    - **CISO / Security Team:** Validate system inventory completeness
    - **Legal / Compliance:** Confirm legal basis and cross-border transfer mechanisms
    - **Executive Sponsor:** Approve gap remediation budget and timeline
 
+
 4. **Sign-Off (Sheet 8):**
+
    - Assessment Lead (DPO): Methodology, completeness, ROPA compliance
    - CISO: Technical accuracy, system inventory validation
    - Legal/Compliance: Legal basis validity, regulatory compliance
    - Executive Sponsor: Final approval, gap remediation support
 
+
 **Deliverable:** Sheet 8 complete with all required sign-offs
 
 ---
 
-## 4. Sheet-by-Sheet Completion Guidance
+# Sheet-by-Sheet Completion Guidance
 
-### Sheet 1: Instructions & Legend
+## Sheet 1: Instructions & Legend
 
 **Purpose:** Reference guide (read-only, no data entry required)
 
@@ -581,13 +658,14 @@ The ROPA must document:
 
 ---
 
-### Sheet 2: PII System Inventory
+## Sheet 2: PII System Inventory
 
 **Purpose:** Document ALL systems processing PII with classifications
 
 **Step 1: List ALL Systems**
 
 Systematically identify systems by category:
+
 - **CRM / Sales:** Salesforce, HubSpot, Microsoft Dynamics, custom CRM
 - **HR / Payroll:** Workday, BambooHR, ADP, SAP SuccessFactors
 - **Email / Communication:** Microsoft 365, Google Workspace, Slack, Teams
@@ -604,9 +682,11 @@ Systematically identify systems by category:
 - **CCTV / Physical Security:** Video surveillance systems, access control logs
 - **Other:** Anything else that collects, processes, or stores PII
 
+
 **Step 2: Complete Required Fields**
 
 For EACH system, enter:
+
 - **System Name:** Clear, recognizable name (e.g., "Salesforce CRM", "Employee File Share")
 - **System Owner:** Person responsible for system (name or role)
 - **System Type:** Select from dropdown (CRM, HRIS, Email, Database, etc.)
@@ -624,31 +704,38 @@ For EACH system, enter:
 - **Discovery Method:** How was this system identified? (IT Asset Inventory, DLP Scan, System Owner Interview, etc.)
 - **Status:** Not Started / In Progress / Complete / Validated
 
+
 **Step 3: Mark Status**
 
 As you complete each system row, update status:
+
 - **Not Started:** System identified but not yet assessed
 - **In Progress:** Assessment started, missing some information
 - **Complete:** All information documented, pending validation
 - **Validated:** DPO reviewed and approved
 
+
 **Tips:**
+
 - Start with obvious systems (CRM, HRIS, email) then expand
 - Don't forget backups - they contain PII copies!
 - Include shadow IT (unapproved cloud services)
 - Document physical records (paper files, archived documents)
 - Check for PII in unexpected places (logs, caches, temporary files)
 
+
 **Common Mistakes to Avoid:**
+
 - ❌ **Incomplete inventory:** Missing shadow IT, development environments, backups
 - ❌ **Vague descriptions:** "Database" → Should be "Customer Order Database (PostgreSQL)"
 - ❌ **Under-classification:** Not identifying Sensitive PII in employee health records
 - ❌ **Unknown hosting:** "Cloud" → Should specify provider and region
 - ❌ **Missing system owners:** Every system needs an accountable owner
 
+
 ---
 
-### Sheet 3: PII Data Flow Mapping
+## Sheet 3: PII Data Flow Mapping
 
 **Purpose:** Document how PII moves between systems and across borders
 
@@ -656,24 +743,31 @@ As you complete each system row, update status:
 
 For EACH system in Sheet 2, trace:
 1. **Where does PII come from?** (Inbound flows)
+
    - Data subject directly (web form, mobile app, in-person)
    - Other internal systems (API integration, database sync)
    - Third-party sources (vendor provides data, enrichment services)
 
+
 2. **Where does PII go within [Organization]?** (Internal flows)
+
    - System-to-system transfers (CRM → Marketing Automation)
    - Reporting/analytics (production DB → data warehouse)
    - Backup processes (live system → backup storage)
 
+
 3. **Where does PII go outside [Organization]?** (Outbound flows)
+
    - Processors (cloud SaaS, vendors performing services)
    - Third parties (marketing partners, analytics providers)
    - Cross-border (data leaving CH/EU jurisdiction)
    - Data subjects (portability exports, account deletion)
 
+
 **Step 2: Document Each Flow**
 
 For EACH data flow, enter:
+
 - **Flow ID:** Auto-generated (FLOW-001, FLOW-002, etc.)
 - **Source System:** Where PII originates (from Sheet 2 System Name)
 - **Destination System:** Where PII is sent (from Sheet 2 System Name)
@@ -689,28 +783,35 @@ For EACH data flow, enter:
 - **Data Minimization:** Is transfer limited to necessary data? (Yes / No / Needs Review)
 - **Evidence Reference:** Link to DPA, SCC, architecture diagram
 
+
 **Step 3: Flag Cross-Border Transfers**
 
 For ANY flow where **Cross-Border? = Yes**:
+
 - ✅ Verify transfer safeguard is documented (SCCs, BCRs, Adequacy)
 - ✅ Link to evidence (DPA with SCC appendix, BCR approval, adequacy decision)
 - ✅ Note for detailed Transfer Impact Assessment (TIA) in A.5.34.6
 
+
 **Tips:**
+
 - Use network diagrams and API documentation to identify flows
 - Check integration logs and middleware (API gateways, message queues)
 - Don't forget manual flows (spreadsheet downloads, report emails)
 - Cloud providers often have global infrastructure (check data residency settings)
 
+
 **Common Pitfalls:**
+
 - ❌ **Missing flows:** Forgetting backups, logs, crash reports sent to vendors
 - ❌ **Vague mechanisms:** "Cloud sync" → Should specify "Salesforce API REST POST /contacts"
 - ❌ **Assuming adequacy:** "US cloud provider" → Check if data residency in EU/CH or needs SCCs
 - ❌ **No minimization check:** Transferring entire customer database when only email needed
 
+
 ---
 
-### Sheet 4: Record of Processing Activities (ROPA)
+## Sheet 4: Record of Processing Activities (ROPA)
 
 **Purpose:** GDPR Article 30 compliant documentation of all processing activities
 
@@ -719,56 +820,73 @@ For ANY flow where **Cross-Border? = Yes**:
 Don't document every system separately - group related systems into logical processing activities:
 
 **Example Grouping:**
+
 - **Employee Management** = HRIS + Payroll + Time Tracking + Employee File Share
 - **Customer Relationship Management** = CRM + Marketing Automation + Support Tickets
 - **Website Operations** = Public Website + Analytics + Contact Forms + Newsletter
+
 
 **Step 2: Create ROPA Entry**
 
 For EACH processing activity, document:
 
 **Activity Identification:**
+
 - **Activity ID:** Auto-generated (ROPA-001, ROPA-002, etc.)
 - **Activity Name:** Clear, business-oriented name (e.g., "Employee Onboarding and Management")
 - **Processing Purpose:** Why do we process this data? (Employment relationship, Legal compliance, Service delivery, etc.)
 - **Systems Involved:** List all systems from Sheet 2 included in this activity
 
+
 **Data Subject and Data Categories:**
+
 - **Data Subjects:** Who does this data relate to? (Employees, Customers, Job Applicants, Vendors, Website Visitors)
 - **PII Categories:** What personal data? (Name, Contact Info, SSN, Health Data, Payment Info, Browsing History, etc.)
 - **PII Classification:** Highest classification of any PII in this activity (Basic / Sensitive / Criminal Offense)
 - **Special Categories (Art. 9)?:** Yes if Sensitive PII, No otherwise
 
+
 **Legal Basis:**
+
 - **Legal Basis (GDPR Art. 6):** Consent / Contract / Legal Obligation / Vital Interests / Public Task / Legitimate Interest
 - **Legal Basis (GDPR Art. 9, if Sensitive):** Explicit Consent / Employment Law / Vital Interests / Healthcare / Legal Claims / Substantial Public Interest / Research / etc.
 - **Legal Basis Description:** Specific justification (e.g., "Employment contract requires payroll processing")
 
+
 **Recipients:**
+
 - **Internal Recipients:** Which departments access this data? (HR, Finance, IT, Management)
 - **External Recipients:** Processors and third parties who receive data
   - Processors: Cloud providers, payroll vendors, marketing platforms
   - Third parties: Banks (for payments), tax authorities (for compliance), marketing partners
 
+
 **Cross-Border Transfers:**
+
 - **International Transfers?:** Yes if data goes outside CH/EU, No otherwise
 - **Transfer Destinations:** Countries where data is transferred (from Sheet 3)
 - **Transfer Safeguards:** SCCs, BCRs, Adequacy Decision, Derogation
 - **Evidence Reference:** Link to Sheet 3 data flows and Sheet 6 evidence
 
+
 **Retention:**
+
 - **Retention Period:** How long is data kept? (Be specific: "7 years after termination", not "as long as necessary")
 - **Retention Rationale:** Why this period? (Legal requirement, Business need, Consent duration)
 - **Deletion Process:** How is data deleted? (Automated purge, Manual deletion request, End-of-life system decommissioning)
 
+
 **Technical and Organizational Measures:**
+
 - **Security Measures Summary:** High-level description (NOT detailed technical specs)
   - Example: "Encryption in transit (TLS 1.3) and at rest (AES-256), role-based access control, audit logging, annual security audits"
   - Reference: "See ISMS-IMP-A.5.34.4 (TOMs Assessment) for detailed control implementation"
 
+
 **Step 3: Validate Completeness**
 
 GDPR Article 30 mandates these elements - ensure ALL are documented:
+
 - ✅ Controller identity and contact details (in assessment header)
 - ✅ Purposes of processing (Processing Purpose field)
 - ✅ Categories of data subjects (Data Subjects field)
@@ -778,28 +896,34 @@ GDPR Article 30 mandates these elements - ensure ALL are documented:
 - ✅ Retention periods (Retention Period field)
 - ✅ General description of security measures (Security Measures Summary)
 
+
 **Tips:**
+
 - One ROPA entry can cover multiple systems if they serve the same purpose
 - Be specific about legal basis - "Legitimate Interest" requires balancing test (LIA)
 - Retention periods should be defensible (legal requirement or business need)
 - List processors by name (not "cloud vendors" - say "AWS, Microsoft Azure, Salesforce")
 
+
 **Common Pitfalls:**
+
 - ❌ **Vague purpose:** "Business operations" → Should be specific like "Customer service delivery"
 - ❌ **Missing Art. 9 basis:** Sensitive PII needs BOTH Art. 6 AND Art. 9 legal basis
 - ❌ **Generic retention:** "As long as needed" → Must specify period or criteria
 - ❌ **Incomplete recipients:** Only listing processors, forgetting internal departments
 - ❌ **No transfer safeguards:** International transfers without documented SCCs/BCRs
 
+
 ---
 
-### Sheet 5: PII Discovery Gaps
+## Sheet 5: PII Discovery Gaps
 
 **Purpose:** Identify non-compliant processing and plan remediation
 
 **Step 1: Review Sheets 2-4 for Gaps**
 
 Common gap categories:
+
 - **Missing Legal Basis:** Processing activity has no documented legal basis
 - **Inadequate Safeguards:** Cross-border transfers without SCCs or BCRs
 - **Classification Issues:** PII sensitivity not properly identified
@@ -808,9 +932,11 @@ Common gap categories:
 - **Access Control Deficiencies:** Unauthorized access to PII systems
 - **Missing Processor Agreements:** Third parties processing PII without DPA
 
+
 **Step 2: Document Each Gap**
 
 For EACH gap identified, enter:
+
 - **Gap ID:** Auto-generated (2024-GAP-001, etc.)
 - **Status:** Open / In Progress / Resolved / Accepted (risk accepted)
 - **Gap Type:** Select from dropdown (Legal Basis Missing, Inadequate Safeguards, etc.)
@@ -823,30 +949,39 @@ For EACH gap identified, enter:
 - **Target Completion Date:** Deadline (risk-based prioritization)
 - **Actual Completion Date:** When gap was actually closed (if Status = Resolved)
 
+
 **Risk Rating Guidelines:**
 
 **Critical Risk (Immediate action required):**
+
 - Unlawful processing (no valid legal basis under GDPR Art. 6)
 - Sensitive PII without Art. 9 legal basis
 - Cross-border transfers to non-adequate countries without SCCs/BCRs
 - Data breach imminent (no security controls)
 
+
 **High Risk (Action within 30 days):**
+
 - Inaccurate ROPA (missing processing activities)
 - Retention violations (data kept beyond legal/business justification)
 - Missing processor DPAs (processors without contracts)
 - Inadequate consent (not meeting GDPR Art. 7 requirements)
 
+
 **Medium Risk (Action within 90 days):**
+
 - Incomplete documentation (missing evidence)
 - Access control issues (too broad access permissions)
 - Data minimization failures (collecting more than necessary)
 - Shadow IT without risk assessment
 
+
 **Low Risk (Action within 180 days):**
+
 - Process improvements (documentation formatting, ROPA descriptions)
 - Training needs (staff unaware of policies)
 - Tool enhancements (better PII discovery automation)
+
 
 **Step 3: Prioritize Remediation**
 
@@ -854,11 +989,14 @@ For EACH gap identified, enter:
 - **Consider effort** (quick wins for low-effort high-risk items)
 - **Bundle related gaps** (e.g., all missing DPAs in one procurement project)
 
+
 **Tips:**
+
 - Be honest about gaps - hiding them only increases risk
 - Involve Legal/Compliance for risk rating validation
 - Set realistic target dates (consider resource availability)
 - Track remediation progress (update Status regularly)
+
 
 **Common Gaps:**
 1. "Shadow IT: Marketing team using unapproved cloud survey tool with customer data, no DPA, no legal basis documented"
@@ -869,13 +1007,14 @@ For EACH gap identified, enter:
 
 ---
 
-### Sheet 6: Evidence Register
+## Sheet 6: Evidence Register
 
 **Purpose:** Link assessment assertions to supporting documentation
 
 **Step 1: Identify Evidence Needs**
 
 For key assertions requiring proof:
+
 - **System inventory:** Architecture diagrams, admin console screenshots
 - **PII classification:** DLP scan reports, database schemas
 - **Data flows:** API documentation, integration diagrams, network topology
@@ -884,9 +1023,11 @@ For key assertions requiring proof:
 - **Retention:** Retention schedules, deletion procedures, policy documents
 - **Security measures:** TOMs assessment (A.5.34.4), security audit reports
 
+
 **Step 2: Register Evidence**
 
 For EACH evidence artifact, enter:
+
 - **Evidence ID:** Unique identifier (EV-SYS-001, EV-FLOW-001, EV-ROPA-001)
 - **Related Sheet/Row:** Which assertion does this support? (e.g., "Sheet 2, Row 5: Salesforce CRM")
 - **Evidence Type:** Screenshot / Document / Report / Contract / Policy / Audit / Other
@@ -897,6 +1038,7 @@ For EACH evidence artifact, enter:
 - **Verification Status:** Verified / Pending / Expired
 - **Verified By:** Who validated evidence adequacy?
 - **Notes:** Any additional context
+
 
 **Step 3: Organize Evidence**
 
@@ -927,55 +1069,69 @@ ISMS-A.5.34.1-PII-Assessment-Evidence/
 ```
 
 **Tips:**
+
 - Collect evidence as you complete assessment (don't wait until the end)
 - Sanitize sensitive data in screenshots (redact account numbers, passwords)
 - Include metadata (creation date, version, author)
 - Store evidence in access-controlled location (not public file share)
 - Keep evidence for audit cycle (typically 1+ years)
 
+
 **Common Evidence Gaps:**
+
 - ❌ "We have SCCs but can't find the signed copies"
 - ❌ "DLP scan was 2 years ago, need fresh evidence"
 - ❌ "Privacy notice is outdated, doesn't reflect current processing"
 - ❌ "Evidence files on personal laptop, not accessible to auditors"
 - ❌ "Screenshots don't show date/timestamp - can't prove currency"
 
+
 ---
 
-### Sheet 7: Dashboard
+## Sheet 7: Dashboard
 
 **Purpose:** Executive summary with compliance metrics (auto-calculated, read-only)
 
 **What This Shows:**
 
 **Section 1: PII System Inventory Summary**
+
 - Total systems identified
 - Systems by PII classification (Basic / Sensitive / Criminal Offense)
 - Systems by hosting location (On-premises / Cloud CH / Cloud EU / Cloud Non-EU)
 - Systems by status (Validated / Complete / In Progress / Not Started)
 
+
 **Section 2: Data Flow Summary**
+
 - Total data flows documented
 - Internal flows vs. cross-border transfers
 - Cross-border transfers by safeguard mechanism (SCCs / BCRs / Adequacy / None)
 - Flows by transfer frequency (Real-time / Daily / Weekly / On-demand)
 
+
 **Section 3: ROPA Summary**
+
 - Total processing activities documented
 - Activities by legal basis (Consent / Contract / Legal Obligation / Legitimate Interest)
 - Activities involving Sensitive PII (requiring Art. 9 basis)
 - Activities with cross-border transfers
 
+
 **Section 4: Gap Analysis**
+
 - Total gaps identified
 - Gaps by risk level (Critical / High / Medium / Low)
 - Gap remediation status (Open / In Progress / Resolved / Accepted)
 - Overdue gaps (past target completion date)
 
+
 **Section 5: Evidence Status**
+
 - Total evidence artifacts collected
 - Evidence by type (Screenshot / Document / Report / Contract)
 - Evidence verification status (Verified / Pending / Expired)
+
 
 **Section 6: Overall Compliance Score**
 
@@ -991,28 +1147,33 @@ Compliance Score = (
 ```
 
 **Interpretation:**
+
 - **90-100%:** Excellent - Audit-ready
 - **70-89%:** Good - Minor gaps to address
 - **50-69%:** Fair - Significant work needed
 - **<50%:** Poor - Major compliance issues
 
+
 **What You Do:**
+
 - Review dashboard metrics to validate completeness
 - Use for executive briefings and management reporting
 - Identify areas needing more work (low scores indicate gaps)
 - Track progress over time (quarterly updates)
 
+
 **No action required on this sheet** - all metrics auto-calculate from Sheets 2-6.
 
 ---
 
-### Sheet 8: Approval & Sign-Off
+## Sheet 8: Approval & Sign-Off
 
 **Purpose:** Stakeholder validation and formal approval
 
 **Step 1: Complete Assessment**
 
 Before seeking approvals:
+
 - ✅ All systems documented (Sheet 2 Status = Complete or Validated)
 - ✅ All data flows mapped (Sheet 3)
 - ✅ ROPA complete with all processing activities (Sheet 4)
@@ -1021,25 +1182,34 @@ Before seeking approvals:
 - ✅ Dashboard metrics reviewed and reasonable (Sheet 7)
 - ✅ Quality checklist passed (Section 6 below)
 
+
 **Step 2: Obtain Sign-Offs**
 
 **Required Approvers:**
 
 1. **Assessment Lead (DPO / Privacy Officer)**
+
    - **Approval Scope:** Assessment methodology, completeness, ROPA GDPR Article 30 compliance
    - **What They Check:** Are all processing activities documented? Is legal basis valid? Are cross-border transfers properly safeguarded?
 
+
 2. **Chief Information Security Officer (CISO)**
+
    - **Approval Scope:** Technical accuracy, system inventory completeness, data flow validation
    - **What They Check:** Are all PII systems identified? Are data flows technically accurate? Is hosting location correct?
 
+
 3. **Legal / Compliance Officer**
+
    - **Approval Scope:** Legal basis validity, regulatory compliance, cross-border transfer mechanisms
    - **What They Check:** Are legal bases defensible? Are SCCs in place for international transfers? Is retention legally compliant?
 
+
 4. **Executive Sponsor (e.g., CFO, COO)**
+
    - **Approval Scope:** Final approval, gap remediation resource allocation, accountability
    - **What They Check:** Are critical gaps being addressed? Is remediation timeline realistic? Is budget allocated?
+
 
 **Step 3: Schedule Review Meetings**
 
@@ -1052,6 +1222,7 @@ Don't just send workbook via email - schedule review sessions:
 **Step 4: Document Approvals**
 
 For EACH approver, record:
+
 - **Signatory Role:** (pre-populated from required roles)
 - **Signatory Name:** Person who approved
 - **Signature / Electronic Approval:** E-signature, email confirmation, or meeting notes reference
@@ -1059,6 +1230,7 @@ For EACH approver, record:
 - **Approval Scope:** What they approved (pre-populated)
 - **Comments:** Any conditions, concerns, or notes from approver
 - **Contact Email:** For follow-up if needed
+
 
 **Next Steps After Approval:**
 1. Distribute final assessment to stakeholders
@@ -1068,11 +1240,12 @@ For EACH approver, record:
 
 ---
 
-## 5. Evidence Collection
+# Evidence Collection
 
-### What Evidence to Collect
+## What Evidence to Collect
 
 **For System Inventory (Sheet 2):**
+
 - ✓ IT asset inventory exports (from CMDB or asset management tool)
 - ✓ Screenshots of system admin consoles showing PII fields configured
 - ✓ Architecture diagrams showing system interconnections
@@ -1080,7 +1253,9 @@ For EACH approver, record:
 - ✓ Database schemas with PII columns highlighted
 - ✓ Cloud service subscription lists and configurations
 
+
 **For Data Flows (Sheet 3):**
+
 - ✓ API integration documentation (endpoints, data payloads)
 - ✓ Network diagrams showing data movement
 - ✓ Data Processing Agreements (DPAs) with processors
@@ -1088,7 +1263,9 @@ For EACH approver, record:
 - ✓ Binding Corporate Rules (BCRs) approval documentation
 - ✓ Adequacy decision references (for transfers to adequate countries)
 
+
 **For ROPA (Sheet 4):**
+
 - ✓ Privacy notices (customer-facing, employee-facing)
 - ✓ Consent forms and consent management platform records
 - ✓ Legitimate Interest Assessments (LIAs) for Art. 6(1)(f) processing
@@ -1096,7 +1273,9 @@ For EACH approver, record:
 - ✓ Legal obligation register (employment law, tax law, sector regulations)
 - ✓ Retention schedules and deletion procedures
 
+
 **For Security Measures:**
+
 - ✓ TOMs Assessment (ISMS-IMP-A.5.34.4) summary
 - ✓ ISO 27001 certificate (if certified)
 - ✓ SOC 2 reports (if applicable)
@@ -1104,62 +1283,82 @@ For EACH approver, record:
 - ✓ Security audit findings
 - ✓ Encryption configuration evidence (TLS, at-rest encryption)
 
-### Evidence Storage Best Practices
+
+## Evidence Storage Best Practices
 
 **Access Control:**
+
 - Store in secure, access-controlled location (not public file share)
 - Limit access to assessment team, DPO, auditors, management
 - Use document management system with audit trails (SharePoint, Confluence)
 - Don't email evidence - use secure file sharing links
 
+
 **Organization:**
+
 - Use consistent folder structure (see Sheet 6 guidance)
 - Name files descriptively (System_EvidenceType_Date.ext)
 - Include metadata (creation date, version, author)
 - Maintain index (Sheet 6 Evidence Register serves this purpose)
 
+
 **Retention:**
+
 - Keep evidence for full audit cycle (typically 1+ years minimum)
 - After audit, archive but don't delete (useful for trend analysis)
 - Update evidence when it expires (e.g., certificate renewals, updated policies)
 
+
 **Sanitization:**
+
 - Redact sensitive data in screenshots (account numbers, passwords, personal details)
 - Remove confidential business information (financial data, strategy)
 - Ensure evidence is appropriate for external auditor review
 
-### Common Evidence Gaps
+
+## Common Evidence Gaps
 
 **Gap 1: "We do this but have no evidence"**
+
 - **Problem:** Claiming PII is encrypted but no configuration screenshot or audit report
 - **Solution:** Generate evidence retroactively (take screenshots, export configurations)
 - **Fallback:** Acknowledge gap, document remediation plan
 
+
 **Gap 2: Evidence exists but not collected**
+
 - **Problem:** SCCs signed with vendor but not in evidence folder
 - **Solution:** Request copies from Legal/Procurement, add to Sheet 6
 
+
 **Gap 3: Evidence too old**
+
 - **Problem:** DLP scan from 2 years ago doesn't reflect current state
 - **Solution:** Re-run scan, collect fresh evidence within 90 days of assessment
 
+
 **Gap 4: Evidence not sanitized**
+
 - **Problem:** Screenshot shows employee SSNs or customer payment data
 - **Solution:** Re-capture with sensitive data masked/redacted
 
+
 **Gap 5: Evidence not organized**
+
 - **Problem:** Random files scattered across email, personal folders
 - **Solution:** Centralize in structured repository, register in Sheet 6
 
+
 ---
 
-## 6. Common Pitfalls
+# Common Pitfalls
 
-### Pitfall 1: Incomplete System Inventory
+## Pitfall 1: Incomplete System Inventory
 
 **Mistake:** Not identifying all PII-containing systems
 
 **Example:** Forgetting about:
+
 - Backup systems (backups contain PII copies!)
 - Development/test environments (often contain production PII copies)
 - Shadow IT (unapproved SaaS services employees are using)
@@ -1167,171 +1366,213 @@ For EACH approver, record:
 - Physical records (paper files, archived documents)
 - Vendor-managed systems (processors with direct access to PII)
 
+
 **Why It Happens:**
+
 - Focusing only on "obvious" systems (CRM, HRIS)
 - Not asking employees about tools they use
 - Assuming IT has complete visibility (they don't know about shadow IT)
 - Forgetting offline/physical data storage
 
+
 **How to Avoid:**
+
 - Use discovery questionnaire with all departments
 - Run cloud access security broker (CASB) scans for shadow IT
 - Check procurement records for SaaS subscriptions
 - Review backup job listings
 - Ask: "What tools do you use to do your job?" (not just "What PII systems exist?")
 
+
 **Assessment Impact:** Incomplete inventory = ROPA non-compliance = GDPR violation
 
-### Pitfall 2: Under-Classifying Sensitive PII
+## Pitfall 2: Under-Classifying Sensitive PII
 
 **Mistake:** Classifying Sensitive PII as Basic PII
 
 **Example:**
+
 - Employee birthdates combined with health insurance enrollment → Contains health data (Sensitive PII)
 - Customer profiles with inferred ethnicity from name/address → Racial/ethnic origin data (Sensitive PII)
 - Biometric authentication (fingerprint, face recognition) → Biometric data (Sensitive PII)
 - Political party membership in donor database → Political opinions (Sensitive PII)
 
+
 **Why It Happens:**
+
 - Not recognizing indirect Sensitive PII (inferred or derived data)
 - Treating aggregated data as non-sensitive (aggregation doesn't remove special category status)
 - Assuming "business data" isn't personal data (job title = personal data if identifiable)
 
+
 **How to Avoid:**
+
 - Review GDPR Article 9 list carefully (health, genetic, biometric, racial origin, political opinions, religious beliefs, trade union membership, sex life/sexual orientation)
 - Check for derived Sensitive PII (profiling, inference, enrichment)
 - When in doubt, classify as Sensitive (over-classification is safer than under)
 
+
 **Assessment Impact:** Incorrect classification = Inadequate safeguards = Data breach risk
 
-### Pitfall 3: Ignoring Cross-Border Transfers
+## Pitfall 3: Ignoring Cross-Border Transfers
 
 **Mistake:** Not identifying data transfers outside CH/EU
 
 **Example:**
+
 - "We use Microsoft 365" → Data may be processed in US datacenters (cross-border transfer)
 - "Our website analytics" → Google Analytics sends data to US servers (cross-border transfer)
 - "Customer support ticketing" → Zendesk data stored in US (cross-border transfer)
 - "Email service" → Mail routing through non-EU servers (cross-border transfer)
 
+
 **Why It Happens:**
+
 - Assuming cloud providers only use local datacenters (they often don't)
 - Not checking data residency settings in SaaS configurations
 - Thinking "adequacy decision" means no safeguards needed (Switzerland-EU adequacy doesn't cover CH-US!)
 - Relying on vendor claims without verification
 
+
 **How to Avoid:**
+
 - **Check vendor contracts:** Where is data stored? Where is data processed?
 - **Review service configurations:** Data residency settings, region selection
 - **Map actual data routes:** Use network monitoring, API logs
 - **Verify adequacy:** Only EU member states + handful of others have adequacy decisions
 - **Assume transfer if unsure:** Better to document unnecessary SCC than miss required one
 
+
 **Assessment Impact:** Undocumented cross-border transfers = GDPR Article 46 violation = Supervisory authority enforcement
 
-### Pitfall 4: Vague or Missing Legal Basis
+## Pitfall 4: Vague or Missing Legal Basis
 
 **Mistake:** Not documenting valid legal basis for processing
 
 **Example:**
+
 - "We need this data for our business" → Not a legal basis (need specific Art. 6 basis)
 - "We have legitimate interest" → Without documented LIA (Legitimate Interest Assessment), this is non-compliant
 - "Customers gave consent" → But no proof of consent (no timestamp, no record, not freely given)
 - "It's in our privacy policy" → Privacy notice doesn't establish legal basis, only informs about it
 
+
 **Why It Happens:**
+
 - Confusing business justification with legal basis
 - Thinking "legitimate interest" is a catch-all (it requires balancing test)
 - Assuming implied consent (consent must be explicit, freely given, specific)
 - Not involving Legal/Compliance in legal basis determination
 
+
 **How to Avoid:**
+
 - **Review GDPR Article 6 options:** Consent, Contract, Legal Obligation, Vital Interests, Public Task, Legitimate Interest
 - **Document specific basis:** Not just "consent" but "explicit opt-in consent via registration form on 2024-01-15"
 - **Complete LIA if using legitimate interest:** Must document necessity, balancing test, safeguards
 - **Validate with Legal/Compliance:** Don't self-determine legal basis for Sensitive PII
 
+
 **Assessment Impact:** No legal basis = Unlawful processing = GDPR Article 6 violation = Up to €20M or 4% revenue fine
 
-### Pitfall 5: Indefinite Retention
+## Pitfall 5: Indefinite Retention
 
 **Mistake:** Keeping PII forever without justification
 
 **Example:**
+
 - "We keep customer data indefinitely" → No retention limit violates storage limitation principle
 - "We might need it someday" → Not a valid retention justification
 - "Retention period: As long as necessary" → Too vague, must specify period or criteria
 - "We delete data when customer requests" → Reactive deletion doesn't satisfy proactive retention limits
 
+
 **Why It Happens:**
+
 - Fear of deleting data that might be useful
 - No clear business justification for retention
 - Technical difficulty of implementing automated deletion
 - Not considering legal retention requirements (may require longer retention for some data)
 
+
 **How to Avoid:**
+
 - **Define retention period for EACH ROPA entry:** Based on legal requirement or business need
 - **Be specific:** "7 years after contract termination" not "as long as needed"
 - **Balance requirements:** Legal retention (tax law) vs. data minimization (delete when no longer needed)
 - **Implement deletion processes:** Automated purging, manual review cycles, system decommissioning
 - **Document exceptions:** If legal hold or litigation prevents deletion, document why
 
+
 **Assessment Impact:** Indefinite retention = GDPR Article 5(1)(e) violation = Storage limitation breach
 
-### Pitfall 6: Aspirational Assessment
+## Pitfall 6: Aspirational Assessment
 
 **Mistake:** Documenting what SHOULD be true, not what IS true
 
 **Example:**
+
 - "All PII is encrypted" → But dev/test environments use plaintext databases
 - "We have SCCs with all processors" → But several vendors still need to sign updated SCCs
 - "Consent is properly documented" → But consent records were lost in system migration
 - "Access controls are role-based" → But many users have admin rights "just in case"
 
+
 **Why It Happens:**
+
 - Pressure to show compliance
 - Confusion between policy requirements and actual implementation
 - Optimism bias ("we're doing this right")
 - Not verifying claims (assuming controls are working without testing)
 
+
 **How to Avoid:**
+
 - **Verify everything:** Don't assume - check actual configurations, run tests
 - **Document current state:** What exists today, not what's planned
 - **Use evidence to validate:** If you can't prove it, don't claim it
 - **Mark gaps honestly:** Better to document gap with remediation plan than false compliance
 - **Test controls:** For critical claims (encryption, access controls), perform spot checks
 
+
 **Assessment Impact:** False claims = Auditor distrust = Re-assessment required = Delayed certification
 
-### Pitfall 7: No System Owner Accountability
+## Pitfall 7: No System Owner Accountability
 
 **Mistake:** Systems without designated owners
 
 **Example:**
+
 - "System Owner: IT Department" → Too generic (who in IT specifically?)
 - "System Owner: Unknown" → Unacceptable for audit
 - "System Owner: Former employee" → Owner left 2 years ago, not updated
 - "System Owner: [blank]" → Assessment incomplete
 
+
 **Why It Happens:**
+
 - Treating system ownership as administrative detail
 - Not establishing clear accountability in organization
 - Legacy systems where original owner is long gone
 - Shadow IT discovered with no clear owner
 
+
 **How to Avoid:**
+
 - **Assign specific person:** Name and email, not department or role title
 - **Establish ownership as part of system lifecycle:** New systems require owner before deployment
 - **Maintain ownership registry:** Update when people change roles or leave
 - **Escalate ownership gaps:** If system has no owner, assign one or decommission system
 
+
 **Assessment Impact:** No ownership = No accountability = Controls not maintained = Security/privacy risk
 
-### Pitfall 8: Confusing Processors and Controllers
+## Pitfall 8: Confusing Processors and Controllers
 
 **Mistake:** Misidentifying PII processing role
 
 **Example:**
+
 - **Controller vs. Processor confusion:**
   - Salesforce is a **Processor** (we control purpose, Salesforce processes on our behalf)
   - Marketing partner is a **Controller** (they decide what to do with shared data)
@@ -1341,12 +1582,16 @@ For EACH approver, record:
   - Data sharing with business partner where BOTH decide processing purposes = Joint Controllers
   - Requires joint controller agreement (GDPR Article 26)
 
+
 **Why It Happens:**
+
 - Not understanding controller vs. processor distinction
 - Assuming all vendors are processors (some are independent controllers)
 - Not reading vendor contracts carefully (DPA may specify role)
 
+
 **How to Avoid:**
+
 - **Ask:** Who determines WHY and HOW PII is processed?
   - **We decide:** Vendor is Processor → Need DPA with GDPR Article 28 clauses
   - **Vendor decides:** Vendor is Controller → No DPA, but need data sharing agreement
@@ -1354,15 +1599,16 @@ For EACH approver, record:
 - **Review contracts:** Vendor contract should specify role
 - **When in doubt:** Consult Legal/DPO
 
+
 **Assessment Impact:** Incorrect role = Missing DPA = GDPR Article 28 violation = Processor liability
 
 ---
 
-## 7. Quality Checklist
+# Quality Checklist
 
 Complete this checklist before seeking approvals:
 
-### Sheet 2: PII System Inventory
+## Sheet 2: PII System Inventory
 
 - [ ] All PII-containing systems identified (including backups, dev/test, shadow IT)
 - [ ] System Owner specified for every system (specific person, not "IT Department")
@@ -1372,7 +1618,8 @@ Complete this checklist before seeking approvals:
 - [ ] Status = "Complete" or "Validated" for all critical systems
 - [ ] No systems with "Unknown" or "TBD" values remaining
 
-### Sheet 3: PII Data Flow Mapping
+
+## Sheet 3: PII Data Flow Mapping
 
 - [ ] All significant data flows documented (internal + cross-border)
 - [ ] Cross-border transfers identified with "Cross-Border? = Yes"
@@ -1381,7 +1628,8 @@ Complete this checklist before seeking approvals:
 - [ ] Data Minimization assessed (transfer only necessary data)
 - [ ] Evidence Reference links to Sheet 6 for critical flows (SCCs, DPAs)
 
-### Sheet 4: ROPA (Record of Processing Activities)
+
+## Sheet 4: ROPA (Record of Processing Activities)
 
 - [ ] All processing activities documented (every system appears in at least one ROPA entry)
 - [ ] GDPR Article 6 legal basis documented for ALL activities
@@ -1391,7 +1639,8 @@ Complete this checklist before seeking approvals:
 - [ ] Cross-border transfers referenced (link to Sheet 3)
 - [ ] Security Measures summary provided (reference to A.5.34.4 TOMs assessment)
 
-### Sheet 5: PII Discovery Gaps
+
+## Sheet 5: PII Discovery Gaps
 
 - [ ] All compliance gaps identified and documented
 - [ ] Risk Level assigned for each gap (Critical / High / Medium / Low)
@@ -1400,7 +1649,8 @@ Complete this checklist before seeking approvals:
 - [ ] Target Completion Date set (risk-based prioritization)
 - [ ] Critical gaps have immediate action plans (no Critical gaps without remediation)
 
-### Sheet 6: Evidence Register
+
+## Sheet 6: Evidence Register
 
 - [ ] Evidence collected for all critical assertions (see Section 5)
 - [ ] Evidence Register populated with links to supporting documentation
@@ -1409,26 +1659,30 @@ Complete this checklist before seeking approvals:
 - [ ] Evidence is recent (<90 days old) or clearly dated
 - [ ] Evidence stored in access-controlled location (not personal folders)
 
-### Sheet 7: Dashboard
+
+## Sheet 7: Dashboard
 
 - [ ] Dashboard metrics reviewed and reasonable
 - [ ] Overall Compliance Score calculated (target ≥70% for audit readiness)
 - [ ] No unexpected anomalies (e.g., 0 cross-border transfers when using cloud services)
 
-### Sheet 8: Approval & Sign-Off
+
+## Sheet 8: Approval & Sign-Off
 
 - [ ] All required approvers identified (DPO, CISO, Legal, Executive Sponsor)
 - [ ] Review meetings scheduled
 - [ ] Approvers have access to complete assessment (all sheets + evidence)
 
-### Cross-Sheet Validation
+
+## Cross-Sheet Validation
 
 - [ ] System Names in Sheet 3 Data Flows match Sheet 2 System Inventory
 - [ ] ROPA entries (Sheet 4) cover all systems from Sheet 2
 - [ ] Evidence References (Sheets 2-5) link to Sheet 6 Evidence Register
 - [ ] Gap remediation (Sheet 5) addresses deficiencies identified in Sheets 2-4
 
-### Overall Assessment Quality
+
+## Overall Assessment Quality
 
 - [ ] Assessment completed by qualified personnel (DPO involvement)
 - [ ] No placeholder text or dummy data remaining
@@ -1437,11 +1691,12 @@ Complete this checklist before seeking approvals:
 - [ ] Assessment internally consistent (no contradictory statements)
 - [ ] Assessment language clear and professional (suitable for external audit)
 
+
 ---
 
-## 8. Review & Approval
+# Review & Approval
 
-### 8.1 Self-Review
+## Self-Review
 
 Before presenting to stakeholders:
 1. Complete Quality Checklist (Section 7 above) - all items checked
@@ -1450,44 +1705,50 @@ Before presenting to stakeholders:
 4. Spot-check evidence links (open a few to verify they work)
 5. Read assessment from auditor perspective: "Would this satisfy GDPR Article 30 requirements?"
 
-### 8.2 DPO Review (Mandatory)
+## DPO Review (Mandatory)
 
 **Schedule:** 1-2 hour review meeting with DPO / Privacy Officer
 
 **DPO Reviews:**
+
 - **ROPA Compliance:** Does Sheet 4 meet GDPR Article 30 requirements?
 - **Legal Basis Validity:** Are legal bases defensible? Do Sensitive PII activities have Article 9 basis?
 - **Cross-Border Transfers:** Are SCCs/BCRs in place for all international transfers?
 - **Gap Severity:** Are Critical/High gaps accurately rated? Is remediation timeline realistic?
 - **Overall Completeness:** Has assessment covered all processing activities?
 
+
 **Outcome:** DPO approval or list of required corrections
 
-### 8.3 CISO / Security Review
+## CISO / Security Review
 
 **Schedule:** 30-60 minute review with CISO or Security Team Lead
 
 **CISO Reviews:**
+
 - **System Inventory Completeness:** Are all PII systems identified? Any shadow IT missed?
 - **Data Flow Accuracy:** Do data flows match network architecture?
 - **Security Classification:** Is PII sensitivity correctly identified?
 - **Technical Controls:** Are security measures (Sheet 4, ROPA) accurately described?
 
+
 **Outcome:** CISO approval or required corrections
 
-### 8.4 Legal / Compliance Review
+## Legal / Compliance Review
 
 **Schedule:** 30-60 minute review with Legal Counsel / Compliance Officer
 
 **Legal Reviews:**
+
 - **Legal Basis Validity:** Are legal bases legally defensible?
 - **Cross-Border Transfer Mechanisms:** Are SCCs/BCRs sufficient for all transfers?
 - **Retention Compliance:** Do retention periods comply with legal requirements?
 - **Regulatory Alignment:** Does assessment satisfy Swiss FADP and GDPR requirements?
 
+
 **Outcome:** Legal approval or required corrections
 
-### 8.5 Executive Briefing
+## Executive Briefing
 
 **Schedule:** 15-30 minute presentation to Executive Sponsor (CFO, COO, or CEO)
 
@@ -1500,7 +1761,7 @@ Before presenting to stakeholders:
 
 **Outcome:** Executive approval to proceed with remediation and downstream assessments
 
-### 8.6 Final Sign-Off (Sheet 8)
+## Final Sign-Off (Sheet 8)
 
 After all reviews complete and corrections made:
 1. **Update Sheet 8** with approver names and dates
@@ -1511,26 +1772,32 @@ After all reviews complete and corrections made:
 
 ---
 
-## 9. Next Steps After Completion
+# Next Steps After Completion
 
-### 9.1 Immediate Actions
+## Immediate Actions
 
 1. **Share Assessment Results**
+
    - Executive summary to management (Dashboard + critical gaps)
    - Detailed findings to DPO, Legal, CISO
    - Gap assignments to system owners and remediation teams
 
+
 2. **Begin Gap Remediation**
+
    - Prioritize Critical and High risk gaps
    - Allocate resources (budget, personnel, time)
    - Track progress weekly (update Sheet 5 Status column)
 
+
 3. **Publish Approved ROPA**
+
    - Make available to authorized personnel (DPO, Legal, Compliance, Audit)
    - Restrict access (ROPA contains sensitive processing details)
    - Establish update process (how to add new processing activities)
 
-### 9.2 Integration with Downstream Assessments
+
+## Integration with Downstream Assessments
 
 This assessment (A.5.34.1) provides foundational data for:
 
@@ -1540,63 +1807,77 @@ This assessment (A.5.34.1) provides foundational data for:
 - **ISMS-IMP-A.5.34.5 (DPIA):** Uses ROPA (Sheet 4) to identify high-risk processing requiring Data Protection Impact Assessment
 - **ISMS-IMP-A.5.34.6 (Cross-Border Transfers):** Uses data flows (Sheet 3) for detailed Transfer Impact Assessments (TIAs)
 
+
 **Sequence:** Complete A.5.34.1 first, then proceed with other assessments in parallel or sequence.
 
-### 9.3 Ongoing Maintenance
+## Ongoing Maintenance
 
 **Quarterly Updates (2-4 hours):**
+
 - Review Sheet 2 for new systems or decommissioned systems
 - Update Sheet 3 for changed data flows (new integrations, terminated vendors)
 - Refresh Sheet 4 ROPA for new processing activities or changed purposes
 - Update Sheet 5 gap status (mark resolved, add new gaps)
 - Re-run Dashboard (Sheet 7) to track compliance trends
 
+
 **Triggered Updates:**
+
 - **New system deployment:** Assess PII before production (add to Sheet 2)
 - **M&A activity:** Assess acquired company's PII processing (merge into ROPA)
 - **New vendor/processor:** Ensure DPA in place, add to data flows (Sheet 3)
 - **Material processing change:** Update ROPA within 30 days (GDPR requirement)
 - **Regulatory change:** Re-assess legal basis if law changes (e.g., new FADP requirements)
 
+
 **Annual Validation (Full Re-Assessment):**
+
 - Comprehensive review of all ROPA entries
 - Re-interview system owners
 - Re-run automated PII discovery tools (DLP scans)
 - Validate evidence still current (refresh expired evidence)
 - Obtain fresh sign-offs (Sheet 8)
 
-### 9.4 Using Assessment for Audits
+
+## Using Assessment for Audits
 
 **ISO 27001 Certification Audits:**
+
 - Provide Sheets 2-4 as evidence for Control A.5.34
 - Dashboard (Sheet 7) gives auditor compliance summary
 - Gap remediation (Sheet 5) demonstrates continual improvement
 - Evidence register (Sheet 6) provides audit trail
 
+
 **Data Protection Authority (DPA) Audits:**
+
 - Sheet 4 (ROPA) satisfies GDPR Article 30 requirement
 - Sheet 3 (Data Flows) supports Article 46 transfer compliance
 - Legal basis documentation demonstrates Article 6/9 compliance
 - Gap remediation shows accountability and risk management
 
+
 **Internal Audits:**
+
 - Use Dashboard (Sheet 7) for quarterly compliance reporting
 - Track gap closure progress (Sheet 5) for management reviews
 - Evidence register (Sheet 6) supports internal control testing
 
+
 ---
 
-## PART II: TECHNICAL SPECIFICATION (Sheets 1-4)
+# PART II: TECHNICAL SPECIFICATION (Sheets 1-4)
 
 **Audience:** Workbook developers (Python/Excel script maintainers), Technical implementation teams
 
 ---
 
-## Purpose of This Document
+# Purpose of This Document
 
 This document provides **exact technical specifications** for developing the PII Identification and Classification Assessment Excel workbook. This is NOT a user guide - this is for developers implementing the `generate_a5341_pii_identification_assessment.py` script.
 
 **What This Part Contains:**
+
 - Complete workbook structure
 - Cell styling reference with exact hex codes
 - Sheet 1-4 specifications with exact cell references, formulas, validations
@@ -1604,24 +1885,29 @@ This document provides **exact technical specifications** for developing the PII
 - Conditional formatting rules
 - Integration points
 
+
 **What Comes Next (PART 3):**
+
 - Sheets 5-8 specifications
 - Python script architecture
 - Testing and validation procedures
 
+
 ---
 
-## 1. Workbook Structure Overview
+# Workbook Structure Overview
 
-### 1.1 File Naming Convention
+## File Naming Convention
 
 **Format:** `ISMS_A_5_34_1_PII_Identification_Assessment_YYYYMMDD.xlsx`
 
 **Examples:**
+
 - `ISMS_A_5_34_1_PII_Identification_Assessment_20260128.xlsx`
 - `ISMS_A_5_34_1_PII_Identification_Assessment_20260215.xlsx`
 
-### 1.2 Sheet Architecture
+
+## Sheet Architecture
 
 | Sheet # | Sheet Name | Purpose | User Entry | Calculated | Rows |
 |---------|-----------|---------|-----------|-----------|------|
@@ -1637,20 +1923,24 @@ This document provides **exact technical specifications** for developing the PII
 **Total Sheets:** 8  
 **Estimated File Size:** 2-5 MB (depending on data volume)
 
-### 1.3 Protection Settings
+## Protection Settings
 
 **Sheet Protection:**
+
 - **Password:** `privacy2024` (CUSTOMIZE: Change in production)
 - **Protected Sheets:** All sheets (structure locked)
 - **Unlocked Ranges:** Input cells only (specified per sheet)
 
+
 **Workbook Protection:**
+
 - Structure: Protected (prevent sheet deletion/reordering)
 - Windows: Not protected
 
+
 ---
 
-## 2. Cell Styling Reference
+# Cell Styling Reference
 
 **CRITICAL:** All styling must use exact hex codes specified below. This ensures consistency and professional appearance.
 
@@ -1676,19 +1966,21 @@ This document provides **exact technical specifications** for developing the PII
 | **Cross-Border Transfer Flag** | Calibri | 11pt | No | 000000 (black) | FFE699 (light orange) | Center | All sides, thin |
 
 **Border Styles:**
+
 - **Thin:** `Border.STYLE_THIN`
 - **Medium:** `Border.STYLE_MEDIUM`
 - **Color:** 000000 (black) for all borders
 
+
 ---
 
-## 3. SHEET 1: Instructions & Legend
+# SHEET 1: Instructions & Legend
 
-### 3.1 Purpose
+## Purpose
 
 Provide embedded assessment guide and reference materials (read-only).
 
-### 3.2 Layout Structure
+## Layout Structure
 
 **Row 1:** Sheet title  
 **Rows 2-10:** Assessment overview  
@@ -1699,16 +1991,16 @@ Provide embedded assessment guide and reference materials (read-only).
 **Rows 76-90:** GDPR Article 30 requirements  
 **Rows 91-100:** Contact and support information
 
-### 3.3 Cell-by-Cell Specification
+## Cell-by-Cell Specification
 
-#### Header Section (Rows 1-2)
+### Header Section (Rows 1-2)
 
 | Row | Cell Range | Content | Styling |
 |-----|-----------|---------|---------|
 | **1** | **A1:H1** (merged) | "ISMS-IMP-A.5.34.1 - PII IDENTIFICATION AND CLASSIFICATION ASSESSMENT" | Title style (see Section 2) |
 | **2** | **A2:H2** (merged) | "ISO/IEC 27001:2022 Control A.5.34: Privacy and Protection of PII - User Guide" | Subtitle style |
 
-#### Assessment Overview (Rows 4-10)
+### Assessment Overview (Rows 4-10)
 
 | Row | Cell | Label | Cell | Content |
 |-----|------|-------|------|---------|
@@ -1720,10 +2012,12 @@ Provide embedded assessment guide and reference materials (read-only).
 | **10** | **A10:H10** (merged) | "2. Complete Sheet 3 (Data Flow Mapping) - map PII flows including cross-border transfers" | | |
 
 **Styling:**
+
 - Column A (Labels): Field label style (bold, light gray fill)
 - Columns B-H (Content): Input cell style (white fill, black text)
 
-#### PII Classification Framework (Rows 12-30)
+
+### PII Classification Framework (Rows 12-30)
 
 | Row | Cell Range | Content | Styling |
 |-----|-----------|---------|---------|
@@ -1743,11 +2037,13 @@ Provide embedded assessment guide and reference materials (read-only).
 | **19** | **A19:H19** (merged) | "⚠️ IMPORTANT: If a system contains BOTH Basic and Sensitive PII, classify as Sensitive. If it contains Criminal Offense Data, classify as Criminal Offense Data." | Status - In Progress style (yellow fill) |
 
 **Column Widths:**
+
 - Column A: 20
 - Columns B-E: 50 total (merged)
 - Columns F-H: 45 total (merged)
 
-#### Status Legend (Rows 32-40)
+
+### Status Legend (Rows 32-40)
 
 | Row | Cell | Symbol/Status | Cell Range | Description | Color Code |
 |-----|------|---------------|-----------|-------------|------------|
@@ -1758,13 +2054,15 @@ Provide embedded assessment guide and reference materials (read-only).
 | **37** | **A37** | "✅" | **B37** | "Validated" | **C37:D37** (merged) | "DPO reviewed and approved" | **E37** | Cell shows dark green background (00B050), white text |
 
 **Styling:**
+
 - Row 32: Section header
 - Column A: Symbol (emoji or unicode)
 - Column B: Status text
 - Columns C-D: Description
 - Column E: Visual example with actual color fill
 
-#### Dropdown Reference (Rows 42-60)
+
+### Dropdown Reference (Rows 42-60)
 
 | Row | Cell Range | Content |
 |-----|-----------|---------|
@@ -1778,7 +2076,7 @@ Provide embedded assessment guide and reference materials (read-only).
 | **53** | **A53** | "Sensitive PII Types:" |
 | **54** | **B54:H54** (merged, wrap) | "Health Data, Genetic Data, Biometric Data (for unique identification), Racial or Ethnic Origin, Political Opinions, Religious or Philosophical Beliefs, Trade Union Membership, Sex Life or Sexual Orientation, Private Sphere (FADP-specific)" |
 
-#### Evidence Types (Rows 62-70)
+### Evidence Types (Rows 62-70)
 
 | Row | Cell Range | Content |
 |-----|-----------|---------|
@@ -1791,7 +2089,7 @@ Provide embedded assessment guide and reference materials (read-only).
 | **69** | **A69:H69** (merged) | "✓ Privacy notices (customer-facing, employee-facing)" |
 | **70** | **A70:H70** (merged) | "✓ Consent forms and consent management records" |
 
-#### GDPR Article 30 Requirements (Rows 72-85)
+### GDPR Article 30 Requirements (Rows 72-85)
 
 | Row | Cell Range | Content |
 |-----|-----------|---------|
@@ -1807,7 +2105,7 @@ Provide embedded assessment guide and reference materials (read-only).
 | **82** | **A82:H82** (merged) | "• General description of technical and organizational security measures" |
 | **84** | **A84:H84** (merged) | "⚠️ Sheet 4 (ROPA) in this workbook implements all GDPR Article 30 requirements." |
 
-#### Contact Information (Rows 87-92)
+### Contact Information (Rows 87-92)
 
 | Row | Cell | Label | Cell Range | Content |
 |-----|------|-------|-----------|---------|
@@ -1816,36 +2114,38 @@ Provide embedded assessment guide and reference materials (read-only).
 | **90** | **A90** | "Technical Support:" | **B90:H90** (merged) | "[IT Contact], Information Security Team, [support@organization.com]" |
 | **91** | **A91** | "Legal/Compliance:" | **B91:H91** (merged) | "[Legal Contact], Legal Department, [legal@organization.com]" |
 
-### 3.4 Sheet Protection
+## Sheet Protection
 
 **Protection Settings:**
+
 - Sheet fully locked (all cells protected)
 - No unlocked ranges (read-only sheet)
 - Password: `privacy2024`
 
+
 ---
 
-## 4. SHEET 2: PII System Inventory
+# SHEET 2: PII System Inventory
 
-### 4.1 Purpose
+## Purpose
 
 Document ALL systems processing PII with classifications and ownership.
 
-### 4.2 Layout Structure
+## Layout Structure
 
 **Row 1:** Sheet title  
 **Row 2:** Instructions  
 **Row 3:** Column headers  
 **Rows 4+:** Data entry rows (user completes)
 
-### 4.3 Header Section
+## Header Section
 
 | Row | Cell Range | Content | Styling |
 |-----|-----------|---------|---------|
 | **1** | **A1:T1** (merged) | "PII SYSTEM INVENTORY" | Title style (16pt, white text, dark blue fill #1F4E78) |
 | **2** | **A2:T2** (merged) | "Document ALL systems that process, store, or transmit personal data / PII. Include backups, dev/test environments, SaaS services, and physical records." | Subtitle style (11pt, dark blue text, light blue fill #D6DCE4) |
 
-### 4.4 Column Definitions (Row 3)
+## Column Definitions (Row 3)
 
 | Col | Letter | Header | Width | Data Type | Validation | Formula |
 |-----|--------|--------|-------|-----------|------------|---------|
@@ -1871,13 +2171,15 @@ Document ALL systems processing PII with classifications and ownership.
 | **T** | T | "Review Comments" | 30 | Text | Optional | None |
 
 **Header Row Styling (Row 3):**
+
 - Font: Calibri 11pt, Bold
 - Text Color: FFFFFF (white)
 - Fill Color: 1F4E78 (dark blue)
 - Alignment: Center, Wrap text
 - Border: All sides, thin, black
 
-### 4.5 Dropdown Lists
+
+## Dropdown Lists
 
 **System Type (Column E) Options:**
 ```
@@ -1946,7 +2248,7 @@ DLP Tool
 Other
 ```
 
-### 4.6 Data Validation Rules
+## Data Validation Rules
 
 **Applied to Data Rows (Row 4 onwards):**
 
@@ -1966,22 +2268,28 @@ Other
 | **O** | O4:O1000 | Date | Valid date | "Enter valid date in DD.MM.YYYY format" |
 | **P** | P4:P1000 | Date | Valid date | "Enter valid date in DD.MM.YYYY format" |
 
-### 4.7 Formulas
+## Formulas
 
 **Column A (Row ID):**
+
 - **Cell A4:** `=TEXT(ROW()-3,"SYS-000")`
 - **Cell A5:** `=TEXT(ROW()-3,"SYS-000")`
 - **Fill down to A1000**
 
+
 **Column O (Discovery Date) - Initial Value:**
+
 - When new row created, default to `=TODAY()`
 - After initial entry, user can modify
 
+
 **Column P (Last Updated) - Auto-Update:**
+
 - Formula: `=IF(ISBLANK(C4),"",TODAY())`
 - NOTE: In practice, Excel doesn't auto-recalc on cell edit. This is aspirational. Python script should populate initial value.
 
-### 4.8 Conditional Formatting Rules
+
+## Conditional Formatting Rules
 
 **Rule 1: Status-based row highlighting**
 
@@ -2021,49 +2329,57 @@ Other
 
 **Interpretation:** If discovered more than 90 days ago and never updated (discovery date = last updated), flag as stale.
 
-### 4.9 Cell Protection
+## Cell Protection
 
 **Locked Cells (Protected):**
+
 - Column A (Row ID) - Auto-generated, read-only
 - Row 1-3 (Headers) - Read-only
 
+
 **Unlocked Cells (User Can Edit):**
+
 - Columns B-T, Rows 4-1000 - All input cells
 
+
 **Sheet Protection:**
+
 - Password: `privacy2024`
 - Allow: Select locked cells, Select unlocked cells, Format cells (column width only)
 - Disallow: Insert/delete rows, Insert/delete columns, Sort, AutoFilter
 
-### 4.10 Freeze Panes
+
+## Freeze Panes
 
 **Freeze:** Row 3 and Column A
+
 - Implementation: Select cell B4, then Freeze Panes
 - Result: Headers (rows 1-3) remain visible when scrolling down, Row ID (column A) remains visible when scrolling right
 
+
 ---
 
-## 5. SHEET 3: PII Data Flow Mapping
+# SHEET 3: PII Data Flow Mapping
 
-### 5.1 Purpose
+## Purpose
 
 Document how PII moves through systems and across organizational boundaries, including cross-border transfers.
 
-### 5.2 Layout Structure
+## Layout Structure
 
 **Row 1:** Sheet title  
 **Row 2:** Instructions  
 **Row 3:** Column headers  
 **Rows 4+:** Data entry rows
 
-### 5.3 Header Section
+## Header Section
 
 | Row | Cell Range | Content | Styling |
 |-----|-----------|---------|---------|
 | **1** | **A1:P1** (merged) | "PII DATA FLOW MAPPING" | Title style |
 | **2** | **A2:P2** (merged) | "Document how PII moves between systems and across organizational boundaries. Flag all cross-border transfers for Transfer Impact Assessment (TIA)." | Subtitle style |
 
-### 5.4 Column Definitions (Row 3)
+## Column Definitions (Row 3)
 
 | Col | Letter | Header | Width | Data Type | Validation | Formula |
 |-----|--------|--------|-------|-----------|------------|---------|
@@ -2086,7 +2402,7 @@ Document how PII moves through systems and across organizational boundaries, inc
 
 **Header Row Styling:** Same as Sheet 2 (white text, dark blue fill #1F4E78, centered, wrapped)
 
-### 5.5 Dropdown Lists
+## Dropdown Lists
 
 **Transfer Mechanism (Column E):**
 ```
@@ -2134,7 +2450,7 @@ No
 Needs Review
 ```
 
-### 5.6 Data Validation Rules
+## Data Validation Rules
 
 | Column | Range | Validation Type | Rule | Error Message |
 |--------|-------|----------------|------|---------------|
@@ -2150,13 +2466,15 @@ Needs Review
 | **L** | L4:L1000 | Text | Required | "Purpose required" |
 | **M** | M4:M1000 | List | Data Minimization dropdown | "Select data minimization status" |
 
-### 5.7 Formulas
+## Formulas
 
 **Column A (Flow ID):**
+
 - **Cell A4:** `=TEXT(ROW()-3,"FLOW-000")`
 - **Fill down to A1000**
 
-### 5.8 Conditional Formatting Rules
+
+## Conditional Formatting Rules
 
 **Rule 1: Cross-border transfer highlighting**
 
@@ -2185,45 +2503,51 @@ Needs Review
 
 **Priority:** 3
 
-### 5.9 Cell Protection
+## Cell Protection
 
 **Locked Cells:**
+
 - Column A (Flow ID)
 - Rows 1-3 (Headers)
 
+
 **Unlocked Cells:**
+
 - Columns B-P, Rows 4-1000
+
 
 **Sheet Protection:** Same as Sheet 2 (password: `privacy2024`)
 
-### 5.10 Freeze Panes
+## Freeze Panes
 
 **Freeze:** Row 3 and Column A
+
 - Select cell B4, then Freeze Panes
+
 
 ---
 
-## 6. SHEET 4: Record of Processing Activities (ROPA)
+# SHEET 4: Record of Processing Activities (ROPA)
 
-### 6.1 Purpose
+## Purpose
 
 Maintain GDPR Article 30 compliant Record of Processing Activities documenting all PII processing.
 
-### 6.2 Layout Structure
+## Layout Structure
 
 **Row 1:** Sheet title  
 **Row 2:** GDPR Article 30 reference  
 **Row 3:** Column headers  
 **Rows 4+:** Data entry rows (ROPA entries)
 
-### 6.3 Header Section
+## Header Section
 
 | Row | Cell Range | Content | Styling |
 |-----|-----------|---------|---------|
 | **1** | **A1:V1** (merged) | "RECORD OF PROCESSING ACTIVITIES (ROPA)" | Title style |
 | **2** | **A2:V2** (merged) | "GDPR Article 30 compliant documentation of all PII processing activities. Each entry represents a processing activity (may span multiple systems)." | Subtitle style |
 
-### 6.4 Column Definitions (Row 3)
+## Column Definitions (Row 3)
 
 | Col | Letter | Header | Width | Data Type | Validation | Formula |
 |-----|--------|--------|-------|-----------|------------|---------|
@@ -2252,7 +2576,7 @@ Maintain GDPR Article 30 compliant Record of Processing Activities documenting a
 
 **Header Row Styling:** Same as previous sheets
 
-### 6.5 Dropdown Lists
+## Dropdown Lists
 
 **PII Classification (Column G):**
 ```
@@ -2305,7 +2629,7 @@ Adequacy Decision
 Derogation (Art. 49)
 ```
 
-### 6.6 Data Validation Rules
+## Data Validation Rules
 
 | Column | Range | Validation Type | Rule | Error Message |
 |--------|-------|----------------|------|---------------|
@@ -2323,13 +2647,15 @@ Derogation (Art. 49)
 | **P** | P4:P500 | List (Conditional) | If N="Yes", show safeguards dropdown | "Transfer safeguards required (GDPR Art. 46)" |
 | **Q** | Q4:Q500 | Required | Not blank, not "As long as necessary" | "Retention period must be specific (e.g., '7 years after termination')" |
 
-### 6.7 Formulas
+## Formulas
 
 **Column A (Activity ID):**
+
 - **Cell A4:** `=TEXT(ROW()-3,"ROPA-000")`
 - **Fill down to A500**
 
-### 6.8 Conditional Formatting Rules
+
+## Conditional Formatting Rules
 
 **Rule 1: Sensitive PII highlighting**
 
@@ -2370,89 +2696,109 @@ Derogation (Art. 49)
 
 **Interpretation:** Retention period must be specific per GDPR Article 5(1)(e)
 
-### 6.9 Cell Protection
+## Cell Protection
 
 **Locked Cells:**
+
 - Column A (Activity ID)
 - Rows 1-3 (Headers)
 
+
 **Unlocked Cells:**
+
 - Columns B-V, Rows 4-500
+
 
 **Sheet Protection:** Same as previous sheets (password: `privacy2024`)
 
-### 6.10 Freeze Panes
+## Freeze Panes
 
 **Freeze:** Row 3 and Column A
+
 - Select cell B4, then Freeze Panes
+
 
 ---
 
-## 7. Integration Points
+# Integration Points
 
-### 7.1 Cross-Sheet Data Dependencies
+## Cross-Sheet Data Dependencies
 
 **Sheet 3 (Data Flow Mapping) ← Sheet 2 (System Inventory):**
+
 - Columns B and C (Source/Destination System) use dynamic dropdown from Sheet 2 Column C (System Name)
 - Formula: `=INDIRECT("'PII System Inventory'!$C$4:$C$"&COUNTA('PII System Inventory'!$C:$C))`
 
+
 **Sheet 4 (ROPA) ← Sheet 2 (System Inventory):**
+
 - Column D (Systems Involved) references systems from Sheet 2
 - User manually enters (not dropdown, as multiple systems per activity)
 
+
 **Sheet 5 (Gaps) ← Sheets 2, 3, 4:**
+
 - Column E (System/Activity Affected) references entries from previous sheets
 - Manual text entry (not dropdown)
 
+
 **Sheet 6 (Evidence Register) ← All Sheets:**
+
 - Column B (Related Sheet/Row) references any sheet
 - Format: "Sheet 2, Row 5" or "Sheet 4, Activity ROPA-001"
 
-### 7.2 Dashboard Consolidation (Sheet 7)
+
+## Dashboard Consolidation (Sheet 7)
 
 **Dashboard reads from:**
+
 - **Sheet 2:** COUNT systems, classification distribution, status summary
 - **Sheet 3:** COUNT flows, cross-border transfer metrics
 - **Sheet 4:** COUNT activities, legal basis distribution, sensitive PII counts
 - **Sheet 5:** COUNT gaps, risk distribution
 - **Sheet 6:** COUNT evidence, verification status
 
+
 **Formulas use COUNTIF, COUNTIFS, SUMIFS across source sheets**
 
-### 7.3 External Integration
+## External Integration
 
 **Feeds into Assessment A.5.34.7 (Privacy Compliance Dashboard):**
+
 - Sheet 7 (Dashboard) metrics are read by consolidation script
 - Key cells to export: See Part 3 for exact cell references
 
+
 **Prerequisites for other assessments:**
+
 - **A.5.34.2** (Legal Basis) requires Sheet 4 (ROPA) as input
 - **A.5.34.3** (DSR Management) requires Sheet 2 (Systems) for access/erasure request fulfillment
 - **A.5.34.6** (Cross-Border Transfers) requires Sheet 3 (Data Flows) for TIA
 
+
 ---
 
-## 8. SHEET 5: PII Discovery Gaps
+# SHEET 5: PII Discovery Gaps
 
-### 8.1 Purpose
+## Purpose
 
 Identify and track non-compliant PII processing with risk assessment and remediation plans.
 
-### 8.2 Layout Structure
+## Layout Structure
 
 **Row 1:** Sheet title  
 **Row 2:** Instructions  
 **Row 3:** Column headers  
 **Rows 4+:** Data entry rows (gaps)
 
-### 8.3 Header Section
+## Header Section
 
 | Row | Cell Range | Content | Styling |
 |-----|-----------|---------|---------|
 | **1** | **A1:R1** (merged) | "PII DISCOVERY GAPS" | Title style (16pt, white text, dark blue fill #1F4E78) |
 | **2** | **A2:R2** (merged) | "Document non-compliant PII processing, classify risk, and plan remediation. Prioritize Critical and High risk gaps for immediate action." | Subtitle style (11pt, dark blue text, light blue fill #D6DCE4) |
 
-### 8.4 Column Definitions (Row 3)
+## Column Definitions (Row 3)
 
 | Col | Letter | Header | Width | Data Type | Validation | Formula |
 |-----|--------|--------|-------|-----------|------------|---------|
@@ -2477,7 +2823,7 @@ Identify and track non-compliant PII processing with risk assessment and remedia
 
 **Header Row Styling:** Same as previous sheets (white text, dark blue fill #1F4E78, centered, wrapped)
 
-### 8.5 Dropdown Lists
+## Dropdown Lists
 
 **Status (Column B):**
 ```
@@ -2511,7 +2857,7 @@ Medium
 Low
 ```
 
-### 8.6 Data Validation Rules
+## Data Validation Rules
 
 | Column | Range | Validation Type | Rule | Error Message |
 |--------|-------|----------------|------|---------------|
@@ -2527,21 +2873,27 @@ Low
 | **L** | L4:L200 | Date | Valid date | "Enter date identified" |
 | **N** | N4:N200 | Date | Valid date | "Enter last updated date" |
 
-### 8.7 Formulas
+## Formulas
 
 **Column A (Gap ID):**
+
 - **Cell A4:** `=TEXT(YEAR(TODAY()),"0000")&"-GAP-"&TEXT(ROW()-3,"000")`
 - **Example output:** `2026-GAP-001`, `2026-GAP-002`
 - **Fill down to A200**
 
+
 **Column L (Date Identified) - Initial:**
+
 - When row created, default to `=TODAY()`
 
+
 **Column N (Last Updated) - Auto-update:**
+
 - Formula: `=IF(ISBLANK(D4),"",TODAY())`
 - NOTE: Excel doesn't auto-recalc on edit. Python script sets initial value.
 
-### 8.8 Conditional Formatting Rules
+
+## Conditional Formatting Rules
 
 **Rule 1: Risk-based row highlighting**
 
@@ -2586,46 +2938,50 @@ Low
 
 **Interpretation:** Gap status is active but no remediation plan = action required
 
-### 8.9 Cell Protection
+## Cell Protection
 
 **Locked Cells:**
+
 - Column A (Gap ID)
 - Rows 1-3 (Headers)
 - Column L (Date Identified) - after initial entry
 - Column N (Last Updated) - auto-calculated
 
+
 **Unlocked Cells:**
+
 - Columns B-K, M, O-R (Rows 4-200)
+
 
 **Sheet Protection:** Same as previous sheets (password: `privacy2024`)
 
-### 8.10 Freeze Panes
+## Freeze Panes
 
 **Freeze:** Row 3 and Column A
 
 ---
 
-## 9. SHEET 6: Evidence Register
+# SHEET 6: Evidence Register
 
-### 9.1 Purpose
+## Purpose
 
 Track supporting documentation for audit readiness.
 
-### 9.2 Layout Structure
+## Layout Structure
 
 **Row 1:** Sheet title  
 **Row 2:** Instructions  
 **Row 3:** Column headers  
 **Rows 4+:** Evidence entries
 
-### 9.3 Header Section
+## Header Section
 
 | Row | Cell Range | Content | Styling |
 |-----|-----------|---------|---------|
 | **1** | **A1:J1** (merged) | "EVIDENCE REGISTER" | Title style |
 | **2** | **A2:J2** (merged) | "Register all supporting documentation for assessment assertions. Link evidence to specific sheets/rows for audit traceability." | Subtitle style |
 
-### 9.4 Column Definitions (Row 3)
+## Column Definitions (Row 3)
 
 | Col | Letter | Header | Width | Data Type | Validation | Formula |
 |-----|--------|--------|-------|-----------|------------|---------|
@@ -2642,7 +2998,7 @@ Track supporting documentation for audit readiness.
 
 **Header Row Styling:** Same as previous sheets
 
-### 9.5 Dropdown Lists
+## Dropdown Lists
 
 **Evidence Type (Column C):**
 ```
@@ -2671,7 +3027,7 @@ Pending
 Expired
 ```
 
-### 9.6 Data Validation Rules
+## Data Validation Rules
 
 | Column | Range | Validation Type | Rule | Error Message |
 |--------|-------|----------------|------|---------------|
@@ -2682,14 +3038,16 @@ Expired
 | **F** | F4:F500 | Date | Valid date | "Enter evidence date" |
 | **H** | H4:H500 | List | Verification Status dropdown | "Select verification status" |
 
-### 9.7 Formulas
+## Formulas
 
 **Column A (Evidence ID):**
+
 - **Cell A4:** `="EVID-A534.1-"&TEXT(ROW()-3,"000")`
 - **Example output:** `EVID-A534.1-001`, `EVID-A534.1-002`
 - **Fill down to A500**
 
-### 9.8 Conditional Formatting Rules
+
+## Conditional Formatting Rules
 
 **Rule 1: Verification status highlighting**
 
@@ -2711,30 +3069,34 @@ Expired
 
 **Interpretation:** Evidence older than 1 year may need refresh
 
-### 9.9 Cell Protection
+## Cell Protection
 
 **Locked Cells:**
+
 - Column A (Evidence ID)
 - Rows 1-3 (Headers)
 
+
 **Unlocked Cells:**
+
 - Columns B-J (Rows 4-500)
+
 
 **Sheet Protection:** Same as previous sheets
 
-### 9.10 Freeze Panes
+## Freeze Panes
 
 **Freeze:** Row 3 and Column A
 
 ---
 
-## 10. SHEET 7: Dashboard
+# SHEET 7: Dashboard
 
-### 10.1 Purpose
+## Purpose
 
 Executive summary with auto-calculated compliance metrics (read-only).
 
-### 10.2 Layout Structure
+## Layout Structure
 
 **Row 1:** Sheet title  
 **Rows 2-10:** Section 1 - PII System Inventory Summary  
@@ -2744,13 +3106,13 @@ Executive summary with auto-calculated compliance metrics (read-only).
 **Rows 41-48:** Section 5 - Evidence Status  
 **Rows 49-55:** Section 6 - Overall Compliance Score
 
-### 10.3 Header Section
+## Header Section
 
 | Row | Cell Range | Content | Styling |
 |-----|-----------|---------|---------|
 | **1** | **A1:G1** (merged) | "PII IDENTIFICATION & CLASSIFICATION - COMPLIANCE DASHBOARD" | Title style (16pt, white text, dark blue fill #1F4E78, height 50px) |
 
-### 10.4 Section 1: PII System Inventory Summary (Rows 3-10)
+## Section 1: PII System Inventory Summary (Rows 3-10)
 
 | Row | Cell | Label | Cell | Formula | Display Format | Styling |
 |-----|------|-------|------|---------|----------------|---------|
@@ -2768,12 +3130,14 @@ Executive summary with auto-calculated compliance metrics (read-only).
 | **17** | **A17** | "Inventory Completeness Rate:" | **B17** | `=(C12+C13)/(C12+C13+C14+C15)` | Percentage, 1 decimal | Bold, Conditional (see 10.10) |
 
 **Column Widths:**
+
 - Column A: 35
 - Column B: 25
 - Column C: 15
 - Columns D-G: 20 each
 
-### 10.5 Section 2: Data Flow Summary (Rows 19-28)
+
+## Section 2: Data Flow Summary (Rows 19-28)
 
 | Row | Cell | Label | Cell | Formula | Display Format |
 |-----|------|-------|------|---------|----------------|
@@ -2787,7 +3151,7 @@ Executive summary with auto-calculated compliance metrics (read-only).
 | **28** | **B28** | "- Adequacy Decision:" | **C28** | `=COUNTIF('PII Data Flow Mapping'!K4:K1000,"Adequacy Decision")` | Number |
 | **29** | **B29** | "- None (Non-compliant):" | **C29** | `=COUNTIFS('PII Data Flow Mapping'!H4:H1000,"Yes",'PII Data Flow Mapping'!K4:K1000,"None (Non-compliant)")` | Number, Fill: C00000 (red), Font: White, Bold |
 
-### 10.6 Section 3: ROPA Summary (Rows 31-40)
+## Section 3: ROPA Summary (Rows 31-40)
 
 | Row | Cell | Label | Cell | Formula | Display Format |
 |-----|------|-------|------|---------|----------------|
@@ -2801,7 +3165,7 @@ Executive summary with auto-calculated compliance metrics (read-only).
 | **40** | **A40** | "Activities with Sensitive PII (Art. 9):" | **B40** | `=COUNTIF('ROPA'!H4:H500,"Yes")` | Number, Fill: FFCC99 (orange) |
 | **41** | **A41** | "Activities with International Transfers:" | **B41** | `=COUNTIF('ROPA'!N4:N500,"Yes")` | Number, Fill: FFE699 (orange) |
 
-### 10.7 Section 4: Gap Analysis (Rows 43-50)
+## Section 4: Gap Analysis (Rows 43-50)
 
 | Row | Cell | Label | Cell | Formula | Display Format |
 |-----|------|-------|------|---------|----------------|
@@ -2819,7 +3183,7 @@ Executive summary with auto-calculated compliance metrics (read-only).
 | **56** | **B56** | "- Accepted:" | **C56** | `=COUNTIF('PII Discovery Gaps'!B4:B200,"Accepted")` | Number, Fill: D9D9D9 (gray) |
 | **58** | **A58** | "Overdue Remediation Actions:" | **B58** | `=COUNTIFS('PII Discovery Gaps'!J4:J200,"<"&TODAY(),'PII Discovery Gaps'!B4:B200,"<>Resolved",'PII Discovery Gaps'!B4:B200,"<>Accepted")` | Number, Fill: C00000 (red), Font: White, Bold |
 
-### 10.8 Section 5: Evidence Status (Rows 60-66)
+## Section 5: Evidence Status (Rows 60-66)
 
 | Row | Cell | Label | Cell | Formula | Display Format |
 |-----|------|-------|------|---------|----------------|
@@ -2831,7 +3195,7 @@ Executive summary with auto-calculated compliance metrics (read-only).
 | **66** | **B66** | "- Expired:" | **C66** | `=COUNTIF('Evidence Register'!H4:H500,"Expired")` | Number, Fill: FFC7CE (light red) |
 | **68** | **A68** | "Evidence Coverage Rate:" | **B68** | `=C64/(C64+C65+C66)` | Percentage, 1 decimal, Conditional |
 
-### 10.9 Section 6: Overall Compliance Score (Rows 70-78)
+## Section 6: Overall Compliance Score (Rows 70-78)
 
 | Row | Cell | Label | Cell | Formula | Display Format |
 |-----|------|-------|------|---------|----------------|
@@ -2852,7 +3216,7 @@ Executive summary with auto-calculated compliance metrics (read-only).
 | **E78** | `=IF(AND(B78>=0.5,B78<0.7),"⚠️ FAIR - Work Needed","")` | Text | Fill: FFEB9C (yellow), Bold |
 | **F78** | `=IF(B78<0.5,"❌ POOR - Major Issues","")` | Text | Fill: C00000 (red), Font: White, Bold |
 
-### 10.10 Conditional Formatting (Dashboard-Specific)
+## Conditional Formatting (Dashboard-Specific)
 
 **Rule 1: Score-based cell coloring**
 
@@ -2865,25 +3229,27 @@ Executive summary with auto-calculated compliance metrics (read-only).
 
 **Priority:** 1
 
-### 10.11 Cell Protection
+## Cell Protection
 
 **All Cells Locked (Read-Only Dashboard):**
+
 - Entire sheet protected, no unlocked cells
 - Password: `privacy2024`
 
-### 10.12 Freeze Panes
+
+## Freeze Panes
 
 **Freeze:** Row 2 (keep title visible when scrolling)
 
 ---
 
-## 11. SHEET 8: Approval & Sign-Off
+# SHEET 8: Approval & Sign-Off
 
-### 11.1 Purpose
+## Purpose
 
 Stakeholder review and formal approval documentation.
 
-### 11.2 Layout Structure
+## Layout Structure
 
 **Row 1:** Sheet title  
 **Row 2:** Instructions  
@@ -2891,14 +3257,14 @@ Stakeholder review and formal approval documentation.
 **Rows 4-10:** Pre-populated required signatories  
 **Rows 11+:** Additional signatories if needed
 
-### 11.3 Header Section
+## Header Section
 
 | Row | Cell Range | Content | Styling |
 |-----|-----------|---------|---------|
 | **1** | **A1:G1** (merged) | "ASSESSMENT APPROVAL & SIGN-OFF" | Title style |
 | **2** | **A2:G2** (merged) | "Required approvals from key stakeholders. Assessment is not complete until all required signatures obtained." | Subtitle style |
 
-### 11.4 Column Definitions (Row 3)
+## Column Definitions (Row 3)
 
 | Col | Letter | Header | Width | Data Type | Validation | Formula |
 |-----|--------|--------|-------|-----------|------------|---------|
@@ -2912,7 +3278,7 @@ Stakeholder review and formal approval documentation.
 
 **Header Row Styling:** Same as previous sheets
 
-### 11.5 Pre-Populated Required Approvals (Rows 4-7)
+## Pre-Populated Required Approvals (Rows 4-7)
 
 | Row | Col A (Role) | Col B (Name) | Col C (Signature) | Col D (Date) | Col E (Approval Scope) | Col F (Comments) | Col G (Email) |
 |-----|-------------|-------------|------------------|-------------|----------------------|-----------------|-------------|
@@ -2922,11 +3288,13 @@ Stakeholder review and formal approval documentation.
 | **7** | "Executive Sponsor" | [User fills] | [User fills] | [User fills] | "Final approval, gap remediation resource allocation, accountability" | [Optional] | [Optional] |
 
 **Row Styling:**
+
 - Column A (Role): Fill: D9D9D9 (light gray), Bold, Locked
 - Column E (Approval Scope): Fill: F2F2F2 (light gray), Locked
 - Columns B-D, F-G: Fill: FFFFFF (white), Unlocked for user entry
 
-### 11.6 Dropdown Lists
+
+## Dropdown Lists
 
 **Signatory Role (Column A) - Optional for rows 8+:**
 ```
@@ -2941,7 +3309,7 @@ Executive Sponsor
 Other
 ```
 
-### 11.7 Data Validation Rules
+## Data Validation Rules
 
 | Column | Range | Validation Type | Rule | Error Message |
 |--------|-------|----------------|------|---------------|
@@ -2950,7 +3318,7 @@ Other
 | **D** | D4:D20 | Date | Valid date | "Enter signature date" |
 | **G** | G4:G20 | Email (Optional) | Valid email format if entered | "Enter valid email address" |
 
-### 11.8 Conditional Formatting Rules
+## Conditional Formatting Rules
 
 **Rule 1: Unsigned required approvals (Critical)**
 
@@ -2970,33 +3338,37 @@ Other
 
 **Priority:** 2
 
-### 11.9 Cell Protection
+## Cell Protection
 
 **Locked Cells:**
+
 - Rows 1-3 (Headers)
 - Column A, Rows 4-7 (Pre-populated required roles)
 - Column E, Rows 4-7 (Pre-populated approval scopes)
 
+
 **Unlocked Cells:**
+
 - Columns B-D, F-G, Rows 4-20
 - Column A, Rows 8-20 (additional approvers)
 - Column E, Rows 8-20 (additional approval scopes)
 
+
 **Sheet Protection:** Same as previous sheets (password: `privacy2024`)
 
-### 11.10 Freeze Panes
+## Freeze Panes
 
 **Freeze:** Row 3
 
 ---
 
-## 12. Python Script Architecture
+# Python Script Architecture
 
-### 12.1 Script Purpose
+## Script Purpose
 
 Generate complete Excel workbook: `ISMS_A_5_34_1_PII_Identification_Assessment_YYYYMMDD.xlsx`
 
-### 12.2 Required Libraries
+## Required Libraries
 
 ```python
 import argparse
@@ -3009,7 +3381,7 @@ from openpyxl.formatting.rule import CellIsRule, FormulaRule
 from openpyxl.utils import get_column_letter
 ```
 
-### 12.3 Script Structure (High-Level)
+## Script Structure (High-Level)
 
 ```python
 #!/usr/bin/env python3
@@ -3371,33 +3743,41 @@ if __name__ == "__main__":
     exit(main())
 ```
 
-### 12.4 Key Implementation Notes
+## Key Implementation Notes
 
 **Formula Writing:**
+
 - Formulas written as text strings: `cell.value = '=TEXT(ROW()-3,"SYS-000")'`
 - Use absolute references where needed: `$C$4:$C$1000`
 - Test formulas in Excel before embedding in script
 
+
 **Conditional Formatting:**
+
 - Use `FormulaRule` for complex logic (cross-sheet references)
 - Formula applies to first cell in range, Excel auto-adjusts
 - Priority matters: Lower number = higher priority
 
+
 **Data Validation:**
+
 - List validation: `formula1='"Option1,Option2,Option3"'`
 - Dynamic range validation: `formula1="'Sheet Name'!$C$4:$C$1000"`
 - Custom validation: `formula1="=COUNTIF(C:C,C4)=1"` (uniqueness check)
 
+
 **Sheet Protection:**
+
 - Lock entire sheet by default
 - Unlock specific ranges for user input
 - Protection prevents accidental structure changes
 
+
 ---
 
-## 13. Testing and Validation
+# Testing and Validation
 
-### 13.1 Unit Testing
+## Unit Testing
 
 **Test Each Sheet Creation Function:**
 ```python
@@ -3420,7 +3800,7 @@ def test_system_inventory_sheet():
     assert len(ws.conditional_formatting._cf_rules) > 0
 ```
 
-### 13.2 Integration Testing
+## Integration Testing
 
 **Generate Complete Workbook and Verify:**
 1. Open in Excel (not just Python)
@@ -3430,7 +3810,7 @@ def test_system_inventory_sheet():
 5. Test conditional formatting applies
 6. Test protection prevents structure changes but allows data entry
 
-### 13.3 Validation Checklist
+## Validation Checklist
 
 - [ ] All 8 sheets created
 - [ ] Sheet names correct ("1. Instructions & Legend", etc.)
@@ -3443,11 +3823,12 @@ def test_system_inventory_sheet():
 - [ ] File opens in Excel 2016+
 - [ ] File size reasonable (<5MB for empty workbook)
 
+
 ---
 
-## 14. Integration with Assessment A.5.34.7 (Consolidation Dashboard)
+# Integration with Assessment A.5.34.7 (Consolidation Dashboard)
 
-### 14.1 Data Export Points
+## Data Export Points
 
 **Dashboard Consolidation Script reads from Sheet 7 (Dashboard):**
 
@@ -3477,13 +3858,15 @@ compliance_score = ws_dashboard['B78'].value
 # [Implementation in A.5.34.7 script]
 ```
 
-### 14.2 Schema Definition
+## Schema Definition
 
 **Expected Workbook Schema for Consolidation:**
+
 - File naming: `ISMS_A_5_34_1_PII_Identification_Assessment_*.xlsx`
 - Sheet 7 must exist: "7. Dashboard"
 - Key cells must contain formulas that resolve to numbers or percentages
 - Data types must match export format (integers, percentages)
+
 
 ---
 
@@ -3491,7 +3874,7 @@ compliance_score = ws_dashboard['B78'].value
 
 ---
 
-## Document Assembly Instructions
+# Document Assembly Instructions
 
 **To create the complete ISMS-IMP-A.5.34.1 v1.0 document:**
 
@@ -3534,6 +3917,7 @@ ISMS-IMP-A.5.34.1 - PII Identification and Classification Assessment v1.0
 ```
 
 **Quality Verification:**
+
 - ✅ All cell references are EXACT (A4, B5, C6, not "Column A")
 - ✅ All formulas are EXACT Excel syntax (`=TEXT(ROW()-3,"SYS-000")`)
 - ✅ All hex colors are specified (#1F4E78, #C6EFCE, #FFC7CE)
@@ -3544,8 +3928,15 @@ ISMS-IMP-A.5.34.1 - PII Identification and Classification Assessment v1.0
 - ✅ Python script architecture provides complete implementation pattern
 - ✅ Integration with consolidation dashboard (A.5.34.7) documented
 
+
 **This is now REFERENCE QUALITY - Python developer can implement directly from this specification with zero interpretation required.**
 
 ---
 
-**END OF ISMS-IMP-A.5.34.1**
+**END OF SPECIFICATION**
+
+---
+
+*"An expert is someone who knows some of the worst mistakes that can be made in his subject, and how to avoid them."*
+— Werner Heisenberg
+*Where bamboo antennas actually work.* 🎋

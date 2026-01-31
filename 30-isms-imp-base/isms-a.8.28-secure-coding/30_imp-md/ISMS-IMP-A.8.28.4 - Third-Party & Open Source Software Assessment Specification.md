@@ -1,9 +1,10 @@
-# ISMS-IMP-A.8.28.4
-## Secure Coding - Third-Party & Open Source Software Assessment
+**ISMS-IMP-A.8.28.4**
+**Assessment Specification with User Completion Guide**
+### ISO/IEC 27001:2022 Control A.8.28: Secure Coding
 
 ---
 
-## Document Control
+**Document Control**
 
 | Attribute | Value |
 |-----------|-------|
@@ -24,23 +25,27 @@
 | 1.0 | [Date] | Initial assessment specification |
 
 **Approvers**:
+
 - Application Security Lead (Technical Review)
 - Chief Information Security Officer (Final Approval)
 - Legal Counsel (License Compliance Review)
 
+
 **Related Documents**:
+
 - ISMS-POL-A.8.28 - Secure Coding Policy (Master Policy)
 - ISMS-POL-A.8.28-S2.4 - Third-Party & Open Source Software Management  
 - ISMS-IMP-A.8.28.1 - SDLC Assessment
 - ISMS-IMP-A.8.28.2 - Standards & Tools Assessment
 
+
 ---
 
 # PART I: USER COMPLETION GUIDE
 
-## 1. Assessment Overview
+# Assessment Overview
 
-### 1.1 What This Assessment Does
+## What This Assessment Does
 
 This assessment evaluates your organization's management of **third-party dependencies, open source software (OSS), vendor-provided components, and external code integrations**.
 
@@ -53,43 +58,52 @@ Having an OSS policy ≠ OSS is managed.
 Scanning for vulnerabilities ≠ Vulnerabilities are fixed.
 
 **What We're Assessing**:
+
 - ✅ **Vendor Security Posture**: Are third-party vendors actually secure?
 - ✅ **OSS Governance**: Do we know what OSS we're using?
 - ✅ **Dependency Vulnerabilities**: Are we managing known security risks?
 - ✅ **License Compliance**: Are we meeting legal obligations?
 - ✅ **Supply Chain Security**: Are we protected against supply chain attacks?
 
+
 **Why This Matters** (Real-World Incidents):
+
 - **SolarWinds** (2020): Supply chain compromise affecting thousands of organizations
 - **Log4Shell** (2021): Critical vulnerability in ubiquitous OSS library  
 - **Codecov** (2021): CI/CD tool compromise exposing customer secrets
 - **event-stream** (2018): Malicious code injected into npm package
 - **ua-parser-js** (2021): Typosquatting and dependency confusion attacks
 
+
 **Reality Check**: Modern applications are 80-90% third-party code. If you don't manage supply chain risk, you're not managing security.
 
-### 1.2 Who Should Complete This Assessment
+## Who Should Complete This Assessment
 
 **Primary Assessor**: Application Security Team or Senior Security Architect  
 **Required Participants**:
+
 - Engineering Managers (OSS usage and dependency management)
 - Software Architects (design-level dependency decisions)
 - Legal/Compliance Team (license compliance oversight)
 - Procurement Team (vendor contracts and security requirements)
 - DevOps Team (build pipeline and SCA tool integration)
 
+
 **Time Estimate**: 12-16 hours for comprehensive assessment  
 **Recommended Approach**: Phased assessment over 2-3 days with stakeholder interviews
 
-### 1.3 When to Use This Assessment
+## When to Use This Assessment
 
 **Initial Assessment**: During Control A.8.28 implementation (Year 1)
 
 **Recurring Assessments**:
+
 - **Quarterly**: High-risk vendor reviews, critical dependency updates  
 - **Annually**: Comprehensive assessment across all domains
 
+
 **Triggered Assessments**:
+
 - Following major supply chain incidents (e.g., Log4Shell-level events)
 - After vendor security breach involving your data
 - After license compliance violation discovery  
@@ -97,12 +111,14 @@ Scanning for vulnerabilities ≠ Vulnerabilities are fixed.
 - Significant changes to OSS policies or approval workflows
 - Annual compliance audits
 
-### 1.4 Assessment Output
+
+## Assessment Output
 
 **Generated Workbook**: `ISMS-IMP-A.8.28.4_Third_Party_OSS_Assessment_YYYYMMDD.xlsx`  
 **Python Generator**: `generate_a828_4_third_party_oss.py`
 
 **Workbook Contains**:
+
 - 11 sheets covering all supply chain security aspects
 - 90 assessment questions across 5 domains
 - Vendor risk registry
@@ -110,13 +126,15 @@ Scanning for vulnerabilities ≠ Vulnerabilities are fixed.
 - Gap analysis and remediation planning  
 - Executive summary with compliance metrics
 
+
 ---
 
-## 2. Prerequisites & Preparation
+# Prerequisites & Preparation
 
-### 2.1 Data You'll Need
+## Data You'll Need
 
 **Vendor Information**:
+
 - List of all third-party software vendors and service providers
 - Vendor contracts with security clauses
 - Vendor security questionnaires (completed)
@@ -124,106 +142,138 @@ Scanning for vulnerabilities ≠ Vulnerabilities are fixed.
 - Vendor security review records (last 12 months)
 - Vendor incident reports (if any breaches occurred)
 
+
 **OSS Inventory Data**:
+
 - Software Bill of Materials (SBOM) - CycloneDX or SPDX format
 - OSS approval requests and decisions (last 12 months)
 - Package manager manifests (package.json, requirements.txt, pom.xml, etc.)
 - OSS policy documentation
 - OSS contribution guidelines (if applicable)
 
+
 **Dependency Vulnerability Data**:
+
 - SCA tool scan reports (Snyk, Dependabot, WhiteSource, etc.)
 - Vulnerability remediation tracking (JIRA, ServiceNow tickets)
 - Patch management logs for dependencies
 - SLA compliance metrics (time to remediate critical vulns)
 - Lockfile examples (package-lock.json, Pipfile.lock, go.sum, etc.)
 
+
 **License Compliance Data**:
+
 - License scan reports
 - Attribution files (LICENSE, NOTICE, THIRD_PARTY_LICENSES)
 - Legal review records for restrictive licenses
 - License compatibility assessments
 - License violation remediation records
 
+
 **Third-Party Integration Data**:
+
 - Third-party API documentation and security reviews
 - Container image scan reports (if using third-party images)
 - Package integrity verification logs (signature checks, checksums)
 - Integration security architecture diagrams
 
-### 2.2 Stakeholder Interviews Needed
+
+## Stakeholder Interviews Needed
 
 **Before the assessment session**, conduct interviews:
 
 **Engineering Managers** (20-30 minutes each):
+
 - How do teams discover and approve new OSS?
 - What's the process for updating dependencies?
 - Are developers aware of OSS approval requirements?
 - How are abandoned dependencies identified and replaced?
 
+
 **Legal/Compliance Team** (30 minutes):
+
 - What licenses are prohibited or require review?
 - Have there been any license compliance violations?
 - How are attribution requirements handled?
 - What's the process for GPL or AGPL licenses?
 
+
 **Procurement Team** (20 minutes):
+
 - What security requirements are in vendor contracts?
 - How are vendors assessed before engagement?
 - What's the vendor review cadence?
 - Have any vendors had security incidents?
 
+
 **DevOps/Build Team** (20-30 minutes):
+
 - How are SCA scans integrated into CI/CD?
 - What happens when vulnerabilities are detected?
 - Are builds blocked for critical vulnerabilities?
 - How are package registries configured (internal vs. public)?
 
+
 **Security Architects** (30 minutes):
+
 - What's the architecture for third-party integrations?
 - How are third-party APIs secured?
 - What isolation/sandboxing is used for third-party code?
 - How are supply chain attack risks mitigated?
 
-### 2.3 System Access Required
+
+## System Access Required
 
 **Before Starting Assessment**:
 
 1. **SCA Tool Access**:
+
    - Access to Snyk, Dependabot, WhiteSource, or equivalent
    - Review scan configurations and alert settings
    - Extract vulnerability metrics (last 3-6 months)
 
+
 2. **Package Manager Configurations**:
+
    - Access to npm, pip, Maven, NuGet configurations
    - Review package source priorities (internal before public)
    - Check for dependency confusion protections
 
+
 3. **SBOM Generation**:
+
    - Tools to generate SBOM (CycloneDX, SPDX)
    - Access to all application repositories
    - Ability to export complete dependency tree
 
+
 4. **Vendor Management System**:
+
    - Access to vendor database/CRM
    - Vendor contract repository
    - Vendor security assessment records
 
+
 5. **Legal Repository**:
+
    - Access to license scan reports
    - Legal review documentation
    - Attribution file templates
 
-### 2.4 Common Preparation Mistakes
+
+## Common Preparation Mistakes
 
 ❌ **Don't Do This**:
+
 - Assessing based on policy documents alone (process ≠ reality)
 - Accepting SBOM from 6 months ago (stale data useless)
 - Reviewing only "approved" vendors (what about shadow IT?)
 - Ignoring transitive dependencies (dependencies of dependencies)
 - Skipping legal team engagement (license compliance is critical)
 
+
 ✅ **Do This Instead**:
+
 - Generate fresh SBOM from current codebase
 - Interview actual developers about OSS usage practices
 - Review SCA tool findings from last week (real-time data)
@@ -231,11 +281,12 @@ Scanning for vulnerabilities ≠ Vulnerabilities are fixed.
 - Engage legal early for license compliance review
 - Identify shadow IT and unapproved OSS usage
 
+
 ---
 
-## 3. Assessment Workflow (Step-by-Step)
+# Assessment Workflow (Step-by-Step)
 
-### Step 1: Generate Assessment Workbook
+## Step 1: Generate Assessment Workbook
 
 ```bash
 # Generate fresh assessment workbook
@@ -245,6 +296,7 @@ python3 generate_a828_4_third_party_oss.py
 ```
 
 **What This Creates**:
+
 - Empty assessment workbook with all sheets
 - Pre-configured data validation dropdowns
 - Assessment questions and evidence requirements
@@ -252,107 +304,132 @@ python3 generate_a828_4_third_party_oss.py
 - Vendor risk registry template
 - OSS inventory template
 
-### Step 2: Review Instructions Sheet
+
+## Step 2: Review Instructions Sheet
 
 **Open workbook → "Instructions" sheet**
 
 Read the complete instructions including:
+
 - Supply chain security assessment scope
 - How to use dropdown menus
 - Evidence documentation requirements
 - Integration with SBOM and SCA tools
 - Completion checklist
 
+
 **Key Point**: This assessment measures ACTUAL supply chain security practices, not just policy compliance.
 
-### Step 3-7: Complete All 5 Domain Assessments
+## Step 3-7: Complete All 5 Domain Assessments
 
 Due to length constraints, I'll provide the essential workflow for each domain. See PART II for complete technical specifications.
 
 **Domain 1: Vendor Security Assessment** (Sheet: `Vendor_Security_Assessment`)
+
 - 18 requirements covering vendor due diligence, contracts, reviews
 - Focus: Are vendors actually secure, or just claiming to be?
 - Evidence: Questionnaires, contracts, access logs, review records
 
+
 **Domain 2: OSS Management** (Sheet: `OSS_Management`)
+
 - 18 requirements covering OSS approval, inventory (SBOM), governance
 - Focus: Do we know what OSS we're using? Is it managed?
 - Evidence: SBOM, approval records, policy compliance, abandoned dep reports
 
+
 **Domain 3: Dependency Vulnerability Management** (Sheet: `Dependency_Vulnerability_Mgmt`)
+
 - 18 requirements covering SCA scanning, remediation SLAs, patch management
 - Focus: Are known vulnerabilities actually being fixed?
 - Evidence: SCA reports, remediation metrics, lockfiles, SLA compliance
 
+
 **Domain 4: Third-Party Code Review & Integration** (Sheet: `Third_Party_Code_Review`)
+
 - 18 requirements covering vendor code review, API security, supply chain attacks
 - Focus: Is third-party code treated as untrusted? Supply chain protections?
 - Evidence: Code reviews, API assessments, integrity checks, container scans
 
+
 **Domain 5: License Compliance** (Sheet: `License_Compliance`)
+
 - 18 requirements covering license identification, compatibility, attribution
 - Focus: Are we meeting legal obligations? Any GPL contamination?
 - Evidence: License scans, legal reviews, attribution files, compatibility assessments
 
-### Step 8: Review Summary Dashboard
+
+## Step 8: Review Summary Dashboard
 
 **Sheet**: `Summary_Dashboard`  
 **Auto-Calculated**: Based on all domain assessments
 
 **Critical Analysis**:
+
 - Overall compliance percentage
 - Domain-by-domain breakdown
 - Critical vendor risks highlighted
 - OSS inventory completeness metric
 - License compliance status
 
-### Step 9: Populate Vendor Risk Registry
+
+## Step 9: Populate Vendor Risk Registry
 
 **Sheet**: `Vendor_Risk_Registry`
 
 **For Each Vendor**:
+
 - Risk classification (Critical/High/Medium/Low)
 - Data access level
 - Last security review date
 - Security concerns or incidents
 - Contract security terms compliance
 
-### Step 10: Populate OSS Inventory
+
+## Step 10: Populate OSS Inventory
 
 **Sheet**: `OSS_Inventory`
 
 **SBOM Integration**:
+
 - Import from CycloneDX or SPDX
 - Or manually list key dependencies
 
+
 **Critical**: Is this inventory complete and current?
 
-### Step 11: Document Evidence
+## Step 11: Document Evidence
 
 **Sheet**: `Evidence_Register`
 
 **For Every "Implemented"**:
+
 - Evidence type (SBOM, Contract, Scan Report, etc.)
 - Location/link
 - Collection date
 - Verification status
 
-### Step 12: Complete Gap Analysis
+
+## Step 12: Complete Gap Analysis
 
 **Sheet**: `Gap_Analysis`
 
 **For Every Gap**:
+
 - Priority (Critical/High/Medium/Low)
 - Owner and target date
 - Remediation plan
 
+
 **Priority Guidance**:
+
 - **Critical**: No SBOM, no SCA tool, GPL contamination, critical vulns >30 days
 - **High**: Incomplete SBOM, vendor access unmonitored, SLA breaches
 - **Medium**: OSS approval gaps, attribution issues
 - **Low**: Process improvements
 
-### Step 13: Obtain Approvals
+
+## Step 13: Obtain Approvals
 
 **Sheet**: `Approval_Sign_Off`
 
@@ -365,59 +442,63 @@ Due to length constraints, I'll provide the essential workflow for each domain. 
 
 ---
 
-## 4. Common Pitfalls & How to Avoid Them
+# Common Pitfalls & How to Avoid Them
 
-### 4.1 Vendor Security Theater
+## Vendor Security Theater
 
 ❌ **Anti-Pattern**: Sending questionnaires but not validating answers
 ✅ **Good Practice**: Validate high-risk vendor answers, request evidence
 
-### 4.2 OSS Inventory Fiction
+## OSS Inventory Fiction
 
 ❌ **Anti-Pattern**: SBOM from 6 months ago, missing transitive deps
 ✅ **Good Practice**: Automated SBOM generation in CI/CD, includes all deps
 
-### 4.3 Vulnerability Management Theater
+## Vulnerability Management Theater
 
 ❌ **Anti-Pattern**: SCA alerts ignored, critical vulns unpatched for months
 ✅ **Good Practice**: SLA tracking, automated escalation, remediation metrics
 
-### 4.4 License Compliance Wishful Thinking
+## License Compliance Wishful Thinking
 
 ❌ **Anti-Pattern**: "Unknown" licenses, GPL contamination ignored
 ✅ **Good Practice**: 100% identification, automated blocking, legal approval
 
-### 4.5 Supply Chain Attack Naïveté
+## Supply Chain Attack Naïveté
 
 ❌ **Anti-Pattern**: No package integrity verification, trust public registries
 ✅ **Good Practice**: Signature verification, internal registries, dependency confusion protections
 
 ---
 
-## 5. Interpreting Your Results
+# Interpreting Your Results
 
-### 5.1 Compliance Scoring
+## Compliance Scoring
 
 **Overall Compliance** = (Implemented / (Total - N/A)) × 100%
 
 **Compliance Levels**:
+
 - **90-100%**: Excellent
 - **70-89%**: Good
 - **50-69%**: Needs Improvement
 - **<50%**: Critical
 
-### 5.2 Critical Requirements (Non-Negotiable)
+
+## Critical Requirements (Non-Negotiable)
 
 These MUST be "Implemented":
+
 - OSS inventory maintained (SBOM current)
 - SCA scans automated
 - Critical vulns <7 day SLA
 - All licenses identified
 - License compatibility assessed
 
+
 **If any "Not Implemented"**: Escalate to CISO immediately.
 
-### 5.3 Effectiveness vs. Compliance
+## Effectiveness vs. Compliance
 
 **Key Effectiveness Indicators**:
 1. SBOM accuracy (matches actual deps?)
@@ -427,65 +508,81 @@ These MUST be "Implemented":
 
 ---
 
-## 6. Next Steps After Assessment
+# Next Steps After Assessment
 
-### 6.1 Immediate Actions (Within 1 Week)
+## Immediate Actions (Within 1 Week)
 
 **Critical Gaps**:
+
 - No SBOM → Generate immediately
 - No SCA tool → Deploy and integrate
 - GPL contamination → Legal review
 - Critical vulns >30 days → Immediate patch
 
-### 6.2 Continuous Improvement
+
+## Continuous Improvement
 
 **Quarterly Reviews**:
+
 - Refresh vendor risk classifications
 - Update SBOM
 - Analyze vulnerability remediation metrics
 - Review license compliance
 
+
 **Annual Reviews**:
+
 - Comprehensive re-assessment
 - Update policies
 - Benchmark against standards (SLSA, NIST SSDF)
 - Legal review of license guidance
 
+
 ---
 
-## 7. Quality Checklist
+# Quality Checklist
 
 **Assessment Completeness**:
+
 - [ ] All 90 requirements assessed
 - [ ] Evidence for all "Implemented"
 - [ ] Vendor Risk Registry populated
 - [ ] OSS Inventory (SBOM) current
 - [ ] Gaps have owners and dates
 
+
 **Evidence Quality**:
+
 - [ ] SBOM current (<30 days)
 - [ ] SCA reports recent (<7 days)
 - [ ] Vendor assessments current
 - [ ] License scans from latest release
 
+
 **Effectiveness Validation**:
+
 - [ ] SBOM matches package manifests
 - [ ] SCA alerts not just ignored
 - [ ] Vendor answers validated
 - [ ] License compliance tested
 
+
 **Stakeholder Engagement**:
+
 - [ ] Legal approved license compliance
 - [ ] Procurement validated vendor security
 - [ ] Engineering acknowledged OSS policy
 - [ ] All approvers signed off
 
+
 **Anti-Cargo-Cult Check**:
+
 - [ ] SBOM is real (generated and tested)
 - [ ] SCA tool working (alerts actionable)
 - [ ] OSS policy followed (not just documented)
 - [ ] License compliance real (attributions accurate)
 - [ ] Honest about gaps
+
 
 ---
 
@@ -495,13 +592,13 @@ These MUST be "Implemented":
 
 *Remember: Modern applications are 80-90% third-party code. Supply chain risk is real—Log4Shell, SolarWinds, and Codecov prove it. Don't fool yourself—verify everything.*
 # ISMS-IMP-A.8.28.4
-## Secure Coding - Third-Party & Open Source Software Assessment
+# Secure Coding - Third-Party & Open Source Software Assessment
 
 # PART II: TECHNICAL SPECIFICATION
 
-## 8. Excel Workbook Structure
+# Excel Workbook Structure
 
-### 8.1 Workbook Overview
+## Workbook Overview
 
 **File Name**: `ISMS-IMP-A.8.28.4_Third_Party_OSS_Assessment_YYYYMMDD.xlsx`  
 **Total Sheets**: 11  
@@ -524,27 +621,31 @@ These MUST be "Implemented":
 
 ---
 
-## 9. Sheet-by-Sheet Technical Specifications
+# Sheet-by-Sheet Technical Specifications
 
-### 9.1 Sheet 1: Instructions
+## Sheet 1: Instructions
 
 **Purpose**: Comprehensive assessment guidance
 
 **Content**:
+
 - Supply chain security assessment scope
 - Domain-specific guidance
 - Evidence requirements
 - SBOM and SCA tool integration
 - Quality checklist
 
+
 **Formatting**:
+
 - Header: Dark blue (#003366) white text
 - Sections: Green (#70AD47) white text
 - Body: Standard black on white
 
+
 ---
 
-### 9.2 Sheet 2: Vendor_Security_Assessment (Domain 1)
+## Sheet 2: Vendor_Security_Assessment (Domain 1)
 
 **Purpose**: Assess vendor security due diligence
 
@@ -583,7 +684,7 @@ These MUST be "Implemented":
 
 ---
 
-### 9.3 Sheet 3: OSS_Management (Domain 2)
+## Sheet 3: OSS_Management (Domain 2)
 
 **Purpose**: Assess OSS approval, inventory, governance
 
@@ -612,7 +713,7 @@ These MUST be "Implemented":
 
 ---
 
-### 9.4 Sheet 4: Dependency_Vulnerability_Mgmt (Domain 3)
+## Sheet 4: Dependency_Vulnerability_Mgmt (Domain 3)
 
 **Purpose**: Assess vulnerability scanning and remediation
 
@@ -641,7 +742,7 @@ These MUST be "Implemented":
 
 ---
 
-### 9.5 Sheet 5: Third_Party_Code_Review (Domain 4)
+## Sheet 5: Third_Party_Code_Review (Domain 4)
 
 **Purpose**: Assess third-party integration security
 
@@ -670,7 +771,7 @@ These MUST be "Implemented":
 
 ---
 
-### 9.6 Sheet 6: License_Compliance (Domain 5)
+## Sheet 6: License_Compliance (Domain 5)
 
 **Purpose**: Assess license compliance and legal risk
 
@@ -699,7 +800,7 @@ These MUST be "Implemented":
 
 ---
 
-### 9.7 Sheet 7: Summary_Dashboard
+## Sheet 7: Summary_Dashboard
 
 **Purpose**: Executive summary with compliance metrics
 
@@ -725,20 +826,24 @@ These MUST be "Implemented":
 | 5. License Compliance | XX% | 🟢/🟡/🔴 |
 
 **Status Indicators**:
+
 - 🟢 Green (90-100%): Excellent
 - 🟡 Yellow (70-89%): Needs attention
 - 🔴 Red (<70%): Critical gaps
 
+
 **Section 3: Critical Findings**
+
 - SBOM completeness (% dependencies tracked)
 - Critical vulnerabilities unpatched >7 days
 - License violations (count)
 - High-risk vendors without recent reviews
 - Supply chain attack protections status
 
+
 ---
 
-### 9.8 Sheet 8: Vendor_Risk_Registry
+## Sheet 8: Vendor_Risk_Registry
 
 **Purpose**: Comprehensive vendor tracking
 
@@ -758,13 +863,15 @@ These MUST be "Implemented":
 | K | Contact Person | 25 | Text |
 
 **Dropdowns**:
+
 - Vendor Type: SaaS, Software License, Professional Services, Managed Service, Cloud Infrastructure
 - Risk Classification: Critical, High, Medium, Low
 - Data Access Level: Production Data, Sensitive Data, Internal Only, None
 
+
 ---
 
-### 9.9 Sheet 9: OSS_Inventory
+## Sheet 9: OSS_Inventory
 
 **Purpose**: Complete OSS dependency tracking (SBOM)
 
@@ -784,18 +891,22 @@ These MUST be "Implemented":
 | K | Maintainer Status | 15 | Dropdown |
 
 **Dropdowns**:
+
 - Dependency Type: Direct, Transitive
 - Approval Status: Approved, Pending, Rejected, Legacy
 - Maintainer Status: Active, Low Activity, Abandoned, Unknown
 
+
 **SBOM Integration**:
+
 - Import from CycloneDX XML/JSON
 - Import from SPDX format
 - Manual entry for edge cases
 
+
 ---
 
-### 9.10 Sheet 10: Evidence_Register
+## Sheet 10: Evidence_Register
 
 **Purpose**: Audit-ready evidence tracking
 
@@ -812,6 +923,7 @@ These MUST be "Implemented":
 | H | Collected By | 20 | Text |
 
 **Evidence Type Dropdown**:
+
 - SBOM Export
 - Vendor Contract
 - SCA Scan Report
@@ -823,9 +935,10 @@ These MUST be "Implemented":
 - Approval Record
 - Other
 
+
 ---
 
-### 9.11 Sheet 11: Gap_Analysis
+## Sheet 11: Gap_Analysis
 
 **Purpose**: Track remediation efforts
 
@@ -847,14 +960,16 @@ These MUST be "Implemented":
 **Status Dropdown**: Planned, In Progress, Complete, Blocked
 
 **Conditional Formatting (Priority)**:
+
 - Critical: Dark red (#C00000) white bold text
 - High: Red (#FF6666)
 - Medium: Yellow (#FFEB9C)
 - Low: Green (#C6EFCE)
 
+
 ---
 
-### 9.12 Sheet 12: Approval_Sign_Off
+## Sheet 12: Approval_Sign_Off
 
 **Purpose**: Formal approval by stakeholders
 
@@ -866,6 +981,7 @@ These MUST be "Implemented":
 5. CISO (Executive Approval)
 
 **Approval Criteria**:
+
 - All 90 requirements assessed
 - Vendor Risk Registry complete
 - OSS Inventory (SBOM) documented
@@ -873,45 +989,54 @@ These MUST be "Implemented":
 - Critical gaps have remediation plans
 - Legal approval for license compliance
 
+
 ---
 
-## 10. Cell Styling Reference
+# Cell Styling Reference
 
-### 10.1 Color Palette
+## Color Palette
 
 **Headers**:
+
 - Main: #003366 (Dark blue) white text
 - Sub: #4472C4 (Medium blue) white text
 - Section: #70AD47 (Green) white text
 - Column: #D9D9D9 (Light grey) black text
 
+
 **Status Colors**:
+
 - Implemented: #C6EFCE (Light green)
 - Partial: #FFEB9C (Light yellow)
 - Not Implemented: #FFC7CE (Light red)
 - N/A: #E7E6E6 (Light grey)
 
+
 **Priority Colors**:
+
 - Critical: #C00000 (Dark red) white bold
 - High: #FF6666 (Red)
 - Medium: #FFEB9C (Yellow)
 - Low: #C6EFCE (Green)
 
+
 **Input Fields**: #FFFFCC (Light yellow)
 
-### 10.2 Font Standards
+## Font Standards
 
 **Standard Font**: Calibri
+
 - Headers: 14-16pt bold
 - Subheaders: 11-12pt bold
 - Body: 10pt regular
 - Column headers: 10pt bold
 
+
 ---
 
-## 11. Python Script Integration Points
+# Python Script Integration Points
 
-### 11.1 Script: generate_a828_4_third_party_oss.py
+## Script: generate_a828_4_third_party_oss.py
 
 **What the Script Does**:
 1. Creates workbook with 12 sheets
@@ -934,10 +1059,12 @@ python3 generate_a828_4_third_party_oss.py
 ```
 
 **Requirements**:
+
 - Python 3.x
 - openpyxl library
 
-### 11.2 Data Validation Setup
+
+## Data Validation Setup
 
 **Status Dropdown**:
 ```python
@@ -957,7 +1084,7 @@ risk_validation = DataValidation(type="list",
     formula1='"Critical,High,Medium,Low"')
 ```
 
-### 11.3 Formula Integration
+## Formula Integration
 
 **Domain Compliance Calculation**:
 ```excel
@@ -972,9 +1099,9 @@ risk_validation = DataValidation(type="list",
 
 ---
 
-## 12. Integration with IMP-A.8.28.5 (Compliance Dashboard)
+# Integration with IMP-A.8.28.5 (Compliance Dashboard)
 
-### 12.1 Data Export Schema
+## Data Export Schema
 
 **Dashboard Consolidation Script Expected Schema**:
 
@@ -1008,7 +1135,7 @@ WORKBOOK_4_SCHEMA = {
 }
 ```
 
-### 12.2 Quarterly Update Process
+## Quarterly Update Process
 
 **Every Quarter**:
 1. Regenerate SBOM (fresh OSS inventory)
@@ -1021,25 +1148,30 @@ WORKBOOK_4_SCHEMA = {
 
 ---
 
-## 13. Supply Chain Security Best Practices
+# Supply Chain Security Best Practices
 
-### 13.1 SBOM Generation
+## SBOM Generation
 
 **Tools**:
+
 - CycloneDX: OWASP standard, widely supported
 - SPDX: Linux Foundation standard, ISO/IEC 5962
 - Syft: CLI tool for container and filesystem analysis
 - OWASP Dependency-Track: SBOM analysis platform
 
+
 **Integration**:
+
 - Generate in CI/CD pipeline
 - Store with release artifacts
 - Version alongside code
 - Include in release notes
 
-### 13.2 SCA Tool Selection Criteria
+
+## SCA Tool Selection Criteria
 
 **Capabilities to Assess**:
+
 - Vulnerability database coverage (NVD, GitHub Advisory, proprietary)
 - False positive rate
 - Transitive dependency support
@@ -1049,27 +1181,40 @@ WORKBOOK_4_SCHEMA = {
 - CI/CD integration
 - Remediation guidance
 
-### 13.3 Vendor Security Due Diligence
+
+## Vendor Security Due Diligence
 
 **Risk-Based Approach**:
+
 - **Critical Vendors**: Annual review, SOC 2/ISO audit, penetration test results
 - **High Vendors**: Annual questionnaire, contract security terms
 - **Medium Vendors**: Biennial questionnaire
 - **Low Vendors**: Basic security assessment at onboarding
 
-### 13.4 License Compliance Automation
+
+## License Compliance Automation
 
 **Automated Checks**:
+
 - License scanning in CI/CD
 - Prohibited license blocking
 - Attribution file generation
 - Legal approval workflow for copyleft licenses
 
+
 **Legal Integration**:
+
 - Pre-approved license list (MIT, Apache 2.0, BSD)
 - Requires legal review (GPL, AGPL, LGPL, custom)
 - Prohibited (unlicensed, restrictive commercial)
 
+
 ---
 
-**END OF PART II: TECHNICAL SPECIFICATION**
+**END OF SPECIFICATION**
+
+---
+
+*"Complexity is the enemy of security."*
+— Ron Rivest
+*Where bamboo antennas actually work.* 🎋

@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# =============================================================================
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-ISMS-Commercial
+# Copyright (c) 2025-2026 ISMS Core Contributors
+#
+# This file is part of ISMS Core.
+#
+# ISMS Core is dual-licensed:
+#   1. AGPL 3.0 (Open Source) - See LICENSE-AGPL.txt
+#   2. Commercial License - Contact vendor for proprietary use
+#
+# You may use this file under either license, at your option.
+# =============================================================================
 """
 ================================================================================
 Excel Sanity Checker - A.5.7.1 Threat Intelligence Sources Assessment Workbook
@@ -28,7 +40,7 @@ source quality metrics, vendor management, and audit-critical validation sheets.
 CHECKS PERFORMED
 --------------------------------------------------------------------------------
 
-**Structural Validation (15 Sheets v2.0):**
+**Structural Validation (15 Sheets v1.0):**
 - Instructions, Source_Inventory, Source_Evaluation, Coverage_Matrix
 - Cost_Analysis, Compliance_Check, Action_Items, Metadata
 - Integration_Points, Update_Frequency, Source_Contacts, Vendor_SLAs
@@ -73,7 +85,7 @@ WHEN TO USE
 USAGE
 --------------------------------------------------------------------------------
 
-    python3 excel_sanity_check_a57_1.py ISMS_A_5_7_1_Sources_Assessment_20250115.xlsx
+    python3 excel_sanity_check_a57_1.py ISMS-IMP-A.5.7.1_Sources_Assessment_20250115.xlsx
 
 Exit Codes:
     0 = All checks passed (workbook ready for distribution)
@@ -103,13 +115,27 @@ Framework Version: 2.0 (15 sheets, CVSS tracking, VTL integration)
 ================================================================================
 """
 
-import sys
+# =============================================================================
+# Standard Library Imports
+# =============================================================================
+import logging
 import re
+import sys
+
+# =============================================================================
+# Third-Party Imports
+# =============================================================================
 from openpyxl import load_workbook
 from openpyxl.utils import get_column_letter
 
+# =============================================================================
+# Logging Configuration
+# =============================================================================
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+logger = logging.getLogger(__name__)
 
-# Expected workbook structure v2.0 (15 sheets)
+
+# Expected workbook structure v1.0 (15 sheets)
 EXPECTED_SHEETS = [
     "Instructions",
     "Source_Inventory",
@@ -119,22 +145,22 @@ EXPECTED_SHEETS = [
     "Compliance_Check",
     "Action_Items",
     "Metadata",
-    "Integration_Points",              # NEW v2.0
-    "Update_Frequency",                # NEW v2.0
-    "Source_Contacts",                 # NEW v2.0
-    "Vendor_SLAs",                     # NEW v2.0
-    "API_Integration",                 # NEW v2.0
-    "Source_Performance_Validation",   # NEW v2.0 - AUDIT CRITICAL
-    "Business_Continuity_Plan",        # NEW v2.0 - AUDIT CRITICAL
+    "Integration_Points",              # NEW v1.0
+    "Update_Frequency",                # NEW v1.0
+    "Source_Contacts",                 # NEW v1.0
+    "Vendor_SLAs",                     # NEW v1.0
+    "API_Integration",                 # NEW v1.0
+    "Source_Performance_Validation",   # NEW v1.0 - AUDIT CRITICAL
+    "Business_Continuity_Plan",        # NEW v1.0 - AUDIT CRITICAL
 ]
 
 
 def check_workbook_health(filename):
-    """Comprehensive validation for A.5.7.1 Sources workbook v2.0."""
+    """Comprehensive validation for A.5.7.1 Sources workbook v1.0."""
     
     print("=" * 80)
     print(f"SANITY CHECK: {filename}")
-    print("ISMS-IMP-A.5.7.1 v2.0 - Threat Intelligence Sources Assessment (15 Sheets)")
+    print("ISMS-IMP-A.5.7.1 v1.0 - Threat Intelligence Sources Assessment (15 Sheets)")
     print("=" * 80)
     
     issues_found = []
@@ -149,16 +175,16 @@ def check_workbook_health(filename):
         return
     
     # ========================================================================
-    # CHECK 1: SHEET STRUCTURE (v2.0 - 15 sheets)
+    # CHECK 1: SHEET STRUCTURE (v1.0 - 15 sheets)
     # ========================================================================
     print("\n" + "=" * 80)
-    print("CHECK 1: SHEET STRUCTURE (v2.0)")
+    print("CHECK 1: SHEET STRUCTURE (v1.0)")
     print("=" * 80)
     
     if len(wb.sheetnames) != 15:
-        issues_found.append(f"  ✗ Expected 15 sheets (v2.0), found {len(wb.sheetnames)}")
+        issues_found.append(f"  ✗ Expected 15 sheets (v1.0), found {len(wb.sheetnames)}")
     else:
-        print(f"  ✓ Sheet count: 15 (v2.0)")
+        print(f"  ✓ Sheet count: 15 (v1.0)")
     
     for sheet_name in EXPECTED_SHEETS:
         if sheet_name in wb.sheetnames:
@@ -170,10 +196,10 @@ def check_workbook_health(filename):
             issues_found.append(f"  ✗ Missing sheet: {sheet_name}")
     
     # ========================================================================
-    # CHECK 2: SOURCE_INVENTORY VALIDATION (v2.0 - CVSS_Support column)
+    # CHECK 2: SOURCE_INVENTORY VALIDATION (v1.0 - CVSS_Support column)
     # ========================================================================
     print("\n" + "=" * 80)
-    print("CHECK 2: SOURCE_INVENTORY VALIDATION (v2.0)")
+    print("CHECK 2: SOURCE_INVENTORY VALIDATION (v1.0)")
     print("=" * 80)
     
     if "Source_Inventory" in wb.sheetnames:
@@ -212,10 +238,10 @@ def check_workbook_health(filename):
             warnings_found.append(f"  ⚠ Conditional formatting not detected")
     
     # ========================================================================
-    # CHECK 3: SOURCE_EVALUATION (v2.0 - CVSS accuracy columns)
+    # CHECK 3: SOURCE_EVALUATION (v1.0 - CVSS accuracy columns)
     # ========================================================================
     print("\n" + "=" * 80)
-    print("CHECK 3: SOURCE_EVALUATION (v2.0 - CVSS ACCURACY)")
+    print("CHECK 3: SOURCE_EVALUATION (v1.0 - CVSS ACCURACY)")
     print("=" * 80)
     
     if "Source_Evaluation" in wb.sheetnames:
@@ -284,10 +310,10 @@ def check_workbook_health(filename):
             warnings_found.append(f"  ⚠ Coverage_Matrix: Only {sections_found}/3 sections found")
     
     # ========================================================================
-    # CHECK 5: VENDOR MANAGEMENT SHEETS (NEW v2.0 - Sheets 9-13)
+    # CHECK 5: VENDOR MANAGEMENT SHEETS (NEW v1.0 - Sheets 9-13)
     # ========================================================================
     print("\n" + "=" * 80)
-    print("CHECK 5: VENDOR MANAGEMENT SHEETS (NEW v2.0)")
+    print("CHECK 5: VENDOR MANAGEMENT SHEETS (NEW v1.0)")
     print("=" * 80)
     
     vendor_sheets = [
@@ -494,10 +520,10 @@ def check_workbook_health(filename):
         print(f"  ✗ {formula_issues} formula issues detected")
     
     # ========================================================================
-    # CHECK 9: ACTION_ITEMS (v2.0 - new issue types)
+    # CHECK 9: ACTION_ITEMS (v1.0 - new issue types)
     # ========================================================================
     print("\n" + "=" * 80)
-    print("CHECK 9: ACTION_ITEMS (v2.0 - new issue types)")
+    print("CHECK 9: ACTION_ITEMS (v1.0 - new issue types)")
     print("=" * 80)
     
     if "Action_Items" in wb.sheetnames:
@@ -509,11 +535,11 @@ def check_workbook_health(filename):
             if dv.formula1 and "Integration" in str(dv.formula1):
                 issue_type_validation_found = True
                 if "CVSS_Accuracy" in str(dv.formula1) and "Continuity" in str(dv.formula1):
-                    print(f"  ✓ Action_Items: v2.0 issue types found (Integration, CVSS_Accuracy, Continuity)")
+                    print(f"  ✓ Action_Items: v1.0 issue types found (Integration, CVSS_Accuracy, Continuity)")
                     break
         
         if not issue_type_validation_found:
-            warnings_found.append(f"  ⚠ Action_Items: v2.0 issue types not detected")
+            warnings_found.append(f"  ⚠ Action_Items: v1.0 issue types not detected")
         
         # Check for Detected_In_Sheet column
         detected_sheet_found = False
@@ -547,7 +573,7 @@ def check_workbook_health(filename):
     
     if not issues_found and not warnings_found:
         print("\n🎉 VALIDATION PASSED")
-        print("\nWorkbook structure is valid for v2.0:")
+        print("\nWorkbook structure is valid for v1.0:")
         print("  • 15 sheets (expanded from 8)")
         print("  • CVSS v4.0/3.1 support tracking (Sheet 2)")
         print("  • CVSS accuracy assessment (Sheet 3)")
@@ -564,31 +590,43 @@ def check_workbook_health(filename):
 
 
 def main():
-    """Main entry point."""
+    """
+    Main entry point.
+
+    Returns:
+        int: 0 on success, 1 on failure
+    """
     if len(sys.argv) < 2:
-        print("=" * 70)
-        print("ISMS Control A.5.7.1 v2.0 - Threat Intelligence Sources")
-        print("Excel Sanity Checker (15 Sheets)")
-        print("=" * 70)
-        print("\nUsage: python3 excel_sanity_check_a57_1_v2.py <filename.xlsx>")
-        print("\nExample:")
-        print("  python3 excel_sanity_check_a57_1_v2.py ISMS_A_5_7_1_Sources_Assessment_20250109.xlsx")
-        print("\n'Evidence > Theater' - Systems Engineering ISMS")
-        sys.exit(1)
-    
+        logger.info("=" * 70)
+        logger.info("ISMS Control A.5.7.1 v1.0 - Threat Intelligence Sources")
+        logger.info("Excel Sanity Checker (15 Sheets)")
+        logger.info("=" * 70)
+        logger.info("Usage: python3 excel_sanity_check_a57_1_v2.py <filename.xlsx>")
+        logger.info("Example:")
+        logger.info("  python3 excel_sanity_check_a57_1_v2.py ISMS-IMP-A.5.7.1_Sources_Assessment_20250109.xlsx")
+        logger.info("'Evidence > Theater' - Systems Engineering ISMS")
+        return 1
+
     filename = sys.argv[1]
-    
+
     try:
         check_workbook_health(filename)
+        return 0
     except FileNotFoundError:
-        print(f"\n✗ ERROR: File not found: {filename}")
-        sys.exit(1)
+        logger.error(f"File not found: {filename}")
+        return 1
     except Exception as e:
-        print(f"\n✗ ERROR: {str(e)}")
+        logger.error(f"Error: {str(e)}")
         import traceback
         traceback.print_exc()
-        sys.exit(1)
+        return 1
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
+# =============================================================================
+# QA_VERIFIED: 2026-01-31
+# QA_STATUS: PASSED (syntax validated, STANDARDIZATION applied)
+# QA_TOOL: Claude Code Deep Scan
+# STANDARDIZATION: License header, logging, imports reorganized, main() pattern
+# =============================================================================

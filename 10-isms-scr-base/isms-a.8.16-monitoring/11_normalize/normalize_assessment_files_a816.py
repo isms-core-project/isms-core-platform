@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# =============================================================================
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-ISMS-Commercial
+# Copyright (c) 2025-2026 ISMS Core Contributors
+#
+# This file is part of ISMS Core.
+#
+# ISMS Core is dual-licensed:
+#   1. AGPL 3.0 (Open Source) - See LICENSE-AGPL.txt
+#   2. Commercial License - Contact vendor for proprietary use
+#
+# You may use this file under either license, at your option.
+# =============================================================================
 """
 ================================================================================
 ISMS-A.8.16 - Assessment File Normalizer Utility
@@ -63,10 +75,10 @@ reliability. Prepares assessment workbooks for dashboard consolidation.
    - Track validation history
 
 **Normalization Scope:**
-- ISMS_A_8_16_1_Monitoring_Infrastructure_YYYYMMDD.xlsx → A816_1_Monitoring_Infrastructure.xlsx
-- ISMS_A_8_16_2_Baseline_Detection_YYYYMMDD.xlsx → A816_2_Baseline_Detection.xlsx
-- ISMS_A_8_16_3_Coverage_Assessment_YYYYMMDD.xlsx → A816_3_Coverage_Assessment.xlsx
-- ISMS_A_8_16_4_Alert_Management_YYYYMMDD.xlsx → A816_4_Alert_Management.xlsx
+- ISMS-IMP-A.8.16.1_Monitoring_Infrastructure_YYYYMMDD.xlsx → A816_1_Monitoring_Infrastructure.xlsx
+- ISMS-IMP-A.8.16.2_Baseline_Detection_YYYYMMDD.xlsx → A816_2_Baseline_Detection.xlsx
+- ISMS-IMP-A.8.16.3_Coverage_Assessment_YYYYMMDD.xlsx → A816_3_Coverage_Assessment.xlsx
+- ISMS-IMP-A.8.16.4_Alert_Management_YYYYMMDD.xlsx → A816_4_Alert_Management.xlsx
 
 **Output:**
 - Normalized assessment workbooks in Dashboard_Sources/ directory
@@ -301,16 +313,16 @@ Review validation report and use judgment - don't blindly "fix" everything.
 **Directory Structure:**
 ```
 [Working Directory]/
-├── ISMS_A_8_16_1_Monitoring_Infrastructure_20250124.xlsx (original)
-├── ISMS_A_8_16_2_Baseline_Detection_20250124.xlsx (original)
-├── ISMS_A_8_16_3_Coverage_Assessment_20250124.xlsx (original)
-├── ISMS_A_8_16_4_Alert_Management_20250124.xlsx (original)
+├── ISMS-IMP-A.8.16.1_Monitoring_Infrastructure_20250124.xlsx (original)
+├── ISMS-IMP-A.8.16.2_Baseline_Detection_20250124.xlsx (original)
+├── ISMS-IMP-A.8.16.3_Coverage_Assessment_20250124.xlsx (original)
+├── ISMS-IMP-A.8.16.4_Alert_Management_20250124.xlsx (original)
 ├── Dashboard_Sources/
 │   ├── A816_1_Monitoring_Infrastructure.xlsx (normalized)
 │   ├── A816_2_Baseline_Detection.xlsx (normalized)
 │   ├── A816_3_Coverage_Assessment.xlsx (normalized)
 │   ├── A816_4_Alert_Management.xlsx (normalized)
-│   └── ISMS_A_8_16_5_Compliance_Dashboard_YYYYMMDD.xlsx (generated last)
+│   └── ISMS-IMP-A.8.16.5_Compliance_Dashboard_YYYYMMDD.xlsx (generated last)
 └── [backups if --backup used]
 ```
 
@@ -344,18 +356,36 @@ If these files are missing or incorrectly named, dashboard will show #REF errors
 ================================================================================
 """
 
-import os
-import sys
-import shutil
+# =============================================================================
+# Standard Library Imports
+# =============================================================================
+import logging
 from datetime import datetime
 from pathlib import Path
+import os
+import shutil
+import sys
 
+# =============================================================================
+# Third-Party Imports
+# =============================================================================
 try:
     import openpyxl
 except ImportError:
     print("\u274C Error: openpyxl not installed")
-    print("ℹ️  Install with: sudo apt install python3-openpyxl")     
+    print("ℹ️  Install with: sudo apt install python3-openpyxl")
     sys.exit(1)
+
+
+# =============================================================================
+# Logging Configuration
+# =============================================================================
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)
 
 
 # ============================================================================
@@ -816,3 +846,8 @@ Examples:
     )
     
     sys.exit(0 if success else 1)
+# =============================================================================
+# QA_VERIFIED: 2026-01-31
+# QA_STATUS: PASSED - STANDARDIZATION (syntax validated, structure verified)
+# QA_TOOL: Claude Code Standardization
+# =============================================================================

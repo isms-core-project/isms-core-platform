@@ -55,6 +55,18 @@ tmp/
 test_output/
 *_test_*.xlsx
 
+# Backup and Archive folders
+97_backup/
+98_originals/
+98_original/
+99_archive/
+100_review/
+96_samples/
+old_*/
+*_old/
+*_old_*
+backup_before_*/
+
 # IDE and Workspace
 .vscode/
 .idea/

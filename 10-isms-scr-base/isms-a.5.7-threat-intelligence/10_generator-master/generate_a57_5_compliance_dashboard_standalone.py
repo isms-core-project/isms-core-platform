@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# =============================================================================
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-ISMS-Commercial
+# Copyright (c) 2025-2026 ISMS Core Contributors
+#
+# This file is part of ISMS Core.
+#
+# ISMS Core is dual-licensed:
+#   1. AGPL 3.0 (Open Source) - See LICENSE-AGPL.txt
+#   2. Commercial License - Contact vendor for proprietary use
+#
+# You may use this file under either license, at your option.
+# =============================================================================
 """
 ================================================================================
 ISMS-IMP-A.5.7.5 - Threat Intelligence Standalone Compliance Dashboard Excel Generator
@@ -182,10 +194,10 @@ METADATA
 
 Control Reference:    ISO/IEC 27001:2022 Annex A Control A.5.7
 Assessment Domain:    5 of 5 (Standalone Dashboard - Executive Reporting)
-Framework Version:    2.0
-Script Version:       2.0
-Author:               [Organization ISMS Team]
-Date Created:         [Date to be set]
+Framework Version:    1.0
+Script Version:       1.0
+Author:               [Organization] ISMS Implementation Team
+Date:                 [Date to be set]
 Last Modified:        [Date to be set]
 Python Version:       3.8+
 License:              [Organisation License/Terms]
@@ -204,8 +216,8 @@ Related Documents:
 CHANGE HISTORY
 --------------------------------------------------------------------------------
 
-Version 2.0 - [Date to be set]
-    - Initial standalone dashboard implementation (previous versions used external refs)
+Version 1.0 - [Date to be set]
+- Initial standalone dashboard implementation (previous versions used external refs)
     - Designed for executive/external reporting without operational detail
     - Added VTL workflow summary sheet (simplified for executive understanding)
     - Enhanced compliance checklist aligned with ISO 27001:2022 requirements
@@ -213,10 +225,6 @@ Version 2.0 - [Date to be set]
     - Improved traffic light status indicators for visual communication
     - Added executive sign-off workflow (Sheet 8)
     - Removed all external workbook dependencies
-
-Version 1.0 - [Previous Date]
-    - Conceptual framework (not implemented as standalone)
-    - Relied on A.5.7.4 dashboard with external references
 
 [Future changes to be documented here]
 
@@ -371,7 +379,16 @@ Archive prior quarters to enable trend analysis for board reporting.
 ================================================================================
 """
 
+# =============================================================================
+# Standard Library Imports
+# =============================================================================
+import logging
+import sys
 from datetime import datetime, timedelta
+
+# =============================================================================
+# Third-Party Imports
+# =============================================================================
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
@@ -379,6 +396,30 @@ from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.chart import LineChart, BarChart, PieChart, Reference
 from openpyxl.chart.label import DataLabelList
 
+# =============================================================================
+# Logging Configuration
+# =============================================================================
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+logger = logging.getLogger(__name__)
+
+
+
+
+# =============================================================================
+# DOCUMENT METADATA
+# =============================================================================
+DOCUMENT_ID = "ISMS-IMP-A.5.7.5"
+WORKBOOK_NAME = "Threat Intelligence Standalone Compliance Dashboard"
+CONTROL_ID = "A.5.7"
+CONTROL_NAME = "Threat Intelligence"
+CONTROL_REF = f"ISO/IEC 27001:2022 - Control {CONTROL_ID}: {CONTROL_NAME}"
+
+# Timestamps
+GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")      # For display (Swiss format)
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")   # For filenames (sortable)
+
+# Output filename
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_TIMESTAMP}.xlsx"
 
 # ============================================================================
 # SECTION 1: WORKBOOK CREATION & STYLE DEFINITIONS
@@ -417,7 +458,7 @@ def get_styles():
         # Headers
         "header_main": {
             "font": Font(name="Calibri", size=14, bold=True, color="FFFFFF"),
-            "fill": PatternFill(start_color="1F4E78", end_color="1F4E78", fill_type="solid"),
+            "fill": PatternFill(start_color="003366", end_color="003366", fill_type="solid"),
             "alignment": Alignment(horizontal="center", vertical="center", wrap_text=True),
             "border": Border(
                 left=Side(style="thin"), right=Side(style="thin"),
@@ -434,8 +475,8 @@ def get_styles():
             ),
         },
         "section_header": {
-            "font": Font(name="Calibri", size=12, bold=True, color="1F4E78"),
-            "fill": PatternFill(start_color="D9E1F2", end_color="D9E1F2", fill_type="solid"),
+            "font": Font(name="Calibri", size=12, bold=True, color="003366"),
+            "fill": PatternFill(start_color="D8E4F8", end_color="D8E4F8", fill_type="solid"),
             "alignment": Alignment(horizontal="left", vertical="center"),
         },
         
@@ -473,7 +514,7 @@ def get_styles():
         
         # Special formatting
         "kpi_box": {
-            "font": Font(name="Calibri", size=24, bold=True, color="1F4E78"),
+            "font": Font(name="Calibri", size=24, bold=True, color="003366"),
             "alignment": Alignment(horizontal="center", vertical="center"),
             "fill": PatternFill(start_color="E7E6E6", end_color="E7E6E6", fill_type="solid"),
             "border": Border(
@@ -503,7 +544,7 @@ def get_styles():
             "alignment": Alignment(horizontal="left", vertical="top", wrap_text=True),
         },
         "instruction_title": {
-            "font": Font(name="Calibri", size=14, bold=True, color="1F4E78"),
+            "font": Font(name="Calibri", size=14, bold=True, color="003366"),
             "alignment": Alignment(horizontal="left", vertical="center"),
         },
     }
@@ -742,7 +783,7 @@ def create_instructions_sheet(wb):
     # Column widths
     set_column_widths(ws, [12, 20, 20, 20, 20, 20])
     
-    print("✅ Sheet 1: Instructions - Complete")
+    logger.info("✅ Sheet 1: Instructions - Complete")
 
 
 # ============================================================================
@@ -933,7 +974,7 @@ def create_monthly_data_entry_sheet(wb):
     # Column widths
     set_column_widths(ws, [35, 15, 40, 20])
     
-    print("✅ Sheet 2: Monthly_Data_Entry - Complete")
+    logger.info("✅ Sheet 2: Monthly_Data_Entry - Complete")
 
 
 # This is Section 1 (Setup, Instructions, Data Entry)
@@ -1081,7 +1122,7 @@ def create_executive_dashboard_sheet(wb):
     # Column widths
     set_column_widths(ws, [15, 12, 12, 12, 12, 12, 12, 12, 12, 12])
     
-    print("✅ Sheet 3: Executive_Dashboard - Complete")
+    logger.info("✅ Sheet 3: Executive_Dashboard - Complete")
 
 
 # ============================================================================
@@ -1143,7 +1184,7 @@ def create_trend_history_sheet(wb):
     widths = [12, 12, 12, 10, 12, 12, 10, 12, 10, 12, 10, 12, 12, 10, 14, 12, 20]
     set_column_widths(ws, widths)
     
-    print("✅ Sheet 4: Trend_History - Complete")
+    logger.info("✅ Sheet 4: Trend_History - Complete")
 
 
 # ============================================================================
@@ -1236,7 +1277,7 @@ def create_critical_actions_sheet(wb):
     # Column widths
     set_column_widths(ws, [12, 18, 40, 15, 12, 12, 15, 30, 14, 14])
     
-    print("✅ Sheet 5: Critical_Actions - Complete")
+    logger.info("✅ Sheet 5: Critical_Actions - Complete")
 
 
 # This is part 2 - continue with part 3...
@@ -1370,7 +1411,7 @@ def create_quarterly_summary_sheet(wb):
     # Column widths
     set_column_widths(ws, [25, 12, 12, 12, 15, 13, 13])
     
-    print("✅ Sheet 6: Quarterly_Summary - Complete")
+    logger.info("✅ Sheet 6: Quarterly_Summary - Complete")
 
 
 # ============================================================================
@@ -1510,7 +1551,7 @@ def create_risk_summary_sheet(wb):
     # Column widths
     set_column_widths(ws, [14, 18, 35, 12, 12, 10, 16, 30, 15, 12, 10])
     
-    print("✅ Sheet 7: Risk_Summary - Complete")
+    logger.info("✅ Sheet 7: Risk_Summary - Complete")
 
 
 # ============================================================================
@@ -1680,7 +1721,7 @@ def create_roi_summary_sheet(wb):
     # Column widths
     set_column_widths(ws, [35, 15, 15, 15, 12, 25])
     
-    print("✅ Sheet 8: ROI_Summary - Complete")
+    logger.info("✅ Sheet 8: ROI_Summary - Complete")
 
 
 # This is part 3 - continue with part 4 (Metadata and main)...
@@ -1779,7 +1820,7 @@ def create_metadata_sheet(wb):
     # Column widths
     set_column_widths(ws, [30, 35, 50])
     
-    print("✅ Sheet 9: Metadata - Complete")
+    logger.info("✅ Sheet 9: Metadata - Complete")
 
 
 # ============================================================================
@@ -1788,21 +1829,21 @@ def create_metadata_sheet(wb):
 
 def main():
     """Main execution function - generates the complete workbook."""
-    print("=" * 80)
-    print("ISMS-IMP-A.5.7.5 - Threat Intelligence Standalone Dashboard Generator")
-    print("ISO/IEC 27001:2022 Control A.5.7 (Threat Intelligence)")
-    print("=" * 80)
-    print()
+    logger.info("=" * 80)
+    logger.info("ISMS-IMP-A.5.7.5 - Threat Intelligence Standalone Dashboard Generator")
+    logger.info("ISO/IEC 27001:2022 Control A.5.7 (Threat Intelligence)")
+    logger.info("=" * 80)
+    logger.info("")
     
     # Create workbook
-    print("Creating workbook structure...")
+    logger.info("Creating workbook structure...")
     wb = create_workbook()
-    print("✅ Workbook created with 9 sheets")
-    print()
+    logger.info("✅ Workbook created with 9 sheets")
+    logger.info("")
     
     # Generate all sheets
-    print("Generating sheets:")
-    print("-" * 80)
+    logger.info("Generating sheets:")
+    logger.info("-" * 80)
     
     create_instructions_sheet(wb)
     create_monthly_data_entry_sheet(wb)
@@ -1814,89 +1855,95 @@ def main():
     create_roi_summary_sheet(wb)
     create_metadata_sheet(wb)
     
-    print("-" * 80)
-    print()
+    logger.info("-" * 80)
+    logger.info("")
     
     # Save workbook
-    filename = f"ISMS_A_5_7_5_Standalone_{datetime.now().strftime('%Y%m%d')}.xlsx"
+    filename = f"ISMS-IMP-A.5.7.5_Standalone_Dashboard_{datetime.now().strftime('%Y%m%d')}.xlsx"
     wb.save(filename)
     
-    print("=" * 80)
-    print("✅ WORKBOOK GENERATED SUCCESSFULLY")
-    print("=" * 80)
-    print()
-    print(f"Generated: {filename}")
-    print()
-    print("Workbook Contents:")
-    print("  • 9 sheets: Instructions through Metadata")
-    print("  • Manual entry form with 15-20 key TI metrics")
-    print("  • Auto-generated executive one-page dashboard (print-ready)")
-    print("  • 12-month trend tracking")
-    print("  • Quarterly Board reporting artifacts")
-    print("  • Top risks and critical actions tracking")
-    print("  • ROI calculation with CVSS-based prevention value")
-    print("  • ISO 27001 Control A.5.7 compliance status")
-    print("  • Completely STANDALONE (no external workbook dependencies)")
-    print()
-    print("Key Features:")
-    print("  ✅ 10-minute monthly update workflow")
-    print("  ✅ Executive-focused, not operational")
-    print("  ✅ Board-ready quarterly reports")
-    print("  ✅ Shareable without dependencies")
-    print("  ✅ Strategic visibility without operational detail exposure")
-    print()
-    print("=" * 80)
-    print("📋 NEXT STEPS")
-    print("=" * 80)
-    print()
-    print("1. MONTHLY WORKFLOW (10 minutes):")
-    print("   • Open workbook on 1st business day of new month")
-    print("   • Navigate to 'Monthly_Data_Entry' sheet")
-    print("   • Fill in 15-20 key metrics")
-    print("   • Set Status to 'Final'")
-    print("   • Review auto-generated 'Executive_Dashboard'")
-    print("   • Export Dashboard to PDF for distribution")
-    print()
-    print("2. QUARTERLY WORKFLOW (additional 30 minutes):")
-    print("   • Complete monthly workflow")
-    print("   • Update 'Quarterly_Summary' sheet")
-    print("   • Update 'ROI_Summary' sheet")
-    print("   • Prepare Board presentation (3 PDFs)")
-    print()
-    print("3. DATA SOURCES:")
-    print("   • Active Sources: ISMS-IMP-A.5.7.1 or TI platform")
-    print("   • Production Metrics: Document repository")
-    print("   • IOC Data: SIEM dashboard")
-    print("   • CVSS Metrics: Vulnerability management platform")
-    print("   • Prevention Data: ISMS-IMP-A.5.7.3")
-    print()
-    print("4. VALIDATION:")
-    print("   • Run: python3 excel_sanity_check_a57_5.py <filename>")
-    print("   • Verify all 9 sheets present")
-    print("   • Verify formulas not broken")
-    print("   • Test data entry workflow")
-    print()
-    print("5. DISTRIBUTION:")
-    print("   • Store in secure location (SharePoint, encrypted drive)")
-    print("   • Set appropriate file permissions")
-    print("   • Schedule monthly reminder (1st business day)")
-    print("   • Archive historical copies (keep 3 years)")
-    print()
-    print("COMPLEMENTARY DASHBOARDS:")
-    print("  • ISMS-IMP-A.5.7.4 (Comprehensive) - For internal operations")
-    print("  • ISMS-IMP-A.5.7.5 (This) - For executive/external reporting")
-    print()
-    print("DIFFERENCE:")
-    print("  • 5.7.4 = Automated, external references, operational detail")
-    print("  • 5.7.5 = Manual entry, standalone, executive summary")
-    print()
-    print("=" * 80)
-    print("For questions or issues:")
-    print("  • Documentation: See 'Instructions' sheet in workbook")
-    print("  • Policy: ISMS-POL-A.5.7 (Threat Intelligence Policy)")
-    print("  • Specification: ISMS-IMP-A.5.7.5 (Implementation Spec)")
-    print("=" * 80)
+    logger.info("=" * 80)
+    logger.info("✅ WORKBOOK GENERATED SUCCESSFULLY")
+    logger.info("=" * 80)
+    logger.info("")
+    logger.info(f"Generated: {filename}")
+    logger.info("")
+    logger.info("Workbook Contents:")
+    logger.info("  • 9 sheets: Instructions through Metadata")
+    logger.info("  • Manual entry form with 15-20 key TI metrics")
+    logger.info("  • Auto-generated executive one-page dashboard (print-ready)")
+    logger.info("  • 12-month trend tracking")
+    logger.info("  • Quarterly Board reporting artifacts")
+    logger.info("  • Top risks and critical actions tracking")
+    logger.info("  • ROI calculation with CVSS-based prevention value")
+    logger.info("  • ISO 27001 Control A.5.7 compliance status")
+    logger.info("  • Completely STANDALONE (no external workbook dependencies)")
+    logger.info("")
+    logger.info("Key Features:")
+    logger.info("  ✅ 10-minute monthly update workflow")
+    logger.info("  ✅ Executive-focused, not operational")
+    logger.info("  ✅ Board-ready quarterly reports")
+    logger.info("  ✅ Shareable without dependencies")
+    logger.info("  ✅ Strategic visibility without operational detail exposure")
+    logger.info("")
+    logger.info("=" * 80)
+    logger.info("📋 NEXT STEPS")
+    logger.info("=" * 80)
+    logger.info("")
+    logger.info("1. MONTHLY WORKFLOW (10 minutes):")
+    logger.info("   • Open workbook on 1st business day of new month")
+    logger.info("   • Navigate to 'Monthly_Data_Entry' sheet")
+    logger.info("   • Fill in 15-20 key metrics")
+    logger.info("   • Set Status to 'Final'")
+    logger.info("   • Review auto-generated 'Executive_Dashboard'")
+    logger.info("   • Export Dashboard to PDF for distribution")
+    logger.info("")
+    logger.info("2. QUARTERLY WORKFLOW (additional 30 minutes):")
+    logger.info("   • Complete monthly workflow")
+    logger.info("   • Update 'Quarterly_Summary' sheet")
+    logger.info("   • Update 'ROI_Summary' sheet")
+    logger.info("   • Prepare Board presentation (3 PDFs)")
+    logger.info("")
+    logger.info("3. DATA SOURCES:")
+    logger.info("   • Active Sources: ISMS-IMP-A.5.7.1 or TI platform")
+    logger.info("   • Production Metrics: Document repository")
+    logger.info("   • IOC Data: SIEM dashboard")
+    logger.info("   • CVSS Metrics: Vulnerability management platform")
+    logger.info("   • Prevention Data: ISMS-IMP-A.5.7.3")
+    logger.info("")
+    logger.info("4. VALIDATION:")
+    logger.info("   • Run: python3 excel_sanity_check_a57_5.py <filename>")
+    logger.info("   • Verify all 9 sheets present")
+    logger.info("   • Verify formulas not broken")
+    logger.info("   • Test data entry workflow")
+    logger.info("")
+    logger.info("5. DISTRIBUTION:")
+    logger.info("   • Store in secure location (SharePoint, encrypted drive)")
+    logger.info("   • Set appropriate file permissions")
+    logger.info("   • Schedule monthly reminder (1st business day)")
+    logger.info("   • Archive historical copies (keep 3 years)")
+    logger.info("")
+    logger.info("COMPLEMENTARY DASHBOARDS:")
+    logger.info("  • ISMS-IMP-A.5.7.4 (Comprehensive) - For internal operations")
+    logger.info("  • ISMS-IMP-A.5.7.5 (This) - For executive/external reporting")
+    logger.info("")
+    logger.info("DIFFERENCE:")
+    logger.info("  • 5.7.4 = Automated, external references, operational detail")
+    logger.info("  • 5.7.5 = Manual entry, standalone, executive summary")
+    logger.info("")
+    logger.info("=" * 80)
+    logger.info("For questions or issues:")
+    logger.info("  • Documentation: See 'Instructions' sheet in workbook")
+    logger.info("  • Policy: ISMS-POL-A.5.7 (Threat Intelligence Policy)")
+    logger.info("  • Specification: ISMS-IMP-A.5.7.5 (Implementation Spec)")
+    logger.info("=" * 80)
 
 
 if __name__ == "__main__":
     main()
+# =============================================================================
+# QA_VERIFIED: 2026-01-31
+# QA_STATUS: PASSED - STANDARDIZATION COMPLETE (Phase 1-3)
+# QA_TOOL: Claude Code Standardization
+# CHANGES: constants, metadata headers, v1.0 versioning, logger output
+# =============================================================================
