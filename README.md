@@ -20,6 +20,7 @@
   <a href="#-framework-integration"><img src="https://img.shields.io/badge/MITRE_ATT&CK-v18-DC143C?style=flat-square" alt="MITRE ATT&CK"/></a>
   <a href="#-framework-integration"><img src="https://img.shields.io/badge/GDPR-Compliant-FFD700?style=flat-square" alt="GDPR"/></a>
   <a href="#-framework-integration"><img src="https://img.shields.io/badge/Swiss_nDSG-Ready-FF0000?style=flat-square" alt="Swiss nDSG"/></a>
+  <a href="#-framework-integration"><img src="https://img.shields.io/badge/EU_AI_Act-Mapped-0066CC?style=flat-square" alt="EU AI Act"/></a>
 </p>
 
 <p align="center">
@@ -142,6 +143,11 @@ python3 generate_a824_1_data_transmission_assessment.py
 <td>EU GDPR, DORA, NIS2</td>
 <td>Data protection</td>
 <td><img src="https://img.shields.io/badge/Compliant-FFD700?style=flat-square" alt="Compliant"/></td>
+</tr>
+<tr>
+<td>EU AI Act</td>
+<td>AI risk management</td>
+<td><img src="https://img.shields.io/badge/Mapped-0066CC?style=flat-square" alt="Mapped"/></td>
 </tr>
 </table>
 
