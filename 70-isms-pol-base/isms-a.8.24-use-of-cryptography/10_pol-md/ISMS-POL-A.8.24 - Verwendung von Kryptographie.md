@@ -7,7 +7,7 @@
 | Feld | Wert |
 |------|------|
 | **Dokumenten Titel** | Verwendung von Kryptographie |
-| **Dokumententyp** | Knozept |
+| **Dokumententyp** | Konzept |
 | **Dokument-ID** | ISMS-POL-A.8.24 |
 | **Ersteller/in** | Chief Information Security Officer (CISO) |
 | **Dokumenteneigentümer/in** | Chief Executive Officer (CEO) |
