@@ -1453,4 +1453,5 @@ User manually documents 3-5 strategic initiatives (high effort, high impact)
 
 *"The best protection is a complete understanding of the system you are trying to protect."*
 — Ron Rivest
+
 *Where bamboo antennas actually work.* 🎋

@@ -1479,4 +1479,5 @@ CVSS_Context_Rate =
 
 *"Every great and deep difficulty bears in itself its own solution."*
 — Niels Bohr
+
 *Where bamboo antennas actually work.* 🎋

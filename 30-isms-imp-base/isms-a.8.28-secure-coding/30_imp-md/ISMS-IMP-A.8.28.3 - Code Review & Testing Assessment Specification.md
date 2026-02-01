@@ -1661,4 +1661,5 @@ WORKBOOK_3_SCHEMA = {
 
 *"You can't encrypt your way out of a fundamentally insecure design."*
 — Ron Rivest
+
 *Where bamboo antennas actually work.* 🎋

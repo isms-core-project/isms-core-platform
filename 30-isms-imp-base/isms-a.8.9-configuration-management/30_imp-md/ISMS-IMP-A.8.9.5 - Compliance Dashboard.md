@@ -3337,4 +3337,5 @@ After executive sign-off:
 
 *"In the new paradigm, the properties of the parts can be understood only from the dynamics of the whole."*
 — Fritjof Capra
+
 *Where bamboo antennas actually work.* 🎋

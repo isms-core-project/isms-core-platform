@@ -2485,4 +2485,5 @@ ISMS MANAGEMENT REVIEW - Control A.8.10 (Information Deletion)
 
 *"We have to accept that nature behaves in a way that seems strange to us, because we evolved to understand the macroscopic world."*
 — Alain Aspect
+
 *Where bamboo antennas actually work.* 🎋

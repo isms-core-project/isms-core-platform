@@ -2974,4 +2974,5 @@ ISMS-IMP-A.8.10.2 - Deletion Methods Assessment v1.0
 
 *"The quantum world forces us to abandon our classical intuitions about reality."*
 — Alain Aspect
+
 *Where bamboo antennas actually work.* 🎋

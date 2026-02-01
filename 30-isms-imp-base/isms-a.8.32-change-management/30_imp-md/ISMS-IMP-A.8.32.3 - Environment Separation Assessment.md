@@ -1561,4 +1561,5 @@ External Audit Scheduled:       [Date]
 
 *"When you have a clever cryptographic scheme, the job is half done. Making it work in practice is the other ninety percent."*
 — Adi Shamir
+
 *Where bamboo antennas actually work.* 🎋

@@ -2791,4 +2791,5 @@ Retain versions:
 
 *"Understanding is largely about finding good analogies."*
 — Douglas Hofstadter
+
 *Where bamboo antennas actually work.* 🎋

@@ -860,4 +860,5 @@ Updates are communicated via [Organization's communication channels] and do not 
 **END OF TECHNICAL REFERENCE DOCUMENT**
 
 *For binding policy requirements, refer to ISMS-POL-A.8.9 Configuration Management Policy.*
+
 *Where bamboo antennas actually work.* 🎋

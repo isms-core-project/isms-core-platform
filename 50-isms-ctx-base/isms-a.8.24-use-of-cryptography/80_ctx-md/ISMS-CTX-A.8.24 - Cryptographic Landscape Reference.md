@@ -515,4 +515,5 @@ All cryptographic control requirements are defined exclusively in ISMS-POL-A.8.2
 **END OF DOCUMENT**
 
 *This is a technical reference document for awareness purposes only. It does not establish ISMS requirements or create compliance obligations.*
+
 *Where bamboo antennas actually work.* 🎋

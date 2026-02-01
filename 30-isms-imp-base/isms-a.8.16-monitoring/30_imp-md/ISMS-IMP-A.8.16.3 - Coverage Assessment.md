@@ -2493,6 +2493,7 @@ Not all gaps are equal:
 
 ---
 
+
 *Where bamboo antennas actually work.* 🎋
 
 **END OF SPECIFICATION**
@@ -2501,4 +2502,5 @@ Not all gaps are equal:
 
 *"Mathematical reasoning may be regarded rather schematically as the exercise of a combination of two facilities, which we may call intuition and ingenuity."*
 — Alan Turing
+
 *Where bamboo antennas actually work.* 🎋

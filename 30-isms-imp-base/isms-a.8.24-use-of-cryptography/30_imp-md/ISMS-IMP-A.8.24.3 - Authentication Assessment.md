@@ -2401,4 +2401,5 @@ ISMS-IMP-A.8.24.3 - Authentication Assessment v1.0
 
 *"No, it is a very interesting number; it is the smallest number expressible as the sum of two cubes in two different ways."*
 — Srinivasa Ramanujan, on 1729
+
 *Where bamboo antennas actually work.* 🎋

@@ -2862,6 +2862,7 @@ index=notable status=Open
 
 ---
 
+
 *Where bamboo antennas actually work.* 🎋
 
 **END OF SPECIFICATION**
@@ -2870,4 +2871,5 @@ index=notable status=Open
 
 *"Machines take me by surprise with great frequency."*
 — Alan Turing
+
 *Where bamboo antennas actually work.* 🎋

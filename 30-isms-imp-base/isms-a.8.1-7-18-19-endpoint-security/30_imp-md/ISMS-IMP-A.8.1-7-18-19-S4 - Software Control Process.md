@@ -2651,4 +2651,5 @@ def detect_unauthorized(installed_list, approved_list):
 
 *"There are children playing in the streets who could solve some of my top problems in physics, because they have modes of sensory perception that I lost long ago."*
 — J. Robert Oppenheimer
+
 *Where bamboo antennas actually work.* 🎋

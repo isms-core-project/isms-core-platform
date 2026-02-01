@@ -2953,4 +2953,5 @@ Each risk has assigned owner, target date, mitigation plan. Progress tracked mon
 
 *"Biology is the most powerful technology ever created. DNA is software, protein are hardware, cells are factories."*
 — Leonard Adleman
+
 *Where bamboo antennas actually work.* 🎋

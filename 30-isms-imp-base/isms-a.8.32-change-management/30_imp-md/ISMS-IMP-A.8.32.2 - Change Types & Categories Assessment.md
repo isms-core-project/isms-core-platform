@@ -1569,4 +1569,5 @@ External Audit Scheduled:       [Date]
 
 *"Cryptography is a mix of math, computer science, and paranoia."*
 — Adi Shamir
+
 *Where bamboo antennas actually work.* 🎋

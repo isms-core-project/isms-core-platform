@@ -1603,4 +1603,5 @@ Document all evidence collected during assessment to support audit defense.
 
 *"The violation of Bell's inequalities shows that quantum mechanics cannot be explained by any local hidden variable theory."*
 — Alain Aspect
+
 *Where bamboo antennas actually work.* 🎋

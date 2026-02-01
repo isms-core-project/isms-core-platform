@@ -2485,4 +2485,5 @@ Final CISO approval for Control A.8.23 compliance assessment.
 
 *"An equation means nothing to me unless it expresses a thought of God."*
 — Srinivasa Ramanujan
+
 *Where bamboo antennas actually work.* 🎋

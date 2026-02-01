@@ -2628,4 +2628,5 @@ ISMS-IMP-A.8.12.1_DLP_Infrastructure_Assessment_20260119.xlsx
 
 *"The measure of intelligence is the ability to change."*
 — Albert Einstein
+
 *Where bamboo antennas actually work.* 🎋

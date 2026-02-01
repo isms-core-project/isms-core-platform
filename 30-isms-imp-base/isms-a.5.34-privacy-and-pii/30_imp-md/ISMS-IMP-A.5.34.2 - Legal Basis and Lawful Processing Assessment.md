@@ -2912,4 +2912,5 @@ ISMS-IMP-A.5.34.2 - Legal Basis and Lawful Processing Assessment v1.0
 
 *"Natural science does not simply describe and explain nature; it describes nature as exposed to our method of questioning."*
 — Werner Heisenberg
+
 *Where bamboo antennas actually work.* 🎋

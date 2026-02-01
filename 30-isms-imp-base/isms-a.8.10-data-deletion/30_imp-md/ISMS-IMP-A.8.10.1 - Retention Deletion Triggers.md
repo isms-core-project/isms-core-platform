@@ -2698,4 +2698,5 @@ ISMS-IMP-A.8.10.1 - Retention & Deletion Triggers Assessment v1.0
 
 *"Bell's theorem and the experiments it inspired have taught us that nature is not locally realistic in the way Einstein hoped."*
 — Alain Aspect
+
 *Where bamboo antennas actually work.* 🎋

@@ -4872,4 +4872,5 @@ ensure standards address current threat landscape.
 
 *"The more we study the major problems of our time, the more we come to realize that they cannot be understood in isolation."*
 — Fritjof Capra
+
 *Where bamboo antennas actually work.* 🎋

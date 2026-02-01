@@ -1472,4 +1472,5 @@ List: Critical,High,Medium,Low
 
 *"The enemy knows the system. Security through obscurity is not security at all."*
 — Adi Shamir
+
 *Where bamboo antennas actually work.* 🎋

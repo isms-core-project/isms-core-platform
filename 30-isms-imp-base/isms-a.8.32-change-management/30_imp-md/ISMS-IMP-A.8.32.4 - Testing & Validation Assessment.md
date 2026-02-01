@@ -1629,4 +1629,5 @@ Assessment Frequency:   Quarterly
 
 *"The only truly secure system is one that is powered off, disconnected, and locked in a safe."*
 — Adi Shamir
+
 *Where bamboo antennas actually work.* 🎋

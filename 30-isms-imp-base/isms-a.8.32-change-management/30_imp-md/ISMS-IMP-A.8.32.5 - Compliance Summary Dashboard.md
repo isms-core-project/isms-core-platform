@@ -1527,4 +1527,5 @@ Assessment Frequency:   Quarterly
 
 *"Zero-knowledge proofs are perhaps the most powerful tool we have in cryptography."*
 — Adi Shamir
+
 *Where bamboo antennas actually work.* 🎋

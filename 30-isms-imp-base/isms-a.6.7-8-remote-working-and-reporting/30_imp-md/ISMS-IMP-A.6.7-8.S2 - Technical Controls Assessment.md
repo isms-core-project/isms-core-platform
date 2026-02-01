@@ -606,4 +606,5 @@ Before submitting assessment, verify:
 *"Complexity is the enemy of security."*
 — Bruce Schneier
 
+
 *Where bamboo antennas actually work.* 🎋
