@@ -73,6 +73,9 @@ old_*/
 *_old_*
 backup_before_*/
 
+# Copilot audit outputs (temporary generated docs)
+**/30_copilot-audit/
+
 # IDE and Workspace
 .vscode/
 .idea/
