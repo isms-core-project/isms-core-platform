@@ -51,6 +51,12 @@ tmp/
 ~$*.xlsx
 ~$*.xls
 
+# Generated Workbooks (output of generators - should not be committed)
+90_workbooks/*.xlsx
+90_workbooks/*.xls
+**/90_workbooks/*.xlsx
+**/90_workbooks/*.xls
+
 # Test outputs
 test_output/
 *_test_*.xlsx
