@@ -1,76 +1,98 @@
-# Contributing to ISMS CORE
+<h1 align="center">🎋 Contributing to ISMS CORE</h1>
 
-## QA Philosophy
+<p align="center">
+  <img src="https://img.shields.io/badge/QA-Engineering_First-2E8B57?style=for-the-badge" alt="QA Engineering First"/>
+</p>
 
-Not all documents require the same level of standardization. ISMS CORE applies appropriate rigor based on what matters for reliability, maintainability, and correctness.
+<p align="center">
+  <a href="#-qa-gates"><img src="https://img.shields.io/badge/QA_Gates-Enforced-00AA00?style=flat-square" alt="QA Gates"/></a>
+  <a href="#-python-script-standards"><img src="https://img.shields.io/badge/Python-Standardized-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/></a>
+  <a href="#-online-research-requirement"><img src="https://img.shields.io/badge/Research-Required-FF6600?style=flat-square" alt="Research Required"/></a>
+  <a href="#-the-engineering-principle"><img src="https://img.shields.io/badge/Feynman-Approved-0066CC?style=flat-square" alt="Feynman Approved"/></a>
+</p>
 
----
-
-## Document Types and Quality Standards
-
-### POL (Policy Documents)
-
-| Attribute | Requirement |
-|-----------|-------------|
-| Consistency | High |
-| Change Frequency | Low (stable foundation) |
-| Review Process | Formal approval required |
-| QA Gate | `<!-- QA_VERIFIED: YYYY-MM-DD -->` comment |
-
-Policies are foundation documents. They must be stable, consistent, and formally approved.
-
-### IMP (Implementation Guides)
-
-| Attribute | Requirement |
-|-----------|-------------|
-| Consistency | Moderate |
-| Change Frequency | Medium (living documents) |
-| Review Process | Subject to ongoing refinement |
-| QA Gate | Bamboo tag at end of file |
-
-Implementation guides adapt to context. Variations are acceptable when they serve the control's purpose.
-
-**IMP QA Criteria (v3.2+):**
-- Control quotes use "should" (not "shall") per ISO 27001:2022 Annex A
-- British spelling (organisation, authorised, standardised)
-- Document structure: PART I (User Guide) + PART II (Technical Specification)
-- Standard ending: `**END OF SPECIFICATION**` + separator + quote with em-dash (—)
-- QA tag: `<!-- QA_VERIFIED: YYYY-MM-DD -->` after bamboo tag
-
-### SCR (Python Scripts)
-
-| Attribute | Requirement |
-|-----------|-------------|
-| Consistency | High |
-| Change Frequency | Medium (bug fixes and improvements) |
-| Review Process | Code review and testing |
-| QA Gate | `QA_VERIFIED:` marker in file |
-
-Code must be reliable, maintainable, and error-free. Systematic standards are enforced.
-
-### REF (Reference Materials)
-
-| Attribute | Requirement |
-|-----------|-------------|
-| Consistency | Moderate |
-| Change Frequency | Low |
-| Review Process | Technical accuracy review |
-| QA Gate | Bamboo tag at end of file |
-
-### CTX (Context Documents)
-
-| Attribute | Requirement |
-|-----------|-------------|
-| Consistency | Moderate |
-| Change Frequency | Low |
-| Review Process | Accuracy verification |
-| QA Gate | Bamboo tag at end of file |
+<p align="center">
+  <em>Not all documents require the same level of standardization. Apply rigor where it matters.</em>
+</p>
 
 ---
 
-## QA Gates
+## 🎯 QA Philosophy
 
-Content is promoted to the main repository only when QA gates pass:
+ISMS CORE applies appropriate rigor based on what matters for **reliability**, **maintainability**, and **correctness**.
+
+> *"Standardization is good. Over-standardization is cargo cult. Apply rigor where it matters."*
+
+---
+
+## 📋 Document Types and Quality Standards
+
+<table>
+<tr>
+<th>Type</th>
+<th>Consistency</th>
+<th>Change Freq</th>
+<th>QA Gate</th>
+<th>Badge</th>
+</tr>
+<tr>
+<td><strong>📜 POL</strong> (Policy)</td>
+<td>🔴 High</td>
+<td>Low</td>
+<td><code>&lt;!-- QA_VERIFIED --&gt;</code></td>
+<td><img src="https://img.shields.io/badge/Formal_Approval-9400D3?style=flat-square" alt="Formal"/></td>
+</tr>
+<tr>
+<td><strong>📋 IMP</strong> (Implementation)</td>
+<td>🟡 Moderate</td>
+<td>Medium</td>
+<td>Bamboo tag 🎋</td>
+<td><img src="https://img.shields.io/badge/Living_Document-32CD32?style=flat-square" alt="Living"/></td>
+</tr>
+<tr>
+<td><strong>🐍 SCR</strong> (Scripts)</td>
+<td>🔴 High</td>
+<td>Medium</td>
+<td><code>QA_VERIFIED:</code></td>
+<td><img src="https://img.shields.io/badge/Code_Review-3776AB?style=flat-square" alt="Code Review"/></td>
+</tr>
+<tr>
+<td><strong>📚 REF</strong> (Reference)</td>
+<td>🟡 Moderate</td>
+<td>Low</td>
+<td>Bamboo tag 🎋</td>
+<td><img src="https://img.shields.io/badge/Technical_Accuracy-FF6600?style=flat-square" alt="Technical"/></td>
+</tr>
+<tr>
+<td><strong>🏢 CTX</strong> (Context)</td>
+<td>🟡 Moderate</td>
+<td>Low</td>
+<td>Bamboo tag 🎋</td>
+<td><img src="https://img.shields.io/badge/Accuracy_Verified-0066CC?style=flat-square" alt="Verified"/></td>
+</tr>
+</table>
+
+---
+
+### 📋 IMP QA Criteria (v3.2+)
+
+| Requirement | Description |
+|-------------|-------------|
+| ✅ Control quotes | Use "should" (not "shall") per ISO 27001:2022 Annex A |
+| ✅ British spelling | organisation, authorised, standardised |
+| ✅ Document structure | PART I (User Guide) + PART II (Technical Specification) |
+| ✅ Standard ending | `**END OF SPECIFICATION**` + separator + quote with em-dash (—) |
+| ✅ QA tag | `<!-- QA_VERIFIED: YYYY-MM-DD -->` after bamboo tag |
+
+---
+
+## 🚦 QA Gates
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Gate-Pass_Required-00AA00?style=for-the-badge" alt="Gate Pass Required"/>
+</p>
+
+Content is promoted to the main repository **only when QA gates pass**:
 
 ```bash
 # Check QA status
@@ -85,7 +107,7 @@ Content is promoted to the main repository only when QA gates pass:
 
 ---
 
-## Python Script Standards
+## 🐍 Python Script Standards
 
 ### Required Structure
 
@@ -109,7 +131,9 @@ OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_T
 
 ### Logging
 
-Use `logger.info()` / `logger.error()`, not `print()`:
+| ❌ Don't | ✅ Do |
+|----------|-------|
+| `print("message")` | `logger.info("message")` |
 
 ```python
 import logging
@@ -134,23 +158,27 @@ logger = logging.getLogger(__name__)
 
 ---
 
-## Folder Structure
+## 📂 Folder Structure
 
 ```
 isms-a.X.X-control-name/
-├── 10_generator-master/  # Python generators
-├── 11_normalize/         # Normalization scripts
-├── 12_consolidator/      # Dashboard consolidation scripts
-├── 13_presentation/      # Sample data population (CISO demos)
-├── 50_sanity/            # Validation scripts
-└── 90_workbooks/         # Generated Excel output (excluded from git)
+├── 10_generator-master/  # 🐍 Python generators
+├── 11_normalize/         # 🔧 Normalization scripts
+├── 12_consolidator/      # 📊 Dashboard consolidation
+├── 13_presentation/      # 🎬 CISO demo data
+├── 50_sanity/            # ✅ Validation scripts
+└── 90_workbooks/         # 📁 Excel output (gitignored)
 ```
 
 ---
 
-## Presentation Mode (13_presentation)
+## 🎬 Presentation Mode (13_presentation)
 
-Populate scripts fill workbooks with realistic sample data for CISO presentations.
+<p align="center">
+  <img src="https://img.shields.io/badge/CISO_Demo-Ready-DC143C?style=for-the-badge" alt="CISO Demo Ready"/>
+</p>
+
+Populate scripts fill workbooks with realistic sample data for presentations.
 
 **Pattern for MergedCell handling:**
 
@@ -168,49 +196,83 @@ def safe_cell_write(ws, cell_ref, value):
 ```
 
 **Reference implementations:**
-- `isms-a.8.23-web-filtering/13_presentation/` - 4 scripts, 250+ data points
-- `isms-a.8.24-use-of-cryptography/13_presentation/` - 4 scripts, 350+ data points
+
+| Control | Scripts | Data Points |
+|---------|:-------:|:-----------:|
+| A.8.23 Web Filtering | 4 | 250+ |
+| A.8.24 Use of Cryptography | 4 | 350+ |
 
 ---
 
-## Online Research Requirement
+## 🔍 Online Research Requirement
+
+<p align="center">
+  <img src="https://img.shields.io/badge/⚠️_Research-MANDATORY-FF0000?style=for-the-badge" alt="Research Mandatory"/>
+</p>
 
 **All IMP and SCR development MUST include online research** to verify:
-- Current best practices for the control
-- Alignment with NIST, CIS, MITRE ATT&CK frameworks
-- Technical accuracy of implementation guidance
-- Latest tool capabilities and integration patterns
 
-Key frameworks to reference:
-- ISO/IEC 27001:2022 & 27002:2022
-- NIST CSF 2.0 & SP 800-53 Rev 5
-- CIS Controls v8
-- MITRE ATT&CK Enterprise
+- ✅ Current best practices for the control
+- ✅ Alignment with NIST, CIS, MITRE ATT&CK frameworks
+- ✅ Technical accuracy of implementation guidance
+- ✅ Latest tool capabilities and integration patterns
+
+**Key frameworks to reference:**
+
+<p align="center">
+  <img src="https://img.shields.io/badge/ISO_27001-2022-0066CC?style=flat-square" alt="ISO"/>
+  <img src="https://img.shields.io/badge/NIST_CSF-2.0-FF6600?style=flat-square" alt="NIST"/>
+  <img src="https://img.shields.io/badge/CIS_Controls-v8-00AA00?style=flat-square" alt="CIS"/>
+  <img src="https://img.shields.io/badge/MITRE_ATT&CK-Enterprise-DC143C?style=flat-square" alt="MITRE"/>
+</p>
 
 ---
 
-## The Engineering Principle
+## ⚖️ The Engineering Principle
 
 > *"Standardization is good. Over-standardization is cargo cult. Apply rigor where it matters."*
 
-**Feynman would ask:** "Does this variation serve a purpose?"
+**Feynman would ask:** *"Does this variation serve a purpose?"*
 
-- If YES → Document why and keep it
-- If NO → Standardize
-- If forcing uniformity breaks functionality → Don't force it
-
----
-
-## AI-Assisted Development
-
-ISMS CORE is developed through collaborative AI-assisted engineering:
-
-- **Gregory Griffin** - Methodology, architecture, domain expertise, IP ownership
-- **Claude AI** - Policy framework, Python automation, documentation
-- **Claude Code** - Script QA, pattern analysis, formula verification
-
-**IP Ownership:** All intellectual property belongs to Gregory Griffin.
+| Answer | Action |
+|--------|--------|
+| ✅ YES | Document why and keep it |
+| ❌ NO | Standardize |
+| ⚠️ Breaks functionality | Don't force uniformity |
 
 ---
 
-*Where bamboo antennas actually work.*
+## 🤖 AI-Assisted Development
+
+<table>
+<tr>
+<th>Contributor</th>
+<th>Role</th>
+</tr>
+<tr>
+<td><strong>Gregory Griffin</strong></td>
+<td>Methodology, architecture, domain expertise, IP ownership</td>
+</tr>
+<tr>
+<td><strong>Claude AI</strong></td>
+<td>Policy framework, Python automation, documentation</td>
+</tr>
+<tr>
+<td><strong>Claude Code</strong></td>
+<td>Script QA, pattern analysis, formula verification</td>
+</tr>
+</table>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/IP_Ownership-Gregory_Griffin-FFD700?style=flat-square" alt="IP Ownership"/>
+</p>
+
+---
+
+<p align="center">
+  <strong>Copyright © 2025-2026 Gregory Griffin. All rights reserved.</strong>
+</p>
+
+<p align="center">
+  <em>Where bamboo antennas actually work.</em> 🎋
+</p>
