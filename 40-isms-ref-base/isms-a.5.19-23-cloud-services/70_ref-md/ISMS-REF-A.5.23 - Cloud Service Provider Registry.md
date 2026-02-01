@@ -3,17 +3,23 @@
 
 ---
 
-**Document ID**: ISMS-REF-A.5.23  
-**Title**: Cloud Service Provider Reference Registry  
-**Version**: 1.0  
-**Date**: [Date]  
-**Classification**: Internal  
-**Owner**: Chief Information Security Officer (CISO)  
-**Status**: Draft
-
----
-
 **Document Control**
+
+| Field | Value |
+|-------|-------|
+| **Document Title** | Cloud Service Provider Reference Registry |
+| **Document Type** | Internal - Technical Reference (Not ISMS) |
+| **Document ID** | ISMS-REF-A.5.23 |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | Chief Executive Officer (CEO) |
+| **Approved By** | CISO (Technical Reference - No Executive Approval Required) |
+| **Created Date** | [Date] |
+| **Version** | 1.0 |
+| **Version Date** | [To Be Determined] |
+| **Classification** | Internal |
+| **Status** | Draft |
+
+**Version History**:
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
@@ -26,8 +32,6 @@
 - Chief Information Security Officer (CISO)
 - IT Operations Manager
 - Procurement/Vendor Management
-
-
 
 **Distribution**: ISMS stakeholders, system owners, procurement, vendor management  
 **Referenced By**: ISMS-POL-A.5.19 through A.5.23, ISMS-POL-A.8.10, supplier assessments
