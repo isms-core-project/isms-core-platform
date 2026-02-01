@@ -1,26 +1,67 @@
-# ISMS CORE Implementation Status
+<h1 align="center">🎋 ISMS CORE Implementation Status</h1>
 
-**Last Updated:** 2026-02-01
-**Version:** 3.3
+<p align="center">
+  <img src="https://img.shields.io/badge/Version-3.3-2E8B57?style=for-the-badge" alt="Version 3.3"/>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Overall_Progress-65.4%25-32CD32?style=flat-square" alt="Progress"/>
+  <img src="https://img.shields.io/badge/Section_8-100%25_Complete-00AA00?style=flat-square" alt="Section 8"/>
+  <img src="https://img.shields.io/badge/Controls-34_of_52-0066CC?style=flat-square" alt="Controls"/>
+  <img src="https://img.shields.io/badge/Scripts-330+-3776AB?style=flat-square" alt="Scripts"/>
+</p>
+
+<p align="center">
+  <strong>Last Updated:</strong> 2026-02-01
+</p>
 
 ---
 
-## Overall Progress
+## 📊 Overall Progress
 
-| Metric | Value |
-|--------|-------|
-| Control Groups Complete | 34 of 52 (65.4%) |
-| Section 8 Complete | 21 of 21 (100%) |
-| Scripts in Prod | 330+ |
-| IMP Documents | 146+ |
-| Excel Formulas Verified | 151,000+ |
-| Formula Error Rate | 0% |
+<table>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Status</th>
+</tr>
+<tr>
+<td>Control Groups Complete</td>
+<td><strong>34 of 52</strong></td>
+<td><img src="https://img.shields.io/badge/65.4%25-32CD32?style=flat-square" alt="65.4%"/></td>
+</tr>
+<tr>
+<td>Section 8 Complete</td>
+<td><strong>21 of 21</strong></td>
+<td><img src="https://img.shields.io/badge/100%25_🎉-00AA00?style=flat-square" alt="100%"/></td>
+</tr>
+<tr>
+<td>Scripts in Prod</td>
+<td><strong>330+</strong></td>
+<td><img src="https://img.shields.io/badge/Validated-3776AB?style=flat-square" alt="Validated"/></td>
+</tr>
+<tr>
+<td>IMP Documents</td>
+<td><strong>146+</strong></td>
+<td><img src="https://img.shields.io/badge/QA_Complete-9400D3?style=flat-square" alt="QA"/></td>
+</tr>
+<tr>
+<td>Excel Formulas Verified</td>
+<td><strong>151,000+</strong></td>
+<td><img src="https://img.shields.io/badge/0%25_Errors-00AA00?style=flat-square" alt="0% Errors"/></td>
+</tr>
+</table>
 
 ---
 
-## Implementation by Section
+## 📋 Implementation by Section
 
 ### Section 5: Organizational Controls (A.5.x)
+
+<p>
+<img src="https://img.shields.io/badge/Section_5-50%25-FFD700?style=flat-square" alt="50%"/>
+<strong>10/20 groups complete</strong>
+</p>
 
 | Control | Status | POL | IMP | SCR |
 |---------|--------|:---:|:---:|:---:|
@@ -45,9 +86,14 @@
 | A.5.35-36 | ⭕ Not Started | - | - | - |
 | A.5.37 | ⭕ Not Started | - | - | - |
 
-**Section 5 Progress:** 10/20 groups (50%)
+---
 
 ### Section 6: People Controls (A.6.x)
+
+<p>
+<img src="https://img.shields.io/badge/Section_6-60%25-32CD32?style=flat-square" alt="60%"/>
+<strong>3/5 groups complete</strong>
+</p>
 
 | Control | Status | POL | IMP | SCR |
 |---------|--------|:---:|:---:|:---:|
@@ -57,9 +103,14 @@
 | A.6.6 | ⭕ Not Started | - | - | - |
 | A.6.7-8 | ✅ Complete | - | ✅ | ✅ |
 
-**Section 6 Progress:** 3/5 groups (60%)
+---
 
 ### Section 7: Physical Controls (A.7.x)
+
+<p>
+<img src="https://img.shields.io/badge/Section_7-16.7%25-FF6600?style=flat-square" alt="16.7%"/>
+<strong>1/6 groups complete</strong>
+</p>
 
 | Control | Status | POL | IMP | SCR |
 |---------|--------|:---:|:---:|:---:|
@@ -70,9 +121,14 @@
 | A.7.10 | ⭕ Not Started | - | - | - |
 | A.7.12-13 | ⭕ Not Started | - | - | - |
 
-**Section 7 Progress:** 1/6 groups (16.7%)
+---
 
 ### Section 8: Technological Controls (A.8.x)
+
+<p>
+<img src="https://img.shields.io/badge/Section_8-100%25_🎉-00AA00?style=for-the-badge" alt="100%"/>
+<strong>21/21 groups complete</strong>
+</p>
 
 | Control | Status | POL | IMP | SCR |
 |---------|--------|:---:|:---:|:---:|
@@ -99,61 +155,155 @@
 | A.8.32 | ✅ Complete | - | ✅ | ✅ |
 | A.8.33-34 | ✅ Complete | - | ✅ | ✅ |
 
-**Section 8 Progress:** 21/21 groups (100%) 🎉
+---
+
+## 📦 Repository Contents
+
+<table>
+<tr>
+<th>Content Type</th>
+<th>Controls</th>
+<th>Badge</th>
+</tr>
+<tr>
+<td>🐍 SCR (Scripts)</td>
+<td align="center"><strong>29</strong></td>
+<td><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/></td>
+</tr>
+<tr>
+<td>📋 IMP (Implementation)</td>
+<td align="center"><strong>33</strong></td>
+<td><img src="https://img.shields.io/badge/Markdown-000000?style=flat-square&logo=markdown&logoColor=white" alt="Markdown"/></td>
+</tr>
+<tr>
+<td>📚 REF (Reference)</td>
+<td align="center"><strong>5</strong></td>
+<td><img src="https://img.shields.io/badge/Reference-FF6600?style=flat-square" alt="Reference"/></td>
+</tr>
+<tr>
+<td>📜 POL (Policy)</td>
+<td align="center"><strong>2</strong></td>
+<td><img src="https://img.shields.io/badge/Policy-9400D3?style=flat-square" alt="Policy"/></td>
+</tr>
+<tr>
+<td>🏢 CTX (Context)</td>
+<td align="center"><strong>3</strong></td>
+<td><img src="https://img.shields.io/badge/Context-0066CC?style=flat-square" alt="Context"/></td>
+</tr>
+</table>
 
 ---
 
-## Repository Contents
+## 🎬 Presentation Mode
 
-| Content Type | Controls in Prod |
-|--------------|:----------------:|
-| SCR (Scripts) | 29 |
-| IMP (Implementation) | 33 |
-| REF (Reference) | 5 |
-| POL (Policy) | 2 |
-| CTX (Context) | 3 |
-
----
-
-## Presentation Mode
+<p align="center">
+<img src="https://img.shields.io/badge/CISO_Demo-Ready-DC143C?style=for-the-badge" alt="CISO Demo Ready"/>
+</p>
 
 Demo-ready controls with sample data:
-- **A.8.23 Web Filtering** - 4 populate scripts, 250+ data points
-- **A.8.24 Use of Cryptography** - 4 populate scripts, 350+ data points
+
+| Control | Scripts | Data Points |
+|---------|:-------:|:-----------:|
+| **A.8.23** Web Filtering | 4 | 250+ |
+| **A.8.24** Use of Cryptography | 4 | 350+ |
 
 ---
 
-## Certification Timeline
+## 🗓️ Certification Timeline
 
-| Phase | Target | Status |
-|-------|--------|--------|
-| Complete remaining controls | Q2 2026 | In Progress |
-| Stage 1 audit (documentation) | Q3 2026 | Planned |
-| Stage 2 audit (effectiveness) | Q4 2026 | Planned |
-| ISO 27001:2022 certification | Q1 2027 | Planned |
+<table>
+<tr>
+<th>Phase</th>
+<th>Target</th>
+<th>Status</th>
+</tr>
+<tr>
+<td>Complete remaining controls</td>
+<td>Q2 2026</td>
+<td><img src="https://img.shields.io/badge/In_Progress-FFD700?style=flat-square" alt="In Progress"/></td>
+</tr>
+<tr>
+<td>Stage 1 audit (documentation)</td>
+<td>Q3 2026</td>
+<td><img src="https://img.shields.io/badge/Planned-0066CC?style=flat-square" alt="Planned"/></td>
+</tr>
+<tr>
+<td>Stage 2 audit (effectiveness)</td>
+<td>Q4 2026</td>
+<td><img src="https://img.shields.io/badge/Planned-0066CC?style=flat-square" alt="Planned"/></td>
+</tr>
+<tr>
+<td>ISO 27001:2022 certification</td>
+<td>Q1 2027</td>
+<td><img src="https://img.shields.io/badge/Goal-00AA00?style=flat-square" alt="Goal"/></td>
+</tr>
+</table>
 
-**Goal:** ISMS CORE certified using itself.
+<p align="center">
+<strong>Goal:</strong> ISMS CORE certified using itself.
+</p>
 
 ---
 
-## Quality Metrics
+## ✅ Quality Metrics
 
-**Script Analysis:**
-- 330+ Excel workbook generators validated
-- 147 generators with full QA markers
-- Zero syntax errors in production code
-
-**Formula Verification:**
-- 151,000+ Excel formulas validated
-- 0% error rate after systematic QA
-- 100% formula accuracy achieved
-
-**IMP Document QA (v3.2):**
-- 146+ IMP files verified
-- Control quote accuracy (should vs shall)
-- British spelling compliance
-- Standard document structure verified
+<table>
+<tr>
+<th>Category</th>
+<th>Metric</th>
+<th>Status</th>
+</tr>
+<tr>
+<td rowspan="3"><strong>🐍 Scripts</strong></td>
+<td>330+ generators validated</td>
+<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
+</tr>
+<tr>
+<td>147 with full QA markers</td>
+<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
+</tr>
+<tr>
+<td>Zero syntax errors</td>
+<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
+</tr>
+<tr>
+<td rowspan="3"><strong>📊 Formulas</strong></td>
+<td>151,000+ validated</td>
+<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
+</tr>
+<tr>
+<td>0% error rate</td>
+<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
+</tr>
+<tr>
+<td>100% accuracy achieved</td>
+<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
+</tr>
+<tr>
+<td rowspan="4"><strong>📋 IMP QA (v3.2)</strong></td>
+<td>146+ files verified</td>
+<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
+</tr>
+<tr>
+<td>Control quote accuracy</td>
+<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
+</tr>
+<tr>
+<td>British spelling compliance</td>
+<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
+</tr>
+<tr>
+<td>Standard structure verified</td>
+<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
+</tr>
+</table>
 
 ---
 
-*Updated: 2026-02-01*
+<p align="center">
+<strong>Copyright © 2025-2026 Gregory Griffin. All rights reserved.</strong>
+</p>
+
+<p align="center">
+<em>Where bamboo antennas actually work.</em> 🎋
+</p>
