@@ -1,14 +1,14 @@
 <h1 align="center">🎋 ISMS CORE Implementation Status</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-3.3-2E8B57?style=for-the-badge" alt="Version 3.3"/>
+  <img src="https://img.shields.io/badge/Version-3.8-2E8B57?style=for-the-badge" alt="Version 3.8"/>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Overall_Progress-67.3%25-32CD32?style=flat-square" alt="Progress"/>
+  <img src="https://img.shields.io/badge/Overall_Progress-80.8%25-32CD32?style=flat-square" alt="Progress"/>
   <img src="https://img.shields.io/badge/Section_8-100%25_Complete-00AA00?style=flat-square" alt="Section 8"/>
-  <img src="https://img.shields.io/badge/Controls-35_of_52-0066CC?style=flat-square" alt="Controls"/>
-  <img src="https://img.shields.io/badge/Scripts-336+-3776AB?style=flat-square" alt="Scripts"/>
+  <img src="https://img.shields.io/badge/Controls-42_of_52-0066CC?style=flat-square" alt="Controls"/>
+  <img src="https://img.shields.io/badge/Scripts-360+-3776AB?style=flat-square" alt="Scripts"/>
 </p>
 
 <p align="center">
@@ -27,8 +27,8 @@
 </tr>
 <tr>
 <td>Control Groups Complete</td>
-<td><strong>35 of 52</strong></td>
-<td><img src="https://img.shields.io/badge/67.3%25-32CD32?style=flat-square" alt="67.3%"/></td>
+<td><strong>42 of 52</strong></td>
+<td><img src="https://img.shields.io/badge/80.8%25-32CD32?style=flat-square" alt="80.8%"/></td>
 </tr>
 <tr>
 <td>Section 8 Complete</td>
@@ -37,12 +37,12 @@
 </tr>
 <tr>
 <td>Scripts in Prod</td>
-<td><strong>330+</strong></td>
+<td><strong>360+</strong></td>
 <td><img src="https://img.shields.io/badge/Validated-3776AB?style=flat-square" alt="Validated"/></td>
 </tr>
 <tr>
 <td>IMP Documents</td>
-<td><strong>146+</strong></td>
+<td><strong>158+</strong></td>
 <td><img src="https://img.shields.io/badge/QA_Complete-9400D3?style=flat-square" alt="QA"/></td>
 </tr>
 <tr>
@@ -59,8 +59,8 @@
 ### Section 5: Organizational Controls (A.5.x)
 
 <p>
-<img src="https://img.shields.io/badge/Section_5-55%25-32CD32?style=flat-square" alt="55%"/>
-<strong>11/20 groups complete</strong>
+<img src="https://img.shields.io/badge/Section_5-85%25-32CD32?style=flat-square" alt="85%"/>
+<strong>17/20 groups complete</strong>
 </p>
 
 | Control | Status | POL | IMP | SCR |
@@ -68,22 +68,22 @@
 | A.5.1-2, 6.1-2 | ✅ Complete | - | ✅ | ✅ |
 | A.5.3 | ⭕ Not Started | - | - | - |
 | A.5.4 | ✅ Complete | ✅ | - | ✅ |
-| A.5.5-6 | ⭕ Not Started | - | - | - |
+| A.5.5-6 | ✅ Complete | - | ✅ | ✅ |
 | A.5.7 | ✅ Complete | - | ✅ | ✅ |
 | A.5.8 | ✅ Complete | - | ✅ | ✅ |
 | A.5.9 | ✅ Complete | - | ✅ | ✅ |
-| A.5.10-11 | ⭕ Not Started | - | - | - |
-| A.5.12-13 | ⭕ Not Started | - | - | - |
-| A.5.14 | ⭕ Not Started | - | - | - |
+| A.5.10-11 | ✅ Complete | ✅ | ✅ | ✅ |
+| A.5.12-13 | ✅ Complete | - | ✅ | ✅ |
+| A.5.14 | ✅ Complete | - | ✅ | ✅ |
 | A.5.15-16-18 | ✅ Complete | - | ✅ | ✅ |
-| A.5.17 | ⭕ Not Started | - | - | - |
+| A.5.17 | ✅ Complete | - | ✅ | ✅ |
 | A.5.19-23 | ✅ Complete | ✅ | ✅ | ✅ |
 | A.5.24-28 | ✅ Complete | - | ✅ | ✅ |
 | A.5.29 | ⭕ Not Started | - | - | - |
 | A.5.31 | ✅ Complete | ✅ | ✅ | ✅ |
 | A.5.32-33 | ⭕ Not Started | - | - | - |
 | A.5.34 | ✅ Complete | - | ✅ | ✅ |
-| A.5.35-36 | ⭕ Not Started | - | - | - |
+| A.5.35-36 | ✅ Complete | ✅ | ✅ | ✅ |
 | A.5.37 | ✅ Complete | - | ✅ | ✅ |
 
 ---
@@ -91,8 +91,8 @@
 ### Section 6: People Controls (A.6.x)
 
 <p>
-<img src="https://img.shields.io/badge/Section_6-60%25-32CD32?style=flat-square" alt="60%"/>
-<strong>3/5 groups complete</strong>
+<img src="https://img.shields.io/badge/Section_6-80%25-32CD32?style=flat-square" alt="80%"/>
+<strong>4/5 groups complete</strong>
 </p>
 
 | Control | Status | POL | IMP | SCR |
@@ -100,7 +100,7 @@
 | A.6.1-2 | ✅ Complete | - | ✅ | ✅ |
 | A.6.3 | ✅ Complete | ✅ | ✅ | ✅ |
 | A.6.4-5 | ⭕ Not Started | - | - | - |
-| A.6.6 | ⭕ Not Started | - | - | - |
+| A.6.6 | ✅ Complete | ✅ | ✅ | ✅ |
 | A.6.7-8 | ✅ Complete | ✅ | ✅ | ✅ |
 
 ---
@@ -167,22 +167,22 @@
 </tr>
 <tr>
 <td>🐍 SCR (Scripts)</td>
-<td align="center"><strong>30</strong></td>
+<td align="center"><strong>37</strong></td>
 <td><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/></td>
 </tr>
 <tr>
 <td>📋 IMP (Implementation)</td>
-<td align="center"><strong>34</strong></td>
+<td align="center"><strong>40</strong></td>
 <td><img src="https://img.shields.io/badge/Markdown-000000?style=flat-square&logo=markdown&logoColor=white" alt="Markdown"/></td>
 </tr>
 <tr>
 <td>📚 REF (Reference)</td>
-<td align="center"><strong>5</strong></td>
+<td align="center"><strong>10</strong></td>
 <td><img src="https://img.shields.io/badge/Reference-FF6600?style=flat-square" alt="Reference"/></td>
 </tr>
 <tr>
 <td>📜 POL (Policy)</td>
-<td align="center"><strong>10</strong></td>
+<td align="center"><strong>13</strong></td>
 <td><img src="https://img.shields.io/badge/Policy-9400D3?style=flat-square" alt="Policy"/></td>
 </tr>
 <tr>
@@ -255,11 +255,11 @@ Demo-ready controls with sample data:
 </tr>
 <tr>
 <td rowspan="3"><strong>🐍 Scripts</strong></td>
-<td>330+ generators validated</td>
+<td>360+ generators validated</td>
 <td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
 </tr>
 <tr>
-<td>147 with full QA markers</td>
+<td>170+ with full QA markers</td>
 <td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
 </tr>
 <tr>
@@ -280,8 +280,8 @@ Demo-ready controls with sample data:
 <td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
 </tr>
 <tr>
-<td rowspan="4"><strong>📋 IMP QA (v3.2)</strong></td>
-<td>146+ files verified</td>
+<td rowspan="4"><strong>📋 IMP QA (v3.8)</strong></td>
+<td>158+ files verified</td>
 <td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
 </tr>
 <tr>
