@@ -100,11 +100,11 @@ CONTROL_REF = "ISO/IEC 27001:2022 A.8.2, A.8.3, A.8.5"
 
 # Source workbook names (normalized)
 SOURCE_WORKBOOKS = {
-    "auth_inventory": "ISMS-IMP-A_8_2_3_5_1.xlsx",
-    "mfa_coverage": "ISMS-IMP-A_8_2_3_5_2.xlsx",
-    "privileged_accounts": "ISMS-IMP-A_8_2_3_5_3.xlsx",
-    "access_monitoring": "ISMS-IMP-A_8_2_3_5_4.xlsx",
-    "access_restriction": "ISMS-IMP-A_8_2_3_5_5.xlsx",
+    "auth_inventory": "ISMS-IMP-A.8.2-3-5.1.xlsx",
+    "mfa_coverage": "ISMS-IMP-A.8.2-3-5.2.xlsx",
+    "privileged_accounts": "ISMS-IMP-A.8.2-3-5.3.xlsx",
+    "access_monitoring": "ISMS-IMP-A.8.2-3-5.4.xlsx",
+    "access_restriction": "ISMS-IMP-A.8.2-3-5.5.xlsx",
 }
 
 

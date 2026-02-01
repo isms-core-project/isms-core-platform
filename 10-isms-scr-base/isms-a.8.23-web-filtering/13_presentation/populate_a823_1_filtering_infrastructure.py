@@ -78,19 +78,19 @@ def populate_solution_details(wb):
 
     data = [
         # Solution 1: Zscaler (Primary - Deployed)
-        ["Zscaler Internet Access (ZIA)", "Cloud-native SWG", "Zscaler Inc.", "Deployed", "2025-03-15",
+        ["Zscaler Internet Access (ZIA)", "Cloud-native SWG", "Zscaler Inc.", "✅ Deployed", "2025-03-15",
          "Primary web filtering solution", "Global proxy with 150+ PoPs", "99.999% SLA achieved",
          "Full SSL inspection", "AI/ML threat detection", "SharePoint/Vendor/Zscaler"],
         # Solution 2: Palo Alto Prisma (Secondary)
-        ["Palo Alto Prisma Access", "SASE Platform", "Palo Alto Networks", "Deployed", "2025-06-01",
+        ["Palo Alto Prisma Access", "SASE Platform", "Palo Alto Networks", "✅ Deployed", "2025-06-01",
          "Backup/failover solution", "CASB + SWG integrated", "99.99% SLA",
          "ZTNA capabilities", "Threat intelligence feeds", "SharePoint/Vendor/PaloAlto"],
         # Solution 3: Cisco Umbrella (Legacy - Phasing Out)
-        ["Cisco Umbrella", "DNS Security", "Cisco Systems", "Partial", "2022-01-10",
+        ["Cisco Umbrella", "DNS Security", "Cisco Systems", "⚠️ Partial", "2022-01-10",
          "Legacy DNS filtering", "Being replaced by Zscaler", "98.5% uptime",
          "DNS-layer only", "Basic threat intel", "SharePoint/Vendor/Cisco"],
         # Solution 4: On-Prem Proxy (Decommissioning)
-        ["Squid Proxy (On-Prem)", "Traditional Proxy", "Open Source", "Non-Compliant", "2019-06-01",
+        ["Squid Proxy (On-Prem)", "Traditional Proxy", "Open Source", "❌ Non-Compliant", "2019-06-01",
          "Legacy datacenter proxy", "Scheduled for decommission Q2 2026", "Manual maintenance",
          "No SSL inspection", "No threat intelligence", "IT/Legacy/SquidProxy"],
     ]
@@ -106,13 +106,13 @@ def populate_technology_comparison(wb):
 
     # Vendor comparison data: Vendor, Type, SSL Inspect, Threat Intel, CASB, DLP, ZTNA, Cloud, Score
     data = [
-        ["Zscaler ZIA", "Cloud SWG", "Yes - Full", "AI/ML + Feeds", "Integrated", "Integrated", "Via ZPA", "100% Cloud", "9.2/10"],
-        ["Palo Alto Prisma", "SASE", "Yes - Full", "Unit 42 Feeds", "Integrated", "Integrated", "Native", "100% Cloud", "9.0/10"],
+        ["Zscaler ZIA", "Cloud SWG", "Yes - Full", "AI/ML + Feeds", "✅ Integrated", "Integrated", "Via ZPA", "100% Cloud", "9.2/10"],
+        ["Palo Alto Prisma", "SASE", "Yes - Full", "Unit 42 Feeds", "✅ Integrated", "Integrated", "Native", "100% Cloud", "9.0/10"],
         ["Netskope", "CASB/SWG", "Yes - Full", "Threat Labs", "Native", "Advanced", "Via ZTNA", "100% Cloud", "8.8/10"],
-        ["Cisco Umbrella", "DNS/SWG", "Partial", "Talos Intel", "Add-on", "Basic", "Via AnyConnect", "Hybrid", "7.5/10"],
-        ["Forcepoint ONE", "SSE", "Yes - Full", "X-Labs", "Integrated", "Advanced", "Native", "100% Cloud", "8.2/10"],
-        ["McAfee MVISION", "Cloud SWG", "Yes - Full", "GTI Feeds", "Integrated", "Integrated", "Via UCE", "100% Cloud", "7.8/10"],
-        ["Symantec WSS", "Cloud SWG", "Yes - Full", "DeepSight", "Via CloudSOC", "Integrated", "Limited", "Hybrid", "7.2/10"],
+        ["Cisco Umbrella", "DNS/SWG", "⚠️ Partial", "Talos Intel", "Add-on", "Basic", "Via AnyConnect", "Hybrid", "7.5/10"],
+        ["Forcepoint ONE", "SSE", "Yes - Full", "X-Labs", "✅ Integrated", "Advanced", "Native", "100% Cloud", "8.2/10"],
+        ["McAfee MVISION", "Cloud SWG", "Yes - Full", "GTI Feeds", "✅ Integrated", "Integrated", "Via UCE", "100% Cloud", "7.8/10"],
+        ["Symantec WSS", "Cloud SWG", "Yes - Full", "DeepSight", "Via CloudSOC", "✅ Integrated", "Limited", "Hybrid", "7.2/10"],
         ["Squid (Open Source)", "On-Prem Proxy", "Limited", "None", "None", "None", "None", "On-Prem", "3.0/10"],
     ]
 
@@ -127,31 +127,31 @@ def populate_capability_requirements(wb):
 
     data = [
         # Category, Requirement, Priority, Zscaler, Prisma, Status, Gap, Evidence
-        ["URL Filtering", "Block malicious URLs in real-time", "Critical", "Met", "Met", "Compliant", "", "Config export"],
-        ["URL Filtering", "Category-based filtering (80+ categories)", "Critical", "Met", "Met", "Compliant", "", "Policy screenshots"],
-        ["URL Filtering", "Custom URL allow/block lists", "High", "Met", "Met", "Compliant", "", "Custom list export"],
-        ["URL Filtering", "Wildcard and regex URL matching", "Medium", "Met", "Met", "Compliant", "", "Rule examples"],
-        ["SSL Inspection", "Full SSL/TLS decryption", "Critical", "Met", "Met", "Compliant", "", "Certificate config"],
-        ["SSL Inspection", "Certificate trust management", "Critical", "Met", "Met", "Compliant", "", "CA deployment docs"],
-        ["SSL Inspection", "Selective bypass for sensitive sites", "High", "Met", "Met", "Compliant", "", "Bypass list"],
-        ["SSL Inspection", "TLS 1.3 support", "High", "Met", "Met", "Compliant", "", "Protocol analysis"],
-        ["Threat Protection", "Malware detection (files)", "Critical", "Met", "Met", "Compliant", "", "Scan logs"],
-        ["Threat Protection", "Phishing site blocking", "Critical", "Met", "Met", "Compliant", "", "Block reports"],
-        ["Threat Protection", "Zero-day threat protection", "Critical", "Met", "Met", "Compliant", "", "Sandbox logs"],
-        ["Threat Protection", "Botnet C2 blocking", "High", "Met", "Met", "Compliant", "", "C2 block logs"],
-        ["Cloud Integration", "Azure AD SSO integration", "Critical", "Met", "Met", "Compliant", "", "SSO config"],
-        ["Cloud Integration", "Microsoft 365 tenant restrictions", "High", "Met", "Met", "Compliant", "", "M365 policy"],
-        ["Cloud Integration", "AWS/GCP/Azure egress filtering", "High", "Met", "Partial", "Partial", "Prisma Azure gaps", "Cloud configs"],
-        ["DLP", "Sensitive data detection", "High", "Met", "Met", "Compliant", "", "DLP rules"],
-        ["DLP", "File type blocking", "High", "Met", "Met", "Compliant", "", "File policy"],
-        ["DLP", "PII/PCI detection patterns", "Critical", "Met", "Met", "Compliant", "", "Pattern config"],
-        ["Reporting", "Real-time dashboard", "High", "Met", "Met", "Compliant", "", "Dashboard access"],
-        ["Reporting", "Custom report generation", "Medium", "Met", "Met", "Compliant", "", "Report samples"],
-        ["Reporting", "SIEM integration (Splunk/Sentinel)", "High", "Met", "Met", "Compliant", "", "SIEM connector"],
-        ["Performance", "Sub-50ms latency (regional)", "High", "Met", "Met", "Compliant", "", "Latency tests"],
-        ["Performance", "10+ Gbps throughput capacity", "High", "Met", "Met", "Compliant", "", "Load tests"],
-        ["Compliance", "GDPR data residency options", "Critical", "Met", "Met", "Compliant", "", "Data center docs"],
-        ["Compliance", "SOC 2 Type II certification", "Critical", "Met", "Met", "Compliant", "", "Audit reports"],
+        ["URL Filtering", "Block malicious URLs in real-time", "Critical", "✅ Met", "Met", "✅ Compliant", "", "Config export"],
+        ["URL Filtering", "Category-based filtering (80+ categories)", "Critical", "✅ Met", "Met", "✅ Compliant", "", "Policy screenshots"],
+        ["URL Filtering", "Custom URL allow/block lists", "High", "✅ Met", "Met", "✅ Compliant", "", "Custom list export"],
+        ["URL Filtering", "Wildcard and regex URL matching", "Medium", "✅ Met", "Met", "✅ Compliant", "", "Rule examples"],
+        ["SSL Inspection", "Full SSL/TLS decryption", "Critical", "✅ Met", "Met", "✅ Compliant", "", "Certificate config"],
+        ["SSL Inspection", "Certificate trust management", "Critical", "✅ Met", "Met", "✅ Compliant", "", "CA deployment docs"],
+        ["SSL Inspection", "Selective bypass for sensitive sites", "High", "✅ Met", "Met", "✅ Compliant", "", "Bypass list"],
+        ["SSL Inspection", "TLS 1.3 support", "High", "✅ Met", "Met", "✅ Compliant", "", "Protocol analysis"],
+        ["Threat Protection", "Malware detection (files)", "Critical", "✅ Met", "Met", "✅ Compliant", "", "Scan logs"],
+        ["Threat Protection", "Phishing site blocking", "Critical", "✅ Met", "Met", "✅ Compliant", "", "Block reports"],
+        ["Threat Protection", "Zero-day threat protection", "Critical", "✅ Met", "Met", "✅ Compliant", "", "Sandbox logs"],
+        ["Threat Protection", "Botnet C2 blocking", "High", "✅ Met", "Met", "✅ Compliant", "", "C2 block logs"],
+        ["Cloud Integration", "Azure AD SSO integration", "Critical", "✅ Met", "Met", "✅ Compliant", "", "SSO config"],
+        ["Cloud Integration", "Microsoft 365 tenant restrictions", "High", "✅ Met", "Met", "✅ Compliant", "", "M365 policy"],
+        ["Cloud Integration", "AWS/GCP/Azure egress filtering", "High", "✅ Met", "⚠️ Partial", "Partial", "Prisma Azure gaps", "Cloud configs"],
+        ["DLP", "Sensitive data detection", "High", "✅ Met", "Met", "✅ Compliant", "", "DLP rules"],
+        ["DLP", "File type blocking", "High", "✅ Met", "Met", "✅ Compliant", "", "File policy"],
+        ["DLP", "PII/PCI detection patterns", "Critical", "✅ Met", "Met", "✅ Compliant", "", "Pattern config"],
+        ["Reporting", "Real-time dashboard", "High", "✅ Met", "Met", "✅ Compliant", "", "Dashboard access"],
+        ["Reporting", "Custom report generation", "Medium", "✅ Met", "Met", "✅ Compliant", "", "Report samples"],
+        ["Reporting", "SIEM integration (Splunk/Sentinel)", "High", "✅ Met", "Met", "✅ Compliant", "", "SIEM connector"],
+        ["Performance", "Sub-50ms latency (regional)", "High", "✅ Met", "Met", "✅ Compliant", "", "Latency tests"],
+        ["Performance", "10+ Gbps throughput capacity", "High", "✅ Met", "Met", "✅ Compliant", "", "Load tests"],
+        ["Compliance", "GDPR data residency options", "Critical", "✅ Met", "Met", "✅ Compliant", "", "Data center docs"],
+        ["Compliance", "SOC 2 Type II certification", "Critical", "✅ Met", "Met", "✅ Compliant", "", "Audit reports"],
     ]
 
     count = safely_write_data(ws, 6, data)
@@ -165,18 +165,18 @@ def populate_integration_architecture(wb):
 
     data = [
         # Integration Point, Type, Solution, Status, Config, Traffic Flow, Evidence
-        ["Corporate Network Egress", "Inline Proxy", "Zscaler ZIA", "Deployed", "PAC file + GRE tunnels", "All HTTP/HTTPS", "Network diagram"],
-        ["Remote Workers (VPN)", "Cloud Connector", "Zscaler ZIA", "Deployed", "Z-Tunnel 2.0", "All user traffic", "VPN integration doc"],
-        ["Remote Workers (Direct)", "Zscaler Client", "Zscaler ZIA", "Deployed", "ZCC agent deployed via MDM", "All traffic", "MDM deployment log"],
-        ["AWS VPC Egress", "Cloud Connector", "Zscaler ZIA", "Deployed", "AWS PrivateLink", "Workload traffic", "AWS config"],
-        ["Azure VNet Egress", "Cloud Connector", "Zscaler ZIA", "Deployed", "Azure Private Endpoint", "Workload traffic", "Azure config"],
-        ["GCP VPC Egress", "Cloud Connector", "Prisma Access", "Deployed", "Service Connect", "Workload traffic", "GCP config"],
-        ["Guest WiFi", "DNS Filtering", "Cisco Umbrella", "Partial", "DNS redirect only", "DNS queries", "WiFi config"],
-        ["IoT Network", "Explicit Proxy", "Squid (Legacy)", "Non-Compliant", "Manual proxy config", "Limited traffic", "Legacy docs"],
-        ["Partner Extranet", "Reverse Proxy", "Zscaler ZPA", "Deployed", "App connectors", "App-specific", "ZPA config"],
-        ["SaaS Applications", "CASB Integration", "Zscaler ZIA", "Deployed", "API + Inline", "Cloud app traffic", "CASB policy"],
-        ["Email Security", "MTA Integration", "Zscaler ZIA", "Deployed", "SMTP inspection", "Email attachments", "Email gateway config"],
-        ["SIEM/SOC", "Log Forwarding", "Zscaler NSS", "Deployed", "NSS to Splunk", "All logs", "Splunk integration"],
+        ["Corporate Network Egress", "Inline Proxy", "Zscaler ZIA", "✅ Deployed", "PAC file + GRE tunnels", "All HTTP/HTTPS", "Network diagram"],
+        ["Remote Workers (VPN)", "Cloud Connector", "Zscaler ZIA", "✅ Deployed", "Z-Tunnel 2.0", "All user traffic", "VPN integration doc"],
+        ["Remote Workers (Direct)", "Zscaler Client", "Zscaler ZIA", "✅ Deployed", "ZCC agent deployed via MDM", "All traffic", "MDM deployment log"],
+        ["AWS VPC Egress", "Cloud Connector", "Zscaler ZIA", "✅ Deployed", "AWS PrivateLink", "Workload traffic", "AWS config"],
+        ["Azure VNet Egress", "Cloud Connector", "Zscaler ZIA", "✅ Deployed", "Azure Private Endpoint", "Workload traffic", "Azure config"],
+        ["GCP VPC Egress", "Cloud Connector", "Prisma Access", "✅ Deployed", "Service Connect", "Workload traffic", "GCP config"],
+        ["Guest WiFi", "DNS Filtering", "Cisco Umbrella", "⚠️ Partial", "DNS redirect only", "DNS queries", "WiFi config"],
+        ["IoT Network", "Explicit Proxy", "Squid (Legacy)", "❌ Non-Compliant", "Manual proxy config", "Limited traffic", "Legacy docs"],
+        ["Partner Extranet", "Reverse Proxy", "Zscaler ZPA", "✅ Deployed", "App connectors", "App-specific", "ZPA config"],
+        ["SaaS Applications", "CASB Integration", "Zscaler ZIA", "✅ Deployed", "API + Inline", "Cloud app traffic", "CASB policy"],
+        ["Email Security", "MTA Integration", "Zscaler ZIA", "✅ Deployed", "SMTP inspection", "Email attachments", "Email gateway config"],
+        ["SIEM/SOC", "Log Forwarding", "Zscaler NSS", "✅ Deployed", "NSS to Splunk", "All logs", "Splunk integration"],
     ]
 
     count = safely_write_data(ws, 6, data)
@@ -211,18 +211,18 @@ def populate_performance_metrics(wb):
 
     data = [
         # Metric, Target, Current, Status, Measurement Method, Last Test, Evidence
-        ["Average Latency (Zurich)", "<50ms", "32ms", "Compliant", "Synthetic monitoring", "2026-01-28", "Latency dashboard"],
-        ["Average Latency (Remote EU)", "<75ms", "58ms", "Compliant", "Synthetic monitoring", "2026-01-28", "Latency dashboard"],
-        ["Average Latency (Remote US)", "<100ms", "87ms", "Compliant", "Synthetic monitoring", "2026-01-28", "Latency dashboard"],
-        ["Average Latency (Remote APAC)", "<150ms", "142ms", "Compliant", "Synthetic monitoring", "2026-01-28", "Latency dashboard"],
-        ["Peak Throughput Capacity", "10 Gbps", "15 Gbps available", "Compliant", "Load testing", "2026-01-15", "Load test report"],
-        ["SSL Inspection Throughput", "5 Gbps", "8 Gbps tested", "Compliant", "Load testing", "2026-01-15", "SSL test report"],
-        ["Concurrent Sessions", "500,000", "350,000 peak observed", "Compliant", "Production monitoring", "2026-01-28", "Session metrics"],
-        ["URL Categorization Accuracy", ">99%", "99.7%", "Compliant", "Sample verification", "2026-01-20", "Accuracy report"],
-        ["Malware Detection Rate", ">99%", "99.8%", "Compliant", "Threat simulation", "2026-01-22", "Detection report"],
-        ["False Positive Rate", "<0.1%", "0.05%", "Compliant", "User feedback analysis", "2026-01-25", "FP analysis"],
-        ["Service Availability", "99.999%", "99.9995%", "Compliant", "Uptime monitoring", "2026-01-28", "SLA report"],
-        ["Mean Time to Detection", "<1 min", "23 seconds", "Compliant", "Threat simulation", "2026-01-22", "MTD report"],
+        ["Average Latency (Zurich)", "<50ms", "32ms", "✅ Compliant", "Synthetic monitoring", "2026-01-28", "Latency dashboard"],
+        ["Average Latency (Remote EU)", "<75ms", "58ms", "✅ Compliant", "Synthetic monitoring", "2026-01-28", "Latency dashboard"],
+        ["Average Latency (Remote US)", "<100ms", "87ms", "✅ Compliant", "Synthetic monitoring", "2026-01-28", "Latency dashboard"],
+        ["Average Latency (Remote APAC)", "<150ms", "142ms", "✅ Compliant", "Synthetic monitoring", "2026-01-28", "Latency dashboard"],
+        ["Peak Throughput Capacity", "10 Gbps", "15 Gbps available", "✅ Compliant", "Load testing", "2026-01-15", "Load test report"],
+        ["SSL Inspection Throughput", "5 Gbps", "8 Gbps tested", "✅ Compliant", "Load testing", "2026-01-15", "SSL test report"],
+        ["Concurrent Sessions", "500,000", "350,000 peak observed", "✅ Compliant", "Production monitoring", "2026-01-28", "Session metrics"],
+        ["URL Categorization Accuracy", ">99%", "99.7%", "✅ Compliant", "Sample verification", "2026-01-20", "Accuracy report"],
+        ["Malware Detection Rate", ">99%", "99.8%", "✅ Compliant", "Threat simulation", "2026-01-22", "Detection report"],
+        ["False Positive Rate", "<0.1%", "0.05%", "✅ Compliant", "User feedback analysis", "2026-01-25", "FP analysis"],
+        ["Service Availability", "99.999%", "99.9995%", "✅ Compliant", "Uptime monitoring", "2026-01-28", "SLA report"],
+        ["Mean Time to Detection", "<1 min", "23 seconds", "✅ Compliant", "Threat simulation", "2026-01-22", "MTD report"],
     ]
 
     count = safely_write_data(ws, 6, data)

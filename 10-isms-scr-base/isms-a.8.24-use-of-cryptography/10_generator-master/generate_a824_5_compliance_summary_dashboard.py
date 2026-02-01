@@ -522,10 +522,10 @@ def create_executive_dashboard(ws, styles):
 
     # Data rows with EXTERNAL WORKBOOK LINKS
     assessment_areas = [
-        ("Data Transmission", "ISMS-IMP-A_8_24_1.xlsx", 16),  # 12 areas → TOTAL row 16
-        ("Data Storage", "ISMS-IMP-A_8_24_2.xlsx", 11),       # 7 areas → TOTAL row 11
-        ("Authentication", "ISMS-IMP-A_8_24_3.xlsx", 9),      # 5 areas → TOTAL row 9
-        ("Key Management", "ISMS-IMP-A_8_24_4.xlsx", 9),      # 5 areas → TOTAL row 9
+        ("Data Transmission", "ISMS-IMP-A.8.24.1.xlsx", 16),  # 12 areas → TOTAL row 16
+        ("Data Storage", "ISMS-IMP-A.8.24.2.xlsx", 11),       # 7 areas → TOTAL row 11
+        ("Authentication", "ISMS-IMP-A.8.24.3.xlsx", 9),      # 5 areas → TOTAL row 9
+        ("Key Management", "ISMS-IMP-A.8.24.4.xlsx", 9),      # 5 areas → TOTAL row 9
     ]
 
     row += 1

@@ -29,15 +29,19 @@
 **Nächstes Review-Datum**: [Gültigkeitsdatum + 12 Monate]  
 
 **Freigabekette**:
+
 - Primär: Chief Information Security Officer (CISO)
 - Sekundär: Legal/Compliance Officer
 - Compliance: Data Protection Officer (DPO)
 - Finale Autorität: Geschäftsleitung (GL)
 
+
 **Verknüpfte Dokumente**: 
+
 - Alle ISMS Policy-Dokumente (obligatorische Referenz)
 - ISO/IEC 27001:2022 Clause 4.1 (Understanding the organization and its context)
 - ISO/IEC 27001:2022 Clause 4.2 (Understanding the needs and expectations of interested parties)
+
 
 **Verteilung**: Alle ISMS Stakeholder, Policy Authors, System Owners, Auditoren  
 **Referenziert durch**: Alle ISMS Policy-Dokumente
@@ -77,11 +81,13 @@ Diese Policy definiert die **Identifikation und Anwendbarkeit** von gesetzlichen
 - Assessment-Methodik zur Bestimmung der Anwendbarkeit
 - Review- und Update-Prozesse für Änderungen in der Regulatory Landscape
 
+
 **Diese Policy etabliert NICHT:**
 
 - Risk Treatment-Entscheidungen (adressiert in Clause 6 - Risk Management)
 - Control Implementation-Anforderungen (adressiert in Annex A Controls)
 - Compliance-Status oder Verification (adressiert in Compliance Monitoring Processes)
+
 
 Das Ergebnis des Regulatory Applicability Assessment dient als **Input** für:
 
@@ -90,13 +96,14 @@ Das Ergebnis des Regulatory Applicability Assessment dient als **Input** für:
 - Proportionality-Entscheidungen für Control Implementation
 - Audit Planning und Compliance Verification
 
+
 **Abgrenzungsprinzip**: Diese Policy etabliert die Anwendbarkeit von Regulations. Implementation, Enforcement und Verification werden durch separate ISMS-Prozesse behandelt.
 
 ---
 
-# Regulatory Applicability-Kategorien
+**Regulatory Applicability-Kategorien**
 
-## Kategoriedefinitionen
+**Kategoriedefinitionen**
 
 **Mandatory Compliance**  
 Gesetzliche oder vertragliche Verpflichtungen, die die Organisation ERFÜLLEN MUSS. Nichteinhaltung führt zu rechtlicher Haftung, Regulatory Fines, Vertragsbruch oder Zertifizierungsverlust.
@@ -108,6 +115,7 @@ Gesetzliche oder vertragliche Verpflichtungen, die die Organisation ERFÜLLEN MU
 - Erfordert dokumentierte Compliance-Nachweise
 - Unterliegt Regulatory Audits und Inspektionen
 
+
 **Informational Reference / Best Practice Alignment**  
 Frameworks und Standards, die für technische Leitlinien, Benchmarking oder freiwillige Ausrichtung verwendet werden. Diese informieren Security Practices, stellen aber keine mandatory Compliance-Anforderungen dar, es sei denn, sie sind explizit durch Vertrag oder Regulation gefordert.
 
@@ -118,6 +126,7 @@ Frameworks und Standards, die für technische Leitlinien, Benchmarking oder frei
 - Verwendung für technische Implementation Guidance
 - Können mandatory werden, wenn in Verträgen referenziert
 
+
 **Conditional Applicability**  
 Anforderungen, die nur gelten, wenn bestimmte Bedingungen erfüllt sind (z.B. Branche, geografische Lage, Service-Art, Kundenverträge, Regulatory Scope).
 
@@ -127,6 +136,7 @@ Anforderungen, die nur gelten, wenn bestimmte Bedingungen erfüllt sind (z.B. Br
 - Können mandatory werden basierend auf Geschäftsaktivitäten
 - Erfordern periodisches Re-Assessment bei Business-Entwicklung
 - Beispiele: PCI DSS (nur bei Kreditkartenverarbeitung), HIPAA (nur bei US-Healthcare-Daten)
+
 
 **Klarstellung zur Tier-Klassifizierung**: Die Tier-Klassifizierung (Mandatory, Conditional, Informational) bestimmt die **regulatorische Bindungskraft** und impliziert nicht per se Implementation-Verpflichtungen. Implementation-Entscheidungen werden durch den Risk Assessment und Treatment Process getroffen, unter Berücksichtigung regulatorischer Anforderungen zusammen mit anderen Faktoren wie Risk Appetite, Business Context und technischer Machbarkeit.
 
@@ -174,6 +184,7 @@ Anforderungen, die nur gelten, wenn bestimmte Bedingungen erfüllt sind (z.B. Br
 - Artikel 19: Recht auf Auskunft (Betroffenenrechte)
 - Artikel 328b OR (Obligationenrecht): Mitarbeiterüberwachung und Persönlichkeitsschutz
 
+
 **ISMS-Impact**:
 
 - Data Protection by Design und by Default
@@ -181,6 +192,7 @@ Anforderungen, die nur gelten, wenn bestimmte Bedingungen erfüllt sind (z.B. Br
 - Transparenz und Verhältnismässigkeit bei Mitarbeiterüberwachung
 - Bearbeitungsverzeichnis (Art. 12)
 - Data Breach Notification (Art. 24)
+
 
 **Referenz**: Bundesgesetz über den Datenschutz (SR 235.1), in Kraft seit 1. September 2023
 
@@ -199,6 +211,7 @@ Anforderungen, die nur gelten, wenn bestimmte Bedingungen erfüllt sind (z.B. Br
 - Article 33: Breach Notification (72 Stunden an Supervisory Authority)
 - Article 35: Data Protection Impact Assessment (DPIA) für High-Risk Processing
 
+
 **ISMS-Impact**:
 
 - Technical and Organizational Measures (TOMs)
@@ -207,6 +220,7 @@ Anforderungen, die nur gelten, wenn bestimmte Bedingungen erfüllt sind (z.B. Br
 - Data Breach Response Procedures
 - Vendor Management (Processor Agreements)
 - Privacy Impact Assessments
+
 
 **Referenz**: Regulation (EU) 2016/679, in Kraft seit 25. Mai 2018
 
@@ -225,6 +239,7 @@ Anforderungen, die nur gelten, wenn bestimmte Bedingungen erfüllt sind (z.B. Br
 - Clause 9: Performance Evaluation (Monitoring, Internal Audit, Management Review)
 - Clause 10: Improvement (Nonconformity, Corrective Action, Continual Improvement)
 
+
 **ISMS-Impact**:
 
 - Policy Framework Implementation
@@ -233,6 +248,7 @@ Anforderungen, die nur gelten, wenn bestimmte Bedingungen erfüllt sind (z.B. Br
 - Internal Audit Program
 - Management Review Process
 - Continual Improvement
+
 
 **Referenz**: ISO/IEC 27001:2022 Information Security Management Systems
 
@@ -263,6 +279,7 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
 - FINMA-Rundschreiben 2008/7 (Outsourcing - Banken)
 - FINMA-Rundschreiben 2018/3 (Outsourcing - Versicherer)
 
+
 **Anwendbarkeits-Trigger**:
 
 - Organisation ist ein **Schweizer Finanzinstitut**, das von der FINMA reguliert wird:
@@ -272,6 +289,7 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
   - Finanzinfrastrukturanbieter (Börsen, zentrale Wertpapierverwahrstellen)
   - Kollektive Kapitalanlagen (Fondsverwaltungslizenzen)
   
+
 **Kernbestimmungen**:
 
 - **Operational Resilience**: ICT Risk Management, Business Continuity Planning, Disaster Recovery
@@ -280,12 +298,14 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
 - **Incident Reporting**: Wesentliche operationelle Incidents an FINMA
 - **Internal Controls**: Governance, Risk Management, Internal Audit
 
+
 **ISMS-Impact**:
 
 - Erweiterte Business Continuity und Disaster Recovery Controls
 - Umfassendes Third-Party Risk Management (A.5.19-23)
 - Incident Response und Reporting Procedures (A.5.24-28)
 - Governance- und Oversight-Strukturen (A.5.1, 5.4)
+
 
 **Assessment**: Falls Organisation FINMA-Lizenz oder -Registrierung hält → **Mandatory Compliance**
 
@@ -304,6 +324,7 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
   - Versicherungs- und Rückversicherungsunternehmen
   - ICT-Drittdienstleister für Finanzunternehmen (Critical/Important-Designation)
 
+
 **Kernbestimmungen**:
 
 - **ICT Risk Management**: Umfassendes Framework für Identification, Protection, Detection, Response, Recovery
@@ -312,6 +333,7 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
 - **Third-Party Risk**: ICT Service Provider Oversight, Verträge, Exit-Strategien
 - **Information Sharing**: Threat Intelligence und Cybersecurity-Informationsaustausch
 
+
 **ISMS-Impact**:
 
 - Erweitertes ICT Risk Management Framework (über ISO 27001 hinaus)
@@ -319,6 +341,7 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
 - Mandatory Resilience Testing Programs
 - Supplier Risk Management mit Regulatory Oversight (A.5.19-23)
 - Information Sharing Arrangements
+
 
 **Assessment**: Falls Organisation ein EU-Finanzunternehmen oder kritischer ICT Service Provider ist → **Mandatory Compliance**
 
@@ -331,6 +354,7 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
 
 - Organisation ist ein **Essential oder Important Entity** in der EU in abgedeckten Sektoren:
   
+
 **Essential Entities** (strengere Anforderungen):
 
 - Energie (Elektrizität, Öl, Gas)
@@ -343,6 +367,7 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
 - Public Administration (zentrale Regierungsstellen)
 - Raumfahrt (bodengestützte Infrastruktur für Weltraumsysteme)
 
+
 **Important Entities** (weniger streng):
 
 - Post- und Kurierdienste
@@ -352,6 +377,7 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
 - Fertigung (Medizinprodukte, Elektronik, Maschinen, Kraftfahrzeuge, Luft- und Raumfahrt)
 - Digitale Anbieter (Online-Marktplätze, Suchmaschinen, Social Networks)
 - Forschungsorganisationen
+
 
 **Kernbestimmungen**:
 
@@ -363,6 +389,7 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
 - **Incident Notification**: 24-Stunden-Frühwarnung, 72-Stunden-detaillierter Incident Report an nationales CSIRT/zuständige Behörde
 - **Supervision**: Periodische Audits, Security Assessments, Ex-Post-Monitoring
 
+
 **ISMS-Impact**:
 
 - Umfassendes Cybersecurity Risk Management (Clause 6)
@@ -370,6 +397,7 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
 - Supply Chain Security-Anforderungen (A.5.19-23)
 - Technische Security Controls (Encryption, Access Control) (A.8.x-Serie)
 - Business Continuity und Disaster Recovery (A.5.29-30)
+
 
 **Strafen**: Bis zu €10 Millionen oder 2% des weltweiten Jahresumsatzes (Essential Entities), €7 Millionen oder 1,4% (Important Entities)
 
@@ -388,9 +416,11 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
   - Service Provider, die Cardholder Data handhaben
   - Jede Entität mit Zugang zur Cardholder Data Environment (CDE)
 
+
 **Kernbestimmungen**:
 
 - **12 Requirements über 6 Control Objectives**:
+
   1. Network Security Controls installieren und warten
   2. Secure Configurations auf alle System Components anwenden
   3. Gespeicherte Account Data schützen
@@ -413,6 +443,7 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
 - Logging, Monitoring und Audit Trails (A.8.15-16)
 - Penetration Testing und Vulnerability Scanning (A.8.8)
 
+
 **Validation**: Jährliches On-Site-Audit (Level 1), Self-Assessment Questionnaire (SAQ) für kleinere Händler
 
 **Assessment**: Falls Organisation Payment Cards handhabt → **Mandatory Compliance**
@@ -430,6 +461,7 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
   - Healthcare Clearinghouses
   - Business Associates (Vendors, Contractors, die PHI im Namen von Covered Entities handhaben)
 
+
 **Kernbestimmungen**:
 
 - **HIPAA Security Rule** (45 CFR Part 164):
@@ -440,6 +472,7 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
 - **Breach Notification Rule**: Notification an Individuals (60 Tage), HHS, Media (falls >500 betroffen)
 - **Business Associate Agreements (BAAs)**: Erforderliche Verträge mit allen Vendors, die PHI handhaben
 
+
 **ISMS-Impact**:
 
 - Risk Assessment und Risk Management (erforderlich unter Security Rule)
@@ -449,6 +482,7 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
 - Incident Response und Breach Notification (A.5.24-28)
 - Workforce Training und Awareness (A.6.3)
 - Business Associate Management (A.5.19-23)
+
 
 **Strafen**: $100-$50.000 pro Violation (bis zu $1,5 Millionen pro Jahr), strafrechtliche Strafen für Willful Neglect
 
@@ -466,6 +500,7 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
   - Federal Contractors und Cloud Service Providers (FedRAMP Authorization)
   - Organisationen, die Federal Information verarbeiten
 
+
 **Kernbestimmungen**:
 
 - **Risikobasierter Ansatz für Cybersecurity**: Nach NIST SP 800-53 Controls
@@ -476,6 +511,7 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
   - Third-Party Assessment durch akkreditierte Assessors (3PAO)
   - Authorization durch JAB (Joint Authorization Board) oder Agency ATO (Authority to Operate)
 
+
 **ISMS-Impact**:
 
 - NIST SP 800-53 Control Implementation (umfassende Security Controls)
@@ -483,6 +519,7 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
 - Continuous Monitoring und Assessment (A.8.15-16)
 - Supply Chain Risk Management (A.5.19-23)
 - Incident Response aligned mit NIST Frameworks (A.5.24-28)
+
 
 **Assessment**: Falls Organisation US Federal Contracts oder FedRAMP Authorization hat → **Mandatory Compliance**
 
@@ -497,6 +534,7 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
 - Organisation ist **Betreiber** (nutzt KI-Systeme in eigener Verantwortung in der EU)
 - Organisation ist **Einführer oder Händler** von KI-Systemen in der EU
 - KI-System-Ergebnisse betreffen Personen in der EU (unabhängig vom Standort des Anbieters)
+
 
 **Risikoklassifizierung** (bestimmt den Umfang der Pflichten):
 
@@ -517,10 +555,12 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
 - Artikel 14: Massnahmen zur menschlichen Aufsicht
 - Artikel 15: Genauigkeit, Robustheit und Cybersicherheit
 
+
 **Wesentliche Anforderungen (alle Anbieter/Betreiber)**:
 
 - Artikel 4: KI-Kompetenz für Personal, das KI-Systeme bedient
 - Artikel 50: Transparenz für bestimmte KI-Systeme (Chatbots, synthetische Inhalte)
+
 
 **Umsetzungszeitplan**:
 
@@ -528,6 +568,7 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
 - **August 2025**: Pflichten für KI-Modelle mit allgemeinem Verwendungszweck
 - **August 2026**: Vollständige Anwendung für Hochrisiko-KI-Systeme
 - **August 2027**: Hochrisiko-KI in regulierten Produkten (Medizinprodukte, Maschinen)
+
 
 **Auswirkungen auf das ISMS**:
 
@@ -539,6 +580,7 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
 - Schulung des Personals zur KI-Kompetenz (A.6.3)
 - Lieferantenmanagement für KI-Komponenten (A.5.19-23)
 - Dokumentation und Transparenz (A.5.37)
+
 
 **Sanktionen**: Bis zu 35 Mio. EUR oder 7% des weltweiten Jahresumsatzes (verbotene Praktiken), 15 Mio. EUR oder 3% (sonstige Verstösse)
 
@@ -579,12 +621,14 @@ Diese Frameworks bieten **technische Leitlinien und Best Practices**, sind aber 
 - **NIST SP 800-61**: Computer Security Incident Handling Guide
 - **NIST SP 800-63**: Digital Identity Guidelines (Authentication, Federation)
 
+
 **Verwendung im ISMS**:
 
 - Technische Implementation Guidance für ISO 27001 Controls
 - Incident Response Playbook Development (800-61)
 - Identity and Access Management (800-63)
 - Risk Assessment Methodologies (800-30, 800-37)
+
 
 ## CIS Controls
 
@@ -610,6 +654,7 @@ Diese Frameworks bieten **technische Leitlinien und Best Practices**, sind aber 
 - Vulnerability Management (A.8.8)
 - Benchmarking der organisatorischen Security Maturity
 
+
 ## OWASP (Open Web Application Security Project)
 
 **Beschreibung**: Community-getriebene Web Application Security Standards  
@@ -622,12 +667,14 @@ Diese Frameworks bieten **technische Leitlinien und Best Practices**, sind aber 
 - **OWASP SAMM**: Software Assurance Maturity Model
 - **OWASP Cheat Sheets**: Secure Coding Guidance
 
+
 **Verwendung im ISMS**:
 
 - Secure Software Development Lifecycle (A.8.25-28)
 - Web Application Security Testing
 - Developer Security Training (A.6.3)
 - Code Review und Vulnerability Assessment
+
 
 ## ISO/IEC 27002:2022
 
@@ -640,6 +687,7 @@ Diese Frameworks bieten **technische Leitlinien und Best Practices**, sind aber 
 - Control Selection und Tailoring
 - Proportionality- und Scalability-Überlegungen
 
+
 ## Cloud Security Alliance (CSA)
 
 **Beschreibung**: Cloud Computing Security Best Practices  
@@ -651,11 +699,13 @@ Diese Frameworks bieten **technische Leitlinien und Best Practices**, sind aber 
 - **CSA Security Trust Assurance and Risk (STAR)**: Cloud Provider Certification
 - **CSA Consensus Assessments Initiative Questionnaire (CAIQ)**: Cloud Security Assessment
 
+
 **Verwendung im ISMS**:
 
 - Cloud Service Provider Evaluation (A.5.23)
 - Cloud Security Architecture
 - Vendor Security Assessments
+
 
 ## Weitere Best Practice Frameworks
 
@@ -681,6 +731,7 @@ Organisationen können zusätzliche Frameworks basierend auf dem Branchen-Kontex
 - Organisation bietet Services für US Federal Agencies
 - Vertrag fordert explizit NIST Controls oder FedRAMP Authorization
 
+
 **Begründung**: US Federal Requirements sind nicht extraterritorial und gelten nicht für Nicht-US-Organisationen, es sei denn, vertraglich gefordert.
 
 **ISMS-Behandlung**:
@@ -688,6 +739,7 @@ Organisationen können zusätzliche Frameworks basierend auf dem Branchen-Kontex
 - NIST Frameworks können als **Informational Reference** (Tier 3) verwendet werden
 - FISMA/FedRAMP werden **Mandatory** (Tier 1) nur mit Federal Contracts
 - NIST SP 800-series verwendet für Technical Guidance ohne Mandatory Compliance
+
 
 ---
 
@@ -704,6 +756,7 @@ Organisationen MÜSSEN jährliche Regulatory Applicability Assessments durchfüh
 - Arten von verarbeiteten Daten (PII, Healthcare, Financial, etc.)
 - Kundenbasis (B2B, B2C, Government)
 - Erbrachte Services (Cloud, Consulting, Software, etc.)
+
 
 **Schritt 2: Mapping von Regulations zu Aktivitäten**
 
@@ -723,6 +776,7 @@ Organisationen MÜSSEN jährliche Regulatory Applicability Assessments durchfüh
 - Dokumentation der Rationale für Anwendbarkeitsbestimmung
 - Zuweisung von Ownership (Legal, Compliance, CISO, DPO)
 - Jährliche Updates oder bei Business-Änderungen
+
 
 **Hinweis**: Dieser Assessment-Prozess identifiziert **welche Regulations gelten**, nicht wie Compliance implementiert oder verifiziert wird. Implementation und Verification werden durch separate ISMS-Prozesse behandelt (Risk Assessment, Control Implementation, Compliance Monitoring).
 
@@ -751,6 +805,7 @@ Organisationen sollten eine Regulatory Applicability Matrix pflegen:
 - Regulatory Changes (neue Gesetze, aktualisierte Standards)
 - Certification Scope Changes (ISO 27001 Expansion)
 
+
 **Häufigkeit**: Jährliches Minimum + getriggerte Reassessments
 
 **Verantwortlichkeit**: CISO + Legal/Compliance + DPO (vierteljährliches Monitoring), Executive Management Approval (jährliches umfassendes Review)
@@ -778,10 +833,12 @@ sind kategorisiert gemäss ISMS-POL-00 (Regulatory Applicability Framework):
 - ISO/IEC 27001:2022
 - [Weitere mandatory Regulations gemäss ISMS-POL-00]
 
+
 **Informational Reference / Best Practice Alignment:**
 
 - NIST Special Publications (SP 800-series)
 - [Weitere Frameworks gemäss ISMS-POL-00]
+
 
 **United States Federal Requirements:**
 Verweise auf US Federal Frameworks (FISMA, FIPS, FedRAMP, NIST Cybersecurity 
@@ -819,11 +876,13 @@ Für vollständige Regulatory Categorization siehe ISMS-POL-00.
 - Bestätigung, dass Regulatory Applicability Matrix aktuell ist (jährlich reviewed)
 - Validierung, dass Applicability Determinations dokumentierte Rationale haben
 
+
 **Für External Audits**:
 
 - Bereitstellung von ISMS-POL-00 als Foundation Document
 - Referenzierung der Regulatory Applicability Matrix
 - Demonstration des jährlichen Reassessment-Prozesses und Ownership
+
 
 **Evidence für diese Policy**:
 Evidence für diese Policy besteht aus:
@@ -833,11 +892,13 @@ Evidence für diese Policy besteht aus:
 - Review Records (jährliche und getriggerte Assessments)
 - Rationale-Dokumentation für Applicability Determinations
 
+
 Diese Policy erfordert NICHT:
 
 - Compliance Dashboards oder KPIs
 - Evidence von Control Implementation
 - Compliance Status Tracking (adressiert in separaten Compliance Monitoring Processes)
+
 
 ---
 
@@ -852,6 +913,7 @@ Diese Policy erfordert NICHT:
 - Update der Applicability Matrix bei Trigger-Änderungen
 - Dokumentation des Reviews im vierteljährlichen ISMS Review Meeting
 
+
 **Jährliches Review** (Executive Management Approval):
 
 - Umfassendes Regulatory Landscape Assessment
@@ -860,6 +922,7 @@ Diese Policy erfordert NICHT:
 - Executive Sign-Off zu Compliance Obligations
 - Update von Version Control und Distribution
 
+
 **Getriggertes Review**:
 
 - Neue Regulation publiziert (DORA effective, AI Act published)
@@ -867,12 +930,14 @@ Diese Policy erfordert NICHT:
 - Merger/Acquisition
 - Major Contract mit neuen Regulatory Requirements
 
+
 **Verantwortlichkeit**:
 
 - **Regulatory Monitoring**: Legal/Compliance Officer (primär), CISO (unterstützend)
 - **Applicability Assessment**: CISO + Legal/Compliance + DPO (gemeinsame Verantwortlichkeit)
 - **Matrix Updates**: CISO (Owner), DPO (Data Protection Regulations)
 - **Policy Updates**: CISO (Autor), Executive Management (Approval)
+
 
 ## Kommunikation
 
@@ -884,12 +949,14 @@ Diese Policy erfordert NICHT:
 - CISO Briefing an Executive Management
 - Training Material Updates (bei wesentlichen Änderungen)
 
+
 **Benachrichtigte Stakeholder**:
 
 - Alle ISMS Policy Authors (sofortiger Impact)
 - System Owners (Control Scoping Impact)
 - Internal Audit (Audit Planning)
 - External Auditors (Certification Scope)
+
 
 ## Version Control
 
@@ -900,12 +967,14 @@ Diese Policy erfordert NICHT:
 - Strukturelle Änderungen am Framework
 - Entfernung von Regulations (nicht mehr applicable)
 
+
 **Minor Version (X.Y)**:
 
 - Klarstellungen zu bestehenden Regulations
 - Zusätzliche informational Frameworks (Tier 3)
 - Reference Updates (NIST Publication Versions, GDPR Guidance)
 - Nicht-strukturelle Verbesserungen
+
 
 ---
 
@@ -918,6 +987,7 @@ Diese Policy erfordert NICHT:
 - ISMS Statement of Applicability (Annex A Scoping)
 - ISMS Compliance Monitoring Processes
 
+
 **Externe Referenzen**:
 
 - Swiss Federal Data Protection Act (SR 235.1)
@@ -927,6 +997,7 @@ Diese Policy erfordert NICHT:
 - PCI DSS (pcisecuritystandards.org)
 - DORA (Regulation 2022/2554)
 - NIS2 (Directive 2022/2555)
+
 
 ---
 
@@ -956,11 +1027,13 @@ Diese Policy etabliert die Anwendbarkeit von Regulations für das Information Se
 - Assessment-Methodik zur Bestimmung der Regulatory Applicability
 - Review- und Update-Prozesse für Änderungen in der Regulatory Landscape
 
+
 **Was diese Policy NICHT etabliert:**
 
 - Risk Treatment-Entscheidungen (adressiert in Clause 6 - Risk Management)
 - Control Implementation-Anforderungen (adressiert in Annex A Controls)
 - Compliance-Status oder Verification (adressiert in Compliance Monitoring Processes)
+
 
 **Separation of Concerns:**
 
@@ -969,8 +1042,11 @@ Diese Policy etabliert die Anwendbarkeit von Regulations für das Information Se
 - **Control Implementation (Annex A)**: Implementiert SPEZIFISCHE Controls
 - **Compliance Monitoring**: Verifiziert und trackt COMPLIANCE-Status
 
+
 ---
 
 **ENDE VON ISMS-POL-00**
 
 *"Regulatory Applicability ist das Fundament. Implementation und Compliance sind die darauf aufbauende Struktur."*
+
+<!-- QA_VERIFIED: 2026-02-01 -->

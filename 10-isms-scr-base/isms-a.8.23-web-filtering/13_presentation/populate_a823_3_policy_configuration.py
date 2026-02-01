@@ -224,19 +224,19 @@ def populate_acceptable_use_alignment(wb):
 
     data = [
         # AUP Section, AUP Requirement, Web Filter Implementation, Enforcement Method, Compliance Status, Gap/Notes
-        ["3.1 Prohibited Activities", "No accessing illegal content", "Block: Adult, Drugs, Weapons, Gambling categories", "Category blocking + logging", "Compliant", "Full enforcement"],
-        ["3.2 Security Requirements", "No bypassing security controls", "Block: Anonymizers, VPN services, proxy sites", "Block + alert + disciplinary", "Compliant", "Alert triggers HR review"],
-        ["3.3 Data Protection", "No unauthorized data sharing", "Block: Personal storage, P2P; DLP on uploads", "Block + DLP inspection", "Compliant", "Integrated with DLP policy"],
-        ["3.4 Productivity Standards", "Reasonable personal use only", "Monitor: Social media, streaming bandwidth limited", "Bandwidth limits + monitoring", "Compliant", "Time-based quotas available"],
-        ["3.5 Software Installation", "Only approved software", "Caution: Software downloads; scan all files", "Sandbox + approval workflow", "Compliant", "IT approval required"],
-        ["3.6 Email/Communication", "Professional communication only", "Caution: Personal webmail; SSL inspection", "Warning page + logging", "Compliant", "DLP monitors sensitive data"],
-        ["3.7 Social Media", "Authorized use only", "Allow: Business use; Block: Call center", "Group-based policy", "Compliant", "Role-based restrictions"],
-        ["3.8 Remote Access", "Secure connection required", "Enforce: Zscaler Client always-on", "ZCC mandatory for remote", "Compliant", "MDM enforced"],
-        ["3.9 Monitoring Notice", "Users acknowledge monitoring", "Full traffic logging and inspection", "SSL inspection enabled", "Compliant", "Consent in employment agreement"],
-        ["3.10 Incident Reporting", "Report security concerns", "Alert: Suspicious activity auto-reported", "SIEM integration + SOC alerts", "Compliant", "Automated + manual reporting"],
-        ["4.1 Guest Access", "Limited internet access only", "Guest policy: News, weather, basic web", "Captive portal + restricted policy", "Compliant", "Separate guest SSID"],
-        ["4.2 BYOD Requirements", "Security software required", "ZCC required for corporate access", "Conditional access via MDM", "Partial", "Enforcement improvement planned"],
-        ["5.1 Consequences", "Violations may result in discipline", "Alerts trigger HR notification workflow", "Automated alerting", "Compliant", "Integration with HR systems"],
+        ["3.1 Prohibited Activities", "No accessing illegal content", "Block: Adult, Drugs, Weapons, Gambling categories", "Category blocking + logging", "✅ Compliant", "Full enforcement"],
+        ["3.2 Security Requirements", "No bypassing security controls", "Block: Anonymizers, VPN services, proxy sites", "Block + alert + disciplinary", "✅ Compliant", "Alert triggers HR review"],
+        ["3.3 Data Protection", "No unauthorized data sharing", "Block: Personal storage, P2P; DLP on uploads", "Block + DLP inspection", "✅ Compliant", "Integrated with DLP policy"],
+        ["3.4 Productivity Standards", "Reasonable personal use only", "Monitor: Social media, streaming bandwidth limited", "Bandwidth limits + monitoring", "✅ Compliant", "Time-based quotas available"],
+        ["3.5 Software Installation", "Only approved software", "Caution: Software downloads; scan all files", "Sandbox + approval workflow", "✅ Compliant", "IT approval required"],
+        ["3.6 Email/Communication", "Professional communication only", "Caution: Personal webmail; SSL inspection", "Warning page + logging", "✅ Compliant", "DLP monitors sensitive data"],
+        ["3.7 Social Media", "Authorized use only", "Allow: Business use; Block: Call center", "Group-based policy", "✅ Compliant", "Role-based restrictions"],
+        ["3.8 Remote Access", "Secure connection required", "Enforce: Zscaler Client always-on", "ZCC mandatory for remote", "✅ Compliant", "MDM enforced"],
+        ["3.9 Monitoring Notice", "Users acknowledge monitoring", "Full traffic logging and inspection", "SSL inspection enabled", "✅ Compliant", "Consent in employment agreement"],
+        ["3.10 Incident Reporting", "Report security concerns", "Alert: Suspicious activity auto-reported", "SIEM integration + SOC alerts", "✅ Compliant", "Automated + manual reporting"],
+        ["4.1 Guest Access", "Limited internet access only", "Guest policy: News, weather, basic web", "Captive portal + restricted policy", "✅ Compliant", "Separate guest SSID"],
+        ["4.2 BYOD Requirements", "Security software required", "ZCC required for corporate access", "Conditional access via MDM", "⚠️ Partial", "Enforcement improvement planned"],
+        ["5.1 Consequences", "Violations may result in discipline", "Alerts trigger HR notification workflow", "Automated alerting", "✅ Compliant", "Integration with HR systems"],
     ]
 
     count = safely_write_data(ws, 6, data)
