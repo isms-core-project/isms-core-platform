@@ -1863,4 +1863,4 @@ if __name__ == '__main__':
 *"The optimist thinks this is the best of all possible worlds. The pessimist fears it is true."*
 — J. Robert Oppenheimer
 
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

@@ -2188,4 +2188,4 @@ PRIORITY_OPTIONS = ["Critical", "High", "Medium", "Low"]
 *"Security is a process, not a product. It's also not a destination but a journey."*
 — Ron Rivest
 
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

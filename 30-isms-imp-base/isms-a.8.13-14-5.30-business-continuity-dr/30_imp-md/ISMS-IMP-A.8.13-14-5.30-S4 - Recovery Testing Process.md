@@ -1711,4 +1711,4 @@ Based on lessons learned:
 *"Strive not to be a success, but rather to be of value."*
 — Albert Einstein
 
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

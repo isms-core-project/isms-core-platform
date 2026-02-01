@@ -3375,4 +3375,4 @@ Expect 30-50% cost increase for emergency procurement:
 *"In cryptography, we must always assume the worst about our adversaries."*
 — Adi Shamir
 
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

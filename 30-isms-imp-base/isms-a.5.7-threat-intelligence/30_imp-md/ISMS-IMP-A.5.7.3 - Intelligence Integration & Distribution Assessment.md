@@ -2711,4 +2711,4 @@ Where Cost_Avoidance_Estimate is based on:
 *"The opposite of a correct statement is a false statement. But the opposite of a profound truth may well be another profound truth."*
 — Niels Bohr
 
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

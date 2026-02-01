@@ -3228,4 +3228,4 @@ A.5.8.3 consolidation script reads this workbook and extracts:
 *"Everything we call real is made of things that cannot be regarded as real."*
 — Niels Bohr
 
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

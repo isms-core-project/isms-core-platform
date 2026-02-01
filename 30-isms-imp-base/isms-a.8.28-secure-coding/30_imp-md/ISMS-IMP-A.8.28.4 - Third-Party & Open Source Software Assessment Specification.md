@@ -1218,4 +1218,4 @@ WORKBOOK_4_SCHEMA = {
 *"Complexity is the enemy of security."*
 — Ron Rivest
 
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

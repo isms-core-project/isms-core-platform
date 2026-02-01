@@ -4676,4 +4676,4 @@ Before finalizing the workbook, verify:
 *"Quantum physics tells us that reality is far more interconnected than our everyday experience suggests."*
 — Alain Aspect
 
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

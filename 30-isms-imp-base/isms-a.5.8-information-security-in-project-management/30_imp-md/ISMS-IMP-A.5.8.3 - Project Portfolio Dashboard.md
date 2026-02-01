@@ -3186,4 +3186,4 @@ CALCULATE(
 *"A physicist is just an atom's way of looking at itself."*
 — Niels Bohr
 
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

@@ -839,4 +839,4 @@ Evidence/
 *"If quantum mechanics hasn't profoundly shocked you, you haven't understood it yet."*
 — Niels Bohr
 
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

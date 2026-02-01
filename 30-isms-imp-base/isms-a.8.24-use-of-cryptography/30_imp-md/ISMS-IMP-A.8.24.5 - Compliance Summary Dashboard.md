@@ -3049,4 +3049,4 @@ for f in files:
 *"Every positive integer is one of Ramanujan's personal friends."*
 — J.E. Littlewood, on Ramanujan
 
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

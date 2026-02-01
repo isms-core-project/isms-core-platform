@@ -2024,7 +2024,4 @@ Python automation code available as separate script: `generate_a816_5_compliance
 
 ---
 
----
-
-
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

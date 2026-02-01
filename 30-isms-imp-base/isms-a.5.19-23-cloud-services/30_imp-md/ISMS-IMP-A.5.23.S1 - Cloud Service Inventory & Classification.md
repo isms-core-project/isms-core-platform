@@ -3796,4 +3796,4 @@ Move beyond periodic assessments:
 *"What I cannot create, I do not understand."*
 — Richard Feynman
 
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

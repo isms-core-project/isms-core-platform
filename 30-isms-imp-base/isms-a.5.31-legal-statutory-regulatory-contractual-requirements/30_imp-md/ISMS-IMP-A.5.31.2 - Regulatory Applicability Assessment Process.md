@@ -3692,5 +3692,4 @@ Before finalizing and submitting applicability assessment for approval:
 *"If you thought that science was certain — well, that is just an error on your part."*
 — Richard Feynman
 
-
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

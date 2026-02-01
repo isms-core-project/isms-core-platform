@@ -3532,4 +3532,4 @@ az monitor metrics list \
 *"Differential cryptanalysis taught us that even small biases can lead to complete breaks of cryptographic systems."*
 — Adi Shamir
 
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

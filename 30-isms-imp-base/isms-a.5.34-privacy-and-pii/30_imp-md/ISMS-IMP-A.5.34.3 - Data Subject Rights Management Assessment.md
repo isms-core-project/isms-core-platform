@@ -4901,4 +4901,4 @@ def test_complete_workbook():
 *"The existing scientific concepts cover always only a very limited part of reality, and the other part that has not yet been understood is infinite."*
 — Werner Heisenberg
 
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

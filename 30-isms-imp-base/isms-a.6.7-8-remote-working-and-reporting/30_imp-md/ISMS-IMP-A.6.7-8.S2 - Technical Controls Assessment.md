@@ -607,4 +607,4 @@ Before submitting assessment, verify:
 — Bruce Schneier
 
 
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

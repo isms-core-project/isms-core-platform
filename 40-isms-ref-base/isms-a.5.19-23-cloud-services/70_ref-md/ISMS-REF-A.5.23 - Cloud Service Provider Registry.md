@@ -518,4 +518,4 @@ This registry SHALL be updated when:
 
 **END OF DOCUMENT**
 
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

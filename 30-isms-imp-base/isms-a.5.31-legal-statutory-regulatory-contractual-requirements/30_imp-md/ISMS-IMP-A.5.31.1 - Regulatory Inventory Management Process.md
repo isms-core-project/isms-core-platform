@@ -416,5 +416,4 @@ Tier 1 and Tier 2 regulations must be added to ISMS-POL-00 (master regulatory fr
 *"The idea is to try to give all the information to help others to judge the value of your contribution; not just the information that leads to judgment in one particular direction or another."*
 — Richard Feynman
 
-
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

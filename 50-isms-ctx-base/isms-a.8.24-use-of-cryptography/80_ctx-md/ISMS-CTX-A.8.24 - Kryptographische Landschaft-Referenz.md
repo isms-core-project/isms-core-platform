@@ -516,4 +516,4 @@ Alle kryptographischen Kontrollanforderungen sind ausschliesslich in ISMS-POL-A.
 
 *Dies ist ein technisches Referenzdokument ausschliesslich zu Sensibilisierungszwecken. Es etabliert keine ISMS-Anforderungen oder schafft Compliance-Verpflichtungen.*
 
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

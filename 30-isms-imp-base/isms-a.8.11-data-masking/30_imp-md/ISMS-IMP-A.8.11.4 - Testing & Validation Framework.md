@@ -1683,4 +1683,4 @@ Base columns A-Q, plus:
 *"The only reason for time is so that everything doesn't happen at once."*
 — Albert Einstein
 
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

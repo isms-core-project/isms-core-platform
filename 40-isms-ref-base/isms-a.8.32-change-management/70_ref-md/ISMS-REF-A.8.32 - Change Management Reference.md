@@ -686,4 +686,4 @@ Provide detailed methodology for assessing change risk based on impact and likel
 
 *This technical reference supports implementation of ISMS-POL-A.8.32. All binding requirements are defined in the policy document.*
 
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

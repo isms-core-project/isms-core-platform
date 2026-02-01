@@ -2044,5 +2044,4 @@ python3 generate_reg_a523_3_secure_config.py
 *"Know how to solve every problem that has been solved."*
 — Richard Feynman
 
-
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

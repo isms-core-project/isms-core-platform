@@ -1441,4 +1441,4 @@ Review Date: Annual (next review: 1 year from acceptance)
 *"The only source of knowledge is experience."*
 — Albert Einstein
 
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

@@ -492,5 +492,4 @@ Before submitting assessment, verify:
 *"Physical security is the foundation upon which all other security measures are built."*
 — ASIS International
 
-
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

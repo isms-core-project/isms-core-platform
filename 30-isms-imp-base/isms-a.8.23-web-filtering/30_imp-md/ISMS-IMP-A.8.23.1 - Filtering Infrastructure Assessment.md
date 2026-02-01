@@ -3936,4 +3936,4 @@ Special Considerations:    [Text area]
 *"I had made an important discovery: essentially, all games have an equilibrium point."*
 — John Nash
 
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->

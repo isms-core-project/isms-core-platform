@@ -574,5 +574,4 @@ Low: =COUNTIFS(Gap_Consolidation!D:D,"Low",Gap_Consolidation!H:H,"<>Closed")
 *"What gets measured gets managed."*
 — Peter Drucker
 
-
-*Where bamboo antennas actually work.* 🎋
+<!-- QA_VERIFIED: 2026-01-31 -->
