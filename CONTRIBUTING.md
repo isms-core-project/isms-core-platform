@@ -30,6 +30,13 @@ Policies are foundation documents. They must be stable, consistent, and formally
 
 Implementation guides adapt to context. Variations are acceptable when they serve the control's purpose.
 
+**IMP QA Criteria (v3.2+):**
+- Control quotes use "should" (not "shall") per ISO 27001:2022 Annex A
+- British spelling (organisation, authorised, standardised)
+- Document structure: PART I (User Guide) + PART II (Technical Specification)
+- Standard ending: `**END OF SPECIFICATION**` + separator + quote with em-dash (—)
+- QA tag: `<!-- QA_VERIFIED: YYYY-MM-DD -->` after bamboo tag
+
 ### SCR (Python Scripts)
 
 | Attribute | Requirement |
@@ -133,10 +140,52 @@ logger = logging.getLogger(__name__)
 isms-a.X.X-control-name/
 ├── 10_generator-master/  # Python generators
 ├── 11_normalize/         # Normalization scripts
-├── 13_presentation/      # Sample data population
+├── 12_consolidator/      # Dashboard consolidation scripts
+├── 13_presentation/      # Sample data population (CISO demos)
 ├── 50_sanity/            # Validation scripts
-└── 90_workbooks/         # Generated Excel output
+└── 90_workbooks/         # Generated Excel output (excluded from git)
 ```
+
+---
+
+## Presentation Mode (13_presentation)
+
+Populate scripts fill workbooks with realistic sample data for CISO presentations.
+
+**Pattern for MergedCell handling:**
+
+```python
+from openpyxl.cell.cell import MergedCell
+
+def safe_cell_write(ws, cell_ref, value):
+    """Safely write to a cell, handling merged cells."""
+    try:
+        cell = ws[cell_ref]
+        if not isinstance(cell, MergedCell):
+            cell.value = value
+    except Exception as e:
+        pass
+```
+
+**Reference implementations:**
+- `isms-a.8.23-web-filtering/13_presentation/` - 4 scripts, 250+ data points
+- `isms-a.8.24-use-of-cryptography/13_presentation/` - 4 scripts, 350+ data points
+
+---
+
+## Online Research Requirement
+
+**All IMP and SCR development MUST include online research** to verify:
+- Current best practices for the control
+- Alignment with NIST, CIS, MITRE ATT&CK frameworks
+- Technical accuracy of implementation guidance
+- Latest tool capabilities and integration patterns
+
+Key frameworks to reference:
+- ISO/IEC 27001:2022 & 27002:2022
+- NIST CSF 2.0 & SP 800-53 Rev 5
+- CIS Controls v8
+- MITRE ATT&CK Enterprise
 
 ---
 
