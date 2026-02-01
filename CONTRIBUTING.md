@@ -160,14 +160,25 @@ logger = logging.getLogger(__name__)
 
 ## 📂 Folder Structure
 
+Each control is self-contained with all artifact types:
+
 ```
 isms-a.X.X-control-name/
-├── 10_generator-master/  # 🐍 Python generators
-├── 11_normalize/         # 🔧 Normalization scripts
-├── 12_consolidator/      # 📊 Dashboard consolidation
-├── 13_presentation/      # 🎬 CISO demo data
-├── 50_sanity/            # ✅ Validation scripts
-└── 90_workbooks/         # 📁 Excel output (gitignored)
+├── POL/                      # 📜 Policy documents
+│   └── 10_pol-md/
+├── IMP/                      # 📋 Implementation guides
+│   └── 30_imp-md/
+├── SCR/                      # 🐍 Scripts & workbooks
+│   ├── 10_generator-master/  # Python generators
+│   ├── 11_normalize/         # Normalization scripts
+│   ├── 12_consolidator/      # Dashboard consolidation
+│   ├── 13_presentation/      # CISO demo data
+│   ├── 50_sanity/            # Validation scripts
+│   └── 90_workbooks/         # Excel output
+├── REF/                      # 📚 Reference materials (if applicable)
+│   └── 70_ref-md/
+└── CTX/                      # 🏢 Context documents (if applicable)
+    └── 80_ctx-md/
 ```
 
 ---

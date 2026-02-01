@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://www.iso.org/standard/27001"><img src="https://img.shields.io/badge/ISO_27001-2022-0066CC?style=flat-square&logo=iso&logoColor=white" alt="ISO 27001:2022"/></a>
-  <a href="#-status"><img src="https://img.shields.io/badge/Progress-65.4%25-32CD32?style=flat-square" alt="Progress"/></a>
+  <a href="#-status"><img src="https://img.shields.io/badge/Progress-80.8%25-32CD32?style=flat-square" alt="Progress"/></a>
   <a href="#-status"><img src="https://img.shields.io/badge/Section_8-100%25_Complete-00AA00?style=flat-square" alt="Section 8"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-AGPL_3.0-9400D3?style=flat-square" alt="License"/></a>
 </p>
@@ -68,34 +68,43 @@ Workbook (Output)    → Evidence and compliance metrics
 
 ```
 isms-core/
-├── 10-isms-scr-base/    # 🐍 Python generator scripts
-├── 30-isms-imp-base/    # 📋 Implementation guides
-├── 40-isms-ref-base/    # 📚 Reference materials
-├── 50-isms-ctx-base/    # 🏢 Context documents
-├── 70-isms-pol-base/    # 📜 Policy documents
-├── PHILOSOPHY.md        # ✈️ Anti-cargo-cult methodology
-├── CONTRIBUTING.md      # 🔧 QA process and standards
-└── STATUS.md            # 📊 Current implementation progress
+├── A.5-organizational-controls/     # 17 controls
+│   ├── isms-a.5.7-threat-intelligence/
+│   │   ├── POL/    ├── IMP/    ├── SCR/    └── REF/
+│   └── ...
+├── A.6-people-controls/             # 3 controls
+├── A.7-physical-controls/           # 1 control
+├── A.8-technological-controls/      # 21 controls
+├── CONTROLS.md                      # 📋 Control index (start here!)
+├── PHILOSOPHY.md                    # ✈️ Anti-cargo-cult methodology
+├── CONTRIBUTING.md                  # 🔧 QA process and standards
+└── STATUS.md                        # 📊 Current implementation progress
 ```
+
+Controls are organized by ISO 27001:2022 Annex A section.
 
 ---
 
 ## 🚀 Quick Start
 
-Controls are organized by document type across bases:
+**Browse controls:** Start with [CONTROLS.md](CONTROLS.md) for a complete index.
+
+Each control folder contains everything you need:
 
 ```
-70-isms-pol-base/isms-a.X.X-control/10_pol-md/      # Policies
-30-isms-imp-base/isms-a.X.X-control/30_imp-md/      # Implementation guides
-10-isms-scr-base/isms-a.X.X-control/
-├── 10_generator-master/   # Python generators
-├── 13_presentation/       # Demo data scripts
-└── 90_workbooks/          # Generated Excel output
+A.8-technological-controls/
+└── isms-a.8.24-use-of-cryptography/
+    ├── POL/10_pol-md/         # 📜 Policy documents
+    ├── IMP/30_imp-md/         # 📋 Implementation guides
+    └── SCR/                   # 🐍 Scripts & workbooks
+        ├── 10_generator-master/
+        ├── 13_presentation/
+        └── 90_workbooks/
 ```
 
 Generate a workbook:
 ```bash
-cd 10-isms-scr-base/isms-a.8.24-use-of-cryptography/10_generator-master
+cd A.8-technological-controls/isms-a.8.24-use-of-cryptography/SCR/10_generator-master
 python3 generate_a824_1_data_transmission_assessment.py
 ```
 
@@ -183,8 +192,8 @@ See [PHILOSOPHY.md](PHILOSOPHY.md) for the full methodology.
 </tr>
 <tr>
 <td>Control Groups Complete</td>
-<td><strong>34 of 52</strong></td>
-<td><img src="https://img.shields.io/badge/65.4%25-32CD32?style=flat-square" alt="65.4%"/></td>
+<td><strong>42 of 52</strong></td>
+<td><img src="https://img.shields.io/badge/80.8%25-32CD32?style=flat-square" alt="80.8%"/></td>
 </tr>
 <tr>
 <td>Section 8 (Technological)</td>
@@ -193,12 +202,12 @@ See [PHILOSOPHY.md](PHILOSOPHY.md) for the full methodology.
 </tr>
 <tr>
 <td>Python Scripts</td>
-<td><strong>330+</strong></td>
+<td><strong>360+</strong></td>
 <td><img src="https://img.shields.io/badge/Validated-0066CC?style=flat-square" alt="Validated"/></td>
 </tr>
 <tr>
 <td>IMP Documents</td>
-<td><strong>146+</strong></td>
+<td><strong>158+</strong></td>
 <td><img src="https://img.shields.io/badge/QA_Complete-9400D3?style=flat-square" alt="QA Complete"/></td>
 </tr>
 </table>
@@ -242,9 +251,10 @@ For commercial licensing: admin@gregorygriffin.org
 
 | Document | Description |
 |----------|-------------|
+| [CONTROLS.md](CONTROLS.md) | 📋 **Start here!** Index of all 42 control implementations |
+| [STATUS.md](STATUS.md) | 📊 Current implementation progress and metrics |
 | [PHILOSOPHY.md](PHILOSOPHY.md) | ✈️ Anti-cargo-cult methodology and the Feynman principle |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | 🔧 QA process, quality standards, development guidelines |
-| [STATUS.md](STATUS.md) | 📊 Current implementation progress and metrics |
 
 ---
 
