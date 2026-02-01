@@ -407,41 +407,195 @@ When collecting evidence:
 
 ### 6. Common Pitfalls
 
-| Pitfall | Avoidance Strategy |
-|---------|-------------------|
-| Testing only one VPN solution | Inventory ALL remote access methods |
-| Ignoring legacy/exception access | Include legacy systems and exceptions |
-| Checking enrollment, not enforcement | Verify MFA is enforced, not just enrolled |
-| Missing mobile/BYOD access paths | Include all access methods (mobile, BYOD) |
-| Not testing actual encryption | Use tools to verify TLS/encryption in practice |
-| Ignoring service accounts | Include service accounts in MFA assessment |
-| Accepting "enabled" without proof | Collect actual configuration evidence |
-| Not checking certificate expiry | Verify certificate validity and monitoring |
-| Missing cloud application access | Include SaaS/cloud apps accessed remotely |
-| Overlooking split tunneling risks | Assess split tunneling configuration |
+#### ❌ MISTAKE #1: Testing Only Primary VPN Solution
+
+**The Problem:** Focusing assessment only on the main corporate VPN, missing other remote access paths.
+
+**Why It Matters:** Organizations often have multiple remote access methods (vendor VPN, legacy systems, cloud gateways). Unassessed paths may have weaker security.
+
+**The Fix:**
+- Inventory ALL remote access methods before starting
+- Include: VPN, RDP gateways, ZTNA, cloud proxies, vendor access
+- Check with IT operations for any additional access paths
+
+#### ❌ MISTAKE #2: Checking MFA Enrollment, Not Enforcement
+
+**The Problem:** Confirming MFA is enrolled/available but not verifying it's actually enforced.
+
+**Why It Matters:** Users may have MFA enrolled but configured with bypass options. "Enrolled" doesn't mean "protected."
+
+**The Fix:**
+- Test actual login flow to verify MFA prompt
+- Check for bypass conditions (trusted networks, remembered devices)
+- Verify MFA is required, not optional
+
+#### ❌ MISTAKE #3: Missing Mobile and BYOD Access
+
+**The Problem:** Assessing laptop VPN but not mobile device access or BYOD scenarios.
+
+**Why It Matters:** Mobile access may use different authentication paths. BYOD devices may have weaker controls. Growing attack surface.
+
+**The Fix:**
+- Include mobile email, apps, and browser access
+- Assess BYOD enrollment and security requirements
+- Check mobile device management (MDM) integration
+
+#### ❌ MISTAKE #4: Not Testing Actual Encryption
+
+**The Problem:** Accepting documented encryption standards without technical verification.
+
+**Why It Matters:** Configuration may differ from documentation. Weak ciphers may be negotiated. Certificate issues may exist.
+
+**The Fix:**
+- Use tools to verify actual encryption (testssl.sh, nmap)
+- Check negotiated cipher suites
+- Verify certificate validity and chain
+
+#### ❌ MISTAKE #5: Ignoring Service Account Remote Access
+
+**The Problem:** Focusing on user accounts, missing service accounts that access systems remotely.
+
+**Why It Matters:** Service accounts often have elevated privileges. They may bypass MFA requirements. Compromise is harder to detect.
+
+**The Fix:**
+- Inventory service accounts with remote access
+- Assess service account authentication methods
+- Check for use of secrets management
+
+#### ❌ MISTAKE #6: Accepting "Enabled" Without Configuration Evidence
+
+**The Problem:** Trusting that controls are "enabled" without seeing actual configuration.
+
+**Why It Matters:** Settings may be misconfigured. "Enabled" doesn't mean "correctly configured." Evidence needed for audit.
+
+**The Fix:**
+- Collect configuration screenshots or exports
+- Verify specific settings against policy requirements
+- Document actual configuration state
+
+#### ❌ MISTAKE #7: Not Checking Certificate Validity and Monitoring
+
+**The Problem:** Verifying current certificate is valid but not checking expiration monitoring.
+
+**Why It Matters:** Expired certificates cause outages and security issues. Lack of monitoring means surprise failures.
+
+**The Fix:**
+- Check certificate expiration dates
+- Verify certificate monitoring is in place
+- Check renewal process documentation
+
+#### ❌ MISTAKE #8: Missing Cloud Application Remote Access
+
+**The Problem:** Assessing on-premises VPN but not cloud/SaaS application access.
+
+**Why It Matters:** Cloud apps may be primary remote access path. Different authentication requirements. Shadow IT risk.
+
+**The Fix:**
+- Include SaaS applications in scope
+- Check SSO/federation configuration
+- Assess cloud access security broker (CASB) if used
+
+#### ❌ MISTAKE #9: Overlooking Split Tunneling Risks
+
+**The Problem:** Not assessing whether split tunneling is enabled and its security implications.
+
+**Why It Matters:** Split tunneling may expose corporate traffic. Different security posture for tunneled vs. local traffic.
+
+**The Fix:**
+- Document split tunneling configuration
+- Assess what traffic is tunneled vs. local
+- Check DNS leak protection
+
+#### ❌ MISTAKE #10: Not Correlating VPN Access with HR Data
+
+**The Problem:** Assessing VPN technically but not verifying users are authorized personnel.
+
+**Why It Matters:** May find active VPN accounts for terminated employees. Orphaned accounts represent security risk.
+
+**The Fix:**
+- Cross-reference VPN user list with HR active employees
+- Check for orphaned or unknown accounts
+- Verify contractor accounts match active contracts
+
+---
 
 ### 7. Quality Checklist
 
-Before submitting assessment, verify:
+#### Completeness Checks
 
-**Completeness**:
-- [ ] All VPN/remote access solutions inventoried
+**Infrastructure Coverage:**
+- [ ] ALL VPN/remote access solutions inventoried
+- [ ] ALL remote access methods documented (VPN, ZTNA, RDP, cloud)
+- [ ] Service accounts with remote access included
+- [ ] Mobile and BYOD access assessed
+
+**MFA Assessment:**
 - [ ] MFA coverage assessed for all systems
-- [ ] Encryption verified for all channels
-- [ ] Logging assessed for all remote access
-- [ ] All gaps documented with remediation
+- [ ] MFA enforcement verified (not just enrollment)
+- [ ] Fallback methods documented
+- [ ] Exceptions documented with justification
 
-**Technical Accuracy**:
+**Encryption Assessment:**
+- [ ] Encryption verified for all channels
+- [ ] Protocol versions documented (TLS 1.2/1.3)
+- [ ] Cipher suites verified
+- [ ] Certificate validity checked
+
+**Logging:**
+- [ ] Logging assessed for all remote access
+- [ ] Log retention verified
+- [ ] Monitoring alerts assessed
+
+**Gaps:**
+- [ ] All gaps documented with remediation
+- [ ] Gap priorities assigned
+- [ ] Owners and target dates set
+
+#### Technical Accuracy Checks
+
 - [ ] Configuration settings verified (not assumed)
 - [ ] Evidence supports compliance claims
 - [ ] Encryption algorithms correctly identified
 - [ ] MFA methods accurately categorized
+- [ ] Version numbers verified
 
-**Evidence Quality**:
-- [ ] Sensitive data redacted
+#### Evidence Quality Checks
+
+- [ ] Sensitive data redacted (passwords, keys)
 - [ ] Evidence dated and attributed
-- [ ] File references accurate
+- [ ] File references accurate and accessible
 - [ ] Evidence stored securely
+- [ ] No production credentials in evidence
+
+---
+
+### 8. Review and Approval Process
+
+#### 8.1 Review Workflow
+
+**Step 1: Self-Review** (Assessor)
+- Complete Quality Checklist
+- Verify technical accuracy
+- Ensure evidence accessibility
+
+**Step 2: Technical Review** (IT Security/Network Team)
+- Verify technical findings accuracy
+- Validate configuration assessments
+- Confirm remediation feasibility
+- Duration: 3-5 business days
+
+**Step 3: Management Approval** (CISO)
+- Review overall security posture
+- Approve remediation priorities
+- Authorize resources
+- Duration: 1-2 business days
+
+#### 8.2 After Approval
+
+1. **Store Assessment:** `ISMS/Controls/A.6.7-8/Technical_Controls/`
+2. **Distribute:** IT Operations, Security Team, Compliance
+3. **Initiate Remediation:** Create tickets for gaps
+4. **Schedule Follow-Up:** Annual reassessment
 
 ---
 
@@ -605,6 +759,5 @@ Before submitting assessment, verify:
 
 *"Complexity is the enemy of security."*
 — Bruce Schneier
-
 
 <!-- QA_VERIFIED: 2026-01-31 -->

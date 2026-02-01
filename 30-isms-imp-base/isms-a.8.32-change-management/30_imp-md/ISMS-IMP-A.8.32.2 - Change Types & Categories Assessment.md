@@ -1560,7 +1560,6 @@ External Audit Scheduled:       [Date]
 - Classification accuracy measured and trended
 - Evidence maintained for all classification decisions
 
-
 ---
 
 **END OF SPECIFICATION**

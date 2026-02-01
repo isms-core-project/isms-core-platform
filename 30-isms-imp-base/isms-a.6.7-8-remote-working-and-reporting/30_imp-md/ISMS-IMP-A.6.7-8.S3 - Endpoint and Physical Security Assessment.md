@@ -368,22 +368,102 @@ Before starting this assessment, ensure:
 
 ### 6. Common Pitfalls
 
-| Pitfall | Avoidance Strategy |
-|---------|-------------------|
-| Only checking managed devices | Include unmanaged/BYOD devices |
-| Relying on MDM data without verification | Spot-check physical devices |
-| Missing contractor devices | Include all third-party devices |
-| Not testing remote wipe capability | Conduct periodic wipe tests |
-| Ignoring mobile devices | Include phones and tablets |
-| Not verifying key escrow | Test recovery key retrieval |
-| Assuming encryption = compliant | Verify encryption is active, not suspended |
-| Missing physical security assessment | Don't skip non-technical controls |
+#### ❌ MISTAKE #1: Only Checking Managed Devices
+
+**The Problem:** Assessing only MDM-enrolled devices, missing unmanaged endpoints.
+
+**Why It Matters:** Unmanaged devices may lack security controls. BYOD and contractor devices often unmanaged. Incomplete picture of endpoint security.
+
+**The Fix:**
+- Request access lists from VPN/remote access systems
+- Cross-reference MDM inventory with remote access users
+- Survey managers for unmanaged devices in use
+
+#### ❌ MISTAKE #2: Relying Solely on MDM Reports
+
+**The Problem:** Accepting MDM compliance reports without physical verification.
+
+**Why It Matters:** MDM data may be stale. Devices may be non-compliant since last check-in. Reports don't catch all issues.
+
+**The Fix:**
+- Spot-check sample of physical devices
+- Verify encryption is active (not suspended)
+- Check endpoint protection is running
+
+#### ❌ MISTAKE #3: Missing Contractor and Third-Party Devices
+
+**The Problem:** Assessment scope limited to employee devices.
+
+**Why It Matters:** Contractors often use personal or contractor-owned devices. These may access sensitive systems. Weaker security baseline.
+
+**The Fix:**
+- Include contractor devices in scope
+- Verify contractor device security requirements in contracts
+- Assess third-party device compliance
+
+#### ❌ MISTAKE #4: Not Testing Remote Wipe Capability
+
+**The Problem:** Assuming remote wipe works without testing.
+
+**Why It Matters:** Wipe may fail due to configuration issues. Critical for lost/stolen response. May not work for offline devices.
+
+**The Fix:**
+- Conduct periodic wipe tests on test devices
+- Verify wipe procedures documented
+- Check wipe audit logs for past incidents
+
+#### ❌ MISTAKE #5: Ignoring Mobile Devices
+
+**The Problem:** Focusing on laptops, missing phones and tablets.
+
+**Why It Matters:** Mobile devices access email and corporate apps. Growing attack surface. Different security controls needed.
+
+**The Fix:**
+- Include mobile devices in inventory
+- Assess mobile device management (MDM)
+- Check mobile app security
+
+#### ❌ MISTAKE #6: Not Verifying Encryption Key Recovery
+
+**The Problem:** Confirming encryption enabled but not testing key recovery.
+
+**Why It Matters:** Lost encryption keys mean lost data. Recovery must work for business continuity. Auditors may test this.
+
+**The Fix:**
+- Test recovery key retrieval process
+- Verify key escrow is functioning
+- Document recovery procedures
+
+#### ❌ MISTAKE #7: Assuming Encryption Enabled = Compliant
+
+**The Problem:** Checking encryption is enabled but not verifying it's active and complete.
+
+**Why It Matters:** Encryption may be paused or suspended. May only cover system drive, not data drives. Configuration may be incomplete.
+
+**The Fix:**
+- Verify encryption status is "On" not "Paused"
+- Check all drives are encrypted
+- Verify encryption algorithm meets requirements
+
+#### ❌ MISTAKE #8: Skipping Physical Security Assessment
+
+**The Problem:** Focusing only on technical controls, ignoring physical security.
+
+**Why It Matters:** Remote workers need physical security guidance. Unsecured home offices increase risk. Physical theft is a real threat.
+
+**The Fix:**
+- Include physical security requirements in assessment
+- Check for guidance on secure workspace
+- Verify clean desk/screen lock requirements
+
+---
 
 ### 7. Quality Checklist
 
-Before submitting assessment, verify:
+#### Completeness Checks
 
-- [ ] All remote devices inventoried
+- [ ] ALL remote devices inventoried (laptops, desktops, mobile, tablets)
+- [ ] Corporate, BYOD, and contractor devices included
 - [ ] Encryption status verified for all devices
 - [ ] Endpoint protection confirmed active
 - [ ] Patch compliance within thresholds
@@ -391,6 +471,37 @@ Before submitting assessment, verify:
 - [ ] Physical security requirements documented
 - [ ] Lost/stolen procedures verified
 - [ ] All gaps documented with remediation
+
+#### Technical Accuracy Checks
+
+- [ ] MDM data spot-checked against physical devices
+- [ ] Encryption actually active (not suspended)
+- [ ] Protection software running (not disabled)
+- [ ] Patch dates within SLA
+
+#### Evidence Quality Checks
+
+- [ ] Device inventory exported with timestamp
+- [ ] Compliance reports dated
+- [ ] Sample testing documented
+- [ ] Evidence stored securely
+
+---
+
+### 8. Review and Approval Process
+
+#### 8.1 Review Workflow
+
+**Step 1: Self-Review** (Assessor) - Complete Quality Checklist
+**Step 2: Technical Review** (IT Operations/Endpoint Team) - 2-3 days
+**Step 3: Management Approval** (CISO) - 1-2 days
+
+#### 8.2 After Approval
+
+1. **Store Assessment:** `ISMS/Controls/A.6.7-8/Endpoint_Security/`
+2. **Distribute:** IT Operations, Endpoint Team
+3. **Initiate Remediation:** Create tickets for non-compliant devices
+4. **Schedule Follow-Up:** Quarterly device compliance review
 
 ---
 

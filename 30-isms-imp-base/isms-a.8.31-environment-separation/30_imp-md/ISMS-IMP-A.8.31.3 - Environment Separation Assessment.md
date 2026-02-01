@@ -2350,7 +2350,6 @@ Example: `A831-3-Compliance-Dashboard-Q1-2026-01-25.xlsx`
 - Formula cells locked (auto-calculations)
 - Header rows locked
 
-
 ---
 
 **END OF SPECIFICATION**

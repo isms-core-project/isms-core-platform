@@ -57,7 +57,7 @@ This assessment evaluates [Organization]'s implementation of **cryptographic con
 ## Why This Matters
 
 **ISO 27001:2022 Control A.8.24 Requirement:**
-> *"A policy on the use of cryptographic controls for protection of information should be developed and implemented."*
+> *"Rules for the effective use of cryptography, including cryptographic key management, should be defined and implemented."*
 
 **Regulatory Context:**
 

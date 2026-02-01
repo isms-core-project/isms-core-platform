@@ -394,30 +394,140 @@ Before starting this assessment, ensure:
 
 ## 6. Common Pitfalls
 
-| Pitfall | Avoidance Strategy |
-|---------|-------------------|
-| Only testing primary channel | Test ALL channels including backup |
-| Not testing from remote locations | Verify remote accessibility explicitly |
-| Missing informal reporting paths | Include all ways events are reported |
-| Assuming training = awareness | Verify through sampling or surveys |
-| Not checking anonymity options | Test anonymous reporting if offered |
-| Ignoring response effectiveness | Sample actual reports, not just process |
-| Overlooking non-blame evidence | Look for contrary evidence too |
-| Missing integration with A.5.24-28 | Trace events that became incidents |
+#### ❌ MISTAKE #1: Only Testing Primary Reporting Channel
+
+**The Problem:** Testing main security email or portal but not backup/alternative channels.
+
+**Why It Matters:** Primary channel may fail. Users may not know it. Backup channels may be misconfigured.
+
+**The Fix:**
+- Test ALL documented reporting channels
+- Include phone, email, web, chat options
+- Verify backup channels actually work
+
+#### ❌ MISTAKE #2: Not Testing From Remote Locations
+
+**The Problem:** Testing channels from office network, not remote worker perspective.
+
+**Why It Matters:** Remote users may have different access. VPN requirements may affect accessibility. Critical for remote worker event reporting.
+
+**The Fix:**
+- Test channels from outside corporate network
+- Verify mobile accessibility
+- Check VPN impact on channel access
+
+#### ❌ MISTAKE #3: Missing Informal Reporting Paths
+
+**The Problem:** Only assessing formal channels, missing how events actually get reported.
+
+**Why It Matters:** Staff may report via Slack, email to manager, etc. Informal reports may not reach security team. Incomplete event capture.
+
+**The Fix:**
+- Survey staff on how they'd report events
+- Interview managers about informal reports received
+- Document all reporting paths, formal and informal
+
+#### ❌ MISTAKE #4: Assuming Training Equals Awareness
+
+**The Problem:** Confirming event reporting is in training but not verifying staff actually know what to do.
+
+**Why It Matters:** Training completion doesn't equal retention. Staff may not recognize events. May not know how to report.
+
+**The Fix:**
+- Include awareness questions in surveys
+- Test with simulated events (phishing, etc.)
+- Check if staff can locate reporting information
+
+#### ❌ MISTAKE #5: Not Testing Anonymous Reporting
+
+**The Problem:** Documenting anonymous reporting exists but not verifying it works.
+
+**Why It Matters:** Anonymity may be compromised technically. Important for whistleblower protection. May affect willingness to report.
+
+**The Fix:**
+- Test anonymous submission process
+- Verify IP/identity not logged
+- Check anonymous report tracking
+
+#### ❌ MISTAKE #6: Ignoring Response Effectiveness
+
+**The Problem:** Assessing reporting process but not what happens after reports received.
+
+**Why It Matters:** Slow/no response discourages reporting. Staff need feedback. Response quality affects culture.
+
+**The Fix:**
+- Sample actual reports and check response times
+- Verify feedback provided to reporters
+- Check resolution tracking
+
+#### ❌ MISTAKE #7: Not Verifying Non-Blame Culture
+
+**The Problem:** Policy says non-blame but not checking if practice matches.
+
+**Why It Matters:** Fear of blame prevents reporting. Critical for security culture. Policy must be practiced.
+
+**The Fix:**
+- Look for evidence of punitive responses
+- Survey staff on perception of blame
+- Check for positive recognition of reporters
+
+#### ❌ MISTAKE #8: Missing Incident Management Integration
+
+**The Problem:** Assessing event reporting in isolation from incident management (A.5.24-28).
+
+**Why It Matters:** Events should flow to incident process. Integration gaps mean lost events. Incomplete audit trail.
+
+**The Fix:**
+- Trace sample events to incident tickets
+- Verify handoff process documented
+- Check classification triggers incident escalation
+
+---
 
 ## 7. Quality Checklist
 
-Before submitting assessment, verify:
+#### Completeness Checks
 
-- [ ] All reporting channels inventoried
-- [ ] Channel accessibility tested
+- [ ] ALL reporting channels inventoried
+- [ ] Channel accessibility tested (including from remote)
 - [ ] Procedures documented and current
 - [ ] Event categories defined with examples
-- [ ] Awareness included in training
-- [ ] Response sampling completed
-- [ ] Non-blame culture assessed
+- [ ] Awareness included in training program
+- [ ] Response sampling completed (actual reports)
+- [ ] Non-blame culture assessed (policy and practice)
 - [ ] Integration with incident management verified
 - [ ] All gaps documented with remediation
+
+#### Accuracy Checks
+
+- [ ] Channels actually work as documented
+- [ ] Contact information current
+- [ ] Response times match SLAs
+- [ ] Categories align with incident taxonomy
+
+#### Evidence Quality Checks
+
+- [ ] Channel tests documented
+- [ ] Sample reports anonymized appropriately
+- [ ] Response time evidence captured
+- [ ] Survey results documented
+
+---
+
+## 8. Review and Approval Process
+
+### 8.1 Review Workflow
+
+**Step 1: Self-Review** (Assessor) - Complete Quality Checklist
+**Step 2: Technical Review** (Security Operations) - 2-3 days
+**Step 3: Management Approval** (CISO) - 1-2 days
+
+### 8.2 After Approval
+
+1. **Store Assessment:** `ISMS/Controls/A.6.7-8/Event_Reporting/`
+2. **Distribute:** Security Operations, Help Desk, Communications
+3. **Initiate Remediation:** Fix channel issues, update procedures
+4. **Schedule Follow-Up:** Annual reassessment, quarterly channel tests
 
 ---
 

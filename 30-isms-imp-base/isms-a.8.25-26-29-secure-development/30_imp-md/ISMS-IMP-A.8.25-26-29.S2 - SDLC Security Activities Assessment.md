@@ -2729,7 +2729,6 @@ Stakeholder review and approval workflow for the assessment.
 - [ ] Test on Windows and Mac
 - [ ] Test in Excel 2016 and Office 365
 
-
 ---
 
 **END OF SPECIFICATION**

@@ -2210,7 +2210,6 @@ Multi-level approval workflow and formal sign-off for the assessment.
 - Formula cells locked (summary metrics, conditional formatting)
 - Header rows locked
 
-
 ---
 
 **END OF SPECIFICATION**

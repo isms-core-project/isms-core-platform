@@ -1620,7 +1620,6 @@ Assessment Frequency:   Quarterly
 - Production validation checklists completed
 - Test metrics tracked over time
 
-
 ---
 
 **END OF SPECIFICATION**

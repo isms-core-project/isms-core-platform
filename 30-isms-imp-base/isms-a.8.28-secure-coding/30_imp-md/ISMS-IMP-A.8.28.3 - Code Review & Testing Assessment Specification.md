@@ -1652,7 +1652,6 @@ WORKBOOK_3_SCHEMA = {
 - Evidence completeness from Evidence Register
 - Domain breakdown for detailed reporting
 
-
 ---
 
 **END OF SPECIFICATION**

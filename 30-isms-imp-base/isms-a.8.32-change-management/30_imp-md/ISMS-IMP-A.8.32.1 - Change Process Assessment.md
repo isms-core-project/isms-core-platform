@@ -1463,7 +1463,6 @@ List: Critical,High,Medium,Low
 - **Unprotected:** Yellow input cells, text entry areas, status dropdowns
 - **Sheet Protection Password:** [Organization-defined]
 
-
 ---
 
 **END OF SPECIFICATION**

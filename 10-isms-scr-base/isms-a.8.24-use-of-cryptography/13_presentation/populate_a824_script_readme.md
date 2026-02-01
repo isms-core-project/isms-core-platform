@@ -83,16 +83,16 @@ Then populate each workbook with comprehensive data:
 
 ```bash
 # Data Transmission (12 assessment categories)
-python3 populate_a824_1_data_transmission.py ISMS-IMP-A.8.24.1_Data_Transmission_Assessment_20260113.xlsx
+python3 populate_a824_1_data_transmission.py ../90_workbooks/ISMS-IMP-A.8.24.1_Data_Transmission_YYYYMMDD.xlsx
 
 # Data Storage (7 categories)
-python3 populate_a824_2_data_storage.py ISMS-IMP-A.8.24.2_Data_Storage_Assessment_20260113.xlsx
+python3 populate_a824_2_data_storage.py ../90_workbooks/ISMS-IMP-A.8.24.2_Data_Storage_YYYYMMDD.xlsx
 
 # Authentication (5 categories)
-python3 populate_a824_3_authentication.py ISMS-IMP-A.8.24.3_Authentication_Assessment_20260113.xlsx
+python3 populate_a824_3_authentication.py ../90_workbooks/ISMS-IMP-A.8.24.3_Authentication_YYYYMMDD.xlsx
 
 # Key Management (5 categories)
-python3 populate_a824_4_key_management.py ISMS-IMP-A.8.24.4_Key_Management_Assessment_20260113.xlsx
+python3 populate_a824_4_key_management.py ../90_workbooks/ISMS-IMP-A.8.24.4_Key_Management_YYYYMMDD.xlsx
 ```
 
 ### Step 3: Normalize for Dashboard
@@ -267,7 +267,7 @@ ISMS-IMP-A.8.24.1 - Data Transmission Assessment
 Comprehensive Data Population for CISO Presentation
 ================================================================================
 
-📂 Loading: ISMS-IMP-A.8.24.1_Data_Transmission_Assessment_20260113.xlsx
+📂 Loading: ISMS-IMP-A.8.24.1_Data_Transmission_Assessment_YYYYMMDD.xlsx
 📋 Sheets found: 15
 
 [1/3] Populating 12 Assessment Sheets...
@@ -282,7 +282,7 @@ Comprehensive Data Population for CISO Presentation
 [3/3] Populating Approval Sign-Off...
     ✓ Approval Sign-Off: Complete
 
-💾 Saved: ISMS-IMP-A.8.24.1_Data_Transmission_Assessment_20260113.xlsx
+💾 Saved: ISMS-IMP-A.8.24.1_Data_Transmission_Assessment_YYYYMMDD.xlsx
 
 ================================================================================
 ✅ DATA POPULATION COMPLETE
@@ -346,9 +346,9 @@ These scripts are part of the ISMS A.8.24 Cryptography Assessment toolkit.
 
 ---
 
-**Version**: 1.0  
-**Generated**: 2026-01-13  
-**Author**: Security Engineering Team  
+**Version**: 1.0
+**Updated**: 2026-02-01
+**Author**: Security Engineering Team
 **Purpose**: CISO Presentation & Project Approval  
 
 🎯 **Professional. Comprehensive. CISO-Ready.**

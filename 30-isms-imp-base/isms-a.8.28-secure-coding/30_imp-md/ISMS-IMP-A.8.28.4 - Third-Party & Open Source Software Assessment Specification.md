@@ -1208,7 +1208,6 @@ WORKBOOK_4_SCHEMA = {
 - Requires legal review (GPL, AGPL, LGPL, custom)
 - Prohibited (unlicensed, restrictive commercial)
 
-
 ---
 
 **END OF SPECIFICATION**

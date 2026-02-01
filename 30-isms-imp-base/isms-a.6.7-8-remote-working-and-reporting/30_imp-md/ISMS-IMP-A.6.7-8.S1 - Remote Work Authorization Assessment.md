@@ -347,66 +347,282 @@ Evidence must be:
 
 ### 6. Common Pitfalls
 
-| Pitfall | Avoidance Strategy |
-|---------|-------------------|
-| Assessing policy without verifying implementation | Always include sample testing of actual authorizations |
-| Missing informal remote work arrangements | Check with managers for unofficial remote workers |
-| Overlooking contractor/third-party remote access | Include non-employees in scope |
-| Not checking terminated employee access | Verify revocation for recently departed |
-| Assuming HR records are complete | Cross-reference with IT access records |
-| Skipping risk assessment verification | Specifically check high-risk role authorizations |
-| Not documenting absence of evidence | Record when expected evidence doesn't exist |
-| Rushing sample selection | Use structured sampling methodology |
-| Ignoring exceptions | Document and assess any policy exceptions |
-| Not interviewing process owners | Combine document review with interviews |
+#### ❌ MISTAKE #1: Assessing Policy Without Verifying Implementation
+
+**The Problem:** Reviewing remote work policy documents but not checking whether the authorization process actually works as documented.
+
+**Why It Matters:** Policy documentation may be aspirational or outdated. Actual practice often differs from documented procedures. Auditors will test implementation, not just documentation.
+
+**The Fix:**
+- Always include sample testing of actual authorizations
+- Interview process participants (requesters, approvers, HR, IT)
+- Verify that documented workflows match actual practice
+- Check for workarounds or informal processes
+
+#### ❌ MISTAKE #2: Missing Informal Remote Work Arrangements
+
+**The Problem:** Only assessing formally documented remote workers, missing those with informal arrangements.
+
+**Why It Matters:** Informal remote workers may lack security controls. They represent shadow IT risk. Organization may be unaware of full remote workforce scope.
+
+**The Fix:**
+- Survey managers about team members working remotely
+- Cross-reference badge access data with VPN logs
+- Check for employees who rarely badge into office
+- Review pandemic-era temporary arrangements that became permanent
+
+#### ❌ MISTAKE #3: Overlooking Contractor and Third-Party Remote Access
+
+**The Problem:** Assessment scope limited to employees, excluding contractors, consultants, and third-party personnel.
+
+**Why It Matters:** Third parties often have same or greater access than employees. Contractor remote access may have weaker controls. Third-party incidents can impact organization.
+
+**The Fix:**
+- Explicitly include non-employees in assessment scope
+- Request contractor lists from procurement/vendor management
+- Check third-party access provisioning records
+- Verify contractor remote work agreements exist
+
+#### ❌ MISTAKE #4: Not Checking Terminated Employee Access Revocation
+
+**The Problem:** Assessing current authorizations without verifying that departed employees had access promptly revoked.
+
+**Why It Matters:** Delayed revocation is a common audit finding. Former employees with active remote access pose security risk. Demonstrates control weakness in JML process.
+
+**The Fix:**
+- Sample recently terminated employees (last 90 days)
+- Verify VPN/remote access revoked within SLA
+- Check for orphaned accounts in remote access systems
+- Cross-reference HR termination dates with IT access revocation dates
+
+#### ❌ MISTAKE #5: Assuming HR Records Are Complete and Accurate
+
+**The Problem:** Relying solely on HR system as source of truth for remote worker inventory.
+
+**Why It Matters:** HR systems may not capture all remote work arrangements. IT may provision access without HR awareness. Temporary arrangements may not be recorded.
+
+**The Fix:**
+- Cross-reference HR data with IT access records
+- Compare HR remote worker list with VPN user list
+- Identify users with remote access but no HR designation
+- Reconcile discrepancies before concluding assessment
+
+#### ❌ MISTAKE #6: Skipping Risk Assessment Verification for High-Risk Roles
+
+**The Problem:** Treating all remote work authorizations equally, not checking enhanced scrutiny for sensitive roles.
+
+**Why It Matters:** High-risk roles (finance, IT admin, executives) require additional risk assessment per policy. Missing this verification is a compliance gap. These roles are primary targets for attacks.
+
+**The Fix:**
+- Identify high-risk roles per policy definition
+- Verify enhanced risk assessment was performed
+- Check for additional controls (MFA, privileged access management)
+- Document any exceptions with compensating controls
+
+#### ❌ MISTAKE #7: Not Documenting Absence of Evidence
+
+**The Problem:** Failing to record when expected evidence doesn't exist, only documenting what was found.
+
+**Why It Matters:** Absence of evidence is evidence of a gap. Auditors expect documentation of what was checked. Unrecorded gaps may be forgotten.
+
+**The Fix:**
+- Explicitly note when expected documentation is missing
+- Record "Not Available" rather than leaving blank
+- Document why evidence couldn't be obtained
+- Include in gap analysis for remediation
+
+#### ❌ MISTAKE #8: Rushing Sample Selection
+
+**The Problem:** Selecting convenient samples rather than representative samples.
+
+**Why It Matters:** Biased samples don't represent true compliance state. Cherry-picked examples may hide systemic issues. Auditors may question sampling methodology.
+
+**The Fix:**
+- Use structured sampling methodology (random or stratified)
+- Document sample selection criteria and rationale
+- Include variety: departments, tenure, employment types
+- Ensure sample size is statistically meaningful
+
+#### ❌ MISTAKE #9: Ignoring Policy Exceptions
+
+**The Problem:** Assessing standard authorizations but not reviewing approved exceptions to policy.
+
+**Why It Matters:** Exceptions may indicate policy gaps or implementation challenges. Unapproved exceptions are compliance violations. Exception patterns reveal systemic issues.
+
+**The Fix:**
+- Request list of approved policy exceptions
+- Verify exception approval followed documented process
+- Check that compensating controls are in place
+- Assess whether exceptions should become policy changes
+
+#### ❌ MISTAKE #10: Not Interviewing Process Owners
+
+**The Problem:** Conducting document-only assessment without speaking to people who operate the process.
+
+**Why It Matters:** Documents may not reflect current practice. Process owners know where problems exist. Interviews reveal practical challenges not in documentation.
+
+**The Fix:**
+- Schedule interviews with key process owners
+- Prepare interview questions in advance
+- Document interview findings
+- Corroborate interview information with evidence
+
+---
 
 ### 7. Quality Checklist
 
 Before submitting assessment, verify:
 
-**Completeness**:
-- [ ] All sheets completed
-- [ ] All required fields populated
-- [ ] Sample size meets minimum requirements
-- [ ] All gaps documented in Gap_Analysis
+#### Completeness Checks
+
+**Sheet Completion:**
+- [ ] All 10 sheets contain data or documented N/A justification
+- [ ] All required fields populated (no blank mandatory cells)
+- [ ] Instructions sheet reviewed and version confirmed
+
+**Sample Testing:**
+- [ ] Sample size meets minimum (≥10 authorizations or 10% of population)
+- [ ] Sample includes variety: new, existing, high-risk, standard
+- [ ] All sample items fully tested and documented
+- [ ] Pass/fail status recorded for each sample
+
+**Gap Documentation:**
+- [ ] All identified gaps recorded in Gap_Analysis sheet
+- [ ] Each gap has: description, severity, remediation, owner, target date
+- [ ] No gaps left without remediation plan
+- [ ] Critical gaps escalated appropriately
+
+**Evidence:**
 - [ ] All evidence cataloged in Evidence_Register
+- [ ] Evidence references match actual file locations
+- [ ] Evidence dated within assessment period
+- [ ] Sensitive evidence appropriately protected
 
-**Accuracy**:
-- [ ] Status assessments are justified
-- [ ] Evidence references are correct
-- [ ] Dates are accurate
-- [ ] Calculations verified (spot-check)
+#### Accuracy Checks
 
-**Quality**:
-- [ ] Gap descriptions are clear and actionable
-- [ ] Remediation recommendations are realistic
-- [ ] Priorities are appropriately assigned
-- [ ] Evidence is properly referenced
+- [ ] Status assessments justified with evidence
+- [ ] Evidence references verified accessible
+- [ ] Dates accurate (assessment period, evidence dates)
+- [ ] Calculations spot-checked (dashboard metrics)
+- [ ] Cross-references between sheets correct
 
-**Approval**:
-- [ ] Assessor sign-off complete
-- [ ] Technical review complete
-- [ ] Management approval obtained
+#### Policy Alignment Checks
+
+- [ ] Assessment criteria align with ISMS-POL-A.6.7-8
+- [ ] Compliance thresholds match policy requirements
+- [ ] Gap priorities reflect policy risk levels
+- [ ] Remediation timelines within policy SLAs
+
+#### Audit Readiness Checks
+
+- [ ] Assessment could withstand external audit scrutiny
+- [ ] Evidence trail complete and verifiable
+- [ ] Methodology documented and defensible
+- [ ] Findings clearly supported by evidence
+
+#### Red Flags to Address Before Submission
+
+| Red Flag | Resolution |
+|----------|------------|
+| >20% sample failure rate | Escalate to CISO before submitting |
+| Missing critical evidence | Document gap and remediation plan |
+| Conflicting data sources | Reconcile and document resolution |
+| Unauthorized remote workers found | Initiate immediate security review |
+| Policy exceptions without approval | Document as compliance violation |
+
+---
 
 ### 8. Review and Approval Process
 
-#### 8.1 Review Stages
+#### 8.1 Review Workflow
 
-| Stage | Reviewer | Focus |
-|-------|----------|-------|
-| Self-Review | Assessor | Completeness, accuracy |
-| Peer Review | Another assessor | Methodology, objectivity |
-| Technical Review | IT Security Lead | Technical accuracy |
-| Management Review | CISO | Strategic alignment, risk assessment |
+**Step 1: Self-Review** (Assessor)
 
-#### 8.2 Approval Criteria
+Before submitting for review:
+- Complete Quality Checklist above
+- Verify all calculations are correct
+- Ensure evidence is accessible
+- Prepare summary of key findings
 
-Assessment is approved when:
-- All sheets are complete and accurate
-- Gaps are appropriately identified and prioritized
-- Remediation plan is realistic and resourced
+**Step 2: Peer Review** (Another Assessor)
+
+**Reviewer:** Security team member not involved in assessment
+**Focus:** Methodology and objectivity
+
+**Review Points:**
+- Sampling methodology appropriate
 - Evidence supports conclusions
-- Dashboard metrics are correct
+- Gaps accurately characterized
+- No obvious oversights
+
+**Duration:** 2-3 business days
+
+**Step 3: Technical Review** (IT Security Lead)
+
+**Reviewer:** IT Security Lead or designated technical reviewer
+**Focus:** Technical accuracy
+
+**Review Points:**
+- Technical controls accurately assessed
+- Access provisioning findings verified
+- Integration points correctly evaluated
+- Technical remediation feasible
+
+**Duration:** 2-3 business days
+
+**Step 4: Management Approval** (CISO)
+
+**Reviewer:** Chief Information Security Officer
+**Focus:** Strategic alignment and risk assessment
+
+**Review Points:**
+- Overall risk posture acceptable
+- Gaps appropriately prioritized
+- Remediation resources adequate
+- Timeline realistic
+
+**Duration:** 1-2 business days
+
+**Outcomes:**
+- **Approved:** Assessment complete, remediation authorized
+- **Approved with Conditions:** Specific follow-up required
+- **Rejected:** Material issues, reassessment required
+
+#### 8.2 Approval Timeline
+
+| Phase | Duration | Cumulative |
+|-------|----------|------------|
+| Assessment completion | 3-5 days | Day 5 |
+| Self-review | 1 day | Day 6 |
+| Peer review | 2-3 days | Day 9 |
+| Technical review | 2-3 days | Day 12 |
+| Management approval | 1-2 days | Day 14 |
+| **Total** | **~2 weeks** | |
+
+#### 8.3 After Approval
+
+**Immediate Actions:**
+
+1. **Store Assessment:**
+   - Location: `ISMS/Controls/A.6.7-8_Remote_Working/Assessments/`
+   - Filename: `ISMS-IMP-A.6.7-8.S1_Authorization_[DATE]_APPROVED.xlsx`
+
+2. **Distribute Results:**
+   - HR: For remote work policy enforcement
+   - IT Operations: For access control remediation
+   - Department Managers: For team compliance awareness
+   - Compliance: For audit evidence
+
+3. **Initiate Remediation:**
+   - Create tickets for each gap
+   - Assign to documented owners
+   - Set due dates per remediation plan
+   - Schedule progress check-ins
+
+4. **Schedule Follow-Up:**
+   - Annual reassessment (or per policy cycle)
+   - Quarterly remediation progress review
+   - Triggered reassessment if significant changes
 
 ---
 
