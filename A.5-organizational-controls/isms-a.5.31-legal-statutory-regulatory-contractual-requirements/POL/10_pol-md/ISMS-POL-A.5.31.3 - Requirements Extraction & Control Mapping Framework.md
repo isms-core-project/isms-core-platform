@@ -1,35 +1,27 @@
 **ISMS-POL-A.5.31.3: Requirements Extraction & Control Mapping Framework**
 **Legal, Statutory, Regulatory and Contractual Requirements**
 
-**Document ID**: ISMS-POL-A.5.31.3  
-**Title**: Requirements Extraction & Control Mapping Framework  
-**Version**: 1.0  
-**Effective Date**: [Date]  
-**Classification**: Internal  
-**Owner**: ISMS Manager / Compliance Officer  
-**Status**: Draft
-
----
-
 **Document Control**
+
+| Field | Value |
+|-------|-------|
+| **Document Title** | Requirements Extraction & Control Mapping Framework |
+| **Document Type** | Policy |
+| **Document ID** | ISMS-POL-A.5.31.3 |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | Chief Executive Officer (CEO) |
+| **Approved By** | Executive Management |
+| **Created Date** | [Date] |
+| **Version** | 1.0 |
+| **Version Date** | [To Be Determined] |
+| **Classification** | Internal |
+| **Status** | Draft |
+
+**Version History**:
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | ISMS Manager / Compliance Officer | Initial release |
-
-**Review Frequency**: Annually or upon significant methodology changes  
-**Next Review Date**: [Effective Date + 12 months]
-
-**Approval**:
-
-| Role | Name | Signature | Date |
-|------|------|-----------|------|
-| ISMS Manager | | | |
-| Compliance Officer | | | |
-| Control Owners (Representative) | | | |
-| Executive Management | | | |
-
-**Distribution**: ISMS stakeholders, control owners, compliance team, legal counsel, auditors
+| 1.0 | [Date] | CISO/ISO | Initial policy framework for ISO 27001:2022 first certification |
 
 ---
 

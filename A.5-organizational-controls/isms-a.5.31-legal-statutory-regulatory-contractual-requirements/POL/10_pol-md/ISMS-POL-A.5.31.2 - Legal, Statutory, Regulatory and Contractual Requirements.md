@@ -1,11 +1,27 @@
 **ISMS-POL-A.5.31.2: Legal, Statutory, Regulatory and Contractual Requirements**
 **Regulatory Applicability Methodology**
 
-**Document ID**: ISMS-POL-A.5.31.2  
-**Version**: 1.0  
-**Status**: DRAFT  
-**Classification**: Internal Use  
-**Effective Date**: [Date]
+**Document Control**
+
+| Field | Value |
+|-------|-------|
+| **Document Title** | Legal, Statutory, Regulatory and Contractual Requirements: Regulatory Applicability Methodology |
+| **Document Type** | Policy |
+| **Document ID** | ISMS-POL-A.5.31.2 |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | Chief Executive Officer (CEO) |
+| **Approved By** | Executive Management |
+| **Created Date** | [Date] |
+| **Version** | 1.0 |
+| **Version Date** | [To Be Determined] |
+| **Classification** | Internal |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO/ISO | Initial policy framework for ISO 27001:2022 first certification |
 
 ---
 

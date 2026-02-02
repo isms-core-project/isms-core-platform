@@ -1,11 +1,27 @@
 **ISMS-POL-A.5.31.1: Legal, Statutory, Regulatory and Contractual Requirements**
 **Executive Summary & Control Alignment**
 
-**Document ID**: ISMS-POL-A.5.31.1  
-**Version**: 1.0  
-**Status**: Active  
-**Classification**: Internal Use  
-**Effective Date**: [Upon Executive Management Approval]
+**Document Control**
+
+| Field | Value |
+|-------|-------|
+| **Document Title** | Legal, Statutory, Regulatory and Contractual Requirements: Executive Summary & Control Alignment |
+| **Document Type** | Policy |
+| **Document ID** | ISMS-POL-A.5.31.1 |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | Chief Executive Officer (CEO) |
+| **Approved By** | Executive Management |
+| **Created Date** | [Date] |
+| **Version** | 1.0 |
+| **Version Date** | [To Be Determined] |
+| **Classification** | Internal |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO/ISO | Initial policy framework for ISO 27001:2022 first certification |
 
 ---
 
@@ -166,7 +182,7 @@ The consequences of non-compliance are substantial: regulatory fines and sanctio
 
 ## The Inadequacy of Checkbox Compliance
 
-Traditional approaches to regulatory compliance often amount to cargo cult behaviorâ€”mimicking the form of compliance without the substance:
+Traditional approaches to regulatory compliance often amount to cargo cult behavior—mimicking the form of compliance without the substance:
 
 **The Checkbox Approach:**
 > "Statement: [Organization] complies with all applicable laws and regulations.
@@ -188,7 +204,7 @@ When an auditor asks "How do you know you comply with Regulation X?" the answer 
 
 ## The Systems Engineering Approach to Regulatory Compliance
 
-This framework takes a fundamentally different approachâ€”applying systems engineering methodology to create a **regulatory compliance architecture** that is:
+This framework takes a fundamentally different approach—applying systems engineering methodology to create a **regulatory compliance architecture** that is:
 
 **Systematic**: Every process is defined, repeatable, and produces documented outputs.
 
@@ -249,7 +265,7 @@ This regulatory compliance framework delivers:
 
 ## The Meta-Framework Nature of Control A.5.31
 
-Control A.5.31 is unique among ISO 27001 controls. While most controls are **operational** (implement access controls, configure firewalls, encrypt data), A.5.31 is a **meta-framework control**â€”it establishes the structure that determines what compliance means for [Organization].
+Control A.5.31 is unique among ISO 27001 controls. While most controls are **operational** (implement access controls, configure firewalls, encrypt data), A.5.31 is a **meta-framework control**—it establishes the structure that determines what compliance means for [Organization].
 
 This control:
 
@@ -263,7 +279,7 @@ Without systematic implementation of A.5.31, [Organization] would implement ISO 
 
 ## Integration with ISMS-POL-00
 
-[Organization] has established **ISMS-POL-00 (Regulatory Applicability Framework)**, which serves as the **authoritative regulatory register**â€”the definitive list of legal, statutory, regulatory, and contractual requirements applicable to [Organization], organized in a three-tier structure (Mandatory/Conditional/Informational).
+[Organization] has established **ISMS-POL-00 (Regulatory Applicability Framework)**, which serves as the **authoritative regulatory register**—the definitive list of legal, statutory, regulatory, and contractual requirements applicable to [Organization], organized in a three-tier structure (Mandatory/Conditional/Informational).
 
 This framework (ISMS-POL-A.5.31) defines **HOW** ISMS-POL-00 is created, maintained, and used:
 
@@ -859,7 +875,7 @@ This regulatory compliance framework consists of four integrated layers, each bu
 
 **Assessment Workbook 4: Control Mapping Matrix**
 
-- Requirements (rows) Ã— ISO 27001 Controls (columns) mapping
+- Requirements (rows) × ISO 27001 Controls (columns) mapping
 - Mapping type indicators (Primary/Secondary/Supporting)
 - Gap identification and tracking
 - Coverage analysis and visualizations
@@ -888,7 +904,7 @@ This regulatory compliance framework consists of four integrated layers, each bu
 
 ## Layer 4: Compliance Evidence
 
-At the foundation of the framework is the **evidence layer**â€”the actual artifacts that prove compliance:
+At the foundation of the framework is the **evidence layer**—the actual artifacts that prove compliance:
 
 - Policy documents with approval signatures
 - Procedure documents and work instructions
@@ -1089,285 +1105,6 @@ The regulatory compliance framework is supported by six Excel-based assessment w
 
 
 **Usage**: Run after generating workbooks to verify quality before deployment.
-
----
-
-# Document Control and Review
-
-## Document Information
-
-| Attribute | Value |
-|-----------|-------|
-| **Document ID** | ISMS-POL-A.5.31.1 |
-| **Document Title** | Legal, Statutory, Regulatory and Contractual Requirements: Executive Summary & Control Alignment |
-| **Version** | 1.0 |
-| **Status** | Draft |
-| **Classification** | Internal Use |
-| **Owner** | ISMS Manager |
-| **Author** | [Name] |
-| **Effective Date** | [To Be Determined upon approval] |
-| **Review Frequency** | Annually, or upon significant regulatory change or organizational restructure |
-| **Next Review Date** | [12 months from Effective Date] |
-
-## Approval
-
-This policy requires approval from the following roles:
-
-| Role | Name | Signature | Date |
-|------|------|-----------|------|
-| **Compliance Officer** | [Name] | ___________________ | __________ |
-| **ISMS Manager** | [Name] | ___________________ | __________ |
-| **Executive Management** | [Name] | ___________________ | __________ |
-
-
-## Implementation Status: Stage 1 Documentation vs Stage 2 Operational Execution
-
-### ISO 27001 Audit Process Context
-
-ISO 27001:2022 certification follows a two-stage audit process:
-
-| Audit Stage | Official Purpose | Auditor Assessment Focus | A.5.31 Framework Scope |
-|-------------|------------------|-------------------------|----------------------|
-| **Stage 1** | Documentation Review | Is the ISMS adequately **DOCUMENTED**? | Framework policies (POL-5.31.1-4), implementation guides (IMP-5.31.1-6), tool templates documented |
-| **Stage 2** | Implementation Review | Is the ISMS effectively **OPERATIONAL**? | Executed assessments, populated registers, collected evidence, demonstrated compliance |
-
-**Critical Distinction**: Stage 1 assesses **documentation adequacy**. Stage 2 assesses **operational effectiveness**.
-
-### Current Framework Status
-
-**Stage 1 Status (Framework Documentation):** ✅ **COMPLETE**
-
-The A.5.31 regulatory compliance framework documentation is complete and audit-ready:
-
-**Policy Framework (POL-5.31.1 through 5.31.4):**
-
-- ✅ ISMS-POL-A.5.31.1 (Executive Control Alignment): Framework foundation, governance, roles, architecture
-- ✅ ISMS-POL-A.5.31.2 (Regulatory Applicability Methodology): Systematic process for identifying applicable regulations
-- ✅ ISMS-POL-A.5.31.3 (Requirements Extraction & Control Mapping): Methodology for extracting requirements and mapping to controls
-- ✅ ISMS-POL-A.5.31.4 (Change Management & Evidence Framework): Processes for monitoring changes and managing evidence
-- ✅ Integration: All four policy sections form cohesive, complete framework
-
-
-**Implementation Guides (IMP-5.31.1 through 5.31.6):**
-
-- ✅ Step-by-step operational procedures documented for policy execution
-- ✅ Examples, templates, and worked scenarios included
-- ✅ Process flowcharts and decision trees provided
-- ✅ Integration points between guides clearly defined
-
-
-**Assessment Tool Templates (Workbooks 1-6):**
-
-- ✅ Six Excel-based assessment workbooks designed and implemented
-- ✅ Python generation scripts operational (5,013 lines of code)
-- ✅ Sample data demonstrates framework usage across multiple scenarios
-- ✅ Professional formatting, data validation, conditional formatting included
-
-
-**Authoritative Regulatory Register (ISMS-POL-00):**
-
-- ✅ Three-tier taxonomy defined (Mandatory/Conditional/Informational)
-- ✅ Assessment methodology documented
-- ✅ Current regulatory determinations documented (Section 8)
-
-
-**Stage 1 Success Criteria**: ✅ **SATISFIED** - Framework is adequately documented
-
----
-
-**Stage 2 Status (Operational Execution):** 🔄 **IMPLEMENTATION IN PROGRESS**
-
-Operational execution will follow systematic implementation approach aligned with Stage 2 audit timeline:
-
-**Planned Execution Activities** (Stage 2 scope):
-
-- 🔄 Regulatory applicability assessments: Execute POL-5.31.2 methodology for identified regulations
-- 🔄 Requirements extraction: Execute POL-5.31.3 methodology for Tier 1 regulations (FADP, GDPR, ISO 27001)
-- 🔄 Control mapping: Map extracted requirements to ISO 27001 Annex A controls per POL-5.31.3
-- 🔄 Gap analysis: Identify and prioritize gaps where requirements lack corresponding controls
-- 🔄 Evidence collection: Systematic collection per POL-5.31.4 §5 for implemented controls
-- 🔄 Compliance dashboard: Populate Assessment Workbook 6 with organizational data
-
-
-**Implementation Approach**:
-[Organization] has intentionally separated framework **design** (Stage 1 deliverable) from framework **execution** (Stage 2 deliverable) to ensure:
-
-- Systematic, well-planned implementation (not rushed)
-- Adequate resource allocation and scheduling
-- Proper stakeholder engagement and training
-- Quality assurance before operational deployment
-
-
----
-
-### Auditor Expectations by Stage
-
-**Stage 1 Auditor Will Assess:**
-
-- ✅ Do policies adequately describe the regulatory compliance process? (POL-5.31.1-4)
-- ✅ Is the methodology systematic and repeatable? (POL-5.31.2, 5.31.3, 5.31.4)
-- ✅ Are roles, responsibilities, and governance defined? (POL-5.31.1 §4)
-- ✅ Are procedures documented for operational execution? (IMP-5.31.1-6)
-- ✅ Is the framework integrated with broader ISMS? (POL-5.31.1 §5)
-- ✅ Are tools/templates available to support execution? (Assessment Workbooks)
-
-
-**Stage 1 Auditor Will NOT Assess** (Stage 2 scope):
-
-- ❌ Have applicability assessments been executed for all identified regulations?
-- ❌ Have requirements been extracted from applicable regulations?
-- ❌ Have requirements been mapped to controls with complete coverage?
-- ❌ Has evidence been collected for all mapped controls?
-- ❌ Are compliance dashboards populated with current organizational data?
-- ❌ Have internal audits validated framework effectiveness?
-
-
-**Stage 2 Auditor Will Assess** (future scope):
-
-- Populated regulatory registers (ISMS-POL-00 Section 8 with real determinations)
-- Completed applicability assessment records (Assessment Workbook 2 with organizational data)
-- Extracted requirements (Assessment Workbook 3 populated from actual regulations)
-- Control mappings (Assessment Workbook 4 showing requirements → controls)
-- Evidence collection (Assessment Workbook 5 with evidence locations and verification dates)
-- Compliance dashboard (Assessment Workbook 6 with current metrics and status)
-- Regulatory monitoring logs (POL-5.31.4 §2 execution records)
-- Management review records (POL-5.31.4 §6 reporting to Executive Management)
-- Internal audit findings related to A.5.31 effectiveness
-
-
-### Framework Maturity Progression
-
-```
-STAGE 1               STAGE 2                ONGOING
-(Documentation)       (Implementation)       (Operation)
-      │                    │                     │
-      ▼                    ▼                     ▼
-  Policies           Execution             Continuous
- documented          begins               compliance
-      │                    │                     │
- Procedures     →    Registers      →      Evidence
- defined              populated            maintained
-      │                    │                     │
-  Templates     →    Assessments    →     Monitoring
- created              completed            active
-      │                    │                     │
- ✅ Current        🔄 In Progress      Future State
-   Position                                (Post-cert)
-```
-
-**Current Position**: Stage 1 readiness achieved. Stage 2 readiness development in progress per implementation roadmap.
-
-### Auditor Note
-
-**For Stage 1 Auditor:**
-
-This Stage 1 audit assesses whether [Organization]'s A.5.31 regulatory compliance framework is **adequately documented** per ISO 27001:2022 Clause 7.5 (Documented Information) requirements.
-
-Documentation adequacy criteria:
-
-- ✅ Framework describes systematic process for identifying applicable regulations (POL-5.31.2)
-- ✅ Framework describes systematic process for extracting and mapping requirements (POL-5.31.3)
-- ✅ Framework describes systematic process for monitoring changes and managing evidence (POL-5.31.4)
-- ✅ Procedures provide sufficient detail for consistent execution (IMP-5.31.1-6)
-- ✅ Roles, responsibilities, and authorities are defined (POL-5.31.1 §4)
-- ✅ Integration with broader ISMS is clear (POL-5.31.1 §5)
-
-
-**Operational effectiveness** (whether framework is actually executed as documented) is **Stage 2 audit scope** and will be assessed during Stage 2 audit scheduled per certification timeline.
-
-Presence of sample data in assessment workbooks and initial execution activities (if any) demonstrate framework viability but are NOT required for Stage 1 assessment. Stage 1 success criteria focus on documentation quality and completeness.
-
----
-
-## Version History
-
-| Version | Date | Author | Changes |
-|---------|------|--------|---------|
-| 0.1 | [Date] | [Name] | Initial draft for review |
-| 1.0 | [Date] | [Name] | Initial approved release |
-
-## Related Documents
-
-This policy is part of the integrated regulatory compliance framework and should be read in conjunction with:
-
-**Framework Policies:**
-
-- **ISMS-POL-00**: Regulatory Applicability Framework (the authoritative regulatory register)
-- **ISMS-POL-A.5.31.2**: Regulatory Applicability Methodology
-- **ISMS-POL-A.5.31.3**: Requirements Extraction & Control Mapping Framework
-- **ISMS-POL-A.5.31.4**: Change Management & Evidence Framework
-
-
-**Implementation Guides:**
-
-- **ISMS-IMP-A.5.31.1**: Regulatory Inventory Management Process
-- **ISMS-IMP-A.5.31.2**: Regulatory Applicability Assessment Process
-- **ISMS-IMP-A.5.31.3**: Requirements Extraction Process
-- **ISMS-IMP-A.5.31.4**: Control Mapping Process
-- **ISMS-IMP-A.5.31.5**: Evidence Management Process
-
-
-**Assessment Tools:**
-
-- Assessment Workbook 1: Regulatory Inventory
-- Assessment Workbook 2: Applicability Matrix
-- Assessment Workbook 3: Requirements Extraction
-- Assessment Workbook 4: Control Mapping Matrix
-- Assessment Workbook 5: Compliance Evidence Register
-- Dashboard: Regulatory Compliance Overview
-
-
-**Standards:**
-
-- ISO/IEC 27001:2022 - Information Security Management Systems - Requirements
-- ISO/IEC 27002:2022 - Information Security Controls
-
-
-## Distribution and Access
-
-**Distribution List:**
-
-- Executive Management Team
-- Compliance Officer / Legal Function
-- ISMS Manager
-- Control Owners (all)
-- Internal Audit Team
-- Information Security Committee
-
-
-**Access Level**: Internal Use - This document contains [Organization]'s compliance framework and should be treated as confidential. Distribution outside [Organization] requires approval from Executive Management.
-
-**Document Location**: [Organization]'s Document Management System - Path to be specified per organizational structure
-
-## Review and Update Triggers
-
-This policy shall be reviewed and updated:
-
-**Mandatory Reviews:**
-
-- Annually (minimum)
-- Upon revision of ISO 27001 standard
-
-
-**Triggered Reviews:**
-
-- Significant organizational restructure affecting roles and responsibilities
-- Major change to regulatory landscape affecting [Organization]
-- Lessons learned from compliance failures or near-misses
-- Significant gaps identified through internal audit
-- External audit findings requiring framework updates
-- Executive Management directive
-
-
-**Review Process:**
-1. ISMS Manager initiates review
-2. Compliance Officer provides input on regulatory changes
-3. Control Owners provide feedback on operational effectiveness
-4. Internal Audit provides feedback on framework adequacy
-5. Updates drafted and circulated for comment
-6. Final updates submitted for approval per Section 6.2
-7. Approved updates communicated to all stakeholders
-8. Version history updated
 
 ---
 

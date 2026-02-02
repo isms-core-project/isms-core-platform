@@ -1,42 +1,27 @@
 **ISMS-POL-A.5.31.4: Change Management & Evidence Framework**
 **Legal, Statutory, Regulatory and Contractual Requirements**
 
-**Document ID**: ISMS-POL-A.5.31.4  
-**Title**: Change Management & Evidence Framework  
-**Version**: 1.0  
-**Effective Date**: [Date]  
-**Classification**: Internal  
-**Owner**: Compliance Officer / ISMS Manager  
-**Status**: Draft
-
----
-
 **Document Control**
+
+| Field | Value |
+|-------|-------|
+| **Document Title** | Change Management & Evidence Framework |
+| **Document Type** | Policy |
+| **Document ID** | ISMS-POL-A.5.31.4 |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | Chief Executive Officer (CEO) |
+| **Approved By** | Executive Management |
+| **Created Date** | [Date] |
+| **Version** | 1.0 |
+| **Version Date** | [To Be Determined] |
+| **Classification** | Internal |
+| **Status** | Draft |
+
+**Version History**:
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | [Date] | Compliance Officer / ISMS Manager | Initial release |
-
-**Review Frequency**: Annually or upon:
-
-- Significant changes to regulatory monitoring processes
-- Major updates to evidence management systems
-- Organizational changes affecting compliance operations
-- Process improvements identified through use
-
-
-**Next Review Date**: [Effective Date + 12 months]
-
-**Approval**:
-
-| Role | Name | Signature | Date |
-|------|------|-----------|------|
-| Compliance Officer | | | |
-| ISMS Manager | | | |
-| Legal Counsel | | | |
-| Executive Management | | | |
-
-**Distribution**: Compliance team, ISMS stakeholders, control owners, legal counsel, auditors, management
+| 1.0 | [Date] | CISO/ISO | Initial policy framework for ISO 27001:2022 first certification |
 
 ---
 

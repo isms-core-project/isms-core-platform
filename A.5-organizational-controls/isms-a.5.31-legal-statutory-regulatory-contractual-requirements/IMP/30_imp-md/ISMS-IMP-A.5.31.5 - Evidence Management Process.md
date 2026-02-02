@@ -2,11 +2,27 @@
 **Assessment Specification with User Completion Guide**
 ### ISO/IEC 27001:2022 Control A.5.31: Legal, Statutory, Regulatory and Contractual Requirements
 
-**Document ID**: ISMS-IMP-A.5.31.5  
-**Title**: Evidence Management Process  
-**Version**: 1.0  
-**Related Policy**: ISMS-POL-A.5.31.4 (Change Management & Evidence Framework)  
-**Purpose**: Operational guide for collecting, organizing, and maintaining evidence of regulatory compliance
+**Document Control**
+
+| Field | Value |
+|-------|-------|
+| **Document Title** | Evidence Management Process |
+| **Document Type** | Implementation Guide |
+| **Document ID** | ISMS-IMP-A.5.31.5 |
+| **Document Creator** | Chief Information Security Officer (CISO) |
+| **Document Owner** | Chief Executive Officer (CEO) |
+| **Approved By** | Executive Management |
+| **Created Date** | [Date] |
+| **Version** | 1.0 |
+| **Version Date** | [To Be Determined] |
+| **Classification** | Internal |
+| **Status** | Draft |
+
+**Version History**:
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO/ISO | Initial implementation guide for ISO 27001:2022 first certification |
 
 ---
 
