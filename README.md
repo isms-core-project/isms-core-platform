@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://www.iso.org/standard/27001"><img src="https://img.shields.io/badge/ISO_27001-2022-0066CC?style=flat-square&logo=iso&logoColor=white" alt="ISO 27001:2022"/></a>
-  <a href="#-status"><img src="https://img.shields.io/badge/Progress-80.8%25-32CD32?style=flat-square" alt="Progress"/></a>
+  <a href="#-status"><img src="https://img.shields.io/badge/Progress-83%25-32CD32?style=flat-square" alt="Progress"/></a>
   <a href="#-status"><img src="https://img.shields.io/badge/Section_8-100%25_Complete-00AA00?style=flat-square" alt="Section 8"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-AGPL_3.0-9400D3?style=flat-square" alt="License"/></a>
 </p>
@@ -67,18 +67,19 @@ Workbook (Output)    → Evidence and compliance metrics
 ## 📂 Repository Structure
 
 ```
-isms-core/
-├── A.5-organizational-controls/     # 17 controls
+isms-core-platform/
+├── A.5-organizational-controls/     # 17 control groups
 │   ├── isms-a.5.7-threat-intelligence/
 │   │   ├── POL/    ├── IMP/    ├── SCR/    └── REF/
 │   └── ...
-├── A.6-people-controls/             # 3 controls
-├── A.7-physical-controls/           # 1 control
-├── A.8-technological-controls/      # 21 controls
+├── A.6-people-controls/             # 3 control groups
+├── A.7-physical-controls/           # 6 control groups
+├── A.8-technological-controls/      # 23 control groups
 ├── CONTROLS.md                      # 📋 Control index (start here!)
+├── STATUS.md                        # 📊 Current implementation progress
+├── STACKING.md                      # 🔗 Control grouping approaches
 ├── PHILOSOPHY.md                    # ✈️ Anti-cargo-cult methodology
-├── CONTRIBUTING.md                  # 🔧 QA process and standards
-└── STATUS.md                        # 📊 Current implementation progress
+└── CONTRIBUTING.md                  # 🔧 QA process and standards
 ```
 
 Controls are organized by ISO 27001:2022 Annex A section.
@@ -192,12 +193,12 @@ See [PHILOSOPHY.md](PHILOSOPHY.md) for the full methodology.
 </tr>
 <tr>
 <td>Control Groups Complete</td>
-<td><strong>42 of 52</strong></td>
-<td><img src="https://img.shields.io/badge/80.8%25-32CD32?style=flat-square" alt="80.8%"/></td>
+<td><strong>44 of 53</strong></td>
+<td><img src="https://img.shields.io/badge/83%25-32CD32?style=flat-square" alt="83%"/></td>
 </tr>
 <tr>
 <td>Section 8 (Technological)</td>
-<td><strong>21 of 21</strong></td>
+<td><strong>22 of 22</strong></td>
 <td><img src="https://img.shields.io/badge/100%25_🎉-00AA00?style=flat-square" alt="100%"/></td>
 </tr>
 <tr>
@@ -251,8 +252,9 @@ For commercial licensing: admin@gregorygriffin.org
 
 | Document | Description |
 |----------|-------------|
-| [CONTROLS.md](CONTROLS.md) | 📋 **Start here!** Index of all 42 control implementations |
+| [CONTROLS.md](CONTROLS.md) | 📋 **Start here!** Index of all 49 control implementations |
 | [STATUS.md](STATUS.md) | 📊 Current implementation progress and metrics |
+| [STACKING.md](STACKING.md) | 🔗 Control grouping approaches (Domain vs NIST CSF) |
 | [PHILOSOPHY.md](PHILOSOPHY.md) | ✈️ Anti-cargo-cult methodology and the Feynman principle |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | 🔧 QA process, quality standards, development guidelines |
 
