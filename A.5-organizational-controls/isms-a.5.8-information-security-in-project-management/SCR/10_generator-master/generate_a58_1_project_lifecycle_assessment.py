@@ -212,35 +212,128 @@ def create_classification_sheet(ws, styles):
     ws[f"A{row}"].font = Font(bold=True)
     ws[f"B{row}"].fill = styles["input_cell"]["fill"]
     ws[f"B{row}"].border = styles["border"]
+    # Workshop guidance
     row += 2
-    ws[f"A{row}"] = "CLASSIFICATION CRITERIA (Answer Yes/No):"
+    ws[f"A{row}"] = "CLASSIFICATION WORKSHOP (30-60 minutes)"
+    ws[f"A{row}"].font = Font(bold=True, size=11)
+    ws.merge_cells(f"A{row}:F{row}")
+    row += 1
+    ws[f"A{row}"] = "1. Gather stakeholders: PM, Security, Business Owner, Technical Lead (5 min)"
+    row += 1
+    ws[f"A{row}"] = "2. Review each factor below and score High/Medium/Low (20-30 min)"
+    row += 1
+    ws[f"A{row}"] = "3. Discuss edge cases and document rationale (10-15 min)"
+    row += 1
+    ws[f"A{row}"] = "4. Confirm final classification and next steps (5 min)"
+    row += 2
+
+    # 6-Factor Classification Matrix (per ISMS Copilot audit)
+    ws[f"A{row}"] = "CLASSIFICATION DECISION MATRIX (6 Factors):"
     ws[f"A{row}"].font = styles["subsection_header"]["font"]
     ws[f"A{row}"].fill = styles["subsection_header"]["fill"]
+    ws.merge_cells(f"A{row}:F{row}")
     row += 1
-    criteria = [
-        "Processes Restricted or Confidential data?",
-        "External-facing system/service?",
-        "Handles payment card data (PCI DSS)?",
-        "Subject to regulatory requirements (GDPR, HIPAA, etc.)?",
-        "Critical business function (RTO <4 hours)?",
-        "Integrates with critical infrastructure?"
+
+    # Headers
+    factor_headers = ["Factor", "High (3 pts)", "Medium (2 pts)", "Low (1 pt)", "Score", "Rationale"]
+    for col_idx, header in enumerate(factor_headers, 1):
+        col = get_column_letter(col_idx)
+        ws[f"{col}{row}"] = header
+        ws[f"{col}{row}"].font = Font(bold=True, size=10)
+        ws[f"{col}{row}"].fill = PatternFill(start_color="D9E1F2", end_color="D9E1F2", fill_type="solid")
+        ws[f"{col}{row}"].border = styles["border"]
+    row += 1
+
+    # 6 Classification Factors with criteria
+    factors = [
+        ("Data Sensitivity", "Restricted/Special Category PII", "Confidential/Internal PII", "Public/Non-sensitive"),
+        ("System Criticality", "Tier 1 (RTO <4hr)", "Tier 2 (RTO 4-24hr)", "Tier 3+ (RTO >24hr)"),
+        ("Regulatory Scope", "Multiple regulations (GDPR+PCI+etc)", "Single major regulation", "General compliance only"),
+        ("External Exposure", "Internet-facing, customer data", "Partner/B2B access", "Internal only"),
+        ("Technical Complexity", "New technology, high integration", "Moderate complexity", "Standard/proven stack"),
+        ("Third-Party Involvement", "Critical outsourced development", "Vendor components", "Internal development"),
     ]
-    validations = DataValidation(type="list", formula1='"Yes,No"', allow_blank=False)
-    ws.add_data_validation(validations)
-    for i, criterion in enumerate(criteria, 1):
-        ws[f"A{row}"] = criterion
-        ws[f"B{row}"].fill = styles["input_cell"]["fill"]
-        ws[f"B{row}"].border = styles["border"]
-        validations.add(ws[f"B{row}"])
+
+    score_validation = DataValidation(type="list", formula1='"3,2,1"', allow_blank=False)
+    ws.add_data_validation(score_validation)
+    factor_start_row = row
+
+    for factor_name, high_desc, med_desc, low_desc in factors:
+        ws[f"A{row}"] = factor_name
+        ws[f"A{row}"].font = Font(bold=True)
+        ws[f"B{row}"] = high_desc
+        ws[f"C{row}"] = med_desc
+        ws[f"D{row}"] = low_desc
+        ws[f"E{row}"].fill = styles["input_cell"]["fill"]
+        ws[f"E{row}"].border = styles["border"]
+        score_validation.add(ws[f"E{row}"])
+        ws[f"F{row}"].fill = styles["input_cell"]["fill"]
+        ws[f"F{row}"].border = styles["border"]
+        for col in ['A', 'B', 'C', 'D']:
+            ws[f"{col}{row}"].border = styles["border"]
+            ws[f"{col}{row}"].alignment = Alignment(wrap_text=True, vertical="top")
         row += 1
+
+    # Total score and classification
     row += 1
+    ws[f"A{row}"] = "TOTAL SCORE:"
+    ws[f"A{row}"].font = Font(bold=True, size=12)
+    ws[f"E{row}"] = f"=SUM(E{factor_start_row}:E{factor_start_row+5})"
+    ws[f"E{row}"].font = Font(bold=True, size=12)
+    ws[f"E{row}"].border = styles["border"]
+    row += 1
+
     ws[f"A{row}"] = "CALCULATED RISK LEVEL:"
     ws[f"A{row}"].font = Font(bold=True, size=12)
-    ws[f"B{row}"] = f'=IF(COUNTIF(B{row-7}:B{row-2},"Yes")>=4,"High",IF(COUNTIF(B{row-7}:B{row-2},"Yes")>=2,"Medium","Low"))'
+    ws[f"B{row}"] = f'=IF(E{row-1}>=15,"High",IF(E{row-1}>=10,"Medium","Low"))'
     ws[f"B{row}"].font = Font(bold=True, size=14, color="FF0000")
     ws[f"B{row}"].fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
-    ws.column_dimensions["A"].width = 60
-    ws.column_dimensions["B"].width = 15
+    row += 1
+    ws[f"A{row}"] = "(High: 15-18 pts | Medium: 10-14 pts | Low: 6-9 pts)"
+    ws[f"A{row}"].font = Font(italic=True, size=9)
+
+    # Common Classification Scenarios (per audit requirement)
+    row += 3
+    ws[f"A{row}"] = "COMMON CLASSIFICATION SCENARIOS (Reference Examples):"
+    ws[f"A{row}"].font = styles["subsection_header"]["font"]
+    ws[f"A{row}"].fill = styles["subsection_header"]["fill"]
+    ws.merge_cells(f"A{row}:F{row}")
+    row += 1
+
+    scenarios = [
+        ("Customer-facing web portal with payment processing", "High", "External exposure + PCI DSS + customer PII"),
+        ("Internal HR system with employee data", "Medium", "Internal PII but limited exposure"),
+        ("Marketing website refresh (static content)", "Low", "Public data, no integration"),
+        ("Cloud migration of core ERP system", "High", "Critical system + complexity + third-party"),
+        ("Mobile app for field service technicians", "Medium", "Internal users but external network"),
+        ("Data analytics dashboard (aggregated metrics)", "Low", "No PII, internal only"),
+        ("Third-party SaaS integration (CRM)", "Medium", "Vendor involvement + customer data subset"),
+        ("Legacy system decommissioning", "Medium", "Data retention + secure disposal needs"),
+    ]
+
+    scenario_headers = ["Scenario Description", "Typical Classification", "Key Factors"]
+    for col_idx, header in enumerate(scenario_headers, 1):
+        col = get_column_letter(col_idx)
+        ws[f"{col}{row}"] = header
+        ws[f"{col}{row}"].font = Font(bold=True, size=10)
+        ws[f"{col}{row}"].fill = PatternFill(start_color="E2EFDA", end_color="E2EFDA", fill_type="solid")
+        ws[f"{col}{row}"].border = styles["border"]
+    row += 1
+
+    for scenario_desc, classification, factors_desc in scenarios:
+        ws[f"A{row}"] = scenario_desc
+        ws[f"B{row}"] = classification
+        ws[f"C{row}"] = factors_desc
+        for col in ['A', 'B', 'C']:
+            ws[f"{col}{row}"].border = styles["border"]
+            ws[f"{col}{row}"].alignment = Alignment(wrap_text=True)
+        row += 1
+    ws.column_dimensions["A"].width = 45
+    ws.column_dimensions["B"].width = 30
+    ws.column_dimensions["C"].width = 30
+    ws.column_dimensions["D"].width = 25
+    ws.column_dimensions["E"].width = 10
+    ws.column_dimensions["F"].width = 35
 
 def create_phase_sheet(ws, styles, phase_name, activities):
     ws.merge_cells("A1:E1")
@@ -519,8 +612,10 @@ if __name__ == "__main__":
     main()
 
 # =============================================================================
-# QA_VERIFIED: 2026-01-31
-# QA_STATUS: PASSED - STANDARDIZATION COMPLETE (Phase 1-3)
-# QA_TOOL: Claude Code Standardization
-# CHANGES: constants, metadata headers, v1.0 versioning, logger output
+# QA_VERIFIED: 2026-02-02
+# QA_STATUS: PASSED - AUDIT ALIGNMENT UPDATE
+# QA_TOOL: Claude Code
+# CHANGES: Added 6-factor classification matrix (Data Sensitivity, System Criticality,
+#          Regulatory Scope, External Exposure, Technical Complexity, Third-Party);
+#          Added 30-60 min workshop procedure; Added 8 common classification scenarios
 # =============================================================================

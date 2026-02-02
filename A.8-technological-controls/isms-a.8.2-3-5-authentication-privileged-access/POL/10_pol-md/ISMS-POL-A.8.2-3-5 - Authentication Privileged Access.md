@@ -562,42 +562,46 @@ All authentication events SHALL be logged:
 
 ---
 
-# Evidence Requirements
+# Evidence for This Policy
 
-## Audit Evidence Categories
+**Stage 1 (Documentation Review) Evidence:**
 
-**For ISO 27001:2022 certification audits, [Organization] SHALL maintain**:
+Evidence required to demonstrate this policy is adequately documented and approved:
 
-**A.8.5 (Authentication) Evidence**:
+- ✅ This policy document (ISMS-POL-A.8.2-3-5 v1.0)
+- ✅ Approval signatures from CISO, CIO, Executive Management
+- ✅ Authentication requirements defined (Section 2 - A.8.5)
+- ✅ Privileged access tier model documented (Section 3 - A.8.2)
+- ✅ Access restriction requirements specified (Section 4 - A.8.3)
+- ✅ Roles and responsibilities assigned
+- ✅ Assessment workbook references documented (ISMS-IMP-A.8.2-3-5)
 
+
+**Stage 2 (Operational Effectiveness) Evidence:**
+
+Evidence required to demonstrate this policy is operationally effective:
+
+**A.8.5 (Authentication)**:
 - Authentication mechanism inventory
 - MFA enrollment reports and coverage metrics
 - Password policy configurations
 - SSO application integration status
 - Authentication log samples
 
-
-**A.8.2 (Privileged Access) Evidence**:
-
+**A.8.2 (Privileged Access)**:
 - Privileged account inventory with tier classification
 - PAM solution deployment documentation
 - Session recording samples (Tier 0)
 - Quarterly access review attestations
 - Credential rotation logs
 
-
-**A.8.3 (Access Restriction) Evidence**:
-
+**A.8.3 (Access Restriction)**:
 - Access control configurations (OS, database, application)
 - Permission audit reports
 - Penetration test findings (access control section)
 - Network segmentation documentation
 
-
-## Assessment Workbooks
-
-Compliance assessment conducted using standardized workbooks:
-
+**Assessment Workbooks** (ISMS-IMP-A.8.2-3-5 Suite):
 - Workbook 1: Authentication Inventory (A.8.5)
 - Workbook 2: MFA Coverage Assessment (A.8.5)
 - Workbook 3: Privileged Account Inventory (A.8.2)
@@ -605,20 +609,7 @@ Compliance assessment conducted using standardized workbooks:
 - Workbook 5: Access Restriction Compliance (A.8.3)
 - Dashboard: Consolidated Compliance Status
 
-
-**Note**: Workbook specifications and assessment procedures documented in ISMS-IMP-A.8.2-3-5 Implementation Suite (S1-S6).
-
-**Evidence Generation Verification**:
-
-- Workbooks populated from identity provider exports, PAM solution reports, and SIEM queries
-- Data sources: Azure AD/Entra ID, Okta, CyberArk/equivalent PAM, SIEM platform
-- Generation frequency: Workbooks 2-4 updated quarterly minimum; Dashboard updated monthly
-- Quality assurance: IT Security Manager validates workbook accuracy against source systems before audit submission
-- Sample evidence package generated annually to verify all required evidence types can be produced
-
-
-## Evidence Retention
-
+**Evidence Retention:**
 - Authentication logs: Minimum 12 months (longer per regulatory requirements)
 - Access review attestations: 3 years
 - Privileged session recordings: 12 months minimum

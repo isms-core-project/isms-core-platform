@@ -419,7 +419,7 @@ SHEET_NAMES = [
     "Audit Trail Completeness",
     "Verification Dashboard",
     "Evidence Register",
-    "Approval Sign-Of"
+    "Approval Sign-Off"
 ]
 
 # Standard column headers (A-Q) - consistent across all A.8.10 assessments
@@ -757,7 +757,7 @@ def populate_instructions_sheet(ws, styles):
         ["Audit Trail Completeness", "Assess reconstruction capability and chain of custody"],
         ["Verification Dashboard", "Summary metrics and gap analysis"],
         ["Evidence Register", "Document assessment evidence (100 rows)"],
-        ["Approval Sign-Of", "Three-level approval workflow"]
+        ["Approval Sign-Off", "Three-level approval workflow"]
     ]
     
     for idx, row in enumerate(instructions_data, start=21):
@@ -1807,7 +1807,7 @@ def main():
         populate_evidence_register(wb["Evidence Register"], styles)
 
         logger.info("Populating Sheet 9: Approval Sign-Off...")
-        populate_approval_signoff(wb["Approval Sign-Of"], styles)
+        populate_approval_signoff(wb["Approval Sign-Off"], styles)
 
         # Save workbook
         filename = f"{FILENAME_PREFIX}_{datetime.now().strftime('%Y%m%d')}.xlsx"

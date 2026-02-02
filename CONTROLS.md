@@ -1,7 +1,14 @@
-# ISMS CORE Controls Index
+<h1 align="center">🎋 ISMS CORE Controls Index</h1>
 
-> **ISO 27001:2022 Annex A Implementation Framework**
-> 42 control groups implemented | 93 individual controls covered
+<p align="center">
+  <strong>ISO 27001:2022 Annex A Implementation Framework</strong>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Control_Groups-42-0066CC?style=flat-square" alt="42 Control Groups"/>
+  <img src="https://img.shields.io/badge/Individual_Controls-93-32CD32?style=flat-square" alt="93 Controls"/>
+  <img src="https://img.shields.io/badge/ISO_27001-2022-DC143C?style=flat-square" alt="ISO 27001:2022"/>
+</p>
 
 ---
 
@@ -33,6 +40,11 @@ isms-a.X.X-control-name/
 
 ## A.5 Organizational Controls
 
+<p>
+<img src="https://img.shields.io/badge/A.5-Organizational-9400D3?style=flat-square" alt="Organizational"/>
+<img src="https://img.shields.io/badge/17_groups-0066CC?style=flat-square" alt="17 groups"/>
+</p>
+
 📁 **[A.5-organizational-controls/](A.5-organizational-controls/)**
 
 | Control | Name | Artifacts |
@@ -59,6 +71,11 @@ isms-a.X.X-control-name/
 
 ## A.6 People Controls
 
+<p>
+<img src="https://img.shields.io/badge/A.6-People-FF6600?style=flat-square" alt="People"/>
+<img src="https://img.shields.io/badge/3_groups-0066CC?style=flat-square" alt="3 groups"/>
+</p>
+
 📁 **[A.6-people-controls/](A.6-people-controls/)**
 
 | Control | Name | Artifacts |
@@ -71,6 +88,11 @@ isms-a.X.X-control-name/
 
 ## A.7 Physical Controls
 
+<p>
+<img src="https://img.shields.io/badge/A.7-Physical-32CD32?style=flat-square" alt="Physical"/>
+<img src="https://img.shields.io/badge/1_group-0066CC?style=flat-square" alt="1 group"/>
+</p>
+
 📁 **[A.7-physical-controls/](A.7-physical-controls/)**
 
 | Control | Name | Artifacts |
@@ -80,6 +102,12 @@ isms-a.X.X-control-name/
 ---
 
 ## A.8 Technological Controls
+
+<p>
+<img src="https://img.shields.io/badge/A.8-Technological-DC143C?style=flat-square" alt="Technological"/>
+<img src="https://img.shields.io/badge/21_groups-0066CC?style=flat-square" alt="21 groups"/>
+<img src="https://img.shields.io/badge/100%25_Complete-00AA00?style=flat-square" alt="100% Complete"/>
+</p>
 
 📁 **[A.8-technological-controls/](A.8-technological-controls/)**
 
@@ -111,13 +139,13 @@ isms-a.X.X-control-name/
 
 ## Artifact Legend
 
-| Code | Type | Description |
-|------|------|-------------|
-| **POL** | Policy | Defines WHAT is required and WHO is accountable |
-| **IMP** | Implementation | Defines HOW to implement with assessment workbooks |
-| **SCR** | Scripts | Python generators, validators, and Excel workbooks |
-| **REF** | Reference | Regulatory and framework reference materials |
-| **CTX** | Context | Organizational context documents |
+| Code | Type | Description | Badge |
+|------|------|-------------|-------|
+| **POL** | Policy | Defines WHAT is required and WHO is accountable | <img src="https://img.shields.io/badge/POL-9400D3?style=flat-square" alt="POL"/> |
+| **IMP** | Implementation | Defines HOW to implement with assessment workbooks | <img src="https://img.shields.io/badge/IMP-0066CC?style=flat-square" alt="IMP"/> |
+| **SCR** | Scripts | Python generators, validators, and Excel workbooks | <img src="https://img.shields.io/badge/SCR-3776AB?style=flat-square" alt="SCR"/> |
+| **REF** | Reference | Regulatory and framework reference materials | <img src="https://img.shields.io/badge/REF-FF6600?style=flat-square" alt="REF"/> |
+| **CTX** | Context | Organizational context documents | <img src="https://img.shields.io/badge/CTX-32CD32?style=flat-square" alt="CTX"/> |
 
 ---
 
@@ -130,4 +158,10 @@ isms-a.X.X-control-name/
 
 ---
 
-*ISMS CORE Framework v1.0 | ISO 27001:2022 Annex A*
+<p align="center">
+  <strong>ISMS CORE Framework v1.0</strong> | ISO 27001:2022 Annex A
+</p>
+
+<p align="center">
+  <em>Where bamboo antennas actually work.</em> 🎋
+</p>

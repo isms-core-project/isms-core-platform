@@ -786,7 +786,6 @@ This policy addresses cryptographic requirements from:
 
 ---
 
-*ISMS-POL-A.8.24 v1.0 | Use of Cryptography*
-*This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.8.24.*
+*This policy establishes requirements for use of cryptography. Implementation procedures are documented in ISMS-IMP-A.8.24.*
 
-<!-- QA_VERIFIED: 2026-01-31 -->
+<!-- QA_VERIFIED: 2026-02-02 -->

@@ -1416,9 +1416,72 @@ In all other cases, these references are informational only and do not constitut
 
 ---
 
+# Evidence for This Policy
+
+## Stage 1 (Documentation Review) Evidence
+
+Evidence required to demonstrate this policy framework is adequately documented and approved:
+
+- ✅ This master policy document (ISMS-POL-A.5.19-23 v1.0)
+- ✅ Approval signatures from CISO, CIO, Procurement Director, Legal/Compliance Officer, Executive Management (Approval Record)
+- ✅ Sub-policy documents complete (S1-S6):
+  - S1: Supplier Relationship Fundamentals (A.5.19)
+  - S2: Supplier Agreement Requirements (A.5.20)
+  - S3: ICT Supply Chain Security (A.5.21)
+  - S4: Supplier Monitoring & Change Management (A.5.22)
+  - S5: Cloud Services Security (A.5.23)
+  - S6: Assessment Methodology & Automation
+- ✅ Control alignment with ISO/IEC 27001:2022 A.5.19-23 documented (Section 2: Control Alignment)
+- ✅ Supplier risk classification methodology defined (Section 6: Supplier Risk Classification)
+- ✅ Compliance scoring thresholds established (Section 6: Compliance Scoring)
+- ✅ Lifecycle management phases documented (Section 8: Lifecycle Management)
+- ✅ Incident management categories and notification requirements defined (Section 9: Incident Management)
+- ✅ Roles and responsibilities assigned with competence requirements (Section 5)
+- ✅ Regulatory applicability framework documented (Section 12: Regulatory Applicability)
+- ✅ Integration with related ISMS controls documented (Section 11: Integration with ISMS)
+- ✅ BC/DR integration for exit scenarios defined (Section 11: BC/DR Integration)
+
+## Stage 2 (Operational Effectiveness) Evidence
+
+Evidence required to demonstrate this policy framework is operationally effective:
+
+- **Cloud Service Inventory**: ISMS-IMP-A.5.23.1 workbook showing complete inventory with data classification, criticality ratings, residency, and exit feasibility
+- **Vendor Due Diligence Records**: ISMS-IMP-A.5.23.2 workbook documenting due diligence evaluations, certifications reviewed, security questionnaire responses
+- **Signed Contracts with Security Clauses**: Supplier agreements containing required security provisions (GDPR Art. 28, audit rights, incident notification, exit provisions)
+- **Configuration Baselines**: ISMS-IMP-A.5.23.3 workbook showing security configuration compliance against CIS benchmarks or vendor hardening guides
+- **Supplier Review Meeting Minutes**: Quarterly/semi-annual/annual review documentation showing SLA performance, compliance status, remediation tracking
+- **Ongoing Governance Records**: ISMS-IMP-A.5.23.4 workbook tracking monitoring results, change management, incident history, risk assessments
+- **Compliance Dashboard**: ISMS-IMP-A.5.23.5 workbook with consolidated KPIs, traffic-light status, risk register, remediation roadmap
+- **Supplier Certification Evidence**: Current SOC 2 Type II, ISO 27001, CSA STAR certificates for critical/high-risk suppliers (within 12 months)
+- **SLA Performance Reports**: Monthly/quarterly reports showing uptime, support response times, incident resolution metrics
+- **Incident Notifications from Suppliers**: Documented security incidents per contractual notification requirements with response evidence
+- **Change Management Records**: Approved service changes, configuration updates, migrations, and contract amendments
+- **Exit Plan Test Results**: Annual exit strategy validation demonstrating data export capability and transition readiness (DORA Art. 28.6)
+- **Concentration Risk Assessments**: Documented analysis of critical supplier dependencies with mitigation strategies
+- **Exception Register**: Approved exceptions with business justification, compensating controls, and CISO sign-off
+- **Regulatory Evidence (where applicable)**:
+  - DORA: ICT third-party risk register, concentration risk reports, competent authority cooperation records
+  - NIS2: 24h/72h/final incident reports to CSIRT, annual cybersecurity risk assessment
+  - AI Act: High-risk AI system conformity assessments, transparency documentation
+
+## Clarification on Compliance Evidence
+
+This policy framework establishes **supplier and cloud services security governance requirements** covering the complete lifecycle from supplier selection through secure exit, including risk classification, contractual requirements, supplier incident notification, ongoing monitoring, access requirements for supplier personnel, and cloud-specific considerations.
+
+It does **NOT** establish:
+- **Internal IT operations** (addressed in ISMS-POL-A.8.1-7-18-19 - Endpoint Security, ISMS-POL-A.8.20-22 - Network Security)
+- **Data classification methodology** (addressed in ISMS-POL-A.5.12 - Information Classification; supplier access requirements reference this classification)
+- **Organisational incident response procedures** (addressed in ISMS-POL-A.5.24-28 - Incident Management; this policy defines supplier incident notification requirements that feed into that framework)
+- **Business continuity procedures** (addressed in ISMS-POL-A.5.30 and ISMS-POL-A.8.13-14 - Backup & Redundancy; this policy defines exit requirements that integrate with BC/DR capabilities)
+- **Employee authentication controls** (addressed in ISMS-POL-A.5.15-16-18 - Identity Access Management, ISMS-POL-A.8.2-3-5 - Privileged Access & Authentication; this policy requires suppliers to implement equivalent controls)
+
+The boundary is: **This policy governs EXTERNAL supplier/cloud relationships** (what suppliers must do, what contracts must contain, how to monitor suppliers) → Internal technical policies govern INTERNAL systems and employees → This policy's requirements REFERENCE internal policies but do not duplicate them.
+
+---
+
 **END OF POLICY DOCUMENT**
 
 ---
 
 *This master index provides comprehensive governance for supplier and cloud services security. Detailed requirements for each control are documented in sections S1-S6. Assessment tools and implementation guidance are provided in the ISMS-IMP-A.5.23 document suite.*
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-02-02 -->

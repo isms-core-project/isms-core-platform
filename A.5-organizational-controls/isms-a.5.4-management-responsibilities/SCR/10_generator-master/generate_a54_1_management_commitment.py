@@ -72,21 +72,37 @@ THIN_BORDER = Border(
 
 
 # =============================================================================
-# COMMITMENT CRITERIA
+# COMMITMENT CRITERIA (Per ISMS Copilot Audit - 100-point rubric)
 # =============================================================================
 COMMITMENT_CRITERIA = [
-    # Category, Criterion, Weight
-    ("Visible Leadership", "Communicates importance of information security to team", 10),
-    ("Visible Leadership", "Participates in security awareness activities", 10),
-    ("Visible Leadership", "Recognizes security-conscious behavior", 5),
-    ("Visible Leadership", "Allocates time for security-related activities", 10),
-    ("Resource Allocation", "Approves budget for security initiatives", 15),
-    ("Resource Allocation", "Ensures adequate staffing for security", 10),
-    ("Resource Allocation", "Provides tools and training for secure operations", 10),
-    ("Policy Enforcement", "Ensures team understands applicable policies", 10),
-    ("Policy Enforcement", "Holds personnel accountable for compliance", 10),
-    ("Policy Enforcement", "Does not bypass security controls", 10),
+    # Category, Criterion, Weight (Total: 100 points)
+    # Attendance: 30 points
+    ("Attendance", "Attends scheduled ISMS Committee meetings", 10),
+    ("Attendance", "Participates in security governance forums", 10),
+    ("Attendance", "Available for security escalations and decisions", 10),
+    # Training: 20 points
+    ("Training", "Completes required security awareness training on time", 10),
+    ("Training", "Ensures direct reports complete mandatory training", 10),
+    # Resource Support: 20 points
+    ("Resource Support", "Approves budget for security initiatives", 10),
+    ("Resource Support", "Provides adequate staffing for security activities", 10),
+    # Operational Engagement: 20 points
+    ("Operational Engagement", "Reviews and acts on security reports/metrics", 10),
+    ("Operational Engagement", "Responds to security incidents within SLA", 10),
+    # Culture/Enforcement: 10 points
+    ("Culture/Enforcement", "Demonstrates security-conscious behavior (no bypasses)", 5),
+    ("Culture/Enforcement", "Holds personnel accountable for policy compliance", 5),
 ]
+
+# =============================================================================
+# SCORING THRESHOLDS (Per ISMS Copilot Audit)
+# =============================================================================
+SCORE_THRESHOLDS = {
+    "Exemplary": (90, 100),      # 90-100%
+    "Adequate": (70, 89),        # 70-89%
+    "Improvement Needed": (50, 69),  # 50-69%
+    "Non-Compliant": (0, 49),    # <50%
+}
 
 
 # =============================================================================
@@ -116,10 +132,11 @@ def create_instructions_sheet(ws):
         ["3. Review Summary Scores for organizational commitment level"],
         ["4. Identify improvement areas for management training"],
         [""],
-        ["SCORING"],
-        ["- Each criterion scored 0-5 (0=Not Demonstrated, 5=Exemplary)"],
-        ["- Weighted score calculated based on criterion importance"],
-        ["- Target: 70% minimum, 85% target for each manager"],
+        ["SCORING (100-point rubric)"],
+        ["- Each criterion scored 0-5 (0=Not Demonstrated, 5=Fully Demonstrated)"],
+        ["- Categories: Attendance (30pts), Training (20pts), Resource Support (20pts),"],
+        ["  Operational Engagement (20pts), Culture/Enforcement (10pts)"],
+        ["- Thresholds: 90-100% Exemplary, 70-89% Adequate, 50-69% Improvement Needed, <50% Non-Compliant"],
         [""],
         [f"Generated: {GENERATED_DATE}"],
         [f"Control Reference: {CONTROL_REF}"],
@@ -246,7 +263,7 @@ def create_summary_scores_sheet(ws):
     ws.cell(row=row, column=4, value=total_weight)
     ws.cell(row=row, column=5).fill = INPUT_FILL  # Manual entry or SUMIF
     ws.cell(row=row, column=6, value=f"=IF(E{row}>0,E{row}/D{row}*100,0)")
-    ws.cell(row=row, column=7, value=f'=IF(F{row}>=85,"Exceeds",IF(F{row}>=70,"Meets","Below"))')
+    ws.cell(row=row, column=7, value=f'=IF(F{row}>=90,"Exemplary",IF(F{row}>=70,"Adequate",IF(F{row}>=50,"Improvement Needed","Non-Compliant")))')
     ws.cell(row=row, column=8).fill = INPUT_FILL
 
     for col in range(1, 9):
@@ -297,8 +314,10 @@ if __name__ == "__main__":
     generate_workbook()
 
 # =============================================================================
-# QA_VERIFIED: 2026-01-31
-# QA_STATUS: PASSED - INITIAL CREATION
+# QA_VERIFIED: 2026-02-02
+# QA_STATUS: PASSED - AUDIT ALIGNMENT UPDATE
 # QA_TOOL: Claude Code
-# CHANGES: Initial generator creation for A.5.4 Management Responsibilities
+# CHANGES: Updated categories per ISMS Copilot audit (Attendance 30pts, Training 20pts,
+#          Resource Support 20pts, Operational Engagement 20pts, Culture/Enforcement 10pts);
+#          Updated thresholds (90-100 Exemplary, 70-89 Adequate, 50-69 Improvement, <50 Non-Compliant)
 # =============================================================================

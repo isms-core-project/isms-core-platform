@@ -1,18 +1,18 @@
 <h1 align="center">🎋 ISMS CORE Implementation Status</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-3.8-2E8B57?style=for-the-badge" alt="Version 3.8"/>
+  <img src="https://img.shields.io/badge/Version-4.1-2E8B57?style=for-the-badge" alt="Version 4.1"/>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Overall_Progress-80.8%25-32CD32?style=flat-square" alt="Progress"/>
+  <img src="https://img.shields.io/badge/Overall_Progress-83%25-32CD32?style=flat-square" alt="Progress"/>
   <img src="https://img.shields.io/badge/Section_8-100%25_Complete-00AA00?style=flat-square" alt="Section 8"/>
-  <img src="https://img.shields.io/badge/Controls-42_of_52-0066CC?style=flat-square" alt="Controls"/>
+  <img src="https://img.shields.io/badge/Controls-44_of_53-0066CC?style=flat-square" alt="Controls"/>
   <img src="https://img.shields.io/badge/Scripts-360+-3776AB?style=flat-square" alt="Scripts"/>
 </p>
 
 <p align="center">
-  <strong>Last Updated:</strong> 2026-02-01
+  <strong>Last Updated:</strong> 2026-02-02
 </p>
 
 ---
@@ -27,12 +27,12 @@
 </tr>
 <tr>
 <td>Control Groups Complete</td>
-<td><strong>42 of 52</strong></td>
-<td><img src="https://img.shields.io/badge/80.8%25-32CD32?style=flat-square" alt="80.8%"/></td>
+<td><strong>44 of 53</strong></td>
+<td><img src="https://img.shields.io/badge/83%25-32CD32?style=flat-square" alt="83%"/></td>
 </tr>
 <tr>
 <td>Section 8 Complete</td>
-<td><strong>21 of 21</strong></td>
+<td><strong>22 of 22</strong></td>
 <td><img src="https://img.shields.io/badge/100%25_🎉-00AA00?style=flat-square" alt="100%"/></td>
 </tr>
 <tr>
@@ -127,7 +127,7 @@
 
 <p>
 <img src="https://img.shields.io/badge/Section_8-100%25_🎉-00AA00?style=for-the-badge" alt="100%"/>
-<strong>21/21 groups complete</strong>
+<strong>22/22 groups complete</strong>
 </p>
 
 | Control | Status | POL | IMP | SCR |
@@ -149,6 +149,7 @@
 | A.8.23 | ✅ Complete | ✅ | ✅ | ✅ |
 | A.8.24 | ✅ Complete | ✅ | ✅ | ✅ |
 | A.8.25-26-29 | ✅ Complete | - | ✅ | ✅ |
+| A.8.27 | ✅ Complete | ✅ | ✅ | ✅ |
 | A.8.28 | ✅ Complete | ✅ | ✅ | ✅ |
 | A.8.30 | ✅ Complete | - | ✅ | ✅ |
 | A.8.31 | ✅ Complete | - | ✅ | ✅ |

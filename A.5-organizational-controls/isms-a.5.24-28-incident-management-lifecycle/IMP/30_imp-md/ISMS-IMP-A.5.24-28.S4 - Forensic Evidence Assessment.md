@@ -1599,15 +1599,11 @@ ISMS-IMP-A.5.24-28.S4 — Forensic Evidence Assessment v1.0
 
 ---
 
-**END OF PART II: TECHNICAL SPECIFICATION**
-
----
-
-**END OF DOCUMENT: ISMS-IMP-A.5.24-28.S4**
+**END OF SPECIFICATION**
 
 ---
 
 *"I would rather have questions that can't be answered than answers that can't be questioned."*
 — Richard Feynman
 
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-02-02 -->

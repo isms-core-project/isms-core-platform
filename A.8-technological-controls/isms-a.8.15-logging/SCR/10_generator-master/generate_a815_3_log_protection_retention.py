@@ -365,6 +365,12 @@ def setup_styles():
             'font': {'name': 'Calibri', 'size': 10, 'color': '000000'},
             'alignment': {'horizontal': 'left', 'vertical': 'top', 'wrap_text': True},
             'border': {'left': 'thin', 'right': 'thin', 'top': 'thin', 'bottom': 'thin'}
+        },
+        'section_header': {
+            'font': {'name': 'Calibri', 'size': 11, 'bold': True, 'color': 'FFFFFF'},
+            'fill': {'start_color': '4472C4', 'end_color': '4472C4', 'fill_type': 'solid'},
+            'alignment': {'horizontal': 'left', 'vertical': 'center'},
+            'border': {'left': 'thin', 'right': 'thin', 'top': 'thin', 'bottom': 'thin'}
         }
     }
 

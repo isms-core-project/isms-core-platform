@@ -572,11 +572,25 @@ Application Security Team assesses adequacy; CISO approval for High/Critical exc
 
 ---
 
-# Evidence Requirements
+# Evidence for This Policy
 
-## Audit Evidence
+**Stage 1 (Documentation Review) Evidence:**
 
-**For ISO 27001:2022 certification audits, [Organization] SHALL maintain**:
+Evidence required to demonstrate this policy is adequately documented and approved:
+
+- ✅ This policy document (ISMS-POL-A.8.28 v1.0)
+- ✅ Approval signatures from CISO, CIO, Executive Management
+- ✅ Secure coding standards documented
+- ✅ Developer training requirements specified
+- ✅ Code review requirements defined
+- ✅ Security testing requirements documented
+- ✅ Roles and responsibilities assigned
+- ✅ Assessment workbook references documented (ISMS-IMP-A.8.28)
+
+
+**Stage 2 (Operational Effectiveness) Evidence:**
+
+Evidence required to demonstrate this policy is operationally effective:
 
 - Secure coding standards documentation
 - Developer training records and completion rates
@@ -588,22 +602,14 @@ Application Security Team assesses adequacy; CISO approval for High/Critical exc
 - Exception register with approvals
 - Third-party developer compliance attestations
 
-
-## Assessment Workbooks
-
-Compliance assessed using standardized workbooks:
-
+**Assessment Workbooks** (ISMS-IMP-A.8.28 Suite):
 - ISMS-IMP-A.8.28.1: SDLC Assessment
 - ISMS-IMP-A.8.28.2: Standards & Tools Assessment
 - ISMS-IMP-A.8.28.3: Code Review & Testing Assessment
 - ISMS-IMP-A.8.28.4: Third-Party & OSS Assessment
 - ISMS-IMP-A.8.28.5: Compliance Dashboard
 
-
-**Note**: Workbook specifications and assessment procedures documented in ISMS-IMP-A.8.28 suite.
-
-## Evidence Retention
-
+**Evidence Retention:**
 - Training records: Duration of employment + 2 years
 - Code review records: Application lifecycle + 2 years
 - Security scan results: 3 years

@@ -144,6 +144,19 @@ The following require specific consideration per ISMS-POL-00:
 
 **PS-1.1 Mandatory Agreements**: [Organisation] SHALL require confidentiality or non-disclosure agreements from all persons with access to confidential information BEFORE access is granted.
 
+**PS-1.1.1 Coverage Targets**: [Organisation] SHALL achieve and maintain the following NDA coverage rates:
+
+| Stakeholder Category | Target Coverage | Measurement Frequency |
+|---------------------|-----------------|----------------------|
+| Employees | 100% | Monthly |
+| Contractors/Consultants | 100% | Monthly |
+| Vendors with data access | 100% | Quarterly |
+| Partners (active agreements) | 100% | Quarterly |
+| Board members/Advisors | 100% | Upon appointment |
+| Visitors (sensitive areas) | 100% of registered visits | Per visit |
+
+**Coverage Compliance Definition**: Coverage is calculated as (parties with valid, signed NDA / parties requiring NDA per this policy) × 100. A coverage rate below target triggers immediate gap remediation per PS-5.4.
+
 **PS-1.2 Timing**: NDAs SHALL be executed:
 
 | Party Type | Timing Requirement |
@@ -152,7 +165,19 @@ The following require specific consideration per ISMS-POL-00:
 | Contractors | Before access to any systems or information |
 | Vendors | Before contract execution or data sharing |
 | Partners | Before confidential discussions commence |
-| Visitors | Before entering sensitive areas (where applicable) |
+| Visitors | Before entering sensitive areas (see PS-1.2.1 below) |
+
+**PS-1.2.1 Visitor NDA Requirements**: Visitor NDAs are required when:
+
+| Area/Context | NDA Requirement | Form |
+|-------------|-----------------|------|
+| Data centre or server rooms | Mandatory | Visitor NDA (full) |
+| Development or engineering areas | Mandatory | Visitor NDA (full) |
+| Executive boardrooms (during sensitive meetings) | Mandatory | Visitor NDA (full) |
+| General office areas (escorted) | Acknowledgment only | Visitor Confidentiality Acknowledgment |
+| Reception/public areas | Not required | N/A |
+
+**Visitor NDA Process**: Visitor NDAs SHALL be executed during visitor registration, before badge issuance for sensitive areas. Visitor Confidentiality Acknowledgments may be incorporated into standard visitor sign-in procedures
 
 **PS-1.3 Legal Enforceability**: All NDAs SHALL be legally enforceable in [Organisation]'s operating jurisdictions. Legal Counsel SHALL review and approve NDA templates.
 
@@ -187,6 +212,19 @@ The following require specific consideration per ISMS-POL-00:
 - Upon regulatory changes affecting confidentiality
 - Upon significant changes to business operations
 - Following legal challenges or enforcement actions
+
+**PS-2.3.1 Triggered Review Events**: The following events SHALL trigger immediate template review (within 30 business days):
+
+| Trigger Event | Review Scope | Responsible Party |
+|--------------|--------------|-------------------|
+| New regulation enacted (e.g., privacy law) | All templates | Legal Counsel |
+| Court ruling affecting NDA enforceability | Affected templates | Legal Counsel |
+| Expansion to new jurisdiction | All templates for that jurisdiction | Legal Counsel |
+| Acquisition or merger | All templates | Legal Counsel + HR/Contracts |
+| Security incident involving confidential data | Root cause templates | CISO + Legal Counsel |
+| Failed NDA enforcement attempt | Specific template used | Legal Counsel |
+
+**Review Initiation**: Upon trigger event, Legal Counsel SHALL initiate review within 5 business days and document review requirement in Template Registry.
 
 **Verification**: Template registry maintained in ISMS-IMP-A.6.6.1.
 
@@ -285,6 +323,17 @@ The following require specific consideration per ISMS-POL-00:
 | Expired NDA (ongoing relationship) | 30 business days |
 | Template inadequacy | 60 business days |
 
+**PS-5.4.1 Gap Remediation Escalation**: When remediation timelines cannot be met:
+
+| Escalation Trigger | Action Required | Authority |
+|-------------------|-----------------|-----------|
+| At 50% of timeline | Status report to responsible manager | Department Manager |
+| At 100% of timeline (deadline) | Formal escalation with remediation plan | CISO notification |
+| 10 business days past deadline | Access suspension decision required | CISO approval |
+| 20 business days past deadline | Mandatory access suspension | Executive Management notification |
+
+**Compensating Controls**: If access cannot be immediately suspended, documented compensating controls (enhanced monitoring, restricted access scope, supervised access) SHALL be implemented within 2 business days of deadline and reviewed weekly until NDA execution.
+
 **Verification**: Review tracking maintained in ISMS-IMP-A.6.6.3.
 
 ## Post-Termination Obligations
@@ -305,6 +354,29 @@ The following require specific consideration per ISMS-POL-00:
 | Highly Confidential | 5 years |
 | Confidential | 2 years |
 | Internal | 1 year |
+
+**PS-6.4 Post-Termination Tracking Mechanism**: [Organisation] SHALL maintain active tracking of post-termination obligations:
+
+| Tracking Element | Frequency | Responsible Party |
+|-----------------|-----------|-------------------|
+| Post-termination register update | Upon each termination | HR Manager (employees) / Contracts Manager (third parties) |
+| Obligation expiration monitoring | Monthly automated | Information Security Team |
+| High-risk individual monitoring | Quarterly review | CISO |
+| Trade secret holder tracking | Annual review (indefinite) | Legal Counsel |
+
+**Register Requirements**: The Post-Termination Obligation Register SHALL include:
+- Individual/entity name and former role
+- Termination date
+- Information types accessed (highest classification)
+- Obligation end date(s) by information type
+- Return/destruction confirmation date
+- Risk level (based on access scope)
+- Monitoring notes (if applicable)
+
+**Expiration Actions**: Upon obligation expiration, record SHALL be:
+- Archived in historical compliance records
+- Retained per document retention policy (minimum 7 years from expiration)
+- Removed from active monitoring
 
 **Verification**: Post-termination tracking maintained in ISMS-IMP-A.6.6.2.
 
@@ -354,6 +426,29 @@ Exceptions to NDA requirements require documented justification and approval:
 | Template variation | Legal Counsel |
 | Coverage exception | CISO with Legal review |
 
+**Exception Register Requirements**: All approved exceptions SHALL be recorded with:
+
+| Field | Description |
+|-------|-------------|
+| Exception ID | Unique identifier (NDA-EX-YYYY-NNN) |
+| Requestor | Name and role of person requesting exception |
+| Party affected | Individual/entity for whom exception applies |
+| Exception type | Timing / Template / Coverage |
+| Justification | Business rationale for exception |
+| Risk assessment | Impact if NDA requirement is delayed/modified |
+| Compensating controls | Measures to mitigate risk during exception period |
+| Approval authority | Name and role of approver |
+| Approval date | Date exception approved |
+| Expiration date | Date exception expires (mandatory) |
+| Review frequency | Quarterly minimum |
+| Status | Active / Expired / Converted to Compliance |
+
+**Exception Lifecycle**:
+- Exceptions exceeding 90 days require re-approval by original authority
+- Exceptions exceeding 180 days require escalation to next approval level
+- All active exceptions reported to Executive Management quarterly
+- Expired exceptions without resolution escalated to CISO within 5 business days
+
 
 ## Compliance Monitoring
 
@@ -375,26 +470,46 @@ Non-compliance with this policy may result in:
 - Contract termination for third parties
 - Legal action for breach of confidentiality
 
+**Non-Compliance Response Matrix**:
+
+| Violation Type | Severity | Initial Response | Escalation Path |
+|---------------|----------|------------------|-----------------|
+| Missing NDA (new hire/contractor) | High | Access blocked; NDA execution required within 5 days | HR/Contracts Manager → CISO → Legal |
+| Expired NDA (active relationship) | Medium | 30-day renewal window; access review at day 30 | Department Manager → CISO |
+| Refused to sign NDA | Critical | Immediate access denial; relationship termination initiated | CISO → Legal → Executive Management |
+| NDA breach (suspected) | Critical | Immediate investigation; potential access suspension | CISO → Legal → Executive Management |
+| Template non-use (wrong template) | Low | Correction within 15 days; risk assessment | Legal Counsel → CISO (if elevated risk) |
+
+**Violation Detection Methods**:
+- Automated onboarding/offboarding checklist audits
+- Quarterly coverage analysis reports
+- Access review correlation (access granted vs. NDA on file)
+- Termination checklist verification
+- Expiration monitoring system alerts
+
+**Documentation Requirement**: All non-compliance events SHALL be documented in the NDA Compliance Register with: date detected, party involved, violation type, response taken, resolution date, and lessons learned (if applicable).
+
 
 ---
 
-# Audit Evidence Requirements
+# Evidence for This Policy
 
-## Stage 1 (Documentation Review)
+**Stage 1 (Documentation Review) Evidence:**
 
 Evidence required to demonstrate this policy is adequately documented and approved:
 
-- This policy document (ISMS-POL-A.6.6 v1.0)
-- Approval signatures from CISO, Legal Counsel, Executive Management
-- NDA template registry with all approved templates (Section 2.2)
-- Stakeholder category requirements documented (Section 2.3)
-- Execution and storage requirements defined (Section 2.4)
-- Periodic review requirements specified (Section 3)
-- Post-termination obligations documented (Section 4)
-- Roles and responsibilities assigned (Section 5)
-- Governance and exception procedures defined (Section 6)
+- ✅ This policy document (ISMS-POL-A.6.6 v1.0)
+- ✅ Approval signatures from CISO, Legal Counsel, Executive Management
+- ✅ NDA template registry with all approved templates (Section 2.2)
+- ✅ Stakeholder category requirements documented (Section 2.3)
+- ✅ Execution and storage requirements defined (Section 2.4)
+- ✅ Periodic review requirements specified (Section 3)
+- ✅ Post-termination obligations documented (Section 4)
+- ✅ Roles and responsibilities assigned (Section 5)
+- ✅ Governance and exception procedures defined (Section 6)
 
-## Stage 2 (Operational Effectiveness)
+
+**Stage 2 (Operational Effectiveness) Evidence:**
 
 Evidence required to demonstrate this policy is operationally effective:
 
@@ -437,6 +552,9 @@ The boundary is: POL-A.6.6 defines WHAT NDA requirements apply and WHEN → Lega
 | **A.5.11** | Related | Return of Assets - NDA supports return requirements |
 | **A.5.19-22** | Related | Supplier Security - NDA required for suppliers |
 | **A.5.12** | Input | Information Classification - defines what needs protection |
+| **A.5.34** | Related | Privacy and PII Protection - NDA supports PII confidentiality obligations |
+
+**Privacy Integration Note**: NDAs for parties handling personal data SHALL include privacy-specific provisions per ISMS-POL-A.5.34, including: PII processing limitations, data subject rights support obligations, breach notification requirements, and cross-border transfer restrictions where applicable.
 
 ## Implementation Resources
 
@@ -444,6 +562,26 @@ The boundary is: POL-A.6.6 defines WHAT NDA requirements apply and WHEN → Lega
 - **ISMS-IMP-A.6.6.2**: NDA Execution & Tracking
 - **ISMS-IMP-A.6.6.3**: NDA Review & Compliance
 - **ISMS-IMP-A.6.6.4**: NDA Compliance Dashboard
+
+## Compliance Metrics (Dashboard KPIs)
+
+The following metrics SHALL be tracked and reported via ISMS-IMP-A.6.6.4:
+
+| Metric | Target | Frequency | Owner |
+|--------|--------|-----------|-------|
+| Employee NDA coverage rate | 100% | Monthly | HR Manager |
+| Contractor NDA coverage rate | 100% | Monthly | Contracts Manager |
+| Vendor NDA coverage rate | 100% | Quarterly | Contracts Manager |
+| NDAs expiring within 30 days | <5% of active | Weekly | Information Security Team |
+| Overdue NDA renewals | 0 | Weekly | Information Security Team |
+| Average time to execute NDA (new hires) | <2 business days | Monthly | HR Manager |
+| Average time to execute NDA (contractors) | <3 business days | Monthly | Contracts Manager |
+| Active exceptions | Trending down | Quarterly | CISO |
+| Gap remediation compliance (within timeline) | >95% | Monthly | CISO |
+| Post-termination obligations tracked | 100% of terminations | Monthly | HR Manager / Contracts Manager |
+| Template review currency | 100% within 12 months | Quarterly | Legal Counsel |
+
+**Reporting**: Dashboard metrics SHALL be reviewed monthly by Information Security Team and reported to CISO. Quarterly summary presented to Executive Management.
 
 
 ---
@@ -481,4 +619,4 @@ The boundary is: POL-A.6.6 defines WHAT NDA requirements apply and WHEN → Lega
 
 *This policy establishes requirements for confidentiality and non-disclosure agreements. Implementation procedures are documented in ISMS-IMP-A.6.6.1-4.*
 
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-02-02 -->

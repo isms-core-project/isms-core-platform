@@ -192,7 +192,7 @@ This framework takes a fundamentally different approachâ€”applying systems 
 
 **Systematic**: Every process is defined, repeatable, and produces documented outputs.
 
-**Traceable**: Clear paths exist from regulations â†’ requirements â†’ controls â†’ evidence, with full bidirectional traceability.
+**Traceable**: Clear paths exist from regulations → requirements → controls → evidence, with full bidirectional traceability.
 
 **Evidence-Based**: Compliance claims are supported by tangible evidence, not assertions.
 
@@ -267,8 +267,8 @@ Without systematic implementation of A.5.31, [Organization] would implement ISO 
 
 This framework (ISMS-POL-A.5.31) defines **HOW** ISMS-POL-00 is created, maintained, and used:
 
-- Processes for identifying and assessing regulatory applicability (â†’ POL-00 entries)
-- Methodology for extracting requirements and mapping to controls (â†’ using POL-00 content)
+- Processes for identifying and assessing regulatory applicability (→ POL-00 entries)
+- Methodology for extracting requirements and mapping to controls (→ using POL-00 content)
 - Procedures for monitoring regulatory changes and updating POL-00
 - Framework for managing compliance evidence per regulation in POL-00
 
@@ -370,53 +370,53 @@ ISMS-POL-00 serves as the **authoritative regulatory register** for [Organizatio
 **Governance Relationship**:
 
 ```
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚  ISMS-POL-00                                        â”‚
-â”‚  (Regulatory Applicability Framework)               â”‚
-â”‚                                                      â”‚
-â”‚  CONTAINS: List of applicable regulations           â”‚
-â”‚  STRUCTURE: Three-tier categorization               â”‚
-â”‚  STATUS: Living document, regularly updated         â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-                         â†‘
-                         â”‚ MAINTAINED BY
-                         â”‚
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚  ISMS-POL-A.5.31                                    â”‚
-â”‚  (Regulatory Compliance Framework - This Document)  â”‚
-â”‚                                                      â”‚
-â”‚  DEFINES: Processes for maintaining POL-00          â”‚
-â”‚  PROVIDES: Methodology for compliance               â”‚
-â”‚  ESTABLISHES: Change management procedures          â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-                         â†“
-                         â”‚ IMPLEMENTED VIA
-                         â”‚
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚  ISMS-IMP-A.5.31.1 through 5.31.5                      â”‚
-â”‚  (Implementation Guides)                             â”‚
-â”‚                                                      â”‚
-â”‚  OPERATIONALIZES: Framework processes                â”‚
-â”‚  STEP-BY-STEP: Procedures for execution             â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-                         â†“
-                         â”‚ SUPPORTED BY
-                         â”‚
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚  Assessment Workbooks & Dashboard                    â”‚
-â”‚                                                      â”‚
-â”‚  TOOLS: Structured templates for systematic work    â”‚
-â”‚  OUTPUTS: Regulatory inventory, mapping matrices,   â”‚
-â”‚           evidence registers, compliance dashboard   â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+┌──────────────────────────────────────────────────────┐
+│  ISMS-POL-00                                         │
+│  (Regulatory Applicability Framework)                │
+│                                                      │
+│  CONTAINS: List of applicable regulations            │
+│  STRUCTURE: Three-tier categorization                │
+│  STATUS: Living document, regularly updated          │
+└──────────────────────────────────────────────────────┘
+                         ↓
+                         │ MAINTAINED BY
+                         │
+┌──────────────────────────────────────────────────────┐
+│  ISMS-POL-A.5.31                                     │
+│  (Regulatory Compliance Framework - This Document)   │
+│                                                      │
+│  DEFINES: Processes for maintaining POL-00           │
+│  PROVIDES: Methodology for compliance                │
+│  ESTABLISHES: Change management procedures           │
+└──────────────────────────────────────────────────────┘
+                         ↓
+                         │ IMPLEMENTED VIA
+                         │
+┌──────────────────────────────────────────────────────┐
+│  ISMS-IMP-A.5.31.1 through 5.31.5                    │
+│  (Implementation Guides)                             │
+│                                                      │
+│  OPERATIONALIZES: Framework processes                │
+│  STEP-BY-STEP: Procedures for execution              │
+└──────────────────────────────────────────────────────┘
+                         ↓
+                         │ SUPPORTED BY
+                         │
+┌──────────────────────────────────────────────────────┐
+│  Assessment Workbooks & Dashboard                    │
+│                                                      │
+│  TOOLS: Structured templates for systematic work     │
+│  OUTPUTS: Regulatory inventory, mapping matrices,    │
+│           evidence registers, compliance dashboard   │
+└──────────────────────────────────────────────────────┘
 ```
 
 **Update Flows**:
 
-- **New Regulation Identified** â†’ Applicability Assessment (IMP-5.31.1) â†’ If Applicable â†’ Added to POL-00
-- **Regulation in POL-00 Changes** â†’ Impact Assessment (IMP-5.31.4) â†’ Framework Updates â†’ POL-00 Updated
-- **Organizational Change** (new jurisdiction, new service) â†’ Applicability Re-Assessment â†’ POL-00 Updated
-- **Periodic Review** (annual minimum) â†’ All POL-00 Entries Reviewed â†’ Updates as Needed
+- **New Regulation Identified** → Applicability Assessment (IMP-5.31.1) → If Applicable → Added to POL-00
+- **Regulation in POL-00 Changes** → Impact Assessment (IMP-5.31.4) → Framework Updates → POL-00 Updated
+- **Organizational Change** (new jurisdiction, new service) → Applicability Re-Assessment → POL-00 Updated
+- **Periodic Review** (annual minimum) → All POL-00 Entries Reviewed → Updates as Needed
 
 
 [Organization]'s compliance program thus operates through this integrated framework:
@@ -436,7 +436,7 @@ To ensure appropriate expectations and use of this framework, the following are 
 - Make definitive legal determinations on ambiguous regulatory provisions
 
 
-â†’ Legal interpretation of regulations must be performed or validated by qualified legal professionals (in-house counsel or external legal advisors).
+→ Legal interpretation of regulations must be performed or validated by qualified legal professionals (in-house counsel or external legal advisors).
 
 **Regulatory Interpretation**: This framework does NOT:
 
@@ -445,7 +445,7 @@ To ensure appropriate expectations and use of this framework, the following are 
 - Predict how regulators will enforce provisions
 
 
-â†’ Where regulatory requirements are ambiguous or unclear, [Organization] seeks formal guidance from legal counsel or directly from regulatory authorities.
+→ Where regulatory requirements are ambiguous or unclear, [Organization] seeks formal guidance from legal counsel or directly from regulatory authorities.
 
 **Operational Compliance**: This framework does NOT:
 
@@ -454,7 +454,7 @@ To ensure appropriate expectations and use of this framework, the following are 
 - Conduct compliance audits (that's Internal Audit's function)
 
 
-â†’ This framework establishes the architecture and processes; operational compliance is executed by designated control owners and monitored through the ISMS.
+→ This framework establishes the architecture and processes; operational compliance is executed by designated control owners and monitored through the ISMS.
 
 **Specific Compliance Solutions**: This framework does NOT:
 
@@ -463,7 +463,7 @@ To ensure appropriate expectations and use of this framework, the following are 
 - Specify particular policies or procedures (beyond the framework itself)
 
 
-â†’ Implementation decisions are made by [Organization] based on risk assessment, feasibility, and business requirements within the framework's methodology.
+→ Implementation decisions are made by [Organization] based on risk assessment, feasibility, and business requirements within the framework's methodology.
 
 **Universal Applicability Determinations**: This framework does NOT:
 
@@ -472,7 +472,7 @@ To ensure appropriate expectations and use of this framework, the following are 
 - Make one-size-fits-all compliance decisions
 
 
-â†’ Each organization must perform its own applicability assessments using the framework's methodology.
+→ Each organization must perform its own applicability assessments using the framework's methodology.
 
 ---
 
@@ -557,15 +557,13 @@ Framework execution follows systematic implementation approach:
 
 Effective implementation and operation of this regulatory compliance framework requires clear accountability. The following roles and responsibilities are established:
 
-## Roles and Accountabilities
-
 | Role | Responsibilities | Authority | Accountability |
 |------|-----------------|-----------|----------------|
-| **Compliance Officer / Legal Function** | â€¢ Identify potentially applicable regulations through monitoring of legal databases, regulatory authorities, and industry sources<br>â€¢ Perform detailed applicability assessments<br>â€¢ Conduct or coordinate legal interpretation of regulatory requirements<br>â€¢ Review requirements extraction for legal accuracy<br>â€¢ Monitor regulatory landscape for changes<br>â€¢ Approve applicability determinations<br>â€¢ Coordinate with external legal counsel when needed | â€¢ Approve/reject applicability determinations<br>â€¢ Escalate to Executive Management for high-impact decisions<br>â€¢ Engage external legal counsel<br>â€¢ Issue legal interpretations (in coordination with counsel) | â€¢ Accuracy of applicability assessments<br>â€¢ Currency of regulatory monitoring<br>â€¢ Legal correctness of requirements interpretation |
-| **ISMS Manager** | â€¢ Own and maintain the regulatory compliance framework (this document and related policies)<br>â€¢ Coordinate requirements extraction activities<br>â€¢ Maintain requirements register<br>â€¢ Coordinate control mapping activities<br>â€¢ Maintain control mapping matrices<br>â€¢ Identify and track compliance gaps<br>â€¢ Coordinate gap remediation efforts<br>â€¢ Report compliance status to Executive Management<br>â€¢ Coordinate framework updates when regulations change<br>â€¢ Manage framework documentation and version control | â€¢ Approve control mappings<br>â€¢ Approve framework updates (with appropriate review)<br>â€¢ Prioritize compliance gaps<br>â€¢ Request resources for compliance activities | â€¢ Completeness and accuracy of requirements register<br>â€¢ Accuracy of control mappings<br>â€¢ Currency of gap tracking<br>â€¢ Effectiveness of framework processes |
-| **Control Owners** | â€¢ Implement controls addressing regulatory requirements<br>â€¢ Maintain control documentation (policies, procedures, configurations)<br>â€¢ Operate controls according to specifications<br>â€¢ Collect and maintain evidence of control implementation and operation<br>â€¢ Report control effectiveness<br>â€¢ Support control mapping validation<br>â€¢ Implement control enhancements when gaps identified<br>â€¢ Participate in compliance audits | â€¢ Determine control implementation approach (within framework)<br>â€¢ Define evidence collection methods<br>â€¢ Report control failures or changes | â€¢ Effective implementation of assigned controls<br>â€¢ Quality and availability of evidence<br>â€¢ Timeliness of control updates |
-| **Internal Audit / Compliance Team** | â€¢ Validate completeness and adequacy of evidence<br>â€¢ Perform periodic internal compliance audits<br>â€¢ Test control effectiveness<br>â€¢ Verify framework processes are followed<br>â€¢ Identify framework improvement opportunities<br>â€¢ Support external audits and regulatory inquiries<br>â€¢ Report audit findings to management | â€¢ Determine audit scope and schedule<br>â€¢ Issue audit findings<br>â€¢ Recommend corrective actions | â€¢ Independence and objectivity of audits<br>â€¢ Quality of audit findings<br>â€¢ Effectiveness of audit program |
-| **Executive Management** | â€¢ Approve Tier 1 (mandatory compliance) applicability determinations<br>â€¢ Approve risk acceptance for identified compliance gaps<br>â€¢ Allocate resources for compliance activities<br>â€¢ Receive and review compliance status reports<br>â€¢ Approve significant changes to compliance framework<br>â€¢ Provide strategic direction for compliance program<br>â€¢ Represent [Organization] to regulators and auditors (as needed) | â€¢ Final approval authority for compliance decisions<br>â€¢ Resource allocation decisions<br>â€¢ Risk acceptance authority | â€¢ Overall compliance posture of [Organization]<br>â€¢ Adequacy of resources for compliance<br>â€¢ Compliance with fiduciary duties to stakeholders |
+| **Compliance Officer / Legal Function** | • Identify potentially applicable regulations through monitoring of legal databases, regulatory authorities, and industry sources<br>• Perform detailed applicability assessments<br>• Conduct or coordinate legal interpretation of regulatory requirements<br>• Review requirements extraction for legal accuracy<br>• Monitor regulatory landscape for changes<br>• Approve applicability determinations<br>• Coordinate with external legal counsel when needed | • Approve/reject applicability determinations<br>• Escalate to Executive Management for high-impact decisions<br>• Engage external legal counsel<br>• Issue legal interpretations (in coordination with counsel) | • Accuracy of applicability assessments<br>• Currency of regulatory monitoring<br>• Legal correctness of requirements interpretation |
+| **ISMS Manager** | • Own and maintain the regulatory compliance framework (this document and related policies)<br>• Coordinate requirements extraction activities<br>• Maintain requirements register<br>• Coordinate control mapping activities<br>• Maintain control mapping matrices<br>• Identify and track compliance gaps<br>• Coordinate gap remediation efforts<br>• Report compliance status to Executive Management<br>• Coordinate framework updates when regulations change<br>• Manage framework documentation and version control | • Approve control mappings<br>• Approve framework updates (with appropriate review)<br>• Prioritize compliance gaps<br>• Request resources for compliance activities | • Completeness and accuracy of requirements register<br>• Accuracy of control mappings<br>• Currency of gap tracking<br>• Effectiveness of framework processes |
+| **Control Owners** | • Implement controls addressing regulatory requirements<br>• Maintain control documentation (policies, procedures, configurations)<br>• Operate controls according to specifications<br>• Collect and maintain evidence of control implementation and operation<br>• Report control effectiveness<br>• Support control mapping validation<br>• Implement control enhancements when gaps identified<br>• Participate in compliance audits | • Determine control implementation approach (within framework)<br>• Define evidence collection methods<br>• Report control failures or changes | • Effective implementation of assigned controls<br>• Quality and availability of evidence<br>• Timeliness of control updates |
+| **Internal Audit / Compliance Team** | • Validate completeness and adequacy of evidence<br>• Perform periodic internal compliance audits<br>• Test control effectiveness<br>• Verify framework processes are followed<br>• Identify framework improvement opportunities<br>• Support external audits and regulatory inquiries<br>• Report audit findings to management | • Determine audit scope and schedule<br>• Issue audit findings<br>• Recommend corrective actions | • Independence and objectivity of audits<br>• Quality of audit findings<br>• Effectiveness of audit program |
+| **Executive Management** | • Approve Tier 1 (mandatory compliance) applicability determinations<br>• Approve risk acceptance for identified compliance gaps<br>• Allocate resources for compliance activities<br>• Receive and review compliance status reports<br>• Approve significant changes to compliance framework<br>• Provide strategic direction for compliance program<br>• Represent [Organization] to regulators and auditors (as needed) | • Final approval authority for compliance decisions<br>• Resource allocation decisions<br>• Risk acceptance authority | • Overall compliance posture of [Organization]<br>• Adequacy of resources for compliance<br>• Compliance with fiduciary duties to stakeholders |
 
 ## RACI Matrix for Key Activities
 
@@ -760,7 +758,7 @@ This regulatory compliance framework consists of four integrated layers, each bu
 - Establishes requirements categorization approach (technical/organizational/reporting/operational)
 - Specifies control mapping methodology (Primary/Secondary/Supporting)
 - Defines gap analysis and prioritization approach
-- Establishes traceability requirements (regulation â†’ requirement â†’ control â†’ evidence)
+- Establishes traceability requirements (regulation → requirement → control → evidence)
 - Addresses handling of overlapping requirements from multiple regulations
 
 
@@ -908,40 +906,40 @@ At the foundation of the framework is the **evidence layer**â€”the actual a
 ## Framework Flow and Integration
 
 ```
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚  ISO 27001:2022 Control A.5.31                              â”‚
-â”‚  "Requirements shall be identified, documented, kept current"â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-                              â†“
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚  ISMS-POL-00: Regulatory Applicability Framework            â”‚
-â”‚  The authoritative register of applicable regulations        â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-                              â†“
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚  LAYER 1: Policy Framework (POL-A.5.31.1/5.31.2/5.31.3/5.31.4)         â”‚
-â”‚  Defines WHAT and WHY - Governance and Methodology          â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-                              â†“
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚  LAYER 2: Implementation Guides (IMP-A.5.31.1/5.31.2/5.31.3/5.31.4/5.31.5) â”‚
-â”‚  Defines HOW - Step-by-step procedures                      â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-                              â†“
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚  LAYER 3: Assessment Tools (Workbooks 1-5 + Dashboard)      â”‚
-â”‚  Provides STRUCTURE - Templates and matrices for execution  â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-                              â†“
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚  LAYER 4: Compliance Evidence                               â”‚
-â”‚  Provides PROOF - Tangible artifacts demonstrating complianceâ”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-                              â†“
-â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-â”‚  OUTCOME: Audit-Ready, Demonstrable Compliance              â”‚
-â”‚  [Organization] can prove what applies and how it complies  â”‚
-â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+┌──────────────────────────────────────────────────────────────┐
+│  ISO 27001:2022 Control A.5.31                              │
+│  "Requirements shall be identified, documented, kept current"│
+└──────────────────────────────────────────────────────────────┘
+                              ↓
+┌──────────────────────────────────────────────────────────────┐
+│  ISMS-POL-00: Regulatory Applicability Framework            │
+│  The authoritative register of applicable regulations        │
+└──────────────────────────────────────────────────────────────┘
+                              ↓
+┌──────────────────────────────────────────────────────────────┐
+│  LAYER 1: Policy Framework (POL-A.5.31.1/5.31.2/5.31.3/5.31.4)         │
+│  Defines WHAT and WHY - Governance and Methodology          │
+└──────────────────────────────────────────────────────────────┘
+                              ↓
+┌──────────────────────────────────────────────────────────────┐
+│  LAYER 2: Implementation Guides (IMP-A.5.31.1/5.31.2/5.31.3/5.31.4/5.31.5) │
+│  Defines HOW - Step-by-step procedures                      │
+└──────────────────────────────────────────────────────────────┘
+                              ↓
+┌──────────────────────────────────────────────────────────────┐
+│  LAYER 3: Assessment Tools (Workbooks 1-5 + Dashboard)      │
+│  Provides STRUCTURE - Templates and matrices for execution  │
+└──────────────────────────────────────────────────────────────┘
+                              ↓
+┌──────────────────────────────────────────────────────────────┐
+│  LAYER 4: Compliance Evidence                               │
+│  Provides PROOF - Tangible artifacts demonstrating compliance│
+└──────────────────────────────────────────────────────────────┘
+                              ↓
+┌──────────────────────────────────────────────────────────────┐
+│  OUTCOME: Audit-Ready, Demonstrable Compliance              │
+│  [Organization] can prove what applies and how it complies  │
+└──────────────────────────────────────────────────────────────┘
 ```
 
 ## Framework Lifecycle

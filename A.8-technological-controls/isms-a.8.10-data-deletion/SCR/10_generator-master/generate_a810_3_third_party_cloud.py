@@ -1590,7 +1590,7 @@ def main():
         create_evidence_register(wb["Evidence Register"], styles)
 
         logger.info("[9/9] Creating Approval Sign-Off (3-level workflow)...")
-        create_approval_signoff(wb["Approval Sign-Of"], styles)
+        create_approval_signoff(wb["Approval Sign-Off"], styles)
 
         filename = f"ISMS-IMP-A.8.10.3_Third_Party_Cloud_Deletion_{datetime.now().strftime('%Y%m%d')}.xlsx"
         wb.save(filename)

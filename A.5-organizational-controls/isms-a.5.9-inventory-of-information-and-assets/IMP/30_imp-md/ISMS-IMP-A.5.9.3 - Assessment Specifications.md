@@ -272,28 +272,35 @@ Phase 8: Review & Approval (Day 19-20)
 **Sample Size Calculation**:
 
 - Use statistical sampling (95% confidence, ±5% margin of error)
-- Minimum sample sizes:
-  - Small inventory (<100 assets): 30-50 records
-  - Medium inventory (100-1000 assets): 80-100 records
-  - Large inventory (>1000 assets): 150-200 records
-- Stratify by asset category (proportional representation)
+- **CRITICAL: Minimum 30 samples PER CATEGORY for statistical validity**
+  - This is a hard minimum - smaller samples cannot make valid statistical claims about category accuracy
+  - If a category has fewer than 30 assets, sample 100% of that category
+- Overall minimum sample sizes (across all categories):
+  - Small inventory (<100 assets total): All records (100% sampling)
+  - Medium inventory (100-500 assets): 100-150 records
+  - Large inventory (>500 assets): 150-250 records
+- Stratify by asset category (with n=30 minimum floor per category)
 
 
-**Stratification Example**:
+**Stratification Example** (with n=30 minimum per category):
 ```
 Total Inventory: 1,500 assets
-├─ Information Assets: 400 (27%) → Sample 40
-├─ IT Infrastructure: 600 (40%) → Sample 60
-├─ Applications: 300 (20%) → Sample 30
-├─ Physical Assets: 150 (10%) → Sample 15
-└─ Personnel Assets: 50 (3%) → Sample 5
-Total Sample: 150 assets
+├─ Information Assets: 400 (27%) → Sample 40 (proportional)
+├─ IT Infrastructure: 600 (40%) → Sample 60 (proportional)
+├─ Applications: 300 (20%) → Sample 30 (minimum met)
+├─ Physical Assets: 150 (10%) → Sample 30 (minimum floor applied, not 15)
+└─ Personnel Assets: 50 (3%) → Sample 30 (minimum floor applied, not 5)
+                                 ─────────
+Total Sample: 190 assets (not 150, due to minimum floors)
 ```
+
+**Note**: The n=30 minimum per category ensures statistically valid accuracy statements can be made for EACH asset category individually. Without this minimum, accuracy rates per category are unreliable.
 
 **Random Selection**:
 
 - Use Excel `=RAND()` function or Python `random.sample()`
 - No cherry-picking! True random selection required for statistical validity
+- Generate random sample within each category stratum separately
 
 
 **Column Definitions**:

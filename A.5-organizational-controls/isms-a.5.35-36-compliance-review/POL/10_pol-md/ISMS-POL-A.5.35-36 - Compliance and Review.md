@@ -155,7 +155,9 @@ This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulat
 - Demonstrated experience in information security auditing
 - Knowledge of ISO 27001:2022 and relevant regulatory requirements
 
-**Verification**: Reviewer qualifications and independence documented in ISMS-IMP-A.5.35-36.1 Reviewer Registry.
+Reviewer qualifications SHALL be verified and documented in the Reviewer Registry before assignment to review activities.
+
+**Verification**: Reviewer qualifications verified before engagement; documented in ISMS-IMP-A.5.35-36.1 Reviewer Registry.
 
 ### 1.2 Review Scope
 
@@ -427,9 +429,11 @@ This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulat
 - Finding description and severity
 - Business justification for acceptance
 - Compensating controls in place
-- Duration of acceptance (maximum 12 months)
+- Duration of acceptance (maximum 12 months; renewals require same approval authority level as initial acceptance)
 - Review trigger conditions
 - Risk owner acknowledgment
+
+Renewal requests must demonstrate re-assessment of risk and continued justification for acceptance.
 
 **Verification**: Risk acceptances recorded in Findings Register with status "Risk Accepted" and documented in risk register.
 
@@ -636,4 +640,4 @@ Changes to this policy follow ISMS document change management:
 
 *This policy establishes requirements for independent review and compliance verification. Implementation procedures are documented in ISMS-IMP-A.5.35-36.1-4.*
 
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-02-02 -->

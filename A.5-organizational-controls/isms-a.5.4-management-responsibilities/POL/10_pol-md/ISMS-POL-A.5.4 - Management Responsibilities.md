@@ -108,6 +108,14 @@ All management personnel SHALL demonstrate active commitment to information secu
 - Providing tools and training for secure operations
 - Supporting security improvement projects
 
+**Adequacy Criteria**: Resource allocation decisions SHALL consider:
+
+- Risk assessment outcomes (high/critical risks receive priority funding)
+- Regulatory compliance requirements (Tier 1 mandatory)
+- Industry benchmarks for similar organisations
+- CISO recommendations with business case justification
+
+Disputes over resource adequacy escalate per Section "Escalation Path."
 
 **Policy Enforcement**:
 
@@ -117,7 +125,15 @@ All management personnel SHALL demonstrate active commitment to information secu
 - Not requesting or approving policy bypasses without formal exception
 
 
-**Verification**: Management commitment assessed annually via ISMS-IMP-A.5.4 Management Commitment Assessment workbook.
+**Verification**: Management commitment assessed annually via ISMS-IMP-A.5.4.1 Management Commitment Assessment workbook, measured against objective criteria:
+
+- Attendance at mandatory security reviews (≥80% attendance required)
+- Completion of management security training (100% within 30 days of role assignment)
+- Resource approval response time for approved security initiatives (≤30 days)
+- Documented acknowledgment of security reports (quarterly minimum)
+- Participation in incident response activities (for incidents affecting their domain)
+
+Assessment results documented and reviewed by Executive Management. Scores <70% trigger remediation plan (see Remediation for Non-Compliance).
 
 ## Security Culture Leadership
 
@@ -146,6 +162,15 @@ Management SHALL foster a positive security culture by:
 - Advocating for security improvements based on risk
 
 
+**Recognition Program**: Management SHALL implement recognition for security-conscious behaviour:
+
+- Proactive security issue reporting
+- Completion of advanced security training
+- Security improvement suggestions implemented
+- Incident response contributions
+
+Organisation-wide recognition managed via HR, with annual security excellence awards.
+
 ## Personnel Compliance Accountability
 
 Management SHALL ensure personnel under their authority comply with information security requirements by:
@@ -159,9 +184,13 @@ Management SHALL ensure personnel under their authority comply with information 
 
 **Ongoing Oversight**:
 
-- Monitoring for completion of mandatory security training
+- Monitoring for completion of mandatory security training via:
+  - Quarterly training completion reports from HR/CISO
+  - Manager follow-up with overdue personnel within 5 business days
+  - Escalation to Executive Management for training overdue >30 days
+  - Tracking of manager actions in Compliance Oversight Tracker (ISMS-IMP-A.5.4.2)
 - Addressing security policy violations promptly
-- Including security compliance in performance evaluations (recommended)
+- Including security compliance in performance evaluations where role includes security responsibilities (defined in role description)
 - Conducting periodic security discussions in team meetings
 
 
@@ -184,6 +213,13 @@ Management SHALL actively participate in ISMS management review activities:
 - Department Heads: Annual security posture briefings
 - Team Leads: Incident review participation when relevant
 
+**Participation Defined**:
+
+- Attendance: Physical or virtual presence for full session (exceptions require prior approval + documented catch-up)
+- Input Contribution: Provision of requested domain information prior to review (per agenda)
+- Decision Documentation: Documented vote/approval for decisions within authority
+
+Participation tracked in ISMS-IMP-A.5.4.3 Leadership Dashboard.
 
 **Input Contributions**:
 
@@ -262,6 +298,28 @@ Exceptions to management responsibility requirements are NOT generally acceptabl
 - Exemption from security policies applicable to personnel
 
 
+## Remediation for Non-Compliance
+
+When management personnel fail to meet their security responsibilities:
+
+**Assessment Findings**:
+
+- Management Commitment Assessment score <70%: Remediation plan required (developed with CISO, approved by next-level manager, tracked in Gap Register)
+- Repeated policy enforcement failures: Performance management process initiated (HR involvement per [HR Policy Reference])
+- Refusal to participate in mandatory reviews: Escalation to Executive Management for role suitability review
+
+
+**Gap Tracking**: All management responsibility gaps recorded in central ISMS Gap Register (per ISMS-IMP-00 Gap Management Process) with:
+
+- Finding description and severity
+- Responsible manager and approving authority
+- Remediation plan with milestones
+- Target closure date
+- Escalation path if unresolved within 60 days
+
+
+**Escalation Timeline**: Management responsibility gaps unresolved after 60 days automatically escalate to Executive Management for resolution decision.
+
 ---
 
 # Governance
@@ -291,23 +349,30 @@ Exceptions to management responsibility requirements are NOT generally acceptabl
 
 | Document | Purpose |
 |----------|---------|
-| ISMS-IMP-A.5.4.1 | Management Commitment Assessment workbook |
-| ISMS-IMP-A.5.4.2 | Compliance Oversight Tracker workbook |
-| ISMS-IMP-A.5.4.3 | Leadership Dashboard workbook |
+| ISMS-IMP-A.5.4.1 | Management Commitment Assessment workbook (annual scoring rubric with objective criteria per Section "Management Commitment → Verification") |
+| ISMS-IMP-A.5.4.2 | Compliance Oversight Tracker workbook (quarterly personnel compliance metrics including training completion, policy violations, manager actions) |
+| ISMS-IMP-A.5.4.3 | Leadership Dashboard workbook (real-time KPI monitoring for management review participation, resource allocation approvals, incident response engagement) |
+| ISMS-IMP-A.5.4.4 | Security Culture Survey instrument (annual employee perception assessment referenced in "Security Culture Leadership") |
 
 ---
 
-# Audit Evidence Requirements
+# Evidence for This Policy
 
-## Stage 1 (Documentation)
+**Stage 1 (Documentation Review) Evidence:**
 
-- This policy document (ISMS-POL-A.5.4)
-- Management role definitions with security responsibilities
-- Delegation of authority documentation
-- Training completion requirements
+Evidence required to demonstrate this policy is adequately documented and approved:
+
+- ✅ This policy document (ISMS-POL-A.5.4 v1.0)
+- ✅ Approval signatures from CISO, CIO, Executive Management
+- ✅ Management role definitions with security responsibilities documented (Section 3)
+- ✅ Delegation of authority documentation
+- ✅ Training completion requirements specified
+- ✅ Roles and responsibilities assigned (Section 3)
 
 
-## Stage 2 (Operational Effectiveness)
+**Stage 2 (Operational Effectiveness) Evidence:**
+
+Evidence required to demonstrate this policy is operationally effective:
 
 - Management commitment assessment results
 - Training completion records for managers
@@ -345,7 +410,6 @@ Exceptions to management responsibility requirements are NOT generally acceptabl
 
 ---
 
-*ISMS-POL-A.5.4 v1.0 | Management Responsibilities*
-*This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.5.4.*
+*This policy establishes requirements for management responsibilities. Implementation procedures are documented in ISMS-IMP-A.5.4.*
 
-<!-- QA_VERIFIED: 2026-01-31 -->
+<!-- QA_VERIFIED: 2026-02-02 -->

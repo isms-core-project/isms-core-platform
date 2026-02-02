@@ -181,7 +181,11 @@ These frameworks inform implementation but do not constitute mandatory complianc
 | Updates communicated | Email notification, training update | Distribution records, training completion |
 | New hire acknowledgment | During onboarding, before access granted | HR onboarding checklist |
 
-**Verification Mechanism**: AUP acknowledgment rates tracked in ISMS-IMP-A.5.10-11.1 (Acceptable Use Policy Assessment). Target: 100% acknowledgment within 30 days of hire/annual refresh date. Non-compliance >30 days escalated to manager; >60 days escalated to HR.
+**Verification Mechanism**: AUP acknowledgment rates tracked in ISMS-IMP-A.5.10-11.1 (Acceptable Use Policy Assessment). Target: 100% acknowledgment within 30 days of hire/annual refresh date.
+
+*Exception: Personnel on approved leave >30 days at time of policy refresh are flagged as "deferred" in acknowledgment register; acknowledgment required within 14 days of return to work. Deferred acknowledgments excluded from compliance rate calculation during absence period.*
+
+Non-compliance >30 days (excluding deferred): escalated to manager; >60 days escalated to HR.
 
 ## Permitted Use Requirements
 
@@ -239,6 +243,14 @@ These frameworks inform implementation but do not constitute mandatory complianc
 4. Approval per exception authority table above
 5. Documentation in exception register (maximum 12-month validity)
 6. Evidence stored in ISMS Evidence Library (SharePoint/Confluence or equivalent)
+
+**Exception Register Specifications**:
+
+- Owner: IT Security Manager
+- Structure: Exception ID, Request Date, Requestor, Asset/Activity, Business Justification, Risk Assessment Summary, Compensating Controls, Approval Authority, Approval Date, Expiry Date, Renewal/Closure Status
+- Storage: ISMS Evidence Library (SharePoint/Confluence or equivalent)
+- Retention: 7 years post-expiry (aligns with ISO 27001 records retention guidance)
+- Review: Quarterly review by CISO; expired exceptions archived; renewals require re-justification
 
 ## Monitoring and Enforcement
 
@@ -313,11 +325,17 @@ All personnel are informed that:
 | Cloud service access | Remove user | Cloud Service Administrators |
 | Shared drive access | Remove; transfer data ownership | IT Operations |
 
-**Timeline Exception Process**: If standard SLA cannot be met due to operational requirements:
-1. Immediate compensating control required (access restrictions, monitoring)
-2. Exception logged with business justification
-3. Full remediation within 72 hours maximum
-4. Exception reviewed by IT Security Manager
+**Timeline Exception Process**: If standard 24-hour access revocation SLA cannot be met due to operational requirements:
+
+1. Immediate compensating control implemented (choose based on risk):
+   - Account disabled but not deleted (prevents login while preserving data)
+   - Access restricted to read-only for knowledge transfer period
+   - Session monitoring activated with daily review
+   - MFA requirement added (prevents unauthorised access even if password known)
+2. Business justification documented in exception register
+3. IT Security Manager approval required (CISO approval if >72 hours)
+4. Full revocation within 72 hours maximum (no exceptions beyond this)
+5. Exception reviewed in quarterly access control audit
 
 **Verification Mechanism**: Access revocation verified via AD query, system logs, or login attempt verification; documented in ISMS-IMP-A.5.10-11.3 (Access Revocation sheet).
 
@@ -325,11 +343,13 @@ All personnel are informed that:
 
 Where personnel used personal devices for work (BYOD):
 
-**Return Requirements**:
+**Return Requirements** (verification rigor based on data classification):
 
 | Requirement | Verification | Responsible Party |
 |-------------|--------------|-------------------|
-| Company data removed | MDM wipe confirmation or user attestation | IT Security |
+| Company data removed (MDM-enrolled devices) | MDM wipe confirmation | IT Security |
+| Company data removed (non-MDM devices, Public/Internal data) | Self-attestation + IT confirmation of account removal | End User + IT Security |
+| Company data removed (non-MDM devices, Confidential/Restricted data) | Self-attestation + exit interview data handling review | End User + HR + IT Security |
 | Email profile removed | Self-attestation with verification | End User + IT |
 | Application data removed | Self-attestation | End User |
 | Cloud sync disabled | Service account removed | IT Operations |
@@ -340,12 +360,12 @@ Where personnel used personal devices for work (BYOD):
 
 **Requirements Before Departure**:
 
-| Requirement | Timeline | Responsible Party |
-|-------------|----------|-------------------|
-| Document key processes | Final 2 weeks | Departing employee |
-| Transfer project knowledge | Final 2 weeks | Manager + Departing employee |
-| Hand over active work | Final week | Manager |
-| Provide access credentials for shared accounts | Last day | Departing employee |
+| Requirement | Timeline | Minimum Deliverable | Responsible Party |
+|-------------|----------|---------------------|-------------------|
+| Document key processes | Final 2 weeks | Written process documentation or updated knowledge base | Departing employee |
+| Transfer project knowledge | Final 2 weeks | Project status summary, handover meeting with successor | Manager + Departing employee |
+| Hand over active work | Final week | Task list with status, access credentials for shared accounts, contact list for external parties | Manager |
+| Handover sign-off | Last day | Manager confirmation form: deliverables received, knowledge transfer adequate, outstanding items documented | Manager |
 
 **Notice Period Controls**: During notice period, [Organisation]:
 - Monitors data access for unusual patterns
@@ -410,6 +430,25 @@ If return is not completed:
 - Asset return completion rate calculated by IT; reported quarterly
 - Trends tracked in ISMS-IMP-A.5.10-11.4 (Compliance Dashboard)
 - Gaps >5% below target escalated to Executive Management
+
+**Policy Change Management**:
+
+Out-of-cycle policy updates are triggered by:
+
+- Regulatory requirement changes (Tier 1 mandatory; Tier 2 if applicable)
+- Significant security incidents involving asset misuse or incomplete returns
+- Technology changes that materially affect asset types or usage patterns
+- Internal audit findings requiring policy clarification
+- Management directive
+
+Change process:
+
+1. Change request submitted to CISO with business justification
+2. Impact assessment completed (regulatory, operational, training)
+3. Draft revisions reviewed by stakeholders (IT Security, HR, Legal)
+4. Approval per standard approval chain (CISO → HR Director → Legal → Executive Management)
+5. Communication plan executed (affected personnel notified; training updated if needed)
+6. Version history updated; superseded version archived
 
 ---
 
@@ -505,4 +544,4 @@ This policy addresses asset management requirements from:
 
 *This policy establishes requirements for acceptable use and return of assets. Implementation procedures are documented in ISMS-IMP-A.5.10-11.*
 
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-02-02 -->

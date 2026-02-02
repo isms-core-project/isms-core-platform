@@ -322,7 +322,7 @@ def create_workbook() -> Workbook:
     wb.create_sheet("6. Data Subject Requests", 5)
     wb.create_sheet("Summary Dashboard", 6)
     wb.create_sheet("Evidence Register", 7)
-    wb.create_sheet("Approval Sign-Of", 8)
+    wb.create_sheet("Approval Sign-Off", 8)
     
     return wb
 
@@ -2001,7 +2001,7 @@ def main():
         create_evidence_register(wb["Evidence Register"], styles)
 
         logger.info("[9/9] Creating Approval Sign-Off (3-level workflow)...")
-        create_approval_signoff(wb["Approval Sign-Of"], styles)
+        create_approval_signoff(wb["Approval Sign-Off"], styles)
 
         filename = f"ISMS-IMP-A.8.10.1_Retention_Deletion_Triggers_{datetime.now().strftime('%Y%m%d')}.xlsx"
         wb.save(filename)

@@ -66,6 +66,15 @@ THIN_BORDER = Border(
     bottom=Side(style='thin')
 )
 
+# =============================================================================
+# ESCALATION TRIGGERS (Per ISMS Copilot Audit)
+# =============================================================================
+ESCALATION_TRIGGERS = {
+    "Training Completion Rate": {"threshold": 90, "operator": "<", "action": "Escalate to CISO"},
+    "Policy Violations": {"threshold": 5, "operator": ">", "action": "Manager performance review"},
+    "Manager Response Time": {"threshold": 15, "operator": ">", "action": "Escalate to Department Head"},
+}
+
 
 # =============================================================================
 # WORKBOOK GENERATION FUNCTIONS
@@ -87,7 +96,13 @@ def create_instructions_sheet(ws):
         ["2. Training Oversight - Manager tracking of team training completion"],
         ["3. Policy Violations - Manager handling of policy violations"],
         ["4. Access Reviews - Manager participation in access reviews"],
-        ["5. Quarterly Summary - Aggregated oversight metrics"],
+        ["5. Escalation Triggers - Threshold-based escalation tracking"],
+        ["6. Quarterly Summary - Aggregated oversight metrics by department"],
+        [""],
+        ["ESCALATION TRIGGERS (Per ISMS Copilot Audit)"],
+        ["- Training Completion Rate <90%: Escalate to CISO"],
+        ["- Policy Violations >5: Manager performance review"],
+        ["- Manager Response Time >15 days: Escalate to Department Head"],
         [""],
         ["WORKFLOW"],
         ["1. Track training completion oversight per manager"],
@@ -262,6 +277,70 @@ def create_quarterly_summary_sheet(ws):
         ws.column_dimensions[get_column_letter(i)].width = width
 
 
+def create_escalation_triggers_sheet(ws):
+    """Create the Escalation Triggers sheet."""
+    ws.title = "Escalation Triggers"
+
+    # Title
+    ws.merge_cells('A1:F1')
+    cell = ws.cell(row=1, column=1, value="Compliance Oversight - Escalation Triggers")
+    cell.font = Font(bold=True, size=14)
+
+    # Thresholds reference
+    row = 3
+    ws.cell(row=row, column=1, value="Trigger Thresholds").font = Font(bold=True, size=12)
+
+    row = 4
+    headers = ["Metric", "Threshold", "Condition", "Escalation Action"]
+    for col, header in enumerate(headers, 1):
+        cell = ws.cell(row=row, column=col, value=header)
+        cell.font = HEADER_FONT
+        cell.fill = HEADER_FILL
+        cell.border = THIN_BORDER
+
+    row = 5
+    for metric, config in ESCALATION_TRIGGERS.items():
+        ws.cell(row=row, column=1, value=metric).border = THIN_BORDER
+        ws.cell(row=row, column=2, value=f"{config['threshold']}{'%' if 'Rate' in metric else ' days' if 'Time' in metric else ''}").border = THIN_BORDER
+        ws.cell(row=row, column=3, value=f"{config['operator']} threshold").border = THIN_BORDER
+        ws.cell(row=row, column=4, value=config['action']).border = THIN_BORDER
+        row += 1
+
+    # Triggered Escalations Tracker
+    row += 2
+    ws.cell(row=row, column=1, value="Triggered Escalations Log").font = Font(bold=True, size=12)
+
+    row += 1
+    tracker_headers = ["Escalation_ID", "Date", "Manager_ID", "Metric_Triggered",
+                       "Actual_Value", "Escalated_To", "Resolution", "Resolution_Date"]
+    for col, header in enumerate(tracker_headers, 1):
+        cell = ws.cell(row=row, column=col, value=header)
+        cell.font = HEADER_FONT
+        cell.fill = HEADER_FILL
+        cell.border = THIN_BORDER
+
+    # Input rows for escalation tracking
+    for r in range(row + 1, row + 26):
+        for col in range(1, len(tracker_headers) + 1):
+            cell = ws.cell(row=r, column=col)
+            cell.fill = INPUT_FILL
+            cell.border = THIN_BORDER
+
+    # Data validations
+    metric_dv = DataValidation(type="list", formula1='"Training Completion Rate,Policy Violations,Manager Response Time"')
+    ws.add_data_validation(metric_dv)
+    metric_dv.add(f'D{row+1}:D{row+25}')
+
+    resolution_dv = DataValidation(type="list", formula1='"Resolved,In Progress,Pending,Closed - No Action"')
+    ws.add_data_validation(resolution_dv)
+    resolution_dv.add(f'G{row+1}:G{row+25}')
+
+    # Column widths
+    widths = [15, 12, 12, 25, 12, 20, 15, 15]
+    for i, width in enumerate(widths, 1):
+        ws.column_dimensions[get_column_letter(i)].width = width
+
+
 def generate_workbook():
     """Generate the complete workbook."""
     logger.info(f"Generating {DOCUMENT_ID} - {WORKBOOK_NAME}")
@@ -273,6 +352,7 @@ def generate_workbook():
     create_training_oversight_sheet(wb.create_sheet())
     create_policy_violations_sheet(wb.create_sheet())
     create_access_reviews_sheet(wb.create_sheet())
+    create_escalation_triggers_sheet(wb.create_sheet())
     create_quarterly_summary_sheet(wb.create_sheet())
 
     wb.remove(default_sheet)
@@ -290,8 +370,9 @@ if __name__ == "__main__":
     generate_workbook()
 
 # =============================================================================
-# QA_VERIFIED: 2026-01-31
-# QA_STATUS: PASSED - INITIAL CREATION
+# QA_VERIFIED: 2026-02-02
+# QA_STATUS: PASSED - AUDIT ALIGNMENT UPDATE
 # QA_TOOL: Claude Code
-# CHANGES: Initial generator creation for A.5.4 Management Responsibilities
+# CHANGES: Added Escalation Triggers sheet per ISMS Copilot audit (<90% training,
+#          >5 violations, >15 days response); added escalation log tracking
 # =============================================================================

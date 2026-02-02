@@ -1414,10 +1414,11 @@ Static layout mirroring Section 8 of Part I:
 
 ---
 
-**End of Document: ISMS-IMP-A.5.24-28.S5 - Learning & Continuous Improvement Assessment**
+**END OF SPECIFICATION**
+
 ---
 
 *"The idea is to try to give all the information to help others to judge the value of your contribution."*
 — Richard Feynman
 
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-02-02 -->

@@ -914,39 +914,40 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 ---
 
-# Evidence Requirements
+# Evidence for This Policy
 
-## Stage 1 Audit Evidence (Documentation Review)
+**Stage 1 (Documentation Review) Evidence:**
 
-| Evidence Type | Description | Owner |
-|---------------|-------------|-------|
-| **Remote Work Policy** | This policy document, approved and published | CISO |
-| **Authorization Procedure** | Documented remote work authorization process | HR/IT |
-| **Reporting Channel Documentation** | Published reporting mechanisms and contacts | IT Security |
-| **Training Materials** | Remote work and event reporting training content | Security Awareness Team |
-| **Exception Register** | Documented policy exceptions with approvals | CISO |
+Evidence required to demonstrate this policy is adequately documented and approved:
 
-## Stage 2 Audit Evidence (Implementation Verification)
+- ✅ This policy document (ISMS-POL-A.6.7-8 v1.0)
+- ✅ Approval signatures from CISO, HR Director, Executive Management
+- ✅ Remote work authorization procedure documented
+- ✅ Reporting channel documentation published
+- ✅ Training materials for remote work and event reporting
+- ✅ Exception register with documented approvals
+- ✅ Roles and responsibilities assigned
 
-| Evidence Type | Description | Owner |
-|---------------|-------------|-------|
-| **Remote Work Authorizations** | Sample of approved remote work arrangements | HR/Line Managers |
-| **Policy Acknowledgments** | Records of personnel acknowledging requirements | HR |
-| **Training Completion Records** | Evidence of completed remote work/reporting training | HR/LMS |
-| **Technical Compliance Reports** | VPN usage, MFA enrollment, device encryption status | IT Security |
-| **Event Reports** | Sample security event reports demonstrating mechanism use | IT Security |
-| **Response Records** | Evidence of timely response to reported events | IT Security |
-| **Compliance Metrics** | Dashboard showing policy compliance levels | IT Security |
 
-## Evidence Retention
+**Stage 2 (Operational Effectiveness) Evidence:**
 
-| Evidence Category | Retention Period |
-|-------------------|------------------|
-| Policy versions | Life of ISMS + 3 years |
-| Authorization records | Duration of arrangement + 2 years |
-| Training records | Duration of employment + 2 years |
-| Event reports | 3 years minimum (or per regulatory requirement) |
-| Compliance assessments | 3 years minimum |
+Evidence required to demonstrate this policy is operationally effective:
+
+- Remote work authorization samples (approved arrangements)
+- Policy acknowledgment records from personnel
+- Training completion records for remote work/reporting training
+- Technical compliance reports (VPN usage, MFA enrollment, device encryption status)
+- Sample security event reports demonstrating mechanism use
+- Response records showing timely response to reported events
+- Compliance metrics dashboard showing policy compliance levels
+
+**Evidence Retention:**
+
+- Policy versions: Life of ISMS + 3 years
+- Authorization records: Duration of arrangement + 2 years
+- Training records: Duration of employment + 2 years
+- Event reports: 3 years minimum (or per regulatory requirement)
+- Compliance assessments: 3 years minimum
 
 ---
 
