@@ -65,26 +65,26 @@
 
 | Control | Status | POL | IMP | SCR |
 |---------|--------|:---:|:---:|:---:|
-| A.5.1-2, 6.1-2 | ✅ Complete | - | ✅ | ✅ |
-| A.5.3 | ✅ Complete | - | ✅ | ✅ |
-| A.5.4 | ✅ Complete | ✅ | - | ✅ |
-| A.5.5-6 | ✅ Complete | - | ✅ | ✅ |
-| A.5.7 | ✅ Complete | - | ✅ | ✅ |
-| A.5.8 | ✅ Complete | - | ✅ | ✅ |
-| A.5.9 | ✅ Complete | - | ✅ | ✅ |
+| A.5.1-2, 6.1-2 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.5.3 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.5.4 | ✅ Complete | ✅ | 🔍 | ✅ |
+| A.5.5-6 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.5.7 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.5.8 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.5.9 | ✅ Complete | 🔍 | ✅ | ✅ |
 | A.5.10-11 | ✅ Complete | ✅ | ✅ | ✅ |
-| A.5.12-13 | ✅ Complete | - | ✅ | ✅ |
-| A.5.14 | ✅ Complete | - | ✅ | ✅ |
-| A.5.15-16-18 | ✅ Complete | - | ✅ | ✅ |
-| A.5.17 | ✅ Complete | - | ✅ | ✅ |
+| A.5.12-13 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.5.14 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.5.15-16-18 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.5.17 | ✅ Complete | 🔍 | ✅ | ✅ |
 | A.5.19-23 | ✅ Complete | ✅ | ✅ | ✅ |
-| A.5.24-28 | ✅ Complete | - | ✅ | ✅ |
-| A.5.29 | ✅ Complete | - | ✅ | ✅ |
+| A.5.24-28 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.5.29 | ✅ Complete | 🔍 | ✅ | ✅ |
 | A.5.31 | ✅ Complete | ✅ | ✅ | ✅ |
-| A.5.32-33 | ✅ Complete | - | ✅ | ✅ |
-| A.5.34 | ✅ Complete | - | ✅ | ✅ |
+| A.5.32-33 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.5.34 | ✅ Complete | 🔍 | ✅ | ✅ |
 | A.5.35-36 | ✅ Complete | ✅ | ✅ | ✅ |
-| A.5.37 | ✅ Complete | - | ✅ | ✅ |
+| A.5.37 | ✅ Complete | 🔍 | ✅ | ✅ |
 
 ---
 
@@ -97,9 +97,9 @@
 
 | Control | Status | POL | IMP | SCR |
 |---------|--------|:---:|:---:|:---:|
-| A.6.1-2 | ✅ Complete | - | ✅ | ✅ |
+| A.6.1-2 | ✅ Complete | 🔍 | ✅ | ✅ |
 | A.6.3 | ✅ Complete | ✅ | ✅ | ✅ |
-| A.6.4-5 | ✅ Complete | - | ✅ | ✅ |
+| A.6.4-5 | ✅ Complete | 🔍 | ✅ | ✅ |
 | A.6.6 | ✅ Complete | ✅ | ✅ | ✅ |
 | A.6.7-8 | ✅ Complete | ✅ | ✅ | ✅ |
 
@@ -115,11 +115,11 @@
 | Control | Status | POL | IMP | SCR |
 |---------|--------|:---:|:---:|:---:|
 | A.7.1-2-3 | ✅ Complete | ✅ | ✅ | ✅ |
-| A.7.4-5-11 | ✅ Complete | - | ✅ | ✅ |
+| A.7.4-5-11 | ✅ Complete | 🔍 | ✅ | ✅ |
 | A.7.6-7-14 | ✅ Complete | ✅ | ✅ | ✅ |
 | A.7.8-9 | ✅ Complete | ✅ | ✅ | ✅ |
 | A.7.10 | ✅ Complete | ✅ | ✅ | ✅ |
-| A.7.12-13 | ✅ Complete | - | ✅ | ✅ |
+| A.7.12-13 | ✅ Complete | 🔍 | ✅ | ✅ |
 
 ---
 
@@ -134,27 +134,27 @@
 |---------|--------|:---:|:---:|:---:|
 | A.8.1-7-18-19 | ✅ Complete | ✅ | ✅ | ✅ |
 | A.8.2-3-5 | ✅ Complete | ✅ | ✅ | ✅ |
-| A.8.4 | ✅ Complete | - | ✅ | ✅ |
-| A.8.6 | ✅ Complete | - | ✅ | ✅ |
-| A.8.8 | ✅ Complete | - | ✅ | ✅ |
-| A.8.9 | ✅ Complete | - | ✅ | ✅ |
-| A.8.10 | ✅ Complete | - | ✅ | ✅ |
-| A.8.11 | ✅ Complete | - | ✅ | ✅ |
-| A.8.12 | ✅ Complete | - | ✅ | ✅ |
-| A.8.13-14, 5.30 | ✅ Complete | - | ✅ | ✅ |
-| A.8.15 | ✅ Complete | - | ✅ | ✅ |
-| A.8.16 | ✅ Complete | - | ✅ | ✅ |
-| A.8.17 | ✅ Complete | - | ✅ | ✅ |
-| A.8.20-22 | ✅ Complete | - | ✅ | ✅ |
+| A.8.4 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.8.6 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.8.8 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.8.9 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.8.10 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.8.11 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.8.12 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.8.13-14, 5.30 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.8.15 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.8.16 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.8.17 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.8.20-22 | ✅ Complete | 🔍 | ✅ | ✅ |
 | A.8.23 | ✅ Complete | ✅ | ✅ | ✅ |
 | A.8.24 | ✅ Complete | ✅ | ✅ | ✅ |
-| A.8.25-26-29 | ✅ Complete | - | ✅ | ✅ |
+| A.8.25-26-29 | ✅ Complete | 🔍 | ✅ | ✅ |
 | A.8.27 | ✅ Complete | ✅ | ✅ | ✅ |
 | A.8.28 | ✅ Complete | ✅ | ✅ | ✅ |
-| A.8.30 | ✅ Complete | - | ✅ | ✅ |
-| A.8.31 | ✅ Complete | - | ✅ | ✅ |
-| A.8.32 | ✅ Complete | - | ✅ | ✅ |
-| A.8.33-34 | ✅ Complete | - | ✅ | ✅ |
+| A.8.30 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.8.31 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.8.32 | ✅ Complete | 🔍 | ✅ | ✅ |
+| A.8.33-34 | ✅ Complete | 🔍 | ✅ | ✅ |
 
 ---
 

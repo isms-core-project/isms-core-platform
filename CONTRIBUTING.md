@@ -46,28 +46,28 @@ ISMS CORE applies appropriate rigor based on what matters for **reliability**, *
 <td><strong>📋 IMP</strong> (Implementation)</td>
 <td>🟡 Moderate</td>
 <td>Medium</td>
-<td>Bamboo tag 🎋</td>
+<td><code>&lt;!-- QA_VERIFIED --&gt;</code></td>
 <td><img src="https://img.shields.io/badge/Living_Document-32CD32?style=flat-square" alt="Living"/></td>
 </tr>
 <tr>
 <td><strong>🐍 SCR</strong> (Scripts)</td>
 <td>🔴 High</td>
 <td>Medium</td>
-<td><code>QA_VERIFIED:</code></td>
+<td><code># QA_VERIFIED:</code></td>
 <td><img src="https://img.shields.io/badge/Code_Review-3776AB?style=flat-square" alt="Code Review"/></td>
 </tr>
 <tr>
 <td><strong>📚 REF</strong> (Reference)</td>
 <td>🟡 Moderate</td>
 <td>Low</td>
-<td>Bamboo tag 🎋</td>
+<td><code>&lt;!-- QA_VERIFIED --&gt;</code></td>
 <td><img src="https://img.shields.io/badge/Technical_Accuracy-FF6600?style=flat-square" alt="Technical"/></td>
 </tr>
 <tr>
 <td><strong>🏢 CTX</strong> (Context)</td>
 <td>🟡 Moderate</td>
 <td>Low</td>
-<td>Bamboo tag 🎋</td>
+<td><code>&lt;!-- QA_VERIFIED --&gt;</code></td>
 <td><img src="https://img.shields.io/badge/Accuracy_Verified-0066CC?style=flat-square" alt="Verified"/></td>
 </tr>
 </table>
