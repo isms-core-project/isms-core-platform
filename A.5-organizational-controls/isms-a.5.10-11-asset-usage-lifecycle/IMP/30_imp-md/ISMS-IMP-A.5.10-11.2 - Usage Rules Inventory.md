@@ -1,301 +1,976 @@
-# ISMS-IMP-A.5.10-11.2 — Usage Rules Inventory
+# ISMS-IMP-A.5.10-11.2 - Usage Rules Inventory
 
----
+## Document Information
 
 | Field | Value |
 |-------|-------|
 | **Document ID** | ISMS-IMP-A.5.10-11.2 |
-| **Title** | Usage Rules Inventory |
-| **Control Reference** | ISO/IEC 27001:2022 A.5.10 |
-| **Control Name** | Acceptable Use of Information and Other Associated Assets |
-| **Document Type** | Implementation Guide |
+| **Control Reference** | ISO/IEC 27001:2022 - Control A.5.10: Acceptable Use of Information and Other Associated Assets |
+| **Parent Policy** | ISMS-POL-A.5.10-11 Asset Usage Lifecycle Policy |
+| **Related IMPs** | ISMS-IMP-A.5.10-11.1, ISMS-IMP-A.5.10-11.3, ISMS-IMP-A.5.10-11.4 |
 | **Version** | 1.0 |
-| **Last Updated** | [Date to be set] |
+| **Classification** | Internal Use |
 | **Owner** | Information Security Manager |
-| **Classification** | Internal |
+| **Last Review** | [Date to be set] |
+| **Framework Version** | 1.0 |
+| **Assessment Type** | Usage Rules Documentation and Inventory |
 
 ---
 
-## PART I: USER COMPLETION GUIDE
-
-### Assessment Overview
-
-**Purpose**
-
-This workbook documents specific usage rules by asset category, providing a detailed inventory of permitted activities, prohibited activities, and handling requirements that support the Acceptable Use Policy.
-
-**Scope**
-
-This assessment covers:
-- Usage rules inventory by asset category
-- Permitted activities with conditions
-- Prohibited activities with risk classifications
-- Handling requirements by data classification
-- Rule enforcement and monitoring requirements
-
-**What This Assessment Covers**
-
-| Domain | Assessment Focus |
-|--------|------------------|
-| Usage Rules | Rules for each asset category |
-| Permitted Activities | What users may do and under what conditions |
-| Prohibited Activities | What users must not do and consequences |
-| Handling Requirements | How to handle assets by classification |
-
-**Control Requirement**
-
-ISO 27001:2022 A.5.10 states:
+## Control Requirement
 
 > "Rules for the acceptable use of information and other associated assets should be identified, documented and implemented."
-
-This workbook documents the specific rules referenced by the Acceptable Use Policy.
-
-### Prerequisites
-
-Before completing this assessment:
-
-- [ ] Approved Acceptable Use Policy (ISMS-POL-A.5.10-11)
-- [ ] Asset inventory per ISMS-POL-A.5.9
-- [ ] Data classification scheme
-- [ ] Input from asset owners and operational teams
-- [ ] Legal/HR review for employment-related rules
-
-### Workbook Structure
-
-| Sheet | Purpose | Key Actions |
-|-------|---------|-------------|
-| Instructions | Guidance and metadata | Complete document information |
-| Usage_Rules | Master inventory of rules | Document all usage rules |
-| Permitted_Activities | Permitted use details | Document allowed activities |
-| Prohibited_Activities | Prohibited actions | Document forbidden activities |
-| Handling_Requirements | Asset handling specs | Define handling by classification |
-| Evidence_Register | Audit evidence linking | Document evidence locations |
-| Approval_SignOff | Assessment approval | Obtain required signatures |
-
-### Completion Walkthrough
-
-**Step 1: Document Information (Instructions Sheet)**
-
-Complete all metadata fields including assessment date, assessor, and organisation.
-
-**Step 2: Usage Rules Inventory (Usage_Rules Sheet)**
-
-For each usage rule:
-
-1. **Rule_ID** - Auto-generated unique identifier
-2. **Asset_Category** - Select applicable asset type
-3. **Rule_Description** - Clear, specific rule statement
-4. **Classification** - Permitted/Permitted with Conditions/Prohibited
-5. **Applies_To** - Who the rule applies to
-6. **Enforcement_Method** - How the rule is enforced
-7. **Monitoring_Required** - Whether usage is monitored
-
-**Rule Writing Guidelines**:
-
-| Good Rule | Poor Rule |
-|-----------|-----------|
-| "Email may be used for business communications; personal use limited to breaks" | "Be careful with email" |
-| "USB drives prohibited unless encrypted and approved" | "Don't use USB drives" |
-
-**Step 3: Permitted Activities (Permitted_Activities Sheet)**
-
-Document what users ARE allowed to do:
-
-1. **Asset_Category** - Which assets
-2. **Permitted_Activity** - Specific allowed action
-3. **Conditions** - Any restrictions or requirements
-4. **Approval_Required** - Whether prior approval needed
-5. **Time_Restrictions** - When activity is permitted
-6. **Documentation_Required** - What records to keep
-
-**Step 4: Prohibited Activities (Prohibited_Activities Sheet)**
-
-Document what users MUST NOT do:
-
-1. **Asset_Category** - Which assets
-2. **Prohibited_Activity** - Specific forbidden action
-3. **Reason** - Why it's prohibited (risk basis)
-4. **Risk_Level** - Critical/High/Medium/Low
-5. **Detection_Method** - How violations are detected
-6. **Consequence** - What happens if violated
-7. **Exception_Possible** - Whether exceptions can be granted
-
-**Step 5: Handling Requirements (Handling_Requirements Sheet)**
-
-Define how to handle assets by classification:
-
-1. **Asset_Category** - Asset type
-2. **Data_Classification** - Public/Internal/Confidential/Restricted
-3. **Storage_Requirement** - Where/how to store
-4. **Transmission_Requirement** - How to send/share
-5. **Disposal_Requirement** - How to dispose
-6. **Encryption_Required** - Whether encryption needed
-
-**Step 6: Evidence and Approval**
-
-Complete Evidence_Register linking to supporting documents, then obtain required approvals.
-
-### Evidence Collection
-
-**Required Evidence**:
-
-| Evidence Type | Description | Storage Location |
-|---------------|-------------|------------------|
-| Asset Inventory | Categories covered by rules | ISMS Evidence Library |
-| AUP Document | Policy these rules support | ISMS Evidence Library |
-| Legal Review | Compliance verification | ISMS Evidence Library |
-| Stakeholder Sign-off | Asset owner approvals | ISMS Evidence Library |
-
-### Common Pitfalls
-
-❌ **MISTAKE**: Writing vague rules like "use responsibly"
-✅ **CORRECT**: Write specific, actionable rules with clear boundaries
-
-❌ **MISTAKE**: Not specifying enforcement method
-✅ **CORRECT**: Every rule should explain how compliance is verified
-
-❌ **MISTAKE**: Missing risk justification for prohibitions
-✅ **CORRECT**: Document WHY each activity is prohibited
-
-❌ **MISTAKE**: Inconsistent handling requirements across categories
-✅ **CORRECT**: Ensure handling requirements follow data classification consistently
-
-❌ **MISTAKE**: Not considering all user types (employees, contractors, guests)
-✅ **CORRECT**: Specify which rules apply to which personnel categories
-
-❌ **MISTAKE**: Rules that conflict with operational needs
-✅ **CORRECT**: Validate rules with operational teams before finalising
-
-❌ **MISTAKE**: No exception process for prohibited activities
-✅ **CORRECT**: Document whether and how exceptions can be requested
-
-❌ **MISTAKE**: Failing to link rules to consequences
-✅ **CORRECT**: Each prohibition should reference the consequence
-
-### Quality Checklist
-
-Before submitting:
-
-- [ ] All asset categories have defined rules
-- [ ] Each rule is specific and actionable
-- [ ] Permitted activities have clear conditions
-- [ ] Prohibited activities have risk classifications
-- [ ] Handling requirements align with data classification
-- [ ] Evidence linked for all documented rules
-- [ ] Approvals obtained from stakeholders
-
-### Review & Approval
-
-**Review Workflow**:
-
-1. Assessor documents all rules
-2. Asset owners review applicable rules
-3. Legal/HR review employment implications
-4. CISO approves final inventory
+>
+> — ISO/IEC 27001:2022, Annex A Control 5.10
 
 ---
 
-## PART II: TECHNICAL SPECIFICATION
+## Table of Contents
 
-### Workbook Architecture
+### PART I: USER COMPLETION GUIDE
+1. [Assessment Overview](#1-assessment-overview)
+2. [Control Requirements](#2-control-requirements)
+3. [Prerequisites](#3-prerequisites)
+4. [Rule Classification Framework](#4-rule-classification-framework)
+5. [Asset Category Rules](#5-asset-category-rules)
+6. [Workbook Structure](#6-workbook-structure)
+7. [Completion Walkthrough](#7-completion-walkthrough)
+8. [Handling Requirements by Classification](#8-handling-requirements-by-classification)
+9. [Enforcement and Monitoring](#9-enforcement-and-monitoring)
+10. [Evidence Collection](#10-evidence-collection)
+11. [Common Pitfalls](#11-common-pitfalls)
+12. [Quality Checklist](#12-quality-checklist)
+13. [Review and Approval](#13-review-and-approval)
+14. [Related Controls](#14-related-controls)
 
-**File Details**:
+### PART II: TECHNICAL SPECIFICATION
+15. [Workbook Architecture](#15-workbook-architecture)
+16. [Sheet Specifications](#16-sheet-specifications)
+17. [Data Validation Rules](#17-data-validation-rules)
+18. [Conditional Formatting](#18-conditional-formatting)
+19. [Formula Specifications](#19-formula-specifications)
+20. [Cell Styling Standards](#20-cell-styling-standards)
+21. [Generator Script Reference](#21-generator-script-reference)
 
-- Filename: `ISMS-IMP-A.5.10-11.2_Usage_Rules_Inventory_YYYYMMDD.xlsx`
-- Format: Microsoft Excel (.xlsx)
-- Sheets: 7
+---
 
-### Sheet Specifications
+# PART I: USER COMPLETION GUIDE
 
-#### Usage_Rules Sheet
+## 1. Assessment Overview
 
-**Columns**:
+### 1.1 Purpose
 
-| Column | Header | Width | Content |
-|--------|--------|-------|---------|
-| A | Rule_ID | 14 | Auto-generated (UR-001, etc.) |
-| B | Asset_Category | 25 | User selection |
-| C | Rule_Description | 50 | User input |
-| D | Classification | 20 | Data validation |
-| E | Applies_To | 22 | User input |
-| F | Enforcement_Method | 22 | User input |
-| G | Monitoring_Required | 16 | Data validation: Yes/No |
-| H | Exception_Process | 18 | User input |
-| I | Policy_Reference | 20 | AUP section reference |
-| J | Last_Updated | 14 | Date field |
-| K | Owner | 22 | User input |
-| L | Notes | 30 | User input |
+The Usage Rules Inventory workbook provides a comprehensive catalogue of specific usage rules by asset category. While the Acceptable Use Policy (AUP) provides high-level guidance, this inventory documents the detailed rules that govern day-to-day asset usage.
 
-**Pre-populated Rules**: 15 common usage rules with colour-coded classifications
+This workbook documents:
+- **Permitted Activities**: What users ARE allowed to do
+- **Prohibited Activities**: What users MUST NOT do
+- **Conditions and Restrictions**: When and how activities are allowed
+- **Handling Requirements**: How assets must be handled by classification
+- **Enforcement Methods**: How compliance is monitored and enforced
 
-#### Permitted_Activities Sheet
+### 1.2 Scope
 
-**Columns**:
+This inventory covers usage rules for:
+- All asset categories defined in the asset inventory
+- All personnel types (employees, contractors, temporary staff, third parties)
+- All usage contexts (office, remote, mobile, travel)
+- All data classifications (Public, Internal, Confidential, Restricted)
 
-| Column | Header | Width | Content |
-|--------|--------|-------|---------|
-| A | Activity_ID | 14 | Auto-generated (PA-001, etc.) |
-| B | Asset_Category | 22 | User selection |
-| C | Permitted_Activity | 45 | User input |
-| D | Conditions | 35 | User input |
-| E | Approval_Required | 16 | Data validation: Yes/No |
-| F | Approver_Role | 22 | User input |
-| G | Time_Restrictions | 20 | User input |
-| H | Location_Restrictions | 22 | User input |
-| I | Documentation_Required | 20 | Data validation: Yes/No |
-| J | Notes | 30 | User input |
+### 1.3 Benefits
 
-#### Prohibited_Activities Sheet
+| Stakeholder | Benefit |
+|-------------|---------|
+| **ISM** | Comprehensive documentation of all usage rules |
+| **Users** | Clear, specific guidance on what they can and cannot do |
+| **IT Operations** | Reference for enforcement and monitoring configuration |
+| **Legal/HR** | Documented basis for disciplinary actions |
+| **Auditors** | Evidence of control implementation |
+| **Training** | Content source for awareness materials |
 
-**Columns**:
+### 1.4 Assessment Frequency
 
-| Column | Header | Width | Content |
-|--------|--------|-------|---------|
-| A | Prohibition_ID | 14 | Auto-generated (PH-001, etc.) |
-| B | Asset_Category | 22 | User selection |
-| C | Prohibited_Activity | 45 | User input |
-| D | Reason | 35 | User input |
-| E | Risk_Level | 14 | Data validation |
-| F | Detection_Method | 25 | User input |
-| G | Consequence | 25 | User input |
-| H | Exception_Possible | 16 | Data validation: Yes/No |
-| I | Related_Control | 18 | ISO control reference |
-| J | Notes | 30 | User input |
+| Activity | Frequency |
+|----------|-----------|
+| Full inventory review | Annual |
+| Rule updates for new technologies | As needed |
+| Enforcement verification | Quarterly |
+| Stakeholder validation | Annual |
 
-**Pre-populated Prohibitions**: 8 common critical prohibitions
+---
 
-#### Handling_Requirements Sheet
+## 2. Control Requirements
 
-**Columns**:
+### 2.1 ISO 27001:2022 A.5.10 Requirements
 
-| Column | Header | Width | Content |
-|--------|--------|-------|---------|
-| A | Handling_ID | 14 | Auto-generated (HR-001, etc.) |
-| B | Asset_Category | 22 | User selection |
-| C | Data_Classification | 18 | Data validation |
-| D | Storage_Requirement | 30 | User input |
-| E | Transmission_Requirement | 30 | User input |
-| F | Disposal_Requirement | 30 | User input |
-| G | Access_Restriction | 25 | User input |
-| H | Labelling_Required | 16 | Data validation: Yes/No |
-| I | Encryption_Required | 16 | Data validation: Yes/No |
-| J | Retention_Period | 18 | User input |
-| K | Notes | 30 | User input |
+Control A.5.10 requires that acceptable use rules be identified, documented, and implemented:
 
-### Data Validations
+| Requirement | Implementation |
+|-------------|----------------|
+| **Identified** | Rules defined for each asset category |
+| **Documented** | Rules recorded in this inventory |
+| **Implemented** | Rules enforced through technical and administrative controls |
 
-| Field | Validation List |
-|-------|-----------------|
-| Classification | Permitted, Permitted with Conditions, Prohibited, Not Applicable |
-| Risk_Level | Critical, High, Medium, Low |
-| Data_Classification | Public, Internal, Confidential, Restricted |
-| Yes/No fields | Yes, No |
+### 2.2 Rule Types
 
-### Generator Reference
+| Rule Type | Purpose | Example |
+|-----------|---------|---------|
+| **Permitted** | Defines allowed activities | "Email may be used for business communications" |
+| **Permitted with Conditions** | Allowed activities with restrictions | "Personal use permitted during breaks only" |
+| **Prohibited** | Explicitly forbidden activities | "Connecting personal storage devices prohibited" |
+| **Handling** | Requirements for asset handling | "Confidential data must be encrypted at rest" |
 
-**Script**: `generate_a510_11_2_usage_rules_inventory.py`
+### 2.3 Rule Quality Criteria
 
-**Location**: `10-isms-scr-base/isms-a.5.10-11-asset-usage-lifecycle/10_generator-master/`
+| Criterion | Description | Example |
+|-----------|-------------|---------|
+| **Specific** | Clearly defined action or behaviour | "Do not share passwords" not "Be careful with passwords" |
+| **Actionable** | User knows exactly what to do | "Lock workstation when leaving desk" |
+| **Enforceable** | Can be monitored and enforced | Technical control or audit capability exists |
+| **Proportionate** | Risk-appropriate | Critical asset rules more stringent |
+| **Justified** | Clear reason for the rule | Links to risk or compliance requirement |
+
+---
+
+## 3. Prerequisites
+
+### 3.1 Required Inputs
+
+Before completing the inventory, gather:
+
+| Prerequisite | Source | Purpose |
+|--------------|--------|---------|
+| **Approved AUP** | ISMS-POL-A.5.10-11 | Policy framework for rules |
+| **Asset Inventory** | ISMS-IMP-A.5.9 | Asset categories requiring rules |
+| **Data Classification Scheme** | ISMS-POL-A.5.12 | Classification-based handling |
+| **Legal Requirements** | Legal counsel | Regulatory compliance rules |
+| **Operational Input** | IT, HR, Operations | Practical rule validation |
+| **Previous Inventory** | ISMS Evidence Library | Reference for updates |
+
+### 3.2 Stakeholder Input Required
+
+| Stakeholder | Input Needed |
+|-------------|--------------|
+| **IT Security** | Technical enforcement capabilities |
+| **IT Operations** | System-specific usage rules |
+| **HR** | Employment-related rule implications |
+| **Legal** | Regulatory and legal requirements |
+| **Asset Owners** | Asset-specific rules |
+| **User Representatives** | Practicality validation |
+
+---
+
+## 4. Rule Classification Framework
+
+### 4.1 Rule Classifications
+
+| Classification | Definition | Consequence Level |
+|----------------|------------|-------------------|
+| **Permitted** | Activity is allowed without restriction | N/A |
+| **Permitted with Conditions** | Allowed under specific circumstances | Varies |
+| **Prohibited** | Activity is not allowed under any circumstances | Defined by severity |
+| **Not Applicable** | Rule not relevant to this context | N/A |
+
+### 4.2 Risk-Based Categorisation
+
+For prohibited activities, categorise by risk level:
+
+| Risk Level | Definition | Example | Typical Consequence |
+|------------|------------|---------|---------------------|
+| **Critical** | Could cause severe harm or legal violation | Data exfiltration | Immediate termination |
+| **High** | Significant security or compliance risk | Sharing credentials | Final written warning |
+| **Medium** | Moderate risk requiring correction | Unapproved software | Formal warning |
+| **Low** | Minor policy deviation | Minor personal use | Verbal coaching |
+
+### 4.3 Applies-To Matrix
+
+Rules should specify who they apply to:
+
+| Personnel Type | Abbreviation | Notes |
+|----------------|--------------|-------|
+| All Personnel | ALL | Employees, contractors, temps, third parties |
+| Employees | EMP | Full and part-time employees |
+| Contractors | CON | External contractors |
+| Temporary Staff | TMP | Temporary/agency workers |
+| Third Parties | 3P | Vendors, partners, visitors |
+| Privileged Users | PRV | System administrators, developers |
+
+---
+
+## 5. Asset Category Rules
+
+### 5.1 Standard Asset Categories
+
+| Category | Description | Typical Rules Focus |
+|----------|-------------|---------------------|
+| **Information Assets** | Data, documents, databases | Classification handling, sharing, retention |
+| **Software Assets** | Applications, SaaS, tools | Installation, licensing, updates |
+| **Hardware Assets** | Laptops, mobiles, peripherals | Physical security, care, loss reporting |
+| **Network Assets** | WiFi, VPN, internet access | Usage limits, security requirements |
+| **Cloud Services** | M365, AWS, SaaS platforms | Data storage, configuration, sharing |
+| **Communication Tools** | Email, messaging, collaboration | Appropriate use, retention, privacy |
+| **Physical Media** | USB drives, external storage | Encryption, prohibited use |
+| **Authentication Assets** | Passwords, tokens, certificates | Protection, sharing prohibition |
+| **Development Assets** | IDEs, repositories, test environments | Code handling, data protection |
+| **Personal Devices (BYOD)** | Personal phones, laptops | Separation, security requirements |
+
+### 5.2 Rule Template Structure
+
+For each asset category, document:
+
+| Element | Description |
+|---------|-------------|
+| **Rule ID** | Unique identifier (UR-001) |
+| **Asset Category** | Which asset type |
+| **Rule Description** | Clear statement of the rule |
+| **Classification** | Permitted/Permitted with Conditions/Prohibited |
+| **Applies To** | Who the rule applies to |
+| **Conditions** | Any restrictions or requirements |
+| **Enforcement** | How compliance is verified |
+| **Consequence** | What happens if violated |
+| **Exception Process** | How to request an exception |
+
+---
+
+## 6. Workbook Structure
+
+### 6.1 Sheet Overview
+
+| Sheet # | Sheet Name | Purpose | Primary Users |
+|:-------:|------------|---------|---------------|
+| 1 | Instructions | Guidance and metadata | All assessors |
+| 2 | Usage_Rules | Master inventory of all rules | ISM, Policy owners |
+| 3 | Permitted_Activities | Detailed permitted use | Users, Training |
+| 4 | Prohibited_Activities | Forbidden actions with consequences | Users, HR, Legal |
+| 5 | Handling_Requirements | Asset handling by classification | Users, IT |
+| 6 | Evidence_Register | Audit evidence linking | ISM, Auditors |
+| 7 | Approval_SignOff | Inventory approval | ISM, CISO |
+
+### 6.2 Data Flow
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    USAGE RULES DATA FLOW                         │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  INPUTS                                                         │
+│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐    │
+│  │ AUP Policy     │  │ Asset Inventory│  │ Classification │    │
+│  └───────┬────────┘  └───────┬────────┘  └───────┬────────┘    │
+│          │                   │                   │              │
+│          ▼                   ▼                   ▼              │
+│  ┌────────────────────────────────────────────────────────┐    │
+│  │              USAGE RULES INVENTORY                      │    │
+│  ├────────────┬────────────┬───────────────────────────────┤    │
+│  │ Permitted  │ Prohibited │ Handling                      │    │
+│  │ Activities │ Activities │ Requirements                  │    │
+│  └────────────┴────────────┴───────────────────────────────┘    │
+│          │                   │                   │              │
+│          ▼                   ▼                   ▼              │
+│  ┌────────────────────────────────────────────────────────┐    │
+│  │  • AUP Supporting Detail  • Training Content            │    │
+│  │  • Technical Controls     • Enforcement Configuration   │    │
+│  └────────────────────────────────────────────────────────┘    │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 7. Completion Walkthrough
+
+### Step 1: Document Information (Instructions Sheet)
+
+**Objective:** Establish inventory context
+
+**Actions:**
+1. Enter inventory date
+2. Record author name and role
+3. Enter organisation name
+4. Specify review period
+5. Note related policy version
+
+### Step 2: Usage Rules Master List (Usage_Rules Sheet)
+
+**Objective:** Document all usage rules in a master inventory
+
+**Actions:**
+1. Assign unique Rule_ID for each rule
+2. Select asset category from dropdown
+3. Write clear, specific rule description
+4. Classify the rule (Permitted/Permitted with Conditions/Prohibited)
+5. Specify who the rule applies to
+6. Document enforcement method
+7. Note whether monitoring is required
+8. Reference the related AUP section
+
+**Rule Writing Guidelines:**
+
+| Good Rule | Why It's Good |
+|-----------|---------------|
+| "Corporate laptops must be encrypted with approved full-disk encryption" | Specific, actionable, measurable |
+| "Email may be used for business communications; limited personal use is permitted during breaks" | Clear permission with defined boundary |
+| "Installing software not approved by IT is prohibited" | Clear prohibition with defined scope |
+
+| Poor Rule | Why It's Poor |
+|-----------|---------------|
+| "Use assets responsibly" | Vague, not actionable |
+| "Don't do bad things" | Undefined, unenforceable |
+| "Be careful with email" | No specific guidance |
+
+### Step 3: Permitted Activities (Permitted_Activities Sheet)
+
+**Objective:** Document what users ARE allowed to do
+
+**Actions:**
+1. For each permitted activity, assign Activity_ID
+2. Select the asset category
+3. Describe the permitted activity clearly
+4. Document any conditions or restrictions
+5. Note whether approval is required
+6. Specify any time or location restrictions
+7. Note documentation requirements
+
+**Examples of Permitted Activities:**
+
+| Asset | Activity | Conditions |
+|-------|----------|------------|
+| Email | Business communications | Standard business use |
+| Email | Limited personal use | During breaks, not excessive |
+| Laptop | Working from approved remote locations | VPN must be active |
+| Internet | Access to business-related websites | Reasonable business use |
+| Cloud Storage | Storing business documents | Use approved services only |
+
+### Step 4: Prohibited Activities (Prohibited_Activities Sheet)
+
+**Objective:** Document what users MUST NOT do
+
+**Actions:**
+1. Assign Prohibition_ID
+2. Select asset category
+3. Describe the prohibited activity clearly
+4. Document WHY it's prohibited (risk basis)
+5. Assign risk level (Critical/High/Medium/Low)
+6. Specify detection method
+7. Document consequence for violation
+8. Note whether exceptions are possible
+
+**Examples of Prohibited Activities:**
+
+| Asset | Prohibited Activity | Risk Level | Consequence |
+|-------|---------------------|------------|-------------|
+| All | Sharing login credentials | Critical | Termination |
+| Email | Sending Confidential data to personal email | High | Final warning |
+| USB | Connecting personal storage devices | High | Written warning |
+| Network | Bypassing security controls | Critical | Termination |
+| Software | Installing unapproved software | Medium | Formal warning |
+
+### Step 5: Handling Requirements (Handling_Requirements Sheet)
+
+**Objective:** Define how assets must be handled by classification
+
+**Actions:**
+1. For each asset-classification combination
+2. Define storage requirements
+3. Define transmission requirements
+4. Define disposal requirements
+5. Specify access restrictions
+6. Note encryption requirements
+7. Specify labelling requirements
+8. Note retention period if applicable
+
+**Handling Matrix:**
+
+| Classification | Storage | Transmission | Disposal |
+|----------------|---------|--------------|----------|
+| **Public** | No restrictions | No restrictions | Standard disposal |
+| **Internal** | Access-controlled storage | Internal channels | Shred/secure delete |
+| **Confidential** | Encrypted storage | Encrypted transmission | Certified destruction |
+| **Restricted** | High-security storage | End-to-end encryption | Witnessed destruction |
+
+### Step 6: Evidence Register (Evidence_Register Sheet)
+
+**Objective:** Link supporting documentation
+
+**Actions:**
+1. Create evidence record for each supporting document
+2. Link to the rules it supports
+3. Record collection date and location
+4. Note validity period
+
+### Step 7: Approval (Approval_SignOff Sheet)
+
+**Objective:** Obtain formal inventory approval
+
+**Actions:**
+1. Review summary metrics
+2. Complete author section
+3. Obtain ISM review
+4. Obtain CISO approval
+
+---
+
+## 8. Handling Requirements by Classification
+
+### 8.1 Public Information
+
+| Aspect | Requirement |
+|--------|-------------|
+| **Storage** | No special requirements |
+| **Transmission** | Any method acceptable |
+| **Sharing** | May be shared freely |
+| **Disposal** | Standard disposal |
+| **Encryption** | Not required |
+| **Labelling** | Recommended but not required |
+
+### 8.2 Internal Information
+
+| Aspect | Requirement |
+|--------|-------------|
+| **Storage** | Access-controlled systems |
+| **Transmission** | Internal channels; external with recipient verification |
+| **Sharing** | Within organisation; external with business justification |
+| **Disposal** | Secure deletion or shredding |
+| **Encryption** | Required for external transmission |
+| **Labelling** | "Internal" label recommended |
+
+### 8.3 Confidential Information
+
+| Aspect | Requirement |
+|--------|-------------|
+| **Storage** | Encrypted storage; limited access |
+| **Transmission** | Encrypted channels only |
+| **Sharing** | Need-to-know basis; authorisation required |
+| **Disposal** | Certified secure destruction |
+| **Encryption** | Required at rest and in transit |
+| **Labelling** | "Confidential" label required |
+
+### 8.4 Restricted Information
+
+| Aspect | Requirement |
+|--------|-------------|
+| **Storage** | High-security systems; dual control |
+| **Transmission** | End-to-end encryption; recipient verification |
+| **Sharing** | Explicit authorisation; recorded access |
+| **Disposal** | Witnessed destruction; certificate |
+| **Encryption** | Strong encryption mandatory |
+| **Labelling** | "Restricted" label mandatory |
+
+---
+
+## 9. Enforcement and Monitoring
+
+### 9.1 Enforcement Methods
+
+| Method | Description | Example Use |
+|--------|-------------|-------------|
+| **Technical** | Automated control preventing violation | USB port blocking |
+| **Detective** | Monitoring to identify violations | Log analysis |
+| **Procedural** | Process controls | Approval workflows |
+| **Physical** | Physical access restrictions | Locked server room |
+| **Administrative** | Policy and training | AUP acknowledgement |
+
+### 9.2 Monitoring Requirements
+
+| Rule Type | Monitoring Need | Method |
+|-----------|-----------------|--------|
+| **Critical Prohibitions** | Real-time monitoring | SIEM, DLP |
+| **High-Risk Prohibitions** | Regular monitoring | Log review, reports |
+| **Medium-Risk Rules** | Periodic sampling | Audit sampling |
+| **Low-Risk Rules** | Incident-triggered | Complaint investigation |
+
+### 9.3 Exception Management
+
+| Element | Requirement |
+|---------|-------------|
+| **Request Process** | Documented exception request form |
+| **Approval Authority** | Defined by rule severity |
+| **Risk Assessment** | Required for all exceptions |
+| **Compensating Controls** | Must be documented |
+| **Time Limit** | All exceptions have expiry date |
+| **Review** | Periodic review of active exceptions |
+
+---
+
+## 10. Evidence Collection
+
+### 10.1 Evidence Requirements
+
+| Evidence Type | Description | Retention |
+|---------------|-------------|-----------|
+| **Inventory Document** | This completed inventory | 3 years |
+| **Stakeholder Sign-offs** | Asset owner approvals | 3 years |
+| **Legal Review** | Legal validation of rules | 3 years |
+| **Technical Configurations** | Enforcement control configs | Current + 1 year |
+| **Exception Records** | Approved exceptions | Duration + 2 years |
+
+### 10.2 Evidence Storage
+
+| Evidence Type | Storage Location | Naming Convention |
+|---------------|------------------|-------------------|
+| Inventory | ISMS Evidence Library/A.5.10-11/Inventory/ | A.5.10-11.2_Inventory_YYYYMMDD.xlsx |
+| Approvals | ISMS Evidence Library/A.5.10-11/Approvals/ | A.5.10-11.2_Approval_[Role]_YYYYMMDD.pdf |
+| Exceptions | ISMS Evidence Library/A.5.10-11/Exceptions/ | Exception_[ID]_YYYYMMDD.pdf |
+
+---
+
+## 11. Common Pitfalls
+
+### Rule Quality Pitfalls
+
+❌ **MISTAKE:** Writing vague rules like "use responsibly" or "be careful"
+✅ **CORRECT:** Write specific, actionable rules with clear boundaries
+
+❌ **MISTAKE:** Not specifying who the rule applies to
+✅ **CORRECT:** Always state applicability (All Personnel, Employees only, etc.)
+
+❌ **MISTAKE:** Rules that conflict with operational needs
+✅ **CORRECT:** Validate rules with operational teams before finalising
+
+❌ **MISTAKE:** No enforcement method specified
+✅ **CORRECT:** Every rule should explain how compliance is verified
+
+### Prohibited Activity Pitfalls
+
+❌ **MISTAKE:** Missing risk justification for prohibitions
+✅ **CORRECT:** Document WHY each activity is prohibited with risk basis
+
+❌ **MISTAKE:** All prohibitions treated with same severity
+✅ **CORRECT:** Risk-rate prohibitions; consequences should be proportionate
+
+❌ **MISTAKE:** No exception process for prohibitions
+✅ **CORRECT:** Document whether and how exceptions can be requested
+
+❌ **MISTAKE:** Prohibitions without specified consequences
+✅ **CORRECT:** Each prohibition should link to defined consequence
+
+### Handling Requirement Pitfalls
+
+❌ **MISTAKE:** Inconsistent handling requirements across classifications
+✅ **CORRECT:** Ensure logical progression from Public to Restricted
+
+❌ **MISTAKE:** Requirements that can't be implemented
+✅ **CORRECT:** Verify technical and operational feasibility
+
+❌ **MISTAKE:** No encryption requirements for sensitive data
+✅ **CORRECT:** Confidential and Restricted must require encryption
+
+❌ **MISTAKE:** Same disposal requirements for all classifications
+✅ **CORRECT:** Disposal requirements should increase with sensitivity
+
+### Documentation Pitfalls
+
+❌ **MISTAKE:** Not considering all user types
+✅ **CORRECT:** Explicitly address employees, contractors, temps, third parties
+
+❌ **MISTAKE:** Rules that only apply to outdated technology
+✅ **CORRECT:** Include current technology (cloud, mobile, remote work)
+
+❌ **MISTAKE:** No review or update cycle defined
+✅ **CORRECT:** Define when rules should be reviewed and updated
+
+❌ **MISTAKE:** Not linking rules to AUP policy sections
+✅ **CORRECT:** Every rule should reference the supporting AUP section
+
+---
+
+## 12. Quality Checklist
+
+### Pre-Submission Checklist
+
+#### Rule Completeness
+- [ ] All asset categories have defined rules
+- [ ] Every rule has a unique ID assigned
+- [ ] Each rule is specific and actionable
+- [ ] Applicability (who) is specified for all rules
+- [ ] Enforcement method documented for all rules
+
+#### Permitted Activities
+- [ ] Permitted activities have clear conditions documented
+- [ ] Approval requirements specified where applicable
+- [ ] Time/location restrictions documented where applicable
+
+#### Prohibited Activities
+- [ ] Risk justification provided for all prohibitions
+- [ ] Risk level assigned to all prohibited activities
+- [ ] Detection method specified for each prohibition
+- [ ] Consequences documented for all violations
+- [ ] Exception possibility indicated for each
+
+#### Handling Requirements
+- [ ] All classification levels have handling rules
+- [ ] Storage, transmission, disposal requirements defined
+- [ ] Encryption requirements clearly specified
+- [ ] Labelling requirements documented
+- [ ] Requirements are technically feasible
+
+#### Approval
+- [ ] Summary metrics reviewed for accuracy
+- [ ] Author signature obtained
+- [ ] ISM review completed
+- [ ] CISO approval obtained
+- [ ] Evidence register complete
+
+---
+
+## 13. Review and Approval
+
+### 13.1 Approval Workflow
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    INVENTORY APPROVAL WORKFLOW                   │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ┌──────────────┐      ┌──────────────┐      ┌──────────────┐   │
+│  │ Author       │      │ Stakeholder  │      │ ISM/CISO     │   │
+│  │ Documents    │─────▶│ Validation   │─────▶│ Approval     │   │
+│  │ Rules        │      │ (IT, HR,     │      │              │   │
+│  │              │      │  Legal)      │      │              │   │
+│  └──────────────┘      └──────────────┘      └──────────────┘   │
+│        │                      │                      │          │
+│        ▼                      ▼                      ▼          │
+│  Draft rules          Validated rules         Final inventory   │
+│  documented           confirmed               approved          │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### 13.2 Approval Authorities
+
+| Inventory Component | Consulted | Approver |
+|---------------------|-----------|----------|
+| Usage Rules | Asset Owners | ISM |
+| Permitted Activities | IT, Operations | ISM |
+| Prohibited Activities | Legal, HR | CISO |
+| Handling Requirements | IT, Data Owners | ISM |
+| Overall Inventory | All stakeholders | CISO |
+
+### 13.3 Sign-off Record
+
+| Role | Name | Signature | Date |
+|------|------|-----------|------|
+| Author | | | |
+| IT Review | | | |
+| Legal Review | | | |
+| HR Review | | | |
+| ISM Approval | | | |
+| CISO Approval | | | |
+
+---
+
+## 14. Related Controls
+
+### 14.1 Primary Dependencies
+
+| Control | Relationship | Integration |
+|---------|--------------|-------------|
+| **A.5.10-11.1** | AUP Assessment | Policy that these rules support |
+| **A.5.9** | Asset Inventory | Asset categories requiring rules |
+| **A.5.12** | Classification | Classification-based handling |
+| **A.5.10-11.3** | Asset Return | Rules for offboarding |
+| **A.5.10-11.4** | Compliance Dashboard | Aggregates compliance metrics |
+
+### 14.2 Related Controls
+
+| Control | Relevance |
+|---------|-----------|
+| **A.5.1** | Information Security Policy | Parent policy framework |
+| **A.6.3** | Awareness and Training | Training on rules |
+| **A.8.3** | Information Access Restriction | Technical enforcement |
+| **A.8.12** | Data Leakage Prevention | DLP rule enforcement |
+
+---
+
+# PART II: TECHNICAL SPECIFICATION
+
+## 15. Workbook Architecture
+
+### 15.1 Generator Information
+
+| Attribute | Value |
+|-----------|-------|
+| **Script Name** | `generate_a510_11_2_usage_rules_inventory.py` |
+| **Script Location** | `10-isms-scr-base/isms-a.5.10-11-asset-usage-lifecycle/10_generator-master/` |
+| **Output Location** | `10-isms-scr-base/isms-a.5.10-11-asset-usage-lifecycle/90_workbooks/` |
+| **Output Filename** | `ISMS-IMP-A.5.10-11.2_Usage_Rules_Inventory_YYYYMMDD.xlsx` |
+
+### 15.2 Technical Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    WORKBOOK ARCHITECTURE                         │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐          │
+│  │Instruc-  │ │Usage_    │ │Permitted_│ │Prohibited│          │
+│  │tions     │ │Rules     │ │Activities│ │Activities│          │
+│  │ Sheet 1  │ │ Sheet 2  │ │ Sheet 3  │ │ Sheet 4  │          │
+│  └──────────┘ └──────────┘ └──────────┘ └──────────┘          │
+│                                                                 │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐                        │
+│  │Handling_ │ │Evidence_ │ │Approval_ │                        │
+│  │Requiremts│ │Register  │ │SignOff   │                        │
+│  │ Sheet 5  │ │ Sheet 6  │ │ Sheet 7  │                        │
+│  └──────────┘ └──────────┘ └──────────┘                        │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 16. Sheet Specifications
+
+### Sheet 1: Instructions
+
+**Purpose:** Document guidance and metadata
+
+**Structure:**
+- Title header with document ID
+- Metadata table (date, author, organisation)
+- Completion guidance
+- Colour legend for classifications
+
+### Sheet 2: Usage_Rules
+
+**Purpose:** Master inventory of all usage rules
+
+| Column | Header | Width | Data Type | Description |
+|:------:|--------|:-----:|-----------|-------------|
+| A | Rule_ID | 14 | Text | UR-001, UR-002, etc. |
+| B | Asset_Category | 25 | List | Asset category dropdown |
+| C | Rule_Description | 50 | Text | Clear rule statement |
+| D | Classification | 20 | List | Permitted/Permitted with Conditions/Prohibited |
+| E | Applies_To | 22 | Text | ALL/EMP/CON/TMP/3P/PRV |
+| F | Enforcement_Method | 22 | Text | How compliance verified |
+| G | Monitoring_Required | 16 | List | Yes/No |
+| H | Exception_Process | 18 | Text | Exception request method |
+| I | Policy_Reference | 20 | Text | AUP section reference |
+| J | Last_Updated | 14 | Date | Last review date |
+| K | Owner | 22 | Text | Rule owner |
+| L | Notes | 30 | Text | Additional notes |
+
+**Pre-populated Rules (15 items):**
+- Laptop full-disk encryption required
+- VPN required for remote access
+- Password sharing prohibited
+- Confidential data encryption in transit
+- Personal device connection restrictions
+- Software installation approval required
+- Email usage for business communications
+- Personal use limits during breaks
+- USB storage device restrictions
+- Cloud service approval requirements
+- Social media guidelines
+- Mobile device security requirements
+- Network resource usage limits
+- Physical asset care requirements
+- Incident reporting obligations
+
+### Sheet 3: Permitted_Activities
+
+**Purpose:** Document allowed activities with conditions
+
+| Column | Header | Width | Data Type | Description |
+|:------:|--------|:-----:|-----------|-------------|
+| A | Activity_ID | 14 | Text | PA-001, PA-002, etc. |
+| B | Asset_Category | 22 | List | Asset category |
+| C | Permitted_Activity | 45 | Text | What is allowed |
+| D | Conditions | 35 | Text | Restrictions or requirements |
+| E | Approval_Required | 16 | List | Yes/No |
+| F | Approver_Role | 22 | Text | Who approves |
+| G | Time_Restrictions | 20 | Text | When allowed |
+| H | Location_Restrictions | 22 | Text | Where allowed |
+| I | Documentation_Required | 20 | List | Yes/No |
+| J | Notes | 30 | Text | Additional notes |
+
+### Sheet 4: Prohibited_Activities
+
+**Purpose:** Document forbidden actions with consequences
+
+| Column | Header | Width | Data Type | Description |
+|:------:|--------|:-----:|-----------|-------------|
+| A | Prohibition_ID | 14 | Text | PH-001, PH-002, etc. |
+| B | Asset_Category | 22 | List | Asset category |
+| C | Prohibited_Activity | 45 | Text | What is forbidden |
+| D | Reason | 35 | Text | Why prohibited (risk basis) |
+| E | Risk_Level | 14 | List | Critical/High/Medium/Low |
+| F | Detection_Method | 25 | Text | How violation detected |
+| G | Consequence | 25 | Text | What happens if violated |
+| H | Exception_Possible | 16 | List | Yes/No |
+| I | Related_Control | 18 | Text | ISO control reference |
+| J | Notes | 30 | Text | Additional notes |
+
+**Pre-populated Prohibitions (8 items):**
+- Sharing login credentials (Critical)
+- Bypassing security controls (Critical)
+- Connecting unauthorised devices (High)
+- Sending restricted data externally (Critical)
+- Installing unapproved software (Medium)
+- Using personal email for business (High)
+- Disabling security software (Critical)
+- Storing data on personal devices (High)
+
+### Sheet 5: Handling_Requirements
+
+**Purpose:** Asset handling by classification
+
+| Column | Header | Width | Data Type | Description |
+|:------:|--------|:-----:|-----------|-------------|
+| A | Handling_ID | 14 | Text | HR-001, HR-002, etc. |
+| B | Asset_Category | 22 | List | Asset category |
+| C | Data_Classification | 18 | List | Public/Internal/Confidential/Restricted |
+| D | Storage_Requirement | 30 | Text | Where/how to store |
+| E | Transmission_Requirement | 30 | Text | How to transmit |
+| F | Disposal_Requirement | 30 | Text | How to dispose |
+| G | Access_Restriction | 25 | Text | Who can access |
+| H | Labelling_Required | 16 | List | Yes/No/N/A |
+| I | Encryption_Required | 16 | List | Yes/No/N/A |
+| J | Retention_Period | 18 | Text | How long to keep |
+| K | Notes | 30 | Text | Additional notes |
+
+### Sheet 6: Evidence_Register
+
+**Purpose:** Link supporting evidence
+
+| Column | Header | Width | Data Type | Description |
+|:------:|--------|:-----:|-----------|-------------|
+| A | Evidence_ID | 15 | Text | EV-001, etc. |
+| B | Evidence_Type | 22 | List | Dropdown |
+| C | Description | 45 | Text | Description |
+| D | Related_Rules | 25 | Text | Rule IDs supported |
+| E | Collection_Date | 16 | Date | When collected |
+| F | Location | 40 | Text | Storage path |
+| G | Collected_By | 25 | Text | Person |
+| H | Valid_Until | 16 | Date | Expiration |
+
+### Sheet 7: Approval_SignOff
+
+**Purpose:** Inventory approval
+
+**Structure:**
+- Summary metrics
+- Author completion section
+- Stakeholder review sections
+- CISO approval section
+
+---
+
+## 17. Data Validation Rules
+
+### 17.1 Dropdown Lists
+
+| Field | Valid Values |
+|-------|--------------|
+| **Asset_Category** | Information Assets, Software Assets, Hardware Assets, Network Assets, Cloud Services, Communication Tools, Physical Media, Authentication Assets, Development Assets, Personal Devices, IoT Devices |
+| **Classification** | Permitted, Permitted with Conditions, Prohibited, Not Applicable |
+| **Risk_Level** | Critical, High, Medium, Low |
+| **Data_Classification** | Public, Internal, Confidential, Restricted |
+| **Yes/No** | Yes, No |
+| **Evidence_Type** | Policy Document, Legal Review, Technical Configuration, Sign-off Record, Exception Record |
+
+---
+
+## 18. Conditional Formatting
+
+### 18.1 Usage_Rules Sheet
+
+| Range | Condition | Format |
+|-------|-----------|--------|
+| Column D (Classification) | "Permitted" | Green fill |
+| Column D (Classification) | "Permitted with Conditions" | Yellow fill |
+| Column D (Classification) | "Prohibited" | Red fill |
+
+### 18.2 Prohibited_Activities Sheet
+
+| Range | Condition | Format |
+|-------|-----------|--------|
+| Column E (Risk_Level) | "Critical" | Red fill, white bold text |
+| Column E (Risk_Level) | "High" | Orange fill |
+| Column E (Risk_Level) | "Medium" | Yellow fill |
+| Column E (Risk_Level) | "Low" | Green fill |
+
+### 18.3 Handling_Requirements Sheet
+
+| Range | Condition | Format |
+|-------|-----------|--------|
+| Column C (Classification) | "Restricted" | Red fill |
+| Column C (Classification) | "Confidential" | Orange fill |
+| Column C (Classification) | "Internal" | Yellow fill |
+| Column C (Classification) | "Public" | Green fill |
+
+---
+
+## 19. Formula Specifications
+
+### 19.1 Summary Counts (Approval Sheet)
+
+**Total Rules:**
+```excel
+=COUNTA(Usage_Rules!A7:A100)
+```
+
+**Prohibited Count:**
+```excel
+=COUNTIF(Usage_Rules!D7:D100,"Prohibited")
+```
+
+**Critical Prohibitions:**
+```excel
+=COUNTIF(Prohibited_Activities!E7:E50,"Critical")
+```
+
+---
+
+## 20. Cell Styling Standards
+
+### 20.1 Colour Palette
+
+| Element | Colour | Hex Code | Usage |
+|---------|--------|----------|-------|
+| Header | Navy Blue | #003366 | Headers |
+| Permitted | Green | #90EE90 | Permitted status |
+| Conditional | Yellow | #FFFF00 | Permitted with conditions |
+| Prohibited | Red | #FF6B6B | Prohibited status |
+| Critical | Dark Red | #8B0000 | Critical risk |
+| Border | Grey | #D0D0D0 | Cell borders |
+
+### 20.2 Font Standards
+
+| Element | Font | Size | Style |
+|---------|------|:----:|-------|
+| Title | Calibri | 14 | Bold |
+| Headers | Calibri | 11 | Bold |
+| Data | Calibri | 10 | Regular |
+
+---
+
+## 21. Generator Script Reference
+
+### 21.1 Script Structure
+
+```python
+# =============================================================================
+# ISMS-IMP-A.5.10-11.2 - Usage Rules Inventory Generator
+# =============================================================================
+# ISO 27001:2022 Control A.5.10: Acceptable Use of Information and Assets
+# Generates comprehensive usage rules inventory workbook
+# =============================================================================
+
+DOCUMENT_ID = "ISMS-IMP-A.5.10-11.2"
+WORKBOOK_NAME = "Usage Rules Inventory"
+CONTROL_ID = "A.5.10"
+
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_Usage_Rules_Inventory_{GENERATED_TIMESTAMP}.xlsx"
+```
+
+### 21.2 Execution
+
+```bash
+cd 10-isms-scr-base/isms-a.5.10-11-asset-usage-lifecycle/10_generator-master/
+python3 generate_a510_11_2_usage_rules_inventory.py
+mv ISMS-IMP-A.5.10-11.2_*.xlsx ../90_workbooks/
+```
 
 ---
 
@@ -306,4 +981,4 @@ Before submitting:
 *"The best security policy is the one that people actually follow."*
 — Unknown
 
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-02-03 -->

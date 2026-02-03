@@ -11,207 +11,1125 @@
 | **Version** | 1.0 |
 | **Classification** | Internal |
 
----
+**Version History**:
 
-## 1. Workbook Purpose
-
-This dashboard consolidates outsourced development security status, tracks exceptions, and provides executive reporting on vendor security compliance.
-
-**Primary Use Cases**:
-- Executive visibility into outsourced development security
-- Exception tracking and management
-- Vendor performance monitoring
-- Compliance scoring and trend analysis
-- Audit evidence consolidation
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | [Date] | CISO/ISO | Initial implementation specification for ISO 27001:2022 first certification |
 
 ---
 
-## 2. Workbook Structure
+# PART I: USER COMPLETION GUIDE
 
-### Sheet 1: Executive Dashboard
+This section provides step-by-step guidance for using and maintaining the Monitoring and Exceptions Dashboard. Follow this guide to ensure effective oversight of outsourced development security and proper exception management.
 
-| Metric | Description | Target | Current | Trend |
-|--------|-------------|--------|---------|-------|
-| Approved Vendors | Vendors in approved registry | N/A | [Count] | [↑↓→] |
-| Active Contracts | Contracts currently active | N/A | [Count] | [↑↓→] |
-| Pending Assessments | Vendors awaiting assessment | 0 | [Count] | [↑↓→] |
-| Overdue Reassessments | Annual reassessments overdue | 0 | [Count] | [↑↓→] |
-| Contract Clause Compliance | Contracts with all security clauses | 100% | [%] | [↑↓→] |
-| SLA Compliance (Critical) | Critical vulns fixed within SLA | ≥95% | [%] | [↑↓→] |
-| SLA Compliance (High) | High vulns fixed within SLA | ≥90% | [%] | [↑↓→] |
-| Security Testing Completion | Deliverables with complete testing | 100% | [%] | [↑↓→] |
-| SBOM Compliance | Deliverables with SBOM received | 100% | [%] | [↑↓→] |
-| Active Exceptions | Open security exceptions | [Track] | [Count] | [↑↓→] |
-| Overdue Exceptions | Exceptions past expiry | 0 | [Count] | [↑↓→] |
-| Overall Compliance Score | Weighted compliance score | ≥90% | [%] | [↑↓→] |
+---
 
-### Sheet 2: Vendor Performance
+## 1. Assessment Overview
 
-| Column | Description | Data Type | Validation |
-|--------|-------------|-----------|------------|
-| Vendor_ID | Vendor identifier | Reference | Valid Vendor_ID |
-| Vendor_Name | Vendor name | Text | From registry |
-| Risk_Tier | Vendor risk classification | Dropdown | Critical, High, Standard |
-| Active_Contracts | Number of active contracts | Number | Integer |
-| Total_Deliverables | Deliverables received (12 months) | Number | Integer |
-| Security_Findings_Total | Total security findings | Number | Integer |
-| Critical_Findings | Critical findings | Number | Integer |
-| High_Findings | High findings | Number | Integer |
-| SLA_Compliance_Rate | Percentage of SLAs met | Percentage | 0-100% |
-| Avg_Remediation_Days | Average days to remediate | Number | Decimal |
-| Security_Incidents | Security incidents (12 months) | Number | Integer |
-| Last_Assessment_Date | Most recent assessment | Date | DD.MM.YYYY |
-| Performance_Score | Calculated performance score | Number | 0-100 |
-| Performance_Trend | Trend vs previous period | Dropdown | Improving, Stable, Declining |
-| Notes | Performance notes | Text | Optional |
+### 1.1 Purpose
 
-**Performance Score Calculation**:
-- SLA Compliance (40%)
-- Findings Severity (30%)
-- Assessment Currency (15%)
-- Incident History (15%)
+The Monitoring and Exceptions Dashboard consolidates outsourced development security status, tracks policy exceptions, monitors vendor performance, and provides executive reporting on compliance posture. It serves as the central command centre for A.8.30 control effectiveness.
 
-### Sheet 3: Exception Register
+ISO/IEC 27001:2022 Control A.8.30 states:
 
-| Column | Description | Data Type | Validation |
-|--------|-------------|-----------|------------|
-| Exception_ID | Unique exception identifier | Text | EXC-XXXX format |
-| Exception_Type | Type of exception | Dropdown | Vendor Assessment, Contract Clause, SLA, Testing, Training |
-| Related_Entity | Vendor/Contract/Deliverable | Text | ID reference |
-| Requirement_Reference | Policy requirement being excepted | Text | POL section reference |
-| Exception_Description | Description of exception | Text | Required |
-| Risk_Level | Risk of exception | Dropdown | Critical, High, Medium, Low |
-| Business_Justification | Reason for exception | Text | Required |
-| Compensating_Controls | Controls in place | Text | Required |
-| Requested_By | Person requesting | Text | Name |
-| Request_Date | Date requested | Date | DD.MM.YYYY |
-| Approved_By | Approver | Text | Name + Role |
-| Approval_Date | Date approved | Date | DD.MM.YYYY |
-| Expiry_Date | Exception expiration | Date | DD.MM.YYYY |
-| Status | Current status | Dropdown | Pending, Approved, Rejected, Expired, Renewed |
-| Renewal_Count | Times renewed | Number | Integer |
-| Last_Review_Date | Last review date | Date | DD.MM.YYYY |
-| Next_Review_Date | Next scheduled review | Date | DD.MM.YYYY |
-| Closure_Date | Date closed | Date | DD.MM.YYYY |
-| Closure_Reason | How closed | Dropdown | Remediated, Risk Accepted, Terminated, N/A |
+> *"The organisation should direct, monitor and review the activities related to outsourced system development."*
 
-### Sheet 4: Monitoring Log
+This dashboard directly supports the "monitor and review" requirements by providing consolidated visibility into vendor security compliance and enabling evidence-based management decisions.
 
-| Column | Description | Data Type | Validation |
-|--------|-------------|-----------|------------|
-| Log_ID | Unique log entry | Text | LOG-XXXX format |
-| Log_Date | Date of activity | Date | DD.MM.YYYY |
-| Vendor_ID | Vendor being monitored | Reference | Valid Vendor_ID |
-| Contract_ID | Related contract | Reference | Valid Contract_ID |
-| Activity_Type | Type of monitoring activity | Dropdown | Status Meeting, Security Review, Audit, Incident Review, Ad-hoc |
-| Activity_Description | Description of activity | Text | Required |
-| Participants | People involved | Text | Names |
-| Findings | Key findings/observations | Text | Optional |
-| Actions_Required | Follow-up actions | Text | Optional |
-| Action_Owner | Person responsible | Text | Name |
-| Action_Due_Date | Due date for actions | Date | DD.MM.YYYY |
-| Action_Status | Action completion status | Dropdown | Open, In Progress, Complete, Overdue |
-| Evidence_Reference | Meeting notes/documents | Text | File path/URL |
+### 1.2 Scope and Applicability
 
-### Sheet 5: Incident Log
+**This dashboard aggregates data from:**
 
-| Column | Description | Data Type | Validation |
-|--------|-------------|-----------|------------|
-| Incident_ID | Unique incident identifier | Text | INC-XXXX format |
-| Incident_Date | Date of incident | Date | DD.MM.YYYY |
-| Vendor_ID | Vendor involved | Reference | Valid Vendor_ID |
-| Contract_ID | Related contract | Reference | Valid Contract_ID |
-| Incident_Type | Type of security incident | Dropdown | Data Breach, Vulnerability Exploited, Unauthorized Access, Policy Violation, Other |
-| Severity | Incident severity | Dropdown | Critical, High, Medium, Low |
-| Description | Incident description | Text | Required |
-| Root_Cause | Root cause analysis | Text | After investigation |
-| Impact_Assessment | Impact on [Organization] | Text | Description |
-| Notification_Date | When [Organization] notified | Date | DD.MM.YYYY |
-| Notification_SLA_Met | Notified within 24 hours | Dropdown | Yes, No |
-| Remediation_Actions | Actions taken | Text | Description |
-| Remediation_Date | Date remediated | Date | DD.MM.YYYY |
-| Lessons_Learned | Lessons learned | Text | Optional |
-| Status | Incident status | Dropdown | Open, Investigating, Remediated, Closed |
-| Closed_Date | Date closed | Date | DD.MM.YYYY |
-| Contract_Impact | Impact on contract | Dropdown | None, Warning, Review, Suspension, Termination |
+| Source Workbook | Data Aggregated |
+|-----------------|-----------------|
+| ISMS-IMP-A.8.30.1 | Approved vendor count, assessment status, overdue reassessments |
+| ISMS-IMP-A.8.30.2 | Contract count, clause compliance, SLA compliance |
+| ISMS-IMP-A.8.30.3 | Deliverable count, testing status, SBOM compliance |
 
-### Sheet 6: Compliance Score Calculation
+**This dashboard provides:**
 
-| Component | Weight | Scoring Criteria | Data Source |
-|-----------|--------|------------------|-------------|
-| Vendor Assessment | 20% | % vendors with current assessment | Workbook 1 |
-| Contract Compliance | 25% | % contracts with all security clauses | Workbook 2 |
-| SLA Compliance | 25% | Weighted avg of Critical (40%) + High (60%) SLA compliance | Workbook 2 |
-| Security Testing | 20% | % deliverables with complete testing | Workbook 3 |
-| Exception Management | 10% | 100% - (Overdue exceptions × 10%) | Sheet 3 |
+| Function | Purpose |
+|----------|---------|
+| Executive Dashboard | High-level compliance status for leadership |
+| Vendor Performance Tracking | Individual vendor security metrics |
+| Exception Register | Policy exception management |
+| Monitoring Log | Activity tracking and follow-up |
+| Incident Log | Security incident documentation |
+| Compliance Score Calculation | Weighted overall compliance metric |
 
-**Score Calculation**:
+### 1.3 Business Context
+
+**Why Monitoring Matters:**
+
+Effective monitoring transforms outsourced development from a risk liability into a managed security function:
+
+1. **Early Warning**: Identifies problems before they become incidents
+2. **Trend Analysis**: Reveals patterns requiring strategic attention
+3. **Accountability**: Creates transparency for vendor performance
+4. **Compliance Evidence**: Demonstrates active control to auditors
+5. **Decision Support**: Enables evidence-based vendor management
+6. **Risk Visibility**: Quantifies residual risk from exceptions
+
+**Stakeholder Value:**
+
+| Stakeholder | Dashboard Value |
+|-------------|-----------------|
+| CISO | Risk visibility, exception oversight, audit readiness |
+| Executive Management | Compliance status, trend analysis |
+| IT Security Manager | Operational metrics, performance tracking |
+| Procurement | Vendor performance data for renewals |
+| Auditors | Compliance evidence, monitoring records |
+| Risk Committee | Exception register, incident trends |
+
+### 1.4 Assessment Outputs
+
+Upon completion and regular maintenance, this dashboard provides:
+
+| Output | Purpose | Audience |
+|--------|---------|----------|
+| Executive Dashboard | Monthly compliance summary | CISO, Executive Management |
+| Vendor Performance Report | Quarterly vendor scorecards | IT Security, Procurement |
+| Exception Status Report | Monthly exception tracking | CISO, Risk Committee |
+| Compliance Trend Analysis | Quarterly trend reporting | Audit Committee |
+| Incident Summary | As-needed incident reporting | Executive Management |
+| Audit Evidence Package | Annual compliance documentation | External Auditors |
+
+---
+
+## 2. Prerequisites
+
+### 2.1 Required Inputs
+
+Before using the dashboard, ensure:
+
+| Input | Source | Required For |
+|-------|--------|--------------|
+| Vendor assessment data | ISMS-IMP-A.8.30.1 | Vendor metrics |
+| Contract compliance data | ISMS-IMP-A.8.30.2 | Contract metrics |
+| Testing and acceptance data | ISMS-IMP-A.8.30.3 | Testing metrics |
+| Exception requests | Business units | Exception register |
+| Monitoring activity records | IT Security | Monitoring log |
+| Incident reports | Incident Management | Incident log |
+
+### 2.2 Required Approvals
+
+| Activity | Approver | Purpose |
+|----------|----------|---------|
+| Exception approval | Per exception type matrix | Formalise policy deviations |
+| Report distribution | CISO | Control report audience |
+| Dashboard modifications | IT Security Manager | Maintain integrity |
+| Incident classification | CISO | Ensure appropriate handling |
+
+### 2.3 Required Knowledge
+
+Dashboard users should understand:
+
+- ISO 27001:2022 A.8.30 control requirements
+- Organisation's risk appetite and tolerance
+- Exception approval authority matrix
+- Vendor performance expectations
+- Incident classification criteria
+- Reporting cadences and audiences
+
+### 2.4 Access Requirements
+
+| Role | Access Level | Capabilities |
+|------|--------------|--------------|
+| Dashboard Administrator | Full | All sheets, configuration |
+| IT Security Team | Full | All sheets, data entry |
+| CISO | Read + Approve | View all, approve exceptions |
+| Executive Management | Read | Dashboard and reports only |
+| Auditors | Read | All sheets for audit purposes |
+| Procurement | Read | Vendor performance only |
+
+---
+
+## 3. Workbook Structure Overview
+
+### 3.1 Sheet Summary
+
+The workbook contains six sheets providing comprehensive monitoring:
+
+| Sheet | Purpose | Primary Owner | Update Frequency |
+|-------|---------|---------------|------------------|
+| 1: Executive Dashboard | High-level metrics | IT Security | Weekly |
+| 2: Vendor Performance | Individual vendor scorecards | IT Security | Monthly |
+| 3: Exception Register | Policy exception tracking | IT Security | As needed |
+| 4: Monitoring Log | Activity tracking | IT Security | Per activity |
+| 5: Incident Log | Security incident records | IT Security | Per incident |
+| 6: Compliance Score | Weighted scoring | IT Security | Weekly |
+
+### 3.2 Sheet Dependencies
+
 ```
-Overall Score = (Vendor × 0.20) + (Contract × 0.25) + (SLA × 0.25) + (Testing × 0.20) + (Exception × 0.10)
+Workbooks 1, 2, 3 (Data Sources)
+         ↓ (aggregation)
+Sheet 6: Compliance Score Calculation
+         ↓ (feeds)
+Sheet 1: Executive Dashboard
+         ↓ (parallel)
+Sheet 2: Vendor Performance
+         ↓ (exceptions from)
+Sheet 3: Exception Register
+         ↓ (activities in)
+Sheet 4: Monitoring Log
+         ↓ (incidents in)
+Sheet 5: Incident Log
 ```
 
-**Score Interpretation**:
-- ≥90%: Compliant (Green)
-- 70-89%: Needs Improvement (Yellow)
-- <70%: Non-Compliant (Red) - Escalation required
+### 3.3 Data Flow
+
+1. **Source Data Collection**: Pull metrics from Workbooks 1-3
+2. **Score Calculation**: Compute compliance score in Sheet 6
+3. **Dashboard Update**: Refresh executive metrics in Sheet 1
+4. **Performance Update**: Update vendor scores in Sheet 2
+5. **Exception Management**: Track exceptions in Sheet 3
+6. **Activity Recording**: Document monitoring in Sheet 4
+7. **Incident Documentation**: Record incidents in Sheet 5
 
 ---
 
-## 3. Data Sources
+## 4. Completion Walkthrough
 
-| Data Element | Source System | Collection Method |
-|--------------|---------------|-------------------|
-| Vendor data | Workbook 1 | Automated aggregation |
-| Contract data | Workbook 2 | Automated aggregation |
-| Testing data | Workbook 3 | Automated aggregation |
-| Exception data | Manual entry | Approval workflow |
-| Monitoring log | Manual entry | Meeting records |
-| Incident data | Incident management system | Manual entry / Import |
+### 4.1 Sheet 1: Executive Dashboard – Completion Guide
+
+**Purpose**: Provide leadership with at-a-glance visibility into outsourced development security status.
+
+**Step-by-Step Completion:**
+
+**Step 1: Update Source Metrics**
+
+Pull current values from source workbooks:
+
+| Metric | Source | Update Method |
+|--------|--------|---------------|
+| Approved Vendors | Workbook 1, Sheet 1 | COUNT where Status=Approved |
+| Active Contracts | Workbook 2, Sheet 1 | COUNT where Status=Active |
+| Pending Assessments | Workbook 1, Sheet 1 | COUNT where Status=Pending |
+| Overdue Reassessments | Workbook 1, Sheet 1 | COUNT where Next_Due < TODAY |
+| Contract Clause Compliance | Workbook 2, Sheet 2 | Yes / (Yes + No + Modified) |
+| SLA Compliance (Critical) | Workbook 2, Sheet 3 | Met / Total Critical |
+| SLA Compliance (High) | Workbook 2, Sheet 3 | Met / Total High |
+| Security Testing Completion | Workbook 3, Sheet 1 | Complete / Total |
+| SBOM Compliance | Workbook 3, Sheet 1 | Yes / Total |
+| Active Exceptions | Sheet 3 | COUNT where Status=Approved |
+| Overdue Exceptions | Sheet 3 | COUNT where Expiry < TODAY |
+| Overall Compliance Score | Sheet 6 | Calculated value |
+
+**Step 2: Calculate Trends**
+
+For each metric, compare to previous period:
+
+| Trend | Symbol | Definition |
+|-------|--------|------------|
+| Improving | ↑ | Better than previous period |
+| Stable | → | Within 5% of previous period |
+| Declining | ↓ | Worse than previous period |
+
+**Step 3: Apply RAG Status**
+
+| Status | Criteria |
+|--------|----------|
+| Green | Metric meets or exceeds target |
+| Amber | Metric within 10% of target |
+| Red | Metric more than 10% below target |
+
+**Step 4: Document Commentary**
+
+Add brief commentary for:
+- Any Red status metrics
+- Significant trend changes
+- Notable events or exceptions
+
+**Dashboard Layout:**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│ OUTSOURCED DEVELOPMENT SECURITY DASHBOARD                    │
+│ Report Period: [Month Year]                                  │
+├─────────────────────────────────────────────────────────────┤
+│ OVERALL COMPLIANCE SCORE: [XX%] [↑↓→]                       │
+├─────────────────────────────────────────────────────────────┤
+│ VENDOR MANAGEMENT          │ CONTRACT COMPLIANCE            │
+│ • Approved Vendors: XX     │ • Active Contracts: XX         │
+│ • Pending: XX              │ • Clause Compliance: XX%       │
+│ • Overdue Reviews: XX      │ • SLA Compliance: XX%          │
+├─────────────────────────────────────────────────────────────┤
+│ SECURITY TESTING           │ EXCEPTION MANAGEMENT           │
+│ • Testing Complete: XX%    │ • Active Exceptions: XX        │
+│ • SBOM Compliance: XX%     │ • Overdue: XX                  │
+├─────────────────────────────────────────────────────────────┤
+│ COMMENTARY:                                                  │
+│ [Key observations, risks, and actions]                      │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### 4.2 Sheet 2: Vendor Performance – Completion Guide
+
+**Purpose**: Track individual vendor security performance for management and renewal decisions.
+
+**Step-by-Step Completion:**
+
+**Step 1: Identify Vendors to Track**
+
+Include all vendors with:
+- Approved status in registry
+- Active contracts in past 12 months
+- Delivered code in review period
+
+**Step 2: Collect Performance Data**
+
+For each vendor, gather:
+
+| Metric | Source | Collection Method |
+|--------|--------|-------------------|
+| Active Contracts | Workbook 2, Sheet 1 | COUNT per vendor |
+| Total Deliverables | Workbook 3, Sheet 1 | COUNT per vendor (12 months) |
+| Security Findings | Workbook 3, Sheet 3 | SUM findings per vendor |
+| Critical Findings | Workbook 3, Sheet 3 | SUM Critical per vendor |
+| High Findings | Workbook 3, Sheet 3 | SUM High per vendor |
+| SLA Compliance Rate | Workbook 2, Sheet 3 | Met / Total per vendor |
+| Avg Remediation Days | Workbook 2, Sheet 3 | AVG days per vendor |
+| Security Incidents | Sheet 5 | COUNT per vendor (12 months) |
+| Last Assessment Date | Workbook 1, Sheet 1 | Date per vendor |
+
+**Step 3: Calculate Performance Score**
+
+Performance score is weighted calculation:
+
+| Component | Weight | Calculation |
+|-----------|--------|-------------|
+| SLA Compliance | 40% | (SLA_Met / Total) × 100 |
+| Findings Severity | 30% | 100 - (Critical×20 + High×10 + Medium×5) |
+| Assessment Currency | 15% | 100 if current, -5 per month overdue |
+| Incident History | 15% | 100 - (Incidents × 25) |
+
+**Formula:**
+```
+Performance_Score = (SLA × 0.40) + (Findings × 0.30) + (Assessment × 0.15) + (Incident × 0.15)
+```
+
+**Score Interpretation:**
+
+| Score Range | Rating | Action |
+|-------------|--------|--------|
+| 90-100 | Excellent | Continue engagement |
+| 80-89 | Good | Monitor standard |
+| 70-79 | Acceptable | Enhanced monitoring |
+| 60-69 | Concerning | Performance improvement plan |
+| <60 | Unacceptable | Contract review, potential termination |
+
+**Step 4: Determine Performance Trend**
+
+Compare to previous quarter:
+
+| Trend | Definition | Indicator |
+|-------|------------|-----------|
+| Improving | Score increased >5 points | ↑ |
+| Stable | Score within ±5 points | → |
+| Declining | Score decreased >5 points | ↓ |
+
+**Step 5: Document Notes**
+
+For each vendor, record:
+- Notable achievements
+- Areas of concern
+- Planned actions
+- Relationship status
+
+### 4.3 Sheet 3: Exception Register – Completion Guide
+
+**Purpose**: Track all approved exceptions to A.8.30 requirements with proper governance.
+
+**Step-by-Step Completion:**
+
+**Step 1: Generate Exception ID**
+
+Create unique identifier using format `EXC-XXXX`:
+
+| Component | Format | Example |
+|-----------|--------|---------|
+| Prefix | EXC- | EXC- |
+| Sequential Number | 4 digits | 0023 |
+| Full ID | EXC-XXXX | EXC-0023 |
+
+**Step 2: Classify Exception Type**
+
+| Exception Type | Examples | Typical Duration |
+|----------------|----------|------------------|
+| Vendor Assessment | Deferred assessment, reduced scope | 90 days max |
+| Contract Clause | Missing clause, modified SLA | Contract duration |
+| SLA | Extended remediation timeline | 30-90 days |
+| Testing | Reduced testing scope, deferred test | 90 days max |
+| Training | Deferred training completion | 60 days max |
+
+**Step 3: Document Exception Details**
+
+| Field | Guidance |
+|-------|----------|
+| Related_Entity | Vendor_ID, Contract_ID, or Deliverable_ID |
+| Requirement_Reference | Specific policy section being excepted |
+| Exception_Description | Clear description of what is being excepted |
+| Risk_Level | Risk of the exception itself |
+| Business_Justification | Why exception is necessary |
+| Compensating_Controls | Controls reducing exception risk |
+
+**Step 4: Risk Assessment**
+
+Classify exception risk:
+
+| Risk Level | Definition | Approval Level |
+|------------|------------|----------------|
+| Critical | Direct impact on security posture | CISO + Executive |
+| High | Significant security implication | CISO |
+| Medium | Moderate security implication | IT Security Manager |
+| Low | Minor deviation, well-compensated | IT Security Lead |
+
+**Step 5: Submit for Approval**
+
+Complete approval workflow:
+
+1. **Requestor** submits exception request
+2. **IT Security** reviews and assesses risk
+3. **Approver** (per matrix) approves or rejects
+4. **Exception** recorded in register with expiry date
+
+**Step 6: Set Review and Expiry Dates**
+
+| Exception Type | Maximum Duration | Review Frequency |
+|----------------|------------------|------------------|
+| Vendor Assessment | 90 days | 30 days |
+| Contract Clause | Contract duration | Quarterly |
+| SLA Extension | Per severity | At extension end |
+| Testing Deferral | 90 days | Monthly |
+| Training | 60 days | Monthly |
+
+**Step 7: Manage Exception Lifecycle**
+
+| Status | Definition | Actions |
+|--------|------------|---------|
+| Pending | Awaiting approval | Complete approval workflow |
+| Approved | Active exception | Monitor, schedule reviews |
+| Rejected | Not approved | Document rationale, notify requestor |
+| Expired | Past expiry date | Close or renew |
+| Renewed | Extended beyond original | Requires re-approval |
+| Remediated | Root cause resolved | Close exception |
+
+**Renewal Process:**
+
+If exception needs renewal:
+1. Review necessity (can root cause be addressed?)
+2. Document updated justification
+3. Verify compensating controls still effective
+4. Obtain fresh approval
+5. Increment renewal counter
+
+**Maximum Renewals:**
+
+| Risk Level | Maximum Renewals | After Maximum |
+|------------|------------------|---------------|
+| Critical | 1 | Executive escalation required |
+| High | 2 | CISO escalation required |
+| Medium | 3 | Risk acceptance required |
+| Low | 4 | Management review required |
+
+### 4.4 Sheet 4: Monitoring Log – Completion Guide
+
+**Purpose**: Track all monitoring activities for outsourced development relationships.
+
+**Step-by-Step Completion:**
+
+**Step 1: Generate Log ID**
+
+Create unique identifier using format `LOG-XXXX`:
+
+| Component | Format | Example |
+|-----------|--------|---------|
+| Prefix | LOG- | LOG- |
+| Sequential Number | 4 digits | 0156 |
+| Full ID | LOG-XXXX | LOG-0156 |
+
+**Step 2: Select Activity Type**
+
+| Activity Type | Description | Frequency |
+|---------------|-------------|-----------|
+| Status Meeting | Regular vendor status review | Weekly/Bi-weekly |
+| Security Review | Focused security assessment | Monthly/Quarterly |
+| Audit | Formal audit activity | Annual |
+| Incident Review | Post-incident review | Per incident |
+| Ad-hoc | Unscheduled review or check | As needed |
+
+**Step 3: Document Activity**
+
+| Field | Guidance |
+|-------|----------|
+| Log_Date | Date of activity |
+| Vendor_ID | Vendor being monitored |
+| Contract_ID | Related contract |
+| Activity_Type | Per type list |
+| Activity_Description | What was done |
+| Participants | Who participated |
+| Findings | Key findings or observations |
+
+**Step 4: Record Actions Required**
+
+For findings requiring follow-up:
+
+| Field | Guidance |
+|-------|----------|
+| Actions_Required | Specific action items |
+| Action_Owner | Person responsible |
+| Action_Due_Date | When action must complete |
+| Action_Status | Open, In Progress, Complete, Overdue |
+
+**Step 5: Link Evidence**
+
+Document evidence location for all monitoring activities:
+- Meeting minutes
+- Review reports
+- Audit findings
+- Email correspondence
+
+**Monitoring Cadence Requirements:**
+
+| Vendor Risk Tier | Minimum Monitoring |
+|------------------|-------------------|
+| Critical | Monthly security review, weekly status |
+| High | Quarterly security review, bi-weekly status |
+| Standard | Annual security review, monthly status |
+
+### 4.5 Sheet 5: Incident Log – Completion Guide
+
+**Purpose**: Track security incidents involving outsourced development vendors.
+
+**Step-by-Step Completion:**
+
+**Step 1: Generate Incident ID**
+
+Create unique identifier using format `INC-XXXX`:
+
+| Component | Format | Example |
+|-----------|--------|---------|
+| Prefix | INC- | INC- |
+| Sequential Number | 4 digits | 0012 |
+| Full ID | INC-XXXX | INC-0012 |
+
+**Step 2: Record Incident Details**
+
+| Field | Guidance |
+|-------|----------|
+| Incident_Date | Date incident occurred |
+| Vendor_ID | Vendor involved |
+| Contract_ID | Related contract |
+| Incident_Type | Classification category |
+| Severity | Critical, High, Medium, Low |
+| Description | Detailed incident description |
+
+**Step 3: Classify Incident Type**
+
+| Type | Definition | Examples |
+|------|------------|----------|
+| Data Breach | Unauthorised data access/disclosure | Customer data exposed |
+| Vulnerability Exploited | Security flaw actively exploited | Zero-day in vendor code |
+| Unauthorised Access | Access beyond authorised scope | Vendor accessed production |
+| Policy Violation | Breach of security requirements | Failed to notify incident |
+| Other | Other security events | Malware in development env |
+
+**Step 4: Assess Severity**
+
+| Severity | Definition | Response Time |
+|----------|------------|---------------|
+| Critical | Immediate business impact, data breach | Immediate |
+| High | Significant security impact | Same day |
+| Medium | Limited impact, contained | 24 hours |
+| Low | Minimal impact | 72 hours |
+
+**Step 5: Verify Notification SLA**
+
+Contract requires 24-hour notification:
+
+| Notification_SLA_Met | Definition |
+|----------------------|------------|
+| Yes | Organisation notified within 24 hours |
+| No | Notification delayed beyond 24 hours |
+
+Document notification timeline:
+- When incident occurred
+- When vendor discovered it
+- When organisation was notified
+- Gap analysis if SLA missed
+
+**Step 6: Track Remediation**
+
+| Field | Guidance |
+|-------|----------|
+| Root_Cause | Root cause analysis findings |
+| Impact_Assessment | Impact on organisation |
+| Remediation_Actions | Actions taken/planned |
+| Remediation_Date | Date remediation complete |
+| Lessons_Learned | What can prevent recurrence |
+
+**Step 7: Determine Contract Impact**
+
+| Impact Level | Criteria | Action |
+|--------------|----------|--------|
+| None | Minor, well-handled | Document only |
+| Warning | First offense, proper response | Formal warning |
+| Review | Pattern or significant event | Contract review |
+| Suspension | Serious breach | Suspend new work |
+| Termination | Egregious or repeated | Contract termination |
+
+### 4.6 Sheet 6: Compliance Score Calculation – Completion Guide
+
+**Purpose**: Calculate weighted overall compliance score for outsourced development security.
+
+**Step-by-Step Completion:**
+
+**Step 1: Collect Component Scores**
+
+| Component | Weight | Data Source | Calculation |
+|-----------|--------|-------------|-------------|
+| Vendor Assessment | 20% | Workbook 1 | (Current assessments / Total approved) × 100 |
+| Contract Compliance | 25% | Workbook 2 | (Contracts with all clauses / Total) × 100 |
+| SLA Compliance | 25% | Workbook 2 | (Critical_SLA×0.4 + High_SLA×0.6) |
+| Security Testing | 20% | Workbook 3 | (Complete testing / Total deliverables) × 100 |
+| Exception Management | 10% | Sheet 3 | 100 - (Overdue_exceptions × 10) |
+
+**Step 2: Calculate Overall Score**
+
+```
+Overall_Score = (Vendor × 0.20) + (Contract × 0.25) + (SLA × 0.25) + (Testing × 0.20) + (Exception × 0.10)
+```
+
+**Step 3: Apply Score Interpretation**
+
+| Score | Status | Colour | Action |
+|-------|--------|--------|--------|
+| ≥90% | Compliant | Green | Maintain current practices |
+| 70-89% | Needs Improvement | Amber | Address gaps, increase monitoring |
+| <70% | Non-Compliant | Red | Immediate escalation, remediation plan |
+
+**Step 4: Document Score Breakdown**
+
+For transparency and actionability, document:
+- Individual component scores
+- Specific items affecting each score
+- Actions to improve low-scoring areas
+- Comparison to previous period
 
 ---
 
-## 4. Reporting Cadence
+## 5. Evidence Collection
 
-| Report | Audience | Frequency |
-|--------|----------|-----------|
-| Executive Dashboard | CISO, Executive Management | Monthly |
-| Vendor Performance | IT Security Manager, Procurement | Quarterly |
-| Exception Status | CISO, Risk Committee | Monthly |
-| Compliance Score Trend | CISO, Audit Committee | Quarterly |
-| Incident Summary | CISO, Executive Management | As needed + Quarterly |
+### 5.1 Evidence Requirements
+
+Evidence must be maintained for all dashboard activities:
+
+| Evidence Category | Retention Period | Storage Location |
+|-------------------|------------------|------------------|
+| Dashboard snapshots | 7 years | ISMS Evidence Library |
+| Vendor performance reports | 7 years | ISMS Evidence Library |
+| Exception approvals | 7 years | ISMS Evidence Library |
+| Monitoring logs | 7 years | ISMS Evidence Library |
+| Incident records | 10 years | ISMS Evidence Library |
+| Compliance score history | 7 years | ISMS Evidence Library |
+
+### 5.2 Evidence Folder Structure
+
+```
+ISMS-Evidence-Library/
+└── Monitoring-Dashboard/
+    └── A.8.30-Outsourced-Development/
+        ├── Dashboard-Snapshots/
+        │   └── [YYYY-MM]-Dashboard.pdf
+        ├── Vendor-Performance/
+        │   └── [Quarter]-Performance-Report.pdf
+        ├── Exceptions/
+        │   └── [EXC-ID]/
+        │       ├── Request.pdf
+        │       └── Approval.pdf
+        ├── Monitoring-Activities/
+        │   └── [YYYY]/
+        │       └── [LOG-ID]-Activity.pdf
+        ├── Incidents/
+        │   └── [INC-ID]/
+        │       ├── Report.pdf
+        │       └── Closure.pdf
+        └── Compliance-Scores/
+            └── [YYYY-MM]-Score.xlsx
+```
+
+### 5.3 Evidence for Audit
+
+During ISO 27001 audit, be prepared to demonstrate:
+
+| Auditor Request | Evidence to Provide |
+|-----------------|---------------------|
+| "How do you monitor outsourced development?" | Monitoring log, dashboard history |
+| "Show me vendor performance tracking" | Sheet 2 reports, trend analysis |
+| "How are exceptions managed?" | Sheet 3, approval records |
+| "What incidents have occurred?" | Sheet 5, incident reports |
+| "How is compliance measured?" | Sheet 6, score history |
+| "Show me governance activities" | Meeting minutes, review records |
 
 ---
 
-## 5. Automation Requirements
+## 6. Common Pitfalls
 
-**Automated Aggregation**:
-- Pull metrics from Workbooks 1-3
-- Calculate performance scores
-- Generate compliance score
+### 6.1 Dashboard Management Errors
 
-**Automated Alerts**:
-- Compliance score drops below 80%
-- Exception approaching expiry (30 days)
-- Exception overdue (immediate)
-- Incident reported (immediate)
-- Vendor performance declining (quarterly)
+❌ **MISTAKE: Infrequent dashboard updates**
+Dashboard must be updated at least weekly. Stale data leads to missed risks and poor decisions.
 
-**Automated Reports**:
-- Monthly executive dashboard PDF
-- Quarterly vendor performance summary
-- Annual compliance trend report
+❌ **MISTAKE: Not validating source data**
+Garbage in, garbage out. Verify source workbooks are current before updating dashboard.
+
+❌ **MISTAKE: Ignoring trend analysis**
+Absolute numbers without trends miss important patterns. Always track direction of change.
+
+❌ **MISTAKE: Dashboard manipulation**
+Never adjust metrics to look better. Accurate reporting is essential for risk management.
+
+### 6.2 Exception Management Errors
+
+❌ **MISTAKE: Exceptions without compensating controls**
+Every exception must have compensating controls. Exceptions without controls are unmanaged risk.
+
+❌ **MISTAKE: Not tracking exception expiry**
+Expired exceptions must be closed or renewed. Zombie exceptions create compliance gaps.
+
+❌ **MISTAKE: Excessive renewals without remediation**
+Repeated renewals indicate permanent exceptions. Require root cause remediation or risk acceptance.
+
+❌ **MISTAKE: Approving without proper authority**
+Exception approval must follow authority matrix. Unauthorised approvals are invalid.
+
+### 6.3 Monitoring Errors
+
+❌ **MISTAKE: Monitoring without documentation**
+Undocumented monitoring has limited audit value. Always record activities and findings.
+
+❌ **MISTAKE: Not following up on actions**
+Identified actions must be tracked to completion. Untracked actions may never complete.
+
+❌ **MISTAKE: Inconsistent monitoring cadence**
+Monitoring frequency must match risk tier. Critical vendors need more attention.
+
+### 6.4 Incident Management Errors
+
+❌ **MISTAKE: Delayed incident recording**
+Incidents must be recorded immediately. Delayed recording loses details and delays response.
+
+❌ **MISTAKE: Not assessing contract impact**
+Every incident should evaluate contract impact. Patterns of incidents may warrant termination.
+
+❌ **MISTAKE: Skipping lessons learned**
+Every incident is a learning opportunity. Document and implement improvements.
 
 ---
 
-## 6. Evidence Package
+## 7. Quality Checklist
 
-For ISO 27001 audit, generate:
-- 12-month compliance score trend
-- Vendor performance summary
-- Exception register (current + closed in period)
-- Monitoring activity log
-- Incident summary
-- Sample monthly executive reports
+### 7.1 Weekly Dashboard Checklist
+
+Before publishing weekly dashboard:
+
+- [ ] Source workbooks reviewed and current
+- [ ] All metrics calculated correctly
+- [ ] Trends compared to previous week
+- [ ] RAG status applied appropriately
+- [ ] Commentary updated for Red items
+- [ ] Dashboard snapshot saved to evidence
+
+### 7.2 Monthly Activities Checklist
+
+Monthly governance activities:
+
+- [ ] Vendor performance scores updated
+- [ ] Exception register reviewed
+- [ ] Overdue exceptions addressed
+- [ ] Monitoring activities completed per cadence
+- [ ] Monthly report generated and distributed
+- [ ] Actions from previous month verified complete
+
+### 7.3 Quarterly Review Checklist
+
+Quarterly governance activities:
+
+- [ ] Vendor performance trends analysed
+- [ ] Compliance score trend reviewed
+- [ ] Exception patterns analysed
+- [ ] Quarterly report to management
+- [ ] Process improvements identified
+- [ ] Audit evidence organised
+
+---
+
+## 8. Review and Approval
+
+### 8.1 Dashboard Approval
+
+| Report | Approver | Distribution |
+|--------|----------|--------------|
+| Weekly Dashboard | IT Security Manager | IT Security Team |
+| Monthly Executive Dashboard | CISO | Executive Management |
+| Quarterly Vendor Performance | CISO | Procurement, Management |
+| Annual Compliance Report | CISO + Executive | Audit Committee |
+
+### 8.2 Exception Approval Authority
+
+| Exception Risk | Approver | Documentation |
+|----------------|----------|---------------|
+| Critical | CISO + Executive | Formal approval record |
+| High | CISO | Email approval minimum |
+| Medium | IT Security Manager | Email approval |
+| Low | IT Security Lead | Documented approval |
+
+### 8.3 Reporting Cadence
+
+| Report | Frequency | Audience | Due Date |
+|--------|-----------|----------|----------|
+| Executive Dashboard | Monthly | CISO, Executive | 5th business day |
+| Vendor Performance | Quarterly | IT Security, Procurement | 10th of quarter |
+| Exception Status | Monthly | CISO, Risk Committee | 5th business day |
+| Compliance Score Trend | Quarterly | Audit Committee | 15th of quarter |
+| Incident Summary | As needed | Executive Management | Within 48 hours |
+
+---
+
+# PART II: TECHNICAL SPECIFICATION
+
+This section provides technical details for the Monitoring and Exceptions Dashboard implementation.
+
+---
+
+## 9. Workbook Technical Structure
+
+### 9.1 Workbook Properties
+
+| Property | Value |
+|----------|-------|
+| File Format | .xlsx (Excel 2016+) |
+| Sheet Protection | Structure protected, cells unlocked for input |
+| Workbook Protection | Structure only |
+| File Naming | ISMS-IMP-A.8.30.4_Monitoring_Dashboard_YYYYMMDD.xlsx |
+
+### 9.2 Sheet Configuration
+
+| Sheet | Tab Colour | Protection Level | Hidden |
+|-------|------------|------------------|--------|
+| Executive Dashboard | Dark Blue (#002060) | Full (display only) | No |
+| Vendor Performance | Green (#70AD47) | Input cells unlocked | No |
+| Exception Register | Orange (#ED7D31) | Input cells unlocked | No |
+| Monitoring Log | Blue (#4472C4) | Input cells unlocked | No |
+| Incident Log | Red (#C00000) | Input cells unlocked | No |
+| Compliance Score | Purple (#7030A0) | Input cells unlocked | No |
+| Validation Lists | Grey (#A6A6A6) | Full protection | Yes |
+
+---
+
+## 10. Sheet Specifications
+
+### 10.1 Sheet 1: Executive Dashboard – Technical Specification
+
+**Layout Configuration:**
+
+| Section | Position | Content |
+|---------|----------|---------|
+| Header | Row 1-3 | Title, Report Period |
+| Overall Score | Row 5 | Compliance score with trend |
+| Vendor Metrics | Row 7-12 | Vendor management KPIs |
+| Contract Metrics | Row 7-12 | Contract compliance KPIs |
+| Testing Metrics | Row 14-18 | Security testing KPIs |
+| Exception Metrics | Row 14-18 | Exception management KPIs |
+| Commentary | Row 20-25 | Key observations |
+
+**Data Links:**
+
+| Metric | Source Reference |
+|--------|------------------|
+| Overall Score | ='Compliance Score'!B15 |
+| Approved Vendors | =[Workbook1]'Vendor Registry'!COUNT(Status="Approved") |
+| Active Contracts | =[Workbook2]'Contract Inventory'!COUNT(Status="Active") |
+| Active Exceptions | =COUNTIF('Exception Register'!L:L,"Approved") |
+
+### 10.2 Sheet 2: Vendor Performance – Technical Specification
+
+**Column Definitions:**
+
+| Column | Header | Width | Data Type | Validation | Required |
+|--------|--------|-------|-----------|------------|----------|
+| A | Vendor_ID | 15 | Reference | Must exist | Yes |
+| B | Vendor_Name | 35 | Text | From registry | Yes |
+| C | Risk_Tier | 12 | List | Critical,High,Standard | Yes |
+| D | Active_Contracts | 10 | Number | Integer >= 0 | Yes |
+| E | Total_Deliverables | 10 | Number | Integer >= 0 | Yes |
+| F | Security_Findings_Total | 10 | Number | Integer >= 0 | Yes |
+| G | Critical_Findings | 10 | Number | Integer >= 0 | Yes |
+| H | High_Findings | 10 | Number | Integer >= 0 | Yes |
+| I | SLA_Compliance_Rate | 12 | Percentage | 0-100% | Yes |
+| J | Avg_Remediation_Days | 10 | Number | Decimal >= 0 | Yes |
+| K | Security_Incidents | 10 | Number | Integer >= 0 | Yes |
+| L | Last_Assessment_Date | 15 | Date | DD.MM.YYYY | Yes |
+| M | Performance_Score | 10 | Number | 0-100 calculated | Auto |
+| N | Performance_Trend | 12 | List | Improving,Stable,Declining | Yes |
+| O | Notes | 40 | Text | Optional | No |
+
+**Formulas:**
+
+```excel
+Performance_Score (M2):
+=(I2*40)+(MAX(0,100-(G2*20+H2*10+F2*2))/100*30)+
+(IF(L2>=TODAY()-365,100,MAX(0,100-(DATEDIF(L2,TODAY(),"M")-12)*5))/100*15)+
+(MAX(0,100-K2*25)/100*15)
+```
+
+**Conditional Formatting:**
+
+| Condition | Format |
+|-----------|--------|
+| Performance_Score >= 90 | Green fill |
+| Performance_Score >= 70 | No fill |
+| Performance_Score >= 60 | Yellow fill |
+| Performance_Score < 60 | Red fill |
+| Performance_Trend = "Declining" | Red text |
+
+### 10.3 Sheet 3: Exception Register – Technical Specification
+
+**Column Definitions:**
+
+| Column | Header | Width | Data Type | Validation | Required |
+|--------|--------|-------|-----------|------------|----------|
+| A | Exception_ID | 15 | Text | Format: EXC-#### | Yes |
+| B | Exception_Type | 20 | List | Vendor Assessment,Contract Clause,SLA,Testing,Training | Yes |
+| C | Related_Entity | 20 | Text | ID reference | Yes |
+| D | Requirement_Reference | 25 | Text | POL section | Yes |
+| E | Exception_Description | 50 | Text | Required | Yes |
+| F | Risk_Level | 12 | List | Critical,High,Medium,Low | Yes |
+| G | Business_Justification | 50 | Text | Required | Yes |
+| H | Compensating_Controls | 50 | Text | Required | Yes |
+| I | Requested_By | 20 | Text | Name | Yes |
+| J | Request_Date | 15 | Date | DD.MM.YYYY | Yes |
+| K | Approved_By | 25 | Text | Name + Role | Conditional |
+| L | Approval_Date | 15 | Date | DD.MM.YYYY | Conditional |
+| M | Expiry_Date | 15 | Date | DD.MM.YYYY | Yes |
+| N | Status | 15 | List | Pending,Approved,Rejected,Expired,Renewed | Yes |
+| O | Renewal_Count | 10 | Number | Integer >= 0 | Yes |
+| P | Last_Review_Date | 15 | Date | DD.MM.YYYY | Conditional |
+| Q | Next_Review_Date | 15 | Date | DD.MM.YYYY | Conditional |
+| R | Closure_Date | 15 | Date | DD.MM.YYYY | Conditional |
+| S | Closure_Reason | 20 | List | Remediated,Risk Accepted,Terminated,N/A | Conditional |
+
+**Conditional Formatting:**
+
+| Condition | Format |
+|-----------|--------|
+| Status = "Pending" | Yellow fill |
+| Status = "Approved" AND Expiry_Date < TODAY() | Red fill |
+| Status = "Approved" AND Expiry_Date < TODAY()+30 | Orange fill |
+| Renewal_Count >= 3 | Red border |
+| Risk_Level = "Critical" | Red text |
+
+### 10.4 Sheet 4: Monitoring Log – Technical Specification
+
+**Column Definitions:**
+
+| Column | Header | Width | Data Type | Validation | Required |
+|--------|--------|-------|-----------|------------|----------|
+| A | Log_ID | 15 | Text | Format: LOG-#### | Yes |
+| B | Log_Date | 15 | Date | DD.MM.YYYY | Yes |
+| C | Vendor_ID | 15 | Reference | Must exist | Yes |
+| D | Contract_ID | 15 | Reference | Must exist | Conditional |
+| E | Activity_Type | 20 | List | Status Meeting,Security Review,Audit,Incident Review,Ad-hoc | Yes |
+| F | Activity_Description | 50 | Text | Required | Yes |
+| G | Participants | 30 | Text | Names | Yes |
+| H | Findings | 50 | Text | Optional | No |
+| I | Actions_Required | 50 | Text | Optional | No |
+| J | Action_Owner | 20 | Text | Name | Conditional |
+| K | Action_Due_Date | 15 | Date | DD.MM.YYYY | Conditional |
+| L | Action_Status | 15 | List | Open,In Progress,Complete,Overdue | Conditional |
+| M | Evidence_Reference | 40 | Text | File path/URL | Yes |
+
+**Conditional Formatting:**
+
+| Condition | Format |
+|-----------|--------|
+| Action_Status = "Overdue" | Red fill |
+| Action_Status = "Open" AND Action_Due_Date < TODAY() | Red fill |
+| Action_Status = "Complete" | Green fill |
+
+### 10.5 Sheet 5: Incident Log – Technical Specification
+
+**Column Definitions:**
+
+| Column | Header | Width | Data Type | Validation | Required |
+|--------|--------|-------|-----------|------------|----------|
+| A | Incident_ID | 15 | Text | Format: INC-#### | Yes |
+| B | Incident_Date | 15 | Date | DD.MM.YYYY | Yes |
+| C | Vendor_ID | 15 | Reference | Must exist | Yes |
+| D | Contract_ID | 15 | Reference | Must exist | Conditional |
+| E | Incident_Type | 25 | List | Data Breach,Vulnerability Exploited,Unauthorized Access,Policy Violation,Other | Yes |
+| F | Severity | 12 | List | Critical,High,Medium,Low | Yes |
+| G | Description | 50 | Text | Required | Yes |
+| H | Root_Cause | 50 | Text | After investigation | Conditional |
+| I | Impact_Assessment | 50 | Text | Description | Yes |
+| J | Notification_Date | 15 | Date | DD.MM.YYYY | Yes |
+| K | Notification_SLA_Met | 12 | List | Yes,No | Yes |
+| L | Remediation_Actions | 50 | Text | Description | Yes |
+| M | Remediation_Date | 15 | Date | DD.MM.YYYY | Conditional |
+| N | Lessons_Learned | 50 | Text | Optional | No |
+| O | Status | 15 | List | Open,Investigating,Remediated,Closed | Yes |
+| P | Closed_Date | 15 | Date | DD.MM.YYYY | Conditional |
+| Q | Contract_Impact | 20 | List | None,Warning,Review,Suspension,Termination | Yes |
+
+**Conditional Formatting:**
+
+| Condition | Format |
+|-----------|--------|
+| Severity = "Critical" | Red fill |
+| Severity = "High" | Orange fill |
+| Status = "Open" | Yellow row |
+| Notification_SLA_Met = "No" | Red text |
+| Contract_Impact = "Termination" | Red border |
+
+### 10.6 Sheet 6: Compliance Score Calculation – Technical Specification
+
+**Score Components:**
+
+| Row | Component | Weight | Formula |
+|-----|-----------|--------|---------|
+| 3 | Vendor Assessment | 20% | =[Workbook1 calc] |
+| 5 | Contract Compliance | 25% | =[Workbook2 calc] |
+| 7 | SLA Compliance | 25% | =[Workbook2 calc] |
+| 9 | Security Testing | 20% | =[Workbook3 calc] |
+| 11 | Exception Management | 10% | =100-COUNTIF(Sheet3!M:M,"<"&TODAY())*10 |
+| 15 | **Overall Score** | 100% | =SUM weighted components |
+
+**Conditional Formatting:**
+
+| Condition | Format |
+|-----------|--------|
+| Overall Score >= 90 | Green fill |
+| Overall Score >= 70 | Yellow fill |
+| Overall Score < 70 | Red fill |
+
+---
+
+## 11. Automation Requirements
+
+### 11.1 Automated Alerts
+
+| Trigger | Alert Type | Recipients | Timing |
+|---------|------------|------------|--------|
+| Compliance score < 80% | Email | CISO | Immediate |
+| Exception expiry approaching | Email | Exception owner | 30 days |
+| Exception overdue | Email + Dashboard | CISO | Immediate |
+| Incident reported | Email | CISO, IT Security Manager | Immediate |
+| Vendor performance declining | Email | IT Security Manager | Quarterly |
+| Action overdue | Email | Action owner | Daily |
+
+### 11.2 Data Refresh Automation
+
+| Data Element | Refresh Method | Frequency |
+|--------------|----------------|-----------|
+| Source workbook links | Manual refresh | Weekly |
+| Compliance score | Auto-calculate | Real-time |
+| Dashboard metrics | Manual update | Weekly |
+| Vendor scores | Manual update | Monthly |
+| Exception status | Manual review | Weekly |
+
+### 11.3 Report Generation
+
+| Report | Format | Generation | Distribution |
+|--------|--------|------------|--------------|
+| Monthly Dashboard | PDF | Manual export | Email to management |
+| Quarterly Performance | PDF/Excel | Manual | Email to stakeholders |
+| Annual Compliance | PDF | Manual | Formal distribution |
+
+---
+
+## 12. Metrics and KPIs
+
+### 12.1 Dashboard Metrics
+
+| Metric | Target | Threshold | Owner |
+|--------|--------|-----------|-------|
+| Overall Compliance Score | ≥90% | <70% critical | CISO |
+| Vendor Assessment Currency | 100% | <90% warning | IT Security |
+| Contract Clause Compliance | 100% | <95% warning | IT Security |
+| SLA Compliance (Critical) | ≥95% | <90% critical | IT Security |
+| Active Exceptions | Minimal | Track trend | CISO |
+
+### 12.2 Exception Metrics
+
+| Metric | Target | Threshold | Owner |
+|--------|--------|-----------|-------|
+| Overdue Exceptions | 0 | >0 critical | IT Security |
+| Average Exception Duration | <90 days | >180 days warning | CISO |
+| Renewal Rate | <20% | >50% warning | CISO |
+| Exception Closure Rate | >80% | <50% warning | IT Security |
+
+### 12.3 Incident Metrics
+
+| Metric | Target | Threshold | Owner |
+|--------|--------|-----------|-------|
+| Vendor Incidents (Annual) | 0 | Any tracking | CISO |
+| Notification SLA Compliance | 100% | <90% critical | IT Security |
+| Average Resolution Time | <30 days | >60 days warning | IT Security |
+| Contract Impact Rate | 0% | >10% warning | CISO |
+
+---
+
+## 13. Evidence Package for ISO 27001 Audit
+
+### 13.1 Standard Evidence Package
+
+| Document | Purpose | Preparation |
+|----------|---------|-------------|
+| 12-month compliance trend | Compliance demonstration | Score history export |
+| Vendor performance summary | Vendor management evidence | Sheet 2 annual summary |
+| Exception register (current + closed) | Exception governance | Sheet 3 export |
+| Monitoring activity log | Active monitoring evidence | Sheet 4 12-month export |
+| Incident summary | Incident management evidence | Sheet 5 summary |
+| Sample monthly reports | Reporting evidence | PDF archives |
+
+### 13.2 Audit Preparation Checklist
+
+- [ ] Export 12-month compliance score history
+- [ ] Generate vendor performance trend analysis
+- [ ] Compile exception register with approvals
+- [ ] Export monitoring log for period
+- [ ] Summarise incident history
+- [ ] Gather sample monthly reports
+- [ ] Prepare governance meeting minutes
+
+---
+
+## 14. Generator Script Reference
+
+### 14.1 Script Location
+
+```
+10-isms-scr-base/
+└── isms-a.8.30-outsourced-development/
+    └── 10_generator-master/
+        └── generate_a830_4_monitoring_dashboard.py
+```
+
+### 14.2 Script Execution
+
+```bash
+cd 10-isms-scr-base/isms-a.8.30-outsourced-development/10_generator-master
+python3 generate_a830_4_monitoring_dashboard.py
+mv *.xlsx ../90_workbooks/
+```
+
+### 14.3 Output
+
+```
+ISMS-IMP-A.8.30.4_Monitoring_Dashboard_YYYYMMDD.xlsx
+```
 
 ---
 
@@ -222,4 +1140,4 @@ For ISO 27001 audit, generate:
 *"Trust, but verify."*
 — Ronald Reagan
 
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-02-03 -->
