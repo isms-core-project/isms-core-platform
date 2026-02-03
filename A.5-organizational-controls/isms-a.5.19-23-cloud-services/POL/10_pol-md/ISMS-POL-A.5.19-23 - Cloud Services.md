@@ -434,7 +434,7 @@ When Python generators are executed, they produce:
 | Script | Purpose |
 |--------|---------|
 | `consolidate_reg_a523_dashboard.py` | Consolidate data from assessment workbooks into unified dashboard |
-| `normalize_assessment_files_a523.py` | Standardize filenames and create audit trail manifest |
+| `normalize_assessment_files_reg_a523.py` | Standardize filenames and create audit trail manifest |
 
 **Script Quality Standards**:
 

@@ -111,7 +111,7 @@ This document defines the **Systems Engineering (SE) approach** for assessing cl
                            ↓
 ┌─────────────────────────────────────────────────────────────┐
 │ LAYER 4: VALIDATION (Quality Assurance)                     │
-│ • normalize_assessment_files_a523.py (audit trail creator)  │
+│ • normalize_assessment_files_reg_a523.py (audit trail creator)  │
 │ • consolidate_reg_a523_dashboard.py (dashboard aggregation) │
 └─────────────────────────────────────────────────────────────┘
                            ↓
@@ -429,7 +429,7 @@ def apply_border(cell):
 
 | Script | Purpose | When to Run |
 |--------|---------|-------------|
-| **normalize_assessment_files_a523.py** | Standardizes filenames and creates audit trail manifest | After stakeholder completion |
+| **normalize_assessment_files_reg_a523.py** | Standardizes filenames and creates audit trail manifest | After stakeholder completion |
 | **consolidate_reg_a523_dashboard.py** | Aggregates data from assessment workbooks into unified dashboard | After normalization, before executive review |
 
 ## Processing Workflow
@@ -449,7 +449,7 @@ def apply_border(cell):
                          ↓
 ┌────────────────────────────────────────────────────────────┐
 │ 3. Normalize Completed Files                                │
-│    $ python3 normalize_assessment_files_a523.py             │
+│    $ python3 normalize_assessment_files_reg_a523.py             │
 │    Creates: assessment_manifest_20260129.json               │
 └────────────────────────────────────────────────────────────┘
                          ↓
@@ -649,7 +649,7 @@ Run assessments outside quarterly cycle when:
 
 **Processing Scripts:**
 
-- normalize_assessment_files_a523.py
+- normalize_assessment_files_reg_a523.py
 - consolidate_reg_a523_dashboard.py
 
 
@@ -678,7 +678,7 @@ python3 generate_reg_a523_4_governance.py
 python3 generate_reg_a523_5_compliance_dashboard.py
 
 # After stakeholder completion
-python3 normalize_assessment_files_a523.py
+python3 normalize_assessment_files_reg_a523.py
 
 # Consolidate dashboard
 python3 consolidate_reg_a523_dashboard.py
