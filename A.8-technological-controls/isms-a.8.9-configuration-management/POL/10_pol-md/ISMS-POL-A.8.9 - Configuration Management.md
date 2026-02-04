@@ -35,7 +35,6 @@
 - Governance: Configuration Manager
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -46,7 +45,6 @@
 - ISMS-IMP-A.8.9.5 (Compliance Dashboard)
 - ISMS-CTX-A.8.9 (Configuration Management Reference - NOT ISMS)
 - ISO/IEC 27001:2022 Control A.8.9
-
 
 ---
 
@@ -86,7 +84,6 @@ This policy establishes [Organization]'s requirements for configuration manageme
 - Exception and incident management
 - Integration with risk assessment processes
 
-
 ## What This Policy Does
 
 This policy:
@@ -97,7 +94,6 @@ This policy:
 - **References** regulatory requirements per ISMS-POL-00
 - **Identifies** roles and responsibilities
 
-
 ## What This Policy Does NOT Do
 
 This policy does NOT:
@@ -107,7 +103,6 @@ This policy does NOT:
 - **Provide step-by-step procedures** (see ISMS-IMP-A.8.9 assessments)
 - **Replace asset management** (builds on A.5.9 asset inventory)
 - **Define change system workflows** (organizations adapt to existing ITIL/ServiceNow/Jira)
-
 
 **Rationale**: Policy stability despite evolving technologies; technical agility without policy revision; clear governance vs execution separation; focused audit scope; adaptability across contexts.
 
@@ -180,7 +175,6 @@ Each domain has policy requirements (this document), implementation assessment (
 - Identity and access systems
 - Security tooling
 
-
 **Granularity**: Asset-type level (e.g., "Windows Server 2022 DC Baseline"), NOT individual asset level
 
 **Rationale**: Scalability (100 servers ≠ 100 baselines), compliance verification, rapid deployment, simplified maintenance
@@ -197,7 +191,6 @@ Baselines SHALL document:
 - Exceptions and deviations with justification
 - Validation criteria
 
-
 **2.2.2 Approval**
 
 **Workflow**: Three-tier
@@ -206,7 +199,6 @@ Baselines SHALL document:
 - Tier 2: Security Architect validates hardening/compliance
 - Tier 3: Configuration Manager/CISO approves
 
-
 **Criteria**: Technical accuracy, security hardening, regulatory compliance, operational feasibility, complete documentation
 
 **Timeline**:
@@ -214,7 +206,6 @@ Baselines SHALL document:
 - New baselines: **14 days**
 - Updates: **7 days**
 - Emergency: **24 hours**
-
 
 **2.2.3 Golden Images**
 
@@ -226,7 +217,6 @@ Golden images SHALL:
 - Include current security patches
 - Be versioned and tracked
 - Be refreshed quarterly
-
 
 **Approval**: Created by authorized personnel, validated by Security, approved by Configuration Manager
 
@@ -240,7 +230,6 @@ Baselines SHALL be documented with:
 - Security rationale
 - Testing validation
 - Deviation procedures
-
 
 **Repository**: Version-controlled, access-controlled, backed up weekly, audit-logged
 
@@ -274,7 +263,6 @@ When asset type is decommissioned or replaced:
 - Implement review workflows (pull requests, automated testing)
 - Use for automated deployment (CI/CD)
 - Scan for misconfigurations
-
 
 **Governance**: IaC SHALL require code review, branch protection, automated testing, change control integration
 
@@ -326,7 +314,6 @@ All Emergency Changes SHALL undergo post-implementation review within **5 busine
 - **Core Members**: Security Architect, Network Manager, Application Owner representatives
 - **Variable Members**: Service Owners, Vendor representatives, Compliance Officer (as needed)
 
-
 **Responsibilities**:
 
 - Review and approve/reject/defer Normal Changes
@@ -335,7 +322,6 @@ All Emergency Changes SHALL undergo post-implementation review within **5 busine
 - Prioritize changes when conflicts exist
 - Conduct post-implementation reviews for Emergency Changes
 - Identify change trends and process improvements
-
 
 **Operations**:
 
@@ -379,7 +365,6 @@ CAB operations SHALL be evidenced through:
 - Documentation within **24 hours**
 - Retrospective CAB review within **5 business days**
 
-
 **2.3.4 Testing and Validation**
 
 **Testing Requirements**:
@@ -392,13 +377,11 @@ Normal Changes SHALL be tested:
 - **Performance Testing**: Verify no unacceptable degradation
 - **Security Testing**: Verify no vulnerabilities introduced
 
-
 **Testing Exemptions**:
 
 - Standard Changes (following pre-tested procedure)
 - Emergency Changes (critical urgency, risk accepted by approving authority)
 - Low-Risk Changes (Configuration Manager pre-approved exemption)
-
 
 **Post-Implementation Validation**: Functionality check, impact verification, performance check, security check, rollback capability verification
 
@@ -416,7 +399,6 @@ Changes SHALL include rollback plan documenting:
 - **Data loss risk**: Any unrecoverable data
 - **Backup verification**: Confirm backup exists before change
 
-
 **Rollback Testing**: High-risk changes SHALL test rollback in non-production, document results, verify before production, executable within defined RTO
 
 **Rollback Triggers**: Change fails validation, unacceptable performance degradation, security vulnerability introduced, business functionality impaired, approving authority directs rollback
@@ -426,7 +408,6 @@ Changes SHALL include rollback plan documenting:
 - CAB Chair or CIO: Major production changes
 - Service Owner: Service-specific changes
 - On-call Engineer: After-hours emergencies (with management notification)
-
 
 **2.3.6 Change Success Metrics**
 
@@ -466,14 +447,12 @@ Monitoring tools MUST:
 - Generate alerts for configuration deviations
 - Retain results for audit (minimum 90 days)
 
-
 Monitoring SHOULD:
 
 - Be automated (agent-based or agentless)
 - Cover OS settings, applications, network devices, security tools
 - Integrate with SIEM for centralized alerting
 - Align frequency with asset criticality
-
 
 **Tool Selection**: [Organization] selects tools based on technical environment and risk assessment; tools MUST support baseline comparison and drift detection
 
@@ -509,13 +488,11 @@ Critical drift MUST:
 - Include: asset ID, detected change, baseline expected value, actual value, timestamp
 - Be tracked until resolution
 
-
 Alert routing:
 
 - Critical/High: SOC + Configuration Manager + System Owner
 - Medium: Configuration Manager + System Owner
 - Low: Configuration Manager (daily consolidated report)
-
 
 **2.4.3 Drift Remediation**
 
@@ -528,7 +505,6 @@ Alert routing:
    - Authorized: Update baseline, close incident
    - Unauthorized: Remediate to baseline, investigate root cause, close incident
    - False positive: Tune monitoring, close incident
-
 
 **Remediation Timeline**:
 
@@ -585,13 +561,11 @@ All production assets SHALL:
 - Have hardening verified before production placement
 - Document and risk-assess hardening gaps
 
-
 Hardening SHOULD:
 
 - Be automated (golden images, IaC, configuration management tools)
 - Be validated in non-production first
 - Be re-verified after significant changes
-
 
 **Coverage Targets**:
 
@@ -676,14 +650,12 @@ Hardening compliance SHALL:
 - Reviews compliance metrics and authorizes remediation priorities
 - Final escalation point for configuration incidents
 
-
 **Chief Information Officer (CIO) / Chief Technology Officer (CTO)**:
 
 - **Consulted** on policy and baseline decisions
 - Approves Emergency Changes
 - Provides resources for configuration management program
 - Reviews change success metrics
-
 
 **Configuration Manager**:
 
@@ -693,7 +665,6 @@ Hardening compliance SHALL:
 - Coordinates monitoring and remediation activities
 - Reports metrics to CISO/CIO
 
-
 **Security Architect**:
 
 - **Responsible** for hardening standard selection
@@ -701,14 +672,12 @@ Hardening compliance SHALL:
 - Defines security requirements for configurations
 - Validates security controls in changes
 
-
 **System Owner**:
 
 - **Accountable** for configuration compliance of owned systems
 - Approves changes affecting owned systems
 - Ensures timely drift remediation
 - Provides resources for hardening implementation
-
 
 **System Administrator / DevOps Engineer**:
 
@@ -718,7 +687,6 @@ Hardening compliance SHALL:
 - Triages drift alerts
 - Documents configuration state
 
-
 **Change Advisory Board (CAB)**:
 
 - **Accountable** for change approval decisions
@@ -726,14 +694,12 @@ Hardening compliance SHALL:
 - Validates testing and rollback plans
 - Conducts post-implementation reviews
 
-
 **Internal/External Auditor**:
 
 - **Responsible** for independent verification
 - Audits compliance with policy
 - Reviews evidence and documentation
 - Reports findings to management
-
 
 ---
 
@@ -759,7 +725,6 @@ Exceptions to configuration requirements SHALL:
 - Be approved by appropriate authority (per Section 2.5.4)
 - Have defined expiration date (maximum 12 months)
 - Be reviewed annually for renewal or revocation
-
 
 **Exception Tracking**: All exceptions in exception register, reviewed quarterly, expired exceptions trigger remediation or renewal
 
@@ -792,7 +757,6 @@ Exceptions to configuration requirements SHALL:
 - **Severe Violations**: Disciplinary action per HR policy
 - **Systemic Non-Compliance**: Program audit and process improvement
 
-
 **Severe Violations**: Unauthorized changes to Tier 1 systems, disabling security controls, bypassing change control, concealing configuration drift
 
 **4.5 Continuous Improvement**
@@ -804,7 +768,6 @@ Exceptions to configuration requirements SHALL:
 - Audit findings
 - Industry best practices
 - Technology evolution
-
 
 **Improvement Process**: Identify opportunities, assess feasibility, pilot changes, implement improvements, measure effectiveness
 

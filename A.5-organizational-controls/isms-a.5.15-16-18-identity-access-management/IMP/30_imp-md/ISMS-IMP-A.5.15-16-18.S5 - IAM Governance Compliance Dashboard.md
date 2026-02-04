@@ -82,7 +82,6 @@ Before starting this assessment, you must have access to:
    - Role changes and department transfers (effective dates)
    - Contractor contract start and end dates
 
-
 2. **Identity Management System Logs**
 
    - Account creation timestamps
@@ -90,19 +89,16 @@ Before starting this assessment, you must have access to:
    - Account disable/delete timestamps
    - Last login dates
 
-
 3. **Service Desk / Ticketing System** (Optional)
 
    - Provisioning request tickets
    - Access change request tickets
    - Deprovisioning request tickets
 
-
 4. **Contractor Management System**
 
    - Active contractor list
    - Contract dates and sponsor information
-
 
 ### File Organization
 
@@ -125,7 +121,6 @@ Store source data exports alongside the completed workbook for audit traceabilit
 - **Contractor and orphaned account review**: 1-2 hours
 - **Gap analysis and evidence collection**: 1-2 hours
 - **Monthly refresh**: 2-3 hours (new events, updated metrics)
-
 
 ---
 

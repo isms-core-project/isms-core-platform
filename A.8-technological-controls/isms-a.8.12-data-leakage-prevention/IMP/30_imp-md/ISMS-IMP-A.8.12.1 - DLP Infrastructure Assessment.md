@@ -60,7 +60,6 @@ This assessment evaluates [Organization]'s **DLP technology infrastructure** to 
 - **EU GDPR (Art. 32):** Mandates technical measures to ensure security of personal data processing
 - **Industry Standards:** PCI DSS (Req. 3, 4), HIPAA Security Rule, SOC 2 all require data exfiltration protection
 
-
 **Business Impact:**
 
 - **Data Breaches:** 60% of breaches involve data exfiltration that DLP could prevent (Verizon DBIR)
@@ -68,14 +67,12 @@ This assessment evaluates [Organization]'s **DLP technology infrastructure** to 
 - **Insider Threats:** DLP is primary defense against malicious and negligent insider data theft
 - **Operational Risk:** DLP infrastructure gaps create blind spots for data exfiltration
 
-
 **Why Infrastructure Assessment Matters:**
 
 - **Coverage Verification:** Do we actually protect all egress channels or just some?
 - **Capability Assessment:** Can our DLP detect modern exfiltration techniques (encrypted channels, cloud storage, API abuse)?
 - **Integration Validation:** Is DLP isolated or integrated with SIEM, SOC, IAM for effective response?
 - **Lifecycle Management:** Are DLP solutions current, supported, or approaching end-of-life?
-
 
 ## Who Should Complete This Assessment
 
@@ -88,7 +85,6 @@ This assessment evaluates [Organization]'s **DLP technology infrastructure** to 
 - Integration points with security ecosystem (SIEM, SOC, IAM, ticketing)
 - Licensing and vendor support status for all DLP solutions
 
-
 **Support Roles:**
 
 - **Network Engineers:** Network DLP appliance configurations, traffic routing, SSL inspection
@@ -97,7 +93,6 @@ This assessment evaluates [Organization]'s **DLP technology infrastructure** to 
 - **Cloud/SaaS Teams:** CASB deployment, cloud DLP configurations, API-based monitoring
 - **Database Administrators:** Database Activity Monitoring (DAM) integration, query logging
 - **Procurement/Vendor Management:** License expiry dates, support contracts, end-of-life schedules
-
 
 ## Time Estimate
 
@@ -110,7 +105,6 @@ This assessment evaluates [Organization]'s **DLP technology infrastructure** to 
 - **Evidence Collection:** 30-60 minutes (screenshots, configuration exports, architecture diagrams)
 - **Quality Review:** 30-60 minutes (self-check using Section 7 quality checklist)
 
-
 **Pro Tip:** For organizations with complex multi-vendor DLP environments (>5 different DLP products), consider splitting assessment across multiple team members:
 
 - Network Engineer: Network DLP sheet
@@ -119,7 +113,6 @@ This assessment evaluates [Organization]'s **DLP technology infrastructure** to 
 - Cloud Team: Cloud/CASB DLP sheet
 - Database Team: Database DAM sheet
 - DLP Admin: Technology Inventory + consolidation
-
 
 **Coordination:** If split across teams, designate one DLP Administrator as coordinator to consolidate and ensure consistency.
 
@@ -134,7 +127,6 @@ This assessment implements **ISMS-POL-A.8.12 (Data Leakage Prevention Policy)** 
 - **Section 3.2 - Assessment & Verification:** Quarterly infrastructure review for coverage gaps and capability maturity
 - **Section 4.2 - Implementation Resources:** Use of structured assessment workbooks (this document) for evidence-based compliance
 
-
 **Policy Authority:** Chief Information Security Officer (CISO)  
 **Compliance Status:** Mandatory for all systems processing Internal, Confidential, or Restricted data
 
@@ -144,7 +136,6 @@ This assessment implements **ISMS-POL-A.8.12 (Data Leakage Prevention Policy)** 
 - **A.8.12.3 (Channel Coverage):** Verifies policy configurations → THIS assessment verifies technical infrastructure exists
 - **A.8.12.4 (Monitoring & Response):** Assesses alerting effectiveness → THIS assessment verifies DLP solutions can generate alerts
 - **A.8.12.5 (Compliance Dashboard):** Consolidates all assessments → THIS assessment provides infrastructure compliance metrics
-
 
 ## Critical: DLP Technology Lifecycle Management
 
@@ -168,7 +159,6 @@ DLP solutions approaching vendor end-of-life create significant security and com
 - Forcepoint DLP - Ownership changes, product strategy shifts
 - Legacy on-premise solutions → Cloud migration pressure
 
-
 **What This Means for Your Assessment:**
 1. **Document all DLP product versions** - Not just "Forcepoint DLP" but "Forcepoint DLP v9.1.2"
 2. **Check vendor EOL schedules** - Visit vendor websites, review support portals, contact account managers
@@ -182,7 +172,6 @@ DLP solutions approaching vendor end-of-life create significant security and com
 - EOL announcement emails or vendor communications
 - Migration plan (if EOL approaching)
 - Risk acceptance documentation (if extended EOL operation approved by CISO)
-
 
 ---
 
@@ -199,7 +188,6 @@ Before starting this assessment, ensure you have access to:
 - [ ] Data flow diagrams (egress points, internet gateways, cloud connections)
 - [ ] Configuration Management Database (CMDB) or asset inventory (DLP systems registered)
 
-
 **System Access:**
 
 - [ ] DLP management console(s) (Forcepoint, Symantec, Microsoft Purview, etc.)
@@ -211,7 +199,6 @@ Before starting this assessment, ensure you have access to:
 - [ ] Database Activity Monitoring console (if deployed)
 - [ ] SIEM access (to verify DLP log integration, alert routing)
 
-
 **Documentation Systems:**
 
 - [ ] Policy repository (access to ISMS-POL-A.8.12)
@@ -219,13 +206,11 @@ Before starting this assessment, ensure you have access to:
 - [ ] Change management records (recent DLP deployments, upgrades, configuration changes)
 - [ ] Incident response records (DLP-related incidents, false positive tracking)
 
-
 **Vendor Portals:**
 
 - [ ] DLP vendor support portals (for EOL lookups, version currency checks)
 - [ ] Cloud provider consoles (AWS, Azure, GCP for cloud-native DLP features)
 - [ ] SaaS admin portals (M365 Admin Center, Google Workspace Admin for cloud email DLP)
-
 
 ## Knowledge Required
 
@@ -237,7 +222,6 @@ Before starting this assessment, ensure you have access to:
 - Cloud services inventory (which SaaS applications require DLP monitoring)
 - Integration architecture (how DLP connects to SIEM, SOC, ticketing, IAM)
 
-
 **Technical Skills:**
 
 - Ability to navigate DLP management consoles and interpret deployment status
@@ -245,14 +229,12 @@ Before starting this assessment, ensure you have access to:
 - Basic command-line skills (for checking endpoint agent status, log verification)
 - Familiarity with licensing models (named user, device-based, data volume-based)
 
-
 **NOT Required:**
 
 - DLP rule/policy configuration expertise (covered in A.8.12.3 Channel Coverage Assessment)
 - Deep packet inspection analysis
 - Custom rule development or regex pattern creation
 - DLP incident investigation (covered in A.8.12.4 Monitoring & Response Assessment)
-
 
 ## Tools Needed
 
@@ -263,20 +245,17 @@ Before starting this assessment, ensure you have access to:
 - **Endpoint Inventory:** Endpoint management console (SCCM, Jamf, etc.) for agent deployment verification
 - **SIEM Query Access:** To verify DLP log integration and volume
 
-
 **Evidence Collection:**
 
 - **Screenshot tool:** For capturing DLP console dashboards, deployment status, version info
 - **Export capability:** For DLP inventory exports, license reports, configuration summaries
 - **Diagram tool:** For documenting DLP architecture (if diagrams don't exist or need updating)
 
-
 **Optional but Recommended:**
 
 - **License management tool:** For tracking DLP license expiry, renewal dates
 - **Vulnerability scanner:** To check DLP appliance patch status, known CVEs
 - **Network traffic analyzer:** For verifying SSL/TLS inspection functionality
-
 
 ## Estimated Time Commitment
 
@@ -288,7 +267,6 @@ Before starting this assessment, ensure you have access to:
 - Collect licensing and support contract documentation
 - Check vendor EOL schedules for all DLP products
 
-
 **Phase 2: Technical Verification (1-2 hours)**
 
 - Verify network DLP appliance operational status (inline mode, traffic volume, utilization)
@@ -296,7 +274,6 @@ Before starting this assessment, ensure you have access to:
 - Test email DLP integration (send test email, verify inspection)
 - Review cloud CASB deployment status (connected SaaS apps, policy enforcement)
 - Verify SIEM integration (DLP logs flowing, alert correlation working)
-
 
 **Phase 3: Assessment Completion (1-2 hours)**
 
@@ -306,14 +283,12 @@ Before starting this assessment, ensure you have access to:
 - Collect evidence files (screenshots, exports, diagrams)
 - Populate Evidence Register
 
-
 **Phase 4: Quality Review (30-60 minutes)**
 
 - Self-check using Quality Checklist (Section 7)
 - Verify all mandatory fields completed (no blanks in Status columns)
 - Review Summary Dashboard (compliance percentage calculated, gaps identified)
 - Ensure remediation plans exist for all non-compliant items
-
 
 **Total:** 4-6 hours for comprehensive infrastructure assessment
 
@@ -332,7 +307,6 @@ Before starting this assessment, ensure you have access to:
    - Completed By: [Your Name]
    - Organization Name: [Organization]
    - Review Cycle: Quarterly
-
 
 **STEP 2: DLP Technology Inventory (30-45 minutes)**
 1. Navigate to **DLP_Technology_Inventory** sheet
@@ -443,7 +417,6 @@ Before starting this assessment, ensure you have access to:
    - Check critical gaps highlighted
    - Ensure KPIs populated
 
-
 **STEP 10: Quality Check & Approval (15 minutes)**
 1. Complete Quality Checklist (Section 7) - self-review
 2. Navigate to **Approval_Sign-Off** sheet
@@ -463,7 +436,6 @@ Before starting this assessment, ensure you have access to:
 - **Complete inventory:** List ALL DLP solutions, even if overlapping functionality (e.g., M365 Purview DLP + separate email gateway DLP)
 - **Include decommissioned systems:** Document systems being phased out (audit trail, shows intentional decommissioning vs. forgotten systems)
 - **One row per technology:** If you have Forcepoint Network DLP + Forcepoint Endpoint DLP, that's TWO rows (different deployment types)
-
 
 **Field Guidance:**
 
@@ -496,7 +468,6 @@ Before starting this assessment, ensure you have access to:
 - SOC monitors DLP alerts
 - License valid (>6 months until expiry)
 
-
 **⚠️ Partial (Yellow):**
 
 - Technology deployed but approaching EOL (6-12 months)
@@ -504,7 +475,6 @@ Before starting this assessment, ensure you have access to:
 - SIEM integration partial (some logs sent, not all)
 - SOC integration planned but not yet operational
 - Technology in production but standalone (no integration)
-
 
 **❌ Non-Compliant (Red):**
 
@@ -514,12 +484,10 @@ Before starting this assessment, ensure you have access to:
 - No SOC monitoring (DLP alerts not acted upon)
 - Decommissioned technology still processing production data (should be migrated off)
 
-
 **N/A (Gray):**
 
 - Test/staging environments (not subject to full requirements)
 - Intentionally decommissioned systems documented as part of migration plan
-
 
 **Compliance Checklist Guidance:**
 
@@ -561,7 +529,6 @@ Before starting this assessment, ensure you have access to:
 - SIEM log volume report showing DLP integration: `EV-1.1-SIEM-DLP-Logs-20260119.png`
 - Vendor EOL schedule screenshot: `EV-1.1-Vendor-EOL-Schedule-20260119.pdf`
 
-
 ---
 
 ## Sheet: Network_DLP
@@ -574,7 +541,6 @@ Before starting this assessment, ensure you have access to:
 - **"No":** If all DLP is cloud-based, endpoint-only, or email-gateway-only (no network appliances)
 - **"Partial":** If network DLP deployed but only covers some network segments (e.g., DMZ only, not internal)
 
-
 **Understanding the Requirement:**
 
 **Network DLP Purpose:**
@@ -583,7 +549,6 @@ Before starting this assessment, ensure you have access to:
 - Detect exfiltration attempts regardless of endpoint protection status
 - Catch unmanaged devices (BYOD, contractor laptops, IoT) that lack endpoint agents
 - Provide network-level visibility for cloud services, webmail, file uploads
-
 
 **Deployment Models:**
 
@@ -626,7 +591,6 @@ Before starting this assessment, ensure you have access to:
 - High availability configured (redundant appliances)
 - SIEM integration confirmed
 
-
 **⚠️ Partial (Yellow):**
 
 - Network DLP deployed but only covers some segments (e.g., DMZ only, not internal)
@@ -636,7 +600,6 @@ Before starting this assessment, ensure you have access to:
 - No HA configuration (single point of failure)
 - Some advanced features disabled (ML/AI, fingerprinting not enabled)
 
-
 **❌ Non-Compliant (Red):**
 
 - No network DLP deployed (all egress points unmonitored at network level)
@@ -645,12 +608,10 @@ Before starting this assessment, ensure you have access to:
 - Throughput capacity exceeded (utilization >90% = dropped traffic, blind spots)
 - Network DLP appliance EOL with no migration plan
 
-
 **N/A (Gray):**
 
 - [Organization] made risk-based decision not to deploy network DLP (e.g., small organization, all endpoint-based DLP)
 - Requires CISO risk acceptance documentation
-
 
 **Compliance Checklist Guidance:**
 
@@ -696,7 +657,6 @@ Before starting this assessment, ensure you have access to:
 - SSL inspection test results (test file upload blocked): `EV-1.2-SSL-Inspection-Test-20260119.pdf`
 - HA configuration and failover test results: `EV-1.2-HA-Config-20260119.pdf`
 
-
 ---
 
 ## Sheet: Endpoint_DLP
@@ -709,7 +669,6 @@ Before starting this assessment, ensure you have access to:
 - **"No":** If no endpoint-level DLP (relying entirely on network/email/cloud DLP)
 - **Partial":** If endpoint DLP deployed but incomplete coverage (<90% of endpoints)
 
-
 **Understanding the Requirement:**
 
 **Endpoint DLP Purpose:**
@@ -719,14 +678,12 @@ Before starting this assessment, ensure you have access to:
 - Detect shadow IT and unapproved cloud storage usage
 - Provide last line of defense if network DLP bypassed
 
-
 **Why Endpoint DLP Matters:**
 
 - **Remote Work Era:** Network DLP ineffective when employees work from home on VPN or direct internet
 - **BYOD/Mobile:** Corporate data on personal devices requires endpoint-level protection
 - **Insider Threats:** Malicious insiders specifically target endpoint channels (USB exfiltration, print to PDF)
 - **Coverage Gaps:** Network DLP blind to encrypted traffic, local file operations, clipboard transfers
-
 
 **Field Guidance:**
 
@@ -758,7 +715,6 @@ Before starting this assessment, ensure you have access to:
 - Cloud app detection enabled (detects shadow IT)
 - SIEM integration confirmed
 
-
 **⚠️ Partial (Yellow):**
 
 - Endpoint DLP coverage 80-94% (most endpoints protected, some gaps)
@@ -767,7 +723,6 @@ Before starting this assessment, ensure you have access to:
 - Manual agent updates (operational risk, agents may become outdated)
 - Some channels not monitored (e.g., USB monitored, clipboard not monitored)
 - Cloud app detection planned but not yet implemented
-
 
 **❌ Non-Compliant (Red):**
 
@@ -778,12 +733,10 @@ Before starting this assessment, ensure you have access to:
 - USB not monitored or blocked (primary insider threat exfiltration vector unprotected)
 - No SIEM integration (endpoint alerts isolated)
 
-
 **N/A (Gray):**
 
 - [Organization] has no endpoints requiring DLP (unlikely - would need risk acceptance)
 - Specific OS platforms legitimately not in use (e.g., no Linux endpoints in environment)
-
 
 **Compliance Checklist Guidance:**
 
@@ -832,7 +785,6 @@ Before starting this assessment, ensure you have access to:
 - USB blocking test: `EV-1.3-USB-Block-Test-20260119.png`
 - Cloud app detection test: `EV-1.3-Cloud-App-Detection-20260119.pdf`
 
-
 ---
 
 # Evidence Collection
@@ -852,7 +804,6 @@ EV-[Domain]-[Category]-[Date].[ext]
 - **Date** = YYYYMMDD
 - **ext** = pdf, png, jpg, xlsx, txt, json (as appropriate)
 
-
 **Examples:**
 
 - `EV-1-INF-DLP-Inventory-20260119.xlsx` - DLP technology inventory export
@@ -860,7 +811,6 @@ EV-[Domain]-[Category]-[Date].[ext]
 - `EV-1-EPT-Coverage-20260119.png` - Endpoint DLP deployment coverage screenshot
 - `EV-1-EML-Test-20260119.pdf` - Email DLP blocking test results
 - `EV-1-CLD-CASB-Apps-20260119.xlsx` - CASB connected applications list
-
 
 **Storage Requirements:**
 
@@ -883,7 +833,6 @@ EV-[Domain]-[Category]-[Date].[ext]
   - Sanitize any credentials, private keys, sensitive patterns before storing
 - **Access Control:** Restrict to security team, auditors, compliance officers
 
-
 **Evidence Quality Criteria:**
 
 - **Timestamped:** Must show date/time of collection (screenshot timestamps, report generation dates)
@@ -891,7 +840,6 @@ EV-[Domain]-[Category]-[Date].[ext]
 - **Attributable:** Clear which system/service it documents (hostname, IP, URL visible)
 - **Verifiable:** Auditor can reproduce the evidence collection process (document commands used, tools used)
 - **Protected:** Stored securely, sanitized if contains credentials or sensitive data
-
 
 ## Evidence Types by Section
 
@@ -904,7 +852,6 @@ EV-[Domain]-[Category]-[Date].[ext]
 - Vendor EOL schedule: `EV-1-INF-EOL-Schedule-YYYYMMDD.pdf`
 - SIEM integration verification (query showing DLP logs): `EV-1-INF-SIEM-Integration-YYYYMMDD.png`
 
-
 **Network DLP (Sheet 3):**
 
 - Network topology diagram showing DLP appliance placement: `EV-1-NET-Topology-YYYYMMDD.pdf`
@@ -913,7 +860,6 @@ EV-[Domain]-[Category]-[Date].[ext]
 - SSL/TLS inspection test results: `EV-1-NET-SSL-Inspection-Test-YYYYMMDD.pdf`
 - Protocol coverage test (HTTP, HTTPS, SMTP, FTP): `EV-1-NET-Protocol-Test-YYYYMMDD.txt`
 - HA configuration and failover test: `EV-1-NET-HA-Config-YYYYMMDD.pdf`
-
 
 **Endpoint DLP (Sheet 4):**
 
@@ -924,7 +870,6 @@ EV-[Domain]-[Category]-[Date].[ext]
 - Cloud app detection test (Dropbox/Google Drive upload test): `EV-1-EPT-Cloud-App-Test-YYYYMMDD.pdf`
 - Endpoint OS coverage breakdown: `EV-1-EPT-OS-Coverage-YYYYMMDD.xlsx`
 
-
 **Email DLP (Sheet 5):**
 
 - Email system DLP integration diagram: `EV-1-EML-Integration-Diagram-YYYYMMDD.pdf`
@@ -932,7 +877,6 @@ EV-[Domain]-[Category]-[Date].[ext]
 - Test email with sensitive content (blocked or quarantined): `EV-1-EML-Test-Email-YYYYMMDD.pdf`
 - Email DLP detection rate statistics: `EV-1-EML-Detection-Stats-YYYYMMDD.xlsx`
 - Attachment scanning configuration: `EV-1-EML-Attachment-Scan-Config-YYYYMMDD.png`
-
 
 **Cloud & CASB DLP (Sheet 6):**
 
@@ -942,7 +886,6 @@ EV-[Domain]-[Category]-[Date].[ext]
 - API-based DLP test (file upload to monitored cloud storage): `EV-1-CLD-API-Test-YYYYMMDD.pdf`
 - Data classification integration verification: `EV-1-CLD-Classification-Integration-YYYYMMDD.png`
 
-
 **Web & Database DLP (Sheet 7):**
 
 - Web proxy DLP integration configuration: `EV-1-WEB-Proxy-Config-YYYYMMDD.txt`
@@ -950,7 +893,6 @@ EV-[Domain]-[Category]-[Date].[ext]
 - Cloud storage blocking test (personal Dropbox, Google Drive): `EV-1-WEB-Cloud-Storage-Block-YYYYMMDD.png`
 - Database Activity Monitoring configuration: `EV-1-DAM-Config-YYYYMMDD.png`
 - Database bulk export detection test: `EV-1-DAM-Bulk-Export-Test-YYYYMMDD.pdf`
-
 
 ---
 
@@ -969,7 +911,6 @@ EV-[Domain]-[Category]-[Date].[ext]
 - Confirm monitoring: Verify SOC receives and responds to DLP alerts
 - Evidence requirement: Operational testing results, not just deployment confirmation
 
-
 ## "Our coverage is 85% - that's pretty good"
 
 **Problem:** Treating 85% endpoint coverage as acceptable, but 15% gap = significant risk
@@ -980,14 +921,12 @@ EV-[Domain]-[Category]-[Date].[ext]
 - Often, gap includes high-value targets (executives, engineering, finance)
 - Insider threats specifically target unprotected devices
 
-
 **Solution:**
 
 - Set minimum threshold: 95% coverage required
 - Identify gap: Which specific endpoints lack agents? Why?
 - Prioritize closure: High-value endpoints first (executives, privileged users, sensitive data handlers)
 - Document exceptions: If legitimate reason (incompatible OS, specific use case), require CISO approval
-
 
 ## "SSL inspection breaks applications, so we disabled it"
 
@@ -999,7 +938,6 @@ EV-[Domain]-[Category]-[Date].[ext]
 - Application compatibility issues (legacy apps, VPN clients, health monitoring tools)
 - Performance impact (SSL decryption adds latency)
 
-
 **Solution:**
 
 - Default: SSL inspection enabled
@@ -1007,7 +945,6 @@ EV-[Domain]-[Category]-[Date].[ext]
 - Document risk: For each exception, document what sensitive data could be exfiltrated without detection
 - Compensating controls: If SSL inspection disabled for channel, require endpoint DLP coverage
 - Periodic review: Quarterly review of SSL inspection exceptions, work with vendors to resolve compatibility
-
 
 ## "We monitor DLP alerts, but don't have time to investigate them all"
 
@@ -1020,7 +957,6 @@ EV-[Domain]-[Category]-[Date].[ext]
 - No prioritization (all alerts treated equally)
 - Lack of automation (manual triage)
 
-
 **Solution:**
 
 - Tune aggressively: First 90 days post-deployment, dedicate resources to false positive reduction
@@ -1028,7 +964,6 @@ EV-[Domain]-[Category]-[Date].[ext]
 - Automate triage: Use SIEM correlation, user reputation scoring, context enrichment to auto-dismiss obvious false positives
 - Measure effectiveness: Track false positive rate, target <10% false positive rate
 - Acceptable false positive rate: 5-10% (balance between over-blocking and under-detecting)
-
 
 ## "Our DLP is cloud-based, so we don't need on-premise appliances"
 
@@ -1040,14 +975,12 @@ EV-[Domain]-[Category]-[Date].[ext]
 - Gaps: Personal webmail, personal cloud storage, network file transfers, USB, local file operations
 - Unmanaged devices: BYOD accessing corporate cloud data may lack endpoint agents
 
-
 **Solution:**
 
 - Layered approach: Cloud DLP + Endpoint DLP minimum
 - Consider CASB: For monitoring SaaS applications beyond M365/Google (Salesforce, Dropbox, etc.)
 - Network DLP: For environments with unmanaged devices (guest networks, contractor access)
 - Coverage mapping: Explicitly document which channels are protected by which DLP solution
-
 
 ## "We're planning to deploy DLP next quarter"
 
@@ -1060,14 +993,12 @@ EV-[Domain]-[Category]-[Date].[ext]
 - Quarter 3: "Planned" (still in vendor evaluation)
 - Quarter 4: "Planned" (budget issues)
 
-
 **Solution:**
 
 - If status = "Planned": Require target date and project plan
 - Escalation: If "Planned" for >2 quarters without progress, escalate to CISO for resource prioritization or risk acceptance
 - Interim controls: While deploying DLP, implement compensating controls (enhanced monitoring, user training, access restrictions)
 - Risk documentation: Document residual risk of operating without DLP until deployment complete
-
 
 ---
 
@@ -1083,7 +1014,6 @@ EV-[Domain]-[Category]-[Date].[ext]
 - [ ] Gap Analysis sheet populated for ALL non-compliant and partial items
 - [ ] Each gap has remediation action, owner, and target date
 
-
 **Accuracy Check:**
 
 - [ ] DLP technology versions verified (not just vendor name, specific version numbers)
@@ -1092,7 +1022,6 @@ EV-[Domain]-[Category]-[Date].[ext]
 - [ ] EOL dates confirmed from vendor websites or communications
 - [ ] Integration status verified through testing (not just assumed based on configuration)
 - [ ] Network topology reflects current state (not outdated diagrams)
-
 
 **Evidence Quality:**
 
@@ -1108,7 +1037,6 @@ EV-[Domain]-[Category]-[Date].[ext]
 - [ ] Sensitive data sanitized (credentials, private keys, sensitive regex patterns removed or redacted)
 - [ ] Evidence stored in designated repository with proper access controls
 
-
 **Status Determination Consistency:**
 
 - [ ] Status values assigned using documented decision rules (Section 4)
@@ -1116,7 +1044,6 @@ EV-[Domain]-[Category]-[Date].[ext]
 - [ ] "Partial" status has clear gap description (what's partial)
 - [ ] "Non-Compliant" status has remediation plan (not just identification)
 - [ ] "N/A" status has justification (why not applicable)
-
 
 **Gap Analysis Quality:**
 
@@ -1126,7 +1053,6 @@ EV-[Domain]-[Category]-[Date].[ext]
 - [ ] Target dates realistic (considering resources, dependencies, complexity)
 - [ ] Critical gaps have target dates ≤90 days
 - [ ] High gaps have target dates ≤180 days
-
 
 **Summary Dashboard Review:**
 
@@ -1139,7 +1065,6 @@ EV-[Domain]-[Category]-[Date].[ext]
   - Average DLP technology age (time since deployment or last major update)
 - [ ] Traffic light indicators working (green ≥90%, yellow 70-89%, red <70%)
 
-
 **Final Checks:**
 
 - [ ] Workbook filename includes date: `ISMS-IMP-A.8.12.1_DLP_Infrastructure_Assessment_YYYYMMDD.xlsx`
@@ -1148,13 +1073,11 @@ EV-[Domain]-[Category]-[Date].[ext]
 - [ ] Cell protection enabled (formula cells locked, input cells unlocked)
 - [ ] Ready for Security Team review and CISO approval
 
-
 **Self-Assessment Outcome:**
 
 - [ ] Assessment complete and accurate → Ready for submission
 - [ ] Minor corrections needed → Complete before submission
 - [ ] Significant gaps identified → Re-assess incomplete areas before submission
-
 
 ---
 
@@ -1171,7 +1094,6 @@ EV-[Domain]-[Category]-[Date].[ext]
 - [ ] Ad-Hoc Assessment (infrastructure change, incident-driven)
 - [ ] Post-Remediation Validation
 
-
 **Scope Changes Since Last Assessment:**
 
 - [ ] No changes (standard quarterly review)
@@ -1179,7 +1101,6 @@ EV-[Domain]-[Category]-[Date].[ext]
 - [ ] DLP technology decommissioned: _______________________
 - [ ] Major infrastructure change: _______________________
 - [ ] Post-incident reassessment (Incident ID: _______)
-
 
 ## Completed By (Primary Assessor)
 
@@ -1197,7 +1118,6 @@ EV-[Domain]-[Category]-[Date].[ext]
 - Quality Review: _____ hours
 - **Total: _____ hours**
 
-
 **Challenges Encountered:**
 
 - [ ] No significant challenges
@@ -1205,7 +1125,6 @@ EV-[Domain]-[Category]-[Date].[ext]
 - [ ] Data unavailable (specify): _______________________
 - [ ] Technical issues (specify): _______________________
 - [ ] Other (specify): _______________________
-
 
 ## Reviewed By (Security Team Lead or DLP Manager)
 
@@ -1224,13 +1143,11 @@ _________________________________________________________________
 - [ ] Approved with minor corrections - Specific items to address: _______________________
 - [ ] Requires revision - Significant issues identified, re-submit required
 
-
 **Key Findings Highlighted:**
 
 - Critical Gaps: _____ (count)
 - High-Priority Gaps: _____ (count)
 - Overall Compliance Rate: _____% (from Summary Dashboard)
-
 
 ## Approved By (CISO)
 
@@ -1244,7 +1161,6 @@ _________________________________________________________________
 - [ ] Approved with conditions - Remediation must be completed by: _____ . _____ . ___________
 - [ ] Rejected - Re-assessment required due to: _______________________
 
-
 **Risk Acceptance:**
 
 For any documented exceptions/deviations, I accept the residual risk based on:
@@ -1254,7 +1170,6 @@ For any documented exceptions/deviations, I accept the residual risk based on:
 - [ ] Business justification acceptable
 - [ ] Compliance with exception approval process (ISMS-POL-A.8.12 Section 3.3)
 
-
 **Budget Approval (if remediation requires investment):**
 
 Estimated remediation budget requirement: CHF _______________  
@@ -1263,14 +1178,12 @@ Estimated remediation budget requirement: CHF _______________
 - [ ] Requires further justification - Business case needed
 - [ ] Deferred to next budget cycle - Interim risk acceptance documented
 
-
 **Action Items for Executive Management:**
 
 - [ ] None - Compliance posture acceptable
 - [ ] Inform Board of critical gaps and remediation timeline
 - [ ] Budget increase required for DLP infrastructure upgrades
 - [ ] Policy exception approval required (high-risk acceptance)
-
 
 ## Next Review Date
 
@@ -1285,7 +1198,6 @@ Estimated remediation budget requirement: CHF _______________
 - Failed audit findings
 - Significant coverage gaps identified (requires interim review)
 
-
 **Interim Monitoring (between formal assessments):**
 
 - DLP technology health monitoring: Continuous (SIEM alerts, performance dashboards)
@@ -1293,7 +1205,6 @@ Estimated remediation budget requirement: CHF _______________
 - License expiry tracking: Monthly (vendor management system)
 - EOL schedule review: Quarterly (vendor communications monitoring)
 - Remediation progress tracking: Monthly (project management updates)
-
 
 ## Distribution List
 
@@ -1313,20 +1224,17 @@ This assessment shall be distributed to:
 - [ ] Data Protection Officer (DPO)
 - [ ] Other: _______________________
 
-
 **Storage Location:**
 
 - **ISMS Repository:** `ISMS/Controls/A.8.12_Data_Leakage_Prevention/Assessments/Infrastructure/`
 - **Filename:** `ISMS-IMP-A.8.12.1_DLP_Infrastructure_YYYYMMDD_APPROVED.xlsx`
 - **Evidence Folder:** `ISMS/Controls/A.8.12_Data_Leakage_Prevention/Evidence/A.8.12.1_Infrastructure/YYYYMMDD/`
 
-
 **Access Control:**
 
 - Classification: **Internal** (contains sensitive infrastructure details)
 - Access: Restricted to security team, IT management, auditors, compliance officers
 - Retention: Audit cycle + 1 year minimum (typically 2 years)
-
 
 ---
 
@@ -1383,7 +1291,6 @@ This assessment shall be distributed to:
   - Columns: A (Field), B (Value)
   - Fields: Workbook ID, Assessment Area, Related Policy, Version, Date Created, Review Cycle
 
-
 **B. Organization Metadata (Rows 12-20)**
 **USER INPUT REQUIRED - Yellow Background**
 
@@ -1399,7 +1306,6 @@ This assessment shall be distributed to:
 - Numbered steps (1-10) matching Section 3 workflow from Part I
 - Font: Calibri 11pt
 - Key action items in bold
-
 
 **D. Legend - Response Values (Rows 40-48)**
 
@@ -1419,18 +1325,15 @@ This assessment shall be distributed to:
 - White cells = Assessment responses
 - Gray cells = Informational/examples (to be deleted or overwritten)
 
-
 **Cell Protection:**
 
 - All cells protected (read-only)
 - No user input on this sheet except metadata (rows 13-16)
 
-
 **Print Settings:**
 
 - Fit to 1 page wide
 - Page orientation: Portrait
-
 
 ---
 
@@ -1467,7 +1370,6 @@ This assessment shall be distributed to:
 - Text: White
 - Border: All borders, medium weight
 
-
 **Data Rows:** Rows 6-35 (30 rows total)
 
 - Rows 6-10: Pre-populated example rows (Gray fill RGB: 242, 242, 242)
@@ -1479,7 +1381,6 @@ This assessment shall be distributed to:
 - Rows 11-35: Blank for user input (White fill)
 - Row height: 20
 
-
 **Conditional Formatting:**
 
 **Status Column (P):**
@@ -1489,20 +1390,17 @@ This assessment shall be distributed to:
 - Rule 3: If "❌ Non-Compliant" → Red fill (RGB: 255, 199, 206), Dark red text
 - Rule 4: If "N/A" → Gray fill (RGB: 217, 217, 217), Gray text
 
-
 **License Expiry Column (I):**
 
 - Rule 1: If date < TODAY() → Red fill (expired)
 - Rule 2: If date < TODAY()+180 → Yellow fill (expiring <6 months)
 - Rule 3: If date >= TODAY()+180 → Green fill (valid)
 
-
 **EOL Date Column (K):**
 
 - Rule 1: If date < TODAY() → Red fill (past EOL)
 - Rule 2: If date < TODAY()+365 → Yellow fill (approaching EOL <12 months)
 - Rule 3: If date >= TODAY()+365 → Green fill (current)
-
 
 **Cell Protection:**
 
@@ -1511,13 +1409,11 @@ This assessment shall be distributed to:
 - Data rows (11-35): Columns A-O Unprotected (user input), Column P (Status) Unprotected, Column Q (Evidence) Unprotected
 - Allow: Insert rows, Sort, Filter
 
-
 **Print Settings:**
 
 - Fit to 1 page wide (landscape orientation)
 - Repeat header row on all pages
 - Page breaks: After row 20, after row 35
-
 
 **Formulas:**
 None in this sheet (data entry only). Summary calculations in Summary_Dashboard sheet.
@@ -1554,20 +1450,17 @@ None in this sheet (data entry only). Summary calculations in Summary_Dashboard 
 - Rows 6-8: Pre-populated examples (Gray fill)
 - Rows 9-25: Blank for user input
 
-
 **Conditional Formatting:**
 
 **Status Column (N):**
 
 - Same as DLP_Technology_Inventory sheet Status column
 
-
 **Utilization Column (G):**
 
 - Rule 1: If >90 → Red fill (critical, over-capacity)
 - Rule 2: If 70-90 → Yellow fill (warning, approaching capacity)
 - Rule 3: If <70 → Green fill (acceptable)
-
 
 **Cell Protection:** Same pattern as previous sheet
 
@@ -1614,17 +1507,14 @@ Copy down to row 25
 - Rule 2: If 80-94 → Yellow fill (acceptable coverage)
 - Rule 3: If <80 → Red fill (insufficient coverage)
 
-
 **Status Column (L):**
 
 - Same as previous sheets
-
 
 **Cell Protection:**
 
 - Column E (Coverage %): Protected (calculated field)
 - Other data columns: Unprotected
-
 
 ---
 
@@ -1740,13 +1630,11 @@ Copy down to row 25
 - If "Medium" → Yellow fill, dark text
 - If "Low" → Light yellow fill, dark text
 
-
 **Target Date Column (H):**
 
 - If past due (< TODAY()) → Red fill
 - If due soon (< TODAY()+30) → Yellow fill
 - If future (>= TODAY()+30) → Green fill
-
 
 **Status Column (I):**
 
@@ -1755,12 +1643,10 @@ Copy down to row 25
 - If "Completed" → Green fill
 - If "Deferred" → Gray fill
 
-
 **Cell Protection:**
 
 - Column A (Gap ID): Protected (auto-generated)
 - Other columns: Unprotected
-
 
 ---
 
@@ -1795,7 +1681,6 @@ Copy down to row 105
 
 - Column A (Evidence ID): Protected if formula present
 - Other columns: Unprotected
-
 
 ---
 
@@ -1862,13 +1747,11 @@ Copy down to row 105
 - If 70-89% → Yellow fill, dark orange text
 - If <70% → Red fill, dark red text
 
-
 **Critical Gaps Count (B9):**
 
 - If =0 → Green fill
 - If 1-3 → Yellow fill
 - If >3 → Red fill
-
 
 **Dashboard Layout:**
 
@@ -1888,7 +1771,6 @@ Row 22-27: Recommended Immediate Actions
 
 - All cells protected (dashboard is read-only, calculated)
 
-
 ---
 
 ## Sheet: Approval_Sign-Off
@@ -1905,7 +1787,6 @@ Row 22-27: Recommended Immediate Actions
 - Assessment Date: [DD.MM.YYYY]
 - Assessment Type: [Dropdown: Initial/Quarterly/Ad-Hoc/Post-Remediation]
 
-
 **Completed By (Rows 14-20):**
 
 - Name: [Text field]
@@ -1915,13 +1796,11 @@ Row 22-27: Recommended Immediate Actions
 - Signature: [Text field or digital signature]
 - Time Invested: [Number] hours
 
-
 **Reviewed By (Rows 22-28):**
 
 - Name, Date, Signature fields
 - Review Outcome: [Dropdown: Approved/Approved with corrections/Requires revision]
 - Comments: [Large text area]
-
 
 **Approved By (CISO) (Rows 30-40):**
 
@@ -1931,17 +1810,14 @@ Row 22-27: Recommended Immediate Actions
 - Budget Approval: [Dropdown: Approved/Requires justification/Deferred]
 - Budget Amount: CHF [Number]
 
-
 **Next Review Date (Row 42):**
 
 - Date: [DD.MM.YYYY]
-
 
 **Cell Protection:**
 
 - Field labels: Protected
 - Input fields (dates, names, dropdowns): Unprotected
-
 
 ---
 
@@ -2101,7 +1977,6 @@ Rule 3: >3 → Red fill
 - Formula cells (calculations in Summary Dashboard, Coverage % in Endpoint DLP)
 - Auto-generated cells (Evidence ID if formula present, Gap ID)
 
-
 ## Unprotected Cells (Unlocked)
 
 **User Input Areas:**
@@ -2113,7 +1988,6 @@ Rule 3: >3 → Red fill
 - Evidence descriptions and file locations
 - Gap analysis details
 - Approval workflow fields
-
 
 ## Sheet Protection Settings
 
@@ -2140,7 +2014,6 @@ Allow Users To:
 - Instructions_Legend: Fully protected except metadata cells
 - Summary_Dashboard: Fully protected (all calculated)
 - Approval_Sign-Off: Only input fields unprotected
-
 
 ---
 
@@ -2178,7 +2051,6 @@ Allow Users To:
 - Denominator: Count of all populated Status cells (excluding headers)
 - ROUND to 1 decimal place
 - IFERROR returns 0 if division by zero (empty workbook)
-
 
 ## Technology Count
 
@@ -2233,7 +2105,6 @@ Allow Users To:
 - Numerator: Count of "Yes" in SIEM Integration column for Production systems
 - Denominator: Total Production systems
 - Percentage calculation
-
 
 ---
 
@@ -2427,7 +2298,6 @@ ISMS-IMP-A.8.12.1_DLP_Infrastructure_Assessment_20260119.xlsx
 - Version history table documenting changes between versions
 - Change log maintained in separate CHANGELOG.md
 
-
 ## Workbook Updates
 
 **When to Increment Version:**
@@ -2435,7 +2305,6 @@ ISMS-IMP-A.8.12.1_DLP_Infrastructure_Assessment_20260119.xlsx
 - **Major version (1.0 → 2.0):** Structural changes (new sheets, column reordering, formula changes)
 - **Minor version (2.0 → 2.1):** Content updates (dropdown options added, examples updated)
 - **Patch version (2.1.0 → 2.1.1):** Bug fixes (typo corrections, formula fixes)
-
 
 ## Backward Compatibility
 
@@ -2445,13 +2314,11 @@ ISMS-IMP-A.8.12.1_DLP_Infrastructure_Assessment_20260119.xlsx
 - Dropdown updates: Only add options (don't remove existing options used in data)
 - Formula changes: Test against sample data before deploying
 
-
 **Migration Path:**
 
 - v1.0 workbooks can be migrated to v2.0 using `normalize_assessment_files_a812.py` script
 - Migration script maps old column structure to new structure
 - Data loss warnings if v2.0 removes features from v1.0
-
 
 ---
 
@@ -2467,14 +2334,12 @@ ISMS-IMP-A.8.12.1_DLP_Infrastructure_Assessment_20260119.xlsx
 - N/A Gray: RGB(217, 217, 217)
 - Planned Blue: RGB(180, 198, 231)
 
-
 **UI Colors:**
 
 - Header Dark Blue: RGB(68, 114, 196)
 - Header Text White: RGB(255, 255, 255)
 - Example Row Gray: RGB(242, 242, 242)
 - User Input Yellow: RGB(255, 255, 204)
-
 
 ## Font Standards
 
@@ -2485,7 +2350,6 @@ ISMS-IMP-A.8.12.1_DLP_Infrastructure_Assessment_20260119.xlsx
 - Data Font Size: 11pt Regular
 - Title Font Size: 14-18pt Bold
 
-
 ## Excel Formula Best Practices
 
 **IFERROR Usage:**
@@ -2493,18 +2357,15 @@ ISMS-IMP-A.8.12.1_DLP_Infrastructure_Assessment_20260119.xlsx
 - Wrap division operations to handle #DIV/0 errors
 - Return meaningful defaults (0 for percentages, "N/A" for text)
 
-
 **Named Ranges:**
 
 - Consider using named ranges for frequently referenced cells
 - Example: Name cell Instructions_Legend!B13 as "AssessmentDate"
 
-
 **Absolute vs Relative References:**
 
 - Use absolute references ($A$1) for constant cells (headers, lookup tables)
 - Use relative references (A1) for cells that change when copied
-
 
 ## Performance Optimization
 
@@ -2515,7 +2376,6 @@ ISMS-IMP-A.8.12.1_DLP_Infrastructure_Assessment_20260119.xlsx
 - Minimize conditional formatting ranges (apply only to data rows, not entire columns)
 - Disable automatic calculation if workbook becomes slow (File > Options > Formulas > Manual calculation)
 
-
 ## Known Limitations and Workarounds
 
 **Limitation 1: Excel Date Formats (DD.MM.YYYY vs MM/DD/YYYY)**
@@ -2524,20 +2384,17 @@ ISMS-IMP-A.8.12.1_DLP_Infrastructure_Assessment_20260119.xlsx
 - Workaround: Use TEXT() function to force DD.MM.YYYY display format
 - Example: `=TEXT(I6, "DD.MM.YYYY")`
 
-
 **Limitation 2: Emoji in Dropdowns (✅, ⚠️, ❌)**
 
 - Issue: Some Excel versions don't display emoji in dropdowns
 - Workaround: Provide text alternative: "Compliant [✅]", "Partial [⚠️]", etc.
 - Test on target Excel versions before deployment
 
-
 **Limitation 3: Sheet Protection Prevents Some Macros**
 
 - Issue: Protected sheets block VBA automation
 - Workaround: Unprotect sheet programmatically in macro, perform operation, re-protect
 - Example: `ws.Unprotect Password:="password"` then `ws.Protect Password:="password"`
-
 
 ---
 
@@ -2558,7 +2415,6 @@ ISMS-IMP-A.8.12.1_DLP_Infrastructure_Assessment_20260119.xlsx
 - [ ] No broken cell references (#REF!, #NAME? errors)
 - [ ] File size reasonable (<5 MB for empty workbook)
 
-
 **User Acceptance Testing:**
 
 - [ ] Security team can complete assessment within estimated time (4-6 hours)
@@ -2568,7 +2424,6 @@ ISMS-IMP-A.8.12.1_DLP_Infrastructure_Assessment_20260119.xlsx
 - [ ] Gap Analysis captures all necessary remediation details
 - [ ] Approval workflow meets organizational approval process
 
-
 **Quality Assurance:**
 
 - [ ] No spelling errors in headers, instructions, dropdown options
@@ -2576,7 +2431,6 @@ ISMS-IMP-A.8.12.1_DLP_Infrastructure_Assessment_20260119.xlsx
 - [ ] Colors consistent with organizational style guide (if applicable)
 - [ ] Accessibility: Color contrast sufficient for color-blind users
 - [ ] Examples realistic and helpful (not Lorem Ipsum placeholders)
-
 
 ---
 
@@ -2593,18 +2447,15 @@ ISMS-IMP-A.8.12.1_DLP_Infrastructure_Assessment_20260119.xlsx
    - Part I (separate file): User Completion Guide
    - Part II (this file): Technical Specification
 
-
 2. **Generate Excel Workbook:**
 
    - Run: `python3 generate_a812_1_dlp_infrastructure_assessment.py`
    - Output: `ISMS-IMP-A.8.12.1_DLP_Infrastructure_Assessment_YYYYMMDD.xlsx`
 
-
 3. **Validate Workbook:**
 
    - Run: `python3 excel_sanity_check_a812_1.py ISMS-IMP-A.8.12.1_DLP_Infrastructure_Assessment_YYYYMMDD.xlsx`
    - Verify: All checks pass
-
 
 4. **Deploy:**
 
@@ -2612,7 +2463,6 @@ ISMS-IMP-A.8.12.1_DLP_Infrastructure_Assessment_20260119.xlsx
    - Provide Part I User Guide as reference
    - Collect completed assessments
    - Consolidate into ISMS-IMP-A.8.12.5 Compliance Dashboard
-
 
 ---
 

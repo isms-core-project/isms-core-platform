@@ -42,13 +42,11 @@ This policy establishes [Organization]'s requirements for secure deletion of inf
 - All personnel (employees, contractors) and third parties processing organizational data
 - All lifecycle stages requiring deletion (retention expiry, data subject requests, contract termination, asset decommissioning, legal hold release)
 
-
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements including:
 
 - **Swiss nDSG** - Data minimization and data subject rights
 - **EU GDPR Article 17** - Right to erasure
 - **ISO/IEC 27001:2022 Control A.8.10** - Information deletion requirements
-
 
 ---
 
@@ -63,7 +61,6 @@ This policy establishes [Organization]'s requirements for secure deletion of inf
 - All formats (structured databases, unstructured files, email, backups, system logs)
 - All lifecycle stages (active use, archival, backup, disaster recovery, development/test)
 
-
 **Storage Locations**:
 
 - On-premises infrastructure (data centers, server rooms, local storage)
@@ -72,7 +69,6 @@ This policy establishes [Organization]'s requirements for secure deletion of inf
 - Backup and disaster recovery systems
 - End-user devices (laptops, desktops, mobile devices, removable media)
 
-
 **Organizational Coverage**:
 
 - All employees (permanent, temporary, contractors)
@@ -80,14 +76,12 @@ This policy establishes [Organization]'s requirements for secure deletion of inf
 - All cloud service providers storing organizational information
 - All business units and geographic locations
 
-
 ## Out of Scope
 
 - Physical equipment disposal without data considerations (covered under asset management)
 - Data anonymization or pseudonymization as alternatives to deletion (covered under privacy policies)
 - Data archival for long-term retention within retention periods (covered under records management)
 - Encryption key management except for cryptographic erasure (covered under ISMS-POL-A.8.24)
-
 
 ---
 
@@ -109,7 +103,6 @@ This policy establishes [Organization]'s requirements for secure deletion of inf
 - Asset decommissioning
 - Consent withdrawal
 
-
 **POL-8.10-04**: Where multiple retention requirements apply, the LONGEST applicable retention period SHALL be implemented unless legal counsel determines otherwise.
 
 **POL-8.10-05**: [Organization] SHOULD implement automated deletion processes where technically feasible, including safeguards against premature deletion (legal hold checks, business owner approval for high-value data).
@@ -125,13 +118,11 @@ This policy establishes [Organization]'s requirements for secure deletion of inf
 - Media destination (internal reuse, external transfer, disposal/destruction)
 - Recovery risk assessment
 
-
 **POL-8.10-07**: Deletion methods SHALL align with recognized sanitization standards (NIST SP 800-88 or equivalent) providing appropriate protection levels:
 
 - **Clear**: For media remaining in organizational control with lower sensitivity data
 - **Purge**: For media leaving organizational control or containing sensitive data
 - **Destroy**: For end-of-life media or highest sensitivity data
-
 
 **POL-8.10-08**: Deletion in production systems SHALL extend to ALL backup copies, including incremental/differential backups, snapshots, and disaster recovery replicas.
 
@@ -148,7 +139,6 @@ This policy establishes [Organization]'s requirements for secure deletion of inf
 - Deletion scope covering all copies including backups
 - Requirement to provide deletion certificate or attestation
 - Flow-down of deletion requirements to sub-processors
-
 
 **POL-8.10-11**: [Organization] SHALL assess cloud service provider deletion capabilities before engagement, including API deletion support, deletion verification mechanisms, multi-tenant isolation, and geographic deletion coverage.
 
@@ -198,7 +188,6 @@ Evidence generation and aggregation procedures are defined in ISMS-IMP-A.8.10.5 
 - Verifying data subject identity before processing
 - Responding within 30 days (GDPR deadline)
 
-
 **POL-8.10-18**: The DPO SHALL assess whether erasure obligation applies or legal exceptions exist (legal obligation, public interest, legal claims, archiving in public interest).
 
 **POL-8.10-19**: Where erasure is denied based on legal exception, [Organization] SHALL document the specific legal basis and provide written explanation to the data subject including complaint rights.
@@ -213,7 +202,6 @@ Evidence generation and aggregation procedures are defined in ISMS-IMP-A.8.10.5 
 - Government investigation or regulatory examination
 - Internal investigation requiring forensic preservation
 - External audit requiring specific data preservation
-
 
 **POL-8.10-22**: ONLY the Legal/Compliance Officer may initiate or release legal holds.
 
@@ -233,14 +221,12 @@ Evidence generation and aggregation procedures are defined in ISMS-IMP-A.8.10.5 
 - Medium-sensitivity data, <6 months: CISO + DPO
 - High-sensitivity data, any extension: CISO + DPO + Legal + Executive Management
 
-
 **POL-8.10-28**: The following exceptions are PROHIBITED:
 
 - Indefinite retention without specific end date
 - Exceptions to avoid legitimate data subject erasure requests
 - Exceptions to circumvent regulatory retention requirements
 - Blanket exceptions for entire data categories without specific justification
-
 
 ---
 
@@ -268,7 +254,6 @@ Evidence generation and aggregation procedures are defined in ISMS-IMP-A.8.10.5 
 - Third-party refusal to provide deletion verification
 - Legal hold conflicting with erasure request
 - Discovery of retained data exceeding retention period by >90 days
-
 
 **Escalation Path**: IT Operations -> System Owner -> CIO/CISO -> DPO (privacy) / Legal (holds) -> Executive Management
 
@@ -301,7 +286,6 @@ Apply where business activities trigger applicability (per ISMS-POL-00):
 - FINMA (Swiss financial services)
 - DORA/NIS2 (EU financial services, critical infrastructure)
 
-
 ## Non-Compliance
 
 Violations of this policy may result in:
@@ -310,7 +294,6 @@ Violations of this policy may result in:
 - Civil or criminal penalties under applicable law
 - Regulatory sanctions and fines
 - Reputational damage to [Organization]
-
 
 ## Exception Process
 
@@ -331,7 +314,6 @@ All exceptions must be submitted via the designated exception request form and a
 - Significant deletion-related incidents
 - External audit findings
 - Technology platform changes
-
 
 ## Training Requirements
 
@@ -395,7 +377,6 @@ Evidence required to demonstrate this policy is adequately documented and approv
 - ✅ Verification requirements documented
 - ✅ Data subject erasure request process defined
 - ✅ Roles and responsibilities assigned
-
 
 **Stage 2 (Operational Effectiveness) Evidence:**
 

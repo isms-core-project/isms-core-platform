@@ -36,7 +36,6 @@
 - Procurement: Procurement Director
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -46,7 +45,6 @@
 - ISO/IEC 27001:2022 Control A.5.20
 - ISO/IEC 27036-2 (Requirements)
 - GDPR Article 28 (Processor requirements)
-
 
 ---
 
@@ -73,7 +71,6 @@ This section defines the mandatory information security requirements that shall 
 - Service level agreements shall include security metrics and performance indicators
 - Termination procedures and data return/destruction obligations shall be contractually defined
 - Right to audit (on-site or remote) and regulatory cooperation shall be enforceable
-
 
 ---
 
@@ -108,14 +105,12 @@ This section applies to all formal agreements with suppliers including:
 - Renewals: Minimum 60 days before expiration (allows renegotiation)
 - Amendments: Before execution of material changes
 
-
 **Review Documentation**: Security review shall document:
 
 - Clause-by-clause compliance with this policy
 - Identified gaps and acceptability assessment
 - Risk assessment for missing clauses
 - Approval or rejection recommendation
-
 
 ---
 
@@ -179,13 +174,11 @@ This section applies to all formal agreements with suppliers including:
 - **Swiss nDSG Article 9**: Processor security and confidentiality
 - **DORA Article 29** (if applicable): Additional ICT service provider requirements
 
-
 **Model DPA**: Use standard DPAs that incorporate:
 
 - EU Standard Contractual Clauses (SCCs) - Commission Implementing Decision 2021/914
 - Swiss Federal Data Protection and Information Commissioner (FDPIC) approved clauses
 - Sector-specific additions for DORA/NIS2 if applicable
-
 
 ## Security Controls Commitment
 
@@ -214,7 +207,6 @@ This section applies to all formal agreements with suppliers including:
 - SOC 2 Type II attestation
 - Current within 12 months, covering services provided to [Organization]
 
-
 ---
 
 # Incident Notification Requirements
@@ -236,7 +228,6 @@ This section applies to all formal agreements with suppliers including:
 - **DORA-covered services**: Within 2 hours for critical incidents, include concentration risk impact
 - **NIS2-covered services**: Within 4 hours for essential service disruption, enable 24-hour regulatory notification
 
-
 ## Notification Content Requirements
 
 **Initial notification shall include (at minimum)**:
@@ -249,7 +240,6 @@ This section applies to all formal agreements with suppliers including:
 - Designated incident contact with 24/7 availability
 - Expected timeline for follow-up
 
-
 **Follow-up notification shall include**:
 
 - Root cause analysis (technical and procedural)
@@ -258,7 +248,6 @@ This section applies to all formal agreements with suppliers including:
 - Preventive measures implemented to prevent recurrence
 - Detailed timeline of events
 - Recommendations for [Organization] actions if any
-
 
 ## Required Contract Language
 
@@ -323,7 +312,6 @@ Acceptable alternatives to direct audit:
 - No material findings unresolved without acceptable remediation plan
 - Report date within validity period
 
-
 ---
 
 # Subcontractor Requirements
@@ -376,7 +364,6 @@ Acceptable alternatives to direct audit:
 - Transition assistance commitment (minimum 6 months)
 - Concentration risk mitigation if applicable
 
-
 ## Service Level Requirements
 
 **SLA Elements for Critical/High Suppliers:**
@@ -397,7 +384,6 @@ Acceptable alternatives to direct audit:
 - **Critical (Tier 1)**: 99.95% or higher (max 4.38 hours downtime/year)
 - **High (Tier 2)**: 99.9% (max 8.76 hours downtime/year)
 - **Medium (Tier 3)**: 99.5% (max 43.8 hours downtime/year)
-
 
 **Required SLA Clause**:
 > "Supplier commits to maintain [X]% availability measured monthly. In the event of failure to meet this commitment, Supplier shall provide service credits equal to [Y]% of monthly fees for each [Z]% below target. Service credits do not limit [Organization]'s other remedies for material service failures."
@@ -458,12 +444,10 @@ Acceptable alternatives to direct audit:
 - Complete documentation handover (configurations, procedures, credentials)
 - Cooperation with replacement supplier onboarding
 
-
 **Termination Assistance Fees**:
 
 - For convenience termination: Reasonable fees for transition assistance
 - For cause termination (supplier breach): No additional fees beyond contracted rates
-
 
 **Required Clause**:
 > "Upon termination, Supplier shall provide reasonable transition assistance to facilitate migration to [Organization] or a replacement supplier. For Level 1 services, Supplier shall continue to provide services at contracted rates for up to six (6) months during transition. Supplier shall cooperate fully with knowledge transfer, data migration, and replacement supplier onboarding."
@@ -526,7 +510,6 @@ All supplier agreements shall be tracked in the contract management system inclu
 - Quarterly review for upcoming renewals and required reviews
 - Annual completeness audit by Legal and Security
 
-
 ---
 
 # Regulatory-Specific Requirements
@@ -546,14 +529,12 @@ For suppliers providing ICT services subject to DORA, agreements must include:
 - Business continuity and disaster recovery commitments
 - Exit strategies with data portability and transition assistance
 
-
 **Article 30 - Sub-outsourcing**:
 
 - Register of all sub-outsourcing arrangements
 - Prior notice of sub-outsourcing (30 days minimum)
 - Right to object to sub-outsourcing arrangements
 - Audit rights extending to subcontractors
-
 
 **Implementation**: DORA-covered agreements use specialized template incorporating all Article 28-31 requirements.
 
@@ -567,7 +548,6 @@ For suppliers to NIS2-covered entities, agreements must address:
 - Supplier security assessment documentation
 - Incident notification to enable 24-hour regulatory reporting
 - Supply chain risk assessment participation
-
 
 **Implementation**: NIS2 addendum added to standard agreements for suppliers to essential/important entities.
 
@@ -585,7 +565,6 @@ For suppliers processing personal data, Data Processing Agreement (DPA) must inc
 - Deletion or return at end of services
 - Audit and inspection rights
 - Assistance with regulatory compliance
-
 
 **Standard Contractual Clauses (SCCs)**: For non-EU/EEA suppliers, incorporate EU Commission SCCs (Decision 2021/914) or Swiss-approved equivalents.
 

@@ -34,14 +34,12 @@
 - Compliance: Legal/Compliance Officer
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-POL-A.5.9 (Inventory of Information and Other Associated Assets)
 - ISMS-IMP-A.5.10-11 (Implementation Guidance Suite)
 - ISO/IEC 27001:2022 Controls A.5.10, A.5.11
-
 
 ---
 
@@ -82,7 +80,6 @@ This policy establishes [Organisation]'s requirements for the acceptable use of 
 - Verification and sign-off requirements for asset return
 - Integration with [Organisation]'s asset inventory (per ISMS-POL-A.5.9)
 
-
 ## What This Policy Does
 
 This policy:
@@ -93,7 +90,6 @@ This policy:
 - **Defines** accountability for asset usage governance and return verification
 - **References** applicable regulatory requirements per ISMS-POL-00
 
-
 ## What This Policy Does NOT Do
 
 This policy does NOT:
@@ -103,13 +99,11 @@ This policy does NOT:
 - **Provide offboarding checklists** (see ISMS-IMP-A.5.10-11.3 Asset Return Assessment)
 - **Select monitoring or enforcement technologies** (technology selection based on risk assessment)
 
-
 **Rationale**: Separating policy requirements from implementation guidance enables:
 
 - Policy stability despite evolving asset types and technologies
 - Flexibility for operational procedures without policy revision
 - Clear distinction between governance (policy) and execution (implementation)
-
 
 ## Scope
 
@@ -121,14 +115,12 @@ This policy does NOT:
 - All phases (onboarding, active engagement, role change, termination)
 - All third-party individuals with access to organisational assets
 
-
 **Out of Scope**:
 
 - Asset inventory and classification (covered under ISMS-POL-A.5.9)
 - Physical security of assets (covered under ISMS-POL-A.7.x)
 - Data retention and disposal (covered under ISMS-POL-A.8.10)
 - Information classification (covered under ISMS-POL-A.5.12-13)
-
 
 ## Regulatory Applicability
 
@@ -160,7 +152,6 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - NIST Cybersecurity Framework (Protect function - PR.AC, PR.DS)
 - CIS Controls v8 (Control 1: Inventory and Control of Enterprise Assets)
 - ISO/IEC 27002:2022 (Implementation guidance for A.5.10, A.5.11)
-
 
 **Compliance Determination**: [Organisation] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent requirements apply where multiple regulations overlap.
 
@@ -474,7 +465,6 @@ This policy is supported by the following assessment workbooks:
 - Gap analysis and remediation planning
 - Trend analysis and compliance reporting
 
-
 ## Regulatory Mapping
 
 This policy addresses asset management requirements from:
@@ -496,14 +486,12 @@ This policy addresses asset management requirements from:
 - Annual AUP refresher training
 - Updates communicated via email and intranet
 
-
 **Operational Training** (IT, HR):
 
 - Offboarding process and checklists
 - Asset return verification procedures
 - Access revocation procedures
 - Exception handling
-
 
 ---
 

@@ -45,12 +45,10 @@ This document consists of two parts:
   - Cell Styling Reference
   - Formula Specifications
 
-
 **Target Audiences:**
 
 - **Part I:** Assessment users (Repository Owners, DevOps, Security Team)
 - **Part II:** Workbook developers (Python/Excel script maintainers)
-
 
 ---
 
@@ -77,7 +75,6 @@ This assessment documents BRANCH PROTECTION - technical controls that enforce co
 - Is code review happening? (required approvals)
 - Are signed commits configured? (commit author verification)
 
-
 #### Key Principle
 
 This assessment is **completely platform-agnostic**. You document YOUR branch protection configurations on YOUR platform (GitHub, GitLab, Bitbucket, Azure DevOps, etc.) and verify against generic policy requirements.
@@ -88,14 +85,12 @@ This assessment is **completely platform-agnostic**. You document YOUR branch pr
 - Secure coding practices (covered in A.8.25-26-29)
 - What code changes were made (that's development work)
 
-
 **This IS about:**
 
 - Branch protection RULES (what technical controls exist)
 - Pull request ENFORCEMENT (are direct commits blocked)
 - Code review REQUIREMENTS (minimum approvals)
 - CI/CD INTEGRATION (status checks)
-
 
 #### What You'll Document
 
@@ -108,7 +103,6 @@ This assessment is **completely platform-agnostic**. You document YOUR branch pr
 - **Compliance Scoring**: Overall branch protection compliance metrics
 - **Gaps**: Configuration issues and remediation plans
 - **Evidence**: Screenshots, configuration exports, PR logs
-
 
 #### How This Relates to Other A.8.4 Assessments
 
@@ -138,12 +132,10 @@ This assessment (A.8.4.2) focuses specifically on TECHNICAL CONTROLS for code ch
 - Knowledge of CI/CD pipelines and status checks
 - Ability to read platform configuration settings
 
-
 #### Time Commitment
 
 - **Initial assessment:** 6-8 hours (configure + document all repositories)
 - **Quarterly updates:** 1-2 hours (verify configurations, update changes)
-
 
 ### Expected Outputs
 
@@ -175,14 +167,12 @@ Before starting this assessment, gather:
 - **Ability to view protection rules**
 - **API access** for exports (optional but helpful)
 
-
 #### 2. Repository Information
 
 - **Repository list** from IMP-S1 (Repository_Inventory)
 - **Repository classifications** (Production, Internal Tools, etc.)
 - **Main branch names** (main, master, develop)
 - **Release branch patterns** (release/*, hotfix/*)
-
 
 #### 3. CI/CD Information
 
@@ -191,7 +181,6 @@ Before starting this assessment, gather:
 - **Required checks** per repository type
 - **Status check logs** (for verification)
 
-
 #### 4. Code Review Workflow
 
 - **Pull request templates** (if exists)
@@ -199,14 +188,12 @@ Before starting this assessment, gather:
 - **Review approval requirements** per repository type
 - **Historical PR data** (for enforcement verification)
 
-
 #### 5. Documentation
 
 - **Platform configuration guides**
 - **Organization branch protection policies**
 - **Developer workflow documentation**
 - **Exception requests** (if any exist)
-
 
 ### Tools You'll Use
 
@@ -216,7 +203,6 @@ Before starting this assessment, gather:
 - **Screenshot tool** (for configuration evidence)
 - **API clients** (Postman, curl - optional for large orgs)
 
-
 ### Common Data Sources
 
 #### GitHub
@@ -225,13 +211,11 @@ Before starting this assessment, gather:
 - GitHub CLI: `gh api repos/{owner}/{repo}/branches/main/protection`
 - Organization → Settings → Repository defaults
 
-
 #### GitLab
 
 - Project → Settings → Repository → Protected branches
 - Project → Settings → Merge requests → Merge request approvals
 - GitLab API: `/api/v4/projects/{id}/protected_branches`
-
 
 #### Bitbucket
 
@@ -239,13 +223,11 @@ Before starting this assessment, gather:
 - Repository settings → Merge checks
 - Bitbucket API: `/2.0/repositories/{workspace}/{repo}/branch-restrictions`
 
-
 #### Azure DevOps
 
 - Project Settings → Repositories → Policies
 - Branch policies per branch
 - Azure DevOps API: `GET https://dev.azure.com/{org}/{project}/_apis/policy/configurations`
-
 
 ### Skills Assessment
 
@@ -258,13 +240,11 @@ Before starting this assessment, gather:
 - [ ] Take screenshots of configurations
 - [ ] Export protection rules (via UI or API)
 
-
 **If you answered NO to any item**, get help from:
 
 - Platform administrator (for access)
 - DevOps team (for CI/CD integration)
 - Development leads (for PR workflow)
-
 
 ---
 
@@ -315,7 +295,6 @@ Step 10: Obtain Approvals
 - Classification of branch types (Main, Release, Development)
 - Protection requirements per branch type
 
-
 #### Step 2: Document Protection Rules (2-3 hours)
 
 **What to do:**
@@ -340,7 +319,6 @@ Step 10: Obtain Approvals
 - Per-branch compliance scores
 - Gaps identified (missing rules)
 
-
 #### Step 3: Assess Pull Request Configuration (1 hour)
 
 **What to do:**
@@ -360,7 +338,6 @@ Step 10: Obtain Approvals
 
 - PR configuration matrix
 - Compliance status per repository
-
 
 #### Step 4: Verify Status Checks (1-2 hours)
 
@@ -387,7 +364,6 @@ Step 10: Obtain Approvals
 - CI/CD integration compliance
 - Missing checks identified
 
-
 #### Step 5: Audit Signed Commits (1 hour)
 
 **What to do:**
@@ -406,7 +382,6 @@ Step 10: Obtain Approvals
 - Signed commit adoption rate
 - GPG infrastructure status
 - Training completion status
-
 
 #### Step 6: Track Exceptions (30 minutes)
 
@@ -429,7 +404,6 @@ Step 10: Obtain Approvals
 - Expired exceptions identified
 - Review schedule
 
-
 #### Step 7: Calculate Compliance (automated)
 
 **What happens:**
@@ -441,13 +415,11 @@ Step 10: Obtain Approvals
   - Signed commit adoption (≥80% target)
   - **Overall Score** (weighted average)
 
-
 **What you do:**
 
 - Review calculated scores
 - Understand drivers of low scores
 - Plan remediation if score <85%
-
 
 #### Step 8: Identify Gaps (1 hour)
 
@@ -471,7 +443,6 @@ Step 10: Obtain Approvals
 - No code review required (0 approvals)
 - CI/CD tests not blocking merge
 
-
 #### Step 9: Collect Evidence (1 hour)
 
 **What to do:**
@@ -489,7 +460,6 @@ Step 10: Obtain Approvals
 - Recent PR with review enforcement
 - CI/CD test logs showing required checks
 - Signed commit examples (if applicable)
-
 
 #### Step 10: Obtain Approvals (1-2 days elapsed time)
 
@@ -519,7 +489,6 @@ Step 10: Obtain Approvals
 - Identify active branches (not just default branch)
 - List main, release, and development branches
 
-
 **Option 2: Command Line / API**
 ```bash
 # GitHub - list branches
@@ -537,23 +506,19 @@ glab api projects/{id}/protected_branches
 
 - Must match exactly (no typos)
 
-
 **Column B - Repository Platform**: GitHub, GitLab, Bitbucket, Azure DevOps
 
 - Dropdown selection
-
 
 **Column C - Repository Classification**: Production Code, Internal Tools, Open Source, Archived
 
 - From IMP-S1 (consistency critical)
 - Drives protection requirements
 
-
 **Column D - Branch Name**: Exact branch name
 
 - Examples: `main`, `master`, `release/v2.1`, `develop`
 - Match platform exactly (case-sensitive)
-
 
 **Column E - Branch Type**: Main, Release, Development, Feature, Hotfix
 
@@ -562,7 +527,6 @@ glab api projects/{id}/protected_branches
 - **Development**: Integration branch (develop, staging)
 - **Feature**: Short-lived feature branches (typically no protection)
 - **Hotfix**: Emergency fix branches (release/* pattern)
-
 
 **Column F - Protection Required**: ✅ Yes, ❌ No, ➖ N/A
 
@@ -573,7 +537,6 @@ glab api projects/{id}/protected_branches
   - Internal Tools + Release branch = ✅ Yes
   - Development branches = ❌ No (optional)
   - Feature branches = ➖ N/A (typically not protected)
-
 
 **Column G - Protection Configured**: ✅ Yes, ❌ No, ⚠️ Partial
 
@@ -586,14 +549,12 @@ glab api projects/{id}/protected_branches
 - **⚠️ Partial**: Some rules enabled, not all
 - **❌ No**: No protection configured
 
-
 **Column H - Status**: ✅ Compliant, ⚠️ Partial, ❌ Non-Compliant
 
 - **✅ Compliant**: Protection required AND protection configured
 - **⚠️ Partial**: Protection required BUT only partial configuration
 - **❌ Non-Compliant**: Protection required BUT not configured
 - **Auto-formula**: =IF(F="✅ Yes", IF(G="✅ Yes","✅ Compliant",IF(G="⚠️ Partial","⚠️ Partial","❌ Non-Compliant")),"➖ N/A")
-
 
 **Quality Checks:**
 
@@ -603,7 +564,6 @@ glab api projects/{id}/protected_branches
 - [ ] Classifications match IMP-S1
 - [ ] Protection requirements align with policy
 - [ ] All production + main = "Protection Required: ✅ Yes"
-
 
 ---
 
@@ -635,11 +595,9 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - Web UI: Repository settings → Branch permissions
 - Note: Bitbucket combines permissions in single UI
 
-
 **Azure DevOps:**
 
 - Web UI: Project Settings → Repositories → Policies → [Branch]
-
 
 #### Completing the Columns
 
@@ -656,12 +614,10 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - **Azure DevOps**: "Require a minimum number of reviewers" enabled
 - **Should be ✅ Yes** for all production main/release branches
 
-
 **Column D - Pull Request Required**: ✅ Yes, ❌ No
 
 - **Same as Column C** (different phrasing for clarity)
 - If direct commits blocked → PR required
-
 
 **Column E - Required Approvals**: Number (0, 1, 2, 3+)
 
@@ -673,7 +629,6 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - **Bitbucket**: "Require approvals"
 - **Azure DevOps**: "Minimum number of reviewers"
 
-
 **Column F - Dismiss Stale Reviews**: ✅ Yes, ❌ No
 
 - **What this means**: When new commits pushed, old approvals invalidated?
@@ -682,7 +637,6 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - **Bitbucket**: "Dismiss approvals when new changes are pushed"
 - **Azure DevOps**: "Reset code reviewer votes when there are new changes"
 - **Should be ✅ Yes** to prevent approval bypass
-
 
 **Column G - Code Owner Review Required**: ✅ Yes, ❌ No, ➖ N/A
 
@@ -693,7 +647,6 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - **Azure DevOps**: "Automatically include code reviewers"
 - **➖ N/A** if no CODEOWNERS file (can't enforce)
 
-
 **Column H - Status Checks Required**: ✅ Yes, ❌ No, ⚠️ Partial
 
 - **What this means**: Must CI/CD tests pass before merge?
@@ -703,7 +656,6 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - **Azure DevOps**: "Build validation" policy
 - **⚠️ Partial**: Some checks required, but not all (e.g., only build, not security)
 
-
 **Column I - Status Check List**: Text (comma-separated)
 
 - **List required checks**:
@@ -711,7 +663,6 @@ curl --header "PRIVATE-TOKEN: <token>" \
   - GitHub: Listed in "Status checks found in the last week"
   - GitLab: Pipeline job names required for merge
 - **Leave blank if Column H = ❌ No**
-
 
 **Column J - Signed Commits Required**: ✅ Yes, ❌ No, ➖ N/A
 
@@ -722,7 +673,6 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - **Azure DevOps**: ➖ N/A (not natively supported)
 - **➖ N/A** if platform doesn't support OR organization hasn't implemented GPG
 
-
 **Column K - Linear History Enforced**: ✅ Yes, ❌ No
 
 - **What this means**: Merge commits prevented (squash/rebase only)?
@@ -731,7 +681,6 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - **Bitbucket**: Merge strategy setting
 - **Azure DevOps**: Branch policies → Merge type
 - **Optional** for most organizations (stylistic preference)
-
 
 **Column L - Compliance Score**: Formula (automated)
 
@@ -743,14 +692,12 @@ curl --header "PRIVATE-TOKEN: <token>" \
   - Score: 80%
 - **Formula**: See PART II Technical Specification
 
-
 **Column M - Status**: ✅ Compliant, ⚠️ Partial, ❌ Non-Compliant
 
 - **Based on Compliance Score:**
   - ✅ Compliant: 100% (all required rules enabled)
   - ⚠️ Partial: 50-99% (some rules missing)
   - ❌ Non-Compliant: <50% (major gaps)
-
 
 **Quality Checks:**
 
@@ -759,7 +706,6 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - [ ] Direct commits blocked for all production branches
 - [ ] Status checks required where CI/CD exists
 - [ ] Compliance scores calculated correctly
-
 
 ---
 
@@ -776,18 +722,15 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - Same as Sheet 2 Column E (Required Approvals)
 - Verify consistency
 
-
 **Column C - Code Owner Review**: ✅ Required, ⚠️ Optional, ❌ No
 
 - **✅ Required**: Enforced via branch protection + CODEOWNERS
 - **⚠️ Optional**: CODEOWNERS exists but not enforced
 - **❌ No**: No CODEOWNERS file
 
-
 **Column D - Dismiss Stale Approvals**: ✅ Yes, ❌ No
 
 - Same as Sheet 2 Column F
-
 
 **Column E - Restrict Dismiss**: ✅ Yes, ❌ No
 
@@ -796,14 +739,12 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - **GitLab**: "Prevent approval by author"
 - **Purpose**: Prevent developers from dismissing negative reviews
 
-
 **Column F - Conversation Resolution**: ✅ Required, ⚠️ Optional, ❌ No
 
 - **GitHub**: "Require conversation resolution before merging"
 - **GitLab**: "All discussions must be resolved"
 - **Bitbucket**: "All tasks must be resolved"
 - **Ensures comments addressed before merge**
-
 
 **Column G - Self-Approval Blocked**: ✅ Yes, ❌ No
 
@@ -812,14 +753,12 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - **Bitbucket**: Author cannot self-approve (default)
 - **Should be ✅ Yes** (basic code review principle)
 
-
 **Column H - Compliance Status**: ✅ Compliant, ⚠️ Partial, ❌ Non-Compliant
 
 - **Assessment:**
   - ✅ Compliant: All critical settings correct (reviewers, no self-approval, stale dismiss)
   - ⚠️ Partial: Some settings missing
   - ❌ Non-Compliant: Major gaps (0 reviewers, self-approval allowed)
-
 
 ---
 
@@ -837,11 +776,9 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - Azure Pipelines: `azure-pipelines.yml`
 - Jenkins: `Jenkinsfile`
 
-
 **Verify in Branch Protection:**
 
 - Which checks are REQUIRED (not just running)
-
 
 #### Completing the Columns
 
@@ -852,30 +789,25 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - **✅ Yes**: CI/CD pipeline exists AND at least one check is required
 - **❌ No**: No CI/CD OR checks not required
 
-
 **Column C - Build Check**: ✅ Configured, ❌ Missing
 
 - **Build/Compile check** exists and required?
 - Common names: "build", "compile", "ci"
-
 
 **Column D - Test Check**: ✅ Configured, ❌ Missing
 
 - **Unit test / integration test** check exists and required?
 - Common names: "test", "unit-tests", "integration-tests"
 
-
 **Column E - Lint Check**: ✅ Configured, ❌ Missing
 
 - **Code quality / linter** check exists and required?
 - Common names: "lint", "eslint", "pylint", "rubocop"
 
-
 **Column F - Security Check**: ✅ Configured, ❌ Missing
 
 - **Security scanning** check exists and required?
 - Common names: "CodeQL", "Snyk", "security-scan", "SAST"
-
 
 **Column G - All Checks Must Pass**: ✅ Yes, ❌ No
 
@@ -884,7 +816,6 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - GitLab: "Pipelines must succeed" enabled
 - If ❌ No, checks are advisory only (not enforced)
 
-
 **Column H - Up-to-Date Before Merge**: ✅ Yes, ❌ No
 
 - **Must branch be up-to-date with main before merge?**
@@ -892,14 +823,12 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - GitLab: Handled by merge method
 - Prevents merge conflicts
 
-
 **Column I - Compliance Status**: ✅ Compliant, ⚠️ Partial, ❌ Non-Compliant
 
 - **Assessment:**
   - ✅ Compliant: Build + Test configured, checks blocking
   - ⚠️ Partial: Some checks missing (no security scan)
   - ❌ Non-Compliant: No checks OR not blocking
-
 
 ---
 
@@ -915,7 +844,6 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - GitLab: Native GPG support
 - Bitbucket: Limited support
 - Azure DevOps: Not natively supported
-
 
 **Sample Recent Commits:**
 ```bash
@@ -937,7 +865,6 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - Same as Sheet 2 Column J
 - **➖ N/A** if platform doesn't support
 
-
 **Column C - % Commits Signed (Last 30 days)**: Number (0-100%)
 
 - **Sample last 50-100 commits**
@@ -945,13 +872,11 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - **Calculate percentage**
 - **Target: ≥80%** if required
 
-
 **Column D - GPG Infrastructure**: ✅ Implemented, ⚠️ Partial, ❌ Missing
 
 - **✅ Implemented**: GPG keys distributed, developers trained, enforcement active
 - **⚠️ Partial**: Keys distributed but not enforced, or partial adoption
 - **❌ Missing**: No GPG infrastructure
-
 
 **Column E - Developer Training**: ✅ Completed, ⚠️ In Progress, ❌ Not Started
 
@@ -961,14 +886,12 @@ curl --header "PRIVATE-TOKEN: <token>" \
   - Git configuration for auto-signing
   - Troubleshooting signature issues
 
-
 **Column F - Compliance Status**: ✅ Compliant, ⚠️ Partial, ❌ Non-Compliant
 
 - **Assessment:**
   - ✅ Compliant: Required AND ≥80% signed
   - ⚠️ Partial: Required BUT 50-79% signed
   - ❌ Non-Compliant: Required BUT <50% signed
-
 
 ---
 
@@ -985,13 +908,11 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - Legacy repository being decommissioned (archive instead)
 - Technical limitation (platform doesn't support feature)
 
-
 **Invalid reasons:**
 
 - "Too much work to configure" (not acceptable)
 - "Developers don't like it" (not acceptable)
 - "We've always done it this way" (not acceptable)
-
 
 #### Completing the Columns
 
@@ -999,27 +920,22 @@ curl --header "PRIVATE-TOKEN: <token>" \
 
 - Format: EXC-001, EXC-002
 
-
 **Column B - Repository/Branch**: Which repository and branch
 
 - Format: "backend-api / main"
-
 
 **Column C - Exception Reason**: Business justification
 
 - **Be specific**: "Emergency hotfix for production outage - direct commit allowed for 4 hours"
 - **Not acceptable**: "Need to bypass protection"
 
-
 **Column D - Granted By**: Approver name
 
 - CISO approval required for production exceptions
 
-
 **Column E - Grant Date**: When exception granted
 
 - Date format: YYYY-MM-DD
-
 
 **Column F - Expiration Date**: When exception expires
 
@@ -1028,11 +944,9 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - Technical workaround: <90 days
 - Migration: <30 days
 
-
 **Column G - Review Date**: Next review date
 
 - **Before expiration** (monthly for long exceptions)
-
 
 **Column H - Status**: 🟢 Active, 🔴 Expired, ⚪ Revoked
 
@@ -1040,14 +954,12 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - **🟢 Active**: Current and valid
 - **⚪ Revoked**: Ended early (remediation completed)
 
-
 **Quality Checks:**
 
 - [ ] No expired exceptions (all 🔴 must be addressed)
 - [ ] All exceptions have expiration dates (no "permanent")
 - [ ] CISO approval documented for production exceptions
 - [ ] Monthly review scheduled for active exceptions
-
 
 ---
 
@@ -1063,13 +975,11 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - Target: 100%
 - Source: Sheet 2 (Column M = ✅ Compliant)
 
-
 **2. Pull Request Enforcement Rate**
 
 - Formula: (Repositories with PR enforcement / Total repos) × 100%
 - Target: ≥95%
 - Source: Sheet 2 (Column D = ✅ Yes)
-
 
 **3. Status Check Compliance Rate**
 
@@ -1077,26 +987,22 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - Target: 100%
 - Source: Sheet 4 (Column I = ✅ Compliant)
 
-
 **4. Signed Commit Adoption Rate**
 
 - Formula: Average of Column C across all repos requiring signatures
 - Target: ≥80%
 - Source: Sheet 5 (Column C)
 
-
 **5. Overall Branch Protection Score**
 
 - Formula: (Configuration Rate × 40%) + (PR Enforcement × 30%) + (Status Checks × 20%) + (Signed Commits × 10%)
 - Target: ≥85%
-
 
 #### Risk Categorization
 
 - 🟢 Low Risk: Score ≥85%
 - 🟡 Medium Risk: Score 70-84%
 - 🔴 High Risk: Score <70%
-
 
 ---
 
@@ -1112,13 +1018,11 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - Impact: Developers can push directly to production without review
 - Remediation: Enable branch protection on main branch immediately
 
-
 **Gap 2: Zero Required Approvals**
 
 - Risk: 🔴 Critical
 - Impact: No code review happening
 - Remediation: Set minimum 2 reviewers for production, 1 for internal tools
-
 
 **Gap 3: Status Checks Not Blocking**
 
@@ -1126,20 +1030,17 @@ curl --header "PRIVATE-TOKEN: <token>" \
 - Impact: Tests can fail but merge proceeds
 - Remediation: Enable "Require status checks to pass"
 
-
 **Gap 4: Stale Reviews Not Dismissed**
 
 - Risk: 🟡 Medium
 - Impact: Approval given for v1 of code, v2 merged without re-review
 - Remediation: Enable "Dismiss stale approvals"
 
-
 **Gap 5: No Security Checks**
 
 - Risk: 🟠 High
 - Impact: Security vulnerabilities not caught before merge
 - Remediation: Add CodeQL, Snyk, or similar to required checks
-
 
 #### Completing the Columns
 
@@ -1148,7 +1049,6 @@ Same structure as IMP-S1 Gap_Analysis sheet:
 - Gap ID, Description, Policy Requirement
 - Risk Level, Impact, Remediation Plan
 - Responsible Party, Target Date, Status
-
 
 ---
 
@@ -1164,13 +1064,11 @@ Same structure as IMP-S1 Gap_Analysis sheet:
 - Protection rule exports (JSON/CSV)
 - Organization-level defaults (if applicable)
 
-
 **Enforcement Evidence:**
 
 - Recent PR showing review enforcement (attempt to merge without approval = blocked)
 - CI/CD test logs showing required checks
 - Example of stale approval dismissal
-
 
 **Signed Commit Evidence:**
 
@@ -1178,13 +1076,11 @@ Same structure as IMP-S1 Gap_Analysis sheet:
 - GPG key registry
 - Developer training records
 
-
 **Exception Evidence:**
 
 - Exception request approvals
 - Exception review meeting notes
 - Remediation completion records
-
 
 #### Evidence Naming
 
@@ -1213,7 +1109,6 @@ Same structure as IMP-S1:
 - CISO final approval
 - Next review date (90 days)
 
-
 ---
 
 ## Platform-Specific Configuration Guidance
@@ -1238,7 +1133,6 @@ Same structure as IMP-S1:
 - ✅ Require signed commits (if GPG implemented)
 - ✅ Include administrators
 
-
 **Verification:**
 ```bash
 gh api repos/{owner}/{repo}/branches/main/protection
@@ -1257,7 +1151,6 @@ gh api repos/{owner}/{repo}/branches/main/protection
 - Allowed to push: No one
 - ✅ Code owner approval (if CODEOWNERS exists)
 
-
 **Merge Request Settings:**
 1. Settings → Merge requests
 2. Merge checks:
@@ -1270,7 +1163,6 @@ gh api repos/{owner}/{repo}/branches/main/protection
    - Approvals required: 2 (production), 1 (internal tools)
    - ✅ Prevent approval by author
    - ✅ Remove all approvals when commits are added
-
 
 **Verification:**
 ```bash
@@ -1292,13 +1184,11 @@ glab api projects/{id}/protected_branches/main
 - ✅ Require approvals: 2
 - ✅ Dismiss approvals when new changes are pushed
 
-
 **Merge Checks:**
 
 - Repository settings → Merge checks
 - ✅ Builds must pass
 - ✅ All tasks must be resolved
-
 
 ### Azure DevOps Branch Policies
 
@@ -1314,7 +1204,6 @@ glab api projects/{id}/protected_branches/main
 - ✅ Build validation (select pipeline)
 - ✅ Automatically include code reviewers (if configured)
 
-
 ---
 
 ## Evidence Collection
@@ -1327,13 +1216,11 @@ glab api projects/{id}/protected_branches/main
    - JSON/CSV exports of rules
    - Organization defaults
 
-
 2. **Pull Request Enforcement**
 
    - Blocked merge attempts (no approval)
    - Review workflow examples
    - Code owner review examples
-
 
 3. **Status Check Integration**
 
@@ -1341,20 +1228,17 @@ glab api projects/{id}/protected_branches/main
    - Required check lists
    - Test result examples
 
-
 4. **Signed Commits**
 
    - Verified commit examples
    - GPG key registry
    - Training completion records
 
-
 5. **Exception Management**
 
    - Exception requests with approvals
    - Review meeting notes
    - Remediation records
-
 
 ### Evidence Storage
 
@@ -1394,13 +1278,11 @@ Evidence_A.8.4_Branch_Protection/
 - But NO required reviewers configured (anyone can approve own PR)
 - Or status checks exist but NOT required (can merge with failing tests)
 
-
 **How to Avoid:**
 
 - Check EACH protection rule individually
 - Don't assume platform defaults are sufficient
 - Verify with test (try to bypass protection)
-
 
 ---
 
@@ -1414,13 +1296,11 @@ Evidence_A.8.4_Branch_Protection/
 - GitHub: "Include administrators" is UNCHECKED by default
 - GitLab: Maintainers can bypass by default
 
-
 **How to Fix:**
 
 - GitHub: ✅ "Include administrators"
 - GitLab: Set "Allowed to push" = "No one" (even maintainers)
 - Document any admin bypass in exceptions
-
 
 **Consequence:** Admin bypasses = protection theater (not real protection)
 
@@ -1436,13 +1316,11 @@ Evidence_A.8.4_Branch_Protection/
 - Tests fail → PR still mergeable (checks are advisory only)
 - Need to ENABLE "Require status checks to pass"
 
-
 **How to Verify:**
 
 - Create test PR with failing tests
 - Attempt to merge
 - Should be BLOCKED
-
 
 ---
 
@@ -1462,7 +1340,6 @@ Evidence_A.8.4_Branch_Protection/
 - GitLab: ✅ "Remove all approvals when commits are added"
 - Bitbucket: ✅ "Dismiss approvals when new changes are pushed"
 
-
 ---
 
 ### Pitfall 5: Missing Release Branch Protection
@@ -1474,12 +1351,10 @@ Evidence_A.8.4_Branch_Protection/
 - Release branches deploy to production
 - Unprotected release = backdoor to production
 
-
 **How to Fix:**
 
 - Use branch patterns: `main`, `release/*`, `hotfix/*`
 - Apply same protection to release as main
-
 
 ---
 
@@ -1493,13 +1368,11 @@ Evidence_A.8.4_Branch_Protection/
 - GitLab: "Prevent approval by author" must be ENABLED
 - Bitbucket: Author cannot self-approve (default, but verify)
 
-
 **How to Fix:**
 
 - GitHub: Require 2+ reviewers (author can't be all reviewers)
 - GitLab: ✅ "Prevent approval by author"
 - Test: Create PR as developer, try to approve
-
 
 ---
 
@@ -1512,13 +1385,11 @@ Evidence_A.8.4_Branch_Protection/
 - Backend code owned by backend team
 - Frontend developer can approve backend PR (no backend owner review)
 
-
 **How to Fix:**
 
 - GitHub: ✅ "Require review from Code Owners"
 - GitLab: ✅ "Code owner approval"
 - Verify CODEOWNERS file syntax is correct
-
 
 ---
 
@@ -1532,13 +1403,11 @@ Evidence_A.8.4_Branch_Protection/
 - Functionality tested
 - Security vulnerabilities NOT scanned (CodeQL, Snyk, etc.)
 
-
 **How to Fix:**
 
 - Add security scanner to CI/CD
 - Require security check in branch protection
 - Examples: CodeQL, Snyk, SonarQube, Checkmarx
-
 
 ---
 
@@ -1552,13 +1421,11 @@ Evidence_A.8.4_Branch_Protection/
 - Must be reviewed monthly
 - Expired exceptions = non-compliance
 
-
 **How to Fix:**
 
 - Set expiration dates for ALL exceptions
 - Monthly exception review meeting
 - Auto-alert on expiration
-
 
 ---
 
@@ -1572,13 +1439,11 @@ Evidence_A.8.4_Branch_Protection/
 - Actual platform configuration: 0 required reviewers
 - Auditor spot-checks → Finds discrepancy → Audit finding
 
-
 **How to Avoid:**
 
 - Document ACTUAL current state (not aspirational)
 - Screenshot configurations as evidence
 - Spot-check random repositories
-
 
 ---
 
@@ -1595,7 +1460,6 @@ Before submitting assessment for approval:
 - [ ] Release branches identified (if exist)
 - [ ] Protection requirements align with policy
 
-
 **Branch Protection Details:**
 
 - [ ] Every protected branch has rule details documented
@@ -1603,13 +1467,11 @@ Before submitting assessment for approval:
 - [ ] Direct commits blocked for production
 - [ ] Status checks required where CI/CD exists
 
-
 **Pull Request Configuration:**
 
 - [ ] PR settings documented for all repos
 - [ ] Self-approval blocked
 - [ ] Stale approval dismissal enabled
-
 
 **Status Check Verification:**
 
@@ -1617,13 +1479,11 @@ Before submitting assessment for approval:
 - [ ] Required checks identified
 - [ ] Blocking enforcement verified
 
-
 **Signed Commits:**
 
 - [ ] Signature requirements documented
 - [ ] Adoption percentages calculated
 - [ ] GPG infrastructure status assessed
-
 
 **Exceptions:**
 
@@ -1631,20 +1491,17 @@ Before submitting assessment for approval:
 - [ ] No expired exceptions (or remediation plan)
 - [ ] CISO approvals present
 
-
 **Compliance Scoring:**
 
 - [ ] All formulas calculate correctly
 - [ ] Overall score is accurate
 - [ ] Risk categorization appropriate
 
-
 **Gap Analysis:**
 
 - [ ] All non-compliant items documented
 - [ ] Remediation plans are specific
 - [ ] Critical gaps have near-term dates
-
 
 **Evidence:**
 
@@ -1653,12 +1510,10 @@ Before submitting assessment for approval:
 - [ ] CI/CD logs saved
 - [ ] Files organized in structure
 
-
 **Approval:**
 
 - [ ] All signatures obtained
 - [ ] Next review date scheduled
-
 
 ### Accuracy
 
@@ -1667,20 +1522,17 @@ Before submitting assessment for approval:
 - [ ] Status checks verified (test with failing PR)
 - [ ] Signed commit percentages accurate (sample verification)
 
-
 ### Honesty
 
 - [ ] Documented actual state (not aspirational)
 - [ ] Gaps documented honestly (not hidden)
 - [ ] Compliance scores reflect reality
 
-
 ### Auditability
 
 - [ ] All claims backed by evidence
 - [ ] Screenshots show current dates
 - [ ] Evidence is organized and labeled
-
 
 ---
 
@@ -1699,7 +1551,6 @@ Same process as IMP-S1:
 - Compliance score ≥85% OR remediation plan for gaps
 - Evidence collected and organized
 - No critical gaps OR immediate remediation planned
-
 
 ---
 
@@ -1729,7 +1580,6 @@ Same process as IMP-S1:
 - `create_compliance_formulas()`: Compliance calculations
 - `create_evidence_register()`: Evidence tracking
 - `create_approval_signoff()`: Approval workflow
-
 
 **File Naming:** `ISMS-IMP-A.8.4.2_Branch_Protection_YYYYMMDD.xlsx`
 
@@ -1824,13 +1674,11 @@ Allow blank: No
 - 🟢 Open Source: Green fill (#C6EFCE)
 - ⚪ Archived: Gray fill (#D9D9D9)
 
-
 **Column H (Status):**
 
 - ✅ Compliant: Green background
 - ⚠️ Partial: Yellow background
 - ❌ Non-Compliant: Red background
-
 
 ---
 
@@ -1913,20 +1761,17 @@ Allow blank: No
 - 1: Yellow background (internal tools standard)
 - 0: Red background (non-compliant)
 
-
 **Column L (Compliance Score):**
 
 - 100%: Green background
 - 50-99%: Yellow background
 - <50%: Red background
 
-
 **Column M (Status):**
 
 - ✅ Compliant: Green background
 - ⚠️ Partial: Yellow background
 - ❌ Non-Compliant: Red background
-
 
 ---
 
@@ -2017,7 +1862,6 @@ Allow blank: No
 - 50-79%: Yellow background
 - <50%: Red background
 
-
 ---
 
 ## Sheet 7: Exception_Management
@@ -2050,7 +1894,6 @@ Allow blank: No
 - 🔴 Expired: Red background (CRITICAL)
 - 🟢 Active: Green background
 - ⚪ Revoked: Gray background
-
 
 **Column F (Expiration Date):**
 ```
@@ -2117,13 +1960,11 @@ Cell B20: =IF(B17>=85,"🟢 Low Risk",
 - ≥Target: Green background
 - <Target: Red background
 
-
 **Row 20 (Risk Level):**
 
 - 🟢 Low Risk: Green background
 - 🟡 Medium Risk: Yellow background
 - 🔴 High Risk: Red background
-
 
 ---
 
@@ -2140,7 +1981,6 @@ Same as IMP-S1 Gap_Analysis with standard columns:
 - Responsible Party, Target Date, Estimated Effort
 - Status, Actual Completion, Verification Method, Verification Date
 - Notes
-
 
 **Reference IMP-S1 PART II for detailed specifications**
 
@@ -2159,7 +1999,6 @@ Same as IMP-S1 Evidence_Register with standard columns:
 - Retention Period, Retention End, Auditor Reviewed
 - Auditor Comments, Notes
 
-
 **Reference IMP-S1 PART II for detailed specifications**
 
 ---
@@ -2177,7 +2016,6 @@ Same as IMP-S1 Approval_Sign_Off:
 - CISO Approval
 - Next Review Date (+90 days)
 
-
 **Reference IMP-S1 PART II for detailed specifications**
 
 ---
@@ -2193,7 +2031,6 @@ Same as IMP-S1 Approval_Sign_Off:
 - Alignment: Center
 - Height: 40px
 
-
 **Subheader (Row 2):**
 
 - Font: Calibri 11pt bold white
@@ -2201,14 +2038,12 @@ Same as IMP-S1 Approval_Sign_Off:
 - Alignment: Center
 - Height: 30px
 
-
 **Column Header (Row 3):**
 
 - Font: Calibri 10pt bold black
 - Fill: #D9D9D9 (light gray)
 - Alignment: Center, text wrap
 - Border: Thin black
-
 
 ### Input Cell Styles
 
@@ -2218,13 +2053,11 @@ Same as IMP-S1 Approval_Sign_Off:
 - Border: Thin gray
 - Font: Calibri 10pt
 
-
 **Formula (Read-only):**
 
 - Fill: #E7F3FF (light blue)
 - Protection: Locked
 - Font: Calibri 10pt
-
 
 ### Status Colors
 
@@ -2233,30 +2066,25 @@ Same as IMP-S1 Approval_Sign_Off:
 - Fill: #C6EFCE
 - Text: #006100
 
-
 **Yellow (Partial/Warning):**
 
 - Fill: #FFEB9C
 - Text: #9C6500
-
 
 **Red (Non-Compliant):**
 
 - Fill: #FFC7CE
 - Text: #9C0006
 
-
 **Blue (In Progress):**
 
 - Fill: #B4C7E7
 - Text: #002060
 
-
 **Gray (N/A):**
 
 - Fill: #D9D9D9
 - Text: #404040
-
 
 ---
 
@@ -2266,11 +2094,9 @@ Same as IMP-S1 Approval_Sign_Off:
 
 - Freeze at **A4** (headers visible when scrolling)
 
-
 **Approval Sheet (11):**
 
 - Freeze at **A3**
-
 
 ---
 
@@ -2282,18 +2108,15 @@ Same as IMP-S1 Approval_Sign_Off:
 - Formula cells (Compliance_Scoring)
 - Instructions sheet
 
-
 **Unprotected:**
 
 - User input cells (light yellow)
 - Data entry rows (4+)
 
-
 **Sheet Protection:**
 
 - Allow: Select unlocked, format cells, insert rows, delete rows, sort, filter
 - Disallow: Edit locked cells, modify formulas
-
 
 ---
 
@@ -2327,7 +2150,6 @@ python excel_sanity_check_a84_2.py ISMS-IMP-A.8.4.2_Branch_Protection_20260125.x
 **Change Log:**
 
 - v1.0: Initial workbook structure
-
 
 ---
 

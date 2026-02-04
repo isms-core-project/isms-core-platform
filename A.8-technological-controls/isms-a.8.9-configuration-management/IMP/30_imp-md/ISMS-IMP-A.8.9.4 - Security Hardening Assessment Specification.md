@@ -47,14 +47,12 @@ implementation of security-focused configuration controls.
 - Creates framework for documenting exceptions and risk acceptance
 - Enables integration with vulnerability management and configuration monitoring
 
-
 **As ISMS Auditor:**
 
 - Delivers objective evidence of hardening posture across asset inventory
 - Quantifies compliance against documented hardening standards
 - Verifies that high-risk gaps receive appropriate treatment
 - Confirms that exceptions follow formal risk acceptance procedures
-
 
 ---
 
@@ -69,13 +67,11 @@ framework:
 - Baselines serve as reference point for hardening compliance assessment
 - Hardening controls are incorporated into baseline documentation
 
-
 **A.8.9.2 (Change Control):**
 
 - Changes that reduce hardening posture require heightened scrutiny
 - Security-impacting changes should trigger hardening re-assessment
 - Hardening exceptions may require change approval for implementation
-
 
 **A.8.9.3 (Configuration Monitoring):**
 
@@ -83,13 +79,11 @@ framework:
 - Critical drift in hardened controls requires immediate attention
 - Monitoring tools validate ongoing hardening compliance
 
-
 **A.5.7 (Threat Intelligence):**
 
 - Emerging threats inform hardening standard updates
 - New attack vectors may require new hardening controls
 - Threat landscape drives prioritization of hardening remediation
-
 
 **A.5.23 (Information Security for Cloud Services):**
 
@@ -97,12 +91,10 @@ framework:
 - Multi-tenancy considerations affect hardening approach
 - Shared responsibility model impacts hardening requirements
 
-
 **A.8.10 (Information Deletion):**
 
 - Secure deletion may be part of hardening requirements
 - Storage media hardening includes data sanitization controls
-
 
 ---
 
@@ -130,7 +122,6 @@ All information assets within the ISMS scope that are subject to hardening stand
 - Cloud resources (IaaS, PaaS, SaaS configurations)
 - IoT/OT systems (industrial control systems, embedded devices)
 
-
 **Hardening Standards:**
 [Organization] defines applicable hardening standards through risk assessment. Common 
 standard categories include:
@@ -141,7 +132,6 @@ standard categories include:
 - Framework controls (NIST 800-53, ISO 27002 technical controls)
 - Custom organizational standards (developed for specific contexts)
 
-
 **CRITICAL - Generic Framework:**
 This assessment does NOT prescribe specific hardening standards. [Organization] determines 
 applicable standards during risk assessment based on:
@@ -151,7 +141,6 @@ applicable standards during risk assessment based on:
 - Industry best practices relevant to [Organization]'s sector
 - Threat landscape and risk appetite
 - Technical feasibility and operational requirements
-
 
 ### Assessment Methodology
 
@@ -164,14 +153,12 @@ applicable standards during risk assessment based on:
 - Identify control categories within each standard
 - Establish compliance targets (typically ≥95% for non-critical, 100% for critical)
 
-
 **Phase 2: Control Assessment (Auditor Perspective)**
 
 - Review asset configurations against applicable hardening controls
 - Document implementation status: Implemented, Partial, Not Implemented, Not Applicable
 - Collect evidence of control implementation (configuration exports, screenshots, etc.)
 - Calculate compliance scores at control, asset, and aggregate levels
-
 
 **Phase 3: Gap Analysis & Risk Evaluation (Both Perspectives)**
 
@@ -180,14 +167,12 @@ applicable standards during risk assessment based on:
 - Prioritize remediation based on risk exposure
 - Calculate residual risk for accepted exceptions
 
-
 **Phase 4: Remediation & Exception Management (Both Perspectives)**
 
 - Track remediation activities for identified gaps
 - Document formal risk acceptance for exceptions (when remediation not feasible)
 - Monitor exception aging and trigger re-assessment when appropriate
 - Verify remediation effectiveness through re-assessment
-
 
 ### Success Criteria
 
@@ -199,7 +184,6 @@ applicable standards during risk assessment based on:
 - **Exception Aging**: No exceptions >12 months without re-assessment
 - **Evidence Completeness**: ≥95% of implemented controls have supporting evidence
 
-
 **Process Maturity Indicators:**
 
 - Documented standard for determining hardening applicability
@@ -207,7 +191,6 @@ applicable standards during risk assessment based on:
 - Integration with vulnerability management and patch management
 - Executive oversight of high-risk exceptions
 - Continuous improvement based on threat intelligence
-
 
 ---
 
@@ -243,7 +226,6 @@ Provide comprehensive guidance for completing the security hardening assessment.
 - Relationship to Control A.8.9 (Configuration Management)
 - Integration with A.8.9.1 (Baseline), A.8.9.3 (Monitoring), A.5.7 (Threat Intel)
 
-
 **Section 2: Key Concepts**
 
 - **Security Hardening**: Systematic reduction of attack surface through security-focused 
@@ -260,7 +242,6 @@ Provide comprehensive guidance for completing the security hardening assessment.
   or Not Applicable
 
 - **Exception**: Documented deviation from hardening requirement with formal risk acceptance
-
 
 **Section 3: Assessment Workflow**
 1. Define applicable hardening standards in Hardening_Standard_Register
@@ -279,14 +260,12 @@ Guidance on determining applicable standards:
 - Vendor security baselines (manufacturer recommended practices)
 - Custom standards developed for [Organization]'s specific context
 
-
 **Section 5: Implementation Status Definitions**
 
 - **Implemented**: Control fully implemented and verified
 - **Partial**: Control partially implemented (e.g., 80% of requirement met)
 - **Not Implemented**: Control not implemented, gap exists
 - **Not Applicable**: Control does not apply to this asset (with justification)
-
 
 **Section 6: Exception Management**
 
@@ -295,14 +274,12 @@ Guidance on determining applicable standards:
 - Compensating controls (when exception creates residual risk)
 - Exception review frequency (typically annual or when risk landscape changes)
 
-
 **Section 7: Evidence Collection**
 
 - Configuration exports (baseline vs. current state comparison)
 - Security tool reports (vulnerability scanners, compliance tools)
 - Manual verification documentation (screenshots, audit logs)
 - Exception approval documentation (risk acceptance forms)
-
 
 **Section 8: Integration Points**
 
@@ -311,14 +288,12 @@ Guidance on determining applicable standards:
 - Vulnerability Management: Vulnerabilities often indicate hardening gaps
 - Change Control: Changes that reduce hardening require additional scrutiny
 
-
 **Section 9: Compliance Scoring**
 
 - Control-level score: (Implemented controls / Applicable controls) × 100%
 - Asset-level score: Weighted average across applicable controls
 - Overall score: Aggregate across all assets (weighted by asset criticality)
 - Target: ≥95% overall, 100% for critical assets
-
 
 **Section 10: Roles and Responsibilities**
 
@@ -328,14 +303,12 @@ Guidance on determining applicable standards:
 - **Risk Owner**: Approves exceptions, accepts residual risk
 - **Auditor**: Verifies evidence, validates compliance claims
 
-
 **Formatting:**
 
 - Professional layout with clear section headers
 - Use tables for definitions and workflows
 - Include examples where helpful (generic examples only)
 - Hyperlinks to other sheets for easy navigation
-
 
 ---
 
@@ -378,7 +351,6 @@ Document all security hardening standards applicable within [Organization]'s ISM
 - Framework Control (ISO 27002, NIST 800-53 technical controls)
 - Custom Organizational Standard
 
-
 **Data Validation:**
 
 - Standard_ID: Auto-generated as "HS-NNN" where NNN is sequential
@@ -390,7 +362,6 @@ Document all security hardening standards applicable within [Organization]'s ISM
 - Review_Frequency: Restrict to dropdown
 - Status: Restrict to dropdown
 
-
 **Conditional Formatting:**
 
 - Next_Review_Date past due: Red background
@@ -398,14 +369,12 @@ Document all security hardening standards applicable within [Organization]'s ISM
 - Status = "Deprecated": Gray text
 - Mandatory_Optional = "Mandatory" AND Implementation_Target <95%: Orange background
 
-
 **Default Values:**
 
 - Implementation_Target: 95%
 - Review_Frequency: Quarterly
 - Status: Active
 - Mandatory_Optional: Mandatory
-
 
 ### Usage Notes
 
@@ -419,7 +388,6 @@ are applicable based on:
 - Risk assessment outcomes
 - Technical feasibility
 
-
 **Purpose (Auditor Perspective):**
 Provides traceability for why specific hardening standards are in scope. Auditor can 
 verify:
@@ -428,7 +396,6 @@ verify:
 - Mandatory standards are actually assessed
 - Review frequency is reasonable and followed
 - Deprecated standards are not still being used
-
 
 **Typical Row Count**: 15-30 standards (varies by organization complexity)
 
@@ -441,7 +408,6 @@ verify:
 
 - Implementation targets may vary (e.g., 100% for critical controls, 95% for others)
 - Some standards may be marked Optional for aspirational hardening
-
 
 ---
 
@@ -471,7 +437,6 @@ Use the **43-type asset taxonomy** from A.8.9.1 (Baseline Configuration) for con
 - Application Server
 - Legacy System
 
-
 **Endpoint (7 types):**
 
 - Corporate Workstation
@@ -481,7 +446,6 @@ Use the **43-type asset taxonomy** from A.8.9.1 (Baseline Configuration) for con
 - Mobile Device (BYOD)
 - Thin Client
 - Kiosk/Shared Terminal
-
 
 **Network Services (8 types):**
 
@@ -494,7 +458,6 @@ Use the **43-type asset taxonomy** from A.8.9.1 (Baseline Configuration) for con
 - Load Balancer
 - VPN Concentrator
 
-
 **Applications (7 types):**
 
 - Web Application
@@ -504,7 +467,6 @@ Use the **43-type asset taxonomy** from A.8.9.1 (Baseline Configuration) for con
 - Email System
 - Authentication Service (IAM)
 - Monitoring/Logging System
-
 
 **Cloud & Virtual (7 types):**
 
@@ -516,7 +478,6 @@ Use the **43-type asset taxonomy** from A.8.9.1 (Baseline Configuration) for con
 - Cloud Storage Bucket
 - Cloud Network Configuration
 
-
 **IoT & OT (5 types):**
 
 - Building Management System
@@ -524,7 +485,6 @@ Use the **43-type asset taxonomy** from A.8.9.1 (Baseline Configuration) for con
 - Industrial Control System (ICS)
 - SCADA System
 - IoT Sensor/Device
-
 
 **Column Headers (Standard_ID):**
 Dynamically populated from Hardening_Standard_Register (Standard_ID + Standard_Name)
@@ -537,7 +497,6 @@ Dropdown for each cell:
 - **Optional**: This standard may be applied at discretion
 - **Not Applicable**: This standard does not apply to this asset type
 - **(blank)**: Not yet assessed
-
 
 **Additional Columns (After Matrix):**
 
@@ -555,7 +514,6 @@ Dropdown for each cell:
 - "Optional": Light blue background
 - "Not Applicable": Gray background
 - Blank: White background (yellow border as warning)
-
 
 ### Usage Notes
 
@@ -628,7 +586,6 @@ hardening standards.
 - Medium (Target: ≥95% compliance)
 - Low (Target: ≥90% compliance)
 
-
 **Compliance_Status Logic:**
 ```
 IF Compliance_Percentage = 100% AND High_Risk_Gaps = 0: "Fully Compliant"
@@ -647,7 +604,6 @@ ELSE: "Non-Compliant"
 - Completed
 - Accepted as Exception
 
-
 **Data Validation:**
 
 - Asset_ID: Must exist in A.8.9.1 Baseline Configuration
@@ -657,7 +613,6 @@ ELSE: "Non-Compliant"
 - Compliance_Percentage: Auto-calculate, not editable
 - Compliance_Status: Formula-driven, not editable
 - Remediation_Status: Restrict to dropdown
-
 
 **Conditional Formatting:**
 
@@ -670,7 +625,6 @@ ELSE: "Non-Compliant"
 - Asset_Tier = "Critical" AND Compliance_Percentage < 100%: Red border
 - Next_Assessment_Date past due: Red background
 - Next_Assessment_Date within 30 days: Yellow background
-
 
 **Formulas (Implemented in Python):**
 ```excel
@@ -694,7 +648,6 @@ Single view showing hardening posture for each asset. Enables:
 - Resource allocation (assets with most gaps need most effort)
 - Progress tracking (are we improving over time?)
 
-
 **Purpose (Auditor Perspective):**
 Provides evidence that:
 
@@ -704,7 +657,6 @@ Provides evidence that:
 - Assessment frequency is appropriate and followed
 - Evidence exists for compliance claims
 
-
 **Key Calculations:**
 
 - **Compliance_Percentage** uses weighted scoring:
@@ -713,7 +665,6 @@ Provides evidence that:
   - Not Implemented = 0.0 (no credit)
   - Not Applicable excluded from denominator
   
-
 **Sampling for Assessment:**
 Organizations may not assess every control on every asset every cycle. Risk-based 
 sampling approach:
@@ -723,14 +674,12 @@ sampling approach:
 - **Medium Assets**: Assess high-severity controls, sample others
 - **Low Assets**: Sample-based assessment, focus on new threats
 
-
 **Integration Points:**
 
 - Asset_ID links to A.8.9.1 (Baseline Configuration)
 - Evidence_Reference links to Evidence_Register sheet
 - Gaps drive entries in Remediation_Tracking sheet
 - Exceptions documented in Exception_Management sheet
-
 
 ---
 
@@ -794,14 +743,12 @@ view that supports the asset-level summary in Sheet 4.
 - Cryptography
 - Backup & Recovery
 
-
 **Control_Severity Dropdown Values:**
 
 - Critical: Catastrophic risk if not implemented
 - High: Significant risk if not implemented
 - Medium: Moderate risk if not implemented
 - Low: Minor risk if not implemented
-
 
 **Implementation_Status Dropdown Values:**
 
@@ -812,7 +759,6 @@ view that supports the asset-level summary in Sheet 4.
 - Planned: Control planned for future implementation
 - In Progress: Currently being implemented
 
-
 **Implementation_Method Dropdown Values:**
 
 - Automated Tool: Implemented via security tool (e.g., GPO, configuration manager)
@@ -822,14 +768,12 @@ view that supports the asset-level summary in Sheet 4.
 - Compensating Control: Alternative control provides equivalent protection
 - Not Implemented: No implementation
 
-
 **Compliance_Status Dropdown Values:**
 
 - Pass: Control fully compliant with standard
 - Fail: Control non-compliant, gap exists
 - Partial: Control partially compliant
 - N/A: Control marked Not Applicable
-
 
 **Verification_Method Dropdown Values:**
 
@@ -840,7 +784,6 @@ view that supports the asset-level summary in Sheet 4.
 - Test/Validation: Active testing of control effectiveness
 - Documentation Review: Verification via procedure/policy review
 
-
 **Data Validation:**
 
 - Control_ID: Auto-generated as "HC-NNNNN" where NNNNN is sequential
@@ -850,7 +793,6 @@ view that supports the asset-level summary in Sheet 4.
 - Compliance_Status: Auto-calculate based on Implementation_Status
 - Remediation_Required: Auto-calculate ("Yes" if Compliance_Status = Fail/Partial)
 
-
 **Conditional Formatting:**
 
 - Compliance_Status = "Pass": Green background
@@ -859,7 +801,6 @@ view that supports the asset-level summary in Sheet 4.
 - Control_Severity = "Critical" AND Compliance_Status = "Fail": Red background, bold
 - Remediation_Required = "Yes" AND Target_Remediation_Date past due: Red text
 - Exception_Status = "Yes": Blue background (highlight exceptions)
-
 
 **Formulas (Implemented in Python):**
 ```excel
@@ -887,7 +828,6 @@ Provides the detailed "how" for each hardening control:
 - What is the evidence?
 - If not implemented, what's the plan?
 
-
 **Purpose (Auditor Perspective):**
 Audit trail for compliance claims:
 
@@ -895,7 +835,6 @@ Audit trail for compliance claims:
 - Gaps are documented with remediation plans
 - Exceptions are formally approved
 - Verification method is appropriate for control type
-
 
 **Assessment Workflow:**
 1. For each asset in Sheet 4, identify applicable standards
@@ -912,7 +851,6 @@ Every "Implemented" control MUST have:
 - Verification_Method (how compliance was verified)
 - Last_Verified_Date (when verification occurred)
 
-
 This prevents "checkbox compliance" where controls are marked implemented without 
 verification.
 
@@ -924,7 +862,6 @@ Control_Compliance_Detail feeds Asset_Hardening_Assessment:
 - Count of "Fail" → Not_Implemented_Controls
 - Count of "N/A" → Not_Applicable_Controls
 - Count where Control_Severity="High" AND Compliance_Status="Fail" → High_Risk_Gaps
-
 
 ---
 
@@ -989,7 +926,6 @@ risk acceptance and compensating controls.
 - Temporary Transition: Short-term exception during system migration
 - Regulatory Conflict: Implementation conflicts with other regulatory requirement
 
-
 **Exception_Status Dropdown Values:**
 
 - Pending Review: Awaiting security team assessment
@@ -1000,7 +936,6 @@ risk acceptance and compensating controls.
 - Expired: Exception has expired, needs renewal or remediation
 - Closed: Exception no longer needed (control implemented or asset decommissioned)
 
-
 **Exception_Duration Dropdown Values:**
 
 - 3 Months
@@ -1009,7 +944,6 @@ risk acceptance and compensating controls.
 - 24 Months
 - Indefinite (requires annual review)
 
-
 **Residual_Risk_Rating Dropdown Values:**
 
 - Critical: Severe risk remains even with compensating controls
@@ -1017,13 +951,11 @@ risk acceptance and compensating controls.
 - Medium: Moderate risk remains
 - Low: Minimal risk remains
 
-
 **Compensating_Control_Effectiveness Dropdown Values:**
 
 - Full: Compensating control provides equivalent protection
 - Partial: Compensating control reduces risk but gap remains
 - None: No effective compensating control available
-
 
 **Data Validation:**
 
@@ -1035,7 +967,6 @@ risk acceptance and compensating controls.
 - Days_Until_Expiry: Formula-driven
 - Review_Required: Formula-driven
 
-
 **Conditional Formatting:**
 
 - Exception_Status = "Approved": Green background
@@ -1046,7 +977,6 @@ risk acceptance and compensating controls.
 - Days_Until_Expiry < 0: Red background (expired)
 - Residual_Risk_Rating = "Critical" OR "High": Red text, bold
 - Compensating_Control_Required = "Yes" AND Compensating_Control_Description = blank: Red border
-
 
 **Formulas (Implemented in Python):**
 ```excel
@@ -1073,7 +1003,6 @@ Provides formal process for handling cases where hardening controls cannot be im
 - Tracks exception lifecycle (request → approval → review → closure)
 - Prevents "exception creep" through expiration enforcement
 
-
 **Purpose (Auditor Perspective):**
 Demonstrates that:
 
@@ -1082,7 +1011,6 @@ Demonstrates that:
 - Compensating controls are in place where feasible
 - Exceptions are periodically reviewed and justified
 - Trend is toward reduction of exceptions over time
-
 
 **Exception Approval Workflow:**
 1. **Request**: Asset owner or security team identifies need for exception
@@ -1103,7 +1031,6 @@ Demonstrates that:
 - Generic justifications ("business requirement") without specific details
 - Exceptions older than 24 months without closure plan
 
-
 **Best Practice:**
 Exceptions should be the exception, not the rule. Target: <5% of applicable controls 
 should be exceptions. If exception rate is higher, reassess whether hardening standards 
@@ -1114,7 +1041,6 @@ are appropriate for [Organization]'s context.
 - Links to Control_Compliance_Detail (Exception_ID referenced)
 - May link to Remediation_Tracking (closure plan may include remediation)
 - Evidence in Evidence_Register (approval documentation)
-
 
 ---
 
@@ -1187,7 +1113,6 @@ closure.
 - Audit Finding: Gap identified during audit
 - Threat Response: Hardening needed due to emerging threat
 
-
 **Discovery_Method Dropdown Values:**
 
 - Security Assessment: Identified during planned assessment
@@ -1197,7 +1122,6 @@ closure.
 - Incident Response: Found during security incident
 - Audit: Identified during audit
 - Threat Intelligence: Identified based on threat intel
-
 
 **Remediation_Strategy Dropdown Values:**
 
@@ -1209,7 +1133,6 @@ closure.
 - Asset Decommission: Remove non-compliant asset
 - Defer: Postpone to future phase
 
-
 **Estimated_Effort Dropdown Values:**
 
 - <1 hour
@@ -1220,14 +1143,12 @@ closure.
 - 2-4 weeks
 - >1 month
 
-
 **Remediation_Priority Dropdown Values:**
 
 - Critical: Immediate action required
 - High: Remediate within 7 days
 - Medium: Remediate within 30 days
 - Low: Remediate within 90 days
-
 
 **Status Dropdown Values:**
 
@@ -1243,12 +1164,10 @@ closure.
 - Closed - Exception: Gap closed via risk acceptance
 - Closed - Not Required: Gap no longer relevant
 
-
 **Verification_Result Dropdown Values:**
 
 - Pass: Remediation successful, gap closed
 - Fail: Remediation unsuccessful, gap remains
-
 
 **Data Validation:**
 
@@ -1262,7 +1181,6 @@ closure.
 - Days_To_Remediate: Formula-driven
 - Days_Overdue: Formula-driven
 
-
 **Conditional Formatting:**
 
 - Status = "Completed": Green background
@@ -1273,7 +1191,6 @@ closure.
 - Asset_Tier = "Critical" AND Status != "Completed": Yellow border
 - Days_Overdue > 7: Red background
 - Completion_Percentage: Color scale (0%=red, 50%=yellow, 100%=green)
-
 
 **Formulas (Implemented in Python):**
 ```excel
@@ -1310,7 +1227,6 @@ Provides systematic tracking of gap remediation from identification to closure:
 - Links remediation to change control (Change_Request_ID)
 - Captures lessons learned to prevent recurrence
 
-
 **Purpose (Auditor Perspective):**
 Demonstrates that:
 
@@ -1319,7 +1235,6 @@ Demonstrates that:
 - High-risk gaps receive prompt attention
 - Remediation effectiveness is verified (not just "done")
 - Trend shows improvement over time (gap closure rate > gap identification rate)
-
 
 **Remediation Workflow:**
 1. **Identification**: Gap identified in Control_Compliance_Detail assessment
@@ -1337,7 +1252,6 @@ Demonstrates that:
 - **Critical Gap Age**: Days since discovery for Critical gaps (target: <7 days)
 - **Blocked Remediation Count**: Count where Status = "Blocked"
 
-
 **Integration Points:**
 
 - Control_ID links to Control_Compliance_Detail (gap source)
@@ -1345,7 +1259,6 @@ Demonstrates that:
 - Change_Request_ID links to A.8.9.2 (Change Control) if remediation requires change
 - Risk_Acceptance_ID links to Exception_Management if gap accepted as exception
 - Evidence_Reference links to Evidence_Register
-
 
 **Best Practice:**
 Set aggressive but realistic targets for remediation:
@@ -1355,7 +1268,6 @@ Set aggressive but realistic targets for remediation:
 - High gaps (High/Medium assets): 14 days
 - Medium gaps: 30 days
 - Low gaps: 90 days
-
 
 Adjust based on [Organization]'s operational constraints, but maintain pressure to close 
 gaps quickly.
@@ -1403,7 +1315,6 @@ Table showing compliance breakdown:
 - Green: Avg Compliance ≥95% AND Non-Compliant = 0
 - Yellow: Avg Compliance ≥90% OR Non-Compliant ≤2
 - Red: Avg Compliance <90% OR Non-Compliant >2 OR (Critical tier AND <100%)
-
 
 **Section 3: Compliance by Hardening Standard**
 
@@ -1459,7 +1370,6 @@ Chart showing compliance trend over time (requires historical data):
 - Target line: 95%
 - Trend line: Linear regression of compliance over time
 
-
 **Data for trend:** 
 Should be populated from previous assessments. Include note: "Trend analysis requires 
 3+ assessment cycles to generate meaningful insights."
@@ -1493,7 +1403,6 @@ Should be populated from previous assessments. Include note: "Trend analysis req
 - Expired exceptions >0: Red background
 - Critical asset non-compliance: Red background
 
-
 ### Dashboard Notes
 
 **Purpose (Implementer Perspective):**
@@ -1504,7 +1413,6 @@ Single-page view of hardening posture for:
 - Trend analysis (are we improving?)
 - Risk communication (where is highest risk)
 
-
 **Purpose (Auditor Perspective):**
 Provides:
 
@@ -1513,14 +1421,12 @@ Provides:
 - Demonstration of continuous improvement
 - Risk-based prioritization of remediation
 
-
 **Refresh Frequency:**
 Dashboard should be refreshed after:
 
 - Completion of hardening assessments
 - Remediation of major gaps
 - Quarterly at minimum (aligned with assessment cycle)
-
 
 **Key Insight - The "So What?" Test:**
 Dashboard must answer:
@@ -1577,7 +1483,6 @@ sequencing.
 - Low: Difficult to exploit or uncommon attack vector
 - Very Low: Theoretical risk only
 
-
 **Priority_Category Values:**
 
 - P0 - Critical & Urgent: Critical asset + High/Critical gap + Overdue
@@ -1585,7 +1490,6 @@ sequencing.
 - P2 - High Priority: High asset + High gap OR Critical asset + Medium gap
 - P3 - Medium Priority: Medium asset + High gap OR High asset + Medium gap
 - P4 - Low Priority: All other combinations
-
 
 **Risk_Score Calculation:**
 ```excel
@@ -1644,7 +1548,6 @@ Tertiary: Days_Until_Target (ascending - most overdue first)
 - Status = "Blocked": Gray background
 - Days_Until_Target < 0: Red text, bold (overdue)
 
-
 **Row Count:** 100 rows (auto-populated from Sheet 7 Remediation_Tracking)
 
 ### Usage Notes
@@ -1657,7 +1560,6 @@ Answers critical question: "What should we fix first?"
 - Highlights batch opportunities (fix multiple similar gaps together)
 - Surfaces dependencies (can't fix B until A is done)
 
-
 **Purpose (Auditor Perspective):**
 Demonstrates:
 
@@ -1665,7 +1567,6 @@ Demonstrates:
 - Critical assets receive priority attention
 - Resources allocated based on risk, not convenience
 - Progress tracking against prioritized plan
-
 
 **Key Insight - Not All Gaps Are Equal:**
 A low-severity gap on a Critical asset may be more important than a high-severity gap 
@@ -1676,14 +1577,12 @@ on a Low asset. Risk_Score incorporates:
 - Exploitation likelihood (how likely to be exploited)
 - Age (how long has gap existed)
 
-
 **Batch Opportunity Analysis:**
 Remediation teams should look for:
 
 - Same control type across multiple assets (e.g., "disable service X" on all Linux servers)
 - Same asset type (e.g., all Windows workstations need same fix)
 - Same standard (e.g., batch implementation of CIS Level 1 controls)
-
 
 Batching reduces effort and ensures consistency.
 
@@ -1693,7 +1592,6 @@ Quick wins provide:
 - Rapid risk reduction (fix 10 quick wins = significant gap closure)
 - Team momentum (visible progress)
 - Stakeholder confidence (demonstrable improvement)
-
 
 Target: Fix all P1/P2 quick wins within 30 days.
 
@@ -1745,7 +1643,6 @@ Centralized repository for all evidence supporting hardening compliance claims.
 - Exception Approval: Risk acceptance documentation
 - Vendor Documentation: Manufacturer security guidance
 
-
 **Evidence_Source Dropdown Values:**
 
 - Automated Tool: Compliance scanning tool, configuration manager
@@ -1757,7 +1654,6 @@ Centralized repository for all evidence supporting hardening compliance claims.
 - Email: Email correspondence (approval, attestation)
 - Meeting Minutes: Documented in meeting
 
-
 **Collection_Method Dropdown Values:**
 
 - API/Script: Automated collection via API or script
@@ -1767,7 +1663,6 @@ Centralized repository for all evidence supporting hardening compliance claims.
 - Report Generation: Generated report from tool
 - Manual Documentation: Manually documented observation
 - Copy/Paste: Copied from source system
-
 
 **Evidence_Validity_Period Dropdown Values:**
 
@@ -1779,7 +1674,6 @@ Centralized repository for all evidence supporting hardening compliance claims.
 - Continuous: Evidence continuously valid (e.g., automated monitoring)
 - Until Changed: Valid until configuration changes
 
-
 **Conditional Formatting:**
 
 - Evidence_Status = "Expired": Red background
@@ -1787,7 +1681,6 @@ Centralized repository for all evidence supporting hardening compliance claims.
 - Review_Required = "Yes": Yellow background
 - Evidence_Expiry_Date < TODAY() + 30: Yellow background (expiring soon)
 - Evidence_Type = "Attestation" AND Evidence_Validity_Period > "3 Months": Orange border (attestations should be refreshed frequently)
-
 
 **Formulas:**
 ```excel
@@ -1811,7 +1704,6 @@ Centralized evidence management:
 - Avoid duplicate evidence collection
 - Facilitate audit preparation
 
-
 **Purpose (Auditor Perspective):**
 Audit trail for compliance:
 
@@ -1819,7 +1711,6 @@ Audit trail for compliance:
 - Evidence is recent and relevant (not outdated)
 - Evidence collection method is appropriate
 - Evidence integrity (hash verification where applicable)
-
 
 **Evidence Quality Standards:**
 
@@ -1829,7 +1720,6 @@ Audit trail for compliance:
 - **Authentic**: Evidence source is reliable and verifiable
 - **Complete**: Evidence shows full scope of control (not partial)
 
-
 **Red Flags (Auditor Perspective):**
 
 - Implemented controls without evidence
@@ -1837,7 +1727,6 @@ Audit trail for compliance:
 - Generic evidence (e.g., "system is hardened") without specifics
 - Attestation-only evidence for technical controls (should have config exports)
 - Evidence with no collection date or collector
-
 
 **Best Practice - Automate Evidence Collection:**
 Where possible, use automated tools to collect evidence:
@@ -1847,14 +1736,12 @@ Where possible, use automated tools to collect evidence:
 - Cloud security posture tools (Prisma, CloudHealth)
 - SIEM/log management (Splunk, ELK)
 
-
 Automation provides:
 
 - Continuous evidence (not point-in-time)
 - Consistency (same method every time)
 - Reduced effort (no manual collection)
 - Audit trail (timestamped, tamper-evident)
-
 
 ---
 
@@ -1888,7 +1775,6 @@ Narrative section (free text) summarizing:
 - Remediation priorities
 - Resource requirements for gap closure
 - Recommended actions
-
 
 **Section 3: Risk Assessment**
 
@@ -1937,7 +1823,6 @@ Narrative section (free text) summarizing:
 - [ ] Evidence collection automated where feasible
 - [ ] Integration with A.8.9.3 (Monitoring) confirmed
 
-
 **Section 7: Distribution List**
 
 Document should be distributed to:
@@ -1950,7 +1835,6 @@ Document should be distributed to:
 - Compliance Officer
 - [Other stakeholders as appropriate]
 
-
 ### Usage Notes
 
 **Purpose (Implementer Perspective):**
@@ -1961,7 +1845,6 @@ Formal closure of assessment cycle:
 - Accountability is established (who signed off)
 - Next steps are clear
 
-
 **Purpose (Auditor Perspective):**
 Evidence that:
 
@@ -1971,14 +1854,12 @@ Evidence that:
 - Governance process was followed
 - Assessment is complete and audit-ready
 
-
 **When to Complete Approval:**
 
 - After all assessment sheets are completed
 - After Key Findings narrative is written
 - Before beginning remediation activities
 - Before presenting to audit
-
 
 **Approval Sequence:**
 1. Security Analyst completes assessment (Tier 1)
@@ -1992,7 +1873,6 @@ Evidence that:
 - Overall compliance ≥95%: Tier 2 approval sufficient
 - Overall compliance <95% OR Critical gaps >0: Tier 3 approval required
 - High-risk exceptions: Always Tier 3 approval
-
 
 ---
 
@@ -2126,7 +2006,6 @@ Target: Decreasing trend (getting faster at remediation)
 - Baseline configurations SHOULD reflect hardening standards
 - Hardening assessment verifies baseline compliance
 
-
 **Linkage:**
 ```
 For each Asset_ID in A.8.9.4:
@@ -2145,7 +2024,6 @@ to verify new baseline complies with hardening standards.
 - Changes that reduce hardening posture → require heightened approval
 - Remediation activities → often require change tickets
 - Change_Request_ID in Remediation_Tracking links to A.8.9.2
-
 
 **Linkage:**
 ```
@@ -2167,7 +2045,6 @@ disable security controls or weaken configurations should be flagged for securit
 - Critical drift → triggers hardening re-assessment
 - Hardening baselines → inform drift detection rules
 
-
 **Linkage:**
 ```
 For each Drift_Incident in A.8.9.3 WHERE Drift_Category = "Security":
@@ -2184,7 +2061,6 @@ Automated drift detection (A.8.9.3) should trigger hardening assessment (A.8.9.4
 - Drift affects multiple assets (systemic issue)
 - Drift is recurring (indicates baseline problem)
 
-
 ### Integration with A.8.9.5 (Compliance Dashboard)
 
 **Data Flow:**
@@ -2193,7 +2069,6 @@ Automated drift detection (A.8.9.3) should trigger hardening assessment (A.8.9.4
 - Overall Compliance % from Sheet 8 → A.8.9.5 Dashboard
 - High-Risk Gaps → A.8.9.5 Risk Summary
 - Exception metrics → A.8.9.5 Exception Analysis
-
 
 **Linkage:**
 ```
@@ -2220,7 +2095,6 @@ configuration management metrics for executive-level view.
 - Emerging threats → inform hardening standard updates
 - New attack vectors → drive new hardening controls
 - Threat landscape → prioritizes remediation
-
 
 **Linkage:**
 ```
@@ -2250,13 +2124,11 @@ ensure standards address current threat landscape.
    - Asset taxonomy is current (no new asset types)
    - Asset criticality ratings are up-to-date
 
-
 2. **Hardening Standards Defined:**
 
    - All applicable standards documented in Hardening_Standard_Register
    - Standards are mapped to asset types in Asset_Type_Hardening_Matrix
    - Standards are current versions (not outdated benchmarks)
-
 
 3. **Assessment Resources:**
 
@@ -2264,13 +2136,11 @@ ensure standards address current threat landscape.
    - Tools are available (compliance scanners, config export tools)
    - Evidence storage is prepared (file server, SharePoint, etc.)
 
-
 4. **Stakeholder Availability:**
 
    - Asset owners available for interviews/attestations
    - Security team available for technical assessment
    - Risk owners available for exception approvals
-
 
 ### During-Assessment Validation
 
@@ -2282,13 +2152,11 @@ ensure standards address current threat landscape.
    - Evidence collection method is appropriate
    - Evidence is documented in Evidence_Register
 
-
 2. **Control Assessment Consistency:**
 
    - Same control assessed consistently across assets
    - Implementation_Status definitions used uniformly
    - Gap severity ratings are calibrated
-
 
 3. **Exception Justification:**
 
@@ -2296,13 +2164,11 @@ ensure standards address current threat landscape.
    - Compensating controls are documented where feasible
    - Risk owner approval is obtained
 
-
 4. **Remediation Planning:**
 
    - Gaps have realistic remediation plans
    - Remediation owners are assigned
    - Target dates are risk-appropriate
-
 
 ### Post-Assessment Validation
 
@@ -2314,13 +2180,11 @@ ensure standards address current threat landscape.
    - All applicable standards covered
    - No blank/incomplete fields in assessment sheets
 
-
 2. **Mathematical Accuracy:**
 
    - Compliance percentages calculated correctly
    - Risk scores are accurate
    - Aggregations match detail (Sheet 4 sums match Sheet 5 counts)
-
 
 3. **Cross-Reference Integrity:**
 
@@ -2328,13 +2192,11 @@ ensure standards address current threat landscape.
    - All Remediation_IDs reference valid gaps
    - Evidence_References link to actual evidence records
 
-
 4. **Approval Sign-Off:**
 
    - Appropriate stakeholders have signed off
    - Key findings are documented
    - Next steps are clear
-
 
 ### Common Pitfalls to Avoid
 
@@ -2390,7 +2252,6 @@ ensure standards address current threat landscape.
 - Assessment tools configured
 - Team trained and ready
 
-
 ### Phase 2: Assessment Execution (Weeks 3-6)
 
 **Activities:**
@@ -2406,7 +2267,6 @@ ensure standards address current threat landscape.
 - Control_Compliance_Detail complete
 - Evidence_Register populated
 - Initial Gap_Prioritization
-
 
 ### Phase 3: Analysis & Planning (Week 7)
 
@@ -2424,7 +2284,6 @@ ensure standards address current threat landscape.
 - Remediation_Tracking populated with plans
 - Exception_Management complete for approved exceptions
 
-
 ### Phase 4: Approval & Reporting (Week 8)
 
 **Activities:**
@@ -2441,7 +2300,6 @@ ensure standards address current threat landscape.
 - Remediation activities authorized
 - Next assessment scheduled
 
-
 ### Phase 5: Remediation (Ongoing)
 
 **Activities:**
@@ -2457,7 +2315,6 @@ ensure standards address current threat landscape.
 - Compliance percentage improving
 - Updated assessment workbook reflecting progress
 
-
 ---
 
 ## Final Notes
@@ -2470,7 +2327,6 @@ ensure standards address current threat landscape.
 - **High Assets**: Semi-annual assessment
 - **Medium/Low Assets**: Annual assessment
 - **After Major Changes**: Triggered assessment (new systems, major upgrades, incidents)
-
 
 ### Continuous Improvement
 
@@ -2492,7 +2348,6 @@ ensure standards address current threat landscape.
 - Critical assets maintain 100% compliance
 - Evidence collection is increasingly automated
 
-
 **Red flags:**
 
 - Compliance trend is flat or downward
@@ -2501,7 +2356,6 @@ ensure standards address current threat landscape.
 - Evidence is outdated (>6 months old)
 - Remediation targets are consistently missed
 - Same gaps reappear after "remediation"
-
 
 ---
 
@@ -2530,7 +2384,6 @@ ensure standards address current threat landscape.
 - Technical Review: Security Architect
 - Security Review: Chief Information Security Officer (CISO)
 
-
 ### Distribution
 
 Configuration management team, system administrators, IT operations, security engineers, auditors
@@ -2539,7 +2392,6 @@ Configuration management team, system administrators, IT operations, security en
 
 - ISMS-POL-A.8.9: Configuration Management Policy (Consolidated)
 - ISMS-CTX-A.8.9: Configuration Management Reference (NOT ISMS)
-
 
 ---
 
@@ -2582,7 +2434,6 @@ Provide comprehensive guidance for completing the security hardening assessment.
 - Relationship to Control A.8.9 (Configuration Management)
 - Integration with A.8.9.1 (Baseline), A.8.9.3 (Monitoring), A.5.7 (Threat Intel)
 
-
 **Section 2: Key Concepts**
 
 - **Security Hardening**: Systematic reduction of attack surface through security-focused 
@@ -2599,7 +2450,6 @@ Provide comprehensive guidance for completing the security hardening assessment.
   or Not Applicable
 
 - **Exception**: Documented deviation from hardening requirement with formal risk acceptance
-
 
 **Section 3: Assessment Workflow**
 1. Define applicable hardening standards in Hardening_Standard_Register
@@ -2618,14 +2468,12 @@ Guidance on determining applicable standards:
 - Vendor security baselines (manufacturer recommended practices)
 - Custom standards developed for [Organization]'s specific context
 
-
 **Section 5: Implementation Status Definitions**
 
 - **Implemented**: Control fully implemented and verified
 - **Partial**: Control partially implemented (e.g., 80% of requirement met)
 - **Not Implemented**: Control not implemented, gap exists
 - **Not Applicable**: Control does not apply to this asset (with justification)
-
 
 **Section 6: Exception Management**
 
@@ -2634,14 +2482,12 @@ Guidance on determining applicable standards:
 - Compensating controls (when exception creates residual risk)
 - Exception review frequency (typically annual or when risk landscape changes)
 
-
 **Section 7: Evidence Collection**
 
 - Configuration exports (baseline vs. current state comparison)
 - Security tool reports (vulnerability scanners, compliance tools)
 - Manual verification documentation (screenshots, audit logs)
 - Exception approval documentation (risk acceptance forms)
-
 
 **Section 8: Integration Points**
 
@@ -2650,14 +2496,12 @@ Guidance on determining applicable standards:
 - Vulnerability Management: Vulnerabilities often indicate hardening gaps
 - Change Control: Changes that reduce hardening require additional scrutiny
 
-
 **Section 9: Compliance Scoring**
 
 - Control-level score: (Implemented controls / Applicable controls) × 100%
 - Asset-level score: Weighted average across applicable controls
 - Overall score: Aggregate across all assets (weighted by asset criticality)
 - Target: ≥95% overall, 100% for critical assets
-
 
 **Section 10: Roles and Responsibilities**
 
@@ -2667,14 +2511,12 @@ Guidance on determining applicable standards:
 - **Risk Owner**: Approves exceptions, accepts residual risk
 - **Auditor**: Verifies evidence, validates compliance claims
 
-
 **Formatting:**
 
 - Professional layout with clear section headers
 - Use tables for definitions and workflows
 - Include examples where helpful (generic examples only)
 - Hyperlinks to other sheets for easy navigation
-
 
 ---
 
@@ -2717,7 +2559,6 @@ Document all security hardening standards applicable within [Organization]'s ISM
 - Framework Control (ISO 27002, NIST 800-53 technical controls)
 - Custom Organizational Standard
 
-
 **Data Validation:**
 
 - Standard_ID: Auto-generated as "HS-NNN" where NNN is sequential
@@ -2729,7 +2570,6 @@ Document all security hardening standards applicable within [Organization]'s ISM
 - Review_Frequency: Restrict to dropdown
 - Status: Restrict to dropdown
 
-
 **Conditional Formatting:**
 
 - Next_Review_Date past due: Red background
@@ -2737,14 +2577,12 @@ Document all security hardening standards applicable within [Organization]'s ISM
 - Status = "Deprecated": Gray text
 - Mandatory_Optional = "Mandatory" AND Implementation_Target <95%: Orange background
 
-
 **Default Values:**
 
 - Implementation_Target: 95%
 - Review_Frequency: Quarterly
 - Status: Active
 - Mandatory_Optional: Mandatory
-
 
 ### Usage Notes
 
@@ -2758,7 +2596,6 @@ are applicable based on:
 - Risk assessment outcomes
 - Technical feasibility
 
-
 **Purpose (Auditor Perspective):**
 Provides traceability for why specific hardening standards are in scope. Auditor can 
 verify:
@@ -2767,7 +2604,6 @@ verify:
 - Mandatory standards are actually assessed
 - Review frequency is reasonable and followed
 - Deprecated standards are not still being used
-
 
 **Typical Row Count**: 15-30 standards (varies by organization complexity)
 
@@ -2780,7 +2616,6 @@ verify:
 
 - Implementation targets may vary (e.g., 100% for critical controls, 95% for others)
 - Some standards may be marked Optional for aspirational hardening
-
 
 ---
 
@@ -2810,7 +2645,6 @@ Use the **43-type asset taxonomy** from A.8.9.1 (Baseline Configuration) for con
 - Application Server
 - Legacy System
 
-
 **Endpoint (7 types):**
 
 - Corporate Workstation
@@ -2820,7 +2654,6 @@ Use the **43-type asset taxonomy** from A.8.9.1 (Baseline Configuration) for con
 - Mobile Device (BYOD)
 - Thin Client
 - Kiosk/Shared Terminal
-
 
 **Network Services (8 types):**
 
@@ -2833,7 +2666,6 @@ Use the **43-type asset taxonomy** from A.8.9.1 (Baseline Configuration) for con
 - Load Balancer
 - VPN Concentrator
 
-
 **Applications (7 types):**
 
 - Web Application
@@ -2843,7 +2675,6 @@ Use the **43-type asset taxonomy** from A.8.9.1 (Baseline Configuration) for con
 - Email System
 - Authentication Service (IAM)
 - Monitoring/Logging System
-
 
 **Cloud & Virtual (7 types):**
 
@@ -2855,7 +2686,6 @@ Use the **43-type asset taxonomy** from A.8.9.1 (Baseline Configuration) for con
 - Cloud Storage Bucket
 - Cloud Network Configuration
 
-
 **IoT & OT (5 types):**
 
 - Building Management System
@@ -2863,7 +2693,6 @@ Use the **43-type asset taxonomy** from A.8.9.1 (Baseline Configuration) for con
 - Industrial Control System (ICS)
 - SCADA System
 - IoT Sensor/Device
-
 
 **Column Headers (Standard_ID):**
 Dynamically populated from Hardening_Standard_Register (Standard_ID + Standard_Name)
@@ -2876,7 +2705,6 @@ Dropdown for each cell:
 - **Optional**: This standard may be applied at discretion
 - **Not Applicable**: This standard does not apply to this asset type
 - **(blank)**: Not yet assessed
-
 
 **Additional Columns (After Matrix):**
 
@@ -2894,7 +2722,6 @@ Dropdown for each cell:
 - "Optional": Light blue background
 - "Not Applicable": Gray background
 - Blank: White background (yellow border as warning)
-
 
 ### Usage Notes
 
@@ -2967,7 +2794,6 @@ hardening standards.
 - Medium (Target: ≥95% compliance)
 - Low (Target: ≥90% compliance)
 
-
 **Compliance_Status Logic:**
 ```
 IF Compliance_Percentage = 100% AND High_Risk_Gaps = 0: "Fully Compliant"
@@ -2986,7 +2812,6 @@ ELSE: "Non-Compliant"
 - Completed
 - Accepted as Exception
 
-
 **Data Validation:**
 
 - Asset_ID: Must exist in A.8.9.1 Baseline Configuration
@@ -2996,7 +2821,6 @@ ELSE: "Non-Compliant"
 - Compliance_Percentage: Auto-calculate, not editable
 - Compliance_Status: Formula-driven, not editable
 - Remediation_Status: Restrict to dropdown
-
 
 **Conditional Formatting:**
 
@@ -3009,7 +2833,6 @@ ELSE: "Non-Compliant"
 - Asset_Tier = "Critical" AND Compliance_Percentage < 100%: Red border
 - Next_Assessment_Date past due: Red background
 - Next_Assessment_Date within 30 days: Yellow background
-
 
 **Formulas (Implemented in Python):**
 ```excel
@@ -3033,7 +2856,6 @@ Single view showing hardening posture for each asset. Enables:
 - Resource allocation (assets with most gaps need most effort)
 - Progress tracking (are we improving over time?)
 
-
 **Purpose (Auditor Perspective):**
 Provides evidence that:
 
@@ -3043,7 +2865,6 @@ Provides evidence that:
 - Assessment frequency is appropriate and followed
 - Evidence exists for compliance claims
 
-
 **Key Calculations:**
 
 - **Compliance_Percentage** uses weighted scoring:
@@ -3052,7 +2873,6 @@ Provides evidence that:
   - Not Implemented = 0.0 (no credit)
   - Not Applicable excluded from denominator
   
-
 **Sampling for Assessment:**
 Organizations may not assess every control on every asset every cycle. Risk-based 
 sampling approach:
@@ -3062,14 +2882,12 @@ sampling approach:
 - **Medium Assets**: Assess high-severity controls, sample others
 - **Low Assets**: Sample-based assessment, focus on new threats
 
-
 **Integration Points:**
 
 - Asset_ID links to A.8.9.1 (Baseline Configuration)
 - Evidence_Reference links to Evidence_Register sheet
 - Gaps drive entries in Remediation_Tracking sheet
 - Exceptions documented in Exception_Management sheet
-
 
 ---
 
@@ -3133,14 +2951,12 @@ view that supports the asset-level summary in Sheet 4.
 - Cryptography
 - Backup & Recovery
 
-
 **Control_Severity Dropdown Values:**
 
 - Critical: Catastrophic risk if not implemented
 - High: Significant risk if not implemented
 - Medium: Moderate risk if not implemented
 - Low: Minor risk if not implemented
-
 
 **Implementation_Status Dropdown Values:**
 
@@ -3151,7 +2967,6 @@ view that supports the asset-level summary in Sheet 4.
 - Planned: Control planned for future implementation
 - In Progress: Currently being implemented
 
-
 **Implementation_Method Dropdown Values:**
 
 - Automated Tool: Implemented via security tool (e.g., GPO, configuration manager)
@@ -3161,14 +2976,12 @@ view that supports the asset-level summary in Sheet 4.
 - Compensating Control: Alternative control provides equivalent protection
 - Not Implemented: No implementation
 
-
 **Compliance_Status Dropdown Values:**
 
 - Pass: Control fully compliant with standard
 - Fail: Control non-compliant, gap exists
 - Partial: Control partially compliant
 - N/A: Control marked Not Applicable
-
 
 **Verification_Method Dropdown Values:**
 
@@ -3179,7 +2992,6 @@ view that supports the asset-level summary in Sheet 4.
 - Test/Validation: Active testing of control effectiveness
 - Documentation Review: Verification via procedure/policy review
 
-
 **Data Validation:**
 
 - Control_ID: Auto-generated as "HC-NNNNN" where NNNNN is sequential
@@ -3189,7 +3001,6 @@ view that supports the asset-level summary in Sheet 4.
 - Compliance_Status: Auto-calculate based on Implementation_Status
 - Remediation_Required: Auto-calculate ("Yes" if Compliance_Status = Fail/Partial)
 
-
 **Conditional Formatting:**
 
 - Compliance_Status = "Pass": Green background
@@ -3198,7 +3009,6 @@ view that supports the asset-level summary in Sheet 4.
 - Control_Severity = "Critical" AND Compliance_Status = "Fail": Red background, bold
 - Remediation_Required = "Yes" AND Target_Remediation_Date past due: Red text
 - Exception_Status = "Yes": Blue background (highlight exceptions)
-
 
 **Formulas (Implemented in Python):**
 ```excel
@@ -3226,7 +3036,6 @@ Provides the detailed "how" for each hardening control:
 - What is the evidence?
 - If not implemented, what's the plan?
 
-
 **Purpose (Auditor Perspective):**
 Audit trail for compliance claims:
 
@@ -3234,7 +3043,6 @@ Audit trail for compliance claims:
 - Gaps are documented with remediation plans
 - Exceptions are formally approved
 - Verification method is appropriate for control type
-
 
 **Assessment Workflow:**
 1. For each asset in Sheet 4, identify applicable standards
@@ -3251,7 +3059,6 @@ Every "Implemented" control MUST have:
 - Verification_Method (how compliance was verified)
 - Last_Verified_Date (when verification occurred)
 
-
 This prevents "checkbox compliance" where controls are marked implemented without 
 verification.
 
@@ -3263,7 +3070,6 @@ Control_Compliance_Detail feeds Asset_Hardening_Assessment:
 - Count of "Fail" → Not_Implemented_Controls
 - Count of "N/A" → Not_Applicable_Controls
 - Count where Control_Severity="High" AND Compliance_Status="Fail" → High_Risk_Gaps
-
 
 ---
 
@@ -3328,7 +3134,6 @@ risk acceptance and compensating controls.
 - Temporary Transition: Short-term exception during system migration
 - Regulatory Conflict: Implementation conflicts with other regulatory requirement
 
-
 **Exception_Status Dropdown Values:**
 
 - Pending Review: Awaiting security team assessment
@@ -3339,7 +3144,6 @@ risk acceptance and compensating controls.
 - Expired: Exception has expired, needs renewal or remediation
 - Closed: Exception no longer needed (control implemented or asset decommissioned)
 
-
 **Exception_Duration Dropdown Values:**
 
 - 3 Months
@@ -3348,7 +3152,6 @@ risk acceptance and compensating controls.
 - 24 Months
 - Indefinite (requires annual review)
 
-
 **Residual_Risk_Rating Dropdown Values:**
 
 - Critical: Severe risk remains even with compensating controls
@@ -3356,13 +3159,11 @@ risk acceptance and compensating controls.
 - Medium: Moderate risk remains
 - Low: Minimal risk remains
 
-
 **Compensating_Control_Effectiveness Dropdown Values:**
 
 - Full: Compensating control provides equivalent protection
 - Partial: Compensating control reduces risk but gap remains
 - None: No effective compensating control available
-
 
 **Data Validation:**
 
@@ -3374,7 +3175,6 @@ risk acceptance and compensating controls.
 - Days_Until_Expiry: Formula-driven
 - Review_Required: Formula-driven
 
-
 **Conditional Formatting:**
 
 - Exception_Status = "Approved": Green background
@@ -3385,7 +3185,6 @@ risk acceptance and compensating controls.
 - Days_Until_Expiry < 0: Red background (expired)
 - Residual_Risk_Rating = "Critical" OR "High": Red text, bold
 - Compensating_Control_Required = "Yes" AND Compensating_Control_Description = blank: Red border
-
 
 **Formulas (Implemented in Python):**
 ```excel
@@ -3412,7 +3211,6 @@ Provides formal process for handling cases where hardening controls cannot be im
 - Tracks exception lifecycle (request → approval → review → closure)
 - Prevents "exception creep" through expiration enforcement
 
-
 **Purpose (Auditor Perspective):**
 Demonstrates that:
 
@@ -3421,7 +3219,6 @@ Demonstrates that:
 - Compensating controls are in place where feasible
 - Exceptions are periodically reviewed and justified
 - Trend is toward reduction of exceptions over time
-
 
 **Exception Approval Workflow:**
 1. **Request**: Asset owner or security team identifies need for exception
@@ -3442,7 +3239,6 @@ Demonstrates that:
 - Generic justifications ("business requirement") without specific details
 - Exceptions older than 24 months without closure plan
 
-
 **Best Practice:**
 Exceptions should be the exception, not the rule. Target: <5% of applicable controls 
 should be exceptions. If exception rate is higher, reassess whether hardening standards 
@@ -3453,7 +3249,6 @@ are appropriate for [Organization]'s context.
 - Links to Control_Compliance_Detail (Exception_ID referenced)
 - May link to Remediation_Tracking (closure plan may include remediation)
 - Evidence in Evidence_Register (approval documentation)
-
 
 ---
 
@@ -3526,7 +3321,6 @@ closure.
 - Audit Finding: Gap identified during audit
 - Threat Response: Hardening needed due to emerging threat
 
-
 **Discovery_Method Dropdown Values:**
 
 - Security Assessment: Identified during planned assessment
@@ -3536,7 +3330,6 @@ closure.
 - Incident Response: Found during security incident
 - Audit: Identified during audit
 - Threat Intelligence: Identified based on threat intel
-
 
 **Remediation_Strategy Dropdown Values:**
 
@@ -3548,7 +3341,6 @@ closure.
 - Asset Decommission: Remove non-compliant asset
 - Defer: Postpone to future phase
 
-
 **Estimated_Effort Dropdown Values:**
 
 - <1 hour
@@ -3559,14 +3351,12 @@ closure.
 - 2-4 weeks
 - >1 month
 
-
 **Remediation_Priority Dropdown Values:**
 
 - Critical: Immediate action required
 - High: Remediate within 7 days
 - Medium: Remediate within 30 days
 - Low: Remediate within 90 days
-
 
 **Status Dropdown Values:**
 
@@ -3582,12 +3372,10 @@ closure.
 - Closed - Exception: Gap closed via risk acceptance
 - Closed - Not Required: Gap no longer relevant
 
-
 **Verification_Result Dropdown Values:**
 
 - Pass: Remediation successful, gap closed
 - Fail: Remediation unsuccessful, gap remains
-
 
 **Data Validation:**
 
@@ -3601,7 +3389,6 @@ closure.
 - Days_To_Remediate: Formula-driven
 - Days_Overdue: Formula-driven
 
-
 **Conditional Formatting:**
 
 - Status = "Completed": Green background
@@ -3612,7 +3399,6 @@ closure.
 - Asset_Tier = "Critical" AND Status != "Completed": Yellow border
 - Days_Overdue > 7: Red background
 - Completion_Percentage: Color scale (0%=red, 50%=yellow, 100%=green)
-
 
 **Formulas (Implemented in Python):**
 ```excel
@@ -3649,7 +3435,6 @@ Provides systematic tracking of gap remediation from identification to closure:
 - Links remediation to change control (Change_Request_ID)
 - Captures lessons learned to prevent recurrence
 
-
 **Purpose (Auditor Perspective):**
 Demonstrates that:
 
@@ -3658,7 +3443,6 @@ Demonstrates that:
 - High-risk gaps receive prompt attention
 - Remediation effectiveness is verified (not just "done")
 - Trend shows improvement over time (gap closure rate > gap identification rate)
-
 
 **Remediation Workflow:**
 1. **Identification**: Gap identified in Control_Compliance_Detail assessment
@@ -3676,7 +3460,6 @@ Demonstrates that:
 - **Critical Gap Age**: Days since discovery for Critical gaps (target: <7 days)
 - **Blocked Remediation Count**: Count where Status = "Blocked"
 
-
 **Integration Points:**
 
 - Control_ID links to Control_Compliance_Detail (gap source)
@@ -3684,7 +3467,6 @@ Demonstrates that:
 - Change_Request_ID links to A.8.9.2 (Change Control) if remediation requires change
 - Risk_Acceptance_ID links to Exception_Management if gap accepted as exception
 - Evidence_Reference links to Evidence_Register
-
 
 **Best Practice:**
 Set aggressive but realistic targets for remediation:
@@ -3694,7 +3476,6 @@ Set aggressive but realistic targets for remediation:
 - High gaps (High/Medium assets): 14 days
 - Medium gaps: 30 days
 - Low gaps: 90 days
-
 
 Adjust based on [Organization]'s operational constraints, but maintain pressure to close 
 gaps quickly.
@@ -3742,7 +3523,6 @@ Table showing compliance breakdown:
 - Green: Avg Compliance ≥95% AND Non-Compliant = 0
 - Yellow: Avg Compliance ≥90% OR Non-Compliant ≤2
 - Red: Avg Compliance <90% OR Non-Compliant >2 OR (Critical tier AND <100%)
-
 
 **Section 3: Compliance by Hardening Standard**
 
@@ -3798,7 +3578,6 @@ Chart showing compliance trend over time (requires historical data):
 - Target line: 95%
 - Trend line: Linear regression of compliance over time
 
-
 **Data for trend:** 
 Should be populated from previous assessments. Include note: "Trend analysis requires 
 3+ assessment cycles to generate meaningful insights."
@@ -3832,7 +3611,6 @@ Should be populated from previous assessments. Include note: "Trend analysis req
 - Expired exceptions >0: Red background
 - Critical asset non-compliance: Red background
 
-
 ### Dashboard Notes
 
 **Purpose (Implementer Perspective):**
@@ -3843,7 +3621,6 @@ Single-page view of hardening posture for:
 - Trend analysis (are we improving?)
 - Risk communication (where is highest risk)
 
-
 **Purpose (Auditor Perspective):**
 Provides:
 
@@ -3852,14 +3629,12 @@ Provides:
 - Demonstration of continuous improvement
 - Risk-based prioritization of remediation
 
-
 **Refresh Frequency:**
 Dashboard should be refreshed after:
 
 - Completion of hardening assessments
 - Remediation of major gaps
 - Quarterly at minimum (aligned with assessment cycle)
-
 
 **Key Insight - The "So What?" Test:**
 Dashboard must answer:
@@ -3916,7 +3691,6 @@ sequencing.
 - Low: Difficult to exploit or uncommon attack vector
 - Very Low: Theoretical risk only
 
-
 **Priority_Category Values:**
 
 - P0 - Critical & Urgent: Critical asset + High/Critical gap + Overdue
@@ -3924,7 +3698,6 @@ sequencing.
 - P2 - High Priority: High asset + High gap OR Critical asset + Medium gap
 - P3 - Medium Priority: Medium asset + High gap OR High asset + Medium gap
 - P4 - Low Priority: All other combinations
-
 
 **Risk_Score Calculation:**
 ```excel
@@ -3983,7 +3756,6 @@ Tertiary: Days_Until_Target (ascending - most overdue first)
 - Status = "Blocked": Gray background
 - Days_Until_Target < 0: Red text, bold (overdue)
 
-
 **Row Count:** 100 rows (auto-populated from Sheet 7 Remediation_Tracking)
 
 ### Usage Notes
@@ -3996,7 +3768,6 @@ Answers critical question: "What should we fix first?"
 - Highlights batch opportunities (fix multiple similar gaps together)
 - Surfaces dependencies (can't fix B until A is done)
 
-
 **Purpose (Auditor Perspective):**
 Demonstrates:
 
@@ -4004,7 +3775,6 @@ Demonstrates:
 - Critical assets receive priority attention
 - Resources allocated based on risk, not convenience
 - Progress tracking against prioritized plan
-
 
 **Key Insight - Not All Gaps Are Equal:**
 A low-severity gap on a Critical asset may be more important than a high-severity gap 
@@ -4015,14 +3785,12 @@ on a Low asset. Risk_Score incorporates:
 - Exploitation likelihood (how likely to be exploited)
 - Age (how long has gap existed)
 
-
 **Batch Opportunity Analysis:**
 Remediation teams should look for:
 
 - Same control type across multiple assets (e.g., "disable service X" on all Linux servers)
 - Same asset type (e.g., all Windows workstations need same fix)
 - Same standard (e.g., batch implementation of CIS Level 1 controls)
-
 
 Batching reduces effort and ensures consistency.
 
@@ -4032,7 +3800,6 @@ Quick wins provide:
 - Rapid risk reduction (fix 10 quick wins = significant gap closure)
 - Team momentum (visible progress)
 - Stakeholder confidence (demonstrable improvement)
-
 
 Target: Fix all P1/P2 quick wins within 30 days.
 
@@ -4084,7 +3851,6 @@ Centralized repository for all evidence supporting hardening compliance claims.
 - Exception Approval: Risk acceptance documentation
 - Vendor Documentation: Manufacturer security guidance
 
-
 **Evidence_Source Dropdown Values:**
 
 - Automated Tool: Compliance scanning tool, configuration manager
@@ -4096,7 +3862,6 @@ Centralized repository for all evidence supporting hardening compliance claims.
 - Email: Email correspondence (approval, attestation)
 - Meeting Minutes: Documented in meeting
 
-
 **Collection_Method Dropdown Values:**
 
 - API/Script: Automated collection via API or script
@@ -4106,7 +3871,6 @@ Centralized repository for all evidence supporting hardening compliance claims.
 - Report Generation: Generated report from tool
 - Manual Documentation: Manually documented observation
 - Copy/Paste: Copied from source system
-
 
 **Evidence_Validity_Period Dropdown Values:**
 
@@ -4118,7 +3882,6 @@ Centralized repository for all evidence supporting hardening compliance claims.
 - Continuous: Evidence continuously valid (e.g., automated monitoring)
 - Until Changed: Valid until configuration changes
 
-
 **Conditional Formatting:**
 
 - Evidence_Status = "Expired": Red background
@@ -4126,7 +3889,6 @@ Centralized repository for all evidence supporting hardening compliance claims.
 - Review_Required = "Yes": Yellow background
 - Evidence_Expiry_Date < TODAY() + 30: Yellow background (expiring soon)
 - Evidence_Type = "Attestation" AND Evidence_Validity_Period > "3 Months": Orange border (attestations should be refreshed frequently)
-
 
 **Formulas:**
 ```excel
@@ -4150,7 +3912,6 @@ Centralized evidence management:
 - Avoid duplicate evidence collection
 - Facilitate audit preparation
 
-
 **Purpose (Auditor Perspective):**
 Audit trail for compliance:
 
@@ -4158,7 +3919,6 @@ Audit trail for compliance:
 - Evidence is recent and relevant (not outdated)
 - Evidence collection method is appropriate
 - Evidence integrity (hash verification where applicable)
-
 
 **Evidence Quality Standards:**
 
@@ -4168,7 +3928,6 @@ Audit trail for compliance:
 - **Authentic**: Evidence source is reliable and verifiable
 - **Complete**: Evidence shows full scope of control (not partial)
 
-
 **Red Flags (Auditor Perspective):**
 
 - Implemented controls without evidence
@@ -4176,7 +3935,6 @@ Audit trail for compliance:
 - Generic evidence (e.g., "system is hardened") without specifics
 - Attestation-only evidence for technical controls (should have config exports)
 - Evidence with no collection date or collector
-
 
 **Best Practice - Automate Evidence Collection:**
 Where possible, use automated tools to collect evidence:
@@ -4186,14 +3944,12 @@ Where possible, use automated tools to collect evidence:
 - Cloud security posture tools (Prisma, CloudHealth)
 - SIEM/log management (Splunk, ELK)
 
-
 Automation provides:
 
 - Continuous evidence (not point-in-time)
 - Consistency (same method every time)
 - Reduced effort (no manual collection)
 - Audit trail (timestamped, tamper-evident)
-
 
 ---
 
@@ -4227,7 +3983,6 @@ Narrative section (free text) summarizing:
 - Remediation priorities
 - Resource requirements for gap closure
 - Recommended actions
-
 
 **Section 3: Risk Assessment**
 
@@ -4276,7 +4031,6 @@ Narrative section (free text) summarizing:
 - [ ] Evidence collection automated where feasible
 - [ ] Integration with A.8.9.3 (Monitoring) confirmed
 
-
 **Section 7: Distribution List**
 
 Document should be distributed to:
@@ -4289,7 +4043,6 @@ Document should be distributed to:
 - Compliance Officer
 - [Other stakeholders as appropriate]
 
-
 ### Usage Notes
 
 **Purpose (Implementer Perspective):**
@@ -4300,7 +4053,6 @@ Formal closure of assessment cycle:
 - Accountability is established (who signed off)
 - Next steps are clear
 
-
 **Purpose (Auditor Perspective):**
 Evidence that:
 
@@ -4310,14 +4062,12 @@ Evidence that:
 - Governance process was followed
 - Assessment is complete and audit-ready
 
-
 **When to Complete Approval:**
 
 - After all assessment sheets are completed
 - After Key Findings narrative is written
 - Before beginning remediation activities
 - Before presenting to audit
-
 
 **Approval Sequence:**
 1. Security Analyst completes assessment (Tier 1)
@@ -4331,7 +4081,6 @@ Evidence that:
 - Overall compliance ≥95%: Tier 2 approval sufficient
 - Overall compliance <95% OR Critical gaps >0: Tier 3 approval required
 - High-risk exceptions: Always Tier 3 approval
-
 
 ---
 
@@ -4465,7 +4214,6 @@ Target: Decreasing trend (getting faster at remediation)
 - Baseline configurations SHOULD reflect hardening standards
 - Hardening assessment verifies baseline compliance
 
-
 **Linkage:**
 ```
 For each Asset_ID in A.8.9.4:
@@ -4484,7 +4232,6 @@ to verify new baseline complies with hardening standards.
 - Changes that reduce hardening posture → require heightened approval
 - Remediation activities → often require change tickets
 - Change_Request_ID in Remediation_Tracking links to A.8.9.2
-
 
 **Linkage:**
 ```
@@ -4506,7 +4253,6 @@ disable security controls or weaken configurations should be flagged for securit
 - Critical drift → triggers hardening re-assessment
 - Hardening baselines → inform drift detection rules
 
-
 **Linkage:**
 ```
 For each Drift_Incident in A.8.9.3 WHERE Drift_Category = "Security":
@@ -4523,7 +4269,6 @@ Automated drift detection (A.8.9.3) should trigger hardening assessment (A.8.9.4
 - Drift affects multiple assets (systemic issue)
 - Drift is recurring (indicates baseline problem)
 
-
 ### Integration with A.8.9.5 (Compliance Dashboard)
 
 **Data Flow:**
@@ -4532,7 +4277,6 @@ Automated drift detection (A.8.9.3) should trigger hardening assessment (A.8.9.4
 - Overall Compliance % from Sheet 8 → A.8.9.5 Dashboard
 - High-Risk Gaps → A.8.9.5 Risk Summary
 - Exception metrics → A.8.9.5 Exception Analysis
-
 
 **Linkage:**
 ```
@@ -4559,7 +4303,6 @@ configuration management metrics for executive-level view.
 - Emerging threats → inform hardening standard updates
 - New attack vectors → drive new hardening controls
 - Threat landscape → prioritizes remediation
-
 
 **Linkage:**
 ```
@@ -4589,13 +4332,11 @@ ensure standards address current threat landscape.
    - Asset taxonomy is current (no new asset types)
    - Asset criticality ratings are up-to-date
 
-
 2. **Hardening Standards Defined:**
 
    - All applicable standards documented in Hardening_Standard_Register
    - Standards are mapped to asset types in Asset_Type_Hardening_Matrix
    - Standards are current versions (not outdated benchmarks)
-
 
 3. **Assessment Resources:**
 
@@ -4603,13 +4344,11 @@ ensure standards address current threat landscape.
    - Tools are available (compliance scanners, config export tools)
    - Evidence storage is prepared (file server, SharePoint, etc.)
 
-
 4. **Stakeholder Availability:**
 
    - Asset owners available for interviews/attestations
    - Security team available for technical assessment
    - Risk owners available for exception approvals
-
 
 ### During-Assessment Validation
 
@@ -4621,13 +4360,11 @@ ensure standards address current threat landscape.
    - Evidence collection method is appropriate
    - Evidence is documented in Evidence_Register
 
-
 2. **Control Assessment Consistency:**
 
    - Same control assessed consistently across assets
    - Implementation_Status definitions used uniformly
    - Gap severity ratings are calibrated
-
 
 3. **Exception Justification:**
 
@@ -4635,13 +4372,11 @@ ensure standards address current threat landscape.
    - Compensating controls are documented where feasible
    - Risk owner approval is obtained
 
-
 4. **Remediation Planning:**
 
    - Gaps have realistic remediation plans
    - Remediation owners are assigned
    - Target dates are risk-appropriate
-
 
 ### Post-Assessment Validation
 
@@ -4653,13 +4388,11 @@ ensure standards address current threat landscape.
    - All applicable standards covered
    - No blank/incomplete fields in assessment sheets
 
-
 2. **Mathematical Accuracy:**
 
    - Compliance percentages calculated correctly
    - Risk scores are accurate
    - Aggregations match detail (Sheet 4 sums match Sheet 5 counts)
-
 
 3. **Cross-Reference Integrity:**
 
@@ -4667,13 +4400,11 @@ ensure standards address current threat landscape.
    - All Remediation_IDs reference valid gaps
    - Evidence_References link to actual evidence records
 
-
 4. **Approval Sign-Off:**
 
    - Appropriate stakeholders have signed off
    - Key findings are documented
    - Next steps are clear
-
 
 ### Common Pitfalls to Avoid
 
@@ -4729,7 +4460,6 @@ ensure standards address current threat landscape.
 - Assessment tools configured
 - Team trained and ready
 
-
 ### Phase 2: Assessment Execution (Weeks 3-6)
 
 **Activities:**
@@ -4745,7 +4475,6 @@ ensure standards address current threat landscape.
 - Control_Compliance_Detail complete
 - Evidence_Register populated
 - Initial Gap_Prioritization
-
 
 ### Phase 3: Analysis & Planning (Week 7)
 
@@ -4763,7 +4492,6 @@ ensure standards address current threat landscape.
 - Remediation_Tracking populated with plans
 - Exception_Management complete for approved exceptions
 
-
 ### Phase 4: Approval & Reporting (Week 8)
 
 **Activities:**
@@ -4780,7 +4508,6 @@ ensure standards address current threat landscape.
 - Remediation activities authorized
 - Next assessment scheduled
 
-
 ### Phase 5: Remediation (Ongoing)
 
 **Activities:**
@@ -4796,7 +4523,6 @@ ensure standards address current threat landscape.
 - Compliance percentage improving
 - Updated assessment workbook reflecting progress
 
-
 ---
 
 ## Final Notes
@@ -4809,7 +4535,6 @@ ensure standards address current threat landscape.
 - **High Assets**: Semi-annual assessment
 - **Medium/Low Assets**: Annual assessment
 - **After Major Changes**: Triggered assessment (new systems, major upgrades, incidents)
-
 
 ### Continuous Improvement
 
@@ -4831,7 +4556,6 @@ ensure standards address current threat landscape.
 - Critical assets maintain 100% compliance
 - Evidence collection is increasingly automated
 
-
 **Red flags:**
 
 - Compliance trend is flat or downward
@@ -4840,7 +4564,6 @@ ensure standards address current threat landscape.
 - Evidence is outdated (>6 months old)
 - Remediation targets are consistently missed
 - Same gaps reappear after "remediation"
-
 
 ---
 

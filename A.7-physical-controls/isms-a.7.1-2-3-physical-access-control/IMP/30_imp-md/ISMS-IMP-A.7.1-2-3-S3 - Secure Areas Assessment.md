@@ -44,7 +44,6 @@ This document consists of two parts:
   - Cell Styling Reference
   - Integration Points
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -65,7 +64,6 @@ This assessment documents the security WITHIN offices, rooms, and facilities. Th
 - Are server rooms adequately protected (MFA, no windows, CCTV)?
 - Are meeting rooms checked for recording devices before sensitive discussions?
 - For shared buildings, is the organisation's perimeter clearly defined?
-
 
 #### ISO 27001:2022 Control Reference
 
@@ -91,7 +89,6 @@ While perimeters (A.7.1) define boundaries and entry controls (A.7.2) manage who
 - Visitor supervision in office areas
 - CCTV coverage in office spaces
 
-
 **Server Rooms and Datacenters:**
 
 - Multi-factor access requirements
@@ -103,7 +100,6 @@ While perimeters (A.7.1) define boundaries and entry controls (A.7.2) manage who
 - Visitor supervision requirements
 - Equipment security
 
-
 **Meeting Rooms:**
 
 - Recording device checks before sensitive meetings
@@ -113,7 +109,6 @@ While perimeters (A.7.1) define boundaries and entry controls (A.7.2) manage who
 - Room booking and access controls
 - Sensitive meeting designation
 
-
 **Shared Facilities:**
 
 - Perimeter definition in shared buildings
@@ -122,7 +117,6 @@ While perimeters (A.7.1) define boundaries and entry controls (A.7.2) manage who
 - Key management coordination
 - Visitor control at shared entry points
 - Emergency response coordination
-
 
 #### How This Relates to Other A.7.1-2-3 Assessments
 
@@ -153,12 +147,10 @@ This assessment documents controls WITHIN secure areas, building on the perimete
 - Access to server room and datacenter facilities
 - Understanding of shared building arrangements
 
-
 #### Time Commitment
 
 - **Initial assessment:** 6-10 hours
 - **Annual updates:** 2-3 hours
-
 
 ### Expected Outputs
 
@@ -187,7 +179,6 @@ Upon completion, you will have:
 - Floor plans with room designations
 - Environmental monitoring specifications
 
-
 #### 2. System Access
 
 - Access to server rooms for inspection
@@ -195,7 +186,6 @@ Upon completion, you will have:
 - Access to CCTV system for server room coverage
 - Access to environmental monitoring dashboards
 - Access to building management system
-
 
 #### 3. Historical Data
 
@@ -206,7 +196,6 @@ Upon completion, you will have:
 - Meeting room usage logs
 - Key management records
 
-
 #### 4. Policy Requirements
 
 - ISMS-POL-A.7.1-2-3, Section 2.3 (Securing Offices, Rooms and Facilities)
@@ -216,7 +205,6 @@ Upon completion, you will have:
   - Section 2.3.4: Meeting Rooms
   - Section 2.3.5: Shared Facilities
 
-
 ### Required Tools
 
 - Microsoft Excel (2016 or later) for workbook completion
@@ -224,7 +212,6 @@ Upon completion, you will have:
 - Access to building management systems
 - Floor plan viewing software (PDF or CAD)
 - Torch/flashlight (for server room inspections)
-
 
 ### Dependencies
 
@@ -274,7 +261,6 @@ Outputs from this assessment are INPUT to:
 - Schedule facility walk-through with Facilities Manager
 - Download or generate assessment workbook (Excel file)
 
-
 **Step 2: Office Security Assessment (Day 1-2 - 2-3 hours)**
 
 - Walk through all office areas
@@ -284,7 +270,6 @@ Outputs from this assessment are INPUT to:
 - Assess screen privacy measures
 - Verify secure storage availability
 - Document CCTV coverage in office areas
-
 
 **Step 3: Server Room Assessment (Day 2-3 - 2-3 hours)**
 
@@ -296,7 +281,6 @@ Outputs from this assessment are INPUT to:
 - Verify environmental monitoring
 - Review access logs
 
-
 **Step 4: Meeting Room Assessment (Day 3 - 1-2 hours)**
 
 - Review meeting room procedures
@@ -306,7 +290,6 @@ Outputs from this assessment are INPUT to:
 - Assess video conferencing equipment security
 - Review room booking controls
 
-
 **Step 5: Shared Facilities Assessment (Day 3-4 - 1-2 hours)**
 
 - Review shared building arrangements
@@ -314,7 +297,6 @@ Outputs from this assessment are INPUT to:
 - Verify perimeter definition within shared buildings
 - Check building management access controls
 - Document key management coordination
-
 
 **Step 6: Evidence Collection (Day 4-5 - 2 hours)**
 
@@ -324,7 +306,6 @@ Outputs from this assessment are INPUT to:
 - Document evidence in Sheet 7 (Evidence Register)
 - Store evidence files in secure location
 
-
 **Step 7: Summary Review (Day 5 - 1 hour)**
 
 - Review Sheet 6 (Summary Dashboard) - automated compliance scores
@@ -332,13 +313,11 @@ Outputs from this assessment are INPUT to:
 - Identify areas below threshold
 - Prepare gap remediation plan
 
-
 **Step 8: Quality Check (Day 5 - 1 hour)**
 
 - Complete self-assessment using Quality Checklist (see section below)
 - Verify all required fields completed
 - Verify evidence register complete
-
 
 **Step 9: Obtain Approvals (Day 6-10 - asynchronous)**
 
@@ -346,7 +325,6 @@ Outputs from this assessment are INPUT to:
 - Submit to Level 2: Facilities Manager
 - After Level 2, submit to Level 3: IT Operations Manager
 - After Level 3, submit to Level 4: CISO
-
 
 ---
 
@@ -367,7 +345,6 @@ Outputs from this assessment are INPUT to:
 - **Status Legend** (Rows 14-17):
   - Read-only reference - understand colour coding
 
-
 **Time Required:** 5 minutes
 
 ### Sheet 2: Office Security
@@ -381,57 +358,47 @@ Outputs from this assessment are INPUT to:
 - Unique identifier: "OFF-001", "OFF-002", etc.
 - Include all office spaces, not just main floors
 
-
 **Column B - Location:**
 
 - Descriptive location: "Building A - Floor 3 - Finance", "HQ - Open Plan Area"
-
 
 **Column C - Security Zone:**
 
 - Dropdown: "Controlled", "Restricted", "High-Security"
 - Must match zone definitions from S1
 
-
 **Column D - Classification:**
 
 - Dropdown: "Public", "Internal", "Confidential", "Highly Confidential"
 - Information classification of typical data in this area
-
 
 **Column E - Lock When Unoccupied:**
 
 - Dropdown: "Yes", "No", "Partial", "N/A"
 - Is the area locked when unoccupied?
 
-
 **Column F - Clean Desk Enforced:**
 
 - Dropdown: "Yes", "No", "Partial", "N/A"
 - Is clean desk policy enforced?
-
 
 **Column G - Screen Privacy:**
 
 - Dropdown: "Yes", "No", "Partial", "N/A"
 - Are screen privacy measures in place (filters, positioning)?
 
-
 **Column H - Secure Storage:**
 
 - Dropdown: "Yes", "No", "Partial", "N/A"
 - Is secure storage available for classified documents?
 
-
 **Column I - Status:**
 
 - Dropdown: "Compliant", "Partial", "Non-Compliant", "N/A"
 
-
 **Column J - Notes:**
 
 - Any additional context or gaps identified
-
 
 **Time Required:** 45-60 minutes
 
@@ -445,62 +412,51 @@ Outputs from this assessment are INPUT to:
 
 - Unique identifier: "SR-001", "DC-001", etc.
 
-
 **Column B - Location:**
 
 - Descriptive location: "Building A - Basement - Main Server Room"
 
-
 **Column C - Room Type:**
 
 - Dropdown: "Server Room", "Datacenter", "Network Closet", "Comms Room", "UPS Room"
-
 
 **Column D - MFA Access:**
 
 - Dropdown: "Yes", "No", "Partial", "N/A"
 - Is multi-factor access required?
 
-
 **Column E - No Windows:**
 
 - Dropdown: "Yes", "No", "Partial", "N/A"
 - Confirmed no external windows?
-
 
 **Column F - Reinforced Walls:**
 
 - Dropdown: "Yes", "No", "Partial", "N/A"
 - Are walls reinforced?
 
-
 **Column G - CCTV Coverage:**
 
 - Dropdown: "Yes", "No", "Partial", "N/A"
 - Is the room covered by CCTV?
-
 
 **Column H - Access Logging:**
 
 - Dropdown: "Yes", "No", "Partial", "N/A"
 - Is access logged?
 
-
 **Column I - Env. Monitoring:**
 
 - Dropdown: "Yes", "No", "Partial", "N/A"
 - Is environmental monitoring in place (temperature, humidity, water)?
 
-
 **Column J - Status:**
 
 - Dropdown: "Compliant", "Partial", "Non-Compliant", "N/A"
 
-
 **Column K - Notes:**
 
 - Any additional context
-
 
 **Time Required:** 1-2 hours
 
@@ -514,51 +470,42 @@ Outputs from this assessment are INPUT to:
 
 - Unique identifier: "MR-001", "MR-002", etc.
 
-
 **Column B - Location:**
 
 - Descriptive location: "HQ - Floor 5 - Boardroom"
-
 
 **Column C - Room Classification:**
 
 - Dropdown: "Standard", "Boardroom", "Secure", "Interview"
 - Classification based on typical use
 
-
 **Column D - Recording Check:**
 
 - Dropdown: "Yes", "No", "Partial", "N/A"
 - Is recording device check performed before sensitive meetings?
-
 
 **Column E - Whiteboard Clear:**
 
 - Dropdown: "Yes", "No", "Partial", "N/A"
 - Is whiteboard cleared after meetings?
 
-
 **Column F - Document Clear:**
 
 - Dropdown: "Yes", "No", "Partial", "N/A"
 - Are documents cleared after meetings?
-
 
 **Column G - VC Equipment Secured:**
 
 - Dropdown: "Yes", "No", "Partial", "N/A"
 - Is video conferencing equipment secured when not in use?
 
-
 **Column H - Status:**
 
 - Dropdown: "Compliant", "Partial", "Non-Compliant", "N/A"
 
-
 **Column I - Notes:**
 
 - Any additional context
-
 
 **Time Required:** 30-45 minutes
 
@@ -572,49 +519,40 @@ Outputs from this assessment are INPUT to:
 
 - Building name: "123 Main Street - Multi-Tenant Office"
 
-
 **Column B - Sharing Arrangement:**
 
 - Dropdown: "Multi-Tenant", "Co-Working", "Shared Floor", "Colocation", "Sole Occupant"
-
 
 **Column C - Perimeter Defined:**
 
 - Dropdown: "Yes", "No", "Partial", "N/A"
 - Is organisation perimeter clearly defined within building?
 
-
 **Column D - Own Access Control:**
 
 - Dropdown: "Yes", "No", "Partial", "N/A"
 - Does organisation control its own access system?
-
 
 **Column E - Building Mgmt Access:**
 
 - Dropdown: "Controlled and Logged", "Controlled Only", "Uncontrolled", "N/A"
 - How is building management access handled?
 
-
 **Column F - Shared Infrastructure:**
 
 - Text description of shared infrastructure and risks
-
 
 **Column G - Key Management:**
 
 - Text description of key management coordination
 
-
 **Column H - Status:**
 
 - Dropdown: "Compliant", "Partial", "Non-Compliant", "N/A"
 
-
 **Column I - Notes:**
 
 - Any additional context
-
 
 **Time Required:** 30-45 minutes
 
@@ -644,36 +582,29 @@ Outputs from this assessment are INPUT to:
 
 - Unique identifier: "E-001", "E-002", etc.
 
-
 **Column B - Evidence Type:**
 
 - Type of evidence: "Photograph", "Audit Report", "Configuration", "Log Sample"
-
 
 **Column C - Description:**
 
 - What the evidence shows
 
-
 **Column D - Collection Date:**
 
 - Date evidence was collected
-
 
 **Column E - Collector:**
 
 - Who collected the evidence
 
-
 **Column F - Location/Link:**
 
 - Where evidence is stored
 
-
 **Column G - Status:**
 
 - Dropdown: "Collected", "Pending", "Missing"
-
 
 **Time Required:** 1-2 hours
 
@@ -705,7 +636,6 @@ Outputs from this assessment are INPUT to:
 - CCTV coverage map for office areas
 - Photographs showing clean desk compliance
 
-
 **2. Server Rooms:**
 
 - Access control configuration (MFA verified)
@@ -717,7 +647,6 @@ Outputs from this assessment are INPUT to:
 - Environmental monitoring alerts (last 12 months)
 - Maintenance records
 
-
 **3. Meeting Rooms:**
 
 - Meeting room procedures document
@@ -726,7 +655,6 @@ Outputs from this assessment are INPUT to:
 - Room booking system configuration
 - Photographs of room clearing signage
 
-
 **4. Shared Facilities:**
 
 - Lease agreement excerpts (perimeter definition)
@@ -734,7 +662,6 @@ Outputs from this assessment are INPUT to:
 - Key management procedures
 - Shared infrastructure documentation
 - Emergency response coordination documents
-
 
 ### Evidence Storage
 
@@ -763,7 +690,6 @@ Outputs from this assessment are INPUT to:
   - ❌ MISTAKE: Marking "Clean Desk Enforced: Yes" because policy exists
   - ✅ CORRECT: Reviewing audit results showing 85% compliance, documenting as "Partial"
 
-
 ### Pitfall 2: Server Room Windows Present
 
 - **Problem:** Server rooms with external windows (security and environmental risk)
@@ -780,7 +706,6 @@ Outputs from this assessment are INPUT to:
   - ❌ MISTAKE: Not physically checking server room for windows
   - ✅ CORRECT: Physical inspection reveals small window, documenting as "Non-Compliant" with remediation required
 
-
 ### Pitfall 3: Server Room Single-Factor Access
 
 - **Problem:** Server rooms accessible with badge-only (no PIN or biometric)
@@ -795,7 +720,6 @@ Outputs from this assessment are INPUT to:
 - **Example:**
   - ❌ MISTAKE: Documenting "MFA Access: Yes" based on policy without testing
   - ✅ CORRECT: Testing door, finding badge-only works, documenting as "Non-Compliant"
-
 
 ### Pitfall 4: Meeting Room Information Left Behind
 
@@ -813,7 +737,6 @@ Outputs from this assessment are INPUT to:
   - ❌ MISTAKE: Documenting "Whiteboard Clear: Yes" without observation
   - ✅ CORRECT: Checking 5 meeting rooms after meetings, finding 2 with information on whiteboards
 
-
 ### Pitfall 5: Shared Building Perimeter Unclear
 
 - **Problem:** In multi-tenant buildings, organisation perimeter not clearly defined
@@ -829,7 +752,6 @@ Outputs from this assessment are INPUT to:
 - **Example:**
   - ❌ MISTAKE: Assuming building entrance is organisation perimeter
   - ✅ CORRECT: Reviewing lease, finding organisation controls floors 5-7 only, documenting actual perimeter
-
 
 ### Pitfall 6: Building Management Uncontrolled Access
 
@@ -847,7 +769,6 @@ Outputs from this assessment are INPUT to:
   - ❌ MISTAKE: Not assessing building management access arrangements
   - ✅ CORRECT: Reviewing lease, finding building management has master key with no logging requirement
 
-
 ### Pitfall 7: Server Room CCTV Coverage Gaps
 
 - **Problem:** CCTV doesn't cover all server room areas
@@ -863,7 +784,6 @@ Outputs from this assessment are INPUT to:
 - **Example:**
   - ❌ MISTAKE: Documenting "CCTV Coverage: Yes" based on camera presence
   - ✅ CORRECT: Walking server room, finding rear rack aisle not covered, documenting as "Partial"
-
 
 ### Pitfall 8: VC Equipment Recording Risk
 
@@ -881,7 +801,6 @@ Outputs from this assessment are INPUT to:
   - ❌ MISTAKE: Not assessing VC equipment security
   - ✅ CORRECT: Checking VC equipment, finding cameras without physical covers, recommending covers
 
-
 ### Pitfall 9: Incomplete Office Coverage
 
 - **Problem:** Only assessing main offices, missing satellite areas
@@ -896,7 +815,6 @@ Outputs from this assessment are INPUT to:
 - **Example:**
   - ❌ MISTAKE: Only documenting main open plan office
   - ✅ CORRECT: Documenting all 15 office areas including finance room, print room, storage areas
-
 
 ### Pitfall 10: Environmental Monitoring Not Verified
 
@@ -914,7 +832,6 @@ Outputs from this assessment are INPUT to:
   - ❌ MISTAKE: Documenting "Env. Monitoring: Yes" without verification
   - ✅ CORRECT: Checking configuration, finding alerts go to email address of person who left 2 years ago
 
-
 ### Pitfall 11: Secure Storage Inadequate
 
 - **Problem:** Secure storage exists but is inadequate for needs
@@ -931,7 +848,6 @@ Outputs from this assessment are INPUT to:
   - ❌ MISTAKE: Documenting "Secure Storage: Yes" because cabinets exist
   - ✅ CORRECT: Auditing storage, finding only 50% of desks have lockable drawers, documenting as "Partial"
 
-
 ### Pitfall 12: Screen Privacy Not Position-Based
 
 - **Problem:** Screen privacy relies only on filters, not positioning
@@ -946,7 +862,6 @@ Outputs from this assessment are INPUT to:
 - **Example:**
   - ❌ MISTAKE: Documenting screen privacy as "Yes" because filters deployed
   - ✅ CORRECT: Observing screens visible from public corridor, documenting positioning issue
-
 
 ### Pitfall 13: Network Closets Unsecured
 
@@ -963,7 +878,6 @@ Outputs from this assessment are INPUT to:
   - ❌ MISTAKE: Only assessing main server room, ignoring 8 network closets
   - ✅ CORRECT: Assessing all network closets, finding 3 with key-only access (no logging)
 
-
 ### Pitfall 14: Meeting Room Booking Not Controlled
 
 - **Problem:** Anyone can book any meeting room regardless of sensitivity
@@ -978,7 +892,6 @@ Outputs from this assessment are INPUT to:
 - **Example:**
   - ❌ MISTAKE: Not assessing meeting room booking controls
   - ✅ CORRECT: Checking booking system, finding no restrictions on boardroom access
-
 
 ### Pitfall 15: Server Room Visitor Access Uncontrolled
 
@@ -995,7 +908,6 @@ Outputs from this assessment are INPUT to:
   - ❌ MISTAKE: Assuming all visitors are supervised because policy requires it
   - ✅ CORRECT: Reviewing visitor log, finding 4 of 10 vendor visits without supervision documentation
 
-
 ### Pitfall 16: Environmental Monitoring Thresholds Inappropriate
 
 - **Problem:** Temperature/humidity thresholds set incorrectly or not set
@@ -1010,7 +922,6 @@ Outputs from this assessment are INPUT to:
 - **Example:**
   - ❌ MISTAKE: Documenting environmental monitoring as compliant without checking thresholds
   - ✅ CORRECT: Checking settings, finding temperature alert set at 35C (too high for safe operation)
-
 
 ### Pitfall 17: Shared Infrastructure Risks Not Documented
 
@@ -1027,7 +938,6 @@ Outputs from this assessment are INPUT to:
   - ❌ MISTAKE: Not assessing shared infrastructure security implications
   - ✅ CORRECT: Documenting shared HVAC system allowing air flow between tenants, recommending air gap review
 
-
 ### Pitfall 18: Key Management Not Coordinated
 
 - **Problem:** Multiple key holders without central tracking
@@ -1043,7 +953,6 @@ Outputs from this assessment are INPUT to:
 - **Example:**
   - ❌ MISTAKE: Not assessing key management in shared facilities
   - ✅ CORRECT: Reviewing key register, finding 5 keys issued but only 3 holders identifiable
-
 
 ---
 
@@ -1147,14 +1056,12 @@ Before submitting for Level 2 approval, complete this self-assessment:
 - Date and sign Level 1
 - Document any assumptions or limitations
 
-
 **Level 2: Facilities Manager**
 
 - Review office and meeting room accuracy
 - Verify building-related controls
 - Confirm shared facility arrangements
 - Date and sign Level 2
-
 
 **Level 3: IT Operations Manager**
 
@@ -1163,13 +1070,11 @@ Before submitting for Level 2 approval, complete this self-assessment:
 - Confirm access control configuration
 - Date and sign Level 3
 
-
 **Level 4: CISO Approver**
 
 - Executive review and approval
 - Resource allocation for gaps
 - Date and sign Level 4
-
 
 **Timeline:** 5-10 business days for all four levels
 
@@ -1219,12 +1124,10 @@ If approval is delayed beyond 10 business days:
 - Dropdown lists for standardised input (Zone Types, Room Types, Status)
 - Date validation (valid date format)
 
-
 **Conditional Formatting:**
 
 - Compliance Status columns: Green (Compliant), Amber (Partial), Red (Non-Compliant)
 - Summary Dashboard scores: Colour-coded thresholds
-
 
 **Formulas:**
 
@@ -1232,12 +1135,10 @@ If approval is delayed beyond 10 business days:
 - Compliance percentages calculated automatically
 - Gap counts derived from status columns
 
-
 **Freeze Panes:**
 
 - Header rows frozen
 - First column frozen for horizontal scrolling
-
 
 ---
 
@@ -1366,13 +1267,11 @@ If approval is delayed beyond 10 business days:
 - Primary Header: #003366 (Navy blue), White text
 - Column Header: #D9D9D9 (Light grey), Black text
 
-
 **Data Cells:**
 
 - Input Cell: #FFFFCC (Light yellow)
 - Read-Only: White
 - Calculated: #E2EFDA (Light green)
-
 
 **Compliance Status:**
 
@@ -1380,13 +1279,11 @@ If approval is delayed beyond 10 business days:
 - Partial: #FFEB9C (Light amber)
 - Non-Compliant: #FFC7CE (Light red)
 
-
 **Dashboard Scores:**
 
 - 90-100%: #C6EFCE (Green)
 - 70-89%: #FFEB9C (Amber)
 - Below 70%: #FFC7CE (Red)
-
 
 ---
 
@@ -1412,7 +1309,6 @@ If approval is delayed beyond 10 business days:
 **Feeds into:**
 
 - ISMS-IMP-A.7.1-2-3-S4 (Compliance Dashboard) - Secure areas compliance score
-
 
 ### Integration with Related Controls
 

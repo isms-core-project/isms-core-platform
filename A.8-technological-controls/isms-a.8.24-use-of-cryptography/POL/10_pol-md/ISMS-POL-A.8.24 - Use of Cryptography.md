@@ -34,15 +34,11 @@
 - Compliance: Legal/Compliance Officer
 - Final Authority: Executive Management (GL)
 
-
-
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-IMP-A.8.24 (Implementation Guidance Suite)
 - ISO/IEC 27001:2022 Control A.8.24
-
-
 
 ---
 
@@ -75,8 +71,6 @@ This policy establishes [Organization]'s requirements for cryptographic controls
 - Exception and incident management frameworks
 - Integration with [Organization]'s risk assessment and treatment processes
 
-
-
 ## What This Policy Does
 
 This policy:
@@ -85,8 +79,6 @@ This policy:
 - **Establishes** governance framework for cryptographic decision-making
 - **Specifies** accountability for cryptographic control implementation
 - **References** applicable regulatory requirements per ISMS-POL-00
-
-
 
 ## What This Policy Does NOT Do
 
@@ -97,15 +89,11 @@ This policy does NOT:
 - **Provide system-specific configuration procedures** (see ISMS-IMP-A.8.24 Assessment Guides)
 - **Replace risk assessment** (cryptographic controls selected based on [Organization]'s risk treatment)
 
-
-
 **Rationale**: Separating policy requirements from implementation guidance enables:
 
 - Policy stability despite evolving cryptographic standards
 - Technical agility for algorithm updates without policy revision
 - Clear distinction between governance (policy) and execution (implementation)
-
-
 
 ## Scope
 
@@ -117,14 +105,10 @@ This policy does NOT:
 - All personnel (employees, contractors, third parties) with access to organizational information
 - All third-party services handling organizational data
 
-
-
 **Out of Scope**:
 
 - Public information (no cryptographic protection required)
 - Non-cryptographic security controls (covered by other ISMS policies)
-
-
 
 ## Regulatory Applicability
 
@@ -158,8 +142,6 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - ENISA (Algorithms and Key Sizes)
 - OWASP (Cryptographic Storage)
 
-
-
 **Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent requirements apply where multiple regulations overlap.
 
 ---
@@ -192,8 +174,6 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Database connection encryption
 - API security
 
-
-
 **Data Storage Protection**:
 
 - Full disk encryption (mobile devices, laptops)
@@ -202,8 +182,6 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Cloud storage encryption
 - Removable media encryption
 
-
-
 **Authentication & Identity**:
 
 - Password hashing (not plaintext storage)
@@ -211,15 +189,11 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Digital signatures
 - Certificate-based authentication
 
-
-
 **Key Management**:
 
 - Cryptographic key lifecycle (generation, storage, distribution, rotation, destruction)
 - Key-data separation
 - Hardware Security Modules (HSM) or Key Management Services (KMS) for high-security keys
-
-
 
 **Third-Party Cryptographic Requirements**:
 Third-party services handling Confidential or Restricted data must demonstrate cryptographic controls equivalent to this policy. Verification occurs during vendor security assessment per ISMS-POL-A.5.19 (Supplier Security Policy).
@@ -246,7 +220,6 @@ Third-party cryptographic attestations must cover audit period within:
 
 - **Penetration Test Reports**: Report date within 12 months of assessment.
 
-
 **Vendor Change Notification**: Contractual requirement for vendors to notify [Organization] within 30 days of material changes to cryptographic implementations, triggering reassessment regardless of annual schedule.
 
 **Implementation Guidance**: Detailed procedures for each category are documented in ISMS-IMP-A.8.24 Implementation Guides (Data Transmission, Data Storage, Authentication, Key Management).
@@ -263,7 +236,6 @@ Third-party cryptographic attestations must cover audit period within:
 - Algorithm deprecation triggers formal migration process
 - System Owners receive formal notification minimum 180 days prior to algorithm prohibition to enable migration planning. Critical systems supporting Restricted data receive 270-day advance notice.
 
-
 **Deprecation Communication Process**:
 
 1. **IT Security Team** publishes algorithm deprecation notice in ISMS-CTX-A.8.24 with timeline
@@ -278,7 +250,6 @@ Third-party cryptographic attestations must cover audit period within:
 4. **IT Security Team** tracks acknowledgments and migration plans in deprecation register
 
 **Non-Acknowledgment Escalation**: System Owners not acknowledging within 14 days receive CISO escalation. Non-response after 30 days triggers Executive Management escalation.
-
 
 **Rationale**: Cryptographic standards evolve due to cryptanalysis advances, regulatory changes, and post-quantum cryptography migration. Crypto-agile systems reduce risk and cost of algorithm transitions.
 
@@ -297,8 +268,6 @@ Third-party cryptographic attestations must cover audit period within:
 - Private key protection
 - Certificate revocation capability (OCSP/CRL)
 
-
-
 **Industry Context**: Certificate lifetime requirements change periodically due to CA/Browser Forum policy updates and browser vendor requirements. [Organization] monitors industry developments and adapts certificate management processes accordingly. Current CA/Browser Forum requirements are tracked in ISMS-CTX-A.8.24.
 
 **Implementation**: Certificate management procedures are defined in ISMS-IMP-A.8.24 Key Management Assessment.
@@ -314,8 +283,6 @@ The following practices are **strictly prohibited**:
 - Development of custom cryptographic algorithms without cryptographic expertise
 - Bypassing or disabling cryptographic controls without formal exception approval
 
-
-
 ---
 
 # Governance & Accountability
@@ -329,16 +296,12 @@ The following practices are **strictly prohibited**:
 - Regulatory compliance oversight
 - Algorithm deprecation authority
 
-
-
 **Information Security Manager**:
 
 - Day-to-day policy implementation coordination
 - Technical guidance to System Owners
 - Assessment program management
 - Incident coordination
-
-
 
 **System Owners**:
 
@@ -347,16 +310,12 @@ The following practices are **strictly prohibited**:
 - Assessment and audit participation
 - Remediation plan execution
 
-
-
 **IT Security Team**:
 
 - Technical implementation support
 - Key management infrastructure (HSM/KMS)
 - Cryptographic assessment execution
 - Algorithm monitoring
-
-
 
 **Development Teams**:
 
@@ -365,15 +324,11 @@ The following practices are **strictly prohibited**:
 - Security code review participation
 - Vulnerability remediation
 
-
-
 **Legal/Compliance**:
 
 - Regulatory requirement interpretation
 - External audit coordination
 - Regulatory notification (if incidents occur)
-
-
 
 **Key Ownership vs System Ownership**:
 
@@ -382,8 +337,6 @@ The following practices are **strictly prohibited**:
 - **Key Owners**: Authorize key creation and define key usage policies (governance)
 - **Key Custodians**: Execute physical key management operations (HSM administration, key generation)
 - **System Owners**: Operate systems using keys (do not manage keys directly)
-
-
 
 This separation ensures accountability, segregation of duties, and clear audit trails.
 
@@ -396,15 +349,11 @@ This separation ensures accountability, segregation of duties, and clear audit t
 - Authentication mechanisms
 - Key Management practices
 
-
-
 **Assessment Frequency**:
 
 - **Initial**: Within 90 days of policy approval or new system deployment
 - **Regular**: Annual minimum
 - **Triggered**: After significant system changes, security incidents, or algorithm deprecations
-
-
 
 **Continuous Monitoring**:
 
@@ -416,11 +365,9 @@ Between scheduled assessments, [Organization] employs automated monitoring for:
 
 - **TLS Configuration Drift**: Monthly TLS cipher suite scans to detect configuration changes enabling weak ciphers. Deviations from approved configurations (ISMS-CTX-A.8.24) trigger compliance assessment.
 
-
 **Monitoring Evidence**: Automated scan logs retained in [Security Information and Event Management (SIEM) system / Evidence Repository - to be specified] for minimum 12 months. Monitoring system operational status verified quarterly by IT Security Team.
 
 **Note**: Specific monitoring tool selection and configuration procedures documented in ISMS-IMP-A.8.24 Implementation Guides to enable technical flexibility without policy revision.
-
 
 **Significant System Changes** (triggering assessment) include:
 
@@ -431,8 +378,6 @@ Between scheduled assessments, [Organization] employs automated monitoring for:
 - Deployment of new applications processing Confidential/Restricted data
 - Algorithm deprecation affecting systems in scope
 
-
-
 **Assessment Tools**: [Organization] uses ISMS-IMP-A.8.24 Assessment Workbooks to systematically verify compliance, document evidence, and track remediation.
 
 **Evidence Collection**: Assessments collect the following evidence types:
@@ -442,7 +387,6 @@ Between scheduled assessments, [Organization] employs automated monitoring for:
 - **Certificate Inventories**: Complete listing of certificates with expiration dates and key specifications
 - **Key Management Records**: Key rotation logs, access control records, HSM audit logs
 - **Third-Party Attestations**: Vendor SOC 2 reports, ISO 27001 certificates, security questionnaire responses
-
 
 **Evidence Sampling Methodology**:
 
@@ -462,9 +406,7 @@ For assessments covering multiple systems:
 
 - **Risk-Based Prioritization**: Systems processing Restricted data receive enhanced scrutiny (100% coverage). Systems processing only Internal data may use sampling where automated validation is unavailable.
 
-
 **Auditor Access**: Full inventory and automated scan results provided to auditors. Sample selection methodology documented in assessment workbook to demonstrate statistical validity.
-
 
 **Compliance Calculation**: Compliance score = (Implemented Controls / Applicable Controls) x 100%
 
@@ -492,13 +434,11 @@ For assessments covering multiple systems:
   - No Recommended controls implemented (0% Recommended Score)
   - Overall: (100% x 70%) + (0% x 30%) = 70% (meets minimum threshold)
 
-
   Same system with Recommended controls:
 
   - All Required controls implemented (100% Required Score)
   - All Recommended controls implemented (100% Recommended Score)
   - Overall: (100% x 70%) + (100% x 30%) = 100% (exceeds target)
-
 
 **Rationale**: "Recommended" status reflects risk-based approach where encryption provides security value but organizational risk tolerance permits exceptions for Internal classification without formal approval process. Required controls address regulatory obligations (Tier 1); Recommended controls address defense-in-depth best practices (Tier 3).
 
@@ -518,8 +458,6 @@ Exceptions to cryptographic policy requirements require:
 - Timeline for achieving full compliance
 - Formal approval per authority matrix
 
-
-
 **Approval Authority**:
 
 - **Technical exceptions** (algorithm, configuration): CISO approval
@@ -529,7 +467,6 @@ Exceptions to cryptographic policy requirements require:
 - **Maximum renewals**: 2 renewals permitted (36 months total maximum exception duration)
 - **Third expiration**: After two renewals, exception cannot be extended. System must achieve compliance or be decommissioned. Escalation to Executive Management required.
 
-
 **Renewal Limit Enforcement**:
 
 Exception tracking system (ISMS Gap Register or equivalent) automatically flags exceptions approaching renewal limits:
@@ -538,9 +475,7 @@ Exception tracking system (ISMS Gap Register or equivalent) automatically flags 
 - **Second Renewal Alert**: 60 days before 24-month expiration
 - **Final Expiration Notice**: 90 days before 36-month expiration with explicit statement "NO FURTHER RENEWALS PERMITTED"
 
-
 System Owners receive escalating communications. At 36-month expiration, exception automatically closes and system enters non-compliance status pending remediation or decommissioning.
-
 
 **Monitoring**: Active exceptions reviewed quarterly by CISO. Compensating control effectiveness verified. Exceptions revoked if risk profile changes or compensating controls fail.
 
@@ -556,16 +491,12 @@ System Owners receive escalating communications. At 36-month expiration, excepti
 - Discovery of prohibited algorithms in production
 - Cryptographic control failures
 
-
-
 **Severity Classification**:
 
 - **Critical**: Confirmed compromise of production encryption keys, certificate private keys, or HSM/KMS access credentials. Response: 4 hours.
 - **High**: Suspected key compromise, discovery of prohibited algorithms protecting Confidential/Restricted data, or cryptographic control failure affecting multiple systems. Response: 24 hours.
 - **Medium**: Discovery of deprecated algorithms, certificate expiration causing service disruption, or isolated control failures. Response: 48 hours.
 - **Low**: Policy deviations without active exploitation, minor configuration drift. Response: 72 hours.
-
-
 
 If response timelines cannot be met, escalate to CISO (for High/Medium/Low severity) or CEO (for Critical severity) within the original timeline window.
 
@@ -587,23 +518,17 @@ If response timelines cannot be met, escalate to CISO (for High/Medium/Low sever
 - **Reviewers**: CISO, IT Security Team, Legal/Compliance, selected System Owners
 - **Approval**: CISO (technical), Executive Management (strategic)
 
-
-
 **Technical Standards Review**:
 
 - **Frequency**: Semi-annual (cryptographic landscape evolves rapidly)
 - **Authority**: IT Security Team proposes updates, CISO approves
 - **Note**: Technical standard updates (ISMS-IMP-A.8.24) do not require policy revision
 
-
-
 **Policy Updates**:
 
 - **Minor** (clarifications, references): CISO approval, 30-day communication
 - **Major** (scope changes, new requirements): Full approval chain, 90-day implementation
 - **Emergency** (critical vulnerabilities): CISO approval, immediate communication
-
-
 
 **Communication**: Policy published in ISMS document repository. Changes communicated organization-wide. Training provided for significant changes.
 
@@ -621,14 +546,10 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - Data classification determines minimum cryptographic requirements
 - Risk treatment plans document cryptographic control implementation
 
-
-
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
 - Control A.8.24 applicability justified in [Organization]'s SoA
 - Implementation status tracked and reported
-
-
 
 **Related Controls**:
 
@@ -639,8 +560,6 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - A.8.13 (Information Backup): Backup encryption key storage segregation. A.8.24 defines encryption requirements; A.8.13 defines backup procedures including key-data separation verification
 - A.8.15 (Logging): Cryptographic event logging
 - A.8.23 (Web Filtering): Secure communications for web traffic
-
-
 
 **Stacked Control Integration**:
 
@@ -677,8 +596,6 @@ ISMS-CTX-A.8.24 (Cryptographic Technical Reference) is established as a non-ISMS
 - Algorithm deprecation schedules and migration timelines
 - Post-quantum cryptography readiness guidance
 
-
-
 **Document Control Status**: ISMS-CTX-A.8.24 is NOT subject to ISMS formal document control. This separation enables rapid technical updates without policy change management overhead.
 
 **Governance**: IT Security Team updates ISMS-CTX-A.8.24 as cryptographic standards evolve. CISO reviews semi-annually for accuracy and completeness.
@@ -694,7 +611,6 @@ While ISMS-CTX-A.8.24 is not subject to ISMS formal approval workflow, it mainta
 - **Change Communication**: Major version changes (algorithm deprecations, cipher suite updates) communicated to all System Owners via [Communication Platform]. Minor/patch changes (clarifications, reference updates) noted in repository changelog.
 - **Historical Versions**: Previous versions archived for audit trail. Current version clearly marked.
 
-
 **Audit Trail**: ISMS-CTX-A.8.24 change log maintained showing date, version, changes, and IT Security Team reviewer.
 
 **Assessment Tools**:
@@ -703,8 +619,6 @@ While ISMS-CTX-A.8.24 is not subject to ISMS formal approval workflow, it mainta
 - Evidence registers
 - Gap analysis templates
 - Remediation tracking
-
-
 
 ## Regulatory Mapping
 
@@ -729,23 +643,17 @@ This policy addresses cryptographic requirements from:
 - Data classification and encryption requirements
 - Incident reporting procedures
 
-
-
 **Technical Training** (Developers, IT Staff):
 
 - Secure cryptographic implementation
 - Approved cryptographic libraries and APIs
 - Common cryptographic vulnerabilities
 
-
-
 **Operational Training** (IT Operations):
 
 - Key management procedures
 - Certificate lifecycle management
 - Cryptographic incident response
-
-
 
 ---
 

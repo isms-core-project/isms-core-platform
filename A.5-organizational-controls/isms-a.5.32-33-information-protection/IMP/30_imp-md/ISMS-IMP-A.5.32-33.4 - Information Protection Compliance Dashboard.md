@@ -79,7 +79,6 @@ This dashboard consolidates metrics from all A.5.32-33 assessments to provide:
 - **Remediation Tracking** for identified gaps
 - **Trend Analysis** showing improvement over time
 
-
 ### Key Principle
 
 This dashboard is an **aggregation and reporting tool** - it pulls data from the foundational assessments (A.5.32-33.1, A.5.32-33.2, A.5.32-33.3) to provide management visibility without duplicating detailed assessment work.
@@ -97,7 +96,6 @@ This dashboard is an **aggregation and reporting tool** - it pulls data from the
 | Retention Schedule Compliance | A.5.32-33.3 | Quarterly |
 | Disposal Completion Rate | A.5.32-33.3 | Quarterly |
 
-
 ## Who Should Use This Dashboard
 
 ### Primary Users
@@ -109,7 +107,6 @@ This dashboard is an **aggregation and reporting tool** - it pulls data from the
 5. **Internal Audit** - Control assessment, evidence verification
 6. **Compliance Officer** - Regulatory adherence, gap remediation
 
-
 ### Required Skills
 
 - Understanding of ISO 27001 control requirements
@@ -117,12 +114,10 @@ This dashboard is an **aggregation and reporting tool** - it pulls data from the
 - Knowledge of risk assessment principles
 - Familiarity with maturity models
 
-
 ### Time Commitment
 
 - **Quarterly Update:** 2-4 hours (aggregate metrics from source assessments)
 - **Annual Deep Review:** 4-6 hours (full maturity assessment and trend analysis)
-
 
 ## Expected Outputs
 
@@ -138,7 +133,6 @@ Upon completion, you will have:
 8. **Evidence Summary** for audit readiness
 9. **Approved Dashboard** with stakeholder sign-offs
 
-
 ---
 
 # Prerequisites
@@ -153,7 +147,6 @@ Before updating this dashboard, ensure you have:
 - [ ] ISMS-IMP-A.5.32-33.2 - Records Protection Assessment (current period)
 - [ ] ISMS-IMP-A.5.32-33.3 - Retention & Disposal Schedule (current period)
 
-
 ### Metrics Data
 
 - IP asset count and protection status
@@ -164,13 +157,11 @@ Before updating this dashboard, ensure you have:
 - Disposal completion rate
 - Gap count and risk ratings
 
-
 ### Historical Data
 
 - Previous dashboard (for trend comparison)
 - Historical maturity scores
 - Previous gap remediation status
-
 
 ---
 
@@ -222,7 +213,6 @@ Before updating this dashboard, ensure you have:
    - Extract disposal completion rate
    - Extract exception count
 
-
 ### Phase 2: Update Executive Summary (15-30 minutes)
 
 **Objective:** Provide high-level status view
@@ -232,7 +222,6 @@ Before updating this dashboard, ensure you have:
 - Key achievements this period
 - Key concerns requiring attention
 - Assessment period and dates
-
 
 ### Phase 3: Calculate KPIs (30-45 minutes)
 
@@ -253,7 +242,6 @@ Before updating this dashboard, ensure you have:
 | | Overdue disposals | < 5% |
 | | Legal hold compliance | 100% |
 
-
 ### Phase 4: Control Assessment (30-45 minutes)
 
 **Objective:** Evaluate A.5.32 and A.5.33 control effectiveness
@@ -266,7 +254,6 @@ For each control requirement:
 - Gap identified (if any)
 - Compliance score (0-5 scale)
 - Overall control status
-
 
 ### Phase 5: Maturity Assessment (30-45 minutes)
 
@@ -293,7 +280,6 @@ Use CMMI-based maturity scale:
 - Disposal Process
 - Monitoring & Metrics
 
-
 ### Phase 6: Risk Register (15-30 minutes)
 
 **Objective:** Document current risks
@@ -306,7 +292,6 @@ Use CMMI-based maturity scale:
 - Current mitigation
 - Owner and status
 
-
 ### Phase 7: Remediation Tracking (15-30 minutes)
 
 **Objective:** Track gap closure
@@ -317,7 +302,6 @@ Use CMMI-based maturity scale:
 - Update status (Open/In Progress/Complete)
 - Note any blockers
 
-
 ### Phase 8: Trend Analysis (15-30 minutes)
 
 **Objective:** Show progress over time
@@ -327,20 +311,17 @@ Use CMMI-based maturity scale:
 - Note improving/stable/declining trends
 - Identify areas of concern
 
-
 ### Phase 9: Evidence Collection (15 minutes)
 
 **Complete Sheet 9 (Evidence Register):**
 - Link to source assessment evidence
 - Document dashboard-specific evidence
 
-
 ### Phase 10: Review & Approval (30 minutes)
 
 **Complete Sheet 10 (Approval & Sign-Off):**
 - Schedule review meetings
 - Obtain stakeholder sign-offs
-
 
 ---
 
@@ -361,7 +342,6 @@ Use CMMI-based maturity scale:
 | Key Concerns | Items requiring attention | 12% of records overdue for disposal |
 | Next Review Date | Scheduled next review | 2026-05-01 |
 
-
 ## Sheet 3: Compliance Metrics
 
 **Required Fields:**
@@ -378,7 +358,6 @@ Use CMMI-based maturity scale:
 | Status | On Target/At Risk/Below Target | At Risk |
 | Owner | Responsible person | Legal Counsel |
 | Notes | Context | 2 assets pending owner assignment |
-
 
 ## Sheet 4: Control Assessment
 
@@ -403,7 +382,6 @@ Use CMMI-based maturity scale:
 | Retention compliance | Schedule followed |
 | Disposal process | Secure destruction verified |
 
-
 ## Sheet 5: Maturity Assessment
 
 **Required Fields:**
@@ -416,7 +394,6 @@ Use CMMI-based maturity scale:
 | Priority | Improvement priority | High |
 | Key Actions | To reach target | Implement automated tracking |
 | Notes | Context | Manual processes need automation |
-
 
 ## Sheet 6: Risk Register
 
@@ -435,7 +412,6 @@ Use CMMI-based maturity scale:
 | Status | Open/Mitigated/Accepted | Open |
 | Review Date | Last review | 2026-01-15 |
 
-
 ## Sheet 7: Remediation Tracker
 
 **Required Fields:**
@@ -452,7 +428,6 @@ Use CMMI-based maturity scale:
 | Blocker | What's preventing progress | Pending business unit response |
 | Notes | Context | Follow-up scheduled for 2026-02-15 |
 
-
 ## Sheet 8: Trend Analysis
 
 **Required Fields:**
@@ -468,7 +443,6 @@ Use CMMI-based maturity scale:
 | Target | Goal | 100% |
 | On Track | Yes/No | Yes |
 
-
 ---
 
 # Evidence Collection
@@ -481,12 +455,10 @@ Use CMMI-based maturity scale:
 - Risk assessment documentation
 - Remediation action evidence
 
-
 **Stakeholder Approval:**
 - Meeting minutes from review sessions
 - Email approvals (if applicable)
 - Sign-off documentation
-
 
 ## Evidence Storage
 
@@ -647,7 +619,6 @@ Store all evidence in:
 | B11 | Records Protection Status | List: Effective, Partial, Ineffective |
 | B12 | Retention Compliance Status | List: Compliant, At Risk, Non-Compliant |
 
-
 ## Sheet 3: Compliance_Metrics
 
 ### Column Structure
@@ -671,7 +642,6 @@ Store all evidence in:
 - Status "At Risk": Yellow fill (#FFEB9C)
 - Status "Below Target": Red fill (#FFC7CE)
 
-
 ## Sheet 4: Control_Assessment
 
 ### Column Structure
@@ -686,7 +656,6 @@ Store all evidence in:
 | F | Score | 12 | List: 5 - Optimised, 4 - Managed, 3 - Defined, 2 - Developing, 1 - Initial, 0 - Non-existent |
 | G | Status | 15 | List: Compliant, Partial, Non-Compliant |
 
-
 ## Sheet 5: Maturity_Assessment
 
 ### Column Structure
@@ -700,7 +669,6 @@ Store all evidence in:
 | E | Priority | 12 | List: Critical, High, Medium, Low |
 | F | Key Actions | 40 | - |
 | G | Notes | 30 | - |
-
 
 ## Sheet 6: Risk_Register
 
@@ -722,7 +690,6 @@ Store all evidence in:
 
 ### Formulas
 - Column F (Risk Score): `=VALUE(LEFT(D[row],1))*VALUE(LEFT(E[row],1))`
-
 
 ## Sheet 7: Remediation_Tracker
 
@@ -746,7 +713,6 @@ Store all evidence in:
 - Status "In Progress": Yellow fill (#FFEB9C)
 - Status "Overdue": Red fill (#FFC7CE)
 
-
 ## Sheet 8: Trend_Analysis
 
 ### Column Structure
@@ -763,7 +729,6 @@ Store all evidence in:
 | H | Target | 10 | - |
 | I | On Track | 10 | List: Yes, No, At Risk |
 
-
 ## Sheet 9: Evidence_Register
 
 ### Column Structure
@@ -778,7 +743,6 @@ Store all evidence in:
 | F | Collected Date | 12 | Date |
 | G | Collected By | 20 | - |
 | H | Verification Status | 18 | List: Verified, Pending, Expired |
-
 
 ## Sheet 10: Approval_SignOff
 

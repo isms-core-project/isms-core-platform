@@ -44,7 +44,6 @@ This document consists of two parts:
   - Cell Styling Reference
   - Integration Points
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -87,14 +86,12 @@ This assessment covers the ENTIRE equipment lifecycle end-point - from identific
 - Tools and software approved for data sanitisation
 - Verification requirements per method
 
-
 **Disposal Service Providers:**
 
 - Approved disposal vendors
 - Contract and SLA requirements
 - Destruction certificate requirements
 - On-site vs. off-site destruction options
-
 
 **Re-Use Requirements:**
 
@@ -103,14 +100,12 @@ This assessment covers the ENTIRE equipment lifecycle end-point - from identific
 - Licensed software handling
 - Organisation identifier removal
 
-
 **Disposal Tracking:**
 
 - Equipment disposal log (last 12-24 months)
 - Destruction certificates collected
 - Verification evidence maintained
 - Asset management record updates
-
 
 #### How This Relates to Other A.7.6-7-14 Assessments
 
@@ -143,13 +138,11 @@ This assessment covers the ENTIRE equipment lifecycle end-point - from identific
 - Familiarity with equipment asset management
 - Access to disposal records and vendor contracts
 
-
 #### Time Commitment
 
 - **Initial assessment:** 8-12 hours
 - **Semi-annual updates:** 3-4 hours
 - **Post-disposal event updates:** 1-2 hours
-
 
 ### Expected Outputs
 
@@ -178,7 +171,6 @@ Before starting this assessment, gather:
 - Information classification policy
 - Asset management policy
 
-
 #### 2. Disposal Procedures
 
 - Data sanitisation procedures
@@ -186,20 +178,17 @@ Before starting this assessment, gather:
 - Re-use/re-assignment procedures
 - Vendor management procedures for disposal services
 
-
 #### 3. Tool Documentation
 
 - Approved data sanitisation tools (DBAN, Blancco, BitRaser, etc.)
 - Tool configuration standards
 - Verification procedures
 
-
 #### 4. Vendor Information
 
 - Disposal service provider contracts
 - SLAs and destruction certificate requirements
 - Approved vendor list
-
 
 #### 5. Disposal Records
 
@@ -208,7 +197,6 @@ Before starting this assessment, gather:
 - Sanitisation verification reports
 - Asset management records (disposed equipment)
 
-
 ### Required Tools
 
 - Microsoft Excel (2016 or later) for workbook completion
@@ -216,13 +204,11 @@ Before starting this assessment, gather:
 - Access to disposal records and certificates
 - Screen capture tools (for evidence)
 
-
 ### Dependencies
 
 This assessment should be conducted after:
 - Equipment inventory is current in asset management system
 - Disposal records are consolidated from all sources
-
 
 ---
 
@@ -265,7 +251,6 @@ This assessment should be conducted after:
 - Assessment Date, Completed By, Organisation
 - Review status legend
 
-
 **Time Required:** 5 minutes
 
 ### Sheet 2: Disposal Requirements
@@ -299,7 +284,6 @@ This assessment should be conducted after:
 | H | Implementation Status | Implemented / Partial / Not Implemented |
 | I | Notes | Additional context |
 
-
 **Time Required:** 1-2 hours
 
 ### Sheet 3: Disposal Tools
@@ -312,46 +296,37 @@ This assessment should be conducted after:
 
 - "DBAN (Darik's Boot and Nuke)", "Blancco Drive Eraser", "Physical Shredder", "Degausser"
 
-
 **Column B - Tool Type:**
 
 - Dropdown: "Software - Overwrite", "Software - Crypto Erase", "Hardware - Degausser", "Hardware - Shredder"
-
 
 **Column C - Applicable Equipment:**
 
 - "HDD", "SSD", "All Magnetic Media", "All Storage Media"
 
-
 **Column D - Standard/Method:**
 
 - "DoD 5220.22-M (3-pass)", "NIST 800-88 Clear", "NIST 800-88 Purge", "Physical Destruction"
-
 
 **Column E - Verification Method:**
 
 - "Software verification report", "Visual inspection", "Certificate from vendor"
 
-
 **Column F - Approved Version:**
 
 - Current approved version: "DBAN 2.3.0", "Blancco 7.5"
-
 
 **Column G - Last Tested:**
 
 - Date tool was last tested: "15.12.2025"
 
-
 **Column H - Compliant with Policy:**
 
 - "Yes", "Partial", "No"
 
-
 **Column I - Notes:**
 
 - Configuration requirements, limitations
-
 
 **Time Required:** 1-2 hours
 
@@ -365,51 +340,41 @@ This assessment should be conducted after:
 
 - Company name: "SecureIT Disposal Ltd", "Data Destruction Services Inc"
 
-
 **Column B - Service Type:**
 
 - "On-site destruction", "Off-site destruction", "Recycling with destruction", "Certificate only"
-
 
 **Column C - Contract Status:**
 
 - "Active", "Expired", "Under Review"
 
-
 **Column D - Contract Expiry:**
 
 - Contract end date
-
 
 **Column E - Destruction Certificate Provided:**
 
 - "Yes - Per Item", "Yes - Per Batch", "No"
 
-
 **Column F - On-Site Option:**
 
 - "Yes", "No"
-
 
 **Column G - Chain of Custody:**
 
 - "Documented", "Partial", "Not Documented"
 
-
 **Column H - Last Audit/Review:**
 
 - Date of last provider review
-
 
 **Column I - Compliance Status:**
 
 - Formula or dropdown
 
-
 **Column J - Notes:**
 
 - Service limitations, preferred for specific equipment
-
 
 **Time Required:** 1-2 hours
 
@@ -423,76 +388,61 @@ This assessment should be conducted after:
 
 - Unique identifier: "DISP-2025-001"
 
-
 **Column B - Date:**
 
 - Disposal date: "15.12.2025"
-
 
 **Column C - Asset Tag:**
 
 - Equipment asset tag from asset management system
 
-
 **Column D - Equipment Type:**
 
 - "Laptop", "Desktop", "Server", "Mobile", "Printer", "Other"
-
 
 **Column E - Make/Model:**
 
 - Equipment make and model
 
-
 **Column F - Serial Number:**
 
 - Equipment serial number
-
 
 **Column G - Data Classification:**
 
 - Maximum classification stored: "CONFIDENTIAL", "INTERNAL", "PUBLIC", "Unknown"
 
-
 **Column H - Disposal Method:**
 
 - Actual method used: "Physical Destruction", "Secure Overwrite", "Factory Reset"
-
 
 **Column I - Disposal Destination:**
 
 - "Vendor Destruction", "Internal Re-Use", "Donation", "Sale", "Recycling"
 
-
 **Column J - Certificate Obtained:**
 
 - "Yes", "No", "N/A"
-
 
 **Column K - Certificate Reference:**
 
 - Certificate number or reference
 
-
 **Column L - Verified By:**
 
 - Name of person who verified sanitisation
-
 
 **Column M - Asset Record Updated:**
 
 - "Yes", "No"
 
-
 **Column N - Compliant:**
 
 - Formula: Checks method matches classification requirement
 
-
 **Column O - Notes:**
 
 - Additional context
-
 
 **Time Required:** 2-4 hours (depending on disposal volume)
 
@@ -507,7 +457,6 @@ This assessment should be conducted after:
 - Certificate Collection Rate
 - Equipment Types Disposed
 - Gap Summary
-
 
 **Time Required:** 15-30 minutes
 
@@ -525,7 +474,6 @@ This assessment should be conducted after:
 6. Asset management disposal records
 7. Training records (disposal procedures)
 
-
 **Time Required:** 2-3 hours
 
 ### Sheet 8: Approval Sign-Off
@@ -538,7 +486,6 @@ This assessment should be conducted after:
 - Level 2: IT Operations Manager
 - Level 3: CISO
 - Level 4: Compliance Officer
-
 
 **Time Required:** 5 minutes for Level 1
 
@@ -554,13 +501,11 @@ This assessment should be conducted after:
 - Data sanitisation procedures
 - Vendor management procedures
 
-
 **2. Tool Evidence**
 
 - Approved tools list
 - Tool configuration documentation
 - Sample sanitisation verification reports
-
 
 **3. Vendor Evidence**
 
@@ -568,19 +513,16 @@ This assessment should be conducted after:
 - Service level agreements
 - Sample destruction certificates
 
-
 **4. Disposal Records**
 
 - Disposal log export from asset management
 - Destruction certificates (sample or all)
 - Chain of custody documentation
 
-
 **5. Training Evidence**
 
 - Training materials
 - Training completion records
-
 
 ### Evidence Storage
 
@@ -606,7 +548,6 @@ This assessment should be conducted after:
 - Implement pre-disposal classification assessment
 - Document "Unknown" classification and treatment
 
-
 ### Pitfall 2: Missing Destruction Certificates
 
 **Problem:** Vendor destruction completed but certificates not collected
@@ -618,7 +559,6 @@ This assessment should be conducted after:
 - Include certificate requirement in vendor contracts
 - Track certificate receipt for each disposal batch
 - Follow up on missing certificates within 30 days
-
 
 ### Pitfall 3: SSD Disposal Using HDD Methods
 
@@ -632,7 +572,6 @@ This assessment should be conducted after:
 - Document SSD-specific procedures
 - Verify tool supports SSD sanitisation correctly
 
-
 ### Pitfall 4: Internal Re-Use Without Sanitisation
 
 **Problem:** Equipment re-assigned internally without data sanitisation
@@ -644,7 +583,6 @@ This assessment should be conducted after:
 - Include internal re-use in disposal procedures
 - Sanitise before re-assignment regardless of destination
 - Verify sanitisation before handover
-
 
 ### Pitfall 5: Printer/Copier Hard Drives Overlooked
 
@@ -658,7 +596,6 @@ This assessment should be conducted after:
 - Remove and destroy hard drives before disposal
 - Verify with vendor if hard drive present
 
-
 ### Pitfall 6: Removable Media Not Tracked
 
 **Problem:** USB drives, external drives disposed without tracking
@@ -670,7 +607,6 @@ This assessment should be conducted after:
 - Include removable media in disposal procedures
 - Provide secure disposal bins for small media
 - Track batch destructions of removable media
-
 
 ### Pitfall 7: Asset Records Not Updated
 
@@ -684,7 +620,6 @@ This assessment should be conducted after:
 - Verify asset status change after disposal
 - Reconcile disposal log with asset management quarterly
 
-
 ### Pitfall 8: Licensed Software Not Addressed
 
 **Problem:** Equipment disposed with licensed software still installed
@@ -696,7 +631,6 @@ This assessment should be conducted after:
 - Include license deactivation in disposal procedure
 - Coordinate with software asset management
 - Document license handling for each disposal
-
 
 ---
 
@@ -710,7 +644,6 @@ This assessment should be conducted after:
 - [ ] Certificate requirements defined
 - [ ] Implementation status accurate
 
-
 ### Sheet 3: Disposal Tools
 
 - [ ] All approved tools documented
@@ -718,14 +651,12 @@ This assessment should be conducted after:
 - [ ] Verification methods defined
 - [ ] Last tested dates current (within 12 months)
 
-
 ### Sheet 4: Service Providers
 
 - [ ] All disposal vendors documented
 - [ ] Contract status current
 - [ ] Certificate provision confirmed
 - [ ] Last audit/review within 12 months
-
 
 ### Sheet 5: Disposal Log
 
@@ -735,14 +666,12 @@ This assessment should be conducted after:
 - [ ] Certificates obtained where required
 - [ ] Asset records updated
 
-
 ### Sheet 7: Evidence Register
 
 - [ ] Policy documents referenced
 - [ ] Tool documentation collected
 - [ ] Sample certificates collected
 - [ ] All evidence files exist
-
 
 ---
 

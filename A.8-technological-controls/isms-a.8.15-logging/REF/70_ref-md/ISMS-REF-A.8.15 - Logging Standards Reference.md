@@ -43,7 +43,6 @@ This document is provided for informational and awareness purposes only.
 - This document does NOT mandate the use, prohibition, or configuration of specific log formats, tools, or platforms.
 - This document does NOT override or extend any ISMS policy.
 
-
 All binding logging requirements, obligations, and governance decisions are defined exclusively in **ISMS-POL-A.8.15 (Logging Policy)** and other approved ISMS documentation.
 
 This document serves solely as a technical reference to:
@@ -53,7 +52,6 @@ This document serves solely as a technical reference to:
 - Support technical implementation planning
 - Inform log format selection and parser development
 - **This document must not be used as audit evidence of implementation**
-
 
 Use of this document does not imply implementation, compliance, or operational maturity.
 
@@ -75,7 +73,6 @@ This document provides technical reference for log format standards, field namin
 - Understanding of industry standard log formats (Syslog, CEF, JSON)
 - Future log format evolution and parser maintenance
 
-
 ## What This Document Is NOT
 
 This document does NOT:
@@ -86,7 +83,6 @@ This document does NOT:
 - Replace ISMS-POL-A.8.15 policy requirements
 - Mandate specific SIEM platforms, log management tools, or vendors
 - Define retention periods, review frequencies, or governance requirements
-
 
 ## Relationship to ISMS
 
@@ -105,7 +101,6 @@ This reference organizes log format standards by:
 - Timestamp format requirements
 - Character encoding and escaping rules
 
-
 ---
 
 # Syslog Format Standards (RFC 5424)
@@ -121,13 +116,11 @@ This reference organizes log format standards by:
 - Infrastructure services (DNS, DHCP, NTP)
 - Legacy applications
 
-
 **Protocol**:
 
 - UDP port 514 (traditional, unencrypted - NOT RECOMMENDED for security logs)
 - TCP port 514 or 6514 (recommended for reliability)
 - TLS/TCP port 6514 (recommended for encrypted transmission per ISMS-POL-A.8.15 Section 2.2.3)
-
 
 ## Syslog Message Format
 
@@ -178,7 +171,6 @@ This reference organizes log format standards by:
 - **Authentication**: Info (6) for success, Warning (4) for failed attempts, Error (3) for account lockouts
 - **System events**: Varies by context (Critical for service failures, Notice for configuration changes)
 
-
 ## Syslog Timestamp Format
 
 **Required Format**: ISO 8601 with timezone
@@ -193,14 +185,12 @@ YYYY-MM-DDTHH:MM:SS.SSSSSS+TZ
 - `2026-01-21T13:32:15Z` (UTC notation)
 - `2026-01-21T14:32:15.003+01:00` (with milliseconds)
 
-
 **Best Practices**:
 
 - Always include timezone information
 - Use millisecond precision for high-volume systems where event ordering is critical
 - Synchronize system clocks via NTP per ISMS-POL-A.8.17
 - Use UTC for multi-site environments to simplify correlation
-
 
 ## Syslog Structured Data
 
@@ -223,7 +213,6 @@ YYYY-MM-DDTHH:MM:SS.SSSSSS+TZ
 - `action="verb"` - Action performed
 - `result="success|failure"` - Outcome
 - `reason="description"` - Failure reason or additional context
-
 
 ## Syslog Configuration Example
 
@@ -264,7 +253,6 @@ logging source-interface Loopback0
 - Authentication and access control systems
 - SIEM integration from diverse security products
 
-
 ## CEF Message Format
 
 **Structure**:
@@ -296,7 +284,6 @@ CEF:0|Palo Alto Networks|PAN-OS|9.1.0|THREAT|URL Filtering|7|rt=Jan 21 2026 14:3
 - 4-6: Medium (warnings, policy violations)
 - 7-8: High (security threats, attacks)
 - 9-10: Critical (severe threats, successful breaches)
-
 
 ## CEF Extension Fields
 
@@ -369,14 +356,12 @@ CEF:0|F5 Networks|BIG-IP ASM|15.1.0|SQL_INJECTION|SQL Injection Attack|9|rt=Jan 
 - API gateways and serverless functions
 - SaaS application logs
 
-
 **Advantages**:
 
 - Human-readable and machine-parseable
 - Native support in modern SIEM and log aggregation platforms
 - Flexible schema (can accommodate any field structure)
 - Easy to generate from application code (libraries available for all languages)
-
 
 ## JSON Log Structure
 
@@ -439,7 +424,6 @@ CEF:0|F5 Networks|BIG-IP ASM|15.1.0|SQL_INJECTION|SQL Injection Attack|9|rt=Jan 
 - **Security logs**: INFO and above (INFO for success, WARN for policy violations, ERROR for attacks)
 - **Application logs**: WARN and above (minimize noise while capturing issues)
 - **DEBUG/TRACE**: Disabled in production (enable temporarily for troubleshooting with performance consideration)
-
 
 ## Structured Context
 
@@ -581,7 +565,6 @@ CEF:0|F5 Networks|BIG-IP ASM|15.1.0|SQL_INJECTION|SQL Injection Attack|9|rt=Jan 
 - `2026-01-21T14:32:15.003+01:00` (with milliseconds)
 - `2026-01-21T14:32:15.123456+01:00` (with microseconds)
 
-
 ## Timezone Handling
 
 **Recommendation**: Use UTC for all centralized log storage
@@ -593,13 +576,11 @@ CEF:0|F5 Networks|BIG-IP ASM|15.1.0|SQL_INJECTION|SQL Injection Attack|9|rt=Jan 
 - Avoids daylight saving time complications
 - Universal reference for multi-site organizations
 
-
 **Local Time with Offset** (Alternative):
 
 - Acceptable for single-site deployments
 - MUST include timezone offset (e.g., +01:00, -05:00)
 - SIEM must normalize to UTC for correlation
-
 
 ## Precision Requirements
 
@@ -611,12 +592,10 @@ CEF:0|F5 Networks|BIG-IP ASM|15.1.0|SQL_INJECTION|SQL Injection Attack|9|rt=Jan 
 - Enables accurate event ordering within same second
 - Necessary for correlation of rapid event sequences
 
-
 **Optional**: Microsecond precision (`YYYY-MM-DDTHH:MM:SS.SSSSSS`)
 
 - Useful for very high-performance systems
 - Database transaction logging with sub-millisecond granularity
-
 
 ## Time Synchronization
 
@@ -629,14 +608,12 @@ CEF:0|F5 Networks|BIG-IP ASM|15.1.0|SQL_INJECTION|SQL Injection Attack|9|rt=Jan 
 - Maximum clock drift threshold: ±100ms
 - Alert on NTP synchronization failure
 
-
 **Importance**: Accurate timestamps are critical for:
 
 - Event correlation across multiple systems
 - Incident timeline reconstruction
 - Forensic analysis and legal evidence
 - Compliance verification
-
 
 ---
 
@@ -665,7 +642,6 @@ CEF:0|F5 Networks|BIG-IP ASM|15.1.0|SQL_INJECTION|SQL Injection Attack|9|rt=Jan 
 - `request_id` / `trace_id` - Request trace identifier
 - `transaction_id` - Transaction identifier
 
-
 **Network Fields**:
 
 - `source_ip` / `src_ip` - Source IP address
@@ -675,7 +651,6 @@ CEF:0|F5 Networks|BIG-IP ASM|15.1.0|SQL_INJECTION|SQL Injection Attack|9|rt=Jan 
 - `protocol` - Network protocol (TCP, UDP, ICMP)
 - `hostname` - System hostname
 
-
 **Action Fields**:
 
 - `action` / `event_action` - Action performed (login, create, delete, read, update)
@@ -683,7 +658,6 @@ CEF:0|F5 Networks|BIG-IP ASM|15.1.0|SQL_INJECTION|SQL Injection Attack|9|rt=Jan 
 - `outcome` / `result` - Result (success, failure, error)
 - `reason` - Reason for outcome or action
 - `severity` / `level` - Severity level
-
 
 **Resource Fields**:
 
@@ -693,14 +667,12 @@ CEF:0|F5 Networks|BIG-IP ASM|15.1.0|SQL_INJECTION|SQL Injection Attack|9|rt=Jan 
 - `url` / `request_url` - URL or endpoint
 - `api_endpoint` - API endpoint
 
-
 **Temporal Fields**:
 
 - `timestamp` / `event_time` - Event timestamp
 - `duration` / `duration_ms` - Duration in milliseconds
 - `start_time` - Start timestamp
 - `end_time` - End timestamp
-
 
 **Application Fields**:
 
@@ -709,14 +681,12 @@ CEF:0|F5 Networks|BIG-IP ASM|15.1.0|SQL_INJECTION|SQL Injection Attack|9|rt=Jan 
 - `version` / `app_version` - Application version
 - `component` / `module` - Component or module name
 
-
 **Error Fields**:
 
 - `error_code` - Error code
 - `error_type` / `exception_type` - Exception class name
 - `error_message` / `exception_message` - Error description
 - `stack_trace` - Stack trace (for errors)
-
 
 ## Avoid Ambiguous Names
 
@@ -727,13 +697,11 @@ CEF:0|F5 Networks|BIG-IP ASM|15.1.0|SQL_INJECTION|SQL Injection Attack|9|rt=Jan 
 - `value` - Non-descriptive, use semantic name
 - `temp` - Unclear purpose, use descriptive name
 
-
 **USE**:
 
 - Descriptive, self-documenting names
 - Consistent terminology across organization
 - Standard names from ECS (Elastic Common Schema) where applicable
-
 
 ---
 
@@ -749,13 +717,11 @@ CEF:0|F5 Networks|BIG-IP ASM|15.1.0|SQL_INJECTION|SQL Injection Attack|9|rt=Jan 
 - Efficient for ASCII (1 byte per character)
 - Compatible with JSON, XML, modern applications
 
-
 **Implementation**:
 
 - Configure log sources to output UTF-8
 - Configure SIEM parsers to expect UTF-8
 - Test with non-ASCII characters (ä, ö, ü, é, ñ, 中文)
-
 
 ## Special Character Escaping
 
@@ -764,14 +730,12 @@ CEF:0|F5 Networks|BIG-IP ASM|15.1.0|SQL_INJECTION|SQL Injection Attack|9|rt=Jan 
 - No special escaping required in MSG field
 - Use structured data format for key-value pairs (automatic escaping)
 
-
 **CEF**:
 
 - Escape pipe characters: `|` → `\|`
 - Escape backslashes: `\` → `\\`
 - Escape equals in extension values: `=` → `\=`
 - Escape newlines: `\n` → `\\n`
-
 
 **Example**:
 ```
@@ -788,7 +752,6 @@ cs1=C:\\Program Files\\Application
   - Backslashes: `\` → `\\`
   - Newlines: newline character → `\n`
   - Tabs: tab character → `\t`
-
 
 **Example**:
 ```json
@@ -814,7 +777,6 @@ cs1=C:\\Program Files\\Application
 - Truncate from end for narrative fields (messages, descriptions)
 - Truncate from middle for URLs (preserve domain and parameters)
 - Never truncate identifiers (user IDs, transaction IDs) - reject if too long
-
 
 ---
 
@@ -843,13 +805,11 @@ cs1=C:\\Program Files\\Application
 - CEF: Use built-in CEF parsers, map extension fields to SIEM schema
 - JSON: Configure JSON parser, define field mappings
 
-
 **Field Mapping**:
 
 - Map log source fields to SIEM common schema (normalize field names)
 - Create calculated fields for derived data (e.g., geo-location from IP)
 - Enrich events with threat intelligence (malicious IP lookups)
-
 
 **Performance Optimization**:
 
@@ -857,7 +817,6 @@ cs1=C:\\Program Files\\Application
 - Implement sampling for high-volume, low-value logs (debug logs)
 - Compress logs before transmission (gzip, if SIEM supports)
 - Batch log forwarding (collect-and-forward vs. real-time)
-
 
 ## Logging Library Recommendations
 
@@ -908,7 +867,6 @@ This reference document may be updated when:
 - Application development teams request guidance on new log formats
 - Industry best practices evolve (e.g., ECS schema updates)
 
-
 ## Responsibility
 
 **Document Owner**: SOC Lead / Security Architecture Team  
@@ -930,14 +888,12 @@ This document provides **technical implementation guidance** that may inform:
 - Field name standardization across organizational log sources
 - Training for developers and system administrators on logging standards
 
-
 This document does NOT:
 
 - Override or extend ISMS-POL-A.8.15 requirements
 - Establish mandatory log format selections
 - Create compliance obligations
 - Define audit criteria
-
 
 All logging control requirements are defined exclusively in ISMS-POL-A.8.15 and implemented through ISMS-IMP-A.8.15 procedures based on risk assessment and operational context.
 

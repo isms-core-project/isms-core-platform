@@ -41,7 +41,6 @@ This document consists of two parts:
   - Reporting Templates
   - Audit Evidence Framework
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -62,7 +61,6 @@ This is the **CONSOLIDATED assessment framework** that brings together Controls 
 - **Reporting:** Monthly summary, quarterly comprehensive report
 - **Evidence framework:** Audit-ready evidence collection across all secure areas and media handling
 
-
 #### Key Principle
 
 This is NOT a separate assessment workbook - it's the **PROCESS** for conducting assessments and the **DASHBOARD** that consolidates results from:
@@ -70,7 +68,6 @@ This is NOT a separate assessment workbook - it's the **PROCESS** for conducting
 - ISMS-IMP-A.7.6-7-14-S1 (Secure Areas Working Assessment)
 - ISMS-IMP-A.7.6-7-14-S2 (Clear Desk/Screen Compliance)
 - ISMS-IMP-A.7.6-7-14-S3 (Equipment Disposal Assessment)
-
 
 #### How This Integrates with Individual Assessments
 
@@ -96,7 +93,6 @@ This is NOT a separate assessment workbook - it's the **PROCESS** for conducting
 - Secure area incidents (from incident management)
 - Disposal events (from disposal log)
 
-
 **Deliverable:** Dashboard update + 1-page monthly summary
 
 #### Quarterly Full Assessment
@@ -113,7 +109,6 @@ This is NOT a separate assessment workbook - it's the **PROCESS** for conducting
 - Consolidate scores into dashboard
 - Generate quarterly report
 
-
 **Deliverable:** Updated S1, S2, S3 workbooks + Quarterly compliance report + Updated dashboard
 
 ### Who Conducts Assessments
@@ -125,18 +120,15 @@ This is NOT a separate assessment workbook - it's the **PROCESS** for conducting
 - Facilities Manager (clear desk audit results)
 - IT Operations (screen lock compliance, disposal events)
 
-
 **Quarterly:**
 
 - Facilities Manager + Security Operations (S1 - Secure Areas)
 - Facilities Manager + IT Operations (S2 - Clear Desk/Screen)
 - IT Operations + Asset Management (S3 - Equipment Disposal)
 
-
 **Approver:**
 
 - CISO (all assessments)
-
 
 ### Expected Outputs
 
@@ -175,7 +167,6 @@ Before starting any dashboard update, ensure you understand:
    - Monthly: Key metrics only (1-2 hours)
    - Quarterly: Full consolidation with S1, S2, S3 integration (4-8 hours)
 
-
 #### Step 2: Verify Prerequisites
 
 Before opening the dashboard workbook, confirm:
@@ -187,7 +178,6 @@ Before opening the dashboard workbook, confirm:
   - IT Operations (screen lock compliance, disposal events)
   - Security Operations (secure area incidents)
 - [ ] Previous month/quarter dashboard is archived
-
 
 #### Step 3: Open and Prepare Workbook
 
@@ -202,7 +192,6 @@ Before opening the dashboard workbook, confirm:
    - Organisation: [Organisation Name]
    - Reporting Period: [Month YYYY] or [QYYYY]
 
-
 #### Step 4: Navigate the Workbook Structure
 
 **Monthly Update Flow:**
@@ -215,7 +204,6 @@ Sheet 1 (Metadata) → Sheet 2 (Executive Dashboard) → Sheet 4 (KPIs & Metrics
 Sheet 1 (Metadata) → Sheet 2 (Executive Dashboard) → Sheet 3 (Gap Analysis)
 → Sheet 4 (KPIs & Metrics) → Sheet 5 (Evidence Register) → Sheet 6 (Approval)
 ```
-
 
 ### Completing Sheet 2: Executive Dashboard
 
@@ -231,7 +219,6 @@ Sheet 1 (Metadata) → Sheet 2 (Executive Dashboard) → Sheet 3 (Gap Analysis)
 3. Verify formulas calculate Overall Compliance Score automatically
 4. Check conditional formatting shows correct status colours
 
-
 **For Quarterly Updates:**
 
 1. Import compliance scores from completed assessments:
@@ -242,7 +229,6 @@ Sheet 1 (Metadata) → Sheet 2 (Executive Dashboard) → Sheet 3 (Gap Analysis)
 2. Update Critical Gaps count from each assessment
 3. Update High Priority count from each assessment
 4. Verify Overall Compliance Score calculates correctly using weighting formula
-
 
 ### Completing Sheet 3: Gap Analysis (Quarterly Only)
 
@@ -261,7 +247,6 @@ Sheet 1 (Metadata) → Sheet 2 (Executive Dashboard) → Sheet 3 (Gap Analysis)
    - Update Status to "In Progress" if partially complete
    - Escalate to CISO if overdue
 
-
 ### Completing Sheet 4: KPIs & Metrics
 
 1. Update Current value for each KPI
@@ -269,7 +254,6 @@ Sheet 1 (Metadata) → Sheet 2 (Executive Dashboard) → Sheet 3 (Gap Analysis)
 3. Status will auto-calculate (Pass/Fail)
 4. Add Trend indicator (↑ Improving, → Stable, ↓ Declining)
 5. Investigate any declining trends and document in Notes
-
 
 ### Completing Sheet 5: Evidence Register (Quarterly Only)
 
@@ -286,7 +270,6 @@ Sheet 1 (Metadata) → Sheet 2 (Executive Dashboard) → Sheet 3 (Gap Analysis)
 
 4. Verify all files exist in documented locations
 
-
 ### Completing Sheet 6: Approval & Sign-Off (Quarterly Only)
 
 1. Complete Level 1 (Assessor) section:
@@ -302,7 +285,6 @@ Sheet 1 (Metadata) → Sheet 2 (Executive Dashboard) → Sheet 3 (Gap Analysis)
 3. After Level 2 approval, submit to Level 3 (Compliance Officer):
    - Include CISO approval confirmation
    - Request audit readiness certification
-
 
 ---
 
@@ -328,17 +310,14 @@ Collect **key metrics** without requiring full assessment. This provides continu
 - Number compliant / non-compliant
 - Common issues found
 
-
 **Calculate:**
 
 - Audit pass rate: (Compliant / Total Audited) × 100%
 - Target: >95%
 
-
 **Document in Dashboard:**
 
 - Clear Desk Audit Pass Rate: [XX%]
-
 
 #### Step 2: Screen Lock Compliance (Control A.7.7)
 
@@ -348,17 +327,14 @@ Collect **key metrics** without requiring full assessment. This provides continu
 - Number of devices with compliant screen lock settings
 - Number of devices non-compliant
 
-
 **Calculate:**
 
 - Screen lock compliance: (Compliant Devices / Total Devices) × 100%
 - Target: 100%
 
-
 **Document in Dashboard:**
 
 - Screen Lock Compliance: [XX%]
-
 
 #### Step 3: Secure Area Incidents (Control A.7.6)
 
@@ -367,11 +343,9 @@ Collect **key metrics** without requiring full assessment. This provides continu
 - Query incident management for secure area incidents (previous month)
 - Count by type (unauthorised access, procedure violation, etc.)
 
-
 **Document in Dashboard:**
 
 - Secure Area Incidents: [Count] (Target: 0)
-
 
 #### Step 4: Equipment Disposals (Control A.7.14)
 
@@ -380,18 +354,15 @@ Collect **key metrics** without requiring full assessment. This provides continu
 - Number of equipment disposals in previous month
 - Number with certificates obtained (where required)
 
-
 **Calculate:**
 
 - Certificate collection rate: (Certificates / Required) × 100%
 - Target: 100% for CONFIDENTIAL equipment
 
-
 **Document in Dashboard:**
 
 - Equipment Disposed: [Count]
 - Certificates Collected: [XX%]
-
 
 ### Dashboard Update Process
 
@@ -442,7 +413,6 @@ Date: [DD.MM.YYYY]
 
 - Email to: CISO, Facilities Manager, IT Operations Manager
 
-
 **Timeline:** Complete by 7th day of month
 
 ---
@@ -476,7 +446,6 @@ Follow the detailed procedures in:
 - **ISMS-IMP-A.7.6-7-14-S1** (Secure Areas Working) - Complete all sheets
 - **ISMS-IMP-A.7.6-7-14-S2** (Clear Desk/Screen Compliance) - Complete all sheets
 - **ISMS-IMP-A.7.6-7-14-S3** (Equipment Disposal) - Update for quarter
-
 
 **Output:** Three updated assessment workbooks with compliance scores
 
@@ -518,7 +487,6 @@ Follow the detailed procedures in:
    - Compliance scores detail
    - Evidence register summary
 
-
 **Distribution:**
 
 - CISO (primary)
@@ -526,7 +494,6 @@ Follow the detailed procedures in:
 - Facilities Manager
 - IT Operations Manager
 - Internal Audit
-
 
 **Timeline:** Complete within 10 days after quarter-end
 
@@ -579,20 +546,17 @@ Follow the detailed procedures in:
 - Focus on: Overall compliance, trend, top 3 findings
 - Time: 5-10 minutes
 
-
 **For Operational Reviews:**
 
 - Deep dive into individual control scores
 - Discuss root causes and remediation
 - Time: 30-60 minutes
 
-
 **For Audit Evidence:**
 
 - Present dashboard as continuous monitoring summary
 - Reference S1, S2, S3 workbooks as detailed evidence
 - Time: Auditor-driven
-
 
 ---
 
@@ -609,7 +573,6 @@ Follow the detailed procedures in:
 - Cross-check individual assessment totals against dashboard entries
 - Document any exclusions with clear justification
 
-
 ### Pitfall 2: Ignoring Trend Analysis
 
 ❌ **MISTAKE:** Focusing only on current quarter scores without comparing to historical data
@@ -620,7 +583,6 @@ Follow the detailed procedures in:
 - Always populate trend columns comparing current to previous quarters
 - Investigate any significant changes (>5% variance) between periods
 - Document root causes for both improvements and declines
-
 
 ### Pitfall 3: Overdue Gap Remediation
 
@@ -633,7 +595,6 @@ Follow the detailed procedures in:
 - Escalate overdue items to CISO automatically after target date
 - Document remediation blockers and resource requirements
 
-
 ### Pitfall 4: Inconsistent Scoring Methodology
 
 ❌ **MISTAKE:** Different assessors using different criteria when scoring compliance
@@ -644,7 +605,6 @@ Follow the detailed procedures in:
 - Use this specification as the single source of truth for scoring
 - Train all assessors on consistent interpretation of Compliant/Partial/Non-Compliant
 - Have CISO validate scoring methodology annually
-
 
 ### Pitfall 5: Missing Evidence Links
 
@@ -657,7 +617,6 @@ Follow the detailed procedures in:
 - Use consistent evidence ID referencing (e.g., EVD-2026-Q1-001)
 - Verify evidence actually exists in documented location before finalising
 
-
 ### Pitfall 6: Dashboard Calculation Errors
 
 ❌ **MISTAKE:** Manually overriding formula cells or entering values in calculated fields
@@ -668,7 +627,6 @@ Follow the detailed procedures in:
 - Never modify grey/formula cells - only update yellow input cells
 - If formulas appear broken, regenerate workbook from template
 - Validate dashboard totals against source assessment scores
-
 
 ### Pitfall 7: Incomplete Monthly Updates
 
@@ -681,7 +639,6 @@ Follow the detailed procedures in:
 - Document "No incidents" and "No changes" explicitly
 - Maintain audit trail of all monthly review dates
 
-
 ### Pitfall 8: Misaligned Reporting Periods
 
 ❌ **MISTAKE:** Using different date ranges for S1, S2, S3 assessments within same quarterly cycle
@@ -692,7 +649,6 @@ Follow the detailed procedures in:
 - Define fixed quarterly assessment periods (e.g., Q1 = Jan 1 - Mar 31)
 - All three assessments must use identical date range
 - Document assessment period clearly in each workbook header
-
 
 ### Pitfall 9: Stakeholder Distribution Gaps
 
@@ -705,7 +661,6 @@ Follow the detailed procedures in:
 - Confirm receipt from all required stakeholders
 - Maintain distribution log as evidence
 
-
 ### Pitfall 10: Weighting Rationale Not Documented
 
 ❌ **MISTAKE:** Using default weighting without considering organisational risk profile
@@ -716,7 +671,6 @@ Follow the detailed procedures in:
 - Review weighting formula annually with CISO
 - Document rationale for any weighting adjustments
 - Ensure weighting reflects current business priorities and threat landscape
-
 
 ### Pitfall 11: Delayed Incident Integration
 
@@ -729,7 +683,6 @@ Follow the detailed procedures in:
 - Include incident trends in monthly summary even between quarterly assessments
 - Flag any Critical/High incidents immediately to CISO
 
-
 ### Pitfall 12: KPI Target Drift
 
 ❌ **MISTAKE:** Accepting reduced targets when compliance consistently falls short
@@ -740,7 +693,6 @@ Follow the detailed procedures in:
 - Targets should be maintained or increased, never reduced without CISO approval
 - Document justification if any target is temporarily relaxed
 - Include remediation plan to return to original targets
-
 
 ### Pitfall 13: Executive Summary Overload
 
@@ -753,7 +705,6 @@ Follow the detailed procedures in:
 - Limit to: Overall score, trend, top 3 findings, required decisions
 - Keep detailed analysis in supporting sheets
 
-
 ### Pitfall 14: Orphaned Evidence Files
 
 ❌ **MISTAKE:** Evidence files stored in personal drives or email attachments
@@ -764,7 +715,6 @@ Follow the detailed procedures in:
 - All evidence must be stored in designated ISMS SharePoint/Confluence location
 - Use folder structure specified in Audit Evidence Framework
 - Verify file accessibility from shared location
-
 
 ### Pitfall 15: Approval Workflow Shortcuts
 
@@ -777,7 +727,6 @@ Follow the detailed procedures in:
 - Approvals must follow defined sequence (Assessor → CISO → Compliance Officer)
 - Document approval dates and ensure sequential order
 
-
 ### Pitfall 16: Quarterly Report Scope Creep
 
 ❌ **MISTAKE:** Including unrelated topics or excessive recommendations in quarterly reports
@@ -788,7 +737,6 @@ Follow the detailed procedures in:
 - Follow report template structure exactly (5-10 pages maximum)
 - Limit recommendations to those directly addressing identified gaps
 - Separate strategic recommendations for annual review process
-
 
 ---
 
@@ -804,7 +752,6 @@ Follow the detailed procedures in:
 - [ ] Equipment disposal events verified against disposal log
 - [ ] All data represents complete previous month (not partial)
 
-
 **Dashboard Update Verification:**
 
 - [ ] Previous month's dashboard saved as archive
@@ -813,7 +760,6 @@ Follow the detailed procedures in:
 - [ ] Formula cells unchanged (grey cells not modified)
 - [ ] Compliance scores auto-calculated correctly
 - [ ] Trend arrows displaying correctly
-
 
 **Reporting Verification:**
 
@@ -824,7 +770,6 @@ Follow the detailed procedures in:
 - [ ] Recommendations section populated (minimum 2 items)
 - [ ] Dashboard workbook attached to report
 
-
 **Distribution Verification:**
 
 - [ ] Report sent to CISO
@@ -832,7 +777,6 @@ Follow the detailed procedures in:
 - [ ] Report sent to IT Operations Manager
 - [ ] Distribution completed by 7th day of month
 - [ ] Receipt confirmed from primary stakeholders
-
 
 ### Quality Checklist - Quarterly Assessment
 
@@ -844,7 +788,6 @@ Follow the detailed procedures in:
 - [ ] All three assessments use identical date range
 - [ ] All three assessments approved by respective assessors
 
-
 **Dashboard Consolidation Verification:**
 
 - [ ] A.7.6 compliance score imported from S1 Summary Dashboard
@@ -852,7 +795,6 @@ Follow the detailed procedures in:
 - [ ] A.7.14 compliance score imported from S3 Summary Dashboard
 - [ ] Overall compliance score calculated using correct weighting
 - [ ] Weighting rationale documented (30%/35%/35%)
-
 
 **Gap Analysis Verification:**
 
@@ -863,7 +805,6 @@ Follow the detailed procedures in:
 - [ ] Previous quarter gaps status updated (Closed/In Progress/Escalated)
 - [ ] Overdue gaps escalated to CISO
 
-
 **KPIs & Metrics Verification:**
 
 - [ ] All KPIs updated with current quarter data
@@ -872,7 +813,6 @@ Follow the detailed procedures in:
 - [ ] Trend analysis completed (comparison to previous 4 quarters)
 - [ ] KPIs with declining trend investigated
 
-
 **Evidence Register Verification:**
 
 - [ ] Evidence consolidated from S1, S2, S3 assessments
@@ -880,7 +820,6 @@ Follow the detailed procedures in:
 - [ ] File locations verified accessible
 - [ ] Retention periods documented
 - [ ] Minimum 20 evidence items for quarterly assessment
-
 
 **Quarterly Report Verification:**
 
@@ -891,7 +830,6 @@ Follow the detailed procedures in:
 - [ ] Appendices include compliance score details
 - [ ] Report length 5-10 pages (not exceeding 10)
 
-
 **Approval Verification:**
 
 - [ ] Level 1 (Assessor) approval completed with signature
@@ -899,7 +837,6 @@ Follow the detailed procedures in:
 - [ ] Level 3 (Compliance Officer) approval obtained
 - [ ] All approvals in correct sequence
 - [ ] Approval dates documented
-
 
 **Distribution Verification:**
 
@@ -909,7 +846,6 @@ Follow the detailed procedures in:
 - [ ] Report distributed to IT Operations Manager
 - [ ] Distribution completed within 10 days of quarter-end
 
-
 ### Approval Workflow
 
 **Monthly Assessment:**
@@ -917,13 +853,11 @@ Follow the detailed procedures in:
 - Level 1: Assessor (Data collection and dashboard update)
 - Level 2: CISO (Review metrics and approve summary report)
 
-
 **Quarterly Assessment:**
 
 - Level 1: Assessor(s) (Complete S1, S2, S3 assessments and consolidate)
 - Level 2: CISO (Executive review, resource allocation, approve findings)
 - Level 3: Compliance Officer (Audit readiness certification, evidence verification)
-
 
 ---
 
@@ -966,11 +900,9 @@ Follow the detailed procedures in:
 - "ISMS-IMP-A.7.6-7-14-S4 - Secure Areas and Media Handling Compliance Dashboard"
 - "ISO/IEC 27001:2022 - Controls A.7.6/A.7.7/A.7.14"
 
-
 **Rows 3-11:** Document Information Table
 - Document ID, Dashboard Type, Related Policies, Version
 - User input: Generated By, Organisation, Reporting Period
-
 
 **Rows 13-30:** How to Use This Dashboard
 - Navigation guidance for each sheet
@@ -985,7 +917,6 @@ Follow the detailed procedures in:
 - "Secure Areas and Media Handling - Executive Dashboard"
 - "Assessment Period: [Specify Period]"
 
-
 **Section 2: Overall Compliance (Rows 4-10)**
 
 | Control | Compliance Score | Status | Critical Gaps | High Priority |
@@ -994,7 +925,6 @@ Follow the detailed procedures in:
 | A.7.7 - Clear Desk/Screen | [XX%] | [Status] | [Count] | [Count] |
 | A.7.14 - Equipment Disposal | [XX%] | [Status] | [Count] | [Count] |
 | **OVERALL** | **[XX%]** | **[Status]** | **[Total]** | **[Total]** |
-
 
 **Section 3: Key Metrics (Rows 12-21)**
 
@@ -1006,7 +936,6 @@ Follow the detailed procedures in:
 | Equipment Disposal Compliance | [%] | 100% | [Status] |
 | Disposal Certificate Rate | [%] | 100% | [Status] |
 
-
 **Section 4: Incidents & Issues (Rows 23-30)**
 
 | Metric | Current Month | YTD | Trend |
@@ -1014,7 +943,6 @@ Follow the detailed procedures in:
 | Secure Area Incidents | [Count] | [Count] | [Trend] |
 | Clear Desk Violations | [Count] | [Count] | [Trend] |
 | Disposal Non-Compliance | [Count] | [Count] | [Trend] |
-
 
 **Conditional Formatting:**
 - Status column: Green for Compliant, Amber for Partial, Red for Non-Compliant
@@ -1028,7 +956,6 @@ Follow the detailed procedures in:
 | Gap ID | Control | Finding | Severity | Owner | Target Date | Status | Notes |
 |--------|---------|---------|----------|-------|-------------|--------|-------|
 
-
 **Columns:**
 - Gap ID: GAP-001, GAP-002, etc.
 - Control: A.7.6, A.7.7, A.7.14
@@ -1038,7 +965,6 @@ Follow the detailed procedures in:
 - Target Date: Remediation target
 - Status: Open, In Progress, Closed
 - Notes: Additional context
-
 
 **Conditional Formatting:**
 - Severity: Red for Critical, Orange for High
@@ -1051,7 +977,6 @@ Follow the detailed procedures in:
 
 | KPI | Description | Measurement | Current | Target | Status | Trend |
 |-----|-------------|-------------|---------|--------|--------|-------|
-
 
 **Sample KPIs:**
 - Secure area access compliance (%)
@@ -1071,7 +996,6 @@ Follow the detailed procedures in:
 
 | Evidence ID | Control | Evidence Type | Description | Date | Location | Status |
 |-------------|---------|---------------|-------------|------|----------|--------|
-
 
 ### Sheet 6: Approval & Sign-Off
 

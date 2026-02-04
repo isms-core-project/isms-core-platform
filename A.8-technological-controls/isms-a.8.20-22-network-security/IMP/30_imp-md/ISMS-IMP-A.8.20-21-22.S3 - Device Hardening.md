@@ -47,7 +47,6 @@ This document provides **practical, step-by-step guidance** for hardening networ
 - Applying security patches and firmware updates
 - Following vendor and industry hardening baselines
 
-
 ## Scope
 
 This guidance covers hardening for:
@@ -59,7 +58,6 @@ This guidance covers hardening for:
 - **Load Balancers** (F5, HAProxy, NGINX, cloud load balancers)
 - **Network Security Appliances** (IDS/IPS, network monitoring)
 
-
 ## Applicability
 
 This guidance is **technology-agnostic** with specific examples for:
@@ -68,14 +66,12 @@ This guidance is **technology-agnostic** with specific examples for:
 - Generic firewall hardening (applicable to any firewall platform)
 - Cloud networking (AWS, Azure, GCP security groups and network ACLs)
 
-
 ## Who Should Use This Guidance
 
 - Network engineers implementing device hardening
 - Security teams auditing network device configurations
 - ISMS implementers preparing for A.8.20 assessments
 - Auditors verifying device hardening compliance
-
 
 ---
 
@@ -134,7 +130,6 @@ Phase 6: Ongoing Maintenance
 - **Auditability**: All administrative actions must be logged
 - **Maintainability**: Balance security with operational needs
 
-
 ---
 
 # Prerequisites and Tools
@@ -145,7 +140,6 @@ Phase 6: Ongoing Maintenance
 - **Configuration backup access** (TFTP/SCP server, backup tool access)
 - **Change management approval** (RFC approved for hardening changes)
 - **Test environment** (lab for testing hardening changes before production)
-
 
 ## Hardening Baseline Sources
 
@@ -184,12 +178,10 @@ Phase 6: Ongoing Maintenance
 - **CIS Kubernetes Benchmark**: For container networking
 - **Vendor Hardening Guides**: Check vendor documentation (Cisco, Juniper, Fortinet)
 
-
 **Example**: For Cisco IOS devices, download:
 
 - CIS Cisco IOS Benchmark (e.g., version 4.1.0)
 - Cisco IOS Security Configuration Guide
-
 
 ### Adapt Standards to [Organization] Environment
 
@@ -200,7 +192,6 @@ Phase 6: Ongoing Maintenance
 - **SNMP**: CIS recommends SNMPv3 only, but [Organization] may need SNMPv2c for legacy monitoring tools (document as exception)
 - **SSH Version**: CIS recommends SSH v2 only → Adopt (no exceptions)
 - **Banner Messages**: CIS provides generic banner → Customize with [Organization] legal language
-
 
 **Document Exceptions**:
 ```
@@ -304,7 +295,6 @@ rancid-run
 - Current access controls (VTY ACLs, SNMP community strings)
 - Current logging configuration
 
-
 **Example State Documentation**:
 ```
 Device: router-hq-01 (10.1.0.1)
@@ -331,18 +321,15 @@ Current State ([Date]):
    - Restore backup config: `copy tftp: running-config`
    - Server: 192.168.100.50, File: router-01-backup-20260108.cfg
    
-
 2. If services break:
 
    - Re-enable specific service (e.g., if SNMP v3 breaks monitoring, temporarily re-enable v2c)
    - Document as exception (NET-HARD-EXC-XXX)
    
-
 3. Emergency contact:
 
    - Network Manager: [Phone]
    - On-call Engineer: [Phone]
-
 
 ---
 
@@ -618,12 +605,10 @@ exit
    - Use separate VLAN/subnet for management (e.g., 192.168.100.0/24)
    - Restrict management access to specific source IPs (admin workstations, jump hosts)
 
-
 3. **Strong Authentication**:
 
    - Enforce MFA for administrative access
    - Use RADIUS/TACACS+ for centralized authentication
-
 
 4. **Logging**:
 
@@ -631,18 +616,15 @@ exit
    - Send logs to centralized SIEM
    - Retain logs per regulatory requirements (90 days minimum)
 
-
 5. **Firmware Updates**:
 
    - Apply security patches promptly (within 30 days of release)
    - Test in lab before production deployment
 
-
 6. **Configuration Backup**:
 
    - Automated daily backups
    - Version control (Git for config-as-code)
-
 
 ### Wireless Access Point Hardening
 
@@ -718,7 +700,6 @@ show access-lists 99
 - Attempt to SSH from unauthorized IP → Should be denied (VTY ACL)
 - Attempt to brute-force SSH login → Should lock out after 3 attempts
 
-
 **Example Test Commands**:
 ```bash
 # From test machine (not in management network)
@@ -740,7 +721,6 @@ ssh admin@10.1.0.1
 - Is routing/switching still working? (ping tests, traceroute)
 - Are monitoring tools still receiving SNMP data?
 - Are logs being sent to syslog server?
-
 
 **Example Tests**:
 ```bash
@@ -774,7 +754,6 @@ tail -f /var/log/syslog | grep 10.1.0.1
 - Compliance Score: 95% (from compliance scan)
 - Next Review Date: 2026-04-08 (quarterly)
 
-
 ### Update Configuration Management System
 
 **Action**: Commit hardened configuration to Git/RANCID.
@@ -806,14 +785,12 @@ Summary:
 - No service disruptions
 - Configuration backed up and version controlled
 
-
 Post-Implementation Review:
 
 - Device still accessible from management network
 - Routing/switching functionality confirmed
 - SNMP monitoring working (SNMPv3)
 - Syslog logging working
-
 
 Next Steps:
 
@@ -848,7 +825,6 @@ Diff:
 + line vty 0 4
 +   no access-class 99 in
 
-
 # Analysis: VTY ACL removed (security issue!)
 # Action: Restore VTY ACL immediately
 ```
@@ -862,7 +838,6 @@ Diff:
 - **Critical Security Patches**: Within 7 days of vendor release
 - **Important Patches**: Within 30 days
 - **General Updates**: Quarterly (during maintenance windows)
-
 
 **Patch Process**:
 1. Review vendor security advisories (subscribe to mailing lists)
@@ -907,7 +882,6 @@ show version
 - New vulnerabilities discovered (e.g., CVE affecting SSH)
 - Regulatory requirement changes
 - Internal security policy changes
-
 
 ---
 
@@ -1047,18 +1021,15 @@ print("Report generated: compliance_report.csv")
 - Discovered devices → added to hardening queue
 - Hardening status tracked per device
 
-
 ## Integration with IMP-S6 (Security Testing)
 
 - Hardened devices → tested via penetration testing
 - Vulnerabilities found → remediated via re-hardening
 
-
 ## Integration with Change Management
 
 - Hardening changes → require RFC approval
 - Configuration changes → trigger hardening re-validation
-
 
 ---
 
@@ -1076,7 +1047,6 @@ print("Report generated: compliance_report.csv")
 - [ ] Configuration version controlled (Git/RANCID)
 - [ ] RFC closed with success notes
 
-
 ---
 
 # Common Pitfalls and Solutions
@@ -1091,7 +1061,6 @@ print("Report generated: compliance_report.csv")
 - Keep console cable connected during hardening
 - If locked out: Connect via console, remove VTY ACL temporarily, fix issue
 
-
 ## Pitfall: SNMP Monitoring Breaks
 
 **Cause**: SNMPv3 misconfigured, monitoring tool doesn't support SNMPv3.
@@ -1101,7 +1070,6 @@ print("Report generated: compliance_report.csv")
 - Test SNMPv3 with monitoring tool BEFORE disabling SNMPv2c
 - If monitoring tool doesn't support v3: Document as exception, keep v2c with strong community string
 
-
 ## Pitfall: Configuration Drift (Changes Revert)
 
 **Cause**: Changes applied to running-config but not saved to startup-config.
@@ -1110,7 +1078,6 @@ print("Report generated: compliance_report.csv")
 
 - Always `write memory` or `copy running-config startup-config` after changes
 - Use configuration management tools (RANCID) to detect drift
-
 
 ---
 
@@ -1124,7 +1091,6 @@ print("Report generated: compliance_report.csv")
 - [ ] Post-hardening validation report (compliance scan results)
 - [ ] Exception documentation (for any baseline deviations)
 
-
 ---
 
 # Continuous Improvement
@@ -1135,7 +1101,6 @@ print("Report generated: compliance_report.csv")
 - **Compliance Score**: Average compliance score across all devices (target: >90%)
 - **Patch Timeliness**: Days from patch release to deployment (target: <30 days)
 
-
 ---
 
 # Appendix
@@ -1145,7 +1110,6 @@ print("Report generated: compliance_report.csv")
 - CIS Benchmarks: https://www.cisecurity.org/cis-benchmarks/
 - Cisco IOS Security Configuration Guide: https://www.cisco.com/c/en/us/support/security/
 - NIST SP 800-123: https://csrc.nist.gov/publications/
-
 
 ---
 
@@ -1183,7 +1147,6 @@ This document provides **practical, step-by-step guidance** for hardening networ
 - Applying security patches and firmware updates
 - Following vendor and industry hardening baselines
 
-
 ## Scope
 
 This guidance covers hardening for:
@@ -1195,7 +1158,6 @@ This guidance covers hardening for:
 - **Load Balancers** (F5, HAProxy, NGINX, cloud load balancers)
 - **Network Security Appliances** (IDS/IPS, network monitoring)
 
-
 ## Applicability
 
 This guidance is **technology-agnostic** with specific examples for:
@@ -1204,14 +1166,12 @@ This guidance is **technology-agnostic** with specific examples for:
 - Generic firewall hardening (applicable to any firewall platform)
 - Cloud networking (AWS, Azure, GCP security groups and network ACLs)
 
-
 ## Who Should Use This Guidance
 
 - Network engineers implementing device hardening
 - Security teams auditing network device configurations
 - ISMS implementers preparing for A.8.20 assessments
 - Auditors verifying device hardening compliance
-
 
 ---
 
@@ -1270,7 +1230,6 @@ Phase 6: Ongoing Maintenance
 - **Auditability**: All administrative actions must be logged
 - **Maintainability**: Balance security with operational needs
 
-
 ---
 
 # Prerequisites and Tools
@@ -1281,7 +1240,6 @@ Phase 6: Ongoing Maintenance
 - **Configuration backup access** (TFTP/SCP server, backup tool access)
 - **Change management approval** (RFC approved for hardening changes)
 - **Test environment** (lab for testing hardening changes before production)
-
 
 ## Hardening Baseline Sources
 
@@ -1320,12 +1278,10 @@ Phase 6: Ongoing Maintenance
 - **CIS Kubernetes Benchmark**: For container networking
 - **Vendor Hardening Guides**: Check vendor documentation (Cisco, Juniper, Fortinet)
 
-
 **Example**: For Cisco IOS devices, download:
 
 - CIS Cisco IOS Benchmark (e.g., version 4.1.0)
 - Cisco IOS Security Configuration Guide
-
 
 ### Adapt Standards to [Organization] Environment
 
@@ -1336,7 +1292,6 @@ Phase 6: Ongoing Maintenance
 - **SNMP**: CIS recommends SNMPv3 only, but [Organization] may need SNMPv2c for legacy monitoring tools (document as exception)
 - **SSH Version**: CIS recommends SSH v2 only → Adopt (no exceptions)
 - **Banner Messages**: CIS provides generic banner → Customize with [Organization] legal language
-
 
 **Document Exceptions**:
 ```
@@ -1440,7 +1395,6 @@ rancid-run
 - Current access controls (VTY ACLs, SNMP community strings)
 - Current logging configuration
 
-
 **Example State Documentation**:
 ```
 Device: router-hq-01 (10.1.0.1)
@@ -1467,18 +1421,15 @@ Current State ([Date]):
    - Restore backup config: `copy tftp: running-config`
    - Server: 192.168.100.50, File: router-01-backup-20260108.cfg
    
-
 2. If services break:
 
    - Re-enable specific service (e.g., if SNMP v3 breaks monitoring, temporarily re-enable v2c)
    - Document as exception (NET-HARD-EXC-XXX)
    
-
 3. Emergency contact:
 
    - Network Manager: [Phone]
    - On-call Engineer: [Phone]
-
 
 ---
 
@@ -1754,12 +1705,10 @@ exit
    - Use separate VLAN/subnet for management (e.g., 192.168.100.0/24)
    - Restrict management access to specific source IPs (admin workstations, jump hosts)
 
-
 3. **Strong Authentication**:
 
    - Enforce MFA for administrative access
    - Use RADIUS/TACACS+ for centralized authentication
-
 
 4. **Logging**:
 
@@ -1767,18 +1716,15 @@ exit
    - Send logs to centralized SIEM
    - Retain logs per regulatory requirements (90 days minimum)
 
-
 5. **Firmware Updates**:
 
    - Apply security patches promptly (within 30 days of release)
    - Test in lab before production deployment
 
-
 6. **Configuration Backup**:
 
    - Automated daily backups
    - Version control (Git for config-as-code)
-
 
 ### Wireless Access Point Hardening
 
@@ -1854,7 +1800,6 @@ show access-lists 99
 - Attempt to SSH from unauthorized IP → Should be denied (VTY ACL)
 - Attempt to brute-force SSH login → Should lock out after 3 attempts
 
-
 **Example Test Commands**:
 ```bash
 # From test machine (not in management network)
@@ -1876,7 +1821,6 @@ ssh admin@10.1.0.1
 - Is routing/switching still working? (ping tests, traceroute)
 - Are monitoring tools still receiving SNMP data?
 - Are logs being sent to syslog server?
-
 
 **Example Tests**:
 ```bash
@@ -1910,7 +1854,6 @@ tail -f /var/log/syslog | grep 10.1.0.1
 - Compliance Score: 95% (from compliance scan)
 - Next Review Date: 2026-04-08 (quarterly)
 
-
 ### Update Configuration Management System
 
 **Action**: Commit hardened configuration to Git/RANCID.
@@ -1942,14 +1885,12 @@ Summary:
 - No service disruptions
 - Configuration backed up and version controlled
 
-
 Post-Implementation Review:
 
 - Device still accessible from management network
 - Routing/switching functionality confirmed
 - SNMP monitoring working (SNMPv3)
 - Syslog logging working
-
 
 Next Steps:
 
@@ -1984,7 +1925,6 @@ Diff:
 + line vty 0 4
 +   no access-class 99 in
 
-
 # Analysis: VTY ACL removed (security issue!)
 # Action: Restore VTY ACL immediately
 ```
@@ -1998,7 +1938,6 @@ Diff:
 - **Critical Security Patches**: Within 7 days of vendor release
 - **Important Patches**: Within 30 days
 - **General Updates**: Quarterly (during maintenance windows)
-
 
 **Patch Process**:
 1. Review vendor security advisories (subscribe to mailing lists)
@@ -2043,7 +1982,6 @@ show version
 - New vulnerabilities discovered (e.g., CVE affecting SSH)
 - Regulatory requirement changes
 - Internal security policy changes
-
 
 ---
 
@@ -2183,18 +2121,15 @@ print("Report generated: compliance_report.csv")
 - Discovered devices → added to hardening queue
 - Hardening status tracked per device
 
-
 ## Integration with IMP-S6 (Security Testing)
 
 - Hardened devices → tested via penetration testing
 - Vulnerabilities found → remediated via re-hardening
 
-
 ## Integration with Change Management
 
 - Hardening changes → require RFC approval
 - Configuration changes → trigger hardening re-validation
-
 
 ---
 
@@ -2212,7 +2147,6 @@ print("Report generated: compliance_report.csv")
 - [ ] Configuration version controlled (Git/RANCID)
 - [ ] RFC closed with success notes
 
-
 ---
 
 # Common Pitfalls and Solutions
@@ -2227,7 +2161,6 @@ print("Report generated: compliance_report.csv")
 - Keep console cable connected during hardening
 - If locked out: Connect via console, remove VTY ACL temporarily, fix issue
 
-
 ## Pitfall: SNMP Monitoring Breaks
 
 **Cause**: SNMPv3 misconfigured, monitoring tool doesn't support SNMPv3.
@@ -2237,7 +2170,6 @@ print("Report generated: compliance_report.csv")
 - Test SNMPv3 with monitoring tool BEFORE disabling SNMPv2c
 - If monitoring tool doesn't support v3: Document as exception, keep v2c with strong community string
 
-
 ## Pitfall: Configuration Drift (Changes Revert)
 
 **Cause**: Changes applied to running-config but not saved to startup-config.
@@ -2246,7 +2178,6 @@ print("Report generated: compliance_report.csv")
 
 - Always `write memory` or `copy running-config startup-config` after changes
 - Use configuration management tools (RANCID) to detect drift
-
 
 ---
 
@@ -2260,7 +2191,6 @@ print("Report generated: compliance_report.csv")
 - [ ] Post-hardening validation report (compliance scan results)
 - [ ] Exception documentation (for any baseline deviations)
 
-
 ---
 
 # Continuous Improvement
@@ -2271,7 +2201,6 @@ print("Report generated: compliance_report.csv")
 - **Compliance Score**: Average compliance score across all devices (target: >90%)
 - **Patch Timeliness**: Days from patch release to deployment (target: <30 days)
 
-
 ---
 
 # Appendix
@@ -2281,7 +2210,6 @@ print("Report generated: compliance_report.csv")
 - CIS Benchmarks: https://www.cisecurity.org/cis-benchmarks/
 - Cisco IOS Security Configuration Guide: https://www.cisco.com/c/en/us/support/security/
 - NIST SP 800-123: https://csrc.nist.gov/publications/
-
 
 ---
 

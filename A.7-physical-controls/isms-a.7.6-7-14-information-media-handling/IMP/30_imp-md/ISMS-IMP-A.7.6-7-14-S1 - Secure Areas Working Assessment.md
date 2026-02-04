@@ -44,7 +44,6 @@ This document consists of two parts:
   - Cell Styling Reference
   - Integration Points
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -87,7 +86,6 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 - Access control mechanisms (badge readers, biometrics, mantraps)
 - Authorised personnel lists and access review dates
 
-
 **Working Procedures:**
 
 - Need-to-know basis communication requirements
@@ -96,7 +94,6 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 - Emergency procedure accessibility
 - Clean desk/screen enforcement in secure areas
 
-
 **Third-Party Access:**
 
 - Visitor escort requirements and compliance
@@ -104,13 +101,11 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 - Third-party confidentiality agreement status
 - Equipment inspection procedures
 
-
 **Incidents and Compliance:**
 
 - Secure area security incidents (last 12 months)
 - Procedure violations and remediation actions
 - Periodic inspection results
-
 
 #### How This Relates to Other A.7.6-7-14 Assessments
 
@@ -138,12 +133,10 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 - Understanding of information classification levels
 - Access to facility floor plans and security documentation
 
-
 #### Time Commitment
 
 - **Initial assessment:** 8-12 hours (comprehensive review of all secure areas)
 - **Quarterly updates:** 2-4 hours (update incidents, access reviews, minor changes)
-
 
 ### Expected Outputs
 
@@ -173,14 +166,12 @@ Before starting this assessment, gather:
 - Access control system documentation (badge reader locations, access levels)
 - Emergency evacuation procedures for each secure area
 
-
 #### 2. Access Management Records
 
 - Current authorised personnel lists per secure area
 - Access review records (quarterly reviews)
 - Third-party/visitor access logs (last 90 days)
 - Contractor access agreements and confidentiality agreements
-
 
 #### 3. Procedure Documentation
 
@@ -189,7 +180,6 @@ Before starting this assessment, gather:
 - Recording equipment policy
 - Emergency procedure locations in each secure area
 
-
 #### 4. Historical Data
 
 - Security incident reports involving secure areas (last 12 months)
@@ -197,14 +187,12 @@ Before starting this assessment, gather:
 - Periodic inspection results
 - Access control audit logs
 
-
 #### 5. Policy Requirements
 
 - ISMS-POL-A.7.6-7-14, Section 2.1 (Working in Secure Areas Requirements)
   - Access and Conduct requirements
   - Third-Party Access requirements
   - Information Protection requirements
-
 
 ### Required Tools
 
@@ -214,7 +202,6 @@ Before starting this assessment, gather:
 - Access to visitor management system
 - Screen capture tools (for evidence screenshots)
 
-
 ### Dependencies
 
 This assessment has NO dependencies on other assessments - it can be completed independently.
@@ -222,7 +209,6 @@ This assessment has NO dependencies on other assessments - it can be completed i
 However, outputs from this assessment are INPUT to:
 
 - ISMS-IMP-A.7.6-7-14-S4 (Compliance Dashboard) - Consolidates secure area compliance with other controls
-
 
 ---
 
@@ -262,7 +248,6 @@ However, outputs from this assessment are INPUT to:
 - Schedule time with Facilities Manager and Security Operations Manager
 - Download or generate assessment workbook (Excel file)
 
-
 **Step 2: Secure Area Inventory (Day 1-2 - 3-4 hours)**
 
 - Open assessment workbook
@@ -271,14 +256,12 @@ However, outputs from this assessment are INPUT to:
 - Document classification levels, access mechanisms, authorised personnel counts
 - Verify access review dates are current
 
-
 **Step 3: Working Procedures Assessment (Day 2 - 2-3 hours)**
 
 - Complete Sheet 3 (Working Procedures)
 - Assess each procedure requirement against policy
 - Document compliance status (Compliant, Partial, Non-Compliant)
 - Note gaps and remediation plans
-
 
 **Step 4: Third-Party Access Review (Day 2-3 - 2 hours)**
 
@@ -287,13 +270,11 @@ However, outputs from this assessment are INPUT to:
 - Verify escort compliance and time limits
 - Check confidentiality agreement status
 
-
 **Step 5: Incident Review (Day 3 - 1-2 hours)**
 
 - Query incident management system for secure area incidents (last 12 months)
 - Complete Sheet 5 (Incidents) for each incident
 - Classify incidents and document response actions
-
 
 **Step 6: Evidence Collection (Day 3-4 - 2-3 hours)**
 
@@ -302,20 +283,17 @@ However, outputs from this assessment are INPUT to:
 - Document procedure locations
 - Complete Sheet 7 (Evidence Register)
 
-
 **Step 7: Summary Review (Day 4 - 1 hour)**
 
 - Review Sheet 6 (Summary Dashboard) - formulas automatically calculate compliance scores
 - Verify compliance scores are accurate
 - Identify areas requiring remediation
 
-
 **Step 8: Quality Check (Day 4 - 1 hour)**
 
 - Complete self-assessment using Quality Checklist (see section below)
 - Verify all required fields completed
 - Verify evidence register complete
-
 
 **Step 9: Obtain Approvals (Day 5-10 - asynchronous)**
 
@@ -324,13 +302,11 @@ However, outputs from this assessment are INPUT to:
 - After Level 2 approval, submit to Level 3: CISO
 - After Level 3 approval, submit to Level 4: Compliance Officer
 
-
 **Step 10: Submit for Audit (Post-Approval)**
 
 - Assessment workbook is now audit-ready
 - Provide to Internal Audit or External Auditors
 - Evidence register provides traceability
-
 
 ---
 
@@ -354,7 +330,6 @@ However, outputs from this assessment are INPUT to:
     - Amber: Partial - Meets some requirements, gaps identified
     - Red: Non-Compliant - Does not meet requirements, immediate action needed
 
-
 **Time Required:** 5 minutes
 
 ### Sheet 2: Secure Area Register
@@ -367,16 +342,13 @@ However, outputs from this assessment are INPUT to:
 
 - Unique identifier: "SA-001", "SA-002", etc.
 
-
 **Column B - Secure Area Name:**
 
 - Descriptive name: "Server Room - Building A", "Datacentre 1", "Security Operations Centre"
 
-
 **Column C - Location:**
 
 - Physical location: "Building A, Floor 2", "Basement Level 1", etc.
-
 
 **Column D - Classification:**
 
@@ -384,47 +356,38 @@ However, outputs from this assessment are INPUT to:
 - Tier 1: Datacentres, server rooms, security operations centres
 - Tier 2: Executive offices, R&D labs, archive rooms
 
-
 **Column E - Access Control Type:**
 
 - Type of access control: "Badge + PIN", "Biometric", "Badge Only", "Mantrap"
-
 
 **Column F - Authorised Personnel Count:**
 
 - Number of personnel with access: 5, 15, 30, etc.
 
-
 **Column G - Last Access Review:**
 
 - Date of last quarterly access review: "15.12.2025"
-
 
 **Column H - Emergency Procedures Posted:**
 
 - Dropdown: "Yes", "No"
 - Verify emergency procedures are visibly posted in the area
 
-
 **Column I - Recording Equipment Controls:**
 
 - Dropdown: "Prohibited", "Authorised Only", "No Restriction"
-
 
 **Column J - Unsupervised Working:**
 
 - Dropdown: "Prohibited", "Restricted", "Allowed"
 
-
 **Column K - Compliance Status:**
 
 - Formula auto-calculates based on requirements
 
-
 **Column L - Notes:**
 
 - Any additional context: "Access review scheduled for Q1 2026"
-
 
 **Time Required:** 2-3 hours for comprehensive secure area inventory
 
@@ -438,31 +401,25 @@ However, outputs from this assessment are INPUT to:
 
 - Pre-populated requirement identifiers
 
-
 **Column B - Requirement Description:**
 
 - Pre-populated from policy requirements
-
 
 **Column C - Implementation Status:**
 
 - Dropdown: "Implemented", "Partial", "Not Implemented", "N/A"
 
-
 **Column D - Evidence:**
 
 - Description of evidence demonstrating compliance
-
 
 **Column E - Compliance Status:**
 
 - Formula auto-calculates
 
-
 **Column F - Notes:**
 
 - Gap details, remediation plans
-
 
 **Time Required:** 1-2 hours
 
@@ -476,46 +433,37 @@ However, outputs from this assessment are INPUT to:
 
 - Period covered: "Q4 2025", "January 2026"
 
-
 **Column B - Secure Area:**
 
 - Which secure area: "Server Room - Building A"
-
 
 **Column C - Visitor/Contractor Count:**
 
 - Number of third parties accessing: 5, 12, etc.
 
-
 **Column D - Escort Compliance:**
 
 - Percentage escorted as required: "100%", "90%", etc.
-
 
 **Column E - NDA Status:**
 
 - All signed NDAs: "Yes", "Partial", "No"
 
-
 **Column F - Time Limit Compliance:**
 
 - Access within authorised timeframes: "Yes", "Partial", "No"
-
 
 **Column G - Equipment Inspected:**
 
 - Third-party equipment inspected: "Yes", "N/A", "No"
 
-
 **Column H - Compliance Status:**
 
 - Formula auto-calculates
 
-
 **Column I - Notes:**
 
 - Issues identified, remediation actions
-
 
 **Time Required:** 1-2 hours
 
@@ -529,51 +477,41 @@ However, outputs from this assessment are INPUT to:
 
 - Unique incident identifier from incident management system
 
-
 **Column B - Incident Date:**
 
 - Date incident occurred: "15.12.2025"
-
 
 **Column C - Secure Area:**
 
 - Where incident occurred: "Server Room - Building A"
 
-
 **Column D - Incident Type:**
 
 - Dropdown: "Unauthorised Access", "Procedure Violation", "Tailgating", "Equipment Policy Violation", "Other"
-
 
 **Column E - Severity:**
 
 - Dropdown: "Critical", "High", "Medium", "Low"
 
-
 **Column F - Description:**
 
 - Brief incident description
-
 
 **Column G - Response Time (Min):**
 
 - Minutes from detection to response
 
-
 **Column H - Resolution Status:**
 
 - Dropdown: "Resolved", "In Progress", "Escalated"
-
 
 **Column I - Corrective Action:**
 
 - Actions taken to prevent recurrence
 
-
 **Column J - Notes:**
 
 - Additional context
-
 
 **Time Required:** 1-2 hours depending on incident volume
 
@@ -590,7 +528,6 @@ However, outputs from this assessment are INPUT to:
 - Incident Metrics
 - Gap Summary
 
-
 **Time Required:** 15-30 minutes for review
 
 ### Sheet 7: Evidence Register
@@ -605,7 +542,6 @@ However, outputs from this assessment are INPUT to:
 - Collection Date, Collected By
 - Retention Period
 
-
 **Time Required:** 2-3 hours for comprehensive evidence collection
 
 ### Sheet 8: Approval Sign-Off
@@ -618,7 +554,6 @@ However, outputs from this assessment are INPUT to:
 - Level 2: Security Operations Manager
 - Level 3: CISO
 - Level 4: Compliance Officer
-
 
 **Time Required:** 5 minutes for Level 1, then asynchronous for Levels 2-4
 
@@ -637,14 +572,12 @@ However, outputs from this assessment are INPUT to:
 - Access control system configuration screenshots
 - Authorised personnel lists
 
-
 **2. Working Procedure Evidence**
 
 - Procedure documents (working in secure areas)
 - Emergency procedure postings (photos)
 - Recording equipment policy and signage
 - Clean desk audit results for secure areas
-
 
 **3. Third-Party Access Evidence**
 
@@ -653,7 +586,6 @@ However, outputs from this assessment are INPUT to:
 - NDA/confidentiality agreements
 - Equipment inspection records
 
-
 **4. Compliance Evidence**
 
 - Access review records
@@ -661,18 +593,15 @@ However, outputs from this assessment are INPUT to:
 - Training records (secure area procedures)
 - Incident reports and resolution documentation
 
-
 ### Evidence Storage
 
 **Storage Location:**
 
 - SharePoint > ISMS > Assessments > A.7.6-7-14 > S1_Secure_Areas > Evidence
 
-
 **Retention:**
 
 - Minimum: 3 years (typical audit requirement)
-
 
 ---
 
@@ -690,7 +619,6 @@ However, outputs from this assessment are INPUT to:
 - Include ALL locations where [Organisation] has defined secure areas
 - For temporary secure areas (event venues, project rooms), document if applicable
 
-
 ### Pitfall 2: Outdated Access Reviews
 
 **Problem:** Access reviews not conducted quarterly as required
@@ -702,7 +630,6 @@ However, outputs from this assessment are INPUT to:
 - Verify access review dates for each secure area
 - Flag overdue reviews as gaps requiring immediate remediation
 - Document scheduled review dates for overdue areas
-
 
 ### Pitfall 3: Missing Emergency Procedure Evidence
 
@@ -716,7 +643,6 @@ However, outputs from this assessment are INPUT to:
 - Include date stamp or reference point in photos
 - Document in Evidence Register with location details
 
-
 ### Pitfall 4: Third-Party Access Gaps
 
 **Problem:** Visitor access not properly logged or escorts not provided
@@ -728,7 +654,6 @@ However, outputs from this assessment are INPUT to:
 - Review visitor logs for escort compliance
 - Verify NDA status for all contractors with secure area access
 - Document any gaps and remediation actions
-
 
 ### Pitfall 5: Incident Under-Reporting
 
@@ -742,7 +667,6 @@ However, outputs from this assessment are INPUT to:
 - Include procedure violations (recording equipment, unsupervised working)
 - Document "near misses" where appropriate
 
-
 ### Pitfall 6: Recording Equipment Policy Not Enforced
 
 **Problem:** Policy exists but no enforcement mechanism documented
@@ -754,7 +678,6 @@ However, outputs from this assessment are INPUT to:
 - Document signage and awareness mechanisms
 - Include device storage/lockbox availability if applicable
 - Note any authorisation process for permitted recording
-
 
 ### Pitfall 7: Unsupervised Working Controls Missing
 
@@ -768,7 +691,6 @@ However, outputs from this assessment are INPUT to:
 - Include access control logs showing dual-access requirements if applicable
 - Note exceptions and authorisation process
 
-
 ### Pitfall 8: Copy-Paste Errors
 
 **Problem:** Copying rows in Excel, forgetting to update secure area names
@@ -780,7 +702,6 @@ However, outputs from this assessment are INPUT to:
 - Enter data methodically, one secure area at a time
 - Cross-check secure area names against inventory
 - Have second person spot-check
-
 
 ---
 
@@ -794,7 +715,6 @@ Before submitting for Level 2 approval, complete this self-assessment:
 - [ ] Completed By (your name and role)
 - [ ] Organisation name filled in
 
-
 ### Sheet 2: Secure Area Register
 
 - [ ] ALL defined secure areas documented
@@ -807,14 +727,12 @@ Before submitting for Level 2 approval, complete this self-assessment:
 - [ ] Unsupervised working policy documented
 - [ ] At least one secure area documented (or explicitly state "No defined secure areas")
 
-
 ### Sheet 3: Working Procedures
 
 - [ ] ALL procedure requirements assessed
 - [ ] Implementation status accurate
 - [ ] Evidence documented for each requirement
 - [ ] Gaps identified with remediation plans
-
 
 ### Sheet 4: Third-Party Access
 
@@ -823,7 +741,6 @@ Before submitting for Level 2 approval, complete this self-assessment:
 - [ ] NDA status confirmed
 - [ ] Time limit compliance assessed
 - [ ] Equipment inspection status documented
-
 
 ### Sheet 5: Incidents
 
@@ -834,13 +751,11 @@ Before submitting for Level 2 approval, complete this self-assessment:
 - [ ] Corrective actions documented
 - [ ] If zero incidents: explicitly documented
 
-
 ### Sheet 6: Summary Dashboard
 
 - [ ] Overall Compliance Score displays
 - [ ] Scores appear reasonable
 - [ ] Investigate any unexpected red status
-
 
 ### Sheet 7: Evidence Register
 
@@ -849,11 +764,9 @@ Before submitting for Level 2 approval, complete this self-assessment:
 - [ ] File locations accurate
 - [ ] Evidence actually exists in documented location
 
-
 ### Sheet 8: Approval Sign-Off
 
 - [ ] Level 1 (Assessor) completed
-
 
 ---
 
@@ -868,7 +781,6 @@ Before submitting for Level 2 approval, complete this self-assessment:
 **Level 3: CISO** - Executive review and resource allocation
 
 **Level 4: Compliance Officer** - Final audit readiness certification
-
 
 ---
 
@@ -916,21 +828,17 @@ Before submitting for Level 2 approval, complete this self-assessment:
 - Text: "ISMS-IMP-A.7.6.S1 - Secure Areas Working Assessment\nISO/IEC 27001:2022 - Control A.7.6: Working in Secure Areas"
 - Style: Navy blue background, white bold text, 14pt, centre-aligned
 
-
 **Rows 3-11:** Document Information Table
 - Column A: Labels
 - Column B: Values (pre-filled for read-only fields, blank yellow for user input)
 - User input fields (yellow): Assessment Date, Completed By, Organisation
 
-
 **Rows 13-17:** Status Legend
 - Colour-coded status definitions
-
 
 **Rows 19-30:** Completion Instructions
 - Brief workflow summary
 - Reference to Part I User Guide
-
 
 ### Sheet 2: Secure Area Register
 
@@ -938,7 +846,6 @@ Before submitting for Level 2 approval, complete this self-assessment:
 
 **Header Row (Row 3):**
 - Style: Grey background, bold text, centre-aligned, freeze panes
-
 
 **Columns:**
 
@@ -956,7 +863,6 @@ Before submitting for Level 2 approval, complete this self-assessment:
 | J | Unsupervised Working | Dropdown | 18 | Prohibited / Restricted / Allowed |
 | K | Compliance Status | Formula | 18 | Auto-calculated |
 | L | Notes | Text | 50 | None |
-
 
 **Data Rows:** Rows 4-103 (100 data rows)
 
@@ -1025,7 +931,6 @@ Before submitting for Level 2 approval, complete this self-assessment:
 - Incident Metrics
 - Gap Summary
 
-
 ### Sheet 7: Evidence Register
 
 **Purpose:** Document all supporting evidence with audit traceability
@@ -1055,7 +960,6 @@ Before submitting for Level 2 approval, complete this self-assessment:
 - Level 3: CISO
 - Level 4: Compliance Officer
 
-
 ---
 
 ## Cell Styling Reference
@@ -1066,17 +970,14 @@ Before submitting for Level 2 approval, complete this self-assessment:
 - Primary Header: #003366 (Navy blue background), #FFFFFF (White text)
 - Column Header: #D9D9D9 (Light grey background), #000000 (Black text)
 
-
 **Data Cells:**
 - Input Cell: #FFFFCC (Light yellow background)
 - Formula Cell: #FFFFFF (White background)
-
 
 **Compliance Status:**
 - Compliant: #C6EFCE (Light green background)
 - Partial: #FFEB9C (Light amber background)
 - Non-Compliant: #FFC7CE (Light red background)
-
 
 ---
 
@@ -1096,7 +997,6 @@ Before submitting for Level 2 approval, complete this self-assessment:
 
 **Feeds into:**
 - ISMS-IMP-A.7.6-7-14-S4 (Compliance Dashboard): Overall secure area compliance score
-
 
 ---
 

@@ -46,7 +46,6 @@ Regulations are written in legal language for legal purposes. Security controls 
 - Translation: Three specific requirements: (1) Implement risk assessment process, (2) Implement technical security controls appropriate to identified risks, (3) Implement organizational security controls appropriate to identified risks
 - Implementation: Maps to specific ISO 27001 controls (A.5.7 Threat Intelligence, A.8.8 Technical Vulnerability Management, etc.)
 
-
 ## When to Use This Process
 
 **Trigger**: Regulation determined applicable (IMP-5.31.1 process complete, regulation added to ISMS-POL-00 as Tier 1 or Tier 2)
@@ -57,12 +56,10 @@ Regulations are written in legal language for legal purposes. Security controls 
 - ISMS-POL-00 entry for regulation
 - Applicability Assessment (from IMP-5.31.1)
 
-
 **Output**:
 
 - Requirements Register populated with extracted requirements
 - Each requirement ready for control mapping (IMP-5.31.3 next step)
-
 
 ## Who Performs This Process
 
@@ -72,7 +69,6 @@ Regulations are written in legal language for legal purposes. Security controls 
 - **Legal Counsel**: Provides legal interpretation, reviews extraction for accuracy (especially Tier 1)
 - **ISMS Specialist**: Ensures requirements are actionable for control implementation
 
-
 **Collaborative Process**:
 Requirements extraction is NOT a solo activity. Best results come from team:
 
@@ -80,7 +76,6 @@ Requirements extraction is NOT a solo activity. Best results come from team:
 - Legal Counsel reviews for legal accuracy
 - ISMS Specialist reviews for implementability
 - Iterate until all three are satisfied
-
 
 ## Process Flowchart
 
@@ -148,7 +143,6 @@ Requirements extraction is NOT a solo activity. Best results come from team:
 - Step 6 (Review): 2-3 days
 - **Total**: 1-2 weeks
 
-
 **Complex Regulation** (50+ requirements, ambiguous language, complex structure, novel regulatory approach):
 
 - Step 1 (Parse): 3-5 days
@@ -156,7 +150,6 @@ Requirements extraction is NOT a solo activity. Best results come from team:
 - Step 4-5 (Categorize & Register): 2-3 days
 - Step 6 (Review): 1-2 weeks (legal review, executive review for Tier 1)
 - **Total**: 4-6 weeks
-
 
 **Factors Increasing Complexity**:
 
@@ -166,7 +159,6 @@ Requirements extraction is NOT a solo activity. Best results come from team:
 - Cross-references to other regulations
 - Conditional requirements (many "if X then Y" provisions)
 
-
 ## Key Artifacts
 
 **Inputs**:
@@ -175,19 +167,16 @@ Requirements extraction is NOT a solo activity. Best results come from team:
 - ISMS-POL-00 entry (regulation metadata)
 - Applicability Assessment (from IMP-5.31.1, provides context)
 
-
 **Working Documents**:
 
 - Extraction Worksheet (article-by-article tracking during process)
 - Markup of regulation text (highlighted, annotated)
 - Legal review notes (interpretations, clarifications)
 
-
 **Outputs**:
 
 - Requirements Register (Assessment Workbook 3) - populated with extracted requirements
 - Approval documentation (legal sign-off, compliance approval)
-
 
 ---
 
@@ -208,20 +197,17 @@ Regulations typically follow structured formats, though specific formats vary by
 - Each article addresses a distinct topic or obligation
 - Example: "Article 32: Security of Processing"
 
-
 **Sub-sections / Paragraphs**:
 
 - Subdivisions within articles
 - Provide detail or enumerate specific requirements
 - Example: "Article 32(1)(a): Pseudonymization and encryption of personal data"
 
-
 **Annexes / Schedules / Appendices**:
 
 - Supplementary material attached to main regulation text
 - May contain technical specifications, lists, forms, templates
 - Example: "Annex A: Technical and Organizational Security Measures"
-
 
 **Definitions**:
 
@@ -230,13 +216,11 @@ Regulations typically follow structured formats, though specific formats vary by
 - Example: Definition of "personal data", "processing", "controller", "processor"
 - Typically at beginning of regulation
 
-
 **Scope / Applicability**:
 
 - Defines who/what regulation applies to
 - May include thresholds, exemptions, territorial scope
 - Already reviewed during IMP-5.31.1, but reconfirm during extraction
-
 
 **Obligations** (the requirements):
 
@@ -244,20 +228,17 @@ Regulations typically follow structured formats, though specific formats vary by
 - These are the sections to extract requirements from
 - May be interspersed throughout or concentrated in specific sections
 
-
 **Guidance / Commentary / Recitals**:
 
 - Explanatory notes, intent, background
 - Helpful for understanding context but NOT legally binding
 - Don't extract requirements from guidance (only from binding provisions)
 
-
 **Penalties / Enforcement**:
 
 - Articles defining consequences of non-compliance
 - Informs priority but don't extract as requirements
 - Example: "Violations may result in fines up to €10M or 2% of revenue"
-
 
 ## Reading Systematically
 
@@ -273,7 +254,6 @@ Before reading any obligations, understand how regulation defines key terms.
 - Example: "Personal data" definition varies (GDPR vs. CCPA vs. other laws)
 - Obligations reference defined terms; misunderstanding definition = misunderstanding requirement
 
-
 **What to Do**:
 
 - Locate definitions section (often Article 1 or Article 4)
@@ -281,12 +261,10 @@ Before reading any obligations, understand how regulation defines key terms.
 - Note definitions that differ from [Organization]'s current understanding or common usage
 - Create glossary for reference during extraction
 
-
 **Example**:
 
 - Regulation defines "Processing" as "any operation performed on personal data, including collection, storage, use, transmission, deletion"
 - Extracted requirement references "processing" → Applies to all those activities, not just one
-
 
 **Step 2.2.2: Read Scope / Applicability**
 
@@ -297,14 +275,12 @@ Reconfirm what regulation applies to (already assessed in IMP-5.31.1, but re-rea
 - Some requirements may only apply to subset of [Organization]'s activities
 - Example: Regulation applies to "high-risk processing" → Requirements only apply to those specific processes
 
-
 **What to Do**:
 
 - Identify scope provisions (typically early articles)
 - Note any limitations (applies only to X, exempt if Y, threshold of Z)
 - Flag conditional applicability (applies if certain criteria met)
 - This scoping informs requirement extraction (some requirements conditional)
-
 
 **Step 2.2.3: Read Articles in Sequential Order**
 
@@ -316,14 +292,12 @@ Don't skip around. Regulations are structured deliberately.
 - Later articles reference earlier articles
 - Understanding flow prevents misinterpretation
 
-
 **How to Read**:
 
 - Start at Article 1 (or first substantive article after definitions)
 - Read each article completely before moving to next
 - Note cross-references ("as defined in Article X", "subject to Article Y")
 - Don't jump to "interesting" articles first (tempting but risky)
-
 
 **Step 2.2.4: Identify Overall Structure**
 
@@ -349,7 +323,6 @@ Articles 77-91: Final Provisions
 - Helps estimate extraction effort
 - Guides prioritization (start with obligation-heavy sections)
 
-
 ## Marking Up the Regulation
 
 Physical or digital markup makes extraction more efficient and accurate.
@@ -359,7 +332,6 @@ Physical or digital markup makes extraction more efficient and accurate.
 - **Physical Document**: Highlighters, pens, sticky notes
 - **Digital Document (PDF)**: PDF annotation tools (Adobe Acrobat, Preview, web browser PDF viewers)
 - **Digital Document (Word/Text)**: Comments, highlight, track changes
-
 
 **Markup Strategy**:
 
@@ -371,12 +343,10 @@ Physical or digital markup makes extraction more efficient and accurate.
 - "will" (in obligatory context)
 - These are requirement indicators
 
-
 **Underline Key Requirements** (or Second Color: Orange):
 
 - Specific obligations within mandatory articles
 - Example: In "shall implement encryption", underline "encryption"
-
 
 **Bracket Definitions** (or Third Color: Green):
 
@@ -384,13 +354,11 @@ Physical or digital markup makes extraction more efficient and accurate.
 - Example: When "personal [data]" appears in Article 32, bracket it
 - Reminder to apply regulatory definition
 
-
 **Note Cross-References** (Margin Notes):
 
 - When article references another article, note in margin
 - Example: Margin note "See Art. 5 for principles" when Art. 32 says "consistent with Article 5"
 - Follow up cross-references during extraction
-
 
 **Flag Unclear Sections** (or Fourth Color: Red):
 
@@ -398,7 +366,6 @@ Physical or digital markup makes extraction more efficient and accurate.
 - Complex conditional requirements
 - Legal terms unfamiliar to you
 - Mark for legal review
-
 
 **Example Marked-Up Article**:
 
@@ -425,7 +392,6 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 - Progress tracking
 - Legal review planning
 
-
 **Worksheet Structure** (Spreadsheet Recommended):
 
 | Article # | Article Title | Summary (1-2 sentences) | Contains Obligations? (Y/N) | Est. # Requirements | Complexity (S/M/C) | Legal Review Needed? (Y/N) | Status | Notes |
@@ -443,7 +409,6 @@ Before extracting requirements, create a worksheet to track progress and plan ex
    - Mark Y/N for "Contains Obligations"
    - Leave other columns for second pass
 
-
 2. **Second Pass (For Articles with Obligations)**:
 
    - Estimate number of requirements (rough count of "shall"/"must")
@@ -453,18 +418,15 @@ Before extracting requirements, create a worksheet to track progress and plan ex
      - **Complex (C)**: Highly ambiguous, conditional, cross-referenced, novel concept
    - Determine if legal review needed (typically Y for Moderate/Complex)
 
-
 3. **During Extraction**:
 
    - Update Status: Not Started → In Progress → Complete
    - Add Notes as you extract (issues, questions, decisions)
 
-
 4. **After Extraction**:
 
    - Worksheet becomes audit trail showing systematic approach
    - File with extracted requirements documentation
-
 
 **Worksheet Benefits**:
 
@@ -472,7 +434,6 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 - Estimates effort realistically
 - Prioritizes legal review where needed
 - Tracks progress (manager can see % complete)
-
 
 ---
 
@@ -491,7 +452,6 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 - Action: Extract as mandatory requirement
 - Frequency: Very common in regulations
 
-
 **"Must"**:
 
 - Equally mandatory as "shall"
@@ -499,13 +459,11 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 - Action: Extract as mandatory requirement
 - Frequency: Common, especially in non-legal-drafting contexts (regulations translated from other languages)
 
-
 **"Is required to" / "Are required to"**:
 
 - Explicit obligation language
 - Example: "Controllers are required to conduct Data Protection Impact Assessments for high-risk processing"
 - Action: Extract as mandatory requirement
-
 
 **"Will"** (In Obligatory Context):
 
@@ -515,12 +473,10 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 - Action: Extract as mandatory requirement
 - Caution: "Will" can be ambiguous; consider context
 
-
 **"Has/Have obligation to"**:
 
 - Example: "Organizations have an obligation to ensure data accuracy"
 - Action: Extract as mandatory requirement
-
 
 **Implicit Obligations** (No Modal Verb):
 
@@ -528,7 +484,6 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 - Example: "Organizations implement technical safeguards" (present tense used as obligation)
 - Context: Check if this is obligation or description; when in doubt, consult legal counsel
 - Action: If obligation, extract
-
 
 ## Recommendatory Language
 
@@ -541,7 +496,6 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 - Action: Note as best practice; do not create mandatory requirement
 - Frequency: Common in guidance documents, less common in binding regulations
 
-
 **"May"**:
 
 - Optional / Permissive
@@ -549,13 +503,11 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 - Action: Note as option; not mandatory unless contract or other regulation makes it mandatory
 - Exception: If contract requires DPO, "may" in regulation becomes "shall" contractually
 
-
 **"Is encouraged to" / "Is advised to"**:
 
 - Guidance language
 - Example: "Controllers are encouraged to adopt Privacy by Design principles"
 - Action: Note as guidance; informational only
-
 
 **"Recommended" / "Suggested"**:
 
@@ -563,13 +515,11 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 - Example: "It is recommended that organizations conduct annual penetration testing"
 - Action: Note as best practice
 
-
 **"Could" / "Can"**:
 
 - Possibility, not obligation
 - Example: "Organizations could implement anonymization to reduce risk"
 - Action: Note as option
-
 
 ## Contextual Interpretation
 
@@ -587,14 +537,12 @@ Some language requires careful contextual analysis.
 - Detailed specification suggests this is more than guidance
 - Context: In some regulations (especially technical standards), "should" is used for mandatory requirements
 
-
 **Action**:
 
 - Flag for legal review
 - Legal counsel determines if this is mandatory despite "should"
 - If legal counsel confirms mandatory: Extract as requirement
 - If legal counsel confirms recommendatory: Note as guidance
-
 
 **"Or" - Alternatives**:
 
@@ -606,13 +554,11 @@ Some language requires careful contextual analysis.
 - "Shall" = Mandatory
 - "Or" = Alternatives (organization can choose)
 
-
 **Extraction**:
 
 - Single requirement: "Implement encryption or pseudonymization for personal data"
 - OR: Two alternative requirements: (1) "Implement encryption for personal data" OR (2) "Implement pseudonymization for personal data"
 - Recommended: Single requirement with "or" (preserves implementation flexibility)
-
 
 **Conditional Requirements ("If X, then shall Y")**:
 
@@ -625,14 +571,12 @@ Some language requires careful contextual analysis.
 - Obligation: "...shall implement additional safeguards"
 - Obligation is mandatory IF condition met
 
-
 **Extraction**:
 
 - Extract with condition noted
 - Requirement: "Implement additional safeguards for special categories of personal data (when processing such data)"
 - OR: "If processing special categories of personal data, implement additional safeguards"
 - During control mapping: Assess if [Organization] meets condition (if yes, requirement applies)
-
 
 **"Unless"**:
 
@@ -644,12 +588,10 @@ Some language requires careful contextual analysis.
 - Default obligation: Notify within 72 hours
 - Exception: Unless unlikely to result in risk
 
-
 **Extraction**:
 
 - Single requirement including exception: "Notify supervisory authority within 72 hours of becoming aware of breach, unless breach is unlikely to result in risk to individuals"
 - Preserves full obligation including exception
-
 
 ## When in Doubt
 
@@ -668,14 +610,12 @@ Some language requires careful contextual analysis.
 - High-stakes obligation (significant penalty if wrong)
 - Tier 1 regulation (mandatory compliance, legal review required anyway)
 
-
 **Better to Extract and Discard than Miss and Face Non-Compliance**:
 
 - If borderline, extract as requirement and flag for review
 - Legal counsel can confirm: "Yes, this is mandatory" or "No, this is guidance only"
 - Easy to remove non-mandatory item during review
 - Hard to identify missing mandatory requirement after extraction complete
-
 
 ---
 
@@ -696,14 +636,12 @@ Requirements must be "just right" - specific enough to implement, general enough
 - "Ensure data protection"
 - "Maintain compliance"
 
-
 **Problems**:
 
 - Vague (what specific actions required?)
 - Cannot map to controls (which controls satisfy "security measures"?)
 - Not measurable (how to verify compliance?)
 - Not implementable (control owner doesn't know what to do)
-
 
 **Too Fine - TOO Prescriptive**:
 
@@ -713,14 +651,12 @@ Requirements must be "just right" - specific enough to implement, general enough
 - "Configure firewall to deny TCP port 23, UDP port 69, TCP port 21, and allow only TCP port 443 on egress"
 - "Store security logs for exactly 395 days in ISO 27001 certified data center in Switzerland with triple redundancy"
 
-
 **Problems**:
 
 - Over-specifies implementation (regulation usually doesn't mandate specific algorithms, ports, durations this precisely)
 - Limits flexibility (what if better encryption algorithm available in 2 years?)
 - May become obsolete (algorithm deprecated, port requirements change)
 - Adds requirements not in regulation (over-interpretation)
-
 
 **Just Right - Actionable with Flexibility**:
 
@@ -737,7 +673,6 @@ Requirements must be "just right" - specific enough to implement, general enough
 - "Retain security logs for minimum 12 months or longer as required by applicable regulations"
   - Specific: Minimum 12 months
   - Flexible: Allows longer retention if needed; "or longer" accommodates future regulation changes
-
 
 **How to Achieve "Just Right"**:
 1. Extract the WHAT (what must be done) specifically
@@ -771,7 +706,6 @@ Break down complex article into individual obligations:
 - **Obligation 5**: Restore availability and access after incidents (business continuity/disaster recovery)
 - **Obligation 6**: Regularly test, assess, evaluate effectiveness (ongoing assurance)
 
-
 **Step 4.2.2: Rewrite Each in Actionable Form**
 
 Transform each obligation into requirement:
@@ -783,7 +717,6 @@ Transform each obligation into requirement:
 - Context: "appropriate to risk level"
 - Result: Clear, actionable
 
-
 **REQ-002**: "Implement pseudonymization or encryption controls for personal data to reduce processing risk"
 
 - Action verb: "Implement"
@@ -792,14 +725,12 @@ Transform each obligation into requirement:
 - Purpose: "to reduce risk"
 - Note: "or" preserves flexibility
 
-
 **REQ-003**: "Implement controls to ensure ongoing confidentiality, integrity, availability, and resilience of information processing systems"
 
 - Action verb: "Implement controls"
 - What: "ensure C-I-A-R" (common security triad plus resilience)
 - Scope: "information processing systems"
 - "Ongoing" implies continuous operation, not one-time
-
 
 **REQ-004**: "Establish business continuity and disaster recovery capabilities to restore data availability and access in timely manner following incidents"
 
@@ -809,14 +740,12 @@ Transform each obligation into requirement:
 - Context: "following incidents"
 - "Timely manner" (from regulation) preserved
 
-
 **REQ-005**: "Conduct regular testing, assessment, and evaluation of the effectiveness of security controls"
 
 - Action verb: "Conduct"
 - What: "testing, assessment, evaluation"
 - Focus: "effectiveness of security controls"
 - Frequency: "regular" (will define in implementation; regulation doesn't specify)
-
 
 **Step 4.2.3: Maintain Citation**
 
@@ -825,7 +754,6 @@ Each extracted requirement links back to source:
 - Citation: Article 32(1) for all five requirements
 - Enables traceability (requirement → regulation article)
 - If regulation changes Article 32(1), know which requirements affected
-
 
 ## Writing Actionable Requirements
 
@@ -852,7 +780,6 @@ Why: Active voice is clearer, more direct, easier to understand and implement.
 - **Review**: For periodic examination
 - **Report**: For notification/disclosure requirements
 
-
 **Examples**:
 
 - "Implement encryption for sensitive data"
@@ -865,14 +792,12 @@ Why: Active voice is clearer, more direct, easier to understand and implement.
 - "Review access rights quarterly"
 - "Report security breaches to authority within 72 hours"
 
-
 **Practice 3: Be Specific About WHAT, General About HOW**
 
 ✅ **Good**: "Implement authentication for system access using passwords, biometrics, tokens, or other appropriate mechanisms"
 
 - Specific WHAT: Authentication for system access
 - General HOW: Multiple options listed, plus "other appropriate mechanisms"
-
 
 ❌ **Poor**: "Implement authentication" (too vague - authentication for what?)
 ❌ **Poor**: "Require 12-character passwords with uppercase, lowercase, numbers, symbols, rotated every 60 days" (over-prescriptive - regulation likely doesn't specify this detail)
@@ -885,11 +810,9 @@ Why: Active voice is clearer, more direct, easier to understand and implement.
 - "Conduct background checks for employees **with access to sensitive data**" (context: which employees)
 - "Require multi-factor authentication for **administrative access**" (context: which type of access)
 
-
 **Without Context** (if regulation doesn't limit scope):
 
 - "Implement encryption for personal data" (applies to all personal data, all contexts)
-
 
 **Practice 5: Avoid Duplication**
 
@@ -901,12 +824,10 @@ If regulation says same thing multiple times (common in laws with cross-referenc
 - Article 32 says: "Implement security measures for personal data processing"
 - Both saying same thing
 
-
 **Action**: Extract as single requirement, cite both articles:
 
 - Requirement: "Implement security measures for personal data processing"
 - Citation: Articles 5(1)(f), 32(1)
-
 
 **Practice 6: Avoid Over-Interpretation**
 
@@ -916,19 +837,16 @@ If regulation says same thing multiple times (common in laws with cross-referenc
 - ❌ Over-Interpreted Requirement: "Implement role-based access control with least privilege, separation of duties, and quarterly access reviews"
 - Why wrong: Regulation says "access controls" (general), not "role-based with least privilege and quarterly reviews" (specific). You added requirements.
 
-
 **Correct Extraction**:
 
 - ✅ Requirement: "Implement access controls to restrict information access to authorized individuals"
 - Why correct: Captures obligation ("implement access controls") without adding specificity regulation doesn't require
-
 
 **When to Add Detail**:
 
 - Only if regulation provides that detail
 - If regulation says "quarterly access reviews", include "quarterly"
 - If regulation doesn't specify, don't add specificity
-
 
 ## Handling Special Cases
 
@@ -941,7 +859,6 @@ If regulation says same thing multiple times (common in laws with cross-referenc
 
 - **Option A**: "Implement additional safeguards for special categories of personal data (when processing such data)"
 - **Option B**: "IF processing special categories of personal data, THEN implement additional safeguards"
-
 
 **Recommended**: Option A (cleaner)
 
@@ -956,7 +873,6 @@ If regulation says same thing multiple times (common in laws with cross-referenc
 
 - ✅ "Implement encryption or pseudonymization for personal data"
 
-
 **Preserves Choice**: [Organization] can choose encryption, pseudonymization, or both. Don't arbitrarily choose one.
 
 **Case 3: Requirements with Examples ("Including but not limited to...")**
@@ -969,11 +885,9 @@ If regulation says same thing multiple times (common in laws with cross-referenc
 - Examples provided: encryption, access control, network security
 - "Including but not limited to" = examples are illustrative, not exhaustive
 
-
 **Extraction**:
 
 - "Implement technical security measures (examples include encryption, access control, network security)"
-
 
 **Notes Field**: "Regulation provides examples but is non-exhaustive. [Organization] should implement comprehensive technical measures appropriate to risk."
 
@@ -986,7 +900,6 @@ If regulation says same thing multiple times (common in laws with cross-referenc
 
 - ✅ "Notify supervisory authority within 72 hours of becoming aware of personal data breach"
 
-
 **Preserve Specific Numbers**: When regulation specifies timeline, threshold, frequency, or quantity, include it exactly.
 
 **More Examples**:
@@ -994,7 +907,6 @@ If regulation says same thing multiple times (common in laws with cross-referenc
 - "Retain logs for minimum 12 months" (if regulation says 12 months)
 - "Conduct penetration testing annually" (if regulation says annual)
 - "Applies to organizations processing data of 50,000+ individuals" (threshold)
-
 
 **Case 5: Requirements Referencing Other Articles**
 
@@ -1008,7 +920,6 @@ If regulation says same thing multiple times (common in laws with cross-referenc
 - Each principle becomes separate requirement
 - Cross-reference back to both the referencing article and Article 5
 
-
 **Case 6: Requirements in Annexes/Schedules**
 
 Some regulations have obligations in annexes (not just main articles).
@@ -1019,7 +930,6 @@ Some regulations have obligations in annexes (not just main articles).
 
 - Requirement ID format: REG-[Code]-ANNEX[X]-[Seq]
 - Example: REG-GDPR-ANNEX1-001
-
 
 ---
 
@@ -1039,7 +949,6 @@ Some regulations have obligations in annexes (not just main articles).
 - Involve configuration, deployment, technical architecture
 - Often require IT/Security Engineering resources
 
-
 **Examples**:
 
 - "Implement encryption for data at rest"
@@ -1047,7 +956,6 @@ Some regulations have obligations in annexes (not just main articles).
 - "Deploy intrusion detection and prevention systems"
 - "Implement automated malware detection on endpoints"
 - "Enable multi-factor authentication for system access"
-
 
 **Maps To**: ISO 27001 Annex A Section 8 (Technology Controls)
 
@@ -1061,7 +969,6 @@ Some regulations have obligations in annexes (not just main articles).
 - Involve policy development, role definition, governance
 - Often require Management/HR/Legal resources
 
-
 **Examples**:
 
 - "Establish an information security policy approved by management"
@@ -1069,7 +976,6 @@ Some regulations have obligations in annexes (not just main articles).
 - "Conduct annual security awareness training for all employees"
 - "Define roles and responsibilities for information security"
 - "Establish information security governance structure"
-
 
 **Maps To**: ISO 27001 Annex A Section 5 (Organizational Controls)
 
@@ -1083,7 +989,6 @@ Some regulations have obligations in annexes (not just main articles).
 - Often time-sensitive (e.g., notify within X hours)
 - Involve compliance reporting, transparency
 
-
 **Examples**:
 
 - "Notify supervisory authority within 72 hours of data breach"
@@ -1091,7 +996,6 @@ Some regulations have obligations in annexes (not just main articles).
 - "Disclose data processing activities to data subjects in privacy notice"
 - "Report security incidents to affected customers"
 - "Notify data subjects of breaches affecting their rights"
-
 
 **Maps To**: ISO 27001 Annex A Section 5.26 (Response to Information Security Incidents), 5.27 (Learning from Information Security Incidents)
 
@@ -1105,7 +1009,6 @@ Some regulations have obligations in annexes (not just main articles).
 - Involve monitoring, testing, validation, continuous operations
 - Often require Security Operations/IT Operations resources
 
-
 **Examples**:
 
 - "Monitor security logs daily for suspicious activity"
@@ -1113,7 +1016,6 @@ Some regulations have obligations in annexes (not just main articles).
 - "Conduct regular vulnerability assessments"
 - "Review and update risk assessments quarterly"
 - "Perform regular backups and test restoration procedures"
-
 
 **Maps To**: ISO 27001 Annex A Sections 5 and 8 (various operational controls like 5.37 Documented Operating Procedures, 8.8 Management of Technical Vulnerabilities)
 
@@ -1129,7 +1031,6 @@ Some regulations have obligations in annexes (not just main articles).
 - If answer is "policy/procedure/governance" → Organizational
 - If answer is "notification/report" → Reporting
 - If answer is "ongoing activity/monitoring" → Operational
-
 
 **Step 3**: Assign primary category
 
@@ -1155,13 +1056,11 @@ Some requirements inherently span categories.
 - Operational (test annually = recurring activity)
 - **Assign**: Organizational (primary), Operational (secondary)
 
-
 **Why Both Matter**:
 
 - During control mapping, map to both organizational control (policy) and operational control (testing)
 - Organizational control = ISMS-POL-5.26 Incident Response Policy
 - Operational control = Annual incident response tabletop exercise
-
 
 ## Why Categorization Matters
 
@@ -1174,7 +1073,6 @@ Knowing category narrows which Annex A controls to consider.
 - Requirement Category: Technical
 - Immediately focus on Annex A Section 8 (Technology Controls)
 - Don't waste time reviewing Section 5 Organizational Controls (less likely to map)
-
 
 **Benefit 2: Assigns Responsibility**
 
@@ -1201,7 +1099,6 @@ Some categories may be more urgent.
 - Technical requirements follow (time to procure, deploy, configure)
 - Operational requirements last (need controls implemented before you can test them)
 
-
 **Benefit 4: Resource Planning**
 
 Categories inform resource needs.
@@ -1212,7 +1109,6 @@ Categories inform resource needs.
 - 15 Organizational requirements → Need Policy Development capacity (Compliance Officer, Legal)
 - 5 Reporting requirements → Need Compliance Officer + Communications support
 - 10 Operational requirements → Need Security Operations capacity
-
 
 ---
 
@@ -1237,19 +1133,16 @@ Categories inform resource needs.
   - REG-HIPAA-164-001 (First requirement from HIPAA 45 CFR § 164)
   - REG-PCI-3-001 (First requirement from PCI DSS Requirement 3)
 
-
 **2. Regulation ID**:
 
 - Link to entry in ISMS-POL-00
 - **Example**: REG-GDPR (ID from POL-00)
 - Enables filtering (show all requirements for one regulation)
 
-
 **3. Regulation Name**:
 
 - Full name for human readability
 - **Example**: "General Data Protection Regulation (GDPR)"
-
 
 **4. Citation**:
 
@@ -1260,7 +1153,6 @@ Categories inform resource needs.
   - "PCI DSS Requirement 3.4"
 - Enables looking up source text
 
-
 **5. Original Requirement Text**:
 
 - **Exact quote** from regulation (copy/paste)
@@ -1268,19 +1160,16 @@ Categories inform resource needs.
 - **Example**: "The controller and processor shall implement appropriate technical and organizational measures to ensure a level of security appropriate to the risk..."
 - Use quotation marks or italics to indicate this is verbatim quote
 
-
 **6. Interpreted Requirement**:
 
 - Your actionable rewrite (from Step 3)
 - **Example**: "Implement technical and organizational security measures appropriate to the risk level of data processing activities"
 - This is what [Organization] will implement
 
-
 **7. Requirement Category**:
 
 - Technical / Organizational / Reporting / Operational (from Step 4)
 - **Excel Implementation**: Dropdown list (data validation)
-
 
 **8. Priority**:
 
@@ -1290,7 +1179,6 @@ Categories inform resource needs.
   - **Medium**: Tier 1 but less severe consequence, or Tier 2 with potential near-term applicability
   - **Low**: Tier 2 or Tier 3, no imminent deadline
 - **Excel Implementation**: Dropdown list
-
 
 **9. Implementation Deadline**:
 
@@ -1302,14 +1190,12 @@ Categories inform resource needs.
 - **Format**: YYYY-MM-DD
 - **Example**: 2025-06-01
 
-
 **10. Implementation Status**:
 
 - Not Started / In Progress / Implemented / N/A
 - **Initially**: "Not Started" for all extracted requirements
 - **Updated**: As control mapping and implementation progress
 - **Excel Implementation**: Dropdown list
-
 
 **11. Mapped Controls**:
 
@@ -1318,7 +1204,6 @@ Categories inform resource needs.
 - **Examples**: "A.8.24", "A.5.1, A.5.15", "A.8.16, A.8.17"
 - Multiple controls possible (comma-separated)
 
-
 **12. Gap Status**:
 
 - Complete Gap / Partial Gap / No Gap / TBD
@@ -1326,13 +1211,11 @@ Categories inform resource needs.
 - **Updated**: During IMP-5.31.3
 - **Excel Implementation**: Dropdown list
 
-
 **13. Responsible Party**:
 
 - Person/role who will implement this requirement
 - **May be determined later** during control mapping (when know which control satisfies requirement, know who owns that control)
 - **Examples**: "CISO", "IT Security Manager", "Compliance Officer", "HR Director"
-
 
 **14. Notes**:
 
@@ -1343,14 +1226,12 @@ Categories inform resource needs.
   - "Regulation doesn't define 'regular' - recommend quarterly at minimum"
 - **Use for**: Capturing nuance that doesn't fit in other fields
 
-
 **15. Extracted By / Date**:
 
 - Name of person who extracted requirement
 - Date of extraction
 - **Example**: "Compliance Analyst / 2024-12-01"
 - Accountability and audit trail
-
 
 **16. Reviewed By / Date**:
 
@@ -1359,13 +1240,11 @@ Categories inform resource needs.
 - **Example**: "Legal Counsel / 2024-12-05"
 - Blank until review (Step 6)
 
-
 **17. Approved By / Date**:
 
 - Final approver (Compliance Officer, ISMS Manager)
 - Date of approval
 - Blank until final approval (Step 6)
-
 
 ## Populating the Register
 
@@ -1376,7 +1255,6 @@ Categories inform resource needs.
 - Open Requirements Register (Excel template: Assessment Workbook 3)
 - Save with version number (e.g., "Requirements-Register-v1.0-[RegCode].xlsx" for single regulation, or use master register for all regulations)
 
-
 **For Each Extracted Requirement** (from Step 3):
 
 1. **Create New Row** in register
@@ -1386,7 +1264,6 @@ Categories inform resource needs.
    - Check last requirement ID for this regulation
    - Increment sequence number
    - Example: Last was REG-GDPR-32-003, next is REG-GDPR-32-004
-
 
 3. **Complete All Fields**:
 
@@ -1402,7 +1279,6 @@ Categories inform resource needs.
    - Add Notes (if needed)
    - Enter "Extracted By" and "Date"
 
-
 4. **Save** after each requirement (or after each article's requirements)
 
 **Check for Duplicates**:
@@ -1413,13 +1289,11 @@ Categories inform resource needs.
   - **Same requirement from same article**: Don't duplicate; verify existing entry is correct
   - **Same requirement from different article**: Add cross-reference in Notes ("See also REG-GDPR-5-002 for related principle")
 
-
 **Maintain Sequential IDs**:
 
 - Within each article, number sequentially (001, 002, 003...)
 - If inserting requirement later, use next available number (don't renumber existing; breaks references)
 - Example: Article 32 has REQ-001 through REQ-005; later add REQ-006 (not REQ-003.5)
-
 
 ## Register Maintenance
 
@@ -1433,13 +1307,11 @@ Categories inform resource needs.
 - Correct typos or minor clarifications
 - Update status fields (In Progress, Implemented)
 
-
 **Major Updates** (1.x → 2.0):
 
 - Add requirements from new regulation
 - Significant restructuring
 - Major interpretation changes
-
 
 **Version History Table** (in Excel, separate tab):
 
@@ -1457,7 +1329,6 @@ Categories inform resource needs.
 - Legal Counsel (full access)
 - Compliance Analysts (add/edit with Compliance Officer approval)
 
-
 **Who Can View** (Read-Only):
 
 - ISMS team
@@ -1465,20 +1336,17 @@ Categories inform resource needs.
 - Auditors (demonstrate systematic extraction)
 - Management
 
-
 **Excel Implementation**:
 
 - Store in SharePoint or shared drive with permissions
 - OR: Use "Protect Sheet" feature with password (Edit access requires password)
 - Track changes (Excel "Track Changes" or version control in SharePoint)
 
-
 **Backup**:
 
 - Requirements Register is critical document
 - Backup daily (auto-backup if in SharePoint)
 - Retain all versions (never delete old versions)
-
 
 ---
 
@@ -1497,13 +1365,11 @@ Categories inform resource needs.
 - For each article marked "Contains Obligations? Y", check corresponding requirements in register
 - Confirm expected number of requirements extracted
 
-
 **Step 7.1.2**: Search regulation for missed mandatory language
 
 - Use PDF/document search: Find all instances of "shall", "must", "is required to"
 - For each instance, verify corresponding requirement in register
 - If "shall" found but no requirement extracted: Either (a) missed requirement, OR (b) in non-binding section (definitions, guidance) - verify
-
 
 **Step 7.1.3**: Cross-check against extraction worksheet
 
@@ -1511,19 +1377,16 @@ Categories inform resource needs.
 - Compare actual extracted count to estimate
 - Significant variance (estimated 5, extracted 2)? → Review article again
 
-
 **Step 7.1.4**: Peer Review
 
 - Second person (Compliance Analyst or Legal) reviews extraction
 - Fresh eyes catch missed requirements
-
 
 **Red Flags**:
 
 - Total requirements seems low compared to regulation length
 - Entire articles skipped
 - Complex article has only 1-2 requirements (may have missed nuance)
-
 
 ## Accuracy Check
 
@@ -1540,7 +1403,6 @@ Categories inform resource needs.
   - Ask: Does interpreted requirement add anything not in original? (over-interpretation)
   - Ask: Does interpreted requirement omit anything from original? (under-interpretation)
 
-
 **Step 7.2.2**: Check for over-interpretation
 
 - **Red Flag Patterns**:
@@ -1548,12 +1410,10 @@ Categories inform resource needs.
   - Interpreted requirement specifies frequency not in regulation (e.g., regulation says "regular", interpreted says "quarterly")
   - Interpreted requirement adds constraints (e.g., regulation says "access controls", interpreted says "role-based access control with separation of duties")
 
-
 **If Over-Interpretation Found**:
 
 - Revise interpreted requirement to remove added specificity
 - Retain flexibility regulation provides
-
 
 **Step 7.2.3**: Check for under-interpretation
 
@@ -1562,19 +1422,16 @@ Categories inform resource needs.
   - Interpreted requirement omits conditions (e.g., regulation says "unless unlikely to result in risk", interpreted omits exception)
   - Interpreted requirement generalizes where regulation is specific
 
-
 **If Under-Interpretation Found**:
 
 - Revise interpreted requirement to restore regulatory specificity
 - Preserve all conditions, exceptions, qualifiers from regulation
-
 
 **Step 7.2.4**: Verify consistent terminology
 
 - Regulation uses specific terms (defined in definitions section)
 - Interpreted requirements should use same terms consistently
 - Example: If regulation defines "personal data", use "personal data" in requirements (not "PII", "personal information", "customer data")
-
 
 ## Granularity Check
 
@@ -1586,7 +1443,6 @@ Categories inform resource needs.
 - Not too fine: Does requirement allow implementation flexibility?
 - Just right: Specific WHAT, general HOW?
 
-
 **Spot Check Method**:
 
 - Select 5-10 requirements randomly
@@ -1595,7 +1451,6 @@ Categories inform resource needs.
 - If answer is "Yes, but I'm locked into very specific technology/process": Generalize (too fine)
 - If answer is "Yes, I know what to do and have options for how": Just right ✓
 
-
 **Common Fixes**:
 
 **Too Coarse → Add Specificity**:
@@ -1603,12 +1458,10 @@ Categories inform resource needs.
 - Before: "Implement security controls"
 - After: "Implement access controls to restrict information access to authorized individuals"
 
-
 **Too Fine → Add Flexibility**:
 
 - Before: "Implement AES-256 encryption in GCM mode with 256-bit keys"
 - After: "Implement encryption using industry-standard algorithms appropriate to data sensitivity"
-
 
 ## Consistency Check
 
@@ -1623,13 +1476,11 @@ Categories inform resource needs.
 - Should NOT be: "The organization shall...", "Organizations must...", "It is required that..."
 - Fix: Revise to start with verb
 
-
 ☐ **All requirements use active voice**:
 
 - ✅ "Implement encryption"
 - ❌ "Encryption shall be implemented"
 - Fix: Convert passive to active
-
 
 ☐ **All requirements properly scoped**:
 
@@ -1637,13 +1488,11 @@ Categories inform resource needs.
 - "Implement encryption" → Too broad
 - "Implement encryption for personal data in transit" → Properly scoped
 
-
 ☐ **All requirements have proper citations**:
 
 - Every requirement links to article/section
 - Citation format consistent
 - Fix: Add missing citations, standardize format
-
 
 ☐ **Consistent terminology**:
 
@@ -1651,13 +1500,11 @@ Categories inform resource needs.
 - Example: Don't mix "personal data" (regulation term) with "PII" (US term) or "customer data" (colloquial)
 - Fix: Standardize on regulatory terminology
 
-
 ☐ **Consistent priority logic**:
 
 - All Tier 1 + severe penalty = High priority
 - Check for inconsistencies (one Tier 1 requirement is Low while similar one is High)
 - Fix: Align priority assignments
-
 
 ## Legal Review
 
@@ -1671,13 +1518,11 @@ Categories inform resource needs.
 - Confirm no provisions missed
 - Check extraction worksheet completeness
 
-
 **Review 2: Correct Interpretation**
 
 - Verify interpreted requirements match regulatory intent
 - Identify any misinterpretations
 - Confirm granularity appropriate (not too specific, not too vague)
-
 
 **Review 3: Legal Ambiguities**
 
@@ -1685,12 +1530,10 @@ Categories inform resource needs.
 - Provide interpretation guidance
 - Recommend whether external legal opinion needed (e.g., novel regulatory concept, high stakes, unclear scope)
 
-
 **Review 4: Categorization Accuracy**
 
 - Verify Technical/Organizational/Reporting/Operational categories make sense
 - Some requirements may be debatable (is "establish policy" Organizational or also Operational?)
-
 
 **Review 5: Conditions and Exceptions**
 
@@ -1698,25 +1541,21 @@ Categories inform resource needs.
 - Verify exceptions properly noted (unless Z)
 - Confirm no mandatory exceptions omitted
 
-
 **Legal Approval**:
 
 - Legal Counsel signs off on extraction
 - Documented in Register: "Reviewed By" field
 - OR: Separate Legal Review Memo attached to extraction
 
-
 **Legal Caveats**:
 
 - Legal Counsel may note: "Requirement X interpretation is [Legal Counsel]'s best judgment but regulation is ambiguous; recommend monitoring regulatory guidance"
 - Document caveats in Requirements Register Notes field
 
-
 **For Tier 2/3 Regulations**: Legal review may be optional
 
 - ISMS Manager review may suffice
 - Engage Legal if ambiguity or complexity warrants it
-
 
 ## Final Approval
 
@@ -1728,18 +1567,15 @@ Categories inform resource needs.
 - Confirms: All quality checks performed (Sections 7.1-7.4)
 - Signs off: "Approved By" in Register
 
-
 **Legal Counsel** (Tier 1):
 
 - Reviews for: Legal accuracy, correct interpretation
 - Signs off: "Reviewed By" in Register (already done in Section 7.5)
 
-
 **ISMS Manager**:
 
 - Reviews for: ISMS implications, implementability, control mapping readiness
 - Signs off: Concurs with Compliance Officer approval
-
 
 **Approval Documentation**:
 
@@ -1748,7 +1584,6 @@ Categories inform resource needs.
 - "Reviewed By / Date" field: Legal Counsel signature and date
 - "Approved By / Date" field: Compliance Officer signature and date
 - Electronic signature acceptable (typed name + date)
-
 
 **Option 2: Separate Approval Form**
 ```
@@ -1775,17 +1610,14 @@ Comments/Caveats: [If any]
    - Example: Requirements-Register-v1.0-Approved-2024-12-10.xlsx
    - No further edits without creating new version
 
-
 2. **Communicate Completion**:
 
    - Email to ISMS team: "Requirements extraction complete for [Regulation Name]; [X] requirements identified; proceeding to control mapping"
-
 
 3. **Proceed to Next Step**:
 
    - Requirements extraction complete
    - Ready for IMP-5.31.3: Control Mapping Process
-
 
 ---
 
@@ -1806,7 +1638,6 @@ Comments/Caveats: [If any]
 - Include encryption (as appropriate)
 - Include access controls (as appropriate)
 
-
 **Step 2: Extract & Rewrite**:
 
 **REQ-001**: "Implement technical and organizational security measures to ensure the security of personal data"
@@ -1815,13 +1646,11 @@ Comments/Caveats: [If any]
 - What: Technical and organizational measures
 - Purpose: Security of personal data
 
-
 **REQ-002**: "Implement controls to protect personal data against unauthorized or unlawful processing"
 
 - Action: Implement controls
 - Purpose: Prevent unauthorized/unlawful processing
 - Context: Personal data
-
 
 **REQ-003**: "Implement controls to protect personal data against accidental loss, destruction, or damage"
 
@@ -1829,20 +1658,17 @@ Comments/Caveats: [If any]
 - Purpose: Prevent accidental loss/destruction/damage
 - Context: Personal data
 
-
 **REQ-004**: "Implement encryption for personal data where appropriate to reduce processing risk"
 
 - Action: Implement encryption
 - Context: Personal data
 - Qualifier: "where appropriate" (from regulation - allows risk-based decision)
 
-
 **REQ-005**: "Implement access controls to restrict personal data access to authorized individuals"
 
 - Action: Implement access controls
 - Purpose: Restrict access to authorized only
 - Context: Personal data
-
 
 **Step 3: Categorize**:
 
@@ -1851,7 +1677,6 @@ Comments/Caveats: [If any]
 - REQ-003: Technical (controls for availability/integrity)
 - REQ-004: Technical (encryption)
 - REQ-005: Technical (access management)
-
 
 **Step 4: Register Entry** (Sample for REQ-001):
 
@@ -1893,7 +1718,6 @@ Comments/Caveats: [If any]
 - Scope: Breaches affecting personal data
 - Exception: Unless breach unlikely to result in risk to individuals
 
-
 **Step 2: Extract & Rewrite**:
 
 **REQ-001**: "Notify the relevant supervisory authority of security breaches affecting personal data within 72 hours of becoming aware of the breach, unless the breach is unlikely to result in risk to the rights and freedoms of individuals"
@@ -1905,11 +1729,9 @@ Comments/Caveats: [If any]
 - Exception: Unless unlikely to result in risk
 - Note: Preserves all elements of obligation including timeline and exception
 
-
 **Step 3: Categorize**:
 
 - Category: **Reporting** (external notification requirement)
-
 
 **Step 4: Register Entry**:
 
@@ -1950,7 +1772,6 @@ Comments/Caveats: [If any]
 - DPO responsibility 3: Serve as point of contact for data subjects
 - DPO responsibility 4: Serve as point of contact for supervisory authority
 
-
 **Step 2: Extract & Rewrite**:
 
 **REQ-001**: "Designate a Data Protection Officer responsible for monitoring compliance with data protection regulation"
@@ -1959,13 +1780,11 @@ Comments/Caveats: [If any]
 - Role: Data Protection Officer
 - Responsibility: Monitor compliance
 
-
 **REQ-002**: "Ensure DPO advises the organization on data protection matters"
 
 - Action: Ensure
 - Who: DPO
 - Responsibility: Advise on data protection
-
 
 **REQ-003**: "Ensure DPO serves as point of contact for data subjects and supervisory authority regarding data processing activities"
 
@@ -1975,13 +1794,11 @@ Comments/Caveats: [If any]
 - For whom: Data subjects and supervisory authority
 - Regarding: Processing activities
 
-
 **Step 3: Categorize**:
 
 - REQ-001: **Organizational** (role designation)
 - REQ-002: **Organizational** (governance function)
 - REQ-003: **Organizational** (communication/interface role)
-
 
 **Step 4: Register Entry** (Sample for REQ-001):
 
@@ -2022,7 +1839,6 @@ Comments/Caveats: [If any]
 - Focus: Effectiveness of security measures
 - Scope: Technical and organizational measures
 
-
 **Step 2: Extract & Rewrite**:
 
 **REQ-001**: "Conduct regular testing and evaluation of the effectiveness of security controls for data processing"
@@ -2033,11 +1849,9 @@ Comments/Caveats: [If any]
 - Frequency: "Regular" (regulation doesn't define; [Organization] will determine)
 - Scope: Data processing security
 
-
 **Step 3: Categorize**:
 
 - Category: **Operational** (recurring testing activity)
-
 
 **Step 4: Register Entry**:
 
@@ -2084,7 +1898,6 @@ Comments/Caveats: [If any]
 - Version control tab
 - Instructions tab
 
-
 ## Extraction Worksheet Template
 
 **Purpose**: Working document to track extraction progress article-by-article.
@@ -2121,7 +1934,6 @@ Comments/Caveats: [If any]
   - Always 3 digits (leading zeros)
   - Unique within Article
 
-
 **Examples**:
 
 | Regulation | Article/Section | Requirement ID | Notes |
@@ -2138,12 +1950,10 @@ Comments/Caveats: [If any]
 - OR: Number sequentially by order in document
 - Consistency matters more than specific convention
 
-
 **If Requirement from Annex/Schedule**:
 
 - Format: REG-[RegCode]-ANNEX[X]-[Seq]
 - Example: REG-GDPR-ANNEXA-001
-
 
 ---
 
@@ -2159,7 +1969,6 @@ Before submitting for final approval (Step 6), perform these checks:
 - ☐ All "shall" and "must" statements extracted
 - ☐ No obvious gaps (compare estimated vs. actual requirement count)
 
-
 **Accuracy**:
 
 - ☐ Interpreted requirements faithful to original text (spot-checked per Section 7.2)
@@ -2167,13 +1976,11 @@ Before submitting for final approval (Step 6), perform these checks:
 - ☐ No under-interpretation (no omitted obligations)
 - ☐ Proper citations (every requirement links to article/section)
 
-
 **Actionability**:
 
 - ☐ Requirements rewritten in actionable form (action verb, active voice)
 - ☐ Granularity appropriate (not too coarse, not too fine - spot-checked per Section 7.3)
 - ☐ Implementable by control owners
-
 
 **Consistency**:
 
@@ -2182,14 +1989,12 @@ Before submitting for final approval (Step 6), perform these checks:
 - ☐ Consistent terminology (regulatory terms used consistently)
 - ☐ Consistent formatting (all start with action verb, etc.)
 
-
 **Documentation**:
 
 - ☐ All Requirements Register fields completed
 - ☐ Requirement IDs sequential and correct
 - ☐ No duplicate requirements
 - ☐ Extraction worksheet filed
-
 
 **Review & Approval**:
 
@@ -2198,12 +2003,10 @@ Before submitting for final approval (Step 6), perform these checks:
 - ☐ ISMS Manager concurrence obtained
 - ☐ Approval signatures/dates in Register
 
-
 **Readiness for Next Step**:
 
 - ☐ Requirements Register version controlled and locked
 - ☐ Ready to proceed to Control Mapping (IMP-5.31.3)
-
 
 ## Common Pitfalls to Avoid
 
@@ -2220,7 +2023,6 @@ Before submitting for final approval (Step 6), perform these checks:
 - Implement encryption (where appropriate)
 - Ensure CIA+R of systems
 - Etc.
-
 
 **Pitfall 2: Extracting Too Finely (Over-Specifying)**
 
@@ -2265,7 +2067,6 @@ Before submitting for final approval (Step 6), perform these checks:
 - "Establish incident response policy" → Organizational
 - "Establish access control policy" → Technical
 
-
 **Why Wrong**: Both are "establish policy" (organizational activity). Inconsistency creates confusion during control mapping.
 
 **Correct Approach**: Apply categorization guidelines consistently.
@@ -2273,7 +2074,6 @@ Before submitting for final approval (Step 6), perform these checks:
 - "Establish incident response policy" → Organizational
 - "Establish access control policy" → Organizational
 - "Implement access controls" → Technical (implementation distinct from policy)
-
 
 **Pitfall 7: Skipping Legal Review for Tier 1 Regulations**
 
@@ -2295,14 +2095,12 @@ Before submitting for final approval (Step 6), perform these checks:
 - **ISMS-POL-00**: Regulatory Applicability Framework
   - Source of applicable regulations (input to this process)
 
-
 **Implementation Guides** (Process Sequence):
 
 - **ISMS-IMP-A.5.31.2**: Applicability Assessment Process
   - PRECEDES this step (determines which regulations apply)
 - **ISMS-IMP-A.5.31.4**: Control Mapping Process
   - FOLLOWS this step (maps extracted requirements to ISO 27001 controls)
-
 
 **Assessment Tools**:
 
@@ -2311,12 +2109,10 @@ Before submitting for final approval (Step 6), perform these checks:
   - Pre-configured with fields, dropdowns, formulas
   - Used to populate master Requirements Register
 
-
 **Standards**:
 
 - **ISO 27001:2022**: Control A.5.31 - Legal, Statutory, Regulatory and Contractual Requirements
   - The ISO control this process supports
-
 
 ---
 
@@ -2352,20 +2148,17 @@ Regulations typically follow structured formats, though specific formats vary by
 - Each article addresses a distinct topic or obligation
 - Example: "Article 32: Security of Processing"
 
-
 **Sub-sections / Paragraphs**:
 
 - Subdivisions within articles
 - Provide detail or enumerate specific requirements
 - Example: "Article 32(1)(a): Pseudonymization and encryption of personal data"
 
-
 **Annexes / Schedules / Appendices**:
 
 - Supplementary material attached to main regulation text
 - May contain technical specifications, lists, forms, templates
 - Example: "Annex A: Technical and Organizational Security Measures"
-
 
 **Definitions**:
 
@@ -2374,13 +2167,11 @@ Regulations typically follow structured formats, though specific formats vary by
 - Example: Definition of "personal data", "processing", "controller", "processor"
 - Typically at beginning of regulation
 
-
 **Scope / Applicability**:
 
 - Defines who/what regulation applies to
 - May include thresholds, exemptions, territorial scope
 - Already reviewed during IMP-S1, but reconfirm during extraction
-
 
 **Obligations** (the requirements):
 
@@ -2388,20 +2179,17 @@ Regulations typically follow structured formats, though specific formats vary by
 - These are the sections to extract requirements from
 - May be interspersed throughout or concentrated in specific sections
 
-
 **Guidance / Commentary / Recitals**:
 
 - Explanatory notes, intent, background
 - Helpful for understanding context but NOT legally binding
 - Don't extract requirements from guidance (only from binding provisions)
 
-
 **Penalties / Enforcement**:
 
 - Articles defining consequences of non-compliance
 - Informs priority but don't extract as requirements
 - Example: "Violations may result in fines up to €10M or 2% of revenue"
-
 
 ## Reading Systematically
 
@@ -2417,7 +2205,6 @@ Before reading any obligations, understand how regulation defines key terms.
 - Example: "Personal data" definition varies (GDPR vs. CCPA vs. other laws)
 - Obligations reference defined terms; misunderstanding definition = misunderstanding requirement
 
-
 **What to Do**:
 
 - Locate definitions section (often Article 1 or Article 4)
@@ -2425,12 +2212,10 @@ Before reading any obligations, understand how regulation defines key terms.
 - Note definitions that differ from [Organization]'s current understanding or common usage
 - Create glossary for reference during extraction
 
-
 **Example**:
 
 - Regulation defines "Processing" as "any operation performed on personal data, including collection, storage, use, transmission, deletion"
 - Extracted requirement references "processing" → Applies to all those activities, not just one
-
 
 **Step 2.2.2: Read Scope / Applicability**
 
@@ -2441,14 +2226,12 @@ Reconfirm what regulation applies to (already assessed in IMP-S1, but re-read fo
 - Some requirements may only apply to subset of [Organization]'s activities
 - Example: Regulation applies to "high-risk processing" → Requirements only apply to those specific processes
 
-
 **What to Do**:
 
 - Identify scope provisions (typically early articles)
 - Note any limitations (applies only to X, exempt if Y, threshold of Z)
 - Flag conditional applicability (applies if certain criteria met)
 - This scoping informs requirement extraction (some requirements conditional)
-
 
 **Step 2.2.3: Read Articles in Sequential Order**
 
@@ -2460,14 +2243,12 @@ Don't skip around. Regulations are structured deliberately.
 - Later articles reference earlier articles
 - Understanding flow prevents misinterpretation
 
-
 **How to Read**:
 
 - Start at Article 1 (or first substantive article after definitions)
 - Read each article completely before moving to next
 - Note cross-references ("as defined in Article X", "subject to Article Y")
 - Don't jump to "interesting" articles first (tempting but risky)
-
 
 **Step 2.2.4: Identify Overall Structure**
 
@@ -2493,7 +2274,6 @@ Articles 77-91: Final Provisions
 - Helps estimate extraction effort
 - Guides prioritization (start with obligation-heavy sections)
 
-
 ## Marking Up the Regulation
 
 Physical or digital markup makes extraction more efficient and accurate.
@@ -2503,7 +2283,6 @@ Physical or digital markup makes extraction more efficient and accurate.
 - **Physical Document**: Highlighters, pens, sticky notes
 - **Digital Document (PDF)**: PDF annotation tools (Adobe Acrobat, Preview, web browser PDF viewers)
 - **Digital Document (Word/Text)**: Comments, highlight, track changes
-
 
 **Markup Strategy**:
 
@@ -2515,12 +2294,10 @@ Physical or digital markup makes extraction more efficient and accurate.
 - "will" (in obligatory context)
 - These are requirement indicators
 
-
 **Underline Key Requirements** (or Second Color: Orange):
 
 - Specific obligations within mandatory articles
 - Example: In "shall implement encryption", underline "encryption"
-
 
 **Bracket Definitions** (or Third Color: Green):
 
@@ -2528,13 +2305,11 @@ Physical or digital markup makes extraction more efficient and accurate.
 - Example: When "personal [data]" appears in Article 32, bracket it
 - Reminder to apply regulatory definition
 
-
 **Note Cross-References** (Margin Notes):
 
 - When article references another article, note in margin
 - Example: Margin note "See Art. 5 for principles" when Art. 32 says "consistent with Article 5"
 - Follow up cross-references during extraction
-
 
 **Flag Unclear Sections** (or Fourth Color: Red):
 
@@ -2542,7 +2317,6 @@ Physical or digital markup makes extraction more efficient and accurate.
 - Complex conditional requirements
 - Legal terms unfamiliar to you
 - Mark for legal review
-
 
 **Example Marked-Up Article**:
 
@@ -2569,7 +2343,6 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 - Progress tracking
 - Legal review planning
 
-
 **Worksheet Structure** (Spreadsheet Recommended):
 
 | Article # | Article Title | Summary (1-2 sentences) | Contains Obligations? (Y/N) | Est. # Requirements | Complexity (S/M/C) | Legal Review Needed? (Y/N) | Status | Notes |
@@ -2587,7 +2360,6 @@ Before extracting requirements, create a worksheet to track progress and plan ex
    - Mark Y/N for "Contains Obligations"
    - Leave other columns for second pass
 
-
 2. **Second Pass (For Articles with Obligations)**:
 
    - Estimate number of requirements (rough count of "shall"/"must")
@@ -2597,18 +2369,15 @@ Before extracting requirements, create a worksheet to track progress and plan ex
      - **Complex (C)**: Highly ambiguous, conditional, cross-referenced, novel concept
    - Determine if legal review needed (typically Y for Moderate/Complex)
 
-
 3. **During Extraction**:
 
    - Update Status: Not Started → In Progress → Complete
    - Add Notes as you extract (issues, questions, decisions)
 
-
 4. **After Extraction**:
 
    - Worksheet becomes audit trail showing systematic approach
    - File with extracted requirements documentation
-
 
 **Worksheet Benefits**:
 
@@ -2616,7 +2385,6 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 - Estimates effort realistically
 - Prioritizes legal review where needed
 - Tracks progress (manager can see % complete)
-
 
 ---
 
@@ -2635,7 +2403,6 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 - Action: Extract as mandatory requirement
 - Frequency: Very common in regulations
 
-
 **"Must"**:
 
 - Equally mandatory as "shall"
@@ -2643,13 +2410,11 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 - Action: Extract as mandatory requirement
 - Frequency: Common, especially in non-legal-drafting contexts (regulations translated from other languages)
 
-
 **"Is required to" / "Are required to"**:
 
 - Explicit obligation language
 - Example: "Controllers are required to conduct Data Protection Impact Assessments for high-risk processing"
 - Action: Extract as mandatory requirement
-
 
 **"Will"** (In Obligatory Context):
 
@@ -2659,12 +2424,10 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 - Action: Extract as mandatory requirement
 - Caution: "Will" can be ambiguous; consider context
 
-
 **"Has/Have obligation to"**:
 
 - Example: "Organizations have an obligation to ensure data accuracy"
 - Action: Extract as mandatory requirement
-
 
 **Implicit Obligations** (No Modal Verb):
 
@@ -2672,7 +2435,6 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 - Example: "Organizations implement technical safeguards" (present tense used as obligation)
 - Context: Check if this is obligation or description; when in doubt, consult legal counsel
 - Action: If obligation, extract
-
 
 ## Recommendatory Language
 
@@ -2685,7 +2447,6 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 - Action: Note as best practice; do not create mandatory requirement
 - Frequency: Common in guidance documents, less common in binding regulations
 
-
 **"May"**:
 
 - Optional / Permissive
@@ -2693,13 +2454,11 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 - Action: Note as option; not mandatory unless contract or other regulation makes it mandatory
 - Exception: If contract requires DPO, "may" in regulation becomes "shall" contractually
 
-
 **"Is encouraged to" / "Is advised to"**:
 
 - Guidance language
 - Example: "Controllers are encouraged to adopt Privacy by Design principles"
 - Action: Note as guidance; informational only
-
 
 **"Recommended" / "Suggested"**:
 
@@ -2707,13 +2466,11 @@ Before extracting requirements, create a worksheet to track progress and plan ex
 - Example: "It is recommended that organizations conduct annual penetration testing"
 - Action: Note as best practice
 
-
 **"Could" / "Can"**:
 
 - Possibility, not obligation
 - Example: "Organizations could implement anonymization to reduce risk"
 - Action: Note as option
-
 
 ## Contextual Interpretation
 
@@ -2731,14 +2488,12 @@ Some language requires careful contextual analysis.
 - Detailed specification suggests this is more than guidance
 - Context: In some regulations (especially technical standards), "should" is used for mandatory requirements
 
-
 **Action**:
 
 - Flag for legal review
 - Legal counsel determines if this is mandatory despite "should"
 - If legal counsel confirms mandatory: Extract as requirement
 - If legal counsel confirms recommendatory: Note as guidance
-
 
 **"Or" - Alternatives**:
 
@@ -2750,13 +2505,11 @@ Some language requires careful contextual analysis.
 - "Shall" = Mandatory
 - "Or" = Alternatives (organization can choose)
 
-
 **Extraction**:
 
 - Single requirement: "Implement encryption or pseudonymization for personal data"
 - OR: Two alternative requirements: (1) "Implement encryption for personal data" OR (2) "Implement pseudonymization for personal data"
 - Recommended: Single requirement with "or" (preserves implementation flexibility)
-
 
 **Conditional Requirements ("If X, then shall Y")**:
 
@@ -2769,14 +2522,12 @@ Some language requires careful contextual analysis.
 - Obligation: "...shall implement additional safeguards"
 - Obligation is mandatory IF condition met
 
-
 **Extraction**:
 
 - Extract with condition noted
 - Requirement: "Implement additional safeguards for special categories of personal data (when processing such data)"
 - OR: "If processing special categories of personal data, implement additional safeguards"
 - During control mapping: Assess if [Organization] meets condition (if yes, requirement applies)
-
 
 **"Unless"**:
 
@@ -2788,12 +2539,10 @@ Some language requires careful contextual analysis.
 - Default obligation: Notify within 72 hours
 - Exception: Unless unlikely to result in risk
 
-
 **Extraction**:
 
 - Single requirement including exception: "Notify supervisory authority within 72 hours of becoming aware of breach, unless breach is unlikely to result in risk to individuals"
 - Preserves full obligation including exception
-
 
 ## When in Doubt
 
@@ -2812,14 +2561,12 @@ Some language requires careful contextual analysis.
 - High-stakes obligation (significant penalty if wrong)
 - Tier 1 regulation (mandatory compliance, legal review required anyway)
 
-
 **Better to Extract and Discard than Miss and Face Non-Compliance**:
 
 - If borderline, extract as requirement and flag for review
 - Legal counsel can confirm: "Yes, this is mandatory" or "No, this is guidance only"
 - Easy to remove non-mandatory item during review
 - Hard to identify missing mandatory requirement after extraction complete
-
 
 ---
 
@@ -2840,14 +2587,12 @@ Requirements must be "just right" - specific enough to implement, general enough
 - "Ensure data protection"
 - "Maintain compliance"
 
-
 **Problems**:
 
 - Vague (what specific actions required?)
 - Cannot map to controls (which controls satisfy "security measures"?)
 - Not measurable (how to verify compliance?)
 - Not implementable (control owner doesn't know what to do)
-
 
 **Too Fine - TOO Prescriptive**:
 
@@ -2857,14 +2602,12 @@ Requirements must be "just right" - specific enough to implement, general enough
 - "Configure firewall to deny TCP port 23, UDP port 69, TCP port 21, and allow only TCP port 443 on egress"
 - "Store security logs for exactly 395 days in ISO 27001 certified data center in Switzerland with triple redundancy"
 
-
 **Problems**:
 
 - Over-specifies implementation (regulation usually doesn't mandate specific algorithms, ports, durations this precisely)
 - Limits flexibility (what if better encryption algorithm available in 2 years?)
 - May become obsolete (algorithm deprecated, port requirements change)
 - Adds requirements not in regulation (over-interpretation)
-
 
 **Just Right - Actionable with Flexibility**:
 
@@ -2881,7 +2624,6 @@ Requirements must be "just right" - specific enough to implement, general enough
 - "Retain security logs for minimum 12 months or longer as required by applicable regulations"
   - Specific: Minimum 12 months
   - Flexible: Allows longer retention if needed; "or longer" accommodates future regulation changes
-
 
 **How to Achieve "Just Right"**:
 1. Extract the WHAT (what must be done) specifically
@@ -2915,7 +2657,6 @@ Break down complex article into individual obligations:
 - **Obligation 5**: Restore availability and access after incidents (business continuity/disaster recovery)
 - **Obligation 6**: Regularly test, assess, evaluate effectiveness (ongoing assurance)
 
-
 **Step 4.2.2: Rewrite Each in Actionable Form**
 
 Transform each obligation into requirement:
@@ -2927,7 +2668,6 @@ Transform each obligation into requirement:
 - Context: "appropriate to risk level"
 - Result: Clear, actionable
 
-
 **REQ-002**: "Implement pseudonymization or encryption controls for personal data to reduce processing risk"
 
 - Action verb: "Implement"
@@ -2936,14 +2676,12 @@ Transform each obligation into requirement:
 - Purpose: "to reduce risk"
 - Note: "or" preserves flexibility
 
-
 **REQ-003**: "Implement controls to ensure ongoing confidentiality, integrity, availability, and resilience of information processing systems"
 
 - Action verb: "Implement controls"
 - What: "ensure C-I-A-R" (common security triad plus resilience)
 - Scope: "information processing systems"
 - "Ongoing" implies continuous operation, not one-time
-
 
 **REQ-004**: "Establish business continuity and disaster recovery capabilities to restore data availability and access in timely manner following incidents"
 
@@ -2953,14 +2691,12 @@ Transform each obligation into requirement:
 - Context: "following incidents"
 - "Timely manner" (from regulation) preserved
 
-
 **REQ-005**: "Conduct regular testing, assessment, and evaluation of the effectiveness of security controls"
 
 - Action verb: "Conduct"
 - What: "testing, assessment, evaluation"
 - Focus: "effectiveness of security controls"
 - Frequency: "regular" (will define in implementation; regulation doesn't specify)
-
 
 **Step 4.2.3: Maintain Citation**
 
@@ -2969,7 +2705,6 @@ Each extracted requirement links back to source:
 - Citation: Article 32(1) for all five requirements
 - Enables traceability (requirement → regulation article)
 - If regulation changes Article 32(1), know which requirements affected
-
 
 ## Writing Actionable Requirements
 
@@ -2996,7 +2731,6 @@ Why: Active voice is clearer, more direct, easier to understand and implement.
 - **Review**: For periodic examination
 - **Report**: For notification/disclosure requirements
 
-
 **Examples**:
 
 - "Implement encryption for sensitive data"
@@ -3009,14 +2743,12 @@ Why: Active voice is clearer, more direct, easier to understand and implement.
 - "Review access rights quarterly"
 - "Report security breaches to authority within 72 hours"
 
-
 **Practice 3: Be Specific About WHAT, General About HOW**
 
 ✅ **Good**: "Implement authentication for system access using passwords, biometrics, tokens, or other appropriate mechanisms"
 
 - Specific WHAT: Authentication for system access
 - General HOW: Multiple options listed, plus "other appropriate mechanisms"
-
 
 ❌ **Poor**: "Implement authentication" (too vague - authentication for what?)
 ❌ **Poor**: "Require 12-character passwords with uppercase, lowercase, numbers, symbols, rotated every 60 days" (over-prescriptive - regulation likely doesn't specify this detail)
@@ -3029,11 +2761,9 @@ Why: Active voice is clearer, more direct, easier to understand and implement.
 - "Conduct background checks for employees **with access to sensitive data**" (context: which employees)
 - "Require multi-factor authentication for **administrative access**" (context: which type of access)
 
-
 **Without Context** (if regulation doesn't limit scope):
 
 - "Implement encryption for personal data" (applies to all personal data, all contexts)
-
 
 **Practice 5: Avoid Duplication**
 
@@ -3045,12 +2775,10 @@ If regulation says same thing multiple times (common in laws with cross-referenc
 - Article 32 says: "Implement security measures for personal data processing"
 - Both saying same thing
 
-
 **Action**: Extract as single requirement, cite both articles:
 
 - Requirement: "Implement security measures for personal data processing"
 - Citation: Articles 5(1)(f), 32(1)
-
 
 **Practice 6: Avoid Over-Interpretation**
 
@@ -3060,19 +2788,16 @@ If regulation says same thing multiple times (common in laws with cross-referenc
 - ❌ Over-Interpreted Requirement: "Implement role-based access control with least privilege, separation of duties, and quarterly access reviews"
 - Why wrong: Regulation says "access controls" (general), not "role-based with least privilege and quarterly reviews" (specific). You added requirements.
 
-
 **Correct Extraction**:
 
 - ✅ Requirement: "Implement access controls to restrict information access to authorized individuals"
 - Why correct: Captures obligation ("implement access controls") without adding specificity regulation doesn't require
-
 
 **When to Add Detail**:
 
 - Only if regulation provides that detail
 - If regulation says "quarterly access reviews", include "quarterly"
 - If regulation doesn't specify, don't add specificity
-
 
 ## Handling Special Cases
 
@@ -3085,7 +2810,6 @@ If regulation says same thing multiple times (common in laws with cross-referenc
 
 - **Option A**: "Implement additional safeguards for special categories of personal data (when processing such data)"
 - **Option B**: "IF processing special categories of personal data, THEN implement additional safeguards"
-
 
 **Recommended**: Option A (cleaner)
 
@@ -3100,7 +2824,6 @@ If regulation says same thing multiple times (common in laws with cross-referenc
 
 - ✅ "Implement encryption or pseudonymization for personal data"
 
-
 **Preserves Choice**: [Organization] can choose encryption, pseudonymization, or both. Don't arbitrarily choose one.
 
 **Case 3: Requirements with Examples ("Including but not limited to...")**
@@ -3113,11 +2836,9 @@ If regulation says same thing multiple times (common in laws with cross-referenc
 - Examples provided: encryption, access control, network security
 - "Including but not limited to" = examples are illustrative, not exhaustive
 
-
 **Extraction**:
 
 - "Implement technical security measures (examples include encryption, access control, network security)"
-
 
 **Notes Field**: "Regulation provides examples but is non-exhaustive. [Organization] should implement comprehensive technical measures appropriate to risk."
 
@@ -3130,7 +2851,6 @@ If regulation says same thing multiple times (common in laws with cross-referenc
 
 - ✅ "Notify supervisory authority within 72 hours of becoming aware of personal data breach"
 
-
 **Preserve Specific Numbers**: When regulation specifies timeline, threshold, frequency, or quantity, include it exactly.
 
 **More Examples**:
@@ -3138,7 +2858,6 @@ If regulation says same thing multiple times (common in laws with cross-referenc
 - "Retain logs for minimum 12 months" (if regulation says 12 months)
 - "Conduct penetration testing annually" (if regulation says annual)
 - "Applies to organizations processing data of 50,000+ individuals" (threshold)
-
 
 **Case 5: Requirements Referencing Other Articles**
 
@@ -3152,7 +2871,6 @@ If regulation says same thing multiple times (common in laws with cross-referenc
 - Each principle becomes separate requirement
 - Cross-reference back to both the referencing article and Article 5
 
-
 **Case 6: Requirements in Annexes/Schedules**
 
 Some regulations have obligations in annexes (not just main articles).
@@ -3163,7 +2881,6 @@ Some regulations have obligations in annexes (not just main articles).
 
 - Requirement ID format: REG-[Code]-ANNEX[X]-[Seq]
 - Example: REG-GDPR-ANNEX1-001
-
 
 ---
 
@@ -3183,7 +2900,6 @@ Some regulations have obligations in annexes (not just main articles).
 - Involve configuration, deployment, technical architecture
 - Often require IT/Security Engineering resources
 
-
 **Examples**:
 
 - "Implement encryption for data at rest"
@@ -3191,7 +2907,6 @@ Some regulations have obligations in annexes (not just main articles).
 - "Deploy intrusion detection and prevention systems"
 - "Implement automated malware detection on endpoints"
 - "Enable multi-factor authentication for system access"
-
 
 **Maps To**: ISO 27001 Annex A Section 8 (Technology Controls)
 
@@ -3205,7 +2920,6 @@ Some regulations have obligations in annexes (not just main articles).
 - Involve policy development, role definition, governance
 - Often require Management/HR/Legal resources
 
-
 **Examples**:
 
 - "Establish an information security policy approved by management"
@@ -3213,7 +2927,6 @@ Some regulations have obligations in annexes (not just main articles).
 - "Conduct annual security awareness training for all employees"
 - "Define roles and responsibilities for information security"
 - "Establish information security governance structure"
-
 
 **Maps To**: ISO 27001 Annex A Section 5 (Organizational Controls)
 
@@ -3227,7 +2940,6 @@ Some regulations have obligations in annexes (not just main articles).
 - Often time-sensitive (e.g., notify within X hours)
 - Involve compliance reporting, transparency
 
-
 **Examples**:
 
 - "Notify supervisory authority within 72 hours of data breach"
@@ -3235,7 +2947,6 @@ Some regulations have obligations in annexes (not just main articles).
 - "Disclose data processing activities to data subjects in privacy notice"
 - "Report security incidents to affected customers"
 - "Notify data subjects of breaches affecting their rights"
-
 
 **Maps To**: ISO 27001 Annex A Section 5.26 (Response to Information Security Incidents), 5.27 (Learning from Information Security Incidents)
 
@@ -3249,7 +2960,6 @@ Some regulations have obligations in annexes (not just main articles).
 - Involve monitoring, testing, validation, continuous operations
 - Often require Security Operations/IT Operations resources
 
-
 **Examples**:
 
 - "Monitor security logs daily for suspicious activity"
@@ -3257,7 +2967,6 @@ Some regulations have obligations in annexes (not just main articles).
 - "Conduct regular vulnerability assessments"
 - "Review and update risk assessments quarterly"
 - "Perform regular backups and test restoration procedures"
-
 
 **Maps To**: ISO 27001 Annex A Sections 5 and 8 (various operational controls like 5.37 Documented Operating Procedures, 8.8 Management of Technical Vulnerabilities)
 
@@ -3273,7 +2982,6 @@ Some regulations have obligations in annexes (not just main articles).
 - If answer is "policy/procedure/governance" → Organizational
 - If answer is "notification/report" → Reporting
 - If answer is "ongoing activity/monitoring" → Operational
-
 
 **Step 3**: Assign primary category
 
@@ -3299,13 +3007,11 @@ Some requirements inherently span categories.
 - Operational (test annually = recurring activity)
 - **Assign**: Organizational (primary), Operational (secondary)
 
-
 **Why Both Matter**:
 
 - During control mapping, map to both organizational control (policy) and operational control (testing)
 - Organizational control = ISMS-POL-5.26 Incident Response Policy
 - Operational control = Annual incident response tabletop exercise
-
 
 ## Why Categorization Matters
 
@@ -3318,7 +3024,6 @@ Knowing category narrows which Annex A controls to consider.
 - Requirement Category: Technical
 - Immediately focus on Annex A Section 8 (Technology Controls)
 - Don't waste time reviewing Section 5 Organizational Controls (less likely to map)
-
 
 **Benefit 2: Assigns Responsibility**
 
@@ -3345,7 +3050,6 @@ Some categories may be more urgent.
 - Technical requirements follow (time to procure, deploy, configure)
 - Operational requirements last (need controls implemented before you can test them)
 
-
 **Benefit 4: Resource Planning**
 
 Categories inform resource needs.
@@ -3356,7 +3060,6 @@ Categories inform resource needs.
 - 15 Organizational requirements → Need Policy Development capacity (Compliance Officer, Legal)
 - 5 Reporting requirements → Need Compliance Officer + Communications support
 - 10 Operational requirements → Need Security Operations capacity
-
 
 ---
 
@@ -3381,19 +3084,16 @@ Categories inform resource needs.
   - REG-HIPAA-164-001 (First requirement from HIPAA 45 CFR § 164)
   - REG-PCI-3-001 (First requirement from PCI DSS Requirement 3)
 
-
 **2. Regulation ID**:
 
 - Link to entry in ISMS-POL-00
 - **Example**: REG-GDPR (ID from POL-00)
 - Enables filtering (show all requirements for one regulation)
 
-
 **3. Regulation Name**:
 
 - Full name for human readability
 - **Example**: "General Data Protection Regulation (GDPR)"
-
 
 **4. Citation**:
 
@@ -3404,7 +3104,6 @@ Categories inform resource needs.
   - "PCI DSS Requirement 3.4"
 - Enables looking up source text
 
-
 **5. Original Requirement Text**:
 
 - **Exact quote** from regulation (copy/paste)
@@ -3412,19 +3111,16 @@ Categories inform resource needs.
 - **Example**: "The controller and processor shall implement appropriate technical and organizational measures to ensure a level of security appropriate to the risk..."
 - Use quotation marks or italics to indicate this is verbatim quote
 
-
 **6. Interpreted Requirement**:
 
 - Your actionable rewrite (from Step 3)
 - **Example**: "Implement technical and organizational security measures appropriate to the risk level of data processing activities"
 - This is what [Organization] will implement
 
-
 **7. Requirement Category**:
 
 - Technical / Organizational / Reporting / Operational (from Step 4)
 - **Excel Implementation**: Dropdown list (data validation)
-
 
 **8. Priority**:
 
@@ -3434,7 +3130,6 @@ Categories inform resource needs.
   - **Medium**: Tier 1 but less severe consequence, or Tier 2 with potential near-term applicability
   - **Low**: Tier 2 or Tier 3, no imminent deadline
 - **Excel Implementation**: Dropdown list
-
 
 **9. Implementation Deadline**:
 
@@ -3446,14 +3141,12 @@ Categories inform resource needs.
 - **Format**: YYYY-MM-DD
 - **Example**: 2025-06-01
 
-
 **10. Implementation Status**:
 
 - Not Started / In Progress / Implemented / N/A
 - **Initially**: "Not Started" for all extracted requirements
 - **Updated**: As control mapping and implementation progress
 - **Excel Implementation**: Dropdown list
-
 
 **11. Mapped Controls**:
 
@@ -3462,7 +3155,6 @@ Categories inform resource needs.
 - **Examples**: "A.8.24", "A.5.1, A.5.15", "A.8.16, A.8.17"
 - Multiple controls possible (comma-separated)
 
-
 **12. Gap Status**:
 
 - Complete Gap / Partial Gap / No Gap / TBD
@@ -3470,13 +3162,11 @@ Categories inform resource needs.
 - **Updated**: During IMP-S3
 - **Excel Implementation**: Dropdown list
 
-
 **13. Responsible Party**:
 
 - Person/role who will implement this requirement
 - **May be determined later** during control mapping (when know which control satisfies requirement, know who owns that control)
 - **Examples**: "CISO", "IT Security Manager", "Compliance Officer", "HR Director"
-
 
 **14. Notes**:
 
@@ -3487,14 +3177,12 @@ Categories inform resource needs.
   - "Regulation doesn't define 'regular' - recommend quarterly at minimum"
 - **Use for**: Capturing nuance that doesn't fit in other fields
 
-
 **15. Extracted By / Date**:
 
 - Name of person who extracted requirement
 - Date of extraction
 - **Example**: "Compliance Analyst / 2024-12-01"
 - Accountability and audit trail
-
 
 **16. Reviewed By / Date**:
 
@@ -3503,13 +3191,11 @@ Categories inform resource needs.
 - **Example**: "Legal Counsel / 2024-12-05"
 - Blank until review (Step 6)
 
-
 **17. Approved By / Date**:
 
 - Final approver (Compliance Officer, ISMS Manager)
 - Date of approval
 - Blank until final approval (Step 6)
-
 
 ## Populating the Register
 
@@ -3520,7 +3206,6 @@ Categories inform resource needs.
 - Open Requirements Register (Excel template: Assessment Workbook 3)
 - Save with version number (e.g., "Requirements-Register-v1.0-[RegCode].xlsx" for single regulation, or use master register for all regulations)
 
-
 **For Each Extracted Requirement** (from Step 3):
 
 1. **Create New Row** in register
@@ -3530,7 +3215,6 @@ Categories inform resource needs.
    - Check last requirement ID for this regulation
    - Increment sequence number
    - Example: Last was REG-GDPR-32-003, next is REG-GDPR-32-004
-
 
 3. **Complete All Fields**:
 
@@ -3546,7 +3230,6 @@ Categories inform resource needs.
    - Add Notes (if needed)
    - Enter "Extracted By" and "Date"
 
-
 4. **Save** after each requirement (or after each article's requirements)
 
 **Check for Duplicates**:
@@ -3557,13 +3240,11 @@ Categories inform resource needs.
   - **Same requirement from same article**: Don't duplicate; verify existing entry is correct
   - **Same requirement from different article**: Add cross-reference in Notes ("See also REG-GDPR-5-002 for related principle")
 
-
 **Maintain Sequential IDs**:
 
 - Within each article, number sequentially (001, 002, 003...)
 - If inserting requirement later, use next available number (don't renumber existing; breaks references)
 - Example: Article 32 has REQ-001 through REQ-005; later add REQ-006 (not REQ-003.5)
-
 
 ## Register Maintenance
 
@@ -3577,13 +3258,11 @@ Categories inform resource needs.
 - Correct typos or minor clarifications
 - Update status fields (In Progress, Implemented)
 
-
 **Major Updates** (1.x → 2.0):
 
 - Add requirements from new regulation
 - Significant restructuring
 - Major interpretation changes
-
 
 **Version History Table** (in Excel, separate tab):
 
@@ -3601,7 +3280,6 @@ Categories inform resource needs.
 - Legal Counsel (full access)
 - Compliance Analysts (add/edit with Compliance Officer approval)
 
-
 **Who Can View** (Read-Only):
 
 - ISMS team
@@ -3609,20 +3287,17 @@ Categories inform resource needs.
 - Auditors (demonstrate systematic extraction)
 - Management
 
-
 **Excel Implementation**:
 
 - Store in SharePoint or shared drive with permissions
 - OR: Use "Protect Sheet" feature with password (Edit access requires password)
 - Track changes (Excel "Track Changes" or version control in SharePoint)
 
-
 **Backup**:
 
 - Requirements Register is critical document
 - Backup daily (auto-backup if in SharePoint)
 - Retain all versions (never delete old versions)
-
 
 ---
 
@@ -3641,13 +3316,11 @@ Categories inform resource needs.
 - For each article marked "Contains Obligations? Y", check corresponding requirements in register
 - Confirm expected number of requirements extracted
 
-
 **Step 7.1.2**: Search regulation for missed mandatory language
 
 - Use PDF/document search: Find all instances of "shall", "must", "is required to"
 - For each instance, verify corresponding requirement in register
 - If "shall" found but no requirement extracted: Either (a) missed requirement, OR (b) in non-binding section (definitions, guidance) - verify
-
 
 **Step 7.1.3**: Cross-check against extraction worksheet
 
@@ -3655,19 +3328,16 @@ Categories inform resource needs.
 - Compare actual extracted count to estimate
 - Significant variance (estimated 5, extracted 2)? → Review article again
 
-
 **Step 7.1.4**: Peer Review
 
 - Second person (Compliance Analyst or Legal) reviews extraction
 - Fresh eyes catch missed requirements
-
 
 **Red Flags**:
 
 - Total requirements seems low compared to regulation length
 - Entire articles skipped
 - Complex article has only 1-2 requirements (may have missed nuance)
-
 
 ## Accuracy Check
 
@@ -3684,7 +3354,6 @@ Categories inform resource needs.
   - Ask: Does interpreted requirement add anything not in original? (over-interpretation)
   - Ask: Does interpreted requirement omit anything from original? (under-interpretation)
 
-
 **Step 7.2.2**: Check for over-interpretation
 
 - **Red Flag Patterns**:
@@ -3692,12 +3361,10 @@ Categories inform resource needs.
   - Interpreted requirement specifies frequency not in regulation (e.g., regulation says "regular", interpreted says "quarterly")
   - Interpreted requirement adds constraints (e.g., regulation says "access controls", interpreted says "role-based access control with separation of duties")
 
-
 **If Over-Interpretation Found**:
 
 - Revise interpreted requirement to remove added specificity
 - Retain flexibility regulation provides
-
 
 **Step 7.2.3**: Check for under-interpretation
 
@@ -3706,19 +3373,16 @@ Categories inform resource needs.
   - Interpreted requirement omits conditions (e.g., regulation says "unless unlikely to result in risk", interpreted omits exception)
   - Interpreted requirement generalizes where regulation is specific
 
-
 **If Under-Interpretation Found**:
 
 - Revise interpreted requirement to restore regulatory specificity
 - Preserve all conditions, exceptions, qualifiers from regulation
-
 
 **Step 7.2.4**: Verify consistent terminology
 
 - Regulation uses specific terms (defined in definitions section)
 - Interpreted requirements should use same terms consistently
 - Example: If regulation defines "personal data", use "personal data" in requirements (not "PII", "personal information", "customer data")
-
 
 ## Granularity Check
 
@@ -3730,7 +3394,6 @@ Categories inform resource needs.
 - Not too fine: Does requirement allow implementation flexibility?
 - Just right: Specific WHAT, general HOW?
 
-
 **Spot Check Method**:
 
 - Select 5-10 requirements randomly
@@ -3739,7 +3402,6 @@ Categories inform resource needs.
 - If answer is "Yes, but I'm locked into very specific technology/process": Generalize (too fine)
 - If answer is "Yes, I know what to do and have options for how": Just right ✓
 
-
 **Common Fixes**:
 
 **Too Coarse → Add Specificity**:
@@ -3747,12 +3409,10 @@ Categories inform resource needs.
 - Before: "Implement security controls"
 - After: "Implement access controls to restrict information access to authorized individuals"
 
-
 **Too Fine → Add Flexibility**:
 
 - Before: "Implement AES-256 encryption in GCM mode with 256-bit keys"
 - After: "Implement encryption using industry-standard algorithms appropriate to data sensitivity"
-
 
 ## Consistency Check
 
@@ -3767,13 +3427,11 @@ Categories inform resource needs.
 - Should NOT be: "The organization shall...", "Organizations must...", "It is required that..."
 - Fix: Revise to start with verb
 
-
 ☐ **All requirements use active voice**:
 
 - ✅ "Implement encryption"
 - ❌ "Encryption shall be implemented"
 - Fix: Convert passive to active
-
 
 ☐ **All requirements properly scoped**:
 
@@ -3781,13 +3439,11 @@ Categories inform resource needs.
 - "Implement encryption" → Too broad
 - "Implement encryption for personal data in transit" → Properly scoped
 
-
 ☐ **All requirements have proper citations**:
 
 - Every requirement links to article/section
 - Citation format consistent
 - Fix: Add missing citations, standardize format
-
 
 ☐ **Consistent terminology**:
 
@@ -3795,13 +3451,11 @@ Categories inform resource needs.
 - Example: Don't mix "personal data" (regulation term) with "PII" (US term) or "customer data" (colloquial)
 - Fix: Standardize on regulatory terminology
 
-
 ☐ **Consistent priority logic**:
 
 - All Tier 1 + severe penalty = High priority
 - Check for inconsistencies (one Tier 1 requirement is Low while similar one is High)
 - Fix: Align priority assignments
-
 
 ## Legal Review
 
@@ -3815,13 +3469,11 @@ Categories inform resource needs.
 - Confirm no provisions missed
 - Check extraction worksheet completeness
 
-
 **Review 2: Correct Interpretation**
 
 - Verify interpreted requirements match regulatory intent
 - Identify any misinterpretations
 - Confirm granularity appropriate (not too specific, not too vague)
-
 
 **Review 3: Legal Ambiguities**
 
@@ -3829,12 +3481,10 @@ Categories inform resource needs.
 - Provide interpretation guidance
 - Recommend whether external legal opinion needed (e.g., novel regulatory concept, high stakes, unclear scope)
 
-
 **Review 4: Categorization Accuracy**
 
 - Verify Technical/Organizational/Reporting/Operational categories make sense
 - Some requirements may be debatable (is "establish policy" Organizational or also Operational?)
-
 
 **Review 5: Conditions and Exceptions**
 
@@ -3842,25 +3492,21 @@ Categories inform resource needs.
 - Verify exceptions properly noted (unless Z)
 - Confirm no mandatory exceptions omitted
 
-
 **Legal Approval**:
 
 - Legal Counsel signs off on extraction
 - Documented in Register: "Reviewed By" field
 - OR: Separate Legal Review Memo attached to extraction
 
-
 **Legal Caveats**:
 
 - Legal Counsel may note: "Requirement X interpretation is [Legal Counsel]'s best judgment but regulation is ambiguous; recommend monitoring regulatory guidance"
 - Document caveats in Requirements Register Notes field
 
-
 **For Tier 2/3 Regulations**: Legal review may be optional
 
 - ISMS Manager review may suffice
 - Engage Legal if ambiguity or complexity warrants it
-
 
 ## Final Approval
 
@@ -3872,18 +3518,15 @@ Categories inform resource needs.
 - Confirms: All quality checks performed (Sections 7.1-7.4)
 - Signs off: "Approved By" in Register
 
-
 **Legal Counsel** (Tier 1):
 
 - Reviews for: Legal accuracy, correct interpretation
 - Signs off: "Reviewed By" in Register (already done in Section 7.5)
 
-
 **ISMS Manager**:
 
 - Reviews for: ISMS implications, implementability, control mapping readiness
 - Signs off: Concurs with Compliance Officer approval
-
 
 **Approval Documentation**:
 
@@ -3892,7 +3535,6 @@ Categories inform resource needs.
 - "Reviewed By / Date" field: Legal Counsel signature and date
 - "Approved By / Date" field: Compliance Officer signature and date
 - Electronic signature acceptable (typed name + date)
-
 
 **Option 2: Separate Approval Form**
 ```
@@ -3919,17 +3561,14 @@ Comments/Caveats: [If any]
    - Example: Requirements-Register-v1.0-Approved-2024-12-10.xlsx
    - No further edits without creating new version
 
-
 2. **Communicate Completion**:
 
    - Email to ISMS team: "Requirements extraction complete for [Regulation Name]; [X] requirements identified; proceeding to control mapping"
-
 
 3. **Proceed to Next Step**:
 
    - Requirements extraction complete
    - Ready for IMP-S3: Control Mapping Process
-
 
 ---
 
@@ -3950,7 +3589,6 @@ Comments/Caveats: [If any]
 - Include encryption (as appropriate)
 - Include access controls (as appropriate)
 
-
 **Step 2: Extract & Rewrite**:
 
 **REQ-001**: "Implement technical and organizational security measures to ensure the security of personal data"
@@ -3959,13 +3597,11 @@ Comments/Caveats: [If any]
 - What: Technical and organizational measures
 - Purpose: Security of personal data
 
-
 **REQ-002**: "Implement controls to protect personal data against unauthorized or unlawful processing"
 
 - Action: Implement controls
 - Purpose: Prevent unauthorized/unlawful processing
 - Context: Personal data
-
 
 **REQ-003**: "Implement controls to protect personal data against accidental loss, destruction, or damage"
 
@@ -3973,20 +3609,17 @@ Comments/Caveats: [If any]
 - Purpose: Prevent accidental loss/destruction/damage
 - Context: Personal data
 
-
 **REQ-004**: "Implement encryption for personal data where appropriate to reduce processing risk"
 
 - Action: Implement encryption
 - Context: Personal data
 - Qualifier: "where appropriate" (from regulation - allows risk-based decision)
 
-
 **REQ-005**: "Implement access controls to restrict personal data access to authorized individuals"
 
 - Action: Implement access controls
 - Purpose: Restrict access to authorized only
 - Context: Personal data
-
 
 **Step 3: Categorize**:
 
@@ -3995,7 +3628,6 @@ Comments/Caveats: [If any]
 - REQ-003: Technical (controls for availability/integrity)
 - REQ-004: Technical (encryption)
 - REQ-005: Technical (access management)
-
 
 **Step 4: Register Entry** (Sample for REQ-001):
 
@@ -4037,7 +3669,6 @@ Comments/Caveats: [If any]
 - Scope: Breaches affecting personal data
 - Exception: Unless breach unlikely to result in risk to individuals
 
-
 **Step 2: Extract & Rewrite**:
 
 **REQ-001**: "Notify the relevant supervisory authority of security breaches affecting personal data within 72 hours of becoming aware of the breach, unless the breach is unlikely to result in risk to the rights and freedoms of individuals"
@@ -4049,11 +3680,9 @@ Comments/Caveats: [If any]
 - Exception: Unless unlikely to result in risk
 - Note: Preserves all elements of obligation including timeline and exception
 
-
 **Step 3: Categorize**:
 
 - Category: **Reporting** (external notification requirement)
-
 
 **Step 4: Register Entry**:
 
@@ -4094,7 +3723,6 @@ Comments/Caveats: [If any]
 - DPO responsibility 3: Serve as point of contact for data subjects
 - DPO responsibility 4: Serve as point of contact for supervisory authority
 
-
 **Step 2: Extract & Rewrite**:
 
 **REQ-001**: "Designate a Data Protection Officer responsible for monitoring compliance with data protection regulation"
@@ -4103,13 +3731,11 @@ Comments/Caveats: [If any]
 - Role: Data Protection Officer
 - Responsibility: Monitor compliance
 
-
 **REQ-002**: "Ensure DPO advises the organization on data protection matters"
 
 - Action: Ensure
 - Who: DPO
 - Responsibility: Advise on data protection
-
 
 **REQ-003**: "Ensure DPO serves as point of contact for data subjects and supervisory authority regarding data processing activities"
 
@@ -4119,13 +3745,11 @@ Comments/Caveats: [If any]
 - For whom: Data subjects and supervisory authority
 - Regarding: Processing activities
 
-
 **Step 3: Categorize**:
 
 - REQ-001: **Organizational** (role designation)
 - REQ-002: **Organizational** (governance function)
 - REQ-003: **Organizational** (communication/interface role)
-
 
 **Step 4: Register Entry** (Sample for REQ-001):
 
@@ -4166,7 +3790,6 @@ Comments/Caveats: [If any]
 - Focus: Effectiveness of security measures
 - Scope: Technical and organizational measures
 
-
 **Step 2: Extract & Rewrite**:
 
 **REQ-001**: "Conduct regular testing and evaluation of the effectiveness of security controls for data processing"
@@ -4177,11 +3800,9 @@ Comments/Caveats: [If any]
 - Frequency: "Regular" (regulation doesn't define; [Organization] will determine)
 - Scope: Data processing security
 
-
 **Step 3: Categorize**:
 
 - Category: **Operational** (recurring testing activity)
-
 
 **Step 4: Register Entry**:
 
@@ -4228,7 +3849,6 @@ Comments/Caveats: [If any]
 - Version control tab
 - Instructions tab
 
-
 ## Extraction Worksheet Template
 
 **Purpose**: Working document to track extraction progress article-by-article.
@@ -4265,7 +3885,6 @@ Comments/Caveats: [If any]
   - Always 3 digits (leading zeros)
   - Unique within Article
 
-
 **Examples**:
 
 | Regulation | Article/Section | Requirement ID | Notes |
@@ -4282,12 +3901,10 @@ Comments/Caveats: [If any]
 - OR: Number sequentially by order in document
 - Consistency matters more than specific convention
 
-
 **If Requirement from Annex/Schedule**:
 
 - Format: REG-[RegCode]-ANNEX[X]-[Seq]
 - Example: REG-GDPR-ANNEXA-001
-
 
 ---
 
@@ -4303,7 +3920,6 @@ Before submitting for final approval (Step 6), perform these checks:
 - ☐ All "shall" and "must" statements extracted
 - ☐ No obvious gaps (compare estimated vs. actual requirement count)
 
-
 **Accuracy**:
 
 - ☐ Interpreted requirements faithful to original text (spot-checked per Section 7.2)
@@ -4311,13 +3927,11 @@ Before submitting for final approval (Step 6), perform these checks:
 - ☐ No under-interpretation (no omitted obligations)
 - ☐ Proper citations (every requirement links to article/section)
 
-
 **Actionability**:
 
 - ☐ Requirements rewritten in actionable form (action verb, active voice)
 - ☐ Granularity appropriate (not too coarse, not too fine - spot-checked per Section 7.3)
 - ☐ Implementable by control owners
-
 
 **Consistency**:
 
@@ -4326,14 +3940,12 @@ Before submitting for final approval (Step 6), perform these checks:
 - ☐ Consistent terminology (regulatory terms used consistently)
 - ☐ Consistent formatting (all start with action verb, etc.)
 
-
 **Documentation**:
 
 - ☐ All Requirements Register fields completed
 - ☐ Requirement IDs sequential and correct
 - ☐ No duplicate requirements
 - ☐ Extraction worksheet filed
-
 
 **Review & Approval**:
 
@@ -4342,12 +3954,10 @@ Before submitting for final approval (Step 6), perform these checks:
 - ☐ ISMS Manager concurrence obtained
 - ☐ Approval signatures/dates in Register
 
-
 **Readiness for Next Step**:
 
 - ☐ Requirements Register version controlled and locked
 - ☐ Ready to proceed to Control Mapping (IMP-S3)
-
 
 ## Common Pitfalls to Avoid
 
@@ -4364,7 +3974,6 @@ Before submitting for final approval (Step 6), perform these checks:
 - Implement encryption (where appropriate)
 - Ensure CIA+R of systems
 - Etc.
-
 
 **Pitfall 2: Extracting Too Finely (Over-Specifying)**
 
@@ -4409,7 +4018,6 @@ Before submitting for final approval (Step 6), perform these checks:
 - "Establish incident response policy" → Organizational
 - "Establish access control policy" → Technical
 
-
 **Why Wrong**: Both are "establish policy" (organizational activity). Inconsistency creates confusion during control mapping.
 
 **Correct Approach**: Apply categorization guidelines consistently.
@@ -4417,7 +4025,6 @@ Before submitting for final approval (Step 6), perform these checks:
 - "Establish incident response policy" → Organizational
 - "Establish access control policy" → Organizational
 - "Implement access controls" → Technical (implementation distinct from policy)
-
 
 **Pitfall 7: Skipping Legal Review for Tier 1 Regulations**
 
@@ -4439,14 +4046,12 @@ Before submitting for final approval (Step 6), perform these checks:
 - **ISMS-POL-00**: Regulatory Applicability Framework
   - Source of applicable regulations (input to this process)
 
-
 **Implementation Guides** (Process Sequence):
 
 - **ISMS-IMP-A.5.31-S2**: Applicability Assessment Process
   - PRECEDES this step (determines which regulations apply)
 - **ISMS-IMP-A.5.31-S4**: Control Mapping Process
   - FOLLOWS this step (maps extracted requirements to ISO 27001 controls)
-
 
 **Assessment Tools**:
 
@@ -4455,12 +4060,10 @@ Before submitting for final approval (Step 6), perform these checks:
   - Pre-configured with fields, dropdowns, formulas
   - Used to populate master Requirements Register
 
-
 **Standards**:
 
 - **ISO 27001:2022**: Control A.5.31 - Legal, Statutory, Regulatory and Contractual Requirements
   - The ISO control this process supports
-
 
 ---
 

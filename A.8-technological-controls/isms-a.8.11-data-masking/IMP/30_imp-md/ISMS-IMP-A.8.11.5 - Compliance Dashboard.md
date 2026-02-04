@@ -48,7 +48,6 @@
 - Evidence master index
 - CISO/DPO approval sign-off
 
-
 **Assessment Philosophy:**
 
 - **Executive-focused:** High-level view for CISO, DPO, Board
@@ -57,14 +56,12 @@
 - **Evidence-based:** Link to comprehensive evidence trail
 - **Audit-ready:** Complete compliance picture in one workbook
 
-
 **CRITICAL FEATURE:** This workbook uses **external workbook formulas** to pull data from:
 
 - ISMS-IMP-A.8.11.1 (Data Inventory)
 - ISMS-IMP-A.8.11.2 (Masking Techniques)
 - ISMS-IMP-A.8.11.3 (Environment Coverage)
 - ISMS-IMP-A.8.11.4 (Testing & Validation)
-
 
 ---
 
@@ -95,13 +92,11 @@
 - **Subheader:** Font: Calibri 11pt bold white, Fill: 4472C4 (medium blue), Centered
 - **Column Header:** Font: Calibri 10pt bold black, Fill: D9D9D9 (light gray), Centered
 
-
 ### Input Cell Styles
 
 - **Fill:** FFFFCC (light yellow) - User input required
 - **Alignment:** Left for text, center for dropdowns, wrapped
 - **Border:** Thin black on all sides
-
 
 ### Status Color Coding
 
@@ -110,13 +105,11 @@
 - **Red (Non-Compliant):** FFC7CE
 - **Blue (Planned):** B4C7E7
 
-
 ### KPI Traffic Lights
 
 - **Green:** ≥90% of target
 - **Yellow:** 70-89% of target
 - **Red:** <70% of target
-
 
 ---
 
@@ -177,7 +170,6 @@ Review Cycle:          Quarterly
 - 🟨 **Yellow** = Partial compliance (70-89% of target)
 - 🟥 **Red** = Non-compliant (<70% of target)
 - 🟦 **Blue** = Planned (remediation in progress)
-
 
 ---
 
@@ -247,7 +239,6 @@ Review Cycle:          Quarterly
 - Additional budget required? [Yes/No - yellow cell]
 - Target completion date: [Date - yellow cell]
 
-
 ---
 
 ## Sheet 3: Domain_1_Summary
@@ -275,7 +266,6 @@ Review Cycle:          Quarterly
 - Highest priority masking requirements: [Auto-pull]
 - Unassigned data owners: [Auto-pull]
 - Gaps identified: [Auto-pull from Domain 1 Gap Analysis]
-
 
 ---
 
@@ -305,7 +295,6 @@ Review Cycle:          Quarterly
 - Technique gaps: [Auto-pull]
 - Tool inventory complete: [Auto-pull]
 - Configuration issues: [Auto-pull from Domain 2 Gap Analysis]
-
 
 ---
 
@@ -340,7 +329,6 @@ Review Cycle:          Quarterly
 - Cloud compliance gaps: [Auto-pull]
 - Exception justifications: [Auto-pull from Domain 3 Gap Analysis]
 
-
 ---
 
 ## Sheet 6: Domain_4_Summary
@@ -373,7 +361,6 @@ Review Cycle:          Quarterly
 - Test failures: [Auto-pull]
 - Utility issues: [Auto-pull]
 - Performance concerns: [Auto-pull from Domain 4 Gap Analysis]
-
 
 ---
 
@@ -409,7 +396,6 @@ Review Cycle:          Quarterly
 - Copy/paste critical gaps from each domain's Gap_Analysis sheet
 - Or use formulas to pull top gaps from each domain
 - Total capacity: 50 gap entries
-
 
 **Prioritization Logic:**
 1. P1 (Critical): Non-prod unmasked, Re-ID risk >0%, Failed tests
@@ -513,7 +499,6 @@ Review Cycle:          Quarterly
 - Sorted by priority (P1 → P2 → P3 → P4)
 - Yellow-highlighted cells for user input
 
-
 ### Roadmap Summary (Rows 55-65)
 
 | Metric | Value | Target |
@@ -570,12 +555,10 @@ Review Cycle:          Quarterly
 - Copy evidence from each domain's Evidence_Register
 - Total capacity: 100 entries
 
-
 **Option 2: Formula-Based (Advanced)**
 
 - Use formulas to pull evidence from each domain workbook
 - Requires complex INDIRECT() or named range references
-
 
 ### Evidence Summary by Domain (Starting Row 110)
 
@@ -656,7 +639,6 @@ Review Cycle:          Quarterly
 - 90-100% = Excellent (Green)
 - 70-89% = Acceptable with gaps (Yellow)
 - <70% = Significant gaps requiring immediate action (Red)
-
 
 ---
 
@@ -751,7 +733,6 @@ Review Cycle:          Quarterly
    - Approval workflow structure
    - Formula templates (user must update with actual filenames)
 
-
 ### Formula Template Strategy
 
 **Since exact filenames are not known at generation time, use placeholder formulas:**
@@ -769,7 +750,6 @@ Review Cycle:          Quarterly
    - Find: `[A811-1]`
    - Replace: `[ISMS-IMP-A.8.11.1_Data_Inventory_Classification_20260104.xlsx]`
 
-
 ### Assessment Totals
 
 - **Total formulas:** 100+ external workbook links
@@ -778,7 +758,6 @@ Review Cycle:          Quarterly
 - **Risk capacity:** 40 risks (20 pre-defined + 20 custom)
 - **Remediation actions:** 50 action items
 - **Evidence index:** 100 evidence entries
-
 
 ---
 
@@ -816,7 +795,6 @@ Review Cycle:          Quarterly
 - Evidence master index
 - CISO/DPO approval sign-off
 
-
 **Assessment Philosophy:**
 
 - **Executive-focused:** High-level view for CISO, DPO, Board
@@ -825,14 +803,12 @@ Review Cycle:          Quarterly
 - **Evidence-based:** Link to comprehensive evidence trail
 - **Audit-ready:** Complete compliance picture in one workbook
 
-
 **CRITICAL FEATURE:** This workbook uses **external workbook formulas** to pull data from:
 
 - ISMS-IMP-A.8.11.1 (Data Inventory)
 - ISMS-IMP-A.8.11.2 (Masking Techniques)
 - ISMS-IMP-A.8.11.3 (Environment Coverage)
 - ISMS-IMP-A.8.11.4 (Testing & Validation)
-
 
 ---
 
@@ -863,13 +839,11 @@ Review Cycle:          Quarterly
 - **Subheader:** Font: Calibri 11pt bold white, Fill: 4472C4 (medium blue), Centered
 - **Column Header:** Font: Calibri 10pt bold black, Fill: D9D9D9 (light gray), Centered
 
-
 ### Input Cell Styles
 
 - **Fill:** FFFFCC (light yellow) - User input required
 - **Alignment:** Left for text, center for dropdowns, wrapped
 - **Border:** Thin black on all sides
-
 
 ### Status Color Coding
 
@@ -878,13 +852,11 @@ Review Cycle:          Quarterly
 - **Red (Non-Compliant):** FFC7CE
 - **Blue (Planned):** B4C7E7
 
-
 ### KPI Traffic Lights
 
 - **Green:** ≥90% of target
 - **Yellow:** 70-89% of target
 - **Red:** <70% of target
-
 
 ---
 
@@ -945,7 +917,6 @@ Review Cycle:          Quarterly
 - 🟨 **Yellow** = Partial compliance (70-89% of target)
 - 🟥 **Red** = Non-compliant (<70% of target)
 - 🟦 **Blue** = Planned (remediation in progress)
-
 
 ---
 
@@ -1015,7 +986,6 @@ Review Cycle:          Quarterly
 - Additional budget required? [Yes/No - yellow cell]
 - Target completion date: [Date - yellow cell]
 
-
 ---
 
 ## Sheet 3: Domain_1_Summary
@@ -1043,7 +1013,6 @@ Review Cycle:          Quarterly
 - Highest priority masking requirements: [Auto-pull]
 - Unassigned data owners: [Auto-pull]
 - Gaps identified: [Auto-pull from Domain 1 Gap Analysis]
-
 
 ---
 
@@ -1073,7 +1042,6 @@ Review Cycle:          Quarterly
 - Technique gaps: [Auto-pull]
 - Tool inventory complete: [Auto-pull]
 - Configuration issues: [Auto-pull from Domain 2 Gap Analysis]
-
 
 ---
 
@@ -1108,7 +1076,6 @@ Review Cycle:          Quarterly
 - Cloud compliance gaps: [Auto-pull]
 - Exception justifications: [Auto-pull from Domain 3 Gap Analysis]
 
-
 ---
 
 ## Sheet 6: Domain_4_Summary
@@ -1141,7 +1108,6 @@ Review Cycle:          Quarterly
 - Test failures: [Auto-pull]
 - Utility issues: [Auto-pull]
 - Performance concerns: [Auto-pull from Domain 4 Gap Analysis]
-
 
 ---
 
@@ -1177,7 +1143,6 @@ Review Cycle:          Quarterly
 - Copy/paste critical gaps from each domain's Gap_Analysis sheet
 - Or use formulas to pull top gaps from each domain
 - Total capacity: 50 gap entries
-
 
 **Prioritization Logic:**
 1. P1 (Critical): Non-prod unmasked, Re-ID risk >0%, Failed tests
@@ -1281,7 +1246,6 @@ Review Cycle:          Quarterly
 - Sorted by priority (P1 → P2 → P3 → P4)
 - Yellow-highlighted cells for user input
 
-
 ### Roadmap Summary (Rows 55-65)
 
 | Metric | Value | Target |
@@ -1338,12 +1302,10 @@ Review Cycle:          Quarterly
 - Copy evidence from each domain's Evidence_Register
 - Total capacity: 100 entries
 
-
 **Option 2: Formula-Based (Advanced)**
 
 - Use formulas to pull evidence from each domain workbook
 - Requires complex INDIRECT() or named range references
-
 
 ### Evidence Summary by Domain (Starting Row 110)
 
@@ -1424,7 +1386,6 @@ Review Cycle:          Quarterly
 - 90-100% = Excellent (Green)
 - 70-89% = Acceptable with gaps (Yellow)
 - <70% = Significant gaps requiring immediate action (Red)
-
 
 ---
 
@@ -1519,7 +1480,6 @@ Review Cycle:          Quarterly
    - Approval workflow structure
    - Formula templates (user must update with actual filenames)
 
-
 ### Formula Template Strategy
 
 **Since exact filenames are not known at generation time, use placeholder formulas:**
@@ -1537,7 +1497,6 @@ Review Cycle:          Quarterly
    - Find: `[A811-1]`
    - Replace: `[ISMS-IMP-A.8.11.1_Data_Inventory_Classification_20260104.xlsx]`
 
-
 ### Assessment Totals
 
 - **Total formulas:** 100+ external workbook links
@@ -1546,7 +1505,6 @@ Review Cycle:          Quarterly
 - **Risk capacity:** 40 risks (20 pre-defined + 20 custom)
 - **Remediation actions:** 50 action items
 - **Evidence index:** 100 evidence entries
-
 
 ---
 

@@ -44,7 +44,6 @@ This document consists of two parts:
   - Cell Styling Reference
   - Integration Points
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -65,7 +64,6 @@ This assessment documents the physical security PERIMETERS protecting your facil
 - How are perimeters monitored? (CCTV, intrusion detection, alarms)
 - Are there gaps or weaknesses in perimeter construction?
 - Do perimeters extend floor-to-ceiling (including above suspended ceilings)?
-
 
 #### ISO 27001:2022 Control Reference
 
@@ -88,7 +86,6 @@ This assessment is **facility-agnostic**. You document YOUR specific security zo
 - Access requirements for each zone
 - Perimeter definition status
 
-
 **Building Perimeters:**
 
 - External walls, roofs, and floors
@@ -97,7 +94,6 @@ This assessment is **facility-agnostic**. You document YOUR specific security zo
 - Construction type and solid construction verification
 - Gap and breach point identification
 
-
 **Internal Perimeters:**
 
 - Partitions between security zones
@@ -105,14 +101,12 @@ This assessment is **facility-agnostic**. You document YOUR specific security zo
 - Above-ceiling and below-floor continuity
 - Access control at zone transitions
 
-
 **Perimeter Monitoring:**
 
 - CCTV coverage at entry points
 - Intrusion detection at perimeter
 - Alert and response mechanisms
 - Testing and inspection records
-
 
 #### How This Relates to Other A.7.1-2-3 Assessments
 
@@ -143,12 +137,10 @@ This assessment (A.7.1-2-3-S1) establishes the foundation by defining WHERE secu
 - Understanding of security classification levels
 - Access to building plans and construction documentation
 
-
 #### Time Commitment
 
 - **Initial assessment:** 8-12 hours (comprehensive review of all facility perimeters)
 - **Annual updates:** 2-4 hours (update inspections, changes, new facilities)
-
 
 ### Expected Outputs
 
@@ -179,14 +171,12 @@ Before starting this assessment, gather:
 - Building lease agreements (for shared buildings)
 - Fire safety plans (showing walls, exits, zones)
 
-
 #### 2. System Access
 
 - Access to building management systems
 - Access to CCTV system (for coverage verification)
 - Access to intrusion detection system
 - Access to access control system (for zone definitions)
-
 
 #### 3. Historical Data
 
@@ -195,14 +185,12 @@ Before starting this assessment, gather:
 - Maintenance records for perimeter elements
 - Alarm system logs (perimeter intrusion alerts)
 
-
 #### 4. Policy Requirements
 
 - ISMS-POL-A.7.1-2-3, Section 2.1 (Physical Security Perimeters)
   - Section 2.1.1: Perimeter Definition
   - Section 2.1.2: Perimeter Construction
   - Section 2.1.3: Perimeter Monitoring
-
 
 ### Required Tools
 
@@ -211,7 +199,6 @@ Before starting this assessment, gather:
 - Camera/phone for evidence photographs
 - Measuring tape (for gap measurements if needed)
 - Torch/flashlight (for ceiling void inspections)
-
 
 ### Dependencies
 
@@ -260,7 +247,6 @@ However, outputs from this assessment are INPUT to:
 - Schedule facility walk-through with Facilities Manager
 - Download or generate assessment workbook (Excel file)
 
-
 **Step 2: Security Zone Definition (Day 1-2 - 2-3 hours)**
 
 - Open assessment workbook
@@ -268,7 +254,6 @@ However, outputs from this assessment are INPUT to:
 - Complete Sheet 2 (Security Zones) - define all zones across all facilities
 - Ensure each zone has clear classification and access requirements
 - Verify perimeter is defined for each zone
-
 
 **Step 3: Building Perimeter Assessment (Day 2-3 - 3-4 hours)**
 
@@ -278,7 +263,6 @@ However, outputs from this assessment are INPUT to:
 - Identify any gaps or breach points
 - Note security controls at each entry point
 
-
 **Step 4: Internal Perimeter Assessment (Day 3-4 - 2-3 hours)**
 
 - Walk internal zone boundaries
@@ -286,7 +270,6 @@ However, outputs from this assessment are INPUT to:
 - Verify floor-to-ceiling construction
 - Check above suspended ceilings
 - Check below raised floors (if applicable)
-
 
 **Step 5: Monitoring Verification (Day 4 - 2 hours)**
 
@@ -296,7 +279,6 @@ However, outputs from this assessment are INPUT to:
 - Check alert response procedures
 - Review testing records
 
-
 **Step 6: Evidence Collection (Day 4-5 - 2 hours)**
 
 - Take photographs of perimeter construction
@@ -305,7 +287,6 @@ However, outputs from this assessment are INPUT to:
 - Document evidence in Sheet 7 (Evidence Register)
 - Store evidence files in secure location
 
-
 **Step 7: Summary Review (Day 5 - 1 hour)**
 
 - Review Sheet 6 (Summary Dashboard) - automated compliance scores
@@ -313,13 +294,11 @@ However, outputs from this assessment are INPUT to:
 - Identify areas below threshold
 - Prepare gap remediation plan
 
-
 **Step 8: Quality Check (Day 5 - 1 hour)**
 
 - Complete self-assessment using Quality Checklist (see section below)
 - Verify all required fields completed
 - Verify evidence register complete
-
 
 **Step 9: Obtain Approvals (Day 6-10 - asynchronous)**
 
@@ -327,7 +306,6 @@ However, outputs from this assessment are INPUT to:
 - Submit to Level 2: Facilities Manager
 - After Level 2, submit to Level 3: Security Manager
 - After Level 3, submit to Level 4: CISO
-
 
 ---
 
@@ -347,7 +325,6 @@ However, outputs from this assessment are INPUT to:
 - **Status Legend** (Rows 14-17):
   - Read-only reference - understand colour coding
 
-
 **Time Required:** 5 minutes
 
 ### Sheet 2: Security Zones
@@ -360,47 +337,38 @@ However, outputs from this assessment are INPUT to:
 
 - Unique identifier: "ZN-001", "ZN-002", etc.
 
-
 **Column B - Zone Name:**
 
 - Descriptive name: "Main Reception", "Server Room A", "Executive Floor"
-
 
 **Column C - Zone Type:**
 
 - Dropdown: "Public Zone", "Controlled Zone", "Restricted Zone", "High-Security Zone"
 - Use classification from ISMS-POL-A.7.1-2-3
 
-
 **Column D - Location/Building:**
 
 - Where zone is located: "Building A - Ground Floor", "Datacenter 1"
-
 
 **Column E - Classification:**
 
 - Data classification: "Tier 1 - Critical", "Tier 2 - Important", "Tier 3 - Standard"
 
-
 **Column F - Access Requirements:**
 
 - What's needed to access: "Badge only", "Badge + PIN", "Biometric + escort"
-
 
 **Column G - Perimeter Defined:**
 
 - Is the perimeter clearly documented? "Yes", "Partial", "No"
 
-
 **Column H - Status:**
 
 - Dropdown: Compliant, Partial, Non-Compliant, N/A
 
-
 **Column I - Notes:**
 
 - Any additional context
-
 
 **Time Required:** 30-60 minutes
 
@@ -414,51 +382,41 @@ However, outputs from this assessment are INPUT to:
 
 - Building name: "Building A - Main Campus"
 
-
 **Column B - Perimeter Element:**
 
 - Dropdown: "External Wall", "Roof", "Floor", "Window", "External Door", "Emergency Exit", "Loading Dock", "Other"
-
 
 **Column C - Construction Type:**
 
 - Description: "Brick/masonry", "Metal cladding", "Glass curtain wall", etc.
 
-
 **Column D - Solid Construction:**
 
 - Is construction solid (no easy breach)? "Yes", "No", "Partial"
-
 
 **Column E - Gap/Breach Points:**
 
 - Any identified gaps: "None", "Ventilation duct - secured", "Ceiling gap"
 
-
 **Column F - Security Controls:**
 
 - Controls at this element: "Alarmed door", "Locked window", "CCTV coverage"
-
 
 **Column G - Last Inspection:**
 
 - Date of last inspection: "15.01.2026"
 
-
 **Column H - Inspector:**
 
 - Who inspected: "John Smith - Facilities"
-
 
 **Column I - Status:**
 
 - Dropdown: Compliant, Partial, Non-Compliant, N/A
 
-
 **Column J - Notes:**
 
 - Any additional context
-
 
 **Time Required:** 1-2 hours
 
@@ -472,46 +430,37 @@ However, outputs from this assessment are INPUT to:
 
 - Zone on one side: "Controlled Zone - Office Area"
 
-
 **Column B - To Zone:**
 
 - Zone on other side: "Restricted Zone - Server Room"
-
 
 **Column C - Barrier Type:**
 
 - Dropdown: "Solid Wall", "Glass Partition", "Demountable Partition", "Security Cage", "Other"
 
-
 **Column D - Floor-to-Ceiling:**
 
 - Does barrier extend floor-to-ceiling? "Yes", "No", "N/A"
-
 
 **Column E - Above Ceiling Check:**
 
 - Has space above suspended ceiling been checked? "Yes", "No", "N/A"
 
-
 **Column F - Below Floor Check:**
 
 - Has space below raised floor been checked? "Yes", "No", "N/A"
-
 
 **Column G - Access Control:**
 
 - Access control at transition: "Badge reader", "Keypad", "Biometric", "Manual lock"
 
-
 **Column H - Status:**
 
 - Dropdown: Compliant, Partial, Non-Compliant, N/A
 
-
 **Column I - Notes:**
 
 - Any additional context
-
 
 **Time Required:** 45-60 minutes
 
@@ -525,46 +474,37 @@ However, outputs from this assessment are INPUT to:
 
 - Unique identifier: "EP-001", "EP-002", etc.
 
-
 **Column B - Location:**
 
 - Entry point location: "Main Entrance - Building A"
-
 
 **Column C - Entry Type:**
 
 - Dropdown: "Main Entrance", "Side Door", "Emergency Exit", "Window", "Loading Dock", "Roof Access", "Vent/Service Point"
 
-
 **Column D - CCTV Coverage:**
 
 - Is entry point covered by CCTV? "Yes", "No", "Partial"
-
 
 **Column E - Intrusion Detection:**
 
 - Is entry point monitored by intrusion detection? "Yes", "No", "Partial"
 
-
 **Column F - Alert Response:**
 
 - What happens on alert: "Security patrol", "Alarm to SOC", "Local alarm only"
-
 
 **Column G - Last Tested:**
 
 - Date of last test: "15.01.2026"
 
-
 **Column H - Status:**
 
 - Dropdown: Compliant, Partial, Non-Compliant, N/A
 
-
 **Column I - Notes:**
 
 - Any additional context
-
 
 **Time Required:** 45-60 minutes
 
@@ -624,14 +564,12 @@ However, outputs from this assessment are INPUT to:
 - Zone classification documentation
 - Access requirement definitions
 
-
 **2. Perimeter Construction**
 
 - Photographs of perimeter walls, doors, windows
 - Construction specifications
 - Inspection reports
 - Gap identification documentation
-
 
 **3. Monitoring Coverage**
 
@@ -640,13 +578,11 @@ However, outputs from this assessment are INPUT to:
 - Alarm system configuration
 - Test reports
 
-
 **4. Inspections**
 
 - Annual perimeter inspection reports
 - Walk-through checklists
 - Remediation records for identified issues
-
 
 ### Evidence Storage
 
@@ -670,7 +606,6 @@ However, outputs from this assessment are INPUT to:
 - Check if partitions extend to structural ceiling or stop at suspended ceiling
 - Document findings honestly including gaps
 
-
 ### Pitfall 2: Ignoring Raised Floor Voids
 
 **Problem:** Not checking below raised floors in datacenters/server rooms
@@ -682,7 +617,6 @@ However, outputs from this assessment are INPUT to:
 - Check if partitions extend below raised floors
 - Verify cable penetrations are sealed
 - Document raised floor security controls
-
 
 ### Pitfall 3: Incomplete Zone Classification
 
@@ -696,7 +630,6 @@ However, outputs from this assessment are INPUT to:
 - Include less obvious areas: storage rooms, utility closets, lift lobbies
 - "Controlled Zone" is the default for office areas - document all
 
-
 ### Pitfall 4: Not Verifying Monitoring Coverage
 
 **Problem:** Assuming CCTV covers all entry points without verification
@@ -708,7 +641,6 @@ However, outputs from this assessment are INPUT to:
 - Review CCTV camera placement maps
 - Walk the perimeter and check camera positions
 - Verify intrusion detection coverage independently
-
 
 ### Pitfall 5: Stale Inspection Records
 
@@ -722,7 +654,6 @@ However, outputs from this assessment are INPUT to:
 - Collect new photographs with current date visible
 - Reference recent (within 12 months) inspection reports
 
-
 ### Pitfall 6: Shared Building Complexity
 
 **Problem:** Not properly documenting shared building arrangements
@@ -734,7 +665,6 @@ However, outputs from this assessment are INPUT to:
 - Clearly document which perimeters are your responsibility
 - Document building management access arrangements
 - Identify shared infrastructure risks
-
 
 ### Pitfall 7: Emergency Exit Oversight
 
@@ -748,7 +678,6 @@ However, outputs from this assessment are INPUT to:
 - Verify alarmed status
 - Check for propped-open or wedged doors
 
-
 ### Pitfall 8: Ventilation and Service Points
 
 **Problem:** Missing ventilation ducts, cable routes, service access points
@@ -760,7 +689,6 @@ However, outputs from this assessment are INPUT to:
 - Review building services drawings
 - Include air handling units, cable risers, service tunnels
 - Verify security controls on service access points
-
 
 ### Pitfall 9: Copy-Paste Zone Definitions
 
@@ -774,7 +702,6 @@ However, outputs from this assessment are INPUT to:
 - Walk the facility during definition, not just use floor plans
 - Ensure access requirements match actual practice
 
-
 ### Pitfall 10: Incomplete Evidence Register
 
 **Problem:** Documenting assessment but not collecting supporting evidence
@@ -786,7 +713,6 @@ However, outputs from this assessment are INPUT to:
 - Collect evidence AS you complete each sheet
 - Take photographs during walk-through
 - Reference all evidence in Evidence Register
-
 
 ---
 
@@ -915,24 +841,20 @@ Before submitting for Level 2 approval, complete this self-assessment:
 - Dropdown lists for standardised input (Zone Types, Perimeter Elements, Status)
 - Date validation (valid date format)
 
-
 **Conditional Formatting:**
 
 - Compliance Status columns: Green (Compliant), Amber (Partial), Red (Non-Compliant)
 - Summary Dashboard scores: Colour-coded thresholds
-
 
 **Formulas:**
 
 - Summary Dashboard auto-calculates from Sheets 2-5
 - Compliance Status derived from entry data
 
-
 **Freeze Panes:**
 
 - Header rows frozen
 - First column frozen for horizontal scrolling
-
 
 ---
 
@@ -1014,19 +936,16 @@ Before submitting for Level 2 approval, complete this self-assessment:
 - Primary Header: #003366 (Navy blue), White text
 - Column Header: #D9D9D9 (Light grey), Black text
 
-
 **Data Cells:**
 
 - Input Cell: #FFFFCC (Light yellow)
 - Read-Only: White
-
 
 **Compliance Status:**
 
 - Compliant: #C6EFCE (Light green)
 - Partial: #FFEB9C (Light amber)
 - Non-Compliant: #FFC7CE (Light red)
-
 
 ---
 
@@ -1050,7 +969,6 @@ Before submitting for Level 2 approval, complete this self-assessment:
 **Dependencies from:**
 
 - None - this is the foundational assessment
-
 
 ---
 

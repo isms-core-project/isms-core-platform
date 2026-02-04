@@ -39,7 +39,7 @@
 - ISMS-POL-A.7.1-2-3 (Physical Access Control)
 - ISMS-POL-A.5.19-23 (Cloud Services)
 - ISMS-POL-A.5.24-28 (Incident Management)
-- ISMS-POL-A.8.13-14-5.30 (Business Continuity)
+- ISMS-POL-A.5.30-8.13-14 (Business Continuity)
 - ISMS-IMP-A.7.4-5-11 (Implementation Guidance)
 - ISO/IEC 27001:2022 Controls A.7.4, A.7.5, A.7.11
 
@@ -67,13 +67,11 @@ This policy establishes [Organisation]'s requirements for physical infrastructur
 - Colocation facilities (with shared responsibility model)
 - Remote and temporary facilities where organization-owned equipment is located
 
-
 **Personnel**:
 
 - Facilities Management, Security Operations, IT Operations
 - All employees accessing physical facilities
 - Contractors, vendors, and visitors
-
 
 ## Cloud-Only Organisations
 
@@ -96,7 +94,6 @@ When utilising colocation datacenter space, physical infrastructure responsibili
 - Equipment transport security (covered under A.7.13)
 - Offsite backup media storage (covered under A.8.13)
 - Personnel security and background checks (covered under A.6.1-6.4)
-
 
 ---
 
@@ -181,7 +178,7 @@ Facilities SHALL be classified into criticality tiers based on Business Impact A
 | **Tier 1 - Critical** | Datacenters, primary server rooms, DR sites | 24/7 SOC monitoring, <15min response SLA, intrusion detection required | Fire suppression + detection, water detection all zones, temperature 18-27°C ±2°C | N+1 UPS (dual units, 30min runtime each), backup generator (48hr fuel), dual cooling paths | Monthly manual verification |
 | **Tier 2 - Standard** | Corporate offices, branch offices, non-critical server rooms | 8/5 monitoring, next-business-day response, intrusion detection optional | Fire detection (suppression if equipment value >CHF 500k), water detection high-risk areas only, temperature 18-27°C ±5°C | Single UPS (15min runtime minimum), no generator required, single cooling | Quarterly manual verification |
 
-**Tier Classification Criteria**: Facilities SHALL be classified based on Business Impact Analysis (ISMS-POL-A.8.13-14-5.30) considering:
+**Tier Classification Criteria**: Facilities SHALL be classified based on Business Impact Analysis (ISMS-POL-A.5.30-8.13-14) considering:
 - System criticality: Tier 1/2 applications hosted
 - Data classification: CONFIDENTIAL data processing = Tier 1
 - Recovery time objectives: RTO <4hrs = Tier 1, RTO >4hrs = Tier 2
@@ -213,7 +210,6 @@ Facilities SHALL be classified into criticality tiers based on Business Impact A
 - **Monthly**: Automated data collection from physical security systems
 - **Quarterly**: Manual verification and testing compliance review
 - **Annual**: Comprehensive audit with external verification
-
 
 ## Compliance Scoring
 
@@ -270,7 +266,6 @@ Physical infrastructure control deficiencies identified through assessments (Ass
 
 **4. Escalation**: Gaps open beyond target date SHALL be escalated per ISMS-POL-A.5.24-28 (Incident Management).
 
-
 ## Incident Classification
 
 | Severity | Examples | Response |
@@ -286,7 +281,6 @@ Physical infrastructure control deficiencies identified through assessments (Ass
 - **Trigger Events**: Facility changes, security incidents, regulatory updates, technology changes
 - **Participants**: CISO, Facilities Manager, Security Operations Manager, Compliance Officer
 - **Approval**: CISO (minor changes), Executive Management (material changes)
-
 
 ---
 
@@ -322,7 +316,7 @@ Refer to ISMS-POL-00 (Regulatory Applicability Framework) for complete regulator
 | ISMS-POL-A.7.1-3 | Physical Access Control (prerequisite) |
 | ISMS-POL-A.5.19-23 | Cloud Services (cloud provider assessment) |
 | ISMS-POL-A.5.24-28 | Incident Management (incident response) |
-| ISMS-POL-A.8.13-14-5.30 | Business Continuity (BC/DR integration) |
+| ISMS-POL-A.5.30-8.13-14 | Business Continuity (BC/DR integration) |
 
 ## Implementation Guidance
 
@@ -361,7 +355,7 @@ Refer to ISMS-POL-00 (Regulatory Applicability Framework) for complete regulator
 | **A.7.8-9** | Equipment siting and off-premises security |
 | **A.5.19-23** | Cloud provider physical security assessment |
 | **A.5.24-28** | Incident management for physical security events |
-| **A.8.13-14-5.30** | Business continuity integration |
+| **A.5.30-8.13-14** | Business continuity integration |
 | **A.8.16** | SIEM integration for physical-logical correlation |
 
 ---

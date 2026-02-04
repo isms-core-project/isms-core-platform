@@ -36,7 +36,6 @@
 - Procurement: Procurement Director
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -52,7 +51,6 @@
 - ISO/IEC 27036 (Supplier Relationships)
 - ISO/IEC 27017 (Cloud Security)
 - ISO/IEC 27018 (Cloud Privacy)
-
 
 **Distribution**: All employees, contractors, procurement staff, legal team, IT operations, cloud administrators
 
@@ -75,7 +73,6 @@ This document serves as the **master index** for [Organization]'s Supplier and C
 - **Implementation Layer:** Python-generated Excel workbooks (5 assessment workbooks)
 - **Validation Layer:** Quality assurance and normalization scripts
 - **Integration Layer:** Executive compliance dashboard
-
 
 **Approach**: This framework employs a **documented, systematic process** where assessment tools are programmatically generated from controlled specifications rather than manually created. This ensures consistency, repeatability, and version control - if assessment requirements change, regenerating updated workbooks follows documented procedures rather than error-prone manual editing. The principle is straightforward: what can be created from documented specifications can be understood completely, maintained reliably, and audited objectively.
 
@@ -106,7 +103,6 @@ This policy framework provides organizational governance for five related contro
 - Shadow IT and unauthorized supplier usage shall be actively identified and managed
 - Supplier dependency and concentration risk shall be assessed for critical services
 
-
 **Policy Reference**: See ISMS-POL-A.5.19-23-S1 (Supplier Relationship Fundamentals) for detailed requirements.
 
 ### A.5.20 - Addressing Information Security in Supplier Agreements
@@ -127,7 +123,6 @@ This policy framework provides organizational governance for five related contro
 - Termination procedures and data return/destruction obligations shall be contractually defined
 - Right to audit (on-site or remote) and regulatory cooperation shall be enforceable
 
-
 **Policy Reference**: See ISMS-POL-A.5.19-23-S2 (Supplier Agreement Requirements) for detailed contractual requirements.
 
 ### A.5.21 - Managing Information Security in the ICT Supply Chain
@@ -147,7 +142,6 @@ This policy framework provides organizational governance for five related contro
 - Supplier changes and updates shall be managed through change control processes
 - Supply chain risk assessment shall include geopolitical, concentration, and single-source dependencies
 
-
 **Policy Reference**: See ISMS-POL-A.5.19-23-S3 (ICT Supply Chain Security) for detailed supply chain requirements.
 
 ### A.5.22 - Monitoring, Review and Change Management of Supplier Services
@@ -166,7 +160,6 @@ This policy framework provides organizational governance for five related contro
 - Supplier audits or third-party attestations (SOC 2, ISO 27001) shall be obtained and reviewed
 - Relationship with suppliers shall be maintained through regular communication and meetings
 - Supplier service degradation or non-compliance shall trigger escalation and remediation procedures
-
 
 **Policy Reference**: See ISMS-POL-A.5.19-23-S4 (Supplier Monitoring & Change Management) for detailed governance requirements.
 
@@ -188,7 +181,6 @@ This policy framework provides organizational governance for five related contro
 - Cloud-specific risks (multi-tenancy, data commingling, jurisdiction) shall be assessed and mitigated
 - Cloud provider certifications and compliance shall be verified (SOC 2, ISO 27017, CSA STAR)
 
-
 **Policy Reference**: See ISMS-POL-A.5.19-23-S5 (Cloud Services Security) for detailed cloud-specific requirements.
 
 ---
@@ -205,7 +197,6 @@ Establish mandatory requirements for managing information security risks associa
 - Ongoing supplier relationship management
 - Cloud service acquisition, operation, and exit
 
-
 ## Scope
 
 This framework applies to:
@@ -216,7 +207,6 @@ This framework applies to:
 - All ICT products and services with supply chain dependencies
 - All employees, contractors, and third parties managing supplier relationships
 
-
 ## Exclusions
 
 This framework does not cover:
@@ -224,7 +214,6 @@ This framework does not cover:
 - One-time purchases without ongoing service relationship or data access
 - Suppliers with no access to organizational information assets
 - Internal service providers (covered under separate HR/operational policies)
-
 
 ---
 
@@ -323,7 +312,6 @@ When Python generators are executed, they produce:
 - What additional fields are required? (concentration risk, data sovereignty)
 - How do workbooks accommodate conditional compliance? (regulatory scope dropdowns)
 
-
 **Domain 1 - Cloud Service Inventory & Classification**:
 
 - What cloud services exist? (complete inventory: SaaS, IaaS, PaaS, security services)
@@ -332,7 +320,6 @@ When Python generators are executed, they produce:
 - Where is data located? (residency: Switzerland, EU, USA, multi-region)
 - What is exit feasibility? (portability, alternative vendors, transition cost)
 - What regulatory scope applies? (DORA, NIS2, AI Act applicability per service)
-
 
 **Domain 2 - Vendor Due Diligence & Contracts**:
 
@@ -343,7 +330,6 @@ When Python generators are executed, they produce:
 - What is CLOUD Act exposure? (US-based providers, mitigation strategies)
 - What exit provisions exist? (data export, transition assistance, termination clauses)
 
-
 **Domain 3 - Secure Configuration & Deployment**:
 
 - What configuration baselines apply? (CIS benchmarks, vendor hardening guides)
@@ -351,7 +337,6 @@ When Python generators are executed, they produce:
 - How is access managed? (least privilege, role-based access, privileged account monitoring)
 - What monitoring is deployed? (security events, performance, compliance drift)
 - What is shared responsibility division? (organization vs. provider controls)
-
 
 **Domain 4 - Ongoing Governance & Risk Management**:
 
@@ -361,7 +346,6 @@ When Python generators are executed, they produce:
 - What changes were approved? (configuration changes, contract amendments, migrations)
 - What risks are tracked? (concentration risk, vendor lock-in, compliance gaps)
 
-
 **Domain 5 - Compliance Monitoring Dashboard**:
 
 - What is overall compliance status? (traffic light indicators per domain)
@@ -369,7 +353,6 @@ When Python generators are executed, they produce:
 - What gaps exist? (missing contracts, weak SLAs, configuration drift)
 - What regulatory evidence exists? (DORA/NIS2 ICT register, AI Act documentation)
 - What is the remediation roadmap? (prioritized action items, budget requirements)
-
 
 ## Assessment Workflow
 
@@ -445,7 +428,6 @@ When Python generators are executed, they produce:
 - Automated testing of critical functions
 - Support for conditional regulatory logic (DORA/NIS2 fields shown only when applicable)
 
-
 **Documentation Principle**: Scripts are designed to be readable, maintainable, and verifiable. What can be systematically created from documented specifications can be completely understood, reliably maintained, and objectively audited. Each function includes documentation explaining not just what it does, but why specific approaches were chosen - enabling future maintainers to understand design decisions and modify confidently without self-deception about implementation details.
 
 ---
@@ -488,8 +470,6 @@ When Python generators are executed, they produce:
 | **All Employees** | Adherence to approved cloud service list, prohibition on shadow IT, incident reporting |
 | **Managers** | Budget approval for supplier services, business justification, user access management |
 
-
-
 ## Competence Requirements
 
 Personnel performing supplier and cloud security assessment activities SHALL meet the following competence requirements, documented in [Organization ISMS Training and Competence Matrix]:
@@ -500,13 +480,11 @@ Personnel performing supplier and cloud security assessment activities SHALL mee
 - Understanding of security requirements for cloud services
 - Annual refresher on contract security clauses
 
-
 **Cloud Architects / Technical Assessors:**
 
 - Cloud security certification (CCSP, CCSK, or vendor-specific: AWS Security, Azure Security, GCP Security)
 - Understanding of shared responsibility models
 - Experience with cloud security configuration review
-
 
 **Legal Counsel:**
 
@@ -514,16 +492,13 @@ Personnel performing supplier and cloud security assessment activities SHALL mee
 - Understanding of processor agreements (GDPR Article 28)
 - Familiarity with DORA/NIS2 requirements (where applicable)
 
-
 **Information Security Officer:**
 
 - ISO 27001 Lead Implementer or equivalent
 - Risk assessment methodology training
 - Cloud security frameworks (CSA CCM, ISO 27017/27018)
 
-
 **Evidence:** Training records, certifications, and competence assessments maintained per ISO 27001 Clause 7.2 requirements.
-
 
 ---
 
@@ -541,7 +516,6 @@ This framework employs **quantitative, evidence-based assessment** rather than s
 - **Maintainability**: Updates to requirements propagate systematically through regeneration
 - **Objectivity**: Automated compliance calculation eliminates subjective scoring
 
-
 **Implementation**:
 
 - Generate assessment tools programmatically (Python → Excel)
@@ -550,7 +524,6 @@ This framework employs **quantitative, evidence-based assessment** rather than s
 - Produce repeatable, auditable artifacts with version control
 - Enable systematic updates when requirements change
 
-
 **Evidence-Based Validation**:
 
 - No "we're compliant because we said so" self-assessments
@@ -558,7 +531,6 @@ This framework employs **quantitative, evidence-based assessment** rather than s
 - Every supplier requires third-party attestation (SOC 2, ISO 27001) or equivalent audit
 - Every contract requires enforceable security clauses with audit rights
 - Every exception requires CISO risk acceptance with documented mitigation
-
 
 ## Evidence Requirements
 
@@ -580,7 +552,6 @@ This framework employs **quantitative, evidence-based assessment** rather than s
 - Missing data processing agreement (GDPR violation)
 - No exit strategy or data portability mechanism
 
-
 ## Supplier Risk Classification
 
 Suppliers are classified using **quantitative scoring** across six dimensions:
@@ -601,7 +572,6 @@ Suppliers are classified using **quantitative scoring** across six dimensions:
 - **Level 3 (Medium):** 25-49 points → Annual review, self-assessment acceptable with sampling validation
 - **Level 4 (Low):** 0-24 points → Biennial review, self-assessment acceptable
 
-
 **Risk Methodology Integration:**
 
 This supplier risk classification methodology operates within [Organization]'s enterprise risk assessment framework documented in [ISMS Risk Assessment Methodology]. Supplier risk scores feed into the organizational risk register per ISO 27001 Clause 6.1.2 requirements, enabling:
@@ -610,7 +580,6 @@ This supplier risk classification methodology operates within [Organization]'s e
 - Integration with enterprise risk treatment plans
 - Board-level risk reporting including supplier concentration risk (DORA Article 28.9)
 - Risk acceptance workflow for exceptions
-
 
 ## Compliance Scoring
 
@@ -630,7 +599,6 @@ This supplier risk classification methodology operates within [Organization]'s e
 - Certification status (% current vs. expired)
 - Evidence completeness (% required documents available)
 
-
 ## Regulatory Conditional Logic
 
 Assessment workbooks implement **conditional field display** based on regulatory applicability:
@@ -643,14 +611,12 @@ Assessment workbooks implement **conditional field display** based on regulatory
 - Sub-outsourcing approval status
 - Competent authority cooperation clauses
 
-
 **NIS2 Fields** (displayed if: Essential/important entity in EU):
 
 - Supply chain security measures
 - 24-hour incident reporting capability
 - Management accountability documentation
 - Annual cybersecurity risk report
-
 
 **AI Act Fields** (displayed if: AI system provider/deployer):
 
@@ -659,14 +625,12 @@ Assessment workbooks implement **conditional field display** based on regulatory
 - Transparency obligations
 - Human oversight mechanisms
 
-
 **CLOUD Act Fields** (displayed if: US-headquartered provider):
 
 - Jurisdictional risk assessment
 - Legal challenge commitments
 - Encryption and key management
 - Supplementary measures (SCCs, TIA)
-
 
 ---
 
@@ -736,7 +700,6 @@ This framework covers five related controls that work together across the suppli
 - Technical evaluation (POC/pilot)
 - Due diligence review (certifications, references, financial stability)
 
-
 **Phase 2: Contracting (A.5.20)**
 
 - Contract negotiation with security clauses
@@ -745,7 +708,6 @@ This framework covers five related controls that work together across the suppli
 - Audit rights establishment
 - Exit strategy documentation
 - Legal and procurement approval
-
 
 **Phase 3: Onboarding & Configuration (A.5.23)**
 
@@ -756,7 +718,6 @@ This framework covers five related controls that work together across the suppli
 - User training and documentation
 - Go-live approval
 
-
 **Phase 4: Operation & Monitoring (A.5.22)**
 
 - Continuous performance monitoring
@@ -766,7 +727,6 @@ This framework covers five related controls that work together across the suppli
 - Incident response and resolution
 - Relationship management
 
-
 **Phase 5: Review & Optimization (A.5.22)**
 
 - Annual contract review
@@ -774,7 +734,6 @@ This framework covers five related controls that work together across the suppli
 - Service optimization
 - Renegotiation or renewal
 - Alternative evaluation
-
 
 **Phase 6: Exit & Transition (A.5.23)**
 
@@ -784,7 +743,6 @@ This framework covers five related controls that work together across the suppli
 - Contract termination
 - Data destruction verification
 - Lessons learned documentation
-
 
 ## Review Cycles
 
@@ -804,7 +762,6 @@ This framework covers five related controls that work together across the suppli
 - Regulatory change affecting supplier obligations
 - Audit finding or compliance gap
 
-
 ## Exception Management
 
 **Exception Request Process**:
@@ -819,7 +776,6 @@ This framework covers five related controls that work together across the suppli
    - High risk: CISO + CIO
    - Critical risk: Executive Management
 
-
 5. **Documentation**: Exception registered with approval, duration, and review date
 6. **Monitoring**: Periodic review (quarterly for temporary, annual for permanent)
 7. **Remediation**: Action plan for exception closure if temporary
@@ -830,7 +786,6 @@ This framework covers five related controls that work together across the suppli
 - Legacy service without modern security features (exit plan required)
 - Single-source critical supplier (concentration risk mitigation)
 - Non-compliant contract inherited from acquisition (renegotiation timeline)
-
 
 ---
 
@@ -854,7 +809,6 @@ This framework covers five related controls that work together across the suppli
 - Within 4 hours: Executive Management (for critical incidents)
 - Within 24 hours: DPO (if personal data involved)
 
-
 **External Notification**:
 
 - **GDPR**: Data Protection Authority within 72 hours (Art. 33)
@@ -862,14 +816,12 @@ This framework covers five related controls that work together across the suppli
 - **DORA**: Competent authority per regulatory timeline
 - **Contractual**: Customer notification per contract terms
 
-
 **Supplier Notification Requirements**:
 
 - Suppliers SHALL notify [Organization] within specified timeframe of security incident awareness
 - Notification must include: incident description, affected systems, data impact, containment measures, estimated resolution
 - Suppliers SHALL cooperate with incident investigation and forensics
 - Suppliers SHALL provide post-incident report within agreed timeline
-
 
 ## Post-Incident Actions
 
@@ -880,7 +832,6 @@ This framework covers five related controls that work together across the suppli
 - Stakeholder communication
 - Regulatory notification (if required)
 
-
 **Short-Term Actions (1-7 days)**:
 
 - Root cause analysis
@@ -888,14 +839,12 @@ This framework covers five related controls that work together across the suppli
 - Supplier performance review
 - Contract compliance assessment
 
-
 **Long-Term Actions (1-3 months)**:
 
 - Lessons learned documentation
 - Control enhancement implementation
 - Supplier relationship reassessment
 - Policy and procedure updates
-
 
 ---
 
@@ -911,13 +860,11 @@ This policy framework demonstrates compliance with:
 - ISO/IEC 27002:2022 Controls 5.19-5.23 (implementation guidance)
 - ISO/IEC 27036 (series) - Information security for supplier relationships
 
-
 **Cloud-Specific Standards:**
 
 - ISO/IEC 27017:2015 - Cloud security controls
 - ISO/IEC 27018:2019 - Cloud privacy (PII protection)
 - CSA CCM (Cloud Controls Matrix) - cloud control framework alignment
-
 
 **Regulatory Alignment:**
 
@@ -928,7 +875,6 @@ This policy framework demonstrates compliance with:
 - **EU AI Act**: AI system provider/deployer obligations where applicable
 - **US CLOUD Act**: Jurisdictional risk assessment and mitigation
 
-
 ## Audit Evidence
 
 Auditors should expect the following evidence:
@@ -938,7 +884,6 @@ Auditors should expect the following evidence:
 - Complete policy framework (ISMS-POL-A.5.19-23 and subsections S1-S6)
 - Approval records (CISO, Executive Management, Legal, Procurement Director)
 - Distribution records (training acknowledgments, policy portal access logs)
-
 
 **Implementation Evidence:**
 
@@ -954,7 +899,6 @@ Auditors should expect the following evidence:
   - Due diligence documentation
   - Contract addenda and amendments
 
-
 **Operational Evidence:**
 
 - Supplier review meeting minutes
@@ -963,7 +907,6 @@ Auditors should expect the following evidence:
 - Supplier audit reports and findings
 - SLA performance reports (uptime, support response, incident resolution)
 - Cloud configuration reviews (CIS benchmark compliance, security baselines)
-
 
 **Regulatory Evidence (DORA/NIS2/AI Act):**
 
@@ -975,7 +918,6 @@ Auditors should expect the following evidence:
 - AI system risk classification documentation
 - High-risk AI system conformity assessments
 
-
 **Effectiveness Evidence:**
 
 - Supplier risk scores (trend analysis over time)
@@ -984,7 +926,6 @@ Auditors should expect the following evidence:
 - Cloud exit plan testing results
 - Stakeholder feedback (business units, IT operations, security team)
 - Cost-benefit analysis (cloud service optimization, vendor consolidation)
-
 
 ## Audit Approach
 
@@ -1007,15 +948,12 @@ Auditors should expect the following evidence:
 - **Medium-Risk Suppliers**: 25% sampling
 - **Low-Risk Suppliers**: 10% sampling or risk-based selection
 
-
 **Audit Frequency:**
 
 - **Internal Audit:** Annual (minimum), quarterly for DORA/NIS2 entities
 - **External Audit:** As required by ISO 27001 certification body
 - **Regulatory Audit:** As required (DORA, NIS2, financial regulators, data protection authorities)
 - **Self-Assessment:** Quarterly (using assessment workbooks)
-
-
 
 **Internal Audit Programme Integration:**
 
@@ -1026,9 +964,7 @@ Supplier and cloud services security is included in the annual internal audit pr
 - **Medium-risk suppliers (L3)**: Audited biennially with 25% sampling
 - **Low-risk suppliers (L4)**: Included in 3-year audit cycle with 10% sampling
 
-
 Audit scope includes verification of: policy compliance, contract security clauses, supplier certifications currency, incident management effectiveness, and exit plan testing.
-
 
 ---
 
@@ -1047,7 +983,6 @@ Audit scope includes verification of: policy compliance, contract security claus
 - **New cloud service categories adopted**: Emerging technologies (AI/ML platforms, quantum-safe cryptography)
 - **Audit findings requiring policy updates**: External audit, regulatory audit, internal audit critical findings
 
-
 ## Version Control
 
 **Major Version (X.0):** Structural changes, new controls added, regulatory requirements, scope expansion  
@@ -1058,7 +993,6 @@ Audit scope includes verification of: policy compliance, contract security claus
 - This master document version reflects overall framework state
 - Individual section versions (S1-S6) may increment independently
 - Major framework changes require master document version update and re-approval
-
 
 ## Change Process
 
@@ -1084,7 +1018,6 @@ Audit scope includes verification of: policy compliance, contract security claus
 - Documentation of justification for emergency process
 - Post-implementation review within 30 days
 
-
 ## Communication
 
 **Policy Updates Communicated Via:**
@@ -1103,7 +1036,6 @@ Audit scope includes verification of: policy compliance, contract security claus
 - Quarterly CISO briefings to Executive Management
 - Supplier notifications where policy changes affect agreements (contractual requirement changes, new security clauses)
 - Regulatory notifications where required (NIS2 reporting, DORA ICT register updates)
-
 
 ---
 
@@ -1138,7 +1070,6 @@ Supplier and cloud services security integrates with multiple ISO 27001 controls
 - Supplier disruptions → Business continuity (A.5.30)
 - **Exit requirements → BC/DR planning (A.8.13-14, A.5.30)** ⭐
 
-
 **Other Controls → Supplier/Cloud Management:**
 
 - Risk assessments → Supplier risk classification (A.5.19)
@@ -1146,7 +1077,6 @@ Supplier and cloud services security integrates with multiple ISO 27001 controls
 - Vulnerability findings → Supplier patch requirements (A.5.22)
 - BCP testing → Alternative supplier identification (A.5.23)
 - **BC/DR capabilities → Exit feasibility assessment (A.5.23)** ⭐
-
 
 ## Risk Management Integration
 
@@ -1156,14 +1086,12 @@ Supplier and cloud services security integrates with multiple ISO 27001 controls
 - Residual risks from supplier dependencies tracked in risk register
 - Risk assessment feeds supplier selection and contract requirements
 
-
 **Risk Register:**
 
 - Supplier/cloud risks documented in compliance dashboard (Domain 5)
 - Risk categories: Concentration risk, vendor lock-in, data sovereignty, regulatory exposure
 - Risk scores drive remediation urgency and budget allocation
 - Exception risks monitored quarterly and reported to CISO
-
 
 **Concentration Risk Assessment (DORA Requirement):**
 
@@ -1172,7 +1100,6 @@ Supplier and cloud services security integrates with multiple ISO 27001 controls
 - Diversification strategy and timeline
 - **Exit capability validation with BC/DR framework** ⭐
 - Board-level reporting for critical dependencies
-
 
 ## BC/DR Integration for Exit Scenarios
 
@@ -1194,25 +1121,21 @@ Supplier and cloud services security integrates with multiple ISO 27001 controls
    - Contract says "30-day exit" but BC/DR requires 6 months → Gap (must align)
    - Contract says "API-based export" and BC/DR can execute in 20 days → Ready ✅
 
-
 2. **Technical Capability Needs Contractual Permission:**
 
    - BC/DR can migrate in 1 week but contract requires 90 days notice → Blocked (must negotiate)
    - BC/DR capability matches contract terms → Executable ✅
-
 
 3. **Untested Integration = Unknown Risk:**
 
    - Both frameworks exist but never tested together → Don't know if they work
    - Exit plans tested annually (DORA Art. 28.6) with BC/DR validation → Proven capability ✅
 
-
 **Documentation:** Exit planning integration documented in:
 
 - ISMS-IMP-A.5.23.4 (Governance workbook - Exit Strategy sheet)
 - ISMS-IMP-A.5.23.5 (Dashboard workbook - Exit Planning sheet)
-- ISMS-POL-A.8.13-14-5.30 (BC/DR Policy - Supplier exit scenarios)
-
+- ISMS-POL-A.5.30-8.13-14 (BC/DR Policy - Supplier exit scenarios)
 
 **Reference:** See "A.5.19-23 ↔ BC/DR Integration - Critical for Exit Scenarios" alignment document for detailed integration requirements.
 
@@ -1249,7 +1172,6 @@ Best practice frameworks referenced but not mandatory compliance requirements:
 - NIST SP 800-161 (Cybersecurity Supply Chain Risk Management)
 - CSA Cloud Controls Matrix (CCM)
 
-
 ## DORA-Specific Requirements
 
 For EU financial entities subject to DORA, the following additional requirements apply:
@@ -1261,7 +1183,6 @@ For EU financial entities subject to DORA, the following additional requirements
 - Identify concentration risk and critical ICT third-party service providers
 - Implement monitoring and risk management strategy
 
-
 **Article 29 - Key Contractual Provisions**:
 
 - Full cooperation with competent authorities (access, inspection, audit rights)
@@ -1271,14 +1192,12 @@ For EU financial entities subject to DORA, the following additional requirements
 - Audit rights (on-site and remote)
 - Termination rights in case of non-compliance
 
-
 **Article 30 - Sub-Outsourcing**:
 
 - Maintain register of sub-outsourcing arrangements
 - Assess risks from sub-outsourcing
 - Ensure contractual provisions flow down to sub-contractors
 - Obtain authorization for critical sub-outsourcing
-
 
 **Article 31 - ICT Concentration Risk**:
 
@@ -1287,13 +1206,11 @@ For EU financial entities subject to DORA, the following additional requirements
 - Implement mitigation strategies for concentration risk
 - Report concentration risk to competent authorities
 
-
 **Implementation Notes**:
 
 - DORA-specific fields in assessment workbook 2 (Due Diligence)
 - Concentration risk analysis in workbook 4 (Governance)
 - ICT register export capability in workbook 5 (Dashboard)
-
 
 ## NIS2-Specific Requirements
 
@@ -1306,13 +1223,11 @@ For essential/important entities subject to NIS2, the following apply:
 - Asset management and configuration management
 - Incident handling including supply chain incidents
 
-
 **Article 23 - Incident Notification**:
 
 - Early warning to CSIRT/competent authority (24 hours after becoming aware)
 - Incident notification (72 hours): preliminary assessment, impact, indicators of compromise
 - Final report (1 month or upon authority request): detailed description, root cause, impact assessment, remediation measures
-
 
 **Article 24 - Governance**:
 
@@ -1320,13 +1235,11 @@ For essential/important entities subject to NIS2, the following apply:
 - Regular cybersecurity training for management
 - Annual cybersecurity risk assessment report
 
-
 **Implementation Notes**:
 
 - NIS2-specific incident notification workflows in workbook 4 (Governance)
 - Supply chain security measures checklist in workbook 2 (Due Diligence)
 - Management accountability documentation in workbook 5 (Dashboard)
-
 
 ## Data Sovereignty & Cross-Border Considerations
 
@@ -1360,7 +1273,6 @@ References to US federal frameworks (FISMA, FIPS, FedRAMP, NIST cybersecurity re
 - Acts as contractor, subcontractor, or service provider to US federal agencies
 - Provides services to customers subject to such regulations
 - Has explicit contractual obligations requiring such compliance
-
 
 In all other cases, these references are informational only and do not constitute mandatory compliance requirements.
 

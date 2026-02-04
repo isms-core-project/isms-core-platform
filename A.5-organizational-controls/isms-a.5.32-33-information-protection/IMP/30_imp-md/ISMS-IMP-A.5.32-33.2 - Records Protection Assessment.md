@@ -76,7 +76,6 @@ This assessment documents the **protection mechanisms** for organisational recor
 - What access controls restrict unauthorised access and release?
 - How are legal hold requirements managed?
 
-
 ### Key Principle
 
 This assessment focuses on **records protection** - the technical and administrative controls that ensure records remain available, accurate, and confidential throughout their required retention period.
@@ -93,7 +92,6 @@ This assessment focuses on **records protection** - the technical and administra
 - **Gap Analysis** identifying protection deficiencies
 - **Evidence Register** linking documentation to audit artefacts
 - **Approved Assessment** with Records Manager and CISO sign-offs
-
 
 ### How This Relates to Other A.5.32-33 Assessments
 
@@ -114,7 +112,6 @@ This assessment focuses on **records protection** - the technical and administra
 4. **IT Operations** - Provides backup verification, system access controls, storage documentation
 5. **Internal Audit** - Validates control effectiveness, reviews evidence
 
-
 ### Required Skills
 
 - Understanding of records management principles and lifecycle
@@ -123,12 +120,10 @@ This assessment focuses on **records protection** - the technical and administra
 - Understanding of access control mechanisms
 - Ability to assess integrity verification methods
 
-
 ### Time Commitment
 
 - **Initial assessment:** 15-25 hours (depending on organisation size and records complexity)
 - **Annual updates:** 4-6 hours (verify changes, update for new record categories)
-
 
 ## Expected Outputs
 
@@ -143,7 +138,6 @@ Upon completion, you will have:
 7. **Gap Analysis** - Protection deficiencies with remediation plans
 8. **Evidence Register** - Supporting documentation
 9. **Approved Assessment** - Records Manager and CISO sign-offs
-
 
 ---
 
@@ -160,14 +154,12 @@ Before starting this assessment, gather:
 - Records management policy
 - Filing system documentation (physical and electronic)
 
-
 ### Legal and Regulatory Requirements
 
 - Applicable record retention regulations (Swiss CO, FINMA, sector-specific)
 - Legal hold notifications and release records
 - Regulatory examination correspondence
 - Audit record requirements
-
 
 ### Technical Documentation
 
@@ -176,14 +168,12 @@ Before starting this assessment, gather:
 - Access control configurations
 - Integrity verification mechanisms (checksums, digital signatures)
 
-
 ### Compliance Evidence
 
 - Previous records audit reports
 - Backup test results
 - Access review documentation
 - Integrity check logs
-
 
 ## Access Required
 
@@ -197,7 +187,6 @@ You will need access to:
 - [ ] Access control/identity management systems
 - [ ] Records management applications
 
-
 **Documents:**
 
 - [ ] Records retention schedule
@@ -205,14 +194,12 @@ You will need access to:
 - [ ] Backup procedures and test results
 - [ ] Access control policies
 
-
 **People:**
 
 - [ ] Records custodians across departments
 - [ ] IT backup administrators
 - [ ] Legal counsel for hold requirements
 - [ ] System administrators for access control
-
 
 ## Tools and Resources
 
@@ -228,7 +215,6 @@ You will need access to:
 - Sheet 8: Gap Analysis
 - Sheet 9: Evidence Register
 - Sheet 10: Approval & Sign-Off
-
 
 ---
 
@@ -285,7 +271,6 @@ You will need access to:
    - Records management policy
    - Filing system documentation
 
-
 2. **Department Interviews:**
 
    - Finance: Financial records, tax records, invoices
@@ -294,7 +279,6 @@ You will need access to:
    - Operations: Project records, technical documentation
    - IT: System logs, change records, security logs
 
-
 3. **Inventory Creation (Sheet 2):**
 
    - List EVERY record category
@@ -302,7 +286,6 @@ You will need access to:
    - Assign custodian department
    - Note storage location(s) (physical, electronic, cloud)
    - Identify regulatory requirements affecting category
-
 
 **Deliverable:** Complete Sheet 2 (Records Category Inventory)
 
@@ -313,7 +296,6 @@ You will need access to:
 - Both physical and electronic records captured
 - Cloud-stored records documented
 - Security and audit logs included
-
 
 ### Phase 3: Records Classification (2-4 hours)
 
@@ -332,14 +314,12 @@ You will need access to:
    | **Operational** | 3-7 years | Internal | Meeting minutes, project files |
    | **Security/Audit** | 2-7 years | Confidential, integrity protected | Access logs, incident records |
 
-
 2. For EACH record category, determine:
 
    - Retention requirement (regulatory, contractual, business)
    - Confidentiality requirement (Restricted, Confidential, Internal, Public)
    - Integrity requirement (Critical, High, Standard)
    - Availability requirement (Mission Critical, Business Critical, Standard)
-
 
 **Deliverable:** Sheet 2 complete with classification columns populated
 
@@ -355,7 +335,6 @@ You will need access to:
    - Physical security (locked storage, secure areas)
    - DLP monitoring
 
-
 2. **Integrity Controls:**
 
    - Version control
@@ -363,7 +342,6 @@ You will need access to:
    - Checksums/hash verification
    - Write-once storage (WORM)
    - Audit logging
-
 
 3. **Availability Controls:**
 
@@ -373,14 +351,12 @@ You will need access to:
    - Recovery time objectives (RTO)
    - Media refresh plans
 
-
 4. **Complete Sheet 3 (Protection Controls Assessment):**
 
    - One row per record category
    - Document applicable controls
    - Rate control effectiveness
    - Identify protection gaps
-
 
 **Deliverable:** Sheet 3 complete with controls documented
 
@@ -396,14 +372,12 @@ You will need access to:
    - Write-once storage configurations
    - Audit log tamper protection
 
-
 2. **Test Integrity Verification:**
 
    - Run checksum verification on sample records
    - Verify digital signature validity
    - Test audit log integrity
    - Confirm WORM compliance
-
 
 3. **Complete Sheet 4 (Integrity Verification):**
 
@@ -413,7 +387,6 @@ You will need access to:
    - Test result (Pass/Fail)
    - Issues identified
    - Remediation actions
-
 
 **Deliverable:** Sheet 4 complete with test results
 
@@ -429,13 +402,11 @@ You will need access to:
    - When were access rights last reviewed?
    - Are privileged accounts appropriately restricted?
 
-
 2. **Verify Access Logging:**
 
    - Is access logged?
    - Are logs protected from tampering?
    - How long are logs retained?
-
 
 3. **Complete Sheet 5 (Access Control Review):**
 
@@ -445,7 +416,6 @@ You will need access to:
    - Last access review date
    - Access logging status
    - Issues identified
-
 
 **Deliverable:** Sheet 5 complete with access review
 
@@ -460,7 +430,6 @@ You will need access to:
    - Regulatory investigation holds
    - Internal investigation holds
 
-
 2. **Complete Sheet 6 (Legal Hold Register):**
 
    - Hold identifier
@@ -470,7 +439,6 @@ You will need access to:
    - Custodians notified
    - Release date (if applicable)
    - Status
-
 
 **Deliverable:** Sheet 6 complete with legal holds
 
@@ -486,14 +454,12 @@ You will need access to:
    - Retention periods
    - Geographic distribution
 
-
 2. **Verify Recovery Testing:**
 
    - When was last recovery test?
    - What was tested?
    - Were RTOs/RPOs met?
    - Issues identified?
-
 
 3. **Complete Sheet 7 (Backup Verification):**
 
@@ -503,7 +469,6 @@ You will need access to:
    - Last recovery test
    - RTO/RPO compliance
    - Issues identified
-
 
 **Deliverable:** Sheet 7 complete with backup verification
 
@@ -519,7 +484,6 @@ You will need access to:
    - Access control issues (Sheet 5)
    - Backup deficiencies (Sheet 7)
 
-
 2. **Complete Sheet 8 (Gap Analysis):**
 
    - Gap description
@@ -527,7 +491,6 @@ You will need access to:
    - Risk rating
    - Remediation action
    - Owner and due date
-
 
 **Deliverable:** Sheet 8 complete with gaps documented
 
@@ -543,14 +506,12 @@ You will need access to:
    - Integrity check logs
    - Legal hold notifications
 
-
 2. **Complete Sheet 9 (Evidence Register):**
 
    - Evidence ID and description
    - Related finding
    - Storage location
    - Verification status
-
 
 **Deliverable:** Sheet 9 complete
 
@@ -586,7 +547,6 @@ You will need access to:
 | Integrity Requirement | Critical/High/Standard | Critical |
 | Availability Requirement | Mission Critical/Business Critical/Standard | Business Critical |
 
-
 ## Sheet 3: Protection Controls Assessment
 
 **Required Fields:**
@@ -601,7 +561,6 @@ You will need access to:
 | Control Effectiveness | Effective/Partial/Ineffective | Effective |
 | Gap Description | Any protection gaps | No quarterly integrity verification |
 | Remediation Needed | Required actions | Implement quarterly checksum verification |
-
 
 ## Sheet 4: Integrity Verification
 
@@ -619,7 +578,6 @@ You will need access to:
 | Issues | Any problems found | None |
 | Remediation | Actions if failed | N/A |
 
-
 ## Sheet 5: Access Control Review
 
 **Required Fields:**
@@ -636,7 +594,6 @@ You will need access to:
 | Issues | Problems found | 3 inactive users still with access |
 | Remediation | Actions needed | Remove inactive user access |
 
-
 ## Sheet 6: Legal Hold Register
 
 **Required Fields:**
@@ -652,7 +609,6 @@ You will need access to:
 | Release Date | When hold ended | [Active] |
 | Status | Active/Released | Active |
 | Notes | Additional information | Annual renewal confirmed 2026-01-15 |
-
 
 ## Sheet 7: Backup Verification
 
@@ -673,7 +629,6 @@ You will need access to:
 | Status | Compliant/Non-Compliant | Compliant |
 | Issues | Problems found | None |
 
-
 ---
 
 # Evidence Collection
@@ -687,13 +642,11 @@ For each protection control area, collect:
 - Encryption configuration evidence
 - DLP policy evidence
 
-
 **Integrity:**
 - Checksum/hash verification logs
 - Digital signature certificates
 - WORM storage configuration
 - Audit log samples
-
 
 **Availability:**
 - Backup procedure documentation
@@ -701,12 +654,10 @@ For each protection control area, collect:
 - Recovery test reports
 - Redundancy architecture diagrams
 
-
 **Legal Holds:**
 - Legal hold notices
 - Custodian acknowledgments
 - Release documentation
-
 
 ## Evidence Storage
 
@@ -884,7 +835,6 @@ Before submitting for approval, verify:
 | K | Availability Requirement | 18 | List: Mission Critical, Business Critical, Standard |
 | L | Notes | 35 | - |
 
-
 ## Sheet 3: Protection_Controls
 
 ### Column Structure
@@ -902,7 +852,6 @@ Before submitting for approval, verify:
 | I | Remediation Needed | 35 | - |
 | J | Status | 15 | List: Complete, In Progress, Not Started |
 
-
 ## Sheet 4: Integrity_Verification
 
 ### Column Structure
@@ -919,7 +868,6 @@ Before submitting for approval, verify:
 | H | Status | 10 | List: Pass, Fail, Partial, Not Tested |
 | I | Issues | 30 | - |
 | J | Remediation | 30 | - |
-
 
 ## Sheet 5: Access_Control_Review
 
@@ -939,7 +887,6 @@ Before submitting for approval, verify:
 | J | Remediation | 30 | - |
 | K | Status | 15 | List: Compliant, Non-Compliant, Partial |
 
-
 ## Sheet 6: Legal_Hold_Register
 
 ### Column Structure
@@ -956,7 +903,6 @@ Before submitting for approval, verify:
 | H | Release Date | 12 | Date |
 | I | Status | 12 | List: Active, Released, Pending |
 | J | Notes | 35 | - |
-
 
 ## Sheet 7: Backup_Verification
 
@@ -978,7 +924,6 @@ Before submitting for approval, verify:
 | L | Status | 15 | List: Compliant, Non-Compliant |
 | M | Issues | 30 | - |
 
-
 ## Sheet 8: Gap_Analysis
 
 ### Column Structure
@@ -996,7 +941,6 @@ Before submitting for approval, verify:
 | I | Status | 15 | List: Open, In Progress, Complete, Accepted |
 | J | Notes | 30 | - |
 
-
 ## Sheet 9: Evidence_Register
 
 ### Column Structure
@@ -1011,7 +955,6 @@ Before submitting for approval, verify:
 | F | Collected Date | 12 | Date |
 | G | Collected By | 20 | - |
 | H | Verification Status | 18 | List: Verified, Pending Review, Not Verified, Expired |
-
 
 ## Sheet 10: Approval_SignOff
 

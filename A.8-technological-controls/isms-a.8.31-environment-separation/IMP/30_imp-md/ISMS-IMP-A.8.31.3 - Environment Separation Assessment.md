@@ -45,7 +45,6 @@ This document consists of two parts:
   - Cell Styling Reference
   - Integration Points
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -67,7 +66,6 @@ This dashboard CONSOLIDATES data from the two foundational assessments and provi
 - What remediation actions are needed?
 - Are we audit-ready?
 
-
 #### Key Principle
 
 This dashboard is **DATA-DRIVEN and AUTO-CALCULATED**. It imports gap data and compliance status from A.8.31.1 and A.8.31.2, applies weighted scoring, and generates executive-ready visualizations.
@@ -84,7 +82,6 @@ This dashboard is **DATA-DRIVEN and AUTO-CALCULATED**. It imports gap data and c
 - Compliance trend (if historical data available)
 - Executive summary dashboard (1-page view)
 - Remediation action plan (prioritized by risk)
-
 
 #### How This Relates to Other A.8.31 Assessments
 
@@ -114,13 +111,11 @@ This dashboard (A.8.31.3) **REQUIRES** both A.8.31.1 and A.8.31.2 to be complete
 - Understanding of risk prioritization
 - Executive communication skills (for dashboard presentation)
 
-
 #### Time Commitment
 
 - **Initial dashboard generation:** 2-4 hours (after A.8.31.1 and A.8.31.2 complete)
 - **Quarterly updates:** 1-2 hours (refresh with new assessment data)
 - **Executive presentation preparation:** 1-2 hours (narrative + slides)
-
 
 ### Expected Outputs
 
@@ -152,13 +147,11 @@ Before starting this dashboard, gather:
 - Sheet 8: Gap_Analysis (all architecture gaps)
 - All compliance status indicators from Sheets 2-7
 
-
 **ISMS-IMP-A.8.31.2 (Environment Access Control Assessment)**:
 
 - Sheet 8: Gap_Analysis (all access control gaps)
 - Sheet 4: Production_Access_Verification (developer count)
 - All compliance status indicators from Sheets 2-7
-
 
 #### 2. Historical Data (Optional, for Trend Analysis)
 
@@ -166,26 +159,22 @@ Before starting this dashboard, gather:
 - Historical compliance scores
 - Gap closure metrics
 
-
 #### 3. Organizational Context
 
 - Current quarter/period (e.g., Q1 2026)
 - Assessment completion date
 - Executive presentation date (if scheduled)
 
-
 #### 4. Policy Requirements
 
 - ISMS-POL-A.8.31, Section 3 (Assessment & Evidence Framework)
 - ISMS-POL-00 (Regulatory Applicability Framework)
-
 
 ### Required Tools
 
 - Microsoft Excel (2016 or later) with formula support
 - Completed A.8.31.1 and A.8.31.2 workbooks (same quarter)
 - PowerPoint (optional, for executive presentation)
-
 
 ### Dependencies
 
@@ -196,13 +185,11 @@ Before starting this dashboard, gather:
 - Sheet 8: Gap_Analysis → Architecture gaps
 - Compliance status from all sheets
 
-
 **From ISMS-IMP-A.8.31.2:**
 
 - Sheet 8: Gap_Analysis → Access control gaps
 - Sheet 4: Developer production access count
 - Compliance status from all sheets
-
 
 **Workflow Requirement**: Complete in sequence:
 1. First: ISMS-IMP-A.8.31.1 (Architecture)
@@ -248,19 +235,16 @@ Before starting this dashboard, gather:
 - Confirm both assessments are from the same quarter
 - Locate completed workbook files
 
-
 **Outputs:**
 
 - Prerequisites confirmed
 - Source assessment files accessible
-
 
 **Common Pitfalls to Avoid:**
 
 - ❌ Using assessments from different quarters (misaligned data)
 - ❌ Using unapproved assessments (data may change)
 - ❌ Missing one of the source assessments
-
 
 #### Phase 2: Gap Data Import (30-45 minutes)
 
@@ -272,19 +256,16 @@ Before starting this dashboard, gather:
 - Merge into single consolidated gap list
 - Deduplicate if any gaps appear in both assessments
 
-
 **Outputs:**
 
 - Complete gap inventory (architecture + access control)
 - Gap count by severity (critical, high, medium, low)
-
 
 **Common Pitfalls to Avoid:**
 
 - ❌ Missing gaps (incomplete copy)
 - ❌ Duplicating gaps (same gap in both assessments)
 - ❌ Changing gap descriptions (must match source exactly)
-
 
 #### Phase 3: Compliance Status Import (30 minutes)
 
@@ -295,19 +276,16 @@ Before starting this dashboard, gather:
 - Extract compliance status from A.8.31.2 sheets (access matrix, production access, MFA, monitoring)
 - Document compliance % per domain
 
-
 **Outputs:**
 
 - Compliance status per domain (architecture, access)
 - Domain-level compliance scores
-
 
 **Common Pitfalls to Avoid:**
 
 - ❌ Misinterpreting compliance status (✅/⚠️/❌ mapping)
 - ❌ Missing domains (incomplete coverage)
 - ❌ Manual data entry errors (use formulas where possible)
-
 
 #### Phase 4: Compliance Scoring (AUTO-CALCULATED)
 
@@ -318,19 +296,16 @@ Before starting this dashboard, gather:
 - Review weighted average calculation
 - Confirm critical metrics calculated correctly
 
-
 **Outputs:**
 
 - Overall compliance score (0-100%)
 - Domain scores (architecture, access, MFA, monitoring)
 - Compliance grade (✅ Compliant / ⚠️ Partial / ❌ Non-Compliant)
 
-
 **Common Pitfalls to Avoid:**
 
 - ❌ Overriding auto-calculated scores (should only adjust weights, not scores)
 - ❌ Misunderstanding weighted averages (not simple average)
-
 
 #### Phase 5: Executive Summary Generation (30-45 minutes)
 
@@ -342,20 +317,17 @@ Before starting this dashboard, gather:
 - Highlight top 3 concerns
 - Document next steps and remediation priorities
 
-
 **Outputs:**
 
 - Executive-ready 1-page dashboard
 - Key metrics summary
 - Executive commentary
 
-
 **Common Pitfalls to Avoid:**
 
 - ❌ Too much technical detail (executives want high-level)
 - ❌ Missing business impact (why should executives care?)
 - ❌ No clear action items (what needs to happen next?)
-
 
 #### Phase 6: Trend Analysis (30 minutes - if historical data available)
 
@@ -367,20 +339,17 @@ Before starting this dashboard, gather:
 - Analyze gap closure rate
 - Visualize compliance trend
 
-
 **Outputs:**
 
 - Compliance score trend (4+ quarters recommended)
 - Gap closure metrics
 - Improvement trajectory analysis
 
-
 **Common Pitfalls to Avoid:**
 
 - ❌ Mixing assessment versions (ensure consistent methodology)
 - ❌ Incomplete historical data (gaps in trend)
 - ❌ Not accounting for scope changes (environment added/removed)
-
 
 **Note**: Skip this phase if this is the first assessment (no historical data yet).
 
@@ -394,7 +363,6 @@ Before starting this dashboard, gather:
 - Set target completion dates
 - Document remediation approach
 
-
 **Outputs:**
 
 - Risk-prioritized remediation plan
@@ -402,13 +370,11 @@ Before starting this dashboard, gather:
 - Target dates
 - Remediation approach per gap
 
-
 **Common Pitfalls to Avoid:**
 
 - ❌ Unrealistic timelines (critical gaps should be < 30 days)
 - ❌ No clear owners (gaps without assignment won't get fixed)
 - ❌ Vague remediation approach ("fix it" is not actionable)
-
 
 #### Phase 8: Audit Readiness Check (30 minutes)
 
@@ -420,20 +386,17 @@ Before starting this dashboard, gather:
 - Check for any missing documentation
 - Document audit readiness status
 
-
 **Outputs:**
 
 - Audit readiness assessment
 - Evidence package completeness check
 - Missing documentation identified
 
-
 **Common Pitfalls to Avoid:**
 
 - ❌ Incomplete evidence register (auditors will ask for it)
 - ❌ Missing approvals (unapproved assessments not valid)
 - ❌ Outdated evidence (should be current quarter)
-
 
 #### Phase 9: Executive Review & Approval (variable)
 
@@ -445,13 +408,11 @@ Before starting this dashboard, gather:
 - Obtain executive sign-off
 - Document feedback and action items
 
-
 **Outputs:**
 
 - Approved dashboard
 - Executive feedback captured
 - Action items assigned
-
 
 #### Phase 10: Archival (15 minutes)
 
@@ -462,12 +423,10 @@ Before starting this dashboard, gather:
 - Update dashboard repository
 - Distribute to stakeholders
 
-
 **Outputs:**
 
 - Archived dashboard (for next quarter trend)
 - Stakeholders notified
-
 
 ---
 
@@ -489,7 +448,6 @@ Before starting this dashboard, gather:
 - Include completion date for audit trail
 - Read the full instructions before starting
 
-
 ---
 
 ### Sheet 2: Consolidated_Gap_Analysis
@@ -508,7 +466,6 @@ Before starting this dashboard, gather:
    - Risk severity (Critical, High, Medium, Low)
    - Current status (Open, In Progress, Resolved)
 
-
 **Time:** 30-45 minutes
 
 **Tips:**
@@ -517,7 +474,6 @@ Before starting this dashboard, gather:
 - Preserve original gap IDs (e.g., GAP-001 from A.8.31.1, GAP-001 from A.8.31.2)
 - Prefix with source if needed (e.g., ARCH-GAP-001, ACCESS-GAP-001)
 - Sort by severity (Critical → High → Medium → Low)
-
 
 **Example Entry:**
 | Gap ID | Source | Description | Policy Violated | Severity | Status |
@@ -532,7 +488,6 @@ Before starting this dashboard, gather:
 - 🟢 Medium: [Count]
 - ⚪ Low: [Count]
 - **Total Gaps**: [Count]
-
 
 ---
 
@@ -555,7 +510,6 @@ Before starting this dashboard, gather:
 - Credential Separation (from Sheet 6)
 - Configuration Consistency (from Sheet 7)
 
-
 **From A.8.31.2 (Access Control Assessment):**
 
 - Access Matrix Compliance (from Sheet 3)
@@ -563,7 +517,6 @@ Before starting this dashboard, gather:
 - MFA Enforcement (from Sheet 5)
 - Break-Glass Controls (from Sheet 6)
 - Access Monitoring (from Sheet 7)
-
 
 **Example Entry:**
 | Domain | Compliant Count | Total Count | Compliance % | Status | Source |
@@ -582,7 +535,6 @@ Compliance % = (Compliant Count / Total Count) × 100
 - ✅ Compliant: ≥90%
 - ⚠️ Partial: 70-89%
 - ❌ Non-Compliant: <70%
-
 
 ---
 
@@ -632,14 +584,12 @@ Overall Compliance: 95.5% (✅ Compliant)
 - ⚠️ Partial: 70-89%
 - ❌ Non-Compliant: <70%
 
-
 **Critical Metrics:**
 
 - **Developer Production Access Count**: [From A.8.31.2, Sheet 4, Row 9]
   - ✅ Target: 0
   - ❌ Actual: [Count]
   - Status: [Compliant if 0, MAJOR VIOLATION if >0]
-
 
 ---
 
@@ -662,7 +612,6 @@ Overall Compliance: 95.5% (✅ Compliant)
 - Developer Production Access: [Count] (TARGET: 0)
 - Assessment Quarter: [Q1 2026]
 - Assessment Date: [Date]
-
 
 **Executive Commentary** (user input):
 ```
@@ -700,7 +649,6 @@ for closure by end of Q2 2026."
 - Use specific metrics (not "improved significantly" → "improved from 88% to 95.5%")
 - Include clear action items with dates
 
-
 ---
 
 ### Sheet 6: Trend_Analysis
@@ -730,20 +678,17 @@ for closure by end of Q2 2026."
 - **Gap Closure Rate**: 4.7 gaps per quarter (average)
 - **Projected Q2 2026**: ~98% (if trend continues)
 
-
 **Trend Interpretation:**
 
 - ✅ Improving: Each quarter > previous quarter
 - ⚠️ Stable: ±2% variation
 - ❌ Declining: Any quarter < previous quarter
 
-
 **Tips:**
 
 - Ensure historical data uses same methodology (consistent assessment approach)
 - Document any scope changes (environments added/removed)
 - Explain any anomalies (e.g., major infrastructure change)
-
 
 ---
 
@@ -766,7 +711,6 @@ for closure by end of Q2 2026."
 - 🟢 Medium: ≤180 days
 - ⚪ Low: As resources allow
 
-
 **Example Entry:**
 | Gap ID | Description | Severity | Owner | Target Date | Remediation Approach | Status | % Complete |
 |--------|-------------|----------|-------|-------------|---------------------|--------|------------|
@@ -782,14 +726,12 @@ for closure by end of Q2 2026."
 - **Resolved**: Closed and verified
 - **Risk Accepted**: Acknowledged, risk accepted by CISO
 
-
 **Tips:**
 
 - Be specific in remediation approach (not "fix it")
 - Set realistic dates based on severity
 - Include verification steps
 - Track % complete for transparency
-
 
 ---
 
@@ -809,7 +751,6 @@ for closure by end of Q2 2026."
 - Verify all gaps have supporting evidence
 - Organize evidence by domain
 
-
 **Audit Readiness Checklist:**
 
 **Assessment Completeness:**
@@ -819,7 +760,6 @@ for closure by end of Q2 2026."
 - [ ] ISMS-IMP-A.8.31.3 completed and approved
 - [ ] All sheets in each assessment complete
 - [ ] No missing data or TBD items
-
 
 **Evidence Package:**
 
@@ -831,7 +771,6 @@ for closure by end of Q2 2026."
 - [ ] Break-glass logs available
 - [ ] Penetration test reports (within 12 months)
 
-
 **Approvals:**
 
 - [ ] ISMS-IMP-A.8.31.1 approved by Cloud Architect
@@ -840,7 +779,6 @@ for closure by end of Q2 2026."
 - [ ] ISMS-IMP-A.8.31.2 approved by CISO
 - [ ] ISMS-IMP-A.8.31.3 approved by CISO (executive sign-off)
 
-
 **Remediation Tracking:**
 
 - [ ] All gaps have assigned owners
@@ -848,12 +786,10 @@ for closure by end of Q2 2026."
 - [ ] Remediation approach documented for each gap
 - [ ] Risk acceptance documented (if any gaps accepted)
 
-
 **Historical Data:**
 
 - [ ] Previous quarter dashboard archived
 - [ ] Trend analysis complete (if 2+ quarters available)
-
 
 **Audit Readiness Status** (auto-calculated):
 ```
@@ -872,7 +808,6 @@ Status:
 - Complete this checklist BEFORE executive presentation
 - Address any missing items before audit
 - Document reasons for incomplete items (with remediation plan)
-
 
 ---
 
@@ -906,7 +841,6 @@ Status:
 - Have remediation plan ready for any critical gaps
 - Document any conditions attached to approval
 
-
 ---
 
 ## Dashboard Interpretation
@@ -920,13 +854,11 @@ Status:
 - **70-89%**: ⚠️ Partial - Significant gaps, active remediation needed
 - **<70%**: ❌ Non-Compliant - Major gaps, immediate action required
 
-
 **Domain-Specific Scores:**
 
 - Use same interpretation as overall score
 - Prioritize domains with <90% compliance
 - Critical domains (Production Access, Data Separation) should be 100%
-
 
 ### Critical Metrics
 
@@ -936,13 +868,11 @@ Status:
 - **1-2 developers**: 🔴 MAJOR VIOLATION (immediate remediation)
 - **3+ developers**: 🔴 SEVERE VIOLATION (escalate to executive management)
 
-
 **Gap Count:**
 
 - **0 critical gaps**: ✅ Excellent
 - **1-3 critical gaps**: ⚠️ Acceptable (with clear remediation plan)
 - **4+ critical gaps**: ❌ Concerning (prioritize closure)
-
 
 ### Trend Interpretation
 
@@ -952,13 +882,11 @@ Status:
 - Gap count decreasing each quarter
 - Critical gaps closed within target timelines
 
-
 **Concerning Trends:**
 
 - Compliance score stagnant or declining
 - Gap count increasing
 - Critical gaps not closing (aging)
-
 
 ---
 
@@ -976,7 +904,6 @@ Status:
 - Verify approval signatures present
 - Confirm no pending changes
 
-
 ---
 
 ### Pitfall 2: Manual Data Entry Errors
@@ -990,7 +917,6 @@ Status:
 - Copy-paste gap data directly from source workbooks
 - Use Excel formulas where possible
 - Double-check gap counts match source assessments
-
 
 ---
 
@@ -1006,7 +932,6 @@ Use correct mapping:
 - ✅ Compliant = 100%
 - ⚠️ Partial = 50%
 - ❌ Non-Compliant = 0%
-
 
 OR count compliant items / total items
 
@@ -1024,7 +949,6 @@ OR count compliant items / total items
 - Default weights: Production Access (25%), Data Separation (20%)
 - Adjust weights only with CISO approval
 
-
 ---
 
 ### Pitfall 5: Missing Historical Context
@@ -1038,7 +962,6 @@ OR count compliant items / total items
 - Archive approved dashboard after each quarter
 - Maintain dashboard repository (last 8 quarters minimum)
 - Document any methodology changes between quarters
-
 
 ---
 
@@ -1054,7 +977,6 @@ OR count compliant items / total items
 - Quantify gaps: "3 critical gaps remaining, down from 7"
 - Clear action items: "Close network gaps by Feb 28"
 
-
 ---
 
 ## Quality Checklist
@@ -1069,7 +991,6 @@ Before submitting dashboard for approval, verify:
 - [ ] Compliance status from all domains documented
 - [ ] Developer production access count verified (from A.8.31.2, Sheet 4)
 
-
 ### Calculations
 
 - [ ] Domain compliance % calculated correctly
@@ -1077,7 +998,6 @@ Before submitting dashboard for approval, verify:
 - [ ] Overall compliance score = weighted average (not simple average)
 - [ ] Critical metrics auto-calculated correctly
 - [ ] Trend analysis formulas working (if historical data)
-
 
 ### Completeness
 
@@ -1087,7 +1007,6 @@ Before submitting dashboard for approval, verify:
 - [ ] Audit readiness checklist complete (Sheet 8)
 - [ ] All formulas working (no #REF! or #VALUE! errors)
 
-
 ### Executive Readiness
 
 - [ ] Sheet 5 (Executive Summary) is 1-page and presentation-ready
@@ -1096,14 +1015,12 @@ Before submitting dashboard for approval, verify:
 - [ ] Next steps actionable with dates
 - [ ] Business impact clear (not just technical details)
 
-
 ### Audit Readiness
 
 - [ ] Evidence package complete
 - [ ] All approvals obtained
 - [ ] Historical data archived
 - [ ] Audit readiness ≥95%
-
 
 ---
 
@@ -1128,7 +1045,6 @@ Before submitting dashboard for approval, verify:
 - Critical requirement met (zero developer production access)
 - Top gaps and remediation plan with dates
 
-
 ### Approval Workflow
 
 **Level 1: Information Security Team Review**
@@ -1137,13 +1053,11 @@ Before submitting dashboard for approval, verify:
 - **Focus:** Data accuracy, completeness
 - **Timeline:** 1-2 business days
 
-
 **Level 2: Executive Approval**
 
 - **Reviewer:** CISO
 - **Focus:** Strategic alignment, risk acceptance
 - **Timeline:** 1-2 business days
-
 
 ### Approval Documentation
 
@@ -1180,7 +1094,6 @@ Before submitting dashboard for approval, verify:
 - Alert on new critical findings (ad-hoc assessment if needed)
 - Update dashboard if major changes (environment added/removed)
 
-
 ---
 
 **END OF PART I: USER COMPLETION GUIDE**
@@ -1216,7 +1129,6 @@ The Environment Separation Compliance Dashboard workbook consists of 8 sheets:
   - Text: "ISO/IEC 27001:2022 - Control A.8.31: Executive Compliance Summary & Trend Analysis"
   - Style: Medium blue header (4472C4), white text, centered, 30px height
 
-
 ### Document Information Block (Rows 4-12)
 
 | Row | Column A (Label) | Column B (Value) | Column B Style |
@@ -1235,7 +1147,6 @@ The Environment Separation Compliance Dashboard workbook consists of 8 sheets:
 
 - **Row 14:** "How to Use This Dashboard" (bold, underlined)
 - **Rows 15-23:** Numbered instructions (1-9)
-
 
 ```
 1. PREREQUISITE: Complete ISMS-IMP-A.8.31.1 and ISMS-IMP-A.8.31.2 FIRST
@@ -1262,7 +1173,6 @@ The Environment Separation Compliance Dashboard workbook consists of 8 sheets:
 
 - **Row 32:** "Critical Compliance Metrics" (bold, underlined)
 
-
 | Metric | Target | Actual | Status |
 |--------|--------|--------|--------|
 | Developer Production Access | 0 | [From A.8.31.2, Sheet 4] | [✅ if 0, 🔴 if >0] |
@@ -1283,7 +1193,6 @@ Consolidate all gaps from both source assessments (A.8.31.1 + A.8.31.2) into sin
   
 - **Row 2 (Merged A2:K2):** "Import ALL gaps from A.8.31.1 (Architecture) + A.8.31.2 (Access Control) - deduplicate if necessary"
   - Style: Light blue (B4C7E7), dark text, centered, 25px height
-
 
 ### Gap Count Summary (Rows 4-9)
 
@@ -1321,14 +1230,12 @@ Consolidate all gaps from both source assessments (A.8.31.1 + A.8.31.2) into sin
 - ISMS-IMP-A.8.31.1 (Architecture)
 - ISMS-IMP-A.8.31.2 (Access Control)
 
-
 **Column E: Risk Severity**
 
 - 🔴 Critical
 - 🟡 High
 - 🟢 Medium
 - ⚪ Low
-
 
 **Column G: Status**
 
@@ -1338,7 +1245,6 @@ Consolidate all gaps from both source assessments (A.8.31.1 + A.8.31.2) into sin
 - Pending Verification
 - Resolved
 - Risk Accepted
-
 
 ### Sample Data (Rows 12-17)
 
@@ -1357,7 +1263,6 @@ Consolidate all gaps from both source assessments (A.8.31.1 + A.8.31.2) into sin
 - Set Source Assessment = "ISMS-IMP-A.8.31.1 (Architecture)"
 - Document Source Sheet = "A.8.31.1, Sheet 8"
 
-
 **From A.8.31.2, Sheet 8 (Gap_Analysis):**
 
 - Copy all gap rows
@@ -1365,11 +1270,9 @@ Consolidate all gaps from both source assessments (A.8.31.1 + A.8.31.2) into sin
 - Set Source Assessment = "ISMS-IMP-A.8.31.2 (Access Control)"
 - Document Source Sheet = "A.8.31.2, Sheet 8"
 
-
 **Deduplication:**
 
 - If same gap appears in both assessments, keep one and note both sources
-
 
 ### Conditional Formatting
 
@@ -1379,7 +1282,6 @@ Consolidate all gaps from both source assessments (A.8.31.1 + A.8.31.2) into sin
 - 🟡 High: Orange fill (FFD966)
 - 🟢 Medium: Yellow fill (FFEB9C)
 - ⚪ Low: Light gray fill (F2F2F2)
-
 
 ---
 
@@ -1395,7 +1297,6 @@ Extract compliance status from all domains across both source assessments.
   
 - **Row 2 (Merged A2:F2):** "Extract compliance status from ALL domains in A.8.31.1 and A.8.31.2"
   - Style: Light blue (B4C7E7), dark text, centered, 25px height
-
 
 ### Overall Summary (Rows 4-7)
 
@@ -1426,7 +1327,6 @@ Extract compliance status from all domains across both source assessments.
 - ✅ Compliant (≥90%)
 - ⚠️ Partial (70-89%)
 - ❌ Non-Compliant (<70%)
-
 
 ### Domain Structure (Rows 10+)
 
@@ -1468,7 +1368,6 @@ Extract compliance status from all domains across both source assessments.
   - "Occasional" = 50%
   - "Frequent" = 0%
 
-
 ### Status Auto-Assignment
 
 **Column E (Status):**
@@ -1486,7 +1385,6 @@ Extract compliance status from all domains across both source assessments.
 - 70-89%: Yellow fill (FFEB9C)
 - <70%: Red fill (FFC7CE)
 
-
 ---
 
 ## Sheet 4: Compliance_Scoring
@@ -1501,7 +1399,6 @@ Calculate weighted overall compliance score from domain scores.
   
 - **Row 2 (Merged A2:E2):** "Weighted compliance score calculation - Critical domains weighted higher"
   - Style: Light blue (B4C7E7), dark text, centered, 25px height
-
 
 ### Overall Compliance Summary (Rows 4-8)
 
@@ -1521,7 +1418,6 @@ Where:
 
 - Column C = Domain Weight (%)
 - Column D = Domain Compliance Score (%)
-
 
 **Compliance Grade Formula (Row 5):**
 ```excel
@@ -1589,11 +1485,9 @@ MFA Enforcement: 80% × 5% = 4.0
 - 70-89%: Yellow fill (FFEB9C), dark text
 - <70%: Red fill (FFC7CE), dark text
 
-
 **Domain Scores (Column B):**
 
 - Same as overall score
-
 
 ---
 
@@ -1609,7 +1503,6 @@ MFA Enforcement: 80% × 5% = 4.0
   
 - **Row 2 (Merged A2:F2):** "Quarter: [Q1 2026] | Assessment Date: [Date]"
   - Style: Medium blue (4472C4), white text, centered, 30px height
-
 
 ### Key Metrics Dashboard (Rows 4-15)
 
@@ -1657,7 +1550,6 @@ MFA Enforcement: 80% × 5% = 4.0
 - ↓ Declining (score decreased)
 - N/A (first assessment, no comparison)
 
-
 ### Executive Commentary (Rows 32-40)
 
 **Row 32:** "Executive Summary" (bold, underlined)
@@ -1671,7 +1563,6 @@ MFA Enforcement: 80% × 5% = 4.0
 - Key achievements this quarter
 - Critical concerns
 - Business impact
-
 
 Example:
 "Environment separation compliance improved to 95.5% this quarter, 
@@ -1756,7 +1647,6 @@ Track compliance trends over multiple quarters (requires historical data).
 - **Row 2 (Merged A2:G2):** "Historical compliance tracking - minimum 2 quarters required for trend analysis"
   - Style: Light blue (B4C7E7), dark text, centered, 25px height
 
-
 ### Historical Compliance Scores (Rows 4+)
 
 **Column Headers (Row 4):**
@@ -1797,7 +1687,6 @@ Track compliance trends over multiple quarters (requires historical data).
 - Negative = improvement (more closed than opened)
 - Positive = degradation (more opened than closed)
 
-
 ### Trend Analysis Summary (Rows 11-16)
 
 | Metric | Value | Interpretation |
@@ -1831,7 +1720,6 @@ Track compliance trends over multiple quarters (requires historical data).
 - Target line: 90% (horizontal reference line)
 - Data series: Overall Compliance (%)
 
-
 **Chart Title:** "Environment Separation Compliance Trend"
 
 ---
@@ -1848,7 +1736,6 @@ Risk-prioritized remediation plan for all open gaps.
   
 - **Row 2 (Merged A2:K2):** "Risk-prioritized action plan - Critical gaps must be closed within 30 days"
   - Style: Light blue (B4C7E7), dark text, centered, 25px height
-
 
 ### Prioritization Summary (Rows 4-9)
 
@@ -1887,14 +1774,12 @@ Risk-prioritized remediation plan for all open gaps.
 - 🟢 P2 - Medium (≤180 days)
 - ⚪ P3 - Low (as resources allow)
 
-
 **Column D: Risk Severity** (from Sheet 2)
 
 - 🔴 Critical
 - 🟡 High
 - 🟢 Medium
 - ⚪ Low
-
 
 **Column H: Status** (from Sheet 2)
 
@@ -1904,7 +1789,6 @@ Risk-prioritized remediation plan for all open gaps.
 - Pending Verification
 - Resolved
 - Risk Accepted
-
 
 ### Sample Data (Rows 12-16)
 
@@ -1945,13 +1829,11 @@ P3: No auto-calculation
 - P2 (Medium): Yellow fill (FFEB9C)
 - P3 (Low): Light gray fill (F2F2F2)
 
-
 **Target Date column:**
 
 - Past due (date < TODAY()): Red text, bold
 - Due within 7 days: Orange text, bold
 - Future: Normal
-
 
 **% Complete column:**
 
@@ -1959,7 +1841,6 @@ P3: No auto-calculation
 - 34-66%: Yellow fill
 - 67-99%: Light green fill
 - 100%: Dark green fill
-
 
 ---
 
@@ -1975,7 +1856,6 @@ Consolidated evidence package from both source assessments and audit readiness v
   
 - **Row 2 (Merged A2:D2):** "Evidence package verification - Must achieve ≥95% for audit readiness"
   - Style: Light blue (B4C7E7), dark text, centered, 25px height
-
 
 ### Audit Readiness Score (Rows 4-6)
 
@@ -1999,7 +1879,6 @@ Consolidated evidence package from both source assessments and audit readiness v
 - 85-94%: Yellow fill (FFEB9C), bold
 - <85%: Red fill (FFC7CE), bold
 
-
 ### Column Headers (Row 8)
 
 | Column | Header | Width | Data Type |
@@ -2019,7 +1898,6 @@ Consolidated evidence package from both source assessments and audit readiness v
 - ❌ No
 - ⚠️ Partial
 - N/A
-
 
 ### Checklist Categories
 
@@ -2092,7 +1970,6 @@ Multi-level approval workflow and formal executive sign-off for the compliance d
 - **Row 2 (Merged A2:F2):** "Executive approval workflow - Dashboard requires CISO sign-off before distribution"
   - Style: Light blue (B4C7E7), dark text, centered, 25px height
 
-
 ### Dashboard Summary (Rows 4-12)
 
 | Row | Attribute | Value |
@@ -2107,14 +1984,12 @@ Multi-level approval workflow and formal executive sign-off for the compliance d
 | 11 | Total Gaps: | [From Sheet 2 - Consolidated_Gap_Analysis] |
 | 12 | Critical Gaps: | [From Sheet 2] |
 
-
 ### Source Assessment Verification (Rows 14-18)
 
 | Source Assessment | Completed? | Approved? | Approval Date |
 |-------------------|------------|-----------|---------------|
 | ISMS-IMP-A.8.31.1 (Environment Architecture) | [✅/❌] | [✅/❌] | [Date] |
 | ISMS-IMP-A.8.31.2 (Environment Access Control) | [✅/❌] | [✅/❌] | [Date] |
-
 
 ### Critical Compliance Verification (Rows 20-24)
 
@@ -2125,7 +2000,6 @@ Multi-level approval workflow and formal executive sign-off for the compliance d
 | Developer Production Access Count | 0 | [From A.8.31.2] | [✅ if 0, 🔴 MAJOR VIOLATION if >0] |
 | Data Separation Compliance | 100% | [From A.8.31.1] | [✅/⚠️/❌] |
 | Overall Compliance Score | ≥90% | [From Sheet 4] | [✅/⚠️/❌] |
-
 
 ### Approval Workflow (Rows 26-36)
 
@@ -2146,7 +2020,6 @@ Multi-level approval workflow and formal executive sign-off for the compliance d
 - Request Changes
 - Rejected
 
-
 **Level 1 Reviewers:**
 | Role | Name | Date | Decision | Comments | Signature |
 |------|------|------|----------|----------|-----------|
@@ -2159,7 +2032,6 @@ Multi-level approval workflow and formal executive sign-off for the compliance d
 | CISO | [User Input] | [User Input] | [Dropdown] | [User Input] | [User Input] |
 | CTO (optional) | [User Input] | [User Input] | [Dropdown] | [User Input] | [User Input] |
 
-
 ### Approval Status Summary (Rows 38-41)
 
 | Metric | Value | Status |
@@ -2167,7 +2039,6 @@ Multi-level approval workflow and formal executive sign-off for the compliance d
 | Level 1 (Info Sec) Status | [Auto-calculated] | [✅/⚠️/❌] |
 | Level 2 (Executive) Status | [Auto-calculated] | [✅/⚠️/❌] |
 | **Overall Approval Status** | [Auto-calculated] | [✅ Approved / ⚠️ Pending / ❌ Not Approved] |
-
 
 ### Distribution List (Rows 43-50)
 
@@ -2181,7 +2052,6 @@ Multi-level approval workflow and formal executive sign-off for the compliance d
 | Cloud Architect | Technical Lead | [Date] | Email + SharePoint |
 | IAM Administrator | Access Control Lead | [Date] | Email + SharePoint |
 | Compliance Officer | Audit Coordination | [Date] | Email + SharePoint |
-
 
 ### Next Dashboard Schedule (Rows 52-55)
 
@@ -2279,13 +2149,11 @@ Overall Score = Σ (Domain Score × Domain Weight)
 - Sheet 8: Gap_Analysis → All architecture gaps
 - Sheets 2-7: Compliance status → Domain scores
 
-
 **From ISMS-IMP-A.8.31.2 (Access Control):**
 
 - Sheet 8: Gap_Analysis → All access control gaps
 - Sheet 4: Production access verification → Developer count
 - Sheets 2-7: Compliance status → Domain scores
-
 
 ### Output to Stakeholders
 
@@ -2295,12 +2163,10 @@ Overall Score = Σ (Domain Score × Domain Weight)
 - Overall compliance score and grade
 - Top gaps and remediation plan
 
-
 **To IT Operations:**
 
 - Sheet 7: Remediation_Action_Plan
 - Prioritized gaps with owners and dates
-
 
 **To Auditors:**
 
@@ -2308,12 +2174,10 @@ Overall Score = Σ (Domain Score × Domain Weight)
 - Sheet 6: Evidence_Summary (includes audit readiness checklist)
 - Evidence register references
 
-
 **To Risk Management:**
 
 - Sheet 2: Consolidated_Gap_Analysis
 - Risk severity and remediation status
-
 
 ### Output to Python Scripts
 
@@ -2324,7 +2188,6 @@ Overall Score = Σ (Domain Score × Domain Weight)
 - Applies conditional formatting
 - Generates embedded charts (trend analysis)
 - Exports to `.xlsx` format
-
 
 ---
 
@@ -2341,7 +2204,6 @@ Example: `A831-3-Compliance-Dashboard-Q1-2026-01-25.xlsx`
 - Author: [Organization] ISMS Team
 - Comments: Consolidated dashboard from A.8.31.1 (Architecture) + A.8.31.2 (Access Control)
 - Keywords: ISO27001, A.8.31, compliance dashboard, executive summary, trend analysis
-
 
 **Protection:**
 

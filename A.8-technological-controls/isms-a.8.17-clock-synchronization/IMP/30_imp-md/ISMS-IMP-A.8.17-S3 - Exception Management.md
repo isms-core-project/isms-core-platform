@@ -37,7 +37,6 @@ This document consists of two parts:
   - Section A: Implementation Guidance (exception categories, risk assessment, compensating controls)
   - Section B: Assessment Workbook Specification (Excel workbook structure, formulas, validation rules)
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -62,7 +61,6 @@ This assessment documents and manages systems that cannot meet the standard cloc
 - **Who approved the exception?** (Risk acceptance authority)
 - **When does the exception expire?** (Time-limited, permanent, or until remediated)
 
-
 **Key Principle:** "No system escapes accountability." Every system either meets clock synchronization requirements OR has a documented, approved exception with compensating controls. This assessment ensures no systems fall through the cracks.
 
 Think of this as the "exception register" for time synchronization - similar to how a firewall rule exception requires approval and documentation, systems that cannot synchronize properly require formal exception management.
@@ -77,14 +75,12 @@ Think of this as the "exception register" for time synchronization - similar to 
    - Sheet descriptions
    - Status legend and dropdown definitions
 
-
 2. **Exception_Requests** - New exception request workflow
 
    - System identification and justification
    - Risk assessment and compensating controls
    - Approval workflow tracking
    - Request status (Pending, Approved, Rejected)
-
 
 3. **Active_Exceptions** - Currently approved exceptions
 
@@ -93,13 +89,11 @@ Think of this as the "exception register" for time synchronization - similar to 
    - Compensating control verification
    - Responsible parties and review schedule
 
-
 4. **Expired_Exceptions** - Historical expired exceptions
 
    - Archive of previously approved exceptions
    - Expiration reason (Remediated, Decommissioned, Renewed)
    - Lessons learned and pattern analysis
-
 
 5. **Summary_Dashboard** - Exception metrics overview
 
@@ -107,7 +101,6 @@ Think of this as the "exception register" for time synchronization - similar to 
    - Exception categories breakdown
    - Upcoming expirations requiring action
    - Compliance gap summary
-
 
 ## How This Relates to Other A.8.17 Assessments
 
@@ -143,7 +136,6 @@ You SHOULD complete S1 and S2 first - exception management (S3) handles systems 
 - **Compensating Control Design** - Know alternatives to standard NTP synchronization
 - **Documentation Skills** - Can clearly articulate justifications and controls
 
-
 **You DON'T need to be a risk management expert!** The assessment provides guidance on exception categories, standard compensating controls, and approval criteria.
 
 ## Time Commitment
@@ -160,7 +152,6 @@ You SHOULD complete S1 and S2 first - exception management (S3) handles systems 
   - 30 minutes: Verify compensating controls still effective
   - 30 minutes: Update status of pending requests
   - 30 minutes: Archive expired exceptions and document lessons learned
-
 
 **Pro Tip:** Most exceptions are predictable categories (air-gapped OT, legacy systems, vendor appliances). Creating templates for common scenarios speeds future requests significantly.
 
@@ -201,13 +192,11 @@ Before starting, gather the following:
 - [ ] **System ownership information** (who is responsible for each system)
 - [ ] **System criticality classification** (critical, high, medium, low)
 
-
 **Technical Constraint Documentation:**
 
 - [ ] **Reason for non-compliance** for each system (air-gapped, legacy, vendor-locked)
 - [ ] **Technical assessment** of why standard NTP cannot be implemented
 - [ ] **Vendor documentation** (if vendor limitation prevents compliance)
-
 
 **Compensating Control Options:**
 
@@ -215,13 +204,11 @@ Before starting, gather the following:
 - [ ] **Implementation feasibility** for each compensating control
 - [ ] **Effectiveness assessment** of proposed alternatives
 
-
 **Approval Information:**
 
 - [ ] **Risk owner identification** for each system/business area
 - [ ] **CISO availability** for exception approvals
 - [ ] **Approval criteria** from ISMS-POL-A.8.17 Section 3.3
-
 
 ## Required Tools
 
@@ -231,20 +218,17 @@ Before starting, gather the following:
 - Asset management system (CMDB) for system details
 - This exception management workbook
 
-
 **For Risk Assessment:**
 
 - Organization's risk assessment methodology
 - Business impact classification criteria
 - Compensating control effectiveness evaluation
 
-
 **For Approvals:**
 
 - Access to risk owner for system-level exceptions
 - Access to CISO for high-risk exceptions
 - Email or workflow system for formal approvals
-
 
 ## Policy Requirements to Review
 
@@ -260,7 +244,6 @@ Before starting, familiarize yourself with key policy requirements from **ISMS-P
 - **REQ-817-022**: Maximum exception duration 12 months (must be renewed)
 - **REQ-817-023**: Permanent exceptions require CISO and Executive approval
 
-
 You'll be verifying compliance with these requirements in the assessment.
 
 ---
@@ -275,13 +258,11 @@ You'll be verifying compliance with these requirements in the assessment.
 - Categorize by reason for non-compliance
 - Prioritize by system criticality
 
-
 **STEP 2:** Research technical constraints
 
 - For each system, document why standard NTP cannot be implemented
 - Gather vendor documentation if applicable
 - Confirm air-gap requirements if claimed
-
 
 **STEP 3:** Design compensating controls
 
@@ -289,13 +270,11 @@ You'll be verifying compliance with these requirements in the assessment.
 - Assess effectiveness of each compensating control
 - Document implementation requirements
 
-
 **STEP 4:** Complete Exception_Requests sheet
 
 - Fill one row per exception request
 - Document justification, risk assessment, compensating controls
 - Mark required fields as mandatory
-
 
 **STEP 5:** Obtain approvals
 
@@ -303,13 +282,11 @@ You'll be verifying compliance with these requirements in the assessment.
 - Escalate to CISO for high-risk or permanent exceptions
 - Document approval in workbook
 
-
 **STEP 6:** Move approved exceptions to Active_Exceptions
 
 - Transfer approved requests with approval details
 - Set expiration dates (maximum 12 months)
 - Assign responsible party for ongoing verification
-
 
 **STEP 7:** Review expired exceptions
 
@@ -317,13 +294,11 @@ You'll be verifying compliance with these requirements in the assessment.
 - Initiate renewal process or confirm remediation
 - Archive expired exceptions in Expired_Exceptions sheet
 
-
 **STEP 8:** Update Summary_Dashboard
 
 - Verify metrics are accurate
 - Document trends and patterns
 - Flag upcoming expirations requiring action
-
 
 **STEP 9:** Collect evidence
 
@@ -331,12 +306,10 @@ You'll be verifying compliance with these requirements in the assessment.
 - Document compensating control verification
 - Screenshot monitoring dashboards
 
-
 **STEP 10:** Internal review and approval
 
 - Peer review for completeness
 - ISMS Officer sign-off on exception register
-
 
 ## Data Sources
 
@@ -348,20 +321,17 @@ You'll be verifying compliance with these requirements in the assessment.
 - Monitoring system alerts for sync failures
 - Security operations incident reports
 
-
 **System Details:**
 
 - Asset management system (CMDB)
 - Network diagrams
 - System documentation
 
-
 **Approval Records:**
 
 - Email archives
 - Workflow/ticketing system
 - ISMS document repository
-
 
 ---
 
@@ -432,7 +402,6 @@ You'll be verifying compliance with these requirements in the assessment.
 - Typical organizations: 1-10 pending requests
 - High: >10 requests suggests systemic compliance issues
 
-
 **Example Completed Rows:**
 
 | Request ID | System Name | System Type | Business Owner | Category | Justification | Risk Assessment | Compensating Controls | Duration | Request Date | Requested By | RO Approval | RO Date | CISO Approval | CISO Date | Status | Notes |
@@ -449,7 +418,6 @@ You'll be verifying compliance with these requirements in the assessment.
 - [ ] Permanent requests flagged for CISO + Executive approval?
 - [ ] Request status accurately reflects workflow position?
 
-
 **Common Mistakes to Avoid:**
 
 - **Generic justification** - "System cannot comply" is insufficient; explain WHY
@@ -457,7 +425,6 @@ You'll be verifying compliance with these requirements in the assessment.
 - **Skipping risk assessment** - Must document impact of non-compliance
 - **Permanent without escalation** - Permanent exceptions require CISO + Executive
 - **Stale requests** - Review and update pending requests monthly
-
 
 ---
 
@@ -498,7 +465,6 @@ You'll be verifying compliance with these requirements in the assessment.
 - Move from Exception_Requests when approved
 - Remove when expired (move to Expired_Exceptions)
 
-
 **Example Completed Rows:**
 
 | Exception ID | System Name | System Type | Business Owner | Category | Justification | Compensating Controls | Approval Date | Approved By | Expiration Date | Review Schedule | Last Review | Review Status | Responsible | Renewal Status | Notes |
@@ -515,7 +481,6 @@ You'll be verifying compliance with these requirements in the assessment.
 - [ ] Last review within review schedule period?
 - [ ] Expiring exceptions have renewal status tracked?
 
-
 **Common Mistakes to Avoid:**
 
 - **Missing approval documentation** - Every exception needs formal approval record
@@ -523,7 +488,6 @@ You'll be verifying compliance with these requirements in the assessment.
 - **Overdue reviews not flagged** - Review Status should show "Overdue" if past due
 - **No responsible party** - Someone must own ongoing compliance
 - **Permanent exceptions without proper approval** - Requires CISO + Executive
-
 
 ---
 
@@ -558,7 +522,6 @@ You'll be verifying compliance with these requirements in the assessment.
 - Move from Active_Exceptions when expired
 - Retain for minimum 3 years for audit trail
 
-
 **Example Completed Rows:**
 
 | Exception ID | System Name | System Type | Category | Original Approval | Expiration Date | Expiration Reason | Final Controls | Successor | Lessons Learned | Archived By | Archive Date | Notes |
@@ -572,7 +535,6 @@ You'll be verifying compliance with these requirements in the assessment.
 - [ ] Expiration reason documented for each?
 - [ ] Successor exception linked if renewed?
 - [ ] Lessons learned captured for significant exceptions?
-
 
 ---
 
@@ -660,26 +622,22 @@ Document notable patterns, trends, or concerns:
 - [ ] **Workflow records** - Ticketing system approval records
 - [ ] **Meeting minutes** - If approved in risk committee
 
-
 **Compensating Control Evidence:**
 
 - [ ] **Implementation documentation** - Proof controls are in place
 - [ ] **Verification records** - Results of compensating control reviews
 - [ ] **Monitoring screenshots** - If compensating control includes monitoring
 
-
 **Risk Assessment Evidence:**
 
 - [ ] **Risk assessment document** - Formal risk analysis for high-risk exceptions
 - [ ] **Impact analysis** - Documentation of potential impact if time unsynchronized
-
 
 **System Documentation:**
 
 - [ ] **Vendor documentation** - Confirming vendor limitations (if applicable)
 - [ ] **Technical assessment** - Confirming why NTP cannot be implemented
 - [ ] **Network diagrams** - Showing air-gap or isolation (if applicable)
-
 
 ## Evidence Naming Convention
 
@@ -718,7 +676,6 @@ Auditors and approvers need to understand WHY the system cannot comply to assess
 **HOW TO AVOID:**
 Be specific: "Air-gapped OT system per IEC 62443. Network connectivity would create safety risk."
 
-
 ## Missing Compensating Controls
 
 **MISTAKE:**
@@ -734,7 +691,6 @@ Every exception needs at least one compensating control. Examples:
 - Isolated time source within air-gapped network
 - Vendor-managed time synchronization
 
-
 ## Expired Exceptions Not Tracked
 
 **MISTAKE:**
@@ -747,7 +703,6 @@ Creates compliance gap - system neither compliant nor has valid exception.
 - Set calendar reminders 60 days before expiration
 - Review Summary_Dashboard weekly for upcoming expirations
 - Initiate renewal process early
-
 
 ## Permanent Exceptions Without Proper Approval
 
@@ -762,7 +717,6 @@ Policy requires CISO AND Executive approval for permanent exceptions.
 - Document Executive approval explicitly
 - Consider if "permanent" is truly necessary vs. annual renewal
 
-
 ## Compensating Controls Not Verified
 
 **MISTAKE:**
@@ -775,7 +729,6 @@ Unverified controls may not actually mitigate risk.
 - Set review schedule appropriate to risk level
 - Actually verify controls during review (not just check the box)
 - Document verification results
-
 
 ---
 
@@ -790,14 +743,12 @@ Before submitting for approval, verify:
 - [ ] All expired exceptions moved to Expired_Exceptions
 - [ ] Summary_Dashboard reflects current state
 
-
 **Data Accuracy:**
 
 - [ ] Exception IDs are unique and consistent
 - [ ] Dates are in YYYY-MM-DD format
 - [ ] Dropdown selections used (not free text)
 - [ ] Expiration dates calculated correctly (approval + duration)
-
 
 **Policy Compliance:**
 
@@ -808,13 +759,11 @@ Before submitting for approval, verify:
 - [ ] No exceptions exceed 12-month duration without renewal?
 - [ ] Review schedules appropriate for risk level?
 
-
 **Approval Documentation:**
 
 - [ ] Approval emails/records collected for all active exceptions?
 - [ ] Approver names documented in Active_Exceptions?
 - [ ] Approval dates documented?
-
 
 **Evidence:**
 
@@ -822,13 +771,11 @@ Before submitting for approval, verify:
 - [ ] Vendor documentation collected (if applicable)?
 - [ ] Risk assessments documented for high-risk exceptions?
 
-
 **Professional Presentation:**
 
 - [ ] No spelling errors or typos
 - [ ] Consistent formatting throughout
 - [ ] Notes provide useful context (not just "N/A")
-
 
 ---
 
@@ -842,18 +789,15 @@ Before submitting for approval, verify:
 - Verify exception counts match between sheets
 - Confirm all pending requests have current status
 
-
 **Step 2: Peer Review** (Recommended)
 
 - Have another team member review for completeness
 - Focus on: Are justifications clear? Are compensating controls adequate?
 
-
 **Step 3: ISMS Officer Review** (Required)
 
 - ISMS Officer checks policy compliance
 - Verifies: All exceptions approved? Controls documented? Reviews current?
-
 
 ## Formal Approval Workflow
 
@@ -870,12 +814,10 @@ Before submitting for approval, verify:
 - **Reviews:** Completeness, policy compliance, evidence collection
 - **Approves:** Assessment ready for management review
 
-
 **Level 2: CISO**
 
 - **Reviews:** Overall exception posture, risk acceptance appropriateness
 - **Approves:** Exception management process is effective
-
 
 ## Approval Criteria
 
@@ -895,7 +837,6 @@ Before submitting for approval, verify:
 - No evidence collected
 - Permanent exceptions without proper approval chain
 
-
 ## Post-Approval
 
 **After approval:**
@@ -914,7 +855,6 @@ Before submitting for approval, verify:
 - Archive expired exceptions
 - Update Summary_Dashboard metrics
 - Document any patterns or trends
-
 
 ---
 
@@ -965,7 +905,6 @@ This section provides technical guidance for managing clock synchronization exce
 - ISMS-IMP-A.8.17-S2 (Synchronization Verification)
 - ISMS-IMP-A.8.17-S4 (Compliance Dashboard)
 
-
 ---
 
 ## Exception Categories
@@ -980,7 +919,6 @@ This section provides technical guidance for managing clock synchronization exce
 - High-security classified systems
 - Research systems with sensitive data
 - Safety-critical systems per IEC 62443
-
 
 **Typical Justification:**
 
@@ -1002,7 +940,6 @@ This section provides technical guidance for managing clock synchronization exce
    - Expensive but provides ultimate independence
    - Typically only for critical infrastructure
 
-
 ---
 
 ### Legacy Systems (No NTP Support)
@@ -1015,7 +952,6 @@ This section provides technical guidance for managing clock synchronization exce
 - Old mainframe applications
 - Embedded systems with fixed firmware
 - Proprietary industrial controllers
-
 
 **Typical Justification:**
 
@@ -1038,7 +974,6 @@ This section provides technical guidance for managing clock synchronization exce
    - Apply offset in SIEM during correlation
    - Accept reduced accuracy for forensics
 
-
 ---
 
 ### Vendor Restrictions
@@ -1051,7 +986,6 @@ This section provides technical guidance for managing clock synchronization exce
 - Security appliances with vendor-managed time
 - Cloud services with provider time sync
 - Proprietary network devices
-
 
 **Typical Justification:**
 
@@ -1074,7 +1008,6 @@ This section provides technical guidance for managing clock synchronization exce
    - Track vendor roadmap for NTP support
    - Re-evaluate at exception renewal
 
-
 ---
 
 ### Regulatory Requirements
@@ -1086,7 +1019,6 @@ This section provides technical guidance for managing clock synchronization exce
 - Financial trading systems (MiFID II timestamp requirements)
 - Healthcare systems (specific time source requirements)
 - Government systems (certified time sources only)
-
 
 **Typical Justification:**
 
@@ -1104,7 +1036,6 @@ This section provides technical guidance for managing clock synchronization exce
    - Retain for regulatory retention period
    - Support audit inquiries
 
-
 ---
 
 ### Business Requirements
@@ -1116,7 +1047,6 @@ This section provides technical guidance for managing clock synchronization exce
 - Test/lab environments requiring time manipulation
 - Development systems with clock testing requirements
 - Demonstration systems with specific time scenarios
-
 
 **Typical Justification:**
 
@@ -1133,7 +1063,6 @@ This section provides technical guidance for managing clock synchronization exce
    - After testing cycles
    - Before production deployment
    - Documented procedure
-
 
 ---
 
@@ -1167,7 +1096,6 @@ This section provides technical guidance for managing clock synchronization exce
    - Medium: User convenience
    - Low: No operational impact
 
-
 ### Risk Rating Matrix
 
 | Impact | Compensating Control Effectiveness | Risk Rating |
@@ -1179,7 +1107,6 @@ This section provides technical guidance for managing clock synchronization exce
 | Medium | Any | Low-Medium - Risk owner approval |
 | Low | Any | Low - Standard exception |
 
-
 ### Documentation Requirements by Risk Level
 
 **Low Risk:**
@@ -1188,14 +1115,12 @@ This section provides technical guidance for managing clock synchronization exce
 - Compensating control description
 - Risk owner approval
 
-
 **Medium Risk:**
 
 - Detailed justification with technical assessment
 - Compensating control implementation evidence
 - Risk owner approval
 - Quarterly review
-
 
 **High Risk:**
 
@@ -1204,14 +1129,12 @@ This section provides technical guidance for managing clock synchronization exce
 - Risk owner AND CISO approval
 - Monthly review
 
-
 **Critical Risk:**
 
 - Full risk analysis with executive summary
 - Compensating control proof of effectiveness
 - Risk owner, CISO, AND Executive approval
 - Or: Do not approve exception
-
 
 ---
 
@@ -1242,7 +1165,6 @@ This section provides technical guidance for managing clock synchronization exce
 - Configure as NTP server for air-gapped network
 - Air-gapped systems point to local GPS NTP
 - Monitor GPS signal lock status
-
 
 **Verification:**
 
@@ -1284,7 +1206,6 @@ chronyc tracking   # Should show local GPS NTP as source
    - Sign-off by authorized personnel
    - File evidence (screenshot, log entry)
 
-
 **Frequency Guidance:**
 
 | System Drift Rate | Sync Frequency |
@@ -1292,7 +1213,6 @@ chronyc tracking   # Should show local GPS NTP as source
 | <1 second/day | Monthly |
 | 1-5 seconds/day | Weekly |
 | >5 seconds/day | Daily (or remediate) |
-
 
 ---
 
@@ -1317,7 +1237,6 @@ chronyc tracking   # Should show local GPS NTP as source
    - Document comparison to reference
    - Escalate to vendor if drift exceeds SLA
 
-
 **Alert Thresholds:**
 
 | System Criticality | Alert Threshold | Action |
@@ -1326,7 +1245,6 @@ chronyc tracking   # Should show local GPS NTP as source
 | High | >500ms | Same-day review |
 | Medium | >1 second | Next business day |
 | Low | >5 seconds | Weekly review |
-
 
 ---
 
@@ -1360,24 +1278,20 @@ chronyc tracking   # Should show local GPS NTP as source
 - Alignment: Center, Vertical Center, Wrap Text
 - Border: Thin borders all sides
 
-
 **Title Style:**
 
 - Font: Bold, Size 14, Dark Blue (366092)
 - Alignment: Left, Vertical Center
-
 
 **Data Cell Style:**
 
 - Alignment: Left, Vertical Center, Wrap Text
 - Border: Thin borders all sides
 
-
 **Center Style:**
 
 - Alignment: Center, Vertical Center
 - Border: Thin borders all sides
-
 
 ---
 
@@ -1392,12 +1306,10 @@ chronyc tracking   # Should show local GPS NTP as source
 - A1: "ISMS A.8.17-S3 - Exception Management" (Font: Bold 16, Dark Blue, Merged A1:F1)
 - A2: "Generated: [Timestamp]" (Font: Italic 10, Merged A2:F2)
 
-
 **Row 4-5:** Document Metadata
 
 - A4: "Document ID:" (Bold) | B4: "ISMS-IMP-A.8.17-S3" (Bold, Dark Blue)
 - A5: "Title:" (Bold) | B5: "Clock Synchronization Exception Management"
-
 
 **Row 7+:** Instructions Content
 
@@ -1408,13 +1320,11 @@ chronyc tracking   # Should show local GPS NTP as source
 - Compensating control guidance
 - Link to ISMS-POL-A.8.17 Section 3.3
 
-
 **Column Widths:**
 
 - A: 15
 - B: 80
 - C-F: 15 each
-
 
 ---
 
@@ -1452,13 +1362,11 @@ chronyc tracking   # Should show local GPS NTP as source
 - Formula: `"OT/ICS System,Legacy System,Vendor Appliance,Air-Gapped System,Embedded Device,Test/Lab System,Other"`
 - Applies To: C2:C100
 
-
 **Column E (Exception Category):**
 
 - Type: List
 - Formula: `"Air-Gapped (No Network),Legacy (No NTP Support),Vendor Restriction,Regulatory Requirement,Business Requirement,Other"`
 - Applies To: E2:E100
-
 
 **Column I (Requested Duration):**
 
@@ -1466,13 +1374,11 @@ chronyc tracking   # Should show local GPS NTP as source
 - Formula: `"3 months,6 months,12 months,Permanent"`
 - Applies To: I2:I100
 
-
 **Column L (Risk Owner Approval):**
 
 - Type: List
 - Formula: `"Pending,Approved,Rejected"`
 - Applies To: L2:L100
-
 
 **Column N (CISO Approval):**
 
@@ -1480,13 +1386,11 @@ chronyc tracking   # Should show local GPS NTP as source
 - Formula: `"Not Required,Pending,Approved,Rejected"`
 - Applies To: N2:N100
 
-
 **Column P (Request Status):**
 
 - Type: List
 - Formula: `"Draft,Submitted,Risk Owner Review,CISO Review,Approved,Rejected,Withdrawn"`
 - Applies To: P2:P100
-
 
 **Empty Template Rows:** Rows 2-20 (formatted with borders, no data)
 
@@ -1527,13 +1431,11 @@ chronyc tracking   # Should show local GPS NTP as source
 - Formula: `"Monthly,Quarterly,Semi-annually"`
 - Applies To: K2:K100
 
-
 **Column M (Review Status):**
 
 - Type: List
 - Formula: `"Current,Overdue,Review Scheduled"`
 - Applies To: M2:M100
-
 
 **Column O (Renewal Status):**
 
@@ -1541,13 +1443,11 @@ chronyc tracking   # Should show local GPS NTP as source
 - Formula: `"Not Due,In Progress,Renewed,Expiring Soon"`
 - Applies To: O2:O100
 
-
 **Conditional Formatting:**
 
 - Expiration Date < TODAY(): Red fill (expired)
 - Expiration Date < TODAY()+30: Yellow fill (expiring soon)
 - Review Status = "Overdue": Red text
-
 
 **Empty Template Rows:** Rows 2-20 (formatted with borders, no data)
 
@@ -1584,7 +1484,6 @@ chronyc tracking   # Should show local GPS NTP as source
 - Type: List
 - Formula: `"Remediated (Now Compliant),Renewed (New Exception),System Decommissioned,Rejected on Renewal,Risk Accepted Permanently"`
 - Applies To: G2:G100
-
 
 **Empty Template Rows:** Rows 2-20 (formatted with borders, no data)
 
@@ -1663,7 +1562,6 @@ Free-form text area for management comments.
 - `create_expired_exceptions_sheet()` - Generates Expired_Exceptions sheet
 - `create_summary_dashboard_sheet()` - Generates Summary_Dashboard sheet
 - `main()` - Orchestrates workbook generation
-
 
 **To regenerate workbook:**
 

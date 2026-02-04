@@ -44,7 +44,6 @@ This document consists of two parts:
   - Cell Styling Reference
   - Integration Points
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -67,7 +66,6 @@ This assessment documents the ACCESS CONTROL MECHANISMS for your environments an
 - Are break-glass emergency access procedures documented and monitored?
 - What gaps exist between access control implementation and policy requirements?
 
-
 #### Key Principle
 
 This assessment is **completely technology-agnostic and platform-independent**. You document YOUR specific access control system (whether Active Directory, AWS IAM, Azure RBAC, GCP IAM, Kubernetes RBAC, or on-premises), and verify access restrictions against generic policy requirements.
@@ -89,7 +87,6 @@ This is a MANDATORY requirement. Developers having routine production access = M
 - Access monitoring and audit logging
 - Access control gaps and remediation plans
 - Supporting evidence for audit
-
 
 #### How This Relates to Other A.8.31 Assessments
 
@@ -120,12 +117,10 @@ This assessment (A.8.31.2) requires A.8.31.1 to be completed first - you need th
 - Understanding of production access restrictions
 - Access to IAM admin consoles/tools
 
-
 #### Time Commitment
 
 - **Initial assessment:** 6-10 hours (for comprehensive access review)
 - **Quarterly updates:** 2-3 hours (update user lists, verify access changes)
-
 
 ### Expected Outputs
 
@@ -158,14 +153,12 @@ Before starting this assessment, gather:
 - Access to role assignment data
 - Access to audit logs (access attempts, permission changes)
 
-
 #### 2. User Data
 
 - Complete user inventory (all users with any environment access)
 - User → group/role assignments
 - User job titles and roles (developer, operations, QA, etc.)
 - Joiners/movers/leavers data (recent access changes)
-
 
 #### 3. Access Control Documentation
 
@@ -175,20 +168,17 @@ Before starting this assessment, gather:
 - Break-glass emergency access procedures
 - MFA enforcement policies
 
-
 #### 4. Environment Data (from A.8.31.1)
 
 - Environment inventory (dev, test, staging, production)
 - Environment names and purpose
 - Required for building access matrix
 
-
 #### 5. Policy Requirements
 
 - ISMS-POL-A.8.31, Section 2.2 (Environment Access Control Requirements)
 - ISMS-POL-A.8.31, Section 2.5 (Production Support Requirements)
 - ISMS-POL-00 (Regulatory Applicability Framework)
-
 
 ### Required Tools
 
@@ -197,7 +187,6 @@ Before starting this assessment, gather:
 - PowerShell/AWS CLI/Azure CLI/gcloud (for access data export)
 - Audit log analysis tools
 - Screen capture tools (for evidence screenshots)
-
 
 ### Dependencies
 
@@ -209,12 +198,10 @@ Before starting this assessment, gather:
 
 - Sheet 2: Environment_Inventory (environment names)
 
-
 **Outputs to A.8.31.3**:
 
 - Access control gaps (for consolidated compliance dashboard)
 - Production access violations (critical findings)
-
 
 ---
 
@@ -258,14 +245,12 @@ Before starting this assessment, gather:
 - Obtain IAM admin access
 - Review policy requirements
 
-
 **Outputs:**
 
 - Environment list ready
 - Assessment team identified
 - IAM access obtained
 - Timeline established
-
 
 #### Phase 2: User Inventory (1-2 hours)
 
@@ -276,20 +261,17 @@ Before starting this assessment, gather:
 - Document user roles (developer, operations, QA, etc.)
 - Document user status (active, inactive, terminated)
 
-
 **Outputs:**
 
 - Complete user inventory
 - User roles documented
 - Active/inactive status tracked
 
-
 **Common Pitfalls to Avoid:**
 
 - ❌ Missing former employees (terminated users with lingering access)
 - ❌ Service accounts not documented (non-human identities)
 - ❌ Contractor accounts not tracked separately
-
 
 #### Phase 3: Access Matrix Build (2-3 hours)
 
@@ -300,20 +282,17 @@ Before starting this assessment, gather:
 - Verify access via IAM system (don't assume)
 - Document access level (read-only, read-write, admin)
 
-
 **Outputs:**
 
 - Comprehensive access matrix
 - User → environment relationships documented
 - Access levels verified
 
-
 **Common Pitfalls to Avoid:**
 
 - ❌ Assuming access based on job title (verify actual permissions)
 - ❌ Missing inherited group access (check group memberships)
 - ❌ Not documenting service account access
-
 
 #### Phase 4: Production Access Verification (1-2 hours) - CRITICAL
 
@@ -325,20 +304,17 @@ Before starting this assessment, gather:
 - **CRITICAL CHECK**: Count developers with production access (SHOULD BE ZERO)
 - Document any developer production access as VIOLATION
 
-
 **Outputs:**
 
 - Production access user list
 - Developer production access count (TARGET: 0)
 - Violations documented
 
-
 **Common Pitfalls to Avoid:**
 
 - ❌ Developers with "read-only" production access (STILL VIOLATION - should be zero access)
 - ❌ Former developers now in operations (verify actual job title)
 - ❌ "Senior developers" with production access (STILL VIOLATION unless they're now operations)
-
 
 **CRITICAL FINDING**: If ANY developers have production access (except break-glass), this is a MAJOR AUDIT FINDING requiring immediate remediation.
 
@@ -351,20 +327,17 @@ Before starting this assessment, gather:
 - Document MFA enrollment status per user
 - Verify MFA cannot be bypassed
 
-
 **Outputs:**
 
 - MFA enforcement status
 - User MFA enrollment verification
 - MFA bypass check complete
 
-
 **Common Pitfalls to Avoid:**
 
 - ❌ MFA optional, not mandatory (VIOLATION)
 - ❌ Service accounts exempt from MFA (acceptable if documented)
 - ❌ MFA bypass procedures undocumented
-
 
 #### Phase 6: Break-Glass Documentation (1-2 hours)
 
@@ -376,7 +349,6 @@ Before starting this assessment, gather:
 - Review recent break-glass usage (if any)
 - Verify post-incident review process
 
-
 **Outputs:**
 
 - Break-glass procedure documentation
@@ -384,13 +356,11 @@ Before starting this assessment, gather:
 - Usage log (historical)
 - Post-incident review verification
 
-
 **Common Pitfalls to Avoid:**
 
 - ❌ Break-glass accounts used routinely (should be emergency-only)
 - ❌ No audit trail of break-glass usage
 - ❌ Break-glass accounts without time limits (access should expire)
-
 
 #### Phase 7: Access Monitoring Verification (1-2 hours)
 
@@ -402,20 +372,17 @@ Before starting this assessment, gather:
 - Verify unauthorized access attempts monitored and alerted
 - Document access review frequency
 
-
 **Outputs:**
 
 - Audit logging status per environment
 - Access monitoring procedures documented
 - Alert configuration verified
 
-
 **Common Pitfalls to Avoid:**
 
 - ❌ Audit logs not retained (e.g., only 7 days - need 90+ days)
 - ❌ Logs not monitored (collection without review is useless)
 - ❌ No alerts for unauthorized access attempts
-
 
 #### Phase 8: Gap Analysis (1-2 hours)
 
@@ -428,13 +395,11 @@ Before starting this assessment, gather:
 - Propose remediation for each gap
 - Estimate remediation effort and timeline
 
-
 **Outputs:**
 
 - Comprehensive gap analysis
 - Risk-prioritized remediation plan
 - Timeline for gap closure
-
 
 #### Phase 9: Evidence Collection (1-2 hours)
 
@@ -447,12 +412,10 @@ Before starting this assessment, gather:
 - Export audit logs (production access)
 - Document access review records
 
-
 **Outputs:**
 
 - Complete evidence package
 - Audit-ready documentation
-
 
 #### Phase 10: Review & Approval (variable)
 
@@ -463,12 +426,10 @@ Before starting this assessment, gather:
 - Security Team approval
 - CISO approval
 
-
 **Outputs:**
 
 - Approved assessment
 - Action items assigned
-
 
 #### Phase 11: Maintenance (ongoing)
 
@@ -479,12 +440,10 @@ Before starting this assessment, gather:
 - Track gap remediation progress
 - Monitor continuous compliance
 
-
 **Outputs:**
 
 - Up-to-date assessment
 - Compliance trend analysis
-
 
 ---
 
@@ -506,7 +465,6 @@ Before starting this assessment, gather:
 - Include your name and role for "Completed By"
 - Read the full instructions before starting
 
-
 ---
 
 ### Sheet 2: User Inventory
@@ -522,7 +480,6 @@ Before starting this assessment, gather:
    - Status (active, inactive, terminated)
    - Account type (human, service account)
 
-
 **Time:** 1-2 hours
 
 **Tips:**
@@ -531,7 +488,6 @@ Before starting this assessment, gather:
 - Include service accounts (non-human identities)
 - Mark terminated users (they should have zero access)
 - Verify status against HR records
-
 
 **Example Entry:**
 | User ID | Full Name | Job Title | Department | Status | Account Type |
@@ -557,7 +513,6 @@ Before starting this assessment, gather:
    - Access method (IAM role, AD group, RBAC, etc.)
    - Last verified date
 
-
 **Time:** 2-3 hours
 
 **Tips:**
@@ -566,7 +521,6 @@ Before starting this assessment, gather:
 - Verify inherited group access (user may not have direct access but has it via group)
 - Check for orphaned access (old permissions not removed)
 - Use conditional formatting to highlight production access
-
 
 **Example Entry:**
 | User ID | Development | Testing | Staging | Production | Production Access? |
@@ -579,7 +533,6 @@ Before starting this assessment, gather:
 
 - **Production column**: Only operations/support should have access
 - **Production Access? column**: Flags any non-operations access
-
 
 ---
 
@@ -596,7 +549,6 @@ Before starting this assessment, gather:
    - Access justification
    - Approval record
 
-
 **Time:** 1-2 hours (CRITICAL ASSESSMENT)
 
 **Tips:**
@@ -606,7 +558,6 @@ Before starting this assessment, gather:
 - "Read-only" production access for developers = STILL VIOLATION
 - "Senior developers" with production access = STILL VIOLATION
 - Break-glass access documented separately (Sheet 5)
-
 
 **Example Entry:**
 | User ID | Full Name | Job Title | Operations/Support Role? | Production Access Justified? | Compliance | Evidence |
@@ -620,7 +571,6 @@ Before starting this assessment, gather:
 - **Target**: ZERO developers with production access
 - **Actual**: [Count from this sheet]
 - **If > 0**: MAJOR AUDIT FINDING
-
 
 ---
 
@@ -636,7 +586,6 @@ Before starting this assessment, gather:
    - MFA device type (Authenticator app, hardware token, SMS)
    - MFA cannot be bypassed? (Verified)
 
-
 **Time:** 1 hour
 
 **Tips:**
@@ -645,7 +594,6 @@ Before starting this assessment, gather:
 - Service accounts may use alternative auth (API keys, certificates)
 - Document MFA enrollment from IAM system
 - Test MFA bypass (should fail)
-
 
 **Example Entry:**
 | User ID | Production Access | MFA Enrolled? | MFA Required? | MFA Device | MFA Bypass Possible? | Compliance |
@@ -657,7 +605,6 @@ Before starting this assessment, gather:
 
 - ❌ MFA optional, not mandatory (production access without MFA)
 - ❌ MFA bypass allowed (emergency access not documented)
-
 
 ---
 
@@ -685,7 +632,6 @@ Before starting this assessment, gather:
 - Post-incident review mandatory
 - Time-limited access (hours, not days)
 
-
 **Example Entry:**
 | Break-Glass Account | Purpose | Activation Approval | Time Limit | Last Used | Post-Incident Review? | Compliance |
 |---------------------|---------|---------------------|------------|-----------|----------------------|------------|
@@ -702,7 +648,6 @@ Before starting this assessment, gather:
 - ❌ No post-incident review
 - ❌ Break-glass access not time-limited
 
-
 ---
 
 ### Sheet 7: Access Monitoring & Audit Logging
@@ -718,7 +663,6 @@ Before starting this assessment, gather:
    - Alerts configured? (unauthorized access attempts)
    - Access review frequency (weekly, monthly, quarterly)
 
-
 **Time:** 1-2 hours
 
 **Tips:**
@@ -727,7 +671,6 @@ Before starting this assessment, gather:
 - Retention period: minimum 90 days (regulatory requirement may be longer)
 - Logs without monitoring = compliance checkbox (not security)
 - Unauthorized access attempts should trigger alerts
-
 
 **Example Entry:**
 | Environment | Logging Enabled? | Events Logged | Retention | Monitored? | Alerts | Access Review Frequency | Compliance |
@@ -743,7 +686,6 @@ Before starting this assessment, gather:
 - ✅ Retention ≥ 90 days
 - ✅ Monitored regularly
 - ✅ Alerts for unauthorized access
-
 
 ---
 
@@ -771,7 +713,6 @@ Before starting this assessment, gather:
 - Developer production access = HIGH severity (immediate remediation)
 - Prioritize High severity gaps first
 - Include compensating controls if remediation delayed
-
 
 **Example Entry:**
 | Gap ID | Description | Policy Violated | Severity | Remediation | Effort | Target Date | Owner |
@@ -807,7 +748,6 @@ Before starting this assessment, gather:
 - Export user → group/role assignments
 - Export audit logs (production access attempts)
 - Document access review records
-
 
 **Example Entry:**
 | Evidence ID | Type | Description | File Name | Date | Related Requirement | Sheet | Location |
@@ -891,7 +831,6 @@ Get-ADUser -Identity jsmith -Properties MemberOf | Select-Object -ExpandProperty
 - Implement read-only production dashboards (no direct access)
 - Document break-glass for emergencies only
 
-
 ---
 
 ### Pitfall 2: Terminated Users with Lingering Access
@@ -924,7 +863,6 @@ aws iam delete-access-key --user-name terminated-user --access-key-id AKIA...
 - Change policy from "MFA enabled" to "MFA required"
 - Block access if MFA not enrolled
 - Test bypass attempts (should fail)
-
 
 **AWS IAM Policy (enforce MFA):**
 ```json
@@ -960,7 +898,6 @@ aws iam delete-access-key --user-name terminated-user --access-key-id AKIA...
 - Document service account purpose
 - Verify service account credentials rotated
 
-
 ---
 
 ### Pitfall 5: Break-Glass Used Routinely
@@ -975,7 +912,6 @@ aws iam delete-access-key --user-name terminated-user --access-key-id AKIA...
 - If frequent usage, implement proper read-only production access for troubleshooting
 - Reserve break-glass for true emergencies only
 - Mandatory post-incident review for each use
-
 
 ---
 
@@ -992,7 +928,6 @@ aws iam delete-access-key --user-name terminated-user --access-key-id AKIA...
 - Schedule regular access reviews (weekly for production)
 - Document monitoring procedures
 
-
 ---
 
 ## Quality Checklist
@@ -1008,7 +943,6 @@ Before submitting your assessment for approval, verify:
 - [ ] All gaps identified and documented
 - [ ] All evidence collected and organized
 
-
 ### Accuracy
 
 - [ ] User inventory matches IAM system (exported, not manually typed)
@@ -1018,7 +952,6 @@ Before submitting your assessment for approval, verify:
 - [ ] Break-glass usage verified (checked incident logs)
 - [ ] Audit logging verified (checked actual log retention)
 
-
 ### Critical Compliance Checks
 
 - [ ] **ZERO developers with production access** (or documented violations)
@@ -1026,7 +959,6 @@ Before submitting your assessment for approval, verify:
 - [ ] MFA MANDATORY for production access (not optional)
 - [ ] Break-glass usage rare (not routine)
 - [ ] Audit logging enabled for production (minimum 90 days retention)
-
 
 ### Evidence Quality
 
@@ -1036,14 +968,12 @@ Before submitting your assessment for approval, verify:
 - [ ] Evidence register complete with file locations
 - [ ] Evidence accessible to reviewers/auditors
 
-
 ### Policy Compliance
 
 - [ ] Assessment addresses all requirements from ISMS-POL-A.8.31, Section 2.2
 - [ ] Any policy deviations documented as gaps
 - [ ] Exceptions properly documented with approvals
 - [ ] Regulatory requirements addressed (FINMA, DORA, NIS2 if applicable)
-
 
 ---
 
@@ -1058,14 +988,12 @@ Before submitting your assessment for approval, verify:
 - **Timeline:** 2-3 business days
 - **Outcome:** Approve, Request Changes, or Reject
 
-
 **Review Criteria:**
 
 - Is the user inventory complete and accurate?
 - Is the access matrix verified against IAM system?
 - Are production access restrictions enforced?
 - Is evidence sufficient and verifiable?
-
 
 #### Level 2: Security Review
 
@@ -1074,14 +1002,12 @@ Before submitting your assessment for approval, verify:
 - **Timeline:** 2-3 business days
 - **Outcome:** Approve, Request Changes, or Reject
 
-
 **Review Criteria:**
 
 - Is zero developer production access enforced (or violations documented)?
 - Are gaps realistic and properly prioritized?
 - Are remediation timelines appropriate for risk severity?
 - Is evidence sufficient for audit?
-
 
 #### Level 3: Executive Approval
 
@@ -1090,14 +1016,12 @@ Before submitting your assessment for approval, verify:
 - **Timeline:** 1-2 business days
 - **Outcome:** Approve or Request Changes
 
-
 **Review Criteria:**
 
 - Are remediation resource requirements acceptable?
 - Do timelines align with business priorities?
 - Is risk posture acceptable?
 - Are there budget implications?
-
 
 ### Approval Documentation
 
@@ -1125,7 +1049,6 @@ Document approvals in Sheet 9 (Evidence Register):
 - Sheet 7: Gap Analysis (gaps remediated? new gaps?)
 - Sheet 9: Evidence Register (refresh dated evidence)
 
-
 **Time required:** 2-3 hours
 
 ### Trigger-Based Updates
@@ -1139,7 +1062,6 @@ Document approvals in Sheet 9 (Evidence Register):
 - Security incident (unauthorized access) - document as gap
 - Audit finding (document as gap, track remediation)
 
-
 ### Continuous Compliance Monitoring
 
 **Automated monitoring:**
@@ -1150,14 +1072,12 @@ Document approvals in Sheet 9 (Evidence Register):
 - MFA enrollment changes (alert if user disables MFA)
 - Break-glass usage (alert on activation)
 
-
 **Manual spot checks:**
 
 - Monthly: Review production access list (verify still operations-only)
 - Monthly: Review break-glass usage (should be rare)
 - Quarterly: Full access matrix verification
 - Quarterly: Terminated user access audit (should be zero)
-
 
 ---
 
@@ -1196,7 +1116,6 @@ The Environment Access Control Assessment workbook consists of 10 sheets:
   - Text: "ISO/IEC 27001:2022 - Control A.8.31: Separation of Development, Test and Production Environments"
   - Style: Medium blue header (4472C4), white text, centered, 30px height
 
-
 ### Document Information Block (Rows 4-12)
 
 | Row | Column A (Label) | Column B (Value) | Column B Style |
@@ -1217,7 +1136,6 @@ The Environment Access Control Assessment workbook consists of 10 sheets:
 
 - **Row 14:** "How to Use This Workbook" (bold, underlined)
 - **Rows 15-25:** Numbered instructions (1-11)
-
 
 ```
 1. PREREQUISITE: Complete ISMS-IMP-A.8.31.1 (Environment Architecture) FIRST
@@ -1240,7 +1158,6 @@ The Environment Access Control Assessment workbook consists of 10 sheets:
 - **Row 29:** "Developer production access = MAJOR AUDIT FINDING"
 - **Row 30:** "Target: 0 developers with production access"
 
-
 ### Status Legend (Rows 32-38)
 
 | Symbol | Status | Description | Color Code |
@@ -1256,7 +1173,6 @@ The Environment Access Control Assessment workbook consists of 10 sheets:
 
 - **Row 40:** "Acceptable Evidence (Examples)" (bold, underlined)
 - **Rows 41-54:** Bulleted list with checkmarks
-
 
 ```
 ✓ IAM policy exports (AWS IAM, Azure RBAC, GCP IAM)
@@ -1289,7 +1205,6 @@ Document all users with access to ANY environment (human users + service account
   
 - **Row 2 (Merged A2:H2):** "Document ALL users with environment access - include human users, service accounts, and TERMINATED users"
   - Style: Light blue (B4C7E7), dark text, centered, 25px height
-
 
 ### Column Headers (Row 4)
 
@@ -1324,7 +1239,6 @@ Document all users with access to ANY environment (human users + service account
 - Service Account
 - Other
 
-
 **Column E: Account Type**
 
 - Human (regular employee)
@@ -1333,7 +1247,6 @@ Document all users with access to ANY environment (human users + service account
 - Break-Glass Account
 - Shared Account (discouraged)
 
-
 **Column F: Employment Status**
 
 - Active
@@ -1341,7 +1254,6 @@ Document all users with access to ANY environment (human users + service account
 - Terminated
 - Contractor (active)
 - Contractor (ended)
-
 
 ### Sample Data (Rows 5-10)
 
@@ -1365,7 +1277,6 @@ Yellow-filled cells (FFEB9C) for user data entry.
 - Service accounts must be documented (non-human identities)
 - Break-glass accounts tracked separately
 
-
 ---
 
 ## Sheet 3: Access_Matrix
@@ -1383,7 +1294,6 @@ Document user → environment access mapping (who can access which environments)
 
 - **Row 3:** "CRITICAL: Production column should show ZERO developers"
   - Style: Red background (FFC7CE), dark text, bold, centered, 25px height
-
 
 ### Column Headers (Row 5)
 
@@ -1411,7 +1321,6 @@ Document user → environment access mapping (who can access which environments)
 - Header: Dark red background (8B0000), white text
 - Cells with "Admin" or "Read-Write": Red fill (FFC7CE) - triggers production access verification
 
-
 ### Data Validation (Dropdowns)
 
 **Columns D-G: Environment Access Level**
@@ -1422,14 +1331,12 @@ Document user → environment access mapping (who can access which environments)
 - Admin (full control)
 - Via Break-Glass Only
 
-
 **Column H: Production Access Justified? (only if Column G ≠ None)**
 
 - ✅ Yes (Operations/Support role)
 - ❌ No (Developer role - VIOLATION)
 - ⚠️ Break-Glass Only
 - N/A (no production access)
-
 
 ### Sample Data (Rows 6-11)
 
@@ -1449,11 +1356,9 @@ Document user → environment access mapping (who can access which environments)
 - If value = "Read-Only" AND Job Title contains "Developer" → Red fill (FFC7CE)
 - If value = "❌ None" → Green fill (C6EFCE)
 
-
 **Terminated Users:**
 
 - If Employment Status (from Sheet 2) = "Terminated" AND any access column ≠ "❌ None" → Red fill (FFC7CE)
-
 
 ### Critical Verification
 
@@ -1479,7 +1384,6 @@ Verify zero developer production access (CRITICAL COMPLIANCE CHECK).
 
 - **Row 3 (Merged A3:H3):** "List ALL users with production access - verify each is Operations/Support role"
   - Style: Light red (FFC7CE), dark text, centered, 25px height
-
 
 ### Summary Metrics (Rows 5-10)
 
@@ -1516,13 +1420,11 @@ Verify zero developer production access (CRITICAL COMPLIANCE CHECK).
 - Read-Only
 - Via Break-Glass Only
 
-
 **Column F: Operations/Support Role?**
 
 - ✅ Yes (Operations, SysAdmin, DBA, Security, Monitoring)
 - ❌ No (Developer, QA, Business Analyst) - VIOLATION
 - ⚠️ Service Account (acceptable if documented)
-
 
 **Column G: Compliance Status**
 
@@ -1530,7 +1432,6 @@ Verify zero developer production access (CRITICAL COMPLIANCE CHECK).
 - 🔴 MAJOR VIOLATION (Developer with production access)
 - ⚠️ Service Account (acceptable)
 - ⚠️ Break-Glass Only (acceptable if monitored)
-
 
 ### Sample Data (Rows 13-17)
 
@@ -1549,7 +1450,6 @@ Verify zero developer production access (CRITICAL COMPLIANCE CHECK).
 - Alert icon in Summary Metrics (Row 9)
 - Gap automatically created in Sheet 8 (Gap Analysis)
 
-
 ---
 
 ## Sheet 5: MFA_Enforcement
@@ -1564,7 +1464,6 @@ Verify MFA (Multi-Factor Authentication) is MANDATORY for production access.
   
 - **Row 2 (Merged A2:H2):** "Verify MFA is MANDATORY (not optional) for ALL production access"
   - Style: Light blue (B4C7E7), dark text, centered, 25px height
-
 
 ### MFA Policy Summary (Rows 4-8)
 
@@ -1601,7 +1500,6 @@ Verify MFA (Multi-Factor Authentication) is MANDATORY for production access.
 - ⚠️ Pending (enrollment in progress)
 - N/A (service account - alternative auth)
 
-
 **Column E: MFA Device Type**
 
 - Authenticator App (Google Authenticator, Microsoft Authenticator)
@@ -1611,14 +1509,12 @@ Verify MFA (Multi-Factor Authentication) is MANDATORY for production access.
 - API Key (service accounts only)
 - N/A
 
-
 **Column F: MFA Required or Optional?**
 
 - ✅ Required (mandatory - cannot bypass)
 - ⚠️ Optional (user can choose - VIOLATION)
 - ⚠️ Recommended (not enforced - VIOLATION)
 - N/A
-
 
 **Column G: MFA Bypass Possible?**
 
@@ -1627,14 +1523,12 @@ Verify MFA (Multi-Factor Authentication) is MANDATORY for production access.
 - ⚠️ Unknown (needs testing)
 - N/A
 
-
 **Column H: Compliance Status**
 
 - ✅ Compliant (MFA enrolled + required + no bypass)
 - ❌ Non-Compliant (MFA not enrolled or optional or bypass possible)
 - ⚠️ Service Account (alternative auth acceptable)
 - 📋 Remediation Planned
-
 
 ### Sample Data (Rows 11-15)
 
@@ -1652,7 +1546,6 @@ Verify MFA (Multi-Factor Authentication) is MANDATORY for production access.
 - [ ] MFA bypass = "No" (cannot be bypassed)
 - [ ] All production users enrolled (except service accounts with alternative auth)
 
-
 ---
 
 ## Sheet 6: BreakGlass_Emergency_Access
@@ -1667,7 +1560,6 @@ Document break-glass emergency access procedures and usage tracking.
   
 - **Row 2 (Merged A2:H2):** "Document emergency access procedures - usage should be RARE (monthly usage = process problem)"
   - Style: Light blue (B4C7E7), dark text, centered, 25px height
-
 
 ### Break-Glass Policy Summary (Rows 4-10)
 
@@ -1738,7 +1630,6 @@ Document break-glass emergency access procedures and usage tracking.
 - 4-10 uses: ⚠️ Occasional (review why so frequent)
 - 11+ uses: ❌ Frequent (becoming routine - process issue)
 
-
 ---
 
 ## Sheet 7: Access_Monitoring
@@ -1753,7 +1644,6 @@ Verify audit logging and access review processes.
   
 - **Row 2 (Merged A2:I2):** "Verify audit logging enabled, logs monitored, and access reviews performed regularly"
   - Style: Light blue (B4C7E7), dark text, centered, 25px height
-
 
 ### Column Headers (Row 4)
 
@@ -1780,20 +1670,17 @@ Verify audit logging and access review processes.
 - ⚠️ Partial (some events only)
 - ❌ No (not enabled) - VIOLATION
 
-
 **Column E: Logs Monitored?**
 
 - ✅ Yes (automated + manual review)
 - ⚠️ Partial (manual review only)
 - ❌ No (collection only, no review) - VIOLATION
 
-
 **Column G: Alerts Configured?**
 
 - ✅ Yes (unauthorized access → alert)
 - ⚠️ Partial (some alerts only)
 - ❌ No (no alerts) - VIOLATION
-
 
 **Column H: Access Review Frequency**
 
@@ -1803,13 +1690,11 @@ Verify audit logging and access review processes.
 - Quarterly
 - ❌ None (no reviews) - VIOLATION
 
-
 **Column I: Compliance Status**
 
 - ✅ Compliant (logging + monitoring + alerts + reviews)
 - ⚠️ Partial (missing some requirements)
 - ❌ Non-Compliant (critical gaps)
-
 
 ### Sample Data (Rows 5-8)
 
@@ -1830,7 +1715,6 @@ Verify audit logging and access review processes.
 - ✅ Alerts configured (unauthorized access)
 - ✅ Access reviews (minimum monthly, recommended weekly)
 
-
 ---
 
 ## Sheet 8: Gap_Analysis
@@ -1845,7 +1729,6 @@ Document all access control non-compliance areas, risk severity, and remediation
   
 - **Row 2 (Merged A2:J2):** "Document ALL access control gaps - prioritize by risk (developer production access = HIGH)"
   - Style: Light red (FFC7CE), dark text, bold, centered, 25px height
-
 
 ### Column Headers (Row 4)
 
@@ -1873,7 +1756,6 @@ Document all access control non-compliance areas, risk severity, and remediation
 - 🟢 Low (documentation gaps, manual processes)
 - ⚪ Info (awareness, no remediation)
 
-
 **Column J: Status**
 
 - 📋 Identified (not started)
@@ -1881,7 +1763,6 @@ Document all access control non-compliance areas, risk severity, and remediation
 - ✅ Remediated (completed, verified)
 - ⏸️ On Hold (dependencies or approvals)
 - ❌ Risk Accepted (executive decision)
-
 
 ### Sample Data (Rows 5-10)
 
@@ -1916,7 +1797,6 @@ Central registry of all supporting evidence for audit traceability.
 - **Row 2 (Merged A2:H2):** "Document ALL supporting evidence - IAM exports, audit logs, screenshots, access review records"
   - Style: Light blue (B4C7E7), dark text, centered, 25px height
 
-
 ### Column Headers (Row 4)
 
 | Column | Header | Width | Data Type |
@@ -1947,7 +1827,6 @@ Central registry of all supporting evidence for audit traceability.
 - Approval Record
 - Other
 
-
 **Column G: Related Sheet**
 
 - Sheet 2: User_Inventory
@@ -1958,7 +1837,6 @@ Central registry of all supporting evidence for audit traceability.
 - Sheet 7: Access_Monitoring
 - Sheet 8: Gap_Analysis
 - Multiple Sheets
-
 
 ### Sample Data (Rows 5-15)
 
@@ -2010,7 +1888,6 @@ Multi-level approval workflow and formal sign-off for the assessment.
 - **Row 2 (Merged A2:F2):** "Formal approval workflow - Assessment requires three-level approval before finalization"
   - Style: Light blue (B4C7E7), dark text, centered, 25px height
 
-
 ### Assessment Summary (Rows 4-11)
 
 | Row | Attribute | Value |
@@ -2024,7 +1901,6 @@ Multi-level approval workflow and formal sign-off for the assessment.
 | 10 | Total Gaps Identified: | [Count from Sheet 8] |
 | 11 | Overall Compliance Status: | [Summary status] |
 
-
 ### Critical Compliance Check (Rows 13-16)
 
 **Row 13:** "CRITICAL COMPLIANCE VERIFICATION" (bold, red background)
@@ -2034,7 +1910,6 @@ Multi-level approval workflow and formal sign-off for the assessment.
 | Developer Production Access Count | 0 | [From Sheet 3] | [✅ if 0, 🔴 MAJOR VIOLATION if >0] |
 | MFA Enforcement for Production | 100% | [From Sheet 7] | [✅/⚠️/❌] |
 | Terminated Users with Access | 0 | [Calculated] | [✅ if 0, 🔴 VIOLATION if >0] |
-
 
 ### Approval Workflow (Rows 18-31)
 
@@ -2055,7 +1930,6 @@ Multi-level approval workflow and formal sign-off for the assessment.
 - Request Changes
 - Rejected
 
-
 **Level 1 Reviewers:**
 | Role | Name | Date | Decision | Comments | Signature |
 |------|------|------|----------|----------|-----------|
@@ -2075,7 +1949,6 @@ Multi-level approval workflow and formal sign-off for the assessment.
 |------|------|------|----------|----------|-----------|
 | CTO / VP Engineering | [User Input] | [User Input] | [Dropdown] | [User Input] | [User Input] |
 
-
 ### Approval Status Summary (Rows 33-36)
 
 | Metric | Value | Status |
@@ -2084,7 +1957,6 @@ Multi-level approval workflow and formal sign-off for the assessment.
 | Level 2 (Security) Status | [Auto-calculated] | [✅/⚠️/❌] |
 | Level 3 (Executive) Status | [Auto-calculated] | [✅/⚠️/❌] |
 | **Overall Approval Status** | [Auto-calculated] | [✅ Approved / ⚠️ Pending / ❌ Not Approved] |
-
 
 ### Conditional Approval Notes (Rows 38-44)
 
@@ -2095,7 +1967,6 @@ Multi-level approval workflow and formal sign-off for the assessment.
 - Document required follow-up actions for developer production access (if any violations)
 - Document timeline for MFA enforcement completion
 - Document terminated user access remediation
-
 
 ### Next Assessment Date (Rows 46-48)
 
@@ -2145,17 +2016,14 @@ Multi-level approval workflow and formal sign-off for the assessment.
 - Production Access column: Red fill if ≠ "❌ None" AND Job Title contains "Developer"
 - Terminated users: Red fill if any access ≠ "❌ None"
 
-
 **Sheet 4: Production_Access_Verification**
 
 - Row 9 (Actual Developer Count): Red if >0, Green if =0
 - Any row with "🔴 MAJOR VIOLATION": Entire row red fill
 
-
 **Sheet 6: BreakGlass_Emergency_Access**
 
 - Row 9 (Usage Frequency): Green if "Rare", Yellow if "Occasional", Red if "Frequent"
-
 
 ---
 
@@ -2168,7 +2036,6 @@ Multi-level approval workflow and formal sign-off for the assessment.
 - Sheet 2: Environment_Inventory → Environment list
 - Required for Access_Matrix (columns D-G are dynamic based on environments)
 
-
 ### Output to Other Assessments
 
 **To ISMS-IMP-A.8.31.3 (Compliance Dashboard):**
@@ -2176,7 +2043,6 @@ Multi-level approval workflow and formal sign-off for the assessment.
 - Sheet 4: Developer production access count (critical metric)
 - Sheet 8: All gap data (for consolidated compliance scoring)
 - Sheet 4, 5, 6, 7: Compliance status (for overall compliance score)
-
 
 ### Output to Python Scripts
 
@@ -2186,7 +2052,6 @@ Multi-level approval workflow and formal sign-off for the assessment.
 - Applies cell styling and conditional formatting
 - Includes data validation and sample data
 - Exports to `.xlsx` format
-
 
 ---
 
@@ -2201,7 +2066,6 @@ Multi-level approval workflow and formal sign-off for the assessment.
 - Author: [Organization] ISMS Team
 - Comments: Technology-agnostic environment access control assessment - ZERO DEVELOPER PRODUCTION ACCESS
 - Keywords: ISO27001, A.8.31, access control, production access, IAM, RBAC, MFA
-
 
 **Protection:**
 

@@ -65,7 +65,6 @@ POL-5.31.4: Change Management & Evidence
 - Inconsistent criteria applied across different regulations
 - No systematic review process
 
-
 **This Framework's Systematic Approach:**
 
 - Defined trigger events initiate applicability assessments
@@ -76,7 +75,6 @@ POL-5.31.4: Change Management & Evidence
 - Periodic review and validation
 - Complete audit trail
 
-
 The systematic approach ensures that:
 
 - Different evaluators reach the same conclusions (repeatability)
@@ -84,7 +82,6 @@ The systematic approach ensures that:
 - Applicability determinations are traceable and reversible
 - Changes in circumstances trigger re-evaluation
 - Nothing falls through the cracks
-
 
 ## Integration with ISMS-POL-00
 
@@ -96,7 +93,6 @@ ISMS-POL-00 serves as the **authoritative regulatory register** for [Organizatio
 - **POL-00** contains the results of applying that methodology (the list of applicable regulations)
 - **IMP-5.31.1** (Applicability Assessment Process) provides step-by-step operational procedures for executing this methodology
 - **Assessment Workbook 2** (Applicability Matrix) provides structured tools for documentation
-
 
 ## Document Scope
 
@@ -110,14 +106,12 @@ This policy section covers:
 - **Documentation and approval** requirements (Section 5)
 - **Review frequency and triggers** for re-assessment (Section 6)
 
-
 This policy does NOT cover:
 
 - Extracting requirements from applicable regulations (covered in POL-5.31.3)
 - Mapping requirements to controls (covered in POL-5.31.3)
 - Monitoring for regulatory changes (covered in POL-5.31.4)
 - Evidence management (covered in POL-5.31.4)
-
 
 ---
 
@@ -137,7 +131,6 @@ This policy does NOT cover:
 - Performed in Q4 of each calendar year (or as defined by ISMS calendar)
 - Responsibility: Compliance Officer in coordination with Legal Function
 
-
 **Quarterly Environmental Scan** (Recommended):
 
 - Focused scan of regulatory developments in key jurisdictions
@@ -145,7 +138,6 @@ This policy does NOT cover:
 - Identification of new or proposed regulations requiring attention
 - Performed at end of each quarter
 - Responsibility: Compliance Officer
-
 
 ### Expansion Triggers
 
@@ -158,7 +150,6 @@ Applicability assessment shall be initiated when [Organization]:
 - Begins marketing or selling services in new country or region
 - Process data of individuals in new jurisdiction
 
-
 **Offers New Services or Products:**
 
 - Launches new service offering (e.g., cloud services, managed security, consulting)
@@ -166,20 +157,17 @@ Applicability assessment shall be initiated when [Organization]:
 - Begins processing new categories of data (e.g., health data, financial data, biometric data)
 - Adopts new technologies with regulatory implications (e.g., AI, blockchain)
 
-
 **Acquires Customers in Regulated Industries:**
 
 - Contracts with customer in highly regulated sector (finance, healthcare, energy, etc.)
 - Relationship involves access to customer's regulated data or systems
 - Customer operates in jurisdiction new to [Organization]
 
-
 **Mergers and Acquisitions:**
 
 - [Organization] acquires another entity (inherit their regulatory obligations)
 - [Organization] is acquired (may trigger new obligations from parent company)
 - Triggers comprehensive review of combined regulatory landscape
-
 
 ### Contractual Triggers
 
@@ -190,20 +178,17 @@ Applicability assessment shall be initiated when [Organization]:
 - RFP/RFI includes regulatory or certification requirements
 - Master Service Agreement includes regulatory compliance clauses
 
-
 **New Supplier Agreements:**
 
 - Supplier agreement includes pass-through compliance obligations
 - [Organization] is designated as subprocessor or service provider with inherited obligations
 - Supplier certifications require [Organization] to meet specific standards
 
-
 **Partnership and Reseller Agreements:**
 
 - Joint offering requiring compliance with partner's obligations
 - Technology partner requires specific compliance posture
 - Reseller agreement includes compliance commitments
-
 
 ### Certification and Accreditation Triggers
 
@@ -213,13 +198,11 @@ Applicability assessment shall be initiated when [Organization]:
 - Certification body specifies regulatory requirements as part of certification
 - Industry-specific accreditations with compliance components
 
-
 **Certification Maintenance:**
 
 - Surveillance audit identifies new regulatory requirements
 - Certification standard updated with new compliance references
 - Certification body issues new guidance on regulatory expectations
-
 
 ### Internal Triggers
 
@@ -229,20 +212,17 @@ Applicability assessment shall be initiated when [Organization]:
 - Digital transformation initiative involves regulated technologies
 - New product development with regulatory implications
 
-
 **Risk Assessment Findings:**
 
 - Information security risk assessment identifies regulatory exposure
 - Privacy impact assessment reveals potential regulatory applicability
 - Threat intelligence indicates regulatory enforcement in [Organization]'s domain
 
-
 **Compliance Gap Identification:**
 
 - Internal audit identifies potential applicable regulation not in POL-00
 - Employee raises awareness of potentially applicable regulation
 - Compliance self-assessment reveals knowledge gap
-
 
 ### External Triggers
 
@@ -252,20 +232,17 @@ Applicability assessment shall be initiated when [Organization]:
 - Regulatory authority issues new rules or guidance
 - International treaty or agreement with compliance implications
 
-
 **Industry Developments:**
 
 - Industry association publishes new standards or guidance
 - Peer organizations receive regulatory enforcement actions
 - Industry working group recommends adoption of specific framework
 
-
 **Regulatory Inquiry:**
 
 - Regulatory authority contacts [Organization] directly
 - Industry survey from regulatory body
 - Regulatory investigation or enforcement action in [Organization]'s sector
-
 
 ## Sources for Regulatory Intelligence
 
@@ -280,14 +257,12 @@ Applicability assessment shall be initiated when [Organization]:
 - Alerting functionality for regulatory changes
 - Searchable by jurisdiction, topic, industry, effective date
 
-
 **Government Legal Databases:**
 
 - Official government repositories (e.g., EUR-Lex for EU, Federal Register for U.S.)
 - National legislative databases
 - Regulatory authority websites
 - Free but may lack advanced search and alerting
-
 
 **Regulatory Technology (RegTech) Platforms:**
 
@@ -296,14 +271,12 @@ Applicability assessment shall be initiated when [Organization]:
 - Industry-specific regulatory tracking
 - Often includes interpretation and impact analysis
 
-
 **Usage Guidelines:**
 
 - Maintain current subscriptions to primary legal research platform
 - Configure alerts for key jurisdictions and topics
 - Regular training for compliance staff on effective database usage
 - Document search queries and results for audit trail
-
 
 ### Industry Associations and Standards Bodies
 
@@ -313,13 +286,11 @@ Applicability assessment shall be initiated when [Organization]:
 - Associations publish regulatory updates, compliance guides, and best practices
 - Examples: Financial services associations, healthcare industry groups, technology consortiums
 
-
 **Cross-Industry Organizations:**
 
 - Information security and privacy professional associations (e.g., IAPP, (ISC)², ISACA)
 - Quality and compliance organizations (e.g., ISO national bodies)
 - Regional business organizations
-
 
 **Standards Development Organizations:**
 
@@ -328,14 +299,12 @@ Applicability assessment shall be initiated when [Organization]:
 - CIS (Center for Internet Security)
 - Industry-specific standards bodies
 
-
 **Usage Guidelines:**
 
 - Maintain memberships in relevant associations
 - Subscribe to regulatory update newsletters and alerts
 - Participate in industry working groups on regulatory topics
 - Attend conferences and webinars on regulatory developments
-
 
 ### Legal Counsel
 
@@ -346,13 +315,11 @@ Applicability assessment shall be initiated when [Organization]:
 - Provides ongoing legal advice on compliance matters
 - Coordinates with external counsel as needed
 
-
 **External Legal Advisors:**
 
 - Jurisdiction-specific counsel (for international operations)
 - Specialized regulatory counsel (e.g., data protection, financial regulation)
 - Engaged for specific matters or ongoing regulatory monitoring
-
 
 **Specialized Regulatory Counsel:**
 
@@ -360,14 +327,12 @@ Applicability assessment shall be initiated when [Organization]:
 - Retained for complex compliance questions
 - Provides opinions on regulatory applicability and interpretation
 
-
 **Usage Guidelines:**
 
 - Regular (at least quarterly) legal briefings on regulatory landscape
 - Standing agenda item in Legal/Compliance meetings
 - Legal review of all Tier 1 applicability determinations
 - External counsel engaged for jurisdictions where [Organization] lacks in-house expertise
-
 
 ### Peer Networks and Professional Communities
 
@@ -377,13 +342,11 @@ Applicability assessment shall be initiated when [Organization]:
 - Information sharing and analysis centers (ISACs)
 - Peer discussion groups on regulatory topics
 
-
 **Professional Associations:**
 
 - Compliance officers networks
 - Data protection officers communities
 - Information security professional groups
-
 
 **Compliance Communities of Practice:**
 
@@ -391,14 +354,12 @@ Applicability assessment shall be initiated when [Organization]:
 - Benchmarking and best practice sharing
 - Regulatory interpretation discussions
 
-
 **Usage Guidelines:**
 
 - Active participation in at least one relevant peer network
 - Designated representatives attend regular meetings
 - Share learnings while respecting confidentiality
 - Verify peer information through authoritative sources before acting
-
 
 ### Professional Services Firms
 
@@ -409,13 +370,11 @@ Applicability assessment shall be initiated when [Organization]:
 - Compliance advisory services
 - Often provide complimentary regulatory briefings to clients
 
-
 **Compliance Consultants:**
 
 - Specialized regulatory compliance advisory
 - Regulatory program assessments
 - Compliance gap analysis services
-
 
 **Regulatory Monitoring Services:**
 
@@ -423,14 +382,12 @@ Applicability assessment shall be initiated when [Organization]:
 - Curated alerts and summaries
 - Impact assessments and recommendations
 
-
 **Usage Guidelines:**
 
 - Subscribe to regulatory update services from audit firm or consultant
 - Attend client briefings and webinars
 - Leverage professional service providers for complex assessments
 - Maintain relationships for ad-hoc consultations
-
 
 ### Customer and Supplier Channels
 
@@ -441,7 +398,6 @@ Applicability assessment shall be initiated when [Organization]:
 - RFP/RFI compliance requirements
 - Customer compliance audits and assessments
 
-
 **Supplier Obligations:**
 
 - Data Processing Agreements (DPAs) with inherited obligations
@@ -449,14 +405,12 @@ Applicability assessment shall be initiated when [Organization]:
 - Supply chain compliance requirements
 - Vendor assessment questionnaires
 
-
 **Usage Guidelines:**
 
 - Systematic review of all customer contracts for compliance clauses
 - Legal review of supplier agreements for pass-through obligations
 - Maintain database of contractual compliance requirements
 - Feed contractual requirements into applicability assessment process
-
 
 ## Initial Screening Criteria
 
@@ -474,14 +428,12 @@ Before conducting full applicability assessment, [Organization] shall apply init
 - Regulations governing information systems and technology infrastructure
 - Regulations with information security provisions (even if broader scope)
 
-
 **Exclude**:
 
 - Purely operational regulations unrelated to information/IT (e.g., workplace safety, environmental)
 - Financial reporting regulations without information security components
 - Product safety regulations for physical products [Organization] doesn't produce
 - Regulations clearly outside [Organization]'s domain
-
 
 **Outcome**: If regulation is NOT relevant to information security or IT, **STOP** - do not proceed to full assessment. Document rationale and file in "Screened Out - Not Relevant" category.
 
@@ -498,13 +450,11 @@ Before conducting full applicability assessment, [Organization] shall apply init
 - Processing data subject to jurisdiction's laws
 - Regulation claims extraterritorial reach affecting [Organization]
 
-
 **Outcome**: If [Organization] has ZERO connection to jurisdiction and regulation makes NO extraterritorial claim, likely not applicable. However, proceed to full assessment if:
 
 - Uncertainty about extraterritorial reach
 - Potential future expansion to jurisdiction
 - Indirect connection through customers or suppliers
-
 
 ### Operational Screening
 
@@ -517,13 +467,11 @@ Before conducting full applicability assessment, [Organization] shall apply init
 - Types of data [Organization] processes vs. regulation's scope
 - [Organization]'s size, revenue, or other thresholds vs. regulation's applicability criteria
 
-
 **Outcome**: If regulation clearly does NOT apply to [Organization]'s operations (e.g., healthcare regulation when [Organization] doesn't serve healthcare or process health data), likely not applicable. Proceed to full assessment if:
 
 - Uncertainty about scope
 - Potential future operations could trigger applicability
 - Partial overlap with current operations
-
 
 ### Screening Decision Matrix
 
@@ -545,7 +493,6 @@ For each regulation screened:
 - Provide rationale for decision
 - Reference source where identified
 - Date and assessor name
-
 
 Regulations screened out shall be retained in a "Reviewed but Not Applicable" file for potential future reference if circumstances change.
 
@@ -576,7 +523,6 @@ Consider:
 - Legal entities incorporated or registered in jurisdiction
 - Business licenses or permits in jurisdiction
 
-
 Evidence: Corporate registry records, office lease agreements, employment records, business license registrations
 
 **Criterion G2: Customers or Data Subjects in Jurisdiction**
@@ -589,7 +535,6 @@ Consider:
 - End users accessing [Organization]'s services from jurisdiction
 - Data subjects whose personal data is protected by jurisdiction's laws
 - Marketing or sales activities targeting jurisdiction
-
 
 Evidence: Customer contracts, sales records, website analytics, data processing records
 
@@ -605,7 +550,6 @@ Consider:
 - Local payment methods accepted
 - Compliance with jurisdiction's consumer protection laws
 
-
 Evidence: Website content, marketing materials, payment gateway configurations
 
 **Criterion G4: Data Processing in Jurisdiction**
@@ -619,7 +563,6 @@ Consider:
 - Data in transit through jurisdiction
 - Backup or disaster recovery sites in jurisdiction
 
-
 Evidence: Infrastructure diagrams, vendor agreements, data flow documentation
 
 **Criterion G5: Extraterritorial Application**
@@ -632,7 +575,6 @@ Consider:
 - Regulation applies based on data subject location regardless of organization location
 - Examples: GDPR (EU), CCPA (California), LGPD (Brazil) all have extraterritorial provisions
 
-
 Evidence: Regulatory text, legal analysis of extraterritorial provisions
 
 ### Geographic Scope Scoring
@@ -643,7 +585,6 @@ For each criterion G1-G5:
 - **NO** = 0 points
 - **UNCERTAIN** = 0.5 points (triggers legal review)
 
-
 **Geographic Applicability Score** = Sum of G1 through G5 (range: 0 to 5)
 
 **Interpretation**:
@@ -651,7 +592,6 @@ For each criterion G1-G5:
 - 0-1 points: Low geographic applicability
 - 2-3 points: Moderate geographic applicability  
 - 4-5 points: High geographic applicability
-
 
 High score indicates strong geographic connection suggesting applicability. However, score alone does NOT determine final applicability—must consider all three dimensions.
 
@@ -671,7 +611,6 @@ Consider:
 - Telecommunications services (may trigger telecom regulations)
 - Critical infrastructure services (may trigger CI protection regulations)
 
-
 Evidence: Service catalog, service descriptions, SOWs, marketing materials
 
 **Criterion O2: Industry Sector Alignment**
@@ -685,7 +624,6 @@ Consider:
 - Government sector (public sector, defense)
 - Critical infrastructure sectors (energy, water, transportation)
 - Regulation may apply to service providers TO these sectors even if not in sector directly
-
 
 Evidence: Customer list, vertical market analysis, industry-specific contracts
 
@@ -702,7 +640,6 @@ Consider:
 - Trade secrets or confidential business information
 - Children's data
 
-
 Evidence: Data inventory, data classification register, data flow diagrams, data processing records
 
 **Criterion O4: Organizational Characteristics**
@@ -718,7 +655,6 @@ Consider:
 - For-profit vs. non-profit
 - Organizational structure (subsidiary of regulated parent company)
 
-
 Evidence: Financial statements, employee headcount reports, data processing volume metrics, corporate structure documents
 
 **Criterion O5: Specific Operations Covered**
@@ -733,7 +669,6 @@ Consider:
 - Marketing/advertising using personal data (may trigger marketing regulations)
 - Biometric authentication/identification (may trigger biometric regulations)
 
-
 Evidence: Operational documentation, technology documentation, process descriptions
 
 ### Operational Scope Scoring
@@ -744,7 +679,6 @@ For each criterion O1-O5:
 - **NO** = 0 points
 - **UNCERTAIN** = 0.5 points (triggers further analysis)
 
-
 **Operational Applicability Score** = Sum of O1 through O5 (range: 0 to 5)
 
 **Interpretation**:
@@ -752,7 +686,6 @@ For each criterion O1-O5:
 - 0-1 points: Low operational applicability
 - 2-3 points: Moderate operational applicability
 - 4-5 points: High operational applicability
-
 
 ## Contractual Scope Assessment
 
@@ -770,7 +703,6 @@ Consider:
 - Customer compliance questionnaires expecting conformance
 - Right to audit clauses covering regulatory compliance
 
-
 Evidence: Executed customer contracts, compliance requirement matrices, customer audit reports
 
 **Criterion C2: Supplier Pass-Through Obligations**
@@ -783,7 +715,6 @@ Consider:
 - Supply chain compliance requirements
 - Supplier requiring [Organization] to meet standards supplier must meet
 - Flow-down clauses from prime contractor
-
 
 Evidence: Supplier agreements, subprocessor agreements, supply chain contracts
 
@@ -798,7 +729,6 @@ Consider:
 - Industry-specific certifications requiring regulatory compliance
 - Certification body explicitly requiring conformance with regulation
 
-
 Evidence: Certification standards, certification body requirements, audit reports, assessor guidance
 
 **Criterion C4: Voluntary Commitments**
@@ -812,7 +742,6 @@ Consider:
 - Public commitments to frameworks (e.g., Privacy Shield - historical example)
 - Codes of conduct or industry pledges
 
-
 Evidence: Published privacy policies, website statements, marketing materials, press releases
 
 ### Contractual Scope Scoring
@@ -823,7 +752,6 @@ For each criterion C1-C4:
 - **NO** = 0 points
 - **UNCERTAIN** = 0.5 points
 
-
 **Contractual Applicability Score** = Sum of C1 through C4 (range: 0 to 4)
 
 **Interpretation**:
@@ -831,7 +759,6 @@ For each criterion C1-C4:
 - 0 points: No contractual applicability
 - 1-2 points: Moderate contractual applicability
 - 3-4 points: High contractual applicability
-
 
 ## Combined Applicability Determination
 
@@ -848,20 +775,17 @@ All three dimensions carry equal weight in the determination. A regulation may b
 - Explicit contractual requirement (C1 or C2 = YES), OR
 - Legal opinion confirms applicability
 
-
 **CONDITIONALLY APPLICABLE** (Add to ISMS-POL-00 as Tier 2):
 
 - Moderate score (2-3) in ONE dimension only
 - Potential future applicability (expansion plans)
 - Voluntary adoption for competitive advantage
 
-
 **NOT APPLICABLE** (Do not add to ISMS-POL-00):
 
 - Low scores (0-1) across ALL dimensions
 - Regulation explicitly excludes [Organization]'s operations
 - Legal opinion confirms non-applicability
-
 
 ### Special Cases
 
@@ -874,14 +798,12 @@ If applicability is uncertain after assessment:
 - Monitor for clarifying guidance from regulatory authority
 - Default to "Conditionally Applicable" (Tier 2) if doubt remains
 
-
 **Conflicting Indicators:**
 If some criteria suggest applicable and others suggest not:
 
 - Legal counsel makes final determination
 - Weight given to contractual requirements (C1, C2) as they create obligations regardless of legal applicability
 - Document the conflict and rationale for final decision
-
 
 ---
 
@@ -908,20 +830,17 @@ A regulation SHALL be classified as Tier 1 if it meets ANY of the following:
 - Regulatory authority has jurisdiction over [Organization] and enforcement power
 - Non-compliance can result in fines, sanctions, or other legal penalties
 
-
 **Contractual Enforceability:**
 
 - Customer contract explicitly requires compliance and includes enforcement mechanisms (penalties, termination rights)
 - Supplier agreement creates enforceable pass-through obligation
 - Contractual commitment with material financial or business consequences if breached
 
-
 **Certification Requirement:**
 
 - Conformance required for certification [Organization] holds (e.g., ISO 27001, SOC 2)
 - Certification body audits compliance with regulation
 - Loss of certification would have material business impact
-
 
 ### Treatment of Tier 1 Regulations
 
@@ -936,14 +855,12 @@ Tier 1 regulations receive highest priority:
 - **Continuous evidence collection** and maintenance
 - **Annual review minimum** - more frequent if regulation is actively changing
 
-
 ### Examples of Tier 1 Classifications (Generic)
 
 - Data protection law in jurisdiction where [Organization] has operations and processes personal data
 - Financial services regulation where [Organization] provides IT services to financial institutions and is designated as service provider
 - Customer contract with Fortune 500 client requiring SOC 2 compliance with contractual penalties for non-compliance
 - ISO 27001 standard (if [Organization] is certified)
-
 
 ## Tier 2: Conditional Applicability
 
@@ -965,7 +882,6 @@ A regulation SHALL be classified as Tier 2 if it meets ANY of the following:
 - Proposed or draft regulation likely to be enacted and affect [Organization]
 - Thresholds not currently met but may be met with growth
 
-
 **Voluntary Adoption:**
 
 - Industry best practice framework [Organization] chooses to adopt
@@ -974,14 +890,12 @@ A regulation SHALL be classified as Tier 2 if it meets ANY of the following:
 - Regulatory safe harbor or preferred approach
 - Strategic positioning for future opportunities
 
-
 **Regulatory Uncertainty:**
 
 - Applicability assessment is uncertain (moderate scores, unclear scope)
 - Extraterritorial reach is ambiguous
 - Awaiting legal clarification or regulatory guidance
 - Default to Tier 2 pending clarity
-
 
 ### Treatment of Tier 2 Regulations
 
@@ -994,14 +908,12 @@ Tier 2 regulations receive moderate priority:
 - **Annual or biennial review** - assess if circumstances have changed triggering move to Tier 1
 - **Document strategic rationale** for voluntary adoption if applicable
 
-
 ### Examples of Tier 2 Classifications (Generic)
 
 - Data protection regulation in jurisdiction [Organization] is considering expanding to
 - Industry-specific regulation for vertical market [Organization] may enter
 - Emerging regulation (draft/proposed) likely to affect [Organization] once enacted
 - NIST Cybersecurity Framework adopted voluntarily for maturity assessment
-
 
 ## Tier 3: Informational Reference
 
@@ -1022,7 +934,6 @@ A regulation or framework SHALL be classified as Tier 3 if:
 - No contractual requirement to comply
 - Not required for any certification [Organization] holds
 
-
 **Valuable for Reference:**
 
 - Industry-recognized best practice
@@ -1030,7 +941,6 @@ A regulation or framework SHALL be classified as Tier 3 if:
 - Provides useful guidance for control design
 - Referenced by other applicable regulations
 - Supports maturity assessment and improvement efforts
-
 
 ### Treatment of Tier 3 Regulations
 
@@ -1043,14 +953,12 @@ Tier 3 regulations receive minimal formal treatment:
 - **Periodic review** (biennial or as needed) - assess if still useful reference
 - **May inform but not require** - controls may be inspired by Tier 3 frameworks but no obligation
 
-
 ### Examples of Tier 3 Classifications (Generic)
 
 - CIS Controls (Center for Internet Security Critical Security Controls)
 - NIST Cybersecurity Framework (if not voluntarily adopted per Tier 2)
 - OWASP guidelines (Open Web Application Security Project)
 - Industry-specific best practice guides with no regulatory force
-
 
 ## Tier Assignment Decision Tree
 
@@ -1102,25 +1010,21 @@ Regulations may move between tiers as circumstances change:
 - Customer contract added requiring compliance
 - [Organization] meets threshold that triggers applicability
 
-
 **Tier 1 → Tier 2:**
 
 - [Organization] exits jurisdiction or discontinues relevant operations
 - Regulation is repealed or substantially amended to exclude [Organization]
 - Contract expires without renewal
 
-
 **Tier 3 → Tier 2:**
 
 - [Organization] decides to voluntarily adopt framework for strategic reasons
-
 
 **Any Tier → Removed:**
 
 - Regulation is repealed entirely
 - [Organization] definitively determines non-applicability after initial classification
 - Framework is superseded or no longer useful
-
 
 Tier changes require re-assessment using full applicability methodology and appropriate approval (see Section 5).
 
@@ -1142,7 +1046,6 @@ For each regulation assessed (whether determined applicable or not), [Organizati
 - Effective date and any transition periods
 - Source where identified (database, counsel, customer, etc.)
 
-
 **Assessment Summary:**
 
 - **Geographic Scope Assessment:**
@@ -1158,7 +1061,6 @@ For each regulation assessed (whether determined applicable or not), [Organizati
   - Contractual Applicability Score
   - Supporting rationale and evidence
 
-
 **Overall Determination:**
 
 - Applicability conclusion (Applicable / Conditionally Applicable / Not Applicable)
@@ -1166,7 +1068,6 @@ For each regulation assessed (whether determined applicable or not), [Organizati
 - Detailed rationale synthesizing three-dimensional assessment
 - Any special considerations or edge cases
 - Dissenting views or areas of uncertainty
-
 
 **Supporting Evidence:**
 
@@ -1176,7 +1077,6 @@ For each regulation assessed (whether determined applicable or not), [Organizati
 - Jurisdictional analysis
 - Precedent from similar regulations or peer organizations
 
-
 **Assessment Metadata:**
 
 - Assessor name and role
@@ -1184,7 +1084,6 @@ For each regulation assessed (whether determined applicable or not), [Organizati
 - Reviewer name and role (if peer reviewed)
 - Approver(s) and approval date(s)
 - Next review date
-
 
 ### Documentation Templates
 
@@ -1197,7 +1096,6 @@ Template includes:
 - Decision tree for tier assignment
 - Approval signature blocks
 - Version control
-
 
 ### Evidence Retention
 
@@ -1214,14 +1112,12 @@ Supporting evidence shall be attached to or referenced in the applicability asse
 - Output: Draft applicability assessment document
 - Timeline: Within 10 business days of trigger event (or per IMP-5.31.1 schedule)
 
-
 **Stage 2: Peer Review** (Recommended for all; Mandatory for Tier 1)
 
 - Performed by: Second Compliance/Legal professional
 - Activities: Review assessment for completeness, logic, evidence quality
 - Output: Peer review comments, recommendation to proceed or revise
 - Timeline: Within 5 business days of initial assessment
-
 
 **Stage 3: Legal Review** (Mandatory for Tier 1; Optional for Tier 2/3)
 
@@ -1230,14 +1126,12 @@ Supporting evidence shall be attached to or referenced in the applicability asse
 - Output: Legal approval or request for revision, may include legal opinion
 - Timeline: Within 10 business days of peer review
 
-
 **Stage 4: ISMS Manager Review** (All Tiers)
 
 - Performed by: ISMS Manager
 - Activities: Review ISMS implications, consider integration with existing framework
 - Output: ISMS Manager approval or concerns
 - Timeline: Within 5 business days of legal review (or Stage 2 if no legal review)
-
 
 **Stage 5: Executive Approval** (Mandatory for Tier 1; Not required for Tier 2/3)
 
@@ -1246,7 +1140,6 @@ Supporting evidence shall be attached to or referenced in the applicability asse
 - Output: Executive approval signature
 - Timeline: Within 10 business days of ISMS Manager review
 - Note: Executive approval signifies organizational commitment to comply
-
 
 ### Approval Authority Matrix
 
@@ -1268,7 +1161,6 @@ In urgent situations (e.g., customer contract closing contingent on compliance c
 - Escalation to highest available authority if designated approver unavailable
 - **All expedited approvals subject to post-approval audit** within 30 days to validate process integrity
 
-
 Expedited process requires ISMS Manager authorization and documentation of urgency rationale.
 
 ### Disputed Determinations
@@ -1281,20 +1173,17 @@ If assessors, reviewers, or approvers disagree on applicability or tier:
 - Legal Counsel provides definitive interpretation on legal matters
 - If consensus cannot be reached internally, escalate to Executive Management
 
-
 **External Resolution:**
 
 - For complex legal questions: Engage external legal counsel for opinion
 - For regulatory interpretation: Consider direct inquiry to regulatory authority (with legal counsel guidance)
 - Document dispute, resolution process, and final decision with supporting rationale
 
-
 **Default Position:**
 
 - If doubt remains after resolution efforts: Default to "Applicable" and higher tier (Tier 1 over Tier 2, Tier 2 over Tier 3)
 - Rationale: Conservative approach reduces risk of non-compliance
 - Re-assess when additional clarity becomes available
-
 
 ## Adding to ISMS-POL-00
 
@@ -1317,13 +1206,11 @@ ISMS Manager shall add regulation to ISMS-POL-00 (Regulatory Applicability Frame
 - Next review date (annual for Tier 1, biennial for Tier 2/3, or as determined)
 - Responsible party (typically Compliance Officer)
 
-
 ### Version Control
 
 - Increment POL-00 version number
 - Update version history table with date, author, and summary of change ("Added REG-XXX [Regulation Name] to Tier [X]")
 - Distribute updated POL-00 to stakeholders per distribution list
-
 
 ### Communication
 
@@ -1337,13 +1224,11 @@ Compliance Officer or ISMS Manager shall notify relevant stakeholders:
 - Internal Audit (for audit planning)
 - Customer-facing teams (if customer-driven requirement)
 
-
 **For Tier 2/3 additions:**
 
 - ISMS Manager
 - Affected Control Owners (targeted notification)
 - Compliance team
-
 
 **Communication content:**
 
@@ -1351,7 +1236,6 @@ Compliance Officer or ISMS Manager shall notify relevant stakeholders:
 - High-level implications
 - Next steps (e.g., requirements extraction scheduled)
 - Point of contact for questions
-
 
 ### Triggering Downstream Processes
 
@@ -1361,7 +1245,6 @@ Adding regulation to POL-00 Tier 1 or 2 triggers:
 - **Control Mapping** (POL-5.31.3, IMP-5.31.3): Following requirements extraction, map to controls
 - **Gap Analysis**: Identify any compliance gaps
 - **Evidence Planning** (POL-5.31.4, IMP-5.31.5): Determine evidence requirements
-
 
 ISMS Manager coordinates these downstream activities.
 
@@ -1399,18 +1282,15 @@ Applicability determinations are not static. [Organization] shall review and, wh
 - Recommended: Semi-annual review for rapidly evolving regulations
 - Mandatory: Event-driven review (Section 6.2) takes precedence over scheduled reviews
 
-
 **Tier 2 Regulations**:
 
 - Minimum: Annual review (per 6.1.1)
 - Alternative: Biennial review acceptable for stable frameworks with low probability of change
 
-
 **Tier 3 Regulations**:
 
 - Minimum: Biennial review
 - May review "as needed" based on [Organization]'s use of framework for reference
-
 
 ## Event-Driven Review Triggers
 
@@ -1424,7 +1304,6 @@ Applicability assessment shall be revisited (outside of scheduled reviews) when 
 - [Organization] exits jurisdiction → Review regulations dependent on presence there
 - Trigger: Within 30 days of expansion/contraction decision or event
 
-
 **Operational Changes:**
 
 - New service offerings → Review regulations covering those services
@@ -1433,7 +1312,6 @@ Applicability assessment shall be revisited (outside of scheduled reviews) when 
 - Discontinuation of services → Review if regulations remain applicable
 - Trigger: During planning phase (before launch) and within 30 days of operational change
 
-
 **Organizational Restructuring:**
 
 - Merger or acquisition → Comprehensive review of combined entity's obligations
@@ -1441,12 +1319,10 @@ Applicability assessment shall be revisited (outside of scheduled reviews) when 
 - Change in parent company → Review if new obligations flow down
 - Trigger: As part of merger/acquisition due diligence; within 60 days of transaction close
 
-
 **Threshold Changes:**
 
 - [Organization] crosses regulatory threshold (e.g., number of employees, revenue, data volume)
 - Trigger: Continuous monitoring; formal review when threshold crossed
-
 
 ### Regulatory Changes
 
@@ -1456,12 +1332,10 @@ Applicability assessment shall be revisited (outside of scheduled reviews) when 
 - Trigger: Regulatory change monitoring process (POL-5.31.4, IMP-5.31.4) detects amendment
 - Action: Impact assessment includes re-assessment of applicability if scope changed
 
-
 **New Regulation Enacted:**
 
 - Already covered by identification process (Section 2)
 - Trigger: Multiple sources (per Section 2.2)
-
 
 **Regulation Repealed or Superseded:**
 
@@ -1469,14 +1343,12 @@ Applicability assessment shall be revisited (outside of scheduled reviews) when 
 - Trigger: Regulatory change monitoring
 - Action: Mark as "Superseded" in POL-00, conduct applicability assessment for replacement regulation
 
-
 **Regulatory Guidance or Interpretation Issued:**
 
 - Regulatory authority issues guidance clarifying scope or applicability
 - Court decision interprets regulation in way affecting applicability
 - Trigger: Regulatory monitoring or legal counsel alert
 - Action: Review applicability determination in light of new interpretation
-
 
 ### Contractual Changes
 
@@ -1486,14 +1358,12 @@ Applicability assessment shall be revisited (outside of scheduled reviews) when 
 - Trigger: Contract execution or during pre-contract due diligence
 - Action: Assess contractually-mandated regulations (may be Tier 1 if enforceable)
 
-
 **Contract Renewal or Amendment:**
 
 - Customer adds compliance requirements during renewal
 - Compliance obligations modified
 - Trigger: Contract renewal process
 - Action: Review applicability based on updated contract terms
-
 
 **Contract Expiration:**
 
@@ -1502,13 +1372,11 @@ Applicability assessment shall be revisited (outside of scheduled reviews) when 
 - Trigger: Contract expiration date
 - Action: Assess if regulation still applicable without contract (may drop from Tier 1 to Tier 2 or remove)
 
-
 **New Supplier Agreement:**
 
 - Agreement creates pass-through obligations
 - Trigger: Supplier contract execution
 - Action: Applicability assessment for passed-through requirements
-
 
 ### Certification Changes
 
@@ -1518,13 +1386,11 @@ Applicability assessment shall be revisited (outside of scheduled reviews) when 
 - Trigger: Certification decision
 - Action: Review certification requirements for applicable regulations
 
-
 **Certification Standard Updated:**
 
 - Standard revised with new regulatory references
 - Trigger: Certification body notification or standards body publication
 - Action: Review updated standard for new applicability
-
 
 ## Escalation for Applicability Disputes
 
@@ -1537,7 +1403,6 @@ If applicability determination is disputed (internal disagreement or challenge f
 - Business unit claims regulation doesn't apply; Compliance claims it does
 - Control owner disputes tier assignment (e.g., requests Tier 2 instead of Tier 1 due to implementation burden)
 - Legal and Compliance disagree on interpretation
-
 
 **Resolution Process:**
 1. **Discussion**: Disputing parties meet to understand positions and evidence
@@ -1557,7 +1422,6 @@ If applicability determination is disputed (internal disagreement or challenge f
 - Regulatory authority asserts regulation applies; [Organization] believes it does not
 - Customer disputes [Organization]'s position on applicability
 - Auditor questions applicability determination
-
 
 **Response:**
 1. **Gather Evidence**: Compile applicability assessment documentation and supporting evidence
@@ -1582,7 +1446,6 @@ All reviews (periodic and event-driven) shall be documented:
 - Outcome (No Change, Tier Changed, Removed from POL-00, Added to POL-00)
 - Rationale for outcome (if changed)
 - Approver and date (if determination changed)
-
 
 **Review Log**: Maintain centralized review log recording all reviews. Supports demonstration of diligent ongoing management of regulatory landscape.
 
@@ -1629,34 +1492,28 @@ This policy requires approval from the following roles:
 
 - **ISMS-POL-A.5.31.1**: Executive Summary & Control Alignment (framework foundation)
 
-
 **Coordinating Documents:**
 
 - **ISMS-POL-00**: Regulatory Applicability Framework (regulatory register maintained using this methodology)
-
 
 **Downstream Documents:**
 
 - **ISMS-POL-A.5.31.3**: Requirements Extraction & Control Mapping Framework (next phase after applicability determined)
 - **ISMS-POL-A.5.31.4**: Change Management & Evidence Framework (ongoing management including regulatory change monitoring)
 
-
 **Implementation Guides:**
 
 - **ISMS-IMP-A.5.31.2**: Regulatory Applicability Assessment Process (step-by-step procedures for executing this methodology)
-
 
 **Assessment Tools:**
 
 - **Assessment Workbook 1**: Regulatory Inventory (comprehensive list of regulations)
 - **Assessment Workbook 2**: Applicability Matrix (structured assessment template)
 
-
 **Standards:**
 
 - ISO/IEC 27001:2022 - Information Security Management Systems - Requirements (Control A.5.31)
 - ISO/IEC 27002:2022 - Information Security Controls (Section 5.31)
-
 
 ## Distribution and Access
 
@@ -1668,7 +1525,6 @@ This policy requires approval from the following roles:
 - Business Development (for new contracts/customers)
 - Operations Leadership (for operational changes triggering reviews)
 - Internal Audit Team
-
 
 **Access Level**: Internal Use
 

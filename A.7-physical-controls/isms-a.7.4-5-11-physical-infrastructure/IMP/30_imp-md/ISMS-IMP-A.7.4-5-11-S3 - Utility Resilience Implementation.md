@@ -44,7 +44,6 @@ This document consists of two parts:
   - Cell Styling Reference
   - Integration Points
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -66,7 +65,6 @@ This assessment documents the utility RESILIENCE infrastructure deployed in your
 - How are utility systems tested? (monthly UPS tests, generator load tests, ISP failover tests)
 - What utility failure events have occurred? (power outages, HVAC failures, ISP outages)
 
-
 #### Key Principle
 
 This assessment is **completely vendor-agnostic and technology-independent**. You document YOUR specific systems (whatever you use - APC, Eaton for UPS; Generac, Kohler for generators; Carrier, Trane for HVAC; whatever ISPs you have), and verify capabilities against generic policy requirements from ISMS-POL-A.7.4-5-11, Section 4.
@@ -81,7 +79,6 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 - Redundancy configuration (N, N+1, 2N)
 - Testing records (monthly UPS self-tests, quarterly load tests, generator exercise)
 
-
 **HVAC Infrastructure:**
 
 - HVAC units (every cooling unit supporting server rooms/datacenters)
@@ -89,7 +86,6 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 - Redundancy configuration (N, N+1, 2N cooling)
 - Temperature monitoring and alerting
 - HVAC failure procedures
-
 
 **Telecommunications Infrastructure:**
 
@@ -99,7 +95,6 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 - Failover configuration (automatic BGP, manual failover)
 - ISP failover testing
 
-
 **Utility Monitoring:**
 
 - Monitoring platforms (BMS, network monitoring, IoT platforms)
@@ -107,14 +102,12 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 - Alerting configurations (email, SMS, dashboards)
 - Dashboard deployments
 
-
 **Utility Failure Events:**
 
 - Power outages and UPS/generator performance
 - HVAC failures and temperature excursions
 - ISP outages and failover performance
 - Response times and impact
-
 
 #### How This Relates to Other A.7.4-5-11 Assessments
 
@@ -149,12 +142,10 @@ This assessment (A.7.4-5-11-S3) focuses specifically on Control A.7.11 (Supporti
 - Understanding of facility criticality tiers (Tier 1 vs. Tier 2 requirements)
 - Access to utility system admin consoles and testing records
 
-
 #### Time Commitment
 
 - **Initial assessment:** 10-15 hours (comprehensive review of all utility systems across facilities)
 - **Quarterly updates:** 2-4 hours (update testing records, failure events, minor configuration changes)
-
 
 ### Expected Outputs
 
@@ -188,7 +179,6 @@ Before starting this assessment, gather:
 - Access to utility monitoring platforms (Nagios, Zabbix, PRTG, Datadog, BMS)
 - Access to utility testing records and maintenance logs
 
-
 #### 2. Documentation
 
 - UPS system documentation (capacity specifications, battery age)
@@ -198,7 +188,6 @@ Before starting this assessment, gather:
 - Network diagrams (ISP connectivity, diverse path documentation)
 - Utility testing schedules and records
 
-
 #### 3. Historical Data
 
 - UPS testing logs (monthly self-tests, quarterly load tests - last 12 months)
@@ -207,7 +196,6 @@ Before starting this assessment, gather:
 - ISP uptime reports (from ISP SLA reports if available)
 - Utility failure event logs (power outages, HVAC failures, ISP outages - last 12 months)
 - Utility monitoring dashboards (current status)
-
 
 #### 4. Policy Requirements
 
@@ -219,7 +207,6 @@ Before starting this assessment, gather:
   - Section 4.5: Utility Monitoring
   - Section 4.6: Utility Failure Testing
 
-
 ### Required Tools
 
 - Microsoft Excel (2016 or later) for workbook completion
@@ -230,7 +217,6 @@ Before starting this assessment, gather:
 - Power meter (optional - if verifying UPS load)
 - Screen capture tools (for evidence screenshots)
 
-
 ### Dependencies
 
 This assessment has NO dependencies on other assessments - it can be completed independently.
@@ -239,7 +225,6 @@ However, outputs from this assessment are INPUT to:
 
 - ISMS-IMP-A.7.4-5-11-S4 (Compliance Dashboard) - Consolidates utility resilience with physical monitoring and environmental protection
 - ISMS-IMP-A.7.4-5-11-S2 (Environmental Protection) - HVAC systems documented in both (temperature control in S2, HVAC resilience here in S3)
-
 
 ---
 
@@ -283,7 +268,6 @@ However, outputs from this assessment are INPUT to:
 - Schedule time with Facilities Manager, Electricians, HVAC Technicians, Network Engineers
 - Download or generate assessment workbook (Excel file)
 
-
 **Step 2: System Inventory (Day 1-3 - 4-6 hours)**
 
 - Open assessment workbook
@@ -293,7 +277,6 @@ However, outputs from this assessment are INPUT to:
 - Complete Sheet 4 (Telecommunications) - inventory all ISP circuits, bandwidth, diverse paths
 - Document monitoring status (BMS integration, dashboards, alerting)
 
-
 **Step 3: Capacity Assessment (Day 3-4 - 3-4 hours)**
 
 - Calculate UPS runtime at current load (verify meets policy requirements - 15 min Tier 1, 5 min Tier 2)
@@ -301,7 +284,6 @@ However, outputs from this assessment are INPUT to:
 - Calculate HVAC capacity vs. current heat load (verify adequate cooling capacity)
 - Verify ISP bandwidth adequate for current and projected usage
 - Document capacity in respective sheets
-
 
 **Step 4: Redundancy Verification (Day 4 - 2 hours)**
 
@@ -311,7 +293,6 @@ However, outputs from this assessment are INPUT to:
 - Verify diverse paths for dual ISP (different carriers, different physical routes)
 - Document redundancy levels in respective sheets
 
-
 **Step 5: Testing Records Review (Day 5-6 - 3-4 hours)**
 
 - Review UPS testing records (monthly self-tests, quarterly load tests - verify all current)
@@ -319,7 +300,6 @@ However, outputs from this assessment are INPUT to:
 - Review HVAC maintenance records (filter changes, refrigerant checks - verify regular maintenance)
 - Review ISP failover testing records (quarterly tests for critical facilities with dual ISP)
 - Document last testing dates and test results in respective sheets
-
 
 **Step 6: Monitoring Documentation (Day 6 - 2 hours)**
 
@@ -329,7 +309,6 @@ However, outputs from this assessment are INPUT to:
 - Verify ISP monitoring active (ping tests, bandwidth monitoring)
 - Document monitoring coverage and alerting configurations
 
-
 **Step 7: Utility Failure Review (Day 7 - 2 hours)**
 
 - Review power outage events (last 12 months)
@@ -338,7 +317,6 @@ However, outputs from this assessment are INPUT to:
 - Document UPS/generator performance during power outages (failover success, runtime achieved)
 - Document HVAC failure impact (temperature excursions, duration)
 - Document ISP outage impact (failover time if dual ISP, outage duration)
-
 
 **Step 8: Evidence Collection (Day 7-8 - 2-3 hours)**
 
@@ -351,14 +329,12 @@ However, outputs from this assessment are INPUT to:
 - Export ISP SLA reports (if available from ISP)
 - Document evidence in Sheet 6 (Evidence Register)
 
-
 **Step 9: Summary Review (Day 8 - 1 hour)**
 
 - Review Sheet 5 (Summary Dashboard) - formulas automatically calculate compliance scores
 - Verify compliance scores accurate
 - Identify areas below threshold (red or amber status)
 - Prepare gap remediation plan for non-compliant areas
-
 
 **Step 10: Quality Check (Day 8 - 1 hour)**
 
@@ -367,7 +343,6 @@ However, outputs from this assessment are INPUT to:
 - Verify evidence register complete
 - Verify formulas calculating correctly
 
-
 **Step 11: Obtain Approvals (Day 9-14 - asynchronous)**
 
 - Complete Sheet 7 (Approval Sign-Off) - Level 1: Assessor (you)
@@ -375,12 +350,10 @@ However, outputs from this assessment are INPUT to:
 - After Level 2, submit to Level 3: CISO
 - After Level 3, submit to Level 4: Compliance Officer
 
-
 **Step 12: Submit for Audit**
 
 - Assessment workbook is now audit-ready
 - Provide to Internal Audit or External Auditors
-
 
 ---
 
@@ -394,7 +367,6 @@ However, outputs from this assessment are INPUT to:
 
 - Assessment Date, Completed By, Organization name
 - Review status legend (green/amber/red)
-
 
 **Time Required:** 5 minutes
 
@@ -426,7 +398,6 @@ However, outputs from this assessment are INPUT to:
 - Tier 1 critical facilities: UPS runtime ≥15 min, generator required, N+1 redundancy, testing current
 - Tier 2 standard facilities: UPS runtime ≥5 min, generator optional, N configuration acceptable, testing current
 
-
 **Time Required:** 45-60 minutes
 
 ### Sheet 3: HVAC
@@ -455,7 +426,6 @@ However, outputs from this assessment are INPUT to:
 - Tier 1: N+1 redundancy required, real-time monitoring required, capacity margin >20%
 - Tier 2: N configuration acceptable, monitoring recommended, capacity margin >10%
 
-
 **Time Required:** 45-60 minutes
 
 ### Sheet 4: Telecommunications
@@ -483,7 +453,6 @@ However, outputs from this assessment are INPUT to:
 - Tier 1: Dual ISP required, diverse paths required, failover tested quarterly
 - Tier 2: Single ISP with SLA acceptable
 
-
 **Time Required:** 30-45 minutes
 
 ### Sheet 5: Summary Dashboard
@@ -499,7 +468,6 @@ However, outputs from this assessment are INPUT to:
 - Utility Failure Metrics (power outages, HVAC failures, ISP outages last 12 months)
 - Gap Summary
 
-
 **Time Required:** 15-30 minutes review
 
 ### Sheet 6: Evidence Register
@@ -510,7 +478,6 @@ However, outputs from this assessment are INPUT to:
 
 - Evidence ID, Type, Description, Related Sheet/Item, File Name, Location, Collection Date
 
-
 **Common Evidence:**
 
 - UPS web interface screenshots
@@ -519,7 +486,6 @@ However, outputs from this assessment are INPUT to:
 - ISP SLA reports
 - Testing logs (UPS, generator, ISP failover)
 - Utility monitoring dashboard screenshots
-
 
 **Time Required:** 2-3 hours
 
@@ -533,7 +499,6 @@ However, outputs from this assessment are INPUT to:
 - Level 2: Facilities Manager
 - Level 3: CISO
 - Level 4: Compliance Officer
-
 
 **Time Required:** 5 minutes Level 1, then asynchronous
 
@@ -551,14 +516,12 @@ However, outputs from this assessment are INPUT to:
 - Generator testing logs (monthly exercise tests, quarterly load tests)
 - Power redundancy diagrams (showing N, N+1, 2N configuration)
 
-
 **2. HVAC Infrastructure Evidence**
 
 - HVAC control system screenshots (unit count, status, capacity)
 - Temperature monitoring screenshots (current temperature, alerts)
 - HVAC maintenance records (filter changes, refrigerant checks, capacity tests)
 - Cooling capacity calculations (heat load vs. cooling capacity)
-
 
 **3. Telecommunications Evidence**
 
@@ -568,20 +531,17 @@ However, outputs from this assessment are INPUT to:
 - ISP failover testing logs (quarterly tests showing failover time)
 - ISP monitoring screenshots (uptime, bandwidth utilization)
 
-
 **4. Utility Monitoring Evidence**
 
 - Utility monitoring dashboard screenshots (power, HVAC, ISP status)
 - Monitoring platform configuration screenshots (alert settings)
 - Sample monitoring alerts (email/SMS examples)
 
-
 **5. Utility Failure Event Evidence**
 
 - Power outage incident reports (UPS/generator performance, duration, impact)
 - HVAC failure incident reports (temperature excursions, duration, resolution)
 - ISP outage incident reports (failover performance, duration, impact)
-
 
 ### Evidence Storage
 
@@ -608,7 +568,6 @@ However, outputs from this assessment are INPUT to:
 - Verify runtime from UPS display or web interface (shows "X minutes remaining at current load")
 - If runtime below requirement, either reduce load or add battery packs
 
-
 ### Pitfall 2: Assuming Generator "Works" Without Testing
 
 **Problem:** Documenting "generator installed" but last test was 18 months ago
@@ -622,7 +581,6 @@ However, outputs from this assessment are INPUT to:
 - If testing overdue, compliance status = Red
 - Schedule testing immediately if overdue
 
-
 ### Pitfall 3: Ignoring HVAC Capacity Margin
 
 **Problem:** Documenting HVAC capacity equals current heat load (0% margin)
@@ -634,7 +592,6 @@ However, outputs from this assessment are INPUT to:
 - Calculate capacity margin: (Cooling Capacity - Heat Load) / Heat Load × 100%
 - Policy requirement: >20% margin (Tier 1), >10% margin (Tier 2)
 - If margin <10%, compliance status = Red, immediate action required (reduce load or add cooling)
-
 
 ### Pitfall 4: Claiming "Dual ISP" Without Diverse Paths
 
@@ -648,7 +605,6 @@ However, outputs from this assessment are INPUT to:
 - Verify with ISPs: Request diverse path documentation (different cable routes, different POPs)
 - If same carrier or same path, diversity = "Partial" or "No", compliance status = Amber or Red
 
-
 ### Pitfall 5: Not Testing ISP Failover
 
 **Problem:** Dual ISP configured but never tested (don't know if failover works)
@@ -661,7 +617,6 @@ However, outputs from this assessment are INPUT to:
 - Test procedure: Disconnect primary ISP, verify automatic failover (BGP) or perform manual failover, verify connectivity
 - If failover never tested, compliance status = Amber or Red
 
-
 ### Pitfall 6: Missing Utility Failure Event Documentation
 
 **Problem:** Not documenting actual utility failures (power outages, HVAC failures, ISP outages)
@@ -673,7 +628,6 @@ However, outputs from this assessment are INPUT to:
 - Document ALL utility failures from last 12 months
 - Include: Event type, duration, UPS/generator performance, failover performance, impact, resolution
 - If no failures, explicitly state "Zero utility failures in assessment period"
-
 
 ### Pitfall 7: Overlooking Battery Age
 
@@ -688,7 +642,6 @@ However, outputs from this assessment are INPUT to:
 - Lithium-ion batteries: Replace every 8-10 years
 - If batteries >5 years old (VRLA), flag for replacement in Notes
 
-
 ### Pitfall 8: Not Integrating HVAC with Environmental Protection Assessment
 
 **Problem:** HVAC documented in utility resilience (S3) but not coordinated with environmental protection (S2)
@@ -701,7 +654,6 @@ However, outputs from this assessment are INPUT to:
 - Coordinate with environmental protection assessor
 - Data should be consistent between assessments
 
-
 ### Pitfall 9: Formula Corruption
 
 **Problem:** Accidentally overwriting formula cells
@@ -710,7 +662,6 @@ However, outputs from this assessment are INPUT to:
 
 - Summary Dashboard and Compliance Status columns are FORMULA CELLS - do not edit
 - If formula broken, refer to Part II Technical Specification
-
 
 ### Pitfall 10: Insufficient Evidence for Capacity Claims
 
@@ -724,7 +675,6 @@ However, outputs from this assessment are INPUT to:
 - Runtime claims require evidence: Testing logs showing actual runtime achieved
 - If no evidence, auditor will flag as unverified
 
-
 ---
 
 ## Quality Checklist
@@ -734,7 +684,6 @@ However, outputs from this assessment are INPUT to:
 - [ ] Assessment Date completed
 - [ ] Completed By (name and role)
 - [ ] Organization name filled in
-
 
 ### Sheet 2: Power Infrastructure
 
@@ -751,7 +700,6 @@ However, outputs from this assessment are INPUT to:
 - [ ] Compliance status column showing green/amber/red
 - [ ] Notes column completed for any amber/red status
 
-
 ### Sheet 3: HVAC
 
 - [ ] ALL facilities with HVAC systems documented
@@ -767,7 +715,6 @@ However, outputs from this assessment are INPUT to:
 - [ ] Compliance status column showing green/amber/red
 - [ ] Notes column completed for any amber/red status
 
-
 ### Sheet 4: Telecommunications
 
 - [ ] ALL facilities with ISP circuits documented
@@ -782,7 +729,6 @@ However, outputs from this assessment are INPUT to:
 - [ ] Compliance status column showing green/amber/red
 - [ ] Notes column completed for any amber/red status
 
-
 ### Sheet 5: Summary Dashboard
 
 - [ ] Overall Compliance Score displays
@@ -793,7 +739,6 @@ However, outputs from this assessment are INPUT to:
 - [ ] Gap summary auto-populates
 - [ ] NO manual data entry in dashboard
 
-
 ### Sheet 6: Evidence Register
 
 - [ ] At least 10 evidence items documented
@@ -802,7 +747,6 @@ However, outputs from this assessment are INPUT to:
 - [ ] HVAC system documentation
 - [ ] ISP SLA reports or contracts
 - [ ] Evidence files actually exist in documented location
-
 
 **Evidence Minimum Requirements:**
 
@@ -813,12 +757,10 @@ However, outputs from this assessment are INPUT to:
 - [ ] ISP contract or SLA (showing bandwidth, uptime guarantee)
 - [ ] Utility monitoring dashboard screenshot
 
-
 ### Sheet 7: Approval Sign-Off
 
 - [ ] Level 1 (Assessor) completed
 - [ ] Assessment ready for submission to Level 2 (Facilities Manager)
-
 
 ### Overall Quality
 
@@ -829,7 +771,6 @@ However, outputs from this assessment are INPUT to:
 - [ ] Compliance status colors working
 - [ ] Assessment tells complete story
 
-
 ### Final Checks
 
 - [ ] Spell check completed
@@ -838,7 +779,6 @@ However, outputs from this assessment are INPUT to:
 - [ ] Second person review requested
 - [ ] Assessment workbook saved in final location
 - [ ] Evidence folder backed up
-
 
 ---
 
@@ -857,7 +797,6 @@ However, outputs from this assessment are INPUT to:
 - Perform self-assessment using Quality Checklist
 - Complete Level 1 approval in Sheet 7
 
-
 **Timeline:** Complete before submitting to Level 2
 
 ### Level 2: Facilities Manager
@@ -869,7 +808,6 @@ However, outputs from this assessment are INPUT to:
 - Verify testing records current (monthly generator tests, quarterly UPS tests, quarterly ISP failover tests)
 - Spot-check evidence
 - Complete Level 2 approval in Sheet 7
-
 
 **Timeline:** 2-5 business days after receipt from Assessor
 
@@ -883,7 +821,6 @@ However, outputs from this assessment are INPUT to:
 - Approve remediation plan
 - Complete Level 3 approval in Sheet 7
 
-
 **Timeline:** 2-5 business days after Level 2 approval
 
 ### Level 4: Compliance Officer
@@ -894,7 +831,6 @@ However, outputs from this assessment are INPUT to:
 - Verify evidence completeness
 - Certify assessment ready for audit
 - Complete Level 4 approval in Sheet 7
-
 
 **Timeline:** 1-3 business days after Level 3 approval
 
@@ -966,14 +902,12 @@ However, outputs from this assessment are INPUT to:
 - ❌ Non-Compliant IF: Runtime <5 min OR no redundancy OR testing >180/60 days overdue
 - ⚠️ Partial: Everything else
 
-
 **Conditional Formatting:**
 
 - Column M: Green/Amber/Red based on status
 - Column D: Red if <5 minutes (insufficient runtime)
 - Column J: Red if (TODAY()-J2)>90 (UPS test overdue)
 - Column K: Red if (TODAY()-K2)>30 (generator test overdue)
-
 
 ### Sheet 3: HVAC
 
@@ -1012,7 +946,6 @@ However, outputs from this assessment are INPUT to:
 - ❌ Non-Compliant IF: Margin <10% OR no redundancy OR no monitoring OR maintenance >18 months overdue
 - ⚠️ Partial: Everything else
 
-
 ### Sheet 4: Telecommunications
 
 **Columns:**
@@ -1043,7 +976,6 @@ However, outputs from this assessment are INPUT to:
 - ✅ Compliant IF: Dual ISP AND diverse paths verified AND failover tested within 90 days
 - ❌ Non-Compliant IF: Single ISP (for Tier 1 critical facilities) OR no diverse paths
 - ⚠️ Partial: Everything else
-
 
 ### Sheet 5: Summary Dashboard
 
@@ -1094,11 +1026,9 @@ However, outputs from this assessment are INPUT to:
 
 - ISMS-IMP-A.7.4-5-11-S4 (Compliance Dashboard)
 
-
 **Shared with:**
 
 - ISMS-IMP-A.7.4-5-11-S2 (Environmental Protection) - HVAC systems documented in both
-
 
 ### Integration with Audit Process
 
@@ -1122,7 +1052,6 @@ However, outputs from this assessment are INPUT to:
 - "Is generator tested monthly?" → Evidence: Testing logs showing monthly exercise tests
 - "Are ISP paths truly diverse?" → Evidence: ISP diverse path documentation from carriers
 - "What was UPS performance during last power outage?" → Utility failure event documentation
-
 
 ---
 

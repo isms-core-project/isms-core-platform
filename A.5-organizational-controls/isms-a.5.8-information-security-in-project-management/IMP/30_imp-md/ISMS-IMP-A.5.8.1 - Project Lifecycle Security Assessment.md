@@ -52,7 +52,6 @@ This assessment evaluates [Organization]'s implementation of **information secur
 - Evidence register for audit trail
 - Approved sign-off workflow
 
-
 ## Why This Matters
 
 **ISO 27001:2022 Control A.5.8 Requirement:**
@@ -66,7 +65,6 @@ This assessment evaluates [Organization]'s implementation of **information secur
 - Progress and effectiveness should be regularly reviewed
 - Roles and responsibilities for information security should be assigned
 
-
 **Regulatory Context:**
 
 - **Swiss nDSG (Art. 8):** Requires appropriate technical and organizational measures (includes security in system design)
@@ -75,7 +73,6 @@ This assessment evaluates [Organization]'s implementation of **information secur
 - **DORA (financial sector):** ICT project and change management must include risk assessment and testing
 - **FINMA Circular 2008/21 (Swiss financial):** Project management must integrate information security requirements
 
-
 **Business Impact:**
 
 - **Preventable Incidents:** Most security incidents result from poor security integration in projects
@@ -83,7 +80,6 @@ This assessment evaluates [Organization]'s implementation of **information secur
 - **Compliance Violations:** Regulators expect evidence of systematic security integration
 - **Operational Failures:** Systems deployed without security controls fail operational acceptance
 - **Audit Findings:** Control A.5.8 is frequently cited in ISO 27001 audit non-conformities
-
 
 ## Who Should Complete This Assessment
 
@@ -98,14 +94,12 @@ This assessment evaluates [Organization]'s implementation of **information secur
    - Maintains project risk register and security status
    - Escalates security issues to appropriate authorities
 
-
 2. **Project Security Coordinator** - Dedicated security role for High Risk projects
 
    - Supports Project Manager with security-specific activities
    - Liaises with Information Security Officer
    - Conducts or coordinates security testing
    - Prepares security documentation
-
 
 3. **Information Security Officer** - Security subject matter expert
 
@@ -114,14 +108,12 @@ This assessment evaluates [Organization]'s implementation of **information secur
    - Reviews security architecture and test plans
    - Approves security assessments for Medium/High Risk projects
 
-
 4. **Business Owner / Product Owner** - Business accountability
 
    - Defines business security requirements
    - Accepts residual security risks
    - Approves security-related budget and resources
    - Ensures operational security capability post-deployment
-
 
 **Support Roles:**
 
@@ -130,7 +122,6 @@ This assessment evaluates [Organization]'s implementation of **information secur
 - **Data Protection Officer:** Involved if processing personal data (DPIA required)
 - **Compliance Officer:** Ensures regulatory requirements addressed
 - **Technical Leads:** Implement security controls, support testing
-
 
 **Required Skills:**
 
@@ -143,7 +134,6 @@ This assessment evaluates [Organization]'s implementation of **information secur
   - Risk assessment methodology
 - Ability to identify and document security risks
 - Basic understanding of security requirements, testing, and controls
-
 
 ## Time Estimate
 
@@ -161,7 +151,6 @@ This assessment evaluates [Organization]'s implementation of **information secur
 - Closure Phase: 4-6 hours (handover documentation, lessons learned, final approvals)
 - **Total Example:** 6-month High Risk project ≈ 50-80 hours total
 
-
 **Medium Risk Projects:**
 
 - Project Classification: 1-2 hours
@@ -171,7 +160,6 @@ This assessment evaluates [Organization]'s implementation of **information secur
 - Monitoring Phase: 30-60 min/bi-weekly
 - Closure Phase: 2-3 hours
 - **Total Example:** 4-month Medium Risk project ≈ 20-35 hours total
-
 
 **Low Risk Projects:**
 
@@ -183,7 +171,6 @@ This assessment evaluates [Organization]'s implementation of **information secur
 - Closure Phase: 1-2 hours
 - **Total Example:** 2-month Low Risk project ≈ 6-10 hours total
 
-
 **Pro Tips:**
 
 - **Integrate with existing meetings:** Don't create separate security meetings; add security topics to existing project meetings
@@ -191,7 +178,6 @@ This assessment evaluates [Organization]'s implementation of **information secur
 - **Parallel activities:** Security work happens in parallel with project work, not sequentially
 - **Dedicated resource for High Risk:** Assign Project Security Coordinator for large/complex projects
 - **PMO support:** PMO can provide tools, templates, and process guidance to streamline assessment
-
 
 ## Connection to Policy
 
@@ -203,7 +189,6 @@ This assessment implements **ISMS-POL-A.5.8 (Information Security in Project Man
 - Risk levels: High / Medium / Low
 - Classification approval requirements
 
-
 **Section 2.3: Security Activities Across Project Lifecycle**
 
 - Initiation Phase: Security stakeholder identification, initial risk assessment, budget allocation
@@ -211,7 +196,6 @@ This assessment implements **ISMS-POL-A.5.8 (Information Security in Project Man
 - Execution Phase: Security control implementation, testing, finding remediation, documentation
 - Monitoring Phase: Risk tracking, change impact assessment, metrics monitoring, escalation
 - Closure Phase: Security handover, residual risk acceptance, asset registration, lessons learned
-
 
 **Section 2.4: Security Requirements Identification**
 
@@ -222,7 +206,6 @@ This assessment implements **ISMS-POL-A.5.8 (Information Security in Project Man
 - Third-party security requirements (vendor assessment, contracts, integration security)
 - Compliance requirements (GDPR, nDSG, PCI DSS, HIPAA, sector-specific regulations)
 
-
 **Section 3: Roles and Responsibilities**
 
 - Executive Management: Overall accountability, risk acceptance for critical projects
@@ -232,7 +215,6 @@ This assessment implements **ISMS-POL-A.5.8 (Information Security in Project Man
 - Business Owner: Business requirements, residual risk acceptance for owned systems
 - Project Steering Committee: Phase gate oversight, escalation decision-making
 
-
 **Section 4: Governance, Review, and Documentation**
 
 - Phase gate review process with security criteria
@@ -240,7 +222,6 @@ This assessment implements **ISMS-POL-A.5.8 (Information Security in Project Man
 - Exception management process
 - Documentation requirements (by project classification)
 - Lessons learned and continuous improvement
-
 
 **Policy Authority:** Chief Information Security Officer (CISO)  
 **Compliance Status:** Mandatory for all projects (proportional requirements based on classification)
@@ -262,7 +243,6 @@ Before starting this assessment, ensure you have access to:
 - [ ] Project budget breakdown
 - [ ] Project governance documentation (if applicable)
 
-
 **Information Security Resources:**
 
 - [ ] ISMS-POL-A.5.8 (Information Security in Project Management) - full policy document
@@ -272,7 +252,6 @@ Before starting this assessment, ensure you have access to:
 - [ ] Security testing standards and procedures
 - [ ] Vendor security assessment questionnaire/process
 
-
 **Systems Access:**
 
 - [ ] Project management tool (Jira, MS Project, Asana, etc.)
@@ -281,14 +260,12 @@ Before starting this assessment, ensure you have access to:
 - [ ] Document repository (SharePoint, Confluence, Google Drive, etc.)
 - [ ] Contact information for Information Security Officer
 
-
 **Organizational Context:**
 
 - [ ] PMO gate review schedule and requirements
 - [ ] Security escalation paths and contacts
 - [ ] Asset inventory system (for Closure phase - registering new assets)
 - [ ] Exception/deviation approval process documentation
-
 
 ## Knowledge Required
 
@@ -304,7 +281,6 @@ Before starting this assessment, ensure you have access to:
 - Where are the formal gate reviews in your methodology?
 - Who approves progression to next phase?
 
-
 **2. Data Classification:**
 
 - What data will this project's deliverable process, store, or transmit?
@@ -319,14 +295,12 @@ Before starting this assessment, ensure you have access to:
   - Health information → HIPAA (if applicable)
   - Financial sector data → FINMA, DORA (if applicable)
 
-
 **3. Security Fundamentals:**
 
 - **Confidentiality, Integrity, Availability (CIA triad):** What are the security objectives?
 - **Risk Assessment:** How to identify threats, vulnerabilities, likelihood, impact
 - **Security Controls:** Types of controls (preventive, detective, corrective, compensating)
 - **Security Testing:** Difference between vulnerability scanning, penetration testing, code review, config review
-
 
 **4. Organizational Security:**
 
@@ -336,7 +310,6 @@ Before starting this assessment, ensure you have access to:
   - If third-party vendors: ISMS-POL-A.5.19-22 (Supplier Management)
   - If handling sensitive data: ISMS-POL-A.8.24 (Cryptography), A.8.10 (Deletion), A.8.11 (Masking)
 - What are the escalation paths for security issues?
-
 
 ## Tools Needed
 
@@ -348,20 +321,17 @@ Before starting this assessment, ensure you have access to:
 - 10 sheets: Instructions, Classification, 5 Phase Checklists, Dashboard, Evidence, Sign-Off
 - Requires Microsoft Excel 2016+ or compatible (LibreOffice Calc, Google Sheets with limitations)
 
-
 **2. Project Management Tools:**
 
 - Access to your organization's project management platform
 - Ability to create/update project risk register
 - Access to requirements tracking system (or this assessment can serve as requirements register for simple projects)
 
-
 **3. Communication Tools:**
 
 - Email access for approvals and escalations
 - Calendar access for scheduling security review meetings
 - Meeting platform (Teams, Zoom, etc.) for security workshops
-
 
 **Optional but Recommended Tools:**
 
@@ -371,20 +341,17 @@ Before starting this assessment, ensure you have access to:
 - Threat modeling templates (STRIDE, DREAD, Attack Trees)
 - Risk scoring matrix
 
-
 **5. Security Requirements Libraries:**
 
 - OWASP Application Security Verification Standard (ASVS) for software projects
 - CIS Benchmarks for infrastructure security
 - NIST Cybersecurity Framework for comprehensive security requirements
 
-
 **6. Evidence Management:**
 
 - Document management system for storing evidence
 - Screenshot/screen recording tools for configuration evidence
 - Test report templates
-
 
 ---
 
@@ -411,7 +378,6 @@ Phase 0: Classification → Phase 1: Initiation → Phase 2: Planning → Phase 
 - **Medium Risk:** Standard security activities, documented requirements and testing
 - **High Risk:** Comprehensive security integration, dedicated resources, formal approvals
 
-
 ---
 
 ## Phase 0: Project Classification (Before Initiation)
@@ -434,7 +400,6 @@ Phase 0: Classification → Phase 1: Initiation → Phase 2: Planning → Phase 
 - Evaluate technical complexity
 - Identify third-party/vendor involvement
 
-
 **Step 2: Complete Classification Criteria Assessment** (15-45 min)
 
 - Open Assessment Workbook, Sheet 2 (Project Classification)
@@ -455,7 +420,6 @@ Phase 0: Classification → Phase 1: Initiation → Phase 2: Planning → Phase 
     - 13-21 = **Medium Risk**
     - 22-30 = **High Risk**
 
-
 **Step 3: Review and Override (if needed)** (10-30 min)
 
 - Review automatic classification
@@ -468,7 +432,6 @@ Phase 0: Classification → Phase 1: Initiation → Phase 2: Planning → Phase 
     - Pilot project with limited scope → downgrade to Medium
     - Novel technology with unknown risks → upgrade to High
     - Vendor-managed SaaS with minimal organizational control → assess carefully
-
 
 **Step 4: Obtain Approval** (0 minutes - several days depending on approval process)
 
@@ -483,7 +446,6 @@ Phase 0: Classification → Phase 1: Initiation → Phase 2: Planning → Phase 
   - Self-classify but notify InfoSec Officer
   - InfoSec performs spot-check review
 
-
 **Step 5: Document Approval** (5-10 min)
 
 - Section D: Classification Approval
@@ -492,13 +454,11 @@ Phase 0: Classification → Phase 1: Initiation → Phase 2: Planning → Phase 
 - Link approval evidence (email, meeting minutes, approval form)
 - If conditional approval: Document conditions in Comments
 
-
 ### Deliverables
 
 - ✅ Completed Project Classification (Sheet 2)
 - ✅ Approved classification by appropriate authority
 - ✅ Evidence of approval (email or approval form)
-
 
 ### Gate Criterion
 **GATE 0 - Project Approval:**
@@ -507,7 +467,6 @@ Phase 0: Classification → Phase 1: Initiation → Phase 2: Planning → Phase 
 - **Enforcement:** PMO should include classification approval in project approval checklist
 - **Escalation:** If classification delayed, escalate to PMO Director or CISO
 
-
 ### Common Issues at This Phase
 
 **Issue:** "We don't have time for classification, project needs to start NOW"
@@ -515,18 +474,15 @@ Phase 0: Classification → Phase 1: Initiation → Phase 2: Planning → Phase 
 - **Response:** Classification takes 30-60 minutes. Skipping it creates bigger delays later when security gaps discovered.
 - **Mitigation:** Streamline process - create quick classification tool, pre-approve common project types
 
-
 **Issue:** "Everything gets classified High Risk, making security too burdensome"
 
 - **Response:** Review classification criteria - are they calibrated correctly? High should be ~10-20% of projects.
 - **Mitigation:** Calibration workshop with PMO, InfoSec, and sample project managers
 
-
 **Issue:** "Project Manager inflates risk to get more resources"
 
 - **Response:** InfoSec Officer reviews all classifications. Gaming the system will be caught.
 - **Mitigation:** Clear consequences for misclassification, spot-check audits
-
 
 ---
 
@@ -552,13 +508,11 @@ Complete Sheet 3, Section A: Security Stakeholder Identification
    - Engagement Level: Reviewer / Approver (Medium/High projects)
    - Notes: Primary security point of contact
 
-
 2. **Data Protection Officer** (if processing personal data)
 
    - Required if: GDPR/nDSG personal data processing
    - Engagement Level: Advisory (for questions) / Reviewer (for DPIA) / Approver (if required)
    - Notes: Determines if DPIA required
-
 
 **Conditional Stakeholders (based on project characteristics):**
 
@@ -568,19 +522,16 @@ Complete Sheet 3, Section A: Security Stakeholder Identification
    - Engagement Level: Advisory / Reviewer
    - Notes: Interprets regulatory requirements, provides compliance guidance
 
-
 4. **Security Architect** (for High Risk projects)
 
    - Required for: High Risk projects, novel architectures, complex integrations
    - Engagement Level: Reviewer (architecture review) / Approver (design sign-off)
    - Notes: Reviews security architecture, provides design guidance
 
-
 5. **Other Stakeholders** (customize based on project)
 
    - Examples: Cloud Security Specialist, Application Security Lead, Network Security Engineer
    - Document: Name, contact, specific area of involvement
-
 
 **Defining Engagement Levels:**
 
@@ -588,14 +539,12 @@ Complete Sheet 3, Section A: Security Stakeholder Identification
 - **Reviewer:** Reviews security deliverables (requirements, architecture, test results), provides feedback, may request changes
 - **Approver:** Formal approval authority, project cannot proceed without sign-off
 
-
 **Documentation Requirements:**
 
 - All stakeholder roles filled (or documented as N/A with justification)
 - Contact information complete and current
 - Engagement level clearly defined
 - Notes explaining why stakeholder is involved or not applicable
-
 
 **Activity 1.2: Conduct Initial Risk Identification** (1-3 hours depending on classification)
 
@@ -616,7 +565,6 @@ Complete Sheet 3, Section B: Initial Risk Identification
   - Compliance: Could we violate regulations or contractual obligations?
   - Access control: Could unauthorized users gain access?
   - Third-party risks: Could vendors/partners introduce vulnerabilities?
-
 
 **Step 2: Document Risks in Risk Register** (30-60 min)
 
@@ -654,19 +602,16 @@ Very Low        Low        Low        Low        Low          Medium
 - For Medium risks: Document planned mitigation approach
 - For Low risks: May accept if cost of mitigation exceeds potential impact
 
-
 **Minimum Risks Required:**
 
 - **High Risk projects:** Minimum 5 risks identified and documented
 - **Medium Risk projects:** Minimum 3 risks identified and documented
 - **Low Risk projects:** Top 1-2 risks documented (may be brief)
 
-
 **Link to Full Risk Register:**
 
 - If using separate enterprise risk register tool: Link to project risk register
 - If project-specific risk register: This assessment serves as risk register for security risks
-
 
 **Activity 1.3: Allocate Security Budget and Resources** (30-60 min)
 
@@ -693,7 +638,6 @@ Estimate and document budget/effort for:
 - ⚠️ Pending: Submitted for approval, awaiting budget confirmation
 - ❌ Not Approved: Identified need but not funded (RISK - document as project risk)
 
-
 **Total Security Budget:** Auto-calculated from resource estimates
 
 **Resource Allocation Notes:**
@@ -701,7 +645,6 @@ Estimate and document budget/effort for:
 - **High Risk projects:** Dedicated Project Security Coordinator may be required (0.25-0.5 FTE for duration)
 - **Medium Risk projects:** InfoSec Officer involvement 5-20 hours over project lifecycle
 - **Low Risk projects:** InfoSec Officer consultation as-needed, ~2-5 hours total
-
 
 **Outcome:** Security budget approved BEFORE Planning phase begins, preventing later "we can't afford security" scenarios
 
@@ -711,7 +654,6 @@ Estimate and document budget/effort for:
 - ✅ Initial security risk register with minimum required risks (Sheet 3, Section B)
 - ✅ Security budget allocated and approved (Sheet 3, Section C)
 - ✅ Initiation Phase Compliance Checklist complete (Sheet 3, Section D)
-
 
 ### Gate Criterion
 
@@ -729,7 +671,6 @@ Estimate and document budget/effort for:
 - Medium Risk: InfoSec Officer
 - Low Risk: PM self-certification with InfoSec notification
 
-
 **Evidence Required:**
 
 - Completed Initiation Phase Checklist (Sheet 3)
@@ -737,13 +678,11 @@ Estimate and document budget/effort for:
 - Budget allocation confirmation (email, budget approval form, or project budget document showing security line items)
 - Approval signature on Sheet 3, Section E
 
-
 **Escalation if Gate Blocked:**
 
 - If security budget not approved: Escalate to Project Sponsor and CISO
 - If InfoSec Officer approval delayed: Escalate to CISO
 - If risks cannot be identified: InfoSec Officer conducts facilitated risk workshop
-
 
 ### Common Issues at This Phase
 
@@ -752,18 +691,15 @@ Estimate and document budget/effort for:
 - **Response:** InfoSec support is mandatory per ISMS-POL-A.5.8. Escalate to CISO.
 - **Mitigation:** Schedule InfoSec time during project planning, avoid last-minute requests
 
-
 **Issue:** "We can't identify any security risks - project seems simple"
 
 - **Response:** Every project has risks. If genuinely simple, risks may be Low level but must still be documented.
 - **Mitigation:** Use risk checklist template, standard risk library for common project types
 
-
 **Issue:** "Finance won't approve security budget"
 
 - **Response:** Security is mandatory, not optional. Escalate to Project Sponsor and CISO.
 - **Mitigation:** Build security budget into project estimates from day 1, don't treat as separate/optional
-
 
 ---
 
@@ -793,7 +729,6 @@ Complete Sheet 4, Section A: Security Requirements Status
 - **Pros:** More detailed, better traceability, easier to manage many requirements
 - **Cons:** Additional workbook to maintain
 
-
 **Option 2: Embed Requirements in This Assessment**
 
 - **When:** Low Risk projects or simple Medium Risk projects with <10 requirements
@@ -802,7 +737,6 @@ Complete Sheet 4, Section A: Security Requirements Status
 - **Pros:** Simpler, everything in one place
 - **Cons:** Limited space, less detailed traceability
 
-
 **Option 3: Reference Project Requirements Document**
 
 - **When:** Project already has requirements managed in another tool (Jira, Azure DevOps, etc.)
@@ -810,7 +744,6 @@ Complete Sheet 4, Section A: Security Requirements Status
 - **Documentation:** Confirm security requirements are tagged/tracked in that system
 - **Pros:** Integrates with existing project workflow
 - **Cons:** Must ensure security requirements aren't lost among functional requirements
-
 
 **Minimum Security Requirements by Category:**
 
@@ -821,36 +754,30 @@ Regardless of approach, document requirements in these categories (see ISMS-POL-
    - Examples: Input validation, authentication, authorization, session management, crypto, error handling, logging, secure coding, SAST/DAST testing
    - Minimum: 3-5 requirements for Medium, 8-15 for High
 
-
 2. **Data Protection** (if processing Confidential/Restricted data)
 
    - Examples: Encryption at rest/transit, data classification, retention, deletion, backup encryption, minimization, GDPR compliance
    - Minimum: 2-4 requirements for Medium, 5-10 for High
-
 
 3. **Access Control & Authentication** (if user-facing system)
 
    - Examples: Authentication mechanism, MFA, password policy, RBAC, least privilege, session timeout, account lifecycle, access logging
    - Minimum: 2-3 requirements for Medium, 5-8 for High
 
-
 4. **Infrastructure Security** (if infrastructure/network changes)
 
    - Examples: Network segmentation, firewall rules, secure configuration, patch management, monitoring, web filtering, DLP
    - Minimum: 2-4 requirements for Medium, 5-10 for High
-
 
 5. **Third-Party Security** (if vendor/partner involvement)
 
    - Examples: Vendor security assessment, contractual obligations, API security, data sharing controls, third-party access management, SLAs
    - Minimum: 1-3 requirements for Medium, 3-5 for High
 
-
 6. **Compliance & Regulatory** (if regulatory requirements)
 
    - Examples: GDPR Art. 25 (privacy by design), PCI DSS requirements, HIPAA safeguards, FINMA requirements, audit trails, regulatory reporting
    - Minimum: Requirements per applicable regulation (varies)
-
 
 **Requirement Documentation Standard:**
 
@@ -863,7 +790,6 @@ Each requirement must include:
 - **Source:** Policy section, regulation, standard, or risk mitigation
 - **Acceptance Criteria:** How to verify compliance
 - **Status:** Not Started / In Progress / Implemented / Verified (updated in Execution)
-
 
 **Example Good Requirement:**
 ```
@@ -889,7 +815,6 @@ Complete Sheet 4, Section B: Threat Modeling / Risk Assessment
 - **High Risk:** REQUIRED - Formal threat modeling workshop
 - **Medium Risk:** RECOMMENDED - Lightweight risk assessment
 - **Low Risk:** OPTIONAL - May skip if risks straightforward
-
 
 **Approach 1: STRIDE Threat Modeling** (for software/systems)
 
@@ -921,13 +846,11 @@ Rate each threat 1-10 on:
 - **Affected Users:** How many users impacted?
 - **Discoverability:** How easy to find vulnerability?
 
-
 DREAD Score = (D + R + E + A + D) / 5
 
 - 7-10 = High severity
 - 4-6 = Medium severity
 - 0-3 = Low severity
-
 
 **Approach 3: Attack Trees** (for analyzing specific attack scenarios)
 
@@ -936,7 +859,6 @@ Build tree showing:
 - **Root:** Attack goal (e.g., "Steal customer payment card data")
 - **Branches:** Attack paths to achieve goal
 - **Leaves:** Specific attack steps
-
 
 Analyze each path, identify countermeasures, prioritize defenses
 
@@ -954,7 +876,6 @@ If threat modeling conducted:
 - Review Date: [Date]
 - Approval Status: ✅ Approved / ⚠️ Approved with Conditions / ❌ Needs Revision
 
-
 **Activity 2.3: Security Architecture Review** (1-4 hours for Medium/High)
 
 Complete Sheet 4, Section C: Security Architecture Review
@@ -964,7 +885,6 @@ Complete Sheet 4, Section C: Security Architecture Review
 - **High Risk:** REQUIRED - Formal architecture review by Security Architect
 - **Medium Risk:** RECOMMENDED - InfoSec Officer reviews architecture
 - **Low Risk:** OPTIONAL - Architecture review only if novel/complex
-
 
 **Purpose:** Ensure security controls designed into architecture BEFORE implementation begins
 
@@ -978,7 +898,6 @@ Architecture artifacts to review:
 - Technology stack (languages, frameworks, databases, infrastructure)
 - Integration points (APIs, third-party services, data exchanges)
 - Security control placement (where are encryption, authentication, monitoring, etc. implemented?)
-
 
 **Security Architecture Checklist:**
 
@@ -1000,7 +919,6 @@ Reviewer evaluates:
 - ⚠️ **Approved with Conditions:** Minor issues identified, must be addressed during implementation
 - ❌ **Not Approved:** Significant architecture flaws, redesign required before implementation
 
-
 **Documentation:**
 
 - Reviewer: [Security Architect or InfoSec Officer name]
@@ -1010,7 +928,6 @@ Reviewer evaluates:
 - Recommendations: [Specific changes or additional controls needed]
 - Security Architecture Approved?: ✅/⚠️/❌
 - Review Documentation: [Link to detailed architecture review report]
-
 
 **Activity 2.4: Create Security Test Plan** (1-3 hours)
 
@@ -1050,7 +967,6 @@ Complete Sheet 4, Section D: Security Test Plan
 - Approval Date: [Date]
 - Test Plan Document: [Link to detailed test plan if separate document]
 
-
 **Common Testing Mistakes to Avoid:**
 
 - ❌ Scheduling penetration test 2 days before go-live (no time to fix findings)
@@ -1058,7 +974,6 @@ Complete Sheet 4, Section D: Security Test Plan
 - ❌ Assuming vulnerability scan = penetration test (they're different)
 - ❌ Not retesting after fixing vulnerabilities (regression testing required)
 - ❌ Ignoring SAST findings because "too many false positives"
-
 
 **Activity 2.5: Vendor Security Assessment** (1-4 hours if third parties involved)
 
@@ -1075,7 +990,6 @@ Complete Sheet 4, Section E: Vendor Security Assessment
   - Role: What will they do/provide?
   - Data Access: Will they access Confidential/Restricted data?
   - Risk Level: High (Critical services, sensitive data access) / Medium (Important services) / Low (Minor services, no data access)
-
 
 **Step 2: Conduct Vendor Security Assessment**
 
@@ -1099,7 +1013,6 @@ Assessment method based on vendor risk level:
 - Compliance (certifications: ISO 27001, SOC 2, PCI DSS, GDPR compliance)
 - Subcontractor management (are they using subcontractors? Are those secure?)
 
-
 **Step 3: Review Vendor Certifications**
 
 - ISO 27001: Information security management certification
@@ -1107,7 +1020,6 @@ Assessment method based on vendor risk level:
 - PCI DSS: Payment card data security (if handling payment cards)
 - FedRAMP: U.S. federal government cloud security (if applicable)
 - Industry-specific: HIPAA for healthcare, FINMA for Swiss financial, etc.
-
 
 **Step 4: Document Assessment Results**
 
@@ -1124,7 +1036,6 @@ For each vendor:
 - Approval Date: [Date]
 - Evidence: [Link to questionnaire responses, certifications, audit reports]
 
-
 **Step 5: Contract Security Terms**
 
 Ensure vendor contracts include:
@@ -1138,12 +1049,10 @@ Ensure vendor contracts include:
 - Compliance with applicable regulations (GDPR, nDSG, etc.)
 - Security SLAs (patching timelines, incident response times)
 
-
 **Documentation:**
 
 - Link to vendor assessment documentation: [Folder or document link]
 - Vendor contracts with security terms: [Link]
-
 
 **Activity 2.6: Data Protection Impact Assessment (DPIA)** (2-6 hours if required)
 
@@ -1171,7 +1080,6 @@ DPIA is REQUIRED if:
 - DPO determines: Is DPIA required?
 - If yes: DPO provides DPIA template and guidance
 
-
 **Step 2: Complete DPIA**
 
 DPIA must address:
@@ -1183,13 +1091,11 @@ DPIA must address:
    - How long will we keep it?
    - Who will it be shared with?
 
-
 2. **Necessity and Proportionality:**
 
    - Is processing necessary for stated purpose?
    - Is there a less privacy-invasive way?
    - Is data minimization applied? (only collect what's needed)
-
 
 3. **Risk Assessment:**
 
@@ -1197,25 +1103,21 @@ DPIA must address:
    - Likelihood and severity of risks
    - Who could be harmed and how?
 
-
 4. **Mitigation Measures:**
 
    - What technical/organizational measures will reduce risks?
    - Encryption, pseudonymization, access controls, retention limits, etc.
-
 
 5. **Residual Risk:**
 
    - After mitigations, what risks remain?
    - Are residual risks acceptable?
 
-
 **Step 3: DPO Review and Approval**
 
 - DPO reviews completed DPIA
 - DPO may request additional measures or clarifications
 - DPO approves or escalates to supervisory authority (if high residual risk)
-
 
 **Step 4: Document DPIA Outcome**
 
@@ -1230,12 +1132,10 @@ DPIA must address:
   - Approval Date: [Date]
   - DPIA Document: [Link to completed DPIA]
 
-
 **Integration with Security Requirements:**
 
 - Privacy controls from DPIA → Security requirements (encryption, access controls, retention, deletion)
 - DPIA outcome influences project classification (High privacy risk → often High security risk)
-
 
 ### Deliverables
 
@@ -1246,7 +1146,6 @@ DPIA must address:
 - ✅ Vendor security assessments complete (if applicable) (Sheet 4, Section E)
 - ✅ DPIA conducted and approved by DPO (if required) (Sheet 4, Section F)
 - ✅ Planning Phase Compliance Checklist complete (Sheet 4, Section G)
-
 
 ### Gate Criterion
 
@@ -1267,7 +1166,6 @@ DPIA must address:
 - Medium Risk: InfoSec Officer approval required
 - Low Risk: PM self-certification with InfoSec review
 
-
 **Evidence Required:**
 
 - Completed Planning Phase Checklist (Sheet 4)
@@ -1279,14 +1177,12 @@ DPIA must address:
 - DPIA (if required)
 - Approval signature on Sheet 4, Section H
 
-
 **Escalation if Gate Blocked:**
 
 - If security requirements incomplete: Work session with InfoSec to complete
 - If architecture not approved: Redesign required, escalate timeline impact to Project Sponsor
 - If vendor assessment delayed: Escalate to procurement/vendor management
 - If DPO blocks DPIA: Escalate to Data Protection Officer and legal team
-
 
 ### Common Issues at This Phase
 
@@ -1295,24 +1191,20 @@ DPIA must address:
 - **Response:** Use security requirements templates, reference ISMS policies, engage InfoSec Officer for guidance
 - **Mitigation:** Provide requirement libraries by project type, security requirements workshop with InfoSec
 
-
 **Issue:** "Threat modeling takes too long, we need to start development NOW"
 
 - **Response:** Skipping threat modeling on High Risk projects violates policy. Finding threats LATER costs 10-100x more.
 - **Mitigation:** Facilitated threat modeling workshop (4 hours), not multi-week analysis
-
 
 **Issue:** "Vendor won't complete security questionnaire, says it's proprietary"
 
 - **Response:** Vendor security assessment is non-negotiable for vendors accessing Confidential data. Escalate to procurement.
 - **Mitigation:** Use standard industry questionnaires (CAIQ, SIG), require ISO 27001 or SOC 2 certification as alternative
 
-
 **Issue:** "DPO says DPIA required but we don't have time"
 
 - **Response:** DPIA is legal requirement under GDPR if processing Restricted personal data. Non-compliance = regulatory risk.
 - **Mitigation:** Start DPIA early (during Initiation), use DPO-provided templates, allocate adequate time in schedule
-
 
 ---
 
@@ -1355,7 +1247,6 @@ Complete Sheet 5, Section A: Security Controls Implementation
   - **Implemented:** Verify claim with evidence (code review, config review, demo)
   - **Verified:** Tested and confirmed working
 
-
 **Step 2: Implementation Evidence Collection**
 
 For each requirement category, document:
@@ -1383,7 +1274,6 @@ Overall Implementation Rate = (All Implemented + Verified) / All Requirements ×
 - Medium Risk projects: ≥95% Must Have requirements implemented
 - Low Risk projects: ≥90% Must Have requirements implemented
 
-
 **Activity 3.2: Conduct Security Testing** (2-6 hours coordination + testing time)
 
 Complete Sheet 5, Section B: Security Testing Results
@@ -1407,7 +1297,6 @@ Complete Sheet 5, Section B: Security Testing Results
 - **Documentation:** Record findings count by severity in Sheet 5, Section B
 - **Evidence:** Link to vulnerability scan report
 
-
 **Test 2: Static Application Security Testing - SAST (Software Projects)**
 
 - **When:** During development (ideally continuous in CI/CD), final pre-deployment scan
@@ -1422,7 +1311,6 @@ Complete Sheet 5, Section B: Security Testing Results
 
 - **Documentation:** Record findings by severity, false positive rate
 - **Evidence:** Link to SAST report, remediation commits
-
 
 **Test 3: Dynamic Application Security Testing - DAST (Web Apps/APIs)**
 
@@ -1440,7 +1328,6 @@ Complete Sheet 5, Section B: Security Testing Results
 - **Documentation:** Record findings by severity, OWASP Top 10 mapping
 - **Evidence:** Link to DAST report
 
-
 **Test 4: Penetration Testing (High Risk Projects)**
 
 - **When:** After SAST/DAST complete and findings remediated, pre-deployment
@@ -1455,7 +1342,6 @@ Complete Sheet 5, Section B: Security Testing Results
 
 - **Documentation:** Record findings by severity, attack scenarios
 - **Evidence:** Link to penetration test report
-
 
 **Test 5: Configuration Review (Infrastructure Projects, All Projects)**
 
@@ -1472,7 +1358,6 @@ Complete Sheet 5, Section B: Security Testing Results
 - **Documentation:** Record compliance percentage, critical deviations
 - **Evidence:** Link to configuration review report, remediation evidence
 
-
 **Test 6: Security Functional Testing (All Projects)**
 
 - **When:** During User Acceptance Testing (UAT)
@@ -1486,7 +1371,6 @@ Complete Sheet 5, Section B: Security Testing Results
 
 - **Documentation:** Record test case pass rate
 - **Evidence:** Link to test execution results
-
 
 **Testing Summary Table:**
 
@@ -1515,7 +1399,6 @@ Complete Sheet 5, Section C: Security Findings Remediation
 - Validate (confirm true positive vs. false positive)
 - Prioritize (Critical → High → Medium → Low)
 
-
 **Step 2: Create Remediation Plan (1-2 hours)**
 
 For each finding:
@@ -1529,7 +1412,6 @@ For each finding:
 - **Target Date:** When will it be fixed?
 - **Status:** Open / In Progress / Fixed / Verified / Accepted (if risk accepted)
 
-
 **Step 3: Remediation Execution (Variable)**
 
 **Critical Findings:**
@@ -1539,14 +1421,12 @@ For each finding:
 - **Examples:** SQL injection, authentication bypass, remote code execution, hard-coded credentials
 - **Process:** Immediate fix, code review, retest, verify
 
-
 **High Findings:**
 
 - **SLA:** Fix within 1-2 weeks
 - **Priority:** Must fix before production deployment
 - **Examples:** XSS, missing encryption, weak authentication, privilege escalation
 - **Process:** Planned fix in current sprint/phase, code review, retest
-
 
 **Medium Findings:**
 
@@ -1555,14 +1435,12 @@ For each finding:
 - **Examples:** Security misconfiguration, outdated libraries (non-critical), information disclosure
 - **Process:** Fix if time allows, or document compensating controls and accept risk
 
-
 **Low Findings:**
 
 - **SLA:** Fix in future release or accept risk
 - **Priority:** Nice to fix, not blocking
 - **Examples:** Missing security headers, verbose error messages, minor information disclosure
 - **Process:** Backlog for future sprint, or accept risk with justification
-
 
 **Step 4: Verification (Retesting)**
 
@@ -1571,7 +1449,6 @@ After remediation:
 - **Retest:** Confirm fix effective (re-run scan, manual verification)
 - **Regression Test:** Ensure fix didn't break functionality
 - **Update Status:** Mark finding as "Fixed" → "Verified"
-
 
 **Step 5: Risk Acceptance (for unfixed findings)**
 
@@ -1592,7 +1469,6 @@ If finding cannot be fixed before deployment:
   - Add to project risk register
   - Track in [Organization]'s enterprise risk register if High residual risk
 
-
 **Remediation Status Summary:**
 
 Auto-calculate from findings table:
@@ -1610,7 +1486,6 @@ Auto-calculate from findings table:
 - ⚠️ **CONDITIONAL:** High ≤ 2 open with approved remediation plan within 30 days
 - ❌ **BLOCKED:** Critical > 0 or High > 2 open
 
-
 **Activity 3.4: Complete Security Documentation** (1-3 hours)
 
 Complete Sheet 5, Section D: Security Documentation
@@ -1626,13 +1501,11 @@ Complete Sheet 5, Section D: Security Documentation
    - What are secure defaults?
    - What settings should NOT be changed?
 
-
 2. **Known Security Issues Register**
 
    - Accepted risks (findings not fixed)
    - Known limitations (features not implemented for security/cost reasons)
    - Workarounds (temporary mitigations until proper fix)
-
 
 **For Medium/High Risk Projects:**
 3. **Security Architecture Document**
@@ -1642,13 +1515,11 @@ Complete Sheet 5, Section D: Security Documentation
    - Data flow diagram with security annotations (encryption points, auth points)
    - Security design decisions and rationale
 
-
 4. **Security Operations Runbook**
 
    - Daily/weekly/monthly security tasks (log review, cert renewal, access review)
    - Incident response procedures (what to do if security alert)
    - Escalation paths (when to call InfoSec, when to call CISO)
-
 
 **For High Risk Projects:**
 5. **Security Administrator Guide**
@@ -1658,20 +1529,17 @@ Complete Sheet 5, Section D: Security Documentation
    - How to review security logs
    - How to respond to security events
 
-
 6. **End User Security Guide**
 
    - Security features users need to know (MFA setup, password reset, data classification)
    - User responsibilities (don't share credentials, report suspicious activity)
    - How to use security features correctly
 
-
 7. **Incident Response Procedures (Project-Specific)**
 
    - Incident classification (what severity levels?)
    - Response workflow (detect → contain → eradicate → recover → lessons learned)
    - Contact list (on-call rotation, escalation contacts)
-
 
 **Documentation Completeness Tracking:**
 
@@ -1694,7 +1562,6 @@ Complete Sheet 5, Section D: Security Documentation
 - ✅ Critical/High findings remediated or formally accepted (Sheet 5, Section C)
 - ✅ Security documentation complete per classification (Sheet 5, Section D)
 - ✅ Execution Phase Compliance Checklist complete (Sheet 5, Section E)
-
 
 ### Gate Criterion
 
@@ -1721,7 +1588,6 @@ Complete Sheet 5, Section D: Security Documentation
 - Medium Risk: InfoSec Officer approval
 - Low Risk: PM self-certification with InfoSec review
 
-
 **Evidence Required:**
 
 - Completed Execution Phase Checklist (Sheet 5)
@@ -1730,14 +1596,12 @@ Complete Sheet 5, Section D: Security Documentation
 - Security documentation (complete package)
 - Approval signature on Sheet 5, Section F
 
-
 **Escalation if Gate Blocked:**
 
 - If Critical findings exist: DEPLOYMENT BLOCKED until fixed (no exceptions without CEO approval)
 - If High findings >2 open: Escalate to Project Sponsor + CISO for risk acceptance decision
 - If documentation incomplete: Allocate resources to complete before deployment
 - If testing incomplete: Reschedule deployment, complete testing first
-
 
 ### Common Issues at This Phase
 
@@ -1747,24 +1611,20 @@ Complete Sheet 5, Section D: Security Documentation
 - **Impact:** Deployment delayed, business disruption, emergency remediation
 - **Prevention:** Schedule penetration test 4-6 weeks before go-live, allow time for remediation and retest
 
-
 **Issue:** "Too many Medium findings, we can't fix them all before deployment"
 
 - **Response:** Prioritize: Fix those with easiest remediation or highest business impact, accept rest with compensating controls
 - **Mitigation:** Earlier security testing (shift-left), SAST in CI/CD catches issues during development
-
 
 **Issue:** "SAST tool has 90% false positive rate, team ignores findings"
 
 - **Response:** Tune SAST rules, focus on high-confidence checks, supplement with code review
 - **Mitigation:** Training on SAST tool usage, dedicated security champion to triage findings
 
-
 **Issue:** "Security documentation not written, operations team doesn't know how to secure operate system"
 
 - **Response:** Delay handover until documentation complete, include security subject matter expert in handover
 - **Mitigation:** Documentation template in Definition of Done, start documentation early
-
 
 ---
 
@@ -1792,7 +1652,6 @@ Complete Sheet 6, Section A: Risk Register Updates
 - Medium Risk projects: Bi-weekly or per sprint
 - Low Risk projects: Monthly or as-needed
 
-
 **Process:**
 
 **Step 1: Review Existing Risks**
@@ -1805,7 +1664,6 @@ For each risk in register (from Initiation phase):
 - **Impact Update:** Has impact changed? (more sensitive data, more users, higher criticality)
 - **Treatment Status:** Is mitigation plan on track? Blockers? Effectiveness?
 
-
 **Step 2: Identify New Risks**
 
 Triggers for new risk identification:
@@ -1816,7 +1674,6 @@ Triggers for new risk identification:
 - External threat intelligence (new attack patterns, zero-days)
 - Vendor security incident affecting similar technology
 - Team member leaving (knowledge loss risk)
-
 
 **Step 3: Update Risk Register Table:**
 
@@ -1835,7 +1692,6 @@ If new High/Critical risk identified OR existing risk escalates:
 - Propose accelerated mitigation plan
 - May require emergency risk assessment meeting
 
-
 **Activity 4.2: Change Security Impact Assessment** (15-45 min per significant change)
 
 Complete Sheet 6, Section B: Change Security Impact Assessment
@@ -1849,7 +1705,6 @@ Complete Sheet 6, Section B: Change Security Impact Assessment
 - Schedule change (compressed timeline may skip security activities)
 - Budget change (reduced budget may cut security testing)
 - Team change (key security person leaving)
-
 
 **Security Impact Assessment Process:**
 
@@ -1871,7 +1726,6 @@ For each change:
 - **Risk:** New risks introduced, existing risks exacerbated
 - **Resources:** Need more security budget/time
 
-
 **Decision Outcomes:**
 
 - ✅ **Approved:** Change has no security impact OR impact mitigated
@@ -1879,13 +1733,11 @@ For each change:
 - ❌ **Rejected:** Security impact unacceptable, change not approved
 - 🔄 **Deferred:** More analysis needed before decision
 
-
 **Significant Changes Requiring Re-assessment:**
 
 - If change moves project from Medium → High Risk: Return to Planning phase for threat modeling, architecture review
 - If change introduces new regulatory requirement: Conduct compliance gap analysis, may need DPIA
 - If change significantly alters architecture: Security architecture re-review required
-
 
 **Activity 4.3: Security Metrics Tracking** (High Risk Projects Only - 15-30 min per update)
 
@@ -1912,7 +1764,6 @@ Complete Sheet 6, Section C: Security Metrics Tracking
 - → Stable
 - ↓ Declining (bad for coverage/implementation, good for open findings)
 
-
 **Red Flags (Trigger Escalation):**
 
 - Open Critical findings > 0 for >48 hours
@@ -1920,7 +1771,6 @@ Complete Sheet 6, Section C: Security Metrics Tracking
 - Avg remediation time increasing
 - Test coverage decreasing
 - Requirements implementation stalled (<80% and not increasing)
-
 
 **Metrics Dashboard Link:** [Link to detailed metrics dashboard if using external tool like Jira, Sonar, etc.]
 
@@ -1954,7 +1804,6 @@ Complete Sheet 6, Section D: Escalations and Issues
 - Medium Risk projects: Escalate within 5 business days
 - Critical security findings: Immediate escalation (same day)
 
-
 **Activity 4.5: Monitoring Phase Activity Log** (Continuous)
 
 Complete Sheet 6, Section E: Monitoring Phase Activity Log
@@ -1977,7 +1826,6 @@ Complete Sheet 6, Section E: Monitoring Phase Activity Log
 - 2025-04-12: Penetration test kick-off
 - 2025-04-20: Final risk review before deployment
 
-
 ### Deliverables
 
 - ✅ Updated risk register with current status and trends (Sheet 6, Section A)
@@ -1986,7 +1834,6 @@ Complete Sheet 6, Section E: Monitoring Phase Activity Log
 - ✅ Escalations documented and resolved (Sheet 6, Section D)
 - ✅ Activity log showing continuous security oversight (Sheet 6, Section E)
 - ✅ Monitoring Phase Compliance documented (Sheet 6, Section F)
-
 
 ### Compliance Check
 
@@ -1998,13 +1845,11 @@ Complete Sheet 6, Section E: Monitoring Phase Activity Log
 - Issues escalated appropriately and timely
 - Evidence of ongoing monitoring activities (not just at gate reviews)
 
-
 **Compliance Status:**
 
 - ✅ **On Track:** All monitoring activities occurring per schedule
 - ⚠️ **Minor Issues:** Some delays in risk reviews or change assessments, but caught up
 - ❌ **Significant Gaps:** Risk register not updated in >30 days, changes approved without security assessment, escalations not made
-
 
 ### Common Issues at This Phase
 
@@ -2014,20 +1859,17 @@ Complete Sheet 6, Section E: Monitoring Phase Activity Log
 - **Remediation:** Schedule recurring risk review meeting (weekly for High, bi-weekly for Medium)
 - **Prevention:** Calendar reminders, PMO gate review checklist includes risk register currency
 
-
 **Issue:** "Major scope change approved without security assessment"
 
 - **Impact:** New security requirements missed, project may fail security gate at deployment
 - **Remediation:** Retrospective security impact assessment, identify gaps, add remediation work
 - **Prevention:** Change control process REQUIRES security impact assessment (checkbox in change request form)
 
-
 **Issue:** "Security metrics show declining trend but no one noticed"
 
 - **Impact:** Degrading security posture until crisis (e.g., deployment blocked by critical findings)
 - **Remediation:** Immediate deep dive, identify root cause, corrective action plan
 - **Prevention:** Automated alerts when metrics cross thresholds, PM reviews metrics in weekly status
-
 
 ---
 
@@ -2069,7 +1911,6 @@ Complete Sheet 7, Section A: Security Handover Documentation
 - Trust boundaries and security zones
 - Data flow diagrams with security annotations
 
-
 **2. Security Configuration Guide**
 
 - How security is currently configured (authentication, encryption, access controls)
@@ -2078,7 +1919,6 @@ Complete Sheet 7, Section A: Security Handover Documentation
 - Configuration change procedures (how to safely modify security settings)
 - Configuration verification procedures (how to check security is properly configured)
 
-
 **3. Known Security Issues and Limitations**
 
 - Accepted risks from Execution phase (Medium/Low findings not fixed)
@@ -2086,7 +1926,6 @@ Complete Sheet 7, Section A: Security Handover Documentation
 - Workarounds and temporary mitigations (with timelines for permanent fixes)
 - Dependencies (security relies on X being configured correctly)
 - Monitoring gaps (what we can't detect or monitor)
-
 
 **4. Operational Security Procedures**
 
@@ -2106,7 +1945,6 @@ Complete Sheet 7, Section A: Security Handover Documentation
   - Security testing before change deployment
   - Rollback procedures if security issues
 
-
 **5. Security Contacts and Escalation Paths**
 
 - Primary security contact (operations security lead)
@@ -2115,7 +1953,6 @@ Complete Sheet 7, Section A: Security Handover Documentation
 - CISO escalation path
 - Vendor security contacts (for third-party components)
 - On-call rotation (if 24/7 operations)
-
 
 **Handover Package Completeness Tracking:**
 
@@ -2140,7 +1977,6 @@ Complete Sheet 7, Section A: Security Handover Documentation
 - **Agenda:** Walkthrough of security controls, Q&A, handover acceptance
 - **Meeting Notes:** [Link to meeting notes]
 - **Action Items:** [List of follow-up items for operations team]
-
 
 **Activity 5.2: Accept Residual Security Risks** (30-90 min)
 
@@ -2173,17 +2009,14 @@ Risks not fully mitigated:
 - **Medium residual risks:** CISO (High Risk projects) or InfoSec Officer (Medium Risk projects)
 - **Low residual risks:** Business Owner + InfoSec Officer
 
-
 **Residual Risks Tracked in Enterprise Risk Register?**
 
 - ✅ Yes, tracked: [Link to enterprise risk register entries]
 - ❌ No, project-only risks
 
-
 **Overall Residual Risk Level:** Dropdown - Low / Medium / High / Unacceptable
 
 - If Unacceptable: Project CANNOT close until risks remediated to acceptable level
-
 
 **Risk Acceptance Documentation:** [Link to formal risk acceptance forms, emails, meeting minutes]
 
@@ -2209,11 +2042,9 @@ Complete Sheet 7, Section C: Asset Registration
 - **Asset Tags/Labels Applied:** [Tag scheme used for asset tracking]
 - **Asset Ownership Confirmed:** All assets have assigned owners? ✅/❌
 
-
 **Asset Registration Complete?** ✅ Yes / ⚠️ Partial / ❌ No
 
 - If Partial/No: List incomplete registrations and target date for completion
-
 
 **Activity 5.4: Conduct Security Lessons Learned Review** (1-2 hours)
 
@@ -2227,7 +2058,6 @@ Complete Sheet 7, Section D: Security Lessons Learned
 - **Date:** [Date]
 - **Participants:** [PM, InfoSec Officer, key team members, Business Owner]
 - **Format:** Workshop / Structured Interview / Anonymous Survey / Retrospective
-
 
 **Lessons Learned Questions:**
 
@@ -2243,7 +2073,6 @@ Examples:
 - "Early vendor security assessment (in Planning) prevented delays when integrating third-party API"
 - "Security requirements documented in Jira as acceptance criteria made implementation and testing clear"
 
-
 **2. What Security Activities Didn't Work or Were Challenging?**
 
 [Free text - Capture 3-5 specific pain points]
@@ -2255,7 +2084,6 @@ Examples:
 - "No security champion on development team. Security questions went unanswered for days until InfoSec Officer responded"
 - "DAST tool had 70% false positive rate. Team wasted time triaging noise, missed real vulnerabilities"
 - "Handover documentation started at end of project. Rushed, incomplete, operations team struggled"
-
 
 **3. What Would We Do Differently Next Time?**
 
@@ -2269,7 +2097,6 @@ Examples:
 - "Use DAST tool's API mode for better accuracy. Tune out false positive categories after first scan"
 - "Start security handover documentation template at project kickoff. Update incrementally, not all at end"
 
-
 **4. What Should Be Standardized Across [Organization]'s Projects?**
 
 [Recommendations for policy/procedure updates, templates, tools]
@@ -2281,7 +2108,6 @@ Examples:
 - "Standardize security test plan template with recommended test types by project classification"
 - "Create security handover documentation template in PMO toolkit"
 - "Require security champion assignment in project team charter for Medium/High Risk projects"
-
 
 **5. Security Tool/Process Improvements Needed?**
 
@@ -2295,13 +2121,11 @@ Examples:
 - "No centralized security requirements library. Every project reinvents wheel. Build shared repository"
 - "Certificate management manual and error-prone. Need automated cert renewal (ACME protocol)"
 
-
 **Lessons Learned Report:**
 
 - **Report Created?** ✅ Yes / ❌ No
 - **Report Location:** [Link to lessons learned document]
 - **Shared With:** [PMO, InfoSec Team, Project Management Community, Executive Management]
-
 
 **Recommendations Submitted For:**
 
@@ -2309,7 +2133,6 @@ Examples:
 - ☑ Procedure improvements (ISMS-IMP-A.5.8.1, A.5.8.2, A.5.8.3): [List improvements]
 - ☑ Training/templates: [List training needs or templates to create]
 - ☑ Tool/process improvements: [List tool acquisitions or process changes]
-
 
 **Follow-Up Actions:**
 | Recommendation | Assigned To | Target Date | Status |
@@ -2334,7 +2157,6 @@ Verify before requesting approval:
 - ☑ Assets registered in ISMS asset inventory (A.5.9)
 - ☑ Lessons learned documented and shared
 - ☑ All Closure Phase required activities complete
-
 
 **Final Closure:**
 
@@ -2374,7 +2196,6 @@ Verify before requesting approval:
 - ✅ Closure Phase Compliance Checklist complete (Sheet 7, Section E)
 - ✅ Final closure approval obtained (Sheet 7, Section F)
 
-
 ### Gate Criterion
 
 **GATE 4 - Project Closure (Final Gate):**
@@ -2398,7 +2219,6 @@ Verify before requesting approval:
 - Medium Risk: InfoSec Officer sign-off REQUIRED
 - Low Risk: PM self-certification + InfoSec review
 
-
 **Evidence Required:**
 
 - Completed Closure Phase Checklist (Sheet 7)
@@ -2409,14 +2229,12 @@ Verify before requesting approval:
 - Lessons learned report
 - Final approval signature on Sheet 7, Section F
 
-
 **Escalation if Closure Blocked:**
 
 - If handover documentation incomplete: Allocate resources to complete before project can close
 - If operations team refuses handover: Escalate to Operations Director + PMO Director, may need additional training or resources
 - If residual risks unacceptable: Return to Execution phase, remediate risks, retest
 - If CISO refuses closure approval: Address identified gaps, re-submit for approval
-
 
 ### Common Issues at This Phase
 
@@ -2427,14 +2245,12 @@ Verify before requesting approval:
 - **Remediation:** Gap analysis with operations, complete missing documentation, additional training
 - **Prevention:** Engage operations early (Planning phase), start documentation template at project start
 
-
 **Issue:** "Residual Medium findings, but Business Owner won't formally accept risk"
 
 - **Root Cause:** Business Owner doesn't understand risk implications or doesn't want accountability
 - **Impact:** Project cannot close without risk acceptance
 - **Remediation:** Risk briefing session with Business Owner + CISO, explain risk in business terms
 - **Prevention:** Involve Business Owner in risk discussions throughout project, not just at end
-
 
 **Issue:** "Assets not registered because asset inventory system is manual/outdated"
 
@@ -2443,14 +2259,12 @@ Verify before requesting approval:
 - **Remediation:** Manual registration, escalate process improvement to IT management
 - **Prevention:** Asset inventory should be maintained during project, not at end
 
-
 **Issue:** "No time for lessons learned, project team already reassigned"
 
 - **Root Cause:** Lessons learned scheduled after team disbands
 - **Impact:** Lose valuable insights, repeat same mistakes on next project
 - **Remediation:** Async lessons learned (survey or written submissions)
 - **Prevention:** Schedule lessons learned session BEFORE project team disbands
-
 
 ---
 
@@ -2474,7 +2288,6 @@ Sheet 8 provides executive summary showing overall project security integration 
   - Project Status (current phase)
   - Assessment Period (Start date to current date or end date)
 
-
 ### Component B: Phase Completion Status
 
 **Auto-generated status table:**
@@ -2494,7 +2307,6 @@ Sheet 8 provides executive summary showing overall project security integration 
 - 🔄 **In Progress:** Phase score 50-89% OR work actively occurring
 - ⚠️ **Incomplete:** Phase score <50% AND phase should be complete by now
 - ❌ **Not Started:** No activities completed
-
 
 **Completion % Calculation:** (Completed Activities) / (Required Activities per Classification) × 100%
 
@@ -2519,7 +2331,6 @@ Overall Score = (Classification × 0) +
 - Execution: 30% (heaviest implementation work)
 - Monitoring: 10% (continuous but less defined)
 - Closure: 20% (important handover and lessons learned)
-
 
 **Compliance Rating:**
 
@@ -2556,7 +2367,6 @@ Overall Score = (Classification × 0) +
 - ⚠️ Yellow: Metric acceptable but watch (e.g., High findings ≤ 3)
 - ❌ Red: Metric unacceptable (e.g., Critical findings > 0)
 
-
 ### Component E: Gap Analysis
 
 **Auto-generated gap list from all phases:**
@@ -2575,13 +2385,11 @@ Pulls all incomplete activities where Status = ⚠️ or ❌ AND Required = "Req
 - **Medium Impact:** Activity is required but could have workaround/exception
 - **Low Impact:** Activity recommended but not mandatory for this classification
 
-
 **Gap Summary:**
 
 - Critical gaps (High Impact, blocking): [Count]
 - High gaps (required but missing): [Count]
 - Medium gaps (recommended but missing): [Count]
-
 
 ### Component F: Risk and Finding Status
 
@@ -2634,7 +2442,6 @@ IF Lessons learned not documented AND closure phase active THEN
 - Risk escalations (unacceptable risk levels)
 - Timeline concerns (approaching deadlines with incomplete activities)
 
-
 ---
 
 # Evidence Management (Sheet 9: Evidence Register)
@@ -2669,7 +2476,6 @@ Centralized tracking of all security evidence for audit trail, compliance verifi
 - Test Result (individual test case results, test execution logs)
 - Code Artifact (code commits, pull requests, code review comments)
 
-
 **Phase Dropdown Options:**
 
 - Classification
@@ -2679,7 +2485,6 @@ Centralized tracking of all security evidence for audit trail, compliance verifi
 - Monitoring
 - Closure
 
-
 ## Evidence Collection Best Practices
 
 **1. Collect Evidence Immediately**
@@ -2688,13 +2493,11 @@ Centralized tracking of all security evidence for audit trail, compliance verifi
 - Capture evidence when activity occurs (screenshot configs immediately after implementation)
 - Link evidence as you complete activities in phase checklists
 
-
 **2. Organize Evidence Systematically**
 
 - Folder structure: `/project_name/security/evidence/[phase]/[activity]/`
 - Naming convention: `YYYY-MM-DD_[Activity]_[Description].ext`
 - Example: `2025-04-15_PenetrationTest_ExternalAPI.pdf`
-
 
 **3. Evidence Quality**
 
@@ -2704,13 +2507,11 @@ Centralized tracking of all security evidence for audit trail, compliance verifi
 - Verifiable (auditor can review and confirm)
 - Complete (includes outcomes, not just "we did this")
 
-
 **4. Evidence Retention**
 
 - Follow [Organization]'s records retention policy
 - Typical: 7 years for projects involving Confidential data or regulatory requirements
 - Minimum: 3 years for audit purposes (ISO 27001 audit cycle)
-
 
 ## Evidence Summary by Phase
 
@@ -2725,7 +2526,6 @@ Evidence Count by Phase:
 - Execution: [COUNTIF(Phase, "Execution")]
 - Monitoring: [COUNTIF(Phase, "Monitoring")]
 - Closure: [COUNTIF(Phase, "Closure")]
-
 
 Total Evidence Items: [COUNT(all rows with data)]
 ```
@@ -2748,14 +2548,12 @@ Final approval workflow documenting that assessment is complete and approved by 
 - Project Manager: [From Sheet 2]
 - Assessment Completion Date: [Date of final phase completion]
 
-
 **Compliance Summary:**
 
 - Overall Compliance Score: [From Sheet 8]
 - Compliance Rating: [From Sheet 8]
 - Critical Gaps: [Count from Sheet 8]
 - Residual Risk Level: [From Sheet 7]
-
 
 **Phase Completion:**
 
@@ -2765,7 +2563,6 @@ Final approval workflow documenting that assessment is complete and approved by 
 - Execution: [✅/❌]
 - Monitoring: [✅/❌]
 - Closure: [✅/❌]
-
 
 ### Section B: Approval Workflow
 
@@ -2780,7 +2577,6 @@ Final approval workflow documenting that assessment is complete and approved by 
 - ☑ Quality checklist reviewed (Section 8 below)
 - ☑ Assessment internally consistent (no contradictions between sheets)
 
-
 **Project Manager Certification:**
 
 - **Status:** ✅ Ready for Review / 🔄 In Progress
@@ -2788,7 +2584,6 @@ Final approval workflow documenting that assessment is complete and approved by 
 - **PM Signature:** [Signature or typed name]
 - **Date:** [Date]
 - **Comments:** [Any notes or clarifications]
-
 
 **Step 2: Security Review**
 
@@ -2810,7 +2605,6 @@ Final approval workflow documenting that assessment is complete and approved by 
 - ☑ Evidence adequate for audit purposes (not missing key evidence)
 - ☑ Lessons learned captured and actionable
 
-
 **Security Reviewer:**
 
 - **Reviewer Name:** [Name]
@@ -2825,7 +2619,6 @@ Final approval workflow documenting that assessment is complete and approved by 
   - If Approved with Conditions: List specific conditions
   - If Not Approved: List deficiencies that must be addressed
 
-
 **Step 3: Address Review Feedback (if needed)**
 
 If reviewer identifies issues:
@@ -2835,7 +2628,6 @@ If reviewer identifies issues:
 - **Resolution Actions:** [What PM did to address issues]
 - **Re-Submission Date:** [Date when re-submitted for approval]
 
-
 **Step 4: Final Approval**
 
 **Final Approval Authority:** [Based on project classification]
@@ -2843,7 +2635,6 @@ If reviewer identifies issues:
 - High Risk: CISO
 - Medium Risk: InfoSec Officer
 - Low Risk: PM self-certification + InfoSec review
-
 
 **Final Approver:**
 
@@ -2855,7 +2646,6 @@ If reviewer identifies issues:
   - ⚠️ **Conditionally Approved:** Approved with follow-up items
   - ❌ **Not Approved:** Not ready for approval
 - **Approver Signature:** [Signature]
-
 
 **Conditions (if conditionally approved):**
 [List any conditions that must be met post-approval]
@@ -2877,7 +2667,6 @@ Once approved:
 - ✅ Assessment data exported to Portfolio Dashboard (ISMS-IMP-A.5.8.3): [Date]
 - ✅ Lessons learned shared with project management community: [Date]
 
-
 ---
 
 # Quality Checklist (Before Submission for Review)
@@ -2891,7 +2680,6 @@ Once approved:
 - [ ] Classification justification documented (especially if criteria overridden)
 - [ ] Classification reviewed after significant scope changes
 
-
 ## Initiation Phase Quality
 
 - [ ] Security stakeholders identified with complete contact info
@@ -2900,7 +2688,6 @@ Once approved:
 - [ ] Security budget allocated and approved
 - [ ] Phase gate approved before Planning began
 - [ ] Evidence linked for key activities
-
 
 ## Planning Phase Quality
 
@@ -2914,7 +2701,6 @@ Once approved:
 - [ ] Phase gate approved before Execution began
 - [ ] Evidence linked
 
-
 ## Execution Phase Quality
 
 - [ ] Security controls implemented per requirements (≥95% implementation rate)
@@ -2925,7 +2711,6 @@ Once approved:
 - [ ] Phase gate approved before deployment
 - [ ] Test reports and remediation evidence linked
 
-
 ## Monitoring Phase Quality
 
 - [ ] Risk register updated regularly per project pace (weekly/bi-weekly/monthly)
@@ -2934,7 +2719,6 @@ Once approved:
 - [ ] Security metrics tracked (if High Risk project) and trending acceptably
 - [ ] Issues escalated appropriately and timely
 - [ ] Evidence of ongoing monitoring activities (not just snapshot at gate reviews)
-
 
 ## Closure Phase Quality
 
@@ -2946,7 +2730,6 @@ Once approved:
 - [ ] Final closure approved by appropriate authority (CISO for High, InfoSec for Medium)
 - [ ] Evidence linked
 
-
 ## Overall Quality
 
 - [ ] Overall compliance score calculated and reasonable (formula correct, data accurate)
@@ -2956,7 +2739,6 @@ Once approved:
 - [ ] Assessment internally consistent (no contradictions between sheets)
 - [ ] All required approvals obtained and documented
 - [ ] Sign-off workflow complete (PM → Security Reviewer → Final Approver)
-
 
 ---
 
@@ -2984,7 +2766,6 @@ This workbook implements a **phase-based progressive assessment model** where:
 - **Evidence-centric:** Every activity has evidence link field
 - **Audit-ready:** Clear traceability from requirement → implementation → test → evidence
 - **Flexible:** Works with any project methodology (Waterfall, Agile, hybrid)
-
 
 ## Sheet Layout
 
@@ -3037,7 +2818,6 @@ This workbook implements a **phase-based progressive assessment model** where:
 - Provide "N/A" option where applicability varies by classification
 - Error alerts: Show warning (not stop) if invalid entry
 - Input message: Brief hint about what to select
-
 
 **Example Dropdown Setup:**
 ```
@@ -3111,7 +2891,6 @@ Rules:
 - **Sheet 4 (Planning Phase)** → A.5.8.2 requirements count
 - **A.5.8.2 (Requirements status)** → Sheet 5 (Execution) implementation rate
 
-
 **Integration Methods:**
 1. **Manual:** Hyperlink from Sheet 4 to A.5.8.2 workbook
 2. **Semi-automated:** Copy/paste requirement counts from A.5.8.2 to Sheet 4
@@ -3132,7 +2911,6 @@ A.5.8.3 consolidation script reads this workbook and extracts:
 - Cell B7: Project Manager
 - Cell B8: Business Owner
 
-
 **From Sheet 8 (Dashboard):**
 
 - Overall Compliance Score cell
@@ -3140,12 +2918,10 @@ A.5.8.3 consolidation script reads this workbook and extracts:
 - Critical gaps count
 - Open Critical/High findings count
 
-
 **From Sheet 7 (Closure):**
 
 - Residual risk level cell
 - Closure status cell
-
 
 **Integration Method:** Python script (openpyxl) with read_only=True, data_only=True
 
@@ -3159,12 +2935,10 @@ A.5.8.3 consolidation script reads this workbook and extracts:
 - **Findings (Sheet 5)** → Export to issue tracker (Jira, Azure DevOps)
 - **Evidence Register (Sheet 9)** → Index for project document repository
 
-
 **Import Capabilities:**
 
 - **Project Details** → Import from PMO system (project name, PM, dates, budget)
 - **Risk Data** → Import from enterprise risk tool if organization uses centralized risk management
-
 
 **Recommended:** Keep this assessment as single source of truth for project security status, sync to other tools but don't create circular dependencies
 
@@ -3175,7 +2949,6 @@ A.5.8.3 consolidation script reads this workbook and extracts:
 - **Sheet 7 (Closure, Section C)** lists assets created/modified by project
 - These assets → registered in ISMS Asset Inventory
 - Process: Manual (export asset list, import to inventory) or API integration if inventory system supports it
-
 
 ---
 
@@ -3192,14 +2965,12 @@ A.5.8.3 consolidation script reads this workbook and extracts:
 - [ ] Scoring thresholds → calibrate based on organizational maturity
 - [ ] Example content → update for relevance, add new examples
 
-
 **Version Control:**
 
 - Maintain template in version control (Git or document management system)
 - Track changes: version number, date, change description, approver
 - Test new template versions with pilot projects before rollout
 - Provide migration guide if structure changes significantly
-
 
 ## Customization Guidance
 
@@ -3210,14 +2981,12 @@ A.5.8.3 consolidation script reads this workbook and extracts:
 - **Evidence Types** (Sheet 9): Add organization-specific evidence systems
 - **Approval Workflow** (Sheet 10): Match organization's approval hierarchy
 
-
 **Organizations MUST NOT customize (breaks comparability/integration):**
 
 - **Compliance scoring formulas:** Changing weights or calculation breaks cross-project comparison
 - **Required activities list:** Must match ISMS-POL-A.5.8 requirements
 - **Sheet structure for integration:** Changing key cell locations breaks Portfolio Dashboard (A.5.8.3)
 - **Classification criteria:** Organizational standard, changes require CISO approval
-
 
 ---
 

@@ -45,7 +45,6 @@ This document consists of two parts:
   - Validation Rules & Formulas
   - Integration Points
 
-
 **Key Changes in v2.1:**
 
 - Section 4 uses configuration tables instead of step-by-step paragraphs
@@ -53,7 +52,6 @@ This document consists of two parts:
 - Security baseline references point to industry standards (CIS, NIST)
 - Evidence collection streamlined (removed screenshot tutorials)
 - Top 10 pitfalls only (removed exhaustive lists)
-
 
 ---
 
@@ -82,7 +80,6 @@ This is NOT about:
 - ❌ Checkbox compliance ("MFA exists in the UI, we're good")
 - ❌ One-time configuration without ongoing monitoring
 
-
 This IS about:
 
 - ✅ Verifying security controls are actually enabled (not just available)
@@ -90,7 +87,6 @@ This IS about:
 - ✅ Identifying configuration drift and gaps
 - ✅ Implementing defense-in-depth across 5 security layers
 - ✅ Continuous monitoring and validation
-
 
 #### What You'll Document
 
@@ -104,7 +100,6 @@ For EACH cloud service, across 5 security layers:
 - Privileged access management
 - Access review frequency
 
-
 **Layer 2: Data Protection (Sheet 3)**
 
 - Encryption at-rest (algorithms, key management)
@@ -112,7 +107,6 @@ For EACH cloud service, across 5 security layers:
 - Data Loss Prevention (DLP) rules
 - Data classification labels
 - Backup encryption and retention
-
 
 **Layer 3: Network Security (Sheet 4)**
 
@@ -122,7 +116,6 @@ For EACH cloud service, across 5 security layers:
 - API security (authentication, rate limiting)
 - Network logging and monitoring
 
-
 **Layer 4: Logging & Monitoring (Sheet 5)**
 
 - Audit log enablement (admin actions, data access)
@@ -131,7 +124,6 @@ For EACH cloud service, across 5 security layers:
 - Alert configuration (anomalies, security events)
 - Log integrity protection
 
-
 **Layer 5: Backup & Recovery (Sheet 6)**
 
 - Backup frequency and scope
@@ -139,7 +131,6 @@ For EACH cloud service, across 5 security layers:
 - Recovery Time Objective (RTO) validation
 - Recovery Point Objective (RPO) validation
 - Disaster recovery testing
-
 
 #### How This Relates to Other A.5.23 Assessments
 
@@ -176,14 +167,12 @@ For EACH cloud service, across 5 security layers:
 - IMP-5.23.1 (Inventory) - Provides service list, criticality, data classification
 - IMP-5.23.2 (Vendor DD) - Provides vendor capabilities (what CAN be configured)
 
-
 **Key Insight:** Vendor may have ISO 27001 certification (IMP-5.23.2 verified), but if YOU don't enable MFA or encryption, the deployment is insecure. Configuration is the customer's responsibility.
 
 **Downstream Consumers:**
 
 - IMP-5.23.4 (Governance) - Uses configuration baselines for drift detection
 - IMP-5.23.5 (Dashboard) - Aggregates configuration compliance metrics
-
 
 ### Who Should Complete This Assessment
 
@@ -205,14 +194,12 @@ For EACH cloud service, across 5 security layers:
 - Understanding of cloud security controls (IAM, encryption, networking)
 - Ability to export configuration settings
 
-
 **Technical Skills:**
 
 - Cloud platforms (AWS, Azure, GCP admin experience)
 - Identity management (SAML, OAuth, MFA technologies)
 - Networking (VPN, firewall, API security)
 - Scripting (PowerShell, AWS CLI, Azure CLI for config exports)
-
 
 #### Time Commitment
 
@@ -224,7 +211,6 @@ For EACH cloud service, across 5 security layers:
 - Review and approval: 1 week
 - **Total:** 5-7 weeks
 
-
 **Quarterly Updates:**
 
 - Review configuration changes: 3-5 days
@@ -233,13 +219,11 @@ For EACH cloud service, across 5 security layers:
 - Approval: 1-2 days
 - **Total:** 1-2 weeks
 
-
 **Assumptions:**
 
 - ~15-25 cloud services to assess
 - Admin console access available
 - No major configuration changes since last review
-
 
 #### Collaboration Model
 
@@ -249,13 +233,11 @@ For EACH cloud service, across 5 security layers:
 - Document current state for each security layer
 - Identify configuration standards/baselines
 
-
 **Week 3-4: Gap Analysis**
 
 - Compare actual config vs. security baselines
 - Identify missing controls (MFA not enforced, encryption disabled)
 - Assess compliance with DORA, NIS2, GDPR requirements
-
 
 **Week 5: Evidence Collection**
 
@@ -263,13 +245,11 @@ For EACH cloud service, across 5 security layers:
 - Export configuration files (JSON, YAML, XML)
 - Document compensating controls for gaps
 
-
 **Week 6-7: Remediation Planning**
 
 - Prioritize gaps (Critical services first)
 - Assign remediation owners
 - Set target dates for fixes
-
 
 **Week 7: Review & Approval**
 
@@ -277,13 +257,11 @@ For EACH cloud service, across 5 security layers:
 - Security review (risk assessment)
 - CISO approval (risk acceptance for gaps)
 
-
 ### Expected Outputs
 
 **Primary Deliverable:**
 
 - **ISMS-IMP-A.5.23.S3_SecureConfig_YYYYMMDD.xlsx** (10-sheet workbook)
-
 
 **Workbook Contents:**
 
@@ -307,7 +285,6 @@ For EACH cloud service, across 5 security layers:
 - Gap analysis with remediation plan
 - Risk register entries for accepted gaps
 
-
 ### Assessment Success Criteria
 
 **Completeness:**
@@ -318,7 +295,6 @@ For EACH cloud service, across 5 security layers:
 - ✅ All status flags set (✅/⚠️/❌/N/A)
 - ✅ All gaps have remediation plans or risk exceptions
 
-
 **Configuration Quality:**
 
 - ✅ All Critical services: MFA enforced + Encryption enabled + Logs to SIEM
@@ -327,7 +303,6 @@ For EACH cloud service, across 5 security layers:
 - ✅ Configuration documented in IaC (Infrastructure as Code) where possible
 - ✅ Configuration drift monitoring enabled
 
-
 **Compliance:**
 
 - ✅ DORA requirements: Encryption + logging + BC testing for ICT services
@@ -335,14 +310,12 @@ For EACH cloud service, across 5 security layers:
 - ✅ GDPR/FADP: Encryption for personal data, audit trails
 - ✅ Industry baselines: CIS Benchmarks or vendor best practices applied
 
-
 **Traceability:**
 
 - ✅ Every ✅ (Compliant) → Config export or screenshot exists
 - ✅ Every gap → Remediation plan or risk exception
 - ✅ Every service → Linked to IMP-5.23.1 inventory
 - ✅ Evidence register → All links work, files accessible
-
 
 ### Common Use Cases
 
@@ -412,13 +385,11 @@ For EACH cloud service, across 5 security layers:
 - ✅ Data classification for each service
 - ✅ Service owner assignments
 
-
 **From IMP-5.23.2 (Vendor Due Diligence):**
 
 - ✅ Vendor security capabilities (what CAN be configured)
 - ✅ Vendor certifications (SOC 2, ISO 27001)
 - ✅ Data residency requirements
-
 
 **Admin Access Required:**
 
@@ -426,7 +397,6 @@ For EACH cloud service, across 5 security layers:
 - ✅ Identity provider (Okta, Entra ID, Google Workspace)
 - ✅ SIEM system (Splunk, Datadog, Microsoft Sentinel)
 - ✅ Infrastructure as Code repository (Terraform, CloudFormation)
-
 
 ### Required Tools & Access
 
@@ -446,13 +416,11 @@ For EACH cloud service, across 5 security layers:
 - JSON/XML viewer (for config file review)
 - Diff tool (compare configs over time)
 
-
 **Analysis Tools:**
 
 - Config compliance scanners (AWS Config, Azure Policy, GCP Security Command Center)
 - CIS Benchmark tools (Prowler for AWS, ScoutSuite for multi-cloud)
 - Infrastructure as Code linters (TFLint, Checkov, tfsec)
-
 
 ### Security Baselines & Standards
 
@@ -473,7 +441,6 @@ For EACH cloud service, across 5 security layers:
 - Logging requirements (which events, retention period)
 - Network segmentation principles (zero trust, least privilege)
 
-
 ### Stakeholder Coordination
 
 **Before Starting:**
@@ -485,20 +452,17 @@ For EACH cloud service, across 5 security layers:
    - Assign configuration areas to teams
    - Establish evidence repository
 
-
 2. **Configuration Baseline Agreement**
 
    - Define "secure configuration" for each service type
    - Reference CIS Benchmarks where applicable
    - Document exceptions (legacy services, technical limitations)
 
-
 3. **Tool Access Verification**
 
    - Verify admin console access for all team members
    - Test configuration export scripts
    - Validate SIEM integration for log verification
-
 
 ### Evidence Repository Structure
 
@@ -592,7 +556,6 @@ For EACH cloud service, across 5 security layers:
 - Column G (IaC Managed) tracks configuration-as-code maturity
 - Status (Column H) is **configuration-specific** (not vendor-level like IMP-5.23.2)
 
-
 ### Extended Columns (R+) - Configuration-Specific
 
 Each configuration sheet has **extended columns** for specific security controls:
@@ -624,7 +587,6 @@ Each configuration sheet has **extended columns** for specific security controls
 - IMP-5.23.2: AWS has ISO 27001 ✅ (vendor certified)
 - IMP-5.23.3: AWS S3 bucket has public access ❌ (customer misconfigured)
 
-
 ### Data Flow & Dependencies
 
 **Input Flow:**
@@ -649,7 +611,6 @@ IMP-5.23.1 Inventory (Columns A-E)
 - IMP-5.23.2 Sheet 2 (Vendor Certs) → IMP-5.23.3 All Sheets
   - Vendor has SOC 2 ≠ Automatically means you're secure
 
-
 ### Status Flag Meanings
 
 **Consistent across all sheets:**
@@ -667,7 +628,6 @@ IMP-5.23.1 Inventory (Columns A-E)
 - ⚠️ → Evidence + gap description
 - ❌ → Gap description + remediation plan
 - N/A → Rationale (why control doesn't apply)
-
 
 ### Sheet Completion Order
 
@@ -706,14 +666,12 @@ IMP-5.23.1 Inventory (Columns A-E)
 - Tomorrow: Someone disables MFA "temporarily"
 - Next quarter: Assessment shows drift
 
-
 **How to Detect Drift:**
 
 - **Cloud-Native:** AWS Config, Azure Policy, GCP Security Command Center
 - **Third-Party:** Prisma Cloud, Wiz, Lacework, CloudCustodian
 - **IaC-Based:** Terraform state comparison, CloudFormation drift detection
 - **Manual:** Quarterly re-export and compare (least reliable)
-
 
 **Best Practice:** Enable automated drift detection, alert on changes to critical configs.
 
@@ -759,7 +717,6 @@ For each service:
 - Access review frequency and evidence
 - Session timeout and password policies
 
-
 ### How to Assess
 
 **Step 1: Verify SSO Integration**
@@ -788,7 +745,6 @@ For each service:
 - **Google Workspace:** Security → 2-Step Verification enforcement
 - **SaaS:** Admin console → Security settings
 
-
 **Step 3: Assess RBAC Implementation**
 
 | RBAC Maturity | Description | Assessment | Evidence |
@@ -803,7 +759,6 @@ For each service:
 - Are there more Admins than necessary? (Target: <5% of users)
 - Are permissions granted "just in case"? (Should be "just in time")
 - Are generic accounts used? (Should be individual accountability)
-
 
 **Step 4: Complete Extended Columns**
 
@@ -869,7 +824,6 @@ For each service:
 - Backup encryption
 - Key rotation policies
 
-
 ### How to Assess
 
 **Step 1: Verify Encryption at Rest**
@@ -888,12 +842,10 @@ For each service:
 - **GCP Cloud Storage:** Bucket settings → Encryption type
 - **SaaS:** Admin console → Security → Encryption settings
 
-
 **CIS Benchmark Reference:**
 
 - AWS: CIS 2.1.1 "Ensure S3 bucket has encryption enabled"
 - Azure: CIS 3.1 "Ensure storage account encryption is enabled"
-
 
 **Step 2: Verify Encryption in Transit**
 
@@ -909,7 +861,6 @@ For each service:
 - **Web Services:** https://www.ssllabs.com/ssltest/ (SSL Labs)
 - **API Endpoints:** `openssl s_client -connect api.service.com:443 -tls1_2`
 - **Database Connections:** Check connection string for `ssl=true` or `encrypt=true`
-
 
 **Step 3: Assess DLP Configuration**
 
@@ -927,14 +878,12 @@ For each service:
 - Health records (HIPAA/privacy)
 - Financial data (SOX, insider trading)
 
-
 **Where to Configure:**
 
 - **Microsoft 365:** Compliance Center → Data Loss Prevention
 - **Google Workspace:** Security → Data Protection
 - **AWS:** Amazon Macie (S3 DLP), CloudWatch Logs Insights
 - **Slack, Box, Dropbox:** Enterprise DLP settings
-
 
 **Step 4: Verify Data Classification**
 
@@ -949,7 +898,6 @@ For each service:
 - Sensitivity labels defined (IT configures)
 - Labels applied to files (users select or auto-apply)
 - DLP rules enforce label policy (IT enforces)
-
 
 **Step 5: Complete Extended Columns**
 
@@ -1016,7 +964,6 @@ For each service:
 - Network segmentation (isolation between environments)
 - Network logging and monitoring
 
-
 ### How to Assess
 
 **Step 1: Verify IP Access Controls**
@@ -1032,7 +979,6 @@ For each service:
 - **AWS:** Security Groups, NACLs, WAF IP sets
 - **Azure:** Network Security Groups, Firewall rules
 - **SaaS:** Admin console → IP restrictions (Salesforce, Workday, etc.)
-
 
 **CIS Benchmark:** AWS 5.1 "Ensure no security groups allow ingress from 0.0.0.0/0 to port 22 or 3389"
 
@@ -1061,7 +1007,6 @@ For each service:
 - Over-privileged API keys (admin access when read-only needed)
 - No rate limiting (DDoS amplification)
 - API keys in code repositories (secret scanning gap)
-
 
 **Step 4: Complete Extended Columns**
 
@@ -1120,7 +1065,6 @@ For each service:
 - Alert configuration (security events, anomalies)
 - Log integrity protection (tamper-proof logs)
 
-
 ### How to Assess
 
 **Step 1: Verify Audit Logging**
@@ -1141,7 +1085,6 @@ For each service:
 - **Microsoft 365:** Unified Audit Log, Entra ID Sign-in Logs
 - **SaaS:** Admin console → Audit Logs
 
-
 **CIS Benchmark:** AWS 3.1 "Ensure CloudTrail is enabled in all regions"
 
 **Step 2: Verify Log Retention**
@@ -1159,7 +1102,6 @@ For each service:
 - **SIEM:** Retention settings in Splunk, Datadog, Microsoft Sentinel
 - **SaaS:** Admin console → Audit log retention
 
-
 **Step 3: Verify SIEM Integration**
 
 | Integration Status | Description | Assessment |
@@ -1172,7 +1114,6 @@ For each service:
 **Common SIEM Tools:**
 
 - Splunk, Datadog, Microsoft Sentinel, Sumo Logic, Elastic SIEM
-
 
 **Step 4: Verify Alert Configuration**
 
@@ -1243,7 +1184,6 @@ For each service:
 - RPO (Recovery Point Objective) validation
 - Disaster recovery testing frequency
 
-
 ### How to Assess
 
 **Step 1: Verify Backup Frequency**
@@ -1281,14 +1221,12 @@ For each service:
 - **RTO (Recovery Time Objective):** How long to restore service (e.g., 4 hours)
 - **RPO (Recovery Point Objective):** How much data loss acceptable (e.g., 1 hour)
 
-
 **Test Evidence Must Include:**
 
 - Start time (when recovery initiated)
 - End time (when service restored)
 - Data loss (time gap between backup and incident)
 - Issues encountered (and how resolved)
-
 
 **Step 4: Complete Extended Columns**
 
@@ -1345,7 +1283,6 @@ For each service:
 - **Authentic:** From official admin console or CLI export
 - **Attributable:** Clear which service/environment it applies to
 - **Reproducible:** Another admin could verify same config
-
 
 ### Evidence Types by Configuration Layer
 
@@ -1407,7 +1344,6 @@ Get-AdminAuditLogConfig | Export-Csv audit_config.csv
 - **Required Elements:** Full URL, timestamp, service name, relevant settings visible
 - **Format:** PNG or PDF (not JPEG - compression artifacts)
 - **Annotation:** Highlight critical settings (use red box/arrow)
-
 
 ### Evidence Repository Structure
 
@@ -1484,13 +1420,11 @@ Get-AdminAuditLogConfig | Export-Csv audit_config.csv
 - ✅ Solution: Explicitly verify and harden every service
 - **Example:** AWS S3 buckets default to "Block Public Access: OFF" (insecure)
 
-
 **2. Configuration Drift Goes Undetected**
 
 - ❌ Problem: Secure today, someone disables MFA next month, no one notices
 - ✅ Solution: Enable drift detection (AWS Config, Azure Policy, GCP Security Command Center)
 - **Example:** Quarterly assessment shows compliant, but MFA was disabled 2 months ago
-
 
 **3. Production Configured But Not Dev/Test**
 
@@ -1498,13 +1432,11 @@ Get-AdminAuditLogConfig | Export-Csv audit_config.csv
 - ✅ Solution: Apply same security baseline across all environments
 - **Example:** Dev database has production data copy but no encryption
 
-
 **4. Logging Enabled But Not Monitored**
 
 - ❌ Problem: Logs collected but no one looks at them
 - ✅ Solution: Configure SIEM alerts, assign SOC to monitor
 - **Example:** Attacker accessed data for 6 months, logs showed it but no alerts
-
 
 **5. Backup Exists But Never Tested**
 
@@ -1512,13 +1444,11 @@ Get-AdminAuditLogConfig | Export-Csv audit_config.csv
 - ✅ Solution: Annual DR test with documented RTO/RPO validation
 - **Example:** Ransomware hit, backups corrupted (never validated integrity)
 
-
 **6. Over-Reliance on Perimeter Security**
 
 - ❌ Problem: "Our VPN is secure, don't need MFA inside"
 - ✅ Solution: Defense-in-depth - assume breach, secure each layer
 - **Example:** VPN compromised, attacker has unrestricted internal access
-
 
 **7. Shared Admin Accounts**
 
@@ -1526,13 +1456,11 @@ Get-AdminAuditLogConfig | Export-Csv audit_config.csv
 - ✅ Solution: Individual accounts with RBAC, audit trail per person
 - **Example:** Malicious insider uses shared account, no accountability
 
-
 **8. API Keys in Code Repositories**
 
 - ❌ Problem: API key hardcoded in GitHub repo (now public)
 - ✅ Solution: Use secret managers (AWS Secrets Manager, Azure Key Vault), scan repos
 - **Example:** GitGuardian found 10,000+ exposed secrets on GitHub daily
-
 
 **9. Encryption With Vendor-Managed Keys (For Restricted Data)**
 
@@ -1540,13 +1468,11 @@ Get-AdminAuditLogConfig | Export-Csv audit_config.csv
 - ✅ Solution: BYOK (Bring Your Own Key) for Restricted data
 - **Example:** Vendor compromised, attacker decrypts all data
 
-
 **10. Treating Compliance as One-Time Activity**
 
 - ❌ Problem: Pass audit, never review configs again
 - ✅ Solution: Quarterly reviews, continuous monitoring
 - **Example:** Compliant at audit, 6 months later configuration drift makes you non-compliant
-
 
 ### Configuration-Specific Gotchas
 
@@ -1556,13 +1482,11 @@ Get-AdminAuditLogConfig | Export-Csv audit_config.csv
 - ⚠️ SSO configured but local accounts still enabled (backdoor)
 - ⚠️ Access reviews conducted but stale accounts not disabled
 
-
 **Data Protection:**
 
 - ⚠️ Encryption at-rest enabled but backups not encrypted
 - ⚠️ TLS 1.2+ enforced but older versions accepted (downgrade attack)
 - ⚠️ DLP configured but in audit mode only (detects but doesn't block)
-
 
 **Network:**
 
@@ -1570,20 +1494,17 @@ Get-AdminAuditLogConfig | Export-Csv audit_config.csv
 - ⚠️ PrivateLink configured but public endpoint still accessible
 - ⚠️ API rate limiting set to 100,000 req/sec (effectively unlimited)
 
-
 **Logging:**
 
 - ⚠️ Logging enabled but retention set to 7 days (regulatory requires 90+)
 - ⚠️ SIEM integration exists but logs not actually flowing (broken connector)
 - ⚠️ Alerts configured but sent to unmonitored email address
 
-
 **Backup:**
 
 - ⚠️ Backups run daily but backup validation never runs
 - ⚠️ Backup stored in same region/account as primary (single point of failure)
 - ⚠️ Ransomware protection not enabled (attacker can delete backups)
-
 
 ---
 
@@ -1663,14 +1584,12 @@ Get-AdminAuditLogConfig | Export-Csv audit_config.csv
 - ☐ RBAC roles match least privilege principle
 - ☐ Access review evidence shows actual review (not just policy)
 
-
 **Sheet 3 (Data Protection):**
 
 - ☐ Encryption algorithm verified (AES-256 or equivalent)
 - ☐ TLS version tested (not assumed from documentation)
 - ☐ DLP rules tested (sample violation triggers alert)
 - ☐ Key rotation policy documented and followed
-
 
 **Sheet 4 (Network):**
 
@@ -1679,7 +1598,6 @@ Get-AdminAuditLogConfig | Export-Csv audit_config.csv
 - ☐ API authentication tested (unauthenticated call fails)
 - ☐ Rate limiting validated with load test
 
-
 **Sheet 5 (Logging):**
 
 - ☐ Logs actually flowing to SIEM (check SIEM, not just config)
@@ -1687,14 +1605,12 @@ Get-AdminAuditLogConfig | Export-Csv audit_config.csv
 - ☐ Alerts tested (trigger sample alert, verify notification)
 - ☐ Log integrity protection enabled (if available)
 
-
 **Sheet 6 (Backup):**
 
 - ☐ Backup actually runs (check last backup timestamp)
 - ☐ Restore tested (not just backup creation)
 - ☐ RTO/RPO documented from actual test (not assumptions)
 - ☐ Backup encryption verified (attempt unencrypted restore - should fail)
-
 
 ---
 
@@ -1729,14 +1645,12 @@ Step 5: Archive & Implement (Config remediation, IaC updates)
 - ✅ IaC (Terraform/CloudFormation) matches deployed config
 - ❌ Reject if: Inaccurate config data, missing evidence, outdated exports
 
-
 **Security (Quality Gate 2):**
 
 - ✅ All Critical services meet security baseline
 - ✅ Configuration gaps acceptable or remediation planned
 - ✅ Defense-in-depth implemented across all layers
 - ❌ Reject if: Critical service without MFA/encryption, unacceptable risk gap
-
 
 **Compliance (Quality Gate 3):**
 
@@ -1745,13 +1659,11 @@ Step 5: Archive & Implement (Config remediation, IaC updates)
 - ✅ Encryption for personal data enabled
 - ❌ Reject if: Regulatory non-compliance, missing audit trail
 
-
 **CISO (Final Approval):**
 
 - ✅ Overall security posture acceptable
 - ✅ Residual risks formally accepted
 - ✅ Remediation plan funded and resourced
-
 
 ---
 
@@ -1783,13 +1695,11 @@ Step 5: Archive & Implement (Config remediation, IaC updates)
 - Compare with last quarter (identify drift)
 - Document configuration changes
 
-
 **Week 2: Gap Validation**
 
 - Verify previous gaps remediated
 - Identify new gaps (new services, config changes)
 - Update remediation plan
-
 
 **Week 3: Evidence Update**
 
@@ -1797,13 +1707,11 @@ Step 5: Archive & Implement (Config remediation, IaC updates)
 - Re-validate critical controls
 - Test SIEM integration still working
 
-
 **Week 4: Approval & Reporting**
 
 - Cloud Ops review
 - Security/Compliance approval
 - Update IMP-5.23.5 dashboard
-
 
 **Triggers for Out-of-Cycle Review:**
 
@@ -1811,7 +1719,6 @@ Step 5: Archive & Implement (Config remediation, IaC updates)
 - Security incident (config vulnerability exploited)
 - New service deployment
 - Regulatory change (DORA technical standards updated)
-
 
 ### Configuration Drift Monitoring
 
@@ -1831,7 +1738,6 @@ Step 5: Archive & Implement (Config remediation, IaC updates)
 - Firewall rule added (0.0.0.0/0)
 - Audit logging disabled
 - Backup policy changed
-
 
 ---
 
@@ -1860,13 +1766,11 @@ Step 5: Archive & Implement (Config remediation, IaC updates)
 - GCP Foundations Benchmark v1.3
 - Microsoft 365 Foundations Benchmark v3.0
 
-
 **Cloud Provider Security Best Practices:**
 
 - **AWS:** Well-Architected Framework Security Pillar
 - **Azure:** Security Best Practices & Patterns
 - **GCP:** Security Foundations Blueprint
-
 
 ### Configuration Compliance Tools
 
@@ -1877,13 +1781,11 @@ Step 5: Archive & Implement (Config remediation, IaC updates)
 - **CloudCustodian** (cloud governance as code)
 - **Checkov** (IaC static analysis)
 
-
 **Commercial:**
 
 - **Prisma Cloud** (Palo Alto Networks)
 - **Wiz** (Cloud security platform)
 - **Lacework** (Cloud security + compliance)
-
 
 ### Regulatory References
 
@@ -1891,7 +1793,6 @@ Step 5: Archive & Implement (Config remediation, IaC updates)
 
 - **ISMS-POL-00:** Regulatory Applicability Framework
 - **ISMS-POL-A.5.19-23:** Supplier and Cloud Services Security Policy
-
 
 ---
 
@@ -1959,32 +1860,27 @@ Sheet 10: Approval Sign-Off (workflow, signatures)
 - V: RBAC Implemented, W: Privileged Access Mgmt, X: Access Review Frequency
 - Y: Last Access Review Date, Z: Session Timeout, AA: Password Policy
 
-
 ### Sheet 3: Data Protection (Columns R-Z)
 
 - R: Encryption At-Rest, S: Key Management, T: Key Rotation
 - U: Encryption In-Transit, V: Certificate Validation, W: DLP Configured
 - X: DLP Rules Count, Y: Classification Labels Applied, Z: Backup Encrypted
 
-
 ### Sheet 4: Network Security (Columns R-X)
 
 - R: IP Access Control, S: IP Ranges Allowed, T: VPN Required
 - U: Private Connectivity, V: API Authentication, W: API Rate Limiting, X: Network Segmentation
-
 
 ### Sheet 5: Logging & Monitoring (Columns R-W)
 
 - R: Audit Logging Enabled, S: Events Logged, T: Log Retention (Days)
 - U: SIEM Integration, V: SIEM Tool, W: Alerts Configured
 
-
 ### Sheet 6: Backup & Recovery (Columns R-Y)
 
 - R: Backup Frequency, S: Backup Scope, T: Backup Encrypted
 - U: Backup Storage Location, V: RTO (Hours), W: RPO (Hours)
 - X: Last DR Test Date, Y: DR Test Result
-
 
 **See Part I, Section 4 for detailed column definitions and validation rules.**
 
@@ -2020,14 +1916,12 @@ Sheet 10: Approval Sign-Off (workflow, signatures)
 - `create_6_backup_recovery()` - Sheet 6 with BC/DR columns
 - `create_8_dashboard()` - Sheet 8 with aggregation formulas
 
-
 **Customization Points:**
 
 - Dropdown lists (service names, vendors)
 - Conditional formatting (risk-based coloring)
 - Dashboard metrics (add custom KPIs)
 - Compliance thresholds (≥90% vs ≥95%)
-
 
 **Usage:**
 ```bash

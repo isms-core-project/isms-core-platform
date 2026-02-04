@@ -43,12 +43,10 @@ This document consists of two parts:
   - Cell Styling Reference
   - Integration Points
 
-
 **Target Audiences:**
 
 - **Part I:** Assessment users (Legal Counsel, CISO, IP Owners, Compliance Officers, Auditors)
 - **Part II:** Workbook developers (Python/Excel script maintainers)
-
 
 ---
 
@@ -83,7 +81,6 @@ This assessment documents the **WHAT** and **HOW** of IP protection - the founda
 - What software licensing obligations exist and are they being met?
 - What legal protections are registered (patents, trademarks)?
 
-
 ### Key Principle
 
 This assessment is **organisation-specific and technology-independent**. You document YOUR specific intellectual property assets (whatever they are - proprietary software, trade secrets, methodologies, designs) and verify compliance against both internal protection requirements and external IP obligations.
@@ -100,7 +97,6 @@ This assessment is **organisation-specific and technology-independent**. You doc
 - **Gap Analysis** identifying unprotected or non-compliant IP
 - **Evidence Register** linking documentation to audit artefacts
 - **Approved Assessment** with Legal Counsel and CISO sign-offs
-
 
 ### How This Relates to Other A.5.32-33 Assessments
 
@@ -123,7 +119,6 @@ This assessment is **organisation-specific and technology-independent**. You doc
 4. **IT Operations** - Document software assets, provide licensing information
 5. **Compliance Officer** - Validate third-party IP compliance, review license agreements
 
-
 ### Required Skills
 
 - Understanding of intellectual property law (patents, copyrights, trademarks, trade secrets)
@@ -132,7 +127,6 @@ This assessment is **organisation-specific and technology-independent**. You doc
 - Ability to interview business units and technical teams
 - Technical understanding to assess protection mechanisms
 
-
 ### Time Commitment
 
 - **Initial assessment:** 15-30 hours (depending on organisation size and IP portfolio)
@@ -140,7 +134,6 @@ This assessment is **organisation-specific and technology-independent**. You doc
   - Medium organisation (moderate IP portfolio, 50-250 employees): 15-30 hours
   - Large organisation (extensive IP portfolio, 250+ employees): 30-60+ hours
 - **Annual updates:** 4-8 hours (verify changes, update for new IP assets)
-
 
 ## Expected Outputs
 
@@ -156,7 +149,6 @@ Upon completion, you will have:
 8. **Evidence Register** - Supporting documentation linked to audit artefacts
 9. **Compliance Dashboard** - Executive summary with metrics
 10. **Approved Assessment** - Legal Counsel and CISO sign-offs
-
 
 ---
 
@@ -176,7 +168,6 @@ Before starting this assessment, gather:
 - Technical architecture documents
 - Trade secret inventories (if existing)
 
-
 ### Legal Documentation
 
 - Patent applications and grants
@@ -187,7 +178,6 @@ Before starting this assessment, gather:
 - Licensing agreements (inbound and outbound)
 - Partnership/joint venture IP clauses
 
-
 ### Software Asset Information
 
 - Software asset inventory (SAM tool exports)
@@ -197,14 +187,12 @@ Before starting this assessment, gather:
 - Custom software development records
 - Third-party component libraries
 
-
 ### Employment and Contractor Information
 
 - Employment contract IP clauses
 - Contractor agreement IP provisions
 - Exit interview IP acknowledgments
 - Confidentiality agreement templates
-
 
 ## Access Required
 
@@ -218,7 +206,6 @@ You will need access to:
 - [ ] Patent/trademark databases
 - [ ] Contract management system
 
-
 **Documents:**
 
 - [ ] Employment contract templates (IP clauses)
@@ -227,14 +214,12 @@ You will need access to:
 - [ ] NDA templates and signed agreements
 - [ ] Previous IP inventories (if existing)
 
-
 **People:**
 
 - [ ] Ability to interview business unit leaders
 - [ ] Access to R&D and product development teams
 - [ ] Coordination with Legal for regulatory interpretation
 - [ ] Support from IT for software inventory
-
 
 ## Tools and Resources
 
@@ -249,14 +234,12 @@ You will need access to:
 - Sheet 7: Evidence Register
 - Sheet 8: Approval & Sign-Off
 
-
 **Supporting Tools** (optional but highly recommended):
 
 - **Software Asset Management (SAM)** - Automated license tracking (e.g., Flexera, Snow Software, ServiceNow SAM)
 - **Patent databases** - USPTO, EPO, WIPO, Swiss IGE
 - **Trademark databases** - National and international registries
 - **Contract management** - For license agreement tracking
-
 
 **Reference Materials:**
 
@@ -265,7 +248,6 @@ You will need access to:
 - Swiss Federal Act on Copyright (URG)
 - Berne Convention for the Protection of Literary and Artistic Works
 - WIPO Copyright Treaty
-
 
 ---
 
@@ -319,14 +301,12 @@ You will need access to:
    - Interview marketing for brand assets and content
    - Interview IT for custom software and technical documentation
 
-
 2. **Technical Discovery:**
 
    - Review source code repository inventory
    - Identify custom-developed software and tools
    - Document proprietary algorithms and processes
    - List technical documentation with trade secret content
-
 
 3. **Legal Records Review:**
 
@@ -335,7 +315,6 @@ You will need access to:
    - Identify registered copyrights
    - Review IP assignment agreements
 
-
 4. **Inventory Creation (Sheet 2):**
 
    - List EVERY IP asset with unique identifier
@@ -343,7 +322,6 @@ You will need access to:
    - Assign IP owner and custodian
    - Note protection status (registered, pending, unregistered)
    - Estimate business value (high, medium, low)
-
 
 **Deliverable:** Complete Sheet 2 (IP Asset Inventory) with all assets listed
 
@@ -354,7 +332,6 @@ You will need access to:
 - Legal records reconciled with inventory
 - Source code and custom software captured
 - Brand assets (logos, trademarks) documented
-
 
 ### Phase 3: IP Classification (2-4 hours)
 
@@ -368,14 +345,12 @@ You will need access to:
    - **Copyrights:** Original works of authorship (software, documentation, content)
    - **Trademarks:** Brand identifiers (logos, names, slogans)
 
-
 2. For EACH asset in Sheet 2, determine:
 
    - Primary IP category (trade secret, patent, copyright, trademark)
    - Legal protection status (registered, pending, unregistered, not applicable)
    - Information classification alignment (per ISMS-POL-A.5.12-13)
    - Required protection level based on business value
-
 
 3. Apply classification decision tree:
 ```
@@ -405,7 +380,6 @@ Is this confidential business information providing competitive advantage?
 - Assuming registered protection automatically means adequate protection
 - Missing IP in contractor-developed works (ownership may be unclear)
 
-
 ### Phase 4: Protection Assessment (4-8 hours)
 
 **Objective:** Document protection mechanisms for each IP category
@@ -419,7 +393,6 @@ Is this confidential business information providing competitive advantage?
    - Technical controls (encryption, DLP, access logging)
    - Documentation of reasonable protection measures (for legal defence)
 
-
 2. **For Patents:**
 
    - Application/grant status and dates
@@ -428,14 +401,12 @@ Is this confidential business information providing competitive advantage?
    - Expiration tracking
    - Infringement monitoring
 
-
 3. **For Copyrights:**
 
    - Copyright notices on protected works
    - Registration status (if applicable)
    - License terms for distribution
    - Open source component tracking
-
 
 4. **For Trademarks:**
 
@@ -445,14 +416,12 @@ Is this confidential business information providing competitive advantage?
    - Brand usage guidelines
    - Monitoring for infringement
 
-
 5. **Complete Sheet 3 (IP Protection Assessment):**
 
    - One row per IP asset
    - Document applicable controls per category
    - Rate control effectiveness (effective, partial, ineffective)
    - Identify protection gaps
-
 
 **Deliverable:** Sheet 3 complete with protection assessment for all IP assets
 
@@ -468,7 +437,6 @@ Is this confidential business information providing competitive advantage?
    - Verify SaaS subscription compliance
    - Check open source license obligations
 
-
 2. **For EACH Third-Party Software (Sheet 4):**
 
    - Software name and vendor
@@ -477,14 +445,12 @@ Is this confidential business information providing competitive advantage?
    - Compliance status (compliant, over-deployed, under-utilised)
    - Renewal dates
 
-
 3. **Open Source Compliance:**
 
    - Identify open source components in use
    - Document license types (GPL, Apache, MIT, BSD, etc.)
    - Verify license obligation compliance
    - Check for copyleft restrictions affecting proprietary code
-
 
 4. **Third-Party Content:**
 
@@ -493,14 +459,12 @@ Is this confidential business information providing competitive advantage?
    - Third-party APIs and services
    - Contracted creative work
 
-
 5. **Complete Sheet 4 (Third-Party IP Register):**
 
    - All third-party IP assets listed
    - License compliance status documented
    - Risk rating for non-compliance
    - Remediation actions where needed
-
 
 **Deliverable:** Sheets 4 and 5 complete with third-party IP documented
 
@@ -516,14 +480,12 @@ Is this confidential business information providing competitive advantage?
    - Inadequate protection controls
    - Expiring legal protections
 
-
 2. Review Third-Party IP (Sheet 4) for:
 
    - Over-deployed software licenses
    - Open source license violations
    - Expired or expiring licenses
    - Missing license documentation
-
 
 3. **Complete Sheet 6 (Gap Analysis):**
 
@@ -532,7 +494,6 @@ Is this confidential business information providing competitive advantage?
    - Recommended remediation
    - Owner and due date
    - Status tracking
-
 
 **Deliverable:** Sheet 6 complete with all gaps documented
 
@@ -549,7 +510,6 @@ Is this confidential business information providing competitive advantage?
    - Access control configurations
    - SAM tool reports
 
-
 2. **Complete Sheet 7 (Evidence Register):**
 
    - Evidence ID and description
@@ -557,7 +517,6 @@ Is this confidential business information providing competitive advantage?
    - Storage location
    - Collection date
    - Verification status
-
 
 **Deliverable:** Sheet 7 complete with evidence documented
 
@@ -572,13 +531,11 @@ Is this confidential business information providing competitive advantage?
    - Confirm legal protection status
    - Review third-party compliance findings
 
-
 2. Review assessment with CISO
 
    - Validate technical protection controls
    - Confirm information classification alignment
    - Review gap analysis and remediation plans
-
 
 3. **Complete Sheet 8 (Approval & Sign-Off):**
 
@@ -586,7 +543,6 @@ Is this confidential business information providing competitive advantage?
    - Approver signatures and dates
    - Conditions or limitations
    - Next review date
-
 
 **Deliverable:** Approved assessment with sign-offs
 
@@ -602,7 +558,6 @@ Is this confidential business information providing competitive advantage?
 - Read classification definitions
 - Understand colour coding and status indicators
 - Reference control framework alignment
-
 
 ## Sheet 2: IP Asset Inventory
 
@@ -629,7 +584,6 @@ Is this confidential business information providing competitive advantage?
 - Align classification with information security framework
 - Document even "minor" IP - aggregated value may be significant
 
-
 ## Sheet 3: IP Protection Assessment
 
 **Purpose:** Document protection controls for each IP asset
@@ -652,7 +606,6 @@ Is this confidential business information providing competitive advantage?
 - Be honest about control effectiveness
 - Identify gaps even if remediation is not immediately planned
 - Link to evidence where controls are documented
-
 
 ## Sheet 4: Third-Party IP Register
 
@@ -678,7 +631,6 @@ Is this confidential business information providing competitive advantage?
 - Document open source components in development projects
 - Flag over-deployment for immediate remediation
 
-
 ## Sheet 5: Software License Compliance
 
 **Purpose:** Detailed license reconciliation
@@ -695,7 +647,6 @@ Is this confidential business information providing competitive advantage?
 | Remediation Action | Required action | Purchase 2 additional licenses |
 | Due Date | Action deadline | 2026-02-28 |
 | Status | Open/In Progress/Complete | Open |
-
 
 ## Sheet 6: Gap Analysis
 
@@ -714,7 +665,6 @@ Is this confidential business information providing competitive advantage?
 | Due Date | Target completion | 2026-02-28 |
 | Status | Open/In Progress/Complete | Open |
 
-
 ## Sheet 7: Evidence Register
 
 **Purpose:** Link assessment to supporting documentation
@@ -730,7 +680,6 @@ Is this confidential business information providing competitive advantage?
 | Collected Date | When gathered | 2026-02-01 |
 | Collected By | Who gathered | Legal Counsel |
 | Verification Status | Verified/Pending/Expired | Verified |
-
 
 ## Sheet 8: Approval & Sign-Off
 
@@ -759,31 +708,26 @@ For each IP asset category, collect:
 - DLP policy evidence
 - Training records for IP handling
 
-
 **Patents:**
 - Patent certificates or application confirmations
 - Maintenance fee payment records
 - Geographic coverage documentation
-
 
 **Copyrights:**
 - Copyright notices on protected works
 - Registration certificates (if applicable)
 - Source code header samples
 
-
 **Trademarks:**
 - Registration certificates
 - Renewal records
 - Brand usage guidelines
-
 
 **Third-Party IP:**
 - License agreements
 - SAM tool compliance reports
 - Open source license documentation
 - Vendor contracts
-
 
 ## Evidence Storage
 
@@ -966,7 +910,6 @@ Assessment approved when:
 - Section headers: Bold, 11pt
 - Body text: Calibri 10pt
 
-
 ## Sheet 2: IP_Asset_Inventory
 
 ### Column Structure
@@ -999,7 +942,6 @@ Classification: "Restricted,Confidential,Internal,Public"
 - Business Value "Medium": Orange fill (#FFA94D)
 - Business Value "Low": Green fill (#69DB7C)
 
-
 ## Sheet 3: IP_Protection_Assessment
 
 ### Column Structure
@@ -1023,7 +965,6 @@ Classification: "Restricted,Confidential,Internal,Public"
 - Control Effectiveness "Partial": Yellow fill (#FFEB9C)
 - Control Effectiveness "Ineffective": Red fill (#FFC7CE)
 
-
 ## Sheet 4: Third_Party_IP_Register
 
 ### Column Structure
@@ -1046,7 +987,6 @@ Classification: "Restricted,Confidential,Internal,Public"
 - Compliance Status "Over-deployed": Red fill (#FFC7CE)
 - Compliance Status "Under-utilised": Yellow fill (#FFEB9C)
 - Compliance Status "Compliant": Green fill (#C6EFCE)
-
 
 ## Sheet 5: Software_License_Compliance
 
@@ -1073,7 +1013,6 @@ Classification: "Restricted,Confidential,Internal,Public"
 - Variance < 0: Yellow fill (under-utilised)
 - Variance = 0: Green fill (compliant)
 
-
 ## Sheet 6: Gap_Analysis
 
 ### Column Structure
@@ -1096,7 +1035,6 @@ Classification: "Restricted,Confidential,Internal,Public"
 - Risk Rating "Medium": Orange fill (#FFA94D)
 - Risk Rating "Low": Green fill (#69DB7C)
 
-
 ## Sheet 7: Evidence_Register
 
 ### Column Structure
@@ -1116,7 +1054,6 @@ Classification: "Restricted,Confidential,Internal,Public"
 - Verification Status "Verified": Green fill (#C6EFCE)
 - Verification Status "Pending Review": Yellow fill (#FFEB9C)
 - Verification Status "Not Verified": Red fill (#FFC7CE)
-
 
 ## Sheet 8: Approval_SignOff
 

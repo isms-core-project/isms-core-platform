@@ -291,7 +291,6 @@ If available, gather previous dashboard data:
    - Orphaned account count (from Sheet 6)
    - Overall S1 compliance score
 
-
 **From S2 (Access Rights Matrix):**
 
 1. Open S2 workbook Sheet 6 (Compliance Dashboard)
@@ -302,7 +301,6 @@ If available, gather previous dashboard data:
    - Excessive access count
    - Group-based vs. direct access ratio
    - Overall S2 compliance score
-
 
 **From S3 (Access Review Results):**
 
@@ -315,7 +313,6 @@ If available, gather previous dashboard data:
    - Findings requiring remediation
    - Overall S3 compliance score
 
-
 **From S4 (Role Definition & SoD):**
 
 1. Open S4 workbook Sheet 6 (SoD Dashboard)
@@ -326,7 +323,6 @@ If available, gather previous dashboard data:
    - SoD violations remediated
    - Role certification status
    - Overall S4 compliance score
-
 
 **From S5 (Lifecycle Compliance):**
 
@@ -658,14 +654,12 @@ If available, gather previous dashboard data:
 - Validate data matches source assessments
 - Ensure evidence register is accurate
 
-
 **Step 2: Security Manager Review**
 
 - Review overall compliance posture
 - Validate gap prioritisation
 - Confirm remediation plans are adequate
 - Approve or request changes
-
 
 **Step 3: CISO Approval**
 
@@ -695,13 +689,11 @@ If available, gather previous dashboard data:
 - Maturity assessment criteria
 - Previous period comparisons (if available)
 
-
 **For Domain Scores (Sheet 3):**
 
 - Source S1-S5 workbooks (archived with date)
 - Score calculation worksheets
 - Variance explanations
-
 
 **For Gap Register (Sheet 4):**
 
@@ -709,13 +701,11 @@ If available, gather previous dashboard data:
 - Remediation project plans
 - Gap closure evidence
 
-
 **For KPI Dashboard (Sheet 5):**
 
 - KPI source data extracts
 - Target approval documentation
 - Historical KPI tracking
-
 
 **For Evidence Summary (Sheet 6):**
 
@@ -723,20 +713,17 @@ If available, gather previous dashboard data:
 - Evidence index/catalogue
 - Evidence storage location documentation
 
-
 **For Trend Analysis (Sheet 7):**
 
 - Previous dashboard versions
 - Historical metric tracking
 - Improvement initiative documentation
 
-
 **For Certification Readiness (Sheet 8):**
 
 - ISO 27001 control mapping
 - Audit preparation checklist
 - Previous audit findings (if any)
-
 
 ### How to Organise Evidence
 
@@ -1000,7 +987,6 @@ Before submitting for approval, verify:
 - **Time:** 1-2 hours
 - **Turnaround:** Same day
 
-
 **Step 2: Security Manager Review**
 
 - **Focus:** Compliance posture accuracy, gap prioritisation, remediation adequacy
@@ -1013,7 +999,6 @@ Before submitting for approval, verify:
 - **Time:** 2-3 hours
 - **Turnaround:** 2-3 business days
 
-
 **Step 3: CISO Approval**
 
 - **Focus:** Executive summary accuracy, governance readiness, risk acceptance
@@ -1025,7 +1010,6 @@ Before submitting for approval, verify:
 - **Decision:** Final Approval / Approve with Conditions / Reject
 - **Time:** 1-2 hours
 - **Turnaround:** 2-3 business days
-
 
 ### Approval Timeline
 
@@ -1052,13 +1036,11 @@ This dashboard (S6) consolidates data from:
 - **Metrics:** Total users, provisioning SLA, deprovisioning SLA
 - **Frequency:** Monthly data refresh
 
-
 ### S2 - Access Rights Matrix Assessment
 
 - **Uses:** Access documentation scores, privileged access counts
 - **Metrics:** Documentation completeness, excessive access
 - **Frequency:** Monthly data refresh
-
 
 ### S3 - Access Review Results Assessment
 
@@ -1066,20 +1048,17 @@ This dashboard (S6) consolidates data from:
 - **Metrics:** Reviews completed, findings count
 - **Frequency:** Quarterly data refresh (aligned with review cycle)
 
-
 ### S4 - Role Definition & SoD Compliance Assessment
 
 - **Uses:** RBAC adoption, SoD violation counts
 - **Metrics:** RBAC coverage, open SoD violations
 - **Frequency:** Quarterly data refresh
 
-
 ### S5 - Lifecycle Compliance Detailed Assessment
 
 - **Uses:** Detailed JML event compliance, HR integration status
 - **Metrics:** Joiner/mover/leaver SLA compliance, contractor expiration
 - **Frequency:** Monthly data refresh
-
 
 ---
 

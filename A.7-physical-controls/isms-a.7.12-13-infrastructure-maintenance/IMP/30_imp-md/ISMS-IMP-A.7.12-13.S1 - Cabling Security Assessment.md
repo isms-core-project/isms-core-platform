@@ -44,7 +44,6 @@ This document consists of two parts:
   - Cell Styling Reference
   - Integration Points
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -66,7 +65,6 @@ This assessment documents the cabling SECURITY measures deployed in your facilit
 - What change control processes govern cabling? (approval workflows, documentation updates)
 - What audits and inspections are performed? (annual reviews, visual inspections, authorised additions)
 
-
 #### Key Principle
 
 This assessment is **completely vendor-agnostic and technology-independent**. You document YOUR specific cabling infrastructure (whatever you have - copper, fibre optic, power cables, network cables), and verify protection measures against generic policy requirements from ISMS-POL-A.7.12-13, Section 2.1.
@@ -80,14 +78,12 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 - Cable types routed through each pathway
 - Protection level (enclosed, open, armoured)
 
-
 **Physical Protection:**
 
 - Electromagnetic interference (EMI) shielding measures
 - Physical protection against damage (armoured conduits, concrete encasement)
 - Environmental protection (water, heat, physical impact)
 - Cable route security (avoiding high-risk areas)
-
 
 **Access Controls:**
 
@@ -96,14 +92,12 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 - Manhole and duct access controls
 - Cable infrastructure access logging
 
-
 **Cable Documentation:**
 
 - Cable schedules and inventories
 - Network topology diagrams
 - Labelling standards and compliance
 - Documentation currency (last update date)
-
 
 **Change Control:**
 
@@ -112,14 +106,12 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 - Unused cable management
 - Audit trail of changes
 
-
 **Audits and Inspections:**
 
 - Annual cabling infrastructure audits
 - Visual inspection schedules
 - Unauthorised addition detection
 - Remediation tracking
-
 
 #### How This Relates to Other A.7.12-13 Assessments
 
@@ -150,12 +142,10 @@ This assessment (A.7.12-13.S1) focuses specifically on Control A.7.12 (Cabling S
 - Understanding of facility security zones
 - Access to cable documentation and network diagrams
 
-
 #### Time Commitment
 
 - **Initial assessment:** 8-12 hours (comprehensive review of all cabling infrastructure)
 - **Annual updates:** 2-4 hours (update based on infrastructure changes, audit findings)
-
 
 ### Expected Outputs
 
@@ -186,7 +176,6 @@ Before starting this assessment, gather:
 - Access to data centre cable infrastructure
 - Access to facilities documentation (floor plans, cable routing)
 
-
 #### 2. Documentation
 
 - Current cable schedules (power and data)
@@ -196,7 +185,6 @@ Before starting this assessment, gather:
 - Cable labelling standards and procedures
 - Change control procedures for cabling
 
-
 #### 3. Historical Data
 
 - Previous cabling audit reports
@@ -204,7 +192,6 @@ Before starting this assessment, gather:
 - Incident reports related to cable damage or failure
 - Access logs for wiring closets (if available)
 - Maintenance records for cabling infrastructure
-
 
 #### 4. Policy Requirements
 
@@ -215,7 +202,6 @@ Before starting this assessment, gather:
   - Section 2.1.4: Cable Documentation and Management
   - Section 2.1.5: Inspection and Maintenance
 
-
 ### Required Tools
 
 - Microsoft Excel (2016 or later) for workbook completion
@@ -225,7 +211,6 @@ Before starting this assessment, gather:
 - Torch/flashlight (for inspecting cable routes)
 - Camera (for evidence photos)
 
-
 ### Dependencies
 
 This assessment has NO dependencies on other assessments - it can be completed independently.
@@ -234,7 +219,6 @@ However, outputs from this assessment are INPUT to:
 
 - ISMS-IMP-A.7.12-13.S4 (Compliance Dashboard) - Consolidates cabling security with equipment maintenance
 - Network security assessments (physical network infrastructure verification)
-
 
 ---
 
@@ -274,7 +258,6 @@ However, outputs from this assessment are INPUT to:
 - Schedule time with Facilities Manager and Network Engineers
 - Download or generate assessment workbook (Excel file)
 
-
 **Step 2: Pathway Inventory (Day 1-2 - 3-4 hours)**
 
 - Open assessment workbook
@@ -282,7 +265,6 @@ However, outputs from this assessment are INPUT to:
 - Complete Sheet 2 (Cable Pathways) - inventory all pathways by type and location
 - Document cable types routed through each pathway
 - Note protection level for each pathway
-
 
 **Step 3: Protection Assessment (Day 2-3 - 2-3 hours)**
 
@@ -292,7 +274,6 @@ However, outputs from this assessment are INPUT to:
 - Verify environmental protection
 - Identify any high-risk routing areas
 
-
 **Step 4: Access Control Verification (Day 3 - 2-3 hours)**
 
 - Complete Sheet 4 (Access Controls)
@@ -300,7 +281,6 @@ However, outputs from this assessment are INPUT to:
 - Check patch panel and distribution frame access
 - Verify manhole and duct access controls
 - Review access logging mechanisms
-
 
 **Step 5: Documentation Audit (Day 4 - 2-3 hours)**
 
@@ -310,7 +290,6 @@ However, outputs from this assessment are INPUT to:
 - Check labelling compliance against standards
 - Verify change control process compliance
 
-
 **Step 6: Evidence Collection (Day 4-5 - 2-3 hours)**
 
 - Take photographs of cable pathways and protection measures
@@ -319,7 +298,6 @@ However, outputs from this assessment are INPUT to:
 - Document evidence in Sheet 7 (Evidence Register)
 - Store evidence files in secure location
 
-
 **Step 7: Summary Review (Day 5 - 1 hour)**
 
 - Review Sheet 6 (Summary Dashboard) - formulas automatically calculate compliance scores
@@ -327,14 +305,12 @@ However, outputs from this assessment are INPUT to:
 - Identify areas below threshold (red or amber status)
 - Prepare gap remediation plan for non-compliant areas
 
-
 **Step 8: Quality Check (Day 5 - 1 hour)**
 
 - Complete self-assessment using Quality Checklist (see section below)
 - Verify all required fields completed
 - Verify evidence register complete
 - Verify formulas calculating correctly
-
 
 **Step 9: Obtain Approvals (Day 6-10 - asynchronous)**
 
@@ -344,13 +320,11 @@ However, outputs from this assessment are INPUT to:
 - After Level 3 approval, submit to Level 4: Compliance Officer for final sign-off
 - Document approval dates and any feedback
 
-
 **Step 10: Submit for Audit (Post-Approval)**
 
 - Assessment workbook is now audit-ready
 - Provide to Internal Audit or External Auditors
 - Evidence register provides traceability to supporting documentation
-
 
 ---
 
@@ -374,7 +348,6 @@ However, outputs from this assessment are INPUT to:
     - Amber (⚠️ Partial): Meets some requirements, gaps identified
     - Red (❌ Non-Compliant): Does not meet requirements, immediate action needed
 
-
 **Time Required:** 5 minutes
 
 ### Sheet 2: Cable Pathways
@@ -389,58 +362,47 @@ However, outputs from this assessment are INPUT to:
 
 - Unique identifier: "CP-001", "CP-002", etc.
 
-
 **Column B - Facility/Building:**
 
 - Location: "Building A - Main Campus", "Datacenter 1", "Branch Office"
-
 
 **Column C - Pathway Type:**
 
 - Dropdown: "Conduit", "Cable Tray", "Raised Floor", "Underground", "Ceiling Void", "Wall Chase"
 
-
 **Column D - Start Location:**
 
 - Where pathway begins: "MDF Room A", "Server Room", "Building Entry Point"
-
 
 **Column E - End Location:**
 
 - Where pathway terminates: "IDF Room 2", "Workstation Area", "External Comms Room"
 
-
 **Column F - Cable Types:**
 
 - Cables routed through pathway: "Fibre + Cat6", "Power only", "Data only", "Mixed power/data"
-
 
 **Column G - Protection Type:**
 
 - Dropdown: "Enclosed - Metal", "Enclosed - Plastic", "Open Tray", "Armoured", "None"
 
-
 **Column H - Length (metres):**
 
 - Approximate length of pathway segment: 10, 50, 200, etc.
-
 
 **Column I - Segregation Compliant:**
 
 - Dropdown: "Yes", "No", "N/A"
 - Note: Power and data cables should be segregated
 
-
 **Column J - Documentation Current:**
 
 - Dropdown: "Yes", "Partial", "No"
 - Is this pathway documented in cable schedules?
 
-
 **Column K - Last Inspection:**
 
 - Date of last visual inspection: "15.01.2026"
-
 
 **Column L - Compliance Status:**
 
@@ -449,11 +411,9 @@ However, outputs from this assessment are INPUT to:
   - Amber (⚠️): Minor gaps (e.g., documentation slightly outdated)
   - Red (❌): Major gaps (no protection, segregation non-compliant)
 
-
 **Column M - Notes:**
 
 - Any additional context: "Upgrade planned Q2 2026", "Legacy installation"
-
 
 **Time Required:** 45-60 minutes for comprehensive pathway inventory
 
@@ -469,58 +429,47 @@ However, outputs from this assessment are INPUT to:
 
 - Unique identifier: "PA-001", "PA-002", etc.
 
-
 **Column B - Facility/Building:**
 
 - Location: "Building A", "Datacenter 1"
-
 
 **Column C - Area Name:**
 
 - Specific area: "Server Room", "IDF Closet Floor 2", "Underground Entry"
 
-
 **Column D - EMI Protection:**
 
 - Dropdown: "Yes - Shielded", "Partial", "No", "N/A"
-
 
 **Column E - Physical Damage Protection:**
 
 - Dropdown: "Yes - Armoured", "Yes - Enclosed", "Partial", "No"
 
-
 **Column F - Water Protection:**
 
 - Dropdown: "Yes", "Partial", "No", "N/A"
 
-
 **Column G - Heat Protection:**
 
 - Dropdown: "Yes", "Partial", "No", "N/A"
-
 
 **Column H - Cable Route Risk Level:**
 
 - Dropdown: "Low", "Medium", "High"
 - High = near water sources, heat sources, public areas
 
-
 **Column I - Fibre Used for High Security:**
 
 - Dropdown: "Yes", "No", "N/A"
 - Note: Fibre optic should be used where interception risk exists
 
-
 **Column J - Compliance Status:**
 
 - Formula auto-calculates based on requirements
 
-
 **Column K - Notes:**
 
 - Any additional context, remediation plans
-
 
 **Time Required:** 30-45 minutes for protection assessment
 
@@ -536,57 +485,46 @@ However, outputs from this assessment are INPUT to:
 
 - Unique identifier: "AC-001", "AC-002", etc.
 
-
 **Column B - Facility/Building:**
 
 - Location: "Building A", "Datacenter 1"
-
 
 **Column C - Infrastructure Type:**
 
 - Dropdown: "Wiring Closet", "Patch Panel", "Distribution Frame", "Manhole", "Duct Access"
 
-
 **Column D - Location Description:**
 
 - Specific location: "Floor 2 IDF", "Basement MDF", "External manhole #3"
-
 
 **Column E - Lock Type:**
 
 - Dropdown: "Electronic Access Card", "Keyed Lock", "Combination Lock", "No Lock", "Cage/Enclosure"
 
-
 **Column F - Access Restricted:**
 
 - Dropdown: "Yes - IT Only", "Yes - Facilities Only", "Yes - Authorised Personnel", "No"
 
-
 **Column G - Access Logged:**
 
 - Dropdown: "Yes - Electronic", "Yes - Manual", "No"
-
 
 **Column H - Occupied Monitoring:**
 
 - Dropdown: "Yes - CCTV", "Yes - Guards", "No"
 - Note: Unoccupied spaces should be secured
 
-
 **Column I - Last Access Review:**
 
 - Date of last review of who has access: "15.01.2026"
-
 
 **Column J - Compliance Status:**
 
 - Formula auto-calculates based on requirements
 
-
 **Column K - Notes:**
 
 - Any additional context
-
 
 **Time Required:** 30-45 minutes for access control documentation
 
@@ -602,52 +540,42 @@ However, outputs from this assessment are INPUT to:
 
 - Cable schedule, Network diagram, Labelling standard, Change log, etc.
 
-
 **Column B - Document Name:**
 
 - Specific document name: "Network Topology v2.3", "Cable Schedule Building A"
-
 
 **Column C - Document Location:**
 
 - Where stored: "SharePoint/IT/Network", "CMDB", "Facilities shared drive"
 
-
 **Column D - Owner:**
 
 - Person responsible: "Network Manager", "Facilities Manager"
-
 
 **Column E - Last Updated:**
 
 - Date of last update: "15.01.2026"
 
-
 **Column F - Review Cycle:**
 
 - Expected review frequency: "Annual", "Quarterly", "On change"
-
 
 **Column G - Current:**
 
 - Dropdown: "Yes", "No"
 - Is document current (updated within review cycle)?
 
-
 **Column H - Accessible:**
 
 - Dropdown: "Yes - Online", "Yes - Restricted", "No"
-
 
 **Column I - Compliance Status:**
 
 - Formula auto-calculates
 
-
 **Column J - Notes:**
 
 - Any additional context
-
 
 **Labelling Compliance Section:**
 
@@ -655,7 +583,6 @@ However, outputs from this assessment are INPUT to:
 - Labels legible: Yes/No
 - Labels match documentation: Yes/No
 - Patch panels labelled: Yes/No
-
 
 **Time Required:** 20-30 minutes for documentation audit
 
@@ -673,7 +600,6 @@ However, outputs from this assessment are INPUT to:
 - Displayed as percentage: 92%, 78%, etc.
 - Thresholds: >90% (Green), 75-89% (Amber), <75% (Red)
 
-
 **Domain Scores:**
 
 - Cable Pathways Compliance Score (%)
@@ -681,12 +607,10 @@ However, outputs from this assessment are INPUT to:
 - Access Controls Score (%)
 - Documentation Score (%)
 
-
 **Gap Summary:**
 
 - Auto-generated list of non-compliant items
 - Prioritised by severity
-
 
 **What YOU Do:**
 
@@ -695,7 +619,6 @@ However, outputs from this assessment are INPUT to:
 - Investigate any unexpected red/amber status
 - Prepare remediation plan for gaps identified
 - NO manual data entry in this sheet
-
 
 **Time Required:** 15-30 minutes for review and interpretation
 
@@ -717,7 +640,6 @@ However, outputs from this assessment are INPUT to:
 - Collected By
 - Retention Period
 
-
 **Common Evidence to Collect:**
 
 1. **Cable Pathways:**
@@ -738,7 +660,6 @@ However, outputs from this assessment are INPUT to:
    - Network diagrams (current version)
    - Labelling photos
 
-
 **Time Required:** 2-3 hours for comprehensive evidence collection
 
 ### Sheet 8: Approval Sign-Off
@@ -751,7 +672,6 @@ However, outputs from this assessment are INPUT to:
 - Level 2: Facilities Manager
 - Level 3: CISO
 - Level 4: Compliance Officer
-
 
 **Time Required:** 5 minutes for Level 1, then asynchronous for Levels 2-4
 
@@ -770,7 +690,6 @@ However, outputs from this assessment are INPUT to:
 - Photos of underground cable entry points
 - Cable route diagrams
 
-
 **2. Protection Measure Evidence**
 
 - Photos of armoured conduits
@@ -778,14 +697,12 @@ However, outputs from this assessment are INPUT to:
 - Photos of cable segregation (power vs. data)
 - Environmental protection measures
 
-
 **3. Access Control Evidence**
 
 - Photos of locked wiring closets
 - Access control system configuration
 - Access logs (sample export)
 - CCTV coverage of infrastructure areas
-
 
 **4. Documentation Evidence**
 
@@ -795,13 +712,11 @@ However, outputs from this assessment are INPUT to:
 - Change control procedure document
 - Sample change requests
 
-
 **5. Audit/Inspection Evidence**
 
 - Previous audit reports
 - Inspection checklists
 - Remediation tracking records
-
 
 ### Evidence Storage
 
@@ -814,7 +729,6 @@ However, outputs from this assessment are INPUT to:
 
 - Minimum: 3 years
 - Encrypt sensitive evidence
-
 
 ---
 
@@ -829,7 +743,6 @@ However, outputs from this assessment are INPUT to:
 - Include ALL pathway types: conduits, trays, underground, ceiling voids
 - Don't forget inter-building connections
 
-
 ### Pitfall 2: Assuming Segregation Compliance
 
 ❌ **MISTAKE:** Assuming power and data are segregated without physical verification
@@ -838,7 +751,6 @@ However, outputs from this assessment are INPUT to:
 - Physically inspect cable routes
 - Check for mixed cables in same conduit/tray
 - Verify minimum separation distances per local electrical codes
-
 
 ### Pitfall 3: Outdated Documentation
 
@@ -849,7 +761,6 @@ However, outputs from this assessment are INPUT to:
 - Cross-reference documentation with physical reality
 - Sample-check 10% of documented cables against physical labels
 
-
 ### Pitfall 4: Missing Underground/External Routes
 
 ❌ **MISTAKE:** Only assessing internal cabling, ignoring external and underground routes
@@ -858,7 +769,6 @@ However, outputs from this assessment are INPUT to:
 - Include all building entry points
 - Document underground ducts and manholes
 - Assess inter-building connections
-
 
 ### Pitfall 5: Access Control Gaps
 
@@ -869,7 +779,6 @@ However, outputs from this assessment are INPUT to:
 - Verify access is appropriate (IT/Facilities only)
 - Check if access review has been conducted recently
 
-
 ### Pitfall 6: Labelling Non-Compliance
 
 ❌ **MISTAKE:** Assuming cables are labelled because the standard exists
@@ -878,7 +787,6 @@ However, outputs from this assessment are INPUT to:
 - Physically verify labelling at sample locations
 - Check both ends of cables are labelled
 - Verify labels match documentation
-
 
 ### Pitfall 7: Change Control Bypass
 
@@ -889,7 +797,6 @@ However, outputs from this assessment are INPUT to:
 - Look for cables without labels (potential unauthorised additions)
 - Review change log for completeness
 
-
 ### Pitfall 8: Stale Evidence
 
 ❌ **MISTAKE:** Using photos or documents from previous assessments
@@ -898,7 +805,6 @@ However, outputs from this assessment are INPUT to:
 - Collect evidence during current assessment
 - Date-stamp all photos
 - Verify documents are current versions
-
 
 ### Pitfall 9: Ignoring Fibre for High-Security
 
@@ -909,7 +815,6 @@ However, outputs from this assessment are INPUT to:
 - Verify fibre optic cables used for sensitive traffic
 - Document where copper is used and justify
 
-
 ### Pitfall 10: Incomplete Risk Assessment
 
 ❌ **MISTAKE:** Not identifying high-risk cable routes (near water, heat, public areas)
@@ -918,7 +823,6 @@ However, outputs from this assessment are INPUT to:
 - Map cable routes against facility risks
 - Identify routes near water pipes, HVAC, kitchens
 - Document mitigation measures for high-risk routes
-
 
 ---
 
@@ -990,7 +894,6 @@ Before submitting for Level 2 approval, complete this self-assessment:
 - [ ] Consistent facility naming across sheets
 - [ ] British spelling used throughout
 
-
 ---
 
 ## Review & Approval
@@ -1012,7 +915,6 @@ Before submitting for Level 2 approval, complete this self-assessment:
 **Level 4: Compliance Officer**
 - Final audit readiness certification
 - Verify evidence completeness
-
 
 ---
 

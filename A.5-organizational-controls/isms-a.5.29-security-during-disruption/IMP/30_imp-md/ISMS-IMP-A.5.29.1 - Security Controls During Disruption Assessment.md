@@ -592,7 +592,7 @@ Assessment Published to ISMS Evidence Library
 | **ISMS-IMP-A.5.29.2** | Degraded Mode Security Requirements (detailed degradation scenarios) |
 | **ISMS-IMP-A.5.29.3** | Recovery Security Verification (post-disruption validation) |
 | **ISMS-IMP-A.5.29.4** | Compliance Dashboard (metrics and KPIs) |
-| **ISMS-IMP-A.8.13-14-5.30** | BC/DR implementation with security integration |
+| **ISMS-IMP-A.5.30-8.13-14** | BC/DR implementation with security integration |
 
 ---
 

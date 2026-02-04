@@ -44,12 +44,10 @@ This document consists of two parts:
   - Formula Definitions
   - Cell Styling Reference
 
-
 **Target Audiences:**
 
 - **Part I:** Assessment users (Infrastructure Team, DevOps, Security, System Administrators)
 - **Part II:** Workbook developers (Python/Excel script maintainers)
-
 
 ---
 
@@ -72,7 +70,6 @@ This assessment documents HOW your organization separates development, test, and
 - **Environment Configuration:** How environments mirror production
 - **Separation Enforcement:** Technical controls preventing unauthorized changes
 
-
 ### Why This Matters
 
 This assessment verifies [Organization]'s compliance with:
@@ -80,7 +77,6 @@ This assessment verifies [Organization]'s compliance with:
 - ISO/IEC 27001:2022 Control A.8.32: Change Management (element d - testing)
 - ISO/IEC 27001:2022 Control A.8.31: Separation of Development, Testing and Production
 - ISMS-POL-A.8.32, Section 2.3 (Testing & Validation Requirements)
-
 
 Testing changes in production is the #1 cause of production incidents. Proper environment separation ensures safe testing, prevents production contamination, and protects production data.
 
@@ -104,7 +100,6 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - [ ] Deployment/promotion procedures
 - [ ] Environment configuration documentation
 
-
 **Recommended:**
 
 - [ ] Interview DevOps team about deployment workflows
@@ -112,7 +107,6 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - [ ] Gather incident reports involving environment issues
 - [ ] Review data masking/anonymization procedures
 - [ ] Identify environment monitoring dashboards
-
 
 ### Who Should Complete This Assessment
 
@@ -127,12 +121,10 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Database Administrators (data protection in test)
 - Application Owners (environment-specific configurations)
 
-
 **Reviewers:**
 
 - CISO (security controls validation)
 - IT Operations Manager (operational readiness)
-
 
 ---
 
@@ -146,14 +138,12 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Gather network diagrams and architecture documentation
 - Review completion timeline (2-3 weeks)
 
-
 **Step 2: Environment Inventory (Days 2-4)**
 
 - Document all environments (Sheet 2: Environment_Inventory)
 - Identify Dev, Test, Staging, Prod environments
 - Document infrastructure type (physical/VM/container/cloud)
 - Assess separation quality (physical vs logical)
-
 
 **Step 3: Access Control Assessment (Days 3-6)**
 
@@ -162,14 +152,12 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Assess privileged access management
 - Verify separation of duties (developers can't deploy to prod)
 
-
 **Step 4: Promotion Workflow Documentation (Days 4-7)**
 
 - Document how changes move between environments (Sheet 4: Promotion_Workflows)
 - Map promotion checkpoints and approvals
 - Assess automation level (manual vs automated)
 - Review rollback capabilities
-
 
 **Step 5: Data Protection Assessment (Days 5-8)**
 
@@ -178,14 +166,12 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Document synthetic data generation
 - Verify no production credentials in non-prod
 
-
 **Step 6: Environment Configuration (Days 6-9)**
 
 - Compare environment configurations (Sheet 6: Environment_Config)
 - Assess how closely test mirrors production
 - Document configuration management approach
 - Identify configuration drift issues
-
 
 **Step 7: Separation Enforcement (Days 7-10)**
 
@@ -194,30 +180,25 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Assess deployment prevention controls
 - Review monitoring and alerting
 
-
 **Step 8: Evidence Collection (Days 8-11)**
 
 - Compile supporting evidence (Sheet 8: Evidence_Register)
 - Network diagrams, access logs, deployment logs
-
 
 **Step 9: Summary Review (Days 9-12)**
 
 - Review auto-calculated compliance (Sheet 9: Summary_Dashboard)
 - Validate gap analysis
 
-
 **Step 10: Quality Review (Days 10-13)**
 
 - Self-review against checklist
 - Peer review by Security Team
 
-
 **Step 11: Final Approval (Days 11-15)**
 
 - Infrastructure Manager approval
 - CISO sign-off (Sheet 10: Approval_Sign_Off)
-
 
 **Total Duration:** 2-3 weeks
 
@@ -239,14 +220,12 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Separation method (physical, network, logical)
 - Environment purpose and scope
 
-
 **Tips:**
 
 - Include ALL environments - personal dev environments, CI/CD agents, etc.
 - If you only have Prod (no test), this is major gap - document honestly
 - Staging/Pre-Prod environments are optional but recommended for high-risk systems
 - Cloud environments (separate VPCs/VNets) count as logical separation
-
 
 **Common Questions:**
 
@@ -257,14 +236,12 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - **Q:** "Is Docker container separation adequate?"
   - **A:** Depends on isolation. Containers on same host = logical separation. Document honestly.
 
-
 **Evidence to provide:**
 
 - Network diagrams showing all environments
 - Infrastructure documentation (cloud VPCs, VLANs, physical locations)
 - Environment inventory list
 - Architecture diagrams
-
 
 ### Sheet 3: Access_Controls
 
@@ -277,14 +254,12 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Privileged access management
 - Separation of duties enforcement
 
-
 **Tips:**
 
 - "Developers can't deploy to production" is key control - verify this
 - Production access should be most restricted
 - Break-glass emergency access is OK if logged and auditable
 - Service accounts need same scrutiny as user accounts
-
 
 **Common Questions:**
 
@@ -295,7 +270,6 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - **Q:** "We use shared credentials for deployment"
   - **A:** Major gap - individual accountability required. Document as finding.
 
-
 **Evidence to provide:**
 
 - Access control matrix (who can access what)
@@ -303,7 +277,6 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - PAM system documentation
 - Access logs showing who accessed what
 - MFA configuration by environment
-
 
 ### Sheet 4: Promotion_Workflows
 
@@ -315,14 +288,12 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Deployment pipeline documentation
 - Rollback procedures at each stage
 
-
 **Tips:**
 
 - Linear progression (Dev -> Test -> Prod) preferred over "wild west" deployment
 - Automation reduces errors but doesn't eliminate need for checkpoints
 - Skipping test and going Dev -> Prod should be rare (emergency only)
 - Document ACTUAL workflow, not ideal workflow
-
 
 **Common Questions:**
 
@@ -333,7 +304,6 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - **Q:** "What if Test environment isn't available?"
   - **A:** Not an excuse to deploy untested. Document as process gap and remediation plan.
 
-
 **Evidence to provide:**
 
 - Promotion workflow diagrams
@@ -341,7 +311,6 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Deployment logs showing progression
 - Approval records at promotion checkpoints
 - Rollback procedure documentation
-
 
 ### Sheet 5: Data_Protection
 
@@ -353,14 +322,12 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Credential management (no prod credentials in test)
 - Backup data protection
 
-
 **Tips:**
 
 - Production data in test is HIGH RISK - regulatory violation (GDPR, etc.)
 - "We copy production to test" = policy violation unless properly masked
 - Synthetic data is ideal but takes effort - masking is pragmatic middle ground
 - Production credentials MUST NOT exist in non-production environments
-
 
 **Common Questions:**
 
@@ -371,7 +338,6 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - **Q:** "We have production database credentials in test for read-only queries"
   - **A:** Policy violation - test should NEVER have production credentials. Use test-specific accounts.
 
-
 **Evidence to provide:**
 
 - Data masking procedures and tools
@@ -379,7 +345,6 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Synthetic data generation scripts
 - Credential management documentation
 - Data classification by environment
-
 
 ### Sheet 6: Environment_Config
 
@@ -391,14 +356,12 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Configuration drift detection and correction
 - Infrastructure-as-Code usage
 
-
 **Tips:**
 
 - Test should closely mirror prod (OS, middleware, dependencies)
 - Perfect mirror not always feasible (cost, scale) - document differences
 - Configuration drift (test diverging from prod) causes "works in test, fails in prod"
 - IaC (Terraform, CloudFormation, Ansible) helps maintain consistency
-
 
 **Common Questions:**
 
@@ -409,7 +372,6 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - **Q:** "We manage environments manually"
   - **A:** Manual is higher risk (human error, drift). Document as improvement opportunity. IaC is recommended but not mandatory.
 
-
 **Evidence to provide:**
 
 - Environment configuration specifications
@@ -417,7 +379,6 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Configuration management tool documentation
 - Drift detection reports
 - Environment comparison matrix
-
 
 ### Sheet 7: Separation_Controls
 
@@ -429,14 +390,12 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Monitoring and alerting for separation violations
 - Automated controls vs manual procedures
 
-
 **Tips:**
 
 - Technical controls > manual procedures (humans make mistakes)
 - Firewall rules between environments enforce network separation
 - Deployment tools should require explicit environment selection
 - "Accidentally deployed to prod" should be technically prevented, not just procedurally prohibited
-
 
 **Common Questions:**
 
@@ -447,7 +406,6 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - **Q:** "Cloud environments in same VPC/VNet OK?"
   - **A:** Only if subnets and security groups properly segment. Flat network is violation.
 
-
 **Evidence to provide:**
 
 - Network diagrams showing segmentation
@@ -455,7 +413,6 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Deployment tool configuration (environment targeting)
 - Monitoring dashboards for separation violations
 - Access control lists
-
 
 ### Sheet 8: Evidence_Register
 
@@ -465,13 +422,11 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Evidence type and last verification
 - Accessibility for auditors
 
-
 **Tips:**
 
 - Network diagrams are KEY evidence for this assessment
 - Access logs prove who accessed what
 - Deployment logs prove promotion workflow compliance
-
 
 ### Sheet 9: Summary_Dashboard
 
@@ -481,7 +436,6 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Compliance by domain (inventory, access, promotion, data, config)
 - Critical gaps requiring attention
 
-
 ### Sheet 10: Approval_Sign_Off
 
 **What to complete:**
@@ -490,7 +444,6 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Infrastructure Manager sign-off
 - CISO approval
 - Next review date
-
 
 ---
 
@@ -505,7 +458,6 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Cloud architecture diagrams (VPCs, VNets, subnets)
 - Physical datacenter layouts (if applicable)
 
-
 **Access Control Evidence:**
 
 - Access control matrix
@@ -514,14 +466,12 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - MFA configuration documentation
 - PAM system configuration
 
-
 **Promotion Evidence:**
 
 - CI/CD pipeline configurations
 - Deployment logs showing environment progression
 - Promotion approval records
 - Rollback execution examples
-
 
 **Data Protection Evidence:**
 
@@ -530,7 +480,6 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Credential management procedures
 - Data classification by environment
 
-
 **Configuration Evidence:**
 
 - IaC scripts (Terraform, CloudFormation, Ansible)
@@ -538,14 +487,12 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Environment comparison reports
 - Drift detection alerts
 
-
 **Control Evidence:**
 
 - Firewall rules between environments
 - Security group configurations
 - Deployment tool access controls
 - Monitoring dashboards and alerts
-
 
 ### Evidence Best Practices
 
@@ -556,14 +503,12 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - ? Show deployment logs proving Dev -> Test -> Prod progression
 - ? Document automated controls (firewall rules, security groups)
 
-
 **Don't:**
 
 - ? Provide outdated network diagrams
 - ? Hide the fact that developers have production access
 - ? Claim "we have separation" without technical evidence
 - ? Confuse logical separation with no separation
-
 
 ---
 
@@ -642,7 +587,6 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - [ ] Infrastructure type identified
 - [ ] Minimum Dev + Test + Prod exists (or gap documented)
 
-
 **Access Controls:**
 
 - [ ] Access matrix complete (who can access what)
@@ -650,7 +594,6 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - [ ] Privileged access management documented
 - [ ] MFA requirements by environment documented
 - [ ] Access logs available as evidence
-
 
 **Promotion Workflows:**
 
@@ -660,14 +603,12 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - [ ] Rollback procedures defined
 - [ ] Deployment logs available
 
-
 **Data Protection:**
 
 - [ ] Production data usage in test documented
 - [ ] Data masking/anonymization procedures defined
 - [ ] Credential management verified (no prod creds in test)
 - [ ] Data protection evidence available
-
 
 **Environment Configuration:**
 
@@ -676,14 +617,12 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - [ ] Drift detection mechanisms documented
 - [ ] IaC usage documented (if applicable)
 
-
 **Separation Controls:**
 
 - [ ] Network segmentation documented
 - [ ] Firewall rules/security groups documented
 - [ ] Technical controls enforcing separation verified
 - [ ] Monitoring and alerting defined
-
 
 **Evidence:**
 
@@ -692,13 +631,11 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - [ ] Deployment logs available
 - [ ] All evidence accessible to auditors
 
-
 **Dashboard:**
 
 - [ ] Compliance percentage validated
 - [ ] Critical gaps identified
 - [ ] Remediation priorities set
-
 
 ---
 
@@ -712,7 +649,6 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Validate network diagrams current
 - Verify access control matrix accurate
 
-
 **Step 2: Peer Review (Security Team)**
 
 - Review access controls for separation of duties
@@ -720,13 +656,11 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Assess technical control adequacy
 - Typical turnaround: 3-5 days
 
-
 **Step 3: Compliance Review (Compliance Officer)**
 
 - Verify regulatory data protection compliance
 - Check separation requirements met
 - Typical turnaround: 2-3 days
-
 
 **Step 4: CISO Approval**
 
@@ -735,14 +669,12 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Critical gap remediation plans
 - Typical turnaround: 2-3 days
 
-
 **Step 5: Documentation & Communication**
 
 - Set status to "Final"
 - Set next review date (+3 months)
 - File network diagrams and evidence
 - Notify gap owners
-
 
 **Approval Timeline:** 2-3 weeks
 
@@ -753,7 +685,6 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Production data in test without masking
 - No network segmentation between environments
 - Outdated or missing network diagrams
-
 
 ---
 
@@ -767,13 +698,11 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - Manual deployments -> Implement CI/CD automation
 - No IaC -> Start with configuration scripts, progress to full IaC
 
-
 **Access Control Refinement:**
 
 - Review access logs - is prod access actually restricted?
 - Implement PAM for privileged access
 - Regular access reviews - remove unused access
-
 
 ---
 
@@ -811,7 +740,6 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 - **Subtitle:** "ISO/IEC 27001:2022 - Control A.8.32: Change Management (Environment Separation)"
 - **Styling:** Dark blue header (003366), white text, centered, 40px height
 
-
 #### Document Information Block
 ```
 Document ID:           ISMS-IMP-A.8.32.3
@@ -843,7 +771,6 @@ Review Cycle:          Quarterly
 | [NO] | Not Defined | Not defined or not documented | Red (FFC7CE) |
 | [PLANNED] | Planned | Definition planned with target date | Blue (B4C7E7) |
 | N/A | Not Applicable | Not applicable to this environment | Gray |
-
 
 #### Environment Separation Principles
 ```
@@ -886,7 +813,6 @@ CRITICAL: Production data SHALL NOT be used in Dev/Test without:
 - ✓ Test data generation procedures
 - ✓ Data masking/anonymization tool configs
 - ✓ Audit logs (environment access)
-
 
 ---
 
@@ -1371,7 +1297,6 @@ Centralized evidence repository linking to all supporting documentation.
 - Verification Status: 18
 - Auditor Notes: 30
 
-
 ---
 
 ## Sheet 9: Approval_Sign_Off
@@ -1444,13 +1369,11 @@ External Audit Scheduled:       [Date]
 - **Section Header:** Font: Calibri 11pt bold white, Fill: 4472C4 (light blue), Alignment: center, Height: 20px
 - **Column Header:** Font: Calibri 10pt bold black, Fill: D9D9D9 (light gray), Alignment: centered/wrapped, Border: thin all sides
 
-
 ### Input Cell Styles
 
 - **Editable (User Input):** Fill: FFFFCC (light yellow), Border: thin black, Alignment: left/wrap
 - **Calculated/Formula:** Fill: E0E0E0 (light gray), Border: thin black, Protection: locked
 - **Dropdown:** Fill: FFFFCC (light yellow), Border: thin black, Data validation applied
-
 
 ### Status Color Coding
 
@@ -1460,7 +1383,6 @@ External Audit Scheduled:       [Date]
 - **📋 Planned:** B4C7E7 (light blue)
 - **N/A:** F2F2F2 (light gray)
 
-
 ---
 
 ## Freeze Panes
@@ -1468,7 +1390,6 @@ External Audit Scheduled:       [Date]
 - **All assessment sheets:** Freeze at row 4 (headers remain visible during scrolling)
 - **Evidence Register:** Freeze at row 5
 - **Approval Sign-Off:** Freeze at row 3
-
 
 ---
 
@@ -1480,7 +1401,6 @@ External Audit Scheduled:       [Date]
 
 - `ISMS_A_8_32_3_Environment_Separation_Assessment_20260115.xlsx`
 - `ISMS_A_8_32_3_Environment_Separation_Assessment_20260401_FINAL.xlsx`
-
 
 ---
 
@@ -1508,7 +1428,6 @@ External Audit Scheduled:       [Date]
 - Control 8.33 exceptions granted
 - Regulatory requirement changes (GDPR, etc.)
 
-
 ---
 
 ## Integration Points
@@ -1523,7 +1442,6 @@ External Audit Scheduled:       [Date]
 - **ISMS-IMP-A.8.32.4:** Testing & Validation Assessment
 - **ISMS-IMP-A.8.32.5:** Compliance Dashboard (consolidates this data)
 
-
 ### Related ISO 27001:2022 Controls
 
 - **Control 5.18:** Access rights (environment-specific access control)
@@ -1531,7 +1449,6 @@ External Audit Scheduled:       [Date]
 - **Control 8.3:** Information access restriction
 - **Control 8.11:** Data masking (Control 8.33 implementation)
 - **Control 8.19:** Software installation (production change control)
-
 
 ### External Integrations
 
@@ -1542,7 +1459,6 @@ External Audit Scheduled:       [Date]
 - **SIEM:** Environment access monitoring
 - **CI/CD Pipeline:** Automated promotion controls
 
-
 ### Audit Trail Requirements
 
 - All environment configurations documented and versioned
@@ -1551,7 +1467,6 @@ External Audit Scheduled:       [Date]
 - Production data usage exceptions documented with DPO approval
 - Anonymization testing results maintained
 - Network isolation verified through penetration testing
-
 
 ---
 

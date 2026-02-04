@@ -43,7 +43,6 @@ Dieses Dokument dient ausschliesslich zu Informations- und Sensibilisierungszwec
 - Dieses Dokument schreibt NICHT die Verwendung, das Verbot oder die Konfiguration spezifischer kryptographischer Algorithmen, Ciphers, Protokolle, Tools oder Plattformen vor.
 - Dieses Dokument überschreibt oder erweitert KEINE ISMS-Richtlinie.
 
-
 Alle bindenden kryptographischen Anforderungen, Verpflichtungen und Governance-Entscheidungen sind ausschliesslich in **ISMS-POL-A.8.24 (Kryptografie)** und anderen genehmigten ISMS-Dokumentationen definiert.
 
 Dieses Dokument dient ausschliesslich als technische Referenz für:
@@ -53,7 +52,6 @@ Dieses Dokument dient ausschliesslich als technische Referenz für:
 - Unterstützung der Sensibilisierung für kryptographische Agilität
 - Information technischer Diskussionen und zukünftiger Implementierungsplanung
 - **Dieses Dokument darf NICHT als Audit-Nachweis für Implementierungen verwendet werden**
-
 
 Die Verwendung dieses Dokuments impliziert keine Implementierung, Compliance oder operative Reife.
 
@@ -73,7 +71,6 @@ Dieses Dokument bietet eine technische Übersicht der kryptographischen Algorith
 - Kontext für kryptographische Entscheidungsfindung
 - Zukünftiger Implementierungsplanungs-Diskussionen
 
-
 ## Was dieses Dokument NICHT ist
 
 Dieses Dokument:
@@ -84,7 +81,6 @@ Dieses Dokument:
 - Ersetzt NICHT ISMS-POL-A.8.24 Richtlinien-Anforderungen
 - Schreibt KEINE spezifischen Cipher Suite Konfigurationen vor
 - Etabliert KEINE Key Management Verfahren
-
 
 ## Beziehung zum ISMS
 
@@ -101,7 +97,6 @@ Diese Referenz organisiert kryptographische Algorithmen nach Funktion:
 - Hash-Funktionen (Datenintegrität, Authentifizierung)
 - TLS/SSL Cipher Suites (sichere Kommunikation)
 - Schlüssellängen und Algorithmen-Reifegrad-Status
-
 
 ---
 
@@ -127,7 +122,6 @@ Symmetrische Block Ciphers, die häufig in modernen Systemen anzutreffen sind:
 - 3DES von NIST deprecated (nach 2023 in den meisten Kontexten nicht mehr erlaubt)
 - DES gilt seit Ende der 1990er Jahre als kryptographisch gebrochen
 
-
 ## Block Cipher Betriebsmodi
 
 Häufige Modi für den Betrieb von Block Ciphers:
@@ -147,7 +141,6 @@ Häufige Modi für den Betrieb von Block Ciphers:
 - CBC-Modus benötigt sorgfältige Implementierung zur Vermeidung von Schwachstellen
 - ECB-Modus bietet unzureichende Sicherheit für die meisten Applikationen
 
-
 ## Stream Ciphers
 
 | Cipher | Schlüssellänge | Status | Häufige Anwendungsfälle |
@@ -160,7 +153,6 @@ Häufige Modi für den Betrieb von Block Ciphers:
 
 - RC4 formal deprecated in allen grösseren Protokollen (TLS, WPA, etc.)
 - ChaCha20 zunehmend als AES-Alternative für Performance adoptiert
-
 
 ---
 
@@ -186,7 +178,6 @@ Asymmetrische Algorithmen, die häufig anzutreffen sind:
 - RSA-3072 zunehmend adoptiert für langlebige Schlüssel (5+ Jahre Lebensdauer)
 - ECC (ECDSA, EdDSA) bietet äquivalente Sicherheit mit kleineren Schlüsselgrössen
 - Ed25519 gewinnt an Akzeptanz für SSH und moderne Protokolle
-
 
 ## Schlüssellängen-Äquivalenz
 
@@ -225,7 +216,6 @@ Hash-Funktionen, die häufig anzutreffen sind:
 - SHA-1 deprecated für Zertifikate (2017), Git-Migration laufend
 - MD5 gilt als kryptographisch gebrochen, nur für Nicht-Sicherheits-Verwendung geeignet (Checksummen)
 
-
 ## Message Authentication Codes (MAC)
 
 | Algorithmus | Basiert auf | Output-Grösse | Status |
@@ -256,7 +246,6 @@ Spezialisierte Funktionen für Password Storage:
 - Raw Hash-Funktionen (SHA-256, MD5) ungeeignet für Password Storage
 - Argon2id empfohlen für neue Implementierungen (OWASP)
 
-
 ---
 
 # TLS/SSL Cipher Suites
@@ -282,7 +271,6 @@ TLS 1.3 vereinfachtes Cipher Suite Design (5 standardisierte Suites):
 - Alle TLS 1.3 Suites bieten Forward Secrecy (ECDHE obligatorisch)
 - Alle TLS 1.3 Suites bieten Authenticated Encryption (AEAD)
 
-
 ## TLS 1.2 Cipher Suites (Ausgewählte häufige Beispiele)
 
 TLS 1.2 Cipher Suite Beispiele (nicht-exhaustiv, nur beschreibend):
@@ -304,7 +292,6 @@ TLS 1.2 Cipher Suite Beispiele (nicht-exhaustiv, nur beschreibend):
 - AEAD-Modi (GCM, Poly1305) bevorzugt gegenüber CBC + HMAC
 - RSA Key Exchange (kein ECDHE) fehlt Forward Secrecy
 - CBC-Modus anfällig für Padding Oracle Angriffe bei nicht sorgfältiger Implementierung
-
 
 ## Deprecated/Obsolete Protokolle und Cipher Suites
 
@@ -370,7 +357,6 @@ NIST Post-Quantum Cryptography (PQC) Standardisierung:
 - TLS 1.3 Hybrid Key Exchange (X25519 + ML-KEM) in Entwicklung
 - Certificate Authorities beginnen PQC Trial-Ausstellung
 
-
 ---
 
 # Zertifikats-Gültigkeit und Lebenszyklus-Trends
@@ -403,7 +389,6 @@ CA/Browser Forum Ballot SC-081v3 (verabschiedet April 2025):
 - Kürzere Lebenszeiten erhöhen die Wichtigkeit von automatisiertem Lifecycle Management
 - Private/interne PKI nicht Gegenstand von CA/Browser Forum Anforderungen
 
-
 **Hinweis zu interner PKI**: Interne Zertifikats-Richtlinien werden durch Risikobewertung und operativen Kontext bestimmt und nicht automatisch von Public-Trust-Anforderungen abgeleitet. Organisationen können kürzere oder längere Lebenszeiten basierend auf ihrer spezifischen Sicherheitsposture und operativen Bedürfnissen wählen.
 
 ---
@@ -431,14 +416,12 @@ CA/Browser Forum Ballot SC-081v3 (verabschiedet April 2025):
 - NIST SP 800-131A Rev. 2: Transitioning the Use of Cryptographic Algorithms
 - NIST SP 800-175B Rev. 1: Guideline for Using Cryptographic Standards
 
-
 **BSI Publikationen**:
 
 - TR-02102-1: Kryptographische Verfahren - Empfehlungen und Schlüssellängen
 - TR-02102-2: Verwendung von TLS
 - TR-02102-3: Geeignete kryptographische Algorithmen
 - TR-02102-4: Verwendung von Secure Shell (SSH)
-
 
 **IETF RFCs**:
 
@@ -447,14 +430,12 @@ CA/Browser Forum Ballot SC-081v3 (verabschiedet April 2025):
 - RFC 8017: PKCS #1: RSA Cryptography Specifications Version 2.2
 - RFC 8032: Edwards-Curve Digital Signature Algorithm (EdDSA)
 
-
 **CA/Browser Forum**:
 
 - Baseline Requirements for TLS Certificates
 - Extended Validation Guidelines
 - Code Signing Requirements
 - S/MIME Requirements
-
 
 ## Algorithmen-Deprecation-Tracking
 
@@ -465,7 +446,6 @@ Organisationen verfolgen Algorithmen-Status häufig durch:
 - Browser Vendor Security Policies (Chrome, Firefox, Safari, Edge Root Programs)
 - CA/Browser Forum Ballot Tracking
 - Vendor Security Bulletins (OpenSSL, Microsoft, Apple, etc.)
-
 
 ---
 
@@ -480,7 +460,6 @@ Dieses Referenzdokument kann aktualisiert werden, wenn:
 - TLS/SSL Protokoll-Updates publiziert werden
 - Post-Quantum Cryptography Deployment-Meilensteine erreicht werden
 - CA/Browser Forum Baseline Requirement-Änderungen erfolgen
-
 
 ## Verantwortlichkeit
 
@@ -499,14 +478,12 @@ Dieses Dokument bietet **technischen Kontext**, der informieren kann:
 - Risikobewertung von Legacy-kryptographischen Systemen
 - Verständnis der Industrie-Standards-Evolution
 
-
 Dieses Dokument:
 
 - Überschreibt oder erweitert NICHT ISMS-POL-A.8.24 Anforderungen
 - Etabliert KEINE obligatorischen Algorithmen-Auswahlen
 - Schafft KEINE Compliance-Verpflichtungen
 - Definiert NICHT genehmigte/verbotene Algorithmen für [Organisation]
-
 
 Alle kryptographischen Kontrollanforderungen sind ausschliesslich in ISMS-POL-A.8.24 definiert und werden durch separate Verfahren implementiert, basierend auf Risikobewertung und operativem Kontext.
 

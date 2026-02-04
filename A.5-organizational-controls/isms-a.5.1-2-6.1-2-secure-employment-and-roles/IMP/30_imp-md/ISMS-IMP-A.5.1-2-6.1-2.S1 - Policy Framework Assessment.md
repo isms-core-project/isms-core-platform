@@ -37,7 +37,6 @@
 - ISMS-IMP-A.5.1-2-6.1-2.S4 (Employment Contract Assessment)
 - ISMS-IMP-A.5.1-2-6.1-2.S5 (Governance Compliance Dashboard)
 
-
 **Note on Naming Convention**: The ".S" designation indicates this implementation is part of a **stacked control framework** (A.5.1 + A.5.2 + A.6.1 + A.6.2). Despite unified implementation, each control maintains distinct requirements for Statement of Applicability purposes.
 
 ---
@@ -65,7 +64,6 @@ This assessment verifies [Organization]'s compliance with ISO/IEC 27001:2022 Con
 - Policy communication and acknowledgment
 - Policy effectiveness and currency
 
-
 ## Relationship to Parent Policy
 
 This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2, Section 4: Policy Framework Requirements**.
@@ -79,7 +77,6 @@ This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2,
 - **Section 4.5**: Policy Communication and Acknowledgment
 - **Section 4.6**: Policy Repository and Access
 
-
 **Evidence Collected**: Policy inventory, policy metadata, approval records, review schedules, acknowledgment logs, version history
 
 ## Assessment Frequency
@@ -90,14 +87,12 @@ This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2,
 - **Annual**: Comprehensive policy framework review
 - **Triggered**: After major policy changes, organizational restructuring, audit findings, or regulatory updates
 
-
 **Why Quarterly?**
 
 - Policies evolve continuously (new policies, updates, sunsets)
 - Quarterly assessment catches policy lifecycle issues early
 - Aligns with management review cycle
 - Maintains audit readiness
-
 
 ## Assessment Ownership
 
@@ -110,7 +105,6 @@ This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2,
 - Legal Counsel (for policy approval verification)
 - HR Manager (for employee acknowledgment verification)
 - Internal Audit (for independent verification)
-
 
 **Time Investment**: 4-6 hours for initial assessment, 2-3 hours for quarterly updates
 
@@ -128,14 +122,12 @@ This assessment uses a **systematic inventory and verification approach**:
 - Catalog policies by hierarchy level (Master, Domain, Topic-Specific)
 - Document policy metadata (ID, title, owner, version, status)
 
-
 **Step 2: Lifecycle Verification**
 
 - Verify each policy has completed required lifecycle stages
 - Check approval records exist and are valid
 - Confirm review schedules are defined and followed
 - Validate version control practices
-
 
 **Step 3: Governance Assessment**
 
@@ -144,13 +136,11 @@ This assessment uses a **systematic inventory and verification approach**:
 - Check policy classification matches content sensitivity
 - Validate repository access controls
 
-
 **Step 4: Communication Verification**
 
 - Confirm policies are published and accessible
 - Verify stakeholder acknowledgment for relevant policies
 - Check training integration for high-impact policies
-
 
 **Step 5: Gap Analysis**
 
@@ -158,7 +148,6 @@ This assessment uses a **systematic inventory and verification approach**:
 - Identify overdue reviews (policy staleness)
 - Identify governance gaps (missing owners, approvers)
 - Identify communication gaps (low acknowledgment rates)
-
 
 ## Data Sources
 
@@ -171,7 +160,6 @@ This assessment uses a **systematic inventory and verification approach**:
 - Training system (acknowledgment records)
 - Version control system (policy history)
 
-
 **Supporting Sources**:
 
 - ISMS Master Policy (policy hierarchy definition)
@@ -179,7 +167,6 @@ This assessment uses a **systematic inventory and verification approach**:
 - Organizational charts (ownership verification)
 - Management review meeting minutes
 - Internal audit reports
-
 
 ## Compliance Criteria
 
@@ -193,14 +180,12 @@ This assessment uses a **systematic inventory and verification approach**:
 - ✅ Policy classification appropriate for content
 - ✅ Policy acknowledgment (where required) ≥ 90%
 
-
 **Partial Compliance** occurs when:
 
 - ⚠️ Policy exists but overdue for review (< 90 days overdue)
 - ⚠️ Policy approval valid but documentation incomplete
 - ⚠️ Policy acknowledgment 70-89%
 - ⚠️ Minor metadata gaps (missing version date, incomplete owner info)
-
 
 **Non-Compliant** when:
 
@@ -210,7 +195,6 @@ This assessment uses a **systematic inventory and verification approach**:
 - ❌ Policy owner not assigned
 - ❌ Policy not published/accessible
 - ❌ Policy acknowledgment < 70% (for mandatory acknowledgment)
-
 
 ## Scoring Methodology
 
@@ -225,7 +209,6 @@ This assessment uses a **systematic inventory and verification approach**:
 - Policy Communication: 15% (stakeholder awareness)
 - Policy Repository: 5% (accessible and organized)
 
-
 **Compliance Score Interpretation**:
 
 - **90-100%**: Excellent (audit-ready, no significant gaps)
@@ -233,7 +216,6 @@ This assessment uses a **systematic inventory and verification approach**:
 - **70-79%**: Acceptable (moderate gaps, focused remediation needed)
 - **60-69%**: Needs Improvement (significant gaps, priority remediation)
 - **< 60%**: Critical (major gaps, immediate action required)
-
 
 ---
 
@@ -250,14 +232,12 @@ This assessment uses a **systematic inventory and verification approach**:
 - Approved by Executive Management/Board
 - Example: "ISMS Master Policy", "Information Security Policy"
 
-
 **Tier 2: Domain Policies** (~5-15 policies)
 
 - Broad domain-level requirements
 - Cover major ISMS domains (Access Control, Data Protection, Operations, Physical Security, HR Security)
 - Approved by CISO + Executive Management
 - Examples: "Access Control Policy", "Data Protection Policy", "Network Security Policy"
-
 
 **Tier 3: Topic-Specific Policies** (~20-50 policies)
 
@@ -266,14 +246,12 @@ This assessment uses a **systematic inventory and verification approach**:
 - Approved by CISO
 - Examples: "Cryptography Policy", "Backup Policy", "Incident Response Policy"
 
-
 **Tier 4: Standards and Procedures** (~50-200 documents)
 
 - Technical standards, configurations, procedures
 - Not "policies" but supporting implementation documents
 - Approved by functional managers (IT Manager, Security Manager)
 - Examples: "Password Standard", "Backup Procedure", "Vulnerability Scanning Standard"
-
 
 **Assessment Scope**: This assessment focuses on **Tiers 1-3** (policies). Tier 4 (standards/procedures) are tracked separately.
 
@@ -284,7 +262,6 @@ This assessment uses a **systematic inventory and verification approach**:
 **Tier 1 - ISMS Master Policy:**
 
 - [ ] ISMS Master Policy (overarching governance)
-
 
 **Tier 2 - Domain Policies:**
 
@@ -297,7 +274,6 @@ This assessment uses a **systematic inventory and verification approach**:
 - [ ] Supplier & Third-Party Management Policy (A.5.19-23 foundation)
 - [ ] Incident & Business Continuity Policy (A.5.24-30 foundation)
 
-
 **Tier 3 - Topic-Specific Policies** (aligned with ISO 27001:2022 Annex A):
 
 - [ ] Organizational Context (A.5.1-14): Policies for information security, roles/responsibilities, project management
@@ -305,13 +281,11 @@ This assessment uses a **systematic inventory and verification approach**:
 - [ ] Physical Controls (A.7.1-14): Physical access, monitoring, equipment
 - [ ] Technological Controls (A.8.1-34): 34 technology-focused policies
 
-
 **Note**: Not all Annex A controls require separate policies. Controls may be addressed through:
 
 - Combined policies (stacked controls like this one)
 - Reference to standards/procedures
 - Risk-based exclusions (documented in Statement of Applicability)
-
 
 ## Policy Discovery Process
 
@@ -325,7 +299,6 @@ This assessment uses a **systematic inventory and verification approach**:
 - Ask policy owners what policies they maintain
 - Review organizational chart for policy ownership
 
-
 **Step 2**: Classify each policy by hierarchy tier
 
 - Tier 1: Only 1-2 master governance policies
@@ -333,14 +306,12 @@ This assessment uses a **systematic inventory and verification approach**:
 - Tier 3: Topic-specific/control-specific (20-50)
 - Other: Standards, procedures, guidelines (track separately)
 
-
 **Step 3**: Identify policy gaps
 
 - Compare inventory to minimum required policies
 - Identify Annex A controls without policies
 - Check Statement of Applicability for excluded controls
 - Prioritize gap remediation (critical controls first)
-
 
 **For Organizations with Existing ISMS:**
 
@@ -350,20 +321,17 @@ This assessment uses a **systematic inventory and verification approach**:
 - Last Review Date, Next Review Date
 - Approval Date, Approved By
 
-
 **Step 2**: Validate inventory completeness
 
 - Cross-check against Annex A controls
 - Verify all domain policies exist
 - Check for orphaned or duplicate policies
 
-
 **Step 3**: Update policy metadata
 
 - Correct any outdated information
 - Assign missing owners/approvers
 - Define review schedules for policies without them
-
 
 ---
 
@@ -420,14 +388,12 @@ This assessment uses a **systematic inventory and verification approach**:
 - Critical gaps count (high-risk policy gaps)
 - Overdue policies count (policies past review date)
 
-
 **Dashboard Use Cases**:
 
 - **CISO Review**: Quick health check of policy framework
 - **Management Presentation**: Board/executive reporting
 - **Audit Preparation**: Demonstrate policy framework maturity
 - **Quarterly Tracking**: Compare compliance trends over time
-
 
 **Review Frequency**: After completing all assessment sheets, review dashboard for accuracy before approval.
 
@@ -445,7 +411,6 @@ This assessment uses a **systematic inventory and verification approach**:
 - Include Tier 1 (Master), Tier 2 (Domain), Tier 3 (Topic-Specific)
 - Exclude Tier 4 (Standards/Procedures) - tracked separately
 
-
 **Step 2: Metadata Collection**
 For each policy, document:
 
@@ -457,7 +422,6 @@ For each policy, document:
 - **Required**: YES
 - **Tip**: Use consistent numbering scheme across all policies
 
-
 **Q2: Policy_Title**
 
 - **Question**: What is the official policy title?
@@ -465,7 +429,6 @@ For each policy, document:
 - **Example**: "Secure Employment and Roles", "Cryptography Policy", "Access Control Policy"
 - **Required**: YES
 - **Tip**: Use title from policy document header
-
 
 **Q3: Policy_Hierarchy_Tier**
 
@@ -478,7 +441,6 @@ For each policy, document:
 - **Required**: YES
 - **Validation**: Tier 1 should have only 1-2 policies
 
-
 **Q4: ISO_Control_Mapping**
 
 - **Question**: Which ISO 27001:2022 Annex A controls does this policy address?
@@ -489,7 +451,6 @@ For each policy, document:
   - "A.5.15, A.5.16, A.5.18" (access control family)
 - **Required**: YES (for Tier 3), OPTIONAL (for Tier 1/2)
 - **Tip**: Check policy document Section 1 for control alignment
-
 
 **Q5: Policy_Owner**
 
@@ -502,7 +463,6 @@ For each policy, document:
 - **Required**: YES
 - **Note**: Policy owner is accountable for policy content, review, and updates
 
-
 **Q6: Policy_Approver**
 
 - **Question**: Who approves this policy?
@@ -514,14 +474,12 @@ For each policy, document:
 - **Required**: YES
 - **Validation**: Approver authority must match hierarchy tier
 
-
 **Q7: Current_Version**
 
 - **Question**: What is the current version number?
 - **Format**: Numeric (e.g., 1.0, 2.1, 3.0)
 - **Required**: YES
 - **Tip**: Check policy document header
-
 
 **Q8: Version_Date**
 
@@ -530,14 +488,12 @@ For each policy, document:
 - **Required**: YES
 - **Tip**: Version date = approval date for current version
 
-
 **Q9: Approval_Date**
 
 - **Question**: When was the current version approved?
 - **Format**: Date (DD.MM.YYYY)
 - **Required**: YES
 - **Evidence**: Approval email, signature, workflow record
-
 
 **Q10: Last_Review_Date**
 
@@ -546,7 +502,6 @@ For each policy, document:
 - **Required**: YES
 - **Note**: Review may result in "no changes" - still counts as review
 
-
 **Q11: Next_Review_Date**
 
 - **Question**: When is the next review scheduled?
@@ -554,7 +509,6 @@ For each policy, document:
 - **Required**: YES
 - **Calculation**: Typically Last_Review_Date + 12 months (annual) or + 24 months (biennial)
 - **Status Trigger**: If Next_Review_Date < TODAY(), policy is OVERDUE
-
 
 **Q12: Review_Frequency**
 
@@ -566,7 +520,6 @@ For each policy, document:
   - Quarterly: Policies tied to fast-changing regulations (data protection)
   - Triggered: Low-change policies reviewed only when changes occur
 - **Required**: YES
-
 
 **Q13: Policy_Status**
 
@@ -581,7 +534,6 @@ For each policy, document:
 - **Required**: YES
 - **Validation**: Only "Active" policies count toward compliance
 
-
 **Q14: Policy_Classification**
 
 - **Question**: What is the document classification?
@@ -592,7 +544,6 @@ For each policy, document:
   - Public: May be shared externally (customer-facing, public web)
 - **Required**: YES
 - **Access Control**: Classification determines who can access policy
-
 
 **Q15: Acknowledgment_Required**
 
@@ -605,7 +556,6 @@ For each policy, document:
 - **Required**: YES
 - **Impact**: If "Yes", acknowledgment rate tracked in Sheet 6
 
-
 **Q16: Acknowledgment_Rate**
 
 - **Question**: What % of required users have acknowledged?
@@ -613,7 +563,6 @@ For each policy, document:
 - **Required**: IF Acknowledgment_Required = "Yes"
 - **Data Source**: Training system, LMS, acknowledgment logs
 - **Benchmark**: ≥ 90% = Compliant, 70-89% = Partial, < 70% = Non-Compliant
-
 
 **Q17: Repository_Location**
 
@@ -627,7 +576,6 @@ For each policy, document:
 - **Required**: YES
 - **Validation**: Location must be accessible to intended audience
 
-
 **Q18: Related_Documents**
 
 - **Question**: What other policies or documents does this reference?
@@ -638,7 +586,6 @@ For each policy, document:
   - "Procedures: PROC-IAM-001"
 - **Required**: OPTIONAL
 - **Use**: Track policy dependencies
-
 
 **Q19: Gap_Identified**
 
@@ -652,7 +599,6 @@ For each policy, document:
 - **Required**: YES (populated during assessment)
 - **Auto-Populate**: From Sheets 3-7 assessments
 
-
 **Q20: Notes**
 
 - **Question**: Any additional context?
@@ -662,7 +608,6 @@ For each policy, document:
   - "Supersedes POL-SEC-005 (retired 2025)"
   - "Undergoing legal review before next release"
 - **Required**: OPTIONAL
-
 
 ---
 
@@ -693,7 +638,6 @@ For each policy, document:
 - Policy update (version control practices)
 - Policy sunset (retirement process for obsolete policies)
 
-
 **For each policy in inventory:**
 
 **Q1: Policy_ID** (auto-populated from Sheet 2)
@@ -712,7 +656,6 @@ For each policy, document:
 - **Evidence**: Creation documentation, review comments, approval workflow
 - **Compliant**: "Yes"
 
-
 **Q4: Approval_Valid**
 
 - **Question**: Is the current approval valid?
@@ -725,7 +668,6 @@ For each policy, document:
 - **Evidence**: Approval email, signed document, workflow record
 - **Compliant**: "Yes"
 
-
 **Q5: Approval_Documentation**
 
 - **Question**: Is approval properly documented?
@@ -736,7 +678,6 @@ For each policy, document:
   - Workflow system approval record
   - Meeting minutes (for Board/Exec approvals)
 - **Compliant**: "Complete"
-
 
 **Q6: Publication_Status**
 
@@ -750,14 +691,12 @@ For each policy, document:
 - **Evidence**: Repository screenshot, access test
 - **Compliant**: "Published"
 
-
 **Q7: Review_Schedule_Defined**
 
 - **Question**: Is review schedule clearly defined?
 - **Dropdown**: Yes / No
 - **Verification**: Next_Review_Date populated in inventory (Sheet 2)
 - **Compliant**: "Yes"
-
 
 **Q8: Review_Status**
 
@@ -770,7 +709,6 @@ For each policy, document:
   - Overdue->90-Days: Next_Review_Date < (TODAY() - 90)
 - **Compliant**: "Current" or "Overdue-<30-Days"
 
-
 **Q9: Last_Review_Evidence**
 
 - **Question**: Is last review documented?
@@ -781,7 +719,6 @@ For each policy, document:
   - Email confirmation of "no changes" review
   - Version history showing review date
 - **Compliant**: "Yes"
-
 
 **Q10: Version_Control_Practice**
 
@@ -794,7 +731,6 @@ For each policy, document:
   - **Poor**: Inconsistent versioning, no change tracking
 - **Compliant**: "Excellent" or "Good"
 
-
 **Q11: Sunset_Process**
 
 - **Question**: For retired policies, was sunset process followed?
@@ -806,7 +742,6 @@ For each policy, document:
   - Policy marked "Retired" in repository
 - **Compliant**: "N/A" (for active policies) or "Yes" (for retired)
 
-
 **Q12: Lifecycle_Compliance_Rating**
 
 - **Question**: Overall lifecycle compliance for this policy?
@@ -816,7 +751,6 @@ For each policy, document:
   - **Partial**: 1-2 minor issues (e.g., overdue <30 days, documentation incomplete)
   - **Non-Compliant**: Critical issues (no approval, overdue >90 days, not published)
 - **Auto-Calculate**: Based on Q3-Q11 responses
-
 
 **Q13: Gap_Description**
 
@@ -829,14 +763,12 @@ For each policy, document:
   - "Policy not yet published to repository"
 - **Required**: IF Lifecycle_Compliance_Rating = "Partial" or "Non-Compliant"
 
-
 **Q14: Evidence_Reference**
 
 - **Question**: Where is supporting evidence documented?
 - **Format**: Free text - Evidence IDs from Sheet 9
 - **Example**: "EVD-001 (Approval email), EVD-015 (Repository screenshot)"
 - **Required**: For all policies (link to evidence)
-
 
 ---
 
@@ -866,7 +798,6 @@ For each policy, document:
 - RACI clarity (Responsible, Accountable, Consulted, Informed)
 - Governance structure compliance
 
-
 **For each policy:**
 
 **Q1: Policy_ID** (auto-populated)
@@ -882,14 +813,12 @@ For each policy, document:
 - **Verification**: Policy_Owner field populated in Sheet 2
 - **Compliant**: "Yes"
 
-
 **Q5: Owner_Name_Role**
 
 - **Question**: Owner name and role?
 - **Auto-Populate**: From Sheet 2 (Policy_Owner)
 - **Verification**: Owner is currently employed and in stated role
 - **Evidence**: Organizational chart, HR records
-
 
 **Q6: Owner_Accountability_Clear**
 
@@ -901,7 +830,6 @@ For each policy, document:
   - Review training records: Has owner received policy governance training?
 - **Compliant**: "Yes"
 
-
 **Q7: Approver_Assigned**
 
 - **Question**: Is a policy approver assigned?
@@ -909,12 +837,10 @@ For each policy, document:
 - **Verification**: Policy_Approver field populated in Sheet 2
 - **Compliant**: "Yes"
 
-
 **Q8: Approver_Name_Role**
 
 - **Question**: Approver name and role?
 - **Auto-Populate**: From Sheet 2 (Policy_Approver)
-
 
 **Q9: Approval_Authority_Appropriate**
 
@@ -922,7 +848,6 @@ For each policy, document:
 - **Dropdown**: Yes / No / Elevated-Unnecessarily / Insufficient
 - **Verification Table**:
   
-
   | Policy Tier | Required Approver | Acceptable Alternatives |
   |-------------|-------------------|------------------------|
   | Tier 1 (Master) | CEO or Board | Executive Management |
@@ -933,7 +858,6 @@ For each policy, document:
 - **Issue Types**:
   - Elevated-Unnecessarily: Tier 3 policy approved by CEO (slows updates)
   - Insufficient: Tier 1 policy approved only by CISO (insufficient authority)
-
 
 **Q10: RACI_Defined**
 
@@ -947,7 +871,6 @@ For each policy, document:
 - **Compliant**: "Yes" (RACI documented in policy or governance framework)
 - **N/A**: Simple policies where RACI is obvious
 
-
 **Q11: Governance_Documentation**
 
 - **Question**: Is policy governance documented?
@@ -958,7 +881,6 @@ For each policy, document:
   - RACI matrix (in policy or referenced)
   - Approval chain documented
 - **Compliant**: "Complete"
-
 
 **Q12: Escalation_Path_Clear**
 
@@ -971,7 +893,6 @@ For each policy, document:
   - Policy update requests
 - **Compliant**: "Yes"
 
-
 **Q13: Governance_Compliance_Rating**
 
 - **Question**: Overall governance compliance?
@@ -981,7 +902,6 @@ For each policy, document:
   - **Partial**: Minor gaps (RACI partially defined, escalation unclear)
   - **Non-Compliant**: Critical gaps (no owner, inappropriate approver)
 - **Auto-Calculate**: Based on Q4-Q12
-
 
 **Q14: Gap_Description**
 
@@ -993,13 +913,11 @@ For each policy, document:
   - "RACI not documented - unclear who implements policy requirements"
 - **Required**: IF Governance_Compliance_Rating ≠ "Compliant"
 
-
 **Q15: Evidence_Reference**
 
 - **Question**: Where is governance evidence?
 - **Format**: Evidence IDs from Sheet 9
 - **Example**: "EVD-020 (Org chart), EVD-021 (RACI matrix), EVD-022 (Approval authority matrix)"
-
 
 ---
 
@@ -1028,7 +946,6 @@ For each policy, document:
 - Sensitivity analysis
 - Distribution restrictions
 
-
 **For each policy:**
 
 **Q1: Policy_ID** (auto-populated)
@@ -1041,13 +958,11 @@ For each policy, document:
 - **Auto-Populate**: From Sheet 2 (Policy_Classification)
 - **Values**: Internal / Confidential / Public
 
-
 **Q4: Classification_Appropriate**
 
 - **Question**: Is the classification appropriate for content?
 - **Dropdown**: Yes / No / Should-Be-Higher / Should-Be-Lower
 - **Assessment Criteria**:
-
 
   | Classification | Appropriate When... |
   |----------------|---------------------|
@@ -1060,7 +975,6 @@ For each policy, document:
   - Should-Be-Higher: Policy contains sensitive info but classified as Internal (e.g., detailed network architecture in "Network Security Policy")
   - Should-Be-Lower: Policy over-classified, restricts legitimate access (e.g., general "Acceptable Use Policy" marked Confidential)
 
-
 **Q5: Content_Sensitivity_Assessment**
 
 - **Question**: Does policy contain sensitive information?
@@ -1072,7 +986,6 @@ For each policy, document:
   - **None**: Public-facing policies, codes of conduct, acceptable use (generic)
 - **Guidance**: Classification should align with highest sensitivity content in policy
 
-
 **Q6: Access_Controls_Implemented**
 
 - **Question**: Are access controls appropriate for classification?
@@ -1083,7 +996,6 @@ For each policy, document:
   - **Confidential**: Role-based access, security team + management only
 - **Evidence**: Repository access control screenshot, permission audit
 - **Compliant**: "Yes"
-
 
 **Q7: Distribution_Restrictions**
 
@@ -1100,7 +1012,6 @@ For each policy, document:
   - N/A (no restrictions)
 - **Compliant**: "Yes" or "N/A"
 
-
 **Q8: Classification_Marking**
 
 - **Question**: Is classification clearly marked on policy?
@@ -1111,14 +1022,12 @@ For each policy, document:
   - Classification in repository metadata
 - **Compliant**: "Yes"
 
-
 **Q9: Classification_Review_Date**
 
 - **Question**: When was classification last reviewed?
 - **Format**: Date (DD.MM.YYYY)
 - **Trigger**: Review classification whenever policy content changes significantly
 - **Overdue**: If > 2 years since last classification review
-
 
 **Q10: Classification_Compliance_Rating**
 
@@ -1130,7 +1039,6 @@ For each policy, document:
   - **Non-Compliant**: Classification inappropriate (risk of over/under-sharing), access controls missing
 - **Auto-Calculate**: Based on Q4-Q9
 
-
 **Q11: Gap_Description**
 
 - **Format**: Free text
@@ -1139,12 +1047,10 @@ For each policy, document:
   - "Confidential policy accessible to all employees - access should be restricted to security team + management"
   - "Classification not marked on policy document"
 
-
 **Q12: Evidence_Reference**
 
 - **Format**: Evidence IDs
 - **Example**: "EVD-030 (Access control config), EVD-031 (Policy with classification marking)"
-
 
 ---
 
@@ -1159,7 +1065,6 @@ For each policy, document:
 - User acknowledgment (where required)
 - Training integration
 
-
 **For each policy:**
 
 **Q1: Policy_ID** (auto-populated)
@@ -1171,7 +1076,6 @@ For each policy, document:
 - **Question**: Is user acknowledgment required?
 - **Auto-Populate**: From Sheet 2 (Acknowledgment_Required)
 - **Values**: Yes / No / Role-Specific
-
 
 **Q4: Target_Audience**
 
@@ -1185,14 +1089,12 @@ For each policy, document:
   - Specific-Roles: Developer (Secure Development), HR (Screening)
 - **Multiple Selection**: Policy may have multiple audiences
 
-
 **Q5: Publication_Date**
 
 - **Question**: When was policy published/communicated?
 - **Format**: Date (DD.MM.YYYY)
 - **Verification**: Publication announcement, intranet post, email notification
 - **Evidence**: Email announcement, intranet screenshot
-
 
 **Q6: Publication_Method**
 
@@ -1208,7 +1110,6 @@ For each policy, document:
   - [ ] Poster/physical notice
 - **Compliant**: At least 2 methods for high-impact policies
 
-
 **Q7: Accessibility_Verified**
 
 - **Question**: Have you verified target audience can access policy?
@@ -1219,7 +1120,6 @@ For each policy, document:
   - Check mobile accessibility (if repository is mobile-enabled)
 - **Evidence**: Access test screenshot, user feedback
 - **Compliant**: "Yes"
-
 
 **Q8: Acknowledgment_Mechanism**
 
@@ -1234,7 +1134,6 @@ For each policy, document:
   - **Training-Completion**: Acknowledgment embedded in training
 - **Compliant**: Acknowledgment mechanism exists and is tracked
 
-
 **Q9: Acknowledgment_Rate**
 
 - **Question**: What % of target audience has acknowledged?
@@ -1247,7 +1146,6 @@ For each policy, document:
   - 70-89%: Partial
   - < 70%: Non-Compliant
 
-
 **Q10: Acknowledgment_Timeframe**
 
 - **Question**: Within what timeframe must users acknowledge?
@@ -1257,7 +1155,6 @@ For each policy, document:
   - 30-Days: High-impact policies (Data Protection, Security Awareness)
   - Annual: Recurring acknowledgment (refresh compliance)
 - **Tracking**: Monitor overdue acknowledgments
-
 
 **Q11: Non_Acknowledgment_Follow_Up**
 
@@ -1269,7 +1166,6 @@ For each policy, document:
   - Access restriction (for critical policies - no acknowledgment = no access)
   - HR escalation (disciplinary process)
 - **Compliant**: "Yes" (process defined and followed) or "N/A"
-
 
 **Q12: Training_Integration**
 
@@ -1283,7 +1179,6 @@ For each policy, document:
 - **Evidence**: Training materials (screenshots), training completion records
 - **Compliant**: "Yes" (for high-impact policies) or "N/A" (for reference policies)
 
-
 **Q13: User_Feedback_Mechanism**
 
 - **Question**: Can users provide feedback or ask questions about policy?
@@ -1295,7 +1190,6 @@ For each policy, document:
   - Policy review comment period (before approval)
 - **Compliant**: "Yes" (feedback mechanism exists)
 
-
 **Q14: Communication_Compliance_Rating**
 
 - **Question**: Overall communication compliance?
@@ -1306,7 +1200,6 @@ For each policy, document:
   - **Non-Compliant**: Major issues (policy not published, acknowledgment < 70%, no follow-up)
 - **Auto-Calculate**: Based on Q5-Q13
 
-
 **Q15: Gap_Description**
 
 - **Format**: Free text
@@ -1315,12 +1208,10 @@ For each policy, document:
   - "Policy not integrated into new hire onboarding - new employees unaware"
   - "Policy repository search doesn't return this policy - accessibility issue"
 
-
 **Q16: Evidence_Reference**
 
 - **Format**: Evidence IDs
 - **Example**: "EVD-040 (Publication email), EVD-041 (Acknowledgment report), EVD-042 (Training materials)"
-
 
 ---
 
@@ -1342,13 +1233,11 @@ For each policy, document:
   - File-Share: Network file share, Google Drive, Dropbox
   - Other: Custom policy portal, GRC tool (e.g., ServiceNow, RSA Archer)
 
-
 **Q2: Repository_URL_Path**
 
 - **Question**: What is the primary repository location?
 - **Format**: Free text - URL or file path
 - **Example**: "https://org.sharepoint.com/sites/isms/policies"
-
 
 **Q3: Repository_Organization**
 
@@ -1360,7 +1249,6 @@ For each policy, document:
   - **By-ISO-Control**: Folders for A.5, A.6, A.7, A.8 controls
   - **Alphabetical**: Simple, but loses logical grouping
 - **Compliant**: "By-Hierarchy-Tier" or "By-Domain" (logical organization)
-
 
 **Q4: Navigation_Ease**
 
@@ -1374,14 +1262,12 @@ For each policy, document:
 - **Verification**: Test finding 5 random policies as typical user
 - **Compliant**: "Excellent" or "Good"
 
-
 **Q5: Search_Functionality**
 
 - **Question**: Is search functionality available and effective?
 - **Dropdown**: Excellent / Good / Adequate / None
 - **Test**: Search for policy by title, keyword, control number
 - **Compliant**: "Excellent" or "Good"
-
 
 **Q6: Version_Control**
 
@@ -1393,14 +1279,12 @@ For each policy, document:
   - **No-Versioning**: Only current version available, no history
 - **Compliant**: "Automated-Versioning"
 
-
 **Q7: Previous_Versions_Accessible**
 
 - **Question**: Can users access previous policy versions?
 - **Dropdown**: Yes-All-Versions / Yes-Recent-Versions / No / N/A
 - **Purpose**: Audit trail, understanding policy evolution
 - **Compliant**: "Yes-Recent-Versions" (at minimum last 2-3 versions)
-
 
 **Q8: Access_Control_Implementation**
 
@@ -1413,7 +1297,6 @@ For each policy, document:
 - **Evidence**: Access control configuration, permission audit
 - **Compliant**: "Yes"
 
-
 **Q9: Access_Logging**
 
 - **Question**: Is policy access logged?
@@ -1424,14 +1307,12 @@ For each policy, document:
   - Support compliance verification (prove user had access to policy)
 - **Compliant**: "Yes" (at least for Confidential policies)
 
-
 **Q10: Mobile_Accessibility**
 
 - **Question**: Are policies accessible from mobile devices?
 - **Dropdown**: Yes-Fully / Yes-Partially / No / Not-Tested
 - **Verification**: Access repository from mobile browser/app
 - **Compliant**: "Yes-Fully" or "Yes-Partially" (important for modern workforce)
-
 
 **Q11: Offline_Access**
 
@@ -1443,7 +1324,6 @@ For each policy, document:
   - Not-Required: Organization always online, offline not needed
 - **Compliant**: "Yes" or "Not-Required"
 
-
 **Q12: Repository_Backup**
 
 - **Question**: Is repository backed up?
@@ -1451,14 +1331,12 @@ For each policy, document:
 - **Verification**: Backup schedule, last backup date, restore testing
 - **Compliant**: "Yes" (policy documents are business-critical data)
 
-
 **Q13: Repository_Disaster_Recovery**
 
 - **Question**: Is repository included in DR plan?
 - **Dropdown**: Yes / No / Unknown
 - **Purpose**: Ensure policy access during disaster scenarios
 - **Compliant**: "Yes"
-
 
 **Q14: Repository_Performance**
 
@@ -1470,14 +1348,12 @@ For each policy, document:
   - No user complaints about speed
 - **Compliant**: "Excellent" or "Good"
 
-
 **Q15: Repository_Uptime**
 
 - **Question**: What is repository availability?
 - **Dropdown**: 99.9%+ / 99-99.9% / 95-99% / <95% / Unknown
 - **Verification**: Uptime monitoring, incident history
 - **Compliant**: "99.9%+" (high availability expected)
-
 
 **Q16: Repository_Compliance_Rating**
 
@@ -1489,7 +1365,6 @@ For each policy, document:
   - **Non-Compliant**: Major issues (disorganized, no version control, no backups)
 - **Auto-Calculate**: Based on Q3-Q15
 
-
 **Q17: Gap_Description**
 
 - **Format**: Free text
@@ -1499,12 +1374,10 @@ For each policy, document:
   - "Access controls not implemented - all policies accessible to all employees regardless of classification"
   - "Repository not included in backup schedule"
 
-
 **Q18: Evidence_Reference**
 
 - **Format**: Evidence IDs
 - **Example**: "EVD-050 (Repository screenshot), EVD-051 (Access control config), EVD-052 (Backup schedule)"
-
 
 ---
 
@@ -1520,18 +1393,15 @@ For each policy, document:
 
 - **Format**: Auto-generated (GAP-001, GAP-002, etc.)
 
-
 **Q2: Policy_ID**
 
 - **Question**: Which policy has this gap?
 - **Auto-Populate**: From assessment sheets
 - **Note**: "Repository" for repository-wide gaps
 
-
 **Q3: Policy_Title**
 
 - **Auto-Populate**: From Sheet 2
-
 
 **Q4: Gap_Category**
 
@@ -1539,20 +1409,17 @@ For each policy, document:
 - **Auto-Populate**: From source sheet
 - **Values**: Inventory / Lifecycle / Governance / Classification / Communication / Repository
 
-
 **Q5: Gap_Description**
 
 - **Question**: Describe the gap
 - **Auto-Populate**: From assessment sheets (Gap_Description fields)
 - **Format**: Clear, specific, actionable description
 
-
 **Q6: Risk_Level**
 
 - **Question**: What is the risk level of this gap?
 - **Dropdown**: Critical / High / Medium / Low
 - **Risk Level Criteria**:
-
 
   | Risk Level | Criteria | Examples |
   |------------|----------|----------|
@@ -1571,7 +1438,6 @@ For each policy, document:
   - "Policy staleness - requirements may not reflect current threats"
   - "Governance confusion - unclear accountability for policy updates"
 
-
 **Q8: Affected_Stakeholders**
 
 - **Question**: Who is affected by this gap?
@@ -1581,7 +1447,6 @@ For each policy, document:
   - "Security team" (unclear incident response procedures)
   - "CISO" (policy approval documentation missing)
   - "Auditors" (unable to verify compliance)
-
 
 **Q9: Remediation_Action**
 
@@ -1597,7 +1462,6 @@ For each policy, document:
   - "Improve governance" (how?)
   - "Update repository" (what changes?)
 
-
 **Q10: Responsible_Party**
 
 - **Question**: Who is responsible for remediation?
@@ -1607,7 +1471,6 @@ For each policy, document:
   - "IT Manager (John Doe)"
   - "Policy Owner (per Sheet 2)"
   - "Security Team Lead"
-
 
 **Q11: Target_Completion_Date**
 
@@ -1619,13 +1482,11 @@ For each policy, document:
   - Medium: Within 90 days
   - Low: Next review cycle (up to 1 year)
 
-
 **Q12: Estimated_Effort**
 
 - **Question**: How much effort is required?
 - **Dropdown**: < 1 hour / 1-4 hours / 1 day / 2-5 days / > 1 week
 - **Purpose**: Resource planning, prioritization
-
 
 **Q13: Dependencies**
 
@@ -1636,7 +1497,6 @@ For each policy, document:
   - "Hire replacement for departed policy owner"
   - "Complete policy template development"
   - "None" (can start immediately)
-
 
 **Q14: Status**
 
@@ -1649,14 +1509,12 @@ For each policy, document:
   - **Completed**: Gap closed, verification pending
   - **Accepted-Risk**: Management decision not to remediate (document risk acceptance)
 
-
 **Q15: Completion_Evidence**
 
 - **Question**: Evidence that gap is closed?
 - **Format**: Free text - Evidence IDs
 - **Required**: IF Status = "Completed"
 - **Example**: "EVD-060 (New policy approved), EVD-061 (Policy published)"
-
 
 **Q16: Risk_Acceptance**
 
@@ -1670,7 +1528,6 @@ For each policy, document:
   - Conditions for re-evaluation
 - **Example**: "CISO accepted risk 15.01.2026 - Low-priority policy overdue 35 days, will be addressed in Q2 policy review cycle. Re-evaluate if overdue exceeds 90 days."
 
-
 ---
 
 ## Sheet 9: Evidence_Register
@@ -1682,7 +1539,6 @@ For each policy, document:
 **Q1: Evidence_ID**
 
 - **Format**: Pre-filled (EVD-001 through EVD-100)
-
 
 **Q2: Evidence_Type**
 
@@ -1701,7 +1557,6 @@ For each policy, document:
   - Organizational-Chart
   - Other
 
-
 **Q3: Description**
 
 - **Question**: What does this evidence show?
@@ -1712,13 +1567,11 @@ For each policy, document:
   - "Acknowledgment report - Acceptable Use Policy 92% completion rate"
   - "CISO organizational chart showing policy ownership assignments"
 
-
 **Q4: Related_Policy_ID**
 
 - **Question**: Which policy does this evidence relate to?
 - **Format**: Policy ID from Sheet 2
 - **Note**: "All" for repository-wide evidence
-
 
 **Q5: Related_Assessment_Sheet**
 
@@ -1728,7 +1581,6 @@ For each policy, document:
   - "Sheet 2 (Inventory)"
   - "Sheet 3 (Lifecycle)"
   - "Sheets 3, 4, 9" (multiple sheets)
-
 
 **Q6: File_Location**
 
@@ -1740,13 +1592,11 @@ For each policy, document:
   - "Network Drive: Z:\\Security\\Audit_Evidence\\2026\\Q1\\Repository_Screenshot.png"
   - "Confluence: /wiki/spaces/SECURITY/pages/evidence/policy-framework"
 
-
 **Q7: Date_Collected**
 
 - **Question**: When was this evidence collected/created?
 - **Format**: Date (DD.MM.YYYY)
 - **Note**: Evidence should be recent (within assessment period)
-
 
 **Q8: Collected_By**
 
@@ -1756,7 +1606,6 @@ For each policy, document:
   - "Assessment Owner (Jane Smith, CISO)"
   - "Compliance Officer (John Doe)"
   - "IT Administrator (System generated)"
-
 
 **Q9: Verification_Status**
 
@@ -1768,7 +1617,6 @@ For each policy, document:
   - **Not-Verified**: Not yet reviewed
   - **Expired**: Evidence outdated, needs refresh
 
-
 **Q10: Notes**
 
 - **Question**: Any additional context?
@@ -1777,7 +1625,6 @@ For each policy, document:
   - "Screenshot shows repository as of 15.01.2026 - may have changed since"
   - "Email approval forwarded to CISO for permanent record"
   - "Acknowledgment report exported from LMS (Cornerstone)"
-
 
 ---
 
@@ -1807,38 +1654,31 @@ For each policy, document:
 
 - **Format**: Auto-generated from Gap_ID (ACT-001, ACT-002, etc.)
 
-
 **Q2: Related_Gap_ID**
 
 - **Auto-Populate**: From Sheet 8
 
-
 **Q3: Action_Description**
 
 - **Auto-Populate**: From Sheet 8 (Remediation_Action)
-
 
 **Q4: Priority**
 
 - **Auto-Populate**: From Sheet 8 (Risk_Level)
 - **Values**: Critical / High / Medium / Low
 
-
 **Q5: Owner**
 
 - **Auto-Populate**: From Sheet 8 (Responsible_Party)
-
 
 **Q6: Target_Date**
 
 - **Auto-Populate**: From Sheet 8 (Target_Completion_Date)
 
-
 **Q7: Status**
 
 - **Auto-Populate**: From Sheet 8 (Status)
 - **Values**: Not-Started / In-Progress / Blocked / Completed / Accepted-Risk
-
 
 **Q8: Progress_%**
 
@@ -1846,13 +1686,11 @@ For each policy, document:
 - **Format**: Percentage (0-100%)
 - **Manual Entry**: Owner updates as work progresses
 
-
 **Q9: Last_Update_Date**
 
 - **Question**: When was status last updated?
 - **Format**: Date (DD.MM.YYYY)
 - **Manual Entry**: Owner updates when progress changes
-
 
 **Q10: Last_Update_Notes**
 
@@ -1864,7 +1702,6 @@ For each policy, document:
   - "Blocked - waiting for budget approval"
   - "Completed - new policy approved and published"
 
-
 **Q11: Blocking_Issues**
 
 - **Question**: What is blocking progress (if applicable)?
@@ -1874,7 +1711,6 @@ For each policy, document:
   - "Budget not approved"
   - "Waiting for Legal review (submitted 5 days ago)"
   - "Owner on leave, returns 01.02.2026"
-
 
 **Q12: Escalation_Required**
 
@@ -1886,7 +1722,6 @@ For each policy, document:
   - Owner non-responsive
   - Resources unavailable
 
-
 **Q13: Escalation_To**
 
 - **Question**: Who should this be escalated to?
@@ -1896,7 +1731,6 @@ For each policy, document:
   - "CISO"
   - "Executive Management"
   - "Budget Committee"
-
 
 ---
 
@@ -1928,7 +1762,6 @@ For each policy, document:
 - Critical gaps: _______
 - High-priority gaps: _______
 - Repository compliance: _______
-
 
 ---
 
@@ -1962,7 +1795,6 @@ For each policy, document:
 - [ ] Repository assessment complete
 - [ ] Gap analysis risk levels appropriate
 - [ ] Evidence sufficient for audit
-
 
 **Comments**: _______________________
 
@@ -1998,7 +1830,6 @@ For each policy, document:
 - [ ] Repository compliance verified
 - [ ] Assessment ready for internal/external audit
 
-
 ---
 
 # Quality Checklist
@@ -2013,14 +1844,12 @@ For each policy, document:
 - [ ] Policy hierarchy tiers assigned correctly
 - [ ] ISO control mappings documented
 
-
 ## Lifecycle Compliance
 
 - [ ] Approval status verified for all policies
 - [ ] Overdue policies identified (Next_Review_Date < TODAY())
 - [ ] Lifecycle gaps documented in Sheet 3
 - [ ] Evidence collected for approvals and reviews
-
 
 ## Governance Assessment
 
@@ -2029,14 +1858,12 @@ For each policy, document:
 - [ ] Approval authority matches hierarchy tier
 - [ ] Governance gaps documented in Sheet 4
 
-
 ## Classification Review
 
 - [ ] All policies have classification assigned
 - [ ] Classification appropriateness assessed
 - [ ] Access controls verified
 - [ ] Classification gaps documented in Sheet 5
-
 
 ## Communication Tracking
 
@@ -2045,14 +1872,12 @@ For each policy, document:
 - [ ] Accessibility verified
 - [ ] Communication gaps documented in Sheet 6
 
-
 ## Repository Assessment
 
 - [ ] Repository type and location documented
 - [ ] Organization and navigation assessed
 - [ ] Version control verified
 - [ ] Repository gaps documented in Sheet 7
-
 
 ## Gap Analysis
 
@@ -2062,14 +1887,12 @@ For each policy, document:
 - [ ] Target completion dates realistic
 - [ ] Responsible parties assigned
 
-
 ## Evidence Register
 
 - [ ] All evidence items documented in Sheet 9
 - [ ] Evidence locations accessible
 - [ ] Evidence cross-referenced to assessment sheets
 - [ ] Evidence verification status updated
-
 
 ## Action Items
 
@@ -2078,13 +1901,11 @@ For each policy, document:
 - [ ] Progress tracking process established
 - [ ] Escalation criteria defined
 
-
 ## Dashboard
 
 - [ ] Overall compliance score calculated correctly
 - [ ] Key metrics auto-populated from assessment sheets
 - [ ] Dashboard ready for executive presentation
-
 
 ---
 
@@ -2133,7 +1954,6 @@ Evidence/A.5.1_Policy_Framework/
 - Policy repository index/listing
 - Policy metadata exports
 
-
 **Sheet 3 (Lifecycle Compliance)**:
 
 - Approval emails
@@ -2141,7 +1961,6 @@ Evidence/A.5.1_Policy_Framework/
 - Review meeting minutes
 - Review checklists
 - Version history reports
-
 
 **Sheet 4 (Governance Assessment)**:
 
@@ -2151,13 +1970,11 @@ Evidence/A.5.1_Policy_Framework/
 - Approval authority documentation
 - Delegation documentation
 
-
 **Sheet 5 (Classification Review)**:
 
 - Policy documents showing classification marking
 - Access control configurations
 - Permission audits
-
 
 **Sheet 6 (Communication Tracking)**:
 
@@ -2167,7 +1984,6 @@ Evidence/A.5.1_Policy_Framework/
 - Training materials
 - Training completion reports
 
-
 **Sheet 7 (Repository Assessment)**:
 
 - Repository structure screenshots
@@ -2175,7 +1991,6 @@ Evidence/A.5.1_Policy_Framework/
 - Version control configuration
 - Backup schedule documentation
 - Access logs
-
 
 ## Evidence Quality Standards
 
@@ -2186,7 +2001,6 @@ Evidence/A.5.1_Policy_Framework/
 - **Verifiable**: Auditor can reproduce or validate
 - **Complete**: Not truncated or missing key information
 - **Protected**: Stored securely with appropriate access controls
-
 
 ---
 
@@ -2205,7 +2019,6 @@ Evidence/A.5.1_Policy_Framework/
 - **Level 3 Approval**: 2-3 days
 - **Total**: 1-2 weeks from start to final approval
 
-
 ## Review Process
 
 **Step 1: Self-Review** (Assessment Owner)
@@ -2215,7 +2028,6 @@ Evidence/A.5.1_Policy_Framework/
 - Verify all evidence accessible
 - Set Status to "Draft"
 
-
 **Step 2: Level 2 Technical Review** (Security Manager / Compliance Officer)
 
 - Spot-check 10% of policies (metadata accuracy)
@@ -2223,13 +2035,11 @@ Evidence/A.5.1_Policy_Framework/
 - Check evidence quality and accessibility
 - Provide feedback for improvements
 
-
 **Step 3: Remediation** (Assessment Owner - if needed)
 
 - Address review feedback
 - Update assessment
 - Re-submit if significant changes
-
 
 **Step 4: Level 3 Final Approval** (CISO)
 
@@ -2238,7 +2048,6 @@ Evidence/A.5.1_Policy_Framework/
 - Accept documented risks (low-priority gaps)
 - Sign off assessment
 - Set Next Review Date (90 days)
-
 
 ## After Approval
 
@@ -2255,7 +2064,6 @@ Evidence/A.5.1_Policy_Framework/
 - **Quarterly**: Next assessment (90 days)
 - **Annual**: Comprehensive policy framework review
 
-
 ## Triggers for Immediate Re-Assessment
 
 Re-assess policy framework outside scheduled cycle if:
@@ -2265,7 +2073,6 @@ Re-assess policy framework outside scheduled cycle if:
 - Significant audit findings on policy framework
 - Executive management request
 - Regulatory examination imminent
-
 
 ---
 
@@ -2280,14 +2087,12 @@ This assessment (.S1 - Policy Framework) is part of the stacked control framewor
 - **ISMS-IMP-A.5.1-2-6.1-2.S4** (Employment Contracts): Implements contract requirement policies
 - **ISMS-IMP-A.5.1-2-6.1-2.S5** (Governance Compliance Dashboard): Consolidates all .S assessments
 
-
 **Data Flow**:
 
 - Policy inventory (Sheet 2) feeds role definitions in .S2
 - Policy governance (Sheet 4) validates role accountability in .S2
 - Policy communication (Sheet 6) supports training verification in .S3 and .S4
 - All gaps flow to .S5 for consolidated dashboard
-
 
 ---
 
@@ -2313,7 +2118,6 @@ This assessment (.S1 - Policy Framework) is part of the stacked control framewor
 - Excel for Microsoft 365
 - Compatible with LibreOffice Calc 7.0+ (with minor formula adjustments)
 
-
 **Workbook Properties**:
 
 - **Title**: ISMS-IMP-A.5.1-2-6.1-2.S1 - Policy Framework Assessment
@@ -2322,14 +2126,12 @@ This assessment (.S1 - Policy Framework) is part of the stacked control framewor
 - **Keywords**: Policy, Governance, ISMS, ISO27001, A.5.1
 - **Comments**: Generated via Python script `generate_a5_1_2_6_1_2_s1_policy_framework.py`
 
-
 **Workbook Settings**:
 
 - **Calculation**: Automatic
 - **Iteration**: Enabled (Max 100 iterations, Max change 0.001)
 - **Save AutoRecover**: Every 10 minutes
 - **Sheet Protection**: Protect formulas, allow data entry in input cells
-
 
 ---
 
@@ -2361,12 +2163,10 @@ This assessment (.S1 - Policy Framework) is part of the stacked control framewor
   - **Row 14**: Assessment Status - Dropdown: Draft / Under-Review / Approved / Audit-Ready (Yellow)
   - **Row 15**: Next Review Date - User input (Yellow)
 
-
 **Overall Compliance Summary** (Rows 17-30):
 
 - **Row 17**: Section header (A17:K17 merged) "OVERALL POLICY FRAMEWORK COMPLIANCE"
   - Font: Arial 14pt Bold, White text, Dark Blue fill
-
 
 **Compliance Scorecard** (Rows 19-26):
 
@@ -2386,7 +2186,6 @@ This assessment (.S1 - Policy Framework) is part of the stacked control framewor
 - If B >= C: Green fill (RGB 146, 208, 80), "✓ On Target"
 - If B between (C-10%) and C: Yellow fill (RGB 255, 255, 0), "⚠ Close"
 - If B < (C-10%): Red fill (RGB 255, 0, 0), "✗ Below Target"
-
 
 **Domain Compliance Breakdown** (Rows 32-38):
 
@@ -2411,19 +2210,16 @@ This assessment (.S1 - Policy Framework) is part of the stacked control framewor
   - Formula: `=IFERROR(INDEX(Gap_Analysis!E:E,SMALL(IF(Gap_Analysis!F:F="Critical",ROW(Gap_Analysis!F:F)),ROW(A1))),"None")`
   - Array formula (Ctrl+Shift+Enter in older Excel)
 
-
 **High Priority Issues** (Rows 49-54):
 
 - **Row 49**: "High Priority Issues (Address Within 60 Days):"
 - **Rows 50-54**: Top 5 high-priority gaps (auto-populate, filter Risk_Level="High")
-
 
 **Overdue Policies** (Rows 56-60):
 
 - **Row 56**: "Policies Overdue for Review:"
 - **Rows 57-60**: List policies where Next_Review_Date < TODAY()
   - Formula: `=IFERROR(INDEX(Policy_Inventory!B:B,SMALL(IF(Policy_Inventory!K:K<TODAY(),ROW(Policy_Inventory!K:K)),ROW(A1))),"None")`
-
 
 **Action Items Summary** (Rows 62-70):
 
@@ -2457,13 +2253,11 @@ This assessment (.S1 - Policy Framework) is part of the stacked control framewor
 - Column D: 15 (status)
 - Columns E-K: 5 (spacing)
 
-
 **Row Heights**:
 
 - Header rows (1-2): 40
 - Section headers: 30
 - Data rows: 20
-
 
 **Borders**: Thin black borders around all data blocks
 
@@ -2471,7 +2265,6 @@ This assessment (.S1 - Policy Framework) is part of the stacked control framewor
 
 - Protect sheet, allow AutoFilter, allow Sorting
 - Unlock only user input cells (Yellow highlighted)
-
 
 ---
 
@@ -2483,7 +2276,6 @@ This assessment (.S1 - Policy Framework) is part of the stacked control framewor
 
 - **Row 1**: Title (A1:T1 merged) "POLICY INVENTORY"
 - **Row 2**: Subtitle (A2:T2 merged) "Master list of all information security policies with metadata"
-
 
 **Column Headers** (Row 4):
 
@@ -2525,19 +2317,16 @@ This assessment (.S1 - Policy Framework) is part of the stacked control framewor
   - Significant-Gap: Orange fill (RGB 255, 192, 0)
   - Critical-Gap: Red fill (RGB 255, 0, 0)
 
-
 **Data Validation**:
 
 - All dropdown columns: List validation with error alert
 - Dates: Date validation, must be valid date
 - Acknowledgment_Rate: Integer between 0-100
 
-
 **Named Ranges**:
 
 - `Policy_ID_List` = Policy_Inventory!$A$5:$A$154 (for cross-sheet references)
 - `Policy_Inventory_Data` = Policy_Inventory!$A$5:$T$154
-
 
 **Formula Cells** (none in this sheet - all manual entry except auto-populated from other sheets)
 
@@ -2555,7 +2344,6 @@ This assessment (.S1 - Policy Framework) is part of the stacked control framewor
 
 - **Row 1**: Title "LIFECYCLE COMPLIANCE ASSESSMENT"
 - **Row 2**: Subtitle "Verification of policy creation, approval, publication, review, and update processes"
-
 
 **Column Headers** (Row 4):
 
@@ -2618,7 +2406,6 @@ This assessment (.S1 - Policy Framework) is part of the stacked control framewor
   - Partial: Yellow
   - Non-Compliant: Red
 
-
 **Sheet Protection**: Protect, unlock manual entry columns (C-G, I-K, M-N)
 
 **Freeze Panes**: A5
@@ -2631,7 +2418,6 @@ This assessment (.S1 - Policy Framework) is part of the stacked control framewor
 
 - **Row 1**: Title "GOVERNANCE ASSESSMENT"
 - **Row 2**: Subtitle "Ownership, accountability, approval authority, and RACI verification"
-
 
 **Column Headers** (Row 4):
 
@@ -2677,7 +2463,6 @@ This assessment (.S1 - Policy Framework) is part of the stacked control framewor
 
 - Column M (Governance_Compliance_Rating): Green/Yellow/Red
 
-
 **Sheet Protection**: Protect, unlock manual entry columns (F, I-L, N-O)
 
 **Freeze Panes**: A5
@@ -2690,7 +2475,6 @@ This assessment (.S1 - Policy Framework) is part of the stacked control framewor
 
 - **Row 1**: Title "CLASSIFICATION REVIEW"
 - **Row 2**: Subtitle "Policy classification appropriateness and access control verification"
-
 
 **Column Headers** (Row 4):
 
@@ -2721,7 +2505,6 @@ This assessment (.S1 - Policy Framework) is part of the stacked control framewor
 
 - Column J: Green/Yellow/Red
 
-
 **Sheet Protection**: Protect, unlock manual entry columns (D-I, K-L)
 
 **Freeze Panes**: A5
@@ -2734,7 +2517,6 @@ This assessment (.S1 - Policy Framework) is part of the stacked control framewor
 
 - **Row 1**: Title "COMMUNICATION TRACKING"
 - **Row 2**: Subtitle "Policy publication, acknowledgment, and training integration verification"
-
 
 **Column Headers** (Row 4):
 
@@ -2778,7 +2560,6 @@ This assessment (.S1 - Policy Framework) is part of the stacked control framewor
   - <70%: Red
 - Column N: Green/Yellow/Red
 
-
 **Sheet Protection**: Protect, unlock manual entry (D-H, J-M, O-P)
 
 **Freeze Panes**: A5
@@ -2795,7 +2576,6 @@ This assessment (.S1 - Policy Framework) is part of the stacked control framewor
 
 - **Row 1**: Title "REPOSITORY ASSESSMENT"
 - **Row 2**: Subtitle "Policy repository structure, organization, access, and performance"
-
 
 **Assessment Questions** (Rows 5-60):
 
@@ -2842,7 +2622,6 @@ Structure similar to previous sheets but **single assessment** (not per-policy):
 - **Row 1**: Title "GAP ANALYSIS"
 - **Row 2**: Subtitle "Consolidated gaps from all assessment domains with risk levels and remediation plans"
 
-
 **Column Headers** (Row 4):
 
 | Col | Header | Width | Data Type | Formula/Validation |
@@ -2875,7 +2654,6 @@ Gaps are pulled from assessment sheets where compliance rating ≠ "Compliant":
 - Sheet 6 (Communication): Column N ≠ "Compliant"
 - Sheet 7 (Repository): B20 ≠ "Compliant"
 
-
 **Formula: Column A (Gap_ID)**:
 ```excel
 =IF(ROW()<=4,"",TEXT(ROW()-4,"GAP-000"))
@@ -2894,7 +2672,6 @@ Gaps are pulled from assessment sheets where compliance rating ≠ "Compliant":
   - Medium: Yellow fill
   - Low: No fill
 
-
 **Sheet Protection**: Protect, unlock manual entry (F-P)
 
 **Freeze Panes**: A5
@@ -2907,7 +2684,6 @@ Gaps are pulled from assessment sheets where compliance rating ≠ "Compliant":
 
 - **Row 1**: Title "EVIDENCE REGISTER"
 - **Row 2**: Subtitle "Documentation of all supporting evidence for policy framework assessment"
-
 
 **Column Headers** (Row 4):
 
@@ -2939,7 +2715,6 @@ Gaps are pulled from assessment sheets where compliance rating ≠ "Compliant":
   - Not-Verified: Orange
   - Expired: Red
 
-
 **Sheet Protection**: Protect, unlock manual entry (B-J)
 
 **Freeze Panes**: A5
@@ -2952,7 +2727,6 @@ Gaps are pulled from assessment sheets where compliance rating ≠ "Compliant":
 
 - **Row 1**: Title "ACTION ITEMS"
 - **Row 2**: Subtitle "Remediation tracking for identified gaps"
-
 
 **Column Headers** (Row 4):
 
@@ -2991,7 +2765,6 @@ Gaps are pulled from assessment sheets where compliance rating ≠ "Compliant":
   - 71-99%: Light green
   - 100%: Dark green
 
-
 **Sheet Protection**: Protect, unlock manual entry (H-M)
 
 **Freeze Panes**: A5
@@ -3018,7 +2791,6 @@ Gaps are pulled from assessment sheets where compliance rating ≠ "Compliant":
   - High Priority Gaps: `=Dashboard!B24`
   - Repository Compliance: `=Repository_Assessment!B20`
 
-
 **Level 1 Approval** (Rows 22-30):
 
 - **Row 22**: Section header "LEVEL 1: PREPARED BY"
@@ -3028,7 +2800,6 @@ Gaps are pulled from assessment sheets where compliance rating ≠ "Compliant":
 - **Row 26**: Signature (user input, Yellow)
 - **Row 27**: Certification checkbox: "I certify this assessment is complete and accurate"
 - **Row 28-30**: Comments (user input, text area)
-
 
 **Level 2 Approval** (Rows 32-45):
 
@@ -3048,7 +2819,6 @@ Gaps are pulled from assessment sheets where compliance rating ≠ "Compliant":
   - [ ] Action items tracked
 - **Row 45**: Comments (user input, text area)
 
-
 **Level 3 Approval** (Rows 47-60):
 
 - **Row 47**: Section header "LEVEL 3: APPROVED BY (CISO)"
@@ -3060,7 +2830,6 @@ Gaps are pulled from assessment sheets where compliance rating ≠ "Compliant":
 - **Row 53**: Risk acceptance (if applicable): "I accept residual risk for: [list]"
 - **Rows 54-57**: Comments (user input, text area)
 
-
 **Assessment Metadata** (Rows 59-65):
 
 - **Row 59**: Next Review Date (user input, Yellow, Date)
@@ -3071,7 +2840,6 @@ Gaps are pulled from assessment sheets where compliance rating ≠ "Compliant":
   - [ ] All critical gaps have remediation plans
   - [ ] Repository compliance verified
   - [ ] Assessment audit-ready
-
 
 **Sheet Protection**: Protect, unlock approval cells (Yellow highlighted)
 
@@ -3087,7 +2855,6 @@ Gaps are pulled from assessment sheets where compliance rating ≠ "Compliant":
 - Font: Arial 10pt
 - Border: Thin black
 
-
 **Auto-Calculated Cells**:
 
 - Fill: Light Blue (RGB 220, 230, 241)
@@ -3095,13 +2862,11 @@ Gaps are pulled from assessment sheets where compliance rating ≠ "Compliant":
 - Border: Thin black
 - Number format: As appropriate (percentage, date, text)
 
-
 **Labels / Headers**:
 
 - Fill: Gray (RGB 217, 217, 217)
 - Font: Arial 10pt Bold
 - Border: Thin black
-
 
 **Section Headers**:
 
@@ -3110,7 +2875,6 @@ Gaps are pulled from assessment sheets where compliance rating ≠ "Compliant":
 - Border: None
 - Merge cells across full width
 
-
 **Conditional Formatting Colors**:
 
 - **Green** (Compliant / On Target): RGB 146, 208, 80
@@ -3118,13 +2882,11 @@ Gaps are pulled from assessment sheets where compliance rating ≠ "Compliant":
 - **Orange** (Moderate Issue): RGB 255, 192, 0
 - **Red** (Non-Compliant / Critical): RGB 255, 0, 0
 
-
 **Borders**:
 
 - Header rows: Medium border bottom
 - Data blocks: Thin border around entire block
 - Individual cells: Thin border all sides
-
 
 ---
 
@@ -3135,7 +2897,6 @@ Gaps are pulled from assessment sheets where compliance rating ≠ "Compliant":
 - All assessment sheets: Freeze at A5 (keep column headers visible when scrolling)
 - Dashboard: No freeze (entire dashboard visible without scroll)
 
-
 **Print Settings** (for all sheets):
 
 - Orientation: Landscape
@@ -3145,7 +2906,6 @@ Gaps are pulled from assessment sheets where compliance rating ≠ "Compliant":
 - Footer: Page X of Y + File name
 - Print titles: Repeat row 4 (column headers) on every page
 - Print area: Data range only (exclude empty rows)
-
 
 ---
 
@@ -3198,13 +2958,11 @@ ISMS-IMP-A.5.1-2-6.1-2.S1_Policy_Framework_YYYYMMDD.xlsx
 - `YYYYMMDD`: Assessment date (e.g., 20260130)
 - `.xlsx`: Excel file extension
 
-
 **Version Control**:
 
 - Date in filename serves as version identifier
 - Previous assessments archived with date suffix
 - Repository: Store in version-controlled location (SharePoint, Git, DMS)
-
 
 **Example File History**:
 ```
@@ -3238,7 +2996,6 @@ ISMS-IMP-A.5.1-2-6.1-2.S1_Policy_Framework_20250731.xlsx (Q3 2025)
 - Create macros (optional enhancement)
 - Require external dependencies beyond `openpyxl`
 
-
 **Script Execution**:
 ```bash
 python generate_a5_1_2_6_1_2_s1_policy_framework.py
@@ -3261,7 +3018,6 @@ ISMS-IMP-A.5.1-2-6.1-2.S1_Policy_Framework_20260130.xlsx
 - [ ] Sheet tab colors assigned (if applicable)
 - [ ] Sheet order correct (Dashboard first, Approval last)
 
-
 ## Formatting
 
 - [ ] All headers formatted (Dark Blue background, White text, Bold)
@@ -3270,14 +3026,12 @@ ISMS-IMP-A.5.1-2-6.1-2.S1_Policy_Framework_20260130.xlsx
 - [ ] Labels formatted (Gray fill, Bold)
 - [ ] Borders applied consistently
 
-
 ## Data Validation
 
 - [ ] All dropdown fields have validation lists
 - [ ] Date fields have date validation
 - [ ] Percentage fields have numeric validation (0-100)
 - [ ] Error alerts configured for invalid entries
-
 
 ## Formulas
 
@@ -3287,7 +3041,6 @@ ISMS-IMP-A.5.1-2-6.1-2.S1_Policy_Framework_20260130.xlsx
 - [ ] Dashboard metrics formulas accurate
 - [ ] No #REF!, #VALUE!, #DIV/0! errors in empty workbook
 
-
 ## Conditional Formatting
 
 - [ ] Compliance rating cells (Green/Yellow/Red)
@@ -3295,13 +3048,11 @@ ISMS-IMP-A.5.1-2-6.1-2.S1_Policy_Framework_20260130.xlsx
 - [ ] Risk level formatting (Critical/High/Medium/Low)
 - [ ] Percentage thresholds correct
 
-
 ## Named Ranges
 
 - [ ] All named ranges created
 - [ ] Named range references correct
 - [ ] Named ranges used in formulas where appropriate
-
 
 ## Sheet Protection
 
@@ -3310,12 +3061,10 @@ ISMS-IMP-A.5.1-2-6.1-2.S1_Policy_Framework_20260130.xlsx
 - [ ] AutoFilter and Sorting allowed
 - [ ] Protection password set (if required)
 
-
 ## Freeze Panes
 
 - [ ] Dashboard: No freeze
 - [ ] All other sheets: Freeze at A5
-
 
 ## Print Settings
 
@@ -3324,14 +3073,12 @@ ISMS-IMP-A.5.1-2-6.1-2.S1_Policy_Framework_20260130.xlsx
 - [ ] Headers/footers configured
 - [ ] Print titles set (row 4 repeat)
 
-
 ## File Properties
 
 - [ ] Workbook title set
 - [ ] Author set to organization
 - [ ] Subject and keywords populated
 - [ ] Comments include generator script name
-
 
 ## Testing
 
@@ -3341,7 +3088,6 @@ ISMS-IMP-A.5.1-2-6.1-2.S1_Policy_Framework_20260130.xlsx
 - [ ] Test conditional formatting - colors apply correctly
 - [ ] Test freeze panes - headers stay visible
 - [ ] Test print preview - layout correct
-
 
 ---
 
@@ -3355,13 +3101,11 @@ ISMS-IMP-A.5.1-2-6.1-2.S1_Policy_Framework_20260130.xlsx
 - User feedback identifies confusing sections
 - Excel best practices evolve
 
-
 **Version Control for This Document**:
 
 - Document version: 1.0 (Initial)
 - Update version number when substantive changes made
 - Document changes in Version History table
-
 
 **Backward Compatibility**:
 

@@ -47,7 +47,6 @@ This document provides **practical, step-by-step guidance** for implementing net
 - Implementing cloud network segmentation (VPCs, security groups, NSGs)
 - Testing segmentation effectiveness to validate isolation
 
-
 ## Scope
 
 This guidance covers:
@@ -60,7 +59,6 @@ This guidance covers:
 - **Cloud Network Segmentation** - AWS VPC, Azure VNet, GCP VPC segmentation
 - **Segmentation Migration** - Phased approach for moving from flat to segmented networks
 
-
 ## Applicability
 
 This guidance is **technology-agnostic** with specific examples for:
@@ -71,7 +69,6 @@ This guidance is **technology-agnostic** with specific examples for:
 - Hybrid and multi-cloud architectures
 - Virtual networks (VMware NSX, Hyper-V, KVM)
 
-
 ## Who Should Use This Guidance
 
 - Network architects designing segmentation architecture
@@ -79,7 +76,6 @@ This guidance is **technology-agnostic** with specific examples for:
 - Security teams defining inter-zone traffic policies
 - Cloud engineers implementing VPC/VNet segmentation
 - ISMS implementers preparing for A.8.22 assessments
-
 
 ---
 
@@ -168,14 +164,12 @@ Phase 8: Migration to Segmented Network (For Existing Flat Networks)
 - Access to network documentation (topology diagrams, IPAM)
 - Cloud platform administrative access (if implementing cloud segmentation)
 
-
 ## Required Tools
 
 **Network Management**:
 
 - Network device CLI access (SSH)
 - Configuration management tools (Ansible, Terraform, vendor-specific tools)
-
 
 **IPAM (IP Address Management)**:
 
@@ -184,13 +178,11 @@ Phase 8: Migration to Segmented Network (For Existing Flat Networks)
 - Infoblox (commercial IPAM)
 - Excel/spreadsheets (for small networks)
 
-
 **Firewall Management**:
 
 - Firewall vendor management interfaces (Panorama for Palo Alto, FortiManager for Fortinet, etc.)
 - Firewall policy analysis tools (AlgoSec, Tufin, FireMon)
 - Open-source tools (Capirca for multi-vendor firewall rule generation)
-
 
 **Cloud Tools**:
 
@@ -199,14 +191,12 @@ Phase 8: Migration to Segmented Network (For Existing Flat Networks)
 - GCP SDK / gcloud (for GCP VPC)
 - Terraform (infrastructure-as-code for multi-cloud)
 
-
 **Testing Tools**:
 
 - nmap (port scanning, connectivity testing)
 - tcpdump / Wireshark (packet capture, traffic analysis)
 - telnet / nc (netcat - connectivity testing)
 - hping3 (packet crafting for testing ACLs)
-
 
 ## Required Skills and Knowledge
 
@@ -216,7 +206,6 @@ Phase 8: Migration to Segmented Network (For Existing Flat Networks)
 - ACL syntax (router/switch-specific)
 - Cloud networking concepts (VPC, security groups, NSGs)
 - Network security principles (defense in depth, least privilege)
-
 
 ---
 
@@ -234,14 +223,12 @@ Phase 8: Migration to Segmented Network (For Existing Flat Networks)
 
    - Servers, workstations, IoT devices, network devices, cloud resources
 
-
 2. **Classify assets by data sensitivity** (align with data classification policy):
 
    - Public data (can be exposed externally)
    - Internal data (internal use only)
    - Confidential data (restricted access)
    - Restricted data (highly sensitive, regulatory requirements)
-
 
 3. **Classify assets by function**:
 
@@ -252,7 +239,6 @@ Phase 8: Migration to Segmented Network (For Existing Flat Networks)
    - Guest systems (guest Wi-Fi, visitor workstations)
    - Development/test systems (non-production environments)
    - IoT/OT (operational technology, industrial control systems)
-
 
 ### Define Security Zones
 
@@ -277,7 +263,6 @@ Phase 8: Migration to Segmented Network (For Existing Flat Networks)
 - **Data classification alignment**: Zones map to data classification (e.g., restricted data → management zone)
 - **Functional separation**: Similar functions grouped together (all web servers in DMZ)
 - **Regulatory compliance**: Isolate regulated data (PCI DSS → payment card zone, HIPAA → healthcare zone)
-
 
 **Example Zone Architecture** (for mid-size organization):
 
@@ -309,7 +294,6 @@ Guest (Untrusted) - Guest Wi-Fi
    - What services in Internal need to access Management? (e.g., servers → backup server)
    - What services need Internet access? (e.g., servers → software updates)
 
-
 2. **Create traffic flow matrix** (allow/deny matrix):
 
 Example matrix:
@@ -330,13 +314,11 @@ Example matrix:
 - **DENY**: Traffic explicitly blocked
 - **-**: Intra-zone traffic (typically allowed, but may have micro-segmentation)
 
-
 3. **Document justification for each ALLOW rule**:
 
    - **Business justification**: Why is this traffic needed?
    - **Technical justification**: What protocols/ports are required?
    - **Risk assessment**: What risks does this access introduce? How are they mitigated?
-
 
 Example:
 ```
@@ -358,7 +340,6 @@ Risk: Database compromise from DMZ. Mitigation: DB access limited to web server 
    - Trust boundaries and firewalls
    - Traffic flows between zones
 
-
 2. **Zone Definition Document**:
 
    - Zone name, purpose, trust level
@@ -366,20 +347,17 @@ Risk: Database compromise from DMZ. Mitigation: DB access limited to web server 
    - Data classification of data in zone
    - Zone owner (responsible team)
 
-
 3. **Inter-Zone Traffic Policy**:
 
    - Traffic flow matrix (allow/deny)
    - Detailed justification for each allow rule
    - Protocols/ports required for each allow rule
 
-
 4. **IP Address Allocation** (IPAM):
 
    - Subnet allocations per zone
    - VLAN-to-subnet mapping
    - IP address ranges
-
 
 **Template**: See Annex A for Zone Definition Template
 
@@ -398,7 +376,6 @@ Risk: Database compromise from DMZ. Mitigation: DB access limited to web server 
 - **CIDR notation**: Use CIDR (Classless Inter-Domain Routing) for efficient allocation
 - **Contiguous allocation**: Keep related subnets contiguous for summarization
 - **Growth planning**: Leave room for future expansion
-
 
 **Example IP Allocation** (for mid-size organization):
 
@@ -432,7 +409,6 @@ Risk: Database compromise from DMZ. Mitigation: DB access limited to web server 
 - /22 = 1024 IPs (1022 usable)
 - /21 = 2048 IPs (2046 usable)
 
-
 **CIDR Calculator**: Use online tools (e.g., subnet-calculator.com) or ipcalc command:
 ```bash
 # Calculate subnet details
@@ -463,7 +439,6 @@ ipcalc 10.1.20.0/24
 
    - Choose appropriate subnet size (/24, /23, /22, etc.)
    - Document subnet allocation in IPAM
-
 
 **Example Subnet Allocation**:
 
@@ -509,7 +484,6 @@ ipcalc 10.1.20.0/24
 - **Broadcast domain reduction**: Limits broadcast traffic to VLAN boundaries
 - **Flexibility**: Devices in different physical locations can be in same VLAN
 
-
 **VLAN Numbering**:
 
 - **1**: Default VLAN (do NOT use for production traffic)
@@ -517,12 +491,10 @@ ipcalc 10.1.20.0/24
 - **1006-4094**: Extended range VLANs (requires VTP transparent or off)
 - **Reserved**: 1002-1005 (legacy token ring, FDDI)
 
-
 **VLAN Naming Convention**:
 
 - Use descriptive names: `VLAN10-DMZ`, `VLAN20-Servers`, `VLAN30-Workstations`
 - Include function and/or subnet: `VLAN10-DMZ-10.1.10.0`
-
 
 ### Create VLANs on Switches
 
@@ -833,7 +805,6 @@ Justification: Security best practice - default deny policy.
   - Last review date
   - Next review date (rules reviewed annually)
 
-
 ### Firewall Configuration Examples
 
 **Cisco ASA Firewall Example**:
@@ -911,12 +882,10 @@ logging host inside 10.1.40.10
 - **Switch-based filtering**: Control traffic between VLANs (if not using dedicated firewall)
 - **Defense in depth**: Additional layer beyond firewall rules
 
-
 **ACL Types**:
 
 - **Standard ACLs**: Filter based on source IP only (numbered 1-99, 1300-1999)
 - **Extended ACLs**: Filter based on source IP, dest IP, protocol, port (numbered 100-199, 2000-2699)
-
 
 ### Standard ACL Example
 
@@ -975,7 +944,6 @@ Extended IP access list INTERNAL-TO-DMZ
 - **Implicit deny**: ACLs have implicit `deny any` at end (explicit deny with log is better)
 - **Testing**: Test ACLs in lab before production deployment
 
-
 ---
 
 ## Phase 6: Cloud Network Segmentation
@@ -991,7 +959,6 @@ Extended IP access list INTERNAL-TO-DMZ
 - **Security Groups**: Instance-level firewall (stateful)
 - **Network ACLs (NACLs)**: Subnet-level firewall (stateless)
 - **Route Tables**: Control traffic routing between subnets
-
 
 **Example VPC Architecture**:
 
@@ -1107,7 +1074,6 @@ resource "aws_security_group" "web" {
 - **Network Security Groups (NSGs)**: Firewall rules (can apply to subnet or NIC)
 - **Application Security Groups (ASGs)**: Group instances for easier rule management
 
-
 **Azure CLI Example**:
 
 ```bash
@@ -1139,7 +1105,6 @@ az network vnet subnet update --name DMZ-Subnet --resource-group Prod-RG --vnet-
 - **VPC Network**: Global (not regional)
 - **Subnets**: Regional (e.g., 10.300.10.0/24 in us-east1)
 - **Firewall Rules**: Applied to VPC (tag-based or IP-based)
-
 
 **GCP CLI Example**:
 
@@ -1225,7 +1190,6 @@ mysql -h 10.1.20.50 -u user -p
    - Check firewall logs for denied connection attempts
    - Alert security team if unexpected denials occur (may indicate attack)
 
-
 ### VLAN Hopping Prevention Testing
 
 **VLAN Hopping Attacks**:
@@ -1233,13 +1197,11 @@ mysql -h 10.1.20.50 -u user -p
 - **Double Tagging**: Attacker sends double-tagged 802.1Q frame to access other VLANs
 - **Switch Spoofing**: Attacker negotiates trunk with switch (via DTP) to access all VLANs
 
-
 **Prevention Measures** (implemented in Phase 3):
 
 - Change native VLAN to unused VLAN (not VLAN 1)
 - Disable DTP (`switchport nonegotiate`)
 - Explicitly allow VLANs on trunk ports
-
 
 **Testing**:
 
@@ -1286,7 +1248,6 @@ tcpdump -r dmz-internal.pcap -n
    - All captured traffic should match ALLOW rules
    - No traffic should match DENY rules (would be dropped before capture)
 
-
 ---
 
 ## Phase 8: Migration to Segmented Network
@@ -1303,20 +1264,17 @@ tcpdump -r dmz-internal.pcap -n
    - Any existing VLANs?
    - Any existing firewall rules?
 
-
 2. **Identify flat networks** (no segmentation):
 
    - All devices in single subnet (e.g., 192.168.1.0/24)
    - No VLANs or all devices in default VLAN (VLAN 1)
    - No firewall rules (or overly permissive rules)
 
-
 3. **Risk assessment**:
 
    - High-value assets in flat network? (servers, databases)
    - Regulatory data in flat network? (PII, PCI, PHI)
    - External exposure risk? (internet-facing systems in same flat network as internal)
-
 
 ### Develop Phased Migration Plan
 
@@ -1327,24 +1285,20 @@ tcpdump -r dmz-internal.pcap -n
 - Segment critical servers (databases, domain controllers, financial systems)
 - Create Management zone and move management systems (monitoring, backup)
 
-
 **Phase 2: External-Facing Assets**
 
 - Create DMZ zone and move internet-facing systems (web servers, mail relays)
 - Implement strict firewall rules between DMZ and Internal
-
 
 **Phase 3: User Workstations**
 
 - Create Internal zone and segment workstations
 - Implement firewall rules for workstation access
 
-
 **Phase 4: Specialized Zones**
 
 - Create Guest, Development, IoT/OT zones as needed
 - Migrate respective assets
-
 
 **Phase 5: Finalize and Harden**
 
@@ -1352,7 +1306,6 @@ tcpdump -r dmz-internal.pcap -n
 - Remove overly permissive rules
 - Implement default deny policy
 - Conduct penetration testing
-
 
 ### Migration Execution
 
@@ -1366,7 +1319,6 @@ tcpdump -r dmz-internal.pcap -n
    - Test firewall rules in staging environment
    - Schedule migration window (off-hours, low-usage period)
 
-
 2. **Migration**:
 
    - Change switchport VLAN assignment (move device to new VLAN)
@@ -1375,7 +1327,6 @@ tcpdump -r dmz-internal.pcap -n
    - Deploy firewall rules
    - Test connectivity (verify device can access required resources)
 
-
 3. **Post-migration**:
 
    - Verify device connectivity (ping, application testing)
@@ -1383,18 +1334,15 @@ tcpdump -r dmz-internal.pcap -n
    - Document migration completion
    - Adjust firewall rules if needed (based on legitimate traffic denied)
 
-
 **Example Migration** (moving database server from flat network to Internal zone):
 
 **Before**:
 
 - Server: `db-server-01`, IP: `192.168.1.50`, VLAN: 1 (default), Subnet: 192.168.1.0/24
 
-
 **After**:
 
 - Server: `db-server-01`, IP: `10.1.20.50`, VLAN: 20 (Servers), Subnet: 10.1.20.0/24
-
 
 **Migration Steps**:
 
@@ -1458,7 +1406,6 @@ module "network_segmentation" {
 - Version control for network configs (Git)
 - Repeatable deployments (dev, staging, prod environments)
 - Automated testing (terraform plan before apply)
-
 
 ## Configuration Management (Ansible)
 
@@ -1553,14 +1500,12 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 - IPAM data informs subnet design
 - Device inventory informs zone assignment
 
-
 ## Device Hardening (ISMS-IMP-A.8.20-21-22-S3)
 
 **Integration**: Segmentation devices (switches, routers, firewalls) must be hardened.
 
 - Hardening baselines include segmentation security (VLAN security, ACLs)
 - Configuration management ensures segmentation configs are maintained
-
 
 ## Network Security Testing (ISMS-IMP-A.8.20-21-22-S6)
 
@@ -1570,7 +1515,6 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 - Penetration testing simulates lateral movement
 - Segmentation testing (Phase 7) is part of overall security testing process
 
-
 ## Logging and Monitoring (A.8.15, A.8.16)
 
 **Integration**: Firewall logs and network traffic monitoring detect segmentation violations.
@@ -1578,7 +1522,6 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 - Firewall logs capture denied traffic (attempted segmentation violations)
 - SIEM alerts on suspicious inter-zone traffic
 - Network traffic analysis (NetFlow/sFlow) monitors traffic patterns
-
 
 ---
 
@@ -1603,7 +1546,6 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 - [ ] Firewall rule documentation complete (justifications, approvals)
 - [ ] Configuration backups completed (switches, routers, firewalls)
 
-
 ## Validation Procedures
 
 **Post-Implementation Validation**:
@@ -1625,48 +1567,40 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 - **Problem**: Too many zones, overly granular segmentation → difficult to manage
 - **Solution**: Start with high-level zones (DMZ, Internal, Management); add more zones as needed
 
-
 **Mistake 2: Firewall Rule Explosion**
 
 - **Problem**: Too many firewall rules → difficult to manage, performance impact
 - **Solution**: Use network objects, service groups, rule consolidation
-
 
 **Mistake 3: Undocumented Firewall Rules**
 
 - **Problem**: "What does this rule do? Why is it here?" → cannot remove obsolete rules
 - **Solution**: Mandatory rule documentation (justification, owner, approval)
 
-
 **Mistake 4: No Default Deny**
 
 - **Problem**: Implicit allow-all → segmentation ineffective
 - **Solution**: Always implement default deny rule (explicit deny-all at end of ruleset)
-
 
 **Mistake 5: Not Testing Segmentation**
 
 - **Problem**: Assume segmentation works → actually has gaps
 - **Solution**: Regular segmentation effectiveness testing (penetration testing, lateral movement simulation)
 
-
 **Mistake 6: Flat Network in Cloud**
 
 - **Problem**: All cloud resources in single VPC/VNet with no security groups → flat network
 - **Solution**: Implement cloud segmentation (security groups, NACLs, VPC design)
-
 
 **Mistake 7: Forgetting Management Traffic**
 
 - **Problem**: Segmentation blocks legitimate management traffic (monitoring, backups, patching)
 - **Solution**: Design Management zone with appropriate access rules
 
-
 **Mistake 8: No Segmentation for Development/Test**
 
 - **Problem**: Development systems in production network → lateral movement risk
 - **Solution**: Separate Development zone, isolated from production
-
 
 ## Troubleshooting Guide
 
@@ -1681,7 +1615,6 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
   - Test rule before deploying to production
   - Document rule justification
 
-
 **Issue 2: Firewall Performance Degradation**
 
 - **Symptoms**: Network slow after implementing firewall rules
@@ -1694,7 +1627,6 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
   - Upgrade firewall hardware/software (if needed)
   - Implement rule cleanup (remove obsolete rules)
 
-
 **Issue 3: VLAN Hopping Successful**
 
 - **Symptoms**: Attacker can access other VLANs from compromised device
@@ -1706,7 +1638,6 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
   - Disable DTP (`switchport nonegotiate`)
   - Re-test VLAN hopping (should now fail)
 
-
 **Issue 4: Segmentation Testing Finds Gaps**
 
 - **Symptoms**: Penetration testing reveals lateral movement is still possible
@@ -1717,7 +1648,6 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
   - Tighten firewall rules (remove broad allow rules)
   - Implement additional ACLs
   - Re-test segmentation (should now block lateral movement)
-
 
 ---
 
@@ -1734,13 +1664,11 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
    - Data classification of data in zone
    - Zone owner
 
-
 2. **Network Segmentation Diagram**:
 
    - Visual representation of zones
    - Trust boundaries and firewalls
    - Traffic flows between zones
-
 
 3. **Inter-Zone Traffic Policy**:
 
@@ -1748,13 +1676,11 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
    - Detailed justification for each allow rule
    - Protocols/ports required
 
-
 4. **IP Address Management (IPAM) Documentation**:
 
    - Subnet allocations per zone
    - VLAN-to-subnet mapping
    - IP address ranges
-
 
 5. **Firewall Rule Inventory**:
 
@@ -1762,13 +1688,11 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
    - Rule ID, source, destination, protocol/port, action
    - Business justification, rule owner, approval date
 
-
 6. **VLAN Configuration Documentation**:
 
    - VLAN list (ID, name, purpose)
    - Switchport configurations
    - Trunk configurations
-
 
 ## Change Management Documentation
 
@@ -1781,7 +1705,6 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 - Implementation log (what was done, when, by whom)
 - Post-implementation validation (was change successful?)
 
-
 ## Documentation Storage
 
 **Centralized Documentation Repository**:
@@ -1789,7 +1712,6 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 - SharePoint, Confluence, or similar documentation platform
 - Version control (track changes over time)
 - Access control (restrict access to authorized personnel)
-
 
 ---
 
@@ -1803,13 +1725,11 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 - Review security zones (do they still align with business needs?)
 - Review IPAM (is IP allocation still appropriate?)
 
-
 **Annual Review**:
 
 - Full segmentation architecture review
 - Penetration testing to validate segmentation effectiveness
 - Update documentation (reflect current state)
-
 
 ## Metrics to Track
 
@@ -1820,7 +1740,6 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 - **Denied Traffic**: Count of denied firewall events (high count may indicate legitimate traffic being blocked)
 - **Segmentation Testing**: Date of last segmentation effectiveness test (goal: annual minimum)
 
-
 ## Lessons Learned
 
 **After Each Segmentation Project**:
@@ -1828,7 +1747,6 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 - Document lessons learned (what went well, what didn't)
 - Update segmentation procedures based on lessons learned
 - Share knowledge with team (training, documentation updates)
-
 
 ---
 
@@ -1849,19 +1767,16 @@ Assets in Zone:
 - [List of assets, e.g., web-server-01, web-server-02]
 - [Asset types: servers, workstations, network devices, etc.]
 
-
 Data Classification:
 
 - Primary: [Public, Internal, Confidential, Restricted]
 - Secondary: [If zone contains mixed classifications]
-
 
 Network Details:
 
 - VLAN ID: [VLAN number]
 - Subnet: [IP subnet in CIDR notation]
 - Default Gateway: [Gateway IP address]
-
 
 Inter-Zone Traffic Policies:
 
@@ -1870,12 +1785,10 @@ Inter-Zone Traffic Policies:
 - Allowed Outbound: [Zones that this zone can send traffic to]
   - [Zone Name]: [Protocols/ports allowed]
 
-
 Zone Owner:
 
 - Business Owner: [Name, title]
 - Technical Owner: [Name, title]
-
 
 Last Review Date: [Date]
 Next Review Date: [Date + 12 months]
@@ -1900,25 +1813,21 @@ Traffic Details:
 - Destination Port: [Port number/range]
 - Action: [Allow, Deny]
 
-
 Logging:
 
 - Logging Enabled: [Yes/No]
 - Log Level: [Informational, Warning, etc.]
-
 
 Schedule:
 
 - Always Active: [Yes/No]
 - Time-Based: [If applicable, specify schedule]
 
-
 Justification:
 
 - Business Justification: [Why is this rule needed?]
 - Technical Justification: [What traffic does this enable?]
 - Risk Assessment: [What risks does this introduce? How mitigated?]
-
 
 Ownership and Approval:
 
@@ -1927,12 +1836,10 @@ Ownership and Approval:
 - Approved By: [Name, title]
 - Approval Date: [Date]
 
-
 Review Cycle:
 
 - Last Review Date: [Date]
 - Next Review Date: [Date + 12 months]
-
 
 Status:
 
@@ -1956,13 +1863,11 @@ Test Scope: [Zones tested]
    - [ ] Test denied traffic (verify unauthorized traffic blocked)
    - [ ] Review firewall logs (verify denials logged)
 
-
 2. Lateral Movement Simulation
 
    - [ ] Simulate compromised workstation (attempt to access other zones)
    - [ ] Verify segmentation blocks lateral movement
    - [ ] Document findings
-
 
 3. VLAN Hopping Prevention
 
@@ -1971,13 +1876,11 @@ Test Scope: [Zones tested]
    - [ ] Verify native VLAN != VLAN 1
    - [ ] Verify DTP disabled on all ports
 
-
 4. Packet Capture Verification
 
    - [ ] Capture traffic at zone boundaries
    - [ ] Analyze traffic (verify only authorized traffic flows)
    - [ ] Document findings
-
 
 5. Configuration Audit
 
@@ -1985,20 +1888,17 @@ Test Scope: [Zones tested]
    - [ ] Verify VLAN configs match documentation
    - [ ] Verify no configuration drift
 
-
 6. Documentation Review
 
    - [ ] Verify segmentation architecture documentation up-to-date
    - [ ] Verify firewall rule documentation up-to-date
    - [ ] Verify IPAM documentation up-to-date
 
-
 Test Results:
 
 - Pass/Fail: [Overall result]
 - Gaps Identified: [List any gaps found]
 - Remediation Plan: [How to address gaps]
-
 
 Next Test Date: [Date + 12 months]
 ```
@@ -2039,7 +1939,6 @@ This document provides **practical, step-by-step guidance** for implementing net
 - Implementing cloud network segmentation (VPCs, security groups, NSGs)
 - Testing segmentation effectiveness to validate isolation
 
-
 ## Scope
 
 This guidance covers:
@@ -2052,7 +1951,6 @@ This guidance covers:
 - **Cloud Network Segmentation** - AWS VPC, Azure VNet, GCP VPC segmentation
 - **Segmentation Migration** - Phased approach for moving from flat to segmented networks
 
-
 ## Applicability
 
 This guidance is **technology-agnostic** with specific examples for:
@@ -2063,7 +1961,6 @@ This guidance is **technology-agnostic** with specific examples for:
 - Hybrid and multi-cloud architectures
 - Virtual networks (VMware NSX, Hyper-V, KVM)
 
-
 ## Who Should Use This Guidance
 
 - Network architects designing segmentation architecture
@@ -2071,7 +1968,6 @@ This guidance is **technology-agnostic** with specific examples for:
 - Security teams defining inter-zone traffic policies
 - Cloud engineers implementing VPC/VNet segmentation
 - ISMS implementers preparing for A.8.22 assessments
-
 
 ---
 
@@ -2160,14 +2056,12 @@ Phase 8: Migration to Segmented Network (For Existing Flat Networks)
 - Access to network documentation (topology diagrams, IPAM)
 - Cloud platform administrative access (if implementing cloud segmentation)
 
-
 ## Required Tools
 
 **Network Management**:
 
 - Network device CLI access (SSH)
 - Configuration management tools (Ansible, Terraform, vendor-specific tools)
-
 
 **IPAM (IP Address Management)**:
 
@@ -2176,13 +2070,11 @@ Phase 8: Migration to Segmented Network (For Existing Flat Networks)
 - Infoblox (commercial IPAM)
 - Excel/spreadsheets (for small networks)
 
-
 **Firewall Management**:
 
 - Firewall vendor management interfaces (Panorama for Palo Alto, FortiManager for Fortinet, etc.)
 - Firewall policy analysis tools (AlgoSec, Tufin, FireMon)
 - Open-source tools (Capirca for multi-vendor firewall rule generation)
-
 
 **Cloud Tools**:
 
@@ -2191,14 +2083,12 @@ Phase 8: Migration to Segmented Network (For Existing Flat Networks)
 - GCP SDK / gcloud (for GCP VPC)
 - Terraform (infrastructure-as-code for multi-cloud)
 
-
 **Testing Tools**:
 
 - nmap (port scanning, connectivity testing)
 - tcpdump / Wireshark (packet capture, traffic analysis)
 - telnet / nc (netcat - connectivity testing)
 - hping3 (packet crafting for testing ACLs)
-
 
 ## Required Skills and Knowledge
 
@@ -2208,7 +2098,6 @@ Phase 8: Migration to Segmented Network (For Existing Flat Networks)
 - ACL syntax (router/switch-specific)
 - Cloud networking concepts (VPC, security groups, NSGs)
 - Network security principles (defense in depth, least privilege)
-
 
 ---
 
@@ -2226,14 +2115,12 @@ Phase 8: Migration to Segmented Network (For Existing Flat Networks)
 
    - Servers, workstations, IoT devices, network devices, cloud resources
 
-
 2. **Classify assets by data sensitivity** (align with data classification policy):
 
    - Public data (can be exposed externally)
    - Internal data (internal use only)
    - Confidential data (restricted access)
    - Restricted data (highly sensitive, regulatory requirements)
-
 
 3. **Classify assets by function**:
 
@@ -2244,7 +2131,6 @@ Phase 8: Migration to Segmented Network (For Existing Flat Networks)
    - Guest systems (guest Wi-Fi, visitor workstations)
    - Development/test systems (non-production environments)
    - IoT/OT (operational technology, industrial control systems)
-
 
 ### Define Security Zones
 
@@ -2269,7 +2155,6 @@ Phase 8: Migration to Segmented Network (For Existing Flat Networks)
 - **Data classification alignment**: Zones map to data classification (e.g., restricted data → management zone)
 - **Functional separation**: Similar functions grouped together (all web servers in DMZ)
 - **Regulatory compliance**: Isolate regulated data (PCI DSS → payment card zone, HIPAA → healthcare zone)
-
 
 **Example Zone Architecture** (for mid-size organization):
 
@@ -2301,7 +2186,6 @@ Guest (Untrusted) - Guest Wi-Fi
    - What services in Internal need to access Management? (e.g., servers → backup server)
    - What services need Internet access? (e.g., servers → software updates)
 
-
 2. **Create traffic flow matrix** (allow/deny matrix):
 
 Example matrix:
@@ -2322,13 +2206,11 @@ Example matrix:
 - **DENY**: Traffic explicitly blocked
 - **-**: Intra-zone traffic (typically allowed, but may have micro-segmentation)
 
-
 3. **Document justification for each ALLOW rule**:
 
    - **Business justification**: Why is this traffic needed?
    - **Technical justification**: What protocols/ports are required?
    - **Risk assessment**: What risks does this access introduce? How are they mitigated?
-
 
 Example:
 ```
@@ -2350,7 +2232,6 @@ Risk: Database compromise from DMZ. Mitigation: DB access limited to web server 
    - Trust boundaries and firewalls
    - Traffic flows between zones
 
-
 2. **Zone Definition Document**:
 
    - Zone name, purpose, trust level
@@ -2358,20 +2239,17 @@ Risk: Database compromise from DMZ. Mitigation: DB access limited to web server 
    - Data classification of data in zone
    - Zone owner (responsible team)
 
-
 3. **Inter-Zone Traffic Policy**:
 
    - Traffic flow matrix (allow/deny)
    - Detailed justification for each allow rule
    - Protocols/ports required for each allow rule
 
-
 4. **IP Address Allocation** (IPAM):
 
    - Subnet allocations per zone
    - VLAN-to-subnet mapping
    - IP address ranges
-
 
 **Template**: See Annex A for Zone Definition Template
 
@@ -2390,7 +2268,6 @@ Risk: Database compromise from DMZ. Mitigation: DB access limited to web server 
 - **CIDR notation**: Use CIDR (Classless Inter-Domain Routing) for efficient allocation
 - **Contiguous allocation**: Keep related subnets contiguous for summarization
 - **Growth planning**: Leave room for future expansion
-
 
 **Example IP Allocation** (for mid-size organization):
 
@@ -2424,7 +2301,6 @@ Risk: Database compromise from DMZ. Mitigation: DB access limited to web server 
 - /22 = 1024 IPs (1022 usable)
 - /21 = 2048 IPs (2046 usable)
 
-
 **CIDR Calculator**: Use online tools (e.g., subnet-calculator.com) or ipcalc command:
 ```bash
 # Calculate subnet details
@@ -2455,7 +2331,6 @@ ipcalc 10.1.20.0/24
 
    - Choose appropriate subnet size (/24, /23, /22, etc.)
    - Document subnet allocation in IPAM
-
 
 **Example Subnet Allocation**:
 
@@ -2501,7 +2376,6 @@ ipcalc 10.1.20.0/24
 - **Broadcast domain reduction**: Limits broadcast traffic to VLAN boundaries
 - **Flexibility**: Devices in different physical locations can be in same VLAN
 
-
 **VLAN Numbering**:
 
 - **1**: Default VLAN (do NOT use for production traffic)
@@ -2509,12 +2383,10 @@ ipcalc 10.1.20.0/24
 - **1006-4094**: Extended range VLANs (requires VTP transparent or off)
 - **Reserved**: 1002-1005 (legacy token ring, FDDI)
 
-
 **VLAN Naming Convention**:
 
 - Use descriptive names: `VLAN10-DMZ`, `VLAN20-Servers`, `VLAN30-Workstations`
 - Include function and/or subnet: `VLAN10-DMZ-10.1.10.0`
-
 
 ### Create VLANs on Switches
 
@@ -2825,7 +2697,6 @@ Justification: Security best practice - default deny policy.
   - Last review date
   - Next review date (rules reviewed annually)
 
-
 ### Firewall Configuration Examples
 
 **Cisco ASA Firewall Example**:
@@ -2903,12 +2774,10 @@ logging host inside 10.1.40.10
 - **Switch-based filtering**: Control traffic between VLANs (if not using dedicated firewall)
 - **Defense in depth**: Additional layer beyond firewall rules
 
-
 **ACL Types**:
 
 - **Standard ACLs**: Filter based on source IP only (numbered 1-99, 1300-1999)
 - **Extended ACLs**: Filter based on source IP, dest IP, protocol, port (numbered 100-199, 2000-2699)
-
 
 ### Standard ACL Example
 
@@ -2967,7 +2836,6 @@ Extended IP access list INTERNAL-TO-DMZ
 - **Implicit deny**: ACLs have implicit `deny any` at end (explicit deny with log is better)
 - **Testing**: Test ACLs in lab before production deployment
 
-
 ---
 
 ## Phase 6: Cloud Network Segmentation
@@ -2983,7 +2851,6 @@ Extended IP access list INTERNAL-TO-DMZ
 - **Security Groups**: Instance-level firewall (stateful)
 - **Network ACLs (NACLs)**: Subnet-level firewall (stateless)
 - **Route Tables**: Control traffic routing between subnets
-
 
 **Example VPC Architecture**:
 
@@ -3099,7 +2966,6 @@ resource "aws_security_group" "web" {
 - **Network Security Groups (NSGs)**: Firewall rules (can apply to subnet or NIC)
 - **Application Security Groups (ASGs)**: Group instances for easier rule management
 
-
 **Azure CLI Example**:
 
 ```bash
@@ -3131,7 +2997,6 @@ az network vnet subnet update --name DMZ-Subnet --resource-group Prod-RG --vnet-
 - **VPC Network**: Global (not regional)
 - **Subnets**: Regional (e.g., 10.300.10.0/24 in us-east1)
 - **Firewall Rules**: Applied to VPC (tag-based or IP-based)
-
 
 **GCP CLI Example**:
 
@@ -3217,7 +3082,6 @@ mysql -h 10.1.20.50 -u user -p
    - Check firewall logs for denied connection attempts
    - Alert security team if unexpected denials occur (may indicate attack)
 
-
 ### VLAN Hopping Prevention Testing
 
 **VLAN Hopping Attacks**:
@@ -3225,13 +3089,11 @@ mysql -h 10.1.20.50 -u user -p
 - **Double Tagging**: Attacker sends double-tagged 802.1Q frame to access other VLANs
 - **Switch Spoofing**: Attacker negotiates trunk with switch (via DTP) to access all VLANs
 
-
 **Prevention Measures** (implemented in Phase 3):
 
 - Change native VLAN to unused VLAN (not VLAN 1)
 - Disable DTP (`switchport nonegotiate`)
 - Explicitly allow VLANs on trunk ports
-
 
 **Testing**:
 
@@ -3278,7 +3140,6 @@ tcpdump -r dmz-internal.pcap -n
    - All captured traffic should match ALLOW rules
    - No traffic should match DENY rules (would be dropped before capture)
 
-
 ---
 
 ## Phase 8: Migration to Segmented Network
@@ -3295,20 +3156,17 @@ tcpdump -r dmz-internal.pcap -n
    - Any existing VLANs?
    - Any existing firewall rules?
 
-
 2. **Identify flat networks** (no segmentation):
 
    - All devices in single subnet (e.g., 192.168.1.0/24)
    - No VLANs or all devices in default VLAN (VLAN 1)
    - No firewall rules (or overly permissive rules)
 
-
 3. **Risk assessment**:
 
    - High-value assets in flat network? (servers, databases)
    - Regulatory data in flat network? (PII, PCI, PHI)
    - External exposure risk? (internet-facing systems in same flat network as internal)
-
 
 ### Develop Phased Migration Plan
 
@@ -3319,24 +3177,20 @@ tcpdump -r dmz-internal.pcap -n
 - Segment critical servers (databases, domain controllers, financial systems)
 - Create Management zone and move management systems (monitoring, backup)
 
-
 **Phase 2: External-Facing Assets**
 
 - Create DMZ zone and move internet-facing systems (web servers, mail relays)
 - Implement strict firewall rules between DMZ and Internal
-
 
 **Phase 3: User Workstations**
 
 - Create Internal zone and segment workstations
 - Implement firewall rules for workstation access
 
-
 **Phase 4: Specialized Zones**
 
 - Create Guest, Development, IoT/OT zones as needed
 - Migrate respective assets
-
 
 **Phase 5: Finalize and Harden**
 
@@ -3344,7 +3198,6 @@ tcpdump -r dmz-internal.pcap -n
 - Remove overly permissive rules
 - Implement default deny policy
 - Conduct penetration testing
-
 
 ### Migration Execution
 
@@ -3358,7 +3211,6 @@ tcpdump -r dmz-internal.pcap -n
    - Test firewall rules in staging environment
    - Schedule migration window (off-hours, low-usage period)
 
-
 2. **Migration**:
 
    - Change switchport VLAN assignment (move device to new VLAN)
@@ -3367,7 +3219,6 @@ tcpdump -r dmz-internal.pcap -n
    - Deploy firewall rules
    - Test connectivity (verify device can access required resources)
 
-
 3. **Post-migration**:
 
    - Verify device connectivity (ping, application testing)
@@ -3375,18 +3226,15 @@ tcpdump -r dmz-internal.pcap -n
    - Document migration completion
    - Adjust firewall rules if needed (based on legitimate traffic denied)
 
-
 **Example Migration** (moving database server from flat network to Internal zone):
 
 **Before**:
 
 - Server: `db-server-01`, IP: `192.168.1.50`, VLAN: 1 (default), Subnet: 192.168.1.0/24
 
-
 **After**:
 
 - Server: `db-server-01`, IP: `10.1.20.50`, VLAN: 20 (Servers), Subnet: 10.1.20.0/24
-
 
 **Migration Steps**:
 
@@ -3450,7 +3298,6 @@ module "network_segmentation" {
 - Version control for network configs (Git)
 - Repeatable deployments (dev, staging, prod environments)
 - Automated testing (terraform plan before apply)
-
 
 ## Configuration Management (Ansible)
 
@@ -3545,14 +3392,12 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 - IPAM data informs subnet design
 - Device inventory informs zone assignment
 
-
 ## Device Hardening (ISMS-IMP-A.8.20-21-22-S3)
 
 **Integration**: Segmentation devices (switches, routers, firewalls) must be hardened.
 
 - Hardening baselines include segmentation security (VLAN security, ACLs)
 - Configuration management ensures segmentation configs are maintained
-
 
 ## Network Security Testing (ISMS-IMP-A.8.20-21-22-S6)
 
@@ -3562,7 +3407,6 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 - Penetration testing simulates lateral movement
 - Segmentation testing (Phase 7) is part of overall security testing process
 
-
 ## Logging and Monitoring (A.8.15, A.8.16)
 
 **Integration**: Firewall logs and network traffic monitoring detect segmentation violations.
@@ -3570,7 +3414,6 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 - Firewall logs capture denied traffic (attempted segmentation violations)
 - SIEM alerts on suspicious inter-zone traffic
 - Network traffic analysis (NetFlow/sFlow) monitors traffic patterns
-
 
 ---
 
@@ -3595,7 +3438,6 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 - [ ] Firewall rule documentation complete (justifications, approvals)
 - [ ] Configuration backups completed (switches, routers, firewalls)
 
-
 ## Validation Procedures
 
 **Post-Implementation Validation**:
@@ -3617,48 +3459,40 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 - **Problem**: Too many zones, overly granular segmentation → difficult to manage
 - **Solution**: Start with high-level zones (DMZ, Internal, Management); add more zones as needed
 
-
 **Mistake 2: Firewall Rule Explosion**
 
 - **Problem**: Too many firewall rules → difficult to manage, performance impact
 - **Solution**: Use network objects, service groups, rule consolidation
-
 
 **Mistake 3: Undocumented Firewall Rules**
 
 - **Problem**: "What does this rule do? Why is it here?" → cannot remove obsolete rules
 - **Solution**: Mandatory rule documentation (justification, owner, approval)
 
-
 **Mistake 4: No Default Deny**
 
 - **Problem**: Implicit allow-all → segmentation ineffective
 - **Solution**: Always implement default deny rule (explicit deny-all at end of ruleset)
-
 
 **Mistake 5: Not Testing Segmentation**
 
 - **Problem**: Assume segmentation works → actually has gaps
 - **Solution**: Regular segmentation effectiveness testing (penetration testing, lateral movement simulation)
 
-
 **Mistake 6: Flat Network in Cloud**
 
 - **Problem**: All cloud resources in single VPC/VNet with no security groups → flat network
 - **Solution**: Implement cloud segmentation (security groups, NACLs, VPC design)
-
 
 **Mistake 7: Forgetting Management Traffic**
 
 - **Problem**: Segmentation blocks legitimate management traffic (monitoring, backups, patching)
 - **Solution**: Design Management zone with appropriate access rules
 
-
 **Mistake 8: No Segmentation for Development/Test**
 
 - **Problem**: Development systems in production network → lateral movement risk
 - **Solution**: Separate Development zone, isolated from production
-
 
 ## Troubleshooting Guide
 
@@ -3673,7 +3507,6 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
   - Test rule before deploying to production
   - Document rule justification
 
-
 **Issue 2: Firewall Performance Degradation**
 
 - **Symptoms**: Network slow after implementing firewall rules
@@ -3686,7 +3519,6 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
   - Upgrade firewall hardware/software (if needed)
   - Implement rule cleanup (remove obsolete rules)
 
-
 **Issue 3: VLAN Hopping Successful**
 
 - **Symptoms**: Attacker can access other VLANs from compromised device
@@ -3698,7 +3530,6 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
   - Disable DTP (`switchport nonegotiate`)
   - Re-test VLAN hopping (should now fail)
 
-
 **Issue 4: Segmentation Testing Finds Gaps**
 
 - **Symptoms**: Penetration testing reveals lateral movement is still possible
@@ -3709,7 +3540,6 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
   - Tighten firewall rules (remove broad allow rules)
   - Implement additional ACLs
   - Re-test segmentation (should now block lateral movement)
-
 
 ---
 
@@ -3726,13 +3556,11 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
    - Data classification of data in zone
    - Zone owner
 
-
 2. **Network Segmentation Diagram**:
 
    - Visual representation of zones
    - Trust boundaries and firewalls
    - Traffic flows between zones
-
 
 3. **Inter-Zone Traffic Policy**:
 
@@ -3740,13 +3568,11 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
    - Detailed justification for each allow rule
    - Protocols/ports required
 
-
 4. **IP Address Management (IPAM) Documentation**:
 
    - Subnet allocations per zone
    - VLAN-to-subnet mapping
    - IP address ranges
-
 
 5. **Firewall Rule Inventory**:
 
@@ -3754,13 +3580,11 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
    - Rule ID, source, destination, protocol/port, action
    - Business justification, rule owner, approval date
 
-
 6. **VLAN Configuration Documentation**:
 
    - VLAN list (ID, name, purpose)
    - Switchport configurations
    - Trunk configurations
-
 
 ## Change Management Documentation
 
@@ -3773,7 +3597,6 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 - Implementation log (what was done, when, by whom)
 - Post-implementation validation (was change successful?)
 
-
 ## Documentation Storage
 
 **Centralized Documentation Repository**:
@@ -3781,7 +3604,6 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 - SharePoint, Confluence, or similar documentation platform
 - Version control (track changes over time)
 - Access control (restrict access to authorized personnel)
-
 
 ---
 
@@ -3795,13 +3617,11 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 - Review security zones (do they still align with business needs?)
 - Review IPAM (is IP allocation still appropriate?)
 
-
 **Annual Review**:
 
 - Full segmentation architecture review
 - Penetration testing to validate segmentation effectiveness
 - Update documentation (reflect current state)
-
 
 ## Metrics to Track
 
@@ -3812,7 +3632,6 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 - **Denied Traffic**: Count of denied firewall events (high count may indicate legitimate traffic being blocked)
 - **Segmentation Testing**: Date of last segmentation effectiveness test (goal: annual minimum)
 
-
 ## Lessons Learned
 
 **After Each Segmentation Project**:
@@ -3820,7 +3639,6 @@ aclgen --definitions=definitions.yaml --policy=dmz_to_internal.pol --output=ipta
 - Document lessons learned (what went well, what didn't)
 - Update segmentation procedures based on lessons learned
 - Share knowledge with team (training, documentation updates)
-
 
 ---
 
@@ -3841,19 +3659,16 @@ Assets in Zone:
 - [List of assets, e.g., web-server-01, web-server-02]
 - [Asset types: servers, workstations, network devices, etc.]
 
-
 Data Classification:
 
 - Primary: [Public, Internal, Confidential, Restricted]
 - Secondary: [If zone contains mixed classifications]
-
 
 Network Details:
 
 - VLAN ID: [VLAN number]
 - Subnet: [IP subnet in CIDR notation]
 - Default Gateway: [Gateway IP address]
-
 
 Inter-Zone Traffic Policies:
 
@@ -3862,12 +3677,10 @@ Inter-Zone Traffic Policies:
 - Allowed Outbound: [Zones that this zone can send traffic to]
   - [Zone Name]: [Protocols/ports allowed]
 
-
 Zone Owner:
 
 - Business Owner: [Name, title]
 - Technical Owner: [Name, title]
-
 
 Last Review Date: [Date]
 Next Review Date: [Date + 12 months]
@@ -3892,25 +3705,21 @@ Traffic Details:
 - Destination Port: [Port number/range]
 - Action: [Allow, Deny]
 
-
 Logging:
 
 - Logging Enabled: [Yes/No]
 - Log Level: [Informational, Warning, etc.]
-
 
 Schedule:
 
 - Always Active: [Yes/No]
 - Time-Based: [If applicable, specify schedule]
 
-
 Justification:
 
 - Business Justification: [Why is this rule needed?]
 - Technical Justification: [What traffic does this enable?]
 - Risk Assessment: [What risks does this introduce? How mitigated?]
-
 
 Ownership and Approval:
 
@@ -3919,12 +3728,10 @@ Ownership and Approval:
 - Approved By: [Name, title]
 - Approval Date: [Date]
 
-
 Review Cycle:
 
 - Last Review Date: [Date]
 - Next Review Date: [Date + 12 months]
-
 
 Status:
 
@@ -3948,13 +3755,11 @@ Test Scope: [Zones tested]
    - [ ] Test denied traffic (verify unauthorized traffic blocked)
    - [ ] Review firewall logs (verify denials logged)
 
-
 2. Lateral Movement Simulation
 
    - [ ] Simulate compromised workstation (attempt to access other zones)
    - [ ] Verify segmentation blocks lateral movement
    - [ ] Document findings
-
 
 3. VLAN Hopping Prevention
 
@@ -3963,13 +3768,11 @@ Test Scope: [Zones tested]
    - [ ] Verify native VLAN != VLAN 1
    - [ ] Verify DTP disabled on all ports
 
-
 4. Packet Capture Verification
 
    - [ ] Capture traffic at zone boundaries
    - [ ] Analyze traffic (verify only authorized traffic flows)
    - [ ] Document findings
-
 
 5. Configuration Audit
 
@@ -3977,20 +3780,17 @@ Test Scope: [Zones tested]
    - [ ] Verify VLAN configs match documentation
    - [ ] Verify no configuration drift
 
-
 6. Documentation Review
 
    - [ ] Verify segmentation architecture documentation up-to-date
    - [ ] Verify firewall rule documentation up-to-date
    - [ ] Verify IPAM documentation up-to-date
 
-
 Test Results:
 
 - Pass/Fail: [Overall result]
 - Gaps Identified: [List any gaps found]
 - Remediation Plan: [How to address gaps]
-
 
 Next Test Date: [Date + 12 months]
 ```

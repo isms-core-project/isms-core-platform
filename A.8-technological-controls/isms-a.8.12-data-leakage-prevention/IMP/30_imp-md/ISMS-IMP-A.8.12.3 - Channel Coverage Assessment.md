@@ -63,7 +63,6 @@ This assessment evaluates [Organization]'s **DLP channel coverage completeness**
 - **EU GDPR (Art. 32):** Technical measures must be appropriate to the risk (gaps = inadequate measures)
 - **Industry Standards:** PCI DSS (Req. 4), HIPAA (§164.312), SOC 2 all require comprehensive data egress protection
 
-
 **Business Impact:**
 
 - **Data Exfiltration Bypasses:** 80% of insider data theft uses unprotected channels (USB, personal cloud, mobile)
@@ -71,14 +70,12 @@ This assessment evaluates [Organization]'s **DLP channel coverage completeness**
 - **ROI on DLP:** DLP investment wasted if attackers/insiders can simply use unprotected channels
 - **Shadow IT Risk:** Unmanaged cloud services, mobile apps, personal devices create coverage gaps
 
-
 **Why Channel Coverage Assessment Matters:**
 
 - **Gap Identification:** Which channels lack DLP protection? (USB blocked but Bluetooth open = gap)
 - **Policy Effectiveness:** Is DLP deployed but not actually blocking sensitive data? (monitor-only mode)
 - **Bypass Testing:** Can users/attackers circumvent DLP using alternative channels?
 - **Integration Validation:** Are DLP policies consistent across channels or fragmented?
-
 
 ## Who Should Complete This Assessment
 
@@ -93,7 +90,6 @@ This assessment evaluates [Organization]'s **DLP channel coverage completeness**
 - Cloud application portfolio (sanctioned SaaS, shadow IT)
 - Mobile device management (MDM) policies and coverage
 
-
 **Support Roles:**
 
 - **Network Engineers:** Network-level DLP, firewall rules, proxy configurations, cloud gateways
@@ -103,7 +99,6 @@ This assessment evaluates [Organization]'s **DLP channel coverage completeness**
 - **Mobile Device Management:** MDM policies, BYOD enrollment, mobile DLP apps
 - **Application Owners:** Database export restrictions, API rate limits, bulk download controls
 - **SOC Analysts:** DLP alert monitoring, bypass attempt detection, incident response
-
 
 ## Time Estimate
 
@@ -118,14 +113,12 @@ This assessment evaluates [Organization]'s **DLP channel coverage completeness**
 - **Evidence Collection:** 30-60 minutes (screenshots, test results, configuration exports)
 - **Quality Review:** 30 minutes (self-check using Section 7 quality checklist)
 
-
 **Pro Tip:** For organizations with >500 employees or complex multi-site deployments, consider splitting by channel:
 
 - Day 1: Email + Web channels (Network/Email admins)
 - Day 2: Endpoint + Mobile channels (Endpoint/MDM teams)
 - Day 3: Network + Cloud + Application channels (Cloud/Network/App teams)
 - Day 4: Consolidation, bypass testing, gap analysis (DLP admin)
-
 
 ## Connection to Policy
 
@@ -139,7 +132,6 @@ This assessment implements **ISMS-POL-A.8.12 (Data Leakage Prevention Policy)** 
 - **Section 3.2 - Assessment & Verification:** Quarterly channel coverage review, bypass testing
 - **Section 4.2 - Implementation Resources:** Structured assessment workbooks
 
-
 **Policy Authority:** Chief Information Security Officer (CISO)  
 **Compliance Status:** Mandatory for all data egress channels
 
@@ -149,7 +141,6 @@ This assessment implements **ISMS-POL-A.8.12 (Data Leakage Prevention Policy)** 
 - **A.8.12.2 (Data Classification):** Defines WHAT data to protect → THIS assessment verifies ALL CHANNELS are protected
 - **A.8.12.4 (Monitoring & Response):** Assesses alerting → THIS assessment ensures channels generate alerts when data leaked
 - **A.8.12.5 (Compliance Dashboard):** Consolidates all assessments → THIS provides channel coverage metrics
-
 
 ## Critical: Coverage Gap = Bypass Risk
 
@@ -176,14 +167,12 @@ Organizations often deploy DLP on "obvious" channels (email, web) but miss "alte
 - DLP completely bypassed, no alert generated
 - Post-incident: "We had DLP, how did this happen?" → Coverage gap
 
-
 **Attacker/Insider Behavior:**
 
 - **Path of least resistance:** Will use whichever channel is unprotected
 - **Reconnaissance:** Test each channel to find gaps (send test file via email, web, USB, etc.)
 - **Adaptation:** If email blocked, try web; if web blocked, try USB; if USB blocked, try mobile
 - **Obfuscation:** Rename file extensions, encrypt, split into parts to evade detection
-
 
 **What This Means for Assessment:**
 1. **Complete channel inventory required** - Can't protect what you don't know exists
@@ -206,7 +195,6 @@ Organizations often deploy DLP on "obvious" channels (email, web) but miss "alte
 - [ ] Proxy/web gateway configurations (which URLs/categories allowed)
 - [ ] VPN configurations (split tunnel vs. full tunnel, DLP enforcement on VPN)
 
-
 **System Access:**
 
 - [ ] DLP management consoles (all DLP products deployed)
@@ -218,7 +206,6 @@ Organizations often deploy DLP on "obvious" channels (email, web) but miss "alte
 - [ ] Cloud application admin portals (M365, Google Workspace, Salesforce DLP settings)
 - [ ] Database/application consoles (export restrictions, API rate limits)
 
-
 **Policy Documentation:**
 
 - [ ] Acceptable Use Policy (what channels users allowed to use)
@@ -227,13 +214,11 @@ Organizations often deploy DLP on "obvious" channels (email, web) but miss "alte
 - [ ] Cloud Application Policy (sanctioned vs. unsanctioned SaaS)
 - [ ] Data Handling Procedures (how users supposed to transfer sensitive data)
 
-
 **Testing Environment/Capability:**
 
 - [ ] Test user accounts (to simulate data exfiltration attempts)
 - [ ] Test data files (with DLP patterns, various file formats)
 - [ ] Access to all channels for bypass testing (email, web, USB, mobile, etc.)
-
 
 ## Knowledge Required
 
@@ -244,7 +229,6 @@ Organizations often deploy DLP on "obvious" channels (email, web) but miss "alte
 - Difference between monitor mode and blocking mode (monitoring = data still leaked, just logged)
 - How users actually work (what channels they use daily for legitimate work)
 
-
 **Technical Skills:**
 
 - Ability to test DLP across multiple channels (send email, upload to web, copy to USB)
@@ -252,13 +236,11 @@ Organizations often deploy DLP on "obvious" channels (email, web) but miss "alte
 - Understand network protocols and traffic flows
 - Basic scripting for API testing (if assessing application channel DLP)
 
-
 **NOT Required:**
 
 - DLP rule development (covered in A.8.12.2 Data Classification)
 - Deep packet inspection expertise
 - Advanced evasion technique knowledge (but helpful)
-
 
 ## Tools Needed
 
@@ -270,19 +252,16 @@ Organizations often deploy DLP on "obvious" channels (email, web) but miss "alte
 - **Mobile device:** Personal phone (for mobile channel testing)
 - **Email account:** Personal email (for email channel testing)
 
-
 **Monitoring Tools:**
 
 - **DLP console access:** To verify alerts generated during testing
 - **SIEM access:** To verify DLP logs flowing correctly
 - **Network packet capture:** Optional, for deep traffic analysis
 
-
 **Documentation Tools:**
 
 - **Screenshot capability:** To capture test results (DLP blocks, user notifications)
 - **Screen recording:** For documenting bypass testing methodology
-
 
 ## Estimated Time Commitment
 
@@ -293,14 +272,12 @@ Organizations often deploy DLP on "obvious" channels (email, web) but miss "alte
 - Identify sanctioned vs. unsanctioned channels (shadow IT)
 - Review firewall/proxy logs to discover unknown channels
 
-
 **Phase 2: DLP Deployment Verification (2-3 hours)**
 
 - For each channel: verify DLP deployed (Yes/No/Partial)
 - Review DLP policy configuration (blocking vs. monitoring)
 - Check coverage scope (all users or subset?)
 - Verify integration with upstream security (firewall allows DLP traffic)
-
 
 **Phase 3: Bypass Testing (1-2 hours)**
 
@@ -313,7 +290,6 @@ Organizations often deploy DLP on "obvious" channels (email, web) but miss "alte
 - **Application:** Export data via application API or bulk download
 - Document: Was DLP triggered? Was data blocked or just logged?
 
-
 **Phase 4: Policy Effectiveness Review (1-2 hours)**
 
 - For channels with DLP: test detection accuracy (false positives/negatives)
@@ -321,14 +297,12 @@ Organizations often deploy DLP on "obvious" channels (email, web) but miss "alte
 - Interview users: Are DLP policies too restrictive (blocking legitimate work)?
 - Check exception processes: How many exceptions granted? Are they justified?
 
-
 **Phase 5: Assessment Completion (1 hour)**
 
 - Complete all 7 channel sheets in workbook
 - Document gaps (unprotected channels, monitor-only channels)
 - Create remediation plans (priority: Critical gaps first)
 - Collect evidence, populate Evidence Register
-
 
 **Total:** 6-8 hours for comprehensive channel coverage assessment
 
@@ -524,7 +498,6 @@ Organizations often deploy DLP on "obvious" channels (email, web) but miss "alte
    - **Medium:** Incomplete coverage (e.g., 80% of users protected, 20% gap)
    - **Low:** Documentation gaps, policy improvements
 
-
 **STEP 11: Bypass Testing Summary (30 minutes)**
 1. Navigate to Bypass_Testing sheet
 2. Document all bypass tests performed:
@@ -540,7 +513,6 @@ Organizations often deploy DLP on "obvious" channels (email, web) but miss "alte
    - **Critical gap** - Escalate immediately to CISO
    - Create remediation plan
    - Retest after remediation
-
 
 **STEP 12: Evidence Register & Final Review (15 minutes)**
 1. Navigate to Evidence_Register sheet
@@ -571,7 +543,6 @@ Organizations often deploy DLP on "obvious" channels (email, web) but miss "alte
 - **Include shadow IT:** Unsanctioned channels users actually use (personal Dropbox, WhatsApp, Telegram)
 - **Don't assume:** Just because something is blocked by policy doesn't mean users aren't using it (verify with logs)
 
-
 **Field Guidance:**
 
 | Field | How to Complete | Examples | Where to Find |
@@ -595,20 +566,17 @@ Organizations often deploy DLP on "obvious" channels (email, web) but miss "alte
 - DLP coverage for all channels with Restricted/Confidential data
 - Shadow IT channels identified and either blocked or brought under management
 
-
 **⚠️ Partial:**
 
 - Channel inventory incomplete (some channels missing)
 - Shadow IT channels known but not yet remediated
 - DLP coverage gaps documented with remediation plans
 
-
 **❌ Non-Compliant:**
 
 - No systematic channel inventory
 - Unknown shadow IT channels (discovered during assessment)
 - Multiple channels with Restricted data completely unprotected
-
 
 **Compliance Checklist:**
 
@@ -618,13 +586,11 @@ Organizations often deploy DLP on "obvious" channels (email, web) but miss "alte
 - [ ] **Data sensitivity verified** (what classification levels flow through each channel)
 - [ ] **Business criticality assessed** (impact if channel blocked for DLP compliance)
 
-
 **Evidence Examples:**
 
 - Network topology diagram: `EV-1-Inventory-20260121-Network-Topology.pdf`
 - Application inventory: `EV-1-Inventory-20260121-Application-Portfolio.xlsx`
 - Shadow IT discovery report (from CASB): `EV-1-Inventory-20260121-Shadow-IT-CASB-Discovery.pdf`
-
 
 ---
 
@@ -642,7 +608,6 @@ Email is historically the #1 data leakage channel, but coverage alone is insuffi
 - Restricted data: Blocking mode (prevent send)
 - Confidential data: Blocking or encryption required
 - Internal data: Monitoring acceptable
-
 
 **Field Guidance:**
 
@@ -671,7 +636,6 @@ Email is historically the #1 data leakage channel, but coverage alone is insuffi
 - Bypass paths closed (webmail blocked by web DLP)
 - Testing confirms: Sensitive data send blocked, user notified, alert generated
 
-
 **⚠️ Partial:**
 
 - Email DLP deployed but monitor-only (data still sent, just logged)
@@ -680,13 +644,11 @@ Email is historically the #1 data leakage channel, but coverage alone is insuffi
 - Webmail not blocked (bypass via Gmail)
 - Attachment size limits (large files bypass DLP)
 
-
 **❌ Non-Compliant:**
 
 - No email DLP deployed
 - Email DLP deployed but disabled or ineffective
 - Testing shows: Sensitive data sent successfully with no alert
-
 
 **Compliance Checklist:**
 
@@ -697,7 +659,6 @@ Email is historically the #1 data leakage channel, but coverage alone is insuffi
 - [ ] **100% user coverage** (no VIP exemptions without risk acceptance)
 - [ ] **Webmail blocked** (personal Gmail, Yahoo, Outlook.com via web browser)
 - [ ] **Testing passed:** Send test email with fake SSN → Blocked, user notified, alert logged
-
 
 **Common Pitfalls:**
 
@@ -714,7 +675,6 @@ Email is historically the #1 data leakage channel, but coverage alone is insuffi
 - Email DLP policy screenshot: `EV-2-Email-20260121-DLP-Policy-Config.png`
 - Test email block notification: `EV-2-Email-20260121-Test-SSN-Block-UserNotification.png`
 - Email DLP logs (last 30 days): `EV-2-Email-20260121-DLP-Logs-Summary.xlsx`
-
 
 ---
 
@@ -739,7 +699,6 @@ EV-[Domain]-[Channel]-[Date]-[Description].[ext]
 - 8 = Application Channel
 - 9 = Bypass Testing
 
-
 **Examples:**
 
 - `EV-1-Inventory-20260121-Network-Topology.pdf`
@@ -747,7 +706,6 @@ EV-[Domain]-[Channel]-[Date]-[Description].[ext]
 - `EV-3-Web-20260121-CASB-Dashboard.png`
 - `EV-4-Endpoint-20260121-USB-Block-Test.png`
 - `EV-9-Bypass-20260121-Email-to-USB-Test-Results.xlsx`
-
 
 **Storage:** `ISMS/Controls/A.8.12_DLP/Assessments/Channel_Coverage/Evidence/`  
 **Retention:** 2-3 years  
@@ -761,7 +719,6 @@ EV-[Domain]-[Channel]-[Date]-[Description].[ext]
 - Application inventory (all systems processing sensitive data)
 - Shadow IT discovery report (CASB or proxy log analysis)
 
-
 **2. Email Channel:**
 
 - Email DLP policy configuration screenshot
@@ -769,14 +726,12 @@ EV-[Domain]-[Channel]-[Date]-[Description].[ext]
 - Email DLP logs (last 30 days summary)
 - Encrypted email handling documentation
 
-
 **3. Web Channel:**
 
 - Web proxy/CASB dashboard screenshot
 - SSL inspection configuration
 - Personal cloud storage blocking rules
 - Test web upload block screenshot
-
 
 **4. Endpoint Channel:**
 
@@ -786,13 +741,11 @@ EV-[Domain]-[Channel]-[Date]-[Description].[ext]
 - Print management configuration
 - Endpoint agent deployment coverage report
 
-
 **5. Network Channel:**
 
 - Firewall rules (FTP, SMB outbound blocking)
 - Network DLP logs (if network DLP deployed)
 - Database direct access blocking evidence
-
 
 **6. Cloud Channel:**
 
@@ -801,7 +754,6 @@ EV-[Domain]-[Channel]-[Date]-[Description].[ext]
 - OAuth application review process
 - API rate limit configuration
 
-
 **7. Mobile Channel:**
 
 - MDM policy documentation
@@ -809,13 +761,11 @@ EV-[Domain]-[Channel]-[Date]-[Description].[ext]
 - BYOD enrollment rate report
 - Mobile app management (MAM) policies
 
-
 **8. Application Channel:**
 
 - Database export restriction configuration
 - API rate limit settings
 - Reporting tool output control documentation
-
 
 **9. Bypass Testing:**
 
@@ -823,7 +773,6 @@ EV-[Domain]-[Channel]-[Date]-[Description].[ext]
 - Screenshots of successful/failed bypasses
 - DLP alert logs from testing
 - Retest results after remediation
-
 
 **Minimum Evidence:** 2 items per channel × 7 channels + inventory = **15 items minimum**
 
@@ -841,7 +790,6 @@ EV-[Domain]-[Channel]-[Date]-[Description].[ext]
 - Unprotected: USB (15%), Mobile (10%), Cloud apps (10%), Print (5%)
 - Result: 40% of data leakage paths completely open
 
-
 **Solution:**
 1. Complete channel inventory (all 7 categories)
 2. Deploy DLP across ALL high-risk channels
@@ -858,12 +806,10 @@ EV-[Domain]-[Channel]-[Date]-[Description].[ext]
 - Internal data classification (low sensitivity)
 - Channels with very high false positive rate (requires more tuning)
 
-
 **When Blocking Required:**
 
 - Restricted data on any channel
 - Confidential data on high-risk channels (email external, web upload, USB)
-
 
 **Solution:**
 
@@ -871,7 +817,6 @@ EV-[Domain]-[Channel]-[Date]-[Description].[ext]
 - Change Restricted/Confidential to blocking
 - Keep Internal as monitoring (acceptable)
 - Document risk acceptance if monitor-only for business reasons
-
 
 ## "USB is blocked, but users can still use Bluetooth/AirDrop"
 
@@ -884,14 +829,12 @@ EV-[Domain]-[Channel]-[Date]-[Description].[ext]
 - Print blocked → Mobile camera allowed (photo of screen)
 - File save blocked → Drag-and-drop to external app allowed
 
-
 **Solution:**
 
 - Comprehensive endpoint DLP covering all sub-channels:
   - USB, Bluetooth, WiFi Direct, AirDrop
   - Clipboard, screen capture, print, file operations
 - Regularly test endpoint DLP (users are creative at finding bypasses)
-
 
 ## "We have CASB, so cloud is covered"
 
@@ -903,14 +846,12 @@ EV-[Domain]-[Channel]-[Date]-[Description].[ext]
 - API-based CASB: Only works for apps with API (custom apps, legacy SaaS not covered)
 - Proxy-based CASB: Can be bypassed with VPN, mobile apps, split tunneling
 
-
 **Solution:**
 
 - CASB + Web DLP (proxy) = comprehensive coverage
 - Block unsanctioned cloud storage (Dropbox personal, Box personal, WeTransfer)
 - OAuth application review (block risky third-party apps)
 - Regular shadow IT discovery (CASB or proxy log analysis)
-
 
 ## "Mobile devices are MDM-managed, so we're safe"
 
@@ -922,20 +863,17 @@ EV-[Domain]-[Channel]-[Date]-[Description].[ext]
 - **MAM:** Application management (app distribution, app config, app wrapping)
 - **DLP:** Data loss prevention (copy/paste block, save-as block, sharing restrictions)
 
-
 **Common Mobile Gaps:**
 
 - MDM enrolled but no DLP policies enabled
 - Corporate apps containerized but copy/paste between container and device allowed
 - BYOD enrollment optional (unmanaged devices can access corporate email)
 
-
 **Solution:**
 
 - MDM + MAM + DLP policies (all three required)
 - Enforce BYOD enrollment (unmanaged devices blocked from corporate resources)
 - Test mobile DLP (try to forward email, save attachment, copy/paste from corporate app)
-
 
 ## "Application-level DLP is too complex, we skip it"
 
@@ -947,14 +885,12 @@ EV-[Domain]-[Channel]-[Date]-[Description].[ext]
 - DLP deployed on all perimeter channels (email, web, USB) but missed application layer
 - Result: Largest data breach vectors unprotected
 
-
 **Solution (Practical Approach):**
 
 - **Phase 1:** Database query limits (no SELECT * on tables >10K rows without approval)
 - **Phase 2:** API rate limiting (prevent bulk export via scripting)
 - **Phase 3:** Application-level logging (log all exports, integrate with SIEM)
 - **Phase 4:** Application DLP (scan database exports, API responses for sensitive data)
-
 
 Start with Phase 1-2 (easy), add Phase 3-4 (complex) over time
 
@@ -972,7 +908,6 @@ Start with Phase 1-2 (easy), add Phase 3-4 (complex) over time
 - [ ] Remediation plans created (gap description, risk, action, owner, target date)
 - [ ] Summary Dashboard calculated (overall coverage %, critical gaps)
 
-
 **Accuracy:**
 
 - [ ] DLP deployment status verified through testing (not assumptions)
@@ -980,7 +915,6 @@ Start with Phase 1-2 (easy), add Phase 3-4 (complex) over time
 - [ ] Coverage scope verified (% of users, devices, applications)
 - [ ] Bypass tests documented with actual results (success/failure)
 - [ ] False positive/negative rates measured (if data available)
-
 
 **Evidence Quality:**
 
@@ -990,13 +924,11 @@ Start with Phase 1-2 (easy), add Phase 3-4 (complex) over time
 - [ ] Test methodology documented (reproducible)
 - [ ] Evidence naming convention followed
 
-
 **Policy Alignment:**
 
 - [ ] Assessment covers all channels from ISMS-POL-A.8.12 Section 2.2
 - [ ] Enforcement modes verified against policy requirements (Restricted = block)
 - [ ] Coverage gaps mapped to risk levels (Restricted data gap = Critical)
-
 
 **Testing Verification:**
 
@@ -1005,14 +937,12 @@ Start with Phase 1-2 (easy), add Phase 3-4 (complex) over time
 - [ ] User notifications verified (users know why action blocked)
 - [ ] Successful bypasses escalated to CISO
 
-
 **Final Checks:**
 
 - [ ] Filename includes date: `ISMS-IMP-A.8.12.3_Channel_Coverage_20260121.xlsx`
 - [ ] All formulas calculate correctly
 - [ ] Conditional formatting working
 - [ ] Sheet protection enabled
-
 
 ---
 
@@ -1028,7 +958,6 @@ Start with Phase 1-2 (easy), add Phase 3-4 (complex) over time
 - [ ] Quarterly Review
 - [ ] Post-Incident (data breach)
 - [ ] Post-Deployment (new DLP channel)
-
 
 ## Completed By
 
@@ -1046,7 +975,6 @@ I confirm:
 - Evidence authentic and reproducible
 - Critical gaps escalated to CISO immediately
 
-
 ## Reviewed By (Security Team Lead)
 
 **Name:** _______________________  
@@ -1058,7 +986,6 @@ I confirm:
 - [ ] Approved
 - [ ] Approved with corrections: _______
 - [ ] Requires revision: _______
-
 
 ## Approved By (CISO)
 
@@ -1072,7 +999,6 @@ I confirm:
 - [ ] Approved with conditions - Remediate gaps by: _______
 - [ ] Rejected - Critical gaps require immediate action
 
-
 **Risk Acceptance:**
 For documented gaps/exceptions:
 
@@ -1080,14 +1006,12 @@ For documented gaps/exceptions:
 - [ ] Remediation required
 - [ ] Escalate to Executive Management
 
-
 **Budget Approval (if needed):**
 Cost: _______
 
 - [ ] Approved
 - [ ] Requires business case
 - [ ] Deferred
-
 
 ## Next Review Date
 
@@ -1100,7 +1024,6 @@ Cost: _______
 - DLP deployment changes (new channel coverage, policy updates)
 - Security incidents (data breach, bypass discovery)
 - User complaints (DLP blocking legitimate work - requires tuning)
-
 
 ---
 
@@ -1151,7 +1074,6 @@ Cost: _______
 - Rows 14-30: Instructions
 - Rows 32-40: Response value legend
 - Rows 42-50: Coverage status color coding
-
 
 **Organization Metadata:**
 
@@ -1256,7 +1178,6 @@ validation_status = {
   - "Planned" = Light blue fill
 - Column K (Status): Standard status colors
 
-
 ---
 
 ## Sheet: Email_Channel
@@ -1356,7 +1277,6 @@ validation_percentage = {
   - "Alert Only (Partial)" = Yellow
   - "Allowed (Fail)" = Red
 
-
 ---
 
 ## Sheet: Web_Channel
@@ -1431,7 +1351,6 @@ validation_upload = {
   - "Block" = Green
   - "Monitor Only" or "User Prompt" = Yellow
   - "None" = Red
-
 
 ---
 
@@ -1515,7 +1434,6 @@ validation_yesno = {
   - "Read-Only" or "Log Only" = Yellow
   - "User Prompt" or "None" = Red (for Restricted data channels)
 
-
 ---
 
 ## Sheet: Network_Channel
@@ -1580,7 +1498,6 @@ validation_action = {
   - "Blocked" = Green (preferred for FTP, SMB outbound)
   - "Allowed (Specific Destinations)" = Yellow (acceptable with DLP)
   - "Allowed (All)" = Red (uncontrolled egress)
-
 
 ---
 
@@ -1659,7 +1576,6 @@ validation_sharing = {
   - "Enforced (Block)" = Green
   - "Enforced (Approval)" = Yellow
   - "Advisory Only" or "None" = Red
-
 
 ---
 
@@ -1755,7 +1671,6 @@ validation_enforcement = {
   - "Advisory Only" = Yellow
   - "None" = Red
 
-
 ---
 
 ## Sheet: Application_Channel
@@ -1833,7 +1748,6 @@ validation_approval = {
   - "Enforced (Hard Limit)" = Green
   - "Enforced (Soft Limit)" or "Advisory Only" = Yellow
   - "None" = Red
-
 
 ---
 
@@ -1927,7 +1841,6 @@ validation_status = {
   - "In Progress" = Yellow
   - "Open" = Red
 
-
 ---
 
 ## Sheet: Gap_Analysis
@@ -2001,7 +1914,6 @@ validation_status = {
 
 - Dynamically pulled from Gap_Analysis (filtered by "Critical")
 
-
 **Key Formulas:**
 
 ```python
@@ -2050,7 +1962,6 @@ validation_status = {
   - 0 = Green ("✅ No Critical Gaps")
   - ≥1 = Red ("❌ CRITICAL: [count] Unprotected Restricted Data Channels")
 
-
 ---
 
 # 3-7. [Same as IMP-A.8.12.1 & A.8.12.2]
@@ -2072,7 +1983,6 @@ validation_status = {
 - Channel coverage heatmap in dashboard
 - Weighted compliance calculation (different weights per channel)
 
-
 ## A.2 Quality Assurance
 
 **Validation Script:** `excel_sanity_check_a812_3.py`
@@ -2083,7 +1993,6 @@ validation_status = {
 - Bypass testing sheet populated (at least 1 test per channel)
 - Coverage heatmap calculates correctly
 - No channels with Restricted data showing "No" DLP coverage
-
 
 ## A.3 Deployment
 

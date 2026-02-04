@@ -35,7 +35,6 @@
 - Legal: Legal/Compliance Officer
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -47,7 +46,6 @@
 - ISMS-POL-A.6.8 (Information Security Event Reporting)
 - ISMS-POL-A.5.29-30 (Business Continuity & Disaster Recovery)
 - ISMS-POL-A.5.31 (Legal, Statutory, Regulatory Requirements)
-
 
 ---
 
@@ -84,7 +82,6 @@ Despite unified implementation, each control maintains distinct requirements for
 - Third-party systems interfacing with [Organization]
 - Physical security incidents affecting information assets
 
-
 **Incident Categories** covered:
 
 - Malware and ransomware
@@ -97,7 +94,6 @@ Despite unified implementation, each control maintains distinct requirements for
 - Supply chain and third-party incidents
 - Configuration errors causing security impact
 
-
 ## Out of Scope
 
 The following require Executive Management approval and documented risk acceptance:
@@ -105,7 +101,6 @@ The following require Executive Management approval and documented risk acceptan
 - Incidents affecting only Public (unclassified) information with no business impact
 - Incidents managed by separate frameworks (e.g., safety incidents, HR violations without security component)
 - Third-party incidents with contractual incident management delegation
-
 
 ## Third-Party Applicability
 
@@ -115,7 +110,6 @@ Third-party service providers, contractors, and partners accessing [Organization
 - Cooperate with [Organization] incident response activities
 - Comply with evidence preservation requirements
 - Participate in post-incident reviews when third-party actions contributed to incident
-
 
 ## Regulatory Applicability
 
@@ -127,11 +121,9 @@ This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulat
 - **EU GDPR**: Art. 33-34 - Breach notification to supervisory authority within 72 hours
 - **ISO/IEC 27001:2022**: Controls A.5.24, A.5.25, A.5.26, A.5.27, A.5.28
 
-
 **Tier 2: Conditional Applicability**
 
 - PCI DSS v4.0, FINMA, DORA, NIS2, HIPAA - Apply where [Organization]'s business activities trigger applicability per ISMS-POL-00
-
 
 ---
 
@@ -258,14 +250,12 @@ Communication templates for each severity level and stakeholder type are maintai
 - **Decides** on business-critical actions (service shutdown, public disclosure, law enforcement engagement)
 - **Receives** Critical incident status updates, quarterly metrics, annual program review
 
-
 ## Chief Information Security Officer (CISO)
 
 - **Accountable** for incident management policy compliance and program maturity
 - **Approves** procedures, accepts residual risk, allocates budget and resources
 - **Decides** on High/Critical incident response escalations and external engagement
 - **Receives** all incident reports, PIR reports, weekly metrics
-
 
 ## Incident Response Manager / CSIRT Lead
 
@@ -274,14 +264,12 @@ Communication templates for each severity level and stakeholder type are maintai
 - **Approves** incident closure, PIR scheduling, procedure updates
 - **Reports** to CISO on incident status, metrics, and program health
 
-
 ## Incident Handlers / SOC Analysts
 
 - **Responsible** for incident triage, investigation, containment, eradication, recovery, and documentation
 - **Executes** response procedures per severity and category
 - **Escalates** incidents per escalation matrix
 - **Documents** all incident activities in incident management system
-
 
 ## Forensic Specialists
 
@@ -290,14 +278,12 @@ Communication templates for each severity level and stakeholder type are maintai
 - **Coordinates** with Legal on evidence admissibility and legal hold
 - **Documents** all evidence collection and custody transfers
 
-
 ## IT Operations
 
 - **Responsible** for executing containment/eradication/recovery actions on systems
 - **Coordinates** service restoration with incident response team
 - **Provides** technical support and system access for incident investigation
 - **Implements** technical control improvements from PIR recommendations
-
 
 ## Legal Counsel
 
@@ -306,14 +292,12 @@ Communication templates for each severity level and stakeholder type are maintai
 - **Coordinates** regulatory authority notifications with DPO
 - **Manages** legal hold procedures and law enforcement liaison
 
-
 ## Data Protection Officer (DPO)
 
 - **Accountable** for privacy compliance and breach notification assessment
 - **Assesses** incidents for GDPR/nDSG breach notification requirements
 - **Coordinates** data subject notifications when required
 - **Advises** on personal data implications of incidents
-
 
 ## Communications Team
 
@@ -322,13 +306,11 @@ Communication templates for each severity level and stakeholder type are maintai
 - **Coordinates** messaging with Legal and Executive Management
 - **Executes** approved external communications
 
-
 ## All Personnel
 
 - **Responsible** for reporting suspected security incidents per ISMS-POL-A.6.8
 - **Cooperates** with incident response activities when requested
 - **Completes** security awareness training including incident reporting
-
 
 ---
 
@@ -384,12 +366,10 @@ Management notification frequency and content requirements are defined in ISMS-I
 - High incidents: Daily status updates to CISO
 - All incidents: Weekly summary to CISO
 
-
 **Executive Reporting**:
 
 - Quarterly incident summary to Executive Management (volume, trends, metrics, lessons learned)
 - Annual incident management program review to Executive Management
-
 
 ## Integration with Related Controls
 
@@ -411,7 +391,6 @@ This policy integrates with:
 - **Reviewers**: CISO (owner), Incident Response Manager (contributor), Legal (compliance)
 - **Approval**: CISO (technical), Executive Management (strategic)
 
-
 Implementation procedures and reference documents may be updated without policy revision when changes do not affect policy statements.
 
 ---
@@ -428,7 +407,6 @@ All personnel MUST comply with this policy. Compliance is monitored through:
 - Exercise participation
 - Improvement action completion
 
-
 ## Exception Management
 
 Exceptions to this policy require:
@@ -440,7 +418,6 @@ Exceptions to this policy require:
 - Time-bound duration (maximum 12 months, renewal required)
 - Documentation in ISMS exception register
 
-
 Exceptions are reviewed annually for continued validity.
 
 ## Non-Compliance
@@ -451,7 +428,6 @@ Non-compliance with this policy may result in:
 - Increased audit scrutiny
 - Disciplinary action per HR policies
 - Regulatory findings during certification audits
-
 
 ---
 
@@ -485,14 +461,12 @@ Non-compliance with this policy may result in:
 - ISMS-POL-A.5.31 (Legal, Statutory, Regulatory Requirements)
 - ISMS-POL-A.5.19-23 (Third-Party Management)
 
-
 ## External Standards
 
 - ISO/IEC 27001:2022 - Controls A.5.24, A.5.25, A.5.26, A.5.27, A.5.28
 - ISO/IEC 27002:2022 - Implementation guidance for incident management controls
 - NIST SP 800-61 Rev. 2 - Computer Security Incident Handling Guide
 - ISO/IEC 27035 - Information Security Incident Management
-
 
 ---
 
@@ -534,7 +508,6 @@ Evidence required to demonstrate this policy is adequately documented and approv
 - ✅ Roles and responsibilities assigned (Section 4)
 - ✅ Governance and exception procedures defined (Section 6)
 - ✅ Integration with related controls documented (Section 5.4)
-
 
 **Stage 2 (Operational Effectiveness) Evidence:**
 

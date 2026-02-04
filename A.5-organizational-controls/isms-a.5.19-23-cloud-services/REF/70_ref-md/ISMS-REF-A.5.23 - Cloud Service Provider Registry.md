@@ -49,8 +49,6 @@ This document provides the **authoritative reference registry** of cloud service
 - Enable consistent vendor risk assessment
 - Support data deletion and retention compliance (A.8.10)
 
-
-
 **Key Principle:** This registry is **vendor-neutral for policy purposes** — it catalogs providers for assessment, not endorsement. Organizations document THEIR specific usage and configurations.
 
 ---
@@ -118,8 +116,6 @@ Core cloud infrastructure providers with global presence.
 - Deletion capabilities well-documented but verify retention in backups
 - Cryptographic erasure typically available
 
-
-
 ---
 
 ## Tier 2: Major Enterprise Providers (Critical)
@@ -139,8 +135,6 @@ Enterprise-grade platforms for business operations.
 - SAP headquartered in EU (Germany) — favorable for GDPR
 - Oracle and Salesforce require careful DPA review
 - ServiceNow CMDB may contain infrastructure secrets
-
-
 
 ---
 
@@ -164,8 +158,6 @@ CDN, edge security, and alternative IaaS providers.
 - OVHcloud and Hetzner are EU-headquartered (GDPR-favorable)
 - CDN providers cache data at edge — deletion propagation important
 - Cloudflare R2 is S3-compatible — verify deletion mechanisms
-
-
 
 ---
 
@@ -191,8 +183,6 @@ Dedicated backup, archive, and object storage providers.
 - Immutable backup features may conflict with deletion obligations
 - Veeam has Swiss presence (favorable for Swiss organizations)
 
-
-
 ---
 
 ## Tier 5: Communication & Collaboration (High)
@@ -216,8 +206,6 @@ Messaging, video conferencing, and team collaboration platforms.
 - Slack/Teams message retention often conflicts with deletion requirements
 - Atlassian headquartered in Australia — verify data residency
 
-
-
 ---
 
 ## Tier 6: DevOps & Development Platforms (Medium)
@@ -239,8 +227,6 @@ Source code, CI/CD, and container platforms.
 - Terraform state files often contain sensitive infrastructure details
 - Container images may embed secrets — deletion must cover all layers
 - GitLab has EU entity (Netherlands) — verify data processing location
-
-
 
 ---
 
@@ -265,8 +251,6 @@ Managed database and data analytics platforms.
 - Database backups and point-in-time recovery complicate deletion
 - Elastic has EU presence (Netherlands)
 
-
-
 ---
 
 ## Tier 8: Security & Identity (High - Sensitive)
@@ -289,8 +273,6 @@ Security operations and identity management platforms.
 - SIEM/log platforms aggregate data from entire infrastructure
 - EDR telemetry may contain sensitive endpoint data
 - Log retention policies must align with deletion requirements
-
-
 
 ---
 
@@ -317,8 +299,6 @@ Human resources and financial management platforms.
 - Financial systems have statutory retention requirements that may override deletion
 - Stripe has EU entity (Ireland)
 
-
-
 ---
 
 ## Tier 10: Swiss/EU Regional Providers (Regional)
@@ -342,8 +322,6 @@ Providers with Swiss or EU headquarters/data centers.
 - Proton and Tresorit use end-to-end encryption — verify deletion of encrypted data
 - German/French providers subject to EU GDPR (favorable)
 - STACKIT is Schwarz Group (Lidl/Kaufland) — enterprise-grade German cloud
-
-
 
 ---
 
@@ -466,8 +444,6 @@ This registry SHALL be updated when:
 - Provider undergoes significant change (acquisition, policy change)
 - New regulatory requirements affect provider assessment
 - Semi-annual review cycle
-
-
 
 **Change Log**
 

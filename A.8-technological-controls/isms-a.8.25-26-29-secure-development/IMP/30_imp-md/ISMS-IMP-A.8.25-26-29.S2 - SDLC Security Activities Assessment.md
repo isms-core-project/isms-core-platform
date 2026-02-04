@@ -44,7 +44,6 @@ This document consists of two parts:
   - Formulas & Calculations
   - Data Validation & Conditional Formatting
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -65,7 +64,6 @@ This document consists of two parts:
 - Developer security training completion and effectiveness
 - Security defect management and remediation tracking
 
-
 **This Assessment is For:**
 
 - Individual applications or development teams
@@ -73,14 +71,12 @@ This document consists of two parts:
 - Measuring SDLC security maturity
 - Identifying process gaps and improvement opportunities
 
-
 **This Assessment is NOT For:**
 
 - Security requirements specification (see IMP-S1)
 - Security testing results (see IMP-S3)
 - Vulnerability remediation tracking (see IMP-S4)
 - Portfolio-wide dashboard (see IMP-S5)
-
 
 ## Assessment Workbook Structure
 
@@ -106,7 +102,6 @@ This document consists of two parts:
 - Medium-Risk Application: 2-3 hours
 - Low-Risk Application: 1-2 hours
 
-
 ## Key Assessment Questions
 
 This assessment answers:
@@ -119,7 +114,6 @@ This assessment answers:
 - ✅ Are security defects tracked and remediated within SLAs?
 - ✅ What is the overall SDLC security maturity level?
 - ✅ What gaps exist and what improvements are needed?
-
 
 ---
 
@@ -138,7 +132,6 @@ This assessment answers:
 - [ ] Development Manager contact
 - [ ] Security Champion (if exists)
 
-
 **SDLC Documentation:**
 
 - [ ] SDLC process documentation (development methodology guide)
@@ -146,7 +139,6 @@ This assessment answers:
 - [ ] Code review process documentation (guidelines, checklists)
 - [ ] Security gate documentation (entry/exit criteria)
 - [ ] Sprint/release checklists (if Agile/DevOps)
-
 
 **Tool Documentation:**
 
@@ -157,20 +149,17 @@ This assessment answers:
 - [ ] Version control system access (Git, SVN, etc.)
 - [ ] CI/CD pipeline access (Jenkins, GitLab CI, GitHub Actions, etc.)
 
-
 **Training Records:**
 
 - [ ] Developer training tracking system access
 - [ ] Security training completion reports
 - [ ] Training certificates/records
 
-
 **Defect Tracking:**
 
 - [ ] Access to defect tracking system (Jira, Azure DevOps, etc.)
 - [ ] Security defect query/filter definitions
 - [ ] Defect remediation SLA definitions
-
 
 **System Access:**
 
@@ -180,7 +169,6 @@ This assessment answers:
 - [ ] Defect tracking system
 - [ ] SAST/SCA tool dashboards
 
-
 ## Required Tools
 
 **Excel Workbook:**
@@ -188,20 +176,17 @@ This assessment answers:
 - Excel 2016 or later (Office 365 recommended)
 - Macros enabled (if using automated workbook features)
 
-
 **Evidence Collection:**
 
 - Screenshot tool (Snipping Tool, Snagit, etc.)
 - Access to document repository
 - PDF reader
 
-
 **Optional:**
 
 - SAST/SCA tool API access (for automated metrics)
 - CI/CD pipeline access (for build logs)
 - Git CLI (for code review statistics)
-
 
 ## Assessor Skills
 
@@ -213,7 +198,6 @@ This assessment answers:
 - Basic software development knowledge
 - Understanding of code review processes
 
-
 **Helpful:**
 
 - Experience with SAST/DAST/SCA tools
@@ -221,7 +205,6 @@ This assessment answers:
 - CI/CD pipeline experience
 - Git/version control experience
 - Agile/Scrum experience
-
 
 ## Stakeholder Coordination
 
@@ -234,14 +217,12 @@ This assessment answers:
 - Resource allocation for security activities
 - Challenges and blockers
 
-
 **Security Champion (if exists):**
 
 - Security activities execution
 - Code review participation
 - Security tool usage
 - Developer security awareness
-
 
 **Developers (sample 2-3):**
 
@@ -250,13 +231,11 @@ This assessment answers:
 - Training effectiveness
 - Security culture
 
-
 **DevOps/Release Manager:**
 
 - CI/CD security integration
 - Deployment security gates
 - Tool automation status
-
 
 ---
 
@@ -307,7 +286,6 @@ This assessment answers:
 - Check security documentation at each phase
 - Verify security testing before production
 
-
 **For Agile/Scrum Projects:**
 
 - Assess security in sprint planning (security user stories)
@@ -315,14 +293,12 @@ This assessment answers:
 - Check security testing within sprints
 - Review sprint retrospective security topics
 
-
 **For DevOps/DevSecOps:**
 
 - Assess CI/CD security automation
 - Review security gates in pipeline
 - Check automated security testing (SAST, SCA, DAST in pipeline)
 - Review deployment security validation
-
 
 ## Assessment Timing
 
@@ -333,13 +309,11 @@ This assessment answers:
 - **Mid-Quarter** (for ongoing projects) - Allows time for improvements before quarter end
 - **After Major Incident** (trigger) - Understand what went wrong in SDLC
 
-
 **Avoid:**
 
 - Sprint 1 or start of project (insufficient data)
 - During crunch time before critical release (team too busy)
 - During vacation periods (key stakeholders unavailable)
-
 
 ---
 
@@ -362,7 +336,6 @@ This assessment answers:
 - **Security Champion:** Name, email (if exists)
 - **Team Size:** Number of developers
 
-
 **Development Context:**
 
 - **Development Methodology:** Waterfall, Agile (Scrum), Agile (Kanban), DevOps, DevSecOps, Hybrid
@@ -372,7 +345,6 @@ This assessment answers:
 - **Version Control System:** Git, SVN, Mercurial, etc.
 - **CI/CD Platform:** Jenkins, GitLab CI, GitHub Actions, Azure DevOps, etc.
 
-
 **Risk Classification:**
 
 - **Application Risk Level:** High, Medium, Low (from IMP-S1 assessment)
@@ -381,13 +353,11 @@ This assessment answers:
   - Medium-Risk: Core security activities required
   - Low-Risk: Basic security activities required
 
-
 **Assessment Context:**
 
 - **Assessment Date:** When is this assessment conducted?
 - **Assessment Period:** What time period does this cover? (e.g., Q4 2025, Last 6 months)
 - **Previous Assessment Date:** When was last assessment? (if applicable)
-
 
 **Completion Tips:**
 
@@ -396,14 +366,12 @@ This assessment answers:
 - Note if Security Champion exists (important for maturity scoring)
 - Clearly state assessment period for data collection scope
 
-
 **Common Mistakes:**
 
 - ❌ Assessing too short a period (1 sprint insufficient for trends)
 - ❌ Wrong team size (count only active developers, not entire org)
 - ❌ Outdated contacts (verify before submission)
 - ❌ Not noting previous assessment date (can't track improvement)
-
 
 ## Sheet 2: SDLC_Phase_Activities
 
@@ -419,7 +387,6 @@ For each SDLC phase, assess whether security activities are:
 - **Executed:** Actually performed (does happen)
 - **Evidence:** Documented evidence exists (can prove it happened)
 
-
 **SDLC Phases and Security Activities:**
 
 **Phase 1: Requirements**
@@ -430,7 +397,6 @@ For each SDLC phase, assess whether security activities are:
 - [ ] Compliance requirements identified (GDPR, PCI DSS, etc.)
 - [ ] Security acceptance criteria defined
 
-
 **Phase 2: Design**
 
 - [ ] Threat modeling conducted (STRIDE or equivalent)
@@ -438,7 +404,6 @@ For each SDLC phase, assess whether security activities are:
 - [ ] Security design patterns applied
 - [ ] Third-party component security assessment
 - [ ] Security design decisions documented
-
 
 **Phase 3: Development**
 
@@ -450,7 +415,6 @@ For each SDLC phase, assess whether security activities are:
 - [ ] Security unit tests written
 - [ ] Security defects tracked and remediated
 
-
 **Phase 4: Testing**
 
 - [ ] Security test cases executed
@@ -459,7 +423,6 @@ For each SDLC phase, assess whether security activities are:
 - [ ] Penetration testing performed (if required)
 - [ ] Security regression testing
 - [ ] Vulnerability remediation verified
-
 
 **Phase 5: Deployment**
 
@@ -470,7 +433,6 @@ For each SDLC phase, assess whether security activities are:
 - [ ] Encryption validated
 - [ ] Security sign-off obtained
 
-
 **Phase 6: Maintenance**
 
 - [ ] Security patches applied within SLA
@@ -478,7 +440,6 @@ For each SDLC phase, assess whether security activities are:
 - [ ] Security incidents investigated
 - [ ] Threat model updated when application changes
 - [ ] Periodic security assessments conducted
-
 
 **Assessment Approach:**
 
@@ -488,7 +449,6 @@ For each activity, document:
 - **Executed?** Yes/No/Partial (Does team actually do it?)
 - **Evidence?** Yes/No (Can you prove it with evidence?)
 - **Comments:** Note gaps, partial execution, or blockers
-
 
 **Scoring:**
 
@@ -510,14 +470,12 @@ Overall Score = Average of all 6 phase completeness scores
 - Sample recent releases (last 2-3 releases or last 2 sprints)
 - Note if activities are automated vs. manual
 
-
 **Common Mistakes:**
 
 - ❌ Marking "Executed" based on documentation (verify it actually happens)
 - ❌ Not checking recent history (team may have stopped doing activities)
 - ❌ Accepting "we plan to do it" as "Planned" (must be documented)
 - ❌ Not noting automation (automated activities more reliable)
-
 
 ## Sheet 3: Secure_Coding_Standards
 
@@ -535,7 +493,6 @@ Overall Score = Average of all 6 phase completeness scores
 - **Standards Alignment:** OWASP Top 10, CWE Top 25, Language-specific (e.g., Oracle Secure Coding Java), ISMS-POL-A.8.28, Other
 - **Last Updated:** When were standards last updated?
 
-
 **B. Secure Coding Standards Content**
 
 Check if standards address:
@@ -551,7 +508,6 @@ Check if standards address:
 - [ ] Dependency management (third-party component security)
 - [ ] Language-specific secure coding (e.g., Java secure coding, Python secure coding)
 
-
 **C. Developer Awareness**
 
 Sample 2-3 developers:
@@ -560,7 +516,6 @@ Sample 2-3 developers:
 - **Have developers read standards?** All/Some/None
 - **Do developers reference standards during coding?** Regularly/Sometimes/Rarely/Never
 - **Do developers find standards helpful?** Yes/Partially/No
-
 
 **D. Secure Coding Compliance Verification**
 
@@ -573,14 +528,12 @@ How is compliance verified?
 - [ ] Manual security audits (periodic review)
 - [ ] No verification (standards exist but not enforced)
 
-
 **E. Secure Coding Violations Tracking**
 
 - **Are violations tracked?** Yes/No
 - **Tracking System:** Jira, Azure DevOps, SAST tool, Other
 - **Violation Trends:** Increasing, Stable, Decreasing, Unknown
 - **Common Violations:** What are the most frequent violations? (e.g., SQL injection, XSS, hardcoded secrets)
-
 
 **Scoring:**
 
@@ -604,14 +557,12 @@ Score = Average of:
 - Review SAST tool configurations (rules enabled?)
 - Look at recent violations (real examples)
 
-
 **Common Mistakes:**
 
 - ❌ Marking "Standards Exist" when there's only a generic "code quality" document
 - ❌ Not verifying developer awareness (assuming they know because document exists)
 - ❌ Accepting "SAST tool" as verification without checking if findings are actually reviewed
 - ❌ Not tracking violations (can't improve without metrics)
-
 
 ## Sheet 4: Code_Review_Metrics
 
@@ -628,7 +579,6 @@ Score = Average of:
 - **Review Tool:** GitHub Pull Requests, GitLab Merge Requests, Azure DevOps, Gerrit, Crucible, Other
 - **Review Enforcement:** Automated (branch protection), Manual approval, Honor system, None
 
-
 **B. Peer Review Execution Metrics** (Last 3 months or 10 releases)
 
 - **Total Code Changes:** Number of pull requests/merge requests
@@ -637,13 +587,11 @@ Score = Average of:
 - **Average Review Time:** How long from PR creation to approval?
 - **Average Comments per Review:** Are reviews substantive or rubber-stamp?
 
-
 **C. Security-Focused Code Review**
 
 - **Security Review Required?** Yes (for all code), Yes (for high-risk code only), Recommended, No
 - **High-Risk Code Defined?** Yes/No (Is there a definition of what requires security review?)
 - **Security Reviewer:** Security Champion, Security Architect, Security Team, None
-
 
 **High-Risk Code Examples** (if defined):
 
@@ -657,7 +605,6 @@ Score = Average of:
 - [ ] Database access logic
 - [ ] External system integration
 
-
 **D. Security Review Execution Metrics** (Last 3 months or 10 releases)
 
 - **High-Risk Code Changes:** How many high-risk code changes?
@@ -665,7 +612,6 @@ Score = Average of:
 - **Security Review Compliance Rate:** (Security Reviews / High-Risk Changes) × 100%
 - **Security Findings:** How many security issues found in review?
 - **Findings Remediated:** How many were fixed?
-
 
 **E. Code Review Quality**
 
@@ -675,7 +621,6 @@ Sample 5-10 recent code reviews:
 - **Are security comments specific?** Yes/No (e.g., "Fix SQL injection in line 45" vs. "Security issue")
 - **Are findings tracked?** Yes/No (e.g., Jira ticket created for security finding)
 - **Are findings verified fixed?** Yes/No (reviewer checks fix before closing)
-
 
 **Scoring:**
 
@@ -698,14 +643,12 @@ Score = Average of:
 - Interview Security Champion about security review process
 - Look at actual review comments (are they meaningful?)
 
-
 **Common Mistakes:**
 
 - ❌ Relying on manager's statement "all code is reviewed" (verify with data)
 - ❌ Not distinguishing peer review from security review (different purposes)
 - ❌ Counting empty reviews ("LGTM" with no comments) as quality reviews
 - ❌ Not checking if high-risk code is actually identified and security reviewed
-
 
 ## Sheet 5: Security_Tools_Deployment
 
@@ -723,14 +666,12 @@ Score = Average of:
 - **Languages Supported:** Does tool support application's languages?
 - **Deployment Location:** CI/CD pipeline, Developer workstations, Both, Manual
 
-
 **SAST Configuration:**
 
 - **Security Rules Enabled?** Yes/Partial/No
 - **Rule Sets:** OWASP Top 10, CWE Top 25, Language-specific, Custom, All
 - **Severity Levels Configured?** Yes/No (Critical, High, Medium, Low)
 - **False Positive Suppression?** Yes/No (Are false positives managed?)
-
 
 **SAST Execution:**
 
@@ -739,7 +680,6 @@ Score = Average of:
 - **Scan Results Reviewed?** Always, Usually, Sometimes, Rarely, Never
 - **Findings Triaged?** Yes/No (True positives identified, false positives suppressed)
 - **Critical/High Findings Block Build?** Yes/No
-
 
 **SAST Metrics** (Last 3 months):
 
@@ -750,7 +690,6 @@ Score = Average of:
 - **Low Findings:** Number
 - **False Positive Rate:** (False Positives / Total Findings) × 100%
 
-
 **B. SCA (Software Composition Analysis)**
 
 **SCA Tool Deployed?** Yes/No
@@ -759,7 +698,6 @@ Score = Average of:
 - **Package Managers Supported:** npm, Maven, pip, NuGet, Bundler, Go modules, Other
 - **Deployment Location:** CI/CD pipeline, GitHub/GitLab native, Both, Manual
 
-
 **SCA Configuration:**
 
 - **Vulnerability Databases:** NVD, GitHub Advisory, Vendor advisories, Multiple
@@ -767,13 +705,11 @@ Score = Average of:
 - **License Compliance Checking?** Yes/No
 - **Automated Fix PRs?** Yes/No (e.g., Dependabot PRs)
 
-
 **SCA Execution:**
 
 - **Scan Frequency:** Per build, Daily, Weekly, Per release, Ad-hoc
 - **Scan Results Reviewed?** Always, Usually, Sometimes, Rarely, Never
 - **Vulnerable Dependencies Updated?** Within SLA, Delayed, Rarely, Never
-
 
 **SCA Metrics** (Last 3 months):
 
@@ -783,7 +719,6 @@ Score = Average of:
 - **Medium Vulnerabilities:** Number
 - **Average Remediation Time:** Days (from detection to fix)
 
-
 **C. Secret Scanning**
 
 **Secret Scanning Deployed?** Yes/No
@@ -791,14 +726,12 @@ Score = Average of:
 - **Tool Name:** GitGuardian, TruffleHog, GitHub Secret Scanning, git-secrets, Other
 - **Deployment Location:** Pre-commit hook, CI/CD pipeline, Repository scanning, All
 
-
 **Secret Scanning Execution:**
 
 - **Scan Frequency:** Per commit, Daily, Weekly, Ad-hoc
 - **Secrets Detected (Last 3 months):** Number
 - **Secrets Remediated:** Number
 - **Commits Blocked:** Number (if pre-commit hook enabled)
-
 
 **D. IDE Security Plugins**
 
@@ -808,12 +741,10 @@ Score = Average of:
 - **Supported IDEs:** VS Code, IntelliJ IDEA, Visual Studio, Eclipse, Other
 - **Plugin Deployment:** Mandatory, Recommended, Optional, Not available
 
-
 **IDE Plugin Adoption:**
 
 - **Developers with Plugin:** Number / Total developers = X%
 - **Plugin Usage:** Active, Occasional, Installed but not used
-
 
 **Scoring:**
 
@@ -836,14 +767,12 @@ Score = Average of:
 - Interview developers about IDE plugin usage (not just installation)
 - Look at vulnerability remediation time (are findings fixed promptly?)
 
-
 **Common Mistakes:**
 
 - ❌ Marking "Deployed" when tool exists but isn't used
 - ❌ Not checking scan frequency (tool installed but scans disabled)
 - ❌ Not verifying findings are reviewed (scan runs but nobody looks at results)
 - ❌ Assuming IDE plugins are used because they're available
-
 
 ## Sheet 6: Security_Tools_Usage
 
@@ -879,14 +808,12 @@ Usage compliance score is calculated based on:
 - Verify integration with development workflow
 - Compare usage across applications to identify best practices
 
-
 **Common Mistakes:**
 
 - ❌ Counting manual ad-hoc scans as regular usage
 - ❌ Not checking if scan results are actually reviewed
 - ❌ Accepting low scan frequency for high-risk applications
 - ❌ Ignoring remediation time when assessing tool effectiveness
-
 
 ## Sheet 7: Developer_Training
 
@@ -903,13 +830,11 @@ Usage compliance score is calculated based on:
 - **Training Duration:** Hours (e.g., 4 hours initial, 2 hours annual)
 - **Training Topics:** OWASP Top 10, Secure coding, Tool usage, Threat modeling, Other
 
-
 **B. Training Delivery**
 
 - **Delivery Method:** Instructor-led, Online/self-paced, Hands-on labs, Mixed
 - **Training Provider:** Internal security team, External provider (SANS, OWASP, etc.), Online platform (Pluralsight, Udemy, etc.)
 - **Training Content Quality:** Excellent, Good, Adequate, Poor
-
 
 **C. Training Completion Tracking** (Last 12 months)
 
@@ -919,13 +844,11 @@ Usage compliance score is calculated based on:
 - **Training Compliance Rate:** (Completed / Total) × 100%
 - **Overdue Training:** Number of developers
 
-
 **D. Training Effectiveness**
 
 - **Assessment/Quiz?** Yes/No (Do trainees take assessment?)
 - **Passing Rate:** X% (if assessment exists)
 - **Hands-On Exercises?** Yes/No (Do trainees practice secure coding?)
-
 
 **Developer Feedback** (Sample 2-3 developers):
 
@@ -934,13 +857,11 @@ Usage compliance score is calculated based on:
 - **Training Helpful?** Yes/Partially/No
 - **Suggestions for Improvement:** [Free text]
 
-
 **E. Just-in-Time Training**
 
 - **Critical Vulnerability Training?** Yes/No (e.g., Log4Shell training when it emerged)
 - **New Tool Training?** Yes/No (e.g., SAST tool usage training)
 - **Incident-Based Training?** Yes/No (e.g., training after security incident)
-
 
 **Scoring:**
 
@@ -963,14 +884,12 @@ Score = Average of:
 - Review training content (is it relevant to technology stack?)
 - Check if training is updated for new threats (e.g., Log4Shell added to curriculum)
 
-
 **Common Mistakes:**
 
 - ❌ Marking "Completed" based on manager statement (verify with records)
 - ❌ Not checking training currency (developer trained 5 years ago counts as "trained")
 - ❌ Accepting generic "security awareness" as secure coding training
 - ❌ Not assessing training effectiveness (completion ≠ effectiveness)
-
 
 ## Sheet 8: Security_Defect_Management
 
@@ -987,7 +906,6 @@ Score = Average of:
 - **Security Labels/Tags:** How are security defects identified? (Label: security, Tag: vulnerability, Priority: security)
 - **Severity Classification:** Critical, High, Medium, Low (aligned with vulnerability scoring)
 
-
 **B. Security Defect Sources**
 
 Security defects identified from:
@@ -999,7 +917,6 @@ Security defects identified from:
 - [ ] Penetration testing findings
 - [ ] Security incident root cause
 - [ ] Threat model updates
-
 
 **C. Security Defect Remediation SLAs** (From policy)
 
@@ -1020,14 +937,12 @@ Security defects identified from:
 - **Overdue Defects:** Number (past SLA)
 - **Average Age (Open Defects):** Days
 
-
 **E. Security Defect Remediation Metrics** (Last 3 months)
 
 - **Defects Created:** Number
 - **Defects Closed:** Number
 - **Average Remediation Time (Closed Defects):** Days
 - **SLA Compliance Rate:** (Closed within SLA / Total Closed) × 100%
-
 
 **Critical/High Defects Breakdown:**
 
@@ -1041,13 +956,11 @@ Security defects identified from:
 - **High Avg Remediation Time:** Days
 - **High SLA Compliance:** %
 
-
 **F. Security Technical Debt**
 
 - **Security Defects Deferred:** Number (accepted as technical debt)
 - **Deferred Defect Age:** Average age of deferred defects
 - **Remediation Plan?** Yes/No (Is there a plan to fix deferred defects?)
-
 
 **Scoring:**
 
@@ -1070,14 +983,12 @@ Score = Average of:
 - Look at remediation trends (improving or worsening?)
 - Check if deferred defects have compensating controls
 
-
 **Common Mistakes:**
 
 - ❌ Not distinguishing security defects from functional defects
 - ❌ Accepting inaccurate severity (Critical marked as Low to avoid SLA)
 - ❌ Not tracking overdue defects (no visibility into SLA violations)
 - ❌ Not checking technical debt (deferred defects accumulate over time)
-
 
 ## Sheet 9: Compliance_Summary
 
@@ -1108,7 +1019,6 @@ Based on overall score:
 - **50-69%:** Level 2 (Managed)
 - **<50%:** Level 1 (Initial/Ad Hoc)
 
-
 **C. Gap Summary** (Auto-populated from Sheets 2-7)
 
 Top 5 Gaps (lowest scoring areas):
@@ -1129,7 +1039,6 @@ For each gap, provide recommendation:
 - **Effort:** Low/Medium/High
 - **Priority:** P1/P2/P3/P4
 
-
 **E. Maturity Roadmap** (Optional)
 
 If current maturity is <Level 3, provide phased roadmap:
@@ -1140,20 +1049,17 @@ If current maturity is <Level 3, provide phased roadmap:
 - [Action 2]
 - [Action 3]
 
-
 **Phase 2 (6-12 months):** Foundation building
 
 - [Action 1]
 - [Action 2]
 - [Action 3]
 
-
 **Phase 3 (12-18 months):** Advanced capabilities
 
 - [Action 1]
 - [Action 2]
 - [Action 3]
-
 
 **Completion Tips:**
 
@@ -1163,14 +1069,12 @@ If current maturity is <Level 3, provide phased roadmap:
 - Consider dependencies (some improvements require others first)
 - Align recommendations with organizational maturity and resources
 
-
 **Common Mistakes:**
 
 - ❌ Generic recommendations ("improve security processes")
 - ❌ Unrealistic roadmap (trying to jump from Level 1 to Level 5 in 3 months)
 - ❌ Not prioritizing (recommending 20 actions with no prioritization)
 - ❌ Ignoring resource constraints (recommending expensive tools for small team)
-
 
 ## Sheet 10: Evidence_Register
 
@@ -1205,14 +1109,12 @@ If current maturity is <Level 3, provide phased roadmap:
 - Update evidence register whenever new evidence is collected
 - Mark outdated evidence clearly and schedule updates
 
-
 **Common Mistakes:**
 
 - ❌ Storing evidence only on local machines (not accessible for audits)
 - ❌ Not updating evidence status when documents become outdated
 - ❌ Missing evidence for key activities (especially training)
 - ❌ Not linking evidence to specific applications/teams
-
 
 ## Sheet 11: Approval_Sign_Off
 
@@ -1250,14 +1152,12 @@ Required approvers:
 - Document any disagreements or clarifications in comments
 - Obtain all signatures before finalizing assessment
 
-
 **Common Mistakes:**
 
 - ❌ Submitting for approval without all data completed
 - ❌ Not pre-briefing approvers on findings
 - ❌ Missing signatures from key stakeholders
 - ❌ Not documenting overall compliance status
-
 
 ---
 
@@ -1275,7 +1175,6 @@ Required approvers:
 - **Timely:** Evidence is current (not outdated)
 - **Relevant:** Evidence directly supports the assessment finding
 
-
 ## Evidence Types by Sheet
 
 **Sheet 2 (SDLC Phase Activities):**
@@ -1288,7 +1187,6 @@ Required approvers:
 - Deployment checklists with security sections
 - Screenshots of CI/CD pipeline (security steps)
 
-
 **Sheet 3 (Secure Coding Standards):**
 
 - Secure coding standards document
@@ -1296,7 +1194,6 @@ Required approvers:
 - Developer interview notes
 - Code review comments referencing standards
 - SAST tool violation reports
-
 
 **Sheet 4 (Code Review Execution):**
 
@@ -1306,7 +1203,6 @@ Required approvers:
 - Security review checklist (completed examples)
 - Git log excerpts showing review activity
 
-
 **Sheet 5 (Security Tools):**
 
 - SAST tool configuration screenshots
@@ -1314,7 +1210,6 @@ Required approvers:
 - CI/CD pipeline configuration (security steps)
 - Tool usage reports (scan frequency, coverage)
 - Secret scanning alerts/reports
-
 
 **Sheet 6 (Developer Training):**
 
@@ -1324,7 +1219,6 @@ Required approvers:
 - Training feedback surveys
 - Training assessment results
 
-
 **Sheet 7 (Security Defect Management):**
 
 - Jira/Azure DevOps query results (security defects)
@@ -1332,7 +1226,6 @@ Required approvers:
 - Sample security defect tickets
 - SLA compliance reports
 - Technical debt tracking
-
 
 ## Evidence Collection Methods
 
@@ -1343,7 +1236,6 @@ Required approvers:
 - SonarQube: Export security findings report
 - Snyk: Export vulnerability report
 
-
 **Screenshots:**
 
 - CI/CD pipeline security steps
@@ -1352,7 +1244,6 @@ Required approvers:
 - Branch protection rules
 - Tool configuration
 
-
 **Document Review:**
 
 - SDLC process documentation
@@ -1360,13 +1251,11 @@ Required approvers:
 - Code review guidelines
 - Training materials
 
-
 **Interviews:**
 
 - Developer interviews (2-3 developers)
 - Development Manager interview
 - Security Champion interview
-
 
 ## Evidence Storage and Organization
 
@@ -1496,7 +1385,6 @@ Before submitting assessment for peer review, complete this quality checklist:
 - [ ] All dropdowns selected
 - [ ] All comment fields used where needed
 
-
 **Sheet-Specific:**
 
 - [ ] Sheet 1: Application/team profile complete and accurate
@@ -1507,7 +1395,6 @@ Before submitting assessment for peer review, complete this quality checklist:
 - [ ] Sheet 6: Training completion data verified from HR system
 - [ ] Sheet 7: Defect metrics pulled from tracking system
 - [ ] Sheet 8: Recommendations are specific and actionable
-
 
 ## Accuracy
 
@@ -1520,7 +1407,6 @@ Before submitting assessment for peer review, complete this quality checklist:
 - [ ] Tool names are correct
 - [ ] Evidence locations are correct (links work)
 
-
 **Assessment Accuracy:**
 
 - [ ] "Executed" based on actual verification (not documentation)
@@ -1528,7 +1414,6 @@ Before submitting assessment for peer review, complete this quality checklist:
 - [ ] Training "Complete" verified with records
 - [ ] Scores match underlying data
 - [ ] Gaps identified are real gaps
-
 
 ## Evidence
 
@@ -1540,7 +1425,6 @@ Before submitting assessment for peer review, complete this quality checklist:
 - [ ] Reports are current (not outdated)
 - [ ] Interview notes are documented
 
-
 **Evidence Quality:**
 
 - [ ] Evidence is authentic (from authoritative source)
@@ -1548,7 +1432,6 @@ Before submitting assessment for peer review, complete this quality checklist:
 - [ ] Evidence is timely (recent)
 - [ ] Evidence is relevant
 - [ ] Evidence is accessible (not on local machine)
-
 
 ## Consistency
 
@@ -1559,14 +1442,12 @@ Before submitting assessment for peer review, complete this quality checklist:
 - [ ] Scores make sense given documented findings
 - [ ] Tool deployment (Sheet 5) aligns with SDLC activities (Sheet 2)
 
-
 **Policy Consistency:**
 
 - [ ] Assessment follows ISMS-POL-A.8.25-26-29 Section 3
 - [ ] SDLC phases match policy requirements
 - [ ] Defect remediation SLAs match policy
 - [ ] Training requirements match policy
-
 
 ## Clarity
 
@@ -1577,14 +1458,12 @@ Before submitting assessment for peer review, complete this quality checklist:
 - [ ] Technical terms are used correctly
 - [ ] No typos or grammar errors
 
-
 **Professional Presentation:**
 
 - [ ] Formatting is consistent
 - [ ] No missing or broken formatting
 - [ ] Print preview looks professional
 - [ ] No placeholder text remains
-
 
 ## Actionability
 
@@ -1596,7 +1475,6 @@ Before submitting assessment for peer review, complete this quality checklist:
 - [ ] Priorities assigned
 - [ ] Owners suggested
 
-
 ## Stakeholder Review Readiness
 
 **Pre-Submission:**
@@ -1606,7 +1484,6 @@ Before submitting assessment for peer review, complete this quality checklist:
 - [ ] Security Champion pre-briefed (if exists)
 - [ ] Evidence package complete
 - [ ] Peer reviewer identified (Security Architect)
-
 
 ---
 
@@ -1621,14 +1498,12 @@ Before submitting assessment for peer review, complete this quality checklist:
 - Address any factual corrections
 - Obtain Development Manager acknowledgment
 
-
 **Step 2: Security Champion Review** (if exists)
 
 - Share draft with Security Champion
 - Validate security activities assessment
 - Address any factual corrections
 - Obtain Security Champion acknowledgment
-
 
 **Step 3: Security Architect Peer Review**
 
@@ -1637,20 +1512,17 @@ Before submitting assessment for peer review, complete this quality checklist:
 - Security Architect validates evidence
 - Security Architect provides feedback
 
-
 **Step 4: Address Feedback**
 
 - Assessor addresses feedback (3-5 business days)
 - Updates workbook as needed
 - Re-submits for approval
 
-
 **Step 5: Final Approval**
 
 - Security Architect approves
 - Development Manager acknowledges
 - Document approval in Sheet 8
-
 
 ## Post-Approval Actions
 
@@ -1660,7 +1532,6 @@ Before submitting assessment for peer review, complete this quality checklist:
 - Highlight key findings (strengths, gaps, recommendations)
 - Provide link to full assessment
 
-
 **Track Improvements:**
 
 - Create action items for recommendations
@@ -1668,13 +1539,11 @@ Before submitting assessment for peer review, complete this quality checklist:
 - Track in team backlog or improvement register
 - Schedule follow-up reviews
 
-
 **Archive Assessment:**
 
 - Move to archive folder
 - Ensure evidence package is complete
 - Update assessment tracking register
-
 
 **Schedule Next Assessment:**
 
@@ -1682,7 +1551,6 @@ Before submitting assessment for peer review, complete this quality checklist:
 - Medium-Risk: Semi-annually
 - Low-Risk: Annually
 - Document next assessment date
-
 
 ---
 
@@ -1704,7 +1572,6 @@ This completes **PART I: USER COMPLETION GUIDE** for SDLC Security Activities As
 - Interview developers - manager's view may differ from reality
 - Focus on effectiveness - compliance ≠ effectiveness
 - Be practical - recommendations must be achievable
-
 
 **Next Steps:**
 1. Read PART II: Technical Specification
@@ -1784,7 +1651,6 @@ Good luck! 📋✅
 - **Data Rows:** 20 pixels (auto-adjust for text wrap)
 - **Instruction Rows:** 15 pixels (smaller italic text)
 
-
 ## Standard Colors (Fill)
 
 **Headers:**
@@ -1793,13 +1659,11 @@ Good luck! 📋✅
 - Sub-Header: `RGB(68, 114, 196)` / `#4472C4` (Medium Blue), Font: White, Bold, 11pt
 - Column Header: `RGB(217, 217, 217)` / `#D9D9D9` (Light Gray), Font: Black, Bold, 10pt
 
-
 **Input Cells:**
 
 - User Input Required: `RGB(255, 255, 204)` / `#FFFFCC` (Light Yellow)
 - Auto-Calculated: `RGB(217, 217, 217)` / `#D9D9D9` (Light Gray) - Protected
 - Locked/Read-Only: White background - Protected
-
 
 **Status Indicators:**
 
@@ -1807,7 +1671,6 @@ Good luck! 📋✅
 - ⚠️ Partial: `RGB(255, 235, 156)` / `#FFEB9C` (Light Yellow)
 - ❌ No/Non-Compliant: `RGB(255, 199, 206)` / `#FFC7CE` (Light Red)
 - N/A: `RGB(237, 237, 237)` / `#EDEDED` (Gray)
-
 
 ## Standard Fonts
 
@@ -1817,7 +1680,6 @@ Good luck! 📋✅
 - **Body Text:** Calibri 10pt, Black text
 - **Instructions:** Calibri 9pt, Italic, Gray `RGB(128, 128, 128)`
 - **Comments/Notes:** Calibri 9pt, Italic, Dark Gray `RGB(89, 89, 89)`
-
 
 ## Data Validation Standards
 
@@ -1864,20 +1726,17 @@ List: Critical,High,Medium,Low
 - Password: [Organization-specific]
 - Allow: Select unlocked cells, Format cells, AutoFilter
 
-
 **Unlocked Cells:**
 
 - All yellow input cells (user data entry)
 - Comment cells
 - Metrics input cells (where user enters counts)
 
-
 **Locked Cells:**
 
 - All gray auto-calculated cells
 - All formulas
 - All headers and instructions
-
 
 ---
 
@@ -1974,7 +1833,6 @@ List: High Risk,Medium Risk,Low Risk
 - If "Medium Risk" → Yellow background `RGB(255, 235, 156)`, Bold
 - If "Low Risk" → Green background `RGB(198, 239, 206)`, Bold
 
-
 ---
 
 # Sheet 2: SDLC Phase Security Activities
@@ -1991,7 +1849,6 @@ For each of 6 SDLC phases (Requirements, Design, Development, Testing, Deploymen
 - Phase header
 - Security activities list
 - Assessment columns: Planned?, Executed?, Evidence?, Comments
-
 
 ### Columns
 
@@ -2113,13 +1970,11 @@ For each of 6 SDLC phases (Requirements, Design, Development, Testing, Deploymen
 - If 70-89% → Yellow background
 - If <70% → Red background
 
-
 **Cell E56** (Overall Score):
 
 - If ≥90% → Green background, Bold
 - If 70-89% → Yellow background, Bold
 - If <70% → Red background, Bold
-
 
 ---
 
@@ -2355,7 +2210,6 @@ Assess security tools deployment and usage.
 - D. IDE Security Plugins (Rows 57-62)
 - E. Scoring (Rows 64-70)
 
-
 **Each tool section includes:**
 
 - Tool deployed? (Yes/No)
@@ -2364,7 +2218,6 @@ Assess security tools deployment and usage.
 - Execution frequency
 - Metrics (scans, findings, remediation)
 - Deployment score
-
 
 ---
 
@@ -2436,7 +2289,6 @@ Assess developer security training completion and effectiveness.
 - E. Just-in-Time Training (Rows 34-38)
 - F. Scoring (Rows 40-46)
 
-
 ---
 
 # Sheet 7: Security Defect Management
@@ -2456,14 +2308,12 @@ Assess security defect tracking and remediation.
 - F. Security Technical Debt (Rows 50-54)
 - G. Scoring (Rows 56-62)
 
-
 **Key Formulas:**
 
 - SLA compliance rate
 - Average remediation time by severity
 - Overdue defect count
 - Technical debt age
-
 
 ---
 
@@ -2513,7 +2363,6 @@ Table structure for recommendations with columns:
 - Recommendation
 - Effort (Low/Medium/High)
 - Priority (P1/P2/P3/P4)
-
 
 ---
 
@@ -2633,7 +2482,6 @@ Stakeholder review and approval workflow for the assessment.
 - Test emoji rendering (✅⚠️❌)
 - Verify special characters display correctly
 
-
 **Formula Testing:**
 
 - Test all percentage calculations
@@ -2641,13 +2489,11 @@ Stakeholder review and approval workflow for the assessment.
 - Test average formulas with VALUE() and LEFT() string manipulation
 - Verify conditional logic (IF statements)
 
-
 **Data Validation:**
 
 - Verify all dropdowns work
 - Test that invalid entries are rejected
 - Check dropdown lists are complete
-
 
 **Conditional Formatting:**
 
@@ -2655,20 +2501,17 @@ Stakeholder review and approval workflow for the assessment.
 - Test that formatting updates when cells change
 - Check thresholds (90%, 70%, 50%)
 
-
 **Sheet Protection:**
 
 - Verify only yellow cells are unlocked
 - Test that formulas cannot be edited
 - Confirm password protection works
 
-
 **Performance:**
 
 - Workbook should generate in <10 seconds
 - File size should be <1MB
 - Opening workbook should be fast (<5 seconds)
-
 
 ---
 
@@ -2683,13 +2526,11 @@ Stakeholder review and approval workflow for the assessment.
 - [ ] All column widths set appropriately
 - [ ] No hidden rows or columns
 
-
 **Data Validation:**
 
 - [ ] All dropdowns functional
 - [ ] Dropdown lists complete and accurate
 - [ ] Invalid entries rejected
-
 
 **Formulas:**
 
@@ -2698,13 +2539,11 @@ Stakeholder review and approval workflow for the assessment.
 - [ ] Cross-sheet references work
 - [ ] Percentage calculations display correctly
 
-
 **Conditional Formatting:**
 
 - [ ] All status indicators display correct colors
 - [ ] Score thresholds trigger correct colors
 - [ ] Formatting persists when cells updated
-
 
 **Protection:**
 
@@ -2713,14 +2552,12 @@ Stakeholder review and approval workflow for the assessment.
 - [ ] Formulas locked and protected
 - [ ] Password protection works
 
-
 **Usability:**
 
 - [ ] Instructions clear
 - [ ] No placeholder text remains
 - [ ] Professional appearance
 - [ ] Print preview looks good
-
 
 **Testing:**
 

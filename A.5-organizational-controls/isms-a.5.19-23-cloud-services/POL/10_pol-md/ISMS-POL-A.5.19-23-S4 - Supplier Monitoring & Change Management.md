@@ -36,7 +36,6 @@
 - Operations: Chief Information Officer (CIO)
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -46,7 +45,6 @@
 - ISMS-REF-A.5.23 (Cloud Service Provider Registry)
 - ISO/IEC 27001:2022 Control A.5.22
 - ISO/IEC 27036-4 (Cloud services)
-
 
 ---
 
@@ -72,7 +70,6 @@ This section defines requirements for ongoing monitoring, periodic review, and c
 - Supplier audits or third-party attestations (SOC 2, ISO 27001) shall be obtained and reviewed for findings
 - Relationship with suppliers shall be maintained through regular communication, reviews, and governance meetings
 - Supplier service degradation or non-compliance shall trigger escalation and remediation procedures including potential termination
-
 
 ---
 
@@ -244,7 +241,6 @@ Beyond scheduled reviews, conduct immediate review upon:
 - Status tracking (Open → In Progress → Verified → Closed)
 - Closure evidence
 
-
 ## Assessment Documentation
 
 Each assessment shall produce comprehensive documentation:
@@ -285,7 +281,6 @@ Each assessment shall produce comprehensive documentation:
 - ISO 27001: Check IAF/accreditation body database
 - SOC 2: Verify CPA firm license, request AICPA confirmation if needed
 - Industry certifications: Verify with certification authority
-
 
 ## Compliance Failure Response
 
@@ -380,14 +375,12 @@ A change is considered **material** if it meets any of the following criteria:
 - Modifies access control architecture or privileged access procedures
 - Introduces new attack surface or expands existing attack vectors
 
-
 **Data-Related**:
 
 - Changes data processing location or jurisdiction (especially EU/CH to non-adequate country)
 - Modifies data retention, backup, or disaster recovery procedures
 - Changes data handling processes or introduces new data flows
 - Affects data subject rights exercise or GDPR/nDSG compliance
-
 
 **Compliance-Related**:
 
@@ -396,7 +389,6 @@ A change is considered **material** if it meets any of the following criteria:
 - Changes certification scope or causes certification lapse
 - Affects contractual security obligations
 
-
 **Service-Related**:
 
 - Significantly alters service architecture or technology stack
@@ -404,13 +396,11 @@ A change is considered **material** if it meets any of the following criteria:
 - Modifies SLA commitments or introduces new dependencies
 - Affects business continuity or disaster recovery capabilities
 
-
 **Corporate-Related**:
 
 - Changes ownership or control of supplier entity
 - Triggers change-of-control provisions in contract
 - Affects supplier's ability to perform contractual obligations
-
 
 ---
 
@@ -497,7 +487,6 @@ A change is considered **material** if it meets any of the following criteria:
 - Potential re-classification of supplier risk level
 - Consideration of termination rights if material breach
 
-
 ---
 
 # Documentation & Reporting
@@ -534,13 +523,11 @@ A change is considered **material** if it meets any of the following criteria:
 - Report material changes to ICT third-party arrangements to competent authority
 - Document concentration risk assessments annually
 
-
 **NIS2-Covered Services**:
 
 - Include supplier incidents in regulatory incident reporting (24-hour early warning)
 - Document supply chain security measures in annual cybersecurity report
 - Maintain evidence of supplier security requirements and verification
-
 
 ---
 

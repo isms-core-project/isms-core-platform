@@ -36,7 +36,6 @@
 - Technical: Chief Information Officer (CIO)
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -46,7 +45,6 @@
 - ISO/IEC 27001:2022 Control A.5.21
 - ISO/IEC 27036-3 (ICT supply chain security)
 - NIST SP 800-161 (Cybersecurity Supply Chain Risk Management)
-
 
 ---
 
@@ -72,7 +70,6 @@ This section defines requirements for managing information security risks within
 - Supply chain continuity and resilience shall be planned for critical ICT services
 - Supplier changes and updates shall be managed through formal change control processes
 - Supply chain risk assessment shall include geopolitical, concentration, and single-source dependencies
-
 
 ---
 
@@ -118,7 +115,6 @@ This section defines requirements for managing information security risks within
 - **DORA entities**: Full sub-outsourcing register required per Article 30, including fourth-party visibility
 - **NIS2 entities**: Sub-supplier disclosure for critical services per Article 21 supply chain requirements
 
-
 ## Sub-Supplier Register
 
 For Level 1 and Level 2 suppliers, maintain comprehensive visibility including:
@@ -140,7 +136,6 @@ For Level 1 and Level 2 suppliers, maintain comprehensive visibility including:
 - Updated within 10 business days of sub-supplier changes
 - Quarterly review for accuracy and completeness
 - Annual reconciliation with supplier provided documentation
-
 
 ## Sub-Supplier Control Requirements
 
@@ -199,7 +194,6 @@ For Level 1 and Level 2 suppliers, maintain comprehensive visibility including:
 - Concentration risk (same sub-supplier across multiple suppliers)
 - Regulatory incompatibility (DORA, NIS2, GDPR)
 
-
 ---
 
 # Fourth-Party Risk Management
@@ -224,20 +218,17 @@ Identify and document fourth-party dependencies for:
 - Storage providers (object storage, block storage, backup)
 - Network providers (internet connectivity, private links, CDN)
 
-
 **Security Services**:
 
 - Identity providers (SSO, MFA, directory services)
 - Encryption services (key management, HSM, certificate authorities)
 - Monitoring services (SIEM, log aggregation, threat intelligence)
 
-
 **Operational Services**:
 
 - DNS providers (critical for availability)
 - CDN networks (content delivery, DDoS protection)
 - Payment processors (financial transaction handling)
-
 
 ## Fourth-Party Risk Indicators
 
@@ -255,7 +246,6 @@ Identify and document fourth-party dependencies for:
 - Alternative suppliers available
 - Business continuity implications
 - Mitigation strategies (multi-cloud, hybrid architecture)
-
 
 ---
 
@@ -306,12 +296,10 @@ For Level 1 software suppliers, SBOM shall include:
 - **SPDX**: Linux Foundation standard
 - Both support JSON and XML formats for automated processing
 
-
 **SBOM Update Frequency**: 
 
 - Quarterly for routine updates
 - Within 48 hours after new critical vulnerability discovered in component
-
 
 ## Open Source Security
 
@@ -331,7 +319,6 @@ For Level 1 software suppliers, SBOM shall include:
 - Using unmaintained packages for cryptography, authentication, or authorization
 - Including packages with known critical vulnerabilities without remediation plan
 - Copy-pasting code from Stack Overflow or GitHub without security review
-
 
 ---
 
@@ -368,7 +355,6 @@ For Level 1 software suppliers, SBOM shall include:
 - Weight comparison (counterfeits often different weight)
 - Visual inspection for modification evidence
 - Firmware hash verification against known-good values
-
 
 ## Hardware Lifecycle Considerations
 
@@ -455,7 +441,6 @@ Monitor for signs of supply chain compromise:
 - Supplier communication from unusual channels or domains
 - Abnormal network traffic to/from supplier-controlled systems
 
-
 ---
 
 # Security Requirements Flow-Down
@@ -493,7 +478,6 @@ Primary suppliers shall propagate security requirements through the entire suppl
 - Sub-supplier security questionnaires and certifications
 - Supplier's vendor management procedures
 - Audit reports covering sub-supplier management
-
 
 ---
 
@@ -534,7 +518,6 @@ Primary suppliers shall propagate security requirements through the entire suppl
 - Concentration risk assessment updates
 - Non-compliance issues and remediation plans
 
-
 **Audience**: CISO, CIO, Risk Management, Executive Management (annual summary)
 
 ---
@@ -551,7 +534,6 @@ For ICT services covered by DORA, maintain comprehensive sub-outsourcing registe
 - Date of sub-outsourcing contracts
 - Notification to [Organization] prior to sub-outsourcing
 
-
 **Concentration Risk**: Assess and document concentration risk from sub-outsourcing arrangements per DORA Article 28.
 
 ## NIS2 Supply Chain Security (Article 21)
@@ -562,7 +544,6 @@ For entities covered by NIS2, supply chain security measures shall include:
 - Security requirements for supplier and sub-supplier relationships
 - Incident reporting from suppliers enabling 24-hour notification to authorities
 - Supply chain risk assessment and mitigation strategies
-
 
 ---
 

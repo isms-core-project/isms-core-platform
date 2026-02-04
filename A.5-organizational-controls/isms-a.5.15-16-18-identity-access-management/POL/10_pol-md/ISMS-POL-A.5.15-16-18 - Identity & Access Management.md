@@ -35,14 +35,12 @@
 - Compliance: Legal/Compliance Officer
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-IMP-A.5.15-16-18 (Implementation Guidance Suite)
 - ISMS-POL-A.8.2-3-5 (Authentication & Privileged Access)
 - ISO/IEC 27001:2022 Controls A.5.15, A.5.16, A.5.18
-
 
 ---
 
@@ -87,7 +85,6 @@ This policy establishes [Organization]'s requirements for identity and access ma
 - Authentication mechanisms (covered in A.8.5)
 - Privileged access management implementation (covered in A.8.2)
 
-
 ## Regulatory Applicability
 
 **Tier 1 - Mandatory Compliance** (All operations):
@@ -104,7 +101,6 @@ This policy establishes [Organization]'s requirements for identity and access ma
 - **DORA**: If [Organization] is EU financial entity (Articles 6, 28-30)
 - **NIS2**: If [Organization] is essential or important entity (Article 21)
 - **PCI DSS**: If [Organization] processes payment card data (Requirements 7, 8)
-
 
 Compliance determination per ISMS-POL-00 (Regulatory Applicability Framework).
 
@@ -205,7 +201,6 @@ Detailed procedures documented in ISMS-IMP-A.5.15-16-18.2.
 - **Remediation**: Investigation, notification, disable, delete sequence within 30 days
 - **Exceptions**: CISO approval required with documented justification
 
-
 ---
 
 ## Access Rights Requirements (A.5.18)
@@ -218,7 +213,6 @@ Detailed procedures documented in ISMS-IMP-A.5.15-16-18.2.
 - Role-based access control (RBAC) as preferred method
 - Business justification documented for all access grants
 - Audit trail maintained (requester, approver, timestamp, justification)
-
 
 **Provisioning Timeliness**:
 
@@ -238,7 +232,6 @@ Detailed procedures documented in ISMS-IMP-A.5.15-16-18.2.
 - Roles mapped to specific access rights (access entitlement matrix documented in ISMS-IMP-A.5.15-16-18.3)
 - Target: 80% or greater users assigned via roles versus direct access
 - Annual role review by business owners (tracked in [GRC Platform], completion required by Q1 annually)
-
 
 ### Access Review and Recertification
 
@@ -304,7 +297,6 @@ If inappropriate access cannot be removed within 5 business days due to technica
 4. Repeated privilege creep (>2 occurrences) triggers process improvement review
 
 **Reporting**: Privilege creep metrics included in monthly IAM Governance Dashboard (count of findings, average remediation time, repeat offenders by department)
-
 
 ---
 
@@ -401,7 +393,6 @@ IAM policy exceptions require:
 - Documentation in exception register
 - Annual review for continued necessity
 
-
 Exception request procedures documented in ISMS-IMP-A.5.15-16-18.1.
 
 ## Incident Response
@@ -416,7 +407,6 @@ This policy SHALL be reviewed:
 
 - **Annually** (mandatory)
 - **When triggered** by regulatory changes, organizational changes, technology changes, audit findings, risk assessment changes, or incident lessons learned
-
 
 Policy changes require CISO approval; major revisions require Executive Management approval.
 
@@ -437,7 +427,6 @@ Policy changes require CISO approval; major revisions require Executive Manageme
 - **A.8.2** (Privileged Access Rights): IAM defines privileged users, A.8.2 implements PAM
 - **A.8.5** (Secure Authentication): IAM creates identities, A.8.5 authenticates them
 - **A.5.24-27** (Incident Management): Account compromise incidents managed per incident framework
-
 
 ## Implementation Resources
 

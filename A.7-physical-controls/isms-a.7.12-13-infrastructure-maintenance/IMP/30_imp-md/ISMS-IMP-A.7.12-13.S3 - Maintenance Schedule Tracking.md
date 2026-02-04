@@ -47,7 +47,6 @@ This document consists of two parts:
   - Validation Rules
   - Conditional Formatting Logic
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -71,7 +70,6 @@ This workbook provides operational TRACKING of equipment maintenance schedules. 
 - Vendor coordination and scheduling
 - Regulatory compliance tracking for inspected equipment
 
-
 #### Key Principle
 
 This workbook is an **operational tool** used on an ongoing basis, not a one-time assessment. It should be updated regularly (monthly at minimum) to reflect:
@@ -81,7 +79,6 @@ This workbook is an **operational tool** used on an ongoing basis, not a one-tim
 - Schedule changes
 - New equipment additions
 - Equipment decommissioning
-
 
 #### What You'll Track
 
@@ -94,7 +91,6 @@ This workbook is an **operational tool** used on an ongoing basis, not a one-tim
 - Warranty status and expiration dates
 - Service level agreements (SLAs) with vendors
 
-
 **Completion Tracking:**
 
 - Actual completion dates
@@ -103,7 +99,6 @@ This workbook is an **operational tool** used on an ongoing basis, not a one-tim
 - Maintenance record reference
 - Technician/vendor who performed work
 - Issues discovered during maintenance
-
 
 **Overdue Items:**
 
@@ -114,7 +109,6 @@ This workbook is an **operational tool** used on an ongoing basis, not a one-tim
 - Compensating controls implemented
 - Risk assessment of delay
 
-
 **Upcoming Maintenance:**
 
 - Next 30/60/90 day maintenance requirements
@@ -124,14 +118,12 @@ This workbook is an **operational tool** used on an ongoing basis, not a one-tim
 - Maintenance window coordination
 - Change management alignment
 
-
 **Historical Analysis:**
 
 - Maintenance completion rates over time
 - Recurring issues by equipment type
 - Vendor performance metrics
 - Cost tracking per equipment category
-
 
 #### How This Relates to Other A.7.12-13 Assessments
 
@@ -169,7 +161,6 @@ This workbook (A.7.12-13.S3) is an **operational tracking tool** that supports t
 - **Quarterly:** Trend analysis, schedule optimisation
 - **Annually:** Full programme review, vendor contract alignment
 
-
 ### Expected Outputs
 
 Using this workbook provides:
@@ -202,7 +193,6 @@ Using this workbook provides:
 - Equipment age and expected lifecycle
 - Location and accessibility information
 
-
 #### 2. Maintenance Records
 
 - Historical maintenance completion records
@@ -211,7 +201,6 @@ Using this workbook provides:
 - Previous maintenance findings and actions
 - Recurring issue history
 - Parts replacement records
-
 
 #### 3. Documentation
 
@@ -222,14 +211,12 @@ Using this workbook provides:
 - Change management procedures
 - Escalation procedures
 
-
 #### 4. Contacts and Resources
 
 - Internal maintenance team contact list
 - Vendor contact information and escalation paths
 - Emergency maintenance procedures
 - After-hours support arrangements
-
 
 ### Required Tools
 
@@ -238,7 +225,6 @@ Using this workbook provides:
 - Access to vendor maintenance portals
 - Asset management system access
 - Change management system access
-
 
 ### System Integrations
 
@@ -251,7 +237,6 @@ Using this workbook provides:
 | Vendor Portals | Schedule synchronisation | Manual or API |
 | Change Management | Maintenance window alignment | Manual |
 | Monitoring Systems | Alert correlation | Manual |
-
 
 ---
 
@@ -393,7 +378,6 @@ Using this workbook provides:
 
 **Time Required:** 15-30 minutes for initial configuration
 
-
 ### Sheet 2: Equipment Schedule
 
 **Purpose:** Master maintenance schedule for all equipment
@@ -409,11 +393,9 @@ Using this workbook provides:
 - Match with CMMS/Asset Management system
 - Use consistent naming convention
 
-
 **Column B - Equipment Type:**
 
 - Dropdown: "Server", "Network Device", "Storage", "UPS", "HVAC", "Generator", "Security System", "Fire Suppression", "Access Control", "CCTV", "Environmental Sensors", "PDU", "Cable Infrastructure", "Other"
-
 
 **Column C - Equipment Description:**
 
@@ -421,13 +403,11 @@ Using this workbook provides:
 - Include manufacturer and model number
 - Include capacity/specification if relevant
 
-
 **Column D - Location:**
 
 - Where located: "Datacenter 1 - Rack A1"
 - Use consistent location naming
 - Include room, rack, position if applicable
-
 
 **Column E - Criticality:**
 
@@ -435,12 +415,10 @@ Using this workbook provides:
 - Based on business impact assessment
 - Aligns with asset classification
 
-
 **Column F - Maintenance Type:**
 
 - Type of maintenance: "Firmware Update", "Inspection", "Battery Check", "Filter Replacement", "Calibration", "Full Service", "Cleaning", "Testing", "Component Replacement"
 - Multiple maintenance types may apply (create separate rows)
-
 
 **Column G - Frequency:**
 
@@ -448,12 +426,10 @@ Using this workbook provides:
 - Based on manufacturer recommendations
 - May be adjusted based on environment/usage
 
-
 **Column H - Responsible Party:**
 
 - Dropdown: "Internal - IT", "Internal - Facilities", "Vendor", "Manufacturer", "Contractor"
 - Clear accountability assignment
-
 
 **Column I - Last Completed:**
 
@@ -461,12 +437,10 @@ Using this workbook provides:
 - Swiss date format (DD.MM.YYYY)
 - Required for status calculation
 
-
 **Column J - Next Due:**
 
 - Formula: Calculates based on last completed + frequency
 - Automatically updated when Last Completed changes
-
 
 **Column K - Status:**
 
@@ -475,13 +449,11 @@ Using this workbook provides:
   - "Due Soon" (next due within 30 days)
   - "Overdue" (next due < today)
 
-
 **Column L - Days Until Due / Overdue:**
 
 - Formula: Calculates days until or since due date
 - Positive = days until due
 - Negative = days overdue
-
 
 **Column M - Maintenance Record Ref:**
 
@@ -489,25 +461,21 @@ Using this workbook provides:
 - Links to CMMS/ITSM ticket
 - Required for audit trail
 
-
 **Column N - Warranty Status:**
 
 - Dropdown: "In Warranty", "Out of Warranty", "Extended Warranty", "N/A"
 - Impacts vendor responsibility
-
 
 **Column O - Contract Reference:**
 
 - Service contract number if applicable
 - Vendor contract reference
 
-
 **Column P - Notes:**
 
 - Any additional context
 - Special requirements
 - Known issues
-
 
 **Time Required:** Initial setup 2-3 hours, monthly updates 30-60 minutes
 
@@ -524,42 +492,35 @@ Using this workbook provides:
 - Pulled from Sheet 2
 - Unique identifier
 
-
 **Column B - Equipment Description:**
 
 - Pulled from Sheet 2
 - For quick identification
-
 
 **Column C - Criticality:**
 
 - Tier 1, Tier 2, or Tier 3
 - Impacts escalation timeline
 
-
 **Column D - Maintenance Type:**
 
 - What maintenance is overdue
 - From Sheet 2
-
 
 **Column E - Original Due Date:**
 
 - When it was due
 - From Sheet 2
 
-
 **Column F - Days Overdue:**
 
 - Formula: Today - Due Date
 - Automatically calculated
 
-
 **Column G - Reason for Delay:**
 
 - Dropdown: "Parts on Order", "Vendor Scheduling", "Resource Unavailable", "Budget Hold", "Awaiting Change Window", "Equipment Access Issue", "Dependency on Other Work", "Other"
 - Required for all overdue items
-
 
 **Column H - Detailed Explanation:**
 
@@ -567,57 +528,47 @@ Using this workbook provides:
 - Why the delay occurred
 - What is being done to resolve
 
-
 **Column I - Estimated Completion:**
 
 - Revised completion date
 - When maintenance is now expected
-
 
 **Column J - Escalated:**
 
 - Dropdown: "Yes", "No"
 - Required if overdue > threshold
 
-
 **Column K - Escalated To:**
 
 - Who it was escalated to: "IT Manager", "CISO", "Vendor Manager"
 - Required if Escalated = Yes
-
 
 **Column L - Escalation Date:**
 
 - When escalation occurred
 - For tracking response time
 
-
 **Column M - Compensating Control:**
 
 - Any interim measures: "Increased monitoring", "Backup system in place", "Manual checks implemented", "Redundancy active"
 - Required for critical equipment
-
 
 **Column N - Risk Assessment:**
 
 - Impact of delay: "Low", "Medium", "High", "Critical"
 - Based on equipment criticality and delay duration
 
-
 **Column O - Resolution Notes:**
 
 - Update when resolved
 - Document actions taken
-
 
 **Column P - Actual Completion Date:**
 
 - When finally completed
 - For variance analysis
 
-
 **Time Required:** 15-30 minutes per overdue item
-
 
 ### Sheet 4: Upcoming Maintenance
 
@@ -645,13 +596,11 @@ Using this workbook provides:
 - Pre-requisites (dependencies)
 - Post-maintenance Testing Required
 
-
 **Coordination Notes:**
 
 - System dependencies
 - User notifications required
 - Rollback plan needed (Yes/No)
-
 
 ### Sheet 5: Dashboard
 
@@ -667,7 +616,6 @@ Using this workbook provides:
 - Equipment overdue (%)
 - Compliance trend (vs. previous month)
 
-
 **Compliance by Type:**
 
 - Servers: X% current
@@ -678,13 +626,11 @@ Using this workbook provides:
 - Security Systems: X% current
 - Other: X% current
 
-
 **Compliance by Criticality:**
 
 - Tier 1 (Critical): X% current
 - Tier 2 (Standard): X% current
 - Tier 3 (Low): X% current
-
 
 **Overdue Summary:**
 
@@ -695,13 +641,11 @@ Using this workbook provides:
 - Items escalated (count)
 - Items with compensating controls (count)
 
-
 **Trend (Rolling 6 Months):**
 
 - Compliance % by month
 - Overdue count by month
 - Average resolution time
-
 
 **Upcoming Workload:**
 
@@ -711,13 +655,11 @@ Using this workbook provides:
 - 31-60 days: X items
 - 61-90 days: X items
 
-
 **Vendor Workload:**
 
 - Internal IT: X items this month
 - Internal Facilities: X items this month
 - Vendor (by vendor): X items this month
-
 
 ### Sheet 6: Maintenance Log
 
@@ -740,7 +682,6 @@ Using this workbook provides:
 - Follow-up Action (if required)
 - Next Scheduled Date
 
-
 ### Sheet 7: Evidence Register
 
 **Purpose:** Link to supporting evidence
@@ -756,7 +697,6 @@ Using this workbook provides:
 - Photographs (before/after)
 - Sign-off documentation
 
-
 **Evidence Fields:**
 
 | Field | Description |
@@ -769,7 +709,6 @@ Using this workbook provides:
 | Storage Location | Where stored (SharePoint, CMMS, etc.) |
 | Retention Period | How long to keep |
 | Last Verified | When evidence last confirmed accessible |
-
 
 ---
 
@@ -833,7 +772,6 @@ Using this workbook provides:
 - Monthly reconciliation against CMMS
 - Include workbook update in maintenance procedure checklist
 
-
 ### Pitfall 2: Missing Equipment
 
 **MISTAKE:** New equipment not added to schedule
@@ -844,7 +782,6 @@ Using this workbook provides:
 - Integrate with asset management process
 - Quarterly audit of equipment vs. schedule
 - Include in equipment commissioning checklist
-
 
 ### Pitfall 3: Incorrect Frequencies
 
@@ -857,7 +794,6 @@ Using this workbook provides:
 - Review during S2 assessment
 - Document source of frequency determination
 
-
 ### Pitfall 4: No Overdue Escalation
 
 **MISTAKE:** Items remain overdue without escalation or compensating controls
@@ -868,7 +804,6 @@ Using this workbook provides:
 - Weekly review of overdue items
 - Escalation after defined period (14 days standard, 7 days critical)
 - Document compensating controls for all overdue critical equipment
-
 
 ### Pitfall 5: Stale Upcoming View
 
@@ -881,7 +816,6 @@ Using this workbook provides:
 - Pre-schedule vendor maintenance 60 days out
 - Coordinate with change management calendar
 
-
 ### Pitfall 6: Inconsistent Equipment IDs
 
 **MISTAKE:** Using different IDs in workbook vs. CMMS/Asset Management
@@ -892,7 +826,6 @@ Using this workbook provides:
 - Use CMMS asset IDs as primary identifier
 - Cross-reference in Notes field if needed
 - Annual reconciliation with asset register
-
 
 ### Pitfall 7: Missing Maintenance Types
 
@@ -905,7 +838,6 @@ Using this workbook provides:
 - Review manufacturer recommendations for all maintenance types
 - Include firmware, inspection, cleaning, calibration as separate items
 
-
 ### Pitfall 8: No Variance Analysis
 
 **MISTAKE:** Not tracking actual vs. scheduled completion variance
@@ -916,7 +848,6 @@ Using this workbook provides:
 - Record both scheduled and actual dates
 - Calculate variance in Maintenance Log
 - Monthly review of average variance by type/vendor
-
 
 ### Pitfall 9: Incomplete Evidence References
 
@@ -929,7 +860,6 @@ Using this workbook provides:
 - Verify evidence exists in CMMS
 - Quarterly evidence verification sample
 
-
 ### Pitfall 10: Ignoring Warranty Status
 
 **MISTAKE:** Performing vendor maintenance on equipment still under warranty
@@ -940,7 +870,6 @@ Using this workbook provides:
 - Track warranty status (Column N)
 - Review warranty before scheduling internal maintenance
 - Coordinate with vendor for warranty equipment
-
 
 ### Pitfall 11: No Compensating Controls for Overdue Critical Equipment
 
@@ -953,7 +882,6 @@ Using this workbook provides:
 - Weekly review of overdue critical items
 - Escalation to CISO for critical overdue >7 days
 
-
 ### Pitfall 12: Decommissioned Equipment Still in Schedule
 
 **MISTAKE:** Equipment removed from service but still tracked for maintenance
@@ -964,7 +892,6 @@ Using this workbook provides:
 - Process to mark equipment as decommissioned
 - Remove from active schedule (move to archive)
 - Monthly check against asset status
-
 
 ### Pitfall 13: No Vendor Performance Tracking
 
@@ -977,7 +904,6 @@ Using this workbook provides:
 - Monitor completion variance by vendor
 - Quarterly vendor performance review
 
-
 ### Pitfall 14: Formula Errors Not Detected
 
 **MISTAKE:** Status formulas broken, showing incorrect status
@@ -988,7 +914,6 @@ Using this workbook provides:
 - Test formulas after any structural changes
 - Include formula validation in monthly review
 - Sanity check: manual count vs. formula count
-
 
 ### Pitfall 15: No Backup of Workbook
 
@@ -1001,7 +926,6 @@ Using this workbook provides:
 - Monthly backup to secure location
 - Document last known good date
 
-
 ### Pitfall 16: Incomplete Location Information
 
 **MISTAKE:** Equipment location too vague to find equipment
@@ -1012,7 +936,6 @@ Using this workbook provides:
 - Include building, room, rack, position
 - Use consistent location naming convention
 - Verify locations during annual review
-
 
 ### Pitfall 17: No Change Management Alignment
 
@@ -1025,7 +948,6 @@ Using this workbook provides:
 - Include change request reference for system changes
 - Coordinate with CAB for production systems
 
-
 ### Pitfall 18: Missing Post-Maintenance Testing
 
 **MISTAKE:** Maintenance marked complete without verifying system functionality
@@ -1036,7 +958,6 @@ Using this workbook provides:
 - Include testing in maintenance procedure
 - Document test results
 - Require test sign-off before completion
-
 
 ---
 
@@ -1051,7 +972,6 @@ Using this workbook provides:
 - [ ] Alert thresholds configured appropriately
 - [ ] All configuration fields completed
 - [ ] Version control information current
-
 
 ### Sheet 2: Equipment Schedule
 
@@ -1070,7 +990,6 @@ Using this workbook provides:
 - [ ] Locations specific enough to find equipment
 - [ ] No blank required fields
 
-
 ### Sheet 3: Overdue Tracking
 
 - [ ] ALL overdue items from Sheet 2 captured
@@ -1082,7 +1001,6 @@ Using this workbook provides:
 - [ ] Risk assessment completed for all overdue
 - [ ] No items overdue > 30 days without CISO awareness
 
-
 ### Sheet 4: Upcoming Maintenance
 
 - [ ] All items due in next 90 days visible
@@ -1091,7 +1009,6 @@ Using this workbook provides:
 - [ ] Parts/resources identified for upcoming work
 - [ ] Change windows aligned for system maintenance
 - [ ] No scheduling conflicts identified
-
 
 ### Sheet 5: Dashboard
 
@@ -1104,7 +1021,6 @@ Using this workbook provides:
 - [ ] Critical equipment metrics accurate
 - [ ] Overdue summary matches Sheet 3
 
-
 ### Sheet 6: Maintenance Log
 
 - [ ] All completed maintenance in past quarter logged
@@ -1113,7 +1029,6 @@ Using this workbook provides:
 - [ ] Findings documented where applicable
 - [ ] Follow-up items tracked
 
-
 ### Sheet 7: Evidence Register
 
 - [ ] Evidence referenced for all completed maintenance
@@ -1121,7 +1036,6 @@ Using this workbook provides:
 - [ ] Evidence types correctly categorised
 - [ ] Retention periods documented
 - [ ] Sample of evidence verified accessible (quarterly)
-
 
 ### Overall Workbook Quality
 
@@ -1132,7 +1046,6 @@ Using this workbook provides:
 - [ ] No unprotected formula cells
 - [ ] Version date updated
 - [ ] Backup copy exists
-
 
 ### Cross-Reference Verification
 
@@ -1147,7 +1060,6 @@ Using this workbook provides:
 - [ ] Maintenance procedures referenced exist and are current
 - [ ] Integration with S4 Dashboard tested and working
 
-
 ### Data Integrity Checks
 
 - [ ] No orphaned records (equipment removed but log entries remain)
@@ -1158,7 +1070,6 @@ Using this workbook provides:
 - [ ] Days overdue values reasonable (no extreme outliers unexplained)
 - [ ] Trend data consistent with historical records
 - [ ] Backup verification completed this period
-
 
 ---
 
@@ -1283,7 +1194,6 @@ Using this workbook provides:
 | B19 | Critical Escalation (days overdue) | Number | 7 |
 | B20 | Tier 1 Escalation (days overdue) | Number | 3 |
 
-
 ### Sheet 2: Equipment Schedule
 
 **Columns:**
@@ -1334,7 +1244,6 @@ Using this workbook provides:
 | Due Soon | #FFEB9C (Amber) | Black |
 | Overdue | #FFC7CE (Red) | Dark Red |
 
-
 ### Sheet 3: Overdue Tracking
 
 **Columns:**
@@ -1369,7 +1278,6 @@ Using this workbook provides:
 
 **Conditional Formatting (Row - if Criticality = "Tier 1 - Critical" AND Escalated = "No" AND Days Overdue > 3):**
 - Red border around entire row
-
 
 ### Sheet 4: Upcoming Maintenance
 
@@ -1407,7 +1315,6 @@ Using this workbook provides:
 | 3-15-30 Days | #FFEB9C (Light Amber) |
 | 4-31-60 Days | #FFFFCC (Light Yellow) |
 | 5-61-90 Days | #C6EFCE (Light Green) |
-
 
 ### Sheet 5: Dashboard
 
@@ -1474,7 +1381,6 @@ Using this workbook provides:
 =COUNTIFS('Equipment Schedule'!E:E,"Tier 1 - Critical",'Equipment Schedule'!K:K,"Current")/COUNTIF('Equipment Schedule'!E:E,"Tier 1 - Critical")*100
 ```
 
-
 ### Sheet 6: Maintenance Log
 
 **Columns:**
@@ -1510,7 +1416,6 @@ Using this workbook provides:
 | 0 (On Time) | White |
 | 1-7 (Late) | #FFEB9C (Light Amber) |
 | >7 (Very Late) | #FFC7CE (Light Red) |
-
 
 ### Sheet 7: Evidence Register
 
@@ -1687,7 +1592,6 @@ Using this workbook provides:
 - Change requests required for system-impacting maintenance
 - Change closure triggers maintenance completion
 
-
 ---
 
 ## Conditional Formatting Logic
@@ -1704,7 +1608,6 @@ Using this workbook provides:
 
 **Application Range:** K2:K201 (all data rows)
 
-
 ### Days Until/Overdue Formatting (Column L)
 
 **Rule Configuration:**
@@ -1719,7 +1622,6 @@ Using this workbook provides:
 | 6 | Cell value > 30 | Background: #C6EFCE (Light green), Font: Black |
 
 **Application Range:** L2:L201
-
 
 ### Criticality Row Highlighting
 
@@ -1737,7 +1639,6 @@ Formula: =AND($C2="Tier 1 - Critical",$J2="No",$F2>3)
 Format: Red border, Bold text, Background: #FFC7CE
 ```
 
-
 ### Overdue Tracking Conditional Formats (Sheet 3)
 
 **Days Overdue Column (F):**
@@ -1750,7 +1651,6 @@ Format: Red border, Bold text, Background: #FFC7CE
 | 15-30 | #FFC7CE (Light red) |
 | >30 | #FF0000 (Red) with white text |
 
-
 ### Upcoming Maintenance Time Category (Sheet 4, Column G)
 
 | Category | Background |
@@ -1760,7 +1660,6 @@ Format: Red border, Bold text, Background: #FFC7CE
 | 3-15-30 Days | #FFEB9C (Light amber) |
 | 4-31-60 Days | #FFFFCC (Light yellow) |
 | 5-61-90 Days | #C6EFCE (Light green) |
-
 
 ---
 
@@ -1776,7 +1675,6 @@ Formula: =AND(LEN(A2)>=5,LEN(A2)<=25,COUNTIF($A$2:$A$201,A2)=1)
 Error Title: Invalid Equipment ID
 Error Message: Equipment ID must be 5-25 characters and unique within the workbook.
 ```
-
 
 ### Date Field Validation
 
@@ -1799,7 +1697,6 @@ Formula: =I2
 Error Title: Invalid Date
 Error Message: Next Due date must be after Last Completed date.
 ```
-
 
 ### Dropdown Validation Sources
 
@@ -1830,7 +1727,6 @@ Show input message: Yes
 Input message: Select maintenance frequency per manufacturer recommendation.
 ```
 
-
 ---
 
 ## Advanced Formula Reference
@@ -1854,7 +1750,6 @@ Input message: Select maintenance frequency per manufacturer recommendation.
 ```excel
 =IFERROR(COUNTIFS('Equipment Schedule'!E:E,"Tier 1 - Critical",'Equipment Schedule'!K:K,"Current")/COUNTIF('Equipment Schedule'!E:E,"Tier 1 - Critical")*100,0)
 ```
-
 
 ### Overdue Analysis Formulas
 
@@ -1882,7 +1777,6 @@ Input message: Select maintenance frequency per manufacturer recommendation.
 =IFERROR(ABS(MIN('Equipment Schedule'!L:L)),0)
 ```
 
-
 ### Upcoming Workload Formulas
 
 **Next 7 Days:**
@@ -1902,7 +1796,6 @@ Input message: Select maintenance frequency per manufacturer recommendation.
 ```excel
 =COUNTIFS('Equipment Schedule'!L:L,">14",'Equipment Schedule'!L:L,"<=30")
 ```
-
 
 ### Trend Calculation Formulas
 
@@ -1925,7 +1818,6 @@ Where B3 is current month compliance and B2 is previous month.
 =IF(B3>B2,"↑ Improving",IF(B3<B2,"↓ Declining","→ Stable"))
 ```
 
-
 ---
 
 ## Error Handling and Edge Cases
@@ -1946,7 +1838,6 @@ Returns blank if either Last Completed or Frequency is empty.
 ```
 Returns blank if Next Due is empty.
 
-
 ### Division by Zero Prevention
 
 **Percentage Calculations:**
@@ -1956,14 +1847,12 @@ Returns blank if Next Due is empty.
 ```
 Returns 0 if division would fail.
 
-
 ### Circular Reference Prevention
 
 Avoid referencing cells that reference back:
 - Status (K) should not reference Dashboard metrics
 - Days Until (L) references only Next Due (J) and TODAY()
 - Compliance percentages calculated independently of source data formulas
-
 
 ### Large Dataset Performance
 
@@ -1973,7 +1862,6 @@ Avoid referencing cells that reference back:
 2. Use SUMPRODUCT instead of COUNTIFS for large ranges
 3. Disable automatic calculation during bulk updates
 4. Use helper columns to pre-calculate intermediate values
-
 
 ---
 

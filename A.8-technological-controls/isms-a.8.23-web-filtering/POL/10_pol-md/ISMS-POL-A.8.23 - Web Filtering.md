@@ -34,13 +34,11 @@
 - Compliance: Legal/Compliance Officer
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-IMP-A.8.23 (Implementation Guidance Suite)
 - ISO/IEC 27001:2022 Control A.8.23
-
 
 ---
 
@@ -74,7 +72,6 @@ This policy establishes [Organization]'s requirements for web filtering controls
 - Exception and incident management frameworks
 - Integration with [Organization]'s risk assessment and treatment processes
 
-
 ## What This Policy Does
 
 This policy:
@@ -83,7 +80,6 @@ This policy:
 - **Establishes** governance framework for web filtering decision-making
 - **Specifies** accountability for web filtering control implementation
 - **References** applicable regulatory requirements per ISMS-POL-00
-
 
 ## What This Policy Does NOT Do
 
@@ -95,13 +91,11 @@ This policy does NOT:
 - **Select filtering technologies or vendors** (technology selection based on [Organization]'s risk assessment)
 - **Replace risk assessment** (web filtering controls selected based on [Organization]'s risk treatment)
 
-
 **Rationale**: Separating policy requirements from implementation guidance enables:
 
 - Policy stability despite evolving threat landscape
 - Technical agility for technology updates without policy revision
 - Clear distinction between governance (policy) and execution (implementation)
-
 
 ## Scope
 
@@ -113,14 +107,12 @@ This policy does NOT:
 - All web filtering implementations regardless of deployment model (gateway, cloud-based, endpoint, DNS-based)
 - All third-party services providing network access
 
-
 **Out of Scope**:
 
 - Email filtering (covered under separate email security policies)
 - Network intrusion prevention beyond web-based threats (covered under network security policies)
 - Endpoint antivirus/anti-malware (covered under endpoint protection policies)
 - Data loss prevention (covered under DLP policies, though web filtering may support DLP objectives)
-
 
 ## Regulatory Applicability
 
@@ -153,7 +145,6 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - CIS Controls v8 (Control 9: Email and Web Browser Protections)
 - MITRE ATT&CK Framework (Defense techniques)
 - OWASP (Web Security Testing Guide)
-
 
 **Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent requirements apply where multiple regulations overlap.
 
@@ -198,7 +189,6 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - **Monitored (Medium-Risk):** File sharing, streaming media, social networking, personal webmail
 - **Permitted (Low-Risk):** Business, news, education, technology, government, financial services
 
-
 Category classifications and blocking rules are documented in ISMS-IMP-A.8.23-3 (Policy Configuration Assessment) and reviewed quarterly. Changes to category classifications require Security Team review and CISO approval.
 
 ## Network Coverage Requirements
@@ -215,7 +205,6 @@ Category classifications and blocking rules are documented in ISMS-IMP-A.8.23-3 
 - Cloud-hosted resources accessing internet
 - Branch office connections
 
-
 **Implementation Note**: Network topology documentation, coverage verification procedures, and gap identification methods are defined in ISMS-IMP-A.8.23-2 (Network Coverage Assessment).
 
 **Coverage Verification**: [Organization] SHALL verify filtering coverage through technical testing. Testing methodology and frequency defined in ISMS-IMP-A.8.23-2.
@@ -226,7 +215,6 @@ Category classifications and blocking rules are documented in ISMS-IMP-A.8.23-3 
 - Dedicated B2B partner connections (documented, risk-assessed, approved by CISO)
 - Air-gapped networks with no internet connectivity
 - Specific user groups with documented and approved exceptions
-
 
 ## Logging and Monitoring
 
@@ -239,7 +227,6 @@ Category classifications and blocking rules are documented in ISMS-IMP-A.8.23-3 
 - User attribution (where technically available and privacy-compliant)
 - Sufficient detail for incident investigation and forensic analysis
 
-
 **Log Retention:**
 
 - Security events (threat blocks, C2 attempts, circumvention attempts, policy violations): Minimum **12 months**
@@ -247,7 +234,6 @@ Category classifications and blocking rules are documented in ISMS-IMP-A.8.23-3 
 - Extended retention applies where regulatory requirements mandate longer periods (per ISMS-POL-00 Section 4.2)
 - Logs protected with appropriate integrity and confidentiality controls per A.8.15
 - Log deletion requires documented approval and follows data retention policy procedures
-
 
 **Implementation Note**: Specific logging fields, retention periods, storage requirements, and monitoring procedures are defined in ISMS-IMP-A.8.23-4 (Monitoring & Response Assessment).
 
@@ -266,7 +252,6 @@ Category classifications and blocking rules are documented in ISMS-IMP-A.8.23-3 
 - Accepting residual risks
 - Supporting security program
 
-
 **Chief Information Security Officer (CISO)**:
 
 - Accountable for overall web filtering policy and program effectiveness
@@ -274,7 +259,6 @@ Category classifications and blocking rules are documented in ISMS-IMP-A.8.23-3 
 - Defining organizational risk appetite for web filtering
 - Escalating critical issues to Executive Management
 - Annual policy review and approval
-
 
 **Security Team**:
 
@@ -285,7 +269,6 @@ Category classifications and blocking rules are documented in ISMS-IMP-A.8.23-3 
 - Integrating threat intelligence feeds
 - Conducting periodic coverage assessments
 
-
 **IT Operations / Network Team**:
 
 - Responsible for deploying and maintaining web filtering infrastructure
@@ -293,14 +276,12 @@ Category classifications and blocking rules are documented in ISMS-IMP-A.8.23-3 
 - Providing technical support for filtering systems
 - Coordinating changes with Security Team
 
-
 **Users (All Personnel)**:
 
 - Responsible for complying with web filtering policies and acceptable use policy
 - Reporting false positives and security concerns
 - Using exception process for legitimate business needs
 - Prohibited from attempting to bypass web filtering controls
-
 
 **Detailed RACI Matrix**: Complete roles and responsibilities matrix documented in ISMS-IMP-A.8.23 Implementation Guides.
 
@@ -327,7 +308,6 @@ Category classifications and blocking rules are documented in ISMS-IMP-A.8.23-3 
   - Deployment of new filtering solutions or major version upgrades
   - Audit findings requiring remediation verification
 
-
 ## Exception Management
 
 **Exception Request Requirements**:
@@ -340,7 +320,6 @@ Exceptions to web filtering policy requirements require:
 - Timeline for achieving full compliance (where applicable)
 - Formal approval per authority matrix
 
-
 **Approval Authority**:
 
 - **Single URL/domain exceptions**: Security Team Lead approval
@@ -348,7 +327,6 @@ Exceptions to web filtering policy requirements require:
 - **Category exceptions (group/department)**: CISO + Department Head approval
 - **High-risk exceptions**: CISO + Executive Management approval
 - **Threat protection exceptions**: NOT PERMITTED (malware, phishing, C2 blocks cannot be bypassed)
-
 
 **Monitoring**: Active exceptions reviewed based on risk level. Exception activity monitored for policy compliance. Exceptions revoked if risk profile changes or business justification no longer valid.
 
@@ -363,7 +341,6 @@ Exceptions to web filtering policy requirements require:
 - Circumvention attempts (proxy usage, VPN to bypass filtering)
 - Web filtering system failures or coverage gaps
 - False positive patterns indicating misconfiguration
-
 
 **Response Process**:
 1. **Detection & Reporting**: Security events trigger alerts per severity
@@ -386,20 +363,17 @@ Exceptions to web filtering policy requirements require:
 - **Reviewers**: CISO, IT Security Team, Legal/Compliance, IT Operations
 - **Approval**: CISO (technical), Executive Management (strategic)
 
-
 **Implementation Standards Review**:
 
 - **Frequency**: Based on threat landscape evolution (at least semi-annual)
 - **Authority**: Security Team proposes updates, CISO approves
 - **Note**: Implementation standard updates (ISMS-IMP-A.8.23) do not require policy revision
 
-
 **Policy Updates**:
 
 - **Minor** (clarifications, references): CISO approval, communication within 30 days
 - **Major** (scope changes, new requirements): Full approval chain, implementation timeline per change management
 - **Emergency** (critical threats): CISO approval, immediate communication and implementation
-
 
 **Communication**: Policy published in ISMS document repository. Changes communicated organization-wide. Training provided for significant changes affecting user behavior or responsibilities.
 
@@ -417,12 +391,10 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - Threat landscape assessment determines protection requirements
 - Risk treatment plans document web filtering control implementation
 
-
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
 - Control A.8.23 applicability justified in [Organization]'s SoA
 - Implementation status tracked and reported
-
 
 **Related Controls**:
 
@@ -432,7 +404,6 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - A.8.20 (Networks Security): Network-level security controls
 - A.8.22 (Segregation of Networks): Network segmentation strategy
 - A.5.24 (Information Security Incident Management): Incident response framework
-
 
 ## Implementation Resources
 
@@ -444,7 +415,6 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - ISMS-IMP-A.8.23-4: Monitoring & Response Assessment (logging, alerting, incident procedures)
 - ISMS-IMP-A.8.23-5: Compliance Dashboard (consolidated compliance reporting)
 
-
 **Assessment Tools**:
 
 - Excel-based assessment workbooks with automated compliance calculations
@@ -452,14 +422,12 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - Gap analysis templates
 - Remediation tracking
 
-
 **Supporting Materials**:
 
 - Exception request procedures
 - User communication templates
 - Quick reference guides
 - Incident response playbooks
-
 
 ## Regulatory Mapping
 
@@ -484,7 +452,6 @@ This policy addresses web filtering requirements from:
 - User responsibilities and reporting procedures
 - Recognizing phishing and suspicious websites
 
-
 **Technical Training** (IT/Security Staff):
 
 - Web filtering technology configuration and maintenance
@@ -492,13 +459,11 @@ This policy addresses web filtering requirements from:
 - Incident response procedures
 - Exception request evaluation
 
-
 **Operational Training** (IT Operations, Help Desk):
 
 - False positive handling and escalation
 - User support procedures
 - Common blocking scenarios and resolution
-
 
 ---
 
@@ -533,7 +498,6 @@ This policy addresses web filtering requirements from:
 - **Blocked:** All threat protection categories (malware, phishing, C2, exploits) — no exceptions permitted
 - **Blocked:** High-risk content categories (adult content, illegal content, anonymizers/proxies)
 - **Permitted:** General web access for legitimate business use
-
 
 **Coverage:** All guest network egress points SHALL traverse web filtering controls before reaching the internet.
 

@@ -65,14 +65,12 @@ This assessment evaluates [Organization]'s implementation of **cryptographic con
 - **EU GDPR (Art. 32):** Mandates encryption of personal data in transit
 - **Industry Standards:** PCI DSS, HIPAA, SOC 2 all require data-in-transit encryption
 
-
 **Business Impact:**
 
 - **Data Breaches:** Unencrypted transmission is #1 cause of preventable data leaks
 - **Compliance Violations:** Non-compliance can result in regulatory fines and audit failures
 - **Reputational Damage:** Security incidents undermine customer trust
 - **Operational Risk:** Weak encryption enables lateral movement in breaches
-
 
 ## Who Should Complete This Assessment
 
@@ -85,7 +83,6 @@ This assessment evaluates [Organization]'s implementation of **cryptographic con
 - Certificate management processes and systems
 - Network protocols and encryption standards in use
 
-
 **Support Roles:**
 
 - **Cloud/Infrastructure Teams:** For cloud provider connections and VPN
@@ -93,7 +90,6 @@ This assessment evaluates [Organization]'s implementation of **cryptographic con
 - **Email Administrators:** For email encryption and S/MIME
 - **WiFi/Network Admins:** For wireless network security
 - **Security Team:** For policy interpretation and exception approval
-
 
 ## Time Estimate
 
@@ -105,7 +101,6 @@ This assessment evaluates [Organization]'s implementation of **cryptographic con
 - Assessment Completion: 2-3 hours
 - Evidence Collection: 30-60 minutes
 - Quality Review: 30-60 minutes
-
 
 **Pro Tip:** For large/complex environments, consider splitting assessment across multiple team members by area (e.g., one person handles web services, another handles email, etc.).
 
@@ -122,7 +117,6 @@ This assessment implements **ISMS-POL-A.8.24, Section 6.2 (Data Transmission)** 
 - Database connection security
 - Wireless network encryption
 - Cloud data transmission
-
 
 **Policy Authority:** Chief Information Security Officer (CISO)  
 **Compliance Status:** Mandatory for all systems processing Internal, Confidential, or Restricted data
@@ -147,13 +141,11 @@ The CA/Browser Forum (industry body governing public CAs) approved **Ballot SC-0
 - **Rationale:** Manual renewal processes will NOT scale for 47-day certificate lifecycles
 - **Impact:** Organizations without automation will face operational failures and security incidents
 
-
 **Internal PKI (Not Affected):**
 
 - Internal/private PKI certificates: Maximum 825 days
 - Recommended: 180-365 days for security posture alignment
 - Automation REQUIRED if certificate inventory >50 certificates
-
 
 **What This Means for Your Assessment:**
 1. Check current certificate validity periods (must comply with timeline above)
@@ -176,7 +168,6 @@ Before starting this assessment, ensure you have access to:
 - [ ] Configuration Management Database (CMDB) or asset inventory
 - [ ] Certificate inventory system (if exists)
 
-
 **System Access:**
 
 - [ ] TLS/SSL certificate management console
@@ -192,14 +183,12 @@ Before starting this assessment, ensure you have access to:
 - [ ] Wireless network controller
 - [ ] Cloud provider console (AWS, Azure, GCP, etc.)
 
-
 **Documentation Systems:**
 
 - [ ] Policy repository (access to ISMS-POL-A.8.24, Section 6.2 (Data Transmission))
 - [ ] Exception tracking system (if exceptions exist)
 - [ ] Incident response records (for any certificate expiration incidents)
 - [ ] Change management records (recent certificate renewals)
-
 
 ## Knowledge Required
 
@@ -210,14 +199,12 @@ Before starting this assessment, ensure you have access to:
 - Certificate lifecycle (issuance, renewal, revocation processes)
 - TLS/SSL fundamentals (protocol versions, cipher suites, certificate validation)
 
-
 **Technical Skills:**
 
 - Ability to read web server configurations
 - Understanding of network protocols (HTTPS, SMTP, SFTP, SSH, RDP, etc.)
 - Basic command-line skills (for testing protocols, checking certificates)
 - Certificate inspection (using browser tools, openssl, etc.)
-
 
 ## Tools Needed
 
@@ -229,20 +216,17 @@ Before starting this assessment, ensure you have access to:
 - **openssl:** Command-line certificate inspection (`openssl s_client`, `openssl x509`)
 - **Browser Developer Tools:** For inspecting HSTS headers, certificates, TLS versions
 
-
 **Evidence Collection:**
 
 - **Screenshot tool:** For capturing configurations, test results
 - **Export capability:** For certificate inventories, configuration files
 - **Secure storage:** For evidence files (some may contain sensitive information)
 
-
 **Optional but Recommended:**
 
 - **Certificate monitoring tool:** For automated certificate inventory
 - **SIEM/logging access:** For authentication logs, file transfer logs
 - **Network scanning tools:** For detecting unencrypted protocols
-
 
 ## Estimated Time Commitment
 
@@ -254,7 +238,6 @@ Before starting this assessment, ensure you have access to:
 - List all external-facing services
 - Map internal services to data classifications
 
-
 **Phase 2: Technical Testing (1-2 hours)**
 
 - Run SSL Labs scans on external services
@@ -265,7 +248,6 @@ Before starting this assessment, ensure you have access to:
 - Verify database connection encryption
 - Assess wireless network security
 
-
 **Phase 3: Assessment Completion (1-2 hours)**
 
 - Fill in workbook data entry fields
@@ -274,14 +256,12 @@ Before starting this assessment, ensure you have access to:
 - Create remediation plans
 - Collect evidence files
 
-
 **Phase 4: Quality Review (30-60 minutes)**
 
 - Self-check using Quality Checklist (Section 7)
 - Verify evidence completeness
 - Review Summary Dashboard
 - Ensure all gaps have remediation plans
-
 
 **Total:** 4-6 hours for comprehensive assessment
 
@@ -312,7 +292,6 @@ Before starting this assessment, ensure you have access to:
    - **Critical:** Verify certificate validity complies with SC-081v3 timeline
    - **Critical:** Document automation status (this is REQUIRED before March 2026)
 
-
 **STEP 3: Internal Web Services (20-30 minutes)**
 2. **Sheet 1.2 - Internal HTTPS/TLS**
 
@@ -322,7 +301,6 @@ Before starting this assessment, ensure you have access to:
    - Verify certificate types (internal CA vs. public CA vs. self-signed)
    - Document any services without TLS (need risk assessment)
 
-
 **STEP 4: Email Security (20-30 minutes)**
 3. **Sheet 2.1 - Email Encryption**
 
@@ -331,13 +309,11 @@ Before starting this assessment, ensure you have access to:
    - Verify opportunistic TLS (STARTTLS) enabled
    - Check DLP or policy enforcement for sensitive emails
 
-
 4. **Sheet 2.2 - Digital Signatures**
 
    - Check if digital signatures are used
    - Document certificate source for email certificates
    - Verify signature policy (who must sign what)
-
 
 **STEP 5: File Transfer (15-20 minutes)**
 5. **Sheet 3.1 - File Transfer Protocols**
@@ -346,7 +322,6 @@ Before starting this assessment, ensure you have access to:
    - Verify no unencrypted FTP in use
    - Check authentication methods (key-based preferred)
    - Verify MFA for external file transfers
-
 
 **STEP 6: Remote Access (40-50 minutes)**
 6. **Sheet 4.1 - VPN**
@@ -357,7 +332,6 @@ Before starting this assessment, ensure you have access to:
    - Check Perfect Forward Secrecy (PFS) enabled
    - Verify split-tunneling status
 
-
 7. **Sheet 4.2 - SSH**
 
    - Document SSH version (must be SSHv2)
@@ -366,14 +340,12 @@ Before starting this assessment, ensure you have access to:
    - Confirm root login disabled
    - Check key rotation schedule
 
-
 8. **Sheet 4.3 - RDP**
 
    - Document how RDP is accessed (VPN, jump host, NOT direct)
    - Verify TLS encryption enabled
    - Confirm Network Level Authentication (NLA) enabled
    - Check MFA requirement for production systems
-
 
 **STEP 7: API Security (20-30 minutes)**
 9. **Sheet 5.1 - API Security**
@@ -384,7 +356,6 @@ Before starting this assessment, ensure you have access to:
    - Check API key management (secrets manager, not hardcoded)
    - Verify token expiry policies
 
-
 **STEP 8: Network Protocols (20-30 minutes)**
 10. **Sheet 6.1 - Database Connections**
 
@@ -392,7 +363,6 @@ Before starting this assessment, ensure you have access to:
     - Verify connection encryption (TLS/SSL)
     - Check certificate validation enabled
     - Document any unencrypted connections (need justification)
-
 
 11. **Sheet 6.2 - Wireless Networks**
 
@@ -402,7 +372,6 @@ Before starting this assessment, ensure you have access to:
     - Confirm guest network isolation
     - Verify WPA2-Personal passphrase strength (≥20 characters if used)
 
-
 **STEP 9: Cloud Transmission (15-20 minutes)**
 12. **Sheet 7.1 - Cloud Data Transmission**
 
@@ -411,7 +380,6 @@ Before starting this assessment, ensure you have access to:
     - Verify TLS 1.2+ for all cloud API connections
     - Check data classification transmitted to cloud
 
-
 **STEP 10: Summary & Evidence (30-45 minutes)**
 13. **Summary Dashboard** (auto-calculated, review only)
 
@@ -419,20 +387,17 @@ Before starting this assessment, ensure you have access to:
     - Identify sections with lowest compliance
     - Note critical gaps requiring immediate attention
 
-
 14. **Evidence Register**
 
     - List all evidence files collected during assessment
     - Ensure evidence naming is consistent
     - Verify all evidence is accessible
 
-
 15. **Approval Sign-Off**
 
     - Complete assessment summary
     - Sign as assessment owner
     - Route to Information Security Officer for review
-
 
 **STEP 11: Final Quality Check (30 minutes)**
 16. Run through Quality Checklist (Section 7 of this guide)
@@ -450,13 +415,11 @@ Before starting this assessment, ensure you have access to:
 - Collect all certificates in one session
 - Test all SSH servers in one pass
 
-
 **Use Copy-Paste for Repeated Information:**
 
 - If multiple services use same certificate: Reference first entry
 - If configuration is consistent: Note "Same as [System A]" and cross-reference
 - If using standard corporate settings: Create template answers
-
 
 **Leverage Existing Documentation:**
 
@@ -464,13 +427,11 @@ Before starting this assessment, ensure you have access to:
 - If certificate monitoring system exists: Export inventory directly
 - If compliance reports exist: Extract relevant crypto controls
 
-
 **Mark Sections N/A Appropriately:**
 
 - If [Organization] has no VPN: Mark Section 4.1 as N/A with brief note "Remote access via zero-trust architecture, no VPN"
 - If no RDP used: Mark Section 4.3 as N/A with note "Linux-only environment, SSH for admin access"
 - N/A is acceptable with justification; blank is not acceptable
-
 
 ---
 
@@ -487,7 +448,6 @@ Before starting this assessment, ensure you have access to:
 - **"No":** Only if [Organization] has literally zero internet-facing web presence (extremely rare)
 - **"Not Applicable":** Generally not appropriate for this section (almost all organizations have some external web presence)
 
-
 **Where to Find This Information:**
 
 - Network architecture diagrams (DMZ, external firewall rules)
@@ -495,7 +455,6 @@ Before starting this assessment, ensure you have access to:
 - Load balancer configuration (external listeners)
 - Cloud provider console (public IP addresses, external endpoints)
 - Ask: "What URLs can customers/partners/public access?"
-
 
 **Field-by-Field Guidance:**
 
@@ -528,14 +487,12 @@ Before starting this assessment, ensure you have access to:
 - Weak protocols disabled (TLS 1.0, 1.1, SSL)
 - Perfect Forward Secrecy enabled
 
-
 **⚠️ Partial:** Some requirements met but gaps exist:
 
 - TLS 1.2 used but TLS 1.3 not available
 - Certificate validity compliant BUT manual renewal process (automation needed)
 - HSTS header missing but TLS otherwise configured correctly
 - Minor cipher suite issues (e.g., CBC modes still enabled)
-
 
 **❌ Non-Compliant:** Critical failures:
 
@@ -546,7 +503,6 @@ Before starting this assessment, ensure you have access to:
 - HTTP does not redirect to HTTPS
 - Weak cipher suites enabled (RC4, 3DES, etc.)
 - PFS not enabled
-
 
 **N/A:** Not applicable (only if organization has NO external web services)
 
@@ -635,7 +591,6 @@ Check each item and mark "Yes", "No", or "N/A":
 - HSTS header screenshot: `EV-1.1-HSTS-header-20260115.png`
 - Certificate automation documentation: `EV-1.1-certbot-config-20260115.txt`
 
-
 **Common Issues & Solutions:**
 
 **Issue:** Certificate validity is 365 days (within old 397-day limit but will exceed 200-day limit after March 2026)  
@@ -666,7 +621,6 @@ Check each item and mark "Yes", "No", or "N/A":
 - **"No":** Only if [Organization] has no internal web-based services (rare for modern organizations)
 - **"Not Applicable":** Generally not appropriate (most organizations have internal web services)
 
-
 **Where to Find This Information:**
 
 - CMDB or asset inventory (filter for "internal" or "intranet")
@@ -675,7 +629,6 @@ Check each item and mark "Yes", "No", or "N/A":
 - SharePoint, Confluence, internal wikis
 - Admin interfaces for infrastructure (switches, routers, firewalls, hypervisors)
 - Internal APIs for microservices, middleware
-
 
 **Field-by-Field Guidance:**
 
@@ -697,7 +650,6 @@ Check each item and mark "Yes", "No", or "N/A":
 - Services handling **Confidential or Restricted** data: TLS **REQUIRED**
 - Services handling **Internal or Public** data: TLS **RECOMMENDED** (risk-based)
 
-
 **Decision Tree:**
 1. What's the highest data classification this service handles? (check data classification register)
 2. If **Confidential or Restricted** → TLS is **MANDATORY**
@@ -706,7 +658,6 @@ Check each item and mark "Yes", "No", or "N/A":
    - Is service on isolated network segment with no external access? → TLS may be waived with risk acceptance
    - Is service accessible from general corporate network? → TLS RECOMMENDED
    - Is service admin interface or authentication portal? → TLS REQUIRED (credentials in transit)
-
 
 **Certificate Type Acceptability:**
 
@@ -726,14 +677,12 @@ Check each item and mark "Yes", "No", or "N/A":
 - Certificate from internal CA or public CA (not self-signed in production)
 - Certificate expiration monitoring in place
 
-
 **⚠️ Partial:**
 
 - **Confidential/Restricted data:** TLS enabled but with self-signed certificate (should use internal CA)
 - **Internal/Public data:** No TLS, no risk assessment documented
 - TLS 1.1 still enabled (should disable)
 - Certificate monitoring exists but manual (should be automated)
-
 
 **❌ Non-Compliant:**
 
@@ -742,7 +691,6 @@ Check each item and mark "Yes", "No", or "N/A":
 - Self-signed certificate without CISO approval/risk acceptance
 - Expired certificate
 - No certificate monitoring
-
 
 **Compliance Checklist Guidance:**
 
@@ -784,13 +732,11 @@ Check each item and mark "Yes", "No", or "N/A":
 - **Recommended:** 180-365 days for alignment with industry practice
 - **Development/Test:** 90 days (encourages automation)
 
-
 **Automation Requirement:**
 
 - **If >50 certificates:** Automation REQUIRED (operational necessity)
 - **If <50 certificates:** Manual acceptable with CISO documented approval
 - **Best Practice:** Automate regardless of count (prevents human error)
-
 
 **Evidence Examples:**
 
@@ -799,7 +745,6 @@ Check each item and mark "Yes", "No", or "N/A":
 - Risk assessment for non-TLS service: `EV-1.2-risk-assessment-legacy-app-20260115.pdf`
 - Certificate inventory export: `EV-1.2-internal-cert-inventory-20260115.xlsx`
 - Data classification matrix: `EV-1.2-service-data-classification-20260115.pdf`
-
 
 ---
 
@@ -816,7 +761,6 @@ Check each item and mark "Yes", "No", or "N/A":
 - **"No":** If ALL external emails contain only Public or Internal information, OR if sensitive data only shared via other methods (secure file transfer, portals)
 - **"Not Applicable":** Rare (most organizations have some email of classified information)
 
-
 **Understanding the Requirement:**
 
 **Policy (ISMS-POL-A.8.24, Section 6.2 (Data Transmission)):**
@@ -825,7 +769,6 @@ Check each item and mark "Yes", "No", or "N/A":
 - Internal emails: Opportunistic TLS (STARTTLS) **REQUIRED**
 - Transport-only encryption (TLS): **ACCEPTABLE for Internal classification only**
 
-
 **Why S/MIME/PGP for Confidential/Restricted:**
 
 - **Transport encryption (STARTTLS) only protects during transmission** (mail server to mail server)
@@ -833,7 +776,6 @@ Check each item and mark "Yes", "No", or "N/A":
 - Mail server administrators can read email contents
 - Subpoena/legal requests can access email
 - **End-to-end encryption (S/MIME/PGP) protects email at rest** - only recipient's private key can decrypt
-
 
 **Field Guidance:**
 
@@ -855,20 +797,17 @@ Check each item and mark "Yes", "No", or "N/A":
 - User training provided
 - Opportunistic TLS enabled for mail server connections
 
-
 **⚠️ Partial:**
 
 - S/MIME available but low adoption rate (<50% of users who need it)
 - PGP/GPG available but no PKI infrastructure (manual key exchange)
 - TLS-only for email classified as "Internal" (acceptable) but no S/MIME for Confidential
 
-
 **❌ Non-Compliant:**
 
 - Confidential/Restricted data sent via email with no encryption
 - S/MIME or PGP not available
 - No opportunistic TLS (all email unencrypted in transit)
-
 
 **Compliance Checklist:**
 
@@ -921,7 +860,6 @@ Check each item and mark "Yes", "No", or "N/A":
 - User training completion report: `EV-2.1-training-completion-20260115.xlsx`
 - Mail server TLS configuration: `EV-2.1-postfix-tls-config-20260115.txt`
 
-
 ---
 
 ## Additional Sections Summary (4.5 through 4.13)
@@ -949,7 +887,6 @@ Check each item and mark "Yes", "No", or "N/A":
 - 4.12: Wireless Networks (WPA3/WPA2-Enterprise, 802.1X)
 - 4.13: Cloud Transmission (TLS 1.2+, PrivateLink options)
 
-
 **Key Principles Applied to All Sections:**
 
 - Policy requirements drive status determination
@@ -957,7 +894,6 @@ Check each item and mark "Yes", "No", or "N/A":
 - Common pitfalls identified and solutions provided
 - Practical "where to find" guidance
 - Automation and lifecycle management emphasized
-
 
 ---
 
@@ -976,7 +912,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - `EV-4.2-SSHServers-20260115-KeyAlgorithms.txt`
 - `EV-6.2-CorporateWiFi-20260115-ControllerConfig.png`
 
-
 **Storage Requirements:**
 
 - **Location:** Centralized evidence repository (SharePoint, file share, ISMS document management system)
@@ -985,7 +920,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - **Sensitivity:** Mark evidence files according to data classification (some configs may contain sensitive information)
 - **Access Control:** Restrict to security team and auditors
 
-
 **Evidence Quality Criteria:**
 
 - **Timestamped:** Must show date/time of collection
@@ -993,7 +927,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - **Attributable:** Clear which system/service it documents
 - **Verifiable:** Auditor can reproduce the evidence collection process
 - **Protected:** Stored securely, sanitized if contains credentials or sensitive data
-
 
 ## Evidence Types by Section
 
@@ -1007,7 +940,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - HTTP→HTTPS redirect test (curl output or browser network tab)
 - Certificate automation configuration (certbot, ACME client config)
 
-
 **1.2 Internal HTTPS/TLS:**
 
 - Internal certificate inventory export (Excel/CSV)
@@ -1015,7 +947,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - Internal CA certificate chain export
 - Risk assessment for non-TLS internal services (if any)
 - Certificate monitoring dashboard screenshot
-
 
 **2.1 Email Encryption:**
 
@@ -1025,13 +956,11 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - User training completion records
 - DLP policy screenshots (if encryption enforcement)
 
-
 **2.2 Digital Signatures:**
 
 - Email certificate inventory
 - Digital signature policy document
 - Example signed email (with headers showing signature verification)
-
 
 **3.1 File Transfer:**
 
@@ -1041,7 +970,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - MFA configuration for external file transfer
 - Protocol scan results (showing FTP disabled, SFTP enabled)
 
-
 **4.1 VPN:**
 
 - VPN server configuration export (sanitize pre-shared keys)
@@ -1050,14 +978,12 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - VPN connection logs (sample)
 - Split-tunneling policy documentation
 
-
 **4.2 SSH:**
 
 - SSH server configuration (/etc/ssh/sshd_config) - sanitize host keys
 - SSH key algorithm inventory (`for i in /home/*/.ssh/authorized_keys; do ssh-keygen -lf $i; done`)
 - Key rotation schedule documentation
 - Root login disabled verification (`grep PermitRootLogin /etc/ssh/sshd_config`)
-
 
 **4.3 RDP:**
 
@@ -1067,7 +993,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - MFA integration documentation
 - RDP session recording setup (if implemented)
 
-
 **4.4 API Security:**
 
 - API authentication documentation
@@ -1076,14 +1001,12 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - Rate limiting rules
 - API TLS configuration (listener settings)
 
-
 **4.5 Database Connections:**
 
 - Database connection encryption configuration
 - Connection string examples (SANITIZE passwords)
 - Certificate validation settings
 - Database server TLS configuration
-
 
 **4.6 Wireless Networks:**
 
@@ -1093,14 +1016,12 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - Guest network isolation verification (VLAN configuration)
 - WPA2/WPA3 configuration details
 
-
 **4.7 Cloud Transmission:**
 
 - Cloud provider TLS configuration verification
 - PrivateLink/Private Link setup documentation
 - API endpoint encryption verification
 - Cloud provider compliance certifications (if applicable)
-
 
 ## Tools for Evidence Collection
 
@@ -1171,14 +1092,12 @@ curl -H "Authorization: Bearer $TOKEN" https://api.example.com/endpoint
 - Personal identifiable information
 - Internal IP addresses (if required by policy)
 
-
 **Sanitization Methods:**
 
 - Replace with placeholders: `private_key = [REDACTED]`
 - Use example values: `password = example_password_123`
 - Redact in documents: Black boxes over sensitive fields in screenshots
 - Hash or mask: `api_key = sk_live_****************************abcd`
-
 
 **Tool Suggestion:**
 ```bash
@@ -1372,7 +1291,6 @@ sed 's/private_key = .*/private_key = [REDACTED]/g' config.txt > config_sanitize
 - [ ] Evidence Register populated with all evidence files (consistent naming)
 - [ ] All evidence files exist and are accessible (checked storage location)
 
-
 ## Accuracy Checks
 
 - [ ] Certificate validity reflects SC-081v3 timeline (not outdated 397-day standard)
@@ -1384,7 +1302,6 @@ sed 's/private_key = .*/private_key = [REDACTED]/g' config.txt > config_sanitize
 - [ ] Evidence is current (collected within last 30 days)
 - [ ] Certificate validity calculations are correct (Not After - Not Before, in days)
 - [ ] Automation status accurately reflects current state (not planned state)
-
 
 ## Policy Alignment Checks
 
@@ -1398,7 +1315,6 @@ sed 's/private_key = .*/private_key = [REDACTED]/g' config.txt > config_sanitize
 - [ ] No prohibited protocols in use (FTP, WEP, TLS 1.0/1.1, SSHv1, etc.)
 - [ ] MFA requirements met (VPN, external file transfer, RDP to production)
 
-
 ## Audit Readiness Checks
 
 - [ ] Evidence is verifiable (auditor could reproduce findings with same tools/methods)
@@ -1409,7 +1325,6 @@ sed 's/private_key = .*/private_key = [REDACTED]/g' config.txt > config_sanitize
 - [ ] Assessment tells a clear story from beginning to end (executive could understand)
 - [ ] Cross-references work (if referencing other sections, correct section numbers)
 - [ ] Dates in DD.MM.YYYY format throughout (Swiss/EU convention)
-
 
 ## Red Flags to Address BEFORE Submission
 
@@ -1423,7 +1338,6 @@ sed 's/private_key = .*/private_key = [REDACTED]/g' config.txt > config_sanitize
 - [ ] No manual certificate renewal for public CA certificates without remediation plan (deadline 15.03.2026)
 - [ ] Overall compliance rate >80% (if <80%, indicates systemic issues requiring escalation)
 
-
 ## Final Sanity Checks
 
 - [ ] Summary Dashboard totals match manual count (no formula errors)
@@ -1432,7 +1346,6 @@ sed 's/private_key = .*/private_key = [REDACTED]/g' config.txt > config_sanitize
 - [ ] Organization name filled in (not default "[Organization]")
 - [ ] Next Review Date set (typically 3 months from assessment date for quarterly review)
 - [ ] Assessment status set to "Draft" (ready for Information Security Officer review)
-
 
 **If ANY checkbox above is unchecked:**  
 **STOP. Do not submit. Go back and complete the missing item.**
@@ -1451,7 +1364,6 @@ sed 's/private_key = .*/private_key = [REDACTED]/g' config.txt > config_sanitize
 - **Set Status:** Change assessment status to "Draft" in Approval Sign-Off sheet
 - **Submit:** Email to Information Security Officer (ISO) with link to assessment file
 
-
 **Step 2: Technical Review** (Information Security Officer)
 
 - **Verify:** Technical accuracy of findings (spot-check with tools)
@@ -1462,14 +1374,12 @@ sed 's/private_key = .*/private_key = [REDACTED]/g' config.txt > config_sanitize
 - **Provide:** Feedback to assessment owner (email or comments in workbook)
 - **Duration:** 2-3 business days typical
 
-
 **Step 3: Remediation (if needed)** (Assessment Owner)
 
 - **Action:** Address review feedback from ISO
 - **Update:** Assessment accordingly (additional evidence, clarified gaps, etc.)
 - **Re-submit:** To ISO for re-review if significant changes
 - **Minor Changes:** If only minor edits, ISO may approve without re-review
-
 
 **Step 4: Final Approval** (CISO)
 
@@ -1483,7 +1393,6 @@ sed 's/private_key = .*/private_key = [REDACTED]/g' config.txt > config_sanitize
   - **"Approved with conditions":** Minor concerns, remediation must be completed by specified date with follow-up
   - **"Rejected":** Significant issues, re-assessment required (indicate specific issues)
 
-
 ## Approval Timeline
 
 **Typical Timeline:**
@@ -1495,13 +1404,11 @@ sed 's/private_key = .*/private_key = [REDACTED]/g' config.txt > config_sanitize
 - Final approval: 1-2 business days (CISO)
 - **Total:** 1-2 weeks from start to final approval
 
-
 **Expedited Timeline (for urgent compliance needs):**
 
 - Can be compressed to 2-3 days with dedicated resources
 - Requires pre-coordination with ISO and CISO
 - Only for critical situations (audit, regulatory deadline, security incident)
-
 
 ## After Approval
 
@@ -1511,14 +1418,12 @@ sed 's/private_key = .*/private_key = [REDACTED]/g' config.txt > config_sanitize
    - Location: `ISMS/Controls/A.8.24_Use_of_Cryptography/Assessments/`
    - Filename: `ISMS-IMP-A.8.24.1_Data_Transmission_[DATE]_APPROVED.xlsx`
 
-
 2. **Distribute:** Email to relevant stakeholders
 
    - Network Engineering team (for remediation execution)
    - Security team (for tracking)
    - Compliance team (for audit evidence)
    - Management (for awareness)
-
 
 3. **Track Remediation:** Add remediation items to project tracking system
 
@@ -1527,14 +1432,12 @@ sed 's/private_key = .*/private_key = [REDACTED]/g' config.txt > config_sanitize
    - Set due dates as documented in remediation plans
    - Set recurring check-ins (weekly or bi-weekly for critical items)
 
-
 4. **Schedule Follow-Up:** Set calendar reminders
 
    - Quarterly review (3 months from assessment date)
    - Remediation check-ins (for open gaps)
    - Certificate renewal reminders (30 days before expiration)
    - Automation deadline reminder (if applicable before 15.03.2026)
-
 
 ## Ongoing Monitoring
 
@@ -1546,7 +1449,6 @@ sed 's/private_key = .*/private_key = [REDACTED]/g' config.txt > config_sanitize
 - **Incidents:** Any certificate expiration or crypto-related incident triggers immediate re-assessment
 - **Policy Updates:** If ISMS-POL-A.8.24, Section 6.2 (Data Transmission) updated, assessment must be revised accordingly
 
-
 **Triggers for Immediate Re-Assessment:**
 
 - Major infrastructure changes (new data center, cloud migration)
@@ -1554,7 +1456,6 @@ sed 's/private_key = .*/private_key = [REDACTED]/g' config.txt > config_sanitize
 - Failed audit findings on cryptographic controls
 - Regulatory changes affecting encryption requirements
 - Certificate automation deadline approaching (15.03.2026) without completed migration
-
 
 ## Continuous Improvement
 
@@ -1566,13 +1467,11 @@ sed 's/private_key = .*/private_key = [REDACTED]/g' config.txt > config_sanitize
 - **Tooling Gaps:** Difficult to collect evidence? → Invest in monitoring/scanning tools
 - **Policy Refinements:** Unclear requirements? → Update policy for clarity
 
-
 **Feedback Loop:**
 
 - Assessment owner provides feedback on this User Guide (what was unclear, what was helpful)
 - ISO reviews common questions/issues encountered
 - Update this guide accordingly for next assessment cycle
-
 
 ---
 
@@ -1622,7 +1521,6 @@ Acceptable evidence includes:
 - Audit logs
 - Compliance reports
 
-
 ## Certificate Validity Requirements Update (CA/Browser Forum SC-081v3)
 
 **CRITICAL - Updated Standards (Effective 2025):**
@@ -1643,12 +1541,10 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - **Implementation:** ACME protocol (Let's Encrypt, Sectigo, DigiCert, etc.)
 - **Internal PKI:** Automation REQUIRED if certificate inventory >50 certificates
 
-
 **Internal/Private PKI Certificates:**
 
 - Maximum: 825 days (not subject to CA/Browser Forum requirements)
 - Recommended: 180-365 days for enhanced security posture
-
 
 **Reference:** CA/Browser Forum Ballot SC-081v3  
 **URL:** https://cabforum.org/2025/04/11/ballot-sc081v3-introduce-schedule-of-reducing-validity-and-data-reuse-periods/
@@ -1669,7 +1565,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] No → Skip to Section 1.2
 - [ ] Not Applicable
 
-
 ---
 
 **If Yes, complete the assessment:**
@@ -1688,7 +1583,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - **Target automation completion date (if not automated):** _________
 - **ACME-enabled CA in use:** [ ] Yes [ ] No [ ] Planned
 
-
 ---
 
 **Compliance Checklist:**
@@ -1706,7 +1600,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] Perfect Forward Secrecy (PFS) enabled
 - [ ] Certificate expiration alerts configured (≥30-day advance, adjusted for shorter validity periods)
 
-
 **Certificate Automation Readiness Assessment (REQUIRED before 15.03.2026):**
 
 - [ ] ACME protocol support enabled (Let's Encrypt, Sectigo, DigiCert, etc.)
@@ -1716,7 +1609,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] Documented process for emergency certificate replacement (<24 hour SLA)
 - [ ] Staff trained on automated certificate management systems
 - [ ] Runbook for automated renewal failures with escalation procedures
-
 
 ---
 
@@ -1732,14 +1624,12 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
   - [ ] IP whitelisting/access restrictions
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
 - **Budget required:** [ ] Yes [ ] No  Amount: _________
-
 
 ---
 
@@ -1754,7 +1644,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] Yes → Complete assessment below
 - [ ] No → Skip to Section 2
 - [ ] Not Applicable
-
 
 ---
 
@@ -1773,7 +1662,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - **Internal certificate inventory count:** _________
 - **Automation status (if >50 certificates):** [ ] Automated [ ] Manual [ ] In progress
 
-
 ---
 
 **Compliance Checklist:**
@@ -1787,7 +1675,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] Internal TLS certificates: 180-365 days recommended for security posture
 - [ ] Automation REQUIRED if certificate inventory >50 certificates
 - [ ] Manual renewal exception: <50 certificates with documented CISO approval
-
 
 ---
 
@@ -1803,13 +1690,11 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
   - [ ] Monitoring and logging
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -1827,7 +1712,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] No → Skip to Section 2.2
 - [ ] Not Applicable
 
-
 ---
 
 **If Yes, complete the assessment:**
@@ -1843,7 +1727,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - **User training provided:** [ ] Yes [ ] No
 - **Encryption enforced via policy/DLP:** [ ] Yes [ ] No
 
-
 ---
 
 **Compliance Checklist:**
@@ -1853,7 +1736,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] PKI infrastructure in place for S/MIME
 - [ ] Opportunistic TLS enabled for mail server connections
 - [ ] STARTTLS enabled for SMTP
-
 
 ---
 
@@ -1869,13 +1751,11 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
   - [ ] Policy prohibits emailing Confidential/Restricted externally
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -1891,7 +1771,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] No → Skip to Section 3
 - [ ] Not Applicable
 
-
 ---
 
 **If Yes, complete the assessment:**
@@ -1905,7 +1784,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - **Digital signatures used for:** [ ] All emails [ ] Legal docs only [ ] Executives only [ ] Not used
 - **Certificate source:** [ ] Public CA [ ] Internal PKI [ ] Both
 
-
 ---
 
 **Compliance Checklist:**
@@ -1914,7 +1792,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] Email certificates issued from trusted CA or internal PKI
 - [ ] Certificate validity ≤ 1 year
 - [ ] Users trained on digital signature usage
-
 
 ---
 
@@ -1932,7 +1809,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] No → Skip to Section 4
 - [ ] Not Applicable
 
-
 ---
 
 **If Yes, complete the assessment:**
@@ -1947,7 +1823,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - **Prohibited protocols detected:** [ ] FTP [ ] TFTP [ ] None
 - **Authentication:** [ ] Password [ ] Key-based [ ] MFA [ ] Certificate
 
-
 ---
 
 **Compliance Checklist:**
@@ -1958,7 +1833,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] MFA required for external file transfer
 - [ ] File transfer logging enabled
 - [ ] SSH keys rotated annually (if SFTP used)
-
 
 ---
 
@@ -1974,13 +1848,11 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
   - [ ] Access restricted to specific IP addresses
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -1998,7 +1870,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] No → Skip to Section 4.2
 - [ ] Not Applicable
 
-
 ---
 
 **If Yes, complete the assessment:**
@@ -2015,7 +1886,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - **MFA solution:** [ ] TOTP [ ] Push notification [ ] SMS [ ] Hardware token [ ] None
 - **Split-tunneling:** [ ] Disabled [ ] Enabled (with justification)
 
-
 ---
 
 **Compliance Checklist:**
@@ -2028,7 +1898,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] VPN session timeout configured (≤30 minutes idle)
 - [ ] Split-tunneling disabled (or documented exception)
 - [ ] VPN access logs retained and reviewed
-
 
 ---
 
@@ -2044,13 +1913,11 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
   - [ ] Network segmentation post-VPN
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -2065,7 +1932,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] Yes → Complete assessment below
 - [ ] No → Skip to Section 4.3
 - [ ] Not Applicable
-
 
 ---
 
@@ -2083,7 +1949,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - **Root login via SSH:** [ ] Disabled [ ] Enabled
 - **SSH key rotation schedule:** [ ] Annual [ ] On personnel change [ ] No rotation
 
-
 ---
 
 **Compliance Checklist:**
@@ -2096,7 +1961,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] Unused SSH keys removed
 - [ ] Strong algorithms configured (per Policy Appendix A)
 - [ ] Weak algorithms disabled (DSA, MD5, SHA-1)
-
 
 ---
 
@@ -2112,13 +1976,11 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
   - [ ] Rate limiting on SSH connection attempts
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -2133,7 +1995,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] Yes → Complete assessment below
 - [ ] No → Skip to Section 5
 - [ ] Not Applicable
-
 
 ---
 
@@ -2150,7 +2011,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - **MFA for RDP:** [ ] Required [ ] Optional [ ] Not implemented
 - **RDP encryption level:** [ ] High [ ] Client Compatible [ ] Low (prohibited)
 
-
 ---
 
 **Compliance Checklist:**
@@ -2161,7 +2021,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] RDP encryption level set to 'High'
 - [ ] MFA required for production system access
 - [ ] RDP session recording (recommended for privileged access)
-
 
 ---
 
@@ -2177,13 +2036,11 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
   - [ ] Account lockout after failed attempts
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -2201,7 +2058,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] No → Skip to Section 6
 - [ ] Not Applicable
 
-
 ---
 
 **If Yes, complete the assessment:**
@@ -2217,7 +2073,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - **API gateway in use:** [ ] Yes [ ] No
 - **Rate limiting implemented:** [ ] Yes [ ] No
 
-
 ---
 
 **Compliance Checklist:**
@@ -2231,7 +2086,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] Refresh tokens expire within 24 hours
 - [ ] Rate limiting implemented per API key or client
 - [ ] API keys NOT passed in URL query parameters
-
 
 ---
 
@@ -2247,13 +2101,11 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
   - [ ] API gateway with additional security controls
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -2271,7 +2123,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] No → Skip to Section 6.2
 - [ ] Not Applicable
 
-
 ---
 
 **If Yes, complete the assessment:**
@@ -2286,7 +2137,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - **Encryption enabled:** [ ] Yes [ ] No [ ] Partial
 - **Certificate validation:** [ ] Enabled [ ] Disabled [ ] Not applicable
 
-
 ---
 
 **Compliance Checklist:**
@@ -2295,7 +2145,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] Certificate validation enabled (not "trust any certificate")
 - [ ] Self-signed certificates only for internal databases (with proper CA)
 - [ ] Unencrypted connections disabled or documented exception
-
 
 ---
 
@@ -2311,13 +2160,11 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
   - [ ] Application-level encryption of sensitive fields
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -2332,7 +2179,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] Yes → Complete assessment below
 - [ ] No → Skip to Section 7
 - [ ] Not Applicable
-
 
 ---
 
@@ -2349,7 +2195,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - **802.1X authentication:** [ ] Implemented [ ] Planned [ ] Not implemented
 - **WiFi password strength (if PSK):** [ ] ≥20 characters [ ] <20 characters
 
-
 ---
 
 **Compliance Checklist:**
@@ -2360,7 +2205,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] WEP and WPA (original) NOT used
 - [ ] Guest wireless isolated from corporate network
 - [ ] WiFi passwords rotated quarterly (for PSK networks)
-
 
 ---
 
@@ -2376,13 +2220,11 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
   - [ ] Network access control (NAC)
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -2400,7 +2242,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] No → Skip to Section 8
 - [ ] Not Applicable
 
-
 ---
 
 **If Yes, complete the assessment:**
@@ -2414,7 +2255,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - **Connection type:** [ ] Public internet (TLS) [ ] VPN [ ] Private Link/PrivateLink [ ] Direct Connect/ExpressRoute
 - **Data classification transmitted:** [ ] Public [ ] Internal [ ] Confidential [ ] Restricted
 
-
 ---
 
 **Compliance Checklist:**
@@ -2423,7 +2263,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - [ ] Private connectivity for Confidential/Restricted data (preferred)
 - [ ] Cloud provider native encryption enabled
 - [ ] Data encrypted in transit to/from cloud
-
 
 ---
 
@@ -2439,13 +2278,11 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
   - [ ] Data classification does not require private connectivity
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -2469,7 +2306,6 @@ The CA/Browser Forum approved Ballot SC-081v3 which progressively reduces maximu
 - Exclude N/A items from total when calculating compliance percentage
 - Target: ≥90% Compliant for mature ISMS
 
-
 ## Critical Gaps Identified
 
 List the most critical gaps that require immediate attention:
@@ -2488,7 +2324,6 @@ List the most critical gaps that require immediate attention:
   - Lack of certificate automation approaching March 2026 deadline
   - Self-signed certificates on production external services
 
-
 ## Top Remediation Priorities
 
 | Priority | Gap Description | Target Date | Responsible Person |
@@ -2502,7 +2337,6 @@ List the most critical gaps that require immediate attention:
 - **High:** Security risk, compliance violation, or operational failure imminent
 - **Medium:** Compliance gap with planned remediation, low immediate risk
 - **Low:** Best practice improvement, no compliance impact
-
 
 ---
 
@@ -2528,7 +2362,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - `EV-4.2-SSHServers-20260115-KeyAlgorithms.txt`
 - `EV-6.2-CorporateWiFi-20260115-ControllerConfig.png`
 
-
 **Evidence Types:**
 
 - Configuration files (sanitized)
@@ -2540,14 +2373,12 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - Compliance reports
 - Audit logs (sample extracts)
 
-
 **Evidence Storage:**
 
 - **Location:** [Organization's evidence repository path]
 - **Retention:** Audit cycle + 1 year minimum
 - **Access Control:** Restricted to security team and auditors
 - **Sensitivity:** Mark according to data classification
-
 
 **Quality Criteria:**
 
@@ -2556,7 +2387,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - Attributable (clear which system)
 - Verifiable (auditor can reproduce)
 - Protected (stored securely, sanitized if needed)
-
 
 ---
 
@@ -2576,7 +2406,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - Systems requiring remediation: _______
 - Critical gaps identified: _______
 - High-priority remediation items: _______
-
 
 ---
 
@@ -2611,7 +2440,6 @@ _________________________________________________________________
 - [ ] Approved with minor corrections - Specific items to address: _______
 - [ ] Requires revision - Significant issues identified, re-submit required
 
-
 ---
 
 ## Approved By (CISO)
@@ -2626,7 +2454,6 @@ _________________________________________________________________
 - [ ] Approved with conditions - Remediation must be completed by: _______
 - [ ] Rejected - Re-assessment required due to: _______
 
-
 **Risk Acceptance:**
 For any documented exceptions/deviations, I accept the residual risk based on:
 
@@ -2635,14 +2462,12 @@ For any documented exceptions/deviations, I accept the residual risk based on:
 - Business justification
 - Compliance with exception approval process (ISMS-POL-A.8.24-S5.B)
 
-
 **Budget Approval:**
 Remediation budget requirement: _______
 
 - [ ] Approved
 - [ ] Requires further justification
 - [ ] Deferred to next budget cycle
-
 
 ---
 
@@ -2659,14 +2484,12 @@ Remediation budget requirement: _______
 - Failed audit findings
 - Certificate automation deadline approaching (15.03.2026)
 
-
 **Interim Monitoring:**
 
 - Certificate expiration monitoring: Continuous (automated alerts)
 - Configuration changes: Documented and verified
 - New systems: Assessed before production deployment
 - Remediation progress: Tracked monthly
-
 
 ---
 
@@ -2683,12 +2506,10 @@ This assessment shall be distributed to:
 - [ ] IT Management
 - [ ] Other: _______________________
 
-
 **Storage Location:**
 
 - **ISMS Repository:** `ISMS/Controls/A.8.24_Use_of_Cryptography/Assessments/`
 - **Filename:** `ISMS-IMP-A.8.24.1_Data_Transmission_[DATE]_APPROVED.xlsx`
-
 
 ---
 
@@ -2722,13 +2543,11 @@ This assessment shall be distributed to:
 - Applied to: Status column in all assessment sheets
 - Allow blank: No
 
-
 **Remediation Needed Dropdown:**
 
 - Formula: `"Yes,No"`
 - Applied to: Remediation Needed column in all assessment sheets
 - Allow blank: No
-
 
 **Response Dropdown (Assessment Question):**
 
@@ -2736,20 +2555,17 @@ This assessment shall be distributed to:
 - Applied to: Response field for each section's assessment question
 - Allow blank: No
 
-
 **Certificate Automation Status (Section 1.1):**
 
 - Formula: `"Fully automated,Partially automated,Manual (requires migration),Not applicable (internal only)"`
 - Applied to: Certificate automation status field
 - Allow blank: No
 
-
 **Checklist Items:**
 
 - Formula: `"Yes,No,N/A"`
 - Applied to: All compliance checklist Status columns
 - Allow blank: No
-
 
 ## A.3 Conditional Formatting
 
@@ -2760,7 +2576,6 @@ This assessment shall be distributed to:
 - ❌ Non-Compliant: Red fill (RGB: 255, 199, 206)
 - N/A: No special formatting
 
-
 **Certificate Validity Cells (Section 1.1):**
 
 - If value >398 and date <15.03.2026: Yellow fill (warning - approaching deadline)
@@ -2769,13 +2584,11 @@ This assessment shall be distributed to:
 - If value >100 and date ≥15.03.2027: Red fill
 - If value >47 and date ≥15.03.2029: Red fill
 
-
 **Overall Compliance Percentage (Summary Dashboard):**
 
 - ≥90%: Green fill
 - 80-89%: Yellow fill
 - <80%: Red fill
-
 
 ## A.4 Cell Protection
 
@@ -2788,7 +2601,6 @@ This assessment shall be distributed to:
 - Summary Dashboard calculations
 - Evidence Register ID auto-generation
 
-
 **Unprotected Cells (User Input):**
 
 - Assessment data entry tables (yellow fill)
@@ -2798,13 +2610,11 @@ This assessment shall be distributed to:
 - Evidence Register descriptions
 - Approval Sign-Off fields
 
-
 **Sheet Protection:**
 
 - Password: [Set during workbook generation]
 - Allow: Format cells, Insert rows, Sort, Filter
 - Disallow: Delete rows, Modify formulas, Unprotect sheet
-
 
 ## A.5 Summary Dashboard Formulas
 
@@ -2854,14 +2664,12 @@ This assessment shall be distributed to:
 - `create_evidence_register()`: Evidence tracking
 - `create_approval_signoff()`: Approval workflow
 
-
 **Customization Points (marked with `# CUSTOMIZE:` in script):**
 
 - Sheet names (if organizational naming differs)
 - Dropdown options (if additional statuses needed)
 - Data validation rules (if custom compliance criteria)
 - Conditional formatting thresholds (if different color coding)
-
 
 **Quality Assurance Script:** `excel_sanity_check_a824_1.py`
 
@@ -2871,7 +2679,6 @@ This assessment shall be distributed to:
 - Tests formula accuracy
 - Reports any discrepancies between script and specification
 
-
 ## A.8 Version Control
 
 **Workbook Versioning:**
@@ -2880,19 +2687,16 @@ This assessment shall be distributed to:
 - Version tracking in Instructions & Legend sheet
 - Document Control section updated with each revision
 
-
 **Change Log:**
 
 - v1.0: Initial workbook structure
 - v2.0: Updated certificate validity requirements (SC-081v3), added automation readiness assessment, added internal PKI distinction
-
 
 **Backward Compatibility:**
 
 - v2.0 workbooks can be opened in Excel 2016+
 - v1.0 workbooks should be migrated to v2.0 to reflect updated certificate standards
 - Migration script available: `normalize_assessment_files_a824.py`
-
 
 ---
 
@@ -2952,7 +2756,6 @@ ISMS-IMP-A.8.24.1 - Data Transmission Assessment v1.0
 - [ ] Cross-references accurate (section numbers, policy references)
 - [ ] No placeholder text remains (all [Organization] appropriate)
 - [ ] Technical appendix matches Python script version
-
 
 ---
 

@@ -38,7 +38,6 @@ This document consists of two parts:
   - Section A: Implementation Guidance (platform-specific sync verification procedures)
   - Section B: Assessment Workbook Specification (Excel workbook structure, formulas, validation rules)
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -63,7 +62,6 @@ This assessment verifies that ALL organizational systems are ACTUALLY SYNCHRONIZ
 - **Do we meet policy drift thresholds?** (±1s general, ±100ms security-critical, ±10ms high-precision)
 - **Are synchronization failures being detected and remediated?**
 
-
 **Key Principle:** "Configuration ≠ Synchronization." Having NTP configured does NOT mean it's working. This assessment PROVES synchronization through measurement.
 
 Think of this as a health check - just like checking if every patient actually HAS a pulse (not just that they're registered in the system), this assessment checks if every system actually SYNCS to time sources (not just that they're configured to).
@@ -81,14 +79,12 @@ Think of this as a health check - just like checking if every patient actually H
    - Last sync timestamp, last verification date
    - Compliance status per policy thresholds
 
-
 2. **Drift_Analysis** - Statistical analysis across infrastructure
 
    - Average drift, median drift, maximum drift
    - Drift distribution (how many systems in each drift range)
    - Trend analysis (is drift improving or degrading over time?)
    - Systems exceeding policy thresholds
-
 
 3. **Gaps_Failures** - Systems NOT synchronized or exceeding drift
 
@@ -97,14 +93,12 @@ Think of this as a health check - just like checking if every patient actually H
    - Remediation plans with responsible party and target date
    - Tracking until resolution
 
-
 4. **Compliance_Summary** - Overall sync compliance metrics
 
    - **Compliance score:** (Systems synced / Total systems) × 100%
    - Policy requirement status (≥95% sync compliance)
    - Gap summary and remediation tracking
    - Executive summary for management reporting
-
 
 ## How This Relates to Other A.8.17 Assessments
 
@@ -135,7 +129,6 @@ You CANNOT complete S2 without S1! You need to know which NTP servers exist befo
 - **Familiarity with system inventory** - Know where to find list of all systems (asset management, CMDB)
 - **Basic statistics** - Understand average, median, drift distribution
 
-
 **You DON'T need to be an NTP expert!** The assessment provides exact commands to run for each platform.
 
 ## Time Commitment
@@ -151,7 +144,6 @@ You CANNOT complete S2 without S1! You need to know which NTP servers exist befo
   - 1-2 hours: Run verification commands (can be automated)
   - 30 minutes: Update drift measurements
   - 30 minutes: Review and close remediated gaps
-
 
 **Pro Tip:** Automate sync status collection using configuration management (Ansible, Puppet) or monitoring systems. First assessment is manual; subsequent assessments can be 80% automated.
 
@@ -192,19 +184,16 @@ Before starting, gather the following:
 - [ ] **Asset criticality ratings** (Critical, High, Medium, Low) to prioritize sync verification
 - [ ] **System ownership** (System Owner for each system)
 
-
 **NTP Infrastructure (from S1):**
 
 - [ ] **List of internal NTP servers** from ISMS-IMP-A.8.17-S1 (you should have completed this FIRST)
 - [ ] **Expected NTP server configurations** per system type (e.g., servers should use ntp1.dc1, ntp2.dc1)
-
 
 **Access Requirements:**
 
 - [ ] **SSH/console access** to all systems for running verification commands
 - [ ] **Privileged credentials** (`sudo` on Linux, Administrator on Windows)
 - [ ] **Network access** to reach systems remotely
-
 
 ## Required Tools
 
@@ -216,13 +205,11 @@ Before starting, gather the following:
 - **Network devices:** Platform-specific commands or SNMP queries
 - **Cloud:** Provider-specific APIs or built-in verification
 
-
 **Optional Automation Tools:**
 
 - Configuration management (Ansible, Puppet, Chef) for bulk command execution
 - Monitoring systems (Nagios, Zabbix) with NTP service checks
 - Custom scripts (Python, PowerShell) for parsing command outputs
-
 
 ## Policy Requirements to Review
 
@@ -234,18 +221,15 @@ Before starting, familiarize yourself with drift thresholds from **ISMS-POL-A.8.
 - **Critical security systems:** Target <50ms, Compliance Threshold ±100 milliseconds (SIEM, authentication, certificate validation)
 - **High-precision requirements:** Target <5ms, Compliance Threshold ±10 milliseconds (financial systems, regulatory compliance)
 
-
 **Compliance Target:**
 
 - **≥95% of systems** must be synchronized within acceptable drift
 - **100% of critical security systems** must be synchronized
 
-
 **Verification Frequency (ISMS Copilot Correction):**
 
 - **7 days**: Maximum age for compliance metric calculations
 - **30 days**: Maximum policy threshold for compliance
-
 
 You'll be measuring every system against these thresholds in the Compliance column.
 
@@ -263,7 +247,6 @@ You'll be measuring every system against these thresholds in the Compliance colu
 - Import into System_Inventory sheet (or manually add)
 - Verify all in-scope systems are listed
 
-
 **STEP 2:** For each system, run verification commands
 
 - SSH/console to system
@@ -271,7 +254,6 @@ You'll be measuring every system against these thresholds in the Compliance colu
 - Record sync status (Synced / Not Synced / Unknown)
 - Record current drift in milliseconds
 - Record last sync timestamp
-
 
 **STEP 3:** Document findings in System_Inventory sheet
 
@@ -282,13 +264,11 @@ You'll be measuring every system against these thresholds in the Compliance colu
 - Update Last Verified to today's date
 - Auto-calculated Compliance status will populate
 
-
 **STEP 4:** Review Drift_Analysis sheet
 
 - Auto-calculated statistics from System_Inventory
 - Identify outliers (systems with excessive drift)
 - Check trend: is drift improving or degrading?
-
 
 **STEP 5:** Document all gaps in Gaps_Failures sheet
 
@@ -297,26 +277,22 @@ You'll be measuring every system against these thresholds in the Compliance colu
 - Severity rating based on system criticality
 - Remediation plan with responsible party and target date
 
-
 **STEP 6:** Review Compliance_Summary
 
 - Overall compliance score (target: ≥95%)
 - If <95%, escalate to management
 - Track remediation progress
 
-
 **STEP 7:** Collect evidence
 
 - Save command outputs (text files or screenshots)
 - Document evidence locations in workbook
-
 
 **STEP 8:** Internal review and approval
 
 - Peer review for technical accuracy
 - ISMS Officer review for compliance
 - Submit for formal approval
-
 
 ## Data Collection Methods
 
@@ -326,20 +302,17 @@ You'll be measuring every system against these thresholds in the Compliance colu
 - Run verification command
 - Copy output to workbook manually
 
-
 **Semi-Automated Collection** (medium environments, 50-500 systems):
 
 - Use Ansible/Puppet to run commands on all systems
 - Collect outputs to central location
 - Parse outputs and populate workbook
 
-
 **Fully Automated Collection** (large environments, >500 systems):
 
 - Integrate with monitoring system (Nagios, Zabbix)
 - Use monitoring system's NTP service checks
 - Export monitoring data to CSV, import to workbook
-
 
 **Recommended:** Start manual for first assessment to understand the process, then automate for monthly updates.
 
@@ -414,7 +387,6 @@ You'll be measuring every system against these thresholds in the Compliance colu
 - **Typical:** 100-1000+ systems depending on organization size
 - **Note:** This is a LARGE sheet - consider automated collection for >100 systems
 
-
 **Policy Compliance Check:**
 
 - [ ] All systems from asset inventory documented?
@@ -423,7 +395,6 @@ You'll be measuring every system against these thresholds in the Compliance colu
 - [ ] Overall compliance ≥95% (auto-calculated in Compliance_Summary)?
 - [ ] All critical security systems have Compliance = ✅ Compliant?
 
-
 **Common Mistakes to Avoid:**
 
 - ❌ **Marking Unknown as Synced** - If you can't verify, status is Unknown (not Synced)
@@ -431,7 +402,6 @@ You'll be measuring every system against these thresholds in the Compliance colu
 - ❌ **Stale data** - Re-verify every month, update Last Verified date
 - ❌ **Missing systems** - Cross-check with A.5.9 asset inventory to ensure completeness
 - ❌ **Ignoring Stratum 16** - This means NOT SYNCHRONIZED, status must be ❌ Not Synced
-
 
 ---
 
@@ -460,12 +430,10 @@ Leap status     : Normal  ← Must be "Normal" for Synced status
 - **Last Sync Time:** "Ref time (UTC)" value
 - **Stratum:** "Stratum : 3"
 
-
 **Secondary Command:** `chronyc sources -v`
 
 - Shows which NTP servers are being used
 - Use for **NTP Server(s) Configured** column
-
 
 ---
 
@@ -487,7 +455,6 @@ $ ntpq -p
 - **Sync Status:** `*` (asterisk) in first column means actively synced → ✅ Synced
 - **Current Drift:** "offset" column in milliseconds → **-89** ms (negative = slow)
 - **Stratum:** "st" column for the `*` server → `3`
-
 
 **Alternative:** `ntpstat` (simpler output)
 ```bash
@@ -517,7 +484,6 @@ Last Successful Sync Time: 1/16/2026 2:23:45 PM
 - **Stratum:** "Stratum: 3"
 - **Last Sync Time:** "Last Successful Sync Time" value
 
-
 **For Drift Measurement:** `w32tm /stripchart /computer:ntp1.dc1.example.com /samples:1`
 ```powershell
 C:\> w32tm /stripchart /computer:ntp1.dc1.example.com /samples:1
@@ -542,7 +508,6 @@ Router# show ntp associations
 - **Sync Status:** `*` before IP → ✅ Synced
 - **Current Drift:** "offset" column → **-89** ms
 
-
 **Juniper JunOS:**
 ```juniper
 user@router> show ntp associations
@@ -564,19 +529,16 @@ user@router> show ntp associations
 - No drift measurement available (trust AWS)
 - **Sync Status:** If source is 169.254.169.123 and Leap status Normal → ✅ Synced
 
-
 **Azure:**
 
 - Uses platform NTP service
 - Check VM settings: Time synchronization enabled
 - Verify with `w32tm /query /status` (Windows) or `chronyc` (Linux)
 
-
 **GCP:**
 
 - Uses metadata server `metadata.google.internal`
 - Verify with `chronyc sources` - should show metadata.google.internal
-
 
 ---
 
@@ -595,7 +557,6 @@ user@router> show ntp associations
 - **Systems Not Synced:** Count where Sync Status = ❌ Not Synced
 - **Sync Compliance %:** (Systems Synced / Total Systems) × 100%
 
-
 **Drift Metrics (ISMS Copilot Correction - Updated Targets):**
 
 - **Average Drift:** Mean time offset across all synced systems
@@ -604,7 +565,6 @@ user@router> show ntp associations
 - **Median Drift:** Middle value (50th percentile)
 - **Maximum Drift:** Largest offset observed (positive or negative)
 - **Standard Deviation:** Variability in drift measurements
-
 
 **Drift Distribution:**
 | Drift Range | System Count | Percentage |
@@ -627,7 +587,6 @@ user@router> show ntp associations
 - ⚠️ Average drift >500ms (indicates systemic NTP issue)
 - ⚠️ >10% of systems in >1000ms range (major compliance gap)
 - ⚠️ Increasing drift over time (NTP infrastructure degrading)
-
 
 ---
 
@@ -704,7 +663,6 @@ For gaps that cannot be remediated within 90 days or require permanent exception
 - Remediation timeline
 - Any risks or escalations
 
-
 **Example:**
 > "Assessed 1,234 systems for NTP synchronization compliance. 1,173 systems (95%) are synchronized within policy thresholds. Identified 61 sync failures, of which 48 are already remediated. Remaining 13 gaps have remediation plans with target completion by 2026-02-28. No critical security systems have sync failures."
 
@@ -719,25 +677,21 @@ For gaps that cannot be remediated within 90 days or require permanent exception
 - [ ] **Sample command outputs** - `chronyc tracking`, `w32tm /query /status` for representative systems
 - [ ] **NTP config files** - Sample `/etc/chrony.conf` files showing NTP server configuration
 
-
 **Verification Evidence:**
 
 - [ ] **Sync status screenshots** - 5-10 examples showing successful sync verification
 - [ ] **Drift measurements** - Command outputs showing time offset calculations
 - [ ] **Monitoring dashboards** - If using automated monitoring, screenshot showing sync status
 
-
 **Gap Evidence:**
 
 - [ ] **Failure examples** - Command outputs showing Stratum 16 or "Not Synced" status
 - [ ] **Remediation proof** - Before/after outputs showing gap closure
 
-
 **Compliance Evidence:**
 
 - [ ] **This completed assessment workbook** - With all sheets filled
 - [ ] **Management approval** - Email or signature on Compliance_Summary
-
 
 **ISMS Copilot Correction: Evidence Retention Period**
 
@@ -798,7 +752,6 @@ Configuration ≠ Synchronization. NTP may be configured but firewall blocks UDP
 - Check for "Leap status : Normal" or "Source: [NTP server]"
 - If you can't verify, status is ❓ Unknown (not ✅ Synced)
 
-
 ## Wrong Drift Units
 
 **MISTAKE:**
@@ -812,7 +765,6 @@ Column expects milliseconds, not seconds.
 - Convert seconds to milliseconds: Multiply by 1000
 - 0.000245 seconds × 1000 = **0.245** ms
 - Enter **0.245** or round to **0.2**
-
 
 ## Ignoring Stratum 16
 
@@ -828,7 +780,6 @@ System shows Stratum 16, but you mark as ⚠️ Degraded.
 - Investigate immediately
 - Document in Gaps_Failures
 
-
 ## Stale Data
 
 **MISTAKE:**
@@ -842,7 +793,6 @@ Drift changes over time. Old data doesn't reflect current sync status.
 - Re-run verification commands monthly
 - Update "Last Verified" to current date
 - Flag systems with "Last Verified" >30 days
-
 
 ## Missing Systems from Inventory
 
@@ -858,7 +808,6 @@ Policy requires ALL information processing systems generating logs.
 - Cross-check: Every server, network device, security appliance
 - Document exclusion exceptions
 
-
 ## Not Documenting Gaps
 
 **MISTAKE:**
@@ -871,7 +820,6 @@ Auditor sees non-compliance with no remediation plan.
 
 - Every system with ❌ or Compliance = ❌ → Document in Gaps_Failures
 - Every gap needs: Root cause, severity, remediation, responsible, target date
-
 
 ---
 
@@ -887,7 +835,6 @@ Before submitting for approval, verify:
 - [ ] All drift measurements in milliseconds (not seconds)
 - [ ] All "Last Verified" dates within last 30 days (7 days for compliance metrics)
 
-
 **Data Accuracy:**
 
 - [ ] Sync status verified with platform-specific commands
@@ -895,14 +842,12 @@ Before submitting for approval, verify:
 - [ ] NTP server configurations cross-checked with S1 assessment
 - [ ] No Stratum 16 systems marked as Synced
 
-
 **Policy Compliance:**
 
 - [ ] Overall sync compliance ≥95%
 - [ ] All critical security systems 100% compliant
 - [ ] Average drift <500ms (updated target)
 - [ ] All systems exceeding drift thresholds documented in Gaps_Failures
-
 
 **Gap Documentation:**
 
@@ -912,12 +857,10 @@ Before submitting for approval, verify:
 - [ ] Critical/high gaps have responsible party assigned
 - [ ] Permanent exceptions reference POL Section 3.3
 
-
 **Evidence:**
 
 - [ ] Sample command outputs collected (10+ examples)
 - [ ] Evidence retention minimum 12 months (updated)
-
 
 ---
 
@@ -930,16 +873,13 @@ Before submitting for approval, verify:
 - Use Quality Checklist above
 - Spot-check 10% of systems
 
-
 **Step 2: Peer Review** (Recommended)
 
 - Have another System Administrator review
 
-
 **Step 3: ISMS Officer Review** (Required)
 
 - Verifies compliance aspects
-
 
 ## Formal Approval Workflow
 
@@ -948,18 +888,15 @@ Before submitting for approval, verify:
 - Reviews technical accuracy
 - Sign-off: Compliance_Summary sheet
 
-
 **Level 2: CISO**
 
 - Reviews policy compliance
 - Sign-off: Compliance_Summary sheet
 
-
 **Level 3: Executive Management** (if Compliance <90%)
 
 - Reviews risk acceptance
 - Sign-off: Compliance_Summary sheet
-
 
 ## Approval Criteria
 
@@ -971,14 +908,12 @@ Before submitting for approval, verify:
 - All gaps have remediation plans
 - Evidence collected
 
-
 **Assessment will be REJECTED if:**
 
 - Missing systems
 - >5% systems Status = ❓ Unknown
 - Compliance <90% with no risk acceptance
 - Gaps without remediation plans
-
 
 ## Post-Approval
 
@@ -1051,7 +986,6 @@ This section provides technical guidance for verifying time synchronization stat
 - ISMS-IMP-A.8.17-S1 (Time Source Configuration - defines WHAT NTP servers exist)
 - ISMS-POL-A.5.9 (Asset Management - defines system inventory)
 
-
 ---
 
 ## Platform-Specific Verification Commands
@@ -1093,7 +1027,6 @@ Leap status     : Normal
 - **Leap status:** Must be "Normal" for proper sync
   - "Not synchronized" = failure
 
-
 **How to Complete Workbook:**
 
 - **Sync Status:** If Stratum < 16 AND Leap status = Normal → ✅ Synced
@@ -1101,7 +1034,6 @@ Leap status     : Normal
 - **Current Drift (ms):** "System time" value × 1000
   - Example: 0.000245 seconds × 1000 = **0.245 ms**
 - **Last Sync Time:** "Ref time (UTC)" value
-
 
 **Secondary Command (List NTP Sources):**
 
@@ -1133,12 +1065,10 @@ MS Name/IP address         Stratum Poll Reach LastRx Last sample
   - 0 = completely unreachable
 - **Last sample:** Time offset in microseconds (us)
 
-
 **Use For:**
 
 - **NTP Server(s) Configured:** List servers shown in Name/IP column
 - **Verify connectivity:** Check Reach column
-
 
 ---
 
@@ -1167,7 +1097,6 @@ ntpq -p
 - `~` = Too variable
 - ` ` (blank) = Discarded
 
-
 **Key Columns:**
 
 - **st (Stratum):** Should be 2 or 3 for internal NTP servers
@@ -1177,7 +1106,6 @@ ntpq -p
 - **offset:** Time offset in MILLISECONDS (this is already in ms!)
 - **jitter:** Variance in offset measurements
 
-
 **How to Complete Workbook:**
 
 - **Sync Status:** If `*` present → ✅ Synced
@@ -1185,7 +1113,6 @@ ntpq -p
 - **Current Drift (ms):** "offset" column value (already in milliseconds)
   - Example: -89.123 → **-89** ms (negative = slow)
 - **NTP Server(s) Configured:** List all servers in "remote" column
-
 
 **Alternative Simple Command:**
 
@@ -1237,14 +1164,12 @@ Poll Interval: 10 (1024s)
   - If "Local CMOS Clock" → NOT SYNCED
 - **Last Successful Sync Time:** Recent timestamp indicates active sync
 
-
 **How to Complete Workbook:**
 
 - **Sync Status:** If Source = NTP server (not "Local CMOS Clock") AND Stratum < 16 → ✅ Synced
 - **Stratum:** Value from "Stratum" line
 - **Last Sync Time:** "Last Successful Sync Time" value
 - **NTP Server(s) Configured:** "Source" value
-
 
 **To Measure Drift:**
 
@@ -1262,7 +1187,6 @@ The current time is 1/16/2026 2:23:45 PM.
 **Extract Drift:**
 
 - `+00.0002450s` = +0.000245 seconds = **+0.245 ms** (positive = fast)
-
 
 **Alternative (PowerShell):**
 
@@ -1290,7 +1214,6 @@ Router# show ntp associations
 - `*` = Synchronized to this peer
 - `~` = Peer is reachable (NTP packet received)
 
-
 **Key Columns:**
 
 - **st (Stratum):** Upstream server stratum
@@ -1298,14 +1221,12 @@ Router# show ntp associations
 - **offset:** Time offset in MILLISECONDS
 - **disp (dispersion):** Estimate of error
 
-
 **How to Complete Workbook:**
 
 - **Sync Status:** If `*` present → ✅ Synced
 - **Stratum:** Typically 3 (client of Stratum 2 server)
 - **Current Drift (ms):** "offset" column (already in ms)
 - **NTP Server(s) Configured:** List addresses
-
 
 **Show NTP Status:**
 
@@ -1349,7 +1270,6 @@ processor="powerpc", system="JUNOS15.1", leap=00, stratum=3,
 - All EC2 instances can access
 - Stratum 3 (synchronized to AWS atomic clocks)
 
-
 **Verification (Amazon Linux 2):**
 
 ```bash
@@ -1368,7 +1288,6 @@ chronyc sources -v | grep 169.254.169.123
 - **Stratum:** 3 (from AWS Time Sync)
 - **Current Drift:** Extract from "Last sample" column
 
-
 **Documentation:** https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/set-time.html
 
 ---
@@ -1379,7 +1298,6 @@ chronyc sources -v | grep 169.254.169.123
 
 - Uses Hyper-V time integration by default
 - Can optionally use time.windows.com
-
 
 **Verification (Linux VM):**
 
@@ -1404,7 +1322,6 @@ Should show synchronized status.
 - **Sync Status:** Check `chronyc tracking` or `w32tm /query /status`
 - **Notes:** "Using Azure platform time sync"
 
-
 **Documentation:** https://docs.microsoft.com/en-us/azure/virtual-machines/linux/time-sync
 
 ---
@@ -1415,7 +1332,6 @@ Should show synchronized status.
 
 - Uses `metadata.google.internal`
 - Available on all Compute Engine instances
-
 
 **Verification:**
 
@@ -1433,7 +1349,6 @@ chronyc sources -v | grep metadata
 - **NTP Server(s) Configured:** metadata.google.internal
 - **Sync Status:** If `^*` present → ✅ Synced
 - **Stratum:** Typically 2 or 3
-
 
 **Documentation:** https://cloud.google.com/compute/docs/instances/configure-ntp
 
@@ -1460,7 +1375,6 @@ vmware-toolbox-cmd timesync status
 - **Sync Status:** Check VMware Tools status
 - **NTP Server(s) Configured:** "VMware ESXi Host Time Sync"
 - **Notes:** "Using VMware Tools time synchronization"
-
 
 **Option 2: Use NTP Client (For time-sensitive servers)**
 
@@ -1531,7 +1445,6 @@ chronyc tracking
 - Verify host is synced
 - Note: "Container time inherited from host"
 
-
 **Kubernetes Nodes:**
 
 Each K8s node must have NTP configured. Verify each node:
@@ -1553,18 +1466,15 @@ kubectl get nodes
 
 - Example: +250ms = system is 250 milliseconds ahead
 
-
 **Negative Drift:** System clock is SLOW (behind NTP time)
 
 - Example: -150ms = system is 150 milliseconds behind
-
 
 **Acceptable Drift Thresholds (REQ-817-011):**
 
 - **General systems:** ±1000 milliseconds (±1 second)
 - **Critical security systems:** ±100 milliseconds
 - **High-precision systems:** ±10 milliseconds
-
 
 ### Drift Calculation
 
@@ -1586,7 +1496,6 @@ kubectl get nodes
 
 - Already in milliseconds
 - **Result:** -89.123 ms (system is 89ms slow)
-
 
 **From Windows:**
 
@@ -1775,13 +1684,11 @@ groups:
 - Populate System_Inventory sheet
 - Identify new sync failures
 
-
 **Week 2:**
 
 - Analyze Drift_Analysis sheet
 - Document gaps in Gaps_Failures
 - Create remediation plans
-
 
 **Week 3:**
 
@@ -1789,13 +1696,11 @@ groups:
 - Re-verify fixed systems
 - Update compliance status
 
-
 **Week 4:**
 
 - Finalize assessment
 - Submit for approval
 - Report to management
-
 
 **Quarterly Deep Dive:**
 
@@ -1803,7 +1708,6 @@ groups:
 - Review policy exceptions
 - Assess monitoring effectiveness
 - Update procedures based on lessons learned
-
 
 ---
 
@@ -1815,7 +1719,6 @@ groups:
 
 - `chronyc tracking` shows "Stratum : 16"
 - `ntpq -p` shows no `*` in first column
-
 
 **Root Causes:**
 1. **NTP server unreachable** (firewall, network)
@@ -1849,7 +1752,6 @@ sudo iptables -L | grep 123
 
 - System synced but drift exceeds threshold
 
-
 **Root Causes:**
 1. **Virtualization time drift** (VM host issues)
 2. **Network latency** to NTP server
@@ -1878,7 +1780,6 @@ chronyc sources -v | grep delay
 **Symptoms:**
 
 - Sometimes synced, sometimes not
-
 
 **Root Causes:**
 1. **Network instability**
@@ -1930,18 +1831,15 @@ chronyc sources -v
 - Alignment: Center, Vertical Center, Wrap Text
 - Border: Thin borders all sides
 
-
 **Data Cell Style:**
 
 - Alignment: Left, Vertical Center, Wrap Text
 - Border: Thin borders all sides
 
-
 **Center Style:**
 
 - Alignment: Center, Vertical Center
 - Border: Thin borders all sides
-
 
 ---
 
@@ -1956,12 +1854,10 @@ chronyc sources -v
 - A1: "ISMS A.8.17 - System Synchronization Status Assessment" (Bold 16, Dark Blue, Merged A1:F1)
 - A2: "Generated: [Timestamp]" (Italic 10, Merged A2:F2)
 
-
 **Row 4-5:** Document Metadata
 
 - A4: "Document ID:" (Bold) | B4: "ISMS-IMP-A.8.17.2" (Bold, Dark Blue)
 - A5: "Title:" (Bold) | B5: "System Synchronization Status Assessment"
-
 
 **Row 7+:** Instructions content
 
@@ -1997,22 +1893,18 @@ chronyc sources -v
 
 - Formula: `"🖥️ Server-Physical,💻 Server-Virtual,☁️ Server-Cloud,🌐 Network Device,🔒 Security Appliance,💼 Workstation,📦 Container Host,🔌 IoT Device,📋 Other"`
 
-
 **Column E (Criticality):**
 
 - Formula: `"🔴 Critical,🟠 High,🟡 Medium,🟢 Low"`
-
 
 **Column G (Sync Status):**
 
 - Formula: `"✅ Synced,❌ Not Synced,⚠️ Sync Failed,❓ Unknown,➖ Excluded"`
 
-
 **Column H (Stratum):**
 
 - Type: Whole number
 - Range: 0-16
-
 
 **Column L (Compliance - Formula):**
 ```excel
@@ -2049,7 +1941,6 @@ chronyc sources -v
 - Average Drift: `=AVERAGE(System_Inventory!I2:I1000)`
 - Median Drift: `=MEDIAN(System_Inventory!I2:I1000)`
 - Max Drift: `=MAX(ABS(System_Inventory!I2:I1000))`
-
 
 **Drift Distribution Table:**
 
@@ -2116,7 +2007,6 @@ Text box for 3-5 sentence management summary.
 - `create_drift_analysis_sheet()` - Statistics
 - `create_gaps_failures_sheet()` - Gap tracking
 - `create_compliance_summary_sheet()` - Executive summary
-
 
 **To regenerate workbook:**
 ```bash

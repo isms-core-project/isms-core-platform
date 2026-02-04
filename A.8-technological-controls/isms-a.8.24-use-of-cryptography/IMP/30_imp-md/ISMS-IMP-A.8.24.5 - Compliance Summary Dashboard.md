@@ -38,13 +38,11 @@
 - Provides decision frameworks for executive action
 - Defines maintenance and update procedures
 
-
 **What This Document Does NOT Do:**
 
 - Replace detailed technical assessment completion (see IMP-1/2/3/4 User Guides)
 - Define cryptographic requirements (see ISMS-POL-A.8.24)
 - Provide remediation implementation guidance (technical teams handle execution)
-
 
 ---
 
@@ -72,7 +70,6 @@ Single-page executive summary consolidating 4 detailed assessments (Data Transmi
 - `ISMS-IMP-A.8.24.3_Authentication_[DATE].xlsx` - 5 authentication methods
 - `ISMS-IMP-A.8.24.4_Key_Management_[DATE].xlsx` - 5 key lifecycle stages
 
-
 **Output:** `ISMS-IMP-A.8.24.5_Compliance_Dashboard_[DATE].xlsx` - 9-sheet executive dashboard
 
 ## Target Audience
@@ -84,13 +81,11 @@ Single-page executive summary consolidating 4 detailed assessments (Data Transmi
 - **Compliance Officers** - Audit readiness, regulatory alignment, evidence tracking
 - **Internal Audit** - Control effectiveness, remediation progress, compliance trending
 
-
 **Secondary Users:**
 
 - **Security Team Leads** - Detailed gap analysis, remediation planning, evidence collection
 - **IT Management** - Resource requirements, implementation timelines, technical dependencies
 - **External Auditors** - ISO 27001 certification evidence, control maturity demonstration
-
 
 ## Dashboard Structure (9 Sheets)
 
@@ -113,7 +108,6 @@ Single-page executive summary consolidating 4 detailed assessments (Data Transmi
 - **Audit preparation (2 hours):** All 9 sheets
 - **Quarterly review meeting:** Sheets 1, 4, 8, 9
 
-
 ## Connection to Policy Framework
 
 **Policy Hierarchy:**
@@ -134,7 +128,6 @@ ISMS-POL-A.8.24 (Use of Cryptography Policy)
 - **Assessments (IMP-1/2/3/4)** verify HOW WELL it's being done
 - **Dashboard (IMP-5)** answers "SO WHAT?" for executives
 
-
 ## Time Investment
 
 **Dashboard Generation:**
@@ -144,7 +137,6 @@ ISMS-POL-A.8.24 (Use of Cryptography Policy)
 - **Executive summary writing:** 30 minutes
 - **Total:** ~45 minutes per quarter
 
-
 **Dashboard Review (by role):**
 
 - **Executive (Board presentation):** 5 minutes (Sheet 1 only)
@@ -152,14 +144,12 @@ ISMS-POL-A.8.24 (Use of Cryptography Policy)
 - **Security Team (remediation planning):** 2 hours (All sheets)
 - **Auditor (certification review):** 4 hours (All sheets + source workbooks)
 
-
 **Quarterly Maintenance:**
 
 - **Data refresh:** 5 minutes (re-run Python script with new source workbooks)
 - **Trend update:** 10 minutes (update quarterly comparison data)
 - **Meeting log update:** 15 minutes (document review meeting outcomes)
 - **Total:** ~30 minutes per quarter after initial setup
-
 
 ---
 
@@ -176,14 +166,12 @@ ISMS-POL-A.8.24 (Use of Cryptography Policy)
 - Evidence documented
 - Approval obtained
 
-
 ✅ **IMP-2 (Data Storage):**
 
 - All 7 storage categories assessed
 - Encryption status verified for all data-at-rest scenarios
 - Key escrow confirmed
 - Approval obtained
-
 
 ✅ **IMP-3 (Authentication):**
 
@@ -192,13 +180,11 @@ ISMS-POL-A.8.24 (Use of Cryptography Policy)
 - MFA enforcement confirmed
 - Approval obtained
 
-
 ✅ **IMP-4 (Key Management):**
 
 - All 5 key lifecycle stages assessed
 - Key generation, storage, rotation, backup, certificate management documented
 - Approval obtained
-
 
 **Quality Check:** Each source workbook should have:
 
@@ -206,7 +192,6 @@ ISMS-POL-A.8.24 (Use of Cryptography Policy)
 - Evidence Register populated (minimum 10 evidence items per workbook)
 - Approval Sign-Off completed with signatures
 - No outstanding "TBD" or blank fields in critical columns
-
 
 ## File Naming Requirements
 
@@ -217,14 +202,12 @@ ISMS-POL-A.8.24 (Use of Cryptography Policy)
 - `ISMS-IMP-A.8.24.3_Authentication_YYYYMMDD.xlsx`
 - `ISMS-IMP-A.8.24.4_Key_Management_YYYYMMDD.xlsx`
 
-
 **OR shortened names** (for external link compatibility):
 
 - `ISMS-IMP-A.8.24.1.xlsx`
 - `ISMS-IMP-A.8.24.2.xlsx`
 - `ISMS-IMP-A.8.24.3.xlsx`
 - `ISMS-IMP-A.8.24.4.xlsx`
-
 
 **Dashboard normalization script** can auto-create short names if needed.
 
@@ -237,7 +220,6 @@ ISMS-POL-A.8.24 (Use of Cryptography Policy)
 - Access to all 4 source assessment workbooks
 - Write permission to output directory
 
-
 **Required Skills:**
 
 - Understanding of ISO 27001 Control A.8.24
@@ -245,13 +227,11 @@ ISMS-POL-A.8.24 (Use of Cryptography Policy)
 - Executive reporting experience
 - Risk assessment fundamentals
 
-
 **NOT Required:**
 
 - Cryptography expertise (already assessed in IMP-1/2/3/4)
 - Python coding skills (script is ready-to-use)
 - Deep technical infrastructure knowledge
-
 
 ---
 
@@ -321,7 +301,6 @@ ISMS-IMP-A.8.24.5 - Compliance Summary Dashboard Generator
 - **"External link error"** → Excel needs to "update links" when opening dashboard
 - **"Empty Gap Analysis"** → No gaps found (all 100% compliant) OR source workbooks not properly populated
 
-
 ---
 
 **Step 3: Open Dashboard in Excel (1 minute)**
@@ -334,14 +313,12 @@ Open: ISMS-IMP-A.8.24.5_Compliance_Dashboard_20260115.xlsx
 - **Click "Update"** to pull latest data from source workbooks
 - **Click "Don't Update"** only if source workbooks have moved (will show #REF! errors)
 
-
 **First Validation Check:**
 
 - Sheet 1 (Executive Dashboard) → Overall Compliance Rate shows percentage (e.g., 87.3%)
 - Sheet 2 (Gap Analysis) → Gap count matches expected non-compliant items
 - Sheet 3 (Risk Register) → Risks present if critical/high gaps exist
 - Sheet 6 (Evidence Register) → Evidence documents listed
-
 
 **If any sheet is blank or shows #REF! errors:**
 1. Close Excel
@@ -369,14 +346,12 @@ Q4 2024 (October 1 - December 31, 2024)
 - 75-84% → "Needs Improvement - Significant gaps requiring attention"
 - <75% → "Critical - Immediate CISO action required"
 
-
 **Security Posture:** (Auto-calculated based on risk score)
 
 - Risk Score <3 → "Strong - Low risk exposure"
 - Risk Score 3-5 → "Adequate - Manageable risk"
 - Risk Score 5-7 → "Weak - Elevated risk requiring mitigation"
 - Risk Score >7 → "Critical - Unacceptable risk exposure"
-
 
 **Key Achievements This Period:** (Manual entry - 5 bullet points)
 *Example:*
@@ -428,7 +403,6 @@ Budget Gap:                         CHF 27,500 (requires additional approval)
 - [ ] Compliance by Area shows 4 rows (Transmission, Storage, Authentication, Key Management)
 - [ ] All 4 source document links working (no #REF! errors)
 
-
 **Sheet 2 Validation:**
 
 - [ ] Total gaps = Sum of (Critical + High + Medium + Low)
@@ -437,14 +411,12 @@ Budget Gap:                         CHF 27,500 (requires additional approval)
 - [ ] Systems affected identified
 - [ ] Target dates reasonable (not all "TBD")
 
-
 **Sheet 3 Validation:**
 
 - [ ] Risk Register populated if Critical or High gaps exist
 - [ ] Risk scores calculated (Likelihood × Impact)
 - [ ] Mitigation strategies documented
 - [ ] Risk owners assigned
-
 
 **Sheet 4 Validation:**
 
@@ -454,14 +426,12 @@ Budget Gap:                         CHF 27,500 (requires additional approval)
 - [ ] Dependencies identified
 - [ ] Budget estimates provided
 
-
 **Sheet 6 Validation:**
 
 - [ ] Evidence documents from all 4 source assessments
 - [ ] Evidence types diverse (policies, configs, logs, reports, screenshots)
 - [ ] Storage locations specified
 - [ ] Collection dates recent
-
 
 **Common Validation Failures:**
 ❌ **All gaps show "TBD" for target date** → Return to source assessments, complete remediation plans
@@ -518,7 +488,6 @@ Schedule recurring activities:
   - Provide source workbooks (IMP-1/2/3/4)
   - Demonstrate evidence traceability (Sheet 6 → Source workbooks → Actual evidence)
 
-
 ---
 
 # Understanding Dashboard Sections
@@ -539,7 +508,6 @@ Schedule recurring activities:
   - **75-84%** (Amber) → Needs improvement, systematic issues, requires CISO focus
   - **<75%** (Red) → Critical, certification at risk, immediate executive action required
 
-
 **Example:**
 ```
 Current: 87.3% (Yellow - Good)
@@ -555,7 +523,6 @@ Gap: 7.7 percentage points → ~15 additional controls to implement
   - **1-3** (Yellow) → Manageable, track in remediation roadmap
   - **4-10** (Red) → Concerning, requires prioritization
   - **>10** (Dark Red) → Crisis level, CISO escalation to executive management
-
 
 **Example:**
 ```
@@ -574,7 +541,6 @@ Current: 3 critical gaps
   - **16-30** (Amber) → High risk exposure, requires mitigation strategy
   - **>30** (Red) → Unacceptable risk, immediate action required
 
-
 **Remediation Progress**
 
 - **What it measures:** Percentage of identified gaps with remediation in progress or completed
@@ -583,7 +549,6 @@ Current: 3 critical gaps
   - **≥80%** (Green) → Active remediation culture
   - **50-79%** (Yellow) → Adequate but needs acceleration
   - **<50%** (Red) → Stalled remediation, accountability issue
-
 
 **Compliance by Assessment Area (Middle Section):**
 
@@ -603,7 +568,6 @@ Current: 3 critical gaps
 - **↑ (Green):** Improved from last quarter → Continue current approach
 - **→ (Yellow):** No change → Investigate: lack of resources? blocked by dependencies?
 - **↓ (Red):** Declined → Red flag! Why? New systems? policy violations? Immediate investigation required.
-
 
 **Top 5 Critical Issues (Bottom Section):**
 
@@ -648,7 +612,6 @@ Provides gap distribution by severity:
 - **Data Transmission has 1 critical gap** → Investigate immediately
 - **Authentication has 0 critical** → Lower priority, can address in Q2
 
-
 **Detailed Gap Register (Rows 12+):**
 
 Each gap includes:
@@ -664,7 +627,6 @@ Each gap includes:
 - **Target Date:** Remediation deadline
 - **Owner:** Responsible person
 - **Status:** Not Started / In Progress / Completed / Blocked
-
 
 **Filtering Strategy:**
 1. **Filter by Risk Level = Critical** → Address these first (typically 0-3 items)
@@ -684,7 +646,6 @@ Each gap includes:
 - **Impact:** (1-5) What's the damage if it occurs?
 - **Risk Score:** Likelihood × Impact (max 25)
 
-
 **Risk Interpretation:**
 
 - **20-25 (Critical):** Unacceptable, immediate action, escalate to board
@@ -692,7 +653,6 @@ Each gap includes:
 - **10-14 (Medium):** Monitor closely, remediate within 6 months
 - **5-9 (Low):** Acceptable with controls, annual review
 - **1-4 (Minimal):** Track only, no immediate action
-
 
 **Example Risk:**
 ```
@@ -710,7 +670,6 @@ Target: 15.02.2025 (30 days - URGENT)
 **CISO Use Case:**
 
 - Present Risk Register to Board: "We have 1 critical risk, 8 high risks. Here's our mitigation plan and budget request."
-
 
 ---
 
@@ -732,7 +691,6 @@ Target: 15.02.2025 (30 days - URGENT)
 - **Actual Cost:** Actual spend (track variances)
 - **Progress %:** 0-100%
 
-
 **Timeline View:**
 Sort by Target Date to create Gantt-style view:
 ```
@@ -741,12 +699,10 @@ January 2025:
     - Action 1: Implement BitLocker on 50 laptops (Target: 15.01.2025)
     - Action 2: Migrate database to TDE (Target: 31.01.2025)
 
-
 February 2025:
 
     - Action 3: Automate service account rotation (Target: 15.02.2025)
     - Action 4: Deploy MFA for all users (Target: 28.02.2025)
-
 
 March 2025:
 
@@ -767,7 +723,6 @@ Total Remediation Budget: CHF 127,500
 **CISO Use Case:**
 
 - Present to CFO: "Here's our cryptography remediation roadmap for 2025. Total investment CHF 127,500 over 3 quarters. Reduces cyber risk exposure by 65%."
-
 
 ---
 
@@ -798,7 +753,6 @@ Total Remediation Budget: CHF 127,500
 - **Some KPIs declining** (red arrows) → Investigate root cause (new systems? policy violations?)
 - **Stagnant KPIs** (yellow arrows) → Lack of resources? Blocked by dependencies?
 
-
 **Executive Communication:**
 ```
 "We've improved overall compliance from 78.5% to 87.3% over the past quarter (+8.8 percentage points).
@@ -816,13 +770,11 @@ Remaining challenge: Service account authentication still at 45% (target 90%, re
 - **Use Case:** Auditor asks "Show me evidence of TLS 1.3 enforcement" → Point to evidence ID, location, retrieval instructions
 - **Maintenance:** Auto-populated from source workbooks, no manual updates needed
 
-
 **Sheet 7: Action Items & Follow-up**
 
 - **Purpose:** Track non-remediation tasks (e.g., "Schedule training on new VPN client")
 - **Use Case:** Security team weekly standup, review open action items
 - **Maintenance:** Update status weekly
-
 
 **Sheet 8: Audit & Compliance Log**
 
@@ -830,13 +782,11 @@ Remaining challenge: Service account authentication still at 45% (target 90%, re
 - **Use Case:** Demonstrate continuous improvement to auditors ("We've conducted quarterly reviews since Q4 2024")
 - **Maintenance:** Update after each quarterly review or audit
 
-
 **Sheet 9: Approval Sign-Off**
 
 - **Purpose:** Formal sign-off and approval records for compliance assessments
 - **Use Case:** Demonstrate management approval and accountability to auditors
 - **Maintenance:** Update after each quarterly review or major compliance milestone
-
 
 ---
 
@@ -856,7 +806,6 @@ Remaining challenge: Service account authentication still at 45% (target 90%, re
 - **CISO Message:** "We have a strong cryptographic posture aligned with industry best practices."
 - **Action:** Maintain current state, monitor for new threats (e.g., quantum computing)
 
-
 **85-94% - GOOD (Yellow)**
 
 - **Meaning:** Minor gaps, remediation in progress, certification achievable
@@ -867,7 +816,6 @@ Remaining challenge: Service account authentication still at 45% (target 90%, re
   - Evidence mostly complete
 - **CISO Message:** "We're on track for certification. Addressing remaining gaps in Q1 roadmap."
 - **Action:** Execute remediation plan, target 95%+ within 1-2 quarters
-
 
 **75-84% - NEEDS IMPROVEMENT (Amber)**
 
@@ -880,7 +828,6 @@ Remaining challenge: Service account authentication still at 45% (target 90%, re
 - **CISO Message:** "We have work to do. Prioritizing cryptographic controls as major initiative."
 - **Action:** Dedicate resources (FTE, budget), create detailed remediation plan, monthly CISO reviews
 
-
 **<75% - CRITICAL (Red)**
 
 - **Meaning:** Certification at risk, immediate executive action required
@@ -892,7 +839,6 @@ Remaining challenge: Service account authentication still at 45% (target 90%, re
   - Major evidence gaps
 - **CISO Message:** "We have a critical gap in our ISMS. Requesting emergency budget and resources."
 - **Action:** Executive escalation, dedicated project team, external consultant, weekly executive updates
-
 
 ---
 
@@ -909,7 +855,6 @@ Remaining challenge: Service account authentication still at 45% (target 90%, re
 - **Response Time:** 30 days maximum, often 1-2 weeks
 - **Escalation:** CISO → CIO/CEO if not resolved
 
-
 **High Gaps (Requires CISO Attention)**
 
 - **Definition:** Non-compliance affecting Confidential data or important systems
@@ -921,7 +866,6 @@ Remaining challenge: Service account authentication still at 45% (target 90%, re
 - **Response Time:** 90 days
 - **Escalation:** CISO review if not resolved
 
-
 **Medium Gaps (Monitor Closely)**
 
 - **Definition:** Non-compliance affecting Internal data or standard systems
@@ -932,7 +876,6 @@ Remaining challenge: Service account authentication still at 45% (target 90%, re
 - **Response Time:** 6 months
 - **Escalation:** Security team review
 
-
 **Low Gaps (Track Only)**
 
 - **Definition:** Minor deviations, no immediate risk
@@ -942,7 +885,6 @@ Remaining challenge: Service account authentication still at 45% (target 90%, re
   - Planned future improvements
 - **Response Time:** 12 months or next major change
 - **Escalation:** None required
-
 
 ---
 
@@ -985,14 +927,12 @@ Remaining challenge: Service account authentication still at 45% (target 90%, re
 - No access logging
 - Known DES vulnerabilities widely published
 
-
 **Impact:** 5 (Very High)
 
 - Contains 500 employee salary records (Restricted data)
 - GDPR personal data breach = €20M fine potential
 - Reputational damage if leaked
 - Employee morale impact
-
 
 **Risk Score:** 4 × 5 = 20 (CRITICAL)
 
@@ -1013,7 +953,6 @@ Remaining challenge: Service account authentication still at 45% (target 90%, re
 - Compliance calculated on 90 applicable items only
 - 80 compliant ÷ 90 applicable = 88.9% (not 80%)
 
-
 **Verification:** Check source workbook Summary Dashboard, verify N/A count is reasonable.
 
 ---
@@ -1028,13 +967,11 @@ Remaining challenge: Service account authentication still at 45% (target 90%, re
 - Aligns with typical remediation timelines (30-90 days)
 - Provides sufficient data for trend analysis
 
-
 **Monthly (RECOMMENDED):**
 
 - Faster feedback loop on remediation progress
 - Early detection of declining trends
 - More granular tracking for active projects
-
 
 **Real-Time (ADVANCED):**
 
@@ -1042,13 +979,11 @@ Remaining challenge: Service account authentication still at 45% (target 90%, re
 - Auto-refresh from live data sources
 - Requires significant automation investment
 
-
 **Trigger for Out-of-Cycle Update:**
 
 - Major incident (e.g., cryptographic vulnerability disclosed)
 - Significant infrastructure change (e.g., cloud migration)
 - Audit preparation (update 2 weeks before audit)
-
 
 ---
 
@@ -1081,7 +1016,6 @@ Assessment Area: Data Storage
 - Detailed gap description (why is it non-compliant?)
 - Evidence location (where is proof of current state?)
 - Remediation plan (what's being done? when? by whom?)
-
 
 ---
 
@@ -1126,14 +1060,12 @@ Top 3 Critical Gaps Requiring Board Awareness
    - Investment: CHF 15,000
    - Timeline: Complete by 31.03.2025
 
-
 2. Service account plaintext passwords
 
    - Risk: Privileged access compromise
    - Action: HSM implementation
    - Investment: CHF 45,000
    - Timeline: Complete by 30.04.2025
-
 
 3. VPN TLS 1.0 fallback enabled
 
@@ -1154,13 +1086,11 @@ Q1 2025:
 - Implement HSM for key management
 - TLS protocol enforcement
 
-
 Q2 2025:
 
 - Automate certificate lifecycle
 - Service account rotation
 - MFA universal rollout
-
 
 Total Investment: CHF 127,500
 Risk Reduction: 65%
@@ -1183,7 +1113,6 @@ Expected Outcome:
 - Mature cryptographic posture (≥95% compliance)
 - Reduced cyber insurance premiums (~10% reduction)
 
-
 [Motion: Approve budget / Request more info / Decline]
 ```
 
@@ -1192,7 +1121,6 @@ Expected Outcome:
 - **"Why so expensive?"** → HSM is CHF 45K (industry standard for key management, alternatives are non-compliant)
 - **"What if we don't do this?"** → Certification failure, GDPR fines (up to €20M), increased breach risk
 - **"Can we delay?"** → Some items urgent (DES encryption), others flexible (service account rotation)
-
 
 ---
 
@@ -1238,7 +1166,6 @@ ISMS-IMP-A.8.24.5_Compliance_Dashboard_Q2_2025.xlsx
 - **Active quarter:** Current + previous 4 quarters (1 year rolling)
 - **Archive:** Years 2-3 moved to archive storage
 - **Permanent retention:** Certification year dashboards (ISO 27001 audit evidence)
-
 
 **Change Log:**
 Each quarterly dashboard should include version notes:
@@ -1298,13 +1225,11 @@ Q2 2025 (v1.2): HSM implemented, service account automation complete
 - Update Action Items & Follow-up (Sheet 7) with progress
 - No need to regenerate entire dashboard
 
-
 **Ad-Hoc (As-Needed):**
 
 - **Major incident:** If cryptographic vulnerability disclosed, regenerate dashboard to assess impact
 - **Significant change:** If major system deployed/decommissioned, update affected assessment (IMP-1/2/3/4) only
 - **Audit preparation:** Regenerate dashboard 2 weeks before audit with latest data
-
 
 ---
 
@@ -1323,7 +1248,6 @@ Q2 2025 (v1.2): HSM implemented, service account automation complete
 - **Q2 → Q3:** Automated KPI calculation (was manual)
 - **Q3 → Q4:** Integrated with SIEM for real-time certificate expiration monitoring
 
-
 ---
 
 # Quality Checklist
@@ -1339,7 +1263,6 @@ Q2 2025 (v1.2): HSM implemented, service account automation complete
 - [ ] Evidence Register has entries from all 4 assessments
 - [ ] No "TBD" in critical fields (risk owners, target dates)
 
-
 **Executive Summary:**
 
 - [ ] Assessment period specified (e.g., "Q4 2024")
@@ -1349,7 +1272,6 @@ Q2 2025 (v1.2): HSM implemented, service account automation complete
 - [ ] Budget impact calculated (total remediation cost)
 - [ ] Narrative is CISO-level (not too technical, not too vague)
 
-
 **Gap Analysis:**
 
 - [ ] All gaps have specific descriptions (not generic "non-compliant")
@@ -1358,14 +1280,12 @@ Q2 2025 (v1.2): HSM implemented, service account automation complete
 - [ ] Owners are named individuals (not "IT Team")
 - [ ] Systems affected are specifically identified
 
-
 **Risk Register:**
 
 - [ ] Risk scores calculated correctly (Likelihood × Impact)
 - [ ] Mitigation strategies documented for Critical/High risks
 - [ ] Risk owners assigned (typically CISO for Critical, Security Manager for High)
 - [ ] Target dates align with Remediation Roadmap
-
 
 **Remediation Roadmap:**
 
@@ -1375,7 +1295,6 @@ Q2 2025 (v1.2): HSM implemented, service account automation complete
 - [ ] Progress % reflects actual work done (not aspirational)
 - [ ] Blocked items have explanations
 
-
 **Evidence Register:**
 
 - [ ] Evidence documents listed for all 4 assessment areas
@@ -1383,14 +1302,12 @@ Q2 2025 (v1.2): HSM implemented, service account automation complete
 - [ ] Collection dates recent (within 90 days)
 - [ ] Evidence types diverse (not just "screenshot")
 
-
 **Approval & Sign-Off:**
 
 - [ ] Prepared By field completed (your name, role, date)
 - [ ] Reviewed By field completed (technical reviewer, date)
 - [ ] Approved By field completed (CISO, date)
 - [ ] Next Review Date specified (90 days from approval)
-
 
 ---
 
@@ -1409,7 +1326,6 @@ Q2 2025 (v1.2): HSM implemented, service account automation complete
   - Clarity (executive summary is understandable)
 - **Deliverable:** Dashboard ready for technical review
 
-
 **Level 2: Technical Review**
 
 - **Who:** Security Team Lead or Senior Security Engineer
@@ -1420,7 +1336,6 @@ Q2 2025 (v1.2): HSM implemented, service account automation complete
   - Remediation plans feasible
   - Evidence sufficient
 - **Deliverable:** Technical approval in Sheet 9 (Approval Sign-Off)
-
 
 **Level 3: Security Management Review**
 
@@ -1433,7 +1348,6 @@ Q2 2025 (v1.2): HSM implemented, service account automation complete
   - Board presentation-ready
 - **Deliverable:** CISO approval signature
 
-
 **Level 4: Executive Presentation (Optional)**
 
 - **Who:** Board or Executive Management
@@ -1443,7 +1357,6 @@ Q2 2025 (v1.2): HSM implemented, service account automation complete
   - Investment justification (ROI on budget request)
   - Risk appetite alignment (acceptable gaps?)
 - **Deliverable:** Board decision on budget approval
-
 
 ---
 
@@ -1465,7 +1378,6 @@ Q2 2025 (v1.2): HSM implemented, service account automation complete
 - **Stage 1 Audit (Documentation Review):** Provide dashboard as evidence of compliance monitoring
 - **Stage 2 Audit (On-Site):** Demonstrate dashboard use in management review meeting
 - **Surveillance Audits (Annual):** Show quarterly dashboard trend (continuous improvement)
-
 
 ---
 
@@ -1489,7 +1401,6 @@ This dashboard is a **CONSOLIDATION TOOL**, not a data entry workbook. It reads 
 - ISMS-IMP-A.8.24.2 (Data Storage)
 - ISMS-IMP-A.8.24.3 (Authentication)
 - ISMS-IMP-A.8.24.4 (Key Management)
-
 
 **Data Extraction Approach:**
 1. **External workbook links** (preferred) - Live data, auto-updates when source workbooks change
@@ -1613,7 +1524,6 @@ SOURCE_WORKBOOK_SCHEMAS = {
 - ✅ **DO DOCUMENT** actual sheet names, column positions, cell addresses
 - ✅ **DO VALIDATE** each workbook exists and matches expected schema before processing
 
-
 ---
 
 # Common Dashboard Structure
@@ -1659,7 +1569,6 @@ Single-page compliance overview for CISO, Board, Executive Management.
 - **Height:** 50px
 - **Alignment:** Center, Middle
 
-
 **Subtitle (Row 2):**
 
 - **Cell A2 (merged A2:I2):** "ISO/IEC 27001:2022 - Control A.8.24: Use of Cryptography - Executive Overview"
@@ -1667,7 +1576,6 @@ Single-page compliance overview for CISO, Board, Executive Management.
 - **Background:** Dark Blue (003366)
 - **Height:** 30px
 - **Alignment:** Center, Middle
-
 
 **Document Information Block (Rows 4-11):**
 
@@ -1691,13 +1599,11 @@ Single-page compliance overview for CISO, Board, Executive Management.
 - Column C: 30
 - Columns D-I: 12 (for visual spacing)
 
-
 **Cell Styling:**
 
 - Label column (A): Bold, Gray background (D9D9D9)
 - Value column (B-C): Yellow background (FFFF00) for user input, White for static/formula
 - Borders: Thin black border around information block
-
 
 ---
 
@@ -1710,7 +1616,6 @@ Single-page compliance overview for CISO, Board, Executive Management.
 - **Background:** Dark Blue (003366)
 - **Height:** 35px
 - **Alignment:** Center, Middle
-
 
 **Compliance Scorecard (Rows 17-20):**
 
@@ -1757,13 +1662,11 @@ Single-page compliance overview for CISO, Board, Executive Management.
 - Yellow (FFC000): 85-94%
 - Red (FF0000): <85%
 
-
 **Critical Gaps:**
 
 - Green (00B050): 0
 - Yellow (FFC000): 1-3
 - Red (FF0000): ≥4
-
 
 **High-Risk Items:**
 
@@ -1771,13 +1674,11 @@ Single-page compliance overview for CISO, Board, Executive Management.
 - Yellow (FFC000): 6-15
 - Red (FF0000): >15
 
-
 **Remediation Progress:**
 
 - Green (00B050): ≥80%
 - Yellow (FFC000): 50-79%
 - Red (FF0000): <50%
-
 
 **Implementation Note:**
 Use Excel conditional formatting rules with icon sets or cell fill colors. Traffic light symbols (●) with appropriate colors provide visual impact.
@@ -1792,7 +1693,6 @@ Use Excel conditional formatting rules with icon sets or cell fill colors. Traff
 - **Font:** Arial 12pt, Bold, White
 - **Background:** Dark Blue (003366)
 - **Height:** 30px
-
 
 **Column Headers (Row 25):**
 
@@ -1815,7 +1715,6 @@ Use Excel conditional formatting rules with icon sets or cell fill colors. Traff
 - Borders: Thin black
 - Alignment: Center, Middle
 
-
 **Data Rows (26-29):**
 
 **Row 26: Data Transmission**
@@ -1830,14 +1729,12 @@ Use Excel conditional formatting rules with icon sets or cell fill colors. Traff
 - **Compliance % (H26):** `='[ISMS-IMP-A.8.24.1.xlsx]Summary Dashboard'!$G$9`
 - **Trend (I26):** [USER INPUT dropdown: ↑ / → / ↓]
 
-
 **Row 27: Data Storage**
 
 - **Assessment Area (A27):** "Data Storage"
 - **Source Document (B27):** "ISMS-IMP-A.8.24.2"
 - **Formulas (C27:H27):** Same pattern, reference `ISMS-IMP-A.8.24.2.xlsx`
 - **Trend (I27):** [USER INPUT dropdown]
-
 
 **Row 28: Authentication**
 
@@ -1846,14 +1743,12 @@ Use Excel conditional formatting rules with icon sets or cell fill colors. Traff
 - **Formulas (C28:H28):** Same pattern, reference `ISMS-IMP-A.8.24.3.xlsx`
 - **Trend (I28):** [USER INPUT dropdown]
 
-
 **Row 29: Key Management**
 
 - **Assessment Area (A29):** "Key Management"
 - **Source Document (B29):** "ISMS-IMP-A.8.24.4"
 - **Formulas (C29:H29):** Same pattern, reference `ISMS-IMP-A.8.24.4.xlsx`
 - **Trend (I29):** [USER INPUT dropdown]
-
 
 **TOTAL Row (30):**
 
@@ -1867,7 +1762,6 @@ Use Excel conditional formatting rules with icon sets or cell fill colors. Traff
 - **Compliance % (H30):** `=AVERAGE(H26:H29)` (weighted average)
 - **Trend (I30):** Leave blank
 
-
 **Data Validation (Trend Column I):**
 ```
 List source: ↑, →, ↓
@@ -1878,7 +1772,6 @@ List source: ↑, →, ↓
 - ↑ (Green): Improved
 - → (Yellow): No change
 - ↓ (Red): Declined
-
 
 ---
 
@@ -1895,7 +1788,6 @@ List source: ↑, →, ↓
    - Display: 0-100%, with target line at 95%
    - Colors: Green zone (95-100%), Yellow zone (85-95%), Red zone (0-85%)
 
-
 2. **Compliance by Area Bar Chart (Rows 32-45, Cols E-I)**
 
    - Chart Type: Horizontal Bar Chart
@@ -1904,14 +1796,12 @@ List source: ↑, →, ↓
    - Y-Axis: 4 assessment areas
    - Target line: 95% (vertical line)
 
-
 3. **Gap Distribution Pie Chart (Rows 47-50, Cols A-D)**
 
    - Chart Type: Pie Chart
    - Data Source: Row 30, Columns D-F (Compliant, Partial, Non-Compliant)
    - Colors: Green (Compliant), Yellow (Partial), Red (Non-Compliant)
    - Show percentages on slices
-
 
 4. **Risk Level Distribution (Rows 47-50, Cols E-I)**
 
@@ -1920,7 +1810,6 @@ List source: ↑, →, ↓
    - Categories: Critical, High, Medium, Low
    - Colors: Dark Red, Orange, Yellow, Light Yellow
 
-
 **Chart Data Preparation:**
 
 For Gauge Chart, create hidden calculation cells:
@@ -1928,11 +1817,9 @@ For Gauge Chart, create hidden calculation cells:
 - Cell K32: Overall Compliance % (=C17)
 - Cell K33: Remaining % (=100-C17)
 
-
 For Pie Chart:
 
 - Use Row 30 data directly (Compliant, Partial, Non-Compliant counts)
-
 
 ---
 
@@ -1943,7 +1830,6 @@ For Pie Chart:
 - **Cell A52 (merged A52:I52):** "KEY PERFORMANCE INDICATORS (KPIs)"
 - **Font:** Arial 12pt, Bold, White
 - **Background:** Dark Blue (003366)
-
 
 **Column Headers (Row 54):**
 
@@ -1968,7 +1854,6 @@ Each KPI includes:
 - **Change:** Formula `=B-E` (current minus last quarter)
 - **Trend:** Formula `=IF(F>0,"↑",IF(F<0,"↓","→"))`
 
-
 **Example KPI Rows:**
 
 **Row 55: Cryptographic Controls Implemented**
@@ -1981,7 +1866,6 @@ Each KPI includes:
 - **Change (F55):** `=B55-E55`
 - **Trend (G55):** `=IF(F55>0,"↑",IF(F55<0,"↓","→"))`
 
-
 **Row 56: Systems with Encryption at Rest**
 
 - **KPI (A56):** "Systems with Encryption at Rest"
@@ -1992,7 +1876,6 @@ Each KPI includes:
 - **Change (F56):** `=B56-E56`
 - **Trend (G56):** `=IF(F56>0,"↑",IF(F56<0,"↓","→"))`
 
-
 **Continue pattern for all 12 KPIs** (see User Guide Section 4.5 for full KPI list)
 
 **Conditional Formatting (Status Column D):**
@@ -2000,7 +1883,6 @@ Each KPI includes:
 - Green (00B050): Met or exceeded target
 - Yellow (FFC000): Within 5% of target
 - Red (FF0000): Below target by >5%
-
 
 ---
 
@@ -2012,7 +1894,6 @@ Each KPI includes:
 - **Font:** Arial 12pt, Bold, White
 - **Background:** Red (C00000)
 - **Height:** 35px
-
 
 **Column Headers (Row 71):**
 
@@ -2051,12 +1932,10 @@ Use `INDEX-MATCH` or `XLOOKUP` to pull top 5 from Gap Analysis based on Risk Lev
 - **Owner (G72):** [Link to '2. Gap Analysis'!L[row]]
 - **Status (H72):** [Link to '2. Gap Analysis'!M[row]]
 
-
 **Styling:**
 
 - Risk Level "Critical" → Dark Red background (C00000), White text
 - Risk Level "High" → Orange background (FFC000), Black text
-
 
 ---
 
@@ -2068,7 +1947,6 @@ Use `INDEX-MATCH` or `XLOOKUP` to pull top 5 from Gap Analysis based on Risk Lev
 - **Font:** Arial 12pt, Bold, White
 - **Background:** Dark Blue (003366)
 
-
 **Summary Content (Rows 81-100):**
 
 This section is primarily **USER INPUT** (large text cells) for qualitative executive narrative.
@@ -2078,20 +1956,17 @@ This section is primarily **USER INPUT** (large text cells) for qualitative exec
 - **Label (A81):** "Assessment Period:"
 - **Value (B81:I81 merged):** [USER INPUT - yellow] e.g., "Q4 2024 (October 1 - December 31, 2024)"
 
-
 **Row 84-85: Overall Compliance Status**
 
 - **Label (A84):** "Overall Compliance Status:"
 - **Value (B84:I84 merged):** [AUTO-CALCULATED based on C17]
   - Formula: `=IF(C17>=95,"Excellent - Mature cryptographic controls",IF(C17>=85,"Good - Minor gaps, remediation in progress",IF(C17>=75,"Needs Improvement - Significant gaps requiring attention","Critical - Immediate CISO action required")))`
 
-
 **Row 87-88: Security Posture**
 
 - **Label (A87):** "Security Posture:"
 - **Value (B87:I87 merged):** [AUTO-CALCULATED based on '3. Risk Register' average risk score]
   - Formula: `=IF(AVERAGE('3. Risk Register'!H:H)<3,"Strong - Low risk exposure",IF(AVERAGE('3. Risk Register'!H:H)<5,"Adequate - Manageable risk",IF(AVERAGE('3. Risk Register'!H:H)<7,"Weak - Elevated risk requiring mitigation","Critical - Unacceptable risk exposure")))`
-
 
 **Row 90-94: Key Achievements This Period**
 
@@ -2113,13 +1988,11 @@ This section is primarily **USER INPUT** (large text cells) for qualitative exec
 - **Value (A97:I100 merged):** [USER INPUT - yellow, 4 rows tall]
 - **Format:** Multi-line text box, bullet points
 
-
 **Row 102-106: Recommended Executive Actions**
 
 - **Label (A102):** "Recommended Executive Actions:"
 - **Value (A103:I106 merged):** [USER INPUT - yellow, 4 rows tall]
 - **Format:** Numbered list (1. 2. 3. etc.)
-
 
 **Row 108-112: Budget Impact**
 
@@ -2130,13 +2003,11 @@ This section is primarily **USER INPUT** (large text cells) for qualitative exec
   - Row 111: "Budget Gap:" [Formula: `=B109-B110`]
   - Row 112: Conditional formatting: Red if gap > 0, Green if gap ≤ 0
 
-
 **Cell Formatting:**
 
 - All USER INPUT cells: Yellow background (FFFF00), Arial 10pt
 - All AUTO-CALCULATED cells: Light Blue background (DCE6F1), Arial 10pt
 - Labels: Bold, Gray background (D9D9D9)
-
 
 ---
 
@@ -2152,7 +2023,6 @@ Comprehensive consolidated list of ALL non-compliant and partially-compliant ite
 - **Title (Row 1, merged A1:N1):** "COMPREHENSIVE GAP ANALYSIS - CRYPTOGRAPHIC CONTROLS"
 - **Subtitle (Row 2, merged A2:N2):** "Consolidated view of all compliance gaps across assessment areas"
 - **Styling:** Dark Blue header (003366), White text, Arial 14pt Bold
-
 
 **Summary Statistics (Rows 4-10):**
 
@@ -2180,7 +2050,6 @@ Comprehensive consolidated list of ALL non-compliant and partially-compliant ite
 - **Compliance % (G5):** `='[ISMS-IMP-A.8.24.1.xlsx]Summary Dashboard'!$G$9`
 - **Risk Score (H5):** `=(C5*10 + D5*7 + E5*4 + F5*1) / B5` (weighted average)
 
-
 **Continue pattern for rows 6-8** (Data Storage, Authentication, Key Management)
 
 **TOTAL Row (9):**
@@ -2188,14 +2057,12 @@ Comprehensive consolidated list of ALL non-compliant and partially-compliant ite
 - **Label (A9):** "TOTAL" (Bold)
 - **Formulas (B9:H9):** SUM for counts, AVERAGE for percentages/scores
 
-
 **Conditional Formatting (Risk Score Column H):**
 
 - Red (FF0000): >7 (Critical risk exposure)
 - Orange (FFC000): 5-7 (High risk)
 - Yellow (FFFF00): 3-5 (Medium risk)
 - Green (00B050): <3 (Low risk)
-
 
 ---
 
@@ -2247,12 +2114,10 @@ Comprehensive consolidated list of ALL non-compliant and partially-compliant ite
 
 - Default: By Risk Level (Critical → High → Medium → Low), then by Target Date (earliest first)
 
-
 **Filtering:**
 
 - Provide filter dropdowns on all column headers
 - Common filters: Risk Level, Assessment Area, Status, Owner
-
 
 ---
 
@@ -2267,7 +2132,6 @@ Translate technical gaps into business risks for executive risk management.
 
 - **Title (Row 1):** "CRYPTOGRAPHIC RISK REGISTER"
 - **Subtitle (Row 2):** "Business risks derived from cryptographic control gaps"
-
 
 **Column Headers (Row 4):**
 
@@ -2330,7 +2194,6 @@ Translate technical gaps into business risks for executive risk management.
 - Low (5-9): Light Yellow (FFFFCC), Black text
 - Minimal (1-4): White, Black text
 
-
 **Risk Register Auto-Population:**
 Only gaps with Risk Level = Critical or High from Sheet 2 generate risks here.
 
@@ -2347,7 +2210,6 @@ Project plan view of gap remediation with timelines, dependencies, and budget tr
 
 - **Title (Row 1):** "CRYPTOGRAPHIC CONTROLS REMEDIATION ROADMAP"
 - **Subtitle (Row 2):** "Action plans, timelines, and budget for gap closure"
-
 
 **Column Headers (Row 4):**
 
@@ -2379,7 +2241,6 @@ Project plan view of gap remediation with timelines, dependencies, and budget tr
 - **P2 (High):** High risk, Confidential data, 30-90 days target
 - **P3 (Normal):** Medium/Low risk, Internal data, >90 days target
 
-
 **Status Values:**
 
 - Not Started
@@ -2387,7 +2248,6 @@ Project plan view of gap remediation with timelines, dependencies, and budget tr
 - Completed (100%)
 - Blocked (dependencies unmet)
 - Overdue (past target date, <100%)
-
 
 **Example Action:**
 
@@ -2404,11 +2264,9 @@ Project plan view of gap remediation with timelines, dependencies, and budget tr
 - Orange (FFC000): Blocked
 - Red (FF0000): Overdue
 
-
 **Progress Column (M):**
 
 - Data bars (0-100%) with color gradient: Red (0%) → Yellow (50%) → Green (100%)
-
 
 **Budget Summary (Bottom Section):**
 
@@ -2419,14 +2277,12 @@ Project plan view of gap remediation with timelines, dependencies, and budget tr
 - **Actual (L):** `=SUM(L:L)`
 - **Variance (M):** `=L-K` (negative = under budget, positive = over budget)
 
-
 **Budget Breakdown by Quarter (if applicable):**
 
 - Q1 2025: SUM of actions with Target Date in Q1
 - Q2 2025: SUM of actions with Target Date in Q2
 - Q3 2025: SUM of actions with Target Date in Q3
 - Q4 2025: SUM of actions with Target Date in Q4
-
 
 ---
 
@@ -2441,7 +2297,6 @@ Quantitative performance indicators with historical trending.
 
 - **Title (Row 1):** "CRYPTOGRAPHIC CONTROLS - KEY PERFORMANCE INDICATORS"
 - **Subtitle (Row 2):** "Quantitative metrics for compliance monitoring and trending"
-
 
 **Column Headers (Row 4):**
 
@@ -2469,13 +2324,11 @@ Quantitative performance indicators with historical trending.
 - **Trend (G5):** `=IF(F5>0,"↑",IF(F5<0,"↓","→"))`
 - **Source (H5):** "Average of 4 assessment areas"
 
-
 **Row 6: Systems with Encryption at Rest**
 
 - **Current (B6):** `='[ISMS-IMP-A.8.24.2.xlsx]Summary Dashboard'!$C$9 & "/" & '[ISMS-IMP-A.8.24.2.xlsx]Summary Dashboard'!$B$9`
 - **Target (C6):** "100%"
 - **Source (H6):** "IMP-2 Data Storage Assessment"
-
 
 **Row 7: Systems with Encryption in Transit**
 
@@ -2483,13 +2336,11 @@ Quantitative performance indicators with historical trending.
 - **Target (C7):** "100%"
 - **Source (H7):** "IMP-1 Data Transmission Assessment"
 
-
 **Row 8: MFA Coverage (All Users)**
 
 - **Current (B8):** [Extract from IMP-3, Sheet 2 (MFA), Enrollment %]
 - **Target (C8):** "100%"
 - **Source (H8):** "IMP-3 Authentication, MFA Enrollment"
-
 
 **Row 9: MFA Coverage (Privileged Accounts)**
 
@@ -2497,13 +2348,11 @@ Quantitative performance indicators with historical trending.
 - **Target (C9):** "100%"
 - **Source (H9):** "IMP-3 Authentication, Admin MFA"
 
-
 **Row 10: Certificate Expiry Compliance**
 
 - **Current (B10):** [Calculate: Certificates with >90 days validity / Total certificates × 100%]
 - **Target (C10):** "100%"
 - **Source (H10):** "IMP-4 Key Management, Certificate Management"
-
 
 **Row 11: Key Rotation Compliance**
 
@@ -2511,13 +2360,11 @@ Quantitative performance indicators with historical trending.
 - **Target (C11):** "≥95%"
 - **Source (H11):** "IMP-4 Key Management, Key Rotation"
 
-
 **Row 12: Service Accounts with Strong Auth**
 
 - **Current (B12):** [Extract from IMP-3, Sheet 4 (Service Accounts), Compliant %]
 - **Target (C12):** "≥90%"
 - **Source (H12):** "IMP-3 Authentication, Service Accounts"
-
 
 **Row 13: Password Hashing Compliance**
 
@@ -2525,13 +2372,11 @@ Quantitative performance indicators with historical trending.
 - **Target (C13):** "100%"
 - **Source (H13):** "IMP-3 Authentication, Password Security"
 
-
 **Row 14: SSO Coverage**
 
 - **Current (B14):** [Extract from IMP-3, Sheet 5 (SSO), Coverage %]
 - **Target (C14):** "≥80%"
 - **Source (H14):** "IMP-3 Authentication, SSO & Federation"
-
 
 **Row 15: Open Critical Gaps**
 
@@ -2539,20 +2384,17 @@ Quantitative performance indicators with historical trending.
 - **Target (C15):** "0"
 - **Source (H15):** "Sheet 2 Gap Analysis"
 
-
 **Row 16: Remediation On-Time %**
 
 - **Current (B16):** `=COUNTIFS('4. Remediation Roadmap'!$I:$I,"Completed",'4. Remediation Roadmap'!$H:$H,"<="&TODAY()) / COUNTA('4. Remediation Roadmap'!$A:$A) * 100`
 - **Target (C16):** "≥90%"
 - **Source (H16):** "Sheet 4 Remediation Roadmap"
 
-
 **Conditional Formatting (Trend Column G):**
 
 - ↑ (Green): Positive trend
 - → (Yellow): No change
 - ↓ (Red): Negative trend
-
 
 ---
 
@@ -2567,7 +2409,6 @@ Consolidated list of all compliance evidence from 4 source assessments.
 
 - **Title (Row 1):** "CONSOLIDATED EVIDENCE REGISTER"
 - **Subtitle (Row 2):** "All compliance evidence across cryptographic control assessments"
-
 
 **Column Headers (Row 4):**
 
@@ -2608,13 +2449,11 @@ Consolidated list of all compliance evidence from 4 source assessments.
 - Architecture Diagram (e.g., PKI hierarchy, key management flow)
 - Vendor Documentation (e.g., HSM datasheet, KMS manual)
 
-
 **Retention Periods:**
 
 - **3 years:** Compliance reports, audit logs, certificates
 - **7 years:** Financial records, regulatory compliance (if applicable)
 - **Permanent:** Policies, architecture diagrams, certification evidence
-
 
 **Status Values:**
 
@@ -2622,7 +2461,6 @@ Consolidated list of all compliance evidence from 4 source assessments.
 - Expired (outdated, needs refresh)
 - Missing (cannot locate)
 - Pending Collection (identified but not yet collected)
-
 
 ---
 
@@ -2637,7 +2475,6 @@ Track non-remediation tasks (training, meetings, reviews, updates).
 
 - **Title (Row 1):** "ACTION ITEMS & FOLLOW-UP TASKS"
 - **Subtitle (Row 2):** "Non-remediation activities supporting cryptographic compliance"
-
 
 **Column Headers (Row 4):**
 
@@ -2664,14 +2501,12 @@ Track non-remediation tasks (training, meetings, reviews, updates).
 - Audit Preparation
 - Communication
 
-
 **Example Actions:**
 
 - "Schedule cryptography awareness training for IT staff" (Training)
 - "Review and update ISMS-POL-A.8.24 for annual refresh" (Policy Review)
 - "Evaluate HSM vendors for Q2 procurement" (Tool Evaluation)
 - "Prepare dashboard presentation for Q2 Security Review Meeting" (Meeting)
-
 
 ---
 
@@ -2686,7 +2521,6 @@ Historical record of compliance reviews, audit findings, certification milestone
 
 - **Title (Row 1):** "AUDIT & COMPLIANCE LOG"
 - **Subtitle (Row 2):** "Historical record of cryptographic control reviews and findings"
-
 
 **Column Headers (Row 4):**
 
@@ -2714,14 +2548,12 @@ Historical record of compliance reviews, audit findings, certification milestone
 - Surveillance Audit
 - Recertification Audit
 
-
 **Overall Finding Values:**
 
 - Conformant (no issues)
 - Minor Non-Conformities (correctable)
 - Major Non-Conformities (significant gaps)
 - Observation (improvement opportunity)
-
 
 **Example Log Entry:**
 
@@ -2736,7 +2568,6 @@ Historical record of compliance reviews, audit findings, certification milestone
 - **Follow-up:** 31.03.2025 (Stage 2 Audit)
 - **Status:** Open (corrective actions in progress)
 
-
 ---
 
 # Sheet 9: Approval Sign-Off
@@ -2750,7 +2581,6 @@ Record formal sign-offs and approvals from management for compliance assessments
 
 - **Title (Row 1):** "APPROVAL SIGN-OFF"
 - **Subtitle (Row 2):** "Formal management approval and accountability records"
-
 
 **Column Headers (Row 4):**
 
@@ -2775,7 +2605,6 @@ Record formal sign-offs and approvals from management for compliance assessments
 - Budget Approval
 - Audit Response Approval
 
-
 **Approval Status Options:**
 
 - Approved
@@ -2783,7 +2612,6 @@ Record formal sign-offs and approvals from management for compliance assessments
 - Pending Review
 - Rejected
 - Deferred
-
 
 **Example Approval Entry:**
 
@@ -2795,7 +2623,6 @@ Record formal sign-offs and approvals from management for compliance assessments
 - **Status:** Approved
 - **Comments:** "Overall compliance acceptable. Prioritize critical gaps per remediation roadmap."
 - **Next Review:** 15.04.2025
-
 
 ---
 
@@ -2814,7 +2641,6 @@ Record formal sign-offs and approvals from management for compliance assessments
    - Verify "Summary Dashboard" sheet exists in each
    - Extract key metrics (compliance %, gap counts)
 
-
 2. **extract_gaps()**
 
    - Iterate through all assessment sheets in each source workbook
@@ -2822,7 +2648,6 @@ Record formal sign-offs and approvals from management for compliance assessments
    - Extract gap details (system, description, evidence, remediation)
    - Assign Gap ID, Risk Level, Assessment Area
    - Return consolidated gap list
-
 
 3. **calculate_risks()**
 
@@ -2832,7 +2657,6 @@ Record formal sign-offs and approvals from management for compliance assessments
    - Calculate Risk Score (L × I)
    - Populate Risk Register sheet
 
-
 4. **generate_remediation_roadmap()**
 
    - For each gap, create remediation action(s)
@@ -2841,14 +2665,12 @@ Record formal sign-offs and approvals from management for compliance assessments
    - Estimate cost (if available in source, otherwise placeholder)
    - Sort by Priority then Target Date
 
-
 5. **consolidate_evidence()**
 
    - Extract all evidence entries from 4 source workbooks
    - Assign unique Evidence ID
    - Deduplicate (if same evidence referenced in multiple assessments)
    - Sort by Assessment Area then Evidence Type
-
 
 6. **generate_executive_dashboard()**
 
@@ -2857,7 +2679,6 @@ Record formal sign-offs and approvals from management for compliance assessments
    - Apply conditional formatting
    - Create placeholder text cells for user input
 
-
 7. **create_kpi_sheet()**
 
    - Populate KPI list with formulas
@@ -2865,12 +2686,10 @@ Record formal sign-offs and approvals from management for compliance assessments
    - Set up Last Quarter as user input
    - Calculate Change and Trend
 
-
 8. **create_audit_and_meeting_logs()**
 
    - Create empty templates with headers
    - User will populate manually
-
 
 ## External Workbook Link Management
 
@@ -2945,7 +2764,6 @@ for f in files:
 - [ ] Charts and visualizations display data
 - [ ] Conditional formatting works (traffic lights, data bars)
 
-
 ## Maintenance Notes
 
 **Quarterly Update Procedure:**
@@ -2964,7 +2782,6 @@ for f in files:
 - Each folder contains: Dashboard + 4 source workbooks + Evidence files
 - Enables historical trending and compliance demonstration to auditors
 
-
 ---
 
 **Document Assembly Instructions:**
@@ -2975,7 +2792,6 @@ for f in files:
    - PART I: USER COMPLETION GUIDE (from PART I file, lines 31-end)
    - PART II: TECHNICAL SPECIFICATION - File 1 (this file)
    - PART II: TECHNICAL SPECIFICATION - File 2 (next file)
-
 
 2. **Final Document Structure:**
    ```
@@ -3021,7 +2837,6 @@ for f in files:
    - [ ] No placeholder text remains
    - [ ] Technical appendix matches Python script approach
 
-
 ---
 
 **END OF PART II (TECHNICAL SPECIFICATION)**
@@ -3034,7 +2849,6 @@ for f in files:
 - Lighter weight (~700 lines vs ~1,200 lines for others)
 - Executive-focused (User Guide emphasizes interpretation, not completion)
 - Reads FROM source workbooks, doesn't create new assessment data
-
 
 **Document Status:** ✅ READY FOR PRODUCTION
 

@@ -44,7 +44,6 @@ This document consists of two parts:
   - Cell Styling Reference
   - Integration Points
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -68,7 +67,6 @@ This assessment answers:
 - **What's the financial commitment?** (Costs, contract terms)
 - **How do we exit if needed?** (Exit strategy assessment)
 
-
 #### Key Principle
 
 **"If it touches organizational data or infrastructure, it must be in this inventory."**
@@ -82,7 +80,6 @@ This includes:
 - ✅ Cloud storage and collaboration platforms
 - ✅ Infrastructure services (AWS, Azure, GCP)
 - ✅ Development/test cloud environments
-
 
 This is a **zero-tolerance inventory** - no cloud service is too small to track.
 
@@ -98,7 +95,6 @@ For EACH cloud service:
 - Deployment status (production, dev, trial, decommissioned)
 - Service owner (internal person responsible)
 
-
 **Classification:**
 
 - Data classification (what data types it processes)
@@ -106,13 +102,11 @@ For EACH cloud service:
 - User count (how many people use it)
 - Geographic scope (where it's used)
 
-
 **Financial:**
 
 - Annual cost
 - Contract status (active, expiring, trial)
 - Procurement method (enterprise agreement, credit card, etc.)
-
 
 **Risk & Compliance:**
 
@@ -120,7 +114,6 @@ For EACH cloud service:
 - Regulatory requirements (GDPR, FADP, sector-specific)
 - Vendor risk rating
 - Exit strategy status
-
 
 #### How This Relates to Other A.5.23 Assessments
 
@@ -152,7 +145,6 @@ For EACH cloud service:
 - Access to procurement and financial systems
 - Ability to interview service owners across departments
 
-
 #### Time Commitment
 
 - **Initial inventory (from scratch):** 20-40 hours
@@ -166,7 +158,6 @@ For EACH cloud service:
   - Changes to existing: 2-3 hours
   - Decommissions: 1 hour
   - Validation: 1-2 hours
-
 
 #### Collaboration Model
 
@@ -204,7 +195,6 @@ You'll know this assessment is successful when:
 - ✅ **Auditability:** Evidence supports all classifications and ratings
 - ✅ **Actionability:** Gaps and risks have remediation plans
 
-
 ### Common Use Cases
 
 **Use Case 1: Budget Planning**
@@ -214,14 +204,12 @@ You'll know this assessment is successful when:
 - Identify renewal dates
 - Project next year's costs
 
-
 **Use Case 2: Audit Support**
 
 - Auditor asks: "What cloud services process customer PII?"
 - Filter by data classification = Confidential/Restricted
 - Filter by data type = Personal Data
 - Generate report with evidence
-
 
 **Use Case 3: Vendor Risk Assessment**
 
@@ -230,7 +218,6 @@ You'll know this assessment is successful when:
 - Identify critical dependencies on single vendor
 - Assess exit feasibility
 
-
 **Use Case 4: Shadow IT Discovery**
 
 - Discover services not in official procurement
@@ -238,14 +225,12 @@ You'll know this assessment is successful when:
 - Engage with departments using unapproved services
 - Regularize or sunset shadow IT
 
-
 **Use Case 5: Contract Renewals**
 
 - Procurement needs to know what's expiring in Q3
 - Filter by contract expiration date
 - Review usage and criticality
 - Decide: renew, renegotiate, or terminate
-
 
 ---
 
@@ -342,14 +327,12 @@ To build a complete inventory, use MULTIPLE discovery methods:
 - Deduplicate and consolidate
 - Identify service owners
 
-
 **Phase 2: Documentation (Weeks 3-4)**
 
 - Interview service owners
 - Collect service details
 - Gather evidence (contracts, screenshots)
 - Document in assessment workbook
-
 
 **Phase 3: Classification (Week 5)**
 
@@ -358,7 +341,6 @@ To build a complete inventory, use MULTIPLE discovery methods:
 - Evaluate exit feasibility
 - Calculate risk ratings
 
-
 **Phase 4: Validation (Week 6)**
 
 - Cross-check with finance
@@ -366,14 +348,12 @@ To build a complete inventory, use MULTIPLE discovery methods:
 - Reconcile discrepancies
 - Quality review
 
-
 **Phase 5: Approval (Week 7)**
 
 - Technical review
 - Compliance review
 - Management approval
 - Publish as authoritative source
-
 
 ### Quarterly Updates (Ongoing)
 
@@ -384,14 +364,12 @@ To build a complete inventory, use MULTIPLE discovery methods:
 - Identify decommissioned services
 - Update service details
 
-
 **Week 2: Classification Review**
 
 - Re-assess criticality (business changes?)
 - Update data classification (new data types?)
 - Review exit strategies (tested recently?)
 - Update risk ratings
-
 
 **Week 3: Validation & Approval**
 
@@ -400,14 +378,12 @@ To build a complete inventory, use MULTIPLE discovery methods:
 - Management approves changes
 - Update version history
 
-
 **Week 4: Reporting**
 
 - Publish updated inventory
 - Notify dependent teams
 - Update compliance dashboard
 - Archive previous version
-
 
 ### Triggered Updates
 
@@ -419,7 +395,6 @@ Update inventory immediately when:
 - ✅ Vendor acquisition or merger
 - ✅ Security incident involving cloud service
 - ✅ Before audits
-
 
 ---
 
@@ -439,7 +414,6 @@ Before starting this assessment, gather:
 - **Identity Systems:** Access to SSO provider (Entra ID, Okta, etc.)
 - **Contracts Repository:** Access to vendor contracts and agreements
 
-
 #### 2. Discovery Data Sources
 
 **Procurement Data:**
@@ -449,14 +423,12 @@ Before starting this assessment, gather:
 - Software licenses and cloud service contracts
 - Trial and proof-of-concept agreements
 
-
 **Financial Data:**
 
 - Credit card statements (IT department cards)
 - Expense reports with cloud service charges
 - Budget allocations for cloud services
 - Cost center allocations
-
 
 **Technical Data:**
 
@@ -465,14 +437,12 @@ Before starting this assessment, gather:
 - DNS query logs (identify cloud domains)
 - Email gateway logs (cloud service signups)
 
-
 **Organizational Data:**
 
 - Department directory (service owners)
 - Organizational chart (approval hierarchy)
 - Business unit structure (cost allocation)
 - Geographic locations (data residency)
-
 
 #### 3. Policy Documents
 
@@ -481,14 +451,12 @@ Before starting this assessment, gather:
 - **Data Classification Policy:** Data handling requirements
 - **Business Continuity Policy:** Criticality assessment criteria
 
-
 #### 4. Reference Data
 
 - **Cloud Service Provider Registry:** Pre-populated vendor list (if available)
 - **Data Classification Scheme:** Classification levels and definitions
 - **Criticality Assessment Matrix:** Business impact criteria
 - **Exit Strategy Templates:** Exit planning frameworks
-
 
 ### Required Tools
 
@@ -498,7 +466,6 @@ Before starting this assessment, gather:
 - **Financial reporting tools:** To extract cloud spending data
 - **Screen capture tools:** For evidence collection
 - **File organization:** Folder structure for evidence storage
-
 
 ### Required Permissions
 
@@ -512,7 +479,6 @@ Ensure you have appropriate access:
 - [ ] Ability to contact service owners across departments
 - [ ] Permission to view budget allocations (finance approval may be needed)
 
-
 ### Dependencies
 
 **No prerequisites from other assessments** - This is the foundational assessment.
@@ -524,13 +490,11 @@ Ensure you have appropriate access:
 - ISMS-IMP-A.5.23.S4 (Ongoing Governance) - Uses service list and ownership
 - ISMS-IMP-A.5.23.S5 (Compliance Dashboard) - Aggregates all assessment data
 
-
 **External Dependencies:**
 
 - Stakeholder availability (service owners for interviews)
 - Finance cooperation (cost validation)
 - Procurement cooperation (contract details)
-
 
 ---
 
@@ -601,7 +565,6 @@ Ensure you have appropriate access:
    - Export financial data (if available)
    - Export network logs (if available)
 
-
 **Deliverable:** 
 
 - Working folders created
@@ -609,14 +572,12 @@ Ensure you have appropriate access:
 - Stakeholder list with contact info
 - Assessment timeline with milestones
 
-
 **Quality Check:**
 
 - ✓ All required access permissions obtained
 - ✓ Discovery data sources identified and accessible
 - ✓ Stakeholders identified and scheduled
 - ✓ Working folders organized
-
 
 ---
 
@@ -692,7 +653,6 @@ Steps:
    - Development tools (GitHub, AWS, Azure, etc.)
    - Any other cloud services
    
-
    For each service, please provide:
    1. Service name
    2. Vendor
@@ -741,14 +701,12 @@ After all 6 methods:
 - Initial ownership assignment (where known)
 - Discovery method attribution (which method found each service)
 
-
 **Quality Check:**
 
 - ✓ All 6 discovery methods executed
 - ✓ Results consolidated and deduplicated
 - ✓ No obvious gaps (compare to industry benchmarks)
 - ✓ Confidence ratings assigned
-
 
 ---
 
@@ -765,7 +723,6 @@ After all 6 methods:
 - Who is accountable for it?
 - Document in Sheet 1: Service Owner field
 
-
 **Step 2: Verify Basic Details (15 minutes per service)**
 
 - Official service name (as vendor calls it)
@@ -774,7 +731,6 @@ After all 6 methods:
 - Deployment model (public cloud, private, hybrid)
 - Primary use case
 - User count (active users)
-
 
 **Step 3: Financial Details (10 minutes per service)**
 
@@ -786,14 +742,12 @@ Cross-reference with procurement/finance:
 - Payment method (enterprise agreement, credit card, invoice)
 - Cost allocation (department, cost center)
 
-
 **Step 4: Technical Details (10 minutes per service)**
 
 - Service URL/endpoint
 - Integration points (SSO, API, data feeds)
 - Data location/residency
 - Deployment region (EU, US, Global)
-
 
 **Step 5: Collect Evidence (10 minutes per service)**
 
@@ -805,13 +759,11 @@ For each service, collect:
 - User list export (sanitized)
 - SSO configuration screenshot (if integrated)
 
-
 **Deliverable:**
 
 - Sheet 1 (Service Inventory) - Complete for all services
 - Evidence folder with organized files
 - Contact list of all service owners
-
 
 **Quality Check:**
 
@@ -821,13 +773,11 @@ For each service, collect:
 - ✓ Financial data verified with procurement/finance
 - ✓ Evidence collected for high-value/critical services
 
-
 **Time Estimate:**
 
 - Small org (50 services): 8 hours
 - Medium org (150 services): 16 hours  
 - Large org (300+ services): 24+ hours (consider team approach)
-
 
 ---
 
@@ -850,7 +800,6 @@ Ask service owner:
 - Employee data (HR, payroll)?
 - Public data only?
 
-
 **Step 2: Apply Classification Level**
 
 Using organizational data classification policy:
@@ -870,14 +819,12 @@ Assign highest classification level that applies.
 - **No Data:** Services that don't process organizational data (rare) → classify as N/A
 - **Unknown:** If service owner unsure → classify as Confidential until verified (conservative approach)
 
-
 **Step 3: Document Data Residency**
 
 - Where is data stored? (geographic location: EU, US, Switzerland, Global)
 - Where is data processed? (may differ from storage)
 - Is data encrypted at rest?
 - Is data encrypted in transit?
-
 
 **Step 4: Identify Regulatory Requirements**
 
@@ -890,13 +837,11 @@ Based on data classification and residency:
 - **SOX:** If financial reporting data
 - **Sector-specific:** Banking, insurance, etc.
 
-
 **Deliverable:**
 
 - Sheet 2 (Data Classification) - Complete for all services
 - Data flow diagrams (for critical services)
 - Regulatory requirements matrix
-
 
 **Quality Check:**
 
@@ -905,7 +850,6 @@ Based on data classification and residency:
 - ✓ Data residency documented
 - ✓ Regulatory requirements identified
 - ✓ Mixed data services flagged for further review
-
 
 ---
 
@@ -934,13 +878,11 @@ For each service, ask:
    - Workflow disruption → High
    - Revenue/customer impact → Critical
 
-
 2. **Can we operate without this service for a day?**
 
    - Yes, no problem → Low/Medium
    - Yes, but difficult → High
    - No, absolutely not → Critical
-
 
 3. **How many users are affected?**
 
@@ -948,12 +890,10 @@ For each service, ask:
    - 10-50 users → Medium/High
    - 50+ users or customer-facing → High/Critical
 
-
 4. **Is this service customer-facing or revenue-generating?**
 
    - Yes → High or Critical
    - No → Medium or lower
-
 
 **Special Considerations:**
 
@@ -961,13 +901,11 @@ For each service, ask:
 - **Seasonal criticality:** Tax software critical only during tax season → document in notes
 - **Redundancy:** If backup/failover exists → may reduce criticality rating
 
-
 **Deliverable:**
 
 - Sheet 3 (Criticality Assessment) - Complete for all services
 - Business impact analysis (BIA) summaries for Critical/High services
 - Dependency mapping (for critical services)
-
 
 **Quality Check:**
 
@@ -976,7 +914,6 @@ For each service, ask:
 - ✓ Service owners agree with criticality rating
 - ✓ Criticality ratings consistent with RTO/RPO values
 - ✓ No obvious misclassifications (critical service rated low)
-
 
 ---
 
@@ -993,7 +930,6 @@ For each service, ask:
 - On-Premises (full build-back to internal infrastructure)
 - Not Determined
 
-
 **Data Portability:**
 
 - Export format available? (Standard CSV/JSON, Proprietary, API Only, None)
@@ -1001,14 +937,12 @@ For each service, ask:
 - Data volume (GB)
 - Migration complexity (Low, Medium, High, Very High)
 
-
 **Alternative Providers:**
 
 - Alternative identified? (Yes, No, Multiple Options)
 - Alternative assessed? (Capability comparison done?)
 - Migration estimate (time in days)
 - Migration cost estimate
-
 
 **Vendor Lock-In Risk:**
 
@@ -1021,14 +955,12 @@ For each service, ask:
   - Training investment
   - Contract terms
 
-
 **Exit Plan Status:**
 
 - Documented (full exit plan exists)
 - Draft (plan in progress)
 - Not Started
 - N/A (service not critical enough to require exit plan)
-
 
 **Rating Guidelines:**
 
@@ -1050,13 +982,11 @@ Must have documented exit plans including:
 - Timeline estimated
 - Resource requirements identified
 
-
 **Deliverable:**
 
 - Sheet 4 (Exit Feasibility) - Complete for all services
 - Exit plans documented for Critical/High services
 - Vendor lock-in risk register
-
 
 **Quality Check:**
 
@@ -1065,7 +995,6 @@ Must have documented exit plans including:
 - ✓ Data export capabilities verified (not assumed)
 - ✓ Lock-in risks identified and documented
 - ✓ Alternative providers researched
-
 
 ---
 
@@ -1084,7 +1013,6 @@ Must have documented exit plans including:
    - Vendor
    - Criticality
 
-
 **Spend Analysis:**
 
 - Top 10 most expensive services (80/20 rule - these are likely 80% of spend)
@@ -1092,14 +1020,12 @@ Must have documented exit plans including:
 - Unused/underutilized services (low user count vs. cost)
 - Duplicate services (same function, different vendor)
 
-
 **Contract Review:**
 
 - Services expiring in next 90 days
 - Services with auto-renewal (can we negotiate better terms?)
 - Trial services that converted to paid (was this authorized?)
 - Services without contracts (credit card purchases - negotiate volume discount?)
-
 
 **Cost Optimization Opportunities:**
 1. Consolidation (eliminate duplicates)
@@ -1113,7 +1039,6 @@ Must have documented exit plans including:
 - Cost optimization recommendations
 - Contract renewal calendar
 
-
 **Quality Check:**
 
 - ✓ All costs verified with finance
@@ -1121,7 +1046,6 @@ Must have documented exit plans including:
 - ✓ Optimization opportunities identified
 - ✓ Renewal dates tracked
 - ✓ Savings potential estimated
-
 
 ---
 
@@ -1138,13 +1062,11 @@ Must have documented exit plans including:
 - Services without identified owners
 - Services without contracts
 
-
 **2. Classification Gaps:**
 
 - Services with unknown data classification
 - Services processing Restricted data without adequate controls
 - Services with unclear data residency
-
 
 **3. Criticality Gaps:**
 
@@ -1152,13 +1074,11 @@ Must have documented exit plans including:
 - Critical services with single vendor dependency
 - Critical services without BC/DR plans
 
-
 **4. Compliance Gaps:**
 
 - Services processing GDPR data without DPA
 - Services in non-compliant regions
 - Services without required certifications (SOC 2, ISO 27001)
-
 
 **5. Financial Gaps:**
 
@@ -1166,13 +1086,11 @@ Must have documented exit plans including:
 - Services with expired contracts
 - Duplicate services (cost inefficiency)
 
-
 **6. Exit Strategy Gaps:**
 
 - Critical services with high lock-in risk
 - Services without exit plans
 - Services without tested data export
-
 
 **Risk Register:**
 
@@ -1186,13 +1104,11 @@ For each gap, assess:
 - **Owner:** Who's responsible?
 - **Target Date:** When will it be fixed?
 
-
 **Deliverable:**
 
 - Gap analysis report
 - Risk register with prioritized remediation plan
 - Management escalation for critical gaps
-
 
 **Quality Check:**
 
@@ -1202,7 +1118,6 @@ For each gap, assess:
 - ✓ Owners assigned
 - ✓ Target dates set
 - ✓ High/critical risks escalated to management
-
 
 ---
 
@@ -1237,7 +1152,6 @@ For each service category:
 - **Compliance:** DPAs, certifications, audit reports
 - **Operational:** User lists, usage reports, incident logs
 
-
 **Evidence Registry (Sheet 10):**
 
 Document each evidence item:
@@ -1251,7 +1165,6 @@ Document each evidence item:
 - Collected By
 - Verification Status
 
-
 **Quality Check:**
 
 - ✓ All evidence organized in standard folders
@@ -1259,7 +1172,6 @@ Document each evidence item:
 - ✓ File naming consistent
 - ✓ Sensitive data redacted
 - ✓ Evidence accessible to auditors
-
 
 ---
 
@@ -1277,13 +1189,11 @@ See "Review & Approval" section (Part I, Section 7) for detailed process.
 - Validate classifications
 - Check technical accuracy
 
-
 **Level 2: Compliance Review** (Compliance, Legal)
 
 - Verify regulatory requirements
 - Validate evidence quality
 - Check gap analysis
-
 
 **Level 3: Management Approval** (CIO, CISO, CFO)
 
@@ -1291,13 +1201,11 @@ See "Review & Approval" section (Part I, Section 7) for detailed process.
 - Approve gap remediation plans
 - Accept residual risks
 
-
 **Deliverable:**
 
 - Approved assessment ready for compliance dashboard
 - Signed approval form with all three levels
 - Published inventory as authoritative source
-
 
 ---
 
@@ -1326,7 +1234,6 @@ For EACH cloud service:
 - Contract details (status, dates, procurement method)
 - Initial classification (criticality, data type)
 
-
 ### Common Mistakes to Avoid
 
 ❌ **Incomplete discovery** - Missing shadow IT, free trials, or department-specific tools  
@@ -1350,20 +1257,17 @@ For each service, start with basics:
 - Be specific: "Microsoft 365 E5 for Enterprise" not just "Office 365"
 - Include environment if applicable: "AWS Production Account" vs. "AWS Dev/Test Account"
 
-
 **Good Examples:**
 
 - ✅ "Salesforce Sales Cloud - EMEA Instance"
 - ✅ "Zoom Enterprise Video - Global License"
 - ✅ "Azure Production Subscription (West Europe)"
 
-
 **Poor Examples:**
 
 - ❌ "CRM" (too vague - which CRM?)
 - ❌ "Cloud" (completely meaningless)
 - ❌ "That thing Marketing uses" (not a service name)
-
 
 **Column B: Service Type**
 
@@ -1388,7 +1292,6 @@ Legal entity name, not brand name.
 - ✅ "Salesforce, Inc." not "Salesforce.com"
 - ✅ "Amazon Web Services, Inc." not "AWS"
 - ✅ "Microsoft Corporation" not "MSFT"
-
 
 Check the contract to get the legal entity name correct.
 
@@ -1430,7 +1333,6 @@ Use dropdown:
 - USA (specify region if known: us-east-1, us-west-2, etc.)
 - Global / Multi-Region (data in multiple locations)
 - Unknown (must investigate)
-
 
 **Why this matters:** GDPR, Swiss FADP, and other regulations restrict where personal data can be stored.
 
@@ -1474,7 +1376,6 @@ See "Base Columns" section in Part II for detailed specs. Key fields:
 - **P: Target Remediation Date** - When gaps will be closed
 - **Q: Last Review Date** - When this entry was last validated
 
-
 **Extended Columns R-X (Inventory-Specific):**
 
 See Sheet 1 specification in Part II for:
@@ -1487,7 +1388,6 @@ See Sheet 1 specification in Part II for:
 - W: Contract End Date
 - X: Procurement Method
 
-
 **Step 2: Validate Completeness**
 
 After entering all services:
@@ -1499,7 +1399,6 @@ After entering all services:
    - All services from network traffic → in inventory?
    - All services from department surveys → in inventory?
 
-
 2. **Check for common gaps:**
 
    - Development/test environments included?
@@ -1508,12 +1407,10 @@ After entering all services:
    - Infrastructure monitoring tools?
    - Identity providers (SSO, MFA)?
 
-
 3. **Verify no duplicates:**
 
    - Same service listed under different names?
    - Same vendor appearing multiple times (consolidate?)
-
 
 **Step 3: Identify Service Owners**
 
@@ -1525,7 +1422,6 @@ For every service, you MUST identify an owner:
 - Makes decisions about service usage, renewal, decommissioning
 - Budget authority (or influences budget)
 - Escalation point for issues
-
 
 **If owner unknown:**
 1. Check who requested/purchased the service (procurement records)
@@ -1547,13 +1443,11 @@ For each service, obtain:
 - Include all licenses/seats
 - Include support/maintenance if separate line item
 
-
 **Contract Dates:**
 
 - Contract Start Date: When did we first sign with vendor?
 - Contract End Date: When does current commitment end?
 - Renewal Date: If auto-renewal, when does it renew?
-
 
 **Procurement Method:**
 
@@ -1564,7 +1458,6 @@ For each service, obtain:
 - Trial/Free (no payment)
 - Bundled (part of larger agreement)
 
-
 **Step 5: Initial User Count Estimate**
 
 You need two numbers:
@@ -1574,14 +1467,12 @@ You need two numbers:
 - How many licenses purchased?
 - Check license agreement or invoice
 
-
 **Active Users (Last 30 Days):**
 
 - How many actually used the service recently?
 - Check SSO login data
 - Check service admin console usage reports
 - If unknown, estimate conservatively (50% of licensed as a starting point)
-
 
 **Why this matters:** Reveals over-licensing (wasted money) or under-licensing (compliance risk)
 
@@ -1591,7 +1482,6 @@ You need two numbers:
 - Licensed Users: 500
 - Active Users (30 days): 280
 - **Finding:** Paying for 220 unused licenses → potential cost optimization
-
 
 **Step 6: Document Evidence**
 
@@ -1604,7 +1494,6 @@ Collect and store:
 - **Screenshot:** Admin console showing license count, active users, version
 - **Purchase Order:** Original PO (if available)
 - **Business Case:** Why was this service purchased? (if available)
-
 
 Store in structured folders:
 ```
@@ -1651,7 +1540,6 @@ Discovery: "Oracle Database Cloud" found in network traffic, critical production
    - Escalate to CTO if truly orphaned
    - **Temporary:** Assign to Database Manager pending clarification
 
-
 **Scenario 3: Duplicate Services**
 
 Discovery: Three different file sharing services found:
@@ -1659,7 +1547,6 @@ Discovery: Three different file sharing services found:
 - Dropbox Business (IT-approved, 300 users)
 - Box Enterprise (Engineering, 50 users)
 - Google Drive Business (Marketing, 20 users)
-
 
 **Assessment:**
 1. Document all three separately in inventory
@@ -1683,7 +1570,6 @@ Discovery: "Lotus Notes" still showing in SSO, but migration to Office 365 under
    - Remaining user count
    - When decommissioned, update Status to N/A but keep in inventory for historical record
 
-
 ### Evidence Examples
 
 **Good Evidence:**
@@ -1694,7 +1580,6 @@ Discovery: "Lotus Notes" still showing in SSO, but migration to Office 365 under
 - SSO integration showing user list and last login dates
 - Purchase order with budget approval
 
-
 **Poor Evidence:**
 
 - Unsigned contracts or drafts
@@ -1702,7 +1587,6 @@ Discovery: "Lotus Notes" still showing in SSO, but migration to Office 365 under
 - Generic marketing materials
 - "I think we pay $X" without verification
 - No evidence, just assumptions
-
 
 ### Quality Checklist
 
@@ -1718,7 +1602,6 @@ Before moving to Sheet 2, verify:
 - [ ] Evidence collected for top 20 highest-cost services
 - [ ] No obvious duplicates (or duplicates flagged for remediation)
 - [ ] Decommissioned services noted but still tracked
-
 
 ---
 
@@ -1737,7 +1620,6 @@ For EACH cloud service:
 - Data residency details (storage location, processing location)
 - Regulatory requirements applicable
 - Data protection controls in place
-
 
 ### Common Mistakes to Avoid
 
@@ -1759,7 +1641,6 @@ For each service, understand:
 - What data inputs does it receive?
 - What data outputs does it produce?
 - Where does data come from / go to?
-
 
 **Interview service owner with these questions:**
 
@@ -1816,12 +1697,10 @@ Based on identified data types, assign classification:
 - Backup: Where are backups stored?
 - Disaster Recovery: Where are DR copies?
 
-
 **Data Processing Location:**
 
 - Where is data processed/computed? (may differ from storage)
 - Are there cross-border data transfers?
-
 
 **How to Verify:**
 1. Check vendor documentation
@@ -1839,7 +1718,6 @@ Based on identified data types, assign classification:
 - Cross-Border: No (all within EU)
 - **GDPR Compliant:** Yes
 
-
 **Example 2: AWS S3**
 
 - Primary Storage: us-east-1 (Virginia, USA)
@@ -1848,14 +1726,12 @@ Based on identified data types, assign classification:
 - Cross-Border: EU → USA transfer
 - **GDPR Compliant:** Only if Standard Contractual Clauses (SCCs) in place
 
-
 **Example 3: Global CDN**
 
 - Storage: Global (replicated worldwide)
 - Processing: Edge locations globally
 - Cross-Border: Yes (everywhere)
 - **Assessment:** Only suitable for Public data OR must review data processing agreement
-
 
 **Step 5: Identify Regulatory Requirements**
 
@@ -1878,7 +1754,6 @@ Based on data types and residency, identify applicable regulations:
 - ✅ Data retention policies compliant
 - ✅ Data subject rights supported (GDPR: access, deletion, portability)
 
-
 **Step 6: Assess Data Protection Controls**
 
 For each service, verify:
@@ -1889,14 +1764,12 @@ For each service, verify:
 - [ ] Data encrypted in transit (TLS 1.2+ or equivalent)
 - [ ] Key management documented
 
-
 **Access Controls:**
 
 - [ ] Multi-Factor Authentication (MFA) enforced
 - [ ] Role-Based Access Control (RBAC) implemented
 - [ ] Least privilege principle applied
 - [ ] Access reviews conducted quarterly
-
 
 **Logging & Monitoring:**
 
@@ -1905,14 +1778,12 @@ For each service, verify:
 - [ ] Logs integrated with SIEM (if Critical/High)
 - [ ] Alerts configured for anomalous activity
 
-
 **Data Protection:**
 
 - [ ] Data Loss Prevention (DLP) configured
 - [ ] Data classification labels applied
 - [ ] Backup/recovery tested
 - [ ] Data deletion procedures defined
-
 
 **Step 7: Document Gaps**
 
@@ -1924,14 +1795,12 @@ If data protection controls are missing:
 - Why is it missing? (technical limitation, cost, not implemented)
 - What's the risk?
 
-
 **Remediate:**
 
 - What needs to be done?
 - Who's responsible?
 - What's the target date?
 - Compensating controls in place?
-
 
 **Example Gap:**
 
@@ -1944,7 +1813,6 @@ Service: Box Business (file sharing)
 - **Target:** Q2 2026
 - **Compensating Control:** User training on data handling policies
 
-
 ### Evidence Examples
 
 **Good Evidence:**
@@ -1956,14 +1824,12 @@ Service: Box Business (file sharing)
 - Export of data classification labels applied in service
 - SIEM integration showing logs flowing
 
-
 **Poor Evidence:**
 
 - Vendor marketing claiming "we're GDPR compliant"
 - Assumed data residency without verification
 - Old DPA from 2019 (not current)
 - No evidence, just "service owner says it's fine"
-
 
 ### Quality Checklist
 
@@ -1976,7 +1842,6 @@ Service: Box Business (file sharing)
 - [ ] Data protection controls assessed
 - [ ] Gaps documented with remediation plans
 - [ ] Evidence collected for Restricted/Confidential services
-
 
 ---
 
@@ -1997,7 +1862,6 @@ For EACH cloud service:
 - User impact (who is affected, how many users)
 - Revenue impact (direct or indirect)
 - Dependencies (what other services depend on this)
-
 
 ### Common Mistakes to Avoid
 
@@ -2034,19 +1898,16 @@ For each service, ask service owner:
    - Workflow disruption → High
    - Revenue/customer/safety impact → Critical
 
-
 2. **Can we operate the business without this service for 1 day?**
 
    - Yes, no problem → Low/Medium
    - Yes, but with significant manual workarounds → High
    - No, business stops → Critical
 
-
 3. **Is this service customer-facing or directly revenue-generating?**
 
    - Yes, customers directly affected → High or Critical
    - No, internal only → Medium or lower (unless dependencies exist)
-
 
 4. **How many people are affected if this service is down?**
 
@@ -2055,12 +1916,10 @@ For each service, ask service owner:
    - 50+ users or entire departments → High or Critical
    - Customers affected → Critical (regardless of internal user count)
 
-
 5. **Are there dependencies?**
 
    - Do Critical services depend on this service? → Increase rating
    - Does this service depend on Low-priority services? → Note risk
-
 
 **Impact Categories:**
 
@@ -2111,13 +1970,11 @@ Identify:
 - Integration platforms
 - Payment gateways
 
-
 **Downstream Dependencies** (services that depend on this service):
 
 - Applications using this as data source
 - Automated workflows triggered by this service
 - Reporting dashboards pulling data from this service
-
 
 **Dependency Risk:**
 
@@ -2130,7 +1987,6 @@ If a Low-criticality service is a dependency for a Critical service, the Low ser
 - Downstream Dependency: Salesforce CRM (Critical)
 - **Effective Criticality: Critical** (because CRM depends on it)
 
-
 **Step 5: Assess BC/DR Readiness**
 
 For Critical and High services, verify:
@@ -2142,14 +1998,12 @@ For Critical and High services, verify:
 - [ ] Backups tested (restore test in last 90 days)
 - [ ] Backups stored in geographically separate location
 
-
 **Disaster Recovery:**
 
 - [ ] DR plan documented
 - [ ] Failover procedures tested
 - [ ] DR environment exists (if applicable)
 - [ ] DR RTO tested and validated
-
 
 **High Availability:**
 
@@ -2158,14 +2012,12 @@ For Critical and High services, verify:
 - [ ] Load balancing configured
 - [ ] Automated health checks and failover
 
-
 **Incident Response:**
 
 - [ ] Incident response procedures documented
 - [ ] On-call rotation defined (for Critical services)
 - [ ] Escalation paths clear
 - [ ] Communication plan defined (who to notify, how)
-
 
 **Gap Identification:**
 
@@ -2177,7 +2029,6 @@ If BC/DR requirements not met:
 - **Owner:** Who's responsible?
 - **Target Date:** When will it be addressed?
 
-
 **Example Gap:**
 
 Service: Salesforce CRM (Critical)
@@ -2188,7 +2039,6 @@ Service: Salesforce CRM (Critical)
 - **Owner:** IT Operations Manager
 - **Target:** 31.03.2026
 - **Compensating Control:** Vendor (Salesforce) has 99.9% uptime SLA, multi-AZ by default
-
 
 ### Common Scenarios
 
@@ -2208,7 +2058,6 @@ Service: E-commerce Website (hosted on AWS)
 - **BC/DR:** Multi-region deployment, automated failover, tested quarterly
 - **Status:** ✅ Compliant
 
-
 **Scenario 2: Internal Tool with Critical Dependencies**
 
 Service: Shared File Server (Windows File Server on Azure)
@@ -2218,13 +2067,11 @@ Service: Shared File Server (Windows File Server on Azure)
 - **Direct Criticality:** Medium (file storage, mostly convenience)
 - **Users:** 200 employees
 
-
 **Dependency Analysis:**
 
 - Engineering uses this for build artifacts → CI/CD pipeline depends on it
 - Finance uses this for invoice processing → Accounts Payable depends on it
 - **Critical Workflow Impact:** Software releases blocked, invoices can't be paid
-
 
 **Revised Assessment:**
 
@@ -2232,7 +2079,6 @@ Service: Shared File Server (Windows File Server on Azure)
 - **RTO:** 8 hours (can work around for half a day, but not longer)
 - **RPO:** 24 hours (yesterday's files acceptable)
 - **Remediation:** Migrate critical workflows off file server OR upgrade to HA configuration
-
 
 **Scenario 3: Overrated Service**
 
@@ -2242,7 +2088,6 @@ Service: CEO Calendar (Outlook Calendar)
 
 - **Criticality:** Critical (CEO needs calendar!)
 
-
 **Objective Assessment:**
 
 - **Business Impact Test:** If CEO's calendar is down for 4 hours, does business stop?
@@ -2251,13 +2096,11 @@ Service: CEO Calendar (Outlook Calendar)
 - **Revenue Impact:** No direct revenue impact
 - **Regulatory Impact:** No compliance issues
 
-
 **Correct Assessment:**
 
 - **Criticality:** High (important person, but not Critical to organization operations)
 - **RTO:** 8 hours (within business day)
 - **RPO:** 1 hour (recent appointments critical)
-
 
 **Scenario 4: Seasonal Criticality**
 
@@ -2270,13 +2113,11 @@ Service: Tax Reporting Software
 - **RTO (Seasonal):** 24 hours (filing deadline cannot be missed)
 - **RTO (Off-Season):** > 7 days (can wait)
 
-
 **Documentation:**
 
 - Mark as: Medium (average criticality across year)
 - Note: "SEASONAL CRITICAL: Jan-Feb tax filing season, RTO 24 hours during this period"
 - Ensure BC/DR tested before tax season begins
-
 
 ### Evidence Examples
 
@@ -2290,7 +2131,6 @@ Service: Tax Reporting Software
 - Dependency map/diagram
 - Interview notes with service owner confirming impact assessment
 
-
 **Poor Evidence:**
 
 - "Everyone knows this is critical" (no documentation)
@@ -2298,7 +2138,6 @@ Service: Tax Reporting Software
 - No RTO/RPO defined
 - BC/DR plan exists but never tested
 - Generic "very important" descriptions
-
 
 ### Quality Checklist
 
@@ -2313,7 +2152,6 @@ Service: Tax Reporting Software
 - [ ] Service owners agree with criticality ratings
 - [ ] No inflation (not everything is Critical)
 - [ ] Evidence collected for Critical services
-
 
 ---
 
@@ -2342,7 +2180,6 @@ For EACH cloud service:
 - Migration complexity and cost estimates
 - **For Hybrid exits:** Workload segmentation, data sync requirements
 - **For On-Premises exits:** TCO analysis, infrastructure requirements, staffing needs
-
 
 ### Common Mistakes to Avoid
 
@@ -2423,7 +2260,6 @@ Don't assume - ACTUALLY TEST data export:
    - Data completeness
    - Any limitations
 
-
 **Data Volume:**
 
 Document:
@@ -2431,7 +2267,6 @@ Document:
 - Current data volume (GB or TB)
 - Growth rate (per month/year)
 - Estimated volume at exit time (project forward)
-
 
 **Why this matters:** Export time and migration complexity scale with data volume.
 
@@ -2473,7 +2308,6 @@ For each alternative:
 - ✅ **Cost Comparison:** Comparable or lower TCO?
 - ✅ **Certification Alignment:** Has required certifications (SOC 2, ISO 27001)?
 
-
 **Migration Estimate:**
 
 Document estimated:
@@ -2488,7 +2322,6 @@ Document estimated:
   - Integration reconfiguration
   - User training
   - Parallel running costs (during migration)
-
 
 **Step 4: Hybrid Exit Assessment**
 
@@ -2524,13 +2357,11 @@ For hybrid deployments, assess:
 - 100-500ms: Acceptable (near real-time)
 - > 500ms: Concern (may require async sync, potential consistency issues)
 
-
 **Synchronization Mechanism:**
 
 - Real-Time Replication (database mirroring)
 - Batch Sync (hourly, daily)
 - Manual Transfer (not recommended for production)
-
 
 **Hybrid Connectivity:**
 
@@ -2539,7 +2370,6 @@ Required infrastructure:
 - **VPN:** Basic connectivity (typically 100-500 Mbps)
 - **Direct Connect / ExpressRoute:** High-speed dedicated link (1-10 Gbps)
 - **SD-WAN:** Software-defined networking for optimized routing
-
 
 **Cost:** CHF 1K-10K/month for dedicated connectivity
 
@@ -2624,7 +2454,6 @@ On-premises exit only justified if:
 - AND staff already exist (not incremental hires)
 - AND datacenter space already exists (no new CAPEX)
 
-
 **Infrastructure Requirements:**
 
 If proceeding with on-premises:
@@ -2636,7 +2465,6 @@ If proceeding with on-premises:
 - Storage IOPS: _____ IOPS
 - Virtualization platform: VMware ESXi / Hyper-V / KVM / Other
 
-
 **Storage:**
 
 - Capacity: _____ TB usable
@@ -2644,13 +2472,11 @@ If proceeding with on-premises:
 - Redundancy: RAID 10 / RAID 6 / Erasure Coding
 - Backup: On-site + off-site
 
-
 **Network:**
 
 - Bandwidth: _____ Gbps
 - Redundancy: Dual uplinks, diverse paths
 - Security: Firewalls, IDS/IPS, segmentation
-
 
 **Staffing Requirements:**
 
@@ -2673,7 +2499,6 @@ On-premises infrastructure requires refresh every 3-5 years:
 - Servers: 3-4 years
 - Storage: 4-5 years
 - Network: 5-7 years
-
 
 Budget CHF 60K-120K/year for ongoing refresh (amortized).
 
@@ -2733,7 +2558,6 @@ Assess factors that could prevent or complicate exit:
 - **High:** 5-6 high-risk factors → Exit very difficult, 12-18 months
 - **Critical:** 7+ high-risk factors → Effectively locked in, >18 months or rebuild required
 
-
 **Mitigation Strategies:**
 
 For high lock-in risks:
@@ -2744,7 +2568,6 @@ For high lock-in risks:
 - ✅ Document all customizations (version control, architecture diagrams)
 - ✅ Cross-train staff (reduce vendor-specific skill dependency)
 - ✅ Evaluate alternatives annually (maintain awareness of exit options)
-
 
 **Step 8: Annual Exit Strategy Review**
 
@@ -2759,7 +2582,6 @@ For each service:
 - [ ] Technology changes considered (new migration tools available?)
 - [ ] Contract terms reviewed (approaching renewal? renegotiate exit terms?)
 - [ ] Organizational changes (business strategy shift affecting cloud usage?)
-
 
 **Testing Requirements (by Service Criticality):**
 
@@ -2791,7 +2613,6 @@ Service: Zoom Video Communications
 - **Exit Plan Status:** Documented (alternatives identified, tested exports)
 - **Status:** ✅ Compliant
 
-
 **Scenario 2: IaaS with Hybrid Strategy (Cloud + On-Prem)**
 
 Service: Azure VM Workloads (Development Environments)
@@ -2809,7 +2630,6 @@ Service: Azure VM Workloads (Development Environments)
 - **Migration Estimate:** 6-9 months, CHF 150K
 - **Status:** Draft (plan in progress, connectivity being provisioned)
 
-
 **Scenario 3: On-Premises Repatriation - REJECTED (TCO Analysis)**
 
 Service: AWS EC2 Production Workloads (100 VMs)
@@ -2826,7 +2646,6 @@ On-Premises Cost Estimate:
 - OPEX: CHF 720K/year (5.5 FTE staff + facilities + maintenance)
 - 5-Year TCO: CHF 4.25M
 
-
 Cloud 5-Year TCO: CHF 2.4M
 
 **Result:** On-premises is **77% MORE expensive** (CHF 1.85M additional cost)
@@ -2839,7 +2658,6 @@ Cloud 5-Year TCO: CHF 2.4M
 - ✅ Use reserved instances (3-year commit → save 40% = CHF 192K/year)
 - ✅ Implement auto-scaling (reduce off-peak capacity → save CHF 60K/year)
 - **Total Savings:** CHF 396K/year (82% of current cost)
-
 
 **Revised Cloud TCO (optimized):** CHF 1.01M (5-year)
 
@@ -2862,7 +2680,6 @@ Service: Salesforce Sales Cloud (Highly Customized)
 - **Migration Estimate:** 12-18 months, CHF 500K-800K
 - **Alternative:** Microsoft Dynamics 365, HubSpot Enterprise (both require significant customization)
 
-
 **Remediation Plan:**
 
 - ✅ Document all customizations (architecture diagrams, code repository)
@@ -2872,7 +2689,6 @@ Service: Salesforce Sales Cloud (Highly Customized)
 - ✅ Negotiate contract: Add "termination for convenience" clause at next renewal
 - ✅ Annual alternative provider review
 - **Target:** Reduce lock-in risk from High to Medium by next renewal (2027)
-
 
 ### Evidence Examples
 
@@ -2886,7 +2702,6 @@ Service: Salesforce Sales Cloud (Highly Customized)
 - Contract clauses guaranteeing data portability
 - Annual exit test reports
 
-
 **Poor Evidence:**
 
 - "We could probably export if we needed to" (no actual test)
@@ -2895,7 +2710,6 @@ Service: Salesforce Sales Cloud (Highly Customized)
 - TCO analysis missing staffing costs (largest OPEX component)
 - No hybrid connectivity assessment (ignoring sync latency)
 - Assuming on-prem cheaper without doing math
-
 
 ### Quality Checklist
 
@@ -2909,7 +2723,6 @@ Service: Salesforce Sales Cloud (Highly Customized)
 - [ ] Annual testing schedule established
 - [ ] Gaps documented with remediation plans
 - [ ] Evidence collected (export tests, alternative evaluations, TCO analysis)
-
 
 ---
 
@@ -2927,7 +2740,6 @@ Consolidate financial data for all cloud services, analyze spending patterns, id
 - Cost trends (year-over-year comparison)
 - Optimization opportunities
 - Budget variance
-
 
 ### How to Complete
 
@@ -2950,7 +2762,6 @@ Map regulatory requirements to cloud services, track compliance status, identify
 - Data processing agreements (DPAs) status
 - Compliance gaps
 - Audit readiness
-
 
 ### How to Complete
 
@@ -2976,7 +2787,6 @@ Map regulatory requirements to cloud services, track compliance status, identify
 - Total cloud spend (annual)
 - Compliance status distribution (Compliant/Partial/Non-Compliant counts)
 
-
 **How It Works:** Formula-driven, automatically populated from Sheets 1-6.
 
 **Your Role:** Verify calculations are correct, interpret results, identify trends.
@@ -2998,7 +2808,6 @@ Map regulatory requirements to cloud services, track compliance status, identify
 - Collected By
 - Verification Status
 
-
 **Organization:**
 ```
 /Evidence/ISMS-IMP-A.5.23.S1/
@@ -3015,7 +2824,6 @@ Map regulatory requirements to cloud services, track compliance status, identify
 - [ ] Evidence registry matches actual files
 - [ ] Sensitive data redacted from screenshots
 - [ ] Evidence accessible to auditors
-
 
 ---
 
@@ -3056,7 +2864,6 @@ Map regulatory requirements to cloud services, track compliance status, identify
 - Timestamped (date clearly visible)
 - Attributed (source identified)
 
-
 ❌ **Poor Evidence:**
 
 - Outdated (> 1 year old)
@@ -3064,7 +2871,6 @@ Map regulatory requirements to cloud services, track compliance status, identify
 - Unsanitized (contains sensitive data)
 - No date (can't verify currency)
 - Generic (vendor marketing, not actual config)
-
 
 ---
 
@@ -3082,14 +2888,12 @@ Map regulatory requirements to cloud services, track compliance status, identify
 - Not engaging with departments
 - Assuming procurement has complete record
 
-
 **How to Avoid:**
 
 - Use all 6 discovery methods (procurement, financial, network, SSO, surveys, asset inventory)
 - Cross-check results
 - Engage department heads
 - Check credit card statements
-
 
 ---
 
@@ -3103,13 +2907,11 @@ Map regulatory requirements to cloud services, track compliance status, identify
 - Reality: Users upload Restricted data (personal health info)
 - Correct rating: Restricted (based on actual use, not policy)
 
-
 **Why It Happens:**
 
 - Optimism bias
 - Pressure to show compliance
 - Not verifying actual usage
-
 
 **How to Avoid:**
 
@@ -3117,7 +2919,6 @@ Map regulatory requirements to cloud services, track compliance status, identify
 - Review sample data
 - Check logs/audit trails
 - Rate based on REALITY, not policy
-
 
 ---
 
@@ -3135,14 +2936,12 @@ Map regulatory requirements to cloud services, track compliance status, identify
 - "Everything is important to someone"
 - Fear of undervaluing services
 
-
 **How to Avoid:**
 
 - Use objective criteria (RTO < 4 hours, revenue impact)
 - Apply business impact test ("Can we operate for a day without this?")
 - Push back on inflation
 - Get management validation
-
 
 ---
 
@@ -3156,14 +2955,12 @@ Map regulatory requirements to cloud services, track compliance status, identify
 - Assumed on-prem cost: CHF 200K/year (hardware only)
 - Actual on-prem cost: CHF 900K/year (hardware + staff + facilities + maintenance)
 
-
 **Why It Happens:**
 
 - Only counting CAPEX, ignoring OPEX
 - Not counting staff time (largest cost)
 - Not counting facilities, power, cooling
 - Not counting ongoing maintenance/refresh
-
 
 **How to Avoid:**
 
@@ -3172,7 +2969,6 @@ Map regulatory requirements to cloud services, track compliance status, identify
 - Use 5-year comparison
 - Be honest about staffing requirements (4-7 FTE typical)
 - Remember: On-prem cheaper in <5% of cases
-
 
 ---
 
@@ -3186,13 +2982,11 @@ Map regulatory requirements to cloud services, track compliance status, identify
 - Reality when tested: API rate-limited to 100 records/hour, full export would take 6 months
 - Export format not compatible with Alternative Provider
 
-
 **Why It Happens:**
 
 - Assuming vendor documentation is accurate
 - Not validating assumptions
 - "Set it and forget it" mentality
-
 
 **How to Avoid:**
 
@@ -3201,7 +2995,6 @@ Map regulatory requirements to cloud services, track compliance status, identify
 - Time the export (how long does it really take?)
 - Document any issues found
 - Re-test annually
-
 
 ---
 
@@ -3219,7 +3012,6 @@ Map regulatory requirements to cloud services, track compliance status, identify
 - Skills required for both environments
 - More failure modes (connectivity, sync, inconsistency)
 
-
 **When Hybrid Makes Sense:**
 
 - Data sovereignty mandate (some data MUST be on-prem)
@@ -3227,13 +3019,11 @@ Map regulatory requirements to cloud services, track compliance status, identify
 - Existing on-prem infrastructure with spare capacity
 - Staged migration path
 
-
 **When to Avoid Hybrid:**
 
 - "Cloud and on-prem both sound good" (lack of clear requirement)
 - Cost optimization (usually not cheaper than pure cloud)
 - "Hedge our bets" (increases risk, doesn't reduce it)
-
 
 ---
 
@@ -3250,14 +3040,12 @@ Map regulatory requirements to cloud services, track compliance status, identify
 - Can't assess business impact
 - Can't get data classification info
 
-
 **How to Avoid:**
 
 - **NEVER** leave owner field blank
 - Escalate to department head if owner unknown
 - Default to "Unassigned - Escalated to [Name]" (make escalation visible)
 - Track unassigned services as HIGH PRIORITY gap
-
 
 ---
 
@@ -3271,7 +3059,6 @@ Map regulatory requirements to cloud services, track compliance status, identify
 - Contains 15 decommissioned services
 - Missing 30 new services deployed in last year
 
-
 **Why It Happens:**
 
 - No process for updates
@@ -3279,14 +3066,12 @@ Map regulatory requirements to cloud services, track compliance status, identify
 - Quarterly updates not scheduled
 - Drift between reality and documentation
 
-
 **How to Avoid:**
 
 - **Schedule quarterly updates** (calendar invites)
 - Assign inventory owner (IT Ops Manager, Cloud Architect)
 - Trigger updates: new service deployment, service sunset, contract renewal
 - Continuous discovery (automated network/SSO/financial monitoring)
-
 
 ---
 
@@ -3304,7 +3089,6 @@ Before submitting for review, verify:
 - [ ] Evidence collected for Critical/High services
 - [ ] Gap analysis complete
 
-
 #### Accuracy
 
 - [ ] All data verified with authoritative sources (not assumed)
@@ -3313,14 +3097,12 @@ Before submitting for review, verify:
 - [ ] Classifications verified with data owners
 - [ ] Exit strategies realistic (not aspirational)
 
-
 #### Honesty
 
 - [ ] Criticality ratings honest (not inflated)
 - [ ] Gaps documented (not hidden)
 - [ ] Lock-in risks acknowledged (not downplayed)
 - [ ] TCO analysis realistic (all costs included)
-
 
 #### Evidence Quality
 
@@ -3330,7 +3112,6 @@ Before submitting for review, verify:
 - [ ] Evidence organized (follows standard structure)
 - [ ] Evidence accessible (paths correct, files exist)
 
-
 #### Compliance
 
 - [ ] Regulatory requirements identified
@@ -3339,7 +3120,6 @@ Before submitting for review, verify:
 - [ ] Vendor certifications confirmed
 - [ ] Exit plans documented for Critical/High
 
-
 #### Financial
 
 - [ ] Costs reconcile with budget
@@ -3347,7 +3127,6 @@ Before submitting for review, verify:
 - [ ] Renewal calendar complete
 - [ ] Cost optimizations identified
 - [ ] ROI calculated for optimizations
-
 
 ---
 
@@ -3364,7 +3143,6 @@ Before submitting for review, verify:
 - Architecture understanding (dependencies mapped?)
 - Exit feasibility (realistic assessments?)
 
-
 **Checklist:**
 
 - [ ] Discovery methods all executed
@@ -3373,14 +3151,12 @@ Before submitting for review, verify:
 - [ ] Dependencies identified
 - [ ] Exit strategies technically sound
 
-
 **Timeline:** 2-3 days
 
 **Outcome:**
 
 - ✅ Approved → Move to Level 2
 - ⚠️ Changes Requested → Return to completer with feedback
-
 
 ---
 
@@ -3395,7 +3171,6 @@ Before submitting for review, verify:
 - Contract status (renewals tracked?)
 - Risk assessment (gaps documented?)
 
-
 **Checklist:**
 
 - [ ] Data classifications correct
@@ -3404,14 +3179,12 @@ Before submitting for review, verify:
 - [ ] Contracts documented
 - [ ] Compliance gaps have remediation plans
 
-
 **Timeline:** 2-3 days
 
 **Outcome:**
 
 - ✅ Approved → Move to Level 3
 - ⚠️ Changes Requested → Return with feedback
-
 
 ---
 
@@ -3426,7 +3199,6 @@ Before submitting for review, verify:
 - Budget impact (costs within budget?)
 - Resource allocation (remediation plans funded?)
 
-
 **Checklist:**
 
 - [ ] Overall assessment credible
@@ -3435,7 +3207,6 @@ Before submitting for review, verify:
 - [ ] Budget implications understood
 - [ ] Risks formally accepted or mitigated
 
-
 **Timeline:** 3-5 days
 
 **Outcome:**
@@ -3443,7 +3214,6 @@ Before submitting for review, verify:
 - ✅ Approved → Assessment complete, ready for audit
 - ⚠️ Changes Requested → Return with feedback
 - ⚠️ Escalate → Executive leadership review (for major issues)
-
 
 ---
 
@@ -3457,14 +3227,12 @@ Once all three levels approve:
    - Version as "APPROVED v1.0"
    - Archive in ISMS documentation repository
 
-
 2. **Publish Inventory**
 
    - Make available to other teams (read-only)
    - Update CMDB with cloud service data
    - Share with procurement (contract tracking)
    - Share with finance (budget planning)
-
 
 3. **Notify Stakeholders**
 
@@ -3473,7 +3241,6 @@ Once all three levels approve:
    - Finance: Cost optimizations identified
    - Security: Risk gaps requiring remediation
 
-
 4. **Execute Remediation**
 
    - Assign owners to all gaps
@@ -3481,13 +3248,11 @@ Once all three levels approve:
    - Allocate budget/resources
    - Track progress monthly
 
-
 5. **Schedule Quarterly Update**
 
    - Calendar invite for Q2, Q3, Q4 updates
    - Assign responsibility for updates
    - Define update process
-
 
 ---
 
@@ -3504,14 +3269,12 @@ This inventory (A.5.23.1) is complete. Use it as INPUT for:
 - Review contracts and SLAs
 - Evaluate vendor risk
 
-
 **A.5.23.3 - Secure Configuration:**
 
 - Use service list and criticality ratings
 - Assess security configurations
 - Verify baseline compliance
 - Identify configuration gaps
-
 
 **A.5.23.4 - Ongoing Governance:**
 
@@ -3520,14 +3283,12 @@ This inventory (A.5.23.1) is complete. Use it as INPUT for:
 - Evaluate change management
 - Review incident procedures
 
-
 **A.5.23.5 - Compliance Dashboard:**
 
 - Consolidate all assessment data
 - Generate executive summary
 - Track compliance metrics
 - Report to management
-
 
 ---
 
@@ -3554,7 +3315,6 @@ Move beyond periodic assessments:
 - Financial system monitoring (new cloud vendors)
 - Cloud access broker (CASB) deployment
 
-
 **Process Integration:**
 
 - New service deployment → Add to inventory
@@ -3562,13 +3322,11 @@ Move beyond periodic assessments:
 - Contract renewal → Update contract dates
 - Vendor acquisition → Assess vendor risk impact
 
-
 **Ownership:**
 
 - Assign "Cloud Services Inventory Owner" role
 - Define responsibilities (maintenance, updates, accuracy)
 - Establish SLA (new services added within X days)
-
 
 ---
 
@@ -3585,7 +3343,6 @@ Move beyond periodic assessments:
 - **Sheet 5:** Cost updates, renewal dates, optimization progress
 - **Sheet 6:** Regulatory changes, compliance status
 - **Sheet 10:** New evidence collected
-
 
 **Update Process:**
 1. Run discovery methods (focus on deltas since last assessment)
@@ -3607,7 +3364,6 @@ Move beyond periodic assessments:
 - Compliance rate (% services fully compliant)
 - Cost optimization savings realized
 
-
 **Monthly Reporting to Management:**
 
 - New services added
@@ -3616,7 +3372,6 @@ Move beyond periodic assessments:
 - Cost variance vs. budget
 - Compliance gaps (open/closed)
 - Optimization savings
-
 
 ---
 
@@ -3633,13 +3388,11 @@ Move beyond periodic assessments:
 - **Lock-In:** Factors preventing easy migration
 - **TCO:** Total Cost of Ownership (5-year comparison)
 
-
 **Cloud Service Types:**
 
 - **SaaS:** Software as a Service (complete applications)
 - **IaaS:** Infrastructure as a Service (compute, storage, network)
 - **PaaS:** Platform as a Service (development platforms)
-
 
 **Exit Strategies:**
 
@@ -3647,20 +3400,17 @@ Move beyond periodic assessments:
 - **Hybrid:** Partial on-premises repatriation (5-10%)
 - **On-Premises:** Full build-back to internal infrastructure (<5%, rarely justified)
 
-
 **Financial Terms:**
 
 - **CAPEX:** Capital Expenditure (upfront hardware investment)
 - **OPEX:** Operating Expenditure (annual recurring costs, includes staffing)
 - **TCO:** Total Cost of Ownership (CAPEX + 5 years OPEX)
 
-
 **Compliance Terms:**
 
 - **DPA:** Data Processing Agreement (GDPR requirement)
 - **BAA:** Business Associate Agreement (HIPAA requirement)
 - **SCC:** Standard Contractual Clauses (EU data transfer mechanism)
-
 
 ---
 
@@ -3672,7 +3422,6 @@ Move beyond periodic assessments:
 - ISMS-POL-A.5.19-23-S5: Cloud Services Security (Detailed requirements)
 - ISMS-POL-A.5.19-23-S5 Section 8.1.1: Exit Strategy Framework (Cloud/Hybrid/On-Prem)
 
-
 **Related Assessments:**
 
 - ISMS-IMP-A.5.23.S2: Vendor Due Diligence & Contracts
@@ -3680,14 +3429,12 @@ Move beyond periodic assessments:
 - ISMS-IMP-A.5.23.S4: Ongoing Governance & Risk Management
 - ISMS-IMP-A.5.23.S5: Compliance Monitoring Dashboard
 
-
 **External Standards:**
 
 - ISO/IEC 27001:2022 Annex A.5.19-23: Supplier Controls
 - DORA (Digital Operational Resilience Act) Article 28.6: Exit Strategies
 - GDPR Article 28: Data Processing Agreements
 - Swiss FADP: Data Protection Requirements
-
 
 ---
 
@@ -3700,13 +3447,11 @@ Move beyond periodic assessments:
 - **Compliance Questions:** [Compliance Officer / Legal]
 - **Financial Questions:** [Finance Manager / Procurement]
 
-
 **Escalation:**
 
 - **CISO:** For risk acceptance, major gaps
 - **CIO:** For strategic decisions, major investments
 - **CFO:** For budget implications, cost optimizations
-
 
 ---
 

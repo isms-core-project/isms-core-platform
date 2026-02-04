@@ -42,7 +42,6 @@ This document consists of two parts:
   - Reporting Templates
   - Audit Evidence Framework
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -63,7 +62,6 @@ This is the **CONSOLIDATED assessment framework** that brings together Controls 
 - **Reporting:** Monthly summary, quarterly report, annual comprehensive report
 - **Evidence framework:** Audit-ready evidence collection across all physical infrastructure
 
-
 #### Key Principle
 
 This is NOT a separate assessment workbook - it's the **PROCESS** for conducting assessments and the **DASHBOARD** that consolidates results from:
@@ -71,7 +69,6 @@ This is NOT a separate assessment workbook - it's the **PROCESS** for conducting
 - ISMS-IMP-A.7.4-5-11-S1 (Physical Monitoring Assessment)
 - ISMS-IMP-A.7.4-5-11-S2 (Environmental Protection Assessment)
 - ISMS-IMP-A.7.4-5-11-S3 (Utility Resilience Assessment)
-
 
 #### How This Integrates with Individual Assessments
 
@@ -97,7 +94,6 @@ This is NOT a separate assessment workbook - it's the **PROCESS** for conducting
 - Utility uptime (power, HVAC, ISP uptime percentages)
 - Incident counts (physical security, environmental, utility incidents)
 
-
 **Deliverable:** 1-page monthly summary dashboard update
 
 #### Quarterly Manual Assessment
@@ -113,7 +109,6 @@ This is NOT a separate assessment workbook - it's the **PROCESS** for conducting
 - Complete ISMS-IMP-A.7.4-5-11-S3 (Utility Resilience) assessment
 - Testing compliance verification (monthly/quarterly tests current)
 - Facility inspections (coverage verification, equipment condition)
-
 
 **Deliverable:** Quarterly compliance report (5-10 pages) + updated dashboard
 
@@ -132,7 +127,6 @@ This is NOT a separate assessment workbook - it's the **PROCESS** for conducting
 - Colocation/cloud provider audit report review (if applicable)
 - 12-month trend analysis (year-over-year comparison)
 
-
 **Deliverable:** Annual comprehensive report (20-30 pages) + audit-ready evidence package
 
 ### Who Conducts Assessments
@@ -145,17 +139,14 @@ This is NOT a separate assessment workbook - it's the **PROCESS** for conducting
 - **Quarterly:** Facilities Manager + Security Operations Manager (collaborative)
 - **Annual:** Internal Audit (independent assessment for audit readiness)
 
-
 **Reviewer (Secondary):**
 
 - Security Operations Manager (monthly)
 - CISO (quarterly/annual)
 
-
 **Approver:**
 
 - CISO (all assessments)
-
 
 ### Expected Outputs
 
@@ -193,7 +184,6 @@ Collect **automated metrics** (access logs, temperature data, utility uptime) wi
 - Export 30-day access log from access control system (previous month)
 - Format: CSV with columns: timestamp, user, door, result (granted/denied)
 
-
 **What to Calculate:**
 1. **Failed access attempts** (legitimate users denied due to insufficient privileges, anti-passback)
 
@@ -201,19 +191,16 @@ Collect **automated metrics** (access logs, temperature data, utility uptime) wi
    - Count: Number of failed attempts
    - Target: <5 per month
 
-
 2. **After-hours access events** (successful access outside business hours)
 
    - Filter: timestamp outside 07:00-18:00 AND result = "granted"
    - Count: Number of after-hours accesses
    - Verify: Cross-check against after-hours access authorization list
 
-
 **Document in Dashboard:**
 
 - Failed access attempts: [Count] (✅ if <5, ❌ if ≥5)
 - After-hours access: [Count] (verify all authorized)
-
 
 #### Step 2: Environmental Monitoring Data (Control A.7.5)
 
@@ -222,7 +209,6 @@ Collect **automated metrics** (access logs, temperature data, utility uptime) wi
 - Export 30-day temperature/humidity data from environmental monitoring system
 - Format: CSV with columns: timestamp, sensor_id, location, temperature, humidity
 
-
 **What to Calculate:**
 1. **Temperature excursions** (temperature outside acceptable range)
 
@@ -230,19 +216,16 @@ Collect **automated metrics** (access logs, temperature data, utility uptime) wi
    - Count: Number of excursion events (continuous period outside range = 1 event)
    - Target: <5 excursions per month per facility
 
-
 2. **Environmental incidents** (fire alarms, water damage, HVAC failures)
 
    - Query incident management system for environmental incidents in previous month
    - Count: Number of incidents
    - Target: 0 major incidents
 
-
 **Document in Dashboard:**
 
 - Temperature excursions: [Count] (✅ if <5, ⚠️ if 5-10, ❌ if >10)
 - Environmental incidents: [Count] (✅ if 0, ❌ if >0 major)
-
 
 #### Step 3: Utility Monitoring Data (Control A.7.11)
 
@@ -251,31 +234,26 @@ Collect **automated metrics** (access logs, temperature data, utility uptime) wi
 - Export 30-day utility uptime data (UPS, HVAC, ISP uptime/downtime)
 - UPS battery health reports (current battery health percentage)
 
-
 **What to Calculate:**
 1. **Power uptime** (UPS uptime percentage)
 
    - Calculate: (Total minutes - Downtime minutes) / Total minutes × 100%
    - Target: 99.99% (Tier 1 critical), 99.9% (Tier 2 standard)
 
-
 2. **HVAC uptime** (HVAC system uptime percentage)
 
    - Calculate: (Total minutes - Downtime minutes) / Total minutes × 100%
    - Target: 99.9% (Tier 1), 99% (Tier 2)
-
 
 3. **ISP uptime** (ISP circuit uptime percentage)
 
    - Calculate: Uptime % per ISP circuit
    - Target: ≥99.9% (verify meets ISP SLA)
 
-
 4. **UPS battery health** (battery capacity percentage)
 
    - Extract: Current battery health % from UPS monitoring
    - Target: >80% for all UPS
-
 
 **Document in Dashboard:**
 
@@ -283,7 +261,6 @@ Collect **automated metrics** (access logs, temperature data, utility uptime) wi
 - HVAC uptime: [XX.XX%] (✅ if ≥target, ❌ if <target)
 - ISP uptime: [XX.XX%] (✅ if ≥target, ❌ if <target)
 - UPS battery health: [List any UPS <80%] (✅ if all >80%, ❌ if any <80%)
-
 
 ### Dashboard Update Process
 
@@ -310,13 +287,11 @@ Navigate to "Executive Dashboard" worksheet.
 - UPS Battery Health: [Pass/Fail based on Step 3]
 - Environmental Incidents: [Count from Step 2]
 
-
 **Formulas auto-calculate:**
 
 - Overall Compliance Score (percentage)
 - Month-over-month trend (improving/declining)
 - Status indicators (green/amber/red)
-
 
 #### Step 3: Update Incident Trends Sheet
 
@@ -328,7 +303,6 @@ Navigate to "Incident Trends" worksheet.
 - Physical Security Incidents: [Count - from access control system or incident management]
 - Environmental Incidents: [Count - from Step 2]
 - Utility Incidents: [Count - from utility monitoring or incident management]
-
 
 **Chart auto-updates** showing 12-month incident trend
 
@@ -367,12 +341,10 @@ Findings:
 - Temperature excursions above target (7 events in Building A - HVAC capacity investigation required)
 - ISP uptime below SLA (Primary ISP outage 15.01.2026, 45 minutes - ticket #12345 with ISP)
 
-
 Recommendations:
 
 - Schedule HVAC capacity assessment for Building A (Q1 2026)
 - Review ISP SLA compliance with Primary ISP (request credit for outage)
-
 
 Dashboard attached: ISMS_Dashboard_Physical_Infrastructure_2026-01.xlsx
 
@@ -384,7 +356,6 @@ Date: [DD.MM.YYYY]
 
 - Email to: CISO, Facilities Manager, Security Operations Manager
 - Attachment: Dashboard workbook
-
 
 **Timeline:** Complete by 7th day of month
 
@@ -428,7 +399,6 @@ Follow the detailed procedures in:
 - **ISMS-IMP-A.7.4-5-11-S2** (Environmental Protection Assessment) - Complete all sheets
 - **ISMS-IMP-A.7.4-5-11-S3** (Utility Resilience Assessment) - Complete all sheets
 
-
 **Output:** Three completed assessment workbooks (S1, S2, S3) with compliance scores
 
 **Day 3: Facility Inspections (3-4 hours)**
@@ -440,38 +410,32 @@ Follow the detailed procedures in:
    - Test sample badge reader (badge swipe → door unlock)
    - Check for blind spots (entry/exit points without access control)
 
-
 2. **CCTV verification:**
 
    - Verify cameras online and recording (check NVR/VMS status)
    - Spot-check video quality (review sample footage)
    - Check for blind spots (coverage gaps)
 
-
 3. **Intrusion detection verification:**
 
    - Verify alarm panel online and armed (check panel status)
    - Test sample sensor (if possible without triggering full alarm)
-
 
 4. **Fire detection verification:**
 
    - Verify fire alarm panel online (check panel status)
    - Visual inspection of smoke detectors (no obstructions, no damage)
 
-
 5. **Environmental protection verification:**
 
    - Verify water detection sensors in place (server rooms, below-grade areas)
    - Verify temperature sensors online and reading correctly
-
 
 6. **Utility infrastructure verification:**
 
    - Verify UPS online and battery health acceptable (check UPS display)
    - Verify generator accessible and fuel level adequate (visual check)
    - Verify HVAC units running (listen for compressor, check airflow)
-
 
 **Document findings:** Note any discrepancies between documented systems and physical reality
 
@@ -502,7 +466,6 @@ Follow the detailed procedures in:
    - Key findings: [Top 3 findings requiring attention]
    - Recommendations: [Top 3 recommended actions]
 
-
 2. **Assessment Results by Control** (2-4 pages)
 
    - **Control A.7.4 (Physical Monitoring):** [XX%] - [Summary of findings]
@@ -518,13 +481,11 @@ Follow the detailed procedures in:
      - HVAC: [Score, key gaps if any]
      - Telecommunications: [Score, key gaps if any]
 
-
 3. **Detailed Findings** (1-2 pages)
 
    - Non-compliant items (red status)
    - Partial compliance items (amber status)
    - Root causes identified
-
 
 4. **Remediation Plan** (1-2 pages)
 
@@ -533,12 +494,10 @@ Follow the detailed procedures in:
    - Long-term actions (next 12 months)
    - Resource requirements (budget, personnel)
 
-
 5. **Appendices**
 
    - Appendix A: Compliance scores detail (from S1, S2, S3 dashboards)
    - Appendix B: Evidence register summary (count of evidence items collected)
-
 
 **Distribution:**
 
@@ -547,7 +506,6 @@ Follow the detailed procedures in:
 - Facilities Manager (operational owner)
 - Security Operations Manager (monitoring owner)
 - Internal Audit (compliance oversight)
-
 
 **Timeline:** Complete within 10 days after quarter-end
 
@@ -576,7 +534,6 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
 - Conduct facility inspections
 - Update dashboard
 
-
 **Day 5-7: Annual-Specific Testing Verification**
 
 **Verify annual tests completed (or overdue):**
@@ -588,14 +545,12 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
    - Evidence: Test report from certified technician
    - If overdue: Flag as critical gap, schedule immediately
 
-
 2. **Generator Full Load Test (100% Capacity)**
 
    - Required: Annual test at 100% load (vs. quarterly tests at 50% load)
    - Verify: Last test date within 12 months
    - Evidence: Generator test log showing 100% load achieved, runtime verified
    - If overdue: Flag as critical gap, schedule immediately
-
 
 3. **Sprinkler System Inspection**
 
@@ -604,7 +559,6 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
    - Evidence: Inspection report from certified technician
    - If overdue: Flag as critical gap, schedule immediately
 
-
 4. **Gas Suppression System Test** (if applicable - datacenters with gas suppression)
 
    - Required: Annual functional test (verify discharge sequence without full release)
@@ -612,14 +566,12 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
    - Evidence: Test report from gas suppression service provider
    - If overdue: Flag as critical gap, schedule immediately
 
-
 5. **Structural Inspection** (building integrity)
 
    - Required: Every 5 years (or as required by local building codes)
    - Verify: Last inspection within 5 years
    - Evidence: Structural engineer report
    - If overdue: Flag for scheduling (not critical if <6 years overdue)
-
 
 **Document in Annual Report:** Status of all annual-specific tests
 
@@ -635,13 +587,11 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
    - Check: Any operational changes requiring policy updates?
    - Verify: Regulatory applicability current (FINMA, DORA, NIS2 if applicable)
 
-
 2. **Implementation Guides (IMP-S1, S2, S3, S4)**
 
    - Review: Procedures current and accurate?
    - Check: Any process changes requiring procedure updates?
    - Verify: Assessment workbooks match procedures
-
 
 3. **Floor Plans and Diagrams**
 
@@ -652,7 +602,6 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
    - Fire detection floor plans (smoke detector locations)
    - Network diagrams (ISP connectivity, dual ISP paths)
    - Update: Any changes required (facility renovations, equipment moves)
-
 
 **Document in Annual Report:** Summary of documentation review (current/outdated)
 
@@ -690,13 +639,11 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
    - Fire marshal inspection (building-level)
    - Recent security assessments
 
-
 2. **Cloud provider compliance documentation:**
 
    - AWS/Azure/GCP compliance certifications (ISO 27001, SOC 2)
    - Physical security white papers
    - Shared responsibility model documentation
-
 
 **Review focus areas:**
 
@@ -705,7 +652,6 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
 - Utility resilience (power redundancy, generator capacity, ISP connectivity)
 - Verify no adverse findings in audit reports
 - Verify provider controls meet ISO 27001:2022 A.7.4/A.7.5/A.7.11 requirements
-
 
 **Document in Annual Report:** Third-party audit report summary
 
@@ -724,7 +670,6 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
    - ISP uptime (monthly percentage chart)
    - Identify: Seasonal patterns, degrading trends, improvements
 
-
 2. **Quarterly compliance scores (4 quarters):**
 
    - Overall compliance score (Q1, Q2, Q3, Q4)
@@ -733,14 +678,12 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
    - Control A.7.11 score trend
    - Year-over-year comparison (this year Q4 vs. last year Q4)
 
-
 3. **Incident analysis (12 months):**
 
    - Total incidents by type (physical security, environmental, utility)
    - Incident severity distribution (Critical, High, Medium, Low)
    - Top 5 incident root causes
    - Repeat incidents (same root cause multiple times)
-
 
 **Document in Annual Report:** Trend analysis with charts
 
@@ -756,14 +699,12 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
    - Key challenges: [Top 3 persistent gaps]
    - Audit readiness assessment: [Ready / Remediation required]
 
-
 2. **Assessment Results by Control** (5-10 pages)
 
    - Detailed results per control (A.7.4, A.7.5, A.7.11)
    - All facilities documented
    - All metrics with year-end status
    - Compliance score breakdown
-
 
 3. **Findings and Recommendations** (5-10 pages)
 
@@ -772,14 +713,12 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
    - Resource requirements (budget, personnel)
    - Timeline for remediation
 
-
 4. **Trend Analysis** (3-5 pages)
 
    - 12-month trend charts (all metrics)
    - Seasonal patterns identified
    - Year-over-year comparison
    - Incident analysis (types, root causes, repeat incidents)
-
 
 5. **Annual Testing Compliance** (2-3 pages)
 
@@ -790,7 +729,6 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
    - Structural inspection: [Date, Result if within 5 years]
    - Summary: All annual tests current? [Yes/No]
 
-
 6. **Documentation Review** (2-3 pages)
 
    - Policy/procedure review summary
@@ -798,13 +736,11 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
    - Evidence register verification results
    - Documentation gaps identified
 
-
 7. **Third-Party Audit Review** (1-2 pages if applicable)
 
    - Colocation provider audit report summary
    - Cloud provider compliance documentation review
    - No adverse findings? [Yes/No]
-
 
 8. **Audit Readiness Statement** (2-3 pages)
 
@@ -813,13 +749,11 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
    - Recommended audit timeline (if ready, or remediation timeline if not ready)
    - Audit preparation checklist
 
-
 9. **Next Year Plan** (2-3 pages)
 
    - Planned improvements (equipment upgrades, facility expansions)
    - Budget forecast (capital expenses, operational expenses)
    - Assessment process improvements (automation opportunities)
-
 
 **Distribution:**
 
@@ -828,7 +762,6 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
 - **External Auditors** (if preparing for ISO 27001 certification audit)
 - **Internal Audit** (audit evidence package)
 - All stakeholders from quarterly distribution
-
 
 **Timeline:** Complete within 30 days of starting annual assessment
 
@@ -909,7 +842,6 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
 - Avoid technical details unless specifically requested
 - Time: 5-10 minute presentation
 
-
 **For Operational Reviews (Facilities/Security teams):**
 
 - Deep dive into "Metrics Detail" sheet
@@ -917,14 +849,12 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
 - Discuss root causes, remediation effectiveness
 - Time: 30-60 minute review
 
-
 **For Audit Evidence (Internal/External Auditors):**
 
 - Present dashboard as summary of continuous compliance monitoring
 - Reference S1, S2, S3 workbooks as detailed evidence
 - Demonstrate monthly/quarterly/annual assessment rigor
 - Time: Auditor-driven (provide dashboard + workbooks for auditor self-review)
-
 
 ---
 
@@ -941,7 +871,6 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
 - [ ] Monthly summary report generated
 - [ ] Distributed to stakeholders by 7th day of month
 
-
 **Quarterly Assessment:**
 
 - [ ] S1, S2, S3 assessments completed (all sheets)
@@ -950,7 +879,6 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
 - [ ] Dashboard updated with quarterly scores
 - [ ] Quarterly report generated (5-10 pages)
 - [ ] Distributed to stakeholders within 10 days after quarter-end
-
 
 **Annual Assessment:**
 
@@ -964,7 +892,6 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
 - [ ] Audit readiness statement included
 - [ ] Distributed to Board/Executive/Auditors within 30 days
 
-
 ### Approval Workflow
 
 **Monthly Assessment:**
@@ -973,14 +900,12 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
 - **Level 2:** CISO (review and approval)
 - Timeline: Complete within 7 days of month-end
 
-
 **Quarterly Assessment:**
 
 - **Level 1:** Assessor (Facilities Manager + Security Operations Manager)
 - **Level 2:** CISO (review and approval)
 - **Level 3:** Executive Management (acknowledgment)
 - Timeline: Complete within 10 days after quarter-end
-
 
 **Annual Assessment:**
 
@@ -989,7 +914,6 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
 - **Level 3:** CISO (executive approval)
 - **Level 4:** Board of Directors (governance oversight if applicable)
 - Timeline: Complete within 30 days
-
 
 ---
 
@@ -1175,7 +1099,6 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
 - Role column: Bold text, gray background
 - Input cells: Yellow background
 
-
 ---
 
 ## Assessment Integration
@@ -1188,13 +1111,11 @@ Conduct **audit-readiness assessment** - comprehensive evaluation of all physica
 - Manually entered into dashboard (no automated import)
 - Frequency: Monthly
 
-
 **Quarterly Manual Assessment:**
 
 - Data flows: S1, S2, S3 compliance scores → Dashboard "Executive Dashboard" sheet
 - Manually imported from S1/S2/S3 Summary Dashboards
 - Frequency: Quarterly
-
 
 **Data Flow Diagram:**
 
@@ -1302,12 +1223,10 @@ Dashboard Consolidation
 - Annual reports: Permanent
 - Supporting evidence (screenshots, logs, inspection reports): 3 years minimum
 
-
 **Backup:**
 
 - All evidence backed up weekly to offsite storage
 - Annual reports backed up to permanent archive
-
 
 ### Audit Deliverable Package
 
@@ -1320,18 +1239,15 @@ Dashboard Consolidation
    - All 4 quarterly reports
    - Annual comprehensive report
 
-
 2. **Evidence Register:**
 
    - Consolidated evidence register from all S1, S2, S3 assessments
    - Index of all evidence files (file name, location, what it demonstrates)
 
-
 3. **Policies and Procedures:**
 
    - ISMS-POL-A.7.4-5-11 (Consolidated Policy)
    - ISMS-IMP-A.7.4-5-11-S1, S2, S3, S4 (Implementation Guides)
-
 
 4. **Trending and Analysis:**
 
@@ -1339,19 +1255,16 @@ Dashboard Consolidation
    - Year-over-year comparison
    - Incident analysis summary
 
-
 5. **Remediation Tracking:**
 
    - Gap remediation tracker (from Dashboard Sheet 5 "Recommendations")
    - Status of all identified gaps (Complete, In Progress, Planned)
-
 
 **Audit Timeline:**
 
 - External auditor typically requests evidence 2-4 weeks before on-site audit
 - Prepare audit deliverable package during annual assessment (November)
 - Keep updated through Q1 (typical audit season)
-
 
 ---
 

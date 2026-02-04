@@ -35,13 +35,11 @@
 - Compliance: Legal/Compliance Officer
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-IMP-A.5.7 (Implementation Guidance Suite)
 - ISO/IEC 27001:2022 Control A.5.7
-
 
 ---
 
@@ -58,7 +56,6 @@ This policy establishes [Organization]'s requirements for threat intelligence to
 - All intelligence sources (commercial platforms, OSINT, government feeds, internal telemetry)
 - All organizational personnel involved in security operations
 - All security tools integrating threat intelligence
-
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00, including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Sector-specific requirements (PCI DSS, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
 
@@ -86,7 +83,6 @@ This policy establishes [Organization]'s requirements for threat intelligence to
 - Organizational roles and responsibilities
 - Exception and governance frameworks
 
-
 **This Policy Does NOT Address** (HOW - see ISMS-IMP-A.5.7):
 
 - Technical implementation details and platform configuration
@@ -95,7 +91,6 @@ This policy establishes [Organization]'s requirements for threat intelligence to
 - Specific KPI measurement methodologies
 - IOC deployment procedures
 - Source evaluation scoring criteria
-
 
 ## Organizational Coverage
 
@@ -107,14 +102,12 @@ This policy establishes [Organization]'s requirements for threat intelligence to
 - Third-party service providers with access to threat intelligence
 - All organizational locations and business units
 
-
 **Out of Scope**:
 
 - Offensive cyber operations or retaliatory actions (prohibited)
 - Law enforcement investigations (cooperation supported, not conducted)
 - Vulnerability scanning and penetration testing (covered under Control A.8.8)
 - Threat hunting operations (covered under Control A.8.16)
-
 
 ---
 
@@ -132,14 +125,12 @@ This policy establishes [Organization]'s requirements for threat intelligence to
 - **Industry Sharing (ISAC/ISAO)**: Sector-specific threats and peer collaboration (recommended)
 - **Internal Telemetry**: Security tool alerts, incident data, forensic findings
 
-
 **Source Management Requirements**:
 
 - All sources SHALL be evaluated for reliability and credibility before operationalization
 - Sources SHALL be validated periodically for accuracy and performance
 - Data protection requirements SHALL be applied to all collected intelligence
 - Third-party sharing SHALL be governed by Traffic Light Protocol (TLP) classifications
-
 
 **Implementation Reference**: Source inventory and evaluation criteria documented in ISMS-IMP-A.5.7.1.
 
@@ -155,20 +146,17 @@ This policy establishes [Organization]'s requirements for threat intelligence to
 - Risk-based security investment recommendations
 - Produced at minimum quarterly, or triggered by significant events
 
-
 **Tactical Intelligence** (Security Operations Audience):
 
 - Threat actor profiles and TTPs
 - Campaign analysis and attack patterns
 - Produced at minimum monthly, or triggered by emerging threats
 
-
 **Operational Intelligence** (Technical Audience):
 
 - Indicators of Compromise (IOCs) for detection
 - Malware signatures and behavioral indicators
 - Produced continuously via automated feeds, with daily analyst review
-
 
 **Quality Requirements**:
 
@@ -177,7 +165,6 @@ This policy establishes [Organization]'s requirements for threat intelligence to
 - Intelligence SHALL be connected to [Organization]'s threat model and assets
 - Intelligence SHALL include actionable recommendations or detection guidance
 - Intelligence SHALL be classified using TLP and internal classification schemes
-
 
 **Implementation Reference**: Analysis frameworks and production metrics documented in ISMS-IMP-A.5.7.2.
 
@@ -193,13 +180,11 @@ This policy establishes [Organization]'s requirements for threat intelligence to
 - Risk Management SHALL receive threat data for risk assessment updates
 - IT Operations SHALL receive infrastructure-relevant blocking guidance
 
-
 **Sharing Controls**:
 
 - External sharing SHALL be governed by Traffic Light Protocol (TLP)
 - Intelligence consumers SHALL provide feedback on intelligence effectiveness
 - Bidirectional feedback loops SHALL be established between consumers and producers
-
 
 **Implementation Reference**: Dissemination tracking and stakeholder engagement documented in ISMS-IMP-A.5.7.3.
 
@@ -215,12 +200,10 @@ Threat intelligence SHALL inform [Organization]'s risk assessment process per IS
 - Threat intelligence recommendations SHALL inform control selection and prioritization
 - Risk register updates SHALL cross-reference supporting threat intelligence reports
 
-
 **Documentation Requirements**:
 
 - Each risk assessment update SHALL document the threat intelligence source
 - Traceability between threat intelligence reports and risk register entries SHALL be maintained
-
 
 **Implementation Reference**: Risk integration tracking documented in ISMS-IMP-A.5.7.3.
 
@@ -236,7 +219,6 @@ Threat intelligence SHALL enhance incident detection, investigation, and respons
 - Incident findings SHALL contribute to internal threat intelligence collection
 - Post-incident reviews SHALL validate threat intelligence effectiveness
 
-
 **Implementation Reference**: Incident-TI integration tracking documented in ISMS-IMP-A.5.7.3.
 
 ## Vulnerability Management Integration (OPTIONAL)
@@ -248,7 +230,6 @@ When [Organization] implements Control A.8.8 (Management of Technical Vulnerabil
 - Vulnerability intelligence SHALL combine CVE data with exploitation status
 - Active exploitation intelligence SHALL inform remediation prioritization
 - CVSS scores combined with threat intelligence SHALL enable risk-based prioritization
-
 
 **Implementation Reference**: When implemented, VulnerabilityThreatLink integration documented in ISMS-IMP-A.5.7.2 and ISMS-IMP-A.8.8.
 
@@ -265,12 +246,10 @@ When [Organization] implements Control A.8.8 (Management of Technical Vulnerabil
 - Security decisions informed by threat intelligence
 - Stakeholder satisfaction with intelligence products
 
-
 **Program Maturity**:
 
 - [Organization] SHALL assess threat intelligence program maturity annually
 - Assessment SHALL cover collection, analysis, dissemination, operationalization, and governance
-
 
 **Implementation Reference**: Effectiveness metrics and KPI tracking documented in ISMS-IMP-A.5.7.4.
 
@@ -302,14 +281,12 @@ When [Organization] implements Control A.8.8 (Management of Technical Vulnerabil
 - Risk-related: TI Team Lead → CRO → CISO → Executive Management
 - Security incidents: Anyone → SOC → Incident Response → CISO
 
-
 ## Training Requirements
 
 - **All Personnel**: Annual security awareness including threat landscape overview
 - **TI Analysts**: Specialized training on analysis frameworks and report writing
 - **SOC Staff**: Training on TI operationalization and IOC deployment
 - **Security Leadership**: Strategic threat intelligence briefings
-
 
 ## Business Continuity
 
@@ -319,7 +296,6 @@ When [Organization] implements Control A.8.8 (Management of Technical Vulnerabil
 - Source redundancy for critical intelligence categories
 - Documented failover procedures for threat intelligence platform
 - Annual business continuity testing for threat intelligence operations
-
 
 ---
 
@@ -356,7 +332,6 @@ Exceptions to threat intelligence requirements require documented business justi
 - Resource exceptions (insufficient headcount)
 - KPI target exceptions (newly implemented program)
 
-
 **Exception Requirements**:
 
 - Time-limited with explicit expiration dates
@@ -364,12 +339,10 @@ Exceptions to threat intelligence requirements require documented business justi
 - Quarterly review of exception necessity
 - Evidence of progress toward full compliance
 
-
 **Approval Authority**:
 
 - CISO: Source, integration, and KPI exceptions
 - CISO + Executive Management: Resource exceptions
-
 
 **Documentation**: Exception requests and approvals maintained in exception register.
 
@@ -383,13 +356,11 @@ When threat intelligence identifies imminent or active threats, incident respons
 - Medium/Low severity findings: Standard intelligence dissemination process
 - Emergency briefings: CISO briefed per incident severity classification
 
-
 **Coordination Requirements**:
 
 - Threat Intelligence Team supports incident investigations
 - Incident Response Team extracts IOCs for intelligence sharing
 - Post-incident reviews assess threat intelligence effectiveness
-
 
 ---
 
@@ -402,13 +373,11 @@ When threat intelligence identifies imminent or active threats, incident respons
 - **Reviewers**: CISO, Threat Intelligence Team Lead, Security Team, Risk Management, Compliance
 - **Approval**: CISO (technical), Executive Management (strategic)
 
-
 ## Policy Updates
 
 - **Minor** (clarifications, references): CISO approval, communication within 30 days
 - **Major** (scope changes, new requirements): Full approval chain
 - **Emergency** (critical threats): CISO approval, immediate communication
-
 
 ## Implementation Standards
 
@@ -426,7 +395,6 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - **Statement of Applicability** (Clause 6.1.3): Control A.5.7 applicability documented
 - **Internal Audit** (Clause 9.2): Threat intelligence program included in ISMS audit scope
 - **Continual Improvement** (Clause 10): Metrics contribute to ISMS performance evaluation
-
 
 ## Related Controls
 
@@ -446,7 +414,6 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - **ISMS-IMP-A.5.7.3**: Intelligence Integration & Distribution Assessment
 - **ISMS-IMP-A.5.7.4**: Effectiveness Dashboard
 - **ISMS-IMP-A.5.7.5**: Standalone Executive Dashboard
-
 
 ---
 

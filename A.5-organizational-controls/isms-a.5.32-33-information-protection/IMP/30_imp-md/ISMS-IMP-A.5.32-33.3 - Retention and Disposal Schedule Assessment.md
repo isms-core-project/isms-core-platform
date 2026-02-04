@@ -76,7 +76,6 @@ This assessment documents the **lifecycle management** of organisational records
 - How is secure destruction verified and documented?
 - What exception processes exist for retention extension or early disposal?
 
-
 ### Key Principle
 
 Proper retention and disposal balances two competing requirements:
@@ -94,7 +93,6 @@ Proper retention and disposal balances two competing requirements:
 - **Compliance Monitoring** for schedule adherence
 - **Gap Analysis** identifying retention/disposal issues
 - **Evidence Register** linking documentation to audit artefacts
-
 
 ### How This Relates to Other A.5.32-33 Assessments
 
@@ -115,7 +113,6 @@ Proper retention and disposal balances two competing requirements:
 4. **IT Operations** - Executes electronic disposal, provides destruction evidence
 5. **Compliance Officer** - Monitors compliance, reviews regulatory changes
 
-
 ### Required Skills
 
 - Understanding of records retention regulations
@@ -123,12 +120,10 @@ Proper retention and disposal balances two competing requirements:
 - Familiarity with secure disposal methods
 - Ability to track retention periods across record categories
 
-
 ### Time Commitment
 
 - **Initial assessment:** 12-20 hours (depending on record complexity)
 - **Annual updates:** 4-8 hours (regulatory review, schedule updates)
-
 
 ## Expected Outputs
 
@@ -143,7 +138,6 @@ Upon completion, you will have:
 7. **Compliance Report** - Schedule adherence metrics
 8. **Gap Analysis** - Issues with remediation plans
 9. **Evidence Register** - Supporting documentation
-
 
 ---
 
@@ -161,14 +155,12 @@ Before starting this assessment, gather:
 - Sector-specific regulations (FINMA, healthcare, etc.)
 - GDPR storage limitation requirements
 
-
 ### Contractual Requirements
 
 - Customer contract data retention clauses
 - Vendor agreement retention requirements
 - Partnership/joint venture retention terms
 - Insurance policy requirements
-
 
 ### Business Requirements
 
@@ -177,14 +169,12 @@ Before starting this assessment, gather:
 - Audit trail requirements
 - Knowledge management needs
 
-
 ### Current Documentation
 
 - Existing retention schedule (if any)
 - Previous disposal records
 - Legal hold register
 - Records inventory from A.5.32-33.2
-
 
 ## Access Required
 
@@ -195,20 +185,17 @@ Before starting this assessment, gather:
 - [ ] Backup systems
 - [ ] Destruction vendor portals
 
-
 **Documents:**
 - [ ] Regulatory requirements documentation
 - [ ] Contract archive (for retention clauses)
 - [ ] Previous destruction certificates
 - [ ] Legal hold notices
 
-
 **People:**
 - [ ] Legal Counsel for regulatory interpretation
 - [ ] IT for electronic disposal capabilities
 - [ ] Department heads for business requirements
 - [ ] Destruction vendors for service documentation
-
 
 ---
 
@@ -251,7 +238,6 @@ Before starting this assessment, gather:
 4. Obtain records inventory from A.5.32-33.2
 5. Schedule meetings with Legal Counsel
 
-
 ### Phase 2: Define Retention Schedule (4-8 hours)
 
 **Objective:** Establish retention periods for all record categories
@@ -265,20 +251,17 @@ Before starting this assessment, gather:
    - GDPR: Purpose-based (storage limitation)
    - Sector-specific requirements
 
-
 2. **Contractual Review:**
 
    - Review customer contracts for data retention clauses
    - Review vendor agreements
    - Identify contractual minimums and maximums
 
-
 3. **Business Requirements:**
 
    - Interview department heads
    - Identify operational access needs
    - Document historical reference needs
-
 
 4. **Complete Retention Schedule (Sheet 2):**
 
@@ -287,7 +270,6 @@ Before starting this assessment, gather:
    - Retention basis (regulatory, contractual, business)
    - Retention trigger (creation, last activity, contract end)
    - Review cycle
-
 
 **Deliverable:** Complete Sheet 2 (Retention Schedule)
 
@@ -304,12 +286,10 @@ Before starting this assessment, gather:
    - Penalties for non-compliance
    - Last review date
 
-
 2. **Complete Sheet 3 (Regulatory Mapping):**
 
    - Comprehensive regulatory reference
    - Cross-reference to retention schedule
-
 
 **Deliverable:** Complete Sheet 3 (Regulatory Mapping)
 
@@ -324,7 +304,6 @@ Before starting this assessment, gather:
    - Identify records approaching retention end
    - Check for legal holds affecting disposal
 
-
 2. **Complete Sheet 4 (Disposal Queue):**
 
    - Record category
@@ -333,7 +312,6 @@ Before starting this assessment, gather:
    - Legal hold status
    - Disposal priority
    - Target disposal date
-
 
 **Deliverable:** Complete Sheet 4 (Disposal Queue)
 
@@ -351,7 +329,6 @@ Before starting this assessment, gather:
    | Internal | Standard shredding P-3 | Standard deletion with verification |
    | Public | Recycling | Standard deletion |
 
-
 2. **Complete Sheet 5 (Disposal Method Matrix):**
 
    - Classification level
@@ -359,7 +336,6 @@ Before starting this assessment, gather:
    - Electronic media method
    - Required verification
    - Approved vendors
-
 
 **Deliverable:** Complete Sheet 5 (Disposal Method Matrix)
 
@@ -375,7 +351,6 @@ Before starting this assessment, gather:
    - Witness statements for sensitive destruction
    - Media destruction reports
 
-
 2. **Complete Sheet 6 (Destruction Verification):**
 
    - Destruction event ID
@@ -386,7 +361,6 @@ Before starting this assessment, gather:
    - Performed by
    - Certificate reference
    - Verification status
-
 
 **Deliverable:** Complete Sheet 6 (Destruction Verification)
 
@@ -401,13 +375,11 @@ Before starting this assessment, gather:
    - Business-critical extensions
    - Regulatory examination periods
 
-
 2. **Early Disposal:**
 
    - Business need (approved)
    - Risk-based disposal (approved)
    - Data subject erasure requests
-
 
 3. **Complete Sheet 7 (Exception Register):**
 
@@ -418,7 +390,6 @@ Before starting this assessment, gather:
    - Approval (who, when)
    - New retention period
    - Status
-
 
 **Deliverable:** Complete Sheet 7 (Exception Register)
 
@@ -434,7 +405,6 @@ Before starting this assessment, gather:
    - Records retained past maximum
    - Exception rate
 
-
 2. **Complete Sheet 8 (Compliance Dashboard):**
 
    - Metric name
@@ -442,7 +412,6 @@ Before starting this assessment, gather:
    - Current value
    - Trend
    - Status
-
 
 **Deliverable:** Complete Sheet 8 (Compliance Dashboard)
 
@@ -459,14 +428,12 @@ Before starting this assessment, gather:
    - Non-compliant disposal methods
    - Unapproved exceptions
 
-
 2. **Complete Sheet 9 (Gap Analysis):**
 
    - Gap description
    - Risk rating
    - Remediation action
    - Owner and due date
-
 
 **Deliverable:** Complete Sheet 9 (Gap Analysis)
 
@@ -477,7 +444,6 @@ Before starting this assessment, gather:
 ### Phase 11: Review & Approval (1-2 hours)
 
 **Complete Sheet 11 (Approval & Sign-Off)**
-
 
 ---
 
@@ -499,7 +465,6 @@ Before starting this assessment, gather:
 | Next Review | Date of next review | 2026-12-15 |
 | Notes | Additional information | Includes all sub-ledgers |
 
-
 ## Sheet 3: Regulatory Mapping
 
 **Required Fields:**
@@ -514,7 +479,6 @@ Before starting this assessment, gather:
 | Penalty for Non-Compliance | Consequences | Administrative fines, audit findings |
 | Last Review | When last verified | 2025-11-01 |
 | Notes | Additional context | 10 years from end of fiscal year |
-
 
 ## Sheet 4: Disposal Queue
 
@@ -532,7 +496,6 @@ Before starting this assessment, gather:
 | Assigned To | Responsible person | Records Manager |
 | Status | Pending/In Progress/Complete | Pending |
 
-
 ## Sheet 5: Disposal Method Matrix
 
 **Required Fields:**
@@ -546,7 +509,6 @@ Before starting this assessment, gather:
 | Verification Required | What proof needed | Certificate of destruction |
 | Approved Vendors | Who can perform | SecureShred AG, IT Internal |
 | Special Handling | Additional requirements | Witnessed for Restricted |
-
 
 ## Sheet 6: Destruction Verification
 
@@ -563,7 +525,6 @@ Before starting this assessment, gather:
 | Certificate Reference | Document ID | CERT-SS-2026-0342 |
 | Storage Location | Where certificate stored | SharePoint/ISMS/Destruction |
 | Verification Status | Verified/Pending | Verified |
-
 
 ## Sheet 7: Exception Register
 
@@ -582,7 +543,6 @@ Before starting this assessment, gather:
 | Expiration | When exception ends | Until case resolution |
 | Status | Active/Expired/Cancelled | Active |
 
-
 ## Sheet 8: Compliance Dashboard
 
 **Required Fields:**
@@ -598,7 +558,6 @@ Before starting this assessment, gather:
 | Owner | Responsible person | Records Manager |
 | Last Updated | When calculated | 2026-02-01 |
 
-
 ---
 
 # Evidence Collection
@@ -610,19 +569,16 @@ Before starting this assessment, gather:
 - Contract extracts with retention clauses
 - Business justification documentation
 
-
 **Disposal:**
 - Certificates of destruction
 - Vendor contracts and certifications
 - Internal disposal logs
 - Witness statements (for sensitive records)
 
-
 **Compliance:**
 - Disposal tracking reports
 - Exception approval documentation
 - Legal hold notices
-
 
 ## Evidence Storage
 
@@ -768,7 +724,6 @@ Store all evidence in:
 | J | Next Review | 12 | Date |
 | K | Notes | 35 | - |
 
-
 ## Sheet 3: Regulatory_Mapping
 
 ### Column Structure
@@ -785,7 +740,6 @@ Store all evidence in:
 | H | Last Review | 12 | Date |
 | I | Reviewer | 20 | - |
 | J | Notes | 35 | - |
-
 
 ## Sheet 4: Disposal_Queue
 
@@ -805,7 +759,6 @@ Store all evidence in:
 | J | Status | 15 | List: Pending, In Progress, Complete, On Hold |
 | K | Notes | 30 | - |
 
-
 ## Sheet 5: Disposal_Method_Matrix
 
 ### Column Structure
@@ -820,7 +773,6 @@ Store all evidence in:
 | F | Verification Required | 20 | - |
 | G | Approved Vendors | 25 | - |
 | H | Special Handling | 25 | - |
-
 
 ## Sheet 6: Destruction_Verification
 
@@ -838,7 +790,6 @@ Store all evidence in:
 | H | Certificate Reference | 20 | - |
 | I | Storage Location | 30 | - |
 | J | Verification Status | 15 | List: Verified, Pending, Not Verified |
-
 
 ## Sheet 7: Exception_Register
 
@@ -858,7 +809,6 @@ Store all evidence in:
 | J | Expiration | 15 | - |
 | K | Status | 12 | List: Active, Expired, Cancelled |
 
-
 ## Sheet 8: Compliance_Dashboard
 
 ### Column Structure
@@ -874,7 +824,6 @@ Store all evidence in:
 | G | Status | 15 | List: On Target, At Risk, Below Target |
 | H | Owner | 20 | - |
 | I | Last Updated | 12 | Date |
-
 
 ## Sheet 9: Gap_Analysis
 
@@ -892,7 +841,6 @@ Store all evidence in:
 | H | Due Date | 12 | Date |
 | I | Status | 15 | List: Open, In Progress, Complete |
 
-
 ## Sheet 10: Evidence_Register
 
 ### Column Structure
@@ -907,7 +855,6 @@ Store all evidence in:
 | F | Collected Date | 12 | Date |
 | G | Collected By | 20 | - |
 | H | Verification Status | 18 | List: Verified, Pending, Expired |
-
 
 ## Sheet 11: Approval_SignOff
 

@@ -45,12 +45,10 @@ This document consists of two parts:
   - Cell Styling Reference
   - Python Script Usage Notes
 
-
 **Target Audiences:**
 
 - **Part I:** Assessment users (InfoSec Team, SOC, IT Ops, DPO, Legal/Compliance)
 - **Part II:** Workbook developers (Python/Excel script maintainers)
-
 
 ---
 
@@ -75,13 +73,11 @@ This assessment evaluates LOG PROTECTION AND RETENTION - how logs are protected 
 - Are tamper detection mechanisms in place and working?
 - Is secure disposal implemented after retention period expires?
 
-
 **What This Assessment Is NOT:**
 
 - NOT about which systems are logging (that's IMP-A.8.15.1 - Log Source Inventory)
 - NOT about log collection infrastructure (that's IMP-A.8.15.2 - Log Collection)
 - NOT about log review procedures (that's IMP-A.8.15.4 - Log Analysis & Review)
-
 
 This is purely about **PROTECTION** (integrity, access control) and **RETENTION** (compliance with retention requirements).
 
@@ -96,7 +92,6 @@ This assessment verifies [Organization]'s compliance with:
 - **PCI DSS Requirement 10.3** (if applicable): Log integrity protection and access control
 - **GDPR Article 32** (if applicable): Security measures including integrity and confidentiality of logs
 
-
 **Security Impact**:
 
 - **Attackers modify logs to hide tracks** - integrity protection prevents evidence destruction
@@ -104,13 +99,11 @@ This assessment verifies [Organization]'s compliance with:
 - **Premature log deletion** - retention compliance ensures evidence available for investigations
 - **Privacy violations** - logging excessive personal data creates GDPR violations
 
-
 **Compliance Impact**:
 
 - **Major non-conformity** if logs not protected from tampering (ISO 27001 audit finding)
 - **Regulatory fines** if retention requirements not met (PCI DSS, HIPAA, SOX violations)
 - **Privacy violations** if personal data logged unnecessarily (GDPR/nDSG fines)
-
 
 **Audit Evidence**: This assessment workbook provides **objective evidence** of log protection and retention compliance.
 
@@ -135,7 +128,6 @@ This assessment verifies [Organization]'s compliance with:
 - **Retention Compliance**: 85-100% (most categories compliant, occasional gaps in archive tiers)
 - **Privacy Compliance**: 80-95% (some legacy logs contain excessive personal data)
 - **Gaps Identified**: 10-25 findings requiring remediation
-
 
 ## Relationship to Other Assessments
 
@@ -191,7 +183,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - You can still proceed, but will need to document storage architecture manually
 - Sheet 3 will reference IMP-A.8.15.2 if available, otherwise manual entry required
 
-
 ## Required Access
 
 **SIEM/Storage Platform Access**:
@@ -201,7 +192,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Ability to view audit logs (who accessed logging infrastructure)
 - Permission to test tamper detection (if available in test environment)
 
-
 **Policy & Documentation Access**:
 
 - Data classification policy (to verify log data classifications)
@@ -209,14 +199,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Privacy policy and DPIA documentation (for privacy assessment)
 - Legal hold procedures (if any active legal holds)
 
-
 **Operational Records**:
 
 - Access control change logs (who granted/revoked log access)
 - Retention compliance reports (quarterly/annual reports)
 - Disposal records (evidence of secure log deletion)
 - Legal hold documentation (active holds, chain of custody)
-
 
 ## Required Personnel
 
@@ -227,7 +215,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - **Information Security Manager**: Understands access control requirements, integrity protection needs
 - **SIEM Administrator**: Knows technical configuration, retention settings
 
-
 **Supporting Input Required From**:
 
 - **SOC Team**: Access control needs, operational experience with log access
@@ -235,7 +222,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - **Data Protection Officer (DPO)**: Privacy requirements, GDPR/nDSG compliance
 - **Legal/Compliance**: Retention requirements, legal hold procedures, regulatory obligations
 - **Internal Audit**: Audit perspective, compliance verification needs
-
 
 **Estimated Time**: 10-15 hours (distributed across multiple personnel over 2-3 weeks)
 
@@ -248,7 +234,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Identity management system (to verify role assignments)
 - Previous IMP-A.8.15.2 workbook (storage architecture reference)
 
-
 **Documentation**:
 
 - SIEM access control matrix (roles and permissions)
@@ -256,7 +241,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Privacy impact assessment (DPIA) for logging
 - Regulatory requirements documentation (PCI DSS, HIPAA, SOX applicability)
 - Previous assessment results (if repeat assessment)
-
 
 ---
 
@@ -271,18 +255,15 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Sheet 3: Integrity Protection Assessment (WORM, signatures, hashing, encryption)
 - Sheet 4: Tamper Detection Testing (alert verification, integrity checks)
 
-
 **Phase 2: Retention & Disposal (Sheets 5-6)**
 
 - Sheet 5: Retention Compliance Tracking (policy vs. actual retention per log category)
 - Sheet 6: Disposal Procedures Verification (secure deletion implementation)
 
-
 **Phase 3: Privacy & Legal (Sheets 7-8)**
 
 - Sheet 7: Privacy Impact Assessment (data minimization, prohibited data, GDPR compliance)
 - Sheet 8: Legal Hold Management (active holds, chain of custody)
-
 
 **Phase 4: Review & Approval (Sheets 9-11)**
 
@@ -290,14 +271,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Sheet 10: Evidence Register (document all supporting evidence)
 - Sheet 11: Approval Sign-Off (three-level approval process)
 
-
 **Estimated Timeline**:
 
 - Phase 1: 4-6 hours (access control and protection mechanisms)
 - Phase 2: 3-4 hours (retention compliance and disposal)
 - Phase 3: 2-3 hours (privacy assessment and legal hold)
 - Phase 4: 2-3 hours (gap analysis, evidence, approvals)
-
 
 **Total**: 11-16 hours (spread over 2-3 weeks to gather cross-functional input)
 
@@ -311,20 +290,17 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - SIEM Administrator completes integrity protection assessment (Sheet 3)
 - IT Operations provides retention configuration (Sheet 5)
 
-
 **Week 2**:
 
 - DPO completes privacy impact assessment (Sheet 7)
 - Legal/Compliance reviews legal hold procedures (Sheet 8)
 - InfoSec Manager coordinates tamper detection testing (Sheet 4)
 
-
 **Week 3**:
 
 - Cross-functional gap analysis workshop (Sheet 9)
 - Evidence collection and consolidation (Sheet 10)
 - Approval process initiated (Sheet 11)
-
 
 ## Data Collection Methods
 
@@ -335,14 +311,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Analyze access logs (who actually accessed logs in last 90 days)
 - Interview SOC team (understand operational access needs)
 
-
 **Integrity Protection Assessment**:
 
 - Review SIEM storage configuration (WORM enabled? Encryption?)
 - Test tamper detection (attempt log modification in test environment)
 - Verify cryptographic implementations (hashing algorithms, signature methods)
 - Check separation of duties (log admins != system admins)
-
 
 **Retention Compliance Tracking**:
 
@@ -351,15 +325,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Check retention configuration (automated vs. manual enforcement)
 - Review disposal records (evidence retention periods being enforced)
 
-
 **Privacy Assessment**:
 
 - Review log samples (check for prohibited data types per policy Section 2.5)
 - Interview application owners (understand what's being logged)
 - Assess data minimization (is all logged data necessary?)
 - Verify GDPR/nDSG compliance (purpose limitation, transparency)
-
-
 
 ---
 
@@ -395,7 +366,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Access Review Date (When was this access last reviewed and approved?)
 - Access Approved By (Who authorized this access?)
 
-
 **Policy Requirements (from ISMS-POL-A.8.15 Section 2.2)**:
 
 - **Read access restricted to**: SOC analysts, security engineers, InfoSec Manager, CISO, authorized auditors
@@ -404,14 +374,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - **Separation of duties**: System administrators SHALL NOT have administrative access to logging infrastructure
 - **Log access SHALL be logged**: Logging the log access for accountability
 
-
 **Verification Methods**:
 
 - Export user list from SIEM (all users with any log access)
 - Review RBAC configuration (role definitions, assigned permissions)
 - Analyze access audit logs (who accessed logs in last 90 days)
 - Compare against policy requirements (identify excessive or inappropriate access)
-
 
 **Common Findings**:
 
@@ -421,7 +389,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - No access review process (stale permissions never revoked)
 - Log access not logged (no audit trail of who viewed logs)
 
-
 **Compliance Scoring**:
 
 - % of users with justified, approved access
@@ -430,7 +397,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Access logging enabled (yes/no)
 - Regular access reviews conducted (quarterly minimum per policy)
 
-
 **Evidence Required**:
 
 - SIEM user export (list of all users and roles)
@@ -438,7 +404,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Access audit log samples (showing access is logged)
 - Access review documentation (quarterly review records)
 - Approval records (who approved each user's access)
-
 
 **Time**: 2-3 hours
 
@@ -473,13 +438,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
   - Local Log Retention (Are local logs retained on source systems? For how long?)
   - Local Log Protection (If local logs exist, are they protected from deletion?)
 
-
 **For Critical Systems** (per IMP-A.8.15.1 Criticality = "Critical"):
 
 - Enhanced Protection Required (Policy Section 2.2: WORM or cryptographic signing for critical systems)
 - Protection Level Verified (Does protection meet policy requirement?)
 - Gap Identified (If critical system logs not adequately protected)
-
 
 **Protection Testing** (if feasible):
 
@@ -487,7 +450,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Modification Attempt (Attempt to modify/delete log in test environment)
 - Detection Result (Was modification blocked? Alert generated?)
 - Evidence Collected (Screenshot of blocked modification, alert notification)
-
 
 **Policy Compliance** (ISMS-POL-A.8.15 Section 2.2):
 
@@ -497,7 +459,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Separation of duties (enforced for logging infrastructure)
 - Access control (write access restricted to logging processes only)
 
-
 **Compliance Scoring**:
 
 - % of critical log sources with WORM or cryptographic protection
@@ -506,14 +467,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Separation of duties enforced (yes/no binary)
 - Overall integrity protection score (weighted average)
 
-
 **Evidence Required**:
 
 - WORM configuration documentation (vendor spec, configuration screenshot)
 - Cryptographic implementation details (algorithms, key management)
 - Tamper detection test results (modification attempt blocked/detected)
 - Separation of duties verification (role segregation confirmed)
-
 
 **Time**: 3-4 hours (includes testing if feasible)
 
@@ -533,7 +492,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Actual Result: Document what happened
 - Pass/Fail: Pass if blocked or detected, Fail if modification successful without detection
 
-
 **Scenario 2: Log Deletion Attempt**:
 
 - Test Setup: Identify test logs within retention period
@@ -541,7 +499,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Expected Result: Deletion blocked OR deletion succeeds but alert generated
 - Actual Result: Document what happened
 - Pass/Fail: Pass if blocked or detected, Fail if deletion successful without detection
-
 
 **Scenario 3: Integrity Verification**:
 
@@ -551,7 +508,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Actual Result: Document result
 - Pass/Fail: Pass if integrity verified successfully
 
-
 **Scenario 4: Alert Generation**:
 
 - Test Setup: Review alert configuration for tamper detection
@@ -560,14 +516,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Actual Result: Document alert configuration
 - Pass/Fail: Pass if alert properly configured and tested
 
-
 **For Production Environment** (if testing not feasible):
 
 - Document why testing not conducted (no test environment, risk of disruption)
 - Alternative verification: Review historical tamper detection alerts (any alerts in last 12 months?)
 - Review configuration: Verify tamper detection enabled in configuration (screenshot)
 - Vendor validation: Rely on vendor certification or third-party audit (if available)
-
 
 **Alert Effectiveness Assessment**:
 
@@ -577,7 +531,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - False Positive Rate (Are alerts firing inappropriately?)
 - Response Procedures (What happens when alert fires? Documented procedure?)
 
-
 **Compliance Status**:
 
 - Tamper detection operational (yes/no)
@@ -585,14 +538,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Response procedures documented (yes/no)
 - Overall tamper detection effectiveness score
 
-
 **Evidence Required**:
 
 - Test results documentation (screenshots, test logs, alert notifications)
 - Alert configuration screenshots (SIEM correlation rules, email alerts)
 - Incident response procedures (what to do when tamper detected)
 - Historical alert analysis (any tamper alerts in last 12 months? How handled?)
-
 
 **Time**: 2-3 hours (including test execution and documentation)
 
@@ -611,7 +562,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Policy Requirement - Archive (years total retention including offline)
 - Regulatory Driver (ISO 27001, GDPR, PCI DSS, HIPAA, SOX, etc.)
 
-
 **Actual Implementation** (from IMP-A.8.15.2 Sheet 3 if available):
 
 - Actual Retention - Hot Storage (months currently retained online)
@@ -619,13 +569,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Actual Retention - Cold Archive (years in offline/tape/object storage)
 - Total Actual Retention (sum of all tiers)
 
-
 **Compliance Calculation**:
 
 - Compliance Status: `IF(Actual >= Required, "Y Compliant", "N Non-Compliant")`
 - Gap (if non-compliant): Required - Actual (how many months/years short?)
 - Over-Retention (if applicable): Actual - Required (retaining longer than required - privacy risk if excessive)
-
 
 **Regulatory-Specific Requirements** (per ISMS-POL-00 applicability):
 
@@ -634,18 +582,15 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Payment system logs: 12 months online minimum (Req. 10.5.1)
 - Actual retention >= 12 months? (yes/no)
 
-
 **If HIPAA Applicable**:
 
 - ePHI access logs: 6 years minimum (Sec.164.316(b)(2))
 - Actual retention >= 6 years? (yes/no)
 
-
 **If SOX Applicable**:
 
 - Financial system audit trails: 7 years minimum
 - Actual retention >= 7 years? (yes/no)
-
 
 **Retention Configuration Verification**:
 
@@ -654,13 +599,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Retention Monitoring (How is retention compliance monitored? Automated alerts, manual review, quarterly audit)
 - Disposal Automation (Are logs auto-deleted after retention period? Yes/No/Manual)
 
-
 **Over-Retention Privacy Risk**:
 
 - Over-Retained Categories (Which categories retained longer than policy requires?)
 - Privacy Impact (Does over-retention create GDPR/nDSG compliance risk?)
 - Justification Required (If over-retained, document business justification or identify as gap)
-
 
 **Compliance Summary**:
 
@@ -670,14 +613,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Categories Over-Retained (count and % - privacy risk)
 - Overall Retention Compliance Score (% compliant)
 
-
 **Evidence Required**:
 
 - Retention configuration screenshots (SIEM retention policies, storage lifecycle policies)
 - Retention monitoring reports (quarterly compliance checks)
 - Storage capacity reports showing actual data age (oldest logs, retention verification)
 - Disposal records (evidence that expired logs are being deleted)
-
 
 **Time**: 2-3 hours
 
@@ -693,7 +634,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Cryptographic erasure for encrypted log storage (destroy encryption keys)
 - Physical media destruction for write-once media (NIST SP 800-88 guidelines)
 - Disposal events logged (date, log category, retention period, responsible person)
-
 
 **Disposal Procedures**:
 
@@ -722,7 +662,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
   - Overwrite passes (if disk overwrite - how many passes? 7-pass DoD 5220.22-M?)
   - Verification (Is secure deletion verified? How?)
 
-
 **Legal Hold Exception Handling**:
 
 - Legal Hold Check (Are logs checked for legal hold before disposal?)
@@ -730,14 +669,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Hold Tracking (Are legal holds tracked? Where? Spreadsheet, system flag, manual process)
 - Disposal After Hold Release (Process to resume disposal after hold expires)
 
-
 **Disposal Audit Trail**:
 
 - Disposal Events Logged (Is each disposal event logged?)
 - Log Content (What's recorded? Date, log category, volume disposed, retention period, person)
 - Log Retention (How long are disposal logs kept? Minimum 7 years recommended)
 - Audit Access (Can auditors access disposal logs?)
-
 
 **Compliance Assessment**:
 
@@ -748,14 +685,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Legal hold check implemented (yes/no)
 - Overall disposal compliance score
 
-
 **Disposal Testing** (if feasible):
 
 - Test Environment: Identify test logs past retention period
 - Test Execution: Execute disposal procedure
 - Verification: Confirm logs actually deleted (not just marked for deletion)
 - Evidence: Screenshot showing logs removed, disposal log entry created
-
 
 **Evidence Required**:
 
@@ -764,7 +699,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Disposal logs (records of past disposals - last 12 months minimum)
 - Legal hold procedures (how logs are protected during legal hold)
 - NIST SP 800-88 compliance documentation (disposal method validation)
-
 
 **Time**: 1-2 hours
 
@@ -785,7 +719,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Data Necessity (Is all logged data necessary for security/compliance purpose?)
 - Minimization Compliant (Is only necessary data logged? Yes/No)
 
-
 **Prohibited Data Verification** (ISMS-POL-A.8.15 Section 2.5):
 
 Check logs for presence of PROHIBITED data types:
@@ -798,14 +731,12 @@ Check logs for presence of PROHIBITED data types:
 - [ ] Biometric templates - SHALL NOT be logged (authentication events only, not biometric data)
 - [ ] Session tokens or API keys - SHALL NOT be logged (issuance events only, not actual values)
 
-
 **If prohibited data found**:
 
 - Where found (specific log source, log category)
 - How to remediate (log format change, data masking, log filtering)
 - Remediation owner (who will fix)
 - Target date (when fixed)
-
 
 **GDPR/nDSG Compliance** (if applicable per ISMS-POL-00):
 
@@ -814,25 +745,21 @@ Check logs for presence of PROHIBITED data types:
 - Logging limited to necessary data (yes/no)
 - Excessive data identified (any unnecessary personal data logged?)
 
-
 **Article 5(1)(b) - Purpose Limitation**:
 
 - Logs used only for: security incident detection, investigation, compliance, system administration (yes/no)
 - Purpose documented (yes/no)
 - Secondary use restricted (logs not used for employee monitoring beyond security needs)
 
-
 **Article 5(1)(e) - Storage Limitation**:
 
 - Retention justified (retention periods documented with legal/business justification)
 - Retention not excessive (not retaining longer than necessary - see Sheet 5 over-retention)
 
-
 **Article 32 - Security of Processing**:
 
 - Logs protected (integrity and confidentiality verified - see Sheets 2-3)
 - Access controlled (only authorized personnel - see Sheet 2)
-
 
 **Transparency Requirements**:
 
@@ -840,20 +767,17 @@ Check logs for presence of PROHIBITED data types:
 - Logging scope disclosed (what activities logged, how long retained, who has access)
 - Privacy notice updated (logging practices described in organizational privacy policy)
 
-
 **Employee Monitoring Considerations**:
 
 - Works council consulted (if applicable in jurisdiction - EU labor law)
 - Employee monitoring proportionate (legitimate business interest, not excessive surveillance)
 - Monitoring documented (scope and purpose of employee activity logging clear)
 
-
 **Data Subject Rights**:
 
 - Access requests process (Can individuals request access to logs containing their personal data?)
 - Erasure request handling (GDPR Art. 17 - right to erasure vs. legal obligations exception)
 - Legal basis documented (GDPR Art. 6(1)(c) legal obligation + Art. 6(1)(f) legitimate interest)
-
 
 **Privacy Compliance Score**:
 
@@ -863,7 +787,6 @@ Check logs for presence of PROHIBITED data types:
 - Transparency requirements met (yes/no)
 - Overall privacy compliance score
 
-
 **Evidence Required**:
 
 - Log samples (review for prohibited data - redact sensitive info in evidence)
@@ -872,7 +795,6 @@ Check logs for presence of PROHIBITED data types:
 - Acceptable use policy (employees informed of logging)
 - DPIA (Data Protection Impact Assessment for logging - if required)
 - Legal basis documentation (GDPR Article 6 legal basis for logging)
-
 
 **Time**: 2-3 hours (requires DPO input)
 
@@ -890,13 +812,11 @@ Check logs for presence of PROHIBITED data types:
 - Who receives notification? (InfoSec Manager, CISO, Legal, IT Operations)
 - Notification response time (How quickly is disposal suspended? Immediate, 24 hours, manual)
 
-
 **Legal Hold Scope Documentation**:
 
 - Scope definition process (How is scope determined? Which logs, which time period, which systems)
 - Scope documentation (Where recorded? Spreadsheet, ticketing system, formal legal hold system)
 - Scope clarity (Is scope clear enough to identify affected logs?)
-
 
 **Disposal Suspension Implementation**:
 
@@ -905,14 +825,12 @@ Check logs for presence of PROHIBITED data types:
 - Segregation (Are affected logs segregated from normal disposal processes? Physical separation, logical flag)
 - Immutability (Are logs under hold made immutable? WORM, access restrictions, backup copy)
 
-
 **Chain of Custody Procedures**:
 
 - Chain of custody maintained (yes/no)
 - Custody documentation (Who has custody, when transferred, to whom)
 - Access logging (All access to logs under legal hold logged)
 - Integrity verification (Logs under hold verified for tampering)
-
 
 **Active Legal Holds Inventory**:
 
@@ -928,7 +846,6 @@ Check logs for presence of PROHIBITED data types:
 - Estimated Hold Duration (if known)
 - Hold Documentation Location (where is formal hold notice stored)
 
-
 **Legal Hold Review Process**:
 
 - Review frequency (Quarterly review of active holds recommended)
@@ -936,14 +853,12 @@ Check logs for presence of PROHIBITED data types:
 - Review actions (Confirm hold still needed, update scope if needed, release if no longer needed)
 - Review documentation (Meeting minutes, review decisions recorded)
 
-
 **Legal Hold Release Process**:
 
 - Release notification (How is release communicated? Formal notice from Legal)
 - Release verification (Who verifies release authority? Legal sign-off)
 - Disposal resumption (How does disposal resume? Automated, manual, backlog processing)
 - Release documentation (Date released, authority, disposal actions taken)
-
 
 **Compliance Assessment**:
 
@@ -954,7 +869,6 @@ Check logs for presence of PROHIBITED data types:
 - Quarterly reviews conducted (yes/no)
 - Overall legal hold compliance score
 
-
 **Evidence Required**:
 
 - Legal hold procedures document (step-by-step process)
@@ -963,9 +877,7 @@ Check logs for presence of PROHIBITED data types:
 - Legal hold release documentation (past releases - evidence process works)
 - Review meeting minutes (quarterly legal hold reviews)
 
-
 **Time**: 1-2 hours (less if no active legal holds, more if complex active holds)
-
 
 ---
 
@@ -981,7 +893,6 @@ Check logs for presence of PROHIBITED data types:
 - Access review documentation (quarterly review records, approval signatures)
 - Separation of duties verification (organizational chart showing log admins != system admins)
 
-
 **For Integrity Protection (Sheet 3)**:
 
 - WORM configuration documentation (vendor specs, configuration screenshots)
@@ -989,7 +900,6 @@ Check logs for presence of PROHIBITED data types:
 - Tamper detection configuration (checksums enabled, signature verification settings)
 - Separation of duties evidence (role segregation matrix)
 - Centralized collection verification (logs immediately forwarded to SIEM)
-
 
 **For Tamper Detection (Sheet 4)**:
 
@@ -999,14 +909,12 @@ Check logs for presence of PROHIBITED data types:
 - Incident response procedures (what to do when tamper alert fires)
 - Historical tamper alerts (any alerts in last 12 months, how handled)
 
-
 **For Retention Compliance (Sheet 5)**:
 
 - Retention policy configuration (SIEM retention settings, storage lifecycle policies)
 - Retention verification reports (storage reports showing actual log age/retention)
 - Regulatory requirement documentation (PCI DSS, HIPAA, SOX applicability per ISMS-POL-00)
 - Capacity reports (proving retention periods achievable with current storage)
-
 
 **For Disposal Procedures (Sheet 6)**:
 
@@ -1016,7 +924,6 @@ Check logs for presence of PROHIBITED data types:
 - Legal hold procedures (how logs protected during litigation)
 - Secure deletion verification (proof disposal method is secure)
 
-
 **For Privacy Assessment (Sheet 7)**:
 
 - Log samples (reviewed for prohibited data - redacted for evidence)
@@ -1025,7 +932,6 @@ Check logs for presence of PROHIBITED data types:
 - DPIA (Data Protection Impact Assessment if required by GDPR)
 - Legal basis documentation (GDPR Article 6 legal basis for logging)
 
-
 **For Legal Hold Management (Sheet 8)**:
 
 - Legal hold procedures (formal process documentation)
@@ -1033,7 +939,6 @@ Check logs for presence of PROHIBITED data types:
 - Chain of custody templates/forms
 - Legal hold release documentation (evidence of past releases)
 - Quarterly review meeting minutes
-
 
 ## Evidence Collection Best Practices
 
@@ -1044,7 +949,6 @@ Check logs for presence of PROHIBITED data types:
 - Redact sensitive personal data (comply with GDPR/nDSG even in evidence)
 - Label clearly (e.g., "SIEM_Access_Control_Configuration_2026-01-21.png")
 
-
 **Configuration Exports**:
 
 - Export in native format (JSON, XML, CSV) when possible
@@ -1052,14 +956,12 @@ Check logs for presence of PROHIBITED data types:
 - Sanitize for sensitive information (credentials, internal IPs if necessary)
 - Document export procedure (so it can be repeated for future assessments)
 
-
 **Test Results**:
 
 - Document test setup (test environment, test data, test procedure)
 - Capture test execution (screenshots, log entries, alert notifications)
 - Record test results (pass/fail, actual vs. expected)
 - Note any deviations (if test didn't go as planned, document why)
-
 
 **Evidence Organization**:
 ```
@@ -1102,7 +1004,6 @@ ISMS-IMP-A.8.15.3_Evidence/
 - Store securely (may contain sensitive configuration or personal data)
 - Index in Sheet 10 (Evidence Register) for auditability
 
-
 ---
 
 # Common Pitfalls
@@ -1117,13 +1018,11 @@ ISMS-IMP-A.8.15.3_Evidence/
 - Convenience (easier to give everyone access than implement role separation)
 - Lack of understanding (separation of duties requirement not communicated)
 
-
 **Why It's a Problem**:
 
 - **ISO 27001 Control A.8.15 violation**: Policy Section 2.2 explicitly requires separation
 - **Insider threat risk**: System admin can modify logs to hide malicious activity
 - **Audit finding**: Auditors will identify this as major non-conformity
-
 
 **How to Avoid**:
 
@@ -1132,13 +1031,11 @@ ISMS-IMP-A.8.15.3_Evidence/
 - **Read-only access**: If system admins MUST have access, make it read-only and log the access
 - **Exception process**: If separation not feasible (small team), document compensating controls and get CISO approval per policy Section 3.3
 
-
 **Evidence of Compliance**:
 
 - Organizational chart showing different people in system admin and log admin roles
 - RBAC configuration showing system admin role has NO log access
 - Access audit logs showing system admins are NOT accessing security logs
-
 
 ## Pitfall: "We have WORM storage" (but only for some logs)
 
@@ -1150,13 +1047,11 @@ ISMS-IMP-A.8.15.3_Evidence/
 - Partial implementation (WORM deployed but not all log sources configured to use it)
 - Misunderstanding (belief that "SIEM has WORM" means all logs in SIEM are WORM-protected)
 
-
 **Reality**:
 
 - Critical system logs (per policy Section 2.2): REQUIRE WORM or cryptographic signing
 - Standard system logs: MAY use WORM, or alternative protection (centralized collection, access control)
 - Need to verify WHICH logs are actually on WORM storage
-
 
 **How to Avoid**:
 
@@ -1165,13 +1060,11 @@ ISMS-IMP-A.8.15.3_Evidence/
 - Document gaps (critical systems NOT using WORM = gap requiring remediation)
 - Alternative protection (if WORM not feasible, implement cryptographic signing)
 
-
 **Evidence of Compliance**:
 
 - Storage architecture diagram (showing which log sources use WORM)
 - Configuration verification (SIEM forwarding rules sending critical logs to WORM storage)
 - Critical systems list vs. WORM protected list (gap analysis)
-
 
 ## Pitfall: "Retention is 7 years" (for everything)
 
@@ -1183,14 +1076,12 @@ ISMS-IMP-A.8.15.3_Evidence/
 - Over-caution (retaining everything for maximum period "to be safe")
 - Misunderstanding (belief that "7 years is safest" applies universally)
 
-
 **Reality**:
 
 - Security logs: 7 years (for forensics, legal evidence)
 - Application logs: 18 months (troubleshooting, no long-term legal need)
 - Network logs: 18 months (capacity planning, troubleshooting)
 - Over-retention = privacy risk (GDPR requires retention limitation)
-
 
 **How to Avoid**:
 
@@ -1199,13 +1090,11 @@ ISMS-IMP-A.8.15.3_Evidence/
 - Privacy impact (over-retention violates GDPR Article 5(1)(e) storage limitation)
 - Configure automated retention (SIEM/storage tiers enforce correct retention per category)
 
-
 **Evidence of Compliance**:
 
 - Retention configuration showing different periods per log category
 - Retention justification matrix (why each category has its retention period)
 - DPO sign-off (privacy officer confirmed retention periods justified)
-
 
 ## Pitfall: "We don't log passwords" (but session tokens logged)
 
@@ -1217,14 +1106,12 @@ ISMS-IMP-A.8.15.3_Evidence/
 - Lack of awareness (session tokens, API keys equally sensitive but less obvious)
 - Application logging (developers log full request/response for debugging, includes tokens)
 
-
 **Reality** (policy Section 2.5 prohibited data):
 
 - Passwords: SHALL NOT be logged Y (usually well-understood)
 - Session tokens: SHALL NOT be logged (often missed)
 - API keys: SHALL NOT be logged (often missed)
 - OAuth tokens: SHALL NOT be logged (often missed)
-
 
 **How to Avoid**:
 
@@ -1233,13 +1120,11 @@ ISMS-IMP-A.8.15.3_Evidence/
 - Developer training (educate developers on what NOT to log)
 - Log scrubbing (implement filters to strip tokens/keys from logs before storage)
 
-
 **Evidence of Compliance**:
 
 - Log review documentation (proof that logs were sampled and checked)
 - Negative finding (proof that tokens/keys NOT found in logs)
 - Log filtering configuration (showing scrubbing rules removing sensitive data)
-
 
 ## Pitfall: "Disposal is automatic" (but legal hold not integrated)
 
@@ -1251,13 +1136,11 @@ ISMS-IMP-A.8.15.3_Evidence/
 - Legal hold processes managed separately (legal dept, not IT)
 - No integration (disposal system doesn't check legal hold system before deleting)
 
-
 **Risk**:
 
 - **Spoliation**: Deleting logs under legal hold = destruction of evidence
 - **Legal sanctions**: Court penalties, adverse inference, case dismissal
 - **Compliance failure**: Violation of policy Section 2.3 legal hold requirements
-
 
 **How to Avoid**:
 
@@ -1267,14 +1150,12 @@ ISMS-IMP-A.8.15.3_Evidence/
 - **Segregation**: Logs under hold moved to separate storage (physically/logically segregated)
 - **Verification**: Quarterly review that logs under hold are NOT being disposed
 
-
 **Evidence of Compliance**:
 
 - Legal hold procedures showing IT notification process
 - Disposal procedures showing legal hold check before deletion
 - Legal hold inventory (current holds, systems/logs affected)
 - Verification records (proof that held logs are still retained)
-
 
 ## Pitfall: "Privacy isn't relevant - these are security logs"
 
@@ -1285,13 +1166,11 @@ ISMS-IMP-A.8.15.3_Evidence/
 - Misunderstanding GDPR (belief that security logs are not personal data)
 - Article 32 confusion (GDPR requires security measures including logging, misinterpreted as blanket exemption)
 
-
 **Reality**:
 
 - Security logs ARE personal data (user IDs, IP addresses, authentication events = personal data)
 - GDPR applies (all GDPR principles apply: data minimization, purpose limitation, storage limitation)
 - Article 32 is legal basis (not exemption): Logging justified under Article 32 (security) BUT still must comply with GDPR principles
-
 
 **GDPR Compliance Required**:
 
@@ -1300,7 +1179,6 @@ ISMS-IMP-A.8.15.3_Evidence/
 - Storage limitation (retention periods must be justified, not indefinite)
 - Transparency (inform users that logging occurs)
 
-
 **How to Avoid**:
 
 - **DPO involvement**: Data Protection Officer must review logging practices
@@ -1308,14 +1186,12 @@ ISMS-IMP-A.8.15.3_Evidence/
 - **Legal basis**: Document legal basis (GDPR Article 6(1)(c) legal obligation + 6(1)(f) legitimate interest)
 - **Minimize data**: Don't log full message content, full health records, excessive location data
 
-
 **Evidence of Compliance**:
 
 - DPIA (if required) showing privacy assessment of logging
 - Legal basis documentation (memo from Legal/DPO confirming legal basis)
 - Privacy notice (organizational privacy policy describes logging practices)
 - Data minimization assessment (Sheet 7 showing unnecessary data not logged)
-
 
 ---
 
@@ -1335,7 +1211,6 @@ ISMS-IMP-A.8.15.3_Evidence/
 - [ ] Evidence collected (Sheet 10 - Evidence Register populated)
 - [ ] Gap analysis complete (Sheet 9 - all gaps documented with remediation plans)
 
-
 ## Accuracy Checks
 
 - [ ] Access control data current (Sheet 2 - user list from last 30 days)
@@ -1344,7 +1219,6 @@ ISMS-IMP-A.8.15.3_Evidence/
 - [ ] Disposal procedures documented (Sheet 6 - actual procedures, not theoretical)
 - [ ] Privacy assessment realistic (Sheet 7 - log samples actually reviewed, not assumed)
 - [ ] Legal hold inventory current (Sheet 8 - active holds confirmed with Legal)
-
 
 ## Compliance Alignment
 
@@ -1355,7 +1229,6 @@ ISMS-IMP-A.8.15.3_Evidence/
 - [ ] Retention compliance validated (Sheet 5 - all categories meet minimum retention)
 - [ ] Privacy compliant (Sheet 7 - no prohibited data, GDPR principles met)
 
-
 ## Evidence Quality
 
 - [ ] Evidence file naming clear and consistent
@@ -1364,7 +1237,6 @@ ISMS-IMP-A.8.15.3_Evidence/
 - [ ] Evidence organized in folder structure (per section 5.2)
 - [ ] Evidence Register (Sheet 10) complete (all evidence indexed)
 
-
 ## Approval Readiness
 
 - [ ] Assessment completed by qualified personnel (InfoSec Manager, SIEM Admin, DPO)
@@ -1372,7 +1244,6 @@ ISMS-IMP-A.8.15.3_Evidence/
 - [ ] Review by DPO scheduled (privacy assessment requires DPO sign-off)
 - [ ] Gaps socialized with stakeholders (no surprises in approval meeting)
 - [ ] Remediation plans have buy-in (responsible parties aware and committed)
-
 
 **If ANY checkbox unchecked**: Assessment NOT ready for approval. Complete missing items first.
 
@@ -1389,7 +1260,6 @@ ISMS-IMP-A.8.15.3_Evidence/
 - **Timeline**: 2-3 business days
 - **Outcome**: Assessment technically accurate
 
-
 **Level 2: Privacy & Compliance Review**
 
 - **Reviewer**: Data Protection Officer (DPO) + Legal/Compliance Officer
@@ -1397,14 +1267,12 @@ ISMS-IMP-A.8.15.3_Evidence/
 - **Timeline**: 3-5 business days
 - **Outcome**: Privacy and legal compliance validated
 
-
 **Level 3: Executive Approval**
 
 - **Reviewer**: CISO
 - **Focus**: Strategic alignment, gap priorities, resource allocation for remediation
 - **Timeline**: 1-2 weeks
 - **Outcome**: Assessment approved, gaps authorized for remediation
-
 
 ## Approval Workflow
 
@@ -1415,14 +1283,12 @@ ISMS-IMP-A.8.15.3_Evidence/
 - Legal completes Sheet 8 (legal hold management)
 - Quality checklist (Section 7) fully verified
 
-
 **Step 2: Level 1 Technical Review**
 
 - InfoSec Manager self-review
 - SIEM Administrator peer-review (technical accuracy)
 - Corrections made
 - Both sign Sheet 11
-
 
 **Step 3: Level 2 Privacy & Compliance Review**
 
@@ -1431,7 +1297,6 @@ ISMS-IMP-A.8.15.3_Evidence/
 - Privacy/legal issues resolved
 - DPO and Legal sign Sheet 11
 
-
 **Step 4: Level 3 Executive Approval**
 
 - CISO reviews executive summary (Sheet 11)
@@ -1439,14 +1304,12 @@ ISMS-IMP-A.8.15.3_Evidence/
 - CISO approves remediation plans and resources
 - CISO signs Sheet 11 as final approval
 
-
 **Step 5: Post-Approval Actions**
 
 - Assessment status updated to "Approved" (Sheet 11)
 - Gaps entered into issue tracking (Jira, ServiceNow)
 - Results included in quarterly compliance report
 - Evidence archived for audit (7-year retention)
-
 
 ## Approval Timeline
 
@@ -1457,7 +1320,6 @@ ISMS-IMP-A.8.15.3_Evidence/
 - Week 3-4: Level 2 Privacy & Compliance Review (DPO + Legal)
 - Week 4-5: Level 3 Executive Approval (CISO)
 
-
 **Total**: 4-5 weeks from initiation to final approval
 
 **Expedited Process** (if audit deadline):
@@ -1465,7 +1327,6 @@ ISMS-IMP-A.8.15.3_Evidence/
 - Concurrent reviews (DPO reviewing while Level 1 in progress)
 - Focused on critical findings only
 - Minimum 2-3 weeks
-
 
 ---
 
@@ -1506,7 +1367,6 @@ ISMS-IMP-A.8.15.3_Evidence/
 
 **Total Sheets**: 11
 
-
 ---
 
 # Sheet Specifications
@@ -1521,7 +1381,6 @@ ISMS-IMP-A.8.15.3_Evidence/
 - Completion steps (8-step process)
 - Scoring methodology (0-100% scale with color coding)
 - Color coding guide (Yellow=Input, Blue=Formula, Green=Compliant, Red=Critical)
-
 
 **Scoring Scale**:
 | Score | Rating | Color | Meaning |
@@ -1556,7 +1415,6 @@ ISMS-IMP-A.8.15.3_Evidence/
 - N: Remediation Action (If non-compliant, what to do?)
 - O: Target Date (When fixed)
 
-
 **Compliance Calculations**:
 
 - Total Users with Log Access = `COUNTA(A:A) - 1` (exclude header)
@@ -1565,13 +1423,11 @@ ISMS-IMP-A.8.15.3_Evidence/
 - Access Appropriate = `COUNTIF(K:K,"Appropriate")/Total*100`
 - **Overall Access Control Compliance** = `COUNTIF(L:L,"Y Compliant")/Total*100`
 
-
 **Conditional Formatting**:
 
 - Column J (SoD Check): Red fill if "VIOLATION", Green if "OK"
 - Column K (Appropriateness): Yellow if "Review Required", Green if "Appropriate"
 - Column L (Compliance): Green if "Y", Red if "N"
-
 
 ---
 
@@ -1593,7 +1449,6 @@ Columns:
 - H: Centralized Collection (Immediate Forwarding? Yes/No/Partial)
 - I: Compliance Status - Formula: `=IF(OR(C="Yes",AND(E<>"None",F<>"None")),"Y Protected","N Not Protected")`
 
-
 **Section 2: Critical Systems Enhanced Protection** (Rows 33-60):
 
 Columns:
@@ -1606,7 +1461,6 @@ Columns:
 - F: Policy Requirement Met - Formula: `=IF(OR(E="WORM",E="Digital Signature",E="Hash Chain"),"Y Yes","N No")`
 - G: Gap Identified - Formula: `=IF(F="N No","GAP: Critical system requires WORM or crypto signing","")`
 
-
 **Compliance Calculations**:
 
 - Total Storage Tiers = `COUNTA(Section1!A:A)`
@@ -1616,7 +1470,6 @@ Columns:
 - Critical Systems Protected = `COUNTIF(Section2!F:F,"Y Yes")`
 - Critical System Protection % = `(Protected / Total) * 100`
 - **Overall Integrity Protection Score** = `AVERAGE(Storage Tier %, Critical System %)`
-
 
 ---
 
@@ -1639,7 +1492,6 @@ Columns:
 - K: Response Procedure Documented (Yes, No)
 - L: Overall Status - Formula: `=IF(AND(H="Y PASS",OR(I="Yes",I="N/A"),K="Yes"),"Y Compliant","N Non-Compliant")`
 
-
 **Summary Section**:
 
 - Total Tests = `COUNTA(A:A) - 1`
@@ -1649,12 +1501,10 @@ Columns:
 - Response Procedures Documented = `COUNTIF(K:K,"Yes")`
 - **Tamper Detection Effectiveness Score** = `(Tests Passed / Total Tests) * 100`
 
-
 **Conditional Formatting**:
 
 - Column H: Green if "Y PASS", Red if "N FAIL"
 - Column L: Green if "Y Compliant", Red if "N Non-Compliant"
-
 
 ---
 
@@ -1678,7 +1528,6 @@ Columns:
 - L: Over-Retention (privacy risk) - Formula: `=IF(AND(J="Y Compliant",H>I+24),H-I,0)` (months over)
 - M: Justification (If over-retained, why? Business need, legal hold, other)
 
-
 **Regulatory-Specific Section** (Below main table):
 
 | Regulation | Applicable? | Log Types Affected | Minimum Retention | Actual Retention | Compliant? |
@@ -1695,12 +1544,10 @@ Columns:
 - Categories Over-Retained = `COUNTIF(L:L,">0")`
 - **Overall Retention Compliance %** = `(Compliant / Total) * 100`
 
-
 **Conditional Formatting**:
 
 - Column J: Green if "Y Compliant", Red if "N Non-Compliant"
 - Column L: Orange fill if >0 (over-retention privacy risk)
-
 
 ---
 
@@ -1722,7 +1569,6 @@ Columns:
 - J: Disposal Records Retained (Yes, No)
 - K: Compliance Status - Formula: `=IF(AND(B<>"None",D="Yes",E="Yes",F="Yes"),"Y Compliant","N Non-Compliant")`
 
-
 **Summary Section**:
 
 - Total Storage Tiers = `COUNTA(A:A) - 1`
@@ -1732,12 +1578,10 @@ Columns:
 - Legal Hold Check Implemented = `COUNTIF(F:F,"Yes")`
 - **Overall Disposal Compliance %** = `COUNTIF(K:K,"Y Compliant") / Total * 100`
 
-
 **Conditional Formatting**:
 
 - Column B: Red if "None" (no disposal = gap)
 - Column K: Green if "Y Compliant", Red if "N Non-Compliant"
-
 
 ---
 
@@ -1754,7 +1598,6 @@ Columns:
 - C: Personal Data Types (User IDs, IP addresses, Email, Location, Other)
 - D: Data Necessary (Yes/No - is all logged data necessary?)
 - E: Minimization Compliant - Formula: `=IF(OR(B="No",D="Yes"),"Y Yes","N No")`
-
 
 **Section 2: Prohibited Data Check** (Rows 23-35):
 
@@ -1805,7 +1648,6 @@ Columns:
 - L: Last Review Date
 - M: Notes
 
-
 **Legal Hold Process Assessment**:
 
 | Process Element | Implemented? | Documented? | Tested? | Compliance Status |
@@ -1847,14 +1689,12 @@ Columns:
 - S: Tracking Ticket ID
 - T: Notes
 
-
 **Auto-Population from Other Sheets**:
 
 - FROM Sheet 2: WHERE Compliance Status = "N Non-Compliant"
 - FROM Sheet 3: WHERE Integrity Protection = "N Not Protected" AND Critical System
 - FROM Sheet 5: WHERE Retention Compliance = "N Non-Compliant"
 - FROM Sheet 7: WHERE Prohibited Data Found = "Yes"
-
 
 **Summary by Category**:
 | Category | Total | Critical | High | Medium | Low |
@@ -1885,7 +1725,6 @@ Columns:
 - K: Retention Period (7 years)
 - L: Notes
 
-
 ---
 
 ## Sheet 11: Approval_Sign_Off
@@ -1911,13 +1750,11 @@ Columns:
 - Critical = COUNTIF(Sheet9!I:I,"CRITICAL")
 - High = COUNTIF(Sheet9!I:I,"HIGH")
 
-
 **Approval Sections**:
 
 - Level 1: InfoSec Manager + SIEM Admin
 - Level 2: DPO + Legal/Compliance
 - Level 3: CISO
-
 
 ---
 
@@ -1929,16 +1766,13 @@ Columns:
 
 - Critical systems list (for Sheet 3 enhanced protection requirement)
 
-
 **From IMP-A.8.15.2**:
 
 - Sheet 3 (Storage Architecture) for actual retention periods (referenced in Sheet 5)
 
-
 **To IMP-A.8.15.5**:
 
 - Sheet 11 (Approval Sign-Off) summary metrics for dashboard
-
 
 ## Policy References
 
@@ -1947,7 +1781,6 @@ Columns:
 - ISMS-POL-A.8.15 Section 2.5 (Privacy & Data Protection)
 - ISMS-POL-A.8.15 Section 3.3 (Exception Management)
 - ISMS-POL-00 (Regulatory Applicability Framework)
-
 
 ---
 
@@ -2007,7 +1840,6 @@ RETENTION_REQUIREMENTS = {
 - [ ] Summary metrics aggregate correctly (Sheet 11)
 - [ ] Cell protection appropriate
 
-
 ---
 
 # Document Assembly Complete
@@ -2019,7 +1851,6 @@ RETENTION_REQUIREMENTS = {
 - Part I: User Completion Guide (~800 lines)
 - Part II: Technical Specification (~800 lines)
 
-
 **Quality Verification**:
 
 - [X] Policy references to ISMS-POL-A.8.15 v1.0 consolidated policy
@@ -2029,7 +1860,6 @@ RETENTION_REQUIREMENTS = {
 - [X] All 11 sheets specified with formulas, validation, formatting
 - [X] Completely generic language (no industry/size/technology assumptions)
 - [X] Follows IMP-A.8.15.1 and IMP-A.8.15.2 structure exactly
-
 
 ---
 

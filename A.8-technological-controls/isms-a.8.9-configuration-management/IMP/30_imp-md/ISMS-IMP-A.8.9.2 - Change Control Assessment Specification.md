@@ -38,7 +38,6 @@
 - Technical Review: Security Architect
 - Security Review: Chief Information Security Officer (CISO)
 
-
 ### Distribution
 
 Configuration management team, system administrators, IT operations, security engineers, auditors
@@ -74,14 +73,12 @@ This assessment addresses the change control domain of Control A.8.9, specifical
 - Change success metrics and failure analysis
 - Integration with baseline management (ISMS-IMP-A.8.9.1)
 
-
 **Out of Scope** (covered in other assessments):
 
 - Configuration baseline definition and documentation (see ISMS-IMP-A.8.9.1)
 - Configuration drift detection and monitoring (see ISMS-IMP-A.8.9.3)
 - Security hardening standards compliance (see ISMS-IMP-A.8.9.4)
 - Business continuity and disaster recovery (separate control)
-
 
 ## Control Alignment
 
@@ -91,7 +88,6 @@ This assessment implements requirements from:
 - **ISMS-CTX-A.8.9, Part 2**: Change Request Form Template (reference annex)
 - **ISO 27001:2022 A.8.9**: Configuration management control requirements
 - **Related Controls**: A.5.37 (Documented Operating Procedures), A.8.16 (Monitoring Activities)
-
 
 ---
 
@@ -114,7 +110,6 @@ This assessment tracks four primary change types, each with different approval r
 - Timeline: Executed according to pre-defined schedule
 - Testing: Standard validation procedures apply
 
-
 **Normal Changes**:
 
 - Planned changes requiring individual assessment and approval
@@ -122,7 +117,6 @@ This assessment tracks four primary change types, each with different approval r
 - Approval: CAB review and approval required
 - Timeline: 7-14 days minimum from request to implementation
 - Testing: Comprehensive testing in non-production environment required
-
 
 **Emergency Changes**:
 
@@ -132,7 +126,6 @@ This assessment tracks four primary change types, each with different approval r
 - Timeline: Expedited (hours to 1-2 days)
 - Testing: Abbreviated testing acceptable if fully documented
 
-
 **Hot Fixes**:
 
 - Immediate changes to restore service availability or security
@@ -140,7 +133,6 @@ This assessment tracks four primary change types, each with different approval r
 - Approval: CIO/CISO approval, immediate CAB notification, full retrospective review
 - Timeline: Immediate (minutes to hours)
 - Testing: Minimal or post-implementation testing, comprehensive rollback plan mandatory
-
 
 ## Change Priorities
 
@@ -164,14 +156,12 @@ Changes are prioritized based on urgency and business impact:
 - Cosmetic changes with no functional impact
 - Approver: Change Coordinator or Team Lead
 
-
 **Two-Tier Approval** (Medium Risk):
 
 - Normal changes to production systems (non-critical)
 - Changes affecting single application or system
 - Minor infrastructure modifications
 - Approvers: (1) Technical Lead, (2) Service Owner
-
 
 **Three-Tier Approval** (High Risk):
 
@@ -181,14 +171,12 @@ Changes are prioritized based on urgency and business impact:
 - Security-sensitive changes
 - Approvers: (1) Technical Lead, (2) Service Owner, (3) CAB Chair or CIO/CISO
 
-
 **Emergency Approval** (Special Process):
 
 - Emergency and Hot Fix changes
 - Verbal approval acceptable (documented immediately)
 - Approvers: Minimum 2 of: CIO, CISO, IT Manager
 - Post-Implementation Review: Full CAB review within 5 business days
-
 
 ---
 
@@ -207,7 +195,6 @@ Changes are prioritized based on urgency and business impact:
    - Record emergency changes and post-facto justification
    - Timeline: Ongoing (continuous change tracking)
 
-
 2. **Reviewer** (Configuration Manager, CAB Chair):
 
    - Verify completeness of change documentation
@@ -218,7 +205,6 @@ Changes are prioritized based on urgency and business impact:
    - Identify process improvement opportunities
    - Timeline: Monthly or quarterly review
 
-
 3. **Approver** (IT Manager, CISO):
 
    - Review overall change management effectiveness
@@ -226,7 +212,6 @@ Changes are prioritized based on urgency and business impact:
    - Authorize remediation for process gaps
    - Sign off on assessment completion
    - Timeline: Quarterly or semi-annual approval
-
 
 ## Data Collection Approach
 
@@ -253,7 +238,6 @@ Changes are prioritized based on urgency and business impact:
 - **Monthly metrics review**: Change success rate, emergency change ratio, approval compliance
 - **Quarterly comprehensive assessment**: Full review of all sheets, trend analysis, gap identification
 - **Ad-hoc assessment**: After major incidents involving configuration changes, after significant process changes
-
 
 **Continuous Updates**: Change Request Register updated in real-time as changes are requested, approved, implemented. Assessment provides periodic consolidation and analysis of this continuous data.
 
@@ -315,14 +299,12 @@ Approval_Sign_Off
 - Common questions and troubleshooting
 - Contact information for Change Advisory Board
 
-
 **Formatting**:
 
 - Title section: Bold, 16pt, dark blue background (003366)
 - Section headers: Bold, 14pt, light blue background (4472C4)
 - Body text: Regular, 11pt Calibri
 - Color legend showing: Green (Approved/Successful), Yellow (Pending/In Progress), Red (Rejected/Failed), Gray (Cancelled/N/A)
-
 
 **No Data Entry**: This is a read-only informational sheet.
 
@@ -374,7 +356,6 @@ Approval_Sign_Off
 
 - Column H (Request Date), Column I (Required Implementation Date): Date format DD.MM.YYYY
 
-
 **Formulas**:
 
 - Column K (Current Phase): 
@@ -402,7 +383,6 @@ Approval_Sign_Off
 
   - Explanation: Status health indicator based on time in phase
 
-
 **Conditional Formatting**:
 
 - Column C (Change Type):
@@ -426,7 +406,6 @@ Approval_Sign_Off
   - "At Risk" → Orange text, bold
   - "Delayed" → Red text, bold
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background (D9D9D9), bold text, centered alignment
@@ -434,14 +413,12 @@ Approval_Sign_Off
 - Protected cells: Columns K, L, M (formula cells) locked
 - Filter: Enable auto-filter on header row to filter by Change Type, Priority, Status
 
-
 **Usage Notes**:
 
 - Preparer: Create new row for each configuration change request
 - Change ID should follow organizational convention (e.g., CHG-YYYY-NNN)
 - Update Change Status as change progresses through lifecycle
 - Reference this Change ID in all other sheets for traceability
-
 
 ---
 
@@ -492,7 +469,6 @@ Approval_Sign_Off
 
 - Date columns (F, I, L): Date format DD.MM.YYYY
 
-
 **Formulas**:
 
 - Column O (Overall Approval Status):
@@ -517,7 +493,6 @@ Approval_Sign_Off
   - Explanation: Calculates days from request date to final approval date
   - Note: VLOOKUP fetches request date from Change_Request_Register
 
-
 **Conditional Formatting**:
 
 - Columns E, H, K (Approval Status):
@@ -537,14 +512,12 @@ Approval_Sign_Off
   - 8-14 days → Yellow fill (approaching SLA)
   - <8 days → Green fill (fast approval)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Change Approval Workflow Tracking" spanning A1:Q1
 - Protected cells: Columns O and P (formula cells) locked
 - Approval tier logic: If Tier 2 or Tier 3 not required (N/A), they don't block overall approval
-
 
 **Usage Notes**:
 
@@ -553,7 +526,6 @@ Approval_Sign_Off
 - For Emergency changes, document verbal approval immediately and get written confirmation within 24 hours
 - Approval Reference (Column N) is critical for audit - must link to verifiable record
 - Standard changes (pre-approved) should show "Automated (Standard)" as approval method
-
 
 ---
 
@@ -605,7 +577,6 @@ Approval_Sign_Off
   - Values: "Yes, No"
   - Allow blank: No
 
-
 **Formulas**:
 
 - Column O (Risk Score):
@@ -617,7 +588,6 @@ Approval_Sign_Off
 
   - Explanation: Risk Score = Risk Level (1-4) × User Impact (1-5)
   - Range: 1 (lowest) to 20 (highest)
-
 
 **Conditional Formatting**:
 
@@ -636,14 +606,12 @@ Approval_Sign_Off
   - "Yes" → Yellow fill (indicates rollback plan needed)
   - "No" → Gray fill
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Impact Assessment - Risk Analysis per Change" spanning A1:Q1
 - Protected cells: Column O (formula cell) locked
 - Risk-based approval: High/Critical risk changes should trigger Three-Tier approval
-
 
 **Usage Notes**:
 
@@ -653,7 +621,6 @@ Approval_Sign_Off
 - Risk Level (Column H) should match Priority in Change_Request_Register (P1/P2 = High/Critical risk)
 - If Rollback Required = Yes, must complete Rollback_Capability sheet
 - Assessment Completed By (Column P) provides accountability
-
 
 ---
 
@@ -707,7 +674,6 @@ Approval_Sign_Off
   - Values: "Go, No-Go, Go with Conditions, N/A"
   - Allow blank: Yes
 
-
 **Formulas**:
 
 - Column G (Test Duration Days):
@@ -723,7 +689,6 @@ Approval_Sign_Off
 ```
 
   - Format as percentage with 1 decimal place
-
 
 **Conditional Formatting**:
 
@@ -742,14 +707,12 @@ Approval_Sign_Off
   - "Failed" → Red fill
   - "Abbreviated (Emergency)" → Orange fill (flag abbreviated testing)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Testing Validation Records" spanning A1:S1
 - Protected cells: Columns G and L (formula cells) locked
 - Testing adequacy: Changes with Test Pass Rate <80% or Critical Issues >0 should be flagged for review
-
 
 **Usage Notes**:
 
@@ -760,7 +723,6 @@ Approval_Sign_Off
 - Hot Fix changes: May proceed with minimal testing if critical (document in Notes)
 - "Go with Conditions" requires documenting conditions in Notes column
 - Test Plan Reference (Column H) should link to detailed test documentation
-
 
 ---
 
@@ -818,7 +780,6 @@ Approval_Sign_Off
   - Values: "Yes, No"
   - Allow blank: No
 
-
 **Formulas**:
 
 - Column F (Implementation Duration Hours):
@@ -852,14 +813,12 @@ Approval_Sign_Off
 - Column Q (Rollback Triggered):
   - "Yes" → Red fill (indicates change failed and was reversed)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Implementation Log - Change Execution Records" spanning A1:S1
 - Protected cells: Columns F and P (formula cells) locked
 - DateTime fields: Use format DD.MM.YYYY HH:MM for precise tracking
-
 
 **Usage Notes**:
 
@@ -869,7 +828,6 @@ Approval_Sign_Off
 - Post-Implementation Verification (Column K) must be "Successful" for change to be considered complete
 - If Issues Encountered (Column M) is not empty, must document resolution in Column N
 - Rollback timing (Column R) feeds into Rollback_Capability assessment
-
 
 ---
 
@@ -933,7 +891,6 @@ Approval_Sign_Off
   - Values: "Yes (same as forward), Yes (expedited), No (automatic)"
   - Allow blank: Yes
 
-
 **Formulas**:
 
 - Column P (Rollback Readiness):
@@ -947,7 +904,6 @@ Approval_Sign_Off
     - Ready if documented + tested successfully + backup verified
     - Not Ready if documented but not tested
     - Partially Ready for other combinations
-
 
 **Conditional Formatting**:
 
@@ -968,14 +924,12 @@ Approval_Sign_Off
   - "Moderate" → Yellow fill
   - "Significant" → Red fill (high risk!)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Rollback Capability Assessment" spanning A1:Q1
 - Protected cells: Column P (formula cell) locked
 - Critical requirement: High-risk changes MUST have "Ready" rollback capability before approval
-
 
 **Usage Notes**:
 
@@ -985,7 +939,6 @@ Approval_Sign_Off
 - Data Backup Verified (Column M) is mandatory for changes involving data
 - If Rollback Readiness = "Not Ready" or "Partially Ready", should be resolved before production implementation
 - Actual rollback events should be documented in Implementation_Log sheet
-
 
 ---
 
@@ -1042,7 +995,6 @@ Approval_Sign_Off
   - Values: "Yes, No, Questionable"
   - Allow blank: Yes
 
-
 **Formulas**:
 
 - Column H (Time to Implement Hours):
@@ -1058,7 +1010,6 @@ Approval_Sign_Off
 ```
 
   - Explanation: Flags potential abuse if took >48 hours to implement (not truly emergency) or justification questionable
-
 
 **Conditional Formatting**:
 
@@ -1077,14 +1028,12 @@ Approval_Sign_Off
   - "In Progress" → Yellow fill
   - "Yes" → Green fill
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Emergency Changes - Expedited Process Tracking" spanning A1:R1
 - Protected cells: Columns H and O (formula cells) locked
 - Emergency ratio monitoring: Should be <10% of total changes
-
 
 **Usage Notes**:
 
@@ -1095,7 +1044,6 @@ Approval_Sign_Off
 - If CAB Review Outcome = "Disapproved", change must be reversed unless exceptional circumstances
 - Process Abuse Indicator helps identify when emergency process is misused for non-urgent changes
 - Target: <10% of total changes should be Emergency/Hot Fix type
-
 
 ---
 
@@ -1167,7 +1115,6 @@ Approval_Sign_Off
 - Target column: Gray background (D9D9D9)
 - Status column: Conditional formatting (Green/Yellow/Red)
 
-
 **Conditional Formatting**:
 
 - Success Rate %:
@@ -1180,13 +1127,11 @@ Approval_Sign_Off
   - 8-10% → Yellow
   - >10% → Red
 
-
 **Special Features**:
 
 - All cells protected (formula-driven sheet, no user input)
 - Print area defined (fits on 2 pages)
 - Chart area reserved (Rows 54-70) for trend graphs if needed
-
 
 **Usage Notes**:
 
@@ -1194,7 +1139,6 @@ Approval_Sign_Off
 - Review monthly to identify trends
 - Rising failure rate or emergency change % indicates process issues
 - Use for CAB reporting and management dashboards
-
 
 ---
 
@@ -1254,13 +1198,11 @@ Approval_Sign_Off
   - 90-94% → Yellow
   - <90% → Red
 
-
 **Special Features**:
 
 - All cells protected (formula-driven)
 - Traffic light indicators for visual status
 - Print-friendly format for reporting
-
 
 **Usage Notes**:
 
@@ -1268,7 +1210,6 @@ Approval_Sign_Off
 - Non-compliant items require remediation
 - Target: ≥95% overall compliance
 - Use for internal audit preparation
-
 
 ---
 
@@ -1305,11 +1246,9 @@ Approval_Sign_Off
 - Column I: Dropdown with 5 retention periods
 - Column K: Dropdown with 4 verification statuses
 
-
 **Conditional Formatting**:
 
 - Same as ISMS-IMP-A.8.9.1 Evidence Register
-
 
 **Usage Notes**:
 
@@ -1317,7 +1256,6 @@ Approval_Sign_Off
 - CAB meeting minutes are critical evidence
 - Test results should be retained as evidence
 - Approval records must be accessible for audit
-
 
 ---
 
@@ -1331,19 +1269,16 @@ Approval_Sign_Off
 
 - Assessment Title, Period, Document ID, Version, Assessment Date
 
-
 **Section B: Preparer Sign-Off** (Rows 10-16)
 
 - Preparer Name, Role, Signature, Date
 - Attestation: "I attest that all configuration changes have been documented accurately and change control procedures have been followed."
-
 
 **Section C: Reviewer Sign-Off** (Rows 18-25)
 
 - Reviewer Name, Role, Signature, Date
 - Review Findings, Gaps Identified
 - Attestation: "I have reviewed this assessment and verified change control process compliance. Process improvement opportunities have been identified."
-
 
 **Section D: Approver Sign-Off** (Rows 27-35)
 
@@ -1353,11 +1288,9 @@ Approval_Sign_Off
 - Next Assessment Due
 - Attestation: "I approve this change control assessment and authorize remediation activities for identified gaps."
 
-
 **Conditional Formatting**:
 
 - Approval Decision: Green (Approved), Yellow (Conditions), Red (Not Approved)
-
 
 ---
 
@@ -1371,13 +1304,11 @@ Approval_Sign_Off
 - Priority: P1-Critical, P2-High, P3-Medium, P4-Low
 - Change Status: Draft, Submitted, Approved, In Testing, Scheduled, Implementing, Completed, Failed, Rolled Back, Cancelled
 
-
 **Change_Approval_Workflow**:
 
 - Approval Tier Required: Single-Tier, Two-Tier, Three-Tier, Emergency
 - Approval Status (Tiers 1-3): Pending, Approved, Rejected, N/A
 - Approval Method: CAB Meeting, Email Approval, Emergency Verbal, Automated (Standard), Not Applicable
-
 
 **Impact_Assessment**:
 
@@ -1386,14 +1317,12 @@ Approval_Sign_Off
 - Risk Level: Low, Medium, High, Critical
 - Rollback Required: Yes, No
 
-
 **Testing_Validation**:
 
 - Testing Required: Yes, No, N/A (Emergency)
 - Test Environment: Dev, Test, Staging, UAT, Production (Non-Critical), None
 - Testing Status: Not Started, In Progress, Completed, Failed, Abbreviated (Emergency)
 - Go/No-Go Decision: Go, No-Go, Go with Conditions, N/A
-
 
 **Implementation_Log**:
 
@@ -1402,7 +1331,6 @@ Approval_Sign_Off
 - Issues Resolved: Yes, No, Partially, N/A
 - Implementation Status: Successful, Failed, Rolled Back, In Progress
 - Rollback Triggered: Yes, No
-
 
 **Rollback_Capability**:
 
@@ -1414,7 +1342,6 @@ Approval_Sign_Off
 - Data Backup Verified: Yes, No, N/A
 - Rollback Approval Required: Yes (same as forward), Yes (expedited), No (automatic)
 
-
 **Emergency_Changes**:
 
 - Emergency Type: Security Incident, Service Outage, Critical Bug, Vulnerability Remediation, Other
@@ -1423,7 +1350,6 @@ Approval_Sign_Off
 - CAB Review Outcome: Approved, Approved with Remediation, Disapproved (requires reversal), Not Yet Reviewed
 - Justification Valid: Yes, No, Questionable
 
-
 **Evidence_Register**:
 
 - Evidence Type: Approval Record, Test Results, Implementation Log, Rollback Test, CAB Minutes, Email Approval, Change Request, Other
@@ -1431,11 +1357,9 @@ Approval_Sign_Off
 - Retention Period: 1 Year, 3 Years, 5 Years, 7 Years, Indefinite
 - Verification Status: Verified, Needs Verification, Missing, Outdated
 
-
 **Approval_Sign_Off**:
 
 - Approval Decision: Approved, Approved with Conditions, Not Approved - Revisions Required
-
 
 ## Date Format
 
@@ -1446,7 +1370,6 @@ All date fields use **DD.MM.YYYY** format. DateTime fields use **DD.MM.YYYY HH:M
 - Test Cases Executed/Passed/Failed: Whole numbers, 0-9999
 - Implementation Duration Hours: Decimal, calculated
 - Risk Score: Calculated, 1-20 range
-
 
 ---
 
@@ -1461,7 +1384,6 @@ Where:
 - Completed = Changes with status "Completed" and verification "Successful"
 - Failed = Changes with status "Failed"
 - Rolled Back = Changes with status "Rolled Back"
-
 
 Target: ≥95% overall success rate
 ```
@@ -1486,7 +1408,6 @@ Proper Approval means:
 - All required approvers signed off
 - Emergency changes have post-facto CAB review
 
-
 Target: 100%
 ```
 
@@ -1500,7 +1421,6 @@ Changes Requiring Testing:
 - Standard changes: May use templated testing
 - Emergency changes: Abbreviated acceptable if documented
 
-
 Target: 100% for Normal, 80% for Emergency
 ```
 
@@ -1513,7 +1433,6 @@ Ready Rollback means:
 - Rollback procedure documented
 - Rollback tested successfully
 - Data backup verified (if applicable)
-
 
 Target: 100% for Critical/High risk changes
 ```
@@ -1565,7 +1484,6 @@ Status:
    - Create entry in Emergency_Changes immediately after implementation
    - Ensure CAB review within 5 business days
 
-
 **Phase 3: Monthly Review** (Days 1-5 of each month)
 1. Change Coordinator reviews previous month's changes
 2. Verify all changes have complete documentation
@@ -1597,7 +1515,6 @@ Status:
 - Maintain Evidence_Register
 - Monthly review of change records
 
-
 **Configuration Manager (Reviewer)**:
 
 - Quarterly comprehensive assessment
@@ -1606,7 +1523,6 @@ Status:
 - Identify improvement opportunities
 - Complete Reviewer Sign-Off
 
-
 **IT Manager / CISO (Approver)**:
 
 - Review overall change management effectiveness
@@ -1614,14 +1530,12 @@ Status:
 - Complete Approver Sign-Off
 - Authorize process improvements
 
-
 **Change Advisory Board (CAB)**:
 
 - Review and approve high-risk changes
 - Retrospective review of emergency changes
 - Provide governance oversight
 - Approve process changes
-
 
 ## Common Questions
 
@@ -1688,7 +1602,6 @@ A: Document in Rollback_Capability why rollback is not possible. Provide mitigat
 - Email approval chains (with timestamps, full headers)
 - Emergency verbal approval documentation (who, when, what, confirmation method)
 
-
 **Testing Evidence**:
 
 - Test plans and test cases
@@ -1696,7 +1609,6 @@ A: Document in Rollback_Capability why rollback is not possible. Provide mitigat
 - Screenshots of test environments
 - Test data summaries
 - Go/No-Go decision records
-
 
 **Implementation Evidence**:
 
@@ -1706,7 +1618,6 @@ A: Document in Rollback_Capability why rollback is not possible. Provide mitigat
 - Monitoring dashboards showing successful change
 - Backup verification records (pre-change backups)
 
-
 **Rollback Evidence**:
 
 - Rollback procedure documents
@@ -1714,14 +1625,12 @@ A: Document in Rollback_Capability why rollback is not possible. Provide mitigat
 - Backup/snapshot verification
 - Rollback trigger criteria documentation
 
-
 **Emergency Change Evidence**:
 
 - Emergency declaration notification
 - Incident records triggering emergency change
 - Post-facto CAB review minutes
 - Justification documentation
-
 
 ## Evidence Quality Standards
 
@@ -1733,7 +1642,6 @@ A: Document in Rollback_Capability why rollback is not possible. Provide mitigat
 - Complete (full context, not excerpts)
 - Retained per retention policy
 
-
 **Poor Evidence**:
 
 - Undated screenshots
@@ -1741,7 +1649,6 @@ A: Document in Rollback_Capability why rollback is not possible. Provide mitigat
 - Verbal agreements not documented
 - Partial records (missing context)
 - Evidence on personal storage only
-
 
 ---
 
@@ -1756,7 +1663,6 @@ A: Document in Rollback_Capability why rollback is not possible. Provide mitigat
 - **Quarterly**: Comprehensive assessment, formal review
 - **Annual**: Process improvement review, metrics trends analysis
 
-
 ## Workbook Versioning
 
 File naming: `ISMS_A_8_9_2_Change_Control_Assessment_YYYYMMDD.xlsx`
@@ -1766,7 +1672,6 @@ Retain versions:
 - Monthly snapshots (for trend analysis)
 - Quarterly assessments (formal records)
 - All versions for minimum 3 years (audit trail)
-
 
 ---
 
@@ -1847,14 +1752,12 @@ Approval_Sign_Off
 - Common questions and troubleshooting
 - Contact information for Change Advisory Board
 
-
 **Formatting**:
 
 - Title section: Bold, 16pt, dark blue background (003366)
 - Section headers: Bold, 14pt, light blue background (4472C4)
 - Body text: Regular, 11pt Calibri
 - Color legend showing: Green (Approved/Successful), Yellow (Pending/In Progress), Red (Rejected/Failed), Gray (Cancelled/N/A)
-
 
 **No Data Entry**: This is a read-only informational sheet.
 
@@ -1906,7 +1809,6 @@ Approval_Sign_Off
 
 - Column H (Request Date), Column I (Required Implementation Date): Date format DD.MM.YYYY
 
-
 **Formulas**:
 
 - Column K (Current Phase): 
@@ -1934,7 +1836,6 @@ Approval_Sign_Off
 
   - Explanation: Status health indicator based on time in phase
 
-
 **Conditional Formatting**:
 
 - Column C (Change Type):
@@ -1958,7 +1859,6 @@ Approval_Sign_Off
   - "At Risk" → Orange text, bold
   - "Delayed" → Red text, bold
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background (D9D9D9), bold text, centered alignment
@@ -1966,14 +1866,12 @@ Approval_Sign_Off
 - Protected cells: Columns K, L, M (formula cells) locked
 - Filter: Enable auto-filter on header row to filter by Change Type, Priority, Status
 
-
 **Usage Notes**:
 
 - Preparer: Create new row for each configuration change request
 - Change ID should follow organizational convention (e.g., CHG-YYYY-NNN)
 - Update Change Status as change progresses through lifecycle
 - Reference this Change ID in all other sheets for traceability
-
 
 ---
 
@@ -2024,7 +1922,6 @@ Approval_Sign_Off
 
 - Date columns (F, I, L): Date format DD.MM.YYYY
 
-
 **Formulas**:
 
 - Column O (Overall Approval Status):
@@ -2049,7 +1946,6 @@ Approval_Sign_Off
   - Explanation: Calculates days from request date to final approval date
   - Note: VLOOKUP fetches request date from Change_Request_Register
 
-
 **Conditional Formatting**:
 
 - Columns E, H, K (Approval Status):
@@ -2069,14 +1965,12 @@ Approval_Sign_Off
   - 8-14 days → Yellow fill (approaching SLA)
   - <8 days → Green fill (fast approval)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Change Approval Workflow Tracking" spanning A1:Q1
 - Protected cells: Columns O and P (formula cells) locked
 - Approval tier logic: If Tier 2 or Tier 3 not required (N/A), they don't block overall approval
-
 
 **Usage Notes**:
 
@@ -2085,7 +1979,6 @@ Approval_Sign_Off
 - For Emergency changes, document verbal approval immediately and get written confirmation within 24 hours
 - Approval Reference (Column N) is critical for audit - must link to verifiable record
 - Standard changes (pre-approved) should show "Automated (Standard)" as approval method
-
 
 ---
 
@@ -2137,7 +2030,6 @@ Approval_Sign_Off
   - Values: "Yes, No"
   - Allow blank: No
 
-
 **Formulas**:
 
 - Column O (Risk Score):
@@ -2149,7 +2041,6 @@ Approval_Sign_Off
 
   - Explanation: Risk Score = Risk Level (1-4) × User Impact (1-5)
   - Range: 1 (lowest) to 20 (highest)
-
 
 **Conditional Formatting**:
 
@@ -2168,14 +2059,12 @@ Approval_Sign_Off
   - "Yes" → Yellow fill (indicates rollback plan needed)
   - "No" → Gray fill
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Impact Assessment - Risk Analysis per Change" spanning A1:Q1
 - Protected cells: Column O (formula cell) locked
 - Risk-based approval: High/Critical risk changes should trigger Three-Tier approval
-
 
 **Usage Notes**:
 
@@ -2185,7 +2074,6 @@ Approval_Sign_Off
 - Risk Level (Column H) should match Priority in Change_Request_Register (P1/P2 = High/Critical risk)
 - If Rollback Required = Yes, must complete Rollback_Capability sheet
 - Assessment Completed By (Column P) provides accountability
-
 
 ---
 
@@ -2239,7 +2127,6 @@ Approval_Sign_Off
   - Values: "Go, No-Go, Go with Conditions, N/A"
   - Allow blank: Yes
 
-
 **Formulas**:
 
 - Column G (Test Duration Days):
@@ -2255,7 +2142,6 @@ Approval_Sign_Off
 ```
 
   - Format as percentage with 1 decimal place
-
 
 **Conditional Formatting**:
 
@@ -2274,14 +2160,12 @@ Approval_Sign_Off
   - "Failed" → Red fill
   - "Abbreviated (Emergency)" → Orange fill (flag abbreviated testing)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Testing Validation Records" spanning A1:S1
 - Protected cells: Columns G and L (formula cells) locked
 - Testing adequacy: Changes with Test Pass Rate <80% or Critical Issues >0 should be flagged for review
-
 
 **Usage Notes**:
 
@@ -2292,7 +2176,6 @@ Approval_Sign_Off
 - Hot Fix changes: May proceed with minimal testing if critical (document in Notes)
 - "Go with Conditions" requires documenting conditions in Notes column
 - Test Plan Reference (Column H) should link to detailed test documentation
-
 
 ---
 
@@ -2350,7 +2233,6 @@ Approval_Sign_Off
   - Values: "Yes, No"
   - Allow blank: No
 
-
 **Formulas**:
 
 - Column F (Implementation Duration Hours):
@@ -2384,14 +2266,12 @@ Approval_Sign_Off
 - Column Q (Rollback Triggered):
   - "Yes" → Red fill (indicates change failed and was reversed)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Implementation Log - Change Execution Records" spanning A1:S1
 - Protected cells: Columns F and P (formula cells) locked
 - DateTime fields: Use format DD.MM.YYYY HH:MM for precise tracking
-
 
 **Usage Notes**:
 
@@ -2401,7 +2281,6 @@ Approval_Sign_Off
 - Post-Implementation Verification (Column K) must be "Successful" for change to be considered complete
 - If Issues Encountered (Column M) is not empty, must document resolution in Column N
 - Rollback timing (Column R) feeds into Rollback_Capability assessment
-
 
 ---
 
@@ -2465,7 +2344,6 @@ Approval_Sign_Off
   - Values: "Yes (same as forward), Yes (expedited), No (automatic)"
   - Allow blank: Yes
 
-
 **Formulas**:
 
 - Column P (Rollback Readiness):
@@ -2479,7 +2357,6 @@ Approval_Sign_Off
     - Ready if documented + tested successfully + backup verified
     - Not Ready if documented but not tested
     - Partially Ready for other combinations
-
 
 **Conditional Formatting**:
 
@@ -2500,14 +2377,12 @@ Approval_Sign_Off
   - "Moderate" → Yellow fill
   - "Significant" → Red fill (high risk!)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Rollback Capability Assessment" spanning A1:Q1
 - Protected cells: Column P (formula cell) locked
 - Critical requirement: High-risk changes MUST have "Ready" rollback capability before approval
-
 
 **Usage Notes**:
 
@@ -2517,7 +2392,6 @@ Approval_Sign_Off
 - Data Backup Verified (Column M) is mandatory for changes involving data
 - If Rollback Readiness = "Not Ready" or "Partially Ready", should be resolved before production implementation
 - Actual rollback events should be documented in Implementation_Log sheet
-
 
 ---
 
@@ -2574,7 +2448,6 @@ Approval_Sign_Off
   - Values: "Yes, No, Questionable"
   - Allow blank: Yes
 
-
 **Formulas**:
 
 - Column H (Time to Implement Hours):
@@ -2590,7 +2463,6 @@ Approval_Sign_Off
 ```
 
   - Explanation: Flags potential abuse if took >48 hours to implement (not truly emergency) or justification questionable
-
 
 **Conditional Formatting**:
 
@@ -2609,14 +2481,12 @@ Approval_Sign_Off
   - "In Progress" → Yellow fill
   - "Yes" → Green fill
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Emergency Changes - Expedited Process Tracking" spanning A1:R1
 - Protected cells: Columns H and O (formula cells) locked
 - Emergency ratio monitoring: Should be <10% of total changes
-
 
 **Usage Notes**:
 
@@ -2627,7 +2497,6 @@ Approval_Sign_Off
 - If CAB Review Outcome = "Disapproved", change must be reversed unless exceptional circumstances
 - Process Abuse Indicator helps identify when emergency process is misused for non-urgent changes
 - Target: <10% of total changes should be Emergency/Hot Fix type
-
 
 ---
 
@@ -2699,7 +2568,6 @@ Approval_Sign_Off
 - Target column: Gray background (D9D9D9)
 - Status column: Conditional formatting (Green/Yellow/Red)
 
-
 **Conditional Formatting**:
 
 - Success Rate %:
@@ -2712,13 +2580,11 @@ Approval_Sign_Off
   - 8-10% → Yellow
   - >10% → Red
 
-
 **Special Features**:
 
 - All cells protected (formula-driven sheet, no user input)
 - Print area defined (fits on 2 pages)
 - Chart area reserved (Rows 54-70) for trend graphs if needed
-
 
 **Usage Notes**:
 
@@ -2726,7 +2592,6 @@ Approval_Sign_Off
 - Review monthly to identify trends
 - Rising failure rate or emergency change % indicates process issues
 - Use for CAB reporting and management dashboards
-
 
 ---
 
@@ -2786,13 +2651,11 @@ Approval_Sign_Off
   - 90-94% → Yellow
   - <90% → Red
 
-
 **Special Features**:
 
 - All cells protected (formula-driven)
 - Traffic light indicators for visual status
 - Print-friendly format for reporting
-
 
 **Usage Notes**:
 
@@ -2800,7 +2663,6 @@ Approval_Sign_Off
 - Non-compliant items require remediation
 - Target: ≥95% overall compliance
 - Use for internal audit preparation
-
 
 ---
 
@@ -2837,11 +2699,9 @@ Approval_Sign_Off
 - Column I: Dropdown with 5 retention periods
 - Column K: Dropdown with 4 verification statuses
 
-
 **Conditional Formatting**:
 
 - Same as ISMS-IMP-A.8.9.1 Evidence Register
-
 
 **Usage Notes**:
 
@@ -2849,7 +2709,6 @@ Approval_Sign_Off
 - CAB meeting minutes are critical evidence
 - Test results should be retained as evidence
 - Approval records must be accessible for audit
-
 
 ---
 
@@ -2863,19 +2722,16 @@ Approval_Sign_Off
 
 - Assessment Title, Period, Document ID, Version, Assessment Date
 
-
 **Section B: Preparer Sign-Off** (Rows 10-16)
 
 - Preparer Name, Role, Signature, Date
 - Attestation: "I attest that all configuration changes have been documented accurately and change control procedures have been followed."
-
 
 **Section C: Reviewer Sign-Off** (Rows 18-25)
 
 - Reviewer Name, Role, Signature, Date
 - Review Findings, Gaps Identified
 - Attestation: "I have reviewed this assessment and verified change control process compliance. Process improvement opportunities have been identified."
-
 
 **Section D: Approver Sign-Off** (Rows 27-35)
 
@@ -2885,11 +2741,9 @@ Approval_Sign_Off
 - Next Assessment Due
 - Attestation: "I approve this change control assessment and authorize remediation activities for identified gaps."
 
-
 **Conditional Formatting**:
 
 - Approval Decision: Green (Approved), Yellow (Conditions), Red (Not Approved)
-
 
 ---
 
@@ -2903,13 +2757,11 @@ Approval_Sign_Off
 - Priority: P1-Critical, P2-High, P3-Medium, P4-Low
 - Change Status: Draft, Submitted, Approved, In Testing, Scheduled, Implementing, Completed, Failed, Rolled Back, Cancelled
 
-
 **Change_Approval_Workflow**:
 
 - Approval Tier Required: Single-Tier, Two-Tier, Three-Tier, Emergency
 - Approval Status (Tiers 1-3): Pending, Approved, Rejected, N/A
 - Approval Method: CAB Meeting, Email Approval, Emergency Verbal, Automated (Standard), Not Applicable
-
 
 **Impact_Assessment**:
 
@@ -2918,14 +2770,12 @@ Approval_Sign_Off
 - Risk Level: Low, Medium, High, Critical
 - Rollback Required: Yes, No
 
-
 **Testing_Validation**:
 
 - Testing Required: Yes, No, N/A (Emergency)
 - Test Environment: Dev, Test, Staging, UAT, Production (Non-Critical), None
 - Testing Status: Not Started, In Progress, Completed, Failed, Abbreviated (Emergency)
 - Go/No-Go Decision: Go, No-Go, Go with Conditions, N/A
-
 
 **Implementation_Log**:
 
@@ -2934,7 +2784,6 @@ Approval_Sign_Off
 - Issues Resolved: Yes, No, Partially, N/A
 - Implementation Status: Successful, Failed, Rolled Back, In Progress
 - Rollback Triggered: Yes, No
-
 
 **Rollback_Capability**:
 
@@ -2946,7 +2795,6 @@ Approval_Sign_Off
 - Data Backup Verified: Yes, No, N/A
 - Rollback Approval Required: Yes (same as forward), Yes (expedited), No (automatic)
 
-
 **Emergency_Changes**:
 
 - Emergency Type: Security Incident, Service Outage, Critical Bug, Vulnerability Remediation, Other
@@ -2955,7 +2803,6 @@ Approval_Sign_Off
 - CAB Review Outcome: Approved, Approved with Remediation, Disapproved (requires reversal), Not Yet Reviewed
 - Justification Valid: Yes, No, Questionable
 
-
 **Evidence_Register**:
 
 - Evidence Type: Approval Record, Test Results, Implementation Log, Rollback Test, CAB Minutes, Email Approval, Change Request, Other
@@ -2963,11 +2810,9 @@ Approval_Sign_Off
 - Retention Period: 1 Year, 3 Years, 5 Years, 7 Years, Indefinite
 - Verification Status: Verified, Needs Verification, Missing, Outdated
 
-
 **Approval_Sign_Off**:
 
 - Approval Decision: Approved, Approved with Conditions, Not Approved - Revisions Required
-
 
 ## Date Format
 
@@ -2978,7 +2823,6 @@ All date fields use **DD.MM.YYYY** format. DateTime fields use **DD.MM.YYYY HH:M
 - Test Cases Executed/Passed/Failed: Whole numbers, 0-9999
 - Implementation Duration Hours: Decimal, calculated
 - Risk Score: Calculated, 1-20 range
-
 
 ---
 
@@ -2993,7 +2837,6 @@ Where:
 - Completed = Changes with status "Completed" and verification "Successful"
 - Failed = Changes with status "Failed"
 - Rolled Back = Changes with status "Rolled Back"
-
 
 Target: ≥95% overall success rate
 ```
@@ -3018,7 +2861,6 @@ Proper Approval means:
 - All required approvers signed off
 - Emergency changes have post-facto CAB review
 
-
 Target: 100%
 ```
 
@@ -3032,7 +2874,6 @@ Changes Requiring Testing:
 - Standard changes: May use templated testing
 - Emergency changes: Abbreviated acceptable if documented
 
-
 Target: 100% for Normal, 80% for Emergency
 ```
 
@@ -3045,7 +2886,6 @@ Ready Rollback means:
 - Rollback procedure documented
 - Rollback tested successfully
 - Data backup verified (if applicable)
-
 
 Target: 100% for Critical/High risk changes
 ```
@@ -3097,7 +2937,6 @@ Status:
    - Create entry in Emergency_Changes immediately after implementation
    - Ensure CAB review within 5 business days
 
-
 **Phase 3: Monthly Review** (Days 1-5 of each month)
 1. Change Coordinator reviews previous month's changes
 2. Verify all changes have complete documentation
@@ -3129,7 +2968,6 @@ Status:
 - Maintain Evidence_Register
 - Monthly review of change records
 
-
 **Configuration Manager (Reviewer)**:
 
 - Quarterly comprehensive assessment
@@ -3138,7 +2976,6 @@ Status:
 - Identify improvement opportunities
 - Complete Reviewer Sign-Off
 
-
 **IT Manager / CISO (Approver)**:
 
 - Review overall change management effectiveness
@@ -3146,14 +2983,12 @@ Status:
 - Complete Approver Sign-Off
 - Authorize process improvements
 
-
 **Change Advisory Board (CAB)**:
 
 - Review and approve high-risk changes
 - Retrospective review of emergency changes
 - Provide governance oversight
 - Approve process changes
-
 
 ## Common Questions
 
@@ -3220,7 +3055,6 @@ A: Document in Rollback_Capability why rollback is not possible. Provide mitigat
 - Email approval chains (with timestamps, full headers)
 - Emergency verbal approval documentation (who, when, what, confirmation method)
 
-
 **Testing Evidence**:
 
 - Test plans and test cases
@@ -3228,7 +3062,6 @@ A: Document in Rollback_Capability why rollback is not possible. Provide mitigat
 - Screenshots of test environments
 - Test data summaries
 - Go/No-Go decision records
-
 
 **Implementation Evidence**:
 
@@ -3238,7 +3071,6 @@ A: Document in Rollback_Capability why rollback is not possible. Provide mitigat
 - Monitoring dashboards showing successful change
 - Backup verification records (pre-change backups)
 
-
 **Rollback Evidence**:
 
 - Rollback procedure documents
@@ -3246,14 +3078,12 @@ A: Document in Rollback_Capability why rollback is not possible. Provide mitigat
 - Backup/snapshot verification
 - Rollback trigger criteria documentation
 
-
 **Emergency Change Evidence**:
 
 - Emergency declaration notification
 - Incident records triggering emergency change
 - Post-facto CAB review minutes
 - Justification documentation
-
 
 ## Evidence Quality Standards
 
@@ -3265,7 +3095,6 @@ A: Document in Rollback_Capability why rollback is not possible. Provide mitigat
 - Complete (full context, not excerpts)
 - Retained per retention policy
 
-
 **Poor Evidence**:
 
 - Undated screenshots
@@ -3273,7 +3102,6 @@ A: Document in Rollback_Capability why rollback is not possible. Provide mitigat
 - Verbal agreements not documented
 - Partial records (missing context)
 - Evidence on personal storage only
-
 
 ---
 
@@ -3288,7 +3116,6 @@ A: Document in Rollback_Capability why rollback is not possible. Provide mitigat
 - **Quarterly**: Comprehensive assessment, formal review
 - **Annual**: Process improvement review, metrics trends analysis
 
-
 ## Workbook Versioning
 
 File naming: `ISMS_A_8_9_2_Change_Control_Assessment_YYYYMMDD.xlsx`
@@ -3298,7 +3125,6 @@ Retain versions:
 - Monthly snapshots (for trend analysis)
 - Quarterly assessments (formal records)
 - All versions for minimum 3 years (audit trail)
-
 
 ---
 

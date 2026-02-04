@@ -34,7 +34,6 @@
 - Compliance: Legal/Compliance Officer
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -44,7 +43,6 @@
 - ISO/IEC 27001:2022 Control A.8.4
 - ISMS-POL-A.8.25-26-29 (Secure Development Lifecycle)
 - ISMS-POL-A.5.15-16-18 (Access Control / Identity and Access Management)
-
 
 ---
 
@@ -82,7 +80,6 @@ This policy establishes [Organization]'s requirements for source code access con
 - Exception and incident management frameworks
 - Integration with [Organization]'s risk assessment and treatment processes
 
-
 ## What This Policy Does
 
 This policy:
@@ -92,7 +89,6 @@ This policy:
 - **Specifies** mandatory access controls for source code repositories and development artifacts
 - **References** applicable regulatory requirements per ISMS-POL-00
 - **Identifies** organizational roles and responsibilities for source code access controls
-
 
 ## What This Policy Does NOT Do
 
@@ -106,7 +102,6 @@ This policy does NOT:
 - **Define detailed incident response procedures** (integrated with organizational incident response per A.5.24-27)
 - **Establish secure coding standards** (covered by ISMS-POL-A.8.25-26-29 Secure Development Framework)
 
-
 **Rationale**: Separating policy requirements from implementation guidance enables:
 
 - Policy stability despite evolving repository technologies and platform capabilities
@@ -114,14 +109,12 @@ This policy does NOT:
 - Clear distinction between governance (policy) and execution (implementation)
 - Focused audit scope (auditors audit policy compliance, not technical platform configurations)
 
-
 **Document Structure**:
 
 - **ISMS-POL-A.8.4** (THIS DOCUMENT): Policy requirements (WHAT and WHO)
 - **ISMS-IMP-A.8.4.1**: Repository access control implementation procedures (HOW)
 - **ISMS-IMP-A.8.4.2**: Branch protection configuration guidance (HOW)
 - **ISMS-IMP-A.8.4.3**: Source code access assessment procedures (HOW)
-
 
 ## Scope
 
@@ -134,7 +127,6 @@ This policy does NOT:
 - All third-party development partners, offshore development teams, and security auditors
 - All deployment models (on-premises infrastructure, hybrid environments, cloud-hosted repositories)
 
-
 **Out of Scope**:
 
 - Compiled binaries and executables (covered under A.8.1 - User Endpoint Devices)
@@ -143,7 +135,6 @@ This policy does NOT:
 - Change management for production deployments (covered under A.8.32 - Change Management)
 - Third-party commercial software without source code access
 - Open source software used but not modified by [Organization]
-
 
 ## Regulatory Applicability
 
@@ -177,7 +168,6 @@ Non-mandatory guidance and best practices:
 - CIS Control 16: Application Software Security
 - OWASP Code Repository Security Guide
 
-
 **For complete regulatory categorization, refer to ISMS-POL-00 (Regulatory Applicability Framework).**
 
 ## Related Controls Integration
@@ -190,30 +180,25 @@ This policy integrates with and depends upon the following related ISMS controls
 - Source code access control inherits authentication, authorization, and identity management requirements
 - Multi-factor authentication (MFA) and access review requirements apply to source code repositories
 
-
 **A.8.2-3-5 (Authentication and Privileged Access)**:
 
 - Defines authentication mechanisms and privileged account management
 - Repository administrator access is treated as privileged access
-
 
 **A.8.25-26-29 (Secure Development Lifecycle)**:
 
 - Defines secure coding standards and development practices
 - A.8.4 enables secure development controls by ensuring only authorized personnel can modify code
 
-
 **A.8.32 (Change Management)**:
 
 - Addresses how changes are managed through environments (dev, test, production)
 - A.8.4 focuses on controlling access to source code before deployment
 
-
 **A.5.24-27 (Incident Management)**:
 
 - Defines how to respond to security incidents
 - A.8.4 helps detect source code access incidents through monitoring
-
 
 **Integration Principle**: A.8.4 provides the access control foundation that enables other controls. Secure development practices are only effective if unauthorized individuals cannot bypass them by directly modifying code in repositories.
 
@@ -237,7 +222,6 @@ All source code repositories SHALL implement role-based access control (RBAC). D
 - Review records retained in evidence repository (SharePoint/Confluence ISMS Evidence Library or equivalent)
 - Non-response escalated to Development Manager after 10 business days; to CISO after 15 business days
 
-
 **Access Request and Approval**:
 
 All repository access requests SHALL include requestor name and role, repository name and classification, access level requested (read/write/admin), business justification, and expected duration if time-bound. Repository access requests SHALL be approved by the repository owner (mandatory), development team lead for write access or higher, and CISO or delegate for admin access to production repositories. Access SHALL be provisioned within 24 hours of approval during business hours. All access requests and approvals SHALL be documented and retained for audit purposes (minimum 3 years). Emergency access requests SHALL follow expedited approval process with post-facto review within 48 hours.
@@ -253,7 +237,6 @@ Repository access SHALL be provisioned through centralized identity management s
 - Verification failures escalated immediately to IT Operations for manual remediation
 - Monthly deprovisioning compliance report to CISO (target: 100% verified within 24 hours)
 
-
 **Implementation Note**: Access request workflows, provisioning procedures, and deprovisioning automation are documented in ISMS-IMP-A.8.4.1 (Repository Access Control Implementation).
 
 **Audit Evidence**:
@@ -262,7 +245,6 @@ Repository access SHALL be provisioned through centralized identity management s
 - Access request approval records
 - Quarterly access review completion records
 - Automated deprovisioning logs and verification
-
 
 ## Repository Classification and Controls
 
@@ -281,7 +263,6 @@ All source code repositories SHALL be classified according to the following cate
 - **Archived/Deprecated Repositories**: Historical code no longer in active development (read-only)
   - *Examples*: Legacy application code (sunset), previous product versions, completed proof-of-concepts
 
-
 Repository classification SHALL be assigned by the repository owner during repository creation. Repository classification SHALL be reviewed annually and updated when repository purpose changes.
 
 **Classification-Based Controls**:
@@ -296,7 +277,6 @@ Production code repositories SHALL require minimum two-person review for all cod
 - Repository metadata showing classification
 - Annual classification review records
 - Branch protection configuration per classification
-
 
 ## Role-Based Access Control
 
@@ -328,7 +308,6 @@ Repository access SHALL be granted based on the following roles:
 - Is token expiration set appropriately? (Maximum 1 year; recommend 90 days for high-privilege accounts)
 - Action: Retain (with confirmation), Modify (reduce access), or Revoke (no longer needed)
 
-
 **Least Privilege Enforcement**:
 
 Users SHALL be granted the minimum access level required for their role: read access for code reviews or reference only, write access only if contributing code, admin access only for repository management responsibilities. Users with write access to multiple repositories SHALL have access justified individually per repository. Admin access SHALL be granted sparingly and limited to personnel with repository management responsibilities. "Admin" or "owner" access SHALL NOT be granted to external contractors except in documented exceptional cases with CISO approval.
@@ -341,7 +320,6 @@ Users SHALL be granted the minimum access level required for their role: read ac
 - Service account inventory with purpose documentation
 - Quarterly service account reviews
 - Access justification documentation per user per repository
-
 
 ## Branch Protection and Code Review
 
@@ -371,7 +349,6 @@ All code changes to protected branches SHALL be submitted via pull requests. Pul
 - Emergency fix post-facto review records
 - Temporary exception records with approvals
 
-
 ## Secret Management
 
 [Organization] prohibits secrets in source code repositories and implements automated secret scanning.
@@ -394,7 +371,6 @@ Discovered secrets SHALL be remediated within 1 hour for production repository s
 - If 1-hour remediation not achievable: Immediate compensating control required (disable secret at provider, revoke API key, block affected service); full remediation completed within 4 hours; exception documented with justification
 - All timeline exceptions logged and reviewed weekly by Security Team; repeat exceptions trigger process improvement review
 
-
 **Implementation Note**: Secret scanning tool configuration, remediation procedures, and developer training materials are documented in ISMS-IMP-A.8.4.1 (Repository Access Control Implementation) and ISMS-IMP-A.8.4.2 (Branch Protection Configuration).
 
 **Audit Evidence**:
@@ -404,7 +380,6 @@ Discovered secrets SHALL be remediated within 1 hour for production repository s
 - Pre-commit hook deployment verification
 - Secret scanning tool configuration and logs
 - Secret finding remediation records showing completion times
-
 
 ## Authentication and Multi-Factor Authentication
 
@@ -426,7 +401,6 @@ Multi-factor authentication SHALL be required for all human user accounts with w
 - Quarterly review ensures continued need and appropriate access
 - High-privilege service accounts require CISO approval and enhanced monitoring
 
-
 **Implementation Note**: Authentication configuration, MFA enrollment procedures, and SSH key management are documented in ISMS-IMP-A.8.4.1 (Repository Access Control Implementation).
 
 **Audit Evidence**:
@@ -436,7 +410,6 @@ Multi-factor authentication SHALL be required for all human user accounts with w
 - MFA enforcement configuration
 - Failed MFA attempts logs
 - SSH key/token inventory and rotation records
-
 
 ## Audit Logging and Monitoring
 
@@ -466,7 +439,6 @@ Repository access logs SHALL be monitored for multiple failed authentication att
 - Alert delivery testing results
 - Security event response records
 
-
 ## Backup and Recovery
 
 [Organization] implements regular backups of source code repositories with tested recovery procedures.
@@ -487,7 +459,6 @@ Repository recovery procedures SHALL be tested quarterly for production reposito
 - Annual full-scope test includes at least one complete production repository restoration with permission validation
 - Test schedule published quarterly; results documented in standard test report template (ISMS-IMP-A.8.4.3)
 
-
 **Implementation Note**: Backup configuration procedures, recovery testing methodology, and RTO targets are documented in ISMS-IMP-A.8.4.1 (Repository Access Control Implementation).
 
 **Audit Evidence**:
@@ -499,7 +470,6 @@ Repository recovery procedures SHALL be tested quarterly for production reposito
 - Recovery testing schedule and completion records
 - Recovery test reports
 - RTO compliance measurements
-
 
 ## Third-Party Access Management
 
@@ -524,7 +494,6 @@ Third-party repository access SHALL be monitored for unusual patterns or behavio
 - Monthly access review records
 - Third-party code review records
 
-
 ## Exception Management
 
 [Organization] implements formal exception management for source code access policy requirements.
@@ -548,7 +517,6 @@ Where technically infeasible to meet a requirement, compensating controls SHALL 
 - Effectiveness verification records
 - Annual compensating control reviews
 
-
 ---
 
 # Roles, Governance & Compliance
@@ -564,7 +532,6 @@ Where technically infeasible to meet a requirement, compensating controls SHALL 
 - Annual policy review and updates
 - Reporting to Executive Management on source code security posture
 
-
 **Chief Technology Officer (CTO) / VP Engineering**:
 
 - Accountability for development platform selection and configuration
@@ -573,7 +540,6 @@ Where technically infeasible to meet a requirement, compensating controls SHALL 
 - Development team compliance with policy requirements
 - Resource allocation for policy implementation
 - Collaboration with CISO on policy updates
-
 
 **Information Security Manager**:
 
@@ -584,7 +550,6 @@ Where technically infeasible to meet a requirement, compensating controls SHALL 
 - Training coordination for developers
 - Quarterly compliance reporting to CISO
 
-
 **Repository Owners**:
 
 - Repository classification assignment
@@ -593,7 +558,6 @@ Where technically infeasible to meet a requirement, compensating controls SHALL 
 - Repository security configuration maintenance
 - Incident reporting to security team
 - Collaboration with security team on security reviews
-
 
 **Development Team Leads**:
 
@@ -604,7 +568,6 @@ Where technically infeasible to meet a requirement, compensating controls SHALL 
 - Secret management enforcement within team
 - Collaboration with repository owners on access management
 
-
 **Security Team**:
 
 - Security monitoring and alerting configuration
@@ -613,7 +576,6 @@ Where technically infeasible to meet a requirement, compensating controls SHALL 
 - Incident response for source code security events
 - Vulnerability assessment of repository configurations
 - Security training development and delivery
-
 
 **IT Operations**:
 
@@ -624,7 +586,6 @@ Where technically infeasible to meet a requirement, compensating controls SHALL 
 - Integration with identity management systems
 - Disaster recovery testing
 
-
 **Individual Developers and Contractors**:
 
 - Compliance with access control and authentication requirements
@@ -633,7 +594,6 @@ Where technically infeasible to meet a requirement, compensating controls SHALL 
 - Code review participation
 - Incident reporting to repository owner and security team
 - Completion of required security training
-
 
 ## Policy Review and Updates
 
@@ -645,7 +605,6 @@ This policy SHALL be reviewed annually by the CISO and Information Security Mana
 - Policy update approval records
 - Stakeholder consultation records
 
-
 ## Compliance Monitoring and Reporting
 
 Information Security Manager SHALL monitor policy compliance through quarterly access control assessments, continuous secret scanning monitoring, log analysis and anomaly detection, and audit of branch protection configurations. Compliance status SHALL be reported monthly to CISO (summary dashboard), quarterly to Executive Management (detailed report), and annually to Board of Directors (strategic overview). Compliance reports SHALL include overall compliance score and trends, identified gaps and remediation status, security incidents and lessons learned, exception status and validity, and recommendations for improvement.
@@ -655,7 +614,6 @@ Information Security Manager SHALL monitor policy compliance through quarterly a
 - Monthly compliance reports to CISO
 - Quarterly reports to Executive Management
 - Annual reports to Board
-
 
 ## Audit and Certification
 
@@ -670,14 +628,12 @@ Source code access controls SHALL be audited annually by internal audit team, an
 - **Closure**: Remediation verified by Information Security Manager; evidence of closure documented; gap status updated to "Closed-Verified"
 - **Reporting**: Open gap summary included in monthly CISO compliance report
 
-
 **Audit Evidence**:
 
 - Internal audit reports
 - External audit reports
 - Audit finding remediation tracking
 - Follow-up audit verification
-
 
 ## Non-Compliance Consequences
 
@@ -688,7 +644,6 @@ Policy violations SHALL result in minor violations (written warning, mandatory r
 - Policy violation records
 - Disciplinary action documentation
 - Violation trend analysis
-
 
 ---
 
@@ -721,7 +676,6 @@ Evidence required to demonstrate this policy is adequately documented and approv
 - ✅ Secret management requirements specified
 - ✅ Authentication requirements documented
 - ✅ Roles and responsibilities assigned
-
 
 **Stage 2 (Operational Effectiveness) Evidence:**
 
@@ -789,7 +743,6 @@ This policy becomes effective 30 days after Executive Management approval to all
 - Documented exceptions/compensating controls for repositories not yet compliant
 - Risk acceptance for deferred compliance items (signed by CISO)
 
-
 ## Implementation Priorities
 
 Repositories SHALL be brought into compliance in the following priority order:
@@ -809,7 +762,6 @@ No permanent exceptions SHALL be granted based solely on "existing state" or "le
 - Transition plan documentation
 - Temporary exception records with approvals
 - Remediation completion tracking
-
 
 ---
 

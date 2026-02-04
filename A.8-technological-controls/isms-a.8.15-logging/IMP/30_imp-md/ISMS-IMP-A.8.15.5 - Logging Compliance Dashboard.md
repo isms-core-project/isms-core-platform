@@ -46,12 +46,10 @@ This document consists of two parts:
   - Cell Styling Reference
   - Python Script Usage Notes
 
-
 **Target Audiences:**
 
 - **Part I:** Executive stakeholders (CISO, Board), InfoSec Manager, Compliance Team
 - **Part II:** Workbook developers (Python/Excel script maintainers)
-
 
 ---
 
@@ -82,7 +80,6 @@ This dashboard consolidates FOUR detailed assessments into a single executive vi
 - **Remediation Tracking**: Status of gap remediation efforts
 - **Executive Findings**: 1-page summary for Board/Senior Management
 
-
 ## Why This Matters
 
 **For CISO/Senior Management**:
@@ -92,7 +89,6 @@ This dashboard consolidates FOUR detailed assessments into a single executive vi
 - Proof of continuous improvement (trend tracking)
 - Board reporting (executive summary ready for presentation)
 
-
 **For InfoSec Manager**:
 
 - Holistic view across all logging domains
@@ -100,14 +96,12 @@ This dashboard consolidates FOUR detailed assessments into a single executive vi
 - Resource allocation prioritization
 - Audit readiness (consolidated evidence)
 
-
 **For Compliance/Audit**:
 
 - Objective evidence of Control A.8.15 implementation
 - Traceability (Control -> Policy -> Assessments -> Evidence)
 - Gap tracking and closure verification
 - Trend analysis (continuous monitoring)
-
 
 ## Dashboard Philosophy
 
@@ -117,20 +111,17 @@ This dashboard consolidates FOUR detailed assessments into a single executive vi
 - Overall Compliance Score provides that number
 - Details available on-demand (drill-down capability)
 
-
 **Risk-Based Prioritization**:
 
 - Not all gaps are equal
 - Dashboard prioritizes gaps by: Impact x Likelihood x Detectability / Remediation Effort
 - Focus resources on highest-priority gaps
 
-
 **Trend Tracking**:
 
 - Compliance is not point-in-time
 - Track trends over multiple assessment cycles
 - Demonstrate continuous improvement
-
 
 ---
 
@@ -152,7 +143,6 @@ This dashboard consolidates FOUR detailed assessments into a single executive vi
 - Gap analysis will miss entire domains
 - **Recommendation**: Complete all assessments before dashboard consolidation
 
-
 ## Required Access
 
 **Assessment Workbooks**:
@@ -161,12 +151,10 @@ This dashboard consolidates FOUR detailed assessments into a single executive vi
 - Workbooks must be in accessible location (network drive, SharePoint, OneDrive)
 - File paths needed for external workbook references
 
-
 **Historical Data** (if trend analysis desired):
 
 - Previous assessment cycles (if available)
 - Previous dashboard workbooks (for comparison)
-
 
 ## Required Personnel
 
@@ -174,13 +162,11 @@ This dashboard consolidates FOUR detailed assessments into a single executive vi
 
 - **Information Security Manager**: Owns dashboard consolidation, presents to CISO
 
-
 **Supporting Input**:
 
 - **CISO**: Reviews dashboard, provides strategic direction on gaps
 - **Compliance Manager**: Validates compliance interpretation, regulatory mapping
 - **Internal Audit**: Reviews for audit readiness
-
 
 **Estimated Time**: 4-6 hours for initial consolidation, 2-3 hours for updates
 
@@ -196,20 +182,17 @@ This dashboard consolidates FOUR detailed assessments into a single executive vi
 - Verify assessment dates within acceptable range (all within same quarter recommended)
 - Check for any "In Progress" or "Pending" statuses
 
-
 **Step 2: External Workbook Linking** (1 hour)
 
 - Python script automatically creates external references to 4 source workbooks
 - Verify file paths correct (update if workbooks moved)
 - Test links (ensure formulas pulling data correctly)
 
-
 **Step 3: Compliance Score Calculation** (automated)
 
 - Dashboard extracts compliance scores from each source assessment
 - Calculates weighted average (Overall Compliance Score)
 - Color codes results (Green/Yellow/Orange/Red)
-
 
 **Step 4: Gap Consolidation** (1-2 hours)
 
@@ -218,13 +201,11 @@ This dashboard consolidates FOUR detailed assessments into a single executive vi
 - Re-prioritize using cross-domain risk scoring
 - Assign remediation owners
 
-
 **Step 5: Trend Analysis** (1 hour, if previous cycles available)
 
 - Import previous cycle scores
 - Calculate deltas (improvement/decline)
 - Generate trend graphs
-
 
 **Step 6: Executive Summary Creation** (1-2 hours)
 
@@ -232,13 +213,11 @@ This dashboard consolidates FOUR detailed assessments into a single executive vi
 - Highlight key findings (top 3 strengths, top 3 gaps)
 - Include recommendations (top 3 actions for CISO)
 
-
 **Step 7: Review & Approval** (varies)
 
 - InfoSec Manager self-review
 - CISO review and approval
 - Present to Board/Senior Management (if required)
-
 
 ---
 
@@ -258,7 +237,6 @@ This dashboard consolidates FOUR detailed assessments into a single executive vi
   - Top 3 Recommendations (what CISO should prioritize)
 - Trend (if available): Compliance score vs. previous quarter
 - Assessment Date Range (when assessments performed)
-
 
 **Target Audience**: CISO, Board, Senior Management (non-technical stakeholders)
 
@@ -284,7 +262,6 @@ This dashboard consolidates FOUR detailed assessments into a single executive vi
 - Collection: 25% (critical - logs must be centralized)
 - Protection: 25% (critical - logs must be tamper-proof)
 - Analysis: 30% (most important - logs must be reviewed to provide value)
-
 
 **Formula**: `Overall = (0.20 x Inventory) + (0.25 x Collection) + (0.25 x Protection) + (0.30 x Analysis)`
 
@@ -313,7 +290,6 @@ This dashboard consolidates FOUR detailed assessments into a single executive vi
 - Status (Open, In Progress, Resolved, Deferred)
 - Tracking Ticket (Jira, ServiceNow, etc.)
 
-
 **Gap Prioritization Logic**:
 ```
 Priority_Score = (Impact x Likelihood x Detectability) / Remediation_Effort
@@ -324,7 +300,6 @@ Where:
 - Likelihood: 1-5 (probability of gap being exploited)
 - Detectability: 1-5 (current detection capability - inverted: 5=blind spot, 1=well-detected)
 - Remediation_Effort: 1-5 (effort to fix - lower effort = higher priority)
-
 
 Higher Score = Higher Priority
 ```
@@ -360,7 +335,6 @@ Higher Score = Higher Priority
 - Blockers/Issues (what's preventing progress)
 - Last Update Date
 
-
 **Remediation Progress Summary**:
 
 - Total Initiatives: [count]
@@ -372,13 +346,11 @@ Higher Score = Higher Priority
 - At Risk: [count] (may miss target date)
 - Overdue: [count] (past target date, not complete)
 
-
 **Burn-Down Chart** (visual):
 
 - X-axis: Time (quarters)
 - Y-axis: Open Gap Count
 - Line showing gap closure trend
-
 
 **Target Audience**: InfoSec Manager, Project Managers, CISO (progress monitoring)
 
@@ -404,7 +376,6 @@ Higher Score = Higher Priority
 - Improving: Score increasing quarter-over-quarter (^ Green)
 - Stable: Score +/-2% (-> Yellow)
 - Declining: Score decreasing (v Red)
-
 
 **Gap Closure Trend**:
 | Quarter | Gaps Opened | Gaps Closed | Net Change | Open Backlog |
@@ -439,14 +410,12 @@ Higher Score = Higher Priority
 - Evidence folders (network path or SharePoint)
 - Evidence retention: 7 years (per policy Section 2.3)
 
-
 **Audit Readiness Check**:
 
 - [ ] All evidence indexed in source assessments
 - [ ] Evidence accessible to auditors
 - [ ] Evidence current (within last 12 months)
 - [ ] Evidence complete (no missing items)
-
 
 **Target Audience**: Compliance Team, Internal Audit, External Auditors
 
@@ -464,7 +433,6 @@ Higher Score = Higher Priority
 - Dashboard re-scores gaps considering cross-domain impact
 - Example: "No WORM storage" (from Protection assessment) also impacts Analysis (if logs can be deleted, investigations fail)
 
-
 **Cross-Domain Impact Examples**:
 
 **Gap: "No centralized logging for critical systems" (from Collection)**
@@ -474,14 +442,12 @@ Higher Score = Higher Priority
 - Analysis Impact: Critical (cannot investigate without centralized logs)
 - **Cross-Domain Priority**: CRITICAL (affects 3 domains)
 
-
 **Gap: "Alert false positive rate 15%" (from Analysis)**
 
 - Collection Impact: None
 - Protection Impact: None
 - Analysis Impact: Medium (alert fatigue, but manageable)
 - **Cross-Domain Priority**: MEDIUM (single domain only)
-
 
 ## Remediation Prioritization Matrix
 
@@ -490,24 +456,20 @@ Higher Score = Higher Priority
 - Prioritize first (immediate ROI)
 - Examples: Enable existing SIEM use cases, tune high-FP alerts, document procedures
 
-
 **Strategic Projects** (High Effort, High Impact):
 
 - Plan and resource (important but time-consuming)
 - Examples: Deploy SOAR platform, implement WORM storage, build threat hunting program
-
 
 **Fill-Ins** (Low Effort, Low Impact):
 
 - Do when time permits (nice-to-have)
 - Examples: Update documentation, minor config changes, cosmetic improvements
 
-
 **Reconsider** (High Effort, Low Impact):
 
 - Deprioritize or cancel (poor ROI)
 - Examples: Custom integrations for low-value data, over-engineered solutions
-
 
 ---
 
@@ -534,7 +496,6 @@ Higher Score = Higher Priority
 - Log Protection & Retention (tamper-proofing, retention compliance)
 - Log Analysis & Review (SOC effectiveness, threat detection)
 
-
 **Key Strengths**:
 1. [Top strength from assessments]
 2. [Second strength]
@@ -551,7 +512,6 @@ Higher Score = Higher Priority
 - Closed [X] gaps, opened [X] new gaps
 - On track to achieve >=85% compliance by [target quarter]
 
-
 **Recommendations for CISO**:
 1. [Top recommendation - usually highest-priority gap remediation]
 2. [Second recommendation - often resource allocation or strategic investment]
@@ -563,7 +523,6 @@ Higher Score = Higher Priority
 - Quarterly review scheduled for [next quarter]
 - Full reassessment in [12 months from now]
 
-
 ---
 
 ## Board Presentation Tips
@@ -574,20 +533,17 @@ Higher Score = Higher Priority
 - Use traffic lights (Green/Yellow/Red), not detailed scores
 - 5-minute presentation, 10 slides maximum
 
-
 **Focus on Risk**:
 
 - "What could go wrong?" (business impact of gaps)
 - "What are we doing about it?" (remediation plans)
 - "When will it be fixed?" (target dates)
 
-
 **Show Progress**:
 
 - Trend graph (compliance improving over time)
 - Gap closure rate (we're making progress)
 - Investment ROI (security spend effectiveness)
-
 
 ---
 
@@ -634,7 +590,6 @@ Higher Score = Higher Priority
 - [ ] CISO reviewed and approved
 - [ ] Board presentation prepared (if required)
 
-
 ---
 
 **END OF PART I**
@@ -675,7 +630,6 @@ Higher Score = Higher Priority
 - Update frequency (quarterly recommended)
 - Contact information (InfoSec Manager)
 
-
 ---
 
 ## Sheet 2: Executive_Summary
@@ -689,7 +643,6 @@ Higher Score = Higher Priority
   - Yellow: 70-84%
   - Orange: 50-69%
   - Red: <50%
-
 
 **Section 2: Compliance by Domain** (Rows 12-20)
 | Domain | Score | Target | Status | Trend |
@@ -705,7 +658,6 @@ Higher Score = Higher Priority
 - **Top 3 Gaps** (user-written narrative, extracted from Gap Consolidation sheet)
 - **Top 3 Recommendations** (user-written narrative, actionable for CISO)
 
-
 **Section 4: Assessment Metadata** (Rows 48-55)
 
 - Assessment Period: [Q1 2026]
@@ -714,7 +666,6 @@ Higher Score = Higher Priority
 - Total Gaps Identified: `=COUNT(Gap_Consolidation!A:A)`
 - Critical Gaps: `=COUNTIF(Gap_Consolidation!Risk,"CRITICAL")`
 - Next Review Date: [Q2 2026]
-
 
 ---
 
@@ -734,7 +685,6 @@ Higher Score = Higher Priority
 - H: Last Assessment Date - External Reference
 - I: Trend vs. Previous (^v->) - Formula comparing to previous cycle
 - J: Notes (user-entered observations)
-
 
 **External Reference Examples**:
 
@@ -770,7 +720,6 @@ Higher Score = Higher Priority
 - **Protection (25%)**: Critical - logs must be tamper-proof to be credible evidence
 - **Analysis (30%)**: Most critical - logs provide no security value if not analyzed
 
-
 ---
 
 ## Sheet 4: Gap_Consolidation
@@ -804,7 +753,6 @@ Higher Score = Higher Priority
 - U: Tracking Ticket (Jira, ServiceNow ID)
 - V: Notes
 
-
 **Gap Import Logic** (Python script):
 ```python
 # Import gaps from A.8.15.1
@@ -824,12 +772,10 @@ import_gaps_from_workbook(
 - If duplicate found, keep highest-severity instance, note in "Cross-Domain Impact"
 - Example: "No centralized logging" appears in both Collection and Protection -> consolidate with cross-domain flag
 
-
 **Re-Prioritization**:
 
 - Gaps affecting multiple domains get higher priority score
 - User can manually adjust Impact/Likelihood/Detectability if cross-domain perspective changes assessment
-
 
 **Gap Summary Table** (Below main gap list):
 | Domain | Total | Critical | High | Medium | Low | % Closed |
@@ -863,7 +809,6 @@ import_gaps_from_workbook(
 - M: Blockers/Issues (what's preventing progress)
 - N: Last Update Date
 
-
 **Remediation Metrics** (Summary section):
 
 - Total Initiatives: `COUNTA(A:A) - 1`
@@ -873,20 +818,17 @@ import_gaps_from_workbook(
 - Blocked: `COUNTIF(I:I,"Blocked")`
 - % Complete (avg): `AVERAGE(J:J)`
 
-
 **Status Analysis**:
 
 - On Track: `COUNTIF` initiatives where Target Date > TODAY() AND Status != "Blocked"
 - At Risk: `COUNTIF` where Target Date < TODAY() + 30 days AND Status != "Completed"
 - Overdue: `COUNTIF` where Target Date < TODAY() AND Status != "Completed"
 
-
 **Burn-Down Chart** (conditional on historical data):
 
 - X-axis: Quarter (Q1, Q2, Q3, Q4)
 - Y-axis: Open Gap Count
 - Line showing gap count over time (should trend downward)
-
 
 ---
 
@@ -914,7 +856,6 @@ import_gaps_from_workbook(
   - -> (Stable): Delta between -2% and +2%
   - v (Declining): Delta < -2%
 
-
 **Trend Graphs** (recommended visualizations):
 1. **Compliance Score Line Graph**: All 5 scores (Overall + 4 domains) over time
 2. **Gap Count Bar Chart**: Gaps opened vs. closed per quarter
@@ -925,7 +866,6 @@ import_gaps_from_workbook(
 - If this is the first assessment cycle, Sheet 6 will show "Insufficient data for trend analysis"
 - User should enter current cycle as "Baseline"
 - Future assessments will enable trend tracking
-
 
 ---
 
@@ -950,7 +890,6 @@ import_gaps_from_workbook(
 - Evidence Folders (network paths or SharePoint URLs)
 - Evidence Retention Period: 7 years (per ISMS-POL-A.8.15 Section 2.3)
 
-
 **Audit Readiness Checklist**:
 
 - [ ] All source assessments approved (Level 3 sign-off)
@@ -959,14 +898,12 @@ import_gaps_from_workbook(
 - [ ] Evidence current (within last 12 months)
 - [ ] Evidence complete (no missing items flagged in assessments)
 
-
 **Audit Trail**:
 
 - Dashboard Creation Date: [auto-populated]
 - Dashboard Last Updated: [auto-updated on save]
 - Updated By: [user-entered]
 - Next Review Date: [user-entered - typically +3 months]
-
 
 ---
 
@@ -984,14 +921,12 @@ import_gaps_from_workbook(
    - Sheet: `Gap_Analysis`
    - Cells Referenced: All gap rows (for consolidation)
 
-
 2. **ISMS_A_8_15_2_Log_Collection_Centralization_Assessment_YYYYMMDD.xlsx**
 
    - Sheet: `Approval_Sign_Off`
    - Cells Referenced: Overall compliance score, gap count
    - Sheet: `Gap_Analysis`
    - Cells Referenced: All gap rows
-
 
 3. **ISMS_A_8_15_3_Log_Protection_Retention_Assessment_YYYYMMDD.xlsx**
 
@@ -1000,7 +935,6 @@ import_gaps_from_workbook(
    - Sheet: `Gap_Analysis`
    - Cells Referenced: All gap rows
 
-
 4. **ISMS_A_8_15_4_Log_Analysis_Review_Assessment_YYYYMMDD.xlsx**
 
    - Sheet: `Approval_Sign_Off`
@@ -1008,20 +942,17 @@ import_gaps_from_workbook(
    - Sheet: `Gap_Analysis`
    - Cells Referenced: All gap rows
 
-
 **File Path Configuration**:
 
 - Python script must be customized with actual file paths
 - Paths can be absolute (`C:\...`) or relative (`.\Assessments\...`)
 - SharePoint URLs supported (if using Excel Online or OneDrive)
 
-
 **Link Maintenance**:
 
 - If source workbooks moved, links break -> manual update required
 - Recommendation: Store all assessment workbooks in single folder
 - Use relative paths for portability
-
 
 ---
 
@@ -1135,7 +1066,6 @@ def consolidate_gaps():
 - [ ] Executive summary narrative sections editable (not locked)
 - [ ] Cell protection appropriate (formulas locked, inputs unlocked)
 
-
 ## Error Handling
 
 **Missing Source Workbook**:
@@ -1153,7 +1083,6 @@ except FileNotFoundError:
 - If source workbook moved after dashboard creation, external refs show #REF! error
 - User must manually update file paths in formulas, or
 - Re-run Python script with updated paths
-
 
 **Unapproved Source Assessment**:
 ```python
@@ -1175,7 +1104,6 @@ if approval_status != "APPROVED":
 - Part I: User Completion Guide (~550 lines)
 - Part II: Technical Specification (~400 lines)
 
-
 **Quality Verification**:
 
 - [X] Consolidates all 4 assessments (A.8.15.1, .2, .3, .4)
@@ -1188,7 +1116,6 @@ if approval_status != "APPROVED":
 - [X] Evidence summary/audit readiness
 - [X] Generic language maintained
 - [X] Consistent with IMP-A.8.15.1/.2/.3/.4 structure
-
 
 ---
 

@@ -45,7 +45,6 @@ This document consists of two parts:
   - Conditional Formatting Rules
   - Integration Points
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -67,7 +66,6 @@ This assessment documents your ACCESS REVIEW EXECUTION and tracks compliance wit
 - Were access removal findings remediated? (within 5 business days per policy)
 - Are there overdue reviews? (reviews not completed by deadline)
 - What is the overall access review completion rate?
-
 
 #### Key Principle
 
@@ -102,7 +100,6 @@ This assessment is **completely technology-agnostic and process-independent**. W
   - Access removal not executed (findings not remediated)
   - Reviewers consistently missing deadlines (accountability issue)
 
-
 #### How This Relates to Other A.5.15-16-18 Assessments
 
 | Assessment | Focus | Relationship to A.5.15-16-18.3 |
@@ -132,13 +129,11 @@ This assessment (A.5.15-16-18.3) verifies that access reviews are **actually hap
 - Project management (tracking review completion across many reviewers)
 - Basic understanding of ISO 27001 Controls A.5.15 and A.5.18
 
-
 #### Time Commitment
 
 - **Initial assessment:** 8-12 hours (document review scope, track completion, analyze findings)
 - **Quarterly updates:** 10-15 hours per review cycle (coordinate reviews, track progress, analyze results)
 - **Monthly monitoring:** 2-3 hours (track overdue reviews, escalate to managers)
-
 
 ### Expected Outputs
 
@@ -169,20 +164,17 @@ Before starting this assessment, gather:
   - Review scope (all users, all systems, all groups)
   - Reviewer accountability (managers, system owners, security)
 
-
 #### 2. Access Data (from IMP.2)
 
 - ISMS-IMP-A.5.15-16-18.S2 Sheet 3 (Access Rights Matrix)
 - User-to-system access mapping (what access should be reviewed?)
 - Group memberships (which groups grant access?)
 
-
 #### 3. User Inventory (from IMP.1)
 
 - ISMS-IMP-A.5.15-16-18.S1 Sheet 2 (User Inventory Master List)
 - Active users (who should be in review scope?)
 - User managers (who should review each user's access?)
-
 
 #### 4. Review Execution Data
 
@@ -191,13 +183,11 @@ Before starting this assessment, gather:
 - Reviewer sign-offs (manager approvals, system owner confirmations)
 - Review findings (access confirmed, access to remove, exceptions)
 
-
 #### 5. Access Removal Evidence
 
 - Access removal tickets (ServiceNow, Jira tickets for removal requests)
 - Removal execution confirmation (audit logs showing access disabled)
 - Removal timeliness (date removal requested vs. date executed)
-
 
 ### Required Tools
 
@@ -207,7 +197,6 @@ Before starting this assessment, gather:
 - **Identity system admin tools** (to verify access removal)
 - **Screen capture tools** (for evidence screenshots)
 
-
 ### Dependencies
 
 **CRITICAL DEPENDENCIES:**
@@ -216,12 +205,10 @@ Before starting this assessment, gather:
   - This assessment reviews the access documented in IMP.2
 - **ISMS-IMP-A.5.15-16-18.S1** (User Inventory) provides user and manager data
 
-
 **Outputs FROM this assessment feed INTO:**
 
 - A.5.15-16-18.4 (Role & SoD Compliance) - Review findings inform role accuracy
 - A.5.15-16-18.5 (IAM Governance Dashboard) - Review metrics consolidated
-
 
 ---
 
@@ -284,7 +271,6 @@ Before starting this assessment, gather:
 - ✓ Access data from IMP.2 current (<30 days old)
 - ✓ Manager data from IMP.1 accurate
 
-
 ---
 
 #### Phase 2: Define Review Scope (2-3 hours)
@@ -301,7 +287,6 @@ Before starting this assessment, gather:
    - Review Due Date (when reviews must be completed)
    - Review Coordinator (Security Team member managing cycle)
 
-
 2. **List Systems in Scope**:
 
    - System ID, System Name (from IMP.2 Sheet 2)
@@ -311,7 +296,6 @@ Before starting this assessment, gather:
    - User Count (how many users have access to this system?)
    - Review Status (Not Started, In Progress, Completed, Overdue)
 
-
 3. **List Users in Scope**:
 
    - User ID, Full Name (from IMP.1 Sheet 2)
@@ -320,14 +304,12 @@ Before starting this assessment, gather:
    - System Access Count (how many systems does user access?)
    - Privileged Access Flag (if user has privileged access to ANY system)
 
-
 4. **Calculate Scope Metrics**:
 
    - Total systems in scope
    - Total users in scope
    - Total access grants to review (users × systems)
    - Critical/High/Standard system breakdown
-
 
 **Deliverable:** Complete Sheet 1 with review scope
 
@@ -337,7 +319,6 @@ Before starting this assessment, gather:
 - ✓ All active users included (from IMP.1)
 - ✓ System owners and managers identified
 - ✓ Scope metrics calculated correctly
-
 
 ---
 
@@ -353,7 +334,6 @@ Before starting this assessment, gather:
    - **System Owners**: Review access to systems they own
    - **Security Team**: Review privileged access
 
-
 2. **For EACH reviewer, document**:
 
    - Reviewer Name, Email
@@ -363,7 +343,6 @@ Before starting this assessment, gather:
    - Review Due Date (typically review cycle due date)
    - Review Tool/Method (Sailpoint, spreadsheet, manual sign-off)
 
-
 3. **Send Review Assignments**:
 
    - Email reviewers with:
@@ -371,7 +350,6 @@ Before starting this assessment, gather:
      - How to review (tool link, spreadsheet, instructions)
      - Due date
      - Escalation contact (Security Team)
-
 
 **Deliverable:** Sheet 2 with reviewer assignments
 
@@ -381,7 +359,6 @@ Before starting this assessment, gather:
 - ✓ All systems assigned to a system owner reviewer
 - ✓ Reviewers notified of assignment
 - ✓ Due dates set (typically 30 days from review launch)
-
 
 ---
 
@@ -422,7 +399,6 @@ Before starting this assessment, gather:
 - Reminders sent to reviewers at 15 days, 7 days, 1 day before due date
 - Escalations for overdue reviews (Phase 10)
 
-
 **Deliverable:** Reviewer sign-offs, access removal requests
 
 **Quality Check:**
@@ -431,7 +407,6 @@ Before starting this assessment, gather:
 - ✓ Reviewers know how to submit findings (confirm, remove, justify)
 - ✓ Removal requests captured (ticketing system or spreadsheet)
 - ✓ Sign-offs documented (approval timestamp, digital signature)
-
 
 ---
 
@@ -448,7 +423,6 @@ Before starting this assessment, gather:
    - Which reviewers have not started?
    - Which reviewers are overdue (past due date)?
 
-
 2. **For EACH reviewer, track**:
 
    - Review Assigned Date
@@ -459,7 +433,6 @@ Before starting this assessment, gather:
    - Users Reviewed (count)
    - Findings Submitted (access confirmed, removed, justified counts)
 
-
 3. **Calculate Completion Metrics**:
 
    - Total reviewers assigned
@@ -469,14 +442,12 @@ Before starting this assessment, gather:
    - Average days to complete
    - Completion rate trend (if historical data available)
 
-
 4. **Send Reminders**:
 
    - 15 days before due date: First reminder
    - 7 days before due date: Second reminder
    - 1 day before due date: Final reminder
    - After due date: Escalation to manager's manager or CISO
-
 
 **Deliverable:** Sheet 3 with daily/weekly completion tracking
 
@@ -486,7 +457,6 @@ Before starting this assessment, gather:
 - ✓ Completion dates accurate
 - ✓ Overdue reviewers flagged
 - ✓ Reminders sent per schedule
-
 
 ---
 
@@ -502,14 +472,12 @@ Before starting this assessment, gather:
    - OR collect findings from spreadsheet reviews
    - OR gather manager sign-off forms
 
-
 2. **Categorize Findings**:
 
    - **Access Confirmed**: Reviewer certified access is appropriate (no action)
    - **Access to Remove**: Reviewer identified inappropriate access (removal request)
    - **Access Justified**: Reviewer documented exception (access appears excessive but has business reason)
    - **No Response**: Reviewer did not complete review (escalation needed)
-
 
 3. **For EACH finding, document**:
 
@@ -522,7 +490,6 @@ Before starting this assessment, gather:
    - Finding Notes (reviewer comments, justification text)
    - Removal Request ID (if finding = Remove, ticket ID)
 
-
 4. **Calculate Finding Metrics**:
 
    - Total access grants reviewed
@@ -532,7 +499,6 @@ Before starting this assessment, gather:
    - No response (count, percentage)
    - **Access Removal Rate** = (Access Removal Requests / Total Reviewed) × 100%
 
-
 **Deliverable:** Sheet 4 with complete review findings
 
 **Quality Check:**
@@ -541,7 +507,6 @@ Before starting this assessment, gather:
 - ✓ Removal requests captured with ticket IDs
 - ✓ Justifications documented for exceptions
 - ✓ Finding metrics calculated correctly
-
 
 ---
 
@@ -557,13 +522,11 @@ Before starting this assessment, gather:
    - Ticket includes: User ID, System ID, Access to Remove, Business Justification (why removing), Requestor (reviewer name)
    - Assign to IT Operations or IAM Team
 
-
 2. **Execute Removals**:
 
    - IT Operations removes access per ticket
    - Document removal execution date
    - Capture evidence (audit log showing access disabled, screenshot)
-
 
 3. **Verify Removals**:
 
@@ -571,13 +534,11 @@ Before starting this assessment, gather:
    - Verify access actually disabled (not just ticket closed)
    - Identify removals not executed (findings ignored)
 
-
 4. **Track Removal Timeliness**:
 
    - Days from finding to removal = Removal Executed Date - Review Date
    - Policy requirement: ≤5 business days
    - Categorize: On-time (≤5 days), Late (6-10 days), Very Late (>10 days)
-
 
 **Deliverable:** Access removal execution and verification
 
@@ -587,7 +548,6 @@ Before starting this assessment, gather:
 - ✓ Removals executed within 5 business days (policy SLA)
 - ✓ Removal evidence captured (audit logs)
 - ✓ Verification completed for sample (spot-check 10%)
-
 
 ---
 
@@ -610,7 +570,6 @@ Before starting this assessment, gather:
    - Removal Verified? (spot-check confirmed access disabled)
    - Evidence Location (audit log path, screenshot filename)
 
-
 2. **Calculate Removal Metrics**:
 
    - Total removal requests
@@ -621,13 +580,11 @@ Before starting this assessment, gather:
    - Removals not executed (count, percentage)
    - **Removal Compliance Rate** = (On-Time Removals / Total Requests) × 100%
 
-
 3. **Identify Removal Gaps**:
 
    - Removals not executed (findings ignored)
    - Removals executed late (>5 days)
    - Removals not verified (no evidence)
-
 
 **Deliverable:** Sheet 5 with removal verification
 
@@ -637,7 +594,6 @@ Before starting this assessment, gather:
 - ✓ Execution dates documented
 - ✓ Removal timeliness calculated correctly
 - ✓ Evidence collected for sample
-
 
 ---
 
@@ -654,7 +610,6 @@ Before starting this assessment, gather:
    - Removal compliance rate (from Sheet 5)
    - Reviewer accountability (from Sheet 3)
 
-
 2. **Calculate Overall Access Review Compliance Score**:
    ```
    Review Compliance Score = 
@@ -670,14 +625,12 @@ Before starting this assessment, gather:
    - **Fair (60-74%)**: Acceptable but significant gaps
    - **Poor (<60%)**: Major review deficiencies, audit risk
 
-
 4. **Document Findings**:
 
    - Strengths (areas of compliance)
    - Weaknesses (areas of non-compliance)
    - Root causes (why are reviews incomplete or late?)
    - Recommendations (how to improve)
-
 
 **Deliverable:** Sheet 6 with access review compliance dashboard
 
@@ -687,7 +640,6 @@ Before starting this assessment, gather:
 - ✓ Overall compliance score calculated correctly
 - ✓ Benchmark category accurate
 - ✓ Findings documented clearly
-
 
 ---
 
@@ -704,7 +656,6 @@ Before starting this assessment, gather:
    - **Reviewers consistently late** (accountability issue)
    - **Removal timeliness missed** (executed >5 days)
 
-
 2. **Prioritize Gaps by Risk**:
 
    - **Critical** (P1):
@@ -720,7 +671,6 @@ Before starting this assessment, gather:
      - Low-priority system reviews delayed
      - Reviewer late but completed within grace period
 
-
 3. **Create Remediation Actions**:
 
 | Gap ID | Gap Description | Priority | Action | Owner | Target Date | Status |
@@ -735,7 +685,6 @@ Before starting this assessment, gather:
    - Percent complete
    - Notes on progress or blockers
 
-
 **Deliverable:** Sheet 7 with gap analysis and remediation plan
 
 **Quality Check:**
@@ -745,7 +694,6 @@ Before starting this assessment, gather:
 - ✓ Remediation actions specific and actionable
 - ✓ Owners assigned
 - ✓ Target dates realistic
-
 
 ---
 
@@ -765,7 +713,6 @@ Before starting this assessment, gather:
    - Removal execution evidence (audit logs, screenshots)
    - Escalation emails (for overdue reviews)
 
-
 2. **For EACH piece of evidence, document**:
 
    - Evidence ID, Type, Description
@@ -773,7 +720,6 @@ Before starting this assessment, gather:
    - Location/Path
    - Date Collected, Collected By
    - Verification Status
-
 
 3. **Organize Evidence**
 
@@ -783,7 +729,6 @@ Before starting this assessment, gather:
    - Evidence accessible for audit
    - Evidence clearly labeled
 
-
 **Deliverable:** Sheet 8 with complete evidence register
 
 **Quality Check:**
@@ -792,7 +737,6 @@ Before starting this assessment, gather:
 - ✓ Evidence organized logically
 - ✓ Evidence IDs cross-referenced
 - ✓ All evidence verified
-
 
 ---
 
@@ -809,7 +753,6 @@ Before starting this assessment, gather:
 - Validate completion rates accurate
 - Ensure evidence collected
 
-
 **Step 2: IAM Team Lead Review**
 
 - Review access removal execution (was it done correctly?)
@@ -817,14 +760,12 @@ Before starting this assessment, gather:
 - Check overdue review escalations
 - Approve or request changes
 
-
 **Step 3: CISO Review**
 
 - Review overall compliance rate (acceptable?)
 - Assess critical gaps (incomplete privileged access reviews = unacceptable)
 - Verify remediation plans adequate
 - Final approval
-
 
 **Deliverable:** Approved assessment ready for IAM Governance Dashboard
 
@@ -834,7 +775,6 @@ Before starting this assessment, gather:
 - ✓ All review comments addressed
 - ✓ Critical gaps have immediate remediation
 - ✓ Evidence audit-ready
-
 
 ---
 
@@ -848,13 +788,11 @@ Before starting this assessment, gather:
 - System criticality documentation
 - Policy requirements (quarterly for critical, etc.)
 
-
 **For Sheet 2 (Reviewer Assignments):**
 
 - Reviewer notification emails
 - Review tool assignment screenshots
 - Manager list from HR
-
 
 **For Sheet 3 (Review Completion Tracking):**
 
@@ -863,14 +801,12 @@ Before starting this assessment, gather:
 - Reminder emails sent
 - Escalation emails for overdue reviews
 
-
 **For Sheet 4 (Review Findings):**
 
 - Review tool findings export
 - Manager approval forms
 - Access removal request tickets
 - Exception justification documentation
-
 
 **For Sheet 5 (Access Removal Verification):**
 
@@ -879,35 +815,29 @@ Before starting this assessment, gather:
 - Screenshots of removal execution
 - Spot-check verification results
 
-
 **For Sheet 6 (Compliance Dashboard):**
 
 - Trend charts (if historical data)
 - Benchmark references
-
 
 **For Sheet 7 (Gap Analysis):**
 
 - Gap remediation plans
 - Escalation records
 
-
 **For Sheet 8 (Evidence Register):**
 
 - All evidence listed above
 
-
 **For Sheet 9 (Approval):**
 
 - Approval sign-offs
-
 
 ### Evidence Retention
 
 - **Minimum retention:** 3 years (ISO 27001 certification cycle)
 - **Recommended retention:** 5 years (trend analysis)
 - **Storage location:** Secure document management system
-
 
 ---
 
@@ -1004,14 +934,12 @@ Before submitting for approval, verify:
 - [ ] System owners and managers identified
 - [ ] Scope metrics calculated correctly
 
-
 ### Reviewer Assignments (Sheet 2)
 
 - [ ] All users assigned to manager reviewer
 - [ ] All systems assigned to system owner reviewer
 - [ ] Reviewers notified
 - [ ] Due dates set
-
 
 ### Review Completion Tracking (Sheet 3)
 
@@ -1020,14 +948,12 @@ Before submitting for approval, verify:
 - [ ] Overdue reviewers flagged
 - [ ] Reminders sent per schedule
 
-
 ### Review Findings (Sheet 4)
 
 - [ ] All completed reviews have findings
 - [ ] Removal requests captured with ticket IDs
 - [ ] Justifications documented
 - [ ] Finding metrics calculated correctly
-
 
 ### Access Removal Verification (Sheet 5)
 
@@ -1036,14 +962,12 @@ Before submitting for approval, verify:
 - [ ] Removal timeliness calculated correctly
 - [ ] Evidence collected for sample
 
-
 ### Compliance Dashboard (Sheet 6)
 
 - [ ] All metrics pulled from correct sheets
 - [ ] Overall compliance score calculated correctly
 - [ ] Benchmark category accurate
 - [ ] Findings documented clearly
-
 
 ### Gap Analysis (Sheet 7)
 
@@ -1053,7 +977,6 @@ Before submitting for approval, verify:
 - [ ] Owners assigned
 - [ ] Target dates realistic
 
-
 ### Evidence Register (Sheet 8)
 
 - [ ] All evidence collected and listed
@@ -1061,14 +984,12 @@ Before submitting for approval, verify:
 - [ ] Evidence IDs cross-referenced
 - [ ] All evidence verified
 
-
 ### Approval (Sheet 9)
 
 - [ ] Self-review completed
 - [ ] IAM Team Lead review completed
 - [ ] CISO review completed
 - [ ] All comments addressed
-
 
 ---
 
@@ -1082,7 +1003,6 @@ Before submitting for approval, verify:
 - **Time:** 2-3 hours
 - **Turnaround:** Same day
 
-
 **Step 2: IAM Team Lead Review**
 
 - **Focus:** Access removal execution, timeliness compliance
@@ -1094,7 +1014,6 @@ Before submitting for approval, verify:
 - **Time:** 2-3 hours
 - **Turnaround:** 2-3 business days
 
-
 **Step 3: CISO Review**
 
 - **Focus:** Overall review compliance, critical gaps
@@ -1105,7 +1024,6 @@ Before submitting for approval, verify:
 - **Decision:** Final Approval / Approve with Conditions / Reject
 - **Time:** 2-3 hours
 - **Turnaround:** 3-5 business days
-
 
 ### Approval Timeline
 
@@ -1130,16 +1048,13 @@ This assessment (A.5.15-16-18.3) feeds into:
 
 - **Uses:** Access matrix (Sheet 3) as review scope
 
-
 ### A.5.15-16-18.4 - Role Definition & SoD Compliance Assessment
 
 - **Uses:** Review findings inform role accuracy
 
-
 ### A.5.15-16-18.5 - IAM Governance Compliance Dashboard
 
 - **Uses:** Review metrics from Sheet 6
-
 
 ---
 
@@ -1179,7 +1094,6 @@ Each quarter:
 - **Title:** "ISMS-IMP-A.5.15-16-18.S3 – Access Review Results Assessment"
 - **Subtitle:** "ISO/IEC 27001:2022 - Controls A.5.15 & A.5.18: Access Control & Access Rights"
 - **Styling:** Dark blue header (003366), white text, centered, 40px height
-
 
 #### Document Information Block (Rows 3-12)
 ```
@@ -1537,7 +1451,6 @@ Three-level approval workflow for completed assessment.
 
 - All sheets: Freeze at A4
 
-
 ---
 
 ## File Naming Convention
@@ -1570,16 +1483,13 @@ Three-level approval workflow for completed assessment.
 
 - **Input FROM IMP.2:** Access matrix defines WHAT to review
 
-
 **A.5.15-16-18.1 - User Inventory:**
 
 - **Input FROM IMP.1:** User and manager data
 
-
 **A.5.15-16-18.5 - IAM Governance Dashboard:**
 
 - **Input FROM this workbook:** Review metrics (Sheet 7)
-
 
 ---
 

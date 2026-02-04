@@ -44,7 +44,6 @@ This document consists of two parts:
   - Cell Styling Reference
   - Integration Points
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -67,7 +66,6 @@ This assessment documents the equipment MAINTENANCE practices across your organi
 - How are maintenance records documented and retained?
 - What happens when equipment must be removed for off-site maintenance?
 
-
 #### Key Principle
 
 This assessment is **completely vendor-agnostic and technology-independent**. You document YOUR specific maintenance practices (whatever equipment you have - Dell, HP, Cisco, Schneider, whatever vendors), and verify practices against generic policy requirements from ISMS-POL-A.7.12-13, Section 2.2.
@@ -81,14 +79,12 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 - Criticality classification (Tier 1, Tier 2)
 - Current maintenance status
 
-
 **Maintenance Programme:**
 
 - Preventive maintenance schedules
 - Manufacturer recommendation compliance
 - Critical equipment prioritisation
 - Maintenance record keeping
-
 
 **Maintenance Personnel:**
 
@@ -97,14 +93,12 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 - Personnel verification procedures
 - Supervision requirements
 
-
 **Security During Maintenance:**
 
 - Data protection during maintenance
 - Access controls during maintenance
 - Tool and equipment accountability
 - Physical inspection after maintenance
-
 
 **Remote Maintenance:**
 
@@ -113,7 +107,6 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 - Session logging and monitoring
 - Access control (enable/disable)
 
-
 **Equipment Removal:**
 
 - Authorisation for off-site maintenance
@@ -121,13 +114,11 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 - Chain of custody documentation
 - Return inspection procedures
 
-
 **Maintenance Records:**
 
 - Record completeness requirements
 - Retention periods
 - Audit accessibility
-
 
 #### How This Relates to Other A.7.12-13 Assessments
 
@@ -158,12 +149,10 @@ This assessment (A.7.12-13.S2) focuses specifically on Control A.7.13 (Equipment
 - Understanding of remote access security
 - Access to maintenance records and vendor contracts
 
-
 #### Time Commitment
 
 - **Initial assessment:** 8-12 hours (comprehensive review of maintenance programme)
 - **Quarterly updates:** 2-4 hours (review recent maintenance activities, update records)
-
 
 ### Expected Outputs
 
@@ -193,7 +182,6 @@ Before starting this assessment, gather:
 - Access to vendor maintenance portals
 - Access to remote access systems (VPN, remote management)
 
-
 #### 2. Documentation
 
 - Equipment inventory with maintenance requirements
@@ -203,7 +191,6 @@ Before starting this assessment, gather:
 - Remote maintenance access procedures
 - Equipment removal authorisation procedures
 
-
 #### 3. Historical Data
 
 - Maintenance records (last 12 months)
@@ -211,7 +198,6 @@ Before starting this assessment, gather:
 - Remote maintenance session logs (last 90 days)
 - Equipment removal logs (last 12 months)
 - Maintenance-related incidents
-
 
 #### 4. Policy Requirements
 
@@ -223,7 +209,6 @@ Before starting this assessment, gather:
   - Section 2.2.5: Equipment Removal for Maintenance
   - Section 2.2.6: Maintenance Records
 
-
 ### Required Tools
 
 - Microsoft Excel (2016 or later) for workbook completion
@@ -231,7 +216,6 @@ Before starting this assessment, gather:
 - Access to maintenance ticketing system
 - Access to vendor contracts/portals
 - Screen capture tools (for evidence screenshots)
-
 
 ### Dependencies
 
@@ -241,7 +225,6 @@ However, outputs from this assessment are INPUT to:
 
 - ISMS-IMP-A.7.12-13.S3 (Maintenance Schedule Tracking) - Detailed schedule compliance
 - ISMS-IMP-A.7.12-13.S4 (Compliance Dashboard) - Consolidated compliance view
-
 
 ---
 
@@ -281,7 +264,6 @@ However, outputs from this assessment are INPUT to:
 - Schedule time with IT Operations Manager and Facilities Manager
 - Download or generate assessment workbook (Excel file)
 
-
 **Step 2: Equipment Inventory (Day 1-2 - 2-3 hours)**
 
 - Open assessment workbook
@@ -290,14 +272,12 @@ However, outputs from this assessment are INPUT to:
 - Classify equipment by criticality (Tier 1, Tier 2)
 - Document manufacturer maintenance requirements
 
-
 **Step 3: Maintenance Programme Assessment (Day 2-3 - 2-3 hours)**
 
 - Complete Sheet 3 (Maintenance Programme)
 - Compare scheduled maintenance vs. manufacturer recommendations
 - Verify preventive maintenance is occurring on schedule
 - Identify any overdue maintenance
-
 
 **Step 4: Personnel Verification (Day 3 - 2 hours)**
 
@@ -306,14 +286,12 @@ However, outputs from this assessment are INPUT to:
 - List approved third-party maintenance providers
 - Verify supervision requirements are met
 
-
 **Step 5: Security Controls Review (Day 3-4 - 2 hours)**
 
 - Complete Sheet 5 (Security During Maintenance)
 - Verify data protection measures during maintenance
 - Check access controls during maintenance activities
 - Review equipment accountability procedures
-
 
 **Step 6: Remote Maintenance Audit (Day 4 - 2 hours)**
 
@@ -323,7 +301,6 @@ However, outputs from this assessment are INPUT to:
 - Check session logging and monitoring
 - Verify access enable/disable controls
 
-
 **Step 7: Evidence Collection (Day 4-5 - 2-3 hours)**
 
 - Collect maintenance records samples
@@ -331,25 +308,21 @@ However, outputs from this assessment are INPUT to:
 - Collect vendor contract excerpts
 - Document in Sheet 8 (Evidence Register)
 
-
 **Step 8: Summary Review (Day 5 - 1 hour)**
 
 - Review Sheet 7 (Summary Dashboard)
 - Verify compliance scores accurate
 - Identify gaps requiring remediation
 
-
 **Step 9: Quality Check (Day 5 - 1 hour)**
 
 - Complete self-assessment using Quality Checklist
 - Verify all required fields completed
 
-
 **Step 10: Obtain Approvals (Day 6-10 - asynchronous)**
 
 - Complete Sheet 9 (Approval Sign-Off)
 - Follow four-level approval workflow
-
 
 ---
 
@@ -365,7 +338,6 @@ However, outputs from this assessment are INPUT to:
 - Completed By (your name and role)
 - Organisation name
 
-
 **Time Required:** 5 minutes
 
 ### Sheet 2: Equipment Inventory
@@ -380,72 +352,58 @@ However, outputs from this assessment are INPUT to:
 
 - Asset tag or unique identifier: "SRV-001", "UPS-DC1-01", "SW-CORE-01"
 
-
 **Column B - Equipment Type:**
 
 - Dropdown: "Server", "Network Device", "Storage", "UPS", "HVAC", "Security System", "Other"
-
 
 **Column C - Equipment Description:**
 
 - Specific model/description: "Dell PowerEdge R740", "Cisco Catalyst 9300", "Schneider Smart-UPS"
 
-
 **Column D - Location:**
 
 - Where equipment is located: "Datacenter 1", "Server Room A", "IDF Floor 2"
-
 
 **Column E - Criticality:**
 
 - Dropdown: "Tier 1 - Critical", "Tier 2 - Standard"
 
-
 **Column F - Manufacturer:**
 
 - Equipment manufacturer: "Dell", "Cisco", "HP", "Schneider"
-
 
 **Column G - Manufacturer Maintenance Requirement:**
 
 - What manufacturer recommends: "Annual firmware + inspection", "Quarterly battery check", "Semi-annual filter replacement"
 
-
 **Column H - Maintenance Frequency:**
 
 - Actual scheduled frequency: "Annually", "Semi-annually", "Quarterly", "Monthly"
-
 
 **Column I - Frequency Compliant:**
 
 - Dropdown: "Yes", "No"
 - Does scheduled frequency meet or exceed manufacturer requirement?
 
-
 **Column J - In Maintenance Programme:**
 
 - Dropdown: "Yes", "No", "Partial"
-
 
 **Column K - Last Maintenance:**
 
 - Date of last maintenance: "15.01.2026"
 
-
 **Column L - Next Scheduled:**
 
 - Date of next scheduled maintenance: "15.07.2026"
-
 
 **Column M - Compliance Status:**
 
 - Formula auto-calculates
 
-
 **Column N - Notes:**
 
 - Any additional context
-
 
 **Time Required:** 45-60 minutes for comprehensive equipment inventory
 
@@ -474,7 +432,6 @@ However, outputs from this assessment are INPUT to:
 - Retention period met: Yes/No
 - Records accessible for audit: Yes/No
 
-
 **Time Required:** 30-45 minutes
 
 ### Sheet 4: Personnel & Vendors
@@ -487,61 +444,49 @@ However, outputs from this assessment are INPUT to:
 
 - Unique identifier: "INT-001" (internal), "VEN-001" (vendor)
 
-
 **Column B - Name:**
 
 - Person name or vendor company name
-
 
 **Column C - Type:**
 
 - Dropdown: "Internal Staff", "Third-Party Vendor", "Contractor"
 
-
 **Column D - Equipment Types Authorised:**
 
 - What equipment they can maintain: "Servers", "Network", "UPS", "All"
-
 
 **Column E - Verification Required:**
 
 - Dropdown: "Yes - Badge/ID", "Yes - Escort", "No"
 
-
 **Column F - Supervision Required:**
 
 - Dropdown: "Yes - Always", "Yes - Sensitive Equipment", "No"
-
 
 **Column G - Contract/Agreement:**
 
 - Contract reference: "MSA-2025-001", "Employment contract"
 
-
 **Column H - NDA in Place:**
 
 - Dropdown: "Yes", "No", "N/A"
-
 
 **Column I - Background Check:**
 
 - Dropdown: "Yes", "No", "N/A"
 
-
 **Column J - Last Verified:**
 
 - Date authorisation last verified: "15.01.2026"
-
 
 **Column K - Compliance Status:**
 
 - Formula auto-calculates
 
-
 **Column L - Notes:**
 
 - Any additional context
-
 
 **Time Required:** 30-45 minutes
 
@@ -572,7 +517,6 @@ However, outputs from this assessment are INPUT to:
 - Equipment inspected on return: Yes/No
 - Return logged in asset management: Yes/No
 
-
 **Time Required:** 30-45 minutes
 
 ### Sheet 6: Remote Maintenance
@@ -585,61 +529,49 @@ However, outputs from this assessment are INPUT to:
 
 - Unique identifier: "RM-001", "RM-002"
 
-
 **Column B - Access Type:**
 
 - Dropdown: "Vendor Remote Support", "Internal Remote Management", "Cloud Management Portal"
-
 
 **Column C - Provider/System:**
 
 - Who or what provides access: "Dell ProSupport", "TeamViewer", "Azure Portal"
 
-
 **Column D - Equipment Types:**
 
 - What equipment can be accessed: "Dell Servers", "Network Devices", "All"
-
 
 **Column E - Authorised:**
 
 - Dropdown: "Yes - Pre-approved", "Yes - On-demand", "No"
 
-
 **Column F - Secure Connection:**
 
 - Dropdown: "Yes - VPN", "Yes - Encrypted", "No"
-
 
 **Column G - Session Logged:**
 
 - Dropdown: "Yes - Automated", "Yes - Manual", "No"
 
-
 **Column H - Session Monitored:**
 
 - Dropdown: "Yes - Real-time", "Yes - Recorded", "No"
-
 
 **Column I - Access Disabled When Not Required:**
 
 - Dropdown: "Yes - Always", "Yes - Usually", "No"
 
-
 **Column J - Last Access Review:**
 
 - Date of last review: "15.01.2026"
-
 
 **Column K - Compliance Status:**
 
 - Formula auto-calculates
 
-
 **Column L - Notes:**
 
 - Any additional context
-
 
 **Time Required:** 30-45 minutes
 
@@ -657,7 +589,6 @@ However, outputs from this assessment are INPUT to:
 - Remote Maintenance Compliance
 - Gap Summary
 
-
 **Time Required:** 15-30 minutes for review
 
 ### Sheet 8: Evidence Register
@@ -673,13 +604,11 @@ However, outputs from this assessment are INPUT to:
 5. Equipment removal authorisation forms
 6. Maintenance checklists/procedures
 
-
 **Time Required:** 2-3 hours for evidence collection
 
 ### Sheet 9: Approval Sign-Off
 
 **Purpose:** Four-level approval workflow
-
 
 ---
 
@@ -692,13 +621,11 @@ However, outputs from this assessment are INPUT to:
 - CMDB or asset inventory export
 - Equipment criticality classification
 
-
 **Maintenance Programme:**
 
 - Maintenance schedule documentation
 - Manufacturer recommendation documents
 - Sample maintenance tickets/records
-
 
 **Personnel & Vendors:**
 
@@ -706,20 +633,17 @@ However, outputs from this assessment are INPUT to:
 - Vendor contracts with maintenance scope
 - NDA and background check records
 
-
 **Security During Maintenance:**
 
 - Maintenance procedures showing data protection
 - Access logging samples
 - Equipment removal authorisation forms
 
-
 **Remote Maintenance:**
 
 - Remote access policies/procedures
 - Session logs (sample)
 - Access enable/disable procedures
-
 
 ---
 
@@ -734,7 +658,6 @@ However, outputs from this assessment are INPUT to:
 - Coordinate with Facilities Manager
 - Include environmental control systems
 
-
 ### Pitfall 2: Missing Manufacturer Recommendations
 
 ❌ **MISTAKE:** Scheduling maintenance without reference to manufacturer requirements
@@ -743,7 +666,6 @@ However, outputs from this assessment are INPUT to:
 - Document manufacturer recommendations per equipment type
 - Compare scheduled frequency vs. recommended frequency
 - Flag any gaps
-
 
 ### Pitfall 3: Vendor Contracts Not Reviewed
 
@@ -754,7 +676,6 @@ However, outputs from this assessment are INPUT to:
 - Verify NDA and confidentiality clauses
 - Check supervision requirements
 
-
 ### Pitfall 4: Remote Access Always Enabled
 
 ❌ **MISTAKE:** Leaving vendor remote access permanently enabled
@@ -763,7 +684,6 @@ However, outputs from this assessment are INPUT to:
 - Verify remote access is disabled when not actively required
 - Implement "just-in-time" access where possible
 - Log access enable/disable actions
-
 
 ### Pitfall 5: Incomplete Maintenance Records
 
@@ -774,7 +694,6 @@ However, outputs from this assessment are INPUT to:
 - Check records include required fields
 - Audit sample of records for completeness
 
-
 ### Pitfall 6: No Supervision of Third Parties
 
 ❌ **MISTAKE:** Third-party technicians working unsupervised on sensitive equipment
@@ -783,7 +702,6 @@ However, outputs from this assessment are INPUT to:
 - Document supervision requirements per equipment type
 - Verify supervision actually occurs
 - Log supervision in maintenance records
-
 
 ### Pitfall 7: Data Not Protected During Maintenance
 
@@ -794,7 +712,6 @@ However, outputs from this assessment are INPUT to:
 - Check if on-site maintenance is possible
 - Document data protection measures
 
-
 ### Pitfall 8: No Return Inspection
 
 ❌ **MISTAKE:** Equipment returned from maintenance without inspection
@@ -803,7 +720,6 @@ However, outputs from this assessment are INPUT to:
 - Verify inspection procedure exists
 - Check for unauthorised modifications
 - Update asset management on return
-
 
 ### Pitfall 9: Stale Personnel Lists
 
@@ -814,7 +730,6 @@ However, outputs from this assessment are INPUT to:
 - Coordinate with HR for terminations
 - Coordinate with Procurement for vendor changes
 
-
 ### Pitfall 10: No Overdue Tracking
 
 ❌ **MISTAKE:** Not tracking overdue preventive maintenance
@@ -823,7 +738,6 @@ However, outputs from this assessment are INPUT to:
 - Implement overdue tracking in CMMS/ITSM
 - Regular reporting on overdue items
 - Escalation for critical equipment overdue
-
 
 ---
 
@@ -871,7 +785,6 @@ However, outputs from this assessment are INPUT to:
 - [ ] At least 10 evidence items
 - [ ] Evidence files exist at documented locations
 
-
 ---
 
 ## Review & Approval
@@ -889,7 +802,6 @@ However, outputs from this assessment are INPUT to:
 
 **Level 4: Compliance Officer**
 - Final audit readiness certification
-
 
 ---
 

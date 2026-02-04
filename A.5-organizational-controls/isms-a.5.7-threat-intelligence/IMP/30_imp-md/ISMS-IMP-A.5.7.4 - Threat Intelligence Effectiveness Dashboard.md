@@ -45,7 +45,6 @@ This document consists of two parts:
   - KPI Definitions
   - Trend Analysis Methodology
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -68,7 +67,6 @@ This dashboard **CONSOLIDATES** data from all operational Control A.5.7 workbook
 - **CRITICAL**: What intelligence-driven decisions show executive engagement? (from A.5.7.3)
 - What is our audit evidence status?
 
-
 #### Key Principle
 
 This is an **AUTOMATED AGGREGATION DASHBOARD**. It uses Excel external references to pull data from:
@@ -76,7 +74,6 @@ This is an **AUTOMATED AGGREGATION DASHBOARD**. It uses Excel external reference
 - ISMS-IMP-A.5.7.1 (Sources Assessment)
 - ISMS-IMP-A.5.7.2 (Collection & Analysis Assessment)
 - ISMS-IMP-A.5.7.3 (Integration & Distribution Assessment)
-
 
 **Data flows automatically when source workbooks are updated and this dashboard is refreshed.**
 
@@ -94,14 +91,12 @@ This is an **AUTOMATED AGGREGATION DASHBOARD**. It uses Excel external reference
 - **Incident-TI integration** (from A.5.7.3 Sheet 14)
 - **Intelligence-driven decisions** (from A.5.7.3 Sheet 15)
 
-
 **Manual Entry:**
 
 - Risk indicators (program health warnings)
 - Executive comments/notes
 - Action item priorities
 - Approval signatures
-
 
 #### Target Audience & Usage
 
@@ -130,12 +125,10 @@ This is an **AUTOMATED AGGREGATION DASHBOARD**. It uses Excel external reference
 - All three source workbooks must be in same directory as dashboard OR
 - Update external reference paths to correct locations
 
-
 **Version Requirements:**
 
 - Source workbooks must be current (within 30 days for monthly reporting)
 - Quarterly reviews require source workbooks updated within quarter
-
 
 ### Information You'll Need
 
@@ -144,13 +137,11 @@ This is an **AUTOMATED AGGREGATION DASHBOARD**. It uses Excel external reference
 - Executive feedback on program performance
 - Risk assessment for program health indicators
 
-
 ### Required Tools
 
 - Microsoft Excel (2016 or later) with external data connections enabled
 - File system access to source workbooks
 - Screen capture tools for executive summary export (PDF/PowerPoint)
-
 
 ---
 
@@ -188,7 +179,6 @@ QUARTERLY CYCLE:
 - **CRITICAL**: Ensure A.5.7.3 Sheet 7 (Prevention) updated with any incidents prevented
 - Save all source workbooks
 
-
 **Step 2: Open Dashboard & Refresh Data (Week 1 of month)**
 1. Open ISMS-IMP-A.5.7.4 dashboard workbook
 2. Excel will prompt: "This workbook contains links to other data sources"
@@ -205,7 +195,6 @@ QUARTERLY CYCLE:
 - **Sheet 5: Integration_Status** - Verify tool integration data
 - **Sheet 6: Stakeholder_Engagement** - Verify distribution metrics
 
-
 **Step 4: Update Risk Indicators (Week 1 of month)**
 
 - **Sheet 8: Risk_Indicators** - Manual entry required
@@ -213,7 +202,6 @@ QUARTERLY CYCLE:
   * Document risk indicator severity (Critical, High, Medium, Low)
   * Document mitigation actions
   * Update risk indicator status
-
 
 **Step 5: Generate Monthly Report (Week 2 of month)**
 
@@ -223,13 +211,11 @@ QUARTERLY CYCLE:
   * Export to PDF for distribution
   * Distribute to CISO, Security Managers
 
-
 **Step 6: CISO Review & Approval (Week 2 of month)**
 
 - CISO reviews dashboard and monthly report
 - CISO provides feedback or approval
 - Document approval in metadata
-
 
 **Deliverable:** Monthly dashboard with current data, monthly report distributed
 
@@ -247,7 +233,6 @@ QUARTERLY CYCLE:
   * Document trend analysis commentary
   * Highlight significant changes for executive attention
 
-
 **Step 8: Review Compliance Evidence (Week 1 of quarter-end month)**
 
 - **Sheet 9: Compliance_Evidence**
@@ -259,7 +244,6 @@ QUARTERLY CYCLE:
   * Document compliance status (Met, Not Met, Partial)
   * Prepare evidence package for auditors
 
-
 **Step 9: Generate Quarterly Report (Week 2 of quarter-end month)**
 
 - **Sheet 11: Quarterly_Report**
@@ -268,7 +252,6 @@ QUARTERLY CYCLE:
   * Key achievements highlighted
   * Gaps and action items documented
   * Export to PDF/PowerPoint for board
-
 
 **Step 10: Prepare Board Package (Week 2-3 of quarter-end month)**
 
@@ -281,7 +264,6 @@ QUARTERLY CYCLE:
   * Key risks and mitigations
   * Budget/resource requests (if applicable)
 
-
 **Step 11: Executive/Board Presentation (Quarter-end)**
 
 - Present quarterly results to executive team or board
@@ -289,13 +271,11 @@ QUARTERLY CYCLE:
 - Document decisions or approvals
 - Update dashboard with feedback
 
-
 **Step 12: Executive Approval (Quarter-end)**
 
 - Executive or board approves quarterly report
 - Document approval in metadata
 - Archive quarterly report and evidence package
-
 
 **Deliverable:** Quarterly report approved, board presentation delivered, compliance evidence package ready for audit
 
@@ -315,7 +295,6 @@ QUARTERLY CYCLE:
    - Evidence of targets met or gaps addressed
    - Trend analysis showing continuous improvement
 
-
 2. **Compliance Evidence (Sheet 9):**
 
    - **CRITICAL**: Prevention tracking summary (≥3 per quarter)
@@ -324,24 +303,20 @@ QUARTERLY CYCLE:
    - **CRITICAL**: Intelligence-driven decisions summary (≥5 per quarter)
    - Links to detailed evidence in source workbooks (A.5.7.1, A.5.7.2, A.5.7.3)
 
-
 3. **Monthly Reports (Sheet 10):**
 
    - Monthly reports for entire audit period (typically 12 months)
    - CISO approval documented
-
 
 4. **Quarterly Reports (Sheet 11):**
 
    - Quarterly reports for audit period
    - Executive/board approval documented
 
-
 5. **Risk Indicators (Sheet 8):**
 
    - Program health tracking
    - Risk mitigation actions documented and completed
-
 
 **How to Prepare for Audit:**
 
@@ -351,13 +326,11 @@ QUARTERLY CYCLE:
    - Ensure all MANDATORY evidence present (Sheets 7, 13, 14, 15 from A.5.7.3)
    - Fill any evidence gaps
 
-
 2. **1 Month Before Audit:**
 
    - Generate compliance evidence package (from Sheet 9)
    - Create audit evidence index (what's where)
    - Export key sheets to PDF for auditor review
-
 
 3. **During Audit:**
 
@@ -366,7 +339,6 @@ QUARTERLY CYCLE:
    - Drill into source workbooks for detailed evidence
    - Demonstrate data flow (external references showing real operational data)
 
-
 **Audit Success Criteria:**
 
 - ✓ All MANDATORY quarterly targets met (Sheets 7, 13, 14, 15 from A.5.7.3)
@@ -374,7 +346,6 @@ QUARTERLY CYCLE:
 - ✓ KPI targets from policy met or gaps documented with action items
 - ✓ CISO/Executive approvals documented
 - ✓ Traceability from policy requirements → dashboard → source workbooks
-
 
 ---
 
@@ -389,7 +360,6 @@ QUARTERLY CYCLE:
 - Approves monthly report for distribution
 - Timeline: Within 5 business days of month-end
 
-
 ### Quarterly Review
 
 **Level 1: CISO**
@@ -399,7 +369,6 @@ QUARTERLY CYCLE:
 - Reviews trend analysis
 - Prepares for executive/board presentation
 
-
 **Level 2: Executive Management / Board**
 
 - Reviews quarterly report and dashboard summary
@@ -408,12 +377,10 @@ QUARTERLY CYCLE:
 - Approves program continuation or directs changes
 - Timeline: Within 15 business days of quarter-end
 
-
 **Approval Documentation:**
 
 - Monthly: CISO signature in Sheet 10 (Monthly_Report)
 - Quarterly: Executive/Board signature in Sheet 11 (Quarterly_Report)
-
 
 ---
 
@@ -439,7 +406,6 @@ QUARTERLY CYCLE:
 - Macros: None (VBA-free for security)
 - **External Links: YES** - References to A.5.7.1, A.5.7.2, A.5.7.3
 
-
 **Total Sheets:** 12
 
 **Tab Colors:**
@@ -451,7 +417,6 @@ QUARTERLY CYCLE:
 - Audit (Sheet 9): Red (#C00000)
 - Reports (Sheets 10-11): Teal (#00B0F0)
 - Metadata: Gray (#D9D9D9)
-
 
 **External References Configuration:**
 
@@ -476,7 +441,6 @@ QUARTERLY CYCLE:
 - Alternative: Data → Refresh All (forces refresh)
 - Best practice: Close source workbooks before opening dashboard (faster refresh)
 
-
 ---
 
 # Sheet Specifications
@@ -497,7 +461,6 @@ QUARTERLY CYCLE:
 - Generation date
 - Classification: [Per org policy]
 
-
 ### Program Health Score (Top Center)
 
 - **Overall Score**: 1-5 scale (calculated composite score)
@@ -509,7 +472,6 @@ QUARTERLY CYCLE:
   - 1.5-2.4: Orange (Poor)
   - 0.0-1.4: Red (Critical)
 
-
 **Score Calculation**:
 
 Weighted Average:
@@ -520,8 +482,6 @@ Weighted Average:
 - Integration Effectiveness (20%)
 - Operational Efficiency (20%)
 
-
-
 ### Key Metrics (4 Boxes - Top Row)
 
 **Box 1: Intelligence Production**
@@ -531,14 +491,12 @@ Weighted Average:
 - vs. target: [% vs target]
 - Mini trend chart (last 6 months)
 
-
 **Box 2: Stakeholder Satisfaction**
 
 - Average rating: [1-5]
 - Response rate: [%]
 - Consumption rate: [%]
 - Mini trend chart
-
 
 **Box 3: IOC Effectiveness**
 
@@ -547,15 +505,12 @@ Weighted Average:
 - False positive rate: [%]
 - Mini trend chart
 
-
 **Box 4: Source Portfolio**
 
 - Active sources: [Number]
 - Average quality: [1-5]
 - Coverage gaps: [Number]
 - Mini trend chart
-
-
 
 ### CVSS Metrics Summary
 
@@ -601,7 +556,6 @@ EMERGENCY_STATUS =
 - CVSS_4_Adoption_Rate < 50% → YELLOW BACKGROUND
 - CVSS_Accuracy_Overall < 85% → ORANGE BACKGROUND
 
-
 **Chart: CVSS Severity Distribution (Prevented Incidents)**
 
 - **Type**: Pie chart or horizontal bar chart
@@ -613,7 +567,6 @@ EMERGENCY_STATUS =
   - Medium (4.0-6.9): Yellow (#FFC107)
   - Low (0.1-3.9): Green (#28A745)
 
-
 ### Integration Status (Middle Left)
 
 - **Pie Chart**: Security tools with TI integration
@@ -621,7 +574,6 @@ EMERGENCY_STATUS =
   - Partially Integrated: [%]
   - Planned: [%]
   - Not Integrated: [%]
-
 
 ### Control 8.8 Linkage (Middle Center)
 
@@ -631,7 +583,6 @@ EMERGENCY_STATUS =
   - Medium: [Count]
   - Low: [Count]
 
-
 ### Top Threats This Month (Middle Right)
 
 - **Table**: Top 5 threats by impact
@@ -640,12 +591,10 @@ EMERGENCY_STATUS =
   - Priority
   - Status
 
-
 ### Coverage Heat Map (Bottom Left)
 
 - **Matrix**: Geographic + Sector coverage
 - Color-coded: Green (adequate), Yellow (minimal), Red (gap)
-
 
 ### Action Items Summary (Bottom Center)
 
@@ -654,14 +603,12 @@ EMERGENCY_STATUS =
 - Completed this month: [Number]
 - **Mini Chart**: Actions by priority
 
-
 ### Compliance Status (Bottom Right)
 
 - ISO 27001:2022 Control 5.7 compliance: [%]
 - Outstanding evidence items: [Number]
 - Last audit date: [Date]
 - Next audit: [Date]
-
 
 ---
 
@@ -735,13 +682,11 @@ EMERGENCY_STATUS =
 - Status "At Risk" → Red
 - Trend "Declining" → Orange text
 
-
 **KPI Dashboard** (charts):
 
 - Current vs. target sparklines
 - Trend charts (last 12 months)
 - Performance distribution (pie chart by status)
-
 
 ---
 
@@ -754,7 +699,6 @@ EMERGENCY_STATUS =
 - External reference: `=[5.7.1]Source_Inventory!$A:$O`
 - External reference: `=[5.7.1]Source_Evaluation!$A:$T`
 - External reference: `=[5.7.1]Cost_Analysis!$A:$S`
-
 
 **Summary Metrics**:
 
@@ -788,7 +732,6 @@ EMERGENCY_STATUS =
 - Top 5 sources by cost
 - Sources requiring action (gaps, compliance, renewals)
 
-
 ---
 
 ## Sheet 4: Intelligence_Operations
@@ -800,7 +743,6 @@ EMERGENCY_STATUS =
 - External reference: `=[5.7.2]Intelligence_Production!$A:$W`
 - External reference: `=[5.7.2]Quality_Metrics!$A:$N`
 - External reference: `=[5.7.2]Analyst_Capabilities!$A:$U`
-
 
 **Summary Metrics**:
 
@@ -849,7 +791,6 @@ EMERGENCY_STATUS =
 - **Chart**: VT links by Remediation_Urgency
 - **Metric**: % Critical VT links remediated within SLA
 
-
 ---
 
 ## Sheet 5: Integration_Status
@@ -860,7 +801,6 @@ EMERGENCY_STATUS =
 
 - External reference: `=[5.7.3]Tool_Integration_Matrix!$A:$T`
 - External reference: `=[5.7.3]IOC_Deployment!$A:$X`
-
 
 **Summary Metrics**:
 
@@ -891,13 +831,11 @@ EMERGENCY_STATUS =
    - IOCs with blocks
    - Incidents prevented
 
-
 **Integration Maturity Assessment**:
 
 - **Scorecard**: Maturity level by tool category
 - **Gap Analysis**: Tools requiring integration
 - **Automation Progress**: Trend toward full automation
-
 
 ---
 
@@ -910,7 +848,6 @@ EMERGENCY_STATUS =
 - External reference: `=[5.7.3]Stakeholder_Registry!$A:$T`
 - External reference: `=[5.7.3]Distribution_Tracking!$A:$T`
 - External reference: `=[5.7.3]Feedback_Collection!$A:$V`
-
 
 **Summary Metrics**:
 
@@ -942,13 +879,11 @@ EMERGENCY_STATUS =
    - Feedback provided
    - Actions taken
 
-
 **Top Stakeholders Table**:
 
 - Top 10 most engaged stakeholders
 - Top 5 departments by engagement
 - Stakeholders requiring re-engagement
-
 
 ---
 
@@ -961,7 +896,6 @@ EMERGENCY_STATUS =
 - Monthly snapshots of key metrics
 - Rolling 12-month history
 - Seasonal pattern analysis
-
 
 **Trend Metrics**:
 
@@ -988,7 +922,6 @@ EMERGENCY_STATUS =
 - Correlation coefficients
 - Regression analysis for forecasting
 
-
 **CVSS Framework Trends**:
 
 **Chart: CVSS 4.0 Adoption Over Time**
@@ -1005,7 +938,6 @@ EMERGENCY_STATUS =
   - Actual below Target → RED marker
   - Actual meets/exceeds Target → GREEN marker
 
-
 **Chart: CVSS Severity Distribution Over Time**
 
 - **Type**: Stacked bar chart
@@ -1016,7 +948,6 @@ EMERGENCY_STATUS =
   - Medium (4.0-6.9) - Yellow
   - Low (0.1-3.9) - Green
 - **Purpose**: Shows both prevention volume AND severity distribution trends
-
 
 ---
 
@@ -1034,7 +965,6 @@ EMERGENCY_STATUS =
 - Quality degradation trends
 - Cost overruns
 
-
 **2. Operational Risks**:
 
 - Production volume decline
@@ -1042,7 +972,6 @@ EMERGENCY_STATUS =
 - Analyst skill gaps
 - Training backlog
 - Burnout indicators
-
 
 **3. Integration Risks**:
 
@@ -1052,7 +981,6 @@ EMERGENCY_STATUS =
 - Tool coverage gaps
 - Automation failures
 
-
 **4. Stakeholder Risks**:
 
 - Declining engagement
@@ -1061,7 +989,6 @@ EMERGENCY_STATUS =
 - Distribution failures
 - Stakeholder attrition
 
-
 **5. Compliance Risks**:
 
 - Missing evidence
@@ -1069,7 +996,6 @@ EMERGENCY_STATUS =
 - Audit findings
 - SLA breaches
 - Data protection issues
-
 
 **Risk Indicator Table**:
 
@@ -1083,14 +1009,12 @@ IF Current_Value > Critical_Threshold: "Critical"
 ELSE IF Current_Value > Warning_Threshold: "Warning"
 ELSE: "Normal"
 
-
 **Risk Dashboard**:
 
 - **Heat Map**: Risks by category and severity
 - **Trend Indicators**: Risk levels over time
 - **Top Risks Table**: Highest priority items
 - **Mitigation Tracker**: Action plan status
-
 
 **CVSS-Based Risk Quantification Tracking**:
 
@@ -1120,7 +1044,6 @@ STATUS =
 - **Alert Threshold**: Any vulnerability-related risk without CVSS score
 - **Alert Message**: "CRITICAL: {count} vulnerability risks lack CVSS quantification. This blocks accurate risk rating per ISO 27001 Clause 6.1."
 
-
 ---
 
 ## Sheet 9: Compliance_Evidence
@@ -1149,14 +1072,12 @@ STATUS =
 - Evidence quality assessment
 - Audit readiness score
 
-
 **Audit Preparation**:
 
 - Pre-populated audit responses
 - Evidence cross-reference matrix
 - Control effectiveness statement
 - Continuous improvement log
-
 
 **CVSS Framework Compliance Evidence**:
 
@@ -1244,7 +1165,6 @@ CVSS_Context_Rate =
    - Average CVSS score of prevented threats
    - ROI multiplier (TI cost vs. cost avoidance)
 
-
 **Format**: Print-ready, PDF-exportable
 
 **CVSS-Based Cost Avoidance Table**:
@@ -1299,7 +1219,6 @@ CVSS_Context_Rate =
 - Refresh frequency: **On-demand** (manual refresh button)
 - Background refresh: **Enabled** for large datasets
 
-
 **Refresh Workflow**:
 1. Open dashboard workbook
 2. Excel prompts to update external links
@@ -1315,7 +1234,6 @@ CVSS_Context_Rate =
 - Risk thresholds in Risk_Indicators
 - Commentary in Monthly/Quarterly reports
 
-
 ## Data Validation
 
 **Automated checks**:
@@ -1324,7 +1242,6 @@ CVSS_Context_Rate =
 - Broken link detection
 - Data type validation
 - Calculation error detection
-
 
 ---
 
@@ -1336,12 +1253,10 @@ CVSS_Context_Rate =
 - **5.7.2 (Collection & Analysis)**: Intelligence_Production, Quality_Metrics, Vulnerability_Linked_Threats, Analyst_Capabilities
 - **5.7.3 (Integration & Distribution)**: Tool_Integration_Matrix, IOC_Deployment, Distribution_Tracking, Feedback_Collection
 
-
 ## Dashboard to Control 8.8
 
 - VT link summary → 8.8 dashboard for joint reporting
 - Integration status → 8.8 detection capability assessment
-
 
 ---
 
@@ -1354,14 +1269,12 @@ CVSS_Context_Rate =
 - Continuous monitoring and improvement
 - Management review inputs
 
-
 **Supporting Evidence**:
 
 - Monthly reports (12 per year)
 - Quarterly reports (4 per year)
 - Executive briefing presentations
 - Audit responses
-
 
 ---
 
@@ -1416,7 +1329,6 @@ CVSS_Context_Rate =
 - Risk status must auto-calculate based on thresholds
 - Report generation must complete without errors
 
-
 ---
 
 # Related Documents
@@ -1428,18 +1340,15 @@ CVSS_Context_Rate =
 - **ISMS-POL-A.5.7, Section 3.2** (Exception Management)
 - **ISMS-POL-A.5.7, Section 3.4** (Policy Governance)
 
-
 **Implementation Specifications**:
 
 - ISMS-IMP-A.5.7.1 (Sources Assessment)
 - ISMS-IMP-A.5.7.2 (Collection & Analysis Assessment)
 - ISMS-IMP-A.5.7.3 (Integration & Distribution Assessment)
 
-
 **Standards References**:
 
 - ISO/IEC 27001:2022 Annex A Control 5.7
-
 
 ---
 
@@ -1452,24 +1361,20 @@ CVSS_Context_Rate =
 - **ISMS-POL-A.5.7, Section 3.2** (Exception Management)
 - **ISMS-POL-A.5.7, Section 3.4** (Policy Governance)
 
-
 **Implementation Specifications (DATA SOURCES):**
 
 - **ISMS-IMP-A.5.7.1** (Sources Assessment) - External reference for source metrics
 - **ISMS-IMP-A.5.7.2** (Collection & Analysis Assessment) - External reference for production metrics
 - **ISMS-IMP-A.5.7.3** (Integration & Distribution Assessment) - External reference for integration & MANDATORY audit evidence
 
-
 **Standalone Alternative:**
 
 - **ISMS-IMP-A.5.7.5** (Standalone Dashboard) - Manual-entry executive dashboard (no external references)
-
 
 **Standards References:**
 
 - ISO/IEC 27001:2022 Annex A Control A.5.7
 - ISO/IEC 27002:2022 Control 5.7 Implementation Guidance
-
 
 ---
 

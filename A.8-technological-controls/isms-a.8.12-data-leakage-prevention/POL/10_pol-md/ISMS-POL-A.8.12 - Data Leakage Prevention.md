@@ -43,7 +43,6 @@
 - Compliance: Data Protection Officer (DPO) / Legal/Compliance Officer
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -51,7 +50,6 @@
 - ISO/IEC 27001:2022 Control A.8.12
 - Swiss FADP (Federal Act on Data Protection)
 - EU GDPR (General Data Protection Regulation)
-
 
 ---
 
@@ -88,7 +86,6 @@ This policy establishes [Organization]'s requirements for data leakage preventio
 - Integration with [Organization]'s risk assessment and treatment processes
 - Legal and regulatory compliance requirements (employee monitoring, proportionality, transparency)
 
-
 ## What This Policy Does
 
 This policy:
@@ -99,7 +96,6 @@ This policy:
 - **References** applicable regulatory requirements per ISMS-POL-00 (Tier 1/2/3 framework)
 - **Identifies** organizational roles and responsibilities for DLP implementation
 - **Addresses** legal requirements for employee monitoring (Swiss FADP Art. 328b CO, GDPR Art. 88)
-
 
 ## What This Policy Does NOT Do
 
@@ -113,14 +109,12 @@ This policy does NOT:
 - **Define detailed incident response procedures** (see ISMS-IMP-A.8.12-4 Monitoring & Response Assessment)
 - **Establish exception request workflows** (see ISMS-IMP-A.8.12 Exception Procedures)
 
-
 **Rationale**: Separating policy requirements from implementation guidance enables:
 
 - Policy stability despite evolving threat landscape and DLP technology changes
 - Technical agility for DLP solution updates, rule tuning, and technology migration without policy revision
 - Clear distinction between governance (policy) and execution (implementation)
 - Focused audit scope (auditors audit policy compliance, not technical DLP rule configuration)
-
 
 ## Scope
 
@@ -133,7 +127,6 @@ This policy does NOT:
 - All third-party service providers and cloud services handling organizational data
 - All deployment models (on-premises infrastructure, hybrid environments, cloud-native services)
 
-
 **Out of Scope**:
 
 - Public information (data classified as Public requiring no DLP protection)
@@ -142,7 +135,6 @@ This policy does NOT:
 - Backup and archival processes (covered by ISMS-POL-A.8.13 Information Backup)
 - Data retention and deletion (covered by ISMS-POL-A.8.10 Information Deletion)
 - Data masking and anonymization (covered by ISMS-POL-A.8.11 Data Masking)
-
 
 ## Regulatory Applicability
 
@@ -178,7 +170,6 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - OWASP (Data Loss Prevention Guide)
 - Cloud Security Alliance (CSA) - Data Security Lifecycle
 - SANS Institute - DLP Best Practices
-
 
 **Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment conducted by Legal/Compliance, CISO, and DPO. The most stringent requirements apply where multiple regulations overlap.
 
@@ -265,7 +256,6 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Block or quarantine messages containing Restricted data to external recipients
 - Alert on Confidential data to external recipients (policy-based blocking or monitoring)
 
-
 **Endpoint DLP**:
 
 - Monitor file operations (copy, move, rename, delete)
@@ -274,14 +264,12 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Integrate with endpoint protection platform (EPP/EDR)
 - Support offline operation (enforce policies when disconnected from network)
 
-
 **Network DLP**:
 
 - Monitor network traffic at egress points (internet gateway, cloud connections)
 - Inspect encrypted traffic (TLS inspection where legally permissible)
 - Detect data exfiltration via covert channels (DNS tunneling, ICMP exfiltration)
 - Integrate with firewall, proxy, and SIEM systems
-
 
 **Cloud DLP**:
 
@@ -290,14 +278,12 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Data sharing and external collaboration monitoring
 - Cloud-to-cloud data transfer detection
 
-
 **Mobile DLP**:
 
 - Mobile Device Management (MDM) integration
 - App-level DLP for containerized corporate apps
 - Email and document sharing monitoring
 - BYOD risk-based controls (containerization, conditional access)
-
 
 **Coverage Verification**: [Organization] SHALL verify DLP coverage through technical testing and network topology mapping. Testing methodology and frequency defined in ISMS-IMP-A.8.12-3 (Channel Coverage Assessment).
 
@@ -322,7 +308,6 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Dedicated B2B partner connections (documented, risk-assessed, approved by CISO)
 - Air-gapped networks with no internet connectivity (DLP not applicable)
 - Specific user groups with documented and approved exceptions (executive leadership, legal counsel - risk-based)
-
 
 ## Monitoring & Detection Requirements
 
@@ -394,7 +379,6 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Action taken (blocked, allowed, quarantined, user-justified)
 - Data sample (first 100 characters or sanitized excerpt - privacy-compliant)
 
-
 **Log Retention**:
 
 - DLP security events (blocked transfers, policy violations, critical alerts): **12 months** minimum
@@ -402,7 +386,6 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Extended retention applies where regulatory requirements mandate longer periods (per ISMS-POL-00)
 - Logs protected with appropriate integrity and confidentiality controls per A.8.15 (Protection of Log Information)
 - Log deletion requires documented approval and follows data retention policy procedures
-
 
 **Privacy Compliance**: DLP monitoring SHALL comply with applicable privacy regulations per ISMS-POL-00. Users informed of monitoring through acceptable use policy, employment contracts, and privacy notices. Access to DLP logs restricted to authorized personnel (Security Team, CISO, DPO, Legal) with legitimate need. Employee monitoring transparency requirements documented in Annex A.
 
@@ -430,14 +413,12 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Incident classification (Critical/High/Medium/Low)
 - Initial containment actions (block user, isolate endpoint, revoke credentials)
 
-
 **Phase 2: Assessment & Investigation**
 
 - Root cause analysis (malicious vs. accidental, insider vs. compromised account)
 - Scope determination (data volume, sensitivity, recipient, exposure duration)
 - User interview (if accidental - understand circumstances)
 - Forensic evidence collection (logs, network captures, endpoint forensics)
-
 
 **Phase 3: Containment & Eradication**
 
@@ -446,13 +427,11 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Recipient notification (if data sent to external party - coordinate with Legal/DPO)
 - Malware remediation (if exfiltration via malware)
 
-
 **Phase 4: Recovery & Remediation**
 
 - Restore normal operations (re-enable user, adjust DLP policy)
 - Implement corrective controls (policy tuning, user training, technical controls)
 - User remediation action (training, policy acknowledgment, disciplinary action if malicious)
-
 
 **Phase 5: Post-Incident Review**
 
@@ -460,7 +439,6 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - DLP policy tuning recommendations
 - Control effectiveness assessment
 - Incident report documentation
-
 
 **Regulatory Notification**:
 
@@ -482,7 +460,6 @@ Where DLP incidents constitute personal data breaches, [Organization] follows re
 - Remediation actions and verification
 - Lessons learned and control improvements
 
-
 **Implementation Note**: Detailed incident response procedures, escalation matrices, communication templates, and forensic investigation guides are documented in ISMS-IMP-A.8.12-4 (Monitoring & Response Assessment).
 
 ---
@@ -498,7 +475,6 @@ Where DLP incidents constitute personal data breaches, [Organization] follows re
 - Accepting residual risks where DLP controls cannot fully mitigate data leakage risks
 - Supporting security program and DLP initiatives
 
-
 **Chief Information Security Officer (CISO)**:
 
 - **Accountable** for overall DLP policy and program effectiveness
@@ -508,7 +484,6 @@ Where DLP incidents constitute personal data breaches, [Organization] follows re
 - Annual policy review and approval
 - Budget ownership for DLP technology and resources
 
-
 **Data Protection Officer (DPO)**:
 
 - **Consulted** on all DLP monitoring activities affecting personal data
@@ -516,7 +491,6 @@ Where DLP incidents constitute personal data breaches, [Organization] follows re
 - Reviewing DLP policies for proportionality and transparency
 - Advising on data breach notification obligations (Swiss nDSG Art. 24, GDPR Art. 33/34)
 - Privacy impact assessments for DLP deployments
-
 
 **Security Team**:
 
@@ -529,7 +503,6 @@ Where DLP incidents constitute personal data breaches, [Organization] follows re
 - Integrating threat intelligence feeds
 - Conducting periodic coverage assessments and effectiveness reviews
 
-
 **IT Operations / Network Team**:
 
 - **Responsible** for deploying and maintaining DLP infrastructure
@@ -537,7 +510,6 @@ Where DLP incidents constitute personal data breaches, [Organization] follows re
 - Providing technical support for DLP systems
 - Coordinating changes with Security Team (network modifications, system updates)
 - Maintaining DLP system availability and performance
-
 
 **System Owners / Data Owners**:
 
@@ -547,7 +519,6 @@ Where DLP incidents constitute personal data breaches, [Organization] follows re
 - Reviewing DLP incidents involving their data
 - Approving exceptions for business-justified data transfers
 
-
 **Users (All Personnel)**:
 
 - **Responsible** for complying with DLP policies and acceptable use policy
@@ -556,7 +527,6 @@ Where DLP incidents constitute personal data breaches, [Organization] follows re
 - **Prohibited** from attempting to bypass DLP controls (violation subject to disciplinary action)
 - Completing annual DLP awareness training
 
-
 **Legal / Compliance**:
 
 - **Consulted** on regulatory interpretation and compliance obligations
@@ -564,14 +534,12 @@ Where DLP incidents constitute personal data breaches, [Organization] follows re
 - Advising on data breach notification requirements
 - Supporting DLP incident investigations requiring legal expertise
 
-
 **Human Resources (HR)**:
 
 - **Consulted** on employee monitoring transparency requirements
 - Ensuring employment contracts include DLP monitoring acknowledgment
 - Coordinating with Legal/CISO on disciplinary actions for policy violations
 - Supporting user training and awareness programs
-
 
 **Detailed RACI Matrix**: Complete roles and responsibilities matrix documented in ISMS-IMP-A.8.12 Implementation Guides.
 
@@ -615,7 +583,6 @@ Each domain assessed through:
 - Gap analysis (identified risks, remediation recommendations)
 - Evidence register (screenshots, configuration exports, test results)
 
-
 **Assessment Frequency**:
 
 - **Comprehensive assessment**: Annually (aligned with internal audit programme, typically Q4)
@@ -627,14 +594,12 @@ Each domain assessed through:
   - Audit findings requiring remediation verification
   - Regulatory changes affecting monitoring requirements
 
-
 **Assessment Tools**:
 
 - Excel-based assessment workbooks with automated compliance calculations
 - Evidence registers and gap analysis templates
 - Remediation tracking and action item management
 - Executive dashboard with KPIs and trend analysis
-
 
 **Implementation Note**: Assessment methodology, evidence requirements, workbook structure, and compliance calculation procedures are defined in ISMS-IMP-A.8.12 (Implementation Guidance Suite).
 
@@ -649,7 +614,6 @@ Exceptions to DLP policy requirements require:
 - **Compensating controls**: Alternative protections (encryption, limited scope, enhanced monitoring)
 - **Timeline**: Temporary (specific end date) or permanent (ongoing business requirement)
 - **Formal approval**: Per authority matrix based on risk level
-
 
 **Approval Authority**:
 
@@ -669,7 +633,6 @@ The following exceptions are **NOT PERMITTED** under any circumstances:
 - Bypassing DLP for credential transfers (passwords, API keys, certificates)
 - Disabling DLP monitoring for privileged users (administrators, executives) without CISO approval
 - Permanent exceptions without documented compensating controls
-
 
 **Exception Monitoring**:
 
@@ -748,7 +711,6 @@ DLP alerts automatically create incident tickets to ensure tracking and accounta
 - **HR**: Consulted for employee-related incidents, disciplinary actions
 - **Communications**: Consulted for external notifications (customers, partners, regulators)
 
-
 **Detailed Procedures**: ISMS-IMP-A.8.12-4 (Monitoring & Response Assessment) provides incident classification criteria, response workflows, escalation procedures, communication templates, and forensic investigation guides.
 
 ## Policy Governance
@@ -760,13 +722,11 @@ DLP alerts automatically create incident tickets to ensure tracking and accounta
 - **Reviewers**: CISO, Security Team, Legal/Compliance, DPO, IT Operations, Data Owners
 - **Approval**: CISO (technical), Executive Management (strategic)
 
-
 **Implementation Standards Review**:
 
 - **Frequency**: Based on threat landscape evolution and technology changes (at least semi-annual)
 - **Authority**: Security Team proposes updates, CISO approves
 - **Note**: Implementation standard updates (ISMS-IMP-A.8.12) do not require policy revision
-
 
 **Policy Updates**:
 
@@ -786,7 +746,6 @@ Policy updates communicated via:
 - **Employee notification**: DLP monitoring practices (legal requirement per Swiss FADP, GDPR)
 - **Quarterly briefings**: CISO briefings to Executive Management on DLP effectiveness and trends
 - **Works council notifications**: Where legally required (Switzerland, Germany, France, EU member states with co-determination rights)
-
 
 **Change Management**:
 
@@ -816,12 +775,10 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - Threat landscape assessment determines protection requirements (insider threats, APT, accidental disclosure)
 - Risk treatment plans document DLP control implementation, residual risks, and acceptance
 
-
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
 - Control A.8.12 applicability justified in [Organization]'s SoA based on information assets requiring protection
 - Implementation status tracked and reported in management review
-
 
 **Related Controls**:
 
@@ -851,14 +808,12 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - Data patterns → Classification (A.5.12): Discovered sensitive data informs classification review
 - User behavior → Access control (A.5.15): Repeated DLP violations trigger access review and potential revocation
 
-
 **Other Controls → DLP**:
 
 - Classification decisions → DLP protection scope: What data to protect and with what controls
 - Incident lessons learned → DLP rule tuning: Post-incident improvements and policy adjustments
 - Access control policies → DLP enforcement rules: Authorized vs. unauthorized transfers
 - Network segmentation → DLP deployment architecture: Where to place DLP sensors and monitoring points
-
 
 ## Implementation Resources
 
@@ -872,7 +827,6 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - **ISMS-IMP-A.8.12-4**: Monitoring & Response Assessment (alerting, incident response, effectiveness metrics)
 - **ISMS-IMP-A.8.12-5**: Compliance Dashboard (consolidated metrics, gap analysis, executive reporting)
 
-
 **Assessment Tools**:
 
 - Python-generated Excel workbooks with automated compliance calculations
@@ -881,7 +835,6 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - Evidence registers and remediation tracking
 - Executive dashboard with trend analysis
 
-
 **Supporting Materials**:
 
 - Exception request procedures and templates
@@ -889,7 +842,6 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - Quick reference guides (Annex B: One-page summary for users)
 - Incident response playbooks (ISMS-IMP-A.8.12-4)
 - DLP technology evaluation criteria (ISMS-IMP-A.8.12-1)
-
 
 **Automation**: All assessment workbooks generated via Python scripts to ensure consistency, repeatability, and maintainability. Assessment framework follows system engineering methodology rather than traditional paperwork-based compliance.
 
@@ -918,7 +870,6 @@ This policy addresses DLP requirements from multiple regulations:
 - **DLP interaction**: Understanding blocked transfers, exception requests, false positive reporting
 - **Privacy awareness**: Employee monitoring transparency, data subject rights
 
-
 **Technical Training** (IT/Security Staff):
 
 - **DLP technology**: Solution configuration, rule creation, policy tuning
@@ -926,13 +877,11 @@ This policy addresses DLP requirements from multiple regulations:
 - **Incident response**: DLP event investigation, forensic evidence collection, remediation procedures
 - **Exception evaluation**: Risk assessment, compensating controls, approval workflows
 
-
 **Operational Training** (IT Operations, Help Desk):
 
 - **False positive handling**: User support, escalation procedures, temporary exception workflows
 - **User support**: Explaining DLP blocks, guiding legitimate transfers, exception requests
 - **Common scenarios**: Routine blocking cases, resolution procedures, documentation requirements
-
 
 **Management Training** (Data Owners, Department Heads):
 
@@ -940,14 +889,12 @@ This policy addresses DLP requirements from multiple regulations:
 - **Exception approval**: Risk assessment, business justification evaluation, approval authority
 - **Compliance oversight**: Reviewing DLP metrics, addressing gaps, supporting security program
 
-
 **Training Delivery**:
 
 - E-learning modules (annual completion required)
 - In-person workshops (new hire onboarding, role-based training)
 - Simulated exercises (tabletop incident response, phishing simulations)
 - Policy acknowledgment (signed confirmation of understanding and compliance)
-
 
 ---
 
@@ -1006,7 +953,6 @@ This policy addresses DLP requirements from multiple regulations:
 - **Purpose Limitation**: Data collected for security purposes cannot be used for other purposes (e.g., performance management)
 - **Transparency**: Data subjects (employees) must be informed about monitoring
 
-
 **Article 19 - Right to Information**:
 Employees have the right to know:
 
@@ -1015,7 +961,6 @@ Employees have the right to know:
 - Purpose of monitoring (data leakage prevention)
 - Who has access to monitoring data (Security Team, CISO, DPO)
 - Retention period (log retention: 90 days operational, 12 months security events)
-
 
 **Swiss Code of Obligations (OR) - Article 328b: Protection of Employee's Personality**:
 
@@ -1028,7 +973,6 @@ Employees have the right to know:
 - Monitoring must be **transparent** (employees informed via employment contract, privacy notice)
 - Personal data unrelated to work is protected (personal emails, private browsing outside work hours)
 
-
 ## A.2 EU GDPR Framework (Applicable When Processing EU Personal Data)
 
 **GDPR Article 5 - Principles of Processing**:
@@ -1040,7 +984,6 @@ Employees have the right to know:
 - Storage limitation (retention aligned with purpose)
 - Integrity and confidentiality
 
-
 **GDPR Article 6 - Lawful Basis for Processing**:
 
 DLP monitoring typically relies on:
@@ -1048,7 +991,6 @@ DLP monitoring typically relies on:
 - **Legitimate Interest** (Art. 6(1)(f)): Protecting organizational data is a legitimate interest, balanced against employee privacy
 - **Legal Obligation** (Art. 6(1)(c)): Where regulations require security monitoring (e.g., financial sector)
 - **Contract** (Art. 6(1)(b)): Employment contract includes acceptable use and monitoring provisions
-
 
 **GDPR Article 32 - Security of Processing**:
 Organizations must implement appropriate technical and organizational measures (DLP is a security measure).
@@ -1093,7 +1035,6 @@ Member states may provide specific rules for employee data processing. DLP monit
 - Retention periods (90 days routine, 12 months incidents)
 - Employee rights (access to personal data, rectification, complaint to DPA)
 
-
 **2. Privacy Notice / Employee Handbook**:
 
 - Detailed explanation of DLP monitoring practices
@@ -1102,14 +1043,12 @@ Member states may provide specific rules for employee data processing. DLP monit
 - How data is used (security incident detection and response only)
 - Who has access (Security Team, CISO, DPO, Legal - limited access)
 
-
 **3. Acceptable Use Policy**:
 
 - Explicit prohibition against data exfiltration
 - Examples of prohibited activities (sending confidential data to personal email, uploading to unapproved cloud storage)
 - Consequences of policy violations (disciplinary action, potential termination)
 - Exception process for legitimate business needs
-
 
 **4. Security Awareness Training**:
 
@@ -1118,14 +1057,12 @@ Member states may provide specific rules for employee data processing. DLP monit
 - How to request exceptions for legitimate business transfers
 - Reporting suspected false positives or security incidents
 
-
 **5. Works Council Consultation** (Where Applicable):
 In jurisdictions requiring co-determination (Germany, France, Belgium, Netherlands, Switzerland in some cases):
 
 - Consult works council BEFORE deploying DLP monitoring
 - Document works council agreement or negotiated compromise
 - Implement agreed-upon safeguards (e.g., enhanced privacy protections, limited log access)
-
 
 ## A.5 Implementation Checklist
 
@@ -1164,7 +1101,6 @@ Before deploying DLP monitoring, [Organization] MUST complete:
 - Swiss Federal Data Protection and Information Commissioner (FDPIC) enforcement
 - Private lawsuits by employees for personality rights violations
 
-
 **EU GDPR Enforcement**:
 
 - Maximum fine: €20,000,000 or 4% of annual global turnover (whichever is higher)
@@ -1172,13 +1108,11 @@ Before deploying DLP monitoring, [Organization] MUST complete:
 - Private lawsuits by employees for compensation (GDPR Art. 82)
 - Collective actions by employee representatives or data protection organizations
 
-
 **Employment Law Risks**:
 
 - Unlawful monitoring may be grounds for employee termination of contract
 - Works council can challenge monitoring in labor courts
 - DLP evidence obtained unlawfully may be inadmissible in disciplinary proceedings
-
 
 ---
 
@@ -1206,7 +1140,6 @@ Data Leakage Prevention (DLP) protects [Organization]'s sensitive information fr
 - **Internal**: Organization-only (policies, procedures) - DLP monitoring (detection only)
 - **Public**: No DLP protection
 
-
 ## Your Responsibilities
 
 ✅ **Handle sensitive data properly**: Follow classification and acceptable use policies  
@@ -1231,7 +1164,6 @@ Data Leakage Prevention (DLP) protects [Organization]'s sensitive information fr
 - **Security Team**: security@[organization].example
 - **Help Desk**: helpdesk@[organization].example (urgent transfer blocks)
 - **Data Protection Officer (DPO)**: dpo@[organization].example (privacy concerns)
-
 
 **Thank you for helping protect [Organization]'s information assets.**
 

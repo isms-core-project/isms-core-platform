@@ -45,12 +45,10 @@ This document consists of two parts:
   - Formula Definitions
   - Python Script Usage Notes
 
-
 **Target Audiences:**
 
 - **Part I:** Assessment users (IT Operations, System Owners, Application Owners, Security Team)
 - **Part II:** Workbook developers (Python/Excel script maintainers)
-
 
 ---
 
@@ -74,7 +72,6 @@ This assessment creates a comprehensive inventory of ALL systems generating logs
 - What gaps exist? (systems not logging, required events missing)
 - Where is logging configuration documented?
 
-
 ## Why This Matters
 
 This assessment verifies [Organization]'s compliance with:
@@ -82,7 +79,6 @@ This assessment verifies [Organization]'s compliance with:
 - **ISO/IEC 27001:2022 Control A.8.15**: Logs that record activities, exceptions, faults and other relevant events should be produced, stored, protected and analysed
 - **ISMS-POL-A.8.15, Section 2.1 (Event Logging Requirements)**: Mandatory log events including authentication, authorization, administrative actions, security events, system events, network events, application events
 - **ISMS-POL-A.8.15, Section 1.4 (Scope)**: All information systems, network devices, security tools, databases, cloud services, authentication systems
-
 
 **Security Impact**: You cannot investigate what you don't log. Incomplete log coverage creates blind spots attackers exploit.
 
@@ -106,12 +102,10 @@ This assessment verifies [Organization]'s compliance with:
 - **250-1000 log sources** (medium organization)
 - **1000+ log sources** (large/complex organization)
 
-
 **Time Investment**: 
 
 - Initial assessment: 40-80 hours (depending on environment size)
 - Quarterly updates: 4-8 hours (new systems only)
-
 
 ---
 
@@ -130,7 +124,6 @@ Before starting this assessment, gather:
 - [ ] Database inventory (all database systems)
 - [ ] Security tool inventory (SIEM, IDS/IPS, anti-malware, DLP, web filters)
 
-
 **Documentation**:
 
 - [ ] System architecture diagrams
@@ -139,13 +132,11 @@ Before starting this assessment, gather:
 - [ ] Data flow diagrams
 - [ ] Existing logging documentation (if any)
 
-
 **Access**:
 
 - [ ] Read access to system configurations for sampling
 - [ ] Access to SIEM console (if deployed)
 - [ ] Coordination with System Owners for configuration verification
-
 
 ## Required Resources
 
@@ -158,13 +149,11 @@ Before starting this assessment, gather:
 - **Security Team**: Verify security tool logging
 - **Cloud Administrators**: Document cloud service logging
 
-
 **Tools**:
 
 - Microsoft Excel 2016 or later (workbook compatibility)
 - Access to system management consoles for verification
 - SIEM console access (if applicable)
-
 
 **Timeline**:
 
@@ -173,7 +162,6 @@ Before starting this assessment, gather:
 - **Week 7**: Gap analysis and remediation planning
 - **Week 8**: Review, validation, and approval
 
-
 ## Policy Knowledge Required
 
 **Assessors MUST be familiar with**:
@@ -181,7 +169,6 @@ Before starting this assessment, gather:
 - **ISMS-POL-A.8.15, Section 2.1 (Event Logging Requirements)**: Mandatory log events by category
 - **ISMS-POL-A.8.15, Annex A (Logging Decision Matrix)**: Decision tree for determining required events
 - **ISMS-REF-A.8.15 (Logging Standards Reference)**: Log format specifications (optional - technical detail)
-
 
 **Recommended**: Review ISMS-POL-A.8.15 Section 2.1 before starting assessment.
 
@@ -237,7 +224,6 @@ For each system, document:
 - System criticality (Critical, High, Standard, Low per business impact)
 - Deployment model (On-premises, Cloud, Hybrid, Third-party hosted)
 
-
 **Phase 3: Required Events Determination (Sheet 3)**
 
 For each system, use **ISMS-POL-A.8.15, Annex A (Logging Decision Matrix)** to determine:
@@ -245,7 +231,6 @@ For each system, use **ISMS-POL-A.8.15, Annex A (Logging Decision Matrix)** to d
 - What event categories are mandatory? (Authentication, Authorization, Administrative, Security, System, Network, Application)
 - What retention period applies? (per ISMS-POL-A.8.15, Section 2.3 + Annex A.2)
 - Are there special regulatory requirements? (PCI DSS, HIPAA, SOX per ISMS-POL-A.8.15, Section 1.5)
-
 
 **Phase 4: Logging Configuration Verification (Sheets 4-9)**
 
@@ -258,14 +243,12 @@ For each system, verify actual logging configuration:
 - **Application & Database** (Sheet 8): Errors, exceptions, database transactions, API authentication
 - **Network Device Logging** (Sheet 9): Firewall rule matches, VPN connections, network segmentation traversals
 
-
 **Verification Methods**:
 
 - Review system logging configuration (syslog.conf, application.properties, registry settings)
 - Sample logs from SIEM or local log files to verify events present
 - Interview System Owners to confirm logging configuration
 - Review vendor documentation for logging capabilities
-
 
 **Phase 5: Gap Identification (Sheet 10: Gap_Analysis)**
 
@@ -277,7 +260,6 @@ For each gap discovered:
 - Propose remediation action
 - Assign owner and timeline
 
-
 **Phase 6: Evidence Collection (Sheet 11: Evidence_Register)**
 
 For key findings, attach evidence:
@@ -286,7 +268,6 @@ For key findings, attach evidence:
 - Sample log entries
 - System Owner confirmations
 - Vendor documentation excerpts
-
 
 **Phase 7: Summary Review (Sheet 12: Summary_Dashboard)**
 
@@ -320,12 +301,10 @@ This section provides detailed guidance for completing each assessment sheet.
 - Format: Auto-increment (SYS-001, SYS-002, etc.)
 - Unique identifier for tracking across assessment cycles
 
-
 **Column B: System Name**
 
 - Official system name (hostname for servers, product name for applications)
 - Example: "PROD-WEB-01", "SAP ERP", "Microsoft 365", "FortiGate Firewall"
-
 
 **Column C: System Type**
 
@@ -340,25 +319,21 @@ This section provides detailed guidance for completing each assessment sheet.
   - Authentication System: Active Directory, LDAP, SSO, MFA platform
   - Other: Anything not fitting above categories
 
-
 **Column D: System Owner**
 
 - Person responsible for the system (email or name)
 - **Important**: System Owner confirms logging configuration accuracy during review
-
 
 **Column E: Business Function**
 
 - What business purpose does this system serve?
 - Examples: "Financial Reporting", "Customer Relationship Management", "Email Communication", "Network Security", "User Authentication"
 
-
 **Column F: Data Classification**
 
 - Dropdown: Public, Internal, Confidential, Restricted
 - Per [Organization]'s data classification policy
 - **Impact**: Higher classification = more comprehensive logging required (per ISMS-POL-A.8.15, Annex A.1)
-
 
 **Column G: System Criticality**
 
@@ -370,12 +345,10 @@ This section provides detailed guidance for completing each assessment sheet.
   - Low: Minimal business impact if system fails
 - **Impact**: Higher criticality = more comprehensive logging required (per ISMS-POL-A.8.15, Annex A.1)
 
-
 **Column H: Deployment Model**
 
 - Dropdown: On-Premises, Cloud (IaaS), Cloud (PaaS), Cloud (SaaS), Hybrid, Third-Party Hosted
 - **Impact**: Affects where logs are stored and how they're collected
-
 
 **Column I: Operating System / Platform**
 
@@ -384,13 +357,11 @@ This section provides detailed guidance for completing each assessment sheet.
 - For network devices: OS (e.g., "FortiOS 7.2", "Cisco IOS 15.7", "Junos 22.1")
 - For cloud: Service name (e.g., "AWS EC2", "Azure SQL Database", "Google Workspace")
 
-
 **Column J: Vendor / Manufacturer**
 
 - For commercial products: Vendor name (Microsoft, Cisco, Fortinet, Oracle, etc.)
 - For open-source: "Open Source" or project name (Apache, Nginx, PostgreSQL, etc.)
 - For custom/in-house: "In-House Development"
-
 
 **Column K: Logging Capability**
 
@@ -399,7 +370,6 @@ This section provides detailed guidance for completing each assessment sheet.
 - **Partial**: Limited logging (e.g., only errors, not all required events)
 - **No**: System does not log or logging not enabled
 - **Unknown**: Logging capability not yet determined (requires investigation)
-
 
 **Column L: Log Forwarding Status**
 
@@ -410,7 +380,6 @@ This section provides detailed guidance for completing each assessment sheet.
 - **Not Implemented**: No log forwarding, logs remain local only
 - **N/A**: Centralized logging not applicable (e.g., isolated test system)
 
-
 **Column M: SIEM Integration**
 
 - Dropdown: Yes, No, Planned, N/A
@@ -419,12 +388,10 @@ This section provides detailed guidance for completing each assessment sheet.
 - **Planned**: SIEM integration scheduled
 - **N/A**: System not intended for SIEM integration (e.g., standalone test lab)
 
-
 **Column N: Notes**
 
 - Free text for additional context, exceptions, or special considerations
 - Example: "Logs retained locally due to performance concerns", "Third-party managed service - logs available via API", "Decommissioned Q2 2026"
-
 
 ---
 
@@ -440,11 +407,9 @@ This sheet links system attributes (from Sheet 2) to logging requirements (from 
 
 - Auto-populated from Sheet 2 (external reference)
 
-
 **Columns C-D: System Type, Data Classification**
 
 - Auto-populated from Sheet 2 (external reference)
-
 
 **Column E: Required Event Categories**
 
@@ -456,36 +421,30 @@ This sheet links system attributes (from Sheet 2) to logging requirements (from 
   - **Standard Systems (Internal Data)**: Authentication, Administrative, Security (optional: Application, System)
   - **Low-Impact Systems (Public Data)**: Authentication (failures), Administrative, Critical Security Events
 
-
 **Column F: Authentication Events Required?**
 
 - Dropdown: Yes (All), Yes (Failures Only), No
 - Per ISMS-POL-A.8.15, Section 2.1 (Authentication Events): Login success/failure, logout, lockouts, password changes, MFA
-
 
 **Column G: Authorization Events Required?**
 
 - Dropdown: Yes, No
 - Per ISMS-POL-A.8.15, Section 2.1 (Authorization Events): Access to sensitive data, privilege escalation, access control changes
 
-
 **Column H: Administrative Actions Required?**
 
 - Dropdown: Yes, No
 - Per ISMS-POL-A.8.15, Section 2.1 (Administrative Actions): Configuration changes, account management, privilege grants, policy changes
-
 
 **Column I: Security Events Required?**
 
 - Dropdown: Yes, No
 - Per ISMS-POL-A.8.15, Section 2.1 (Security Events): Malware detection, intrusion attempts, firewall blocks, DLP alerts
 
-
 **Column J: System Events Required?**
 
 - Dropdown: Yes, No
 - Per ISMS-POL-A.8.15, Section 2.1 (System Events): Startup/shutdown, service status, errors, resource warnings
-
 
 **Column K: Network Events Required?**
 
@@ -493,13 +452,11 @@ This sheet links system attributes (from Sheet 2) to logging requirements (from 
 - Per ISMS-POL-A.8.15, Section 2.1 (Network Events): Firewall rule matches, VPN connections, network segmentation traversals
 - N/A for non-network systems
 
-
 **Column L: Application Events Required?**
 
 - Dropdown: Yes, No, N/A
 - Per ISMS-POL-A.8.15, Section 2.1 (Application Events): Errors, exceptions, database transactions, API authentication
 - N/A for infrastructure systems without applications
-
 
 **Column M: Retention Period (Online)**
 
@@ -507,13 +464,11 @@ This sheet links system attributes (from Sheet 2) to logging requirements (from 
 - Per ISMS-POL-A.8.15, Annex A.2 (Retention Period Selection Matrix)
 - Typical values: 3 months, 6 months, 12 months
 
-
 **Column N: Retention Period (Archive)**
 
 - Auto-calculated based on regulatory requirements
 - Per ISMS-POL-A.8.15, Annex A.2
 - Typical values: 6 months, 1 year, 7 years
-
 
 **Column O: Special Regulatory Requirements**
 
@@ -523,12 +478,10 @@ This sheet links system attributes (from Sheet 2) to logging requirements (from 
 - **HIPAA**: 6 years minimum total retention
 - **SOX**: 7 years minimum for financial systems
 
-
 **Column P: Rationale / Policy Reference**
 
 - Auto-populated text explaining WHY these requirements apply
 - Example: "Critical system with Restricted data requires comprehensive logging per ISMS-POL-A.8.15, Annex A.1"
-
 
 ---
 
@@ -565,7 +518,6 @@ Per ISMS-POL-A.8.15, Section 2.1 (Authentication Events):
 - [ ] Password changes/resets (user ID, timestamp, initiated by whom)
 - [ ] Multi-factor authentication events (MFA success/failure, method used, timestamp)
 
-
 **Common Gaps to Check For**:
 
 - Successful logins logged but failed logins not captured
@@ -573,7 +525,6 @@ Per ISMS-POL-A.8.15, Section 2.1 (Authentication Events):
 - Interactive logins captured but service account logins ignored
 - Password changes not logged
 - MFA events not logged (common oversight)
-
 
 **Verification Example**:
 ```
@@ -594,14 +545,12 @@ Per ISMS-POL-A.8.15, Section 2.1 (Authorization Events):
 - [ ] File/object access for classified data (user ID, resource accessed, action, outcome)
 - [ ] Denied access attempts (user ID, attempted resource, denial reason, timestamp)
 
-
 **Common Gaps**:
 
 - Successful access logged but denied attempts not captured
 - Permission changes not logged
 - Privilege escalation (sudo, Run As Administrator) not logged
 - File access auditing not enabled on sensitive shares/folders
-
 
 ### Sheet 6: Administrative Activity
 
@@ -615,14 +564,12 @@ Per ISMS-POL-A.8.15, Section 2.1 (Administrative Actions):
 - [ ] Installation/removal of software/services (package name, version, administrator, timestamp)
 - [ ] Firmware/system updates (system identifier, update applied, administrator, timestamp)
 
-
 **Common Gaps**:
 
 - Configuration changes logged but not detailed (missing before/after values)
 - Software installations logged but not de-installations
 - Policy changes not logged or insufficient detail
 - No correlation with change management tickets
-
 
 ### Sheet 7: Security Event Logging
 
@@ -637,14 +584,12 @@ Per ISMS-POL-A.8.15, Section 2.1 (Security Events):
 - [ ] Certificate validation failures (certificate subject, validation error, timestamp)
 - [ ] Security tool configuration changes (tool name, configuration modified, administrator, timestamp)
 
-
 **Common Gaps**:
 
 - Anti-malware detections logged but not prevention actions
 - Firewall allows logged but not blocks (inverse of expected)
 - IDS alerts generated but not logged centrally
 - DLP policy violations not logged (configuration oversight)
-
 
 ### Sheet 8: Application & Database
 
@@ -657,14 +602,12 @@ Per ISMS-POL-A.8.15, Section 2.1 (System Events):
 - [ ] Resource exhaustion warnings (resource type, utilization level, affected system, timestamp)
 - [ ] Time synchronization events (time source, synchronization status, drift detected, timestamp)
 
-
 **Common Gaps**:
 
 - Startup logged but not shutdown (system down before log written)
 - Service starts logged but not stops
 - Generic errors logged without sufficient detail for investigation
 - Time sync failures not logged (critical for log correlation)
-
 
 ### Sheet 9: Network Device Logging
 
@@ -677,14 +620,12 @@ Per ISMS-POL-A.8.15, Section 2.1 (Network Events):
 - [ ] DNS query anomalies (queried domain, source system, response, timestamp)
 - [ ] Network device configuration changes (device identifier, configuration modified, administrator, timestamp)
 
-
 **Common Gaps**:
 
 - Firewall rules match logged but insufficient detail (missing source/destination)
 - VPN connections logged but not disconnections
 - Network segmentation not enforced or logged
 - DNS queries not logged (privacy vs. security tradeoff)
-
 
 ---
 
@@ -702,30 +643,25 @@ For each system assessed, collect evidence demonstrating logging configuration:
    - Log forwarding configuration (SIEM agent config, syslog destination)
    - File/folder showing where logs are stored
 
-
 2. **Sample Log Entries**
 
    - Copy/paste or screenshot of sample log entry for each required event type
    - Verify log contains required fields (timestamp, user, action, outcome per ISMS-POL-A.8.15, Section 2.1)
-
 
 3. **System Owner Confirmation**
 
    - Email or documented confirmation from System Owner verifying logging configuration
    - System Owner signs Sheet 13 (Approval) for their systems
 
-
 4. **Vendor Documentation**
 
    - Excerpts from vendor documentation showing logging capabilities
    - Vendor support confirmation for any capability questions
 
-
 5. **SIEM Integration Evidence**
 
    - Screenshot from SIEM showing log source integrated and logs arriving
    - SIEM parser configuration for the log format
-
 
 ## Evidence Register (Sheet 11)
 
@@ -739,12 +675,10 @@ All evidence cataloged in Sheet 11 (Evidence_Register) with:
 - Collection Date
 - Collected By
 
-
 **Evidence Storage**:
 
 - Store all evidence files in dedicated folder: `[Assessment_Folder]/Evidence/A.8.15.1/`
 - Use consistent naming: `EVD-001_PROD-WEB-01_Config_Screenshot.png`
-
 
 ## Evidence Quality Criteria
 
@@ -755,14 +689,12 @@ All evidence cataloged in Sheet 11 (Evidence_Register) with:
 - Signed/dated confirmations from System Owners
 - Official vendor documentation (not forum posts or blogs)
 
-
 **Insufficient Evidence**:
 
 - Blurry or illegible screenshots
 - Undated or unsigned confirmations
 - Vendor documentation not specific to product version in use
 - "Trust me" statements without supporting documentation
-
 
 ---
 
@@ -781,7 +713,6 @@ All evidence cataloged in Sheet 11 (Evidence_Register) with:
 - Review firewall logs for systems making outbound connections not in inventory
 - Conduct network discovery scans to identify unknown devices
 
-
 ## Classification Errors
 
 **Pitfall**: Incorrect data classification or system criticality assignment leading to insufficient logging
@@ -795,7 +726,6 @@ All evidence cataloged in Sheet 11 (Evidence_Register) with:
 - Review data classification with System Owners and Data Owners
 - Challenge assumptions (e.g., "test system" that accesses production APIs)
 - Verify with Business Impact Analysis (BIA) results if available
-
 
 ## "Logging is Enabled" But Insufficient Detail
 
@@ -811,7 +741,6 @@ All evidence cataloged in Sheet 11 (Evidence_Register) with:
 - Request specific evidence for each required event type
 - Sample logs to verify required fields present
 
-
 ## Local Logs Only (Not Centralized)
 
 **Pitfall**: Logs generated but only stored locally, not forwarded to SIEM
@@ -823,7 +752,6 @@ All evidence cataloged in Sheet 11 (Evidence_Register) with:
 - Verify log forwarding configuration, not just log generation
 - Check SIEM to confirm logs actually arriving
 - Document systems with local-only logs as gaps requiring remediation
-
 
 ## Default Logging Levels (Insufficient)
 
@@ -839,7 +767,6 @@ All evidence cataloged in Sheet 11 (Evidence_Register) with:
 - Configure logging to capture all required events per ISMS-POL-A.8.15, Section 2.1
 - Test logging configuration by triggering events and verifying they appear in logs
 
-
 ## Cloud Services Assumptions
 
 **Pitfall**: Assuming cloud services "automatically log everything" without verification
@@ -854,7 +781,6 @@ All evidence cataloged in Sheet 11 (Evidence_Register) with:
 - Review cloud provider logging capabilities (may require premium tier)
 - Test log export/forwarding from cloud service to SIEM
 
-
 ## Encrypted Traffic Blindness
 
 **Pitfall**: HTTPS/TLS traffic not inspected, no application-layer logging
@@ -867,7 +793,6 @@ All evidence cataloged in Sheet 11 (Evidence_Register) with:
 - At minimum, log TLS handshake metadata (certificate, TLS version, cipher suite)
 - For web proxies/gateways, ensure application-layer visibility
 
-
 ## Decommissioned Systems Still in Inventory
 
 **Pitfall**: Assessment includes systems that have been decommissioned, wasting effort
@@ -879,7 +804,6 @@ All evidence cataloged in Sheet 11 (Evidence_Register) with:
 - Verify system operational status before assessing
 - Establish process for removing decommissioned systems from inventory
 - Quarterly inventory reconciliation against active systems
-
 
 ## Inconsistent Assessment Across Similar Systems
 
@@ -896,7 +820,6 @@ All evidence cataloged in Sheet 11 (Evidence_Register) with:
 - Peer review subset of assessments for consistency
 - Document decision rationale in Notes column
 
-
 ## Ignoring Legacy/End-of-Life Systems
 
 **Pitfall**: "We know it's old and can't log properly, so we'll skip it"
@@ -908,7 +831,6 @@ All evidence cataloged in Sheet 11 (Evidence_Register) with:
 - Document ALL systems including legacy/EOL
 - Mark as non-compliant with justification and compensating controls
 - Include in remediation plan (upgrade, replace, or accept risk with approval)
-
 
 ---
 
@@ -923,7 +845,6 @@ Before submitting assessment for approval, verify:
 - [ ] **All required fields filled**: No "TBD" or placeholder text (except in Notes where appropriate)
 - [ ] **Evidence attached**: Every non-compliant finding has evidence reference (Sheet 11 Evidence_Register)
 
-
 ## Accuracy
 
 - [ ] **System classifications verified**: Data classification and criticality confirmed with System Owners
@@ -931,13 +852,11 @@ Before submitting assessment for approval, verify:
 - [ ] **Configuration verification**: At least 10% of systems sampled with direct configuration review
 - [ ] **Log samples validated**: Sample logs contain required fields per ISMS-POL-A.8.15, Section 2.1 (timestamp, user, action, outcome)
 
-
 ## Compliance Scoring
 
 - [ ] **Formulas correct**: Compliance percentages calculate correctly (spot-check 5 systems manually)
 - [ ] **Scoring methodology**: Documented in Instructions sheet
 - [ ] **Partial compliance**: Systems marked "Partial" have clear explanation of what's missing
-
 
 ## Gap Analysis
 
@@ -946,14 +865,12 @@ Before submitting assessment for approval, verify:
 - [ ] **Remediation feasible**: Proposed actions are technically achievable
 - [ ] **Owners assigned**: Every gap has responsible owner and realistic timeline
 
-
 ## Evidence Quality
 
 - [ ] **Evidence complete**: All evidence files present in Evidence folder
 - [ ] **Evidence linkage**: Evidence Register (Sheet 11) correctly references evidence files
 - [ ] **Evidence readable**: Screenshots clear, documents legible, confirmations signed/dated
 - [ ] **Evidence current**: Evidence collected within assessment period (not stale/outdated)
-
 
 ## Documentation
 
@@ -962,14 +879,12 @@ Before submitting assessment for approval, verify:
 - [ ] **Methodology documented**: Assessment approach described in Instructions sheet
 - [ ] **Limitations noted**: Any limitations or scope exclusions clearly stated
 
-
 ## Review Readiness
 
 - [ ] **System Owner review**: Owners have reviewed and confirmed accuracy for their systems
 - [ ] **IT Operations review**: IT Ops Manager validated inventory completeness
 - [ ] **Security Team review**: InfoSec Manager spot-checked compliance assessments
 - [ ] **Approval signatures**: All approval levels documented in Sheet 13
-
 
 ---
 
@@ -984,7 +899,6 @@ Before submitting assessment for approval, verify:
 - **Outcome**: System Owner signs Sheet 13 confirming accuracy
 - **Timeline**: 5 business days for review
 
-
 **Level 2: IT Operations Manager Approval**
 
 - **Who**: IT Operations Manager
@@ -992,14 +906,12 @@ Before submitting assessment for approval, verify:
 - **Outcome**: IT Ops Manager approves assessment and certifies inventory complete
 - **Timeline**: 3 business days after System Owner confirmations
 
-
 **Level 3: Information Security Manager / CISO Approval**
 
 - **Who**: Information Security Manager or CISO
 - **What**: Review compliance scores, gap analysis, remediation plan
 - **Outcome**: InfoSec Manager/CISO approves assessment and authorizes remediation actions
 - **Timeline**: 5 business days after IT Ops approval
-
 
 ## Approval Criteria
 
@@ -1011,7 +923,6 @@ Before submitting assessment for approval, verify:
 - Evidence sufficient to support findings
 - System Owners and IT Operations confirmed accuracy
 
-
 **Assessment requires rework if**:
 
 - Significant systems missing from inventory
@@ -1019,7 +930,6 @@ Before submitting assessment for approval, verify:
 - Insufficient evidence for key findings
 - Gaps identified but no remediation plan
 - Quality checklist items not satisfied
-
 
 ## Post-Approval Actions
 
@@ -1077,7 +987,6 @@ Before submitting assessment for approval, verify:
 - **Alignment**: Center, Middle
 - **Row Height**: 40px
 
-
 **Cells A2:O2** (Merged):
 
 - **Text**: "ISO/IEC 27001:2022 - Control A.8.15: Logging"
@@ -1085,7 +994,6 @@ Before submitting assessment for approval, verify:
 - **Fill**: Dark Blue (#003366)
 - **Alignment**: Center, Middle
 - **Row Height**: 25px
-
 
 ## Document Information Block (Rows 4-14)
 
@@ -1108,7 +1016,6 @@ Before submitting assessment for approval, verify:
 
 - **Font**: Bold, Dark Blue (#003366)
 - **Fill**: Light Blue (#BDD7EE)
-
 
 **Data Rows** (17-22):
 | Status | Fill Color | Text | Meaning |
@@ -1142,7 +1049,6 @@ Before submitting assessment for approval, verify:
 
 - **Font**: Calibri 14pt, Bold, Dark Blue
 
-
 **Steps** (Rows 38-55):
 1. Start with Sheet 2 (System Inventory): Document all systems in environment
 2. Complete Sheet 3 (Event Requirements): Determine what each system must log
@@ -1160,7 +1066,6 @@ Before submitting assessment for approval, verify:
 - Link evidence files for all non-compliant findings
 - Review quality checklist before submission
 
-
 ## Scoring Methodology (Rows 57-60)
 
 **Compliance Score Calculation**:
@@ -1169,7 +1074,6 @@ Before submitting assessment for approval, verify:
 - **Partial compliance**: 50% weight
 - **Non-compliant**: 0% weight
 - **Formula**: `(Compliant_Count + 0.5 * Partial_Count) / Total_Applicable_Systems * 100`
-
 
 ---
 
@@ -1205,13 +1109,11 @@ Complete catalog of all systems that should be logging per ISMS-POL-A.8.15, Sect
 - **Row Height**: 45px
 - **Freeze Panes**: Row 2 (header always visible)
 
-
 **Data Rows** (Starting Row 2):
 
 - **Row Height**: Auto (minimum 20px)
 - **Borders**: Light gray (#D9D9D9) grid lines
 - **Alternating Row Colors**: White / Light Gray (#F2F2F2) for readability
-
 
 **Auto-Increment Formula** (Column A, starting A2):
 ```excel
@@ -1226,18 +1128,15 @@ Column C (System Type):
 - Input Message: "Select the primary system type"
 - Error Alert: "Please select a valid system type from the list"
 
-
 Column F (Data Classification):
 
 - List: `Public, Internal, Confidential, Restricted`
 - Input Message: "Per organizational data classification policy"
 
-
 Column G (System Criticality):
 
 - List: `Critical, High, Standard, Low`
 - Input Message: "Critical = Major business disruption if unavailable; High = Significant impact; Standard = Manageable impact; Low = Minimal impact"
-
 
 **Conditional Formatting Rules**:
 
@@ -1356,7 +1255,6 @@ Column Q (Rationale):
 - Column P: **UNLOCKED** (user input allowed)
 - Column Q: **LOCKED** (calculated)
 
-
 ---
 
 # Sheets 4-9: Event Category Verification
@@ -1394,7 +1292,6 @@ Rule 3: If L2="Non-Compliant" then Fill=Red (#FFC7CE)
 
 - Type: Text (multi-line allowed)
 - Input Message: "Check all events that are logged. Use [X] for yes, [ ] for no. See ISMS-POL-A.8.15, Section 2.1 for required events."
-
 
 **Formula for Column C (Example - Sheet 4 Authentication Events)**:
 ```excel
@@ -1542,7 +1439,6 @@ Rule 4: If L2="Accepted Risk" then Fill=Gray (#D9D9D9)
 - List: `Critical, High, Medium, Low`
 - Input Message: "Critical = Immediate risk (30 days); High = Significant risk (90 days); Medium = Moderate risk (180 days); Low = Minor risk (12 months)"
 
-
 **Target Date Auto-Suggestion** (Column K - based on severity):
 ```excel
 =IF(G2="Critical", TODAY()+30,
@@ -1652,7 +1548,6 @@ Three-level approval workflow for assessment validation.
 - **Row 2**: "ISMS-IMP-A.8.15.1 - Log Source Inventory Assessment"
 - **Row 3**: "Version 1.0"
 
-
 **Approval Table** (Rows 5-15):
 
 | Col A | Col B | Col C | Col D | Col E |
@@ -1670,7 +1565,6 @@ Three-level approval workflow for assessment validation.
 - Column D: Signature/Date
 - Column E: Confirmation statement: "I confirm the logging assessment for my systems is accurate"
 
-
 **IT Operations Manager Approval** (Row 12):
 
 - Column B: IT Operations Manager
@@ -1678,14 +1572,12 @@ Three-level approval workflow for assessment validation.
 - Column D: [Date]
 - Column E: "I certify the system inventory is complete and logging configurations are technically accurate"
 
-
 **InfoSec Manager / CISO Approval** (Row 14):
 
 - Column B: Information Security Manager / CISO
 - Column C: [Name]
 - Column D: [Date]
 - Column E: "I approve this assessment and authorize the remediation plan per Sheet 10 (Gap_Analysis)"
-
 
 **Conditional Formatting** (Approval status):
 ```excel
@@ -1722,7 +1614,6 @@ Generates the ISMS-IMP-A.8.15.1 Excel workbook with all 13 sheets, data validati
 - Tests formula calculations
 - Reports discrepancies between generated workbook and specification
 
-
 ## Version Control
 
 **Workbook Versioning**:
@@ -1731,17 +1622,14 @@ Generates the ISMS-IMP-A.8.15.1 Excel workbook with all 13 sheets, data validati
 - Version tracking in Instructions_Legend sheet (Document Control block)
 - Document Control section updated with each revision
 
-
 **Change Log**:
 
 - v1.0: Initial workbook structure with consolidated policy references to ISMS-POL-A.8.15
-
 
 **Compatibility**:
 
 - Workbooks can be opened in Excel 2016+
 - Requires openpyxl 3.0+ for Python generation
-
 
 ---
 
@@ -1754,17 +1642,14 @@ Generates the ISMS-IMP-A.8.15.1 Excel workbook with all 13 sheets, data validati
 - ISMS-IMP-A.8.15.2 (Log Collection & Centralization) references this workbook's System_Inventory sheet for log source list
 - ISMS-IMP-A.8.15.5 (Compliance Dashboard) references this workbook's compliance scores and gap counts
 
-
 **To Policy Documents**:
 
 - All "Related Policy" references point to consolidated ISMS-POL-A.8.15-Logging.md
 - Specific section references: Section 2.1 (Event Logging Requirements), Annex A (Logging Decision Matrix)
 
-
 **To Technical Reference**:
 
 - ISMS-REF-A.8.15 (Logging Standards Reference) provides detailed log format specifications referenced in this assessment
-
 
 ## Data Flow
 

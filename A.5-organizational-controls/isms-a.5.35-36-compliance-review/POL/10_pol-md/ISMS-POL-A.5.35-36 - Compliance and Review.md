@@ -35,7 +35,6 @@
 - Legal: Legal/Compliance Officer
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -46,7 +45,6 @@
 - ISO/IEC 27001:2022 Controls A.5.35 and A.5.36
 - ISO/IEC 27007 (Guidelines for information security management systems auditing)
 - ISO/IEC TS 27008 (Guidelines for the assessment of information security controls)
-
 
 ---
 
@@ -89,7 +87,6 @@ Despite unified implementation, each control maintains distinct requirements for
 - Technical control implementation status
 - User compliance with security requirements
 
-
 ## Out of Scope
 
 The following require Executive Management approval and documented risk acceptance:
@@ -107,7 +104,6 @@ Third-party service providers, contractors, and partners accessing [Organisation
 - Participate in compliance assessments of activities within their scope
 - Remediate identified non-compliance within agreed timeframes
 
-
 ## Regulatory Applicability
 
 This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework):
@@ -118,11 +114,9 @@ This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulat
 - **Swiss nDSG (FADP)**: Art. 8 - Organisational measures including verification of compliance
 - **EU GDPR**: Art. 32 - Verification of security measures effectiveness
 
-
 **Tier 2: Conditional Applicability**
 
 - PCI DSS v4.0, FINMA, DORA, NIS2, HIPAA - Apply where [Organisation]'s business activities trigger applicability per ISMS-POL-00
-
 
 ---
 
@@ -255,7 +249,6 @@ Reviewer qualifications SHALL be verified and documented in the Reviewer Registr
 
 **Verification**: Closure documented in Verification Log; Critical/High closures verified by person independent of action owner.
 
-
 ## 2. Compliance with Policies, Rules and Standards (A.5.36)
 
 ### 2.1 Compliance Review Requirements
@@ -349,7 +342,6 @@ Reviewer qualifications SHALL be verified and documented in the Reviewer Registr
 
 **Verification**: Escalation triggers tracked in ISMS-IMP-A.5.35-36.4 Dashboard; overdue items highlighted automatically.
 
-
 ## 3. Consolidated Findings Management
 
 ### 3.1 Unified Findings Register
@@ -437,7 +429,6 @@ Renewal requests must demonstrate re-assessment of risk and continued justificat
 
 **Verification**: Risk acceptances recorded in Findings Register with status "Risk Accepted" and documented in risk register.
 
-
 ## 4. Compliance Dashboard and Reporting
 
 ### 4.1 Executive Dashboard
@@ -499,7 +490,6 @@ Renewal requests must demonstrate re-assessment of risk and continued justificat
 - Annual management review
 - Certification audit preparation
 
-
 ---
 
 # Roles and Responsibilities
@@ -514,7 +504,6 @@ Renewal requests must demonstrate re-assessment of risk and continued justificat
 | **System/Asset Owners** | Conduct self-assessments; maintain compliance evidence; implement remediations |
 | **Information Security Team** | Support compliance verification; provide technical assessment; verify closures |
 | **All Personnel** | Comply with policies; cooperate with reviews; report non-compliance |
-
 
 ---
 
@@ -538,7 +527,6 @@ If remediation SLAs cannot be met:
 2. **Document**: Record reason for delay and revised timeline
 3. **Escalate**: Per escalation requirements in PS-2.4.4
 4. **Track**: Continue tracking with "Delayed" status and updated target
-
 
 ---
 
@@ -571,7 +559,6 @@ Compliance status for each requirement:
 
 **Department Score**: (Total points earned / Total possible points) x 100%
 
-
 ---
 
 # Evidence Management
@@ -594,7 +581,6 @@ Evidence references SHALL follow the format:
 [Type]-[Year]-[Sequential]
 Example: REV-2026-001, COMP-2026-015
 ```
-
 
 ---
 
@@ -619,7 +605,6 @@ Changes to this policy follow ISMS document change management:
 4. Approval by policy owner
 5. Communication to affected parties
 6. Training if required
-
 
 ---
 

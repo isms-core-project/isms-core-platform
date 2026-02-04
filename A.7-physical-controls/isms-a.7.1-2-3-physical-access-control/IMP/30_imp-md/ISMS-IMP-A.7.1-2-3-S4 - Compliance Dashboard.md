@@ -44,7 +44,6 @@ This document consists of two parts:
   - Cell Styling Reference
   - Integration Points
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -74,7 +73,6 @@ The dashboard provides:
 - Trend analysis over time
 - Risk-based prioritisation
 
-
 #### ISO 27001:2022 Control Reference
 
 This dashboard covers three related controls:
@@ -100,7 +98,6 @@ The dashboard serves as the PRIMARY audit deliverable for physical access contro
 - Compliance trends over time
 - Comparison to target thresholds
 
-
 **Gap Analysis:**
 
 - All gaps from S1, S2, S3 assessments
@@ -109,7 +106,6 @@ The dashboard serves as the PRIMARY audit deliverable for physical access contro
 - Remediation actions and owners
 - Target completion dates
 - Progress tracking
-
 
 **Key Performance Indicators:**
 
@@ -124,14 +120,12 @@ The dashboard serves as the PRIMARY audit deliverable for physical access contro
 - Tailgating incident count
 - Unauthorised access attempt count
 
-
 **Consolidated Evidence:**
 
 - Evidence from all three source assessments
 - Cross-references to source evidence registers
 - Evidence accessibility verification
 - Retention compliance
-
 
 ### Who Should Complete This Dashboard
 
@@ -153,13 +147,11 @@ Before completing this dashboard, ensure:
 
 **DO NOT attempt to complete this dashboard before all three source assessments are complete.**
 
-
 #### Time Commitment
 
 - **Consolidation and review:** 2-3 hours
 - **Gap analysis and prioritisation:** 1-2 hours
 - **Approval workflow:** Asynchronous (3-5 business days)
-
 
 ### Expected Outputs
 
@@ -185,13 +177,11 @@ Before starting this dashboard, gather:
 - ISMS-IMP-A.7.1-2-3-S2 (Entry Control) - Complete and approved workbook
 - ISMS-IMP-A.7.1-2-3-S3 (Secure Areas) - Complete and approved workbook
 
-
 #### 2. Historical Data
 
 - Previous dashboard (if exists) for trend comparison
 - Historical KPI values
 - Previous audit findings
-
 
 #### 3. Policy Requirements
 
@@ -199,13 +189,11 @@ Before starting this dashboard, gather:
 - Compliance thresholds defined in policy
 - KPI targets
 
-
 ### Required Tools
 
 - Microsoft Excel (2016 or later) for workbook completion
 - Access to source assessment workbooks
 - Access to evidence storage locations
-
 
 ### Dependencies
 
@@ -236,7 +224,6 @@ This dashboard is the FINAL deliverable in the A.7.1-2-3 assessment chain.
 - Key performance indicators (KPIs)
 - Compliance trend indicators (improving/stable/declining)
 
-
 **Data Source:** Auto-calculated from source assessments (S1, S2, S3)
 
 **Actions Required:**
@@ -245,7 +232,6 @@ This dashboard is the FINAL deliverable in the A.7.1-2-3 assessment chain.
 - Verify gap counts
 - Prepare executive summary for management review
 - Identify areas requiring immediate attention
-
 
 **Compliance Score Calculation:**
 
@@ -265,7 +251,6 @@ The overall compliance score is calculated as a weighted average:
 | 70-89% | Partial | Address high-priority gaps |
 | Below 70% | Non-Compliant | Immediate remediation required |
 
-
 ### Gap Analysis (Sheet 3)
 
 **Purpose:** Detailed gap identification and remediation planning
@@ -277,63 +262,51 @@ The overall compliance score is calculated as a weighted average:
 - Unique identifier: "GAP-001", "GAP-002", etc.
 - Number sequentially across all controls
 
-
 **Column B - Control:**
 
 - Source control: "A.7.1", "A.7.2", or "A.7.3"
-
 
 **Column C - Finding:**
 
 - Brief description of the gap
 - Reference source assessment sheet and row
 
-
 **Column D - Severity:**
 
 - Dropdown: "Critical", "High", "Medium"
 - See Severity Classification below
 
-
 **Column E - Impact:**
 
 - Description of potential impact if gap not addressed
-
 
 **Column F - Current State:**
 
 - Description of current situation
 
-
 **Column G - Required State:**
 
 - Description of what compliance looks like
-
 
 **Column H - Remediation Action:**
 
 - Specific action to close the gap
 
-
 **Column I - Owner:**
 
 - Named individual (not role) responsible for remediation
-
 
 **Column J - Target Date:**
 
 - Date by which remediation should be complete
 
-
 **Column K - Status:**
 
 - Dropdown: "Open", "In Progress", "Closed", "Deferred"
 
-
 **Column L - Notes:**
 
 - Progress notes, blockers, updates
-
 
 **Severity Classification:**
 
@@ -343,7 +316,6 @@ The overall compliance score is calculated as a weighted average:
 | High | Significant security gap, potential compliance issue | 60 days |
 | Medium | Security improvement opportunity, best practice gap | 90 days |
 
-
 **Actions Required:**
 
 - Extract gaps from S1, S2, S3 assessments (any Non-Compliant or Partial status)
@@ -351,7 +323,6 @@ The overall compliance score is calculated as a weighted average:
 - Assign remediation owners (named individuals)
 - Set realistic target completion dates
 - Track progress at least monthly
-
 
 ### KPIs & Metrics (Sheet 4)
 
@@ -372,48 +343,39 @@ The overall compliance score is calculated as a weighted average:
 | Tailgating Incidents | Count/Month | <3 | Security incident reports |
 | Unauthorised Access Attempts | Count/Month | 0 | Access control logs |
 
-
 **What to Document (Per KPI):**
 
 **Column A - KPI:**
 
 - Metric name
 
-
 **Column B - Measurement:**
 
 - How measured (percentage, count, etc.)
-
 
 **Column C - Current:**
 
 - Current value from this assessment period
 
-
 **Column D - Previous:**
 
 - Value from previous assessment period (for trend)
-
 
 **Column E - Target:**
 
 - Target value from policy
 
-
 **Column F - Status:**
 
 - Dropdown: "Met", "Near", "Below Target"
-
 
 **Column G - Trend:**
 
 - Dropdown: "Improving", "Stable", "Declining"
 
-
 **Column H - Notes:**
 
 - Context, actions planned
-
 
 **Actions Required:**
 
@@ -421,7 +383,6 @@ The overall compliance score is calculated as a weighted average:
 - Compare against targets
 - Document trends (compare to previous period)
 - Identify KPIs requiring intervention
-
 
 ### Evidence Register (Sheet 5)
 
@@ -434,53 +395,43 @@ The overall compliance score is calculated as a weighted average:
 - Evidence from S3 (Secure Areas)
 - Cross-references to source assessment evidence registers
 
-
 **What to Document (Per Evidence Item):**
 
 **Column A - Evidence ID:**
 
 - Unique identifier: "E-001", "E-002", etc.
 
-
 **Column B - Control:**
 
 - Source control: "A.7.1", "A.7.2", or "A.7.3"
-
 
 **Column C - Source Assessment:**
 
 - Reference: "S1", "S2", or "S3"
 
-
 **Column D - Evidence Type:**
 
 - Dropdown: "Floor plan", "Photograph", "Access log", "Configuration", "Policy", "Audit report"
-
 
 **Column E - Description:**
 
 - Brief description of what evidence shows
 
-
 **Column F - Collection Date:**
 
 - Date evidence was collected
-
 
 **Column G - Collector:**
 
 - Who collected the evidence
 
-
 **Column H - Location/Link:**
 
 - SharePoint path or file server location
 
-
 **Column I - Status:**
 
 - Dropdown: "Collected", "Pending", "Missing"
-
 
 **Actions Required:**
 
@@ -488,7 +439,6 @@ The overall compliance score is calculated as a weighted average:
 - Verify evidence accessibility (can you access the file?)
 - Confirm retention compliance
 - Identify any missing evidence
-
 
 ### Approval & Sign-Off (Sheet 6)
 
@@ -504,33 +454,27 @@ The overall compliance score is calculated as a weighted average:
 | CISO | Executive approval and resource allocation | Overall compliance posture |
 | Risk & Compliance Officer | Audit readiness certification | Gap remediation plans |
 
-
 **What to Document (Per Approver):**
 
 **Column A - Approver Role:**
 
 - Role from table above
 
-
 **Column B - Approver Name:**
 
 - Named individual
-
 
 **Column C - Approval Date:**
 
 - Date of approval
 
-
 **Column D - Status:**
 
 - Dropdown: "Approved", "Approved with Comments", "Rejected"
 
-
 **Column E - Comments:**
 
 - Any comments or conditions
-
 
 **Actions Required:**
 
@@ -538,7 +482,6 @@ The overall compliance score is calculated as a weighted average:
 - Address feedback and questions
 - Document approval decisions
 - Prepare for audit submission
-
 
 ---
 
@@ -577,7 +520,6 @@ The overall compliance score is calculated as a weighted average:
 - Retrieve final versions of all three workbooks
 - Note assessment dates and any limitations
 
-
 **Step 2: Extract Compliance Scores (1 hour)**
 
 - Open Sheet 2 (Executive Dashboard)
@@ -585,7 +527,6 @@ The overall compliance score is calculated as a weighted average:
 - Calculate weighted overall compliance score
 - Extract gap counts by severity
 - Review for accuracy
-
 
 **Step 3: Compile Gap Analysis (1-2 hours)**
 
@@ -597,7 +538,6 @@ The overall compliance score is calculated as a weighted average:
 - Set target dates
 - Ensure no gaps are missed
 
-
 **Step 4: Calculate KPIs (1 hour)**
 
 - Open Sheet 4 (KPIs & Metrics)
@@ -607,7 +547,6 @@ The overall compliance score is calculated as a weighted average:
 - Determine trends
 - Document actions for underperforming KPIs
 
-
 **Step 5: Consolidate Evidence (1 hour)**
 
 - Open Sheet 5 (Evidence Register)
@@ -616,14 +555,12 @@ The overall compliance score is calculated as a weighted average:
 - Update location/link fields if needed
 - Identify any missing evidence
 
-
 **Step 6: Quality Check (30 minutes)**
 
 - Complete self-assessment using Quality Checklist below
 - Verify all scores calculate correctly
 - Verify gap counts match source assessments
 - Verify evidence is accessible
-
 
 **Step 7: Obtain Approvals (3-5 business days)**
 
@@ -635,13 +572,11 @@ The overall compliance score is calculated as a weighted average:
 - Present to Risk & Compliance Officer
 - Document all approvals
 
-
 **Step 8: Submit for Audit**
 
 - Package dashboard with source assessments
 - Prepare audit briefing materials
 - Store in ISMS evidence repository
-
 
 ---
 
@@ -657,7 +592,6 @@ The overall compliance score is calculated as a weighted average:
 - No visitor sign-in process
 - Emergency exits not alarmed
 
-
 **High Severity:**
 
 - Clean desk compliance below 70%
@@ -666,7 +600,6 @@ The overall compliance score is calculated as a weighted average:
 - CCTV blind spots in sensitive areas
 - Environmental monitoring alerts going to inactive mailbox
 
-
 **Medium Severity:**
 
 - Screen privacy filters not deployed
@@ -674,7 +607,6 @@ The overall compliance score is calculated as a weighted average:
 - Visitor pre-registration not utilised
 - Shared facility perimeter unclear
 - VC equipment not secured
-
 
 ### Remediation Planning
 
@@ -685,7 +617,6 @@ The overall compliance score is calculated as a weighted average:
 - Track weekly until closed
 - Implement compensating controls if full remediation takes longer
 
-
 **High Gaps:**
 
 - Assign to appropriate owner
@@ -693,14 +624,12 @@ The overall compliance score is calculated as a weighted average:
 - Track bi-weekly until closed
 - Document interim measures if needed
 
-
 **Medium Gaps:**
 
 - Assign to appropriate owner
 - Target remediation within 90 days
 - Track monthly until closed
 - May be batched for efficiency
-
 
 ---
 
@@ -721,7 +650,6 @@ The overall compliance score is calculated as a weighted average:
   - ❌ MISTAKE: Starting dashboard because S1 and S2 are complete but S3 is "nearly done"
   - ✅ CORRECT: Waiting for all three assessments to receive Level 4 approval before starting
 
-
 ### Pitfall 2: Incorrect Weighting
 
 - **Problem:** Not properly weighting control compliance scores
@@ -736,7 +664,6 @@ The overall compliance score is calculated as a weighted average:
 - **Example:**
   - ❌ MISTAKE: Simple average of three scores (33/33/33) when policy specifies different weights
   - ✅ CORRECT: Using policy-defined weights or documenting rationale for chosen weights
-
 
 ### Pitfall 3: Missing Gaps
 
@@ -753,7 +680,6 @@ The overall compliance score is calculated as a weighted average:
   - ❌ MISTAKE: Only extracting gaps from Summary Dashboard, missing items in detailed sheets
   - ✅ CORRECT: Reviewing each row of each data entry sheet for Non-Compliant/Partial status
 
-
 ### Pitfall 4: Undefined Remediation Owners
 
 - **Problem:** Gaps identified but no owner assigned or role assigned instead of name
@@ -768,7 +694,6 @@ The overall compliance score is calculated as a weighted average:
 - **Example:**
   - ❌ MISTAKE: Owner field contains "IT Security" or "Facilities Team"
   - ✅ CORRECT: Owner field contains "John Smith - IT Security Manager"
-
 
 ### Pitfall 5: Unrealistic Target Dates
 
@@ -786,7 +711,6 @@ The overall compliance score is calculated as a weighted average:
   - ❌ MISTAKE: Setting 30-day target for server room renovation requiring procurement
   - ✅ CORRECT: Consulting with owner, setting 90-day target with interim compensating control at 30 days
 
-
 ### Pitfall 6: Evidence Consolidation Incomplete
 
 - **Problem:** Dashboard evidence register doesn't reference all source evidence
@@ -801,7 +725,6 @@ The overall compliance score is calculated as a weighted average:
 - **Example:**
   - ❌ MISTAKE: Only including "key" evidence items
   - ✅ CORRECT: Including all 35 evidence items from across S1, S2, S3
-
 
 ### Pitfall 7: KPIs Not Updated
 
@@ -818,7 +741,6 @@ The overall compliance score is calculated as a weighted average:
   - ❌ MISTAKE: Copying KPI values from previous dashboard without verification
   - ✅ CORRECT: Recalculating each KPI from current source assessments
 
-
 ### Pitfall 8: Approval Without Review
 
 - **Problem:** Approvers signing without reviewing content
@@ -833,7 +755,6 @@ The overall compliance score is calculated as a weighted average:
 - **Example:**
   - ❌ MISTAKE: Sending dashboard by email and receiving signature by reply
   - ✅ CORRECT: Scheduling 30-minute review meeting with each approver
-
 
 ### Pitfall 9: Gap Severity Misclassified
 
@@ -850,7 +771,6 @@ The overall compliance score is calculated as a weighted average:
   - ❌ MISTAKE: Server room with badge-only access marked as "Medium"
   - ✅ CORRECT: Server room with badge-only access marked as "Critical" (MFA required)
 
-
 ### Pitfall 10: Trends Not Calculated
 
 - **Problem:** Trend column left blank or all marked "Stable"
@@ -865,7 +785,6 @@ The overall compliance score is calculated as a weighted average:
 - **Example:**
   - ❌ MISTAKE: All KPIs marked "Stable" without comparison
   - ✅ CORRECT: Comparing to Q3 values, marking visitor compliance as "Declining" (down 10%)
-
 
 ### Pitfall 11: Source Assessment Versions Mixed
 
@@ -882,7 +801,6 @@ The overall compliance score is calculated as a weighted average:
   - ❌ MISTAKE: Using S1 draft while S2 and S3 are final approved
   - ✅ CORRECT: Using final approved versions of all three assessments
 
-
 ### Pitfall 12: Audit Trail Incomplete
 
 - **Problem:** Cannot demonstrate how dashboard values were derived
@@ -897,7 +815,6 @@ The overall compliance score is calculated as a weighted average:
 - **Example:**
   - ❌ MISTAKE: Dashboard shows 85% compliance with no explanation of calculation
   - ✅ CORRECT: Notes section documents formula and source cell references
-
 
 ### Pitfall 13: Deferred Gaps Not Justified
 
@@ -915,7 +832,6 @@ The overall compliance score is calculated as a weighted average:
   - ❌ MISTAKE: Gap marked "Deferred" with no explanation
   - ✅ CORRECT: Gap marked "Deferred" with note: "Pending building renovation Q3 2026, compensating control: additional security patrols"
 
-
 ### Pitfall 14: Previous Period Not Comparable
 
 - **Problem:** Comparing to previous period with different scope
@@ -930,7 +846,6 @@ The overall compliance score is calculated as a weighted average:
 - **Example:**
   - ❌ MISTAKE: Comparing Q1 (3 buildings) to Q4 (5 buildings) without adjustment
   - ✅ CORRECT: Noting scope change, comparing only consistent subset or adjusting metrics
-
 
 ### Pitfall 15: Evidence Accessibility Not Verified
 
@@ -947,7 +862,6 @@ The overall compliance score is calculated as a weighted average:
   - ❌ MISTAKE: Evidence register lists SharePoint path but file was moved
   - ✅ CORRECT: Testing each link, updating path for moved files
 
-
 ### Pitfall 16: Approver Sequence Not Followed
 
 - **Problem:** Approvals obtained out of sequence
@@ -962,7 +876,6 @@ The overall compliance score is calculated as a weighted average:
 - **Example:**
   - ❌ MISTAKE: Getting CISO approval before Facilities Manager review
   - ✅ CORRECT: Following sequence: Facilities, Physical Security, IT Security, CISO, Risk & Compliance
-
 
 ---
 
@@ -1050,14 +963,12 @@ Before obtaining approvals, complete this self-assessment:
 - Confirm shared facility arrangements
 - Date and sign
 
-
 **Level 2: Physical Security Manager**
 
 - Review security control accuracy
 - Verify entry controls and secure areas
 - Confirm gap prioritisation
 - Date and sign
-
 
 **Level 3: IT Security Manager**
 
@@ -1066,7 +977,6 @@ Before obtaining approvals, complete this self-assessment:
 - Confirm technical gap remediation plans
 - Date and sign
 
-
 **Level 4: CISO**
 
 - Executive review and approval
@@ -1074,14 +984,12 @@ Before obtaining approvals, complete this self-assessment:
 - Strategic direction confirmation
 - Date and sign
 
-
 **Level 5: Risk & Compliance Officer**
 
 - Audit readiness certification
 - Gap remediation plan adequacy
 - Evidence completeness
 - Date and sign
-
 
 **Timeline:** 3-5 business days for all five levels
 
@@ -1127,13 +1035,11 @@ If approval is delayed beyond 5 business days:
 - Dropdown lists for standardised input (Control, Severity, Status)
 - Date validation (valid date format)
 
-
 **Conditional Formatting:**
 
 - Compliance scores: Green (90+), Amber (70-89), Red (<70)
 - Gap severity: Red (Critical), Orange (High), Yellow (Medium)
 - KPI status: Green (Met), Amber (Near), Red (Below)
-
 
 **Formulas:**
 
@@ -1141,12 +1047,10 @@ If approval is delayed beyond 5 business days:
 - Gap counts derived from Gap Analysis sheet
 - KPI status calculated from current vs target
 
-
 **Freeze Panes:**
 
 - Header rows frozen
 - First column frozen for horizontal scrolling
-
 
 ---
 
@@ -1164,7 +1068,6 @@ If approval is delayed beyond 5 business days:
 - Source assessment references
 - Status legend
 - Weighting methodology
-
 
 ### Sheet 2: Executive Dashboard
 
@@ -1273,13 +1176,11 @@ If approval is delayed beyond 5 business days:
 - Primary Header: #003366 (Navy blue), White text
 - Column Header: #D9D9D9 (Light grey), Black text
 
-
 **Data Cells:**
 
 - Input Cell: #FFFFCC (Light yellow)
 - Read-Only: White
 - Calculated: #E2EFDA (Light green)
-
 
 **Compliance Scores:**
 
@@ -1287,20 +1188,17 @@ If approval is delayed beyond 5 business days:
 - 70-89%: #FFEB9C (Amber)
 - Below 70%: #FFC7CE (Red)
 
-
 **Gap Severity:**
 
 - Critical: #FFC7CE (Light red)
 - High: #FFCC99 (Light orange)
 - Medium: #FFEB9C (Light amber)
 
-
 **KPI Status:**
 
 - Met: #C6EFCE (Green)
 - Near: #FFEB9C (Amber)
 - Below: #FFC7CE (Red)
-
 
 ---
 

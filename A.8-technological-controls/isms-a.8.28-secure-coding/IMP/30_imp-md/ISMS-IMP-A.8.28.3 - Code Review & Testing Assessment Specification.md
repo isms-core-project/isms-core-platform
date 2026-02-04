@@ -31,7 +31,6 @@
 - QA Manager / Test Lead (Testing Validation)
 - CISO / Security Director (Executive Approval)
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -53,14 +52,12 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
 - ✅ **External Validation**: What do pentests and bug bounties find?
 - ✅ **Process vs. Outcomes**: Are we measuring process or actual security?
 
-
 **What We're NOT Assessing**:
 
 - ❌ Automated tool scanning (covered in IMP-A.8.28.2)
 - ❌ SDLC process design (covered in IMP-A.8.28.1)
 - ❌ Production monitoring (different control)
 - ❌ Whether you have a process on paper (we care if it WORKS)
-
 
 ## Who Should Complete This Assessment
 
@@ -71,7 +68,6 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
 - QA Managers (testing coverage and effectiveness)
 - Security Champions (security review perspective)
 - AppSec Team (external testing programs)
-
 
 **Time Estimate**: 8-12 hours for comprehensive assessment  
 **Recommended Approach**: Collaborative session with all stakeholders present
@@ -89,7 +85,6 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
 - Annual compliance audits
 - After pentests find issues that should have been caught internally
 
-
 ## Assessment Output
 
 **Generated Workbook**: `ISMS-IMP-A.8.28.3_Code_Review_Testing_Assessment_YYYYMMDD.xlsx`  
@@ -102,7 +97,6 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
 - Evidence tracking for audit readiness
 - Gap analysis and remediation planning
 - Executive summary with compliance metrics
-
 
 ---
 
@@ -119,7 +113,6 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
 - Reviewer qualifications and training records
 - Review tool configuration (GitHub/GitLab/Bitbucket settings)
 
-
 **Security Testing Data**:
 
 - Security test suite documentation
@@ -129,7 +122,6 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
 - Test case maintenance records
 - API security test scenarios
 
-
 **External Testing Results**:
 
 - Penetration test reports (last 12 months)
@@ -138,7 +130,6 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
 - Vulnerability remediation timelines
 - Retest results validating fixes
 
-
 **Security Champion Program**:
 
 - Champion roster and training records
@@ -146,7 +137,6 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
 - Architecture review meeting notes
 - Threat model documents
 - Champion escalation procedures
-
 
 ## Stakeholder Interviews Needed
 
@@ -159,14 +149,12 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
 - Sample recent reviews that caught security issues
 - Where do security reviews fall short?
 
-
 **Security Champions** (20-30 minutes):
 
 - How often are you engaged in security reviews?
 - What percentage of high-risk changes get Champion review?
 - What security issues are most commonly missed?
 - Training needs for the Champion program?
-
 
 **QA Managers** (15-20 minutes):
 
@@ -175,14 +163,12 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
 - Test failure response and blocking
 - Test maintenance and regression testing
 
-
 **AppSec Team** (30 minutes):
 
 - Pentest findings analysis (what should have been caught internally?)
 - Bug bounty program effectiveness
 - Vulnerability trend analysis
 - Gaps in internal testing based on external findings
-
 
 ## Configuration Verification
 
@@ -195,7 +181,6 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
    - Check required reviewer settings
    - Review approval workflow configuration
 
-
 2. **Testing Infrastructure**:
 
    - Access CI/CD pipeline configuration
@@ -203,14 +188,12 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
    - Verify test failure blocking settings
    - Check test environment configuration
 
-
 3. **Evidence Access**:
 
    - Pentest report repository
    - Bug bounty platform access
    - Code review analytics dashboard
    - Security metrics reporting tools
-
 
 ## Common Preparation Mistakes
 
@@ -221,14 +204,12 @@ As Feynman said: *"The first principle is that you must not fool yourself—and 
 - Reviewing only successful cases (ignoring what slips through)
 - Focusing on quantity (# of reviews) vs. quality (vulnerabilities caught)
 
-
 ✅ **Do This Instead**:
 
 - Sample actual pull requests and review comments
 - Analyze what vulnerabilities reached production (should have been caught)
 - Measure effectiveness: vulnerabilities caught vs. vulnerabilities missed
 - Focus on outcomes: security improvements, not process compliance
-
 
 ---
 
@@ -250,7 +231,6 @@ python3 generate_a828_3_code_review_testing.py
 - Assessment questions and evidence requirements
 - Formula-driven compliance calculations
 
-
 ## Step 2: Review Instructions Sheet
 
 **Open workbook → "Instructions" sheet**
@@ -261,7 +241,6 @@ Read the complete instructions including:
 - How to use dropdown menus
 - Evidence documentation requirements
 - Completion checklist
-
 
 **Key Point**: This is NOT a checkbox exercise. Every "Implemented" claim requires evidence.
 
@@ -281,14 +260,12 @@ Read the complete instructions including:
 - **Anti-Pattern**: Policy exists but exceptions granted regularly
 - **Good Practice**: Zero production deployments without review
 
-
 **Q1.2: "Reviewer qualifications and training documented"**
 
 - **What to Check**: Reviewer skill matrix, training records
 - **Evidence**: Training completion certificates, skill assessments
 - **Anti-Pattern**: Anyone can approve, no security training
 - **Good Practice**: Reviewers complete secure coding training
-
 
 **Q1.3: "Review coverage measured and tracked (>95% target)"**
 
@@ -297,14 +274,12 @@ Read the complete instructions including:
 - **Anti-Pattern**: "We review everything" with no metrics
 - **Good Practice**: Automated tracking, gaps escalated
 
-
 **Q1.4: "Security-focused review criteria in checklist"**
 
 - **What to Check**: Review checklist includes security items
 - **Evidence**: Checklist template with OWASP Top 10 coverage
 - **Anti-Pattern**: Generic checklist, no security focus
 - **Good Practice**: Language-specific security checklists
-
 
 **Q1.5-Q1.18**: Continue through code review governance questions...
 
@@ -314,7 +289,6 @@ Read the complete instructions including:
 - What security issues were caught?
 - Were any security issues merged anyway?
 - Is there evidence of security thinking?
-
 
 ## Step 4: Assess Security Champion Review (Domain 2)
 
@@ -332,7 +306,6 @@ Read the complete instructions including:
 - **Anti-Pattern**: Champions exist but rarely engaged
 - **Good Practice**: Champions review 100% of high-risk changes
 
-
 **Q2.2: "Champion review trigger criteria defined and followed"**
 
 - **What to Check**: When Champion review is required
@@ -340,7 +313,6 @@ Read the complete instructions including:
 - **Effectiveness Test**: Were criteria actually applied?
 - **Anti-Pattern**: Vague criteria, inconsistent application
 - **Good Practice**: Automated triggers (API changes, auth code, crypto)
-
 
 **Q2.3-Q2.6: Architecture Review Requirements**
 
@@ -350,7 +322,6 @@ Read the complete instructions including:
 - **Anti-Pattern**: Threat modeling is "TBD" or never completed
 - **Good Practice**: No deployment without architecture review sign-off
 
-
 **Q2.7-Q2.12: Champion Availability & Response**
 
 - **Measure**: Champion response time (<48 hours target)
@@ -359,14 +330,12 @@ Read the complete instructions including:
 - **Anti-Pattern**: Champions unavailable, bottleneck to development
 - **Good Practice**: Dedicated Champion time, clear escalation
 
-
 **Q2.13-Q2.18: Security Consultation & Escalation**
 
 - **Evidence**: Security consultation tickets, escalation procedures
 - **Effectiveness**: Complex issues get proper security review
 - **Anti-Pattern**: "No escalation path" or escalations ignored
 - **Good Practice**: Clear escalation, expert review for complex issues
-
 
 ## Step 5: Assess Unit & Integration Testing (Domain 3)
 
@@ -385,7 +354,6 @@ Read the complete instructions including:
 - **Anti-Pattern**: Tests only check "happy path"
 - **Good Practice**: Negative tests, edge cases, malicious inputs
 
-
 **Q3.7-Q3.12: Integration Testing for Security Controls**
 
 - **Focus**: Auth/authz, session management, access control
@@ -393,7 +361,6 @@ Read the complete instructions including:
 - **Effectiveness**: Are security controls properly tested?
 - **Anti-Pattern**: Integration tests ignore security
 - **Good Practice**: All auth/authz paths tested
-
 
 **Q3.13-Q3.18: Test Maintenance & Blocking**
 
@@ -403,13 +370,11 @@ Read the complete instructions including:
 - **Anti-Pattern**: Security tests can be skipped or ignored
 - **Good Practice**: Security test failures = hard block
 
-
 **Reality Check**: 
 
 - If no deployments have EVER been blocked by security tests, your tests aren't effective
 - Test coverage means nothing if tests don't find issues
 - Focus on test quality, not just quantity
-
 
 ## Step 6: Assess API & Application Testing (Domain 4)
 
@@ -428,7 +393,6 @@ Read the complete instructions including:
 - **Anti-Pattern**: "We test APIs" without security focus
 - **Good Practice**: Comprehensive API security test matrix
 
-
 **Q4.7-Q4.12: Authentication & Authorization Testing**
 
 - **Critical**: Every endpoint tested for proper access control
@@ -437,7 +401,6 @@ Read the complete instructions including:
 - **Effectiveness**: Do tests actually find authz bugs?
 - **Anti-Pattern**: Testing only "expected" behavior
 - **Good Practice**: Negative testing, privilege escalation attempts
-
 
 **Q4.13-Q4.18: Injection & API Fuzzing**
 
@@ -448,14 +411,12 @@ Read the complete instructions including:
 - **Anti-Pattern**: "We sanitize inputs" without testing
 - **Good Practice**: Automated fuzzing, comprehensive injection testing
 
-
 **Test Environment Reality Check**:
 
 - Are you testing in production-like environments?
 - Is test data realistic (but not production data)?
 - Do security headers and CORS get tested?
 - Are rate limits actually validated?
-
 
 ## Step 7: Assess External Testing & Validation (Domain 5)
 
@@ -474,7 +435,6 @@ Read the complete instructions including:
 - **Anti-Pattern**: Limited scope pentest to ensure "clean" report
 - **Good Practice**: Realistic scope, prompt remediation, retest validation
 
-
 **Q5.6-Q5.10: Bug Bounty / Responsible Disclosure**
 
 - **Program Status**: Active, responsive, adequately funded
@@ -483,7 +443,6 @@ Read the complete instructions including:
 - **Critical Question**: Are researchers finding simple issues?
 - **Anti-Pattern**: Researchers submit findings, no response
 - **Good Practice**: Active program, prompt triage, fair rewards
-
 
 **Q5.11-Q5.18: Regression Testing & Continuous Improvement**
 
@@ -495,7 +454,6 @@ Read the complete instructions including:
 - **Anti-Pattern**: Past vulnerabilities not tested in regression
 - **Good Practice**: Every vuln gets regression test, automated execution
 
-
 **External Testing Reality Check**:
 Ask yourself honestly:
 
@@ -503,7 +461,6 @@ Ask yourself honestly:
 - Are bug bounty researchers finding issues that basic testing would catch?
 - Is the same vulnerability class appearing repeatedly?
 - Are we learning and improving, or repeating mistakes?
-
 
 ## Step 8: Review Summary Dashboard
 
@@ -518,13 +475,11 @@ Ask yourself honestly:
 - Key findings summary
 - Emphasis: Vulnerabilities caught vs. reviews performed
 
-
 **Critical Analysis**:
 
 - Don't celebrate 90% compliance if production incidents reveal gaps
 - Focus on effectiveness metrics, not process metrics
 - If external testing finds basic issues, internal testing is failing
-
 
 ## Step 9: Document Evidence
 
@@ -540,7 +495,6 @@ Ask yourself honestly:
 - Collection date
 - Collected by (your name)
 
-
 **Evidence Quality Standards**:
 
 - ✅ Objective, verifiable evidence
@@ -549,7 +503,6 @@ Ask yourself honestly:
 - ❌ "Trust me, we do this"
 - ❌ Policy documents without proof of execution
 - ❌ Old evidence (2+ years old)
-
 
 **Audit Perspective**: An auditor will verify your evidence. If it doesn't exist or doesn't support the claim, compliance status drops.
 
@@ -570,14 +523,12 @@ Ask yourself honestly:
 - Target date (when will it be fixed)
 - Status (Planned/In Progress/Complete)
 
-
 **Priority Guidance**:
 
 - **Critical**: No security review or testing for production code
 - **High**: Review/testing exists but low effectiveness (<50% issue detection)
 - **Medium**: Gaps in specific areas (e.g., API testing, Champion program)
 - **Low**: Process improvements, efficiency gains
-
 
 **Reality Check**: If you have no gaps, you're probably fooling yourself.
 
@@ -599,7 +550,6 @@ Ask yourself honestly:
 - Gaps identified and remediation planned
 - Realistic assessment (not overly optimistic)
 - Improvement plan has committed owners and dates
-
 
 ## Step 12: Archive and Track
 
@@ -623,14 +573,12 @@ Ask yourself honestly:
 - Security checklist filled out perfunctorily
 - Reviews never block merges
 
-
 **✅ Good Practice**:
 
 - Sample reviews for actual security comments
 - Measure: vulnerabilities caught per review
 - Reviews should take time proportional to risk
 - Block problematic code, don't just comment
-
 
 **How to Assess**:
 Pull 10 random recent reviews. Count:
@@ -639,7 +587,6 @@ Pull 10 random recent reviews. Count:
 - How many mentioned OWASP Top 10 risks?
 - How many caught actual security issues?
 - If zero, your review process is theater.
-
 
 ## Test Theater (Tests That Don't Test)
 
@@ -650,7 +597,6 @@ Pull 10 random recent reviews. Count:
 - No testing of authentication/authorization
 - Test coverage metrics without security coverage
 
-
 **✅ Good Practice**:
 
 - Tests should occasionally find issues (if not, they're not testing)
@@ -658,14 +604,12 @@ Pull 10 random recent reviews. Count:
 - Auth/authz comprehensively tested
 - Track security test coverage separately
 
-
 **How to Assess**:
 
 - When was the last time a security test blocked deployment?
 - If answer is "never", your tests are theater
 - Sample security test code—does it test malicious inputs?
 - Run tests with auth disabled—do they fail?
-
 
 ## External Testing Theater
 
@@ -676,7 +620,6 @@ Pull 10 random recent reviews. Count:
 - Bug bounty with no budget or response
 - Researchers ignored or discouraged
 
-
 **✅ Good Practice**:
 
 - Realistic pentest scope (production-like)
@@ -684,13 +627,11 @@ Pull 10 random recent reviews. Count:
 - Active bug bounty, responsive to researchers
 - Learn from external findings to improve internal testing
 
-
 **How to Assess**:
 
 - Read last pentest report: How many findings should have been caught internally?
 - Bug bounty stats: Are researchers finding basic issues?
 - If external testing finds simple issues, internal testing failed
-
 
 ## Cargo Cult Metrics
 
@@ -700,7 +641,6 @@ Pull 10 random recent reviews. Count:
 - "We have 85% test coverage" (but no security tests)
 - "We did a pentest" (but ignored findings)
 
-
 **✅ Good Practice: Measure What Matters**
 
 - Vulnerabilities caught in review vs. production
@@ -708,7 +648,6 @@ Pull 10 random recent reviews. Count:
 - False negative rate (issues that slipped through)
 - Remediation timelines
 - Regression rate (old bugs reintroduced)
-
 
 ## The "We're Too Busy" Excuse
 
@@ -718,7 +657,6 @@ Pull 10 random recent reviews. Count:
 - Security tests disabled to ship faster
 - "We'll fix that after launch"
 
-
 **✅ Reality**: Security issues cost 10x more to fix in production
 
 **How to Handle**:
@@ -727,7 +665,6 @@ Pull 10 random recent reviews. Count:
 - Build security into timelines, not as add-ons
 - Track cost of production security incidents vs. prevention
 - Demonstrate ROI of catching issues early
-
 
 ---
 
@@ -745,14 +682,12 @@ Pull 10 random recent reviews. Count:
 - API & Application Testing: X / 18 requirements
 - External Testing & Validation: X / 18 requirements
 
-
 **Compliance Levels**:
 
 - **90-100%**: Excellent (but verify it's real, not theater)
 - **70-89%**: Good (identify and close gaps)
 - **50-69%**: Needs Improvement (prioritize critical gaps)
 - **<50%**: Critical (major review/testing gaps exist)
-
 
 ## What Good Looks Like
 
@@ -766,7 +701,6 @@ Pull 10 random recent reviews. Count:
 - Mean time to detect (MTTD) improving
 - Developer confidence in security quality
 
-
 **Warning Signs**:
 
 - Production incidents revealing review/testing gaps
@@ -775,14 +709,12 @@ Pull 10 random recent reviews. Count:
 - No evidence of security tests blocking deployments
 - Review coverage claims without supporting data
 
-
 ## Effectiveness vs. Compliance
 
 **Don't Confuse**:
 
 - ❌ "We have a review process" (compliance)
 - ✅ "Our reviews catch vulnerabilities" (effectiveness)
-
 
 **Key Effectiveness Indicators**:
 1. **Detection Rate**: What % of vulnerabilities found in review/testing vs. production?
@@ -809,14 +741,12 @@ If answer is "no", you have process theater, not effective security.
 - Set target dates for gap closure
 - Communicate results to CISO/CTO
 
-
 **Within 1 Month**:
 
 - Close critical gaps (mandatory review, test blocking)
 - Begin high-priority gap remediation
 - Update policies and procedures as needed
 - Provide additional training where gaps identified
-
 
 ## Continuous Improvement
 
@@ -835,7 +765,6 @@ If answer is "no", you have process theater, not effective security.
 - Better integration between review and testing
 - Automated security checks to assist manual review
 
-
 ## Integration with Other Assessments
 
 **Feed Results Into**:
@@ -844,13 +773,11 @@ If answer is "no", you have process theater, not effective security.
 - **IMP-A.8.28.1 (SDLC)**: SDLC process improvement inputs
 - **IMP-A.8.28.2 (Tools)**: Tool effectiveness validation
 
-
 **Learn From**:
 
 - **IMP-A.8.28.1 (SDLC)**: SDLC context for review/testing
 - **IMP-A.8.28.2 (Tools)**: Tool findings should inform manual testing
 - **IMP-A.8.28.4 (Third-Party)**: Third-party code review requirements
-
 
 ---
 
@@ -864,7 +791,6 @@ If answer is "no", you have process theater, not effective security.
 - [ ] Evidence register complete with locations/links
 - [ ] Gap analysis includes owners and target dates
 
-
 **Evidence Quality**:
 
 - [ ] Evidence is objective and verifiable
@@ -872,7 +798,6 @@ If answer is "no", you have process theater, not effective security.
 - [ ] Evidence supports the compliance claim
 - [ ] Evidence includes effectiveness data (not just process existence)
 - [ ] An auditor could verify all evidence independently
-
 
 **Effectiveness Validation**:
 
@@ -882,7 +807,6 @@ If answer is "no", you have process theater, not effective security.
 - [ ] Measured outcomes (vulns caught) not just process (reviews performed)
 - [ ] Identified false negatives (issues that slipped through)
 
-
 **Stakeholder Engagement**:
 
 - [ ] Development managers reviewed and agreed with findings
@@ -890,7 +814,6 @@ If answer is "no", you have process theater, not effective security.
 - [ ] Security Champions engaged in review assessment
 - [ ] AppSec team reviewed external testing analysis
 - [ ] All required approvers signed off
-
 
 **Remediation Planning**:
 
@@ -900,7 +823,6 @@ If answer is "no", you have process theater, not effective security.
 - [ ] Remediation plans are resourced
 - [ ] Progress tracking mechanism established
 
-
 **Anti-Cargo-Cult Check**:
 
 - [ ] Assessment reflects reality, not wishful thinking
@@ -908,7 +830,6 @@ If answer is "no", you have process theater, not effective security.
 - [ ] Identified areas where we're fooling ourselves
 - [ ] Focused on effectiveness, not just compliance
 - [ ] Honest about gaps and shortcomings
-
 
 **If you checked all boxes**: Congratulations, you have a real assessment, not theater.
 
@@ -966,7 +887,6 @@ If answer is "no", you have process theater, not effective security.
 - Quality checklist
 - Contact information for questions
 
-
 **Key Sections**:
 
 - Assessment scope (code review & testing effectiveness)
@@ -974,14 +894,12 @@ If answer is "no", you have process theater, not effective security.
 - Evidence standards (objective, verifiable, recent)
 - When to use "Implemented" vs. "Partial" vs. "Not Implemented"
 
-
 **Formatting**:
 
 - Header row: Dark blue (#003366) with white text
 - Section headers: Green (#70AD47) with white text
 - Body text: Standard black on white, left-aligned
 - Important notes: Yellow highlight background
-
 
 ---
 
@@ -1006,14 +924,12 @@ If answer is "no", you have process theater, not effective security.
 - Not Implemented
 - N/A
 
-
 **Conditional Formatting (Column C)**:
 
 - "Implemented" → Green background (#C6EFCE)
 - "Partial" → Yellow background (#FFEB9C)
 - "Not Implemented" → Red background (#FFC7CE)
 - "N/A" → Grey background (#E7E6E6)
-
 
 **Assessment Requirements** (18 total):
 
@@ -1046,7 +962,6 @@ If answer is "no", you have process theater, not effective security.
 - Not Implemented: COUNT(Status="Not Implemented")
 - N/A: COUNT(Status="N/A")
 - Compliance %: (Implemented + 0.5×Partial) / (Total - N/A) × 100%
-
 
 ---
 
@@ -1213,14 +1128,12 @@ If answer is "no", you have process theater, not effective security.
 - 🟡 Yellow (70-89%): Needs attention
 - 🔴 Red (<70%): Critical gaps
 
-
 **Section 3: Key Findings Summary** (auto-populated from assessment)
 
 - Critical gaps requiring immediate attention
 - High-priority improvements needed
 - Effectiveness concerns (process vs. outcomes)
 - Positive findings (what's working well)
-
 
 **Section 4: Effectiveness Metrics** (manual entry)
 
@@ -1229,7 +1142,6 @@ If answer is "no", you have process theater, not effective security.
 - Regression rate (old bugs reintroduced)
 - Pentest finding severity trend
 - Bug bounty finding complexity trend
-
 
 **Emphasis**: This dashboard focuses on OUTCOMES (vulnerabilities caught) not just PROCESS (reviews performed)
 
@@ -1265,7 +1177,6 @@ If answer is "no", you have process theater, not effective security.
 - Meeting Notes
 - Other
 
-
 **Audit Perspective**: Every "Implemented" claim should have corresponding evidence entry
 
 ---
@@ -1296,14 +1207,12 @@ If answer is "no", you have process theater, not effective security.
 - Medium
 - Low
 
-
 **Status Dropdown**:
 
 - Planned
 - In Progress
 - Complete
 - Blocked
-
 
 **Conditional Formatting (Column G - Priority)**:
 
@@ -1312,14 +1221,12 @@ If answer is "no", you have process theater, not effective security.
 - "Medium" → Yellow background (#FFEB9C)
 - "Low" → Green background (#C6EFCE)
 
-
 **Priority Guidance** (from instructions):
 
 - **Critical**: No security review or testing for production code
 - **High**: Review/testing exists but low effectiveness (<50% detection rate)
 - **Medium**: Gaps in specific areas (e.g., API testing, Champion program)
 - **Low**: Process improvements, efficiency enhancements
-
 
 ---
 
@@ -1352,14 +1259,12 @@ If answer is "no", you have process theater, not effective security.
 - Improvement plan has committed owners and dates
 - Assessment reflects actual effectiveness, not just process existence
 
-
 **Format**:
 
 - Header row: Dark blue background, white bold text
 - Approver rows: White background, editable
 - Signature date: Date format DD.MM.YYYY
 - Comments: Text wrap enabled
-
 
 ---
 
@@ -1374,14 +1279,12 @@ If answer is "no", you have process theater, not effective security.
 - Section header: #70AD47 (Green) with white text
 - Column header: #D9D9D9 (Light grey) with black text
 
-
 **Status Colors**:
 
 - Implemented: #C6EFCE (Light green)
 - Partial: #FFEB9C (Light yellow)
 - Not Implemented: #FFC7CE (Light red)
 - N/A: #E7E6E6 (Light grey)
-
 
 **Priority Colors**:
 
@@ -1390,11 +1293,9 @@ If answer is "no", you have process theater, not effective security.
 - Medium: #FFEB9C (Yellow)
 - Low: #C6EFCE (Green)
 
-
 **Input Fields**:
 
 - Editable cells: #FFFFCC (Light yellow) background
-
 
 ## Font Standards
 
@@ -1405,14 +1306,12 @@ If answer is "no", you have process theater, not effective security.
 - Body text: 10pt regular
 - Column headers: 10pt bold
 
-
 **Text Alignment**:
 
 - Headers: Center, vertical center
 - Text columns: Left, top
 - Status columns: Center, center
 - Dates: Center, center
-
 
 ## Border Styles
 
@@ -1449,7 +1348,6 @@ python3 generate_a828_3_code_review_testing.py
 
 - Python 3.x
 - openpyxl library (`sudo apt install python3-openpyxl`)
-
 
 ## Data Validation Setup
 
@@ -1555,14 +1453,12 @@ low_rule = Rule(type="cellIs", operator="equal", formula=['"Low"'], fill=green_f
 - Training records (recent completions)
 - Champion review logs (recent engagements)
 
-
 **Keep Historical Evidence For**:
 
 - Policy documents (unless updated)
 - Process documentation (unless changed)
 - Configuration settings (unless modified)
 - Long-term trend data
-
 
 ## Trend Analysis
 
@@ -1575,7 +1471,6 @@ low_rule = Rule(type="cellIs", operator="equal", formula=['"Low"'], fill=green_f
 - External testing findings (severity decreasing?)
 - Regression rate (old bugs reappearing less?)
 
-
 **Report to CISO/Board**:
 
 - Quarterly compliance trend
@@ -1583,7 +1478,6 @@ low_rule = Rule(type="cellIs", operator="equal", formula=['"Low"'], fill=green_f
 - Critical gaps remaining
 - Investment needed for gap closure
 - ROI of review/testing improvements
-
 
 ---
 
@@ -1598,14 +1492,12 @@ low_rule = Rule(type="cellIs", operator="equal", formula=['"Low"'], fill=green_f
 - Key effectiveness metrics (detection rate, false negatives)
 - Evidence summary (for audit readiness)
 
-
 **Export Method**:
 
 - Dashboard consolidation script reads this workbook
 - Extracts Summary Dashboard data
 - Aggregates with other A.8.28 assessments (SDLC, Tools, Third-Party)
 - Creates executive summary across all domains
-
 
 **File Location for Dashboard**:
 ```

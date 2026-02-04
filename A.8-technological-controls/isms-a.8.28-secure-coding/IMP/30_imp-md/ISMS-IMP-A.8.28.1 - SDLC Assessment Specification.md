@@ -31,7 +31,6 @@
 - QA Manager / Test Lead (Testing Validation)
 - CISO / Security Director (Executive Approval)
 
-
 ### Document Structure
 
 This document consists of two parts:
@@ -53,12 +52,10 @@ This document consists of two parts:
   - Formulas & Calculations
   - Python Script Integration Points
 
-
 **Target Audiences:**
 
 - **Part I:** Assessment users (Application Security Lead, Development Managers, Security Architects, Project Managers)
 - **Part II:** Workbook developers (Python/Excel script maintainers)
-
 
 ---
 
@@ -90,20 +87,17 @@ This assessment verifies [Organization]'s compliance with:
 - ISMS-POL-A.8.28 Section 2.1: Pre-Development Requirements
 - ISMS-POL-A.8.28 Section 3.1: Roles & Responsibilities (Development Managers, Security Architects, Security Champions)
 
-
 Organizations that integrate security into SDLC reduce:
 
 - Post-deployment vulnerability remediation costs by 60-90%
 - Security incident frequency by 40-70%
 - Time-to-market delays from late-stage security fixes
 
-
 Organizations without SDLC security integration experience:
 
 - Reactive "security theater" - finding and fixing issues too late
 - Developer frustration from last-minute security blockers
 - Higher overall security costs (fixing vs. preventing)
-
 
 ### What You'll Document
 
@@ -124,7 +118,6 @@ This assessment captures your ACTUAL practices (not aspirational):
 - Records (training completion, review approvals, tool configurations)
 - Metrics (coverage percentages, completion rates, effectiveness measurements)
 
-
 *"The first principle is that you must not fool yourself—and you are the easiest person to fool." - Richard Feynman*
 
 **Application**: Claiming "we do threat modeling" without documented threat models = not compliant. Claiming "developers are trained" without LMS records = not compliant.
@@ -141,14 +134,12 @@ This assessment captures your ACTUAL practices (not aspirational):
 - **HR/Training Coordinator**: Training records, LMS data
 - **Project Managers**: Security activity integration in project plans
 
-
 **Time Commitment**: 12-16 hours total (distributed across 2-3 weeks)
 
 - Information gathering: 6-8 hours
 - Assessment completion: 4-6 hours
 - Evidence collection: 2-3 hours
 - Review and approval: 1-2 hours
-
 
 ### Expected Outputs
 
@@ -162,14 +153,12 @@ This assessment captures your ACTUAL practices (not aspirational):
 - Gap Analysis (non-compliant items with remediation plans)
 - Approval Sign-Off (stakeholder approvals)
 
-
 **Deliverables**:
 
 - Completed Excel workbook
 - Supporting evidence (uploaded to shared drive or document management system)
 - Gap remediation plan with assigned owners and deadlines
 - Executive summary (1-page for CISO/management)
-
 
 ---
 
@@ -187,7 +176,6 @@ Before starting this assessment, gather:
 - [ ] Security acceptance criteria in user stories/requirements
 - [ ] Compliance mapping documents (GDPR, PCI-DSS, sector-specific)
 
-
 **Threat Modeling Artifacts**:
 
 - [ ] Threat modeling methodology documentation (STRIDE, PASTA, Attack Trees)
@@ -196,7 +184,6 @@ Before starting this assessment, gather:
 - [ ] Threat prioritization and risk ratings
 - [ ] Security team review approvals
 - [ ] Mitigation strategy documentation
-
 
 **Architecture Review Documentation**:
 
@@ -207,7 +194,6 @@ Before starting this assessment, gather:
 - [ ] Architecture review meeting minutes and decisions
 - [ ] Security Architect sign-offs
 
-
 **Training Records**:
 
 - [ ] Developer security training curriculum (course descriptions, syllabi)
@@ -216,7 +202,6 @@ Before starting this assessment, gather:
 - [ ] Security Champions program documentation
 - [ ] Language-specific training materials
 - [ ] Training effectiveness metrics (if available)
-
 
 **Development Environment Configuration**:
 
@@ -229,7 +214,6 @@ Before starting this assessment, gather:
 - [ ] SAST/DAST/SCA tool integration evidence
 - [ ] Test data handling procedures
 
-
 **Project Planning Documentation**:
 
 - [ ] Project plan templates with security activities
@@ -238,7 +222,6 @@ Before starting this assessment, gather:
 - [ ] Application Security Team engagement logs
 - [ ] Budget allocations for security tools and training
 - [ ] Security milestone tracking (if available)
-
 
 ## Required Tools
 
@@ -250,7 +233,6 @@ Before starting this assessment, gather:
 - Access to project management tools (Jira, Azure DevOps, etc.)
 - Access to document management system (SharePoint, Confluence, Google Drive, etc.)
 
-
 **Access Permissions**:
 
 - Training records (read access to LMS)
@@ -259,12 +241,10 @@ Before starting this assessment, gather:
 - Project documentation (read access to project folders)
 - Budget/resource allocation data (if available)
 
-
 **Optional Tools** (helpful but not required):
 
 - Screenshot tool (for capturing evidence)
 - PDF export tool (for saving evidence)
-
 
 ## Required Skills
 
@@ -276,13 +256,11 @@ Before starting this assessment, gather:
 - Ability to review and interpret process documentation
 - Ability to interpret training records and calculate completion rates
 
-
 **Assessor does NOT need**:
 
 - Deep coding expertise (this is process assessment, not code review)
 - Security tool expert-level knowledge
 - Architecture design expertise
-
 
 ## Dependencies
 
@@ -290,12 +268,10 @@ Before starting this assessment, gather:
 
 - ISMS-POL-A.8.28 (Secure Coding Policy) approved and published
 
-
 **Should Have But Not Blocking**:
 
 - Security Champions identified (at least partially)
 - SAST/DAST/SCA tools deployed (even if not fully operational)
-
 
 **Related Assessments** (coordinate timing):
 
@@ -303,7 +279,6 @@ Before starting this assessment, gather:
 - ISMS-IMP-A.8.28.3 (Code Review & Testing) - can be done in parallel
 - ISMS-IMP-A.8.28.4 (Third-Party & OSS) - can be done in parallel
 - ISMS-IMP-A.8.28.5 (Compliance Dashboard) - requires IMPs 1-4 completed first
-
 
 ---
 
@@ -319,7 +294,6 @@ Before starting this assessment, gather:
 - Output: `ISMS-IMP-A.8.28.1_SDLC_Assessment_YYYYMMDD.xlsx`
 - Save to shared location for collaboration
 
-
 **Step 2**: Review Instructions sheet
 
 - Read assessment methodology
@@ -327,14 +301,12 @@ Before starting this assessment, gather:
 - Review compliance scoring approach
 - Understand evidence requirements
 
-
 **Step 3**: Schedule stakeholder meetings
 
 - Development Managers (1 hour): Training, planning, team practices
 - Security Architects (1 hour): Threat modeling, architecture reviews
 - DevOps/Platform Engineers (30 min): Environment security, CI/CD
 - HR/Training (30 min): Training records extraction
-
 
 **Phase 2: Information Gathering (Week 1-2, Days 3-10)**
 
@@ -347,7 +319,6 @@ Before starting this assessment, gather:
 - Take screenshots or export PDFs as evidence
 - Upload to Evidence Register sheet
 
-
 **Step 5**: Collect Threat Modeling Artifacts
 
 - Identify high-risk projects requiring threat models
@@ -357,7 +328,6 @@ Before starting this assessment, gather:
 - Verify Security Architect review approvals
 - Document mitigation strategies
 
-
 **Step 6**: Collect Architecture Review Evidence
 
 - Review architecture review process documentation
@@ -366,7 +336,6 @@ Before starting this assessment, gather:
 - Extract architecture review meeting minutes
 - Verify Security Architect sign-offs
 
-
 **Step 7**: Collect Training Records
 
 - Access LMS and export developer training completion reports
@@ -374,7 +343,6 @@ Before starting this assessment, gather:
 - Identify language-specific training availability
 - Document Security Champions program structure
 - Calculate Security Champion:Developer ratio
-
 
 **Step 8**: Collect Development Environment Configuration
 
@@ -385,7 +353,6 @@ Before starting this assessment, gather:
 - Document CI/CD security gate configuration
 - Collect SAST/DAST/SCA tool integration evidence
 
-
 **Step 9**: Collect Project Planning Documentation
 
 - Review project plan templates
@@ -393,7 +360,6 @@ Before starting this assessment, gather:
 - Review "Definition of Done" criteria
 - Document Application Security Team engagement
 - Identify security budget allocations
-
 
 **Phase 3: Assessment Completion (Week 2-3, Days 11-15)**
 
@@ -404,14 +370,12 @@ Before starting this assessment, gather:
 - Link evidence in Evidence ID column
 - Calculate percentage of projects with security requirements
 
-
 **Step 11**: Complete Domain 2: Threat Modeling
 
 - Document threat modeling methodology
 - Calculate percentage of high-risk projects with threat models
 - Assess threat model quality and completeness
 - Verify Security Architect review process
-
 
 **Step 12**: Complete Domain 3: Architecture & Design
 
@@ -420,14 +384,12 @@ Before starting this assessment, gather:
 - Verify Security Architect participation
 - Calculate architecture review coverage
 
-
 **Step 13**: Complete Domain 4: Training
 
 - Calculate training completion rates
 - Assess curriculum comprehensiveness
 - Document Security Champions program maturity
 - Verify training record retention
-
 
 **Step 14**: Complete Domain 5: Development Environment
 
@@ -436,14 +398,12 @@ Before starting this assessment, gather:
 - Verify branch protection enforcement
 - Assess CI/CD pipeline security integration
 
-
 **Step 15**: Complete Domain 6: Security Planning
 
 - Assess security activity integration in project plans
 - Verify security story inclusion in sprint backlogs
 - Document Application Security Team engagement model
 - Assess security resource allocation
-
 
 **Phase 4: Review and Finalization (Week 3, Days 16-18)**
 
@@ -456,14 +416,12 @@ Before starting this assessment, gather:
   - Date collected
   - Collected by
 
-
 **Step 17**: Review Gap Analysis Sheet
 
 - Verify all ❌ Non-Compliant and ⚠️ Partial items appear
 - Assign remediation owners
 - Set remediation target dates
 - Prioritize gaps (Critical / High / Medium / Low)
-
 
 **Step 18**: Review Summary Dashboard
 
@@ -472,13 +430,11 @@ Before starting this assessment, gather:
 - Identify top gaps requiring attention
 - Prepare executive summary
 
-
 **Step 19**: Internal Review
 
 - Share workbook with Development Managers for validation
 - Share with Security Architects for technical accuracy
 - Incorporate feedback and corrections
-
 
 **Step 20**: Approval Process
 
@@ -486,7 +442,6 @@ Before starting this assessment, gather:
 - Submit to CISO for approval
 - Obtain Development Management approval
 - Complete Approval Sign-Off sheet
-
 
 ## Timeline Expectations
 
@@ -501,13 +456,11 @@ Before starting this assessment, gather:
 - Review and finalization: 1-2 hours
 - Approval cycle: 3-5 business days
 
-
 **Critical Path**:
 
 - Training records extraction (may require HR support - plan ahead)
 - Threat modeling artifact gathering (may require searching multiple project repositories)
 - Repository configuration review (may require admin access provisioning)
-
 
 ## Collaboration Requirements
 
@@ -518,14 +471,12 @@ Before starting this assessment, gather:
 - Security Architect (if available)
 - Review progress, blockers, questions
 
-
 **Ad-Hoc Consultations**:
 
 - Development Managers: Training practices, project planning
 - Security Architects: Threat modeling quality assessment
 - DevOps: CI/CD security configuration
 - HR: Training record extraction and interpretation
-
 
 ---
 
@@ -538,7 +489,6 @@ This section provides detailed guidance for completing each assessment domain. F
 - **How to answer** (Yes/No/Partial/Planned/N/A criteria)
 - **Examples** (compliant vs. non-compliant states)
 - **Policy reference** (ISMS-POL-A.8.28 section)
-
 
 ## Domain 1: Security Requirements Definition
 
@@ -553,7 +503,6 @@ This section provides detailed guidance for completing each assessment domain. F
 - Project management tool (Jira, Azure DevOps) - look for security-labeled requirements
 - Product backlog - security user stories
 
-
 **How to Answer**:
 
 - **✅ Compliant**: 100% of new projects (last 6 months) have documented security requirements in project plans or requirements documents
@@ -562,12 +511,10 @@ This section provides detailed guidance for completing each assessment domain. F
 - **🔄 Planned**: Process being developed, not yet operational
 - **N/A**: [Organization] has no new development projects (rare - justify in comments)
 
-
 **Examples**:
 
 - ✅ **Compliant**: Project "Customer Portal v2" has dedicated security requirements section with 12 documented requirements covering authentication, authorization, data protection, logging
 - ❌ **Non-Compliant**: Project "Mobile App" launched without documented security requirements; security issues discovered in production
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.1.1 (Security Requirements Definition)
 
@@ -584,7 +531,6 @@ This section provides detailed guidance for completing each assessment domain. F
 - CISO/Security Architect approval signatures
 - Risk register entries for projects
 
-
 **How to Answer**:
 
 - **✅ Compliant**: 100% of high-risk projects (those handling PII, financial data, or critical business functions) have completed security risk assessments with CISO/Security approval
@@ -593,12 +539,10 @@ This section provides detailed guidance for completing each assessment domain. F
 - **🔄 Planned**: Risk assessment template created, not yet applied to projects
 - **N/A**: [Organization] has no high-risk projects (justify - unlikely)
 
-
 **Examples**:
 
 - ✅ **Compliant**: "Payment Gateway Integration" project has risk assessment dated 15.03.2025, identifying PCI-DSS compliance risk (High), data breach risk (Critical), approved by CISO
 - ❌ **Non-Compliant**: "Admin Dashboard" project (high-risk - privileged access) proceeded without risk assessment; discovered authorization bypass in testing
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.1.1 (Security Requirements Definition - risk assessment required)
 
@@ -614,7 +558,6 @@ This section provides detailed guidance for completing each assessment domain. F
 - Requirements documents with "Security Acceptance Criteria" sections
 - "Definition of Done" checklists including security criteria
 
-
 **How to Answer**:
 
 - **✅ Compliant**: 90%+ of user stories/requirements have security acceptance criteria defined before implementation
@@ -623,12 +566,10 @@ This section provides detailed guidance for completing each assessment domain. F
 - **🔄 Planned**: Template updated to include security acceptance criteria, not yet applied
 - **N/A**: Not applicable (justify)
 
-
 **Examples**:
 
 - ✅ **Compliant**: User story "User Registration" has acceptance criteria: "Password must be hashed with bcrypt (cost 12), MFA enrollment prompted, session token HttpOnly/Secure"
 - ❌ **Non-Compliant**: Feature "File Upload" has vague criterion "must be secure" without specifics (file type validation? size limits? malware scanning?)
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.1.1 (Security acceptance criteria required)
 
@@ -645,7 +586,6 @@ This section provides detailed guidance for completing each assessment domain. F
 - Legal/Compliance team review approvals
 - Data classification documentation
 
-
 **How to Answer**:
 
 - **✅ Compliant**: 100% of projects processing regulated data types (PII, financial, health) have documented compliance requirements with Legal/Compliance review
@@ -654,12 +594,10 @@ This section provides detailed guidance for completing each assessment domain. F
 - **🔄 Planned**: Compliance mapping template created, not yet applied
 - **N/A**: [Organization] has no projects processing regulated data (justify - unlikely)
 
-
 **Examples**:
 
 - ✅ **Compliant**: "Customer CRM" project documented GDPR Article 25 (data protection by design), Article 32 (security of processing), approved by Legal
 - ❌ **Non-Compliant**: "Marketing Analytics" project collected PII without GDPR compliance documentation; discovered during data protection audit
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.1.1 (Regulatory alignment required), ISMS-POL-A.8.28 Section 1.5 (Regulatory Applicability Framework)
 
@@ -678,7 +616,6 @@ This section provides detailed guidance for completing each assessment domain. F
 - Threat identification and prioritization lists
 - Security Architect review approvals
 
-
 **How to Answer**:
 
 - **✅ Compliant**: 100% of high-risk applications (PII, financial, critical business functions) have completed threat models
@@ -687,12 +624,10 @@ This section provides detailed guidance for completing each assessment domain. F
 - **🔄 Planned**: Threat modeling methodology selected, training scheduled, not yet applied
 - **N/A**: [Organization] has no high-risk applications (justify - rare)
 
-
 **Examples**:
 
 - ✅ **Compliant**: "Payment API" has threat model using STRIDE methodology, identifying 23 threats (8 High, 12 Medium, 3 Low), mitigation strategies documented
 - ❌ **Non-Compliant**: "Admin Portal" (high-risk - privileged access) deployed without threat model; authorization bypass discovered in production
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.1.2 (Threat Modeling - required for high-risk apps)
 
@@ -709,7 +644,6 @@ This section provides detailed guidance for completing each assessment domain. F
 - Threat identification tables (threat, attack vector, impact)
 - Mitigation strategy documentation
 
-
 **How to Answer**:
 
 - **✅ Compliant**: 90%+ of threat models include all required elements: system overview, threat ID, prioritization (CVSS or similar), mitigation strategies
@@ -718,12 +652,10 @@ This section provides detailed guidance for completing each assessment domain. F
 - **🔄 Planned**: Threat model template created with required sections, not yet used
 - **N/A**: No threat models exist (would be ❌ if high-risk apps exist)
 
-
 **Examples**:
 
 - ✅ **Compliant**: "API Gateway" threat model has: system diagram (5 components, 3 trust boundaries), 18 identified threats, CVSS scores, mitigation strategies (e.g., "SQL Injection mitigated by parameterized queries")
 - ❌ **Non-Compliant**: "Mobile App" threat model is just architecture diagram with no threat identification or mitigation
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.1.2 (Threat model documentation requirements)
 
@@ -740,7 +672,6 @@ This section provides detailed guidance for completing each assessment domain. F
 - Meeting minutes from threat modeling sessions
 - Email approvals (if documented)
 
-
 **How to Answer**:
 
 - **✅ Compliant**: 100% of threat models have Security Architect review and approval signature
@@ -749,12 +680,10 @@ This section provides detailed guidance for completing each assessment domain. F
 - **🔄 Planned**: Review process defined, not yet implemented
 - **N/A**: No Security Architect role exists AND no threat models (document both gaps)
 
-
 **Examples**:
 
 - ✅ **Compliant**: "Customer Portal" threat model has signature from Security Architect dated 22.04.2025 with comment "Reviewed - approved with condition: add rate limiting to login endpoint"
 - ❌ **Non-Compliant**: "Data Warehouse" threat model created by development team, no security review; data exfiltration risk not identified
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.1.2 (Security Architect review required)
 
@@ -773,7 +702,6 @@ This section provides detailed guidance for completing each assessment domain. F
 - Architecture decision records (ADRs) citing principles
 - Training materials covering principles
 
-
 **How to Answer**:
 
 - **✅ Compliant**: Principles documented (at least 8 core principles from ISMS-POL-A.8.28 Section 2.1.3) AND 80%+ of architecture reviews reference them
@@ -782,12 +710,10 @@ This section provides detailed guidance for completing each assessment domain. F
 - **🔄 Planned**: Principles document drafted, not yet published/trained
 - **N/A**: Not applicable (justify - unlikely)
 
-
 **Examples**:
 
 - ✅ **Compliant**: "Secure Architecture Principles v1.2" document defines 10 principles; "API Design Review" checklist references principles; "Microservices Architecture ADR" cites "Principle #3: Least Privilege" for service account design
 - ❌ **Non-Compliant**: No documented principles; architects design ad-hoc; inconsistent security decisions across projects
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.1.3 (Secure Architecture and Design - principles required)
 
@@ -805,7 +731,6 @@ This section provides detailed guidance for completing each assessment domain. F
 - Calendar invites for architecture review meetings
 - Review approval records
 
-
 **How to Answer**:
 
 - **✅ Compliant**: 90%+ of new applications undergo architecture security review with documented outcomes
@@ -814,12 +739,10 @@ This section provides detailed guidance for completing each assessment domain. F
 - **🔄 Planned**: Review process defined, not yet operational
 - **N/A**: [Organization] has no new applications (justify - rare)
 
-
 **Examples**:
 
 - ✅ **Compliant**: "Mobile Banking App" architecture reviewed 10.05.2025, participants: Security Architect, Lead Developer, Product Owner; outcome: "Approved with recommendations (implement certificate pinning, add biometric auth option)"
 - ❌ **Non-Compliant**: "Partner Integration API" architecture not reviewed; discovered insecure OAuth implementation post-deployment
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.1.3 (Architecture review required)
 
@@ -838,7 +761,6 @@ This section provides detailed guidance for completing each assessment domain. F
 - Training certificates
 - Email confirmations of training completion
 
-
 **How to Answer**:
 
 - **✅ Compliant**: 100% of developers hired in last 12 months completed initial security training within 30 days (verify in LMS)
@@ -847,12 +769,10 @@ This section provides detailed guidance for completing each assessment domain. F
 - **🔄 Planned**: Training procured, onboarding process updated, not yet implemented
 - **N/A**: No developers hired in last 12 months (verify with HR)
 
-
 **Examples**:
 
 - ✅ **Compliant**: LMS report shows 15 developers hired Jan-Dec 2025; all 15 completed "Secure Coding Fundamentals" (average: 18 days post-hire)
 - ❌ **Non-Compliant**: 8 of 12 developers hired in 2025 never completed security training; 4 completed after 60+ days
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.1.4 (Developer training - initial within 30 days)
 
@@ -868,7 +788,6 @@ This section provides detailed guidance for completing each assessment domain. F
 - Training reminder emails
 - Training completion certificates
 
-
 **How to Answer**:
 
 - **✅ Compliant**: 90%+ of active developers completed annual refresher in last 12 months
@@ -877,12 +796,10 @@ This section provides detailed guidance for completing each assessment domain. F
 - **🔄 Planned**: Refresher training procured, not yet launched
 - **N/A**: [Organization] was founded <12 months ago (no annual cycle yet)
 
-
 **Examples**:
 
 - ✅ **Compliant**: LMS report: 45 of 48 active developers (93.75%) completed "Security Refresher 2025"; 3 on extended leave
 - ❌ **Non-Compliant**: 20 of 50 developers (40%) completed refresher; no follow-up enforcement
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.1.4 (Annual refresher training required)
 
@@ -901,7 +818,6 @@ This section provides detailed guidance for completing each assessment domain. F
 - User access audit logs showing MFA status
 - IT/Security policy requiring MFA
 
-
 **How to Answer**:
 
 - **✅ Compliant**: MFA enforced at repository platform level (cannot be disabled by users), 100% of developer accounts have MFA enabled
@@ -910,12 +826,10 @@ This section provides detailed guidance for completing each assessment domain. F
 - **🔄 Planned**: MFA enforcement scheduled, not yet active
 - **N/A**: [Organization] has no source code repositories (justify - very rare)
 
-
 **Examples**:
 
 - ✅ **Compliant**: GitHub Enterprise settings show "Require two-factor authentication for everyone in the organization" enabled; user audit confirms 100% compliance
 - ❌ **Non-Compliant**: GitLab allows password-only access; 35% of developers use MFA voluntarily; repository compromised via stolen password
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.1.5 (Development environment security - MFA required)
 
@@ -932,7 +846,6 @@ This section provides detailed guidance for completing each assessment domain. F
 - PR approval logs
 - Policy documentation
 
-
 **How to Answer**:
 
 - **✅ Compliant**: Protected branches require at least 1 approval before merge; rules enforced (cannot be bypassed)
@@ -941,12 +854,10 @@ This section provides detailed guidance for completing each assessment domain. F
 - **🔄 Planned**: Branch protection rules drafted, not yet applied
 - **N/A**: No version-controlled code (justify - extremely rare)
 
-
 **Examples**:
 
 - ✅ **Compliant**: GitHub branch protection on `main`: "Require pull request reviews before merging" (1 approval), "Dismiss stale approvals", "Include administrators" (no bypass)
 - ❌ **Non-Compliant**: No branch protection; developers commit directly to `main`; introduced vulnerability bypassed review
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.1.5 (Code review enforcement)
 
@@ -965,7 +876,6 @@ This section provides detailed guidance for completing each assessment domain. F
 - Sprint planning notes with security stories
 - Project status reports mentioning security activities
 
-
 **How to Answer**:
 
 - **✅ Compliant**: 90%+ of projects have security activities in project plans with dedicated time/resources
@@ -974,12 +884,10 @@ This section provides detailed guidance for completing each assessment domain. F
 - **🔄 Planned**: Project planning templates updated to include security, not yet applied
 - **N/A**: No projects (justify - rare)
 
-
 **Examples**:
 
 - ✅ **Compliant**: "E-commerce Platform" project plan includes: "Threat Modeling" (Week 3, 16 hours), "SAST Setup" (Week 5, 8 hours), "Penetration Test" (Week 14, 40 hours)
 - ❌ **Non-Compliant**: "Internal Dashboard" project plan has no security tasks; DAST testing delayed launch by 2 weeks (unplanned)
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.1.6 (Security planning and resource allocation)
 
@@ -996,14 +904,12 @@ For every assessment question, you'll select from these status options:
 - Meets or exceeds policy requirements
 - No remediation needed
 
-
 **⚠️ Partial (Yellow)**:
 
 - Control partially implemented
 - Some evidence exists but gaps remain
 - Remediation planned with realistic timeline
 - Acceptable interim state with risk acceptance
-
 
 **❌ Non-Compliant (Red)**:
 
@@ -1012,7 +918,6 @@ For every assessment question, you'll select from these status options:
 - No evidence available
 - Immediate remediation required
 
-
 **🔄 Planned (Blue)**:
 
 - Control implementation in progress
@@ -1020,13 +925,11 @@ For every assessment question, you'll select from these status options:
 - Not yet operational
 - Evidence: project plan, budget approval, tool procurement
 
-
 **N/A (Gray)**:
 
 - Control not applicable to [Organization]
 - Must provide justification in Comments column
 - Rare - most controls apply to all organizations
-
 
 ---
 
@@ -1042,7 +945,6 @@ For every assessment question, you'll select from these status options:
 - Policies and standards
 - Approval records (signatures, emails)
 
-
 **Records**:
 
 - Training completion reports (LMS exports)
@@ -1051,14 +953,12 @@ For every assessment question, you'll select from these status options:
 - Tool reports (SAST scan results, SCA vulnerability reports)
 - Meeting minutes (architecture reviews, threat modeling sessions)
 
-
 **Metrics**:
 
 - Coverage percentages (% projects with threat models)
 - Completion rates (% developers trained)
 - Compliance scores (% repositories with branch protection)
 - Effectiveness measurements (vulnerability reduction trends)
-
 
 ## Where Evidence Typically Resides
 
@@ -1082,13 +982,11 @@ For every assessment question, you'll select from these status options:
 - Annotate if needed (highlight relevant sections)
 - Save with descriptive filename: `Evidence_5-2_BranchProtection_Main_20260124.png`
 
-
 **Document Exports**:
 
 - Export PDFs (not Word docs - PDFs are tamper-evident)
 - Include metadata (creation date, author)
 - Save with descriptive filename
-
 
 **Spreadsheet/Report Exports**:
 
@@ -1097,13 +995,11 @@ For every assessment question, you'll select from these status options:
 - Include export date/time
 - Save as CSV or Excel
 
-
 **Email Evidence**:
 
 - Forward approval emails to yourself
 - Save as PDF (Print > Save as PDF)
 - Or save .eml file
-
 
 ## Evidence Register Population
 
@@ -1115,32 +1011,26 @@ For each evidence item in the Evidence Register sheet:
 
 - Example: "GitHub branch protection configuration for main branch requiring code review"
 
-
 **Related Assessment Question**: Which question(s) this evidence supports
 
 - Example: "5.2 Branch Protection Enforcement"
 
-
 **Evidence Type**: Select from dropdown
 
 - Document, Screenshot, Report, Configuration Export, Email, Meeting Minutes, Other
-
 
 **Location**: Where evidence is stored
 
 - Example: "/Security/Evidence/ISMS-A.8.28/BranchProtection_Main.png"
 - Or: "Google Drive > ISMS Evidence > A.8.28 > Screenshot 2026-01-24.png"
 
-
 **Date Collected**: Date evidence was captured
 
 - Format: DD.MM.YYYY
 
-
 **Collected By**: Name of person who captured evidence
 
 - Example: "J. Smith, Application Security Lead"
-
 
 ## Evidence Quality Standards
 
@@ -1152,14 +1042,12 @@ For each evidence item in the Evidence Register sheet:
 - Sufficient to demonstrate compliance (auditor would accept)
 - Maintained per retention policy (minimum: duration of SDLC)
 
-
 **Poor Evidence**:
 
 - Verbal claims without documentation
 - Screenshots with no context (cropped too tightly, no date/URL)
 - Draft documents (not approved versions)
 - Expired evidence (training records from 3 years ago when annual required)
-
 
 ---
 
@@ -1197,7 +1085,6 @@ Learn from others' mistakes. Here are the 10 most common errors in SDLC assessme
 
 - **Planned** = Not yet started but resources allocated, timeline set
 - **Partial** = Some implementation exists, working toward full coverage
-
 
 ---
 
@@ -1285,14 +1172,12 @@ Before submitting the assessment for approval, verify:
 - [ ] Evidence ID referenced for Compliant and Partial items
 - [ ] No placeholder text ([TBD], [Date], TODO) remaining
 
-
 **Domain 1: Security Requirements**:
 
 - [ ] Project count calculated (how many projects assessed)
 - [ ] Percentage coverage calculated (% projects with security requirements)
 - [ ] Recent projects evidence (last 6 months minimum)
 - [ ] Compliance mapping documentation provided for regulated data
-
 
 **Domain 2: Threat Modeling**:
 
@@ -1301,13 +1186,11 @@ Before submitting the assessment for approval, verify:
 - [ ] Sample threat models reviewed for completeness
 - [ ] Security Architect approval verified
 
-
 **Domain 3: Architecture & Design**:
 
 - [ ] Security-by-design principles document referenced
 - [ ] Architecture review process documented
 - [ ] Architecture review coverage calculated
-
 
 **Domain 4: Training**:
 
@@ -1316,7 +1199,6 @@ Before submitting the assessment for approval, verify:
 - [ ] Annual refresher completion rate calculated
 - [ ] Security Champions program maturity assessed
 
-
 **Domain 5: Development Environment**:
 
 - [ ] Repository configuration screenshots captured
@@ -1324,13 +1206,11 @@ Before submitting the assessment for approval, verify:
 - [ ] Branch protection rules documented
 - [ ] CI/CD security gate configuration verified
 
-
 **Domain 6: Security Planning**:
 
 - [ ] Project plan templates reviewed
 - [ ] Sprint planning artifact examples provided
 - [ ] Security activity integration coverage calculated
-
 
 ## Evidence Register
 
@@ -1340,7 +1220,6 @@ Before submitting the assessment for approval, verify:
 - [ ] All evidence items have collector names
 - [ ] Evidence physically exists at documented locations
 - [ ] Evidence is accessible to auditors (permissions set correctly)
-
 
 ## Gap Analysis
 
@@ -1352,7 +1231,6 @@ Before submitting the assessment for approval, verify:
 - [ ] Priority assigned (Critical/High/Medium/Low)
 - [ ] Remediation status tracked (Not Started/In Progress/Completed)
 
-
 ## Summary Dashboard
 
 - [ ] Overall compliance percentage calculated correctly
@@ -1361,14 +1239,12 @@ Before submitting the assessment for approval, verify:
 - [ ] Top gaps list populated
 - [ ] Critical gaps count accurate
 
-
 ## Approval Sign-Off
 
 - [ ] Completed By section filled (name, role, date, signature)
 - [ ] Reviewed By section prepared (ready for Application Security Lead)
 - [ ] Approved By section prepared (ready for CISO)
 - [ ] Next Review Date calculated (+3 months from completion)
-
 
 ## File Quality
 
@@ -1377,7 +1253,6 @@ Before submitting the assessment for approval, verify:
 - [ ] File permissions set (reviewers and approvers have access)
 - [ ] Evidence files uploaded to evidence repository
 - [ ] Evidence file naming consistent and descriptive
-
 
 ---
 
@@ -1425,13 +1300,11 @@ Before submitting the assessment for approval, verify:
 - Gap remediation plans (realistic and prioritized)
 - Compliance with policy (ISMS-POL-A.8.28 requirements met)
 
-
 **Possible Outcomes**:
 
 - **Approve**: No changes needed, proceed to CISO approval
 - **Approve with Minor Revisions**: Clarifications needed, can proceed in parallel with CISO review
 - **Return for Revision**: Significant issues, re-submit after corrections
-
 
 ---
 
@@ -1446,7 +1319,6 @@ Before submitting the assessment for approval, verify:
 - Operational feasibility (remediation plans realistic for dev teams)
 - Resource allocation (budgets and timelines align with capacity)
 - Organizational accuracy (training and planning claims correct)
-
 
 **Possible Outcomes**: Same as Application Security Lead review
 
@@ -1465,13 +1337,11 @@ Before submitting the assessment for approval, verify:
 - Strategic alignment (security initiatives aligned with business)
 - Residual risk acceptance (Non-Compliant items with long remediation timelines)
 
-
 **Possible Outcomes**:
 
 - **Approve**: Assessment complete, publish results
 - **Approve with Conditions**: Specific gap remediation acceleration required
 - **Reject**: Insufficient evidence or critical gaps not addressed
-
 
 ---
 
@@ -1579,7 +1449,6 @@ All assessment sheets use consistent column structure:
 - Height: 40px
 - Merge: A1:J1
 
-
 **Row 2**: Subtitle row
 
 - Cell A2: "ISO/IEC 27001:2022 - Control A.8.28: Secure Coding"
@@ -1587,7 +1456,6 @@ All assessment sheets use consistent column structure:
 - Fill: #4472C4 (medium blue)
 - Alignment: Center
 - Merge: A2:J2
-
 
 ## Document Information Block (Rows 4-14)
 
@@ -1611,7 +1479,6 @@ Next Review Date:           [Auto-calc: +3 months from completion]
 - Step-by-step assessment instructions
 - Reference to PART I: USER COMPLETION GUIDE for detailed guidance
 
-
 **Section**: Status Legend
 
 - ✅ Compliant (Green): Control fully implemented, evidence verified
@@ -1620,13 +1487,11 @@ Next Review Date:           [Auto-calc: +3 months from completion]
 - 🔄 Planned (Blue): Implementation in progress, timeline set
 - N/A (Gray): Not applicable (with justification required)
 
-
 **Section**: Evidence Requirements
 
 - Documentation types accepted
 - Where to upload evidence
 - Evidence naming conventions
-
 
 **Section**: Compliance Scoring
 
@@ -1634,11 +1499,9 @@ Next Review Date:           [Auto-calc: +3 months from completion]
 - Total applicable = Total questions - N/A questions
 - Domain scores and overall score calculation
 
-
 **Section**: Assessment Workflow
 
 - Preparation → Information Gathering → Assessment Completion → Review → Approval
-
 
 ---
 
@@ -1671,7 +1534,6 @@ Next Review Date:           [Auto-calc: +3 months from completion]
 
 - List: ✅ Compliant, ⚠️ Partial, ❌ Non-Compliant, 🔄 Planned, N/A
 
-
 **Conditional Formatting (Column E)**:
 
 - ✅ Compliant → Fill: #C6EFCE (light green)
@@ -1680,11 +1542,9 @@ Next Review Date:           [Auto-calc: +3 months from completion]
 - 🔄 Planned → Fill: #B4C7E7 (light blue)
 - N/A → Fill: #D9D9D9 (light gray)
 
-
 **Column H (Gap Priority)**: Dropdown validation (appears if Status = ❌ or ⚠️)
 
 - List: Critical, High, Medium, Low
-
 
 ---
 
@@ -1816,13 +1676,11 @@ Provide executive-level overview of SDLC security maturity with auto-calculated 
 - Auto-populated list of ❌ Non-Compliant items with Priority = Critical or High
 - Pulled from Gap_Analysis sheet
 
-
 **Visual Indicators**:
 
 - Compliance Rate >= 90%: Green fill
 - Compliance Rate 70-89%: Yellow fill
 - Compliance Rate < 70%: Red fill
-
 
 ---
 
@@ -1852,7 +1710,6 @@ Track all evidence supporting assessment claims.
 - Email
 - Meeting Minutes
 - Other
-
 
 **Row Count**: 100 rows pre-formatted (evidence items EV-001 through EV-100)
 
@@ -1884,7 +1741,6 @@ Consolidated view of all non-compliant and partial items requiring remediation.
 - Identifies rows where Status = ❌ or ⚠️
 - Populates Gap_Analysis with domain, question, status, priority
 - User fills in Gap Description, Owner, Target Date, Status, Notes
-
 
 ---
 
@@ -1951,7 +1807,6 @@ Special Considerations:    [Text area - merged cells - yellow]
 - Height: 40px
 - Border: None
 
-
 **Subheader** (Sheet subtitles):
 
 - Font: Calibri 12pt white
@@ -1959,7 +1814,6 @@ Special Considerations:    [Text area - merged cells - yellow]
 - Alignment: Center, middle
 - Height: 25px
 - Border: None
-
 
 **Column Header** (Assessment sheets):
 
@@ -1969,7 +1823,6 @@ Special Considerations:    [Text area - merged cells - yellow]
 - Height: 30px
 - Border: Thin black all sides
 
-
 ## Input Cell Styles
 
 **Yellow Cells** (User input required):
@@ -1978,7 +1831,6 @@ Special Considerations:    [Text area - merged cells - yellow]
 - Alignment: Left (text) or Center (dropdown), wrapped
 - Border: Thin black all sides
 - Font: Calibri 10pt regular black
-
 
 ## Status Cell Conditional Formatting
 
@@ -2008,21 +1860,17 @@ Rule 5: =E4="N/A" → Format: Fill #D9D9D9, Font #7F7F7F
 - Freeze at: Row 4, Column A
 - Effect: Headers (rows 1-3) remain visible when scrolling
 
-
 **Summary_Dashboard**:
 
 - Freeze at: Row 4, Column A
-
 
 **Evidence_Register, Gap_Analysis**:
 
 - Freeze at: Row 4, Column A
 
-
 **Approval_Sign_Off**:
 
 - Freeze at: Row 3, Column A
-
 
 ---
 
@@ -2039,18 +1887,15 @@ Rule 5: =E4="N/A" → Format: Fill #D9D9D9, Font #7F7F7F
 - Create all 11 sheets
 - Return workbook object
 
-
 **setup_styles()**:
 
 - Define all cell styles (header, input, status)
 - Return style dictionary
 
-
 **create_instructions_sheet(wb)**:
 
 - Populate Instructions sheet with assessment guidance
 - **CUSTOMIZE**: Update organizational branding, contact information
-
 
 **create_assessment_sheet(wb, sheet_name, questions, policy_ref)**:
 
@@ -2062,7 +1907,6 @@ Rule 5: =E4="N/A" → Format: Fill #D9D9D9, Font #7F7F7F
   - `policy_ref`: ISMS-POL-A.8.28 section reference
 - Sets up headers, columns, data validation, conditional formatting
 
-
 **create_summary_dashboard(wb)**:
 
 - Create Summary_Dashboard sheet
@@ -2070,25 +1914,21 @@ Rule 5: =E4="N/A" → Format: Fill #D9D9D9, Font #7F7F7F
 - Generate top gaps list
 - **CUSTOMIZE**: Adjust compliance thresholds (90% green, 70% yellow, <70% red)
 
-
 **create_evidence_register(wb)**:
 
 - Create Evidence_Register sheet
 - 100 pre-formatted rows
 - Auto-generate Evidence IDs
 
-
 **create_gap_analysis(wb)**:
 
 - Create Gap_Analysis sheet
 - Auto-populate from assessment sheets (Status = ❌ or ⚠️)
 
-
 **create_approval_signoff(wb)**:
 
 - Create Approval_Sign_Off sheet
 - User input fields for approval workflow
-
 
 ## Customization Points
 
@@ -2133,7 +1973,6 @@ PRIORITY_OPTIONS = ["Critical", "High", "Medium", "Low"]
 - [ ] Freeze panes set correctly
 - [ ] File saves with correct naming convention
 
-
 **Manual Testing** (generate workbook and verify):
 1. Open workbook in Excel
 2. Navigate to each sheet - no errors?
@@ -2158,7 +1997,6 @@ PRIORITY_OPTIONS = ["Critical", "High", "Medium", "Low"]
 - `SDLC_Assessment`: Assessment type
 - `YYYYMMDD`: Date generated (ISO format for sorting)
 - `.xlsx`: Excel format
-
 
 ---
 

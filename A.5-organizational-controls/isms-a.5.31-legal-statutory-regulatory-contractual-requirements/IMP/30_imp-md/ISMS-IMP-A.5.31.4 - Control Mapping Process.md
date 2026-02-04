@@ -44,13 +44,11 @@ This implementation guide operationalizes the control mapping framework defined 
 - Practical decision-making framework for determining mapping types
 - Quality assurance and validation methodology
 
-
 **What This Guide Is Not**:
 
 - Control implementation guide (that's control-specific documentation)
 - Requirements extraction methodology (that's IMP-5.31.3)
 - Evidence collection process (that's IMP-5.31.5)
-
 
 ## When to Use This Process
 
@@ -72,13 +70,11 @@ This implementation guide operationalizes the control mapping framework defined 
 - **Compliance Officer**: Provides regulatory interpretation, validates that mappings satisfy requirements
 - **Control Owners**: Confirm controls can satisfy mapped requirements, provide implementation details
 
-
 **Supporting Roles**:
 
 - Legal Counsel: Interpret complex regulatory language, validate legal sufficiency of mappings
 - Information Security Team: Technical assessment of control capabilities
 - Internal Audit: Independent validation of mapping accuracy
-
 
 ## Process Flowchart
 
@@ -158,7 +154,6 @@ For each gap:
 - Documentation: 2-3 hours
 - **Total**: 1-2 days
 
-
 **Medium Regulation** (15-50 requirements):
 
 - Preparation: 2-4 hours
@@ -166,7 +161,6 @@ For each gap:
 - Gap Analysis: 4-8 hours
 - Documentation: 4-6 hours
 - **Total**: 3-5 days
-
 
 **Large Regulation** (50+ requirements):
 
@@ -176,11 +170,9 @@ For each gap:
 - Documentation: 1 day
 - **Total**: 1-2 weeks
 
-
 **Comprehensive ISMS Review** (all regulations):
 
 - **Total**: 2-4 weeks (depending on regulatory scope)
-
 
 ## Prerequisites
 
@@ -210,7 +202,6 @@ For each gap:
    - Understand Category (Technical, Organizational, Reporting, Operational)
    - Note Priority (High, Medium, Low)
    - Identify any dependencies between requirements
-
 
 **Output**: Clear understanding of requirements scope and complexity
 
@@ -247,7 +238,6 @@ For each gap:
    - Which controls are excluded (generally cannot map to these unless reconsidering exclusion)
    - Implementation status of each control
 
-
 **Output**: Understanding of available controls and their implementation status
 
 ### Assemble Stakeholders
@@ -264,7 +254,6 @@ For each gap:
    - Requirements Register printout or shared screen
    - Control Mapping Matrix (collaborative editing if possible)
    - ISO 27001 standard text (for control descriptions)
-
 
 **Output**: Team ready to conduct mapping exercise
 
@@ -317,19 +306,16 @@ Specific Mandate: YES - explicitly requires encryption (not just "appropriate se
 - If requirement is People-related → Focus on Section 6 (People Controls)
 - If requirement is Physical → Focus on Section 7 (Physical Controls)
 
-
 **Approach B: Keyword Search** (for complex requirements)
 
 - Search ISO 27001 control names/descriptions for keywords from requirement
 - Example: Requirement mentions "access control" → Look at A.5.15 through A.5.18
-
 
 **Approach C: Objective-Based** (for outcome-focused requirements)
 
 - If requirement mandates confidentiality → Consider A.5.10, A.5.13, A.5.14, A.8.24
 - If requirement mandates logging → Consider A.8.15, A.8.16
 - If requirement mandates testing → Consider A.8.8, A.8.29
-
 
 **Typical Candidates by Requirement Type**:
 
@@ -365,7 +351,6 @@ Candidate Controls:
 - A.5.28 (Collection of Evidence)
 - Possibly A.5.6 (Contact with Authorities) - for notification to regulators
 
-
 → 6 candidates identified for further analysis
 ```
 
@@ -384,7 +369,6 @@ For each candidate control, assess HOW WELL it satisfies the requirement.
   - Requirement would be considered "met" if this control is implemented
 - **Test**: "If auditor asked how we satisfy Requirement X, would we primarily point to this control?"
 
-
 **Secondary Mapping (S)**: Control partially satisfies requirement
 
 - **Criteria**:
@@ -392,7 +376,6 @@ For each candidate control, assess HOW WELL it satisfies the requirement.
   - Control contributes to satisfaction but additional controls needed
   - Control is relevant but not sufficient alone
 - **Test**: "Does this control help satisfy the requirement but is incomplete on its own?"
-
 
 **Supporting Mapping (Su)**: Control indirectly supports requirement
 
@@ -402,7 +385,6 @@ For each candidate control, assess HOW WELL it satisfies the requirement.
   - Requirement could be met without this control, but this control makes it easier/better
 - **Test**: "Does this control make satisfaction easier but isn't directly responsible for satisfaction?"
 
-
 **No Mapping (Blank)**: Control not applicable to requirement
 
 - **Criteria**:
@@ -410,7 +392,6 @@ For each candidate control, assess HOW WELL it satisfies the requirement.
   - Control addresses completely different security objective
   - Mapping would be a stretch or misleading
 - **Test**: "Would including this control in a compliance discussion confuse rather than clarify?"
-
 
 **Assessment Questions**:
 
@@ -422,7 +403,6 @@ For each candidate control → requirement pair, ask:
    - If A.8.24 is scoped to encrypt customer data → Good fit
    - If A.8.24 only encrypts internal secrets, not customer data → Poor fit
 
-
 2. **Completeness**: Does control fully address requirement, or only part?
 
    - Example: Requirement = "Implement access controls including authentication, authorization, and logging"
@@ -433,7 +413,6 @@ For each candidate control → requirement pair, ask:
    - A.8.15 Logging → Secondary (partial - logging only)
    - Combination of A.5.16 + A.5.17 + A.5.18 + A.8.15 → Primary (all together)
 
-
 3. **Directness**: Is control directly responsible, or does it support other controls?
 
    - Example: Requirement = "Conduct annual penetration testing"
@@ -441,12 +420,10 @@ For each candidate control → requirement pair, ask:
    - A.8.29 Security Testing → Primary (testing controls)
    - A.5.1 Policies → Supporting (policies mandate testing but don't implement it)
 
-
 4. **Implementation Status**: Is control actually implemented?
 
    - If control is excluded from SoA → Generally cannot map (unless reconsidering exclusion)
    - If control is planned but not implemented → Note as "Gap" (mapping exists conceptually but implementation gap)
-
 
 **Decision Matrix**:
 
@@ -473,7 +450,6 @@ Assessment:
 - Directness: Directly responsible for encryption
 - Implementation Status: Check SoA - if implemented, can map
 
-
 Decision: PRIMARY (P)
 Rationale: A.8.24 directly addresses encryption requirement, and if implemented for personal data, fully satisfies requirement.
 
@@ -488,7 +464,6 @@ Assessment:
 - Directness: N/A
 - Implementation Status: N/A
 
-
 Decision: BLANK (No mapping)
 Rationale: Completely different security objective (deletion vs encryption). Including would be misleading.
 
@@ -502,7 +477,6 @@ Assessment:
 - Completeness: Might mandate users use encrypted channels, but doesn't implement encryption
 - Directness: Indirect - policy supports, but doesn't implement
 - Implementation Status: Check SoA
-
 
 Decision: SUPPORTING (Su)
 Rationale: Policy may require encrypted transmission, which supports requirement, but actual encryption is implemented by A.8.24.
@@ -524,13 +498,11 @@ Rationale: Policy may require encrypted transmission, which supports requirement
    - **Su** = Supporting
    - **Blank** = No mapping
 
-
 **Data Entry**:
 
 - Use dropdown data validation (prevents typos)
 - Consistency is critical (always use "P", not "Primary" or "p")
 - Most cells will be blank (requirements typically map to 1-5 controls)
-
 
 **Example Matrix**:
 ```
@@ -548,17 +520,14 @@ Rationale: Policy may require encrypted transmission, which supports requirement
 - Brief note on WHY this control primarily satisfies requirement
 - Document in separate "Mapping Notes" sheet or comments
 
-
 **For Complex Mappings** (multiple Primary, or unusual mappings):
 
 - Detailed rationale explaining how controls work together
 - If requirement needs 3+ Primary controls, explain why each is necessary
 
-
 **For Gaps** (requirements with no Primary):
 
 - Note explicitly that gap exists (will be documented in Step 4)
-
 
 **Example Rationale**:
 ```
@@ -591,7 +560,6 @@ Mappings:
 - A.5.18 Access Rights → P (authorization and reviews)
 - A.8.3 Information Access Restriction → P (technical enforcement)
 
-
 Rationale: This requirement mandates a complete access management system. Each control addresses one component:
 
 - A.5.16: Creating, modifying, revoking identities
@@ -621,7 +589,6 @@ Maps to:
 - REQ-PCI-10: "Track and monitor all access to network resources and cardholder data" → P
 - REQ-SOX-404: "Log changes to financial systems" → S (partial - need additional controls for SOX)
 - REQ-HIPAA-164.312(b): "Implement hardware, software, and procedural mechanisms that record and examine activity" → P
-
 
 Rationale: Single logging implementation (centralized SIEM) satisfies multiple regulatory logging requirements. Same logs, same evidence, multiple regulatory contexts.
 ```
@@ -664,20 +631,17 @@ ELSE:
 - **Risk**: High - complete non-compliance
 - **Action Needed**: Implement new control(s)
 
-
 **Partial Gap**: Requirement has Secondary or Supporting mappings but NO Primary mapping
 
 - **Meaning**: Requirement is partially addressed but not fully satisfied
 - **Risk**: Medium - partial compliance but insufficient for audit
 - **Action Needed**: Enhance existing controls or add additional controls
 
-
 **Implementation Gap**: Requirement has Primary mapping but control not yet implemented
 
 - **Meaning**: Conceptual mapping exists, but control is "planned" or "in progress" in SoA
 - **Risk**: Medium - know what to do, but haven't done it yet
 - **Action Needed**: Complete control implementation
-
 
 **Example Gap Analysis**:
 ```
@@ -689,14 +653,12 @@ REQ-GDPR-35: "Conduct Data Protection Impact Assessments (DPIA) for high-risk pr
 - Gap Type: Complete Gap
 - Risk: High - GDPR mandates DPIAs, we have no process
 
-
 REQ-PCI-11.3: "Implement penetration testing at least annually"
 
 - Mappings: A.8.8 Vulnerability Management (S), A.8.29 Security Testing (S)
 - Gap Type: Partial Gap
 - Risk: Medium - have vulnerability scanning (A.8.8) and some testing (A.8.29), but no formal annual penetration test
 - Action: Enhance A.8.29 to explicitly include annual penetration testing
-
 
 REQ-SOX-404: "Automated logging of all financial system changes"
 
@@ -776,7 +738,6 @@ Not all gaps are equally urgent. Use this framework to prioritize remediation:
 - **Tier 2 Conditional**: High priority IF condition applies
 - **Tier 3 Informational**: Lower priority (best practice)
 
-
 **Factor 2: Legal Consequence Severity**
 
 - **Criminal Liability / Severe Fines**: Highest priority
@@ -784,7 +745,6 @@ Not all gaps are equally urgent. Use this framework to prioritize remediation:
 - **Civil Penalties / Moderate Fines**: High priority
 - **Reputational Damage**: Medium-High priority
 - **Minor Penalties / Warnings**: Lower priority
-
 
 **Factor 3: Compliance Deadline**
 
@@ -794,7 +754,6 @@ Not all gaps are equally urgent. Use this framework to prioritize remediation:
 - **Medium-term** (90 days - 1 year): MEDIUM - planned remediation
 - **Long-term** (>1 year): LOWER - strategic planning
 
-
 **Factor 4: Implementation Complexity**
 
 - **Quick Wins** (low complexity, high impact): Prioritize for fast closure
@@ -802,14 +761,12 @@ Not all gaps are equally urgent. Use this framework to prioritize remediation:
 - **Simple, Low-Impact**: Batch with similar gaps
 - **Complex, Low-Impact**: Defer or accept risk
 
-
 **Factor 5: Business Impact**
 
 - **Revenue-Critical**: Highest priority (blocks business if non-compliant)
 - **Customer-Facing**: High priority (SLA, customer trust)
 - **Internal Operations**: Medium priority
 - **Non-Critical**: Lower priority
-
 
 **Prioritization Decision Matrix**:
 
@@ -839,20 +796,17 @@ Not all gaps are equally urgent. Use this framework to prioritize remediation:
 - Validate consequence severity assessment
 - Confirm whether gap is true non-compliance or acceptable alternative approach
 
-
 **Control Owners**:
 
 - For Partial Gaps: Can existing control be enhanced to close gap?
 - Confirm whether control CANNOT satisfy requirement (vs. not currently configured to satisfy)
 - Estimate effort/cost to enhance existing control vs. implement new control
 
-
 **Executive Management** (for CRITICAL/HIGH gaps):
 
 - Communicate gap existence and risk
 - Obtain buy-in for remediation resources (budget, staff, timeline)
 - If risk acceptance considered, obtain formal approval
-
 
 **Example Stakeholder Consultation**:
 ```
@@ -946,7 +900,6 @@ For each identified gap, develop remediation plan.
   - SHOULD NOT accept risk for High/Critical priority
   - MUST revisit if regulation changes or enforcement increases
 
-
 ### Develop Remediation Plan
 
 **For each gap** (especially CRITICAL and HIGH priority):
@@ -965,7 +918,6 @@ For each identified gap, develop remediation plan.
 - **Priority**: Critical / High / Medium / Low
 - **Risk**: [Brief risk description]
 
-
 ## Remediation Approach
 **Chosen Approach**: [New Control / Enhance Control / Combination / Compensating / Accept Risk]
 
@@ -980,7 +932,6 @@ For each identified gap, develop remediation plan.
 - What will be implemented (technical, procedural, organizational)
 - What is explicitly OUT of scope
 
-
 **Activities**:
 1. [Activity 1] - [Responsible party] - [Timeline]
 2. [Activity 2] - [Responsible party] - [Timeline]
@@ -991,7 +942,6 @@ For each identified gap, develop remediation plan.
 - [Dependency 1 - what is needed before this can proceed]
 - [Dependency 2]
 
-
 **Resources Required**:
 
 - Budget: [€X for software, consulting, etc.]
@@ -999,14 +949,12 @@ For each identified gap, develop remediation plan.
 - Technology: [Infrastructure, software licenses, etc.]
 - Vendor: [If external vendor needed]
 
-
 **Timeline**:
 
 - Start Date: [YYYY-MM-DD]
 - Milestone 1: [Description] - [Date]
 - Milestone 2: [Description] - [Date]
 - Completion Date: [YYYY-MM-DD]
-
 
 ## Success Criteria
 How will we know remediation is complete?
@@ -1018,20 +966,17 @@ How will we know remediation is complete?
 - [ ] Control Mapping Matrix updated
 - [ ] Gap Register marked "Closed"
 
-
 ## Validation
 
 - **Control Testing**: [How control will be tested]
 - **Evidence Collection**: [What evidence will demonstrate control effectiveness]
 - **Approval**: [Who must approve completion]
 
-
 ## Post-Implementation
 
 - **Maintenance**: [Ongoing activities to maintain control]
 - **Review Frequency**: [How often control reviewed]
 - **Metrics**: [How control effectiveness measured]
-
 
 ## Approval
 
@@ -1054,7 +999,6 @@ How will we know remediation is complete?
 - **Priority**: HIGH
 - **Risk**: GDPR enforcement (fines up to 2% revenue), privacy incidents, reputational damage
 
-
 ## Remediation Approach
 **Chosen Approach**: Implement New Organizational Control (CTRL-ORG-005: DPIA Process)
 
@@ -1073,7 +1017,6 @@ How will we know remediation is complete?
 - Conduct DPIAs for existing high-risk processing (backlog: 3 identified)
 - OUT OF SCOPE: Transfer Impact Assessments (different requirement), algorithm audits (separate initiative)
 
-
 **Activities**:
 1. Research and Benchmarking (Week 1-2)
 
@@ -1082,7 +1025,6 @@ How will we know remediation is complete?
    - Identify DPIA triggers specific to [Organization]
    - Responsible: Privacy Officer
    
-
 2. Develop DPIA Procedure (Week 3-4)
 
    - Draft DPIA procedure document (when required, who performs, escalation)
@@ -1090,7 +1032,6 @@ How will we know remediation is complete?
    - Create DPIA template/assessment form
    - Responsible: Privacy Officer, with Legal Counsel review
    
-
 3. Stakeholder Review & Approval (Week 5)
 
    - Legal Counsel review for legal sufficiency
@@ -1098,7 +1039,6 @@ How will we know remediation is complete?
    - Executive approval of DPIA procedure
    - Responsible: Privacy Officer (coordination)
    
-
 4. Training (Week 6)
 
    - Train privacy team on DPIA execution
@@ -1106,7 +1046,6 @@ How will we know remediation is complete?
    - Integrate DPIA into product launch checklist
    - Responsible: Privacy Officer (deliver training)
    
-
 5. Backlog DPIAs (Week 7-10)
 
    - Conduct DPIA for Existing Processing #1 (Customer Analytics Platform)
@@ -1115,7 +1054,6 @@ How will we know remediation is complete?
    - Document findings, mitigations, approvals
    - Responsible: Privacy Officer (lead), Data Protection Officer (approve)
    
-
 6. Evidence Collection (Week 11)
 
    - Collect evidence: DPIA procedure document, completed DPIAs, training records
@@ -1123,7 +1061,6 @@ How will we know remediation is complete?
    - Link to REQ-GDPR-35
    - Responsible: Compliance Officer
    
-
 7. Control Mapping Update (Week 11)
 
    - Add CTRL-ORG-005 to Control Mapping Matrix as new control
@@ -1131,13 +1068,11 @@ How will we know remediation is complete?
    - Update Gap Register: GAP-2025-001 → Closed
    - Responsible: ISMS Manager
 
-
 **Dependencies**:
 
 - Legal Counsel availability for template review (confirmed: available Week 3-4)
 - Executive approval of DPIA procedure (scheduled: Week 5)
 - Product team availability for training (confirmed: Week 6)
-
 
 **Resources Required**:
 
@@ -1146,7 +1081,6 @@ How will we know remediation is complete?
 - Technology: None (document-based process initially; may automate later)
 - Vendor: Privacy consultant (€5K, 2-day engagement for template review and training support)
 
-
 **Timeline**:
 
 - Start Date: 2025-01-15
@@ -1154,7 +1088,6 @@ How will we know remediation is complete?
 - Milestone 2: Training complete - 2025-02-28
 - Milestone 3: All backlog DPIAs complete - 2025-03-31
 - Completion Date: 2025-03-31 (11 weeks)
-
 
 ## Success Criteria
 How will we know remediation is complete?
@@ -1168,7 +1101,6 @@ How will we know remediation is complete?
 - [x] Control Mapping Matrix updated: CTRL-ORG-005 added, REQ-GDPR-35 mapped Primary
 - [x] Gap Register updated: GAP-2025-001 closed
 
-
 ## Validation
 
 - **Control Testing**: Simulate DPIA for hypothetical new processing activity, verify DPIA procedure is followed correctly
@@ -1181,7 +1113,6 @@ How will we know remediation is complete?
   - Product launch checklist (updated with DPIA requirement)
 - **Approval**: DPO approves each completed DPIA, ISMS Manager approves control implementation
 
-
 ## Post-Implementation
 
 - **Maintenance**: 
@@ -1193,7 +1124,6 @@ How will we know remediation is complete?
   - Number of DPIAs conducted per year
   - % of high-risk processing activities with completed DPIA
   - Time from DPIA initiation to completion (target: <30 days)
-
 
 ## Approval
 
@@ -1221,7 +1151,6 @@ How will we know remediation is complete?
    - Mapped By: [Name]
    - Approved By: [To be filled after approval]
 
-
 **Quality Checks**:
 
 - [ ] All requirements from Requirements Register included
@@ -1229,7 +1158,6 @@ How will we know remediation is complete?
 - [ ] Gaps identified and documented
 - [ ] Mapping rationale documented for complex cases
 - [ ] Matrix formatted professionally (freeze panes, colors, etc.)
-
 
 ### Finalize Gap Register
 
@@ -1248,7 +1176,6 @@ How will we know remediation is complete?
 - [ ] Remediation approaches defined
 - [ ] Responsible parties assigned
 - [ ] Target dates realistic and approved
-
 
 ### Prepare Approval Package
 
@@ -1270,7 +1197,6 @@ How will we know remediation is complete?
    - Recommendations (priority remediations)
    - Resource requirements (budget, staff, timeline)
 
-
 **Example Executive Summary**:
 ```markdown
 # Control Mapping Executive Summary
@@ -1286,7 +1212,6 @@ Completed control mapping for 42 requirements extracted from GDPR Articles 5, 24
 - 32 of 42 requirements (76%) have Primary control mappings
 - Strong technical controls (encryption, access control, logging)
 - Solid organizational governance (policies, procedures, roles)
-
 
 **Gaps Identified**: 10 gaps requiring remediation
 
@@ -1305,7 +1230,6 @@ Completed control mapping for 42 requirements extracted from GDPR Articles 5, 24
 - **Implementation Gaps** (2):
   - Privacy by Design not fully operationalized (REQ-GDPR-25)
   - Data minimization policy exists but not enforced (REQ-GDPR-05)
-
 
 ## Priority Remediation
 
@@ -1330,7 +1254,6 @@ Completed control mapping for 42 requirements extracted from GDPR Articles 5, 24
 - **Budget**: €345K total (€180K for CRITICAL+HIGH, €102K for MEDIUM, €63K contingency)
 - **Staff**: Privacy Officer 1.0 FTE (new hire - DPO), Compliance Officer 0.3 FTE, Legal 0.2 FTE
 - **Timeline**: Q1 2025 (CRITICAL) → Q2-Q3 2025 (HIGH+MEDIUM) → Q4 2025 (validation and audit prep)
-
 
 ## Recommendations
 1. **Immediate**: Approve CRITICAL gap remediation budgets and authorize DPO hire
@@ -1363,7 +1286,6 @@ Date: 2025-01-15
 - [ ] Remediation plans realistic and resourced
 - [ ] Priorities aligned with regulatory risk
 - [ ] Budget approved for CRITICAL and HIGH priority gaps
-
 
 **Timeline**: Allow 1-2 weeks for approval routing
 
@@ -1423,13 +1345,11 @@ Regulatory compliance CRITICAL. Implementation status: Implemented. Evidence: En
 - **Legal Counsel**: Share for awareness of compliance status
 - **Internal Audit**: Provide mapping for audit planning
 
-
 **Communication Modes**:
 
 - **Email Summary**: Brief stakeholder update with link to Control Mapping Matrix
 - **Meeting**: For CRITICAL gaps or significant findings, schedule stakeholder meeting
 - **Dashboard**: Update Compliance Dashboard (Workbook 6) with new mapping data
-
 
 **Example Email**:
 ```
@@ -1445,7 +1365,6 @@ We have completed the ISO 27001 control mapping for GDPR requirements. Key findi
 - 76% of requirements have primary control mappings
 - Strong technical and organizational controls in place
 
-
 ⚠️ GAPS IDENTIFIED:
 
 - 10 gaps requiring remediation (5 Complete, 3 Partial, 2 Implementation)
@@ -1460,13 +1379,11 @@ We have completed the ISO 27001 control mapping for GDPR requirements. Key findi
 - Gap register: [Link to Gap Summary]
 - Executive summary: [Attachment]
 
-
 🎯 NEXT STEPS:
 
 - Control Owners: Review new mappings for your controls (details in mapping matrix)
 - Compliance Team: Begin CRITICAL gap remediation planning
 - All: Please review and provide feedback by [Date]
-
 
 Meeting scheduled: [Date/Time] to discuss remediation prioritization.
 
@@ -1490,7 +1407,6 @@ Meeting scheduled: [Date/Time] to discuss remediation prioritization.
 - Cell values: P (Primary), S (Secondary), Su (Supporting), or blank
 - Automated gap detection via formulas
 
-
 ## Gap Register Template
 
 **Integrated into Workbook 4, Sheet 4: Gap Summary**
@@ -1502,7 +1418,6 @@ Meeting scheduled: [Date/Time] to discuss remediation prioritization.
 - Auto-populated from Control Mapping Matrix (requirements with no "P")
 - Manual population of remediation fields (approach, responsible party, dates)
 - Status tracking (Open → In Progress → Closed)
-
 
 ## Mapping Rationale Document (Optional)
 
@@ -1534,18 +1449,15 @@ Meeting scheduled: [Date/Time] to discuss remediation prioritization.
 - [Control ID]: [Rationale]
 - [Control ID]: [Rationale]
 
-
 **Supporting Mappings** (if any):
 
 - [Control ID]: [Rationale]
-
 
 ## Implementation Status
 
 - Control Status: [Implemented / Planned / In Progress]
 - Evidence Available: [Yes / No / Partial]
 - Gap Assessment: [No Gap / Partial Gap / Implementation Gap]
-
 
 ## Stakeholder Approvals
 
@@ -1573,14 +1485,12 @@ See Section 2.6.2 for complete template
 - [ ] All 93 ISO 27001 Annex A controls included as columns
 - [ ] No requirements accidentally omitted
 
-
 **Accuracy**:
 
 - [ ] Mapping types (P/S/Su) used correctly per definitions
 - [ ] Similar requirements mapped consistently (pattern consistency)
 - [ ] Complex requirements with multiple Primary mappings have rationale documented
 - [ ] No obvious mis-mappings (control clearly doesn't address requirement)
-
 
 **Stakeholder Validation**:
 
@@ -1589,7 +1499,6 @@ See Section 2.6.2 for complete template
 - [ ] Legal Counsel reviewed CRITICAL/HIGH priority gaps
 - [ ] Mapping rationale documented for auditor scrutiny
 
-
 **Gap Identification**:
 
 - [ ] All requirements with no Primary mapping flagged as gap
@@ -1597,14 +1506,12 @@ See Section 2.6.2 for complete template
 - [ ] Gap priority follows framework (Section 2.5.1)
 - [ ] Gaps entered in Gap Register
 
-
 **Documentation**:
 
 - [ ] Mapping Matrix professionally formatted (headers, colors, freeze panes)
 - [ ] Gap Register complete (all fields populated)
 - [ ] Executive Summary prepared
 - [ ] Approval signatures obtained
-
 
 ## Common Mapping Errors to Avoid
 
@@ -1614,13 +1521,11 @@ See Section 2.6.2 for complete template
 - **Problem**: Dilutes responsibility, confuses auditors, creates false confidence
 - **Fix**: Be strict with "Primary" designation - only controls that DIRECTLY satisfy
 
-
 **Error 2: Under-Mapping** (being too conservative, marking real Primary as Secondary)
 
 - **Symptom**: Requirement clearly satisfied by control, but marked "S" instead of "P"
 - **Problem**: Creates artificial gaps, wastes remediation resources
 - **Fix**: If control substantially satisfies requirement, mark "P" confidently
-
 
 **Error 3: Ignoring Implementation Status**
 
@@ -1628,13 +1533,11 @@ See Section 2.6.2 for complete template
 - **Problem**: Mapping is theoretical, not actual - creates false compliance claims
 - **Fix**: Only map to implemented or planned controls; if excluded, either reconsider exclusion or accept gap
 
-
 **Error 4: Inconsistent Mapping Across Similar Requirements**
 
 - **Symptom**: Requirement A maps to Control X, but nearly-identical Requirement B doesn't
 - **Problem**: Inconsistency suggests error, raises auditor questions
 - **Fix**: Review similar requirements together, ensure consistent approach
-
 
 **Error 5: Missing Rationale for Complex Mappings**
 
@@ -1642,20 +1545,17 @@ See Section 2.6.2 for complete template
 - **Problem**: Auditor will question why so many controls needed, unclear which to examine
 - **Fix**: Document why multiple controls needed, what each contributes
 
-
 **Error 6: Gaps Not Prioritized**
 
 - **Symptom**: All gaps marked "High" priority
 - **Problem**: No clear remediation sequence, resource allocation unclear
 - **Fix**: Use prioritization framework rigorously (Section 2.5.1)
 
-
 **Error 7: Gaps Without Remediation Plans**
 
 - **Symptom**: Gap Register shows gaps but no remediation approach or target date
 - **Problem**: Gaps will never close, compliance will not improve
 - **Fix**: Every gap needs plan, owner, date - no exceptions for CRITICAL/HIGH
-
 
 ## Validation Methods
 
@@ -1691,19 +1591,16 @@ See Section 2.6.2 for complete template
 - Requirements categorized and approved
 - Requirements prioritized
 
-
 **From IMP-5.31.3 (Applicability Assessment)**:
 
 - Regulatory Inventory (which regulations apply)
 - Tier categorization (Mandatory, Conditional, Informational)
-
 
 **From ISMS Implementation**:
 
 - Statement of Applicability (which controls implemented)
 - Control descriptions and implementation details
 - Control Owner assignments
-
 
 ## Outputs (Feed into Other Processes)
 
@@ -1713,12 +1610,10 @@ See Section 2.6.2 for complete template
 - For each Primary mapping, evidence must demonstrate control satisfies requirement
 - Gap remediation creates new evidence collection needs
 
-
 **To Control Implementation**:
 
 - Gap remediation drives new control implementations or enhancements
 - Remediation plans feed into ISMS improvement projects
-
 
 **To Risk Management**:
 
@@ -1726,20 +1621,17 @@ See Section 2.6.2 for complete template
 - Gap priority informs risk treatment decisions
 - Risk acceptance for Low priority gaps
 
-
 **To Compliance Dashboard (Assessment Workbook 6)**:
 
 - Mapping statistics (% requirements with Primary mappings)
 - Gap counts and trends
 - Remediation progress tracking
 
-
 **To Audit Preparation**:
 
 - Mapping matrix is key audit artifact
 - Pre-identifies what auditors will examine (Primary mappings)
 - Gap register shows areas needing improvement before audit
-
 
 ---
 
@@ -1772,7 +1664,6 @@ See Section 2.6.2 for complete template
 - % Requirements with any mappings (target: 100%)
 - Average number of Primary mappings per requirement (target: 1-2)
 
-
 **Gap Metrics**:
 
 - Total gaps (trend: decreasing over time)
@@ -1780,20 +1671,17 @@ See Section 2.6.2 for complete template
 - Average gap age (time from identification to closure)
 - Gap closure rate (# gaps closed per quarter)
 
-
 **Remediation Progress**:
 
 - % Gaps with remediation plans (target: 100% for CRITICAL/HIGH)
 - % Gaps on track (target date not passed)
 - % Gaps overdue (target: <10%)
 
-
 **Control Utilization**:
 
 - Most-mapped controls (which controls satisfy most requirements)
 - Least-mapped controls (which controls rarely used - candidate for exclusion?)
 - Controls with no mappings (definitely candidates for exclusion)
-
 
 ## Lessons Learned
 
@@ -1813,20 +1701,17 @@ See Section 2.6.2 for complete template
 - Using Control Reference sheet during mapping saved time (quick control lookup)
 - Peer review caught 3 mapping errors before finalization
 
-
 ## Challenges
 
 - GDPR Article 6 (lawful basis) difficult to map to ISO controls - legal concept, not technical
 - Multiple requirements needing same control combination (A.5.16+A.5.17+A.5.18) - repetitive
 - Differentiating Primary vs Secondary for A.5.24-A.5.28 (incident management) - all seemed important
 
-
 ## Process Improvements for Next Mapping
 
 - Create "mapping decision tree" for common requirement patterns (access control, encryption, etc.)
 - Pre-identify control combinations that frequently appear together
 - Develop clearer Primary vs Secondary criteria for closely-related controls
-
 
 ## Tool Enhancements
 
@@ -1864,18 +1749,15 @@ See Section 2.6.2 for complete template
 - Specific mandate: Yes - explicitly requires encryption
 - Category: Technical
 
-
 **Candidate Controls**:
 
 - A.8.24 Use of Cryptography ← Primary candidate
-
 
 **Mapping Decision**:
 
 - **A.8.24 → Primary (P)**
 - Rationale: A.8.24 directly implements encryption. If A.8.24 includes personal data at rest encryption, requirement fully satisfied.
 - Check: Review A.8.24 implementation - does it cover personal data? If yes → P. If no → gap.
-
 
 **Outcome**: Simple, clear mapping. Single Primary control.
 
@@ -1891,7 +1773,6 @@ See Section 2.6.2 for complete template
 - Specific mandates: MFA, least privilege, quarterly reviews
 - Category: Technical + Organizational
 
-
 **Candidate Controls**:
 
 - A.5.15 Access Control (policy)
@@ -1899,7 +1780,6 @@ See Section 2.6.2 for complete template
 - A.5.17 Authentication Information (MFA)
 - A.5.18 Access Rights (authorization, reviews)
 - A.8.3 Information Access Restriction (technical enforcement)
-
 
 **Mapping Decision**:
 
@@ -1909,7 +1789,6 @@ See Section 2.6.2 for complete template
 - **A.8.3 → Primary (P)** - Technical enforcement
 - **A.5.15 → Supporting (Su)** - Policy foundation
 - Rationale: Requirement is comprehensive, needs multiple controls working together. Each Primary control addresses one component. All are essential (cannot satisfy without any one).
-
 
 **Outcome**: Multiple Primary mappings, documented rationale for combination.
 
@@ -1925,18 +1804,15 @@ See Section 2.6.2 for complete template
 - Specific mandate: DPO role with specific characteristics
 - Category: Organizational
 
-
 **Candidate Controls**:
 
 - A.5.2 Information Security Roles and Responsibilities ← Closest match
-
 
 **Mapping Decision**:
 
 - **A.5.2 → Secondary (S)** - A.5.2 defines roles but doesn't specifically mandate DPO
 - **Gap: Complete** - ISO 27001 doesn't have "DPO" control
 - Remediation: Create organization-specific control "CTRL-ORG-004: Data Protection Officer"
-
 
 **Outcome**: Partial mapping to A.5.2, but gap identified. New organizational control needed.
 
@@ -1952,7 +1828,6 @@ See Section 2.6.2 for complete template
 - Specific mandate: 72-hour timeline, specific recipient
 - Category: Operational + Reporting
 
-
 **Candidate Controls**:
 
 - A.5.24 Information Security Incident Management Planning
@@ -1960,14 +1835,12 @@ See Section 2.6.2 for complete template
 - A.5.26 Response to Information Security Incidents
 - A.5.6 Contact with Authorities
 
-
 **Mapping Decision**:
 
 - **A.5.26 → Primary (P)** - Incident response includes breach notification
 - **A.5.6 → Supporting (Su)** - Establishes authority contact framework
 - **A.5.24, A.5.25 → Supporting (Su)** - Incident management foundation
 - Check: Does A.5.26 implementation include 72-hour breach notification? If yes → P. If no → enhancement needed (Partial Gap).
-
 
 **Outcome**: If A.5.26 fully implements breach notification, Primary mapping. If not, enhance A.5.26 to include 72-hour process.
 
@@ -1983,25 +1856,21 @@ See Section 2.6.2 for complete template
 - Specific mandate: Penetration testing (not just vulnerability scanning), annual frequency
 - Category: Operational
 
-
 **Candidate Controls**:
 
 - A.8.8 Management of Technical Vulnerabilities
 - A.8.29 Security Testing in Development and Acceptance
-
 
 **Current Implementation Check**:
 
 - A.8.8: Includes vulnerability scanning (quarterly) but not penetration testing
 - A.8.29: Includes security testing in dev/test environments, not production
 
-
 **Mapping Decision**:
 
 - **A.8.8 → Secondary (S)** - Vulnerability scanning ≠ penetration testing (related but distinct)
 - **A.8.29 → Secondary (S)** - Security testing but not production penetration test
 - **Gap: Partial** - Have related controls but not the specific mandated activity
-
 
 **Remediation**: Enhance A.8.8 or A.8.29 (or both) to include annual external penetration test.
 
@@ -2020,7 +1889,6 @@ See Section 2.6.2 for complete template
 - **Section 7: Physical Controls** (A.7.1 - A.7.14): 14 controls
 - **Section 8: Technological Controls** (A.8.1 - A.8.34): 34 controls
 
-
 **Full list available in**: Assessment Workbook 4, Sheet 2: ISO 27001 Controls Reference
 
 ## Related Policy Documents
@@ -2030,14 +1898,12 @@ See Section 2.6.2 for complete template
 - **ISMS-POL-A.5.31.3**: Requirements Extraction & Control Mapping Framework (mapping definitions)
 - **ISMS-POL-A.5.31.4**: Change Management & Evidence Framework (evidence requirements)
 
-
 ## Related Implementation Guides
 
 - **ISMS-IMP-A.5.31.2**: Regulatory Applicability Assessment Process (determines which regulations apply)
 - **ISMS-IMP-A.5.31.3**: Requirements Extraction Process (creates Requirements Register)
 - **ISMS-IMP-A.5.31.5**: Evidence Management Process (collects evidence for mapped controls)
 - **ISMS-IMP-A.5.31.6**: Compliance Dashboard & Regulatory Monitoring (tracks compliance status)
-
 
 ---
 
@@ -2101,7 +1967,6 @@ Start: Review Requirement X and Candidate Control Y
 - **POL**: Policy
 - **SoA**: Statement of Applicability
 
-
 ---
 
 **Document Control**:
@@ -2110,7 +1975,6 @@ Start: Review Requirement X and Candidate Control Y
 - **Next Review**: [Date] (annual)
 - **Change History**:
   - v1.0 (2025-01-11): Initial release
-
 
 ---
 
@@ -2140,7 +2004,6 @@ END OF DOCUMENT
    - Understand Category (Technical, Organizational, Reporting, Operational)
    - Note Priority (High, Medium, Low)
    - Identify any dependencies between requirements
-
 
 **Output**: Clear understanding of requirements scope and complexity
 
@@ -2177,7 +2040,6 @@ END OF DOCUMENT
    - Which controls are excluded (generally cannot map to these unless reconsidering exclusion)
    - Implementation status of each control
 
-
 **Output**: Understanding of available controls and their implementation status
 
 ### Assemble Stakeholders
@@ -2194,7 +2056,6 @@ END OF DOCUMENT
    - Requirements Register printout or shared screen
    - Control Mapping Matrix (collaborative editing if possible)
    - ISO 27001 standard text (for control descriptions)
-
 
 **Output**: Team ready to conduct mapping exercise
 
@@ -2247,19 +2108,16 @@ Specific Mandate: YES - explicitly requires encryption (not just "appropriate se
 - If requirement is People-related → Focus on Section 6 (People Controls)
 - If requirement is Physical → Focus on Section 7 (Physical Controls)
 
-
 **Approach B: Keyword Search** (for complex requirements)
 
 - Search ISO 27001 control names/descriptions for keywords from requirement
 - Example: Requirement mentions "access control" → Look at A.5.15 through A.5.18
-
 
 **Approach C: Objective-Based** (for outcome-focused requirements)
 
 - If requirement mandates confidentiality → Consider A.5.10, A.5.13, A.5.14, A.8.24
 - If requirement mandates logging → Consider A.8.15, A.8.16
 - If requirement mandates testing → Consider A.8.8, A.8.29
-
 
 **Typical Candidates by Requirement Type**:
 
@@ -2295,7 +2153,6 @@ Candidate Controls:
 - A.5.28 (Collection of Evidence)
 - Possibly A.5.6 (Contact with Authorities) - for notification to regulators
 
-
 → 6 candidates identified for further analysis
 ```
 
@@ -2314,7 +2171,6 @@ For each candidate control, assess HOW WELL it satisfies the requirement.
   - Requirement would be considered "met" if this control is implemented
 - **Test**: "If auditor asked how we satisfy Requirement X, would we primarily point to this control?"
 
-
 **Secondary Mapping (S)**: Control partially satisfies requirement
 
 - **Criteria**:
@@ -2322,7 +2178,6 @@ For each candidate control, assess HOW WELL it satisfies the requirement.
   - Control contributes to satisfaction but additional controls needed
   - Control is relevant but not sufficient alone
 - **Test**: "Does this control help satisfy the requirement but is incomplete on its own?"
-
 
 **Supporting Mapping (Su)**: Control indirectly supports requirement
 
@@ -2332,7 +2187,6 @@ For each candidate control, assess HOW WELL it satisfies the requirement.
   - Requirement could be met without this control, but this control makes it easier/better
 - **Test**: "Does this control make satisfaction easier but isn't directly responsible for satisfaction?"
 
-
 **No Mapping (Blank)**: Control not applicable to requirement
 
 - **Criteria**:
@@ -2340,7 +2194,6 @@ For each candidate control, assess HOW WELL it satisfies the requirement.
   - Control addresses completely different security objective
   - Mapping would be a stretch or misleading
 - **Test**: "Would including this control in a compliance discussion confuse rather than clarify?"
-
 
 **Assessment Questions**:
 
@@ -2352,7 +2205,6 @@ For each candidate control → requirement pair, ask:
    - If A.8.24 is scoped to encrypt customer data → Good fit
    - If A.8.24 only encrypts internal secrets, not customer data → Poor fit
 
-
 2. **Completeness**: Does control fully address requirement, or only part?
 
    - Example: Requirement = "Implement access controls including authentication, authorization, and logging"
@@ -2363,7 +2215,6 @@ For each candidate control → requirement pair, ask:
    - A.8.15 Logging → Secondary (partial - logging only)
    - Combination of A.5.16 + A.5.17 + A.5.18 + A.8.15 → Primary (all together)
 
-
 3. **Directness**: Is control directly responsible, or does it support other controls?
 
    - Example: Requirement = "Conduct annual penetration testing"
@@ -2371,12 +2222,10 @@ For each candidate control → requirement pair, ask:
    - A.8.29 Security Testing → Primary (testing controls)
    - A.5.1 Policies → Supporting (policies mandate testing but don't implement it)
 
-
 4. **Implementation Status**: Is control actually implemented?
 
    - If control is excluded from SoA → Generally cannot map (unless reconsidering exclusion)
    - If control is planned but not implemented → Note as "Gap" (mapping exists conceptually but implementation gap)
-
 
 **Decision Matrix**:
 
@@ -2403,7 +2252,6 @@ Assessment:
 - Directness: Directly responsible for encryption
 - Implementation Status: Check SoA - if implemented, can map
 
-
 Decision: PRIMARY (P)
 Rationale: A.8.24 directly addresses encryption requirement, and if implemented for personal data, fully satisfies requirement.
 
@@ -2418,7 +2266,6 @@ Assessment:
 - Directness: N/A
 - Implementation Status: N/A
 
-
 Decision: BLANK (No mapping)
 Rationale: Completely different security objective (deletion vs encryption). Including would be misleading.
 
@@ -2432,7 +2279,6 @@ Assessment:
 - Completeness: Might mandate users use encrypted channels, but doesn't implement encryption
 - Directness: Indirect - policy supports, but doesn't implement
 - Implementation Status: Check SoA
-
 
 Decision: SUPPORTING (Su)
 Rationale: Policy may require encrypted transmission, which supports requirement, but actual encryption is implemented by A.8.24.
@@ -2454,13 +2300,11 @@ Rationale: Policy may require encrypted transmission, which supports requirement
    - **Su** = Supporting
    - **Blank** = No mapping
 
-
 **Data Entry**:
 
 - Use dropdown data validation (prevents typos)
 - Consistency is critical (always use "P", not "Primary" or "p")
 - Most cells will be blank (requirements typically map to 1-5 controls)
-
 
 **Example Matrix**:
 ```
@@ -2478,17 +2322,14 @@ Rationale: Policy may require encrypted transmission, which supports requirement
 - Brief note on WHY this control primarily satisfies requirement
 - Document in separate "Mapping Notes" sheet or comments
 
-
 **For Complex Mappings** (multiple Primary, or unusual mappings):
 
 - Detailed rationale explaining how controls work together
 - If requirement needs 3+ Primary controls, explain why each is necessary
 
-
 **For Gaps** (requirements with no Primary):
 
 - Note explicitly that gap exists (will be documented in Step 4)
-
 
 **Example Rationale**:
 ```
@@ -2521,7 +2362,6 @@ Mappings:
 - A.5.18 Access Rights → P (authorization and reviews)
 - A.8.3 Information Access Restriction → P (technical enforcement)
 
-
 Rationale: This requirement mandates a complete access management system. Each control addresses one component:
 
 - A.5.16: Creating, modifying, revoking identities
@@ -2551,7 +2391,6 @@ Maps to:
 - REQ-PCI-10: "Track and monitor all access to network resources and cardholder data" → P
 - REQ-SOX-404: "Log changes to financial systems" → S (partial - need additional controls for SOX)
 - REQ-HIPAA-164.312(b): "Implement hardware, software, and procedural mechanisms that record and examine activity" → P
-
 
 Rationale: Single logging implementation (centralized SIEM) satisfies multiple regulatory logging requirements. Same logs, same evidence, multiple regulatory contexts.
 ```
@@ -2594,20 +2433,17 @@ ELSE:
 - **Risk**: High - complete non-compliance
 - **Action Needed**: Implement new control(s)
 
-
 **Partial Gap**: Requirement has Secondary or Supporting mappings but NO Primary mapping
 
 - **Meaning**: Requirement is partially addressed but not fully satisfied
 - **Risk**: Medium - partial compliance but insufficient for audit
 - **Action Needed**: Enhance existing controls or add additional controls
 
-
 **Implementation Gap**: Requirement has Primary mapping but control not yet implemented
 
 - **Meaning**: Conceptual mapping exists, but control is "planned" or "in progress" in SoA
 - **Risk**: Medium - know what to do, but haven't done it yet
 - **Action Needed**: Complete control implementation
-
 
 **Example Gap Analysis**:
 ```
@@ -2619,14 +2455,12 @@ REQ-GDPR-35: "Conduct Data Protection Impact Assessments (DPIA) for high-risk pr
 - Gap Type: Complete Gap
 - Risk: High - GDPR mandates DPIAs, we have no process
 
-
 REQ-PCI-11.3: "Implement penetration testing at least annually"
 
 - Mappings: A.8.8 Vulnerability Management (S), A.8.29 Security Testing (S)
 - Gap Type: Partial Gap
 - Risk: Medium - have vulnerability scanning (A.8.8) and some testing (A.8.29), but no formal annual penetration test
 - Action: Enhance A.8.29 to explicitly include annual penetration testing
-
 
 REQ-SOX-404: "Automated logging of all financial system changes"
 
@@ -2706,7 +2540,6 @@ Not all gaps are equally urgent. Use this framework to prioritize remediation:
 - **Tier 2 Conditional**: High priority IF condition applies
 - **Tier 3 Informational**: Lower priority (best practice)
 
-
 **Factor 2: Legal Consequence Severity**
 
 - **Criminal Liability / Severe Fines**: Highest priority
@@ -2714,7 +2547,6 @@ Not all gaps are equally urgent. Use this framework to prioritize remediation:
 - **Civil Penalties / Moderate Fines**: High priority
 - **Reputational Damage**: Medium-High priority
 - **Minor Penalties / Warnings**: Lower priority
-
 
 **Factor 3: Compliance Deadline**
 
@@ -2724,7 +2556,6 @@ Not all gaps are equally urgent. Use this framework to prioritize remediation:
 - **Medium-term** (90 days - 1 year): MEDIUM - planned remediation
 - **Long-term** (>1 year): LOWER - strategic planning
 
-
 **Factor 4: Implementation Complexity**
 
 - **Quick Wins** (low complexity, high impact): Prioritize for fast closure
@@ -2732,14 +2563,12 @@ Not all gaps are equally urgent. Use this framework to prioritize remediation:
 - **Simple, Low-Impact**: Batch with similar gaps
 - **Complex, Low-Impact**: Defer or accept risk
 
-
 **Factor 5: Business Impact**
 
 - **Revenue-Critical**: Highest priority (blocks business if non-compliant)
 - **Customer-Facing**: High priority (SLA, customer trust)
 - **Internal Operations**: Medium priority
 - **Non-Critical**: Lower priority
-
 
 **Prioritization Decision Matrix**:
 
@@ -2769,20 +2598,17 @@ Not all gaps are equally urgent. Use this framework to prioritize remediation:
 - Validate consequence severity assessment
 - Confirm whether gap is true non-compliance or acceptable alternative approach
 
-
 **Control Owners**:
 
 - For Partial Gaps: Can existing control be enhanced to close gap?
 - Confirm whether control CANNOT satisfy requirement (vs. not currently configured to satisfy)
 - Estimate effort/cost to enhance existing control vs. implement new control
 
-
 **Executive Management** (for CRITICAL/HIGH gaps):
 
 - Communicate gap existence and risk
 - Obtain buy-in for remediation resources (budget, staff, timeline)
 - If risk acceptance considered, obtain formal approval
-
 
 **Example Stakeholder Consultation**:
 ```
@@ -2876,7 +2702,6 @@ For each identified gap, develop remediation plan.
   - SHOULD NOT accept risk for High/Critical priority
   - MUST revisit if regulation changes or enforcement increases
 
-
 ### Develop Remediation Plan
 
 **For each gap** (especially CRITICAL and HIGH priority):
@@ -2895,7 +2720,6 @@ For each identified gap, develop remediation plan.
 - **Priority**: Critical / High / Medium / Low
 - **Risk**: [Brief risk description]
 
-
 ## Remediation Approach
 **Chosen Approach**: [New Control / Enhance Control / Combination / Compensating / Accept Risk]
 
@@ -2910,7 +2734,6 @@ For each identified gap, develop remediation plan.
 - What will be implemented (technical, procedural, organizational)
 - What is explicitly OUT of scope
 
-
 **Activities**:
 1. [Activity 1] - [Responsible party] - [Timeline]
 2. [Activity 2] - [Responsible party] - [Timeline]
@@ -2921,7 +2744,6 @@ For each identified gap, develop remediation plan.
 - [Dependency 1 - what is needed before this can proceed]
 - [Dependency 2]
 
-
 **Resources Required**:
 
 - Budget: [€X for software, consulting, etc.]
@@ -2929,14 +2751,12 @@ For each identified gap, develop remediation plan.
 - Technology: [Infrastructure, software licenses, etc.]
 - Vendor: [If external vendor needed]
 
-
 **Timeline**:
 
 - Start Date: [YYYY-MM-DD]
 - Milestone 1: [Description] - [Date]
 - Milestone 2: [Description] - [Date]
 - Completion Date: [YYYY-MM-DD]
-
 
 ## Success Criteria
 How will we know remediation is complete?
@@ -2948,20 +2768,17 @@ How will we know remediation is complete?
 - [ ] Control Mapping Matrix updated
 - [ ] Gap Register marked "Closed"
 
-
 ## Validation
 
 - **Control Testing**: [How control will be tested]
 - **Evidence Collection**: [What evidence will demonstrate control effectiveness]
 - **Approval**: [Who must approve completion]
 
-
 ## Post-Implementation
 
 - **Maintenance**: [Ongoing activities to maintain control]
 - **Review Frequency**: [How often control reviewed]
 - **Metrics**: [How control effectiveness measured]
-
 
 ## Approval
 
@@ -2984,7 +2801,6 @@ How will we know remediation is complete?
 - **Priority**: HIGH
 - **Risk**: GDPR enforcement (fines up to 2% revenue), privacy incidents, reputational damage
 
-
 ## Remediation Approach
 **Chosen Approach**: Implement New Organizational Control (CTRL-ORG-005: DPIA Process)
 
@@ -3003,7 +2819,6 @@ How will we know remediation is complete?
 - Conduct DPIAs for existing high-risk processing (backlog: 3 identified)
 - OUT OF SCOPE: Transfer Impact Assessments (different requirement), algorithm audits (separate initiative)
 
-
 **Activities**:
 1. Research and Benchmarking (Week 1-2)
 
@@ -3012,7 +2827,6 @@ How will we know remediation is complete?
    - Identify DPIA triggers specific to [Organization]
    - Responsible: Privacy Officer
    
-
 2. Develop DPIA Procedure (Week 3-4)
 
    - Draft DPIA procedure document (when required, who performs, escalation)
@@ -3020,7 +2834,6 @@ How will we know remediation is complete?
    - Create DPIA template/assessment form
    - Responsible: Privacy Officer, with Legal Counsel review
    
-
 3. Stakeholder Review & Approval (Week 5)
 
    - Legal Counsel review for legal sufficiency
@@ -3028,7 +2841,6 @@ How will we know remediation is complete?
    - Executive approval of DPIA procedure
    - Responsible: Privacy Officer (coordination)
    
-
 4. Training (Week 6)
 
    - Train privacy team on DPIA execution
@@ -3036,7 +2848,6 @@ How will we know remediation is complete?
    - Integrate DPIA into product launch checklist
    - Responsible: Privacy Officer (deliver training)
    
-
 5. Backlog DPIAs (Week 7-10)
 
    - Conduct DPIA for Existing Processing #1 (Customer Analytics Platform)
@@ -3045,7 +2856,6 @@ How will we know remediation is complete?
    - Document findings, mitigations, approvals
    - Responsible: Privacy Officer (lead), Data Protection Officer (approve)
    
-
 6. Evidence Collection (Week 11)
 
    - Collect evidence: DPIA procedure document, completed DPIAs, training records
@@ -3053,7 +2863,6 @@ How will we know remediation is complete?
    - Link to REQ-GDPR-35
    - Responsible: Compliance Officer
    
-
 7. Control Mapping Update (Week 11)
 
    - Add CTRL-ORG-005 to Control Mapping Matrix as new control
@@ -3061,13 +2870,11 @@ How will we know remediation is complete?
    - Update Gap Register: GAP-2025-001 → Closed
    - Responsible: ISMS Manager
 
-
 **Dependencies**:
 
 - Legal Counsel availability for template review (confirmed: available Week 3-4)
 - Executive approval of DPIA procedure (scheduled: Week 5)
 - Product team availability for training (confirmed: Week 6)
-
 
 **Resources Required**:
 
@@ -3076,7 +2883,6 @@ How will we know remediation is complete?
 - Technology: None (document-based process initially; may automate later)
 - Vendor: Privacy consultant (€5K, 2-day engagement for template review and training support)
 
-
 **Timeline**:
 
 - Start Date: 2025-01-15
@@ -3084,7 +2890,6 @@ How will we know remediation is complete?
 - Milestone 2: Training complete - 2025-02-28
 - Milestone 3: All backlog DPIAs complete - 2025-03-31
 - Completion Date: 2025-03-31 (11 weeks)
-
 
 ## Success Criteria
 How will we know remediation is complete?
@@ -3098,7 +2903,6 @@ How will we know remediation is complete?
 - [x] Control Mapping Matrix updated: CTRL-ORG-005 added, REQ-GDPR-35 mapped Primary
 - [x] Gap Register updated: GAP-2025-001 closed
 
-
 ## Validation
 
 - **Control Testing**: Simulate DPIA for hypothetical new processing activity, verify DPIA procedure is followed correctly
@@ -3111,7 +2915,6 @@ How will we know remediation is complete?
   - Product launch checklist (updated with DPIA requirement)
 - **Approval**: DPO approves each completed DPIA, ISMS Manager approves control implementation
 
-
 ## Post-Implementation
 
 - **Maintenance**: 
@@ -3123,7 +2926,6 @@ How will we know remediation is complete?
   - Number of DPIAs conducted per year
   - % of high-risk processing activities with completed DPIA
   - Time from DPIA initiation to completion (target: <30 days)
-
 
 ## Approval
 
@@ -3151,7 +2953,6 @@ How will we know remediation is complete?
    - Mapped By: [Name]
    - Approved By: [To be filled after approval]
 
-
 **Quality Checks**:
 
 - [ ] All requirements from Requirements Register included
@@ -3159,7 +2960,6 @@ How will we know remediation is complete?
 - [ ] Gaps identified and documented
 - [ ] Mapping rationale documented for complex cases
 - [ ] Matrix formatted professionally (freeze panes, colors, etc.)
-
 
 ### Finalize Gap Register
 
@@ -3178,7 +2978,6 @@ How will we know remediation is complete?
 - [ ] Remediation approaches defined
 - [ ] Responsible parties assigned
 - [ ] Target dates realistic and approved
-
 
 ### Prepare Approval Package
 
@@ -3200,7 +2999,6 @@ How will we know remediation is complete?
    - Recommendations (priority remediations)
    - Resource requirements (budget, staff, timeline)
 
-
 **Example Executive Summary**:
 ```markdown
 # Control Mapping Executive Summary
@@ -3216,7 +3014,6 @@ Completed control mapping for 42 requirements extracted from GDPR Articles 5, 24
 - 32 of 42 requirements (76%) have Primary control mappings
 - Strong technical controls (encryption, access control, logging)
 - Solid organizational governance (policies, procedures, roles)
-
 
 **Gaps Identified**: 10 gaps requiring remediation
 
@@ -3235,7 +3032,6 @@ Completed control mapping for 42 requirements extracted from GDPR Articles 5, 24
 - **Implementation Gaps** (2):
   - Privacy by Design not fully operationalized (REQ-GDPR-25)
   - Data minimization policy exists but not enforced (REQ-GDPR-05)
-
 
 ## Priority Remediation
 
@@ -3260,7 +3056,6 @@ Completed control mapping for 42 requirements extracted from GDPR Articles 5, 24
 - **Budget**: €345K total (€180K for CRITICAL+HIGH, €102K for MEDIUM, €63K contingency)
 - **Staff**: Privacy Officer 1.0 FTE (new hire - DPO), Compliance Officer 0.3 FTE, Legal 0.2 FTE
 - **Timeline**: Q1 2025 (CRITICAL) → Q2-Q3 2025 (HIGH+MEDIUM) → Q4 2025 (validation and audit prep)
-
 
 ## Recommendations
 1. **Immediate**: Approve CRITICAL gap remediation budgets and authorize DPO hire
@@ -3293,7 +3088,6 @@ Date: 2025-01-15
 - [ ] Remediation plans realistic and resourced
 - [ ] Priorities aligned with regulatory risk
 - [ ] Budget approved for CRITICAL and HIGH priority gaps
-
 
 **Timeline**: Allow 1-2 weeks for approval routing
 
@@ -3353,13 +3147,11 @@ Regulatory compliance CRITICAL. Implementation status: Implemented. Evidence: En
 - **Legal Counsel**: Share for awareness of compliance status
 - **Internal Audit**: Provide mapping for audit planning
 
-
 **Communication Modes**:
 
 - **Email Summary**: Brief stakeholder update with link to Control Mapping Matrix
 - **Meeting**: For CRITICAL gaps or significant findings, schedule stakeholder meeting
 - **Dashboard**: Update Compliance Dashboard (Workbook 6) with new mapping data
-
 
 **Example Email**:
 ```
@@ -3375,7 +3167,6 @@ We have completed the ISO 27001 control mapping for GDPR requirements. Key findi
 - 76% of requirements have primary control mappings
 - Strong technical and organizational controls in place
 
-
 ⚠️ GAPS IDENTIFIED:
 
 - 10 gaps requiring remediation (5 Complete, 3 Partial, 2 Implementation)
@@ -3390,13 +3181,11 @@ We have completed the ISO 27001 control mapping for GDPR requirements. Key findi
 - Gap register: [Link to Gap Summary]
 - Executive summary: [Attachment]
 
-
 🎯 NEXT STEPS:
 
 - Control Owners: Review new mappings for your controls (details in mapping matrix)
 - Compliance Team: Begin CRITICAL gap remediation planning
 - All: Please review and provide feedback by [Date]
-
 
 Meeting scheduled: [Date/Time] to discuss remediation prioritization.
 
@@ -3420,7 +3209,6 @@ Meeting scheduled: [Date/Time] to discuss remediation prioritization.
 - Cell values: P (Primary), S (Secondary), Su (Supporting), or blank
 - Automated gap detection via formulas
 
-
 ## Gap Register Template
 
 **Integrated into Workbook 4, Sheet 4: Gap Summary**
@@ -3432,7 +3220,6 @@ Meeting scheduled: [Date/Time] to discuss remediation prioritization.
 - Auto-populated from Control Mapping Matrix (requirements with no "P")
 - Manual population of remediation fields (approach, responsible party, dates)
 - Status tracking (Open → In Progress → Closed)
-
 
 ## Mapping Rationale Document (Optional)
 
@@ -3464,18 +3251,15 @@ Meeting scheduled: [Date/Time] to discuss remediation prioritization.
 - [Control ID]: [Rationale]
 - [Control ID]: [Rationale]
 
-
 **Supporting Mappings** (if any):
 
 - [Control ID]: [Rationale]
-
 
 ## Implementation Status
 
 - Control Status: [Implemented / Planned / In Progress]
 - Evidence Available: [Yes / No / Partial]
 - Gap Assessment: [No Gap / Partial Gap / Implementation Gap]
-
 
 ## Stakeholder Approvals
 
@@ -3503,14 +3287,12 @@ See Section 2.6.2 for complete template
 - [ ] All 93 ISO 27001 Annex A controls included as columns
 - [ ] No requirements accidentally omitted
 
-
 **Accuracy**:
 
 - [ ] Mapping types (P/S/Su) used correctly per definitions
 - [ ] Similar requirements mapped consistently (pattern consistency)
 - [ ] Complex requirements with multiple Primary mappings have rationale documented
 - [ ] No obvious mis-mappings (control clearly doesn't address requirement)
-
 
 **Stakeholder Validation**:
 
@@ -3519,7 +3301,6 @@ See Section 2.6.2 for complete template
 - [ ] Legal Counsel reviewed CRITICAL/HIGH priority gaps
 - [ ] Mapping rationale documented for auditor scrutiny
 
-
 **Gap Identification**:
 
 - [ ] All requirements with no Primary mapping flagged as gap
@@ -3527,14 +3308,12 @@ See Section 2.6.2 for complete template
 - [ ] Gap priority follows framework (Section 2.5.1)
 - [ ] Gaps entered in Gap Register
 
-
 **Documentation**:
 
 - [ ] Mapping Matrix professionally formatted (headers, colors, freeze panes)
 - [ ] Gap Register complete (all fields populated)
 - [ ] Executive Summary prepared
 - [ ] Approval signatures obtained
-
 
 ## Common Mapping Errors to Avoid
 
@@ -3544,13 +3323,11 @@ See Section 2.6.2 for complete template
 - **Problem**: Dilutes responsibility, confuses auditors, creates false confidence
 - **Fix**: Be strict with "Primary" designation - only controls that DIRECTLY satisfy
 
-
 **Error 2: Under-Mapping** (being too conservative, marking real Primary as Secondary)
 
 - **Symptom**: Requirement clearly satisfied by control, but marked "S" instead of "P"
 - **Problem**: Creates artificial gaps, wastes remediation resources
 - **Fix**: If control substantially satisfies requirement, mark "P" confidently
-
 
 **Error 3: Ignoring Implementation Status**
 
@@ -3558,13 +3335,11 @@ See Section 2.6.2 for complete template
 - **Problem**: Mapping is theoretical, not actual - creates false compliance claims
 - **Fix**: Only map to implemented or planned controls; if excluded, either reconsider exclusion or accept gap
 
-
 **Error 4: Inconsistent Mapping Across Similar Requirements**
 
 - **Symptom**: Requirement A maps to Control X, but nearly-identical Requirement B doesn't
 - **Problem**: Inconsistency suggests error, raises auditor questions
 - **Fix**: Review similar requirements together, ensure consistent approach
-
 
 **Error 5: Missing Rationale for Complex Mappings**
 
@@ -3572,20 +3347,17 @@ See Section 2.6.2 for complete template
 - **Problem**: Auditor will question why so many controls needed, unclear which to examine
 - **Fix**: Document why multiple controls needed, what each contributes
 
-
 **Error 6: Gaps Not Prioritized**
 
 - **Symptom**: All gaps marked "High" priority
 - **Problem**: No clear remediation sequence, resource allocation unclear
 - **Fix**: Use prioritization framework rigorously (Section 2.5.1)
 
-
 **Error 7: Gaps Without Remediation Plans**
 
 - **Symptom**: Gap Register shows gaps but no remediation approach or target date
 - **Problem**: Gaps will never close, compliance will not improve
 - **Fix**: Every gap needs plan, owner, date - no exceptions for CRITICAL/HIGH
-
 
 ## Validation Methods
 
@@ -3621,19 +3393,16 @@ See Section 2.6.2 for complete template
 - Requirements categorized and approved
 - Requirements prioritized
 
-
 **From IMP-S3 (Applicability Assessment)**:
 
 - Regulatory Inventory (which regulations apply)
 - Tier categorization (Mandatory, Conditional, Informational)
-
 
 **From ISMS Implementation**:
 
 - Statement of Applicability (which controls implemented)
 - Control descriptions and implementation details
 - Control Owner assignments
-
 
 ## Outputs (Feed into Other Processes)
 
@@ -3643,12 +3412,10 @@ See Section 2.6.2 for complete template
 - For each Primary mapping, evidence must demonstrate control satisfies requirement
 - Gap remediation creates new evidence collection needs
 
-
 **To Control Implementation**:
 
 - Gap remediation drives new control implementations or enhancements
 - Remediation plans feed into ISMS improvement projects
-
 
 **To Risk Management**:
 
@@ -3656,20 +3423,17 @@ See Section 2.6.2 for complete template
 - Gap priority informs risk treatment decisions
 - Risk acceptance for Low priority gaps
 
-
 **To Compliance Dashboard (Assessment Workbook 6)**:
 
 - Mapping statistics (% requirements with Primary mappings)
 - Gap counts and trends
 - Remediation progress tracking
 
-
 **To Audit Preparation**:
 
 - Mapping matrix is key audit artifact
 - Pre-identifies what auditors will examine (Primary mappings)
 - Gap register shows areas needing improvement before audit
-
 
 ---
 
@@ -3702,7 +3466,6 @@ See Section 2.6.2 for complete template
 - % Requirements with any mappings (target: 100%)
 - Average number of Primary mappings per requirement (target: 1-2)
 
-
 **Gap Metrics**:
 
 - Total gaps (trend: decreasing over time)
@@ -3710,20 +3473,17 @@ See Section 2.6.2 for complete template
 - Average gap age (time from identification to closure)
 - Gap closure rate (# gaps closed per quarter)
 
-
 **Remediation Progress**:
 
 - % Gaps with remediation plans (target: 100% for CRITICAL/HIGH)
 - % Gaps on track (target date not passed)
 - % Gaps overdue (target: <10%)
 
-
 **Control Utilization**:
 
 - Most-mapped controls (which controls satisfy most requirements)
 - Least-mapped controls (which controls rarely used - candidate for exclusion?)
 - Controls with no mappings (definitely candidates for exclusion)
-
 
 ## Lessons Learned
 
@@ -3743,20 +3503,17 @@ See Section 2.6.2 for complete template
 - Using Control Reference sheet during mapping saved time (quick control lookup)
 - Peer review caught 3 mapping errors before finalization
 
-
 ## Challenges
 
 - GDPR Article 6 (lawful basis) difficult to map to ISO controls - legal concept, not technical
 - Multiple requirements needing same control combination (A.5.16+A.5.17+A.5.18) - repetitive
 - Differentiating Primary vs Secondary for A.5.24-A.5.28 (incident management) - all seemed important
 
-
 ## Process Improvements for Next Mapping
 
 - Create "mapping decision tree" for common requirement patterns (access control, encryption, etc.)
 - Pre-identify control combinations that frequently appear together
 - Develop clearer Primary vs Secondary criteria for closely-related controls
-
 
 ## Tool Enhancements
 
@@ -3794,18 +3551,15 @@ See Section 2.6.2 for complete template
 - Specific mandate: Yes - explicitly requires encryption
 - Category: Technical
 
-
 **Candidate Controls**:
 
 - A.8.24 Use of Cryptography ← Primary candidate
-
 
 **Mapping Decision**:
 
 - **A.8.24 → Primary (P)**
 - Rationale: A.8.24 directly implements encryption. If A.8.24 includes personal data at rest encryption, requirement fully satisfied.
 - Check: Review A.8.24 implementation - does it cover personal data? If yes → P. If no → gap.
-
 
 **Outcome**: Simple, clear mapping. Single Primary control.
 
@@ -3821,7 +3575,6 @@ See Section 2.6.2 for complete template
 - Specific mandates: MFA, least privilege, quarterly reviews
 - Category: Technical + Organizational
 
-
 **Candidate Controls**:
 
 - A.5.15 Access Control (policy)
@@ -3829,7 +3582,6 @@ See Section 2.6.2 for complete template
 - A.5.17 Authentication Information (MFA)
 - A.5.18 Access Rights (authorization, reviews)
 - A.8.3 Information Access Restriction (technical enforcement)
-
 
 **Mapping Decision**:
 
@@ -3839,7 +3591,6 @@ See Section 2.6.2 for complete template
 - **A.8.3 → Primary (P)** - Technical enforcement
 - **A.5.15 → Supporting (Su)** - Policy foundation
 - Rationale: Requirement is comprehensive, needs multiple controls working together. Each Primary control addresses one component. All are essential (cannot satisfy without any one).
-
 
 **Outcome**: Multiple Primary mappings, documented rationale for combination.
 
@@ -3855,18 +3606,15 @@ See Section 2.6.2 for complete template
 - Specific mandate: DPO role with specific characteristics
 - Category: Organizational
 
-
 **Candidate Controls**:
 
 - A.5.2 Information Security Roles and Responsibilities ← Closest match
-
 
 **Mapping Decision**:
 
 - **A.5.2 → Secondary (S)** - A.5.2 defines roles but doesn't specifically mandate DPO
 - **Gap: Complete** - ISO 27001 doesn't have "DPO" control
 - Remediation: Create organization-specific control "CTRL-ORG-004: Data Protection Officer"
-
 
 **Outcome**: Partial mapping to A.5.2, but gap identified. New organizational control needed.
 
@@ -3882,7 +3630,6 @@ See Section 2.6.2 for complete template
 - Specific mandate: 72-hour timeline, specific recipient
 - Category: Operational + Reporting
 
-
 **Candidate Controls**:
 
 - A.5.24 Information Security Incident Management Planning
@@ -3890,14 +3637,12 @@ See Section 2.6.2 for complete template
 - A.5.26 Response to Information Security Incidents
 - A.5.6 Contact with Authorities
 
-
 **Mapping Decision**:
 
 - **A.5.26 → Primary (P)** - Incident response includes breach notification
 - **A.5.6 → Supporting (Su)** - Establishes authority contact framework
 - **A.5.24, A.5.25 → Supporting (Su)** - Incident management foundation
 - Check: Does A.5.26 implementation include 72-hour breach notification? If yes → P. If no → enhancement needed (Partial Gap).
-
 
 **Outcome**: If A.5.26 fully implements breach notification, Primary mapping. If not, enhance A.5.26 to include 72-hour process.
 
@@ -3913,25 +3658,21 @@ See Section 2.6.2 for complete template
 - Specific mandate: Penetration testing (not just vulnerability scanning), annual frequency
 - Category: Operational
 
-
 **Candidate Controls**:
 
 - A.8.8 Management of Technical Vulnerabilities
 - A.8.29 Security Testing in Development and Acceptance
-
 
 **Current Implementation Check**:
 
 - A.8.8: Includes vulnerability scanning (quarterly) but not penetration testing
 - A.8.29: Includes security testing in dev/test environments, not production
 
-
 **Mapping Decision**:
 
 - **A.8.8 → Secondary (S)** - Vulnerability scanning ≠ penetration testing (related but distinct)
 - **A.8.29 → Secondary (S)** - Security testing but not production penetration test
 - **Gap: Partial** - Have related controls but not the specific mandated activity
-
 
 **Remediation**: Enhance A.8.8 or A.8.29 (or both) to include annual external penetration test.
 
@@ -3950,7 +3691,6 @@ See Section 2.6.2 for complete template
 - **Section 7: Physical Controls** (A.7.1 - A.7.14): 14 controls
 - **Section 8: Technological Controls** (A.8.1 - A.8.34): 34 controls
 
-
 **Full list available in**: Assessment Workbook 4, Sheet 2: ISO 27001 Controls Reference
 
 ## Related Policy Documents
@@ -3960,14 +3700,12 @@ See Section 2.6.2 for complete template
 - **ISMS-POL-A.5.31-S3**: Requirements Extraction & Control Mapping Framework (mapping definitions)
 - **ISMS-POL-A.5.31-S4**: Change Management & Evidence Framework (evidence requirements)
 
-
 ## Related Implementation Guides
 
 - **ISMS-IMP-A.5.31-S2**: Regulatory Applicability Assessment Process (determines which regulations apply)
 - **ISMS-IMP-A.5.31-S3**: Requirements Extraction Process (creates Requirements Register)
 - **ISMS-IMP-A.5.31-S5**: Evidence Management Process (collects evidence for mapped controls)
 - **ISMS-IMP-A.5.31-S6**: Compliance Dashboard & Regulatory Monitoring (tracks compliance status)
-
 
 ---
 
@@ -4031,7 +3769,6 @@ Start: Review Requirement X and Candidate Control Y
 - **POL**: Policy
 - **SoA**: Statement of Applicability
 
-
 ---
 
 **Document Control**:
@@ -4040,7 +3777,6 @@ Start: Review Requirement X and Candidate Control Y
 - **Next Review**: [Date] (annual)
 - **Change History**:
   - v1.0 (2025-01-11): Initial release
-
 
 ---
 

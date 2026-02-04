@@ -46,7 +46,6 @@ This document consists of two parts:
   - Formulas & Calculations
   - Python Script Integration
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -67,13 +66,11 @@ This document consists of two parts:
 - Documents privileged account ownership and business justification
 - Tracks privileged credential rotation schedules
 
-
 **What This Assessment Does NOT Do:**
 
 - Track individual user MFA enrollment (see IMP.2 - MFA Coverage)
 - Inventory authentication mechanisms (see IMP.1 - Authentication Inventory)
 - Monitor real-time privileged access activity (see IMP.4 - Privileged Monitoring)
-
 
 **Primary ISO 27001 Control:** A.8.2 - Privileged Access Rights
 
@@ -82,7 +79,6 @@ This document consists of two parts:
 - A.8.5 - Secure Authentication (MFA for privileged accounts)
 - A.5.18 - Access Rights (privileged access as special category)
 - A.8.16 - Monitoring Activities (privileged access monitoring)
-
 
 **Why Admin Tiering Matters:**
 The Admin Tiering Model (Tier 0/1/2) is the MOST CRITICAL architectural control for preventing lateral movement in case of credential compromise. Without tier isolation, an attacker who compromises a single workstation can steal Domain Admin credentials and compromise the entire Active Directory domain. This assessment ensures tier isolation is properly implemented.
@@ -99,13 +95,11 @@ The Admin Tiering Model (Tier 0/1/2) is the MOST CRITICAL architectural control 
 - Deploying PAM solutions (track PAM coverage)
 - Implementing Admin Tiering Model (tier classification and isolation)
 
-
 **Assessment Frequency:**
 
 - **Monthly**: Privileged account inventory updates, new admin accounts, leaver processing
 - **Quarterly**: Comprehensive review, access justification validation, tier isolation verification
 - **Annual**: Deep assessment, penetration testing (privilege escalation), full compliance validation
-
 
 ## Who Completes This Assessment
 
@@ -120,7 +114,6 @@ The Admin Tiering Model (Tier 0/1/2) is the MOST CRITICAL architectural control 
 - **Cloud Team**: Identify cloud administrators (Azure, AWS, GCP)
 - **Security Operations**: Identify security tool administrators (SIEM, PAM, backup)
 
-
 **Approval Authority:** Chief Information Security Officer (CISO)
 
 ## Expected Time Investment
@@ -134,14 +127,12 @@ The Admin Tiering Model (Tier 0/1/2) is the MOST CRITICAL architectural control 
 - Evidence collection: 2-3 hours
 - **Total**: 12-19 hours (spread over 1-2 weeks)
 
-
 **Monthly Updates**:
 
 - New privileged accounts: 30-60 minutes
 - Leaver processing: 15-30 minutes
 - Workbook updates: 15-30 minutes
 - **Total**: 1-2 hours per month
-
 
 **Quarterly Comprehensive Review**:
 
@@ -150,7 +141,6 @@ The Admin Tiering Model (Tier 0/1/2) is the MOST CRITICAL architectural control 
 - Access justification review: 2-3 hours
 - Evidence update: 1-2 hours
 - **Total**: 8-12 hours per quarter
-
 
 ---
 
@@ -169,13 +159,11 @@ Before starting the assessment, gather the following information:
 - [ ] Okta Super Admins and privileged roles
 - [ ] System-specific administrator accounts (application admins, DBAs, network admins)
 
-
 **Admin Tiering Classification:**
 
 - [ ] List of Tier 0 systems (domain controllers, Entra ID tenant, PKI, PAM, SIEM, backup servers)
 - [ ] List of Tier 1 systems (application servers, database servers, cloud subscriptions)
 - [ ] List of Tier 2 systems (workstations, VDI, user endpoints)
-
 
 **PAM Solution Details:**
 
@@ -183,13 +171,11 @@ Before starting the assessment, gather the following information:
 - [ ] Accounts vaulted in PAM
 - [ ] Session recording status per account
 
-
 **Account Ownership:**
 
 - [ ] Privileged account owners (who owns each admin account)
 - [ ] Business justification for privileged access
 - [ ] Manager approvals for privileged access
-
 
 ## Required Access
 
@@ -202,7 +188,6 @@ Before starting the assessment, gather the following information:
 - [ ] PAM solution admin access (view vaulted accounts, session recordings)
 - [ ] System owner access (identify application administrators)
 
-
 **People Access Needed:**
 
 - [ ] IT Operations managers (identify admin team members)
@@ -210,7 +195,6 @@ Before starting the assessment, gather the following information:
 - [ ] DBAs and database team leads
 - [ ] Network team leads
 - [ ] Cloud team leads
-
 
 ## Required Tools
 
@@ -221,13 +205,11 @@ Before starting the assessment, gather the following information:
 - [ ] PowerShell (for AD/Entra ID queries)
 - [ ] Azure CLI / AWS CLI / GCP gcloud (for cloud privileged access queries)
 
-
 **Scripts:**
 
 - [ ] Active Directory privileged group enumeration script
 - [ ] Entra ID privileged role assignment script
 - [ ] Cloud IAM privileged user enumeration scripts
-
 
 ---
 
@@ -242,7 +224,6 @@ The **Admin Tiering Model** (also called **Tiered Administration Model**) is a s
 - Tier 0 accounts SHALL NEVER log into Tier 1 or Tier 2 systems
 - Tier 1 accounts SHALL NEVER log into Tier 2 systems
 - Violation of tier isolation = CRITICAL SECURITY INCIDENT
-
 
 ## Tier Definitions
 
@@ -260,13 +241,11 @@ The **Admin Tiering Model** (also called **Tiered Administration Model**) is a s
 - **Security Infrastructure**: PAM administrators, SIEM administrators, backup administrators (can restore domain controllers)
 - **Identity Providers**: Okta Super Administrators, Google Workspace Super Admins
 
-
 **Why Tier 0:**
 
 - Can compromise ANY system in the organization
 - If Tier 0 credentials stolen, attacker has full domain control
 - Requires STRONGEST security controls
-
 
 **Tier 0 Requirements:**
 
@@ -275,7 +254,6 @@ The **Admin Tiering Model** (also called **Tiered Administration Model**) is a s
 - ✅ Session recording MANDATORY
 - ✅ Network isolation (PAWs cannot browse internet, cannot access email)
 - ✅ No daily work with Tier 0 accounts (admin tasks ONLY)
-
 
 ---
 
@@ -292,13 +270,11 @@ The **Admin Tiering Model** (also called **Tiered Administration Model**) is a s
 - **Virtualization**: VMware administrators, Hyper-V administrators
 - **Middleware**: Application server admins (Tomcat, IIS, Apache administrators)
 
-
 **Why Tier 1:**
 
 - Can manage critical business applications and data
 - Cannot directly compromise Tier 0 (domain controllers, PKI, etc.)
 - If credentials stolen, blast radius limited to servers/applications
-
 
 **Tier 1 Requirements:**
 
@@ -306,7 +282,6 @@ The **Admin Tiering Model** (also called **Tiered Administration Model**) is a s
 - ✅ Dedicated admin workstations RECOMMENDED (separate VM or physical workstation)
 - ✅ Session recording RECOMMENDED
 - ✅ Separate admin accounts from user accounts (john.doe.admin ≠ john.doe)
-
 
 ---
 
@@ -321,7 +296,6 @@ The **Admin Tiering Model** (also called **Tiered Administration Model**) is a s
 - **VDI Administrators**: VDI user desktop administrators (not VDI infrastructure - that's Tier 1)
 - **Workstation Imaging**: Technicians who deploy workstation images
 
-
 **Why Tier 2:**
 
 - Lowest privilege tier
@@ -329,13 +303,11 @@ The **Admin Tiering Model** (also called **Tiered Administration Model**) is a s
 - Cannot access servers, applications, or Tier 0 infrastructure
 - If credentials stolen, attacker limited to workstation access
 
-
 **Tier 2 Requirements:**
 
 - ✅ MFA MANDATORY (authenticator app)
 - ✅ Standard workstations (no dedicated admin workstations required)
 - ✅ Standard logging and monitoring
-
 
 ## Tier Isolation Rules (NON-NEGOTIABLE)
 
@@ -347,12 +319,10 @@ The **Admin Tiering Model** (also called **Tiered Administration Model**) is a s
 - Why violation: File server could be compromised, malware steals Domain Admin credentials cached in memory
 - Result: Attacker now has Domain Admin, can compromise entire AD domain
 
-
 ✅ **CORRECT APPROACH:**
 
 - Use separate Tier 1 admin account to manage file server
 - Tier 0 Domain Admin account used ONLY on Tier 0 systems (domain controllers, PAWs)
-
 
 ---
 
@@ -364,12 +334,10 @@ The **Admin Tiering Model** (also called **Tiered Administration Model**) is a s
 - Why violation: Workstation could be compromised, DBA credentials stolen
 - Result: Attacker has database admin access, can access all business data
 
-
 ✅ **CORRECT APPROACH:**
 
 - Use separate Tier 2 account for workstation support
 - Tier 1 DBA account used ONLY on database servers
-
 
 ---
 
@@ -393,7 +361,6 @@ DIFFERENT PASSWORDS FOR EACH ACCOUNT
 - Each tier account has different password (compromise of one doesn't compromise others)
 - Clear audit trail (Tier 0 account activity easily monitored)
 
-
 ## Tier Isolation Verification
 
 **How to verify tier isolation:**
@@ -409,7 +376,6 @@ DIFFERENT PASSWORDS FOR EACH ACCOUNT
 - **Entra ID Conditional Access**: Block Tier 0 accounts from non-Tier 0 resources
 - **PAM Solution**: Enforce tier-based access (CyberArk, BeyondTrust tier policies)
 - **Network Segmentation**: Tier 0 PAWs cannot reach Tier 1/2 networks
-
 
 ---
 
@@ -514,7 +480,6 @@ Option B - Manual:
 - Use Excel template
 - Save as: `ISMS-IMP-A.8.2-3-5.3_Privileged_Accounts_[DATE].xlsx`
 
-
 **Step 3: Complete Sheet 1 - Privileged Account Inventory**
 
 For each privileged account:
@@ -527,19 +492,16 @@ For each privileged account:
    - Platform: Windows AD, Entra ID, Linux, AWS, GCP, Application
    - Account Owner: Person responsible (for named accounts) or team (for shared)
 
-
 2. **Privileged Role** (Columns F-H):
 
    - Privileged Role: Domain Admin, Server Admin, DBA, Network Admin, Cloud Admin, Security Admin, Application Admin
    - Role Description: Brief description of privileges
    - Systems/Applications: Where this account has privileges
 
-
 3. **Admin Tier Classification** (Columns I-J):
 
    - Admin Tier: Tier 0, Tier 1, Tier 2, N/A (THIS IS CRITICAL)
    - Tier Justification: Why this tier? (e.g., "Domain Admin = Tier 0", "SQL DBA = Tier 1")
-
 
 4. **PAM Coverage** (Columns K-N):
 
@@ -548,13 +510,11 @@ For each privileged account:
    - Password Rotation: Yes, No, N/A (automated rotation?)
    - Rotation Frequency: Daily, Weekly, Monthly, Quarterly, Manual
 
-
 5. **Security Controls** (Columns O-Q):
 
    - MFA Enrolled: Yes, No (does account have MFA?)
    - MFA Method: Hardware Token, Authenticator App, etc.
    - Dedicated Workstation: Yes, No, N/A (PAW for Tier 0?)
-
 
 6. **Access Governance** (Columns R-U):
 
@@ -562,7 +522,6 @@ For each privileged account:
    - Manager Approval: Manager who approved privileged access
    - Last Access Review: Date of last access review
    - Compliance Status: Compliant, Partial, Non-Compliant
-
 
 **Step 4: Complete Sheet 2 - Privileged User Summary**
 
@@ -578,7 +537,6 @@ For each person who owns privileged accounts:
 - Tier 2 Access (Yes/No)
 - Multiple Tier Access (Yes/No - flag for review)
 
-
 **Step 5: Complete Sheet 3 - Tier Isolation Compliance**
 
 **Tier 0 Accounts:**
@@ -588,13 +546,11 @@ For each person who owns privileged accounts:
 - Tier 0 accounts with hardware MFA (%)
 - Tier 0 accounts with session recording (%)
 
-
 **Tier Isolation Violations:**
 
 - Tier 0 accounts that logged into Tier 1/2 systems (count - should be 0)
 - Tier 1 accounts that logged into Tier 2 systems (count - should be 0)
 - Cross-tier violation events (log analysis)
-
 
 **Step 6: Complete Sheet 5 - PAM Coverage**
 
@@ -605,14 +561,12 @@ For each person who owns privileged accounts:
 - Accounts with session recording: [count] ([%])
 - Accounts with automated rotation: [count] ([%])
 
-
 **By Account Type:**
 
 - Named accounts: [count] → PAM coverage [%]
 - Shared accounts: [count] → PAM coverage [%]
 - Service accounts: [count] → PAM coverage [%]
 - Break-glass accounts: [count] → PAM coverage [%]
-
 
 **Step 7: Complete Sheet 6 - MFA Hardware Tokens**
 
@@ -634,7 +588,6 @@ For privileged users requiring hardware token distribution:
    - Backup Token: Yes, No (user has spare token?)
    - Compliance Status: Compliant, Non-Compliant
 
-
 **Step 8: Complete Sheet 7 - Credential Rotation Status**
 
 For tracking password rotation compliance:
@@ -654,7 +607,6 @@ For tracking password rotation compliance:
 3. **Compliance** (Columns I-J):
    - Rotation Compliant: Yes, No, Overdue
    - Overdue Days: If overdue, how many days?
-
 
 **Step 9: Complete Sheet 8 - Access Review Results**
 
@@ -678,7 +630,6 @@ For quarterly privileged access reviews:
    - Remediation Completed: Yes, No
    - Follow-up Review Date: For next validation
 
-
 **Step 10: Collect Evidence**
 
 Required evidence:
@@ -688,7 +639,6 @@ Required evidence:
 - **PAM Coverage Report**: Screenshot from PAM solution showing vaulted accounts
 - **Tier Isolation Verification**: SIEM query results showing Tier 0 logon events
 - **MFA Enrollment for Privileged Users**: Cross-reference with IMP.2
-
 
 Store evidence in: `/evidence/privileged-access/[date]/`
 
@@ -714,13 +664,11 @@ Three-level approval process.
    - Screenshot of AD group memberships
    - Export dated with timestamp
 
-
 2. **Entra ID Evidence**:
 
    - Privileged role assignment report
    - Screenshot of Global Administrator role members
    - PIM (Privileged Identity Management) configuration
-
 
 3. **Cloud IAM Evidence**:
 
@@ -728,20 +676,17 @@ Three-level approval process.
    - GCP IAM bindings (organization/project Owners)
    - Cloud provider privileged access reports
 
-
 4. **PAM Solution Evidence**:
 
    - Screenshot of vaulted accounts
    - Session recording configuration
    - Password rotation schedule
 
-
 5. **Tier Isolation Evidence**:
 
    - SIEM query: Tier 0 account logon events (should only be Tier 0 systems)
    - GPO or Conditional Access policy enforcing tier isolation
    - Tier violation alerts (if any)
-
 
 ## Evidence Storage
 
@@ -771,7 +716,6 @@ For each piece of evidence:
 - [ ] Passwords redacted (if applicable)
 - [ ] Linked in Evidence Register
 
-
 ---
 
 # Common Pitfalls & How to Avoid Them
@@ -788,7 +732,6 @@ For each piece of evidence:
 - PKI admins = Tier 0 (can issue certificates for any system)
 - PAM admins = Tier 0 (can access any vaulted credential)
 
-
 ## Pitfall 2: Missing Service Accounts with Privileges
 
 **Problem**: Only inventorying interactive user accounts, missing service accounts with elevated privileges
@@ -800,7 +743,6 @@ For each piece of evidence:
 - Check: Which service accounts have database SA/DBA rights?
 - Service accounts with privileges = privileged accounts (inventory them)
 
-
 ## Pitfall 3: Not Separating Admin Accounts from User Accounts
 
 **Problem**: Admins using same account for daily work (email, web browsing) and administration
@@ -810,7 +752,6 @@ For each piece of evidence:
 - Enforce separate accounts: john.doe (daily work), john.doe.admin (admin tasks)
 - NO admin work from user account
 - NO daily work from admin account
-
 
 ## Pitfall 4: Allowing Tier 0 Accounts to Browse Internet
 
@@ -822,7 +763,6 @@ For each piece of evidence:
 - PAWs have NO internet access, NO email
 - PAWs are dedicated, hardened, isolated workstations
 
-
 ## Pitfall 5: Shared Admin Accounts Without PAM
 
 **Problem**: Shared "Administrator" or "root" account used by multiple admins without vaulting
@@ -832,7 +772,6 @@ For each piece of evidence:
 - ALL shared admin accounts MUST be vaulted in PAM
 - PAM manages password (admins check out password, use it, check in - password rotates)
 - Session recording MANDATORY for shared accounts
-
 
 ## Pitfall 6: Break-Glass Accounts Not Tested
 
@@ -845,7 +784,6 @@ For each piece of evidence:
 - Verify account has intended privileges
 - After test, rotate password and re-seal
 
-
 ## Pitfall 7: Not Tracking "Multiple Tier Access"
 
 **Problem**: Admin has Tier 0, Tier 1, AND Tier 2 access (violates principle of least privilege)
@@ -855,7 +793,6 @@ For each piece of evidence:
 - Flag users with multiple tier access (Sheet 2)
 - Question: Why does this person need access to multiple tiers?
 - Remediate: Remove unnecessary tier access
-
 
 ## Pitfall 8: Cloud Admins Not Classified
 
@@ -868,7 +805,6 @@ For each piece of evidence:
 - GCP Organization Owner = Tier 0
 - Cloud global admins have SAME risk as Domain Admins
 
-
 ## Pitfall 9: Assuming PAM Means Tier Isolation
 
 **Problem**: Thinking PAM solution automatically enforces tier isolation
@@ -880,7 +816,6 @@ For each piece of evidence:
 - Tier isolation requires separate accounts, separate workstations, GPO/Conditional Access enforcement
 - PAM + Tier Isolation = defense in depth
 
-
 ## Pitfall 10: Not Celebrating Small Wins
 
 **Problem**: Privileged access security is long-term effort, team gets discouraged
@@ -891,7 +826,6 @@ For each piece of evidence:
 - Celebrate: "All Tier 0 accounts now vaulted in PAM!"
 - Celebrate: "Zero tier isolation violations this quarter!"
 - Track progress month-over-month
-
 
 ---
 
@@ -907,7 +841,6 @@ Before submitting assessment for approval, verify:
 - [ ] PAM coverage documented for all accounts
 - [ ] MFA status documented for all accounts
 
-
 ## Accuracy
 
 - [ ] Tier classifications reviewed (Tier 0 = can access anything, validated)
@@ -916,14 +849,12 @@ Before submitting assessment for approval, verify:
 - [ ] PAM coverage verified against PAM solution
 - [ ] MFA status cross-referenced with IMP.2
 
-
 ## Tier Isolation
 
 - [ ] Tier 0 accounts identified and flagged
 - [ ] Tier 0 accounts have dedicated PAWs (or planned)
 - [ ] Tier isolation violations identified (if any)
 - [ ] Users with multiple tier access flagged for review
-
 
 ## Evidence Quality
 
@@ -933,14 +864,12 @@ Before submitting assessment for approval, verify:
 - [ ] Tier isolation verification evidence collected
 - [ ] Evidence dated and linked
 
-
 ## Compliance
 
 - [ ] Privileged accounts without MFA identified as CRITICAL gaps
 - [ ] Privileged accounts without PAM vaulting identified
 - [ ] Tier isolation non-compliance identified
 - [ ] Remediation timeline defined
-
 
 ---
 
@@ -955,20 +884,17 @@ Before submitting assessment for approval, verify:
 - **80-89%**: Good progress, prioritize remaining gaps
 - **<80%**: Insufficient PAM coverage (high risk)
 
-
 **Tier 0 Security Score:**
 
 - **100%**: All Tier 0 controls implemented (PAWs, hardware MFA, session recording, tier isolation)
 - **75-99%**: Most controls in place, some gaps
 - **<75%**: CRITICAL RISK - Tier 0 not adequately protected
 
-
 **Tier Isolation Compliance:**
 
 - **Zero violations**: Excellent - Tier isolation enforced
 - **1-5 violations/quarter**: Acceptable - Investigate and remediate
 - **>5 violations/quarter**: CRITICAL - Tier isolation not enforced, architectural issue
-
 
 ## Gap Prioritization
 
@@ -980,7 +906,6 @@ Before submitting assessment for approval, verify:
 - Tier isolation violations (Tier 0 account logging into Tier 1/2)
 - Shared privileged accounts without PAM vaulting
 
-
 **Priority 2 - HIGH (Within 30 Days):**
 
 - Tier 1 privileged accounts without MFA
@@ -988,20 +913,17 @@ Before submitting assessment for approval, verify:
 - Tier 1 accounts without session recording
 - Privileged accounts with no access review in >1 year
 
-
 **Priority 3 - MEDIUM (Within 90 Days):**
 
 - Tier 2 accounts without MFA
 - Service accounts without automated password rotation
 - Privileged accounts with no documented business justification
 
-
 **Priority 4 - LOW (Ongoing Improvement):**
 
 - Optimization of PAM workflows
 - Enhanced session recording analytics
 - Privileged access training improvements
-
 
 ---
 
@@ -1017,7 +939,6 @@ Before submitting assessment for approval, verify:
 - Collect evidence
 - Submit for review
 
-
 **Level 2 - Reviewer (Senior Security / IAM Lead)**:
 
 - Validate tier classifications
@@ -1026,7 +947,6 @@ Before submitting assessment for approval, verify:
 - Confirm evidence completeness
 - Approve and forward to CISO
 
-
 **Level 3 - Approver (CISO)**:
 
 - Review privileged access metrics
@@ -1034,7 +954,6 @@ Before submitting assessment for approval, verify:
 - Approve tier isolation strategy
 - Sign off on assessment
 - Present to Executive Management (if required)
-
 
 ## Approval Criteria
 
@@ -1046,7 +965,6 @@ Assessment is approved when:
 - [ ] Tier isolation compliance verified
 - [ ] Critical gaps identified and prioritized
 - [ ] Remediation timeline defined
-
 
 ## Post-Approval Actions
 
@@ -1093,13 +1011,11 @@ After CISO approval:
 - 🟡 **Yellow (Tier 2)**: RGB(255, 255, 0) - Workstation privileges
 - ⚫ **Gray (N/A)**: RGB(217, 217, 217) - Not tiered
 
-
 **Compliance Status Colors:**
 
 - 🟢 **Green (Compliant)**: RGB(198, 239, 206) - Meets all requirements
 - 🟡 **Yellow (Partial)**: RGB(255, 235, 156) - Meets some requirements
 - 🔴 **Red (Non-Compliant)**: RGB(255, 199, 206) - Does not meet requirements
-
 
 ---
 
@@ -1221,18 +1137,15 @@ List: Yes (PAW), Yes (Dedicated VM), Yes (Jump Server), No, N/A
 - Session Recording = Yes (REQUIRED)
 - Dedicated Workstation = Yes (PAW) (REQUIRED)
 
-
 **Tier 1:**
 
 - MFA = Yes (REQUIRED)
 - PAM Vaulted = Yes (REQUIRED)
 - Session Recording = Yes (RECOMMENDED - Partial if missing)
 
-
 **Tier 2:**
 
 - MFA = Yes (REQUIRED)
-
 
 **Conditional Formatting:**
 
@@ -1240,7 +1153,6 @@ List: Yes (PAW), Yes (Dedicated VM), Yes (Jump Server), No, N/A
 - Partial → Yellow
 - Non-Compliant → Red
 - N/A → Gray
-
 
 ## Admin Tier Color Coding (Column I)
 
@@ -1250,7 +1162,6 @@ List: Yes (PAW), Yes (Dedicated VM), Yes (Jump Server), No, N/A
 - Tier 1 → Orange background (RGB 255, 153, 0), Black text
 - Tier 2 → Yellow background (RGB 255, 255, 0), Black text
 - N/A → Gray background
-
 
 ---
 
@@ -1291,7 +1202,6 @@ Multiple Tier Access:
 
 - Users with Tier 0 AND Tier 1/2 access (potential tier isolation risk)
 - Users with >5 privileged accounts (excessive privilege)
-
 
 ---
 
@@ -1417,16 +1327,13 @@ Tier 0 PAM Coverage %:
 
 - Name, Title, Date, Signature
 
-
 **Level 2 - Reviewer (IAM Lead / Senior Security Engineer):**
 
 - Name, Title, Date, Signature
 
-
 **Level 3 - Approver (CISO):**
 
 - Name, Title, Date, Signature
-
 
 ---
 
@@ -1447,7 +1354,6 @@ Automated generation of privileged account inventory workbook.
 - Generates privileged user summary
 - Calculates tier isolation metrics
 - Sets column widths and freeze panes
-
 
 ## Running the Script
 
@@ -1470,7 +1376,6 @@ Marked with `# CUSTOMIZE:` in script:
 - Privileged role categories (additional role types)
 - Compliance criteria (different tier requirements)
 - PAM solution integration (CyberArk, BeyondTrust API)
-
 
 ---
 
@@ -1517,7 +1422,6 @@ ISMS-IMP-A.8.2-3-5.3 - Privileged Account Inventory v1.0
 - [ ] Cross-references correct (policy, other IMPs)
 - [ ] No placeholder text
 - [ ] Technical specification matches Python script
-
 
 ---
 

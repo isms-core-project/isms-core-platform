@@ -44,7 +44,6 @@ This document consists of two parts:
   - Cell Styling Reference
   - Integration Points
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -66,7 +65,6 @@ This assessment documents CURRENT capacity utilization across all infrastructure
 - What capacity headroom exists? (remaining capacity before exhaustion)
 - Which resources are at risk of capacity exhaustion?
 
-
 #### Key Principle
 
 This assessment is **completely vendor-agnostic and platform-independent**. You document YOUR specific infrastructure (whether physical servers, VMware, Hyper-V, AWS, Azure, GCP, Kubernetes, hybrid, whatever), and measure utilization against generic policy thresholds.
@@ -82,7 +80,6 @@ This assessment is **completely vendor-agnostic and platform-independent**. You 
 - Monitoring coverage (which resources are monitored, which are not)
 - Resources at risk (threshold breaches, trending toward exhaustion)
 - Supporting evidence (monitoring dashboards, metric exports)
-
 
 #### How This Relates to Other A.8.6 Assessments
 
@@ -112,13 +109,11 @@ This assessment (A.8.6.1) MUST be completed first - you can't forecast future ca
 - Understanding of resource types and utilization metrics
 - Knowledge of organizational threshold policies
 
-
 #### Time Commitment
 
 - **Initial assessment:** 8-12 hours (for comprehensive resource inventory and data collection)
 - **Monthly updates:** 2-3 hours (update metrics, review thresholds)
 - **Quarterly deep reviews:** 4-6 hours (validate inventory, review monitoring coverage)
-
 
 ### Expected Outputs
 
@@ -154,7 +149,6 @@ Before starting this assessment, gather:
 - Access to asset inventory or CMDB systems
 - Access to application monitoring dashboards
 
-
 #### 2. Documentation
 
 - Current infrastructure architecture diagrams
@@ -163,7 +157,6 @@ Before starting this assessment, gather:
 - Capacity threshold policies (from ISMS-POL-A.8.6)
 - Previous capacity assessments (if available)
 
-
 #### 3. Historical Data
 
 - Monitoring data covering last 90 days minimum (180 days preferred)
@@ -171,14 +164,12 @@ Before starting this assessment, gather:
 - Previous capacity expansion records
 - Performance reports
 
-
 #### 4. Policy Requirements
 
 - ISMS-POL-A.8.6, Section 2 (Resource Types to Monitor)
 - ISMS-POL-A.8.6, Section 3 (Capacity Monitoring Requirements)
 - ISMS-POL-A.8.6, Section 4 (Capacity Thresholds and Alerting)
 - Organizational threshold definitions (warning, critical)
-
 
 ### Required Tools
 
@@ -188,7 +179,6 @@ Before starting this assessment, gather:
 - **Screen capture tools** (for evidence screenshots)
 - **Metric export tools** (CSV export, API clients, monitoring tool native export)
 
-
 ### Dependencies
 
 This assessment has NO dependencies - it's the first assessment in the A.8.6 series.
@@ -197,7 +187,6 @@ However, outputs from this assessment are INPUT to:
 
 - A.8.6.2 (Forecasting & Planning) - Needs utilization data from this assessment
 - A.8.6.3 (Compliance Dashboard) - Consolidates data from all A.8.6 assessments
-
 
 ---
 
@@ -277,7 +266,6 @@ However, outputs from this assessment are INPUT to:
 - ✓ No "unknown" or "TBD" values
 - ✓ Status accurately reflects current state
 
-
 #### Phase 3: Compute Capacity Data Collection (2-3 hours)
 
 **Objective:** Complete Sheet 2 - Compute Capacity
@@ -307,7 +295,6 @@ However, outputs from this assessment are INPUT to:
 - ✓ Average utilization calculated correctly
 - ✓ Threshold comparisons accurate
 - ✓ Evidence collected for critical resources
-
 
 #### Phase 4: Storage Capacity Data Collection (2-3 hours)
 
@@ -346,7 +333,6 @@ However, outputs from this assessment are INPUT to:
 - ✓ Growth trends considered
 - ✓ Evidence collected
 
-
 #### Phase 5: Network Capacity Data Collection (1-2 hours)
 
 **Objective:** Complete Sheet 4 - Network Capacity
@@ -378,7 +364,6 @@ However, outputs from this assessment are INPUT to:
 - ✓ Peak utilization captured
 - ✓ Service-level metrics included
 - ✓ Evidence collected
-
 
 #### Phase 6: Application Capacity Data Collection (2-3 hours)
 
@@ -413,7 +398,6 @@ However, outputs from this assessment are INPUT to:
 - ✓ Current utilization vs. limits assessed
 - ✓ Evidence collected
 
-
 #### Phase 7: Threshold Assessment (1-2 hours)
 
 **Objective:** Complete Sheet 6 - Threshold Status
@@ -440,7 +424,6 @@ However, outputs from this assessment are INPUT to:
 - ✓ At-risk resources identified
 - ✓ Prioritization reflects business criticality
 
-
 #### Phase 8: Monitoring Coverage Assessment (1 hour)
 
 **Objective:** Complete Sheet 7 - Monitoring Coverage
@@ -465,7 +448,6 @@ However, outputs from this assessment are INPUT to:
    - Assess risk of not monitoring
    - Create remediation plan
 
-
 **Deliverable:** Complete Sheet 7 with monitoring coverage assessment
 
 **Quality Check:**
@@ -473,7 +455,6 @@ However, outputs from this assessment are INPUT to:
 - ✓ Monitoring status accurate
 - ✓ Gaps identified
 - ✓ Remediation plans for gaps
-
 
 #### Phase 9: At-Risk Resource Analysis (1-2 hours)
 
@@ -503,7 +484,6 @@ However, outputs from this assessment are INPUT to:
 - ✓ Owners assigned
 - ✓ Target dates are realistic
 
-
 #### Phase 10: Evidence Registry (30-60 minutes)
 
 **Objective:** Complete Sheet 9 - Evidence Registry
@@ -525,7 +505,6 @@ However, outputs from this assessment are INPUT to:
 - ✓ Evidence is recent
 - ✓ Audit-ready format
 
-
 #### Phase 11: Review & Approval (1-2 hours)
 
 **Objective:** Three-level approval process
@@ -538,7 +517,6 @@ However, outputs from this assessment are INPUT to:
    - Validate evidence quality
    - Run quality checklist (see Quality Checklist section)
    
-
 2. **Technical review** (infrastructure/operations manager)
 
    - Review technical accuracy
@@ -547,14 +525,12 @@ However, outputs from this assessment are INPUT to:
    - Verify monitoring coverage
    - Approve or request changes
    
-
 3. **Management review** (CIO/IT Director or delegate)
 
    - Review at-risk resources and business impact
    - Approve remediation plans
    - Allocate resources for capacity expansion
    - Final approval
-
 
 **Deliverable:** Approved assessment ready for forecasting and dashboard consolidation
 
@@ -564,7 +540,6 @@ However, outputs from this assessment are INPUT to:
 - ✓ All reviewers have approved
 - ✓ Evidence is audit-ready
 - ✓ At-risk resources have remediation plans
-
 
 ---
 
@@ -593,7 +568,6 @@ For EACH resource:
 - **Technical Owner**: Person/team responsible for operations
 - **Monitoring Status**: Monitored, Partially Monitored, Not Monitored
 - **Notes**: Any relevant context
-
 
 #### Common Mistakes to Avoid
 
@@ -643,7 +617,6 @@ Ask these questions:
    - Cache servers
    - Application-specific capacity limits
 
-
 **Step 2: For Each Resource, Gather Details**
 
 - **Access infrastructure management consoles**:
@@ -656,7 +629,6 @@ Ask these questions:
 - **Check asset inventory or CMDB** (if available)
 - **Query monitoring systems** for discovered resources
 - **Consult with infrastructure teams** to ensure completeness
-
 
 **Step 3: Classify Environment**
 
@@ -691,7 +663,6 @@ Ask these questions:
 - **Business Owner**: Department/team that owns the resource from a business perspective (e.g., "Sales", "Finance", "HR")
 - **Technical Owner**: Person/team responsible for day-to-day operations (e.g., "Infrastructure Team", "Database Team", "Cloud Operations")
 
-
 **Step 7: Add Relevant Notes**
 
 Examples:
@@ -700,7 +671,6 @@ Examples:
 - "Pending migration to cloud"
 - "Shared resource across multiple applications"
 - "License limit: 1000 concurrent users"
-
 
 #### Real-World Examples
 
@@ -834,7 +804,6 @@ Examples:
 - Network diagrams (current architecture)
 - Monitoring system inventory (discovered resources screenshot/export)
 
-
 **Evidence Naming Convention:**
 ```
 Sheet1-Evidence-[Type]-[Date].extension
@@ -860,7 +829,6 @@ Sheet1-Evidence-Network-Diagram-2026-01-15.pdf
 - [ ] Evidence collected and registered in Sheet 9
 - [ ] Cross-referenced with asset inventory/CMDB
 - [ ] Reviewed with infrastructure teams for completeness
-
 
 ---
 
@@ -899,7 +867,6 @@ For EACH compute resource:
   - CPU headroom (% remaining before warning threshold)
   - Memory headroom (% remaining before warning threshold)
 
-
 #### Common Mistakes to Avoid
 
 ❌ **Using stale data** - Utilization data from weeks/months ago  
@@ -932,7 +899,6 @@ Depending on your infrastructure, access:
   - Container monitoring (cAdvisor, Prometheus)
   - Orchestration platform dashboards
 
-
 **Step 2: Collect Total Capacity**
 
 - **CPU Cores**: Total number of physical or virtual CPU cores
@@ -946,7 +912,6 @@ Depending on your infrastructure, access:
   - Cloud instance: Instance type memory (e.g., m5.xlarge = 16 GB)
   - Container: Memory limit (e.g., 8 GB)
 
-
 **Step 3: Collect Current Utilization**
 
 - **CPU Utilization (%)**: Current CPU usage as percentage of total capacity
@@ -957,7 +922,6 @@ Depending on your infrastructure, access:
   - Linux: `free -h` (Used / Total × 100)
   - Windows: Task Manager → Performance → Memory
   - Monitoring dashboards: Current Memory% metric
-
 
 **IMPORTANT: Current utilization should be recent (< 24 hours old) to reflect actual state.**
 
@@ -972,7 +936,6 @@ Depending on your infrastructure, access:
 - **Memory Peak**: Maximum memory utilization observed over period
   - Query monitoring system: `max(memory_utilization) over last 30 days`
 
-
 **WHY PEAK MATTERS**: Peak utilization reveals capacity risks that averages hide. A resource averaging 40% CPU but peaking at 95% is at risk during peak load.
 
 **Step 5: Collect Average Utilization (30 days and 90 days)**
@@ -981,7 +944,6 @@ Depending on your infrastructure, access:
   - Query monitoring system: `avg(cpu_utilization) over last 30 days`
 - **Memory Average**: Mean memory utilization over period
   - Query monitoring system: `avg(memory_utilization) over last 30 days`
-
 
 **WHY AVERAGE MATTERS**: Average utilization reveals baseline load and identifies over-provisioned resources (consistently low average = waste).
 
@@ -993,7 +955,6 @@ Compare current/peak utilization against policy thresholds (from ISMS-POL-A.8.6,
 
 - **CPU**: Warning 70%, Critical 85%
 - **Memory**: Warning 75%, Critical 90%
-
 
 | Threshold Status | Definition | Action Required |
 |------------------|------------|-----------------|
@@ -1013,7 +974,6 @@ Examples:
 - CPU: Warning threshold 70%, current peak 55% → Headroom = 15%
 - Memory: Warning threshold 75%, current peak 82% → Headroom = -7% (NEGATIVE = already exceeded warning)
 
-
 **Negative headroom means resource is already at/above warning threshold and requires immediate planning.**
 
 **Step 8: Document Data Sources**
@@ -1023,7 +983,6 @@ For audit purposes, note where data came from:
 - Monitoring system name (e.g., "Prometheus", "CloudWatch", "Datadog")
 - Query or dashboard used
 - Date/time of data collection
-
 
 #### Real-World Examples
 
@@ -1151,7 +1110,6 @@ For audit purposes, note where data came from:
   - Azure Monitor: VM metrics export
   - GCP Cloud Monitoring: Compute Engine metrics export
 
-
 **Evidence Naming Convention:**
 ```
 Sheet2-Evidence-[ResourceID]-[Metric]-[Date].extension
@@ -1178,7 +1136,6 @@ Sheet2-Evidence-srv-dc01-Performance-Dashboard-2026-01-15.png
 - [ ] Data sources documented (monitoring system name)
 - [ ] Collection date/time documented
 - [ ] Formulas verified (% calculations, threshold logic)
-
 
 ---
 
@@ -1208,7 +1165,6 @@ For EACH storage resource:
 - **Threshold Status**: Below Warning / Warning / Critical / Exceeded
 - **Capacity Headroom**: % remaining before warning threshold
 - **Estimated Exhaustion Date**: When storage will hit 100% (if trending)
-
 
 #### Common Mistakes to Avoid
 
@@ -1249,7 +1205,6 @@ For EACH storage resource:
   - Archive storage
   - Snapshot storage
 
-
 **Step 2: Collect Storage Capacity Data**
 
 **For Local Disks/Volumes**:
@@ -1258,12 +1213,10 @@ For EACH storage resource:
 - Windows: `Get-PSDrive` or Disk Management
 - Monitoring tools: Disk space metrics
 
-
 **For SAN/NAS Storage**:
 
 - Storage management console (NetApp OnCommand, Dell EMC Unisphere, etc.)
 - Monitoring integration with SAN/NAS
-
 
 **For Cloud Block Storage**:
 
@@ -1271,13 +1224,11 @@ For EACH storage resource:
 - Azure Monitor: Disk metrics
 - GCP Cloud Monitoring: Persistent Disk metrics
 
-
 **For Cloud Object Storage**:
 
 - AWS S3: Bucket metrics (S3 Storage Lens, CloudWatch)
 - Azure: Storage Account metrics
 - GCP: Cloud Storage metrics
-
 
 **For Database Storage**:
 
@@ -1287,12 +1238,10 @@ For EACH storage resource:
   - SQL Server: `sp_spaceused`
   - Oracle: `SELECT tablespace_name, SUM(bytes)/1024/1024/1024 AS size_gb FROM dba_data_files GROUP BY tablespace_name;`
 
-
 **For Backup Storage**:
 
 - Backup software console (Veeam, Commvault, AWS Backup, Azure Backup, etc.)
 - Check backup repository utilization
-
 
 **Step 3: Calculate Utilization**
 
@@ -1305,7 +1254,6 @@ Example:
 - Free Space: 250 GB
 - Utilization: 75%
 
-
 **Step 4: Collect Peak Utilization (30 days and 90 days)**
 
 Storage typically grows over time, so peak utilization = most recent maximum.
@@ -1314,7 +1262,6 @@ Query monitoring system for maximum storage utilization over period:
 
 - Prometheus: `max_over_time(disk_used_percent[30d])`
 - CloudWatch: EBS VolumeUtilization, statistic=Maximum, period=30 days
-
 
 **Step 5: Calculate Growth Rate**
 
@@ -1327,7 +1274,6 @@ Example:
 - Current: 750 GB
 - 30 days ago: 700 GB
 - Growth Rate: (750 - 700) / 1 = 50 GB/month
-
 
 **This is critical for forecasting storage exhaustion.**
 
@@ -1346,7 +1292,6 @@ Example:
 - Months Until Exhaustion: 250 / 50 = 5 months
 - Estimated Exhaustion: Current Date + 5 months = June 2026
 
-
 **This helps prioritize storage expansion planning.**
 
 **Step 7: Check IOPS and Throughput Limits (If Applicable)**
@@ -1359,12 +1304,10 @@ Storage capacity (GB) is not the only constraint. IOPS (Input/Output Operations 
 - Check throughput limits (e.g., AWS gp3: 125 MB/s baseline)
 - Monitor current IOPS and throughput utilization vs. limits
 
-
 **For SAN/NAS**:
 
 - Check storage array IOPS limits
 - Monitor current IOPS utilization
-
 
 **Step 8: Assess Threshold Status**
 
@@ -1374,13 +1317,11 @@ Compare utilization against policy thresholds (from ISMS-POL-A.8.6, Section 4.1)
 
 - **Disk Space**: Warning 75%, Critical 85%
 
-
 **IMPORTANT**: Some applications require lower thresholds:
 
 - **Databases**: Warning 70%, Critical 80% (to prevent transaction log issues)
 - **Log volumes**: Warning 70%, Critical 80% (logs grow quickly)
 - **Backup storage**: Warning 75%, Critical 85%
-
 
 | Threshold Status | Definition | Action Required |
 |------------------|------------|-----------------|
@@ -1398,7 +1339,6 @@ Example:
 - Warning threshold: 75%
 - Current utilization: 68%
 - Headroom: 7% (= 7% of total capacity remaining before warning)
-
 
 **Negative headroom means already at/above warning.**
 
@@ -1538,7 +1478,6 @@ Example:
   - IOPS graphs
   - Throughput graphs
 
-
 **Evidence Naming Convention:**
 ```
 Sheet3-Evidence-[ResourceID]-[Metric]-[Date].extension
@@ -1568,13 +1507,11 @@ Sheet3-Evidence-s3-prod-uploads-Storage-Report-2026-01-15.pdf
 - [ ] Data sources documented
 - [ ] Collection dates documented
 
-
  capacity is healthy
 
 - Reality: CPU peaks at 95% daily during backups → Critical capacity risk
 - Memory averages 60% → assume safe
 - Reality: Memory peaks at 98% during month-end processing → Risk of crashes
-
 
 **Why It Happens:**
 
@@ -1582,7 +1519,6 @@ Sheet3-Evidence-s3-prod-uploads-Storage-Report-2026-01-15.pdf
 - Dashboards often show averages by default
 - Not aware of daily/weekly/monthly usage patterns
 - Monitoring tools default to showing current, not peak
-
 
 **How to Avoid:**
 
@@ -1592,13 +1528,11 @@ Sheet3-Evidence-s3-prod-uploads-Storage-Report-2026-01-15.pdf
 - Assess threshold status based on PEAK, not average
 - Configure monitoring dashboards to show max/peak prominently
 
-
 **Impact of Not Fixing:**
 
 - Capacity exhaustion during peak times
 - Service degradation or outages during critical business periods
 - Inaccurate capacity planning (planning for average, not peak)
-
 
 ### Pitfall 5: Missing Cloud Resources
 
@@ -1611,14 +1545,12 @@ Sheet3-Evidence-s3-prod-uploads-Storage-Report-2026-01-15.pdf
 - Serverless functions (Lambda, Azure Functions, Cloud Functions) not assessed
 - Cloud database instances (RDS, Azure SQL, Cloud SQL) not tracked
 
-
 **Why It Happens:**
 
 - Different teams manage cloud vs. on-premises
 - Cloud resources not in traditional asset inventory
 - Assumption that "cloud is infinite capacity"
 - Cloud accounts not centrally managed
-
 
 **How to Avoid:**
 
@@ -1627,13 +1559,11 @@ Sheet3-Evidence-s3-prod-uploads-Storage-Report-2026-01-15.pdf
 - Check cloud billing reports (resources using cost = resources to monitor)
 - Recognize that cloud has limits too (service quotas, cost controls)
 
-
 **Impact of Not Fixing:**
 
 - Cloud cost surprises (unexpected scaling)
 - Hitting cloud service quotas
 - Incomplete capacity visibility
-
 
 ### Pitfall 6: Not Documenting Monitoring Gaps
 
@@ -1646,14 +1576,12 @@ Sheet3-Evidence-s3-prod-uploads-Storage-Report-2026-01-15.pdf
 - No plan to close monitoring gap
 - No prioritization of gaps
 
-
 **Why It Happens:**
 
 - Embarrassment about gaps
 - Assuming documenting gap makes it worse
 - No budget/resources to close gap
 - Lack of accountability
-
 
 **How to Avoid:**
 
@@ -1663,13 +1591,11 @@ Sheet3-Evidence-s3-prod-uploads-Storage-Report-2026-01-15.pdf
 - Prioritize gaps by risk and business impact
 - Assign owners and target dates
 
-
 **Impact of Not Fixing:**
 
 - Gaps never get closed
 - Audit finding (monitoring not comprehensive)
 - Capacity risks on unmonitored resources
-
 
 ### Pitfall 7: Treating Warnings as Acceptable
 
@@ -1680,13 +1606,11 @@ Sheet3-Evidence-s3-prod-uploads-Storage-Report-2026-01-15.pdf
 - Resource at 72% utilization (warning threshold 70%) → "Close enough, no action needed"
 - Resource at 78% → "It's not Critical yet, we'll wait"
 
-
 **Why It Happens:**
 
 - Misunderstanding purpose of warning threshold
 - "If it's not Critical, it's okay"
 - Reactionary mindset (act only when critical)
-
 
 **How to Avoid:**
 
@@ -1695,13 +1619,11 @@ Sheet3-Evidence-s3-prod-uploads-Storage-Report-2026-01-15.pdf
 - Create capacity expansion plan for ALL resources at Warning
 - Target: <5% of resources at Warning (per policy objective)
 
-
 **Impact of Not Fixing:**
 
 - Warning becomes Critical before action taken
 - Critical becomes Exceeded (capacity exhaustion)
 - Reactive capacity management (always firefighting)
-
 
 ### Pitfall 8: No Remediation Follow-Through
 
@@ -1714,14 +1636,12 @@ Sheet3-Evidence-s3-prod-uploads-Storage-Report-2026-01-15.pdf
 - Assessment Q3 2026: Now at 89% (getting worse)
 - Assessment Q4 2026: Capacity exhausted, outage
 
-
 **Why It Happens:**
 
 - No ownership assigned ("someone should fix this")
 - No budget allocated
 - Competing priorities (capacity planning is not urgent until it is)
 - Assessment fatigue (endless gap lists, no action)
-
 
 **How to Avoid:**
 
@@ -1731,13 +1651,11 @@ Sheet3-Evidence-s3-prod-uploads-Storage-Report-2026-01-15.pdf
 - Track progress in monthly capacity reviews
 - Escalate stalled remediations to management
 
-
 **Impact of Not Fixing:**
 
 - Capacity-related outages
 - Business impact
 - Audit finding (identified gaps not remediated)
-
 
 ### Pitfall 9: Not Calculating Growth Rates
 
@@ -1749,13 +1667,11 @@ Sheet3-Evidence-s3-prod-uploads-Storage-Report-2026-01-15.pdf
 - Growing 5% per month → Will hit critical in 3 months
 - No awareness of growth rate
 
-
 **Why It Happens:**
 
 - Focusing on current state, not trend
 - Not collecting historical data
 - Manual assessment (hard to calculate trends)
-
 
 **How to Avoid:**
 
@@ -1764,13 +1680,11 @@ Sheet3-Evidence-s3-prod-uploads-Storage-Report-2026-01-15.pdf
 - Estimate capacity exhaustion date: Months Until Exhaustion = (Free Space / Growth Rate)
 - Prioritize remediations by how soon capacity will exhaust
 
-
 **Impact of Not Fixing:**
 
 - Surprise capacity exhaustion
 - Insufficient lead time for procurement/provisioning
 - Emergency capacity additions (expensive)
-
 
 ### Pitfall 10: Siloed Assessment
 
@@ -1783,13 +1697,11 @@ Sheet3-Evidence-s3-prod-uploads-Storage-Report-2026-01-15.pdf
 - Application teams not involved (they know application capacity limits)
 - Network team not involved (they manage network capacity)
 
-
 **Why It Happens:**
 
 - Assuming one team knows everything
 - Not knowing who else manages capacity
 - Time pressure
-
 
 **How to Avoid:**
 
@@ -1798,13 +1710,11 @@ Sheet3-Evidence-s3-prod-uploads-Storage-Report-2026-01-15.pdf
 - Review drafts with all teams
 - Three-level approval ensures cross-team review
 
-
 **Impact of Not Fixing:**
 
 - Incomplete assessment (missing resources, missing data)
 - Inaccurate capacity understanding
 - Gaps discovered during audit
-
 
 ---
 
@@ -1820,7 +1730,6 @@ Use this checklist to verify assessment completeness and quality before submitti
 - [ ] Assessment covers all environments (Production, UAT, Development, DR)
 - [ ] Assessment covers all resource types (Compute, Storage, Network, Application)
 
-
 ### Sheet 1: Resource Inventory
 
 - [ ] All production resources documented
@@ -1835,7 +1744,6 @@ Use this checklist to verify assessment completeness and quality before submitti
 - [ ] No "TBD" or "Unknown" values without justification
 - [ ] Evidence collected and registered
 
-
 ### Sheet 2: Compute Capacity
 
 - [ ] All compute resources from Sheet 1 included
@@ -1849,7 +1757,6 @@ Use this checklist to verify assessment completeness and quality before submitti
 - [ ] Negative headroom flagged for action
 - [ ] Evidence collected for critical resources
 - [ ] Data sources documented
-
 
 ### Sheet 3: Storage Capacity
 
@@ -1867,7 +1774,6 @@ Use this checklist to verify assessment completeness and quality before submitti
 - [ ] Capacity headroom calculated
 - [ ] Evidence collected
 
-
 ### Sheet 4: Network Capacity
 
 - [ ] All network resources from Sheet 1 included
@@ -1881,7 +1787,6 @@ Use this checklist to verify assessment completeness and quality before submitti
 - [ ] Capacity headroom calculated
 - [ ] Evidence collected
 
-
 ### Sheet 5: Application Capacity
 
 - [ ] All critical applications from Sheet 1 included
@@ -1892,7 +1797,6 @@ Use this checklist to verify assessment completeness and quality before submitti
 - [ ] Threshold status assessed
 - [ ] Capacity headroom calculated
 - [ ] Evidence collected
-
 
 ### Sheet 6: Threshold Status Summary
 
@@ -1905,7 +1809,6 @@ Use this checklist to verify assessment completeness and quality before submitti
 - [ ] Top at-risk resources identified
 - [ ] Overall capacity health score calculated
 - [ ] Comparison to policy objective (95%) included
-
 
 ### Sheet 7: Monitoring Coverage Assessment
 
@@ -1923,7 +1826,6 @@ Use this checklist to verify assessment completeness and quality before submitti
 - [ ] Target dates set
 - [ ] Gaps prioritized by risk
 
-
 ### Sheet 8: At-Risk Resources & Remediation
 
 - [ ] All at-risk resources from Sheets 2-5 included
@@ -1938,7 +1840,6 @@ Use this checklist to verify assessment completeness and quality before submitti
 - [ ] Target dates set and reasonable
 - [ ] Status tracking implemented
 
-
 ### Sheet 9: Evidence Registry
 
 - [ ] All evidence collected during assessment listed
@@ -1952,7 +1853,6 @@ Use this checklist to verify assessment completeness and quality before submitti
 - [ ] No orphaned evidence (evidence not linked to assessment)
 - [ ] Evidence is recent (< 30 days for current assessments)
 
-
 ### Data Quality
 
 - [ ] All utilization data is current (< 24-48 hours old for "current" metrics)
@@ -1961,7 +1861,6 @@ Use this checklist to verify assessment completeness and quality before submitti
 - [ ] Threshold comparisons are accurate
 - [ ] Calculations verified (utilization %, headroom %, growth rates)
 - [ ] No obvious data errors (e.g., >100% utilization, negative headroom without explanation)
-
 
 ### Evidence Quality
 
@@ -1972,7 +1871,6 @@ Use this checklist to verify assessment completeness and quality before submitti
 - [ ] Evidence properly stored and accessible
 - [ ] Evidence metadata documented
 
-
 ### Policy Compliance
 
 - [ ] Assessment scope aligns with policy (ISMS-POL-A.8.6, Section 1.3)
@@ -1981,7 +1879,6 @@ Use this checklist to verify assessment completeness and quality before submitti
 - [ ] Monitoring coverage meets policy requirements (ISMS-POL-A.8.6, Section 3.1)
 - [ ] Capacity health score calculated and compared to policy objective (95%)
 
-
 ### Review & Approval Readiness
 
 - [ ] Self-review completed (this checklist)
@@ -1989,7 +1886,6 @@ Use this checklist to verify assessment completeness and quality before submitti
 - [ ] Remediation plans created for all gaps
 - [ ] Assessment ready for technical review
 - [ ] Evidence ready for audit
-
 
 ---
 
@@ -2032,14 +1928,12 @@ This assessment requires three levels of review and approval to ensure quality, 
    - No contradictions between sheets
    - Terminology consistent with policy
 
-
 **Approval Criteria:**
 
 - ✅ Quality checklist 100% complete
 - ✅ No obvious errors or gaps
 - ✅ Evidence collected and accessible
 - ✅ Ready for technical review
-
 
 **Output:** Self-review sign-off, forward to Level 2 reviewer
 
@@ -2086,7 +1980,6 @@ This assessment requires three levels of review and approval to ensure quality, 
    - Request additional evidence if needed
    - Request clarification if needed
 
-
 **Approval Criteria:**
 
 - ✅ Technical accuracy verified
@@ -2095,7 +1988,6 @@ This assessment requires three levels of review and approval to ensure quality, 
 - ✅ Monitoring gaps correctly identified
 - ✅ Remediation plans are feasible
 - ✅ Evidence quality acceptable
-
 
 **Output:** Technical review sign-off (with any required corrections), forward to Level 3 reviewer
 
@@ -2136,7 +2028,6 @@ This assessment requires three levels of review and approval to ensure quality, 
    - Align capacity planning with business growth plans
    - Approve capacity planning budget for next fiscal year
 
-
 **Approval Criteria:**
 
 - ✅ Capacity risks understood
@@ -2144,7 +2035,6 @@ This assessment requires three levels of review and approval to ensure quality, 
 - ✅ Budget allocated for critical remediations
 - ✅ Accountability assigned
 - ✅ Policy compliance gaps addressed
-
 
 **Output:** Final approval, assessment is complete and approved
 
@@ -2177,7 +2067,6 @@ Document approvals in the workbook:
 - **Self-Review**: Name, Date, Signature
 - **Technical Review**: Name, Title, Date, Signature, Comments
 - **Management Review**: Name, Title, Date, Signature, Approved Budget (if applicable), Comments
-
 
 ### Post-Approval Actions
 
@@ -2287,7 +2176,6 @@ Summary Dashboard
 
 - Status column: Green if ≥95%, Yellow if 90-95%, Red if <90%
 
-
 ---
 
 ### Sheet 1: Resource Inventory
@@ -2341,7 +2229,6 @@ Summary Dashboard
   - Partially Monitored: Yellow background
   - Not Monitored: Red background, white text
 
-
 **Sample Row:**
 | A | B | C | D | E | F | G | H | I | J | K |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -2383,7 +2270,6 @@ Summary Dashboard
 - Memory Warning: 75%
 - Memory Critical: 90%
 
-
 **Key Formulas:**
 
 ```excel
@@ -2415,7 +2301,6 @@ Summary Dashboard
   - 70-84%: Yellow background
   - 85-99%: Orange background
   - ≥100%: Red background
-
 
 **Sample Row:**
 | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R |
@@ -2456,7 +2341,6 @@ Summary Dashboard
 - Storage Warning: 75%
 - Storage Critical: 85%
 
-
 **Key Formulas:**
 
 ```excel
@@ -2485,7 +2369,6 @@ Summary Dashboard
   - 3-6 months: Orange
   - 6-12 months: Yellow
   - >12 months: Green
-
 
 **Sample Row:**
 | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R |
@@ -2527,7 +2410,6 @@ Summary Dashboard
 - Network Warning: 70%
 - Network Critical: 85%
 
-
 **Key Formulas:**
 
 ```excel
@@ -2551,7 +2433,6 @@ Summary Dashboard
   - <0.01%: Green
   - 0.01-0.1%: Yellow
   - >0.1%: Red
-
 
 ---
 
@@ -2584,7 +2465,6 @@ Summary Dashboard
 - Application Warning: 75%
 - Application Critical: 90%
 
-
 **Key Formulas:**
 
 ```excel
@@ -2614,7 +2494,6 @@ Summary Dashboard
   - "Compliant": Green
   - "Over-Licensed": Yellow
   - "Under-Licensed": Red
-
 
 ---
 
@@ -2730,7 +2609,6 @@ Summary Dashboard
   - "Acceptable": Yellow
   - "Poor": Red
 
-
 ---
 
 ### Sheet 8: At-Risk Resources & Remediation
@@ -2767,7 +2645,6 @@ Summary Dashboard
   - "In Progress": Yellow
   - "Completed": Green
 
-
 ---
 
 ### Sheet 9: Evidence Registry
@@ -2801,7 +2678,6 @@ Summary Dashboard
   - "Public": Blue
   - "Internal Only": Yellow
 
-
 ---
 
 ## Cell Styling Reference
@@ -2818,7 +2694,6 @@ Summary Dashboard
 - Text wrap: Enabled
 - Row height: 30
 
-
 ### Data Cell Styling
 
 **Text cells:**
@@ -2829,14 +2704,12 @@ Summary Dashboard
 - Border: All borders, thin
 - Alignment: Left, Vertical Center
 
-
 **Number cells:**
 
 - Font: Regular, 10pt, Calibri
 - Background: White
 - Number format: Number with 1 decimal place
 - Alignment: Right, Vertical Center
-
 
 **Percentage cells:**
 
@@ -2845,7 +2718,6 @@ Summary Dashboard
 - Number format: Percentage with 0 decimal places
 - Alignment: Right, Vertical Center
 
-
 **Currency cells:**
 
 - Font: Regular, 10pt, Calibri
@@ -2853,14 +2725,12 @@ Summary Dashboard
 - Number format: Currency (local currency, 2 decimal places)
 - Alignment: Right, Vertical Center
 
-
 **Date cells:**
 
 - Font: Regular, 10pt, Calibri
 - Background: White
 - Number format: Date (YYYY-MM-DD)
 - Alignment: Right, Vertical Center
-
 
 ### Conditional Formatting Color Codes
 
@@ -2871,13 +2741,11 @@ Summary Dashboard
 - Critical: #FFC7CE (Light orange)
 - Exceeded: #FF0000 (Red), text: #FFFFFF (White)
 
-
 **Monitoring Status:**
 
 - Monitored: #C6EFCE (Light green)
 - Partially Monitored: #FFEB9C (Light yellow)
 - Not Monitored: #FFC7CE (Light red)
-
 
 **Criticality:**
 
@@ -2886,12 +2754,10 @@ Summary Dashboard
 - Medium: #FFFF00 (Yellow)
 - Low: #92D050 (Light green)
 
-
 **Headroom (positive/negative):**
 
 - Positive (>0): #C6EFCE (Light green)
 - Negative (<0): #FFC7CE (Light red)
-
 
 ### Dropdown Lists
 
@@ -2901,7 +2767,6 @@ Summary Dashboard
 - Show dropdown arrow: Yes
 - Ignore blank: Yes
 - Show error alert: No (allow free text if needed)
-
 
 ---
 
@@ -2915,7 +2780,6 @@ Summary Dashboard
 - Automated data import via monitoring tool APIs (optional)
 - Scheduled data refresh (monthly)
 
-
 **Supported Monitoring Tools:**
 
 - Prometheus: API query for metrics export
@@ -2924,7 +2788,6 @@ Summary Dashboard
 - Azure Monitor: CLI export or portal screenshot
 - GCP Cloud Monitoring: CLI export or console screenshot
 - Nagios/Zabbix/Icinga: Reporting API or screenshot
-
 
 **Example API Integration (Prometheus):**
 ```python
@@ -2961,7 +2824,6 @@ avg = sum(values) / len(values)
 - Import into Sheet 1 (Resource Inventory)
 - Cross-reference to ensure completeness
 
-
 ### Integration with ITSM Tools
 
 **Remediation Tracking:**
@@ -2971,14 +2833,12 @@ avg = sum(values) / len(values)
 - Track remediation progress in ITSM
 - Update Sheet 8 status as tickets progress
 
-
 ### Integration with Capacity Forecasting (A.8.6.2)
 
 **Data Flow:**
 
 - Sheet 2 (Compute), Sheet 3 (Storage) → Feed into A.8.6.2 for trend analysis
 - Historical utilization + growth rates → Used for forecasting
-
 
 ### Integration with Compliance Dashboard (A.8.6.3)
 
@@ -2987,7 +2847,6 @@ avg = sum(values) / len(values)
 - All sheets → Consolidated into A.8.6.3 dashboard
 - Threshold status summary → Dashboard KPIs
 - At-risk resources → Dashboard prioritization
-
 
 ---
 
@@ -3232,14 +3091,12 @@ az monitor metrics list \
    - Timeline: 1-2 hours (with change control approval)
    - Example: 8 vCPU → 12 vCPU, 32 GB → 48 GB RAM
 
-
 2. **Hot-add CPU/memory** (if supported)
 
    - Pros: No downtime
    - Cons: Requires hot-add support (VMware, Hyper-V Enterprise)
    - Timeline: Minutes
    
-
 **Implementation Steps:**
 1. Schedule maintenance window (if downtime required)
 2. Take VM snapshot/backup
@@ -3260,14 +3117,12 @@ az monitor metrics list \
    - Timeline: 1-2 hours
    - Example: 1 TB → 2 TB
 
-
 2. **Add additional volume**
 
    - Pros: No impact to existing volume
    - Cons: Requires application reconfiguration
    - Timeline: 2-4 hours
    
-
 **Implementation Steps:**
 1. Verify storage array has capacity
 2. Expand LUN/volume at storage layer
@@ -3289,13 +3144,11 @@ az monitor metrics list \
    - Example: c5.4xlarge (16 vCPU, 32 GB) → c5.xlarge (4 vCPU, 8 GB)
    - Savings: ~$200/month
 
-
 2. **Use AWS Compute Optimizer recommendations**
 
    - Pros: AWS suggests optimal size
    - Cons: Still requires testing
    
-
 **Implementation Steps:**
 1. Review AWS Compute Optimizer recommendations
 2. Test in dev/staging environment first
@@ -3324,20 +3177,17 @@ az monitor metrics list \
    - Insufficient log backup frequency?
    - Massive data loads without proper batching?
 
-
 3. **Long-term fixes:**
 
    - Increase log backup frequency (every 15-30 minutes instead of hourly)
    - Implement transaction log monitoring alerts
    - Review application transaction patterns
    
-
 **Implementation Timeline:**
 
 - Emergency expansion: 5-10 minutes
 - Root cause investigation: 1-2 days
 - Long-term fixes: 1-2 weeks
-
 
 ### Scenario 5: Network Link Upgrade
 
@@ -3351,21 +3201,18 @@ az monitor metrics list \
    - Cons: Cost, may require new hardware
    - Timeline: Weeks to months (ISP provisioning)
 
-
 2. **Add additional link (ECMP/bonding)**
 
    - Pros: Redundancy + capacity
    - Cons: Requires compatible routing
    - Timeline: Weeks
    
-
 3. **Traffic optimization**
 
    - Implement QoS to prioritize critical traffic
    - Enable compression
    - Offload non-critical traffic (e.g., backups to off-hours)
    
-
 **Implementation Steps:**
 1. Contact ISP for link upgrade quote and timeline
 2. Budget approval
@@ -3386,7 +3233,6 @@ az monitor metrics list \
 - Missing historical data
 - Gaps in monitoring
 
-
 **Causes:**
 1. Monitoring agent not installed
 2. Monitoring data retention too short
@@ -3405,7 +3251,6 @@ az monitor metrics list \
 - Use current utilization as best estimate
 - Flag for follow-up in next assessment cycle
 
-
 ### Issue: Threshold Status Calculation Errors
 
 **Symptoms:**
@@ -3413,7 +3258,6 @@ az monitor metrics list \
 - Excel formulas showing errors
 - Threshold status incorrect
 - Headroom calculations wrong
-
 
 **Causes:**
 1. Peak utilization cell empty or non-numeric
@@ -3436,7 +3280,6 @@ az monitor metrics list \
 - Can't calculate GB/month growth
 - Historical data insufficient
 
-
 **Causes:**
 1. Less than 30 days of historical data
 2. Storage capacity changed recently (expansion)
@@ -3453,7 +3296,6 @@ az monitor metrics list \
 - Document estimation methodology
 - Plan to measure actual growth over next 30-90 days
 
-
 ### Issue: Cloud Resources Missing from Inventory
 
 **Symptoms:**
@@ -3461,7 +3303,6 @@ az monitor metrics list \
 - Cloud instances not in Sheet 1
 - Cloud storage not documented
 - Incomplete assessment
-
 
 **Causes:**
 1. Different teams manage cloud vs. on-premises
@@ -3480,7 +3321,6 @@ az monitor metrics list \
 
 - Can't document IOPS or throughput utilization
 - Don't know limits
-
 
 **Causes:**
 1. Storage system documentation not available
@@ -3503,7 +3343,6 @@ az monitor metrics list \
 - Flag for follow-up investigation
 - Continue with disk space utilization assessment
 
-
 ---
 
 **END OF APPENDICES**
@@ -3521,7 +3360,6 @@ az monitor metrics list \
 - **Real-World Examples:** 25+ detailed scenario examples
 - **Formulas Provided:** 15+ Excel formulas for calculations
 - **Total Sections:** 9 major sections in Part I, 6 major sections in Part II
-
 
 ---
 

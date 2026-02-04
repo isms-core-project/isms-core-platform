@@ -44,12 +44,10 @@ This document consists of two parts:
   - Formula Definitions
   - Python Script Implementation (Dashboard Consolidation)
 
-
 **Target Audiences:**
 
 - **Part I:** Dashboard users (CISO, Management, Auditors)
 - **Part II:** Dashboard developers (Python/Excel script maintainers)
-
 
 ---
 
@@ -80,7 +78,6 @@ This dashboard is the **EXECUTIVE VIEW** of Control A.5.9 compliance. It consoli
 - **Top priorities** for remediation
 - **Executive summary** for Board/CISO
 
-
 ### Why This Matters
 
 This dashboard fulfills:
@@ -90,7 +87,6 @@ This dashboard fulfills:
 - **Executive Reporting**: Single-page compliance status for CISO/Board
 - **Audit Readiness**: Consolidated evidence of A.5.9 compliance
 - **Continuous Improvement**: Trend analysis, gap prioritization
-
 
 **From Implementer Perspective**: Provides clear priorities for improvement efforts.
 
@@ -108,14 +104,12 @@ Instead of presenting 4 separate workbooks to management (overwhelming!), this d
 - **Trends** quarter-over-quarter to show improvement
 - **Communicates** in business language, not technical jargon
 
-
 **Dashboard Audience**:
 
 - **Board of Directors**: One-page summary, overall compliance score
 - **CISO**: Detailed metrics, remediation priorities
 - **Audit Committee**: Compliance evidence, trend analysis
 - **External Auditors**: Consolidated compliance proof
-
 
 ---
 
@@ -130,7 +124,6 @@ Instead of presenting 4 separate workbooks to management (overwhelming!), this d
 - ✅ **IMP-A.5.9-3**: Quality & Compliance assessment workbook
 - ✅ **IMP-A.5.9-4**: Owner Accountability assessment workbook
 
-
 **CRITICAL**: All 4 assessments must be completed for the same quarter. Cannot consolidate Q1 discovery with Q2 maintenance!
 
 **2. Access to Assessment Workbooks**:
@@ -139,7 +132,6 @@ Instead of presenting 4 separate workbooks to management (overwhelming!), this d
 - Read access to consolidated data sheets
 - Previous quarter dashboard (if exists, for trending)
 
-
 **3. Personnel**:
 
 - **Information Security Manager**: Prepares dashboard, compiles metrics
@@ -147,14 +139,12 @@ Instead of presenting 4 separate workbooks to management (overwhelming!), this d
 - **Executive Management**: Receives dashboard, approves remediation priorities
 - **Auditors** (if applicable): Reviews dashboard for compliance verification
 
-
 **4. Time Allocation**:
 
 - **Dashboard Generation**: 2-4 hours (mostly automated via Python script)
 - **Executive Summary Preparation**: 2-3 hours (narrative, priorities, trending analysis)
 - **Management Review**: 1 hour
 - **Total**: ~1 working day
-
 
 ---
 
@@ -229,7 +219,6 @@ Per industry best practices for compliance dashboards (see [Hicomply](https://ww
 - Quarter-over-quarter trend
 - Key achievements and concerns
 
-
 **Column Definitions**:
 
 | Section | Content | How Populated |
@@ -250,7 +239,6 @@ The Python script auto-populates:
 - Overall Compliance Score: Weighted average of 4 assessments
 - Assessment scores: Imported from each workbook
 - Traffic lights: Green (≥90%), Yellow (75-89%), Red (<75%)
-
 
 **Step 2: Add Trend Analysis**
 
@@ -296,13 +284,11 @@ KEY ACHIEVEMENTS:
 - Quality & Compliance score improved from 91% to 94% (+3%)
 - Owner accountability initiatives launched (attestation campaign)
 
-
 KEY CONCERNS:
 
 - Data quality gaps: 24 information assets missing classification (CRITICAL)
 - Owner engagement: 11% of owners not responding to attestation requests
 - Maintenance: Procurement integration not yet implemented
-
 
 REMEDIATION:
 Top 5 priorities identified with assigned owners and target dates. Critical gaps 
@@ -332,7 +318,6 @@ review in 60 days to assess progress.
 - Accountability score and breakdown (4 dimensions)
 - Weighting of each assessment toward overall score
 
-
 **Column Definitions**:
 
 | Column | Purpose | How Populated |
@@ -358,7 +343,6 @@ Check that CSV imports completed successfully:
 - Quality: Overall quality score (from A59_3_Quality_Metrics.csv)
 - Accountability: Overall accountability score (from A59_4_Accountability_Metrics.csv)
 
-
 **Step 2: Add Trend Indicators**
 
 For each assessment, compare to last quarter:
@@ -377,24 +361,20 @@ For each assessment with status ⚠️ or ❌, summarize main gaps:
 - "Application discovery 94% (target 95%) - shadow IT detection gaps"
 - "Personnel asset discovery 100% ✅"
 
-
 **Maintenance Key Issues**:
 
 - "Update SLA compliance 89% (target 95%) - SaaS app onboarding delays"
 - "Procurement integration missing"
-
 
 **Quality Key Issues**:
 
 - "Completeness dimension 94% (target 100%) - 24 assets missing classification"
 - "Currency dimension 92% (target 100%) - 8% critical assets stale"
 
-
 **Accountability Key Issues**:
 
 - "Owner acknowledgment 89% (target 95%) - 15 owners not responding"
 - "Owner performance 76% (target 80%) - 3 poor performers identified"
-
 
 ---
 
@@ -408,7 +388,6 @@ For each assessment with status ⚠️ or ❌, summarize main gaps:
 - Trend lines (improving/degrading)
 - Rate of improvement
 - Projection to target
-
 
 **Column Definitions**:
 
@@ -443,7 +422,6 @@ Sheet auto-calculates:
 - Improvement rate: (Q1 - Q4) / Q4 × 100% = (89-86)/86 = +3.5%
 - Projection Q2: Q1 + (Q1 - Q4) = 89% + 3% = 92% (linear projection)
 
-
 **Step 3: Add Narrative**
 
 Document significant trends:
@@ -452,7 +430,6 @@ Document significant trends:
 - "Quality assessment showing fastest improvement (+3%)"
 - "Accountability lagging (+4%) - needs focused attention"
 - "At current rate, 95% target achievable by Q2 2026"
-
 
 ---
 
@@ -467,7 +444,6 @@ Document significant trends:
 - Assigned ownership for remediation
 - Target completion dates
 - Status tracking
-
 
 **Column Definitions**:
 
@@ -498,7 +474,6 @@ Extract gaps from:
 - **A59_3 (Quality)**: Mandatory attributes missing, consistency check failures
 - **A59_4 (Accountability)**: Unowned assets, owners without attestation
 
-
 **Step 2: Prioritize Using Severity × Effort Matrix**
 
 | Severity → Effort ↓ | Critical | High | Medium | Low |
@@ -526,7 +501,6 @@ Extract gaps from:
 - **Status**: In Progress
 - **% Complete**: 40% (10 of 24 owners responded)
 
-
 **GAP-002 (Priority 2)**:
 
 - **Source**: Accountability (A59_4)
@@ -537,7 +511,6 @@ Extract gaps from:
 - **Remediation**: "Send 3rd reminder, escalate to department managers for non-responders"
 - **Target Date**: 12.02.2026
 - **Status**: In Progress
-
 
 **GAP-015 (Priority 4 - Longer-term)**:
 
@@ -551,7 +524,6 @@ Extract gaps from:
 - **Target Date**: Q2 2026 (3 months)
 - **Status**: Not Started
 
-
 **Step 3: Track Progress**
 
 Update status monthly:
@@ -560,7 +532,6 @@ Update status monthly:
 - In Progress → % Complete: Track progress (25%, 50%, 75%)
 - % Complete 100% → Complete: Verification evidence collected
 - Blocked: Escalate to management (resource constraints, dependencies)
-
 
 ---
 
@@ -574,7 +545,6 @@ Update status monthly:
 - Evidence from 4 assessments supporting compliance
 - Compliance status per requirement
 - Audit-ready evidence trail
-
 
 **Column Definitions**:
 
@@ -614,7 +584,6 @@ For each requirement:
 - **90-99% compliant**: ⚠️ Partially Met (document gap)
 - **<90% compliant**: ❌ Not Met (urgent remediation)
 
-
 **Example**:
 
 **Requirement A.5.9-R3**: Document mandatory attributes
@@ -629,7 +598,6 @@ For each requirement:
 - **Remediation Plan**: "GAP-001: Email campaign to owners, 2-week deadline"
 - **Target Date**: 05.02.2026
 
-
 ---
 
 ### Sheet 7: Executive Presentation (One-Page)
@@ -642,7 +610,6 @@ For each requirement:
 - Charts: Overall score gauge, assessment breakdown, trend line
 - Key numbers: Overall score, top 3 priorities, trend
 - Designed for printing/PDF export
-
 
 **Layout**:
 
@@ -688,7 +655,6 @@ This sheet is designed for:
 - Printing as PDF for distribution
 - Executive review in < 5 minutes
 
-
 ---
 
 ### Sheet 8: Evidence Register
@@ -699,7 +665,6 @@ This sheet is designed for:
 
 - Evidence from all 4 assessment workbooks
 - Dashboard-specific evidence (executive presentations, Board meeting minutes)
-
 
 **Evidence ID format**: `DASH-NNN`
 
@@ -715,7 +680,6 @@ This sheet is designed for:
 - CSV exports from each assessment
 - Evidence registers from each assessment
 
-
 **Dashboard-Specific Evidence**:
 
 - Generated dashboard workbook
@@ -723,7 +687,6 @@ This sheet is designed for:
 - Board presentation slides (if created)
 - Management approval of remediation priorities
 - Board meeting minutes (showing dashboard presentation)
-
 
 ### Evidence Organization
 
@@ -825,7 +788,6 @@ Before presenting dashboard, verify:
 - [ ] All scores auto-calculated correctly
 - [ ] Previous quarter data entered for trending
 
-
 ### Calculation Checks
 
 - [ ] Overall compliance score = weighted average of 4 assessments
@@ -833,7 +795,6 @@ Before presenting dashboard, verify:
 - [ ] Gap vs. Target calculations correct
 - [ ] Trend calculations correct (current vs. previous quarter)
 - [ ] Priority matrix applied correctly
-
 
 ### Executive Summary Checks
 
@@ -843,7 +804,6 @@ Before presenting dashboard, verify:
 - [ ] Trend analysis included
 - [ ] Recommendations clear and actionable
 
-
 ### Evidence Checks
 
 - [ ] All 4 assessment workbooks archived
@@ -852,7 +812,6 @@ Before presenting dashboard, verify:
 - [ ] Executive summary PDF generated
 - [ ] Evidence register complete
 
-
 ### Presentation Checks
 
 - [ ] One-page summary suitable for printing
@@ -860,7 +819,6 @@ Before presenting dashboard, verify:
 - [ ] No jargon (business language, not IT jargon)
 - [ ] Key numbers highlighted (overall score, trend, top priorities)
 - [ ] Recommendations prominently displayed
-
 
 ---
 
@@ -875,14 +833,12 @@ Before presenting dashboard, verify:
 - Check narrative clarity
 - Prepare presentation materials
 
-
 **Step 2: CISO Review**
 
 - Review overall compliance score and trend
 - Assess gap priorities and remediation plans
 - Approve resource allocation requests
 - Approve presentation to Board/Executive Management
-
 
 **Step 3: Executive Management Presentation**
 
@@ -891,13 +847,11 @@ Before presenting dashboard, verify:
 - Request approval for remediation plans
 - Answer questions (detailed backup available)
 
-
 **Step 4: Board Presentation** (if quarterly Board meeting)
 
 - CISO presents dashboard to Board/Audit Committee
 - Board reviews compliance status
 - Board approves strategic priorities
-
 
 **Step 5: Archival**
 
@@ -905,7 +859,6 @@ Before presenting dashboard, verify:
 - Store evidence per retention policy
 - Document approvals and decisions
 - Plan next quarter assessment cycle
-
 
 ### Approval Criteria
 
@@ -917,13 +870,11 @@ Before presenting dashboard, verify:
 - ✅ Priorities identified with owners and dates
 - ✅ Evidence complete
 
-
 **Return for Revision** if:
 
 - ⚠️ Data quality issues (assessment data inconsistent)
 - ⚠️ Incomplete prioritization (no clear top priorities)
 - ⚠️ Unclear narrative (jargon, too technical)
-
 
 **Management Decisions Required**:
 
@@ -931,7 +882,6 @@ Before presenting dashboard, verify:
 - Allocate resources for remediation
 - Set expectations for Q+1 target (95% compliance?)
 - Escalate critical gaps to Executive Management if needed
-
 
 ---
 
@@ -958,7 +908,6 @@ This section provides complete technical specifications for developers creating 
 - `A59_3_Quality_Metrics_YYYYMMDD.csv`
 - `A59_4_Accountability_Metrics_YYYYMMDD.csv`
 
-
 **Generated Workbook**: `ISMS_A_5_9_Compliance_Dashboard_QX_YYYY.xlsx`
 
 **Key Design Principles**:
@@ -982,7 +931,6 @@ This section provides complete technical specifications for developers creating 
 - **Company**: [Organization]
 - **Created**: [Generation Date]
 - **Version**: 1.0
-
 
 ### Sheet Summary
 
@@ -1016,7 +964,6 @@ Same as IMP-A.5.9-1/2/3/4 (refer to those documents for color palette).
 - **Line Ending**: CRLF (`\r\n`) or LF (`\n`)
 - **Header Row**: Required (first row)
 - **Data Rows**: Starting from row 2
-
 
 ### CSV 1: Discovery Metrics (from IMP-A.5.9-1)
 
@@ -1445,7 +1392,6 @@ Formulas pull directly from Sheets 3-6 (imported CSV data).
 - Row 1: Headers
 - Rows 2+: Data from CSV
 
-
 **Python Implementation**:
 
 ```python
@@ -1668,7 +1614,6 @@ CONFIG = {
     ]
 }
 
-
 def main():
     """Main execution function"""
     
@@ -1733,7 +1678,6 @@ def main():
     print("  4. Review with CISO and distribute")
     print("=" * 70)
 
-
 def validate_csv_files():
     """Validate all required CSV files exist"""
     csv_paths = {}
@@ -1750,7 +1694,6 @@ def validate_csv_files():
     
     return csv_paths if all_exist else None
 
-
 def create_workbook_structure():
     """Create workbook with all sheets"""
     wb = openpyxl.Workbook()
@@ -1766,7 +1709,6 @@ def create_workbook_structure():
     wb.properties.created = datetime.now()
     
     return wb
-
 
 def import_assessment_data(wb, csv_paths):
     """Import CSV data into sheets 3-6"""
@@ -1808,25 +1750,21 @@ def import_assessment_data(wb, csv_paths):
         ws.protection.sheet = True
         print(f"  ✓ Imported {assessment} metrics")
 
-
 def create_executive_summary(ws):
     """Generate Executive Summary sheet"""
     # Implementation as per specification above
     # (create_header_section, create_assessment_breakdown, etc.)
     pass
 
-
 def create_compliance_scorecard(ws):
     """Generate Compliance Scorecard sheet"""
     # Implementation as per specification
     pass
 
-
 def create_action_register(ws):
     """Create Action Register template"""
     # Implementation as per specification
     pass
-
 
 if __name__ == '__main__':
     main()
@@ -1852,7 +1790,6 @@ if __name__ == '__main__':
 - Overall compliance score calculated correctly
 - Traffic light indicators display properly
 - Action register populated with sample data
-
 
 ---
 

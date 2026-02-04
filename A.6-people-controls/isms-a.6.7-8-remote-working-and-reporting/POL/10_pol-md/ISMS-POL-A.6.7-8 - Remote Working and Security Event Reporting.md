@@ -34,7 +34,6 @@
 - Technical: IT Director / CTO
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -45,7 +44,6 @@
 - ISMS-POL-A.6.3 (Awareness and Training)
 - ISMS-POL-A.5.24-28 (Incident Management Lifecycle)
 - ISMS-POL-A.8.1-7-18-19 (Endpoint Security)
-
 
 ---
 
@@ -99,7 +97,6 @@ This policy establishes [Organization]'s requirements for remote working securit
 - Audit and security monitoring capabilities
 - Revocation of access and equipment return upon termination
 
-
 ## ISO/IEC 27001:2022 Control A.6.8 - Information Security Event Reporting
 
 **ISO/IEC 27001:2022 Annex A.6.8 - Information Security Event Reporting**
@@ -123,7 +120,6 @@ This policy establishes [Organization]'s requirements for remote working securit
 - Suspected malware infection (NEW in 2022)
 - Personnel SHALL NOT attempt to verify vulnerabilities themselves
 
-
 ## Combined Control Framework Rationale
 
 [Organization] implements these two controls as a unified framework because they represent complementary aspects of personnel security responsibilities:
@@ -135,7 +131,6 @@ This policy establishes [Organization]'s requirements for remote working securit
 - Remote workers need accessible reporting channels from any location
 - Event categories include remote-specific scenarios (VPN issues, device theft, suspicious network activity)
 
-
 **Implementation Synergy**:
 
 - Shared training modules covering both remote security and event reporting
@@ -143,14 +138,12 @@ This policy establishes [Organization]'s requirements for remote working securit
 - Unified evidence collection (training records, acknowledgments, awareness materials)
 - Single governance framework with consistent review cycles
 
-
 **Why Separate Implementation Would Be Less Effective**:
 
 - Remote workers without event reporting knowledge create detection gaps
 - Event reporting channels inaccessible from remote locations delay response
 - Fragmented training increases burden and reduces retention
 - Separate policies create confusion about responsibilities
-
 
 ## What This Policy Does
 
@@ -168,7 +161,6 @@ This policy:
 - **References** applicable regulatory requirements per ISMS-POL-00
 - **Integrates** with related controls (endpoint security, incident management, access control)
 
-
 ## What This Policy Does NOT Do
 
 This policy does NOT:
@@ -182,14 +174,12 @@ This policy does NOT:
 - **Replace local employment law obligations** (complements existing HR framework)
 - **Specify event triage procedures** (see ISMS-IMP-A.6.7-8.S4)
 
-
 **Rationale**: Separating policy requirements from implementation guidance enables:
 
 - Policy stability despite evolving remote work technologies
 - Technical flexibility for platform and tool updates
 - Clear distinction between governance (policy) and execution (implementation)
 - Organization-agnostic approach applicable to any ISMS implementation
-
 
 ## Scope
 
@@ -203,7 +193,6 @@ This policy does NOT:
 - All personnel traveling for business who access organizational resources
 - All personnel who may observe or report security events
 
-
 **Remote Work Arrangements**:
 
 - Work from home (regular or occasional)
@@ -212,14 +201,12 @@ This policy does NOT:
 - Work while traveling (hotels, airports, public spaces)
 - Any work performed outside [Organization]'s controlled premises
 
-
 **Devices and Equipment**:
 
 - Corporate-issued laptops, tablets, and mobile devices
 - Personal devices used for work (BYOD) where permitted
 - Portable storage media containing organizational data
 - Communication devices used for organizational purposes
-
 
 **Information and Systems**:
 
@@ -228,14 +215,12 @@ This policy does NOT:
 - All communications containing organizational information
 - All documents and materials processed outside [Organization]'s premises
 
-
 **Out of Scope**:
 
 - On-premises work performed at [Organization]'s controlled facilities
 - Personal activities on personal devices without organizational data
 - HR aspects of remote work (eligibility, work-life balance, scheduling)
 - Compensation and expense policies (separate HR domain)
-
 
 ## Regulatory Applicability
 
@@ -268,7 +253,6 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - NIST SP 800-61 Rev 2 - Computer Security Incident Handling Guide
 - CIS Controls v8 - Control 4 (Secure Configuration), Control 17 (Incident Response)
 - ENISA - Teleworking Security Guidelines
-
 
 **Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment per ISMS-POL-00. The most stringent requirements apply where multiple regulations overlap.
 
@@ -303,7 +287,6 @@ Remote work authorization SHALL consider:
 - Regulatory or contractual restrictions
 - Business continuity requirements
 
-
 **2.1.3 Revocation**
 
 Remote work authorization SHALL be revoked when:
@@ -313,7 +296,6 @@ Remote work authorization SHALL be revoked when:
 - Security requirements are not maintained
 - Policy violations occur
 - Business needs require on-premises presence
-
 
 ## Physical Security Requirements
 
@@ -330,7 +312,6 @@ Remote workers SHALL:
 - Store sensitive documents securely when not in active use
 - Dispose of sensitive documents using approved methods (shredding)
 
-
 **Verification**: Physical security compliance is verified through annual self-assessment checklist completion, triggered reassessment following security events or significant workspace changes, or attestation during authorization renewal.
 
 **2.2.2 Equipment Security**
@@ -343,7 +324,6 @@ Remote workers SHALL:
 - Report lost or stolen devices immediately (see Section 3)
 - Transport devices securely between locations
 
-
 **2.2.3 Clear Desk Requirements**
 
 The clear desk policy (per A.7.7) SHALL extend to remote work environments:
@@ -351,7 +331,6 @@ The clear desk policy (per A.7.7) SHALL extend to remote work environments:
 - Sensitive documents SHALL NOT be left visible when not actively in use
 - Work materials SHALL be secured at the end of each work session
 - Printed materials SHALL be stored securely or disposed of appropriately
-
 
 ## Technical Security Requirements
 
@@ -376,7 +355,6 @@ Remote access authentication SHALL require:
 - Immediate password change if compromise is suspected
 - Session timeout after period of inactivity
 
-
 **2.3.3 Network Security Requirements**
 
 Remote workers SHALL:
@@ -385,7 +363,6 @@ Remote workers SHALL:
 - Avoid public, unsecured Wi-Fi for organizational work without VPN protection
 - Not disable or circumvent security controls
 - Report network security concerns or anomalies
-
 
 **Verification**: Network security compliance may be monitored through endpoint management telemetry (network SSID, encryption type, VPN connection status, certificate validity), VPN connection enforcement, or user attestation during periodic reviews. Where telemetry is not technically feasible, user attestation during authorization renewal provides reasonable assurance.
 
@@ -401,7 +378,6 @@ Remote workers SHALL:
 - Not process Restricted data remotely unless specifically authorized
 - Apply appropriate protection for Confidential data
 - Follow secure information transfer procedures (per A.5.14)
-
 
 **2.4.2 Data Storage Requirements**
 
@@ -422,7 +398,6 @@ Remote workers SHALL:
 - Not rely solely on local device storage for critical data
 - Follow organizational backup policies
 
-
 ## Device and Equipment Security
 
 [Organization] SHALL define security requirements for devices used in remote work.
@@ -438,7 +413,6 @@ Corporate-issued devices used for remote work SHALL:
 - Have remote wipe capability enabled
 - Be registered in device inventory (per A.5.9)
 
-
 **2.5.2 Personal Device (BYOD) Requirements**
 
 Where personal devices are permitted for organizational work, they SHALL:
@@ -448,7 +422,6 @@ Where personal devices are permitted for organizational work, they SHALL:
 - Maintain separation between personal and work data (containerization)
 - Be subject to remote wipe of organizational data upon termination
 - Not store organizational data after access is revoked
-
 
 **2.5.3 Prohibited Devices**
 
@@ -460,7 +433,6 @@ The following SHALL NOT be used for organizational work:
 - Devices that cannot meet security requirements
 - Devices running end-of-life operating systems without security updates
 - Devices owned or controlled by third parties not subject to organizational security policies
-
 
 ## Remote Work Termination
 
@@ -474,7 +446,6 @@ Upon termination of remote work authorization:
 - VPN and remote access tokens SHALL be disabled
 - Access to remote-accessible systems SHALL be reviewed and removed
 
-
 **2.6.2 Equipment Return**
 
 Upon termination of employment or contract:
@@ -482,7 +453,6 @@ Upon termination of employment or contract:
 - All organizational equipment SHALL be returned per A.5.11
 - All organizational data SHALL be removed from personal devices
 - Return SHALL be verified and documented
-
 
 ---
 
@@ -513,7 +483,6 @@ Upon termination of employment or contract:
 - **Ticketing System**: Formal ticket submission for non-urgent events
 - **Anonymous Option**: Mechanism for anonymous reporting where appropriate
 
-
 **Anonymous Reporting**: Anonymous reporting SHALL be supported through: (a) Dedicated email alias not requiring authentication; (b) Web form accessible without login; or (c) Third-party hotline if implemented. **Limitations**: Anonymous reporting may preclude follow-up questions and detailed feedback. Reporters are encouraged to provide contact information where comfortable, with assurance of confidentiality per Section 3.4.1.
 
 **3.1.3 Channel Accessibility**
@@ -524,7 +493,6 @@ Reporting channels SHALL be:
 - Included in employee onboarding materials
 - Displayed in common areas and on login screens
 - Accessible without requiring system access (for reporting access issues)
-
 
 ## Reportable Events
 
@@ -549,14 +517,12 @@ Personnel SHALL report the following event categories:
 - Suspicious phone calls or text messages
 - Attempted manipulation to bypass security controls
 
-
 **Malware and System Compromise**:
 
 - Unexpected system behavior or performance issues
 - Suspicious pop-ups, messages, or notifications
 - Suspected malware infection (NEW in ISO 27002:2022)
 - Ransomware indicators
-
 
 **Unauthorized Access**:
 
@@ -565,14 +531,12 @@ Personnel SHALL report the following event categories:
 - Unexpected account lockouts or password changes
 - Suspicious privilege changes
 
-
 **Data Breach and Leakage**:
 
 - Misdirected emails containing sensitive information
 - Unauthorized data access or exposure
 - Lost or stolen documents containing organizational data
 - Suspected data exfiltration
-
 
 **Physical Security**:
 
@@ -581,13 +545,11 @@ Personnel SHALL report the following event categories:
 - Missing equipment
 - Suspicious persons in secure areas
 
-
 **Policy Violations**:
 
 - Observed circumvention of security controls
 - Known security policy violations by others
 - System alterations not processed via change control (NEW in ISO 27002:2022)
-
 
 **Remote Work Specific**:
 
@@ -599,7 +561,6 @@ Personnel SHALL report the following event categories:
 - Suspicious IT support requests for remote access credentials
 - Home router configuration changes not initiated by user
 - Physical observation of work materials by unauthorized persons
-
 
 ## Reporting Procedures
 
@@ -615,7 +576,6 @@ Reports SHALL include (where known):
 - Actions already taken (if any)
 - Contact information for follow-up (unless anonymous)
 - Any supporting evidence (screenshots, email headers)
-
 
 **3.3.2 Reporting Timeliness**
 
@@ -639,7 +599,6 @@ Personnel reporting events SHALL:
 - NOT attempt to test or exploit suspected vulnerabilities
 - Cooperate with any follow-up investigation
 
-
 ## Non-Blame Culture
 
 [Organization] SHALL foster a non-punitive environment for security event reporting.
@@ -662,7 +621,6 @@ Personnel reporting events SHALL:
 - Communicate the value of reporting through awareness programs
 - Provide feedback on reported events to demonstrate action is taken
 
-
 **Verification**: Non-blame culture effectiveness may be assessed through reporting volume trends (declining volumes may indicate fear of consequences and trigger culture review), anonymous personnel surveys on reporting comfort, or analysis of time-to-report metrics. Peer organization benchmarking or industry averages may inform adequacy assessment.
 
 **3.4.3 Exceptions**
@@ -673,7 +631,6 @@ Non-blame principles do NOT protect:
 - Malicious activity disguised as accidental
 - Repeated negligence after training and warnings
 - False reports made in bad faith
-
 
 ## Response and Feedback
 
@@ -700,7 +657,6 @@ Non-blame principles do NOT protect:
 - Use lessons learned to improve the reporting process
 - Thank reporters for their contribution to organizational security
 
-
 **3.5.3 Escalation**
 
 Events SHALL be escalated per ISMS-POL-A.5.24-28 (Incident Management Lifecycle) when:
@@ -709,7 +665,6 @@ Events SHALL be escalated per ISMS-POL-A.5.24-28 (Incident Management Lifecycle)
 - Event requires resources beyond initial response team
 - Event has regulatory notification implications
 - Event affects multiple systems or business units
-
 
 ---
 
@@ -740,7 +695,6 @@ Responsibilities:
 - Report significant events to Executive Management
 - Review and improve remote work and reporting programs
 
-
 **4.2.2 IT Security Team**
 
 Responsibilities:
@@ -753,7 +707,6 @@ Responsibilities:
 - Maintain security event documentation
 - Conduct periodic reviews of remote work security
 
-
 **4.2.3 Line Managers**
 
 Responsibilities:
@@ -764,7 +717,6 @@ Responsibilities:
 - Escalate security concerns to IT Security
 - Address non-compliance within their teams
 - Support investigations when required
-
 
 **4.2.4 All Personnel**
 
@@ -777,7 +729,6 @@ Responsibilities:
 - Preserve evidence and cooperate with investigations
 - Complete required security awareness training
 - Acknowledge and adhere to this policy
-
 
 ---
 
@@ -803,14 +754,12 @@ Responsibilities:
 - Security baseline assessments for remote devices
 - Audit of remote access logs
 
-
 **Event Reporting Compliance**:
 
 - Tracking of reporting channel availability
 - Analysis of event reporting metrics
 - Review of response timeframes
 - Assessment of reporter feedback
-
 
 ## Non-Compliance
 
@@ -824,7 +773,6 @@ Violations of this policy may result in:
 - Termination of employment or contract for serious violations
 - Legal action where criminal activity is involved
 
-
 **5.3.2 Non-Compliance Reporting**
 
 Observed non-compliance SHALL be reported to:
@@ -833,7 +781,6 @@ Observed non-compliance SHALL be reported to:
 - IT Security (for technical violations)
 - HR (for personnel matters)
 - CISO (for significant or repeated violations)
-
 
 ## Exception Management
 
@@ -847,7 +794,6 @@ Exceptions to this policy require:
 - Approval by CISO (or delegate)
 - Time-limited duration with review date
 - Documentation in exception register
-
 
 **5.4.2 Exception Authority**
 
@@ -871,12 +817,10 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - Event reporting effectiveness evaluated in risk treatment
 - Risk treatment plans document control implementation
 
-
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
 - Controls A.6.7 and A.6.8 applicability justified in [Organization]'s SoA
 - Implementation status tracked and reported separately for each control
-
 
 ## Related Controls
 
@@ -903,14 +847,12 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - ISMS-IMP-A.6.7-8.S4: Event Reporting Mechanisms Assessment
 - ISMS-IMP-A.6.7-8.S5: Compliance Dashboard
 
-
 **Assessment Tools**:
 
 - Excel-based assessment workbooks with automated compliance calculations
 - Evidence registers for audit documentation
 - Gap analysis templates for remediation planning
 - Remediation tracking for improvement actions
-
 
 ---
 
@@ -927,7 +869,6 @@ Evidence required to demonstrate this policy is adequately documented and approv
 - ✅ Training materials for remote work and event reporting
 - ✅ Exception register with documented approvals
 - ✅ Roles and responsibilities assigned
-
 
 **Stage 2 (Operational Effectiveness) Evidence:**
 
@@ -980,7 +921,6 @@ Optional reference templates and examples may be provided in:
 - ISMS-REF-A.6.7-8 (Reference Materials - if created)
 - Organizational intranet or document management system
 - HR onboarding materials
-
 
 **Note**: The specific format and content of operational forms and templates are determined by [Organization] based on its operational requirements, technology platforms, and organizational culture. This policy defines WHAT documentation is required, not the specific format.
 

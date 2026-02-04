@@ -44,12 +44,10 @@ This document consists of two parts:
   - Sheet-by-Sheet Specifications
   - Cell Styling Reference
 
-
 **Target Audiences:**
 
 - **Part I:** Assessment users (Security Team, Policy Owners, Network Team, Compliance Team)
 - **Part II:** Workbook developers (Python/Excel script maintainers)
-
 
 ---
 
@@ -74,7 +72,6 @@ This assessment verifies [Organization]'s compliance with:
 - ISMS-POL-A.8.23, Section 2.2 (Category Filtering Approach): Category Filtering Requirements
 - ISMS-POL-A.8.23, Section 3.3 (Exception Management): Exception Management Requirements
 
-
 Filtering technology without proper policy configuration provides little protection. This assessment ensures policies are properly configured, documented, regularly reviewed, and aligned with [Organization]'s Acceptable Use Policy (AUP). It verifies that threat protection is mandatory, category filtering aligns with organizational risk tolerance, and exceptions are properly managed.
 
 ### What You'll Document
@@ -88,7 +85,6 @@ Filtering technology without proper policy configuration provides little protect
 - Alignment with Acceptable Use Policy
 - Policy review process and frequency
 
-
 **Key Principle:** This assessment is **approach-agnostic**. Whether you use restrictive filtering (block most things), trust-based filtering (block threats only), or hybrid (balanced), the framework adapts. You document YOUR policy philosophy and verify it's properly implemented and managed.
 
 ### The Three Filtering Philosophies
@@ -99,20 +95,17 @@ Filtering technology without proper policy configuration provides little protect
    - Pro: Maximum control
    - Con: High maintenance (many exception requests)
 
-
 2. **Trust-Based (Default Allow):** Allow everything, block known threats only
 
    - Common in: Tech companies, creative industries, startups
    - Pro: Maximum productivity
    - Con: Relies heavily on user awareness
 
-
 3. **Hybrid (Balanced):** Block threats + some high-risk categories, allow most business content
 
    - Common in: Most enterprises
    - Pro: Balance security and productivity
    - Con: Requires tuning
-
 
 **All three are valid!** This assessment works for any approach.
 
@@ -122,7 +115,6 @@ Filtering technology without proper policy configuration provides little protect
 - **ISMS-IMP-A.8.23.2** (Coverage): WHERE those solutions are deployed
 - **ISMS-IMP-A.8.23.3** (THIS): HOW those solutions are configured
 - **ISMS-IMP-A.8.23.4** (Monitoring): HOW you monitor filtering effectiveness
-
 
 All four must align for complete web filtering compliance.
 
@@ -143,7 +135,6 @@ Before starting this assessment, ensure you have:
 - Access to Acceptable Use Policy document
 - Access to policy review meeting minutes/records
 
-
 ### Required Information
 
 - Current filtering policies (exported or documented)
@@ -154,14 +145,12 @@ Before starting this assessment, ensure you have:
 - Policy review schedule and records
 - Acceptable Use Policy (current version)
 
-
 **Completed Prerequisites:**
 
 - ISMS-IMP-A.8.23.1 (Infrastructure Assessment) should be complete
 - ISMS-IMP-A.8.23.2 (Coverage Assessment) should be complete
 - You should know which filtering solutions you have and where they're deployed
 - Acceptable Use Policy should exist and be current
-
 
 **People to Consult:**
 
@@ -173,7 +162,6 @@ Before starting this assessment, ensure you have:
 - Help Desk (exception requests, user complaints)
 - Legal (policy language, liability considerations)
 
-
 **Time Allocation:**
 
 - Threat protection assessment: 2-3 hours
@@ -184,7 +172,6 @@ Before starting this assessment, ensure you have:
 - AUP alignment: 1-2 hours
 - Policy review process: 1 hour
 - Evidence collection: 1-2 hours
-
 
 ---
 
@@ -222,7 +209,6 @@ Before diving into details, document your approach:
    - User/Group Policies: If using differentiated policies
    - AUP Alignment: **ALWAYS applicable**
    - Review Process: **ALWAYS applicable**
-
 
 **Step 3: Threat Protection Assessment (2-3 hours)**
 
@@ -311,7 +297,6 @@ Document organization-maintained URL lists:
    - How often are lists reviewed?
    - Where are changes documented?
 
-
 **Step 6: Policy Exceptions Tracking (2-3 hours)**
 
 Document ALL policy exceptions:
@@ -355,7 +340,6 @@ Document ALL policy exceptions:
    - High-risk exceptions
    - Average time to approval
 
-
 **Step 7: User/Group Policies (1-2 hours, if applicable)**
 
 If using differentiated policies:
@@ -393,7 +377,6 @@ If using differentiated policies:
    - Do policies match organizational hierarchy?
    - Are policies justified (not just "because they're execs")?
    - Is differentiation documented and approved?
-
 
 **Step 8: Acceptable Use Policy Alignment (1-2 hours)**
 
@@ -458,7 +441,6 @@ Document governance:
    - Are reviews documented?
    - Are review findings addressed?
 
-
 **Step 10: Gap Analysis (1-2 hours)**
 
 Consolidate all gaps:
@@ -494,7 +476,6 @@ Consolidate all gaps:
    - Expired exceptions = MEDIUM
    - Review process gaps = MEDIUM
 
-
 **Step 11: Evidence Collection (1-2 hours)**
 
 1. Go to "Evidence_Register" sheet
@@ -522,7 +503,6 @@ Consolidate all gaps:
    - Collected by
    - Verification status
 
-
 **Step 12: Quality Check (1 hour)**
 
 Before submitting for review, verify:
@@ -537,7 +517,6 @@ Before submitting for review, verify:
 - [ ] Review process documented
 - [ ] All gaps identified with remediation plans
 - [ ] Evidence collected and referenced
-
 
 **Step 13: Review & Approval (1-2 weeks)**
 
@@ -570,7 +549,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **Test:** Use EICAR (malware), PhishTank samples (phishing)
 - **Policy requirement:** ALL threat types SHOULD be configured (mandatory baseline)
 
-
 **Q: Blocking Method**
 
 - **What to enter:** How does your solution block this threat?
@@ -584,7 +562,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **Where to find:** Product documentation, threat protection settings
 - **Why it matters:** Different methods have different effectiveness
 
-
 **Q: Effectiveness**
 
 - **Dropdown:** High / Medium / Low / Unknown
@@ -595,7 +572,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **How to assess:** Review block logs, incident data, test results
 - **Evidence:** Block statistics, test results
 
-
 **Q: False Positives**
 
 - **Dropdown:** Rare / Occasional / Frequent / Unknown
@@ -605,7 +581,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **How to assess:** Review help desk tickets, unblock requests
 - **Why it matters:** High false positive rate = user frustration, shadow IT
 
-
 **Q: Last Tested**
 
 - **What to enter:** When was this protection last verified?
@@ -614,14 +589,12 @@ This section provides detailed guidance for completing each field in the assessm
 - **Frequency:** Test critical protections quarterly minimum
 - **Red flag:** Never tested = you don't know if it works
 
-
 **Threat Intelligence Integration Section:**
 
 - **Feed Sources:** Which threat intel feeds are you using?
 - **Update Frequency:** How often are feeds updated?
 - **Auto-Update:** Is automatic updating enabled?
 - **Evidence:** Feed subscription confirmation, update logs
-
 
 ### Category_Management Sheet
 
@@ -630,7 +603,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **Dropdown:** Restrictive (Default Deny) / Trust-Based (Threats Only) / Hybrid (Balanced)
 - **Choose carefully:** This determines rest of assessment
 - **If "Trust-Based":** Category Management automatically marked N/A
-
 
 **Q: Category - Policy Action**
 
@@ -642,7 +614,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **Choose "N/A":** Not applicable to this organization
 - **Example:** Adult Content = Block, News/Media = Allow
 
-
 **Q: Applied To**
 
 - **Dropdown:** All Users / Specific Groups / Specific Users / Network Segments / Device Type
@@ -652,7 +623,6 @@ This section provides detailed guidance for completing each field in the assessm
   - "Finance Group" (restrictive policy)
   - "Executive Group" (relaxed policy)
   - "Guest Network" (very restrictive)
-
 
 **Q: Business Justification**
 
@@ -664,13 +634,11 @@ This section provides detailed guidance for completing each field in the assessm
 - **Bad examples:** "Policy says so" (not a justification)
 - **Why it matters:** Audit defense, policy review decisions
 
-
 **Q: Exceptions?**
 
 - **Dropdown:** Yes / No
 - **Choose "Yes":** Exceptions exist for this category
 - **If Yes:** Document in Policy_Exceptions sheet
-
 
 **Q: Exception Count**
 
@@ -678,7 +646,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **Format:** Number
 - **Cross-check:** Should match exceptions in Policy_Exceptions sheet
 - **Red flag:** High exception count = policy not aligned with business needs
-
 
 ### Custom_Lists Sheet
 
@@ -691,7 +658,6 @@ This section provides detailed guidance for completing each field in the assessm
   - "Social Media Exceptions"
   - "Security Research Sites"
 
-
 **Q: List Type**
 
 - **Dropdown:** Block List / Allow List / Exception List
@@ -699,14 +665,12 @@ This section provides detailed guidance for completing each field in the assessm
 - **Allow List:** URLs to explicitly allow (override blocks)
 - **Exception List:** URLs exempt from rules
 
-
 **Q: URL Count**
 
 - **What to enter:** How many URLs in this list?
 - **Format:** Number
 - **Where to find:** List export, list management interface
 - **Indicator:** Large lists (>1000 URLs) may indicate policy problem
-
 
 **Q: Purpose**
 
@@ -717,14 +681,12 @@ This section provides detailed guidance for completing each field in the assessm
   - "Exception for marketing team social media"
 - **Be specific:** Helps during policy reviews
 
-
 **Q: Maintained By**
 
 - **What to enter:** Who updates this list?
 - **Format:** Name or role
 - **Examples:** "Security Team", "Network Admin", "John Smith"
 - **Should have:** Clear ownership for each list
-
 
 **Q: Last Updated**
 
@@ -733,7 +695,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **Where to find:** List management logs, change management
 - **Red flag:** Lists not updated in >90 days may be stale
 
-
 **Q: Review Frequency**
 
 - **Dropdown:** Daily / Weekly / Monthly / Quarterly / Annually / As-needed
@@ -741,7 +702,6 @@ This section provides detailed guidance for completing each field in the assessm
   - Block lists: Monthly review minimum
   - Allow lists: Quarterly review minimum
   - Exception lists: Monthly review (due to business changes)
-
 
 ### Policy_Exceptions Sheet
 
@@ -754,7 +714,6 @@ This section provides detailed guidance for completing each field in the assessm
   - User Exception: "CEO exempt from category filtering"
   - Temporary Exception: "Allow Recruitment sites during hiring period"
 
-
 **Q: What is Being Excepted?**
 
 - **What to enter:** Specific exception details
@@ -763,7 +722,6 @@ This section provides detailed guidance for completing each field in the assessm
   - "Category: Social Networking"
   - "User: john.smith@org.com"
   - "Group: Marketing_Team"
-
 
 **Q: Business Justification**
 
@@ -775,7 +733,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **Bad examples:** "User requested it" (not sufficient)
 - **Required:** Strong business case for audit defense
 
-
 **Q: Approved By**
 
 - **What to enter:** Who approved this exception?
@@ -785,7 +742,6 @@ This section provides detailed guidance for completing each field in the assessm
   - High risk: CISO approval required
 - **Evidence:** Approval email/ticket required
 
-
 **Q: Expiration Date**
 
 - **What to enter:** When does exception expire?
@@ -793,7 +749,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **For temporary:** Specific end date
 - **For permanent:** "Permanent" (but still review annually)
 - **Red flag:** Expired exceptions still active
-
 
 **Q: Status**
 
@@ -803,7 +758,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **Revoked:** Cancelled before expiration
 - **Under Review:** Being re-evaluated
 
-
 **Q: Risk Level**
 
 - **Dropdown:** Critical / High / Medium / Low
@@ -811,7 +765,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **High:** Significant security risk
 - **Medium:** Moderate risk with compensating controls
 - **Low:** Minimal risk
-
 
 **Q: Compensating Controls**
 
@@ -822,7 +775,6 @@ This section provides detailed guidance for completing each field in the assessm
   - "Requires MFA for access"
   - "User trained on risks"
 - **Required:** High/Critical exceptions MUST have compensating controls
-
 
 ### User_Group_Policies Sheet
 
@@ -835,7 +787,6 @@ This section provides detailed guidance for completing each field in the assessm
   - "Guest Network Policy"
   - "Contractor Policy"
 
-
 **Q: Policy Type**
 
 - **Dropdown:** Standard / Restrictive / Relaxed / Executive / Guest / Contractor
@@ -845,7 +796,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **Guest:** Very restrictive (visitors)
 - **Contractor:** Limited access
 
-
 **Q: Filtering Level**
 
 - **Dropdown:** High (Strict) / Medium (Balanced) / Low (Permissive)
@@ -853,14 +803,12 @@ This section provides detailed guidance for completing each field in the assessm
 - **Medium:** Balanced approach
 - **Low:** Minimal blocking (threats only, mostly)
 
-
 **Q: HTTPS Inspection**
 
 - **Dropdown:** Yes / No / Selective
 - **Yes:** All HTTPS traffic inspected
 - **No:** HTTPS not inspected (domain/IP only)
 - **Selective:** Some HTTPS inspected (e.g., skip financial sites)
-
 
 **Q: Applied To**
 
@@ -870,7 +818,6 @@ This section provides detailed guidance for completing each field in the assessm
   - "Executive_Team AD group (15 users)"
   - "Guest_WiFi VLAN (up to 100 concurrent)"
 
-
 **Q: Key Differences from Standard**
 
 - **What to enter:** How does this differ from standard policy?
@@ -878,7 +825,6 @@ This section provides detailed guidance for completing each field in the assessm
   - "Executive: Social media allowed, streaming allowed"
   - "Guest: Only web browsing allowed, all categories blocked except basic business"
   - "Contractor: No file download, no streaming, restrictive categories"
-
 
 **Q: Business Justification**
 
@@ -888,7 +834,6 @@ This section provides detailed guidance for completing each field in the assessm
   - "Guests are untrusted, need maximum restrictions"
   - "Finance handles sensitive data, needs restrictive policy"
 - **Bad examples:** "They're executives" (not sufficient - need business reason)
-
 
 ### Acceptable_Use_Alignment Sheet
 
@@ -900,7 +845,6 @@ This section provides detailed guidance for completing each field in the assessm
   - "Personal use of internet must be reasonable and not excessive"
   - "Prohibited: illegal activities, copyright infringement, harassment"
 
-
 **Q: Enforced by Filtering?**
 
 - **Dropdown:** ✅ Yes / ⚠️ Partial / ❌ No / N/A
@@ -908,7 +852,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **⚠️ Partial:** Partially enforced (e.g., blocks some but not all)
 - **❌ No:** AUP requirement not enforced by filtering
 - **N/A:** AUP requirement not related to web filtering
-
 
 **Q: How Enforced?**
 
@@ -919,7 +862,6 @@ This section provides detailed guidance for completing each field in the assessm
   - "Illegal Activities category blocked"
 - **If No:** Explain why not (technical limitation, policy decision, etc.)
 
-
 **Q: Gap?**
 
 - **What to enter:** If No/Partial, what's the gap?
@@ -928,14 +870,12 @@ This section provides detailed guidance for completing each field in the assessm
   - "AUP mentions 'excessive use' but no quantitative threshold configured"
   - "AUP prohibits bypassing controls, but VPN/proxy detection not enabled"
 
-
 **Q: Evidence**
 
 - **What to enter:** Reference to AUP document + filtering config
 - **Format:** Evidence IDs
 - **Examples:**
   - "EVD-050 (AUP v2.1), EVD-051 (Category config screenshot)"
-
 
 ### Policy_Review_Process Sheet
 
@@ -949,7 +889,6 @@ This section provides detailed guidance for completing each field in the assessm
   - AUP alignment: Annually minimum
   - Full policy review: Annually
 
-
 **Q: Review Type**
 
 - **Dropdown:** Full Review / Partial Review / Ad-hoc / Incident-Driven / Regulatory Change
@@ -959,13 +898,11 @@ This section provides detailed guidance for completing each field in the assessm
 - **Incident-Driven:** Review triggered by incident
 - **Regulatory Change:** Review due to regulation change
 
-
 **Q: Attendees**
 
 - **What to enter:** Who participated in review?
 - **Should include:** Security, Compliance, Network, HR, Legal (as needed)
 - **Format:** "Security Manager (J. Smith), Compliance Lead (A. Jones), HR Rep (M. Davis)"
-
 
 **Q: Changes Made**
 
@@ -976,7 +913,6 @@ This section provides detailed guidance for completing each field in the assessm
   - "Updated AUP to reflect filtering changes"
   - "No changes - policy still appropriate"
 
-
 **Q: Evidence**
 
 - **What to enter:** Where is review documented?
@@ -985,14 +921,12 @@ This section provides detailed guidance for completing each field in the assessm
   - "EVD-080 (Meeting minutes 2025-10-15)"
   - "EVD-081 (Policy change request PCR-2025-042)"
 
-
 ### Gap_Analysis Sheet
 
 **Q: Policy Area**
 
 - **Dropdown:** Threat Protection / Category Filtering / Custom Lists / Exceptions / User Policies / AUP Alignment / Review Process
 - **Categorize gaps** for tracking and reporting
-
 
 **Q: Gap Description**
 
@@ -1004,7 +938,6 @@ This section provides detailed guidance for completing each field in the assessm
   - "Policy review not conducted in past 6 months (overdue)"
 - **Bad examples:** "Policies need work" (too vague)
 
-
 **Q: Risk Level**
 
 - **Dropdown:** Critical / High / Medium / Low
@@ -1012,7 +945,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **High:** Significant risk, should remediate soon
 - **Medium:** Moderate risk, remediate within quarter
 - **Low:** Minor issue, remediate when feasible
-
 
 **Q: Remediation Plan**
 
@@ -1023,7 +955,6 @@ This section provides detailed guidance for completing each field in the assessm
   - "Review all expired exceptions, renew or revoke within 30 days"
   - "Schedule quarterly policy review meetings starting Q2"
 - **Include:** Specific actions, timelines
-
 
 ---
 
@@ -1041,7 +972,6 @@ Auditors need to verify your policy configuration claims:
 - Custom URL lists (exports)
 - User/group policy assignments
 
-
 **Exception Evidence:**
 
 - Exception request forms/emails
@@ -1049,13 +979,11 @@ Auditors need to verify your policy configuration claims:
 - Exception lists (current)
 - Expiration tracking logs
 
-
 **AUP Evidence:**
 
 - Current Acceptable Use Policy document
 - Alignment analysis document
 - Gap remediation plans
-
 
 **Review Process Evidence:**
 
@@ -1064,13 +992,11 @@ Auditors need to verify your policy configuration claims:
 - Policy change requests
 - User communications about policy changes
 
-
 **Testing Evidence:**
 
 - Threat protection test results
 - Category block test screenshots
 - False positive investigation records
-
 
 **Organize Evidence:**
 1. Folder: `Evidence/A.8.23.3_Policy_Configuration/`
@@ -1089,14 +1015,12 @@ Auditors need to verify your policy configuration claims:
 - **Solution:** Document what IS configured, not what CAN be configured
 - **Consequence:** Assessment doesn't reflect actual protection
 
-
 **Pitfall 2: Expired Exceptions Still Active**
 
 - **Problem:** Temporary exceptions expire but remain active
 - **Solution:** Review exceptions monthly, revoke/renew expired ones
 - **Common:** "30-day exception granted 6 months ago, still active"
 - **Consequence:** Unmanaged risk, audit finding
-
 
 **Pitfall 3: AUP-Filtering Misalignment**
 
@@ -1105,14 +1029,12 @@ Auditors need to verify your policy configuration claims:
 - **Solution:** Annual alignment review minimum
 - **Consequence:** Policy isn't enforced, compliance gap
 
-
 **Pitfall 4: Undocumented Filtering Philosophy**
 
 - **Problem:** No clear policy approach documented
 - **Result:** Inconsistent policies, unclear why categories blocked/allowed
 - **Solution:** Document philosophy, align all policies to it
 - **Consequence:** Policy drift, inconsistent enforcement
-
 
 **Pitfall 5: Exception Approval Without Business Case**
 
@@ -1121,7 +1043,6 @@ Auditors need to verify your policy configuration claims:
 - **Solution:** Require strong business justification for all exceptions
 - **Consequence:** Audit questions, unjustified risk
 
-
 **Pitfall 6: Stale Custom Lists**
 
 - **Problem:** Custom block/allow lists not reviewed regularly
@@ -1129,13 +1050,11 @@ Auditors need to verify your policy configuration claims:
 - **Common:** Lists with 50% dead links, old partner sites, etc.
 - **Consequence:** False positives, outdated controls
 
-
 **Pitfall 7: No Policy Review Process**
 
 - **Problem:** Policies set once, never reviewed
 - **Solution:** Quarterly review minimum, document process
 - **Consequence:** Policies become outdated, miss new threats
-
 
 **Pitfall 8: Testing Threat Protection Only Once**
 
@@ -1144,13 +1063,11 @@ Auditors need to verify your policy configuration claims:
 - **Reality:** "We thought it was working but it's been broken for 3 months"
 - **Consequence:** False confidence in protection
 
-
 **Pitfall 9: Differentiated Policies Without Justification**
 
 - **Problem:** Executives get relaxed policy "because they're executives"
 - **Solution:** Document business justification for every policy difference
 - **Consequence:** Audit finding, favoritism perception
-
 
 **Pitfall 10: Category Blocking Without Exception Process**
 
@@ -1158,7 +1075,6 @@ Auditors need to verify your policy configuration claims:
 - **Result:** Shadow IT, VPN services, user frustration
 - **Solution:** Clear exception request process, reasonable approval
 - **Consequence:** Users bypass filtering entirely
-
 
 ---
 
@@ -1179,7 +1095,6 @@ Before submitting for review, verify:
 - [ ] All gaps identified with remediation plans
 - [ ] Evidence collected
 
-
 **Accuracy:**
 
 - [ ] Policy status reflects actual configuration (not capabilities)
@@ -1188,14 +1103,12 @@ Before submitting for review, verify:
 - [ ] AUP alignment accurate (actually checked against current AUP)
 - [ ] Review process matches actual practice
 
-
 **Consistency:**
 
 - [ ] Policies align with documented philosophy
 - [ ] User/group policies justified
 - [ ] Exception risk levels appropriate
 - [ ] Evidence IDs cross-referenced correctly
-
 
 **Policy Governance:**
 
@@ -1205,7 +1118,6 @@ Before submitting for review, verify:
 - [ ] Changes documented
 - [ ] Users notified of policy changes
 
-
 **Evidence:**
 
 - [ ] Evidence Register populated
@@ -1213,7 +1125,6 @@ Before submitting for review, verify:
 - [ ] Evidence IDs match references
 - [ ] Screenshots show current date
 - [ ] Approvals documented
-
 
 ---
 
@@ -1226,14 +1137,12 @@ Before submitting for review, verify:
 - Check exception approvals
 - Ensure AUP alignment
 
-
 **Step 2: Policy Owner Review**
 
 - Policy Owner reviews policy decisions
 - Verifies business justifications
 - Confirms alignment with organizational goals
 - Typical turnaround: 2-3 days
-
 
 **Step 3: Security Team Technical Review**
 
@@ -1242,14 +1151,12 @@ Before submitting for review, verify:
 - Review exception risk assessments
 - Typical turnaround: 3-5 days
 
-
 **Step 4: Compliance Team Review**
 
 - Verify AUP alignment
 - Check regulatory compliance (if applicable)
 - Review exception approvals
 - Typical turnaround: 3-5 days
-
 
 **Step 5: Information Security Officer Review**
 
@@ -1264,14 +1171,12 @@ Before submitting for review, verify:
 - ISO recommendation: Approve / Approve with Conditions / Reject / Require Rework
 - Typical turnaround: 3-5 days
 
-
 **Step 6: Address Review Comments**
 
 - Make requested corrections
 - Update version/date
 - Resubmit with change summary
 - Typical turnaround: 2-3 days
-
 
 **Step 7: CISO Approval**
 
@@ -1282,7 +1187,6 @@ Before submitting for review, verify:
   - Gap remediation plans
 - Decision: Approved / Approved with Conditions / Rejected
 - Typical turnaround: 2-3 days
-
 
 **Step 8: Documentation & Communication**
 
@@ -1297,7 +1201,6 @@ Before submitting for review, verify:
   - Gap remediation dates
   - Next quarterly assessment
 
-
 **Approval Timeline:** 2-3 weeks from submission to final approval
 
 **If Rejected:**
@@ -1307,7 +1210,6 @@ Before submitting for review, verify:
 - AUP misalignment not addressed
 - Missing evidence
 - Review process not documented
-
 
 ---
 
@@ -1326,7 +1228,6 @@ Before submitting for review, verify:
 - **Title:** "ISMS-IMP-A.8.23.3 – Policy Configuration Assessment"
 - **Subtitle:** "ISO/IEC 27001:2022 - Control A.8.23: Web Filtering"
 - **Styling:** Dark blue header (003366), white text, centered, 40px height
-
 
 #### Document Information Block
 ```
@@ -1367,7 +1268,6 @@ Review Cycle:          Quarterly
 - **Subtitle:** "ISO/IEC 27001:2022 - Control A.8.23: Web Filtering"
 - **Styling:** Dark blue header (003366), white text, centered, 40px height
 
-
 #### Document Information Block
 ```plaintext
 Document ID:           ISMS-IMP-A.8.23.3
@@ -1403,7 +1303,6 @@ Organizations typically adopt one of three philosophies:
 - Tight control, limited user freedom
 - Common in: Government, healthcare, education (CIPA)
 
-
 **2. Trust-Based Approach (Default Allow)**
 
 - Allow everything by default
@@ -1412,7 +1311,6 @@ Organizations typically adopt one of three philosophies:
 - Rely on user awareness and responsible behavior
 - Common in: Tech companies, creative industries, startups
 
-
 **3. Hybrid Approach (Balanced)**
 
 - Block known threats (mandatory)
@@ -1420,7 +1318,6 @@ Organizations typically adopt one of three philosophies:
 - Allow most business-related content
 - Balance security with productivity
 - Common in: Most enterprises
-
 
 **This assessment works for ALL three approaches!**
 
@@ -1447,7 +1344,6 @@ Organizations typically adopt one of three philosophies:
 - ✓ Testing/verification reports
 - ✓ User communication about policy changes
 - ✓ Incident reports related to policy gaps
-
 
 ---
 
@@ -1481,7 +1377,6 @@ Document threat protection policies - applicable to ALL approaches (mandatory ba
 - **False Positives:** Dropdown: Rare / Occasional / Frequent / Unknown
 - **Last Tested:** Date
 - **Evidence:** Link to test results/configuration
-
 
 ### Threat Intelligence Integration
 ```
@@ -1557,7 +1452,6 @@ If "Trust-Based" selected → Automatically mark this sheet as N/A and skip to n
 - **Exceptions?:** Yes / No
 - **Exception Count:** Number of approved exceptions
 
-
 **Data Rows:** ~30 categories (expand based on vendor capabilities)
 
 ### Category Summary
@@ -1592,7 +1486,6 @@ Document custom block/allow URL lists maintained by organization.
 - **List Type:** Block List / Allow List / Exception List
 - **URL Count:** Number of URLs in list
 - **Review Frequency:** Weekly / Monthly / Quarterly / Annually / Ad-hoc
-
 
 **Data Rows:** 20 lists
 
@@ -1674,7 +1567,6 @@ Document ALL exceptions to filtering policies with approval tracking.
 - **Expiry Date:** When does exception expire? (Max 12 months recommended)
 - **Status:** Active / Expired / Revoked / Under Review
 
-
 **Data Rows:** 40 exception tracking rows
 
 ### Exception Summary
@@ -1693,7 +1585,6 @@ Document ALL exceptions to filtering policies with approval tracking.
 - ⚠️ Exceptions >12 months old = require re-approval
 - ⚠️ Exceptions without compensating controls = HIGH RISK
 - ⚠️ Permanent exceptions = justify annually
-
 
 ---
 
@@ -1719,7 +1610,6 @@ Document role-based or user/group-specific filtering policies.
 - **Filtering Level:** Dropdown: High (Strict) / Medium (Balanced) / Low (Permissive)
 - **Time Restrictions:** Text (e.g., "Block social media 9-5 weekdays")
 - **HTTPS Inspection:** Yes / No / Selective
-
 
 **Data Rows:** 25 policy assignments
 
@@ -1783,13 +1673,11 @@ Verify filtering policies align with organizational Acceptable Use Policy (AUP).
 - Permitted: Educational content
 - Permitted: News/information
 
-
 **Columns:**
 
 - **Filtering Policy Enforces This?:** ✅ Yes / ⚠️ Partial / ❌ No / N/A
 - **How Enforced?:** Description of enforcement mechanism
 - **Gaps Identified?:** Yes / No
-
 
 **Data Rows:** 30 AUP requirements
 
@@ -1951,7 +1839,6 @@ Centralized evidence repository (100 rows).
 - Incident Report
 - Other
 
-
 **Data Rows:** 100
 
 ---
@@ -2029,7 +1916,6 @@ All assessment sheets: Freeze at A5
 - Risk Register: Link policy gaps to risk IDs
 - Change Management: Link policy changes to tickets
 
-
 ### Audit Trail
 
 - All policies documented and justified
@@ -2037,7 +1923,6 @@ All assessment sheets: Freeze at A5
 - AUP alignment verified
 - Regular review process documented
 - Evidence maintained for all claims
-
 
 ---
 

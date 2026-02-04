@@ -58,7 +58,6 @@ This assessment evaluates [Organization]'s implementation of **data retention sc
 - **Swiss Code of Obligations (OR):** Business records retention (typically 10 years for accounting documents)
 - **Industry-Specific:** Financial services, healthcare, telecommunications often have sector-specific retention mandates
 
-
 **Business Impact:**
 
 - **Regulatory Fines:** GDPR violations can result in fines up to €20M or 4% of annual global turnover
@@ -66,7 +65,6 @@ This assessment evaluates [Organization]'s implementation of **data retention sc
 - **Data Breach Risk:** Retained data no longer needed = increased attack surface and breach liability
 - **Operational Efficiency:** Clear retention schedules reduce ambiguity and enable systematic cleanup
 - **Audit Readiness:** Documented retention schedules are fundamental to ISO 27001, GDPR, and financial audits
-
 
 ## Who Should Complete This Assessment
 
@@ -80,7 +78,6 @@ This assessment evaluates [Organization]'s implementation of **data retention sc
 - IT systems and storage locations for each data category
 - Business processes that generate, process, and retain data
 
-
 **Support Roles:**
 
 - **Legal Counsel:** For retention period justification and legal hold procedures
@@ -89,7 +86,6 @@ This assessment evaluates [Organization]'s implementation of **data retention sc
 - **Business Unit Owners:** For data category identification and business purpose validation
 - **Compliance Team:** For regulatory requirement mapping
 - **Information Security:** For deletion verification and evidence collection
-
 
 ## Time Estimate
 
@@ -104,7 +100,6 @@ This assessment evaluates [Organization]'s implementation of **data retention sc
 - **Evidence Collection (1-2 hours):** Gather supporting documentation
 - **Quality Review (1 hour):** Final validation and approval preparation
 
-
 **Pro Tip:** For complex organizations with >50 data categories, consider conducting assessment over multiple sessions (e.g., one session per business unit or system).
 
 ## Connection to Policy
@@ -116,7 +111,6 @@ This assessment implements **ISMS-POL-A.8.10, Section 2.1 (Retention & Deletion 
 - **Deletion Triggers:** Automated deletion mechanisms must be implemented where technically feasible
 - **Legal Holds:** Procedures to suspend deletion when litigation, investigation, or audit requires data preservation
 - **Data Subject Rights:** GDPR Article 17 / FADP erasure requests must be processed within regulatory timelines (typically 30 days)
-
 
 **Policy Authority:** Chief Information Security Officer (CISO) / Data Protection Officer (DPO)  
 **Compliance Status:** Mandatory for all data categories processing personal data or subject to regulatory retention requirements
@@ -138,7 +132,6 @@ Before starting this assessment, ensure you have access to:
 - [ ] Legal and regulatory requirement register
 - [ ] Privacy impact assessments (PIAs/DPIAs)
 
-
 **Systems:**
 
 - [ ] Data management systems (CRM, HR, ERP, etc.)
@@ -147,14 +140,12 @@ Before starting this assessment, ensure you have access to:
 - [ ] Data subject request tracking system (if implemented)
 - [ ] Legal hold notification system (if implemented)
 
-
 **Subject Matter Experts:**
 
 - [ ] Legal Counsel (for retention period justification)
 - [ ] Business Unit Owners (for data category identification)
 - [ ] IT Operations (for deletion trigger implementation details)
 - [ ] Records Manager (for retention schedule design)
-
 
 ## Required Knowledge
 
@@ -166,7 +157,6 @@ Before starting this assessment, ensure you have access to:
 - Familiarity with industry-specific retention requirements
 - Legal hold concepts and litigation readiness
 
-
 **Technical:**
 
 - Basic understanding of database lifecycle management
@@ -174,14 +164,12 @@ Before starting this assessment, ensure you have access to:
 - Understanding of backup retention vs. production data retention
 - Cloud storage lifecycle management (if applicable)
 
-
 **Process:**
 
 - Data classification scheme in use at [Organization]
 - Business processes that generate and consume data
 - Records management principles
 - Data subject rights request handling
-
 
 ## Pre-Assessment Checklist
 
@@ -195,7 +183,6 @@ Complete these tasks before beginning the assessment:
 - [ ] **Review any active legal holds** or litigation requirements
 - [ ] **Collect metrics** on data subject erasure requests (last 12 months)
 - [ ] **Document backup retention policies** to ensure alignment with production retention
-
 
 **Critical:** If [Organization] has never conducted a formal data inventory or created retention schedules, allow additional time (20-30 hours) for foundational work before completing this assessment.
 
@@ -247,14 +234,12 @@ Step 8: Quality Check & Approval (Sheet 9)
 - Legal data (contracts, NDAs, litigation files)
 - Technical data (source code, documentation, system configurations)
 
-
 **Quality Check:**
 
 - Have you covered ALL systems where data is stored?
 - Have you included cloud applications (SaaS)?
 - Have you included backups and archives?
 - Have you validated with Business Unit Owners?
-
 
 ### Step 2: Retention Schedule Compliance (Sheet 3)
 
@@ -277,7 +262,6 @@ Step 8: Quality Check & Approval (Sheet 9)
 - **Until Event Occurs:** Active customer accounts, ongoing contracts
 - **Permanent:** Corporate governance documents, intellectual property
 
-
 **Legal/Regulatory Basis Examples:**
 
 - **GDPR Article 6.1.c:** Legal obligation (e.g., tax authority requirements)
@@ -286,14 +270,12 @@ Step 8: Quality Check & Approval (Sheet 9)
 - **Contractual Obligation:** Retention specified in customer/vendor agreements
 - **Legitimate Interest:** Business need balanced against data subject rights
 
-
 **Quality Check:**
 
 - Every data category has a retention period assigned?
 - Every retention period has a legal/regulatory justification?
 - Retention periods align with applicable regulations (not excessive)?
 - Backup retention ≤ production data retention (or justified exception)?
-
 
 ### Step 3: Deletion Trigger Configuration (Sheet 4)
 
@@ -320,19 +302,16 @@ Step 8: Quality Check & Approval (Sheet 9)
 - Scheduled deletion jobs (cron, Task Scheduler, Azure Functions)
 - Application-level retention enforcement
 
-
 **Manual:**
 
 - IT operations team performs quarterly cleanup
 - Business unit reviews and deletes on schedule
 - Ad-hoc deletion upon management approval
 
-
 **Semi-Automatic:**
 
 - System generates deletion candidates, human approves
 - Automated flagging, manual execution
-
 
 **Event-Based:**
 
@@ -340,14 +319,12 @@ Step 8: Quality Check & Approval (Sheet 9)
 - Contract termination initiates retention countdown
 - Employee departure starts HR record retention timer
 
-
 **Quality Check:**
 
 - High-risk data (Confidential/Restricted) has automated deletion?
 - Manual processes have documented procedures?
 - Legal hold checks prevent accidental deletion of preserved data?
 - Deletion triggers verified through testing (see ISMS-IMP-A.8.10.4)?
-
 
 ### Step 4: Legal Hold Procedures (Sheet 5)
 
@@ -368,7 +345,6 @@ Step 8: Quality Check & Approval (Sheet 9)
 - Regulatory examination
 - Contractual obligation to preserve records
 
-
 **Legal Hold Process Elements:**
 
 - **Identification:** Who determines when legal hold is necessary?
@@ -377,14 +353,12 @@ Step 8: Quality Check & Approval (Sheet 9)
 - **Monitoring:** How is compliance with hold verified?
 - **Release:** Approval process to lift hold and resume normal deletion
 
-
 **Quality Check:**
 
 - Legal hold procedures documented and approved by Legal Counsel?
 - Technical controls prevent accidental deletion of held data?
 - Legal holds reviewed regularly (at least quarterly)?
 - All data custodians trained on legal hold obligations?
-
 
 ### Step 5: Data Subject Rights (Sheet 6)
 
@@ -408,14 +382,12 @@ Data subjects can request deletion when:
 - Legal obligation requires erasure
 - Data collected from a child (special protections)
 
-
 **Exceptions (When Deletion Can Be Refused):**
 
 - Legal obligation to retain (e.g., tax records)
 - Public interest (public health, scientific research)
 - Legal claims (defense against litigation)
 - Archiving in the public interest
-
 
 **Process Requirements:**
 
@@ -425,7 +397,6 @@ Data subjects can request deletion when:
 - **Confirmation:** Notify data subject of completion
 - **Documentation:** Maintain log of all erasure requests and outcomes
 
-
 **Quality Check:**
 
 - Erasure request procedure documented and communicated to data subjects?
@@ -433,7 +404,6 @@ Data subjects can request deletion when:
 - Process includes verification of requester identity?
 - Third-party processors notified of erasure requests (GDPR Article 19)?
 - Exceptions properly documented and legally justified?
-
 
 ### Step 6: Evidence Collection (Sheet 8)
 
@@ -455,14 +425,12 @@ Data subjects can request deletion when:
 - **Legal Opinions:** Retention period justifications, legal hold procedures
 - **Testing Results:** Deletion verification test reports (from ISMS-IMP-A.8.10.4)
 
-
 **Quality Check:**
 
 - Every assessment finding has supporting evidence?
 - Evidence locations are accessible to auditors?
 - Evidence retention periods defined?
 - Sensitive evidence properly protected (access controls)?
-
 
 ### Step 7: Review Summary Dashboard (Sheet 7)
 
@@ -477,14 +445,12 @@ Data subjects can request deletion when:
 - Data categories without deletion triggers
 - Average data subject request response time
 
-
 **Review Questions:**
 
 - Does overall compliance % reflect your understanding of [Organization]'s posture?
 - Are critical gaps accurately identified?
 - Do remediation priorities align with business risk?
 - Are there anomalies requiring investigation?
-
 
 ### Step 8: Quality Check & Approval (Sheet 9)
 
@@ -500,7 +466,6 @@ Data subjects can request deletion when:
 - [ ] Evidence register populated with supporting documentation
 - [ ] Status indicators accurate (not aspirational)
 - [ ] Gaps and remediation plans realistic and resourced
-
 
 **Approval Workflow:**
 1. **Level 1: Technical/Operational** - DPO/Privacy Officer validates accuracy
@@ -520,7 +485,6 @@ A: A data category is a logical grouping of similar data with the same retention
 - "Employee HR Records" (employment contracts, performance reviews)
 - "Financial Transaction Records" (invoices, payments, receipts)
 
-
 **Q: How granular should data categories be?**
 A: Granular enough to assign meaningful retention periods. For example:
 
@@ -528,13 +492,11 @@ A: Granular enough to assign meaningful retention periods. For example:
 - ❌ Too Broad: "All Customer Data" (mixing data with different legal requirements)
 - ❌ Too Granular: "Customer First Name", "Customer Last Name" (same retention, unnecessarily fragmented)
 
-
 **Q: Should backups be listed as separate data categories?**
 A: Yes, if backup retention differs from production. For example:
 
 - Production data: "Active Customer Accounts" (retained while account active)
 - Backup data: "Customer Account Backups" (retained 90 days for disaster recovery)
-
 
 **Q: What if data is stored in multiple locations?**
 A: List as one data category but note all locations in Column R or Notes (Column O). Retention schedule applies uniformly across all locations.
@@ -550,7 +512,6 @@ A: Sources to consult:
 - **Professional Advisors:** Accountants, auditors, compliance consultants
 - **Internal Compliance Team:** Regulatory requirement register
 
-
 **Q: What if multiple regulations apply with different retention periods?**
 A: Apply the LONGEST retention period required by any applicable regulation, then document all applicable bases in Column E. Example:
 
@@ -558,7 +519,6 @@ A: Apply the LONGEST retention period required by any applicable regulation, the
 - Contract: 5 years
 - GDPR: No specific requirement (only "as long as necessary")
 - **Decision:** Retain 7 years (tax law requirement), document "Swiss Tax Law, Contractual Obligation" in Column E
-
 
 **Q: What if no specific retention requirement exists?**
 A: Apply "business necessity" standard:
@@ -568,14 +528,12 @@ A: Apply "business necessity" standard:
 - Document justification: "Retained 1 year for customer support quality, no longer needed after"
 - **Avoid:** "Permanent" or "Just in case" retention without clear justification
 
-
 **Q: How do I handle event-based retention?**
 A: Define the triggering event and countdown clearly. Examples:
 
 - "Customer account closure + 6 months" (retention starts when account closed)
 - "Contract termination + 3 years" (retention starts when contract ends)
 - "Employee departure + 7 years" (retention starts on last day of employment)
-
 
 ## Deletion Trigger Configuration (Sheet 4)
 
@@ -585,7 +543,6 @@ A:
 - **Automatic:** System deletes without human intervention (e.g., AWS S3 lifecycle rule automatically deletes objects after 90 days)
 - **Semi-Automatic:** System identifies deletion candidates, human approves execution (e.g., script generates list of expired records, DBA reviews and executes DELETE statement)
 
-
 **Q: Is manual deletion acceptable?**
 A: Yes, but with conditions:
 
@@ -593,14 +550,12 @@ A: Yes, but with conditions:
 - ❌ Not Acceptable: High-volume data, Confidential/Restricted classification, no documented procedure
 - **Best Practice:** Automate deletion for any data category with >1,000 records or Confidential+ classification
 
-
 **Q: How often should deletion triggers run?**
 A: Depends on data volume and retention period:
 
 - **Real-time/Daily:** High-volume transactional data (logs, sessions)
 - **Weekly/Monthly:** Moderate-volume business data (closed tickets, completed projects)
 - **Quarterly/Annual:** Low-volume or long-retention data (archived contracts, historical reports)
-
 
 **Q: What about the "Backup Deletion Paradox"?**
 A: Production data deleted per retention schedule, but persists in backups. Solutions:
@@ -619,7 +574,6 @@ A: Typically:
 - **External:** Outside counsel in litigation matters
 - **Coordination:** Legal Counsel notifies IT Operations/Records Management
 
-
 **Q: How quickly must legal holds be implemented?**
 A: Immediately upon notification. Delays can result in:
 
@@ -628,14 +582,12 @@ A: Immediately upon notification. Delays can result in:
 - Professional sanctions against counsel
 - Financial penalties
 
-
 **Q: Can we still delete data on legal hold after retention period expires?**
 A: NO. Legal hold suspends normal retention/deletion. Data must be preserved until:
 
 - Legal Counsel explicitly releases the hold
 - Litigation/investigation concluded
 - Regulatory examination completed
-
 
 **Q: What if automated deletion runs before legal hold implemented?**
 A: This is a critical failure. Prevention measures:
@@ -644,7 +596,6 @@ A: This is a critical failure. Prevention measures:
 - IT Operations has emergency "kill switch" to disable deletion automation
 - Regular legal hold training for IT staff
 - Post-implementation verification that data preserved
-
 
 ## Data Subject Rights (Sheet 6)
 
@@ -656,7 +607,6 @@ A: No, exceptions apply under GDPR Article 17.3:
 - **Public Interest:** Public health data, scientific research (with safeguards)
 - **Archiving:** Historical archives in the public interest
 
-
 Document exception basis and communicate to data subject.
 
 **Q: How do we verify identity of requester?**
@@ -665,7 +615,6 @@ A: GDPR requires "reasonable measures" to verify identity:
 - **Low Risk:** Email confirmation (data subject emails from registered email address)
 - **Medium Risk:** Multi-factor verification (security questions + email)
 - **High Risk:** Government ID verification (for sensitive data like financial records)
-
 
 Balance: Verification must be sufficient to prevent unauthorized deletion, but not so burdensome it obstructs legitimate requests.
 
@@ -684,7 +633,6 @@ A: Yes, per GDPR Article 19:
 - Processors must delete unless legal obligation requires retention
 - Controller must obtain confirmation from processors
 
-
 Document third-party notifications in Evidence Register.
 
 ---
@@ -702,7 +650,6 @@ For each assessment area, gather supporting documentation:
 - Data flow diagrams
 - System documentation showing storage locations
 
-
 **Retention Schedule Compliance:**
 
 - Legal retention requirement analysis (Legal Counsel memo)
@@ -711,7 +658,6 @@ For each assessment area, gather supporting documentation:
 - Board/Executive approval of retention schedule
 - Retention schedule document (published version)
 
-
 **Deletion Trigger Configuration:**
 
 - Automation configuration screenshots (lifecycle policies, cron jobs)
@@ -719,14 +665,12 @@ For each assessment area, gather supporting documentation:
 - Code/scripts implementing automated deletion
 - Deletion execution logs (last 3-6 months)
 
-
 **Legal Hold Procedures:**
 
 - Legal hold policy document
 - Legal hold notification template
 - Active legal hold register
 - Legal hold release approval records
-
 
 **Data Subject Rights:**
 
@@ -736,7 +680,6 @@ For each assessment area, gather supporting documentation:
 - Response time metrics
 - Third-party notification confirmations
 
-
 ## Evidence Storage & Retention
 
 **Where to Store Evidence:**
@@ -745,20 +688,17 @@ For each assessment area, gather supporting documentation:
 - Access-controlled file share
 - Compliance management platform
 
-
 **Evidence Retention Period:**
 
 - Minimum: Duration of ISO 27001 certification + 1 cycle (typically 4 years)
 - Longer if litigation/investigation risk
 - Personal data in evidence: Apply deletion triggers per retention schedule
 
-
 **Evidence Protection:**
 
 - Access controls: Limited to ISMS team, auditors, authorized personnel
 - Encryption: If evidence contains sensitive data
 - Integrity: Hash/checksum to detect tampering
-
 
 ## Audit-Readiness Tips
 
@@ -779,7 +719,6 @@ For each assessment area, gather supporting documentation:
 - ❌ **"Data subject erasure requests not tracked"** → Implement request log, monitor response times
 - ❌ **"No legal hold procedures"** → Document procedures, train IT staff
 
-
 ---
 
 # Common Pitfalls
@@ -797,14 +736,12 @@ For each assessment area, gather supporting documentation:
 - Employee personal devices (if BYOD policy)
 - Third-party systems where data is stored
 
-
 **Prevention:**
 
 - Conduct full IT asset inventory before assessment
 - Interview Business Unit Owners systematically
 - Review GDPR Article 30 records for data processing activities
 - Check cloud billing for SaaS subscriptions
-
 
 ## Overly Broad Retention Periods
 
@@ -817,14 +754,12 @@ For each assessment area, gather supporting documentation:
 - Increased data breach risk and liability
 - Audit finding: Retention not proportionate to purpose
 
-
 **Prevention:**
 
 - Consult Legal Counsel for actual requirements (not assumptions)
 - Apply "minimum necessary" principle
 - Document specific legal basis for each retention period
 - Review retention schedules annually
-
 
 ## Backup Retention Paradox
 
@@ -837,13 +772,11 @@ For each assessment area, gather supporting documentation:
 - Backup tapes: Customer data still exists in monthly backups for next 7 years
 - **Result:** Non-compliance with GDPR Article 17
 
-
 **Prevention:**
 
 - **Strategy 1:** Backup retention ≤ Production retention (safest)
 - **Strategy 2:** Document backup exception per GDPR Recital 39 (backups for disaster recovery only, data not accessed)
 - **Strategy 3:** Implement backup exclusion or scrubbing (complex, verify with GDPR counsel)
-
 
 ## No Deletion Trigger Implementation
 
@@ -855,13 +788,11 @@ For each assessment area, gather supporting documentation:
 - Reality: No deletion job configured, all data kept forever
 - **Result:** Policy-implementation gap, audit finding
 
-
 **Prevention:**
 
 - For EVERY data category, document deletion trigger mechanism (Sheet 4)
 - Verify deletion triggers actually work (see ISMS-IMP-A.8.10.4 for verification testing)
 - Automate deletion for high-volume or high-risk data
-
 
 ## Legal Hold Process Failures
 
@@ -874,14 +805,12 @@ For each assessment area, gather supporting documentation:
 - Automated deletion job runs Saturday night, purges relevant data
 - **Result:** Spoliation of evidence, sanctions, adverse inference
 
-
 **Prevention:**
 
 - Legal Counsel maintains list of systems potentially subject to hold
 - IT Operations has emergency procedure to disable automation
 - Legal hold notifications are URGENT (same-day implementation)
 - Regular training on legal hold obligations
-
 
 ## Data Subject Rights Response Delays
 
@@ -895,14 +824,12 @@ For each assessment area, gather supporting documentation:
 - Investigation and execution takes another 30 days
 - **Result:** GDPR violation (30-day deadline missed)
 
-
 **Prevention:**
 
 - Dedicated erasure request intake process (not general support email)
 - Request tracking system with SLA alerts
 - Monthly metrics review (average response time)
 - Escalation procedure if approaching 30-day deadline
-
 
 ---
 
@@ -917,7 +844,6 @@ Before submitting assessment for approval, verify:
 - [ ] Evidence Register populated with supporting documentation
 - [ ] Summary Dashboard reviewed and validated
 
-
 ## Accuracy
 
 - [ ] Data classifications match [Organization]'s classification scheme
@@ -925,7 +851,6 @@ Before submitting assessment for approval, verify:
 - [ ] Retention periods validated by Legal Counsel
 - [ ] Legal/regulatory bases accurately cited
 - [ ] Status indicators reflect current reality (not aspirational)
-
 
 ## Compliance
 
@@ -935,7 +860,6 @@ Before submitting assessment for approval, verify:
 - [ ] Legal hold procedures cover all in-scope systems
 - [ ] Data subject rights metrics current (last 12 months)
 
-
 ## Remediation Planning
 
 - [ ] Gaps identified and described clearly
@@ -944,14 +868,12 @@ Before submitting assessment for approval, verify:
 - [ ] Remediation owners identified
 - [ ] Budget/resource needs flagged
 
-
 ## Audit Readiness
 
 - [ ] Traceability: Control → Policy → Assessment → Evidence
 - [ ] Evidence locations accessible to auditors
 - [ ] Supporting documentation current (within last 12 months)
 - [ ] No obvious compliance gaps that would result in audit finding
-
 
 ---
 
@@ -975,20 +897,17 @@ Before submitting for formal approval, conduct self-review:
 - **Validates:** Technical accuracy, completeness of data inventory, deletion trigger feasibility
 - **Approval Criteria:** Assessment accurately reflects current state of [Organization]'s retention posture
 
-
 **Level 2: Management Approval**
 
 - **Approver:** Chief Information Security Officer / Chief Information Officer / Chief Compliance Officer
 - **Validates:** Remediation plans, resource allocation, budget requirements
 - **Approval Criteria:** Remediation plans are realistic and adequately resourced
 
-
 **Level 3: Executive Approval**
 
 - **Approver:** Chief Executive Officer / Chief Risk Officer / Board Delegate
 - **Validates:** Overall retention posture, risk acceptance for identified gaps
 - **Approval Criteria:** Executive leadership acknowledges retention compliance status and commits to remediation
-
 
 ## Post-Approval Actions
 
@@ -1066,7 +985,6 @@ Provide clear guidance on workbook usage, color coding scheme, and assessment co
 - Target audience
 - Review cycle and date
 
-
 **Section 2: How to Use This Workbook (Rows 14-25)**
 
 - Step-by-step workflow
@@ -1074,14 +992,12 @@ Provide clear guidance on workbook usage, color coding scheme, and assessment co
 - Validation rules
 - Evidence linking
 
-
 **Section 3: Assessment Context (Rows 27-40)**
 
 - What this assessment covers
 - What this assessment does NOT cover
 - Connection to ISMS-POL-A.8.10, Section 2.1 (Retention & Deletion Triggers)
 - Related ISMS documents
-
 
 **Section 4: Color Legend (Rows 42-52)**
 
@@ -1103,13 +1019,11 @@ Provide clear guidance on workbook usage, color coding scheme, and assessment co
 - Deletion trigger implemented and verified
 - Process meets policy requirements
 
-
 **⚠️ Partial:**
 
 - Retention period documented but not all requirements met
 - Manual deletion process exists but not automated
 - Minor gaps that don't pose immediate compliance risk
-
 
 **❌ Non-Compliant:**
 
@@ -1117,11 +1031,9 @@ Provide clear guidance on workbook usage, color coding scheme, and assessment co
 - No deletion trigger or process
 - Significant gap requiring immediate remediation
 
-
 **N/A:**
 
 - Assessment area not applicable to this data category
-
 
 ---
 
@@ -1142,19 +1054,16 @@ Document complete inventory of all data types processed by [Organization].
 - Row 8: Quality check reminders
 - Row 9: Column headers (frozen)
 
-
 **Data Entry Section (Rows 10-22):**
 
 - 13 rows for data categories (yellow fill)
 - Pre-populated example in Row 10 (editable)
 - Rows 11-22 blank for user entry
 
-
 **Reference Section (Rows 24-40):**
 
 - Common data categories checklist (20 items)
 - Examples: Customer data, Employee data, Financial records, Operational logs, etc.
-
 
 ## Column Definitions (17 standard + 3 extended = 20 total)
 
@@ -1232,14 +1141,12 @@ Note: PII = Personally Identifiable Information, SPI = Sensitive Personal Inform
 - ⚠️ Partial: Yellow fill (RGB: 255, 235, 156)
 - ❌ Non-Compliant: Red fill (RGB: 255, 199, 206)
 
-
 **Risk Level Column (M):**
 
 - Critical: Red fill (RGB: 255, 199, 206)
 - High: Orange fill (RGB: 255, 230, 153)
 - Medium: Yellow fill (RGB: 255, 242, 204)
 - Low: No special formatting
-
 
 ## Reference Checklist (Rows 24-43)
 
@@ -1287,20 +1194,17 @@ Map legal/regulatory retention requirements to each data category.
 - Row 8: Reminder: "Every retention period MUST have legal/regulatory basis"
 - Row 9: Column headers (frozen)
 
-
 **Data Entry Section (Rows 10-22):**
 
 - 13 rows for data categories (yellow fill)
 - Columns A-Q same as Sheet 2
 - Columns R-T: Extended columns specific to retention
 
-
 **Reference Section (Rows 24-50):**
 
 - Common retention periods table
 - Legal/regulatory basis examples
 - Retention calculation methods guidance
-
 
 ## Column Definitions (Standard A-Q + Extended R-T)
 
@@ -1337,7 +1241,6 @@ Dropdown: Yes, No, Partial, N/A
 - **Partial:** Some backups aligned, others not
 - **N/A:** Data category not included in backups
 
-
 ## Reference Tables (Rows 24-50)
 
 **Table 1: Common Retention Periods (Rows 26-38)**
@@ -1364,18 +1267,15 @@ Dropdown: Yes, No, Partial, N/A
 - "Retain application logs 90 days from date of creation"
 - Implementation: Automated deletion after 90 days
 
-
 **Event-Based:**
 
 - "Retain customer data until account closure + 6 months"
 - Implementation: Deletion trigger = Account closure date + 180 days
 
-
 **Hybrid:**
 
 - "Retain employment records 7 years OR until litigation resolved, whichever is longer"
 - Implementation: Check both conditions before deletion
-
 
 ---
 
@@ -1396,19 +1296,16 @@ Document how data is actually deleted when retention period expires.
 - Row 8: Critical reminder: "Automated deletion REQUIRED for Confidential/Restricted data"
 - Row 9: Column headers (frozen)
 
-
 **Data Entry Section (Rows 10-22):**
 
 - 13 rows for data categories (yellow fill)
 - Focus: How is deletion actually executed?
-
 
 **Reference Section (Rows 24-55):**
 
 - Deletion trigger types and examples
 - Automation options by technology
 - Legal hold integration requirements
-
 
 ## Column Definitions (Standard A-Q + Extended R-T)
 
@@ -1461,7 +1358,6 @@ Dropdown: Yes - Automated, Yes - Manual, No, N/A
 - Application-level: Soft delete after retention period, hard delete after grace period
 - Scheduled jobs: Cron job runs daily, purges expired records
 
-
 **Manual Examples:**
 
 - IT operations team quarterly cleanup
@@ -1469,20 +1365,17 @@ Dropdown: Yes - Automated, Yes - Manual, No, N/A
 - Business unit reviews and archives annually
 - Ad-hoc deletion upon management approval
 
-
 **Semi-Automatic Examples:**
 
 - Script generates list of expired records → DBA reviews → DBA executes
 - System flags for deletion → Privacy Officer approves → Automation executes
 - Quarterly report of deletable data → Management approves → IT executes
 
-
 **Event-Based Examples:**
 
 - Customer account closure → Wait 180 days → Automatic deletion
 - Contract termination → Wait 3 years → Automatic deletion
 - Employee departure → Wait 7 years → Automatic deletion
-
 
 **Table 2: Automation Options by Technology (Rows 42-55)**
 
@@ -1517,19 +1410,16 @@ Document procedures to suspend deletion when legally required (litigation, inves
 - Row 8: Critical warning: "Legal hold violations = Spoliation of evidence"
 - Row 9: Column headers (frozen)
 
-
 **Data Entry Section (Rows 10-22):**
 
 - 13 rows for systems/data categories subject to legal hold
 - Focus: Procedures and controls
-
 
 **Reference Section (Rows 24-50):**
 
 - When legal holds are required
 - Legal hold process elements
 - Consequences of failures
-
 
 ## Column Definitions (Standard A-Q + Extended R-T)
 
@@ -1588,13 +1478,11 @@ Frequency should match litigation risk and volume of legal holds.
 - External counsel (in litigation)
 - Compliance Officer (regulatory exam)
 
-
 **2. Notification (How custodians are informed):**
 
 - Email from Legal Counsel to IT Operations
 - Legal hold notice to all data custodians
 - Emergency escalation for immediate holds
-
 
 **3. Implementation (Technical controls):**
 
@@ -1603,20 +1491,17 @@ Frequency should match litigation risk and volume of legal holds.
 - Move data to isolated hold area
 - Document hold placement in Evidence Register
 
-
 **4. Monitoring (Verification):**
 
 - IT confirms hold implementation
 - Periodic audits that hold data not deleted
 - Legal Counsel maintains active hold register
 
-
 **5. Release (Approval to resume deletion):**
 
 - Legal Counsel explicit release authorization
 - IT removes hold flags/re-enables automation
 - Document hold release in Evidence Register
-
 
 ---
 
@@ -1637,19 +1522,16 @@ Assess GDPR Article 17 / FADP erasure request handling capabilities and performa
 - Row 8: Compliance target: "Response time ≤ 30 days (GDPR), extendable to 60 if complex"
 - Row 9: Column headers (frozen)
 
-
 **Data Entry Section (Rows 10-22):**
 
 - 13 rows for data categories containing personal data
 - Focus: Response time performance and process compliance
-
 
 **Reference Section (Rows 24-60):**
 
 - GDPR Article 17 conditions for erasure
 - Exceptions where erasure can be refused
 - Process requirements and best practices
-
 
 ## Column Definitions (Standard A-Q + Extended R-T)
 
@@ -1721,12 +1603,10 @@ Erasure can be refused when necessary for:
 - Standard: 30 days (GDPR Article 12.3)
 - Complex cases: 60 days (with justification to data subject within 30 days)
 
-
 **Verification:**
 
 - Confirm identity of requester (reasonable measures)
 - Methods: Email confirmation, security questions, government ID (for sensitive data)
-
 
 **Scope of Deletion:**
 
@@ -1734,20 +1614,17 @@ Erasure can be refused when necessary for:
 - Backups: Document exception per GDPR Recital 39 (disaster recovery only)
 - Third-party processors: Notify per GDPR Article 19, obtain confirmation
 
-
 **Documentation:**
 
 - Log all erasure requests (date, requester, data categories, outcome)
 - Maintain for 3-7 years as proof of compliance
 - Reference in Evidence Register
 
-
 **Communication:**
 
 - Acknowledge receipt within 5 days
 - Confirm completion or explain exception
 - If refused, explain reason and right to appeal to supervisory authority
-
 
 ---
 
@@ -1764,7 +1641,6 @@ Aggregate compliance metrics from all assessment areas and identify critical gap
 - Row 2: Assessment period and version
 - Row 3: Generated date (auto-populated)
 - Row 5: Overall compliance status indicator (colored)
-
 
 **Section 1: Overall Compliance Summary (Rows 7-15)**
 
@@ -1783,7 +1659,6 @@ Aggregate compliance metrics from all assessment areas and identify critical gap
 - 70-79%: Orange fill (needs improvement)
 - <70%: Red fill (unacceptable)
 
-
 **Section 2: Assessment Area Breakdown (Rows 17-30)**
 
 | Assessment Area | Compliant | Partial | Non-Compliant | Compliance % |
@@ -1799,7 +1674,6 @@ Aggregate compliance metrics from all assessment areas and identify critical gap
 Auto-populated table pulling rows where:
 
 - Status = "❌ Non-Compliant" AND Risk Level = "Critical" OR "High"
-
 
 | Data Category | Assessment Area | Gap Description | Risk Level | Target Completion |
 |---------------|----------------|-----------------|------------|-------------------|
@@ -1842,12 +1716,10 @@ Centralized tracking of all supporting documentation for assessment findings.
 - Rows 4-8: Guidance on evidence types and retention
 - Row 9: Column headers (frozen)
 
-
 **Data Entry Section (Rows 10-109):**
 
 - 100 rows for evidence entries (yellow fill)
 - Auto-numbered Evidence ID
-
 
 **Total Rows:** ~115
 
@@ -1910,13 +1782,11 @@ Dropdown: Public, Internal, Confidential, Restricted
 - Data Retention Policy
 - Data Subject Rights Procedure
 
-
 **Technical Documentation:**
 
 - Deletion trigger configuration screenshots
 - Automation scripts (cron jobs, lifecycle policies)
 - System architecture diagrams
-
 
 **Regulatory Document:**
 
@@ -1924,13 +1794,11 @@ Dropdown: Public, Internal, Confidential, Restricted
 - FADP Article 12 Register
 - Legal retention requirement analysis memo
 
-
 **Audit Log:**
 
 - Deletion execution logs (last 6 months)
 - Data subject request tracking log
 - Legal hold register
-
 
 **Contract:**
 
@@ -1938,19 +1806,16 @@ Dropdown: Public, Internal, Confidential, Restricted
 - Cloud provider contracts (deletion SLAs)
 - Vendor agreements
 
-
 **Legal Opinion:**
 
 - Legal Counsel memo on retention periods
 - Legal hold procedure approval
 - GDPR Article 17 exception analysis
 
-
 **Testing Result:**
 
 - Deletion verification test reports (from ISMS-IMP-A.8.10.4)
 - Backup deletion testing results
-
 
 ---
 
@@ -1968,7 +1833,6 @@ Three-level approval workflow ensuring accountability for assessment findings an
 - Row 3: Assessment completion summary
 - Rows 5-10: Document Control metadata
 
-
 **Document Control (Rows 5-10):**
 
 - Assessment Period: [Date Range]
@@ -1977,7 +1841,6 @@ Three-level approval workflow ensuring accountability for assessment findings an
 - Overall Compliance %: [Link to Sheet 7]
 - Critical Gaps Identified: [Count from Sheet 7]
 - Assessment Completed By: [Name, Date]
-
 
 **Section 1: Level 1 Approval - Technical/Operational (Rows 12-25)**
 
@@ -2060,20 +1923,17 @@ Three-level approval workflow ensuring accountability for assessment findings an
 - Format: Fill color RGB(198, 239, 206) - Light green
 - Font: Bold, dark green
 
-
 **Rule 2: Partial Status**
 
 - Condition: Cell value = "⚠️ Partial"
 - Format: Fill color RGB(255, 235, 156) - Light yellow
 - Font: Bold, dark orange
 
-
 **Rule 3: Non-Compliant Status**
 
 - Condition: Cell value = "❌ Non-Compliant"
 - Format: Fill color RGB(255, 199, 206) - Light red
 - Font: Bold, dark red
-
 
 ## Risk Level Column (Column M) - All Assessment Sheets
 
@@ -2083,20 +1943,17 @@ Three-level approval workflow ensuring accountability for assessment findings an
 - Format: Fill color RGB(255, 199, 206) - Light red
 - Font: Bold, white
 
-
 **Rule 2: High Risk**
 
 - Condition: Cell value = "High"
 - Format: Fill color RGB(255, 230, 153) - Light orange
 - Font: Bold, dark red
 
-
 **Rule 3: Medium Risk**
 
 - Condition: Cell value = "Medium"
 - Format: Fill color RGB(255, 242, 204) - Very light yellow
 - Font: Regular, black
-
 
 ## Summary Dashboard - Compliance Percentage
 
@@ -2106,13 +1963,11 @@ Three-level approval workflow ensuring accountability for assessment findings an
 - Format: Fill color RGB(198, 239, 206) - Green
 - Font: Bold, dark green
 
-
 **Rule 2: Acceptable (80-89%)**
 
 - Condition: Cell value ≥ 80 AND < 90
 - Format: Fill color RGB(255, 235, 156) - Yellow
 - Font: Bold, dark orange
-
 
 **Rule 3: Needs Improvement (70-79%)**
 
@@ -2120,13 +1975,11 @@ Three-level approval workflow ensuring accountability for assessment findings an
 - Format: Fill color RGB(255, 230, 153) - Orange
 - Font: Bold, dark red
 
-
 **Rule 4: Unacceptable (<70%)**
 
 - Condition: Cell value < 70
 - Format: Fill color RGB(255, 199, 206) - Red
 - Font: Bold, white
-
 
 ## Data Subject Rights - Average Response Time (Sheet 6, Column R)
 
@@ -2136,20 +1989,17 @@ Three-level approval workflow ensuring accountability for assessment findings an
 - Format: Fill color RGB(198, 239, 206) - Green
 - Font: Bold, dark green
 
-
 **Rule 2: Acceptable if Complex (31-60 days)**
 
 - Condition: Cell value > 30 AND ≤ 60
 - Format: Fill color RGB(255, 235, 156) - Yellow
 - Font: Bold, dark orange
 
-
 **Rule 3: Non-Compliant (>60 days)**
 
 - Condition: Cell value > 60
 - Format: Fill color RGB(255, 199, 206) - Red
 - Font: Bold, dark red
-
 
 ---
 
@@ -2165,12 +2015,10 @@ Three-level approval workflow ensuring accountability for assessment findings an
 - Formula cells in Summary Dashboard
 - Evidence Register ID auto-generation (Column A)
 
-
 **Protection Settings:**
 
 - Locked: Yes
 - Hidden formulas: No (allow users to see calculation logic)
-
 
 ## Unprotected Cells (User Input Areas)
 
@@ -2181,12 +2029,10 @@ Three-level approval workflow ensuring accountability for assessment findings an
 - Approval Sign-Off fields (All approval sections)
 - Notes/Comments columns (Column O, Column J, etc.)
 
-
 **Protection Settings:**
 
 - Locked: No
 - Allow: Formatting, Insert rows (within data range), Delete content
-
 
 ## Sheet Protection Configuration
 
@@ -2207,7 +2053,6 @@ Three-level approval workflow ensuring accountability for assessment findings an
   - [ ] Use AutoFilter (YES)
   - [ ] Edit objects (NO)
   - [ ] Edit scenarios (NO)
-
 
 ---
 
@@ -2298,7 +2143,6 @@ The Python script `generate_a810_1_retention_triggers.py` generates the complete
 - Set default font (Calibri 11)
 - Return workbook object
 
-
 **Function: `setup_styles()`**
 
 - Define cell styles: header, subheader, input_cell, status_compliant, status_partial, status_noncompliant
@@ -2306,13 +2150,11 @@ The Python script `generate_a810_1_retention_triggers.py` generates the complete
 - Define borders: thin, medium
 - Return style dictionary
 
-
 **Function: `create_instructions_sheet(wb, styles)`**
 
 - Add Instructions & Legend content
 - Format headers, color legend, status definitions
 - Freeze panes at Row 9
-
 
 **Function: `create_assessment_sheet(wb, styles, sheet_name, sheet_number)`**
 
@@ -2323,14 +2165,12 @@ The Python script `generate_a810_1_retention_triggers.py` generates the complete
 - Add reference tables/checklists
 - Freeze panes at Row 9
 
-
 **Function: `create_summary_dashboard(wb, styles)`**
 
 - Create Sheet 7 structure
 - Add formulas for compliance calculations
 - Apply conditional formatting to compliance %
 - Add critical gaps table (formula-driven)
-
 
 **Function: `create_evidence_register(wb, styles)`**
 
@@ -2339,7 +2179,6 @@ The Python script `generate_a810_1_retention_triggers.py` generates the complete
 - Apply data validation for dropdowns
 - Freeze panes at Row 9
 
-
 **Function: `create_approval_signoff(wb, styles)`**
 
 - Create Sheet 9 with 3-level approval workflow
@@ -2347,17 +2186,14 @@ The Python script `generate_a810_1_retention_triggers.py` generates the complete
 - Add Next Steps and Audit Trail sections
 - Format approval tables
 
-
 **Function: `apply_data_validation(sheet, cell_range, dropdown_values)`**
 
 - Generic function to apply dropdown validation
 - Used for all dropdown columns
 
-
 **Function: `apply_conditional_formatting(sheet, cell_range, rules)`**- Generic function to apply conditional formatting
 
 - Used for status columns, risk level, compliance %
-
 
 ## Customization Points (Marked with `# CUSTOMIZE:` in Script)
 
@@ -2367,27 +2203,22 @@ The Python script `generate_a810_1_retention_triggers.py` generates the complete
 - Retention Period options (if additional periods needed)
 - Legal/Regulatory Basis values (if industry-specific regulations)
 
-
 **Conditional Formatting Thresholds:**
 
 - Compliance % thresholds (currently 90%, 80%, 70%)
 - Response time thresholds (currently 30, 60 days)
 
-
 **Sheet Names:**
 
 - If organizational naming conventions differ from standard
-
 
 **Column Widths:**
 
 - Adjust if organization prefers different layout
 
-
 **Data Entry Row Count:**
 
 - Currently 13 rows, increase if needed (but recommend pagination to new workbook)
-
 
 ## Script Execution
 
@@ -2402,7 +2233,6 @@ python generate_a810_1_retention_triggers.py
 - Location: Current working directory
 - Success message with workbook structure summary
 
-
 **Validation:**
 
 - Open workbook in Excel
@@ -2410,7 +2240,6 @@ python generate_a810_1_retention_triggers.py
 - Test dropdowns in assessment sheets
 - Verify formulas calculate correctly in Summary Dashboard
 - Check conditional formatting applies properly
-
 
 ---
 
@@ -2426,14 +2255,12 @@ Before delivering workbook to users, verify:
 - [ ] Sheet tab colors applied (per specification)
 - [ ] Freeze panes configured (Row 9 on all assessment sheets)
 
-
 **Content:**
 
 - [ ] Instructions sheet complete with color legend
 - [ ] All reference tables populated
 - [ ] Column headers match specification
 - [ ] Evidence Register has 100 rows
-
 
 **Functionality:**
 
@@ -2442,7 +2269,6 @@ Before delivering workbook to users, verify:
 - [ ] Summary Dashboard formulas calculate (no #REF! errors)
 - [ ] Evidence ID auto-generates (EV-001, EV-002, etc.)
 
-
 **Protection:**
 
 - [ ] Formula cells protected
@@ -2450,14 +2276,12 @@ Before delivering workbook to users, verify:
 - [ ] Sheet protection enabled with correct permissions
 - [ ] Password set (if required)
 
-
 **Formatting:**
 
 - [ ] Column widths appropriate (no truncated headers)
 - [ ] Status indicators visible (✅ ⚠️ ❌)
 - [ ] Print areas defined
 - [ ] Page breaks logical
-
 
 ## User Acceptance Testing
 
@@ -2500,7 +2324,6 @@ Before delivering workbook to users, verify:
 - **ISMS-IMP-A.8.10.4 (Verification & Evidence):** Deletion triggers defined here → Verification testing there
 - **ISMS-IMP-A.8.10.5 (Compliance Dashboard):** All findings aggregated into overall A.8.10 compliance posture
 
-
 ## Data Flow Between Assessments
 
 ```
@@ -2525,7 +2348,6 @@ A.8.10.5 Compliance Dashboard
 - Cloud provider contracts → Referenced in A.8.10.3
 - Verification test reports → Referenced in A.8.10.4
 
-
 ---
 
 # Version Control & Change Management
@@ -2545,7 +2367,6 @@ ISMS-IMP-A.8.10.1_Retention_Triggers_YYYYMMDD.xlsx
 - Version: 1.0
 - Date: [Date]
 
-
 ## Change Log
 
 **Version 1.0 → 2.0 Changes:**
@@ -2559,7 +2380,6 @@ ISMS-IMP-A.8.10.1_Retention_Triggers_YYYYMMDD.xlsx
 - Updated compliance calculation formulas for accuracy
 - Added conditional formatting for response time performance
 
-
 ## Backward Compatibility
 
 **v2.0 Workbooks:**
@@ -2568,14 +2388,12 @@ ISMS-IMP-A.8.10.1_Retention_Triggers_YYYYMMDD.xlsx
 - Compatible with LibreOffice Calc 6.0+ (with minor formatting differences)
 - Not compatible with Google Sheets (use Excel Online for cloud access)
 
-
 **v1.0 to v2.0 Migration:**
 
 - Manual data transfer required (no automated migration script)
 - Copy data categories from v1.0 Sheet 2 → v2.0 Sheet 2
 - Re-assess additional columns (R, S, T) in v2.0 format
 - Update Evidence Register with new entries
-
 
 ---
 
@@ -2589,13 +2407,11 @@ ISMS-IMP-A.8.10.1_Retention_Triggers_YYYYMMDD.xlsx
 - Solution: Check formula references point to correct sheets/ranges
 - Prevention: Don't rename sheets or delete header rows
 
-
 **Issue 2: Dropdowns Not Working**
 
 - Cause: Data validation not applied or sheet protection blocks editing
 - Solution: Verify data validation rules, check cell is unlocked
 - Prevention: Use script-generated workbook, don't manually recreate
-
 
 **Issue 3: Conditional Formatting Not Applying**
 
@@ -2603,13 +2419,11 @@ ISMS-IMP-A.8.10.1_Retention_Triggers_YYYYMMDD.xlsx
 - Solution: Review conditional formatting rules, ensure range covers data rows
 - Prevention: Test with sample data before distribution
 
-
 **Issue 4: Summary Dashboard Shows 0% Compliance**
 
 - Cause: No data entered in assessment sheets OR formulas reference wrong range
 - Solution: Enter at least one data category, verify formulas reference Rows 10-22
 - Prevention: Complete at least Sheet 2 before reviewing dashboard
-
 
 ## Technical Support
 
@@ -2620,14 +2434,12 @@ ISMS-IMP-A.8.10.1_Retention_Triggers_YYYYMMDD.xlsx
 - Check Python version (requires 3.7+)
 - Contact: ISMS Implementation Team
 
-
 **For Excel Workbook Issues:**
 
 - Verify Excel version (2016+ required)
 - Check file not corrupted (re-generate from script)
 - Review cell protection settings
 - Contact: ISMS Implementation Team
-
 
 ---
 
@@ -2688,7 +2500,6 @@ ISMS-IMP-A.8.10.1 - Retention & Deletion Triggers Assessment v1.0
 - [ ] Consistent use of [Organization] placeholder
 - [ ] No placeholder text remains incomplete
 - [ ] Technical specification matches Python script capability
-
 
 ---
 

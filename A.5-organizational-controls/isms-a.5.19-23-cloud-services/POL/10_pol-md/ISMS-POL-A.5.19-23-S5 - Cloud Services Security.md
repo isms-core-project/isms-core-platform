@@ -36,7 +36,6 @@
 - Compliance: Legal/Compliance Officer
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -74,7 +73,6 @@ This section defines requirements for the secure acquisition, use, management, a
 - Cloud-specific risks (multi-tenancy, data commingling, jurisdiction, provider access) shall be assessed and mitigated
 - Cloud provider certifications and compliance (SOC 2, ISO 27017, CSA STAR) shall be verified annually
 
-
 ---
 
 # Scope
@@ -108,7 +106,6 @@ This section applies to all cloud services that:
 - Provide infrastructure for organizational systems
 - Are accessed by organizational users
 - Integrate with organizational systems
-
 
 ---
 
@@ -537,7 +534,7 @@ Complete migration from cloud to [Organization]-owned infrastructure. This is th
 | **Regulatory mandate** | Legal requirement for physically controlled on-premises infrastructure | Low-Medium | Classified government systems, some banking core systems |
 | **Cost inversion** | Cloud costs exceed on-prem TCO over 3-5 years for stable, high-volume workloads | Low | Massive-scale batch processing (>1PB data, predictable load) |
 | **Strategic independence** | Eliminate all external dependencies for critical infrastructure | Very Low | Defense systems, critical infrastructure (energy, water) |
-| **Provider failure** | Cloud provider bankruptcy, unrecoverable breach, geopolitical access loss | Very Low | BC/DR emergency scenario (refer to ISMS-POL-A.8.13-14-5.30) |
+| **Provider failure** | Cloud provider bankruptcy, unrecoverable breach, geopolitical access loss | Very Low | BC/DR emergency scenario (refer to ISMS-POL-A.5.30-8.13-14) |
 | **Concentration risk** | DORA Article 28.9 diversification from single critical provider | Low | Financial institutions reducing hyperscaler dependency |
 
 **Assessment Requirements:**
@@ -612,7 +609,6 @@ Full on-premises repatriation is economically justified **ONLY** when one or mor
 - Sector-specific regulations prohibit public cloud (classified government, some defense)
 - **Example**: Swiss Bundesverwaltung systems requiring air-gapped infrastructure, some cantonal healthcare systems
 
-
 **2. Cost Inversion (Economics-Driven):**
 
 - Annual cloud costs >CHF 500K **AND** workload characteristics:
@@ -622,14 +618,12 @@ Full on-premises repatriation is economically justified **ONLY** when one or mor
 - 3-5 year on-prem TCO < 70% of equivalent cloud costs
 - **Example**: Genomics research (petabyte-scale data, continuous compute), large-scale batch processing
 
-
 **3. Strategic Independence (Risk-Driven):**
 
 - Critical infrastructure requiring zero external dependencies
 - National security, defense, or essential infrastructure sectors
 - Geopolitical risk mitigation (provider jurisdiction conflicts)
 - **Example**: Military command systems, critical infrastructure SCADA, central bank core systems
-
 
 **4. Concentration Risk Elimination (DORA-Driven):**
 
@@ -638,14 +632,12 @@ Full on-premises repatriation is economically justified **ONLY** when one or mor
 - Not full repatriation, but hybrid with substantial on-prem component
 - **Example**: Tier 1 bank moving 40% of workloads on-prem to reduce AWS dependency
 
-
 **For all other scenarios, cloud-to-cloud or hybrid models are preferred due to:**
 
 - Lower TCO for most workloads (70-80% of cases)
 - Faster implementation (1/3 the timeline)
 - Maintained elasticity and innovation access
 - Reduced operational burden (no hardware lifecycle management)
-
 
 **Migration Timeline (On-Premises Repatriation):**
 
@@ -777,14 +769,14 @@ Use this decision tree for exit strategy selection:
 
 ### Cross-Reference: Business Continuity & Disaster Recovery
 
-Exit strategies address **planned, voluntary transitions** from cloud services. For **emergency scenarios** involving cloud provider failure, refer to Business Continuity and Disaster Recovery planning (ISMS-POL-A.8.13-14-5.30).
+Exit strategies address **planned, voluntary transitions** from cloud services. For **emergency scenarios** involving cloud provider failure, refer to Business Continuity and Disaster Recovery planning (ISMS-POL-A.5.30-8.13-14).
 
 **Distinction:**
 
 | Scenario Type | Planning Framework | Timeline | Example |
 |---------------|-------------------|----------|---------|
 | **Planned Exit** | This policy (A.5.23) | 3-18 months | Contract negotiation failure, cost optimization, strategic change |
-| **Emergency Failover** | BC/DR (A.8.13-14-5.30) | Hours-Days | Provider outage, security breach, geopolitical access loss |
+| **Emergency Failover** | BC/DR (A.5.30-8.13-14) | Hours-Days | Provider outage, security breach, geopolitical access loss |
 
 **Emergency Scenarios Requiring BC/DR:**
 
@@ -810,7 +802,6 @@ Exit strategies address **planned, voluntary transitions** from cloud services. 
 - **Alternative Provider Standby**: For Critical services, maintain hot/warm standby in alternative cloud (BC/DR + exit strategy)
 - **Annual Failover Testing**: BC/DR testing validates exit data portability and alternative provider readiness
 - **Documentation Consolidation**: Exit plans in ISMS-IMP-A.5.23.4 workbook cross-reference BC/DR runbooks
-
 
 ---
 
@@ -853,7 +844,6 @@ All testing results SHALL be documented in:
 - **ISMS-IMP-A.5.23.4** (Governance & Risk Management workbook) - "Exit Strategy" sheet
 - **ISMS-IMP-A.5.23.5** (Compliance Monitoring Dashboard workbook) - "Exit Planning" sheet
 
-
 **Required Evidence:**
 
 | Evidence Type | Description | Retention |
@@ -880,7 +870,6 @@ All testing results SHALL be documented in:
 - **Semi-Annual**: High-risk services (risk rating = High)
 - **Annual**: Medium/Low-risk services
 
-
 **Audit Trail:**
 
 Exit strategy reviews and testing results shall be retained for audit purposes:
@@ -888,7 +877,6 @@ Exit strategy reviews and testing results shall be retained for audit purposes:
 - **Evidence location**: `/evidence/cloud-services/exit-strategy/YYYY/`
 - **Naming convention**: `EV-EXIT-[Service-ID]-[YYYYMMDD]-[Test-Type].pdf`
 - **Retention period**: 3 years minimum (7 years for DORA-regulated entities)
-
 
 ## Exit Triggers
 

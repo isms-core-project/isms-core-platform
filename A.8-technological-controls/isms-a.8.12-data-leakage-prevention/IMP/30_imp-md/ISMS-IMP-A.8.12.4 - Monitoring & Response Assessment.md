@@ -61,14 +61,12 @@ This assessment evaluates [Organization]'s **DLP monitoring and incident respons
 - **EU GDPR (Art. 32, 33):** Requires ability to detect, investigate, and report personal data breaches within 72 hours
 - **Industry Standards:** PCI DSS (Req. 10, 12.10), HIPAA (§164.308), SOC 2 all require security monitoring and incident response
 
-
 **Business Impact:**
 
 - **Unmonitored DLP = Undetected Breaches:** Alerts generated but not reviewed = data leakage happens, organization doesn't know
 - **Slow Response = Larger Breach:** MTTR of 24 hours vs. 1 hour = 24× more data exfiltrated
 - **Alert Fatigue = Missed Critical Alerts:** 1000 alerts/day, 95% false positives = SOC ignores all alerts, including real breaches
 - **Compliance Violations:** GDPR requires breach notification within 72 hours - need monitoring to detect breaches within that window
-
 
 **Why Monitoring & Response Assessment Matters:**
 
@@ -77,7 +75,6 @@ This assessment evaluates [Organization]'s **DLP monitoring and incident respons
 - **Tuning Effectiveness:** Is false positive rate acceptable? (<10% target)
 - **SOC Integration:** Are DLP alerts in SIEM? Do SOC analysts understand DLP alerts?
 - **Incident Preparedness:** Can organization respond to data leakage incident?
-
 
 ## Who Should Complete This Assessment
 
@@ -91,7 +88,6 @@ This assessment evaluates [Organization]'s **DLP monitoring and incident respons
 - Incident response procedures for data leakage events
 - False positive tuning methodology
 
-
 **Support Roles:**
 
 - **SOC Analysts:** Day-to-day alert handling, triage, escalation experience
@@ -99,7 +95,6 @@ This assessment evaluates [Organization]'s **DLP monitoring and incident respons
 - **SIEM Engineers:** Log forwarding, correlation rules, dashboard configuration
 - **DLP Administrators:** Alert policy configuration, tuning, pattern updates
 - **CISO:** Oversight, resource allocation, escalation path approval
-
 
 ## Time Estimate
 
@@ -114,7 +109,6 @@ This assessment evaluates [Organization]'s **DLP monitoring and incident respons
 - **Incident Response Testing:** 30-60 minutes (tabletop exercise or review recent incidents)
 - **Evidence Collection:** 30 minutes (screenshots, logs, procedure documents)
 - **Quality Review:** 30 minutes (self-check using Section 7 quality checklist)
-
 
 **Pro Tip:** Schedule assessment during low-alert period (not during major incident). Involve SOC analysts who actually handle DLP alerts daily for realistic feedback.
 
@@ -131,7 +125,6 @@ This assessment implements **ISMS-POL-A.8.12 (Data Leakage Prevention Policy)** 
 - **Section 3.2 - Assessment & Verification:** Quarterly monitoring effectiveness review
 - **Section 4.2 - Implementation Resources:** Structured assessment workbooks
 
-
 **Policy Authority:** Chief Information Security Officer (CISO)  
 **Compliance Status:** Mandatory for all DLP deployments
 
@@ -141,7 +134,6 @@ This assessment implements **ISMS-POL-A.8.12 (Data Leakage Prevention Policy)** 
 - **A.8.12.2 (Data Classification):** Defines sensitive data → THIS assessment verifies ALERTS for that data are handled
 - **A.8.12.3 (Channel Coverage):** Verifies DLP deployed → THIS assessment verifies ALERTS from those channels reach SOC
 - **A.8.12.5 (Compliance Dashboard):** Consolidates all assessments → THIS provides alert/response metrics
-
 
 ## Critical: DLP Value = Monitoring Effectiveness
 
@@ -188,7 +180,6 @@ Organizations commonly deploy DLP technology but fail to establish effective mon
 - [ ] DLP alert configuration (severity levels, notification rules, escalation)
 - [ ] DLP tuning history (pattern changes, exception approvals, FP tracking)
 
-
 **SIEM/SOC Access:**
 
 - [ ] SIEM console (Splunk, QRadar, Sentinel, LogRhythm, etc.)
@@ -197,14 +188,12 @@ Organizations commonly deploy DLP technology but fail to establish effective mon
 - [ ] SOC dashboards showing DLP alerts
 - [ ] Alert queue/ticketing system (ServiceNow, Jira, etc.)
 
-
 **Documentation:**
 
 - [ ] SOC playbooks for DLP incidents (step-by-step procedures)
 - [ ] Incident response plan for data leakage
 - [ ] Escalation procedures (when to involve CISO, Legal, DPO)
 - [ ] Alert severity definitions (what makes alert Critical vs. High vs. Medium)
-
 
 **Metrics & Logs:**
 
@@ -213,7 +202,6 @@ Organizations commonly deploy DLP technology but fail to establish effective mon
 - [ ] MTTR metrics (if already calculated)
 - [ ] False positive tracking (if maintained)
 - [ ] Incident reports from recent DLP events
-
 
 ## Knowledge Required
 
@@ -225,7 +213,6 @@ Organizations commonly deploy DLP technology but fail to establish effective mon
 - Incident response lifecycle (detection → analysis → containment → eradication → recovery → lessons learned)
 - Difference between false positive (non-sensitive data flagged) and true positive (actual sensitive data leak)
 
-
 **Technical Skills:**
 
 - Query SIEM for DLP events (SPL for Splunk, KQL for Sentinel, etc.)
@@ -233,13 +220,11 @@ Organizations commonly deploy DLP technology but fail to establish effective mon
 - Calculate metrics (FP rate, MTTR, alert volume trends)
 - Review SOC procedures and identify gaps
 
-
 **NOT Required:**
 
 - Deep SIEM architecture expertise
 - Advanced correlation rule development
 - Digital forensics expertise
-
 
 ## Tools Needed
 
@@ -249,18 +234,15 @@ Organizations commonly deploy DLP technology but fail to establish effective mon
 - **Spreadsheet tool:** To calculate metrics (FP rate, MTTR, volume trends)
 - **Ticketing system access:** To review incident handling
 
-
 **Testing Tools:**
 
 - **DLP test alerts:** Ability to generate test alert (send test email with fake SSN)
 - **SIEM search:** Verify test alert appears in SIEM
 
-
 **Documentation Tools:**
 
 - **Screenshot capability:** SOC dashboards, alert queues, SIEM queries
 - **Procedure documentation:** Export SOC playbooks, incident response plans
-
 
 ## Estimated Time Commitment
 
@@ -272,7 +254,6 @@ Organizations commonly deploy DLP technology but fail to establish effective mon
 - Calculate: By channel (Email, Web, USB, etc.)
 - Identify trends: Increasing/decreasing alert volume, spikes, patterns
 
-
 **Phase 2: SOC Integration Verification (1 hour)**
 
 - Verify DLP logs forwarding to SIEM (check SIEM data source config)
@@ -280,7 +261,6 @@ Organizations commonly deploy DLP technology but fail to establish effective mon
 - Review correlation rules using DLP events
 - Check SOC dashboards: Are DLP alerts visible to SOC analysts?
 - Verify alerting: Do Critical/High DLP alerts generate SOC tickets automatically?
-
 
 **Phase 3: Playbook & Procedure Review (1 hour)**
 
@@ -290,7 +270,6 @@ Organizations commonly deploy DLP technology but fail to establish effective mon
 - Check incident response plan: Specific procedures for data breach?
 - Verify training: Have SOC analysts been trained on DLP alert handling?
 
-
 **Phase 4: False Positive Tuning Assessment (1-2 hours)**
 
 - Sample 100 recent alerts (random sample across 30 days)
@@ -299,7 +278,6 @@ Organizations commonly deploy DLP technology but fail to establish effective mon
 - Review tuning history: How often are patterns updated? Who approves?
 - Check user feedback mechanism: Can users report false positives?
 
-
 **Phase 5: Incident Response Metrics (1 hour)**
 
 - Calculate MTTR: For last 10 DLP incidents, time from alert to containment
@@ -307,13 +285,11 @@ Organizations commonly deploy DLP technology but fail to establish effective mon
 - Check evidence preservation: Are DLP logs retained? Are alerts archived?
 - Assess notification compliance: Were breaches reported within regulatory timelines (72 hours GDPR)?
 
-
 **Phase 6: Assessment Completion (30 minutes)**
 
 - Complete all assessment sheets
 - Document gaps, create remediation plans
 - Collect evidence, populate Evidence Register
-
 
 **Total:** 4-6 hours
 
@@ -474,7 +450,6 @@ Organizations commonly deploy DLP technology but fail to establish effective mon
    - High: No SIEM integration, no playbook, FP rate 30-50%
    - Medium: Playbook outdated, FP rate 10-30%, MTTR 4-24 hours
 
-
 **STEP 8: Evidence Register & Final Review (15 minutes)**
 1. Document all evidence (minimum 2 per domain = 10 items)
 2. Review Summary_Dashboard
@@ -502,7 +477,6 @@ Alert management effectiveness determines whether DLP provides value or is just 
 - Alert triage daily (review all alerts within 24 hours)
 - MTTR targets: Critical <1 hour, High <4 hours, Medium <24 hours
 - Alert backlog <100 unreviewed alerts
-
 
 **Field Guidance:**
 
@@ -532,7 +506,6 @@ Alert management effectiveness determines whether DLP provides value or is just 
 - Escalation procedures defined and working
 - MTTR meets targets (Critical <1 hour, High <4 hours)
 
-
 **⚠️ Partial:**
 
 - Alert backlog 100-500 (manageable but needs improvement)
@@ -540,7 +513,6 @@ Alert management effectiveness determines whether DLP provides value or is just 
 - Alert volume high but being handled (100-200/day per analyst)
 - Triage process exists but not consistently followed
 - MTTR exceeds targets (Critical 1-4 hours, High 4-12 hours)
-
 
 **❌ Non-Compliant:**
 
@@ -550,7 +522,6 @@ Alert management effectiveness determines whether DLP provides value or is just 
 - No triage process or escalation procedures
 - MTTR >24 hours (slow response, data fully exfiltrated)
 
-
 **Compliance Checklist:**
 
 - [ ] **All DLP alerts reviewed within 24 hours** (backlog <100, oldest <24 hours)
@@ -559,7 +530,6 @@ Alert management effectiveness determines whether DLP provides value or is just 
 - [ ] **Documented triage process** (how to review alert, classify, escalate)
 - [ ] **Escalation procedures defined** (when to involve CISO, Legal, DPO, HR)
 - [ ] **MTTR tracked and meets targets** (Critical <1 hour, High <4 hours, Medium <24 hours)
-
 
 **Common Pitfalls:**
 
@@ -576,7 +546,6 @@ Alert management effectiveness determines whether DLP provides value or is just 
 - SIEM query showing alert volume: `EV-2-Alert-20260121-30-Day-Alert-Volume.png`
 - Alert backlog screenshot: `EV-2-Alert-20260121-Backlog-Dashboard.png`
 - SOC shift schedule showing 24/7 coverage: `EV-2-Alert-20260121-SOC-Schedule.pdf`
-
 
 ---
 
@@ -597,7 +566,6 @@ EV-[Domain]-[Category]-[Date]-[Description].[ext]
 - 5 = False Positive Tuning
 - 6 = Incident Response
 
-
 **Examples:**
 
 - `EV-2-Alert-20260121-Alert-Volume-Trend.png`
@@ -605,7 +573,6 @@ EV-[Domain]-[Category]-[Date]-[Description].[ext]
 - `EV-4-Playbook-20260121-DLP-Incident-Response-Procedure.pdf`
 - `EV-5-Tuning-20260121-FP-Rate-Calculation.xlsx`
 - `EV-6-IR-20260121-MTTR-Last-10-Incidents.xlsx`
-
 
 **Storage:** `ISMS/Controls/A.8.12_DLP/Assessments/Monitoring_Response/Evidence/`  
 **Retention:** 2-3 years  
@@ -619,13 +586,11 @@ EV-[Domain]-[Category]-[Date]-[Description].[ext]
 - Alert backlog screenshot
 - SOC staffing schedule (24/7 coverage verification)
 
-
 **3. SIEM Integration:**
 
 - SIEM data source configuration (DLP as log source)
 - Test alert search result (end-to-end verification)
 - Correlation rule list (rules using DLP events)
-
 
 **4. SOC Playbooks:**
 
@@ -633,20 +598,17 @@ EV-[Domain]-[Category]-[Date]-[Description].[ext]
 - SOC analyst training records
 - Escalation procedure flowchart
 
-
 **5. False Positive Tuning:**
 
 - FP rate calculation spreadsheet (sample of 100 alerts)
 - Pattern tuning history log
 - User feedback mechanism documentation
 
-
 **6. Incident Response:**
 
 - MTTR calculation (last 10 incidents)
 - Sample incident report (with PII redacted)
 - Evidence preservation checklist
-
 
 **Minimum Evidence:** 2 per domain × 5 domains = **10 items minimum**
 
@@ -767,7 +729,6 @@ Unacceptable: >50% (DLP ineffective)
 - [ ] Gap Analysis complete for all ❌ and ⚠️ items
 - [ ] Remediation plans created with owners and dates
 
-
 **Accuracy:**
 
 - [ ] Alert metrics from actual SIEM/DLP logs (not guessed)
@@ -776,14 +737,12 @@ Unacceptable: >50% (DLP ineffective)
 - [ ] MTTR from ticket timestamps (not policy targets)
 - [ ] SOC analyst interviewed (not just documentation review)
 
-
 **Evidence Quality:**
 
 - [ ] Minimum 2 evidence items per domain (10+ total)
 - [ ] SIEM queries documented (reproducible)
 - [ ] Screenshots include timestamps
 - [ ] Incident details sanitized (PII removed)
-
 
 **Policy Alignment:**
 
@@ -792,7 +751,6 @@ Unacceptable: >50% (DLP ineffective)
 - [ ] FP rate target (<10%) assessed
 - [ ] Alert backlog target (<100) checked
 
-
 **Operational Verification:**
 
 - [ ] SOC actually monitors DLP (not just configured)
@@ -800,13 +758,11 @@ Unacceptable: >50% (DLP ineffective)
 - [ ] Tuning actually happens (not just process exists)
 - [ ] Incidents actually responded to (not just escalated and forgotten)
 
-
 **Final Checks:**
 
 - [ ] Filename: `ISMS-IMP-A.8.12.4_Monitoring_Response_20260121.xlsx`
 - [ ] All formulas calculate correctly
 - [ ] Conditional formatting working
-
 
 ---
 
@@ -822,7 +778,6 @@ Unacceptable: >50% (DLP ineffective)
 - [ ] Quarterly Review
 - [ ] Post-Incident Review
 - [ ] Post-Tuning Review
-
 
 ## Completed By
 
@@ -841,7 +796,6 @@ I confirm:
 - MTTR from actual incident timestamps
 - SOC analysts interviewed for realistic assessment
 
-
 ## Reviewed By (Security Operations Manager)
 
 **Name:** _______________________  
@@ -851,7 +805,6 @@ I confirm:
 - [ ] Approved
 - [ ] Approved with corrections
 - [ ] Requires revision
-
 
 ## Approved By (CISO)
 
@@ -864,13 +817,11 @@ I confirm:
 - [ ] Approved with conditions - Remediate by: _______
 - [ ] Rejected - Critical gaps require immediate action
 
-
 **Risk Acceptance:**
 
 - [ ] Residual risk accepted
 - [ ] Remediation required
 - [ ] Escalate to Executive Management
-
 
 ## Next Review Date
 
@@ -883,7 +834,6 @@ I confirm:
 - Data breach incidents
 - MTTR target misses
 - Alert volume anomalies
-
 
 ---
 
@@ -934,7 +884,6 @@ I confirm:
 - Rows 14-30: Instructions
 - Rows 32-40: Response value legend
 - Rows 42-45: Color coding
-
 
 ---
 
@@ -1105,7 +1054,6 @@ validation_compliance = {
   - "Partial" = Yellow
   - "Fail" = Red
 
-
 ---
 
 ## Sheet: SOC_Playbooks
@@ -1185,7 +1133,6 @@ validation_status = {
   - <90 days old = Green
   - 90-365 days = Yellow
   - >365 days = Red (playbook outdated)
-
 
 ---
 
@@ -1452,7 +1399,6 @@ validation_domain = {
 - MTTR trend (last 90 days)
 - FP rate trend (last 6 months)
 
-
 **Key Formulas:**
 
 ```python
@@ -1498,7 +1444,6 @@ validation_domain = {
   - 10-20% = Yellow
   - >20% = Red
 
-
 ---
 
 # 3-7. [Same as Previous IMP Documents]
@@ -1520,7 +1465,6 @@ validation_domain = {
 - FP rate calculation methodology
 - Dashboard formulas referencing specific rows
 
-
 ## A.2 Quality Assurance
 
 **Validation Script:** `excel_sanity_check_a812_4.py`
@@ -1532,7 +1476,6 @@ validation_domain = {
 - FP rate calculation methodology documented
 - Dashboard formulas calculate correctly
 - No missing domain coverage
-
 
 ## A.3 Deployment
 

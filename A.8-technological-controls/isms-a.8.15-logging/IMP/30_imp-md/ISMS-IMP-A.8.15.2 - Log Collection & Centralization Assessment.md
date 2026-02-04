@@ -45,12 +45,10 @@ This document consists of two parts:
   - Cell Styling Reference
   - Python Script Usage Notes
 
-
 **Target Audiences:**
 
 - **Part I:** Assessment users (SOC Team, SIEM Administrators, IT Operations, Network Team)
 - **Part II:** Workbook developers (Python/Excel script maintainers)
-
 
 ---
 
@@ -75,13 +73,11 @@ This assessment evaluates the LOG COLLECTION INFRASTRUCTURE - how logs flow from
 - Are logs protected during transmission?
 - What integration methods are used? (Syslog, agents, APIs, cloud connectors)
 
-
 **What This Assessment Is NOT:**
 
 - NOT about what systems exist (that's IMP-A.8.15.1 - Log Source Inventory)
 - NOT about what's in the logs or how they're reviewed (that's IMP-A.8.15.4 - Log Analysis)
 - NOT about retention compliance (that's IMP-A.8.15.3 - Log Protection & Retention)
-
 
 This is purely about the **INFRASTRUCTURE** and **DATA FLOW** - getting logs from sources to centralized storage.
 
@@ -95,19 +91,16 @@ This assessment verifies [Organization]'s compliance with:
 - **PCI DSS Requirement 10.5.1** (if applicable): Centralized log management required for payment card systems
 - **DORA/NIS2** (if applicable): ICT system monitoring requires centralized logging infrastructure
 
-
 **Security Impact**: 
 
 - **Attackers delete local logs** - centralized collection preserves evidence even if source system compromised
 - **Log gaps create blind spots** - unreliable collection means missed security events
 - **Investigation failures** - without centralized logs, incident investigation is impossible
 
-
 **Compliance Impact**: 
 
 - **Major non-conformity** if centralized logging not implemented for critical systems
 - **Auditors verify** log collection reliability and coverage in ISO 27001 audits
-
 
 **Audit Evidence**: This assessment workbook provides **objective evidence** of centralized logging implementation.
 
@@ -131,7 +124,6 @@ This assessment verifies [Organization]'s compliance with:
 - **Collection Coverage**: 85-98% (target: >=95%)
 - **Collection Reliability**: 95-99% uptime (target: >=98%)
 - **Gaps Identified**: 5-20 log sources not yet integrated, network bottlenecks, authentication issues
-
 
 ## Relationship to Other Assessments
 
@@ -187,7 +179,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - STOP - complete IMP-A.8.15.1 first
 - This assessment will reference the IMP-A.8.15.1 workbook for log source list
 
-
 ## Required Access
 
 **SIEM Platform Access**:
@@ -197,7 +188,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Access to collection statistics/metrics
 - Permission to export SIEM configuration (for evidence)
 
-
 **Infrastructure Access**:
 
 - Network diagrams showing log forwarding paths
@@ -205,14 +195,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Storage system access (capacity reports, retention configuration)
 - Cloud logging configuration (if applicable - CloudTrail, Azure Monitor, GCP Cloud Logging)
 
-
 **Operational Metrics**:
 
 - SIEM uptime/availability reports (last 3-6 months)
 - Log collection failure alerts/incidents
 - Storage capacity utilization trends
 - Network bandwidth monitoring data
-
 
 ## Required Personnel
 
@@ -223,14 +211,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - **SIEM Administrator**: Knows SIEM configuration, log source integrations
 - **SOC Lead**: Understands operational requirements, collection reliability
 
-
 **Supporting Input Required From**:
 
 - **IT Operations**: Storage infrastructure, network connectivity
 - **Network Team**: Firewall rules, bandwidth, routing
 - **System Administrators**: Log forwarding configuration on source systems
 - **Cloud Team**: Cloud logging services configuration (if applicable)
-
 
 **Estimated Time**: 8-12 hours (distributed across multiple personnel over 1-2 weeks)
 
@@ -243,7 +229,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Storage management console
 - Previous IMP-A.8.15.1 workbook (log source inventory)
 
-
 **Documentation**:
 
 - SIEM architecture diagrams
@@ -251,7 +236,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Log forwarding configuration standards
 - Storage architecture documentation
 - Previous assessment results (if repeat assessment)
-
 
 ---
 
@@ -266,25 +250,21 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Sheet 3: Storage Architecture (document tiered storage design)
 - Sheet 4: Network Infrastructure (document connectivity and bandwidth)
 
-
 **Phase 2: Collection Verification (Sheets 5-7)**
 
 - Sheet 5: Log Source Coverage (import from IMP-A.8.15.1, verify forwarding status)
 - Sheet 6: Integration Methods (document how each source connects)
 - Sheet 7: Collection Reliability Metrics (analyze gaps, delays, failures)
 
-
 **Phase 3: Security & Compliance (Sheets 8-9)**
 
 - Sheet 8: Encryption & Authentication (verify TLS, verify authentication methods)
 - Sheet 9: Gap Analysis (identify missing sources, reliability issues, security gaps)
 
-
 **Phase 4: Review & Approval (Sheets 10-11)**
 
 - Sheet 10: Evidence Register (document all supporting evidence)
 - Sheet 11: Approval Sign-Off (three-level approval process)
-
 
 **Estimated Timeline**:
 
@@ -292,7 +272,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Phase 2: 4-6 hours (collection verification - most time-consuming)
 - Phase 3: 2-3 hours (security verification and gap analysis)
 - Phase 4: 1-2 hours (evidence collection and approvals)
-
 
 **Total**: 10-15 hours (spread over 1-2 weeks to gather inputs from multiple teams)
 
@@ -306,20 +285,17 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - IT Operations provides storage architecture input
 - Network Team provides network infrastructure input
 
-
 **Week 2**:
 
 - SIEM Administrator completes collection coverage verification (Sheet 5)
 - System Administrators verify log forwarding configurations
 - SOC reviews collection reliability metrics (Sheet 7)
 
-
 **Week 3**:
 
 - Security Team verifies encryption and authentication (Sheet 8)
 - Gap analysis workshop with SIEM Admin + IT Ops + SOC (Sheet 9)
 - Evidence collection and approval process (Sheets 10-11)
-
 
 ## Data Collection Methods
 
@@ -329,7 +305,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Export collection statistics (log volume per source, collection failures)
 - Screenshot SIEM dashboard showing active log sources
 
-
 **Infrastructure Verification**:
 
 - Network diagrams (visually verify log forwarding paths)
@@ -337,14 +312,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Storage capacity reports (verify adequate capacity)
 - Cloud service console screenshots (CloudTrail, Azure Monitor, etc.)
 
-
 **Operational Metrics**:
 
 - SIEM uptime reports (prove availability meets policy requirement)
 - Collection failure alerts (quantify reliability issues)
 - Bandwidth utilization graphs (verify network capacity adequate)
-
-
 
 ---
 
@@ -381,13 +353,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - High Availability (Clustered? DR/backup? RPO/RTO?)
 - Maintenance Window (scheduled downtime, maintenance frequency)
 
-
 **Evidence Required**:
 
 - SIEM platform dashboard screenshot showing version and capacity
 - Architecture diagram showing SIEM deployment
 - License documentation (redact sensitive details, show capacity and expiration)
-
 
 **Common Scenarios**:
 
@@ -396,20 +366,17 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Document primary SIEM
 - Note if backup/DR exists or is missing (Gap!)
 
-
 **Multiple SIEM Platforms**:
 
 - Document each platform
 - Note purpose (Security SIEM vs. Operations SIEM vs. Compliance SIEM)
 - Verify no gaps in coverage (all log sources feeding to appropriate SIEM)
 
-
 **Cloud-Native Logging**:
 
 - Document cloud provider logging (CloudTrail, Azure Monitor, GCP Cloud Logging)
 - Note if forwarded to centralized SIEM or standalone
 - If standalone, assess coverage completeness
-
 
 **Time**: 1-2 hours
 
@@ -431,7 +398,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Redundancy (RAID level, replication, backup)
 - Geographic Location
 
-
 **Warm/Nearline Storage**:
 
 - Storage System (compressed storage, secondary storage tier)
@@ -440,7 +406,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Retention Period
 - Access Time (how long to retrieve logs)
 - Compression Ratio (if applicable)
-
 
 **Cold/Archive Storage**:
 
@@ -451,14 +416,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Access Time (hours/days to retrieve)
 - Write-Once Capability (WORM storage for compliance)
 
-
 **Capacity Planning**:
 
 - Current log ingestion rate (GB/day, TB/month)
 - Historical growth trend (% growth year-over-year)
 - Projected capacity needs (12 months forward projection)
 - Capacity alerts (threshold for warnings, currently alerting?)
-
 
 **Evidence Required**:
 
@@ -467,13 +430,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Capacity planning spreadsheet or forecast
 - Storage architecture diagram showing tiers
 
-
 **Compliance Check**:
 
 - Does total retention (hot + warm + cold) meet policy requirements?
 - Is capacity adequate for next 12 months + 20% buffer?
 - Are alerts configured for 80% capacity threshold?
-
 
 **Time**: 1-2 hours
 
@@ -496,7 +457,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Latency (milliseconds average)
 - Packet Loss (% packet loss observed)
 
-
 **Firewall Rules**:
 
 - Firewall Name/Location
@@ -506,7 +466,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Action (Allow/Deny)
 - Last Review Date
 
-
 **Routing & Segmentation**:
 
 - VLAN/Subnet Information
@@ -514,13 +473,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Network Segmentation Boundaries (logs crossing security zones?)
 - NAT/PAT (Network Address Translation affecting source IPs?)
 
-
 **Redundancy & Resilience**:
 
 - Redundant Network Paths (multiple routes to SIEM?)
 - Load Balancing (multiple SIEM collectors?)
 - Failover Configuration (what happens if primary path fails?)
-
 
 **Evidence Required**:
 
@@ -529,14 +486,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Bandwidth utilization graphs
 - Network monitoring data showing connectivity uptime
 
-
 **Common Issues to Identify**:
 
 - Insufficient bandwidth (log forwarding saturating network link)
 - Firewall rules missing or incorrect (blocking log traffic)
 - Single point of failure (no redundant paths)
 - High latency or packet loss (indicating network congestion)
-
 
 **Time**: 2-3 hours (requires coordination with Network Team)
 
@@ -562,7 +517,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - System Criticality (Critical, High, Medium, Low)
 - System Owner
 
-
 **To Be Completed (Manual)**:
 
 - **Collection Status**: Dropdown (Forwarding, Partial, Not Forwarding, Planned, N/A)
@@ -574,7 +528,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - **Gap Reason** (if not forwarding): Technical limitation, Planned but not implemented, Not required per risk assessment, Under investigation
 - **Remediation Plan** (if gap): Target date, responsible party, estimated effort
 
-
 **Status Definitions**:
 
 - **Forwarding**: Logs actively arriving, verified within last 24 hours, no gaps
@@ -582,7 +535,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - **Not Forwarding**: No logs arriving, or last log >7 days old
 - **Planned**: Integration approved and scheduled but not yet implemented
 - **N/A**: Explicitly excluded per approved exception (reference exception ID from policy Section 3.3)
-
 
 **Verification Methods**:
 
@@ -592,13 +544,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - **API Check**: API query confirms logs flowing (for cloud services)
 - **Manual Inspection**: Check SIEM raw log viewer for source system logs
 
-
 **Evidence Per Source**:
 
 - SIEM search result screenshot (showing recent logs from this source)
 - Agent status screenshot (if agent-based collection)
 - Cloud service logging configuration screenshot (if cloud service)
-
 
 **Time**: 4-6 hours (most time-consuming sheet - verify EACH log source individually)
 
@@ -623,7 +573,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - SSL/TLS Encryption (Yes/No)
 - Authentication Method (certificate, API key, username/password)
 
-
 **Syslog (Network Protocol)**:
 
 - Protocol Variant (RFC 3164 legacy, RFC 5424 modern, BSD Syslog, CEF over Syslog)
@@ -633,7 +582,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Message Format (plain text, structured, JSON embedded)
 - Timestamp Format (timezone handling, ISO 8601 compliance)
 
-
 **API-Based Collection**:
 
 - API Type (REST API, GraphQL, proprietary API)
@@ -641,7 +589,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Collection Frequency (real-time webhook, polling every X minutes)
 - Rate Limiting (API calls per hour limit, current utilization)
 - Error Handling (retry logic, exponential backoff, dead-letter queue)
-
 
 **Cloud Connectors**:
 
@@ -651,7 +598,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Scope (which cloud resources logged - all, specific services, specific regions)
 - Latency (typical delay from event occurrence to SIEM ingestion)
 
-
 **File-Based Collection**:
 
 - Collection Method (agent reads local files, network file share, FTP/SFTP)
@@ -659,7 +605,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - File Rotation Handling (rotate detection, multi-part file handling)
 - File Format (plain text, JSON, XML, CSV)
 - Parsing Configuration (custom parser, built-in parser, regex-based)
-
 
 **Database/JDBC Collection**:
 
@@ -669,13 +614,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Credentials (service account, read-only access verified)
 - Data Volume (rows per day, GB per day)
 
-
 **For Each Integration**:
 
 - **Configuration Documentation**: Where is config documented? (config file path, configuration management system, runbook)
 - **Change Management**: How are changes tracked? (change tickets, version control, approval process)
 - **Troubleshooting Contact**: Who to contact if collection fails? (team, person, escalation path)
-
 
 **Evidence Required**:
 
@@ -684,13 +627,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Cloud connector permission/role documentation
 - Network protocol packet captures (if troubleshooting Syslog issues)
 
-
 **Compliance Check**:
 
 - Are all integrations using TLS 1.2 or higher for encryption? (per policy Section 2.2)
 - Are authentication credentials securely managed? (not hardcoded, rotated regularly)
 - Are integrations documented sufficiently for continuity if personnel changes?
-
 
 **Time**: 2-3 hours
 
@@ -707,7 +648,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Downtime Incidents (count, total duration, root causes)
 - Planned vs. Unplanned Downtime (maintenance windows vs. failures)
 
-
 **Log Source Connectivity**:
 
 - Total Log Sources Expected (from IMP-A.8.15.1)
@@ -715,14 +655,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Collection Coverage % = (Forwarding / Expected) x 100%
 - Target: >=98% per ISMS-POL-A.8.15 Section 2.4
 
-
 **Collection Gaps & Delays**:
 
 - Log Sources with Gaps (count, list)
 - Average Gap Duration (hours/days between expected logs and actual arrival)
 - Maximum Gap Duration (longest period without logs from any source)
 - Delayed Forwarding (logs arriving but delayed >1 hour from generation)
-
 
 **Collection Failures**:
 
@@ -737,14 +675,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Mean Time to Detect Failure (how quickly was failure identified?)
 - Mean Time to Restore Collection (how quickly was collection restored?)
 
-
 **Data Quality Issues**:
 
 - Unparsed Logs (logs arriving but SIEM can't parse - count, %)
 - Parsing Errors (count, common error patterns)
 - Missing Required Fields (logs missing timestamps, source IPs, user IDs)
 - Character Encoding Issues (UTF-8 corruption, special characters mangled)
-
 
 **Alerting Effectiveness**:
 
@@ -753,13 +689,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - False Positive Rate (alerts fired where collection was actually OK)
 - False Negative Rate (collection failures NOT detected by alerts)
 
-
 **Trending Data**:
 
 - Log Volume Trend (GB/day over last 3-6 months - growing? stable? declining?)
 - Collection Reliability Trend (improving? degrading? stable?)
 - Incident Frequency Trend (collection failures increasing or decreasing?)
-
 
 **Evidence Required**:
 
@@ -768,13 +702,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Log volume graphs (SIEM dashboard showing ingestion rates over time)
 - Incident reports for significant collection failures
 
-
 **Automated Data Collection**:
 
 - Many SIEMs provide APIs or reports for these metrics
 - Python script can query SIEM API and populate this sheet automatically
 - Manual review still required for qualitative assessment (root causes, trends)
-
 
 **Time**: 2-3 hours (including SIEM data extraction and analysis)
 
@@ -794,14 +726,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - **Certificate Validation**: Certificate verified? Self-signed? CA-signed? Expired?
 - **Perfect Forward Secrecy**: Supported? (Ephemeral key exchange - DHE/ECDHE)
 
-
 **Policy Compliance**:
 
 - **ISMS-POL-A.8.15 Section 2.2 Requirement**: "Logs SHALL be transmitted over encrypted channels (TLS 1.2 or higher)"
 - **Compliant**: TLS 1.2 or TLS 1.3 with strong cipher suites
 - **Non-Compliant**: No encryption, TLS 1.0/1.1, weak ciphers
 - **Exception Approved?**: If non-compliant, is there an approved exception per policy Section 3.3? (Reference exception ID)
-
 
 **Authentication Methods**:
 
@@ -821,7 +751,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
   - Last Rotation Date
   - Automated Rotation? (Yes/No)
 
-
 **Risk Assessment**:
 
 **For Unencrypted or Weakly Authenticated Paths**:
@@ -830,7 +759,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - **Data Sensitivity**: What classification of data is in these logs? (Restricted, Confidential, Internal)
 - **Compensating Controls**: Are there mitigating factors? (physically secured network, VPN encapsulation, network segmentation)
 - **Risk Level**: Critical (unencrypted restricted data over Internet), High (unencrypted confidential data over LAN), Medium (unauthenticated internal data over trusted network), Low (internal data over physically secured network)
-
 
 **Remediation Priorities**:
 
@@ -841,7 +769,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Default or hardcoded credentials in use
 - Expired or invalid certificates
 
-
 **High Priority** (fix within 30 days):
 
 - TLS 1.0 or TLS 1.1 (deprecated protocols)
@@ -849,13 +776,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - No authentication for security-critical log sources
 - Credentials not rotated in >12 months
 
-
 **Medium Priority** (fix within 90 days):
 
 - IP whitelisting as sole authentication (add certificate or API key)
 - Self-signed certificates without proper trust chain
 - Manual credential rotation (automate)
-
 
 **Evidence Required**:
 
@@ -863,7 +788,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Cipher suite configuration screenshots
 - Authentication configuration documentation
 - Network diagrams showing encrypted vs. unencrypted paths
-
 
 **Time**: 1-2 hours
 
@@ -879,13 +803,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Gap Impact: Blind spots - no visibility into these systems
 - Priority: Critical (if critical system), High (if high-value data), Medium (standard systems)
 
-
 **Category 2: Collection Reliability Issues**
 
 - Log sources forwarding intermittently, with gaps or delays
 - Gap Impact: Incomplete evidence, missed security events
 - Priority: High (if critical systems), Medium (if standard systems)
-
 
 **Category 3: Encryption Not Implemented**
 
@@ -893,13 +815,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Gap Impact: Confidentiality risk - logs readable in transit, potential data exposure
 - Priority: Critical (if restricted/confidential data), High (if internal data over untrusted networks)
 
-
 **Category 4: Weak or No Authentication**
 
 - Log sources sending unauthenticated logs, weak passwords, expired credentials
 - Gap Impact: Integrity risk - unauthorized log injection possible, log spoofing
 - Priority: High (security-critical logs), Medium (operational logs)
-
 
 **Category 5: Insufficient Storage Capacity**
 
@@ -907,13 +827,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Gap Impact: Log loss, retention non-compliance
 - Priority: Critical (if <30 days to capacity exhaustion), High (if <90 days)
 
-
 **Category 6: Network Infrastructure Weaknesses**
 
 - Single point of failure, insufficient bandwidth, no redundancy
 - Gap Impact: Availability risk - log collection failures during outages
 - Priority: Medium (if redundancy missing), Low (if adequate current capacity but no growth buffer)
-
 
 **For Each Gap**:
 
@@ -933,7 +851,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - **Compensating Controls** (if any): Temporary mitigations while gap remains open
 - **Exception Status**: Approved exception exists? (Reference exception ID from policy Section 3.3)
 
-
 **Risk Rating Matrix**:
 
 | Impact | Likelihood | Risk Rating |
@@ -951,13 +868,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - **Medium Impact**: Internal data, High-value systems, Security monitoring impact
 - **Low Impact**: Public data, Low-value systems, Operational convenience only
 
-
 **Likelihood Factors**:
 
 - **Likely**: Known vulnerabilities, past incidents, inadequate controls
 - **Possible**: Some controls exist but gaps, no incidents yet but conditions present
 - **Unlikely**: Strong compensating controls, low exposure, no threat vectors identified
-
 
 **Remediation Tracking**:
 
@@ -965,9 +880,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Reference tracking ticket ID in this sheet
 - Update status quarterly during assessment refreshes
 
-
 **Time**: 2-3 hours (gap identification and remediation planning requires cross-functional input)
-
 
 ---
 
@@ -982,14 +895,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Capacity report (current EPS utilization, storage consumption)
 - High availability configuration (clustering documentation, DR procedures)
 
-
 **For Storage Architecture (Sheet 3)**:
 
 - Storage capacity reports (from storage management system)
 - Retention configuration (screenshot of retention policy settings)
 - Capacity trend graphs (6-12 months historical data)
 - Capacity planning projections (forecasting spreadsheet or tool output)
-
 
 **For Network Infrastructure (Sheet 4)**:
 
@@ -998,14 +909,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Bandwidth utilization graphs (from network monitoring system)
 - Routing table excerpts (showing SIEM reachability)
 
-
 **For Log Source Coverage (Sheet 5)**:
 
 - SIEM search results (screenshot showing recent logs from each source)
 - Log source status dashboard (SIEM internal view of connected sources)
 - Agent health reports (if agent-based collection)
 - Cloud service logging configuration screenshots
-
 
 **For Integration Methods (Sheet 6)**:
 
@@ -1014,14 +923,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - API permission documentation (cloud service accounts, API key permissions)
 - Integration test results (proof that logs flowing correctly)
 
-
 **For Collection Reliability (Sheet 7)**:
 
 - SIEM uptime report (last 90 days minimum)
 - Collection failure alert history (alert logs or ticketing system exports)
 - Log volume graphs (trend analysis over 3-6 months)
 - Incident reports (major collection outages with root cause analysis)
-
 
 **For Encryption & Authentication (Sheet 8)**:
 
@@ -1030,13 +937,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Authentication configuration documentation
 - Security assessment reports (if encryption/auth recently audited)
 
-
 **For Gap Analysis (Sheet 9)**:
 
 - Gap descriptions (sufficient detail to understand issue)
 - Remediation plans (documented proposals with timelines)
 - Exception approvals (if gaps have approved exceptions per policy Section 3.3)
-
 
 ## Evidence Collection Best Practices
 
@@ -1047,20 +952,17 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Redact sensitive information (IP addresses, credentials, internal hostnames if necessary)
 - Name files clearly (e.g., "SIEM_Dashboard_Capacity_2026-01-21.png")
 
-
 **Exports & Reports**:
 
 - Export in readable formats (PDF, Excel, CSV)
 - Include metadata (date generated, who ran report, system/tool used)
 - Sanitize for sensitivity before storing in assessment workbook folder
 
-
 **Documentation References**:
 
 - If evidence exists in other documentation, reference it (don't duplicate)
 - Provide document name, version, location (network path, SharePoint, document management system)
 - Verify document is current (not outdated)
-
 
 **Evidence Organization**:
 
@@ -1084,7 +986,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Evidence = audit trail proving assessment was evidence-based, not theoretical
 - Store securely (evidence may contain sensitive configuration details)
 
-
 ---
 
 # Common Pitfalls
@@ -1099,19 +1000,16 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Log forwarder agent installed but not started or misconfigured
 - Cloud logging enabled but permissions insufficient to read logs
 
-
 **How to Avoid**:
 
 - **ALWAYS verify logs arriving in SIEM** with actual search/query (Sheet 5)
 - Don't trust agent status "green" - verify logs with your own eyes
 - Search for logs from each source with timestamp in last 24 hours
 
-
 **Evidence of Proper Verification**:
 
 - SIEM search screenshot showing recent logs from EACH source
 - Query syntax documented (so verification can be repeated)
-
 
 ## Pitfall: "All logs go to SIEM" (without checking WHICH SIEM)
 
@@ -1123,13 +1021,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Assumption that "logging is enabled" means "goes to security SIEM"
 - Reality: logs going to operations SIEM, security team has no visibility
 
-
 **How to Avoid**:
 
 - Document WHICH SIEM receives logs for EACH source (Sheet 5 - "SIEM Destination" column)
 - Verify security-relevant logs going to security SIEM (not just any logging system)
 - Map log sources to SIEM purposes (Sheet 2 - "Primary Use Case")
-
 
 ## Pitfall: "Encryption is on because we use Syslog over TCP"
 
@@ -1140,13 +1036,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Syslog over TCP (port 514) = unencrypted but reliable delivery
 - Syslog over TLS (port 6514) = encrypted AND reliable
 
-
 **How to Avoid**:
 
 - Verify TLS explicitly (Sheet 8 - check protocol is "TLS 1.2" or "TLS 1.3", NOT just "TCP")
 - Packet capture verification if uncertain (capture log traffic, verify encrypted or plaintext)
 - Don't assume encryption based on port number or TCP transport
-
 
 ## Pitfall: "Collection is 100% reliable" (ignoring gaps/delays)
 
@@ -1159,13 +1053,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - API rate limiting causes delays
 - Storage capacity issues cause log drops
 
-
 **How to Avoid**:
 
 - Quantify reliability with actual metrics (Sheet 7 - uptime %, gap duration, failure count)
 - Review SIEM alerts for collection failures (don't just assume it works)
 - Trending analysis over 3-6 months (catches intermittent issues)
-
 
 ## Pitfall: "We'll fix gaps later" (without documenting gaps)
 
@@ -1177,7 +1069,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Gaps seem minor at assessment time
 - Responsibility unclear (whose job to fix?)
 
-
 **How to Avoid**:
 
 - **Document EVERY gap in Sheet 9** (even if "minor")
@@ -1185,7 +1076,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Set target dates (creates accountability)
 - Track in issue tracking system (Jira, ServiceNow)
 - Review gap closure progress in quarterly assessment updates
-
 
 ## Pitfall: "Evidence collection can wait until audit"
 
@@ -1197,14 +1087,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Screenshots not taken at time of assessment
 - Configurations changed since assessment, historical evidence lost
 
-
 **How to Avoid**:
 
 - Collect evidence **DURING assessment** (Sheet 10 - Evidence Register)
 - Take screenshots at time of verification (later screenshots may not match assessment date)
 - Store evidence securely (organized folder structure per section 5.2)
 - Evidence retention = audit readiness
-
 
 ---
 
@@ -1221,7 +1109,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - [ ] Evidence collected for all critical assertions (Sheet 10 - Evidence Register complete)
 - [ ] Gap analysis complete with remediation plans (Sheet 9 - no gaps left without plan)
 
-
 ## Accuracy Checks
 
 - [ ] SIEM infrastructure information verified (Sheet 2 - version numbers, capacity, licensing accurate)
@@ -1231,14 +1118,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - [ ] Collection reliability metrics from recent data (Sheet 7 - not outdated metrics from 6+ months ago)
 - [ ] Encryption/authentication status verified (Sheet 8 - TLS versions confirmed, not assumed)
 
-
 ## Compliance Alignment
 
 - [ ] Policy references correct (all references point to ISMS-POL-A.8.15 v1.0 consolidated policy)
 - [ ] Regulatory requirements identified (PCI DSS, HIPAA, DORA/NIS2 applicability determined per ISMS-POL-00)
 - [ ] Exception approvals documented (any non-compliance has exception reference or remediation plan)
 - [ ] Retention requirements met (storage architecture supports minimum retention periods per policy Section 2.3)
-
 
 ## Evidence Quality
 
@@ -1248,7 +1133,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - [ ] Evidence organized in folder structure (per section 5.2)
 - [ ] Evidence Register (Sheet 10) references match actual files (no broken references)
 
-
 ## Approval Readiness
 
 - [ ] Assessment completed by qualified personnel (SIEM Admin, SOC Lead - not delegated to unqualified staff)
@@ -1256,7 +1140,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - [ ] Review by InfoSec Manager scheduled (before final CISO approval)
 - [ ] Gaps socialized with stakeholders (no surprises in approval meeting)
 - [ ] Remediation plans have stakeholder buy-in (responsible parties aware and agree to timelines)
-
 
 **If ANY checkbox is unchecked**: Assessment is NOT ready for approval. Complete missing items before proceeding to approval.
 
@@ -1273,7 +1156,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - **Timeline**: 2-3 business days for review and corrections
 - **Outcome**: Assessment technically accurate and complete
 
-
 **Level 2: Management Review**
 
 - **Reviewer**: Information Security Manager
@@ -1281,14 +1163,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - **Timeline**: 3-5 business days for review and discussion
 - **Outcome**: Remediation plans approved, resources committed, timelines realistic
 
-
 **Level 3: Executive Approval**
 
 - **Reviewer**: CISO
 - **Focus**: Strategic alignment, risk acceptance for unfixed gaps, budget approval for significant investments
 - **Timeline**: 1-2 weeks for review and final sign-off
 - **Outcome**: Assessment officially approved, gaps formally tracked, execution authorized
-
 
 ## Approval Workflow
 
@@ -1298,14 +1178,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Quality checklist (Section 7) fully checked
 - Evidence collected and organized
 
-
 **Step 2: Level 1 Technical Review**
 
 - SIEM Administrator self-reviews
 - SOC Lead peer-reviews
 - Corrections made, clarifications added
 - Both sign Sheet 11 (Approval Sign-Off)
-
 
 **Step 3: Level 2 Management Review**
 
@@ -1315,7 +1193,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Resource requirements clarification (budget, personnel, vendor support)
 - InfoSec Manager signs Sheet 11 after satisfactory review
 
-
 **Step 4: Level 3 Executive Approval**
 
 - CISO reviews executive summary (Sheet 11 - Summary Dashboard)
@@ -1324,14 +1201,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - CISO approves or requests modifications
 - CISO signs Sheet 11 as final approval
 
-
 **Step 5: Post-Approval Actions**
 
 - Assessment workbook marked as "Approved" (Sheet 11 - Status field updated)
 - Gaps entered into issue tracking system (Jira, ServiceNow) for remediation tracking
 - Assessment results included in quarterly compliance reporting
 - Assessment stored in ISMS document repository for audit evidence
-
 
 ## Approval Timeline
 
@@ -1342,7 +1217,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - **Week 3-4**: Level 2 Management Review (InfoSec Manager review and discussion)
 - **Week 4-5**: Level 3 Executive Approval (CISO review and sign-off)
 
-
 **Total**: 4-5 weeks from initiation to final approval (for well-executed assessments with minimal corrections)
 
 **Expedited Process** (if needed for audit or compliance deadline):
@@ -1350,7 +1224,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Concurrent reviews (InfoSec Manager review while Level 1 happening)
 - Focused review on critical findings only (defer detailed review of non-critical items)
 - Timeline: 2-3 weeks (minimum realistic timeline)
-
 
 ---
 
@@ -1391,7 +1264,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 
 **Total Sheets**: 11
 
-
 ---
 
 # Sheet Specifications
@@ -1406,7 +1278,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Completion steps (8-step process)
 - Scoring methodology (0-100% scale with color coding)
 - Color coding guide (Yellow=Input, Blue=Formula, Green=Compliant, Red=Critical Gap)
-
 
 **Color Scale**:
 | Score | Rating | Color | Meaning |
@@ -1441,7 +1312,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - N: Responsible Team
 - O: Notes
 
-
 **Summary Section**:
 
 - Total SIEM Platforms
@@ -1449,12 +1319,10 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - HA Coverage %
 - Licenses Expiring <90 Days
 
-
 **Conditional Formatting**:
 
 - Utilization Status: Green (Normal), Yellow (Warning), Red (Critical)
 - License Expiration: Red if expired or <30 days, Orange if 30-90 days
-
 
 ---
 
@@ -1474,13 +1342,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Storage System, Total Capacity (TB), Current Usage (TB), Utilization %, Retention Period
 - Redundancy, Geographic Location, Access Time, WORM Capability
 
-
 **Capacity Formulas**:
 
 - Overall Utilization % = Total Usage / Total Capacity * 100
 - Projected 12-Month Usage = Current + (Monthly Ingestion * 12 * (1 + Growth Rate))
 - Months Until Exhaustion = (Total Capacity - Current Usage) / Monthly Ingestion
-
 
 **Retention Compliance Table**:
 
@@ -1488,7 +1354,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Authentication Logs: 12mo + 7yr = Compliant?
 - Database Logs (Sensitive): 12mo + 7yr = Compliant?
 - Application Logs: 6mo + 18mo total = Compliant?
-
 
 ---
 
@@ -1505,19 +1370,16 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Rule ID, Firewall Name, Source Network, Destination IP, Protocol, Port, Action, Last Review Date
 - Review Status (Formula: IF >365 days "Overdue", IF >180 days "Due Soon", ELSE "Current")
 
-
 **Network Path Columns**:
 
 - Path ID, Source Segment, Destination, Bandwidth (Mbps), Utilization %, Log Traffic (Mbps)
 - Latency (ms), Packet Loss %, Path Status (Formula: IF Util >80% OR Loss >1% "Critical"...)
 - Redundancy (Yes/No/Partial)
 
-
 **Summary Metrics**:
 
 - Total Paths, Healthy Paths, Paths with Redundancy, Avg Latency, Avg Packet Loss
 - Network Health Score = (Healthy Paths / Total Paths) * 100
-
 
 ---
 
@@ -1536,7 +1398,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - E: System Criticality  
 - F: System Owner
 
-
 **Columns G-P: Manual Verification**:
 
 - G: Collection Status (Dropdown: Forwarding, Partial, Not Forwarding, Planned, N/A)
@@ -1550,7 +1411,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - O: Remediation Plan
 - P: Target Completion Date
 
-
 **Compliance Calculations**:
 
 - Total Log Sources = COUNTA(B:B)
@@ -1558,12 +1418,10 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Collection Coverage % = (Forwarding + Partial) / Total * 100
 - Target: >=98%
 
-
 **Conditional Formatting**:
 
 - Collection Status: Green (Forwarding), Yellow (Partial), Red (Not Forwarding), Orange (Planned)
 - **Critical Gap Highlighting**: IF Criticality="Critical" AND Status!="Forwarding" -> BOLD RED
-
 
 ---
 
@@ -1583,13 +1441,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - O-P: Configuration Owner, Troubleshooting Contact
 - Q-R: Documentation Location, Notes
 
-
 **Summary Statistics**:
 
 - Total Integrations, Agent-Based Count, Syslog Count, API Count, Cloud Connector Count
 - Encrypted Integrations, Encryption Coverage %
 - Authenticated Integrations, Authentication Coverage %
-
 
 ---
 
@@ -1611,7 +1467,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Collection Coverage Target: >=98%
 - Data Quality Target: >=99%
 - Alert Detection Rate Target: >=95%
-
 
 **Overall Reliability Formula**:
 ```
@@ -1641,7 +1496,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - T: Remediation Plan
 - U: Target Completion
 
-
 **Risk Matrix Formula**:
 ```
 =IF(AND(C="Restricted",E="Disabled"),"CRITICAL",
@@ -1658,7 +1512,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Authentication Compliance % = COUNTIF(P:P,"Compliant") / Total * 100
 - Overall Compliance % = COUNTIF(Q:Q,"Y Compliant") / Total * 100
 - Target: 100% (or >=95% with approved exceptions)
-
 
 ---
 
@@ -1688,14 +1541,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - S: Tracking Ticket ID
 - T: Notes
 
-
 **Auto-Population Logic**:
 
 - FROM Sheet 5: WHERE Collection Status = "Not Forwarding" AND Criticality = "Critical"
 - FROM Sheet 7: WHERE SIEM Uptime < 99.5% OR Coverage < 98%
 - FROM Sheet 8: WHERE Overall Compliance = "N Non-Compliant" AND Exception ID blank
 - FROM Sheet 3: WHERE Months Until Capacity Exhaustion < 6
-
 
 **Summary by Category**:
 | Category | Total | Critical | High | Medium | Low |
@@ -1707,7 +1558,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 **Gap Status Summary**:
 
 - Open, In Progress, Resolved, Accepted (Exception), Deferred counts and percentages
-
 
 ---
 
@@ -1729,7 +1579,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - J: Sensitivity (Public, Internal, Confidential, Restricted)
 - K: Retention Period (typically 7 years)
 - L: Notes
-
 
 **Folder Structure Recommendation**:
 ```
@@ -1774,7 +1623,6 @@ ISMS-IMP-A.8.15.2_Evidence_YYYYMMDD/
 - Medium = COUNTIF(Sheet9!I:I,"MEDIUM")
 - Low = COUNTIF(Sheet9!I:I,"LOW")
 
-
 **Approval Fields** (each level):
 
 - Reviewer Role, Reviewer Name, Review Date
@@ -1783,12 +1631,10 @@ ISMS-IMP-A.8.15.2_Evidence_YYYYMMDD/
 - Signature field
 - Status (auto-calculated: Approved/Pending/Needs Revision)
 
-
 **Final Approval Status**:
 
 - Large, bold field: "APPROVED" (green) or "PENDING" (yellow) or "REJECTED" (red)
 - Based on all three approval levels
-
 
 ---
 
@@ -1802,17 +1648,14 @@ ISMS-IMP-A.8.15.2_Evidence_YYYYMMDD/
 - External workbook reference: `='[ISMS_A_8_15_1_Log_Source_Inventory_Assessment_YYYYMMDD.xlsx]System_Inventory'!$A$2:$F$1000`
 - Python script must update YYYYMMDD with actual assessment date
 
-
 **To IMP-A.8.15.3**:
 
 - Sheet 3 (Storage_Architecture) referenced by IMP-A.8.15.3 for retention validation
-
 
 **To IMP-A.8.15.5**:
 
 - Sheet 11 (Approval_Sign_Off) summary metrics pulled into dashboard
 - External reference: `='[ISMS_A_8_15_2_..._YYYYMMDD.xlsx]Approval_Sign_Off'!$B$10:$B$20`
-
 
 ## Policy References
 
@@ -1821,7 +1664,6 @@ ISMS-IMP-A.8.15.2_Evidence_YYYYMMDD/
 - ISMS-POL-A.8.15 Section 2.4 (Log Review & Analysis - targets)
 - ISMS-POL-A.8.15 Section 3.2 (Assessment methodology)
 - ISMS-POL-A.8.15 Section 3.3 (Exception management)
-
 
 ---
 
@@ -1886,7 +1728,6 @@ for cell in target_sheet['A:F']:
 - [ ] Summary metrics aggregate correctly
 - [ ] Gap auto-population logic works
 
-
 ---
 
 # Document Assembly Complete
@@ -1898,7 +1739,6 @@ for cell in target_sheet['A:F']:
 - Part I: User Completion Guide (~600 lines)
 - Part II: Technical Specification (~950 lines)
 
-
 **Quality Verification**:
 
 - [X] Policy references to ISMS-POL-A.8.15 v1.0 consolidated policy
@@ -1908,7 +1748,6 @@ for cell in target_sheet['A:F']:
 - [X] Integration points with other assessments documented
 - [X] Completely generic language (no industry/size/technology assumptions)
 - [X] Follows IMP-A.8.15.1 structure exactly
-
 
 ---
 

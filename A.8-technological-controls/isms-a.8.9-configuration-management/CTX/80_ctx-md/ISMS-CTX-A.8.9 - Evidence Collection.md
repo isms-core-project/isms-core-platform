@@ -25,7 +25,6 @@
 - Technical Review: Security Architect
 - NO Executive Approval Required (NOT ISMS)
 
-
 ### Distribution
 
 Configuration management team, system administrators, IT operations, security engineers, compliance officers, internal auditors, external auditors
@@ -39,7 +38,6 @@ Configuration management team, system administrators, IT operations, security en
 - ISMS-IMP-A.8.9.3: Configuration Monitoring Assessment
 - ISMS-IMP-A.8.9.4: Security Hardening Assessment
 - ISMS-IMP-A.8.9.5: Compliance Dashboard
-
 
 ---
 
@@ -110,7 +108,6 @@ Contains complete asset inventory demonstrating scope of baseline coverage.
 - `Cloud-Asset-Inventory-Azure-YYYYMMDD.csv` - Azure asset inventory
 - `Asset-Inventory-Reconciliation-Report.xlsx` - Comparison of multiple sources
 
-
 **Evidence Purpose**: Demonstrates complete asset inventory exists and baseline coverage targets are measurable.
 
 #### 2. Baseline-Documentation/
@@ -125,14 +122,12 @@ Contains approved baseline configurations organized by asset type.
 - `BL-WIN2022-APP-v1.8.docx` - Windows Server 2022 Application Server baseline
 - `CIS-Windows-Server-2022-Mapping.xlsx` - CIS Benchmark mapping
 
-
 **Linux-Unix/**
 
 - `BL-RHEL9-STD-v1.3.pdf` - Red Hat Enterprise Linux 9 baseline
 - `BL-UBUNTU2204-WEB-v2.0.pdf` - Ubuntu 22.04 Web Server baseline
 - `BL-SUSE15-DB-v1.2.pdf` - SUSE Linux 15 Database Server baseline
 - `CIS-Linux-Benchmark-Mapping.xlsx` - CIS Benchmark mapping
-
 
 **Network-Devices/**
 
@@ -141,14 +136,12 @@ Contains approved baseline configurations organized by asset type.
 - `BL-Cisco-Switch-IOS-v1.9.pdf` - Cisco Switch IOS baseline
 - `BL-F5-LoadBalancer-v1.4.pdf` - F5 Load Balancer baseline
 
-
 **Cloud-Platforms/**
 
 - `BL-AWS-EC2-Linux-v2.2.pdf` - AWS EC2 Linux instance baseline
 - `BL-AWS-RDS-MySQL-v1.6.pdf` - AWS RDS MySQL baseline
 - `BL-Azure-VM-Windows-v1.8.pdf` - Azure Windows VM baseline
 - `CIS-AWS-Foundations-Benchmark-Mapping.xlsx` - CIS AWS mapping
-
 
 **Databases/**
 
@@ -157,13 +150,11 @@ Contains approved baseline configurations organized by asset type.
 - `BL-Oracle19c-v2.1.pdf` - Oracle 19c baseline
 - `DISA-STIG-Database-Mapping.xlsx` - DISA STIG mapping
 
-
 **Containers/**
 
 - `BL-Docker-v1.5.pdf` - Docker baseline
 - `BL-Kubernetes-v2.0.pdf` - Kubernetes baseline
 - `CIS-Kubernetes-Benchmark-Mapping.xlsx` - CIS Kubernetes mapping
-
 
 **Naming Convention**: `BL-[Technology]-[Role]-v[Version].pdf`
 
@@ -171,7 +162,6 @@ Contains approved baseline configurations organized by asset type.
 - Technology = Product/Platform (WIN2022, RHEL9, etc.)
 - Role = Purpose (DC, WEB, APP, DB, etc.)
 - Version = Semantic versioning (major.minor)
-
 
 **Evidence Purpose**: Demonstrates baselines exist, are documented, and reference recognized standards.
 
@@ -184,18 +174,15 @@ Contains golden image inventory and approval records.
 - `WIN2022-STD-v2.1-20240115-ApprovalRecord.pdf` - Image approval with signatures
 - `RHEL9-SEC-v1.3-20240120-ApprovalRecord.pdf` - Image approval with signatures
 
-
 **Image-Build-Manifests/** (IaC code for reproducible builds):
 
 - `WIN2022-STD-v2.1-BuildManifest.yaml` - Automated build definition
 - `RHEL9-SEC-v1.3-BuildManifest.yaml` - Automated build definition
 
-
 **Vulnerability-Scans/** (pre-approval security validation):
 
 - `WIN2022-STD-v2.1-VulnScan-YYYYMMDD.pdf` - Vulnerability scan report
 - `RHEL9-SEC-v1.3-VulnScan-YYYYMMDD.pdf` - Vulnerability scan report
-
 
 **Evidence Purpose**: Demonstrates golden images implement baselines and are security-validated before production use.
 
@@ -209,7 +196,6 @@ Contains formal approvals for baselines.
 - `Email-Approval-BL-WIN2022-DC-v2.1.pdf` - Email approval chains
 - `CISO-Approval-Baseline-Security-Standards.pdf` - Executive approval
 
-
 **Evidence Purpose**: Demonstrates baselines have proper authorization and governance oversight.
 
 #### 5. Configuration-Snapshots/
@@ -221,7 +207,6 @@ Contains actual configuration exports demonstrating baseline compliance.
 - `Firewall-Rules-Export-YYYYMMDD.xml` - Firewall configuration export
 - `Database-Config-DBSERVER01-YYYYMMDD.sql` - Database configuration
 - `Kubernetes-Manifest-Export-YYYYMMDD.yaml` - K8s configuration
-
 
 **Evidence Purpose**: Demonstrates deployed configurations match approved baselines.
 
@@ -236,7 +221,6 @@ Contains approved exceptions to baselines.
 - `Compensating-Controls-DEV-2024-001.pdf` - Mitigating controls documentation
 - `CISO-Approval-DEV-2024-001.pdf` - Executive approval
 
-
 **Naming Convention**: `DEV-YYYY-###` where ### is sequential number.
 
 **Evidence Purpose**: Demonstrates deviations are formally managed with risk assessment and approval.
@@ -250,7 +234,6 @@ Contains completed assessment workbooks and summary reports.
 - `Assessment-Summary-Presentation.pptx` - Executive summary
 - `Evidence-Register-Index.pdf` - Index of all evidence collected
 - `Gap-Remediation-Plan.xlsx` - Action plan for identified gaps
-
 
 **Evidence Purpose**: Demonstrates regular assessment of baseline compliance and gap remediation.
 
@@ -273,7 +256,6 @@ Contains all change request documentation.
 - `2024-Q2/` - All Q2 2024 changes
 - etc.
 
-
 **Per Change**:
 
 - `CR-2024-001-Change-Request-Form.pdf` - Completed change request
@@ -281,7 +263,6 @@ Contains all change request documentation.
 - `CR-2024-001-Testing-Results.pdf` - Test validation
 - `CR-2024-001-Implementation-Log.pdf` - Actual implementation steps
 - `CR-2024-001-Post-Implementation-Review.pdf` - PIR within 5 days
-
 
 **Naming Convention**: `CR-YYYY-###` where ### is sequential number.
 
@@ -297,7 +278,6 @@ Contains Change Advisory Board meeting documentation.
 - `CAB-Meeting-Minutes-20240122.pdf` - Meeting minutes with decisions
 - `CAB-Attendance-Log-2024.xlsx` - Attendance tracking for quorum verification
 
-
 **Evidence Purpose**: Demonstrates CAB operates regularly with proper governance.
 
 #### 3. Approval-Workflows/
@@ -310,7 +290,6 @@ Contains approval chains for different change types.
 - `Emergency-Change-Log.xlsx` - All emergency changes with retrospective reviews
 - `Approval-Authority-Matrix.pdf` - Who can approve what
 
-
 #### 4. Testing-Validation/
 Contains test plans and results.
 
@@ -320,7 +299,6 @@ Contains test plans and results.
 - `TEST-CR-2024-001-TestResults.xlsx` - Detailed test results
 - `TEST-CR-2024-001-Screenshots.pdf` - Visual evidence
 - `TEST-CR-2024-001-RollbackTest.pdf` - Rollback procedure validation
-
 
 #### 5. Change-Success-Metrics/
 Contains change management KPI reports.
@@ -332,7 +310,6 @@ Contains change management KPI reports.
 - `Emergency-Change-Analysis-Q1-2024.pdf` - Emergency change justification review
 - `Failed-Change-Root-Cause-Analysis.pdf` - Analysis of rollbacks
 
-
 **Evidence Purpose**: Demonstrates change management effectiveness and continuous improvement.
 
 #### 6. Assessment-Reports/
@@ -340,7 +317,6 @@ Contains change management KPI reports.
 - `Change-Control-Assessment-YYYYMMDD.xlsx` - Completed ISMS-IMP-A.8.9.2 workbook
 - `Assessment-Summary-Presentation.pptx` - Executive summary
 - `Evidence-Register-Index.pdf` - Evidence collected
-
 
 ---
 
@@ -362,7 +338,6 @@ Contains monitoring tool deployment evidence.
 - `Monitoring-Coverage-Report.xlsx` - Asset coverage by tier
 - `Monitoring-Agent-Deployment-Status.xlsx` - Agent installation tracking
 
-
 #### 2. Drift-Alerts/
 Contains drift detection alerts and remediation.
 
@@ -373,14 +348,12 @@ Contains drift detection alerts and remediation.
 - `Medium-Drift/` - Medium severity changes
 - `Low-Drift/` - Low severity informational changes
 
-
 **Per Drift Incident**:
 
 - `DRIFT-2024-001-Alert.pdf` - Original alert with details
 - `DRIFT-2024-001-Investigation.pdf` - Root cause investigation
 - `DRIFT-2024-001-Remediation.pdf` - Remediation actions taken
 - `DRIFT-2024-001-Closure.pdf` - Incident closure with verification
-
 
 **Naming Convention**: `DRIFT-YYYY-###`
 
@@ -393,7 +366,6 @@ Contains regular baseline compliance scans.
 - `Baseline-Compliance-Scan-202401-Tier2.pdf` - Tier 2 assets compliance
 - `Drift-Trend-Analysis-Q1-2024.xlsx` - Trending analysis
 
-
 #### 4. Remediation-Tracking/
 Contains drift remediation action tracking.
 
@@ -402,7 +374,6 @@ Contains drift remediation action tracking.
 - `Drift-Remediation-Register.xlsx` - All open/closed drift incidents
 - `SLA-Compliance-Report.xlsx` - Remediation SLA adherence
 - `Recurring-Drift-Analysis.pdf` - Root cause analysis for repeated drift
-
 
 #### 5. Monitoring-Performance/
 Contains monitoring tool health and reliability evidence.
@@ -413,13 +384,11 @@ Contains monitoring tool health and reliability evidence.
 - `Alert-False-Positive-Rate.xlsx` - Alert tuning effectiveness
 - `Monitoring-Incident-Log.xlsx` - Monitoring system failures
 
-
 #### 6. Assessment-Reports/
 
 - `Monitoring-Assessment-YYYYMMDD.xlsx` - Completed ISMS-IMP-A.8.9.3 workbook
 - `Assessment-Summary-Presentation.pptx` - Executive summary
 - `Evidence-Register-Index.pdf` - Evidence collected
-
 
 ---
 
@@ -442,7 +411,6 @@ Contains hardening standard documentation.
 - `Vendor-Security-Guides/` - Vendor hardening documentation
 - `Standard-Selection-Rationale.pdf` - Why each standard was chosen
 
-
 #### 2. Compliance-Scans/
 Contains automated hardening compliance scans.
 
@@ -454,13 +422,11 @@ Contains automated hardening compliance scans.
 - `Databases/`
 - `Cloud-Platforms/`
 
-
 **Per Asset Type (Quarterly minimum)**:
 
 - `CIS-Scan-WIN2022-202401.pdf` - Compliance scan results
 - `CIS-Scan-RHEL9-202401.pdf` - Compliance scan results
 - `Compliance-Trend-Analysis-Q1-2024.xlsx` - Historical tracking
-
 
 #### 3. Gap-Analysis/
 Contains identified hardening gaps and remediation plans.
@@ -472,7 +438,6 @@ Contains identified hardening gaps and remediation plans.
 - `Gap-Risk-Assessment.pdf` - Risk analysis for gaps
 - `Remediation-Status-Dashboard.xlsx` - Progress tracking
 
-
 #### 4. Hardening-Exceptions/
 Contains approved exceptions to hardening standards.
 
@@ -482,7 +447,6 @@ Contains approved exceptions to hardening standards.
 - `HARD-EX-2024-001-Risk-Assessment.pdf` - Risk analysis
 - `HARD-EX-2024-001-Compensating-Controls.pdf` - Mitigation measures
 - `HARD-EX-2024-001-Approval.pdf` - CISO/Security Architect approval
-
 
 **Naming Convention**: `HARD-EX-YYYY-###`
 
@@ -496,7 +460,6 @@ Contains evidence of hardening implementation.
 - `Hardening-Scripts/` - Automated hardening scripts
 - `Implementation-Logs/` - Audit trail of hardening changes
 
-
 #### 6. Compliance-Reports/
 Contains regular compliance reporting.
 
@@ -507,13 +470,11 @@ Contains regular compliance reporting.
 - `Critical-Controls-Compliance-Report.xlsx` - Focus on critical controls
 - `Year-over-Year-Improvement-Analysis.pdf` - Maturity progression
 
-
 #### 7. Assessment-Reports/
 
 - `Hardening-Assessment-YYYYMMDD.xlsx` - Completed ISMS-IMP-A.8.9.4 workbook
 - `Assessment-Summary-Presentation.pptx` - Executive summary
 - `Evidence-Register-Index.pdf` - Evidence collected
-
 
 ---
 
@@ -535,7 +496,6 @@ Contains consolidated compliance reporting for leadership.
 - `A.8.9-Risk-Heatmap-Q1-2024.pdf` - Risk visualization
 - `A.8.9-Trend-Analysis-Q1-2024.xlsx` - Historical performance
 
-
 #### 2. Audit-Packages/
 Contains prepared audit evidence packages.
 
@@ -544,7 +504,6 @@ Contains prepared audit evidence packages.
 - `Internal-Audit-2024-Q1/` - All evidence for internal audit
 - `External-Audit-ISO27001-2024/` - All evidence for certification audit
 - `Regulatory-Audit-FINMA-2024/` - Sector-specific audit evidence
-
 
 #### 3. Continuous-Improvement/
 Contains improvement initiatives and lessons learned.
@@ -556,13 +515,11 @@ Contains improvement initiatives and lessons learned.
 - `Policy-Update-Proposals.pdf` - Proposed policy changes
 - `Tool-Enhancement-Requests.xlsx` - Monitoring/scanning tool improvements
 
-
 #### 4. Assessment-Reports/
 
 - `Consolidated-Compliance-YYYYMMDD.xlsx` - Completed ISMS-IMP-A.8.9.5 workbook
 - `Annual-Compliance-Report-2024.pdf` - Comprehensive annual report
 - `Evidence-Register-Master-Index.pdf` - Complete evidence inventory
-
 
 ---
 
@@ -580,14 +537,12 @@ Contains improvement initiatives and lessons learned.
 - Exceptions: `HARD-EX-2024-005-Legacy-App-Exception.pdf`
 - CAB minutes: `CAB-Meeting-Minutes-20240315.pdf`
 
-
 ### Date Format Standards
 
 **All dates in filenames**: YYYYMMDD format (ISO 8601)
 
 - Correct: `20240315`
 - Incorrect: `03-15-2024`, `15.03.2024`
-
 
 **Rationale**: Ensures alphabetical sorting = chronological sorting
 
@@ -600,13 +555,11 @@ Contains improvement initiatives and lessons learned.
 - **Configuration exports**: Native format (XML, JSON, YAML, TXT)
 - **Diagrams**: PDF (from Visio/draw.io), PNG (if interactive not needed)
 
-
 **Avoid**:
 
 - Proprietary formats without free viewers
 - Password-protected files (use repository access control instead)
 - Compressed archives (store uncompressed for indexing)
-
 
 ### Evidence Retention Rules
 
@@ -626,7 +579,6 @@ Contains improvement initiatives and lessons learned.
 - Healthcare (HIPAA): 6 years
 - Government contracts: Per contract terms
 
-
 ### Evidence Quality Checklist
 
 Before filing evidence, verify:
@@ -640,7 +592,6 @@ Before filing evidence, verify:
 - [ ] Cross-references to other evidence are accurate
 - [ ] Placed in correct directory per this guide
 
-
 ### Evidence Access Control
 
 **Read Access**:
@@ -651,20 +602,17 @@ Before filing evidence, verify:
 - Compliance officers
 - CISO and direct reports
 
-
 **Write Access**:
 
 - Configuration Manager
 - Designated evidence custodians
 - Automated collection systems (service accounts)
 
-
 **No Access**:
 
 - General IT staff (request via Configuration Manager)
 - External parties without NDA
 - Terminated employees (revoke immediately)
-
 
 ### Evidence Collection Automation
 
@@ -676,14 +624,12 @@ Before filing evidence, verify:
 - **Drift alerts**: Real-time export to evidence repository
 - **Change request archival**: Automatic when change closed
 
-
 **Manual Collection**:
 
 - Approval signatures (wet signatures required)
 - Risk assessments (human judgment required)
 - CAB meeting minutes (human-generated)
 - Incident investigations (human analysis required)
-
 
 ---
 
@@ -696,7 +642,6 @@ Before filing evidence, verify:
 - Exception Request Form (HARD-EX-Template.docx)
 - Risk Assessment Template (Risk-Assessment-Template.xlsx)
 - CAB Meeting Minutes Template (CAB-Minutes-Template.docx)
-
 
 **Template Location**: [Organization to define - e.g., SharePoint/Intranet]
 
@@ -712,14 +657,12 @@ Before filing evidence, verify:
 - Review access control list (joiners/leavers)
 - Verify backup/disaster recovery of evidence repository
 
-
 **Annual Review** (CISO responsibilities):
 
 - Audit evidence repository structure compliance with this guide
 - Review retention policy compliance
 - Assess evidence quality and completeness
 - Update this guide if process improvements identified
-
 
 ---
 

@@ -45,7 +45,6 @@ This document consists of two parts:
   - Formulas & Calculations
   - Data Import from S1-S5
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -67,20 +66,17 @@ This document consists of two parts:
 - Serves as the single source of truth for A.8.2-3-5 compliance status
 - Supports ISO 27001 certification audits with consolidated evidence
 
-
 **What This Dashboard Does NOT Do:**
 
 - Replace individual assessments (S1-S5 remain authoritative for detailed data)
 - Perform automated scans or technical assessments
 - Generate compliance data (it aggregates existing data)
 
-
 **Primary ISO 27001 Controls:**
 
 - A.8.2 - Privileged Access Rights
 - A.8.3 - Information Access Restriction
 - A.8.5 - Secure Authentication
-
 
 **Related Assessments (Data Sources):**
 
@@ -92,7 +88,6 @@ This document consists of two parts:
 | S4 | Privileged Monitoring | PAM implementation, session recording |
 | S5 | Access Restrictions | Technical access controls, authorization |
 
-
 **Why a Compliance Dashboard Matters:**
 
 Individual assessments provide detailed technical data. Executives and auditors need:
@@ -102,7 +97,6 @@ Individual assessments provide detailed technical data. Executives and auditors 
 - Risk-based prioritization (what's most important?)
 - Remediation tracking (are we making progress?)
 - Evidence index (where's the proof?)
-
 
 ## When to Use This Dashboard
 
@@ -115,13 +109,11 @@ Individual assessments provide detailed technical data. Executives and auditors 
 - Responding to regulatory inquiries (GDPR Article 32)
 - Security committee meetings and board reporting
 
-
 **Dashboard Frequency:**
 
 - **Monthly**: Executive dashboard review, KPI updates
 - **Quarterly**: Comprehensive update (re-aggregate from S1-S5)
 - **On-Demand**: Post-incident, pre-audit, significant changes
-
 
 ## Who Completes This Dashboard
 
@@ -133,7 +125,6 @@ Individual assessments provide detailed technical data. Executives and auditors 
 - **IT Operations**: Remediation status updates
 - **Internal Audit**: Validation and audit evidence review
 - **Risk Management**: Risk register input
-
 
 **Approval Authority:** Chief Information Security Officer (CISO)
 
@@ -149,7 +140,6 @@ Individual assessments provide detailed technical data. Executives and auditors 
 - Workbook completion: 2-3 hours
 - **Total**: 12-19 hours
 
-
 **Monthly Update**:
 
 - S1-S5 data refresh: 1-2 hours
@@ -158,7 +148,6 @@ Individual assessments provide detailed technical data. Executives and auditors 
 - Executive summary update: 30 minutes
 - **Total**: 3-4 hours per month
 
-
 **Quarterly Comprehensive Update**:
 
 - Full S1-S5 re-aggregation: 3-4 hours
@@ -166,7 +155,6 @@ Individual assessments provide detailed technical data. Executives and auditors 
 - Remediation roadmap refresh: 1-2 hours
 - Evidence audit: 1-2 hours
 - **Total**: 6-10 hours per quarter
-
 
 ---
 
@@ -184,7 +172,6 @@ Before creating the dashboard, ensure the following assessments are complete:
 - [ ] S4 - Privileged Monitoring (current, within 90 days)
 - [ ] S5 - Access Restrictions (current, within 90 days)
 
-
 **Data to Extract from Each Assessment:**
 
 | Assessment | Data Needed |
@@ -195,13 +182,11 @@ Before creating the dashboard, ensure the following assessments are complete:
 | S4 | PAM coverage %, systems without monitoring |
 | S5 | Access control compliance %, critical gaps |
 
-
 **Historical Data (for trend analysis):**
 
 - [ ] Previous dashboard versions (for KPI trends)
 - [ ] Historical compliance scores (past 12 months)
 - [ ] Closed remediation items (for velocity tracking)
-
 
 ## Required Access
 
@@ -212,13 +197,11 @@ Before creating the dashboard, ensure the following assessments are complete:
 - [ ] Read access to risk register (if separate system)
 - [ ] Read access to remediation tracking system (Jira, ServiceNow, etc.)
 
-
 **People Access Needed:**
 
 - [ ] S1-S5 assessment owners (for data clarification)
 - [ ] Remediation owners (for status updates)
 - [ ] CISO (for approval and risk acceptance)
-
 
 ## Required Tools
 
@@ -228,13 +211,11 @@ Before creating the dashboard, ensure the following assessments are complete:
 - [ ] Python 3.8+ (if using automated aggregation scripts)
 - [ ] Access to S1-S5 workbooks
 
-
 **Optional Tools:**
 
 - [ ] Power BI or Tableau (for enhanced visualization)
 - [ ] GRC platform (ServiceNow GRC, Archer, etc.)
 - [ ] Automated aggregation scripts
-
 
 ---
 
@@ -317,7 +298,6 @@ Option B - Manual:
 - Use Excel template
 - Save as: `ISMS-IMP-A.8.2-3-5.6_Compliance_Dashboard_[DATE].xlsx`
 
-
 **Step 2: Complete Sheet 1 - Executive Dashboard**
 
 The Executive Dashboard provides at-a-glance compliance status:
@@ -328,7 +308,6 @@ The Executive Dashboard provides at-a-glance compliance status:
    - Display as percentage with color indicator
    - Include trend arrow (improving/declining/stable)
 
-
 2. **Component Scores** (Rows 8-12):
 
    - S1 Authentication Inventory: % compliant
@@ -336,7 +315,6 @@ The Executive Dashboard provides at-a-glance compliance status:
    - S3 Privileged Account Inventory: % reviewed and current
    - S4 Privileged Monitoring: % systems with PAM
    - S5 Access Restrictions: % compliant
-
 
 3. **Critical Metrics** (Rows 15-20):
 
@@ -347,13 +325,11 @@ The Executive Dashboard provides at-a-glance compliance status:
    - Systems without PAM
    - Critical gaps open
 
-
 4. **Status Indicators**:
 
    - GREEN (90-100%): Compliant
    - YELLOW (75-89%): Partial, improvement needed
    - RED (<75%): Non-Compliant, immediate action required
-
 
 **Example Executive Dashboard Data:**
 ```
@@ -388,7 +364,6 @@ Consolidate gaps from all S1-S5 assessments:
    - Affected Systems: Count or list of affected systems
    - Control Reference: ISO 27001 control (A.8.2, A.8.3, A.8.5)
 
-
 2. **Risk Assessment** (Columns F-I):
 
    - Impact: High, Medium, Low
@@ -396,14 +371,12 @@ Consolidate gaps from all S1-S5 assessments:
    - Risk Score: Calculated (Impact x Likelihood)
    - Priority: Critical, High, Medium, Low
 
-
 3. **Remediation** (Columns J-M):
 
    - Remediation Status: Not Started, In Progress, Completed
    - Owner: Assigned team/person
    - Target Date: Planned completion
    - Actual Date: Completed date (if applicable)
-
 
 **Gap Prioritization Rules:**
 
@@ -416,7 +389,6 @@ Consolidate gaps from all S1-S5 assessments:
 | Medium | Medium | Medium |
 | Medium | Low | Low |
 | Low | Any | Low |
-
 
 **Example Gap Entry:**
 ```
@@ -446,7 +418,6 @@ Document authentication and privileged access risks:
    - Risk Category: Authentication, Privileged Access, Authorization
    - Threat Source: Internal, External, Both
 
-
 2. **Risk Assessment** (Columns F-J):
 
    - Asset/Process Affected: What's at risk
@@ -454,7 +425,6 @@ Document authentication and privileged access risks:
    - Inherent Likelihood: Before controls (1-5)
    - Inherent Risk Score: Impact x Likelihood
    - Inherent Risk Level: Critical, High, Medium, Low
-
 
 3. **Control Assessment** (Columns K-N):
 
@@ -464,14 +434,12 @@ Document authentication and privileged access risks:
    - Residual Likelihood: After controls (1-5)
    - Residual Risk Score: Impact x Likelihood
 
-
 4. **Risk Treatment** (Columns O-R):
 
    - Treatment Option: Accept, Mitigate, Transfer, Avoid
    - Treatment Plan: Planned actions
    - Owner: Responsible party
    - Review Date: Next review
-
 
 **Example Risk Entry:**
 ```
@@ -506,7 +474,6 @@ Create prioritized remediation plan:
    - Remediation Type: Technical, Process, Documentation
    - Priority: Critical, High, Medium, Low
 
-
 2. **Timeline** (Columns F-I):
 
    - Phase: Phase 1 (0-30 days), Phase 2 (30-90 days), Phase 3 (90+ days)
@@ -514,20 +481,17 @@ Create prioritized remediation plan:
    - Target Date: Planned completion
    - Actual Completion: Actual date
 
-
 3. **Resources** (Columns J-L):
 
    - Owner: Assigned team/person
    - Effort Estimate: Hours/days
    - Budget Required: Cost estimate
 
-
 4. **Status** (Columns M-O):
 
    - Status: Not Started, In Progress, Completed, Blocked
    - Blockers: Any impediments
    - Notes: Additional context
-
 
 **Remediation Phasing:**
 
@@ -536,7 +500,6 @@ Create prioritized remediation plan:
 | Phase 1 | 0-30 days | Critical gaps, quick wins |
 | Phase 2 | 30-90 days | High priority, medium complexity |
 | Phase 3 | 90+ days | Medium/Low priority, complex projects |
-
 
 **Step 6: Complete Sheet 5 - KPIs & Metrics**
 
@@ -550,7 +513,6 @@ Establish key performance indicators:
    - Related Control: A.8.2, A.8.3, or A.8.5
    - Data Source: S1, S2, S3, S4, or S5
 
-
 2. **Targets & Thresholds** (Columns F-I):
 
    - Target: Goal value
@@ -558,14 +520,12 @@ Establish key performance indicators:
    - Yellow Threshold: Warning (e.g., 75-89%)
    - Red Threshold: Critical (e.g., < 75%)
 
-
 3. **Current Values** (Columns J-M):
 
    - Current Value: Latest measurement
    - Status: Green, Yellow, Red
    - Trend: Improving, Stable, Declining
    - Last Updated: Date of measurement
-
 
 **Recommended KPIs for A.8.2-3-5:**
 
@@ -580,7 +540,6 @@ Establish key performance indicators:
 | Critical Gap Count | Number of open critical gaps | 0 |
 | Remediation Velocity | Gaps closed per month | Trend increasing |
 
-
 **Step 7: Complete Sheet 6 - Evidence Register**
 
 Consolidate evidence from all assessments:
@@ -593,7 +552,6 @@ Consolidate evidence from all assessments:
    - Source Assessment: S1, S2, S3, S4, S5
    - Related Control: A.8.2, A.8.3, A.8.5
 
-
 2. **Evidence Details** (Columns F-I):
 
    - Evidence Date: When collected
@@ -601,12 +559,10 @@ Consolidate evidence from all assessments:
    - Retention Period: How long to keep
    - Next Collection: When to refresh
 
-
 3. **Audit Mapping** (Columns J-K):
 
    - Audit Requirement: What it proves
    - Audit Ready: Yes, No (complete and current?)
-
 
 **Evidence Categories:**
 
@@ -617,7 +573,6 @@ Consolidate evidence from all assessments:
 | Access Control | Permission audits, RBAC configuration |
 | Monitoring | Session recordings, alert configurations |
 | Review | Certification evidence, access review logs |
-
 
 **Step 8: Complete Sheet 7 - Action Items & Follow-up**
 
@@ -631,13 +586,11 @@ Track remediation activities:
    - Priority: Critical, High, Medium, Low
    - Category: Technical, Process, Documentation, Training
 
-
 2. **Assignment** (Columns G-I):
 
    - Assigned To: Owner
    - Assigned Date: When assigned
    - Due Date: Target completion
-
 
 3. **Status Tracking** (Columns J-M):
 
@@ -645,7 +598,6 @@ Track remediation activities:
    - Completion Date: Actual completion
    - Follow-up Required: Yes, No
    - Notes: Comments and updates
-
 
 **Step 9: Complete Sheet 8 - Audit & Compliance Log**
 
@@ -657,7 +609,6 @@ Maintain audit trail:
    - Assessment results
    - Assessor names
 
-
 2. **Audit Findings** (Rows 23-40):
 
    - Audit date
@@ -665,14 +616,12 @@ Maintain audit trail:
    - Findings related to A.8.2-3-5
    - Finding status
 
-
 3. **Certification Status** (Rows 43-50):
 
    - ISO 27001 certification status
    - Last certification date
    - Next surveillance audit
    - A.8.2-3-5 specific findings
-
 
 **Step 10: Complete Sheet 9 - Approval & Sign-Off**
 
@@ -685,7 +634,6 @@ Three-level approval process:
    - Completed all sheets
    - Date and signature
 
-
 2. **Reviewer** (Security Manager):
 
    - Validated compliance scores
@@ -693,14 +641,12 @@ Three-level approval process:
    - Confirmed risk assessments
    - Date and signature
 
-
 3. **Approver** (CISO):
 
    - Reviewed executive dashboard
    - Approved remediation roadmap
    - Accepted residual risks
    - Date and signature
-
 
 ---
 
@@ -716,7 +662,6 @@ Three-level approval process:
 - Compliance percentage
 - Open gaps
 
-
 **From S2 - MFA Coverage:**
 
 - MFA coverage percentage
@@ -724,7 +669,6 @@ Three-level approval process:
 - Systems with MFA enforced
 - MFA gaps (systems/users without MFA)
 - Exception count
-
 
 **From S3 - Privileged Account Inventory:**
 
@@ -734,7 +678,6 @@ Three-level approval process:
 - Accounts with owners assigned
 - Compliance percentage
 
-
 **From S4 - Privileged Monitoring:**
 
 - Systems with PAM coverage
@@ -743,14 +686,12 @@ Three-level approval process:
 - Systems requiring PAM but not covered
 - Compliance percentage
 
-
 **From S5 - Access Restrictions:**
 
 - Access control compliance percentage
 - Systems with proper authorization
 - Critical access control gaps
 - Excessive permission findings
-
 
 ## Deduplication Rules
 
@@ -759,7 +700,6 @@ When consolidating gaps, apply these rules:
 1. **Same System, Same Issue**: Keep single gap, reference all source assessments
 2. **Related Issues**: Link gaps but keep separate if remediation differs
 3. **Root Cause**: If gaps share root cause, create parent gap with child items
-
 
 ## Calculation Formulas
 
@@ -775,7 +715,6 @@ Weighting rationale:
 - S1, S3, S5 equally weighted for foundational controls
 - S4 (Monitoring) weighted lower as detective control
 
-
 ---
 
 # Common Pitfalls & How to Avoid Them
@@ -790,7 +729,6 @@ Weighting rationale:
 - Include "Data Freshness" indicator on dashboard
 - Flag when source data exceeds age threshold
 
-
 ## Pitfall 2: Inconsistent Scoring
 
 **Problem**: Different assessors use different criteria for compliance scoring
@@ -800,7 +738,6 @@ Weighting rationale:
 - Define clear compliance criteria in each assessment
 - Use objective measures (counts, percentages) over subjective
 - Validate scoring consistency during aggregation
-
 
 ## Pitfall 3: Gap Duplication
 
@@ -812,7 +749,6 @@ Weighting rationale:
 - Assign unique gap IDs
 - Cross-reference related gaps
 
-
 ## Pitfall 4: Missing Root Cause Analysis
 
 **Problem**: Gaps listed without understanding underlying cause
@@ -822,7 +758,6 @@ Weighting rationale:
 - Include root cause field in gap analysis
 - Group gaps by root cause
 - Address root causes in remediation roadmap
-
 
 ## Pitfall 5: Unrealistic Remediation Timelines
 
@@ -834,7 +769,6 @@ Weighting rationale:
 - Consider dependencies between items
 - Include resource requirements in planning
 
-
 ## Pitfall 6: Evidence Gaps
 
 **Problem**: Evidence register incomplete; audit fails due to missing proof
@@ -844,7 +778,6 @@ Weighting rationale:
 - Map every compliance claim to evidence
 - Regular evidence freshness review
 - Pre-audit evidence validation
-
 
 ## Pitfall 7: Executive Dashboard Too Technical
 
@@ -856,7 +789,6 @@ Weighting rationale:
 - Use traffic light indicators
 - Keep technical details in supporting sheets
 
-
 ## Pitfall 8: No Trend Tracking
 
 **Problem**: Dashboard shows point-in-time; no visibility into improvement
@@ -866,7 +798,6 @@ Weighting rationale:
 - Maintain historical data (12+ months)
 - Include trend arrows and percentages
 - Show velocity metrics (gaps closed per month)
-
 
 ## Pitfall 9: Risk Register Disconnect
 
@@ -878,7 +809,6 @@ Weighting rationale:
 - Ensure gap remediation reduces risk scores
 - Review alignment quarterly
 
-
 ## Pitfall 10: Approval Without Action
 
 **Problem**: Dashboard approved but remediation not tracked
@@ -888,7 +818,6 @@ Weighting rationale:
 - Approval includes commitment to remediation plan
 - Monthly progress reviews
 - Escalation process for stalled items
-
 
 ---
 
@@ -904,7 +833,6 @@ Before submitting dashboard for approval, verify:
 - [ ] Risk scores calculated accurately
 - [ ] KPI values current
 
-
 ## Completeness
 
 - [ ] Executive Dashboard complete with all metrics
@@ -913,14 +841,12 @@ Before submitting dashboard for approval, verify:
 - [ ] Remediation Roadmap has all gaps assigned
 - [ ] Evidence Register indexes all evidence
 
-
 ## Accuracy
 
 - [ ] Overall compliance score calculation verified
 - [ ] Component scores match source assessments
 - [ ] Gap priorities align with risk scores
 - [ ] Remediation timelines validated with owners
-
 
 ## Presentation
 
@@ -929,14 +855,12 @@ Before submitting dashboard for approval, verify:
 - [ ] Trend indicators accurate
 - [ ] No spelling or formatting errors
 
-
 ## Audit Readiness
 
 - [ ] Evidence complete for each control
 - [ ] Evidence dated and current
 - [ ] Gaps have remediation plans
 - [ ] Risk treatments documented
-
 
 ---
 
@@ -951,7 +875,6 @@ Before submitting dashboard for approval, verify:
 - **60-74%**: ORANGE - Significant gaps requiring attention
 - **<60%**: RED - Non-compliant, immediate action required
 
-
 **Component Score Interpretation:**
 
 | Component | GREEN | YELLOW | RED |
@@ -962,13 +885,11 @@ Before submitting dashboard for approval, verify:
 | S4 Privileged Monitoring | >= 85% | 70-84% | < 70% |
 | S5 Access Restrictions | >= 90% | 75-89% | < 75% |
 
-
 **Gap Priority Distribution:**
 
 - Healthy: 0 Critical, < 5 High, < 15 Medium
 - Concerning: 1-2 Critical, 5-10 High
 - Problematic: > 2 Critical, > 10 High
-
 
 ## Executive Reporting Guidelines
 
@@ -980,7 +901,6 @@ Before submitting dashboard for approval, verify:
 4. Remediation progress (closed vs. open)
 5. KPIs trending in wrong direction
 
-
 **Quarterly Report Should Include:**
 
 1. Full dashboard review
@@ -988,7 +908,6 @@ Before submitting dashboard for approval, verify:
 3. Remediation roadmap refresh
 4. Evidence audit results
 5. Recommendations for next quarter
-
 
 ---
 
@@ -1007,7 +926,6 @@ Before submitting dashboard for approval, verify:
 - Complete all sheets
 - Submit for review
 
-
 **Level 2 - Reviewer (Security Manager / Senior Security Engineer)**:
 
 - Validate data aggregation accuracy
@@ -1017,7 +935,6 @@ Before submitting dashboard for approval, verify:
 - Verify evidence completeness
 - Approve and forward to CISO
 
-
 **Level 3 - Approver (CISO)**:
 
 - Review executive dashboard
@@ -1026,7 +943,6 @@ Before submitting dashboard for approval, verify:
 - Accept residual risks
 - Sign off on assessment
 - Authorize executive communication
-
 
 ## Approval Criteria
 
@@ -1040,7 +956,6 @@ Dashboard is approved when:
 - [ ] Evidence register complete
 - [ ] KPIs established with targets
 
-
 ## Post-Approval Actions
 
 After CISO approval:
@@ -1050,7 +965,6 @@ After CISO approval:
 3. **Schedule Reviews**: Monthly KPI review, quarterly comprehensive update
 4. **Archive Version**: Store approved version with date stamp
 5. **Update Risk Register**: Feed risks into enterprise risk management
-
 
 ---
 
@@ -1087,7 +1001,6 @@ After CISO approval:
 - ORANGE (Warning): RGB(255, 192, 0) - Significant gaps (60-74%)
 - RED (Non-Compliant): RGB(255, 199, 206) - Non-compliant (< 60%)
 
-
 **Gap Priority Colors:**
 
 - CRITICAL: RGB(255, 0, 0) - Immediate action (0-7 days)
@@ -1095,14 +1008,12 @@ After CISO approval:
 - MEDIUM: RGB(255, 255, 0) - Within 90 days
 - LOW: RGB(146, 208, 80) - Ongoing improvement
 
-
 **Risk Level Colors:**
 
 - CRITICAL (15-25): RGB(255, 0, 0)
 - HIGH (10-14): RGB(255, 153, 0)
 - MEDIUM (5-9): RGB(255, 255, 0)
 - LOW (1-4): RGB(146, 208, 80)
-
 
 ---
 
@@ -1471,7 +1382,6 @@ Approval & Sign-Off
 - Sets up data validation dropdowns
 - Implements formulas for calculations
 - Pre-populates KPIs and reference data
-
 
 ## Running the Script
 

@@ -35,7 +35,6 @@
 - HR Integration: Chief Human Resources Officer (CHRO) - employee PII aspects
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -50,7 +49,6 @@
 - ISMS-POL-A.8.12 (Data Leakage Prevention)
 - ISO/IEC 27001:2022 Control A.5.34
 - ISO/IEC 27701:2019 (Privacy Information Management System - if implemented)
-
 
 ---
 
@@ -84,7 +82,6 @@ This policy establishes [Organization]'s requirements for privacy and protection
 - **Integrity** - PII accuracy maintained, unauthorized modification prevented
 - **Availability** - Data subject rights fulfilled within regulatory timeframes
 
-
 ## Policy Scope
 
 **This Policy Establishes**:
@@ -99,14 +96,12 @@ This policy establishes [Organization]'s requirements for privacy and protection
 - Data breach notification obligations
 - Record of Processing Activities (ROPA) requirements
 
-
 **This Policy Does NOT Provide**:
 
 - Detailed DSR handling procedures (see ISMS-IMP-A.5.34.3)
 - DPIA methodologies or templates (see ISMS-IMP-A.5.34.5)
 - Technical PII protection configurations (see ISMS-POL-A.8.11, A.8.24)
 - Data retention schedules (see ISMS-POL-A.5.33)
-
 
 **Geographical Scope**: All [Organization] operations, regardless of location. Specific regulatory requirements triggered based on location of data subjects, processing activities, and data infrastructure.
 
@@ -118,7 +113,6 @@ This policy establishes [Organization]'s requirements for privacy and protection
 - Job applicants
 - Website visitors
 - Other natural persons whose data [Organization] processes
-
 
 **Exclusions**: Anonymized data (genuinely anonymized per GDPR Recital 26), deceased persons where regulation excludes them.
 
@@ -138,7 +132,6 @@ This policy establishes [Organization]'s requirements for privacy and protection
 - Articles 25-32: Data subject rights
 - Article 24: Data breach notification to FDPIC
 - Articles 16-17: Cross-border data disclosure requirements
-
 
 **Enforcement**: Swiss Federal Data Protection and Information Commissioner (FDPIC)
 
@@ -161,7 +154,6 @@ This policy establishes [Organization]'s requirements for privacy and protection
 - Article 35: Data Protection Impact Assessment
 - Articles 37-39: DPO requirements
 - Articles 44-49: International data transfers
-
 
 **Penalties**: Up to EUR 20 million or 4% of annual global turnover
 
@@ -192,7 +184,6 @@ The following frameworks inform practices but are not mandatory unless contractu
 - NIST Privacy Framework
 - ISO/IEC 27002:2022 (Implementation guidance)
 
-
 ---
 
 # Privacy Policy Statements
@@ -216,7 +207,6 @@ The following frameworks inform practices but are not mandatory unless contractu
 - Maintain data mapping documenting data sources, purposes, legal basis, storage locations, sharing recipients, transfers, and retention
 - Create and maintain visual data flow diagrams for PII movement
 
-
 ## Record of Processing Activities (ROPA)
 
 [Organization] SHALL maintain a ROPA documenting all personal data processing operations per GDPR Article 30 and FADP requirements.
@@ -234,7 +224,6 @@ The following frameworks inform practices but are not mandatory unless contractu
 - Document legal basis justification and supporting evidence in ROPA
 - For special category data, document both Article 6 legal basis AND Article 9(2) specific condition
 
-
 ## Consent Management
 
 When consent is the legal basis, [Organization] SHALL ensure consent is:
@@ -244,7 +233,6 @@ When consent is the legal basis, [Organization] SHALL ensure consent is:
 - Withdrawable at any time with withdrawal as easy as giving consent
 - Documented with records of who, when, what, and how
 
-
 ## Legitimate Interest Assessments
 
 When legitimate interests is the legal basis, [Organization] SHALL:
@@ -253,7 +241,6 @@ When legitimate interests is the legal basis, [Organization] SHALL:
 - Apply the three-part test: purpose test (is there a legitimate purpose?), necessity test (are less intrusive alternatives available?), and balancing test (organization interests vs. data subject rights, considering expectations, relationship, and data sensitivity)
 - Obtain Legal/DPO approval before processing begins
 - Review LIAs annually or when processing changes materially
-
 
 ## Data Subject Rights
 
@@ -289,7 +276,6 @@ Systematic DSR delays SHALL be investigated as potential process failure and rep
 - Configure systems with privacy-protective defaults (data minimization, limited processing scope, limited retention, limited accessibility)
 - Provide users with accessible privacy controls
 
-
 ## Data Protection Impact Assessments
 
 [Organization] SHALL conduct DPIAs before processing when:
@@ -298,7 +284,6 @@ Systematic DSR delays SHALL be investigated as potential process failure and rep
 - Processing involves systematic/extensive automated evaluation with legal effects
 - Processing involves large-scale special category or criminal offense data
 - Processing involves systematic monitoring of publicly accessible areas
-
 
 DPIA SHALL include: Systematic description of processing, assessment of necessity and proportionality, assessment of risks to data subjects, and measures to address risks.
 
@@ -312,7 +297,6 @@ DPO SHALL be consulted on all DPIAs. Supervisory authority consultation required
 - Appropriate safeguards are in place (Standard Contractual Clauses, Binding Corporate Rules, approved codes/certifications)
 - Specific derogation applies (explicit consent, contract necessity, legal claims, vital interests)
 
-
 Transfer impact assessments SHALL be conducted for transfers not based on adequacy decisions.
 
 ## Data Breach Notification
@@ -324,7 +308,6 @@ Transfer impact assessments SHALL be conducted for transfers not based on adequa
 - Document all breaches including facts, effects, and remedial actions
 - Maintain a breach register
 
-
 ## Technical and Organizational Measures
 
 [Organization] SHALL implement appropriate security measures taking into account state of the art, implementation costs, processing nature, and risks, including:
@@ -333,7 +316,6 @@ Transfer impact assessments SHALL be conducted for transfers not based on adequa
 - Measures to ensure ongoing confidentiality, integrity, availability, and resilience
 - Process for regularly testing and evaluating control effectiveness
 - Ability to restore data availability after incidents
-
 
 Enhanced measures SHALL be implemented for special category data, criminal offense data, and children's data.
 
@@ -353,7 +335,6 @@ Enhanced measures SHALL be implemented for special category data, criminal offen
 - Cooperate with supervisory authorities
 - Serve as contact point for authorities and data subjects
 - Maintain ROPA with input from business units
-
 
 **Reporting**: Reports directly to highest management level without instructions regarding duties.
 
@@ -376,7 +357,6 @@ Enhanced measures SHALL be implemented for special category data, criminal offen
 - Review privacy metrics and breach reports
 - Ensure organizational commitment to privacy
 
-
 ## Chief Information Security Officer (CISO)
 
 **Accountability**: Technical security controls for PII protection
@@ -389,7 +369,6 @@ Enhanced measures SHALL be implemented for special category data, criminal offen
 - Lead data breach response (technical containment)
 - Oversee access controls and encryption for PII
 
-
 ## Legal / Compliance Officer
 
 **Accountability**: Legal interpretation and regulatory assessment
@@ -400,7 +379,6 @@ Enhanced measures SHALL be implemented for special category data, criminal offen
 - Review processor agreements and transfer mechanisms
 - Assess regulatory applicability per ISMS-POL-00
 - Support DPO in regulatory interactions
-
 
 ## Data Owners
 
@@ -414,7 +392,6 @@ Enhanced measures SHALL be implemented for special category data, criminal offen
 - Authorize access to data
 - Ensure policy compliance for their data domain
 
-
 ## Human Resources (HR)
 
 **Accountability**: Employee PII processing
@@ -427,7 +404,6 @@ Enhanced measures SHALL be implemented for special category data, criminal offen
 - Coordinate with employee representatives on privacy matters
 - Manage employee privacy training
 
-
 ## All Personnel
 
 **Universal Responsibilities**:
@@ -437,7 +413,6 @@ Enhanced measures SHALL be implemented for special category data, criminal offen
 - Handle personal data only for authorized purposes
 - Report suspected data breaches or privacy violations immediately
 - Maintain confidentiality of personal data
-
 
 ---
 
@@ -452,7 +427,6 @@ Enhanced measures SHALL be implemented for special category data, criminal offen
 - **Quarterly**: Privacy Steering Committee meetings, metrics review
 - **Annual**: Privacy program review, policy updates, ROPA validation, training assessment
 - **Ad Hoc**: DPIA reviews, processor assessments, incident response
-
 
 ## Privacy Metrics
 
@@ -501,7 +475,6 @@ Dashboard reviewed monthly by DPO for trend analysis and early warning of compli
 
 Training records maintained per A.7.2 requirements and reviewed during Privacy Steering Committee meetings.
 
-
 ## Audits and Assessments
 
 **Internal Audits**: Annual minimum, covering policy compliance, GDPR/FADP requirements, control effectiveness.
@@ -529,7 +502,6 @@ Training records maintained per A.7.2 requirements and reviewed during Privacy S
 - Privacy Training Records
 - Privacy Audit Reports
 - Privacy Notices
-
 
 **Retention**: Privacy documentation retained for duration of processing plus applicable statutory retention period (minimum 3 years after cessation).
 
@@ -588,7 +560,6 @@ Exceptions to this policy require:
 - Executive Management approval
 - Documented compensating controls
 - Time-limited duration with review date
-
 
 Exceptions SHALL NOT be granted for mandatory regulatory requirements (GDPR, FADP).
 

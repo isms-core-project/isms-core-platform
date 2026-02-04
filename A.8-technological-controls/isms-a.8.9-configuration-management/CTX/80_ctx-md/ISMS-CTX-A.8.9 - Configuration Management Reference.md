@@ -32,7 +32,6 @@
 - Security Review: Security Architect
 - NO Executive Approval Required (NOT ISMS)
 
-
 ---
 
 ## ⚠️ CRITICAL: Document Status
@@ -73,12 +72,10 @@ Configuration hardening applies security-focused configurations based on recogni
 - Databases: Oracle, SQL Server, PostgreSQL, MongoDB, MySQL
 - Applications: Web servers, container platforms, Kubernetes
 
-
 **Levels**:
 
 - **Level 1**: Practical baseline hardening (minimal operational impact)
 - **Level 2**: Defense-in-depth (may impact functionality)
-
 
 **Obtaining**: Free download from cisecurity.org (registration required)
 
@@ -89,7 +86,6 @@ Configuration hardening applies security-focused configurations based on recogni
 - Operating Systems: Windows, Linux, Unix
 - Applications: Databases, web servers, application servers
 - Network Devices: Routers, switches, firewalls
-
 
 **Classification**: CAT I (Critical), CAT II (High), CAT III (Medium)
 
@@ -106,14 +102,12 @@ Configuration hardening applies security-focused configurations based on recogni
 - Azure Security Baseline
 - Security Compliance Toolkit
 
-
 **Cloud Providers**:
 
 - AWS Security Best Practices
 - Azure Security Benchmarks
 - Google Cloud Security Foundations
 - Oracle Cloud Security Posture Management
-
 
 **Network Vendors**: Cisco, Palo Alto, Fortinet, Check Point security guides
 
@@ -124,14 +118,12 @@ Configuration hardening applies security-focused configurations based on recogni
 - **NIST SP 800-70**: National Checklist Program
 - **NIST Cybersecurity Framework**: Configuration management in PROTECT function
 
-
 **1.1.5 Additional Standards**
 
 - **BSI Grundschutz**: German Federal Office for Information Security
 - **Essential Eight**: Australian Cyber Security Centre
 - **CMMC**: Cybersecurity Maturity Model Certification (defense contractors)
 - **SWIFT CSC**: Financial messaging security controls
-
 
 ### 1.2 Configuration Standards by Asset Type
 
@@ -149,7 +141,6 @@ Configuration hardening applies security-focused configurations based on recogni
   - Disabled services: Print Spooler (if not needed), Remote Desktop (if not needed)
   - Security patches: Monthly installation within 30 days
 
-
 **Linux/Unix**:
 
 - **Primary Standard**: CIS Distribution-Specific Benchmark (RHEL, Ubuntu, SUSE, etc.)
@@ -161,7 +152,6 @@ Configuration hardening applies security-focused configurations based on recogni
   - SELinux/AppArmor enabled (enforcing mode)
   - Audit daemon (auditd) enabled and configured
   - File permissions: /etc/passwd 644, /etc/shadow 000, /boot 700
-
 
 **1.2.2 Network Devices**
 
@@ -176,7 +166,6 @@ Configuration hardening applies security-focused configurations based on recogni
   - Multi-factor authentication for admin access
   - Regular policy review and cleanup
 
-
 **Routers/Switches** (Cisco, Juniper, Arista):
 
 - **Primary Standard**: CIS Network Device Benchmark
@@ -188,7 +177,6 @@ Configuration hardening applies security-focused configurations based on recogni
   - NTP synchronization
   - Unused ports disabled
 
-
 **Load Balancers**:
 
 - **Primary Standard**: Vendor security guide
@@ -198,7 +186,6 @@ Configuration hardening applies security-focused configurations based on recogni
   - Certificate validation
   - Session timeout configuration
   - Admin interface on management network
-
 
 **1.2.3 Cloud Platforms**
 
@@ -212,7 +199,6 @@ Configuration hardening applies security-focused configurations based on recogni
   - Network: VPC security groups default-deny, no public S3 buckets (unless explicitly required)
   - Encryption: EBS encryption, S3 encryption at rest
 
-
 **Azure**:
 
 - **Primary Standard**: CIS Microsoft Azure Foundations Benchmark
@@ -222,7 +208,6 @@ Configuration hardening applies security-focused configurations based on recogni
   - Network: NSG default-deny, no RDP/SSH from internet
   - Encryption: Azure Disk Encryption, Storage Service Encryption
 
-
 **Google Cloud Platform (GCP)**:
 
 - **Primary Standard**: CIS Google Cloud Platform Foundation Benchmark
@@ -231,7 +216,6 @@ Configuration hardening applies security-focused configurations based on recogni
   - Logging: Cloud Audit Logs enabled, Log sinks configured
   - Network: VPC firewall rules restrictive, private Google Access
   - Encryption: CMEK where required, encrypted persistent disks
-
 
 **1.2.4 Databases**
 
@@ -245,7 +229,6 @@ Configuration hardening applies security-focused configurations based on recogni
   - SQL Server Audit enabled
   - Encryption: TDE (Transparent Data Encryption), Always Encrypted for sensitive columns
 
-
 **Oracle Database**:
 
 - **Primary Standard**: CIS Oracle Database Benchmark, DISA STIG
@@ -255,7 +238,6 @@ Configuration hardening applies security-focused configurations based on recogni
   - Auditing enabled
   - Encryption: TDE, Network encryption (Native Network Encryption)
 
-
 **PostgreSQL/MySQL/MongoDB**:
 
 - **Primary Standard**: CIS Benchmark for each
@@ -264,7 +246,6 @@ Configuration hardening applies security-focused configurations based on recogni
   - SSL/TLS connections enforced
   - Least-privilege user permissions
   - Audit logging enabled
-
 
 **1.2.5 Containers and Orchestration**
 
@@ -278,7 +259,6 @@ Configuration hardening applies security-focused configurations based on recogni
   - AppArmor/SELinux profiles
   - Regular image scanning for vulnerabilities
 
-
 **Kubernetes**:
 
 - **Primary Standard**: CIS Kubernetes Benchmark
@@ -289,7 +269,6 @@ Configuration hardening applies security-focused configurations based on recogni
   - Secrets management (external secrets store)
   - API server authentication and authorization
   - etcd encryption at rest
-
 
 **1.2.6 Applications**
 
@@ -303,7 +282,6 @@ Configuration hardening applies security-focused configurations based on recogni
   - TLS 1.2+ only, strong cipher suites
   - Security headers (HSTS, X-Frame-Options, CSP)
 
-
 **Application Servers** (JBoss, WebLogic, Tomcat):
 
 - **Primary Standard**: Vendor security guide + CIS Benchmark
@@ -312,7 +290,6 @@ Configuration hardening applies security-focused configurations based on recogni
   - Management interface on separate network
   - Audit logging enabled
   - Unnecessary services disabled
-
 
 ### 1.3 Standard Selection Decision Tree
 
@@ -349,7 +326,6 @@ ALWAYS: Document standard selection in baseline documentation
 - **Azure Security Center**: Azure-specific compliance
 - **GCP Security Command Center**: GCP-specific compliance
 
-
 **Manual Verification**:
 
 - Review configuration files against baseline
@@ -357,14 +333,12 @@ ALWAYS: Document standard selection in baseline documentation
 - Validate security controls through testing
 - Document findings and exceptions
 
-
 **Continuous Compliance**:
 
 - Integrate scanning into CI/CD pipelines
 - Automated compliance dashboards
 - Alert on compliance drift
 - Regular re-assessment (quarterly minimum)
-
 
 ---
 
@@ -383,7 +357,6 @@ ALWAYS: Document standard selection in baseline documentation
 - Change Classification: [Standard / Normal / Emergency]
 - If Emergency, Justification: [Why cannot wait for normal process]
 
-
 **Section 2: Change Description**
 
 - Business Justification: [Why needed? What problem solved?]
@@ -391,14 +364,12 @@ ALWAYS: Document standard selection in baseline documentation
 - Affected Systems/Services: [List all impacted assets]
 - Configuration Items (CIs): [CMDB CI numbers if applicable]
 
-
 **Section 3: Impact Assessment**
 
 - User Impact: [None / Minimal / Moderate / Significant / Severe]
 - Service Downtime Required: [None / <1hr / 1-4hr / 4-8hr / >8hr]
 - Risk Level: [Low / Medium / High / Critical]
 - Dependencies: [Other systems, services, teams affected]
-
 
 **Section 4: Implementation Plan**
 
@@ -408,7 +379,6 @@ ALWAYS: Document standard selection in baseline documentation
 - Implementation Team: [Names and roles]
 - Required Resources: [Tools, access, vendor support needed]
 
-
 **Section 5: Testing and Validation**
 
 - Testing Environment: [Dev / Test / Staging / UAT]
@@ -416,7 +386,6 @@ ALWAYS: Document standard selection in baseline documentation
 - Testing Results: [Pass / Fail / Partial]
 - Test Evidence: [Link to test documentation]
 - Success Criteria: [How to determine if change successful]
-
 
 **Section 6: Rollback Plan**
 
@@ -426,13 +395,11 @@ ALWAYS: Document standard selection in baseline documentation
 - Data Backup Verified: [Yes / No / N/A]
 - Rollback Tested: [Yes / No / N/A - date if tested]
 
-
 **Section 7: Communication**
 
 - Users to Notify: [Distribution list]
 - Communication Method: [Email / Portal / Announcement]
 - Notification Timing: [Before / During / After change]
-
 
 **Section 8: Approvals**
 
@@ -442,7 +409,6 @@ ALWAYS: Document standard selection in baseline documentation
 - CAB Date: [DD.MM.YYYY]
 - Conditions: [Any approval conditions]
 
-
 **Section 9: Post-Implementation Review**
 
 - Actual Implementation Date/Time: [DD.MM.YYYY HH:MM]
@@ -450,7 +416,6 @@ ALWAYS: Document standard selection in baseline documentation
 - Issues Encountered: [Description]
 - Resolution: [How issues resolved]
 - Lessons Learned: [What could be improved]
-
 
 ### 2.2 CAB Meeting Procedures
 
@@ -461,7 +426,6 @@ ALWAYS: Document standard selection in baseline documentation
 - Pre-screen for completeness (reject incomplete requests)
 - Publish meeting agenda
 
-
 **During Meeting**:
 
 - Review each Normal Change request
@@ -471,14 +435,12 @@ ALWAYS: Document standard selection in baseline documentation
 - Make approval decision (Approved / Approved with Conditions / Rejected / Deferred)
 - Document decision and rationale
 
-
 **Post-Meeting**:
 
 - Publish meeting minutes within 24 hours
 - Notify change requestors of decisions
 - Update change management system
 - Schedule next meeting
-
 
 **CAB Meeting Frequency**: Weekly or bi-weekly based on change volume
 
@@ -493,14 +455,12 @@ Standard Changes are pre-approved by CAB and executable without individual revie
 - Testing: N/A
 - Rollback: User can reset again if needed
 
-
 **Certificate Renewals**:
 
 - Procedure: Generate CSR, submit to CA, install new certificate
 - Risk: Low (if same parameters as expiring cert)
 - Testing: Verify certificate chain and expiration
 - Rollback: Revert to previous certificate (if still valid)
-
 
 **Standard Software Patches**:
 
@@ -509,14 +469,12 @@ Standard Changes are pre-approved by CAB and executable without individual revie
 - Testing: Required in test environment
 - Rollback: Uninstall patch or restore from backup
 
-
 **User Account Creation/Deletion**:
 
 - Procedure: Follow joiner/leaver process
 - Risk: Low
 - Testing: Verify access and permissions
 - Rollback: Disable account (deletion), delete account (creation)
-
 
 Organizations maintain their own Standard Change Catalog based on operational needs and risk appetite.
 
@@ -529,13 +487,11 @@ Organizations maintain their own Standard Change Catalog based on operational ne
 - Data breach containment
 - Critical compliance violation requiring immediate remediation
 
-
 **When NOT to Use**:
 
 - Poor planning ("forgot to submit change request")
 - Convenience ("don't want to wait for CAB")
 - Vendor pressure ("vendor says must be done now")
-
 
 **Emergency Change Workflow**:
 1. **Immediate Verbal Approval**: Contact CIO, CISO, or CAB Chair by phone
@@ -550,7 +506,6 @@ Organizations maintain their own Standard Change Catalog based on operational ne
 - **Approved with Remediation**: Emergency justified, but process improvements needed
 - **Disapproved**: Emergency not justified, reversal required or disciplinary action
 
-
 ---
 
 ## Part 3: Configuration Deviation Response Procedures
@@ -563,13 +518,11 @@ Organizations maintain their own Standard Change Catalog based on operational ne
 - Alert routed to Configuration Manager and System Owner
 - Alert contains: Asset ID, detected change, baseline expected value, actual value, detection timestamp
 
-
 **Step 2: Initial Triage** (Within 1-4 hours based on severity)
 
 - Configuration Manager reviews alert details
 - Checks change management system for authorized changes
 - Classifies drift: Authorized, Unauthorized, or False Positive
-
 
 **Step 3: Classification Decision**
 
@@ -580,18 +533,15 @@ Organizations maintain their own Standard Change Catalog based on operational ne
 - Close incident ticket
 - No further action
 
-
 **Unauthorized Drift**: Change not approved or unknown
 
 - Action: Proceed to investigation (Step 4)
-
 
 **False Positive**: Monitoring tool misconfiguration or baseline error
 
 - Action: Tune monitoring rule
 - Update baseline if baseline was incorrect
 - Close incident ticket
-
 
 **Step 4: Unauthorized Drift Investigation**
 
@@ -600,14 +550,12 @@ Organizations maintain their own Standard Change Catalog based on operational ne
 - Assess if change is malicious or operational error
 - Classify severity (Critical / High / Medium / Low)
 
-
 **Step 5: Incident Response** (if malicious)
 
 - Escalate to Security Operations Center (SOC)
 - Follow incident response procedures (ISMS-POL-A.5.24)
 - Preserve evidence
 - Contain threat
-
 
 **Step 6: Remediation** (if operational error)
 
@@ -617,7 +565,6 @@ Organizations maintain their own Standard Change Catalog based on operational ne
 - Implement preventive measures
 - Close incident ticket
 
-
 ### 3.2 Exception Request Process
 
 **When to Request Exception**:
@@ -626,7 +573,6 @@ Organizations maintain their own Standard Change Catalog based on operational ne
 - Business requirement conflicts with security baseline
 - Vendor product limitation prevents full compliance
 - Temporary exception needed during migration/project
-
 
 **Exception Request Procedure**:
 
@@ -640,14 +586,12 @@ Organizations maintain their own Standard Change Catalog based on operational ne
 - Duration requested (maximum 12 months)
 - Plan to achieve full compliance (if temporary)
 
-
 **Step 2: Security Review**
 
 - Security Architect reviews request
 - Validates risk assessment
 - Verifies compensating controls are adequate
 - Recommends approval/denial
-
 
 **Step 3: Approval Decision**
 
@@ -656,7 +600,6 @@ Organizations maintain their own Standard Change Catalog based on operational ne
 - High: Configuration Manager + Security Architect
 - Medium/Low: Configuration Manager
 
-
 **Step 4: Exception Tracking**
 
 - Add to exception register
@@ -664,13 +607,11 @@ Organizations maintain their own Standard Change Catalog based on operational ne
 - Schedule review before expiration
 - Monitor compensating controls
 
-
 **Step 5: Exception Review**
 
 - 30 days before expiration, System Owner notified
 - Options: Renew exception, achieve full compliance, accept risk and document
 - Renewal requires same approval process
-
 
 ### 3.3 Remediation Workflows
 
@@ -723,7 +664,6 @@ Organizations maintain their own Standard Change Catalog based on operational ne
 - Network changes (routing, VLANs, ACLs)
 - Baseline updates
 
-
 **NO - Change Request NOT Required**:
 
 - Password resets (Standard Change)
@@ -731,7 +671,6 @@ Organizations maintain their own Standard Change Catalog based on operational ne
 - Routine patching from approved list (Standard Change)
 - Monitoring alerts/notifications
 - Reading configuration files
-
 
 **If Unsure**: Contact Configuration Manager
 
@@ -779,12 +718,10 @@ If NORMAL CHANGE, what is the risk level?
 - Navigate to: Baselines → [Asset Type]
 - Example: Baselines → Windows Server 2022 → Domain Controller
 
-
 **Check if Baseline Exists**:
 
 - Search Configuration Repository by asset type
 - If not found, contact Configuration Manager to initiate baseline creation
-
 
 **Request Baseline Exception**:
 
@@ -793,20 +730,17 @@ If NORMAL CHANGE, what is the risk level?
 - Submit to Security Architect for review
 - Approval timeline: 5-10 business days
 
-
 **Report Configuration Drift**:
 
 - If not automatically detected, create incident ticket
 - Provide: Asset ID, configuration parameter changed, expected value, actual value
 - Route to Configuration Manager
 
-
 **Access Golden Images**:
 
 - Location: [Organization-specific image repository]
 - Requires: Deployment team permissions
 - Always verify image version and approval status before use
-
 
 ### 4.5 Contact Information
 
@@ -848,7 +782,6 @@ This technical reference may be updated more frequently than ISMS policies to re
 - Technology changes (new cloud services, container platforms)
 - Tool landscape evolution (new monitoring/scanning tools)
 - Procedural improvements (lessons learned from operational experience)
-
 
 Updates are communicated via [Organization's communication channels] and do not require executive approval.
 

@@ -43,7 +43,6 @@ This document is provided for informational and awareness purposes only.
 - This document does NOT mandate the use, prohibition, or configuration of specific cryptographic algorithms, ciphers, protocols, tools, or platforms.
 - This document does NOT override or extend any ISMS policy.
 
-
 All binding cryptographic requirements, obligations, and governance decisions are defined exclusively in **ISMS-POL-A.8.24 (Use of Cryptography)** and other approved ISMS documentation.
 
 This document serves solely as a technical reference to:
@@ -53,7 +52,6 @@ This document serves solely as a technical reference to:
 - Support cryptographic agility awareness
 - Inform technical discussions and future implementation planning
 - **This document must not be used as audit evidence of implementation**
-
 
 Use of this document does not imply implementation, compliance, or operational maturity.
 
@@ -73,7 +71,6 @@ This document provides a technical overview of the cryptographic algorithm lands
 - Context for cryptographic decision-making
 - Future implementation planning discussions
 
-
 ## What This Document Is NOT
 
 This document does NOT:
@@ -84,7 +81,6 @@ This document does NOT:
 - Replace ISMS-POL-A.8.24 policy requirements
 - Mandate specific cipher suite configurations
 - Establish key management procedures
-
 
 ## Relationship to ISMS
 
@@ -101,7 +97,6 @@ This reference organizes cryptographic algorithms by function:
 - Hash functions (data integrity, authentication)
 - TLS/SSL cipher suites (secure communications)
 - Key lengths and algorithm maturity status
-
 
 ---
 
@@ -127,7 +122,6 @@ Symmetric block ciphers commonly encountered in modern systems:
 - 3DES deprecated by NIST (disallowed after 2023 in most contexts)
 - DES considered cryptographically broken since late 1990s
 
-
 ## Block Cipher Modes of Operation
 
 Common modes for operating block ciphers:
@@ -147,7 +141,6 @@ Common modes for operating block ciphers:
 - CBC mode requires careful implementation to avoid vulnerabilities
 - ECB mode provides insufficient security for most applications
 
-
 ## Stream Ciphers
 
 | Cipher | Key Length | Status | Common Use Cases |
@@ -160,7 +153,6 @@ Common modes for operating block ciphers:
 
 - RC4 formally deprecated across all major protocols (TLS, WPA, etc.)
 - ChaCha20 increasingly adopted as AES alternative for performance
-
 
 ---
 
@@ -186,7 +178,6 @@ Asymmetric algorithms commonly encountered:
 - RSA-3072 increasingly adopted for long-term keys (5+ year lifetime)
 - ECC (ECDSA, EdDSA) provides equivalent security with smaller key sizes
 - Ed25519 gaining adoption for SSH and modern protocols
-
 
 ## Key Length Equivalence
 
@@ -225,7 +216,6 @@ Hash functions commonly encountered:
 - SHA-1 deprecated for certificates (2017), git migration ongoing
 - MD5 considered cryptographically broken, suitable only for non-security use (checksums)
 
-
 ## Message Authentication Codes (MAC)
 
 | Algorithm | Based On | Output Size | Status |
@@ -256,7 +246,6 @@ Specialized functions for password storage:
 - Raw hash functions (SHA-256, MD5) unsuitable for password storage
 - Argon2id recommended for new implementations (OWASP)
 
-
 ---
 
 # TLS/SSL Cipher Suites
@@ -282,7 +271,6 @@ TLS 1.3 simplified cipher suite design (5 standardized suites):
 - All TLS 1.3 suites provide forward secrecy (ECDHE mandatory)
 - All TLS 1.3 suites provide authenticated encryption (AEAD)
 
-
 ## TLS 1.2 Cipher Suites (Selected Common Examples)
 
 TLS 1.2 cipher suite examples (non-exhaustive, descriptive only):
@@ -304,7 +292,6 @@ TLS 1.2 cipher suite examples (non-exhaustive, descriptive only):
 - AEAD modes (GCM, Poly1305) preferred over CBC + HMAC
 - RSA key exchange (no ECDHE) lacks forward secrecy
 - CBC mode vulnerable to padding oracle attacks if not carefully implemented
-
 
 ## Deprecated/Obsolete Protocols and Cipher Suites
 
@@ -370,7 +357,6 @@ NIST Post-Quantum Cryptography (PQC) standardization:
 - TLS 1.3 hybrid key exchange (X25519 + ML-KEM) under development
 - Certificate authorities beginning PQC trial issuance
 
-
 ---
 
 # Certificate Validity and Lifecycle Trends
@@ -403,7 +389,6 @@ CA/Browser Forum Ballot SC-081v3 (passed April 2025):
 - Shorter lifetimes increase importance of automated lifecycle management
 - Private/internal PKI not subject to CA/Browser Forum requirements
 
-
 **Note on Internal PKI**: Internal certificate policies are determined by risk assessment and operational context and are not derived automatically from public-trust requirements. Organizations may choose shorter or longer lifetimes based on their specific security posture and operational needs.
 
 ---
@@ -431,14 +416,12 @@ CA/Browser Forum Ballot SC-081v3 (passed April 2025):
 - NIST SP 800-131A Rev. 2: Transitioning the Use of Cryptographic Algorithms
 - NIST SP 800-175B Rev. 1: Guideline for Using Cryptographic Standards
 
-
 **BSI Publications**:
 
 - TR-02102-1: Cryptographic Mechanisms - Recommendations and Key Lengths
 - TR-02102-2: Use of TLS
 - TR-02102-3: Suitable Cryptographic Algorithms
 - TR-02102-4: Use of Secure Shell (SSH)
-
 
 **IETF RFCs**:
 
@@ -447,14 +430,12 @@ CA/Browser Forum Ballot SC-081v3 (passed April 2025):
 - RFC 8017: PKCS #1: RSA Cryptography Specifications Version 2.2
 - RFC 8032: Edwards-Curve Digital Signature Algorithm (EdDSA)
 
-
 **CA/Browser Forum**:
 
 - Baseline Requirements for TLS Certificates
 - Extended Validation Guidelines
 - Code Signing Requirements
 - S/MIME Requirements
-
 
 ## Algorithm Deprecation Tracking
 
@@ -465,7 +446,6 @@ Organizations commonly monitor algorithm status through:
 - Browser vendor security policies (Chrome, Firefox, Safari, Edge root programs)
 - CA/Browser Forum ballot tracking
 - Vendor security bulletins (OpenSSL, Microsoft, Apple, etc.)
-
 
 ---
 
@@ -480,7 +460,6 @@ This reference document may be updated when:
 - TLS/SSL protocol updates published
 - Post-quantum cryptography deployment milestones reached
 - CA/Browser Forum baseline requirement changes
-
 
 ## Responsibility
 
@@ -499,14 +478,12 @@ This document provides **technical context** that may inform:
 - Risk assessment of legacy cryptographic systems
 - Understanding of industry standards evolution
 
-
 This document does NOT:
 
 - Override or extend ISMS-POL-A.8.24 requirements
 - Establish mandatory algorithm selections
 - Create compliance obligations
 - Define approved/prohibited algorithms for [Organization]
-
 
 All cryptographic control requirements are defined exclusively in ISMS-POL-A.8.24 and implemented through separate procedures based on risk assessment and operational context.
 

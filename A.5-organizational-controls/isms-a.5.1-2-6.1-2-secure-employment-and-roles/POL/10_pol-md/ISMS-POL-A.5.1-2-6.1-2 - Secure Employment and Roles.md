@@ -36,7 +36,6 @@
 - Privacy: Data Protection Officer (DPO)
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -48,7 +47,6 @@
 - ISO/IEC 27001:2022 Controls A.5.1, A.5.2, A.6.1, A.6.2
 - Swiss Code of Obligations (OR) Art. 328, 328b
 - Swiss Federal Data Protection Act (nDSG/FADP)
-
 
 ---
 
@@ -64,7 +62,6 @@ This policy establishes [Organization]'s requirements for information security g
 - Security role definition and accountability (A.5.2)
 - Personnel screening requirements (A.6.1)
 - Contractual security obligations (A.6.2)
-
 
 This policy establishes WHAT governance structures are required, WHO holds security responsibilities, and WHEN reviews occur. Implementation procedures (HOW) are documented in ISMS-IMP-A.5.1-2-6.1-2.S1 through S5.
 
@@ -104,20 +101,17 @@ This policy establishes WHAT governance structures are required, WHO holds secur
 - All third-party personnel requiring access
 - Executive Management and Board members with system access
 
-
 **Information Security Policies**:
 
 - Master information security policy
 - All topic-specific information security policies (Annex A controls)
 - Information security standards and guidelines
 
-
 **Organizational Roles**:
 
 - Roles with explicit security responsibilities (CISO, DPO, Security Team)
 - Roles with implicit security responsibilities (System Owners, Data Owners, Managers)
 - All personnel roles (general security awareness obligations)
-
 
 **Employment Lifecycle**:
 
@@ -127,7 +121,6 @@ This policy establishes WHAT governance structures are required, WHO holds secur
 - Employment changes
 - Employment termination
 
-
 ## What This Policy Does NOT Cover
 
 - Detailed screening procedures (see ISMS-IMP-A.5.1-2-6.1-2.S3)
@@ -135,7 +128,6 @@ This policy establishes WHAT governance structures are required, WHO holds secur
 - Complete role catalog (see ISMS-IMP-A.5.1-2-6.1-2.S2)
 - HR recruitment procedures (HR responsibility)
 - Performance management (HR responsibility, unless security-related)
-
 
 ## Regulatory Framework
 
@@ -146,7 +138,6 @@ This policy establishes WHAT governance structures are required, WHO holds secur
 - **EU GDPR** (where applicable): Art. 5, 32, 88 employment processing
 - **ISO/IEC 27001:2022**: Controls A.5.1, A.5.2, A.6.1, A.6.2
 
-
 **Tier 2: Conditional Applicability**:
 
 - DORA (if EU financial services): Art. 5, 13
@@ -154,13 +145,11 @@ This policy establishes WHAT governance structures are required, WHO holds secur
 - FINMA (if Swiss-regulated): Circular 2008/21
 - PCI DSS (if processing cards): Requirement 12.7, 12.8
 
-
 **Tier 3: Informational Reference**:
 
 - NIST SP 800-53 Rev. 5: PS-Series controls
 - ISO/IEC 27002:2022: Implementation guidance
 - CIS Controls v8: Control 14
-
 
 For complete regulatory categorization, refer to ISMS-POL-00.
 
@@ -185,7 +174,6 @@ For complete regulatory categorization, refer to ISMS-POL-00.
 - Lower-tier documents SHALL NOT contradict higher-tier policies
 - All tiers SHALL be accessible to relevant personnel
 
-
 ## Policy Lifecycle Requirements
 
 [Organization] SHALL manage information security policies through defined lifecycle stages:
@@ -209,7 +197,6 @@ For complete regulatory categorization, refer to ISMS-POL-00.
 - Organizational change (merger, acquisition, significant restructure)
 - Failed audit finding requiring policy amendment
 
-
 **Retirement**: Retired policies archived with audit trail retained.
 
 ## Policy Content Requirements
@@ -223,7 +210,6 @@ All topic-specific policies (Tier 2) SHALL include:
 - Roles and Responsibilities
 - Regulatory Framework reference
 - Implementation guidance references
-
 
 ## Policy Exceptions
 
@@ -253,7 +239,6 @@ Policy exceptions SHALL be:
 
 Exceptions are reviewed quarterly by ISMS Committee and reported in Management Review. Expired exceptions SHALL be re-assessed or closed within 30 days.
 
-
 ## Policy Violation Handling
 
 Policy violations SHALL be classified by severity using the organizational Severity Rating Framework (aligned with A.5.24-27 incident management):
@@ -266,7 +251,6 @@ Policy violations SHALL be classified by severity using the organizational Sever
 | **Severity 4 (Low)** | Procedural error, no security impact, first occurrence | Manager-led discussion | Policy clarification; no formal disciplinary action unless recurring |
 
 All violations (Severity 1-3) SHALL be logged in the Security Incident Register (maintained by Security Team) with investigation findings, remediation actions, and closure date. Violations are analyzed quarterly by ISMS Committee for trends and policy effectiveness improvement.
-
 
 ---
 
@@ -291,7 +275,6 @@ All violations (Severity 1-3) SHALL be logged in the Security Incident Register 
 Resource adequacy assessment SHALL be submitted to Executive Management with annual budget request. Assessment results are documented in IMP-S2 and reviewed in Management Review. Resource gaps SHALL be tracked in ISMS Gap Register with remediation plan
 - **Commensurate Authority**: Security roles granted authority matching responsibility
 
-
 ## Key Security Roles
 
 [Organization] SHALL define and assign the following security roles:
@@ -303,14 +286,12 @@ Resource adequacy assessment SHALL be submitted to Executive Management with ann
 - Allocates resources for information security program
 - Reviews ISMS performance annually
 
-
 **Chief Information Security Officer (CISO)**:
 
 - Accountable for ISMS design, implementation, and continuous improvement
 - Approves topic-specific policies (Tier 2)
 - Oversees Security Team, incident response, and compliance
 - Reports ISMS performance to Executive Management
-
 
 **Data Protection Officer (DPO)**:
 
@@ -319,7 +300,6 @@ Resource adequacy assessment SHALL be submitted to Executive Management with ann
 - Independent reporting to Executive Management
 - Contact point for data subjects and supervisory authorities
 
-
 **Information Security Team**:
 
 - Operational implementation of security controls
@@ -327,13 +307,11 @@ Resource adequacy assessment SHALL be submitted to Executive Management with ann
 - Security awareness training delivery
 - Audit support and evidence collection
 
-
 **System Owners**:
 
 - Accountable for security of assigned systems
 - Implement controls, maintain compliance, conduct access reviews
 - Report incidents affecting assigned systems
-
 
 **Data Owners**:
 
@@ -341,20 +319,17 @@ Resource adequacy assessment SHALL be submitted to Executive Management with ann
 - Define and approve access requirements
 - Conduct data access reviews
 
-
 **Line Managers**:
 
 - Ensure direct reports complete training and comply with policies
 - Initiate joiner/mover/leaver processes
 - Approve access requests (business justification)
 
-
 **All Personnel**:
 
 - Comply with policies, complete training, protect assets
 - Report security incidents immediately
 - Maintain confidentiality
-
 
 ## Role Documentation Requirements
 
@@ -387,7 +362,6 @@ All security-related roles SHALL be documented in Role Description Documents mai
 
 Role descriptions SHALL be reviewed annually by role owner's manager in coordination with CISO. Updates SHALL be version-controlled and communicated to affected personnel
 
-
 ## Third-Party Security Responsibilities
 
 Third-party security responsibilities SHALL be:
@@ -406,7 +380,6 @@ Spot-checking SHALL include annual sample of 10% of vendor-provided personnel (m
 - Contract clause acknowledgment (NDA, AUP)
 
 Spot-check results SHALL be documented in the Third-Party Risk Assessment Register (maintained by Security Team per A.5.19-23). Non-compliance SHALL trigger vendor escalation and remediation within 30 days. Persistent non-compliance (>60 days unresolved) triggers contract review per A.5.20
-
 
 ## Succession Planning
 
@@ -486,14 +459,12 @@ Evidence retention: Minimum 3 years for audit trail (per A.5.33 Protection of Re
 - Level of system access and privileges
 - Regulatory requirements
 
-
 **Legality**: All screening complies with:
 
 - Swiss Code of Obligations (OR) Art. 328, 328b
 - Swiss Federal Data Protection Act (nDSG/FADP)
 - EU GDPR Art. 88 (where applicable)
 - Local employment law in each jurisdiction
-
 
 **Fairness**: Screening conducted transparently with:
 
@@ -502,14 +473,12 @@ Evidence retention: Minimum 3 years for audit trail (per A.5.33 Protection of Re
 - Non-discriminatory, job-relevant criteria
 - Opportunity to clarify adverse findings
 
-
 **Confidentiality**: Screening results:
 
 - Accessed only by HR, hiring manager, authorized personnel
 - Stored securely with access controls
 - Retained per legal requirements
 - Disposed securely when no longer needed
-
 
 ## Screening Levels
 
@@ -535,13 +504,11 @@ Role-to-screening-level mapping documented in ISMS-IMP-A.5.1-2-6.1-2.S3.
 - Maximum 30 days duration
 - Documented business justification
 
-
 **Ongoing Screening**:
 
 - Level 4 roles: Re-screening every 2-3 years
 - Privileged access roles: Re-screening every 5 years or upon significant role change
 - All roles: Right to work verification (permit renewals)
-
 
 ## Adverse Findings Handling
 
@@ -552,7 +519,6 @@ Adverse findings SHALL be:
 - Documented with decision rationale
 - Handled consistently and non-discriminatorily
 
-
 ## Third-Party Personnel Screening
 
 Third-party personnel screening SHALL be:
@@ -561,7 +527,6 @@ Third-party personnel screening SHALL be:
 - Attested by vendor (vendor-provided personnel)
 - Spot-checked by organization (sample verification)
 - Equivalent to employee screening for comparable access
-
 
 ---
 
@@ -576,7 +541,6 @@ Third-party personnel screening SHALL be:
 - Vendor agreements (for on-site/access personnel)
 - Internship agreements
 
-
 ## Mandatory Contract Clauses
 
 All employment contracts SHALL include:
@@ -587,25 +551,21 @@ All employment contracts SHALL include:
 - Compliance with data protection policies and laws
 - Obligations continue after termination
 
-
 **Acceptable Use Acknowledgment**:
 
 - Agreement to comply with Acceptable Use Policy
 - Acknowledgment of monitoring rights
 - Understanding of prohibited activities
 
-
 **Security Training Obligation**:
 
 - Requirement to complete mandatory security awareness training
 - Timeline for initial and annual refresher training
 
-
 **Incident Reporting Obligation**:
 
 - Requirement to report security incidents immediately
 - Cooperation with investigations
-
 
 **Access Rights and Termination**:
 
@@ -613,12 +573,10 @@ All employment contracts SHALL include:
 - Return of all organizational assets upon termination
 - Post-termination access prohibition
 
-
 **Disciplinary Action**:
 
 - Security policy violations subject to disciplinary action
 - Serious violations may result in immediate termination
-
 
 ## Additional Clauses for Sensitive Roles
 
@@ -636,13 +594,11 @@ All employment contracts SHALL include:
 - NDA before access to confidential information
 - AUP acknowledged before system access
 
-
 **Acknowledgment Tracking**: Acknowledgments (NDA, AUP, training) SHALL be:
 
 - Collected with signature (physical or electronic)
 - Tracked in HR system
 - Re-collected annually for critical policies
-
 
 ## Enforcement
 
@@ -652,7 +608,6 @@ Contractual obligations SHALL be:
 - Enforced through disciplinary framework
 - Documented when violations occur
 - Applied consistently across personnel
-
 
 ---
 
@@ -701,7 +656,6 @@ Compliance verified through:
 - **ISMS-IMP-A.5.1-2-6.1-2.S4**: Employment Contract Assessment (annual)
 - **ISMS-IMP-A.5.1-2-6.1-2.S5**: Governance Dashboard (quarterly)
 
-
 ## Key Metrics
 
 | Metric | Target |
@@ -741,7 +695,6 @@ Exceptions to this policy SHALL:
 - Be time-limited and reviewed periodically
 - Be tracked in exception register
 
-
 ## Non-Compliance Remediation
 
 Non-compliance SHALL be remediated:
@@ -749,7 +702,6 @@ Non-compliance SHALL be remediated:
 - Critical gaps: Immediately
 - High priority: Within 30 days
 - Medium/low priority: Within 90 days
-
 
 ---
 

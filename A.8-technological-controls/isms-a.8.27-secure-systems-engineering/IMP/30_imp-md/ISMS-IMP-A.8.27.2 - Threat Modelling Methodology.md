@@ -42,7 +42,6 @@
 - STRIDE Methodology (Microsoft)
 - PASTA Threat Modelling Framework
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -64,14 +63,12 @@ This assessment evaluates [Organisation]'s **threat modelling methodology and ca
 - Threat model maintenance and updates
 - Team competency and training
 
-
 **What This Assessment Does NOT Cover:**
 
 - Architecture review governance (see ISMS-IMP-A.8.27.1)
 - Secure architecture patterns (see ISMS-IMP-A.8.27.3)
 - Zero Trust implementation (see ISMS-IMP-A.8.27.4)
 - Vulnerability management (see ISMS-IMP-A.8.8)
-
 
 **Assessment Output:**
 
@@ -80,7 +77,6 @@ This assessment evaluates [Organisation]'s **threat modelling methodology and ca
 - MITRE ATT&CK coverage analysis
 - Tool effectiveness evaluation
 - Training and competency gaps
-
 
 ## Why This Matters
 
@@ -98,7 +94,6 @@ This assessment evaluates [Organisation]'s **threat modelling methodology and ca
 - **Design Flaws:** Architectural decisions made without threat context
 - **Incident Response:** Unknown threats cannot be detected or responded to
 
-
 **This Assessment Addresses:**
 
 - Do we have a defined threat modelling methodology?
@@ -106,7 +101,6 @@ This assessment evaluates [Organisation]'s **threat modelling methodology and ca
 - Are threat models created for all new systems?
 - Are threat models maintained as systems evolve?
 - Do our teams have threat modelling competency?
-
 
 ## Who Should Complete This Assessment
 
@@ -120,7 +114,6 @@ This assessment evaluates [Organisation]'s **threat modelling methodology and ca
 - Threat modelling tools in use
 - Integration with architecture review process
 
-
 **Support Roles:**
 
 - **CISO:** Methodology approval, resource allocation
@@ -129,13 +122,11 @@ This assessment evaluates [Organisation]'s **threat modelling methodology and ca
 - **Security Operations:** Attack detection correlation
 - **Red Team:** Adversary simulation perspective
 
-
 **Collaboration Required:**
 
 - Threat modelling practitioners
 - Sample threat models
 - Tool demonstrations
-
 
 ## Time Estimate
 
@@ -166,7 +157,6 @@ This assessment evaluates [Organisation]'s **threat modelling methodology and ca
   - Remediation planning
   - Stakeholder review
 
-
 ## Connection to Policy
 
 This assessment implements **ISMS-POL-A.8.27, Section 2.2 (Architecture Security Review)** which mandates:
@@ -179,7 +169,6 @@ This assessment implements **ISMS-POL-A.8.27, Section 2.2 (Architecture Security
 4. Control design review for defence in depth
 5. Risk assessment and residual risk documentation
 
-
 **Threat Model Expectations:**
 
 - Threat identification aligned with MITRE ATT&CK
@@ -187,7 +176,6 @@ This assessment implements **ISMS-POL-A.8.27, Section 2.2 (Architecture Security
 - Trust boundary identification
 - Data flow threat analysis
 - Countermeasure mapping
-
 
 ---
 
@@ -205,7 +193,6 @@ Before starting this assessment, ensure you have access to:
 | Threat modelling tools | Tool assessment | Security Engineering |
 | Training records | Competency evidence | HR/Training |
 
-
 ## Pre-Assessment Checklist
 
 ✅ Threat modelling methodology reviewed
@@ -214,7 +201,6 @@ Before starting this assessment, ensure you have access to:
 ✅ Threat modelling tool access granted
 ✅ Practitioner interviews scheduled
 ✅ Assessment timeframe communicated
-
 
 ## Information Gathering Requirements
 
@@ -228,7 +214,6 @@ Before starting this assessment, ensure you have access to:
 | **Tools** | Tool inventory, licenses, usage data | Security Engineering |
 | **Training** | Training materials, completion records | HR/Training |
 | **Metrics** | Threat model counts, coverage, findings | ISMS dashboard |
-
 
 ---
 
@@ -251,7 +236,6 @@ The assessment workbook contains the following sheets:
 | **GapRegister** | Identified gaps and remediation | Last |
 | **Dashboard** | Summary view and status | Auto-calculated |
 
-
 ## Sheet Descriptions
 
 ### Instructions Sheet
@@ -263,7 +247,6 @@ Read-only sheet containing:
 - MITRE ATT&CK primer
 - Completion instructions
 - Rating scale definitions
-
 
 ### Methodology Sheet
 
@@ -280,7 +263,6 @@ Assesses the threat modelling methodology:
 | Evidence | Supporting evidence | TM procedures v2.1 |
 | Gaps | Identified gaps | None |
 
-
 ### MITRE_ATT&CK Sheet
 
 Evaluates MITRE ATT&CK integration:
@@ -294,7 +276,6 @@ Evaluates MITRE ATT&CK integration:
 | Covered | In threat models? | Yes |
 | DetectionMap | Detection capability | Email security, EDR |
 | Gap | Coverage gap | Sub-technique gaps |
-
 
 ### ThreatCatalogue Sheet
 
@@ -311,7 +292,6 @@ Documents organisational threat catalogue:
 | Likelihood | Likelihood rating | High |
 | Countermeasures | Primary countermeasures | WAF, email security |
 
-
 ### Tools Sheet
 
 Assesses threat modelling tools:
@@ -327,7 +307,6 @@ Assesses threat modelling tools:
 | Effectiveness | Rating (1-5) | 4 |
 | Gaps | Tool limitations | No ATT&CK integration |
 
-
 ### Competency Sheet
 
 Evaluates team competency:
@@ -341,7 +320,6 @@ Evaluates team competency:
 | Training | Training available | Yes |
 | Certified | # certified personnel | 5 |
 | Gap | Competency gap | 2 new hires need training |
-
 
 ### Samples Sheet
 
@@ -360,7 +338,6 @@ Reviews sample threat model quality:
 | Findings | # threats identified | 12 |
 | Mitigated | # mitigations documented | 10 |
 
-
 ### Compliance Sheet
 
 Calculates compliance with policy requirements:
@@ -373,7 +350,6 @@ Calculates compliance with policy requirements:
 | Compliant | Yes/Partial/No | Yes |
 | Evidence | Compliance evidence | TM inventory |
 | Score | Compliance score (0-100) | 100 |
-
 
 ### GapRegister Sheet
 
@@ -390,7 +366,6 @@ Documents identified gaps and remediation:
 | Due Date | Target completion | 2026-03-31 |
 | Status | Current status | Open |
 
-
 ### Dashboard Sheet
 
 Auto-calculated summary view:
@@ -402,7 +377,6 @@ Auto-calculated summary view:
 - Competency gap summary
 - Sample quality metrics
 
-
 ---
 
 # Completion Walkthrough
@@ -413,7 +387,6 @@ Auto-calculated summary view:
 2. Review STRIDE and PASTA methodology overviews
 3. Understand MITRE ATT&CK framework basics
 4. Note the rating scales and evidence requirements
-
 
 ## Step 2: Complete Methodology Assessment
 
@@ -444,7 +417,6 @@ For each methodology component:
 | **Review Process** | How are threat models reviewed? |
 | **Maintenance Process** | How are threat models updated? |
 
-
 ## Step 3: Complete MITRE ATT&CK Assessment
 
 **Navigate to the MITRE_ATT&CK sheet**
@@ -471,7 +443,6 @@ For relevant ATT&CK techniques:
 | **Exfiltration** | T1041 (Exfiltration Over C2), T1567 (Exfiltration Over Web Service) |
 | **Impact** | T1486 (Data Encrypted for Impact), T1489 (Service Stop) |
 
-
 ## Step 4: Complete Threat Catalogue Assessment
 
 **Navigate to the ThreatCatalogue sheet**
@@ -496,7 +467,6 @@ For each threat category:
 | **Competitor** | Corporate espionage |
 | **Script Kiddie** | Opportunistic attackers |
 
-
 ## Step 5: Complete Tools Assessment
 
 **Navigate to the Tools sheet**
@@ -520,7 +490,6 @@ For each threat modelling tool:
 | Threagile | Code-as-code, CI/CD integration |
 | ThreatModeler | Enterprise, cloud integration |
 
-
 ## Step 6: Complete Competency Assessment
 
 **Navigate to the Competency sheet**
@@ -543,7 +512,6 @@ For each role requiring threat modelling competency:
 | **Data Flow Diagramming** | Architects, Senior Developers |
 | **Attack Tree Analysis** | Security Architects, Red Team |
 | **Risk Assessment** | Security Architects, Project Managers |
-
 
 ## Step 7: Complete Sample Review
 
@@ -573,7 +541,6 @@ Review 3+ sample threat models:
 | Residual risk stated | Explicitly documented |
 | Review sign-off | Approved by Security Architect |
 
-
 ## Step 8: Complete Compliance Scoring
 
 **Navigate to the Compliance sheet**
@@ -584,7 +551,6 @@ For each policy requirement:
 2. **Assess Compliance:** Yes/Partial/No
 3. **Document Evidence:** What proves compliance?
 4. **Calculate Score:** Apply scoring formula
-
 
 ## Step 9: Document Gaps and Remediation
 
@@ -598,7 +564,6 @@ For each identified gap:
 4. **Assign Ownership:** Identify responsible party
 5. **Set Due Dates:** Establish realistic timelines
 6. **Track Status:** Monitor progress
-
 
 ---
 
@@ -616,7 +581,6 @@ For each identified gap:
 | **Training Records** | Practitioner training records | HR/Training |
 | **Threat Catalogue** | Organisational threat catalogue | Threat Intelligence |
 
-
 ## Evidence Naming Convention
 
 ```
@@ -628,7 +592,6 @@ ISMS-IMP-A.8.27.2_[EvidenceType]_[Description]_YYYYMMDD.[ext]
 - `ISMS-IMP-A.8.27.2_Methodology_ThreatModellingProcedure_20260115.pdf`
 - `ISMS-IMP-A.8.27.2_Sample_CustomerPortalTM_20260115.docx`
 - `ISMS-IMP-A.8.27.2_ATT&CK_CoverageMatrix_20260115.xlsx`
-
 
 ---
 
@@ -666,7 +629,6 @@ Avoid these common mistakes when completing this assessment:
 ❌ **MISTAKE:** No connection between threats and countermeasures
 ✅ **CORRECT:** Map every high-priority threat to mitigation controls
 
-
 ---
 
 # Quality Checklist
@@ -684,7 +646,6 @@ Before submitting the assessment, verify:
 - [ ] Compliance scoring complete
 - [ ] All gaps in register
 
-
 **Evidence:**
 
 - [ ] Sample threat models collected
@@ -693,14 +654,12 @@ Before submitting the assessment, verify:
 - [ ] Training records compiled
 - [ ] Evidence properly stored
 
-
 **Quality:**
 
 - [ ] Ratings justified
 - [ ] Gaps have remediation plans
 - [ ] Owners assigned
 - [ ] Due dates realistic
-
 
 ---
 
@@ -714,7 +673,6 @@ Before submitting the assessment, verify:
 | 2 | Peer | Technical accuracy | 2 business days |
 | 3 | Threat Intelligence | ATT&CK alignment | 2 business days |
 | 4 | CISO | Final approval | 2 business days |
-
 
 ---
 
@@ -730,7 +688,6 @@ Before submitting the assessment, verify:
 | **Sheets** | 10 |
 | **Purpose** | Threat modelling methodology assessment |
 | **Generator** | generate_a827_2_threat_modelling.py |
-
 
 ## Sheet Specifications
 
@@ -751,7 +708,6 @@ Before submitting the assessment, verify:
 5. MITRE ATT&CK primer
 6. Rating scales
 7. Evidence requirements
-
 
 ### Sheet 2: Methodology
 
@@ -779,7 +735,6 @@ Selection, Scope, Assets, Threats, AttackSurface, TrustBoundaries, DataFlows, Pr
 
 **Pre-populated Rows:** 20 methodology requirements
 
-
 ### Sheet 3: MITRE_ATT&CK
 
 | Property | Specification |
@@ -801,7 +756,6 @@ Selection, Scope, Assets, Threats, AttackSurface, TrustBoundaries, DataFlows, Pr
 | G | Gap | 30 | Text | Coverage gaps |
 
 **Pre-populated Rows:** 50 key ATT&CK techniques
-
 
 ### Sheet 4: ThreatCatalogue
 
@@ -826,7 +780,6 @@ Selection, Scope, Assets, Threats, AttackSurface, TrustBoundaries, DataFlows, Pr
 
 **Pre-populated Rows:** 15 standard threat actors
 
-
 ### Sheet 5: Tools
 
 | Property | Specification |
@@ -849,7 +802,6 @@ Selection, Scope, Assets, Threats, AttackSurface, TrustBoundaries, DataFlows, Pr
 | H | Gaps | 30 | Text | Limitations |
 
 **Pre-populated Rows:** 8 common tools
-
 
 ### Sheet 6: Competency
 
@@ -874,7 +826,6 @@ Selection, Scope, Assets, Threats, AttackSurface, TrustBoundaries, DataFlows, Pr
 
 **Pre-populated Rows:** 12 competency requirements
 
-
 ### Sheet 7: Samples
 
 | Property | Specification |
@@ -898,7 +849,6 @@ Selection, Scope, Assets, Threats, AttackSurface, TrustBoundaries, DataFlows, Pr
 | I | Findings | 10 | Number | Count |
 | J | Mitigated | 10 | Number | Count |
 
-
 ### Sheet 8: Compliance
 
 | Property | Specification |
@@ -909,7 +859,6 @@ Selection, Scope, Assets, Threats, AttackSurface, TrustBoundaries, DataFlows, Pr
 
 **Standard compliance sheet structure with 15 requirements**
 
-
 ### Sheet 9: GapRegister
 
 | Property | Specification |
@@ -919,7 +868,6 @@ Selection, Scope, Assets, Threats, AttackSurface, TrustBoundaries, DataFlows, Pr
 | **Protection** | Data entry enabled |
 
 **Standard gap register structure**
-
 
 ### Sheet 10: Dashboard
 
@@ -939,11 +887,9 @@ Selection, Scope, Assets, Threats, AttackSurface, TrustBoundaries, DataFlows, Pr
 6. Sample quality metrics
 7. ATT&CK coverage heatmap (simplified)
 
-
 ## Styling Specifications
 
 **Use standard ISMS colour palette as per ISMS-IMP-A.8.27.1**
-
 
 ## Pre-populated Data
 
@@ -967,7 +913,6 @@ Common threat modelling tools
 
 Role-based competency requirements
 
-
 ---
 
 # Generator Script Reference
@@ -979,7 +924,6 @@ Role-based competency requirements
 | **Script Name** | generate_a827_2_threat_modelling.py |
 | **Location** | 10-isms-scr-base/isms-a.8.27-secure-systems-engineering/10_generator-master/ |
 | **Output** | ISMS-IMP-A.8.27.2_Threat_Modelling_Methodology_YYYYMMDD.xlsx |
-
 
 ---
 

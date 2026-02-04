@@ -48,7 +48,6 @@ management posture.
 - Facilitates resource allocation decisions
 - Tracks overall compliance trend over time
 
-
 **As ISMS Auditor:**
 
 - Delivers consolidated evidence of A.8.9 compliance
@@ -56,7 +55,6 @@ management posture.
 - Verifies that domain-specific assessments align with overall objectives
 - Provides audit-ready executive summary
 - Confirms governance and accountability framework
-
 
 ---
 
@@ -72,14 +70,12 @@ data from four domain-specific assessments:
 - Version control compliance
 - Baseline approval status
 
-
 **A.8.9.2 (Change Control):**
 
 - Change approval compliance rate
 - Emergency change usage patterns
 - Change success rate
 - Backout effectiveness
-
 
 **A.8.9.3 (Configuration Monitoring):**
 
@@ -88,14 +84,12 @@ data from four domain-specific assessments:
 - Critical drift count
 - Monitoring effectiveness score
 
-
 **A.8.9.4 (Security Hardening):**
 
 - Overall hardening compliance percentage
 - High-risk gap count
 - Exception rate
 - Remediation progress
-
 
 **Dashboard Value:**
 The dashboard answers the executive question: "How well are we managing configurations 
@@ -127,7 +121,6 @@ All data is sourced from normalized assessment workbooks (date-free filenames):
 - `ISMS-IMP-A.8.9.3.xlsx` (Configuration Monitoring)
 - `ISMS-IMP-A.8.9.4.xlsx` (Security Hardening)
 
-
 **CRITICAL - External Workbook Linking:**
 This dashboard uses Excel external workbook formulas (e.g., 
 `='[ISMS-IMP-A.8.9.1.xlsx]Asset_Inventory'!B5`). Dashboard and source workbooks must be 
@@ -153,7 +146,6 @@ Overall Compliance =
 - **Security Hardening (25%)**: Security criticality - hardening prevents exploitation
 - **Process Maturity (10%)**: Governance - ensures sustainability
 
-
 Target: **≥95% overall compliance**
 
 ### Success Criteria
@@ -166,7 +158,6 @@ Target: **≥95% overall compliance**
 - **Domains Fully Compliant**: Target 4/5 (or 5/5)
 - **Audit Readiness**: Evidence completeness ≥95%
 
-
 **Process Maturity Indicators:**
 
 - All 4 domain assessments completed within last 90 days
@@ -174,7 +165,6 @@ Target: **≥95% overall compliance**
 - Documented remediation plans for all gaps
 - Trend showing improvement (current > previous assessment)
 - Integration with risk management process
-
 
 ---
 
@@ -211,7 +201,6 @@ Comprehensive guidance for using the consolidated compliance dashboard.
 - How external workbook linking works
 - Prerequisites (4 source workbooks normalized)
 
-
 **Section 2: Key Concepts**
 
 - **External Workbook Linking**: Formulas reference other Excel files in same directory
@@ -220,7 +209,6 @@ Comprehensive guidance for using the consolidated compliance dashboard.
 - **Domain Compliance**: Individual compliance percentage for each assessment area
 - **Critical Gap**: High-severity issue requiring immediate attention
 - **Compliance Trend**: Direction of compliance over time (improving/declining/stable)
-
 
 **Section 3: Setup Workflow**
 1. Complete all 4 domain assessments (A.8.9.1 through A.8.9.4)
@@ -246,7 +234,6 @@ Comprehensive guidance for using the consolidated compliance dashboard.
 - **Evidence_Register**: Links to domain-specific evidence
 - **Approval_Sign_Off**: Executive approval and governance
 
-
 **Section 5: Understanding Overall Compliance**
 Domain weights and calculation methodology:
 
@@ -255,7 +242,6 @@ Domain weights and calculation methodology:
 - Configuration Monitoring: 20% (detection capability)
 - Security Hardening: 25% (security criticality)
 - Process Maturity: 10% (governance and sustainability)
-
 
 Formula: `Overall = (D1×0.20) + (D2×0.25) + (D3×0.20) + (D4×0.25) + (D5×0.10)`
 
@@ -267,14 +253,12 @@ How it works:
 - Links are relative - files must be in same directory
 - If workbook not found: Formula shows #REF! error
 
-
 Troubleshooting broken links:
 
 - Verify all 4 normalized workbooks exist in same directory as dashboard
 - Excel: Data → Edit Links → Update Values
 - Check filenames match exactly (case-sensitive on some systems)
 - Ensure workbooks are not open in exclusive mode
-
 
 **Section 7: Update Frequency**
 
@@ -283,7 +267,6 @@ Troubleshooting broken links:
 - **Executive Review**: Monthly minimum
 - **Trend Analysis**: Requires 3+ assessment cycles for meaningful insights
 
-
 **Section 8: Roles and Responsibilities**
 
 - **Dashboard Owner**: Coordinates assessment schedule, ensures dashboard currency
@@ -291,7 +274,6 @@ Troubleshooting broken links:
 - **Executive Sponsor**: Reviews dashboard, approves remediation priorities
 - **ISMS Manager**: Oversees overall A.8.9 compliance, reports to leadership
 - **Auditor**: Verifies dashboard accuracy, validates evidence links
-
 
 **Section 9: Critical Success Factors**
 
@@ -302,7 +284,6 @@ Troubleshooting broken links:
 - Remediation plans exist for all gaps
 - Compliance trend is stable or improving
 
-
 **Section 10: Integration with ISMS**
 Dashboard feeds:
 
@@ -311,14 +292,12 @@ Dashboard feeds:
 - **Audit Preparation**: Comprehensive evidence package for A.8.9
 - **Continuous Improvement**: Gap analysis drives improvement initiatives
 
-
 **Formatting:**
 
 - Professional layout with clear section headers
 - Use tables for structured information
 - Include examples where helpful (generic examples only)
 - Hyperlinks to other sheets for easy navigation
-
 
 ---
 
@@ -350,7 +329,6 @@ Table showing linked workbooks:
 - **Last Modified**: Last modification date from source workbook (if accessible)
 - **Link Status**: Detailed status message
 
-
 **Status Formula Logic:**
 ```excel
 Status = 
@@ -365,7 +343,6 @@ Status =
 - "⚠️ Workbook opened read-only" - File is open exclusively
 - "❌ Link broken (#REF!)" - Formula error, workbook may be renamed
 - "⏳ Workbook not updated (>90 days)" - Assessment is stale
-
 
 **Section 2: Link Validation Summary**
 
@@ -382,7 +359,6 @@ Status =
 - Green: All 4 workbooks linked and current (<90 days)
 - Yellow: All 4 linked but 1+ stale (>90 days)
 - Red: Any workbook not linked
-
 
 **Section 3: Data Pull Test**
 
@@ -431,7 +407,6 @@ Step-by-step refresh process:
 - Dashboard Link Health < 100%: Red background
 - Test Result = "Fail": Red background
 
-
 ### Usage Notes
 
 **Purpose (Implementer Perspective):**
@@ -449,7 +424,6 @@ assessments. Documents data lineage.
 - Before generating executive reports
 - If any dashboard metric shows unexpected values
 - During audit preparation
-
 
 **Key Principle - Fail Fast:**
 Dashboard should clearly indicate broken links, not silently show stale/incorrect data. 
@@ -515,7 +489,6 @@ Where:
 - **At Risk** (Yellow): Overall 80-89% OR Critical Gaps > 0
 - **Non-Compliant** (Red): Overall <80%
 
-
 **Section 3: Domain Compliance Breakdown**
 
 Table showing each domain:
@@ -574,7 +547,6 @@ Pull from Gap_Prioritization sheet (which aggregates from all 4 sources)
 - ↓ (Declining): Current < Previous assessment
 - N/A: First assessment, no historical data
 
-
 **Audit Readiness Score:**
 ```excel
 Audit_Readiness = 
@@ -603,7 +575,6 @@ Where:
 - **Due Soon** (Yellow): 60-90 days since assessment
 - **Overdue** (Red): >90 days since assessment
 
-
 **Section 7: Executive Summary (Text Box)**
 
 Narrative summary (2-3 paragraphs):
@@ -613,7 +584,6 @@ Narrative summary (2-3 paragraphs):
 - Critical gaps requiring attention
 - Recommended actions for executive sponsor
 - Resource requirements (if any)
-
 
 This section is **manually populated** by Dashboard Owner based on quantitative data.
 
@@ -627,7 +597,6 @@ Checklist format:
 - [ ] Executive review completed
 - [ ] Approval sign-off obtained
 - [ ] Next assessment cycle scheduled
-
 
 ### Dashboard Notes
 
@@ -648,7 +617,6 @@ governed at appropriate level.
 - Critical Gaps > 0: Red text, bold
 - Any domain <90%: Yellow background in domain table
 - Assessment >90 days old: Red background in currency table
-
 
 **Print Optimization:**
 Dashboard should fit on single page when printed/PDF'd. Use landscape orientation, 
@@ -749,7 +717,6 @@ This sheet aggregates data from all 4 source workbooks. For each asset:
 - Extract relevant metrics from each domain
 - Calculate aggregate compliance
 
-
 **CRITICAL - External Workbook VLOOKUP:**
 ```excel
 Change_Control_Compliance = 
@@ -776,7 +743,6 @@ Change_Control_Compliance =
 - Critical_Drift_Count > 0: Red background
 - High_Risk_Hardening_Gaps > 0: Red background
 
-
 ### Usage Notes
 
 **Purpose (Implementer Perspective):**
@@ -794,14 +760,12 @@ remediation plans exist.
 - **Primary_Gap_Domain**: Shows which domain needs most improvement for each asset
 - **Remediation_Priority**: Risk-based sequencing of remediation efforts
 
-
 **Analysis Questions This Sheet Answers:**
 
 - Which assets have compliance issues across multiple domains?
 - Are critical assets fully compliant?
 - Which domain is the weakest link for specific assets?
 - What is the distribution of compliance across asset portfolio?
-
 
 ---
 
@@ -854,7 +818,6 @@ sequencing.
 - Exception Without Justification
 - Process Deficiency
 
-
 **Risk_Score Formula:**
 ```excel
 Risk_Score = 
@@ -892,7 +855,6 @@ Manual or formula-based determination of whether gap affects multiple domains:
 - Unauthorized change → Impacts baseline, monitoring, and hardening
 - Monitoring gap → Cannot detect drift or hardening violations
 
-
 **Data Source:**
 
 This sheet aggregates gaps from all 4 source workbooks:
@@ -921,7 +883,6 @@ ASSIGN Priority_Rank (1 to N)
 - Cross_Domain_Impact = "Yes": Blue background
 - Status = "Blocked": Gray background
 
-
 ### Usage Notes
 
 **Purpose (Implementer Perspective):**
@@ -940,13 +901,11 @@ not arbitrary factors.
 - Target: Close all quick wins within 30 days
 - Benefit: Rapid compliance improvement, team momentum
 
-
 **Strategy 2: Critical Asset Focus**
 
 - Filter for Asset_Tier = "Critical"
 - Target: Zero gaps on critical assets
 - Benefit: Highest business risk mitigation
-
 
 **Strategy 3: Cross-Domain Impact**
 
@@ -954,13 +913,11 @@ not arbitrary factors.
 - Target: Close multi-domain gaps first
 - Benefit: One fix improves multiple domains
 
-
 **Strategy 4: Top 20**
 
 - Focus on Priority_Rank 1-20 regardless of other factors
 - Target: Close top 20 within 60 days
 - Benefit: Addresses highest aggregate risk
-
 
 **Key Insights:**
 
@@ -968,7 +925,6 @@ not arbitrary factors.
 - **Quick win percentage**: How many easy fixes available?
 - **Cross-domain gaps**: Systemic issues vs. isolated problems
 - **Overdue gap count**: Are we keeping pace with remediation?
-
 
 ---
 
@@ -1024,7 +980,6 @@ Trend =
 - Yellow: Current 80-89% OR Declining <5%
 - Red: Current <80% OR Declining ≥5%
 
-
 **Section 3: Gap Trend Analysis**
 
 Track gap count over time:
@@ -1059,7 +1014,6 @@ Net_Change = Gaps_Closed - Gaps_Opened
 - Security Hardening
 - Process Maturity
 - Target line at 95% (horizontal reference)
-
 
 **Section 5: Time to Remediate Analysis**
 
@@ -1145,14 +1099,12 @@ just compliant now, but getting better.
 - Allows comparison if discrepancies arise
 - Supports trend validation
 
-
 **Data Integrity:**
 
 - Use consistent assessment methodology across cycles
 - Same assessors if possible (reduces measurement bias)
 - Same target populations (adjust for new/decommissioned assets)
 - Document any methodology changes that affect comparability
-
 
 ---
 
@@ -1196,7 +1148,6 @@ Consolidated evidence index linking to domain-specific evidence in source workbo
 - Process Documentation
 - Training Records
 
-
 **Data Source:**
 
 This sheet consolidates evidence references from all 4 source workbooks:
@@ -1227,7 +1178,6 @@ Hyperlink_Formula =
 - Verification_Status = "Failed": Red background
 - Verification_Status = "Pending": Yellow background
 
-
 ### Usage Notes
 
 **Purpose (Implementer Perspective):**
@@ -1251,7 +1201,6 @@ searching through 4 separate workbooks.
 - Evidence is recent (within validity period)
 - Evidence location is documented and accessible
 - Verification status is "Verified" for all audit-critical evidence
-
 
 ---
 
@@ -1288,13 +1237,11 @@ KEY ACHIEVEMENTS:
 - [Achievement 2]
 - [Achievement 3]
 
-
 CRITICAL GAPS:
 
 - [Gap 1 with impact and remediation plan]
 - [Gap 2 with impact and remediation plan]
 - [Gap 3 with impact and remediation plan]
-
 
 RESOURCE REQUIREMENTS:
 [Any additional resources needed for remediation]
@@ -1344,7 +1291,6 @@ Scheduled for [date]
 - Overall 90-94%: Tier 3 review recommended
 - Overall <90% OR Critical Gaps >0: Tier 3 approval REQUIRED
 
-
 **Section 5: Action Items**
 
 | Action | Owner | Target Date | Status | Notes |
@@ -1364,7 +1310,6 @@ Checklist:
 - [ ] Next executive review scheduled
 - [ ] Dashboard distributed to stakeholders
 
-
 **Section 7: Distribution List**
 
 Document distributed to:
@@ -1376,7 +1321,6 @@ Document distributed to:
 - Internal Audit
 - External Auditors (upon request)
 - [Other stakeholders as appropriate]
-
 
 **Section 8: Revision History**
 
@@ -1403,13 +1347,11 @@ and risk is formally accepted by executives.
 - Before presenting to external auditors
 - Before next assessment cycle begins
 
-
 **Governance Cadence:**
 
 - **Dashboard Review**: Monthly by ISMS Manager
 - **Management Review**: Quarterly by IT/Security Managers  
 - **Executive Review**: Quarterly by CISO/CIO (or when Overall <90%)
-
 
 ---
 
@@ -1423,7 +1365,6 @@ and risk is formally accepted by executives.
    - Complete all assessment sheets
    - Validate data quality
 
-
 2. **Normalize Source Workbooks**
 ```bash
    python3 normalize_assessment_files_a89.py --source ./assessments --output ./dashboard
@@ -1436,7 +1377,6 @@ and risk is formally accepted by executives.
    - ISMS-IMP-A.8.9.3.xlsx
    - ISMS-IMP-A.8.9.4.xlsx
 
-
 3. **Generate Dashboard**
 ```bash
    python3 generate_a89_5_dashboard.py
@@ -1447,13 +1387,11 @@ and risk is formally accepted by executives.
    - Move generated dashboard to same directory as normalized workbooks
    - Ensure all 5 files are in same folder
 
-
 5. **Open and Link**
 
    - Open dashboard workbook
    - Excel prompts: "Update Links?" → Click "Update"
    - Verify Workbook_Integration_Settings shows all 4 sources linked
-
 
 6. **Validate Data**
 
@@ -1461,20 +1399,17 @@ and risk is formally accepted by executives.
    - Verify no #REF! errors in any sheet
    - Spot-check a few external formulas resolve correctly
 
-
 7. **Complete Narrative Sections**
 
    - Fill in Executive Summary in Overall_Compliance_Dashboard
    - Complete Risk Assessment in Approval_Sign_Off
    - Document any manual adjustments
 
-
 8. **Obtain Approvals**
 
    - Present to management
    - Obtain three-tier sign-offs
    - Distribute to stakeholders
-
 
 ### Refresh Process (Subsequent Cycles)
 
@@ -1483,7 +1418,6 @@ and risk is formally accepted by executives.
    - Re-run domain assessment scripts with current data
    - Or update existing domain workbooks manually
    - Save domain workbooks
-
 
 2. **Re-Normalize**
 ```bash
@@ -1499,7 +1433,6 @@ and risk is formally accepted by executives.
    - Click "Update Links" when prompted
    - Excel automatically pulls latest data from source workbooks
 
-
 4. **Update Trend Analysis**
 
    - Manually add new row to Assessment_History table
@@ -1507,14 +1440,12 @@ and risk is formally accepted by executives.
    - Update gap counts
    - Verify chart updates automatically
 
-
 5. **Review and Approve**
 
    - Review updated metrics
    - Update Executive Summary if needed
    - Obtain fresh approvals
    - Update Revision History
-
 
 ### Troubleshooting
 
@@ -1553,7 +1484,6 @@ Solution:
 - Click "Don't Update" to keep stale data (not recommended)
 - To suppress warning: File → Options → Advanced → General → "Ask to update automatic links" (uncheck)
 
-
 **Problem: Dashboard shows stale data**
 
 Cause: Links not updated or source workbooks not refreshed
@@ -1576,7 +1506,6 @@ Solution:
 - Populate historical data after 2nd and subsequent cycles
 - Maintain consistent assessment schedule for valid trends
 
-
 ---
 
 ## Quality Assurance & Validation
@@ -1592,14 +1521,12 @@ Before distributing dashboard to stakeholders:
    - [ ] Data Pull Test shows all "Pass"
    - [ ] Overall_Compliance_Dashboard shows reasonable metrics
 
-
 2. **Data Integrity**
 
    - [ ] Overall compliance aligns with domain averages
    - [ ] Gap counts match sum of domain gaps
    - [ ] Asset counts consistent across sheets
    - [ ] Dates are current (not test dates)
-
 
 3. **Narrative Completeness**
 
@@ -1608,7 +1535,6 @@ Before distributing dashboard to stakeholders:
    - [ ] Action Items documented
    - [ ] Approval Sign-Off ready for signatures
 
-
 4. **Formula Accuracy**
 
    - [ ] Spot-check weighted average calculation
@@ -1616,14 +1542,12 @@ Before distributing dashboard to stakeholders:
    - [ ] Test conditional formatting triggers correctly
    - [ ] Validate Risk_Score calculations
 
-
 5. **Presentation Quality**
 
    - [ ] Overall_Compliance_Dashboard fits on one page
    - [ ] Charts display correctly
    - [ ] Conditional formatting visible
    - [ ] No truncated text or ###### column width errors
-
 
 ### Post-Approval Validation
 
@@ -1636,13 +1560,11 @@ After executive sign-off:
    - [ ] Distribution List complete
    - [ ] Dashboard saved with appropriate version number
 
-
 2. **Archival**
 
    - [ ] Copy saved to archive directory with date
    - [ ] Normalization manifest saved with dashboard
    - [ ] Source workbooks archived for audit trail
-
 
 3. **Stakeholder Distribution**
 
@@ -1650,13 +1572,11 @@ After executive sign-off:
    - [ ] Dashboard distributed per distribution list
    - [ ] SharePoint/document repository updated
 
-
 4. **Next Cycle Planning**
 
    - [ ] Next assessment dates scheduled
    - [ ] Assessors assigned
    - [ ] Reminder calendar entries created
-
 
 ---
 
@@ -1671,14 +1591,12 @@ After executive sign-off:
 - Create first dashboard
 - Establish baselines
 
-
 **Phase 2: Process Refinement (Month 2-3)**
 
 - Review dashboard with stakeholders
 - Refine data collection processes
 - Address initial gaps
 - Document lessons learned
-
 
 **Phase 3: Second Cycle (Month 4)**
 
@@ -1687,14 +1605,12 @@ After executive sign-off:
 - Begin trend analysis
 - Demonstrate improvement
 
-
 **Phase 4: Steady State (Month 5+)**
 
 - Quarterly assessment cycles
 - Continuous gap remediation
 - Regular executive reporting
 - Trend-based optimization
-
 
 ### Success Indicators
 
@@ -1708,7 +1624,6 @@ After executive sign-off:
 - Stakeholders use dashboard for decision-making
 - Process feels systematic, not ad-hoc
 
-
 **Red flags:**
 
 - Dashboard shows stale data (>90 days old)
@@ -1717,7 +1632,6 @@ After executive sign-off:
 - Gaps persist across multiple cycles without remediation
 - Executive reviews are cursory or skipped
 - Dashboard used only for audit prep (not ongoing management)
-
 
 ---
 
@@ -1746,7 +1660,6 @@ After executive sign-off:
 - Technical Review: Security Architect
 - Security Review: Chief Information Security Officer (CISO)
 
-
 ### Distribution
 
 Configuration management team, system administrators, IT operations, security engineers, auditors
@@ -1755,7 +1668,6 @@ Configuration management team, system administrators, IT operations, security en
 
 - ISMS-POL-A.8.9: Configuration Management Policy (Consolidated)
 - ISMS-CTX-A.8.9: Configuration Management Reference (NOT ISMS)
-
 
 ---
 
@@ -1799,7 +1711,6 @@ Comprehensive guidance for using the consolidated compliance dashboard.
 - How external workbook linking works
 - Prerequisites (4 source workbooks normalized)
 
-
 **Section 2: Key Concepts**
 
 - **External Workbook Linking**: Formulas reference other Excel files in same directory
@@ -1808,7 +1719,6 @@ Comprehensive guidance for using the consolidated compliance dashboard.
 - **Domain Compliance**: Individual compliance percentage for each assessment area
 - **Critical Gap**: High-severity issue requiring immediate attention
 - **Compliance Trend**: Direction of compliance over time (improving/declining/stable)
-
 
 **Section 3: Setup Workflow**
 1. Complete all 4 domain assessments (A.8.9.1 through A.8.9.4)
@@ -1834,7 +1744,6 @@ Comprehensive guidance for using the consolidated compliance dashboard.
 - **Evidence_Register**: Links to domain-specific evidence
 - **Approval_Sign_Off**: Executive approval and governance
 
-
 **Section 5: Understanding Overall Compliance**
 Domain weights and calculation methodology:
 
@@ -1843,7 +1752,6 @@ Domain weights and calculation methodology:
 - Configuration Monitoring: 20% (detection capability)
 - Security Hardening: 25% (security criticality)
 - Process Maturity: 10% (governance and sustainability)
-
 
 Formula: `Overall = (D1×0.20) + (D2×0.25) + (D3×0.20) + (D4×0.25) + (D5×0.10)`
 
@@ -1855,14 +1763,12 @@ How it works:
 - Links are relative - files must be in same directory
 - If workbook not found: Formula shows #REF! error
 
-
 Troubleshooting broken links:
 
 - Verify all 4 normalized workbooks exist in same directory as dashboard
 - Excel: Data → Edit Links → Update Values
 - Check filenames match exactly (case-sensitive on some systems)
 - Ensure workbooks are not open in exclusive mode
-
 
 **Section 7: Update Frequency**
 
@@ -1871,7 +1777,6 @@ Troubleshooting broken links:
 - **Executive Review**: Monthly minimum
 - **Trend Analysis**: Requires 3+ assessment cycles for meaningful insights
 
-
 **Section 8: Roles and Responsibilities**
 
 - **Dashboard Owner**: Coordinates assessment schedule, ensures dashboard currency
@@ -1879,7 +1784,6 @@ Troubleshooting broken links:
 - **Executive Sponsor**: Reviews dashboard, approves remediation priorities
 - **ISMS Manager**: Oversees overall A.8.9 compliance, reports to leadership
 - **Auditor**: Verifies dashboard accuracy, validates evidence links
-
 
 **Section 9: Critical Success Factors**
 
@@ -1890,7 +1794,6 @@ Troubleshooting broken links:
 - Remediation plans exist for all gaps
 - Compliance trend is stable or improving
 
-
 **Section 10: Integration with ISMS**
 Dashboard feeds:
 
@@ -1899,14 +1802,12 @@ Dashboard feeds:
 - **Audit Preparation**: Comprehensive evidence package for A.8.9
 - **Continuous Improvement**: Gap analysis drives improvement initiatives
 
-
 **Formatting:**
 
 - Professional layout with clear section headers
 - Use tables for structured information
 - Include examples where helpful (generic examples only)
 - Hyperlinks to other sheets for easy navigation
-
 
 ---
 
@@ -1938,7 +1839,6 @@ Table showing linked workbooks:
 - **Last Modified**: Last modification date from source workbook (if accessible)
 - **Link Status**: Detailed status message
 
-
 **Status Formula Logic:**
 ```excel
 Status = 
@@ -1953,7 +1853,6 @@ Status =
 - "⚠️ Workbook opened read-only" - File is open exclusively
 - "❌ Link broken (#REF!)" - Formula error, workbook may be renamed
 - "⏳ Workbook not updated (>90 days)" - Assessment is stale
-
 
 **Section 2: Link Validation Summary**
 
@@ -1970,7 +1869,6 @@ Status =
 - Green: All 4 workbooks linked and current (<90 days)
 - Yellow: All 4 linked but 1+ stale (>90 days)
 - Red: Any workbook not linked
-
 
 **Section 3: Data Pull Test**
 
@@ -2019,7 +1917,6 @@ Step-by-step refresh process:
 - Dashboard Link Health < 100%: Red background
 - Test Result = "Fail": Red background
 
-
 ### Usage Notes
 
 **Purpose (Implementer Perspective):**
@@ -2037,7 +1934,6 @@ assessments. Documents data lineage.
 - Before generating executive reports
 - If any dashboard metric shows unexpected values
 - During audit preparation
-
 
 **Key Principle - Fail Fast:**
 Dashboard should clearly indicate broken links, not silently show stale/incorrect data. 
@@ -2103,7 +1999,6 @@ Where:
 - **At Risk** (Yellow): Overall 80-89% OR Critical Gaps > 0
 - **Non-Compliant** (Red): Overall <80%
 
-
 **Section 3: Domain Compliance Breakdown**
 
 Table showing each domain:
@@ -2162,7 +2057,6 @@ Pull from Gap_Prioritization sheet (which aggregates from all 4 sources)
 - ↓ (Declining): Current < Previous assessment
 - N/A: First assessment, no historical data
 
-
 **Audit Readiness Score:**
 ```excel
 Audit_Readiness = 
@@ -2191,7 +2085,6 @@ Where:
 - **Due Soon** (Yellow): 60-90 days since assessment
 - **Overdue** (Red): >90 days since assessment
 
-
 **Section 7: Executive Summary (Text Box)**
 
 Narrative summary (2-3 paragraphs):
@@ -2201,7 +2094,6 @@ Narrative summary (2-3 paragraphs):
 - Critical gaps requiring attention
 - Recommended actions for executive sponsor
 - Resource requirements (if any)
-
 
 This section is **manually populated** by Dashboard Owner based on quantitative data.
 
@@ -2215,7 +2107,6 @@ Checklist format:
 - [ ] Executive review completed
 - [ ] Approval sign-off obtained
 - [ ] Next assessment cycle scheduled
-
 
 ### Dashboard Notes
 
@@ -2236,7 +2127,6 @@ governed at appropriate level.
 - Critical Gaps > 0: Red text, bold
 - Any domain <90%: Yellow background in domain table
 - Assessment >90 days old: Red background in currency table
-
 
 **Print Optimization:**
 Dashboard should fit on single page when printed/PDF'd. Use landscape orientation, 
@@ -2337,7 +2227,6 @@ This sheet aggregates data from all 4 source workbooks. For each asset:
 - Extract relevant metrics from each domain
 - Calculate aggregate compliance
 
-
 **CRITICAL - External Workbook VLOOKUP:**
 ```excel
 Change_Control_Compliance = 
@@ -2364,7 +2253,6 @@ Change_Control_Compliance =
 - Critical_Drift_Count > 0: Red background
 - High_Risk_Hardening_Gaps > 0: Red background
 
-
 ### Usage Notes
 
 **Purpose (Implementer Perspective):**
@@ -2382,14 +2270,12 @@ remediation plans exist.
 - **Primary_Gap_Domain**: Shows which domain needs most improvement for each asset
 - **Remediation_Priority**: Risk-based sequencing of remediation efforts
 
-
 **Analysis Questions This Sheet Answers:**
 
 - Which assets have compliance issues across multiple domains?
 - Are critical assets fully compliant?
 - Which domain is the weakest link for specific assets?
 - What is the distribution of compliance across asset portfolio?
-
 
 ---
 
@@ -2442,7 +2328,6 @@ sequencing.
 - Exception Without Justification
 - Process Deficiency
 
-
 **Risk_Score Formula:**
 ```excel
 Risk_Score = 
@@ -2480,7 +2365,6 @@ Manual or formula-based determination of whether gap affects multiple domains:
 - Unauthorized change → Impacts baseline, monitoring, and hardening
 - Monitoring gap → Cannot detect drift or hardening violations
 
-
 **Data Source:**
 
 This sheet aggregates gaps from all 4 source workbooks:
@@ -2509,7 +2393,6 @@ ASSIGN Priority_Rank (1 to N)
 - Cross_Domain_Impact = "Yes": Blue background
 - Status = "Blocked": Gray background
 
-
 ### Usage Notes
 
 **Purpose (Implementer Perspective):**
@@ -2528,13 +2411,11 @@ not arbitrary factors.
 - Target: Close all quick wins within 30 days
 - Benefit: Rapid compliance improvement, team momentum
 
-
 **Strategy 2: Critical Asset Focus**
 
 - Filter for Asset_Tier = "Critical"
 - Target: Zero gaps on critical assets
 - Benefit: Highest business risk mitigation
-
 
 **Strategy 3: Cross-Domain Impact**
 
@@ -2542,13 +2423,11 @@ not arbitrary factors.
 - Target: Close multi-domain gaps first
 - Benefit: One fix improves multiple domains
 
-
 **Strategy 4: Top 20**
 
 - Focus on Priority_Rank 1-20 regardless of other factors
 - Target: Close top 20 within 60 days
 - Benefit: Addresses highest aggregate risk
-
 
 **Key Insights:**
 
@@ -2556,7 +2435,6 @@ not arbitrary factors.
 - **Quick win percentage**: How many easy fixes available?
 - **Cross-domain gaps**: Systemic issues vs. isolated problems
 - **Overdue gap count**: Are we keeping pace with remediation?
-
 
 ---
 
@@ -2612,7 +2490,6 @@ Trend =
 - Yellow: Current 80-89% OR Declining <5%
 - Red: Current <80% OR Declining ≥5%
 
-
 **Section 3: Gap Trend Analysis**
 
 Track gap count over time:
@@ -2647,7 +2524,6 @@ Net_Change = Gaps_Closed - Gaps_Opened
 - Security Hardening
 - Process Maturity
 - Target line at 95% (horizontal reference)
-
 
 **Section 5: Time to Remediate Analysis**
 
@@ -2733,14 +2609,12 @@ just compliant now, but getting better.
 - Allows comparison if discrepancies arise
 - Supports trend validation
 
-
 **Data Integrity:**
 
 - Use consistent assessment methodology across cycles
 - Same assessors if possible (reduces measurement bias)
 - Same target populations (adjust for new/decommissioned assets)
 - Document any methodology changes that affect comparability
-
 
 ---
 
@@ -2784,7 +2658,6 @@ Consolidated evidence index linking to domain-specific evidence in source workbo
 - Process Documentation
 - Training Records
 
-
 **Data Source:**
 
 This sheet consolidates evidence references from all 4 source workbooks:
@@ -2815,7 +2688,6 @@ Hyperlink_Formula =
 - Verification_Status = "Failed": Red background
 - Verification_Status = "Pending": Yellow background
 
-
 ### Usage Notes
 
 **Purpose (Implementer Perspective):**
@@ -2839,7 +2711,6 @@ searching through 4 separate workbooks.
 - Evidence is recent (within validity period)
 - Evidence location is documented and accessible
 - Verification status is "Verified" for all audit-critical evidence
-
 
 ---
 
@@ -2876,13 +2747,11 @@ KEY ACHIEVEMENTS:
 - [Achievement 2]
 - [Achievement 3]
 
-
 CRITICAL GAPS:
 
 - [Gap 1 with impact and remediation plan]
 - [Gap 2 with impact and remediation plan]
 - [Gap 3 with impact and remediation plan]
-
 
 RESOURCE REQUIREMENTS:
 [Any additional resources needed for remediation]
@@ -2932,7 +2801,6 @@ Scheduled for [date]
 - Overall 90-94%: Tier 3 review recommended
 - Overall <90% OR Critical Gaps >0: Tier 3 approval REQUIRED
 
-
 **Section 5: Action Items**
 
 | Action | Owner | Target Date | Status | Notes |
@@ -2952,7 +2820,6 @@ Checklist:
 - [ ] Next executive review scheduled
 - [ ] Dashboard distributed to stakeholders
 
-
 **Section 7: Distribution List**
 
 Document distributed to:
@@ -2964,7 +2831,6 @@ Document distributed to:
 - Internal Audit
 - External Auditors (upon request)
 - [Other stakeholders as appropriate]
-
 
 **Section 8: Revision History**
 
@@ -2991,13 +2857,11 @@ and risk is formally accepted by executives.
 - Before presenting to external auditors
 - Before next assessment cycle begins
 
-
 **Governance Cadence:**
 
 - **Dashboard Review**: Monthly by ISMS Manager
 - **Management Review**: Quarterly by IT/Security Managers  
 - **Executive Review**: Quarterly by CISO/CIO (or when Overall <90%)
-
 
 ---
 
@@ -3011,7 +2875,6 @@ and risk is formally accepted by executives.
    - Complete all assessment sheets
    - Validate data quality
 
-
 2. **Normalize Source Workbooks**
 ```bash
    python3 normalize_assessment_files_a89.py --source ./assessments --output ./dashboard
@@ -3024,7 +2887,6 @@ and risk is formally accepted by executives.
    - ISMS-IMP-A.8.9.3.xlsx
    - ISMS-IMP-A.8.9.4.xlsx
 
-
 3. **Generate Dashboard**
 ```bash
    python3 generate_a89_5_dashboard.py
@@ -3035,13 +2897,11 @@ and risk is formally accepted by executives.
    - Move generated dashboard to same directory as normalized workbooks
    - Ensure all 5 files are in same folder
 
-
 5. **Open and Link**
 
    - Open dashboard workbook
    - Excel prompts: "Update Links?" → Click "Update"
    - Verify Workbook_Integration_Settings shows all 4 sources linked
-
 
 6. **Validate Data**
 
@@ -3049,20 +2909,17 @@ and risk is formally accepted by executives.
    - Verify no #REF! errors in any sheet
    - Spot-check a few external formulas resolve correctly
 
-
 7. **Complete Narrative Sections**
 
    - Fill in Executive Summary in Overall_Compliance_Dashboard
    - Complete Risk Assessment in Approval_Sign_Off
    - Document any manual adjustments
 
-
 8. **Obtain Approvals**
 
    - Present to management
    - Obtain three-tier sign-offs
    - Distribute to stakeholders
-
 
 ### Refresh Process (Subsequent Cycles)
 
@@ -3071,7 +2928,6 @@ and risk is formally accepted by executives.
    - Re-run domain assessment scripts with current data
    - Or update existing domain workbooks manually
    - Save domain workbooks
-
 
 2. **Re-Normalize**
 ```bash
@@ -3087,7 +2943,6 @@ and risk is formally accepted by executives.
    - Click "Update Links" when prompted
    - Excel automatically pulls latest data from source workbooks
 
-
 4. **Update Trend Analysis**
 
    - Manually add new row to Assessment_History table
@@ -3095,14 +2950,12 @@ and risk is formally accepted by executives.
    - Update gap counts
    - Verify chart updates automatically
 
-
 5. **Review and Approve**
 
    - Review updated metrics
    - Update Executive Summary if needed
    - Obtain fresh approvals
    - Update Revision History
-
 
 ### Troubleshooting
 
@@ -3141,7 +2994,6 @@ Solution:
 - Click "Don't Update" to keep stale data (not recommended)
 - To suppress warning: File → Options → Advanced → General → "Ask to update automatic links" (uncheck)
 
-
 **Problem: Dashboard shows stale data**
 
 Cause: Links not updated or source workbooks not refreshed
@@ -3164,7 +3016,6 @@ Solution:
 - Populate historical data after 2nd and subsequent cycles
 - Maintain consistent assessment schedule for valid trends
 
-
 ---
 
 ## Quality Assurance & Validation
@@ -3180,14 +3031,12 @@ Before distributing dashboard to stakeholders:
    - [ ] Data Pull Test shows all "Pass"
    - [ ] Overall_Compliance_Dashboard shows reasonable metrics
 
-
 2. **Data Integrity**
 
    - [ ] Overall compliance aligns with domain averages
    - [ ] Gap counts match sum of domain gaps
    - [ ] Asset counts consistent across sheets
    - [ ] Dates are current (not test dates)
-
 
 3. **Narrative Completeness**
 
@@ -3196,7 +3045,6 @@ Before distributing dashboard to stakeholders:
    - [ ] Action Items documented
    - [ ] Approval Sign-Off ready for signatures
 
-
 4. **Formula Accuracy**
 
    - [ ] Spot-check weighted average calculation
@@ -3204,14 +3052,12 @@ Before distributing dashboard to stakeholders:
    - [ ] Test conditional formatting triggers correctly
    - [ ] Validate Risk_Score calculations
 
-
 5. **Presentation Quality**
 
    - [ ] Overall_Compliance_Dashboard fits on one page
    - [ ] Charts display correctly
    - [ ] Conditional formatting visible
    - [ ] No truncated text or ###### column width errors
-
 
 ### Post-Approval Validation
 
@@ -3224,13 +3070,11 @@ After executive sign-off:
    - [ ] Distribution List complete
    - [ ] Dashboard saved with appropriate version number
 
-
 2. **Archival**
 
    - [ ] Copy saved to archive directory with date
    - [ ] Normalization manifest saved with dashboard
    - [ ] Source workbooks archived for audit trail
-
 
 3. **Stakeholder Distribution**
 
@@ -3238,13 +3082,11 @@ After executive sign-off:
    - [ ] Dashboard distributed per distribution list
    - [ ] SharePoint/document repository updated
 
-
 4. **Next Cycle Planning**
 
    - [ ] Next assessment dates scheduled
    - [ ] Assessors assigned
    - [ ] Reminder calendar entries created
-
 
 ---
 
@@ -3259,14 +3101,12 @@ After executive sign-off:
 - Create first dashboard
 - Establish baselines
 
-
 **Phase 2: Process Refinement (Month 2-3)**
 
 - Review dashboard with stakeholders
 - Refine data collection processes
 - Address initial gaps
 - Document lessons learned
-
 
 **Phase 3: Second Cycle (Month 4)**
 
@@ -3275,14 +3115,12 @@ After executive sign-off:
 - Begin trend analysis
 - Demonstrate improvement
 
-
 **Phase 4: Steady State (Month 5+)**
 
 - Quarterly assessment cycles
 - Continuous gap remediation
 - Regular executive reporting
 - Trend-based optimization
-
 
 ### Success Indicators
 
@@ -3296,7 +3134,6 @@ After executive sign-off:
 - Stakeholders use dashboard for decision-making
 - Process feels systematic, not ad-hoc
 
-
 **Red flags:**
 
 - Dashboard shows stale data (>90 days old)
@@ -3305,7 +3142,6 @@ After executive sign-off:
 - Gaps persist across multiple cycles without remediation
 - Executive reviews are cursory or skipped
 - Dashboard used only for audit prep (not ongoing management)
-
 
 ---
 

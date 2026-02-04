@@ -44,7 +44,6 @@ This document consists of two parts:
   - Cell Styling Reference
   - Integration Points
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -65,7 +64,6 @@ This assessment documents the physical entry CONTROLS at your secure areas. This
 - How are contractors and maintenance personnel controlled?
 - What happens for after-hours access?
 - Are tailgating/piggybacking prevention measures in place?
-
 
 #### ISO 27001:2022 Control Reference
 
@@ -89,7 +87,6 @@ Entry controls are the ACTIVE security measures that verify and log who enters s
 - Access log retention and review practices
 - System health and maintenance status
 
-
 **Visitor Management:**
 
 - Sign-in procedures at reception
@@ -99,7 +96,6 @@ Entry controls are the ACTIVE security measures that verify and log who enters s
 - Visitor log retention and review
 - Emergency evacuation procedures for visitors
 
-
 **Contractor Access:**
 
 - Pre-authorisation procedures
@@ -108,7 +104,6 @@ Entry controls are the ACTIVE security measures that verify and log who enters s
 - Access logging and review
 - Credential management and return
 
-
 **After-Hours Access:**
 
 - Enhanced authentication for after-hours
@@ -116,7 +111,6 @@ Entry controls are the ACTIVE security measures that verify and log who enters s
 - Security response procedures
 - Access logging
 - Lone worker safety considerations
-
 
 #### How This Relates to Other A.7.1-2-3 Assessments
 
@@ -147,12 +141,10 @@ This assessment builds on Zone definitions from S1 to document HOW access is con
 - Knowledge of security zone classifications
 - Experience with physical security incident management
 
-
 #### Time Commitment
 
 - **Initial assessment:** 8-10 hours
 - **Quarterly updates:** 2-3 hours
-
 
 ### Expected Outputs
 
@@ -182,7 +174,6 @@ Before starting this assessment, gather:
 - Access to access log reports
 - Access to CCTV system (for verification)
 
-
 #### 2. Documentation
 
 - Access control system configuration
@@ -193,7 +184,6 @@ Before starting this assessment, gather:
 - Emergency response procedures
 - Badge replacement procedures
 
-
 #### 3. Historical Data
 
 - Access logs (last 90 days)
@@ -202,7 +192,6 @@ Before starting this assessment, gather:
 - Security incident reports
 - Tailgating incident reports
 - Badge loss/theft reports
-
 
 #### 4. Policy Requirements
 
@@ -213,14 +202,12 @@ Before starting this assessment, gather:
   - Section 2.2.4: Contractor Access
   - Section 2.2.5: After-Hours Access
 
-
 ### Required Tools
 
 - Microsoft Excel (2016 or later) for workbook completion
 - Access to physical access control system admin console
 - Camera/phone for evidence photographs
 - Access to visitor management system
-
 
 ### Dependencies
 
@@ -269,7 +256,6 @@ Outputs from this assessment are INPUT to:
 - Schedule facility walk-through with Physical Security Manager
 - Download or generate assessment workbook (Excel file)
 
-
 **Step 2: Access Control Systems Assessment (Day 1-2 - 3-4 hours)**
 
 - Open assessment workbook
@@ -280,7 +266,6 @@ Outputs from this assessment are INPUT to:
 - Review access log retention settings
 - Document access review schedules and last review dates
 
-
 **Step 3: Visitor Management Assessment (Day 2-3 - 2-3 hours)**
 
 - Walk through visitor arrival experience
@@ -290,7 +275,6 @@ Outputs from this assessment are INPUT to:
 - Check visitor badge issuance and return procedures
 - Document escort requirements and compliance
 
-
 **Step 4: Contractor Access Assessment (Day 3-4 - 2 hours)**
 
 - Review contractor management procedures
@@ -299,7 +283,6 @@ Outputs from this assessment are INPUT to:
 - Check access logging for contractors
 - Document supervision requirements by area
 
-
 **Step 5: After-Hours Access Assessment (Day 4 - 2 hours)**
 
 - Review after-hours access policy
@@ -307,7 +290,6 @@ Outputs from this assessment are INPUT to:
 - Verify enhanced authentication requirements
 - Check alarm integration
 - Document security response procedures
-
 
 **Step 6: Evidence Collection (Day 4-5 - 2 hours)**
 
@@ -318,7 +300,6 @@ Outputs from this assessment are INPUT to:
 - Document evidence in Sheet 7 (Evidence Register)
 - Store evidence files in secure location
 
-
 **Step 7: Summary Review (Day 5 - 1 hour)**
 
 - Review Sheet 6 (Summary Dashboard) - automated compliance scores
@@ -326,13 +307,11 @@ Outputs from this assessment are INPUT to:
 - Identify areas below threshold
 - Prepare gap remediation plan
 
-
 **Step 8: Quality Check (Day 5 - 1 hour)**
 
 - Complete self-assessment using Quality Checklist (see section below)
 - Verify all required fields completed
 - Verify evidence register complete
-
 
 **Step 9: Obtain Approvals (Day 6-10 - asynchronous)**
 
@@ -340,7 +319,6 @@ Outputs from this assessment are INPUT to:
 - Submit to Level 2: Facilities Manager
 - After Level 2, submit to Level 3: Physical Security Manager
 - After Level 3, submit to Level 4: CISO
-
 
 ---
 
@@ -361,7 +339,6 @@ Outputs from this assessment are INPUT to:
 - **Status Legend** (Rows 14-17):
   - Read-only reference - understand colour coding
 
-
 **Time Required:** 5 minutes
 
 ### Sheet 2: Access Control Systems
@@ -375,58 +352,48 @@ Outputs from this assessment are INPUT to:
 - Unique identifier: "EP-001", "EP-002", etc.
 - Use consistent numbering across all facilities
 
-
 **Column B - Location:**
 
 - Descriptive location: "Main Entrance - Building A", "Side Door - East Wing"
 - Include building name and specific location
-
 
 **Column C - Security Zone:**
 
 - Dropdown: "Controlled Zone", "Restricted Zone", "High-Security Zone"
 - Must match zone definitions from S1
 
-
 **Column D - Access System Type:**
 
 - Dropdown: "Card", "PIN", "Biometric", "Card+PIN", "Multi-Factor"
 - Document the actual system deployed
-
 
 **Column E - Authentication Method:**
 
 - Dropdown: "Badge Only", "Badge+PIN", "Badge+Biometric", "Dual-Person"
 - This is what's required to gain entry
 
-
 **Column F - Anti-Tailgating:**
 
 - Dropdown: "Yes", "No", "Partial"
 - Document measures like mantraps, turnstiles, security guards
-
 
 **Column G - Log Retention (Days):**
 
 - Number of days access logs are retained
 - Verify against policy requirements
 
-
 **Column H - Last Review Date:**
 
 - Date of last access rights review
 - Should be within quarterly requirement
 
-
 **Column I - Status:**
 
 - Dropdown: "Compliant", "Partial", "Non-Compliant", "N/A"
 
-
 **Column J - Notes:**
 
 - Any additional context or identified gaps
-
 
 **Time Required:** 1-2 hours
 
@@ -440,47 +407,38 @@ Outputs from this assessment are INPUT to:
 
 - Dropdown: "Sign-In", "ID Check", "Badge", "Escort", "Sign-Out", "After-Hours"
 
-
 **Column B - Location/Facility:**
 
 - Where this procedure applies: "All Facilities", "HQ Reception", "Branch Office A"
-
 
 **Column C - Implemented:**
 
 - Dropdown: "Yes", "No", "Partial", "N/A"
 - Is the procedure in place?
 
-
 **Column D - Sign-In Process:**
 
 - Is visitor sign-in required? "Yes", "No", "Partial", "N/A"
-
 
 **Column E - ID Verification:**
 
 - Is government-issued ID checked? "Yes", "No", "Partial", "N/A"
 
-
 **Column F - Badge Issued:**
 
 - Is a visitor badge issued? "Yes", "No", "Partial", "N/A"
-
 
 **Column G - Escort Required:**
 
 - Is escort required in secure areas? "Yes", "No", "Partial", "N/A"
 
-
 **Column H - Status:**
 
 - Dropdown: "Compliant", "Partial", "Non-Compliant", "N/A"
 
-
 **Column I - Notes:**
 
 - Any additional context
-
 
 **Time Required:** 45-60 minutes
 
@@ -494,46 +452,37 @@ Outputs from this assessment are INPUT to:
 
 - Dropdown: "IT", "Cleaning", "Security", "HVAC", "Delivery", "Construction", "Other"
 
-
 **Column B - Facility/Area:**
 
 - Where contractors of this type access: "All Areas", "Server Room", "Office Floors"
-
 
 **Column C - Pre-Authorisation:**
 
 - Is pre-authorisation required? "Yes", "No", "Partial", "N/A"
 
-
 **Column D - Time-Limited Access:**
 
 - Is access time-limited? "Yes", "No", "Partial", "N/A"
-
 
 **Column E - Access Logged:**
 
 - Is access logged? "Yes", "No", "Partial", "N/A"
 
-
 **Column F - Escort Required:**
 
 - Is escort required? "Yes", "No", "Partial", "N/A"
-
 
 **Column G - Supervision Level:**
 
 - Dropdown: "Full Escort", "Spot Checks", "Self-Supervised", "Not Required"
 
-
 **Column H - Status:**
 
 - Dropdown: "Compliant", "Partial", "Non-Compliant", "N/A"
 
-
 **Column I - Notes:**
 
 - Any additional context
-
 
 **Time Required:** 30-45 minutes
 
@@ -547,46 +496,37 @@ Outputs from this assessment are INPUT to:
 
 - Location: "HQ - Main Entrance", "Datacenter - Primary Entry"
 
-
 **Column B - Security Zone:**
 
 - Dropdown: "Controlled", "Restricted", "High-Security"
-
 
 **Column C - After-Hours Period:**
 
 - Definition: "18:00-07:00 weekdays, all day weekends/holidays"
 
-
 **Column D - Enhanced Auth:**
 
 - Is enhanced authentication required? "Yes", "No", "Partial", "N/A"
-
 
 **Column E - Alarm Integration:**
 
 - Is entry linked to alarm system? "Yes", "No", "Partial", "N/A"
 
-
 **Column F - Security Response:**
 
 - What security response exists: "SOC Monitoring", "Guard Patrol", "Automated Alert"
-
 
 **Column G - Access Logged:**
 
 - Is after-hours access logged? "Yes", "No", "Partial", "N/A"
 
-
 **Column H - Status:**
 
 - Dropdown: "Compliant", "Partial", "Non-Compliant", "N/A"
 
-
 **Column I - Notes:**
 
 - Any additional context
-
 
 **Time Required:** 30-45 minutes
 
@@ -616,36 +556,29 @@ Outputs from this assessment are INPUT to:
 
 - Unique identifier: "E-001", "E-002", etc.
 
-
 **Column B - Evidence Type:**
 
 - Type of evidence: "Configuration Screenshot", "Access Log", "Visitor Log", "Procedure Document"
-
 
 **Column C - Description:**
 
 - What the evidence shows
 
-
 **Column D - Collection Date:**
 
 - Date evidence was collected
-
 
 **Column E - Collector:**
 
 - Who collected the evidence
 
-
 **Column F - Location/Link:**
 
 - Where evidence is stored: SharePoint path, file server location
 
-
 **Column G - Status:**
 
 - Dropdown: "Collected", "Pending", "Missing"
-
 
 **Time Required:** 1-2 hours
 
@@ -677,7 +610,6 @@ Outputs from this assessment are INPUT to:
 - Maintenance logs
 - System health reports
 
-
 **2. Visitor Management:**
 
 - Visitor log samples (1 month)
@@ -685,7 +617,6 @@ Outputs from this assessment are INPUT to:
 - Reception procedures document
 - Escort sign-in sheets
 - Visitor log retention verification
-
 
 **3. Contractor Access:**
 
@@ -695,7 +626,6 @@ Outputs from this assessment are INPUT to:
 - Time-limited access configuration
 - Contractor access logs
 
-
 **4. After-Hours:**
 
 - After-hours access logs
@@ -704,13 +634,11 @@ Outputs from this assessment are INPUT to:
 - Enhanced authentication configuration
 - Incident reports (after-hours)
 
-
 **5. System Integration:**
 
 - Integration with HR systems (termination workflow)
 - Badge deactivation logs
 - Emergency access procedures
-
 
 ### Evidence Storage
 
@@ -739,7 +667,6 @@ Outputs from this assessment are INPUT to:
   - ❌ MISTAKE: Only listing "Main Entrance - Building A" when building has 8 entry points
   - ✅ CORRECT: Documenting all 8 entry points including emergency exits and loading dock
 
-
 ### Pitfall 2: Not Testing Anti-Tailgating
 
 - **Problem:** Assuming anti-tailgating measures work without verification
@@ -755,7 +682,6 @@ Outputs from this assessment are INPUT to:
 - **Example:**
   - ❌ MISTAKE: Marking "Anti-Tailgating: Yes" because mantrap is installed but never testing it
   - ✅ CORRECT: Observing mantrap operation, reviewing incident reports, confirming effectiveness
-
 
 ### Pitfall 3: Visitor Log Gaps
 
@@ -773,7 +699,6 @@ Outputs from this assessment are INPUT to:
   - ❌ MISTAKE: Accepting visitor management as "Compliant" without sampling logs
   - ✅ CORRECT: Sampling 50 visitor entries, finding 90% complete sign-in but only 60% sign-out
 
-
 ### Pitfall 4: Contractor Access Untracked
 
 - **Problem:** Contractors accessing facilities without proper pre-authorisation or logging
@@ -789,7 +714,6 @@ Outputs from this assessment are INPUT to:
 - **Example:**
   - ❌ MISTAKE: Documenting contractor controls as "Compliant" without verification
   - ✅ CORRECT: Reviewing 20 contractor visits, finding 3 without pre-authorisation
-
 
 ### Pitfall 5: After-Hours Controls Not Enhanced
 
@@ -807,7 +731,6 @@ Outputs from this assessment are INPUT to:
   - ❌ MISTAKE: Assuming after-hours access requires additional authentication
   - ✅ CORRECT: Testing entry at 22:00, confirming badge-only still works (gap identified)
 
-
 ### Pitfall 6: Access Reviews Not Current
 
 - **Problem:** Quarterly access reviews not completed or overdue
@@ -823,7 +746,6 @@ Outputs from this assessment are INPUT to:
 - **Example:**
   - ❌ MISTAKE: Documenting "Last Review: Q2 2025" in Q1 2026 without flagging as overdue
   - ✅ CORRECT: Flagging review as 6+ months overdue, documenting as Non-Compliant
-
 
 ### Pitfall 7: Badge Revocation Delays
 
@@ -841,7 +763,6 @@ Outputs from this assessment are INPUT to:
   - ❌ MISTAKE: Assuming badges are revoked on termination because policy says so
   - ✅ CORRECT: Checking 10 terminations from last month, finding 2 with badges still active after 48 hours
 
-
 ### Pitfall 8: Escort Policy Not Enforced
 
 - **Problem:** Visitors in restricted zones without escorts
@@ -858,7 +779,6 @@ Outputs from this assessment are INPUT to:
   - ❌ MISTAKE: Documenting escort policy as "Compliant" based on policy document alone
   - ✅ CORRECT: Observing visitor in server room corridor without escort, documenting as Partial compliance
 
-
 ### Pitfall 9: Authentication Not Zone-Appropriate
 
 - **Problem:** High-security zones accessible with badge-only (no PIN/biometric)
@@ -874,7 +794,6 @@ Outputs from this assessment are INPUT to:
   - ❌ MISTAKE: Documenting server room access as "Badge+PIN" without testing
   - ✅ CORRECT: Testing server room entry, confirming badge-only works (gap identified)
 
-
 ### Pitfall 10: Insufficient Log Retention
 
 - **Problem:** Access logs not retained for required period
@@ -889,7 +808,6 @@ Outputs from this assessment are INPUT to:
 - **Example:**
   - ❌ MISTAKE: Accepting "90 days" verbally without verification
   - ✅ CORRECT: Attempting to retrieve logs from 85 days ago, confirming successful retrieval
-
 
 ### Pitfall 11: Visitor Badge Return Not Tracked
 
@@ -907,7 +825,6 @@ Outputs from this assessment are INPUT to:
   - ❌ MISTAKE: Assuming all visitor badges are returned
   - ✅ CORRECT: Reviewing badge return log, finding 15% unreturned without deactivation
 
-
 ### Pitfall 12: Emergency Exit Alarming Not Verified
 
 - **Problem:** Emergency exits not alarmed or alarms not monitored
@@ -923,7 +840,6 @@ Outputs from this assessment are INPUT to:
 - **Example:**
   - ❌ MISTAKE: Assuming emergency exits are alarmed because policy requires it
   - ✅ CORRECT: Testing 3 emergency exits, finding 1 alarm not functioning
-
 
 ### Pitfall 13: Access Control System Maintenance Gaps
 
@@ -941,7 +857,6 @@ Outputs from this assessment are INPUT to:
   - ❌ MISTAKE: Not assessing system maintenance status
   - ✅ CORRECT: Reviewing maintenance log, finding no battery test for 18 months
 
-
 ### Pitfall 14: Dual-Person Access Not Implemented
 
 - **Problem:** High-security zones don't require dual-person authentication
@@ -956,7 +871,6 @@ Outputs from this assessment are INPUT to:
 - **Example:**
   - ❌ MISTAKE: Documenting datacenter as requiring dual-person without testing
   - ✅ CORRECT: Testing datacenter entry, finding single-person access possible
-
 
 ### Pitfall 15: Visitor Pre-Registration Not Utilised
 
@@ -973,7 +887,6 @@ Outputs from this assessment are INPUT to:
   - ❌ MISTAKE: Assuming pre-registration system is being used
   - ✅ CORRECT: Checking statistics showing only 30% of visitors pre-registered
 
-
 ### Pitfall 16: Lost Badge Reporting Delays
 
 - **Problem:** Lost/stolen badges not reported promptly
@@ -988,7 +901,6 @@ Outputs from this assessment are INPUT to:
 - **Example:**
   - ❌ MISTAKE: Not assessing lost badge response process
   - ✅ CORRECT: Reviewing 5 lost badge incidents, finding average 72-hour deactivation time
-
 
 ---
 
@@ -1090,14 +1002,12 @@ Before submitting for Level 2 approval, complete this self-assessment:
 - Date and sign Level 1
 - Document any assumptions or limitations
 
-
 **Level 2: Facilities Manager**
 
 - Review entry point accuracy
 - Verify physical infrastructure details
 - Confirm maintenance records
 - Date and sign Level 2
-
 
 **Level 3: Physical Security Manager**
 
@@ -1106,13 +1016,11 @@ Before submitting for Level 2 approval, complete this self-assessment:
 - Confirm security response procedures
 - Date and sign Level 3
 
-
 **Level 4: CISO Approver**
 
 - Executive review and approval
 - Resource allocation for gaps
 - Date and sign Level 4
-
 
 **Timeline:** 5-10 business days for all four levels
 
@@ -1163,13 +1071,11 @@ If approval is delayed beyond 10 business days:
 - Date validation (valid date format)
 - Number validation for log retention
 
-
 **Conditional Formatting:**
 
 - Compliance Status columns: Green (Compliant), Amber (Partial), Red (Non-Compliant)
 - Summary Dashboard scores: Colour-coded thresholds
 - Overdue dates highlighted in red
-
 
 **Formulas:**
 
@@ -1177,12 +1083,10 @@ If approval is delayed beyond 10 business days:
 - Compliance percentages calculated automatically
 - Gap counts derived from status columns
 
-
 **Freeze Panes:**
 
 - Header rows frozen
 - First column frozen for horizontal scrolling
-
 
 ---
 
@@ -1309,13 +1213,11 @@ If approval is delayed beyond 10 business days:
 - Primary Header: #003366 (Navy blue), White text
 - Column Header: #D9D9D9 (Light grey), Black text
 
-
 **Data Cells:**
 
 - Input Cell: #FFFFCC (Light yellow)
 - Read-Only: White
 - Calculated: #E2EFDA (Light green)
-
 
 **Compliance Status:**
 
@@ -1323,13 +1225,11 @@ If approval is delayed beyond 10 business days:
 - Partial: #FFEB9C (Light amber)
 - Non-Compliant: #FFC7CE (Light red)
 
-
 **Dashboard Scores:**
 
 - 90-100%: #C6EFCE (Green)
 - 70-89%: #FFEB9C (Amber)
 - Below 70%: #FFC7CE (Red)
-
 
 ---
 
@@ -1354,7 +1254,6 @@ If approval is delayed beyond 10 business days:
 **Feeds into:**
 
 - ISMS-IMP-A.7.1-2-3-S4 (Compliance Dashboard) - Entry control compliance score
-
 
 ### Integration with Related Controls
 

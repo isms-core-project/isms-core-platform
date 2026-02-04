@@ -36,7 +36,6 @@
 - Compliance Review: Legal/Compliance Officer
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -45,7 +44,6 @@
 - ISMS-POL-A.8.16 (Monitoring Activities)
 - ISMS-POL-A.8.17 (Clock Synchronization)
 - ISMS-POL-A.5.24 (Information Security Incident Management)
-
 
 ---
 
@@ -59,7 +57,6 @@ This policy establishes [Organization]'s requirements for event logging to suppo
 - HOW LONG logs must be retained
 - WHO is accountable for log management
 - WHEN logs must be reviewed
-
 
 Implementation procedures (HOW logs are technically configured) are documented separately in ISMS-IMP-A.8.15.
 
@@ -82,20 +79,17 @@ Implementation procedures (HOW logs are technically configured) are documented s
 - Authentication and identity management systems
 - Administrative access infrastructure (jump hosts, bastion hosts, PAM)
 
-
 **Deployment models covered**:
 
 - On-premises infrastructure
 - Cloud environments (public, private, hybrid)
 - Third-party hosted services
 
-
 ## Out of Scope
 
 - Business application audit trails not related to security
 - Financial transaction logs for accounting purposes (covered by financial control policies)
 - Real-time monitoring and alerting (covered by ISMS-POL-A.8.16)
-
 
 ---
 
@@ -115,7 +109,6 @@ Implementation procedures (HOW logs are technically configured) are documented s
 - **Network events**: Firewall matches, VPN connections, segmentation boundary traversals
 - **Application events**: Errors, exceptions, API authentication, privileged function execution
 
-
 **Log content requirements**: Each log entry SHALL include timestamp, user identity, source system, event type, outcome, and relevant context. Detailed field specifications are documented in ISMS-REF-A.8.15.
 
 ## Log Protection Requirements
@@ -129,18 +122,15 @@ Implementation procedures (HOW logs are technically configured) are documented s
 - Administrative access requires elevated privileges with separation of duties
 - Log administrator actions SHALL be logged separately
 
-
 **Integrity protection**:
 
 - Logs SHALL be forwarded to centralized collection within 5 minutes for security events
 - Centralized collection prevents local tampering
 - Cryptographic or write-once protection SHOULD be implemented for compliance-critical logs
 
-
 **Secure transmission**:
 
 - Logs SHALL be transmitted encrypted using TLS 1.2 or higher
-
 
 ## Log Retention Requirements
 
@@ -165,7 +155,6 @@ Implementation procedures (HOW logs are technically configured) are documented s
 - Tiered storage architecture (hot, warm, cold) SHALL optimize cost and accessibility
 - Logs SHALL be securely deleted after retention expiry using approved methods
 - Legal hold procedures SHALL suspend deletion during litigation or investigation
-
 
 ## Log Review Requirements
 
@@ -217,7 +206,6 @@ Implementation procedures (HOW logs are technically configured) are documented s
 - Use pseudonymization where feasible
 - Inform users of monitoring through acceptable use policy
 - DPO SHALL review logging implementations affecting personal data
-
 
 ---
 
@@ -275,14 +263,12 @@ Applies when triggered per ISMS-POL-00:
 - Maximum duration: 12 months (renewable)
 - CISO approval required; Executive Management approval for high-risk exceptions
 
-
 **Valid exception scenarios**:
 
 - Legacy systems unable to forward logs
 - Performance-sensitive systems where logging impacts operations
 - Third-party systems without logging capabilities
 - Cost-prohibitive implementations
-
 
 ## Exception Documentation
 
@@ -294,7 +280,6 @@ Each exception SHALL document:
 - Compensating controls
 - Duration and renewal conditions
 - Approval signatures
-
 
 ---
 
@@ -309,7 +294,6 @@ The following SHALL be classified as security incidents:
 - Unauthorized log access
 - Log storage capacity exhaustion
 - SIEM platform compromise
-
 
 ## Incident Classification and Escalation
 
@@ -329,7 +313,6 @@ The following SHALL be classified as security incidents:
 - Integration with ISMS-POL-A.5.24 incident response framework
 - Post-incident review for all Critical incidents within 7 days
 
-
 ---
 
 # Policy Governance
@@ -348,7 +331,6 @@ The following SHALL be classified as security incidents:
 - Organizational changes
 - Audit findings
 - Technology changes
-
 
 ## Update Classification
 

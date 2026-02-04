@@ -38,7 +38,6 @@
 - Technical Review: Security Architect
 - Security Review: Chief Information Security Officer (CISO)
 
-
 ### Distribution
 
 Configuration management team, system administrators, IT operations, security engineers, auditors
@@ -75,7 +74,6 @@ This assessment addresses the monitoring and drift detection domain of Control A
 - Integration with change control (authorized vs. unauthorized changes)
 - Reporting and metrics (drift trends, compliance rates)
 
-
 **Out of Scope** (covered in other assessments):
 
 - Configuration baseline definition (see ISMS-IMP-A.8.9.1)
@@ -84,7 +82,6 @@ This assessment addresses the monitoring and drift detection domain of Control A
 - Vulnerability management (separate control)
 - Performance monitoring (separate domain)
 
-
 ## Control Alignment
 
 This assessment implements requirements from:
@@ -92,7 +89,6 @@ This assessment implements requirements from:
 - **ISMS-POL-A.8.9, Section 2.4**: Configuration Monitoring Requirements (complete section)
 - **ISO 27001:2022 A.8.9**: Configuration management control requirements
 - **Related Controls**: A.8.16 (Monitoring Activities), A.8.8 (Management of Technical Vulnerabilities)
-
 
 ---
 
@@ -118,7 +114,6 @@ This assessment tracks four primary monitoring approaches:
 - Advantage: Immediate detection, scalable
 - Disadvantage: Requires tool investment, agent management
 
-
 **Scheduled Automated Scans**:
 
 - Periodic automated configuration checks
@@ -128,7 +123,6 @@ This assessment tracks four primary monitoring approaches:
 - Coverage: Good for stable environments with infrequent changes
 - Advantage: Lower overhead than continuous monitoring
 - Disadvantage: Detection delay (gap between scans)
-
 
 **Manual Verification**:
 
@@ -140,7 +134,6 @@ This assessment tracks four primary monitoring approaches:
 - Advantage: Can detect subtle issues automated tools miss
 - Disadvantage: Not scalable, prone to human error
 
-
 **Hybrid Approach**:
 
 - Combination of automated and manual methods
@@ -150,7 +143,6 @@ This assessment tracks four primary monitoring approaches:
 - Coverage: Balances coverage with resource constraints
 - Advantage: Best of both worlds
 - Disadvantage: Coordination complexity
-
 
 ## Drift Categories
 
@@ -174,7 +166,6 @@ Understanding why drift occurs informs remediation strategy:
 - "Quick fix" during troubleshooting without following change control
 - Root cause: Process non-compliance, inadequate training, emergency pressure
 
-
 **Configuration Management Tool Failure**:
 
 - Automation script fails to apply configuration
@@ -182,13 +173,11 @@ Understanding why drift occurs informs remediation strategy:
 - Configuration template error
 - Root cause: Technical failure, need for tool health monitoring
 
-
 **Software Update Side Effects**:
 
 - Application or OS update modifies settings
 - Vendor patch resets configuration to defaults
 - Root cause: Inadequate pre-change testing, vendor behavior
-
 
 **Authorized Change Not Updated in Baseline**:
 
@@ -196,20 +185,17 @@ Understanding why drift occurs informs remediation strategy:
 - Baseline documentation not updated to reflect change
 - Root cause: Process gap between change control and baseline management
 
-
 **Environmental Factors**:
 
 - Cloud auto-scaling creates instances with old configuration
 - Disaster recovery failover uses outdated baseline
 - Root cause: Inadequate infrastructure-as-code practices
 
-
 **Malicious Activity**:
 
 - Attacker modifies configuration to establish persistence
 - Insider threat scenario
 - Root cause: Security incident (requires incident response)
-
 
 ## Monitoring Coverage Tiers
 
@@ -224,7 +210,6 @@ Not all assets require identical monitoring:
 - Monitoring: Real-time or <15 minute intervals
 - Target: 100% coverage, 100% detection within 1 hour
 
-
 **Tier 2 - High Value Assets** (Frequent Monitoring Required):
 
 - Internal application servers
@@ -234,7 +219,6 @@ Not all assets require identical monitoring:
 - Monitoring: Hourly to daily
 - Target: ≥95% coverage, 95% detection within 24 hours
 
-
 **Tier 3 - Standard Assets** (Regular Monitoring):
 
 - Workstations and laptops
@@ -243,7 +227,6 @@ Not all assets require identical monitoring:
 - Monitoring: Daily to weekly
 - Target: ≥85% coverage, 90% detection within 7 days
 
-
 **Tier 4 - Low Risk Assets** (Periodic Monitoring):
 
 - Isolated lab systems
@@ -251,7 +234,6 @@ Not all assets require identical monitoring:
 - Non-connected devices
 - Monitoring: Weekly to monthly
 - Target: ≥70% coverage, detection per schedule
-
 
 ---
 
@@ -270,7 +252,6 @@ Not all assets require identical monitoring:
    - Maintain evidence of monitoring tool operation
    - Timeline: Ongoing (continuous drift tracking)
 
-
 2. **Reviewer** (Configuration Manager, IT Operations Manager):
 
    - Verify monitoring coverage adequacy
@@ -281,7 +262,6 @@ Not all assets require identical monitoring:
    - Recommend tool or process improvements
    - Timeline: Monthly or quarterly review
 
-
 3. **Approver** (CISO, IT Manager):
 
    - Review overall monitoring effectiveness
@@ -289,7 +269,6 @@ Not all assets require identical monitoring:
    - Authorize remediation for systemic drift issues
    - Sign off on assessment completion
    - Timeline: Quarterly or semi-annual approval
-
 
 ## Data Collection Approach
 
@@ -312,7 +291,6 @@ Not all assets require identical monitoring:
 - False positive rate per monitoring tool
 - Critical drift incidents (absolute zero tolerance)
 
-
 ## Assessment Frequency
 
 **Initial Assessment**: Complete monitoring assessment within 90 days of ISMS implementation for A.8.9.
@@ -324,7 +302,6 @@ Not all assets require identical monitoring:
 - **Monthly**: Monitoring coverage review, metrics analysis
 - **Quarterly**: Comprehensive assessment, trend analysis, gap remediation
 - **Ad-hoc**: After major infrastructure changes, tool upgrades, security incidents
-
 
 **Continuous Updates**: Drift Detection Log updated in real-time as incidents occur. Monitoring Coverage Register updated as new assets deployed or monitoring expanded.
 
@@ -385,14 +362,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Common questions about monitoring tools and coverage
 - Contact information for Configuration Manager and SOC
 
-
 **Formatting**:
 
 - Title: Bold, 16pt, dark blue background
 - Section headers: Bold, 14pt, light blue background
 - Body text: 11pt Calibri
 - Color legend: Critical=Dark Red, High=Red, Medium=Yellow, Low=Light Green, Info=Gray
-
 
 **No Data Entry**: Read-only informational sheet.
 
@@ -435,7 +410,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Column H (Monitoring Method): Dropdown ["Automated Continuous", "Scheduled Automated", "Manual", "Hybrid", "None"]
 - Column J (Check Frequency): Dropdown ["Real-time (<15 min)", "Hourly", "Daily", "Weekly", "Monthly", "Quarterly", "Manual (on-demand)"]
 
-
 **Formulas**:
 
 - Column D (Asset Category): Lookup from hidden Lookup_Tables (same as A.8.9.1)
@@ -462,7 +436,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - Medium/Low: "Not Monitored" = Non-Compliant, otherwise Compliant
   - Excluded assets = Excluded
 
-
 **Conditional Formatting**:
 
 - Column E (Asset Criticality):
@@ -483,14 +456,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - "Non-Compliant" → Red fill, bold text
   - "Excluded" → Gray fill
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background, bold, centered
 - Row 1: Title "Configuration Monitoring Coverage Register" spanning A1:P1
 - Protected cells: Columns D, F, N (formula cells) locked
 - Filter: Enable auto-filter on header row
-
 
 **Usage Notes**:
 
@@ -499,7 +470,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - If Monitoring Status = "Not Monitored" and asset is Critical/High, must provide Gap Justification
 - Monitoring Tool/System should reference entries in Monitoring_Tool_Inventory
 - Coverage Compliance formula enforces risk-based monitoring requirements
-
 
 ---
 
@@ -543,7 +513,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Column M (Root Cause Category): Dropdown ["Unauthorized Manual Change", "Tool Failure", "Software Update", "Baseline Not Updated", "Environmental", "Malicious", "Other"]
 - Column O (Drift Status): Dropdown ["Detected", "Under Investigation", "Remediation In Progress", "Remediated", "Closed", "False Positive"]
 
-
 **Formulas**:
 
 - Column P (Time to Detect Hours): Calculated if change timestamp known (often unavailable, left blank if unknown)
@@ -580,7 +549,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - "Remediation In Progress" → Light yellow fill
   - "Remediated" → Light green fill (verification pending before closed)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
@@ -588,7 +556,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Protected cells: Columns P and R (formula cells) locked
 - Sort by Detection Date/Time (most recent first) for active monitoring
 - Filter by Drift Status to see open incidents
-
 
 **Usage Notes**:
 
@@ -598,7 +565,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Critical drift (H="Critical") requires immediate investigation (<4 hours)
 - Root Cause Category helps identify systemic issues (e.g., many "Tool Failure" = monitoring reliability problem)
 - False Positive incidents should be documented in False_Positive_Register for tuning
-
 
 ---
 
@@ -638,7 +604,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Column J (Alerting Method): Dropdown ["Email", "SIEM", "Webhook", "Dashboard Only", "Ticketing System", "Multiple"]
 - Column K (Licensing Model): Dropdown ["Commercial", "Open Source", "Subscription", "Perpetual", "In-House Developed"]
 
-
 **Conditional Formatting**:
 
 - Column H (Deployment Status):
@@ -648,14 +613,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - "Pilot" → Light blue fill
   - "Decommissioned" → Gray fill
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Monitoring Tool Inventory" spanning A1:P1
 - Cost summary: Total annual cost formula at bottom of Column L
 - Tool health status: If "Offline" or "Degraded", should trigger investigation
-
 
 **Usage Notes**:
 
@@ -665,7 +628,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - If Deployment Status = "Offline", all assets depending on this tool have monitoring gap
 - Known Limitations (Column N) informs gap analysis
 - Annual Cost supports ROI analysis for monitoring program
-
 
 ---
 
@@ -707,7 +669,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Column K (Verification Method): Dropdown ["Automated Re-Scan", "Manual Verification", "Monitoring Tool Confirmation", "User Validation"]
 - Column M (Verification Result): Dropdown ["Passed", "Failed", "Partially Successful", "Not Yet Verified"]
 - Column O (Root Cause Remediation): Dropdown ["Baseline Updated", "Change Control Enforced", "Tool Fixed", "Process Improved", "Training Provided", "Other"]
-
 
 **Formulas**:
 
@@ -756,14 +717,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - "Partially Successful" → Yellow fill
   - "Not Yet Verified" → Light red fill (verification is required!)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Drift Remediation Tracking" spanning A1:R1
 - Protected cells: Columns J, P, Q (formula cells) locked
 - Critical drift with status "Overdue" should trigger escalation
-
 
 **Usage Notes**:
 
@@ -774,7 +733,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - If action = "Authorized Retroactively", must create Change ID in A.8.9.2 for audit trail
 - Recurrence Prevention (Column N) is critical - same drift repeatedly = process problem
 - Verification must be completed before closing incident
-
 
 ---
 
@@ -814,7 +772,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Column K (Tuning Action Taken): Dropdown ["Baseline Updated", "Monitoring Rule Adjusted", "Alert Threshold Changed", "Exception Added", "Tool Updated", "No Action (Acceptable)"]
 - Column N (Recurrence Status): Dropdown ["Not Seen Again", "Recurred Once", "Recurring (Needs Further Tuning)", "Monitoring"]
 
-
 **Formulas**:
 
 - Column P (False Positive Category): Auto-categorize based on reason
@@ -834,14 +791,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - "Systemic (tool issue)" → Red text (indicates tool problem affecting multiple assets)
   - "Baseline Issue" → Orange text (indicates baseline documentation problem)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "False Positive Register - Alert Quality Tracking" spanning A1:Q1
 - Protected cells: Column P (formula cell) locked
 - False positive rate calculation feeds into Monitoring_Effectiveness_Metrics
-
 
 **Usage Notes**:
 
@@ -851,7 +806,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Systemic false positives (Column P) may indicate monitoring tool needs replacement
 - Tuning actions should be documented in detail for audit trail
 - False positives from "Incorrect Baseline" indicate need to update A.8.9.1 baseline documentation
-
 
 ---
 
@@ -922,7 +876,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Targets: Gray background
 - Status: Conditional formatting (Green/Yellow/Red)
 
-
 **Conditional Formatting**:
 
 - Coverage %: Green ≥target, Yellow within 5% of target, Red below
@@ -930,13 +883,11 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - MTTD/MTTR: Green if within target, Red if exceeds
 - SLA Compliance: Green ≥95%, Yellow 90-94%, Red <90%
 
-
 **Special Features**:
 
 - All cells protected (formula-driven dashboard)
 - Print area defined (fits on 2 pages)
 - Monthly trend graphs reserved area (Rows 50-70)
-
 
 **Usage Notes**:
 
@@ -945,7 +896,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Rising drift rate or falling coverage indicates problems
 - High "Baseline Not Updated" count = process gap between change control and baseline management
 - Any "Malicious" root cause triggers security incident response
-
 
 ---
 
@@ -1006,13 +956,11 @@ Logic: Identify asset types with (1) Critical/High criticality AND (2) Monitorin
 - Gap Priority: Red text ("Critical Gap"), Orange text ("High Priority")
 - Status column (Section B): Green "✅" if meets target, Red "❌" if below
 
-
 **Special Features**:
 
 - All cells protected (formula-driven)
 - Automatically highlights worst gaps for remediation prioritization
 - Links to specific Monitoring_Coverage_Register rows showing which assets
-
 
 **Usage Notes**:
 
@@ -1020,7 +968,6 @@ Logic: Identify asset types with (1) Critical/High criticality AND (2) Monitorin
 - "Critical Gap" in Section A = category needs immediate attention
 - Critical/High assets with Status="❌" require escalation
 - "None" monitoring method for Tier 1 assets = severe gap
-
 
 ---
 
@@ -1078,13 +1025,11 @@ Action Needed logic:
 - Drift Rate: Red if >0.15, Yellow 0.05-0.15, Green <0.05
 - MTTR: Green if decreasing over time, Red if increasing
 
-
 **Special Features**:
 
 - All formula-driven
 - Charts reserved area (Rows 60-80) for visual trend graphs
 - Highlight anomalies (sudden spikes indicate systemic issue)
-
 
 **Usage Notes**:
 
@@ -1093,7 +1038,6 @@ Action Needed logic:
 - Decreasing drift trend = configuration stabilization or process improvement
 - High drift rate for specific category = targeted investigation needed
 - Assets with >10 incidents in 90 days = configuration stability problem
-
 
 ---
 
@@ -1131,7 +1075,6 @@ Action Needed logic:
 - Monitoring coverage reports should be generated quarterly as evidence
 - Tool health checks should be documented monthly
 
-
 ---
 
 ## Sheet 11: Approval_Sign_Off
@@ -1145,22 +1088,18 @@ Action Needed logic:
 - Assessment Title: "Configuration Monitoring Assessment - Control A.8.9"
 - Assessment Period, Document ID, Version, Assessment Date
 
-
 **Section B: Preparer Sign-Off**
 
 - Attestation: "I attest that monitoring coverage has been documented accurately and drift incidents have been tracked completely."
-
 
 **Section C: Reviewer Sign-Off**
 
 - Attestation: "I have reviewed monitoring effectiveness and verified drift detection capabilities. Coverage gaps and remediation improvements have been identified."
 
-
 **Section D: Approver Sign-Off**
 
 - Approval Decision dropdown
 - Attestation: "I approve this monitoring assessment and authorize budget for monitoring tool expansion and gap remediation."
-
 
 ---
 
@@ -1176,7 +1115,6 @@ Action Needed logic:
 - Monitoring Method: Automated Continuous, Scheduled Automated, Manual, Hybrid, None
 - Check Frequency: Real-time (<15 min), Hourly, Daily, Weekly, Monthly, Quarterly, Manual (on-demand)
 
-
 **Drift_Detection_Log**:
 
 - Drift Category: Critical, High, Medium, Low, Informational
@@ -1185,14 +1123,12 @@ Action Needed logic:
 - Root Cause Category: Unauthorized Manual Change, Tool Failure, Software Update, Baseline Not Updated, Environmental, Malicious, Other
 - Drift Status: Detected, Under Investigation, Remediation In Progress, Remediated, Closed, False Positive
 
-
 **Monitoring_Tool_Inventory**:
 
 - Tool Type: Agent-Based, Agentless, Network Scanner, Script/Custom, Cloud-Native, SIEM Integration
 - Deployment Status: Active, Degraded, Offline, Pilot, Decommissioned
 - Alerting Method: Email, SIEM, Webhook, Dashboard Only, Ticketing System, Multiple
 - Licensing Model: Commercial, Open Source, Subscription, Perpetual, In-House Developed
-
 
 **Drift_Remediation_Tracking**:
 
@@ -1202,13 +1138,11 @@ Action Needed logic:
 - Verification Result: Passed, Failed, Partially Successful, Not Yet Verified
 - Root Cause Remediation: Baseline Updated, Change Control Enforced, Tool Fixed, Process Improved, Training Provided, Other
 
-
 **False_Positive_Register**:
 
 - False Positive Reason: Incorrect Baseline, Tool Misconfiguration, Expected Variation, Timing Issue, Tool Bug, Other
 - Tuning Action Taken: Baseline Updated, Monitoring Rule Adjusted, Alert Threshold Changed, Exception Added, Tool Updated, No Action (Acceptable)
 - Recurrence Status: Not Seen Again, Recurred Once, Recurring (Needs Further Tuning), Monitoring
-
 
 **Evidence_Register**:
 
@@ -1217,11 +1151,9 @@ Action Needed logic:
 - Retention Period: 1 Year, 3 Years, 5 Years, 7 Years, Indefinite
 - Verification Status: Verified, Needs Verification, Missing, Outdated
 
-
 **Approval_Sign_Off**:
 
 - Approval Decision: Approved, Approved with Conditions, Not Approved - Revisions Required
-
 
 ## Date Format
 
@@ -1243,7 +1175,6 @@ Coverage by Tier:
 - Tier 3 (Standard): Target ≥85% (Red <75%, Yellow 75-84%, Green ≥85%)
 - Tier 4 (Low): Target ≥70% (Red <60%, Yellow 60-69%, Green ≥70%)
 
-
 Excluded assets don't count against coverage.
 ```
 
@@ -1256,7 +1187,6 @@ Healthy Range: 0.01-0.1 incidents per asset per month
 - <0.01: Possible under-detection (monitoring gaps or very stable environment)
 - 0.01-0.1: Normal drift rate
 - >0.1: High drift (investigate: unstable environment, monitoring noise, or process issues)
-
 
 Mean Time to Detect (MTTD) by Tier:
 
@@ -1275,7 +1205,6 @@ Mean Time to Remediate (MTTR) by Drift Category:
 - High: Target <24 hours (1 day)
 - Medium: Target <7 days
 - Low: Target <30 days
-
 
 SLA Compliance % = (Remediated Within SLA / Total Remediated) × 100
 
@@ -1373,7 +1302,6 @@ Status:
 - When drift remediation involves "Updated Baseline", must update A.8.9.1 Version_Control
 - Expected values in drift detection come from baselines documented in A.8.9.1
 
-
 **Integration with A.8.9.2 (Change Control)**:
 
 - Authorized changes (Column K in Drift_Detection_Log) reference Change IDs from A.8.9.2
@@ -1381,13 +1309,11 @@ Status:
 - If authorized change not in A.8.9.2, flag as process gap (change control bypass)
 - Changes approved in A.8.9.2 should not trigger drift alerts (monitoring baseline update needed)
 
-
 **Integration with A.8.9.4 (Security Hardening)**:
 
 - Security-related drift detected here may indicate hardening non-compliance
 - Critical drift involving security controls should be cross-referenced in A.8.9.4
 - Hardening standards from A.8.9.4 define many monitored configurations
-
 
 ---
 
@@ -1423,7 +1349,6 @@ Status:
    - Review why change control was bypassed (training, access control issue)
    - Implement recurrence prevention (process improvement, technical controls)
 
-
 ## Scenario: Monitoring Tool Failure
 
 **Detection**: No drift alerts received for 24 hours from monitoring tool covering 200 assets.
@@ -1452,7 +1377,6 @@ Status:
    - Implement tool health monitoring to detect future failures faster
    - Update Evidence_Register with incident documentation
 
-
 ## Scenario: High False Positive Rate
 
 **Detection**: Monthly review shows Monitoring Tool X generating 40% false positives.
@@ -1480,7 +1404,6 @@ Status:
    - Monitor false positive rate for 30 days post-tuning
    - Target: Reduce to <10%
    - Update Recurrence Status in False_Positive_Register
-
 
 ## Scenario: Coverage Gap Identified
 
@@ -1514,7 +1437,6 @@ Status:
    - Update Monitoring_Tool_Inventory if new tool deployed
    - Document in Evidence_Register (monitoring implementation proof)
 
-
 ---
 
 # Document Maintenance
@@ -1528,7 +1450,6 @@ Status:
 - **Quarterly**: Comprehensive assessment, trend analysis, gap remediation
 - **Annual**: Monitoring tool evaluation, program effectiveness review
 
-
 ## Workbook Versioning
 
 File naming: `ISMS_A_8_9_3_Configuration_Monitoring_Assessment_YYYYMMDD.xlsx`
@@ -1538,7 +1459,6 @@ Retain versions:
 - Monthly snapshots (drift trend analysis)
 - Quarterly assessments (formal records)
 - All versions for minimum 3 years (audit trail)
-
 
 ---
 
@@ -1618,14 +1538,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Common questions about monitoring tools and coverage
 - Contact information for Configuration Manager and SOC
 
-
 **Formatting**:
 
 - Title: Bold, 16pt, dark blue background
 - Section headers: Bold, 14pt, light blue background
 - Body text: 11pt Calibri
 - Color legend: Critical=Dark Red, High=Red, Medium=Yellow, Low=Light Green, Info=Gray
-
 
 **No Data Entry**: Read-only informational sheet.
 
@@ -1668,7 +1586,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Column H (Monitoring Method): Dropdown ["Automated Continuous", "Scheduled Automated", "Manual", "Hybrid", "None"]
 - Column J (Check Frequency): Dropdown ["Real-time (<15 min)", "Hourly", "Daily", "Weekly", "Monthly", "Quarterly", "Manual (on-demand)"]
 
-
 **Formulas**:
 
 - Column D (Asset Category): Lookup from hidden Lookup_Tables (same as A.8.9.1)
@@ -1695,7 +1612,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - Medium/Low: "Not Monitored" = Non-Compliant, otherwise Compliant
   - Excluded assets = Excluded
 
-
 **Conditional Formatting**:
 
 - Column E (Asset Criticality):
@@ -1716,14 +1632,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - "Non-Compliant" → Red fill, bold text
   - "Excluded" → Gray fill
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background, bold, centered
 - Row 1: Title "Configuration Monitoring Coverage Register" spanning A1:P1
 - Protected cells: Columns D, F, N (formula cells) locked
 - Filter: Enable auto-filter on header row
-
 
 **Usage Notes**:
 
@@ -1732,7 +1646,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - If Monitoring Status = "Not Monitored" and asset is Critical/High, must provide Gap Justification
 - Monitoring Tool/System should reference entries in Monitoring_Tool_Inventory
 - Coverage Compliance formula enforces risk-based monitoring requirements
-
 
 ---
 
@@ -1776,7 +1689,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Column M (Root Cause Category): Dropdown ["Unauthorized Manual Change", "Tool Failure", "Software Update", "Baseline Not Updated", "Environmental", "Malicious", "Other"]
 - Column O (Drift Status): Dropdown ["Detected", "Under Investigation", "Remediation In Progress", "Remediated", "Closed", "False Positive"]
 
-
 **Formulas**:
 
 - Column P (Time to Detect Hours): Calculated if change timestamp known (often unavailable, left blank if unknown)
@@ -1813,7 +1725,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - "Remediation In Progress" → Light yellow fill
   - "Remediated" → Light green fill (verification pending before closed)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
@@ -1821,7 +1732,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Protected cells: Columns P and R (formula cells) locked
 - Sort by Detection Date/Time (most recent first) for active monitoring
 - Filter by Drift Status to see open incidents
-
 
 **Usage Notes**:
 
@@ -1831,7 +1741,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Critical drift (H="Critical") requires immediate investigation (<4 hours)
 - Root Cause Category helps identify systemic issues (e.g., many "Tool Failure" = monitoring reliability problem)
 - False Positive incidents should be documented in False_Positive_Register for tuning
-
 
 ---
 
@@ -1871,7 +1780,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Column J (Alerting Method): Dropdown ["Email", "SIEM", "Webhook", "Dashboard Only", "Ticketing System", "Multiple"]
 - Column K (Licensing Model): Dropdown ["Commercial", "Open Source", "Subscription", "Perpetual", "In-House Developed"]
 
-
 **Conditional Formatting**:
 
 - Column H (Deployment Status):
@@ -1881,14 +1789,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - "Pilot" → Light blue fill
   - "Decommissioned" → Gray fill
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Monitoring Tool Inventory" spanning A1:P1
 - Cost summary: Total annual cost formula at bottom of Column L
 - Tool health status: If "Offline" or "Degraded", should trigger investigation
-
 
 **Usage Notes**:
 
@@ -1898,7 +1804,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - If Deployment Status = "Offline", all assets depending on this tool have monitoring gap
 - Known Limitations (Column N) informs gap analysis
 - Annual Cost supports ROI analysis for monitoring program
-
 
 ---
 
@@ -1940,7 +1845,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Column K (Verification Method): Dropdown ["Automated Re-Scan", "Manual Verification", "Monitoring Tool Confirmation", "User Validation"]
 - Column M (Verification Result): Dropdown ["Passed", "Failed", "Partially Successful", "Not Yet Verified"]
 - Column O (Root Cause Remediation): Dropdown ["Baseline Updated", "Change Control Enforced", "Tool Fixed", "Process Improved", "Training Provided", "Other"]
-
 
 **Formulas**:
 
@@ -1989,14 +1893,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - "Partially Successful" → Yellow fill
   - "Not Yet Verified" → Light red fill (verification is required!)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Drift Remediation Tracking" spanning A1:R1
 - Protected cells: Columns J, P, Q (formula cells) locked
 - Critical drift with status "Overdue" should trigger escalation
-
 
 **Usage Notes**:
 
@@ -2007,7 +1909,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - If action = "Authorized Retroactively", must create Change ID in A.8.9.2 for audit trail
 - Recurrence Prevention (Column N) is critical - same drift repeatedly = process problem
 - Verification must be completed before closing incident
-
 
 ---
 
@@ -2047,7 +1948,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Column K (Tuning Action Taken): Dropdown ["Baseline Updated", "Monitoring Rule Adjusted", "Alert Threshold Changed", "Exception Added", "Tool Updated", "No Action (Acceptable)"]
 - Column N (Recurrence Status): Dropdown ["Not Seen Again", "Recurred Once", "Recurring (Needs Further Tuning)", "Monitoring"]
 
-
 **Formulas**:
 
 - Column P (False Positive Category): Auto-categorize based on reason
@@ -2067,14 +1967,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - "Systemic (tool issue)" → Red text (indicates tool problem affecting multiple assets)
   - "Baseline Issue" → Orange text (indicates baseline documentation problem)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "False Positive Register - Alert Quality Tracking" spanning A1:Q1
 - Protected cells: Column P (formula cell) locked
 - False positive rate calculation feeds into Monitoring_Effectiveness_Metrics
-
 
 **Usage Notes**:
 
@@ -2084,7 +1982,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Systemic false positives (Column P) may indicate monitoring tool needs replacement
 - Tuning actions should be documented in detail for audit trail
 - False positives from "Incorrect Baseline" indicate need to update A.8.9.1 baseline documentation
-
 
 ---
 
@@ -2155,7 +2052,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Targets: Gray background
 - Status: Conditional formatting (Green/Yellow/Red)
 
-
 **Conditional Formatting**:
 
 - Coverage %: Green ≥target, Yellow within 5% of target, Red below
@@ -2163,13 +2059,11 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - MTTD/MTTR: Green if within target, Red if exceeds
 - SLA Compliance: Green ≥95%, Yellow 90-94%, Red <90%
 
-
 **Special Features**:
 
 - All cells protected (formula-driven dashboard)
 - Print area defined (fits on 2 pages)
 - Monthly trend graphs reserved area (Rows 50-70)
-
 
 **Usage Notes**:
 
@@ -2178,7 +2072,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Rising drift rate or falling coverage indicates problems
 - High "Baseline Not Updated" count = process gap between change control and baseline management
 - Any "Malicious" root cause triggers security incident response
-
 
 ---
 
@@ -2239,13 +2132,11 @@ Logic: Identify asset types with (1) Critical/High criticality AND (2) Monitorin
 - Gap Priority: Red text ("Critical Gap"), Orange text ("High Priority")
 - Status column (Section B): Green "✅" if meets target, Red "❌" if below
 
-
 **Special Features**:
 
 - All cells protected (formula-driven)
 - Automatically highlights worst gaps for remediation prioritization
 - Links to specific Monitoring_Coverage_Register rows showing which assets
-
 
 **Usage Notes**:
 
@@ -2253,7 +2144,6 @@ Logic: Identify asset types with (1) Critical/High criticality AND (2) Monitorin
 - "Critical Gap" in Section A = category needs immediate attention
 - Critical/High assets with Status="❌" require escalation
 - "None" monitoring method for Tier 1 assets = severe gap
-
 
 ---
 
@@ -2311,13 +2201,11 @@ Action Needed logic:
 - Drift Rate: Red if >0.15, Yellow 0.05-0.15, Green <0.05
 - MTTR: Green if decreasing over time, Red if increasing
 
-
 **Special Features**:
 
 - All formula-driven
 - Charts reserved area (Rows 60-80) for visual trend graphs
 - Highlight anomalies (sudden spikes indicate systemic issue)
-
 
 **Usage Notes**:
 
@@ -2326,7 +2214,6 @@ Action Needed logic:
 - Decreasing drift trend = configuration stabilization or process improvement
 - High drift rate for specific category = targeted investigation needed
 - Assets with >10 incidents in 90 days = configuration stability problem
-
 
 ---
 
@@ -2364,7 +2251,6 @@ Action Needed logic:
 - Monitoring coverage reports should be generated quarterly as evidence
 - Tool health checks should be documented monthly
 
-
 ---
 
 ## Sheet 11: Approval_Sign_Off
@@ -2378,22 +2264,18 @@ Action Needed logic:
 - Assessment Title: "Configuration Monitoring Assessment - Control A.8.9"
 - Assessment Period, Document ID, Version, Assessment Date
 
-
 **Section B: Preparer Sign-Off**
 
 - Attestation: "I attest that monitoring coverage has been documented accurately and drift incidents have been tracked completely."
-
 
 **Section C: Reviewer Sign-Off**
 
 - Attestation: "I have reviewed monitoring effectiveness and verified drift detection capabilities. Coverage gaps and remediation improvements have been identified."
 
-
 **Section D: Approver Sign-Off**
 
 - Approval Decision dropdown
 - Attestation: "I approve this monitoring assessment and authorize budget for monitoring tool expansion and gap remediation."
-
 
 ---
 
@@ -2409,7 +2291,6 @@ Action Needed logic:
 - Monitoring Method: Automated Continuous, Scheduled Automated, Manual, Hybrid, None
 - Check Frequency: Real-time (<15 min), Hourly, Daily, Weekly, Monthly, Quarterly, Manual (on-demand)
 
-
 **Drift_Detection_Log**:
 
 - Drift Category: Critical, High, Medium, Low, Informational
@@ -2418,14 +2299,12 @@ Action Needed logic:
 - Root Cause Category: Unauthorized Manual Change, Tool Failure, Software Update, Baseline Not Updated, Environmental, Malicious, Other
 - Drift Status: Detected, Under Investigation, Remediation In Progress, Remediated, Closed, False Positive
 
-
 **Monitoring_Tool_Inventory**:
 
 - Tool Type: Agent-Based, Agentless, Network Scanner, Script/Custom, Cloud-Native, SIEM Integration
 - Deployment Status: Active, Degraded, Offline, Pilot, Decommissioned
 - Alerting Method: Email, SIEM, Webhook, Dashboard Only, Ticketing System, Multiple
 - Licensing Model: Commercial, Open Source, Subscription, Perpetual, In-House Developed
-
 
 **Drift_Remediation_Tracking**:
 
@@ -2435,13 +2314,11 @@ Action Needed logic:
 - Verification Result: Passed, Failed, Partially Successful, Not Yet Verified
 - Root Cause Remediation: Baseline Updated, Change Control Enforced, Tool Fixed, Process Improved, Training Provided, Other
 
-
 **False_Positive_Register**:
 
 - False Positive Reason: Incorrect Baseline, Tool Misconfiguration, Expected Variation, Timing Issue, Tool Bug, Other
 - Tuning Action Taken: Baseline Updated, Monitoring Rule Adjusted, Alert Threshold Changed, Exception Added, Tool Updated, No Action (Acceptable)
 - Recurrence Status: Not Seen Again, Recurred Once, Recurring (Needs Further Tuning), Monitoring
-
 
 **Evidence_Register**:
 
@@ -2450,11 +2327,9 @@ Action Needed logic:
 - Retention Period: 1 Year, 3 Years, 5 Years, 7 Years, Indefinite
 - Verification Status: Verified, Needs Verification, Missing, Outdated
 
-
 **Approval_Sign_Off**:
 
 - Approval Decision: Approved, Approved with Conditions, Not Approved - Revisions Required
-
 
 ## Date Format
 
@@ -2476,7 +2351,6 @@ Coverage by Tier:
 - Tier 3 (Standard): Target ≥85% (Red <75%, Yellow 75-84%, Green ≥85%)
 - Tier 4 (Low): Target ≥70% (Red <60%, Yellow 60-69%, Green ≥70%)
 
-
 Excluded assets don't count against coverage.
 ```
 
@@ -2489,7 +2363,6 @@ Healthy Range: 0.01-0.1 incidents per asset per month
 - <0.01: Possible under-detection (monitoring gaps or very stable environment)
 - 0.01-0.1: Normal drift rate
 - >0.1: High drift (investigate: unstable environment, monitoring noise, or process issues)
-
 
 Mean Time to Detect (MTTD) by Tier:
 
@@ -2508,7 +2381,6 @@ Mean Time to Remediate (MTTR) by Drift Category:
 - High: Target <24 hours (1 day)
 - Medium: Target <7 days
 - Low: Target <30 days
-
 
 SLA Compliance % = (Remediated Within SLA / Total Remediated) × 100
 
@@ -2606,7 +2478,6 @@ Status:
 - When drift remediation involves "Updated Baseline", must update A.8.9.1 Version_Control
 - Expected values in drift detection come from baselines documented in A.8.9.1
 
-
 **Integration with A.8.9.2 (Change Control)**:
 
 - Authorized changes (Column K in Drift_Detection_Log) reference Change IDs from A.8.9.2
@@ -2614,13 +2485,11 @@ Status:
 - If authorized change not in A.8.9.2, flag as process gap (change control bypass)
 - Changes approved in A.8.9.2 should not trigger drift alerts (monitoring baseline update needed)
 
-
 **Integration with A.8.9.4 (Security Hardening)**:
 
 - Security-related drift detected here may indicate hardening non-compliance
 - Critical drift involving security controls should be cross-referenced in A.8.9.4
 - Hardening standards from A.8.9.4 define many monitored configurations
-
 
 ---
 
@@ -2656,7 +2525,6 @@ Status:
    - Review why change control was bypassed (training, access control issue)
    - Implement recurrence prevention (process improvement, technical controls)
 
-
 ## Scenario: Monitoring Tool Failure
 
 **Detection**: No drift alerts received for 24 hours from monitoring tool covering 200 assets.
@@ -2685,7 +2553,6 @@ Status:
    - Implement tool health monitoring to detect future failures faster
    - Update Evidence_Register with incident documentation
 
-
 ## Scenario: High False Positive Rate
 
 **Detection**: Monthly review shows Monitoring Tool X generating 40% false positives.
@@ -2713,7 +2580,6 @@ Status:
    - Monitor false positive rate for 30 days post-tuning
    - Target: Reduce to <10%
    - Update Recurrence Status in False_Positive_Register
-
 
 ## Scenario: Coverage Gap Identified
 
@@ -2747,7 +2613,6 @@ Status:
    - Update Monitoring_Tool_Inventory if new tool deployed
    - Document in Evidence_Register (monitoring implementation proof)
 
-
 ---
 
 # Document Maintenance
@@ -2761,7 +2626,6 @@ Status:
 - **Quarterly**: Comprehensive assessment, trend analysis, gap remediation
 - **Annual**: Monitoring tool evaluation, program effectiveness review
 
-
 ## Workbook Versioning
 
 File naming: `ISMS_A_8_9_3_Configuration_Monitoring_Assessment_YYYYMMDD.xlsx`
@@ -2771,7 +2635,6 @@ Retain versions:
 - Monthly snapshots (drift trend analysis)
 - Quarterly assessments (formal records)
 - All versions for minimum 3 years (audit trail)
-
 
 ---
 

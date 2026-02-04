@@ -43,8 +43,6 @@ This document is provided for informational and awareness purposes only.
 - This document does NOT mandate the use, prohibition, or configuration of specific change management tools, vendors, or platforms.
 - This document does NOT override or extend any ISMS policy.
 
-
-
 All binding change management requirements, obligations, and governance decisions are defined exclusively in **ISMS-POL-A.8.32 (Change Management Policy)** and other approved ISMS documentation.
 
 This document serves solely as a technical reference to:
@@ -55,8 +53,6 @@ This document serves solely as a technical reference to:
 - Support change management implementation planning
 - Provide quick reference guides for practitioners
 - **This document must not be used as audit evidence of implementation**
-
-
 
 Use of this document does not imply implementation, compliance, or operational maturity.
 
@@ -76,8 +72,6 @@ This document provides technical reference material for change management implem
 - Risk assessment methodology (formerly ISMS-POL-A.8.32-S5.C)
 - Quick reference guide (formerly ISMS-POL-A.8.32-S5.D)
 
-
-
 ## What This Document Is NOT
 
 This document does NOT:
@@ -88,8 +82,6 @@ This document does NOT:
 - Replace ISMS-POL-A.8.32 policy requirements
 - Mandate specific tool selection or vendor relationships
 - Establish approval workflows or authorities
-
-
 
 ## Relationship to ISMS
 
@@ -130,8 +122,6 @@ Define minimum capabilities required from change management systems (ITSM tools,
 - Link related changes, incidents, problems
 - Tag/categorize changes (by type, affected systems, priority)
 
-
-
 **Assessment:** Can users submit complete change requests? Are all required fields captured?
 
 ---
@@ -151,15 +141,11 @@ Define minimum capabilities required from change management systems (ITSM tools,
 - Rejected
 - Cancelled
 
-
-
 **Requirements:**
 
 - State transitions tracked with timestamp and user
 - State-based workflows (certain actions only available in certain states)
 - State history visible in change record
-
-
 
 ---
 
@@ -177,8 +163,6 @@ Define minimum capabilities required from change management systems (ITSM tools,
 - Approval history with approver identity and timestamp
 - Email integration for approval notifications
 
-
-
 ---
 
 ### CAP-004: Change Calendar
@@ -192,8 +176,6 @@ Define minimum capabilities required from change management systems (ITSM tools,
 - Identify change freeze periods and blackout windows
 - Filter by system, change type, risk level, team
 - Export to iCalendar format
-
-
 
 ---
 
@@ -212,8 +194,6 @@ Define minimum capabilities required from change management systems (ITSM tools,
 - Standard change utilization
 - Trend analysis
 
-
-
 ---
 
 ### CAP-006: Audit Trail
@@ -229,8 +209,6 @@ Define minimum capabilities required from change management systems (ITSM tools,
 - Immutable audit log (cannot be altered after creation)
 - Audit log retention aligned with policy requirements
 
-
-
 ---
 
 ### CAP-007: Integration
@@ -245,8 +223,6 @@ Define minimum capabilities required from change management systems (ITSM tools,
 - Service Catalog - standard changes as catalog items
 - Notification systems - email, Slack, MS Teams
 - API availability for automation
-
-
 
 ---
 
@@ -270,8 +246,6 @@ Organizations evaluating change management tools can use this checklist:
 - [ ] Multi-tenant support (if needed)
 - [ ] Cloud-based or on-premises deployment (as per requirements)
 
-
-
 ---
 
 # Change Request Form Template
@@ -289,8 +263,6 @@ Provide standard template for change requests ensuring consistent information ca
 - **Requested by:** [Name, Email, Department]
 - **Contact Phone:** [For implementation coordination]
 
-
-
 **Section 2: Change Classification**
 
 - **Change Type:** [Dropdown: Standard / Normal / Emergency]
@@ -299,15 +271,11 @@ Provide standard template for change requests ensuring consistent information ca
 - **Priority:** [Dropdown: Critical / High / Medium / Low]
 - **Risk Level:** [Auto-calculated or manual: Critical / High / Medium / Low]
 
-
-
 **Section 3: Change Description**
 
 - **Change Title:** [Brief, descriptive title - 80 characters max]
 - **Change Description:** [What is being changed? What is the scope? What are the specific modifications?]
 - **Business Justification:** [Why is this change needed? Business driver, expected benefits, consequences if not implemented]
-
-
 
 **Section 4: Impact Assessment**
 
@@ -316,8 +284,6 @@ Provide standard template for change requests ensuring consistent information ca
 - **Service Impact:** [Dropdown: No Impact / Limited / Partial Outage / Full Outage]
 - **Downtime Required:** [Yes / No] **If Yes, Duration:** [Estimated minutes/hours]
 
-
-
 **Section 5: Risk Assessment**
 
 - **Impact Level:** [Dropdown: Low / Medium / High / Critical] + Justification
@@ -325,15 +291,11 @@ Provide standard template for change requests ensuring consistent information ca
 - **Overall Risk:** [Auto-calculated from Impact × Likelihood matrix]
 - **Risk Mitigation Measures:** [How will risks be reduced?]
 
-
-
 **Section 6: Dependencies and Prerequisites**
 
 - **Dependencies:** [Other changes, systems, or activities this change depends on]
 - **Prerequisites:** [What must be completed before this change - technical, business, approval]
 - **Conflicts:** [Any known conflicts with other changes or activities?]
-
-
 
 **Section 7: Implementation Plan**
 
@@ -343,16 +305,12 @@ Provide standard template for change requests ensuring consistent information ca
 - **Implementation Team:** [Lead Implementer, Additional Implementers, Verification Personnel]
 - **Resource Requirements:** [Personnel, Tools/Software, Budget]
 
-
-
 **Section 8: Testing and Validation**
 
 - **Testing Environment:** [Where will change be tested?]
 - **Testing Performed:** [Unit testing, Integration testing, Security testing, UAT - Y/N and results]
 - **Test Results:** [Attach test documentation]
 - **Acceptance Criteria:** [How will success be measured?]
-
-
 
 **Section 9: Rollback Plan**
 
@@ -361,15 +319,11 @@ Provide standard template for change requests ensuring consistent information ca
 - **Rollback Decision Criteria:** [When should rollback be initiated?]
 - **Data Considerations:** [Will rollback cause data loss? How mitigated?]
 
-
-
 **Section 10: Communication Plan**
 
 - **Stakeholder Notification Required:** [Yes / No]
 - **If Yes:** Who needs to be notified, notification method, timing, communication owner
 - **User Communication:** [Will end users need advance notice?]
-
-
 
 **Section 11: Documentation**
 
@@ -377,15 +331,11 @@ Provide standard template for change requests ensuring consistent information ca
 - **If Yes:** System documentation, Operating procedures, User guides, Network diagrams, Other
 - **Documentation Owner:** [Who will update documentation?]
 
-
-
 **Section 12: Post-Implementation**
 
 - **PIR Required:** [Auto-determined based on change type/risk]
 - **Success Criteria:** [How will change success be measured?]
 - **Monitoring Duration:** [How long will change be monitored post-implementation?]
-
-
 
 ---
 
@@ -531,8 +481,6 @@ Provide detailed methodology for assessing change risk based on impact and likel
 - [ ] Rollback plan (how to undo)
 - [ ] Communication plan (who to notify)
 
-
-
 ## Emergency Change Checklist
 
 **Before declaring emergency:**
@@ -541,8 +489,6 @@ Provide detailed methodology for assessing change risk based on impact and likel
 - [ ] Immediate action required to prevent significant impact?
 - [ ] Risk of NOT changing > risk of changing?
 - [ ] No time for normal CAB review?
-
-
 
 **If YES to all above → Emergency Change:**
 1. Contact E-CAB (IT Ops Manager + CISO)
@@ -603,8 +549,6 @@ Provide detailed methodology for assessing change risk based on impact and likel
 - Vendor stability and support quality
 - Cloud vs on-premises deployment model
 
-
-
 **Popular ITSM Platforms** (examples, not recommendations):
 
 - ServiceNow
@@ -614,8 +558,6 @@ Provide detailed methodology for assessing change risk based on impact and likel
 - Freshservice
 - ManageEngine
 - Open-source options (OTRS, iTop, osTicket)
-
-
 
 ## Configuration Best Practices
 
@@ -647,8 +589,6 @@ Provide detailed methodology for assessing change risk based on impact and likel
 - **Submitted by:** ___________
 - **Date/Time:** ___________
 
-
-
 **Emergency Criteria Met:**
 
 - [ ] Critical incident requiring immediate resolution
@@ -656,8 +596,6 @@ Provide detailed methodology for assessing change risk based on impact and likel
 - [ ] System failure requiring immediate restoration
 - [ ] Imminent system failure prevention
 - [ ] Urgent regulatory requirement
-
-
 
 **Situation Description:**
 [Describe the critical situation requiring emergency change]
@@ -675,8 +613,6 @@ Provide detailed methodology for assessing change risk based on impact and likel
 
 - IT Operations Manager: ___________ Date: ___________
 - CISO: ___________ Date: ___________
-
-
 
 ---
 

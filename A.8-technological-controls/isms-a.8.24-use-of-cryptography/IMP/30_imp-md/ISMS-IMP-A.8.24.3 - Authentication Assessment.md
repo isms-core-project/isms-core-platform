@@ -58,7 +58,6 @@ This assessment evaluates [Organization]'s implementation of **cryptographic con
 - **PCI DSS (Req. 8):** Requires strong authentication for systems processing cardholder data
 - **Industry Standards:** SOC 2, ISO 27018, NIST 800-63B mandate secure authentication controls
 
-
 **Business Impact:**
 
 - **Credential Stuffing:** Weak password hashing enables mass account compromise
@@ -67,13 +66,11 @@ This assessment evaluates [Organization]'s implementation of **cryptographic con
 - **Compliance Violations:** Inadequate authentication controls result in audit failures
 - **Lateral Movement:** Compromised service accounts enable attackers to pivot through infrastructure
 
-
 **Key Distinction vs. Previous Assessments:**
 
 - **IMP-1 (Data Transmission):** Protects data in transit (TLS, VPN, SSH)
 - **IMP-2 (Data Storage):** Protects data at rest (disk encryption, TDE)
 - **IMP-3 (Authentication - THIS ASSESSMENT):** Protects identity and access (password hashing, MFA, PKI)
-
 
 ## Who Should Complete This Assessment
 
@@ -88,7 +85,6 @@ This assessment evaluates [Organization]'s implementation of **cryptographic con
 - Service account inventory and management processes
 - SSO/Federation trust relationships (SAML, OAuth2/OIDC)
 
-
 **Support Roles:**
 
 - **Directory Services Administrators:** For AD/LDAP password policies
@@ -96,7 +92,6 @@ This assessment evaluates [Organization]'s implementation of **cryptographic con
 - **PKI Team:** For certificate-based authentication verification
 - **Application Teams:** For service account identification
 - **Compliance Team:** For policy interpretation and exception approvals
-
 
 ## Time Estimate
 
@@ -110,13 +105,11 @@ This assessment evaluates [Organization]'s implementation of **cryptographic con
 - Evidence Collection: 1-1.5 hours (screenshots, policy exports, reports)
 - Quality Review: 30-60 minutes
 
-
 **Complexity Factors:**
 
 - **Simple:** Single identity provider (AD or Entra ID), password-only with some MFA - 6 hours
 - **Complex:** Multiple identity providers, heterogeneous MFA, PKI, extensive service accounts, federated SSO - 8+ hours
 - **Very Complex:** Multi-forest AD, hybrid cloud identity, certificate-based authentication, complex federation - consider splitting across IAM team members
-
 
 ## Connection to Policy
 
@@ -129,7 +122,6 @@ This assessment implements **ISMS-POL-A.8.24, Section 6.4 (Authentication)** whi
 - Service account security controls
 - SSO and federation trust establishment
 - Authentication logging and monitoring
-
 
 **Policy Authority:** Chief Information Security Officer (CISO)  
 **Compliance Status:** Mandatory for all authentication systems
@@ -146,7 +138,6 @@ This assessment implements **ISMS-POL-A.8.24, Section 6.4 (Authentication)** whi
 - **Password History:** Minimum 10 previous passwords remembered
 - **Account Lockout:** 5 failed attempts → 30-minute lockout
 
-
 **Multi-Factor Authentication ():**
 
 - **REQUIRED:** All privileged accounts (administrators, root, domain admins)
@@ -156,14 +147,12 @@ This assessment implements **ISMS-POL-A.8.24, Section 6.4 (Authentication)** whi
 - **PROHIBITED:** SMS-based MFA (vulnerable to SIM swapping)
 - **Enrollment:** 90%+ enrollment for required populations
 
-
 **Certificate-Based Authentication ():**
 
 - **Certificate Validity:** Maximum 825 days (internal PKI), ≤398 days (public CA)
 - **Key Algorithm:** RSA 2048-bit minimum (RSA 3072+ or ECDSA P-256+ preferred)
 - **CRL/OCSP:** Certificate revocation checking REQUIRED
 - **Smart Cards:** PIV/CAC compliant for government/military
-
 
 **Service Accounts ():**
 
@@ -172,14 +161,12 @@ This assessment implements **ISMS-POL-A.8.24, Section 6.4 (Authentication)** whi
 - **Least Privilege:** Service accounts MUST NOT have interactive login rights
 - **Inventory:** Complete service account inventory maintained and reviewed quarterly
 
-
 **SSO & Federation ():**
 
 - **Protocols:** SAML 2.0, OAuth 2.0, OpenID Connect (OIDC)
 - **Certificate Validation:** IdP signing certificates verified and monitored for expiration
 - **Trust Relationships:** Documented and reviewed annually
 - **Federation:** External IdP trust requires CISO approval
-
 
 ---
 
@@ -197,14 +184,12 @@ Before starting this assessment, ensure you have access to:
 - [ ] LDAP directory server management
 - [ ] Identity lifecycle management system
 
-
 **Password Policy Systems:**
 
 - [ ] Group Policy Objects (GPO) for Windows domain password policies
 - [ ] Entra ID password protection settings
 - [ ] Application-specific password policies (database, Linux PAM, etc.)
 - [ ] Password hash inspection capability (database views, config files)
-
 
 **MFA Systems:**
 
@@ -213,14 +198,12 @@ Before starting this assessment, ensure you have access to:
 - [ ] MFA bypass/exception tracking
 - [ ] Conditional access policies (Entra ID, Okta)
 
-
 **Certificate Authority (CA):**
 
 - [ ] PKI infrastructure (if applicable) - CA console, certificate inventory
 - [ ] Smart card management system (if applicable)
 - [ ] Certificate lifecycle management tools
 - [ ] CRL/OCSP responder configuration
-
 
 **Service Account Management:**
 
@@ -229,7 +212,6 @@ Before starting this assessment, ensure you have access to:
 - [ ] Service account password rotation tracking
 - [ ] Service account permissions audit capability
 
-
 **SSO & Federation:**
 
 - [ ] SSO configuration (SAML IdP settings)
@@ -237,14 +219,12 @@ Before starting this assessment, ensure you have access to:
 - [ ] Federation trust relationships documentation
 - [ ] IdP signing certificate inventory
 
-
 **Documentation Systems:**
 
 - [ ] Authentication policy repository
 - [ ] Exception/deviation approval records
 - [ ] Service account documentation
 - [ ] Federation trust agreements
-
 
 ## Knowledge Required
 
@@ -257,7 +237,6 @@ Before starting this assessment, ensure you have access to:
 - Service account identification and classification
 - SSO implementation and federated trust relationships
 
-
 **Technical Skills:**
 
 - Ability to query password hash algorithms (database views, config files)
@@ -266,7 +245,6 @@ Before starting this assessment, ensure you have access to:
 - Basic PKI concepts (if certificate authentication used)
 - Service account identification across platforms
 - SAML/OAuth2/OIDC configuration review
-
 
 ## Tools Needed
 
@@ -318,7 +296,6 @@ openssl x509 -in certificate.crt -noout -ext crlDistributionPoints
 - **Service Account Inventory:** PowerShell scripts, Privileged Access Management (PAM) reports
 - **Certificate Inventory:** PKI management console exports
 
-
 ## Estimated Time Commitment
 
 **Phase 1: Information Gathering (2-2.5 hours)**
@@ -329,7 +306,6 @@ openssl x509 -in certificate.crt -noout -ext crlDistributionPoints
 - Document certificate-based authentication (if used)
 - Export SSO/Federation configurations
 
-
 **Phase 2: Technical Verification (1.5-2 hours)**
 
 - Verify password hash algorithms (database, LDAP, application configs)
@@ -337,7 +313,6 @@ openssl x509 -in certificate.crt -noout -ext crlDistributionPoints
 - Validate certificate authentication configuration
 - Review service account password age
 - Check IdP certificate expiration dates
-
 
 **Phase 3: Assessment Completion (2.5-3 hours)**
 
@@ -347,14 +322,12 @@ openssl x509 -in certificate.crt -noout -ext crlDistributionPoints
 - Create remediation plans
 - Collect evidence files
 
-
 **Phase 4: Quality Review (30-60 minutes)**
 
 - Self-check using Quality Checklist (Section 7)
 - Verify evidence completeness
 - Review Summary Dashboard
 - Ensure all gaps have remediation plans
-
 
 **Total:** 6-8 hours for comprehensive assessment
 
@@ -382,7 +355,6 @@ openssl x509 -in certificate.crt -noout -ext crlDistributionPoints
    - Identify systems storing passwords as plaintext or using weak hashes (MD5, SHA-1)
    - **Evidence:** GPO exports, Entra ID policy screenshots, database password hash samples
 
-
 **STEP 3: Multi-Factor Authentication (60-75 minutes)**
 2. **Sheet 2: Multi-Factor Authentication (MFA)**
 
@@ -393,7 +365,6 @@ openssl x509 -in certificate.crt -noout -ext crlDistributionPoints
    - Identify MFA bypass exceptions
    - **CRITICAL:** Verify all privileged accounts have MFA
    - **Evidence:** MFA enrollment reports, conditional access policies, privileged account list with MFA status
-
 
 **STEP 4: Certificate-Based Authentication (45-60 minutes - IF APPLICABLE)**
 3. **Sheet 3: Certificate-Based Authentication**
@@ -406,7 +377,6 @@ openssl x509 -in certificate.crt -noout -ext crlDistributionPoints
    - Document smart card usage (if applicable)
    - **Evidence:** CA configuration, certificate inventory, CRL/OCSP verification
 
-
 **STEP 5: Service Accounts (60-90 minutes - OFTEN OVERLOOKED)**
 4. **Sheet 4: Service Accounts**
 
@@ -417,7 +387,6 @@ openssl x509 -in certificate.crt -noout -ext crlDistributionPoints
    - Document managed service identities (Azure MSI, AWS IAM roles)
    - **CRITICAL:** Service accounts are high-value targets for attackers
    - **Evidence:** Service account inventory, password age reports, privilege assignments
-
 
 **STEP 6: SSO & Federation (45-60 minutes - IF APPLICABLE)**
 5. **Sheet 5: SSO & Federation**
@@ -430,7 +399,6 @@ openssl x509 -in certificate.crt -noout -ext crlDistributionPoints
    - Check federation policy enforcement
    - **Evidence:** SSO configuration, IdP certificates, federation trust agreements
 
-
 **STEP 7: Summary & Evidence (30-45 minutes)**
 6. **Summary Dashboard** (auto-calculated, review only)
 
@@ -439,20 +407,17 @@ openssl x509 -in certificate.crt -noout -ext crlDistributionPoints
    - Note critical gaps requiring immediate attention
    - Verify calculations make sense
 
-
 7. **Evidence Register**
 
    - List all evidence files collected during assessment
    - Ensure evidence naming is consistent
    - Verify all evidence is accessible
 
-
 8. **Approval Sign-Off**
 
    - Complete assessment summary
    - Sign as assessment owner
    - Route to Information Security Officer for review
-
 
 **STEP 8: Final Quality Check (30 minutes)**
 9. Run through Quality Checklist (Section 7 of this guide)
@@ -470,7 +435,6 @@ openssl x509 -in certificate.crt -noout -ext crlDistributionPoints
 - Query all service accounts together (AD, Azure, Linux, databases)
 - Review all SSO configurations together
 
-
 **Use Automation:**
 
 - PowerShell scripts for AD password policy and user enumeration
@@ -478,20 +442,17 @@ openssl x509 -in certificate.crt -noout -ext crlDistributionPoints
 - Database queries for password hash algorithm verification
 - API calls to MFA providers for enrollment data
 
-
 **Leverage Existing Documentation:**
 
 - If recent IAM audit exists: Extract authentication controls evidence
 - If SOC 2 or ISO audit: Reuse password policy and MFA documentation
 - If PAM system deployed: Extract service account inventory
 
-
 **Mark Sections N/A Appropriately:**
 
 - If no certificate-based authentication: Mark Sheet 3 as N/A
 - If no SSO/Federation: Mark Sheet 5 as N/A
 - N/A is acceptable with justification; blank is not acceptable
-
 
 ---
 
@@ -508,7 +469,6 @@ openssl x509 -in certificate.crt -noout -ext crlDistributionPoints
 - **"No":** Only if [Organization] is 100% certificate-based or biometric (extremely rare - even Entra ID passwordless still has fallback passwords)
 - **"Not Applicable":** Not appropriate for this section
 
-
 **Where to Find This Information:**
 
 - Active Directory Users and Computers
@@ -516,7 +476,6 @@ openssl x509 -in certificate.crt -noout -ext crlDistributionPoints
 - Application authentication settings
 - Database user tables
 - Linux /etc/passwd, /etc/shadow
-
 
 **Field-by-Field Guidance:**
 
@@ -540,14 +499,12 @@ openssl x509 -in certificate.crt -noout -ext crlDistributionPoints
 - Verification: Not directly inspectable (hashes stored in SAM/NTDS.dit)
 - **Good Practice:** Enable Entra ID Password Protection for compromised password detection
 
-
 **Entra ID / Microsoft 365:**
 
 - Hash Algorithm: PBKDF2-SHA256 with adaptive salt
 - Minimum iterations: 600,000+
 - Verification: Not directly inspectable (managed by Microsoft)
 - **Compliance:** ✅ Compliant (Microsoft uses approved algorithms)
-
 
 **Linux (/etc/shadow):**
 ```bash
@@ -615,7 +572,6 @@ WHERE type_desc = 'SQL_LOGIN';
 - No plaintext passwords
 - No weak hashes (MD5, SHA-1, DES)
 
-
 **⚠️ Partial:** Some requirements met but gaps exist:
 
 - Acceptable hash (SHA-256, SHA-512) but not optimal (bcrypt/Argon2)
@@ -623,7 +579,6 @@ WHERE type_desc = 'SQL_LOGIN';
 - Password expiration >180 days
 - Password history <10 passwords
 - Account lockout policy exists but weak (>10 attempts)
-
 
 **❌ Non-Compliant:** Critical failures:
 
@@ -633,7 +588,6 @@ WHERE type_desc = 'SQL_LOGIN';
 - Password length <12 characters
 - No account lockout policy
 - Passwords stored in application config files unencrypted
-
 
 **N/A:** System doesn't use password authentication (certificate-only, biometric-only)
 
@@ -699,7 +653,6 @@ WHERE type_desc = 'SQL_LOGIN';
 - Linux /etc/shadow sample: `EV-1-Linux-Shadow-Hash-Sample-20260115.txt` (sanitized)
 - SQL Server password policy: `EV-1-MSSQL-Password-Policy-20260115.txt`
 
-
 **Common Issues & Solutions:**
 
 **Issue:** MD5 password hashes in legacy database  
@@ -727,14 +680,12 @@ WHERE type_desc = 'SQL_LOGIN';
 - **"No":** If no MFA deployed at all (high-risk, immediate remediation needed)
 - **"Not Applicable":** Not appropriate (all organizations should evaluate MFA)
 
-
 **Where to Find This Information:**
 
 - MFA provider admin console (Duo, Okta, Azure MFA, Google Authenticator, etc.)
 - Conditional access policies (Entra ID, Okta)
 - Application-specific MFA settings
 - VPN MFA configuration
-
 
 **Field-by-Field Guidance:**
 
@@ -758,18 +709,15 @@ WHERE type_desc = 'SQL_LOGIN';
 - **Smart Cards:** PIV/CAC cards - ACCEPTABLE (government/military)
 - **FIDO2/WebAuthn:** Hardware security keys - PREFERRED (phishing-resistant)
 
-
 **⚠️ ACCEPTABLE (with caveats):**
 
 - **Backup codes:** Single-use codes for recovery - ACCEPTABLE as backup only
 - **Email-based OTP:** One-time password sent to email - ACCEPTABLE for low-risk only
 
-
 **❌ NOT ACCEPTABLE:**
 
 - **SMS-based OTP:** Vulnerable to SIM swapping attacks - PROHIBITED for privileged accounts or Confidential/Restricted data access
 - **Security Questions:** Easily guessed or researched - NOT CONSIDERED MFA
-
 
 **Status Determination:**
 
@@ -783,7 +731,6 @@ WHERE type_desc = 'SQL_LOGIN';
 - MFA enrollment ≥90% for required populations
 - MFA bypass exceptions documented with CISO approval
 
-
 **⚠️ Partial:** Some requirements met but gaps exist:
 
 - MFA enabled for privileged accounts but enrollment <100%
@@ -792,7 +739,6 @@ WHERE type_desc = 'SQL_LOGIN';
 - MFA enrollment 70-89% for required populations
 - Some MFA bypass exceptions without formal approval
 
-
 **❌ Non-Compliant:** Critical failures:
 
 - No MFA for privileged accounts
@@ -800,7 +746,6 @@ WHERE type_desc = 'SQL_LOGIN';
 - No MFA for remote access
 - No MFA for systems with Confidential/Restricted data
 - MFA bypasses granted without risk assessment
-
 
 **N/A:** Not applicable (unusual - most organizations should have MFA)
 
@@ -858,7 +803,6 @@ WHERE type_desc = 'SQL_LOGIN';
 - VPN MFA configuration: `EV-2-VPN-MFA-Config-20260115.png`
 - MFA method distribution: `EV-2-MFA-Methods-Report-20260115.pdf`
 
-
 **Common Issues:**
 
 **Issue:** CEO/executives refuse MFA ("too inconvenient")  
@@ -892,7 +836,6 @@ WHERE type_desc = 'SQL_LOGIN';
 - **4.5: Service Accounts** (Inventory, password policies, rotation, least privilege)
 - **4.6: SSO & Federation** (SAML, OAuth2/OIDC, IdP trust, certificate expiration)
 
-
 **Key Principles Applied to All Sections:**
 
 - Cryptographic algorithm verification is critical
@@ -900,7 +843,6 @@ WHERE type_desc = 'SQL_LOGIN';
 - Exception handling requires CISO approval
 - Common pitfalls identified and solutions provided
 - Practical "where to find" and "how to verify" guidance
-
 
 ---
 
@@ -920,14 +862,12 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - `EV-4-ServiceAccounts-Inventory-20260115.csv`
 - `EV-5-SAML-IdP-Config-20260115.png`
 
-
 **Storage Requirements:**
 
 - **Location:** Centralized evidence repository (same as IMP-1, IMP-2)
 - **Folder Structure:** Organize by assessment section
 - **Retention:** Audit cycle + 1 year minimum
 - **Sensitivity:** Authentication configs may contain sensitive info - sanitize credentials
-
 
 **Evidence Quality Criteria:**
 
@@ -936,7 +876,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - **Attributable:** Clear which system it documents
 - **Verifiable:** Auditor can reproduce
 - **Protected:** Stored securely, sanitized
-
 
 ## Evidence Types by Section
 
@@ -949,7 +888,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - Application password policy (config file excerpt, sanitized)
 - Password policy GPO export
 
-
 **2. Multi-Factor Authentication:**
 
 - MFA enrollment report (all users)
@@ -958,7 +896,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - VPN MFA settings
 - MFA method distribution
 - MFA bypass exception approvals
-
 
 **3. Certificate-Based Authentication:**
 
@@ -969,7 +906,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - Smart card enrollment report (if applicable)
 - Certificate lifecycle documentation
 
-
 **4. Service Accounts:**
 
 - Service account inventory (AD, Entra ID, Linux, databases)
@@ -978,7 +914,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - Managed service identities configuration (Azure MSI, AWS IAM)
 - PAM system reports (if applicable)
 
-
 **5. SSO & Federation:**
 
 - SSO configuration (SAML IdP settings)
@@ -986,7 +921,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - Federation trust agreements
 - IdP signing certificate inventory
 - Federated application list
-
 
 ## Tools for Evidence Collection
 
@@ -1036,7 +970,6 @@ WHERE rolpassword IS NOT NULL;
 - API secrets
 - Personal data in user lists
 
-
 **Safe to Include:**
 
 - Hash algorithm names (bcrypt, Argon2, etc.)
@@ -1044,7 +977,6 @@ WHERE rolpassword IS NOT NULL;
 - Certificate validity dates
 - Policy settings (password length, complexity rules)
 - Configuration screenshots with secrets redacted
-
 
 ---
 
@@ -1159,7 +1091,6 @@ WHERE rolpassword IS NOT NULL;
 - [ ] Evidence Register populated
 - [ ] All evidence files exist and are accessible
 
-
 ## Accuracy Checks
 
 - [ ] Password hash algorithms verified (database queries, config files)
@@ -1171,7 +1102,6 @@ WHERE rolpassword IS NOT NULL;
 - [ ] Weak hash algorithms (MD5, SHA-1) identified
 - [ ] MFA enforcement vs enrollment distinguished
 - [ ] Service account password ages documented
-
 
 ## Policy Alignment Checks
 
@@ -1185,7 +1115,6 @@ WHERE rolpassword IS NOT NULL;
 - [ ] Certificate validity ≤825 days (internal PKI)
 - [ ] IdP signing certificates valid and monitored
 
-
 ## Audit Readiness Checks
 
 - [ ] Evidence is verifiable (auditor could reproduce)
@@ -1194,7 +1123,6 @@ WHERE rolpassword IS NOT NULL;
 - [ ] Evidence organized logically and consistently named
 - [ ] Assessment tells clear story from beginning to end
 - [ ] Hash algorithms not "assumed" - all verified with evidence
-
 
 ## Red Flags to Address BEFORE Submission
 
@@ -1205,7 +1133,6 @@ WHERE rolpassword IS NOT NULL;
 - [ ] No IdP certificates expiring within 90 days
 - [ ] Overall compliance rate >80% (if <80%, indicates systemic issue)
 
-
 ## Final Sanity Checks
 
 - [ ] Summary Dashboard totals match manual count
@@ -1214,7 +1141,6 @@ WHERE rolpassword IS NOT NULL;
 - [ ] Organization name filled in
 - [ ] Next Review Date set (quarterly)
 - [ ] Assessment status set to "Draft"
-
 
 **If ANY checkbox above is unchecked: STOP. Complete missing item before submitting.**
 
@@ -1232,7 +1158,6 @@ WHERE rolpassword IS NOT NULL;
 - Set status to "Draft"
 - Submit to Information Security Officer
 
-
 **Step 2: Technical Review** (Information Security Officer)
 
 - Verify hash algorithms documented
@@ -1242,13 +1167,11 @@ WHERE rolpassword IS NOT NULL;
 - Verify remediation plans realistic
 - Provide feedback
 
-
 **Step 3: Remediation (if needed)** (Assessment Owner)
 
 - Address review feedback
 - Update assessment
 - Re-submit if significant changes
-
 
 **Step 4: Final Approval** (CISO)
 
@@ -1257,7 +1180,6 @@ WHERE rolpassword IS NOT NULL;
 - Accept documented risks
 - Sign off assessment
 - Set Next Review Date
-
 
 ## Approval Timeline
 
@@ -1269,7 +1191,6 @@ WHERE rolpassword IS NOT NULL;
 - Remediation: 1-2 hours (owner)
 - Final approval: 1-2 business days (CISO)
 - **Total:** 1-2 weeks start to finish
-
 
 ## After Approval
 
@@ -1287,7 +1208,6 @@ WHERE rolpassword IS NOT NULL;
 - Certificate expiration monitoring (continuous)
 - IdP signing certificate expiration (90-day alerts)
 
-
 **Triggers for Immediate Re-Assessment:**
 
 - Password database breach (force password reset with strong hash)
@@ -1296,7 +1216,6 @@ WHERE rolpassword IS NOT NULL;
 - Discovery of weak hash algorithms (MD5, SHA-1)
 - IdP certificate expiration incident
 - Failed audit findings on authentication
-
 
 ## Continuous Improvement
 
@@ -1307,13 +1226,11 @@ WHERE rolpassword IS NOT NULL;
 - Service account password age >1 year? → Implement PAM or managed identities
 - IdP certificate near expiration? → Certificate lifecycle management automation
 
-
 **Feedback Loop:**
 
 - Assessment owner provides feedback on this guide
 - ISO reviews common questions/issues
 - Update guide for next assessment cycle
-
 
 ---
 
@@ -1370,7 +1287,6 @@ Acceptable evidence includes:
 - Federation trust relationships
 - Privileged access management (PAM) reports
 
-
 ---
 
 # Common Column Structure (All Assessment Sheets)
@@ -1411,7 +1327,6 @@ All 5 assessment sheets (Password Security through SSO & Federation) use this st
 - [ ] No → Skip to Section 2
 - [ ] Not Applicable
 
-
 ---
 
 **If Yes, complete the assessment:**
@@ -1436,7 +1351,6 @@ All 5 assessment sheets (Password Security through SSO & Federation) use this st
 - **Total systems using passwords:** _________
 - **Primary identity provider:** [ ] Active Directory [ ] Entra ID [ ] LDAP [ ] Other: _____
 - **Password policy enforcement:** [ ] Centralized (AD/Entra ID) [ ] Per-application [ ] Mixed
-
 
 ---
 
@@ -1467,14 +1381,12 @@ All 5 assessment sheets (Password Security through SSO & Federation) use this st
   - [ ] Enhanced monitoring (detects anomalies)
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
 - **Budget required:** [ ] Yes [ ] No  Amount: _________
-
 
 ---
 
@@ -1489,7 +1401,6 @@ All 5 assessment sheets (Password Security through SSO & Federation) use this st
 - [ ] Yes → Complete assessment below
 - [ ] No → Skip to Section 3
 - [ ] Not Applicable
-
 
 ---
 
@@ -1513,7 +1424,6 @@ All 5 assessment sheets (Password Security through SSO & Federation) use this st
 - **MFA provider:** [ ] Duo [ ] Okta [ ] Azure MFA [ ] Google Authenticator [ ] Other: _____
 - **MFA enrollment target:** [ ] 100% (privileged) [ ] 90%+ (all users) [ ] Other: _____
 - **Conditional access configured:** [ ] Yes [ ] No
-
 
 ---
 
@@ -1543,13 +1453,11 @@ All 5 assessment sheets (Password Security through SSO & Federation) use this st
   - [ ] Shorter password expiry (compensating control)
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -1564,7 +1472,6 @@ All 5 assessment sheets (Password Security through SSO & Federation) use this st
 - [ ] Yes → Complete assessment below
 - [ ] No → Skip to Section 4
 - [ ] Not Applicable
-
 
 ---
 
@@ -1589,7 +1496,6 @@ All 5 assessment sheets (Password Security through SSO & Federation) use this st
 - **PKI infrastructure:** [ ] Internal CA (Microsoft CA, OpenSSL) [ ] Public CA [ ] Both [ ] None
 - **Certificate usage:** [ ] VPN [ ] SSH [ ] Smart cards [ ] TLS mutual auth [ ] Code signing [ ] Other: _____
 - **Certificate lifecycle management:** [ ] Automated [ ] Manual [ ] Mixed
-
 
 ---
 
@@ -1618,13 +1524,11 @@ All 5 assessment sheets (Password Security through SSO & Federation) use this st
   - [ ] Restricted certificate usage (specific IPs only)
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -1639,7 +1543,6 @@ All 5 assessment sheets (Password Security through SSO & Federation) use this st
 - [ ] Yes → Complete assessment below
 - [ ] No → Skip to Section 5
 - [ ] Not Applicable
-
 
 ---
 
@@ -1665,7 +1568,6 @@ All 5 assessment sheets (Password Security through SSO & Federation) use this st
 - **Service accounts with admin privileges:** _________
 - **Service accounts using managed identities:** _________
 - **Password rotation process:** [ ] Automated [ ] Manual [ ] None
-
 
 ---
 
@@ -1695,13 +1597,11 @@ All 5 assessment sheets (Password Security through SSO & Federation) use this st
   - [ ] Service account isolated to specific systems
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -1716,7 +1616,6 @@ All 5 assessment sheets (Password Security through SSO & Federation) use this st
 - [ ] Yes → Complete assessment below
 - [ ] No → Skip to Section 6
 - [ ] Not Applicable
-
 
 ---
 
@@ -1742,7 +1641,6 @@ All 5 assessment sheets (Password Security through SSO & Federation) use this st
 - **Federated applications:** _________
 - **External IdP trusts:** [ ] Yes (count: _____) [ ] No
 - **IdP certificate monitoring:** [ ] Automated [ ] Manual [ ] None
-
 
 ---
 
@@ -1772,13 +1670,11 @@ All 5 assessment sheets (Password Security through SSO & Federation) use this st
   - [ ] Additional authentication factors for federated access
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -1804,7 +1700,6 @@ All 5 assessment sheets (Password Security through SSO & Federation) use this st
 - Exclude N/A items from total when calculating compliance percentage
 - Target: ≥90% Compliant for mature ISMS
 
-
 ## Critical Gaps Identified
 
 List the most critical gaps that require immediate attention:
@@ -1824,7 +1719,6 @@ List the most critical gaps that require immediate attention:
   - ❌ SMS-based MFA for privileged accounts
   - ❌ No service account inventory
 
-
 ## Top Remediation Priorities
 
 | Priority | Gap Description | Target Date | Responsible Person |
@@ -1838,7 +1732,6 @@ List the most critical gaps that require immediate attention:
 - **High:** Authentication compromise risk, compliance violation, or operational failure imminent
 - **Medium:** Compliance gap with planned remediation, low immediate risk
 - **Low:** Best practice improvement, no compliance impact
-
 
 ---
 
@@ -1865,7 +1758,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - `EV-4-ServiceAccounts-Inventory-20260115.csv`
 - `EV-5-SAML-IdP-Config-20260115.png`
 
-
 **Evidence Types:**
 
 - Password policy exports (GPO, Entra ID, application configs)
@@ -1878,14 +1770,12 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - SSO/Federation configuration
 - IdP signing certificates
 
-
 **Evidence Storage:**
 
 - **Location:** [Organization's evidence repository path]
 - **Retention:** Audit cycle + 1 year minimum
 - **Access Control:** Restricted to security team and auditors
 - **Sensitivity:** Sanitize password hashes, credentials, private keys
-
 
 ---
 
@@ -1905,7 +1795,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - Controls requiring remediation: _______
 - Critical gaps identified: _______
 - High-priority remediation items: _______
-
 
 ---
 
@@ -1940,7 +1829,6 @@ _________________________________________________________________
 - [ ] Approved with minor corrections - Specific items to address: _______
 - [ ] Requires revision - Significant issues identified, re-submit required
 
-
 ---
 
 ## Approved By (CISO)
@@ -1955,7 +1843,6 @@ _________________________________________________________________
 - [ ] Approved with conditions - Remediation must be completed by: _______
 - [ ] Rejected - Re-assessment required due to: _______
 
-
 **Risk Acceptance:**
 For any documented exceptions/deviations, I accept the residual risk based on:
 
@@ -1964,14 +1851,12 @@ For any documented exceptions/deviations, I accept the residual risk based on:
 - Business justification
 - Compliance with exception approval process (ISMS-POL-A.8.24-S5.B)
 
-
 **Budget Approval:**
 Remediation budget requirement: _______
 
 - [ ] Approved
 - [ ] Requires further justification
 - [ ] Deferred to next budget cycle
-
 
 ---
 
@@ -1989,7 +1874,6 @@ Remediation budget requirement: _______
 - Failed audit findings on authentication
 - Major IAM system changes
 
-
 **Interim Monitoring:**
 
 - Password policy compliance: Quarterly reviews
@@ -1998,7 +1882,6 @@ Remediation budget requirement: _______
 - Certificate expiration monitoring: Continuous (90-day alerts)
 - IdP signing certificate expiration: 90-day alerts
 - Remediation progress: Tracked monthly
-
 
 ---
 
@@ -2016,12 +1899,10 @@ This assessment shall be distributed to:
 - [ ] IT Management
 - [ ] Other: _______________________
 
-
 **Storage Location:**
 
 - **ISMS Repository:** `ISMS/Controls/A.8.24_Use_of_Cryptography/Assessments/`
 - **Filename:** `ISMS-IMP-A.8.24.3_Authentication_[DATE]_APPROVED.xlsx`
-
 
 ---
 
@@ -2048,13 +1929,11 @@ This assessment shall be distributed to:
 - Applied to: Column H (Status) in all assessment sheets
 - Allow blank: No
 
-
 **Authentication Method Dropdown:**
 
 - Formula: `"Password,MFA,Certificate,Token,SSO,Federation,Biometric,API Key,Service Account,N/A"`
 - Applied to: Column B in all assessment sheets
 - Allow blank: No
-
 
 **User Type Dropdown:**
 
@@ -2062,13 +1941,11 @@ This assessment shall be distributed to:
 - Applied to: Column C in all assessment sheets
 - Allow blank: No
 
-
 **Data Classification Dropdown:**
 
 - Formula: `"Public,Internal,Confidential,Restricted,N/A"`
 - Applied to: Column D in all assessment sheets
 - Allow blank: No
-
 
 **Cryptographic Algorithm Dropdown:**
 
@@ -2076,13 +1953,11 @@ This assessment shall be distributed to:
 - Applied to: Column E in all assessment sheets
 - Allow blank: No
 
-
 **Hash/Encryption Status Dropdown:**
 
 - Formula: `"Properly Hashed,Encrypted,Plaintext (Non-compliant),Salted,N/A"`
 - Applied to: Column F in all assessment sheets
 - Allow blank: No
-
 
 **Password Complexity Dropdown:**
 
@@ -2090,13 +1965,11 @@ This assessment shall be distributed to:
 - Applied to: Column G in all assessment sheets
 - Allow blank: No
 
-
 **Remediation Needed Dropdown:**
 
 - Formula: `"Yes,No"`
 - Applied to: Column K in all assessment sheets
 - Allow blank: No
-
 
 **Budget Required Dropdown:**
 
@@ -2104,20 +1977,17 @@ This assessment shall be distributed to:
 - Applied to: Column Q in all assessment sheets
 - Allow blank: No
 
-
 **Response Dropdown (Assessment Question):**
 
 - Formula: `"Yes,No,Not Applicable"`
 - Applied to: Response field for each section's assessment question
 - Allow blank: No
 
-
 **Checklist Items:**
 
 - Formula: `"Yes,No,N/A"`
 - Applied to: All compliance checklist Status columns
 - Allow blank: No
-
 
 **Password Security-Specific Dropdowns:**
 
@@ -2128,12 +1998,10 @@ This assessment shall be distributed to:
 - **Account Lockout (V):** `"5 attempts,10 attempts,None,N/A"`
 - **Lockout Duration (W):** `"30 minutes,Until admin unlock,None,N/A"`
 
-
 **MFA-Specific Dropdowns:**
 
 - **MFA Method (R):** `"TOTP (Authenticator),Push (Duo/Okta),Hardware Token,Smart Card,SMS (not recommended),N/A"`
 - **Backup MFA (T):** `"Backup codes,SMS (fallback),None,N/A"`
-
 
 **Certificate-Specific Dropdowns:**
 
@@ -2143,7 +2011,6 @@ This assessment shall be distributed to:
 - **CRL/OCSP Enabled (U):** `"Yes,No,N/A"`
 - **CA Type (V):** `"Internal PKI,Public CA,Both,N/A"`
 
-
 **Service Account-Specific Dropdowns:**
 
 - **Password Age (S):** `"<90 days,90-180 days,>180 days (non-compliant),Managed Identity (N/A)"`
@@ -2151,14 +2018,12 @@ This assessment shall be distributed to:
 - **Interactive Login (U):** `"Allowed (non-compliant),Denied (compliant),N/A"`
 - **Managed Identity (V):** `"Yes (Azure MSI/AWS IAM),No,N/A"`
 
-
 **SSO/Federation-Specific Dropdowns:**
 
 - **SSO Protocol (R):** `"SAML 2.0,OAuth 2.0,OIDC,WS-Federation,Legacy (non-compliant)"`
 - **IdP Certificate Expiry (T):** `"<90 days (urgent),90-180 days,>180 days,N/A"`
 - **Federation Trust Type (U):** `"Internal (same org),External (partner),Public (SaaS)"`
 - **Trust Documentation (V):** `"Yes (documented),No,N/A"`
-
 
 ## A.3 Conditional Formatting
 
@@ -2169,13 +2034,11 @@ This assessment shall be distributed to:
 - ❌ Non-Compliant: Red fill (RGB: 255, 199, 206)
 - N/A: No special formatting
 
-
 **Hash/Encryption Status (Column F) - Critical highlighting:**
 
 - "Plaintext (Non-compliant)": Red fill (RGB: 255, 199, 206), bold red text
 - "Properly Hashed": Green fill (RGB: 198, 239, 206)
 - "Salted": Yellow fill (RGB: 255, 235, 156)
-
 
 **Password Complexity (Column G):**
 
@@ -2183,13 +2046,11 @@ This assessment shall be distributed to:
 - "Adequate (12-13)": Yellow fill (RGB: 255, 235, 156)
 - "Strong (≥14 chars)": Green fill (RGB: 198, 239, 206)
 
-
 **Service Account Password Age (Column S in Sheet 4):**
 
 - "<90 days": Green fill
 - "90-180 days": Yellow fill
 - ">180 days (non-compliant)": Red fill
-
 
 **IdP Certificate Expiry (Column T in Sheet 5):**
 
@@ -2197,13 +2058,11 @@ This assessment shall be distributed to:
 - "90-180 days": Yellow fill
 - ">180 days": Green fill
 
-
 **Overall Compliance Percentage (Summary Dashboard):**
 
 - ≥90%: Green fill
 - 80-89%: Yellow fill
 - <80%: Red fill
-
 
 ## A.4 Cell Protection
 
@@ -2216,7 +2075,6 @@ This assessment shall be distributed to:
 - Summary Dashboard calculations
 - Evidence Register ID auto-generation
 
-
 **Unprotected Cells (User Input):**
 
 - Assessment data entry tables (yellow fill, columns A-Q rows 8-20)
@@ -2227,13 +2085,11 @@ This assessment shall be distributed to:
 - Evidence Register descriptions
 - Approval Sign-Off fields
 
-
 **Sheet Protection:**
 
 - Password: [Set during workbook generation]
 - Allow: Format cells, Insert rows, Sort, Filter
 - Disallow: Delete rows, Modify formulas, Unprotect sheet
-
 
 ## A.5 Summary Dashboard Formulas
 
@@ -2295,7 +2151,6 @@ If >0: Display critical alert in dashboard
 - `create_evidence_register()`: Evidence tracking
 - `create_approval_signoff()`: Approval workflow
 
-
 **Customization Points (marked with `# CUSTOMIZE:` in script):**
 
 - Sheet names (if organizational naming differs)
@@ -2303,7 +2158,6 @@ If >0: Display critical alert in dashboard
 - Data validation rules (if custom compliance criteria)
 - Conditional formatting thresholds (if different color coding)
 - Checklist items (if organization-specific requirements)
-
 
 **Quality Assurance Script:** `excel_sanity_check_a824_3.py`
 
@@ -2313,7 +2167,6 @@ If >0: Display critical alert in dashboard
 - Tests formula accuracy
 - Reports discrepancies between script and specification
 
-
 ## A.8 Version Control
 
 **Workbook Versioning:**
@@ -2322,19 +2175,16 @@ If >0: Display critical alert in dashboard
 - Version tracking in Instructions & Legend sheet
 - Document Control section updated with each revision
 
-
 **Change Log:**
 
 - v1.0: Initial workbook structure
 - v2.0: Added comprehensive User Completion Guide, enhanced hash algorithm guidance, clarified MFA enforcement vs enrollment distinction, added service account lifecycle management
-
 
 **Backward Compatibility:**
 
 - v2.0 workbooks can be opened in Excel 2016+
 - v1.0 workbooks should be migrated to v2.0 for updated guidance
 - Migration script available: `normalize_assessment_files_a824.py`
-
 
 ---
 
@@ -2391,7 +2241,6 @@ ISMS-IMP-A.8.24.3 - Authentication Assessment v1.0
 - [ ] No placeholder text remains
 - [ ] Technical appendix matches Python script version
 - [ ] Hash algorithm guidance emphasizes bcrypt/Argon2/PBKDF2/scrypt
-
 
 ---
 

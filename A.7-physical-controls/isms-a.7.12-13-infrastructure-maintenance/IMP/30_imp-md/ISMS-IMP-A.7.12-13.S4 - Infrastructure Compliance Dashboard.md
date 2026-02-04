@@ -41,7 +41,6 @@ This document consists of two parts:
   - External Workbook Links
   - Integration Points
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -63,11 +62,9 @@ This dashboard provides a **consolidated executive view** of compliance across c
 - Trend analysis over time
 - Audit-ready compliance summary
 
-
 #### Key Principle
 
 This dashboard **pulls data from the detailed assessments** (S1, S2, S3). It is NOT a standalone assessment - it requires the underlying assessments to be completed first. The dashboard auto-calculates compliance scores and highlights areas requiring attention.
-
 
 #### Data Sources
 
@@ -76,7 +73,6 @@ This dashboard **pulls data from the detailed assessments** (S1, S2, S3). It is 
 | ISMS-IMP-A.7.12-13.S1 (Cabling Security) | Pathway compliance, protection status, access controls, documentation |
 | ISMS-IMP-A.7.12-13.S2 (Equipment Maintenance) | Equipment inventory, personnel verification, security controls, remote access |
 | ISMS-IMP-A.7.12-13.S3 (Maintenance Schedule) | Schedule compliance %, overdue items, critical equipment status |
-
 
 ### Who Should Use This Dashboard
 
@@ -93,7 +89,6 @@ This dashboard **pulls data from the detailed assessments** (S1, S2, S3). It is 
 - **Monthly:** Review overall compliance status
 - **Quarterly:** Full review with trend analysis
 - **On-Demand:** Audit preparation, executive reporting
-
 
 ### Expected Outputs
 
@@ -166,7 +161,6 @@ Overall Score = (Cabling Score × 40%) + (Maintenance Score × 60%)
 | 60-74% | 🟠 Acceptable | Significant gaps, requires attention |
 | <60% | 🔴 Non-Compliant | Major gaps, immediate action required |
 
-
 ### Domain Scores
 
 **Cabling Security Score (40% weight):**
@@ -181,7 +175,6 @@ Cabling Score = (Pathways × 30%) + (Protection × 25%) + (Access × 25%) + (Doc
 Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personnel × 15%) + (Security × 15%)
 ```
 
-
 ### Key Risk Indicators
 
 **Red Flags (Require Immediate Action):**
@@ -192,14 +185,12 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - Remote access without session logging
 - Personnel without verification
 
-
 **Amber Warnings (Require Attention):**
 
 - Standard equipment overdue 7-14 days
 - Partial protection measures
 - Documentation not current
 - Remote access always enabled
-
 
 ### Gap Priority Matrix
 
@@ -234,7 +225,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
    - Resource requests
    - Executive decisions needed
 
-
 ### Quarterly Review Report
 
 **Report Contents:**
@@ -254,7 +244,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 4. **Improvement Recommendations**
    - Process improvements
    - Investment needs
-
 
 ### Audit Evidence Pack
 
@@ -287,7 +276,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 | Remediation Plan | How it will be fixed |
 | Evidence | Proof of remediation |
 
-
 ### Gap Closure Criteria
 
 **To close a gap:**
@@ -297,7 +285,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 3. Verification performed (independent check)
 4. Source assessment updated (S1, S2, or S3)
 5. Dashboard reflects updated status
-
 
 ### Risk Acceptance
 
@@ -309,7 +296,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 4. Obtain CISO approval
 5. Set review date (maximum 6 months)
 6. Record in Gap Register with "Accepted" status
-
 
 ---
 
@@ -327,7 +313,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - Include source currency check in dashboard review procedure
 - Add automated alerts for stale source data (>30 days without update)
 
-
 ### Pitfall 2: Broken External Links
 
 ❌ **MISTAKE:** Source workbook files renamed or moved, breaking dashboard formulas.
@@ -339,7 +324,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - Store all related workbooks in same directory
 - Test links after any file operations (move, rename, copy)
 - Document file location requirements in instructions sheet
-
 
 ### Pitfall 3: Gap Register Not Updated After Remediation
 
@@ -353,7 +337,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - Monthly reconciliation of gap register against source assessments
 - Assign single owner for gap register maintenance
 
-
 ### Pitfall 4: Inconsistent Scoring Methodology
 
 ❌ **MISTAKE:** Different assessors interpret compliance differently, leading to inconsistent scores.
@@ -365,7 +348,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - Use objective measures (counts, dates) rather than subjective ratings where possible
 - Train all assessors on consistent methodology
 - Perform calibration exercises quarterly
-
 
 ### Pitfall 5: Missing Weighting Documentation
 
@@ -379,7 +361,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - Note any weighting changes in Trend Analysis with effective date
 - Maintain version history of methodology changes
 
-
 ### Pitfall 6: Trend Data Entry Errors
 
 ❌ **MISTAKE:** Monthly compliance scores entered incorrectly or in wrong month row.
@@ -391,7 +372,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - Cross-reference entered values against source dashboards
 - Use data validation to prevent out-of-range values
 - Review trend for logical consistency (no sudden 50% swings unexplained)
-
 
 ### Pitfall 7: Ignoring Amber Warnings
 
@@ -405,7 +385,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - Set threshold alerts for declining trends (two consecutive months down)
 - Investigate root cause of any score decline >5%
 
-
 ### Pitfall 8: No Gap Ownership Assigned
 
 ❌ **MISTAKE:** Gaps identified but no owner assigned, remediation stalls.
@@ -417,7 +396,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - Default owner to assessment area manager if not specified
 - Escalate unowned gaps after 7 days
 - Include owner in gap status reporting
-
 
 ### Pitfall 9: Accepted Risks Not Reviewed
 
@@ -431,7 +409,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - Quarterly report of all accepted risks to CISO
 - Re-validate compensating controls at each review
 
-
 ### Pitfall 10: Audit Evidence Pack Incomplete
 
 ❌ **MISTAKE:** Dashboard presented to auditors without supporting source assessments and evidence.
@@ -443,7 +420,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - Verify all source files accessible before audit
 - Sample-check evidence references are valid
 - Prepare evidence pack at least 2 weeks before audit
-
 
 ### Pitfall 11: Dashboard Not Reviewed Before Submission
 
@@ -457,7 +433,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - Check for #REF!, #DIV/0!, #N/A errors
 - Verify totals and percentages sum correctly
 
-
 ### Pitfall 12: Single Point of Failure for Dashboard
 
 ❌ **MISTAKE:** Only one person knows how to update and maintain the dashboard.
@@ -469,7 +444,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - Cross-train at least two people
 - Include dashboard maintenance in role handover
 - Store workbooks in shared location with access controls
-
 
 ### Pitfall 13: Overcomplicating the Dashboard
 
@@ -483,7 +457,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - Limit key indicators to top 5-7 items
 - Detail available in subsequent sheets for those who need it
 
-
 ### Pitfall 14: Not Aligning with ISMS Calendar
 
 ❌ **MISTAKE:** Dashboard review not synchronised with management review schedule.
@@ -495,7 +468,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - Update completed 1 week before management review
 - Include dashboard in ISMS calendar as recurring activity
 - Set reminders for update deadlines
-
 
 ### Pitfall 15: Inconsistent Gap Closure Verification
 
@@ -509,7 +481,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - Source assessment must show improvement before gap closed
 - Document verification in Notes column
 
-
 ### Pitfall 16: Historical Data Lost During Updates
 
 ❌ **MISTAKE:** Previous period data overwritten instead of archived when updating.
@@ -521,7 +492,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - Archive previous versions before major updates
 - Use version naming with date: Dashboard_20260201.xlsx
 - Maintain minimum 12 months historical data
-
 
 ### Pitfall 17: Misinterpreting Compliance Percentages
 
@@ -535,7 +505,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - Weight scoring to emphasise critical items
 - Narrative explanation required for any critical gap
 
-
 ### Pitfall 18: No Baseline Established
 
 ❌ **MISTAKE:** Tracking trends without establishing a baseline compliance level.
@@ -547,7 +516,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - Set target compliance levels (e.g., 90% overall)
 - Track progress against targets, not just period-over-period
 - Review and adjust targets annually
-
 
 ---
 
@@ -566,7 +534,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - [ ] No #REF!, #DIV/0!, or #N/A errors visible
 - [ ] Colour coding correct for score levels
 
-
 ### Sheet 2: Cabling Security Quality
 
 - [ ] All four sub-domain scores calculated
@@ -578,7 +545,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - [ ] Conditional formatting applied correctly
 - [ ] Totals match S1 source data
 
-
 ### Sheet 3: Equipment Maintenance Quality
 
 - [ ] All four sub-domain scores calculated
@@ -589,7 +555,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - [ ] External links to S2 and S3 working
 - [ ] Critical overdue count matches S3
 - [ ] Conditional formatting applied correctly
-
 
 ### Sheet 4: Gap Register Quality
 
@@ -604,7 +569,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - [ ] Status values valid (Open/In Progress/Closed/Accepted only)
 - [ ] No blank required fields
 
-
 ### Sheet 5: Trend Analysis Quality
 
 - [ ] Data entered for all available months
@@ -615,7 +579,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - [ ] Chart axes scaled appropriately
 - [ ] Notes provided for significant changes
 - [ ] At least 3 months data for meaningful trend
-
 
 ### Sheet 6: Audit Evidence Quality
 
@@ -628,7 +591,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - [ ] Approval documentation listed
 - [ ] Evidence retention periods noted
 
-
 ### Source Data Verification
 
 - [ ] S1 (Cabling Security) updated within last 90 days
@@ -637,7 +599,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - [ ] External links refresh successfully
 - [ ] Source file versions match expected
 - [ ] No pending updates to source assessments
-
 
 ### Overall Dashboard Quality
 
@@ -649,7 +610,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - [ ] Version date current
 - [ ] Backup copy exists
 - [ ] File stored in designated location
-
 
 ---
 
@@ -699,7 +659,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 | 8 | Cabling Security Score (40%) | Medium number |
 | 9 | Equipment Maintenance Score (60%) | Medium number |
 
-
 **Section B: Domain Summary (Rows 12-25)**
 
 | Row | Content |
@@ -707,7 +666,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 | 12 | Header: "Domain Breakdown" |
 | 14-17 | Cabling: Pathways, Protection, Access, Documentation |
 | 19-22 | Maintenance: Schedule, Programme, Personnel, Security |
-
 
 **Section C: Key Indicators (Rows 27-40)**
 
@@ -721,13 +679,11 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 | 34 | Open Gaps (Critical/High/Medium/Low) |
 | 36 | Oldest Open Gap (days) |
 
-
 **Section D: Charts (Columns F-L)**
 
 - Compliance gauge chart
 - Domain comparison bar chart
 - 6-month trend line chart
-
 
 ### Sheet 2: Cabling Security
 
@@ -745,7 +701,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 | Documentation | 20% | Formula | Colour |
 | **Domain Score** | 100% | **Weighted** | **Colour** |
 
-
 **Section B: Detailed Metrics (Rows 17-40)**
 
 - Pathways: Total, Compliant, Partial, Non-Compliant
@@ -753,18 +708,15 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - Access: Total locations, Secured, Partial, Unsecured
 - Documentation: Total docs, Current, Outdated, Missing
 
-
 **Section C: Gap List (Rows 42+)**
 
 - List of non-compliant items from S1
-
 
 **External Links:**
 
 ```excel
 =COUNTIF('[ISMS-IMP-A.7.12-13.S1_Cabling_Security.xlsx]Cable Pathways'!L:L,"✅ Compliant")
 ```
-
 
 ### Sheet 3: Equipment Maintenance
 
@@ -782,7 +734,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 | Security Controls | 15% | Formula | Colour |
 | **Domain Score** | 100% | **Weighted** | **Colour** |
 
-
 **Section B: Schedule Metrics**
 
 - Total equipment in programme
@@ -791,20 +742,17 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - Overdue: X (X%)
 - Critical Overdue: X
 
-
 **Section C: Overdue Detail**
 
 - List of overdue equipment from S3
 - Days overdue
 - Escalation status
 
-
 **External Links:**
 
 ```excel
 =COUNTIF('[ISMS-IMP-A.7.12-13.S3_Maintenance_Schedule.xlsx]Equipment Schedule'!K:K,"✅ Current")
 ```
-
 
 ### Sheet 4: Gap Register
 
@@ -833,7 +781,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 - Priority High: Orange background
 - Status Overdue (Target Date < Today AND Status not Closed): Red text
 
-
 ### Sheet 5: Trend Analysis
 
 **Purpose:** Track compliance trends over time
@@ -848,12 +795,10 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 | Feb 2026 | Input | Input | Input | Input | Input |
 | ... | ... | ... | ... | ... | ... |
 
-
 **Section B: Trend Charts (Rows 22+)**
 
 - Line chart: Compliance trend (Overall, Cabling, Maintenance)
 - Bar chart: Gap count trend
-
 
 ### Sheet 6: Audit Evidence
 
@@ -868,7 +813,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 | S1 - Cabling | ISMS-IMP-A.7.12-13.S1_*.xlsx | [Path] | [Date] | Current/Outdated |
 | S2 - Maintenance | ISMS-IMP-A.7.12-13.S2_*.xlsx | [Path] | [Date] | Current/Outdated |
 | S3 - Schedule | ISMS-IMP-A.7.12-13.S3_*.xlsx | [Path] | [Date] | Current/Outdated |
-
 
 **Supporting Evidence:**
 
@@ -963,7 +907,6 @@ All files should be in same directory as dashboard for links to work.
 - A.5.9 (Asset Management) - Equipment inventory
 - A.8.32 (Change Management) - Infrastructure changes
 
-
 ---
 
 ## Formula Reference
@@ -982,7 +925,6 @@ Where B8 = Cabling Security Score, B9 = Equipment Maintenance Score
 ```excel
 =IF(B5>=90,"Excellent",IF(B5>=75,"Good",IF(B5>=60,"Acceptable","Non-Compliant")))
 ```
-
 
 ### Cabling Security Domain Formulas
 
@@ -1008,7 +950,6 @@ Where B8 = Cabling Security Score, B9 = Equipment Maintenance Score
 =IFERROR(COUNTIF('[S1]Documentation'!E:E,"Current")/COUNTA('[S1]Documentation'!A:A)*100,0)
 ```
 
-
 ### Equipment Maintenance Domain Formulas
 
 **Domain Score:**
@@ -1032,7 +973,6 @@ Where B8 = Cabling Security Score, B9 = Equipment Maintenance Score
 ' Security Controls
 =IFERROR(COUNTIF('[S2]Security Controls'!G:G,"Compliant")/COUNTA('[S2]Security Controls'!A:A)*100,0)
 ```
-
 
 ### Gap Register Formulas
 
@@ -1062,7 +1002,6 @@ Where B8 = Cabling Security Score, B9 = Equipment Maintenance Score
 =AND(G2<TODAY(),H2<>"Closed",H2<>"Accepted")
 ```
 
-
 ### Trend Analysis Formulas
 
 **Month-over-Month Change:**
@@ -1083,7 +1022,6 @@ Where B8 = Cabling Security Score, B9 = Equipment Maintenance Score
 =AVERAGE(B2:B4)
 ```
 
-
 ---
 
 ## Conditional Formatting Specifications
@@ -1103,7 +1041,6 @@ Where B8 = Cabling Security Score, B9 = Equipment Maintenance Score
 
 Apply same colour rules as Overall Score.
 
-
 ### Gap Register Formatting
 
 **Priority Column (D):**
@@ -1122,7 +1059,6 @@ Condition: =AND($G2<TODAY(),$H2<>"Closed",$H2<>"Accepted")
 Format: Red italic font, light red background
 ```
 
-
 ### Trend Chart Formatting
 
 **Compliance Line Chart:**
@@ -1138,7 +1074,6 @@ Format: Red italic font, light red background
 | Element | Colour | Style |
 |---------|--------|-------|
 | 90% Target | #FF0000 (Red) | Dashed |
-
 
 ---
 
@@ -1182,7 +1117,6 @@ Formula: =DATE(2020,1,1)
 Error: Enter valid date in DD.MM.YYYY format
 ```
 
-
 ### Trend Analysis Validations
 
 **Compliance Percentage Fields:**
@@ -1203,7 +1137,6 @@ Operator: Greater than or equal to
 Formula: 0
 Error: Gap count must be zero or positive
 ```
-
 
 ---
 
@@ -1233,7 +1166,6 @@ Error: Gap count must be zero or positive
 - Fit to: 1 page wide by 2 pages tall
 - Include charts: Yes
 
-
 ---
 
 ## Error Handling
@@ -1252,7 +1184,6 @@ Error: Gap count must be zero or positive
 =IFERROR('[S1]Sheet'!Cell,"Link Error - Check Source File")
 ```
 
-
 ### Division by Zero Prevention
 
 **All Percentage Calculations:**
@@ -1262,7 +1193,6 @@ Error: Gap count must be zero or positive
 ```
 Returns 0 if denominator is zero.
 
-
 ### Missing Data Handling
 
 **When Source Data Not Available:**
@@ -1270,7 +1200,6 @@ Returns 0 if denominator is zero.
 - Use "N/A" text for display
 - Exclude from calculations using IFERROR
 - Flag in Notes for investigation
-
 
 ---
 

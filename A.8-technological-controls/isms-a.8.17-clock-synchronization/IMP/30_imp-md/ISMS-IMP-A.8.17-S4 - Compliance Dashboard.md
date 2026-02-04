@@ -37,7 +37,6 @@ This document consists of two parts:
   - Section A: Implementation Guidance (metric calculations, aggregation logic)
   - Section B: Assessment Workbook Specification (Excel workbook structure, formulas, validation rules)
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -62,7 +61,6 @@ This dashboard aggregates findings from S1 (Time Source Configuration), S2 (Sync
 - **How many exceptions do we have?** (From S3 exception register)
 - **What gaps need attention?** (Aggregated remediation tracking)
 
-
 **Key Principle:** "Executive visibility enables accountability." Leadership needs clear, actionable metrics to understand clock synchronization posture without diving into technical details. This dashboard provides that visibility.
 
 Think of this as the "executive scorecard" for time synchronization - similar to how a financial dashboard shows revenue and expenses at a glance, this shows synchronization compliance and risks at a glance.
@@ -78,7 +76,6 @@ Think of this as the "executive scorecard" for time synchronization - similar to
    - Metric definitions
    - Update procedures
 
-
 2. **Executive_Summary** - Overall compliance score and status
 
    - Compliance percentage (big number)
@@ -86,14 +83,12 @@ Think of this as the "executive scorecard" for time synchronization - similar to
    - Key highlights and concerns
    - Risk rating (Green/Yellow/Red)
 
-
 3. **Infrastructure_Health** - NTP infrastructure health metrics
 
    - External time source status (from S1)
    - Internal NTP server status (from S1)
    - Source redundancy compliance
    - Monitoring coverage
-
 
 4. **System_Compliance** - System-level sync compliance
 
@@ -103,14 +98,12 @@ Think of this as the "executive scorecard" for time synchronization - similar to
    - Systems with exceptions (from S3)
    - Compliance by category/department
 
-
 5. **Gaps_Action_Items** - Remediation tracking
 
    - Open gaps from S1, S2, S3
    - Priority and severity
    - Responsible parties
    - Target dates and status
-
 
 ## How This Relates to Other A.8.17 Assessments
 
@@ -146,7 +139,6 @@ You MUST complete S1, S2, and S3 first - this dashboard consolidates their findi
 - **Executive Communication** - Can present technical data in business terms
 - **Trend Analysis** - Can identify patterns over time
 
-
 **You DON'T need deep technical knowledge!** The S1, S2, S3 assessments capture technical details. This dashboard translates those details into executive metrics.
 
 ## Time Commitment
@@ -163,7 +155,6 @@ You MUST complete S1, S2, and S3 first - this dashboard consolidates their findi
   - 30 minutes: Update compliance metrics
   - 30 minutes: Update trend analysis
   - 30 minutes: Prepare executive summary highlights
-
 
 **Pro Tip:** Link dashboard cells directly to S1, S2, S3 workbooks where possible. This enables automatic updates when source assessments are refreshed.
 
@@ -206,14 +197,12 @@ Before starting, gather the following:
 - [ ] **Monitoring coverage percentage** (target: 100%)
 - [ ] **S1 gaps and remediation status**
 
-
 **From S2 (Synchronization Verification):**
 
 - [ ] **Total systems in scope**
 - [ ] **Systems verified compliant**
 - [ ] **Systems non-compliant** (requiring remediation or exception)
 - [ ] **S2 gaps and remediation status**
-
 
 **From S3 (Exception Management):**
 
@@ -222,12 +211,10 @@ Before starting, gather the following:
 - [ ] **Exception categories breakdown**
 - [ ] **Upcoming expirations**
 
-
 **Historical Data:**
 
 - [ ] **Previous compliance scores** (for trend analysis)
 - [ ] **Previous dashboard dates** (for period comparison)
-
 
 ## Required Tools
 
@@ -236,18 +223,15 @@ Before starting, gather the following:
 - Access to S1, S2, S3 assessment workbooks
 - Or: Database/CMDB with compliance data
 
-
 **For Dashboard Creation:**
 
 - Microsoft Excel (or compatible spreadsheet)
 - This workbook template
 
-
 **For Visualization:**
 
 - Optional: Power BI, Tableau, or similar for advanced visualization
 - Built-in Excel charts sufficient for basic dashboard
-
 
 ## Policy Requirements to Review
 
@@ -283,14 +267,12 @@ The dashboard should show compliance against these requirements.
 - Export compliance counts from S2 workbook
 - Export exception counts from S3 workbook
 
-
 **STEP 2:** Populate Infrastructure_Health sheet
 
 - Enter external source status from S1
 - Enter internal server status from S1
 - Calculate redundancy compliance
 - Calculate monitoring coverage
-
 
 **STEP 3:** Populate System_Compliance sheet
 
@@ -300,14 +282,12 @@ The dashboard should show compliance against these requirements.
 - Enter exception count
 - Calculate overall compliance percentage
 
-
 **STEP 4:** Populate Gaps_Action_Items sheet
 
 - List open gaps from S1, S2, S3
 - Assign priority and severity
 - Document responsible parties and target dates
 - Track remediation status
-
 
 **STEP 5:** Complete Executive_Summary sheet
 
@@ -316,13 +296,11 @@ The dashboard should show compliance against these requirements.
 - Write executive narrative
 - Highlight key concerns and achievements
 
-
 **STEP 6:** Update trend analysis
 
 - Record current period metrics
 - Compare to previous periods
 - Identify improvement or decline
-
 
 **STEP 7:** Review and validate
 
@@ -330,12 +308,10 @@ The dashboard should show compliance against these requirements.
 - Cross-check totals against source workbooks
 - Ensure narrative matches data
 
-
 **STEP 8:** Obtain approval
 
 - ISMS Officer review
 - CISO sign-off for executive distribution
-
 
 ## Data Sources
 
@@ -347,20 +323,17 @@ The dashboard should show compliance against these requirements.
 - Internal_NTP_Servers sheet: Count of internal servers, monitoring status
 - Compliance_Summary sheet: Infrastructure compliance metrics
 
-
 **S2 Assessment:**
 
 - System_Inventory sheet: Total systems in scope
 - Verification_Results sheet: Compliant/non-compliant counts
 - Compliance_Summary sheet: System compliance metrics
 
-
 **S3 Assessment:**
 
 - Active_Exceptions sheet: Count of active exceptions
 - Summary_Dashboard sheet: Exception metrics
 - Gaps table: Open remediation items
-
 
 ---
 
@@ -423,7 +396,6 @@ Free-form text area for executive summary. Include:
 - Key achievements since last report
 - Top concerns requiring attention
 - Recommended actions for leadership
-
 
 **Example Narrative:**
 
@@ -635,18 +607,15 @@ Where:
 - [ ] **S2 Assessment workbook** - Latest version with dates
 - [ ] **S3 Assessment workbook** - Latest version with dates
 
-
 **Validation Evidence:**
 
 - [ ] **Calculation verification** - Spot-check compliance percentages
 - [ ] **Cross-reference validation** - Totals match source workbooks
 
-
 **Approval Evidence:**
 
 - [ ] **ISMS Officer sign-off** - Review and approval record
 - [ ] **CISO acknowledgment** - For executive distribution
-
 
 ## Evidence Naming Convention
 
@@ -687,7 +656,6 @@ Metrics won't reconcile; compliance percentage may be incorrect.
 - Document source workbook versions in Instructions sheet
 - Refresh all sources together
 
-
 ## Double-Counting Exceptions
 
 **MISTAKE:**
@@ -700,7 +668,6 @@ Inflates compliance percentage; totals don't add up.
 - Exception systems should NOT be in "Compliant" count
 - Formula: Effective Compliance = (Compliant + Exceptions) / Total
 - Total should equal: Compliant + Non-Compliant (where Non-Compliant includes Exceptions + Pending Remediation)
-
 
 ## Stale Data
 
@@ -715,7 +682,6 @@ Executive decisions based on outdated information; audit risk.
 - Display "Last Updated" prominently
 - Set calendar reminder for monthly refresh
 
-
 ## Missing Narrative Context
 
 **MISTAKE:**
@@ -728,7 +694,6 @@ Executives can't interpret raw numbers; miss important trends.
 - Always include Executive_Summary narrative
 - Explain significant changes from previous period
 - Highlight items requiring executive attention
-
 
 ## Gap List Not Actionable
 
@@ -743,7 +708,6 @@ Gaps won't be remediated without accountability.
 - Every gap must have target date
 - Review overdue gaps monthly
 
-
 ---
 
 # Quality Checklist
@@ -757,14 +721,12 @@ Before distributing dashboard, verify:
 - [ ] Compliance calculation verified (spot-check)
 - [ ] Totals reconcile across sheets
 
-
 **Completeness:**
 
 - [ ] Executive_Summary narrative completed
 - [ ] All sections of Infrastructure_Health populated
 - [ ] System_Compliance breakdown by category
 - [ ] Gaps_Action_Items includes all open gaps
-
 
 **Presentation:**
 
@@ -773,14 +735,12 @@ Before distributing dashboard, verify:
 - [ ] "Last Updated" date is current
 - [ ] No spelling errors in narrative
 
-
 **Actionability:**
 
 - [ ] Key concerns clearly highlighted
 - [ ] All gaps have responsible parties and dates
 - [ ] Recommended actions for executive attention
 - [ ] Upcoming expirations flagged
-
 
 ---
 
@@ -794,18 +754,15 @@ Before distributing dashboard, verify:
 - Verify calculations against source workbooks
 - Read narrative aloud for clarity
 
-
 **Step 2: Peer Review** (Recommended)
 
 - Another ISMS team member reviews for accuracy
 - Focus on: Do numbers make sense? Is narrative clear?
 
-
 **Step 3: ISMS Officer Review** (Required)
 
 - ISMS Officer validates methodology and accuracy
 - Approves for executive distribution
-
 
 ## Formal Approval
 
@@ -814,12 +771,10 @@ Before distributing dashboard, verify:
 - **Reviews:** Data accuracy, calculation methodology, completeness
 - **Approves:** Dashboard ready for executive review
 
-
 **Level 2: CISO** (for executive distribution)
 
 - **Reviews:** Executive summary, risk ratings, recommended actions
 - **Approves:** Dashboard suitable for leadership and audit presentation
-
 
 ## Distribution
 
@@ -836,7 +791,6 @@ Before distributing dashboard, verify:
 - IT Security Team
 - Audit/Compliance Team
 - Risk Management
-
 
 ---
 
@@ -886,7 +840,6 @@ This section provides technical guidance for creating and maintaining the compli
 - ISMS-IMP-A.8.17-S2 (Synchronization Verification)
 - ISMS-IMP-A.8.17-S3 (Exception Management)
 
-
 ---
 
 ## Compliance Calculation Methodology
@@ -922,7 +875,6 @@ Overall Compliance = (1,200 + 3) / 1,234 × 100 = 97.5%
 - Systems with approved exceptions count toward compliance (they have compensating controls)
 - Systems pending exception approval do NOT count toward compliance
 - Systems pending remediation do NOT count toward compliance
-
 
 ### Infrastructure Health Score
 
@@ -1026,7 +978,6 @@ Expiring Soon = COUNTIFS(S3_Active_Exceptions!J2:J100,"<="&TODAY()+30,S3_Active_
 - Include target line (e.g., 95%)
 - Annotate significant events
 
-
 ### Status Indicators
 
 **Green/Yellow/Red Indicators:**
@@ -1036,7 +987,6 @@ Use consistent colors across dashboard:
 - Green: RGB(0, 176, 80) or Hex #00B050
 - Yellow: RGB(255, 192, 0) or Hex #FFC000
 - Red: RGB(255, 0, 0) or Hex #FF0000
-
 
 ---
 
@@ -1070,36 +1020,30 @@ Use consistent colors across dashboard:
 - Alignment: Center, Vertical Center, Wrap Text
 - Border: Thin borders all sides
 
-
 **Title Style:**
 
 - Font: Bold, Size 14, Dark Blue (366092)
 - Alignment: Left, Vertical Center
-
 
 **Big Number Style (Compliance Score):**
 
 - Font: Bold, Size 36, Color based on threshold
 - Alignment: Center, Vertical Center
 
-
 **Status Green:**
 
 - Fill: RGB(0, 176, 80)
 - Font: White, Bold
-
 
 **Status Yellow:**
 
 - Fill: RGB(255, 192, 0)
 - Font: Black, Bold
 
-
 **Status Red:**
 
 - Fill: RGB(255, 0, 0)
 - Font: White, Bold
-
 
 ---
 
@@ -1114,12 +1058,10 @@ Use consistent colors across dashboard:
 - A1: "ISMS A.8.17-S4 - Compliance Dashboard" (Font: Bold 16, Dark Blue, Merged A1:F1)
 - A2: "Version 1.0 | [Last Updated Date]" (Font: Italic 10, Merged A2:F2)
 
-
 **Row 4-5:** Document Metadata
 
 - A4: "Document ID:" (Bold) | B4: "ISMS-IMP-A.8.17-S4" (Bold, Dark Blue)
 - A5: "Title:" (Bold) | B5: "Clock Synchronization Compliance Dashboard"
-
 
 **Row 7+:** Instructions Content
 
@@ -1130,13 +1072,11 @@ Use consistent colors across dashboard:
 - Risk rating definitions
 - Contact information
 
-
 **Column Widths:**
 
 - A: 20
 - B: 80
 - C-F: 15 each
-
 
 ---
 
@@ -1274,18 +1214,15 @@ Breakdown of non-compliant systems by status.
 - Type: List
 - Formula: `"S1,S2,S3"`
 
-
 **Column D (Severity):**
 
 - Type: List
 - Formula: `"Critical,High,Medium,Low"`
 
-
 **Column J (Status):**
 
 - Type: List
 - Formula: `"Open,In Progress,Completed,Deferred"`
-
 
 **Conditional Formatting:**
 
@@ -1293,7 +1230,6 @@ Breakdown of non-compliant systems by status.
 - Severity = "High": Orange fill
 - Status = "Completed": Green fill, strikethrough text
 - Target Date < TODAY() AND Status <> "Completed": Red text (overdue)
-
 
 **Summary Section (Rows 50+):**
 
@@ -1316,7 +1252,6 @@ Status distribution and severity distribution tables.
 - `create_system_compliance_sheet()` - Generates System_Compliance sheet
 - `create_gaps_action_items_sheet()` - Generates Gaps_Action_Items sheet
 - `main()` - Orchestrates workbook generation
-
 
 **To regenerate workbook:**
 
@@ -1352,7 +1287,6 @@ mv *.xlsx ../90_workbooks/
 - Store all A.8.17 workbooks in same folder for easy linking
 - Update all workbooks together to maintain consistency
 - Document linked workbook locations in Instructions sheet
-
 
 ---
 

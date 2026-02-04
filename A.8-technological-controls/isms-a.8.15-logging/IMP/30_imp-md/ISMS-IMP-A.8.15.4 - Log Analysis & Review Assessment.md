@@ -45,12 +45,10 @@ This document consists of two parts:
   - Cell Styling Reference
   - Python Script Usage Notes
 
-
 **Target Audiences:**
 
 - **Part I:** Assessment users (SOC Team, Threat Detection, Security Engineers, InfoSec Manager)
 - **Part II:** Workbook developers (Python/Excel script maintainers)
-
 
 ---
 
@@ -76,13 +74,11 @@ This assessment evaluates LOG ANALYSIS AND REVIEW EFFECTIVENESS - whether logs a
 - What threat detection coverage exists? (MITRE ATT&CK mapping)
 - How well integrated is log analysis with incident response?
 
-
 **What This Assessment Is NOT:**
 
 - NOT about which systems are logging (that's IMP-A.8.15.1)
 - NOT about log collection infrastructure (that's IMP-A.8.15.2)
 - NOT about log protection or retention (that's IMP-A.8.15.3)
-
 
 This is purely about **OPERATIONAL EFFECTIVENESS** - are we actually getting security value from the logs we're collecting?
 
@@ -96,7 +92,6 @@ This assessment verifies [Organization]'s compliance with:
 - **PCI DSS Requirement 10.6** (if applicable): Daily review of security events required
 - **DORA/NIS2** (if applicable): ICT monitoring and detection capabilities required
 
-
 **Security Impact**:
 
 - **Unreviewed logs = wasted investment** - collecting logs without analysis provides no security value
@@ -104,13 +99,11 @@ This assessment verifies [Organization]'s compliance with:
 - **Alert fatigue = missed threats** - high false positive rates cause analysts to ignore alerts
 - **Coverage gaps = blind spots** - missing use cases mean entire attack classes go undetected
 
-
 **Compliance Impact**:
 
 - **Major non-conformity** if logs not reviewed per policy requirements (ISO 27001 audit finding)
 - **PCI DSS failure** if daily review not performed and documented
 - **Ineffective control** = wasted resources, poor security posture
-
 
 **Audit Evidence**: This assessment workbook provides **objective evidence** that logs are being analyzed and reviewed effectively.
 
@@ -136,7 +129,6 @@ This assessment verifies [Organization]'s compliance with:
 - **SOC Performance**: MTTD 4-48 hours, MTTR 1-7 days (varies widely by organization maturity)
 - **Automation Level**: 20-60% (some automation, much manual work remains)
 - **Gaps Identified**: 15-30 findings (process gaps, capability gaps, training needs)
-
 
 ## Relationship to Other Assessments
 
@@ -189,7 +181,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 
 - You can still proceed, but may identify gaps that are actually collection/access issues, not analysis issues
 
-
 ## Required Access
 
 **SIEM Platform Access**:
@@ -199,7 +190,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Access to SOC metrics dashboards (MTTD, MTTR, alert volume)
 - Access to investigation case management system
 
-
 **SOC Operational Data**:
 
 - Alert logs (volume, categories, dispositions)
@@ -207,14 +197,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - SOC shift logs or handoff reports
 - Incident response records (escalations from log analysis)
 
-
 **Documentation Access**:
 
 - SOC procedures and runbooks
 - SIEM use case documentation
 - Alert tuning records (when alerts tuned, why)
 - Threat detection strategy documentation (if exists)
-
 
 ## Required Personnel
 
@@ -225,14 +213,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - **SOC Manager/Lead**: Understands review processes, SOC performance, operational challenges
 - **Threat Detection Lead**: Understands use case development, detection engineering
 
-
 **Supporting Input Required From**:
 
 - **SOC Analysts**: Front-line experience with alerts, tuning needs, false positives
 - **Security Engineers**: SIEM configuration, automation development
 - **Incident Response**: IR integration, escalation effectiveness
 - **InfoSec Manager**: Strategic perspective, resource prioritization
-
 
 **Estimated Time**: 12-18 hours (distributed across multiple personnel over 2-3 weeks)
 
@@ -245,7 +231,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Alert tracking/metrics dashboards
 - Previous assessment workbooks (IMP-A.8.15.1, .2, .3)
 
-
 **Documentation**:
 
 - SOC procedures manual
@@ -253,7 +238,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Alert tuning history
 - SOC performance reports (monthly/quarterly metrics)
 - Incident response escalation records
-
 
 ---
 
@@ -266,13 +250,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Sheet 1: Instructions
 - Sheet 2: Review Process Assessment (who reviews, how often, procedures)
 
-
 **Phase 2: Detection Capabilities (Sheets 3-5)**
 
 - Sheet 3: SIEM Use Case Maturity (implemented use cases, coverage)
 - Sheet 4: Alert Management (volume, false positives, tuning)
 - Sheet 5: SOC Performance Metrics (MTTD, MTTR, quality)
-
 
 **Phase 3: Advanced Capabilities (Sheets 6-8)**
 
@@ -280,13 +262,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Sheet 7: Threat Detection Coverage (MITRE ATT&CK, threat hunting)
 - Sheet 8: Investigation Procedures (IR integration, forensics)
 
-
 **Phase 4: Review & Approval (Sheets 9-11)**
 
 - Sheet 9: Gap Analysis (process gaps, capability gaps)
 - Sheet 10: Evidence Register
 - Sheet 11: Approval Sign-Off
-
 
 **Estimated Timeline**:
 
@@ -294,7 +274,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Phase 2: 5-7 hours (use cases, alerts, SOC metrics - most time-consuming)
 - Phase 3: 3-4 hours (automation, advanced capabilities)
 - Phase 4: 2-3 hours (gap analysis, evidence, approval)
-
 
 **Total**: 13-18 hours (spread over 2-3 weeks)
 
@@ -306,20 +285,17 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Threat Detection Lead documents use cases (Sheet 3)
 - SOC Analyst Lead analyzes alert metrics (Sheet 4)
 
-
 **Week 2**:
 
 - SOC Manager compiles performance metrics (Sheet 5)
 - Security Engineer assesses automation (Sheet 6)
 - Threat Detection Lead maps ATT&CK coverage (Sheet 7)
 
-
 **Week 3**:
 
 - Incident Response reviews IR integration (Sheet 8)
 - Cross-functional gap analysis workshop (Sheet 9)
 - Evidence collection and approval process (Sheets 10-11)
-
 
 ## Data Collection Methods
 
@@ -329,13 +305,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Review logs/records (evidence reviews actually happening)
 - Interview SOC analysts (understand actual practice vs. documented)
 
-
 **SIEM Use Case Analysis**:
 
 - Export use case/correlation rule list from SIEM
 - Categorize by MITRE ATT&CK tactics/techniques
 - Assess maturity (basic detection, tuned, well-documented, regularly tested)
-
 
 **Alert Metrics Analysis**:
 
@@ -343,15 +317,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Calculate false positive rate (alerts investigated vs. true positives)
 - Review tuning history (when alerts tuned, effectiveness)
 
-
 **SOC Performance Data**:
 
 - Extract metrics from case management system
 - Calculate MTTD (Mean Time To Detect - event to alert)
 - Calculate MTTR (Mean Time To Respond - alert to containment)
 - Review investigation quality (thoroughness, documentation)
-
-
 
 ---
 
@@ -379,7 +350,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Review Tool/Method (SIEM dashboard, manual log review, automated report)
 - Compliance Status - Formula: `=IF(Actual_Frequency >= Policy_Frequency, "Y Compliant", "N Non-Compliant")`
 
-
 **Evidence of Reviews**:
 
 - Review logs/checklists (documented evidence reviews occurred)
@@ -387,13 +357,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Investigation tickets (reviews leading to investigations)
 - Shift handoff reports (SOC shift logs mentioning review activities)
 
-
 **Compliance Calculation**:
 
 - Total Log Categories = 7
 - Categories Reviewed Per Policy = COUNT(Compliance = "Y")
 - **Review Process Compliance %** = (Compliant / Total) * 100
-
 
 **Time**: 2-3 hours
 
@@ -421,7 +389,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Last Tested Date
 - Documentation Status (None, Basic, Comprehensive)
 
-
 **Use Case Coverage by ATT&CK Tactic**:
 | Tactic | Use Cases | Avg Maturity | Coverage % |
 |--------|-----------|--------------|------------|
@@ -446,7 +413,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - False Positives (benign events incorrectly flagged)
 - False Negative Estimate (missed detections - from incidents not caught by alerts)
 
-
 **Alert Disposition**:
 
 - Closed - True Positive (escalated to IR)
@@ -455,7 +421,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Open/In Progress
 - Escalated to Incident Response
 
-
 **Alert Performance Metrics**:
 
 - False Positive Rate = False Positives / Total Alerts * 100 (Target: <10%)
@@ -463,16 +428,13 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - True Positive Rate = True Positives / Investigated * 100 (Target: >30%)
 - Alert Tuning Effectiveness = (FP_Before - FP_After) / FP_Before * 100
 
-
 **Top Alert Sources** (by volume):
 
 - Alert Name, Count (Last 90 days), False Positive %, Status (Tuned, Under Review, Accepted)
 
-
 **Alert Tuning History**:
 
 - Date Tuned, Alert Name, Reason for Tuning, FP Reduction Achieved, Tuned By
-
 
 **Compliance Assessment**:
 
@@ -480,7 +442,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - False positive rate acceptable (Target: <10%)
 - Critical/High alerts all investigated (Target: 100%)
 - Tuning process active (Evidence: tuning in last 90 days)
-
 
 **Time**: 3-4 hours (data extraction and analysis)
 
@@ -496,7 +457,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
   - Medium Severity: Target <4 hours
 - Detection Coverage: % of incidents detected by logs/SIEM vs. external notification
 
-
 **Response Metrics**:
 
 - Mean Time To Acknowledge (MTTA): Alert generated -> Analyst starts investigation
@@ -506,14 +466,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
   - Critical: Target <4 hours
   - High: Target <24 hours
 
-
 **Investigation Quality**:
 
 - % of investigations with complete documentation
 - % of investigations with root cause identified
 - % of investigations resulting in findings/recommendations
 - Average investigation depth score (1-5 scale)
-
 
 **Case Management**:
 
@@ -523,7 +481,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Average Case Age (days from open to close)
 - % Cases Closed Within SLA
 
-
 **SOC Staffing & Efficiency**:
 
 - FTE Count (Full-Time Equivalent analysts)
@@ -531,14 +488,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Cases Per Analyst Per Week (Target: <20)
 - Burnout Indicators (Overtime hours, turnover rate, open position duration)
 
-
 **Compliance Scoring**:
 
 - MTTD meets targets (% of cases meeting MTTD targets)
 - MTTR meets targets (% of cases meeting MTTR targets)
 - Investigation quality acceptable (% meeting quality standards)
 - **Overall SOC Performance Score** = Weighted average
-
 
 **Time**: 2-3 hours (metrics extraction from case management system)
 
@@ -566,7 +521,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Playbook Execution Volume (last 90 days)
 - Playbook Success Rate (% successful executions)
 
-
 **Automated Response Actions**:
 
 - User Account Disable (Automated? Yes/No/Partial)
@@ -575,12 +529,10 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Network Segmentation (Automated? Yes/No/Partial)
 - Evidence Collection (Automated? Yes/No/Partial)
 
-
 **Time Savings from Automation**:
 
 - Estimated Manual Hours Saved Per Month
 - ROI Calculation (if automation investment known)
-
 
 **Automation Maturity Score**:
 
@@ -588,7 +540,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - SOAR integration level
 - Playbook coverage
 - **Overall Automation Score** = Weighted average
-
 
 **Time**: 2-3 hours
 
@@ -603,11 +554,9 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Coverage % = (Detected / Total) * 100
 - Coverage by Tactic (% coverage per tactic)
 
-
 **Detection Gaps** (Tactics/Techniques NOT detected):
 
 - Tactic, Technique ID, Technique Name, Severity (if gap exploited), Mitigation Priority
-
 
 **Threat Hunting Capabilities**:
 
@@ -618,7 +567,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Threat Intel Integration (feeds integrated into SIEM)
 - Threat Intel Sources (commercial, open-source, ISAC, internal)
 
-
 **Detection Engineering Maturity**:
 
 - Detection Engineering Team Exists (Yes/No)
@@ -626,14 +574,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Use Case Testing Process (None, Manual, Automated)
 - Purple Team Exercises (Frequency: Never, Annual, Quarterly, Monthly)
 
-
 **Coverage Score**:
 
 - ATT&CK Coverage %
 - Threat Hunting Maturity (0-5 scale)
 - Detection Engineering Maturity (0-5 scale)
 - **Overall Threat Detection Coverage Score** = Weighted average
-
 
 **Time**: 2-3 hours (requires ATT&CK mapping)
 
@@ -648,7 +594,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Procedures include evidence collection (Yes/No)
 - Procedures regularly updated (Last update date)
 
-
 **IR Integration**:
 
 - Escalation criteria defined (Yes/No)
@@ -656,7 +601,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Escalation SLA defined (timeframe for escalation)
 - % of incidents escalated appropriately (retrospective analysis)
 - IR team feedback loop (IR provides feedback to SOC on investigation quality)
-
 
 **Forensics Capabilities**:
 
@@ -667,14 +611,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Tools Available (EnCase, FTK, Volatility, Wireshark, cloud-native tools, etc.)
 - Trained Personnel (# of analysts with forensics training)
 
-
 **Evidence Collection & Chain of Custody**:
 
 - Evidence collection procedures documented (Yes/No)
 - Chain of custody forms used (Yes/No)
 - Evidence retention policy defined (Yes/No - how long evidence kept)
 - Evidence storage secure (Yes/No - access controlled)
-
 
 **Investigation Quality Assessment** (Sample recent investigations):
 
@@ -684,7 +626,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Recommendations provided (Yes/No)
 - Documentation quality (1-5 scale)
 
-
 **Compliance Scoring**:
 
 - Investigation procedures comprehensive (yes/no)
@@ -692,7 +633,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Forensics capabilities adequate (based on organization needs)
 - Evidence handling compliant (yes/no)
 - **Overall Investigation Effectiveness Score** = Weighted average
-
 
 **Time**: 2-3 hours
 
@@ -707,14 +647,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Dashboard access logs (SIEM usage evidence)
 - Investigation tickets originated from log review
 
-
 **For Use Cases (Sheet 3)**:
 
 - SIEM use case export (correlation rules, alerts)
 - Use case documentation (descriptions, procedures)
 - Testing records (when use cases last tested)
 - Tuning history (when rules tuned, why)
-
 
 **For Alert Management (Sheet 4)**:
 
@@ -723,7 +661,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Tuning records (evidence of tuning activities)
 - Alert disposition reports (TP vs. FP breakdown)
 
-
 **For SOC Metrics (Sheet 5)**:
 
 - Case management reports (MTTD, MTTR, case age)
@@ -731,13 +668,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - SOC dashboard screenshots (metrics visualization)
 - Monthly/quarterly SOC performance reports
 
-
 **For Automation (Sheet 6)**:
 
 - SOAR platform screenshots (playbook library)
 - Automation execution logs (playbook run history)
 - Time savings calculations (before/after automation)
-
 
 **For Threat Detection (Sheet 7)**:
 
@@ -746,14 +681,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Detection gap analysis
 - Threat intel feed configurations
 
-
 **For Investigations (Sheet 8)**:
 
 - Investigation procedure documents
 - Sample investigation reports (quality examples)
 - IR escalation records
 - Forensics tool inventory
-
 
 ---
 
@@ -771,7 +704,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Measure alert investigation rate (Sheet 4 - % alerts investigated)
 - Assess SOC capacity (Sheet 5 - alerts per analyst)
 
-
 ## Pitfall: "100 use cases = good detection coverage"
 
 **Problem**: Use case count != detection effectiveness
@@ -783,7 +715,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Assess use case maturity (Sheet 3 - maturity level 1-5)
 - Measure false positive rate (Sheet 4 - FP%)
 - Map to ATT&CK (Sheet 7 - actual threat coverage)
-
 
 ## Pitfall: "Daily review means automated dashboard check"
 
@@ -797,7 +728,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Evidence meaningful review (investigation tickets, findings)
 - Quality over checkbox compliance
 
-
 ## Pitfall: "False positives are inevitable"
 
 **Problem**: Accepting high FP rate as "normal"
@@ -809,7 +739,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Target <10% FP rate (Sheet 4 - FP% measurement)
 - Active tuning program (Sheet 4 - tuning history)
 - Regular use case review (Sheet 3 - last tuned date)
-
 
 ## Pitfall: "MTTR is 4 hours" (measured from IR, not log detection)
 
@@ -823,7 +752,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Separate MTTD from MTTR (detection vs. response)
 - Include dwell time in metrics
 
-
 ## Pitfall: "We'll automate everything later"
 
 **Problem**: Deferring automation while SOC drowns in manual work
@@ -835,7 +763,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Assess automation gaps (Sheet 6 - current vs. target state)
 - Prioritize high-volume, low-complexity tasks for automation
 - Incremental automation (don't wait for perfect SOAR)
-
 
 ---
 
@@ -852,7 +779,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - [ ] Gap analysis complete (Sheet 9)
 - [ ] Evidence documented (Sheet 10)
 
-
 ---
 
 # Review & Approval
@@ -863,20 +789,17 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Timeline: 2-3 days
 - Focus: Accuracy of metrics, use case assessment
 
-
 **Level 2: Management Review**
 
 - Information Security Manager
 - Timeline: 3-5 days
 - Focus: Gap prioritization, resource needs
 
-
 **Level 3: Executive Approval**
 
 - CISO
 - Timeline: 1-2 weeks
 - Focus: Strategic alignment, capability investment
-
 
 **Total Timeline**: 3-4 weeks from initiation to final approval
 
@@ -942,13 +865,11 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - I: Compliance Status: `=IF(AND(Frequency_Score>=Required_Score,F="Yes",G="Yes"),"Y","N")`
 - J: Gap Notes
 
-
 **Summary**:
 
 - Total Categories = 7
 - Categories Compliant = `COUNTIF(I:I,"Y")`
 - **Review Process Compliance %** = `Compliant/7*100`
-
 
 ---
 
@@ -972,7 +893,6 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - N: Status (Active, Disabled, Under Development)
 - O: Notes
 
-
 **Summary by Tactic**:
 | Tactic | Use Case Count | Avg Maturity | Avg Effectiveness |
 |--------|----------------|--------------|-------------------|
@@ -994,14 +914,12 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - False Positives
 - Benign (No action needed)
 
-
 **Section 2: Alert Metrics** (Rows 18-30):
 
 - False Positive Rate = `False_Positives / Total_Alerts * 100` (Target: <10%)
 - True Positive Rate = `True_Positives / Investigated * 100` (Target: >30%)
 - Investigation Rate = `Investigated / Total * 100` (Target: 100% for Critical/High)
 - Alert Efficiency Score = `TP_Rate * (1 - FP_Rate/100)` (0-100 scale)
-
 
 **Section 3: Top Alerts** (Rows 33-60):
 Columns: Alert Name, Volume, FP%, Status (Tuned, Under Review, Accepted)
@@ -1032,7 +950,6 @@ MTTR Compliance = `COUNTIF(Status,"Met") / Total_Cases * 100`
 - Recommendations Provided %
 - Avg Investigation Depth (1-5 scale)
 
-
 Quality Score = `AVERAGE(all quality metrics)`
 
 **Section 4: Case Management** (Rows 53-65):
@@ -1043,14 +960,12 @@ Quality Score = `AVERAGE(all quality metrics)`
 - Avg Case Age (days)
 - % Within SLA
 
-
 **Section 5: Staffing** (Rows 68-75):
 
 - FTE Count
 - Alerts Per Analyst Per Day
 - Cases Per Analyst Per Week
 - Overtime Hours (monthly avg)
-
 
 **Overall SOC Performance Score** = `MTTD_Compliance*0.25 + MTTR_Compliance*0.25 + Quality_Score*0.30 + SLA_Compliance*0.20`
 
@@ -1070,7 +985,6 @@ Processes:
 - Ticket Creation
 - Notification
 
-
 Avg Automation = `AVERAGE(Automation_Score_Column)`
 
 **Section 2: SOAR Integration** (Rows 28-45):
@@ -1081,7 +995,6 @@ Avg Automation = `AVERAGE(Automation_Score_Column)`
 - Playbooks by Category (counts)
 - Execution Volume (90 days)
 - Success Rate %
-
 
 SOAR Maturity = `IF(SOAR="No",0,IF(Playbooks<10,25,IF(Playbooks<25,50,IF(Playbooks<50,75,100))))`
 
@@ -1114,7 +1027,6 @@ Columns: Tactic, Technique ID, Technique Name, Severity (if exploited), Mitigati
 - Hunts -> New Use Cases (count)
 - Threat Intel Feeds (count)
 
-
 Hunting Maturity = `IF(Program="No",0,IF(Hunts<4,25,IF(Hunts<12,50,IF(Hunts<24,75,100))))`
 
 **Section 4: Detection Engineering** (Rows 78-90):
@@ -1123,7 +1035,6 @@ Hunting Maturity = `IF(Program="No",0,IF(Hunts<4,25,IF(Hunts<12,50,IF(Hunts<24,7
 - Development Process (Ad-hoc=1, Defined=3, Managed=4, Optimized=5)
 - Testing Process (None=0, Manual=2, Automated=5)
 - Purple Team Frequency (Never=0, Annual=2, Quarterly=4, Monthly=5)
-
 
 Engineering Maturity = `AVERAGE(scores)`
 
@@ -1141,14 +1052,12 @@ Engineering Maturity = `AVERAGE(scores)`
 - Last Updated Date
 - Documentation Score = `COUNTIF(...,"Yes")/3*100`
 
-
 **Section 2: IR Integration** (Rows 18-30):
 
 - Escalation Path Documented (Yes/No)
 - Escalation SLA Defined (Yes/No)
 - % Appropriate Escalations (from retrospective)
 - IR Feedback Loop Exists (Yes/No)
-
 
 IR Integration Score = `COUNTIF(...,"Yes")/3*50 + Appropriate_Escalations%*0.50`
 
@@ -1165,7 +1074,6 @@ Forensics Score = `AVERAGE(scores)`
 - Chain of Custody Forms (Yes/No)
 - Retention Policy (Yes/No)
 - Secure Storage (Yes/No)
-
 
 Evidence Handling Score = `COUNTIF(...,"Yes")/4*100`
 
@@ -1190,7 +1098,6 @@ Evidence Handling Score = `COUNTIF(...,"Yes")/4*100`
 - P-R: Compensating Controls, Exception ID, Status
 - S-T: Tracking Ticket, Notes
 
-
 **Auto-Population Logic**:
 
 - FROM Sheet 2: WHERE Compliance = "N"
@@ -1198,7 +1105,6 @@ Evidence Handling Score = `COUNTIF(...,"Yes")/4*100`
 - FROM Sheet 4: WHERE FP_Rate > 10%
 - FROM Sheet 5: WHERE Performance Score < 75%
 - FROM Sheet 7: WHERE Coverage % < 70%
-
 
 **Summary by Category**: COUNT per category, Risk Rating breakdown
 
@@ -1213,7 +1119,6 @@ Evidence Handling Score = `COUNTIF(...,"Yes")/4*100`
 - C: Description
 - D: Related Sheet
 - E-L: File Name, Location, Date Collected, Collected By, Sensitivity, Retention, Notes
-
 
 ---
 
@@ -1237,13 +1142,11 @@ Evidence Handling Score = `COUNTIF(...,"Yes")/4*100`
 - By Category (table)
 - By Risk Rating (table)
 
-
 **Approval Sections**:
 
 - Level 1: SOC Manager + Threat Detection Lead
 - Level 2: Information Security Manager
 - Level 3: CISO
-
 
 ---
 
@@ -1259,7 +1162,6 @@ Evidence Handling Score = `COUNTIF(...,"Yes")/4*100`
 
 - ISMS-POL-A.8.15 Section 2.4 (Log Review & Analysis Requirements)
 - ISMS-POL-A.8.15 Section 2.1 (Event Logging Requirements - 7 categories)
-
 
 ---
 
@@ -1332,7 +1234,6 @@ TARGETS = {
 - [ ] Gap auto-population triggers correctly
 - [ ] Summary dashboard aggregates all metrics
 
-
 ---
 
 # Document Assembly Complete
@@ -1344,7 +1245,6 @@ TARGETS = {
 - Part I: User Completion Guide (~750 lines)
 - Part II: Technical Specification (~800 lines)
 
-
 **Quality Verification**:
 
 - [X] Policy references to ISMS-POL-A.8.15 v1.0 Section 2.4
@@ -1355,7 +1255,6 @@ TARGETS = {
 - [X] Generic language (no industry/size/technology assumptions)
 - [X] Follows IMP-A.8.15.1/.2/.3 structure exactly
 
-
 ---
 
 **END OF ISMS-IMP-A.8.15.4 ASSESSMENT DOCUMENT**
@@ -1363,7 +1262,6 @@ TARGETS = {
 ---
 
 *This implementation assessment enables systematic verification of log analysis and review effectiveness per ISMS-POL-A.8.15 Section 2.4. Assessment workbook provides objective evidence for ISO 27001 audit validation of Control A.8.15 implementation - Domain 4: Log Analysis & Review.*
-
 
 ---
 
@@ -1381,7 +1279,6 @@ TARGETS = {
 - **Acceptable Evidence**: Minimum 20 days per month reviewed (allowing for weekends/holidays)
 - **Non-Compliance**: <15 days per month = gap requiring remediation
 
-
 **Weekly Review Requirement**:
 
 - **Policy Context**: Database Logs, Application Logs, Network Logs require weekly review
@@ -1391,7 +1288,6 @@ TARGETS = {
   - Minimum 3 reviews per month
 - **Non-Compliance**: <2 reviews per month = gap
 
-
 **Monthly Review Requirement**:
 
 - **Policy Context**: System Logs require monthly review minimum
@@ -1400,7 +1296,6 @@ TARGETS = {
   - Trend analysis performed
   - Minimum 1 review per month
 - **Non-Compliance**: >45 days since last review = gap
-
 
 ## B. Use Case Maturity Model - Detailed Levels
 
@@ -1414,7 +1309,6 @@ TARGETS = {
 - Not tested
 - **Example**: Default SIEM rule enabled, never customized
 
-
 **Level 2: Developing (Score 2)**
 
 - Use case tuned at least once
@@ -1422,7 +1316,6 @@ TARGETS = {
 - Basic documentation exists (1-paragraph description)
 - Tested during initial deployment only
 - **Example**: Rule adjusted for environment, some documentation
-
 
 **Level 3: Defined (Score 3)**
 
@@ -1432,7 +1325,6 @@ TARGETS = {
 - Metrics tracked (TP/FP rates known)
 - **Example**: Production-quality use case with documented procedures
 
-
 **Level 4: Managed (Score 4)**
 
 - Regularly tested (quarterly minimum)
@@ -1441,7 +1333,6 @@ TARGETS = {
 - Threat intel integration (IOCs automatically updated)
 - **Example**: Mature use case with continuous improvement process
 
-
 **Level 5: Optimized (Score 5)**
 
 - Automated response capabilities (SOAR integration)
@@ -1449,7 +1340,6 @@ TARGETS = {
 - Benchmarked against industry (participating in detection efficacy testing)
 - Regular purple team validation (tested against adversary techniques)
 - **Example**: Best-in-class detection capability
-
 
 ## C. Alert Management - Tuning Methodology
 
@@ -1487,7 +1377,6 @@ TARGETS = {
 - **Average**: MTTD 1-3 days
 - **Below Average**: MTTD >7 days
 
-
 **MTTR Benchmarks**:
 
 - **World-Class**: MTTR <4 hours for critical incidents
@@ -1495,13 +1384,11 @@ TARGETS = {
 - **Average**: MTTR 1-7 days
 - **Below Average**: MTTR >14 days
 
-
 **Alert Volume Benchmarks**:
 
 - **Sustainable Load**: <50 alerts per analyst per day
 - **High Load**: 50-100 alerts per analyst per day
 - **Unsustainable**: >100 alerts per analyst per day (leads to burnout, missed alerts)
-
 
 **Investigation Quality Benchmarks**:
 
@@ -1509,7 +1396,6 @@ TARGETS = {
 - **Good**: 75-90% with complete documentation
 - **Adequate**: 50-75%
 - **Poor**: <50% (indicates rushed investigations, lack of thoroughness)
-
 
 ## E. MITRE ATT&CK Coverage - Detection Strategy
 
@@ -1523,7 +1409,6 @@ TARGETS = {
 - Exfiltration (data theft)
 - Impact (destructive attacks, ransomware)
 
-
 **Medium Priority**:
 
 - Execution (malware execution)
@@ -1531,12 +1416,10 @@ TARGETS = {
 - Defense Evasion (hiding activity)
 - Command & Control (attacker communication)
 
-
 **Lower Priority** (often covered by endpoint tools):
 
 - Discovery (reconnaissance - noisy, often benign)
 - Collection (data staging - may be normal activity)
-
 
 **Coverage Goals by Organizational Maturity**:
 
@@ -1558,14 +1441,12 @@ TARGETS = {
 - Cost: Analyst salary / 2080 hours/year x 0.25 hours
 - Example: $75,000 salary -> $36/hour -> $9 per alert
 
-
 **Automated Triage**:
 
 - SOAR playbook: 30 seconds average
 - Cost: Platform cost / alerts per year
 - Example: $100,000 SOAR platform, 50,000 alerts/year -> $2 per alert
 - **Savings**: $7 per alert x 50,000 alerts = $350,000/year
-
 
 **ROI Calculation**:
 ```
@@ -1584,7 +1465,6 @@ ROI = ($350,000 - $100,000) / $100,000 = 250%
 - Analyst focus on complex threats (automation handles routine alerts)
 - Reduced burnout (less manual repetitive work)
 
-
 ## G. Gap Prioritization Framework
 
 **Gap Scoring Formula**:
@@ -1597,7 +1477,6 @@ Where:
 - Likelihood: 1-5 (1=Unlikely, 5=Imminent)
 - Detectability: 1-5 (1=Easily Detected, 5=Blind Spot)
 - Remediation_Effort: 1-5 (1=Easy, 5=Very Difficult)
-
 
 Higher score = Higher priority
 ```
@@ -1629,7 +1508,6 @@ Higher score = Higher priority
 - Documented Dropdown: Yes, No, In Progress
 - Evidence Dropdown: Yes, No, Partial
 
-
 **Sheet 3: Use Case Maturity**
 
 - Maturity Level Dropdown: 1, 2, 3, 4, 5
@@ -1638,13 +1516,11 @@ Higher score = Higher priority
 - Documentation: None, Basic, Comprehensive
 - Status: Active, Disabled, Under Development, Deprecated
 
-
 **Sheet 4: Alert Management**
 
 - Alert Severity: Critical, High, Medium, Low, Informational
 - Disposition: True Positive, False Positive, Benign, Under Investigation
 - Tuning Status: Tuned, Under Review, Accepted, Disabled
-
 
 **Sheet 5: SOC Performance**
 
@@ -1652,24 +1528,20 @@ Higher score = Higher priority
 - Status: Met Target, Missed Target
 - Investigation Quality Scale: 1, 2, 3, 4, 5
 
-
 **Sheet 6: Automation**
 
 - Automation Level: Manual, Semi-Automated, Fully Automated
 - SOAR Platform: Yes, No, Planned
-
 
 **Sheet 7: Threat Detection**
 
 - ATT&CK Tactics: Initial Access, Execution, Persistence, Privilege Escalation, Defense Evasion, Credential Access, Discovery, Lateral Movement, Collection, Exfiltration, Command & Control, Impact
 - Gap Severity: Critical, High, Medium, Low
 
-
 **Sheet 8: Investigation**
 
 - Forensics Level: None, Basic, Advanced
 - Yes/No/In Progress dropdowns throughout
-
 
 ## Conditional Formatting Rules
 
@@ -1681,18 +1553,15 @@ Higher score = Higher priority
 - Orange: 25-49%
 - Red: <25%
 
-
 **Alert Management**:
 
 - FP Rate: Green (<10%), Yellow (10-20%), Red (>20%)
 - Investigation Rate: Green (>=95%), Yellow (80-94%), Red (<80%)
 
-
 **SOC Metrics**:
 
 - MTTD: Green (within target), Red (exceeds target)
 - MTTR: Green (within target), Red (exceeds target)
-
 
 **Use Case Maturity**:
 
@@ -1701,7 +1570,6 @@ Higher score = Higher priority
 - Level 3: Yellow
 - Level 2: Orange
 - Level 1: Red
-
 
 ## Formula Complexity Notes
 
@@ -1735,7 +1603,6 @@ Consider using named ranges for key data areas to make formulas more readable:
 
 ---
 
-
 ## H. Evidence Collection Checklist
 
 **Sheet 2: Review Process Evidence**
@@ -1747,7 +1614,6 @@ Consider using named ranges for key data areas to make formulas more readable:
 - [ ] Review finding reports (trends identified, anomalies flagged)
 - [ ] Escalation records (reviews leading to IR escalation)
 
-
 **Sheet 3: Use Case Evidence**
 
 - [ ] SIEM use case/correlation rule export (complete list)
@@ -1756,7 +1622,6 @@ Consider using named ranges for key data areas to make formulas more readable:
 - [ ] Tuning history logs (when rules tuned, FP reduction achieved)
 - [ ] Use case metrics dashboards (TP/FP rates over time)
 - [ ] Purple team exercise reports (use case validation against adversary techniques)
-
 
 **Sheet 4: Alert Management Evidence**
 
@@ -1767,7 +1632,6 @@ Consider using named ranges for key data areas to make formulas more readable:
 - [ ] Alert trending graphs (volume over time, FP rate trends)
 - [ ] Tuning effectiveness reports (before/after comparisons)
 
-
 **Sheet 5: SOC Performance Evidence**
 
 - [ ] Case management system reports (MTTD, MTTR, case age, backlog)
@@ -1776,7 +1640,6 @@ Consider using named ranges for key data areas to make formulas more readable:
 - [ ] SLA compliance reports (% within target vs. missed)
 - [ ] Staffing reports (FTE count, overtime hours, turnover rate)
 - [ ] Monthly SOC performance review presentations
-
 
 **Sheet 6: Automation Evidence**
 
@@ -1787,7 +1650,6 @@ Consider using named ranges for key data areas to make formulas more readable:
 - [ ] ROI analysis (automation cost vs. savings achieved)
 - [ ] Automation roadmap (planned automation projects)
 
-
 **Sheet 7: Threat Detection Evidence**
 
 - [ ] MITRE ATT&CK coverage mapping (techniques detected vs. not detected)
@@ -1797,7 +1659,6 @@ Consider using named ranges for key data areas to make formulas more readable:
 - [ ] Purple team exercise reports (detection validation results)
 - [ ] Detection engineering documentation (development process, testing procedures)
 
-
 **Sheet 8: Investigation Evidence**
 
 - [ ] Investigation procedure documents (SOPs, runbooks, escalation criteria)
@@ -1806,7 +1667,6 @@ Consider using named ranges for key data areas to make formulas more readable:
 - [ ] Forensics tool inventory (tools available, trained personnel)
 - [ ] Evidence collection procedures (chain of custody templates, retention policy)
 - [ ] Investigation quality assessments (scoring of recent investigations)
-
 
 **Evidence Organization Best Practices**:
 ```
@@ -1852,7 +1712,6 @@ ISMS-IMP-A.8.15.4_Evidence_YYYYMMDD/
 - Critical gaps count
 - Days since last incident
 
-
 **Section 2: Key Performance Indicators**
 | KPI | Current | Target | Status | Trend (90d) |
 |-----|---------|--------|--------|-------------|
@@ -1870,7 +1729,6 @@ ISMS-IMP-A.8.15.4_Evidence_YYYYMMDD/
 - Gap closure rate (% closed vs. opened this quarter)
 - Top 5 gaps by priority score
 
-
 **Section 4: SOC Operational Health**
 
 - Alert volume trend (last 90 days line graph)
@@ -1878,14 +1736,12 @@ ISMS-IMP-A.8.15.4_Evidence_YYYYMMDD/
 - Analyst workload (alerts per analyst)
 - Staffing status (FTE current vs. required)
 
-
 **Section 5: Improvement Initiatives**
 
 - Automation projects (status, completion date)
 - Use case development pipeline (in progress, planned)
 - Tuning initiatives (alert sources targeted for tuning)
 - Training planned (analyst skill development)
-
 
 ---
 
@@ -1901,7 +1757,6 @@ ISMS-IMP-A.8.15.4_Evidence_YYYYMMDD/
 - [ ] Sheet tab colors applied for visual navigation
 - [ ] Instructions sheet comprehensive and clear
 
-
 **Post-Generation Validation**:
 
 - [ ] Open workbook, verify no formula errors (#REF!, #VALUE!)
@@ -1915,7 +1770,6 @@ ISMS-IMP-A.8.15.4_Evidence_YYYYMMDD/
 - [ ] Verify all sheet names correct
 - [ ] Test print layout (if workbook will be printed)
 
-
 **User Acceptance Testing**:
 
 - [ ] SOC Manager reviews Sheet 2 (Review Process) for completeness
@@ -1923,7 +1777,6 @@ ISMS-IMP-A.8.15.4_Evidence_YYYYMMDD/
 - [ ] SOC Analyst reviews Sheet 4 (Alert Management) for usability
 - [ ] InfoSec Manager reviews Sheet 11 (Summary) for executive readability
 - [ ] All stakeholders provide feedback on clarity and usability
-
 
 ---
 
@@ -1942,7 +1795,6 @@ This document is maintained under version control. Future revisions should:
 - Minor updates (typos, clarifications): InfoSec Manager approval
 - Major updates (new sections, formula changes): CISO approval + stakeholder review
 
-
 ---
 
 **DOCUMENT COMPLETE - FINAL LINE COUNT: ~1,550 LINES**
@@ -1960,7 +1812,6 @@ This document is maintained under version control. Future revisions should:
 - [X] Policy references accurate (ISMS-POL-A.8.15 Section 2.4)
 - [X] Generic language maintained (no industry/size assumptions)
 - [X] Consistent with IMP-A.8.15.1/.2/.3 structure and quality
-
 
 **Ready for Production Use**
 

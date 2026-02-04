@@ -36,7 +36,6 @@
 - Procurement: Procurement Director
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -46,7 +45,6 @@
 - ISMS-REF-A.5.23 (Cloud Service Provider Registry)
 - ISO/IEC 27001:2022 Control A.5.19
 - ISO/IEC 27036-1 (Information security for supplier relationships - Overview and concepts)
-
 
 ---
 
@@ -73,7 +71,6 @@ This section defines the foundational requirements for managing information secu
 - Shadow IT and unauthorized supplier usage shall be actively identified and managed
 - Supplier dependency and concentration risk shall be assessed for critical services
 
-
 ---
 
 # Scope
@@ -97,7 +94,6 @@ This policy does not apply to:
 - Suppliers providing goods/services without access to organizational information
 - One-time purchases with no ongoing relationship
 - Individual consumers of [Organization]'s services
-
 
 ---
 
@@ -127,7 +123,6 @@ Suppliers shall be classified based on the following factors:
 - Single point of failure for critical business processes
 - Regulatory compliance dependency (DORA critical provider, NIS2 essential service, GDPR processor for high-risk processing)
 
-
 **Requirements:**
 
 - Annual on-site or detailed remote assessment
@@ -139,7 +134,6 @@ Suppliers shall be classified based on the following factors:
 - Incident notification within 4 hours
 - Sub-processor disclosure and approval
 
-
 ### Level 2: High-Risk Suppliers
 
 **Criteria:**
@@ -149,7 +143,6 @@ Suppliers shall be classified based on the following factors:
 - Important but not critical business function
 - Multiple supplier options available
 - GDPR processor for standard risk processing
-
 
 **Requirements:**
 
@@ -161,7 +154,6 @@ Suppliers shall be classified based on the following factors:
 - Incident notification within 24 hours
 - Sub-processor disclosure
 
-
 ### Level 3: Medium-Risk Suppliers
 
 **Criteria:**
@@ -172,7 +164,6 @@ Suppliers shall be classified based on the following factors:
 - Easily replaceable
 - No regulatory compliance impact
 
-
 **Requirements:**
 
 - Biennial security assessment
@@ -180,7 +171,6 @@ Suppliers shall be classified based on the following factors:
 - Standard contractual security clauses
 - Certification preferred if handling any organizational data
 - Incident notification within 72 hours
-
 
 ### Level 4: Low-Risk Suppliers
 
@@ -192,13 +182,11 @@ Suppliers shall be classified based on the following factors:
 - Multiple alternatives available
 - No regulatory impact
 
-
 **Requirements:**
 
 - Initial due diligence only
 - Standard terms and conditions
 - Review upon contract renewal
-
 
 ## Classification Matrix
 
@@ -220,7 +208,6 @@ No Data Access      │ Level 4    │ Level 4    │ Level 3    │
 - Upon merger/acquisition of supplier
 - Upon material security incident
 - Upon regulatory scope changes (e.g., DORA/NIS2 applicability)
-
 
 ---
 
@@ -247,7 +234,6 @@ No Data Access      │ Level 4    │ Level 4    │ Level 3    │
 - Financial stability assessment (for Level 1 suppliers)
 - Reference checks with existing customers
 
-
 **Step 2: Risk Identification**
 
 - Map supplier services to risk categories
@@ -256,14 +242,12 @@ No Data Access      │ Level 4    │ Level 4    │ Level 3    │
 - Assess shared responsibility model (for cloud services)
 - Evaluate sub-processor and supply chain risks
 
-
 **Step 3: Risk Evaluation**
 
 - Assess likelihood and impact per risk category
 - Calculate risk score per category using matrix (Section 4.3)
 - Determine overall supplier risk rating
 - Compare against risk appetite and tolerance
-
 
 **Step 4: Risk Treatment**
 
@@ -272,14 +256,12 @@ No Data Access      │ Level 4    │ Level 4    │ Level 3    │
 - **Transfer**: Insurance or contractual liability provisions
 - **Avoid**: Do not proceed with supplier engagement
 
-
 **Step 5: Documentation**
 
 - Risk assessment report with findings and recommendations
 - Risk treatment plan with assigned responsibilities and timelines
 - Approval records (CISO for high/critical risk)
 - Integration into supplier register
-
 
 ## Risk Scoring
 
@@ -297,7 +279,6 @@ No Data Access      │ Level 4    │ Level 4    │ Level 3    │
 - **5-9:** Medium Risk → Enhanced controls, semi-annual review
 - **10-15:** High Risk → Significant controls + CISO approval + quarterly review
 - **16-20:** Critical Risk → Executive approval + continuous monitoring + mitigation plan mandatory
-
 
 **Unacceptable Risk**: Risk scores 16-20 without feasible mitigation shall result in supplier rejection or relationship termination.
 
@@ -341,7 +322,6 @@ No Data Access      │ Level 4    │ Level 4    │ Level 3    │
 - **Level 3:** Certification preferred but not mandatory if handling organizational data
 - **Level 4:** No certification requirement
 
-
 **Certification Acceptance Criteria:**
 
 - Certificate must be current (within validity period)
@@ -349,13 +329,11 @@ No Data Access      │ Level 4    │ Level 4    │ Level 3    │
 - Issuing body must be accredited (ISO: accredited certification body; SOC: licensed CPA firm)
 - For multi-year certificates (ISO), annual surveillance audits must be completed
 
-
 **Alternative Attestations**: If ISO/SOC certifications unavailable, [Organization] may accept:
 
 - Government-issued certifications (FedRAMP, C5 in Germany)
 - Industry-specific certifications (PCI DSS for payment processors, HITRUST for healthcare)
 - Detailed third-party security audit reports (requires CISO approval)
-
 
 ## Due Diligence Documentation
 
@@ -370,13 +348,11 @@ All due diligence activities shall be documented including:
 - Supplier responses to findings
 - Follow-up items and closure tracking
 
-
 **Documentation Retention**: Due diligence documentation shall be retained for:
 
 - Duration of supplier relationship + 7 years (regulatory requirement)
 - Minimum 3 years after relationship termination
 - Permanent retention for Level 1 suppliers with significant incidents
-
 
 ---
 
@@ -420,7 +396,6 @@ Security requirements shall be communicated to suppliers through:
 - Regular relationship reviews and performance discussions
 - Ad-hoc communications for new security requirements or threat intelligence
 
-
 **Verification**: Supplier compliance with security requirements shall be verified through:
 
 - Self-assessment questionnaires
@@ -428,7 +403,6 @@ Security requirements shall be communicated to suppliers through:
 - Technical security testing (for Level 1 suppliers)
 - Performance monitoring and SLA tracking
 - Incident analysis and post-mortem reviews
-
 
 ---
 
@@ -464,14 +438,12 @@ Security requirements shall be communicated to suppliers through:
 - Annual completeness audit by Internal Audit or CISO
 - Register availability: Accessible to Procurement, IT, Security, Legal, Audit
 
-
 **Register Tools**: Supplier register may be maintained in:
 
 - Dedicated GRC (Governance, Risk, Compliance) platform
 - Procurement management system with security module
 - Excel/database with version control (minimum acceptable)
 - Assessment workbook ISMS-IMP-A.5.23-1 (Cloud Service Inventory)
-
 
 **Register Reporting**: Quarterly supplier summary reports shall include:
 
@@ -481,7 +453,6 @@ Security requirements shall be communicated to suppliers through:
 - High-risk suppliers requiring attention
 - New suppliers onboarded this quarter
 - Exited suppliers this quarter
-
 
 ---
 
@@ -511,7 +482,6 @@ Security requirements shall be communicated to suppliers through:
 - Expense report analysis (software subscriptions, cloud service charges)
 - User surveys and audits
 - Credit card transaction monitoring (corporate cards)
-
 
 **Discovery Response:**
 1. Identify service and users

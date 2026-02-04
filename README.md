@@ -5,21 +5,21 @@
 <h1 align="center">🎋 ISMS CORE</h1>
 
 <p align="center">
-  <strong>Control-Oriented Real-world Engineering for ISO 27001:2022</strong>
+  <strong>Control-Oriented Real-world Engineering for ISO/IEC 27001:2022</strong>
 </p>
 
 <p align="center">
   <a href="https://www.iso.org/standard/27001"><img src="https://img.shields.io/badge/ISO_27001-2022-0066CC?style=flat-square&logo=iso&logoColor=white" alt="ISO 27001:2022"/></a>
-  <a href="#-status"><img src="https://img.shields.io/badge/Progress-83%25-32CD32?style=flat-square" alt="Progress"/></a>
-  <a href="#-status"><img src="https://img.shields.io/badge/Section_8-100%25_Complete-00AA00?style=flat-square" alt="Section 8"/></a>
+  <a href="#-status"><img src="https://img.shields.io/badge/Progress-100%25-00AA00?style=flat-square" alt="Progress"/></a>
+  <a href="#-status"><img src="https://img.shields.io/badge/Control_Packs-53_of_53-00AA00?style=flat-square" alt="Control Packs"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-AGPL_3.0-9400D3?style=flat-square" alt="License"/></a>
 </p>
 
 <p align="center">
-  <a href="#-framework-integration"><img src="https://img.shields.io/badge/NIST_CSF-2.0-FF6600?style=flat-square" alt="NIST CSF"/></a>
-  <a href="#-framework-integration"><img src="https://img.shields.io/badge/MITRE_ATT&CK-v18-DC143C?style=flat-square" alt="MITRE ATT&CK"/></a>
-  <a href="#-framework-integration"><img src="https://img.shields.io/badge/GDPR-Compliant-FFD700?style=flat-square" alt="GDPR"/></a>
-  <a href="#-framework-integration"><img src="https://img.shields.io/badge/Swiss_nDSG-Ready-FF0000?style=flat-square" alt="Swiss nDSG"/></a>
+  <a href="#-framework-integration"><img src="https://img.shields.io/badge/NIST_CSF-2.0-Mapped-FF6600?style=flat-square" alt="NIST CSF"/></a>
+  <a href="#-framework-integration"><img src="https://img.shields.io/badge/MITRE_ATT&CK-v18-Mapped-DC143C?style=flat-square" alt="MITRE ATT&CK"/></a>
+  <a href="#-framework-integration"><img src="https://img.shields.io/badge/GDPR-Mapped-FFD700?style=flat-square" alt="GDPR"/></a>
+  <a href="#-framework-integration"><img src="https://img.shields.io/badge/Swiss_nDSG-Toolkit-FF0000?style=flat-square" alt="Swiss nDSG"/></a>
   <a href="#-framework-integration"><img src="https://img.shields.io/badge/EU_AI_Act-Mapped-0066CC?style=flat-square" alt="EU AI Act"/></a>
 </p>
 
@@ -31,7 +31,9 @@
 
 ## 🎯 What is ISMS CORE?
 
-A production-grade compliance management platform that treats ISMS implementation as an **engineering problem**, not a consulting exercise.
+ISMS CORE is a production-grade **control engineering** repository for building and operating an ISO/IEC 27001:2022-aligned ISMS. It treats ISMS implementation as an **engineering problem** (verifiable controls + repeatable evidence), not a slide deck exercise.
+
+It is organized into a consistent control "stack":
 
 <table>
 <tr>
@@ -42,15 +44,29 @@ A production-grade compliance management platform that treats ISMS implementatio
 <td align="center"><strong>🏢 CTX</strong><br/>Context</td>
 </tr>
 <tr>
-<td>Control requirements<br/>and governance</td>
-<td>Technical procedures<br/>and assessments</td>
-<td>Python workbook<br/>generators</td>
-<td>Standards mapping<br/>and references</td>
-<td>Organizational<br/>context</td>
+<td>Requirements<br/>and governance</td>
+<td>Procedures, assessments<br/>and verification</td>
+<td>Python generators<br/>and automation</td>
+<td>Mappings and notes<br/>to support implementation</td>
+<td>Organizational<br/>assumptions & scope context</td>
 </tr>
 </table>
 
-### 🏗️ Architecture
+### 🧭 Who this is for (and not for)
+
+**This is for:**
+- Security teams building an ISMS and wanting **repeatable evidence**
+- Engineers who prefer **automation + tests** over "security theater"
+- Consultants/auditors who need **structured control packs** (policy + implementation + assessment artifacts)
+
+**This is not for:**
+- "One-click compliance" expectations
+- Legal interpretations of GDPR/DORA/NIS2 (use counsel)
+- Running scripts you haven't reviewed (treat this like code)
+
+---
+
+## 🏗️ Architecture
 
 ```
 POL (Policy)         → Requirements and accountability
@@ -68,95 +84,106 @@ Workbook (Output)    → Evidence and compliance metrics
 
 ```
 isms-core-platform/
-├── A.5-organizational-controls/     # 17 control groups
+├── A.5-organizational-controls/     # 21 control packs (covers 37 Annex A controls)
 │   ├── isms-a.5.7-threat-intelligence/
 │   │   ├── POL/    ├── IMP/    ├── SCR/    └── REF/
 │   └── ...
-├── A.6-people-controls/             # 3 control groups
-├── A.7-physical-controls/           # 6 control groups
-├── A.8-technological-controls/      # 23 control groups
-├── CONTROLS.md                      # 📋 Control index (start here!)
-├── STATUS.md                        # 📊 Current implementation progress
-├── STACKING.md                      # 🔗 Control grouping approaches
-├── PHILOSOPHY.md                    # ✈️ Anti-cargo-cult methodology
-└── CONTRIBUTING.md                  # 🔧 QA process and standards
+├── A.6-people-controls/             # 4 control packs (covers 8 Annex A controls)
+├── A.7-physical-controls/           # 6 control packs (covers 14 Annex A controls)
+├── A.8-technological-controls/      # 22 control packs (covers 34 Annex A controls)
+├── CONTROLS.md
+├── COVERAGE.md
+├── STATUS.md
+├── STACKING.md
+├── PHILOSOPHY.md
+└── CONTRIBUTING.md
 ```
 
-Controls are organized by ISO 27001:2022 Annex A section.
+Controls are organized by ISO/IEC 27001:2022 Annex A section (A.5–A.8).
 
 ---
 
 ## 🚀 Quick Start
 
-**Browse controls:** Start with [CONTROLS.md](CONTROLS.md) for a complete index.
+### 1) Browse controls
+Start with [CONTROLS.md](CONTROLS.md) for the index and navigate to a control folder.
 
-Each control folder contains everything you need:
+Each control folder contains everything needed:
 
 ```
 A.8-technological-controls/
 └── isms-a.8.24-use-of-cryptography/
-    ├── POL/10_pol-md/         # 📜 Policy documents
-    ├── IMP/30_imp-md/         # 📋 Implementation guides
-    └── SCR/                   # 🐍 Scripts & workbooks
+    ├── POL/10_pol-md/
+    ├── IMP/30_imp-md/
+    └── SCR/
         ├── 10_generator-master/
         ├── 13_presentation/
         └── 90_workbooks/
 ```
 
-Generate a workbook:
+### 2) Prerequisites
+- Python 3.11+ recommended (3.10+ may work depending on dependencies)
+- A virtual environment (`python -m venv .venv`)
+- `pip install openpyxl` (primary dependency)
+
+### 3) Generate a workbook (example)
 ```bash
 cd A.8-technological-controls/isms-a.8.24-use-of-cryptography/SCR/10_generator-master
 python3 generate_a824_1_data_transmission_assessment.py
 ```
 
+**Tip:** Treat generated workbooks as potential evidence. Don't commit workbooks containing secrets, production identifiers, or personal data.
+
 ---
 
 ## 🔗 Framework Integration
 
+This repo provides **mappings and implementation material** to support multiple frameworks. Your compliance outcome depends on how you implement, operate, and evidence controls in your own environment.
+
 <table>
 <tr>
 <th>Framework</th>
-<th>Coverage</th>
-<th>Badge</th>
+<th>What ISMS CORE provides</th>
+<th>Status</th>
 </tr>
 <tr>
 <td>ISO/IEC 27001:2022</td>
-<td>Complete Annex A mapping</td>
-<td><img src="https://img.shields.io/badge/Complete-0066CC?style=flat-square" alt="Complete"/></td>
+<td>Annex A control packs (policy + implementation + assessment structure)</td>
+<td><img src="https://img.shields.io/badge/Mapped-0066CC?style=flat-square" alt="Mapped"/></td>
 </tr>
 <tr>
 <td>ISO/IEC 27002:2022</td>
-<td>Implementation guidance</td>
-<td><img src="https://img.shields.io/badge/Complete-0066CC?style=flat-square" alt="Complete"/></td>
+<td>Implementation-oriented guidance (original wording, not a copy of the standard)</td>
+<td><img src="https://img.shields.io/badge/Coverage-0066CC?style=flat-square" alt="Coverage"/></td>
 </tr>
 <tr>
 <td>NIST CSF 2.0</td>
-<td>Control mapping</td>
+<td>Control mapping and grouping options</td>
 <td><img src="https://img.shields.io/badge/Mapped-FF6600?style=flat-square" alt="Mapped"/></td>
 </tr>
 <tr>
-<td>NIST SP 800-53 Rev 5</td>
-<td>Security controls</td>
+<td>NIST SP 800-53 Rev. 5</td>
+<td>Security control mapping (where applicable)</td>
 <td><img src="https://img.shields.io/badge/Mapped-FF6600?style=flat-square" alt="Mapped"/></td>
 </tr>
 <tr>
 <td>MITRE ATT&CK</td>
-<td>Enterprise, ICS, Mobile</td>
-<td><img src="https://img.shields.io/badge/v18-DC143C?style=flat-square" alt="v18"/></td>
+<td>Threat technique mapping (Enterprise / ICS / Mobile as used)</td>
+<td><img src="https://img.shields.io/badge/v18-Mapped-DC143C?style=flat-square" alt="Mapped"/></td>
 </tr>
 <tr>
-<td>Swiss nDSG, FINMA</td>
-<td>Regulatory compliance</td>
-<td><img src="https://img.shields.io/badge/Ready-FF0000?style=flat-square" alt="Ready"/></td>
+<td>GDPR / Swiss nDSG</td>
+<td>Security/privacy control mapping and operational checklists</td>
+<td><img src="https://img.shields.io/badge/Toolkit-FFD700?style=flat-square" alt="Toolkit"/></td>
 </tr>
 <tr>
-<td>EU GDPR, DORA, NIS2</td>
-<td>Data protection</td>
-<td><img src="https://img.shields.io/badge/Compliant-FFD700?style=flat-square" alt="Compliant"/></td>
+<td>DORA / NIS2</td>
+<td>Operational resilience mapping (risk mgmt, incident handling, continuity)</td>
+<td><img src="https://img.shields.io/badge/Mapped-FFD700?style=flat-square" alt="Mapped"/></td>
 </tr>
 <tr>
 <td>EU AI Act</td>
-<td>AI risk management</td>
+<td>AI risk management mapping (where relevant)</td>
 <td><img src="https://img.shields.io/badge/Mapped-0066CC?style=flat-square" alt="Mapped"/></td>
 </tr>
 </table>
@@ -177,13 +204,16 @@ ISMS CORE avoids **cargo-cult security** where formal structures exist without v
 | ❌ | Security theater for audits | ✅ Metrics that **measure real security** |
 | ❌ | PowerPoints instead of controls | ✅ Automation that **enforces compliance** |
 
-*If attackers are the "planes," cargo cult ISMS won't stop them. Only real controls will.* ✈️
-
 See [PHILOSOPHY.md](PHILOSOPHY.md) for the full methodology.
 
 ---
 
 ## 📊 Status
+
+To avoid ambiguity, ISMS CORE tracks three different things:
+- **Controls:** ISO/IEC 27001:2022 Annex A controls (93 total in A.5–A.8)
+- **Control packs:** our implementation bundles (53 packs covering all 93 controls)
+- **Artifacts:** POL/IMP/SCR per pack
 
 <table>
 <tr>
@@ -192,23 +222,23 @@ See [PHILOSOPHY.md](PHILOSOPHY.md) for the full methodology.
 <th>Status</th>
 </tr>
 <tr>
-<td>Control Groups Complete</td>
-<td><strong>44 of 53</strong></td>
-<td><img src="https://img.shields.io/badge/83%25-32CD32?style=flat-square" alt="83%"/></td>
-</tr>
-<tr>
-<td>Section 8 (Technological)</td>
-<td><strong>22 of 22</strong></td>
+<td>Control packs complete</td>
+<td><strong>53 of 53</strong></td>
 <td><img src="https://img.shields.io/badge/100%25_🎉-00AA00?style=flat-square" alt="100%"/></td>
 </tr>
 <tr>
-<td>Python Scripts</td>
-<td><strong>360+</strong></td>
+<td>Annex A controls mapped</td>
+<td><strong>93 of 93</strong></td>
+<td><img src="https://img.shields.io/badge/Mapped-32CD32?style=flat-square" alt="Mapped"/></td>
+</tr>
+<tr>
+<td>Python scripts</td>
+<td><strong>456</strong> (410K+ lines)</td>
 <td><img src="https://img.shields.io/badge/Validated-0066CC?style=flat-square" alt="Validated"/></td>
 </tr>
 <tr>
-<td>IMP Documents</td>
-<td><strong>158+</strong></td>
+<td>IMP documents</td>
+<td><strong>250+</strong></td>
 <td><img src="https://img.shields.io/badge/QA_Complete-9400D3?style=flat-square" alt="QA Complete"/></td>
 </tr>
 </table>
@@ -217,16 +247,37 @@ See [STATUS.md](STATUS.md) for detailed progress.
 
 ---
 
+## 🔒 Security
+
+- **Vulnerability reporting:** Please report security issues to **admin@gregorygriffin.org** (include "ISMS CORE Security" in the subject).
+- **Safe usage:** Review scripts before execution. Run in a virtual environment. Treat generated artifacts as sensitive until proven otherwise.
+- **No secrets:** Do not commit credentials, tokens, private keys, or customer data to this repo or to generated workbooks.
+
+---
+
+## 📚 Documentation
+
+| Document | Description |
+|----------|-------------|
+| [CONTROLS.md](CONTROLS.md) | 📋 **Start here.** Index of control packs and implementations |
+| [COVERAGE.md](COVERAGE.md) | 🗺️ Canonical mapping: 93 Annex A controls → 53 control packs |
+| [STATUS.md](STATUS.md) | 📊 Current progress and metrics |
+| [STACKING.md](STACKING.md) | 🔗 Control grouping approaches (e.g., Domain vs NIST CSF) |
+| [PHILOSOPHY.md](PHILOSOPHY.md) | ✈️ Anti-cargo-cult methodology |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | 🔧 QA process and standards |
+| [SECURITY.md](SECURITY.md) | 🔒 Vulnerability reporting policy |
+| [CHANGELOG.md](CHANGELOG.md) | 📝 Version history and release notes |
+| [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | 🤝 Community standards |
+
+---
+
 ## 📜 License
 
 **Dual-licensed:**
+- **AGPL-3.0** for open-source use (see [LICENSE](LICENSE))
+- **Commercial license** available for organizations that cannot (or do not want to) comply with AGPL obligations
 
-| License | Use Case |
-|---------|----------|
-| ![AGPL](https://img.shields.io/badge/AGPL_3.0-Open_Source-9400D3?style=flat-square) | Open source use |
-| ![Commercial](https://img.shields.io/badge/Commercial-Proprietary-FFD700?style=flat-square) | Without AGPL obligations |
-
-For commercial licensing: admin@gregorygriffin.org
+Commercial licensing: **admin@gregorygriffin.org**
 
 ---
 
@@ -237,10 +288,6 @@ For commercial licensing: admin@gregorygriffin.org
 </p>
 
 <p align="center">
-  <a href="https://isms-core.com"><img src="https://img.shields.io/badge/🌐_isms--core.com-Coming_Soon-2E8B57?style=for-the-badge" alt="Website"/></a>
-</p>
-
-<p align="center">
   <a href="mailto:admin@gregorygriffin.org"><img src="https://img.shields.io/badge/Email-admin@gregorygriffin.org-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"/></a>
   <a href="https://github.com/ggriffinorg"><img src="https://img.shields.io/badge/GitHub-ggriffinorg-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/></a>
   <a href="https://www.linkedin.com/in/ggriffinorg/"><img src="https://img.shields.io/badge/LinkedIn-ggriffinorg-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
@@ -248,20 +295,8 @@ For commercial licensing: admin@gregorygriffin.org
 
 ---
 
-## 📚 Documentation
-
-| Document | Description |
-|----------|-------------|
-| [CONTROLS.md](CONTROLS.md) | 📋 **Start here!** Index of all 49 control implementations |
-| [STATUS.md](STATUS.md) | 📊 Current implementation progress and metrics |
-| [STACKING.md](STACKING.md) | 🔗 Control grouping approaches (Domain vs NIST CSF) |
-| [PHILOSOPHY.md](PHILOSOPHY.md) | ✈️ Anti-cargo-cult methodology and the Feynman principle |
-| [CONTRIBUTING.md](CONTRIBUTING.md) | 🔧 QA process, quality standards, development guidelines |
-
----
-
 <p align="center">
-  <strong>Copyright © 2025-2026 Gregory Griffin. All rights reserved.</strong>
+  <strong>Copyright © 2025–2026 Gregory Griffin. All rights reserved.</strong>
 </p>
 
 <p align="center">

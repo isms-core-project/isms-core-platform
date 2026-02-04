@@ -30,8 +30,6 @@ Usage:
 Requirements:
     sudo apt install python3-openpyxl 
 
-Author: Gregory Griffin / Claude AI
-Date: 07.01.2025
 Control: ISO/IEC 27001:2022 - A.8.15 Logging
 """
 

@@ -35,14 +35,12 @@
 - Compliance: Legal/Compliance Officer
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-IMP-A.8.11 (Implementation Guidance Suite)
 - ISMS-CTX-A.8.11 (Data Masking Technical Reference - Technical Reference Only)
 - ISO/IEC 27001:2022 Control A.8.11
-
 
 ---
 
@@ -78,7 +76,6 @@ This policy establishes [Organization]'s requirements for data masking controls 
 - Exception and incident management frameworks
 - Integration with [Organization]'s risk assessment and treatment processes
 
-
 ## What This Policy Does
 
 This policy:
@@ -88,7 +85,6 @@ This policy:
 - **Specifies** approved masking techniques and selection criteria
 - **References** applicable regulatory requirements per ISMS-POL-00
 - **Identifies** organizational roles and responsibilities for masking controls
-
 
 ## What This Policy Does NOT Do
 
@@ -102,14 +98,12 @@ This policy does NOT:
 - **Define access control mechanisms** (covered by access control policies per A.5.15, A.8.3)
 - **Replace cryptographic controls** (encryption covered by A.8.24 Cryptography Policy)
 
-
 **Rationale**: Separating policy requirements from implementation guidance enables:
 
 - Policy stability despite evolving masking technologies and tool landscape
 - Technical agility for tool updates and technique improvements without policy revision
 - Clear distinction between governance (WHAT/WHO) and execution (HOW)
 - Focused audit scope (auditors audit policy compliance, not technical implementation details)
-
 
 ## Scope
 
@@ -146,7 +140,6 @@ This policy does NOT:
   - Outsourced development teams
   - Cloud service providers processing organizational data
 
-
 **Out of Scope**:
 
 - Public information (unclassified data requiring no masking)
@@ -155,7 +148,6 @@ This policy does NOT:
 - Data deletion and destruction (covered under A.8.10 Information Deletion)
 - Network-level access controls (covered under A.8.20 Networks Security)
 - Application-level access controls (covered under A.8.3 Access Restriction)
-
 
 **Note**: Out-of-scope items do not exempt systems from assessment. Assessment determines applicability; exclusion is documented with business justification.
 
@@ -193,7 +185,6 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - CIS Controls v8 (Control 3.3: Data Protection - Configure data access control lists)
 - OWASP Data Security Cheat Sheet
 - Cloud Security Alliance (CSA) guidance on cloud data protection
-
 
 **Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent requirements apply where multiple regulations overlap. Tier 2 applicability is documented in [Organization]'s regulatory compliance register and reviewed annually.
 
@@ -239,7 +230,6 @@ The following data categories SHALL be assessed for masking requirements:
 - Data owner responsible for masking decisions
 - Applicable regulatory requirements per data category
 
-
 **Implementation Note**: Data discovery methodology, data inventory procedures, and classification assessment tools are documented in ISMS-IMP-A.8.11-1 (Data Inventory & Classification Assessment). Technical guidance on data discovery techniques is provided in ISMS-CTX-A.8.11 (Technical Reference - NOT ISMS).
 
 **Data Owner Accountability**:
@@ -251,7 +241,6 @@ Data Owners SHALL:
 - Approve masking techniques for their data domains
 - Review and approve exceptions to masking requirements
 - Validate masking effectiveness for their data
-
 
 ## Masking Technique Standards
 
@@ -283,7 +272,6 @@ Masking technique selection SHALL consider:
 - **Referential integrity**: Cross-table relationships and foreign keys
 - **Performance impact**: Real-time vs. batch masking considerations
 
-
 **Prohibited Practices**:
 
 The following practices are NOT acceptable as masking techniques:
@@ -294,7 +282,6 @@ The following practices are NOT acceptable as masking techniques:
 - Production data in non-production without any masking (policy violation)
 - Self-generated "masking" without validated technique (cargo cult security)
 
-
 **Technique Approval**:
 
 New masking techniques or significant modifications to approved techniques SHALL:
@@ -303,7 +290,6 @@ New masking techniques or significant modifications to approved techniques SHALL
 - Undergo security review and testing
 - Be approved by CISO before production use
 - Be documented in technique inventory (ISMS-IMP-A.8.11-2)
-
 
 **Implementation Note**: Detailed technique specifications, algorithm parameters, and configuration guidance are provided in ISMS-CTX-A.8.11 (Data Masking Technical Reference - NOT ISMS). Technique selection and implementation assessment is documented in ISMS-IMP-A.8.11-2 (Masking Technique Selection & Requirements Assessment).
 
@@ -334,7 +320,6 @@ New masking techniques or significant modifications to approved techniques SHALL
 - Technical testing validating masking implementation
 - Regular assessment (annual minimum, quarterly for high-risk systems)
 
-
 **Production Environment Masking**:
 
 In production environments, masking MAY be implemented where:
@@ -343,7 +328,6 @@ In production environments, masking MAY be implemented where:
 - Reports or exports to external parties require masking
 - Compliance requirements mandate masking (e.g., PCI DSS display rules)
 - User interfaces display sensitive data to unauthorized personnel
-
 
 Production masking does NOT replace access controls but provides defense in depth.
 
@@ -376,7 +360,6 @@ Masking validation SHALL include:
 - Statistical analysis (for anonymization - verify k-anonymity, l-diversity as applicable)
 - Re-identification testing (for GDPR pseudonymization compliance)
 
-
 **Acceptance Criteria**:
 
 Masking implementation is acceptable when:
@@ -388,7 +371,6 @@ Masking implementation is acceptable when:
 - Performance impact is within acceptable limits
 - Regulatory requirements are met (GDPR, PCI DSS, etc.)
 
-
 **Failure Response**:
 
 When masking testing identifies failures:
@@ -397,7 +379,6 @@ When masking testing identifies failures:
 - Root cause SHALL be documented and addressed
 - Re-testing SHALL be performed to validate fixes
 - Incident SHALL be escalated per severity (exposure of sensitive data)
-
 
 **Implementation Note**: Testing methodology, validation procedures, test cases, and acceptance criteria are documented in ISMS-IMP-A.8.11-4 (Testing & Validation Framework).
 
@@ -416,7 +397,6 @@ The following masking-related events SHALL be logged where technically feasible:
 - Masking failures (processes that failed to complete)
 - Re-identification attempts (if detection is implemented)
 
-
 **Log Retention**:
 
 - Masking process logs: Minimum **90 days**
@@ -424,7 +404,6 @@ The following masking-related events SHALL be logged where technically feasible:
 - Exception and bypass events: Minimum **12 months**
 - Dynamic masking access logs: Per data classification (minimum 90 days for Confidential+)
 - Extended retention applies where regulatory requirements mandate longer periods (per ISMS-POL-00)
-
 
 **Monitoring Requirements**:
 
@@ -434,7 +413,6 @@ The following masking-related events SHALL be logged where technically feasible:
 - Repeated masking bypass attempts indicating potential misuse
 - Configuration changes to masking rules requiring approval verification
 - Performance degradation in DDM implementations
-
 
 **Privacy Compliance**:
 
@@ -455,7 +433,6 @@ Logging SHALL comply with applicable privacy regulations per ISMS-POL-00. Users 
 - Accepting residual risks where masking is not technically or operationally feasible
 - Supporting data protection program and privacy-by-design initiatives
 
-
 **Chief Information Security Officer (CISO)**:
 
 - Accountable for overall data masking policy and program effectiveness
@@ -465,7 +442,6 @@ Logging SHALL comply with applicable privacy regulations per ISMS-POL-00. Users 
 - Annual policy review and approval
 - Approving new masking techniques for organizational use
 
-
 **Data Protection Officer (DPO)**:
 
 - Advising on GDPR/nDSG compliance for masking implementations
@@ -473,7 +449,6 @@ Logging SHALL comply with applicable privacy regulations per ISMS-POL-00. Users 
 - Ensuring data subject rights are respected in masked datasets
 - Coordinating with CISO on privacy-by-design implementations
 - Monitoring compliance with data protection regulations
-
 
 **Chief Data Officer (CDO) / Data Governance Team**:
 
@@ -483,7 +458,6 @@ Logging SHALL comply with applicable privacy regulations per ISMS-POL-00. Users 
 - Supporting data discovery and classification initiatives
 - Resolving data ownership conflicts
 
-
 **Data Owners**:
 
 - Responsible for classifying data in their domains
@@ -492,7 +466,6 @@ Logging SHALL comply with applicable privacy regulations per ISMS-POL-00. Users 
 - Approving or rejecting exception requests for their data domains
 - Validating masking effectiveness and data utility
 - Annual review of data classification and masking decisions
-
 
 **Security Team**:
 
@@ -505,7 +478,6 @@ Logging SHALL comply with applicable privacy regulations per ISMS-POL-00. Users 
 - Conducting periodic masking assessments (ISMS-IMP-A.8.11 workbooks)
 - Maintaining masking documentation and evidence
 
-
 **IT Operations / Data Custodians**:
 
 - Responsible for deploying and maintaining masking infrastructure
@@ -515,7 +487,6 @@ Logging SHALL comply with applicable privacy regulations per ISMS-POL-00. Users 
 - Coordinating changes with Security Team and Data Owners
 - Maintaining backups of masking configurations
 
-
 **Development Teams**:
 
 - Responsible for using masked data in non-production environments
@@ -524,7 +495,6 @@ Logging SHALL comply with applicable privacy regulations per ISMS-POL-00. Users 
 - Following secure development practices with masked test data
 - Prohibited from circumventing masking controls
 
-
 **Compliance / Audit Teams**:
 
 - Responsible for verifying masking compliance with regulatory requirements
@@ -532,14 +502,12 @@ Logging SHALL comply with applicable privacy regulations per ISMS-POL-00. Users 
 - Validating evidence of masking effectiveness
 - Reporting compliance gaps and remediation tracking
 
-
 **Users (All Personnel)**:
 
 - Responsible for complying with data masking policies and acceptable use
 - Reporting suspected unmasked sensitive data in non-production
 - Using exception process for legitimate business needs
 - Prohibited from attempting to bypass masking controls or re-identify masked data
-
 
 **Detailed RACI Matrix**: Complete roles and responsibilities matrix with RACI assignments documented in ISMS-IMP-A.8.11 Implementation Guides.
 
@@ -567,7 +535,6 @@ Logging SHALL comply with applicable privacy regulations per ISMS-POL-00. Users 
   - Audit findings requiring remediation verification
   - Regulatory requirement changes (GDPR, PCI DSS updates)
 
-
 **Assessment Methodology**:
 
 Assessment conducted using ISMS-IMP-A.8.11 suite:
@@ -578,14 +545,12 @@ Assessment conducted using ISMS-IMP-A.8.11 suite:
 - Remediation tracking for identified gaps
 - Dashboard consolidation providing executive visibility
 
-
 **Assessment Ownership**:
 
 - Security Team conducts assessments with input from Data Owners and IT Operations
 - Data Owners validate assessment accuracy for their domains
 - CISO reviews assessment results and approves remediation plans
 - Compliance Team verifies regulatory compliance claims
-
 
 **Implementation Note**: Assessment methodology, workbook generation scripts, evidence requirements, and compliance calculation procedures are defined in ISMS-IMP-A.8.11 (Implementation Guidance Suite).
 
@@ -601,7 +566,6 @@ Exceptions to data masking policy requirements require:
 - **Timeline**: Duration of exception and path to achieving full compliance
 - **Data Owner approval**: Owner of affected data must approve exception
 - **Formal approval** per authority matrix below
-
 
 **Approval Authority**:
 
@@ -625,7 +589,6 @@ All approved exceptions SHALL be documented including:
 - Monitoring and compliance verification requirements
 - Conditions for exception revocation
 
-
 **Exception Monitoring**:
 
 Active exceptions are:
@@ -635,7 +598,6 @@ Active exceptions are:
 - Revoked if business justification changes or compensating controls fail
 - Escalated if risk profile increases
 - Automatically expired at end of approved duration (no implicit renewal)
-
 
 **Exception Template**: ISMS-POL-A.8.11 Annex B provides standardized exception request template and approval workflow.
 
@@ -673,7 +635,6 @@ Unmasked sensitive data exposure in non-production or unauthorized environments 
 - Remediation: Implement masking, validate effectiveness
 - Prevention: Strengthen controls to prevent recurrence
 
-
 **Regulatory Breach Notification**:
 
 Data exposure incidents SHALL be assessed for breach notification requirements:
@@ -681,7 +642,6 @@ Data exposure incidents SHALL be assessed for breach notification requirements:
 - **GDPR**: Notification within 72 hours if risk to rights and freedoms (Art. 33-34)
 - **Swiss nDSG**: Notification if high risk to personality or fundamental rights (Art. 24)
 - **Sector-specific**: PCI DSS breach notification, HIPAA breach notification (if applicable)
-
 
 DPO and Legal/Compliance SHALL be involved in breach notification decisions.
 
@@ -702,7 +662,6 @@ DPO and Legal/Compliance SHALL be involved in breach notification decisions.
 - **Reviewers**: CISO, Security Team, DPO, Legal/Compliance, Data Governance Team
 - **Approval**: CISO (technical), Executive Management (strategic)
 
-
 **Implementation Standards Review**:
 
 - **Frequency**: Based on technology evolution (at least semi-annual)
@@ -710,13 +669,11 @@ DPO and Legal/Compliance SHALL be involved in breach notification decisions.
 - **Note**: Implementation standard updates (ISMS-IMP-A.8.11, ISMS-CTX-A.8.11) do NOT require policy revision
 - **Scope**: Masking techniques, tool configurations, assessment procedures
 
-
 **Policy Updates**:
 
 - **Minor** (clarifications, references, procedural details): CISO approval, communication within 30 days
 - **Major** (scope changes, new mandatory requirements, technique prohibitions): Full approval chain, implementation timeline per change management
 - **Emergency** (critical vulnerability, regulatory mandate): CISO approval with Executive Management notification, immediate communication and implementation
-
 
 **Policy Communication**:
 
@@ -728,7 +685,6 @@ Policy published in ISMS document repository. Changes communicated organization-
 - Data Owners briefed on changes affecting their domains
 - Exception holders notified of changes affecting their exceptions
 
-
 **Policy Storage and Access**:
 
 **Primary Repository**:
@@ -737,13 +693,11 @@ Policy published in ISMS document repository. Changes communicated organization-
 - Access-controlled (Internal classification)
 - Version history maintained
 
-
 **Archive**:
 
 - Previous versions archived (minimum 3 years)
 - Read-only access
 - Timestamped and integrity-protected
-
 
 **Access Control**:
 
@@ -766,7 +720,6 @@ Policy published in ISMS document repository. Changes communicated organization-
 - Recognizing unmasked sensitive data and reporting procedures
 - Prohibition on re-identification attempts
 
-
 **Technical Training** (IT/Security Staff):
 
 - Data masking technology configuration and maintenance
@@ -774,20 +727,17 @@ Policy published in ISMS document repository. Changes communicated organization-
 - Testing and validation procedures
 - Incident response for masking failures
 
-
 **Data Owner Training** (Data Owners):
 
 - Data classification and masking decision framework
 - Exception request evaluation criteria
 - Validation of masking effectiveness for their domains
 
-
 **Developer Training** (Development Teams):
 
 - Using masked data in non-production environments
 - Dynamic masking implementation in applications
 - Secure development practices with sensitive data
-
 
 ---
 
@@ -804,13 +754,11 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - Risk treatment plans document data masking control implementation
 - Residual risks (where masking not feasible) documented and accepted
 
-
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
 - Control A.8.11 applicability justified in [Organization]'s SoA
 - Implementation status tracked and reported
 - Control effectiveness measured through assessment program
-
 
 **Related Controls**:
 
@@ -866,7 +814,6 @@ This policy integrates with [Organization]'s Information Security Management Sys
   - Remediation tracking
   - Audit evidence compilation
 
-
 **Technical Reference** (NOT ISMS):
 
 - **ISMS-CTX-A.8.11**: Data Masking Technical Reference
@@ -877,7 +824,6 @@ This policy integrates with [Organization]'s Information Security Management Sys
   - Quick reference guides for practitioners
   - **Note**: This document is NOT part of ISMS and does NOT establish binding requirements
 
-
 **Assessment Tools**:
 
 - Excel-based assessment workbooks with automated compliance calculations
@@ -887,14 +833,12 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - Remediation tracking tools
 - Dashboard consolidation scripts
 
-
 **Supporting Materials**:
 
 - Exception request procedures and templates (Annex B)
 - User communication templates
 - Training materials
 - Quick reference guides (ISMS-CTX-A.8.11)
-
 
 ## Regulatory Mapping
 
@@ -1002,7 +946,6 @@ New masking techniques or modifications to approved techniques SHALL meet the fo
 - Technique SHALL resist common re-identification attacks appropriate to data sensitivity
 - Technique SHALL be based on proven algorithms or industry-accepted practices
 
-
 **Regulatory Compliance**:
 
 - Technique SHALL meet regulatory requirements for applicable data types:
@@ -1012,7 +955,6 @@ New masking techniques or modifications to approved techniques SHALL meet the fo
   - nDSG data protection requirements (Art. 8) for Swiss personal data
 - Technique SHALL be validated by appropriate authority (Security Team, DPO, Compliance)
 
-
 **Operational Feasibility**:
 
 - Technique SHALL be implementable within [Organization]'s technical environment
@@ -1021,14 +963,12 @@ New masking techniques or modifications to approved techniques SHALL meet the fo
 - Performance impact SHALL be acceptable for operational requirements
 - Technique SHALL be maintainable by [Organization]'s technical staff
 
-
 **Documentation Requirements**:
 
 - Technique specification documented in ISMS-CTX-A.8.11 (Technical Reference)
 - Use cases and selection criteria documented
 - Testing and validation procedures defined
 - Known limitations and residual risks documented
-
 
 ## A.2 Technique Selection Decision Framework
 
@@ -1067,13 +1007,11 @@ New masking techniques or modifications to approved techniques SHALL meet the fo
 - SDM process SHALL be repeatable (same input produces consistent masked output)
 - Original data SHALL NOT be recoverable from masked output
 
-
 **Quality Criteria**:
 
 - Masked data realistic enough for application testing
 - Data distribution similar to production (for performance testing)
 - Edge cases and validation rules tested with masked data
-
 
 ### A.3.2 Dynamic Data Masking (DDM)
 
@@ -1085,13 +1023,11 @@ New masking techniques or modifications to approved techniques SHALL meet the fo
 - DDM SHALL log all access to masked fields for audit purposes
 - Performance impact SHALL be assessed and within acceptable limits
 
-
 **Quality Criteria**:
 
 - Masking rules aligned with business access requirements
 - Bypass attempts detected and alerted
 - Minimal performance degradation (<10% typical)
-
 
 ### A.3.3 Tokenization
 
@@ -1103,13 +1039,11 @@ New masking techniques or modifications to approved techniques SHALL meet the fo
 - Token vault SHALL be backed up separately with appropriate security
 - De-tokenization SHALL require explicit authorization and be logged
 
-
 **Quality Criteria**:
 
 - Vault availability meets operational requirements
 - Key management for vault encryption follows A.8.24 Cryptography Policy
 - Token collision risk minimized through appropriate token space
-
 
 ### A.3.4 Pseudonymization (GDPR Compliance)
 
@@ -1121,13 +1055,11 @@ New masking techniques or modifications to approved techniques SHALL meet the fo
 - Pseudonymization technique SHALL be validated by DPO for GDPR adequacy
 - Key management SHALL follow A.8.24 Cryptography Policy
 
-
 **Quality Criteria**:
 
 - Pseudonyms are consistent across datasets (same person = same pseudonym)
 - Re-identification risk assessed annually or when data structure changes
 - Appropriate for intended purpose (research, statistics, legitimate interest)
-
 
 ### A.3.5 Anonymization (Irreversible)
 
@@ -1139,14 +1071,12 @@ New masking techniques or modifications to approved techniques SHALL meet the fo
 - Quasi-identifiers SHALL be assessed for linking risk
 - Anonymization SHALL meet regulatory standards when used for compliance (GDPR, HIPAA)
 
-
 **Quality Criteria**:
 
 - k-anonymity ≥ 5 (minimum) for GDPR-compliant anonymization
 - l-diversity considered for sensitive attributes
 - Linking risk with external datasets assessed
 - Data utility preserved for intended analytical purpose
-
 
 ## A.4 Prohibited Techniques and Anti-Patterns
 
@@ -1199,12 +1129,10 @@ All masking techniques SHALL be validated for:
 
 - [List all systems, databases, applications affected by this exception]
 
-
 **Data Categories Affected**:
 
 - [List data categories: PII, Financial, Health, Credentials, etc.]
 - [Specify data elements: table names, field names, data types]
-
 
 **Environments**:
 
@@ -1215,13 +1143,11 @@ All masking techniques SHALL be validated for:
 - [ ] Training
 - [ ] Other: [Specify]
 
-
 **Data Sensitivity Classification**:
 
 - [ ] Restricted (Critical)
 - [ ] Confidential (High)
 - [ ] Internal (Medium)
-
 
 ---
 
@@ -1239,7 +1165,6 @@ All masking techniques SHALL be validated for:
 - Exception End Date: [DD.MM.YYYY] (Maximum: 12 months, shorter for high sensitivity)
 - Path to Compliance: [Describe plan to achieve full masking compliance]
 
-
 ---
 
 ## Risk Assessment
@@ -1249,7 +1174,6 @@ All masking techniques SHALL be validated for:
 - Likelihood of Exposure: [ ] Low [ ] Medium [ ] High [ ] Critical
 - Impact if Exposed: [ ] Low [ ] Medium [ ] High [ ] Critical
 - Inherent Risk Score: [Likelihood × Impact]
-
 
 **Threat Scenarios**:
 [List specific threats enabled by unmasked data in this environment]
@@ -1276,12 +1200,10 @@ Examples:
 - [ ] Data minimization (reduced dataset size/columns)
 - [ ] Other: [Specify]
 
-
 **Compensating Control Effectiveness**:
 
 - Estimated Risk Reduction: [Percentage or qualitative assessment]
 - Residual Risk Score: [Reduced risk after compensating controls]
-
 
 ---
 
@@ -1296,7 +1218,6 @@ Examples:
 - [ ] Quarterly (for High sensitivity)
 - [ ] Semi-Annual (for Medium sensitivity)
 
-
 **Revocation Triggers**:
 [Under what conditions will this exception be revoked?]
 
@@ -1307,7 +1228,6 @@ Examples:
 - Business justification no longer valid
 - Masking solution becomes available
 - Exception duration expires
-
 
 ---
 
@@ -1320,7 +1240,6 @@ Examples:
 - Date: [DD.MM.YYYY]
 - Comments: [Optional]
 
-
 **Security Team Review**:
 
 - Reviewer: [Security Team Lead Name]
@@ -1328,7 +1247,6 @@ Examples:
 - Signature: ________________
 - Date: [DD.MM.YYYY]
 - Comments/Conditions: [Required if approved]
-
 
 **CISO Approval** (Required for High/Critical sensitivity):
 
@@ -1338,14 +1256,12 @@ Examples:
 - Date: [DD.MM.YYYY]
 - Conditions: [Special conditions for approval]
 
-
 **Executive Management Approval** (Required for production exceptions):
 
 - Name: [Executive Name]
 - [ ] Approved [ ] Denied
 - Signature: ________________
 - Date: [DD.MM.YYYY]
-
 
 ---
 
@@ -1359,7 +1275,6 @@ Examples:
 - [ ] Expired
 - [ ] Revoked
 
-
 **Exception Review Log**:
 
 | Review Date | Reviewer | Status | Comments | Next Review |
@@ -1371,7 +1286,6 @@ Examples:
 - Closure Date: [DD.MM.YYYY]
 - Reason: [ ] Expired [ ] Revoked [ ] Masking Implemented [ ] Other
 - Final Comments: [Lessons learned, improvements implemented]
-
 
 ---
 

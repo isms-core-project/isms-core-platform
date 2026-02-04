@@ -34,7 +34,6 @@
 - Compliance: Legal/Compliance Officer
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -44,7 +43,6 @@
 - ISMS-POL-A.5.1-2-6.1-2 (Information Security Policies and Roles)
 - ISMS-POL-A.6.1 (Screening)
 - ISMS-POL-A.6.2 (Terms and Conditions of Employment)
-
 
 ---
 
@@ -81,7 +79,6 @@ This policy establishes [Organization]'s requirements for information security a
 - Training effectiveness measurement and continuous improvement
 - Integration with HR processes (onboarding, role changes, termination)
 
-
 ## ISO/IEC 27001:2022 Main Body Clauses
 
 This policy also addresses requirements from ISO/IEC 27001:2022 main body clauses:
@@ -111,7 +108,6 @@ This policy:
 - **Integrates** training with HR lifecycle processes (hiring, role changes, exit)
 - **Mandates** competency assessment and training effectiveness measurement
 
-
 ## What This Policy Does NOT Do
 
 This policy does NOT:
@@ -123,7 +119,6 @@ This policy does NOT:
 - **Replace specialized technical certification programs** (vendor certifications, professional development)
 - **Dictate training delivery platforms** (tool selection based on [Organization]'s preferences)
 
-
 **Rationale**: Separating policy requirements from implementation guidance enables:
 
 - Policy stability despite evolving training technologies and platforms
@@ -131,7 +126,6 @@ This policy does NOT:
 - Clear distinction between governance (policy) and execution (implementation)
 - Proportional training effort based on role and risk classification
 - Integration with existing HR and learning management systems
-
 
 ## Scope
 
@@ -145,14 +139,12 @@ This policy does NOT:
 - All organizational locations and remote workers
 - Personnel at all levels (entry-level to executive)
 
-
 **Out of Scope**:
 
 - Training content for external customers (separate customer education programs)
 - Partner organization training (partners responsible for own training, contractual requirements only)
 - Public awareness campaigns (covered under external communications)
 - Professional development not related to information security (general HR domain)
-
 
 **Definition of "Personnel"**: For this policy, personnel includes any person doing work under [Organization]'s control whose work may affect information security, regardless of employment relationship or location.
 
@@ -189,7 +181,6 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - ENISA - Cybersecurity Culture Guidelines
 - SANS Security Awareness Maturity Model
 - ISO/IEC 27002:2022 Section 6.3 - Implementation guidance for awareness and training
-
 
 **Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment per ISMS-POL-00. The most stringent requirements apply where multiple regulations overlap.
 
@@ -274,7 +265,6 @@ All personnel SHALL be trained on:
 - How to access complete policy documentation
 - Who to contact for security questions (CISO, Security Team)
 
-
 ### Acceptable Use
 
 All personnel SHALL understand:
@@ -284,7 +274,6 @@ All personnel SHALL understand:
 - Prohibited activities and behaviors
 - Asset return requirements (per A.5.11)
 - Bring Your Own Device (BYOD) policies (if applicable)
-
 
 ### Data Classification and Handling
 
@@ -296,7 +285,6 @@ All personnel SHALL be trained on:
 - Secure information transfer procedures (per A.5.14)
 - Clean desk and clear screen requirements (per A.7.7)
 
-
 ### Access and Authentication
 
 All personnel SHALL understand:
@@ -306,7 +294,6 @@ All personnel SHALL understand:
 - Multi-factor authentication usage
 - Prohibition on sharing credentials
 - Reporting compromised credentials immediately
-
 
 ### Threat Awareness
 
@@ -318,7 +305,6 @@ All personnel SHALL be trained on:
 - Current threat landscape (updated regularly)
 - Real-world examples relevant to [Organization]
 
-
 ### Incident Reporting
 
 All personnel SHALL know:
@@ -328,7 +314,6 @@ All personnel SHALL know:
 - Importance of timely reporting
 - Protection from retaliation for good-faith reporting
 - Contact information for security incident reporting
-
 
 ### Physical Security
 
@@ -340,7 +325,6 @@ All personnel SHALL understand:
 - Security in public spaces (shoulder surfing, conversations)
 - Reporting unauthorized access or tailgating
 
-
 ### Remote and Mobile Working
 
 All personnel who work remotely SHALL understand:
@@ -350,7 +334,6 @@ All personnel who work remotely SHALL understand:
 - Physical security of devices outside the office
 - Secure handling of information in public places
 - Endpoint protection requirements
-
 
 ## Role-Based Training Requirements
 
@@ -369,7 +352,6 @@ Personnel who regularly handle sensitive data SHALL receive additional training 
 - Cross-border data transfer requirements
 - Breach notification requirements
 
-
 **Classification-Specific Handling**:
 
 - Detailed handling procedures for Confidential and Restricted data
@@ -377,13 +359,11 @@ Personnel who regularly handle sensitive data SHALL receive additional training 
 - Data masking requirements (per A.8.11)
 - Secure disposal procedures
 
-
 **Records Management**:
 
 - Records retention requirements (per A.5.33)
 - Records protection and integrity
 - Legal holds and preservation requirements
-
 
 ### Technical Staff Training (Tier 4)
 
@@ -397,7 +377,6 @@ IT and development personnel SHALL receive additional training on:
 - Code review security considerations
 - Secure software development lifecycle (per A.8.25)
 
-
 **System Security**:
 
 - Secure configuration management (per A.8.9)
@@ -406,13 +385,11 @@ IT and development personnel SHALL receive additional training on:
 - Logging and monitoring requirements (per A.8.15-16)
 - Change management security (per A.8.32)
 
-
 **Network and Infrastructure Security**:
 
 - Network security requirements (per A.8.20-22)
 - Endpoint security (per A.8.1, A.8.7)
 - Cloud security considerations (per A.5.23)
-
 
 ### Privileged User Training (Tier 5)
 
@@ -425,20 +402,17 @@ Personnel with privileged access SHALL receive additional training on:
 - Elevated risk of privileged accounts
 - Just-in-time access and privilege escalation procedures
 
-
 **Incident Response**:
 
 - Role in incident response (per A.5.24-28)
 - Evidence preservation requirements (per A.5.28)
 - Escalation procedures for security incidents
 
-
 **Insider Threat Awareness**:
 
 - Recognizing indicators of insider threats
 - Reporting concerns appropriately
 - Protecting against social engineering targeting privileged users
-
 
 ### Security Role Training (Tier 6)
 
@@ -452,7 +426,6 @@ Information security team members SHALL maintain competencies in:
 - Incident response and forensics
 - Compliance and audit
 
-
 **Specialized Training**:
 
 - Role-specific certifications (as defined by CISO)
@@ -460,13 +433,11 @@ Information security team members SHALL maintain competencies in:
 - Regulatory update training
 - Industry conferences and professional development
 
-
 **Continuous Development**:
 
 - Minimum continuing education hours (defined by CISO)
 - Participation in security exercises and simulations
 - Cross-training within security team
-
 
 ### Management Training (Tier 7)
 
@@ -479,7 +450,6 @@ Managers and executives SHALL receive training on:
 - Resource allocation for security
 - Leading by example on security behaviors
 
-
 **Risk Management**:
 
 - Information security risk concepts
@@ -487,14 +457,12 @@ Managers and executives SHALL receive training on:
 - Business impact of security decisions
 - Regulatory and legal implications
 
-
 **Incident Management**:
 
 - Management role in incident response
 - Crisis communication procedures
 - Decision-making during incidents
 - Business continuity considerations
-
 
 ## Training Delivery Requirements
 
@@ -571,7 +539,6 @@ All training content SHALL meet the following requirements:
 - Assessment results SHALL be documented and retained
 - Specialized roles (Tier 5-6) SHALL have competency assessments
 
-
 **Minimum Passing Thresholds**:
 
 | Training Type | Passing Threshold | Maximum Attempts |
@@ -597,7 +564,6 @@ All training content SHALL meet the following requirements:
 - Social engineering awareness tests (as appropriate)
 - Physical security awareness tests (tailgating, etc.)
 
-
 **Simulation Ethical Guidelines**:
 
 - Simulations SHALL NOT use personal life events (deaths, medical conditions, family emergencies)
@@ -607,14 +573,12 @@ All training content SHALL meet the following requirements:
 - Failed simulations result in education, not public shaming
 - Personnel may provide feedback on simulation appropriateness to HR or CISO
 
-
 **Behavioral Metrics**:
 
 - Click rates on phishing simulations
 - Report rates for suspicious communications
 - Compliance with clean desk/screen requirements
 - Badge/access control compliance
-
 
 **Behavioral Targets**:
 Targets SHALL be defined by the CISO and reviewed annually. Targets should reflect industry benchmarks and organizational risk tolerance. See ISMS-IMP-A.6.3.4 for current target definitions.
@@ -629,7 +593,6 @@ Personnel who fail assessments or demonstrate concerning behaviors SHALL:
 - Complete remediation assessment
 - Results tracked but no disciplinary action
 
-
 **Level 2 (Repeated failure/concerning pattern)**:
 
 - Complete comprehensive remediation training
@@ -637,14 +600,12 @@ Personnel who fail assessments or demonstrate concerning behaviors SHALL:
 - Documented improvement plan
 - Potential access restrictions during remediation
 
-
 **Level 3 (Continued non-compliance)**:
 
 - Escalation to HR for disciplinary process (per A.6.4)
 - Mandatory access revocation until training completed
 - Investigation of underlying causes
 - Assessment of suitability for role
-
 
 **Level 3+ (Failure to complete Level 3 remediation within 30 days)**:
 
@@ -656,7 +617,6 @@ Personnel who fail assessments or demonstrate concerning behaviors SHALL:
   - Role reassignment to lower-risk position (if available and appropriate)
   - Termination of employment/contract (per A.6.4 disciplinary process)
 - All outcomes documented and retained per Section 4.2
-
 
 ## Training Records and Documentation
 
@@ -672,14 +632,12 @@ Personnel who fail assessments or demonstrate concerning behaviors SHALL:
 - Remediation history
 - Policy acknowledgments
 
-
 **Program Documentation**:
 
 - Training curriculum and content versions
 - Assessment instruments and passing criteria
 - Training effectiveness metrics
 - Improvement actions taken
-
 
 ### Retention Requirements
 
@@ -689,14 +647,12 @@ Training records SHALL be retained:
 - **After termination**: Minimum 3 years or as required by regulation
 - **Regulatory requirements**: As specified by applicable regulations (may exceed 3 years)
 
-
 ### Access to Records
 
 - **Individuals**: May access own training records upon request
 - **Supervisors**: May access training status and completion for direct reports
 - **HR**: Full access to training records for administration
 - **Auditors**: Access to anonymized and aggregate metrics; specific records as needed for audit
-
 
 ---
 
@@ -712,7 +668,6 @@ Training records SHALL be retained:
 - Demonstrate commitment through personal compliance with training
 - Support enforcement of training requirements
 - Review training effectiveness as part of management review
-
 
 **Authority**: Final approval for policy and significant resource allocations.
 
@@ -730,7 +685,6 @@ Training records SHALL be retained:
 - Review and respond to training-related incidents
 - Approve exceptions to training requirements
 
-
 **Authority**: Define training requirements; mandate remediation; approve exceptions.
 
 ## Human Resources
@@ -746,7 +700,6 @@ Training records SHALL be retained:
 - Coordinate disciplinary actions for training non-compliance
 - Manage Learning Management System (LMS) administration
 - Process training audience classification changes
-
 
 **Authority**: Enforce mandatory training requirements; initiate disciplinary escalation.
 
@@ -764,7 +717,6 @@ Training records SHALL be retained:
 - Support remediation for personnel requiring additional training
 - Maintain training on current threat landscape
 
-
 **Authority**: Require remediation training; recommend access restrictions for non-compliance.
 
 ## Department Managers
@@ -779,7 +731,6 @@ Training records SHALL be retained:
 - Support training goals and reinforce security behaviors
 - Report training-related concerns to HR or Security
 - Model expected security behaviors
-
 
 **Authority**: Assign work time for training; address team non-compliance.
 
@@ -796,7 +747,6 @@ Training records SHALL be retained:
 - Request clarification when security requirements are unclear
 - Participate in awareness assessments and simulations
 
-
 **Authority**: None - obligation to comply with training requirements.
 
 ## Third-Party/Contractor Organizations
@@ -810,7 +760,6 @@ Training records SHALL be retained:
 - Report training completion to [Organization] as required by contract
 - Comply with [Organization]'s security awareness requirements
 
-
 **Authority**: As defined in contract or statement of work.
 
 **Verification Process**:
@@ -820,7 +769,6 @@ Training records SHALL be retained:
 - [Organization] reserves the right to require third-party personnel to complete [Organization]'s training directly
 - Non-compliance triggers contract escalation procedures and potential access suspension
 - Verification records maintained by Procurement/Vendor Management with copy to Information Security
-
 
 ---
 
@@ -840,13 +788,11 @@ Training records SHALL be retained:
 - Addresses systemic training issues
 - Members: CISO, HR Director, representative Department Managers
 
-
 **Training Program Review**:
 
 - **Quarterly**: Training completion rates, simulation results, incident correlation
 - **Annually**: Comprehensive program effectiveness review, curriculum updates
 - **Ad-hoc**: Following significant incidents or regulatory changes
-
 
 ### Exception Management
 
@@ -860,14 +806,12 @@ Training records SHALL be retained:
    - Extended timing exceptions (>30 days): CISO approval
    - Content exceptions (alternative training): CISO approval
 
-
 **Exception Documentation**:
 
 - Exception description and justification
 - Duration and expiration date
 - Compensating measures (if applicable)
 - Approval signatures and date
-
 
 **Exception Tracking**: All exceptions tracked and reviewed quarterly by CISO.
 
@@ -880,7 +824,6 @@ Training records SHALL be retained:
 - Repeated failed assessments (Level 2+)
 - Pattern of failed simulations or concerning behaviors
 - Regulatory audit findings on training
-
 
 **Escalation Path**:
 1. **Supervisor notification** (7 days past due)
@@ -895,7 +838,6 @@ Training records SHALL be retained:
 - Potential access restriction or suspension
 - Impact on performance reviews
 - Disciplinary action per HR policies (per A.6.4)
-
 
 ## Documentation Requirements
 
@@ -920,7 +862,6 @@ All training content SHALL be version-controlled:
 - Approval record for content changes
 - Retention of superseded versions for audit trail
 
-
 ### Training Evidence Register
 
 [Organization] SHALL maintain a Training Evidence Register documenting all evidence supporting compliance with this policy.
@@ -932,7 +873,6 @@ All training content SHALL be version-controlled:
 - Updated at least monthly or upon evidence collection
 - Reviewed quarterly as part of training program review
 
-
 **Evidence Register Contents**:
 
 - Evidence ID and description
@@ -941,7 +881,6 @@ All training content SHALL be version-controlled:
 - Date collected and responsible party
 - Verification status (verified, pending, requires update)
 - Linkage to specific policy requirements
-
 
 **Automated Evidence Collection**: Where LMS or other systems automatically generate evidence, the Training Evidence Register SHALL reference system reports and extraction procedures rather than duplicating data.
 
@@ -954,14 +893,12 @@ This policy SHALL be reviewed:
 - **Annually** (minimum) by CISO with input from HR and Security team
 - **Triggered by**: Significant security incidents with training root causes, regulatory changes, organizational changes
 
-
 **Review Criteria**:
 
 - Policy effectiveness (are personnel demonstrating secure behaviors?)
 - Regulatory alignment (does policy address current compliance obligations?)
 - Practical applicability (can requirements be reasonably implemented?)
 - Feedback integration (are issues from personnel addressed?)
-
 
 ### Training Program Review
 
@@ -973,7 +910,6 @@ This policy SHALL be reviewed:
 - Incident correlation analysis
 - Non-compliance and escalation trends
 
-
 **Annual Review**:
 
 - Comprehensive curriculum review and update
@@ -981,7 +917,6 @@ This policy SHALL be reviewed:
 - Vendor and platform evaluation
 - Budget and resource review
 - Industry benchmark comparison
-
 
 ### Training Effectiveness Metrics
 
@@ -1008,7 +943,6 @@ This policy SHALL be reviewed:
 - Regulatory requirements
 - Historical performance trends
 
-
 Target adjustments are documented in ISMS-IMP-A.6.3.4 and reported to Executive Management.
 
 **Reporting Requirements**:
@@ -1016,7 +950,6 @@ Target adjustments are documented in ISMS-IMP-A.6.3.4 and reported to Executive 
 - **Monthly**: Operational metrics to CISO
 - **Quarterly**: Program effectiveness to management (including target vs. actual)
 - **Annually**: Program summary to Executive Management
-
 
 **Implementation Note**: Detailed reporting formats and dashboards are maintained in ISMS-IMP-A.6.3.4 - Training Compliance Dashboard.
 
@@ -1034,19 +967,16 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - Risk treatment includes training controls where appropriate
 - Residual risk from human factors addressed through awareness programs
 
-
 **Competence** (ISO 27001 Clause 7.2):
 
 - This policy implements competence requirements
 - Training records provide documented evidence of competence
 - Competency assessments verify training effectiveness
 
-
 **Awareness** (ISO 27001 Clause 7.3):
 
 - This policy implements awareness requirements
 - All personnel aware of policy, their contribution, and non-compliance implications
-
 
 ## Related Control Integration Points
 
@@ -1057,11 +987,9 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - **A.6.5** (Responsibilities after Termination): Exit processes include return of training materials, acknowledgment of ongoing confidentiality
 - **A.6.6** (Confidentiality Agreements): Training reinforces NDA obligations
 
-
 **Moderate Integration** (relevant training topics):
 
 - **A.5.24-28** (Incident Management): Personnel trained on incident reporting and response roles
-
 
 **Emergency Awareness Communications**: During active security incidents (e.g., widespread phishing campaign, ransomware threat), the CISO may authorize immediate awareness communications outside normal training schedules. Emergency communications:
 
@@ -1074,7 +1002,6 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - **A.6.7** (Remote Working): Remote workers receive security training for remote context
 - **A.6.8** (Information Security Event Reporting): Training covers reporting procedures
 
-
 **Training Content Integration**:
 
 Training content references and reinforces the following controls:
@@ -1084,7 +1011,6 @@ Training content references and reinforces the following controls:
 - A.5.14 (Information Transfer)
 - A.7.7 (Clear Desk and Clear Screen)
 - A.8.1 (User Endpoint Devices)
-
 
 ## HR Process Integration
 
@@ -1096,26 +1022,22 @@ This policy integrates with [Organization]'s HR processes:
 - Training requirements communicated during hiring
 - Training completion tracked as onboarding milestone
 
-
 **Role Changes**:
 
 - Training requirements updated when roles change
 - Additional training completed before new duties begin
 - Training tier classification updated in LMS
 
-
 **Performance Management**:
 
 - Training completion may be included in performance objectives
 - Repeated non-compliance may impact performance ratings
-
 
 **Offboarding**:
 
 - Training completion status verified at exit
 - Ongoing confidentiality obligations reinforced
 - Training records retained per retention requirements
-
 
 ---
 
@@ -1135,7 +1057,6 @@ Evidence required to demonstrate this policy is adequately documented and approv
 - ✅ Roles and responsibilities assigned (Section 3)
 - ✅ Governance and escalation procedures defined (Section 4)
 - ✅ Integration with related controls documented (Section 5)
-
 
 **Stage 2 (Operational Effectiveness) Evidence:**
 
@@ -1157,7 +1078,6 @@ Evidence required to demonstrate this policy is operationally effective (maintai
 - Third-party training compliance attestations (per Section 3.7)
 - Training Evidence Register (ISMS-IMP-A.6.3.4 or equivalent repository)
 
-
 **Clarification on Compliance Evidence:**
 
 This policy establishes security awareness and training requirements. It does NOT establish:
@@ -1166,7 +1086,6 @@ This policy establishes security awareness and training requirements. It does NO
 - **HR onboarding procedures** (organizational HR policy, interfaces with this policy)
 - **General professional development** (broader HR/L&D domain, not ISMS scope)
 - **LMS configuration** (technical implementation choice, not policy requirement)
-
 
 The boundary is: POL-A.6.3 defines WHAT training is required and WHO must complete it → IMP-A.6.3 specifies HOW training is designed, delivered, and tracked → Training team develops content → HR administers completion → Security team measures effectiveness.
 

@@ -44,7 +44,6 @@ This document consists of two parts:
   - Cell Styling Reference
   - Integration Points
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -66,7 +65,6 @@ This assessment documents the environmental PROTECTION systems deployed in your 
 - How are environmental systems integrated? (BMS, security dashboards, alerting)
 - What environmental incidents have occurred? (fire alarms, water damage, temperature excursions)
 
-
 #### Key Principle
 
 This assessment is **completely vendor-agnostic and technology-independent**. You document YOUR specific systems (whatever you use - Simplex, Notifier, Edwards for fire alarms; Honeywell, Siemens for environmental sensors; etc.), and verify capabilities against generic policy requirements from ISMS-POL-A.7.4-5-11, Section 3.
@@ -81,7 +79,6 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 - Notification devices (horns, strobes)
 - Monitoring service or self-monitoring configuration
 
-
 **Fire Suppression Systems:**
 
 - Sprinkler systems (wet pipe, dry pipe, pre-action)
@@ -89,14 +86,12 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 - Suppression zone coverage
 - Testing and inspection records
 
-
 **Water Detection Systems:**
 
 - Water detection sensors and locations
 - Coverage areas (server rooms, below-grade, under raised floors)
 - Alert configurations (email, SMS, alarm panel)
 - Response procedures
-
 
 **Temperature and Humidity Monitoring:**
 
@@ -106,13 +101,11 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 - Alert configurations and escalation
 - Historical excursion data
 
-
 **Environmental Integration:**
 
 - BMS integration status (if applicable)
 - Security dashboard integration (environmental events visible to SOC)
 - Alerting configurations (email, SMS, dashboards)
-
 
 **Environmental Incidents:**
 
@@ -121,7 +114,6 @@ This assessment is **completely vendor-agnostic and technology-independent**. Yo
 - Temperature/humidity excursions
 - System failures and downtime
 - Response times and resolution status
-
 
 #### How This Relates to Other A.7.4-5-11 Assessments
 
@@ -152,12 +144,10 @@ This assessment (A.7.4-5-11-S2) focuses specifically on Control A.7.5 (Protectin
 - Understanding of facility criticality tiers (Tier 1 vs. Tier 2 requirements)
 - Access to environmental system admin consoles and maintenance records
 
-
 #### Time Commitment
 
 - **Initial assessment:** 8-12 hours (comprehensive review of all environmental systems across facilities)
 - **Quarterly updates:** 2-3 hours (update incidents, performance metrics, minor configuration changes)
-
 
 ### Expected Outputs
 
@@ -190,7 +180,6 @@ Before starting this assessment, gather:
 - Access to Building Management System (BMS) if applicable
 - Access to environmental incident reports and maintenance records
 
-
 #### 2. Documentation
 
 - Facility floor plans with fire detector placements
@@ -202,7 +191,6 @@ Before starting this assessment, gather:
 - Fire suppression testing records (sprinkler flow tests, gas system tests)
 - Environmental monitoring system configuration documentation
 
-
 #### 3. Historical Data
 
 - Fire alarm logs (last 90 days minimum - all alarms, including false alarms)
@@ -211,7 +199,6 @@ Before starting this assessment, gather:
 - Environmental incident reports (last 12 months)
 - System maintenance records (fire alarm testing, sprinkler inspections, sensor calibrations)
 - Fire marshal inspection reports (most recent annual inspection)
-
 
 #### 4. Policy Requirements
 
@@ -223,7 +210,6 @@ Before starting this assessment, gather:
   - Section 3.5: Structural Protection
   - Section 3.6: Environmental Protection Plan
 
-
 ### Required Tools
 
 - Microsoft Excel (2016 or later) for workbook completion
@@ -231,7 +217,6 @@ Before starting this assessment, gather:
 - Access to environmental monitoring platforms (Ubiquiti UniFi, Monnit, SensorPush, BMS)
 - Temperature/humidity calibration device (handheld thermometer/hygrometer - if verifying sensor accuracy)
 - Screen capture tools (for evidence screenshots)
-
 
 ### Dependencies
 
@@ -241,7 +226,6 @@ However, outputs from this assessment are INPUT to:
 
 - ISMS-IMP-A.7.4-5-11-S4 (Compliance Dashboard) - Consolidates environmental protection with physical monitoring and utility assessments
 - ISMS-IMP-A.7.4-5-11-S3 (Utility Resilience) - HVAC systems documented in both (environmental monitoring here, HVAC resilience there)
-
 
 ---
 
@@ -281,7 +265,6 @@ However, outputs from this assessment are INPUT to:
 - Schedule time with Facilities Manager, Fire/Life Safety Technician, HVAC Technician
 - Download or generate assessment workbook (Excel file)
 
-
 **Step 2: System Inventory (Day 1-3 - 4-6 hours)**
 
 - Open assessment workbook
@@ -290,7 +273,6 @@ However, outputs from this assessment are INPUT to:
 - Complete Sheet 3 (Water Detection) - inventory all water detection sensors and coverage areas
 - Complete Sheet 4 (Temperature/Humidity) - inventory all environmental sensors and monitoring platforms
 - Document integration status (BMS, security dashboard, alerting)
-
 
 **Step 3: Coverage Analysis (Day 3-4 - 3-4 hours)**
 
@@ -301,7 +283,6 @@ However, outputs from this assessment are INPUT to:
 - Identify blind spots (areas without coverage)
 - Document gaps in Sheet 2, 3, 4 notes
 
-
 **Step 4: Integration Assessment (Day 4 - 2-3 hours)**
 
 - Verify BMS integration (if applicable - environmental systems visible in BMS)
@@ -309,7 +290,6 @@ However, outputs from this assessment are INPUT to:
 - Verify alerting configurations (email, SMS, alarm panel notifications)
 - Test sample integration (trigger fire alarm, verify SOC receives event)
 - Document integration status in respective sheets
-
 
 **Step 5: Environmental Incident Review (Day 5 - 2 hours)**
 
@@ -320,7 +300,6 @@ However, outputs from this assessment are INPUT to:
 - Document key incidents (not all false alarms, but representative sample and all actual events)
 - Classify incidents (Critical, High, Medium, Low per ISMS-POL-A.7.4-5-11, Section 5.4)
 - Identify trends (repeat incident types, common causes)
-
 
 **Step 6: Evidence Collection (Day 5-6 - 2-3 hours)**
 
@@ -334,7 +313,6 @@ However, outputs from this assessment are INPUT to:
 - Document evidence in Sheet 6 (Evidence Register)
 - Store evidence files in secure location
 
-
 **Step 7: Summary Review (Day 6 - 1 hour)**
 
 - Review Sheet 5 (Summary Dashboard) - formulas automatically calculate compliance scores
@@ -342,14 +320,12 @@ However, outputs from this assessment are INPUT to:
 - Identify areas below threshold (red or amber status)
 - Prepare gap remediation plan for non-compliant areas
 
-
 **Step 8: Quality Check (Day 6 - 1 hour)**
 
 - Complete self-assessment using Quality Checklist (see section below)
 - Verify all required fields completed
 - Verify evidence register complete
 - Verify formulas calculating correctly
-
 
 **Step 9: Obtain Approvals (Day 7-12 - asynchronous)**
 
@@ -359,13 +335,11 @@ However, outputs from this assessment are INPUT to:
 - After Level 3 approval, submit to Level 4: Compliance Officer for final sign-off
 - Document approval dates and any feedback
 
-
 **Step 10: Submit for Audit (Post-Approval)**
 
 - Assessment workbook is now audit-ready
 - Provide to Internal Audit or External Auditors
 - Evidence register provides traceability to supporting documentation
-
 
 ---
 
@@ -389,7 +363,6 @@ However, outputs from this assessment are INPUT to:
     - Amber (⚠️ Partial): Meets some requirements, gaps identified
     - Red (❌ Non-Compliant): Does not meet requirements, immediate action needed
 
-
 **Time Required:** 5 minutes
 
 ### Sheet 2: Fire Detection
@@ -404,40 +377,33 @@ However, outputs from this assessment are INPUT to:
 
 - Example: "Building A - Main Campus", "Datacenter 1", "Branch Office - Denver"
 
-
 **Column B - Fire Alarm Panel:**
 
 - Vendor and model: "Simplex 4100ES", "Notifier NFS2-640", "Edwards EST3", "Honeywell Fire-Lite MS-9200UDLS"
 - If multiple panels, create separate rows per panel
-
 
 **Column C - Panel Type:**
 
 - Dropdown: "Addressable", "Conventional", "Hybrid"
 - Note: Addressable preferred (identifies specific detector that triggered)
 
-
 **Column D - Smoke Detector Count:**
 
 - Total number of smoke detectors on this panel: 15, 50, 200, etc.
-
 
 **Column E - Heat Detector Count:**
 
 - Total number of heat detectors on this panel: 5, 10, 20, etc.
 - Note: Heat detectors used in areas where smoke detectors inappropriate (kitchens, mechanical rooms)
 
-
 **Column F - Detector Technology:**
 
 - Detector types deployed: "Photoelectric", "Ionization", "Dual-sensor", "Aspirating (ASD)"
 - Example: "Photoelectric (standard), ASD (server room)"
 
-
 **Column G - Notification Devices:**
 
 - Horn/strobe count: "20 horn/strobes", "15 horns + 15 strobes (separate)", "30 combination units"
-
 
 **Column H - Coverage Percentage:**
 
@@ -445,30 +411,25 @@ However, outputs from this assessment are INPUT to:
 - Policy requirement: 100% coverage
 - If <100%, explain in Notes (e.g., "95% - warehouse area no detection yet")
 
-
 **Column I - Monitoring Service:**
 
 - Dropdown: "Yes - Professional", "Yes - Self (BMS/SOC)", "No"
 - Note: Monitoring service required (professional or self-monitoring acceptable)
-
 
 **Column J - Backup Communication:**
 
 - Dropdown: "Yes - Cellular", "Yes - Dual path", "No"
 - Note: Backup communication recommended for critical facilities
 
-
 **Column K - Last Testing Date:**
 
 - Date of last annual fire alarm test (full system test): "15.11.2025", etc.
 - Policy requirement: Annual testing by certified technician
 
-
 **Column L - Last Fire Marshal Inspection:**
 
 - Date of last fire marshal inspection and approval: "01.12.2025", etc.
 - Note: Annual inspection typically required by local fire code
-
 
 **Column M - Compliance Status:**
 
@@ -477,18 +438,15 @@ However, outputs from this assessment are INPUT to:
   - Amber (⚠️): Minor gaps (e.g., 95% coverage, testing slightly overdue)
   - Red (❌): Major gaps (no monitoring, testing >12 months overdue, <90% coverage)
 
-
 **Column N - Notes:**
 
 - Any additional context: "Server room has aspirating detection", "Testing scheduled for Q1 2026", "Fire marshal inspection passed with no issues"
-
 
 **Common Entries:**
 
 - One row per fire alarm panel deployment
 - Multiple rows if facility has multiple disparate fire alarm systems (e.g., main building panel, datacenter panel)
 - Document any coverage gaps honestly (blind spots, areas without detection)
-
 
 **Time Required:** 45-60 minutes for comprehensive fire detection inventory across all facilities
 
@@ -504,28 +462,23 @@ However, outputs from this assessment are INPUT to:
 
 - Example: "Building A - Main Campus", "Datacenter 1 - Basement", "Server Room B"
 
-
 **Column B - Water Detection System:**
 
 - Vendor and model: "Honeywell 5800FLOOD", "D-Link DCH-S160 Wi-Fi", "Wired leak detection system", "BMS-integrated"
 - If multiple disparate systems, create separate rows
 
-
 **Column C - Sensor Count:**
 
 - Total number of water detection sensors: 5, 10, 20, etc.
-
 
 **Column D - Sensor Type:**
 
 - Sensor technology: "Spot sensor (individual)", "Cable sensor (continuous)", "Wireless IoT", "Wired to BMS"
 - Example: "10 spot sensors + 2 cable sensors (under raised floor)"
 
-
 **Column E - Coverage Areas:**
 
 - Areas protected by water detection: "Server room perimeter, under raised floor, near HVAC", "Basement, below-grade storage"
-
 
 **Column F - High-Risk Areas Covered:**
 
@@ -533,28 +486,23 @@ However, outputs from this assessment are INPUT to:
 - High-risk areas: Below-grade facilities, server rooms, under raised floors, near plumbing/HVAC
 - Policy requirement: 100% of high-risk areas covered
 
-
 **Column G - Alert Method:**
 
 - How alerts are sent: "Email + SMS", "BMS alarm", "Alarm panel + email", "Local audible only"
 
-
 **Column H - Alert Recipients:**
 
 - Who receives alerts: "Facilities Manager, IT Ops, Security", "BMS monitoring center"
-
 
 **Column I - Response Procedure Documented:**
 
 - Dropdown: "Yes", "No"
 - Note: Response procedure should document: Who responds, how to shut off water source, equipment protection steps
 
-
 **Column J - Last Testing Date:**
 
 - Date of last monthly water sensor test: "15.01.2026", etc.
 - Policy requirement: Monthly testing (pour water on sensor, verify alarm)
-
 
 **Column K - Compliance Status:**
 
@@ -563,18 +511,15 @@ However, outputs from this assessment are INPUT to:
   - Amber (⚠️): Minor gaps (e.g., partial coverage, testing slightly overdue)
   - Red (❌): Major gaps (no coverage in high-risk areas, no alerts, testing >60 days overdue)
 
-
 **Column L - Notes:**
 
 - Any additional context: "Cable sensors under entire raised floor", "Alert testing scheduled weekly", "Basement flood risk high (near river)"
-
 
 **Common Entries:**
 
 - One row per facility or water detection zone
 - Separate rows for different areas if using different systems (e.g., server room wireless sensors, basement wired sensors)
 - Document coverage gaps (areas without sensors but at risk for water damage)
-
 
 **Time Required:** 30-45 minutes for water detection inventory and coverage assessment
 
@@ -590,62 +535,51 @@ However, outputs from this assessment are INPUT to:
 
 - Example: "Datacenter 1 - Server Room", "Building A - Network Closet", "Colocation Cage - Phoenix"
 
-
 **Column B - Monitoring Platform:**
 
 - Platform/vendor: "Ubiquiti UniFi Environmental Sensors", "Monnit iMonnit", "Honeywell BMS", "SensorPush Cloud", "Custom Grafana+InfluxDB"
 
-
 **Column C - Sensor Count:**
 
 - Total number of temperature/humidity sensors in this area: 2, 5, 10, etc.
-
 
 **Column D - Sensor Locations:**
 
 - Where sensors are placed: "Intake (cold aisle), exhaust (hot aisle), return air", "Equipment rack intake level"
 - Note: Sensors should be at equipment intake level, not ceiling level
 
-
 **Column E - Temperature Thresholds (°C):**
 
 - Warning and critical temperature thresholds: "Warning: 28°C high / 16°C low, Critical: 30°C high / 15°C low"
 - Policy recommendation: Warning 28°C high / 16°C low, Critical 30°C high / 15°C low
-
 
 **Column F - Humidity Thresholds (%RH):**
 
 - Warning and critical humidity thresholds: "Warning: 25% / 70%, Critical: 20% / 80%"
 - Policy recommendation: Warning 25%/70%, Critical 20%/80%
 
-
 **Column G - Alert Method:**
 
 - How alerts are sent: "Email + SMS (critical only)", "BMS alarm + email", "Dashboard alert + email"
 
-
 **Column H - Alert Recipients:**
 
 - Who receives alerts: "Facilities Manager, HVAC Technician, IT Operations"
-
 
 **Column I - Data Retention (Months):**
 
 - How long environmental data is retained: 12, 24, 36, etc.
 - Policy requirement: 12 months minimum (raw data 5-min intervals), 3 years (aggregated hourly)
 
-
 **Column J - Sensor Accuracy Verified:**
 
 - Dropdown: "Yes - Within 6 months", "Yes - Within 12 months", "No / Unknown"
 - Note: Sensor accuracy should be verified annually with calibrated handheld device
 
-
 **Column K - Excursions Last 90 Days:**
 
 - Number of temperature/humidity excursions in last 90 days: 0, 2, 5, 15, etc.
 - Note: Frequent excursions indicate HVAC issues
-
 
 **Column L - Compliance Status:**
 
@@ -654,18 +588,15 @@ However, outputs from this assessment are INPUT to:
   - Amber (⚠️): Minor gaps (e.g., moderate excursions 5-10, sensor accuracy verification overdue)
   - Red (❌): Major gaps (no sensors, no alerts, high excursions >10, sensor accuracy unknown)
 
-
 **Column M - Notes:**
 
 - Any additional context: "Hot aisle containment deployed", "HVAC upgrade planned Q2 2026 to reduce excursions", "Sensors show accurate +/-0.3°C"
-
 
 **Common Entries:**
 
 - One row per server room / network closet / datacenter zone
 - Multiple rows if large datacenter with multiple zones (e.g., "Datacenter 1 - Zone A", "Datacenter 1 - Zone B")
 - Document excursion trends and root causes in notes
-
 
 **Time Required:** 45-60 minutes for temperature/humidity monitoring inventory and excursion review
 
@@ -683,24 +614,20 @@ However, outputs from this assessment are INPUT to:
 - Displayed as percentage: 94%, 81%, etc.
 - Thresholds: >90% (Green - Excellent), 75-89% (Amber - Good), 60-74% (Amber - Acceptable), <60% (Red - Non-Compliant)
 
-
 **Fire Detection Score:**
 
 - Percentage of facilities meeting all fire detection requirements
 - Based on: 100% coverage, monitoring service active, testing current, fire marshal inspection current
-
 
 **Water Detection Score:**
 
 - Percentage of facilities meeting all water detection requirements
 - Based on: High-risk areas covered, alert method configured, response procedure documented, testing current
 
-
 **Temperature/Humidity Score:**
 
 - Percentage of facilities meeting all temperature/humidity monitoring requirements
 - Based on: Sensors deployed, thresholds configured, alerts working, data retention compliant, low excursions
-
 
 **Environmental Incident Metrics:**
 
@@ -709,19 +636,16 @@ However, outputs from this assessment are INPUT to:
 - Temperature excursions (last 90 days)
 - Average response time to critical environmental events
 
-
 **Key Trends:**
 
 - Charts showing monthly environmental incident trends
 - False alarm rate trends (fire alarms, water detection)
 - Temperature excursion frequency over time
 
-
 **Gap Summary:**
 
 - Auto-generated list of non-compliant items requiring remediation
 - Prioritized by severity (Critical → High → Medium → Low)
-
 
 **What YOU Do:**
 
@@ -730,7 +654,6 @@ However, outputs from this assessment are INPUT to:
 - Investigate any unexpected red/amber status
 - Prepare remediation plan for gaps identified
 - NO manual data entry in this sheet (formulas auto-populate from other sheets)
-
 
 **Time Required:** 15-30 minutes for review and interpretation
 
@@ -746,51 +669,41 @@ However, outputs from this assessment are INPUT to:
 
 - Unique identifier: "EVID-001", "EVID-002", etc.
 
-
 **Column B - Evidence Type:**
 
 - Dropdown: "Screenshot", "Configuration Export", "Log Sample", "Report", "Document", "Photo"
-
 
 **Column C - Description:**
 
 - What evidence shows: "Fire alarm panel configuration - Building A", "Sample fire alarm logs 01-30.01.2026", "Water sensor placement map - Datacenter 1"
 
-
 **Column D - Related Sheet/Item:**
 
 - Links evidence to assessment: "Sheet 2, Row 5 (Building A Fire Detection)", "Sheet 4, Row 3 (Datacenter 1 Temperature Monitoring)"
-
 
 **Column E - File Name:**
 
 - Evidence filename: "BuildingA_FireAlarm_Config_20260115.png", "FireAlarmLogs_Sample_20260101-30.csv", "DC1_WaterSensors_Map.pdf"
 
-
 **Column F - File Location:**
 
 - Where evidence stored: "SharePoint > ISMS > Assessments > A.7.4.2 > Evidence", "Network Drive \\server\share\evidence"
-
 
 **Column G - Collection Date:**
 
 - When evidence collected: "15.01.2026"
 
-
 **Column H - Collected By:**
 
 - Who collected evidence: "Jane Doe - Facilities Manager"
-
 
 **Column I - Retention Period:**
 
 - How long to retain: "3 years", "Permanent", "Until next assessment"
 
-
 **Column J - Notes:**
 
 - Any additional context
-
 
 **Common Evidence to Collect:**
 
@@ -802,7 +715,6 @@ However, outputs from this assessment are INPUT to:
    - Sample fire alarm log (30 days showing all alarms including false alarms)
    - Fire alarm testing report (most recent annual test)
 
-
 2. **Water Detection System:**
 
    - Screenshot of water detection system configuration (sensor count, alert settings)
@@ -810,7 +722,6 @@ However, outputs from this assessment are INPUT to:
    - Screenshot of alert configuration (email/SMS recipients)
    - Sample water detection log (30 days)
    - Response procedure document (water damage response)
-
 
 3. **Temperature/Humidity Monitoring:**
 
@@ -820,7 +731,6 @@ However, outputs from this assessment are INPUT to:
    - Sensor accuracy verification report (if performed recently)
    - Excursion investigation reports (for significant events)
 
-
 4. **Fire Suppression:**
 
    - Sprinkler system inspection report (annual inspection)
@@ -828,13 +738,11 @@ However, outputs from this assessment are INPUT to:
    - Photo of sprinkler heads (verify coverage)
    - Photo of gas suppression panel and cylinders (if accessible)
 
-
 5. **Integration:**
 
    - Screenshot of BMS showing environmental systems (if BMS integrated)
    - Screenshot of security dashboard showing environmental events
    - Integration architecture diagram
-
 
 **Time Required:** 2-3 hours for comprehensive evidence collection and documentation
 
@@ -844,7 +752,6 @@ However, outputs from this assessment are INPUT to:
 - Organize in folders by sheet: Evidence/Sheet2_FireDetection/, Evidence/Sheet3_WaterDetection/, etc.
 - Encrypt sensitive evidence if contains proprietary facility layouts
 - Backup evidence to secure location (required for audit)
-
 
 ### Sheet 7: Approval Sign-Off
 
@@ -861,14 +768,12 @@ However, outputs from this assessment are INPUT to:
 - Date: Date you completed quality check and ready for submission
 - Signature/Confirmation: Your initials or digital signature
 
-
 **Level 2: Facilities Manager**
 
 - Role: Technical Review and Approval
 - Name: [Facilities Manager name]
 - Date: Date Facilities Manager reviewed and approved
 - Comments: Any feedback or required corrections
-
 
 **Level 3: CISO**
 
@@ -877,14 +782,12 @@ However, outputs from this assessment are INPUT to:
 - Date: Date CISO reviewed and approved
 - Comments: Strategic feedback or resource allocation needs
 
-
 **Level 4: Compliance Officer**
 
 - Role: Final Audit Readiness Sign-Off
 - Name: [Compliance Officer name]
 - Date: Date Compliance Officer certified assessment audit-ready
 - Comments: Audit preparation feedback
-
 
 **What YOU Do:**
 
@@ -894,14 +797,12 @@ However, outputs from this assessment are INPUT to:
 - After Level 3 approval, flows to Level 4 (Compliance Officer)
 - Track approval workflow progress
 
-
 **Time Required:** 5 minutes for Level 1 completion, then asynchronous for Levels 2-4
 
 **Approval Timeline:**
 
 - Target: 5-10 business days for all four levels
 - If corrections required at any level, assessor addresses and resubmits
-
 
 ---
 
@@ -920,7 +821,6 @@ However, outputs from this assessment are INPUT to:
 - Environmental monitoring platform configuration (sensor count, thresholds, data retention)
 - Screenshot format preferred (shows system interface, date/time, your login)
 
-
 **2. Testing and Inspection Records**
 
 - Fire alarm testing reports (annual full system test by certified technician)
@@ -930,14 +830,12 @@ However, outputs from this assessment are INPUT to:
 - Water detection sensor testing logs (monthly tests)
 - Environmental sensor accuracy verification (annual calibration check)
 
-
 **3. Log Samples**
 
 - Fire alarm logs (30-90 days sample showing all alarms including false alarms)
 - Water detection alarm logs (30-90 days sample)
 - Temperature/humidity excursion logs (30-90 days with excursions highlighted)
 - CSV or PDF export format acceptable
-
 
 **4. Coverage Maps**
 
@@ -947,7 +845,6 @@ However, outputs from this assessment are INPUT to:
 - Facility floor plans with temperature/humidity sensor placements marked
 - PDF or image format
 
-
 **5. Incident Documentation**
 
 - Fire alarm incident reports (actual fires, significant false alarm investigations)
@@ -956,14 +853,12 @@ However, outputs from this assessment are INPUT to:
 - Root cause analysis documents
 - Corrective action tracking
 
-
 **6. Integration Verification**
 
 - BMS screenshots showing environmental systems integration (if applicable)
 - Security dashboard screenshots showing environmental events
 - Integration architecture diagrams
 - Alert test results (email/SMS alert examples)
-
 
 ### How to Collect Evidence
 
@@ -978,7 +873,6 @@ However, outputs from this assessment are INPUT to:
 - Save as PNG or JPEG
 - File naming: [Facility]_[System]_[Description]_[Date].png
 
-
 **Testing Records:**
 
 - Export from maintenance management system or scan paper reports
@@ -988,7 +882,6 @@ However, outputs from this assessment are INPUT to:
 - Save as PDF (preserves formatting and signatures)
 - File naming: [System]_[TestType]_[Date].pdf
 
-
 **Log Exports:**
 
 - Export from native system (don't re-type into Excel)
@@ -997,7 +890,6 @@ However, outputs from this assessment are INPUT to:
 - 30-90 day sample sufficient
 - Save as CSV or PDF
 - File naming: [System]_[LogType]_[StartDate]-[EndDate].csv
-
 
 **Maps and Diagrams:**
 
@@ -1009,7 +901,6 @@ However, outputs from this assessment are INPUT to:
 - Save as PDF or high-resolution image
 - File naming: [Facility]_[SystemType]_Coverage_Map_[Date].pdf
 
-
 **Photos:**
 
 - Take photos of physical systems (fire alarm panels, gas suppression panels, sprinkler heads)
@@ -1019,7 +910,6 @@ However, outputs from this assessment are INPUT to:
 - Save as JPEG
 - File naming: [Facility]_[System]_Photo_[Date].jpg
 
-
 ### Evidence Storage
 
 **Storage Location:**
@@ -1028,12 +918,10 @@ However, outputs from this assessment are INPUT to:
 - **SharePoint/Cloud:** SharePoint > ISMS > Assessments > A.7.4.2 > Evidence folder
 - **Organized by sheet:** Evidence/Sheet2_FireDetection/, Evidence/Sheet3_WaterDetection/, Evidence/Sheet4_TempHumidity/
 
-
 **Access Control:**
 
 - Evidence folder permissions: CISO, Facilities Manager, Compliance Officer, Internal Audit (read-only)
 - Encrypt facility maps if they contain sensitive security information
-
 
 **Retention:**
 
@@ -1041,12 +929,10 @@ However, outputs from this assessment are INPUT to:
 - Permanent: If evidence of significant incidents or major findings
 - Delete after retention period (data minimization)
 
-
 **Backup:**
 
 - Evidence backed up with regular network backups
 - Critical evidence: Additional copy to offline storage (external drive, tape)
-
 
 ---
 
@@ -1065,7 +951,6 @@ However, outputs from this assessment are INPUT to:
 - Don't forget: Network closets in branch offices, small server rooms, below-grade storage areas
 - For colocation: Document customer-managed environmental systems (temperature monitoring in cage)
 
-
 ### Pitfall 2: Confusing Fire Code Compliance with Policy Compliance
 
 **Problem:** Assuming "passed fire marshal inspection" = "compliant with ISMS policy"
@@ -1078,7 +963,6 @@ However, outputs from this assessment are INPUT to:
 - ISMS policy requirements are ADDITIONAL (information asset protection)
 - Policy may require: Monitoring service, BMS integration, environmental sensors in server rooms beyond basic code
 - Assess against policy requirements (ISMS-POL-A.7.4-5-11, Section 3), not just fire code
-
 
 ### Pitfall 3: Assuming "Installed" Means "Working"
 
@@ -1093,7 +977,6 @@ However, outputs from this assessment are INPUT to:
 - Verify alerts actually deliver (check email inbox, SMS, alarm panel)
 - Status formula flags systems with testing overdue (red/amber)
 
-
 ### Pitfall 4: Ignoring False Alarms
 
 **Problem:** Not documenting false alarm frequency and root causes
@@ -1106,7 +989,6 @@ However, outputs from this assessment are INPUT to:
 - Review fire alarm logs for last 90 days (count false alarms)
 - If excessive false alarms (>5 per month), document in Notes
 - Root cause important: Dust (clean detectors), cooking smoke (relocate detector), aging detectors (replace)
-
 
 ### Pitfall 5: Temperature Sensor Placement Errors
 
@@ -1121,7 +1003,6 @@ However, outputs from this assessment are INPUT to:
 - If sensor on ceiling, note in assessment (placement suboptimal, recommend relocation)
 - Compliance status = Partial if sensor placement incorrect
 
-
 ### Pitfall 6: Not Documenting Coverage Gaps
 
 **Problem:** Claiming "100% coverage" without verifying blind spots
@@ -1134,7 +1015,6 @@ However, outputs from this assessment are INPUT to:
 - Check EVERY critical area: Server rooms (ceiling + under floor + in-rack for very early detection), telecom closets, below-grade storage
 - Document gaps honestly (fire detector on ceiling only, missing under-floor detector)
 - Gaps identified = opportunity for remediation, hidden gaps = audit finding
-
 
 ### Pitfall 7: Missing Environmental Excursion Analysis
 
@@ -1149,7 +1029,6 @@ However, outputs from this assessment are INPUT to:
 - Document excursion frequency in Sheet 4, Column K
 - High excursions = Amber or Red compliance status, HVAC remediation required
 
-
 ### Pitfall 8: Stale Inspection Reports
 
 **Problem:** Using fire marshal inspection report from 18 months ago
@@ -1162,7 +1041,6 @@ However, outputs from this assessment are INPUT to:
 - If inspection >12 months old, document as overdue in assessment
 - Compliance status = Amber or Red if inspection overdue
 - Schedule inspection immediately if overdue
-
 
 ### Pitfall 9: Forgetting Colocation Shared Responsibility
 
@@ -1177,7 +1055,6 @@ However, outputs from this assessment are INPUT to:
 - Document responsibility split clearly
 - Verify provider systems through audit reports (fire marshal inspection of building, sprinkler testing)
 
-
 ### Pitfall 10: Formula Corruption
 
 **Problem:** Accidentally overwriting formula cells, breaking auto-calculations
@@ -1191,7 +1068,6 @@ However, outputs from this assessment are INPUT to:
 - If you must edit formula, save backup copy of workbook first
 - Test formula after any changes (verify green/amber/red colors appear correctly)
 
-
 ---
 
 ## Quality Checklist
@@ -1204,7 +1080,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - [ ] Completed By (your name and role)
 - [ ] Organization name filled in
 - [ ] All document information reviewed
-
 
 ### Sheet 2: Fire Detection
 
@@ -1224,7 +1099,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - [ ] Notes column completed for any amber/red status (explain gap)
 - [ ] At least one fire alarm system documented (or explicitly state "No fire alarm systems" if truly none - unlikely)
 
-
 ### Sheet 3: Water Detection
 
 - [ ] ALL facilities with water detection systems documented
@@ -1240,7 +1114,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - [ ] Compliance status column showing green/amber/red (formulas working)
 - [ ] Notes column completed for any amber/red status (explain gap)
 - [ ] At least one water detection system documented (or explicitly state "No water detection systems" if none)
-
 
 ### Sheet 4: Temperature_Humidity
 
@@ -1259,7 +1132,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - [ ] Notes column completed for any amber/red status (explain gap, especially high excursions)
 - [ ] At least one temperature/humidity monitoring system documented (or explicitly state "No environmental monitoring" if none)
 
-
 ### Sheet 5: Summary Dashboard
 
 - [ ] Overall Compliance Score displays (not blank, not error)
@@ -1271,7 +1143,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - [ ] Review dashboard and verify scores appear reasonable
 - [ ] Investigate any unexpected red status
 - [ ] NO manual data entry in dashboard (formulas auto-populate from Sheets 2-4)
-
 
 ### Sheet 6: Evidence Register
 
@@ -1286,7 +1157,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - [ ] Retention periods assigned
 - [ ] ALL evidence files actually exist in documented location (not just documented but not collected)
 
-
 **Evidence Minimum Requirements:**
 
 - [ ] Fire alarm panel configuration screenshot(s)
@@ -1298,14 +1168,12 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - [ ] Sample environmental data export (with excursions)
 - [ ] At least one testing report (fire alarm annual test, sprinkler inspection, etc.)
 
-
 ### Sheet 7: Approval Sign-Off
 
 - [ ] Level 1 (Assessor) completed (your name, date, signature)
 - [ ] Assessment ready for submission to Level 2 (Facilities Manager)
 - [ ] Assessment workbook saved with final data
 - [ ] Evidence folder organized and complete
-
 
 ### Overall Quality
 
@@ -1317,7 +1185,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - [ ] Notes columns used appropriately (explain gaps, not repeat data)
 - [ ] Assessment tells complete story (auditor could understand environmental protection without asking you questions)
 
-
 ### Final Checks Before Submission
 
 - [ ] Spell check completed
@@ -1327,7 +1194,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - [ ] Second person review requested (have colleague spot-check for obvious errors)
 - [ ] Assessment workbook saved in final location
 - [ ] Evidence folder backed up
-
 
 **If ALL checkboxes checked:** Assessment is ready for Level 2 approval (Facilities Manager)  
 **If ANY checkboxes unchecked:** Address gaps before submission
@@ -1354,14 +1220,12 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Address any gaps identified in self-assessment
 - Complete Level 1 approval in Sheet 7 (name, date, signature)
 
-
 **Approval Criteria:**
 
 - All required fields completed (no blank yellow cells unless truly N/A)
 - Evidence collected and documented
 - Quality checklist 100% checked
 - Assessment tells complete story
-
 
 **Timeline:** Complete before submitting to Level 2
 
@@ -1380,7 +1244,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Provide feedback to Assessor if corrections needed
 - Complete Level 2 approval in Sheet 7 (name, date, signature, comments)
 
-
 **Approval Criteria:**
 
 - Technical accuracy verified (detector counts, sensor counts, inspection dates)
@@ -1389,7 +1252,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Evidence supports assessment conclusions (fire marshal report exists, testing records exist)
 - No major gaps requiring immediate correction
 
-
 **Timeline:** 2-5 business days after receipt from Assessor
 
 **If Corrections Required:**
@@ -1397,7 +1259,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Document required corrections in Sheet 7 Comments
 - Return to Assessor for corrections
 - Assessor addresses feedback, resubmits for Level 2 re-review
-
 
 ### Level 3: CISO
 
@@ -1412,7 +1273,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Approve remediation plan (or request revised plan)
 - Complete Level 3 approval in Sheet 7 (name, date, signature, comments)
 
-
 **Approval Criteria:**
 
 - Overall compliance score acceptable (>60% minimum, prefer >75%)
@@ -1421,7 +1281,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Assessment aligns with organizational risk tolerance
 - No strategic concerns requiring escalation
 
-
 **Timeline:** 2-5 business days after Level 2 approval
 
 **If Strategic Concerns:**
@@ -1429,7 +1288,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Document concerns in Sheet 7 Comments
 - May request additional analysis or revised remediation plan (e.g., cost-benefit analysis for aspirating smoke detection)
 - May escalate to Executive Management if risk unacceptable (e.g., datacenter no fire suppression)
-
 
 ### Level 4: Compliance Officer
 
@@ -1445,7 +1303,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Certify assessment ready for internal/external audit
 - Complete Level 4 approval in Sheet 7 (name, date, signature, comments)
 
-
 **Approval Criteria:**
 
 - Evidence complete and audit-ready (fire marshal reports, testing records, logs)
@@ -1453,7 +1310,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - All approval levels completed
 - Assessment demonstrates compliance with policy requirements
 - Assessment defensible in audit (auditor questions anticipated and addressed)
-
 
 **Timeline:** 1-3 business days after Level 3 approval
 
@@ -1464,7 +1320,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Assessment available to Internal Audit and External Auditors
 - Assessment forms basis for Control A.7.5 compliance evidence
 
-
 ### Approval Workflow Best Practices
 
 **Communication:**
@@ -1474,20 +1329,17 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Include evidence folder link
 - Request estimated timeline for review
 
-
 **Version Control:**
 
 - File naming: ISMS-IMP-A.7.4.2_Environmental_Protection_YYYY-MM-DD_vX.xlsx
 - Increment version after corrections: v1, v2, v3
 - Final approved version: ISMS-IMP-A.7.4.2_Environmental_Protection_YYYY-MM-DD_FINAL.xlsx
 
-
 **Tracking:**
 
 - Use Sheet 7 Approval Sign-Off table to track progress
 - Update approval dates as levels complete
 - Document feedback in Comments column
-
 
 **Corrections:**
 
@@ -1496,13 +1348,11 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Resubmit through workflow (start at level where corrections requested)
 - Document what changed in version history
 
-
 **Timeline Management:**
 
 - Total approval timeline: 5-15 business days typical
 - If urgent (e.g., imminent audit, fire marshal inspection coming), request expedited review
 - Coordinate approval schedules with approvers in advance
-
 
 **Audit Submission:**
 
@@ -1510,7 +1360,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Provide to Internal Audit or External Auditors as requested
 - Auditor questions routed to Assessor and Facilities Manager
 - Evidence files provided to auditors for verification (fire marshal reports, testing records)
-
 
 ---
 
@@ -1551,7 +1400,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Numeric validation (detector count, sensor count, excursion count)
 - Percentage validation (coverage percentage 0-100%)
 
-
 **Conditional Formatting:**
 
 - Compliance Status columns: Green fill (✅ Compliant), Amber fill (⚠️ Partial), Red fill (❌ Non-Compliant)
@@ -1559,31 +1407,26 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Overdue dates highlighted (testing overdue, inspection overdue)
 - High excursion counts highlighted (>10 excursions in 90 days)
 
-
 **Formulas:**
 
 - Summary Dashboard auto-calculates from Sheets 2-4
 - Compliance Status formulas evaluate multiple criteria per row
 - Aggregate metrics (totals, averages, percentages)
 
-
 **Freeze Panes:**
 
 - Row 1-3 frozen (header rows always visible)
 - Column A frozen (facility name always visible when scrolling right)
 
-
 **Column Widths:**
 
 - Optimized for readability (facility names 25 chars, descriptions 40 chars, notes 50 chars)
-
 
 **Print Settings:**
 
 - Page orientation: Landscape
 - Fit to page: 1 page wide (scroll height)
 - Print titles: Header rows repeat on each page
-
 
 ---
 
@@ -1601,13 +1444,11 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Text: "ISMS-IMP-A.7.4.2 - Physical Environmental Protection Assessment\nISO/IEC 27001:2022 - Control A.7.5: Protecting Against Physical and Environmental Threats"
 - Style: Navy blue background, white bold text, 14pt, center-aligned
 
-
 **Rows 3-11:** Document Information Table
 
 - Column A: Labels (Document ID, Assessment Area, Related Policy, Version, Assessment Date, Completed By, Organization, Review Cycle)
 - Column B: Values (pre-filled for read-only fields, blank yellow for user input)
 - User input fields (yellow): Assessment Date, Completed By, Organization
-
 
 **Rows 13-17:** Status Legend
 
@@ -1615,13 +1456,11 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Column B: Definitions
 - Style: Color-coded backgrounds matching compliance colors (green, amber, red)
 
-
 **Rows 19-30:** Completion Instructions
 
 - Brief workflow summary
 - Reference to Part I User Guide for detailed instructions
 - Contact information for assessment support
-
 
 **Cell Styling:**
 
@@ -1630,7 +1469,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Input cells: Yellow background (#FFFFCC)
 - Read-only cells: White background
 
-
 ### Sheet 2: Fire Detection
 
 **Purpose:** Document all fire alarm systems, detectors, notification devices, and assess compliance against policy requirements
@@ -1638,7 +1476,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 **Header Row (Row 3):**
 
 - Style: Gray background, bold text, center-aligned, freeze panes
-
 
 **Columns:**
 
@@ -1672,13 +1509,11 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - ❌ Non-Compliant IF: Coverage <90% OR no monitoring service OR testing >18 months overdue OR fire marshal inspection >18 months overdue
 - ⚠️ Partial: Everything else (e.g., 95% coverage, testing slightly overdue)
 
-
 **Conditional Formatting:**
 
 - Column M: Green background if "✅ Compliant", Amber if "⚠️ Partial", Red if "❌ Non-Compliant"
 - Column K: Red background if (TODAY()-K2)>365 (testing overdue)
 - Column L: Red background if (TODAY()-L2)>365 (inspection overdue)
-
 
 **Data Rows:** Rows 4-103 (100 data rows)
 
@@ -1691,7 +1526,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 **Header Row (Row 3):**
 
 - Style: Gray background, bold text, center-aligned, freeze panes
-
 
 **Columns:**
 
@@ -1723,12 +1557,10 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - ❌ Non-Compliant IF: No coverage in high-risk areas OR no alert method OR no response procedure OR testing >60 days overdue
 - ⚠️ Partial: Everything else
 
-
 **Conditional Formatting:**
 
 - Column K: Green background if "✅ Compliant", Amber if "⚠️ Partial", Red if "❌ Non-Compliant"
 - Column J: Red background if (TODAY()-J2)>31 (testing overdue)
-
 
 **Data Rows:** Rows 4-103 (100 data rows)
 
@@ -1741,7 +1573,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 **Header Row (Row 3):**
 
 - Style: Gray background, bold text, center-aligned, freeze panes
-
 
 **Columns:**
 
@@ -1774,12 +1605,10 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - ❌ Non-Compliant IF: No temperature thresholds OR no alert method OR data retention <6 months OR excursions >10 in 90 days
 - ⚠️ Partial: Everything else (e.g., moderate excursions 5-10, data retention 6-11 months)
 
-
 **Conditional Formatting:**
 
 - Column L: Green background if "✅ Compliant", Amber if "⚠️ Partial", Red if "❌ Non-Compliant"
 - Column K: Red background if >10 (high excursions indicate HVAC issues)
-
 
 **Data Rows:** Rows 4-103 (100 data rows)
 
@@ -1797,13 +1626,11 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Text: "Environmental Protection - Summary Dashboard"
 - Style: Navy blue background, white bold text, 14pt, center-aligned
 
-
 **Rows 3-10:** Overall Compliance Score
 
 - Row 3: "Overall Compliance Score" label
 - Row 4: Formula calculating aggregate score from Sheets 2-4
 - Row 5: Color-coded status (Green >90%, Amber 75-89%, Amber 60-74%, Red <60%)
-
 
 **Overall Compliance Score Formula:**
 ```excel
@@ -1821,7 +1648,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Temperature/Humidity Compliance Score (%)
 - Each with formula, percentage display, color-coding
 
-
 **Rows 22-30:** Environmental Incident Metrics
 
 - Fire Alarm Events (last 12 months): Count of fire alarms (actual + false)
@@ -1829,14 +1655,12 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Temperature Excursions (last 90 days): Sum of excursions from Sheet 4
 - Average Excursions per Facility: Average of Sheet 4, Column K
 
-
 **Rows 32-50:** Gap Summary
 
 - Auto-generated list of non-compliant items
 - Formula scans Sheets 2-4 for "❌ Non-Compliant" status
 - Lists facility name, system type, gap description
 - Prioritized by severity
-
 
 **Gap Summary Formula (example for row 32):**
 ```excel
@@ -1854,12 +1678,10 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Chart 3: Temperature Excursion Trend (line chart - if historical data available)
 - Chart 4: Gap Distribution (pie chart - compliant vs. partial vs. non-compliant)
 
-
 **Conditional Formatting:**
 
 - Compliance scores: Green >90%, Amber 75-89%, Red <60%
 - Gap summary: Red highlight for critical gaps, amber for partial compliance
-
 
 ### Sheet 6: Evidence Register
 
@@ -1868,7 +1690,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 **Header Row (Row 3):**
 
 - Style: Gray background, bold text, center-aligned, freeze panes
-
 
 **Columns:**
 
@@ -1893,7 +1714,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 
 - Column G: Red background if >30 days old (stale evidence warning)
 
-
 ### Sheet 7: Approval Sign-Off
 
 **Purpose:** Four-level approval workflow documentation
@@ -1905,7 +1725,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Merged cells A1:E1
 - Text: "Assessment Approval Workflow"
 - Style: Navy blue background, white bold text, 14pt, center-aligned
-
 
 **Rows 3-20:** Approval Table
 
@@ -1922,7 +1741,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Input cells: Yellow background (Name, Date, Signature, Comments)
 - Instructions below table (rows 10-20): Workflow sequence, timeline expectations
 
-
 ---
 
 ## Cell Styling Reference
@@ -1935,13 +1753,11 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Subheader (Section titles): #4472C4 (Medium blue background), #FFFFFF (White text)
 - Column Header (Row 3): #D9D9D9 (Light gray background), #000000 (Black text)
 
-
 **Data Cells:**
 
 - Input Cell (Yellow): #FFFFCC (Light yellow background) - indicates user should enter data
 - Formula Cell (White): #FFFFFF (White background) - read-only, auto-calculated
 - Read-Only Cell (Light gray): #F2F2F2 (Very light gray background) - pre-filled, do not edit
-
 
 **Compliance Status:**
 
@@ -1949,13 +1765,11 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Partial Compliance: #FFEB9C (Light amber/yellow background)
 - Non-Compliant: #FFC7CE (Light red background)
 
-
 **Alerts:**
 
 - Warning (Amber): #FFEB9C (Light amber background)
 - Critical (Red): #FFC7CE (Light red background)
 - Success (Green): #C6EFCE (Light green background)
-
 
 ### Font Specifications
 
@@ -1966,7 +1780,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Weight: Bold
 - Color: #FFFFFF (white) for primary/subheader, #000000 (black) for column header
 
-
 **Data Cells:**
 
 - Font: Calibri
@@ -1974,14 +1787,12 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Weight: Normal (regular for data, bold for labels)
 - Color: #000000 (black)
 
-
 **Status Text:**
 
 - Font: Calibri
 - Size: 10pt
 - Weight: Bold
 - Uses Unicode symbols: ✅ (U+2705), ⚠️ (U+26A0), ❌ (U+274C)
-
 
 ### Border Styles
 
@@ -1991,13 +1802,11 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Color: #000000 (black)
 - Applied to: All data table cells (Sheets 2-4, 6)
 
-
 **Header Borders:**
 
 - Style: Medium solid line (bottom border only)
 - Color: #000000 (black)
 - Applied to: Column header row (Row 3)
-
 
 ### Alignment
 
@@ -2007,14 +1816,12 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Vertical: Center
 - Wrap text: Yes (for long header labels)
 
-
 **Data Cells:**
 
 - Text fields: Left-aligned, top-aligned
 - Numeric fields: Right-aligned, top-aligned
 - Date fields: Left-aligned, top-aligned
 - Formula fields: Center-aligned (status indicators)
-
 
 ### Cell Protection
 
@@ -2024,20 +1831,17 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Compliance Status columns (Sheets 2-4): Formula-protected
 - Header rows (Row 1-3 all sheets): Protected
 
-
 **Unlocked Cells (Input cells):**
 
 - All yellow background cells (user input required)
 - Evidence Register (Sheet 6): All data cells
 - Approval Sign-Off (Sheet 7): Name, Date, Signature, Comments cells
 
-
 **Sheet Protection:**
 
 - Password: [Organization-specific]
 - Allow: Select unlocked cells, format cells (unlocked cells only)
 - Disallow: Insert/delete rows, modify formulas, edit locked cells
-
 
 ---
 
@@ -2062,7 +1866,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Policy states "Monthly water sensor testing" → Assessment verifies testing within 31 days in Sheet 3, Column J
 - Policy states "Temperature monitoring with alerts" → Assessment verifies thresholds and alerts in Sheet 4, Columns E/F/G
 
-
 ### Integration with Other Assessments
 
 **Feeds into:**
@@ -2070,18 +1873,15 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - ISMS-IMP-A.7.4-5-11-S4 (Compliance Dashboard): Overall compliance score, gap summary, environmental incident metrics
 - ISMS-IMP-A.7.4-5-11-S3 (Utility Resilience): HVAC systems documented in both (environmental monitoring here, HVAC resilience in S3)
 
-
 **Dependencies from:**
 
 - Facility inventory: List of all facilities requiring assessment (if master facility list exists)
 - Fire marshal inspection schedule: Annual inspections inform Sheet 2, Column L
 
-
 **Shared evidence with:**
 
 - Fire marshal inspection reports: Evidence for both environmental protection and facility compliance
 - HVAC system documentation: Shared with utility resilience assessment (S3)
-
 
 ### Integration with Evidence Collection
 
@@ -2090,7 +1890,6 @@ Before submitting for Level 2 approval (Facilities Manager), complete this self-
 - Evidence ID "EVID-003" → Related Sheet/Item: "Sheet 2, Row 4 (Building A Fire Detection)"
 - File Name: "BuildingA_FireAlarm_Panel_Config_20260115.png"
 - Assessment Sheet 2, Row 4, Column N (Notes): "Evidence: EVID-003"
-
 
 **Evidence Traceability:**
 ```
@@ -2127,7 +1926,6 @@ Assessment Finding (Sheet 2, Row 4) ← Evidence (EVID-003) ← Evidence File (B
 - "Are water sensors tested monthly?" → Evidence: Testing logs showing monthly tests
 - "What is temperature excursion frequency?" → Sheet 4, Column K documents excursion count, trend shown in Sheet 5
 - "Are all high-risk areas covered by water detection?" → Sheet 3, Column F documents coverage status, facility maps show sensor placements
-
 
 ---
 

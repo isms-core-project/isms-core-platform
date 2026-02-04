@@ -36,7 +36,6 @@
 - Quality: Quality Assurance Manager
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -45,7 +44,6 @@
 - ISMS-REF-A.5.23 (Cloud Service Provider Registry)
 - Python generator scripts in 50_scripts-excel/
 - ISO/IEC 27001:2022 Clause 9.2 (Internal audit)
-
 
 ---
 
@@ -60,7 +58,6 @@ This document defines the **Systems Engineering (SE) approach** for assessing cl
 - **Evidence-based** verification (screenshots, configs, contracts)
 - **Traceable** audit trails (normalized files + manifest)
 - **Transparent** dashboards (auto-calculated from assessments)
-
 
 ## Critical Principle
 
@@ -181,7 +178,6 @@ Each workbook follows this proven pattern:
 - P: Target Remediation Date
 - Q: Budget Impact (High/Medium/Low/None)
 
-
 **Extended Columns (R-X for inventory-specific):**
 
 - R: Monthly Cost (formula: validates numeric)
@@ -191,7 +187,6 @@ Each workbook follows this proven pattern:
 - V: Backup Service Available (Yes/No)
 - W: Exit Feasibility (Easy/Medium/Hard/Unknown)
 - X: Last Inventory Review Date
-
 
 ## Workbook 2: Vendor Due Diligence & Contracts
 
@@ -224,7 +219,6 @@ Each workbook follows this proven pattern:
 - V: Right to Audit Clause (Yes/No)
 - W: Data Portability Clause (Yes/No)
 - X: Forensics/IR Support (Yes/No/Limited)
-
 
 ## Workbook 3: Secure Configuration & Deployment
 
@@ -259,7 +253,6 @@ Each workbook follows this proven pattern:
 - W: Data Classification Labels Applied (Yes/No/Partial)
 - X: Configuration Baseline Documented (Yes/No)
 
-
 ## Workbook 4: Ongoing Governance & Risk Management
 
 **Document ID:** ISMS-IMP-A.5.23.4  
@@ -293,7 +286,6 @@ Each workbook follows this proven pattern:
 - W: BC/DR Last Test Date
 - X: Change Management Process (Yes/No)
 
-
 ## Workbook 5: Compliance Monitoring & Exit Planning
 
 **Document ID:** ISMS-IMP-A.5.23.5  
@@ -321,7 +313,6 @@ Each workbook follows this proven pattern:
 - Auto-calculates compliance % per domain
 - Generates risk scores based on criteria
 - Produces remediation priority matrix
-
 
 ---
 
@@ -482,7 +473,6 @@ The Compliance Dashboard (Workbook 5) uses Excel formulas to pull data from Work
 - **Real-time metrics** - stakeholders see live compliance %
 - **Audit trail** - formulas show exactly where data comes from
 
-
 ## Dashboard Visualizations
 
 **Compliance Summary Table:**
@@ -499,7 +489,6 @@ The Compliance Dashboard (Workbook 5) uses Excel formulas to pull data from Work
 - High vendor lock-in + Low exit feasibility = 🔴 Critical risk
 - Restricted data + Non-EU residency = 🔴 Sovereignty violation
 - Critical service + No BC/DR test = 🟡 High risk
-
 
 ---
 
@@ -542,7 +531,6 @@ Run assessments outside quarterly cycle when:
 - **Contract renewals** (use Workbook 2)
 - **Audit preparation** (use all 5 workbooks)
 
-
 ---
 
 # Stakeholder Guide
@@ -582,7 +570,6 @@ Run assessments outside quarterly cycle when:
 - ✅ BC/DR test results (last recovery drill report)
 - ❌ "We have a process" (not acceptable without proof!)
 
-
 ---
 
 # Continuous Improvement
@@ -596,7 +583,6 @@ Run assessments outside quarterly cycle when:
 - New cloud service types
 - Regulatory changes
 - Technology evolution
-
 
 **Process:**
 1. Document issue in GitHub/Jira
@@ -616,7 +602,6 @@ Run assessments outside quarterly cycle when:
 - ✅ Zero critical findings in audit reviews
 - ✅ Quarterly framework updates completed on schedule
 
-
 ---
 
 # Reference Information
@@ -628,7 +613,6 @@ Run assessments outside quarterly cycle when:
 - ISMS-POL-A.5.19-23 (Master Index)
 - ISMS-POL-A.5.19-23-S5 (Cloud Services Security Requirements)
 
-
 **Assessment Specifications:**
 
 - ISMS-IMP-A.5.23.1 - Inventory & Classification Spec
@@ -636,7 +620,6 @@ Run assessments outside quarterly cycle when:
 - ISMS-IMP-A.5.23.3 - Secure Configuration Spec
 - ISMS-IMP-A.5.23.4 - Ongoing Governance Spec
 - ISMS-IMP-A.5.23.5 - Compliance Dashboard Spec
-
 
 **Generator Scripts:**
 
@@ -646,12 +629,10 @@ Run assessments outside quarterly cycle when:
 - generate_reg_a523_4_governance.py
 - generate_reg_a523_5_compliance_dashboard.py
 
-
 **Processing Scripts:**
 
 - normalize_assessment_files_reg_a523.py
 - consolidate_reg_a523_dashboard.py
-
 
 ## External Standards
 
@@ -661,7 +642,6 @@ Run assessments outside quarterly cycle when:
 - ISO/IEC 27018:2019 - PII in public clouds
 - NIST SP 800-144 - Guidelines on Security and Privacy in Public Cloud
 - CSA Cloud Controls Matrix (CCM) v4
-
 
 ---
 

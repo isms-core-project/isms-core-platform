@@ -33,13 +33,11 @@
 - Compliance: Legal/Compliance Officer
 - Finale Autorität: Geschäftsleitung (GL)
 
-
 **Zugehörige Dokumente**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-IMP-A.8.23 (Implementation Guidance Suite)
 - ISO/IEC 27001:2022 Control A.8.23
-
 
 ---
 
@@ -73,7 +71,6 @@ Diese Richtlinie definiert die Anforderungen von [Organisation] für Web-Filteri
 - Frameworks für Exception Management und Incident Management
 - Integration mit Risk Assessment und Treatment Prozessen der [Organisation]
 
-
 ## Was diese Richtlinie tut
 
 Diese Richtlinie:
@@ -82,7 +79,6 @@ Diese Richtlinie:
 - **Etabliert** Governance-Framework für Web-Filtering-Entscheidungsfindung
 - **Spezifiziert** Verantwortlichkeit für Implementierung von Web-Filtering-Kontrollen
 - **Referenziert** anwendbare regulatorische Anforderungen gemäss ISMS-POL-00
-
 
 ## Was diese Richtlinie NICHT tut
 
@@ -94,13 +90,11 @@ Diese Richtlinie tut NICHT:
 - **Auswählen von Filtering-Technologien oder Anbietern** (Technologieauswahl basierend auf Risk Assessment der [Organisation])
 - **Ersetzen von Risk Assessment** (Web-Filtering-Kontrollen werden basierend auf Risk Treatment der [Organisation] ausgewählt)
 
-
 **Rationale**: Trennung von Richtlinienanforderungen und Implementierungsleitlinien ermöglicht:
 
 - Richtlinienstabilität trotz sich entwickelnder Bedrohungslandschaft
 - Technische Agilität für Technologie-Updates ohne Richtlinienrevision
 - Klare Unterscheidung zwischen Governance (Richtlinie) und Execution (Implementierung)
-
 
 ## Geltungsbereich
 
@@ -112,14 +106,12 @@ Diese Richtlinie tut NICHT:
 - Alle Web-Filtering-Implementierungen unabhängig vom Deployment-Modell (Gateway, Cloud-basiert, Endpoint, DNS-basiert)
 - Alle Drittanbieter-Services, die Netzwerkzugang bereitstellen
 
-
 **Nicht im Geltungsbereich**:
 
 - E-Mail-Filtering (durch separate E-Mail-Sicherheitsrichtlinien abgedeckt)
 - Network Intrusion Prevention jenseits webbasierter Bedrohungen (durch Netzwerksicherheitsrichtlinien abgedeckt)
 - Endpoint Antivirus/Anti-Malware (durch Endpoint-Schutzrichtlinien abgedeckt)
 - Data Loss Prevention (durch DLP-Richtlinien abgedeckt, obwohl Web Filtering DLP-Ziele unterstützen kann)
-
 
 ## Regulatorische Anwendbarkeit
 
@@ -152,7 +144,6 @@ Diese Frameworks informieren Implementierung, stellen aber keine obligatorische 
 - CIS Controls v8 (Control 9: Email and Web Browser Protections)
 - MITRE ATT&CK Framework (Defense Techniques)
 - OWASP (Web Security Testing Guide)
-
 
 **Compliance-Bestimmung**: [Organisation] bestimmt anwendbare Tier 2 Regulierungen durch periodische Geschäftsaktivitäts-Assessments. Die strengsten Anforderungen gelten bei Überschneidung mehrerer Regulierungen.
 
@@ -197,7 +188,6 @@ Diese Frameworks informieren Implementierung, stellen aber keine obligatorische 
 - **Überwacht (Mittelrisiko):** File Sharing, Streaming Media, Social Networking, persönliche Webmail
 - **Erlaubt (Niedrigrisiko):** Business, News, Bildung, Technologie, Regierung, Finanzdienstleistungen
 
-
 Kategorie-Klassifizierungen und Blocking-Regeln sind dokumentiert in ISMS-IMP-A.8.23-3 (Policy Configuration Assessment) und werden quartalsweise überprüft. Änderungen an Kategorie-Klassifizierungen erfordern Security Team Review und CISO-Genehmigung.
 
 ## Netzwerk-Coverage-Anforderungen
@@ -214,7 +204,6 @@ Kategorie-Klassifizierungen und Blocking-Regeln sind dokumentiert in ISMS-IMP-A.
 - Cloud-gehostete Ressourcen mit Internetzugang
 - Branch Office Verbindungen
 
-
 **Implementierungs-Hinweis**: Netzwerk-Topologie-Dokumentation, Coverage-Verifizierungs-Prozeduren und Gap-Identifikations-Methoden sind in ISMS-IMP-A.8.23-2 (Network Coverage Assessment) definiert.
 
 **Coverage-Verifizierung**: [Organisation] SOLL Filtering-Coverage durch technisches Testing verifizieren. Testing-Methodologie und Frequenz definiert in ISMS-IMP-A.8.23-2.
@@ -225,7 +214,6 @@ Kategorie-Klassifizierungen und Blocking-Regeln sind dokumentiert in ISMS-IMP-A.
 - Dedizierte B2B-Partner-Verbindungen (dokumentiert, risikobewertet, durch CISO genehmigt)
 - Air-gapped Netzwerke ohne Internet-Konnektivität
 - Spezifische Benutzergruppen mit dokumentierten und genehmigten Exceptions
-
 
 ## Logging und Monitoring
 
@@ -238,7 +226,6 @@ Kategorie-Klassifizierungen und Blocking-Regeln sind dokumentiert in ISMS-IMP-A.
 - Benutzer-Attribution (wo technisch verfügbar und Privacy-compliant)
 - Ausreichendes Detail für Incident-Investigation und forensische Analyse
 
-
 **Log-Retention:**
 
 - Security-Events (Threat-Blocks, C2-Versuche, Umgehungs-Versuche, Policy-Violations): Minimum **12 Monate**
@@ -246,7 +233,6 @@ Kategorie-Klassifizierungen und Blocking-Regeln sind dokumentiert in ISMS-IMP-A.
 - Erweiterte Retention gilt, wo regulatorische Anforderungen längere Perioden vorschreiben (gemäss ISMS-POL-00 Abschnitt 4.2)
 - Logs geschützt mit angemessenen Integritäts- und Vertraulichkeits-Kontrollen gemäss A.8.15
 - Log-Löschung erfordert dokumentierte Genehmigung und folgt Data Retention Policy Prozeduren
-
 
 **Implementierungs-Hinweis**: Spezifische Logging-Felder, Retention-Perioden, Storage-Anforderungen und Monitoring-Prozeduren sind in ISMS-IMP-A.8.23-4 (Monitoring & Response Assessment) definiert.
 
@@ -265,7 +251,6 @@ Kategorie-Klassifizierungen und Blocking-Regeln sind dokumentiert in ISMS-IMP-A.
 - Akzeptanz von Restrisiken
 - Unterstützung des Sicherheitsprogramms
 
-
 **Chief Information Security Officer (CISO)**:
 
 - Verantwortlich für gesamte Web-Filtering-Richtlinien- und Programm-Effektivität
@@ -273,7 +258,6 @@ Kategorie-Klassifizierungen und Blocking-Regeln sind dokumentiert in ISMS-IMP-A.
 - Definition organisatorischer Risikoakzeptanz für Web Filtering
 - Eskalation kritischer Issues an Geschäftsleitung
 - Jährlicher Richtlinien-Review und Genehmigung
-
 
 **Security Team**:
 
@@ -284,7 +268,6 @@ Kategorie-Klassifizierungen und Blocking-Regeln sind dokumentiert in ISMS-IMP-A.
 - Integration von Threat Intelligence Feeds
 - Durchführung periodischer Coverage-Assessments
 
-
 **IT Operations / Network Team**:
 
 - Verantwortlich für Deployment und Wartung der Web-Filtering-Infrastruktur
@@ -292,14 +275,12 @@ Kategorie-Klassifizierungen und Blocking-Regeln sind dokumentiert in ISMS-IMP-A.
 - Bereitstellung technischen Supports für Filtering-Systeme
 - Koordination von Changes mit Security Team
 
-
 **Benutzer (Alle Mitarbeiter)**:
 
 - Verantwortlich für Compliance mit Web-Filtering-Richtlinien und Acceptable Use Policy
 - Reporting von False Positives und Security-Concerns
 - Verwendung von Exception-Prozess für legitime Geschäfts-Needs
 - Verboten, Versuche zu unternehmen, Web-Filtering-Kontrollen zu umgehen
-
 
 **Detaillierte RACI-Matrix**: Vollständige Rollen- und Verantwortlichkeits-Matrix dokumentiert in ISMS-IMP-A.8.23 Implementation Guides.
 
@@ -326,7 +307,6 @@ Kategorie-Klassifizierungen und Blocking-Regeln sind dokumentiert in ISMS-IMP-A.
   - Deployment neuer Filtering-Lösungen oder Major Version Upgrades
   - Audit-Findings, die Remediation-Verifizierung erfordern
 
-
 ## Exception Management
 
 **Exception-Request-Anforderungen**:
@@ -339,7 +319,6 @@ Exceptions zu Web-Filtering-Richtlinien-Anforderungen benötigen:
 - Timeline für Erreichung vollständiger Compliance (wo anwendbar)
 - Formale Genehmigung gemäss Autoritäts-Matrix
 
-
 **Genehmigungs-Autorität**:
 
 - **Einzelne URL/Domain-Exceptions**: Security Team Lead Genehmigung
@@ -347,7 +326,6 @@ Exceptions zu Web-Filtering-Richtlinien-Anforderungen benötigen:
 - **Category-Exceptions (Gruppe/Abteilung)**: CISO + Abteilungsleiter Genehmigung
 - **Hochrisiko-Exceptions**: CISO + Geschäftsleitung Genehmigung
 - **Threat Protection Exceptions**: NICHT ERLAUBT (Malware, Phishing, C2 Blocks können nicht umgangen werden)
-
 
 **Monitoring**: Aktive Exceptions überprüft basierend auf Risiko-Level. Exception-Aktivität überwacht für Policy-Compliance. Exceptions widerrufen, falls Risikoprofil sich ändert oder geschäftliche Begründung nicht länger gültig.
 
@@ -362,7 +340,6 @@ Exceptions zu Web-Filtering-Richtlinien-Anforderungen benötigen:
 - Umgehungs-Versuche (Proxy-Verwendung, VPN zur Umgehung von Filtering)
 - Web-Filtering-System-Ausfälle oder Coverage-Gaps
 - False Positive Patterns, die Fehlkonfiguration indizieren
-
 
 **Response-Prozess**:
 1. **Detection & Reporting**: Security-Events triggern Alerts gemäss Schweregrad
@@ -385,20 +362,17 @@ Exceptions zu Web-Filtering-Richtlinien-Anforderungen benötigen:
 - **Reviewer**: CISO, IT Security Team, Legal/Compliance, IT Operations
 - **Genehmigung**: CISO (technisch), Geschäftsleitung (strategisch)
 
-
 **Implementation Standards Review**:
 
 - **Frequenz**: Basierend auf Bedrohungslandschafts-Evolution (mindestens halbjährlich)
 - **Autorität**: Security Team schlägt Updates vor, CISO genehmigt
 - **Hinweis**: Implementation Standard Updates (ISMS-IMP-A.8.23) erfordern keine Richtlinien-Revision
 
-
 **Richtlinien-Updates**:
 
 - **Minor** (Klarstellungen, Referenzen): CISO-Genehmigung, Kommunikation innerhalb 30 Tagen
 - **Major** (Scope-Änderungen, neue Anforderungen): Vollständige Freigabekette, Implementierungs-Timeline gemäss Change Management
 - **Emergency** (kritische Bedrohungen): CISO-Genehmigung, sofortige Kommunikation und Implementierung
-
 
 **Kommunikation**: Richtlinie publiziert in ISMS-Dokumenten-Repository. Änderungen organisationsweit kommuniziert. Training für signifikante Änderungen bereitgestellt, die Benutzerverhalten oder Verantwortlichkeiten beeinflussen.
 
@@ -416,12 +390,10 @@ Diese Richtlinie integriert mit dem Informationssicherheits-Managementsystem der
 - Bedrohungslandschafts-Assessment bestimmt Schutzanforderungen
 - Risk Treatment Plans dokumentieren Web-Filtering-Kontroll-Implementierung
 
-
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
 - Control A.8.23 Anwendbarkeit in SoA der [Organisation] begründet
 - Implementierungs-Status getrackt und berichtet
-
 
 **Zugehörige Controls**:
 
@@ -431,7 +403,6 @@ Diese Richtlinie integriert mit dem Informationssicherheits-Managementsystem der
 - A.8.20 (Networks Security): Netzwerk-Level-Sicherheitskontrollen
 - A.8.22 (Segregation of Networks): Netzwerk-Segmentierungs-Strategie
 - A.5.24 (Information Security Incident Management): Incident Response Framework
-
 
 ## Implementierungs-Ressourcen
 
@@ -443,7 +414,6 @@ Diese Richtlinie integriert mit dem Informationssicherheits-Managementsystem der
 - ISMS-IMP-A.8.23-4: Monitoring & Response Assessment (Logging, Alerting, Incident-Prozeduren)
 - ISMS-IMP-A.8.23-5: Compliance Dashboard (Konsolidiertes Compliance-Reporting)
 
-
 **Assessment-Tools**:
 
 - Excel-basierte Assessment Workbooks mit automatisierten Compliance-Berechnungen
@@ -451,14 +421,12 @@ Diese Richtlinie integriert mit dem Informationssicherheits-Managementsystem der
 - Gap Analysis Templates
 - Remediation-Tracking
 
-
 **Unterstützende Materialien**:
 
 - Exception Request Prozeduren
 - Benutzer-Kommunikations-Templates
 - Quick Reference Guides
 - Incident Response Playbooks
-
 
 ## Regulatorisches Mapping
 
@@ -483,7 +451,6 @@ Diese Richtlinie adressiert Web-Filtering-Anforderungen von:
 - Benutzer-Verantwortlichkeiten und Reporting-Prozeduren
 - Erkennung von Phishing und verdächtigen Websites
 
-
 **Technisches Training** (IT/Security-Personal):
 
 - Web-Filtering-Technologie-Konfiguration und Wartung
@@ -491,13 +458,11 @@ Diese Richtlinie adressiert Web-Filtering-Anforderungen von:
 - Incident Response Prozeduren
 - Exception Request Evaluation
 
-
 **Operatives Training** (IT Operations, Help Desk):
 
 - False Positive Handling und Eskalation
 - Benutzer-Support-Prozeduren
 - Häufige Blocking-Szenarien und Resolution
-
 
 ---
 
@@ -532,7 +497,6 @@ Diese Richtlinie adressiert Web-Filtering-Anforderungen von:
 - **Blockiert**: Alle Threat Protection Kategorien (Malware, Phishing, C2, Exploits) — keine Ausnahmen erlaubt
 - **Blockiert**: Hochrisiko-Inhaltskategorien (Erwachseneninhalte, illegale Inhalte, Anonymisierer/Proxies)
 - **Erlaubt**: Allgemeiner Webzugang für legitime geschäftliche Nutzung
-
 
 **Coverage**: Alle Gast-Netzwerk-Egress-Punkte SOLLEN Web-Filtering-Kontrollen durchlaufen, bevor sie das Internet erreichen.
 

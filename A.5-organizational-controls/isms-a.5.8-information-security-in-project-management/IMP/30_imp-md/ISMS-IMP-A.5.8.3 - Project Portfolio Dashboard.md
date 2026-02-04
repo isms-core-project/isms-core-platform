@@ -61,13 +61,11 @@ This dashboard provides **executive-level visibility into project security integ
 - **Secondary (optional):** ISMS-IMP-A.5.8.2 (Security Requirements Register) - enhances analysis with requirement-level detail
 - **Tertiary:** PMO project portfolio data - project list, classifications, timelines, budgets
 
-
 **Output Format:**
 
 - Excel workbook with automated dashboards
 - Executive PowerPoint summary (1-slide for Board, 5-10 slides for quarterly management review)
 - Trend charts suitable for presentation
-
 
 ## Why This Matters
 
@@ -82,13 +80,11 @@ This dashboard provides **executive-level visibility into project security integ
 - Results of risk assessment and status of risk treatment
 - Opportunities for continual improvement
 
-
 **This dashboard directly supports management review by providing:**
 
 - ✅ ISMS performance metrics (project security integration effectiveness)
 - ✅ Risk treatment status (project-level risks and remediation)
 - ✅ Improvement opportunities (common gaps, lessons learned)
-
 
 **Regulatory Context:**
 
@@ -97,18 +93,15 @@ This dashboard provides **executive-level visibility into project security integ
 - Management body must oversee ICT risk management measures
 - Portfolio view demonstrates management oversight
 
-
 **DORA (Digital Operational Resilience Act - Financial Sector) - Article 6:**
 
 - ICT risk management framework must be comprehensive
 - Portfolio dashboard evidences systematic ICT project oversight
 
-
 **GDPR Article 24 & 32:**
 
 - Controller must demonstrate appropriate technical and organizational measures
 - Portfolio dashboard proves systematic data protection integration in projects
-
 
 **Business Value:**
 
@@ -119,7 +112,6 @@ This dashboard provides **executive-level visibility into project security integ
 - Evidence of security program maturity
 - Budget justification (gaps → resource needs)
 
-
 **For Executive Management:**
 
 - Concise portfolio security summary (not overwhelmed with project details)
@@ -127,13 +119,11 @@ This dashboard provides **executive-level visibility into project security integ
 - Trend visibility (are we improving?)
 - Accountability (which projects/PMs struggling with security integration?)
 
-
 **For PMO Director:**
 
 - Project governance oversight (gate review effectiveness)
 - Process improvement insights (common gaps = process fixes needed)
 - Resource allocation optimization
-
 
 **For Board of Directors:**
 
@@ -141,13 +131,11 @@ This dashboard provides **executive-level visibility into project security integ
 - Strategic risk visibility (portfolio-wide security risks)
 - Assurance that security integrated systematically
 
-
 **For Auditors:**
 
 - Evidence of systematic Control A.5.8 implementation across portfolio
 - Trend data showing continuous improvement
 - Sampling framework (identify representative projects for detailed audit)
-
 
 ## Who Uses This Dashboard
 
@@ -167,7 +155,6 @@ This dashboard provides **executive-level visibility into project security integ
   - Escalate critical issues to Executive Management
   - Allocate security budget to address gaps
 
-
 **2. Executive Management / Leadership Team**
 
 - **Frequency:** Quarterly management review
@@ -179,7 +166,6 @@ This dashboard provides **executive-level visibility into project security integ
   - Approve budget for security improvements
   - Hold accountable (PMO, InfoSec) for improvement plans
   - Escalate to Board if portfolio risk unacceptable
-
 
 **3. PMO Director / Program Management Office**
 
@@ -194,7 +180,6 @@ This dashboard provides **executive-level visibility into project security integ
   - Provide additional support to struggling projects
   - Recognize/reward PMs excelling in security integration
 
-
 **4. Board of Directors**
 
 - **Frequency:** Annually (or quarterly if high-risk portfolio)
@@ -206,7 +191,6 @@ This dashboard provides **executive-level visibility into project security integ
   - Review and challenge management on portfolio security
   - Approve significant security investments
   - Provide guidance on risk appetite
-
 
 **5. Internal Audit / External Auditors**
 
@@ -220,7 +204,6 @@ This dashboard provides **executive-level visibility into project security integ
   - Use trends to assess ISMS effectiveness
   - Provide audit findings based on portfolio gaps
 
-
 **Supporting Roles:**
 
 **6. Information Security Officer / Security Analyst**
@@ -229,12 +212,10 @@ This dashboard provides **executive-level visibility into project security integ
 - **Frequency:** Quarterly or as-requested
 - **Effort:** 2-4 hours per update (once established)
 
-
 **7. Project Managers (indirect)**
 
 - **Use:** Understand where their projects rank in portfolio
 - **Motivation:** Drive to improve security integration in their projects
-
 
 ## Time Estimate
 
@@ -249,7 +230,6 @@ This dashboard provides **executive-level visibility into project security integ
 - Executive summary preparation: 2-3 hours (PowerPoint slides)
 - **Total First Time:** 8-18 hours (one-time investment)
 
-
 **Quarterly Updates (Ongoing):**
 
 - Collect new/updated project assessments: 30-60 minutes
@@ -258,14 +238,12 @@ This dashboard provides **executive-level visibility into project security integ
 - Executive summary update: 1-2 hours
 - **Total Quarterly:** 3-5 hours
 
-
 **Annual Comprehensive Review:**
 
 - Full-year trend analysis: 2-3 hours
 - Lessons learned synthesis across all projects: 2-3 hours
 - Board presentation preparation: 3-4 hours
 - **Total Annual:** 7-10 hours (in addition to quarterly updates)
-
 
 **Effort by Organization Size:**
 
@@ -283,7 +261,6 @@ This dashboard provides **executive-level visibility into project security integ
 - **Standardize file naming:** `A.5.8.1_ProjectName_YYYY-MM-DD.xlsx` for easy scripting
 - **PMO collaboration:** PMO provides project list, you add security data
 
-
 ## Connection to Policy and Standards
 
 **ISMS-POL-A.5.8 Implementation:**
@@ -296,12 +273,10 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 - *"Annual report to Executive Management on project security program effectiveness"*
 - *"Lessons learned from projects inform continuous improvement"*
 
-
 **ISO 27001:2022 Clause 9.3 - Management Review:**
 
 - Input: Performance indicators, nonconformities, monitoring results, audit results
 - Output: Decisions on improvement opportunities, changes to ISMS
-
 
 **This dashboard provides required inputs:**
 
@@ -310,12 +285,10 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 - **Monitoring results:** Project-by-project status
 - **Improvement opportunities:** Lessons learned synthesis, common gaps
 
-
 **ISO 27002:2022 Guidance on Control A.5.8:**
 
 - *"The organization should regularly review the security aspects of projects to ensure information security is integrated."*
 - Dashboard enables systematic review across portfolio
-
 
 **Regulatory Alignment:**
 
@@ -324,20 +297,17 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 - Article 21: Management body oversight of cybersecurity risk management
 - Portfolio dashboard demonstrates management oversight
 
-
 **DORA (Digital Operational Resilience Act):**
 
 - Article 6: ICT risk management framework
 - Article 11: Testing of ICT systems
 - Portfolio view of ICT project security demonstrates framework
 
-
 **GDPR:**
 
 - Article 24: Controller demonstrates appropriate measures
 - Article 32: Appropriate technical and organizational measures
 - Portfolio dashboard proves systematic data protection integration
-
 
 ---
 
@@ -357,7 +327,6 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
   - Optionally: Projects in Planning (for pipeline visibility)
 - **Minimum data needed:** 3-5 project assessments for meaningful portfolio view
 - **Recommended:** 10+ projects for robust trend analysis
-
 
 **File Organization Best Practice:**
 ```
@@ -379,7 +348,6 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 - Enables scripted data extraction
 - Facilitates quarterly comparisons
 
-
 **Secondary Data Source - OPTIONAL:**
 
 **ISMS-IMP-A.5.8.2 Workbooks (Security Requirements Registers):**
@@ -388,13 +356,11 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 - Enables cross-project requirement patterns (e.g., "80% of projects have MFA requirement")
 - Not mandatory for basic dashboard
 
-
 **PMO Project Portfolio Data - HELPFUL:**
 
 - Master project list with: Project name, PM, business owner, status, budget, timeline
 - Helps identify missing A.5.8.1 assessments (projects without security assessment)
 - Validates completeness (are all projects assessed?)
-
 
 ## Access Required
 
@@ -404,7 +370,6 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 - [ ] Write access to folder for dashboard output
 - [ ] (If scripted) Python/PowerShell execution permissions
 
-
 **Tools Required:**
 
 - [ ] Microsoft Excel 2016+ or compatible (for manual dashboard)
@@ -412,13 +377,11 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 - [ ] OR Power BI / Tableau (for interactive dashboard option)
 - [ ] Microsoft PowerPoint (for executive summary presentations)
 
-
 **Information Access:**
 
 - [ ] ISMS-POL-A.5.8 policy (for reference)
 - [ ] Previous quarter's portfolio dashboard (for trend comparison)
 - [ ] PMO project list (for completeness check)
-
 
 ## Knowledge Required
 
@@ -430,13 +393,11 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 - How to interpret trends (upward trend = improvement, downward = decline)
 - What constitutes acceptable vs. unacceptable portfolio risk
 
-
 **2. Data Analysis:**
 
 - Aggregation methods (average, weighted average, median, percentiles)
 - Trend analysis (quarter-over-quarter, year-over-year)
 - Gap frequency analysis (count occurrences of same gap across projects)
-
 
 **3. Executive Communication:**
 
@@ -444,20 +405,17 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 - Traffic-light reporting (red/amber/green status indicators)
 - Storytelling with data (narratives, not just numbers)
 
-
 **4. Project Portfolio Management Concepts:**
 
 - What is a project portfolio?
 - Portfolio risk vs. individual project risk
 - Resource allocation across portfolio
 
-
 **5. Excel or Dashboard Tool Skills:**
 
 - Advanced Excel: Pivot tables, charts, formulas (SUMIF, COUNTIF, AVERAGEIF)
 - OR Python: pandas for data manipulation, openpyxl for Excel
 - OR Power BI/Tableau: data modeling, visualization
-
 
 ## Tools Needed
 
@@ -468,20 +426,17 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 - Microsoft Excel 2016+
 - Templates provided in Part II of this document
 
-
 **Pros:**
 
 - No programming required
 - Easy to customize
 - Familiar tool
 
-
 **Cons:**
 
 - Manual data entry from each A.5.8.1 workbook (time-consuming for >10 projects)
 - Error-prone (copy/paste mistakes)
 - Tedious to update quarterly
-
 
 **Best For:** Small portfolios (<15 projects), organizations without scripting capability
 
@@ -495,7 +450,6 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 - Libraries: openpyxl (Excel manipulation), pandas (data analysis), matplotlib/seaborn (charts)
 - Script template provided in Part II
 
-
 **Pros:**
 
 - Automated data extraction (reads all A.5.8.1 workbooks automatically)
@@ -503,12 +457,10 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 - Repeatable (quarterly update = just re-run script)
 - Consistent (no human error in data extraction)
 
-
 **Cons:**
 
 - Requires Python skills (or IT support to set up)
 - Initial setup time (4-8 hours to develop/customize script)
-
 
 **Best For:** Medium/large portfolios (15+ projects), organizations with technical capability
 
@@ -521,7 +473,6 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 - Power BI Desktop (Microsoft) or Tableau Desktop
 - Data connection to Excel files or database
 
-
 **Pros:**
 
 - Interactive dashboards (drill-down, filtering, dynamic charts)
@@ -529,13 +480,11 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 - Professional visualizations
 - Shareable (publish to Power BI Service or Tableau Server)
 
-
 **Cons:**
 
 - Licensing costs (Power BI Pro, Tableau Creator)
 - Learning curve (dashboard design skills)
 - Setup complexity (data modeling, refresh schedules)
-
 
 **Best For:** Large portfolios (50+ projects), organizations with BI infrastructure
 
@@ -546,7 +495,6 @@ This dashboard implements **portfolio-level oversight** required by ISMS-POL-A.5
 - **Start with:** Option A (Manual Excel) for first 1-2 quarters to learn what works
 - **Transition to:** Option B (Python script) once process stable and portfolio >15 projects
 - **Consider:** Option C (Power BI/Tableau) if executive team wants interactive dashboards
-
 
 ---
 
@@ -582,7 +530,6 @@ Determine which projects to include in dashboard:
   - Projects closed >12 months ago (unless analyzing multi-year trends)
   - Cancelled projects (unless specifically analyzing cancellations)
 
-
 **1.2 Obtain Assessment Files**
 
 **From Projects:**
@@ -591,13 +538,11 @@ Determine which projects to include in dashboard:
 - Specify deadline: "Need by [date] for quarterly portfolio dashboard"
 - Provide file naming convention: `A.5.8.1_ProjectName_YYYY-MM-DD.xlsx`
 
-
 **From Centralized Repository:**
 
 - If organization has central ISMS documentation repository:
   - Navigate to `/isms/assessments/a58_1/YYYY_QX/`
   - Copy all A.5.8.1 workbooks to working folder
-
 
 **1.3 Validate Completeness**
 
@@ -606,7 +551,6 @@ Cross-check against PMO project list:
 - Do we have A.5.8.1 for all active Medium/High Risk projects? (mandatory)
 - Are any projects missing assessments? (follow up with PM)
 - Are assessments current? (not 6 months old for active project)
-
 
 **1.4 Organize Files**
 
@@ -700,7 +644,6 @@ Create working folder structure:
 - [ ] All required data fields populated? (no blank cells in key columns)
 - [ ] Missing assessments flagged? (note which projects lack A.5.8.1)
 
-
 **Check 2: Accuracy (Spot-Check)**
 
 - [ ] Pick 3-5 random projects
@@ -708,26 +651,22 @@ Create working folder structure:
 - [ ] Verify dashboard data matches source workbook (classification, compliance score, gaps)
 - [ ] If discrepancies: Investigate (formula error? outdated file? manual entry mistake?)
 
-
 **Check 3: Consistency**
 
 - [ ] Project names consistent with PMO list? (no typos, abbreviations match)
 - [ ] Classifications reasonable? (no suspiciously many High or all Low)
 - [ ] Compliance scores logical? (0-100%, no >100%)
 
-
 **Check 4: Currency**
 
 - [ ] Assessment dates recent? (active projects should have updated assessments within last 30-90 days)
 - [ ] Stale data flagged? (if project in Execution but last assessment 6 months ago)
-
 
 **If Quality Issues Found:**
 
 - **Minor (typos, formatting):** Fix in dashboard
 - **Moderate (missing data fields):** Contact PM for clarification
 - **Major (entire project missing, data clearly wrong):** Re-collect data before proceeding
-
 
 **Deliverable:** Validated consolidated data table, quality issues resolved
 
@@ -807,19 +746,16 @@ Priority 1 (Critical - Immediate Attention):
   - OR Any project with Critical findings open
   - OR High Risk project past deployment date with security gaps
 
-
 Priority 2 (High - Address within 30 days):
 
   - Medium Risk projects with Compliance < 60%
   - OR High Risk projects with 70-79% compliance
   - OR Projects with High findings open
 
-
 Priority 3 (Medium - Monitor closely):
 
   - All projects with 60-79% compliance
   - OR Projects with significant delays in security activities
-
 
 Priority 4 (Low - Standard monitoring):
 
@@ -886,19 +822,16 @@ Trend: ↑ Improving (+4% QoQ, 6 projects improved, 1 declined)
 - Trend sparkline (last 4 quarters)
 - Priority projects table (top 3-5)
 
-
 **Slide 2: Trend Analysis** (if quarterly or annual review)
 
 - Line chart: Portfolio score over time (last 4-8 quarters)
 - Bar chart: Projects improved vs. declined (current vs. previous quarter)
 - Key insight: "Portfolio security integration improving steadily, +15% over past year"
 
-
 **Slide 3: Risk-Based Prioritization**
 
 - Table: Priority 1 projects requiring immediate attention (details, actions, owners, deadlines)
 - Visual: Risk heat map (bubble chart: x=Risk Level, y=Compliance Score, bubble size=Budget)
-
 
 **Slide 4: Common Gaps & Remediation Plan**
 
@@ -920,13 +853,11 @@ Trend: ↑ Improving (+4% QoQ, 6 projects improved, 1 declined)
 - Recommended policy/procedure updates
 - Success stories (projects that excelled, share best practices)
 
-
 **Optional Slides (for deep-dive presentations):**
 
 - Slide 6: Regulatory compliance view (GDPR, PCI, sector-specific)
 - Slide 7: Resource and budget analysis
 - Slide 8: Detailed project-by-project status table
-
 
 **Deliverable:** PowerPoint presentation (5-10 slides), PDF export for distribution
 
@@ -943,13 +874,11 @@ Trend: ↑ Improving (+4% QoQ, 6 projects improved, 1 declined)
 - CISO spot-checks: "Does CustomerPortal 65% compliance sound right?" (CISO has context)
 - Confirm no obvious data errors
 
-
 **2. Insights Review (15 min)**
 
 - Walk through executive summary slide-by-slide
 - CISO confirms: Are these the right priorities?
 - Challenge: "Why is Payment Gateway only 72%? What's the blocker?"
-
 
 **3. Recommendations Validation (10 min)**
 
@@ -957,12 +886,10 @@ Trend: ↑ Improving (+4% QoQ, 6 projects improved, 1 declined)
 - CISO approves or adjusts recommendations
 - Assign owners for action items
 
-
 **4. Presentation Approval (5 min)**
 
 - CISO approves executive summary for presentation to management
 - Minor edits requested (wording, emphasis)
-
 
 **5. Action Items (5 min)**
 
@@ -971,7 +898,6 @@ Trend: ↑ Improving (+4% QoQ, 6 projects improved, 1 declined)
   - Schedule MSA negotiation with pen test vendor (Q1 2025)
   - Update project initiation template to include pen test budget line
 - Assign owners and deadlines
-
 
 **Deliverable:** CISO-approved dashboard and executive summary, action item list
 
@@ -987,7 +913,6 @@ Trend: ↑ Improving (+4% QoQ, 6 projects improved, 1 declined)
 - **Duration:** 15-30 minutes (quarterly), 45-60 minutes (annual with Board)
 - **Format:** PowerPoint presentation + Q&A
 
-
 **Presentation Flow:**
 
 **Opening (2 min):**
@@ -995,20 +920,17 @@ Trend: ↑ Improving (+4% QoQ, 6 projects improved, 1 declined)
 - Purpose: "Quarterly review of project security integration across portfolio"
 - Context: "This dashboard consolidates security assessments from 25 active projects"
 
-
 **Slide 1: Portfolio Snapshot (5 min):**
 
 - Present overall health: 🟢 Green, 82% compliance, improving trend
 - Highlight key numbers: 25 projects, 64% meeting target (≥85%)
 - Note top risks: 2 projects requiring immediate attention
 
-
 **Slide 2: Trend Analysis (3 min):**
 
 - Show improvement over time: +4% this quarter, +15% over past year
 - Celebrate wins: 6 projects improved compliance
 - Note: 1 project declined (why? resource constraints, scope change)
-
 
 **Slide 3: Priority Projects (5 min):**
 
@@ -1019,7 +941,6 @@ Trend: ↑ Improving (+4% QoQ, 6 projects improved, 1 declined)
 - Payment Gateway (Medium Risk, 72%)
   - Issue: Vendor security assessment delayed vendor onboarding
   - Action: Accelerating assessment, deployment on track
-
 
 **Slide 4: Portfolio Gaps (5 min):**
 
@@ -1032,14 +953,12 @@ Trend: ↑ Improving (+4% QoQ, 6 projects improved, 1 declined)
 
 - **Budget ask:** $50K for pen test MSA, 0.5 FTE InfoSec resource for workshops
 
-
 **Slide 5: Lessons Learned (3 min):**
 
 - Success story: Mobile App project (95% compliance, ahead of schedule) - why?
   - Early security engagement (Planning phase)
   - Dedicated security champion on team
   - Standard: Require security champion for all High Risk projects
-
 
 **Q&A (5-10 min):**
 
@@ -1048,7 +967,6 @@ Trend: ↑ Improving (+4% QoQ, 6 projects improved, 1 declined)
   - CustomerPortal deployment delay approval
   - Budget approval for gap remediation
   - Policy updates (security champion requirement)
-
 
 **Deliverable:** Management decisions documented, action items assigned
 
@@ -1079,13 +997,11 @@ Create action item register (simple spreadsheet or project management tool):
 - [ ] Escalate blocked items (budget delays, resource constraints)
 - [ ] Report progress to CISO
 
-
 **Next Quarterly Review:**
 
 - [ ] Update dashboard with Q1 data
 - [ ] Show action item completion: "Last quarter we identified pen testing gap, we've now established vendor MSA, 5 projects completed pen tests"
 - [ ] Demonstrate continuous improvement
-
 
 **Deliverable:** Action items tracked to completion, progress demonstrated in next review
 
@@ -1244,7 +1160,6 @@ Change: ↑ +15% (Significant Improvement)
 - **Color-coded:** Status indicator colors for visual scanning
 - **Conditional formatting:** Scores highlighted (red/yellow/green)
 
-
 **Example Rows:**
 
 | Project | Class. | PM | Phase | Score | Status | Crit. Gaps | High Open | Deploy Date | Last Assess | Priority | Notes |
@@ -1261,7 +1176,6 @@ Change: ↑ +15% (Significant Improvement)
 - Total Critical Gaps: 3
 - Total High Findings: 5
 
-
 ---
 
 ## Component 3: Gap Analysis Across Portfolio
@@ -1276,7 +1190,6 @@ From each project's A.5.8.1 (Sheet 8: Gap Analysis):
 
 - Pull all incomplete activities where Status = ⚠️ or ❌ and Required = "Required"
 - Categorize by phase and activity type
-
 
 **Step 2: Frequency Count**
 
@@ -1325,7 +1238,6 @@ Sort gaps by frequency (most common first)
   - Mandatory PM training on threat modeling
   - InfoSec-facilitated threat modeling workshop service
   - Update ISMS-POL-A.5.8 to make threat modeling non-negotiable for High Risk
-
 
 **Visual:** Bar chart showing top 10 gaps by frequency
 
@@ -1425,19 +1337,16 @@ Projects Stable (±5%): 18 (72%)
 - More projects meeting target (64% vs. 32% in Q1)
 - Most common gaps declining (process improvements working)
 
-
 **Concerning Trends:**
 
 - Threat modeling gap plateaued (need new approach)
 - DataWarehouse project declined (investigate why)
-
 
 **Actions Based on Trends:**
 
 - Continue current improvements (MSA, templates)
 - Address plateau: Mandatory threat modeling workshop for all High Risk
 - Deep-dive: What happened to DataWarehouse? (scope change → update classification?)
-
 
 ---
 
@@ -1464,7 +1373,6 @@ Criteria:
 - OR High Risk project deployed/deploying with unresolved High findings
 - OR Project past deployment date with security gate not approved
 
-
 Example Projects:
 | Project | Classification | Score | Issue | Action | Owner | Deadline |
 |---------|---------------|-------|-------|--------|-------|----------|
@@ -1483,7 +1391,6 @@ Criteria:
 - OR High Risk projects with 70-79% compliance
 - OR Projects with multiple High findings open (but not Critical)
 - OR High Risk projects missing mandatory security activities
-
 
 Example Projects:
 | Project | Classification | Score | Issue | Action | Owner | Deadline |
@@ -1504,7 +1411,6 @@ Criteria:
 - OR Projects with Medium findings accumulating (>10 Medium findings)
 - OR Projects with irregular monitoring phase activities
 
-
 Example Projects:
 | Project | Classification | Score | Issue | Action | Owner | Deadline |
 |---------|---------------|-------|-------|--------|-------|----------|
@@ -1522,7 +1428,6 @@ Criteria:
 - All projects with ≥80% compliance
 - Low Risk projects with minor gaps only
 - Projects on track with no significant security issues
-
 
 Example Projects:
 | Project | Classification | Score | Status | Notes |
@@ -1571,7 +1476,6 @@ Based on priority distribution:
 - **InfoSec Officer time:** Priority 2 (5 projects) - reviews, guidance, testing support
 - **PM self-management:** Priority 3-4 (18 projects) - standard governance, InfoSec consultation as-needed
 
-
 **Decision Support:**
 
 For executive decision-making:
@@ -1579,7 +1483,6 @@ For executive decision-making:
 - **Deployment decisions:** Priority 1 cannot deploy, Priority 2 requires risk acceptance, Priority 3-4 standard approval
 - **Budget allocation:** Priority 1-2 may need additional security budget (pen tests, remediation effort)
 - **Timeline adjustments:** Priority 1 may require deployment delays for remediation
-
 
 ---
 
@@ -1592,7 +1495,6 @@ For executive decision-making:
 - ISMS-IMP-A.5.8.1, Sheet 7 (Closure Phase), Section D: Security Lessons Learned
 - Extract from all closed or near-closure projects
 
-
 **Synthesis Process:**
 
 **Step 1: Collect Lessons from All Projects**
@@ -1603,7 +1505,6 @@ For each project, extract:
 - What didn't work? (challenges)
 - What would we do differently? (improvements)
 - Recommended standardizations
-
 
 **Step 2: Thematic Analysis**
 
@@ -1620,13 +1521,11 @@ Root Cause:
   - Budget approved late, vendor procurement delayed
   - PM lack awareness of pen test lead time (4-6 weeks)
 
-
 Recommended Fix:
 
   - Update project initiation template: "For Medium/High Risk, allocate pen test budget, schedule 6 weeks before deployment"
   - Establish MSA with 2-3 pen test vendors for faster procurement
   - PM training: Include security testing timelines in project management training
-
 
 Owner: PMO Director + InfoSec Officer
 Target: Q1 2025 (template update), Q2 2025 (MSA)
@@ -1644,13 +1543,11 @@ Root Cause:
   - PM/BA lack security knowledge to write specific requirements
   - InfoSec involvement too late (after requirements locked)
 
-
 Recommended Fix:
 
   - Create security requirements library (ISMS-IMP-A.5.8.2 examples)
   - Require InfoSec review of requirements during Planning phase (gate criterion)
   - Provide requirement templates by project type (web app, mobile app, API, infrastructure)
-
 
 Owner: InfoSec Officer + PMO
 Target: Q1 2025 (library), Ongoing (requirement reviews)
@@ -1668,13 +1565,11 @@ Root Cause:
   - Documentation started at end of project (rushed)
   - Operations team not engaged during project (don't know what they need)
 
-
 Recommended Fix:
 
   - Create standardized security handover template (Part of ISMS-IMP-A.5.8.1)
   - Start handover doc at project kickoff, update incrementally (not all at end)
   - Require operations team sign-off on handover before Closure gate approval
-
 
 Owner: InfoSec + IT Operations
 Target: Q1 2025 (template), Immediate (process change)
@@ -1692,13 +1587,11 @@ Root Cause:
   - No prioritization (all projects compete for InfoSec time equally)
   - Some activities require InfoSec but could be self-service with tools
 
-
 Recommended Fix:
 
   - Hire additional InfoSec resource (0.5-1.0 FTE) OR external consultant for peak periods
   - Prioritize InfoSec time: High Risk projects get priority, Low Risk self-service
   - Automate where possible: SAST/DAST tools in CI/CD reduce manual review burden
-
 
 Owner: CISO + HR
 Target: Q2 2025 (hiring) OR Q1 2025 (consultant contract)
@@ -1716,13 +1609,11 @@ What they did differently:
   - Early InfoSec engagement (threat modeling in Sprint 0)
   - Automated security testing in CI/CD pipeline
 
-
 Lessons to Standardize:
 
   - Require security champion for all Medium/High Risk projects
   - Integrate security into Agile ceremonies (security item in sprint review checklist)
   - Encourage early security workshops (threat modeling, architecture review)
-
 
 Owner: PMO + InfoSec
 Target: Q1 2025 (update Agile project template)
@@ -1764,13 +1655,11 @@ Q1 2025:
   - 🔄 Update project templates (pen test timeline, security champion requirement)
   - 🔄 PM security training module (development started)
 
-
 Q2 2025:
 
   - InfoSec headcount or consultant engagement (pending budget)
   - Pen test vendor MSA established
   - Rollout updated Agile project template with security integration
-
 
 Q3-Q4 2025:
 
@@ -1809,7 +1698,6 @@ From project assessments and organizational context:
 - **DORA (Digital Operational Resilience Act):** If EU financial institution
 - **NIS2 (Network and Information Security Directive):** If critical infrastructure operator
 - **Sector-specific:** Other industry regulations
-
 
 **Step 2: Map Projects to Regulations**
 
@@ -1892,7 +1780,6 @@ NIS2:          █████████████████████�
 - 🟡 Amber (75-89%): GDPR/nDSG, FINMA, DORA
 - 🔴 Red (<75%): PCI DSS ⚠️ Requires immediate attention
 
-
 **Step 5: Regulatory Gap Analysis**
 
 **Critical Gaps by Regulation:**
@@ -1937,12 +1824,10 @@ Priority: 🟠 HIGH
 - PCI DSS QSA (Qualified Security Assessor): Provide PCI-specific compliance evidence for 3 projects
 - GDPR Supervisory Authority: Demonstrate DPIA process, data protection by design
 
-
 **For Management:**
 
 - Quarterly compliance report: "PCI DSS compliance below target, remediation plan approved"
 - Annual board report: "GDPR compliance strong at 86%, continuous improvement demonstrated"
-
 
 ---
 
@@ -1956,7 +1841,6 @@ Priority: 🟠 HIGH
 - Security budget allocations (from A.5.8.1, Initiation Phase, Section C)
 - InfoSec Officer time tracking (from internal records)
 - External security service costs (pen tests, consulting)
-
 
 **Analysis Dimensions:**
 
@@ -1991,7 +1875,6 @@ By Classification:
 - Low Risk projects have minimal security budget (appropriate for risk level)
 - Security budget ~5% of total portfolio budget (industry benchmark: 5-10%)
 
-
 **B. Security Budget Breakdown by Activity Type**
 
 ```
@@ -2001,13 +1884,11 @@ Security Testing: $120,000 (48%)
   - Vulnerability Scanning: $15,000 (licenses + managed service)
   - SAST/DAST Tools: $25,000 (licenses)
 
-
 Security Assessments: $60,000 (24%)
 
   - Vendor Security Assessments: $30,000 (external questionnaires, audits)
   - Architecture Reviews: $20,000 (external security architects for complex projects)
   - DPIAs: $10,000 (DPO consulting for high-risk processing)
-
 
 Security Tools/Services: $40,000 (16%)
 
@@ -2015,12 +1896,10 @@ Security Tools/Services: $40,000 (16%)
   - Encryption tools/certificates: $10,000
   - MFA/authentication services: $15,000
 
-
 Training & Workshops: $20,000 (8%)
 
   - PM security training: $8,000
   - Threat modeling workshops: $12,000
-
 
 Contingency/Other: $10,000 (4%)
 
@@ -2037,7 +1916,6 @@ Contingency/Other: $10,000 (4%)
 - Vendor assessments significant cost (12%) - opportunity for standardization/templates
 - Training relatively low (8%) - may need investment for PM skill building
 
-
 **C. InfoSec Officer Time Allocation**
 
 ```
@@ -2051,13 +1929,11 @@ Time Allocation (Q4 2024):
     - Requirements review: 50 hours (Medium/High projects)
     - Architecture reviews: 50 hours (High Risk projects)
 
-
   Security Testing Support: 120 hours (23%)
 
     - Test plan reviews: 30 hours
     - Test result analysis: 40 hours
     - Remediation guidance: 50 hours
-
 
   Incident Response & Escalations: 80 hours (15%)
 
@@ -2065,12 +1941,10 @@ Time Allocation (Q4 2024):
     - Escalation meetings: 30 hours
     - Emergency reviews: 20 hours
 
-
   Consulting & Guidance: 60 hours (12%)
 
     - PM questions and guidance: 40 hours
     - Vendor assessment support: 20 hours
-
 
   Continuous Improvement: 40 hours (8%)
 
@@ -2078,12 +1952,10 @@ Time Allocation (Q4 2024):
     - Template development: 15 hours
     - Training development: 10 hours
 
-
   Administrative: 20 hours (4%)
 
     - Portfolio dashboard preparation: 8 hours
     - Reporting: 12 hours
-
 
 Total Billable: 520 hours (100% utilization)
 ```
@@ -2096,7 +1968,6 @@ Total Billable: 520 hours (100% utilization)
 - 38% of time spent on project reviews (15 projects simultaneously = overload)
 - Only 8% time for continuous improvement (should be 15-20% for innovation)
 - **Conclusion:** InfoSec Officer overloaded, need additional headcount or process optimization
-
 
 **D. Security ROI Analysis**
 
@@ -2113,7 +1984,6 @@ Security activities that prevented potential incidents:
    - Pen test cost: $8,000
    - ROI: $492,000 saved / $8,000 invested = 6,150% ROI
 
-
 2. Vendor security assessment blocked insecure SaaS provider
 
    - Estimated incident cost if used: $100,000
@@ -2123,7 +1993,6 @@ Security activities that prevented potential incidents:
    - Assessment cost: $3,000
    - ROI: $97,000 saved / $3,000 = 3,233% ROI
 
-
 3. Threat modeling identified architecture flaw in PaymentGateway
 
    - Estimated incident cost: $300,000
@@ -2132,7 +2001,6 @@ Security activities that prevented potential incidents:
 
    - Threat modeling cost: $2,000
    - ROI: $298,000 / $2,000 = 14,900% ROI
-
 
 Total Prevented Incident Value: $900,000
 Total Security Investment: $250,000
@@ -2151,20 +2019,17 @@ Portfolio Security ROI: $900,000 / $250,000 = 360% ROI (or 3.6:1 return)
    - With MSA: 15 projects × $3,500 = $52,500 (volume discount)
    - Savings: $22,500/year (30% reduction)
 
-
 2. **Standardized Vendor Questionnaire:**
 
    - Current: Custom assessment per vendor = 20 hours InfoSec time × $100/hour = $2,000 per vendor
    - With Standard: 5 hours InfoSec time = $500 per vendor
    - Savings: $1,500 per vendor × 10 vendors = $15,000/year
 
-
 3. **Automated SAST in CI/CD:**
 
    - Current: Manual code reviews = 40 hours InfoSec time per project × 10 software projects = 400 hours
    - With Automation: SAST tool + 10 hours triage per project = 100 hours InfoSec time
    - Savings: 300 hours InfoSec time = $30,000 value (or redeploy to higher-value activities)
-
 
 **Total Potential Savings: $67,500/year (27% of security budget)**
 
@@ -2184,13 +2049,11 @@ Portfolio Security ROI: $900,000 / $250,000 = 360% ROI (or 3.6:1 return)
 - Details available for drill-down questions
 - Use Component 1 (Executive Summary) as the one-pager
 
-
 **Traffic-Light Reporting:**
 
 - Use 🟢🟡🔴 status indicators liberally
 - Executives process visual cues faster than numbers
 - Red items get immediate attention, green items acknowledged briefly
-
 
 **Data-Driven Storytelling:**
 
@@ -2198,13 +2061,11 @@ Portfolio Security ROI: $900,000 / $250,000 = 360% ROI (or 3.6:1 return)
 - Example: "We improved 15% over the year because we established pen test vendor MSA and standardized handover templates"
 - Connect data to business outcomes
 
-
 **Focus on Decisions:**
 
 - Executives don't want info dumps, they want to make decisions
 - Clear asks: "We need to delay CustomerPortal deployment 2 weeks to remediate findings. Approve?"
 - Provide options: "Option A: Delay. Option B: Accept risk (CISO recommends against)."
-
 
 ## Slide-by-Slide Presentation Guide
 
@@ -2282,7 +2143,6 @@ Total ask: $60K/year for headcount, offset by $22K savings = net $38K increase.
 - "How does 82% compare to industry?" → Benchmarking data (if available)
 - "What if we don't approve additional headcount?" → Impact explanation (delays, quality degradation)
 
-
 ---
 
 **Closing:**
@@ -2301,7 +2161,6 @@ Total ask: $60K/year for headcount, offset by $22K savings = net $38K increase.
 - Duration: 30-45 minutes
 - Decisions: Project-specific (delay approvals, budget adjustments)
 
-
 **Annual Dashboard (for Board):**
 
 - Focus: Year-over-year trends, strategic investments, program maturity
@@ -2310,7 +2169,6 @@ Total ask: $60K/year for headcount, offset by $22K savings = net $38K increase.
 - Format: 5-8 slide presentation, executive summary (1-pager)
 - Duration: 15-20 minutes
 - Decisions: Strategic (headcount approval, major process changes, risk appetite)
-
 
 **Annual Dashboard Differences:**
 
@@ -2330,12 +2188,10 @@ Full Year 2024 Highlights:
 - Process maturity improvements (before/after comparisons)
 - Capability building (team skills, tools, processes)
 
-
 **Slide 3: Risk and Compliance Posture**
 
 - Regulatory compliance trends (GDPR, PCI, FINMA)
 - Portfolio risk profile changes (fewer high-risk projects in red zone)
-
 
 **Slide 4: Strategic Investments for Next Year**
 
@@ -2343,17 +2199,14 @@ Full Year 2024 Highlights:
 - Budget request with business justification
 - Expected outcomes (reduced time-to-market, improved security posture)
 
-
 **Slide 5: Board Questions**
 
 - Risk appetite discussion: "Are we accepting appropriate level of project security risk?"
 - Investment decisions: "Approve $200K for security program enhancements?"
 
-
 ---
 
 [DOCUMENT CONTINUES - Part II Technical Specification will complete to 2000-2500 lines]
-
 
 ---
 
@@ -2432,7 +2285,6 @@ Three implementation approaches depending on organization size and technical cap
 - T: Security Budget
 - U: Regulatory Flags (GDPR Y/N, PCI Y/N, etc.)
 
-
 **Pre-format 50-100 rows** for projects
 
 **Data Validation:**
@@ -2441,14 +2293,12 @@ Three implementation approaches depending on organization size and technical cap
 - Current Phase: Dropdown (Initiation, Planning, Execution, Monitoring, Closure, Closed)
 - Compliance Score: Number validation (0-100)
 
-
 **Conditional Formatting:**
 
 - Compliance Score (Column F):
   - ≥85%: Green background (#C6EFCE)
   - 70-84%: Yellow background (#FFEB9C)
   - <70%: Red background (#FFC7CE)
-
 
 ---
 
@@ -2485,7 +2335,6 @@ Use FILTER or manual table showing projects with:
 - OR Critical Gaps > 0
 - OR High Findings Open > 0
 
-
 **Section D: Top 3 Gaps (Manual Entry, Rows 38-45)**
 
 From gap analysis (manual synthesis):
@@ -2507,7 +2356,6 @@ From gap analysis (manual synthesis):
 - Apply conditional formatting
 - Freeze top row (headers)
 - Add total/summary row at bottom
-
 
 **Status Indicator Formula:**
 ```excel
@@ -2549,7 +2397,6 @@ Manually maintain historical quarterly data:
 - Each quarter: Add new row with current quarter data
 - Update charts (data range auto-extends if table formatted)
 
-
 ---
 
 ## Sheet 7: Risk Prioritization
@@ -2572,7 +2419,6 @@ Displays only projects matching criteria.
 - Bubble chart: X=Classification (categorical: Low/Medium/High), Y=Compliance Score (0-100%), Bubble Size=Budget
 - Color by Priority (Red/Orange/Yellow/Green)
 
-
 ---
 
 ## Sheet 11: Charts Collection
@@ -2594,7 +2440,6 @@ Create chart objects linked to data sheets:
 - Small versions in individual component sheets (for detail view)
 - Large versions in Charts sheet (for copy/paste to PowerPoint)
 
-
 ---
 
 # Option B: Python Automated Script
@@ -2612,7 +2457,6 @@ Create chart objects linked to data sheets:
 - `matplotlib` / `seaborn`: Chart generation (optional - can use Excel charts)
 - `pathlib`: File path handling
 - `argparse`: Command-line arguments
-
 
 ## Script Flow
 
@@ -2855,7 +2699,6 @@ Columns:
 - Projects[Project Name] → Gaps[Project Name] (1:Many)
 - Historical Scores[Quarter] → Date[Date] (Many:1)
 
-
 ## DAX Measures
 
 **Portfolio Metrics:**
@@ -2931,13 +2774,11 @@ CALCULATE(
 - Donut chart: Projects by Classification
 - Table: Top 5 Priority Projects
 
-
 **Page 2: Project Details**
 
 - Table: All projects with filters
 - Matrix: Projects × Phases with compliance scores
 - Slicers: Classification, PM, Current Phase
-
 
 **Page 3: Trends**
 
@@ -2945,20 +2786,17 @@ CALCULATE(
 - Stacked bar chart: Projects by status (Green/Amber/Red) over time
 - Waterfall chart: QoQ change breakdown
 
-
 **Page 4: Gaps**
 
 - Bar chart: Top 10 gaps by frequency
 - Table: Gap details with projects affected
 - Matrix: Gaps × Phase
 
-
 **Page 5: Risk Prioritization**
 
 - Scatter plot: Classification (x) × Compliance Score (y), bubble size = budget
 - Table: Priority 1-2 projects with action items
 - Card: Count of critical priority projects
-
 
 ## Data Refresh
 
@@ -3000,7 +2838,6 @@ CALCULATE(
 - Extract requirement counts (total, by category, by priority)
 - Extract implementation rates
 - Enables portfolio-level requirement analysis: "What % of projects have MFA requirement?"
-
 
 ---
 
@@ -3071,7 +2908,6 @@ CALCULATE(
 - Metrics: Year-over-year trends, program maturity, major achievements
 - Decisions: Strategic investments, risk appetite confirmation, multi-year initiatives
 
-
 ## Dashboard Template Version Control
 
 **Template Versioning:**
@@ -3079,7 +2915,6 @@ CALCULATE(
 - Version 1.0 (2025): Initial dashboard template
 - Version 1.1 (2025 Q2): Added regulatory compliance view
 - Version 2.0 (2026): Redesigned for Power BI (breaking change)
-
 
 **Version Control Best Practices:**
 1. Maintain dashboard template in version control (Git or SharePoint versioning)
@@ -3104,7 +2939,6 @@ CALCULATE(
 - Validate A.5.8.1 workbook structure before accepting into portfolio dashboard
 - Document required cell references in script comments
 
-
 ## Issue 2: Missing Projects in Dashboard
 
 **Problem:** PMO says we have 30 projects, dashboard shows 22
@@ -3116,7 +2950,6 @@ CALCULATE(
 - Cross-reference dashboard against PMO project list
 - Flag missing assessments in dashboard: "8 projects without security assessment (30% of portfolio)"
 - Follow up with PMs for missing assessments
-
 
 ## Issue 3: Stale Data in Dashboard
 
@@ -3130,7 +2963,6 @@ CALCULATE(
 - Request updated A.5.8.1 from PM
 - Set policy: Active projects must update A.5.8.1 monthly or at phase gates
 
-
 ## Issue 4: Trend Data Missing
 
 **Problem:** First-time dashboard creation, no historical data for trends
@@ -3143,7 +2975,6 @@ CALCULATE(
 - Note in dashboard: "Baseline quarter, trends will be available Q1 2025"
 - Manually backfill historical data if previous quarters' data available (from PMO or InfoSec records)
 
-
 ## Issue 5: Gap Analysis Incomplete
 
 **Problem:** Gap frequency analysis incomplete, many projects show "No gaps recorded"
@@ -3155,7 +2986,6 @@ CALCULATE(
 - Manual gap extraction required (review each project, identify gaps)
 - Update A.5.8.1 template to mandate gap documentation (cannot mark Complete without gap section filled)
 - Train PMs on importance of gap documentation for lessons learned
-
 
 ---
 

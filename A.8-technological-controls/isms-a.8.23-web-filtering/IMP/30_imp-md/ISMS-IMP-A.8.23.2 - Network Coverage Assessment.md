@@ -43,12 +43,10 @@ This document consists of two parts:
   - Sheet-by-Sheet Specifications
   - Cell Styling Reference
 
-
 **Target Audiences:**
 
 - **Part I:** Assessment users (Network Team, Security Team, Infrastructure Team, System Owners)
 - **Part II:** Workbook developers (Python/Excel script maintainers)
-
 
 ---
 
@@ -71,7 +69,6 @@ This assessment verifies [Organization]'s compliance with:
 - ISO/IEC 27001:2022 Control A.8.23: Web Filtering
 - ISMS-POL-A.8.23, Section 2.1 (Threat Protection Requirements): Threat Protection Requirements (Section 2.1.1: "SHALL apply web filtering across all network segments")
 
-
 Web-based threats don't respect network boundaries. A single unprotected network segment becomes an attacker entry point. This assessment ensures comprehensive coverage by systematically mapping every network segment to deployed filtering solutions, calculating coverage percentages, and identifying gaps.
 
 ### What You'll Document
@@ -84,7 +81,6 @@ Web-based threats don't respect network boundaries. A single unprotected network
 - Approved exemptions (with justification and approval)
 - Verification test results confirming filtering effectiveness
 
-
 **Key Principle:** This assessment is **topology-agnostic**. You document YOUR specific network architecture (whatever it is) and verify filtering coverage across ALL segments. The framework adapts to any network design - traditional perimeter, cloud-first, zero-trust, hybrid, etc.
 
 ### How This Relates to Other Assessments
@@ -92,7 +88,6 @@ Web-based threats don't respect network boundaries. A single unprotected network
 - **ISMS-IMP-A.8.23.1** (Infrastructure): Documents WHAT filtering solutions you have
 - **ISMS-IMP-A.8.23.2** (THIS): Documents WHERE those solutions are deployed
 - **ISMS-IMP-A.8.23.3** (Policy Configuration): Documents HOW those solutions are configured
-
 
 All three must align - solutions identified in Assessment 1 should appear in Coverage Matrix here.
 
@@ -115,7 +110,6 @@ Before starting this assessment, ensure you have:
 - Access to cloud service consoles (if applicable)
 - Ability to perform connectivity tests from various segments
 
-
 ### Required Information
 
 - Complete network topology diagrams (Layer 2 and Layer 3)
@@ -126,13 +120,11 @@ Before starting this assessment, ensure you have:
 - Guest/partner network configurations
 - Mobile device management policies
 
-
 **Completed Prerequisites:**
 
 - ISMS-IMP-A.8.23.1 (Infrastructure Assessment) should be complete
 - You should know which filtering solutions you have deployed
 - Network architecture should be reasonably stable (not mid-migration)
-
 
 **People to Consult:**
 
@@ -144,7 +136,6 @@ Before starting this assessment, ensure you have:
 - Cloud Architects (cloud networking)
 - Security Operations (monitoring, verification testing)
 
-
 **Time Allocation:**
 
 - Network segment inventory: 2-4 hours
@@ -152,7 +143,6 @@ Before starting this assessment, ensure you have:
 - Gap identification: 1-2 hours
 - Verification testing: 2-4 hours
 - Documentation and evidence: 1-2 hours
-
 
 ---
 
@@ -211,7 +201,6 @@ This is the CRITICAL foundation - if you miss segments here, you'll miss coverag
 - Partner extranets
 - Legacy systems on isolated VLANs
 
-
 **Step 3: Coverage Matrix Mapping (2-3 hours)**
 
 1. Go to "Coverage_Matrix" sheet
@@ -267,7 +256,6 @@ This is the CRITICAL foundation - if you miss segments here, you'll miss coverag
    - <100% on high-risk segments = HIGH
    - Partial coverage on low-risk segments = MEDIUM
 
-
 **Step 5: Device Inventory (Optional, 1-2 hours)**
 
 If you have specific devices/endpoints that require tracking:
@@ -286,7 +274,6 @@ If you have specific devices/endpoints that require tracking:
    - Filtering method (network-based vs. agent-based)
    - Coverage status
    - Any unprotected devices
-
 
 **Step 6: Exemption Register (30 minutes - 1 hour)**
 
@@ -315,7 +302,6 @@ For any segments marked "🚫 Exempt":
 - Development environments (with compensating controls)
 - Partner-managed infrastructure
 - Temporary migration/testing situations
-
 
 **Step 7: Coverage Verification Testing (2-4 hours)**
 
@@ -355,7 +341,6 @@ Verify that filtering actually works on each segment:
 - testmyids.com (security product testing)
 - \*DO NOT\* test with actual malware URLs
 
-
 **Step 8: Evidence Collection (1-2 hours)**
 
 1. Go to "Evidence_Register" sheet
@@ -379,7 +364,6 @@ Verify that filtering actually works on each segment:
    - Note where it's stored
    - Mark verification status
 
-
 **Step 9: Quality Check (30 minutes)**
 
 Before submitting for review, verify:
@@ -392,7 +376,6 @@ Before submitting for review, verify:
 - [ ] Evidence collected and referenced
 - [ ] Formulas calculating correctly
 - [ ] No segments marked "Unprotected" without gap/exemption entry
-
 
 **Step 10: Review & Approval (1-2 weeks)**
 
@@ -418,7 +401,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **Purpose:** Unique identifier for cross-referencing
 - **Usage:** Reference this ID in Coverage Matrix, Gap Analysis, Exemption Register
 
-
 **Q: Segment Name**
 
 - **What to enter:** Descriptive name for this network segment
@@ -435,7 +417,6 @@ This section provides detailed guidance for completing each field in the assessm
   - Use consistent naming scheme
   - Avoid cryptic abbreviations
 - **Common mistakes:** Vague names like "LAN", "WiFi" (which LAN? which WiFi?)
-
 
 **Q: Segment Type**
 
@@ -455,7 +436,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **Note:** Same physical network with different purposes = separate segments
   - Example: "Guest WiFi" (segment 1) vs. "Corp WiFi" (segment 2) even if same access points
 
-
 **Q: Location/Site**
 
 - **What to enter:** Physical or logical location
@@ -469,7 +449,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **Why it matters:** Geographic distribution affects filtering architecture
 - **For cloud:** Specify cloud region, not just "cloud"
 - **For remote:** "Remote (distributed)" or "Home offices"
-
 
 **Q: Subnet/VLAN**
 
@@ -486,7 +465,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **For cloud:** May be dynamic ("Azure vNet 10.0.0.0/16") or N/A
 - **Why it matters:** Proves this is a distinct segment
 
-
 **Q: User Count**
 
 - **What to enter:** Approximate number of users who access this segment
@@ -501,7 +479,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **For VPN:** Licensed VPN user count
 - **If unknown:** Best estimate (mark as "~150" in notes)
 
-
 **Q: Device Count**
 
 - **What to enter:** Approximate number of devices on this segment
@@ -514,7 +491,6 @@ This section provides detailed guidance for completing each field in the assessm
   - WiFi controller associated devices
 - **Include:** All devices, not just workstations (IoT, printers, etc.)
 
-
 **Q: Internet Access?**
 
 - **Dropdown options:** Yes, No, Restricted
@@ -524,7 +500,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **Why it matters:** If No = filtering not needed; if Yes/Restricted = filtering required
 - **Cross-check:** "No" internet access means "Filtering Required?" should be "N/A"
 
-
 **Q: Filtering Required?**
 
 - **Dropdown options:** Yes, No, N/A
@@ -533,7 +508,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **Choose "N/A":** Segment has no internet access (nothing to filter)
 - **Policy reference:** ISMS-POL-A.8.23, Section 2.1 (Threat Protection Requirements) Section 2.1.1
 - **If "No":** Must have corresponding exemption entry with approval
-
 
 **Q: Filtering Status**
 
@@ -549,7 +523,6 @@ This section provides detailed guidance for completing each field in the assessm
   - 0% = ❌ or 🚫
 - **Audit flag:** ❌ Unprotected requires immediate explanation or remediation plan
 
-
 **Q: Filtering Solution(s)**
 
 - **What to enter:** Which solution(s) from Assessment 1 protect this segment
@@ -562,7 +535,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **If multiple solutions:** List primary, or reference Coverage Matrix for detail
 - **If none:** Enter "None (see gap GAP-XXX)" or "Exempt (EXE-XXX)"
 - **Cross-check:** Solutions listed here must exist in Assessment 1
-
 
 **Q: Coverage %**
 
@@ -582,7 +554,6 @@ This section provides detailed guidance for completing each field in the assessm
   - Not accounting for bypass methods
   - Forgetting mobile devices when off-network
 
-
 **Q: Bypass Methods**
 
 - **What to enter:** Any known ways users/devices can bypass filtering
@@ -600,7 +571,6 @@ This section provides detailed guidance for completing each field in the assessm
   - Implement compensating controls
 - **Policy:** Some bypasses acceptable with controls, others not
 
-
 **Q: Exemption ID**
 
 - **What to enter:** Reference to Exemption_Register entry
@@ -608,7 +578,6 @@ This section provides detailed guidance for completing each field in the assessm
 - **When to use:** Only when segment status is "🚫 Exempt"
 - **Cross-check:** Exemption ID must exist in Exemption_Register sheet
 - **If exempt without ID:** Missing approval - must obtain or remediate
-
 
 **Q: Evidence**
 
@@ -620,7 +589,6 @@ This section provides detailed guidance for completing each field in the assessm
   - "EVD-041 (test results from SEG-010)"
 - **Reference:** Evidence IDs from Evidence_Register sheet
 - **Multiple pieces OK:** "EVD-015, EVD-022, EVD-033"
-
 
 ### Segment Detail Template (Rows 60+)
 
@@ -635,7 +603,6 @@ For complex or critical segments, provide detailed analysis:
 - **Lateral:** Does traffic move to other segments?
   - Example: "Yes, can reach Corp LAN via routing (filtered), cannot reach DMZ (blocked)"
 
-
 **Filtering Implementation Section:**
 
 - **Enforcement Point:** WHERE in the traffic flow is filtering applied?
@@ -647,7 +614,6 @@ For complex or critical segments, provide detailed analysis:
 - **HTTPS Inspection:** Is encrypted traffic inspected?
   - Yes/No/Partial (affects threat detection capability)
 
-
 **User Profile Section:**
 
 - **User Types:** Who uses this segment?
@@ -656,7 +622,6 @@ For complex or critical segments, provide detailed analysis:
   - High (exec, finance, sensitive data), Medium (general staff), Low (guest, test)
 - **Acceptable Use:** Do users follow acceptable use policy?
   - Generally yes, Some violations, Frequent violations, Exempt from AUP
-
 
 **Technical Details Section:**
 
@@ -667,7 +632,6 @@ For complex or critical segments, provide detailed analysis:
 - **Authentication:** How are users authenticated?
   - Required (must auth), Optional (transparent), None (open access)
 
-
 **Gaps/Issues Section:**
 
 - **Coverage Gaps:** Describe any filtering gaps
@@ -676,7 +640,6 @@ For complex or critical segments, provide detailed analysis:
   - Example: "Users can enable mobile hotspot, bypassing corporate filter"
 - **Remediation Plan:** How will you close gaps?
   - Example: "Deploy endpoint agents to all laptops by Q2 2026"
-
 
 ### Coverage_Matrix Sheet
 
@@ -688,13 +651,11 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
 - **If solution does NOT protect:** Leave blank or "—"
 - **If partial coverage:** Enter actual % (e.g., 60%)
 
-
 **Total Coverage column:**
 
 - Auto-calculates sum across solutions
 - Should NOT exceed 100% (overlapping coverage is still 100% protection)
 - Formula should use: =MIN(SUM(solutions), 100)
-
 
 **Status column:**
 
@@ -703,14 +664,12 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - 1-99%: ⚠️ Partial
   - 0%: ❌ Unprotected OR 🚫 Exempt (check exemption register)
 
-
 **Coverage Heatmap:**
 
 - Review the summary distribution
 - 100% coverage should be majority (>80% of segments)
 - <100% coverage requires gap analysis
 - 0% coverage without exemption = CRITICAL issue
-
 
 ### Gap_Identification Sheet
 
@@ -719,7 +678,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
 - **Format:** GAP-001, GAP-002, etc.
 - **Auto-generated** or manual entry
 - **Purpose:** Track gaps across multiple assessments
-
 
 **Q: Gap Description**
 
@@ -732,7 +690,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - "Some segments not covered" (too vague)
   - "Need more filtering" (not specific)
 
-
 **Q: Affected Segment(s)**
 
 - **What to enter:** Which segment(s) have this gap
@@ -742,13 +699,11 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - "SEG-003, SEG-004, SEG-005"
   - "All branch segments (SEG-020 through SEG-030)"
 
-
 **Q: Current Coverage %**
 
 - **What to enter:** Current coverage percentage
 - **Pulls from:** Network_Segment_Inventory Coverage % field
 - **Example:** "0%", "60%", "85%"
-
 
 **Q: Target Coverage %**
 
@@ -756,7 +711,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
 - **Usually:** 100% (full coverage)
 - **Sometimes:** <100% if partial exemption or compensating controls
 - **Example:** "100%" or "95% (5% exempt per EXE-003)"
-
 
 **Q: Risk Level**
 
@@ -776,7 +730,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - 90-99% coverage (minor gaps)
   - Coverage gaps on low-risk segments
 
-
 **Q: Business Impact**
 
 - **What to enter:** What's the impact if this gap is exploited?
@@ -785,7 +738,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - "Breach could compromise customer data (high-risk segment)"
   - "Limited impact - low-risk dev environment, no production data"
 - **Consider:** Data sensitivity, user types, regulatory requirements
-
 
 **Q: Root Cause**
 
@@ -797,7 +749,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - "Legacy firewall lacks modern filtering features"
   - "Budget constraints delayed upgrade"
 - **Be honest:** Root cause analysis drives effective remediation
-
 
 **Q: Remediation Plan**
 
@@ -812,7 +763,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - "Buy better firewall" (not specific enough)
 - **Include:** Specific actions, technologies, timelines
 
-
 **Q: Owner**
 
 - **What to enter:** Who is responsible for remediation?
@@ -822,7 +772,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - "Jane Smith (Infrastructure)"
   - "Security Team + Branch Office Managers"
 - **Must be:** Someone with authority and resources
-
 
 **Q: Target Date**
 
@@ -834,7 +783,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
 - **Medium gaps:** 90-180 days
 - **Low gaps:** >180 days (or "next budget cycle")
 
-
 **Q: Status**
 
 - **Dropdown:** Open / In Progress / Resolved / Accepted Risk / Exempt
@@ -843,7 +791,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
 - **Choose "Resolved":** Gap closed, coverage achieved
 - **Choose "Accepted Risk":** Management accepts risk, no remediation
 - **Choose "Exempt":** Approved exemption, gap remains by design
-
 
 **Q: Dependencies**
 
@@ -856,7 +803,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - "None"
 - **Why it matters:** Explains delays, manages expectations
 
-
 ### Device_Inventory Sheet
 
 (Optional - use if tracking specific devices/endpoints)
@@ -866,19 +812,16 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
 - **Auto-generated:** DEV-001, DEV-002, etc.
 - **Or use:** Asset tag, serial number, hostname
 
-
 **Q: Device Type**
 
 - **Dropdown:** Laptop, Desktop, Smartphone, Tablet, Virtual Desktop, Other
 - **Categorize** by form factor/type
-
 
 **Q: Owner/User**
 
 - **What to enter:** Who uses this device
 - **Format:** Name or department
 - **For shared devices:** "Shared - Marketing" or "Kiosk - Lobby"
-
 
 **Q: Location/Segment**
 
@@ -888,14 +831,12 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - "SEG-010 (Branch 05)"
   - "Mobile (various networks)"
 
-
 **Q: Filtering Method**
 
 - **Dropdown:** Yes (endpoint agent), No (network-based), Hybrid
 - **Choose "Yes (endpoint agent)":** Device has filtering agent installed
 - **Choose "No (network-based)":** Relies on network filtering only
 - **Choose "Hybrid":** Both endpoint agent AND network filtering
-
 
 **Q: Agent Installed?**
 
@@ -905,7 +846,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - "Cisco AnyConnect + Umbrella Roaming Client"
   - "N/A (network-based only)"
 
-
 **Q: Coverage Status**
 
 - **What to enter:** Is this device adequately protected?
@@ -914,13 +854,11 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - "⚠️ Partial (network filter only, no agent)"
   - "❌ Unprotected (no agent, no network filter)"
 
-
 **Q: Last Verified**
 
 - **What to enter:** When was filtering last verified on this device?
 - **Format:** DD.MM.YYYY
 - **How to verify:** User accessed known blocked site, verified block
-
 
 ### Exemption_Register Sheet
 
@@ -928,7 +866,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
 
 - **Format:** EXE-001, EXE-002, etc.
 - **Purpose:** Cross-reference to Network_Segment_Inventory
-
 
 **Q: Segment(s) Affected**
 
@@ -938,7 +875,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - "SEG-025"
   - "SEG-030, SEG-031, SEG-032"
 
-
 **Q: Exemption Type**
 
 - **Dropdown:** Full Exemption, Partial Exemption, Temporary Exemption, Category Exemption, Technical Exemption
@@ -947,7 +883,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
 - **Choose "Temporary Exemption":** Time-limited exemption
 - **Choose "Category Exemption":** Exempt from category filtering only (threat protection still required)
 - **Choose "Technical Exemption":** Technical limitation prevents filtering
-
 
 **Q: Business Justification**
 
@@ -961,7 +896,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - "Don't want to" (not a justification)
   - "Too expensive" (needs risk acceptance, not exemption)
 
-
 **Q: Compensating Controls**
 
 - **What to enter:** What OTHER controls mitigate risk?
@@ -973,13 +907,11 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - "Time-limited exemption (30 days only)"
 - **REQUIRED:** Exemptions without compensating controls = unacceptable risk
 
-
 **Q: Requested By**
 
 - **What to enter:** Who requested the exemption
 - **Format:** Name + date
 - **Example:** "Dr. John Smith (Medical Device Manager), 15.01.2026"
-
 
 **Q: Approved By**
 
@@ -989,12 +921,10 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
 - **Example:** "Jane Doe (CISO), 20.01.2026"
 - **Evidence:** Must have approval email/ticket (link in Evidence column)
 
-
 **Q: Approval Date**
 
 - **What to enter:** Date exemption was approved
 - **Format:** DD.MM.YYYY
-
 
 **Q: Expiration Date**
 
@@ -1004,7 +934,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
 - **For temporary:** Specific date
 - **Review:** Exempt segments should be reviewed annually minimum
 
-
 **Q: Status**
 
 - **Dropdown:** Active / Expired / Revoked / Under Review
@@ -1012,7 +941,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
 - **Choose "Expired":** Exemption period ended (must renew or remediate)
 - **Choose "Revoked":** Exemption cancelled before expiry
 - **Choose "Under Review":** Being re-evaluated
-
 
 **Q: Evidence Location**
 
@@ -1023,7 +951,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - "EVD-056 (risk acceptance form)"
   - "EVD-057 (medical device validation report)"
 
-
 ### Coverage_Verification Sheet
 
 **Q: Test ID**
@@ -1031,19 +958,16 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
 - **Format:** TEST-001, TEST-002, etc.
 - **Purpose:** Track individual verification tests
 
-
 **Q: Segment Tested**
 
 - **What to enter:** Which segment was tested
 - **Format:** Segment ID
 - **Example:** "SEG-010"
 
-
 **Q: Test Date**
 
 - **What to enter:** When test was performed
 - **Format:** DD.MM.YYYY
-
 
 **Q: Test Method**
 
@@ -1056,7 +980,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
 - **Choose "Penetration Test":** Part of formal pentest
 - **Choose "Other":** Describe in notes
 
-
 **Q: Test Target**
 
 - **What to enter:** What was tested?
@@ -1067,7 +990,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - "HTTPS inspection (decrypt + re-encrypt)"
   - "Bypass attempt (VPN to external service)"
 
-
 **Q: Expected Result**
 
 - **What to enter:** What SHOULD happen?
@@ -1077,7 +999,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - "Download blocked with alert"
   - "HTTPS inspection certificate presented"
 
-
 **Q: Actual Result**
 
 - **What to enter:** What ACTUALLY happened?
@@ -1085,7 +1006,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - "Block page displayed (as expected)"
   - "Site accessible (FAILED - should be blocked)"
   - "Partial block (HTTP blocked, HTTPS allowed)"
-
 
 **Q: Test Result**
 
@@ -1095,19 +1015,16 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
 - **Choose "Partial":** Filtering partially working
 - **Choose "Inconclusive":** Test couldn't determine (retest needed)
 
-
 **Q: Verification Status**
 
 - **Dropdown:** ✅ Verified / ❌ Failed / ⚠️ Needs Retest
 - **Overall status for this segment**
-
 
 **Q: Tester Name**
 
 - **What to enter:** Who performed the test
 - **Format:** Name or role
 - **Example:** "Security Analyst - John Smith"
-
 
 **Q: Notes**
 
@@ -1117,7 +1034,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - "HTTPS inspection working but certificate warning appeared"
   - "Bypass via mobile hotspot confirmed (gap GAP-015)"
 
-
 **Q: Evidence**
 
 - **What to enter:** Screenshot/log proving test results
@@ -1126,7 +1042,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - "EVD-080 (screenshot of block page)"
   - "EVD-081 (curl output showing connection refused)"
 
-
 ### Evidence_Register Sheet
 
 **Q: Evidence ID**
@@ -1134,12 +1049,10 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
 - **Format:** EVD-001, EVD-002, etc.
 - **Sequential numbering**
 
-
 **Q: Evidence Type**
 
 - **Dropdown:** Network Diagram, VLAN Config, Firewall Policy, VPN Config, WiFi Config, Cloud Dashboard, NAC Policy, Exemption Approval, Test Results, Monitoring Report, Change Record, Other
 - **Choose appropriate type** for categorization
-
 
 **Q: Description**
 
@@ -1150,7 +1063,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - "Screenshot of SEG-010 test showing successful block of malware test site"
   - "CISO email approval of exemption EXE-003 for medical device network"
 
-
 **Q: Related Sheet/Row**
 
 - **What to enter:** Where in the assessment is this evidence used?
@@ -1159,7 +1071,6 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - "Network_Segment_Inventory - SEG-010"
   - "Exemption_Register - EXE-003"
   - "Coverage_Verification - TEST-025"
-
 
 **Q: Location/Path**
 
@@ -1170,13 +1081,11 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
   - "Confluence > Security > Web Filtering > Test Results"
   - "Email > CISO > Exemption Approvals > Medical_Device_Approval_20260110.msg"
 
-
 **Q: Date Collected**
 
 - **What to enter:** When was this evidence collected?
 - **Format:** DD.MM.YYYY
 - **Why it matters:** Evidence age affects validity
-
 
 **Q: Collected By**
 
@@ -1184,14 +1093,12 @@ This sheet is mostly auto-populated from Network_Segment_Inventory, but you veri
 - **Format:** Name
 - **Example:** "John Smith (Network Team)"
 
-
 **Q: Verification Status**
 
 - **Dropdown:** Verified / Pending / Not Verified
 - **Choose "Verified":** Evidence reviewed and confirmed valid
 - **Choose "Pending":** Evidence collected, not yet reviewed
 - **Choose "Not Verified":** Evidence needs verification
-
 
 ---
 
@@ -1209,7 +1116,6 @@ Auditors need to verify your network coverage claims. Acceptable evidence includ
 - IP address management (IPAM) exports
 - Network segmentation diagrams
 
-
 **Filtering Enforcement Evidence:**
 
 - Firewall policies showing filtering rules
@@ -1219,14 +1125,12 @@ Auditors need to verify your network coverage claims. Acceptable evidence includ
 - Proxy auto-config (PAC) files
 - VPN split-tunnel configurations
 
-
 **VPN Configuration Evidence:**
 
 - VPN concentrator configurations
 - VPN IP pool assignments
 - VPN routing tables
 - Client VPN profiles
-
 
 **WiFi Configuration Evidence:**
 
@@ -1235,7 +1139,6 @@ Auditors need to verify your network coverage claims. Acceptable evidence includ
 - Captive portal configurations
 - RADIUS/authentication integration
 
-
 **Cloud Architecture Evidence:**
 
 - Cloud network diagrams (VNets, VPCs, subnets)
@@ -1243,13 +1146,11 @@ Auditors need to verify your network coverage claims. Acceptable evidence includ
 - Cloud firewall/NSG rules
 - VDI/DaaS filtering configurations
 
-
 **NAC Evidence:**
 
 - Network Access Control policies
 - Device posture requirements
 - Endpoint compliance rules
-
 
 **Exemption Evidence:**
 
@@ -1258,14 +1159,12 @@ Auditors need to verify your network coverage claims. Acceptable evidence includ
 - Risk acceptance documentation
 - Compensating control documentation
 
-
 **Verification Evidence:**
 
 - Test results (screenshots, logs)
 - Penetration test reports
 - Monitoring reports showing filtering activity
 - Block logs from each segment
-
 
 ### How to Organize Evidence
 
@@ -1304,14 +1203,12 @@ Auditors need to verify your network coverage claims. Acceptable evidence includ
 - **Solution:** Walk through network systematically with network team, review network diagrams, check VLAN lists
 - **Consequence:** Coverage gaps go undetected, audit finding
 
-
 **Pitfall 2: Assuming 100% Coverage Without Verification**
 
 - **Problem:** Marking segments "Protected" without actual testing
 - **Solution:** Perform verification tests from each segment
 - **Common surprise:** "We thought it was filtered but VPN split-tunnel bypasses it"
 - **Consequence:** False sense of security, actual gaps undetected
-
 
 **Pitfall 3: Not Accounting for Mobile Devices**
 
@@ -1322,7 +1219,6 @@ Auditors need to verify your network coverage claims. Acceptable evidence includ
   - Deploy endpoint agents for always-on protection
   - Use cloud-based filtering that follows devices
 - **Consequence:** Large portion of workforce unprotected
-
 
 **Pitfall 4: Forgetting About Bypass Methods**
 
@@ -1336,7 +1232,6 @@ Auditors need to verify your network coverage claims. Acceptable evidence includ
 - **Solution:** Document known bypasses, assess risk, implement compensating controls
 - **Consequence:** Coverage percentage overstated
 
-
 **Pitfall 5: Exemptions Without Proper Approval**
 
 - **Problem:** Marking segments "Exempt" without formal risk acceptance
@@ -1347,14 +1242,12 @@ Auditors need to verify your network coverage claims. Acceptable evidence includ
   - Documentation in Exemption Register
 - **Consequence:** Audit finding, unaccepted risk
 
-
 **Pitfall 6: Confusing "Filtering Capable" with "Filtering Deployed"**
 
 - **Problem:** Network infrastructure CAN support filtering but isn't configured
 - **Example:** "Firewall has web filtering module but it's not enabled"
 - **Solution:** Verify filtering is actually operational, not just possible
 - **Consequence:** False confidence in coverage
-
 
 **Pitfall 7: Not Coordinating with Infrastructure Assessment**
 
@@ -1363,14 +1256,12 @@ Auditors need to verify your network coverage claims. Acceptable evidence includ
 - **Cross-check:** Every filtering solution in Coverage Matrix should exist in Assessment 1
 - **Consequence:** Audit confusion, inconsistent documentation
 
-
 **Pitfall 8: Ignoring Branch Offices**
 
 - **Problem:** Focusing only on headquarters, forgetting branch locations
 - **Reality:** Branch offices often have independent internet connections
 - **Solution:** Document EVERY physical location
 - **Consequence:** Large coverage gaps in branch networks
-
 
 **Pitfall 9: Cloud Blind Spot**
 
@@ -1382,14 +1273,12 @@ Auditors need to verify your network coverage claims. Acceptable evidence includ
 - **Solution:** Review cloud architecture, consult cloud team
 - **Consequence:** Cloud resources unprotected
 
-
 **Pitfall 10: Stale Network Documentation**
 
 - **Problem:** Using outdated network diagrams
 - **Solution:** Verify current state, update diagrams if needed
 - **Common issue:** "We decommissioned that VLAN 6 months ago" or "We added 5 new branches"
 - **Consequence:** Assessment doesn't reflect reality
-
 
 **Pitfall 11: Percentage Calculation Errors**
 
@@ -1401,14 +1290,12 @@ Auditors need to verify your network coverage claims. Acceptable evidence includ
 - **Solution:** Be precise, verify numbers, use formulas correctly
 - **Consequence:** Overstated coverage, missed gaps
 
-
 **Pitfall 12: No Verification Testing**
 
 - **Problem:** Documenting coverage without testing
 - **Solution:** Actually test from each segment
 - **Reality check:** "Network diagram says filtered, but test shows bypass"
 - **Consequence:** Paper compliance, not real protection
-
 
 ---
 
@@ -1427,7 +1314,6 @@ Before submitting for review, verify all of the following:
 - [ ] Guest networks documented
 - [ ] Special-purpose networks included (DMZ, IoT, dev/test)
 
-
 **Coverage Verification:**
 
 - [ ] Coverage Matrix completed for all segments
@@ -1438,7 +1324,6 @@ Before submitting for review, verify all of the following:
 - [ ] Verification testing completed for critical segments
 - [ ] Test results documented in Coverage_Verification sheet
 
-
 **Gap Analysis:**
 
 - [ ] Every gap identified and documented
@@ -1447,7 +1332,6 @@ Before submitting for review, verify all of the following:
 - [ ] All gaps have owners and target dates
 - [ ] Critical gaps prioritized (0% coverage on production)
 - [ ] Dependencies noted for delayed remediations
-
 
 **Exemption Management:**
 
@@ -1458,7 +1342,6 @@ Before submitting for review, verify all of the following:
 - [ ] Temporary exemptions have expiration dates
 - [ ] Exemption IDs cross-referenced correctly
 
-
 **Evidence Check:**
 
 - [ ] Evidence Register populated
@@ -1468,7 +1351,6 @@ Before submitting for review, verify all of the following:
 - [ ] Sensitive information sanitized
 - [ ] Evidence verification status marked
 
-
 **Cross-Reference Check:**
 
 - [ ] Filtering solutions match Assessment 1 (Infrastructure)
@@ -1476,7 +1358,6 @@ Before submitting for review, verify all of the following:
 - [ ] Evidence IDs referenced correctly
 - [ ] Exemption IDs match Exemption Register
 - [ ] Gap IDs unique and sequential
-
 
 **Formula Validation:**
 
@@ -1486,7 +1367,6 @@ Before submitting for review, verify all of the following:
 - [ ] Conditional formatting displays correctly
 - [ ] No #REF! or #DIV/0! errors
 
-
 **Final Review:**
 
 - [ ] Spell-check completed
@@ -1494,7 +1374,6 @@ Before submitting for review, verify all of the following:
 - [ ] Date format consistent (DD.MM.YYYY)
 - [ ] File naming convention followed
 - [ ] Assessment status set appropriately (Draft/Final)
-
 
 ---
 
@@ -1593,7 +1472,6 @@ Once approved:
    - Temporary exemption expiration dates
    - Next quarterly review date
 
-
 ### Approval Timeline Expectations
 
 - Self-review: 2-3 hours
@@ -1603,7 +1481,6 @@ Once approved:
 - Revisions (if needed): 2-3 days
 - CISO approval: 2-3 business days
 - **Total: 2-3 weeks from submission to final approval**
-
 
 **If Assessment is Rejected:**
 
@@ -1633,7 +1510,6 @@ Common rejection reasons and solutions:
 - **Subtitle:** "ISO/IEC 27001:2022 - Control A.8.23: Web Filtering"
 - **Styling:** Dark blue header (003366), white text, centered, 40px height
 
-
 #### Document Information Block
 ```
 Document ID:           ISMS-IMP-A.8.23.2
@@ -1661,7 +1537,6 @@ Review Cycle:          Quarterly
 - **Title:** "ISMS-IMP-A.8.23.2 — Network Coverage Assessment"
 - **Subtitle:** "ISO/IEC 27001:2022 - Control A.8.23: Web Filtering"
 - **Styling:** Dark blue header (003366), white text, centered, 40px height
-
 
 #### Document Information Block
 ```plaintext
@@ -1709,7 +1584,6 @@ Organizations map THEIR environment to these generic types:
 - **IoT/OT Networks** (building systems, manufacturing, special-purpose)
 - **Development/Test Networks** (staging environments, labs)
 
-
 #### Acceptable Evidence (Examples)
 
 - ✓ Network topology diagrams
@@ -1724,7 +1598,6 @@ Organizations map THEIR environment to these generic types:
 - ✓ Coverage verification tests/reports
 - ✓ Network monitoring dashboards
 - ✓ Change management records for network modifications
-
 
 ---
 
@@ -1823,7 +1696,6 @@ Cross-reference network segments with filtering solutions to visualize coverage.
 - ⚠️ = Partial coverage
 - 🚫 = Exempt from this solution
 
-
 **Summary Row (auto-calculated):**
 
 - Total segments assessed: [COUNT]
@@ -1831,7 +1703,6 @@ Cross-reference network segments with filtering solutions to visualize coverage.
 - Partially protected (<100%): [COUNT]
 - Unprotected (0%): [COUNT]
 - Exempted: [COUNT]
-
 
 ### Coverage Heatmap Section
 
@@ -1875,7 +1746,6 @@ Document segments with insufficient filtering coverage and track remediation.
 - **Remediation Plan:** How will gap be closed?
 - **Status:** Open / In Progress / Resolved / Accepted Risk / Exempt
 
-
 **Data Rows:** 30 rows for gap tracking
 
 ### Gap Summary Metrics
@@ -1894,7 +1764,6 @@ Document segments with insufficient filtering coverage and track remediation.
 - Gaps remaining: [Formula]
 - Average remediation time: [Formula] days
 - Segments at risk: [Formula]
-
 
 ---
 
@@ -1925,7 +1794,6 @@ Track individual devices/endpoints and their filtering protection status (especi
 - **Status:** ✅ Protected / ⚠️ Partial / ❌ Unprotected / 🔄 Pending
 - **Last Verified:** Date of last verification
 
-
 **Data Rows:** 100 rows for device tracking
 
 **Use Cases:**
@@ -1935,7 +1803,6 @@ Track individual devices/endpoints and their filtering protection status (especi
 - Mobile devices (smartphones/tablets)
 - Executive/VIP devices requiring special attention
 - Contractor/temporary worker devices
-
 
 ### Device Summary
 
@@ -1988,7 +1855,6 @@ Document approved exemptions from web filtering requirements with business justi
 - **Status:** Active / Expired / Revoked / Under Review
 - **Evidence:** Link to approval documentation
 
-
 **Data Rows:** 20 rows for exemption tracking
 
 ### Exemption Summary
@@ -2006,7 +1872,6 @@ Document approved exemptions from web filtering requirements with business justi
 - ⚠️ Exemptions >12 months old require re-approval
 - ⚠️ Exemptions without compensating controls = HIGH RISK
 - ⚠️ >10% of segments exempt = escalate to CISO
-
 
 ---
 
@@ -2043,7 +1908,6 @@ Document testing/verification that filtering is actually working on each segment
 - **Issues Found:** Description of any problems
 - **Status:** ✅ Verified / ❌ Failed / ⚠️ Needs Retest
 - **Next Test Date:** [Auto-calculate: Test Date + 90 days]
-
 
 **Data Rows:** 50 rows for verification tracking
 
@@ -2093,7 +1957,6 @@ Centralized evidence repository linking to all supporting documentation.
 - Change Record
 - Other
 
-
 **Data Rows:** 100 rows
 
 ---
@@ -2121,28 +1984,23 @@ Assessment Status:          [Dropdown: Draft/Final/Requires Remediation/Re-asses
 
 - Name, Role, Department, Email, Date, Signature
 
-
 ### Reviewed By - Network Administrator (Rows 20-26)
 
 - Name, Date, Review Notes, Recommendation
-
 
 ### Reviewed By - Information Security Officer (Rows 28-34)
 
 - Name, Date, Review Notes, Recommendation
 
-
 ### Approved By - CISO (Rows 36-42)
 
 - Name, Date, Approval Decision, Conditions/Notes
-
 
 ### Next Review Details (Rows 44-47)
 
 - Next Review Date: [Auto-calculate +3 months]
 - Review Responsible
 - Special Considerations
-
 
 ---
 
@@ -2154,13 +2012,11 @@ Assessment Status:          [Dropdown: Draft/Final/Requires Remediation/Re-asses
 - **Subheader:** Font: Calibri 11pt bold white, Fill: 4472C4 (blue)
 - **Column Header:** Font: Calibri 10pt bold black, Fill: D9D9D9 (gray)
 
-
 ### Input Cell Styles
 
 - **Fill:** FFFFCC (light yellow)
 - **Alignment:** Left/center, wrapped
 - **Border:** Thin black on all sides
-
 
 ### Status Fills
 
@@ -2169,7 +2025,6 @@ Assessment Status:          [Dropdown: Draft/Final/Requires Remediation/Re-asses
 - **Unprotected (❌):** FFC7CE (red)
 - **Planned (🔄):** B4C7E7 (blue)
 - **Exempt (🚫):** D9D9D9 (gray)
-
 
 ---
 
@@ -2180,7 +2035,6 @@ Assessment Status:          [Dropdown: Draft/Final/Requires Remediation/Re-asses
 - **All other assessment sheets:** Freeze at A5
 - **Evidence_Register:** Freeze at A5
 - **Approval_Sign_Off:** Freeze at A3
-
 
 ---
 
@@ -2219,7 +2073,6 @@ Assessment Status:          [Dropdown: Draft/Final/Requires Remediation/Re-asses
 - Change Management: Link network changes to coverage updates
 - Risk Register: Link coverage gaps to risk IDs
 
-
 ### Audit Trail
 
 - All network segments documented
@@ -2228,7 +2081,6 @@ Assessment Status:          [Dropdown: Draft/Final/Requires Remediation/Re-asses
 - Verification tests documented
 - Evidence maintained for all claims
 - Approval sign-off with quarterly reviews
-
 
 ---
 

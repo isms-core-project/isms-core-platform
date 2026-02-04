@@ -45,7 +45,6 @@ This document consists of two parts:
   - Formulas & Calculations
   - Python Script Integration
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -65,13 +64,11 @@ This document consists of two parts:
 - Measures privileged access review completion (quarterly reviews)
 - Identifies suspicious privileged activity requiring investigation
 
-
 **What This Assessment Does NOT Do:**
 
 - Inventory privileged accounts (see IMP.3 - Privileged Account Inventory)
 - Track MFA enrollment (see IMP.2 - MFA Coverage)
 - Real-time incident response (SIEM/SOC handles real-time alerts)
-
 
 **Primary ISO 27001 Control:** A.8.2 - Privileged Access Rights (Section 2.2.6 - Monitoring)
 
@@ -81,7 +78,6 @@ This document consists of two parts:
 - A.8.15 - Logging (privileged access events must be logged)
 - A.5.24-27 - Incident Management (privileged access incidents)
 
-
 **Why Privileged Monitoring Matters:**
 Privileged accounts are high-value targets. Monitoring privileged activity enables early detection of:
 
@@ -89,7 +85,6 @@ Privileged accounts are high-value targets. Monitoring privileged activity enabl
 - Insider threats (privileged users accessing systems outside their role)
 - Tier isolation violations (Tier 0 accounts accessing Tier 1/2 systems)
 - Privilege escalation attempts (unauthorized privilege use)
-
 
 ## When to Use This Assessment
 
@@ -102,13 +97,11 @@ Privileged accounts are high-value targets. Monitoring privileged activity enabl
 - Demonstrating privileged access monitoring to FINMA/DORA/NIS2 auditors
 - Analyzing privileged access trends (usage patterns, anomalies)
 
-
 **Assessment Frequency:**
 
 - **Continuous**: Real-time monitoring via SIEM (alerts on suspicious activity)
 - **Quarterly**: Comprehensive privileged access review, activity analysis, session recording verification
 - **Annual**: Deep assessment, penetration testing, full compliance validation
-
 
 ## Who Completes This Assessment
 
@@ -122,7 +115,6 @@ Privileged accounts are high-value targets. Monitoring privileged activity enabl
 - **SIEM Team**: Configure privileged access alerts, provide log analysis
 - **Managers**: Conduct privileged access reviews for direct reports
 
-
 **Approval Authority:** Chief Information Security Officer (CISO)
 
 ## Expected Time Investment
@@ -135,7 +127,6 @@ Privileged accounts are high-value targets. Monitoring privileged activity enabl
 - Initial workbook completion: 2-3 hours
 - **Total**: 10-19 hours
 
-
 **Quarterly Assessment**:
 
 - Extract privileged access logs (3 months): 1-2 hours
@@ -146,12 +137,10 @@ Privileged accounts are high-value targets. Monitoring privileged activity enabl
 - Evidence collection: 1-2 hours
 - **Total**: 9-15 hours per quarter
 
-
 **Continuous Monitoring** (ongoing):
 
 - SOC team monitors privileged access alerts 24/7
 - Investigate alerts as they occur (minutes to hours per alert)
-
 
 ---
 
@@ -169,7 +158,6 @@ Before starting the assessment, gather the following information:
 - [ ] Privileged access to sensitive systems (domain controllers, databases, security tools)
 - [ ] Session recording logs (recorded sessions, playback capability)
 
-
 **Reference Data:**
 
 - [ ] Privileged account inventory (from IMP.3)
@@ -177,20 +165,17 @@ Before starting the assessment, gather the following information:
 - [ ] Expected privileged access patterns (business hours, authorized systems)
 - [ ] Privileged user roles and responsibilities
 
-
 **Session Recording:**
 
 - [ ] Session recording platform details (CyberArk, BeyondTrust, native recording)
 - [ ] Recorded sessions catalog (which accounts, which systems)
 - [ ] Session playback capability verification
 
-
 **Access Reviews:**
 
 - [ ] Privileged access review schedule (quarterly)
 - [ ] Previous review results
 - [ ] Review completion status per privileged user
-
 
 ## Required Access
 
@@ -204,13 +189,11 @@ Before starting the assessment, gather the following information:
 - [ ] Windows Security Event Logs (Event IDs 4672, 4624, 4625 for privileged access)
 - [ ] PAM solution logs (CyberArk, BeyondTrust activity logs)
 
-
 **People Access Needed:**
 
 - [ ] SOC team (alert investigation details)
 - [ ] Privileged users (interview for access review)
 - [ ] Managers (privileged access review approvals)
-
 
 ## Required Tools
 
@@ -222,13 +205,11 @@ Before starting the assessment, gather the following information:
 - [ ] Session recording platform access
 - [ ] Log analysis tools (PowerShell, Python scripts, grep/awk for Linux logs)
 
-
 **Optional Tools:**
 
 - [ ] SIEM API access (automated log extraction)
 - [ ] PAM API access (session recording metadata)
 - [ ] User Behavior Analytics (UBA) platform
-
 
 ---
 
@@ -260,7 +241,6 @@ Before starting the assessment, gather the following information:
       - Verify Tier 0 accounts ONLY access Tier 0 systems
       - Flag tier isolation violations (CRITICAL)
 
-
 3. VERIFY SESSION RECORDING
    → Sheet 4: Session Recording Coverage
 
@@ -268,13 +248,11 @@ Before starting the assessment, gather the following information:
       - Verify playback capability
       - Identify gaps (sessions NOT recorded)
 
-
 4. CONDUCT ACCESS REVIEWS
    → Sheet 5: Privileged Access Review Status
 
       - Track quarterly review completion per privileged user
       - Document review outcomes (access confirmed, access removed)
-
 
 5. IDENTIFY ANOMALIES
    → Off-hours privileged access
@@ -346,7 +324,6 @@ Option B - Manual:
 - Import log data manually
 - Save as: `ISMS-IMP-A.8.2-3-5.4_Privileged_Monitoring_[DATE].xlsx`
 
-
 **Step 3: Complete Sheet 1 - Privileged Access Activity Log**
 
 For each privileged access event:
@@ -358,7 +335,6 @@ For each privileged access event:
    - Privileged Account: Which admin account was used
    - Account Owner: Person who owns the account
 
-
 2. **Access Details** (Columns E-H):
 
    - Source IP/System: Where access originated
@@ -366,13 +342,11 @@ For each privileged access event:
    - Destination Tier: Tier 0, Tier 1, Tier 2 (from IMP.3)
    - Access Method: Interactive login, SSH, RDP, console, API
 
-
 3. **Activity Classification** (Columns I-K):
 
    - Business Hours: Yes, No (normal business hours 08:00-18:00 weekdays)
    - Expected Activity: Yes, No (is this expected based on user role?)
    - Activity Type: Routine Maintenance, Change Implementation, Incident Response, Unknown
-
 
 4. **Tier Compliance** (Columns L-M):
 
@@ -381,12 +355,10 @@ For each privileged access event:
      - If Account Tier = Tier 0 AND Destination Tier ≠ Tier 0 → **No (VIOLATION)**
      - If Account Tier = Tier 1 AND Destination Tier = Tier 2 → **No (VIOLATION)**
 
-
 5. **Alert Status** (Columns N-O):
 
    - Anomaly Detected: Yes, No (off-hours, unusual system, failed attempts)
    - Investigation Status: Not Required, Pending, In Progress, Completed, Closed
-
 
 **Step 4: Complete Sheet 2 - Privileged Command Execution**
 
@@ -400,13 +372,11 @@ For privileged commands (sudo, runas, admin PowerShell):
    - Command Executed (e.g., "sudo systemctl restart apache2")
    - Command Category: Service Management, User Management, System Configuration, File Operations, Network Configuration, Security, Other
 
-
 2. **Risk Assessment** (Columns G-H):
 
    - High-Risk Command: Yes, No
      - High-risk: user add/delete, privilege escalation, firewall changes, service disable
    - Review Required: Yes, No
-
 
 **Step 5: Complete Sheet 3 - Tier Isolation Compliance**
 
@@ -419,14 +389,12 @@ Summary of tier isolation violations:
 - Tier 0 to Tier 1 (VIOLATION): [count]
 - Tier 0 to Tier 2 (VIOLATION): [count]
 
-
 **Tier 1 Violations:**
 
 - Total Tier 1 access events: [count]
 - Tier 1 to Tier 1 (compliant): [count]
 - Tier 1 to Tier 0 (N/A - Tier 1 cannot access Tier 0): [count]
 - Tier 1 to Tier 2 (VIOLATION): [count]
-
 
 **Violation Details:**
 For each violation:
@@ -437,7 +405,6 @@ For each violation:
 - Violation Type (Tier 0→1, Tier 0→2, Tier 1→2)
 - Destination System
 - Remediation Action (investigate, retrain user, enforce GPO, other)
-
 
 **Step 6: Complete Sheet 4 - Session Recording Coverage**
 
@@ -452,19 +419,16 @@ For each privileged session:
    - Session Duration (minutes)
    - Session Recorded: Yes, No
 
-
 2. **Recording Quality** (Columns G-I):
 
    - Recording Type: Video, Keystroke Log, Both, None
    - Playback Verified: Yes, No (did we test playback?)
    - Recording Location: PAM solution path, file path
 
-
 3. **Gap Analysis** (Columns J-K):
 
    - Recording Required: Yes, No (per policy - Tier 0 mandatory, Tier 1 recommended)
    - Recording Gap: Yes, No (required but not recorded)
-
 
 **Step 7: Complete Sheet 5 - Privileged Access Review Status**
 
@@ -477,7 +441,6 @@ For each privileged user:
    - Highest Tier Access (Tier 0, Tier 1, Tier 2)
    - Manager
 
-
 2. **Review Status** (Columns E-I):
 
    - Last Review Date
@@ -486,12 +449,10 @@ For each privileged user:
    - Review Outcome: Access Confirmed, Access Removed, Access Modified
    - Reviewer (manager or delegated reviewer)
 
-
 3. **Compliance** (Columns J-K):
 
    - Review Overdue Days: [calculated: today - due date if overdue]
    - Compliance: Compliant, Overdue
-
 
 **Step 8: Review Calculated Metrics**
 
@@ -503,7 +464,6 @@ The workbook automatically calculates:
 - **Session Recording Coverage**: Percentage of sessions recorded
 - **Access Review Completion**: Percentage of privileged users with up-to-date reviews
 
-
 **Step 9: Collect Evidence**
 
 Required evidence:
@@ -512,7 +472,6 @@ Required evidence:
 - **Tier Isolation Violation Report**: SIEM query results or log export
 - **Session Recording Examples**: Screenshots of recorded sessions (redact sensitive commands)
 - **Access Review Completion Records**: Manager sign-offs, review meeting minutes
-
 
 Store evidence in: `/evidence/privileged-monitoring/[quarter]/`
 
@@ -538,13 +497,11 @@ Three-level approval process.
    - Date range visible (quarter being assessed)
    - Metrics visible (event count, alerts, anomalies)
 
-
 2. **Privileged Access Log Export**:
 
    - CSV or JSON export from SIEM
    - Columns: timestamp, user, source, destination, event type
    - At least quarterly data (3 months)
-
 
 3. **Tier Isolation Violations**:
 
@@ -552,20 +509,17 @@ Three-level approval process.
    - Alert notifications for tier violations
    - Investigation results (false positive, legitimate exception, actual violation)
 
-
 4. **Session Recording Evidence**:
 
    - Screenshot of session recording catalog
    - Example recorded session (playback screenshot)
    - Session recording configuration (which accounts, which systems)
 
-
 5. **Access Review Records**:
 
    - Quarterly review meeting minutes
    - Manager sign-offs for privileged users
    - Access review spreadsheet with outcomes
-
 
 ## Evidence Storage
 
@@ -597,7 +551,6 @@ For each piece of evidence:
 - [ ] Sensitive data redacted (passwords, PII)
 - [ ] Linked in Evidence Register
 
-
 ---
 
 # Common Pitfalls & How to Avoid Them
@@ -612,7 +565,6 @@ For each piece of evidence:
 - Service accounts often have elevated privileges (SQL Server service account = DBA)
 - Alert on unusual service account activity (unexpected time, unexpected system)
 
-
 ## Pitfall 2: Alert Fatigue
 
 **Problem**: Too many privileged access alerts, SOC ignores them
@@ -623,7 +575,6 @@ For each piece of evidence:
 - Prioritize: Tier 0 access = HIGH priority, Tier 2 = LOW priority
 - Use baseline: Alert on UNUSUAL privileged access, not ALL privileged access
 - Use risk scoring: Off-hours + unusual system + failed attempts = HIGH RISK
-
 
 ## Pitfall 3: Not Testing Session Recording Playback
 
@@ -636,7 +587,6 @@ For each piece of evidence:
 - Check: Is audio included? Is video quality sufficient?
 - Test: Can we search recordings by user, system, time?
 
-
 ## Pitfall 4: Access Reviews as Checkbox Exercise
 
 **Problem**: Managers approve privileged access without actually reviewing
@@ -647,7 +597,6 @@ For each piece of evidence:
 - Ask specific questions: "Does John still need this access? Has his role changed?"
 - Require justification: "Why does John need Domain Admin?"
 - Track outcomes: Access confirmed, access removed, access modified (not just "reviewed")
-
 
 ## Pitfall 5: Ignoring Failed Privileged Login Attempts
 
@@ -660,7 +609,6 @@ For each piece of evidence:
 - Failed login + successful login shortly after = potential credential compromise
 - Alert threshold: 5+ failed attempts within 15 minutes = INVESTIGATE
 
-
 ## Pitfall 6: Not Correlating with User Context
 
 **Problem**: Flagging legitimate off-hours access as suspicious
@@ -672,7 +620,6 @@ For each piece of evidence:
 - Document exceptions: "John Doe is on-call, off-hours access expected this week"
 - Use UBA: Learn normal behavior, alert on deviations from normal
 
-
 ## Pitfall 7: Missing Cross-Platform Privileged Access
 
 **Problem**: Monitoring Active Directory privileged access but missing Azure, AWS, GCP
@@ -682,7 +629,6 @@ For each piece of evidence:
 - Monitor ALL platforms (AD, Entra ID, AWS IAM, GCP IAM, Okta, applications)
 - Correlate: Same user with admin rights in AD AND AWS (multiple attack surfaces)
 - Cloud privileged access is JUST AS CRITICAL as on-prem
-
 
 ## Pitfall 8: Not Investigating Tier Violations
 
@@ -695,7 +641,6 @@ For each piece of evidence:
 - Answer might be: Legitimate break-glass scenario, mistake (user used wrong account), malicious activity
 - Document: Legitimate exception, retraining required, security incident
 
-
 ## Pitfall 9: Session Recordings Not Retained
 
 **Problem**: Recording sessions but deleting recordings after 30 days
@@ -705,7 +650,6 @@ For each piece of evidence:
 - Retention requirements: FINMA requires privileged session logs retained per data retention policy
 - Typical retention: 90 days online, 1-7 years archived
 - Critical sessions: Retain indefinitely (incident investigations, compliance audits)
-
 
 ## Pitfall 10: Not Sharing Monitoring Results
 
@@ -717,7 +661,6 @@ For each piece of evidence:
 - Share with privileged users: "Your off-hours access was flagged, here's why"
 - Executive dashboard: Tier isolation compliance, session recording coverage, access review completion
 - Celebrate: "Zero tier violations this quarter!"
-
 
 ---
 
@@ -733,7 +676,6 @@ Before submitting assessment for approval, verify:
 - [ ] Session recording coverage assessed
 - [ ] Access reviews tracked for all privileged users
 
-
 ## Accuracy
 
 - [ ] Log data validated against SIEM
@@ -741,7 +683,6 @@ Before submitting assessment for approval, verify:
 - [ ] Timestamps in correct timezone
 - [ ] Anomaly detections reviewed (not just auto-flagged)
 - [ ] Access review status validated with managers
-
 
 ## Evidence Quality
 
@@ -751,7 +692,6 @@ Before submitting assessment for approval, verify:
 - [ ] Tier violation investigation results documented
 - [ ] Evidence dated and linked
 
-
 ## Compliance
 
 - [ ] Tier isolation violations flagged as CRITICAL
@@ -759,14 +699,12 @@ Before submitting assessment for approval, verify:
 - [ ] Overdue access reviews flagged
 - [ ] Off-hours anomalies investigated
 
-
 ## Professional Presentation
 
 - [ ] No spelling errors
 - [ ] Consistent date formatting (DD.MM.YYYY HH:MM)
 - [ ] Clear and concise investigation notes
 - [ ] Executive summary suitable for CISO review
-
 
 ---
 
@@ -780,7 +718,6 @@ Before submitting assessment for approval, verify:
 - **Spike Detection**: Sudden increase = potential attack, new system deployment, policy change
 - **Trend Analysis**: Gradual increase = normal growth, gradual decrease = automation/consolidation
 
-
 **Off-Hours Access Percentage:**
 
 - **<5%**: Excellent - Most privileged access during business hours
@@ -788,13 +725,11 @@ Before submitting assessment for approval, verify:
 - **15-30%**: Review Required - High off-hours activity (is this expected?)
 - **>30%**: CONCERN - Unusual pattern (investigate)
 
-
 **Tier Isolation Compliance:**
 
 - **Zero violations**: Excellent - Tier isolation enforced
 - **1-5 violations/quarter**: Acceptable - Investigate each violation
 - **>5 violations/quarter**: CRITICAL - Architectural enforcement failure (GPO, Conditional Access not working)
-
 
 **Session Recording Coverage:**
 
@@ -803,13 +738,11 @@ Before submitting assessment for approval, verify:
 - **<90% Tier 1 sessions recorded**: Gap - Expand session recording
 - **Any Tier 0 session NOT recorded**: CRITICAL GAP
 
-
 **Access Review Completion:**
 
 - **100% reviews completed on time**: Excellent
 - **90-99% completed**: Good - Follow up on overdue reviews
 - **<90% completed**: POOR - Access review process not enforced
-
 
 ## Anomaly Prioritization
 
@@ -820,7 +753,6 @@ Before submitting assessment for approval, verify:
 - Privileged access from unexpected geography (impossible travel)
 - Privileged access to Tier 0 systems from non-PAW workstation
 
-
 **Priority 2 - HIGH (Investigation Within 24 Hours):**
 
 - Off-hours privileged access without on-call schedule justification
@@ -828,19 +760,16 @@ Before submitting assessment for approval, verify:
 - Unusual privileged commands (user account creation, privilege escalation)
 - Tier 1 account accessing Tier 2 system
 
-
 **Priority 3 - MEDIUM (Investigation Within 1 Week):**
 
 - Single failed privileged login attempt
 - Off-hours access with on-call justification (confirm legitimacy)
 - Session recording missing for Tier 1 account
 
-
 **Priority 4 - LOW (Track for Trends):**
 
 - Normal privileged access patterns (business hours, expected systems)
 - Scheduled maintenance window privileged access
-
 
 ## Regulatory Compliance Interpretation
 
@@ -851,12 +780,10 @@ Before submitting assessment for approval, verify:
 - Session recordings = evidence of privileged access monitoring
 - Target: Continuous monitoring, quarterly reviews documented
 
-
 **DORA Compliance** (if EU financial entity):
 
 - Article 10: Monitoring and logging of privileged access
 - Target: Real-time monitoring, alerting on anomalies, quarterly reporting
-
 
 ---
 
@@ -873,7 +800,6 @@ Before submitting assessment for approval, verify:
 - Collect evidence
 - Submit for review
 
-
 **Level 2 - Reviewer (Security Team Lead / Senior SOC Analyst)**:
 
 - Validate log analysis accuracy
@@ -882,7 +808,6 @@ Before submitting assessment for approval, verify:
 - Confirm session recording coverage
 - Approve and forward to CISO
 
-
 **Level 3 - Approver (CISO)**:
 
 - Review privileged access metrics
@@ -890,7 +815,6 @@ Before submitting assessment for approval, verify:
 - Approve access review completion
 - Sign off on quarterly assessment
 - Present to Executive Management (if required)
-
 
 ## Approval Criteria
 
@@ -902,7 +826,6 @@ Assessment is approved when:
 - [ ] Access reviews completed (or overdue reviews escalated)
 - [ ] Anomalies investigated
 - [ ] Evidence collected and linked
-
 
 ## Post-Approval Actions
 
@@ -947,19 +870,16 @@ After CISO approval:
 - 🟢 **Green (Normal)**: RGB(198, 239, 206) - Expected activity
 - ⚫ **Gray (N/A)**: RGB(217, 217, 217) - Not applicable
 
-
 **Tier Violation Colors:**
 
 - 🔴 **Red (VIOLATION)**: RGB(255, 0, 0) - Tier isolation violation (CRITICAL)
 - 🟢 **Green (Compliant)**: RGB(198, 239, 206) - Tier isolation maintained
-
 
 **Review Status Colors:**
 
 - 🔴 **Red (Overdue)**: RGB(255, 199, 206) - Access review overdue
 - 🟡 **Yellow (Due Soon)**: RGB(255, 235, 156) - Review due within 30 days
 - 🟢 **Green (Up to Date)**: RGB(198, 239, 206) - Review completed on time
-
 
 ---
 
@@ -1000,7 +920,6 @@ Log of all privileged access events during assessment period.
 
 - Weekdays (Monday-Friday) AND 08:00-17:59 = Business Hours
 
-
 ## Tier Compliance Calculation (Column M)
 
 **Formula Logic:**
@@ -1020,12 +939,10 @@ Log of all privileged access events during assessment period.
 - Tier 1 account → Tier 0/1 system = Compliant (Tier 1 cannot access Tier 0 anyway)
 - Tier 1 account → Tier 2 system = **VIOLATION**
 
-
 **Conditional Formatting:**
 
 - "No - VIOLATION" → Red background, bold text
 - "Yes" → Green background
-
 
 ---
 
@@ -1060,7 +977,6 @@ Track privileged command execution (sudo, runas, admin PowerShell).
 - Service disable (systemctl disable, sc config start=disabled)
 - Security tool disable (setenforce 0, AppArmor=shutdown)
 
-
 ---
 
 # Sheet 4: Tier Isolation Compliance
@@ -1079,13 +995,11 @@ Tier 0 Access Events:
 - To Tier 1 (VIOLATION): [count]
 - To Tier 2 (VIOLATION): [count]
 
-
 Tier 1 Access Events:
 
 - Total: [count from Sheet 2 where Account Tier = Tier 1]
 - To Tier 1 (Compliant): [count]
 - To Tier 2 (VIOLATION): [count]
-
 
 Overall Tier Isolation Compliance: [%]
 ```
@@ -1142,7 +1056,6 @@ Verify session recording implementation and playback capability.
 - Tier 1 = Recording RECOMMENDED (policy may require)
 - Tier 2 = Optional
 
-
 ## Recording Gap Calculation (Column K)
 
 **Formula Logic:**
@@ -1153,7 +1066,6 @@ Verify session recording implementation and playback capability.
 **Conditional Formatting:**
 
 - "Yes - GAP" → Red background
-
 
 ---
 
@@ -1190,7 +1102,6 @@ Track quarterly privileged access review completion.
 
 - Quarterly review = every 90 days
 
-
 ## Review Status Calculation (Column G)
 
 **Formula Logic:**
@@ -1219,7 +1130,6 @@ Track quarterly privileged access review completion.
 - Overdue → Red background
 - Due Soon → Yellow background
 - Completed → Green background
-
 
 ---
 
@@ -1307,16 +1217,13 @@ Review Completion %:
 
 - Name, Title, Date, Signature
 
-
 **Level 2 - Reviewer (Security Team Lead):**
 
 - Name, Title, Date, Signature
 
-
 **Level 3 - Approver (CISO):**
 
 - Name, Title, Date, Signature
-
 
 ---
 
@@ -1337,7 +1244,6 @@ Automated generation of privileged monitoring workbook with log import.
 - Adds formulas for tier compliance calculations
 - Generates monitoring summary dashboard
 - Sets column widths and freeze panes
-
 
 ## Running the Script
 
@@ -1364,7 +1270,6 @@ Expected columns in SIEM export:
 - DestinationSystem (required)
 - EventType (optional: login, command, privilege_escalation)
 - Command (optional: for privileged command tracking)
-
 
 ---
 
@@ -1413,7 +1318,6 @@ ISMS-IMP-A.8.2-3-5.4 - Privileged Monitoring Assessment v1.0
 - [ ] Cross-references correct (IMP.3 for tier data)
 - [ ] No placeholder text
 - [ ] Technical specification matches Python script
-
 
 ---
 

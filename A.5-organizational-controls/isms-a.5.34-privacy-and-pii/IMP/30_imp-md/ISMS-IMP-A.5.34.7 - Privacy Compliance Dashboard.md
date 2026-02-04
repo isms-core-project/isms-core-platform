@@ -50,14 +50,12 @@ This implementation guide provides comprehensive procedures for consolidating pr
 - Executive summary for Privacy Committee/Board
 - Quarterly trend tracking
 
-
 **Out of Scope:**
 
 - Individual domain re-assessment (handled in respective A.5.34.1-6 assessments)
 - Detailed gap remediation tracking (managed in individual domain workbooks)
 - Real-time monitoring (dashboard updated quarterly or on-demand)
 - Integration with GRC platforms (future enhancement)
-
 
 ### Architecture Overview
 
@@ -69,7 +67,6 @@ This implementation guide provides comprehensive procedures for consolidating pr
 - Excel formula-based calculations within each workbook
 - Manual completion by business owners, DPO, Legal
 
-
 **Layer 2: BIG DASHBOARD (A.5.34.7) - THIS LAYER**
 
 - Python script reads all 6 workbooks using `openpyxl` library
@@ -77,13 +74,11 @@ This implementation guide provides comprehensive procedures for consolidating pr
 - Generates consolidated master dashboard workbook
 - Creates executive summary and trend charts
 
-
 **Layer 3: Optional Consolidation Scripts**
 
 - Risk registry consolidation (merges gaps from all domains)
 - Evidence repository consolidation
 - Normalization scripts for data quality
-
 
 ---
 
@@ -123,7 +118,6 @@ Before running consolidation, ensure ALL 6 domain assessments are complete and c
 - Evidence repository populated
 - Stakeholder approvals obtained
 
-
 ### Software Requirements
 
 **Python Environment:**
@@ -137,7 +131,6 @@ pip install openpyxl
 - Place all 6 domain workbooks in single directory
 - Recommended path: `/privacy-assessments/2025-Q1/`
 - Use consistent date suffix (YYYYMMDD) for quarterly snapshots
-
 
 ---
 
@@ -167,7 +160,6 @@ pip install openpyxl
 - Quarterly snapshots enable trend analysis
 - Audit trail of privacy program maturity over time
 - Ability to demonstrate continuous improvement
-
 
 ---
 
@@ -246,13 +238,11 @@ ISMS_A_5_34_7_Privacy_Compliance_Dashboard_20250130.xlsx
 - 🟡 Yellow: 60-79% (Needs Improvement)
 - 🔴 Red: <60% (Critical)
 
-
 **Trend Indicators:**
 
 - ↗ Up arrow: Improvement vs. last quarter
 - → Flat arrow: No change
 - ↘ Down arrow: Decline (requires investigation)
-
 
 #### 3.3 Compliance Score Weighting
 
@@ -332,12 +322,10 @@ Overall Score = (A.5.34.1_Score × 0.20) + (A.5.34.2_Score × 0.20) +
 - Bi-weekly status updates to Privacy Committee
 - Escalate if blocked or target date at risk
 
-
 **For Medium/Low Gaps:**
 
 - Quarterly review and remediation
 - Batch similar gaps for efficiency
-
 
 ---
 
@@ -366,7 +354,6 @@ Overall Score = (A.5.34.1_Score × 0.20) + (A.5.34.2_Score × 0.20) +
 - 3+ High gaps = 🟡 Medium risk
 - <3 High gaps = 🟢 Low risk
 
-
 #### 5.2 Risk Trend Chart
 
 **Line Chart:** Overall Privacy Risk Score Over Time
@@ -375,12 +362,10 @@ Overall Score = (A.5.34.1_Score × 0.20) + (A.5.34.2_Score × 0.20) +
 - Y-axis: Risk Score (0-100, lower is better)
 - Target Line: Risk Score ≤20 (acceptable risk appetite)
 
-
 **Interpretation:**
 
 - Downward trend = Privacy program improving
 - Upward trend = Requires investigation (new risks, stalled remediation)
-
 
 ---
 
@@ -406,7 +391,6 @@ Overall Score = (A.5.34.1_Score × 0.20) + (A.5.34.2_Score × 0.20) +
 - Assign ownership to collect missing evidence
 - Set deadlines (e.g., 30 days before annual ISO 27001 audit)
 - Track in Sheet 4 with status updates
-
 
 #### 6.2 Evidence Quality Checks
 
@@ -438,13 +422,11 @@ Overall Score = (A.5.34.1_Score × 0.20) + (A.5.34.2_Score × 0.20) +
 - ⚠️ DPIA completion lagging at 75% (target: ≥80%)
 - ⚠️ Cross-border TIAs needed for 7 transfers
 
-
 **Progress Since Last Quarter:**
 
 - Overall score improved from 78% to 85% (+7 percentage points)
 - 12 High gaps closed (down from 18 to 6)
 - Evidence completeness increased from 85% to 90%
-
 
 **Top 3 Risks:**
 1. **Incomplete DPIAs for high-risk processing** (A.5.34.5) - 3 DPIAs pending for new profiling systems
@@ -464,13 +446,11 @@ Overall Score = (A.5.34.1_Score × 0.20) + (A.5.34.2_Score × 0.20) +
 - Privacy team headcount +1 FTE for DSR processing
 - DPIA training for business owners (Q2 2025)
 
-
 **Next Steps:**
 
 - Privacy Committee review: Feb 15, 2025
 - Board update: Mar 1, 2025
 - Next consolidation: Apr 30, 2025 (Q2 2025)
-
 
 #### 7.2 Presentation Slides (Optional)
 
@@ -507,7 +487,6 @@ Overall Score = (A.5.34.1_Score × 0.20) + (A.5.34.2_Score × 0.20) +
 - **Positive:** High gaps declining (24 → 6, 75% reduction)
 - **Concern:** Q4 2024 saw slight increase in High gaps (15 → 18) - investigated and resolved in Q1 2025
 
-
 #### 8.2 Year-Over-Year Improvement
 
 **Q1 2024 vs. Q1 2025:**
@@ -517,13 +496,11 @@ Overall Score = (A.5.34.1_Score × 0.20) + (A.5.34.2_Score × 0.20) +
 - High Gaps: -75% (24 → 6)
 - Evidence Completeness: +15% (75% → 90%)
 
-
 **ROI of Privacy Program Investment:**
 
 - Avoided GDPR penalties (estimated risk reduction: €2M+ based on gap closure)
 - Audit readiness improved (3 findings in 2024 → 0 expected in 2025 audit)
 - Business enablement (faster product launches with DPIA framework)
-
 
 ---
 
@@ -538,7 +515,6 @@ Overall Score = (A.5.34.1_Score × 0.20) + (A.5.34.2_Score × 0.20) +
 - DPO reviews consolidated dashboard
 - Identify remediation priorities
 
-
 **Month 2 (e.g., February):**
 
 - Privacy Committee review (present executive summary)
@@ -546,13 +522,11 @@ Overall Score = (A.5.34.1_Score × 0.20) + (A.5.34.2_Score × 0.20) +
 - Remediation projects initiated for critical/high gaps
 - Update privacy program roadmap
 
-
 **Month 3 (e.g., March):**
 
 - Monitor remediation progress
 - Mid-quarter check-in on gap closure
 - Prepare for next quarter's assessments
-
 
 ### Annual Activities
 
@@ -573,13 +547,11 @@ Overall Score = (A.5.34.1_Score × 0.20) + (A.5.34.2_Score × 0.20) +
 - A.5.34.5 (DPIA) ↔ A.8.8 (Change Management)
 - A.5.34.6 (Cross-Border) ↔ A.5.23 (Cloud Services)
 
-
 **Reporting to ISMS Steering Committee:**
 
 - Privacy compliance dashboard as input to overall ISMS compliance reporting
 - Critical privacy gaps escalated to risk register
 - Privacy incidents fed into A.5.26 (Incident Response)
-
 
 ---
 
@@ -743,7 +715,6 @@ Provide C-level overview of privacy program health with key metrics, domain scor
 - Font: Arial 18pt Bold, White text
 - Background: Dark Blue (#1F4E78)
 
-
 **Section 2: Overall Metrics (A5:L15)**
 
 | Row | Metric Label (Column A) | Value (Column B) | Target (Column C) | Status (Column D) | Data Source |
@@ -862,7 +833,6 @@ for domain_id, domain_name in domain_names.items():
 - Colors: Green slice (85%), Gray slice (15%)
 - Center Label: "85%"
 
-
 **Chart 2: Domain Compliance Scores (Bar Chart)**
 
 - Location: A47:F60
@@ -872,7 +842,6 @@ for domain_id, domain_name in domain_names.items():
 - Bars: Color-coded (Green ≥80%, Yellow 60-79%, Red <60%)
 - Target Line: 80% threshold
 
-
 **Chart 3: Gap Distribution (Stacked Bar Chart)**
 
 - Location: H32:L45
@@ -880,7 +849,6 @@ for domain_id, domain_name in domain_names.items():
 - Y-axis: 6 Domains
 - X-axis: Count
 - Stack segments: Critical (Red), High (Orange), Medium (Yellow), Low (Green)
-
 
 **Chart 4: Quarterly Trend (Line Chart)**
 
@@ -890,7 +858,6 @@ for domain_id, domain_name in domain_names.items():
 - Y-axis: Overall Compliance Score (0-100%)
 - Line: Overall score over time
 - Target Line: 80% threshold
-
 
 ---
 
@@ -1098,12 +1065,10 @@ for row_num, domain_id in enumerate(domain_names.keys(), start=2):
 - 🟡 Medium: Yellow
 - 🟢 Low: Light Green
 
-
 **Overall Risk Row (Row 9):**
 
 - Aggregate risk across all domains per category
 - Calculated as highest risk level across all domains for that category
-
 
 ---
 
@@ -1230,14 +1195,12 @@ G2:G10 populated based on % in column E:
 - Bars: Color-coded (Green ≥80%, Yellow 60-79%, Red <60%)
 - Target Line: 80% threshold
 
-
 **Chart 2: Missing Evidence Breakdown (Pie Chart)**
 
 - Location: J17:O30
 - Type: Pie chart
 - Slices: 6 domains showing proportion of missing evidence
 - Labels: Domain name + count (e.g., "A.5.34.1 - 5 items")
-
 
 ---
 
@@ -1377,7 +1340,6 @@ def generate_executive_summary(ws, domain_data, gaps, evidence):
     - gaps: List of all gaps from consolidated registry
     - evidence: Dict with evidence metrics
     
-
     Outputs:
 
     - Populated Sheet 5 with formatted executive summary
@@ -1486,7 +1448,6 @@ Track privacy compliance metrics over time to demonstrate continuous improvement
 - File naming: `ISMS_A_5_34_7_Privacy_Compliance_Dashboard_YYYYMMDD.xlsx`
 - Retention: Minimum 4 quarters (12 months), recommend 8 quarters (24 months)
 
-
 **Python Loading Historical Data:**
 
 ```python
@@ -1584,7 +1545,6 @@ yoy_change = current_score - yoy_score  # +0.17 = +17%
 - Target Line: 80% threshold (green dashed line)
 - Annotations: Major improvements highlighted
 
-
 **Chart 2: Gap Count Trends (Stacked Area Chart)**
 
 - Location: A42:L57
@@ -1594,7 +1554,6 @@ yoy_change = current_score - yoy_score  # +0.17 = +17%
 - Layers: Critical (Red), High (Orange), Medium (Yellow)
 - Shows gap reduction over time
 
-
 **Chart 3: Domain Score Evolution (Multi-Line Chart)**
 
 - Location: A59:L74
@@ -1603,7 +1562,6 @@ yoy_change = current_score - yoy_score  # +0.17 = +17%
 - Y-axis: Score (0-100%)
 - Lines: 6 domains (different colors)
 - Target Line: 80%
-
 
 ---
 
@@ -1743,7 +1701,6 @@ def extract_domain_metrics(domain_id, workbook_path):
     wb.close()
     return metrics
 
-
 def extract_all_gaps(domain_id, workbook_path):
     """Extract gap registry from domain workbook."""
     gaps = []
@@ -1784,12 +1741,10 @@ def extract_all_gaps(domain_id, workbook_path):
     wb.close()
     return gaps
 
-
 def extract_evidence_metrics(domain_id, workbook_path):
     """Extract evidence completeness from domain workbook."""
     # (Implementation as shown in Sheet 4 section above)
     pass
-
 
 def load_historical_data(archive_dir, quarters=4):
     """Load historical dashboard data for trend analysis."""
@@ -1805,30 +1760,25 @@ def create_executive_dashboard(wb, domain_data, gaps):
     # (Implementation as shown in Sheet 1 section)
     pass
 
-
 def create_consolidated_gap_registry(wb, all_gaps):
     """Create Sheet 2: Consolidated Gap Registry."""
     # (Implementation as shown in Sheet 2 section)
     pass
-
 
 def create_risk_heat_map(wb, domain_data, all_gaps):
     """Create Sheet 3: Risk Heat Map."""
     # (Implementation as shown in Sheet 3 section)
     pass
 
-
 def create_evidence_completeness(wb, evidence_data):
     """Create Sheet 4: Evidence Completeness."""
     # (Implementation as shown in Sheet 4 section)
     pass
 
-
 def create_executive_summary(wb, domain_data, gaps, evidence):
     """Create Sheet 5: Executive Summary."""
     # (Implementation as shown in Sheet 5 section)
     pass
-
 
 def create_quarterly_trends(wb, domain_data, historical_data):
     """Create Sheet 6: Quarterly Trends."""
@@ -1942,7 +1892,6 @@ def main():
     print("4. Verify Evidence Completeness (Sheet 4) for audit readiness")
     print("5. Present Executive Summary (Sheet 5) to Privacy Committee/Board")
     print("6. Track Quarterly Trends (Sheet 6) for continuous improvement")
-
 
 if __name__ == '__main__':
     main()

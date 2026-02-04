@@ -62,13 +62,11 @@ This policy applies to:
 - Projects managed by internal teams, external vendors, or hybrid teams
 - All project phases: Initiation, planning, execution, monitoring/control, closure
 
-
 ## Out of Scope
 
 - Routine operational activities not constituting a project (business-as-usual maintenance)
 - Emergency incident response activities (covered under A.5.24-27 Incident Management)
 - Minor changes managed through change control process (covered under A.8.32 Change Management)
-
 
 ## Regulatory Requirements
 
@@ -78,11 +76,9 @@ This policy applies to:
 - EU GDPR (Art. 25, 32): Data protection by design and by default
 - ISO/IEC 27001:2022: Control A.5.8 information security in project management
 
-
 **Tier 2 - Conditional Applicability** (per ISMS-POL-00):
 
 - NIS2, DORA, FINMA Circular 2008/21, PCI DSS v4.0 - apply when business conditions trigger applicability
-
 
 ---
 
@@ -250,7 +246,6 @@ Security handover SHALL include the following documentation, delivered to operat
 - Review high-risk project security status in management reviews
 - Accept residual risks for critical projects
 
-
 ## Chief Information Security Officer (CISO)
 
 **Accountability**: Information security program implementation, including project security oversight.
@@ -263,7 +258,6 @@ Security handover SHALL include the following documentation, delivered to operat
 - Provide security resources for project support
 - Monitor project security metrics and report to Executive Management
 - Approve exceptions to security requirements
-
 
 **Authority**: Halt or delay projects with unacceptable security risks; mandate additional security controls.
 
@@ -278,7 +272,6 @@ Security handover SHALL include the following documentation, delivered to operat
 - Review security requirements and provide technical guidance
 - Conduct or commission security testing
 - Maintain security requirements templates and checklists
-
 
 **Authority**: Escalate security concerns to CISO; recommend project delays for unmitigated risks.
 
@@ -295,7 +288,6 @@ Security handover SHALL include the following documentation, delivered to operat
 - Escalate security risks and issues
 - Document security aspects in project closure and handover
 
-
 **Authority**: Allocate project resources to security activities; request security support from InfoSec team.
 
 ## Business Owner / Product Owner
@@ -309,7 +301,6 @@ Security handover SHALL include the following documentation, delivered to operat
 - Approve security requirements as part of project scope
 - Accept residual security risks for owned systems/services
 
-
 ## Technical Lead / Solution Architect
 
 **Accountability**: Technical design and implementation, including security architecture.
@@ -321,7 +312,6 @@ Security handover SHALL include the following documentation, delivered to operat
 - Support threat modeling and security architecture reviews
 - Address security findings from testing or reviews
 
-
 ## Third-Party Vendors / Contractors
 
 **Accountability**: Security of vendor-delivered components and services per contract.
@@ -331,7 +321,6 @@ Security handover SHALL include the following documentation, delivered to operat
 - Comply with [Organization]'s security requirements in contracts
 - Participate in security assessments and provide required evidence
 - Report security incidents or vulnerabilities to [Organization]
-
 
 ## RACI Matrix for Project Security Activities
 
@@ -394,7 +383,6 @@ Exceptions to security requirements SHALL be:
 - Time-limited and tracked in the Security Exception Register
 - Reviewed quarterly by CISO
 
-
 ## Policy Review
 
 This policy SHALL be reviewed:
@@ -403,7 +391,6 @@ This policy SHALL be reviewed:
 - Upon major project failures with security root causes
 - Upon regulatory changes affecting project security
 - Upon significant organizational changes
-
 
 ---
 
@@ -454,7 +441,6 @@ Non-compliance with this policy may result in:
 - Escalation to Executive Management
 - Disciplinary action per [Organization]'s HR policies
 
-
 ---
 
 # Related Documents
@@ -498,7 +484,6 @@ Evidence required to demonstrate this policy is adequately documented and approv
 - ✅ Roles and responsibilities assigned (Section 3)
 - ✅ Governance and exception procedures defined (Section 4)
 - ✅ Integration with related controls documented (Section 6)
-
 
 **Stage 2 (Operational Effectiveness) Evidence:**
 

@@ -59,7 +59,6 @@ This assessment evaluates [Organization]'s implementation of **cryptographic con
 - **PCI DSS (Req. 3):** Requires encryption of cardholder data at rest (if applicable)
 - **Industry Standards:** SOC 2, ISO 27018, HIPAA mandate data-at-rest encryption
 
-
 **Business Impact:**
 
 - **Data Breaches:** Unencrypted storage is #1 target for data theft (stolen devices, decommissioned hardware)
@@ -67,13 +66,11 @@ This assessment evaluates [Organization]'s implementation of **cryptographic con
 - **Reputational Damage:** Lost/stolen unencrypted devices create headline news
 - **Insider Threats:** Encryption protects against malicious insiders with physical access
 
-
 **Key Distinction vs. Data Transmission (IMP-1):**
 
 - **IMP-1 (Data Transmission):** Protects data *in motion* (TLS, VPN, SSH)
 - **IMP-2 (Data Storage - THIS ASSESSMENT):** Protects data *at rest* (disk encryption, TDE, file encryption)
 - **Both required:** Comprehensive crypto posture requires protection in transit AND at rest
-
 
 ## Who Should Complete This Assessment
 
@@ -88,7 +85,6 @@ This assessment evaluates [Organization]'s implementation of **cryptographic con
 - Backup systems and encryption methods
 - Data classification scheme (Public/Internal/Confidential/Restricted)
 
-
 **Support Roles:**
 
 - **Endpoint Management Team:** For mobile devices and laptop encryption status
@@ -97,7 +93,6 @@ This assessment evaluates [Organization]'s implementation of **cryptographic con
 - **Cloud Team:** For cloud storage encryption settings
 - **Backup Administrators:** For backup encryption verification
 - **Security Team:** For key management and policy interpretation
-
 
 ## Time Estimate
 
@@ -110,13 +105,11 @@ This assessment evaluates [Organization]'s implementation of **cryptographic con
 - Evidence Collection: 1-1.5 hours (screenshots, configs, reports)
 - Quality Review: 30-60 minutes
 
-
 **Complexity Factors:**
 
 - **Simple:** Homogeneous environment (all Windows/BitLocker or all Mac/FileVault) - 5 hours
 - **Complex:** Heterogeneous environment (multiple platforms, databases, cloud providers) - 7+ hours
 - **Very Complex:** Large organization with diverse storage types and legacy systems - consider splitting assessment across multiple team members
-
 
 ## Connection to Policy
 
@@ -130,7 +123,6 @@ This assessment implements **ISMS-POL-A.8.24, Section 6.3 (Data Storage)** which
 - Backup encryption requirements
 - Removable media encryption policies
 - Key escrow and recovery procedures
-
 
 **Policy Authority:** Chief Information Security Officer (CISO)  
 **Compliance Status:** Mandatory for all systems storing Internal, Confidential, or Restricted data
@@ -153,13 +145,11 @@ This assessment implements **ISMS-POL-A.8.24, Section 6.3 (Data Storage)** which
 - **Servers & databases:** Encryption keys MUST be managed via KMS or HSM
 - **Cloud storage:** CMEK (Customer-Managed Encryption Keys) PREFERRED over CSEK (Cloud-Service-Managed Keys)
 
-
 **Encryption Algorithms (Policy Appendix A):**
 
 - **Approved:** AES-256-XTS (disk), AES-256-GCM (database), AES-256-CBC-ESSIV (Linux)
 - **Acceptable:** AES-128 (for performance-critical systems, Internal data only)
 - **Prohibited:** DES, 3DES, RC4, Blowfish
-
 
 ---
 
@@ -176,14 +166,12 @@ Before starting this assessment, ensure you have access to:
 - [ ] Device compliance reports
 - [ ] Recovery key/escrow system
 
-
 **Endpoint Management:**
 
 - [ ] SCCM / Group Policy management console (Windows)
 - [ ] Jamf Pro / MDM console (macOS)
 - [ ] Centralized BitLocker recovery key repository (Active Directory, Entra ID)
 - [ ] FileVault recovery key system
-
 
 **Server Infrastructure:**
 
@@ -192,13 +180,11 @@ Before starting this assessment, ensure you have access to:
 - [ ] Linux server SSH access (to check LUKS status)
 - [ ] Windows Server access (to check BitLocker status)
 
-
 **Database Systems:**
 
 - [ ] Database administration consoles (SSMS, MySQL Workbench, pgAdmin, etc.)
 - [ ] Database encryption status queries/scripts
 - [ ] Key management system access (if separate from database)
-
 
 **Cloud Providers:**
 
@@ -207,7 +193,6 @@ Before starting this assessment, ensure you have access to:
 - [ ] KMS (Key Management Service) access
 - [ ] Cloud encryption audit logs
 
-
 **Backup Systems:**
 
 - [ ] Backup management console (Veeam, Commvault, Veritas, etc.)
@@ -215,14 +200,12 @@ Before starting this assessment, ensure you have access to:
 - [ ] Backup restore test logs
 - [ ] Off-site backup documentation
 
-
 **Documentation Systems:**
 
 - [ ] Asset inventory / CMDB
 - [ ] Data classification register
 - [ ] Key management documentation
 - [ ] Policy repository (ISMS-POL-A.8.24, Section 6.3 (Data Storage))
-
 
 ## Knowledge Required
 
@@ -235,7 +218,6 @@ Before starting this assessment, ensure you have access to:
 - Backup encryption methods and verification
 - Key escrow procedures and recovery processes
 
-
 **Technical Skills:**
 
 - Ability to check encryption status on various platforms
@@ -243,7 +225,6 @@ Before starting this assessment, ensure you have access to:
 - Database administration basics (query execution, configuration review)
 - Cloud console navigation
 - Backup system configuration review
-
 
 ## Tools Needed
 
@@ -277,14 +258,12 @@ SHOW VARIABLES LIKE '%encrypt%';
 - **Cloud CLI Tools:** AWS CLI, Azure CLI, gcloud (for encryption verification)
 - **Database Queries:** TDE status, encrypted columns inventory
 
-
 **Evidence Collection:**
 
 - Screenshot tool (built-in Snipping Tool, Snagit, etc.)
 - Export capability for MDM/SCCM reports
 - Command-line output capture (terminal logging)
 - Secure storage for evidence files
-
 
 ## Estimated Time Commitment
 
@@ -297,7 +276,6 @@ SHOW VARIABLES LIKE '%encrypt%';
 - Check backup encryption configuration
 - Document current key management approach
 
-
 **Phase 2: Technical Verification (1-1.5 hours)**
 
 - Spot-check encryption on sample devices
@@ -305,7 +283,6 @@ SHOW VARIABLES LIKE '%encrypt%';
 - Test database encryption queries
 - Verify cloud KMS configuration
 - Check backup encryption test results
-
 
 **Phase 3: Assessment Completion (2-2.5 hours)**
 
@@ -315,14 +292,12 @@ SHOW VARIABLES LIKE '%encrypt%';
 - Create remediation plans
 - Collect evidence files
 
-
 **Phase 4: Quality Review (30-60 minutes)**
 
 - Self-check using Quality Checklist (Section 7)
 - Verify evidence completeness
 - Review Summary Dashboard
 - Ensure all gaps have remediation plans
-
 
 **Total:** 5-7 hours for comprehensive assessment
 
@@ -349,7 +324,6 @@ SHOW VARIABLES LIKE '%encrypt%';
    - Verify remote wipe capability
    - **Critical:** Verify recovery key escrow for business-owned devices
 
-
 **STEP 3: Laptops & Workstations (60-75 minutes)**
 2. **Sheet 2: Laptops & Workstations**
 
@@ -360,7 +334,6 @@ SHOW VARIABLES LIKE '%encrypt%';
    - Document platforms and encryption status
    - Identify any unencrypted devices (need remediation plan)
 
-
 **STEP 4: Servers (45-60 minutes)**
 3. **Sheet 3: Servers**
 
@@ -370,7 +343,6 @@ SHOW VARIABLES LIKE '%encrypt%';
    - Windows servers: Check BitLocker status
    - Document encryption at hypervisor vs. guest OS level
    - Verify key management for server encryption
-
 
 **STEP 5: Databases (60-90 minutes - CRITICAL)**
 4. **Sheet 4: Databases**
@@ -384,7 +356,6 @@ SHOW VARIABLES LIKE '%encrypt%';
    - Identify sensitive data in unencrypted databases
    - **Critical:** Databases with Confidential/Restricted data MUST be encrypted
 
-
 **STEP 6: Cloud Storage (30-45 minutes)**
 5. **Sheet 5: Cloud Storage**
 
@@ -394,7 +365,6 @@ SHOW VARIABLES LIKE '%encrypt%';
    - Check if CMEK (Customer-Managed Encryption Keys) used
    - Verify KMS key rotation enabled
    - Document cloud provider encryption policies
-
 
 **STEP 7: Backups (30-45 minutes)**
 6. **Sheet 6: Backups**
@@ -406,7 +376,6 @@ SHOW VARIABLES LIKE '%encrypt%';
    - Document backup encryption keys management
    - Check backup encryption algorithm (AES-256 expected)
 
-
 **STEP 8: Removable Media (15-30 minutes)**
 7. **Sheet 7: Removable Media**
 
@@ -416,7 +385,6 @@ SHOW VARIABLES LIKE '%encrypt%';
    - Document approved encrypted USB vendors (if any)
    - Check for legacy unencrypted removable media usage
 
-
 **STEP 9: Summary & Evidence (30-45 minutes)**
 8. **Summary Dashboard** (auto-calculated, review only)
 
@@ -425,20 +393,17 @@ SHOW VARIABLES LIKE '%encrypt%';
    - Note critical gaps requiring immediate attention
    - Verify calculations make sense
 
-
 9. **Evidence Register**
 
    - List all evidence files collected during assessment
    - Ensure evidence naming is consistent
    - Verify all evidence is accessible
 
-
 10. **Approval Sign-Off**
 
     - Complete assessment summary
     - Sign as assessment owner
     - Route to Information Security Officer for review
-
 
 **STEP 10: Final Quality Check (30 minutes)**
 11. Run through Quality Checklist (Section 7 of this guide)
@@ -456,7 +421,6 @@ SHOW VARIABLES LIKE '%encrypt%';
 - Query all database encryption status in one session
 - Review all cloud provider encryption settings together
 
-
 **Use Automation:**
 
 - PowerShell scripts for BitLocker status across fleet
@@ -464,13 +428,11 @@ SHOW VARIABLES LIKE '%encrypt%';
 - Database queries to check TDE status across instances
 - Cloud CLI tools for bulk encryption verification
 
-
 **Leverage Existing Documentation:**
 
 - If recent SOC 2 or ISO audit: Extract encryption controls evidence
 - If MDM compliance reports exist: Use directly in assessment
 - If database security audit exists: Extract TDE status
-
 
 **Mark Sections N/A Appropriately:**
 
@@ -478,7 +440,6 @@ SHOW VARIABLES LIKE '%encrypt%';
 - If no databases: Mark Sheet 4 as N/A with note "File-based storage only"
 - If no cloud storage: Mark Sheet 5 as N/A
 - N/A is acceptable with justification; blank is not acceptable
-
 
 ---
 
@@ -495,14 +456,12 @@ SHOW VARIABLES LIKE '%encrypt%';
 - **"No":** Only if [Organization] has zero mobile devices with organizational data (extremely rare - even executives usually have phones)
 - **"Not Applicable":** Generally not appropriate (almost all organizations have mobile devices)
 
-
 **Where to Find This Information:**
 
 - MDM console (Intune, Jamf, MobileIron) - device inventory
 - Email system (Exchange, Gmail) - mobile device connections
 - HR records - company-issued device inventory
 - BYOD policy - if personal devices allowed for work
-
 
 **Field-by-Field Guidance:**
 
@@ -532,14 +491,12 @@ SHOW VARIABLES LIKE '%encrypt%';
 - Remote wipe capability configured
 - Recovery keys escrowed for business-owned devices
 
-
 **⚠️ Partial:** Some requirements met but gaps exist:
 
 - Most devices encrypted but some exceptions (< 10% non-compliant)
 - Encryption enabled but MDM doesn't enforce (manual compliance)
 - Recovery keys not escrowed (but devices encrypted)
 - Weak passcode policy (<6 digits/characters)
-
 
 **❌ Non-Compliant:** Critical failures:
 
@@ -548,7 +505,6 @@ SHOW VARIABLES LIKE '%encrypt%';
 - No remote wipe capability
 - Business-owned devices without recovery key escrow
 - Weak or no passcode requirement
-
 
 **N/A:** Organization has no mobile devices with organizational data
 
@@ -609,7 +565,6 @@ Check each item and mark "Yes", "No", or "N/A":
 - Recovery key escrow configuration: `EV-1-Recovery-Keys-Escrow-20260115.pdf`
 - Remote wipe test results: `EV-1-Remote-Wipe-Test-20260115.pdf`
 
-
 **Common Issues & Solutions:**
 
 **Issue:** Some Android devices show "Not Encrypted" in MDM  
@@ -637,7 +592,6 @@ Check each item and mark "Yes", "No", or "N/A":
 - **"No":** Only if [Organization] is entirely thin-client/VDI with zero local data storage (extremely rare)
 - **"Not Applicable":** Not appropriate for this section
 
-
 **Where to Find This Information:**
 
 - SCCM / Intune / Jamf reports (centralized endpoint management)
@@ -645,7 +599,6 @@ Check each item and mark "Yes", "No", or "N/A":
 - Entra ID BitLocker Recovery
 - Jamf Pro FileVault reports (for macOS)
 - Manual checks on Linux workstations (`cryptsetup status`)
-
 
 **Field-by-Field Guidance:**
 
@@ -701,7 +654,6 @@ lsblk -o NAME,TYPE,SIZE,FSTYPE,MOUNTPOINT
 - Recovery keys escrowed to centralized system
 - All devices with Confidential/Restricted data encrypted
 
-
 **⚠️ Partial:**
 
 - Most devices encrypted, some exceptions (<10%)
@@ -709,14 +661,12 @@ lsblk -o NAME,TYPE,SIZE,FSTYPE,MOUNTPOINT
 - Recovery keys not centrally escrowed (manual recovery)
 - Desktop workstations in secure facility not encrypted (with documented risk assessment)
 
-
 **❌ Non-Compliant:**
 
 - Laptops without encryption (>10% of fleet)
 - Confidential/Restricted data on unencrypted devices
 - No recovery key escrow (unable to recover if employee forgets password)
 - Encryption disabled due to "performance concerns"
-
 
 **Compliance Checklist:**
 
@@ -759,7 +709,6 @@ lsblk -o NAME,TYPE,SIZE,FSTYPE,MOUNTPOINT
 - Recovery key escrow verification: `EV-2-AD-BitLocker-Recovery-20260115.png`
 - Encryption algorithm verification: `EV-2-Encryption-Algorithm-Verify-20260115.txt`
 
-
 **Common Issues:**
 
 **Issue:** BitLocker suspended (after BIOS/firmware update)  
@@ -798,7 +747,6 @@ lsblk -o NAME,TYPE,SIZE,FSTYPE,MOUNTPOINT
 - **4.7: Backups** (Backup encryption verification, restore testing, key management)
 - **4.8: Removable Media** (USB encryption policies, BitLocker To Go, device control)
 
-
 **Key Principles Applied to All Sections:**
 
 - Data classification drives encryption requirements
@@ -806,7 +754,6 @@ lsblk -o NAME,TYPE,SIZE,FSTYPE,MOUNTPOINT
 - Key management/escrow critical for business continuity
 - Common pitfalls identified and solutions provided
 - Practical "where to find" and "how to verify" guidance
-
 
 ---
 
@@ -826,14 +773,12 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - `EV-4-MSSQL-TDE-Status-20260115.txt`
 - `EV-5-S3-Encryption-Config-20260115.png`
 
-
 **Storage Requirements:**
 
 - **Location:** Centralized evidence repository (same as IMP-1)
 - **Folder Structure:** Organize by assessment section
 - **Retention:** Audit cycle + 1 year minimum
 - **Sensitivity:** Encryption configs may contain sensitive info - sanitize keys/credentials
-
 
 **Evidence Quality Criteria:**
 
@@ -842,7 +787,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - **Attributable:** Clear which system it documents
 - **Verifiable:** Auditor can reproduce
 - **Protected:** Stored securely, sanitized
-
 
 ## Evidence Types by Section
 
@@ -855,7 +799,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - Recovery key escrow configuration
 - Remote wipe test results
 
-
 **2. Laptops & Workstations:**
 
 - BitLocker status report (all Windows devices)
@@ -864,7 +807,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - Recovery key escrow verification (AD/Entra ID/Jamf)
 - Encryption algorithm verification
 
-
 **3. Servers:**
 
 - Physical server disk encryption status
@@ -872,7 +814,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - Linux LUKS status (data volumes)
 - Windows Server BitLocker status
 - Hypervisor encryption configuration (vSphere, Hyper-V)
-
 
 **4. Databases:**
 
@@ -883,7 +824,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - MongoDB encryption at rest configuration
 - Database key management documentation
 
-
 **5. Cloud Storage:**
 
 - AWS S3 bucket encryption settings
@@ -891,7 +831,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - GCP Cloud Storage encryption settings
 - KMS key configuration (CMEK vs CSEK)
 - Cloud encryption audit logs
-
 
 **6. Backups:**
 
@@ -901,14 +840,12 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - Backup key management documentation
 - Off-site backup encryption verification
 
-
 **7. Removable Media:**
 
 - USB encryption policy document
 - BitLocker To Go configuration
 - Device control/DLP settings (USB restrictions)
 - Approved encrypted USB device list
-
 
 ## Tools for Evidence Collection
 
@@ -966,7 +903,6 @@ gcloud kms keys list --location=global --keyring=my-keyring
 - Review backup file properties (file should not be readable without decryption)
 - Test restore to verify encryption/decryption works
 
-
 ## Evidence Sanitization
 
 **CRITICAL:** Remove sensitive information:
@@ -978,14 +914,12 @@ gcloud kms keys list --location=global --keyring=my-keyring
 - KMS key IDs (if considered sensitive)
 - Personal data in sample queries
 
-
 **Safe to Include:**
 
 - Encryption status (enabled/disabled)
 - Algorithm names (AES-256-XTS, etc.)
 - Key management method (TPM, KMS, HSM)
 - Configuration screenshots with keys redacted
-
 
 ---
 
@@ -1181,7 +1115,6 @@ gcloud kms keys list --location=global --keyring=my-keyring
 - [ ] Evidence Register populated
 - [ ] All evidence files exist and are accessible
 
-
 ## Accuracy Checks
 
 - [ ] Mobile device encryption verified via MDM (not assumed)
@@ -1194,7 +1127,6 @@ gcloud kms keys list --location=global --keyring=my-keyring
 - [ ] Data classifications verified against organizational scheme
 - [ ] Key management methods accurate (TPM, KMS, HSM, etc.)
 
-
 ## Policy Alignment Checks
 
 - [ ] All Confidential/Restricted data storage encrypted
@@ -1206,7 +1138,6 @@ gcloud kms keys list --location=global --keyring=my-keyring
 - [ ] Recovery keys escrowed for business-owned devices
 - [ ] Desktop encryption exceptions documented with risk assessment
 
-
 ## Audit Readiness Checks
 
 - [ ] Evidence is verifiable (auditor could reproduce)
@@ -1215,7 +1146,6 @@ gcloud kms keys list --location=global --keyring=my-keyring
 - [ ] Evidence organized logically and consistently named
 - [ ] Assessment tells clear story from beginning to end
 - [ ] Encryption status not "assumed" - all verified with evidence
-
 
 ## Red Flags to Address BEFORE Submission
 
@@ -1227,7 +1157,6 @@ gcloud kms keys list --location=global --keyring=my-keyring
 - [ ] No backups without encryption or tested recovery
 - [ ] Overall compliance rate >80% (if <80%, indicates systemic issue)
 
-
 ## Final Sanity Checks
 
 - [ ] Summary Dashboard totals match manual count
@@ -1236,7 +1165,6 @@ gcloud kms keys list --location=global --keyring=my-keyring
 - [ ] Organization name filled in
 - [ ] Next Review Date set (quarterly)
 - [ ] Assessment status set to "Draft"
-
 
 **If ANY checkbox above is unchecked: STOP. Complete missing item before submitting.**
 
@@ -1254,7 +1182,6 @@ gcloud kms keys list --location=global --keyring=my-keyring
 - Set status to "Draft"
 - Submit to Information Security Officer
 
-
 **Step 2: Technical Review** (Information Security Officer)
 
 - Verify encryption status claims (spot-check)
@@ -1264,13 +1191,11 @@ gcloud kms keys list --location=global --keyring=my-keyring
 - Identify missing risks/controls
 - Provide feedback
 
-
 **Step 3: Remediation (if needed)** (Assessment Owner)
 
 - Address review feedback
 - Update assessment
 - Re-submit if significant changes
-
 
 **Step 4: Final Approval** (CISO)
 
@@ -1279,7 +1204,6 @@ gcloud kms keys list --location=global --keyring=my-keyring
 - Accept documented risks
 - Sign off assessment
 - Set Next Review Date
-
 
 ## Approval Timeline
 
@@ -1291,7 +1215,6 @@ gcloud kms keys list --location=global --keyring=my-keyring
 - Remediation: 1-2 hours (owner)
 - Final approval: 1-2 business days (CISO)
 - **Total:** 1-2 weeks start to finish
-
 
 ## After Approval
 
@@ -1308,7 +1231,6 @@ gcloud kms keys list --location=global --keyring=my-keyring
 - Annual key escrow/recovery tests
 - New device encryption verification before deployment
 
-
 **Triggers for Immediate Re-Assessment:**
 
 - Major infrastructure changes (new data center, cloud migration)
@@ -1316,7 +1238,6 @@ gcloud kms keys list --location=global --keyring=my-keyring
 - Failed audit findings on encryption
 - Regulatory changes affecting encryption requirements
 - Discovery of unencrypted Confidential/Restricted data
-
 
 ## Continuous Improvement
 
@@ -1327,13 +1248,11 @@ gcloud kms keys list --location=global --keyring=my-keyring
 - Database TDE gaps? → Implement TDE rollout project
 - Backup encryption concerns? → Update backup procedures and test
 
-
 **Feedback Loop:**
 
 - Assessment owner provides feedback on this guide
 - ISO reviews common questions/issues
 - Update guide for next assessment cycle
-
 
 ---
 
@@ -1387,7 +1306,6 @@ Acceptable evidence includes:
 - Certificate/key rotation logs
 - Hardware Security Module (HSM) integration documentation
 
-
 ---
 
 # Common Column Structure (All Assessment Sheets)
@@ -1428,7 +1346,6 @@ All 7 assessment sheets (Mobile Devices through Removable Media) use this standa
 - [ ] No → Skip to Section 2
 - [ ] Not Applicable
 
-
 ---
 
 **If Yes, complete the assessment:**
@@ -1443,7 +1360,6 @@ All 7 assessment sheets (Mobile Devices through Removable Media) use this standa
 - **Platform distribution:** iOS: _____ / Android: _____ / Other: _____
 - **MDM solution in use:** _________
 - **MDM enforces encryption:** [ ] Yes [ ] No
-
 
 ---
 
@@ -1473,14 +1389,12 @@ All 7 assessment sheets (Mobile Devices through Removable Media) use this standa
   - [ ] Frequent remote wipe tests
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
 - **Budget required:** [ ] Yes [ ] No  Amount: _________
-
 
 ---
 
@@ -1496,7 +1410,6 @@ All 7 assessment sheets (Mobile Devices through Removable Media) use this standa
 - [ ] No → Skip to Section 3
 - [ ] Not Applicable
 
-
 ---
 
 **If Yes, complete the assessment:**
@@ -1511,7 +1424,6 @@ All 7 assessment sheets (Mobile Devices through Removable Media) use this standa
 - **Total workstations:** _________
 - **Platform distribution:** Windows: _____ / macOS: _____ / Linux: _____
 - **Encryption solution(s):** _________
-
 
 ---
 
@@ -1540,13 +1452,11 @@ All 7 assessment sheets (Mobile Devices through Removable Media) use this standa
   - [ ] Network-based data access only (no local storage)
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -1562,7 +1472,6 @@ All 7 assessment sheets (Mobile Devices through Removable Media) use this standa
 - [ ] No → Skip to Section 4
 - [ ] Not Applicable
 
-
 ---
 
 **If Yes, complete the assessment:**
@@ -1577,7 +1486,6 @@ All 7 assessment sheets (Mobile Devices through Removable Media) use this standa
 - **Total virtual machines:** _________
 - **Virtualization platform:** [ ] VMware [ ] Hyper-V [ ] KVM [ ] Other: _____
 - **Encryption approach:** [ ] Guest OS encryption [ ] Hypervisor-level encryption [ ] Both
-
 
 ---
 
@@ -1606,13 +1514,11 @@ All 7 assessment sheets (Mobile Devices through Removable Media) use this standa
   - [ ] Network segmentation isolates servers
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -1628,7 +1534,6 @@ All 7 assessment sheets (Mobile Devices through Removable Media) use this standa
 - [ ] No → Skip to Section 5
 - [ ] Not Applicable
 
-
 ---
 
 **If Yes, complete the assessment:**
@@ -1642,7 +1547,6 @@ All 7 assessment sheets (Mobile Devices through Removable Media) use this standa
 - **Total databases:** _________
 - **Database platforms:** [ ] SQL Server [ ] Oracle [ ] PostgreSQL [ ] MySQL [ ] MongoDB [ ] Other: _____
 - **TDE implementation:** [ ] All databases [ ] Confidential/Restricted only [ ] None
-
 
 ---
 
@@ -1672,13 +1576,11 @@ All 7 assessment sheets (Mobile Devices through Removable Media) use this standa
   - [ ] Database contains only Public/Internal data
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -1694,7 +1596,6 @@ All 7 assessment sheets (Mobile Devices through Removable Media) use this standa
 - Section 10: Approval and Sign-Off
 - Appendix: Technical Notes for Workbook Developers
 
-
 # Cloud Storage
 
 **Policy Requirement:** Cloud storage containing Confidential or Restricted data MUST use encryption with customer-managed keys (CMEK) preferred over cloud-service-managed keys (CSEK) 
@@ -1706,7 +1607,6 @@ All 7 assessment sheets (Mobile Devices through Removable Media) use this standa
 - [ ] Yes → Complete assessment below
 - [ ] No → Skip to Section 6
 - [ ] Not Applicable
-
 
 ---
 
@@ -1722,7 +1622,6 @@ All 7 assessment sheets (Mobile Devices through Removable Media) use this standa
 - **Total storage buckets/containers:** _________
 - **Encryption method:** [ ] CMEK (Customer-Managed) [ ] CSEK (Cloud-Managed) [ ] Default
 - **KMS in use:** _________
-
 
 ---
 
@@ -1751,13 +1650,11 @@ All 7 assessment sheets (Mobile Devices through Removable Media) use this standa
   - [ ] Cloud storage contains only Public/Internal data
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -1773,7 +1670,6 @@ All 7 assessment sheets (Mobile Devices through Removable Media) use this standa
 - [ ] No → Skip to Section 7
 - [ ] Not Applicable
 
-
 ---
 
 **If Yes, complete the assessment:**
@@ -1788,7 +1684,6 @@ All 7 assessment sheets (Mobile Devices through Removable Media) use this standa
 - **Backup types:** [ ] Full [ ] Incremental [ ] Differential [ ] Continuous
 - **Backup locations:** [ ] On-site [ ] Off-site [ ] Cloud [ ] Tape
 - **Encryption enabled:** [ ] All backups [ ] Off-site only [ ] None
-
 
 ---
 
@@ -1818,13 +1713,11 @@ All 7 assessment sheets (Mobile Devices through Removable Media) use this standa
   - [ ] Backups contain only Public/Internal data
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -1840,7 +1733,6 @@ All 7 assessment sheets (Mobile Devices through Removable Media) use this standa
 - [ ] No → Skip to Section 8
 - [ ] Not Applicable
 
-
 ---
 
 **If Yes, complete the assessment:**
@@ -1854,7 +1746,6 @@ All 7 assessment sheets (Mobile Devices through Removable Media) use this standa
 - **Removable media policy:** [ ] Allowed with encryption [ ] Corporate-issued only [ ] Prohibited [ ] No formal policy
 - **Encryption solution:** [ ] BitLocker To Go [ ] VeraCrypt [ ] Hardware-encrypted devices [ ] Other: _____
 - **Device control/DLP:** [ ] Blocks unencrypted USB [ ] Allows all USB [ ] Not configured
-
 
 ---
 
@@ -1883,13 +1774,11 @@ All 7 assessment sheets (Mobile Devices through Removable Media) use this standa
   - [ ] No Confidential/Restricted data on removable media
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -1917,7 +1806,6 @@ All 7 assessment sheets (Mobile Devices through Removable Media) use this standa
 - Exclude N/A items from total when calculating compliance percentage
 - Target: ≥90% Compliant for mature ISMS
 
-
 ## Critical Gaps Identified
 
 List the most critical gaps that require immediate attention:
@@ -1936,7 +1824,6 @@ List the most critical gaps that require immediate attention:
   - ❌ Unencrypted backups leaving premises
   - ❌ No removable media encryption policy or enforcement
 
-
 ## Top Remediation Priorities
 
 | Priority | Gap Description | Target Date | Responsible Person |
@@ -1950,7 +1837,6 @@ List the most critical gaps that require immediate attention:
 - **High:** Data exposure risk, compliance violation, or operational failure imminent
 - **Medium:** Compliance gap with planned remediation, low immediate risk
 - **Low:** Best practice improvement, no compliance impact
-
 
 ---
 
@@ -1977,7 +1863,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - `EV-4-MSSQL-TDE-Status-20260115.txt`
 - `EV-5-S3-Encryption-Config-20260115.png`
 
-
 **Evidence Types:**
 
 - MDM compliance reports
@@ -1989,14 +1874,12 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - Encryption algorithm verification
 - Recovery key escrow verification
 
-
 **Evidence Storage:**
 
 - **Location:** [Organization's evidence repository path]
 - **Retention:** Audit cycle + 1 year minimum
 - **Access Control:** Restricted to security team and auditors
 - **Sensitivity:** Sanitize encryption keys and credentials
-
 
 ---
 
@@ -2016,7 +1899,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - Systems requiring remediation: _______
 - Critical gaps identified: _______
 - High-priority remediation items: _______
-
 
 ---
 
@@ -2051,7 +1933,6 @@ _________________________________________________________________
 - [ ] Approved with minor corrections - Specific items to address: _______
 - [ ] Requires revision - Significant issues identified, re-submit required
 
-
 ---
 
 ## Approved By (CISO)
@@ -2066,7 +1947,6 @@ _________________________________________________________________
 - [ ] Approved with conditions - Remediation must be completed by: _______
 - [ ] Rejected - Re-assessment required due to: _______
 
-
 **Risk Acceptance:**
 For any documented exceptions/deviations, I accept the residual risk based on:
 
@@ -2075,14 +1955,12 @@ For any documented exceptions/deviations, I accept the residual risk based on:
 - Business justification
 - Compliance with exception approval process (ISMS-POL-A.8.24-S5.B)
 
-
 **Budget Approval:**
 Remediation budget requirement: _______
 
 - [ ] Approved
 - [ ] Requires further justification
 - [ ] Deferred to next budget cycle
-
 
 ---
 
@@ -2099,7 +1977,6 @@ Remediation budget requirement: _______
 - Failed audit findings
 - New storage systems deployed
 
-
 **Interim Monitoring:**
 
 - MDM compliance monitoring: Continuous (automated alerts)
@@ -2108,7 +1985,6 @@ Remediation budget requirement: _______
 - Cloud storage encryption: Monthly reviews
 - Backup encryption: Test restores quarterly
 - Remediation progress: Tracked monthly
-
 
 ---
 
@@ -2126,12 +2002,10 @@ This assessment shall be distributed to:
 - [ ] IT Management
 - [ ] Other: _______________________
 
-
 **Storage Location:**
 
 - **ISMS Repository:** `ISMS/Controls/A.8.24_Use_of_Cryptography/Assessments/`
 - **Filename:** `ISMS-IMP-A.8.24.2_Data_Storage_[DATE]_APPROVED.xlsx`
-
 
 ---
 
@@ -2160,13 +2034,11 @@ This assessment shall be distributed to:
 - Applied to: Column H (Status) in all assessment sheets
 - Allow blank: No
 
-
 **Data Classification Dropdown:**
 
 - Formula: `"Public,Internal,Confidential,Restricted,N/A"`
 - Applied to: Column B in all assessment sheets
 - Allow blank: No
-
 
 **Encryption Status Dropdown:**
 
@@ -2174,13 +2046,11 @@ This assessment shall be distributed to:
 - Applied to: Column C in all assessment sheets
 - Allow blank: No
 
-
 **Encryption Type Dropdown:**
 
 - Formula: `"Full Disk,File-level,Database TDE,Volume,Container,Application-level,Hardware-based,N/A"`
 - Applied to: Column D in all assessment sheets
 - Allow blank: No
-
 
 **Key Management Method Dropdown:**
 
@@ -2188,13 +2058,11 @@ This assessment shall be distributed to:
 - Applied to: Column F in all assessment sheets
 - Allow blank: No
 
-
 **Key Rotation Enabled Dropdown:**
 
 - Formula: `"Yes,No,N/A"`
 - Applied to: Column G in all assessment sheets
 - Allow blank: No
-
 
 **Remediation Needed Dropdown:**
 
@@ -2202,13 +2070,11 @@ This assessment shall be distributed to:
 - Applied to: Column K in all assessment sheets
 - Allow blank: No
 
-
 **Budget Required Dropdown:**
 
 - Formula: `"Yes,No,Unknown"`
 - Applied to: Column Q in all assessment sheets
 - Allow blank: No
-
 
 **Response Dropdown (Assessment Question):**
 
@@ -2216,13 +2082,11 @@ This assessment shall be distributed to:
 - Applied to: Response field for each section's assessment question
 - Allow blank: No
 
-
 **Checklist Items:**
 
 - Formula: `"Yes,No,N/A"`
 - Applied to: All compliance checklist Status columns
 - Allow blank: No
-
 
 ## A.3 Conditional Formatting
 
@@ -2233,13 +2097,11 @@ This assessment shall be distributed to:
 - ❌ Non-Compliant: Red fill (RGB: 255, 199, 206)
 - N/A: No special formatting
 
-
 **Overall Compliance Percentage (Summary Dashboard):**
 
 - ≥90%: Green fill
 - 80-89%: Yellow fill
 - <80%: Red fill
-
 
 **Data Classification (Column B) - Risk-based coloring:**
 
@@ -2247,7 +2109,6 @@ This assessment shall be distributed to:
 - Confidential: Yellow fill (RGB: 255, 235, 156)
 - Internal: No fill
 - Public: No fill
-
 
 ## A.4 Cell Protection
 
@@ -2260,7 +2121,6 @@ This assessment shall be distributed to:
 - Summary Dashboard calculations
 - Evidence Register ID auto-generation
 
-
 **Unprotected Cells (User Input):**
 
 - Assessment data entry tables (yellow fill, columns A-Q rows 8-20)
@@ -2270,13 +2130,11 @@ This assessment shall be distributed to:
 - Evidence Register descriptions
 - Approval Sign-Off fields
 
-
 **Sheet Protection:**
 
 - Password: [Set during workbook generation]
 - Allow: Format cells, Insert rows, Sort, Filter
 - Disallow: Delete rows, Modify formulas, Unprotect sheet
-
 
 ## A.5 Summary Dashboard Formulas
 
@@ -2329,7 +2187,6 @@ Where Total Applicable Items excludes N/A items.
 - `create_evidence_register()`: Evidence tracking
 - `create_approval_signoff()`: Approval workflow
 
-
 **Customization Points (marked with `# CUSTOMIZE:` in script):**
 
 - Sheet names (if organizational naming differs)
@@ -2337,7 +2194,6 @@ Where Total Applicable Items excludes N/A items.
 - Data validation rules (if custom compliance criteria)
 - Conditional formatting thresholds (if different color coding)
 - Checklist items (if organization-specific requirements)
-
 
 **Quality Assurance Script:** `excel_sanity_check_a824_2.py`
 
@@ -2347,7 +2203,6 @@ Where Total Applicable Items excludes N/A items.
 - Tests formula accuracy
 - Reports discrepancies between script and specification
 
-
 ## A.8 Version Control
 
 **Workbook Versioning:**
@@ -2356,19 +2211,16 @@ Where Total Applicable Items excludes N/A items.
 - Version tracking in Instructions & Legend sheet
 - Document Control section updated with each revision
 
-
 **Change Log:**
 
 - v1.0: Initial workbook structure
 - v2.0: Added comprehensive User Completion Guide, enhanced checklists, improved evidence guidance
-
 
 **Backward Compatibility:**
 
 - v2.0 workbooks can be opened in Excel 2016+
 - v1.0 workbooks should be migrated to v2.0 for updated guidance
 - Migration script available: `normalize_assessment_files_a824.py`
-
 
 ---
 
@@ -2426,7 +2278,6 @@ ISMS-IMP-A.8.24.2 - Data Storage Assessment v1.0
 - [ ] Cross-references accurate (section numbers, policy references)
 - [ ] No placeholder text remains
 - [ ] Technical appendix matches Python script version
-
 
 ---
 

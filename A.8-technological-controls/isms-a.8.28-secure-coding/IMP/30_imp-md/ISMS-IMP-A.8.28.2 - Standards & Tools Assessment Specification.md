@@ -31,7 +31,6 @@
 - QA Manager / Test Lead (Testing Validation)
 - CISO / Security Director (Executive Approval)
 
-
 ### Document Structure
 
 This document consists of two parts:
@@ -53,12 +52,10 @@ This document consists of two parts:
   - Formulas & Calculations
   - Python Script Integration Points
 
-
 **Target Audiences:**
 
 - **Part I:** Assessment users (Application Security Team, Security Architects, Development Managers, DevOps Engineers)
 - **Part II:** Workbook developers (Python/Excel script maintainers)
-
 
 ---
 
@@ -90,7 +87,6 @@ This assessment verifies [Organization]'s compliance with:
 - ISMS-POL-A.8.28 Section 2.2: Secure Coding Standards
 - ISMS-POL-A.8.28 Section 2.3: Code Review & Testing Requirements
 
-
 Organizations with effective security tool implementation see:
 
 - 60-80% reduction in security vulnerabilities reaching production
@@ -98,14 +94,12 @@ Organizations with effective security tool implementation see:
 - 70-90% reduction in secret leakage incidents (pre-commit hooks)
 - Developer productivity maintained or improved (shift-left approach)
 
-
 Organizations with ineffective tool implementation experience:
 
 - Tools deployed but ignored ("alert fatigue" from false positives)
 - Security theater (tools report findings, nothing gets fixed)
 - Developer frustration (tools slow workflow without value)
 - Wasted budget (tools licensed but not used effectively)
-
 
 ### What You'll Document
 
@@ -124,7 +118,6 @@ This assessment captures ACTUAL tool implementation and effectiveness:
 - **Qualitative evidence**: Tool configurations, pipeline integration, documentation
 - **Quantitative metrics**: False positive rates, coverage percentages, MTTR, vulnerability trends
 
-
 If you can't measure effectiveness, you're doing cargo cult security.
 
 ### Who Should Complete This Assessment
@@ -138,7 +131,6 @@ If you can't measure effectiveness, you're doing cargo cult security.
 - **Development Managers**: Developer adoption rates, tool usability feedback
 - **Security Champions**: On-the-ground tool effectiveness observations
 
-
 **Time Commitment**: 16-20 hours total (distributed across 2-3 weeks)
 
 - Tool inventory and documentation: 4-6 hours
@@ -147,7 +139,6 @@ If you can't measure effectiveness, you're doing cargo cult security.
 - Evidence collection: 2-3 hours
 - Assessment completion: 2-3 hours
 - Review and approval: 1-2 hours
-
 
 ### Expected Outputs
 
@@ -162,14 +153,12 @@ If you can't measure effectiveness, you're doing cargo cult security.
 - Gap analysis (gaps with remediation plans)
 - Evidence register
 
-
 **Deliverables**:
 
 - Completed Excel workbook
 - Tool configuration exports (pipeline configs, ruleset files)
 - Metrics reports (dashboards, trend analysis)
 - Executive summary (1-page for CISO/management)
-
 
 ---
 
@@ -188,7 +177,6 @@ Before starting this assessment, gather:
 - [ ] Code review checklists based on standards
 - [ ] Standards review/update history (last review date)
 
-
 **SAST Tool Information**:
 
 - [ ] SAST tool name, vendor, version (e.g., SonarQube 10.4, Checkmarx, Fortify)
@@ -201,7 +189,6 @@ Before starting this assessment, gather:
 - [ ] False positive suppression audit trail
 - [ ] Finding statistics (last 3-6 months)
 
-
 **SCA Tool Information**:
 
 - [ ] SCA tool name, vendor, version (e.g., Snyk, WhiteSource, Dependabot)
@@ -213,7 +200,6 @@ Before starting this assessment, gather:
 - [ ] Vulnerability statistics (last 3-6 months)
 - [ ] Remediation tracking (upgrade recommendations, SBOM generation)
 
-
 **DAST Tool Information**:
 
 - [ ] DAST tool name, vendor, version (e.g., OWASP ZAP, Burp Suite, Acunetix)
@@ -224,7 +210,6 @@ Before starting this assessment, gather:
 - [ ] IaC scanning tool (Checkov, tfsec, Terrascan, Snyk Infrastructure as Code)
 - [ ] Scan results (last 3-6 months)
 
-
 **IDE Plugin & Linter Information**:
 
 - [ ] Available IDE security plugins (VS Code, IntelliJ, PyCharm)
@@ -233,7 +218,6 @@ Before starting this assessment, gather:
 - [ ] Pre-commit hook configurations (secret detection - Gitleaks, TruffleHog, git-secrets)
 - [ ] Secret detection statistics (secrets blocked, false positives)
 - [ ] Developer feedback (surveys, usability complaints)
-
 
 **Tool Effectiveness Metrics**:
 
@@ -245,7 +229,6 @@ Before starting this assessment, gather:
 - [ ] Tool cost documentation (licenses, support, training)
 - [ ] Developer productivity impact (build time increases, workflow delays)
 
-
 ## Required Tools
 
 **Software**:
@@ -256,7 +239,6 @@ Before starting this assessment, gather:
 - Access to code repositories (GitHub, GitLab, Bitbucket)
 - Access to issue tracking system (Jira, Azure DevOps, GitHub Issues)
 
-
 **Access Permissions**:
 
 - Security tool admin or read-only admin access (to export configs and metrics)
@@ -265,13 +247,11 @@ Before starting this assessment, gather:
 - Issue tracking read access (to review vulnerability remediation tracking)
 - Tool license management access (to verify license status and expiration)
 
-
 **Optional Tools** (helpful but not required):
 
 - Screenshot tool (for capturing dashboard evidence)
 - Config export scripts (for exporting tool configurations)
 - Metrics visualization tool (for trend analysis)
-
 
 ## Required Skills
 
@@ -283,13 +263,11 @@ Before starting this assessment, gather:
 - Basic understanding of metrics and KPIs
 - Ability to interpret tool dashboards and reports
 
-
 **Assessor does NOT need**:
 
 - Deep security tool expert knowledge (admin-level)
 - Development expertise in all languages
 - Security researcher-level vulnerability knowledge
-
 
 ## Dependencies
 
@@ -297,19 +275,16 @@ Before starting this assessment, gather:
 
 - ISMS-POL-A.8.28 (Secure Coding Policy) approved and published
 
-
 **Should Have But Not Blocking**:
 
 - ISMS-IMP-A.8.28.1 (SDLC Assessment) completed (provides context on training, planning)
 - At least some security tools deployed (even if partially configured)
-
 
 **Related Assessments** (coordinate timing):
 
 - ISMS-IMP-A.8.28.3 (Code Review & Testing) - can be done in parallel
 - ISMS-IMP-A.8.28.4 (Third-Party & OSS) - overlaps with SCA assessment
 - ISMS-IMP-A.8.28.5 (Compliance Dashboard) - requires IMPs 1-4 completed first
-
 
 ---
 
@@ -325,7 +300,6 @@ Before starting this assessment, gather:
 - Output: `ISMS-IMP-A.8.28.2_Standards_Tools_Assessment_YYYYMMDD.xlsx`
 - Save to shared location for collaboration
 
-
 **Step 2**: Review Instructions sheet
 
 - Read assessment methodology
@@ -333,14 +307,12 @@ Before starting this assessment, gather:
 - Review status definitions and compliance scoring
 - Understand evidence requirements
 
-
 **Step 3**: Schedule stakeholder meetings
 
 - DevOps Engineers (2 hours): CI/CD integration, pipeline configs, deployment
 - Tool Administrators (1 hour): Licenses, metrics, configuration details
 - Development Managers (1 hour): Adoption rates, developer feedback
 - Security Champions (30 min): On-the-ground effectiveness observations
-
 
 **Phase 2: Tool Inventory & Documentation (Week 1, Days 3-5)**
 
@@ -352,7 +324,6 @@ Before starting this assessment, gather:
   - Document deployment date and current status (active, pilot, deprecated)
   - Verify license validity
 
-
 **Step 5**: Collect Tool Configuration Evidence
 
 - SAST: Export ruleset configurations, quality gate settings
@@ -361,7 +332,6 @@ Before starting this assessment, gather:
 - CI/CD: Export pipeline YAML files showing tool integration
 - Pre-commit hooks: Export hook configurations from repositories
 
-
 **Step 6**: Extract Tool Metrics
 
 - False positive rates (last quarter): % of findings suppressed/closed as FP
@@ -369,7 +339,6 @@ Before starting this assessment, gather:
 - Finding statistics: Count by severity (Critical/High/Medium/Low), trend over time
 - MTTR: Average days from finding detection to fix deployment
 - Developer adoption: % of developers using IDE plugins, pre-commit hooks
-
 
 **Phase 3: Standards Documentation Review (Week 1-2, Days 3-7)**
 
@@ -381,14 +350,12 @@ Before starting this assessment, gather:
 - Check language-specific guidelines (Python, Java, JavaScript, etc.)
 - Verify last review date (should be within 12 months)
 
-
 **Step 8**: Assess Standards Adoption
 
 - Review training records (% developers trained on standards)
 - Review code review checklists (do they reference standards?)
 - Interview Security Champions (do developers actually follow standards?)
 - Check for documented exceptions (standards too strict/unrealistic?)
-
 
 **Phase 4: Assessment Completion (Week 2-3, Days 8-15)**
 
@@ -398,14 +365,12 @@ Before starting this assessment, gather:
 - Provide evidence (standards doc location, training records, metrics)
 - Calculate adoption rates (% developers trained, % code reviews referencing standards)
 
-
 **Step 10**: Complete Domain 2: SAST & SCA Tools
 
 - Document tool deployment (SAST tool name, version, languages covered)
 - Verify CI/CD integration (scan on every build? quality gates configured?)
 - Assess finding remediation (are findings tracked? are SLAs met?)
 - Calculate false positive rate (target: <20%)
-
 
 **Step 11**: Complete Domain 3: DAST & Security Testing
 
@@ -414,7 +379,6 @@ Before starting this assessment, gather:
 - Assess API security testing (authenticated testing? fuzzing?)
 - Document container and IaC scanning
 
-
 **Step 12**: Complete Domain 4: IDE Plugins & Linters
 
 - Document available IDE plugins (which IDEs supported?)
@@ -422,14 +386,12 @@ Before starting this assessment, gather:
 - Verify pre-commit hook deployment (secret detection working?)
 - Assess developer usability feedback
 
-
 **Step 13**: Complete Domain 5: Tool Effectiveness & Metrics
 
 - Document KPIs (false positive rate, MTTR, coverage, vulnerability trends)
 - Assess effectiveness measurement (are KPIs tracked quarterly?)
 - Verify continuous improvement (are tools tuned based on metrics?)
 - Calculate ROI (vulnerabilities prevented vs. tool cost)
-
 
 **Phase 5: Review and Finalization (Week 3, Days 16-18)**
 
@@ -442,13 +404,11 @@ Before starting this assessment, gather:
   - Date collected
   - Collected by
 
-
 **Step 15**: Complete Tool Inventory Sheet
 
 - List all security tools with details (vendor, version, license expiration)
 - Mark status (Active, Pilot, Deprecated, Planned)
 - Link to evidence for each tool
-
 
 **Step 16**: Review Gap Analysis Sheet
 
@@ -457,7 +417,6 @@ Before starting this assessment, gather:
 - Set remediation target dates (realistic timelines)
 - Prioritize gaps (Critical / High / Medium / Low)
 
-
 **Step 17**: Review Summary Dashboard
 
 - Verify compliance percentages calculated correctly
@@ -465,13 +424,11 @@ Before starting this assessment, gather:
 - Identify top gaps requiring attention (Critical/High priority)
 - Prepare executive summary
 
-
 **Step 18**: Internal Review
 
 - Share workbook with DevOps for validation (CI/CD integration accurate?)
 - Share with Tool Administrators for accuracy (tool configs correct?)
 - Incorporate feedback and corrections
-
 
 **Step 19**: Approval Process
 
@@ -479,7 +436,6 @@ Before starting this assessment, gather:
 - Submit to CISO for approval
 - Obtain Development Management concurrence (if tools impact workflows)
 - Complete Approval Sign-Off sheet
-
 
 ## Timeline Expectations
 
@@ -496,13 +452,11 @@ Before starting this assessment, gather:
 - Review and finalization: 2-3 hours
 - Approval cycle: 3-5 business days
 
-
 **Critical Path**:
 
 - Tool admin access (may require provisioning - plan ahead)
 - Metrics extraction (may require custom queries or reports)
 - Developer adoption metrics (may require telemetry data analysis)
-
 
 ## Collaboration Requirements
 
@@ -513,14 +467,12 @@ Before starting this assessment, gather:
 - Tool Administrator (tool configs, metrics)
 - Review progress, blockers, questions
 
-
 **Ad-Hoc Consultations**:
 
 - DevOps Engineers: Pipeline integration, quality gate configuration
 - Tool Administrators: Metrics extraction, dashboard access
 - Development Managers: Developer adoption rates, usability feedback
 - Security Champions: Tool effectiveness observations
-
 
 ---
 
@@ -541,7 +493,6 @@ This section provides detailed guidance for completing each assessment domain.
 - Developer onboarding materials
 - Code review templates referencing standards
 
-
 **How to Answer**:
 
 - **✅ Compliant**: Standards documented, published to accessible location (wiki, portal), referenced in onboarding and code reviews
@@ -550,12 +501,10 @@ This section provides detailed guidance for completing each assessment domain.
 - **🔄 Planned**: Standards being developed, not yet published
 - **N/A**: Not applicable (justify - very rare)
 
-
 **Examples**:
 
 - ✅ **Compliant**: "Secure Coding Standards v2.1" published to developer wiki, linked from onboarding checklist, 95% of developers report knowing where to find standards (annual survey)
 - ❌ **Non-Compliant**: Standards document exists as draft on security team drive; developers unaware of its existence
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.2.1 (Secure coding standards required)
 
@@ -571,7 +520,6 @@ This section provides detailed guidance for completing each assessment domain.
 - Standards document sections mapped to OWASP Top 10 and CWE Top 25
 - Training materials covering these vulnerabilities
 
-
 **How to Answer**:
 
 - **✅ Compliant**: Standards explicitly address all OWASP Top 10 (2021 or later) and at least top 10 CWE vulnerabilities
@@ -580,12 +528,10 @@ This section provides detailed guidance for completing each assessment domain.
 - **🔄 Planned**: Standards update in progress to add missing coverage
 - **N/A**: Not applicable (justify)
 
-
 **Examples**:
 
 - ✅ **Compliant**: Standards Section 3 "Input Validation" addresses A03:2021 (Injection), Section 5 "Authentication" addresses A07:2021 (ID & Auth Failures), all 10 categories covered
 - ❌ **Non-Compliant**: Standards only cover SQL injection and XSS; missing 8 OWASP Top 10 categories
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.2.1 (OWASP/CWE coverage required)
 
@@ -601,7 +547,6 @@ This section provides detailed guidance for completing each assessment domain.
 - ISMS-CTX-A.8.28 (Language-Specific Guidelines) if separated
 - Language-specific training modules
 
-
 **How to Answer**:
 
 - **✅ Compliant**: Guidelines exist for all primary languages used by [Organization] (80%+ of codebase)
@@ -610,12 +555,10 @@ This section provides detailed guidance for completing each assessment domain.
 - **🔄 Planned**: Language-specific guidelines being developed
 - **N/A**: [Organization] only uses one programming language (specify which - rare)
 
-
 **Examples**:
 
 - ✅ **Compliant**: [Organization] primary languages: Python (50%), JavaScript (30%), Java (20%); standards include Python SQL parameterization examples, JavaScript XSS prevention (DOMPurify, React auto-escaping), Java PreparedStatement usage
 - ❌ **Non-Compliant**: [Organization] uses Python, Java, Go; standards are generic ("use parameterized queries") without language-specific examples
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.2.2 (Language-specific guidance required), ISMS-CTX-A.8.28 (technical reference)
 
@@ -634,7 +577,6 @@ This section provides detailed guidance for completing each assessment domain.
 - Build logs showing SAST execution
 - Tool dashboard showing scan history
 
-
 **How to Answer**:
 
 - **✅ Compliant**: SAST deployed for all primary languages, automated scans on every commit/PR, integrated into CI/CD
@@ -643,12 +585,10 @@ This section provides detailed guidance for completing each assessment domain.
 - **🔄 Planned**: SAST tool procured, integration in progress
 - **N/A**: Not applicable (justify - very rare for development organizations)
 
-
 **Examples**:
 
 - ✅ **Compliant**: SonarQube 10.4 deployed, integrated into GitHub Actions for Python/Java/JavaScript repos, scans on every PR, 98% of repositories have SAST enabled
 - ❌ **Non-Compliant**: Checkmarx license purchased 2 years ago, never configured; no scans performed
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.3.1 (SAST required)
 
@@ -665,7 +605,6 @@ This section provides detailed guidance for completing each assessment domain.
 - Build logs with examples of blocked deployments
 - Exception/override audit trail (if quality gates can be bypassed)
 
-
 **How to Answer**:
 
 - **✅ Compliant**: Quality gates configured to block on Critical/High, enforced (cannot be bypassed by developers), audit trail of any overrides
@@ -674,12 +613,10 @@ This section provides detailed guidance for completing each assessment domain.
 - **🔄 Planned**: Quality gates being configured, not yet enforced
 - **N/A**: SAST not deployed (would be ❌ in Q2.1)
 
-
 **Examples**:
 
 - ✅ **Compliant**: SonarQube Quality Gate: "Block if Critical or High severity findings present", pipeline configuration fails build, 12 deployments blocked last quarter (all resolved before re-deployment)
 - ❌ **Non-Compliant**: SAST runs but reports only; developers can merge PRs with Critical findings; 45 Critical findings deployed to production last quarter
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.3.1 (Quality gates required)
 
@@ -695,7 +632,6 @@ This section provides detailed guidance for completing each assessment domain.
 - False positive triage logs
 - Quarterly effectiveness reviews
 
-
 **How to Answer**:
 
 - **✅ Compliant**: False positive rate measured quarterly, consistently below 20%, tuning efforts documented
@@ -704,12 +640,10 @@ This section provides detailed guidance for completing each assessment domain.
 - **🔄 Planned**: Starting to track false positive rate, baseline not yet established
 - **N/A**: SAST not deployed
 
-
 **Examples**:
 
 - ✅ **Compliant**: Q4 2025 metrics: 1,247 SAST findings, 178 marked false positive (14.3%), ruleset tuning reduced FP rate from 28% (Q3) to 14% (Q4)
 - ❌ **Non-Compliant**: Developers complain "SAST is useless, all noise"; spot check shows 65% false positive rate; tool ignored
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.3.1 (Effectiveness measurement required)
 
@@ -726,7 +660,6 @@ This section provides detailed guidance for completing each assessment domain.
 - CVE detection reports
 - Vulnerability remediation tracking
 
-
 **How to Answer**:
 
 - **✅ Compliant**: SCA deployed for all primary languages, automated scans on every build, CVE detection working
@@ -735,12 +668,10 @@ This section provides detailed guidance for completing each assessment domain.
 - **🔄 Planned**: SCA tool procured, integration in progress
 - **N/A**: [Organization] has no third-party dependencies (justify - extremely rare)
 
-
 **Examples**:
 
 - ✅ **Compliant**: Snyk integrated into GitHub repos, scans on every PR and nightly, detects CVEs in npm/PyPI/Maven dependencies, 95% of repositories monitored
 - ❌ **Non-Compliant**: No SCA tool; Log4Shell vulnerability (CVE-2021-44228) discovered in production 3 weeks after public disclosure
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.4.1 (SCA required)
 
@@ -759,7 +690,6 @@ This section provides detailed guidance for completing each assessment domain.
 - Scan reports for recent releases
 - Staging environment scan schedules
 
-
 **How to Answer**:
 
 - **✅ Compliant**: DAST scans mandatory for all production releases, scan results reviewed before deployment, Critical/High findings block release
@@ -768,12 +698,10 @@ This section provides detailed guidance for completing each assessment domain.
 - **🔄 Planned**: DAST tool procured, integration in progress
 - **N/A**: [Organization] has no web applications (justify - rare)
 
-
 **Examples**:
 
 - ✅ **Compliant**: OWASP ZAP scans staging environment before every production deployment; last 8 releases all scanned; 2 releases delayed due to High severity findings
 - ❌ **Non-Compliant**: Burp Suite license purchased; used once for pilot project 18 months ago; no scans since
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.3.2 (DAST required)
 
@@ -790,7 +718,6 @@ This section provides detailed guidance for completing each assessment domain.
 - Container registry showing scan results
 - Quality gate configuration (block vulnerable images)
 
-
 **How to Answer**:
 
 - **✅ Compliant**: All container images scanned before deployment, Critical/High vulnerabilities block deployment, scan results retained
@@ -799,12 +726,10 @@ This section provides detailed guidance for completing each assessment domain.
 - **🔄 Planned**: Container scanning being implemented
 - **N/A**: [Organization] doesn't use containers (verify - increasingly rare)
 
-
 **Examples**:
 
 - ✅ **Compliant**: Trivy integrated into Docker build pipeline, scans all images before push to ECR, images with Critical CVEs rejected, 100% of production images scanned
 - ❌ **Non-Compliant**: Running containers in production with no vulnerability scanning; discovered vulnerable base image (OS CVE) during incident response
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.3.2 (Container scanning required if applicable)
 
@@ -823,7 +748,6 @@ This section provides detailed guidance for completing each assessment domain.
 - Developer onboarding materials mentioning plugins
 - Plugin adoption metrics (telemetry data, if available)
 
-
 **How to Answer**:
 
 - **✅ Compliant**: Security plugins available for all primary IDEs (VS Code, IntelliJ, PyCharm), promoted in onboarding, adoption >70%
@@ -832,12 +756,10 @@ This section provides detailed guidance for completing each assessment domain.
 - **🔄 Planned**: Plugin evaluation in progress, rollout planned
 - **N/A**: [Organization] doesn't use IDEs (justify - very rare)
 
-
 **Examples**:
 
 - ✅ **Compliant**: VS Code "SonarLint" plugin recommended in onboarding, 78% of developers have installed (telemetry data), provides real-time feedback on code quality and security
 - ❌ **Non-Compliant**: No plugin recommendations; developers discover security issues only during PR review or SAST scan (days later)
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.3.3 (Developer tools encouraged)
 
@@ -854,7 +776,6 @@ This section provides detailed guidance for completing each assessment domain.
 - Blocked commit logs (secrets detected and prevented)
 - Secret detection statistics (how many secrets blocked per month)
 
-
 **How to Answer**:
 
 - **✅ Compliant**: Pre-commit hooks deployed to all repositories, secrets detection working, statistics tracked (e.g., 15 secrets blocked last month)
@@ -863,12 +784,10 @@ This section provides detailed guidance for completing each assessment domain.
 - **🔄 Planned**: Pre-commit hook deployment in progress
 - **N/A**: [Organization] has no secrets in code (justify - very unlikely)
 
-
 **Examples**:
 
 - ✅ **Compliant**: Gitleaks pre-commit hook deployed org-wide via template repository, 12 API keys blocked from commit last quarter, developer training on secret management provided
 - ❌ **Non-Compliant**: No secret detection; AWS access key committed to public GitHub repo, discovered via external security researcher, credential rotation emergency
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.2.4 (Secret management - pre-commit hooks recommended)
 
@@ -887,7 +806,6 @@ This section provides detailed guidance for completing each assessment domain.
 - Dashboard screenshots
 - Trend analysis (are metrics improving over time?)
 
-
 **How to Answer**:
 
 - **✅ Compliant**: KPIs defined (false positive rate, MTTR, coverage, vulnerability trends), tracked quarterly, reported to management
@@ -896,12 +814,10 @@ This section provides detailed guidance for completing each assessment domain.
 - **🔄 Planned**: KPI framework being developed
 - **N/A**: Not applicable (justify - unlikely)
 
-
 **Examples**:
 
 - ✅ **Compliant**: Q4 2025 Security Metrics Report: SAST FP rate 14% (target <20% ✅), SCA MTTR 12 days (target <14d ✅), DAST coverage 95% (target >90% ✅), presented to CISO monthly
 - ❌ **Non-Compliant**: Tools deployed for 2 years; no one knows if they're effective; no metrics tracked
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 3.3 (Assessment and verification - metrics required)
 
@@ -918,7 +834,6 @@ This section provides detailed guidance for completing each assessment domain.
 - Trend analysis chart
 - Remediation SLA documentation
 
-
 **How to Answer**:
 
 - **✅ Compliant**: MTTR measured for all severity levels, tracked quarterly, trend showing improvement (or consistent performance within SLA)
@@ -927,12 +842,10 @@ This section provides detailed guidance for completing each assessment domain.
 - **🔄 Planned**: MTTR tracking being implemented
 - **N/A**: No security findings (justify - very unlikely)
 
-
 **Examples**:
 
 - ✅ **Compliant**: Critical MTTR: Q1=18d, Q2=14d, Q3=10d, Q4=8d (improving); High MTTR: Q1=45d, Q2=38d, Q3=32d, Q4=28d (improving); SLAs: Critical <14d, High <30d (met in Q4)
 - ❌ **Non-Compliant**: Critical findings sit unresolved for months; no tracking; discovered 187 unresolved Critical findings dating back 18 months
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.3.1 (Remediation SLAs required), ISMS-POL-A.8.28 Annex A (Vulnerability Response)
 
@@ -949,7 +862,6 @@ This section provides detailed guidance for completing each assessment domain.
 - ROI calculation (cost per vulnerability prevented, cost of production incident avoided)
 - Cost-benefit analysis
 
-
 **How to Answer**:
 
 - **✅ Compliant**: ROI calculated annually, tools demonstrably cost-effective (vulnerabilities prevented > cost)
@@ -958,12 +870,10 @@ This section provides detailed guidance for completing each assessment domain.
 - **🔄 Planned**: ROI framework being developed
 - **N/A**: Not applicable (justify - uncommon)
 
-
 **Examples**:
 
 - ✅ **Compliant**: SAST cost: $50K/year, 487 vulnerabilities detected pre-production (prevented), estimated production incident cost: $150K each, ROI: 10x (even if only 1 incident prevented)
 - ❌ **Non-Compliant**: $200K/year SAST license, 12 findings last year (all false positives or duplicates), 8 production security incidents (tool missed them), negative ROI
-
 
 **Policy Reference**: ISMS-POL-A.8.28 Section 2.1.6 (Security planning and resource allocation - effectiveness measurement)
 
@@ -980,14 +890,12 @@ This section provides detailed guidance for completing each assessment domain.
 - Configuration files (ruleset configs, quality gate definitions)
 - User guides and admin documentation
 
-
 **Configuration Evidence**:
 
 - CI/CD pipeline YAML files (GitHub Actions, GitLab CI, Jenkinsfile)
 - Tool configuration exports (SonarQube quality profiles, Snyk policies)
 - Pre-commit hook files (.pre-commit-config.yaml, git hooks)
 - IDE plugin lists (org-wide plugin catalog)
-
 
 **Metrics & Reports**:
 
@@ -996,14 +904,12 @@ This section provides detailed guidance for completing each assessment domain.
 - Trend analysis charts (vulnerability trends over time)
 - False positive analysis (FP rate calculations)
 
-
 **Process Documentation**:
 
 - Secure coding standards (PDF, wiki pages)
 - Code review checklists
 - Training materials
 - Remediation SLA policies
-
 
 ## Where Evidence Typically Resides
 
@@ -1038,7 +944,6 @@ cp .pre-commit-config.yaml evidence/precommit_config.yaml
 - Highlight relevant sections (use annotation tools)
 - Save with descriptive filename: `Evidence_2-1_SonarQube_Dashboard_20260124.png`
 
-
 **Metrics Exports**:
 ```bash
 # Export SonarQube metrics (example)
@@ -1054,7 +959,6 @@ snyk test --json > snyk_vulnerabilities.json
 - Include report generation date, report parameters
 - Save with descriptive filename
 
-
 ## Evidence Register Population
 
 For each evidence item in the Evidence Register sheet:
@@ -1065,32 +969,26 @@ For each evidence item in the Evidence Register sheet:
 
 - Example: "SonarQube quality gate configuration showing Critical/High findings block builds"
 
-
 **Related Assessment Question**: Which question(s) this evidence supports
 
 - Example: "2.2 SAST Quality Gates"
 
-
 **Evidence Type**: Select from dropdown
 
 - Configuration Export, Screenshot, Report, Metrics Data, Document, License, Other
-
 
 **Location**: Where evidence is stored
 
 - Example: "/Security/Evidence/ISMS-A.8.28.2/SonarQube_QualityGate_Config.pdf"
 - Or: "SonarQube UI > Quality Gates > [Organization] Gate > Screenshot"
 
-
 **Date Collected**: Date evidence was captured
 
 - Format: DD.MM.YYYY
 
-
 **Collected By**: Name of person who captured evidence
 
 - Example: "A. Smith, Application Security Lead"
-
 
 ## Evidence Quality Standards
 
@@ -1102,14 +1000,12 @@ For each evidence item in the Evidence Register sheet:
 - Verifiable (auditor can access and verify)
 - Sufficient (proves the claim being made)
 
-
 **Poor Evidence**:
 
 - Verbal claims ("we use SonarQube") without documentation
 - Screenshots without context (no date, no URL, cropped too tightly)
 - Expired evidence (license from 2 years ago when current status requested)
 - Cherry-picked evidence (one good scan report when asking for quarterly trend)
-
 
 ---
 
@@ -1162,7 +1058,6 @@ Target: <20%. If FP rate >40%, tool is ineffective (needs tuning or replacement)
 - Quality gate configuration blocking builds
 - Screenshots of blocked PRs due to SAST findings
 
-
 Verbal claims ≠ evidence.
 
 ---
@@ -1178,7 +1073,6 @@ Verbal claims ≠ evidence.
 - Telemetry data (if available): "342 of 480 developers (71%) have SonarLint installed"
 - Survey data: "Annual developer survey: 68% report using security IDE plugins"
 - Interview Security Champions: "Most developers I talk to use the VS Code security plugin"
-
 
 Target: >70% adoption. <40% adoption = ❌ Non-Compliant (tool not effective if not used).
 
@@ -1197,7 +1091,6 @@ Target: >70% adoption. <40% adoption = ❌ Non-Compliant (tool not effective if 
 - MTTR measured and reported
 - Overdue findings escalated to management
 
-
 Detection without remediation = ineffective security.
 
 ---
@@ -1213,7 +1106,6 @@ Detection without remediation = ineffective security.
 - Check license expiration dates (tool admin dashboard, procurement records)
 - Verify support contract active (can you get help if tool breaks?)
 - Check user limits (is team within licensed user count?)
-
 
 Expired license = ❌ Non-Compliant (tool not available).
 
@@ -1232,7 +1124,6 @@ Expired license = ❌ Non-Compliant (tool not available).
 - Developer assessments (e.g., "Annual developer quiz: average score 82%")
 - Security Champions feedback (e.g., "Champions report most developers follow standards")
 
-
 Standards without enforcement measurement = ⚠️ Partial at best.
 
 ---
@@ -1248,7 +1139,6 @@ Standards without enforcement measurement = ⚠️ Partial at best.
 - % of repositories with SAST enabled
 - % of production deployments with DAST scans
 - % of developers using IDE plugins
-
 
 Assess organization-wide reality, not showcase projects.
 
@@ -1266,7 +1156,6 @@ Assess organization-wide reality, not showcase projects.
 - IaC scanning (Checkov, tfsec, Terrascan for Terraform/CloudFormation)
 - Kubernetes security scanning (kubesec, kube-bench)
 
-
 Infrastructure is code too - scan it.
 
 ---
@@ -1283,7 +1172,6 @@ Infrastructure is code too - scan it.
 - Tuning actions documented (ruleset adjustments, FP reduction efforts)
 - Trend showing improvement (FP rate decreasing, MTTR decreasing)
 - Tool changes when tools underperform (switch vendors if needed)
-
 
 Static metrics = stagnant security posture.
 
@@ -1303,7 +1191,6 @@ Before submitting the assessment for approval, verify:
 - [ ] Evidence ID referenced for Compliant and Partial items
 - [ ] No placeholder text ([TBD], [Date], TODO) remaining
 
-
 **Domain 1: Coding Standards**:
 
 - [ ] Standards document located and reviewed
@@ -1312,7 +1199,6 @@ Before submitting the assessment for approval, verify:
 - [ ] Language-specific guidelines verified for primary languages
 - [ ] Training records reviewed
 - [ ] Standards adoption measurement documented
-
 
 **Domain 2: SAST & SCA Tools**:
 
@@ -1324,7 +1210,6 @@ Before submitting the assessment for approval, verify:
 - [ ] SCA tool identified and verified
 - [ ] CVE detection working (sample reports provided)
 
-
 **Domain 3: DAST & Testing Tools**:
 
 - [ ] DAST tool identified (if applicable)
@@ -1333,14 +1218,12 @@ Before submitting the assessment for approval, verify:
 - [ ] IaC scanning verified (if using IaC)
 - [ ] API testing verified (if applicable)
 
-
 **Domain 4: IDE Plugins & Linters**:
 
 - [ ] IDE plugins documented (which plugins, which IDEs)
 - [ ] Adoption rate calculated (target: >70%)
 - [ ] Pre-commit hooks verified (secret detection working)
 - [ ] Developer feedback collected
-
 
 **Domain 5: Tool Effectiveness**:
 
@@ -1350,14 +1233,12 @@ Before submitting the assessment for approval, verify:
 - [ ] Coverage metrics calculated
 - [ ] ROI assessed (at least qualitatively)
 
-
 ## Tool Inventory
 
 - [ ] All deployed security tools listed
 - [ ] Tool vendor, version, license expiration documented
 - [ ] Tool status (Active, Pilot, Deprecated, Planned) marked
 - [ ] Evidence linked for each tool
-
 
 ## Evidence Register
 
@@ -1368,7 +1249,6 @@ Before submitting the assessment for approval, verify:
 - [ ] Evidence physically exists at documented locations
 - [ ] Evidence is accessible to auditors
 
-
 ## Gap Analysis
 
 - [ ] All ❌ Non-Compliant items appear
@@ -1378,7 +1258,6 @@ Before submitting the assessment for approval, verify:
 - [ ] Remediation target dates realistic
 - [ ] Priority assigned (Critical/High/Medium/Low)
 
-
 ## Summary Dashboard
 
 - [ ] Overall compliance percentage calculated correctly
@@ -1387,13 +1266,11 @@ Before submitting the assessment for approval, verify:
 - [ ] Top gaps list populated
 - [ ] Critical gaps count accurate
 
-
 ## Approval Sign-Off
 
 - [ ] Completed By section filled (name, role, date, signature)
 - [ ] Reviewed By sections prepared
 - [ ] Next Review Date calculated (+3 months)
-
 
 ## File Quality
 
@@ -1401,7 +1278,6 @@ Before submitting the assessment for approval, verify:
 - [ ] File saved to shared location
 - [ ] File permissions set (reviewers have access)
 - [ ] Evidence files uploaded to evidence repository
-
 
 ---
 
@@ -1441,13 +1317,11 @@ Before submitting the assessment for approval, verify:
 - Effectiveness assessment realistic
 - Gap remediation plans feasible
 
-
 **Possible Outcomes**:
 
 - Approve
 - Approve with Minor Revisions
 - Return for Revision
-
 
 ---
 
@@ -1461,7 +1335,6 @@ Before submitting the assessment for approval, verify:
 - CI/CD integration accuracy
 - Pipeline configuration correctness
 - Operational feasibility
-
 
 ---
 
@@ -1477,13 +1350,11 @@ Before submitting the assessment for approval, verify:
 - Strategic alignment
 - Budget implications (tool renewals, new tools)
 
-
 **Possible Outcomes**:
 
 - Approve
 - Approve with Conditions
 - Reject
-
 
 ## Post-Approval Actions
 
@@ -1564,14 +1435,12 @@ The Standards & Tools Assessment workbook consists of 10 sheets:
 - Fill: #003366 (dark blue)
 - Merge: A1:I1
 
-
 **Row 2**: Subtitle row
 
 - Cell A2: "ISO/IEC 27001:2022 - Control A.8.28: Secure Coding"
 - Font: Calibri 12pt white
 - Fill: #4472C4 (medium blue)
 - Merge: A2:I2
-
 
 ## Document Information Block
 
@@ -1598,7 +1467,6 @@ Next Review Date:           [Auto-calc: +3 months]
 - Ignoring false positive rates
 - No remediation tracking
 - No continuous improvement
-
 
 ---
 
@@ -1786,7 +1654,6 @@ Executive-level overview with auto-calculated compliance metrics.
 
 - Auto-populated from Gap_Analysis (Critical and High priority items)
 
-
 ---
 
 # Sheet 8: Evidence_Register
@@ -1813,7 +1680,6 @@ Executive-level overview with auto-calculated compliance metrics.
 - License File
 - Pipeline Config (YAML)
 - Other
-
 
 **Row Count**: 100 rows pre-formatted
 
@@ -1884,19 +1750,16 @@ Review Responsible:        [USER INPUT - yellow]
 - Initialize workbook
 - Create all 10 sheets
 
-
 **create_assessment_sheet(wb, sheet_name, requirements, policy_ref)**:
 
 - Generic function for sheets 2-6
 - Parameters: workbook, sheet name, requirements list, policy reference
-
 
 **create_summary_dashboard(wb)**:
 
 - Auto-calculate compliance metrics
 - Domain breakdown
 - Top gaps list
-
 
 ## Customization Points
 

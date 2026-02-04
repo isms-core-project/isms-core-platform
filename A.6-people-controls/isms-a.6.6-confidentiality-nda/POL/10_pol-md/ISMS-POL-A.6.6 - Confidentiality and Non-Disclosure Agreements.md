@@ -34,7 +34,6 @@
 - Legal: Legal Counsel / General Counsel
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -43,7 +42,6 @@
 - ISMS-POL-A.6.1 (Screening)
 - ISMS-POL-A.6.2 (Terms and Conditions of Employment)
 - ISMS-POL-A.5.19-22 (Supplier Relationship Security)
-
 
 ---
 
@@ -62,7 +60,6 @@ This policy establishes [Organisation]'s requirements for confidentiality and no
 - Customers with access to confidential information
 - Board members and advisors
 - Visitors with escorted access to sensitive areas
-
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00, including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Sector-specific requirements (FINMA, PCI DSS) apply where [Organisation]'s business activities trigger applicability.
 
@@ -86,7 +83,6 @@ This policy establishes [Organisation]'s requirements for confidentiality and no
 - Temporary staff and agency workers
 - Interns and work experience placements
 
-
 **External Parties**:
 
 - Vendors with access to confidential information or systems
@@ -95,7 +91,6 @@ This policy establishes [Organisation]'s requirements for confidentiality and no
 - Customers receiving access to confidential product information
 - Third-party auditors and assessors
 - External legal, financial, or technical advisors
-
 
 **Information Types Protected**:
 
@@ -106,7 +101,6 @@ This policy establishes [Organisation]'s requirements for confidentiality and no
 - Technical architecture and security information
 - Customer and partner data
 
-
 ## Out of Scope
 
 The following require specific consideration per ISMS-POL-00:
@@ -114,7 +108,6 @@ The following require specific consideration per ISMS-POL-00:
 - Public information with no confidentiality requirement
 - Information explicitly excluded from confidentiality by Executive Management
 - Regulatory disclosures required by law
-
 
 ## Regulatory Requirements
 
@@ -132,7 +125,6 @@ The following require specific consideration per ISMS-POL-00:
 |-----------|-------------------|
 | **FINMA** | Swiss regulated financial institution |
 | **PCI DSS** | Payment card data handling |
-
 
 ---
 
@@ -395,7 +387,6 @@ The following require specific consideration per ISMS-POL-00:
 | **Information Security Team** | Monitor compliance; conduct periodic reviews; maintain tracking systems |
 | **All Personnel** | Comply with NDA obligations; report potential breaches; protect confidential information |
 
-
 ---
 
 # Governance and Exception Management
@@ -449,7 +440,6 @@ Exceptions to NDA requirements require documented justification and approval:
 - All active exceptions reported to Executive Management quarterly
 - Expired exceptions without resolution escalated to CISO within 5 business days
 
-
 ## Compliance Monitoring
 
 Compliance is monitored through:
@@ -489,7 +479,6 @@ Non-compliance with this policy may result in:
 
 **Documentation Requirement**: All non-compliance events SHALL be documented in the NDA Compliance Register with: date detected, party involved, violation type, response taken, resolution date, and lessons learned (if applicable).
 
-
 ---
 
 # Evidence for This Policy
@@ -507,7 +496,6 @@ Evidence required to demonstrate this policy is adequately documented and approv
 - ✅ Post-termination obligations documented (Section 4)
 - ✅ Roles and responsibilities assigned (Section 5)
 - ✅ Governance and exception procedures defined (Section 6)
-
 
 **Stage 2 (Operational Effectiveness) Evidence:**
 
@@ -582,7 +570,6 @@ The following metrics SHALL be tracked and reported via ISMS-IMP-A.6.6.4:
 | Template review currency | 100% within 12 months | Quarterly | Legal Counsel |
 
 **Reporting**: Dashboard metrics SHALL be reviewed monthly by Information Security Team and reported to CISO. Quarterly summary presented to Executive Management.
-
 
 ---
 

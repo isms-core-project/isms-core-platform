@@ -44,7 +44,6 @@ This document consists of two parts:
   - Cell Styling Reference
   - Integration Points
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -87,14 +86,12 @@ This assessment covers BOTH physical workspace (clear desk) and digital workspac
 - Removable media handling requirements
 - Printer security measures
 
-
 **Clear Screen Implementation:**
 
 - Screen lock timeout configurations by classification level
 - Manual lock shortcut awareness and usage
 - Privacy screen deployment in high-risk areas
 - End-of-day procedures
-
 
 **Compliance Monitoring:**
 
@@ -103,14 +100,12 @@ This assessment covers BOTH physical workspace (clear desk) and digital workspac
 - Non-compliance reporting and escalation
 - Training and awareness programmes
 
-
 **Workspace Assessment:**
 
 - Office area compliance by location
 - Remote working compliance
 - Meeting room compliance
 - Shared space compliance
-
 
 #### How This Relates to Other A.7.6-7-14 Assessments
 
@@ -137,13 +132,11 @@ This assessment covers BOTH physical workspace (clear desk) and digital workspac
 - Knowledge of workplace audit procedures
 - Access to audit results and compliance records
 
-
 #### Time Commitment
 
 - **Initial assessment:** 6-10 hours
 - **Monthly updates (audit results):** 1-2 hours
 - **Quarterly full assessment:** 3-4 hours
-
 
 ### Expected Outputs
 
@@ -172,20 +165,17 @@ Before starting this assessment, gather:
 - Information classification policy (CONFIDENTIAL, INTERNAL, PUBLIC definitions)
 - Remote working policy (if applicable)
 
-
 #### 2. Technical Configuration Data
 
 - Endpoint management reports (screen lock timeout settings)
 - Group Policy or MDM configuration for screen lock
 - Privacy screen inventory (if deployed)
 
-
 #### 3. Audit Records
 
 - Clear desk audit checklists and results (last 12 months)
 - Audit methodology documentation
 - Non-compliance reports and follow-up actions
-
 
 #### 4. Workspace Information
 
@@ -194,12 +184,10 @@ Before starting this assessment, gather:
 - Shredder/confidential waste bin locations
 - Meeting room list and security equipment
 
-
 #### 5. Training Records
 
 - Clear desk/screen awareness training completion rates
 - Training materials used
-
 
 ### Required Tools
 
@@ -208,14 +196,12 @@ Before starting this assessment, gather:
 - Clear desk audit checklist templates
 - Screen capture tools (for evidence)
 
-
 ### Dependencies
 
 This assessment has NO dependencies on other assessments - it can be completed independently.
 
 Outputs feed into:
 - ISMS-IMP-A.7.6-7-14-S4 (Compliance Dashboard)
-
 
 ---
 
@@ -258,7 +244,6 @@ Outputs feed into:
 - Assessment Date, Completed By, Organisation
 - Review status legend for colour coding
 
-
 **Time Required:** 5 minutes
 
 ### Sheet 2: Requirements Matrix
@@ -296,7 +281,6 @@ Outputs feed into:
 | G | Implementation Status | Implemented / Partial / Not Implemented |
 | H | Notes | Additional context |
 
-
 **Time Required:** 1-2 hours
 
 ### Sheet 3: Screen Lock Configuration
@@ -309,51 +293,41 @@ Outputs feed into:
 
 - "Windows Workstations", "MacOS Devices", "Mobile Devices (iOS)", "Mobile Devices (Android)"
 
-
 **Column B - Policy Name:**
 
 - Group Policy or MDM policy name: "GPO-ScreenLock-Standard", "Intune-MDM-Mobile"
-
 
 **Column C - Configured Timeout (minutes):**
 
 - Actual timeout configured: 5, 10, 15
 
-
 **Column D - Required Timeout (per policy):**
 
 - Required per clear screen policy
-
 
 **Column E - Compliant:**
 
 - Formula: Yes if Configured <= Required
 
-
 **Column F - Enforcement Method:**
 
 - "Group Policy", "Intune MDM", "JAMF", "Manual"
-
 
 **Column G - Device Count:**
 
 - Number of devices covered
 
-
 **Column H - Last Verified:**
 
 - Date configuration was verified
-
 
 **Column I - Evidence:**
 
 - Screenshot reference or configuration export
 
-
 **Column J - Notes:**
 
 - Exceptions, remediation plans
-
 
 **Time Required:** 1-2 hours
 
@@ -367,51 +341,41 @@ Outputs feed into:
 
 - Date of audit: "15.01.2026"
 
-
 **Column B - Audit Type:**
 
 - "Scheduled Monthly", "Random Spot Check", "Post-Incident"
-
 
 **Column C - Location/Area:**
 
 - "Building A - Floor 2", "Remote Workers", "Executive Suite"
 
-
 **Column D - Workstations Audited:**
 
 - Number audited: 25, 50, etc.
-
 
 **Column E - Compliant:**
 
 - Number passing audit
 
-
 **Column F - Non-Compliant:**
 
 - Number failing audit
-
 
 **Column G - Compliance Rate:**
 
 - Formula: E/(E+F) * 100%
 
-
 **Column H - Common Issues Found:**
 
 - "Sensitive documents on desk", "USB drives left out", "Unlocked screens"
-
 
 **Column I - Follow-Up Actions:**
 
 - "Line managers notified", "Training scheduled", "Repeat audit planned"
 
-
 **Column J - Auditor:**
 
 - Name of auditor
-
 
 **Time Required:** 1-2 hours (capturing historical audits)
 
@@ -425,56 +389,45 @@ Outputs feed into:
 
 - "WS-001", "WS-002", etc.
 
-
 **Column B - Location:**
 
 - "Building A - Floor 2 Open Plan"
-
 
 **Column C - Workspace Type:**
 
 - Dropdown: "Open Plan Office", "Private Office", "Meeting Room", "Shared Space", "Home Office"
 
-
 **Column D - Workstation Count:**
 
 - Number of workstations
-
 
 **Column E - Lockable Storage Available:**
 
 - "Yes - All", "Yes - Partial", "No"
 
-
 **Column F - Shredder Access:**
 
 - "Yes - On Floor", "Yes - Central", "No"
-
 
 **Column G - Confidential Waste Bins:**
 
 - "Yes", "No"
 
-
 **Column H - Privacy Screens Deployed:**
 
 - "Yes - All", "Yes - Partial", "No", "N/A"
-
 
 **Column I - Average Audit Compliance:**
 
 - Average compliance rate from audits: "95%", "87%"
 
-
 **Column J - Compliance Status:**
 
 - Formula auto-calculates
 
-
 **Column K - Notes:**
 
 - Remediation plans, equipment requests
-
 
 **Time Required:** 2-3 hours
 
@@ -489,7 +442,6 @@ Outputs feed into:
 - Audit Results Summary (trend chart)
 - Workspace Infrastructure Compliance
 - Gap Summary
-
 
 **Time Required:** 15-30 minutes for review
 
@@ -508,7 +460,6 @@ Outputs feed into:
 7. Storage allocation records
 8. Privacy screen deployment records
 
-
 **Time Required:** 2-3 hours
 
 ### Sheet 8: Approval Sign-Off
@@ -521,7 +472,6 @@ Outputs feed into:
 - Level 2: Facilities Manager
 - Level 3: CISO
 - Level 4: Compliance Officer
-
 
 **Time Required:** 5 minutes for Level 1
 
@@ -537,13 +487,11 @@ Outputs feed into:
 - Information classification policy
 - Remote working policy
 
-
 **2. Technical Configuration Evidence**
 
 - Group Policy configuration (screen lock timeout)
 - MDM configuration screenshots
 - Endpoint management compliance reports
-
 
 **3. Audit Evidence**
 
@@ -551,19 +499,16 @@ Outputs feed into:
 - Audit results summary reports
 - Photo evidence of compliant/non-compliant workstations (anonymised)
 
-
 **4. Infrastructure Evidence**
 
 - Storage allocation records
 - Privacy screen inventory
 - Shredder/secure bin locations
 
-
 **5. Training Evidence**
 
 - Training completion reports
 - Training materials
-
 
 ### Evidence Storage
 
@@ -585,7 +530,6 @@ Outputs feed into:
 - Spot-check random devices to verify actual timeout
 - Document last verification date
 
-
 ### Pitfall 2: Audit Results Not Trended
 
 **Problem:** Individual audit results documented but no trend analysis
@@ -595,7 +539,6 @@ Outputs feed into:
 - Document all audits (monthly minimum)
 - Calculate compliance trend over time
 - Identify persistent problem areas
-
 
 ### Pitfall 3: Remote Workers Excluded
 
@@ -607,7 +550,6 @@ Outputs feed into:
 - Document remote working policy requirements
 - Consider remote audit mechanisms (self-certification, video check)
 
-
 ### Pitfall 4: Lockable Storage Insufficiency
 
 **Problem:** Policy requires locked storage but insufficient provision
@@ -617,7 +559,6 @@ Outputs feed into:
 - Verify lockable storage availability vs. requirement
 - Document allocation and any shortfalls
 - Include remediation plan for gaps
-
 
 ### Pitfall 5: Privacy Screens Not Deployed Where Required
 
@@ -629,7 +570,6 @@ Outputs feed into:
 - Document current deployment
 - Include procurement plan for gaps
 
-
 ### Pitfall 6: Non-Compliance Not Escalated
 
 **Problem:** Repeat non-compliance not escalated to line managers/HR
@@ -639,7 +579,6 @@ Outputs feed into:
 - Document escalation process
 - Track repeat offenders (anonymised)
 - Evidence escalation actions taken
-
 
 ### Pitfall 7: Meeting Room Compliance Ignored
 
@@ -651,7 +590,6 @@ Outputs feed into:
 - Document whiteboard erasing requirements
 - Check for post-meeting compliance
 
-
 ### Pitfall 8: Printer Security Not Addressed
 
 **Problem:** Secure printing not implemented or not enforced
@@ -661,7 +599,6 @@ Outputs feed into:
 - Document printer locations and security features
 - Verify secure print (authentication) deployment
 - Include printer areas in audits
-
 
 ---
 
@@ -675,14 +612,12 @@ Outputs feed into:
 - [ ] Privacy screen requirements defined
 - [ ] Implementation status accurate
 
-
 ### Sheet 3: Screen Lock Configuration
 
 - [ ] All device types documented (Windows, Mac, Mobile)
 - [ ] Configured timeout values accurate (verified)
 - [ ] Compliance calculated correctly
 - [ ] Evidence referenced for each configuration
-
 
 ### Sheet 4: Audit Results
 
@@ -691,7 +626,6 @@ Outputs feed into:
 - [ ] Common issues documented
 - [ ] Follow-up actions documented
 
-
 ### Sheet 5: Workspace Assessment
 
 - [ ] All workspace areas documented
@@ -699,14 +633,12 @@ Outputs feed into:
 - [ ] Privacy screen deployment documented
 - [ ] Compliance infrastructure gaps identified
 
-
 ### Sheet 7: Evidence Register
 
 - [ ] Policy documents referenced
 - [ ] Configuration screenshots collected
 - [ ] Audit checklists/results referenced
 - [ ] All evidence files exist in documented location
-
 
 ---
 

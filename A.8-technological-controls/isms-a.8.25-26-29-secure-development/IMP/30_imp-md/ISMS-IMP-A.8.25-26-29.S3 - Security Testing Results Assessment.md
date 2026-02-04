@@ -44,7 +44,6 @@ This document consists of two parts:
   - Formulas & Calculations
   - Data Validation & Conditional Formatting
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -66,7 +65,6 @@ This document consists of two parts:
 - Overall security testing coverage and effectiveness
 - Finding severity distribution and remediation
 
-
 **This Assessment is For:**
 
 - Individual applications (assessing security testing coverage)
@@ -74,14 +72,12 @@ This document consists of two parts:
 - Evaluating WHAT testing was done and WHAT was found
 - Measuring security testing effectiveness
 
-
 **This Assessment is NOT For:**
 
 - Security requirements specification (see IMP-S1)
 - SDLC security activities process (see IMP-S2)
 - Vulnerability remediation tracking (see IMP-S4 - this focuses on remediation workflow)
 - Portfolio-wide dashboard (see IMP-S5)
-
 
 ## Assessment Workbook Structure
 
@@ -106,7 +102,6 @@ This document consists of two parts:
 - Medium-Risk Application: 2-3 hours
 - Low-Risk Application: 1-2 hours
 
-
 ## Key Assessment Questions
 
 This assessment answers:
@@ -118,7 +113,6 @@ This assessment answers:
 - ✅ Are findings triaged and remediated?
 - ✅ What is the overall security posture based on testing results?
 - ✅ What testing gaps exist?
-
 
 ---
 
@@ -136,13 +130,11 @@ This assessment answers:
 - [ ] Application owner contact
 - [ ] Security testing requirements (based on risk level)
 
-
 **Testing Period:**
 
 - [ ] Assessment period (e.g., Q4 2025, Last 6 months)
 - [ ] Number of releases/sprints in period
 - [ ] Testing milestones (when were tests executed?)
-
 
 **SAST Tool Access:**
 
@@ -152,14 +144,12 @@ This assessment answers:
 - [ ] Historical SAST scan data
 - [ ] SAST finding export/reports
 
-
 **DAST Tool Access:**
 
 - [ ] DAST tool name (OWASP ZAP, Burp Suite, Acunetix, etc.)
 - [ ] Access to DAST dashboard
 - [ ] Latest DAST scan results
 - [ ] DAST finding export/reports
-
 
 **SCA Tool Access:**
 
@@ -168,14 +158,12 @@ This assessment answers:
 - [ ] Vulnerable dependency list
 - [ ] SCA finding export/reports
 
-
 **Penetration Testing:**
 
 - [ ] Pen test reports (if conducted in assessment period)
 - [ ] Pen test executive summary
 - [ ] Pen test findings list
 - [ ] Remediation evidence
-
 
 **Security Test Cases:**
 
@@ -184,13 +172,11 @@ This assessment answers:
 - [ ] Security acceptance criteria documentation
 - [ ] Test execution results
 
-
 ## Required Tools
 
 **Excel Workbook:**
 
 - Excel 2016 or later (Office 365 recommended)
-
 
 **Evidence Collection:**
 
@@ -198,12 +184,10 @@ This assessment answers:
 - Access to testing tool dashboards
 - PDF reader (for pen test reports)
 
-
 **Optional:**
 
 - API access to SAST/DAST/SCA tools (for automated metric extraction)
 - CI/CD pipeline access (to verify automated testing)
-
 
 ## Assessor Skills
 
@@ -215,14 +199,12 @@ This assessment answers:
 - Ability to interpret security testing results
 - Understanding of vulnerability severity ratings (CVSS, tool-specific)
 
-
 **Helpful:**
 
 - Experience with specific testing tools (SonarQube, Snyk, etc.)
 - Penetration testing knowledge
 - OWASP Top 10 knowledge
 - CWE/CVE familiarity
-
 
 ---
 
@@ -272,13 +254,11 @@ This assessment answers:
 - **Medium-Risk Applications:** Last 6 months (semi-annual assessment)
 - **Low-Risk Applications:** Last 12 months (annual assessment)
 
-
 **Why Multiple Cycles Matter:**
 
 - Single scan may not be representative
 - Trends are more meaningful than point-in-time
 - Shows improvement (or degradation) over time
-
 
 ## Testing Tool Data Extraction
 
@@ -288,13 +268,11 @@ This assessment answers:
 - Pull key metrics: total findings, severity distribution, code coverage
 - Note scan date and version scanned
 
-
 **DAST Tools:**
 
 - Export latest scan results
 - Pull key metrics: vulnerabilities found, severity distribution
 - Note scan configuration (authenticated vs. unauthenticated)
-
 
 **SCA Tools:**
 
@@ -302,12 +280,10 @@ This assessment answers:
 - Pull metrics: critical/high/medium/low vulnerabilities
 - Note direct vs. transitive dependencies
 
-
 **Manual Export vs. API:**
 
 - Manual: Login to tool dashboard, export reports
 - API: Use tool API for automated metric extraction (faster, more accurate)
-
 
 ---
 
@@ -329,13 +305,11 @@ This assessment answers:
 - **Technology Stack:** Languages, frameworks
 - **Application Owner:** Name, email
 
-
 **Testing Context:**
 
 - **Assessment Period:** Start date → End date
 - **Number of Releases/Sprints in Period:** Count
 - **Testing Milestones:** Major testing events (e.g., pre-release pen test, quarterly DAST scan)
-
 
 **Testing Requirements (from Policy):**
 Based on risk level, what testing is required?
@@ -354,20 +328,17 @@ Based on risk level, what testing is required?
 - **IAST Tool:** Name and version (if used)
 - **Pen Test Provider:** Company name (if external)
 
-
 **Completion Tips:**
 
 - Clearly define assessment period (affects all subsequent sheets)
 - Verify tool versions (different versions may have different vulnerability databases)
 - Note if tools changed during assessment period (affects trend analysis)
 
-
 **Common Mistakes:**
 
 - ❌ Vague assessment period ("recent" instead of "2025-10-01 to 2025-12-31")
 - ❌ Not noting tool version changes
 - ❌ Incorrect risk level (must match IMP-S1)
-
 
 ## Sheet 2: SAST Results
 
@@ -385,14 +356,12 @@ Based on risk level, what testing is required?
 - **Last Scan Date:** Date of most recent scan
 - **Code Coverage:** % of codebase scanned (if available)
 
-
 **B. SAST Configuration**
 
 - **Languages Scanned:** Which languages does tool scan?
 - **Security Rule Sets Enabled:** OWASP Top 10, CWE Top 25, Language-specific, All
 - **Severity Levels:** Critical, High, Medium, Low, Info
 - **False Positive Handling:** Are false positives suppressed?
-
 
 **C. SAST Findings Summary (Latest Scan)**
 
@@ -429,14 +398,12 @@ List top 5 vulnerability categories found:
 - **Build Fails on Critical/High?** Yes/No/Partial
 - **Developer Feedback?** Immediate (IDE/PR), Daily report, Weekly report, Manual
 
-
 **G. SAST False Positive Rate**
 
 - **Total Findings:** X
 - **False Positives:** X
 - **False Positive Rate:** X%
 - **False Positives Suppressed?** Yes/No
-
 
 **Completion Tips:**
 
@@ -446,14 +413,12 @@ List top 5 vulnerability categories found:
 - Compare first vs. latest scan in period (trend)
 - Note if scan failed or was incomplete
 
-
 **Common Mistakes:**
 
 - ❌ Only reporting latest scan (no trend analysis)
 - ❌ Not noting code coverage (partial scans misleading)
 - ❌ Including Info-level findings in critical count (severity matters)
 - ❌ Not checking false positive rate (high FP rate = tool not useful)
-
 
 ## Sheet 3: DAST Results
 
@@ -471,7 +436,6 @@ List top 5 vulnerability categories found:
 - **Last Scan Date:** Date of most recent scan
 - **Scan Type:** Authenticated, Unauthenticated, Both
 
-
 **B. DAST Scan Configuration**
 
 - **Target URL(s):** Which URLs/endpoints were scanned?
@@ -479,7 +443,6 @@ List top 5 vulnerability categories found:
 - **Authentication:** Configured for authenticated scan? Yes/No
 - **Scan Duration:** Hours (typical)
 - **Coverage:** % of application scanned (if available)
-
 
 **C. DAST Findings Summary (Latest Scan)**
 
@@ -516,13 +479,11 @@ List top 5 vulnerability categories found:
 - **DAST-Only Findings:** X (runtime vulnerabilities, configuration issues)
 - **SAST-Only Findings:** X (code-level issues DAST can't detect)
 
-
 **G. DAST False Positive Rate**
 
 - **Total Findings:** X
 - **False Positives:** X
 - **False Positive Rate:** X%
-
 
 **Completion Tips:**
 
@@ -532,14 +493,12 @@ List top 5 vulnerability categories found:
 - Check scan coverage (did scan timeout before completing?)
 - Identify DAST-specific findings (configuration issues, runtime issues)
 
-
 **Common Mistakes:**
 
 - ❌ Only running unauthenticated scans (misses many vulnerabilities)
 - ❌ Not checking scan coverage (partial scans incomplete)
 - ❌ Not correlating SAST and DAST findings (same vuln found by both?)
 - ❌ Ignoring "Info" findings (may indicate misconfigurations)
-
 
 ## Sheet 4: SCA Results
 
@@ -557,14 +516,12 @@ List top 5 vulnerability categories found:
 - **Last Scan Date:** Date of most recent scan
 - **Package Managers Scanned:** npm, Maven, pip, NuGet, etc.
 
-
 **B. Dependency Inventory**
 
 - **Total Dependencies:** X
 - **Direct Dependencies:** X
 - **Transitive Dependencies:** X
 - **Outdated Dependencies:** X (not latest version)
-
 
 **C. SCA Findings Summary (Latest Scan)**
 
@@ -590,20 +547,17 @@ List top 5 most vulnerable dependencies:
 - **Critical Vulnerabilities Outstanding:** X
 - **High Vulnerabilities Outstanding:** X
 
-
 **F. License Compliance** (if tool supports)
 
 - **License Issues Found:** X
 - **Restricted Licenses:** X (e.g., GPL in proprietary software)
 - **Unknown Licenses:** X
 
-
 **G. Dependency Update Strategy**
 
 - **Automated Dependency Updates?** Yes (Dependabot/Renovate), No
 - **Update Frequency:** Daily, Weekly, Monthly, Manual
 - **Breaking Changes Handled?** Yes/No (how are major version updates tested?)
-
 
 **Completion Tips:**
 
@@ -613,14 +567,12 @@ List top 5 most vulnerable dependencies:
 - Check for known high-profile CVEs (Log4Shell, Spring4Shell, etc.)
 - Note if dependencies are outdated (may have unpatched vulnerabilities)
 
-
 **Common Mistakes:**
 
 - ❌ Only checking direct dependencies (transitive dependencies also matter)
 - ❌ Not correlating CVE severity with CVSS score (tool severity may differ)
 - ❌ Ignoring license compliance (legal risk)
 - ❌ Not checking dependency update frequency (stale dependencies = more vulnerabilities)
-
 
 ## Sheet 5: IAST & Penetration Testing
 
@@ -638,7 +590,6 @@ List top 5 most vulnerable dependencies:
 - **Testing Environment:** Development, QA, Staging
 - **Execution Period:** Dates IAST was active
 
-
 **B. IAST Findings Summary**
 
 | Severity | Count |
@@ -655,7 +606,6 @@ List top 5 most vulnerable dependencies:
 - **Runtime Vulnerabilities:** X (only detectable at runtime)
 - **IAST Advantages Noted:** [List specific examples]
 
-
 **Section B: Penetration Testing**
 
 **A. Penetration Test Execution**
@@ -666,7 +616,6 @@ List top 5 most vulnerable dependencies:
 - **Pen Test Scope:** Web app, Mobile app, API, Network, All
 - **Pen Test Provider:** Internal team, External provider (name)
 - **Pen Test Methodology:** OWASP Testing Guide, PTES, Custom
-
 
 **B. Penetration Test Findings Summary**
 
@@ -694,14 +643,12 @@ List top 5 most critical findings:
 - **Retest Date:** [Date]
 - **Retest Result:** All findings fixed, Some findings remain, New findings discovered
 
-
 **E. Penetration Test Report**
 
 - **Report Location:** URL or file path
 - **Executive Summary Available?** Yes/No
 - **Technical Details Available?** Yes/No
 - **Remediation Recommendations Provided?** Yes/No
-
 
 **Completion Tips:**
 
@@ -710,14 +657,12 @@ List top 5 most critical findings:
 - Check if retest was conducted (validates remediation)
 - Note any findings that were NOT found by SAST/DAST (shows value of pen testing)
 
-
 **Common Mistakes:**
 
 - ❌ Not conducting pen tests for High-Risk applications (policy violation)
 - ❌ Only reading executive summary (miss technical details)
 - ❌ Not tracking remediation (findings identified but not fixed)
 - ❌ Not conducting retest (can't verify findings fixed)
-
 
 ## Sheet 6: Security Acceptance Testing
 
@@ -733,7 +678,6 @@ List top 5 most critical findings:
 - **Test Plan Location:** URL or file path
 - **Test Plan Last Updated:** Date
 - **Test Cases Documented?** Yes/No/Partial
-
 
 **B. Security Test Case Coverage**
 
@@ -757,7 +701,6 @@ For each security requirement category, assess test case coverage:
 - **Acceptance Criteria Met?** Yes/No/Partial
 - **Security Sign-Off Obtained?** Yes/No
 
-
 **D. Security Regression Testing**
 
 - **Security Regression Tests?** Yes/No
@@ -765,14 +708,12 @@ For each security requirement category, assess test case coverage:
 - **Last Regression Test Date:** Date
 - **Regression Test Pass Rate:** X%
 
-
 **E. Test Automation**
 
 - **Security Tests Automated?** Yes/No/Partial
 - **Automation Framework:** Selenium, Postman, Burp Suite, Custom, Other
 - **Automated Tests in CI/CD?** Yes/No
 - **Automated Test Coverage:** X% of security test cases
-
 
 **Completion Tips:**
 
@@ -782,14 +723,12 @@ For each security requirement category, assess test case coverage:
 - Calculate pass rate (executed and passed / total executed)
 - Note automation level (automated tests more reliable)
 
-
 **Common Mistakes:**
 
 - ❌ Confusing test case definition with execution (defined ≠ executed)
 - ❌ Not checking pass rate (executed but failed = not compliant)
 - ❌ Not verifying security acceptance criteria (may exist but not enforced)
 - ❌ Not tracking regression testing (security may regress over time)
-
 
 ## Sheet 7: Testing Coverage Dashboard
 
@@ -823,7 +762,6 @@ Coverage Score = (Tests Executed / Tests Required) × 100%
 - **50-74%:** Significant testing gaps
 - **<50%:** Major testing deficiencies
 
-
 **C. Vulnerability Severity Distribution** (Aggregated from Sheets 2-5)
 
 | Severity | SAST | DAST | SCA | IAST | Pen Test | Total |
@@ -848,7 +786,6 @@ List all testing gaps:
 - SCA not automated (vulnerable dependencies not tracked)
 - Security acceptance testing not defined (no go/no-go criteria)
 
-
 **E. Recommendations**
 
 For each gap, provide recommendation:
@@ -859,7 +796,6 @@ For each gap, provide recommendation:
 - **Effort:** Low/Medium/High
 - **Owner:** [Suggested owner]
 
-
 **Completion Tips:**
 
 - Review all previous sheets (Sheets 2-6) before completing dashboard
@@ -867,14 +803,12 @@ For each gap, provide recommendation:
 - Prioritize gaps by risk (High-Risk apps without pen test = P1)
 - Be specific in recommendations (not "improve testing")
 
-
 **Common Mistakes:**
 
 - ❌ Not aggregating findings across all test types (SAST + DAST + SCA + Pen test)
 - ❌ Not comparing against policy requirements (what's required vs. what was done)
 - ❌ Generic recommendations ("do more testing")
 - ❌ Not prioritizing gaps (all gaps treated equally)
-
 
 ## Sheet 8: Compliance_Summary
 
@@ -917,7 +851,6 @@ For each gap, provide recommendation:
 - Ensure severity distributions sum to 100%
 - Validate compliance scores align with testing coverage
 
-
 ## Sheet 9: Evidence_Register
 
 **Purpose:** Centralized tracking of all audit evidence supporting the assessment.
@@ -955,7 +888,6 @@ For each gap, provide recommendation:
 - Link to actual files (not manual descriptions)
 - Include collection date for audit trail
 - Archive old evidence when superseded
-
 
 ## Sheet 10: Approval_Sign_Off
 
@@ -1017,7 +949,6 @@ For each gap, provide recommendation:
 - Plan follow-up assessment before approval
 - Archive approved version with evidence
 
-
 ---
 
 # Evidence Collection
@@ -1034,7 +965,6 @@ For each gap, provide recommendation:
 - **Timely:** From assessment period
 - **Relevant:** Directly supports assessment findings
 
-
 ## Evidence Types by Sheet
 
 **Sheet 2 (SAST Results):**
@@ -1044,14 +974,12 @@ For each gap, provide recommendation:
 - SAST trend graph screenshot
 - SAST rule configuration screenshot
 
-
 **Sheet 3 (DAST Results):**
 
 - DAST scan report export
 - DAST dashboard screenshot
 - DAST scan configuration screenshot (authenticated vs. unauthenticated)
 - DAST finding details (sample critical/high findings)
-
 
 **Sheet 4 (SCA Results):**
 
@@ -1060,7 +988,6 @@ For each gap, provide recommendation:
 - Top vulnerable dependencies screenshot
 - SCA remediation metrics
 
-
 **Sheet 5 (IAST & Pen Test):**
 
 - IAST scan results (if applicable)
@@ -1068,14 +995,12 @@ For each gap, provide recommendation:
 - Pen test executive summary
 - Pen test remediation evidence (retest report)
 
-
 **Sheet 6 (Security Acceptance Testing):**
 
 - Security test plan document
 - Test case execution report
 - Test pass/fail summary
 - Security acceptance criteria checklist
-
 
 ## Evidence Storage and Organization
 
@@ -1200,14 +1125,12 @@ For each gap, provide recommendation:
 - [ ] All testing types assessed (SAST, DAST, SCA, IAST, Pen test, Acceptance)
 - [ ] Trend analysis included (first vs. latest scan)
 
-
 ## Accuracy
 
 - [ ] Scan results match tool exports
 - [ ] Severity counts verified
 - [ ] Assessment period clearly defined
 - [ ] Tool names and versions accurate
-
 
 ## Evidence
 
@@ -1216,20 +1139,17 @@ For each gap, provide recommendation:
 - [ ] Pen test report obtained (if applicable)
 - [ ] Evidence stored in repository
 
-
 ## Consistency
 
 - [ ] Dashboard (Sheet 7) matches Sheets 2-6
 - [ ] Testing requirements match policy (based on risk level)
 - [ ] Gaps documented with recommendations
 
-
 ## Clarity
 
 - [ ] Findings clearly described
 - [ ] Recommendations specific and actionable
 - [ ] No typos or errors
-
 
 ---
 
@@ -1309,19 +1229,16 @@ Good luck with your security testing assessments! 🔒✅
 - Sub-Header: `RGB(68, 114, 196)` / `#4472C4`, Font: White, Bold, 11pt
 - Column Header: `RGB(217, 217, 217)` / `#D9D9D9`, Font: Black, Bold, 10pt
 
-
 **Input Cells:**
 
 - User Input: `RGB(255, 255, 204)` / `#FFFFCC` (Light Yellow)
 - Auto-Calculated: `RGB(217, 217, 217)` / `#D9D9D9` (Light Gray) - Protected
-
 
 **Status Indicators:**
 
 - ✅ Good/Low: `RGB(198, 239, 206)` / `#C6EFCE` (Light Green)
 - ⚠️ Medium: `RGB(255, 235, 156)` / `#FFEB9C` (Light Yellow)
 - ❌ Critical/High: `RGB(255, 199, 206)` / `#FFC7CE` (Light Red)
-
 
 ## Standard Fonts
 
@@ -1330,7 +1247,6 @@ Good luck with your security testing assessments! 🔒✅
 - **Column Headers:** Calibri 10pt Bold, Black
 - **Body Text:** Calibri 10pt, Black
 - **Instructions:** Calibri 9pt, Italic, Gray `RGB(128, 128, 128)`
-
 
 ## Data Validation Standards
 
@@ -1406,7 +1322,6 @@ Document application information and define testing assessment period.
 - "High Risk" → Red background
 - "Medium Risk" → Yellow background
 - "Low Risk" → Green background
-
 
 ---
 
@@ -1512,7 +1427,6 @@ Assess SAST execution and analyze scan results.
 - If 20-50% → Yellow (moderate FP rate)
 - If <20% → Green (low FP rate)
 
-
 ---
 
 # Sheet 3: DAST Results
@@ -1534,7 +1448,6 @@ Assess DAST execution and analyze scan results.
 - F. DAST vs. SAST Correlation (Rows 46-49)
 - G. DAST False Positive Rate (Rows 51-54)
 
-
 **Unique Fields:**
 
 **Section B: Scan Configuration**
@@ -1545,14 +1458,12 @@ Assess DAST execution and analyze scan results.
 - **Scan Duration (Hours)** (Number)
 - **Coverage (%)** (Number, 0-100)
 
-
 **Section F: DAST vs. SAST Correlation**
 
 - **Vulnerabilities in BOTH?** (Yes/No/Unknown)
 - **Examples** (Text)
 - **DAST-Only Findings** (Number)
 - **SAST-Only Findings** (Number)
-
 
 ---
 
@@ -1837,7 +1748,6 @@ Calculate overall security testing coverage and identify gaps.
 - If 75-99% → Yellow background
 - If <75% → Red background
 
-
 ### Section C: Vulnerability Severity Distribution (Rows 20-28)
 
 **Columns:**
@@ -1926,7 +1836,6 @@ List: Low,Medium,High
 - Use `openpyxl` library with UTF-8 encoding
 - Test emoji rendering (✅⚠️❌)
 
-
 **Formula Testing:**
 
 - Test all cross-sheet references (=Sheet2!B21, etc.)
@@ -1934,12 +1843,10 @@ List: Low,Medium,High
 - Test percentage calculations
 - Verify COUNTIF formulas
 
-
 **Data Validation:**
 
 - Verify all dropdowns work
 - Test dropdown lists are complete
-
 
 **Conditional Formatting:**
 
@@ -1947,18 +1854,15 @@ List: Low,Medium,High
 - Test severity color coding (Critical=Red, High=Red, Medium=Yellow, Low=Green)
 - Test coverage score thresholds
 
-
 **Sheet Protection:**
 
 - Verify only yellow cells unlocked
 - Test formulas cannot be edited
 
-
 **Performance:**
 
 - Workbook should generate in <10 seconds
 - File size <2MB
-
 
 ---
 
@@ -1973,13 +1877,11 @@ List: Low,Medium,High
 - [ ] All column widths appropriate
 - [ ] No hidden rows or columns
 
-
 **Data Validation:**
 
 - [ ] All dropdowns functional
 - [ ] Dropdown lists complete
 - [ ] Invalid entries rejected
-
 
 **Formulas:**
 
@@ -1988,13 +1890,11 @@ List: Low,Medium,High
 - [ ] Cross-sheet references work
 - [ ] Percentage calculations display correctly (XX.X%)
 
-
 **Conditional Formatting:**
 
 - [ ] Severity colors display correctly (Crit/High=Red, Med=Yellow, Low=Green)
 - [ ] Coverage score colors work
 - [ ] Formatting persists when cells updated
-
 
 **Protection:**
 
@@ -2002,13 +1902,11 @@ List: Low,Medium,High
 - [ ] Only yellow cells unlocked
 - [ ] Formulas locked
 
-
 **Usability:**
 
 - [ ] Instructions clear
 - [ ] No placeholder text
 - [ ] Professional appearance
-
 
 **Testing:**
 
@@ -2016,7 +1914,6 @@ List: Low,Medium,High
 - [ ] Verify all calculations accurate
 - [ ] Test on Windows and Mac
 - [ ] Test in Excel 2016 and Office 365
-
 
 ---
 

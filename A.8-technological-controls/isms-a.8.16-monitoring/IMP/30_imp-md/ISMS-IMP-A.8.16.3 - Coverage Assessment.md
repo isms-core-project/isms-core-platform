@@ -46,7 +46,6 @@ This document consists of two parts:
   - Compliance Calculations
   - Integration with A.8.16.1 and A.8.16.2
 
-
 ---
 
 **IMPLEMENTATION NOTE:**
@@ -55,7 +54,6 @@ This assessment **DEPENDS ON** completion of:
 
 - **ISMS-IMP-A.8.16.1** (Monitoring Infrastructure Assessment) - provides monitoring platform inventory
 - **ISMS-IMP-A.8.16.2** (Baseline & Detection Assessment) - provides baseline and detection rule status
-
 
 Cross-references between assessments are critical for accurate coverage analysis.
 
@@ -89,14 +87,12 @@ Most organizations believe they have comprehensive monitoring, but in reality:
 - Service accounts and non-human identities overlooked
 - Third-party SaaS applications have no visibility
 
-
 **This assessment prevents false confidence** by:
 
 - Forcing complete asset inventory (you can't monitor what you don't know exists)
 - Mapping monitoring coverage systematically (not relying on assumptions)
 - Identifying blind spots with risk assessment
 - Documenting remediation plans with accountability
-
 
 **Anti-Cargo-Cult Principle:**
 Saying "we have monitoring" means nothing if you can't show:
@@ -105,7 +101,6 @@ Saying "we have monitoring" means nothing if you can't show:
 - **WHERE** monitoring gaps exist
 - **WHY** gaps exist (technical limitation, business decision, temporary condition)
 - **WHEN** gaps will be closed
-
 
 This assessment provides that evidence.
 
@@ -131,7 +126,6 @@ A.8.16.3 (Coverage) → A.8.16.4 (Alert Management)
 - What monitoring platforms exist (A.8.16.1)
 - What baselines/detections are established (A.8.16.2)
 
-
 ## How to Use This Document
 
 ### For Asset Owners & IT Operations:
@@ -144,7 +138,6 @@ A.8.16.3 (Coverage) → A.8.16.4 (Alert Management)
 - Identify asset criticality and data classification
 - Verify monitoring status (is this asset actually being monitored?)
 - Explain gaps (why isn't this critical server monitored yet?)
-
 
 **Expected Time:** 10-20 hours depending on asset count and inventory quality
 
@@ -159,7 +152,6 @@ A.8.16.3 (Coverage) → A.8.16.4 (Alert Management)
 - Document log types collected per asset
 - Verify baselines and detection rules are active
 
-
 **Expected Time:** 8-15 hours
 
 ### For Network Teams:
@@ -172,7 +164,6 @@ A.8.16.3 (Coverage) → A.8.16.4 (Alert Management)
 - Identify monitoring placement (span ports, TAPs, flow collectors)
 - Document network blind spots (unmonitored segments)
 - Explain network security zones and monitoring requirements
-
 
 **Expected Time:** 5-10 hours
 
@@ -187,7 +178,6 @@ A.8.16.3 (Coverage) → A.8.16.4 (Alert Management)
 - Document API monitoring coverage
 - Identify applications with no monitoring capability
 
-
 **Expected Time:** 5-10 hours
 
 ### For Auditors & Compliance Officers:
@@ -200,7 +190,6 @@ This assessment provides:
 - Gap documentation with risk assessment and remediation plans
 - Traceability from policy requirements to implementation evidence
 - Executive dashboard showing coverage metrics
-
 
 ---
 
@@ -227,13 +216,11 @@ Prevent blind spots by systematically mapping monitoring coverage against your c
 - All applications (commercial, custom, SaaS)
 - All entry/exit points (internet gateways, partner connections, remote access)
 
-
 **OUT OF SCOPE:**
 
 - Monitoring platform technical capabilities (covered in A.8.16.1)
 - Baseline and detection rule quality (covered in A.8.16.2)
 - Alert handling procedures (covered in A.8.16.4)
-
 
 ## Key Principle: Coverage is Binary
 
@@ -246,7 +233,6 @@ An asset/network/user/application is EITHER monitored OR NOT monitored. There is
 - ❌ **No Coverage:** Zero monitoring (not sending any logs to monitoring platform)
 - **N/A:** Out of scope (decommissioned, air-gapped by design, exception approved)
 
-
 **Partial Coverage is a GAP** - treat it as such. Document what's missing and remediate.
 
 ## What You'll Document
@@ -258,14 +244,12 @@ An asset/network/user/application is EITHER monitored OR NOT monitored. There is
 - Current monitoring status per asset
 - Coverage gaps and remediation plans
 
-
 ### Sheet 3: Network Segment Coverage
 
 - All network segments, VLANs, subnets, security zones
 - Monitoring placement (span ports, TAPs, NetFlow, cloud VPC flow logs)
 - Network entry/exit points (internet gateways, VPN, partner connections)
 - Network blind spots and risk assessment
-
 
 ### Sheet 4: User & Identity Coverage
 
@@ -274,7 +258,6 @@ An asset/network/user/application is EITHER monitored OR NOT monitored. There is
 - Service account coverage (application accounts, automation accounts)
 - Identity system monitoring (AD, Entra ID/Entra ID, Okta, LDAP)
 
-
 ### Sheet 5: Application & Service Coverage
 
 - Application inventory (on-prem, cloud, SaaS)
@@ -282,7 +265,6 @@ An asset/network/user/application is EITHER monitored OR NOT monitored. There is
 - API monitoring coverage
 - Database monitoring coverage
 - Critical business services coverage
-
 
 ## Policy References
 
@@ -299,12 +281,10 @@ This assessment implements requirements from:
   - Requirement: Blind spot identification and risk documentation
   - Requirement: Gap remediation plans with timelines
 
-
 **Supporting Policy References:**
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-POL-A.8.16, Section 2.1.1 (Monitoring Infrastructure Requirements)
-
 
 **Regulatory Context:**
 
@@ -312,7 +292,6 @@ This assessment implements requirements from:
 - GDPR Article 32: Technical measures including monitoring
 - PCI DSS 10.2: Audit log coverage requirements
 - HIPAA §164.312(b): Audit controls
-
 
 ## Expected Outputs
 
@@ -325,14 +304,12 @@ After completing this assessment, you will have:
    - Every user/service account with monitoring verified
    - Every application with logging status documented
 
-
 2. **Coverage Metrics**
 
    - Overall coverage percentage (monitored / total assets)
    - Coverage by criticality tier (Tier 1: __%, Tier 2: __%, Tier 3: __%)
    - Coverage by asset type (servers: __%, network: __%, endpoints: __%)
    - Coverage by regulatory scope (PCI: __%, HIPAA: __%, GDPR: __%)
-
 
 3. **Blind Spot Inventory**
 
@@ -341,14 +318,12 @@ After completing this assessment, you will have:
    - List of unmonitored privileged accounts
    - Risk assessment for each blind spot
 
-
 4. **Gap Remediation Plan**
 
    - Prioritized list of gaps (Critical → High → Medium)
    - Remediation actions with assigned owners
    - Target completion dates per policy requirements
    - Resource requirements (budget, tools, staff)
-
 
 5. **Evidence Package**
 
@@ -358,14 +333,12 @@ After completing this assessment, you will have:
    - Coverage validation reports
    - Gap remediation tracking
 
-
 6. **Executive Dashboard**
 
    - Coverage compliance status (✅ Compliant, ⚠️ Partial, ❌ Non-Compliant)
    - Key metrics visualization
    - Trend analysis (coverage improving/degrading)
    - Risk summary (high-risk blind spots)
-
 
 ---
 
@@ -381,12 +354,10 @@ Before starting this assessment, you MUST have:
 - ✅ **Asset inventory available** - CMDB, asset management system, or manual inventory
 - ✅ **Network documentation** - Network diagrams, VLAN maps, IP address management
 
-
 **RECOMMENDED:**
 
 - ✅ **ISMS-IMP-A.8.16.2 completed** - Baseline and detection status enhances coverage assessment
 - ✅ **Cloud resource inventory** - AWS Config, Azure Resource Graph, GCP Asset Inventory
-
 
 ## Asset Inventory Data
 
@@ -401,7 +372,6 @@ Before starting this assessment, you MUST have:
 - Criticality tier (Critical, High, Medium, Low)
 - Regulatory scope (PCI-DSS, HIPAA, GDPR, etc.)
 
-
 **Sources:**
 
 - CMDB (ServiceNow, Jira Assets, Device42)
@@ -409,7 +379,6 @@ Before starting this assessment, you MUST have:
 - Cloud provider APIs (AWS, Azure, GCP)
 - Network management systems (SolarWinds, LibreNMS)
 - Endpoint management (SCCM, Intune, Jamf)
-
 
 **Quality Check:** Asset inventory should be <90 days old (updated within last quarter)
 
@@ -423,14 +392,12 @@ Before starting this assessment, you MUST have:
 - Internet entry/exit points (firewalls, routers, gateways)
 - Remote access infrastructure (VPN concentrators, cloud connectors)
 
-
 **Sources:**
 
 - Network diagrams (Visio, draw.io, NetBrain)
 - IP Address Management (IPAM) systems
 - VLAN configuration exports from core switches
 - Firewall configuration showing zones/interfaces
-
 
 ## Identity System Data
 
@@ -441,14 +408,12 @@ Before starting this assessment, you MUST have:
 - Service account inventory (application accounts, automation accounts)
 - Identity system monitoring status (AD audit logs, Entra ID sign-ins, Okta logs)
 
-
 **Sources:**
 
 - AD PowerShell exports: `Get-ADUser -Filter *`
 - Entra ID portal → Users
 - Okta admin console → Users
 - Privileged Access Management (PAM) system
-
 
 ## Application Portfolio Data
 
@@ -460,14 +425,12 @@ Before starting this assessment, you MUST have:
 - Logging capability (native logging, agent-based, API)
 - Current logging status (logging to SIEM? Logs verified?)
 
-
 **Sources:**
 
 - Application portfolio management system
 - Service catalog
 - Cloud provider application inventories
 - Application owner interviews
-
 
 ## Access Requirements
 
@@ -479,19 +442,16 @@ Before starting this assessment, you MUST have:
 - Read access to identity systems (AD, Entra ID, Okta)
 - Read access to cloud environments (for resource inventory)
 
-
 **Data Export Capability:**
 
 - Ability to export asset lists to CSV/Excel
 - Ability to export SIEM data source configurations
 - Ability to query monitoring platform for log verification
 
-
 **Coordination:**
 
 - Schedule time with Asset Owners, Network Team, Application Teams
 - Plan for stakeholder interviews (1-2 hours each)
-
 
 ## Time Commitment
 
@@ -506,7 +466,6 @@ Before starting this assessment, you MUST have:
 - Gap analysis and remediation planning: 10-15 hours
 - Documentation and approval: 5-8 hours
 
-
 **Total Effort:** 50-80 hours (can be distributed across multiple team members)
 
 **Team Composition:**
@@ -515,7 +474,6 @@ Before starting this assessment, you MUST have:
 - Asset Owner / IT Operations: 10-15 hours
 - Network Team: 5-8 hours
 - Application Teams: 5-8 hours
-
 
 ---
 
@@ -538,7 +496,6 @@ Before starting this assessment, you MUST have:
 - Identity account lists
 - Application portfolio list
 
-
 **Key Stakeholders:** IT Operations, Network Team, Application Owners
 
 **Timeline:** 5 business days
@@ -553,14 +510,12 @@ Before starting this assessment, you MUST have:
    - Document log types collected
    - Mark coverage status (Full, Partial, None)
 
-
 2. **Network Coverage Validation:**
 
    - Map monitoring placement to network diagram
    - Identify network segments with/without monitoring
    - Verify NetFlow / flow log collection
    - Document blind spots
-
 
 3. **Identity Coverage Validation:**
 
@@ -569,7 +524,6 @@ Before starting this assessment, you MUST have:
    - Validate service account logging
    - Test identity system integration
 
-
 4. **Application Coverage Validation:**
 
    - Check application logging configuration
@@ -577,14 +531,12 @@ Before starting this assessment, you MUST have:
    - Document applications with no logging capability
    - Identify SaaS applications with/without log export
 
-
 **Deliverables:**
 
 - Asset-by-asset coverage status
 - Network segment coverage map
 - Identity monitoring coverage report
 - Application logging status matrix
-
 
 **Key Stakeholders:** SOC Analysts, SIEM Administrators
 
@@ -599,13 +551,11 @@ Before starting this assessment, you MUST have:
    - Prioritize by criticality and risk
    - Group gaps by root cause (technical, process, resource)
 
-
 2. **Risk Assessment:**
 
    - For each gap, assess risk (likelihood × impact)
    - Document potential attack scenarios if unmonitored
    - Assign risk rating (Critical, High, Medium, Low)
-
 
 3. **Remediation Planning:**
 
@@ -614,13 +564,11 @@ Before starting this assessment, you MUST have:
    - Set target dates per policy (30 days for Critical gaps)
    - Identify resource requirements (budget, tools, staff)
 
-
 4. **Exception Management:**
 
    - Identify gaps requiring formal exceptions
    - Document compensating controls
    - Prepare exception requests for CISO approval
-
 
 **Deliverables:**
 
@@ -628,7 +576,6 @@ Before starting this assessment, you MUST have:
 - Remediation plan with owners and dates
 - Exception request documentation
 - Resource requirements summary
-
 
 **Key Stakeholders:** Security Manager, Asset Owners, CISO
 
@@ -647,7 +594,6 @@ Before starting this assessment, you MUST have:
 - Completed ISMS-IMP-A.8.16.3 workbook
 - Evidence package
 - Executive summary presentation
-
 
 **Key Stakeholders:** Security Management, Compliance, CISO
 
@@ -669,7 +615,6 @@ Before starting this assessment, you MUST have:
 - Review cycle (typically Quarterly for coverage assessment)
 - Next Review Date (auto-calculated: Assessment Date + 90 days)
 
-
 **Time Required:** 5 minutes
 
 **Read completely** - explains color coding used throughout workbook:
@@ -678,7 +623,6 @@ Before starting this assessment, you MUST have:
 - ⚠️ Yellow: Partial coverage, needs attention
 - ❌ Red: No coverage, critical gap
 - ⬜ Gray: N/A or out of scope
-
 
 ---
 
@@ -698,7 +642,6 @@ This is your COMPLETE attack surface inventory. If an asset exists but isn't doc
 - **Rows 8-50:** 43 data entry rows (comprehensive asset inventory)
 - **Rows 53-75:** Coverage summary metrics (auto-calculated)
 
-
 ### Column-by-Column Completion Guide
 
 **Column A: Asset ID**
@@ -708,7 +651,6 @@ This is your COMPLETE attack surface inventory. If an asset exists but isn't doc
 - **Source:** CMDB, asset management system, or defined naming convention
 - **Critical:** MUST match asset IDs used in A.8.16.1, Sheet 3 for cross-reference
 
-
 **Column B: Asset Name**
 
 - **What to Enter:** Human-readable asset name/description
@@ -717,7 +659,6 @@ This is your COMPLETE attack surface inventory. If an asset exists but isn't doc
   - `DMZ Firewall - Internet Gateway`
   - `Production Web Server - Customer Portal`
   - `AWS RDS - Order Database`
-
 
 **Column C: Asset Type (Dropdown)**
 
@@ -733,12 +674,10 @@ This is your COMPLETE attack surface inventory. If an asset exists but isn't doc
   - **Container:** Docker hosts, Kubernetes nodes
   - **IoT Device:** Building automation, sensors, IP cameras
 
-
 **Column D: Operating System**
 
 - **What to Enter:** OS with version
 - **Examples:** `Windows Server 2022`, `Ubuntu 22.04 LTS`, `Cisco IOS 15.7`
-
 
 **Column E: Location**
 
@@ -748,20 +687,17 @@ This is your COMPLETE attack surface inventory. If an asset exists but isn't doc
   - Cloud: `AWS eu-central-1 (Frankfurt)`, `Azure West Europe`
   - Office: `London Office - IT Closet`
 
-
 **Column F: Business Unit**
 
 - **What to Enter:** Which department/team owns this asset
 - **Examples:** `IT Operations`, `Finance`, `HR`, `Sales`, `Engineering`
 - **Purpose:** Accountability and remediation ownership
 
-
 **Column G: Asset Owner**
 
 - **What to Enter:** Person responsible for this asset
 - **Format:** `Name, Email` or `Team Name`
 - **Examples:** `John Smith, john.smith@company.com`, `Database Team`
-
 
 **Column H: Data Classification (Dropdown)**
 
@@ -772,7 +708,6 @@ This is your COMPLETE attack surface inventory. If an asset exists but isn't doc
   - **Public:** Information intended for public consumption
 - **Policy Impact:** Confidential data = Tier 1 (Critical), MUST be monitored
 
-
 **Column I: Criticality (Dropdown)**
 
 - **Options:** Critical, High, Medium, Low
@@ -781,7 +716,6 @@ This is your COMPLETE attack surface inventory. If an asset exists but isn't doc
   - **High (Tier 2):** Business-critical apps, internal file servers, network core
   - **Medium (Tier 3):** Development/test, corporate workstations, collaboration tools
   - **Low (Tier 4):** Guest systems, non-critical IoT
-
 
 **Column J: Regulatory Scope (Dropdown)**
 
@@ -793,7 +727,6 @@ This is your COMPLETE attack surface inventory. If an asset exists but isn't doc
   - GDPR: Systems processing EU personal data
   - SOX: Financial reporting systems
 
-
 **Column K: Monitoring Required (Dropdown)**
 
 - **Options:** Mandatory, Recommended, Optional, N/A
@@ -803,7 +736,6 @@ This is your COMPLETE attack surface inventory. If an asset exists but isn't doc
   - Medium → Recommended
   - Low → Optional
 - **Override:** Can manually set if regulatory scope mandates monitoring
-
 
 **Column L: Currently Monitored (Dropdown)**
 
@@ -828,13 +760,11 @@ This is your COMPLETE attack surface inventory. If an asset exists but isn't doc
   - Database: `Authentication, Query logs, DDL changes`
 - **Leave Blank if:** Not monitored
 
-
 **Column N: Monitoring Platform**
 
 - **What to Enter:** Which monitoring platform receives logs
 - **Examples:** `Splunk-Production-SIEM`, `Microsoft-Sentinel`, `QRadar`
 - **Cross-Reference:** Must match platform name from A.8.16.1, Sheet 2
-
 
 **Column O: Baseline Established (Dropdown)**
 
@@ -842,13 +772,11 @@ This is your COMPLETE attack surface inventory. If an asset exists but isn't doc
 - **How to Verify:** Check A.8.16.2, Sheet 2/3/4 - is this asset baselined?
 - **Policy Requirement:** All Tier 1 assets MUST have baselines
 
-
 **Column P: Detection Rules Active**
 
 - **What to Enter:** Count of detection rules monitoring this asset
 - **How to Find:** Check A.8.16.2, Sheet 5 - count rules where this asset is in scope
 - **Example:** `5 rules` (failed login, CPU spike, unauthorized access, process anomaly, network anomaly)
-
 
 **Column Q: Last Log Verified (DD.MM.YYYY)**
 
@@ -861,12 +789,10 @@ This is your COMPLETE attack surface inventory. If an asset exists but isn't doc
 
 - **Example:** `20.01.2026` (verified logs received within 24 hours)
 
-
 **Column R: Coverage Status (Dropdown)**
 
 - **Options:** ✅ Full Coverage, ⚠️ Partial Coverage, ❌ No Coverage, N/A
 - **Selection Logic:**
-
 
 | Monitoring Required | Currently Monitored | Baseline | Detection Rules | Coverage Status |
 |---------------------|---------------------|----------|-----------------|-----------------|
@@ -890,7 +816,6 @@ This is your COMPLETE attack surface inventory. If an asset exists but isn't doc
   - `System air-gapped by design - network isolated from monitoring infrastructure`
   - `Budget constraints - monitoring platform license limit reached`
 
-
 **Column T: Exception Approved (Dropdown)**
 
 - **Options:** Yes, No, N/A
@@ -899,7 +824,6 @@ This is your COMPLETE attack surface inventory. If an asset exists but isn't doc
   - CISO approved in writing
   - Compensating controls documented
 - **Document in Column W (Notes):** Exception ID, approval date, approver name
-
 
 **Column U: Target Coverage Date (DD.MM.YYYY)**
 
@@ -910,7 +834,6 @@ This is your COMPLETE attack surface inventory. If an asset exists but isn't doc
   - **Medium assets (Tier 3):** 180 days maximum
 - **Example:** `15.02.2026` (30 days from today for Critical asset gap)
 
-
 **Column V: Responsible Party**
 
 - **What to Enter:** Who will close this gap?
@@ -920,7 +843,6 @@ This is your COMPLETE attack surface inventory. If an asset exists but isn't doc
   - `John Smith, Senior SysAdmin`
 - **Purpose:** Accountability for gap closure
 
-
 **Column W: Notes**
 
 - **What to Enter:** Additional context, special considerations
@@ -929,9 +851,7 @@ This is your COMPLETE attack surface inventory. If an asset exists but isn't doc
   - Technical details: `Monitoring requires TLS certificate installation - certificate request in progress`
   - Temporary status: `System being decommissioned 28.02.2026 - monitoring not required`
 
-
 ---
-
 
 ### Completing Sheet 2: Step-by-Step Process
 
@@ -1000,7 +920,6 @@ gcloud compute instances list --format="table(name,zone,status)"
    - Column M = List which logs ARE collected
    - Document missing logs in Column S
 
-
 **Batch Verification Technique (for large environments):**
 ```spl
 | inputlookup asset_inventory.csv
@@ -1023,12 +942,10 @@ gcloud compute instances list --format="table(name,zone,status)"
    - If Yes → Column O = "Yes"
    - If No → Column O = "No"
 
-
 2. **Check A.8.16.2, Sheet 5** - Count detection rules covering this asset
 
    - Count rules where asset is in scope
    - Column P = Count
-
 
 **Step 5: Determine Coverage Status (30-60 minutes)**
 
@@ -1037,7 +954,6 @@ gcloud compute instances list --format="table(name,zone,status)"
 - Full Coverage: Monitored + Baseline + Detection Rules
 - Partial Coverage: Monitored but missing baseline OR missing detection
 - No Coverage: Not monitored at all
-
 
 **Step 6: Document Gaps and Remediation Plans (2-4 hours)**
 
@@ -1050,7 +966,6 @@ gcloud compute instances list --format="table(name,zone,status)"
    - Process gap?
    - Awaiting approval?
 
-
 2. **Document in Column S:** Root cause
 
 3. **Determine if exception needed:**
@@ -1059,7 +974,6 @@ gcloud compute instances list --format="table(name,zone,status)"
    - Legacy system (end-of-life, no agent support)
    - Temporary condition (awaiting decommission)
    - If Yes → Submit exception request
-
 
 4. **Set target date** (Column U) per policy timelines
 
@@ -1073,14 +987,12 @@ gcloud compute instances list --format="table(name,zone,status)"
 - **Assets Monitored:** Count where Column L = "Yes"
 - **Overall Coverage %:** (Monitored / Total) × 100
 
-
 **Coverage by Criticality:**
 
 - **Critical (Tier 1):** ___% (Policy: 100% required)
 - **High (Tier 2):** ___% (Policy: >80%)
 - **Medium (Tier 3):** ___% (Policy: >60%)
 - **Low (Tier 4):** ___% (No requirement)
-
 
 **Coverage by Asset Type:**
 
@@ -1091,20 +1003,17 @@ gcloud compute instances list --format="table(name,zone,status)"
 - Cloud Resources: ___%
 - Databases: ___%
 
-
 **Critical Gaps:**
 
 - Count of Tier 1 assets with No Coverage: ___ (CRITICAL)
 - Count of Tier 2 assets with No Coverage: ___ (HIGH)
 - Count of assets with Partial Coverage: ___ (MEDIUM)
 
-
 **Compliance Status:**
 
 - ✅ Compliant: All policy requirements met
 - ⚠️ Partial: Some gaps exist, remediation plans in place
 - ❌ Non-Compliant: Critical gaps without plans
-
 
 ---
 
@@ -1122,12 +1031,10 @@ Network blind spots allow attackers to move laterally undetected. You might moni
 - Command & control (C2) traffic
 - Reconnaissance scans
 
-
 **Structure:**
 
 - **Rows 8-32:** 25 data entry rows (network segment inventory)
 - **Rows 35-50:** Network coverage analysis
-
 
 ### Key Columns Guide
 
@@ -1136,7 +1043,6 @@ Network blind spots allow attackers to move laterally undetected. You might moni
 - **Format:** `NET-[Location]-[Type]-[#]`
 - **Examples:** `NET-ZRH-DMZ-01`, `NET-AWS-PROD-VPC-01`, `NET-BRANCH-GUEST-WiFi`
 
-
 **Column B: Network Name/Description**
 
 - **Examples:**
@@ -1144,29 +1050,24 @@ Network blind spots allow attackers to move laterally undetected. You might moni
   - `AWS Production VPC - Application Tier`
   - `Corporate LAN - Finance Department VLAN`
 
-
 **Column C: Network Type (Dropdown)**
 
 - **Options:** Internet-Facing (DMZ), Internal Production, Internal Corporate, Development/Test, Guest/Public, Partner Extranet, Management Network, OT/ICS Network, Cloud VPC/VNet
 - **Purpose:** Different network types have different monitoring requirements
-
 
 **Column D: IP Range/Subnet**
 
 - **What to Enter:** CIDR notation or IP range
 - **Examples:** `10.1.100.0/24`, `192.168.10.0/24`, `172.16.0.0/16`, `AWS VPC: 10.0.0.0/16`
 
-
 **Column E: VLAN ID (if applicable)**
 
 - **Examples:** `VLAN 100`, `VLAN 250 (Finance)`, `N/A (Cloud)`, `Multiple`
-
 
 **Column F: Security Zone (Dropdown)**
 
 - **Options:** Internet, DMZ, Internal-Trusted, Internal-Restricted, Partner, Guest, Management, OT/ICS
 - **Purpose:** Security zones define trust boundaries and monitoring requirements
-
 
 **Column G: Criticality (Dropdown)**
 
@@ -1177,7 +1078,6 @@ Network blind spots allow attackers to move laterally undetected. You might moni
   - **Medium:** Corporate LANs, development networks
   - **Low:** Guest networks (isolated)
 
-
 **Column H: Systems/Assets on Segment**
 
 - **What to Enter:** Count and types of systems
@@ -1186,7 +1086,6 @@ Network blind spots allow attackers to move laterally undetected. You might moni
   - `200 workstations (Finance dept)`
   - `5 network devices (firewalls, switches)`
   - `50+ cloud resources (auto-scaled)`
-
 
 **Column I: Monitoring Method (Dropdown)**
 
@@ -1199,18 +1098,15 @@ Network blind spots allow attackers to move laterally undetected. You might moni
   - `None`
 - **Purpose:** Document HOW network traffic is monitored
 
-
 **Column J: Monitoring Platform**
 
 - **What to Enter:** Which platform receives network data
 - **Examples:** `Palo Alto Firewall + Splunk`, `AWS VPC Flow Logs → S3 → SIEM`, `Zeek IDS → SIEM`
 
-
 **Column K: Traffic Types Monitored (Dropdown, Multi-Select)**
 
 - **Options:** North-South (Internet), East-West (Internal), Inbound, Outbound, DNS, DHCP, Authentication, All
 - **Critical:** East-West traffic monitoring detects lateral movement
-
 
 **Column L: Monitoring Coverage Status (Dropdown)**
 
@@ -1220,7 +1116,6 @@ Network blind spots allow attackers to move laterally undetected. You might moni
   - **Partial:** Only North-South monitored (missing East-West), or intermittent collection
   - **None:** Zero network monitoring on this segment
 
-
 **Column M: Blind Spot Risk**
 
 - **What to Enter:** What attacks could go undetected due to monitoring gaps?
@@ -1228,7 +1123,6 @@ Network blind spots allow attackers to move laterally undetected. You might moni
   - `Lateral movement between finance servers undetected`
   - `Data exfiltration to cloud storage via HTTPS (encrypted, unmonitored)`
   - `C2 beaconing on non-standard ports may be missed`
-
 
 **Column N: Entry/Exit Points**
 
@@ -1239,12 +1133,10 @@ Network blind spots allow attackers to move laterally undetected. You might moni
   - `AWS Internet Gateway (VPC Flow Logs enabled)`
   - `Multiple access points - not all monitored ⚠️`
 
-
 **Column O: Last Traffic Verified (DD.MM.YYYY)**
 
 - **How to Verify:** Query monitoring platform for network traffic from this segment
 - **Example:** Search NetFlow for source IPs in subnet `10.1.100.0/24` - confirm data within 24 hours
-
 
 **Column P: Gap Remediation Plan**
 
@@ -1252,7 +1144,6 @@ Network blind spots allow attackers to move laterally undetected. You might moni
   - `Deploy network TAP on core switch SW-CORE-01 - target 15.02.2026`
   - `Enable VPC Flow Logs on AWS production VPC - in progress`
   - `Exception: Guest network isolated, no business need for monitoring`
-
 
 ### Network Coverage Scenarios
 
@@ -1313,12 +1204,10 @@ Compromised credentials are the #1 initial access vector. Without identity monit
 - Privileged access abuse is invisible
 - Account compromise spreads laterally
 
-
 **Structure:**
 
 - **Rows 8-32:** 25 data entry rows (identity coverage inventory)
 - **Rows 35-50:** Identity coverage summary
-
 
 ### Key Columns Guide
 
@@ -1327,12 +1216,10 @@ Compromised credentials are the #1 initial access vector. Without identity monit
 - **What to Enter:** Which identity platform
 - **Examples:** `Active Directory (on-prem)`, `Entra ID / Entra ID`, `Okta`, `AWS IAM`, `LDAP`
 
-
 **Column B: Account Type (Dropdown)**
 
 - **Options:** User Accounts, Privileged Accounts (Admins), Service Accounts, System Accounts, Shared Accounts, Guest Accounts
 - **Purpose:** Different account types require different monitoring
-
 
 **Column C: Account Count**
 
@@ -1342,14 +1229,12 @@ Compromised credentials are the #1 initial access vector. Without identity monit
   - `Domain Admins: 12`
   - `Service Accounts: 85`
 
-
 **Column D: Monitoring Coverage**
 
 - **What to Monitor:**
   - **User Accounts:** Authentication logs (login success/failure), password changes, account modifications
   - **Privileged Accounts:** ALL activity (authentication, privilege escalation, admin commands, resource access)
   - **Service Accounts:** Authentication, unusual activity (should be very consistent)
-
 
 **Column E: Log Types Collected**
 
@@ -1358,12 +1243,10 @@ Compromised credentials are the #1 initial access vector. Without identity monit
   - Entra ID: `Sign-in logs, Audit logs, Risky sign-ins`
   - Okta: `System logs, Authentication events, Admin actions`
 
-
 **Column F: Baseline Established?**
 
 - **Cross-Reference:** A.8.16.2, Sheet 3 (Access Pattern Baselines)
 - **Policy:** All privileged accounts MUST have baselines
-
 
 **Column G: Coverage Status**
 
@@ -1372,13 +1255,11 @@ Compromised credentials are the #1 initial access vector. Without identity monit
   - ⚠️ Partial: Authentication logged but no baseline, or gaps in activity monitoring
   - ❌ None: Zero monitoring
 
-
 **Column H: Gap / Remediation**
 
 - **Examples:**
   - `Service accounts not baselined - establishing baselines Q1 2026`
   - `Guest accounts not logged - enabling audit policy`
-
 
 ### Identity Coverage Checklist
 
@@ -1391,20 +1272,17 @@ Compromised credentials are the #1 initial access vector. Without identity monit
 - [ ] Cloud Admins (AWS root, Azure Subscription Admin, GCP Org Admin)
 - [ ] Security Admins (SIEM, EDR, firewall admins)
 
-
 **User Accounts (>80% Coverage):**
 
 - [ ] Employee accounts
 - [ ] Contractor accounts
 - [ ] Remote workers (VPN authentication)
 
-
 **Service Accounts (100% Coverage for Critical Systems):**
 
 - [ ] Backup accounts
 - [ ] Application service accounts
 - [ ] Automation/orchestration accounts
-
 
 ---
 
@@ -1421,12 +1299,10 @@ Applications are where business logic and data processing occur. Without applica
 - Business logic abuse undetected
 - Data access anomalies missed
 
-
 **Structure:**
 
 - **Rows 8-32:** 25 data entry rows (application inventory)
 - **Rows 35-50:** Application coverage summary
-
 
 ### Key Columns Guide
 
@@ -1434,17 +1310,14 @@ Applications are where business logic and data processing occur. Without applica
 
 - **Examples:** `Customer Portal`, `ERP (SAP)`, `Email (Office 365)`, `CRM (Salesforce)`, `Order Management API`
 
-
 **Column B: Application Type (Dropdown)**
 
 - **Options:** On-Premises, IaaS (Cloud VM), PaaS (Cloud App Service), SaaS (Third-Party), Container-Based
 - **Purpose:** Different types have different logging capabilities
 
-
 **Column C: Criticality**
 
 - **Based on:** Business impact if unavailable, data sensitivity, regulatory scope
-
 
 **Column D: Logging Capability (Dropdown)**
 
@@ -1456,7 +1329,6 @@ Applications are where business logic and data processing occur. Without applica
   - `No Logging (Limitation)`
 - **Purpose:** Not all apps can log, especially legacy or third-party SaaS
 
-
 **Column E: Log Types Available**
 
 - **Examples:**
@@ -1465,17 +1337,14 @@ Applications are where business logic and data processing occur. Without applica
   - API: `API calls, Authentication, Rate limit violations, Errors`
   - SaaS: `Admin actions, User activity, Data access (if available)`
 
-
 **Column F: Logs Forwarded to SIEM?**
 
 - **Options:** Yes, No, Partial
 - **Verify:** Search SIEM for application logs
 
-
 **Column G: Baseline Established?**
 
 - **Cross-Reference:** A.8.16.2, Sheet 4 (Application Behavior Baselines)
-
 
 **Column H: Coverage Status**
 
@@ -1483,13 +1352,11 @@ Applications are where business logic and data processing occur. Without applica
 - ⚠️ Partial: Logs forwarded but no baseline, or limited log types
 - ❌ None: No logging or logs not forwarded
 
-
 **Column I: Gap / Remediation**
 
 - **Examples:**
   - `SaaS app (Salesforce) - API log export not configured - enabling Q1 2026`
   - `Legacy application no logging capability - compensating control: database query monitoring`
-
 
 ---
 
@@ -1504,14 +1371,12 @@ Applications are where business logic and data processing occur. Without applica
 - Active Directory computer inventory
 - Network device inventory from network management system
 
-
 **2. Coverage Validation Evidence**
 
 - SIEM data source lists (what's configured)
 - SIEM query results showing log verification (screenshots)
 - Asset-by-asset coverage validation reports
 - "Monitored vs. Inventory" comparison analysis
-
 
 **3. Network Coverage Evidence**
 
@@ -1520,14 +1385,12 @@ Applications are where business logic and data processing occur. Without applica
 - NetFlow / VPC Flow Log configuration screenshots
 - Network TAP / SPAN port documentation
 
-
 **4. Identity Coverage Evidence**
 
 - User account exports (AD, Entra ID, Okta)
 - Privileged account inventory
 - Service account inventory
 - Identity system audit log configuration screenshots
-
 
 **5. Application Coverage Evidence**
 
@@ -1536,14 +1399,12 @@ Applications are where business logic and data processing occur. Without applica
 - SaaS log export configurations
 - Application log samples in SIEM
 
-
 **6. Gap Remediation Documentation**
 
 - Gap inventory with risk assessments
 - Remediation project plans
 - Budget requests for monitoring expansion
 - Exception approval documentation
-
 
 ---
 
@@ -1562,14 +1423,12 @@ IT environments change constantly:
 - Systems decommissioned (but not removed from inventory)
 - Shadow IT appears
 
-
 **How to Avoid:**
 
 - Use asset inventory updated within last 90 days
 - Cross-check multiple sources (CMDB, AD, cloud APIs, network scans)
 - Discovery scans to find unknown assets
 - Automate inventory sync where possible
-
 
 **Red Flag:** Asset inventory "Last Updated" is >6 months ago
 
@@ -1588,13 +1447,11 @@ Just because monitoring is configured doesn't mean it's working:
 - Network changes break connectivity
 - Disk full prevents local log writing
 
-
 **How to Avoid:**
 
 - ALWAYS verify by searching SIEM for recent logs
 - Don't trust configuration - verify actual log delivery
 - Automated monitoring health checks
-
 
 **Verification Process:**
 For every asset marked "Monitored":
@@ -1615,13 +1472,11 @@ Most attacks involve lateral movement AFTER initial compromise:
 - Phishing email → Compromised workstation → Pivot to servers
 - If you only see Internet traffic, you miss the pivot
 
-
 **How to Avoid:**
 
 - Deploy monitoring for BOTH North-South AND East-West traffic
 - Use SPAN ports, TAPs, or NetFlow on internal switches
 - Monitor traffic between VLANs/subnets
-
 
 **Coverage Matrix:**
 | Traffic Direction | Monitoring Method | Purpose |
@@ -1645,14 +1500,12 @@ Privileged accounts ARE the crown jewels:
 - DBA compromise = all database access
 - Cloud Admin = entire cloud environment
 
-
 **How to Avoid:**
 
 - Separate privileged account monitoring (not lumped with regular users)
 - ALL privileged activity logged (not just authentication)
 - Baselines for privileged accounts (A.8.16.2, Sheet 3)
 - Real-time alerting on privileged account anomalies
-
 
 **Privileged Account Must-Haves:**
 
@@ -1661,7 +1514,6 @@ Privileged accounts ARE the crown jewels:
 - [ ] Admin commands executed
 - [ ] Resource access (files, databases, cloud resources)
 - [ ] Account modifications (creating new admins)
-
 
 ---
 
@@ -1678,14 +1530,12 @@ Service accounts are HIGH-VALUE TARGETS:
 - Compromise allows persistent access (no interactive login alerts)
 - Activity should be VERY consistent (deviations indicate compromise)
 
-
 **How to Avoid:**
 
 - Inventory ALL service accounts
 - Monitor authentication and activity
 - Establish strict baselines (low StdDev expected)
 - Alert on ANY deviation from baseline
-
 
 **Service Account Baseline Example:**
 ```
@@ -1709,14 +1559,12 @@ Comprehensive on-premises monitoring, zero cloud visibility.
 - CloudTrail logs not forwarded to SIEM
 - Lambda, S3, RDS - different logging mechanisms
 
-
 **How to Avoid:**
 
 - Include ALL cloud resources in asset inventory
 - Enable cloud-native logging (CloudTrail, VPC Flow, Activity Logs)
 - Forward cloud logs to central SIEM
 - Monitor cloud control plane (API calls, console access)
-
 
 **Cloud Coverage Checklist:**
 
@@ -1725,7 +1573,6 @@ Comprehensive on-premises monitoring, zero cloud visibility.
 - [ ] Identity (IAM, Managed Identity, Service Principals)
 - [ ] Data (S3, Blob Storage, RDS, SQL Database)
 - [ ] Control Plane (CloudTrail, Activity Log, Cloud Logging)
-
 
 ---
 
@@ -1741,14 +1588,12 @@ SaaS apps are PART OF YOUR ATTACK SURFACE:
 - Salesforce admin compromise = all customer data
 - Slack compromise = sensitive communications exposed
 
-
 **How to Avoid:**
 
 - Inventory ALL SaaS applications
 - Enable audit logging where available
 - Export logs to SIEM (via API, webhook, CASB)
 - Monitor admin actions, data access, external sharing
-
 
 **SaaS Logging Options:**
 | SaaS App | Logging Capability | Integration Method |
@@ -1774,7 +1619,6 @@ OT networks often have hidden connectivity:
 - Engineering workstations with dual NICs
 - Wireless access points
 
-
 **How to Avoid:**
 
 - Map ALL OT network segments
@@ -1782,14 +1626,12 @@ OT networks often have hidden connectivity:
 - Passive monitoring for OT (don't disrupt operations)
 - Baseline OT traffic (very consistent, deviations suspicious)
 
-
 **OT Monitoring Considerations:**
 
 - **Passive only:** TAPs, not SPAN (no performance impact)
 - **Protocol-aware:** Modbus, DNP3, IEC 61850 parsing
 - **Baseline deviation detection:** OT very predictable
 - **Safety critical:** Monitor without affecting operations
-
 
 ---
 
@@ -1806,14 +1648,12 @@ Coverage degrades over time:
 - Cloud resources scale up (new instances unmonitored)
 - Network changes introduce blind spots
 
-
 **How to Avoid:**
 
 - **Quarterly coverage reviews** (policy requirement)
 - Automated coverage monitoring (alert when assets detected but not monitored)
 - New asset onboarding process includes monitoring
 - Change management triggers coverage re-assessment
-
 
 **Continuous Monitoring Approach:**
 ```spl
@@ -1838,13 +1678,11 @@ Not all gaps are equal:
 - Unmonitored Critical asset with Confidential data = HIGHEST RISK
 - Unmonitored Low priority test system = LOW RISK
 
-
 **How to Avoid:**
 
 - Risk-prioritize gaps (Criticality × Data Classification × Regulatory Scope)
 - Address Critical gaps FIRST (30-day timeline)
 - Defer Low priority gaps (or accept risk)
-
 
 **Gap Risk Matrix:**
 | Criticality | Data Classification | Risk Level | Remediation Timeline |
@@ -1873,7 +1711,6 @@ Not all gaps are equal:
 - [ ] Coverage summary metrics calculated correctly
 - [ ] Tier 1 coverage ≥100% OR gaps have approved exceptions
 
-
 ## Sheet 3: Network Segment Coverage
 
 - [ ] All network segments documented (no missing VLANs/subnets)
@@ -1885,7 +1722,6 @@ Not all gaps are equal:
 - [ ] Network blind spots identified and risk-assessed
 - [ ] Critical network gaps have remediation plans
 
-
 ## Sheet 4: User & Identity Coverage
 
 - [ ] All identity systems documented (AD, Entra ID, Okta, AWS IAM, etc.)
@@ -1895,7 +1731,6 @@ Not all gaps are equal:
 - [ ] Identity system baselines established (cross-check A.8.16.2)
 - [ ] Guest accounts monitored or isolated
 - [ ] Shared accounts identified (flag for remediation)
-
 
 ## Sheet 5: Application & Service Coverage
 
@@ -1907,14 +1742,12 @@ Not all gaps are equal:
 - [ ] API monitoring coverage documented
 - [ ] Applications with no logging have compensating controls
 
-
 ## Cross-Assessment Validation
 
 - [ ] A.8.16.1, Sheet 3 (Log Source Coverage) matches A.8.16.3, Sheet 2 (Asset Coverage)
 - [ ] Monitoring platforms (A.8.16.1) support coverage documented here
 - [ ] Baselines (A.8.16.2) exist for monitored assets
 - [ ] No contradictions between assessments
-
 
 ## Overall Quality
 
@@ -1925,7 +1758,6 @@ Not all gaps are equal:
 - [ ] Evidence register complete (Sheet 8)
 - [ ] All gaps have documented remediation plans with owners and dates
 - [ ] No "TBD" or placeholder values remaining
-
 
 ---
 
@@ -1943,7 +1775,6 @@ Not all gaps are equal:
   - Network coverage accurately mapped
   - Identity and application coverage validated
 
-
 **Level 2: Compliance Review** (Security Manager, CISO)
 
 - **Focus:** Policy compliance, risk assessment, remediation adequacy
@@ -1953,7 +1784,6 @@ Not all gaps are equal:
   - Tier 2/3 coverage meets thresholds (>80%, >60%)
   - Critical gaps have remediation plans ≤30 days
   - Risk acceptance documented for approved exceptions
-
 
 **Level 3: Executive Approval** (CISO)
 
@@ -1965,7 +1795,6 @@ Not all gaps are equal:
   - High-risk blind spots either remediated or risk accepted
   - Coverage improving over time (trend analysis)
 
-
 **Total Approval Timeline:** 15 business days
 
 **Post-Approval Actions:**
@@ -1976,8 +1805,6 @@ Not all gaps are equal:
 5. Schedule next quarterly review (90 days)
 
 ---
-
-
 
 # PART II: TECHNICAL SPECIFICATION
 
@@ -2053,7 +1880,6 @@ Not all gaps are equal:
 ## Data Entry Rows
 
 - **Rows 8-50:** 43 data entry rows (comprehensive asset inventory)
-
 
 ## Compliance Checklist
 1. Complete asset inventory maintained
@@ -2295,7 +2121,6 @@ Not all gaps are equal:
 - % Coverage by asset type
 - Assets without monitoring (count and %)
 
-
 ## Section 2: Network Coverage (Rows 21-30)
 
 - Network segments total
@@ -2304,7 +2129,6 @@ Not all gaps are equal:
 - Segments not monitored
 - % Coverage by segment type
 
-
 ## Section 3: User/Identity Coverage (Rows 33-42)
 
 - Identity systems total
@@ -2312,14 +2136,12 @@ Not all gaps are equal:
 - Users covered
 - Privileged accounts monitored %
 
-
 ## Section 4: Application Coverage (Rows 45-54)
 
 - Applications total
 - Applications monitored
 - % Coverage by criticality
 - % Coverage by type
-
 
 ## Section 5: Gap Analysis (Rows 57-69)
 
@@ -2330,7 +2152,6 @@ Not all gaps are equal:
 - Resolved gaps
 - Accepted risks
 - Overdue remediations
-
 
 ## Section 6: Compliance Summary (Rows 72-82)
 | Assessment Area | Compliant | Partial | Non-Compliant | % Compliant |
@@ -2357,13 +2178,11 @@ Not all gaps are equal:
 - Must reference platforms documented in A.8.16.1, Sheet 2
 - Validation: Every platform name in A.8.16.3 should exist in A.8.16.1
 
-
 **Coverage Validation:**
 
 - A.8.16.1, Sheet 3 lists monitored systems
 - A.8.16.3, Sheet 2 lists ALL systems (monitored + unmonitored)
 - Cross-check: Systems in A.8.16.1 should be marked "Monitored" in A.8.16.3
-
 
 ## Cross-References to A.8.16.2 (Baselines & Detection)
 
@@ -2372,12 +2191,10 @@ Not all gaps are equal:
 - Verify against A.8.16.2, Sheets 2/3/4 (System/Access/Application Baselines)
 - If baseline exists in A.8.16.2 → Column O = "Yes"
 
-
 **Sheet 2 Column P (Detection Rules Active):**
 
 - Count from A.8.16.2, Sheet 5 (Detection Rule Coverage)
 - Rules where this asset is in scope
-
 
 ## Automated Coverage Tracking
 
@@ -2387,19 +2204,16 @@ Not all gaps are equal:
    - Query: Assets in inventory (Sheet 2) vs. assets in SIEM
    - Alert: New unmonitored assets detected
    
-
 2. **Weekly Trend Analysis:**
 
    - Track coverage % over time
    - Alert: Coverage degrading (unexpected decreases)
-
 
 3. **Quarterly Full Assessment:**
 
    - Re-run complete coverage validation
    - Update asset inventory
    - Re-verify monitoring status
-
 
 **SIEM Query for Coverage Monitoring:**
 ```spl
@@ -2433,13 +2247,11 @@ Not all gaps are equal:
 - Enhanced quality checklist with cross-assessment validation
 - Added automated coverage tracking queries
 
-
 **Version 1.0 (Original):**
 
 - Technical specification only (351 lines)
 - Sheet structures and column definitions
 - Basic compliance checklists
-
 
 ---
 

@@ -43,14 +43,12 @@
 - ✅ **Gap prioritization** highlighting critical findings requiring management attention
 - ✅ **Audit defense tool** demonstrating systematic compliance monitoring
 
-
 **What it is NOT:**
 
 - ❌ NOT a data collection tool (data comes from A.8.10.1-4 assessments)
 - ❌ NOT a replacement for detailed assessments (it summarizes them)
 - ❌ NOT automatically updated (requires manual quarterly updates)
 - ❌ NOT a project management tool (tracks compliance status, not implementation tasks)
-
 
 **Analogy:** If A.8.10.1-4 are detailed engineering reports, this dashboard is the executive summary presented to the board.
 
@@ -71,7 +69,6 @@ Without this dashboard:
 - ❌ Board presentations require manual data extraction
 - ❌ Auditors spend hours searching for summary metrics
 
-
 With this dashboard:
 
 - ✅ Executives see compliance status in 5 minutes
@@ -80,7 +77,6 @@ With this dashboard:
 - ✅ Board presentation ready without additional work
 - ✅ Auditors validate compliance in <1 hour
 
-
 **Regulatory Context:**
 
 - **ISO 27001 Clause 9.3:** "Management review" requires aggregated performance metrics
@@ -88,14 +84,12 @@ With this dashboard:
 - **Swiss FADP Article 7:** Data security must be measurable and reportable
 - **Board Governance:** Directors need summary metrics to fulfill oversight duties
 
-
 **Business Impact:**
 
 - **Audit Efficiency:** External auditors spend less time searching for evidence = lower audit costs
 - **Risk Management:** Critical gaps visible to management = faster remediation decisions
 - **Executive Confidence:** Data-driven compliance reporting = informed risk acceptance
 - **Regulatory Defense:** Systematic monitoring demonstrates good faith compliance effort
-
 
 ## Dashboard Scope & Integration
 
@@ -115,7 +109,6 @@ With this dashboard:
 - **Quarterly Snapshots:** Q1-Q4 trend analysis showing improvement/decline
 - **Executive Narrative:** 1-2 page summary for board presentations
 
-
 ## Who Should Complete This Dashboard
 
 **Primary Responsibility:** Compliance Officer / Information Security Officer
@@ -127,14 +120,12 @@ With this dashboard:
 - Ability to interpret compliance metrics and identify trends
 - Executive communication skills (for narrative summary in Sheet 9)
 
-
 **Support Roles:**
 
 - **Assessors from A.8.10.1-4:** Provide completed source workbooks and clarify metrics
 - **Executive Sponsor (CISO/CIO):** Review dashboard before board presentation
 - **External Auditor:** Validate dashboard accuracy during certification audits (if applicable)
 - **Board Liaison:** Format dashboard for board meeting presentation
-
 
 **Who USES the Dashboard (Consumers):**
 
@@ -143,7 +134,6 @@ With this dashboard:
 - **Management:** Remediation prioritization and resource allocation decisions
 - **External Auditors:** ISO 27001 certification compliance validation
 - **Regulators:** GDPR/FADP compliance demonstration (if requested)
-
 
 ## Time Estimate
 
@@ -159,7 +149,6 @@ With this dashboard:
 - **Sheet 9 - Executive Summary (30 min):** Write narrative summary for board presentation
 - **Quality Review (15 min):** Validate formulas, check data accuracy, format for presentation
 
-
 **Quarterly Updates:** 1-2 hours (once baseline established)
 
 **Pro Tip:** First dashboard creation takes longer (3-4 hours). Subsequent quarterly updates are faster (1-2 hours) because formulas and structure are already established.
@@ -173,7 +162,6 @@ With this dashboard:
 - Trend analysis to identify systemic issues
 - Executive reporting for board oversight
 
-
 **Assessment Dependencies (CRITICAL):**
 
 **You CANNOT complete this dashboard without:**
@@ -182,7 +170,6 @@ With this dashboard:
 - ✅ **A.8.10.2** (Deletion Methods) - COMPLETE and APPROVED
 - ✅ **A.8.10.3** (Third-Party & Cloud Deletion) - COMPLETE and APPROVED
 - ✅ **A.8.10.4** (Verification & Evidence) - COMPLETE and APPROVED
-
 
 **If any source assessment is incomplete or not approved:** Dashboard metrics will be inaccurate. Complete source assessments first, then return to dashboard.
 
@@ -201,20 +188,17 @@ Before starting dashboard completion, ensure you have:
 - [ ] ISMS_A_8_10_3_Third_Party_Cloud_YYYYMMDD.xlsx (APPROVED)
 - [ ] ISMS_A_8_10_4_Verification_Evidence_YYYYMMDD.xlsx (APPROVED)
 
-
 **Approval Status Check:**
 
 - [ ] All source workbooks have completed three-level approval (Sheet 9 in each workbook)
 - [ ] Approval dates within last 90 days (for quarterly dashboard update)
 - [ ] No outstanding critical gaps without remediation plans
 
-
 **Access to Source Workbooks:**
 
 - [ ] Source workbooks stored in accessible location (not locked/archived)
 - [ ] Permission to open and extract data from source workbooks
 - [ ] Ability to verify data accuracy by cross-checking formulas
-
 
 ## Required Knowledge
 
@@ -224,14 +208,12 @@ Before starting dashboard completion, ensure you have:
 - Ability to locate specific cells in source workbooks using sheet/cell references
 - Basic conditional formatting interpretation (RAG status colors)
 
-
 **Compliance & Governance:**
 
 - Understanding of ISO 27001 Clause 9.1 (monitoring and measurement)
 - Familiarity with GDPR/FADP compliance reporting requirements
 - Executive communication skills (translating metrics into narrative)
 - Board presentation best practices
-
 
 **Operational:**
 
@@ -240,13 +222,11 @@ Before starting dashboard completion, ensure you have:
 - Understanding of which gaps are actively being addressed
 - Familiarity with planned improvements for next quarter
 
-
 ## Tools & Resources
 
 **Dashboard Workbook:**
 
 - Excel workbook: ISMS_A_8_10_5_Compliance_Dashboard_YYYYMMDD.xlsx (generated by Python script)
-
 
 **Reference Materials:**
 
@@ -254,13 +234,11 @@ Before starting dashboard completion, ensure you have:
 - Maturity Scoring Model explanation (in Dashboard Sheet 1)
 - Source workbook cell reference guide (in Dashboard Sheet 1)
 
-
 **Optional (For Board Presentations):**
 
 - PowerPoint template for executive summary
 - Data visualization tools (if converting to charts/graphs)
 - Previous quarter dashboards (for trend comparison)
-
 
 ---
 
@@ -280,13 +258,11 @@ Before starting dashboard completion, ensure you have:
 - ✅ Dashboard remains functional even if source workbooks archived
 - ✅ Simpler to maintain and troubleshoot
 
-
 **Trade-offs:**
 
 - ⚠️ Requires discipline to update quarterly (not automatic)
 - ⚠️ Risk of manual entry errors (mitigated by validation formulas)
 - ⚠️ Takes 1-2 hours per quarter vs. instant updates
-
 
 **How It Works:**
 
@@ -311,13 +287,11 @@ Before starting dashboard completion, ensure you have:
 - Document overall maturity score, retention coverage, NIST compliance, vendor SLA compliance, audit readiness
 - Validate: All 5 metrics populated, no #REF! errors
 
-
 **Step 2: Sheet 3 - Retention Schedule Health**
 
 - Extract 8-10 retention-specific metrics from A.8.10.1
 - Focus on: schedule coverage, overdue reviews, DSR performance, legal basis gaps
 - Validate: Metrics align with A.8.10.1 Sheet 7 summary
-
 
 **Step 3: Sheet 4 - Deletion Method Effectiveness**
 
@@ -325,20 +299,17 @@ Before starting dashboard completion, ensure you have:
 - Focus on: NIST compliance, forensic test pass rate, SSD-specific issues, method coverage
 - Validate: NIST category percentages sum to 100%
 
-
 **Step 4: Sheet 5 - Third-Party Deletion Performance**
 
 - Extract 8-10 vendor metrics from A.8.10.3
 - Focus on: vendor count, SLA compliance, Shadow IT exposure, DPA coverage, certificate quality
 - Validate: Shadow IT count matches A.8.10.3 Tier 9/10 total
 
-
 **Step 5: Sheet 6 - Verification & Evidence Quality**
 
 - Extract 8-10 verification metrics from A.8.10.4
 - Focus on: audit readiness, certificate quality, audit trail completeness, forensic coverage
 - Validate: Audit readiness aligns with A.8.10.4 Sheet 6 assessment
-
 
 **Phase 2: Gap Analysis & Trends (30-45 minutes)**
 
@@ -349,14 +320,12 @@ Before starting dashboard completion, ensure you have:
 - Document gap description, responsible party, target completion date
 - Prioritize by: regulatory risk > operational risk > efficiency gains
 
-
 **Step 7: Sheet 8 - Trend Analysis**
 
 - If Q1 (first dashboard): Document baseline values, leave Q2-Q4 blank
 - If Q2-Q4: Compare current metrics vs. previous quarter(s)
 - Calculate trend direction: ↑ (improving), → (stable), ↓ (declining)
 - Document significant changes in "Trend Explanation" column
-
 
 **Phase 3: Executive Communication (30-45 minutes)**
 
@@ -367,14 +336,12 @@ Before starting dashboard completion, ensure you have:
 - Include: maturity score, critical gaps count, trend direction (improving/stable/declining)
 - Target audience: Board members with no technical background
 
-
 **Step 9: Approval & Publication**
 
 - Complete three-level approval workflow (same as source assessments)
 - Export Sheet 9 (Executive Summary) to PDF for board presentation
 - Archive completed dashboard in compliance evidence repository
 - Schedule next quarterly update (90 days from current)
-
 
 ## Quarterly Update Cadence
 
@@ -392,7 +359,6 @@ Before starting dashboard completion, ensure you have:
 - **Week 1-2:** Complete all 4 source assessments (A.8.10.1-4)
 - **Week 3:** Extract metrics into dashboard (A.8.10.5)
 - **Week 4:** Review, approve, present to board
-
 
 **Pro Tip:** Schedule dashboard completion 1 week before board meeting to allow time for questions and revisions.
 
@@ -416,7 +382,6 @@ Before starting dashboard completion, ensure you have:
 - **Target:** ≥80/100 (demonstrates effective compliance program)
 - **Calculation:** See Section 5.1 (Maturity Scoring Model) for detailed formula
 
-
 **Q: "What does 'RAG status' mean?"**
 
 - A: Red-Amber-Green traffic light visualization:
@@ -424,14 +389,12 @@ Before starting dashboard completion, ensure you have:
   - **Amber:** 70-89% compliance / Score 60-79 / "Mostly Ready" → Moderate risk, monitor closely
   - **Red:** <70% compliance / Score <60 / "Partially/Not Ready" → High risk, immediate action required
 
-
 **Q: "How do I explain 'trend' arrows to the board?"**
 
 - A: Simple comparison vs. last quarter:
   - **↑ (Green up arrow):** Metric improved vs. last quarter → Positive trend
   - **→ (Amber horizontal):** No significant change vs. last quarter → Stable
   - **↓ (Red down arrow):** Metric declined vs. last quarter → Negative trend requiring explanation
-
 
 **Common Mistakes to Avoid:**
 
@@ -441,18 +404,15 @@ Before starting dashboard completion, ensure you have:
    - Compliance percentage = specific metric achievement (0-100%)
    - They're related but measured differently
 
-
 2. ❌ **Ignoring amber (yellow) statuses**
 
    - Amber = "we're functional but not great" → Often overlooked until it becomes red
    - Amber should trigger preventive action, not just monitoring
 
-
 3. ❌ **Not explaining trends**
 
    - Red down arrow without explanation = looks like lack of management attention
    - Always document WHY trends changed in Sheet 8 (Trend Analysis)
-
 
 ## Sheet 3: Retention Schedule Health (from A.8.10.1)
 
@@ -478,20 +438,17 @@ Before starting dashboard completion, ensure you have:
 - GDPR Article 5.1(e) requires ALL personal data categories to have defined retention periods
 - Anything <100% = non-compliance with storage limitation principle
 
-
 **Q: "How many overdue reviews are acceptable?"**
 
 - A: **Zero is the target**
 - Overdue reviews indicate retention schedules may be outdated → retention periods may be incorrect
 - Typical threshold: >5 overdue reviews = Critical gap requiring immediate action
 
-
 **Q: "What's the GDPR requirement for DSR response time?"**
 
 - A: **30 days maximum** (extendable to 60 days in complex cases with notification)
 - Average >30 days = systematic non-compliance
 - Acceptable targets: <20 days average (buffer for complex cases)
-
 
 **Common Mistakes:**
 
@@ -500,12 +457,10 @@ Before starting dashboard completion, ensure you have:
    - "We have 95% coverage" = 5% of data categories have no legal retention basis = GDPR violation
    - Always target 100% for personal data
 
-
 2. ❌ **Not distinguishing between "no retention schedule" vs. "overdue review"**
 
    - No schedule = critical gap (data may be kept indefinitely)
    - Overdue review = medium gap (schedule exists but may be outdated)
-
 
 ## Sheet 4: Deletion Method Effectiveness (from A.8.10.2)
 
@@ -533,20 +488,17 @@ Before starting dashboard completion, ensure you have:
 - Non-compliant methods = custom approaches not validated per NIST standards
 - **Target:** 100% (all methods must be NIST-validated for audit readiness)
 
-
 **Q: "What's an acceptable forensic test pass rate?"**
 
 - A: **≥95% is industry standard**
 - <95% = systematic issues with deletion methods or testing procedures
 - <80% = critical gap requiring immediate investigation
 
-
 **Q: "Why do SSD-specific issues matter?"**
 
 - A: SSDs cannot be reliably deleted using HDD methods (overwriting doesn't work due to wear-leveling)
 - SSD-specific issues count = number of SSDs being deleted with HDD methods
 - **Target:** 0 issues (all SSDs use crypto-erase or physical destruction)
-
 
 **Common Mistakes:**
 
@@ -555,12 +507,10 @@ Before starting dashboard completion, ensure you have:
    - Deletion method must be specifically validated against NIST SP 800-88
    - "Empty recycle bin" ≠ NIST Clear/Purge/Destroy
 
-
 2. ❌ **Not tracking NIST category distribution**
 
    - Different data classifications require different NIST categories
    - Public data: Clear (OK), Confidential data: Purge/Destroy (required)
-
 
 ## Sheet 5: Third-Party Deletion Performance (from A.8.10.3)
 
@@ -587,7 +537,6 @@ Before starting dashboard completion, ensure you have:
   - **SLA Compliance:** Percentage of vendors who actually meet their SLAs (target: ≥95%)
   - Example: 100% have SLAs, but only 80% comply → 20% vendors breach timelines
 
-
 **Q: "Why is Shadow IT (Tier 9/10) such a big deal?"**
 
 - A: Tier 9/10 = Unauthorized systems processing sensitive/confidential data
@@ -595,7 +544,6 @@ Before starting dashboard completion, ensure you have:
   - May violate GDPR Article 28 (processor agreements required)
   - Deletion requests may be impossible to enforce
   - **Target:** 0 Shadow IT instances with sensitive data
-
 
 **Q: "What's a 'strong deletion clause'?"**
 
@@ -606,7 +554,6 @@ Before starting dashboard completion, ensure you have:
   - Audit rights to verify deletion
   - See A.8.10.3 assessment for scoring rubric
 
-
 **Common Mistakes:**
 
 1. ❌ **Ignoring Shadow IT because "users will always find workarounds"**
@@ -614,12 +561,10 @@ Before starting dashboard completion, ensure you have:
    - Shadow IT with sensitive data = GDPR processor violation
    - Must be discovered, assessed, and either formalized or shut down
 
-
 2. ❌ **Accepting weak deletion clauses as "good enough"**
 
    - "Vendor will delete data per their policies" = weak clause (no enforceability)
    - Strong clause specifies timeline, method, and verification
-
 
 ## Sheet 6: Verification & Evidence Quality (from A.8.10.4)
 
@@ -646,7 +591,6 @@ Before starting dashboard completion, ensure you have:
   - **Partially Ready:** Evidence incomplete or requires >4 hours to gather
   - **Not Ready:** Cannot reconstruct audit trail
 
-
 **Q: "Why is 'Certificate Quality Average' important?"**
 
 - A: Low-quality certificates (score <3.0) may not be accepted by auditors or regulators
@@ -655,14 +599,12 @@ Before starting dashboard completion, ensure you have:
   - Score 1: Email confirmation only
   - **Target:** ≥4.0 (Good to Excellent average)
 
-
 **Q: "What's the difference between 'Audit Trail Completeness' and 'Forensic Test Coverage'?"**
 
 - A:
   - **Audit Trail Completeness:** Can reconstruct "who deleted what, when" from logs (evidence exists)
   - **Forensic Test Coverage:** Have tested deletion methods work correctly (methods are effective)
   - Both needed: Evidence exists (audit trail) + Methods work (forensic testing)
-
 
 **Common Mistakes:**
 
@@ -671,12 +613,10 @@ Before starting dashboard completion, ensure you have:
    - Logs must be complete, retained, accessible, and organized
    - "We have logs somewhere" ≠ Fully Ready for audit
 
-
 2. ❌ **Accepting email confirmations as certificates**
 
    - Email: "Data deleted per your request" = score 2 (Poor)
    - Formal signed certificate with details = score 5 (Excellent)
-
 
 ## Sheet 7: Critical Gaps Dashboard
 
@@ -690,18 +630,15 @@ Before starting dashboard completion, ensure you have:
 - In each, scan Sheets 2-6, Column D (Gap Severity)
 - List all rows marked "Critical" or "High"
 
-
 **Step 2: Prioritize by regulatory/operational risk**
 
 - **Regulatory Risk:** GDPR/FADP violations, ISO 27001 non-conformities
 - **Operational Risk:** Data breach exposure, audit failures
 - **Efficiency:** Cost savings, process improvements
 
-
 **Step 3: Select top 5 for dashboard**
 
 - Document in Sheet 7: Gap description, assessment source, responsible party, target date
-
 
 **Example Critical Gaps:**
 
@@ -725,7 +662,6 @@ Before starting dashboard completion, ensure you have:
 - Leave Q2, Q3, Q4 blank
 - No trend arrows (no comparison data yet)
 
-
 **Subsequent Quarters (Q2-Q4):**
 
 - Document current metrics in appropriate column
@@ -734,7 +670,6 @@ Before starting dashboard completion, ensure you have:
   - → (Amber): Metric changed by <5% (stable)
   - ↓ (Red): Metric declined by ≥5%
 - Document "Trend Explanation" for significant changes
-
 
 **Example Trend Explanations:**
 
@@ -751,7 +686,6 @@ Before starting dashboard completion, ensure you have:
 - ↓ NIST compliance declining (new deletion methods not validated)
 - ↓ SLA compliance declining (vendors breaching deadlines more frequently)
 
-
 ## Sheet 9: Executive Summary (Narrative)
 
 **Purpose:** Translate technical metrics into executive communication for board presentation.
@@ -764,13 +698,11 @@ Before starting dashboard completion, ensure you have:
 - Headline summary: "Fully compliant" / "Substantially compliant" / "Partially compliant"
 - Trend: "Improving" / "Stable" / "Declining" vs. last quarter
 
-
 **Section 2: Key Achievements (3-5 bullets)**
 
 - What improved this quarter
 - Major remediation milestones completed
 - Positive regulatory developments
-
 
 **Section 3: Key Concerns (3-5 bullets)**
 
@@ -778,13 +710,11 @@ Before starting dashboard completion, ensure you have:
 - Any declining trends (from Sheet 8)
 - Regulatory risks requiring board awareness
 
-
 **Section 4: Next Quarter Priorities (3-5 bullets)**
 
 - Planned remediation efforts
 - Resource requirements (budget, staff)
 - Expected completion dates
-
 
 **Example Executive Summary:**
 ```
@@ -831,7 +761,6 @@ Next Quarter Priorities (Q3 2024):
 - Extend deletion log retention to 7 years (storage expansion: CHF 12,000)
 - Target maturity score: 85/100 (Green threshold: ≥80)
 
-
 Board Action Requested:
 
 - Approve CHF 57,000 budget for Q3 remediation initiatives
@@ -857,7 +786,6 @@ Board Action Requested:
 - ✅ **Frame gaps as fixable with clear timelines**
   - Good: "Remediate by Q3 end with approved budget"
   - Bad: "Critical gap exists with no resolution plan"
-
 
 ---
 
@@ -885,13 +813,11 @@ Each component score is calculated from its source assessment:
 - DSR Response Time Performance (30% weight)
 - Legal Basis Gaps (30% weight)
 
-
 **2. Deletion Effectiveness (from A.8.10.2):**
 
 - NIST Compliance % (50% weight)
 - Forensic Test Pass Rate (30% weight)
 - SSD-Specific Issues (20% weight)
-
 
 **3. Third-Party Performance (from A.8.10.3):**
 
@@ -899,13 +825,11 @@ Each component score is calculated from its source assessment:
 - Shadow IT Exposure (30% weight)
 - DPA Coverage % (30% weight)
 
-
 **4. Verification Quality (from A.8.10.4):**
 
 - Audit Readiness Score (40% weight)
 - Certificate Quality Average (30% weight)
 - Audit Trail Completeness (30% weight)
-
 
 **Example Calculation:**
 ```
@@ -915,7 +839,6 @@ Component Scores:
 - Deletion Effectiveness: 72/100
 - Third-Party Performance: 68/100
 - Verification Quality: 75/100
-
 
 Overall Score = (85 × 0.25) + (72 × 0.25) + (68 × 0.25) + (75 × 0.25)
               = 21.25 + 18 + 17 + 18.75
@@ -928,7 +851,6 @@ Overall Score = (85 × 0.25) + (72 × 0.25) + (68 × 0.25) + (75 × 0.25)
 - **60-79 (Amber):** Functional but gaps exist, remediation in progress, moderate risk
 - **<60 (Red):** Significant compliance gaps, high regulatory risk, immediate action required
 
-
 ## Why Weighted Scoring vs. Simple Average?
 
 **Simple Average Problem:**
@@ -937,13 +859,11 @@ Overall Score = (85 × 0.25) + (72 × 0.25) + (68 × 0.25) + (75 × 0.25)
 - Doesn't reflect regulatory priorities (GDPR compliance ≠ operational efficiency)
 - One excellent area can mask critical gaps elsewhere
 
-
 **Weighted Scoring Benefits:**
 
 - ✅ Reflects regulatory importance (retention schedules weighted higher than log formatting)
 - ✅ Balances technical and operational aspects
 - ✅ Prevents "gaming" the score by excelling in low-impact areas
-
 
 ---
 
@@ -960,14 +880,12 @@ Overall Score = (85 × 0.25) + (72 × 0.25) + (68 × 0.25) + (75 × 0.25)
 - Remediation efforts not tracked
 - Trend analysis impossible
 
-
 **Solution:**
 
 - Schedule recurring calendar reminder (every 90 days)
 - Link dashboard update to board meeting preparation
 - Include dashboard update in quarterly ISMS management review
 - Assign accountability (Compliance Officer owns quarterly updates)
-
 
 ## Copy-Paste Errors in Manual Entry
 
@@ -979,14 +897,12 @@ Overall Score = (85 × 0.25) + (72 × 0.25) + (68 × 0.25) + (75 × 0.25)
 - Accidentally paste "Overdue Reviews Count" (8) instead
 - Dashboard now shows 8% retention coverage (appears catastrophic)
 
-
 **Solution:**
 
 - **Double-check source cell references** using Data Source Mapping Table (Sheet 1)
 - **Validate totals:** If percentages should sum to 100%, verify the math
 - **Cross-reference:** Compare dashboard summary to source workbook summary (should match exactly)
 - **Peer review:** Have second person validate 10-20% of manual entries (sampling)
-
 
 ## Ignoring Trend Explanations
 
@@ -998,7 +914,6 @@ Overall Score = (85 × 0.25) + (72 × 0.25) + (68 × 0.25) + (75 × 0.25)
 - Appears as lack of management control or care
 - Missed opportunity to highlight remediation efforts
 
-
 **Solution:**
 
 - Always document "Trend Explanation" in Sheet 8 for significant changes (>5%)
@@ -1006,7 +921,6 @@ Overall Score = (85 × 0.25) + (72 × 0.25) + (68 × 0.25) + (75 × 0.25)
   - Positive: "Implemented new forensic testing program"
   - Negative: "Discovered 3 new data categories without retention schedules during system inventory"
 - Use trends to request resources: "Declining SLA compliance due to vendor underperformance → renegotiate contracts"
-
 
 ## Dashboard Data Conflicts with Source Assessments
 
@@ -1018,7 +932,6 @@ Overall Score = (85 × 0.25) + (72 × 0.25) + (68 × 0.25) + (75 × 0.25)
 - Dashboard populated from draft versions of source assessments
 - Manual entry errors
 
-
 **Solution:**
 
 - **ALWAYS use approved versions** of source assessments (Sheet 9 approval completed)
@@ -1026,7 +939,6 @@ Overall Score = (85 × 0.25) + (72 × 0.25) + (68 × 0.25) + (75 × 0.25)
 - **Version control:** Document which version of each source assessment fed the dashboard
   - Example: "Dashboard Q2 2024 based on: A.8.10.1 v2.0 approved 15.04.2024"
 - If source assessments must be revised post-dashboard, regenerate dashboard
-
 
 ## Executive Summary Too Technical
 
@@ -1052,7 +964,6 @@ GDPR fine if challenged. Solution: CHF 45K budget for third-party testing lab."
 - Quantify risks: Always include financial/regulatory exposure
 - Be action-oriented: Every gap = proposed solution + cost + timeline
 
-
 ---
 
 # Quality Checklist
@@ -1067,7 +978,6 @@ Before submitting dashboard for approval (Sheet 9), verify:
 - [ ] Percentages sum to 100% where applicable (e.g., NIST category distribution)
 - [ ] Trend arrows match actual metric changes (↑ = improving, not declining)
 
-
 **Completeness:**
 
 - [ ] All 40-60 metrics populated (no blank cells in yellow-highlighted fields)
@@ -1075,7 +985,6 @@ Before submitting dashboard for approval (Sheet 9), verify:
 - [ ] Trend Analysis (Sheet 8) includes explanations for significant changes
 - [ ] Executive Summary (Sheet 9) includes narrative for board presentation
 - [ ] Evidence documentation (link to source assessment approval records)
-
 
 **Executive Communication:**
 
@@ -1085,7 +994,6 @@ Before submitting dashboard for approval (Sheet 9), verify:
 - [ ] Both achievements and concerns balanced (not only negative gaps)
 - [ ] Next quarter priorities actionable and measurable
 
-
 **Audit Readiness:**
 
 - [ ] Dashboard demonstrates systematic compliance monitoring (quarterly cadence)
@@ -1093,7 +1001,6 @@ Before submitting dashboard for approval (Sheet 9), verify:
 - [ ] Critical gaps have documented remediation plans
 - [ ] Source assessments traceable (version numbers, approval dates documented)
 - [ ] Dashboard can be presented to external auditor with <1 hour preparation
-
 
 ---
 
@@ -1116,7 +1023,6 @@ Before submitting dashboard for approval (Sheet 9), verify:
 - Trend explanations documented for significant changes
 - Executive summary written for board audience
 
-
 **Level 2 → Level 3:**
 
 - Metric accuracy validated by cross-checking source assessments
@@ -1124,14 +1030,12 @@ Before submitting dashboard for approval (Sheet 9), verify:
 - Remediation budgets and timelines realistic
 - Dashboard ready for board presentation (formatting, clarity)
 
-
 **Level 3 (Final):**
 
 - Executive sponsor approves board presentation
 - Remediation budget requests authorized (or revised)
 - Quarterly update schedule confirmed for next 3 quarters
 - Dashboard archived in compliance evidence repository
-
 
 ## Rejection Scenarios
 
@@ -1143,7 +1047,6 @@ Dashboard may be rejected if:
 - ❌ Executive summary too technical for board audience
 - ❌ Source assessments not approved (using draft versions)
 - ❌ Manual entry errors discovered during validation sampling
-
 
 ---
 
@@ -1170,7 +1073,6 @@ Dashboard may be rejected if:
 - Heavy use of formulas for calculations and aggregations
 - Visual indicators (RAG status, trend arrows) for executive consumption
 - Quarterly snapshot capability (Q1-Q4 columns in Sheet 8)
-
 
 ## Sheet Organization
 
@@ -1207,7 +1109,6 @@ Provide comprehensive guidance on dashboard completion and exact source cell ref
 - Update frequency (quarterly)
 - Manual entry workflow explanation
 
-
 **Section 2: Data Source Mapping Table (Rows 17-80)**
 
 This is the CRITICAL table that prevents manual entry errors. For each dashboard cell, document:
@@ -1219,7 +1120,6 @@ This is the CRITICAL table that prevents manual entry errors. For each dashboard
 - Source Cell Reference
 - Metric Description
 - Expected Data Type (%, count, score, text)
-
 
 **Example Data Source Mapping Table:**
 
@@ -1250,7 +1150,6 @@ Overall Score = (Retention Health × 25%)
               + (Deletion Effectiveness × 25%) 
               + (Third-Party Performance × 25%) 
               + (Verification Quality × 25%)
-
 
 Where:
   Retention Health = Based on A.8.10.1 metrics (coverage, DSR, legal basis)
@@ -1293,7 +1192,6 @@ Step-by-step guide to quarterly dashboard updates:
 - Manual entry cells: Yellow fill (same as assessment workbooks)
 - Formula cells: Light blue fill, locked
 - Source cell references: Monospace font for clarity
-
 
 ---
 
@@ -1399,20 +1297,17 @@ Provide the 30-second executive summary - highest-level compliance status across
 - Orange text for cells containing "Amber"
 - Red bold text for cells containing "Red"
 
-
 **Column E (Trend) - Icon Sets:**
 
 - Green up arrow (↑) for "↑"
 - Orange right arrow (→) for "→"
 - Red down arrow (↓) for "↓"
 
-
 **Row 5 (Overall Maturity Score) - Cell Fill:**
 
 - Green fill if B5 ≥ 80
 - Orange fill if B5 60-79
 - Red fill if B5 < 60
-
 
 ---
 
@@ -1793,13 +1688,11 @@ Highlight top 5 gaps requiring immediate management attention from all four asse
 - A.8.10.3 - Third-Party & Cloud Deletion
 - A.8.10.4 - Verification & Evidence
 
-
 **Column D Dropdown Values:**
 
 - Critical (Regulatory violation risk)
 - High (Operational risk, audit failure)
 - Medium (Efficiency gap)
-
 
 **Section 2: Gap Statistics by Assessment Area (Rows 14-22, Formulas)**
 
@@ -1818,13 +1711,11 @@ Highlight top 5 gaps requiring immediate management attention from all four asse
 - Red bold text for "Critical"
 - Orange text for "High"
 
-
 **Column F (Target Date):**
 
 - Red fill if date < TODAY() (overdue)
 - Orange fill if date < TODAY()+30 (due within 30 days)
 - Green fill if date >= TODAY()+30
-
 
 ---
 
@@ -1845,7 +1736,6 @@ Show quarterly progress or decline to identify systemic issues requiring managem
 - Column D: Q3 Value
 - Column E: Q4 Value
 - Column F: Trend Explanation
-
 
 **Key Metrics Tracked (40 total):**
 
@@ -1915,13 +1805,11 @@ Show quarterly progress or decline to identify systemic issues requiring managem
 - Red fill if value declines >5% vs. previous quarter
 - Yellow fill if value stable (±5%)
 
-
 **Column G (Trend Arrows):**
 
 - Green text for ↑
 - Red text for ↓
 - Gray text for →
-
 
 ---
 
@@ -1953,13 +1841,11 @@ KEY ACHIEVEMENTS:
 - [Achievement 3 - positive metric change]
 - [Achievement 4 - regulatory compliance milestone]
 
-
 KEY CONCERNS REQUIRING BOARD ATTENTION:
 
 - [Concern 1 - critical gap with regulatory risk quantification]
 - [Concern 2 - declining metric with impact analysis]
 - [Concern 3 - resource constraint impeding progress]
-
 
 NEXT QUARTER PRIORITIES:
 
@@ -1967,13 +1853,11 @@ NEXT QUARTER PRIORITIES:
 - [Priority 2 - resource requirement with budget]
 - [Priority 3 - expected improvement target]
 
-
 BOARD ACTION REQUESTED:
 
 - [Action 1 - budget approval / resource allocation]
 - [Action 2 - policy decision / strategic direction]
 - [Action 3 - escalation support / vendor management]
-
 
 ---
 
@@ -1985,7 +1869,6 @@ REGULATORY COMPLIANCE STATUS:
 - ISO 27001:2022 A.8.10: [Fully/Substantially/Partially Compliant]
 - GDPR Article 17: [Compliant/Non-Compliant + evidence]
 - Swiss FADP Article 6: [Compliant/Non-Compliant + evidence]
-
 
 AUDIT READINESS:
 [Organization] can demonstrate A.8.10 compliance to external auditors within [X] hours
@@ -2006,7 +1889,6 @@ Approved by: [Executive Sponsor Name]
 - Bullet points for lists
 - Merged cells for easy reading
 
-
 ## Section 2: Three-Level Approval (Rows 42-52, Table)
 
 | Row | Column A (Level) | Column B (Role) | Column C (Name) | Column D (Signature) | Column E (Date) | Column F (Comments) |
@@ -2020,7 +1902,6 @@ Approved by: [Executive Sponsor Name]
 - Must be chronological: Level 2 date >= Level 1 date, Level 3 date >= Level 2 date
 - Cannot be future dated
 - Warning if >30 days between levels (delays)
-
 
 ## Section 3: Board Presentation Export (Rows 54-58)
 
@@ -2044,13 +1925,11 @@ Approved by: [Executive Sponsor Name]
 - Orange text + light orange fill for "Amber"
 - Red bold text + light red fill for "Red"
 
-
 **Percentage Metrics (Various cells):**
 
 - Green fill if ≥90%
 - Yellow fill if 70-89%
 - Red fill if <70%
-
 
 **Score Metrics (1-5 scale):**
 
@@ -2058,13 +1937,11 @@ Approved by: [Executive Sponsor Name]
 - Yellow fill if 3.0-3.9
 - Red fill if <3.0
 
-
 **Count Metrics (Gap counts, Shadow IT counts):**
 
 - Green fill if 0
 - Yellow fill if 1-5
 - Red fill if >5
-
 
 ## Sheet-Specific Rules
 
@@ -2072,17 +1949,14 @@ Approved by: [Executive Sponsor Name]
 
 - Overall Maturity Score cell (B5): Large font (20pt), bold, colored fill based on RAG
 
-
 **Sheet 7 (Critical Gaps):**
 
 - Target Date column: Red fill if overdue, orange if <30 days, green if >30 days
-
 
 **Sheet 8 (Trend Analysis):**
 
 - Trend arrow cells: Icon sets (up/right/down arrows with colors)
 - Quarterly value cells: Color scale (green = improvement, red = decline)
-
 
 ---
 
@@ -2117,7 +1991,6 @@ This workbook is a **DASHBOARD**, not an assessment workbook. Key differences:
 - All cells UNPROTECTED (allow user entry)
 - Data validation where applicable (percentages 0-100, scores 1-5)
 
-
 **3. Formula Cells (Light Blue Fill, Protected):**
 
 - RAG status formulas (IF statements based on thresholds)
@@ -2125,7 +1998,6 @@ This workbook is a **DASHBOARD**, not an assessment workbook. Key differences:
 - Trend calculation formulas (comparing current vs. previous quarter)
 - Component score calculations (weighted averages)
 - **PROTECT** all formula cells to prevent accidental overwrites
-
 
 **4. Maturity Scoring Formulas:**
 
@@ -2136,7 +2008,6 @@ This workbook is a **DASHBOARD**, not an assessment workbook. Key differences:
 ```
 
 - Component Scores (Each sheet, Row 20, Column B): Weighted average per assessment area
-
 
 **5. Trend Analysis Structure (Sheet 8):**
 
@@ -2155,7 +2026,6 @@ This workbook is a **DASHBOARD**, not an assessment workbook. Key differences:
   - Icon sets (arrows for trends)
   - Data bars (optional for percentages)
 
-
 **7. Sheet Protection:**
 
 - Sheet 1: Fully protected (instructions, read-only)
@@ -2163,7 +2033,6 @@ This workbook is a **DASHBOARD**, not an assessment workbook. Key differences:
 - Sheet 7: Fully unprotected (critical gaps manual entry)
 - Sheet 8: Protect trend formulas, leave quarterly values unlocked
 - Sheet 9: Fully unprotected (narrative text, approval)
-
 
 ## Script Validation Checks
 
@@ -2282,7 +2151,6 @@ When developing/testing `generate_a810_5_compliance_dashboard.py`:
    - Manually copy values from source workbooks
    - Verify formulas calculate correctly
 
-
 **Test Scenario:**
 ```
 Source A.8.10.1 Sheet 7, B7 = 95% (Retention Coverage)
@@ -2311,14 +2179,12 @@ ISMS_A_8_10_5_Compliance_Dashboard_YYYYMMDD_Qn.xlsx
 - Archive previous quarters (read-only)
 - Current quarter = working copy
 
-
 **Version Tracking in Sheet 1:**
 
 - Document ID: ISMS-IMP-A.8.10.5
 - Version: 1.0
 - Quarter: Q1/Q2/Q3/Q4 [Year]
 - Date: DD.MM.YYYY
-
 
 ## Change Log
 
@@ -2333,7 +2199,6 @@ ISMS_A_8_10_5_Compliance_Dashboard_YYYYMMDD_Qn.xlsx
 - Enhanced conditional formatting (RAG visualization)
 - Updated approval workflow (three-level sign-off)
 
-
 ## Backward Compatibility
 
 **v2.0 Workbooks:**
@@ -2342,13 +2207,11 @@ ISMS_A_8_10_5_Compliance_Dashboard_YYYYMMDD_Qn.xlsx
 - Compatible with LibreOffice Calc 6.0+ (minor formatting differences)
 - Not compatible with Google Sheets (use Excel Online for cloud access)
 
-
 **v1.0 to v2.0 Migration:**
 
 - No automated migration (different structure)
 - Manually transfer Q1 baseline from v1.0 to v2.0 Sheet 8 if upgrading mid-year
 - Recommend starting v2.0 at beginning of new fiscal year or quarter
-
 
 ---
 
@@ -2364,7 +2227,6 @@ Before using generated dashboard workbook, verify:
 - [ ] Source cell references match actual source workbook structure
 - [ ] No broken references or TBD placeholders
 
-
 **Formula Accuracy (Sheets 2-6):**
 
 - [ ] RAG status formulas use correct thresholds (≥90% green, 70-89% amber, <70% red)
@@ -2372,13 +2234,11 @@ Before using generated dashboard workbook, verify:
 - [ ] Overall Maturity Score formula references all 4 component scores
 - [ ] No #REF!, #DIV/0!, #VALUE! errors in any formula cells
 
-
 **Manual Entry Cells:**
 
 - [ ] All manual entry cells have yellow fill
 - [ ] Manual entry cells are UNLOCKED (not protected)
 - [ ] Data validation applied where appropriate (percentages 0-100, dates)
-
 
 **Protection:**
 
@@ -2386,13 +2246,11 @@ Before using generated dashboard workbook, verify:
 - [ ] Instructions sheet fully protected
 - [ ] Manual entry cells remain editable when sheet protection enabled
 
-
 **Conditional Formatting:**
 
 - [ ] RAG status colors apply correctly
 - [ ] Trend arrows display correctly (↑↓→)
 - [ ] Overdue dates highlighted in red
-
 
 ## Post-Completion Validation
 
@@ -2406,7 +2264,6 @@ After manual data entry, verify:
 - [ ] Critical Gaps Dashboard has remediation dates for all gaps
 - [ ] Executive Summary narrative matches quantitative data
 - [ ] Three-level approval completed with dates
-
 
 ---
 
@@ -2424,7 +2281,6 @@ After manual data entry, verify:
 - Trend analysis (improvement or decline identification)
 - Performance evaluation (maturity scoring model)
 
-
 ## Dashboard Integration into Management Review
 
 **Recommended Agenda Item:**
@@ -2436,7 +2292,6 @@ ISMS MANAGEMENT REVIEW - Control A.8.10 (Information Deletion)
    - Present Sheet 2 (Overall A.8.10 Compliance)
    - Highlight maturity score and trend vs. previous quarter
 
-
 2. Assessment Area Deep Dives (if significant changes)
 
    - Retention Schedule Health (Sheet 3) - if coverage changed ±5%
@@ -2444,20 +2299,17 @@ ISMS MANAGEMENT REVIEW - Control A.8.10 (Information Deletion)
    - Third-Party Performance (Sheet 5) - if Shadow IT or SLA issues
    - Verification Quality (Sheet 6) - if audit readiness changed
 
-
 3. Critical Gaps Requiring Management Decision
 
    - Present Sheet 7 (Critical Gaps Dashboard)
    - Request budget approval for remediation
    - Assign accountability for high-priority gaps
 
-
 4. Regulatory Compliance Status
 
    - GDPR Article 17: [Compliant/Non-Compliant + evidence]
    - Swiss FADP Article 6: [Compliant/Non-Compliant + evidence]
    - ISO 27001 A.8.10: [Conformity statement]
-
 
 5. Management Decisions & Actions
 
@@ -2475,7 +2327,6 @@ ISMS MANAGEMENT REVIEW - Control A.8.10 (Information Deletion)
 - Quarter designation (Q1/Q2/Q3/Q4 [Year])
 - Management decisions and action items
 - Link to source assessment workbooks (A.8.10.1-4) for detailed evidence
-
 
 ---
 

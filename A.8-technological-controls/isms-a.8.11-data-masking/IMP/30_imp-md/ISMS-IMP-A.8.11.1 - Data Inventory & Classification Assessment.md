@@ -26,7 +26,6 @@
 |---------|------|---------|--------|
 | 1.0 | [Date] | Initial workbook layout specification only | ISMS Implementation Team |
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -70,7 +69,6 @@ Data masking controls are meaningless without knowing:
 - **HOW SENSITIVE** the data is (drives masking requirements)
 - **WHICH REGULATIONS** apply to each data category
 
-
 **Regulatory Context:**
 
 - **Swiss nFADP (Art. 6):** Requires data controllers to maintain processing inventories
@@ -79,7 +77,6 @@ Data masking controls are meaningless without knowing:
 - **PCI-DSS v4.0 (Req. 3.3):** Primary Account Numbers (PAN) must be inventoried before masking
 - **HIPAA (§164.514):** De-identification requires knowing which data elements constitute Protected Health Information (PHI)
 
-
 **Business Impact:**
 
 - **Data Breach Exposure:** Unknown sensitive data = unprotected data = regulatory fines
@@ -87,7 +84,6 @@ Data masking controls are meaningless without knowing:
 - **Regulatory Penalties:** GDPR fines up to 4% of global revenue for inadequate data governance
 - **Operational Risk:** Accidental disclosure of unclassified sensitive data (common root cause)
 - **Resource Waste:** Masking non-sensitive data wastes effort; missing sensitive data creates risk
-
 
 ## Who Should Complete This Assessment
 
@@ -100,14 +96,12 @@ Data masking controls are meaningless without knowing:
 - Data classification schemes and sensitivity criteria
 - Business data ownership structures
 
-
 **Required Skills:**
 
 - Data discovery and profiling techniques
 - Database schema analysis
 - Risk assessment and prioritization
 - Stakeholder engagement (extracting ownership assignments)
-
 
 **Support Roles:**
 
@@ -117,7 +111,6 @@ Data masking controls are meaningless without knowing:
 - **Legal/Compliance:** Regulatory applicability, data retention requirements, cross-border restrictions
 - **Privacy Team:** Personal data identification, DPIA (Data Protection Impact Assessment) linkage
 - **IT Asset Management:** CMDB data, system inventory, hosting locations
-
 
 ## Time Estimate
 
@@ -134,14 +127,12 @@ Data masking controls are meaningless without knowing:
 - **Evidence Collection:** 1-2 hours
 - **Quality Review:** 1-2 hours
 
-
 **Pro Tip for Large Organizations (>100 systems):**
 
 - **Phase 1 (Week 1):** Crown jewel systems only (top 10-20 most critical)
 - **Phase 2 (Week 2-3):** High-risk systems (regulatory scope, customer data)
 - **Phase 3 (Month 2):** Medium-risk systems
 - **Phase 4 (Ongoing):** Tail of low-risk systems, continuous inventory maintenance
-
 
 ## Connection to Policy
 
@@ -171,7 +162,6 @@ This assessment implements **ISMS-POL-A.8.11, Section 2.1 (Data Classification a
 - Backup/archive/DR systems included
 - Decommissioned systems tracked (retention compliance)
 
-
 ✅ **Granular Classification:**
 
 - Table/field level classification (not just "database contains PII")
@@ -179,13 +169,11 @@ This assessment implements **ISMS-POL-A.8.11, Section 2.1 (Data Classification a
 - Sensitivity levels assigned with clear rationale
 - Regulatory applicability documented per data element
 
-
 ✅ **Clear Ownership:**
 
 - Every data category has assigned Data Owner (named individual or role)
 - Data Owners have acknowledged accountability
 - Escalation path defined for ownership disputes
-
 
 ✅ **Risk-Based Prioritization:**
 
@@ -193,14 +181,12 @@ This assessment implements **ISMS-POL-A.8.11, Section 2.1 (Data Classification a
 - High-risk data flagged for immediate attention
 - Resources allocated proportional to risk
 
-
 ✅ **Audit-Ready Evidence:**
 
 - Data discovery methodology documented
 - Classification decisions traceable to policy criteria
 - Ownership assignments formally acknowledged
 - Review dates and next actions clearly defined
-
 
 ---
 
@@ -219,7 +205,6 @@ Before starting this assessment, ensure you have access to:
 - [ ] Database inventory (list of all databases, production and non-production)
 - [ ] SaaS/cloud service inventory
 
-
 **System Access:**
 
 - [ ] Database administration consoles (Oracle, SQL Server, PostgreSQL, MySQL, MongoDB, etc.)
@@ -227,7 +212,6 @@ Before starting this assessment, ensure you have access to:
 - [ ] Cloud provider consoles (AWS, Azure, GCP, etc.) if applicable
 - [ ] File share access (for unstructured data assessment)
 - [ ] Backup system access (to verify what's in backups)
-
 
 **Documentation Systems:**
 
@@ -238,14 +222,12 @@ Before starting this assessment, ensure you have access to:
 - [ ] Privacy policy documentation
 - [ ] Data retention schedules
 
-
 **Stakeholder Access:**
 
 - [ ] Data Owner contact information (business stakeholders)
 - [ ] Application Owner contact list
 - [ ] Legal/Compliance team availability (regulatory questions)
 - [ ] DBA/Technical team availability (schema access)
-
 
 ## Knowledge Required
 
@@ -256,7 +238,6 @@ Before starting this assessment, ensure you have access to:
 - Business context for major applications (CRM, ERP, HR, finance, etc.)
 - Data residency and cross-border restrictions
 
-
 **Technical Skills:**
 
 - Basic database concepts (tables, columns, schemas)
@@ -264,13 +245,11 @@ Before starting this assessment, ensure you have access to:
 - Data discovery methodologies (automated scanning, manual review)
 - Risk assessment fundamentals (likelihood × impact)
 
-
 **NOT Required (but helpful):**
 
 - Deep SQL expertise (DBAs handle technical queries)
 - Privacy law expertise (legal team advises on regulatory applicability)
 - Data science/statistics (for assessing re-identification risk)
-
 
 ## Tools Needed
 
@@ -283,7 +262,6 @@ Before starting this assessment, ensure you have access to:
 - **Database-Specific:** Oracle Data Masking & Subsetting, Microsoft Data Classification
 - **Cloud-Native:** AWS Macie, Azure Purview, GCP Cloud DLP
 
-
 **Manual Discovery Tools (if automated tools unavailable):**
 
 - **Database query tools:** SQL Developer, DBeaver, pgAdmin, MySQL Workbench
@@ -291,13 +269,11 @@ Before starting this assessment, ensure you have access to:
 - **Spreadsheet software:** Excel or LibreOffice Calc for manual inventory tracking
 - **Documentation tools:** For recording findings, classification decisions
 
-
 **Evidence Collection:**
 
 - **Screenshot tool:** For capturing data discovery outputs, classification evidence
 - **Export capability:** Database schema exports, data dictionaries
 - **Secure storage:** Evidence repository (some evidence contains metadata about sensitive data)
-
 
 **Critical Tool Selection Note:**
 This assessment is **tool-agnostic**. [Organization] may use any data discovery methodology (automated, manual, hybrid). The IMPORTANT part is documenting WHAT you found, not HOW you found it.
@@ -313,7 +289,6 @@ This assessment is **tool-agnostic**. [Organization] may use any data discovery 
 - [ ] Classification criteria approved (using policy definitions)
 - [ ] Assessment timeline communicated to affected teams
 
-
 ✅ **Technical Preparation:**
 
 - [ ] Read-only database access provisioned (for discovery)
@@ -321,14 +296,12 @@ This assessment is **tool-agnostic**. [Organization] may use any data discovery 
 - [ ] Assessment workbook downloaded and unprotected (if using Excel template)
 - [ ] Evidence repository created (folder structure for screenshots, exports)
 
-
 ✅ **Coordination:**
 
 - [ ] DBAs notified (performance impact from discovery scans)
 - [ ] Application Owners notified (may need business context input)
 - [ ] Change freeze awareness (avoid running during critical business periods)
 - [ ] Escalation path defined (for ownership disputes, classification disagreements)
-
 
 ---
 
@@ -398,7 +371,6 @@ This assessment is **tool-agnostic**. [Organization] may use any data discovery 
    - Include: System ID, Name, Type, Environment, Owner
    - Filter out network devices, purely infrastructure components
 
-
 2. **Supplement with Manual Discovery:**
 
    - Interview Application Owners: "What systems do you manage?"
@@ -406,7 +378,6 @@ This assessment is **tool-agnostic**. [Organization] may use any data discovery 
    - Check SaaS subscriptions (Salesforce, Workday, ServiceNow, etc.)
    - Identify file shares (SharePoint, NAS, S3 buckets)
    - Don't forget: Backup systems, data warehouses, analytics platforms, DR sites
-
 
 3. **Document in Excel (Rows 8-57, 50 row template):**
 
@@ -419,7 +390,6 @@ This assessment is **tool-agnostic**. [Organization] may use any data discovery 
    - **Primary Data Owner:** Business stakeholder accountable for data
    - **System Owner/Admin:** Technical admin responsible for system
 
-
 4. **Quality Checks:**
 
    - [ ] All production systems included (cross-reference with monitoring tools)
@@ -428,14 +398,12 @@ This assessment is **tool-agnostic**. [Organization] may use any data discovery 
    - [ ] Decommissioned systems noted (for retention compliance tracking)
    - [ ] "Unknown" sensitive data status flagged for Phase 2 discovery
 
-
 **Common Mistakes to Avoid:**
 
 - ❌ Only inventorying production (dev/test environments often have real data!)
 - ❌ Forgetting SaaS applications (they contain sensitive data too)
 - ❌ Assuming "small" databases are non-sensitive (size ≠ sensitivity)
 - ❌ Skipping decommissioned systems (they may still have retention obligations)
-
 
 ## Phase 2: Data Discovery (4-8 hours)
 
@@ -477,7 +445,6 @@ This assessment is **tool-agnostic**. [Organization] may use any data discovery 
 - Manual review for business-specific sensitive data (proprietary, trade secrets)
 - Application Owner interviews for context
 
-
 **Step-by-Step in Excel (Rows 8-207, 200 row template):**
 
 For EACH sensitive data element found:
@@ -501,14 +468,12 @@ For EACH sensitive data element found:
 - [ ] Discovery method documented (audit trail)
 - [ ] False positives eliminated (e.g., "customer_type" is NOT PII)
 
-
 **Common Mistakes to Avoid:**
 
 - ❌ Table-level classification only ("Customers table contains PII") → Too vague, need column-level
 - ❌ Missing indirect identifiers (DOB+ZIP can re-identify individuals)
 - ❌ Assuming encrypted data doesn't need classification (encryption ≠ masking)
 - ❌ Not validating column names ("`email_opt_in`" column may NOT contain email addresses)
-
 
 ## Phase 3: Classification (3-5 hours)
 
@@ -568,14 +533,12 @@ For EACH data element from Phase 2:
 - [ ] Exposure risk considers current controls (encryption, access controls)
 - [ ] Data Owner has reviewed and approved classification (documented in notes)
 
-
 **Common Mistakes to Avoid:**
 
 - ❌ Over-classifying everything as Critical (creates resource burden, boy-who-cried-wolf effect)
 - ❌ Under-classifying to avoid masking work (audit finding, potential breach)
 - ❌ Inconsistent classification (same data type classified differently across systems)
 - ❌ Ignoring context ("`email`" in support ticket = Medium; "`email`" in HR system = High)
-
 
 ## Phase 4: Regulatory Mapping (1-2 hours)
 
@@ -591,7 +554,6 @@ For EACH data element from Phase 2:
 - **Swiss nFADP (Federal Act on Data Protection):** Personal data of Swiss residents
 - **UK GDPR:** Personal data of UK residents (if applicable)
 
-
 **Conditional (if industry/contract requires):**
 
 - **HIPAA (Health Insurance Portability and Accountability Act):** US healthcare entities only
@@ -599,7 +561,6 @@ For EACH data element from Phase 2:
 - **GLBA (Gramm-Leach-Bliley Act):** US financial institutions only
 - **CCPA/CPRA (California Consumer Privacy Act):** US companies with California residents' data
 - **FISMA (Federal Information Security Management Act):** US federal agencies and contractors
-
 
 **Step-by-Step in Excel (Rows 8-57, 50 row template):**
 
@@ -624,14 +585,12 @@ For EACH data category (not individual fields):
 - [ ] Retention periods align with legal requirements (not arbitrary)
 - [ ] Cross-border restrictions documented (impacts cloud hosting, masking tool selection)
 
-
 **Common Mistakes to Avoid:**
 
 - ❌ Assuming HIPAA applies globally (it's US-only)
 - ❌ Confusing "personal data" with "sensitive personal data" (GDPR Art. 9 special categories)
 - ❌ Not consulting legal team (don't guess regulatory applicability)
 - ❌ Ignoring data residency (GDPR doesn't prohibit cross-border transfer, but requires safeguards)
-
 
 ## Phase 5: Data Ownership Assignment (2-3 hours)
 
@@ -648,7 +607,6 @@ For EACH data category (not individual fields):
 - Database Administrator (executes technical controls)
 - Data Steward (tactical data management)
 
-
 **Data Owner Responsibilities:**
 
 - Approve data classification decisions
@@ -657,7 +615,6 @@ For EACH data category (not individual fields):
 - Approve exceptions to masking policy
 - Review and approve data retention/deletion
 - Accountable for regulatory compliance for their data category
-
 
 **Step-by-Step in Excel (Rows 8-57, 50 row template):**
 
@@ -684,7 +641,6 @@ For EACH data category:
    - CAT-CRD (Credentials) → CISO, Security Director
    - CAT-PRP (Proprietary) → CTO, VP Product, or Business Unit Leader
 
-
 2. **Send Ownership Assignment Email:**
    ```
    Subject: Data Ownership Assignment - [Data Category]
@@ -700,14 +656,12 @@ For EACH data category:
    - Scope: [List of systems/tables containing this data]
    - Regulatory Context: [GDPR / FADP / Other]
    
-
    Data Owner responsibilities include:
 
    - Approving data classification and masking decisions
    - Defining access control requirements
    - Ensuring regulatory compliance
    
-
    Please confirm your acceptance by [Date]. If you believe another role 
    should own this data, please advise.
    
@@ -721,7 +675,6 @@ For EACH data category:
    - Declined → Escalate to CISO/CDO for alternative assignment
    - No response after 1 week → Follow up, escalate after 2 weeks
 
-
 **Quality Checks:**
 
 - [ ] All data categories have assigned Data Owners (no orphaned data)
@@ -730,14 +683,12 @@ For EACH data category:
 - [ ] Backup Data Owners identified (no single point of failure)
 - [ ] Escalation path defined (for ownership disputes)
 
-
 **Common Mistakes to Avoid:**
 
 - ❌ Assigning CISO/DPO as Data Owner for everything (they're policy enforcers, not business owners)
 - ❌ Assigning DBAs as Data Owners (they're technical implementers, not business accountable)
 - ❌ Not getting written acknowledgment (undocumented = didn't happen for audit)
 - ❌ Vague role definitions ("IT Manager" → which IT Manager? Be specific)
-
 
 ## Phase 6: Masking Priority Matrix (1-2 hours)
 
@@ -756,7 +707,6 @@ Where:
 - Exposure Risk: Very High=4, High=3, Medium=2, Low=1, Very Low=0
 - Regulatory Weight: Multiple regulations=4, GDPR Art. 9=4, GDPR/FADP=3, Industry-specific=2, None=0
 - Volume Score: >10M records=4, 1M-10M=3, 100K-1M=2, 10K-100K=1, <10K=0
-
 
 Priority Bands:
 
@@ -793,14 +743,12 @@ For EACH data element (or grouped by data category if hundreds of fields):
 - [ ] Blocked items have documented blockers and mitigation plans
 - [ ] Risk-accepted items have formal risk acceptance from Data Owner + CISO
 
-
 **Common Mistakes to Avoid:**
 
 - ❌ Treating all data equally (everything becomes P1 → nothing gets done)
 - ❌ Ignoring volume (1 record of sensitive data vs. 10M records = very different risk)
 - ❌ Not updating status (Priority Matrix becomes stale if not maintained)
 - ❌ No accountability for P1 items (assign explicit owners with deadlines)
-
 
 ## Phase 7: Gap Analysis (1-2 hours)
 
@@ -816,13 +764,11 @@ For EACH data element (or grouped by data category if hundreds of fields):
 - "Unknown" sensitive data status not resolved
 - Missing environments (e.g., only production inventoried, not dev/test)
 
-
 **2. Classification Gaps:**
 
 - Sensitive data identified but not classified
 - Classification rationale missing (can't audit decision)
 - No Data Owner approval of classification
-
 
 **3. Ownership Gaps:**
 
@@ -830,20 +776,17 @@ For EACH data element (or grouped by data category if hundreds of fields):
 - Data Owner acknowledgment pending (>2 weeks)
 - No backup Data Owner assigned
 
-
 **4. Regulatory Gaps:**
 
 - Regulatory applicability unclear (needs legal review)
 - Cross-border restrictions not assessed
 - Retention period not defined
 
-
 **5. Prioritization Gaps:**
 
 - P1 items without assigned implementation owner
 - Target masking dates passed without completion
 - No risk acceptance for delayed P1/P2 items
-
 
 **Step-by-Step in Excel (Rows 8-57, 50 row template):**
 
@@ -867,14 +810,12 @@ For EACH identified gap:
 - [ ] All P1 items without implementation plans have gap entries
 - [ ] All Critical/High risk gaps have target dates within 30/90 days
 
-
 **Common Mistakes to Avoid:**
 
 - ❌ Not documenting gaps (sweep under rug → audit finding)
 - ❌ No accountability (gaps without owners stay open forever)
 - ❌ Unrealistic timelines (30 days to inventory 100 systems → won't happen)
 - ❌ Not escalating blocked gaps (stuck gaps need management intervention)
-
 
 ---
 
@@ -892,19 +833,16 @@ For EACH identified gap:
 - **Planned:** Inventory project approved and funded, not yet executed
 - **N/A:** Organization has no IT systems (highly unlikely)
 
-
 **Evidence to Attach:**
 
 - CMDB export showing all database and application assets
 - Asset inventory documentation with review dates
 - System inventory procedure (how inventory is maintained)
 
-
 **Common Issues:**
 
 - "We have an Excel list from 2 years ago" → Answer: **Partial** (needs updating)
 - "We know what systems we have, just not documented" → Answer: **No** (if not documented, doesn't count for audit)
-
 
 ---
 
@@ -916,7 +854,6 @@ For EACH identified gap:
 - **No:** Known production systems missing (e.g., shadow IT discovered)
 - **Partial:** Most documented, but some gaps (e.g., departmental Access databases, rogue Excel files on file shares)
 
-
 **How to Verify:**
 
 - Cross-reference inventory against:
@@ -925,13 +862,11 @@ For EACH identified gap:
   - Billing records (cloud provider invoices show all running resources)
   - Backup job lists (what's being backed up?)
 
-
 **Red Flags:**
 
 - Systems in monitoring but not in inventory
 - Database connections in application configs not in inventory
 - SaaS subscriptions in expense reports not in inventory
-
 
 ---
 
@@ -945,20 +880,17 @@ For EACH identified gap:
 - **No:** Only production inventoried
 - **Partial:** Some non-prod environments documented (e.g., UAT yes, but dev/test unknown)
 
-
 **How to Verify:**
 
 - Ask developers: "Where do you test code changes?" (dev database)
 - Ask QA: "Where do you run test scripts?" (test database)
 - Ask analytics team: "Where do you query data for reports?" (data warehouse, may have masked or unmasked prod data)
 
-
 **Common Discovery:**
 
 - Developer workstations with production database exports (CRITICAL GAP)
 - Cloud "dev" accounts with copies of production databases
 - QA environments refreshed weekly from production (unmasked)
-
 
 ---
 
@@ -972,20 +904,17 @@ For EACH identified gap:
 - Document most sensitive category per table
 - Note: Auditors may ask for column-level detail in future
 
-
 **Approach 2: Column-Level Detail (Best Practice)**
 
 - One row per sensitive column
 - Allows precise masking technique selection later
 - More time-consuming but audit-proof
 
-
 **Hybrid Recommendation:**
 
 - Column-level for Critical/High sensitivity data
 - Table-level for Medium/Low sensitivity data
 - Note in assessment: "Low priority data documented at table-level, will expand to column-level before masking implementation"
-
 
 ---
 
@@ -997,7 +926,6 @@ For EACH identified gap:
 - "Email" column contains email domains, not full addresses
 - "DOB" column contains "Date of Business" not "Date of Birth"
 - "Account" column contains account types, not account numbers
-
 
 **Validation Method:**
 ```sql
@@ -1017,12 +945,10 @@ LIMIT 100;
 - Phone: 10 digits (North America) or international format
 - Credit Card: 15-16 digits, passes Luhn algorithm
 
-
 **If False Positive Confirmed:**
 
 - Remove from Sensitive_Data_Inventory
 - Document in "Discovery Notes" why excluded (audit trail)
-
 
 ---
 
@@ -1037,13 +963,11 @@ LIMIT 100;
    - Share classification decision tree from policy
    - Explain regulatory drivers (e.g., "GDPR Art. 9 special category = Critical, not negotiable")
 
-
 2. **Seek Objective Evidence:**
 
    - Data Owner: "Why do you think it's lower sensitivity?"
    - Review: Is there encryption, access controls, or other mitigating factors?
    - Re-assessment: If controls reduce exposure risk, may affect priority but not sensitivity classification
-
 
 3. **Escalate if Needed:**
 
@@ -1051,14 +975,12 @@ LIMIT 100;
    - If business judgment: Data Owner decision (with documented rationale and CISO approval)
    - Document disagreement and resolution in "Classification Rationale" column
 
-
 **Example Scenario:**
 
 - **Data:** Employee salaries
 - **Initial Classification:** High (substantial privacy harm if exposed)
 - **Data Owner (VP HR):** "This should be Medium, we don't consider it that sensitive"
 - **Resolution:** Check regulatory requirements → No specific regulation mandates High → Data Owner decision accepted IF documented rationale: "Business policy treats compensation as Medium sensitivity, access restricted to HR only, annual employee acknowledgment of confidentiality" → Requires CISO approval
-
 
 ---
 
@@ -1072,18 +994,15 @@ LIMIT 100;
    - ZIP code: Public
    - DOB: Low (indirect identifier)
 
-
 2. **Document Combination Risk:**
 
    - In "Re-Identification Risk" column: "High when combined with ZIP code"
    - In "Masking Requirements" notes: "SHALL mask DOB when ZIP code present in same dataset"
 
-
 3. **Adjust Priority:**
 
    - Individual DOB field: P3 or P4
    - DOB in table with ZIP: P1 or P2 (elevated due to combination risk)
-
 
 ---
 
@@ -1097,7 +1016,6 @@ LIMIT 100;
 - [ ] Organization processes personal data of EU residents (customers, employees, website visitors)
 - [ ] Organization monitors behavior of EU residents (website tracking, profiling)
 
-
 **If ANY of above is YES → GDPR applies**
 
 **Common Misconceptions:**
@@ -1105,7 +1023,6 @@ LIMIT 100;
 - ❌ "We're a US company, GDPR doesn't apply" → WRONG if you have EU customers
 - ❌ "We don't have a EU office, GDPR doesn't apply" → WRONG if you process EU personal data
 - ❌ "We're B2B, not B2C, GDPR doesn't apply" → WRONG, B2B companies still process employee data, contact data
-
 
 **When in Doubt:** Consult legal counsel. Regulatory fines for non-compliance = 4% of global annual revenue.
 
@@ -1117,7 +1034,6 @@ LIMIT 100;
 
 - [ ] Organization is a "Covered Entity": Healthcare providers, health plans, healthcare clearinghouses
 - [ ] Organization is a "Business Associate": Provides services to covered entities involving PHI (Protected Health Information)
-
 
 **If NEITHER of above → HIPAA does NOT apply**
 
@@ -1144,13 +1060,11 @@ LIMIT 100;
    - **Document:** "Ownership assignment pending, interim owner: [CISO]"
    - **Escalate to Executive Leadership:** Ownership vacuum = governance failure
 
-
 **Never Leave Data Orphaned:**
 
 - Every data category MUST have an accountable owner
 - If business refuses ownership → Risk acceptance by executive leadership required
 - Document in Gap_Analysis sheet
-
 
 ---
 
@@ -1166,7 +1080,6 @@ LIMIT 100;
 - [ ] Backup system inventory (what's being backed up = what exists)
 - [ ] Network scan results (discovered databases, open ports)
 
-
 **For Data Discovery:**
 
 - [ ] Automated scanning tool report (BigID, OneTrust, etc.) with findings summary
@@ -1175,14 +1088,12 @@ LIMIT 100;
 - [ ] Data Owner interview notes (business context for sensitive data)
 - [ ] Discovery methodology documentation (how discovery was performed)
 
-
 **For Classification:**
 
 - [ ] Classification decision matrix (criteria applied per data element)
 - [ ] Data Owner approval emails (written acknowledgment of classification)
 - [ ] Regulatory guidance references (GDPR Art. 9 list, PCI-DSS requirements, etc.)
 - [ ] Re-identification risk assessment (for indirect identifiers)
-
 
 **For Ownership:**
 
@@ -1191,14 +1102,12 @@ LIMIT 100;
 - [ ] Escalation correspondence (if ownership disputes)
 - [ ] RACI matrix (Responsible, Accountable, Consulted, Informed for data categories)
 
-
 **For Regulatory Mapping:**
 
 - [ ] Legal counsel memo on regulatory applicability
 - [ ] GDPR Records of Processing Activities (ROPA)
 - [ ] PCI-DSS scope validation documentation
 - [ ] HIPAA Business Associate Agreements (if applicable)
-
 
 ## Evidence Storage & Organization
 
@@ -1247,7 +1156,6 @@ Document ALL evidence in the `Evidence_Register` sheet with:
 - Collected By (who gathered this evidence)
 - Retention Period (how long to keep evidence)
 
-
 ---
 
 # Common Pitfalls & Troubleshooting
@@ -1264,13 +1172,11 @@ Document ALL evidence in the `Evidence_Register` sheet with:
 - Full column-level detail for these systems
 - Target: 80% of sensitive data with 20% of effort (Pareto principle)
 
-
 **Phase 2 (Week 3-4): High-Risk Tier**
 
 - Inventory next 30-50 systems (regulatory scope, high data volume)
 - Table-level detail acceptable (can expand later)
 - Target: 95% of sensitive data covered
-
 
 **Phase 3 (Month 2-3): Long Tail**
 
@@ -1278,18 +1184,15 @@ Document ALL evidence in the `Evidence_Register` sheet with:
 - Automated discovery tools critical at this scale
 - Table-level detail for low-priority systems
 
-
 **Phase 4 (Ongoing): Continuous Discovery**
 
 - New systems trigger inventory update
 - Quarterly review for changes (new columns, new systems)
 - Annual full re-validation
 
-
 **Document Phasing in Assessment:**
 
 - "Assessment Status: Phase 1 Complete (20 systems, 100% column-level). Phase 2 In Progress (50 systems, table-level). Phase 3 Planned (Q2 2026)."
-
 
 ---
 
@@ -1309,13 +1212,11 @@ Document ALL evidence in the `Evidence_Register` sheet with:
    - DBAs review schemas for sensitive-sounding column names
    - Application Owners identify business-specific sensitive data
 
-
 2. **Tune Discovery Tool:**
 
    - Add custom patterns (regex for your SSN format variations)
    - Add synonym lists ("Soc_Sec", "Social_Sec", "SocSec", etc.)
    - Adjust sensitivity thresholds (reduce false negatives)
-
 
 3. **Decrypt Sample Data (With Authorization):**
 
@@ -1323,13 +1224,11 @@ Document ALL evidence in the `Evidence_Register` sheet with:
    - Re-classify based on plaintext contents
    - Document: "Field encrypted, sample decryption confirmed [Data Category]"
 
-
 4. **Accept Tool Limitations:**
 
    - No tool is 100% accurate
    - Manual review is ALWAYS needed for validation
    - Document in "Discovery Method" column: "Automated scan + manual schema review"
-
 
 ---
 
@@ -1358,7 +1257,6 @@ Failure to assign Data Ownership creates the following risks:
 - Regulatory non-compliance (GDPR Art. 5 accountability principle)
 - Data breach liability (no clear accountability)
 
-
 CISO [Name] has been copied for escalation if we cannot resolve this week.
 
 Can we schedule 30 minutes this week?
@@ -1374,12 +1272,10 @@ Thank you,
 - What happens if I say no? (regulatory/audit/risk impact)
 - Who can I escalate to? (CISO, CDO)
 
-
 **3. Offer to Do the Work:**
 
 - "I will draft the classification decisions based on policy criteria. You just need to review and approve (15 minutes)."
 - "I will pre-fill the ownership acknowledgment form. You just need to sign (5 minutes)."
-
 
 **4. If Still Unresponsive:**
 
@@ -1387,12 +1283,10 @@ Thank you,
 - Document in Gap_Analysis: "Data Owner [Name] unresponsive after 3 attempts, escalated to CISO on [Date]"
 - Interim assignment: CISO becomes temporary Data Owner until resolution
 
-
 **Never Accept "No Owner":**
 
 - Someone must be accountable (even if interim)
 - Document resistance for audit trail (shows due diligence)
-
 
 ---
 
@@ -1409,13 +1303,11 @@ Thank you,
 - Risk Level: **Critical** (active compliance violation)
 - Impact: Regulatory breach, audit finding, potential data leak
 
-
 **2. Implement Immediate Containment:**
 
 - Access restriction: Limit who can access this system (emergency ACL change)
 - Monitoring: Enable audit logging on this system (detect access)
 - Communication: Notify CISO immediately (may trigger incident response)
-
 
 **3. Plan Remediation:**
 
@@ -1424,13 +1316,11 @@ Thank you,
 - Option C: Replace with synthetic data (best practice for dev/test)
 - Option D: Risk-accept with compensating controls (if remediation infeasible short-term)
 
-
 **4. Root Cause Analysis:**
 
 - How did sensitive data get here? (data copy process, backup restore, etc.)
 - Who approved this? (lack of approval = process gap)
 - How do we prevent recurrence? (mandatory masking before copy, policy enforcement)
-
 
 **5. Update Assessment:**
 
@@ -1438,7 +1328,6 @@ Thank you,
 - Classify as Critical/High (drives priority)
 - Assign P1 priority (immediate masking required)
 - Document in Evidence_Register (proof of discovery and remediation)
-
 
 **Important:** Finding sensitive data where it shouldn't be is **NORMAL** during first assessment. This is WHY you're doing the assessment. Document, remediate, prevent recurrence.
 
@@ -1481,7 +1370,6 @@ Work with CISO/DPO/Legal to create a reference table:
 - [ ] System Inventory Checklist all items addressed (15 checklist items)
 - [ ] No "Unknown" sensitive data status without gap entry
 
-
 **Data Discovery:**
 
 - [ ] All "Yes" systems from System Inventory have corresponding data elements
@@ -1490,7 +1378,6 @@ Work with CISO/DPO/Legal to create a reference table:
 - [ ] Discovery method documented per element (audit trail)
 - [ ] False positives eliminated (validation performed)
 - [ ] Column-level detail for Critical/High data (minimum)
-
 
 **Classification:**
 
@@ -1501,7 +1388,6 @@ Work with CISO/DPO/Legal to create a reference table:
 - [ ] Exposure risk considers current controls (encryption, access controls)
 - [ ] Data Owner reviewed classification (documented approval)
 
-
 **Regulatory Mapping:**
 
 - [ ] All data categories mapped to applicable regulations
@@ -1511,7 +1397,6 @@ Work with CISO/DPO/Legal to create a reference table:
 - [ ] Cross-border restrictions documented (data residency requirements)
 - [ ] Retention periods aligned with legal requirements
 
-
 **Data Ownership:**
 
 - [ ] All data categories have assigned Data Owners (no orphans)
@@ -1520,14 +1405,12 @@ Work with CISO/DPO/Legal to create a reference table:
 - [ ] Backup Data Owners identified (no single point of failure)
 - [ ] Escalation path defined for disputes
 
-
 **Prioritization:**
 
 - [ ] All data elements have priority score calculated (P1/P2/P3/P4)
 - [ ] Priority scoring algorithm applied consistently
 - [ ] P1 items have implementation owner and target date
 - [ ] Risk-accepted items have formal approval (Data Owner + CISO)
-
 
 **Gap Analysis:**
 
@@ -1537,7 +1420,6 @@ Work with CISO/DPO/Legal to create a reference table:
 - [ ] Target resolution dates realistic (not aspirational)
 - [ ] Critical/High gaps have resolution dates ≤30/90 days
 
-
 ## Evidence Checks
 
 - [ ] Minimum 15 evidence items in Evidence_Register
@@ -1545,7 +1427,6 @@ Work with CISO/DPO/Legal to create a reference table:
 - [ ] Evidence files referenced by name/location (not vague "we have documentation")
 - [ ] Evidence collection dates documented
 - [ ] Evidence retention period defined (align with records management policy)
-
 
 ## Approval Checks
 
@@ -1555,7 +1436,6 @@ Work with CISO/DPO/Legal to create a reference table:
 - [ ] CISO or CDO has reviewed and approved overall assessment
 - [ ] Sign-off sheet completed with signatures and dates
 - [ ] Next review date scheduled (quarterly for inventory updates, annual for classification review)
-
 
 ---
 
@@ -1641,7 +1521,6 @@ Work with CISO/DPO/Legal to create a reference table:
 - **CFO:** If significant budget required for masking tools
 - **Privacy Officer:** If separate from DPO role
 
-
 ## Post-Approval Actions
 
 **Immediate (Within 1 Week):**
@@ -1651,13 +1530,11 @@ Work with CISO/DPO/Legal to create a reference table:
 - [ ] Schedule kickoff for masking technique selection (IMP-A.8.11.2)
 - [ ] Add to ISMS audit evidence repository
 
-
 **Short-Term (Within 1 Month):**
 
 - [ ] Begin P1 gap remediation (Critical priority items)
 - [ ] Initiate procurement for data discovery or masking tools (if needed)
 - [ ] Develop masking implementation roadmap (feeds into IMP-A.8.11.2, 3, 4)
-
 
 **Ongoing (Quarterly):**
 
@@ -1667,14 +1544,12 @@ Work with CISO/DPO/Legal to create a reference table:
 - [ ] Review and update Data Owner assignments (role changes)
 - [ ] Track gap remediation progress
 
-
 **Annual:**
 
 - [ ] Full classification review (REQ-CLS-032 policy requirement)
 - [ ] Re-validate regulatory applicability
 - [ ] Audit previous year's changes to data inventory
 - [ ] Update assessment and obtain re-approval
-
 
 ---
 
@@ -1690,7 +1565,6 @@ Work with CISO/DPO/Legal to create a reference table:
 - Data Owner role changes (personnel changes)
 - Audit findings or incidents (discovered gaps)
 
-
 **Quarterly Review Checklist:**
 
 - [ ] Update System_Inventory (add/remove systems)
@@ -1698,7 +1572,6 @@ Work with CISO/DPO/Legal to create a reference table:
 - [ ] Update ownership assignments (if personnel changes)
 - [ ] Review P1/P2 gap remediation progress
 - [ ] Update Summary_Dashboard metrics
-
 
 **Duration:** 2-4 hours per quarter (maintenance, not full re-assessment)
 
@@ -1710,7 +1583,6 @@ Work with CISO/DPO/Legal to create a reference table:
 - Regulatory requirement (GDPR ROPA annual update)
 - Significant organizational changes (M&A, new business lines, geographic expansion)
 
-
 **Annual Review Checklist:**
 
 - [ ] Full System_Inventory validation (verify all systems still exist, configurations accurate)
@@ -1720,7 +1592,6 @@ Work with CISO/DPO/Legal to create a reference table:
 - [ ] Gap analysis (compare current state to prior year)
 - [ ] Evidence refresh (collect new evidence, retire outdated)
 - [ ] Executive re-approval (CISO/CDO sign-off)
-
 
 **Duration:** 8-12 hours (refresh, not full re-inventory)
 
@@ -1763,24 +1634,20 @@ This assessment (IMP-A.8.11.1) feeds into:
 - Input: Data categories and sensitivity levels from Classification_Matrix
 - Output: Approved masking techniques per data category
 
-
 **ISMS-IMP-A.8.11.3 (Environment Coverage Assessment):**
 
 - Input: System inventory from System_Inventory (all environments)
 - Output: Masking coverage verification per environment
-
 
 **ISMS-IMP-A.8.11.4 (Testing & Validation):**
 
 - Input: Masking requirements from Masking_Priority_Matrix
 - Output: Test evidence proving masking effectiveness
 
-
 **ISMS-IMP-A.8.11.5 (Compliance Dashboard):**
 
 - Input: All data from this assessment (inventory, classification, ownership, gaps)
 - Output: Executive dashboard consolidating all A.8.11 assessments
-
 
 **Workflow Sequence:**
 ```
@@ -1812,7 +1679,6 @@ IMP-A.8.11.5 (Compliance Dashboard)
 - **Recommended:** After any significant change (new system, new data category, M&A, regulatory change)
 - **Best Practice:** Continuous discovery with automated tools, monthly reporting
 
-
 ---
 
 **Q2: Can we use a tool other than Excel for this assessment?**
@@ -1822,7 +1688,6 @@ IMP-A.8.11.5 (Compliance Dashboard)
 - Commercial GRC platforms (ServiceNow GRC, RSA Archer, etc.)
 - Data governance tools (Collibra, Alation, Informatica, etc.)
 - Custom databases or applications
-
 
 **IMPORTANT:** Whatever tool you use, ensure it can provide audit evidence in a format auditors can review (exportable, traceable, timestamped).
 
@@ -1849,13 +1714,11 @@ IMP-A.8.11.5 (Compliance Dashboard)
 - High-volume systems (customer data, employee data)
 - Then expand to long tail
 
-
 Document phasing in assessment. Auditors will accept phased approach IF:
 
 - High-risk systems covered first
 - Low-risk systems have documented timeline for inclusion
 - Methodology is risk-based (not arbitrary)
-
 
 ---
 
@@ -1879,7 +1742,6 @@ For non-sensitive data:
 - But not required for ISO 27001 Control A.8.11 compliance
 - Consider separate data governance initiative for all data (beyond A.8.11 scope)
 
-
 ---
 
 **Q7: Can we classify data as "Public" to avoid masking?**
@@ -1892,13 +1754,11 @@ For non-sensitive data:
 - Data is available in public records (government databases, court filings)
 - Data has no confidentiality requirement
 
-
 **NOT public:**
 
 - Customer names (even if not secret, still PII under GDPR)
 - Employee data (even if org chart published)
 - Aggregated data (anonymized aggregates may be public, but underlying data is NOT)
-
 
 **Auditor will challenge "Public" classification.** Be prepared to justify.
 
@@ -1915,13 +1775,11 @@ For non-sensitive data:
 - Cloud-native tools (AWS Macie, Azure Purview - often included in existing subscriptions)
 - SQL scripts (custom queries to find sensitive column patterns)
 
-
 **IMPORTANT:** Document discovery methodology. Manual discovery is valid IF:
 
 - Systematic (not ad-hoc)
 - Documented (evidence of process)
 - Validated (DBAs confirm completeness)
-
 
 ---
 
@@ -1936,13 +1794,11 @@ For non-sensitive data:
 - All SaaS/cloud systems included
 - Decommissioned systems tracked
 
-
 ✅ **Classification Coverage:**
 
 - All identified sensitive data elements classified (Critical/High/Medium/Low)
 - Classification rationale documented and defensible
 - Data Owner approval obtained for classifications
-
 
 ✅ **Ownership Accountability:**
 
@@ -1950,13 +1806,11 @@ For non-sensitive data:
 - Written acknowledgment from Data Owners
 - No "TBD" or "Unknown" ownership gaps
 
-
 ✅ **Risk Prioritization:**
 
 - Masking priority (P1/P2/P3/P4) assigned to all data elements
 - P1 items have implementation plan and owner
 - Critical gaps have resolution timeline ≤30 days
-
 
 ✅ **Evidence & Audit Trail:**
 
@@ -1965,14 +1819,12 @@ For non-sensitive data:
 - Classification decisions auditable
 - Ownership acknowledgments provable
 
-
 ✅ **Executive Approval:**
 
 - CISO/CDO/DPO sign-off obtained
 - Legal/Compliance validation completed
 - Resource allocation approved for P1 gaps
 - Next review date scheduled
-
 
 ---
 
@@ -1986,13 +1838,11 @@ For non-sensitive data:
 - Document technique configuration requirements
 - Identify gaps in masking tool capabilities
 
-
 **2. Masking Tool Evaluation (if not already deployed):**
 
 - RFI/RFP for data masking solutions
 - Proof-of-concept testing
 - Procurement and deployment
-
 
 **3. Data Owner Engagement:**
 
@@ -2000,13 +1850,11 @@ For non-sensitive data:
 - Obtain Data Owner approval for technique selections
 - Define masking scope per environment
 
-
 **4. Implementation Roadmap:**
 
 - Develop project plan for P1 gap remediation
 - Allocate resources (people, budget, tools)
 - Establish governance cadence (weekly implementation sync)
-
 
 ---
 
@@ -2027,7 +1875,6 @@ This is **PART I** of ISMS-IMP-A.8.11.1.
 - Formula examples and calculations
 - Styling and formatting standards
 
-
 **To create complete ISMS-IMP-A.8.11.1 v1.0 document:**
 1. PART I: User Completion Guide (this file)
 2. PART II: Technical Specification (next deliverable)
@@ -2041,7 +1888,6 @@ This is **PART I** of ISMS-IMP-A.8.11.1.
 - **Status:** Draft for Review
 - **Author:** ISMS Implementation Team
 - **Approver:** CISO / CDO / DPO
-
 
 ---
 
@@ -2091,14 +1937,12 @@ This document provides the **complete technical blueprint** for generating the I
 - Python script integration requirements
 - Quality assurance validation criteria
 
-
 **Target Audience:**
 
 - Python developers implementing the generator script
 - Excel power users creating manual workbooks
 - Quality assurance teams validating workbook structure
 - Technical auditors verifying implementation accuracy
-
 
 ## Workbook Generation Approach
 
@@ -2114,7 +1958,6 @@ python3 generate_a811_1_data_inventory.py
 - Error-prone, time-consuming, difficult to maintain
 - Use only if Python environment unavailable
 
-
 ## Key Design Principles
 
 **Data-Centric, Not Tool-Centric:**
@@ -2123,7 +1966,6 @@ python3 generate_a811_1_data_inventory.py
 - Tool/product-agnostic (works with any masking solution or custom scripts)
 - Platform-agnostic (cloud, on-premises, hybrid, SaaS)
 
-
 **Evidence-Based Assessment:**
 
 - Every classification requires justification
@@ -2131,13 +1973,11 @@ python3 generate_a811_1_data_inventory.py
 - Every masking requirement traced to data sensitivity
 - Audit trail maintained throughout
 
-
 **Scalability:**
 
 - 50-row templates per sheet (expandable to 1,000+ with minimal modification)
 - Supports organizations with 5 systems or 500 systems
 - Formula references use dynamic ranges where possible
-
 
 ---
 
@@ -2181,7 +2021,6 @@ Provide user guidance, taxonomy reference, status legends, and acceptable eviden
 - Rows 51-60: Status Legend (symbol definitions)
 - Rows 61-80: Acceptable Evidence Examples (bulleted list)
 
-
 ## Header Section (Rows 1-2)
 
 **Row 1: Main Title**
@@ -2193,7 +2032,6 @@ Provide user guidance, taxonomy reference, status legends, and acceptable eviden
 - **Alignment:** Center, Vertical Center
 - **Row Height:** 40px
 
-
 **Row 2: Subtitle**
 
 - **Cell A2:** "ISO/IEC 27001:2022 - Control A.8.11: Data Masking"
@@ -2202,7 +2040,6 @@ Provide user guidance, taxonomy reference, status legends, and acceptable eviden
 - **Fill:** RGB(68, 114, 196) - Medium Blue (#4472C4)
 - **Alignment:** Center, Vertical Center
 - **Row Height:** 25px
-
 
 ## Document Metadata (Rows 4-10)
 
@@ -2225,7 +2062,6 @@ Provide user guidance, taxonomy reference, status legends, and acceptable eviden
 - **Font:** Calibri 10pt
 - **Border:** Thin border around each cell
 
-
 ## How to Use This Workbook (Rows 13-25)
 
 **Row 13: Section Header**
@@ -2235,7 +2071,6 @@ Provide user guidance, taxonomy reference, status legends, and acceptable eviden
 - **Font:** Calibri 12pt Bold
 - **Fill:** RGB(217, 217, 217) - Light Gray (#D9D9D9)
 - **Alignment:** Left
-
 
 **Rows 14-25: Numbered Instructions**
 ```
@@ -2260,7 +2095,6 @@ Provide user guidance, taxonomy reference, status legends, and acceptable eviden
 - **Wrap Text:** Enabled
 - **Indentation:** 1 level for sub-bullets
 
-
 ## Data Category Taxonomy (Rows 27-40)
 
 **Row 27: Section Header**
@@ -2269,7 +2103,6 @@ Provide user guidance, taxonomy reference, status legends, and acceptable eviden
 - **Merge:** A27:E27
 - **Font:** Calibri 12pt Bold
 - **Fill:** Light Gray
-
 
 **Rows 28-40: Taxonomy Table**
 
@@ -2295,14 +2128,12 @@ Provide user guidance, taxonomy reference, status legends, and acceptable eviden
 - **Column C (Examples):** Width 40, Wrap Text
 - **Column D (Regulatory Scope):** Width 20, Wrap Text
 
-
 ## Sensitivity Classification Levels (Rows 42-50)
 
 **Row 42: Section Header**
 
 - **Cell A42:** "Sensitivity Classification Levels"
 - **Merge:** A42:D42
-
 
 **Rows 43-50: Classification Table**
 
@@ -2322,14 +2153,12 @@ Provide user guidance, taxonomy reference, status legends, and acceptable eviden
 - **Low row:** Light green (RGB 226, 239, 218)
 - **Public row:** White (no fill)
 
-
 ## Status Legend (Rows 52-60)
 
 **Row 52: Section Header**
 
 - **Cell A52:** "Status Legend"
 - **Merge:** A52:D52
-
 
 **Rows 53-60: Status Symbols**
 
@@ -2347,7 +2176,6 @@ Provide user guidance, taxonomy reference, status legends, and acceptable eviden
 
 - **Cell A62:** "Acceptable Evidence Examples"
 - **Merge:** A62:D62
-
 
 **Rows 63-80: Bulleted List**
 ```
@@ -2378,7 +2206,6 @@ Provide user guidance, taxonomy reference, status legends, and acceptable eviden
 - **Bullet Character:** ✓
 - **Line Spacing:** 1.2
 
-
 ---
 
 # Sheet 2: System_Inventory
@@ -2396,7 +2223,6 @@ Document all systems, applications, databases, and data repositories. Master lis
 - **Fill:** Dark Blue (#003366)
 - **Alignment:** Center
 
-
 **Row 2: Instructions**
 
 - **Cell A2:** "List ALL systems that process, store, or transmit data (50 row template, expandable)"
@@ -2404,7 +2230,6 @@ Document all systems, applications, databases, and data repositories. Master lis
 - **Font:** Calibri 10pt Italic
 - **Fill:** Medium Blue (#4472C4)
 - **Alignment:** Center
-
 
 **Row 3: Assessment Question**
 
@@ -2414,14 +2239,12 @@ Document all systems, applications, databases, and data repositories. Master lis
 - **Fill:** Light Yellow (#FFFFCC)
 - **Border:** Thick border
 
-
 **Row 4: Response**
 
 - **Cell N4:** [Dropdown: Yes / No / Partial / Planned / N/A]
 - **Merge:** N4:Q4
 - **Fill:** Light Yellow (#FFFFCC)
 - **Data Validation:** List = "Yes,No,Partial,Planned,N/A"
-
 
 ## Column Headers (Row 6)
 
@@ -2454,7 +2277,6 @@ Document all systems, applications, databases, and data repositories. Master lis
 - **Border:** All borders, medium weight
 - **Freeze Panes:** Row 7 (keep headers visible when scrolling)
 
-
 ## Example Row (Row 7)
 
 **Purpose:** Show users a sample entry with realistic data
@@ -2486,7 +2308,6 @@ Document all systems, applications, databases, and data repositories. Master lis
 - **Border:** Thin borders
 - **Note:** Add cell comment to Row 7: "This is an example row. Delete or replace with actual data."
 
-
 ## Data Entry Rows (Rows 8-57)
 
 **50 Template Rows:**
@@ -2496,7 +2317,6 @@ Document all systems, applications, databases, and data repositories. Master lis
 - **Border:** Thin borders
 - **Protection:** Unlocked (allow user input)
 - **Auto-numbering:** Column A can auto-populate "SYS-{ROW-7}" if desired
-
 
 **Formula in Column L (Next Review Date):**
 ```excel
@@ -2517,7 +2337,6 @@ Explanation: If Last Inventory Date exists, add 3 months (90 days)
 - **Font:** Calibri 11pt Bold
 - **Fill:** Medium Blue (#4472C4), White Text
 - **Alignment:** Center
-
 
 **Row 60: Table Headers**
 
@@ -2555,7 +2374,6 @@ Explanation: If Last Inventory Date exists, add 3 months (90 days)
 - **Allow Blank:** No
 - **Error Message:** "Please select a valid status"
 
-
 **Conditional Formatting (Column C):**
 
 - ✅ Complete → Green fill (RGB 198, 239, 206)
@@ -2563,7 +2381,6 @@ Explanation: If Last Inventory Date exists, add 3 months (90 days)
 - ❌ Missing → Red fill (RGB 255, 199, 206)
 - 📋 Planned → Blue fill (RGB 180, 199, 231)
 - N/A → Gray fill (RGB 217, 217, 217)
-
 
 ## Reference Table: System Types (Rows 77-85)
 
@@ -2573,7 +2390,6 @@ Explanation: If Last Inventory Date exists, add 3 months (90 days)
 - **Merge:** A77:C77
 - **Font:** Calibri 11pt Bold
 - **Fill:** Light Gray
-
 
 **Rows 78-85: System Type Descriptions**
 
@@ -2594,7 +2410,6 @@ Explanation: If Last Inventory Date exists, add 3 months (90 days)
 - **Font:** Calibri 10pt
 - **Border:** All borders, thin weight
 
-
 ---
 
 # Sheet 3: Data_Category_Reference
@@ -2612,7 +2427,6 @@ Comprehensive reference taxonomy for data sensitivity categories. **Read-only re
 - **Fill:** Dark Blue (#003366)
 - **Alignment:** Center
 
-
 **Row 2: Instructions**
 
 - **Cell A2:** "Reference Guide - Use Category IDs when documenting sensitive data (e.g., CAT-PII-D for Direct PII)"
@@ -2621,7 +2435,6 @@ Comprehensive reference taxonomy for data sensitivity categories. **Read-only re
 - **Fill:** Medium Blue (#4472C4), White Text
 - **Alignment:** Center
 
-
 **Row 3: Warning Note**
 
 - **Cell A3:** "⚠️ This is a REFERENCE sheet. Do not modify. Use these Category IDs in Sensitive_Data_Inventory and Classification_Matrix sheets."
@@ -2629,7 +2442,6 @@ Comprehensive reference taxonomy for data sensitivity categories. **Read-only re
 - **Font:** Calibri 10pt Bold
 - **Fill:** Light Yellow (#FFFFCC)
 - **Border:** Thick border
-
 
 ## Column Headers (Row 5)
 
@@ -2652,7 +2464,6 @@ Comprehensive reference taxonomy for data sensitivity categories. **Read-only re
 - **Alignment:** Center, Vertical Center, Wrap Text
 - **Border:** All borders, medium weight
 - **Freeze Panes:** Row 6
-
 
 ## Data Rows (Rows 6-30)
 
@@ -2806,7 +2617,6 @@ Comprehensive reference taxonomy for data sensitivity categories. **Read-only re
 - **Default:** Leave blank with instruction to add custom categories as needed
 - **Format:** Same column structure as above
 
-
 **Formatting for All Data Rows:**
 
 - **Font:** Calibri 10pt Regular
@@ -2814,7 +2624,6 @@ Comprehensive reference taxonomy for data sensitivity categories. **Read-only re
 - **Wrap Text:** Enabled for columns C, D, G
 - **Alignment:** Left for text, Center for Column A
 - **Protection:** Locked (read-only reference)
-
 
 ## Category Summary Statistics (Rows 27-30)
 
@@ -2824,7 +2633,6 @@ Comprehensive reference taxonomy for data sensitivity categories. **Read-only re
 - **Merge:** A27:D27
 - **Font:** Calibri 11pt Bold
 - **Fill:** Light Gray
-
 
 **Row 28-30: Statistics**
 
@@ -2851,7 +2659,6 @@ Document **field-level** inventory of sensitive data elements. This is the detai
 - **Fill:** Dark Blue (#003366)
 - **Alignment:** Center
 
-
 **Row 2: Instructions**
 
 - **Cell A2:** "Document all fields/columns containing sensitive data at table/field level (100 row template)"
@@ -2860,7 +2667,6 @@ Document **field-level** inventory of sensitive data elements. This is the detai
 - **Fill:** Medium Blue (#4472C4), White Text
 - **Alignment:** Center
 
-
 **Row 3: Assessment Question**
 
 - **Cell A3:** "Has [Organization] completed a comprehensive field-level inventory of all sensitive data elements?"
@@ -2868,13 +2674,11 @@ Document **field-level** inventory of sensitive data elements. This is the detai
 - **Font:** Calibri 10pt Bold
 - **Fill:** Light Yellow (#FFFFCC)
 
-
 **Row 4: Response**
 
 - **Cell O4:** [Dropdown: Yes / No / Partial / Planned / N/A]
 - **Merge:** O4:R4
 - **Fill:** Light Yellow (#FFFFCC)
-
 
 ## Column Headers (Row 6)
 
@@ -2908,7 +2712,6 @@ Document **field-level** inventory of sensitive data elements. This is the detai
 - **Border:** All borders, medium weight
 - **Freeze Panes:** Row 7
 
-
 ## Example Row (Row 7)
 
 | Col | Value |
@@ -2938,7 +2741,6 @@ Document **field-level** inventory of sensitive data elements. This is the detai
 - **Font:** Calibri 10pt Italic
 - **Note:** Cell comment on Row 7: "Example row - replace with actual data"
 
-
 ## Data Entry Rows (Rows 8-107)
 
 **100 Template Rows:**
@@ -2947,7 +2749,6 @@ Document **field-level** inventory of sensitive data elements. This is the detai
 - **Font:** Calibri 10pt Regular
 - **Border:** Thin borders
 - **Protection:** Unlocked (user input enabled)
-
 
 **Dependent Formulas:**
 
@@ -2971,7 +2772,6 @@ Error Alert: "Enter percentage between 0-100"
 - 📋 Planned → Blue fill (RGB 180, 199, 231)
 - N/A → Gray fill (RGB 217, 217, 217)
 
-
 ## Data Inventory Checklist (Rows 109-125)
 
 **Row 109: Section Header**
@@ -2980,7 +2780,6 @@ Error Alert: "Enter percentage between 0-100"
 - **Merge:** A109:E109
 - **Font:** Calibri 11pt Bold
 - **Fill:** Medium Blue (#4472C4), White Text
-
 
 **Row 110: Table Headers**
 
@@ -3017,7 +2816,6 @@ Error Alert: "Enter percentage between 0-100"
 - Same status dropdown as System_Inventory checklist
 - Same conditional formatting rules
 
-
 ---
 
 # Sheet 5: Classification_Matrix
@@ -3035,7 +2833,6 @@ Apply sensitivity classification to each data element based on impact assessment
 - **Fill:** Dark Blue (#003366)
 - **Alignment:** Center
 
-
 **Row 2: Instructions**
 
 - **Cell A2:** "Classify each sensitive data element based on impact if exposed (100 row template)"
@@ -3044,7 +2841,6 @@ Apply sensitivity classification to each data element based on impact assessment
 - **Fill:** Medium Blue (#4472C4), White Text
 - **Alignment:** Center
 
-
 **Row 3: Assessment Question**
 
 - **Cell A3:** "Has [Organization] completed sensitivity classification for all sensitive data elements?"
@@ -3052,13 +2848,11 @@ Apply sensitivity classification to each data element based on impact assessment
 - **Font:** Calibri 10pt Bold
 - **Fill:** Light Yellow (#FFFFCC)
 
-
 **Row 4: Response**
 
 - **Cell M4:** [Dropdown: Yes / No / Partial / Planned / N/A]
 - **Merge:** M4:P4
 - **Fill:** Light Yellow (#FFFFCC)
-
 
 ## Column Headers (Row 6)
 
@@ -3090,7 +2884,6 @@ Apply sensitivity classification to each data element based on impact assessment
 - **Border:** All borders, medium weight
 - **Freeze Panes:** Row 7
 
-
 ## Example Row (Row 7)
 
 | Col | Value |
@@ -3117,7 +2910,6 @@ Apply sensitivity classification to each data element based on impact assessment
 - **Fill:** Light Gray (#E7E6E6)
 - **Font:** Calibri 10pt Italic
 
-
 ## Data Entry Rows (Rows 8-107)
 
 **100 Template Rows:**
@@ -3125,7 +2917,6 @@ Apply sensitivity classification to each data element based on impact assessment
 - **Fill:** Light Yellow (#FFFFCC)
 - **Font:** Calibri 10pt Regular
 - **Protection:** Unlocked
-
 
 **Auto-populate Formulas:**
 
@@ -3153,14 +2944,12 @@ Explanation: Annual review (Classification Date + 365 days)
 - Low → Light green (RGB 226, 239, 218)
 - Public → White (no fill)
 
-
 **Conditional Formatting (Column P - Approval Status):**
 
 - ✅ Approved → Green fill (RGB 198, 239, 206)
 - ⚠️ Pending → Yellow fill (RGB 255, 235, 156)
 - ❌ Rejected → Red fill (RGB 255, 199, 206)
 - 📋 Under Review → Blue fill (RGB 180, 199, 231)
-
 
 ---
 
@@ -3174,7 +2963,6 @@ Explanation: Annual review (Classification Date + 365 days)
 - **Merge:** A109:E109
 - **Font:** Calibri 11pt Bold
 - **Fill:** Medium Blue (#4472C4), White Text
-
 
 **Row 110: Table Headers**
 
@@ -3205,7 +2993,6 @@ Explanation: Annual review (Classification Date + 365 days)
 
 - Same as previous checklists (status dropdown with conditional formatting)
 
-
 ---
 
 # Sheet 6: Regulatory_Mapping
@@ -3223,7 +3010,6 @@ Map sensitive data elements to applicable regulatory requirements (GDPR, FADP, H
 - **Fill:** Dark Blue (#003366)
 - **Alignment:** Center
 
-
 **Row 2: Instructions**
 
 - **Cell A2:** "Map each sensitive data element to applicable regulatory requirements and compliance obligations (50 row template)"
@@ -3232,7 +3018,6 @@ Map sensitive data elements to applicable regulatory requirements (GDPR, FADP, H
 - **Fill:** Medium Blue (#4472C4), White Text
 - **Alignment:** Center
 
-
 **Row 3: Assessment Question**
 
 - **Cell A3:** "Has [Organization] completed regulatory mapping for all sensitive data subject to compliance requirements?"
@@ -3240,13 +3025,11 @@ Map sensitive data elements to applicable regulatory requirements (GDPR, FADP, H
 - **Font:** Calibri 10pt Bold
 - **Fill:** Light Yellow (#FFFFCC)
 
-
 **Row 4: Response**
 
 - **Cell K4:** [Dropdown: Yes / No / Partial / Planned / N/A]
 - **Merge:** K4:N4
 - **Fill:** Light Yellow (#FFFFCC)
-
 
 ## Column Headers (Row 6)
 
@@ -3276,7 +3059,6 @@ Map sensitive data elements to applicable regulatory requirements (GDPR, FADP, H
 - **Border:** All borders, medium weight
 - **Freeze Panes:** Row 7
 
-
 ## Example Row (Row 7)
 
 | Col | Value |
@@ -3301,7 +3083,6 @@ Map sensitive data elements to applicable regulatory requirements (GDPR, FADP, H
 - **Fill:** Light Gray (#E7E6E6)
 - **Font:** Calibri 10pt Italic
 
-
 ## Data Entry Rows (Rows 8-57)
 
 **50 Template Rows:**
@@ -3309,7 +3090,6 @@ Map sensitive data elements to applicable regulatory requirements (GDPR, FADP, H
 - **Fill:** Light Yellow (#FFFFCC)
 - **Font:** Calibri 10pt Regular
 - **Protection:** Unlocked
-
 
 **Auto-populate Formulas:**
 
@@ -3331,7 +3111,6 @@ Map sensitive data elements to applicable regulatory requirements (GDPR, FADP, H
 - 📋 Under Review → Blue fill (RGB 180, 199, 231)
 - N/A → Gray fill (RGB 217, 217, 217)
 
-
 ## Regulatory Framework Reference (Rows 59-72)
 
 **Row 59: Section Header**
@@ -3340,7 +3119,6 @@ Map sensitive data elements to applicable regulatory requirements (GDPR, FADP, H
 - **Merge:** A59:D59
 - **Font:** Calibri 11pt Bold
 - **Fill:** Light Gray
-
 
 **Rows 60-72: Framework Descriptions**
 
@@ -3369,7 +3147,6 @@ Map sensitive data elements to applicable regulatory requirements (GDPR, FADP, H
 - **Merge:** A74:E74
 - **Font:** Calibri 11pt Bold
 - **Fill:** Medium Blue (#4472C4), White Text
-
 
 **Row 75: Table Headers**
 
@@ -3413,7 +3190,6 @@ Assign formal data ownership for each sensitive data category or element. Establ
 - **Fill:** Dark Blue (#003366)
 - **Alignment:** Center
 
-
 **Row 2: Instructions**
 
 - **Cell A2:** "Assign data owners and obtain approval for data classification and masking decisions (30 row template)"
@@ -3422,7 +3198,6 @@ Assign formal data ownership for each sensitive data category or element. Establ
 - **Fill:** Medium Blue (#4472C4), White Text
 - **Alignment:** Center
 
-
 **Row 3: Assessment Question**
 
 - **Cell A3:** "Has [Organization] formally assigned data owners for all sensitive data categories?"
@@ -3430,13 +3205,11 @@ Assign formal data ownership for each sensitive data category or element. Establ
 - **Font:** Calibri 10pt Bold
 - **Fill:** Light Yellow (#FFFFCC)
 
-
 **Row 4: Response**
 
 - **Cell J4:** [Dropdown: Yes / No / Partial / Planned / N/A]
 - **Merge:** J4:M4
 - **Fill:** Light Yellow (#FFFFCC)
-
 
 ## Column Headers (Row 6)
 
@@ -3465,7 +3238,6 @@ Assign formal data ownership for each sensitive data category or element. Establ
 - **Border:** All borders, medium weight
 - **Freeze Panes:** Row 7
 
-
 ## Example Row (Row 7)
 
 | Col | Value |
@@ -3489,7 +3261,6 @@ Assign formal data ownership for each sensitive data category or element. Establ
 - **Fill:** Light Gray (#E7E6E6)
 - **Font:** Calibri 10pt Italic
 
-
 ## Data Entry Rows (Rows 8-37)
 
 **30 Template Rows:**
@@ -3497,7 +3268,6 @@ Assign formal data ownership for each sensitive data category or element. Establ
 - **Fill:** Light Yellow (#FFFFCC)
 - **Font:** Calibri 10pt Regular
 - **Protection:** Unlocked
-
 
 **Auto-populate Formula:**
 
@@ -3525,14 +3295,12 @@ Error Alert: "Please enter a valid email address"
 - ❌ Declined → Red fill (RGB 255, 199, 206)
 - 📋 Under Review → Blue fill (RGB 180, 199, 231)
 
-
 **Conditional Formatting (Columns J, K - Yes/No/Pending):**
 
 - Yes → Green fill (RGB 198, 239, 206)
 - No → Red fill (RGB 255, 199, 206)
 - Pending → Yellow fill (RGB 255, 235, 156)
 - N/A → Gray fill (RGB 217, 217, 217)
-
 
 ## RACI Matrix (Rows 39-50)
 
@@ -3543,13 +3311,11 @@ Error Alert: "Please enter a valid email address"
 - **Font:** Calibri 11pt Bold
 - **Fill:** Light Gray
 
-
 **Row 40: RACI Definition**
 
 - **Cell A40:** "R=Responsible, A=Accountable, C=Consulted, I=Informed"
 - **Merge:** A40:E40
 - **Font:** Calibri 10pt Italic
-
 
 **Rows 41-50: RACI Table**
 
@@ -3573,7 +3339,6 @@ Error Alert: "Please enter a valid email address"
 - **Alignment:** Center for RACI letters, Left for Activity column
 - **Border:** All borders, thin weight
 
-
 ## Data Owner Assignment Checklist (Rows 52-62)
 
 **Row 52: Section Header**
@@ -3582,7 +3347,6 @@ Error Alert: "Please enter a valid email address"
 - **Merge:** A52:E52
 - **Font:** Calibri 11pt Bold
 - **Fill:** Medium Blue (#4472C4), White Text
-
 
 **Row 53: Table Headers**
 
@@ -3625,7 +3389,6 @@ Prioritize masking implementation efforts based on data sensitivity, exposure ri
 - **Fill:** Dark Blue (#003366)
 - **Alignment:** Center
 
-
 **Row 2: Instructions**
 
 - **Cell A2:** "Calculate masking priority using risk-weighted scoring: Priority = (Sensitivity×3) + (Exposure×2) + (Regulatory×2) + (Volume×1) [50 row template]"
@@ -3634,7 +3397,6 @@ Prioritize masking implementation efforts based on data sensitivity, exposure ri
 - **Fill:** Medium Blue (#4472C4), White Text
 - **Alignment:** Center
 
-
 **Row 3: Assessment Question**
 
 - **Cell A3:** "Has [Organization] completed risk-based prioritization for all masking requirements?"
@@ -3642,13 +3404,11 @@ Prioritize masking implementation efforts based on data sensitivity, exposure ri
 - **Font:** Calibri 10pt Bold
 - **Fill:** Light Yellow (#FFFFCC)
 
-
 **Row 4: Response**
 
 - **Cell N4:** [Dropdown: Yes / No / Partial / Planned / N/A]
 - **Merge:** N4:Q4
 - **Fill:** Light Yellow (#FFFFCC)
-
 
 ## Column Headers (Row 6)
 
@@ -3681,7 +3441,6 @@ Prioritize masking implementation efforts based on data sensitivity, exposure ri
 - **Border:** All borders, medium weight
 - **Freeze Panes:** Row 7
 
-
 ## Example Row (Row 7)
 
 | Col | Value |
@@ -3709,7 +3468,6 @@ Prioritize masking implementation efforts based on data sensitivity, exposure ri
 - **Fill:** Light Gray (#E7E6E6)
 - **Font:** Calibri 10pt Italic
 
-
 ## Data Entry Rows (Rows 8-57)
 
 **50 Template Rows:**
@@ -3717,7 +3475,6 @@ Prioritize masking implementation efforts based on data sensitivity, exposure ri
 - **Fill:** Light Yellow (#FFFFCC) for user input columns
 - **Font:** Calibri 10pt Regular
 - **Protection:** Unlocked for E, G, I, K, N, O, P, Q; Locked for L, M (formulas)
-
 
 **Auto-populate Formulas:**
 
@@ -3758,14 +3515,12 @@ Explanation:
 - P3 (Medium): Score 10-19 → Implement within 180 days
 - P4 (Low): Score <10 → Risk-based decision
 
-
 **Conditional Formatting (Column L - Priority Score):**
 
 - Score ≥30 → Red fill (RGB 255, 199, 206) - P1 Critical
 - Score 20-29 → Orange fill (RGB 255, 235, 156) - P2 High
 - Score 10-19 → Yellow fill (RGB 255, 242, 204) - P3 Medium
 - Score <10 → Light green (RGB 226, 239, 218) - P4 Low
-
 
 **Conditional Formatting (Column M - Priority Tier):**
 
@@ -3774,14 +3529,12 @@ Explanation:
 - P3 → Yellow fill (RGB 255, 242, 204)
 - P4 → Light green (RGB 226, 239, 218)
 
-
 **Conditional Formatting (Column N - Implementation Status):**
 
 - ✅ Complete → Green fill (RGB 198, 239, 206)
 - 🔄 In Progress → Blue fill (RGB 180, 199, 231)
 - ❌ Not Started → Red fill (RGB 255, 199, 206)
 - 🚫 Blocked → Dark red fill (RGB 192, 0, 0), White text
-
 
 ## Risk Scoring Guidance (Rows 59-75)
 
@@ -3791,7 +3544,6 @@ Explanation:
 - **Merge:** A59:D59
 - **Font:** Calibri 11pt Bold
 - **Fill:** Light Gray
-
 
 **Rows 60-75: Scoring Tables**
 
@@ -3843,7 +3595,6 @@ Explanation:
 - **Font:** Calibri 12pt Bold
 - **Fill:** Medium Blue (#4472C4), White Text
 
-
 **Rows 89-100: Summary Statistics**
 
 | Metric | Formula | Target | Status |
@@ -3866,7 +3617,6 @@ Explanation:
 - Yellow: Metric within acceptable range
 - Red: Metric below target, action required
 
-
 ---
 
 **This completes Response 3 (Sheets 6-8). Shall I continue with Sheet 9 (Gap_Analysis), Sheet 10 (Evidence_Register), and Sheet 11 (Summary_Dashboard) plus Python script integration notes in Response 4 (final response)?**
@@ -3886,7 +3636,6 @@ Document and track gaps in data inventory, classification, ownership assignment,
 - **Fill:** Dark Blue (#003366)
 - **Alignment:** Center
 
-
 **Row 2: Instructions**
 
 - **Cell A2:** "Document gaps identified during inventory, classification, or ownership assessment (30 row template)"
@@ -3895,7 +3644,6 @@ Document and track gaps in data inventory, classification, ownership assignment,
 - **Fill:** Medium Blue (#4472C4), White Text
 - **Alignment:** Center
 
-
 **Row 3: Assessment Question**
 
 - **Cell A3:** "Are all identified gaps documented with remediation plans and target dates?"
@@ -3903,13 +3651,11 @@ Document and track gaps in data inventory, classification, ownership assignment,
 - **Font:** Calibri 10pt Bold
 - **Fill:** Light Yellow (#FFFFCC)
 
-
 **Row 4: Response**
 
 - **Cell K4:** [Dropdown: Yes / No / Partial / Planned / N/A]
 - **Merge:** K4:N4
 - **Fill:** Light Yellow (#FFFFCC)
-
 
 ## Column Headers (Row 6)
 
@@ -3939,7 +3685,6 @@ Document and track gaps in data inventory, classification, ownership assignment,
 - **Border:** All borders, medium weight
 - **Freeze Panes:** Row 7
 
-
 ## Example Row (Row 7)
 
 | Col | Value |
@@ -3964,7 +3709,6 @@ Document and track gaps in data inventory, classification, ownership assignment,
 - **Fill:** Light Gray (#E7E6E6)
 - **Font:** Calibri 10pt Italic
 
-
 ## Data Entry Rows (Rows 8-37)
 
 **30 Template Rows:**
@@ -3973,14 +3717,12 @@ Document and track gaps in data inventory, classification, ownership assignment,
 - **Font:** Calibri 10pt Regular
 - **Protection:** Unlocked
 
-
 **Conditional Formatting (Column E - Risk Level):**
 
 - Critical → Red fill (RGB 255, 199, 206)
 - High → Orange fill (RGB 255, 235, 156)
 - Medium → Yellow fill (RGB 255, 242, 204)
 - Low → Light green (RGB 226, 239, 218)
-
 
 **Conditional Formatting (Column K - Status):**
 
@@ -3989,7 +3731,6 @@ Document and track gaps in data inventory, classification, ownership assignment,
 - ❌ Open → Red fill (RGB 255, 199, 206)
 - 🚫 Blocked → Dark red fill (RGB 192, 0, 0), White text
 - 📋 Planned → Gray fill (RGB 217, 217, 217)
-
 
 **Data Validation (Column J - Target Date):**
 ```excel
@@ -4005,7 +3746,6 @@ Error Alert: "Target date should be in the future"
 - **Merge:** A39:E39
 - **Font:** Calibri 12pt Bold
 - **Fill:** Medium Blue (#4472C4), White Text
-
 
 **Rows 40-52: Statistics Table**
 
@@ -4040,7 +3780,6 @@ Central repository for all compliance evidence supporting data inventory, classi
 - **Fill:** Dark Blue (#003366)
 - **Alignment:** Center
 
-
 **Row 2: Instructions**
 
 - **Cell A2:** "Document all evidence supporting compliance with data masking requirements (40 row template)"
@@ -4049,7 +3788,6 @@ Central repository for all compliance evidence supporting data inventory, classi
 - **Fill:** Medium Blue (#4472C4), White Text
 - **Alignment:** Center
 
-
 **Row 3: Assessment Question**
 
 - **Cell A3:** "Is compliance evidence documented, stored securely, and retrievable for audit purposes?"
@@ -4057,13 +3795,11 @@ Central repository for all compliance evidence supporting data inventory, classi
 - **Font:** Calibri 10pt Bold
 - **Fill:** Light Yellow (#FFFFCC)
 
-
 **Row 4: Response**
 
 - **Cell I4:** [Dropdown: Yes / No / Partial / Planned / N/A]
 - **Merge:** I4:L4
 - **Fill:** Light Yellow (#FFFFCC)
-
 
 ## Column Headers (Row 6)
 
@@ -4091,7 +3827,6 @@ Central repository for all compliance evidence supporting data inventory, classi
 - **Border:** All borders, medium weight
 - **Freeze Panes:** Row 7
 
-
 ## Example Row (Row 7)
 
 | Col | Value |
@@ -4114,7 +3849,6 @@ Central repository for all compliance evidence supporting data inventory, classi
 - **Fill:** Light Gray (#E7E6E6)
 - **Font:** Calibri 10pt Italic
 
-
 ## Data Entry Rows (Rows 8-47)
 
 **40 Template Rows:**
@@ -4122,7 +3856,6 @@ Central repository for all compliance evidence supporting data inventory, classi
 - **Fill:** Light Yellow (#FFFFCC)
 - **Font:** Calibri 10pt Regular
 - **Protection:** Unlocked for B-L; Locked for A (formula)
-
 
 **Column A (Evidence ID) - Auto-Generate:**
 ```excel
@@ -4137,7 +3870,6 @@ Explanation: Generates EV-001, EV-002, EV-003, etc. automatically
 - Internal → Light blue (RGB 180, 199, 231)
 - Public → White (no fill)
 
-
 ## Evidence Type Definitions (Rows 49-62)
 
 **Row 49: Section Header**
@@ -4146,7 +3878,6 @@ Explanation: Generates EV-001, EV-002, EV-003, etc. automatically
 - **Merge:** A49:C49
 - **Font:** Calibri 11pt Bold
 - **Fill:** Light Gray
-
 
 **Rows 50-62: Definitions Table**
 
@@ -4181,7 +3912,6 @@ Executive summary consolidating all assessment data into actionable compliance m
 - **Alignment:** Center
 - **Row Height:** 50px
 
-
 **Row 2: Assessment Period**
 
 - **Cell A2:** "Assessment Period:"
@@ -4189,13 +3919,11 @@ Executive summary consolidating all assessment data into actionable compliance m
 - **Merge:** B2:D2
 - **Fill:** Light Yellow (#FFFFCC)
 
-
 **Row 3: Last Updated**
 
 - **Cell A3:** "Last Updated:"
 - **Cell B3:** `=TODAY()`
 - **Format:** DD.MM.YYYY
-
 
 ## Overall Compliance Summary (Rows 5-12)
 
@@ -4205,7 +3933,6 @@ Executive summary consolidating all assessment data into actionable compliance m
 - **Merge:** A5:G5
 - **Font:** Calibri 14pt Bold
 - **Fill:** Medium Blue (#4472C4), White Text
-
 
 **Rows 6-12: Key Metrics**
 
@@ -4225,7 +3952,6 @@ Executive summary consolidating all assessment data into actionable compliance m
 - 80-94% → Yellow fill (RGB 255, 235, 156)
 - <80% → Red fill (RGB 255, 199, 206)
 
-
 ## Data Category Breakdown (Rows 14-26)
 
 **Row 14: Section Header**
@@ -4234,7 +3960,6 @@ Executive summary consolidating all assessment data into actionable compliance m
 - **Merge:** A14:G14
 - **Font:** Calibri 12pt Bold
 - **Fill:** Light Gray
-
 
 **Rows 15-26: Category Summary**
 
@@ -4255,7 +3980,6 @@ Executive summary consolidating all assessment data into actionable compliance m
 - **Font:** Calibri 12pt Bold
 - **Fill:** Light Gray
 
-
 **Rows 29-34: Regulatory Table**
 
 | Regulation | Applicable? | Fields in Scope | Classified | Owner Assigned | Masking Required | Compliance % |
@@ -4275,7 +3999,6 @@ Executive summary consolidating all assessment data into actionable compliance m
 - **Font:** Calibri 12pt Bold
 - **Fill:** Light Gray
 
-
 **Rows 37-42: Priority Table**
 
 | Priority | Count | % Total | Complete | In Progress | Not Started | Blocked | On-Track? |
@@ -4293,7 +4016,6 @@ Executive summary consolidating all assessment data into actionable compliance m
 - **Merge:** A44:G44
 - **Font:** Calibri 12pt Bold
 - **Fill:** Light Gray
-
 
 **Rows 45-55: Gap List**
 
@@ -4317,7 +4039,6 @@ Explanation: Rank gaps by Risk Level, display top 10
 - **Font:** Calibri 12pt Bold
 - **Fill:** Medium Blue (#4472C4), White Text
 
-
 **Rows 58-68: KPI Table**
 
 | KPI | Current Value | Target | Status | Trend |
@@ -4340,7 +4061,6 @@ Explanation: Rank gaps by Risk Level, display top 10
 - **Merge:** A70:E70
 - **Font:** Calibri 12pt Bold
 - **Fill:** Medium Blue (#4472C4), White Text
-
 
 **Rows 71-78: Sign-Off Table**
 
@@ -4481,13 +4201,11 @@ Validates:
 - **Data Cells:** Calibri 10pt Regular
 - **Example Rows:** Calibri 10pt Italic
 
-
 ## Border Standards
 
 - **Outer borders:** Medium weight (2pt)
 - **Inner borders:** Thin weight (1pt)
 - **Header separator:** Thick bottom border (3pt)
-
 
 ## Cell Protection Strategy
 
@@ -4498,13 +4216,11 @@ Validates:
 - All reference/example rows
 - Instructions and legend text
 
-
 **Unprotected (Unlocked):**
 
 - All yellow input cells
 - All user data entry rows
 - Sign-off fields
-
 
 ---
 
@@ -4561,7 +4277,6 @@ This workbook assesses compliance with the following policy requirements:
    - Common Pitfalls
    - Quality Checklist
 
-
 2. **PART II: TECHNICAL SPECIFICATION** (this document, ~1,500 lines)
 
    - Document Control
@@ -4570,7 +4285,6 @@ This workbook assesses compliance with the following policy requirements:
    - Python Script Integration Notes
    - Styling & Formatting Standards
    - Quality Assurance Requirements
-
 
 **Final Combined Document Length:** ~2,000 lines (matching A.8.24 standard)
 
@@ -4587,13 +4301,11 @@ Before finalizing the workbook, verify:
 - [ ] All column headers match specification exactly
 - [ ] Row counts match template specifications
 
-
 **Data Validation:**
 
 - [ ] All dropdown lists applied correctly
 - [ ] Custom validation rules (email, dates) working
 - [ ] Error messages appropriate and helpful
-
 
 **Formulas:**
 
@@ -4602,7 +4314,6 @@ Before finalizing the workbook, verify:
 - [ ] Priority scoring formula tested with sample data
 - [ ] Summary Dashboard formulas consolidate correctly
 
-
 **Formatting:**
 
 - [ ] Color palette consistent across all sheets
@@ -4610,13 +4321,11 @@ Before finalizing the workbook, verify:
 - [ ] Fonts and borders match standards
 - [ ] Freeze panes set on all assessment sheets
 
-
 **Protection:**
 
 - [ ] Formula cells locked, input cells unlocked
 - [ ] Sheet protection enabled (optional password)
 - [ ] Allow filter and sort even when protected
-
 
 **Usability:**
 
@@ -4624,7 +4333,6 @@ Before finalizing the workbook, verify:
 - [ ] Cell comments/notes on complex fields
 - [ ] Instructions clear and complete
 - [ ] Navigation logical and intuitive
-
 
 ---
 
@@ -4665,7 +4373,6 @@ Before finalizing the workbook, verify:
 - **Author:** ISMS Implementation Team
 - **Approver:** CISO / Chief Data Officer
 - **Review Cycle:** Annual or when Control A.8.11 requirements change
-
 
 ---
 

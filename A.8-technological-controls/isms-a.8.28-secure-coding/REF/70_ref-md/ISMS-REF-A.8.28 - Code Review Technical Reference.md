@@ -33,7 +33,6 @@ The information contained herein provides technical guidance and methodological 
 - Risk-based review approaches
 - Implementation best practices
 
-
 **Usage**: Technical reference for code reviewers, Security Champions, and development teams. Content may require updates as vulnerability patterns evolve—check publication date.
 
 ---
@@ -56,7 +55,6 @@ This document provides **actionable security criteria** for code reviewers. It o
 - Common patterns and anti-patterns
 - Escalation procedures
 
-
 ## Relationship to Policy
 
 **ISMS-POL-A.8.28 requires** (binding):
@@ -66,14 +64,12 @@ This document provides **actionable security criteria** for code reviewers. It o
 - Security Champions participation in reviews
 - Application Security Team review for high-risk changes
 
-
 **This REF document explains** (informational):
 
 - HOW to perform security-focused code reviews
 - WHAT security issues to look for
 - WHEN to escalate to Security Champions or Application Security Team
 - Risk-based checklist application
-
 
 ---
 
@@ -92,7 +88,6 @@ This document provides **actionable security criteria** for code reviewers. It o
 - Security control modifications
 - Third-party integrations with sensitive data
 
-
 **Medium-Risk Changes** (focus on relevant sections):
 
 - API endpoints → Input validation + Authorization
@@ -100,14 +95,12 @@ This document provides **actionable security criteria** for code reviewers. It o
 - File operations → Path traversal prevention
 - Web UI changes → XSS + CSRF prevention
 
-
 **Low-Risk Changes** (minimal security review):
 
 - Refactoring without functionality changes
 - Documentation updates
 - Configuration changes (non-security)
 - Test-only changes
-
 
 ## Integration Points
 
@@ -128,13 +121,11 @@ This document provides **actionable security criteria** for code reviewers. It o
 - Link checklist items in review comments (e.g., "Fails 3.2.3: SQL injection risk")
 - Use review tool labels (security-review-required, security-approved)
 
-
 **Training**:
 
 - Use checklist in code review training workshops
 - Security Champions master checklist application
 - Periodic checklist refreshers
-
 
 ## When to Escalate
 
@@ -145,7 +136,6 @@ This document provides **actionable security criteria** for code reviewers. It o
 - Multiple checklist items failed
 - Complex security pattern requiring validation
 
-
 **Escalate to Application Security Team**:
 
 - Suspected vulnerability requiring expert validation
@@ -153,13 +143,11 @@ This document provides **actionable security criteria** for code reviewers. It o
 - Need for threat modeling session
 - Critical/High severity finding from automated tools
 
-
 **Escalation Channels**:
 
 - Slack: #security-champions or #appsec
 - Email: security@[organization].com
 - Tag in PR: @security-champions or @appsec-team
-
 
 ---
 
@@ -187,7 +175,6 @@ This document provides **actionable security criteria** for code reviewers. It o
 - [ ] **Tests included**: Are security-relevant changes covered by tests?
   - *Check for*: Input validation tests, authorization tests, negative test cases
   - *Policy Reference*: ISMS-POL-A.8.28 Section 2.3.1
-
 
 ---
 
@@ -218,7 +205,6 @@ This document provides **actionable security criteria** for code reviewers. It o
 - [ ] **Logout functionality secure**: Logout invalidates session on server-side
   - *Check for*: Client-side only logout, session still valid after logout
   - *Test*: Session token rejected after logout
-
 
 ## Input Validation
 
@@ -258,7 +244,6 @@ This document provides **actionable security criteria** for code reviewers. It o
 - [ ] **Input length limits**: Maximum length enforced (prevent buffer overflow, DoS)
   - *Check for*: Unlimited input length, excessively large limits
 
-
 ## Output Encoding & XSS Prevention
 
 - [ ] **XSS prevention**: Output encoded for context (HTML, JavaScript, URL, CSS)
@@ -278,7 +263,6 @@ This document provides **actionable security criteria** for code reviewers. It o
 - [ ] **HTTP security headers**: Security headers configured properly
   - *Check for*: Missing `X-Content-Type-Options`, `X-Frame-Options`, `Strict-Transport-Security`
   - *Verify*: Headers present and correctly configured
-
 
 ## Authorization & Access Control
 
@@ -300,7 +284,6 @@ This document provides **actionable security criteria** for code reviewers. It o
 - [ ] **Privilege escalation prevented**: No way to elevate privileges improperly
   - *Check for*: User-controllable role assignments, missing authorization on privilege changes
   - *Test*: Can user grant themselves admin role?
-
 
 ## Cryptography
 
@@ -326,7 +309,6 @@ This document provides **actionable security criteria** for code reviewers. It o
   - *Check for*: HTTP for authentication, sensitive data transmission
   - *Verify*: HSTS headers present, no mixed content
 
-
 ## Error Handling & Logging
 
 - [ ] **Generic error messages to users**: No stack traces, SQL errors, file paths exposed
@@ -345,7 +327,6 @@ This document provides **actionable security criteria** for code reviewers. It o
 - [ ] **Exceptions handled securely**: Catch blocks don't expose sensitive information
   - *Check for*: Empty catch blocks, exceptions propagated to user interface
 
-
 ## Data Protection
 
 - [ ] **Sensitive data encrypted**: PII, financial data, credentials encrypted at rest and in transit
@@ -358,7 +339,6 @@ This document provides **actionable security criteria** for code reviewers. It o
 - [ ] **Secure data deletion**: Sensitive data deleted securely when no longer needed
   - *Verify*: Not just marked deleted but actually removed or cryptographically erased
   - *Policy Reference*: ISMS-POL-A.8.10 (Information Deletion)
-
 
 ## Third-Party Dependencies
 
@@ -374,7 +354,6 @@ This document provides **actionable security criteria** for code reviewers. It o
   - *Check for*: Unpinned versions, missing lock files
   - *Verify*: `package-lock.json`, `requirements.txt`, `Gemfile.lock` committed
 
-
 ---
 
 # Risk-Based Review Guidelines
@@ -389,7 +368,6 @@ This document provides **actionable security criteria** for code reviewers. It o
 - Payment processing
 - PII handling changes
 
-
 **Review Approach**:
 
 - Full checklist application (all sections)
@@ -398,11 +376,9 @@ This document provides **actionable security criteria** for code reviewers. It o
 - Penetration testing (if significant change)
 - Extensive testing including negative test cases
 
-
 **Approval**:
 
 - Development Manager + Security Champion + Application Security Lead
-
 
 ## High Risk Changes
 
@@ -414,7 +390,6 @@ This document provides **actionable security criteria** for code reviewers. It o
 - Third-party integrations with data sharing
 - Admin interface changes
 
-
 **Review Approach**:
 
 - Relevant checklist sections (focus on input validation, authorization, data protection)
@@ -422,11 +397,9 @@ This document provides **actionable security criteria** for code reviewers. It o
 - Security testing (SAST, DAST)
 - Functional and security test cases
 
-
 **Approval**:
 
 - Development Manager + Security Champion
-
 
 ## Medium Risk Changes
 
@@ -437,18 +410,15 @@ This document provides **actionable security criteria** for code reviewers. It o
 - Configuration changes affecting security
 - Logging or monitoring changes
 
-
 **Review Approach**:
 
 - Targeted checklist items (input validation, XSS prevention)
 - Peer review with security awareness
 - Automated security scanning
 
-
 **Approval**:
 
 - Peer reviewer with security training
-
 
 ## Low Risk Changes
 
@@ -459,18 +429,15 @@ This document provides **actionable security criteria** for code reviewers. It o
 - Test-only changes
 - UI styling (CSS) without logic changes
 
-
 **Review Approach**:
 
 - Standard code review
 - Verify no unintended security impact
 - Quick scan for accidentally introduced issues
 
-
 **Approval**:
 
 - Standard peer review
-
 
 ---
 
@@ -567,12 +534,10 @@ Checklist sections applied:
 - [X] Input Validation (4.2)
 - [X] Authorization (4.4)
 
-
 Findings:
 
 - [Issue 1]: Addressed in commit [hash]
 - [Issue 2]: Risk accepted with justification [link]
-
 
 **Approved for merge** with no outstanding security issues.
 ```
@@ -590,7 +555,6 @@ Findings:
 - Multiple failed checklist items
 - Training or guidance needed
 
-
 **To Application Security Team**:
 
 - Suspected Critical/High vulnerability
@@ -598,7 +562,6 @@ Findings:
 - Need for threat modeling
 - Tool findings requiring expert validation
 - Penetration testing recommendation
-
 
 ## Escalation Channels
 
@@ -620,7 +583,6 @@ Findings:
 - Organizational technology stack changes
 - Policy requirements change (ISMS-POL-A.8.28 updates)
 
-
 **Owner**: Application Security Lead
 
 **Review Triggers**:
@@ -630,13 +592,11 @@ Findings:
 - Security tool integration changes
 - Training effectiveness feedback
 
-
 **Collaboration**:
 
 - Security Champions validate practical applicability
 - Development Teams provide usability feedback
 - Application Security Team ensures technical accuracy
-
 
 **Version History**:
 

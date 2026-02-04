@@ -38,7 +38,6 @@
 - ISMS-IMP-A.8.27.3 (Secure Architecture Pattern Catalogue)
 - ISMS-IMP-A.8.27.4 (Zero Trust Implementation Assessment)
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -55,7 +54,6 @@ This dashboard consolidates assessment data from all four A.8.27 assessment doma
 - **Gap Prioritisation:** Consolidated view of all SSE-related gaps
 - **Executive Communication:** High-level SSE status for leadership
 
-
 ## Data Sources
 
 This dashboard consolidates data from:
@@ -67,7 +65,6 @@ This dashboard consolidates data from:
 | **A.8.27.3** Pattern Catalogue | Pattern adoption, documentation quality, deviations |
 | **A.8.27.4** Zero Trust | Pillar maturity scores, ZT compliance |
 
-
 ## Update Frequency
 
 | Component | Update Frequency |
@@ -76,7 +73,6 @@ This dashboard consolidates data from:
 | Gap Register | Monthly (or when new gaps identified) |
 | Trend Data | Quarterly |
 | Zero Trust Maturity | Annual (or after major ZT initiatives) |
-
 
 ## Who Maintains This Dashboard
 
@@ -87,7 +83,6 @@ This dashboard consolidates data from:
 - Update trend charts with historical data
 - Maintain gap register and track remediation
 - Present to CISO and Executive Management
-
 
 ---
 
@@ -106,7 +101,6 @@ This dashboard consolidates data from:
 | **AuditEvidence** | Evidence inventory | Before audits |
 | **ActionTracker** | Remediation tracking | Monthly |
 
-
 ## Sheet Descriptions
 
 ### ExecutiveSummary Sheet
@@ -121,7 +115,6 @@ Single-page executive view:
 | **Critical Gaps** | High-priority gaps requiring attention |
 | **Trend Indicator** | Improving/Stable/Declining |
 | **Next Steps** | Priority actions for next quarter |
-
 
 ### DomainScores Sheet
 
@@ -138,7 +131,6 @@ Detailed compliance by domain:
 | Trend | Up/Down/Stable |
 | Next Assessment | Scheduled date |
 
-
 ### ZeroTrustRadar Sheet
 
 Zero Trust maturity visualisation data:
@@ -152,7 +144,6 @@ Zero Trust maturity visualisation data:
 | Target Score | Target numeric score |
 | Gap | Difference between target and current |
 | Priority | Implementation priority |
-
 
 ### GapConsolidation Sheet
 
@@ -171,7 +162,6 @@ Consolidated gap register from all domains:
 | Days Open | Calculated days since identification |
 | Overdue | Flag if past due date |
 
-
 ### TrendAnalysis Sheet
 
 Historical trend data:
@@ -187,7 +177,6 @@ Historical trend data:
 | Open Gaps | Total open gaps |
 | High Gaps Closed | High-risk gaps remediated |
 
-
 ### AuditEvidence Sheet
 
 Evidence inventory for audits:
@@ -201,7 +190,6 @@ Evidence inventory for audits:
 | Date | Evidence date |
 | Status | Available/Pending/Missing |
 | Audit Use | Stage 1/Stage 2/Both |
-
 
 ### ActionTracker Sheet
 
@@ -218,7 +206,6 @@ Remediation action tracking:
 | Completion Date | Actual completion date |
 | Evidence | Evidence of completion |
 
-
 ---
 
 # Completion Walkthrough
@@ -231,7 +218,6 @@ Remediation action tracking:
 4. **Consolidate Gaps:** Copy all open gaps from domain gap registers
 5. **Calculate Overall Score:** Verify formula calculations
 
-
 ## Quarterly Update Process
 
 1. **Refresh Domain Assessments:** Update each domain workbook with current status
@@ -241,14 +227,12 @@ Remediation action tracking:
 5. **Update Executive Summary:** Refresh high-level status and key messages
 6. **Review with CISO:** Present dashboard for quarterly review
 
-
 ## Annual ZT Update
 
 1. **Complete A.8.27.4 Assessment:** Full Zero Trust maturity assessment
 2. **Update ZeroTrustRadar:** Transfer pillar scores to radar data sheet
 3. **Adjust Targets:** Review and update ZT maturity targets if needed
 4. **Document Progress:** Note significant ZT achievements
-
 
 ---
 
@@ -262,7 +246,6 @@ Remediation action tracking:
 | Trend Charts | Demonstrate improvement | ISMS Evidence Library |
 | Gap Closure Records | Remediation evidence | ISMS Evidence Library |
 | CISO Review Minutes | Governance evidence | ISMS Evidence Library |
-
 
 ---
 
@@ -286,7 +269,6 @@ Remediation action tracking:
 ❌ **MISTAKE:** Evidence inventory not maintained between audits
 ✅ **CORRECT:** Update AuditEvidence continuously, not just before audits
 
-
 ---
 
 # PART II: TECHNICAL SPECIFICATION
@@ -302,7 +284,6 @@ Remediation action tracking:
 | **Purpose** | Consolidated SSE dashboard |
 | **Generator** | generate_a827_5_dashboard.py |
 
-
 ## Sheet Specifications
 
 ### Sheet 1: Instructions
@@ -312,7 +293,6 @@ Remediation action tracking:
 | **Sheet Name** | Instructions |
 | **Purpose** | Dashboard guidance |
 | **Protection** | Read-only |
-
 
 ### Sheet 2: ExecutiveSummary
 
@@ -329,7 +309,6 @@ Row 8-12: Domain status table (RAG)
 Row 14-18: Key metrics
 Row 20-25: Critical gaps summary
 Row 27-30: Next steps and actions
-
 
 ### Sheet 3: DomainScores
 
@@ -361,7 +340,6 @@ Row 27-30: Next steps and actions
 | A.8.27.3 | Secure Architecture Pattern Catalogue |
 | A.8.27.4 | Zero Trust Implementation |
 
-
 ### Sheet 4: ZeroTrustRadar
 
 | Property | Specification |
@@ -385,7 +363,6 @@ Row 27-30: Next steps and actions
 
 Identity, Device, Network, Workload, Data, Visibility, Automation
 
-
 ### Sheet 5: GapConsolidation
 
 | Property | Specification |
@@ -408,7 +385,6 @@ Identity, Device, Network, Workload, Data, Visibility, Automation
 | I | Days Open | 10 | Formula |
 | J | Overdue | 10 | Formula |
 
-
 ### Sheet 6: TrendAnalysis
 
 | Property | Specification |
@@ -429,7 +405,6 @@ Identity, Device, Network, Workload, Data, Visibility, Automation
 | G | Open Gaps | 10 | Number |
 | H | High Gaps Closed | 15 | Number |
 
-
 ### Sheet 7: AuditEvidence
 
 | Property | Specification |
@@ -448,7 +423,6 @@ Identity, Device, Network, Workload, Data, Visibility, Automation
 | E | Date | 12 | Date |
 | F | Status | 12 | Dropdown |
 | G | Audit Use | 15 | Dropdown |
-
 
 ### Sheet 8: ActionTracker
 
@@ -469,7 +443,6 @@ Identity, Device, Network, Workload, Data, Visibility, Automation
 | F | Status | 15 | Dropdown |
 | G | Completion Date | 15 | Date |
 | H | Evidence | 35 | Text |
-
 
 ## Formulas
 
@@ -503,7 +476,6 @@ Or weighted:
 =E2-C2
 ```
 
-
 ## Styling
 
 Use standard ISMS colour palette with additional RAG indicators:
@@ -514,7 +486,6 @@ Use standard ISMS colour palette with additional RAG indicators:
 | Amber (60-79%) | #F39C12 |
 | Red (<60%) | #E74C3C |
 
-
 ---
 
 # Generator Script Reference
@@ -524,7 +495,6 @@ Use standard ISMS colour palette with additional RAG indicators:
 | **Script Name** | generate_a827_5_dashboard.py |
 | **Location** | 10-isms-scr-base/isms-a.8.27-secure-systems-engineering/10_generator-master/ |
 | **Output** | ISMS-IMP-A.8.27.5_SSE_Compliance_Dashboard_YYYYMMDD.xlsx |
-
 
 ---
 

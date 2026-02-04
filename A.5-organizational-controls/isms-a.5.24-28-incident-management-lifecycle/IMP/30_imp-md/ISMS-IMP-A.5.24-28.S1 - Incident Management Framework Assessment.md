@@ -42,7 +42,6 @@
 - ISO/IEC 27002:2022 Control A.5.24
 - NIST SP 800-61 Rev. 2 (Computer Security Incident Handling Guide)
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -62,14 +61,12 @@ This assessment evaluates [Organization]'s **incident management framework and g
 - Tools and technology capabilities
 - Integration with monitoring, logging, and other controls
 
-
 **What This Assessment Does NOT Cover:**
 
 - Incident classification and triage procedures (see ISMS-IMP-A.5.24-28.S2)
 - Response execution and effectiveness (see ISMS-IMP-A.5.24-28.S3)
 - Forensic evidence procedures (see ISMS-IMP-A.5.24-28.S4)
 - Post-incident learning processes (see ISMS-IMP-A.5.24-28.S5)
-
 
 **Assessment Output:**
 
@@ -78,7 +75,6 @@ This assessment evaluates [Organization]'s **incident management framework and g
 - Training effectiveness evaluation
 - Technology capability gaps
 - Compliance scoring and gap analysis
-
 
 ## Why This Matters
 
@@ -96,7 +92,6 @@ This assessment evaluates [Organization]'s **incident management framework and g
 - **Legal Liability:** Poor forensic procedures render evidence inadmissible
 - **Reputational Damage:** Public incidents handled poorly due to lack of preparation
 
-
 **This Assessment Addresses:**
 
 - Do we have clear, documented incident management procedures?
@@ -104,7 +99,6 @@ This assessment evaluates [Organization]'s **incident management framework and g
 - Are roles and responsibilities unambiguous?
 - Is our team trained and competent?
 - Do we have the tools needed for effective incident response?
-
 
 ## Who Should Complete This Assessment
 
@@ -118,7 +112,6 @@ This assessment evaluates [Organization]'s **incident management framework and g
 - Incident response tools and technologies in use
 - Integration points with monitoring (A.8.16), logging (A.8.15), and other controls
 
-
 **Support Roles:**
 
 - **CISO:** Governance framework, policy approval, budget authority
@@ -127,13 +120,11 @@ This assessment evaluates [Organization]'s **incident management framework and g
 - **Legal/Compliance:** Regulatory requirements, breach notification procedures
 - **External Partners:** Managed security service providers (MSSPs), incident response retainers
 
-
 **Collaboration Required:**
 
 - This is NOT a solo assessment
 - Requires input from multiple stakeholders
 - Review sessions with CSIRT, Legal, IT Ops, Management
-
 
 ## Time Estimate
 
@@ -165,13 +156,11 @@ This assessment evaluates [Organization]'s **incident management framework and g
   - Remediation planning
   - Management review and approval
 
-
 **Complexity Factors:**
 
 - **Simple (8 hours):** Small organization, dedicated CSIRT, well-documented procedures, mature tools
 - **Moderate (10 hours):** Mid-size organization, part-time incident response, some documentation gaps
 - **Complex (12+ hours):** Large organization, distributed teams, multiple locations, outsourced SOC, compliance complexity
-
 
 ## Connection to Policy
 
@@ -185,7 +174,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - Exception management process
 - Policy review and update cycle
 
-
 **Organizational Structure:**
 
 - CSIRT/SOC team established (dedicated, part-time, or outsourced)
@@ -193,7 +181,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - RACI matrix for incident lifecycle phases
 - On-call rotation and escalation paths
 - Integration with business units and management
-
 
 **Training & Competency:**
 
@@ -203,7 +190,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - Competency assessment and certification tracking
 - New hire onboarding (incident reporting awareness)
 
-
 **Tools & Technology:**
 
 - Incident ticketing/tracking system
@@ -212,7 +198,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - Communication platforms (internal, external)
 - Threat intelligence integration
 
-
 **Integration Points:**
 
 - Logging (A.8.15): Incident investigations require comprehensive logs
@@ -220,7 +205,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - Event Reporting (A.6.8): User reporting mechanism
 - BC/DR (A.5.29-30): Major incidents trigger BC/DR activation
 - Third-Party Management (A.5.19-23): Supplier incidents escalated appropriately
-
 
 **Policy Authority:** Chief Information Security Officer (CISO)  
 **Compliance Status:** Mandatory for all [Organization] information security incidents
@@ -236,14 +220,12 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - Authority matrix clarity
 - Review and update frequency
 
-
 ✅ **Organizational Structure:**
 
 - CSIRT/SOC team model (dedicated, virtual, outsourced)
 - Staffing levels and coverage (24/7, business hours, on-call)
 - Role definitions (Incident Manager, Analyst, Forensic Specialist, etc.)
 - RACI matrix completeness
-
 
 ✅ **Training & Exercises:**
 
@@ -252,7 +234,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - Tabletop exercise frequency and quality
 - Competency tracking and certification
 
-
 ✅ **Tools & Technology:**
 
 - Incident ticketing system capabilities
@@ -260,14 +241,12 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - Forensic tool availability
 - Communication platform readiness
 
-
 ✅ **Integration Assessment:**
 
 - Integration with A.8.15 (Logging), A.8.16 (Monitoring)
 - Integration with A.6.8 (User Event Reporting)
 - Integration with A.5.29-30 (BC/DR)
 - Third-party coordination (MSSPs, vendors)
-
 
 **Excluded from This Assessment:**
 
@@ -286,7 +265,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
    - ISMS-POL-A.5.24-28 Section 2.1 (Planning & Preparation Requirements)
    - Understand mandatory vs. recommended practices
 
-
 2. ✅ **Gather Documentation:**
 
    - Incident management policy document
@@ -298,7 +276,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
    - Training records (courses, exercises, certifications)
    - Tool inventory (ticketing system, SIEM, forensic tools)
 
-
 3. ✅ **Identify Stakeholders:**
 
    - CSIRT/SOC Manager (primary assessor)
@@ -307,20 +284,17 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
    - IT Ops (tool integration, on-call rotation)
    - Legal/Compliance (regulatory requirements, breach notification)
 
-
 4. ✅ **Schedule Review Sessions:**
 
    - CSIRT team review (validate structure, roles)
    - Management review (governance, budget, staffing)
    - Legal review (regulatory compliance, notification procedures)
 
-
 5. ✅ **Prepare Evidence Folder:**
 
    - Create folder: `/Evidence/A.5.24-28/S1_Framework/`
    - Collect documents, screenshots, training records
    - Organize by assessment section (Governance, Structure, Training, Tools)
-
 
 ---
 
@@ -376,7 +350,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - Color coding and validation rules
 - Evidence reference system
 
-
 **Sheet 2: Governance Assessment**
 
 - Incident management policy documentation
@@ -384,7 +357,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - Authority matrix and escalation
 - Policy review frequency
 - Regulatory compliance alignment
-
 
 **Sheet 3: Organizational Structure**
 
@@ -394,7 +366,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - RACI matrix assessment
 - Reporting structure and management visibility
 
-
 **Sheet 4: Training & Competency**
 
 - Training program existence and content
@@ -402,7 +373,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - Tabletop exercise schedule and quality
 - Competency tracking and certifications
 - New hire onboarding (incident reporting awareness)
-
 
 **Sheet 5: Tools & Technology**
 
@@ -413,7 +383,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - Threat intelligence integration
 - Automation capabilities (playbooks, SOAR)
 
-
 **Sheet 6: Integration Assessment**
 
 - Integration with logging (A.8.15)
@@ -422,7 +391,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - Integration with BC/DR (A.5.29-30)
 - Third-party coordination (suppliers, MSSPs)
 
-
 **Sheet 7: Gap Analysis**
 
 - Framework maturity scoring
@@ -430,14 +398,12 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - Remediation recommendations
 - Timeline and ownership
 
-
 **Sheet 8: Evidence Register**
 
 - Evidence inventory (100 items capacity)
 - Evidence types (policy documents, org charts, training records, tool screenshots)
 - Storage locations
 - Verification status
-
 
 **Sheet 9: Dashboard**
 
@@ -449,14 +415,12 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - Integration completeness
 - Top 10 gaps summary
 
-
 **Sheet 10: Approval Sign-Off**
 
 - Assessment summary
 - CSIRT Manager approval
 - CISO approval
 - Next review date
-
 
 ---
 
@@ -489,7 +453,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - **Remediation:** Develop and approve ISMS-POL-A.5.24-28 immediately
   - **Timeline:** High priority (within 30 days)
 
-
 **Q2: Policy_Approval_Date**
 
 - **Question:** When was the current incident management policy approved?
@@ -499,7 +462,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - Policy approved within last 24 months (acceptable)
   - Policy >24 months old → DUE FOR REVIEW
 - **Evidence:** Policy approval record (signature page, approval email, board minutes)
-
 
 **Q3: Policy_Owner**
 
@@ -512,7 +474,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - Enforce compliance
 - **Evidence:** Policy document header, job description, organizational chart
 
-
 **Q4: Policy_Review_Frequency**
 
 - **Question:** How often is the incident management policy reviewed?
@@ -524,7 +485,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - **Risk:** Policy becomes outdated, non-compliance with regulations
   - **Remediation:** Establish annual review schedule
 
-
 **Q5: Last_Policy_Review_Date**
 
 - **Question:** When was the policy last reviewed?
@@ -532,7 +492,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - **Cross-Check:** Should align with Q2 (Approval Date) or more recent
 - **Red Flag:** Last review >12 months ago → OVERDUE
 - **Evidence:** Review meeting minutes, policy change log, version history
-
 
 ---
 
@@ -554,7 +513,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - Communication procedures (internal, external, regulatory)
   - Evidence collection procedures
 
-
 **Q7: Procedure_Format**
 
 - **Question:** In what format are incident response procedures documented?
@@ -568,7 +526,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - Written procedures for reference
   - Flowcharts for quick decision-making during incident
   - Automated playbooks for common responses
-
 
 **Q8: Procedure_Accessibility**
 
@@ -584,7 +541,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - Access controls appropriate (need-to-know basis)
   - Version control maintained
 
-
 **Q9: Procedures_Include_Contacts**
 
 - **Question:** Do procedures include up-to-date contact information (CSIRT, management, legal, external partners)?
@@ -597,7 +553,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - **Gap:** HIGH - Communication delays during incident
   - **Remediation:** Update contact list quarterly, verify before each exercise
 
-
 **Q10: Procedures_Last_Updated**
 
 - **Question:** When were incident response procedures last updated?
@@ -605,7 +560,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - **Best Practice:** Updated annually + after major incidents (lessons learned)
 - **Red Flag:** Procedures >12 months old without review
 - **Evidence:** Procedure version history, change log
-
 
 ---
 
@@ -622,7 +576,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - **Best Practice:** Empower CSIRT to declare incidents; management informed via escalation
 - **Auditor Expects:** Clear authority documented in policy/procedures
 
-
 **Q12: Escalation_Matrix_Exists**
 
 - **Question:** Is there a documented escalation matrix defining when and to whom incidents are escalated?
@@ -634,7 +587,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - Timeframes (immediate, 1 hour, 4 hours, 24 hours)
   - Notification methods (phone, email, SMS, incident platform)
 - **Evidence:** Escalation matrix document, decision tree, flowchart
-
 
 **Q13: Management_Notification_Criteria**
 
@@ -648,7 +600,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - **Financial impact:** Revenue loss, fines, remediation costs >$X threshold
 - **Best Practice:** Defined thresholds prevent over-escalation (alert fatigue) and under-escalation (management surprised)
 
-
 **Q14: Board_Notification_Criteria**
 
 - **Question:** What criteria trigger Board of Directors notification?
@@ -659,7 +610,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - Systemic failure or control breakdown
   - Major data breach (>10,000 records, sensitive data)
 - **Note:** Many organizations include Board notification in BC/DR activation criteria
-
 
 **Q15: External_Notification_Procedures**
 
@@ -672,7 +622,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - **Media:** Public relations, press releases (if material breach)
 - **Evidence:** External communication procedures, notification templates, contact lists
 - **Legal Review:** External communications often require Legal/PR approval
-
 
 ---
 
@@ -687,7 +636,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - **Tier 2 Conditional:** PCI DSS, FINMA, DORA, NIS2, HIPAA (if applicable)
 - **Reference:** ISMS-POL-A.5.24-28 Section 1.5, ISMS-REF-A.5.24-28 Section 2
 - **Evidence:** Regulatory requirements matrix, notification timelines documented
-
 
 **Q17: GDPR_Breach_Notification_Procedure**
 
@@ -704,7 +652,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - DPO contact information
 - **Auditor Will Verify:** Procedure includes all GDPR-required information (nature, categories, consequences, measures)
 
-
 **Q18: Swiss_nDSG_Breach_Notification_Procedure**
 
 - **Question:** (If Swiss nDSG applies) Is Swiss nDSG breach notification procedure documented?
@@ -717,7 +664,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - Risk assessment criteria (high risk determination)
   - FDPIC contact information
   - Notification template
-
 
 **Q19: PCI_DSS_Incident_Reporting_Procedure**
 
@@ -733,7 +679,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - Acquiring bank contact
   - PFI list and engagement procedure
 
-
 **Q20: Sector_Specific_Requirements**
 
 - **Question:** Are sector-specific incident reporting requirements documented (FINMA, DORA, NIS2, HIPAA, etc.)?
@@ -745,7 +690,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - **HIPAA (US healthcare):** Breach notification (60 days)
 - **Reference:** ISMS-POL-00 Tier 2 conditional regulations
 - **Evidence:** Sector-specific notification procedures, authority contacts
-
 
 ---
 
@@ -766,7 +710,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - Documentation and review
   - Expiration/renewal
 
-
 **Q22: Exceptions_Documented**
 
 - **Question:** Are current exceptions documented and approved?
@@ -777,7 +720,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - Risk assessed and accepted
   - Approved by appropriate authority
   - Reviewed periodically
-
 
 ---
 
@@ -799,7 +741,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - What constitutes a security incident
   - Expectation to report promptly
 
-
 **Q24: Policy_Accessible_to_Staff**
 
 - **Question:** Can relevant staff easily access the incident management policy?
@@ -810,7 +751,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - No unnecessary access restrictions (balance security with usability)
   - Available offline (for major incidents affecting primary systems)
 
-
 **Q25: Next_Policy_Review_Date**
 
 - **Question:** When is the next scheduled policy review?
@@ -818,7 +758,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - **Calculation:** Last review date + 12 months
 - **Action:** Set calendar reminder 30 days before review date
 - **Evidence:** Policy review schedule, meeting invitations
-
 
 ---
 
@@ -843,7 +782,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - Coordinated (decentralized, regional teams)
 - **Model Characteristics:**
   
-
   **Dedicated CSIRT:**
 
   - Full-time incident response professionals
@@ -852,7 +790,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - Higher cost
   - Best for: Large organizations, high incident volume, regulated industries
   
-
   **Virtual CSIRT:**
 
   - IT, Security, Legal, HR members activated during incidents
@@ -860,14 +797,12 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - Cost-effective but slower response
   - Best for: Small/mid-size organizations, low incident volume
   
-
   **Hybrid:**
 
   - Core SOC team (detection, triage) + CSIRT (investigation, remediation)
   - Balances cost and capability
   - Best for: Mid-large organizations
   
-
   **Outsourced SOC/MSSP:**
 
   - Third-party provides monitoring, detection, initial response
@@ -875,13 +810,11 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - Cost-effective for 24/7 coverage
   - Best for: Organizations without resources for full SOC
   
-
   **Coordinated:**
 
   - Multiple regional/business unit teams
   - Central coordination (CISO office)
   - Best for: Global organizations, decentralized IT
-
 
 **Q27: CSIRT_Establishment_Date**
 
@@ -892,7 +825,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - 1-3 years: Maturing, refining procedures
   - 3-5 years: Established, optimizing
   - >5 years: Mature, industry-leading (if continuously improved)
-
 
 **Q28: CSIRT_Coverage**
 
@@ -908,7 +840,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - Small organizations, low risk → Business hours + on-call acceptable
 - **Auditor Will Verify:** Coverage aligns with risk assessment and business requirements
 
-
 **Q29: CSIRT_Staffing_Level**
 
 - **Question:** How many full-time equivalent (FTE) staff are dedicated to incident response?
@@ -921,7 +852,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - **Cross-Check:** Does staffing support stated coverage (Q28)?
   - 24/7 coverage typically requires 4-5 FTE per role (to cover shifts, vacation, training)
 
-
 **Q30: CSIRT_Reporting_Structure**
 
 - **Question:** To whom does the CSIRT/SOC team report?
@@ -933,7 +863,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
   - **Independent (reports to CEO/Board):** Rare, maximum independence
 - **Best Practice:** Report to CISO for security autonomy
 - **Auditor Consideration:** Independence from IT operations (separation of duties)
-
 
 ---
 
@@ -948,7 +877,6 @@ For each role, document:
 - **Assigned_To:** Name(s) or "Vacant"
 - **RACI_Clarity:** Clear / Unclear / Not Documented
 
-
 **Q31: Incident_Manager**
 
 - **Description:** Leads incident response, coordinates teams, communicates with management
@@ -959,7 +887,6 @@ For each role, document:
   - Approve incident closure
 - **RACI:** Responsible for incident lifecycle management
 - **Common Mistakes:** Incident Manager also performing technical investigation (role conflict)
-
 
 **Q32: SOC_Analyst_Tier_1**
 
@@ -972,7 +899,6 @@ For each role, document:
 - **RACI:** Responsible for event detection and initial assessment
 - **Skill Level:** Junior to mid-level, broad security knowledge
 
-
 **Q33: SOC_Analyst_Tier_2**
 
 - **Description:** Incident investigation, deeper analysis, threat hunting
@@ -983,7 +909,6 @@ For each role, document:
   - Recommend containment actions
 - **RACI:** Responsible for incident investigation
 - **Skill Level:** Mid to senior, specialized security skills
-
 
 **Q34: Forensic_Specialist**
 
@@ -997,7 +922,6 @@ For each role, document:
 - **Skill Level:** Senior, specialized forensic training/certification
 - **Note:** May be outsourced (forensic retainer, law enforcement)
 
-
 **Q35: Malware_Analyst**
 
 - **Description:** Malware reverse engineering and analysis
@@ -1010,7 +934,6 @@ For each role, document:
 - **Skill Level:** Senior, specialized reverse engineering skills
 - **Note:** Often outsourced or shared resource
 
-
 **Q36: Threat_Intelligence_Analyst**
 
 - **Description:** Threat intelligence collection, analysis, and dissemination
@@ -1021,7 +944,6 @@ For each role, document:
   - Update detection rules based on emerging threats
 - **RACI:** Consulted for threat context during incidents
 - **Skill Level:** Mid to senior, intelligence analysis background helpful
-
 
 **Q37: Communication_Coordinator**
 
@@ -1035,7 +957,6 @@ For each role, document:
 - **Skill Level:** Mid-level, strong writing and stakeholder management
 - **Note:** Often filled by CISO, Legal, or PR (depending on incident severity)
 
-
 **Q38: Legal_Representative**
 
 - **Description:** Provides legal guidance during incidents (privilege, breach notification, law enforcement)
@@ -1048,7 +969,6 @@ For each role, document:
 - **Skill Level:** Legal counsel (in-house or external)
 - **Note:** May be Data Protection Officer (DPO) for GDPR matters
 
-
 **Q39: HR_Representative**
 
 - **Description:** HR liaison for insider threat, employee termination, personnel matters
@@ -1059,7 +979,6 @@ For each role, document:
   - Provide HR policy guidance
 - **RACI:** Consulted for personnel-related incidents
 - **Note:** Particularly important for insider threat (A.5.15-16-18 integration)
-
 
 **Q40: IT_Operations_Liaison**
 
@@ -1072,7 +991,6 @@ For each role, document:
 - **RACI:** Responsible for operational response actions
 - **Note:** CSIRT identifies what needs to be done; IT Ops executes
 
-
 **Q41: Business_Unit_Liaison**
 
 - **Description:** Business representative for impact assessment, communication, continuity
@@ -1084,7 +1002,6 @@ For each role, document:
 - **RACI:** Consulted for business impact, Informed of incident status
 - **Note:** Critical for business-impacting incidents (ransomware, outages)
 
-
 **Q42: Third_Party_Coordinator**
 
 - **Description:** Manages third-party involvement (vendors, suppliers, MSSP)
@@ -1095,7 +1012,6 @@ For each role, document:
   - Track vendor SLAs for incident support
 - **RACI:** Responsible for third-party coordination
 - **Note:** May be Procurement, Vendor Management, or CISO office
-
 
 **Q43: Executive_Sponsor**
 
@@ -1109,7 +1025,6 @@ For each role, document:
 - **RACI:** Accountable for incident management capability
 - **Note:** Executive sponsor ≠ involved in every incident (only escalated incidents)
 
-
 **Q44: On_Call_Engineer**
 
 - **Description:** After-hours on-call rotation for incident response
@@ -1120,7 +1035,6 @@ For each role, document:
 - **RACI:** Responsible for after-hours coverage
 - **Note:** Should have documented on-call procedures, escalation contacts, runbooks
 
-
 **Q45: Other_Roles**
 
 - **Question:** Are there additional incident response roles specific to [Organization]?
@@ -1130,7 +1044,6 @@ For each role, document:
   - OT/ICS Security Engineer (for operational technology/SCADA incidents)
   - Regulatory Compliance Officer (for highly regulated industries)
   - Customer Support Liaison (for customer-facing incidents)
-
 
 ---
 
@@ -1151,7 +1064,6 @@ For each role, document:
   - Clear assignment (one "A" per activity, one or more "R")
 - **Evidence:** RACI matrix document, table, or flowchart
 
-
 **Q47: RACI_Clarity_Assessment**
 
 - **Question:** Overall, are roles and responsibilities clear and unambiguous?
@@ -1165,7 +1077,6 @@ For each role, document:
   - Gaps (activities with no Responsible party)
   - Role confusion during tabletop exercises
 
-
 **Q48: RACI_Last_Updated**
 
 - **Question:** When was the RACI matrix last reviewed/updated?
@@ -1175,7 +1086,6 @@ For each role, document:
   - Staffing changes (new hires, departures, reorganization)
   - Process changes (new tools, procedures)
   - Major incidents revealing role confusion
-
 
 ---
 
@@ -1193,7 +1103,6 @@ For each role, document:
   - **Gap:** Staffing inadequacy risks burnout, slow response, missed incidents
   - **Remediation:** Increase FTE, adjust coverage model, or engage MSSP
 
-
 **Q50: Turnover_Rate**
 
 - **Question:** What is the CSIRT/SOC annual turnover rate?
@@ -1210,7 +1119,6 @@ For each role, document:
   - Reduced incident response effectiveness
   - Morale issues
 
-
 **Q51: Succession_Planning**
 
 - **Question:** Is there succession planning for key incident response roles?
@@ -1221,7 +1129,6 @@ For each role, document:
   - Documentation to enable knowledge transfer
   - Onboarding plans for new hires
 - **Risk:** Key person dependency (single person with critical skill; departure causes capability gap)
-
 
 **Q52: Skills_Gaps_Identified**
 
@@ -1235,7 +1142,6 @@ For each role, document:
   - Regulatory compliance (GDPR, PCI DSS procedures)
 - **Evidence:** Skills assessment matrix, training needs analysis
 - **Remediation:** Training, hiring, or external augmentation (retainers, MSSPs)
-
 
 ---
 
@@ -1256,7 +1162,6 @@ For each role, document:
   - Training and exercise completion
   - Budget and resource needs
 
-
 **Q54: CSIRT_Performance_Metrics**
 
 - **Question:** Are incident management performance metrics defined and tracked?
@@ -1271,7 +1176,6 @@ For each role, document:
   - **Improvements:** Number of lessons learned implemented
 - **Evidence:** Metrics dashboard, monthly reports
 
-
 **Q55: Board_Briefing_Protocol**
 
 - **Question:** Is there a protocol for briefing the Board of Directors on material incidents?
@@ -1284,7 +1188,6 @@ For each role, document:
   - Lessons learned and improvements
 - **Typical Triggers:** Material incidents (per Q14 criteria)
 - **Evidence:** Board briefing template, past briefing materials
-
 
 ---
 
@@ -1310,7 +1213,6 @@ For each role, document:
   - Training records and tracking
 - **Evidence:** Training program document, curriculum, training calendar
 
-
 **Q57: Annual_Awareness_Training**
 
 - **Question:** Do all staff receive annual security awareness training including incident reporting?
@@ -1324,7 +1226,6 @@ For each role, document:
   - Personal accountability
 - **Evidence:** Training completion records, course materials
 
-
 **Q58: Awareness_Training_Completion_Rate**
 
 - **Question:** What percentage of staff completed incident reporting awareness training in the last 12 months?
@@ -1332,7 +1233,6 @@ For each role, document:
 - **Target:** >95% compliance
 - **Calculation:** (Staff trained / Total staff) × 100
 - **Evidence:** Training management system reports, HR records
-
 
 **Q59: CSIRT_Specialized_Training**
 
@@ -1348,7 +1248,6 @@ For each role, document:
 - **Best Practice:** CSIRT members receive at least 40 hours specialized training annually
 - **Evidence:** Training records, certifications, course materials
 
-
 **Q60: External_Training_Budget**
 
 - **Question:** Is there a dedicated budget for incident response training (courses, certifications, conferences)?
@@ -1359,7 +1258,6 @@ For each role, document:
   - Conferences (Black Hat, RSA, FIRST) ($1,500-$3,000 per person)
 - **Budgeting Rule of Thumb:** $5,000-$10,000 per CSIRT member annually for external training
 - **ROI:** Trained staff = faster, more effective incident response
-
 
 ---
 
@@ -1377,14 +1275,12 @@ For each role, document:
   - Build muscle memory and coordination
   - Low-cost, high-value training method
 
-
 **Q62: Last_Tabletop_Date**
 
 - **Question:** When was the most recent tabletop exercise conducted?
 - **Format:** Date (DD.MM.YYYY) or "Never conducted"
 - **Red Flag:** >12 months since last exercise
 - **Evidence:** Exercise report, participant list, lessons learned
-
 
 **Q63: Tabletop_Scenario_Variety**
 
@@ -1398,7 +1294,6 @@ For each role, document:
   - Supply chain compromise (third-party incident)
   - Business Email Compromise (BEC/CEO fraud)
 - **Rationale:** Different incident types test different procedures, roles, and decisions
-
 
 **Q64: Tabletop_Participants**
 
@@ -1417,7 +1312,6 @@ For each role, document:
   - Strategic exercises: Include Legal, Management, Executive
   - Board exercises: Focus on decision-making, communication, business impact
 
-
 **Q65: Tabletop_Lessons_Learned**
 
 - **Question:** Are lessons learned from tabletop exercises documented and acted upon?
@@ -1432,7 +1326,6 @@ For each role, document:
   6. **Follow-Up:** Next exercise tests whether gaps were closed
 
 - **Evidence:** Exercise after-action reports, action item tracking
-
 
 ---
 
@@ -1450,7 +1343,6 @@ For each role, document:
 - **Benefit:** More realistic than tabletop, identifies operational gaps
 - **Challenge:** Resource-intensive, requires isolated test environment
 
-
 **Q67: Breach_Simulation_Tools**
 
 - **Question:** Does [Organization] use breach simulation or attack simulation tools?
@@ -1461,7 +1353,6 @@ For each role, document:
   - **Ransomware Simulation:** Controlled ransomware deployment (test environment only!)
 - **Use Case:** Validate detection and response capabilities continuously
 - **Evidence:** BAS platform reports, red team reports
-
 
 **Q68: Regulatory_Drills**
 
@@ -1474,7 +1365,6 @@ For each role, document:
   - Time the process (can we meet 72-hour GDPR deadline?)
 - **Best Practice:** Annual GDPR breach notification drill (tabletop minimum, full-scale ideal)
 - **Evidence:** Drill scenarios, timeline logs, notification drafts
-
 
 ---
 
@@ -1491,7 +1381,6 @@ For each role, document:
   - Experience (years in security, incident response)
 - **Evidence:** Competency matrix, job descriptions, hiring criteria
 
-
 **Q70: Certification_Tracking**
 
 - **Question:** Does [Organization] track security certifications for CSIRT members?
@@ -1507,7 +1396,6 @@ For each role, document:
   - Demonstrate team capability to auditors, management
 - **Evidence:** Certification register, copies of certificates
 
-
 **Q71: Certification_Currency**
 
 - **Question:** Are certifications current (not expired)?
@@ -1515,7 +1403,6 @@ For each role, document:
 - **Note:** Most security certifications require continuing education (CPEs) and renewal every 3 years
 - **Risk:** Expired certifications may indicate lack of ongoing training
 - **Evidence:** Certification expiration dates, CPE tracking
-
 
 **Q72: New_Hire_Onboarding**
 
@@ -1530,7 +1417,6 @@ For each role, document:
   - First 30/60/90 day milestones
 - **Duration:** Typical onboarding 30-90 days depending on role complexity
 - **Evidence:** Onboarding checklist, training records
-
 
 ---
 
@@ -1547,7 +1433,6 @@ For each role, document:
   - **Exercise Performance:** Tabletop performance improved over time?
 - **Best Practice:** Combine multiple measures (Kirkpatrick Model - Reaction, Learning, Behavior, Results)
 
-
 **Q74: Training_Feedback_Collected**
 
 - **Question:** Is feedback collected from training participants?
@@ -1558,7 +1443,6 @@ For each role, document:
   - Annual training needs assessment
 - **Use of Feedback:** Improve training content, adjust delivery methods, identify new topics
 
-
 **Q75: Training_Gaps_Identified**
 
 - **Question:** Have training gaps been identified through exercises or actual incidents?
@@ -1568,7 +1452,6 @@ For each role, document:
   - Actual incidents reveal skill gaps (e.g., malware analysis took too long, outsourced)
   - Staff surveys (self-assessment of confidence and competence)
 - **Evidence:** Exercise after-action reports, post-incident reviews, training needs analysis
-
 
 ---
 
@@ -1596,7 +1479,6 @@ For each role, document:
   - Playbook automation
   - Evidence tracking and chain of custody
 
-
 **Q77: Ticketing_System_Features**
 
 - **Question:** What features does the incident ticketing system provide?
@@ -1613,7 +1495,6 @@ For each role, document:
   - ☐ Playbook/runbook integration
 - **Critical Features:** At minimum, system should support creation, assignment, severity, timeline, and reporting
 
-
 **Q78: Ticket_Retention**
 
 - **Question:** How long are incident tickets retained?
@@ -1623,7 +1504,6 @@ For each role, document:
   - **Legal:** Potential litigation evidence (7+ years typical)
   - **Best Practice:** 7 years minimum, indefinitely for material/regulatory incidents
 - **Evidence:** Ticketing system retention policy, archive procedures
-
 
 **Q79: Ticket_Access_Control**
 
@@ -1635,7 +1515,6 @@ For each role, document:
   - Management/Legal granted access as needed
   - Auditors granted read-only access
 - **Compliance:** Confidentiality of investigation, attorney-client privilege (for legally sensitive incidents)
-
 
 ---
 
@@ -1652,7 +1531,6 @@ For each role, document:
   - Generate alerts for CSIRT
 - **Common SIEM Platforms:** Splunk, QRadar (IBM), Sentinel (Microsoft), ArcSight (Micro Focus), ELK Stack (open source)
 
-
 **Q81: SIEM_Log_Sources**
 
 - **Question:** How many log sources feed into the SIEM?
@@ -1665,7 +1543,6 @@ For each role, document:
   - Cloud services (AWS CloudTrail, Azure logs, O365 audit logs)
 - **Benchmark:** Comprehensive SIEM ingests 50-500+ log sources depending on org size
 
-
 **Q82: SIEM_Integration_with_Ticketing**
 
 - **Question:** Is the SIEM integrated with the incident ticketing system (automatic ticket creation)?
@@ -1675,7 +1552,6 @@ For each role, document:
   - Reduces response time (no manual ticket creation)
   - Ensures all alerts are logged and tracked
 - **Example:** Splunk alert fires → Creates ServiceNow incident via API → Assigns to SOC
-
 
 **Q83: SIEM_Playbook_Automation**
 
@@ -1690,7 +1566,6 @@ For each role, document:
   - Palo Alto Cortex XSOAR
   - Swimlane
   - Demisto (acquired by Palo Alto)
-
 
 ---
 
@@ -1712,7 +1587,6 @@ For each role, document:
   - ☐ None / Not applicable
 - **Note:** Combination of open-source and commercial tools typical
 
-
 **Q85: Forensic_Tool_Training**
 
 - **Question:** Are CSIRT members trained in the use of forensic tools?
@@ -1722,7 +1596,6 @@ For each role, document:
   - Forensic methodology (NIST, SANS FOR500/572)
   - Legal considerations (chain of custody, admissibility)
 - **Risk:** Tools without training → Evidence mishandled, inadmissible in court
-
 
 **Q86: Forensic_Workstation**
 
@@ -1736,7 +1609,6 @@ For each role, document:
   - Documented chain of custody procedures
 - **Alternative:** Cloud-based forensic environment (AWS forensics instance)
 
-
 **Q87: Evidence_Storage**
 
 - **Question:** Is there secure storage for forensic evidence?
@@ -1748,7 +1620,6 @@ For each role, document:
   - Retention policy (7+ years for material incidents)
   - Chain of custody log (who accessed when)
 - **Evidence Types:** Disk images, memory dumps, PCAPs, log exports, malware samples
-
 
 ---
 
@@ -1771,7 +1642,6 @@ For each role, document:
   - Escalation: Phone/SMS (for urgency)
   - Sensitive: Encrypted channels (insider threat, legal matters)
 
-
 **Q89: External_Communication_Secure_Channel**
 
 - **Question:** Is there a secure channel for external communications (legal, law enforcement, regulators)?
@@ -1785,7 +1655,6 @@ For each role, document:
   - Breach notification to supervisory authority
   - Attorney-client privileged communications (encrypted)
 
-
 **Q90: On_Call_Alerting**
 
 - **Question:** How are on-call incident responders alerted?
@@ -1796,7 +1665,6 @@ For each role, document:
   - Alert acknowledgment (confirm on-call received alert)
   - Integration with monitoring/SIEM (automated alerts)
 - **Best Practice:** Dedicated on-call platform (PagerDuty, VictorOps, Opsgenie) over email alone
-
 
 ---
 
@@ -1816,7 +1684,6 @@ For each role, document:
   - Proactive threat hunting
   - Alert prioritization (known APT group TTPs)
 
-
 **Q92: Threat_Intel_Integration_SIEM**
 
 - **Question:** Is threat intelligence integrated into SIEM for alerting?
@@ -1825,7 +1692,6 @@ For each role, document:
   - IOC feed → SIEM correlation rule → Alert if match
   - Example: SIEM detects connection to IP listed in threat feed → Generate alert
 - **Benefit:** Proactive detection of known threats
-
 
 **Q93: Threat_Intel_Analyst_Role**
 
@@ -1837,7 +1703,6 @@ For each role, document:
   - Provide incident context (attribution, campaign)
   - Update detection rules based on emerging threats
 - **Small Orgs:** CSIRT members perform threat intel as part of duties (no dedicated analyst)
-
 
 ---
 
@@ -1860,7 +1725,6 @@ For each role, document:
     - Scripts for common tasks (e.g., block IP via firewall API)
     - Manual execution of most response actions
 
-
 **Q95: Playbook_Count**
 
 - **Question:** How many documented/automated playbooks exist?
@@ -1875,7 +1739,6 @@ For each role, document:
   - BEC/CEO fraud response
 - **Benchmark:** 10-20 playbooks for comprehensive coverage
 
-
 **Q96: Playbook_Maintenance**
 
 - **Question:** Are playbooks regularly reviewed and updated?
@@ -1886,7 +1749,6 @@ For each role, document:
   - Tool changes (new SIEM, EDR, etc.)
   - Regulatory changes (new notification requirements)
 - **Risk:** Outdated playbooks reference deprecated tools, wrong contacts, obsolete procedures
-
 
 ---
 
@@ -1904,7 +1766,6 @@ For each role, document:
   - No threat intel → Cannot identify known threats
 - **Impact:** Tool gaps = longer response times, missed incidents, higher costs
 
-
 **Q98: Tool_Procurement_Planned**
 
 - **Question:** Are tool gaps being addressed (budget approved, procurement in progress)?
@@ -1916,7 +1777,6 @@ For each role, document:
   - Training and operationalization (1-3 months)
 - **Evidence:** Budget documents, procurement plans, project timelines
 
-
 **Q99: Tool_Integration_Challenges**
 
 - **Question:** Are there challenges integrating incident response tools?
@@ -1927,7 +1787,6 @@ For each role, document:
   - Data format inconsistencies (CSV vs. JSON vs. proprietary)
   - Complexity (too many tools, integration sprawl)
 - **Remediation:** SOAR platforms can bridge integration gaps
-
 
 ---
 
@@ -1951,7 +1810,6 @@ For each role, document:
   - Log retention supports forensic investigation (ISMS-POL-A.8.15 retention requirements)
 - **Evidence:** Cross-reference ISMS-IMP-A.8.15 (Logging Assessment)
 
-
 **Q101: Log_Availability_During_Incidents**
 
 - **Question:** Are logs readily available to CSIRT during incidents?
@@ -1962,7 +1820,6 @@ For each role, document:
   - Request to IT Ops (slower, dependency)
 - **Best Practice:** CSIRT has direct access to SIEM or centralized logging platform
 
-
 **Q102: Log_Retention_Adequate**
 
 - **Question:** Is log retention adequate for incident investigation?
@@ -1972,7 +1829,6 @@ For each role, document:
   - Best Practice: 12 months (enables historical analysis, detection of long-dwell-time threats)
   - Regulatory: GDPR breach investigation may require access to logs >90 days prior
 - **Risk:** Short retention → Cannot investigate incidents discovered late (e.g., breach discovered 6 months after occurrence)
-
 
 ---
 
@@ -1988,7 +1844,6 @@ For each role, document:
   - Monitoring data feeds incident investigation
 - **Evidence:** Cross-reference ISMS-IMP-A.8.16 (Monitoring Assessment)
 
-
 **Q104: Alert_to_Incident_Workflow**
 
 - **Question:** Is there a defined workflow from security alert to incident declaration?
@@ -2002,7 +1857,6 @@ For each role, document:
 
 - **Evidence:** Workflow diagram, SOC procedures, SIEM integration documentation
 
-
 **Q105: False_Positive_Rate_Tracking**
 
 - **Question:** Is the false positive rate from monitoring tracked?
@@ -2014,7 +1868,6 @@ For each role, document:
   - Wasted investigation time
   - True incidents missed in noise
 - **Remediation:** Tune SIEM rules, improve detection logic, add context/enrichment
-
 
 ---
 
@@ -2032,7 +1885,6 @@ For each role, document:
   - Web form or internal portal
 - **Best Practice:** Multiple channels (email + helpdesk) for accessibility
 
-
 **Q107: User_Reports_Integrated_Ticketing**
 
 - **Question:** Are user-reported events integrated into incident ticketing system?
@@ -2041,7 +1893,6 @@ For each role, document:
   - User reports phishing email → Email to security@example.com → Creates ticket automatically → Assigned to SOC
   - Alternative: Helpdesk ticket → Triaged by helpdesk → Escalated to CSIRT if security incident
 - **Risk:** Manual handoff = delays, missed reports
-
 
 **Q108: User_Reporting_Awareness**
 
@@ -2054,7 +1905,6 @@ For each role, document:
   - New hire onboarding
 - **Metric:** User reporting rate (# user reports per month)
 - **Goal:** Increase user reporting (users are the "human IDS")
-
 
 ---
 
@@ -2070,7 +1920,6 @@ For each role, document:
   - CSIRT involved in BC/DR exercises
 - **Evidence:** Cross-reference ISMS-POL-A.5.29-30, BC/DR plan
 
-
 **Q110: Incident_BCDR_Trigger_Criteria**
 
 - **Question:** Are criteria defined for when an incident triggers BC/DR activation?
@@ -2080,7 +1929,6 @@ For each role, document:
   - Data center outage (natural disaster, power failure)
   - Prolonged service unavailability (>4 hours for critical systems)
 - **Evidence:** BC/DR activation criteria document, escalation matrix
-
 
 **Q111: CSIRT_Role_in_BCDR**
 
@@ -2093,7 +1941,6 @@ For each role, document:
   - Support recovery (ensure systems restored securely, not re-infected)
 - **BC/DR Team Focus:** Business continuity, service restoration, customer communication
 - **Collaboration:** CSIRT (technical security) + BC/DR Team (business continuity)
-
 
 ---
 
@@ -2113,7 +1960,6 @@ For each role, document:
   - Coordination and communication
   - Evidence collection (if third party provides logs, forensics)
 
-
 **Q113: MSSP_SLA_Defined**
 
 - **Question:** (If MSSP/outsourced SOC) Are SLAs defined for incident detection and escalation?
@@ -2125,7 +1971,6 @@ For each role, document:
   - Communication protocols (phone, email, portal)
 - **Evidence:** MSSP contract, SLA document
 
-
 **Q114: Supplier_Incident_Notification_Process**
 
 - **Question:** Do suppliers know how to report security incidents to [Organization]?
@@ -2135,7 +1980,6 @@ For each role, document:
   - Notification timeline (within 24 hours)
   - Contact: [Organization] Security Team (security@example.com)
 - **Evidence:** Supplier contracts, supplier security requirements
-
 
 ---
 
@@ -2156,7 +2000,6 @@ For each role, document:
   - How to notify Legal (immediate phone call for Critical, email for lower severity)
   - Legal's role (breach notification decision, communication approval, evidence handling)
 
-
 **Q116: DPO_Integration**
 
 - **Question:** (If GDPR applicable) Is the Data Protection Officer (DPO) integrated into incident management?
@@ -2166,7 +2009,6 @@ For each role, document:
   - Makes breach notification decision (Art. 33 assessment)
   - Coordinates with supervisory authority
 - **Evidence:** DPO role description, incident procedures referencing DPO
-
 
 **Q117: Law_Enforcement_Coordination**
 
@@ -2179,7 +2021,6 @@ For each role, document:
   - Legal considerations (jurisdiction, evidence admissibility)
 - **Best Practice:** Establish relationship with law enforcement proactively (before incident)
 - **Evidence:** Law enforcement contact list, coordination procedures
-
 
 ---
 
@@ -2201,7 +2042,6 @@ For each role, document:
 - **High:** Significant gap, should remediate within 3 months
 - **Medium:** Moderate gap, remediate within 6-12 months
 - **Low:** Minor gap, address when feasible
-
 
 **Prioritization Criteria:**
 1. **Regulatory Compliance:** GDPR, PCI DSS, sector-specific requirements
@@ -2238,7 +2078,6 @@ For each role, document:
 - Metrics Report
 - Other
 
-
 ---
 
 ## Sheet 9: Dashboard
@@ -2257,7 +2096,6 @@ For each role, document:
   - **Level 4 (Managed):** Measured, monitored, data-driven decisions (76-90%)
   - **Level 5 (Optimizing):** Continuous improvement, industry-leading (91-100%)
 
-
 **B. Domain Scores**
 
 - Governance Compliance: [%]
@@ -2265,7 +2103,6 @@ For each role, document:
 - Training Effectiveness: [%]
 - Tool Capabilities: [%]
 - Integration Completeness: [%]
-
 
 **C. Key Metrics**
 
@@ -2276,11 +2113,9 @@ For each role, document:
 - Tool Count: [#]
 - Critical Gaps: [#]
 
-
 **D. Top 10 Gaps**
 
 - Gap prioritization table (from Gap Analysis sheet)
-
 
 ---
 
@@ -2302,7 +2137,6 @@ Assessment Status: [Draft / Under Review / Approved]
 - [Summary of critical gaps]
 - [Remediation priority]
 
-
 **Approval Workflow:**
 
 | Role | Name | Date | Signature | Status |
@@ -2323,13 +2157,11 @@ Assessment Status: [Draft / Under Review / Approved]
 - Export policy version history
 - Policy review meeting minutes
 
-
 **Regulatory Procedures:**
 
 - GDPR breach notification template (screenshot)
 - PCI DSS incident reporting procedure (export)
 - Contact lists (redact personal info if needed)
-
 
 ## Organizational Structure Evidence
 
@@ -2339,18 +2171,15 @@ Assessment Status: [Draft / Under Review / Approved]
 - Show CSIRT reporting line to CISO
 - Annotate with names and roles
 
-
 **Job Descriptions:**
 
 - Collect for key incident response roles
 - Highlight incident response responsibilities
 
-
 **RACI Matrix:**
 
 - Export or screenshot
 - Verify with stakeholders before submitting
-
 
 ## Training Evidence
 
@@ -2360,13 +2189,11 @@ Assessment Status: [Draft / Under Review / Approved]
 - Certificates (e.g., SANS certifications)
 - Exercise reports (tabletop after-action reports)
 
-
 **Exercise Scenarios:**
 
 - Tabletop scenario documents
 - Participant lists
 - Lessons learned documentation
-
 
 ## Tools Evidence
 
@@ -2375,20 +2202,17 @@ Assessment Status: [Draft / Under Review / Approved]
 - List of incident response tools (name, version, purpose)
 - Tool integration diagram (how tools connect)
 
-
 **Tool Screenshots:**
 
 - Incident ticketing system (ticket example, dashboard)
 - SIEM (alert rule example, log search)
 - Forensic workstation (tool installation, write blocker)
 
-
 **Configuration Evidence:**
 
 - SIEM log source count (screenshot)
 - Playbook list (SOAR platform)
 - Threat intel feed configuration
-
 
 ## Integration Evidence
 
@@ -2398,12 +2222,10 @@ Assessment Status: [Draft / Under Review / Approved]
 - ISMS-IMP-A.8.16 assessment results (monitoring)
 - BC/DR plan excerpts showing CSIRT integration
 
-
 **SLA Documents:**
 
 - MSSP contract excerpts (SLA pages)
 - Supplier security requirements (incident notification clause)
-
 
 ---
 
@@ -2461,13 +2283,11 @@ Assessment Status: [Draft / Under Review / Approved]
 - Day 3-4: Stakeholder interviews (CSIRT, Legal, HR, IT Ops)
 - Day 5: Evidence collection (screenshots, exports)
 
-
 **Week 2:**
 
 - Day 6-8: Assessment completion (Sheets 2-6)
 - Day 9: Gap analysis (Sheet 7)
 - Day 10: Evidence register (Sheet 8)
-
 
 **Week 3:**
 
@@ -2475,13 +2295,11 @@ Assessment Status: [Draft / Under Review / Approved]
 - Day 12-13: Quality review (self-assessment, peer review)
 - Day 14: Submit for CISO approval
 
-
 **Week 4:**
 
 - Day 15-18: CISO review and feedback
 - Day 19: Revisions (if needed)
 - Day 20: Final approval and filing
-
 
 **Total:** 4 weeks (part-time effort) or 2 weeks (dedicated full-time effort)
 
@@ -2497,13 +2315,11 @@ Assessment Status: [Draft / Under Review / Approved]
 - Verify evidence completeness
 - Check calculations (scoring, percentages)
 
-
 **Step 2: Peer Review (CSIRT Team)**
 
 - Present findings to CSIRT team
 - Validate accuracy (do they agree with assessment?)
 - Refine gap priorities based on team input
-
 
 **Step 3: Management Review (CISO)**
 
@@ -2511,13 +2327,11 @@ Assessment Status: [Draft / Under Review / Approved]
 - Brief CISO on findings (strengths, gaps, recommendations)
 - Request approval and remediation budget (if needed)
 
-
 **Step 4: Final Approval & Documentation**
 
 - CISO signs approval
 - File assessment in ISMS document repository
 - Schedule next review (12 months from approval date)
-
 
 ## Gap Remediation Planning
 
@@ -2530,14 +2344,12 @@ Assessment Status: [Draft / Under Review / Approved]
 - Allocate budget/resources
 - Track progress (project management tool, monthly reviews)
 
-
 **Quick Wins (0-3 months):**
 
 - Document RACI matrix
 - Update contact lists
 - Schedule next tabletop exercise
 - Fix tool integration issues
-
 
 **Medium-Term (3-6 months):**
 
@@ -2546,14 +2358,12 @@ Assessment Status: [Draft / Under Review / Approved]
 - Implement SIEM integration
 - Hire additional CSIRT staff (if budget approved)
 
-
 **Long-Term (6-12 months):**
 
 - Deploy SOAR platform
 - Establish forensic lab
 - Achieve certifications (CSIRT members)
 - Mature to next maturity level
-
 
 ## Continuous Improvement
 
@@ -2565,14 +2375,12 @@ Assessment Status: [Draft / Under Review / Approved]
 - Audit findings (ISO 27001 audit identifies gaps)
 - Regulatory changes (new requirements)
 
-
 **Continuous Monitoring:**
 
 - Track CSIRT performance metrics monthly
 - Review gap remediation progress quarterly
 - Update assessment as improvements implemented
 - Celebrate wins (maturity level increases, gaps closed)
-
 
 ---
 
@@ -2601,14 +2409,12 @@ Assessment Status: [Draft / Under Review / Approved]
 - Row 2: Subtitle - "ISO/IEC 27001:2022 - Control A.5.24: Planning and Preparation"
 - Row 3: Empty (spacing)
 
-
 **Styling:**
 
 - Background: Dark blue (RGB 0, 51, 102 or #003366)
 - Font: White, Bold, 18pt (Title), 14pt (Subtitle)
 - Alignment: Center, Middle
 - Row Height: 40px (Title), 30px (Subtitle)
-
 
 ## Document Information Block (Rows 5-15)
 
@@ -2629,7 +2435,6 @@ Row 13: Next Review Date:     [AUTO-CALCULATE: Assessment Date + 12 months]
 - Column A: 25 (label)
 - Column B: 50 (value)
 
-
 ## Assessment Scope (Rows 17-30)
 
 **Section Title (Row 17):** "Assessment Scope"
@@ -2637,13 +2442,11 @@ Row 13: Next Review Date:     [AUTO-CALCULATE: Assessment Date + 12 months]
 - Font: Bold, 14pt
 - Background: Light blue (RGB 200, 220, 240)
 
-
 **Scope Description (Rows 18-30):**
 
 - Multi-line text explaining what's included/excluded in this assessment
 - Wrap text enabled
 - Bullet points for included items (✅) and excluded items (❌)
-
 
 ## Color Legend (Rows 32-40)
 
@@ -2667,7 +2470,6 @@ Row 13: Next Review Date:     [AUTO-CALCULATE: Assessment Date + 12 months]
 - Critical / High / Medium / Low
 - Implemented / Partial / Not Implemented
 - [Role-specific dropdowns listed]
-
 
 ## Freeze Panes
 
@@ -2697,7 +2499,6 @@ Row 13: Next Review Date:     [AUTO-CALCULATE: Assessment Date + 12 months]
 - Alignment: Center, Middle
 - Text wrap: Enabled
 
-
 ## Data Rows (Rows 5-29, 25 questions)
 
 **Question Data Validation:**
@@ -2709,7 +2510,6 @@ Q1 (Policy_Exists): Dropdown
 - Input Message: "Does a documented incident management policy exist?"
 - Error Alert: "Please select from dropdown list"
 
-
 Q2 (Policy_Approval_Date): Date
 
 - Cell: D6
@@ -2717,25 +2517,21 @@ Q2 (Policy_Approval_Date): Date
 - Data Validation: Date, ≤ TODAY()
 - Conditional Formatting: If >730 days old (2 years), background light red
 
-
 Q3 (Policy_Owner): Text
 
 - Cell: D7
 - Input Message: "Name and title of policy owner (typically CISO)"
-
 
 Q4 (Policy_Review_Frequency): Dropdown
 
 - List: Annually, Bi-Annually, Quarterly, Ad-Hoc, Not Defined
 - Cell: D8
 
-
 Q5 (Last_Policy_Review_Date): Date
 
 - Cell: D9
 - Format: DD.MM.YYYY
 - Conditional Formatting: If > 365 days old, background light red
-
 
 [Continue pattern for Q6-Q25]
 
@@ -2747,12 +2543,10 @@ Q5 (Last_Policy_Review_Date): Date
 - Condition: Cell Value = "No"
 - Format: Background light red (255, 200, 200)
 
-
 **Rule 2: Highlight "Partial" Answers (Medium Risk)**
 
 - Condition: Cell Value = "Partial" OR "Yes - Partial" OR "Informal"
 - Format: Background light yellow (255, 255, 200)
-
 
 **Rule 3: Highlight Overdue Dates**
 
@@ -2760,12 +2554,10 @@ Q5 (Last_Policy_Review_Date): Date
 - Condition: Value < TODAY() - 365
 - Format: Background light red + Bold red text
 
-
 **Gap_Identified Column (Column G):**
 
 - Formula: `=IF(OR(D5="No", D5="Partial", D5="Informal"), "Yes", "No")`
 - Conditional Formatting: If "Yes", background light red
-
 
 ## Section Headers (Within Rows)
 
@@ -2777,7 +2569,6 @@ Insert blank rows with section headers:
 - Row 22: "Section D: Regulatory Compliance"
 - Row 27: "Section E: Exception Management"
 - Row 29: "Section F: Policy Governance"
-
 
 ---
 
@@ -2796,17 +2587,14 @@ Q26 (Incident_Response_Model): Dropdown
 - List: Dedicated CSIRT, Virtual CSIRT, Hybrid, Outsourced SOC/MSSP, Coordinated
 - Cell: D5
 
-
 Q27 (CSIRT_Establishment_Date): Date
 
 - Format: MM.YYYY
 - Conditional Formatting: Calculate age, color-code maturity
 
-
 Q28 (CSIRT_Coverage): Dropdown
 
 - List: 24/7/365, Business Hours Only, Extended Hours, On-Call Rotation
-
 
 Q29 (CSIRT_Staffing_Level): Number
 
@@ -2816,11 +2604,9 @@ Q29 (CSIRT_Staffing_Level): Number
   - 2-5 FTE: Yellow (adequate for small org)
   - >5 FTE: Green (well-staffed)
 
-
 Q30 (CSIRT_Reporting_Structure): Text
 
 - Input Message: "Title/Department (e.g., CISO, CIO, COO)"
-
 
 **Section B: Role Definitions (Q31-Q45, 15 roles)**
 
@@ -2831,14 +2617,12 @@ For each role (4 columns per role):
 - Assigned_To: Text (Name or "Vacant")
 - RACI_Clarity: Dropdown (Clear, Unclear, Not Documented)
 
-
 Example for Q31 (Incident_Manager):
 
 - D11 (Role_Exists): Dropdown (Yes / No)
 - E11 (Role_Definition): Text
 - F11 (Assigned_To): Text
 - G11 (RACI_Clarity): Dropdown
-
 
 [Repeat for 15 roles: Q31-Q45]
 
@@ -3001,7 +2785,6 @@ Same structure.
 - Third-Party Coordination (Q112-Q114)
 - Legal & Regulatory (Q115-Q117)
 
-
 Each question follows dropdown or text pattern as defined in Part I.
 
 ---
@@ -3030,16 +2813,13 @@ Each question follows dropdown or text pattern as defined in Part I.
 - Format: GAP-001, GAP-002, etc.
 - Auto-populate: `="GAP-" & TEXT(ROW()-4, "000")`
 
-
 **Assessment_Section:** Dropdown
 
 - List: Governance, Structure, Training, Tools, Integration
 
-
 **Gap_Description:** Text
 
 - Wrap text enabled
-
 
 **Risk_Level:** Dropdown
 
@@ -3050,13 +2830,11 @@ Each question follows dropdown or text pattern as defined in Part I.
   - Medium: Yellow background
   - Low: Green background
 
-
 **Current_State, Target_State:** Text
 
 **Remediation_Action:** Text
 
 - Wrap text enabled
-
 
 **Owner:** Text
 
@@ -3065,11 +2843,9 @@ Each question follows dropdown or text pattern as defined in Part I.
 - Format: DD.MM.YYYY
 - Conditional Formatting: If past due, red text
 
-
 **Status:** Dropdown
 
 - List: Open, In Progress, Resolved, Accepted (risk acceptance)
-
 
 ## Gap Summary (Rows 70-80)
 
@@ -3114,11 +2890,9 @@ Row 79: Accepted:       =COUNTIF(J5:J64, "Accepted")
 - Format: EV-001, EV-002, etc.
 - Auto-populate: `="EV-" & TEXT(ROW()-4, "000")`
 
-
 **Evidence_Type:** Dropdown
 
 - List: Policy Document, Procedure, Org Chart, Job Description, RACI Matrix, Training Record, Exercise Report, Tool Screenshot, Contract/SLA, Metrics Report, Other
-
 
 **Description:** Text
 
@@ -3126,11 +2900,9 @@ Row 79: Accepted:       =COUNTIF(J5:J64, "Accepted")
 
 - List: Governance, Structure, Training, Tools, Integration, Multiple
 
-
 **Storage_Location:** Text
 
 - Format: Filepath or URL
-
 
 **Date_Collected:** Date
 
@@ -3140,7 +2912,6 @@ Row 79: Accepted:       =COUNTIF(J5:J64, "Accepted")
 
 - List: Verified, Pending, Needs Review
 - Conditional Formatting: Verified = green, Pending = yellow
-
 
 ---
 
@@ -3198,7 +2969,6 @@ Table format:
 - Yellow: Score 70-90% of Target
 - Red: Score < 70% of Target
 
-
 ## Key Metrics (Rows 35-50)
 
 ```
@@ -3217,7 +2987,6 @@ Extract top 10 gaps by Risk_Level from Sheet 7:
 
 - Sort by: Critical > High > Medium > Low
 - Display: Gap_Description, Risk_Level, Owner, Target_Date
-
 
 **Formula (using FILTER or manual reference):**
 ```excel
@@ -3257,12 +3026,10 @@ Key Findings:
 - Assessor: Submitted / Pending
 - Reviewer: Approved / Revisions Required
 
-
 **Conditional Formatting:**
 
 - Approved: Green highlight
 - Revisions Required: Yellow highlight
-
 
 ---
 
@@ -3276,13 +3043,11 @@ Key Findings:
 - Border: Thin black
 - Protection: Unlocked
 
-
 **Calculated Cells:**
 
 - Background: Light green (200, 240, 200)
 - Border: Thin black
 - Protection: Locked
-
 
 **Headers:**
 
@@ -3291,13 +3056,11 @@ Key Findings:
 - Border: White lines
 - Alignment: Center, Middle
 
-
 **Section Headers:**
 
 - Background: Light blue (200, 220, 240)
 - Font: Bold, 12pt
 - Merge cells across row
-
 
 **Conditional Formatting Colors:**
 
@@ -3305,7 +3068,6 @@ Key Findings:
 - Yellow (Warning): RGB 255, 255, 200
 - Green (Good): RGB 200, 240, 200
 - Orange (Medium): RGB 255, 220, 180
-
 
 ---
 
@@ -3327,7 +3089,6 @@ Column D: [Other dropdown lists as needed]
 - Define name "YesNoPartial" for Lists!A:A
 - Define name "RiskLevels" for Lists!B:B
 - etc.
-
 
 **Data Validation Formula:**
 ```excel
@@ -3358,19 +3119,16 @@ Column D: [Other dropdown lists as needed]
 - Allow: Select unlocked cells, Format cells (locked and unlocked)
 - Disallow: Insert/delete rows, columns
 
-
 **Unlocked Cells:**
 
 - All yellow (user input) cells
 - Evidence Register description cells
-
 
 **Locked Cells:**
 
 - All calculated cells
 - Headers and labels
 - Instructions
-
 
 ---
 
@@ -3423,13 +3181,11 @@ Next Review Date (Sheet10):
 - Cell Protection
 - Basic formulas (IF, COUNTIF, COUNTA, FILTER if available)
 
-
 **Compatibility Notes:**
 
 - FILTER function (Excel 365): Provide alternative for Excel 2016 (manual reference or VBA)
 - Conditional Formatting: Test in Excel 2016 to ensure compatibility
 - No Power Query or Pivot Tables used (keep simple for broad compatibility)
-
 
 ---
 
@@ -3441,7 +3197,6 @@ Next Review Date (Sheet10):
 
 - `openpyxl` (Excel file creation and manipulation)
 - `datetime` (date handling)
-
 
 **Script Structure:**
 1. Create workbook

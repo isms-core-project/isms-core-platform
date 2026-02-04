@@ -49,7 +49,6 @@ This guidance covers implementation security for:
 - **SNMP** (Simple Network Management Protocol): Network management
 - **Syslog**: Centralized logging
 
-
 ## Target Audience
 
 - Network services administrators
@@ -57,14 +56,12 @@ This guidance covers implementation security for:
 - ISMS implementation teams
 - Service owners responsible for network infrastructure
 
-
 ## Prerequisites
 
 - Administrative access to network services
 - Understanding of service architecture (authoritative vs. recursive, centralized vs. distributed)
 - Configuration backup capabilities
 - Testing environment (recommended for validation before production deployment)
-
 
 ---
 
@@ -283,7 +280,6 @@ sudo tcpdump -i eth0 -n port 67 or port 68
 # /etc/ntp.keys
 
 1 M a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6
-
 
 # /etc/ntp.conf (server)
 keys /etc/ntp.keys
@@ -613,19 +609,16 @@ grep "Failed password" /var/log/auth.log | awk '{print $11}' | sort | uniq -c | 
 - Services run on network devices discovered in IMP-S1
 - Service configurations align with device hardening (IMP-S3)
 
-
 ## Integration with A.8.22 (Network Segregation)
 
 - Services deployed in appropriate security zones
 - Inter-zone service access controlled by firewalls
-
 
 ## Integration with Other Controls
 
 - **A.8.15 (Logging)**: All services must log
 - **A.8.16 (Monitoring)**: Services monitored for availability
 - **A.8.8 (Vulnerability Management)**: Services patched regularly
-
 
 ## Security Testing Matrix
 
@@ -654,48 +647,40 @@ grep "Failed password" /var/log/auth.log | awk '{print $11}' | sort | uniq -c | 
 - **DNSSEC validation failures** → Verify DS record published, check clock sync
 - **Split DNS misconfiguration** → Verify forwarders in internal view
 
-
 ## DHCP
 
 - **IP exhaustion** → Monitor utilization, increase scope size
 - **Rogue DHCP not detected** → Enable DHCP snooping on all switches
-
 
 ## NTP
 
 - **Time drift** → Ensure redundant NTP servers, verify connectivity
 - **Authentication failures** → Check key ID matches, verify key value identical
 
-
 ## Proxy
 
 - **SSL inspection breaks apps** → Exempt pinned domains, deploy proxy CA
 - **Users bypass proxy** → Implement firewall rules, transparent proxy
-
 
 ## Load Balancer
 
 - **False health check failures** → Adjust intervals/thresholds
 - **SSL/TLS grade low** → Update cipher suites, disable TLS 1.0/1.1
 
-
 ## AAA
 
 - **RADIUS auth fails** → Verify shared secret, check LDAP integration
 - **TACACS+ authorization inconsistent** → Review tac_plus.conf syntax
-
 
 ## SNMP
 
 - **SNMPv3 auth failures** → Verify username, auth password, priv password
 - **v1/v2c still enabled** → Explicitly disable community strings
 
-
 ## Syslog
 
 - **Logs not reaching server** → Check firewall allows port, verify rsyslog running
 - **TLS connection fails** → Verify certificates valid, CA deployed
-
 
 ---
 
@@ -710,14 +695,12 @@ Each service must have:
 - Service owner/responsible team
 - Integration dependencies
 
-
 ## Configuration Documentation
 
 - Security configuration details
 - Configuration backup location/schedule
 - Configuration baseline
 - Change management process
-
 
 ## Access Credentials
 
@@ -726,7 +709,6 @@ Each service must have:
 - Certificate information (issuer, expiry)
 - Credential rotation schedule
 
-
 ## Monitoring Documentation
 
 - Health check configuration
@@ -734,13 +716,11 @@ Each service must have:
 - Performance baselines
 - Monitoring tool integration
 
-
 ## Backup and Recovery
 
 - Configuration backup procedures
 - Service recovery procedures
 - RTO/RPO
-
 
 ---
 
@@ -757,13 +737,11 @@ Each service must have:
 - **SNMP**: Query volume, auth failures
 - **Syslog**: Log volume, disk utilization, TLS failures
 
-
 ## Review Schedule
 
 - **Quarterly**: Review security configs, update threat intelligence
 - **Annually**: Review architecture, update documentation
 - **After incidents**: Root cause analysis, update procedures
-
 
 ---
 
@@ -830,7 +808,6 @@ This guidance covers implementation security for:
 - **SNMP** (Simple Network Management Protocol): Network management
 - **Syslog**: Centralized logging
 
-
 ## Target Audience
 
 - Network services administrators
@@ -838,14 +815,12 @@ This guidance covers implementation security for:
 - ISMS implementation teams
 - Service owners responsible for network infrastructure
 
-
 ## Prerequisites
 
 - Administrative access to network services
 - Understanding of service architecture (authoritative vs. recursive, centralized vs. distributed)
 - Configuration backup capabilities
 - Testing environment (recommended for validation before production deployment)
-
 
 ---
 
@@ -1064,7 +1039,6 @@ sudo tcpdump -i eth0 -n port 67 or port 68
 # /etc/ntp.keys
 
 1 M a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6
-
 
 # /etc/ntp.conf (server)
 keys /etc/ntp.keys
@@ -1394,19 +1368,16 @@ grep "Failed password" /var/log/auth.log | awk '{print $11}' | sort | uniq -c | 
 - Services run on network devices discovered in IMP-S1
 - Service configurations align with device hardening (IMP-S3)
 
-
 ## Integration with A.8.22 (Network Segregation)
 
 - Services deployed in appropriate security zones
 - Inter-zone service access controlled by firewalls
-
 
 ## Integration with Other Controls
 
 - **A.8.15 (Logging)**: All services must log
 - **A.8.16 (Monitoring)**: Services monitored for availability
 - **A.8.8 (Vulnerability Management)**: Services patched regularly
-
 
 ## Security Testing Matrix
 
@@ -1435,48 +1406,40 @@ grep "Failed password" /var/log/auth.log | awk '{print $11}' | sort | uniq -c | 
 - **DNSSEC validation failures** → Verify DS record published, check clock sync
 - **Split DNS misconfiguration** → Verify forwarders in internal view
 
-
 ## DHCP
 
 - **IP exhaustion** → Monitor utilization, increase scope size
 - **Rogue DHCP not detected** → Enable DHCP snooping on all switches
-
 
 ## NTP
 
 - **Time drift** → Ensure redundant NTP servers, verify connectivity
 - **Authentication failures** → Check key ID matches, verify key value identical
 
-
 ## Proxy
 
 - **SSL inspection breaks apps** → Exempt pinned domains, deploy proxy CA
 - **Users bypass proxy** → Implement firewall rules, transparent proxy
-
 
 ## Load Balancer
 
 - **False health check failures** → Adjust intervals/thresholds
 - **SSL/TLS grade low** → Update cipher suites, disable TLS 1.0/1.1
 
-
 ## AAA
 
 - **RADIUS auth fails** → Verify shared secret, check LDAP integration
 - **TACACS+ authorization inconsistent** → Review tac_plus.conf syntax
-
 
 ## SNMP
 
 - **SNMPv3 auth failures** → Verify username, auth password, priv password
 - **v1/v2c still enabled** → Explicitly disable community strings
 
-
 ## Syslog
 
 - **Logs not reaching server** → Check firewall allows port, verify rsyslog running
 - **TLS connection fails** → Verify certificates valid, CA deployed
-
 
 ---
 
@@ -1491,14 +1454,12 @@ Each service must have:
 - Service owner/responsible team
 - Integration dependencies
 
-
 ## Configuration Documentation
 
 - Security configuration details
 - Configuration backup location/schedule
 - Configuration baseline
 - Change management process
-
 
 ## Access Credentials
 
@@ -1507,7 +1468,6 @@ Each service must have:
 - Certificate information (issuer, expiry)
 - Credential rotation schedule
 
-
 ## Monitoring Documentation
 
 - Health check configuration
@@ -1515,13 +1475,11 @@ Each service must have:
 - Performance baselines
 - Monitoring tool integration
 
-
 ## Backup and Recovery
 
 - Configuration backup procedures
 - Service recovery procedures
 - RTO/RPO
-
 
 ---
 
@@ -1538,13 +1496,11 @@ Each service must have:
 - **SNMP**: Query volume, auth failures
 - **Syslog**: Log volume, disk utilization, TLS failures
 
-
 ## Review Schedule
 
 - **Quarterly**: Review security configs, update threat intelligence
 - **Annually**: Review architecture, update documentation
 - **After incidents**: Root cause analysis, update procedures
-
 
 ---
 

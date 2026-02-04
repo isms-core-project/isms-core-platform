@@ -44,12 +44,10 @@ This document consists of two parts:
   - Cell Styling Reference
   - Formula Specifications
 
-
 **Target Audiences:**
 
 - **Part I:** Assessment users (Repository Owners, Security Team, IT Operations)
 - **Part II:** Workbook developers (Python/Excel script maintainers)
-
 
 ---
 
@@ -76,7 +74,6 @@ This assessment documents source code repository ACCESS CONTROL - WHO has access
 - Are quarterly access reviews being completed?
 - Is access being removed when people leave?
 
-
 #### Key Principle
 
 This assessment is **completely technology-agnostic and platform-independent**. You document YOUR specific repository platforms (GitHub, GitLab, Bitbucket, Azure DevOps, self-hosted Git, SVN, Perforce, whatever), and verify access controls against generic policy requirements.
@@ -87,14 +84,12 @@ This assessment is **completely technology-agnostic and platform-independent**. 
 - Code quality or secure coding (covered in A.8.25-26-29)
 - Backup/recovery procedures (covered in policy)
 
-
 **This IS about:**
 
 - Repository inventory (do we know what repos exist?)
 - User access management (who can access what?)
 - Access appropriateness (should they have that access?)
 - Access lifecycle (request → approval → provision → review → deprovision)
-
 
 #### What You'll Document
 
@@ -108,7 +103,6 @@ This assessment is **completely technology-agnostic and platform-independent**. 
 - **Compliance Scoring**: Overall access control compliance metrics
 - **Gaps**: Identified issues and remediation plans
 - **Evidence**: Supporting documentation for audit
-
 
 #### How This Relates to Other A.8.4 Assessments
 
@@ -138,12 +132,10 @@ This assessment (A.8.4.1) focuses specifically on ACCESS MANAGEMENT. Complete th
 - Understanding of least privilege principle
 - Ability to identify appropriate vs. excessive access
 
-
 #### Time Commitment
 
 - **Initial assessment:** 8-12 hours (gather data from all platforms)
 - **Quarterly updates:** 2-4 hours (update access matrix, conduct reviews)
-
 
 ### Expected Outputs
 
@@ -176,14 +168,12 @@ Before starting this assessment, gather:
 - **Audit log access** for access change history
 - **User management console** access
 
-
 #### 2. Organizational Information
 
 - **Organization chart** showing teams and reporting structure
 - **Employee roster** with roles and departments
 - **Contractor list** with contract dates and assigned repositories
 - **HR termination list** (last 90 days) to verify deprovisioning
-
 
 #### 3. Documentation
 
@@ -193,14 +183,12 @@ Before starting this assessment, gather:
 - **NDA signature records** for personnel with code access
 - **Service account inventory** (CI/CD accounts, deployment tools)
 
-
 #### 4. Tools You'll Use
 
 - **Excel or compatible spreadsheet application**
 - **Repository platform admin console** (GitHub Settings, GitLab Admin, etc.)
 - **Command line tools** (GitHub CLI, GitLab CLI - optional but helpful)
 - **API scripts** (optional - for large organizations with 100+ repos)
-
 
 ### Common Data Sources
 
@@ -212,7 +200,6 @@ Before starting this assessment, gather:
 - GitHub CLI: `gh repo list <org> --limit 1000`
 - GitHub CLI: `gh api /orgs/<org>/repos` (API export)
 
-
 #### GitLab
 
 - Admin Area → Users (user list)
@@ -221,20 +208,17 @@ Before starting this assessment, gather:
 - GitLab CLI: `glab repo list`
 - GitLab API: `/api/v4/projects`
 
-
 #### Bitbucket
 
 - Workspace settings → Users and groups
 - Repository settings → User and group access
 - Bitbucket API: `/2.0/repositories/<workspace>`
 
-
 #### Azure DevOps
 
 - Organization Settings → Users
 - Project Settings → Repositories
 - Azure DevOps CLI: `az repos list`
-
 
 ### Skills Assessment
 
@@ -247,14 +231,12 @@ Before starting this assessment, gather:
 - [ ] Contact HR for termination records
 - [ ] Navigate Excel and create simple formulas
 
-
 **If you answered NO to any item**, get help from:
 
 - Platform administrator (for exports)
 - Repository owners (for ownership info)
 - Security team (for guidance on least privilege)
 - IT support (for Excel assistance)
-
 
 ---
 
@@ -303,7 +285,6 @@ Step 10: Obtain Approvals
 - HR termination notifications
 - Service account list
 
-
 #### Step 2: Create Repository Inventory (1-2 hours)
 
 **What to do:**
@@ -327,7 +308,6 @@ Step 10: Obtain Approvals
 - No duplicate entries
 - Every repository has an owner assigned
 - Classifications are appropriate
-
 
 #### Step 3: Build User Access Matrix (3-4 hours)
 
@@ -355,14 +335,12 @@ Step 10: Obtain Approvals
 - **Contractors past end date**: Should be marked 🕒 Expired
 - **Admin access without justification**: Should be marked ⚠️ Excessive
 
-
 **Quality check:**
 
 - Every user with access is documented
 - Access levels match platform reality (not assumptions)
 - Justifications are specific (not generic "needs access")
 - Status assessments are honest
-
 
 #### Step 4: Document Access Justifications (1-2 hours)
 
@@ -379,13 +357,11 @@ Step 10: Obtain Approvals
    - Approval date
    - Ticket/email reference
 
-
 **Missing approvals:**
 
 - Flag as gap in Gap_Analysis sheet
 - Work with repository owners to document retroactive justification
 - For critical repositories, escalate to CISO
-
 
 #### Step 5: Conduct Access Review (1-2 hours)
 
@@ -409,7 +385,6 @@ Step 10: Obtain Approvals
    - Actions taken (access reduced, removed)
    - Completion date
 
-
 #### Step 6: Verify Deprovisioning (1 hour)
 
 **What to do:**
@@ -430,13 +405,11 @@ Step 10: Obtain Approvals
    - Removal verification date
    - Compliant timeline? (✅ Yes if <24 hours, ❌ No if >24 hours)
 
-
 **Red flags:**
 
 - Terminated employee still has access (major gap)
 - Access removed >24 hours after termination
 - No documentation of removal
-
 
 #### Step 7: Calculate Compliance (automated)
 
@@ -450,13 +423,11 @@ Step 10: Obtain Approvals
   - Deprovisioning SLA compliance (≥95% target)
   - **Overall Score** (weighted average)
 
-
 **What you do:**
 
 - Review calculated scores
 - Understand what's driving low scores
 - Plan remediation if score <85%
-
 
 #### Step 8: Identify Gaps (1-2 hours)
 
@@ -480,7 +451,6 @@ Step 10: Obtain Approvals
 - External contractors with admin access
 - No access reviews completed in 90+ days
 - Multiple orphaned accounts
-
 
 #### Step 9: Collect Evidence (1 hour)
 
@@ -532,7 +502,6 @@ Step 10: Obtain Approvals
 - Gaps are documented with remediation plans
 - Evidence is collected and organized
 
-
 ---
 
 ## Completing Each Sheet
@@ -553,7 +522,6 @@ Complete this sheet FIRST - you need the repository inventory before assessing a
 - Bitbucket: Settings → Export projects
 - Azure DevOps: Project Settings → Repositories → Export
 
-
 **Option 2: API/CLI Export (Recommended for >50 repos)**
 ```bash
 # GitHub
@@ -571,7 +539,6 @@ az repos list --organization https://dev.azure.com/myorg --output table > azdo_r
 - Navigate to each platform
 - List repositories manually in spreadsheet
 
-
 #### Completing the Columns
 
 **Column A - Repository Name**: Exact name as it appears in platform
@@ -580,18 +547,15 @@ az repos list --organization https://dev.azure.com/myorg --output table > azdo_r
 - Use lowercase with hyphens (common convention)
 - **Avoid:** Typos, abbreviations, nicknames
 
-
 **Column B - Platform**: Where repository is hosted
 
 - Dropdown: GitHub Cloud, GitHub Enterprise, GitLab SaaS, GitLab Self-Hosted, Bitbucket Cloud, Bitbucket Server, Azure DevOps, AWS CodeCommit, Other
 - **Tip:** If you have multiple GitHub orgs, specify which org
 
-
 **Column C - Repository URL**: Full HTTPS URL to repository
 
 - Example: `https://github.com/myorg/backend-api`
 - **Why:** Auditors need direct link to verify existence
-
 
 **Column D - Repository Owner**: Person accountable for this repository
 
@@ -599,7 +563,6 @@ az repos list --organization https://dev.azure.com/myorg --output table > azdo_r
 - **Not:** Generic "Dev Team" - need specific person
 - **Who:** Usually tech lead, product owner, or architect
 - **Role:** Approves access requests, conducts reviews
-
 
 **Column E - Classification**: Repository sensitivity level
 
@@ -610,19 +573,16 @@ az repos list --organization https://dev.azure.com/myorg --output table > azdo_r
 - **Archived:** No longer actively developed
 - **Tip:** When in doubt, classify as Production (safer)
 
-
 **Column F - Description**: Brief purpose of repository
 
 - Example: "Customer-facing REST API for order management"
 - **Good:** Specific, explains business purpose
 - **Bad:** "API" (too vague), "Code" (useless)
 
-
 **Column G - Primary Language**: Main programming language
 
 - Dropdown: JavaScript, Python, Java, C#, Go, Ruby, PHP, Other
 - **Why:** Helps identify repositories needing specific skills
-
 
 **Column H - Number of Contributors**: How many people commit code
 
@@ -630,13 +590,11 @@ az repos list --organization https://dev.azure.com/myorg --output table > azdo_r
 - **Source:** GitHub Insights, GitLab Contributors
 - **Why:** High contributor count = more access to review
 
-
 **Column I - Last Commit Date**: When was code last changed
 
 - Date format: YYYY-MM-DD
 - **Source:** Repository main branch last commit
 - **Why:** Identifies dead repositories that should be archived
-
 
 **Column J - Active Status**: Is repository actively developed?
 
@@ -646,13 +604,11 @@ az repos list --organization https://dev.azure.com/myorg --output table > azdo_r
 - **Archived:** No commits in 180+ days
 - **Unknown:** Can't determine (investigate)
 
-
 **Column K - Branch Protection Enabled**: Are protected branches configured?
 
 - Dropdown: ✅ Yes, ❌ No, N/A (single-person repo)
 - **Source:** Repository Settings → Branches → Protected branches
 - **Note:** Detailed branch protection assessed in IMP-S2
-
 
 **Column L - Secret Scanning Enabled**: Is automated secret detection active?
 
@@ -660,18 +616,15 @@ az repos list --organization https://dev.azure.com/myorg --output table > azdo_r
 - **Source:** Repository Settings → Security → Secret scanning
 - **Why:** Critical for preventing credential leaks
 
-
 **Column M - Backup Status**: Is repository backed up?
 
 - Dropdown: ✅ Yes, ❌ No, ❓ Unknown
 - **Source:** IT Operations backup documentation
 - **Why:** Disaster recovery requirement
 
-
 **Column N - Notes**: Any additional relevant information
 
 - Free text: Exceptions, special considerations, planned changes
-
 
 **Quality Checks:**
 
@@ -682,7 +635,6 @@ az repos list --organization https://dev.azure.com/myorg --output table > azdo_r
 - [ ] All URLs are valid (test a few randomly)
 - [ ] Active status matches last commit date
 - [ ] Backup status verified with IT Operations
-
 
 ---
 
@@ -715,7 +667,6 @@ glab api /projects/:id/members --paginate > project_members.json
 - List each user with their permission level
 - Consolidate into spreadsheet
 
-
 **Important:** This sheet can become VERY large (users × repositories). For organizations with 100+ users and 100+ repositories, consider breaking into multiple sheets by platform or team.
 
 #### Completing the Columns
@@ -726,19 +677,16 @@ glab api /projects/:id/members --paginate > project_members.json
 - **Exact match** to platform username
 - **Why:** Used for lookup and correlation
 
-
 **Column B - Full Name**: Employee's legal/preferred name
 
 - Example: John Smith
 - **Source:** HR system, Active Directory
 - **Why:** Auditors need to identify people
 
-
 **Column C - Email**: Primary work email
 
 - Example: john.smith@company.com
 - **Why:** Contact for access verification
-
 
 **Column D - Role/Title**: Job title or role
 
@@ -746,12 +694,10 @@ glab api /projects/:id/members --paginate > project_members.json
 - **Source:** HR system, org chart
 - **Why:** Helps justify access level
 
-
 **Column E - Department/Team**: Organizational unit
 
 - Example: Engineering - Platform Team
 - **Why:** Team-based access patterns
-
 
 **Column F - Employment Type**: Employment relationship
 
@@ -762,7 +708,6 @@ glab api /projects/:id/members --paginate > project_members.json
 - **Service Account:** CI/CD, automation, bots
 - **Third-Party:** Offshore teams, partner companies
 
-
 **Column G - Contract End Date** (for contractors): When contract expires
 
 - Date format: YYYY-MM-DD
@@ -770,12 +715,10 @@ glab api /projects/:id/members --paginate > project_members.json
 - **Critical:** Access should be removed on this date
 - Leave blank for employees (permanent access)
 
-
 **Column H - Repository Name**: Which repository does user access
 
 - **Must match** Sheet 1 Repository_Inventory Column A exactly
 - **Why:** Used for VLOOKUP formulas in compliance scoring
-
 
 **Column I - Access Level**: What permissions does user have
 
@@ -788,13 +731,11 @@ glab api /projects/:id/members --paginate > project_members.json
   - GitLab: Guest = Read, Reporter = Read, Developer = Write, Maintainer = Admin, Owner = Admin
   - Bitbucket: Read = Read, Write = Write, Admin = Admin
 
-
 **Column J - Access Grant Date**: When was access first granted
 
 - Date format: YYYY-MM-DD
 - **Source:** Approval ticket creation date, platform audit log
 - **If unknown:** Use estimate (better than blank)
-
 
 **Column K - Access Expiration Date** (if time-bound): When access should end
 
@@ -802,7 +743,6 @@ glab api /projects/:id/members --paginate > project_members.json
 - **For contractors:** Should match Column G (Contract End Date)
 - **For auditors:** Audit completion date + 7 days
 - **For employees:** Leave blank (permanent access)
-
 
 **Column L - Access Justification**: Why does user need this access
 
@@ -817,13 +757,11 @@ glab api /projects/:id/members --paginate > project_members.json
   - "Request approved" (circular logic)
 - **If missing:** Contact repository owner for clarification
 
-
 **Column M - Approval Reference**: Where is approval documented
 
 - Format: Ticket ID, email subject, or document reference
 - Example: "JIRA TICKET-1234", "Email from Jane Doe 2025-11-15", "Approved in Slack #dev-access"
 - **Why:** Auditors will verify approvals exist
-
 
 **Column N - Last Access Date** (if available): When user last accessed repo
 
@@ -831,7 +769,6 @@ glab api /projects/:id/members --paginate > project_members.json
 - **Source:** Platform analytics (GitHub Insights, GitLab Usage)
 - **Not always available:** Some platforms don't track
 - **Why:** Identifies dormant access (write access, no commits in 90+ days)
-
 
 **Column O - Access Status**: Is access appropriate?
 
@@ -854,11 +791,9 @@ glab api /projects/:id/members --paginate > project_members.json
 - **Target:** Quarterly (every 90 days)
 - **If blank:** Access has never been reviewed (gap)
 
-
 **Column Q - Notes**: Additional context
 
 - Free text: Exceptions, special circumstances, planned changes
-
 
 **Quality Checks:**
 
@@ -871,7 +806,6 @@ glab api /projects/:id/members --paginate > project_members.json
 - [ ] Approval references exist for high-privilege access (admin to production)
 - [ ] Access status assessments are honest (not all "appropriate")
 - [ ] Former employees are marked "Orphaned" if access remains
-
 
 **Common Errors to Avoid:**
 1. ❌ Assuming access is appropriate without verification
@@ -896,7 +830,6 @@ Complete this AS YOU DOCUMENT access requests found in ticketing system, email, 
 - Check repository platform notification history
 - Interview repository owners for recent access grants
 
-
 #### Completing the Columns
 
 **Column A - Request ID**: Unique identifier for this request
@@ -904,69 +837,57 @@ Complete this AS YOU DOCUMENT access requests found in ticketing system, email, 
 - Format: REQ-001, REQ-002, etc. OR platform ticket ID
 - Example: "JIRA-1234" or "REQ-045"
 
-
 **Column B - Request Date**: When access was requested
 
 - Date format: YYYY-MM-DD
 - Source: Ticket creation date, email timestamp
-
 
 **Column C - Requestor**: Who requested access
 
 - Format: Full Name (username)
 - Should match Column B in User_Access_Matrix
 
-
 **Column D - Repository Name**: Which repository
 
 - Must match Sheet 1 Column A exactly
 
-
 **Column E - Access Level Requested**: What permission level
 
 - Dropdown: Read, Write, Admin
-
 
 **Column F - Business Justification**: Why access is needed
 
 - Copy from request ticket or email
 - Should be specific (not generic "needs access")
 
-
 **Column G - Approver**: Who approved the request
 
 - Format: Full Name (repository owner, manager)
 - Should match repository owner from Sheet 1 or manager
-
 
 **Column H - Approval Date**: When request was approved
 
 - Date format: YYYY-MM-DD
 - Should be AFTER request date
 
-
 **Column I - Provisioned By**: Who granted the access
 
 - Format: Full Name (IT Operations, DevOps)
-
 
 **Column J - Provisioned Date**: When access was actually granted
 
 - Date format: YYYY-MM-DD
 - Should be within 24 hours of approval date
 
-
 **Column K - Approval Reference**: Where is approval documented
 
 - Format: Ticket URL, email subject, document location
 - Example: "https://jira.company.com/browse/ACCESS-1234"
 
-
 **Column L - Compliant Timeline**: Was provisioning within SLA?
 
 - Dropdown: ✅ Yes (if <24 hours), ❌ No (if >24 hours)
 - Formula: =IF((Column J - Column H)<=1,"✅ Yes","❌ No")
-
 
 **Column M - Notes**: Any exceptions or special circumstances
 
@@ -977,7 +898,6 @@ Complete this AS YOU DOCUMENT access requests found in ticketing system, email, 
 - [ ] Provisioning within 24 hours for 95%+ of requests
 - [ ] Approvers are appropriate (repository owners, managers)
 - [ ] Business justifications are documented (not blank)
-
 
 ---
 
@@ -996,7 +916,6 @@ Complete this DURING and AFTER quarterly access reviews.
 - Goal: Identify excessive, orphaned, or inappropriate access
 - Frequency: Every 90 days (quarterly)
 
-
 **How to conduct:**
 1. Generate User_Access_Matrix for repository
 2. Repository owner reviews each user's access
@@ -1011,74 +930,60 @@ Complete this DURING and AFTER quarterly access reviews.
 
 - Format: REV-2025-Q4-001, REV-2025-Q4-002
 
-
 **Column B - Review Period**: Which quarter
 
 - Format: Q1 2025, Q2 2025, Q3 2025, Q4 2025
-
 
 **Column C - Repository Name**: Which repository was reviewed
 
 - Must match Sheet 1 Column A
 
-
 **Column D - Repository Owner**: Who conducted review
 
 - Should match repository owner from Sheet 1
-
 
 **Column E - Review Date**: When review was completed
 
 - Date format: YYYY-MM-DD
 
-
 **Column F - Number of Users Reviewed**: How many users had access
 
 - Number: Count from User_Access_Matrix for this repository
 
-
 **Column G - Findings - Appropriate Access**: Users with correct access
 
 - Number: Count of ✅ Appropriate in User_Access_Matrix
-
 
 **Column H - Findings - Excessive Access**: Users with too much access
 
 - Number: Count of ⚠️ Excessive
 - Example: User has Admin but only needs Write
 
-
 **Column I - Findings - Orphaned Accounts**: Former employees still with access
 
 - Number: Count of ❌ Orphaned
 - Critical finding - should be 0
 
-
 **Column J - Findings - Expired Access**: Time-bound access past end date
 
 - Number: Count of 🕒 Expired
-
 
 **Column K - Actions Taken**: What was done to address findings
 
 - Free text: "Removed access for 2 former employees, reduced 1 admin to write"
 
-
 **Column L - Completion Status**: Is review complete?
 
 - Dropdown: ✅ Complete, 🕒 In Progress, ❌ Overdue
-
 
 **Column M - Next Review Due Date**: When is next review due
 
 - Date format: YYYY-MM-DD
 - Formula: =Column E + 90 days
 
-
 **Column N - Evidence Reference**: Where is review documented
 
 - File name or location of review report
-
 
 **Quality Checks:**
 
@@ -1087,7 +992,6 @@ Complete this DURING and AFTER quarterly access reviews.
 - [ ] Findings are documented (not just "all appropriate")
 - [ ] Actions taken for excessive/orphaned/expired access
 - [ ] Evidence is saved
-
 
 ---
 
@@ -1104,74 +1008,60 @@ Complete this AFTER obtaining HR termination list and verifying access removal.
 
 - Format: TERM-001, TERM-002
 
-
 **Column B - Termination Date**: Date of employment end
 
 - Date format: YYYY-MM-DD
 - Source: HR notification
 
-
 **Column C - Employee Name**: Who left
 
 - Format: Full Name
-
 
 **Column D - Username**: Platform username
 
 - Should match User_Access_Matrix Column A
 
-
 **Column E - Employment Type**: What type of worker
 
 - Dropdown: Employee, Contractor, Auditor
-
 
 **Column F - Reason for Departure**: Why they left
 
 - Dropdown: Resignation, Termination, Contract End, Retirement, Other
 
-
 **Column G - Repositories Accessed**: How many repos did they have access to
 
 - Number: Count from User_Access_Matrix
-
 
 **Column H - Repository List**: Which repositories (comma-separated)
 
 - Text: repo1, repo2, repo3
 
-
 **Column I - Access Level**: What access did they have
 
 - Text: Read (5 repos), Write (3 repos), Admin (1 repo)
 
-
 **Column J - Deprovisioning Ticket**: Ticket tracking access removal
 
 - Ticket ID or reference
-
 
 **Column K - Access Removal Date**: When access was actually removed
 
 - Date format: YYYY-MM-DD
 - Source: Platform audit logs
 
-
 **Column L - Removal Verified By**: Who verified removal
 
 - Name of person who checked
-
 
 **Column M - Verification Date**: When verification completed
 
 - Date format: YYYY-MM-DD
 
-
 **Column N - Compliant Timeline**: Was removal within 24 hours?
 
 - Dropdown: ✅ Yes (if <24 hours), ❌ No (if >24 hours)
 - Formula: =IF((Column K - Column B)<=1,"✅ Yes","❌ No")
-
 
 **Column O - Notes**: Any issues or delays
 
@@ -1182,7 +1072,6 @@ Complete this AFTER obtaining HR termination list and verifying access removal.
 - [ ] 95%+ removals within 24 hours
 - [ ] Verification completed for all
 - [ ] No former employees still have access
-
 
 ---
 
@@ -1199,16 +1088,13 @@ Complete this CONCURRENTLY with User_Access_Matrix for all non-employee access.
 
 - Format: TP-001, TP-002
 
-
 **Column B - Company Name**: Contracting organization
 
 - Example: Acme Consulting, ISO Auditing Services
 
-
 **Column C - Individual Name**: Specific person
 
 - Format: Full Name
-
 
 **Column D - Username**: Platform username
 
@@ -1216,16 +1102,13 @@ Complete this CONCURRENTLY with User_Access_Matrix for all non-employee access.
 
 - Example: "Backend development contractor", "ISO 27001 certification auditor"
 
-
 **Column F - Contract Start Date**: When contract began
 
 - Date format: YYYY-MM-DD
 
-
 **Column G - Contract End Date**: When contract ends
 
 - Date format: YYYY-MM-DD
-
 
 **Column H - Repository Name**: Which repository
 
@@ -1233,39 +1116,32 @@ Complete this CONCURRENTLY with User_Access_Matrix for all non-employee access.
 
 - Dropdown: Read, Write, Admin
 
-
 **Column J - NDA Signed**: Is confidentiality agreement in place?
 
 - Dropdown: ✅ Yes, ❌ No
 - Required for ALL third-party access
 
-
 **Column K - NDA Date**: When NDA was signed
 
 - Date format: YYYY-MM-DD
-
 
 **Column L - NDA File Location**: Where is NDA stored
 
 - Path or file reference
 
-
 **Column M - Access Status**: Current status
 
 - Dropdown: ✅ Active, 🕒 Expired, ❌ Revoked
-
 
 **Column N - Auto-Expire Date**: When will access auto-expire
 
 - Date format: YYYY-MM-DD
 - Should match Contract End Date
 
-
 **Column O - Access Reviewed**: Last review date
 
 - Date format: YYYY-MM-DD
 - Should be monthly (more frequent than quarterly for third-parties)
-
 
 **Column P - Notes**: Special conditions or requirements
 
@@ -1276,7 +1152,6 @@ Complete this CONCURRENTLY with User_Access_Matrix for all non-employee access.
 - [ ] Access expires automatically on contract end date
 - [ ] Monthly reviews completed (more frequent than standard quarterly)
 - [ ] No access extended past contract without new approval
-
 
 ---
 
@@ -1293,21 +1168,17 @@ Complete this BY IDENTIFYING all non-human accounts in User_Access_Matrix and do
 
 - Format: SA-001, SA-002
 
-
 **Column B - Account Name**: Service account username
 
 - Example: cicd-bot, deploy-automation, security-scanner
-
 
 **Column C - Account Type**: What kind of automation
 
 - Dropdown: CI/CD, Deployment, Security Scanner, Backup, Monitoring, Other
 
-
 **Column D - Purpose**: What does this account do
 
 - Example: "GitHub Actions CI/CD pipeline for backend-api"
-
 
 **Column E - Repository Name**: Which repository
 
@@ -1315,53 +1186,43 @@ Complete this BY IDENTIFYING all non-human accounts in User_Access_Matrix and do
 
 - Dropdown: Read, Write, Admin
 
-
 **Column G - Access Justification**: Why this access level
 
 - Example: "Write required to push tags, Admin for branch protection updates"
-
 
 **Column H - Owner**: Who is responsible for this account
 
 - Name of person/team
 
-
 **Column I - Authentication Method**: How does account authenticate
 
 - Dropdown: Personal Access Token, SSH Key, OAuth App, GitHub App, Deploy Key
-
 
 **Column J - Token/Key Expiration**: When does credential expire
 
 - Date format: YYYY-MM-DD
 - Target: Annual rotation minimum
 
-
 **Column K - Secret Storage Location**: Where is credential stored
 
 - Example: "GitHub Secrets", "Azure Key Vault", "HashiCorp Vault"
 
-
 **Column L - Last Rotation Date**: When was credential last rotated
 
 - Date format: YYYY-MM-DD
-
 
 **Column M - Next Rotation Due**: When is rotation required
 
 - Date format: YYYY-MM-DD
 - Formula: =Column L + 365 days (annual)
 
-
 **Column N - Quarterly Review Date**: When was account last reviewed
 
 - Date format: YYYY-MM-DD
 
-
 **Column O - Still Required**: Is account still needed?
 
 - Dropdown: ✅ Yes, ❌ No (remove if No)
-
 
 **Column P - Notes**: Additional information
 
@@ -1373,7 +1234,6 @@ Complete this BY IDENTIFYING all non-human accounts in User_Access_Matrix and do
 - [ ] Credentials are stored securely (not hardcoded)
 - [ ] Credentials rotated annually minimum
 - [ ] Quarterly reviews confirm continued need
-
 
 ---
 
@@ -1392,13 +1252,11 @@ This sheet contains FORMULAS that automatically calculate compliance metrics bas
 - Target: 100%
 - Why: Ensures all repositories are tracked
 
-
 **2. Access Control Compliance**
 
 - Formula: (Repos with RBAC / Total repos) × 100%
 - Target: 100%
 - Why: Ensures access control is implemented
-
 
 **3. Appropriate Access Rate**
 
@@ -1406,13 +1264,11 @@ This sheet contains FORMULAS that automatically calculate compliance metrics bas
 - Target: ≥95%
 - Why: Measures access appropriateness
 
-
 **4. Orphaned Account Rate**
 
 - Formula: (❌ Orphaned / Total users) × 100%
 - Target: 0%
 - Why: Former employees shouldn't have access
-
 
 **5. Access Review Completion Rate**
 
@@ -1420,13 +1276,11 @@ This sheet contains FORMULAS that automatically calculate compliance metrics bas
 - Target: 100%
 - Why: Quarterly reviews required for all repos
 
-
 **6. Deprovisioning SLA Compliance**
 
 - Formula: (Removals <24hrs / Total removals) × 100%
 - Target: ≥95%
 - Why: Access removed promptly when people leave
-
 
 **7. Overall Compliance Score**
 
@@ -1434,13 +1288,11 @@ This sheet contains FORMULAS that automatically calculate compliance metrics bas
 - Weights: Inventory 15%, Access Control 20%, Appropriate Access 25%, Orphaned 15%, Reviews 15%, Deprovisioning 10%
 - Target: ≥85%
 
-
 #### Risk Categorization
 
 - 🟢 Low Risk: Score ≥85%
 - 🟡 Medium Risk: Score 70-84%
 - 🔴 High Risk: Score <70%
-
 
 #### What To Do
 1. Review calculated scores
@@ -1464,91 +1316,73 @@ Complete this AFTER reviewing all other sheets and identifying non-compliant ite
 
 - Format: GAP-001, GAP-002
 
-
 **Column B - Gap Category**: Type of gap
 
 - Dropdown: Access Control, Inventory, Reviews, Deprovisioning, Documentation
-
 
 **Column C - Gap Description**: What is the problem
 
 - Example: "5 former employees still have write access to production repositories"
 
-
 **Column D - Policy Requirement**: Which requirement is not met
 
 - Example: "ISMS-POL-A.8.4 Section 2.1 - Access revoked upon termination"
-
 
 **Column E - Current State**: What is happening now
 
 - Example: "HR sends termination notice, but no process to remove repository access"
 
-
 **Column F - Desired State**: What should happen
 
 - Example: "Automated deprovisioning within 24 hours of HR notification"
-
 
 **Column G - Risk Level**: Severity of gap
 
 - Dropdown: 🔴 Critical, 🟠 High, 🟡 Medium, 🟢 Low
 
-
 **Column H - Impact**: What is the risk
 
 - Example: "Former employees could access confidential source code or commit malicious code"
-
 
 **Column I - Affected Repositories**: Which repos
 
 - List: repo1, repo2, repo3 or "All production repositories"
 
-
 **Column J - Root Cause**: Why does gap exist
 
 - Example: "No integration between HR system and repository platforms"
-
 
 **Column K - Remediation Plan**: How will it be fixed
 
 - Example: "Implement automated deprovisioning script triggered by HR termination webhook"
 
-
 **Column L - Responsible Party**: Who will fix it
 
 - Name: John Smith (DevOps Lead)
-
 
 **Column M - Target Completion Date**: When will it be fixed
 
 - Date format: YYYY-MM-DD
 
-
 **Column N - Estimated Effort**: How long will it take
 
 - Dropdown: 1-2 hours, 1 day, 1 week, 2-4 weeks, >1 month
-
 
 **Column O - Status**: Current progress
 
 - Dropdown: 🔴 Open, 🟡 In Progress, 🟢 Completed, ⚪ Deferred
 
-
 **Column P - Actual Completion Date**: When was it actually fixed
 
 - Date format: YYYY-MM-DD
-
 
 **Column Q - Verification Method**: How was fix verified
 
 - Example: "Tested HR termination workflow, verified access removed within 2 hours"
 
-
 **Column R - Verification Date**: When was verification completed
 
 - Date format: YYYY-MM-DD
-
 
 **Column S - Notes**: Additional information
 
@@ -1560,7 +1394,6 @@ Complete this AFTER reviewing all other sheets and identifying non-compliant ite
 - [ ] Target dates are realistic
 - [ ] Responsible parties are assigned
 - [ ] Critical gaps have near-term target dates (<30 days)
-
 
 ---
 
@@ -1574,71 +1407,57 @@ Complete this AFTER reviewing all other sheets and identifying non-compliant ite
 
 - Format: EV-001, EV-002
 
-
 **Column B - Evidence Type**: What kind of evidence
 
 - Dropdown: Access Report, Approval Record, Review Report, Deprovisioning Log, Configuration Screenshot, NDA, Other
-
 
 **Column C - Evidence Description**: What is this evidence
 
 - Example: "GitHub organization user access export for Q4 2025"
 
-
 **Column D - Related Requirement**: Which policy requirement
 
 - Example: "ISMS-POL-A.8.4 Section 2.3 - Role-based access control"
-
 
 **Column E - Evidence Date**: When was evidence created
 
 - Date format: YYYY-MM-DD
 
-
 **Column F - Evidence Source**: Where did it come from
 
 - Example: "GitHub API export", "ServiceNow ticket system"
-
 
 **Column G - File Name**: Name of file
 
 - Example: `github_access_export_2025-12-31.csv`
 
-
 **Column H - File Location**: Where is it stored
 
 - Path: `\\fileserver\ISMS\Evidence\A.8.4\Q4-2025\` or SharePoint URL
-
 
 **Column I - Collected By**: Who collected it
 
 - Name
 
-
 **Column J - Collection Date**: When was it collected
 
 - Date format: YYYY-MM-DD
-
 
 **Column K - Evidence Format**: File type
 
 - Dropdown: Excel, PDF, CSV, Screenshot, Email, JSON, Other
 
-
 **Column L - Retention Period**: How long to keep
 
 - Text: "3 years" (per policy requirement)
-
 
 **Column M - Retention End Date**: When can it be purged
 
 - Date format: YYYY-MM-DD
 
-
 **Column N - Auditor Reviewed**: Has auditor seen this
 
 - Dropdown: ✅ Yes, ❌ No, ⏳ Pending
-
 
 **Column O - Auditor Comments**: What did auditor say
 
@@ -1656,7 +1475,6 @@ Complete this AFTER reviewing all other sheets and identifying non-compliant ite
 - Branch protection configuration screenshots
 - MFA enforcement screenshots
 - Service account token rotation logs
-
 
 ---
 
@@ -1682,7 +1500,6 @@ Before submitting for approval, complete quality checklist (see section below).
   - Gaps identified are valid
 - Repository owners sign and date
 
-
 **Step 3: Information Security Manager Review**
 
 - Information Security Manager verifies:
@@ -1693,13 +1510,11 @@ Before submitting for approval, complete quality checklist (see section below).
   - Evidence is collected
 - Information Security Manager provides recommendation: Approve / Approve with Conditions / Reject
 
-
 **Step 4: CISO Final Approval**
 
 - CISO reviews overall compliance status
 - CISO approves or rejects with conditions
 - If score <70% (High Risk), CISO may require immediate remediation before approval
-
 
 #### Completing the Approval Section
 
@@ -1710,7 +1525,6 @@ Before submitting for approval, complete quality checklist (see section below).
 - Overall Compliance Score: 87% (from Sheet 8)
 - Risk Level: 🟢 Low Risk
 
-
 **Assessment Completed By:**
 
 - Name: [Your name]
@@ -1719,13 +1533,11 @@ Before submitting for approval, complete quality checklist (see section below).
 - Date: [Completion date]
 - Signature: [Your signature]
 
-
 **Repository Owner Approvals** (3-5 signature blocks):
 
 - Name: [Repository owner name]
 - Date: [Approval date]
 - Signature: [Signature]
-
 
 **Information Security Manager Review:**
 
@@ -1734,14 +1546,12 @@ Before submitting for approval, complete quality checklist (see section below).
 - Review Notes: [Comments]
 - Recommendation: [Approve / Approve with Conditions / Reject]
 
-
 **CISO Approval:**
 
 - Name: [CISO name]
 - Date: [Approval date]
 - Approval Decision: [Approved / Approved with Conditions / Rejected]
 - Conditions/Notes: [Any conditions]
-
 
 **Next Scheduled Review:** [Completion Date + 90 days]
 
@@ -1759,13 +1569,11 @@ Before submitting for approval, complete quality checklist (see section below).
 - Branch protection configurations
 - MFA enrollment status
 
-
 **2. Approval Records**
 
 - Access request tickets (ServiceNow, Jira)
 - Email approvals from repository owners
 - Approval workflows from platforms
-
 
 **3. Review Documentation**
 
@@ -1773,13 +1581,11 @@ Before submitting for approval, complete quality checklist (see section below).
 - Finding documentation (excessive, orphaned, expired access)
 - Remediation records showing fixes
 
-
 **4. Deprovisioning Evidence**
 
 - HR termination notifications
 - Access removal logs with timestamps
 - Verification of removal completion
-
 
 **5. Configuration Evidence**
 
@@ -1787,13 +1593,11 @@ Before submitting for approval, complete quality checklist (see section below).
 - Screenshots of MFA enforcement
 - Service account credential rotation logs
 
-
 **6. Contractual Documentation**
 
 - NDA signatures for ALL personnel with code access
 - Contractor agreements showing access dates
 - Third-party service agreements
-
 
 ### Evidence Naming Conventions
 
@@ -1859,7 +1663,6 @@ Evidence_A.8.4_Repository_Access_Control/
 - ✅ Traceable (can verify source)
 - ✅ Understandable (clear labels/context)
 
-
 **Poor Evidence:**
 
 - ❌ Partial exports (missing data)
@@ -1867,7 +1670,6 @@ Evidence_A.8.4_Repository_Access_Control/
 - ❌ Screenshots of screenshots (low quality)
 - ❌ Unlabeled files (what is this?)
 - ❌ Personal interpretations (not raw data)
-
 
 ### Evidence Collection Tips
 
@@ -1878,7 +1680,6 @@ Evidence_A.8.4_Repository_Access_Control/
 - Export with timestamps
 - Document export method (UI, CLI, API)
 
-
 **Approval Records:**
 
 - Capture full ticket (not just approval)
@@ -1886,14 +1687,12 @@ Evidence_A.8.4_Repository_Access_Control/
 - Preserve timestamps
 - Screenshot AND save PDF
 
-
 **Reviews:**
 
 - Save completed review workbooks
 - Document reviewer identity
 - Timestamp completion
 - Keep before/after access reports
-
 
 ---
 
@@ -1910,14 +1709,12 @@ Evidence_A.8.4_Repository_Access_Control/
 - Forgetting archived repos
 - Not checking all platforms (GitHub AND GitLab AND Bitbucket)
 
-
 **How to Avoid:**
 
 - Use API exports (don't rely on manual lists)
 - Check ALL repository platforms
 - Include archived repositories
 - Cross-check with IT asset inventory
-
 
 **Consequence:** Auditors find repositories not in inventory = inventory incomplete = audit finding.
 
@@ -1934,7 +1731,6 @@ Evidence_A.8.4_Repository_Access_Control/
 - Trust that "someone checked it before"
 - Fear of questioning developers
 
-
 **Reality Check:**
 In every organization with >50 employees:
 
@@ -1942,14 +1738,12 @@ In every organization with >50 employees:
 - ~5-10% of orphaned accounts exist (former employees)
 - ~15-25% of justifications are generic ("developer")
 
-
 **How to Avoid:**
 
 - Actually ask "Does this person NEED this access?"
 - Challenge admin access (should be rare)
 - Cross-check with HR termination lists
 - Require specific justifications
-
 
 **Consequence:** False sense of security, audit finding when auditor spot-checks and finds issues.
 
@@ -1966,7 +1760,6 @@ In every organization with >50 employees:
 - HR doesn't notify repository administrators
 - Manual process prone to error
 
-
 **Reality Check:**
 In organizations WITHOUT automated deprovisioning:
 
@@ -1974,14 +1767,12 @@ In organizations WITHOUT automated deprovisioning:
 - Access lingers for weeks or months
 - Former employees CAN still access code
 
-
 **How to Avoid:**
 
 - Obtain HR termination list
 - ACTUALLY CHECK platform access
 - Cross-reference with User_Access_Matrix
 - Document findings honestly
-
 
 **Consequence:** Former employees with active access = critical security gap = major audit finding.
 
@@ -1997,7 +1788,6 @@ In organizations WITHOUT automated deprovisioning:
 - Lazy approval process
 - No understanding of least privilege
 
-
 **Examples of Bad Justifications:**
 
 - "Developer" (what are they developing?)
@@ -2005,13 +1795,11 @@ In organizations WITHOUT automated deprovisioning:
 - "Team member" (which team, what role?)
 - "Request approved" (circular logic)
 
-
 **Examples of Good Justifications:**
 
 - "Backend developer - implements authentication features in backend-api repository"
 - "DevOps engineer - deploys backend-api to production via GitHub Actions"
 - "Security auditor - Q4 2025 ISO 27001 certification audit, read-only access expires 2026-01-15"
-
 
 **How to Avoid:**
 
@@ -2019,7 +1807,6 @@ In organizations WITHOUT automated deprovisioning:
 - Train repository owners on least privilege
 - Review justifications during quarterly access reviews
 - Flag generic justifications as gaps
-
 
 **Consequence:** Can't defend access appropriateness to auditors.
 
@@ -2036,7 +1823,6 @@ In organizations WITHOUT automated deprovisioning:
 - No central tracking
 - "It's just automation"
 
-
 **Reality Check:**
 Service accounts often have ADMIN access (most privileged). If compromised, attacker has full control. Must be:
 
@@ -2045,14 +1831,12 @@ Service accounts often have ADMIN access (most privileged). If compromised, atta
 - Credentials rotated annually
 - Stored securely (not hardcoded)
 
-
 **How to Avoid:**
 
 - Identify service accounts in User_Access_Matrix (employment type = Service Account)
 - Document in dedicated Service_Accounts sheet
 - Include in quarterly reviews
 - Verify credential rotation
-
 
 **Consequence:** Undocumented service accounts with admin access = critical gap.
 
@@ -2068,14 +1852,12 @@ Service accounts often have ADMIN access (most privileged). If compromised, atta
 - Time pressure
 - "Trust but don't verify"
 
-
 **Red Flags That Review Wasn't Real:**
 
 - 100% appropriate access (unrealistic)
 - No findings (always some findings)
 - Review completed in 5 minutes for repo with 50 users
 - Same findings every quarter (not addressing issues)
-
 
 **How to Do Real Reviews:**
 
@@ -2084,7 +1866,6 @@ Service accounts often have ADMIN access (most privileged). If compromised, atta
 - Ask "Should they still have this? Is level appropriate?"
 - Document findings honestly
 - Take action on findings
-
 
 **Consequence:** Auditors spot-check review quality, ask detailed questions, find review was superficial = audit finding.
 
@@ -2101,7 +1882,6 @@ Service accounts often have ADMIN access (most privileged). If compromised, atta
 - Verbal approvals (no record)
 - "We had a Slack conversation"
 
-
 **How to Avoid:**
 
 - Centralize approval records (ticketing system)
@@ -2109,7 +1889,6 @@ Service accounts often have ADMIN access (most privileged). If compromised, atta
 - Screenshot Slack approvals
 - Document verbal approvals in writing (post-facto)
 - Reference approval in Access_Request_Log
-
 
 **Consequence:** Can't prove access was approved = audit finding (improper access grant).
 
@@ -2125,13 +1904,11 @@ Service accounts often have ADMIN access (most privileged). If compromised, atta
 - Platforms don't support automatic expiration (Bitbucket)
 - "We'll remove it when contract ends" (but forget)
 
-
 **Reality Check:**
 
 - Contractors MUST have time-bound access per policy
 - Access MUST expire on contract end date
 - Manual calendar reminders often forgotten
-
 
 **How to Avoid:**
 
@@ -2139,7 +1916,6 @@ Service accounts often have ADMIN access (most privileged). If compromised, atta
 - If not available, calendar reminders
 - Document expiration in Third_Party_Access sheet
 - Monthly reviews for third-party access (more frequent than quarterly)
-
 
 **Consequence:** Contractors with permanent access = policy violation = audit finding.
 
@@ -2155,13 +1931,11 @@ Service accounts often have ADMIN access (most privileged). If compromised, atta
 - "Let's just get certified first"
 - Underestimating audit rigor
 
-
 **Reality Check:**
 
 - Auditors won't certify if critical gaps exist
 - "Compliant with exceptions" is not real compliance
 - Critical gaps must be remediated BEFORE certification
-
 
 **Critical Gaps That MUST Be Fixed:**
 
@@ -2170,14 +1944,12 @@ Service accounts often have ADMIN access (most privileged). If compromised, atta
 - No deprovisioning process
 - Orphaned accounts with admin access
 
-
 **How to Avoid:**
 
 - Prioritize critical gaps
 - Remediate before audit
 - Be realistic about readiness
 - Don't schedule audit until critical gaps closed
-
 
 **Consequence:** Audit failure, delayed certification, wasted audit fees.
 
@@ -2193,20 +1965,17 @@ Service accounts often have ADMIN access (most privileged). If compromised, atta
 - Don't understand assessment purpose
 - Think it's just filling in a template
 
-
 **Reality Check:**
 
 - Auditors verify data accuracy (they'll spot-check)
 - Copy-paste generic data = inaccurate assessment
 - Your platforms, users, repositories are unique
 
-
 **How to Avoid:**
 
 - Actually export YOUR data from YOUR platforms
 - Document YOUR access, not generic examples
 - Verify data accuracy (spot-check repositories)
-
 
 **Consequence:** Inaccurate assessment = audit finding = loss of credibility.
 
@@ -2227,7 +1996,6 @@ Before submitting assessment for approval, verify:
 - [ ] Active status matches last commit dates
 - [ ] URLs are valid
 
-
 **User Access Matrix:**
 
 - [ ] Every user with access is documented
@@ -2239,13 +2007,11 @@ Before submitting assessment for approval, verify:
 - [ ] Approval references exist for high-privilege access
 - [ ] Access status assessments are honest
 
-
 **Access Requests:**
 
 - [ ] High-privilege access requests (admin to production) have approval records
 - [ ] Approval chain is documented
 - [ ] Provisioning timelines are compliant (95%+ within 24 hours)
-
 
 **Access Reviews:**
 
@@ -2254,14 +2020,12 @@ Before submitting assessment for approval, verify:
 - [ ] Actions taken on findings
 - [ ] Evidence saved
 
-
 **Deprovisioning:**
 
 - [ ] All HR terminations (last 90 days) are listed
 - [ ] Access removal verified for each
 - [ ] 95%+ removals within 24 hours
 - [ ] No former employees still have access
-
 
 **Third-Party Access:**
 
@@ -2270,7 +2034,6 @@ Before submitting assessment for approval, verify:
 - [ ] Access expires on contract end
 - [ ] Monthly reviews completed
 
-
 **Service Accounts:**
 
 - [ ] All service accounts identified and documented
@@ -2278,13 +2041,11 @@ Before submitting assessment for approval, verify:
 - [ ] Credentials rotated annually
 - [ ] Quarterly reviews confirm continued need
 
-
 **Compliance Scoring:**
 
 - [ ] All formulas calculate correctly
 - [ ] Overall score is accurate
 - [ ] Risk categorization is appropriate
-
 
 **Gap Analysis:**
 
@@ -2293,7 +2054,6 @@ Before submitting assessment for approval, verify:
 - [ ] Remediation plans are specific and actionable
 - [ ] Critical gaps have near-term target dates
 
-
 **Evidence Register:**
 
 - [ ] All required evidence is collected
@@ -2301,13 +2061,11 @@ Before submitting assessment for approval, verify:
 - [ ] File locations are documented
 - [ ] Evidence is dated within assessment period
 
-
 **Approval Sign-Off:**
 
 - [ ] All required signatures obtained
 - [ ] Dates are filled in
 - [ ] Next review date is scheduled
-
 
 ### Accuracy
 
@@ -2319,14 +2077,12 @@ Before submitting assessment for approval, verify:
 - [ ] NDA signatures verified
 - [ ] Service account credentials are current
 
-
 ### Honesty
 
 - [ ] Access status assessments are realistic (not all "appropriate")
 - [ ] Gaps are documented honestly (not hidden)
 - [ ] Compliance score reflects reality (not inflated)
 - [ ] Findings are documented (not suppressed)
-
 
 ### Auditability
 
@@ -2335,7 +2091,6 @@ Before submitting assessment for approval, verify:
 - [ ] Approval records are accessible
 - [ ] Formulas and calculations are transparent
 - [ ] Assessment tells coherent story
-
 
 ---
 
@@ -2353,7 +2108,6 @@ Before submitting for approval:
    - [ ] Check for typos, formatting issues
    - [ ] Ensure all evidence is collected
 
-
 2. **Peer Review** (optional but recommended):
 
    - [ ] Have colleague review for accuracy
@@ -2361,13 +2115,11 @@ Before submitting for approval:
    - [ ] Verify repository inventory completeness
    - [ ] Review gap analysis for realism
 
-
 3. **Evidence Organization:**
 
    - [ ] All evidence files saved in folder structure
    - [ ] Evidence_Register sheet is complete
    - [ ] File locations are correct
-
 
 ### Submission Process
 
@@ -2377,13 +2129,11 @@ Before submitting for approval:
 - Request review within 5 business days
 - Provide guidance on what to verify
 
-
 **Step 2: Incorporate Repository Owner Feedback**
 
 - Make corrections as needed
 - Document any disputes
 - Re-submit if significant changes
-
 
 **Step 3: Submit to Information Security Manager**
 
@@ -2391,13 +2141,11 @@ Before submitting for approval:
 - ISM reviews for policy compliance
 - ISM provides recommendation
 
-
 **Step 4: Submit to CISO**
 
 - Once ISM approves
 - CISO final approval
 - If score <70%, CISO may require remediation first
-
 
 ### Approval Timeline
 
@@ -2408,13 +2156,11 @@ Before submitting for approval:
 - CISO Approval: 2 business days
 - **Total: ~2 weeks**
 
-
 **Expedited Timeline** (if critical gaps exist):
 
 - CISO may require immediate remediation
 - Re-submission after gap closure
 - Additional 1-2 weeks
-
 
 ### Post-Approval
 
@@ -2425,13 +2171,11 @@ Once approved:
    - File in ISMS document repository
    - Retain for audit (minimum 3 years)
 
-
 2. **Communicate Results:**
 
    - Share compliance score with stakeholders
    - Present gap analysis to leadership
    - Update repository owners on remediation plans
-
 
 3. **Schedule Next Review:**
 
@@ -2439,13 +2183,11 @@ Once approved:
    - Assign responsibility for next assessment
    - Update Review Cycle tracker
 
-
 4. **Track Remediation:**
 
    - Monitor gap remediation progress
    - Update Gap_Analysis sheet as gaps close
    - Report progress to CISO monthly
-
 
 ---
 
@@ -2480,7 +2222,6 @@ Once approved:
 - `create_evidence_register()`: Evidence tracking sheet
 - `create_approval_signoff()`: Approval workflow sheet
 
-
 **Script Customization Points** (marked with `# CUSTOMIZE:` in script):
 
 - Sheet names (if organizational naming differs)
@@ -2488,7 +2229,6 @@ Once approved:
 - Data validation rules (if custom compliance criteria)
 - Conditional formatting thresholds (if different color coding)
 - Formula references (if sheet structure changes)
-
 
 ### Workbook File Naming Convention
 
@@ -2498,7 +2238,6 @@ Once approved:
 
 - `ISMS-IMP-A.8.4.1_Repository_Access_20260125.xlsx`
 - `ISMS-IMP-A.8.4.1_Repository_Access_20260401.xlsx`
-
 
 **Version in Filename:** Date represents assessment completion date
 
@@ -2516,7 +2255,6 @@ Once approved:
 - Named ranges (for formula readability)
 - Freeze panes (for navigation)
 - Cell protection (protect formulas, allow data entry)
-
 
 ---
 
@@ -2581,7 +2319,6 @@ Used in multiple sheets for consistency:
 - ðŸ•' Expired / In Progress / Pending
 - N/A
 
-
 **Conditional Formatting:**
 
 - ✅: Green fill (#C6EFCE), dark green text (#006100)
@@ -2589,7 +2326,6 @@ Used in multiple sheets for consistency:
 - âŒ: Red fill (#FFC7CE), dark red text (#9C0006)
 - ðŸ•': Blue fill (#B4C7E7), dark blue text (#002060)
 - N/A: Gray fill (#D9D9D9), dark gray text (#404040)
-
 
 ### Standard Date Format
 
@@ -2600,7 +2336,6 @@ All date columns:
 - **Data Validation:** Date picker
 - **Why:** Sortable, international standard, unambiguous
 
-
 ### Standard Yes/No Dropdown
 
 Used for binary questions:
@@ -2609,7 +2344,6 @@ Used for binary questions:
 - **Conditional Formatting:**
   - ✅ Yes: Green background
   - ⌠No: Red background
-
 
 ---
 
@@ -2634,7 +2368,6 @@ Row 3: "Version 1.0 | [Date]"
 - Where to find help
 - Contact information
 
-
 **Rows 22-35: Status Legend**
 
 | Symbol | Meaning | Usage |
@@ -2654,7 +2387,6 @@ Row 3: "Version 1.0 | [Date]"
 - Title: Font size 16pt, bold, dark blue (#003366)
 - Instructions: Font size 10pt, regular, black
 - Legend table: Bordered, alternating row colors
-
 
 ---
 
@@ -2739,7 +2471,6 @@ Error message: "Must be a valid date"
 - 🟢 Open Source: Green fill (#C6EFCE), dark green text
 - ⚪ Archived: Gray fill (#D9D9D9), dark gray text
 
-
 **Column J (Active Status):**
 
 - ✅ Active: Green background
@@ -2747,12 +2478,10 @@ Error message: "Must be a valid date"
 - ⌠Archived: Red background
 - â" Unknown: Orange background
 
-
 **Column K, L, M (Yes/No fields):**
 
 - ✅ Yes: Green background
 - ⌠No: Red background
-
 
 ### Freeze Panes
 Freeze at **A4** (headers visible when scrolling)
@@ -2761,7 +2490,6 @@ Freeze at **A4** (headers visible when scrolling)
 
 - Header rows (1-3): Locked
 - Data rows (4+): Unlocked (user input allowed)
-
 
 ---
 
@@ -2833,12 +2561,10 @@ Allow blank: No
 - âœï¸ Write: Yellow background (moderate privilege)
 - ðŸ"§ Admin: Red background (highest privilege, requires strong justification)
 
-
 **Column K (Access Expiration):**
 
 - If Column K < TODAY(): Red background (expired access)
 - If Column K >= TODAY() AND Column K <= TODAY()+30: Yellow background (expiring soon)
-
 
 **Column O (Access Status):**
 
@@ -2846,7 +2572,6 @@ Allow blank: No
 - âš ï¸ Excessive: Yellow background
 - ⌠Orphaned: Red background
 - ðŸ•' Expired: Orange background
-
 
 ### Formulas
 
@@ -2900,7 +2625,6 @@ Checks if provisioning happened within 24 hours (1 day) of approval.
 - ✅ Yes: Green background
 - ⌠No: Red background
 
-
 ---
 
 ## Sheet 5: Access_Review_Log
@@ -2949,7 +2673,6 @@ Format: Red fill (review overdue)
 - ðŸ•' In Progress: Yellow background
 - ⌠Overdue: Red background
 
-
 ---
 
 ## Sheet 6: Deprovisioning_Log
@@ -2991,7 +2714,6 @@ Checks if removal within 24 hours of termination.
 
 - ✅ Yes: Green background
 - ⌠No: Red background (critical issue)
-
 
 ---
 
@@ -3035,7 +2757,6 @@ References Contract End Date.
 
 - ⌠No: Red background (critical - no NDA)
 
-
 **Column G (Contract End) and Column N (Auto-Expire):**
 ```
 =G4<TODAY()
@@ -3047,7 +2768,6 @@ Format: Red fill (contract expired, access should be removed)
 - ✅ Active: Green background
 - ðŸ•' Expired: Orange background
 - ⌠Revoked: Red background
-
 
 ---
 
@@ -3102,7 +2822,6 @@ Format: Red fill (token expired)
 **Column O (Still Required):**
 
 - ⌠No: Yellow background (account should be removed)
-
 
 ---
 
@@ -3167,13 +2886,11 @@ Risk Level: [IF(B23>=85,"🟢 Low Risk",IF(B23>=70,"🟡 Medium Risk","ðŸ"´ H
 - ≥Target: Green background
 - <Target: Red background
 
-
 **Column D (Status):**
 
 - 🟢: Green background
 - 🟡: Yellow background
 - ðŸ"´: Red background
-
 
 ---
 
@@ -3215,7 +2932,6 @@ Document gaps and remediation plans.
 - 🟡 Medium: Yellow fill
 - 🟢 Low: Green fill
 
-
 **Column M (Target Date):**
 ```
 =M4<TODAY()
@@ -3228,7 +2944,6 @@ Format: Red fill (overdue)
 - 🟡 In Progress: Yellow background
 - 🟢 Completed: Green background
 - ⚪ Deferred: Gray background
-
 
 ---
 
@@ -3265,7 +2980,6 @@ Track evidence for audit.
 - ✅ Yes: Green background
 - ⌠No: Yellow background
 - â³ Pending: Blue background
-
 
 ---
 
@@ -3337,14 +3051,12 @@ Notes: [User input]
 - Alignment: Center, vertical center
 - Height: 40px
 
-
 **Subheader (Row 2):**
 
 - Font: Calibri 11pt bold white
 - Fill: Medium blue (#4472C4)
 - Alignment: Center, vertical center
 - Height: 30px
-
 
 **Column Header (Row 3):**
 
@@ -3353,7 +3065,6 @@ Notes: [User input]
 - Alignment: Center, vertical center, text wrap
 - Border: Thin black on all sides
 - Height: 30px
-
 
 ### Input Cell Styles
 
@@ -3364,7 +3075,6 @@ Notes: [User input]
 - Border: Thin gray on all sides
 - Font: Calibri 10pt regular black
 
-
 **Formula Cells (Read-only):**
 
 - Fill: Light blue (#E7F3FF)
@@ -3373,7 +3083,6 @@ Notes: [User input]
 - Font: Calibri 10pt regular black
 - Protection: Locked
 
-
 ### Status Color Coding
 
 **Green (Compliant/Good):**
@@ -3381,36 +3090,30 @@ Notes: [User input]
 - Fill: #C6EFCE
 - Text: #006100
 
-
 **Yellow (Warning/Partial):**
 
 - Fill: #FFEB9C
 - Text: #9C6500
-
 
 **Red (Non-Compliant/Critical):**
 
 - Fill: #FFC7CE
 - Text: #9C0006
 
-
 **Orange (Expired/Attention):**
 
 - Fill: #FFD8B1
 - Text: #C65911
-
 
 **Blue (In Progress/Pending):**
 
 - Fill: #B4C7E7
 - Text: #002060
 
-
 **Gray (N/A/Deferred):**
 
 - Fill: #D9D9D9
 - Text: #404040
-
 
 ---
 
@@ -3420,11 +3123,9 @@ Notes: [User input]
 
 - Freeze at **A4** (rows 1-3 remain visible when scrolling)
 
-
 **Approval Sheet (Sheet 12):**
 
 - Freeze at **A3** (title remains visible)
-
 
 ---
 
@@ -3436,19 +3137,16 @@ Notes: [User input]
 - Formula cells (Compliance_Scoring sheet)
 - Instructions (Sheet 1)
 
-
 **Unprotected (Unlocked) Cells:**
 
 - All user input cells (light yellow background)
 - Data entry rows (row 4 onwards in assessment sheets)
-
 
 **Sheet Protection Settings:**
 
 - Allow: Select unlocked cells, format cells, insert rows, delete rows, sort, filter
 - Disallow: Edit locked cells, modify formulas, delete sheets
 - Password: [Optional - set during script generation]
-
 
 ---
 
@@ -3500,7 +3198,6 @@ python excel_sanity_check_a84_1.py ISMS-IMP-A.8.4.1_Repository_Access_20260125.x
 
 - v1.0: Initial workbook structure (2026-01-25)
 
-
 ---
 
 ## Backward Compatibility
@@ -3513,7 +3210,6 @@ python excel_sanity_check_a84_1.py ISMS-IMP-A.8.4.1_Repository_Access_20260125.x
 - Preserves user data
 - Updates formulas and validation rules
 - Adds new columns/sheets as needed
-
 
 ---
 

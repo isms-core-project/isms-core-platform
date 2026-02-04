@@ -46,7 +46,6 @@ This document consists of two parts:
   - Conditional Formatting
   - Technical Notes for Python Script Developers
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -69,14 +68,12 @@ This workbook assesses whether **application security requirements are properly 
 - ✅ Requirements traceability to implementation and testing
 - ✅ Security requirements approval documentation
 
-
 **What This Assessment Is NOT:**
 
 - ❌ Code-level security review (that's SAST in Workbook 3)
 - ❌ Security testing results (that's Workbook 3 and 4)
 - ❌ SDLC security activities (that's Workbook 2)
 - ❌ General compliance audit (this is application-specific requirements)
-
 
 ## Who Should Use This Workbook
 
@@ -87,13 +84,11 @@ This workbook assesses whether **application security requirements are properly 
 - **Application Owners**: Demonstrate compliance for their applications
 - **Compliance Officers**: Collect evidence for audits
 
-
 **Supporting Roles:**
 
 - **Development Managers**: Understand security requirements for their teams
 - **QA Managers**: Link requirements to security test cases
 - **Auditors**: Verify ISO 27001 A.8.26 compliance
-
 
 ## Assessment Frequency
 
@@ -111,7 +106,6 @@ This workbook assesses whether **application security requirements are properly 
 - Regulatory requirement changes
 - Pre-audit preparation
 
-
 ## Expected Time Investment
 
 | Activity | Time Required | Responsibility |
@@ -128,7 +122,6 @@ This workbook assesses whether **application security requirements are properly 
 - Reuse threat models for similar architectures
 - Template security requirements for common application types
 - Automate evidence collection where possible
-
 
 ---
 
@@ -165,14 +158,12 @@ This workbook assesses whether **application security requirements are properly 
   - Lead Developer / Architect
   - Security Architect (reviewer)
 
-
 **HELPFUL - Nice to have:**
 
 - Previous assessment results (if reassessment)
 - Security testing results
 - Penetration testing reports
 - Compliance audit findings
-
 
 ## Required Knowledge
 
@@ -184,13 +175,11 @@ This workbook assesses whether **application security requirements are properly 
 - Organizational security policies and standards
 - Relevant regulations (GDPR, PCI DSS, etc.)
 
-
 **If you lack this knowledge:**
 
 - Pair with experienced Security Architect
 - Review ISMS-POL-A.8.25-26-29 Section 2 first
 - Use provided question-by-question guidance (Section 4)
-
 
 ## Tools and Access Required
 
@@ -198,7 +187,6 @@ This workbook assesses whether **application security requirements are properly 
 - **Read access** to document repository (SharePoint, Confluence, etc.)
 - **Read access** to application inventory
 - **Contact access** to application stakeholders (for clarifications)
-
 
 ---
 
@@ -263,13 +251,11 @@ Step 5: Approval & Closeout (15-30 min)
    - Application ID (if assigned): APP-___
    - Assessment period: From _____ To _____
 
-
 2. **Confirm Risk Classification:**
 
    - Check application inventory for existing classification
    - If not classified, complete risk scoring (see Section 4.2)
    - Verify classification is current (< 12 months old)
-
 
 3. **Gather Documentation:**
 
@@ -279,12 +265,10 @@ Step 5: Approval & Closeout (15-30 min)
    - Security architecture review report - if exists
    - Any previous assessment results
 
-
 4. **Prepare Evidence Folder:**
 
    - Create folder: `Evidence/APP-XXX/A.8.26_Requirements/YYYYMMDD/`
    - Stage documents for reference during assessment
-
 
 **Step 2: Workbook Completion**
 
@@ -298,7 +282,6 @@ Complete each sheet in order (Sheet 1 → Sheet 10). Use Section 4 (Question-by-
 - Mark **N/A** only when truly not applicable (with justification)
 - Be **honest** about gaps - that's the point of assessment
 
-
 **Step 3: Review & Validation**
 
 1. **Self-Review:**
@@ -308,7 +291,6 @@ Complete each sheet in order (Sheet 1 → Sheet 10). Use Section 4 (Question-by-
    - Check evidence documented
    - Validate formulas calculated correctly
 
-
 2. **Peer Review:**
 
    - Another Security Architect reviews workbook
@@ -316,13 +298,11 @@ Complete each sheet in order (Sheet 1 → Sheet 10). Use Section 4 (Question-by-
    - Challenge assumptions
    - Validate compliance scoring
 
-
 3. **Stakeholder Confirmation:**
 
    - Application Owner reviews findings
    - Confirms assessment accuracy
    - Agrees with identified gaps
-
 
 **Step 4: Gap Remediation (if gaps found)**
 
@@ -333,7 +313,6 @@ Complete each sheet in order (Sheet 1 → Sheet 10). Use Section 4 (Question-by-
    - Medium gaps (plan remediation)
    - Low gaps (track as technical debt)
 
-
 2. **Create Action Plan:**
 
    - Document in Sheet 8 (Gap Analysis)
@@ -341,13 +320,11 @@ Complete each sheet in order (Sheet 1 → Sheet 10). Use Section 4 (Question-by-
    - Set target dates
    - Define acceptance criteria
 
-
 3. **Track Progress:**
 
    - Update Sheet 8 as gaps remediated
    - Collect evidence of remediation
    - Re-assess to verify closure
-
 
 **Step 5: Approval & Closeout**
 
@@ -357,19 +334,16 @@ Complete each sheet in order (Sheet 1 → Sheet 10). Use Section 4 (Question-by-
    - Security Architect approves (Sheet 10)
    - CISO approves for High-Risk apps (Sheet 10)
 
-
 2. **File Workbook:**
 
    - Save as: `ISMS-A826-Requirements-APP-XXX-YYYYMMDD.xlsx`
    - Store in evidence repository
    - Link to application record
 
-
 3. **Schedule Next Assessment:**
 
    - Set reminder for next assessment date
    - Note any special triggers (major release, etc.)
-
 
 ---
 
@@ -392,13 +366,11 @@ This section provides detailed guidance for completing each assessment question 
 - ✅ Good: "SAP ERP Production Instance"
 - ❌ Avoid: "The app", "John's project"
 
-
 *Where to find:*
 
 - Application inventory
 - CMDB (Configuration Management Database)
 - Project documentation
-
 
 **Column C: Application ID**
 
@@ -407,7 +379,6 @@ This section provides detailed guidance for completing each assessment question 
 *Examples:*
 
 - APP-001, APP-CUST-PORTAL, APP-HR-SYS
-
 
 ### Question 1.2: Application Owner
 **Column B: Name**
@@ -442,7 +413,6 @@ This section provides detailed guidance for completing each assessment question 
 - "Internal HR staff (25 users)"
 - "B2B partners (150 companies, ~500 users)"
 
-
 **Column D: Technology Stack**
 
 *What to enter:* Key technologies (keep it high-level)
@@ -466,7 +436,6 @@ This section provides detailed guidance for completing each assessment question 
 - Business Sensitive: trade secrets, financial reports, strategic plans
 - Public Information: marketing content, public product info
 
-
 **Column C: Data Classification (Highest)**
 
 *What to enter:* Highest data classification level processed (per organizational data classification policy)
@@ -477,14 +446,12 @@ This section provides detailed guidance for completing each assessment question 
 - **Internal Use:** Business data, operational data
 - **Public:** Marketing content, public documentation
 
-
 *Where to find:*
 
 - Data flow diagrams
 - Privacy Impact Assessment (PIA)
 - Data classification policy
 - GDPR Article 30 Records of Processing
-
 
 *Why this matters:*
 Data classification drives security requirements. Confidential data requires encryption, access controls, audit logging, etc.
@@ -502,7 +469,6 @@ Data classification drives security requirements. Confidential data requires enc
 - SOX (financial reporting)
 - Industry-specific regulations
 
-
 *Evidence:* Compliance register, legal analysis, privacy assessment
 
 ### Question 1.5: Deployment Environment
@@ -517,7 +483,6 @@ Data classification drives security requirements. Confidential data requires enc
 - Hybrid (mix of on-prem and cloud)
 - SaaS (vendor-hosted)
 
-
 **Column C: Internet Accessibility**
 
 *What to enter:* How is the application accessed?
@@ -528,7 +493,6 @@ Data classification drives security requirements. Confidential data requires enc
 - VPN Required (remote access via VPN)
 - Internal Network Only (office network)
 - Air-Gapped (isolated network)
-
 
 *Why this matters:*
 Internet-facing applications require stronger security controls (WAF, DDoS protection, public vulnerability management).
@@ -556,7 +520,6 @@ This sheet contains the risk scoring matrix from the policy. You'll score each c
 - **1:** Public information only
 - **0:** No data storage/processing
 
-
 *How to score:*
 Look at Question 1.4 (Data Types Processed). If processing PII, financial data, or PHI → score 5. If only internal business data → score 3-4. If public info → score 1.
 
@@ -573,7 +536,6 @@ Application processes customer payment card data and names/addresses.
 - **3:** Mixed internal/external users
 - **2:** Authenticated employees only (dozens)
 - **1:** Restricted user group (<20 users)
-
 
 *How to score:*
 Look at Question 1.3 (User Base). More users = higher risk (larger attack surface, more credentials to manage).
@@ -593,7 +555,6 @@ Application used by 10,000 external customers.
 - **1:** Isolated internal network (no remote access)
 - **0:** Air-gapped/standalone
 
-
 *How to score:*
 Look at Question 1.5 (Internet Accessibility). Direct internet exposure = highest risk.
 
@@ -610,7 +571,6 @@ Customer portal accessible via https://portal.company.com (public URL).
 - **3:** Moderate impact (workarounds available, inconvenient)
 - **2:** Low impact (efficiency/convenience only)
 - **1:** Minimal impact (nice-to-have)
-
 
 *How to score:*
 Ask: "What happens if this application is down for 4 hours? 1 day? 1 week?"
@@ -631,7 +591,6 @@ E-commerce platform (primary revenue channel).
 - **2:** Internal policies only
 - **1:** Minimal requirements
 
-
 *How to score:*
 Look at Question 1.4 (Regulatory Scope). Count applicable regulations.
 
@@ -648,13 +607,11 @@ The workbook automatically calculates:
 - Total risk score (0-5 scale)
 - Risk classification (High/Medium/Low)
 
-
 **Classification Thresholds:**
 
 - **High Risk:** Total score ≥ 3.5
 - **Medium Risk:** Total score 2.0 - 3.4
 - **Low Risk:** Total score < 2.0
-
 
 **What if classification seems wrong?**
 
@@ -666,7 +623,6 @@ Sometimes the formula produces unexpected results. Common scenarios:
 - Formula may say "Medium Risk" due to internet exposure
 - **Action:** Acceptable - internet exposure does increase risk even for low-sensitivity data
 
-
 *Scenario 2: High data sensitivity but internal-only*
 
 - Example: Payroll system (sensitive data, internal users only)
@@ -674,12 +630,10 @@ Sometimes the formula produces unexpected results. Common scenarios:
 - **Action:** Consider override to "High Risk" - sensitive data justifies higher classification
 - **Document:** Override justification in Notes field
 
-
 *Scenario 3: Borderline score (exactly 2.0 or 3.5)*
 
 - **Action:** Use judgment - round up if concerned about specific threats
 - **Document:** Rationale in Notes field
-
 
 **Column D: Classification Approved By**
 
@@ -711,26 +665,22 @@ Sometimes the formula produces unexpected results. Common scenarios:
 - Security requirements documented in distinct section of requirements document
 - Security requirements clearly identified and traceable
 
-
 *Answer No if:*
 
 - No security requirements documented anywhere
 - Security mentioned only vaguely ("must be secure")
 - Requirements mixed with functional requirements, not identifiable
 
-
 *Answer N/A if:*
 
 - Application is COTS with no customization (security requirements vendor responsibility)
 - Application being decommissioned (no new requirements needed)
-
 
 *Where to find:*
 
 - Document repository (SharePoint, Confluence, etc.)
 - Project folder for application
 - Requirements management tool (Jira, Azure DevOps, etc.)
-
 
 **Column C: Document Title & Location**
 
@@ -743,7 +693,6 @@ Sometimes the formula produces unexpected results. Common scenarios:
 - ❌ "Somewhere in SharePoint" (too vague)
 - ❌ "John has it" (not accessible)
 
-
 **Column D: Document Version**
 
 *What to enter:* Version number (shows document is under version control)
@@ -751,7 +700,6 @@ Sometimes the formula produces unexpected results. Common scenarios:
 *Examples:*
 
 - v2.1, v1.0, Rev 3, 2025-12-01 (date as version)
-
 
 **Column E: Last Updated Date**
 
@@ -769,13 +717,11 @@ Requirements older than 12 months may be outdated (technology changes, new threa
 - Version tracked
 - Updated within last 12 months (or since last major release)
 
-
 *⚠️ Partial:*
 
 - SRS exists but outdated (>12 months)
 - Security requirements exist but embedded in larger requirements doc (not dedicated SRS)
 - Draft SRS exists but not finalized
-
 
 *❌ Non-Compliant:*
 
@@ -783,12 +729,10 @@ Requirements older than 12 months may be outdated (technology changes, new threa
 - Security requirements not documented
 - SRS location unknown / document lost
 
-
 *N/A:*
 
 - COTS application with no customization
 - Application being decommissioned
-
 
 ### Question 3.2: SRS Completeness - Functional Security Requirements
 
@@ -803,7 +747,6 @@ SRS includes requirements for:
 - Session timeout requirements
 - MFA requirements for privileged users
 
-
 *Example requirement:*
 "The application SHALL implement multi-factor authentication for all administrative users. MFA SHALL use TOTP (RFC 6238) or push-notification method."
 
@@ -812,12 +755,10 @@ SRS includes requirements for:
 - No authentication requirements documented
 - Only vague statement ("must authenticate users")
 
-
 *Answer N/A if:*
 
 - Application has no authentication (public read-only content)
 - Authentication handled by separate identity system (but should reference it)
-
 
 **Column C: Authorization Requirements Specified? (Yes/No/N/A)**
 
@@ -830,7 +771,6 @@ SRS includes requirements for:
 - Privilege escalation prevention
 - Default deny (deny access unless explicitly granted)
 
-
 *Example requirement:*
 "The application SHALL implement role-based access control (RBAC) with minimum roles: User, Manager, Administrator. Access SHALL be denied by default unless explicitly granted."
 
@@ -839,12 +779,10 @@ SRS includes requirements for:
 - No authorization requirements documented
 - Only vague statement ("must control access")
 
-
 *Answer N/A if:*
 
 - Public application with no protected resources
 - Authorization handled by separate system (but should reference it)
-
 
 **Column D: Input Validation Requirements Specified? (Yes/No/N/A)**
 
@@ -857,7 +795,6 @@ SRS includes requirements for:
 - Output encoding based on context
 - Protection against injection attacks (SQL, XSS, command injection)
 
-
 *Example requirement:*
 "The application SHALL validate all input from users and external systems using whitelist validation. All user input SHALL be validated for data type, length, format, and range. The application SHALL use parameterized queries for all database access to prevent SQL injection."
 
@@ -866,11 +803,9 @@ SRS includes requirements for:
 - No input validation requirements
 - Only vague statement ("must validate input")
 
-
 *Answer N/A if:*
 
 - No user input accepted (read-only static content)
-
 
 **Column E: Cryptography Requirements Specified? (Yes/No/N/A)**
 
@@ -883,7 +818,6 @@ SRS includes requirements for:
 - Key management requirements
 - Certificate validation
 
-
 *Example requirement:*
 "The application SHALL encrypt all data in transit using TLS 1.3 or TLS 1.2 with approved cipher suites per ISMS-POL-A.8.24. Sensitive data (PII, payment card data) SHALL be encrypted at rest using AES-256."
 
@@ -892,12 +826,10 @@ SRS includes requirements for:
 - No cryptography requirements
 - Only vague statement ("must use encryption")
 
-
 *Answer N/A if:*
 
 - No sensitive data processed (public information only)
 - No network communication (standalone application)
-
 
 **Column F: Logging Requirements Specified? (Yes/No/N/A)**
 
@@ -910,7 +842,6 @@ SRS includes requirements for:
 - Log integrity protection
 - Centralized logging (SIEM integration for High-Risk apps)
 
-
 *Example requirement:*
 "The application SHALL log all authentication attempts (successful and failed), authorization decisions (grants and denials), administrative actions, and data modifications. Logs SHALL include timestamp, user ID, source IP, action, and result. Logs SHALL be retained for 12 months and protected from tampering."
 
@@ -919,11 +850,9 @@ SRS includes requirements for:
 - No logging requirements
 - Only vague statement ("must log events")
 
-
 *Answer N/A if:*
 
 - Logging not applicable (static content with no user interaction)
-
 
 **Column G: API Security Requirements Specified? (Yes/No/N/A)**
 
@@ -936,7 +865,6 @@ SRS includes requirements for:
 - API input validation
 - API documentation (OpenAPI/Swagger)
 
-
 *Example requirement:*
 "The application API SHALL require OAuth 2.0 bearer tokens for authentication. API calls SHALL be rate-limited to 100 requests per minute per client. All API input SHALL be validated per input validation requirements."
 
@@ -945,12 +873,10 @@ SRS includes requirements for:
 - Application has APIs but no security requirements documented
 - Only vague statement ("APIs must be secure")
 
-
 *Answer N/A if:*
 
 - Application has no APIs
 - APIs are internal-only (but should still have security requirements)
-
 
 **Status for Section 3.2:**
 
@@ -960,18 +886,15 @@ SRS includes requirements for:
 - Requirements are specific and testable (not vague)
 - Requirements reference standards/policies where applicable
 
-
 *⚠️ Partial:*
 
 - Some categories addressed, others missing
 - Requirements exist but are vague ("must be secure" vs. "SHALL use TLS 1.2+")
 
-
 *❌ Non-Compliant:*
 
 - Most/all functional security requirements missing
 - No detail beyond generic statements
-
 
 ### Question 3.3: SRS Completeness - Non-Functional Security Requirements
 
@@ -984,7 +907,6 @@ SRS includes requirements for:
 - Performance under attack scenarios (brute force, DoS)
 - Performance benchmarks for security operations
 
-
 *Example:*
 "Authentication response time SHALL be <500ms at p95. The application SHALL maintain 80% of normal throughput under simulated credential stuffing attack (100 login attempts/second)."
 
@@ -992,7 +914,6 @@ SRS includes requirements for:
 
 - No security performance requirements
 - Performance requirements exist but don't consider security overhead
-
 
 **Column C: Resilience Requirements (Fail Secure)?**
 
@@ -1004,7 +925,6 @@ SRS includes requirements for:
 - Circuit breaker patterns
 - Resource exhaustion handling
 
-
 *Example:*
 "The application SHALL fail-closed on authorization errors (deny access if cannot determine authorization). The application SHALL implement rate limiting to prevent resource exhaustion attacks."
 
@@ -1012,7 +932,6 @@ SRS includes requirements for:
 
 - No resilience requirements
 - No specification of fail-secure vs. fail-open behavior
-
 
 **Column D: Secure Defaults?**
 
@@ -1024,7 +943,6 @@ SRS includes requirements for:
 - Unused features disabled by default
 - Requirement for explicit security configuration changes
 
-
 *Example:*
 "The application SHALL ship with secure default configuration: TLS 1.2+ enabled, weak cipher suites disabled, all administrative interfaces requiring authentication, default accounts disabled."
 
@@ -1032,7 +950,6 @@ SRS includes requirements for:
 
 - No secure defaults requirements
 - Insecure defaults allowed (e.g., HTTP allowed by default)
-
 
 **Status for Section 3.3:**
 
@@ -1057,25 +974,21 @@ SRS includes requirements for:
 - Threats identified and documented
 - Countermeasures defined
 
-
 *Answer No if:*
 
 - No threat modeling conducted
 - Only informal discussion (no documentation)
-
 
 *Answer N/A if:*
 
 - Low-Risk application (threat modeling not required per policy)
 - COTS application with no customization
 
-
 *Policy requirements:*
 
 - **High-Risk applications:** Threat modeling MANDATORY
 - **Medium-Risk applications:** Threat modeling RECOMMENDED
 - **Low-Risk applications:** Threat modeling OPTIONAL
-
 
 **Column C: Threat Model Document Title & Location**
 
@@ -1085,7 +998,6 @@ SRS includes requirements for:
 
 - "Customer Portal Threat Model v1.2 - SharePoint > Security > Threat Models > CUST-PORTAL-TM-v1.2.pdf"
 - "Payment Gateway STRIDE Analysis - Confluence > Security Architecture > Payment_Gateway_STRIDE"
-
 
 **Column D: Methodology Used**
 
@@ -1098,7 +1010,6 @@ SRS includes requirements for:
 - **LINDDUN:** Privacy threat modeling
 - **Attack Trees:** Graphical threat representation
 - **DREAD:** Damage, Reproducibility, Exploitability, Affected Users, Discoverability (deprecated but still used)
-
 
 *Example:*
 "STRIDE methodology applied to data flow diagrams"
@@ -1115,7 +1026,6 @@ Threat models should be updated when:
 - Major functionality added
 - At least annually for High-Risk applications
 
-
 **Column F: Threats Identified (Count)**
 
 *What to enter:* Total number of threats identified
@@ -1126,12 +1036,10 @@ Threat models should be updated when:
 - Complex applications: 50-150 threats
 - Very complex (many integrations): 200+ threats
 
-
 *Red flags:*
 
 - Too few threats (<10) suggests incomplete analysis
 - No threats identified = threat modeling not properly conducted
-
 
 **Column G: Threats Mitigated**
 
@@ -1143,7 +1051,6 @@ Threat models should be updated when:
 - Accepted: Risk accepted (documented why no mitigation)
 - Transferred: Risk transferred (insurance, vendor responsibility)
 - Outstanding: Not yet addressed (plan required)
-
 
 *Example:*
 "45 threats identified: 40 mitigated, 3 accepted risk (documented), 2 outstanding (planned for Q2)"
@@ -1158,12 +1065,10 @@ Threat models should be updated when:
 - System context diagram showing external entities
 - Deployment architecture diagram
 
-
 *Answer No if:*
 
 - No diagrams, only text description
 - Diagrams too high-level to be useful
-
 
 **Column C: Trust Boundaries Identified? (Yes/No)**
 
@@ -1174,19 +1079,16 @@ Threat models should be updated when:
 - Internet/internal network boundary documented
 - User/admin privilege boundaries identified
 
-
 *Example trust boundaries:*
 
 - Internet ↔ Web Application Firewall ↔ Application Server
 - User Interface ↔ Application Logic ↔ Database
 - User Role ↔ Admin Role
 
-
 *Answer No if:*
 
 - No trust boundaries identified
 - Unclear where boundaries exist
-
 
 **Column D: Countermeasures Documented? (Yes/No)**
 
@@ -1196,12 +1098,10 @@ Threat models should be updated when:
 - Countermeasures specific (not "use encryption" but "use TLS 1.2+ for all client-server communication")
 - Countermeasures mapped to security requirements
 
-
 *Answer No if:*
 
 - Threats identified but no countermeasures
 - Countermeasures too vague to implement
-
 
 **Column E: Residual Risks Documented? (Yes/No)**
 
@@ -1211,12 +1111,10 @@ Threat models should be updated when:
 - Risk acceptance decisions documented
 - Risk owners assigned
 
-
 *Answer No if:*
 
 - No discussion of residual risk
 - Assumption that all countermeasures eliminate all risk
-
 
 **Status for Sheet 4:**
 
@@ -1226,29 +1124,24 @@ Threat models should be updated when:
 - Document complete with diagrams, threats, countermeasures
 - Updated within last 12 months (or since last major release)
 
-
 *✅ Compliant (for Medium-Risk apps):*
 
 - Threat modeling conducted (recommended but not required)
 - OR documented decision not to conduct with justification
-
 
 *⚠️ Partial:*
 
 - Threat model exists but incomplete (missing diagrams, countermeasures, etc.)
 - Threat model outdated (>12 months for High-Risk)
 
-
 *❌ Non-Compliant:*
 
 - High-Risk application with no threat model
 - Threat model required but not conducted
 
-
 *N/A:*
 
 - Low-Risk application (threat modeling optional per policy)
-
 
 **Evidence:**
 
@@ -1256,7 +1149,6 @@ Threat models should be updated when:
 - Workshop attendance records
 - Threat model review approval
 - Residual risk acceptance documentation
-
 
 ---
 
@@ -1275,25 +1167,21 @@ Threat models should be updated when:
 - Security findings documented
 - Review report exists
 
-
 *Answer No if:*
 
 - No architecture review conducted
 - Only informal review (no documentation)
-
 
 *Answer N/A if:*
 
 - Low-Risk application (architecture review optional per policy)
 - COTS application with no customization
 
-
 *Policy requirements:*
 
 - **High-Risk applications:** Architecture review MANDATORY
 - **Medium-Risk applications:** Architecture review RECOMMENDED
 - **Low-Risk applications:** Architecture review OPTIONAL
-
 
 **Column C: Review Report Title & Location**
 
@@ -1320,14 +1208,12 @@ Threat models should be updated when:
 - Needs improvement: 20-40 findings
 - Major issues: 50+ findings
 
-
 *Severity breakdown typical:*
 
 - Critical: 0-3 (architecture flaws that block deployment)
 - High: 5-15 (significant security issues)
 - Medium: 10-30 (moderate concerns)
 - Low: 10-40 (minor improvements)
-
 
 **Column G: Critical/High Findings Remediated?**
 
@@ -1336,7 +1222,6 @@ Threat models should be updated when:
 - "Yes - All remediated" (evidence: remediation records)
 - "Partial - X of Y remediated" (remaining items in progress)
 - "No - Outstanding" (requires justification)
-
 
 *Policy requirement:*
 Critical and High findings MUST be remediated before production deployment for High-Risk applications.
@@ -1352,7 +1237,6 @@ Critical and High findings MUST be remediated before production deployment for H
 - Deployment architecture diagram reviewed
 - Network architecture diagram reviewed (if applicable)
 
-
 **Column C: Security Controls Validated? (Yes/No)**
 
 *Answer Yes if:*
@@ -1364,11 +1248,9 @@ Critical and High findings MUST be remediated before production deployment for H
 - Logging architecture validated
 - Network segmentation validated
 
-
 *Answer No if:*
 
 - Only high-level review, no security control deep-dive
-
 
 **Column D: Integration Points Reviewed? (Yes/No)**
 
@@ -1379,11 +1261,9 @@ Critical and High findings MUST be remediated before production deployment for H
 - Third-party component security reviewed
 - Data flows to/from external systems validated
 
-
 *Answer No if:*
 
 - Integration security not explicitly reviewed
-
 
 **Column E: Review Approval Obtained? (Yes/No)**
 
@@ -1393,12 +1273,10 @@ Critical and High findings MUST be remediated before production deployment for H
 - CISO approved for High-Risk applications
 - Approval documented with date and signature
 
-
 *Answer No if:*
 
 - Review conducted but no formal approval
 - Approval pending remediation of findings
-
 
 **Status for Sheet 5:**
 
@@ -1409,18 +1287,15 @@ Critical and High findings MUST be remediated before production deployment for H
 - Critical/High findings remediated
 - Approval obtained (Security Architect + CISO)
 
-
 *✅ Compliant (for Medium-Risk apps):*
 
 - Architecture review conducted (recommended)
 - OR documented decision not to conduct with justification
 
-
 *⚠️ Partial:*
 
 - Review conducted but findings not fully remediated
 - Review outdated (>12 months for changed architecture)
-
 
 *❌ Non-Compliant:*
 
@@ -1428,11 +1303,9 @@ Critical and High findings MUST be remediated before production deployment for H
 - Review required but not conducted
 - Critical/High findings outstanding with no remediation plan
 
-
 *N/A:*
 
 - Low-Risk application (review optional per policy)
-
 
 **Evidence:**
 
@@ -1440,7 +1313,6 @@ Critical and High findings MUST be remediated before production deployment for H
 - Architecture diagrams (reviewed versions)
 - Finding remediation records
 - Approval sign-off
-
 
 ---
 
@@ -1457,19 +1329,16 @@ Critical and High findings MUST be remediated before production deployment for H
 - Document/system showing linkage: Security Requirement → Design Decision → Implementation → Test Case
 - May be in spreadsheet, requirements management tool (Jira, Azure DevOps), or document
 
-
 *Answer No if:*
 
 - No traceability documentation
 - Requirements exist but no linkage to implementation/testing
-
 
 *Where to find:*
 
 - Requirements management tool (Jira stories with linked test cases)
 - Traceability matrix spreadsheet
 - Security requirements document with traceability section
-
 
 **Column C: Format/Location**
 
@@ -1480,7 +1349,6 @@ Critical and High findings MUST be remediated before production deployment for H
 - "Jira: Security requirements as Epics, implementation as Stories, tests as sub-tasks"
 - "Excel Traceability Matrix - SharePoint > Requirements > Traceability_Matrix_v1.2.xlsx"
 - "Security Requirements Specification Appendix B: Traceability Matrix"
-
 
 ### Question 6.2: Traceability Coverage
 
@@ -1497,13 +1365,11 @@ Critical and High findings MUST be remediated before production deployment for H
 - 80-99%: Most requirements traced (acceptable)
 - <80%: Significant gaps in traceability
 
-
 *Where to find:*
 
 - Architecture documents referencing requirements
 - Design documents with requirements IDs
 - Traceability matrix
-
 
 **Column C: % Requirements Traced to Implementation**
 
@@ -1518,13 +1384,11 @@ Critical and High findings MUST be remediated before production deployment for H
 - 80-99%: Most requirements implemented
 - <80%: Significant implementation gaps
 
-
 *Evidence:*
 
 - Code commits referencing requirement IDs
 - Configuration documentation
 - Release notes showing implemented requirements
-
 
 **Column D: % Requirements Traced to Test Cases**
 
@@ -1539,13 +1403,11 @@ Critical and High findings MUST be remediated before production deployment for H
 - 80-99%: Most requirements tested
 - <80%: Significant testing gaps
 
-
 *Evidence:*
 
 - Test plan with requirements IDs
 - Test management system (TestRail, Zephyr) showing requirement-to-test linkage
 - Security testing results mapped to requirements
-
 
 ### Question 6.3: Traceability Tool
 
@@ -1561,7 +1423,6 @@ Critical and High findings MUST be remediated before production deployment for H
 - IBM DOORS (enterprise requirements management)
 - Excel/SharePoint (simple traceability matrices)
 - Confluence (requirements documentation with links)
-
 
 *Example:*
 "Jira: SEC-REQ Epics → DEV Stories (implementation) → TEST sub-tasks"
@@ -1581,12 +1442,10 @@ Traceability should be updated throughout development, not just at the end. Outd
 - >90% requirements traced to design, implementation, and testing
 - Traceability current (updated within last 3 months)
 
-
 *⚠️ Partial:*
 
 - Traceability exists but incomplete (60-89% coverage)
 - Traceability outdated (>6 months)
-
 
 *❌ Non-Compliant:*
 
@@ -1594,13 +1453,11 @@ Traceability should be updated throughout development, not just at the end. Outd
 - <60% requirements traced
 - Traceability never updated
 
-
 **Evidence:**
 
 - Traceability matrix document/export
 - Requirements management tool screenshots
 - Test plan showing requirement linkage
-
 
 ---
 
@@ -1631,14 +1488,12 @@ This sheet is auto-populated based on your answers in previous sheets. Review fo
 - [ ] Security requirements approved (Security Architect for Medium/High, CISO for High)
 - [ ] All evidence documented and accessible
 
-
 **Auto-Scoring:**
 
 - Compliant items: Count of ✅
 - Non-compliant items: Count of ❌
 - Partial items: Count of ⚠️
 - Overall compliance %: (Compliant Items / Total Applicable Items) × 100%
-
 
 ---
 
@@ -1660,7 +1515,6 @@ For each gap identified in the assessment:
 - "SRS missing input validation requirements"
 - "Architecture review conducted but 3 High findings not remediated"
 
-
 **Column C: Sheet Reference**
 *What to enter:* Which sheet identified this gap
 
@@ -1676,7 +1530,6 @@ For each gap identified in the assessment:
 - **Medium:** Address in next 90 days
 - **Low:** Track as technical debt
 
-
 **Column E: Policy Requirement**
 *What to enter:* Which policy requirement is violated?
 
@@ -1691,7 +1544,6 @@ For each gap identified in the assessment:
 - "Update SRS Section 4.3 to add input validation requirements per policy"
 - "Remediate 3 High architecture findings: implement API rate limiting, enable MFA for admins, configure TLS 1.2+"
 
-
 **Column G: Responsible Party**
 *What to enter:* Who will fix this?
 
@@ -1701,7 +1553,6 @@ For each gap identified in the assessment:
 - Product Manager (for requirements updates)
 - Development Team (for implementation)
 - DevOps (for configuration)
-
 
 **Column H: Target Date**
 *What to enter:* When will this be completed?
@@ -1713,7 +1564,6 @@ For each gap identified in the assessment:
 - Medium gaps: 180 days
 - Low gaps: Next major release
 
-
 **Column I: Status**
 *What to enter:* Current status
 
@@ -1723,7 +1573,6 @@ For each gap identified in the assessment:
 - In Progress (work underway)
 - Resolved (completed, evidence available)
 - Risk Accepted (documented decision not to remediate)
-
 
 **Column J: Completion Date**
 *What to enter:* When was gap closed? (leave blank if still open)
@@ -1736,7 +1585,6 @@ For each gap identified in the assessment:
 - "Threat Model v1.0 dated 2026-01-20 - SharePoint link"
 - "SRS v2.2 Section 4.3 updated - Confluence link"
 - "Architecture findings remediation records - Jira tickets DEV-1234, DEV-1235, DEV-1236"
-
 
 ---
 
@@ -1761,7 +1609,6 @@ For each piece of evidence:
 - Report (security testing report, audit report)
 - Spreadsheet (traceability matrix, risk scoring)
 
-
 **Column C: Evidence Title**
 *What to enter:* Descriptive title
 
@@ -1770,7 +1617,6 @@ For each piece of evidence:
 - "Customer Portal Security Requirements Specification v2.1"
 - "Threat Modeling Workshop Minutes - 2025-11-08"
 - "Architecture Review Report - Customer Portal - 2025-11-15"
-
 
 **Column D: Evidence Location**
 *What to enter:* Where can auditor/reviewer find this?
@@ -1782,7 +1628,6 @@ For each piece of evidence:
 - "SharePoint > Projects > CUST-PORTAL > Requirements > SRS_v2.1.docx"
 - "Confluence > Security Architecture > Threat Models > Customer_Portal_TM"
 - "Jira > SEC-REQ-001 > Attachments > Traceability_Matrix.xlsx"
-
 
 **Column E: Date**
 *What to enter:* Evidence date (document date, not evidence collection date)
@@ -1798,7 +1643,6 @@ For each piece of evidence:
 - Security Architect (for threat model, architecture review)
 - Development Manager (for traceability matrix)
 
-
 **Column G: Related Assessment Question**
 *What to enter:* Which assessment question(s) does this evidence support?
 
@@ -1810,7 +1654,6 @@ For each piece of evidence:
 - "4.1, 4.2" (Sheet 4, Questions 1 and 2 - Threat Modeling)
 - "5.1" (Sheet 5, Question 1 - Architecture Review)
 
-
 **Column H: Evidence Verified?**
 *What to enter:* Has reviewer confirmed this evidence exists and is adequate?
 
@@ -1819,7 +1662,6 @@ For each piece of evidence:
 - Yes (verified by reviewer)
 - No (not yet verified)
 - Issue (evidence missing, inadequate, or outdated)
-
 
 **Column I: Verification Date**
 *What to enter:* When was evidence verified?
@@ -1854,7 +1696,6 @@ For each piece of evidence:
 - Approved (signed off)
 - Requires Remediation (gaps must be addressed)
 
-
 ### Assessment Completed By (Rows 12-20)
 
 **Name:** [User input]  
@@ -1880,7 +1721,6 @@ For each piece of evidence:
 - Require Remediation (critical/high gaps must be addressed before approval)
 - Reject (incomplete assessment, resubmit)
 
-
 ### Approved By - CISO (High-Risk Applications Only) (Rows 32-40)
 
 **Name:** [User input]  
@@ -1890,7 +1730,6 @@ For each piece of evidence:
 - Approved (for production deployment)
 - Approved with Conditions (conditions documented below)
 - Rejected (cannot deploy until gaps addressed)
-
 
 **Conditions/Notes:** [Text area]
 
@@ -1904,7 +1743,6 @@ For each piece of evidence:
 - High-Risk: +3 months (quarterly)
 - Medium-Risk: +12 months (annually)
 - Low-Risk: +12 months (annually)
-
 
 **Review Responsible:** [User input]
 
@@ -1931,7 +1769,6 @@ EV-[SheetNumber]-[ApplicationID]-[DocumentType]-[Date].[ext]
 - `EV-5-APP-CUST-ArchReview-20260115.pdf` (Architecture Review Report)
 - `EV-6-APP-CUST-Traceability-20260115.xlsx` (Traceability Matrix)
 
-
 **Storage Requirements:**
 
 - **Location:** Centralized evidence repository
@@ -1940,7 +1777,6 @@ EV-[SheetNumber]-[ApplicationID]-[DocumentType]-[Date].[ext]
 - **Access Control:** Read access for auditors, compliance team, security team
 - **Backup:** Included in standard backup procedures
 
-
 **Evidence Quality Criteria:**
 
 - **Timestamped:** Must show date/time of creation
@@ -1948,7 +1784,6 @@ EV-[SheetNumber]-[ApplicationID]-[DocumentType]-[Date].[ext]
 - **Complete:** Full document, not excerpts (unless noted)
 - **Current:** Within validity period (< 12 months for High-Risk)
 - **Verifiable:** Auditor can independently access and verify
-
 
 ## Evidence Types by Sheet
 
@@ -1959,13 +1794,11 @@ EV-[SheetNumber]-[ApplicationID]-[DocumentType]-[Date].[ext]
 - Data flow diagram
 - Privacy Impact Assessment (if PII processed)
 
-
 **Sheet 2: Risk Classification**
 
 - Risk scoring worksheet
 - Risk classification approval email
 - Management meeting minutes (if classification discussed)
-
 
 **Sheet 3: Security Requirements Documentation**
 
@@ -1973,14 +1806,12 @@ EV-[SheetNumber]-[ApplicationID]-[DocumentType]-[Date].[ext]
 - Requirements document excerpts (if SRS is section of larger document)
 - Requirements management tool exports (Jira, Azure DevOps)
 
-
 **Sheet 4: Threat Modeling**
 
 - Threat model document (full document with diagrams)
 - Threat modeling workshop attendance list
 - Threat modeling tool exports (if tool used)
 - Residual risk acceptance records
-
 
 **Sheet 5: Architecture Review**
 
@@ -1990,7 +1821,6 @@ EV-[SheetNumber]-[ApplicationID]-[DocumentType]-[Date].[ext]
 - Finding remediation records (Jira tickets, change records)
 - Architecture approval sign-off
 
-
 **Sheet 6: Requirements Traceability**
 
 - Traceability matrix (spreadsheet or tool export)
@@ -1998,11 +1828,9 @@ EV-[SheetNumber]-[ApplicationID]-[DocumentType]-[Date].[ext]
 - Test plan showing requirement linkage
 - Design documents referencing requirements
 
-
 **Sheet 7: Compliance Checklist**
 
 - (No separate evidence - checklist populated from other sheets)
-
 
 **Sheet 8: Gap Analysis**
 
@@ -2010,18 +1838,15 @@ EV-[SheetNumber]-[ApplicationID]-[DocumentType]-[Date].[ext]
 - Remediation work tracking (Jira epics, project plans)
 - Completed remediation evidence (updated SRS, completed threat model, etc.)
 
-
 **Sheet 9: Evidence Register**
 
 - (No separate evidence - register documents evidence locations)
-
 
 **Sheet 10: Approval & Sign-Off**
 
 - Signed approval emails
 - Digital signatures (if used)
 - Management meeting minutes (if presented)
-
 
 ## Evidence Collection Tips
 
@@ -2032,7 +1857,6 @@ EV-[SheetNumber]-[ApplicationID]-[DocumentType]-[Date].[ext]
 - Use consistent naming conventions
 - Set up automated reminders for evidence submissions
 
-
 **For Large Application Portfolios:**
 
 - Create evidence collection templates
@@ -2040,14 +1864,12 @@ EV-[SheetNumber]-[ApplicationID]-[DocumentType]-[Date].[ext]
 - Batch collect evidence (e.g., quarterly for all High-Risk apps)
 - Consider evidence management tool (GRC platforms)
 
-
 **For Auditors:**
 
 - Provide evidence index (Sheet 9) first
 - Offer remote access to evidence repository
 - Prepare evidence package for major audits
 - Maintain audit trails (who accessed what when)
-
 
 ---
 
@@ -2064,7 +1886,6 @@ EV-[SheetNumber]-[ApplicationID]-[DocumentType]-[Date].[ext]
 - Require evidence location for every "Yes"
 - Spot-check evidence (don't just trust assessor)
 - Make assessor accountable (sign-off with consequences for false claims)
-
 
 **Example:**
 ❌ Bad: "SRS Exists? Yes" (no document title, no location, no version)
@@ -2084,7 +1905,6 @@ EV-[SheetNumber]-[ApplicationID]-[DocumentType]-[Date].[ext]
 - Look for authentication, authorization, encryption, validation, logging requirements
 - If requirements doc doesn't have a "Security" section, probably no security requirements
 
-
 **Example:**
 ❌ Not Security Requirements: "The application shall allow customers to view their account balance"
 ✅ Security Requirements: "The application SHALL require multi-factor authentication for all users accessing account balance information. The application SHALL log all account balance access attempts with timestamp, user ID, and source IP address."
@@ -2102,7 +1922,6 @@ EV-[SheetNumber]-[ApplicationID]-[DocumentType]-[Date].[ext]
 - Security requirements must be SPECIFIC and TESTABLE
 - "Use encryption" → "Use TLS 1.2+ with cipher suites XYZ for all client-server communication"
 - "Authenticate users" → "Implement OAuth 2.0 authentication with TOTP-based MFA for all administrative users"
-
 
 **Example:**
 ❌ Vague: "The application shall use strong passwords"
@@ -2123,7 +1942,6 @@ EV-[SheetNumber]-[ApplicationID]-[DocumentType]-[Date].[ext]
 - Document all threat modeling, even for simple apps
 - If you want exception, request formal exception from CISO with justification
 
-
 **Example:**
 ❌ "Simple" High-Risk app: Marketing website (public content) → "No threat model needed, it's just a website"
 ✅ Correct approach: "Marketing website handles contact form submissions (potential injection), has CMS admin panel (needs strong auth), uses third-party analytics (data leakage risk). Conducted threat modeling workshop, identified 15 threats, documented countermeasures."
@@ -2142,7 +1960,6 @@ EV-[SheetNumber]-[ApplicationID]-[DocumentType]-[Date].[ext]
 - For Medium-Risk apps: <24 months acceptable
 - Update documents when major changes occur (don't wait for scheduled review)
 - Version control everything - show document is actively maintained
-
 
 **Example:**
 ❌ "SRS exists, dated 2022-03-15" (almost 4 years old!) - app has had 3 major releases since then
@@ -2163,7 +1980,6 @@ EV-[SheetNumber]-[ApplicationID]-[DocumentType]-[Date].[ext]
 - Even simple traceability (spreadsheet) better than nothing
 - Maintain traceability throughout development (not after the fact)
 
-
 **Example:**
 ❌ "We have 50 security requirements in SRS, we have 500 test cases, but we don't know which tests validate which requirements"
 ✅ "Traceability matrix shows: SEC-REQ-001 (MFA requirement) → Story DEV-1234 (MFA implementation) → Test Cases TEST-401, TEST-402, TEST-403 (MFA validation tests)"
@@ -2182,7 +1998,6 @@ EV-[SheetNumber]-[ApplicationID]-[DocumentType]-[Date].[ext]
 - "N/A - Application has no user authentication (public read-only content)" ✅
 - "N/A" with no explanation ❌
 - Challenge N/A during review - is it really not applicable?
-
 
 **Example:**
 ❌ "Threat modeling? N/A" (no justification - is this really N/A or just not done?)
@@ -2203,7 +2018,6 @@ EV-[SheetNumber]-[ApplicationID]-[DocumentType]-[Date].[ext]
 - Verify remediation before deployment
 - If can't remediate, document risk acceptance (CISO approval for High-Risk)
 
-
 **Example:**
 ❌ "Architecture review conducted 6 months ago, identified 5 High findings, all still open, app deployed to production anyway"
 ✅ "Architecture review conducted, 5 High findings identified, 4 remediated (evidence: Jira tickets), 1 accepted risk (CISO approval on file, compensating controls documented)"
@@ -2222,7 +2036,6 @@ EV-[SheetNumber]-[ApplicationID]-[DocumentType]-[Date].[ext]
 - Trigger assessments on major changes (architecture change, major release, security incident)
 - Update assessment workbook (don't start from scratch each time)
 - Track trends (is compliance improving or declining?)
-
 
 **Example:**
 ❌ "Initial assessment done in 2023, app has had 5 major releases since, no reassessment"
@@ -2243,7 +2056,6 @@ EV-[SheetNumber]-[ApplicationID]-[DocumentType]-[Date].[ext]
 - Provide training to assessors (how to assess security requirements)
 - Use this guide (you're reading it!) to educate assessors
 
-
 **Example:**
 ❌ "Junior developer filled out assessment - thought password length requirement is a 'security requirement' (it's a security control implementation detail, not a requirement)"
 ✅ "Security Architect conducted assessment with Product Manager - correctly identified requirements vs. controls, found gaps in authentication requirements"
@@ -2263,14 +2075,12 @@ Use this checklist before submitting assessment for review.
 - [ ] Data types and sensitivity accurately documented
 - [ ] Deployment environment and internet accessibility specified
 
-
 **Sheet 2: Risk Classification**
 
 - [ ] All risk criteria scored (no blanks)
 - [ ] Risk classification calculated correctly
 - [ ] Classification justified and reasonable
 - [ ] Classification approved by Security Architect (signature/email)
-
 
 **Sheet 3: Security Requirements Documentation**
 
@@ -2281,7 +2091,6 @@ Use this checklist before submitting assessment for review.
 - [ ] Data protection requirements assessed
 - [ ] Evidence documented for all "Yes" answers
 
-
 **Sheet 4: Threat Modeling Status**
 
 - [ ] Threat modeling status determined (Yes/No/N/A)
@@ -2290,7 +2099,6 @@ Use this checklist before submitting assessment for review.
 - [ ] Mitigation status documented
 - [ ] Quality criteria assessed (diagrams, trust boundaries, countermeasures, residual risks)
 - [ ] Evidence documented
-
 
 **Sheet 5: Architecture Review Status**
 
@@ -2301,7 +2109,6 @@ Use this checklist before submitting assessment for review.
 - [ ] Quality criteria assessed (diagrams, controls, integrations, approval)
 - [ ] Evidence documented
 
-
 **Sheet 6: Requirements Traceability**
 
 - [ ] Traceability matrix existence determined
@@ -2310,13 +2117,11 @@ Use this checklist before submitting assessment for review.
 - [ ] Tool/system used documented
 - [ ] Evidence documented
 
-
 **Sheet 7: Compliance Checklist**
 
 - [ ] All checklist items auto-populated from previous sheets
 - [ ] Compliance score calculated correctly
 - [ ] No manual overrides without justification
-
 
 **Sheet 8: Gap Analysis**
 
@@ -2324,7 +2129,6 @@ Use this checklist before submitting assessment for review.
 - [ ] Each gap has severity, remediation action, responsible party, target date
 - [ ] Critical gaps have realistic remediation plans (<30 days)
 - [ ] Gap prioritization makes sense (critical before low)
-
 
 **Sheet 9: Evidence Register**
 
@@ -2334,7 +2138,6 @@ Use this checklist before submitting assessment for review.
 - [ ] Evidence owners documented
 - [ ] Evidence verified (spot-check at least 20%)
 
-
 **Sheet 10: Approval & Sign-Off**
 
 - [ ] Assessment summary completed
@@ -2342,7 +2145,6 @@ Use this checklist before submitting assessment for review.
 - [ ] Security Architect review and recommendation provided
 - [ ] CISO approval provided (if High-Risk application)
 - [ ] Next review date calculated and scheduled
-
 
 ## Quality Checks
 
@@ -2355,7 +2157,6 @@ Use this checklist before submitting assessment for review.
 - [ ] Conditional formatting applied correctly (status colors)
 - [ ] No obvious errors (typos, incorrect dates, impossible values)
 
-
 **Substantive Quality:**
 
 - [ ] Risk classification matches application characteristics
@@ -2365,14 +2166,12 @@ Use this checklist before submitting assessment for review.
 - [ ] Traceability coverage is realistic (not 100% if gaps exist)
 - [ ] Gap remediation plans are realistic (not "30 days" for everything)
 
-
 **Evidence Quality:**
 
 - [ ] Evidence is current (<12 months for High-Risk)
 - [ ] Evidence is complete (full documents, not excerpts unless noted)
 - [ ] Evidence is attributable (clearly for this application)
 - [ ] Evidence is verifiable (auditor can access)
-
 
 ## Pre-Submission Checklist
 
@@ -2385,7 +2184,6 @@ Before submitting assessment for approval:
 - [ ] Ready for Security Architect peer review
 - [ ] Assessment status set to "Final" (not "Draft")
 
-
 ## Post-Approval Checklist
 
 After assessment approved:
@@ -2396,7 +2194,6 @@ After assessment approved:
 - [ ] Next assessment scheduled (calendar reminder)
 - [ ] If gaps identified: Gap remediation tracking initiated (Sheet 8)
 - [ ] Assessment summary communicated to stakeholders (Application Owner, Development Manager)
-
 
 ---
 
@@ -2421,7 +2218,6 @@ After assessment approved:
 - Recommendation: Approve / Approve with Conditions / Require Remediation / Reject
 - Feedback provided to assessor (if revisions needed)
 
-
 **Common Review Findings:**
 
 - Missing evidence locations (assessor said "Yes" but no document specified)
@@ -2429,7 +2225,6 @@ After assessment approved:
 - Gaps underestimated (Low severity when should be High)
 - Evidence outdated (documents >12 months old)
 - Requirements too vague (not specific/testable)
-
 
 ## Application Owner Review
 
@@ -2450,7 +2245,6 @@ After assessment approved:
 - Commitment to remediation (if gaps exist)
 - Sign-off in Sheet 10
 
-
 ## CISO Approval (High-Risk Applications Only)
 
 **Timing:** After Security Architect and Application Owner reviews
@@ -2469,14 +2263,12 @@ After assessment approved:
 - Conditions documented (if conditional approval)
 - Sign-off in Sheet 10
 
-
 **Rejection Reasons:**
 
 - Critical gaps not addressed (e.g., High-Risk app with no threat model)
 - Remediation plans unrealistic or too slow
 - Risk classification disputed (should be higher risk)
 - Inadequate evidence quality
-
 
 ## Continuous Improvement
 
@@ -2494,7 +2286,6 @@ After assessment approved:
 - Gap remediation rate (effectiveness)
 - Repeat findings (are gaps being fixed or recurring?)
 
-
 ---
 
 # Conclusion
@@ -2509,14 +2300,12 @@ This User Completion Guide provides comprehensive instructions for completing th
 - **Document gaps** honestly - that's the point of assessment
 - **Follow up** on gaps - assessment without remediation is useless
 
-
 **For Support:**
 
 - Review ISMS-POL-A.8.25-26-29 Section 2 for policy requirements
 - Contact Security Architecture team for technical questions
 - Use this guide's question-by-question guidance (Section 4)
 - Refer to example assessments (if available)
-
 
 **Next Steps:**
 1. Read this User Completion Guide thoroughly
@@ -2581,12 +2370,10 @@ This section provides detailed technical specifications for creating the Securit
 - Sub-Header: RGB(68, 114, 196) / #4472C4 (Blue)
 - Column Header: RGB(217, 217, 217) / #D9D9D9 (Light Gray)
 
-
 **Input Cells:**
 
 - User Input Required: RGB(255, 255, 204) / #FFFFCC (Light Yellow)
 - Auto-Calculated: RGB(217, 217, 217) / #D9D9D9 (Light Gray) - Protected
-
 
 **Status Indicators:**
 
@@ -2595,7 +2382,6 @@ This section provides detailed technical specifications for creating the Securit
 - Non-Compliant (❌): RGB(255, 199, 206) / #FFC7CE (Light Red)
 - N/A: RGB(237, 237, 237) / #EDEDED (Gray)
 
-
 ## Standard Fonts
 
 - **Headers:** Calibri 14pt Bold, White text
@@ -2603,7 +2389,6 @@ This section provides detailed technical specifications for creating the Securit
 - **Column Headers:** Calibri 10pt Bold, Black text
 - **Body Text:** Calibri 10pt, Black text
 - **Instructions:** Calibri 9pt, Italic, Gray text
-
 
 ## Data Validation Standards
 
@@ -2641,7 +2426,6 @@ Document basic application information for assessment context.
 - A1:G1 merged: "Application Profile" (Dark Blue header, white text, 14pt bold)
 - A2:G2 merged: "Basic application information and characteristics" (Blue sub-header, white text, 11pt)
 
-
 **Row 3:** Column Headers
 | Column | Header | Width | Format |
 |--------|--------|-------|--------|
@@ -2665,13 +2449,11 @@ Document basic application information for assessment context.
 - F4: [User Input] - Yellow fill
 - G4: [User Input] - Yellow fill
 
-
 ### Row 5: Application ID
 
 - A5: "Application ID" (bold)
 - B5: [User Input - format: APP-XXX] - Yellow fill, Data validation: Text length 3-20
 - C5-G5: Same structure as Row 4
-
 
 ### Row 6: Application Owner
 
@@ -2680,18 +2462,15 @@ Document basic application information for assessment context.
 - C6: "Organizational Chart / HR System" - Yellow fill
 - D6-G6: Same structure as Row 4
 
-
 ### Row 7: Owner Department
 
 - A7: "Owner Department" (bold)
 - B7: [User Input] - Yellow fill
 
-
 ### Row 8: Owner Contact Email
 
 - A8: "Owner Contact Email" (bold)
 - B8: [User Input] - Yellow fill, Data validation: Email format check
-
 
 ### Row 9: Application Description - Business Purpose
 
@@ -2699,20 +2478,17 @@ Document basic application information for assessment context.
 - B9: [User Input - Text area, merged B9:B11] - Yellow fill, Wrap text
 - C9-G9: Evidence reference (merged C9:C11)
 
-
 ### Row 12: Application Description - User Base
 
 - A12: "User Base" (bold)
 - B12: [User Input] - Yellow fill
 - **Example text in comments:** "External customers (~10,000 active users)"
 
-
 ### Row 13: Application Description - Technology Stack
 
 - A13: "Technology Stack" (bold)
 - B13: [User Input - Text area, merged B13:B14] - Yellow fill, Wrap text
 - **Example text in comments:** "Frontend: React.js, Backend: Node.js, Database: PostgreSQL, Infrastructure: AWS"
-
 
 ### Row 15: Data Types Processed
 
@@ -2725,7 +2501,6 @@ Document basic application information for assessment context.
 ```
 
 - **Allow multiple selections via comment instruction:** "Check all that apply - separate with commas"
-
 
 ### Row 16: Data Classification (Highest)
 
@@ -2773,7 +2548,6 @@ Document basic application information for assessment context.
 - B20: [User Input] - Yellow fill
 - **Example text in comments:** "Q4 2025 (October - December 2025)"
 
-
 ## Formulas
 
 **E4 (Status for Application Name):**
@@ -2787,7 +2561,6 @@ Document basic application information for assessment context.
 
 - Rule 1: If cell contains "✅" → Green fill (RGB 198, 239, 206)
 - Rule 2: If cell contains "❌" → Red fill (RGB 255, 199, 206)
-
 
 ## Sheet Protection
 
@@ -2808,11 +2581,9 @@ Document and validate application risk classification using policy criteria.
 - A1:J1 merged: "Application Risk Classification" (Dark Blue header)
 - A2:J2 merged: "Risk scoring based on ISMS-POL-A.8.25-26-29 Section 2 criteria" (Blue sub-header)
 
-
 **Row 3:** Instructions
 
 - A3:J3 merged: "Score each criterion 0-5 using the scoring guidelines. Weighted total determines risk classification: High Risk ≥3.5, Medium Risk 2.0-3.4, Low Risk <2.0" (Italic, gray text)
-
 
 **Row 4:** Column Headers
 | Column | Header | Width |
@@ -2839,7 +2610,6 @@ Document and validate application risk classification using policy criteria.
 - G5: [User Input] - Yellow fill
 - H5: [Dropdown: Yes/No] - Yellow fill
 
-
 ### Row 6: User Base
 
 - A6: "User Base" (bold)
@@ -2848,7 +2618,6 @@ Document and validate application risk classification using policy criteria.
 - D6: `=B6*C6` (formula, gray fill, protected, number format: 0.00)
 - E6: "5=Public/Anonymous Users, 4=Partners/Contractors, 3=Mixed Internal/External, 2=Employees Only, 1=Restricted Group (<20)" (Wrap text)
 - F6-H6: Same as Row 5
-
 
 ### Row 7: Internet Exposure
 
@@ -2859,7 +2628,6 @@ Document and validate application risk classification using policy criteria.
 - E7: "5=Public Internet, 4=Internet+VPN, 3=Hybrid, 2=Internal+Remote Access, 1=Isolated Internal, 0=Air-Gapped" (Wrap text)
 - F7-H7: Same as Row 5
 
-
 ### Row 8: Business Criticality
 
 - A8: "Business Criticality" (bold)
@@ -2869,7 +2637,6 @@ Document and validate application risk classification using policy criteria.
 - E8: "5=Critical (Outage=Business Stop), 4=High Impact, 3=Moderate Impact, 2=Low Impact, 1=Minimal Impact" (Wrap text)
 - F8-H8: Same as Row 5
 
-
 ### Row 9: Regulatory Scope
 
 - A9: "Regulatory Scope" (bold)
@@ -2878,7 +2645,6 @@ Document and validate application risk classification using policy criteria.
 - D9: `=B9*C9` (formula)
 - E9: "5=Multiple Regulations, 4=One Major Regulation, 3=Industry Standards, 2=Internal Policies Only, 1=Minimal" (Wrap text)
 - F9-H9: Same as Row 5
-
 
 **Row 10:** Totals Row
 
@@ -2891,7 +2657,6 @@ Document and validate application risk classification using policy criteria.
   - If 2.0-3.4 → Yellow fill (Medium Risk)
   - If <2.0 → Green fill (Low Risk)
 
-
 **Row 12:** Risk Classification Result
 
 - A12: "Risk Classification" (bold)
@@ -2901,7 +2666,6 @@ Document and validate application risk classification using policy criteria.
   - If "Medium Risk" → Yellow fill, black text
   - If "Low Risk" → Green fill, white text
 
-
 **Row 13:** Classification Approved By
 
 - A13: "Classification Approved By" (bold)
@@ -2909,19 +2673,16 @@ Document and validate application risk classification using policy criteria.
 - C13: "Approval Date" (bold)
 - D13: [User Input - Date] - Yellow fill, Date format
 
-
 **Row 14:** Next Review Date
 
 - A14: "Next Review Date" (bold)
 - B14: `=DATE(YEAR(D13)+1,MONTH(D13),DAY(D13))` (formula - 1 year from approval, gray fill, Date format)
-
 
 **Row 15:** Override Justification (if needed)
 
 - A15: "Override Justification (if applicable)" (bold)
 - B15:H15 merged: [User Input - Text area] - Yellow fill, Wrap text
 - **Instruction in comments:** "If you believe formula classification is incorrect, document justification here"
-
 
 ## Data Validation
 
@@ -2967,7 +2728,6 @@ Assess completeness of Security Requirements Specification (SRS).
 - A1:H1 merged: "Security Requirements Documentation Status" (Dark Blue header)
 - A2:H2 merged: "Assessment of SRS existence, completeness, and currency" (Blue sub-header)
 
-
 **Row 3:** Column Headers
 | Column | Header | Width |
 |--------|--------|-------|
@@ -2993,7 +2753,6 @@ Assess completeness of Security Requirements Specification (SRS).
 - G4: [User Input - Evidence link] - Yellow fill
 - H4: [User Input - Notes] - Yellow fill, Wrap text
 
-
 **F4 Formula (Status):**
 ```excel
 =IF(B4="Yes",IF(E4<>"",IF((TODAY()-E4)<=365,"✅ Compliant","⚠️ Partial - Outdated"),"⚠️ Partial - No Date"),IF(B4="No","❌ Non-Compliant",IF(B4="N/A","N/A","")))
@@ -3007,11 +2766,9 @@ Assess completeness of Security Requirements Specification (SRS).
 - If No → ❌ Non-Compliant
 - If N/A → N/A
 
-
 ### Row 5: SRS Completeness Header
 
 - A5:H5 merged: "1.2 Functional Security Requirements Coverage" (bold, gray fill)
-
 
 **Rows 6-11:** Functional Security Requirements
 
@@ -3024,7 +2781,6 @@ Assess completeness of Security Requirements Specification (SRS).
 - F6: Formula (simplified status: Yes=Compliant, No=Non-Compliant, N/A=N/A)
 - G6-H6: [User Input] - Yellow fill
 
-
 **F6 Formula:**
 ```excel
 =IF(B6="Yes","✅ Compliant",IF(B6="No","❌ Non-Compliant",IF(B6="N/A","N/A","")))
@@ -3034,31 +2790,25 @@ Assess completeness of Security Requirements Specification (SRS).
 
 - Same structure as Row 6, adjust labels
 
-
 ### Row 8: Input Validation Requirements
 
 - Same structure as Row 6
-
 
 ### Row 9: Cryptography Requirements
 
 - Same structure as Row 6
 
-
 ### Row 10: Logging Requirements
 
 - Same structure as Row 6
-
 
 ### Row 11: API Security Requirements
 
 - Same structure as Row 6
 
-
 ### Row 12: Non-Functional Security Requirements Header
 
 - A12:H12 merged: "1.3 Non-Functional Security Requirements Coverage" (bold, gray fill)
-
 
 **Rows 13-15:** Non-Functional Requirements
 
@@ -3066,21 +2816,17 @@ Assess completeness of Security Requirements Specification (SRS).
 
 - Same structure as Row 6
 
-
 ### Row 14: Resilience Requirements (Fail Secure)
 
 - Same structure as Row 6
-
 
 ### Row 15: Secure Defaults
 
 - Same structure as Row 6
 
-
 ### Row 16: Data Protection Requirements Header
 
 - A16:H16 merged: "1.4 Data Protection Requirements Coverage" (bold, gray fill)
-
 
 **Rows 17-20:** Data Protection Requirements
 
@@ -3088,26 +2834,21 @@ Assess completeness of Security Requirements Specification (SRS).
 
 - Same structure as Row 6
 
-
 ### Row 18: Encryption Requirements
 
 - Same structure as Row 6
-
 
 ### Row 19: Retention Requirements
 
 - Same structure as Row 6
 
-
 ### Row 20: Deletion Requirements
 
 - Same structure as Row 6
 
-
 ### Row 21: Privacy Requirements (if applicable)
 
 - Same structure as Row 6
-
 
 **Row 23:** Overall SRS Completeness Score
 
@@ -3115,7 +2856,6 @@ Assess completeness of Security Requirements Specification (SRS).
 - B23-E23: merged, blank
 - F23: Formula (% compliant)
 - G23-H23: merged, blank
-
 
 **F23 Formula:**
 ```excel
@@ -3129,7 +2869,6 @@ Assess completeness of Security Requirements Specification (SRS).
 - If ≥90% → Green fill
 - If 70-89% → Yellow fill
 - If <70% → Red fill
-
 
 ## Data Validation
 
@@ -3162,11 +2901,9 @@ Assess threat modeling execution and quality.
 - A1:I1 merged: "Threat Modeling Status" (Dark Blue header)
 - A2:I2 merged: "Assessment of threat modeling execution for High/Medium-Risk applications" (Blue sub-header)
 
-
 **Row 3:** Policy Requirement Reminder
 
 - A3:I3 merged: "Policy Requirement: Threat modeling MANDATORY for High-Risk apps, RECOMMENDED for Medium-Risk apps, OPTIONAL for Low-Risk apps" (Bold, yellow fill, wrapped)
-
 
 **Row 4:** Column Headers
 | Column | Header | Width |
@@ -3195,7 +2932,6 @@ Assess threat modeling execution and quality.
 - H5: [Dropdown: Yes/No] - Yellow fill
 - I5: [User Input] - Yellow fill, Wrap text
 
-
 **F5 Formula (Status):**
 ```excel
 =IF(B5="Yes",IF(D5<>"",IF((TODAY()-D5)<=365,"✅ Compliant","⚠️ Partial - Outdated"),"⚠️ Partial - No Date"),IF(B5="No",IF('Sheet 2'!B12="High Risk","❌ Non-Compliant - REQUIRED","⚠️ Recommended"),IF(B5="N/A","N/A","")))
@@ -3209,7 +2945,6 @@ Assess threat modeling execution and quality.
 - If No + Medium/Low-Risk → ⚠️ Recommended (not required)
 - If N/A → N/A
 
-
 ### Row 6: Methodology Used
 
 - A6: "Methodology Used" (indent)
@@ -3219,7 +2954,6 @@ Assess threat modeling execution and quality.
 - D6-E6: N/A
 - F6: Formula: `=IF(B6<>"","✅ Documented","❌ Not Documented")`
 - G6-I6: [User Input] - Yellow fill
-
 
 **Rows 7-10:** Threat Modeling Metrics
 
@@ -3233,7 +2967,6 @@ Assess threat modeling execution and quality.
 - F7: Formula: `=IF(E7>0,"✅ Threats Identified","❌ No Threats")`
 - G7-I7: [User Input] - Yellow fill
 
-
 ### Row 8: Threats Mitigated (Count)
 
 - A8: "Threats Mitigated (Count)" (indent)
@@ -3241,13 +2974,11 @@ Assess threat modeling execution and quality.
 - F8: Formula: `=IF(AND(E7>0,E8>0),TEXT(E8/E7,"0%")&" Mitigated","")`
 - Other columns: [User Input] - Yellow fill
 
-
 ### Row 9: Threats Accepted Risk (Count)
 
 - A9: "Threats Accepted Risk (Count)" (indent)
 - E9: [User Input - Number] - Yellow fill
 - Other columns: [User Input] - Yellow fill
-
 
 ### Row 10: Threats Outstanding (Count)
 
@@ -3256,11 +2987,9 @@ Assess threat modeling execution and quality.
 - F10: Formula: `=IF(E10>0,"⚠️ Outstanding","✅ None Outstanding")`
 - Other columns: [User Input] - Yellow fill
 
-
 **Row 12:** Threat Model Quality Assessment Header
 
 - A12:I12 merged: "2.2 Threat Model Quality Assessment" (bold, gray fill)
-
 
 **Rows 13-16:** Quality Criteria
 
@@ -3272,27 +3001,22 @@ Assess threat modeling execution and quality.
 - F13: Formula: `=IF(B13="Yes","✅ Compliant","❌ Non-Compliant")`
 - Other columns: [User Input] - Yellow fill
 
-
 ### Row 14: Trust Boundaries Identified?
 
 - Same structure as Row 13
-
 
 ### Row 15: Countermeasures Documented?
 
 - Same structure as Row 13
 
-
 ### Row 16: Residual Risks Documented?
 
 - Same structure as Row 13
-
 
 **Row 18:** Overall Threat Modeling Score
 
 - A18: "Overall Threat Modeling Compliance Score" (bold, dark gray fill)
 - F18: Formula (% compliant)
-
 
 **F18 Formula:**
 ```excel
@@ -3339,7 +3063,6 @@ Assess security architecture review execution and findings remediation.
 - Row 17-20: Quality Assessment (Diagrams Reviewed, Controls Validated, Integrations Reviewed, Approval Obtained)
 - Row 22: Overall Architecture Review Compliance Score
 
-
 **Key Formulas:**
 
 **F5 (Architecture Review Status):**
@@ -3371,7 +3094,6 @@ Assess requirements traceability from specification through implementation to te
 - Row 11: % Requirements Traced to Implementation
 - Row 12: % Requirements Traced to Test Cases
 - Row 14: Overall Traceability Score
-
 
 **Key Formulas:**
 
@@ -3406,7 +3128,6 @@ Auto-populated checklist summarizing compliance across all assessment areas.
 
 - A1:E1 merged: "Compliance Checklist - A.8.26 Security Requirements" (Dark Blue header)
 
-
 **Row 3:** Column Headers
 | Column | Header | Width |
 |--------|--------|-------|
@@ -3426,7 +3147,6 @@ Auto-populated checklist summarizing compliance across all assessment areas.
 - D4: Formula: `='Sheet 2'!G5` (pull evidence from Sheet 2)
 - E4: [User Input] - Yellow fill
 
-
 **Apply similar pattern for all checklist items:**
 
 - Pull status from relevant sheet
@@ -3434,7 +3154,6 @@ Auto-populated checklist summarizing compliance across all assessment areas.
 - Reference source sheet
 - Pull evidence automatically
 - Allow notes
-
 
 **Row 26:** Overall Compliance Score
 
@@ -3445,12 +3164,10 @@ Auto-populated checklist summarizing compliance across all assessment areas.
   - 70-89% → Yellow fill
   - <70% → Red fill
 
-
 **Row 27:** Compliance Status
 
 - A27: "Compliance Status" (bold)
 - B27: Formula: `=IF(VALUE(LEFT(B26,LEN(B26)-1))>=90,"✅ Compliant",IF(VALUE(LEFT(B26,LEN(B26)-1))>=70,"⚠️ Partial","❌ Non-Compliant"))`
-
 
 ---
 
@@ -3464,7 +3181,6 @@ Document identified gaps and remediation plan.
 **Row 1-2:** Header
 
 - A1:K1 merged: "Gap Analysis & Remediation Action Plan" (Dark Blue header)
-
 
 **Row 3:** Column Headers
 | Column | Header | Width |
@@ -3499,7 +3215,6 @@ Document identified gaps and remediation plan.
 - J4: [User Input - Completion date] - Yellow fill, Date format
 - K4: [User Input - Evidence] - Yellow fill, Wrap text
 
-
 **Conditional Formatting for Column D (Severity):**
 ```
 Rule 1: ="Critical" → Red fill, White text, Bold
@@ -3531,7 +3246,6 @@ Rule: =AND(H4<TODAY(),I4<>"Resolved",I4<>"Risk Accepted") → Red fill, Bold
 - F100: `=COUNTIF(D4:D99,"Low")&" Low"`
 - I100: `=COUNTIF(I4:I99,"Resolved")&" Resolved, "&COUNTIF(I4:I99,"Open")&" Open"`
 
-
 ---
 
 # Sheet 9: Evidence Register
@@ -3544,7 +3258,6 @@ Centralized register of all evidence supporting assessment.
 **Row 1-2:** Header
 
 - A1:J1 merged: "Evidence Register" (Dark Blue header)
-
 
 **Row 3:** Column Headers
 | Column | Header | Width |
@@ -3577,7 +3290,6 @@ Centralized register of all evidence supporting assessment.
 - I4: [User Input - Verification date] - Yellow fill, Date format
 - J4: [User Input - Verifier name] - Yellow fill
 
-
 **Conditional Formatting for Column H (Verified):**
 ```
 Rule 1: ="Yes" → Green fill
@@ -3590,7 +3302,6 @@ Rule 3: ="Issue" → Red fill
 - A100: "Evidence Summary" (bold, dark gray fill)
 - B100: `=COUNTA(A4:A99)&" Total Evidence Items"`
 - H100: `=COUNTIF(H4:H99,"Yes")&" Verified, "&COUNTIF(H4:H99,"No")&" Pending, "&COUNTIF(H4:H99,"Issue")&" Issues"`
-
 
 ---
 
@@ -3607,12 +3318,10 @@ Document assessment completion, review, and approval.
 
 - A1:F1 merged: "Assessment Summary & Approval" (Dark Blue header, white text)
 
-
 ### Row 3: Assessment Period
 
 - A3: "Assessment Period:" (bold)
 - B3:F3 merged: [User Input] - Yellow fill
-
 
 ### Row 4: Assessment Date
 
@@ -3621,13 +3330,11 @@ Document assessment completion, review, and approval.
 - C4: "Application Name:" (bold)
 - D4:F4 merged: Formula: `='Sheet 1'!B4` (auto-pull from Sheet 1)
 
-
 ### Row 5: Application Risk
 
 - A5: "Application Risk:" (bold)
 - B5: Formula: `='Sheet 2'!B12` (auto-pull from Sheet 2)
 - **Conditional formatting:** Match risk classification colors from Sheet 2
-
 
 ### Row 6: Overall Compliance Score
 
@@ -3635,13 +3342,11 @@ Document assessment completion, review, and approval.
 - B6: Formula: `='Sheet 7'!B26` (auto-pull from Sheet 7)
 - **Conditional formatting:** Match compliance color scheme (Green/Yellow/Red)
 
-
 ### Row 7: Critical Gaps
 
 - A7: "Critical Gaps:" (bold)
 - B7: Formula: `='Sheet 8'!C100` (auto-pull Critical count from Sheet 8)
 - **Conditional formatting:** If >0 → Red fill, Bold
-
 
 ### Row 8: Assessment Status
 
@@ -3654,13 +3359,11 @@ Document assessment completion, review, and approval.
   - "Requires Remediation" → Red fill
   - "Draft" → Gray fill
 
-
 **Rows 12-20:** Assessment Completed By
 
 ### Row 12: Section Header
 
 - A12:F12 merged: "Assessment Completed By" (bold, gray fill)
-
 
 ### Row 13-19: Assessor Information
 
@@ -3672,20 +3375,17 @@ Document assessment completion, review, and approval.
 - A18: "Signature:" | B18: [User Input - /s/ Name] - Yellow fill
 - A19: "Comments:" | B19:F19 merged: [User Input - Text area] - Yellow fill, Wrap text
 
-
 **Rows 22-32:** Reviewed By - Security Architect
 
 ### Row 22: Section Header
 
 - A22:F22 merged: "Reviewed By - Security Architect" (bold, gray fill)
 
-
 ### Row 23-28: Reviewer Information
 
 - A23: "Name:" | B23: [User Input] - Yellow fill
 - A24: "Date:" | B24: [User Input - Date] - Yellow fill, Date format
 - A25: "Review Notes:" | B25:F28 merged: [User Input - Text area] - Yellow fill, Wrap text
-
 
 ### Row 29: Recommendation
 
@@ -3698,13 +3398,11 @@ Document assessment completion, review, and approval.
   - "Require Remediation" → Orange fill
   - "Reject" → Red fill
 
-
 **Rows 34-45:** Approved By - CISO (High-Risk Apps Only)
 
 ### Row 34: Section Header
 
 - A34:F34 merged: "Approved By - CISO (High-Risk Applications Only)" (bold, gray fill)
-
 
 ### Row 35-40: CISO Information
 
@@ -3715,20 +3413,17 @@ Document assessment completion, review, and approval.
 - **Conditional formatting:** Same as Row 29
 - A38: "Conditions/Notes:" | B38:F41 merged: [User Input - Text area] - Yellow fill, Wrap text
 
-
 **Rows 43-48:** Next Review Details
 
 ### Row 43: Section Header
 
 - A43:F43 merged: "Next Review Details" (bold, gray fill)
 
-
 ### Row 44-48: Next Review Information
 
 - A44: "Next Assessment Date:" | B44: Formula (auto-calculate based on risk)
 - A45: "Review Responsible:" | B45: [User Input] - Yellow fill
 - A46: "Special Considerations:" | B46:F48 merged: [User Input - Text area] - Yellow fill, Wrap text
-
 
 **B44 Formula (Next Assessment Date):**
 ```excel
@@ -3824,13 +3519,11 @@ def create_application_profile_sheet(ws, styles):
 - Focus on formula creation for weighted scoring
 - Conditional formatting for risk thresholds
 
-
 **5. create_requirements_documentation_sheet(ws, styles)**
 
 - Similar structure for Sheet 3
 - Multiple sections (SRS, Functional, Non-Functional, Data Protection)
 - Status formulas for each section
-
 
 **... Similar functions for Sheets 4-10**
 
@@ -3876,7 +3569,6 @@ Before deploying script:
 - [ ] File saves without errors
 - [ ] File opens in Excel 2016+ without warnings
 - [ ] UTF-8 encoding correct (emojis display: ✅ ⚠️ ❌)
-
 
 ---
 
@@ -3925,7 +3617,6 @@ def validate_sheet_structure(wb):
 - Freeze at Row 4 (headers visible when scrolling down)
 - Freeze at Column A (question column visible when scrolling right)
 
-
 **Implementation:**
 ```python
 ws.freeze_panes = 'B4'  # Freeze rows 1-3, column A
@@ -3943,7 +3634,6 @@ ws.freeze_panes = 'B4'  # Freeze rows 1-3, column A
 - Margins: Normal (0.75" left/right, 1" top/bottom)
 - Headers: Print titles - Rows 1-3 repeat on each page
 - Footers: Page X of Y (center), Date (right), Filename (left)
-
 
 **Implementation:**
 ```python
@@ -3964,12 +3654,10 @@ ws.print_title_rows = '1:3'  # Repeat rows 1-3 on each page
 - Version history maintained separately
 - Filename includes date: `ISMS-A826-Requirements-APP-XXX-YYYYMMDD-v2.0.xlsx`
 
-
 **Change Log Sheet (Optional):**
 
 - Add hidden sheet "Change Log" documenting workbook modifications
 - Track: Date, Version, Changes, Modified By
-
 
 ---
 
@@ -3996,7 +3684,6 @@ ws.print_title_rows = '1:3'  # Repeat rows 1-3 on each page
 - Limit data validation complexity
 - Test on Office 365 before deployment
 
-
 ---
 
 # Accessibility Considerations
@@ -4008,7 +3695,6 @@ ws.print_title_rows = '1:3'  # Repeat rows 1-3 on each page
 - Use clear, simple language in instructions
 - Ensure keyboard navigation works (tab order logical)
 - Test with screen readers (JAWS, NVDA)
-
 
 ---
 
@@ -4030,7 +3716,6 @@ Before deploying workbook to users:
 - [ ] Evidence repository folder structure created
 - [ ] Assessment schedule established
 
-
 ---
 
 # Maintenance & Updates
@@ -4042,7 +3727,6 @@ Before deploying workbook to users:
 - Formula errors discovered
 - New requirements added
 - Compliance scoring methodology changes
-
 
 **Update Process:**
 1. Document requested change
@@ -4059,7 +3743,6 @@ Before deploying workbook to users:
 - Maintain compatibility with previous versions where possible
 - Provide migration script if breaking changes
 - Document migration process in version history
-
 
 ---
 
@@ -4133,30 +3816,25 @@ ws['B5'] = '=$A1 + A$2'
 - Python datetime → Excel serial date
 - Use `ws.cell().number_format = 'DD.MM.YYYY'`
 
-
 **Pitfall 2: UTF-8 Encoding**
 
 - Emojis (✅ ⚠️ ❌) require UTF-8
 - Use `wb.save(filename, encoding='utf-8')` (openpyxl handles automatically)
-
 
 **Pitfall 3: Formula Calculation**
 
 - Excel doesn't auto-calculate on open by default in scripts
 - Set `wb.calculation.calcMode = 'auto'`
 
-
 **Pitfall 4: Large Files**
 
 - Conditional formatting on large ranges = slow performance
 - Limit CF rules to necessary ranges only
 
-
 **Pitfall 5: Protected Sheets**
 
 - Set `ws.protection.password = None` (no password for user sheets)
 - Lock formula cells, unlock input cells explicitly
-
 
 ---
 

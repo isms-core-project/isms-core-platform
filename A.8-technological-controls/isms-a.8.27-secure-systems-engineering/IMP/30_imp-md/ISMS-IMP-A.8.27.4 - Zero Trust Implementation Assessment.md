@@ -43,7 +43,6 @@
 - NIST SP 800-207A (Zero Trust for Cloud-Native Applications)
 - CISA Zero Trust Maturity Model
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -65,14 +64,12 @@ This assessment evaluates [Organisation]'s **Zero Trust Architecture (ZTA) imple
 - Visibility and analytics maturity
 - Automation and orchestration maturity
 
-
 **What This Assessment Does NOT Cover:**
 
 - Architecture review process (see ISMS-IMP-A.8.27.1)
 - Threat modelling methodology (see ISMS-IMP-A.8.27.2)
 - Architecture pattern catalogue (see ISMS-IMP-A.8.27.3)
 - Detailed IAM implementation (see ISMS-IMP-A.5.15-16-18)
-
 
 **Assessment Output:**
 
@@ -81,7 +78,6 @@ This assessment evaluates [Organisation]'s **Zero Trust Architecture (ZTA) imple
 - Gap analysis by pillar
 - Zero Trust roadmap progress tracking
 - Compliance scoring and recommendations
-
 
 ## Why This Matters
 
@@ -99,7 +95,6 @@ This assessment evaluates [Organisation]'s **Zero Trust Architecture (ZTA) imple
 4. **Least Privilege Access** - JIT/JEA access, risk-based conditional access
 5. **Encryption by Default** - All data encrypted in transit and at rest
 
-
 **Business Impact of Inadequate Zero Trust:**
 
 - **Lateral Movement:** Attackers move freely after initial compromise
@@ -107,7 +102,6 @@ This assessment evaluates [Organisation]'s **Zero Trust Architecture (ZTA) imple
 - **Compliance Risk:** Regulators increasingly expect Zero Trust
 - **Cloud Security:** Traditional perimeter doesn't apply to cloud
 - **Remote Work:** Distributed workforce requires Zero Trust approach
-
 
 ## Who Should Complete This Assessment
 
@@ -122,7 +116,6 @@ This assessment evaluates [Organisation]'s **Zero Trust Architecture (ZTA) imple
 - Data protection and classification
 - Security monitoring and analytics capabilities
 
-
 **Support Roles:**
 
 - **CISO:** Strategy ownership, resource allocation
@@ -131,7 +124,6 @@ This assessment evaluates [Organisation]'s **Zero Trust Architecture (ZTA) imple
 - **Cloud Team:** Cloud workload assessment
 - **Data Protection Team:** Data pillar assessment
 - **Security Operations:** Visibility and analytics
-
 
 ## Time Estimate
 
@@ -162,7 +154,6 @@ This assessment evaluates [Organisation]'s **Zero Trust Architecture (ZTA) imple
   - Roadmap alignment
   - Stakeholder review
 
-
 ## Connection to Policy
 
 This assessment implements **ISMS-POL-A.8.27, Section 2.1 (Zero Trust Architecture Principles)** which mandates:
@@ -173,13 +164,11 @@ This assessment implements **ISMS-POL-A.8.27, Section 2.1 (Zero Trust Architectu
 - Every access request authenticated and authorised regardless of source
 - Trust continuously evaluated
 
-
 **Assume Breach:**
 
 - Design systems assuming adversaries may have network access
 - Internal network traffic treated as potentially hostile
 - Lateral movement restricted through segmentation
-
 
 **Verify Explicitly:**
 
@@ -190,7 +179,6 @@ This assessment implements **ISMS-POL-A.8.27, Section 2.1 (Zero Trust Architectu
   - Access context (location, time, behaviour)
   - Request anomaly detection
 
-
 **Least Privilege Access:**
 
 - Just-in-time (JIT) access for elevated privileges
@@ -198,13 +186,11 @@ This assessment implements **ISMS-POL-A.8.27, Section 2.1 (Zero Trust Architectu
 - Risk-based conditional access policies
 - Continuous access evaluation
 
-
 **Encryption by Default:**
 
 - All data in transit encrypted (TLS 1.2+ minimum)
 - All data at rest encrypted for CONFIDENTIAL+ classification
 - Internal service-to-service communication encrypted
-
 
 ---
 
@@ -221,7 +207,6 @@ This assessment implements **ISMS-POL-A.8.27, Section 2.1 (Zero Trust Architectu
 | Data protection docs | Data pillar | Data Protection |
 | SIEM/Analytics | Visibility pillar | Security Operations |
 
-
 ## Pre-Assessment Checklist
 
 ✅ Zero Trust strategy reviewed
@@ -229,7 +214,6 @@ This assessment implements **ISMS-POL-A.8.27, Section 2.1 (Zero Trust Architectu
 ✅ Architecture documentation compiled
 ✅ Maturity baseline (if exists) available
 ✅ Assessment timeframe communicated
-
 
 ---
 
@@ -252,7 +236,6 @@ This assessment implements **ISMS-POL-A.8.27, Section 2.1 (Zero Trust Architectu
 | **GapRegister** | Identified gaps and remediation | Last |
 | **Dashboard** | Maturity radar and summary | Auto-calculated |
 
-
 ## Sheet Descriptions
 
 ### Instructions Sheet
@@ -266,7 +249,6 @@ Read-only sheet containing:
 - Rating scale definitions
 - NIST SP 800-207 reference summary
 
-
 ### Strategy Sheet
 
 Assesses Zero Trust strategy and governance:
@@ -279,7 +261,6 @@ Assesses Zero Trust strategy and governance:
 | Evidence | Supporting evidence | Board presentation |
 | Gap | If gap exists | None |
 | Owner | Responsible party | CISO |
-
 
 ### Identity Pillar Sheet
 
@@ -297,7 +278,6 @@ Assesses identity pillar maturity:
 | Evidence | Supporting evidence | Conditional access policies |
 | Gap | Maturity gap | Phishing-resistant MFA |
 
-
 ### Device Pillar Sheet
 
 Assesses device pillar maturity:
@@ -310,7 +290,6 @@ Assesses device pillar maturity:
 | Target | Target maturity | Optimal |
 | Evidence | Supporting evidence | Intune policies |
 | Gap | Maturity gap | Real-time posture |
-
 
 ### Network Pillar Sheet
 
@@ -325,7 +304,6 @@ Assesses network pillar maturity:
 | Evidence | Supporting evidence | Network diagrams |
 | Gap | Maturity gap | Application-level segmentation |
 
-
 ### Workload Pillar Sheet
 
 Assesses application/workload pillar maturity:
@@ -338,7 +316,6 @@ Assesses application/workload pillar maturity:
 | Target | Target maturity | Advanced |
 | Evidence | Supporting evidence | Service principals |
 | Gap | Maturity gap | Managed identities |
-
 
 ### Data Pillar Sheet
 
@@ -353,7 +330,6 @@ Assesses data pillar maturity:
 | Evidence | Supporting evidence | Classification labels |
 | Gap | Maturity gap | Automated labelling |
 
-
 ### Visibility Sheet
 
 Assesses visibility and analytics maturity:
@@ -365,7 +341,6 @@ Assesses visibility and analytics maturity:
 | Current | Current maturity | Advanced |
 | Evidence | Supporting evidence | SIEM deployment |
 | Gap | Maturity gap | UEBA integration |
-
 
 ### Automation Sheet
 
@@ -379,16 +354,13 @@ Assesses automation and orchestration maturity:
 | Evidence | Supporting evidence | SOAR playbooks |
 | Gap | Maturity gap | Full automation |
 
-
 ### Compliance Sheet
 
 Standard compliance scoring against ISMS-POL-A.8.27 Zero Trust requirements
 
-
 ### GapRegister Sheet
 
 Standard gap tracking and remediation
-
 
 ### Dashboard Sheet
 
@@ -400,7 +372,6 @@ Standard gap tracking and remediation
 4. **Pillar Summary Table:** Current vs Target
 5. **Gap Summary:** By pillar and priority
 6. **Roadmap Progress:** Strategy milestone tracking
-
 
 ---
 
@@ -419,7 +390,6 @@ Understand the CISA Zero Trust Maturity Model levels:
 | **Advanced** | Comprehensive ZT, automated policy enforcement |
 | **Optimal** | Full ZT, continuous verification, dynamic policies |
 
-
 ## Step 2: Assess Zero Trust Strategy
 
 **Navigate to the Strategy sheet**
@@ -437,7 +407,6 @@ Assess strategic elements:
 | **Communication** | Is strategy communicated? |
 | **Training** | Is ZT training provided? |
 
-
 ## Step 3: Assess Identity Pillar
 
 **Navigate to the Identity sheet**
@@ -452,7 +421,6 @@ Assess identity capabilities against CISA maturity levels:
 | **Privileged Access** | Standing privileges | PAM basic | JIT/JEA | Zero standing privilege |
 | **Federation** | None | Basic SAML | Modern protocols | Decentralised identity |
 
-
 ## Step 4: Assess Device Pillar
 
 **Navigate to the Device sheet**
@@ -465,7 +433,6 @@ Assess device capabilities:
 | **Compliance** | None | Compliance checks | Continuous compliance | Real-time posture |
 | **Access Control** | Network-based | Device certificates | Device health gates | Context-aware |
 | **Threat Protection** | Antivirus | EDR | XDR | Autonomous response |
-
 
 ## Step 5: Assess Network Pillar
 
@@ -480,7 +447,6 @@ Assess network capabilities:
 | **Access Control** | Firewall rules | ZTNA basic | ZTNA comprehensive | SDP |
 | **Monitoring** | Perimeter logs | Network flow | Full packet inspection | ML-based analysis |
 
-
 ## Step 6: Assess Workload Pillar
 
 **Navigate to the Workload sheet**
@@ -493,7 +459,6 @@ Assess application/workload capabilities:
 | **Access Control** | Network-based | API keys | OAuth/OIDC | SPIFFE/SPIRE |
 | **Isolation** | Shared infra | VMs | Containers | Serverless isolation |
 | **Security Testing** | Manual | SAST/DAST | DevSecOps | Continuous validation |
-
 
 ## Step 7: Assess Data Pillar
 
@@ -509,7 +474,6 @@ Assess data capabilities:
 | **DLP** | None | Basic DLP | Content-aware DLP | AI-powered DLP |
 | **Discovery** | None | Periodic scans | Continuous discovery | Real-time classification |
 
-
 ## Step 8: Assess Visibility Pillar
 
 **Navigate to the Visibility sheet**
@@ -522,7 +486,6 @@ Assess visibility capabilities:
 | **Analytics** | Manual review | SIEM | UEBA | AI/ML analytics |
 | **Threat Detection** | Signature-based | Behaviour rules | ML detection | Autonomous detection |
 | **Investigation** | Manual | Guided investigation | Automated triage | Autonomous investigation |
-
 
 ## Step 9: Assess Automation Pillar
 
@@ -537,11 +500,9 @@ Assess automation capabilities:
 | **Remediation** | Manual | Scripted remediation | Auto-remediation | Self-healing |
 | **Orchestration** | Siloed tools | Basic integration | Unified platform | Zero-touch security |
 
-
 ## Step 10: Complete Compliance and Gap Register
 
 Complete compliance scoring and consolidate all gaps with remediation plans.
-
 
 ---
 
@@ -558,13 +519,11 @@ Complete compliance scoring and consolidate all gaps with remediation plans.
 | **Metrics** | ZT dashboard, KPIs | Security Operations |
 | **Audit Reports** | ZT-related audit findings | Internal Audit |
 
-
 ## Evidence Naming Convention
 
 ```
 ISMS-IMP-A.8.27.4_[Pillar]_[Description]_YYYYMMDD.[ext]
 ```
-
 
 ---
 
@@ -600,7 +559,6 @@ ISMS-IMP-A.8.27.4_[Pillar]_[Description]_YYYYMMDD.[ext]
 ❌ **MISTAKE:** Not aligning with NIST SP 800-207
 ✅ **CORRECT:** Use NIST SP 800-207 as reference architecture
 
-
 ---
 
 # Quality Checklist
@@ -614,14 +572,12 @@ ISMS-IMP-A.8.27.4_[Pillar]_[Description]_YYYYMMDD.[ext]
 - [ ] Compliance scored
 - [ ] Gaps documented
 
-
 **Evidence:**
 
 - [ ] Strategy documentation
 - [ ] Architecture diagrams per pillar
 - [ ] Configuration evidence
 - [ ] Metrics and dashboards
-
 
 ---
 
@@ -637,7 +593,6 @@ ISMS-IMP-A.8.27.4_[Pillar]_[Description]_YYYYMMDD.[ext]
 | **Sheets** | 12 |
 | **Purpose** | Zero Trust maturity assessment |
 | **Generator** | generate_a827_4_zero_trust.py |
-
 
 ## Sheet Specifications
 
@@ -656,7 +611,6 @@ ISMS-IMP-A.8.27.4_[Pillar]_[Description]_YYYYMMDD.[ext]
 - CISA Maturity Model explanation
 - Pillar definitions
 - Rating scales
-
 
 ### Sheet 2: Strategy
 
@@ -678,7 +632,6 @@ ISMS-IMP-A.8.27.4_[Pillar]_[Description]_YYYYMMDD.[ext]
 | G | Notes | 25 | Text | Optional |
 
 **Pre-populated Rows:** 12 strategy elements
-
 
 ### Sheets 3-7: Pillar Assessments (Identity, Device, Network, Workload, Data)
 
@@ -710,7 +663,6 @@ ISMS-IMP-A.8.27.4_[Pillar]_[Description]_YYYYMMDD.[ext]
 - **Workload:** 10 capabilities (Identity, Isolation, Security Testing, etc.)
 - **Data:** 10 capabilities (Classification, Encryption, Access, DLP, etc.)
 
-
 ### Sheet 8: Visibility
 
 | Property | Specification |
@@ -719,7 +671,6 @@ ISMS-IMP-A.8.27.4_[Pillar]_[Description]_YYYYMMDD.[ext]
 | **Purpose** | Visibility and analytics maturity |
 
 **Same structure as pillar sheets with 8 visibility capabilities**
-
 
 ### Sheet 9: Automation
 
@@ -730,16 +681,13 @@ ISMS-IMP-A.8.27.4_[Pillar]_[Description]_YYYYMMDD.[ext]
 
 **Same structure as pillar sheets with 8 automation capabilities**
 
-
 ### Sheet 10: Compliance
 
 Standard compliance sheet with ZT-specific requirements from ISMS-POL-A.8.27
 
-
 ### Sheet 11: GapRegister
 
 Standard gap register structure
-
 
 ### Sheet 12: Dashboard
 
@@ -758,7 +706,6 @@ Standard gap register structure
 5. **Gap Priority Matrix:** High/Medium/Low gaps by pillar
 6. **Strategy Progress:** Roadmap milestone tracking
 7. **Trend Indicators:** If baseline exists
-
 
 ## Maturity Scoring
 
@@ -785,7 +732,6 @@ Weighted average across pillars (Identity weighted higher per CISA model)
 | Visibility | 10% |
 | Automation | 10% |
 
-
 ## Styling Specifications
 
 **CISA Maturity Level Colours:**
@@ -797,7 +743,6 @@ Weighted average across pillars (Identity weighted higher per CISA model)
 | Advanced | #4ECDC4 (Teal) |
 | Optimal | #2ECC71 (Green) |
 
-
 ---
 
 # Generator Script Reference
@@ -807,7 +752,6 @@ Weighted average across pillars (Identity weighted higher per CISA model)
 | **Script Name** | generate_a827_4_zero_trust.py |
 | **Location** | 10-isms-scr-base/isms-a.8.27-secure-systems-engineering/10_generator-master/ |
 | **Output** | ISMS-IMP-A.8.27.4_Zero_Trust_Implementation_Assessment_YYYYMMDD.xlsx |
-
 
 ---
 

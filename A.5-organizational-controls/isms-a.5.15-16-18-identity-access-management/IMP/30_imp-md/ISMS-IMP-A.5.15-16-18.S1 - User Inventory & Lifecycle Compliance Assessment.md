@@ -45,7 +45,6 @@ This document consists of two parts:
   - Conditional Formatting Rules
   - Integration Points
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -66,7 +65,6 @@ This assessment documents your COMPLETE USER INVENTORY and assesses IDENTITY LIF
 - Are there orphaned accounts? (accounts without valid business owner)
 - Are there inactive accounts? (no login in 90+ days)
 - What is the overall lifecycle compliance rate?
-
 
 #### Key Principle
 
@@ -94,7 +92,6 @@ This assessment is **completely technology-agnostic and vendor-independent**. Yo
   - Users not deprovisioned (terminated but still active)
   - Orphaned accounts requiring cleanup
   - Inactive accounts requiring review
-
 
 #### How This Relates to Other A.5.15-16-18 Assessments
 
@@ -126,13 +123,11 @@ This assessment (A.5.15-16-18.1) provides the **foundational user inventory** us
 - Data analysis skills (Excel formulas, pivot tables)
 - Basic understanding of ISO 27001 Control A.5.16
 
-
 #### Time Commitment
 
 - **Initial assessment:** 12-16 hours (complete user inventory, HR data correlation, lifecycle analysis)
 - **Monthly updates:** 2-4 hours (update user inventory, calculate current month metrics)
 - **Quarterly comprehensive review:** 6-8 hours (deep dive lifecycle compliance, orphaned account cleanup)
-
 
 ### Expected Outputs
 
@@ -163,7 +158,6 @@ Before starting this assessment, gather:
 - Access to HR information system (authoritative employee data)
 - Access to contractor management system (if separate from HR)
 
-
 #### 2. HR Data
 
 - Complete employee list with:
@@ -172,14 +166,12 @@ Before starting this assessment, gather:
   - Employee type (full-time, part-time, contractor, vendor)
   - Contract end dates (for contractors/vendors)
 
-
 #### 3. Historical Data
 
 - User account creation logs (last 12 months minimum for trend analysis)
 - Termination notifications (HR → IT workflow records)
 - Login logs (last 90 days minimum for inactive account detection)
 - Previous assessment results (if available for comparison)
-
 
 #### 4. Policy Requirements
 
@@ -190,7 +182,6 @@ Before starting this assessment, gather:
   - Section 2.2.6: Orphaned Account Detection and Remediation
   - Section 2.2.7: Contractor/Vendor Identity Management
 
-
 ### Required Tools
 
 - **Microsoft Excel** (2016 or later) for workbook completion
@@ -198,7 +189,6 @@ Before starting this assessment, gather:
 - **HR system access** (for authoritative employee data)
 - **Data export tools** (PowerShell for AD, Azure CLI, Okta API, LDAP queries)
 - **Screen capture tools** (for evidence screenshots)
-
 
 ### Dependencies
 
@@ -210,7 +200,6 @@ However, outputs from this assessment are INPUT to:
 - A.5.15-16-18.3 (Access Review Results) - Uses user list for review scope
 - A.5.15-16-18.4 (Role & SoD Compliance) - Uses user list for role assignment verification
 - A.5.15-16-18.5 (IAM Governance Dashboard) - Consolidates lifecycle metrics
-
 
 ---
 
@@ -269,7 +258,6 @@ However, outputs from this assessment are INPUT to:
 - ✓ Policy requirements reviewed and understood
 - ✓ Working folder created and accessible
 
-
 ---
 
 #### Phase 2: Extract User Data from Identity Systems (4-6 hours)
@@ -304,12 +292,10 @@ Export-Csv -Path "EntraID_Users_Export.csv" -NoTypeInformation
 - Use Okta Admin Console → Directory → People → Export to CSV
 - OR use Okta API for automated export
 
-
 **For Google Workspace:**
 
 - Use Admin Console → Directory → Users → Download users
 - OR use Google Admin SDK API
-
 
 **For LDAP (OpenLDAP, FreeIPA, etc.):**
 ```bash
@@ -326,7 +312,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - Remove duplicates (same user in multiple systems)
 - Tag each user with source system
 
-
 **Deliverable:** Consolidated user export CSV with ALL users from ALL identity systems
 
 **Quality Check:**
@@ -336,7 +321,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - ✓ Export includes required attributes (name, email, status, dates)
 - ✓ Duplicates identified and tagged
 - ✓ Source system tagged for each user
-
 
 ---
 
@@ -357,14 +341,12 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - Employee Type (Employee, Contractor, Vendor)
    - Contract End Date (for contractors)
 
-
 3. **Verify Data Quality**:
 
    - No missing hire dates
    - Termination dates accurate (terminated employees marked correctly)
    - Manager names/emails correct
    - Employee types categorized correctly
-
 
 **Deliverable:** HR data export CSV with authoritative employee information
 
@@ -376,7 +358,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - ✓ Termination dates present for terminated employees
 - ✓ Manager information accurate
 - ✓ Contractor contract end dates present
-
 
 ---
 
@@ -400,7 +381,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - Last Login Date (from identity system logs)
    - Account Source (AD, Entra ID, Okta, etc.)
 
-
 3. **Cross-reference with HR data**:
 
    - Match users by email or Employee ID
@@ -408,13 +388,11 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - Flag users in identity systems NOT in HR (orphaned accounts)
    - Flag users in HR but NOT in identity systems (provisioning gap)
 
-
 4. **Calculate derived fields**:
 
    - Days Since Last Login (Today - Last Login Date)
    - Account Age (Today - Account Created Date)
    - Employment Status (Active, Terminated, Unknown)
-
 
 **Deliverable:** Complete Sheet 1 with consolidated user inventory
 
@@ -427,7 +405,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - ✓ User type correctly categorized
 - ✓ Hire dates and termination dates populated where available
 - ✓ Last login dates recent (within last 90 days for active users)
-
 
 ---
 
@@ -448,7 +425,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
      - ⚠️ **Late** (1-5 days delay - minor SLA miss)
      - ❌ **Very Late** (>5 days delay - significant SLA miss)
 
-
 3. **Calculate metrics**:
 
    - Total new hires in period
@@ -459,14 +435,12 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - Average provisioning delay (days)
    - Maximum provisioning delay (worst case)
 
-
 4. **Identify causes** of late provisioning:
 
    - HR notification delay (HR didn't notify IT on time)
    - IAM Team capacity (backlog of provisioning requests)
    - Technical issues (identity system downtime, sync failures)
    - Manager approval delay (manager didn't approve access request on time)
-
 
 **Deliverable:** Sheet 2 with provisioning timeliness analysis
 
@@ -477,7 +451,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - ✓ Compliance status accurate (on-time, late, very late)
 - ✓ Metrics calculated correctly
 - ✓ Causes of delays identified and documented
-
 
 ---
 
@@ -502,7 +475,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
      - ❌ **Very Late** (>7 days delay - significant security risk)
      - 🚨 **CRITICAL** (>30 days delay or still active - major vulnerability)
 
-
 3. **Calculate metrics**:
 
    - Total terminations in period
@@ -514,7 +486,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - Average deprovisioning delay (days)
    - Maximum deprovisioning delay (worst case)
 
-
 4. **Identify causes** of late deprovisioning:
 
    - HR notification failure (IT not notified of termination)
@@ -522,7 +493,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - IAM Team capacity (backlog during busy periods)
    - Multi-system complexity (disabled in AD but not Entra ID/Okta)
    - Manager request delay (manager requested delayed disable for handover)
-
 
 **Deliverable:** Sheet 3 with deprovisioning timeliness analysis
 
@@ -534,7 +504,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - ✓ Metrics calculated correctly
 - ✓ Causes of delays identified
 - ✓ CRITICAL cases flagged for immediate remediation
-
 
 ---
 
@@ -548,7 +517,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - Users in identity systems (AD, Entra ID, Okta) NOT in HR system = potential orphaned accounts
    - Filter out legitimate non-HR accounts (service accounts, shared accounts, vendor accounts with valid sponsor)
 
-
 2. **For EACH potential orphaned account, investigate**:
 
    - Who is the user? (name, email, department from identity system)
@@ -559,14 +527,12 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - Is this a vendor account with valid sponsor? (check vendor management system)
    - Is this a former employee whose termination was not processed? (check with HR)
 
-
 3. **Categorize orphaned accounts**:
 
    - **Confirmed Orphaned** - Former employee, contractor ended, no valid owner
    - **Service Account** - Non-human account, valid owner documented
    - **Vendor Account** - Third-party access, valid sponsor documented
    - **Pending Investigation** - Need more info to determine status
-
 
 4. **Calculate metrics**:
 
@@ -578,13 +544,11 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
      - 🔄 **In Progress** (under investigation or scheduled for removal)
      - ❌ **Outstanding** (identified but not yet addressed)
 
-
 5. **Create remediation plan**:
 
    - Prioritize by risk (privileged orphaned accounts = highest priority)
    - Assign ownership (who will investigate/remediate)
    - Set target completion date (typically 30 days maximum)
-
 
 **Deliverable:** Sheet 4 with orphaned account register and remediation plan
 
@@ -596,7 +560,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - ✓ Confirmed orphaned accounts accurately identified
 - ✓ Investigation status documented for each
 - ✓ Remediation plan has owners and target dates
-
 
 ---
 
@@ -616,7 +579,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - Account Created Date
    - Justification (why is this account inactive but still active?)
 
-
 3. **Categorize inactive accounts**:
 
    - **Legitimate Inactive**:
@@ -630,7 +592,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - **Orphaned (via inactivity)**:
      - Former employee whose termination was not processed (overlap with orphaned account detection)
 
-
 4. **Calculate metrics**:
 
    - Total active accounts
@@ -639,13 +600,11 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - Inactive accounts with justification (documented reason)
    - Inactive accounts without justification (require review)
 
-
 5. **Create review plan**:
 
    - Accounts inactive >180 days → High priority review (likely orphaned or should be disabled)
    - Accounts inactive 90-180 days → Medium priority review
    - Never-logged-in accounts → Immediate review (why created if never used?)
-
 
 **Deliverable:** Sheet 5 with inactive account register
 
@@ -656,7 +615,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - ✓ Legitimate inactive accounts documented with justification (leave of absence, seasonal, etc.)
 - ✓ Questionable inactive accounts flagged for manager review
 - ✓ Never-logged-in accounts highlighted (high priority investigation)
-
 
 ---
 
@@ -671,7 +629,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - **Deprovisioning Compliance Rate** (from Sheet 3)
    - **Orphaned Account Count** (from Sheet 4)
    - **Inactive Account Count** (from Sheet 5)
-
 
 2. **Calculate overall IAM lifecycle maturity score**:
    ```
@@ -690,7 +647,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - **Fair (60-74%)**: Acceptable but significant gaps exist
    - **Poor (<60%)**: Major lifecycle deficiencies, high security risk
 
-
 4. **Trend analysis** (if historical data available):
 
    - Compare current quarter vs. previous quarter
@@ -698,14 +654,12 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - Deprovisioning compliance trend
    - Orphaned account trend (cleanup effective?)
 
-
 5. **Document findings**:
 
    - Strengths (areas of compliance)
    - Weaknesses (areas of non-compliance)
    - Root causes (why are we non-compliant?)
    - Recommendations (how to improve)
-
 
 **Deliverable:** Sheet 6 with compliance dashboard and analysis
 
@@ -716,7 +670,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - ✓ Benchmark categories accurate
 - ✓ Trend analysis meaningful (comparing equivalent time periods)
 - ✓ Findings documented clearly
-
 
 ---
 
@@ -731,7 +684,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - **Deprovisioning Gaps** (late deprovisioning, still-active terminated users)
    - **Orphaned Account Gaps** (accounts without valid owner)
    - **Inactive Account Gaps** (accounts inactive >90 days without justification)
-
 
 2. **Prioritize gaps by risk**:
 
@@ -750,7 +702,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
      - Late provisioning (<1 day)
      - Service accounts with infrequent use (justified)
 
-
 3. **Create remediation actions**:
 
 | Gap ID | Gap Description | Priority | Action | Owner | Target Date | Status |
@@ -767,7 +718,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - Percent complete (0%, 25%, 50%, 75%, 100%)
    - Notes on progress or blockers
 
-
 **Deliverable:** Sheet 7 with gap analysis and remediation plan
 
 **Quality Check:**
@@ -778,7 +728,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - ✓ Owners assigned for each action
 - ✓ Target dates are realistic but urgent for critical gaps
 - ✓ Status tracking in place
-
 
 ---
 
@@ -798,7 +747,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - Orphaned account investigation notes
    - Manager approvals for inactive account exceptions
 
-
 2. **For EACH piece of evidence, document**:
 
    - Evidence ID (EVID-001, EVID-002, etc.)
@@ -809,7 +757,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - Date Collected (when was this evidence captured?)
    - Collected By (who gathered this evidence?)
    - Verification Status (Verified, Pending, Not Verified)
-
 
 3. **Organize evidence** in logical folder structure:
    ```
@@ -838,7 +785,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
    - Evidence clearly labeled and organized
    - Evidence demonstrates compliance (or non-compliance with remediation plan)
 
-
 **Deliverable:** Sheet 8 with complete evidence register
 
 **Quality Check:**
@@ -848,7 +794,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - ✓ Evidence IDs cross-referenced to assessment sheets
 - ✓ All evidence verified as accurate and current
 - ✓ Evidence accessible for audit
-
 
 ---
 
@@ -867,7 +812,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - Ensure evidence collected and accessible
 - Complete "Assessment Completed By" section in Sheet 9
 
-
 **Step 2: IAM Team Lead Review**
 
 - Review user inventory completeness (all identity systems included?)
@@ -877,7 +821,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - Review gap analysis and remediation plan (prioritization correct?)
 - Approve or request changes
 - Complete "Reviewed By (IAM Team Lead)" section in Sheet 9
-
 
 **Step 3: Security Team / CISO Review**
 
@@ -889,14 +832,12 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - Final approval
 - Complete "Approved By (CISO)" section in Sheet 9
 
-
 **Approval Timeline:** 
 
 - Self-review: Same day
 - IAM Team Lead review: 2-3 business days
 - CISO review: 2-3 business days
 - Total: ~1 week from submission to final approval
-
 
 **Deliverable:** Approved assessment ready for IAM Governance Dashboard (A.5.15-16-18.5)
 
@@ -907,7 +848,6 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - ✓ Critical gaps have immediate remediation actions
 - ✓ Evidence is audit-ready
 - ✓ Assessment status set to "Final"
-
 
 ---
 
@@ -922,14 +862,12 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - Screenshots of user counts from admin consoles
 - Network diagrams showing identity system architecture
 
-
 **For Sheet 2 (Provisioning Compliance):**
 
 - HR new hire notifications (example emails or tickets)
 - IAM team provisioning logs (timestamped)
 - Screenshots of account creation audit logs
 - Manager access approval examples
-
 
 **For Sheet 3 (Deprovisioning Compliance):**
 
@@ -938,14 +876,12 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - Screenshots of account disable audit logs
 - Examples of delayed deprovisioning and root causes
 
-
 **For Sheet 4 (Orphaned Accounts):**
 
 - Cross-reference report (users in identity systems not in HR)
 - Orphaned account investigation notes
 - Screenshots of orphaned account details (last login, access rights)
 - Remediation evidence (disabled account confirmation)
-
 
 **For Sheet 5 (Inactive Accounts):**
 
@@ -954,13 +890,11 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - Manager justifications for legitimate inactive accounts (email approvals)
 - Screenshots of inactive account details
 
-
 **For Sheet 6 (Compliance Dashboard):**
 
 - Trend charts (if historical data available)
 - Comparison with previous assessment
 - Benchmark references (industry standards for lifecycle compliance)
-
 
 **For Sheet 7 (Gap Analysis):**
 
@@ -969,18 +903,15 @@ ldapsearch -x -LLL -b "ou=users,dc=example,dc=com" "(objectClass=person)" \
 - Target date commitments from owners
 - Progress updates on in-flight remediation
 
-
 **For Sheet 8 (Evidence Register):**
 
 - All evidence listed above, organized and accessible
-
 
 **For Sheet 9 (Approval):**
 
 - Approval emails or sign-off forms
 - Meeting minutes from review sessions
 - CISO acceptance of risk for unresolved gaps
-
 
 ### How to Organize Evidence
 
@@ -1015,7 +946,6 @@ EVID-004_Deprovisioning_Delay_Root_Cause_Analysis_20260122.pdf
 - **Storage location:** Secure document management system with access controls
 - **Access:** IAM Team, Security Team, Internal Audit, External Auditors (read-only)
 
-
 ---
 
 ## Common Pitfalls
@@ -1044,7 +974,6 @@ EVID-004_Deprovisioning_Delay_Root_Cause_Analysis_20260122.pdf
 
 - **Provisioning Delay** = Account Created Date - Hire Date (negative = early provisioning, 0 = on-time, positive = late)
 - **Deprovisioning Delay** = Account Disabled Date - Termination Date (0 = on-time, positive = late)
-
 
 ---
 
@@ -1119,7 +1048,6 @@ Before submitting for approval, verify:
 - [ ] Source system tagged for each user
 - [ ] Duplicates identified and handled (same user in multiple systems)
 
-
 ### Provisioning Compliance (Sheet 2)
 
 - [ ] All new hires in assessment period included
@@ -1130,7 +1058,6 @@ Before submitting for approval, verify:
 - [ ] Provisioning compliance rate calculated correctly
 - [ ] Causes of delays identified and documented
 - [ ] Late provisioning cases have remediation actions
-
 
 ### Deprovisioning Compliance (Sheet 3)
 
@@ -1144,7 +1071,6 @@ Before submitting for approval, verify:
 - [ ] CRITICAL cases have immediate remediation actions (disable today)
 - [ ] Multi-system users verified (disabled in ALL identity systems)
 
-
 ### Orphaned Accounts (Sheet 4)
 
 - [ ] All identity system users cross-referenced with HR data
@@ -1155,7 +1081,6 @@ Before submitting for approval, verify:
 - [ ] Remediation plan has owners and target dates
 - [ ] Privileged orphaned accounts prioritized (highest risk)
 
-
 ### Inactive Accounts (Sheet 5)
 
 - [ ] Last login data recent (from logs within last 90 days)
@@ -1165,7 +1090,6 @@ Before submitting for approval, verify:
 - [ ] Questionable inactive accounts flagged for manager review
 - [ ] Inactive account count excludes legitimately inactive (e.g., service accounts with periodic use)
 
-
 ### Compliance Dashboard (Sheet 6)
 
 - [ ] All metrics pulled from correct sheets (provisioning from Sheet 2, deprovisioning from Sheet 3, etc.)
@@ -1173,7 +1097,6 @@ Before submitting for approval, verify:
 - [ ] Benchmark category accurate (Excellent/Good/Fair/Poor)
 - [ ] Trend analysis meaningful (if historical data available)
 - [ ] Findings clearly documented (strengths, weaknesses, root causes, recommendations)
-
 
 ### Gap Analysis (Sheet 7)
 
@@ -1184,7 +1107,6 @@ Before submitting for approval, verify:
 - [ ] Target dates realistic but urgent for critical gaps
 - [ ] Status tracking in place (Open, In Progress, Completed)
 
-
 ### Evidence Register (Sheet 8)
 
 - [ ] All evidence collected and listed
@@ -1194,7 +1116,6 @@ Before submitting for approval, verify:
 - [ ] Evidence accessible for audit (file paths correct, permissions set)
 - [ ] Evidence recent (< 30 days old for most items)
 
-
 ### Approval (Sheet 9)
 
 - [ ] Self-review completed (assessment completer sign-off)
@@ -1202,7 +1123,6 @@ Before submitting for approval, verify:
 - [ ] CISO review completed (gaps accepted, remediation approved)
 - [ ] All review comments addressed
 - [ ] Assessment status set to "Final"
-
 
 ---
 
@@ -1219,7 +1139,6 @@ Before submitting for approval, verify:
 - Ensure evidence collected and accessible
 - **Time Commitment:** 2-3 hours
 
-
 **Step 2: IAM Team Lead Review**
 
 - **Focus:** Technical accuracy, data quality, lifecycle calculations
@@ -1234,7 +1153,6 @@ Before submitting for approval, verify:
 - **Time Commitment:** 3-5 hours
 - **Turnaround:** 2-3 business days
 
-
 **Step 3: Security Team / CISO Review**
 
 - **Focus:** Compliance level, risk acceptance, resource allocation for remediation
@@ -1248,7 +1166,6 @@ Before submitting for approval, verify:
 - **Time Commitment:** 2-3 hours
 - **Turnaround:** 2-3 business days
 
-
 ### If Assessment Rejected
 
 Common reasons for rejection:
@@ -1258,7 +1175,6 @@ Common reasons for rejection:
 - **Insufficient evidence:** Claims not backed by evidence
 - **No remediation plan:** Gaps identified but no actions assigned
 - **Unrealistic timelines:** Critical gaps with 90-day remediation (should be immediate)
-
 
 **Corrective Action:**
 1. Address review comments
@@ -1293,13 +1209,11 @@ This assessment (A.5.15-16-18.1) feeds into:
 - **Mapping:** User ID → Systems/Applications → Access Level
 - **Dependency:** Cannot assess access rights without knowing WHO the users are
 
-
 ### A.5.15-16-18.3 - Access Review Results Assessment
 
 - **Uses:** User list from Sheet 1 as review scope
 - **Mapping:** Which users' access was reviewed, which was confirmed/removed
 - **Dependency:** Access reviews verify appropriateness of users' access (needs user list)
-
 
 ### A.5.15-16-18.4 - Role Definition & SoD Compliance Assessment
 
@@ -1307,13 +1221,11 @@ This assessment (A.5.15-16-18.1) feeds into:
 - **Mapping:** User ID → Roles → SoD Violations
 - **Dependency:** SoD assessment requires knowing which users exist and what roles they have
 
-
 ### A.5.15-16-18.5 - IAM Governance Compliance Dashboard
 
 - **Uses:** Lifecycle compliance metrics from Sheet 6
 - **Consolidation:** Combines metrics from all 5 IAM assessments into executive dashboard
 - **Dependency:** Dashboard cannot be complete without lifecycle compliance data
-
 
 ---
 
@@ -1409,7 +1321,6 @@ For ongoing assessments (not initial assessment):
 - Column B: 50
 - Column C: 35
 
-
 ---
 
 ## Sheet 2: User_Inventory
@@ -1451,7 +1362,6 @@ Complete inventory of ALL users across ALL identity systems with 100 sample user
 
 ### Freeze Panes
 Freeze at A6 (headers remain visible when scrolling)
-
 
 ---
 
@@ -1520,7 +1430,6 @@ Freeze at A7 (after joiner section header)
 - **Include:** Users with Hire Date in assessment period (e.g., Q1 2026)
 - **Exclude:** Service accounts (no hire date), users hired before assessment period
 
-
 ### Summary Metrics (Top of Sheet, Rows 1-2, Columns M-S)
 
 | Metric | Formula | Cell |
@@ -1568,7 +1477,6 @@ Freeze at A6
 ### Sample Data
 - 30 contractor records pre-populated
 
-
 ---
 
 ## Sheet 5: Service_Accounts
@@ -1606,7 +1514,6 @@ Freeze at A6
 
 ### Sample Data
 - 20 service accounts pre-populated (40% privileged)
-
 
 ---
 
@@ -1655,7 +1562,6 @@ Freeze at A6
 ### Sample Data
 - 15 orphaned accounts pre-populated
 
-
 ---
 
 ## Sheet 7: Lifecycle_Metrics
@@ -1694,7 +1600,6 @@ Summary KPIs and compliance metrics for A.5.16 Identity Management.
 - Overall Score: 82%
 - Maturity Level: Managed (80-89%)
 
-
 ---
 
 ## Sheet 8: Gap_Analysis
@@ -1730,7 +1635,6 @@ Track non-compliance findings and remediation progress.
 ### Freeze Panes
 Freeze at A5
 
-
 ---
 
 ## Sheet 9: Evidence_Register
@@ -1763,7 +1667,6 @@ Centralized evidence repository for audit traceability.
 ### Freeze Panes
 Freeze at A5
 
-
 ---
 
 ## Sheet 10: Approval_Sign_Off
@@ -1789,7 +1692,6 @@ Three-level approval workflow for completed assessment.
 | E | Date | 15 | User input |
 | F | Status | 15 | Pending |
 
-
 ---
 
 ## Cell Styling Reference
@@ -1801,7 +1703,6 @@ Three-level approval workflow for completed assessment.
 - **Column Header:** Font: Calibri 10pt bold black, Fill: D9D9D9 (gray), Alignment: centered/wrapped, Border: thin all sides
 - **Section Header (within sheet):** Font: Calibri 12pt bold, Fill: E7E6E6 (light gray), Alignment: left, Border: medium bottom
 
-
 ### Input Cell Styles
 
 - **Fill:** FFFFCC (light yellow) - indicates user should fill in
@@ -1809,14 +1710,12 @@ Three-level approval workflow for completed assessment.
 - **Border:** Thin black on all sides
 - **Protection:** Unlocked (allow editing)
 
-
 ### Formula/Calculated Cell Styles
 
 - **Fill:** White (FFFFFF) or light gray (F2F2F2) for read-only calculated fields
 - **Alignment:** Right for numbers, left for text
 - **Border:** Thin gray on all sides
 - **Protection:** Locked (prevent editing)
-
 
 ### Status Fill Colors (Conditional Formatting)
 
@@ -1827,7 +1726,6 @@ Three-level approval workflow for completed assessment.
 - **ℹ️ Under Investigation / In Progress:** B4C7E7 (blue)
 - **N/A / Not Applicable:** D3D3D3 (gray)
 
-
 ### Data Bars (Progress Indicators)
 
 - **Color:** Green (63BE7B)
@@ -1835,7 +1733,6 @@ Three-level approval workflow for completed assessment.
 - **Min Value:** 0
 - **Max Value:** 100
 - **Show Bar Only:** No (show value and bar)
-
 
 ---
 
@@ -1853,7 +1750,6 @@ Apply freeze panes for easier navigation:
 - **Sheet 9 (Evidence):** Freeze at A4
 - **Sheet 10 (Approval):** Freeze at A3
 
-
 ---
 
 ## File Naming Convention
@@ -1868,7 +1764,6 @@ Apply freeze panes for easier navigation:
 - Monthly assessments → New file each month
 - Quarterly comprehensive → Major version in filename (e.g., `..._Q1-2026.xlsx`)
 
-
 ---
 
 ## Monthly Review Cycle
@@ -1880,12 +1775,10 @@ Apply freeze panes for easier navigation:
    - Update last login dates
    - Recalculate all formulas
 
-
 2. **Refresh Provisioning Analysis (Sheet 3):**
 
    - Filter to current month new hires
    - Calculate current month compliance
-
 
 3. **Refresh Deprovisioning Analysis (Sheet 4):**
 
@@ -1893,24 +1786,20 @@ Apply freeze panes for easier navigation:
    - Calculate current month compliance
    - **CRITICAL:** Check for any terminated users still active >30 days
 
-
 4. **Update Orphaned Accounts (Sheet 5):**
 
    - Run cross-reference (identity systems vs. HR)
    - Update remediation status
-
 
 5. **Update Inactive Accounts (Sheet 6):**
 
    - Recalculate days since last login
    - Update inactive account list
 
-
 6. **Refresh Dashboard (Sheet 7):**
 
    - All metrics auto-update from linked sheets
    - Review maturity score trend
-
 
 7. **Update Gap Analysis (Sheet 8):**
 
@@ -1918,17 +1807,14 @@ Apply freeze panes for easier navigation:
    - Add new gaps identified in current month
    - Update remediation progress
 
-
 8. **Add New Evidence (Sheet 9):**
 
    - Document current month exports and data sources
-
 
 9. **Update Approval (Sheet 10):**
 
    - IAM Team Lead monthly review
    - CISO sign-off if significant changes or critical gaps
-
 
 ---
 
@@ -1940,12 +1826,10 @@ Apply freeze panes for easier navigation:
    - Identify systemic issues (e.g., provisioning always late by 2 days → process issue)
    - Root cause analysis for recurring gaps
 
-
 2. **Orphaned Account Cleanup Campaign:**
 
    - Intensive investigation of all orphaned accounts
    - Target: Close 100% of orphaned accounts identified >90 days ago
-
 
 3. **Process Improvement:**
 
@@ -1953,20 +1837,17 @@ Apply freeze panes for easier navigation:
    - Identify automation opportunities
    - Update documentation if processes changed
 
-
 4. **Benchmark Review:**
 
    - Compare Q1 vs. Q2 vs. Q3 vs. Q4
    - Are we improving? (maturity score trend)
    - What changed? (staffing, technology, process)
 
-
 5. **CISO Review and Approval:**
 
    - Present quarterly summary to CISO
    - Review critical gaps and remediation plans
    - Allocate budget/resources for improvements
-
 
 ---
 
@@ -1979,24 +1860,20 @@ Apply freeze panes for easier navigation:
 - **Input FROM this workbook:** User inventory (Sheet 2) provides baseline user list
 - **Usage:** Access rights assessment maps users (from .1) to systems/applications to access levels
 
-
 **A.5.15-16-18.3 - Access Review Results Assessment:**
 
 - **Input FROM this workbook:** Active user list (Sheet 2) defines review scope
 - **Usage:** Access review verifies which users' access was reviewed and confirmed/removed
-
 
 **A.5.15-16-18.4 - Role Definition & SoD Compliance Assessment:**
 
 - **Input FROM this workbook:** User list (Sheet 2) for role assignment verification
 - **Usage:** Role compliance assessment verifies users are assigned to appropriate roles, detects SoD violations
 
-
 **A.5.15-16-18.5 - IAM Governance Compliance Dashboard:**
 
 - **Input FROM this workbook:** Lifecycle compliance metrics (Sheet 7)
 - **Usage:** Dashboard consolidates lifecycle metrics with access rights, reviews, and role compliance into executive summary
-
 
 ### Related ISMS Documents
 
@@ -2006,13 +1883,11 @@ Apply freeze panes for easier navigation:
 - **Change Management:** Link identity system changes to assessment updates
 - **Asset Inventory:** Ensure identity systems are tracked as assets
 
-
 ### HR System Integration
 
 - **Joiner Event Triggers:** HR system notifies IAM Team of new hires → provisioning
 - **Leaver Event Triggers:** HR system notifies IAM Team of terminations → deprovisioning
 - **Mover Event Triggers:** HR system notifies IAM Team of role changes → access review
-
 
 ### Audit Trail
 
@@ -2020,7 +1895,6 @@ Apply freeze panes for easier navigation:
 - Gap remediation linked to project management system
 - Lifecycle SLA compliance tracked monthly for trend analysis
 - Approval sign-off (Sheet 10) maintains complete audit trail for certification
-
 
 ---
 

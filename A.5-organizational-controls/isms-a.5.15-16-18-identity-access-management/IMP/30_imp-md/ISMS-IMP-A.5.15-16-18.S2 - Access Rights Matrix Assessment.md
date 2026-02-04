@@ -45,7 +45,6 @@ This document consists of two parts:
   - Conditional Formatting Rules
   - Integration Points
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -68,7 +67,6 @@ This assessment documents your COMPLETE ACCESS RIGHTS MATRIX - the mapping of WH
 - Which access is time-bound (contractors, temporary access)?
 - How sensitive is the data being accessed (Restricted, Confidential, Internal, Public)?
 - Which users have privileged/administrative access?
-
 
 #### Key Principle
 
@@ -98,7 +96,6 @@ This assessment is **completely technology-agnostic and vendor-independent**. Yo
   - Access never reviewed (granted but never verified)
   - Excessive access (user has more than needed for job function)
   - Undocumented access (access exists but not in access matrix)
-
 
 #### How This Relates to Other A.5.15-16-18 Assessments
 
@@ -130,13 +127,11 @@ This assessment (A.5.15-16-18.2) provides the **foundational access rights mappi
 - Understanding of segregation of duties requirements
 - Basic understanding of ISO 27001 Control A.5.18
 
-
 #### Time Commitment
 
 - **Initial assessment:** 20-30 hours (extract access data from all systems, build access matrix, document justifications)
 - **Monthly updates:** 4-6 hours (update access grants, remove leavers, update group memberships)
 - **Quarterly comprehensive review:** 10-12 hours (verify all access, update justifications, assess gaps)
-
 
 ### Expected Outputs
 
@@ -166,14 +161,12 @@ Before starting this assessment, gather:
 - User ID, name, email, user type, department, manager
 - This provides the baseline "WHO" for the access matrix
 
-
 #### 2. System/Application Inventory
 
 - Complete list of systems and applications requiring access control
 - System name, description, criticality (Critical, High, Medium, Low)
 - Data sensitivity (what level of sensitive data does system contain?)
 - System owner (who is accountable for access to this system?)
-
 
 #### 3. Access Data Exports
 
@@ -185,14 +178,12 @@ For EACH system/application:
 - Direct access assignments (users with access not via group/role)
 - Administrative/privileged access (admin, root, elevated access)
 
-
 #### 4. Access Documentation
 
 - Access request tickets (from ticketing system)
 - Access approval records (manager approvals, system owner approvals)
 - Business justification documentation (why access was granted)
 - Access review records (when was access last verified?)
-
 
 #### 5. Policy Requirements
 
@@ -202,7 +193,6 @@ For EACH system/application:
   - Section 2.3.3: Group Membership Management
   - Section 2.3.8: Access Rights Documentation
 
-
 ### Required Tools
 
 - **Microsoft Excel** (2016 or later) for workbook completion
@@ -211,7 +201,6 @@ For EACH system/application:
 - **Ticketing system access** (for access request and approval records)
 - **Screen capture tools** (for evidence screenshots)
 
-
 ### Dependencies
 
 **CRITICAL DEPENDENCY:**
@@ -219,13 +208,11 @@ For EACH system/application:
 - **ISMS-IMP-A.5.15-16-18.S1** (User Inventory) MUST be completed first
 - This assessment uses the user list from IMP.1 as baseline
 
-
 **Outputs FROM this assessment feed INTO:**
 
 - A.5.15-16-18.3 (Access Review Results) - Uses access matrix to define review scope
 - A.5.15-16-18.4 (Role & SoD Compliance) - Uses access data to detect SoD violations
 - A.5.15-16-18.5 (IAM Governance Dashboard) - Consolidates access metrics
-
 
 ---
 
@@ -282,7 +269,6 @@ For EACH system/application:
 - ✓ System owners identified and available
 - ✓ Policy requirements reviewed and understood
 
-
 ---
 
 #### Phase 2: Build System/Application Inventory (3-4 hours)
@@ -300,7 +286,6 @@ For EACH system/application:
    - Network devices (firewalls, switches, routers if they have user access)
    - Development tools (GitLab, Jenkins, development environments)
 
-
 2. **For EACH system, document**:
 
    - System ID (unique identifier, e.g., SYS-001)
@@ -312,14 +297,12 @@ For EACH system/application:
    - Criticality (Critical, High, Medium, Low - business impact if unavailable)
    - Data Sensitivity (Restricted, Confidential, Internal, Public - highest sensitivity data in system)
 
-
 3. **Verify completeness**:
 
    - Cross-check with asset inventory
    - Ask IT Operations: "What systems do users log into?"
    - Ask System Owners: "What applications do your teams use?"
    - Check cloud service subscriptions
-
 
 **Deliverable:** Complete Sheet 1 with all systems/applications
 
@@ -330,7 +313,6 @@ For EACH system/application:
 - ✓ System owners assigned and verified
 - ✓ Criticality reflects actual business impact
 - ✓ Data sensitivity accurately categorized
-
 
 ---
 
@@ -381,7 +363,6 @@ Get-MgGroup -All | ForEach-Object {
   - Work with application owners to export user access data
   - May require custom scripts or database queries
 
-
 **For Each System, Export:**
 
 - User ID → Access Level (Read, Write, Admin, Privileged)
@@ -389,13 +370,11 @@ Get-MgGroup -All | ForEach-Object {
 - Role assignments (if access is via role)
 - Direct permissions (if access is not via group/role)
 
-
 **Consolidation Step:**
 
 - Normalize data format across all systems
 - Map user identifiers (AD SamAccountName → Entra ID UPN → Application UserID)
 - Tag each access record with source system
-
 
 **Deliverable:** Consolidated access data CSV for all systems
 
@@ -406,7 +385,6 @@ Get-MgGroup -All | ForEach-Object {
 - ✓ Group/role access identified (not just direct access)
 - ✓ User identifiers mapped across systems
 - ✓ Source system tagged for each access record
-
 
 ---
 
@@ -431,20 +409,17 @@ Get-MgGroup -All | ForEach-Object {
    - Last review date (when was this access last verified?)
    - Access expiration date (for contractors, time-bound access)
 
-
 4. **Classify access**:
 
    - **Privileged Access Flag**: Is this admin/root/elevated access? (Yes/No)
    - **Data Sensitivity**: What sensitivity level can user access via this system? (Restricted/Confidential/Internal/Public)
    - **SoD Conflict**: Does this access violate segregation of duties? (flagged later in IMP.4)
 
-
 5. **Calculate derived fields**:
 
    - Days since access granted (Today - Access Grant Date)
    - Days since last review (Today - Last Review Date)
    - Access documentation completeness (justification + approval + review = complete)
-
 
 **Deliverable:** Complete Sheet 2 with access rights matrix
 
@@ -457,7 +432,6 @@ Get-MgGroup -All | ForEach-Object {
 - ✓ Privileged access flagged
 - ✓ Data sensitivity tagged
 - ✓ Documentation fields populated where available
-
 
 ---
 
@@ -473,7 +447,6 @@ Get-MgGroup -All | ForEach-Object {
    - Entra ID groups
    - Application-specific groups (Salesforce profiles, Workday security groups, etc.)
 
-
 2. **For EACH group, document**:
 
    - Group ID (unique identifier)
@@ -485,7 +458,6 @@ Get-MgGroup -All | ForEach-Object {
    - Member Count (how many users in this group?)
    - Last Membership Review Date (when was membership last verified?)
 
-
 3. **List ALL roles** that grant access (if RBAC implemented):
 
    - Role ID, Role Name
@@ -494,12 +466,10 @@ Get-MgGroup -All | ForEach-Object {
    - Users Assigned to Role (count)
    - Role Last Reviewed Date
 
-
 4. **Cross-reference with Sheet 2**:
 
    - Verify all groups mentioned in Sheet 2 are documented in Sheet 3
    - Verify all roles mentioned in Sheet 2 are documented in Sheet 3
-
 
 **Deliverable:** Complete Sheet 3 with group and role mapping
 
@@ -511,7 +481,6 @@ Get-MgGroup -All | ForEach-Object {
 - ✓ Access granted by group clearly documented
 - ✓ Roles documented (if RBAC implemented)
 - ✓ Cross-references to Sheet 2 verified
-
 
 ---
 
@@ -529,7 +498,6 @@ Get-MgGroup -All | ForEach-Object {
    - Project requirement (e.g., "Temporary access for Q1 audit project")
    - Manager approval (e.g., "Manager John Doe approved access on 2025-01-15")
 
-
 2. **Collect justification documentation**:
 
    - Access request tickets (from ServiceNow, Jira, etc.)
@@ -537,13 +505,11 @@ Get-MgGroup -All | ForEach-Object {
    - HR system job descriptions (job role → required access mapping)
    - Project charters (project team → required access)
 
-
 3. **Categorize justification completeness**:
 
    - **✅ Complete**: Justification documented, approver identified, approval date recorded
    - **⚠️ Partial**: Justification exists but missing approver or date
    - **❌ Missing**: No justification documented
-
 
 4. **Calculate metrics**:
 
@@ -552,7 +518,6 @@ Get-MgGroup -All | ForEach-Object {
    - Access with partial justification (count, percentage)
    - Access with missing justification (count, percentage)
    - **Documentation Completeness Score** = (Complete / Total) × 100%
-
 
 **Deliverable:** Sheet 4 with justification documentation analysis
 
@@ -563,7 +528,6 @@ Get-MgGroup -All | ForEach-Object {
 - ✓ Completeness categorization accurate
 - ✓ Missing justifications flagged for remediation
 - ✓ Documentation completeness score calculated
-
 
 ---
 
@@ -582,7 +546,6 @@ Get-MgGroup -All | ForEach-Object {
      - Email/Collaboration (Standard access)
    - Document this as "role-to-access mapping"
 
-
 2. **Compare actual access vs. required access**:
 
    - For EACH user, compare their actual access (from Sheet 2) to their required access (based on job role)
@@ -591,13 +554,11 @@ Get-MgGroup -All | ForEach-Object {
      - Higher access level than required (e.g., Write when only Read needed)
      - Multiple system access when only one required (e.g., access to both Test and Prod when only Test needed)
 
-
 3. **Categorize excessive access**:
 
    - **Legitimate Excess**: Documented reason (e.g., "Also supporting Project X", "Backup for Manager")
    - **Questionable Excess**: No clear reason, requires manager review
    - **Privilege Creep**: User accumulated access from previous roles, never removed
-
 
 4. **Calculate metrics**:
 
@@ -606,7 +567,6 @@ Get-MgGroup -All | ForEach-Object {
    - Users with legitimate excess (justified)
    - Users with questionable excess (no justification, requires review)
    - Systems most commonly over-granted (which systems have most excessive access?)
-
 
 **Deliverable:** Sheet 5 with excessive access analysis
 
@@ -617,7 +577,6 @@ Get-MgGroup -All | ForEach-Object {
 - ✓ Excessive access accurately identified
 - ✓ Legitimate excess access has documented justification
 - ✓ Questionable excess flagged for manager review
-
 
 ---
 
@@ -636,7 +595,6 @@ Get-MgGroup -All | ForEach-Object {
    - Excessive access count (from Sheet 5)
    - Group-based access vs. direct access (from Sheets 2-3)
 
-
 2. **Calculate overall access rights documentation score**:
    ```
    Documentation Score = 
@@ -653,14 +611,12 @@ Get-MgGroup -All | ForEach-Object {
    - **Fair (60-74%)**: Acceptable but significant documentation gaps
    - **Poor (<60%)**: Major documentation deficiencies, audit risk
 
-
 4. **Document findings**:
 
    - Strengths (areas of compliance)
    - Weaknesses (areas of non-compliance)
    - Root causes (why is documentation incomplete?)
    - Recommendations (how to improve)
-
 
 **Deliverable:** Sheet 6 with access rights compliance dashboard
 
@@ -670,7 +626,6 @@ Get-MgGroup -All | ForEach-Object {
 - ✓ Overall documentation score formula applied correctly
 - ✓ Benchmark categories accurate
 - ✓ Findings documented clearly
-
 
 ---
 
@@ -687,7 +642,6 @@ Get-MgGroup -All | ForEach-Object {
    - **Excessive access** (from Sheet 5)
    - **Undocumented group/role access** (from Sheet 3)
    - **Privileged access without approval** (from Sheet 2)
-
 
 2. **Prioritize gaps by risk**:
 
@@ -706,7 +660,6 @@ Get-MgGroup -All | ForEach-Object {
      - Access to Public data without full documentation
      - Minor documentation gaps
 
-
 3. **Create remediation actions**:
 
 | Gap ID | Gap Description | Priority | Action | Owner | Target Date | Status |
@@ -721,7 +674,6 @@ Get-MgGroup -All | ForEach-Object {
    - Percent complete (0%, 25%, 50%, 75%, 100%)
    - Notes on progress or blockers
 
-
 **Deliverable:** Sheet 7 with gap analysis and remediation plan
 
 **Quality Check:**
@@ -731,7 +683,6 @@ Get-MgGroup -All | ForEach-Object {
 - ✓ Remediation actions specific and actionable
 - ✓ Owners assigned for each action
 - ✓ Target dates realistic but urgent for critical gaps
-
 
 ---
 
@@ -750,7 +701,6 @@ Get-MgGroup -All | ForEach-Object {
    - Screenshots (access matrices, group memberships)
    - Policy documents (ISMS-POL-A.5.15-16-18, Section 2.3)
 
-
 2. **For EACH piece of evidence, document**:
 
    - Evidence ID (EVID-001, EVID-002, etc.)
@@ -762,7 +712,6 @@ Get-MgGroup -All | ForEach-Object {
    - Collected By (who gathered this evidence?)
    - Verification Status (Verified, Pending, Not Verified)
 
-
 3. **Organize evidence** in logical folder structure
 
 4. **Verify evidence quality**:
@@ -770,7 +719,6 @@ Get-MgGroup -All | ForEach-Object {
    - All evidence recent (< 30 days old for access data)
    - Evidence accessible to auditors
    - Evidence clearly labeled
-
 
 **Deliverable:** Sheet 8 with complete evidence register
 
@@ -780,7 +728,6 @@ Get-MgGroup -All | ForEach-Object {
 - ✓ Evidence organized in logical folder structure
 - ✓ Evidence IDs cross-referenced to assessment sheets
 - ✓ All evidence verified as accurate and current
-
 
 ---
 
@@ -798,7 +745,6 @@ Get-MgGroup -All | ForEach-Object {
 - Validate data accuracy
 - Ensure evidence collected
 
-
 **Step 2: System Owner Review**
 
 - Review access to THEIR systems (is it accurate?)
@@ -806,14 +752,12 @@ Get-MgGroup -All | ForEach-Object {
 - Confirm group/role memberships (correct?)
 - Approve or request changes
 
-
 **Step 3: CISO / Security Manager Review**
 
 - Review overall documentation completeness (acceptable?)
 - Assess critical gaps (privileged access without approval = unacceptable)
 - Verify remediation plans have adequate resources
 - Final approval
-
 
 **Deliverable:** Approved assessment ready for IAM Governance Dashboard
 
@@ -823,7 +767,6 @@ Get-MgGroup -All | ForEach-Object {
 - ✓ All review comments addressed
 - ✓ Critical gaps have immediate remediation actions
 - ✓ Evidence is audit-ready
-
 
 ---
 
@@ -838,7 +781,6 @@ Get-MgGroup -All | ForEach-Object {
 - System owner assignments
 - Data classification documentation
 
-
 **For Sheet 2 (Access Rights Matrix):**
 
 - AD group membership exports
@@ -847,13 +789,11 @@ Get-MgGroup -All | ForEach-Object {
 - Database user permission queries
 - Privileged access lists
 
-
 **For Sheet 3 (Group/Role Mapping):**
 
 - Group purpose documentation
 - Group owner assignments
 - Role catalog (if RBAC implemented)
-
 
 **For Sheet 4 (Access Justification):**
 
@@ -862,36 +802,30 @@ Get-MgGroup -All | ForEach-Object {
 - HR job descriptions (role → access mapping)
 - System owner approvals
 
-
 **For Sheet 5 (Excessive Access):**
 
 - Job role → required access mapping
 - Manager justifications for excess access
 - Privilege creep analysis reports
 
-
 **For Sheet 6 (Compliance Dashboard):**
 
 - Trend charts (if historical data)
 - Benchmark references
-
 
 **For Sheet 7 (Gap Analysis):**
 
 - Gap remediation project plans
 - Resource allocation approvals
 
-
 **For Sheet 8 (Evidence Register):**
 
 - All evidence listed above, organized
-
 
 **For Sheet 9 (Approval):**
 
 - Approval sign-offs
 - System owner confirmations
-
 
 ### How to Organize Evidence
 
@@ -914,7 +848,6 @@ ISMS-A.5.15-16-18.2_Evidence_YYYYMMDD/
 - **Recommended retention:** 5 years (trend analysis, improvement tracking)
 - **Storage location:** Secure document management system
 - **Access:** IAM Team, Security Team, Internal Audit, External Auditors
-
 
 ---
 
@@ -1012,7 +945,6 @@ Before submitting for approval, verify:
 - [ ] Data sensitivity accurately categorized
 - [ ] No "Unknown" or "TBD" values
 
-
 ### Access Rights Matrix (Sheet 2)
 
 - [ ] All users from IMP.1 included
@@ -1024,7 +956,6 @@ Before submitting for approval, verify:
 - [ ] Access grant dates documented (where available)
 - [ ] Approvers documented (where available)
 
-
 ### Group/Role Mapping (Sheet 3)
 
 - [ ] All groups granting access documented
@@ -1034,7 +965,6 @@ Before submitting for approval, verify:
 - [ ] Roles documented (if RBAC implemented)
 - [ ] Cross-references to Sheet 2 verified
 
-
 ### Access Justification (Sheet 4)
 
 - [ ] All access grants assessed for justification
@@ -1042,7 +972,6 @@ Before submitting for approval, verify:
 - [ ] Completeness categorization accurate
 - [ ] Missing justifications flagged
 - [ ] Documentation completeness score calculated
-
 
 ### Excessive Access Analysis (Sheet 5)
 
@@ -1052,14 +981,12 @@ Before submitting for approval, verify:
 - [ ] Legitimate excess has justification
 - [ ] Questionable excess flagged for review
 
-
 ### Compliance Dashboard (Sheet 6)
 
 - [ ] All metrics pulled from correct sheets
 - [ ] Overall documentation score calculated correctly
 - [ ] Benchmark category accurate
 - [ ] Findings clearly documented
-
 
 ### Gap Analysis (Sheet 7)
 
@@ -1069,7 +996,6 @@ Before submitting for approval, verify:
 - [ ] Owners assigned
 - [ ] Target dates realistic
 
-
 ### Evidence Register (Sheet 8)
 
 - [ ] All evidence collected and listed
@@ -1077,14 +1003,12 @@ Before submitting for approval, verify:
 - [ ] Evidence IDs cross-referenced
 - [ ] All evidence verified
 
-
 ### Approval (Sheet 9)
 
 - [ ] Self-review completed
 - [ ] System Owner review completed
 - [ ] CISO review completed
 - [ ] All comments addressed
-
 
 ---
 
@@ -1098,7 +1022,6 @@ Before submitting for approval, verify:
 - **Time:** 2-3 hours
 - **Turnaround:** Same day
 
-
 **Step 2: System Owner Review**
 
 - **Focus:** Access to their systems is accurate and justified
@@ -1111,7 +1034,6 @@ Before submitting for approval, verify:
 - **Time:** 2-3 hours per system owner
 - **Turnaround:** 1 week (coordinating multiple system owners)
 
-
 **Step 3: CISO / Security Manager Review**
 
 - **Focus:** Overall documentation completeness, privileged access governance, gap remediation
@@ -1123,7 +1045,6 @@ Before submitting for approval, verify:
 - **Decision:** Final Approval / Approve with Conditions / Reject
 - **Time:** 2-3 hours
 - **Turnaround:** 3-5 business days
-
 
 ### Approval Timeline
 
@@ -1150,20 +1071,17 @@ This assessment (A.5.15-16-18.2) feeds into:
 - **Mapping:** Which users' access was reviewed, confirmed, or removed
 - **Dependency:** Cannot conduct access review without knowing WHAT access exists
 
-
 ### A.5.15-16-18.4 - Role Definition & SoD Compliance Assessment
 
 - **Uses:** Access via roles (from Sheets 2-3) to detect SoD violations
 - **Mapping:** User → Roles → SoD conflicts
 - **Dependency:** SoD detection requires knowing which users have which roles
 
-
 ### A.5.15-16-18.5 - IAM Governance Compliance Dashboard
 
 - **Uses:** Access metrics from Sheet 6
 - **Consolidation:** Access rights metrics combined with lifecycle, review, role metrics
 - **Dependency:** Dashboard incomplete without access rights data
-
 
 ---
 
@@ -1177,31 +1095,26 @@ This assessment (A.5.15-16-18.2) feeds into:
    - Remove access for leavers (from IMP.1 deprovisioning)
    - Update group memberships (changes during month)
 
-
 2. **Update Group/Role Mapping (Sheet 3):**
 
    - New groups created
    - Group ownership changes
    - Member count updates
 
-
 3. **Update Justification Documentation (Sheet 4):**
 
    - Collect justifications for new access grants
    - Update documentation completeness score
 
-
 4. **Refresh Compliance Dashboard (Sheet 6):**
 
    - All metrics auto-update from linked sheets
-
 
 5. **Update Gap Analysis (Sheet 7):**
 
    - Close resolved gaps
    - Add new gaps identified
    - Update remediation progress
-
 
 **Time Commitment:** 4-6 hours per month
 
@@ -1212,23 +1125,19 @@ This assessment (A.5.15-16-18.2) feeds into:
    - Sample 10% of access grants, verify still accurate
    - Identify access that should have been removed but wasn't
 
-
 2. **Excessive Access Cleanup Campaign:**
 
    - Manager review of all excessive access
    - Remove access no longer needed
-
 
 3. **Documentation Improvement:**
 
    - Retroactive justification collection for undocumented access
    - Target: Increase documentation completeness to >90%
 
-
 4. **System Owner Validation:**
 
    - Each system owner verifies access to their system
-
 
 **Time Commitment:** 10-12 hours per quarter
 
@@ -1249,7 +1158,6 @@ This assessment (A.5.15-16-18.2) feeds into:
 - **Title:** "ISMS-IMP-A.5.15-16-18.S2 – Access Rights Matrix Assessment"
 - **Subtitle:** "ISO/IEC 27001:2022 - Control A.5.18: Access Rights"
 - **Styling:** Dark blue header (003366), white text, centered, 40px height
-
 
 #### Document Information Block (Rows 3-12)
 ```
@@ -1633,7 +1541,6 @@ Three-level approval workflow for completed assessment.
 - **Subheader:** Font: Calibri 11pt bold white, Fill: 4472C4 (blue), Centered
 - **Column Header:** Font: Calibri 10pt bold black, Fill: D9D9D9 (gray), Centered, Border: thin
 
-
 ### Input Cell Styles
 
 - **Fill:** FFFFCC (light yellow) - user input required
@@ -1641,14 +1548,12 @@ Three-level approval workflow for completed assessment.
 - **Border:** Thin black all sides
 - **Protection:** Unlocked
 
-
 ### Formula/Calculated Cell Styles
 
 - **Fill:** White (FFFFFF) or light gray (F2F2F2)
 - **Alignment:** Right for numbers, left for text
 - **Border:** Thin gray
 - **Protection:** Locked
-
 
 ### Status Fill Colors
 
@@ -1658,7 +1563,6 @@ Three-level approval workflow for completed assessment.
 - **🚨 CRITICAL:** FF0000 (dark red)
 - **ℹ️ Under Review:** B4C7E7 (blue)
 - **N/A:** D3D3D3 (gray)
-
 
 ---
 
@@ -1673,7 +1577,6 @@ Three-level approval workflow for completed assessment.
 - **Sheet 8 (Gap Analysis):** Freeze at A4
 - **Sheet 9 (Evidence):** Freeze at A4
 - **Sheet 10 (Approval):** Freeze at A3
-
 
 ---
 
@@ -1708,21 +1611,17 @@ Three-level approval workflow for completed assessment.
 
 - **Input FROM IMP.1:** User list (baseline for access matrix)
 
-
 **A.5.15-16-18.3 - Access Review Results:**
 
 - **Input FROM this workbook:** Access matrix defines WHAT to review
-
 
 **A.5.15-16-18.4 - Role & SoD Compliance:**
 
 - **Input FROM this workbook:** Access via roles for SoD detection
 
-
 **A.5.15-16-18.5 - IAM Governance Dashboard:**
 
 - **Input FROM this workbook:** Access metrics (Sheet 7)
-
 
 ---
 

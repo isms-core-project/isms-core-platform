@@ -34,7 +34,6 @@
 - Compliance: Legal/Compliance Officer
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -43,7 +42,6 @@
 - ISMS-REF-A.8.28 (Code Review Technical Reference)
 - ISO/IEC 27001:2022 Control A.8.28
 - ISO/IEC 27002:2022 Control 8.28
-
 
 ---
 
@@ -61,7 +59,6 @@ This policy establishes [Organization]'s requirements for secure software develo
 
 - **Mandatory**: Swiss FADP, EU GDPR (Art. 32), ISO 27001:2022
 - **Informational**: OWASP Top 10, NIST SP 800-218 SSDF, CWE Top 25
-
 
 ---
 
@@ -83,7 +80,6 @@ This policy establishes [Organization]'s requirements for secure software develo
 - Code review and security testing
 - Third-party component security
 
-
 ## Scope Definition
 
 **In Scope**:
@@ -94,13 +90,11 @@ This policy establishes [Organization]'s requirements for secure software develo
 - All languages and frameworks used by [Organization]
 - Development, staging, and production environments
 
-
 **Out of Scope**:
 
 - Infrastructure configuration (see A.8.9 Configuration Management)
 - Network security (see A.8.20-22 Network Security)
 - Cryptographic key management (see A.8.24 Cryptography)
-
 
 ## Document Hierarchy
 
@@ -123,7 +117,6 @@ This policy establishes [Organization]'s requirements for secure software develo
 - Requirements derived from data classification, regulatory needs, and threat landscape
 - Security acceptance criteria defined before development begins
 
-
 **Threat Modeling Requirements**:
 
 | Project Type | Requirement |
@@ -142,7 +135,6 @@ This policy establishes [Organization]'s requirements for secure software develo
 - Mitigation controls mapped to threats
 - Validation approach
 
-
 **Threat Modeling Methodology**: [Organization] SHALL use a recognized methodology (STRIDE, PASTA, DREAD, or OWASP Threat Dragon). Methodology selection documented per application; consistency within application families encouraged.
 
 **Verification**: Threat models reviewed by Application Security Team; approval documented in Workbook 1. Critical applications require CISO sign-off.
@@ -153,7 +145,6 @@ This policy establishes [Organization]'s requirements for secure software develo
 - Required for significant architectural changes
 - Security Architect or Application Security Team approval required
 - Critical applications require CISO approval
-
 
 ## Developer Security Training
 
@@ -173,13 +164,11 @@ This policy establishes [Organization]'s requirements for secure software develo
 - Completion certificates retained as evidence
 - Non-compliance escalated to Development Manager after 30 days; CISO notification after 60 days
 
-
 **Training Content Ownership**:
 
 - Application Security Team maintains training content
 - Content reviewed and updated annually or when OWASP Top 10/CWE Top 25 updates
 - Language-specific training aligned with ISMS-CTX-A.8.28
-
 
 **Verification**: Training completion reports generated quarterly from LMS; completion rates tracked as KPI (target: 100%). Sample certificates retained for audit.
 
@@ -194,13 +183,11 @@ This policy establishes [Organization]'s requirements for secure software develo
 - Server-side validation mandatory (client-side is UX only)
 - Reject invalid input; do not attempt sanitization
 
-
 **Output Encoding**:
 
 - Context-appropriate encoding (HTML, JavaScript, URL, SQL)
 - Use framework-provided encoding functions
 - Prevent XSS through proper output encoding
-
 
 **Authentication & Session Management**:
 
@@ -210,14 +197,12 @@ This policy establishes [Organization]'s requirements for secure software develo
 - Session timeout and invalidation on logout
 - MFA support for sensitive applications
 
-
 **Authorization**:
 
 - Server-side enforcement for every request
 - Least privilege principle
 - Prevent IDOR vulnerabilities
 - RBAC or ABAC implementation
-
 
 **Cryptography**:
 
@@ -226,13 +211,11 @@ This policy establishes [Organization]'s requirements for secure software develo
 - Proper key management (keys separate from code)
 - TLS 1.2+ for data in transit (TLS 1.3 preferred)
 
-
 **Error Handling**:
 
 - Generic error messages to users
 - Detailed logging server-side (no sensitive data in logs)
 - Security events logged for monitoring
-
 
 **Language-Specific Guidelines**: See ISMS-CTX-A.8.28 for Python, JavaScript, Java, C#, Go, SQL patterns.
 
@@ -247,7 +230,6 @@ The following are **PROHIBITED**:
 - Committing secrets to version control (even in history)
 - Ignoring security tool findings without documented exception
 
-
 ## Secrets Management
 
 - NO hardcoded secrets in source code
@@ -256,13 +238,11 @@ The following are **PROHIBITED**:
 - Pre-commit hooks configured to block commits containing detected secrets
 - Secrets rotated regularly and upon employee departure
 
-
 **Secret Detection Response**:
 
 - Pre-commit block: Developer must remove secret before commit proceeds
 - CI/CD detection: Build fails; secret must be removed and rotated before merge
 - Post-commit detection: Immediate rotation required; incident logged
-
 
 **Verification**: Secret scanning tool configuration documented in Workbook 2; detection events logged and reviewed weekly by Application Security Team.
 
@@ -275,14 +255,12 @@ The following are **PROHIBITED**:
 - Check for known vulnerabilities before inclusion
 - Verify license compatibility
 
-
 **Ongoing Management**:
 
 - Maintain component inventory (Software Bill of Materials)
 - Monitor for vulnerabilities via SCA tools
 - Patch/update within defined SLAs
 - Remove unused dependencies
-
 
 ---
 
@@ -296,7 +274,6 @@ The following are **PROHIBITED**:
 - Security-focused review for changes touching authentication, authorization, cryptography, input handling
 - Branch protection prevents merging without approval
 
-
 **Security Review Criteria**: See ISMS-REF-A.8.28 for detailed checklist.
 
 ## Security Testing Requirements
@@ -308,13 +285,11 @@ The following are **PROHIBITED**:
 - Findings triaged and remediated per SLA
 - False positives documented and tuned (target: <20% false positive rate)
 
-
 **Dynamic Application Security Testing (DAST)**:
 
 - Run against staging/QA environments (e.g., OWASP ZAP, Burp Suite, Qualys WAS)
 - Required before production release for web applications
 - API security testing for all APIs (e.g., Postman security tests, OWASP API Security)
-
 
 **Software Composition Analysis (SCA)**:
 
@@ -322,14 +297,12 @@ The following are **PROHIBITED**:
 - Monitors all third-party dependencies
 - Alerts on new vulnerabilities in dependencies; build fails on Critical/High
 
-
 **Tool Integration Verification**:
 
 - CI/CD pipeline configuration documented in Workbook 2
 - Tool selection and deployment status tracked
 - Last 90 days scan reports available on request
 - Pipeline logs demonstrate automated execution
-
 
 **Verification**: Security tool dashboard (or consolidated report) reviewed weekly; tool coverage and scan success rates tracked as KPIs.
 
@@ -347,14 +320,12 @@ The following are **PROHIBITED**:
 - API testing: Include all public endpoints, authentication mechanisms, rate limiting
 - Post-test: Findings remediated per SLA; retest for Critical/High findings
 
-
 **Retest Requirements**:
 
 - Critical and High findings SHALL be retested after remediation to verify effectiveness
 - Retest may be scoped to affected components (not requiring full application retest)
 - Medium and Low findings verified through internal security testing (DAST or manual testing) unless customer or regulatory requirement mandates external retest
 - Retest evidence documented in Workbook 3
-
 
 **Verification**: Penetration test reports retained per Section 7.3; remediation evidence documented in Workbook 3.
 
@@ -374,7 +345,6 @@ The following are **PROHIBITED**:
 - Weekly SLA compliance review by Application Security Team
 - Monthly SLA report to Development Management and CISO
 
-
 **Exception Process**:
 
 - Documented business justification required
@@ -382,7 +352,6 @@ The following are **PROHIBITED**:
 - Approval: Medium by Security Lead, High/Critical by CISO
 - Maximum exception duration: 90 days (renewable)
 - Exceptions tracked in central exception register (Workbook 3)
-
 
 **Verification**: Vulnerability aging dashboard reviewed weekly; SLA compliance rates tracked as KPI (Critical ≥95%, High ≥90%).
 
@@ -397,14 +366,12 @@ The following are **PROHIBITED**:
 - Review security metrics quarterly
 - Escalation point for critical vulnerabilities
 
-
 ## Chief Information Security Officer (CISO)
 
 - Overall accountability for secure development program
 - Approve security tool selection
 - Approve high-risk exceptions
 - Review vulnerability trends and remediation status
-
 
 ## Application Security Team
 
@@ -415,14 +382,12 @@ The following are **PROHIBITED**:
 - Conduct security training
 - Support incident response for code vulnerabilities
 
-
 ## Development Management
 
 - Ensure developers complete security training
 - Allocate time for security activities in sprints
 - Enforce code review requirements
 - Escalate unresolved security findings
-
 
 ## Security Champions
 
@@ -431,7 +396,6 @@ The following are **PROHIBITED**:
 - Participate in threat modeling
 - Promote secure coding practices
 
-
 **Program Structure**:
 
 - Coverage target: Minimum 1 Security Champion per development team (or per 10 developers)
@@ -439,7 +403,6 @@ The following are **PROHIBITED**:
 - Designation: Formal role documented in HR system; 10-20% time allocation for security activities
 - Training: Quarterly advanced security training (beyond standard developer training)
 - Recognition: Security Champion contributions included in performance reviews
-
 
 **Verification**: Security Champions roster maintained by Application Security Team; coverage tracked in Workbook 1.
 
@@ -452,14 +415,12 @@ The following are **PROHIBITED**:
 - Report security concerns
 - Not commit secrets to repositories
 
-
 ## Third-Party Developers
 
 - Comply with [Organization]'s secure coding standards
 - Complete security training as required
 - Submit to code reviews and security testing
 - Remediate vulnerabilities within SLAs
-
 
 **Compliance Enforcement**:
 
@@ -468,7 +429,6 @@ The following are **PROHIBITED**:
 - Code review: All third-party code subject to same review standards as internal code
 - Security testing: Third-party deliverables scanned with SAST/SCA before acceptance
 - Attestation: Annual compliance attestation signed by vendor management
-
 
 **Verification**: Third-party developer compliance tracked in Workbook 4; attestations retained for audit.
 
@@ -484,12 +444,10 @@ The following are **PROHIBITED**:
 - Vulnerability aging monitored
 - Training completion tracked
 
-
 **Periodic Assessment**:
 
 - Quarterly: Vulnerability metrics, training compliance, exception review
 - Annual: Full secure coding program assessment (ISMS-IMP-A.8.28)
-
 
 ## Non-Compliance Handling
 
@@ -507,7 +465,6 @@ The following are **PROHIBITED**:
 - Exceptions tracked in central exception register (Workbook 3)
 - Maximum duration: 90 days (renewable with re-approval)
 
-
 **Compensating Controls Guidance**:
 
 - WAF rules blocking known attack patterns for unpatched vulnerabilities
@@ -516,14 +473,12 @@ The following are **PROHIBITED**:
 - Rate limiting reducing attack feasibility
 - Input validation at network edge (reverse proxy)
 
-
 **Compensating Controls Adequacy Criteria**: Compensating controls SHALL demonstrate equivalent risk reduction via:
 
 - **Effectiveness**: Control mitigates the specific exploitation path (not generic security)
 - **Reliability**: Control operates continuously with alerting on failure
 - **Verifiability**: Control operation can be tested and monitored
 - **Scope**: Control covers all affected systems/data flows
-
 
 Application Security Team assesses adequacy; CISO approval for High/Critical exceptions includes compensating control validation.
 
@@ -587,7 +542,6 @@ Evidence required to demonstrate this policy is adequately documented and approv
 - ✅ Roles and responsibilities assigned
 - ✅ Assessment workbook references documented (ISMS-IMP-A.8.28)
 
-
 **Stage 2 (Operational Effectiveness) Evidence:**
 
 Evidence required to demonstrate this policy is operationally effective:
@@ -616,7 +570,6 @@ Evidence required to demonstrate this policy is operationally effective:
 - Penetration test reports: 5 years
 - Vulnerability remediation evidence: 3 years
 
-
 ---
 
 # Implementation Resources
@@ -635,7 +588,6 @@ Evidence required to demonstrate this policy is operationally effective:
 - OWASP Cheat Sheets: https://cheatsheetseries.owasp.org/
 - CWE Top 25: https://cwe.mitre.org/top25/
 - NIST SP 800-218 SSDF: Secure Software Development Framework
-
 
 ---
 

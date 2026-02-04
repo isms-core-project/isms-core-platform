@@ -44,7 +44,6 @@ This document consists of two parts:
   - Formula Definitions
   - Cell Styling Reference
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -70,14 +69,12 @@ This assessment evaluates your organization's operational capabilities for monit
 - **Reporting:** What regular reports are generated, for whom, how often
 - **Gaps:** Any identified deficiencies in monitoring or response capabilities
 
-
 **Key Principle:** This assessment is evidence-based. You're documenting *what actually happens* in your environment - not what should happen in theory. If dashboards exist but nobody looks at them, that's a gap. If alerts fire but response times are 10x the SLA, that's a finding. Be honest with yourself (Feynman: "The first principle is that you must not fool yourself").
 
 ### How This Relates to Other A.8.23 Assessments
 
  | Assessment | Focus | Relationship to A.8.23.4 | 
 |------------|-------|-------------------## Document Overview
-
 
 All four must align for complete web filtering compliance. You can have the best filtering infrastructure in the world, but if nobody monitors it or responds to alerts, it's security theater.
 
@@ -98,12 +95,10 @@ All four must align for complete web filtering compliance. You can have the best
 - Knowledge of incident response procedures
 - Access to monitoring dashboards and reporting tools
 
-
 **Time Commitment:**
 
 - **Initial assessment:** 8-12 hours (spread over 1-2 weeks)
 - **Quarterly updates:** 2-3 hours (mainly updating metrics and reviewing gaps)
-
 
 ## Expected Outputs
 
@@ -136,7 +131,6 @@ Before starting, gather the following information:
 - [ ] Regulatory/compliance retention requirements
 - [ ] Log storage capacity and usage statistics
 
-
 ### Alerting Configuration
 
 - [ ] Access to SIEM or alerting platform
@@ -145,14 +139,12 @@ Before starting, gather the following information:
 - [ ] Escalation matrix and on-call schedules
 - [ ] Recent alert history (last 90 days recommended)
 
-
 ### Monitoring & Dashboards
 
 - [ ] Access to all monitoring dashboards
 - [ ] KPI definitions and target values
 - [ ] Dashboard review schedules and responsibilities
 - [ ] Screenshots of key dashboards for evidence
-
 
 ### Incident Response
 
@@ -162,14 +154,12 @@ Before starting, gather the following information:
 - [ ] Incident ticketing system access
 - [ ] Post-incident review reports
 
-
 ### Reporting
 
 - [ ] List of regular reports generated
 - [ ] Report templates or examples
 - [ ] Distribution lists for reports
 - [ ] Report generation tools/scripts
-
 
 ## Required Access
 
@@ -180,7 +170,6 @@ Ensure you have access to:
 - **Monitoring Dashboards** - To document KPIs and review frequency
 - **Incident Management System** - To review incident handling
 - **File Shares/Documentation Repositories** - To gather evidence
-
 
 ## Required Documents
 
@@ -193,7 +182,6 @@ Have the following documents ready:
 - Organizational log retention policy
 - Incident response plan/runbook
 - SOC procedures documentation
-
 
 ## Stakeholder Coordination
 
@@ -268,13 +256,11 @@ Step 7: Integration (30 mins)
    - Familiarize yourself with dropdown values
    - Understand the status color codes
 
-
 3. **Fill in Document Information:**
 
    - Assessment Date
    - Completed By
    - Organization Name
-
 
 ### Step 2: Data Collection (Sheet by Sheet)
 
@@ -286,7 +272,6 @@ Step 7: Integration (30 mins)
 - Validate retention periods against requirements
 - Identify any missing log sources
 
-
 **Sheet 3: Alert Configuration** (2 hours with Security Engineering)
 
 - List all configured alert rules
@@ -294,7 +279,6 @@ Step 7: Integration (30 mins)
 - Verify notification methods and recipients
 - Check response SLAs
 - Review recent alert history
-
 
 **Sheet 4: Monitoring Dashboards** (1-2 hours)
 
@@ -304,7 +288,6 @@ Step 7: Integration (30 mins)
 - Take screenshots for evidence
 - Assess dashboard effectiveness
 
-
 **Sheet 5: Incident Response** (1-2 hours with Incident Response Team)
 
 - Document incident categorization and severity definitions
@@ -313,14 +296,12 @@ Step 7: Integration (30 mins)
 - Check post-incident review process
 - Identify any incident handling gaps
 
-
 **Sheet 6: Blocked Events Analysis** (1 hour with SOC)
 
 - Analyze trends in blocked attempts
 - Document threat categories observed
 - Review geographic distribution of threats
 - Assess effectiveness of threat protection
-
 
 **Sheet 7: False Positive Management** (1 hour)
 
@@ -329,14 +310,12 @@ Step 7: Integration (30 mins)
 - Track chronic FP issues
 - Assess tuning effectiveness
 
-
 **Sheet 8: Reporting Schedule** (30 mins)
 
 - List all regular reports generated
 - Document recipients and frequency
 - Verify report generation methods
 - Review report effectiveness
-
 
 ### Step 3: Gap Analysis
 
@@ -361,7 +340,6 @@ For each assessment item, gather supporting evidence:
 - **Incident Response:** Runbook documents, incident tickets
 - **Reporting:** Report examples, distribution lists
 
-
 Document all evidence in Sheet 10 (Evidence Register) with:
 
 - Evidence ID
@@ -369,7 +347,6 @@ Document all evidence in Sheet 10 (Evidence Register) with:
 - Description
 - Location/Reference
 - Verification Status
-
 
 ### Step 5: Internal Review
 
@@ -381,7 +358,6 @@ Run through the quality checklist (Section 7 below) to verify:
 - Gaps properly documented
 - Metrics calculated correctly
 
-
 ### Step 6: Approval Workflow
 
 **Level 1: Operational Approval** (SOC Manager or Security Operations Lead)
@@ -390,13 +366,11 @@ Run through the quality checklist (Section 7 below) to verify:
 - Verify log collection and alert configuration
 - Approve or request corrections
 
-
 **Level 2: Technical Approval** (Security Engineering Lead)
 
 - Review technical completeness
 - Validate monitoring and response capabilities
 - Approve or request enhancements
-
 
 **Level 3: Executive Approval** (CISO or Information Security Manager)
 
@@ -404,14 +378,12 @@ Run through the quality checklist (Section 7 below) to verify:
 - Accept identified gaps and remediation plans
 - Final approval for audit readiness
 
-
 Document approvals in Sheet 11 with:
 
 - Approver Name
 - Approver Role
 - Approval Date
 - Comments
-
 
 ### Step 7: Integration with Dashboard
 
@@ -438,7 +410,6 @@ Once approved:
 - **Pre-filled:** LOG-001 through LOG-030
 - **Action:** Use the pre-filled ID or add more rows if needed
 
-
 **Q2: Log_Source_Name**
 
 - **Question:** What is the descriptive name of this log source?
@@ -448,7 +419,6 @@ Once approved:
   - "Firewall URL Filtering Logs"
   - "SWG Policy Violations"
 - **Tip:** Use consistent naming - it helps when reviewing logs later
-
 
 **Q3: Log_Type**
 
@@ -464,7 +434,6 @@ Once approved:
 - **Auditor Expects:** At minimum, Blocked_Requests logs must exist
 - **Common Mistake:** Logging everything wastes storage. Focus on security-relevant events.
 
-
 **Q4: Source_System**
 
 - **Question:** What system/device generates these logs?
@@ -474,7 +443,6 @@ Once approved:
   - "Cisco Umbrella DNS Security"
   - "Squid Proxy Server"
 - **Tip:** Be specific - include model numbers for hardware appliances
-
 
 **Q5: Collection_Method**
 
@@ -490,7 +458,6 @@ Once approved:
 - **Auditor Expects:** Secure, reliable collection methods (API/Syslog preferred)
 - **Common Mistake:** "File_Transfer" without automation = manual = unreliable
 
-
 **Q6: Destination**
 
 - **Question:** Where do these logs ultimately end up?
@@ -503,7 +470,6 @@ Once approved:
   - **Multiple** - Logs go to more than one destination
 - **Auditor Expects:** Centralized log management (SIEM preferred)
 - **Red Flag:** "Local_Storage" only = no centralized monitoring
-
 
 **Q7: Format**
 
@@ -519,7 +485,6 @@ Once approved:
 - **Auditor Expects:** Structured format (CEF/JSON preferred for parsing)
 - **Tip:** Proprietary formats make SIEM integration harder
 
-
 **Q8: Retention_Days**
 
 - **Question:** How many days are these logs retained?
@@ -531,7 +496,6 @@ Once approved:
   - Forensic investigations: 1-7 years
 - **Tip:** Check your organization's retention policy and regulatory requirements
 
-
 **Q9: Retention_Compliant**
 
 - **Question:** Does the retention period meet your requirements?
@@ -541,7 +505,6 @@ Once approved:
   - **Partial** - Meets some but not all requirements
 - **Auditor Expects:** "Yes" for all log sources or documented plans to remediate
 - **Red Flag:** Multiple "No" answers = compliance risk
-
 
 **Q10: Volume_Daily**
 
@@ -553,7 +516,6 @@ Once approved:
   - "500 MB compressed"
   - "Approximately 10K events/hour"
 - **Why This Matters:** Helps with capacity planning and identifies high-volume sources
-
 
 **Q11: Status**
 
@@ -567,7 +529,6 @@ Once approved:
 - **Auditor Expects:** Most sources = "Implemented"
 - **Red Flag:** Critical logs (Blocked_Requests) = "Not_Implemented"
 
-
 **Q12: Evidence_Ref**
 
 - **Question:** What evidence supports this log source configuration?
@@ -579,7 +540,6 @@ Once approved:
   - SIEM data source configuration screenshot
 - **Auditor Expects:** Evidence for ALL "Implemented" sources
 
-
 **Q13: Notes**
 
 - **Question:** Any additional context or issues?
@@ -589,7 +549,6 @@ Once approved:
   - "High volume source - compressed before forwarding to SIEM"
   - "Legacy system scheduled for decommission in 6 months"
 
-
 ### Section B: Retention Requirements (10 requirements)
 
 **For each retention requirement, document:**
@@ -598,7 +557,6 @@ Once approved:
 
 - **Pre-filled:** RET-001 through RET-010
 - **Action:** Use pre-filled or add more if you have many requirements
-
 
 **Q15: Requirement_Source**
 
@@ -614,7 +572,6 @@ Once approved:
   - "ISMS-POL-A.8.23, Section 2.4 (Logging and Monitoring)"
   - "Customer contract clause 7.3"
 
-
 **Q16: Log_Type_Affected**
 
 - **Question:** Which log types must meet this requirement?
@@ -625,7 +582,6 @@ Once approved:
   - "All web filtering logs"
   - "Policy_Violations and Bypass_Attempts"
 - **Tip:** Be specific - this helps verify compliance in Section A
-
 
 **Q17: Min_Retention_Days**
 
@@ -638,14 +594,12 @@ Once approved:
   - 2555 days - 7 years (long-term compliance)
 - **Tip:** If requirement says "1 year", use 365 days for consistency
 
-
 **Q18: Current_Retention**
 
 - **Question:** What is the current actual retention period?
 - **Format:** Number of days
 - **Source:** Get this from Section A (Retention_Days column)
 - **Tip:** This should match what you documented in Section A
-
 
 **Q19: Compliant**
 
@@ -657,7 +611,6 @@ Once approved:
 - **Formula:** You can use Excel formula: =IF(E39>=D39,"Yes","No")
 - **Auditor Expects:** All "Yes" or documented remediation plans
 
-
 **Q20: Notes**
 
 - **Question:** Any additional context about compliance status?
@@ -666,7 +619,6 @@ Once approved:
   - "Partial: DNS logs 90 days, proxy logs 365 days"
   - "Compliant but approaching storage capacity limits"
   - "Requirement waived for legacy system (decommission in progress)"
-
 
 ### Section C: Summary Metrics
 
@@ -679,14 +631,12 @@ These are **calculated automatically** based on your data in Sections A and B:
 - **Implemented sources** - Operational readiness
 - **Sources needing attention** - Action items
 
-
 **Auditor Will Review:**
 
 - Are critical log types being collected? (Blocked_Requests = mandatory)
 - Is retention compliance >95%? (Target: 100%)
 - Are most sources "Implemented"? (Target: >90%)
 - Are there documented plans for "Partial" or "Not_Implemented" sources?
-
 
 ---
 
@@ -703,7 +653,6 @@ These are **calculated automatically** based on your data in Sections A and B:
 - **Pre-filled:** ALR-001 through ALR-040
 - **Action:** Use pre-filled ID
 
-
 **Q2: Alert_Name**
 
 - **Question:** What is the descriptive name of this alert?
@@ -714,7 +663,6 @@ These are **calculated automatically** based on your data in Sections A and B:
   - "Policy Bypass Detected"
   - "Critical Threat Category Block"
 - **Tip:** Names should be clear and actionable for SOC analysts
-
 
 **Q3: Alert_Category**
 
@@ -729,7 +677,6 @@ These are **calculated automatically** based on your data in Sections A and B:
 - **Auditor Expects:** Balanced coverage across categories, with emphasis on Threat_Detection
 - **Common Mistake:** Only System_Health alerts = reactive, not proactive security
 
-
 **Q4: Trigger_Condition**
 
 - **Question:** What specific condition triggers this alert?
@@ -743,7 +690,6 @@ These are **calculated automatically** based on your data in Sections A and B:
 - **Auditor Expects:** Clear, measurable trigger conditions
 - **Red Flag:** Vague conditions like "when something bad happens"
 
-
 **Q5: Threshold_Value**
 
 - **Question:** What is the specific threshold (if applicable)?
@@ -756,7 +702,6 @@ These are **calculated automatically** based on your data in Sections A and B:
   - "N/A" (no threshold, binary alert)
 - **Tip:** Document the rationale for threshold values in Notes if it's non-obvious
 
-
 **Q6: Severity**
 
 - **Question:** What is the severity level of this alert?
@@ -768,7 +713,6 @@ These are **calculated automatically** based on your data in Sections A and B:
   - **Informational** - FYI only, no action required
 - **Auditor Expects:** Severity aligns with organizational risk appetite
 - **Common Mistake:** Everything is "Critical" = alert fatigue
-
 
 **Q7: Notification_Method**
 
@@ -786,7 +730,6 @@ These are **calculated automatically** based on your data in Sections A and B:
 - **Auditor Expects:** Critical/High alerts = active notification (not just dashboard)
 - **Best Practice:** Multi-channel for Critical (e.g., "Email + SMS + PagerDuty")
 
-
 **Q8: Recipients**
 
 - **Question:** Who receives this alert?
@@ -800,7 +743,6 @@ These are **calculated automatically** based on your data in Sections A and B:
 - **Why Roles Not Names:** Personnel change, roles don't
 - **Auditor Expects:** Clear ownership, appropriate escalation
 
-
 **Q9: Response_SLA_Minutes**
 
 - **Question:** What is the maximum time to begin response?
@@ -813,7 +755,6 @@ These are **calculated automatically** based on your data in Sections A and B:
 - **Tip:** SLA should align with severity
 - **Auditor Expects:** Defined SLAs for at least Critical/High alerts
 
-
 **Q10: Escalation_Path**
 
 - **Question:** If initial response doesn't resolve the issue, who is escalated to?
@@ -825,7 +766,6 @@ These are **calculated automatically** based on your data in Sections A and B:
   - "None (resolved at first level)"
 - **Auditor Expects:** Clear escalation for Critical/High severity alerts
 - **Red Flag:** No escalation path for Critical alerts
-
 
 **Q11: Auto_Response**
 
@@ -843,7 +783,6 @@ These are **calculated automatically** based on your data in Sections A and B:
 - **Auditor Expects:** High-confidence threats = auto-response when possible
 - **Caution:** Auto-response requires careful tuning to avoid false positive impact
 
-
 **Q12: Status**
 
 - **Question:** What is the current operational status of this alert?
@@ -855,7 +794,6 @@ These are **calculated automatically** based on your data in Sections A and B:
   - **N/A** - Not applicable to this environment
 - **Auditor Expects:** Most alerts = "Implemented", especially Threat_Detection
 - **Red Flag:** Critical threats without corresponding alerts
-
 
 **Q13: Last_Triggered**
 
@@ -871,7 +809,6 @@ These are **calculated automatically** based on your data in Sections A and B:
 - **Auditor Will Ask:** If alert hasn't triggered in 6+ months, how do you know it works?
 - **Best Practice:** Test alerts quarterly
 
-
 **Q14: Evidence_Ref**
 
 - **Question:** What evidence supports this alert configuration?
@@ -883,7 +820,6 @@ These are **calculated automatically** based on your data in Sections A and B:
   - Test alert results
 - **Auditor Expects:** Evidence for all "Implemented" alerts
 
-
 ### Section B: Alert Categories Summary
 
 This section provides a **rollup summary** by alert category. It's calculated automatically but you should review it for completeness:
@@ -894,20 +830,17 @@ This section provides a **rollup summary** by alert category. It's calculated au
 - **Active** - How many are "Implemented"
 - **Critical_Count** - How many are Critical severity
 
-
 **Auditor Will Review:**
 
 - **Threat_Detection count:** Should be highest (this is your primary security function)
 - **Zero in a category:** Why? Is that category truly N/A or is it a gap?
 - **Critical_Count:** Should be proportional to your threat landscape
 
-
 ### Common Findings
 
 - Too many Critical alerts = alert fatigue
 - Too few Threat_Detection alerts = gaps in coverage
 - High count of Planned alerts = implementation backlog
-
 
 ### Section C: Summary Metrics
 
@@ -920,14 +853,12 @@ These are **calculated automatically:**
 - **Alerts with auto-response** - Automation maturity
 - **Alert coverage score** - Percentage implemented
 
-
 **Target Metrics (Auditor Benchmarks):**
 
 - Alert coverage score: >90% (most alerts implemented)
 - At least 10-15 Threat_Detection alerts for comprehensive coverage
 - Critical severity alerts should have auto-response or <15 min SLA
 - Zero "Not_Implemented" for critical threat types
-
 
 ---
 
@@ -943,7 +874,6 @@ These are **calculated automatically:**
 
 - **Pre-filled:** DSH-001 through DSH-020
 
-
 **Q2: Dashboard_Name**
 
 - **Question:** What is the name of this dashboard?
@@ -954,7 +884,6 @@ These are **calculated automatically:**
   - "User Activity Monitoring"
   - "Filtering Service Health"
 - **Tip:** Names should indicate audience and purpose
-
 
 **Q3: Platform**
 
@@ -972,7 +901,6 @@ These are **calculated automatically:**
 - **Auditor Expects:** Professional tools (SIEM/BI platforms preferred)
 - **Red Flag:** Critical metrics in "Excel" without automation
 
-
 **Q4: Primary_Audience**
 
 - **Question:** Who is the intended audience for this dashboard?
@@ -989,7 +917,6 @@ These are **calculated automatically:**
   - Management = high-level, trends, red/yellow/green
   - Compliance = metrics aligned with requirements
 
-
 **Q5: Update_Frequency**
 
 - **Question:** How often is the dashboard data refreshed?
@@ -1004,7 +931,6 @@ These are **calculated automatically:**
   - Executive dashboards = Daily or Weekly
 - **Red Flag:** SOC dashboard updated "Weekly" = not operational
 
-
 **Q6: Review_Frequency**
 
 - **Question:** How often is this dashboard actively reviewed?
@@ -1016,7 +942,6 @@ These are **calculated automatically:**
 - **Critical Question:** Is this dashboard USED or just exists?
 - **Auditor Will Verify:** Who reviews it? When was last review? Meeting notes?
 - **Common Gap:** Beautiful dashboards that nobody looks at = theater
-
 
 **Q7: Key_Metrics**
 
@@ -1030,7 +955,6 @@ These are **calculated automatically:**
 - **Tip:** Be specific - "various metrics" is not acceptable
 - **Auditor Expects:** Metrics align with dashboard purpose and audience
 
-
 **Q8: Alerting_Integrated**
 
 - **Question:** Does this dashboard have alerting capability?
@@ -1042,7 +966,6 @@ These are **calculated automatically:**
   - KPI turns red AND sends notification
 - **Best Practice:** Operational dashboards should integrate with alerting
 - **Auditor Expects:** At least SOC/operational dashboards = Yes
-
 
 **Q9: Status**
 
@@ -1056,7 +979,6 @@ These are **calculated automatically:**
 - **Auditor Expects:** Most dashboards = "Implemented"
 - **Red Flag:** Critical operational dashboards = "Not_Implemented"
 
-
 **Q10: Evidence_Ref**
 
 - **Question:** What evidence demonstrates this dashboard exists and is used?
@@ -1069,7 +991,6 @@ These are **calculated automatically:**
 - **Auditor Expects:** Screenshots for all "Implemented" dashboards
 - **Tip:** Take screenshots showing actual data, not empty dashboards
 
-
 ### Section B: Key Performance Indicators (20 KPIs)
 
 **For each KPI tracked, document:**
@@ -1077,7 +998,6 @@ These are **calculated automatically:**
 **Q11: KPI_ID**
 
 - **Pre-filled:** KPI-001 through KPI-020
-
 
 **Q12: KPI_Name**
 
@@ -1093,7 +1013,6 @@ These are **calculated automatically:**
   - "Policy Violation Rate"
 - **Tip:** Use industry-standard KPI names where possible
 
-
 **Q13: KPI_Category**
 
 - **Question:** What category does this KPI fall into?
@@ -1105,7 +1024,6 @@ These are **calculated automatically:**
   - **Operational** - Operational efficiency (FP rate, tuning effectiveness)
 - **Best Practice:** Balanced KPIs across all categories
 - **Auditor Expects:** Not just Volume - need Security and Compliance KPIs
-
 
 **Q14: Measurement_Unit**
 
@@ -1120,7 +1038,6 @@ These are **calculated automatically:**
   - "Requests/second"
 - **Tip:** Be specific about units for clarity
 
-
 **Q15: Target_Value**
 
 - **Question:** What is the target/acceptable value for this KPI?
@@ -1134,7 +1051,6 @@ These are **calculated automatically:**
 - **Auditor Expects:** Defined targets based on risk assessment or industry benchmarks
 - **Red Flag:** No targets defined = can't measure effectiveness
 
-
 **Q16: Current_Value**
 
 - **Question:** What is the current measured value?
@@ -1147,7 +1063,6 @@ These are **calculated automatically:**
 - **Source:** Get from dashboards, SIEM reports, or filtering console
 - **Auditor Will Verify:** Can you demonstrate how this value was measured?
 
-
 **Q17: KPI_Status**
 
 - **Question:** Is this KPI meeting its target?
@@ -1158,7 +1073,6 @@ These are **calculated automatically:**
   - **New** - Recently implemented, not enough data
 - **Red Flag:** Many "Not_Met" without remediation plans
 - **Best Practice:** Monthly KPI review to track trends
-
 
 **Q18: Trend**
 
@@ -1173,7 +1087,6 @@ These are **calculated automatically:**
 - **Why This Matters:** Trend is often more important than absolute value
 - **Example:** "Blocked Requests = Stable at 5K/day" (good) vs "Increasing 50% month-over-month" (investigate!)
 
-
 **Q19: Tracked_On**
 
 - **Question:** Which dashboard(s) display this KPI?
@@ -1185,7 +1098,6 @@ These are **calculated automatically:**
 - **Tip:** Cross-reference to Section A (Dashboard Inventory)
 - **Auditor Expects:** Every KPI visible somewhere
 
-
 **Q20: Evidence_Ref**
 
 - **Question:** What evidence shows this KPI is being tracked?
@@ -1195,7 +1107,6 @@ These are **calculated automatically:**
   - Report showing KPI values over time
   - KPI definition document
 - **Auditor Expects:** Evidence for all actively tracked KPIs
-
 
 ### Section C: Summary Metrics
 
@@ -1207,13 +1118,11 @@ These are **calculated automatically:**
 - **KPIs trending positive** - Improvement trajectory
 - **Real-time KPIs** - Operational monitoring depth
 
-
 **Target Metrics:**
 
 - >80% of KPIs meeting target
 - <10% of KPIs "Not_Met" without action plans
 - Balanced across categories (not all Volume metrics)
-
 
 ---
 
@@ -1229,7 +1138,6 @@ These are **calculated automatically:**
 
 - **Pre-filled:** INC-CAT-001 through INC-CAT-010
 
-
 **Q2: Category_Name**
 
 - **Question:** What is the incident category name?
@@ -1243,7 +1151,6 @@ These are **calculated automatically:**
   - "Configuration Error"
 - **Tip:** Categories should align with your alert categories (Sheet 3)
 
-
 **Q3: Severity_Criteria**
 
 - **Question:** What defines the severity of incidents in this category?
@@ -1255,7 +1162,6 @@ These are **calculated automatically:**
 - **Auditor Expects:** Clear, objective criteria for severity assignment
 - **Best Practice:** Include examples for each severity level
 
-
 **Q4: Response_SLA_Critical**
 
 - **Question:** What is the SLA for Critical incidents in this category?
@@ -1265,7 +1171,6 @@ These are **calculated automatically:**
   - 30 minutes (serious security events)
   - 60 minutes (urgent but not immediate)
 - **Auditor Expects:** Defined SLAs for all categories
-
 
 **Q5-Q7: Response_SLA for High, Medium, Low**
 
@@ -1277,7 +1182,6 @@ These are **calculated automatically:**
   - Low: 1440 min (24 hours)
 - **Tip:** SLAs should be realistic and measurable
 
-
 **Q8: Escalation_Path**
 
 - **Question:** What is the escalation path for this incident category?
@@ -1287,7 +1191,6 @@ These are **calculated automatically:**
   - "Tier 1 Support → Tier 2 → Vendor Support → Emergency Response Team"
   - "On-Call Engineer → IT Ops Manager → Service Delivery Manager"
 - **Auditor Expects:** Clear escalation, especially for Critical/High incidents
-
 
 **Q9: Runbook_Link**
 
@@ -1301,7 +1204,6 @@ These are **calculated automatically:**
 - **Auditor Expects:** Documented procedures for at least Critical/High categories
 - **Red Flag:** "None" for Critical incidents
 
-
 **Q10: Evidence_Ref**
 
 - **Question:** What evidence demonstrates this incident category is defined and used?
@@ -1311,7 +1213,6 @@ These are **calculated automatically:**
   - Sample incident tickets
   - Runbook document
   - Training materials
-
 
 ### Section B: Incident Handling Procedures (verification)
 
@@ -1344,13 +1245,11 @@ For each procedure element, answer **Yes/No/Partial:**
 - **Pre-filled:** INC-001 through INC-020
 - **Tip:** Use your ticketing system's incident numbers if possible
 
-
 **Q22: Incident_Date**
 
 - **Question:** When did the incident occur?
 - **Format:** Date (DD.MM.YYYY)
 - **Source:** Incident ticket, SIEM alert timestamp
-
 
 **Q23: Incident_Category**
 
@@ -1358,13 +1257,11 @@ For each procedure element, answer **Yes/No/Partial:**
 - **Dropdown:** Should match categories from Section A
 - **Tip:** Consistent categorization helps with trend analysis
 
-
 **Q24: Severity**
 
 - **Question:** What severity was assigned?
 - **Dropdown:** Critical, High, Medium, Low
 - **Auditor Will Verify:** Does assigned severity match criteria from Section A?
-
 
 **Q25: Detection_Method**
 
@@ -1379,7 +1276,6 @@ For each procedure element, answer **Yes/No/Partial:**
 - **Auditor Expects:** Most incidents = "Alert" (proactive detection)
 - **Red Flag:** Many "User_Report" = detection gaps
 
-
 **Q26: Time_to_Detect_Minutes**
 
 - **Question:** How long from event occurrence to detection?
@@ -1389,7 +1285,6 @@ For each procedure element, answer **Yes/No/Partial:**
 - **Auditor Expects:** Real-time detection for Critical threats (<5 minutes)
 - **Best Practice:** Track MTTD (Mean Time to Detect) as KPI
 
-
 **Q27: Time_to_Respond_Minutes**
 
 - **Question:** How long from detection to initial response?
@@ -1397,7 +1292,6 @@ For each procedure element, answer **Yes/No/Partial:**
 - **How to Calculate:** First response action timestamp - Detection timestamp
 - **Auditor Will Compare:** Did you meet the SLA from Section A?
 - **Red Flag:** Many SLA breaches without documented reasons
-
 
 **Q28: Containment_Actions**
 
@@ -1409,7 +1303,6 @@ For each procedure element, answer **Yes/No/Partial:**
   - "Added domain to block list, notified affected users"
   - "No containment needed - threat automatically blocked"
 - **Auditor Expects:** Documented containment for High/Critical incidents
-
 
 **Q29: Resolution_Status**
 
@@ -1423,7 +1316,6 @@ For each procedure element, answer **Yes/No/Partial:**
 - **Auditor Expects:** Old incidents should be Resolved/Closed
 - **Red Flag:** Many incidents stuck in "Open" for weeks
 
-
 **Q30: PIR_Completed**
 
 - **Question:** Was a Post-Incident Review completed?
@@ -1436,7 +1328,6 @@ For each procedure element, answer **Yes/No/Partial:**
   - Recommendations for improvement
 - **Evidence:** PIR report document
 
-
 **Q31: Evidence_Ref**
 
 - **Question:** What evidence supports this incident documentation?
@@ -1447,7 +1338,6 @@ For each procedure element, answer **Yes/No/Partial:**
   - PIR report
   - Email threads
   - Containment action logs
-
 
 ### Section D: Summary Metrics
 
@@ -1460,14 +1350,12 @@ These are **calculated automatically:**
 - **SLA compliance rate** - Percentage of incidents meeting SLA
 - **PIR completion rate** - Percentage of High/Critical with PIR
 
-
 **Target Metrics:**
 
 - SLA compliance >95%
 - MTTD <5 minutes for Critical
 - MTTR within defined SLAs
 - PIR completion 100% for Critical incidents
-
 
 ---
 
@@ -1495,7 +1383,6 @@ These are **calculated automatically:**
   - Unauthorized Cloud Apps (if blocked per policy)
 - **Tip:** Categories should align with your filtering policies (A.8.23.3)
 
-
 **Q2: Total_Blocks_Last_30_Days**
 
 - **Question:** How many requests in this category were blocked in the last 30 days?
@@ -1504,13 +1391,11 @@ These are **calculated automatically:**
 - **Example:** "47,392" (forty-seven thousand malware blocks)
 - **Auditor Will Ask:** How did you obtain this number? (must be verifiable)
 
-
 **Q3: Total_Blocks_Last_90_Days**
 
 - **Question:** How many requests in this category were blocked in the last 90 days?
 - **Format:** Number
 - **Why This Matters:** Trend analysis - is threat increasing or decreasing?
-
 
 **Q4: Trend_Direction**
 
@@ -1523,7 +1408,6 @@ These are **calculated automatically:**
   - **New** - Category recently added
 - **How to Determine:** Compare 30-day vs 90-day averages
 - **Auditor Expects:** Explanation for significant increases
-
 
 **Q5: Top_Blocked_Domains**
 
@@ -1538,14 +1422,12 @@ These are **calculated automatically:**
   - Diverse domains = legitimate threat blocking
   - One domain = possible misclassification
 
-
 **Q6: False_Positive_Suspected**
 
 - **Question:** Are any of these blocks suspected false positives?
 - **Dropdown:** Yes, No, Possible
 - **If Yes:** You should have FP tracking in Sheet 7
 - **Auditor Will Ask:** What is your FP investigation process?
-
 
 **Q7: Actionable_Intelligence**
 
@@ -1558,7 +1440,6 @@ These are **calculated automatically:**
   - "Identified need to update browser security settings for cryptomining protection"
 - **Auditor Expects:** Evidence that you're LEARNING from blocked events, not just counting them
 
-
 **Q8: Evidence_Ref**
 
 - **Question:** What evidence supports this analysis?
@@ -1568,7 +1449,6 @@ These are **calculated automatically:**
   - Filtering console screenshot
   - Threat intelligence report
   - SQL query results
-
 
 ### Section B: Geographic Analysis (10 countries)
 
@@ -1581,7 +1461,6 @@ These are **calculated automatically:**
 - **Examples:** "United States", "China", "Russia", "Unknown/VPN"
 - **Source:** GeoIP data from logs
 
-
 **Q10: Total_Blocks**
 
 - **Question:** How many blocks from this country in last 30 days?
@@ -1590,7 +1469,6 @@ These are **calculated automatically:**
   - High volume from unexpected countries = investigate
   - All blocks from one country = possible attack campaign
   - Distributed globally = normal threat landscape
-
 
 **Q11: Primary_Threat_Type**
 
@@ -1602,7 +1480,6 @@ These are **calculated automatically:**
   - "Mixed threats"
 - **Tip:** This helps identify attack patterns
 
-
 **Q12: Action_Taken**
 
 - **Question:** What action (if any) was taken based on this analysis?
@@ -1612,7 +1489,6 @@ These are **calculated automatically:**
   - "No action - within expected threat profile"
   - "Investigated - found compromised VPN exit node"
 - **Auditor Expects:** Evidence that analysis leads to action
-
 
 ### Section C: Summary Metrics
 
@@ -1625,14 +1501,12 @@ These are **calculated automatically:**
 - **Top 3 threat categories** - Primary threats
 - **Geographic diversity score** - Threat distribution
 
-
 ### What Good Looks Like
 
 - Blocked volume consistent with threat landscape
 - No single category dominating (unless expected)
 - Few suspected FPs (<5% of categories)
 - Analysis leading to actionable improvements
-
 
 ---
 
@@ -1648,13 +1522,11 @@ These are **calculated automatically:**
 
 - **Pre-filled:** FP-001 through FP-030
 
-
 **Q2: Date_Reported**
 
 - **Question:** When was this false positive reported?
 - **Format:** Date (DD.MM.YYYY)
 - **Source:** User report, SOC investigation
-
 
 **Q3: Blocked_URL**
 
@@ -1666,7 +1538,6 @@ These are **calculated automatically:**
   - "cdn.example-cloud-service.net"
 - **Privacy Note:** Mask PII if URL contains sensitive parameters
 
-
 **Q4: Category_Assigned**
 
 - **Question:** What category was this URL incorrectly classified as?
@@ -1675,7 +1546,6 @@ These are **calculated automatically:**
   - "Phishing" (but it's a security training site)
   - "Adult Content" (but it's a medical information site)
 - **Auditor Expects:** Clear documentation of misclassification
-
 
 **Q5: Legitimate_Purpose**
 
@@ -1689,7 +1559,6 @@ These are **calculated automatically:**
 - **Auditor Expects:** Documented justification for ALL exceptions
 - **Red Flag:** "User wanted access" without business rationale
 
-
 **Q6: Reported_By**
 
 - **Question:** Who reported this FP?
@@ -1701,7 +1570,6 @@ These are **calculated automatically:**
   - "Security Engineering (proactive review)"
 - **Why Not Names:** Privacy, personnel changes
 - **Pattern Analysis:** If one department reports many FPs, investigate policy alignment
-
 
 **Q7: Investigation_Findings**
 
@@ -1715,7 +1583,6 @@ These are **calculated automatically:**
 - **Auditor Expects:** Evidence of thorough investigation
 - **Best Practice:** Document investigation process and tools used
 
-
 **Q8: FP_Result**
 
 - **Question:** What was the final determination?
@@ -1726,7 +1593,6 @@ These are **calculated automatically:**
   - **Pending** - Investigation ongoing
 - **Auditor Expects:** Clear determination before resolution
 - **Red Flag:** Many "Inconclusive" = poor investigation process
-
 
 **Q9: Resolution_Action**
 
@@ -1743,14 +1609,12 @@ These are **calculated automatically:**
   - "Policy_Tuning: Adjusted threshold for 'suspicious' category"
   - "Category_Update: Submitted recategorization request to vendor (ticket #12345)"
 
-
 **Q10: Resolution_Date**
 
 - **Question:** When was this FP resolved?
 - **Format:** Date (DD.MM.YYYY)
 - **How to Calculate Time to Resolution:** Resolution_Date - Date_Reported
 - **Auditor Expects:** Timely resolution (target: <48 hours for business-critical)
-
 
 **Q11: FP_Recurrence**
 
@@ -1761,7 +1625,6 @@ These are **calculated automatically:**
   - **Chronic** - Persistent issue (3+ occurrences)
 - **Red Flag:** Many "Chronic" FPs = policy tuning problem
 - **Best Practice:** Root cause analysis for recurring FPs
-
 
 **Q12: Root_Cause**
 
@@ -1777,7 +1640,6 @@ These are **calculated automatically:**
 - **Auditor Expects:** Root cause for Recurring/Chronic FPs
 - **Why This Matters:** Enables systemic improvements
 
-
 **Q13: Prevention_Measure**
 
 - **Question:** What measure was implemented to prevent recurrence?
@@ -1791,7 +1653,6 @@ These are **calculated automatically:**
 - **Auditor Expects:** Prevention measures for Recurring/Chronic FPs
 - **Best Practice:** Document prevention in FP management procedures
 
-
 **Q14: FP_Status**
 
 - **Question:** What is the current status of this FP case?
@@ -1802,7 +1663,6 @@ These are **calculated automatically:**
   - **Pending** - Waiting for external action (vendor recategorization)
 - **Auditor Expects:** Old FPs should be Resolved
 - **Red Flag:** Many FPs stuck in "Pending" = poor vendor relationship
-
 
 **Q15: Evidence_Ref**
 
@@ -1816,7 +1676,6 @@ These are **calculated automatically:**
   - Vendor support ticket
   - Post-resolution verification test
 
-
 ### Section B: FP Analysis Summary
 
 These are **calculated automatically:**
@@ -1828,7 +1687,6 @@ These are **calculated automatically:**
 - **Chronic FPs** - Systemic issues
 - **FP rate** - FPs as percentage of total blocks
 
-
 **Target Metrics:**
 
 - FP rate <1% (ideally <0.5%)
@@ -1836,14 +1694,12 @@ These are **calculated automatically:**
 - Recurring FPs <10% of total FPs
 - Chronic FPs = 0 (all resolved with prevention)
 
-
 **Auditor Will Ask:**
 
 - Do you track FPs systematically?
 - Is there a documented FP investigation process?
 - Are recurring FPs being addressed at root cause level?
 - What is your FP trend over the last 6 months?
-
 
 ---
 
@@ -1859,7 +1715,6 @@ These are **calculated automatically:**
 
 - **Pre-filled:** RPT-001 through RPT-020
 
-
 **Q2: Report_Name**
 
 - **Question:** What is the name of this report?
@@ -1870,7 +1725,6 @@ These are **calculated automatically:**
   - "Quarterly Trend Analysis"
   - "Incident Summary Report (Ad-hoc)"
 - **Tip:** Names should indicate content, audience, and frequency
-
 
 **Q3: Report_Type**
 
@@ -1885,7 +1739,6 @@ These are **calculated automatically:**
   - **Ad-hoc** - On-demand reporting
 - **Best Practice:** Mix of Operational, Compliance, and Executive reports
 
-
 **Q4: Frequency**
 
 - **Question:** How often is this report generated?
@@ -1898,7 +1751,6 @@ These are **calculated automatically:**
   - **Ad-hoc** - On-demand
 - **Auditor Expects:** Frequency appropriate to report type and audience
 - **Best Practice:** Operational = Daily/Weekly, Executive = Monthly/Quarterly
-
 
 **Q5: Primary_Audience**
 
@@ -1913,7 +1765,6 @@ These are **calculated automatically:**
 - **Why Roles Not Names:** Personnel change, roles don't
 - **Auditor Expects:** Audience appropriate to report content
 
-
 **Q6: Key_Metrics_Included**
 
 - **Question:** What are the main metrics in this report?
@@ -1923,7 +1774,6 @@ These are **calculated automatically:**
   - "Compliance score, audit readiness, gaps, evidence status"
   - "Threat trends, geographic analysis, policy violations, service uptime"
 - **Tip:** Be specific - helps evaluate report effectiveness
-
 
 **Q7: Generation_Method**
 
@@ -1935,7 +1785,6 @@ These are **calculated automatically:**
 - **Auditor Expects:** Operational reports = Automated or Semi-Automated
 - **Red Flag:** Daily/Weekly reports = Manual (not sustainable)
 - **Best Practice:** Automate wherever possible to reduce errors and save time
-
 
 **Q8: Delivery_Method**
 
@@ -1950,14 +1799,12 @@ These are **calculated automatically:**
 - **Best Practice:** Multiple delivery methods for different audiences
 - **Example:** Operational reports = Dashboard, Executive reports = Email + Meeting
 
-
 **Q9: Last_Generated**
 
 - **Question:** When was this report last generated?
 - **Format:** Date (DD.MM.YYYY)
 - **Auditor Will Verify:** Is "Last_Generated" consistent with "Frequency"?
 - **Red Flag:** Weekly report last generated 2 months ago = not being used
-
 
 **Q10: Report_Effectiveness**
 
@@ -1969,7 +1816,6 @@ These are **calculated automatically:**
   - **Unknown** - No feedback from recipients
 - **Auditor Expects:** Evidence that reports are USED, not just generated
 - **Best Practice:** Periodic review with recipients to assess effectiveness
-
 
 **Q11: Status**
 
@@ -1983,7 +1829,6 @@ These are **calculated automatically:**
 - **Auditor Expects:** Most reports = "Implemented"
 - **Tip:** If "Discontinued", document why in Notes
 
-
 **Q12: Evidence_Ref**
 
 - **Question:** What evidence demonstrates this report exists and is used?
@@ -1994,7 +1839,6 @@ These are **calculated automatically:**
   - Meeting minutes where report was presented
   - Recipient feedback
 - **Auditor Expects:** Sample reports for all "Implemented" reports
-
 
 ### Section B: Summary Metrics
 
@@ -2007,14 +1851,12 @@ These are **calculated automatically:**
 - **Executive reports** - Leadership visibility
 - **Report effectiveness score** - Percentage "High" effectiveness
 
-
 **Target Metrics:**
 
 - >80% of reports Implemented
 - >50% of Operational reports Automated
 - >70% report effectiveness "High" or "Medium"
 - At least one Executive report monthly or quarterly
-
 
 ---
 
@@ -2030,7 +1872,6 @@ These are **calculated automatically:**
 
 - **Pre-filled:** GAP-001 through GAP-030
 
-
 **Q2: Gap_Category**
 
 - **Question:** What category does this gap fall into?
@@ -2044,7 +1885,6 @@ These are **calculated automatically:**
   - **Retention** - Log retention compliance
   - **Process** - Process/procedure gaps
 - **Tip:** Category helps prioritize and assign ownership
-
 
 **Q3: Gap_Description**
 
@@ -2061,7 +1901,6 @@ These are **calculated automatically:**
   - "Need more logs" (not specific)
   - "Alerts not working" (which alerts? how not working?)
 
-
 **Q4: Impact**
 
 - **Question:** What is the business/security impact of this gap?
@@ -2074,7 +1913,6 @@ These are **calculated automatically:**
   - "Regulatory compliance risk - non-compliant with PCI DSS"
 - **Auditor Expects:** Clear articulation of risk
 - **Tip:** Impact should justify the priority level
-
 
 **Q5: Priority**
 
@@ -2091,7 +1929,6 @@ These are **calculated automatically:**
   - Nice-to-have enhancement = Low
 - **Auditor Expects:** Priority aligns with impact and risk
 
-
 **Q6: Remediation_Plan**
 
 - **Question:** What is the plan to remediate this gap?
@@ -2107,7 +1944,6 @@ These are **calculated automatically:**
   - "TBD" (not acceptable for High/Critical gaps)
 - **Auditor Expects:** Specific, actionable plan with steps
 
-
 **Q7: Owner**
 
 - **Question:** Who is responsible for remediating this gap?
@@ -2120,7 +1956,6 @@ These are **calculated automatically:**
 - **Auditor Expects:** Clear ownership
 - **Red Flag:** "TBD" or "Unknown" for High/Critical gaps
 
-
 **Q8: Target_Date**
 
 - **Question:** When is remediation expected to be complete?
@@ -2132,7 +1967,6 @@ These are **calculated automatically:**
   - Low: Within 12 months
 - **Auditor Will Verify:** Is target date realistic given resources?
 - **Red Flag:** Critical gap with target date 6 months out
-
 
 **Q9: Gap_Status**
 
@@ -2148,14 +1982,12 @@ These are **calculated automatically:**
   - Old gaps = Resolved or documented reason for delay
 - **Red Flag:** Many "Open" gaps with missed target dates
 
-
 **Q10: Resolution_Date**
 
 - **Question:** When was this gap resolved? (if applicable)
 - **Format:** Date (DD.MM.YYYY) or blank if not yet resolved
 - **Auditor Will Calculate:** Time to resolution = Resolution_Date - Date_Identified
 - **Best Practice:** Track closure time for continuous improvement
-
 
 **Q11: Evidence_Ref**
 
@@ -2170,7 +2002,6 @@ These are **calculated automatically:**
 - **Auditor Expects:** Evidence for ALL "Resolved" gaps
 - **Tip:** Gather evidence during remediation, not later
 
-
 **Q12: Notes**
 
 - **Question:** Any additional context?
@@ -2179,7 +2010,6 @@ These are **calculated automatically:**
   - "Risk accepted by CISO due to low probability and residual controls"
   - "Deferred until after infrastructure migration project"
   - "Root cause: Vendor changed default log format in v3.2 upgrade"
-
 
 ### Gap Analysis Summary
 
@@ -2193,13 +2023,11 @@ These are **calculated automatically:**
 - **Gap closure rate** - Percentage resolved
 - **Average time to resolve** - Efficiency metric
 
-
 **Target Metrics:**
 
 - Critical gaps = 0 (or in-progress with target dates)
 - Gap closure rate >80% (most gaps resolved)
 - Average time to resolve: <90 days for High, <30 days for Critical
-
 
 ---
 
@@ -2214,7 +2042,6 @@ These are **calculated automatically:**
 **Q1: Evidence_ID**
 
 - **Pre-filled:** EVID-001 through EVID-100
-
 
 **Q2: Evidence_Type**
 
@@ -2232,7 +2059,6 @@ These are **calculated automatically:**
   - **Meeting_Minutes** - Meeting notes, decisions
   - **Other** - Specify in Description
 
-
 **Q3: Description**
 
 - **Question:** What does this evidence show?
@@ -2245,7 +2071,6 @@ These are **calculated automatically:**
   - "Post-Incident Review report for INC-2025-00234 (malware incident)"
   - "Email approval from CISO for whitelist exception request EXC-045"
 
-
 **Q4: Referenced_By**
 
 - **Question:** Which assessment items reference this evidence?
@@ -2257,7 +2082,6 @@ These are **calculated automatically:**
   - "Sheet 8, RPT-002 (Weekly report)"
   - "Multiple: LOG-005, ALR-020, DSH-003"
 - **Auditor Will Verify:** Cross-reference between sheets and evidence
-
 
 **Q5: File_Location**
 
@@ -2272,14 +2096,12 @@ These are **calculated automatically:**
 - **Best Practice:** Centralized evidence repository (SharePoint, Confluence)
 - **Auditor Expects:** Evidence readily accessible and retrievable
 
-
 **Q6: Date_Collected**
 
 - **Question:** When was this evidence collected/created?
 - **Format:** Date (DD.MM.YYYY)
 - **Tip:** Evidence should be recent and reflect current state
 - **Auditor Will Check:** Is evidence current or outdated?
-
 
 **Q7: Collected_By**
 
@@ -2292,7 +2114,6 @@ These are **calculated automatically:**
   - "Assessment Coordinator"
 - **Why This Matters:** Traceability and accountability
 
-
 **Q8: Verification_Status**
 
 - **Question:** Has this evidence been verified as accurate and current?
@@ -2304,7 +2125,6 @@ These are **calculated automatically:**
 - **Auditor Expects:** All evidence = "Verified" before final approval
 - **Best Practice:** Evidence review during internal QA phase
 
-
 **Q9: Notes**
 
 - **Question:** Any additional context about this evidence?
@@ -2313,7 +2133,6 @@ These are **calculated automatically:**
   - "Configuration export sanitized to remove sensitive IPs"
   - "Report covers period 01.01.2026 - 07.01.2026"
   - "Evidence shows 'before' state - 'after' screenshot in EVID-046"
-
 
 ### Evidence Summary Metrics
 
@@ -2325,14 +2144,12 @@ These are **calculated automatically:**
 - **Pending verification** - Outstanding items
 - **Expired evidence** - Items needing refresh
 
-
 **Auditor Benchmarks:**
 
 - Evidence completeness >95%
 - All evidence = "Verified" before final approval
 - Evidence organized and accessible
 - Evidence current (within last 90 days for most items)
-
 
 ---
 
@@ -2350,24 +2167,20 @@ These are **calculated automatically:**
 - **Role:** SOC Manager or Security Operations Lead
 - **Responsibility:** Verify operational accuracy and completeness
 
-
 **Q2: Approver Role**
 
 - **Format:** Job title
 - **Example:** "SOC Manager", "Security Operations Lead"
 
-
 **Q3: Approval Date**
 
 - **Format:** Date (DD.MM.YYYY)
-
 
 **Q4: Approval Status**
 
 - **Dropdown:** Approved, Conditionally_Approved, Rejected, Pending
 - **Conditionally_Approved:** Minor corrections needed
 - **Rejected:** Significant issues, return for rework
-
 
 **Q5: Comments**
 
@@ -2376,7 +2189,6 @@ These are **calculated automatically:**
   - "Approved - operational data accurate and complete"
   - "Conditionally approved - update FP resolution timeline for FP-015 and FP-022, then resubmit"
   - "Rejected - missing log sources for remote workers, incomplete incident data"
-
 
 ---
 
@@ -2388,22 +2200,18 @@ These are **calculated automatically:**
 - **Role:** Security Engineering Lead or Infrastructure Manager
 - **Responsibility:** Verify technical completeness and architecture alignment
 
-
 **Q7: Approver Role**
 
 - **Format:** Job title
 - **Example:** "Security Engineering Lead", "Infrastructure Security Manager"
 
-
 **Q8: Approval Date**
 
 - **Format:** Date (DD.MM.YYYY)
 
-
 **Q9: Approval Status**
 
 - **Dropdown:** Approved, Conditionally_Approved, Rejected, Pending
-
 
 **Q10: Comments**
 
@@ -2412,7 +2220,6 @@ These are **calculated automatically:**
   - "Approved - monitoring and response capabilities well-documented"
   - "Conditionally approved - add evidence for ALR-025 and ALR-030 alert rules"
   - "Approved with recommendation to prioritize GAP-003 and GAP-007 for Q2"
-
 
 ---
 
@@ -2424,22 +2231,18 @@ These are **calculated automatically:**
 - **Role:** CISO or Information Security Manager
 - **Responsibility:** Final strategic review, risk acceptance for gaps
 
-
 **Q12: Approver Role**
 
 - **Format:** Job title
 - **Example:** "CISO", "Information Security Manager"
 
-
 **Q13: Approval Date**
 
 - **Format:** Date (DD.MM.YYYY)
 
-
 **Q14: Approval Status**
 
 - **Dropdown:** Approved, Conditionally_Approved, Rejected, Pending
-
 
 **Q15: Comments**
 
@@ -2448,7 +2251,6 @@ These are **calculated automatically:**
   - "Approved - assessment ready for audit. Well done team."
   - "Approved with noted acceptance of GAP-012 (DNS log retention 30 days) until budget approval in Q2."
   - "Conditionally approved - remediation plans for Critical gaps must have specific budget allocations and resources assigned before final approval."
-
 
 ---
 
@@ -2459,13 +2261,11 @@ These are **calculated automatically:**
 - **Question:** When was data collection completed?
 - **Format:** Date (DD.MM.YYYY)
 
-
 **Q17: Next Review Date**
 
 - **Question:** When is next quarterly review scheduled?
 - **Format:** Date (DD.MM.YYYY)
 - **Calculation:** Assessment Completion Date + 90 days
-
 
 **Q18: Overall Assessment Status**
 
@@ -2474,7 +2274,6 @@ These are **calculated automatically:**
   - Draft → Under_Review (after submission for approval)
   - Under_Review → Approved (after all three levels approve)
   - Approved → Audit_Ready (after evidence verified and gaps documented)
-
 
 **Q19: Audit Readiness Confirmation**
 
@@ -2485,7 +2284,6 @@ These are **calculated automatically:**
   - All High/Critical gaps have documented remediation plans
   - Evidence register is complete and accessible
 
-
 **Q20: Final Notes**
 
 - **Format:** Free text
@@ -2494,7 +2292,6 @@ These are **calculated automatically:**
   - "Assessment aligns with Stage-2 ISO 27001 certification preparation"
   - "Identified 12 gaps, 3 Critical, 5 High - all with remediation plans"
   - "Monitoring and response capabilities assessed as mature and audit-ready"
-
 
 ---
 
@@ -2511,14 +2308,12 @@ These are **calculated automatically:**
 - **Log retention policies** (documented)
 - **Sample log files** (sanitized) showing format and content
 
-
 ### Sheet 3: Alert Configuration
 
 - **Alert rule exports** from SIEM (JSON, XML, or screenshots)
 - **Sample alert notifications** (email, Teams, Slack)
 - **Alert testing results** (triggered test alerts)
 - **Escalation matrix** document
-
 
 ### Sheet 4: Monitoring Dashboard
 
@@ -2527,14 +2322,12 @@ These are **calculated automatically:**
 - **KPI definition documents**
 - **Meeting notes** from dashboard review sessions
 
-
 ### Sheet 5: Incident Response
 
 - **Incident tickets** (sample from each category)
 - **Runbook/procedure documents**
 - **Post-Incident Review reports**
 - **SLA compliance reports**
-
 
 ### Sheet 6: Blocked Events Analysis
 
@@ -2543,7 +2336,6 @@ These are **calculated automatically:**
 - **Threat intelligence reports** (if used)
 - **SQL query results** from SIEM
 
-
 ### Sheet 7: False Positive Management
 
 - **FP investigation notes**
@@ -2551,14 +2343,12 @@ These are **calculated automatically:**
 - **Vendor support tickets** (for recategorization requests)
 - **Before/after testing** (URL now accessible after FP resolution)
 
-
 ### Sheet 8: Reporting Schedule
 
 - **Sample reports** (one from each type)
 - **Distribution list** confirmation
 - **Report generation scripts** or BI report definitions
 - **Recipient feedback** (email or meeting notes)
-
 
 ## Evidence Quality Standards
 
@@ -2676,7 +2466,6 @@ Before submitting for Level 1 approval, verify:
 - [ ] Evidence linked for all "Implemented" sources
 - [ ] Summary metrics calculated correctly
 
-
 ### Sheet 3: Alert Configuration
 
 - [ ] At least 10-15 Threat_Detection alerts documented
@@ -2684,7 +2473,6 @@ Before submitting for Level 1 approval, verify:
 - [ ] All alerts have clear trigger conditions (not vague)
 - [ ] Alert categories balanced (not all System_Health)
 - [ ] Evidence of alert testing (Last_Triggered dates populated)
-
 
 ### Sheet 4: Monitoring Dashboard
 
@@ -2694,7 +2482,6 @@ Before submitting for Level 1 approval, verify:
 - [ ] KPIs have defined targets and current values
 - [ ] Dashboard screenshots collected as evidence
 
-
 ### Sheet 5: Incident Response
 
 - [ ] Incident categories align with alert categories
@@ -2703,14 +2490,12 @@ Before submitting for Level 1 approval, verify:
 - [ ] Recent incidents tracked with ACTUAL response times
 - [ ] Post-Incident Reviews completed for Critical/High incidents
 
-
 ### Sheet 6: Blocked Events Analysis
 
 - [ ] Blocked events by category populated with real data
 - [ ] Trends identified (not just raw numbers)
 - [ ] False positives flagged for investigation (Sheet 7)
 - [ ] Actionable intelligence documented (what you learned)
-
 
 ### Sheet 7: False Positive Management
 
@@ -2720,14 +2505,12 @@ Before submitting for Level 1 approval, verify:
 - [ ] Recurring/Chronic FPs have root cause analysis
 - [ ] Prevention measures implemented for recurring FPs
 
-
 ### Sheet 8: Reporting Schedule
 
 - [ ] Mix of Operational, Compliance, and Executive reports
 - [ ] Last_Generated dates consistent with Frequency
 - [ ] Sample reports collected as evidence
 - [ ] Report effectiveness assessed (not all "Unknown")
-
 
 ### Sheet 9: Gap Analysis
 
@@ -2737,7 +2520,6 @@ Before submitting for Level 1 approval, verify:
 - [ ] Owners assigned for all High/Critical gaps
 - [ ] Target dates realistic based on priority
 
-
 ### Sheet 10: Evidence Register
 
 - [ ] Evidence collected for ALL "Implemented" items across all sheets
@@ -2746,14 +2528,12 @@ Before submitting for Level 1 approval, verify:
 - [ ] All evidence = "Verified" status (or verification in progress)
 - [ ] Evidence current (within 90 days)
 
-
 ### Sheet 11: Approval Sign-Off
 
 - [ ] Assessment completion date set
 - [ ] Next review date calculated (Assessment Date + 90 days)
 - [ ] Overall Assessment Status = "Under_Review"
 - [ ] All metadata fields completed
-
 
 ## Auditor-Readiness Checklist
 
@@ -2767,7 +2547,6 @@ For final audit readiness (after all approvals), verify:
 - [ ] **Evidence Quality:** All screenshots clear, complete, contextual
 - [ ] **Gap Remediation:** All Critical gaps have target dates within 30 days
 - [ ] **Approval Chain:** Three-level approval completed with substantive comments
-
 
 ---
 
@@ -2784,14 +2563,12 @@ For final audit readiness (after all approvals), verify:
    - Check for completeness
    - Time: 1-2 hours
 
-
 2. **Self-Review Using Checklist**
 
    - Run through Section 7 quality checklist
    - Fix any gaps or missing data
    - Verify evidence links work
    - Time: 30-60 minutes
-
 
 ## Approval Process
 
@@ -2830,32 +2607,27 @@ Once all three levels approve:
    - Set Overall Assessment Status = "Approved"
    - Set Audit Readiness Confirmation = "Yes" (if criteria met)
 
-
 2. **Finalize Evidence**
 
    - Ensure all evidence is verified
    - Upload to final evidence repository
    - Test evidence accessibility
 
-
 3. **Prepare for Dashboard Integration**
 
    - Run file normalization script if needed
    - Verify assessment data feeds correctly into Dashboard (A.8.23.5)
-
 
 4. **Schedule Next Review**
 
    - Set calendar reminder for Next Review Date
    - Assign responsible party for quarterly update
 
-
 5. **Celebrate! 🎉**
 
    - You've documented a mature monitoring and response program
    - Assessment is audit-ready
    - You've contributed to genuine security improvement
-
 
 ---
 
@@ -2881,14 +2653,12 @@ Monitoring without response is theater. Alerts without resolution tracking is no
 - Dashboards reviewed regularly with documented actions
 - Incidents handled systematically with PIRs
 
-
 **For Security Engineering:**
 
 - Monitoring architecture documented and justified
 - Integration between systems verified
 - KPIs defined and tracked
 - Technical gaps identified with remediation plans
-
 
 **For CISO:**
 
@@ -2897,14 +2667,12 @@ Monitoring without response is theater. Alerts without resolution tracking is no
 - Audit-ready documentation
 - Confidence in operational capability
 
-
 **For Auditor:**
 
 - Clear traceability: Policy → Implementation → Monitoring → Response
 - Objective evidence for all claims
 - Gaps documented with credible remediation
 - Mature operational practices
-
 
 ---
 
@@ -2918,7 +2686,6 @@ Monitoring without response is theater. Alerts without resolution tracking is no
 
 ---
 
-
 ---
 
 # PART II: TECHNICAL SPECIFICATION
@@ -2930,7 +2697,6 @@ Monitoring without response is theater. Alerts without resolution tracking is no
 - **Title:** "ISMS-IMP-A.8.23.4 – Monitoring & Response Assessment"
 - **Subtitle:** "ISO/IEC 27001:2022 - Control A.8.23: Web Filtering"
 - **Styling:** Dark blue header (#003366), white text, 40px height
-
 
 ## Document Information Block
 ```
@@ -2989,7 +2755,6 @@ Review Cycle:          Quarterly
 - **Title:** "ISMS-IMP-A.8.23.4 – Monitoring & Response Assessment"
 - **Subtitle:** "ISO/IEC 27001:2022 - Control A.8.23: Web Filtering"
 - **Styling:** Dark blue header (#003366), white text, 40px height
-
 
 ## Document Information Block
 ```plaintext
@@ -3072,7 +2837,6 @@ Document what web filtering logs are collected, storage locations, and retention
 - Sources meeting retention requirements: =COUNTIF(I6:I35,"Yes")
 - Retention compliance rate: =COUNTIF(I6:I35,"Yes")/COUNTA(I6:I35)
 
-
 ---
 
 # Sheet 3: Alert_Configuration
@@ -3115,7 +2879,6 @@ Document alerting rules, thresholds, escalation, and notification recipients.
 - Critical/High severity alerts: =COUNTIFS(F6:F45,"Critical")+COUNTIFS(F6:F45,"High")
 - Alerts with auto-response: =COUNTIF(K6:K45,"Yes")
 - Alert coverage score: percentage calculation
-
 
 ---
 
@@ -3160,7 +2923,6 @@ Document monitoring dashboards, metrics tracked, and review frequency.
 - KPIs meeting target: =COUNTIF(G30:G50,"Yes")
 - KPIs at risk: =COUNTIF(G30:G50,"At_Risk")
 - Real-time monitoring KPIs: formula based on Update_Frequency
-
 
 ---
 
@@ -3209,7 +2971,6 @@ Document incident handling procedures, SLAs, and recent incidents.
 - Average MTTR: =AVERAGE(G30:G55)
 - SLA compliance rate: =COUNTIF(H30:H55,"Yes")/COUNTA(H30:H55)
 - PIR completion rate: formula for High/Critical with PIR
-
 
 ---
 
@@ -3346,7 +3107,6 @@ Identify and prioritize monitoring and response gaps.
 - Open gaps: =COUNTIF(K6:K35,"Open")
 - Gaps past due: formula based on Target_Date
 
-
 ---
 
 # Sheet 10: Evidence_Register
@@ -3389,7 +3149,6 @@ Identify and prioritize monitoring and response gaps.
 - Total Alert Rules: =Alert_Configuration summary
 - Open Gaps: =Gap_Analysis summary
 - Evidence Items: =COUNTA(Evidence_Register!A:A)-1
-
 
 ## Certification Statement
 > "This assessment accurately reflects the current state of web filtering

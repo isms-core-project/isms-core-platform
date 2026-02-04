@@ -41,7 +41,6 @@
 - NIST SP 800-160 Vol. 1 Rev. 1 (Engineering Trustworthy Secure Systems)
 - OWASP Security Architecture Cheat Sheet
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -62,14 +61,12 @@ This assessment evaluates [Organisation]'s **secure architecture pattern catalog
 - Pattern effectiveness and security outcomes
 - Integration with architecture review process
 
-
 **What This Assessment Does NOT Cover:**
 
 - Architecture review process (see ISMS-IMP-A.8.27.1)
 - Threat modelling methodology (see ISMS-IMP-A.8.27.2)
 - Zero Trust implementation (see ISMS-IMP-A.8.27.4)
 - Secure coding standards (see ISMS-IMP-A.8.28)
-
 
 **Assessment Output:**
 
@@ -78,7 +75,6 @@ This assessment evaluates [Organisation]'s **secure architecture pattern catalog
 - Adoption rate metrics
 - Pattern quality ratings
 - Gap analysis and improvement plan
-
 
 ## Why This Matters
 
@@ -96,7 +92,6 @@ This assessment evaluates [Organisation]'s **secure architecture pattern catalog
 - **Review Burden:** Architecture reviews require more effort without patterns
 - **Knowledge Loss:** Security expertise not captured for reuse
 
-
 **This Assessment Addresses:**
 
 - Do we have a catalogue of approved secure architecture patterns?
@@ -104,7 +99,6 @@ This assessment evaluates [Organisation]'s **secure architecture pattern catalog
 - Are patterns actively used in new system designs?
 - Is there a governance process for pattern lifecycle?
 - Do we measure pattern effectiveness?
-
 
 ## Who Should Complete This Assessment
 
@@ -118,7 +112,6 @@ This assessment evaluates [Organisation]'s **secure architecture pattern catalog
 - Architecture review integration
 - Security architecture principles
 
-
 **Support Roles:**
 
 - **CISO:** Governance oversight, exception authority
@@ -126,7 +119,6 @@ This assessment evaluates [Organisation]'s **secure architecture pattern catalog
 - **Development Teams:** Pattern adoption feedback
 - **Security Engineers:** Pattern implementation experience
 - **Cloud Architect:** Cloud-specific patterns
-
 
 ## Time Estimate
 
@@ -157,7 +149,6 @@ This assessment evaluates [Organisation]'s **secure architecture pattern catalog
   - Remediation planning
   - Stakeholder review
 
-
 ## Connection to Policy
 
 This assessment implements **ISMS-POL-A.8.27, Section 2.2.2 (Secure Architecture Patterns)** which mandates:
@@ -173,14 +164,12 @@ This assessment implements **ISMS-POL-A.8.27, Section 2.2.2 (Secure Architecture
 | **Integration** | Secure API patterns, message queue security, service mesh |
 | **Cloud** | Landing zone architecture, workload isolation, cloud-native security |
 
-
 **Pattern Governance Requirements:**
 
 - Patterns SHALL be documented with security rationale
 - Patterns SHALL be reviewed annually
 - Deviations require Security Architect approval
 - New patterns validated through threat modelling
-
 
 ---
 
@@ -195,7 +184,6 @@ This assessment implements **ISMS-POL-A.8.27, Section 2.2.2 (Secure Architecture
 | Exception register | Deviation records | CISO Office |
 | Project architecture docs | Usage evidence | Project teams |
 
-
 ## Pre-Assessment Checklist
 
 ✅ Pattern catalogue inventory compiled
@@ -203,7 +191,6 @@ This assessment implements **ISMS-POL-A.8.27, Section 2.2.2 (Secure Architecture
 ✅ Adoption metrics available
 ✅ Exception records accessible
 ✅ Stakeholder interviews scheduled
-
 
 ---
 
@@ -224,7 +211,6 @@ This assessment implements **ISMS-POL-A.8.27, Section 2.2.2 (Secure Architecture
 | **GapRegister** | Identified gaps and remediation | Last |
 | **Dashboard** | Summary view and status | Auto-calculated |
 
-
 ## Sheet Descriptions
 
 ### PatternInventory Sheet
@@ -243,7 +229,6 @@ Documents the complete pattern catalogue:
 | NextReview | Next review due | 2026-09-15 |
 | DocumentRef | Documentation reference | PAT-AUTH-001.docx |
 
-
 ### PatternQuality Sheet
 
 Assesses documentation quality:
@@ -255,7 +240,6 @@ Assesses documentation quality:
 | Present | Is element documented? | Yes |
 | Quality | Quality rating (1-5) | 4 |
 | Notes | Quality notes | Clear, well-written |
-
 
 ### Adoption Sheet
 
@@ -269,7 +253,6 @@ Tracks pattern adoption:
 | AdoptionRate | Adoption percentage | 83% |
 | Trend | Adoption trend | Increasing |
 
-
 ### Governance Sheet
 
 Assesses pattern governance:
@@ -280,7 +263,6 @@ Assesses pattern governance:
 | Requirement | Governance requirement | Annual pattern review |
 | Status | Implementation status | Implemented |
 | Evidence | Supporting evidence | Review schedule |
-
 
 ### Deviations Sheet
 
@@ -297,7 +279,6 @@ Tracks pattern deviations:
 | Compensating | Compensating controls | Enhanced monitoring |
 | Expiry | Exception expiry | 2026-06-30 |
 
-
 ### Effectiveness Sheet
 
 Measures pattern effectiveness:
@@ -310,7 +291,6 @@ Measures pattern effectiveness:
 | AuditFindings | Audit findings | 0 |
 | UserFeedback | User satisfaction | 4.2/5 |
 | Effectiveness | Effectiveness rating | High |
-
 
 ---
 
@@ -341,7 +321,6 @@ For each pattern category:
 | **Cloud** | Landing Zone, Workload Isolation, Serverless Security |
 | **Logging/Monitoring** | Centralised Logging, SIEM Integration |
 | **Identity** | Identity Lifecycle, Privileged Access, Federation |
-
 
 ## Step 2: Assess Pattern Documentation Quality
 
@@ -374,7 +353,6 @@ For each pattern, assess documentation elements:
 | 4 | Good, comprehensive |
 | 5 | Excellent, exemplary |
 
-
 ## Step 3: Analyse Pattern Adoption
 
 **Navigate to the Adoption sheet**
@@ -394,7 +372,6 @@ For each pattern:
 | **Mandatory** | 100% |
 | **Recommended** | ≥80% |
 | **Optional** | Track only |
-
 
 ## Step 4: Assess Pattern Governance
 
@@ -421,7 +398,6 @@ For each governance requirement:
 | Exception Process | Process for deviations |
 | Effectiveness Review | Pattern effectiveness measured |
 
-
 ## Step 5: Track Deviations
 
 **Navigate to the Deviations sheet**
@@ -445,7 +421,6 @@ For each pattern deviation:
 | **Cost/Time** | Temporary deviation for delivery |
 | **Performance** | Pattern impacts performance |
 
-
 ## Step 6: Measure Effectiveness
 
 **Navigate to the Effectiveness sheet**
@@ -468,20 +443,17 @@ For each pattern:
 | User Satisfaction | ≥4.0/5 | <3.0/5 |
 | Adoption Rate | ≥80% | <50% |
 
-
 ## Step 7: Complete Compliance Scoring
 
 **Navigate to the Compliance sheet**
 
 Map and score compliance with ISMS-POL-A.8.27 requirements.
 
-
 ## Step 8: Document Gaps and Remediation
 
 **Navigate to the GapRegister sheet**
 
 Consolidate and track all identified gaps.
-
 
 ---
 
@@ -497,7 +469,6 @@ Consolidate and track all identified gaps.
 | **Deviation Records** | Approved deviations | Exception Register |
 | **Review Records** | Pattern review evidence | Architecture Repository |
 | **Effectiveness Data** | Security metrics | ISMS Dashboard |
-
 
 ---
 
@@ -533,7 +504,6 @@ Consolidate and track all identified gaps.
 ❌ **MISTAKE:** No feedback loop from implementers
 ✅ **CORRECT:** Collect and act on implementation feedback
 
-
 ---
 
 # Quality Checklist
@@ -548,14 +518,12 @@ Consolidate and track all identified gaps.
 - [ ] Deviations documented
 - [ ] Effectiveness measured
 
-
 **Evidence:**
 
 - [ ] Pattern documentation samples collected
 - [ ] Adoption tracking evidence
 - [ ] Deviation approvals documented
 - [ ] Effectiveness metrics captured
-
 
 ---
 
@@ -572,7 +540,6 @@ Consolidate and track all identified gaps.
 | **Purpose** | Secure architecture pattern catalogue assessment |
 | **Generator** | generate_a827_3_pattern_catalogue.py |
 
-
 ## Sheet Specifications
 
 ### Sheet 1: Instructions
@@ -582,7 +549,6 @@ Consolidate and track all identified gaps.
 | **Sheet Name** | Instructions |
 | **Purpose** | User guidance |
 | **Protection** | Read-only |
-
 
 ### Sheet 2: PatternInventory
 
@@ -611,7 +577,6 @@ Authentication, Authorisation, DataProtection, NetworkSecurity, Integration, Clo
 
 **Pre-populated Rows:** 30 standard patterns
 
-
 ### Sheet 3: PatternQuality
 
 | Property | Specification |
@@ -632,7 +597,6 @@ Authentication, Authorisation, DataProtection, NetworkSecurity, Integration, Clo
 **Element Dropdown:**
 ProblemStatement, Context, Solution, SecurityRationale, Implementation, Example, AntiPatterns, RelatedPatterns, ComplianceMapping, ThreatModel
 
-
 ### Sheet 4: Adoption
 
 | Property | Specification |
@@ -652,7 +616,6 @@ ProblemStatement, Context, Solution, SecurityRationale, Implementation, Example,
 | F | Barriers | 35 | Text | If <80% |
 | G | Action | 30 | Text | Improvement action |
 
-
 ### Sheet 5: Governance
 
 | Property | Specification |
@@ -661,7 +624,6 @@ ProblemStatement, Context, Solution, SecurityRationale, Implementation, Example,
 | **Purpose** | Pattern governance assessment |
 
 **Standard governance assessment structure with 15 requirements**
-
 
 ### Sheet 6: Deviations
 
@@ -685,7 +647,6 @@ ProblemStatement, Context, Solution, SecurityRationale, Implementation, Example,
 | I | Expiry | 12 | Date | Future date |
 | J | Status | 12 | Dropdown | Active/Closed/Expired |
 
-
 ### Sheet 7: Effectiveness
 
 | Property | Specification |
@@ -705,16 +666,13 @@ ProblemStatement, Context, Solution, SecurityRationale, Implementation, Example,
 | F | Effectiveness | 12 | Dropdown | High/Medium/Low |
 | G | Notes | 30 | Text | Optional |
 
-
 ### Sheet 8: Compliance
 
 Standard compliance sheet structure
 
-
 ### Sheet 9: GapRegister
 
 Standard gap register structure
-
 
 ### Sheet 10: Dashboard
 
@@ -726,7 +684,6 @@ Standard gap register structure
 4. Active deviations summary
 5. Effectiveness summary (patterns by rating)
 6. Key metrics and trends
-
 
 ## Pre-populated Data
 
@@ -743,7 +700,6 @@ Standard gap register structure
 | Logging | Centralised Logging, SIEM Integration, Audit Trail, Log Protection |
 | Identity | Identity Lifecycle, PAM, Federation, Directory Integration |
 
-
 ---
 
 # Generator Script Reference
@@ -753,7 +709,6 @@ Standard gap register structure
 | **Script Name** | generate_a827_3_pattern_catalogue.py |
 | **Location** | 10-isms-scr-base/isms-a.8.27-secure-systems-engineering/10_generator-master/ |
 | **Output** | ISMS-IMP-A.8.27.3_Secure_Architecture_Pattern_Catalogue_YYYYMMDD.xlsx |
-
 
 ---
 

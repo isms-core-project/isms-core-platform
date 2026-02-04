@@ -45,7 +45,6 @@ This implementation guide specifies procedures for conducting Data Protection Im
 - (b) Large-scale processing of special category data (Art. 9) or criminal convictions (Art. 10)
 - (c) Systematic monitoring of publicly accessible areas on a large scale (e.g., CCTV)
 
-
 **Additional WP248 Triggers:**
 
 - Innovative technologies or novel applications of existing technology
@@ -55,7 +54,6 @@ This implementation guide specifies procedures for conducting Data Protection Im
 - Processing vulnerable data subjects (children, employees, mentally ill)
 - Processing involving cross-border data transfers outside EEA
 - Decisions with potential to cause significant harm (automated decision-making)
-
 
 **ISO/IEC 27001:2022 Control A.5.34 Requirement:** Organizations must implement privacy impact assessments when required by applicable privacy regulations.
 
@@ -72,20 +70,17 @@ This implementation guide specifies procedures for conducting Data Protection Im
 - Access to system architecture documentation (data flow diagrams)
 - Stakeholder availability (DPO, system owners, legal counsel)
 
-
 **Time Required:**
 
 - **Initial DPIA Trigger Assessment:** 30-45 minutes per processing activity
 - **Full DPIA Execution:** 4-8 hours per high-risk processing activity
 - **Annual DPIA Review:** 1-2 hours per existing DPIA
 
-
 **Important Note on DPIA Timing:** GDPR Article 35(1) requires DPIAs to be conducted **"prior to the processing"**. This means:
 
 - For new projects: DPIA must be completed BEFORE processing begins (during design/procurement phase)
 - For existing processing: DPIA should be completed retroactively if not previously done
 - For material changes: DPIA must be updated BEFORE changes are implemented
-
 
 ---
 
@@ -123,7 +118,6 @@ A separate consolidation script can extract DPIA risk registers for enterprise r
    - Roles and responsibilities (DPO, system owner, legal counsel)
    - Expected completion timeline
 
-
 2. **Sheet Navigation Guide**
 
    - Sheet 2: DPIA Trigger Assessment (30-45 min)
@@ -134,14 +128,12 @@ A separate consolidation script can extract DPIA risk registers for enterprise r
    - Sheet 7: Gap Analysis (30 min per DPIA)
    - Sheet 8: Compliance Dashboard (auto-calculated)
 
-
 3. **Terminology Legend**
 
    - **Processing Activity:** Specific data processing operation (e.g., "Employee performance tracking system")
    - **High Risk:** Likely to result in significant impact to data subjects' rights and freedoms
    - **Residual Risk:** Risk remaining after mitigation measures are applied
    - **Supervisory Authority:** Data protection authority in your jurisdiction (e.g., EDPS, ICO, CNIL)
-
 
 4. **Risk Assessment Methodology**
 
@@ -154,14 +146,12 @@ A separate consolidation script can extract DPIA risk registers for enterprise r
      - High (15-16): Senior management approval + comprehensive mitigation
      - Critical (20-25): Supervisory authority consultation required + fundamental redesign
 
-
 5. **Color Coding System**
 
    - **Green:** DPIA not required OR DPIA complete with low residual risk
    - **Yellow:** DPIA required, in progress OR medium residual risk
    - **Red:** DPIA overdue OR high/critical residual risk
    - **Gray:** Not applicable or exempt
-
 
 6. **Evidence Requirements**
 
@@ -172,7 +162,6 @@ A separate consolidation script can extract DPIA risk registers for enterprise r
    - DPO consultation records
    - Supervisory authority correspondence (if applicable)
 
-
 7. **Common Pitfalls**
 
    - Starting DPIA too late (after processing already began)
@@ -180,7 +169,6 @@ A separate consolidation script can extract DPIA risk registers for enterprise r
    - Generic risk assessments without processing-specific details
    - Failing to update DPIA when processing changes materially
    - Not consulting DPO or supervisory authority when required
-
 
 **Mandatory Fields:** None (sheet is pre-populated reference material)
 
@@ -201,7 +189,6 @@ A separate consolidation script can extract DPIA risk registers for enterprise r
 - For new processing activities: During design/planning phase (before processing begins)
 - For existing processing: Quarterly review to identify any newly risky activities
 - For changed processing: Immediately when material changes occur
-
 
 **Importance:** This is the screening step. Not all processing requires a full DPIA - only those "likely to result in high risk." Incorrectly skipping a DPIA when required can result in regulatory fines (up to €10M or 2% of global turnover under Article 83(4)).
 
@@ -233,7 +220,6 @@ A separate consolidation script can extract DPIA risk registers for enterprise r
 - Each row = one distinct processing activity
 - Use same Processing Activity IDs for consistency across assessments
 
-
 **Step 2: Answer Trigger Questions (Columns D-L)**
 For each processing activity, answer 9 trigger questions:
 
@@ -244,14 +230,12 @@ For each processing activity, answer 9 trigger questions:
 - **Example Yes:** AI resume screening that automatically rejects candidates without human review
 - **Example No:** Basic analytics on website usage (no individual decisions)
 
-
 **Column E - Large-Scale Special Categories:**
 
 - **Yes if:** Processing health data, biometric data, genetic data, racial/ethnic origin, religious beliefs, sex life, trade union membership AND affects >5,000 data subjects OR entire populations (employees, citizens)
 - **No if:** Small-scale processing (<1,000 subjects) OR not special category data
 - **Example Yes:** National health insurance database, employee health screening program
 - **Example No:** Small clinic with 500 patients
-
 
 **Column F - Systematic Monitoring:**
 
@@ -260,14 +244,12 @@ For each processing activity, answer 9 trigger questions:
 - **Example Yes:** City-wide CCTV network with facial recognition
 - **Example No:** Office building security cameras (not public area)
 
-
 **Column G - Innovative Technology:**
 
 - **Yes if:** Using emerging technology (AI/ML, blockchain, IoT sensors, biometrics) OR using existing technology in novel way
 - **No if:** Mature, widely deployed technology with established best practices
 - **Example Yes:** Emotion recognition AI for customer service, smart city IoT sensors
 - **Example No:** Standard CRM system, email marketing platform
-
 
 **Column H - Denial of Service:**
 
@@ -276,14 +258,12 @@ For each processing activity, answer 9 trigger questions:
 - **Example Yes:** Blacklist for fraud prevention that denies banking services
 - **Example No:** Optional loyalty program (subjects can opt out without consequences)
 
-
 **Column I - Large Scale:**
 
 - **Yes if:** WP248 criteria met: (a) Number of data subjects (>5,000 as threshold OR substantial proportion of population), (b) Volume of data, (c) Duration of processing, (d) Geographic extent
 - **No if:** Small, limited processing
 - **Example Yes:** National tax system, social media platform, telecom provider
 - **Example No:** Single retail store customer database (500 customers)
-
 
 **Column J - Matching Datasets:**
 
@@ -292,14 +272,12 @@ For each processing activity, answer 9 trigger questions:
 - **Example Yes:** Matching HR data with badge access logs and email metadata for insider threat detection
 - **Example No:** Standard customer data stored in single CRM
 
-
 **Column K - Vulnerable Subjects:**
 
 - **Yes if:** Data subjects in vulnerable position (children <16, employees, asylum seekers/refugees, elderly, mentally ill, prisoners)
 - **No if:** General adult population with full capacity to consent
 - **Example Yes:** School student records, employee monitoring, asylum seeker processing
 - **Example No:** B2B customer data for corporate clients
-
 
 **Column L - Cross-Border Transfer:**
 
@@ -308,14 +286,12 @@ For each processing activity, answer 9 trigger questions:
 - **Example Yes:** Using US-based cloud provider (AWS, Azure, GCP) without data residency
 - **Example No:** EU-only cloud hosting with data residency guarantee
 
-
 **Step 3: Review Auto-Calculated Fields**
 
 **Column M - Total Triggers:**
 
 - Auto-calculated: Counts number of "Yes" answers in columns D-L
 - Review for accuracy (if count seems wrong, check for typos in trigger columns)
-
 
 **Column N - DPIA Required?:**
 
@@ -325,13 +301,11 @@ For each processing activity, answer 9 trigger questions:
   - **No:** 0 triggers → Standard privacy controls sufficient, DPIA not required
 - **Important:** "Uncertain" requires DPO judgment call - some single triggers are sufficient (e.g., special category data at scale always needs DPIA)
 
-
 **Step 4: Document Justification (Column O)**
 
 - For "Yes" → Explain which specific triggers apply and why (e.g., "AI-based hiring tool with automated rejection = systematic profiling + innovative tech")
 - For "Uncertain" → Document DPO consultation outcome (e.g., "DPO reviewed: not large scale (<2,000 subjects), DPIA not required")
 - For "No" → Confirm assessment rationale (e.g., "Standard employee onboarding, no special categories, no automated decisions")
-
 
 **Step 5: Escalation for "Yes" Results**
 For any processing marked "DPIA Required = Yes":
@@ -347,24 +321,20 @@ For any processing marked "DPIA Required = Yes":
 - **Wrong:** Single triggers CAN require DPIA (e.g., large-scale health data processing)
 - **Correct:** Consult DPO for "Uncertain" cases, err on side of caution
 
-
 ❌ **Mistake 2:** "We've been processing for years, DPIA doesn't apply retroactively"
 
 - **Wrong:** GDPR requires DPIA for ALL high-risk processing, even if predates GDPR
 - **Correct:** Conduct DPIA retroactively for existing processing, document as remediation
-
 
 ❌ **Mistake 3:** "Small company = not large scale"
 
 - **Wrong:** "Large scale" depends on data subjects affected, not company size
 - **Correct:** A 50-person startup processing 100,000 user accounts IS large scale
 
-
 ❌ **Mistake 4:** "We use standard technology (AWS), not innovative"
 
 - **Wrong:** "Innovative use" includes novel applications of existing tech
 - **Correct:** AI/ML use cases on AWS cloud = innovative technology trigger
-
 
 **Evidence Collection:**
 
@@ -372,13 +342,11 @@ For any processing marked "DPIA Required = Yes":
 - Email approvals for "No DPIA required" decisions
 - Project charter for processing activities marked "DPIA Required = Yes"
 
-
 **Audit Trail:**
 
 - Version control: Track changes to trigger assessments over time
 - Quarterly reviews: Re-assess existing processing for new triggers (e.g., feature expansion makes processing "large scale")
 - Material changes: Re-trigger DPIA assessment when processing significantly changes
-
 
 ---
 
@@ -393,7 +361,6 @@ For any processing marked "DPIA Required = Yes":
 - Add new DPIA within 1 week of identifying "DPIA Required = Yes" in Sheet 2
 - Update status monthly as DPIAs progress through lifecycle
 - Archive completed DPIAs annually (retain records for 3+ years)
-
 
 **Importance:** The DPIA register demonstrates accountability to supervisory authorities. During audits, regulators will ask: "Show me your DPIA register." Missing DPIAs for high-risk processing can result in significant fines.
 
@@ -428,7 +395,6 @@ For any processing marked "DPIA Required = Yes":
 - Assign sequential DPIA ID (e.g., DPIA-2024-001, DPIA-2024-002)
 - Link to Processing Activity ID from Sheet 2 for traceability
 
-
 **Step 2: Assign Ownership (Columns E-F)**
 
 **Column E - Business Owner:**
@@ -440,13 +406,11 @@ For any processing marked "DPIA Required = Yes":
   - Marketing automation → Marketing department
   - Customer portal → IT department
 
-
 **Column F - DPO Assigned:**
 
 - Name of DPO or privacy analyst conducting the DPIA
 - One DPO can handle multiple DPIAs (centralized expertise)
 - If outsourced, note consultant name (e.g., "External DPO - Smith & Associates")
-
 
 **Step 3: Set Timeline (Columns G-I)**
 
@@ -456,20 +420,17 @@ For any processing marked "DPIA Required = Yes":
 - For new processing: Should be early in design phase (before development starts)
 - For existing processing: Date of retroactive DPIA initiation
 
-
 **Column H - Target Completion Date:**
 
 - Planned finish date for DPIA
 - **Recommended timeline:** 4-8 weeks from start for complex processing, 2-3 weeks for simpler assessments
 - Must be BEFORE processing begins (for new activities)
 
-
 **Column I - Actual Completion Date:**
 
 - Leave blank until DPIA is finalized and approved
 - Completion = all mitigation measures documented, DPO sign-off, business owner approval
 - If completion date exceeds target → mark Status as "Overdue" (red flag)
-
 
 **Step 4: Track Status (Column J)**
 
@@ -480,7 +441,6 @@ For any processing marked "DPIA Required = Yes":
 - **Under Review:** DPIA draft complete, awaiting approvals (DPO review, legal review, business owner sign-off)
 - **Complete:** DPIA finalized, mitigation measures implemented, documented in register
 - **Overdue:** Actual date > Target Completion Date AND status not "Complete" (requires escalation)
-
 
 **Status Progression:** Planned → In Progress → Under Review → Complete
 **Escalation:** If stuck in "In Progress" for >8 weeks → escalate to Senior Management
@@ -497,7 +457,6 @@ For any processing marked "DPIA Required = Yes":
   - Medium (8-12) → Standard mitigation controls acceptable
   - Low (1-6) → Minimal mitigation needed
 
-
 **Column L - Residual Risk Rating:**
 
 - Risk level AFTER applying mitigation measures
@@ -506,7 +465,6 @@ For any processing marked "DPIA Required = Yes":
   - Low → Proceed with processing
   - Medium → Acceptable with monitoring and annual review
   - High/Critical → Requires supervisory authority consultation (GDPR Art. 36)
-
 
 **Step 6: Supervisory Authority Consultation (Columns M-O)**
 
@@ -517,7 +475,6 @@ For any processing marked "DPIA Required = Yes":
 - **Yes:** Required when residual risk remains High or Critical despite mitigation
 - **No:** Not required when residual risk reduced to Low or Medium
 - **N/A:** DPIA not yet complete, TBD
-
 
 **When consultation is required:**
 1. Residual risk = High/Critical (even after mitigation)
@@ -530,13 +487,11 @@ For any processing marked "DPIA Required = Yes":
 - Date when formal consultation was submitted to supervisory authority
 - **Processing must stop until authority responds** (Art. 36(2): authority has 8 weeks to respond, extendable to 14 weeks)
 
-
 **Column O - Authority Reference Number:**
 
 - Case tracking number provided by supervisory authority
 - Used for follow-up correspondence
 - Example: "ICO-DPIA-2024-12345" (UK), "CNIL-DPIA-2024-67890" (France)
-
 
 **Step 7: Schedule Next Review (Column P)**
 
@@ -551,7 +506,6 @@ For any processing marked "DPIA Required = Yes":
   - Complaints from data subjects
   - Supervisory authority feedback
 
-
 **Step 8: Document Evidence (Column Q)**
 
 **Column Q - DPIA Document Location:**
@@ -563,7 +517,6 @@ For any processing marked "DPIA Required = Yes":
   - `/DPIAs/DPIA-2024-001/Stakeholder-Consultation-Minutes.docx`
   - `/DPIAs/DPIA-2024-001/Authority-Correspondence/`
 
-
 **Step 9: Add Contextual Notes (Column R)**
 
 - Document exceptions or special circumstances
@@ -572,7 +525,6 @@ For any processing marked "DPIA Required = Yes":
   - "Supervisory authority provided verbal approval pending formal response"
   - "DPIA delayed due to vendor data processing agreement negotiation"
 
-
 **Common Pitfalls:**
 
 ❌ **Pitfall 1: Incomplete DPIA Register**
@@ -580,24 +532,20 @@ For any processing marked "DPIA Required = Yes":
 - **Mistake:** Only registering DPIAs that were actually completed, not those identified as required
 - **Correct:** Register ALL processing activities where Sheet 2 shows "DPIA Required = Yes", even if DPIA hasn't started yet (mark as "Planned")
 
-
 ❌ **Pitfall 2: No Follow-Through on "Overdue" Status**
 
 - **Mistake:** DPIAs stuck in "In Progress" for months with no escalation
 - **Correct:** Monthly status review, escalate overdue DPIAs to CISO/CPO, reassign resources if needed
-
 
 ❌ **Pitfall 3: Missing Authority Consultation**
 
 - **Mistake:** Proceeding with high residual risk without consulting supervisory authority
 - **Correct:** GDPR Article 36 requires consultation for high residual risk - non-negotiable
 
-
 ❌ **Pitfall 4: Forgetting Annual Reviews**
 
 - **Mistake:** Completing DPIA and never reviewing again (treating as checkbox exercise)
 - **Correct:** Set calendar reminders for Next Review Date, update DPIA for any material changes
-
 
 **Audit Questions to Prepare For:**
 1. "How many DPIAs have you conducted in the past 12 months?" → Count rows with Actual Completion Date in last year
@@ -611,7 +559,6 @@ For any processing marked "DPIA Required = Yes":
 - **A.5.34.2 (Legal Basis):** Legal basis documented in DPIA must match Legal Basis Assessment
 - **A.5.34.4 (TOMs):** Technical/organizational measures from DPIA feed into TOMs assessment
 - **A.5.34.7 (Dashboard):** DPIA completion rate tracked in master compliance dashboard
-
 
 ---
 
@@ -629,7 +576,6 @@ For any processing marked "DPIA Required = Yes":
 - (b) Assessment of necessity and proportionality
 - (c) Assessment of risks to rights and freedoms
 - (d) Measures to address risks
-
 
 Sheet 4 covers items (a)-(c). Sheet 5 covers item (d).
 
@@ -694,7 +640,6 @@ The following risk categories align with WP248 guidelines and ISO/IEC 29134:2017
 - All risks for a single processing activity will share same DPIA ID
 - Typical DPIA has 5-15 distinct risks identified
 
-
 **Step 2: Identify Risks (Columns B-E)**
 
 **Column B - Risk ID:**
@@ -702,13 +647,11 @@ The following risk categories align with WP248 guidelines and ISO/IEC 29134:2017
 - Auto-generated format: `[DPIA ID]-R[sequential number]`
 - Example: DPIA-2024-001-R01, DPIA-2024-001-R02, etc.
 
-
 **Column C - Risk Category:**
 
 - Select from predefined list (see categories above)
 - One risk can fit multiple categories - choose the PRIMARY category
 - If uncertain, default to "Loss of Confidentiality" (most common)
-
 
 **Column D - Risk Description:**
 
@@ -716,13 +659,11 @@ The following risk categories align with WP248 guidelines and ISO/IEC 29134:2017
 - **Bad example:** "Data breach could occur"
 - **Good example:** "Customer PII stored in unencrypted S3 bucket accessible via misconfigured IAM policy could be exfiltrated by unauthorized attacker, exposing names, addresses, and payment card data of 50,000 customers"
 
-
 **Column E - Data Subject Impact:**
 
 - Explain concrete harm to individuals (not organization)
 - **Bad example:** "Reputational damage to company"
 - **Good example:** "Customers could suffer identity theft requiring credit monitoring, potential financial fraud, emotional distress from breach notification, and loss of trust in service"
-
 
 **Step 3: Assess Likelihood and Impact (Columns F-I)**
 
@@ -745,7 +686,6 @@ Assess probability the risk will materialize WITHOUT mitigation controls:
 - **5 - Almost Certain:** >75% chance, inevitable without controls
   - *Example:* Public S3 bucket with PII (Shodan will find it within days)
 
-
 **Column G - Impact (Before Mitigation):**
 
 Assess severity of harm to data subjects if risk materializes:
@@ -765,12 +705,10 @@ Assess severity of harm to data subjects if risk materializes:
 - **5 - Severe:** Catastrophic harm, potentially irreversible
   - *Example:* Physical harm (domestic abuse victim location revealed), life-altering discrimination, severe psychological trauma
 
-
 **Column H - Inherent Risk Score:**
 
 - Auto-calculated: Likelihood × Impact
 - Range: 1 to 25
-
 
 **Column I - Inherent Risk Level:**
 
@@ -779,7 +717,6 @@ Assess severity of harm to data subjects if risk materializes:
   - **Medium (8-12):** Moderate risk, enhanced controls required
   - **High (15-16):** Significant risk, comprehensive mitigation + management approval
   - **Critical (20-25):** Unacceptable risk, fundamental redesign or supervisory authority consultation
-
 
 **Step 4: Assess Necessity and Proportionality (Columns J-M)**
 
@@ -791,7 +728,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **No:** Processing is not strictly necessary, alternatives available
 - **Uncertain:** Requires further analysis or legal review
 
-
 **Column K - Necessity Justification:**
 
 - Document why processing is necessary
@@ -799,20 +735,17 @@ Assess severity of harm to data subjects if risk materializes:
 - **Good example:** "Credit scoring requires financial history analysis - no alternative method to assess creditworthiness exists that doesn't involve processing financial PII"
 - **Bad example:** "We've always done it this way"
 
-
 **Column L - Proportionality Justified?**
 
 - **Yes:** Data minimization principles followed (Art. 5(1)(c)), only collect/process minimum necessary data
 - **No:** Processing excessive data beyond what's needed
 - **Uncertain:** Requires data inventory review
 
-
 **Column M - Proportionality Justification:**
 
 - Document evidence of data minimization
 - **Good example:** "Marketing campaign only requires email + first name for personalization. We do NOT collect full postal address, phone, or demographic data because unnecessary for email marketing purpose."
 - **Bad example:** "We collect everything just in case we need it later"
-
 
 **Step 5: Document Legal Basis (Columns N-O)**
 
@@ -826,7 +759,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Public Task:** Public authorities performing official functions
 - **Legitimate Interests:** Balancing test - your interests vs. data subject rights (requires DPIA for high-risk cases)
 
-
 **Column O - Special Category Legal Basis:**
 
 - Required ONLY if processing special category data (Art. 9: health, biometric, genetic, race, religion, sex life, trade union)
@@ -838,7 +770,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Public Health:** Public health emergencies (COVID-19 contact tracing)
 - **Archiving/Research:** Scientific/historical research with safeguards
 
-
 **Step 6: Assess Data Subject Rights (Columns P-Q)**
 
 **Column P - Data Subject Rights Respected?**
@@ -846,7 +777,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Yes:** All GDPR Chapter III rights fully available (access, rectification, erasure, restriction, portability, objection, automated decision-making)
 - **No:** One or more rights significantly restricted
 - **Partial:** Some restrictions apply but with valid legal justification
-
 
 **Column Q - Rights Restrictions Documented:**
 
@@ -858,7 +788,6 @@ Assess severity of harm to data subjects if risk materializes:
   - "It's technically difficult to implement" → Not a valid restriction
   - "We don't want to" → Not acceptable
 
-
 **Step 7: Document Third-Party Sharing (Columns R-T)**
 
 **Column R - Third-Party Recipients:**
@@ -868,12 +797,10 @@ Assess severity of harm to data subjects if risk materializes:
   - "AWS (cloud infrastructure processor), Salesforce (CRM processor), Google Analytics (analytics processor)"
   - "Partner company XYZ Corp (joint controller for marketing campaign)"
 
-
 **Column S - Cross-Border Transfers:**
 
 - **Yes:** Data leaves EEA (even if to "adequate" country, document it)
 - **No:** Data stays within EEA
-
 
 **Column T - Transfer Safeguards:**
 
@@ -884,7 +811,6 @@ Assess severity of harm to data subjects if risk materializes:
   - "BCRs (Binding Corporate Rules) for intra-group transfers"
   - "Consent (Art. 49(1)(a)) for non-repeated transfers"
 
-
 **Common Pitfalls:**
 
 ❌ **Pitfall 1: Generic Risk Descriptions**
@@ -892,24 +818,20 @@ Assess severity of harm to data subjects if risk materializes:
 - **Mistake:** "Data breach risk" without specifics
 - **Correct:** Describe the specific vulnerability, attack vector, and impact (see Column D guidance)
 
-
 ❌ **Pitfall 2: Underestimating Likelihood/Impact**
 
 - **Mistake:** Marking everything "Low" to avoid mitigation work
 - **Correct:** Be honest about risks - auditors/regulators will challenge unrealistic ratings
-
 
 ❌ **Pitfall 3: Confusing Necessity with Convenience**
 
 - **Mistake:** "We need this data for business intelligence" (want ≠ need)
 - **Correct:** Necessity means no alternative exists to achieve purpose
 
-
 ❌ **Pitfall 4: Missing Special Category Basis**
 
 - **Mistake:** Processing health data with only Art. 6 basis (missing Art. 9 basis)
 - **Correct:** Special category data requires BOTH Art. 6 AND Art. 9 legal basis
-
 
 **Evidence Collection:**
 
@@ -920,13 +842,11 @@ Assess severity of harm to data subjects if risk materializes:
 - Privacy notices provided to data subjects
 - Consent records (if consent is legal basis)
 
-
 **Output from Sheet 4:**
 
 - Inherent risk scores feed into Sheet 5 (Mitigation Measures) → determine which controls to implement
 - Highest inherent risk becomes "Initial Risk Rating" in Sheet 3 (DPIA Register)
 - Risks with "Necessity = No" or "Proportionality = No" → require processing redesign (fundamental DPIA requirement)
-
 
 ---
 
@@ -956,7 +876,6 @@ Assess severity of harm to data subjects if risk materializes:
 - `YesNoNA`: {"Yes", "No", "N/A"}
 - `YesNoPartial`: {"Yes", "No", "Partial"}
 
-
 ---
 
 ### SHEET 1: Instructions & Legend
@@ -984,7 +903,6 @@ Assess severity of harm to data subjects if risk materializes:
 - Title: A1:P3 (merged, centered)
 - Section headers: Full row span (A:P)
 
-
 **No Data Validation:** Sheet is pre-populated template, no user input
 
 **No Formulas:** Static content only
@@ -994,7 +912,6 @@ Assess severity of harm to data subjects if risk materializes:
 - Content from PART 1 Section "SHEET 1: Instructions & Legend" should be formatted as specified
 - Use rich text formatting (bold, italic, underline) for emphasis
 - Include hyperlinks to external resources (GDPR Article 35 official text, WP248 guidelines PDF)
-
 
 ---
 
@@ -1044,7 +961,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** Yes (cannot be blank)
 - **Example:** `PROC-001`
 
-
 **Column B: Processing Activity Name**
 
 - **Data Type:** Text
@@ -1061,7 +977,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** Yes
 - **Example:** `AI-powered resume screening system`
 
-
 **Column C: System/Application**
 
 - **Data Type:** Text
@@ -1076,7 +991,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Format:** Text, left-aligned, wrap text
 - **Required:** Yes
 - **Example:** `Workday ATS + Custom ML Module`
-
 
 **Column D: Trigger 1 - Systematic Profiling**
 
@@ -1094,7 +1008,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** Yes
 - **Default:** `No`
 
-
 **Column E: Trigger 2 - Large-Scale Special Categories**
 
 - **Data Type:** Dropdown
@@ -1110,7 +1023,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Format:** Text, center-aligned
 - **Required:** Yes
 - **Default:** `No`
-
 
 **Column F: Trigger 3 - Systematic Monitoring**
 
@@ -1128,7 +1040,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** Yes
 - **Default:** `No`
 
-
 **Column G: Trigger 4 - Innovative Technology**
 
 - **Data Type:** Dropdown
@@ -1144,7 +1055,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Format:** Text, center-aligned
 - **Required:** Yes
 - **Default:** `No`
-
 
 **Column H: Trigger 5 - Denial of Service**
 
@@ -1162,7 +1072,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** Yes
 - **Default:** `No`
 
-
 **Column I: Trigger 6 - Large Scale**
 
 - **Data Type:** Dropdown
@@ -1178,7 +1087,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Format:** Text, center-aligned
 - **Required:** Yes
 - **Default:** `No`
-
 
 **Column J: Trigger 7 - Matching Datasets**
 
@@ -1196,7 +1104,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** Yes
 - **Default:** `No`
 
-
 **Column K: Trigger 8 - Vulnerable Subjects**
 
 - **Data Type:** Dropdown
@@ -1212,7 +1119,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Format:** Text, center-aligned
 - **Required:** Yes
 - **Default:** `No`
-
 
 **Column L: Trigger 9 - Cross-Border Transfer**
 
@@ -1230,7 +1136,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** Yes
 - **Default:** `No`
 
-
 **Column M: Total Triggers**
 
 - **Data Type:** Calculated (Integer)
@@ -1246,7 +1151,6 @@ Assess severity of harm to data subjects if risk materializes:
   - Rule 2: `=M2=1` → Fill: RGB(255, 217, 102) - Yellow
   - Rule 3: `=M2>=2` → Fill: RGB(255, 102, 102) - Light Red
 - **Auto-fill:** Copy formula to M2:M1000
-
 
 **Column N: DPIA Required?**
 
@@ -1264,7 +1168,6 @@ Assess severity of harm to data subjects if risk materializes:
   - Rule 3: `=N2="Yes"` → Fill: RGB(255, 102, 102) - Light Red, Font: RGB(156, 0, 6) - Dark Red
 - **Auto-fill:** Copy formula to N2:N1000
 
-
 **Column O: Notes**
 
 - **Data Type:** Text
@@ -1280,7 +1183,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** No (optional)
 - **Example:** `DPO consulted 2024-03-15: Not large scale (<2,000 subjects), DPIA not required despite special category data`
 
-
 #### Conditional Formatting (Entire Row)
 
 **Rule 1: Highlight rows requiring DPIA**
@@ -1289,13 +1191,11 @@ Assess severity of harm to data subjects if risk materializes:
 - **Condition:** `=$N2="Yes"`
 - **Format:** Fill: RGB(255, 230, 230) - Very Light Red (row background)
 
-
 **Rule 2: Highlight uncertain rows**
 
 - **Applies to:** $A$2:$O$1000
 - **Condition:** `=$N2="Uncertain"`
 - **Format:** Fill: RGB(255, 243, 205) - Very Light Yellow (row background)
-
 
 #### Data Validation Comments
 
@@ -1312,7 +1212,6 @@ Assess severity of harm to data subjects if risk materializes:
   - K1: "Children <16, employees, refugees, elderly, mentally ill, prisoners"
   - L1: "Transfers outside EEA without adequacy decision (even with SCCs)"
 
-
 #### Worksheet Protection
 
 **Protected Elements:**
@@ -1321,12 +1220,10 @@ Assess severity of harm to data subjects if risk materializes:
 - Formula columns (M, N)
 - Sheet structure
 
-
 **Unprotected Elements (Allow Edit):**
 
 - A2:L1000 (user input area for Processing Activity details and trigger assessment)
 - O2:O1000 (Notes column)
-
 
 **Protection Password:** Set by organization (recommended: complex password stored in password manager)
 
@@ -1381,7 +1278,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Naming Convention:** `DPIA-YYYY-NNN` (e.g., DPIA-2024-001)
 - **Example:** `DPIA-2024-001`
 
-
 **Column B: Processing Activity ID**
 
 - **Data Type:** Text
@@ -1397,7 +1293,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** Yes
 - **Example:** `PROC-001`
 
-
 **Column C: Processing Activity Name**
 
 - **Data Type:** Calculated (Text)
@@ -1411,7 +1306,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Auto-fill:** Copy formula to C2:C1000
 - **Protected:** Yes (calculated field)
 
-
 **Column D: System/Application**
 
 - **Data Type:** Calculated (Text)
@@ -1424,7 +1318,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Format:** Text, left-aligned, wrap text
 - **Auto-fill:** Copy formula to D2:D1000
 - **Protected:** Yes (calculated field)
-
 
 **Column E: Business Owner**
 
@@ -1441,7 +1334,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** Yes
 - **Example:** `HR`
 
-
 **Column F: DPO Assigned**
 
 - **Data Type:** Text
@@ -1456,7 +1348,6 @@ Assess severity of harm to data subjects if risk materializes:
 
 - **Required:** Yes
 - **Example:** `Jane Smith (Internal DPO)`
-
 
 **Column G: DPIA Start Date**
 
@@ -1473,7 +1364,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** Yes
 - **Example:** `2024-03-01`
 
-
 **Column H: Target Completion Date**
 
 - **Data Type:** Date
@@ -1489,7 +1379,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** Yes
 - **Example:** `2024-04-30`
 
-
 **Column I: Actual Completion Date**
 
 - **Data Type:** Date
@@ -1504,7 +1393,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Format:** Date, `YYYY-MM-DD`
 - **Required:** No (blank until DPIA complete)
 - **Example:** `2024-04-15`
-
 
 **Column J: DPIA Status**
 
@@ -1527,7 +1415,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** Yes
 - **Example:** `In Progress`
 
-
 **Column K: Initial Risk Rating**
 
 - **Data Type:** Dropdown
@@ -1548,7 +1435,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** Yes (populate from Sheet 4 highest risk score)
 - **Example:** `High`
 
-
 **Column L: Residual Risk Rating**
 
 - **Data Type:** Dropdown
@@ -1564,7 +1450,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Conditional Formatting:** Same as Column K
 - **Required:** No (blank until mitigation complete, populate from Sheet 7)
 - **Example:** `Medium`
-
 
 **Column M: Supervisory Authority Consulted?**
 
@@ -1582,7 +1467,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Logic:** "Yes" if L (Residual Risk) = High or Critical
 - **Example:** `No`
 
-
 **Column N: Authority Consultation Date**
 
 - **Data Type:** Date
@@ -1598,7 +1482,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** Only if M = "Yes"
 - **Example:** `2024-05-01`
 
-
 **Column O: Authority Reference Number**
 
 - **Data Type:** Text
@@ -1612,7 +1495,6 @@ Assess severity of harm to data subjects if risk materializes:
 
 - **Required:** Only if M = "Yes"
 - **Example:** `ICO-DPIA-2024-12345`
-
 
 **Column P: Next Review Date**
 
@@ -1634,7 +1516,6 @@ Assess severity of harm to data subjects if risk materializes:
   - Rule 1: `=AND(NOT(ISBLANK(P2)), P2<=TODAY()+30)` → Fill: RGB(255, 102, 102) - Light Red (review due soon/overdue)
   - Rule 2: `=AND(NOT(ISBLANK(P2)), P2<=TODAY()+90, P2>TODAY()+30)` → Fill: RGB(255, 217, 102) - Yellow (review upcoming)
 
-
 **Column Q: DPIA Document Location**
 
 - **Data Type:** Text (file path or URL)
@@ -1649,7 +1530,6 @@ Assess severity of harm to data subjects if risk materializes:
 
 - **Required:** Yes (once DPIA complete)
 - **Example:** `/DPIAs/DPIA-2024-001/DPIA-Report-Final.pdf`
-
 
 **Column R: Notes**
 
@@ -1666,7 +1546,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** No
 - **Example:** `Retroactive DPIA for legacy system - processing stopped pending mitigation implementation`
 
-
 #### Conditional Formatting (Entire Row)
 
 **Rule 1: Highlight overdue DPIAs**
@@ -1675,20 +1554,17 @@ Assess severity of harm to data subjects if risk materializes:
 - **Condition:** `=AND($J2="Overdue", OR(NOT(ISBLANK($A2)), NOT(ISBLANK($B2))))`
 - **Format:** Fill: RGB(255, 230, 230) - Very Light Red (row background), Font: Bold
 
-
 **Rule 2: Highlight complete DPIAs**
 
 - **Applies to:** $A$2:$R$1000
 - **Condition:** `=$J2="Complete"`
 - **Format:** Fill: RGB(235, 248, 233) - Very Light Green (row background)
 
-
 **Rule 3: Highlight high/critical residual risk**
 
 - **Applies to:** $A$2:$R$1000
 - **Condition:** `=OR($L2="High", $L2="Critical")`
 - **Format:** Fill: RGB(255, 242, 204) - Very Light Orange (row background), Left border: 4pt RGB(255, 0, 0) - Red
-
 
 #### Worksheet Protection
 
@@ -1698,11 +1574,9 @@ Assess severity of harm to data subjects if risk materializes:
 - Calculated columns (C, D, P)
 - Sheet structure
 
-
 **Unprotected Elements:**
 
 - A2:B1000, E2:O1000, Q2:R1000 (user input areas)
-
 
 ---
 
@@ -1756,7 +1630,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** Yes
 - **Example:** `DPIA-2024-001`
 
-
 **Column B: Risk ID**
 
 - **Data Type:** Calculated (Text)
@@ -1770,7 +1643,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Format:** Text, center-aligned
 - **Auto-fill:** Copy formula to B2:B1000
 - **Protected:** Yes (calculated field)
-
 
 **Column C: Risk Category**
 
@@ -1786,7 +1658,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Format:** Text, left-aligned, wrap text
 - **Required:** Yes
 - **Example:** `Profiling with Significant Effects`
-
 
 **Column D: Risk Description**
 
@@ -1804,7 +1675,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** Yes
 - **Example:** `AI resume screening automatically rejects candidates based on keyword matching without human review. Algorithm may perpetuate historical hiring biases (e.g., rejecting candidates from certain universities or with career gaps), resulting in discriminatory outcomes prohibited under employment law.`
 
-
 **Column E: Data Subject Impact**
 
 - **Data Type:** Text
@@ -1821,7 +1691,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** Yes
 - **Example:** `Qualified candidates unfairly rejected, losing employment opportunities. Disproportionate impact on protected classes (age, gender, race). Violation of right to fair consideration and non-discrimination.`
 
-
 **Column F: Likelihood (Before Mitigation)**
 
 - **Data Type:** Dropdown
@@ -1837,7 +1706,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** Yes
 - **Example:** `4 - Likely`
 
-
 **Column G: Impact (Before Mitigation)**
 
 - **Data Type:** Dropdown
@@ -1852,7 +1720,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Format:** Text, center-aligned
 - **Required:** Yes
 - **Example:** `4 - Major`
-
 
 **Column H: Inherent Risk Score**
 
@@ -1873,7 +1740,6 @@ Assess severity of harm to data subjects if risk materializes:
   - Rule 3: `=AND(H2>=15, H2<=16)` → Fill: RGB(255, 165, 0) - Orange, Font: RGB(156, 0, 6) - Dark Red
   - Rule 4: `=H2>=20` → Fill: RGB(255, 102, 102) - Light Red, Font: RGB(156, 0, 6) - Dark Red, Bold
 
-
 **Column I: Inherent Risk Level**
 
 - **Data Type:** Calculated (Text)
@@ -1887,7 +1753,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Auto-fill:** Copy formula to I2:I1000
 - **Protected:** Yes (calculated field)
 - **Conditional Formatting:** Same as Column H
-
 
 **Column J: Necessity Justified?**
 
@@ -1903,7 +1768,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Format:** Text, center-aligned
 - **Required:** Yes
 - **Example:** `Yes`
-
 
 **Column K: Necessity Justification**
 
@@ -1921,7 +1785,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** Yes
 - **Example:** `Automated screening necessary to handle volume (500+ applications per role). Manual review of all applications not feasible. However, human-in-the-loop review required before final rejection.`
 
-
 **Column L: Proportionality Justified?**
 
 - **Data Type:** Dropdown
@@ -1936,7 +1799,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Format:** Text, center-aligned
 - **Required:** Yes
 - **Example:** `Yes`
-
 
 **Column M: Proportionality Justification**
 
@@ -1954,7 +1816,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** Yes
 - **Example:** `Data minimization: System only processes resume text (skills, experience, education). Does NOT collect protected characteristics (age, gender, race) or social media profiles. Retention limited to 12 months post-hiring decision.`
 
-
 **Column N: Legal Basis**
 
 - **Data Type:** Dropdown
@@ -1969,7 +1830,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Format:** Text, left-aligned, wrap text
 - **Required:** Yes
 - **Example:** `Legitimate Interests (Art. 6(1)(f))`
-
 
 **Column O: Special Category Legal Basis**
 
@@ -1986,7 +1846,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** Yes
 - **Example:** `N/A`
 
-
 **Column P: Data Subject Rights Respected?**
 
 - **Data Type:** Dropdown
@@ -2001,7 +1860,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Format:** Text, center-aligned
 - **Required:** Yes
 - **Example:** `Partial`
-
 
 **Column Q: Rights Restrictions Documented**
 
@@ -2018,7 +1876,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** If P = "No" or "Partial"
 - **Example:** `Right to erasure restricted per Art. 17(3)(b) - legal obligation to retain hiring records for 12 months (employment law compliance). Right to object not applicable per Art. 21(1) - processing necessary for contract consideration.`
 
-
 **Column R: Third-Party Recipients**
 
 - **Data Type:** Text
@@ -2032,7 +1889,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Format:** Text, left-aligned, wrap text
 - **Required:** No
 - **Example:** `AWS (cloud infrastructure processor), HireVue (AI screening processor via DPA signed 2024-01-10)`
-
 
 **Column S: Cross-Border Transfers**
 
@@ -2049,7 +1905,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** Yes
 - **Example:** `Yes`
 
-
 **Column T: Transfer Safeguards**
 
 - **Data Type:** Text
@@ -2064,7 +1919,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Required:** If S = "Yes"
 - **Example:** `SCCs (Standard Contractual Clauses) executed with AWS on 2024-01-15. Data residency: EU-West-1 (Ireland) with replication to EU-Central-1 (Frankfurt).`
 
-
 #### Conditional Formatting (Entire Row)
 
 **Rule 1: Highlight Critical/High risks**
@@ -2073,14 +1927,12 @@ Assess severity of harm to data subjects if risk materializes:
 - **Condition:** `=OR($I2="Critical", $I2="High")`
 - **Format:** Fill: RGB(255, 230, 230) - Very Light Red (row background), Left border: 4pt RGB(192, 0, 0) - Dark Red
 
-
 **Rule 2: Highlight necessity/proportionality failures**
 
 - **Applies to:** $A$2:$T$1000
 - **Condition:** `=OR($J2="No", $L2="No")`
 - **Format:** Fill: RGB(255, 242, 204) - Very Light Orange (row background), Right border: 4pt RGB(255, 0, 0) - Red
 - **Note:** These require processing redesign - CRITICAL flag
-
 
 #### Worksheet Protection
 
@@ -2090,11 +1942,9 @@ Assess severity of harm to data subjects if risk materializes:
 - Calculated columns (B, H, I)
 - Sheet structure
 
-
 **Unprotected Elements:**
 
 - A2:G1000, J2:T1000 (user input areas for risk assessment details)
-
 
 ---
 
@@ -2144,7 +1994,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Format:** Text, center-aligned
 - **Required:** Yes
 
-
 **Column B: Risk Description (Reference)**
 
 - **Data Type:** Calculated (Text)
@@ -2156,7 +2005,6 @@ Assess severity of harm to data subjects if risk materializes:
 
 - **Format:** Text, left-aligned, wrap text, read-only
 - **Auto-fill:** B2:B1000
-
 
 **Column C: Mitigation Control ID**
 
@@ -2170,7 +2018,6 @@ Assess severity of harm to data subjects if risk materializes:
 
 - **Format:** Text, center-aligned
 - **Auto-fill:** C2:C1000
-
 
 **Column D: Control Type**
 
@@ -2186,7 +2033,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Format:** Text, left-aligned
 - **Required:** Yes
 
-
 **Column E: Mitigation Description**
 
 - **Data Type:** Text
@@ -2201,7 +2047,6 @@ Assess severity of harm to data subjects if risk materializes:
 
 - **Format:** Text, left-aligned, wrap text
 - **Required:** Yes
-
 
 **Column F: Implementation Status**
 
@@ -2223,7 +2068,6 @@ Assess severity of harm to data subjects if risk materializes:
   - `=F2="Rejected"` → Fill: RGB(255, 102, 102), Font: RGB(156, 0, 6)
 - **Required:** Yes
 
-
 **Column G: Owner**
 
 - **Data Type:** Text
@@ -2236,7 +2080,6 @@ Assess severity of harm to data subjects if risk materializes:
   ```
 
 - **Required:** Yes
-
 
 **Column H: Target Date**
 
@@ -2252,7 +2095,6 @@ Assess severity of harm to data subjects if risk materializes:
 
 - **Required:** Yes
 
-
 **Column I: Actual Date**
 
 - **Data Type:** Date
@@ -2266,7 +2108,6 @@ Assess severity of harm to data subjects if risk materializes:
   ```
 
 - **Required:** Only if Status = "Implemented" or "Validated"
-
 
 **Column J: Effectiveness Rating**
 
@@ -2287,7 +2128,6 @@ Assess severity of harm to data subjects if risk materializes:
   - `=J2="Ineffective"` → Fill: RGB(255, 102, 102), Font: RGB(156, 0, 6)
 - **Required:** Only if Status = "Validated"
 
-
 **Column K: Evidence Location**
 
 - **Data Type:** Text
@@ -2301,7 +2141,6 @@ Assess severity of harm to data subjects if risk materializes:
 
 - **Required:** Only if Status = "Implemented" or "Validated"
 
-
 #### Conditional Formatting (Row-Level)
 
 **Rule: Highlight overdue mitigation**
@@ -2309,7 +2148,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Applies to:** $A$2:$K$1000
 - **Condition:** `=AND(NOT(ISBLANK($H2)), $H2<TODAY(), OR($F2="Planned", $F2="In Progress"))`
 - **Format:** Fill: RGB(255, 230, 230), Left border: 4pt RGB(192, 0, 0)
-
 
 ---
 
@@ -2349,7 +2187,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Format:** Text, center-aligned
 - **Required:** Yes
 
-
 **Column B: Stakeholder Type**
 
 - **Validation:**
@@ -2361,7 +2198,6 @@ Assess severity of harm to data subjects if risk materializes:
 
 - **Format:** Text, left-aligned
 - **Required:** Yes
-
 
 **Column C: Stakeholder Name/Title**
 
@@ -2376,7 +2212,6 @@ Assess severity of harm to data subjects if risk materializes:
 
 - **Required:** Yes
 
-
 **Column D: Consultation Date**
 
 - **Data Type:** Date
@@ -2390,7 +2225,6 @@ Assess severity of harm to data subjects if risk materializes:
 
 - **Required:** Yes
 
-
 **Column E: Consultation Method**
 
 - **Validation:**
@@ -2402,7 +2236,6 @@ Assess severity of harm to data subjects if risk materializes:
 
 - **Format:** Text, left-aligned
 - **Required:** Yes
-
 
 **Column F: Key Concerns Raised**
 
@@ -2418,7 +2251,6 @@ Assess severity of harm to data subjects if risk materializes:
 
 - **Required:** Yes
 
-
 **Column G: Recommendations**
 
 - **Data Type:** Text
@@ -2431,7 +2263,6 @@ Assess severity of harm to data subjects if risk materializes:
   ```
 
 - **Required:** No
-
 
 **Column H: Action Taken**
 
@@ -2446,7 +2277,6 @@ Assess severity of harm to data subjects if risk materializes:
 
 - **Required:** Yes
 
-
 **Column I: Evidence Location**
 
 - **Data Type:** Text
@@ -2459,7 +2289,6 @@ Assess severity of harm to data subjects if risk materializes:
   ```
 
 - **Required:** Yes
-
 
 ---
 
@@ -2501,7 +2330,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Format:** Text, center-aligned
 - **Required:** Yes
 
-
 **Column B: Inherent Risk Score (Reference)**
 
 - **Formula:**
@@ -2513,7 +2341,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Format:** Number, 0 decimal places, center-aligned
 - **Auto-fill:** B2:B1000
 - **Protected:** Yes
-
 
 **Column C: Mitigation Implemented?**
 
@@ -2527,7 +2354,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Format:** Text, center-aligned
 - **Required:** Yes
 
-
 **Column D: Mitigation Effectiveness**
 
 - **Validation:**
@@ -2540,7 +2366,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Format:** Text, left-aligned, wrap text
 - **Required:** Yes
 
-
 **Column E: Risk Reduction Factor**
 
 - **Formula:**
@@ -2552,7 +2377,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Format:** Number, 2 decimal places, center-aligned
 - **Auto-fill:** E2:E1000
 - **Protected:** Yes
-
 
 **Column F: Residual Likelihood**
 
@@ -2567,7 +2391,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Auto-fill:** F2:F1000
 - **Protected:** Yes
 
-
 **Column G: Residual Risk Score**
 
 - **Formula:**
@@ -2581,7 +2404,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Protected:** Yes
 - **Conditional Formatting:** Same as Risk_Assessment!H (color by risk score)
 
-
 **Column H: Residual Risk Level**
 
 - **Formula:**
@@ -2594,7 +2416,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Auto-fill:** H2:H1000
 - **Protected:** Yes
 - **Conditional Formatting:** Same as Risk_Assessment!I
-
 
 **Column I: Gap Identified?**
 
@@ -2610,7 +2431,6 @@ Assess severity of harm to data subjects if risk materializes:
   - `=I2="Yes"` → Fill: RGB(255, 102, 102), Font: RGB(156, 0, 6)
 - **Required:** Yes
 
-
 **Column J: Gap Description**
 
 - **Data Type:** Text
@@ -2623,7 +2443,6 @@ Assess severity of harm to data subjects if risk materializes:
   ```
 
 - **Required:** If I = "Yes"
-
 
 **Column K: Remediation Plan**
 
@@ -2638,7 +2457,6 @@ Assess severity of harm to data subjects if risk materializes:
 
 - **Required:** If I = "Yes"
 
-
 #### Conditional Formatting (Row-Level)
 
 **Rule: Highlight high/critical residual risk**
@@ -2646,7 +2464,6 @@ Assess severity of harm to data subjects if risk materializes:
 - **Applies to:** $A$2:$K$1000
 - **Condition:** `=OR($H2="High", $H2="Critical")`
 - **Format:** Fill: RGB(255, 230, 230), Left border: 4pt RGB(192, 0, 0)
-
 
 ---
 
@@ -2725,20 +2542,17 @@ Assess severity of harm to data subjects if risk materializes:
 - `>=0.5, <0.8` → Fill: RGB(255, 217, 102) - Yellow
 - `<0.5` → Fill: RGB(255, 102, 102) - Red
 
-
 **A28 (Mitigation Completion Rate):**
 
 - `>=0.8` → Fill: RGB(146, 208, 80) - Green
 - `>=0.5, <0.8` → Fill: RGB(255, 217, 102) - Yellow
 - `<0.5` → Fill: RGB(255, 102, 102) - Red
 
-
 **A49 (Overall DPIA Compliance Score):**
 
 - `>=0.8` → Fill: RGB(146, 208, 80) - Green, Font: Bold
 - `>=0.6, <0.8` → Fill: RGB(255, 217, 102) - Yellow, Font: Bold
 - `<0.6` → Fill: RGB(255, 102, 102) - Red, Font: Bold
-
 
 **Dashboard Chart Elements:**
 
@@ -2748,20 +2562,17 @@ Assess severity of harm to data subjects if risk materializes:
 - Data Range: A4:A6 (Complete, In Progress, Overdue)
 - Chart Title: "DPIA Status Distribution"
 
-
 **Chart 2: Risk Distribution (Bar Chart)**
 
 - Location: F14:K21
 - Data Range: A15:A18 (Critical, High, Medium, Low)
 - Chart Title: "Inherent Risk Distribution"
 
-
 **Chart 3: Residual vs Inherent Risk (Stacked Bar)**
 
 - Location: F25:K35
 - Data Range: A15:A18 vs A35:A38
 - Chart Title: "Risk Reduction Analysis"
-
 
 ---
 

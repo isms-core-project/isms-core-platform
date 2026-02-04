@@ -43,7 +43,6 @@ This document is provided for informational and awareness purposes only.
 - This document does NOT mandate the use, prohibition, or configuration of specific CI/CD platforms, tools, or configurations.
 - This document does NOT override or extend any ISMS policy.
 
-
 All binding environment separation requirements, obligations, and governance decisions are defined exclusively in **ISMS-POL-A.8.31 (Environment Separation Policy)** and other approved ISMS documentation.
 
 This document serves solely as a technical reference to:
@@ -53,7 +52,6 @@ This document serves solely as a technical reference to:
 - Support deployment automation implementation
 - Inform technical discussions and future implementation planning
 - **This document must not be used as audit evidence of implementation**
-
 
 Use of this document does not imply implementation, compliance, or operational maturity.
 
@@ -74,7 +72,6 @@ This document provides technical reference patterns for integrating environment 
 - Future implementation planning discussions
 - Tool and platform evaluation criteria
 
-
 ## What This Document Is NOT
 
 This document does NOT:
@@ -85,7 +82,6 @@ This document does NOT:
 - Replace ISMS-POL-A.8.31 policy requirements
 - Mandate specific tools or vendors
 - Replace vendor documentation or best practices
-
 
 ## Relationship to ISMS Policy
 
@@ -140,7 +136,6 @@ Organizations choose CI/CD platforms and configurations appropriate to their nee
 - Environment validation at each stage
 - Credentials separated per environment
 
-
 ## Deployment Gates and Approvals
 
 **Approval Requirements by Environment**:
@@ -159,7 +154,6 @@ Organizations choose CI/CD platforms and configurations appropriate to their nee
 - Rollback plan documented and accessible
 - Smoke tests defined for post-deployment validation
 - Monitoring dashboards reviewed before approval
-
 
 ## Environment Validation
 
@@ -336,7 +330,6 @@ def deployToEnvironment(environment) {
 - Post-deployment smoke tests
 - Rollback plan documentation required
 
-
 ## GitLab CI/CD
 
 **.gitlab-ci.yml with Environment Separation**:
@@ -350,7 +343,6 @@ stages:
   - deploy-test
   - deploy-staging
   - deploy-production
-
 
 variables:
   APP_NAME: "webapp"
@@ -410,7 +402,6 @@ integration-tests:
     - develop
     - main
 
-
 deploy-test:
   stage: deploy-test
   image: google/cloud-sdk:alpine
@@ -461,7 +452,6 @@ deploy-production:
     - gcloud auth activate-service-account --key-file=$GCP_PROD_KEY
     - gcloud app deploy --project=prod-project
     
-
     # Post-deployment smoke tests
 
     - ./scripts/smoke-tests.sh production
@@ -492,7 +482,6 @@ deploy-production:
 - Post-deployment smoke tests for production
 - Environment URLs tracked (dev.example.com, test.example.com, etc.)
 
-
 **GitLab Protected Environments**:
 
 Configure in GitLab UI:
@@ -500,7 +489,6 @@ Configure in GitLab UI:
 - Settings → CI/CD → Protected Environments
 - Production: Only `operations-team` group can deploy
 - Staging: Only `qa-team` and `operations-team` can deploy
-
 
 ## GitHub Actions
 
@@ -515,7 +503,6 @@ on:
 
       - develop  # Triggers dev deployment
       - main    # Triggers test/staging/prod workflows
-
 
 jobs:
   build:
@@ -687,12 +674,10 @@ Repository → Settings → Environments
 - Wait timer: 5 minutes (cooling-off period)
 - Environment secrets: `AWS_PROD_ACCESS_KEY`, `AWS_PROD_SECRET_KEY`
 
-
 **Staging Environment**:
 
 - Required reviewers: `qa-team` (at least 1 approval)
 - Deployment branches: Only `main` branch
-
 
 ## Azure DevOps Pipelines
 
@@ -705,7 +690,6 @@ trigger:
 
       - develop
       - main
-
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -838,7 +822,6 @@ Pipelines → Environments → Production
 - Business hours gate: Only allow deployments 9am-5pm
 - Branch control: Only `main` branch
 
-
 ---
 
 # Infrastructure as Code (IaC) Integration
@@ -911,7 +894,6 @@ terraform-dev:
   only:
 
     - develop
-
 
 terraform-prod:
   stage: deploy-production
@@ -995,12 +977,10 @@ ansible-playbook -i inventories/prod playbooks/deploy.yml
 - Test pipeline: Uses IAM role `test-deployment-role`
 - Production pipeline: Uses IAM role `prod-deployment-role`
 
-
 **Azure Example**:
 
 - Dev pipeline: Uses Service Principal `dev-sp`
 - Production pipeline: Uses Service Principal `prod-sp`
-
 
 **Why**: If dev pipeline compromised, attacker cannot deploy to production.
 
@@ -1039,7 +1019,6 @@ pipeline {
 - `dev/database/password`
 - `test/database/password`
 - `prod/database/password`
-
 
 ## Deployment Monitoring and Alerting
 
@@ -1090,26 +1069,21 @@ echo "All smoke tests passed!"
 
 - Production and dev using same AWS IAM role → Security risk
 
-
 ❌ **No Approval Gate for Production**:
 
 - Automatic deployment to production → Untested changes reach customers
-
 
 ❌ **Production Secrets in Code**:
 
 - `DATABASE_PASSWORD=prod_secret_123` hardcoded in pipeline → Exposed in logs
 
-
 ❌ **Direct Production Deployment**:
 
 - Pipeline bypasses staging → No validation before production
 
-
 ❌ **No Rollback Plan**:
 
 - Deployment fails → No documented recovery procedure
-
 
 ## Best Practices
 

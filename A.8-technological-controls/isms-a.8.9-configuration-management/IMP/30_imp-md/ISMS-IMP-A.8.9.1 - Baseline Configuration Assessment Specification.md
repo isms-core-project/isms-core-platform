@@ -38,7 +38,6 @@
 - Technical Review: Security Architect
 - Security Review: Chief Information Security Officer (CISO)
 
-
 ### Distribution
 
 Configuration management team, system administrators, IT operations, security engineers, auditors
@@ -72,14 +71,12 @@ This assessment addresses the baseline configuration domain of Control A.8.9, sp
 - Authorized deviations from baselines (with business justification)
 - Coverage analysis by asset type and criticality level
 
-
 **Out of Scope** (covered in other assessments):
 
 - Configuration change management processes (see ISMS-IMP-A.8.9.2)
 - Configuration drift detection and monitoring (see ISMS-IMP-A.8.9.3)
 - Security hardening compliance verification (see ISMS-IMP-A.8.9.4)
 - Operational changes to configurations (change control domain)
-
 
 ## Control Alignment
 
@@ -89,7 +86,6 @@ This assessment implements requirements from:
 - **ISMS-CTX-A.8.9, Part 1**: Configuration Standards by Asset Type (reference annexes)
 - **ISO 27001:2022 A.8.9**: Configuration management control requirements
 - **Related Controls**: A.5.9 (Inventory of Information and Other Associated Assets), A.8.19 (Installation of Software on Operational Systems)
-
 
 ---
 
@@ -112,20 +108,17 @@ This assessment applies to all asset types within [Organization]'s asset invento
 - UPS/Power Distribution, Environmental Controls (HVAC)
 - Physical Security Systems
 
-
 **Endpoint Assets** (6 types):
 
 - Desktop Computers, Laptop Computers
 - Mobile Phones, Tablets
 - Thin Clients, Kiosks/Point-of-Sale
 
-
 **Network Services** (7 types):
 
 - DNS Servers, DHCP Servers, NTP Servers
 - Proxy Servers, VPN Gateways
 - Wireless Access Points, Network Management Systems
-
 
 **Application Assets** (8 types):
 
@@ -134,18 +127,15 @@ This assessment applies to all asset types within [Organization]'s asset invento
 - Custom Developed Applications, Commercial Off-the-Shelf (COTS)
 - Open Source Software
 
-
 **Cloud Assets** (5 types):
 
 - IaaS Resources (VMs, Storage), PaaS Services, SaaS Applications
 - Cloud-Native Applications, Serverless Functions
 
-
 **IoT/OT Assets** (5 types):
 
 - IoT Devices, Industrial Control Systems (ICS), SCADA Systems
 - Building Management Systems (BMS), Medical Devices
-
 
 ## Criticality Levels
 
@@ -171,7 +161,6 @@ The following asset scenarios may be excluded from baseline requirements with ap
 - Temporary assets (duration <30 days) with no access to sensitive information
 - Assets with vendor-managed configurations where baseline access is contractually restricted
 
-
 **Important**: All exclusions must be documented in the Deviation Register sheet with business justification and approval. Exclusions are reviewed during assessment refresh cycles.
 
 ---
@@ -190,7 +179,6 @@ The following asset scenarios may be excluded from baseline requirements with ap
    - Collect supporting evidence
    - Timeline: 2-3 weeks depending on asset count
 
-
 2. **Reviewer** (Configuration Manager, Team Leads):
 
    - Verify completeness of documented information
@@ -199,7 +187,6 @@ The following asset scenarios may be excluded from baseline requirements with ap
    - Identify gaps and recommend remediation
    - Timeline: 1 week
 
-
 3. **Approver** (IT Manager, CISO):
 
    - Review overall compliance metrics
@@ -207,7 +194,6 @@ The following asset scenarios may be excluded from baseline requirements with ap
    - Authorize remediation priorities
    - Sign off on assessment completion
    - Timeline: 3-5 business days
-
 
 ## Data Collection Approach
 
@@ -234,7 +220,6 @@ The following asset scenarios may be excluded from baseline requirements with ap
 - **Quarterly refresh** for Critical and High assets (every 3 months)
 - **Semi-annual refresh** for Medium and Low assets (every 6 months)
 - **Ad-hoc assessment** when significant infrastructure changes occur (data center migration, cloud transformation, major application deployment)
-
 
 **Continuous Updates**: Asset inventory and baseline repository should be updated in real-time as changes occur through change control processes. Formal assessment consolidates and validates this continuous data.
 
@@ -291,14 +276,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Common questions and troubleshooting
 - Contact information for Configuration Manager
 
-
 **Formatting**:
 
 - Title section: Bold, 16pt, dark blue background (003366)
 - Section headers: Bold, 14pt, light blue background (4472C4)
 - Body text: Regular, 11pt Calibri
 - Color legend showing: Green (Compliant), Yellow (Partial/In Progress), Red (Non-Compliant/Not Started), Gray (N/A)
-
 
 **No Data Entry**: This is a read-only informational sheet.
 
@@ -350,7 +333,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Column J (Last Reviewed Date): Date format DD.MM.YYYY
   - Allow blank: Yes (may be blank if never reviewed)
 
-
 **Formulas**:
 
 - Column D (Asset Category): `=IF(C3="","",VLOOKUP(C3,Lookup_Tables!$A$2:$B$44,2,FALSE))`
@@ -372,7 +354,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 
   - Explanation: Auto-determines compliance based on baseline status
 
-
 **Conditional Formatting**:
 
 - Column H (Baseline Status):
@@ -390,7 +371,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - If date < TODAY() AND Baseline Status ≠ "N/A" → Red fill (overdue review)
   - If date between TODAY() and TODAY()+30 → Yellow fill (due soon)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background (D9D9D9), bold text, centered alignment
@@ -398,14 +378,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Protected cells: Columns D, K, L (formula cells) are locked to prevent accidental modification
 - Hidden sheet: "Lookup_Tables" contains 43-type asset taxonomy for dropdown validation
 
-
 **Usage Notes**:
 
 - Preparer: Complete columns A-C, E-G, H-J, M for each asset
 - Auto-populated: Columns D, K, L calculate automatically
 - Start with Critical assets, then High, then Medium/Low
 - If "N/A" in Baseline Status, explain in Notes column (M) why baseline is not applicable
-
 
 ---
 
@@ -452,7 +430,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - Whole numbers only, range 0-999
   - Allow blank: Yes
 
-
 **Formulas**:
 
 - Column L (Applied to Assets Count): *Optional - requires complex COUNTIF across sheets*
@@ -463,7 +440,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 
   - Explanation: Counts how many assets reference this baseline ID in Asset_Inventory sheet column I
   - Note: This formula may not work if users don't use exact Baseline ID matching
-
 
 **Conditional Formatting**:
 
@@ -479,7 +455,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Column I (Last Updated):
   - If date > 365 days old → Yellow fill (baseline may need review)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background, bold, centered
@@ -487,14 +462,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Protected cells: Column L (formula cell) locked if formula is implemented
 - Link: Column J could contain hyperlinks to documentation (users can manually add)
 
-
 **Usage Notes**:
 
 - Preparer: Each distinct configuration baseline gets one row
 - A baseline is "approved" when it passes through governance workflow
 - Documentation location (Column J) should point to detailed configuration specs
 - Configuration Elements Count (Column K) reflects how comprehensive the baseline is (example: Windows baseline with 150 configured items vs. basic baseline with 20 items)
-
 
 ---
 
@@ -527,7 +500,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 
 - Column A: All 43 asset types (pre-populated, users do not edit)
 - Column B: Corresponding category for each asset type (pre-populated)
-
 
 **Formulas** (Examples - actual formulas depend on implementation):
 
@@ -604,7 +576,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 
   - Explanation: Dynamic text describing the gap
 
-
 **Conditional Formatting**:
 
 - Column H (Coverage %):
@@ -622,7 +593,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - "Partial" → Yellow/orange text, bold
   - "Non-Compliant" → Red text, bold
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
@@ -633,14 +603,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - Column D: =SUM(D3:D45)
   - Column H: =IF(C46-G46=0,0,D46/(C46-G46)*100) [overall coverage]
 
-
 **Usage Notes**:
 
 - This sheet auto-updates as Asset_Inventory is filled in
 - No manual data entry required
 - Use this to identify which asset types have poorest baseline coverage
 - Focus remediation efforts on rows with "Non-Compliant" status
-
 
 ---
 
@@ -687,7 +655,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 
 - Column C (Submission Date), Column F (Approval Date): Date format DD.MM.YYYY
 
-
 **Formulas**:
 
 - Column K (Days Pending):
@@ -706,7 +673,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 
   - Explanation: Approval SLA is 14 days (customize for [Organization]). Warns if approaching or exceeding SLA.
 
-
 **Conditional Formatting**:
 
 - Column E (Approval Status):
@@ -723,14 +689,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Column K (Days Pending):
   - >21 days → Red fill (significant delay)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Baseline Approval Tracking" spanning A1:N1
 - Protected cells: Columns K and L (formula cells) locked
 - Link to Baseline_Repository: Column A should match Baseline IDs
-
 
 **Usage Notes**:
 
@@ -739,7 +703,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Column H (Approval Reference) is critical for audit trail - document where approval decision is recorded
 - If "Revisions Requested", document required changes in Column M (Next Action)
 - SLA of 14 days is example; customize for [Organization]'s governance cycle
-
 
 ---
 
@@ -803,7 +766,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 
 - Column O (Target Completion Date): Date format DD.MM.YYYY
 
-
 **Formulas**:
 
 - Column D (Completeness Score):
@@ -861,14 +823,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Column O (Target Completion Date):
   - If date < TODAY() and Quality Rating = "Poor" or "Fair" → Red fill (overdue)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Baseline Documentation Quality Assessment" spanning A1:O1
 - Protected cells: Columns D, F, H, J, K, L (formula cells) locked
 - Scoring rubric: Include reference note that explains scoring methodology
-
 
 **Usage Notes**:
 
@@ -877,7 +837,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - "Verified Accurate" means documentation was compared against actual configured systems and matches
 - Remediation Priority should be "Critical" for baselines with Poor quality that apply to Critical assets
 - This assessment drives documentation improvement initiatives
-
 
 ---
 
@@ -922,7 +881,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 
 - Column D (Version Date), Column K (Superseded Date): Date format DD.MM.YYYY
 
-
 **Formulas**:
 
 - Column L (Status):
@@ -932,7 +890,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 ```
 
   - Explanation: If Superseded Date is blank, version is still current; otherwise it's been replaced
-
 
 **Conditional Formatting**:
 
@@ -947,7 +904,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - "Emergency Change" → Red text (highlights urgent changes)
   - "Security Patch" → Orange text (security-related)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
@@ -955,7 +911,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Protected cells: Column L (formula cell) locked
 - Sort: Should be sorted by Baseline ID (A) then Version Date (D) descending to show most recent first
 - Filter: Enable auto-filter on header row to allow filtering by Baseline ID, Status, Change Type
-
 
 **Usage Notes**:
 
@@ -965,7 +920,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - For audit purposes, maintain history for at least 3 years
 - "Current" versions should match the version in Baseline_Repository sheet
 - Multiple baselines can have multiple versions tracked in this sheet (one row per version)
-
 
 ---
 
@@ -1025,7 +979,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 
 - Column M (Approval Date), Column Q (Expiration Date): Date format DD.MM.YYYY
 
-
 **Formulas**:
 
 - Column O (Next Review Date):
@@ -1035,7 +988,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 ```
 
   - Explanation: Calculates next review based on approval date + review frequency
-
 
 **Conditional Formatting**:
 
@@ -1058,14 +1010,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Column Q (Expiration Date):
   - If date < TODAY() and Status = "Active" → Red fill, bold (expired deviation still active - must update status)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Configuration Baseline Deviation Register" spanning A1:R1
 - Protected cells: Column O (formula cell) locked
 - High-risk deviations (Critical/High) should be highlighted in summary metrics
-
 
 **Usage Notes**:
 
@@ -1076,7 +1026,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - When deviation is no longer needed, update Status to "No Longer Needed" and document in Notes
 - Regular review of this register is part of Configuration Manager responsibilities
 - Policy reference: ISMS-CTX-A.8.9, Part 3 (Configuration Deviation Procedures)
-
 
 ---
 
@@ -1135,7 +1084,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Target column: Gray background (D9D9D9)
 - Status column: Conditional formatting (Green/Yellow/Red)
 
-
 **Conditional Formatting**:
 
 - Overall Coverage %:
@@ -1152,14 +1100,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - "Excellent" count → Green text
   - "Poor" count → Red text if >0
 
-
 **Special Features**:
 
 - All cells protected (formula-driven, no user input)
 - Print area defined (fits on 2 pages for executive reporting)
 - Page breaks set logically between sections
 - Chart/graph area reserved (Rows 42-60) for visual representation if organization wants to add charts
-
 
 **Usage Notes**:
 
@@ -1168,7 +1114,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Use this sheet for executive reporting and governance meetings
 - Red/Yellow status items should be discussed in Approval Sign-Off section
 - This feeds into overall compliance dashboard (ISMS-IMP-A.8.9.5)
-
 
 ---
 
@@ -1221,7 +1166,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 
 - Column F (Evidence Date), Column K (Last Verified Date): Date format DD.MM.YYYY
 
-
 **Conditional Formatting**:
 
 - Column L (Verification Status):
@@ -1238,14 +1182,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - "Restricted" → Red text (high sensitivity)
   - "Confidential" → Orange text
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Evidence Register - Baseline Configuration Assessment" spanning A1:N1
 - Hyperlinks: Column G (Evidence Location) should contain clickable hyperlinks where applicable
 - Filter: Enable auto-filter to filter by Evidence Type, Related Asset, Verification Status
-
 
 **Usage Notes**:
 
@@ -1256,7 +1198,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Evidence verification should be performed at least semi-annually
 - Missing or Outdated evidence is a compliance gap that must be remediated
 - Retention Period based on [Organization]'s retention policy and regulatory requirements
-
 
 ---
 
@@ -1318,12 +1259,10 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Value cells: 11pt, white background (user entry area)
 - Attestation text: Italic, 10pt, light blue background (E7E6E6)
 
-
 **Data Validations**:
 
 - Date fields: DD.MM.YYYY format
 - Approval Decision: Dropdown ("Approved", "Approved with Conditions", "Not Approved - Revisions Required")
-
 
 **Conditional Formatting**:
 
@@ -1332,14 +1271,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - "Approved with Conditions" → Yellow fill (FFEB9C)
   - "Not Approved - Revisions Required" → Red fill (FFC7CE)
 
-
 **Special Features**:
 
 - All value cells (for names, dates, signatures, comments) are UNLOCKED for user entry
 - All other cells (labels, attestations) are PROTECTED to prevent modification
 - Print area defined to fit on single page for formal signature printing if required
 - Digital signature support: If [Organization] uses digital signatures, this section can be modified to reference digital signature validation
-
 
 **Usage Notes**:
 
@@ -1350,7 +1287,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - If "Not Approved", document required revisions in Conditions/Comments and repeat cycle
 - Signed copy (digital or printed) should be retained as part of evidence (reference in Evidence_Register)
 - This sign-off demonstrates governance oversight of configuration management
-
 
 ---
 
@@ -1364,18 +1300,15 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Criticality: Critical, High, Medium, Low
 - Baseline Status: Defined, In Progress, Not Started, N/A
 
-
 **Baseline_Repository Sheet**:
 
 - Approval Status: Approved, Pending Review, Rejected, Draft
-
 
 **Approval_Tracking Sheet**:
 
 - Approval Status: Pending Submission, Submitted, Under Review, Approved, Rejected, Revisions Requested
 - Approval Method: Change Advisory Board, Email Approval, Manager Sign-Off, Governance Committee, Automated Process
 - Risk Assessment: Low, Medium, High
-
 
 **Documentation_Assessment Sheet**:
 
@@ -1385,11 +1318,9 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Accessibility: Highly Accessible, Accessible, Limited Access, Not Accessible
 - Remediation Priority: Critical, High, Medium, Low
 
-
 **Version_Control Sheet**:
 
 - Change Type: Initial Release, Minor Update, Major Update, Security Patch, Emergency Change, Rollback
-
 
 **Deviation_Register Sheet**:
 
@@ -1398,7 +1329,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Review Frequency: Monthly, Quarterly, Semi-Annual, Annual
 - Deviation Status: Active, Under Review, Expired, Revoked, No Longer Needed
 
-
 **Evidence_Register Sheet**:
 
 - Evidence Type: Screenshot, Configuration File, Scan Report, Approval Record, Meeting Minutes, Email, Document, System Export, Video Recording, Audit Log, Other
@@ -1406,11 +1336,9 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Retention Period: 1 Year, 3 Years, 5 Years, 7 Years, Indefinite
 - Verification Status: Verified, Needs Verification, Missing, Outdated
 
-
 **Approval_Sign_Off Sheet**:
 
 - Approval Decision: Approved, Approved with Conditions, Not Approved - Revisions Required
-
 
 ## Date Format
 
@@ -1426,14 +1354,12 @@ Date fields include:
 - Evidence Date, Last Verified Date (Evidence_Register)
 - Date Prepared, Date Reviewed, Date Approved, Next Assessment Due (Approval_Sign_Off)
 
-
 ## Number Validations
 
 - Configuration Elements Count (Baseline_Repository): Whole numbers, 0-999
 - Days Pending (Approval_Tracking): Calculated field, no manual entry
 - All Score fields (Documentation_Assessment): Calculated, 0-100 range
 - Assets Affected Count (Version_Control): Whole numbers
-
 
 ## Required vs Optional Fields
 
@@ -1445,13 +1371,11 @@ Date fields include:
 - Deviation Type, Risk Assessment, Review Frequency, Status (Deviation_Register)
 - Evidence Type, Classification, Retention Period, Verification Status (Evidence_Register)
 
-
 **Optional Fields** (Allow Blank = Yes):
 
 - Notes columns across all sheets
 - Approval Date (until approved)
 - Expiration Date (if not temporary deviation)
-
 
 ---
 
@@ -1466,7 +1390,6 @@ Where:
 - Assets with Defined Baselines = COUNT(Asset_Inventory.Baseline_Status = "Defined")
 - Total In-Scope Assets = COUNT(All Assets) - COUNT(Asset_Inventory.Baseline_Status = "N/A")
 - Excluded assets (Baseline Status = "N/A") do not count against coverage
-
 
 Target: ≥85% overall coverage
 ```
@@ -1486,7 +1409,6 @@ Target: ≥85% overall coverage
 - Low criticality assets have flexibility but still need basic configuration management
 - These thresholds align with industry best practices (CIS, NIST guidelines)
 
-
 ## Documentation Quality Scoring
 
 **Four Quality Dimensions** (each scored 0-100):
@@ -1498,14 +1420,12 @@ Target: ≥85% overall coverage
    - Insufficient = 40 (significant gaps)
    - Missing = 0 (no documentation)
 
-
 2. **Accuracy** (Weight: 25%)
 
    - Verified Accurate = 100 (documentation matches actual config)
    - Mostly Accurate = 75 (minor discrepancies)
    - Contains Errors = 40 (significant inaccuracies)
    - Not Verified = 0 (accuracy unknown)
-
 
 3. **Maintainability** (Weight: 25%)
 
@@ -1514,14 +1434,12 @@ Target: ≥85% overall coverage
    - Difficult = 40 (hard to update, risk of errors)
    - Not Maintainable = 0 (cannot be updated)
 
-
 4. **Accessibility** (Weight: 25%)
 
    - Highly Accessible = 100 (central repository, searchable)
    - Accessible = 75 (available but may need access request)
    - Limited Access = 40 (only few can access)
    - Not Accessible = 0 (location unknown or severely restricted)
-
 
 **Overall Quality Score**:
 ```
@@ -1533,7 +1451,6 @@ Rating:
 - Good: 75-89
 - Fair: 50-74
 - Poor: <50
-
 
 Target: ≥75% of baselines should have "Good" or "Excellent" rating
 ```
@@ -1588,7 +1505,6 @@ Thresholds:
 - Yellow: Risk Score 20-50
 - Red: Risk Score >50
 
-
 Target: Minimize high/critical risk deviations; ensure compensating controls in place
 ```
 
@@ -1622,7 +1538,6 @@ Additional Factors:
 - Documentation quality: ≥60% of baselines should have "Good" or better rating
 - Active High/Critical risk deviations: <5
 - Approval process: No SLA breaches >30 days
-
 
 Final Assessment:
 
@@ -1695,7 +1610,6 @@ Final Assessment:
 - Populate Evidence_Register
 - Complete Preparer sign-off
 
-
 **Reviewer (Configuration Manager, Team Leads)**:
 
 - Verify completeness of Asset_Inventory
@@ -1705,7 +1619,6 @@ Final Assessment:
 - Identify remediation priorities
 - Complete Reviewer sign-off
 
-
 **Approver (IT Manager, CISO, Governance Committee)**:
 
 - Review Metrics_Summary for overall compliance status
@@ -1713,7 +1626,6 @@ Final Assessment:
 - Approve assessment or request revisions
 - Authorize remediation activities
 - Complete Approver sign-off
-
 
 ## Common Questions and Troubleshooting
 
@@ -1725,7 +1637,6 @@ A: Manually compile asset list from:
 - Cloud provider consoles (AWS, Azure, GCP)
 - Application inventory from IT Service Management system
 - Physical asset inventory records
-
 
 **Q: How detailed should baselines be?**
 A: Baselines should document:
@@ -1768,7 +1679,6 @@ A: Review frequency based on criticality:
 - Medium/Low assets: Semi-annually (every 180 days)
 - Also review when: major OS updates, security vulnerabilities discovered, significant config drift detected
 
-
 **Q: What constitutes a valid deviation?**
 A: Valid deviations require:
 
@@ -1778,7 +1688,6 @@ A: Valid deviations require:
 - Appropriate approval (manager/CISO depending on risk)
 - Regular review (to determine if still needed)
 
-
 ## Integration with Other Processes
 
 **Integration with Change Control (ISMS-IMP-A.8.9.2)**:
@@ -1787,13 +1696,11 @@ A: Valid deviations require:
 - After change is approved and implemented, update Version_Control sheet
 - New baseline version triggers re-assessment of affected assets
 
-
 **Integration with Configuration Monitoring (ISMS-IMP-A.8.9.3)**:
 
 - Baselines define "expected state" for drift detection
 - Drift alerts trigger review of Asset_Inventory and Deviation_Register
 - Frequent drift on same asset may indicate baseline needs revision
-
 
 **Integration with Security Hardening (ISMS-IMP-A.8.9.4)**:
 
@@ -1801,13 +1708,11 @@ A: Valid deviations require:
 - Hardening assessment results inform baseline updates
 - Non-compliance with hardening standards may require deviation documentation
 
-
 **Integration with Asset Inventory (A.5.9)**:
 
 - Asset_Inventory sheet should align with organization's asset register
 - Asset criticality classification comes from asset inventory process
 - Baseline status feeds back into asset inventory as attribute
-
 
 ---
 
@@ -1838,13 +1743,11 @@ For integration with ISMS-IMP-A.8.9.5 (Compliance Dashboard), the following data
 - Average documentation quality score (from Documentation_Assessment)
 - Approval process health (average days, SLA compliance) (from Approval_Tracking)
 
-
 **Export Format**: 
 
 - Dashboard script will read this workbook directly using openpyxl
 - Key cells referenced by name (e.g., Metrics_Summary!B5 for Overall Coverage %)
 - Alternatively, create hidden "Export_Data" sheet with pre-calculated values for dashboard extraction
-
 
 ## CMDB Integration (if applicable)
 
@@ -1856,20 +1759,17 @@ If [Organization] maintains a Configuration Management Database (CMDB):
 - Asset criticality classifications
 - Current baseline references (if tracked in CMDB)
 
-
 **Export to CMDB**:
 
 - Baseline status (Defined/In Progress/Not Started)
 - Last reviewed dates
 - Deviation status (for assets with active deviations)
 
-
 **Synchronization Approach**:
 
 - Initial assessment: Import asset list from CMDB
 - Ongoing: Periodic sync (weekly/monthly) to keep aligned
 - Trigger: Configuration changes in CMDB trigger update to this assessment
-
 
 ---
 
@@ -1885,13 +1785,11 @@ For audit verification, the following evidence types should be collected:
 - Asset classification documentation (proves criticality assignments)
 - Asset ownership assignments (proves accountability)
 
-
 **2. Baseline Documentation Evidence**:
 
 - Configuration baseline documents (detailed config specifications)
 - Configuration templates or scripts (for automated deployment)
 - Baseline approval records (meeting minutes, email approvals, change tickets)
-
 
 **3. Approval Workflow Evidence**:
 
@@ -1900,13 +1798,11 @@ For audit verification, the following evidence types should be collected:
 - Governance committee decisions
 - Change request tickets with approval history
 
-
 **4. Quality Assessment Evidence**:
 
 - Screenshots of actual configurations vs. baseline documentation (proves accuracy)
 - Baseline review reports (proves regular review)
 - Documentation audit findings (internal quality checks)
-
 
 **5. Deviation Evidence**:
 
@@ -1915,13 +1811,11 @@ For audit verification, the following evidence types should be collected:
 - Compensating control documentation (for high-risk deviations)
 - Deviation review meeting minutes
 
-
 **6. Version Control Evidence**:
 
 - Baseline version history logs
 - Change request records for baseline updates
 - Before/after configuration comparisons
-
 
 ## Evidence Quality Standards
 
@@ -1933,14 +1827,12 @@ For audit verification, the following evidence types should be collected:
 - **Accessible**: Stored in retrievable location, properly indexed
 - **Retained**: Kept for required retention period (typically 3+ years for ISO 27001)
 
-
 **Poor Evidence Examples**:
 
 - Undated screenshots (no way to verify when captured)
 - Verbal approvals with no documentation (not verifiable)
 - Evidence stored on individual laptops (not accessible for audit)
 - Evidence in personal email only (may be deleted, not formally retained)
-
 
 ## Evidence Repository Structure
 
@@ -1984,14 +1876,12 @@ Evidence/
 - 1-2 recent baseline updates: Trace through change control to version control
 - Approval process: Review 2-3 approval records for completeness
 
-
 **Preparation for Audit**:
 
 - Ensure Evidence_Register is complete and up-to-date
 - Verify all evidence links are accessible
 - Pre-pull commonly requested evidence (saves time during audit)
 - Review evidence for completeness (no missing signatures, dates, etc.)
-
 
 ## Evidence Verification Process
 
@@ -2010,13 +1900,11 @@ Evidence/
    - If cannot be recreated, document gap and remediation plan
    - Update Asset_Inventory or other sheets if baseline status changes due to missing evidence
 
-
 **Continuous Evidence Management**:
 
 - When new evidence is collected, immediately add to Evidence_Register
 - When baseline is updated, archive old evidence and link new evidence
 - When evidence reaches retention period end, review before destruction (some may need extension for ongoing issues)
-
 
 ---
 
@@ -2033,7 +1921,6 @@ This assessment workbook should be updated when:
 - **Audit Preparation**: Prior to internal or external audits
 - **Policy Updates**: When ISMS-POL-A.8.9 is revised
 
-
 ## Version Control
 
 **Workbook Versioning**:
@@ -2042,7 +1929,6 @@ This assessment workbook should be updated when:
 - Date in filename = Assessment completion date
 - Retain previous versions for at least 3 years (audit trail)
 - Store in version-controlled repository if available (SharePoint, Git, document management system)
-
 
 **Change Log** (maintain in Instructions sheet or separate tab):
 | Version | Date | Changes Made | Changed By |
@@ -2127,14 +2013,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Common questions and troubleshooting
 - Contact information for Configuration Manager
 
-
 **Formatting**:
 
 - Title section: Bold, 16pt, dark blue background (003366)
 - Section headers: Bold, 14pt, light blue background (4472C4)
 - Body text: Regular, 11pt Calibri
 - Color legend showing: Green (Compliant), Yellow (Partial/In Progress), Red (Non-Compliant/Not Started), Gray (N/A)
-
 
 **No Data Entry**: This is a read-only informational sheet.
 
@@ -2186,7 +2070,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Column J (Last Reviewed Date): Date format DD.MM.YYYY
   - Allow blank: Yes (may be blank if never reviewed)
 
-
 **Formulas**:
 
 - Column D (Asset Category): `=IF(C3="","",VLOOKUP(C3,Lookup_Tables!$A$2:$B$44,2,FALSE))`
@@ -2208,7 +2091,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 
   - Explanation: Auto-determines compliance based on baseline status
 
-
 **Conditional Formatting**:
 
 - Column H (Baseline Status):
@@ -2226,7 +2108,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - If date < TODAY() AND Baseline Status ≠ "N/A" → Red fill (overdue review)
   - If date between TODAY() and TODAY()+30 → Yellow fill (due soon)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background (D9D9D9), bold text, centered alignment
@@ -2234,14 +2115,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Protected cells: Columns D, K, L (formula cells) are locked to prevent accidental modification
 - Hidden sheet: "Lookup_Tables" contains 43-type asset taxonomy for dropdown validation
 
-
 **Usage Notes**:
 
 - Preparer: Complete columns A-C, E-G, H-J, M for each asset
 - Auto-populated: Columns D, K, L calculate automatically
 - Start with Critical assets, then High, then Medium/Low
 - If "N/A" in Baseline Status, explain in Notes column (M) why baseline is not applicable
-
 
 ---
 
@@ -2288,7 +2167,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - Whole numbers only, range 0-999
   - Allow blank: Yes
 
-
 **Formulas**:
 
 - Column L (Applied to Assets Count): *Optional - requires complex COUNTIF across sheets*
@@ -2299,7 +2177,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 
   - Explanation: Counts how many assets reference this baseline ID in Asset_Inventory sheet column I
   - Note: This formula may not work if users don't use exact Baseline ID matching
-
 
 **Conditional Formatting**:
 
@@ -2315,7 +2192,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Column I (Last Updated):
   - If date > 365 days old → Yellow fill (baseline may need review)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background, bold, centered
@@ -2323,14 +2199,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Protected cells: Column L (formula cell) locked if formula is implemented
 - Link: Column J could contain hyperlinks to documentation (users can manually add)
 
-
 **Usage Notes**:
 
 - Preparer: Each distinct configuration baseline gets one row
 - A baseline is "approved" when it passes through governance workflow
 - Documentation location (Column J) should point to detailed configuration specs
 - Configuration Elements Count (Column K) reflects how comprehensive the baseline is (example: Windows baseline with 150 configured items vs. basic baseline with 20 items)
-
 
 ---
 
@@ -2363,7 +2237,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 
 - Column A: All 43 asset types (pre-populated, users do not edit)
 - Column B: Corresponding category for each asset type (pre-populated)
-
 
 **Formulas** (Examples - actual formulas depend on implementation):
 
@@ -2440,7 +2313,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 
   - Explanation: Dynamic text describing the gap
 
-
 **Conditional Formatting**:
 
 - Column H (Coverage %):
@@ -2458,7 +2330,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - "Partial" → Yellow/orange text, bold
   - "Non-Compliant" → Red text, bold
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
@@ -2469,14 +2340,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - Column D: =SUM(D3:D45)
   - Column H: =IF(C46-G46=0,0,D46/(C46-G46)*100) [overall coverage]
 
-
 **Usage Notes**:
 
 - This sheet auto-updates as Asset_Inventory is filled in
 - No manual data entry required
 - Use this to identify which asset types have poorest baseline coverage
 - Focus remediation efforts on rows with "Non-Compliant" status
-
 
 ---
 
@@ -2523,7 +2392,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 
 - Column C (Submission Date), Column F (Approval Date): Date format DD.MM.YYYY
 
-
 **Formulas**:
 
 - Column K (Days Pending):
@@ -2542,7 +2410,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 
   - Explanation: Approval SLA is 14 days (customize for [Organization]). Warns if approaching or exceeding SLA.
 
-
 **Conditional Formatting**:
 
 - Column E (Approval Status):
@@ -2559,14 +2426,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Column K (Days Pending):
   - >21 days → Red fill (significant delay)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Baseline Approval Tracking" spanning A1:N1
 - Protected cells: Columns K and L (formula cells) locked
 - Link to Baseline_Repository: Column A should match Baseline IDs
-
 
 **Usage Notes**:
 
@@ -2575,7 +2440,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Column H (Approval Reference) is critical for audit trail - document where approval decision is recorded
 - If "Revisions Requested", document required changes in Column M (Next Action)
 - SLA of 14 days is example; customize for [Organization]'s governance cycle
-
 
 ---
 
@@ -2639,7 +2503,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 
 - Column O (Target Completion Date): Date format DD.MM.YYYY
 
-
 **Formulas**:
 
 - Column D (Completeness Score):
@@ -2697,14 +2560,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Column O (Target Completion Date):
   - If date < TODAY() and Quality Rating = "Poor" or "Fair" → Red fill (overdue)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Baseline Documentation Quality Assessment" spanning A1:O1
 - Protected cells: Columns D, F, H, J, K, L (formula cells) locked
 - Scoring rubric: Include reference note that explains scoring methodology
-
 
 **Usage Notes**:
 
@@ -2713,7 +2574,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - "Verified Accurate" means documentation was compared against actual configured systems and matches
 - Remediation Priority should be "Critical" for baselines with Poor quality that apply to Critical assets
 - This assessment drives documentation improvement initiatives
-
 
 ---
 
@@ -2758,7 +2618,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 
 - Column D (Version Date), Column K (Superseded Date): Date format DD.MM.YYYY
 
-
 **Formulas**:
 
 - Column L (Status):
@@ -2768,7 +2627,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 ```
 
   - Explanation: If Superseded Date is blank, version is still current; otherwise it's been replaced
-
 
 **Conditional Formatting**:
 
@@ -2783,7 +2641,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - "Emergency Change" → Red text (highlights urgent changes)
   - "Security Patch" → Orange text (security-related)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
@@ -2791,7 +2648,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Protected cells: Column L (formula cell) locked
 - Sort: Should be sorted by Baseline ID (A) then Version Date (D) descending to show most recent first
 - Filter: Enable auto-filter on header row to allow filtering by Baseline ID, Status, Change Type
-
 
 **Usage Notes**:
 
@@ -2801,7 +2657,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - For audit purposes, maintain history for at least 3 years
 - "Current" versions should match the version in Baseline_Repository sheet
 - Multiple baselines can have multiple versions tracked in this sheet (one row per version)
-
 
 ---
 
@@ -2861,7 +2716,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 
 - Column M (Approval Date), Column Q (Expiration Date): Date format DD.MM.YYYY
 
-
 **Formulas**:
 
 - Column O (Next Review Date):
@@ -2871,7 +2725,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 ```
 
   - Explanation: Calculates next review based on approval date + review frequency
-
 
 **Conditional Formatting**:
 
@@ -2894,14 +2747,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Column Q (Expiration Date):
   - If date < TODAY() and Status = "Active" → Red fill, bold (expired deviation still active - must update status)
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Configuration Baseline Deviation Register" spanning A1:R1
 - Protected cells: Column O (formula cell) locked
 - High-risk deviations (Critical/High) should be highlighted in summary metrics
-
 
 **Usage Notes**:
 
@@ -2912,7 +2763,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - When deviation is no longer needed, update Status to "No Longer Needed" and document in Notes
 - Regular review of this register is part of Configuration Manager responsibilities
 - Policy reference: ISMS-POL-A.8.9-S5.C (Configuration Deviation Procedures)
-
 
 ---
 
@@ -2971,7 +2821,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Target column: Gray background (D9D9D9)
 - Status column: Conditional formatting (Green/Yellow/Red)
 
-
 **Conditional Formatting**:
 
 - Overall Coverage %:
@@ -2988,14 +2837,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - "Excellent" count → Green text
   - "Poor" count → Red text if >0
 
-
 **Special Features**:
 
 - All cells protected (formula-driven, no user input)
 - Print area defined (fits on 2 pages for executive reporting)
 - Page breaks set logically between sections
 - Chart/graph area reserved (Rows 42-60) for visual representation if organization wants to add charts
-
 
 **Usage Notes**:
 
@@ -3004,7 +2851,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Use this sheet for executive reporting and governance meetings
 - Red/Yellow status items should be discussed in Approval Sign-Off section
 - This feeds into overall compliance dashboard (ISMS-IMP-A.8.9.5)
-
 
 ---
 
@@ -3057,7 +2903,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 
 - Column F (Evidence Date), Column K (Last Verified Date): Date format DD.MM.YYYY
 
-
 **Conditional Formatting**:
 
 - Column L (Verification Status):
@@ -3074,14 +2919,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - "Restricted" → Red text (high sensitivity)
   - "Confidential" → Orange text
 
-
 **Special Features**:
 
 - Row 2: Column headers with light gray background
 - Row 1: Title "Evidence Register - Baseline Configuration Assessment" spanning A1:N1
 - Hyperlinks: Column G (Evidence Location) should contain clickable hyperlinks where applicable
 - Filter: Enable auto-filter to filter by Evidence Type, Related Asset, Verification Status
-
 
 **Usage Notes**:
 
@@ -3092,7 +2935,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Evidence verification should be performed at least semi-annually
 - Missing or Outdated evidence is a compliance gap that must be remediated
 - Retention Period based on [Organization]'s retention policy and regulatory requirements
-
 
 ---
 
@@ -3154,12 +2996,10 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Value cells: 11pt, white background (user entry area)
 - Attestation text: Italic, 10pt, light blue background (E7E6E6)
 
-
 **Data Validations**:
 
 - Date fields: DD.MM.YYYY format
 - Approval Decision: Dropdown ("Approved", "Approved with Conditions", "Not Approved - Revisions Required")
-
 
 **Conditional Formatting**:
 
@@ -3168,14 +3008,12 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
   - "Approved with Conditions" → Yellow fill (FFEB9C)
   - "Not Approved - Revisions Required" → Red fill (FFC7CE)
 
-
 **Special Features**:
 
 - All value cells (for names, dates, signatures, comments) are UNLOCKED for user entry
 - All other cells (labels, attestations) are PROTECTED to prevent modification
 - Print area defined to fit on single page for formal signature printing if required
 - Digital signature support: If [Organization] uses digital signatures, this section can be modified to reference digital signature validation
-
 
 **Usage Notes**:
 
@@ -3186,7 +3024,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - If "Not Approved", document required revisions in Conditions/Comments and repeat cycle
 - Signed copy (digital or printed) should be retained as part of evidence (reference in Evidence_Register)
 - This sign-off demonstrates governance oversight of configuration management
-
 
 ---
 
@@ -3200,18 +3037,15 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Criticality: Critical, High, Medium, Low
 - Baseline Status: Defined, In Progress, Not Started, N/A
 
-
 **Baseline_Repository Sheet**:
 
 - Approval Status: Approved, Pending Review, Rejected, Draft
-
 
 **Approval_Tracking Sheet**:
 
 - Approval Status: Pending Submission, Submitted, Under Review, Approved, Rejected, Revisions Requested
 - Approval Method: Change Advisory Board, Email Approval, Manager Sign-Off, Governance Committee, Automated Process
 - Risk Assessment: Low, Medium, High
-
 
 **Documentation_Assessment Sheet**:
 
@@ -3221,11 +3055,9 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Accessibility: Highly Accessible, Accessible, Limited Access, Not Accessible
 - Remediation Priority: Critical, High, Medium, Low
 
-
 **Version_Control Sheet**:
 
 - Change Type: Initial Release, Minor Update, Major Update, Security Patch, Emergency Change, Rollback
-
 
 **Deviation_Register Sheet**:
 
@@ -3234,7 +3066,6 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Review Frequency: Monthly, Quarterly, Semi-Annual, Annual
 - Deviation Status: Active, Under Review, Expired, Revoked, No Longer Needed
 
-
 **Evidence_Register Sheet**:
 
 - Evidence Type: Screenshot, Configuration File, Scan Report, Approval Record, Meeting Minutes, Email, Document, System Export, Video Recording, Audit Log, Other
@@ -3242,11 +3073,9 @@ Evidence_Register → (audit trail) → Approval_Sign_Off
 - Retention Period: 1 Year, 3 Years, 5 Years, 7 Years, Indefinite
 - Verification Status: Verified, Needs Verification, Missing, Outdated
 
-
 **Approval_Sign_Off Sheet**:
 
 - Approval Decision: Approved, Approved with Conditions, Not Approved - Revisions Required
-
 
 ## Date Format
 
@@ -3262,14 +3091,12 @@ Date fields include:
 - Evidence Date, Last Verified Date (Evidence_Register)
 - Date Prepared, Date Reviewed, Date Approved, Next Assessment Due (Approval_Sign_Off)
 
-
 ## Number Validations
 
 - Configuration Elements Count (Baseline_Repository): Whole numbers, 0-999
 - Days Pending (Approval_Tracking): Calculated field, no manual entry
 - All Score fields (Documentation_Assessment): Calculated, 0-100 range
 - Assets Affected Count (Version_Control): Whole numbers
-
 
 ## Required vs Optional Fields
 
@@ -3281,13 +3108,11 @@ Date fields include:
 - Deviation Type, Risk Assessment, Review Frequency, Status (Deviation_Register)
 - Evidence Type, Classification, Retention Period, Verification Status (Evidence_Register)
 
-
 **Optional Fields** (Allow Blank = Yes):
 
 - Notes columns across all sheets
 - Approval Date (until approved)
 - Expiration Date (if not temporary deviation)
-
 
 ---
 
@@ -3302,7 +3127,6 @@ Where:
 - Assets with Defined Baselines = COUNT(Asset_Inventory.Baseline_Status = "Defined")
 - Total In-Scope Assets = COUNT(All Assets) - COUNT(Asset_Inventory.Baseline_Status = "N/A")
 - Excluded assets (Baseline Status = "N/A") do not count against coverage
-
 
 Target: ≥85% overall coverage
 ```
@@ -3322,7 +3146,6 @@ Target: ≥85% overall coverage
 - Low criticality assets have flexibility but still need basic configuration management
 - These thresholds align with industry best practices (CIS, NIST guidelines)
 
-
 ## Documentation Quality Scoring
 
 **Four Quality Dimensions** (each scored 0-100):
@@ -3334,14 +3157,12 @@ Target: ≥85% overall coverage
    - Insufficient = 40 (significant gaps)
    - Missing = 0 (no documentation)
 
-
 2. **Accuracy** (Weight: 25%)
 
    - Verified Accurate = 100 (documentation matches actual config)
    - Mostly Accurate = 75 (minor discrepancies)
    - Contains Errors = 40 (significant inaccuracies)
    - Not Verified = 0 (accuracy unknown)
-
 
 3. **Maintainability** (Weight: 25%)
 
@@ -3350,14 +3171,12 @@ Target: ≥85% overall coverage
    - Difficult = 40 (hard to update, risk of errors)
    - Not Maintainable = 0 (cannot be updated)
 
-
 4. **Accessibility** (Weight: 25%)
 
    - Highly Accessible = 100 (central repository, searchable)
    - Accessible = 75 (available but may need access request)
    - Limited Access = 40 (only few can access)
    - Not Accessible = 0 (location unknown or severely restricted)
-
 
 **Overall Quality Score**:
 ```
@@ -3369,7 +3188,6 @@ Rating:
 - Good: 75-89
 - Fair: 50-74
 - Poor: <50
-
 
 Target: ≥75% of baselines should have "Good" or "Excellent" rating
 ```
@@ -3424,7 +3242,6 @@ Thresholds:
 - Yellow: Risk Score 20-50
 - Red: Risk Score >50
 
-
 Target: Minimize high/critical risk deviations; ensure compensating controls in place
 ```
 
@@ -3458,7 +3275,6 @@ Additional Factors:
 - Documentation quality: ≥60% of baselines should have "Good" or better rating
 - Active High/Critical risk deviations: <5
 - Approval process: No SLA breaches >30 days
-
 
 Final Assessment:
 
@@ -3531,7 +3347,6 @@ Final Assessment:
 - Populate Evidence_Register
 - Complete Preparer sign-off
 
-
 **Reviewer (Configuration Manager, Team Leads)**:
 
 - Verify completeness of Asset_Inventory
@@ -3541,7 +3356,6 @@ Final Assessment:
 - Identify remediation priorities
 - Complete Reviewer sign-off
 
-
 **Approver (IT Manager, CISO, Governance Committee)**:
 
 - Review Metrics_Summary for overall compliance status
@@ -3549,7 +3363,6 @@ Final Assessment:
 - Approve assessment or request revisions
 - Authorize remediation activities
 - Complete Approver sign-off
-
 
 ## Common Questions and Troubleshooting
 
@@ -3561,7 +3374,6 @@ A: Manually compile asset list from:
 - Cloud provider consoles (AWS, Azure, GCP)
 - Application inventory from IT Service Management system
 - Physical asset inventory records
-
 
 **Q: How detailed should baselines be?**
 A: Baselines should document:
@@ -3604,7 +3416,6 @@ A: Review frequency based on criticality:
 - Medium/Low assets: Semi-annually (every 180 days)
 - Also review when: major OS updates, security vulnerabilities discovered, significant config drift detected
 
-
 **Q: What constitutes a valid deviation?**
 A: Valid deviations require:
 
@@ -3614,7 +3425,6 @@ A: Valid deviations require:
 - Appropriate approval (manager/CISO depending on risk)
 - Regular review (to determine if still needed)
 
-
 ## Integration with Other Processes
 
 **Integration with Change Control (ISMS-IMP-A.8.9.2)**:
@@ -3623,13 +3433,11 @@ A: Valid deviations require:
 - After change is approved and implemented, update Version_Control sheet
 - New baseline version triggers re-assessment of affected assets
 
-
 **Integration with Configuration Monitoring (ISMS-IMP-A.8.9.3)**:
 
 - Baselines define "expected state" for drift detection
 - Drift alerts trigger review of Asset_Inventory and Deviation_Register
 - Frequent drift on same asset may indicate baseline needs revision
-
 
 **Integration with Security Hardening (ISMS-IMP-A.8.9.4)**:
 
@@ -3637,13 +3445,11 @@ A: Valid deviations require:
 - Hardening assessment results inform baseline updates
 - Non-compliance with hardening standards may require deviation documentation
 
-
 **Integration with Asset Inventory (A.5.9)**:
 
 - Asset_Inventory sheet should align with organization's asset register
 - Asset criticality classification comes from asset inventory process
 - Baseline status feeds back into asset inventory as attribute
-
 
 ---
 
@@ -3674,13 +3480,11 @@ For integration with ISMS-IMP-A.8.9.5 (Compliance Dashboard), the following data
 - Average documentation quality score (from Documentation_Assessment)
 - Approval process health (average days, SLA compliance) (from Approval_Tracking)
 
-
 **Export Format**: 
 
 - Dashboard script will read this workbook directly using openpyxl
 - Key cells referenced by name (e.g., Metrics_Summary!B5 for Overall Coverage %)
 - Alternatively, create hidden "Export_Data" sheet with pre-calculated values for dashboard extraction
-
 
 ## CMDB Integration (if applicable)
 
@@ -3692,20 +3496,17 @@ If [Organization] maintains a Configuration Management Database (CMDB):
 - Asset criticality classifications
 - Current baseline references (if tracked in CMDB)
 
-
 **Export to CMDB**:
 
 - Baseline status (Defined/In Progress/Not Started)
 - Last reviewed dates
 - Deviation status (for assets with active deviations)
 
-
 **Synchronization Approach**:
 
 - Initial assessment: Import asset list from CMDB
 - Ongoing: Periodic sync (weekly/monthly) to keep aligned
 - Trigger: Configuration changes in CMDB trigger update to this assessment
-
 
 ---
 
@@ -3721,13 +3522,11 @@ For audit verification, the following evidence types should be collected:
 - Asset classification documentation (proves criticality assignments)
 - Asset ownership assignments (proves accountability)
 
-
 **2. Baseline Documentation Evidence**:
 
 - Configuration baseline documents (detailed config specifications)
 - Configuration templates or scripts (for automated deployment)
 - Baseline approval records (meeting minutes, email approvals, change tickets)
-
 
 **3. Approval Workflow Evidence**:
 
@@ -3736,13 +3535,11 @@ For audit verification, the following evidence types should be collected:
 - Governance committee decisions
 - Change request tickets with approval history
 
-
 **4. Quality Assessment Evidence**:
 
 - Screenshots of actual configurations vs. baseline documentation (proves accuracy)
 - Baseline review reports (proves regular review)
 - Documentation audit findings (internal quality checks)
-
 
 **5. Deviation Evidence**:
 
@@ -3751,13 +3548,11 @@ For audit verification, the following evidence types should be collected:
 - Compensating control documentation (for high-risk deviations)
 - Deviation review meeting minutes
 
-
 **6. Version Control Evidence**:
 
 - Baseline version history logs
 - Change request records for baseline updates
 - Before/after configuration comparisons
-
 
 ## Evidence Quality Standards
 
@@ -3769,14 +3564,12 @@ For audit verification, the following evidence types should be collected:
 - **Accessible**: Stored in retrievable location, properly indexed
 - **Retained**: Kept for required retention period (typically 3+ years for ISO 27001)
 
-
 **Poor Evidence Examples**:
 
 - Undated screenshots (no way to verify when captured)
 - Verbal approvals with no documentation (not verifiable)
 - Evidence stored on individual laptops (not accessible for audit)
 - Evidence in personal email only (may be deleted, not formally retained)
-
 
 ## Evidence Repository Structure
 
@@ -3820,14 +3613,12 @@ Evidence/
 - 1-2 recent baseline updates: Trace through change control to version control
 - Approval process: Review 2-3 approval records for completeness
 
-
 **Preparation for Audit**:
 
 - Ensure Evidence_Register is complete and up-to-date
 - Verify all evidence links are accessible
 - Pre-pull commonly requested evidence (saves time during audit)
 - Review evidence for completeness (no missing signatures, dates, etc.)
-
 
 ## Evidence Verification Process
 
@@ -3846,13 +3637,11 @@ Evidence/
    - If cannot be recreated, document gap and remediation plan
    - Update Asset_Inventory or other sheets if baseline status changes due to missing evidence
 
-
 **Continuous Evidence Management**:
 
 - When new evidence is collected, immediately add to Evidence_Register
 - When baseline is updated, archive old evidence and link new evidence
 - When evidence reaches retention period end, review before destruction (some may need extension for ongoing issues)
-
 
 ---
 
@@ -3869,7 +3658,6 @@ This assessment workbook should be updated when:
 - **Audit Preparation**: Prior to internal or external audits
 - **Policy Updates**: When ISMS-POL-A.8.9 is revised
 
-
 ## Version Control
 
 **Workbook Versioning**:
@@ -3878,7 +3666,6 @@ This assessment workbook should be updated when:
 - Date in filename = Assessment completion date
 - Retain previous versions for at least 3 years (audit trail)
 - Store in version-controlled repository if available (SharePoint, Git, document management system)
-
 
 **Change Log** (maintain in Instructions sheet or separate tab):
 | Version | Date | Changes Made | Changed By |

@@ -44,12 +44,10 @@ This document consists of two parts:
   - Formula Definitions
   - Cell Styling Reference
 
-
 **Target Audiences:**
 
 - **Part I:** Assessment users (QA Team, Test Managers, DevOps, Security, Application Owners)
 - **Part II:** Workbook developers (Python/Excel script maintainers)
-
 
 ---
 
@@ -72,7 +70,6 @@ This assessment documents HOW your organization tests changes before production 
 - **Production Validation:** How you verify changes work in production
 - **Testing Documentation:** How test procedures and results are documented
 
-
 ### Why This Matters
 
 This assessment verifies [Organization]'s compliance with:
@@ -80,7 +77,6 @@ This assessment verifies [Organization]'s compliance with:
 - ISO/IEC 27001:2022 Control A.8.32: Change Management (element d - testing and acceptance)
 - ISO/IEC 27001:2022 Control A.8.29: Security Testing in Development and Acceptance
 - ISMS-POL-A.8.32, Section 2.3 (Testing & Validation Requirements)
-
 
 Untested changes are the leading cause of production incidents. Proper testing catches defects before they impact users, prevents downtime, and enables confident deployments.
 
@@ -104,7 +100,6 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - [ ] Acceptance criteria documentation
 - [ ] Rollback procedure documentation
 
-
 **Recommended:**
 
 - [ ] Interview QA team about testing challenges
@@ -112,7 +107,6 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - [ ] Gather test automation reports
 - [ ] Review security testing integration
 - [ ] Identify test coverage metrics
-
 
 ### Who Should Complete This Assessment
 
@@ -127,12 +121,10 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - Database Administrators (data validation testing)
 - Performance Engineers (performance testing)
 
-
 **Reviewers:**
 
 - CISO (security testing validation)
 - IT Operations Manager (operational readiness)
-
 
 ---
 
@@ -146,14 +138,12 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - Gather test procedures and documentation
 - Review completion timeline (2-3 weeks)
 
-
 **Step 2: Testing Framework Documentation (Days 2-5)**
 
 - Document testing types performed (Sheet 2: Testing_Framework)
 - Identify unit, integration, UAT, security, performance testing
 - Assess test automation level
 - Document testing tools used
-
 
 **Step 3: Test Coverage Assessment (Days 3-6)**
 
@@ -162,14 +152,12 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - Identify coverage gaps
 - Review test metrics
 
-
 **Step 4: Acceptance Criteria (Days 4-7)**
 
 - Document acceptance criteria definition process (Sheet 4: Acceptance_Criteria)
 - Review sign-off procedures
 - Assess criteria completeness
 - Verify stakeholder involvement
-
 
 **Step 5: Rollback Procedures (Days 5-8)**
 
@@ -178,14 +166,12 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - Assess rollback success rate
 - Verify rollback triggers defined
 
-
 **Step 6: Production Validation (Days 6-9)**
 
 - Document post-deployment validation (Sheet 6: Production_Validation)
 - Review smoke testing procedures
 - Assess monitoring during deployment
 - Document validation timeframes
-
 
 **Step 7: Security Testing Integration (Days 7-10)**
 
@@ -194,7 +180,6 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - Document security test results
 - Verify Control 8.29 compliance
 
-
 **Step 8: Testing Documentation (Days 8-11)**
 
 - Assess test documentation quality (Sheet 8: Testing_Documentation)
@@ -202,30 +187,25 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - Verify test results retention
 - Document lessons learned capture
 
-
 **Step 9: Evidence Collection (Days 9-12)**
 
 - Compile supporting evidence (Sheet 9: Evidence_Register)
 - Test plans, test results, acceptance sign-offs
-
 
 **Step 10: Summary Review (Days 10-13)**
 
 - Review auto-calculated compliance (Sheet 10: Summary_Dashboard)
 - Validate gap analysis
 
-
 **Step 11: Quality Review (Days 11-14)**
 
 - Self-review against checklist
 - Peer review by Security Team
 
-
 **Step 12: Final Approval (Days 12-15)**
 
 - QA Lead approval
 - CISO sign-off (Sheet 11: Approval_Sign_Off)
-
 
 **Total Duration:** 2-3 weeks
 
@@ -247,14 +227,12 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - Test environment setup
 - Testing procedures
 
-
 **Tips:**
 
 - Not all test types required for all changes - document risk-based approach
 - Automation reduces errors and speeds testing but manual testing still valuable
 - If you only do "deploy and hope" with no testing - major gap, document honestly
 - Security testing is MANDATORY per Control 8.29 for security-relevant changes
-
 
 **Common Questions:**
 
@@ -265,14 +243,12 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - **Q:** "What's the minimum testing required?"
   - **A:** Policy requires functional + integration + rollback testing minimum. Security testing for security-relevant changes.
 
-
 **Evidence to provide:**
 
 - Test procedure documentation
 - Test automation framework documentation
 - Sample test scripts
 - Test execution reports
-
 
 ### Sheet 3: Test_Coverage
 
@@ -283,14 +259,12 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - Coverage metrics (% code coverage, test case coverage)
 - Coverage gaps identified
 
-
 **Tips:**
 
 - Higher-risk changes need more comprehensive testing
 - Standard changes can have abbreviated testing (they're pre-validated)
 - Emergency changes may have reduced testing WITH documented risk acceptance
 - 100% test coverage unrealistic - document YOUR target coverage
-
 
 **Common Questions:**
 
@@ -301,13 +275,11 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - **Q:** "Emergency changes can skip testing?"
   - **A:** Policy allows reduced testing for emergencies WITH risk acceptance. SOME testing always required.
 
-
 **Evidence to provide:**
 
 - Test coverage reports
 - Coverage metrics by application/system
 - Gap analysis showing untested areas
-
 
 ### Sheet 4: Acceptance_Criteria
 
@@ -318,14 +290,12 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - Acceptance sign-off process
 - Criteria completeness assessment
 
-
 **Tips:**
 
 - Acceptance criteria should be defined BEFORE testing, not after
 - Criteria should be measurable - "works" is not criteria, "all test cases pass" is
 - Business stakeholders should define functional criteria
 - Technical teams define technical criteria (performance, security)
-
 
 **Common Questions:**
 
@@ -336,14 +306,12 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - **Q:** "What if we don't have formal acceptance criteria?"
   - **A:** Major gap - "works in test" is subjective. Define measurable criteria.
 
-
 **Evidence to provide:**
 
 - Acceptance criteria templates
 - Sample acceptance criteria for changes
 - Sign-off records
 - Criteria definition procedures
-
 
 ### Sheet 5: Rollback_Procedures
 
@@ -355,14 +323,12 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - Rollback success rate
 - Data rollback considerations
 
-
 **Tips:**
 
 - Rollback procedures should be TESTED, not just documented
 - Database rollbacks are complex - forward fixes often better than rollback
 - Rollback decision should have clear trigger points, not just "if it fails"
 - Time-sensitive rollbacks need pre-tested procedures
-
 
 **Common Questions:**
 
@@ -373,14 +339,12 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - **Q:** "Do we test the rollback procedure?"
   - **A:** Policy requires rollback testing for high-risk changes. Verify rollback works BEFORE you need it.
 
-
 **Evidence to provide:**
 
 - Rollback procedure documentation
 - Rollback test results
 - Rollback execution examples (actual rollbacks performed)
 - Rollback decision criteria
-
 
 ### Sheet 6: Production_Validation
 
@@ -391,14 +355,12 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - Validation timeframe (how long to monitor)
 - Validation checkpoints
 
-
 **Tips:**
 
 - "Deploy and walk away" is risky - need post-deployment validation
 - Smoke testing = quick validation that basic functionality works
 - Extended monitoring for high-risk changes (24-48 hours)
 - Automated health checks better than manual checks
-
 
 **Common Questions:**
 
@@ -409,14 +371,12 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - **Q:** "Can automated monitoring replace manual validation?"
   - **A:** Partial - automated health checks are good, but human verification for complex changes recommended.
 
-
 **Evidence to provide:**
 
 - Smoke test procedures
 - Post-deployment monitoring dashboards
 - Validation checklists
 - Incident tracking showing post-deployment issues caught
-
 
 ### Sheet 7: Security_Testing
 
@@ -428,14 +388,12 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - Security testing triggers
 - Security acceptance criteria
 
-
 **Tips:**
 
 - Control 8.29 REQUIRES security testing for security-relevant changes
 - Automated vulnerability scanning is minimum
 - Manual security review for authentication, authorization, data handling changes
 - Security testing should be part of CI/CD pipeline where possible
-
 
 **Common Questions:**
 
@@ -446,14 +404,12 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - **Q:** "Who performs security testing?"
   - **A:** Security team or trained QA engineers. Document who's responsible.
 
-
 **Evidence to provide:**
 
 - Security testing procedures
 - Vulnerability scan reports
 - Security test results
 - Security sign-off records
-
 
 ### Sheet 8: Testing_Documentation
 
@@ -465,14 +421,12 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - Documentation retention
 - Lessons learned capture
 
-
 **Tips:**
 
 - Test documentation proves testing was performed (audit evidence)
 - Minimum documentation: test plan, test results, acceptance sign-off
 - Test results should be retained per record retention policy
 - Failed tests should document root cause and resolution
-
 
 **Common Questions:**
 
@@ -483,14 +437,12 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - **Q:** "How long do we keep test documentation?"
   - **A:** Per record retention policy (typically 1-7 years depending on regulations).
 
-
 **Evidence to provide:**
 
 - Test plan templates
 - Sample test plans
 - Test result repository
 - Documentation retention procedures
-
 
 ### Sheet 9: Evidence_Register
 
@@ -500,13 +452,11 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - Evidence type and last verification
 - Accessibility for auditors
 
-
 **Tips:**
 
 - Test results are KEY evidence for this assessment
 - Automated test reports better than manual test notes
 - Acceptance sign-offs prove validation occurred
-
 
 ### Sheet 10: Summary_Dashboard
 
@@ -516,7 +466,6 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - Compliance by domain (framework, coverage, acceptance, rollback, validation)
 - Critical gaps requiring attention
 
-
 ### Sheet 11: Approval_Sign_Off
 
 **What to complete:**
@@ -525,7 +474,6 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - QA Lead sign-off
 - CISO approval
 - Next review date
-
 
 ---
 
@@ -540,14 +488,12 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - CI/CD pipeline configurations
 - Test tool documentation
 
-
 **Test Coverage Evidence:**
 
 - Code coverage reports
 - Test case coverage matrices
 - Coverage metrics dashboards
 - Gap analysis reports
-
 
 **Acceptance Evidence:**
 
@@ -556,14 +502,12 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - Sign-off records (email, system approvals)
 - Acceptance checklist examples
 
-
 **Rollback Evidence:**
 
 - Rollback procedure documentation
 - Rollback test results
 - Actual rollback execution logs
 - Rollback decision criteria
-
 
 **Validation Evidence:**
 
@@ -572,7 +516,6 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - Validation checklists completed
 - Health check automated reports
 
-
 **Security Testing Evidence:**
 
 - Security testing procedures
@@ -580,14 +523,12 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - Penetration test reports
 - Security sign-off records
 
-
 **Documentation Evidence:**
 
 - Test plan repository
 - Test result archives
 - Lessons learned database
 - Documentation retention policy
-
 
 ### Evidence Best Practices
 
@@ -598,14 +539,12 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - ? Include both passed AND failed test examples (shows honest testing)
 - ? Link test coverage reports to specific applications/systems
 
-
 **Don't:**
 
 - ? Provide test plans without corresponding test results
 - ? Show only perfect test results (no failures ever)
 - ? Reference testing tools you don't actually use
 - ? Claim 100% test coverage without evidence
-
 
 ---
 
@@ -684,14 +623,12 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - [ ] Testing tools documented
 - [ ] Test procedures defined
 
-
 **Test Coverage:**
 
 - [ ] Coverage by change type documented
 - [ ] Coverage by risk level defined
 - [ ] Coverage metrics tracked
 - [ ] Coverage gaps identified
-
 
 **Acceptance Criteria:**
 
@@ -700,14 +637,12 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - [ ] Sign-off procedures defined
 - [ ] Criteria completeness assessed
 
-
 **Rollback Procedures:**
 
 - [ ] Rollback procedures documented
 - [ ] Rollback testing verified
 - [ ] Rollback triggers defined
 - [ ] Rollback success rate tracked
-
 
 **Production Validation:**
 
@@ -716,14 +651,12 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - [ ] Monitoring during deployment verified
 - [ ] Validation timeframes documented
 
-
 **Security Testing:**
 
 - [ ] Security testing procedures documented (Control 8.29)
 - [ ] Security-relevant change triggers identified
 - [ ] Security test coverage assessed
 - [ ] Security sign-off procedures defined
-
 
 **Testing Documentation:**
 
@@ -732,7 +665,6 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - [ ] Documentation quality assessed
 - [ ] Lessons learned capture verified
 
-
 **Evidence:**
 
 - [ ] Test plans available
@@ -740,13 +672,11 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - [ ] Acceptance sign-offs documented
 - [ ] All evidence accessible
 
-
 **Dashboard:**
 
 - [ ] Compliance percentage validated
 - [ ] Critical gaps identified
 - [ ] Remediation priorities set
-
 
 ---
 
@@ -760,13 +690,11 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - Validate test coverage data
 - Verify test results available
 
-
 **Step 2: Peer Review (DevOps/Development)**
 
 - Review testing integration with deployment
 - Validate test automation claims
 - Typical turnaround: 3-5 days
-
 
 **Step 3: Security Review (Security Team)**
 
@@ -774,13 +702,11 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - Validate security test coverage
 - Typical turnaround: 2-3 days
 
-
 **Step 4: CISO Approval**
 
 - Overall testing maturity assessment
 - Security testing adequacy
 - Critical gap remediation plans
-
 
 ---
 
@@ -817,7 +743,6 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 - **Title:** "ISMS-IMP-A.8.32.4 – Testing & Validation Assessment"
 - **Subtitle:** "ISO/IEC 27001:2022 - Control A.8.32: Change Management (Testing & Validation)"
 - **Styling:** Dark blue header (003366), white text, centered, 40px height
-
 
 #### Document Information Block
 ```
@@ -864,7 +789,6 @@ Review Cycle:          Quarterly
 | [NO] | Not Defined | Not defined or not documented | Red (FFC7CE) |
 | [PLANNED] | Planned | Definition planned with target date | Blue (B4C7E7) |
 | N/A | Not Applicable | Not applicable to this environment | Gray |
-
 
 #### Compliance Levels (4 entries)
 ```
@@ -962,7 +886,6 @@ Document the organization's overall testing framework, methodologies, and govern
 - Purpose/Current Value: 25
 - Compliance/Status: 18
 - Evidence/Notes: 30
-
 
 ---
 
@@ -1095,7 +1018,6 @@ Assess coverage and implementation of different test types throughout the SDLC.
 - Compliance: 15
 - Evidence: 25
 
-
 ---
 
 ## Sheet 4: Acceptance_Criteria_Management
@@ -1192,7 +1114,6 @@ Document acceptance criteria definition, validation, and sign-off processes.
 - Ownership/Exit Criteria/Method: 25
 - Compliance/Status: 15
 - Evidence: 25
-
 
 ---
 
@@ -1293,7 +1214,6 @@ Assess rollback capability, procedures, and testing for all change types.
 - Compliance/Status: 15
 - Evidence/Notes: 30
 
-
 ---
 
 ## Sheet 6: Production_Validation
@@ -1393,7 +1313,6 @@ Assess post-deployment validation procedures in production environment.
 - Compliance/Critical?/Duration: 18
 - Evidence/Owner: 25
 
-
 ---
 
 ## Sheet 7: Summary_Dashboard
@@ -1477,7 +1396,6 @@ Aggregate compliance metrics and identify gaps across all testing & validation a
 - Compliance %/Auditor Notes/Status: 18
 - Status/Notes: 30
 
-
 ---
 
 ## Sheet 8: Evidence_Register
@@ -1508,7 +1426,6 @@ Centralized evidence repository linking to all supporting documentation.
 - Collected By: 20
 - Verification Status: 18
 - Auditor Notes: 30
-
 
 ---
 
@@ -1577,7 +1494,6 @@ Assessment Frequency:   Quarterly
 - Field labels: 25
 - Values: 30 (merged across remaining columns)
 
-
 ---
 
 ## Integration Points
@@ -1591,14 +1507,12 @@ Assessment Frequency:   Quarterly
 - **ISMS-IMP-A.8.32.3:** Environment Separation Assessment
 - **ISMS-IMP-A.8.32.5:** Compliance Dashboard (consolidates this data)
 
-
 ### Related ISO 27001:2022 Controls
 
 - **Control 8.29:** Testing information (security testing integration)
 - **Control 8.25:** Secure development life cycle (testing as part of SDLC)
 - **Control 8.31:** Separation of environments (test environments)
 - **Control 8.33:** Test information (test data protection)
-
 
 ### External Integrations
 
@@ -1608,7 +1522,6 @@ Assessment Frequency:   Quarterly
 - **Performance Testing:** JMeter, Gatling, LoadRunner, k6
 - **Defect Tracking:** Jira, Bugzilla, Azure DevOps
 - **Code Coverage:** JaCoCo, Cobertura, Istanbul, Coverage.py
-
 
 ### Audit Trail Requirements
 

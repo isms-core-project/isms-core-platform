@@ -34,7 +34,6 @@
 - Compliance: Legal/Compliance Officer
 - Final Authority: Executive Management (CEO)
 
-
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -45,7 +44,6 @@
 - ISMS-IMP-A.8.32.5 (Compliance Dashboard)
 - ISMS-REF-A.8.32 (Change Management Reference - Templates, Tools, Quick Guides)
 - ISO/IEC 27001:2022 Control A.8.32
-
 
 ---
 
@@ -78,7 +76,6 @@ Change management procedures should ensure:
 - All changes maintain or improve information security
 - Risks of changes are understood and mitigated
 
-
 **Nine Mandatory Elements (ISO/IEC 27002:2022)**:
 
 | Element | Description | Section Reference |
@@ -105,7 +102,6 @@ This policy establishes [Organization]'s change management framework ensuring:
 - Rollback procedures available when changes fail
 - System availability maintained during change implementation
 
-
 **Compliance & Audit**:
 
 - Complete audit trail of all changes
@@ -113,14 +109,12 @@ This policy establishes [Organization]'s change management framework ensuring:
 - Evidence of due diligence in system modifications
 - Regulatory compliance verification
 
-
 **Operational Excellence**:
 
 - Standardized approach to changes
 - Clear accountability for change decisions
 - Efficient approval workflows based on risk
 - Continuous improvement through post-implementation review
-
 
 ## Scope
 
@@ -137,7 +131,6 @@ This policy establishes [Organization]'s change management framework ensuring:
 - Office productivity systems (email, collaboration, document management)
 - Website and web applications (public-facing and internal)
 
-
 **Change Types:**
 
 - Hardware changes (server installations, network equipment upgrades, storage expansions)
@@ -148,7 +141,6 @@ This policy establishes [Organization]'s change management framework ensuring:
 - Process changes (workflow modifications, integration changes, automation updates)
 - Documentation changes (operating procedures, configuration documentation, runbooks)
 
-
 **All Environments:**
 
 - Development (Dev)
@@ -157,7 +149,6 @@ This policy establishes [Organization]'s change management framework ensuring:
 - Production (Prod)
 - Disaster Recovery (DR)
 - Transitions between environments (promotion/deployment)
-
 
 **Out of Scope:**
 
@@ -168,14 +159,12 @@ This policy establishes [Organization]'s change management framework ensuring:
 - Human resource changes (hiring, terminations, role changes)
   - *Exception: Changes to system access/privileges follow this framework*
 
-
 **Content Changes:**
 
 - Website content updates (text, images, marketing materials)
 - Document content modifications in content management systems
 - Email/communication content
   - *Exception: Changes to website functionality or CMS configuration follow this framework*
-
 
 **Routine Operations:**
 
@@ -184,20 +173,17 @@ This policy establishes [Organization]'s change management framework ensuring:
 - Monitoring alert acknowledgments
 - Routine maintenance tasks (pre-approved as standard changes)
 
-
 **User Activities:**
 
 - User-initiated self-service actions (password resets via approved self-service portal)
 - User preference configurations within applications
 - Personal file storage and sharing (within approved limits)
 
-
 **External Service Provider Changes:**
 
 - Changes managed entirely by SaaS providers (behind the scenes)
 - Cloud provider infrastructure changes (outside customer control)
   - *Exception: Changes to customer-controlled configurations follow this framework*
-
 
 **Exclusion Rationale**: These exclusions represent activities that either (1) do not materially affect information security, (2) are managed through separate governance processes, (3) are fully automated with adequate controls, or (4) are outside the organization's control.
 
@@ -226,7 +212,6 @@ This policy does NOT:
 - **Replace technical procedures** (technical implementation in ISMS-IMP documents)
 - **Define tool configurations** (tool-specific configurations are implementation details)
 
-
 **Rationale**: Separating policy requirements from implementation guidance enables:
 
 - Policy stability despite evolving technology and change management best practices
@@ -234,7 +219,6 @@ This policy does NOT:
 - Clear distinction between governance (policy) and execution (implementation)
 - Focused audit scope (auditors verify policy compliance, not tool configurations)
 - Adaptability for different organizational contexts, industries, and risk profiles
-
 
 ## Definitions
 
@@ -298,7 +282,6 @@ This section defines change management requirements organized into four domains:
 - Dependencies on other changes
 - Communication plan
 
-
 **Assessment Criteria**: ISMS-IMP-A.8.32.1 (Change Process Assessment) verifies change request forms capture required information and change management system maintains complete records.
 
 **Exceptions**: Pre-approved standard changes may use simplified submission but SHALL still create change request record.
@@ -317,7 +300,6 @@ This section defines change management requirements organized into four domains:
 - Compliance impact (regulatory obligations, audit controls)
 - Risk level (likelihood of failure × magnitude of impact)
 
-
 **Rationale**: Understanding change impact before implementation prevents surprises, enables appropriate approval levels, and supports informed decision-making.
 
 **Assessment Criteria**: Change requests demonstrate documented impact assessment. High-risk changes show detailed analysis.
@@ -335,7 +317,6 @@ This section defines change management requirements organized into four domains:
 - Verification steps
 - Rollback triggers and procedure
 - Communication checkpoints
-
 
 **Rationale**: Detailed planning reduces implementation failures, enables smooth execution, and provides clear guidance for implementers.
 
@@ -376,7 +357,6 @@ This section defines change management requirements organized into four domains:
 - Recommend approval, deferral, or rejection
 - Review emergency changes (retrospectively for time-critical emergencies)
 
-
 **CAB Composition** (minimum):
 
 - Change Manager (chair)
@@ -395,7 +375,6 @@ This section defines change management requirements organized into four domains:
 - Emergency CAB meetings (as needed for urgent changes)
 - Virtual CAB review (for time-sensitive changes between meetings)
 
-
 **Rationale**: Multi-disciplinary review prevents single points of failure in change assessment, identifies risks implementers may miss, and provides governance oversight.
 
 **Assessment Criteria**: CAB charter documented. Meeting minutes demonstrate regular operation. Change requests show CAB review notes.
@@ -412,13 +391,11 @@ This section defines change management requirements organized into four domains:
 - Contact information for support
 - Rollback decision and communication
 
-
 **Communication Timing:**
 
 - **Planned Changes**: Minimum advance notification per [Organization]'s operational requirements
 - **Emergency Changes**: Communication as soon as safely possible
 - **Change Completion**: Confirmation to stakeholders when change complete
-
 
 **Communication Channels**: Email, service portal notifications, collaboration platforms, or other methods appropriate to [Organization]'s operations.
 
@@ -440,7 +417,6 @@ This section defines change management requirements organized into four domains:
 - Verification testing post-implementation
 - Documentation of actual steps performed
 
-
 **Implementation Windows:**
 [Organization] SHOULD establish preferred change windows (e.g., maintenance windows) to minimize business disruption while balancing operational needs.
 
@@ -459,7 +435,6 @@ This section defines change management requirements organized into four domains:
 - Security vulnerability introduced
 - Critical business function impaired
 - Rollback triggers (defined in change request) are met
-
 
 **Rollback Decision Authority**: Same approval authority as original change (or higher for emergency rollback).
 
@@ -484,7 +459,6 @@ This section defines change management requirements organized into four domains:
 - Rollback decisions and execution (if applicable)
 - Post-implementation review results
 
-
 **Record Retention**: Minimum [Organization-defined] period (recommended: 7 years for audit, 3 years for operational reference).
 
 **Rationale**: Complete records enable audit verification, incident investigation, trend analysis, and regulatory compliance demonstration.
@@ -507,7 +481,6 @@ This section defines change management requirements organized into four domains:
 - Disaster recovery procedures
 - User documentation (where applicable)
 
-
 **Update Timing**: Within [Organization-defined] timeframe (recommended: 5 business days for non-emergency changes).
 
 **Rationale**: Accurate documentation enables effective operations, supports troubleshooting, and provides knowledge continuity when personnel change.
@@ -525,7 +498,6 @@ This section defines change management requirements organized into four domains:
 - Disaster recovery procedures
 - Recovery time objectives (RTO) or recovery point objectives (RPO)
 - Backup and restoration procedures
-
 
 **Review Trigger**: All changes to in-scope systems SHALL trigger continuity plan review assessment.
 
@@ -546,7 +518,6 @@ This section defines change management requirements organized into four domains:
 - Normal changes above [Organization-defined] risk threshold
 - Standard changes when patterns suggest review needed
 
-
 **PIR Content:**
 
 - Objectives achieved vs. planned outcomes
@@ -554,7 +525,6 @@ This section defines change management requirements organized into four domains:
 - Effectiveness of planning and execution
 - User feedback and service impact
 - Lessons learned and improvement opportunities
-
 
 **PIR Timing**: Within [Organization-defined] period (recommended: 7 business days for emergency changes, 14 days for normal changes).
 
@@ -578,7 +548,6 @@ This section defines change management requirements organized into four domains:
 - Follow documented, repeatable procedures
 - Have low risk of failure
 - Have defined rollback procedures (if needed)
-
 
 **Standard Change Catalog SHALL include:**
 
@@ -608,7 +577,6 @@ Standard changes SHALL:
 - Be executed by authorized personnel
 - Include post-execution verification
 
-
 Standard changes MAY be self-service where appropriate (e.g., password resets via approved portal).
 
 **Rationale**: Even pre-approved changes need tracking for audit trail and incident correlation.
@@ -625,13 +593,11 @@ Standard changes MAY be self-service where appropriate (e.g., password resets vi
 - After any standard change failure
 - When usage patterns suggest reclassification needed
 
-
 **Review Criteria:**
 
 - Success rate remains high (>95% recommended)
 - No significant incidents caused by standard change
 - Procedure remains accurate and complete
-
 
 **Catalog Updates**: Add new standard changes from successful normal changes. Remove or reclassify standard changes with failure patterns.
 
@@ -657,7 +623,6 @@ Normal changes SHALL follow full change management process including:
 - Post-implementation verification
 - Post-implementation review (for high-risk changes)
 
-
 **Rationale**: Full process provides appropriate control for moderate and high-risk changes.
 
 **Assessment Criteria**: Sample normal change requests show complete process followed.
@@ -671,7 +636,6 @@ Normal changes SHALL follow full change management process including:
 - **Impact**: Scope of systems/users affected, business criticality, data sensitivity
 - **Likelihood**: Complexity, novelty, implementer experience, testing completeness
 - **Risk Level**: Combination of impact and likelihood
-
 
 **Risk Assessment Output**: Low / Medium / High / Critical classification determining approval authority and rigor level.
 
@@ -692,14 +656,12 @@ Normal changes SHALL follow full change management process including:
 - Blackout windows (business-critical periods)
 - Conflicts between changes (overlapping impacts)
 
-
 **Change Freeze Periods** (examples):
 
 - Year-end financial close
 - Major product launches
 - Peak business seasons
 - Major regulatory submission periods
-
 
 **Rationale**: Change calendar prevents conflicts, protects critical business periods, and enables coordination across teams.
 
@@ -721,14 +683,12 @@ Normal changes SHALL follow full change management process including:
 - **Test/QA Environment**: For integration testing and user acceptance testing
 - **Staging/Pre-Production Environment** (optional but recommended): For final validation before production
 
-
 **Environment Isolation Requirements:**
 
 - Logical or physical separation from production
 - Separate credentials and access controls
 - No direct production data access from non-production
 - Clear marking/identification of non-production systems
-
 
 **Rationale**: Separated environments enable safe testing without production impact, prevent test failures from affecting operations, and protect production data.
 
@@ -744,14 +704,12 @@ Normal changes SHALL follow full change management process including:
 - **Test → Staging**: Integration tests passed, UAT complete
 - **Staging → Production**: Final validation complete, approvals obtained
 
-
 **Promotion Controls:**
 
 - Formal sign-off at each stage
 - Verification testing at each environment
 - Documentation of promotion steps
 - Rollback capability at each stage
-
 
 **Rationale**: Controlled promotion prevents untested changes from reaching production, provides multiple validation checkpoints, and maintains change control rigor.
 
@@ -768,14 +726,12 @@ Normal changes SHALL follow full change management process including:
 - Scheduled change windows (except emergencies)
 - Changes with proper approvals
 
-
 **Production Access Controls:**
 
 - Privileged access management for production changes
 - Multi-factor authentication for production access
 - Audit logging of all production changes
 - Separation of duties (developers do not deploy to production)
-
 
 **Rationale**: Production protection prevents unauthorized changes, ensures only tested changes reach production, and creates accountability for production modifications.
 
@@ -820,14 +776,12 @@ Normal changes SHALL follow full change management process including:
 - Process restricted or confidential data
 - Affect cryptographic implementations
 
-
 **Security Testing Types:**
 
 - Vulnerability scanning (automated)
 - Security configuration review
 - Penetration testing (for high-risk changes to external interfaces)
 - Code security review (for application changes)
-
 
 **Integration with Control 8.29**: Security testing requirements align with ISMS-POL-A.8.25-26-29 (Secure Development Lifecycle).
 
@@ -848,7 +802,6 @@ Normal changes SHALL follow full change management process including:
 - No critical or high-severity defects
 - User acceptance obtained (where applicable)
 
-
 **Acceptance Sign-Off**: Required before production deployment for medium and high-risk changes.
 
 **Rationale**: Clear acceptance criteria prevent subjective "looks good" assessments, ensure changes truly ready for production, and document formal acceptance.
@@ -867,7 +820,6 @@ Normal changes SHALL follow full change management process including:
 - If production data required for testing, data SHALL be masked/anonymized per ISMS-POL-A.8.11 (Data Masking)
 - Synthetic test data SHOULD be used where feasible
 - Test data SHALL be classified and protected per ISMS-POL-A.5.12 (Classification of Information)
-
 
 **Integration with Control 8.33**: Test data requirements align with ISO/IEC 27001:2022 Control 8.33 (Test Information).
 
@@ -893,14 +845,12 @@ Normal changes SHALL follow full change management process including:
 - Addressing urgent regulatory requirement
 - Mitigating active data breach
 
-
 **Emergency changes SHALL NOT be used for:**
 
 - Convenience or schedule pressure
 - Poor planning
 - Routine work
 - Desired features
-
 
 **Rationale**: Emergency designation enables expedited process but requires strong justification. Overuse of emergency changes indicates process failure.
 
@@ -931,14 +881,12 @@ Emergency changes SHALL obtain approval from:
 - Additional approvals as feasible given time constraints
 - Retrospective CAB review within [Organization-defined] period (recommended: 24-48 hours)
 
-
 **Approval Documentation:**
 
 - Emergency justification
 - Assessed risk and impact
 - Alternative options considered
 - Risk acceptance decision
-
 
 **Rationale**: Expedited approval enables rapid response while maintaining executive oversight and accountability.
 
@@ -956,14 +904,12 @@ Emergency changes SHALL undergo testing appropriate to time constraints:
 - **Preferred**: Limited testing in test environment
 - **If no testing possible**: Documented risk acceptance and rollback plan
 
-
 **Testing Shortcuts Permitted (documented and justified):**
 
 - Abbreviated test cases
 - Testing in production with monitoring
 - Parallel deployment with fallback
 - Testing limited to critical functionality
-
 
 **Rationale**: Balances urgency with control. Some testing better than no testing. Risk acceptance explicit when testing not feasible.
 
@@ -982,7 +928,6 @@ Emergency changes SHALL undergo testing appropriate to time constraints:
 - Change effectiveness
 - Process improvements to prevent future emergencies
 - Whether change should be added to Standard Change Catalog
-
 
 **Review Participants**: Change Manager, CISO, CAB members, implementers.
 
@@ -1026,7 +971,6 @@ Timeframes SHALL be reviewed annually during policy review and updated to reflec
 - Tracks change metrics and trends
 - Drives continuous improvement
 
-
 **Change Advisory Board (CAB)**:
 
 - Reviews and recommends on normal and emergency changes
@@ -1034,13 +978,11 @@ Timeframes SHALL be reviewed annually during policy review and updated to reflec
 - Assesses risks and impacts
 - Multi-disciplinary membership (IT Ops, Security, Business, SMEs)
 
-
 **Change Requestor**:
 
 - Submits change requests with complete information
 - Obtains business justification and sponsorship
 - Participates in impact assessment
-
 
 **Change Implementer**:
 
@@ -1049,14 +991,12 @@ Timeframes SHALL be reviewed annually during policy review and updated to reflec
 - Performs post-implementation verification
 - Documents implementation steps and issues
 
-
 **System Owner**:
 
 - Reviews changes to owned systems
 - Provides impact assessment for owned systems
 - Approves changes per approval authority matrix
 - Accountable for system availability and security
-
 
 **CISO / Information Security**:
 
@@ -1065,7 +1005,6 @@ Timeframes SHALL be reviewed annually during policy review and updated to reflec
 - Approves high-risk changes
 - Monitors change-related security incidents
 
-
 **IT Operations Manager**:
 
 - Approves medium and high-risk changes
@@ -1073,13 +1012,11 @@ Timeframes SHALL be reviewed annually during policy review and updated to reflec
 - Coordinates change windows
 - Resolves conflicts and escalations
 
-
 **Executive Management**:
 
 - Approves critical-risk changes
 - Provides strategic direction for change management
 - Receives change metrics and risk reporting
-
 
 ## RACI Matrix
 
@@ -1101,7 +1038,6 @@ Timeframes SHALL be reviewed annually during policy review and updated to reflec
 - Report policy effectiveness to executive management
 - Authorize policy exceptions
 
-
 ## Policy Lifecycle
 
 ### Policy Review Schedule
@@ -1113,7 +1049,6 @@ Timeframes SHALL be reviewed annually during policy review and updated to reflec
 - Led by: Change Manager
 - Participants: CAB, Security Team, IT Operations, Legal/Compliance
 
-
 **Triggered Reviews**:
 
 - ISO/IEC 27001 standard updates affecting Control 8.32
@@ -1122,7 +1057,6 @@ Timeframes SHALL be reviewed annually during policy review and updated to reflec
 - Technology changes (new change management tools)
 - Major change management incidents or failures
 - Audit findings requiring policy updates
-
 
 ### Policy Update Process
 
@@ -1143,7 +1077,6 @@ Timeframes SHALL be reviewed annually during policy review and updated to reflec
 - Immediate implementation
 - Retrospective stakeholder review within 30 days
 
-
 ## Exception Management
 
 ### When Exceptions Are Appropriate
@@ -1155,14 +1088,12 @@ Timeframes SHALL be reviewed annually during policy review and updated to reflec
 - Alternative compensating controls provide equivalent protection
 - Emergency situations (formalized via emergency change process)
 
-
 **Exceptions NOT Appropriate:**
 
 - Convenience or preference
 - Resource constraints
 - Disagreement with policy intent
 - "We've always done it this way"
-
 
 ### Exception Request Process
 
@@ -1175,13 +1106,11 @@ Timeframes SHALL be reviewed annually during policy review and updated to reflec
 - Residual risk assessment
 - Exception owner and approver
 
-
 **Exception Approval Authority:**
 
 - Standard requirement exceptions: Change Manager
 - Critical requirement exceptions: CISO
 - All exceptions: Risk accepted by System Owner
-
 
 **Exception Review**: All exceptions reviewed quarterly. Expired exceptions require renewal or remediation.
 
@@ -1197,13 +1126,11 @@ Timeframes SHALL be reviewed annually during policy review and updated to reflec
 - Average change duration
 - CAB meeting frequency and attendance
 
-
 **Compliance Reporting**:
 
 - Quarterly compliance dashboard to CISO
 - Annual compliance summary to Executive Management
 - Audit findings tracking and remediation
-
 
 ## Integration with ISMS
 
@@ -1216,14 +1143,12 @@ Timeframes SHALL be reviewed annually during policy review and updated to reflec
 - **A.8.31** (Environment Separation): Dev/Test/Prod isolation
 - **A.8.33** (Test Information): Production data protection in test
 
-
 **Information Flows:**
 
 - **Change → Incident**: Failed changes trigger incident response
 - **Change → Asset**: Changes update asset inventory
 - **Change → Continuity**: Infrastructure changes update continuity plans
 - **Change → Documentation**: Changes update system documentation
-
 
 ---
 
@@ -1239,13 +1164,11 @@ Change management (A.8.32) integrates with six related ISO 27001 controls:
 - Change management considers continuity impact
 - DR procedures updated after relevant changes
 
-
 **Control 5.37 - Documented Operating Procedures**:
 
 - Operational procedures updated following system changes
 - Runbooks and troubleshooting guides maintained current
 - Documentation updates tracked in change records
-
 
 **Control 8.19 - Installation of Software on Operational Systems**:
 
@@ -1253,13 +1176,11 @@ Change management (A.8.32) integrates with six related ISO 27001 controls:
 - Installation controls enforced through change approval
 - Software changes subject to testing requirements
 
-
 **Control 8.29 - Security Testing in Development and Acceptance**:
 
 - Security testing integrated into change testing procedures
 - Security-relevant changes undergo additional validation
 - Security test results required for acceptance
-
 
 **Control 8.31 - Separation of Development, Testing, and Production**:
 
@@ -1267,13 +1188,11 @@ Change management (A.8.32) integrates with six related ISO 27001 controls:
 - Production environment protected from unauthorized changes
 - Testing performed in non-production environments
 
-
 **Control 8.33 - Test Information**:
 
 - Production data protected in test environments
 - Test data requirements enforced through change process
 - Data masking/anonymization validated before testing
-
 
 ## Implementation Resources
 
@@ -1287,11 +1206,9 @@ Change management (A.8.32) integrates with six related ISO 27001 controls:
 - **ISMS-IMP-A.8.32.4**: Testing & Validation Assessment (testing procedures, acceptance criteria, security testing integration)
 - **ISMS-IMP-A.8.32.5**: Compliance Dashboard (consolidated metrics, gap analysis, executive reporting, KPI tracking)
 
-
 **Technical Reference** (non-ISMS):
 
 - **ISMS-REF-A.8.32**: Change Management Reference (tool requirements, form templates, risk assessment methodology, quick reference guide)
-
 
 **Assessment Tools**:
 
@@ -1300,7 +1217,6 @@ Change management (A.8.32) integrates with six related ISO 27001 controls:
 - KPI calculations and gap analysis
 - Evidence registers and remediation tracking
 - Executive dashboard with trend analysis
-
 
 **Automation**: All assessment workbooks generated via Python scripts to ensure consistency, repeatability, and maintainability.
 
@@ -1313,14 +1229,12 @@ Change management (A.8.32) integrates with six related ISO 27001 controls:
 - How to request changes
 - Recognizing unauthorized changes
 
-
 **Technical Training** (change implementers):
 
 - Change management process and tools training
 - Standard Change Catalog procedures
 - Testing requirements and verification
 - Rollback procedure execution
-
 
 **CAB Training** (CAB members):
 
@@ -1329,14 +1243,12 @@ Change management (A.8.32) integrates with six related ISO 27001 controls:
 - Risk classification methodology
 - Conflict identification
 
-
 **Management Training** (approval authorities):
 
 - Approval authority responsibilities
 - Risk acceptance decisions
 - Exception management
 - Metrics interpretation
-
 
 ---
 

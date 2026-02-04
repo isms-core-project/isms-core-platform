@@ -45,7 +45,6 @@ This document consists of two parts:
   - Formulas & Calculations
   - Dashboard Design
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -68,7 +67,6 @@ This is the **MASTER DASHBOARD** that consolidates all four domain assessments i
 - **Action plan** (prioritized remediation roadmap)
 - **CISO certification** (formal sign-off for audit)
 
-
 ### What You'll Produce
 
 - ✅ **Executive Summary** - One-page dashboard with traffic lights
@@ -78,7 +76,6 @@ This is the **MASTER DASHBOARD** that consolidates all four domain assessments i
 - ✅ **Evidence Index** - Master reference to all evidence
 - ✅ **Action Plan** - 30-day/90-day/180-day remediation timeline
 - ✅ **CISO Certification** - Final approval for audit readiness
-
 
 **Key Principle:** This dashboard answers the executive question: *"Are we compliant with ISO 27001:2022 Control A.8.23, and if not, what's the plan to get there?"*
 
@@ -106,7 +103,6 @@ This is the **MASTER DASHBOARD** that consolidates all four domain assessments i
   - Gap prioritization and risk acceptance
   - Final certification
 
-
 **Supporting Roles:**
 
 1. **Compliance Officer** - Evidence verification, audit readiness checks
@@ -121,7 +117,6 @@ This is the **MASTER DASHBOARD** that consolidates all four domain assessments i
 - Executive communication (translate technical to business)
 - Understanding of ISO 27001:2022 requirements
 
-
 **Time Commitment:**
 
 - **Initial consolidation:** 4-6 hours
@@ -130,7 +125,6 @@ This is the **MASTER DASHBOARD** that consolidates all four domain assessments i
 - **Action plan development:** 2-3 hours
 - **CISO review and certification:** 1-2 hours
 - **Total:** 12-18 hours spread over 1 week
-
 
 ## Expected Outputs
 
@@ -162,7 +156,6 @@ Upon completion, you will have:
 - [ ] **ISMS-IMP-A.8.23.3** (Policy Configuration) - APPROVED and FINAL
 - [ ] **ISMS-IMP-A.8.23.4** (Monitoring & Response) - APPROVED and FINAL
 
-
 **Status Check:** All four assessments must have:
 
 - ✅ Three-level approval completed
@@ -170,13 +163,11 @@ Upon completion, you will have:
 - ✅ Gap analyses completed with owners and dates
 - ✅ Assessment status = "Final" or "Approved"
 
-
 **If any assessment is incomplete:**
 
 - **Action:** Complete missing assessments FIRST
 - **Do NOT proceed** with dashboard consolidation
 - **Rationale:** Dashboard scores will be inaccurate and misleading
-
 
 ### Source Data Access
 
@@ -185,14 +176,12 @@ Upon completion, you will have:
 - [ ] Access to policy documents (ISMS-POL-A.8.23 complete series)
 - [ ] Historical data (if tracking trends quarter-over-quarter)
 
-
 ### Organizational Context
 
 - [ ] Risk appetite statement (what compliance level is acceptable?)
 - [ ] Budget constraints (what resources available for remediation?)
 - [ ] Timeline expectations (when is audit scheduled?)
 - [ ] Executive priorities (what gaps matter most to leadership?)
-
 
 ## Required Information
 
@@ -207,7 +196,6 @@ Before starting consolidation, gather:
 - Licensing/support status
 - Infrastructure gaps (critical/high priority)
 
-
 **From Assessment 2 (Network Coverage):**
 
 - Network coverage percentage
@@ -215,14 +203,12 @@ Before starting consolidation, gather:
 - Bypass risks identified
 - Coverage gaps
 
-
 **From Assessment 3 (Policy Configuration):**
 
 - Policy compliance status
 - Active exceptions count
 - Threat categories blocked
 - Configuration gaps
-
 
 **From Assessment 4 (Monitoring & Response):**
 
@@ -232,7 +218,6 @@ Before starting consolidation, gather:
 - False positive rate
 - Monitoring gaps
 
-
 ### Organizational Targets
 
 Define acceptable thresholds:
@@ -241,7 +226,6 @@ Define acceptable thresholds:
 - **Critical gaps:** Target = 0 (may accept residual risk with approval)
 - **Maturity level:** Target ≥ Level 3 (Defined processes)
 - **Evidence verification:** Target = 100% verified
-
 
 ## Stakeholder Coordination
 
@@ -253,7 +237,6 @@ Schedule sessions with:
    - Clarify gap priorities
    - Confirm evidence status
 
-
 2. **CISO** (2-3 hours total, may span multiple sessions)
 
    - Review executive summary
@@ -261,18 +244,15 @@ Schedule sessions with:
    - Action plan approval
    - Final certification
 
-
 3. **Compliance Officer** (1 hour)
 
    - Audit readiness verification
    - Evidence completeness check
 
-
 4. **Finance/Procurement** (30 mins, if needed)
 
    - Budget for remediation actions
    - License renewal planning
-
 
 ---
 
@@ -352,18 +332,15 @@ Output: `ISMS-IMP-A.8.23.5_Compliance_Dashboard_YYYYMMDD.xlsx`
 - Sheet 4 (Capability Requirements): Compliance rate
 - Sheet 8 (Gap Analysis): Gap count by severity
 
-
 **From Assessment 2 (Network Coverage):**
 
 - Relevant sheets: Coverage percentage, bypass risks
 - Gap Analysis: Coverage gaps
 
-
 **From Assessment 3 (Policy Configuration):**
 
 - Policy sheets: Threat categories blocked, active exceptions
 - Gap Analysis: Configuration gaps
-
 
 **From Assessment 4 (Monitoring & Response):**
 
@@ -372,7 +349,6 @@ Output: `ISMS-IMP-A.8.23.5_Compliance_Dashboard_YYYYMMDD.xlsx`
 - Sheet 5 (Incident Response): SLA compliance rate
 - Sheet 7 (False Positive Management): FP rate
 - Gap Analysis: Monitoring gaps
-
 
 ### Step 3: Calculate Domain Scores
 
@@ -404,7 +380,6 @@ Default weighting (adjust based on organizational priorities):
 - Domain 3 (Policy): 25%
 - Domain 4 (Monitoring): 25%
 
-
 **Example:**
 
 Overall Score = (
@@ -422,7 +397,6 @@ Use the maturity rubric (Section 6.2) to determine Control A.8.23 maturity:
 - **Level 3 (Defined):** Documented, standardized, repeatable processes
 - **Level 4 (Managed):** Measured, monitored, data-driven decisions
 - **Level 5 (Optimizing):** Continuous improvement, industry-leading
-
 
 **Assessment:** Based on evidence from all four domains, what level best describes your organization?
 
@@ -471,13 +445,11 @@ Use the maturity rubric (Section 6.2) to determine Control A.8.23 maturity:
 - **91-180 days:** Medium gaps
 - **181-365 days:** Low priority & nice-to-have improvements
 
-
 **Resource Planning:**
 
 - Estimate effort (hours/days) per action
 - Identify budget needs (licenses, consultants, tools)
 - Check resource availability (can team handle this workload?)
-
 
 ### Step 8: Create Evidence Index
 
@@ -501,7 +473,6 @@ Priority evidence for audit:
 - ✅ Incident handling proof (PIR reports, tickets)
 - ✅ Approval signatures (all three levels for each assessment)
 
-
 **Evidence Index Format:**
 
  | Evidence ID | Source Domain | Title | Type | Location | Verified? | 
@@ -522,13 +493,11 @@ Priority evidence for audit:
 - Maturity Level: 3/5 (Defined)
 - Audit Readiness: Conditional (3 critical gaps requiring remediation)
 
-
 **Section 2: Key Findings**
 
 - ✅ **Strengths:** Comprehensive infrastructure deployed, 92% network coverage, documented policies
 - ⚠️ **Areas for Improvement:** HTTPS inspection limited, SIEM integration incomplete, some FP issues
 - 🔴 **Critical Gaps:** License expiring (Infrastructure), Remote users unprotected (Coverage), No SIEM integration (Monitoring)
-
 
 **Section 3: Action Plan**
 
@@ -537,13 +506,11 @@ Priority evidence for audit:
 - Budget required: €50K for licenses, SIEM integration project
 - Owner: CISO with support from Security Engineering and IT Ops
 
-
 **Section 4: Recommendation**
 
 - Approve action plan and budget
 - Accept residual risk for low-priority gaps (documented)
 - Proceed with ISO 27001 audit with noted conditional status
-
 
 ### Step 10: CISO Review & Certification
 
@@ -583,13 +550,11 @@ Priority evidence for audit:
 - **Organization:** Your organization name
 - **Assessment Period:** Date range covered (e.g., "Q4 2025 - Q1 2026")
 
-
 ### Key Items to Understand
 
 - **Scoring Methodology:** How the 0-100% score is calculated
 - **Maturity Levels:** The 1-5 scale definitions
 - **Traffic Light System:** 🟢 Green (compliant), 🟡 Yellow (at risk), 🔴 Red (urgent)
-
 
 ---
 
@@ -610,7 +575,6 @@ Priority evidence for audit:
   - 🟡 Yellow: 70-89%
   - 🔴 Red: <70%
 
-
 **Q: Maturity Level**
 
 - **Value:** 1-5 (from Section 5 maturity assessment)
@@ -619,7 +583,6 @@ Priority evidence for audit:
   - 🟢 Green: Level 4-5
   - 🟡 Yellow: Level 3
   - 🔴 Red: Level 1-2
-
 
 **Q: Audit Readiness**
 
@@ -630,7 +593,6 @@ Priority evidence for audit:
   - **Conditional:** Critical gaps exist but remediation in progress
   - **No:** Significant gaps, not ready for audit
 
-
 **Section B: Domain Scores**
 
 For each domain (1-4):
@@ -638,7 +600,6 @@ For each domain (1-4):
 - **Score:** Pull from Sheet 7 domain scoring
 - **Status:** Traffic light (green/yellow/red)
 - **Key Finding:** One-sentence summary
-
 
 **Examples:**
 
@@ -662,7 +623,6 @@ This is auto-populated from domain assessments. Verify values are correct by cro
 - **Gaps:** Total open gaps (#), Critical/High gaps (#)
 - **Evidence:** Evidence items (#), verification rate (%)
 
-
 **Traffic Light Logic:**
 
 For each metric:
@@ -671,7 +631,6 @@ For each metric:
 - 🟡 Yellow: Close to target (80-99% of target)
 - 🔴 Red: Below target (<80% of target)
 
-
 **Section D: Risk Summary**
 
 **For each risk level (Critical, High, Medium, Low):**
@@ -679,7 +638,6 @@ For each metric:
 - **Count:** Number of gaps at this risk level
 - **Trend:** ↑ Increasing, → Stable, ↓ Decreasing (compared to last quarter)
 - **Action Required:** Yes/No (based on count and risk level)
-
 
 **Decision Matrix:**
 
@@ -713,13 +671,11 @@ These sheets consolidate key findings from each domain assessment.
 - **Section B:** Capability assessment summary (8 key capabilities - Yes/No/Partial status)
 - **Section C:** Domain 1 metrics (solution count, implementation rate, critical gaps)
 
-
 ### Key Finding Examples
 
 - "5 filtering solutions deployed across perimeter, endpoints, and cloud"
 - "HTTPS inspection capability exists but not enabled (privacy concerns)"
 - "License renewal required for 2 solutions by end of Q1"
-
 
 **Sheet 4: Coverage Summary**
 
@@ -729,13 +685,11 @@ These sheets consolidate key findings from each domain assessment.
 - **Section B:** Coverage by segment type (LAN, WLAN, Remote, etc.)
 - **Section C:** Domain 2 metrics (total segments, coverage rate, bypass risks)
 
-
 ### Key Finding Examples
 
 - "92% network coverage achieved across 23 identified segments"
 - "Remote VPN users not covered - cloud filtering deployment planned Q2"
 - "3 bypass risks identified (guest WiFi, IoT network, legacy system)"
-
 
 **Sheet 5: Policy Summary**
 
@@ -745,13 +699,11 @@ These sheets consolidate key findings from each domain assessment.
 - **Section B:** Filtering philosophy (Restrictive / Trust-based / Hybrid)
 - **Section C:** Domain 3 metrics (threat categories blocked, active exceptions, policy review status)
 
-
 ### Key Finding Examples
 
 - "Hybrid filtering approach - mandatory threats blocked, category filtering selective"
 - "8 active exceptions with documented business justification and approval"
 - "Policy review completed quarterly, last review: 10.01.2026"
-
 
 **Sheet 6: Monitoring Summary**
 
@@ -761,13 +713,11 @@ These sheets consolidate key findings from each domain assessment.
 - **Section B:** SLA performance (5 key metrics vs. targets)
 - **Section C:** Domain 4 metrics (log sources, alert rules, KPIs, open incidents/FPs)
 
-
 ### Key Finding Examples
 
 - "28 log sources configured, 42 alert rules active, 15 KPIs tracked"
 - "SLA compliance 94% (target 95%) - 2 incidents exceeded SLA"
 - "FP rate 0.8% (within target <1%) - effective tuning process in place"
-
 
 ---
 
@@ -807,7 +757,6 @@ These sheets consolidate key findings from each domain assessment.
 - Level 4: Documentation includes metrics and KPIs
 - Level 5: Documentation continuously updated based on lessons learned
 
-
 **Tool Implementation**
 
 - Level 1: No tools or ad-hoc tools
@@ -815,7 +764,6 @@ These sheets consolidate key findings from each domain assessment.
 - Level 3: Enterprise tools with proper configuration
 - Level 4: Tools integrated with SIEM, automation
 - Level 5: Advanced capabilities (ML, AI, automation)
-
 
 **Operational Effectiveness**
 
@@ -825,7 +773,6 @@ These sheets consolidate key findings from each domain assessment.
 - Level 4: Measured and optimized operations
 - Level 5: Industry-leading performance
 
-
 **Measurement & Metrics**
 
 - Level 1: No metrics tracked
@@ -834,7 +781,6 @@ These sheets consolidate key findings from each domain assessment.
 - Level 4: Data-driven decision making
 - Level 5: Predictive analytics, benchmarking
 
-
 **Continuous Improvement**
 
 - Level 1: No improvement process
@@ -842,7 +788,6 @@ These sheets consolidate key findings from each domain assessment.
 - Level 3: Regular review cycle (quarterly)
 - Level 4: Systematic improvement based on metrics
 - Level 5: Innovation, industry contributions
-
 
 **Average Maturity = Mean of 5 dimensions**
 
@@ -874,7 +819,6 @@ These sheets consolidate key findings from each domain assessment.
 - **Conditional:** Some = Partial, critical gaps have remediation plans
 - **Not Ready:** Multiple = No, no clear remediation plan
 
-
 **Section D: Compliance Statement**
 
 Auto-generated summary:
@@ -902,52 +846,42 @@ Auto-generated summary:
 
 - Original ID from source domain (e.g., "GAP1-003", "GAP2-001")
 
-
 **Q2: Source_Domain**
 
 - Which domain? (1-Infrastructure, 2-Coverage, 3-Policy, 4-Monitoring)
-
 
 **Q3: Gap_Category**
 
 - From source domain (e.g., Capability, Coverage, Configuration, Logging)
 
-
 **Q4: Gap_Description**
 
 - Copy from source (be specific)
-
 
 **Q5: Risk_Impact**
 
 - Dropdown: Critical / High / Medium / Low
 - Based on security and compliance impact
 
-
 **Q6: Current_State**
 
 - What is the current situation?
-
 
 **Q7: Target_State**
 
 - What should it be?
 
-
 **Q8: Remediation_Action**
 
 - What needs to be done?
-
 
 **Q9: Owner**
 
 - Who is responsible?
 
-
 **Q10: Target_Date**
 
 - When must it be resolved?
-
 
 **Q11: Status**
 
@@ -957,11 +891,9 @@ Auto-generated summary:
 - **Resolved:** Completed and verified
 - **Accepted:** Risk formally accepted by CISO, no remediation
 
-
 **Q12: Priority_Rank**
 
 - Number 1-60 (1 = highest priority)
-
 
 **Priority Ranking Algorithm:**
 
@@ -980,7 +912,6 @@ Calculate for each domain:
 - Count by risk level (Critical, High, Medium, Low)
 - Open gaps
 
-
 **Example:**
 
  | Domain | Total | Critical | High | Medium | Low | Open | 
@@ -998,7 +929,6 @@ Calculate for each domain:
 - How many Open vs. Resolved? (Progress indicator)
 - What's the trend vs. last quarter? (Improvement or degradation?)
 
-
 ---
 
 ## Sheet 9: Evidence Index
@@ -1015,26 +945,22 @@ From all 400+ evidence items across Assessments 1-4, select the **50 most import
 
    - Complete ISMS-POL-A.8.23 series (all 13 documents)
 
-
 2. **Solution Proof (10 items)**
 
    - Capability demonstration (screenshots showing features enabled)
    - Licensing/support contracts (active and current)
    - Deployment diagrams (architecture)
 
-
 3. **Coverage Proof (5 items)**
 
    - Network diagrams showing filtering placement
    - Coverage verification (test results, logs)
-
 
 4. **Configuration Proof (10 items)**
 
    - Threat protection configs (screenshots, exports)
    - Category filtering configs
    - Exception approvals (all documented)
-
 
 5. **Monitoring Proof (10 items)**
 
@@ -1043,12 +969,10 @@ From all 400+ evidence items across Assessments 1-4, select the **50 most import
    - Dashboards (screenshots with real data)
    - Incident handling (PIR reports)
 
-
 6. **Approvals (5 items)**
 
    - Three-level approval sign-offs for each assessment
    - CISO certification (this dashboard)
-
 
 **For each evidence item:**
 
@@ -1056,41 +980,33 @@ From all 400+ evidence items across Assessments 1-4, select the **50 most import
 
 - Format: MASTER-001 to MASTER-050
 
-
 **Source_Domain**
 
 - Which assessment? (1, 2, 3, 4, or "All")
-
 
 **Evidence_Title**
 
 - Descriptive name
 
-
 **Evidence_Type**
 
 - Policy, Config, Screenshot, Report, Diagram, Approval, etc.
-
 
 **Related_Control**
 
 - Which policy section applies? (e.g., "Section 2.1", "Section 2.4", "Section 3.3")
 
-
 **Storage_Location**
 
 - File path or URL (must be accessible)
-
 
 **Verification_Status**
 
 - Verified / Pending / Not_Verified
 
-
 **Notes**
 
 - Any relevant context
-
 
 **Evidence Summary:**
 
@@ -1100,13 +1016,11 @@ Calculate:
 - Verification rate by domain
 - Any pending verifications
 
-
 **Auditor Expectation:**
 
 - All evidence = "Verified"
 - All file paths accessible
 - Evidence current (within 90 days)
-
 
 ---
 
@@ -1120,61 +1034,49 @@ Calculate:
 
 - Format: ACT-001 to ACT-030
 
-
 **Related_Gap_ID**
 
 - Link to gap in Sheet 8
-
 
 **Action_Description**
 
 - Specific, actionable task
 
-
 **Priority**
 
 - Critical / High / Medium / Low (matches gap risk)
-
 
 **Owner**
 
 - Person/team responsible
 
-
 **Start_Date**
 
 - When does work begin?
-
 
 **Target_Date**
 
 - When must it be complete?
 
-
 **Status**
 
 - Not Started / In Progress / Completed / Blocked
-
 
 **Progress_%**
 
 - 0-100% completion
 
-
 **Dependencies**
 
 - What must happen first?
-
 
 **Resources_Required**
 
 - Budget, personnel, tools
 
-
 **Notes**
 
 - Any relevant context
-
 
 **Timeline Buckets:**
 
@@ -1186,7 +1088,6 @@ Example actions:
 - "Deploy cloud filtering for remote users - 40 hours effort"
 - "Enable HTTPS inspection on perimeter filter - 8 hours effort"
 
-
 **31-90 Days (High priority)**
 
 Example actions:
@@ -1194,7 +1095,6 @@ Example actions:
 - "Integrate SIEM with filtering logs - Project #12345, 80 hours"
 - "Deploy endpoint filtering on 200 unprotected devices - 120 hours"
 - "Implement automated FP handling workflow - 40 hours"
-
 
 **91-180 Days (Medium priority)**
 
@@ -1204,7 +1104,6 @@ Example actions:
 - "Enhance dashboard with predictive analytics"
 - "Conduct filtering effectiveness assessment"
 
-
 **181-365 Days (Low priority / improvements)**
 
 Example actions:
@@ -1212,7 +1111,6 @@ Example actions:
 - "Evaluate next-generation filtering solutions"
 - "Implement ML-based anomaly detection"
 - "Achieve Level 4 maturity (Managed)"
-
 
 **Remediation Timeline Summary:**
 
@@ -1222,13 +1120,11 @@ Calculate for each timeframe:
 - Number of Critical/High priority actions
 - Status (On Track / At Risk / Delayed)
 
-
 **Status Determination:**
 
 - **On Track:** Actions progressing per schedule
 - **At Risk:** Actions <50% complete with <30 days to target
 - **Delayed:** Past target date, not completed
-
 
 **Example:**
 
@@ -1254,7 +1150,6 @@ Calculate for each timeframe:
 - **Total Gaps:** 35 (from Sheet 8)
 - **Critical/High Gaps:** 13 (from Sheet 8)
 
-
 ### Approval Workflow
 
 **Level 1: Consolidated By**
@@ -1263,7 +1158,6 @@ Calculate for each timeframe:
 - **Role:** Security Engineer, Compliance Officer, or CISO delegate
 - **Date:** Dashboard completion date
 
-
 **Level 2: Reviewed By (Information Security Officer)**
 
 - **Name:** Security team lead or manager
@@ -1271,14 +1165,12 @@ Calculate for each timeframe:
 - **Decision:** Recommend / Concerns / Reject
 - **Comments:** Review findings, any concerns
 
-
 **Level 3: Approved By (CISO)**
 
 - **Name:** Chief Information Security Officer
 - **Date:** Approval date
 - **Decision:** Approved / Conditional / Rejected
 - **Comments:** Risk acceptance statements, conditions
-
 
 **CISO Certification Statement:**
 
@@ -1336,14 +1228,12 @@ Different audiences need different views:
 - **Message:** "We're 89% compliant, 3 critical gaps being addressed, on track for audit"
 - **Time:** 5-minute presentation
 
-
 **For CISO/Security Leadership:**
 
 - **Focus:** Executive Summary + Domain Summaries + Gap Consolidation
 - **Format:** Full dashboard Excel + summary memo
 - **Message:** Detailed findings, gap priorities, resource needs
 - **Time:** 30-minute working session
-
 
 **For Auditors (Internal/External):**
 
@@ -1352,14 +1242,12 @@ Different audiences need different views:
 - **Message:** "Here's everything you need to verify compliance"
 - **Time:** Self-service access, auditor-driven review
 
-
 **For Compliance Committee:**
 
 - **Focus:** Compliance Score (Sheet 7) + Gap Consolidation (Sheet 8)
 - **Format:** Dashboard + memo
 - **Message:** Compliance status, gap remediation progress
 - **Time:** 15-minute presentation
-
 
 ## Presentation Tips
 
@@ -1371,7 +1259,6 @@ Different audiences need different views:
 - ✅ Show clear action plan with owners and dates
 - ✅ Be transparent about risks
 
-
 **Don't:**
 
 - ❌ Bury the lead (don't start with details)
@@ -1379,7 +1266,6 @@ Different audiences need different views:
 - ❌ Use technical jargon (explain in business terms)
 - ❌ Surprise leadership (socialize findings first)
 - ❌ Overload with too many numbers
-
 
 **Storytelling Framework:**
 
@@ -1449,7 +1335,6 @@ Example - Threat-focused organization:
 - Domain 3 (Policy): 30%
 - Domain 4 (Monitoring): 20%
 
-
 **Rationale:** More weight on infrastructure and policy (threat protection focus)
 
 ## Maturity Level Assessment
@@ -1464,7 +1349,6 @@ Characteristics:
 - Reactive incident handling
 - No evidence collection
 
-
 **Example:** "We have a firewall with web filtering enabled, but nobody manages it. When users complain, we whitelist things."
 
 **Level 2 - Developing (Repeatable but Inconsistent)**
@@ -1476,7 +1360,6 @@ Characteristics:
 - Basic logging, limited monitoring
 - Incident handling procedures exist but not always followed
 - Evidence collected ad-hoc
-
 
 **Example:** "We have a filtering policy and some procedures. Monitoring happens during business hours. Evidence exists but not organized."
 
@@ -1491,7 +1374,6 @@ Characteristics:
 - Systematic evidence collection
 - Quarterly review cycle established
 
-
 **Example:** "We have complete POL and IMP documentation. Filtering is actively monitored 24/7. Quarterly reviews happen on schedule. Evidence is organized for audit."
 
 **Level 4 - Managed (Measured, Quantitative)**
@@ -1505,7 +1387,6 @@ Characteristics:
 - SLA-driven incident response
 - Continuous monitoring and improvement
 
-
 **Example:** "We track 15 KPIs, SLA compliance is 95%, FP rate is <1%. Decisions are data-driven. We optimize based on metrics."
 
 **Level 5 - Optimizing (Continuous Improvement, Industry-Leading)**
@@ -1518,7 +1399,6 @@ Characteristics:
 - Industry benchmarking
 - Innovation and thought leadership
 - Continuous optimization
-
 
 **Example:** "We use ML for anomaly detection, predict threats before they materialize, benchmark against industry peers, and publish best practices."
 
@@ -1549,13 +1429,11 @@ Characteristics:
 - **🟡 Yellow (At Risk):** Close to targets, attention needed, medium risk
 - **🔴 Red (Urgent):** Below targets, immediate action required, high risk
 
-
 **Executive Rule of Thumb:**
 
 - **All Green:** "We're in great shape, proceed with audit"
 - **Some Yellow:** "We're substantially compliant, minor improvements needed"
 - **Any Red:** "We have significant gaps, remediation required before audit"
-
 
 ---
 
@@ -1575,19 +1453,16 @@ Risk Level = Likelihood × Impact
 - **Medium (2):** Possible exploitation/discovery
 - **Low (1):** Unlikely exploitation/discovery
 
-
 **Impact Scale:**
 
 - **High (3):** Significant security breach or compliance failure
 - **Medium (2):** Moderate impact, workarounds exist
 - **Low (1):** Minimal impact, cosmetic
 
-
 **Risk Matrix:**
 
  | Likelihood \ Impact | High (3) | Medium (2) | Low (1) | 
 |---------------------|----------|------------|--## Document Overview
-
 
 **Example Gap Assessment:**
 
@@ -1597,20 +1472,17 @@ Risk Level = Likelihood × Impact
 - **Impact:** High (3) - Security breach via remote user, compliance failure
 - **Risk:** Critical (9)
 
-
 **Gap:** "HTTPS inspection not enabled"
 
 - **Likelihood:** Medium (2) - Auditor will verify
 - **Impact:** High (3) - Cannot detect threats in HTTPS traffic (70% of web)
 - **Risk:** High (6)
 
-
 **Gap:** "Threat database update manual (weekly)"
 
 - **Likelihood:** Low (1) - Updates still happen
 - **Impact:** Medium (2) - Slightly delayed threat protection
 - **Risk:** Low (2)
-
 
 ## Prioritization Factors
 
@@ -1621,7 +1493,6 @@ Risk Level = Likelihood × Impact
 - Medium risk → Priority 31-50
 - Low risk → Priority 51-60
 
-
 **Secondary Factor: Target Date**
 
 Within same risk level, prioritize by urgency:
@@ -1631,17 +1502,14 @@ Within same risk level, prioritize by urgency:
 - Due 30-90 days → Medium priority within level
 - Due >90 days → Low priority within level
 
-
 **Tertiary Factor: Dependencies**
 
 - If Gap B depends on Gap A, Gap A gets higher priority
-
 
 **Quaternary Factor: Quick Wins**
 
 - If two gaps have similar risk/urgency, prioritize the easier one
 - Quick wins build momentum
-
 
 **Example Prioritization:**
 
@@ -1664,14 +1532,12 @@ Within same risk level, prioritize by urgency:
 - ✅ Temporary situation (system being decommissioned)
 - ✅ Requires significant organizational change (policy, culture)
 
-
 **NOT Acceptable:**
 
 - ❌ Critical or High risk level (without CISO approval)
 - ❌ Regulatory compliance violation
 - ❌ No compensating controls
 - ❌ High likelihood of exploitation
-
 
 **Risk Acceptance Process:**
 
@@ -1776,7 +1642,6 @@ Before presenting to CISO, verify:
 - [ ] Traffic lights reflecting correct thresholds
 - [ ] Numbers consistent across sheets (no contradictions)
 
-
 ### Completeness
 
 - [ ] Executive Summary (Sheet 2) completed
@@ -1787,7 +1652,6 @@ Before presenting to CISO, verify:
 - [ ] Action Plan (Sheet 10) developed with owners, dates, resources
 - [ ] Approval Sign-Off (Sheet 11) ready for CISO signature
 
-
 ### Evidence
 
 - [ ] Evidence Index contains ≥50 key evidence items
@@ -1796,7 +1660,6 @@ Before presenting to CISO, verify:
 - [ ] Evidence covers: Policies, Solutions, Coverage, Config, Monitoring, Approvals
 - [ ] No broken links or missing files
 
-
 ### Gap Analysis
 
 - [ ] All gaps imported from domain assessments
@@ -1804,7 +1667,6 @@ Before presenting to CISO, verify:
 - [ ] All Critical/High gaps have owners and target dates
 - [ ] Gap status accurate (Open/In Progress/Resolved/Accepted)
 - [ ] No "eternal gaps" (gaps open for 6+ months without progress)
-
 
 ### Action Plan
 
@@ -1816,7 +1678,6 @@ Before presenting to CISO, verify:
 - [ ] Dependencies documented
 - [ ] At least 3 "quick wins" identified (build momentum)
 
-
 ### Executive Summary
 
 - [ ] One-page summary suitable for board
@@ -1826,7 +1687,6 @@ Before presenting to CISO, verify:
 - [ ] Action plan summarized (timeline, cost, owner)
 - [ ] Recommendation clear (approve/defer/modify)
 - [ ] No technical jargon (business language)
-
 
 ## Audit-Readiness Checklist
 
@@ -1841,7 +1701,6 @@ For external ISO 27001 audit:
 - [ ] Three-level approval sign-offs for all documents
 - [ ] CISO certification statement
 
-
 ### Traceability
 
 - [ ] Policy → Implementation mapping clear
@@ -1849,7 +1708,6 @@ For external ISO 27001 audit:
 - [ ] Gaps → Actions → Owners documented
 - [ ] All claims backed by evidence
 - [ ] Cross-references between documents accurate
-
 
 ### Compliance Status
 
@@ -1859,7 +1717,6 @@ For external ISO 27001 audit:
 - [ ] High-priority gaps have remediation plans
 - [ ] All residual risks formally accepted by CISO
 
-
 ### Evidence Quality
 
 - [ ] All evidence current (within 90 days)
@@ -1868,7 +1725,6 @@ For external ISO 27001 audit:
 - [ ] All evidence accessible (auditor can retrieve)
 - [ ] No PII/credentials in evidence (sanitized)
 
-
 ### Operational Reality
 
 - [ ] Documented practices match actual practices
@@ -1876,7 +1732,6 @@ For external ISO 27001 audit:
 - [ ] Incident history documented (not hidden)
 - [ ] False positives tracked (not ignored)
 - [ ] Gaps acknowledged (not minimized)
-
 
 ## Final Sign-Off Checklist
 
@@ -1890,7 +1745,6 @@ Before CISO signs certification:
 - [ ] CISO is comfortable presenting this to board/auditor
 - [ ] Next quarterly review scheduled
 - [ ] Distribution list confirmed (who receives dashboard?)
-
 
 ---
 
@@ -1906,7 +1760,6 @@ This dashboard is not just a report - it's a management tool. It should enable:
 - **Risk management:** What risks do we accept vs. remediate?
 - **Continuous improvement:** How do we get from Level 3 to Level 4?
 - **Stakeholder communication:** How do we demonstrate due diligence?
-
 
 **Evidence-Based Management:**
 
@@ -1928,7 +1781,6 @@ Applied to dashboard: If your scores look too good to be true, they probably are
 - Risk-based decision making (remediate vs. accept)
 - Audit-ready documentation package
 
-
 **For Board/Executive Team:**
 
 - Simple, visual dashboard (traffic lights)
@@ -1936,7 +1788,6 @@ Applied to dashboard: If your scores look too good to be true, they probably are
 - Key risks and mitigation plans
 - Budget and timeline for remediation
 - Confidence in audit readiness
-
 
 **For Auditors:**
 
@@ -1946,7 +1797,6 @@ Applied to dashboard: If your scores look too good to be true, they probably are
 - Management oversight (CISO certification)
 - Mature, well-managed control
 
-
 **For Security Team:**
 
 - Systematic assessment process (not chaotic)
@@ -1954,7 +1804,6 @@ Applied to dashboard: If your scores look too good to be true, they probably are
 - Progress tracking (quarterly improvements)
 - Recognition of achievements (not just gaps)
 - Roadmap for maturity growth (Level 3 → 4 → 5)
-
 
 ## Quarterly Maintenance
 
@@ -1974,7 +1823,6 @@ Applied to dashboard: If your scores look too good to be true, they probably are
 - Security incident (reassess gaps)
 - Audit scheduled (refresh everything)
 - Significant gap resolved (update scores)
-
 
 ## Long-Term Vision
 
@@ -2044,7 +1892,6 @@ This dashboard provides the data. Use it to drive decisions, demonstrate complia
 - **Title:** "ISMS-IMP-A.8.23.5 – Compliance Dashboard"
 - **Subtitle:** "ISO/IEC 27001:2022 - Control A.8.23: Web Filtering"
 - **Styling:** Dark blue header (#003366), white text, 40px height
-
 
 ## Document Information Block
 ```

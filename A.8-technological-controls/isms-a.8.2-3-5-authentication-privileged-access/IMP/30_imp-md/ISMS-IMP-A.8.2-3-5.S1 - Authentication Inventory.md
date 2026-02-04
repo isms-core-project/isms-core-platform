@@ -45,7 +45,6 @@ This document consists of two parts:
   - Formulas & Calculations
   - Python Script Integration
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -65,13 +64,11 @@ This document consists of two parts:
 - Measures SSO adoption
 - Identifies authentication security gaps
 
-
 **What This Assessment Does NOT Do:**
 
 - Track individual user MFA enrollment (see IMP.2 - MFA Coverage Assessment)
 - Inventory privileged accounts (see IMP.3 - Privileged Account Inventory)
 - Assess access control effectiveness (see IMP.5 - Access Restrictions Assessment)
-
 
 **Primary ISO 27001 Control:** A.8.5 - Secure Authentication
 
@@ -80,7 +77,6 @@ This document consists of two parts:
 - A.5.16 - Identity Management (identity foundation for authentication)
 - A.8.2 - Privileged Access Rights (authentication for privileged users)
 - A.8.3 - Information Access Restriction (authentication enables access)
-
 
 ## When to Use This Assessment
 
@@ -93,13 +89,11 @@ This document consists of two parts:
 - Investigating authentication-related security incidents
 - Planning authentication modernization projects (SSO rollout, MFA deployment)
 
-
 **Assessment Frequency:**
 
 - **Monthly**: Update inventory for new systems, document authentication changes
 - **Quarterly**: Comprehensive review, validate all entries, update compliance scores
 - **Annual**: Deep assessment with penetration testing, full validation
-
 
 ## Who Completes This Assessment
 
@@ -113,7 +107,6 @@ This document consists of two parts:
 - **IAM Team**: Provide identity provider configuration (Entra ID, Okta, Active Directory)
 - **Network Team**: Provide authentication infrastructure details (RADIUS, TACACS+)
 
-
 **Approval Authority:** Chief Information Security Officer (CISO)
 
 ## Expected Time Investment
@@ -126,7 +119,6 @@ This document consists of two parts:
 - Review and validation: 1-2 hours
 - **Total**: 9-17 hours (spread over 1-2 weeks)
 
-
 **Monthly Updates** (after initial baseline):
 
 - New system authentication review: 30-60 minutes
@@ -134,14 +126,12 @@ This document consists of two parts:
 - Evidence updates: 15-30 minutes
 - **Total**: 1-2 hours per month
 
-
 **Quarterly Comprehensive Review**:
 
 - Full inventory validation: 2-3 hours
 - Evidence update: 1-2 hours
 - Compliance reporting: 1 hour
 - **Total**: 4-6 hours per quarter
-
 
 ---
 
@@ -157,14 +147,12 @@ Before starting the assessment, gather the following information:
 - [ ] System owners and responsible teams
 - [ ] System criticality classification (Tier 0, Tier 1, Tier 2, Standard)
 
-
 **Authentication Infrastructure:**
 
 - [ ] Identity provider details (Entra ID, Okta, Active Directory, Google Workspace)
 - [ ] Authentication protocols in use (SAML, OAuth, Kerberos, LDAP, RADIUS)
 - [ ] SSO platform configuration
 - [ ] MFA platform details
-
 
 **Password Policies:**
 
@@ -173,13 +161,11 @@ Before starting the assessment, gather the following information:
 - [ ] Password expiration settings (if applicable)
 - [ ] Password breach detection status
 
-
 **SSO Integration Status:**
 
 - [ ] Applications integrated with SSO
 - [ ] Applications not integrated with SSO (legacy, no SSO support)
 - [ ] SSO rollout roadmap
-
 
 ## Required Access
 
@@ -190,13 +176,11 @@ Before starting the assessment, gather the following information:
 - [ ] Read access to system documentation
 - [ ] Access to configuration management database (CMDB) if available
 
-
 **People Access Needed:**
 
 - [ ] System owners (for authentication configuration details)
 - [ ] IT operations teams (for authentication infrastructure)
 - [ ] Application teams (for application authentication)
-
 
 ## Required Tools
 
@@ -206,13 +190,11 @@ Before starting the assessment, gather the following information:
 - [ ] Python 3.8+ (if using automated workbook generation scripts)
 - [ ] Access to identity provider admin consoles (Entra ID, Okta, etc.)
 
-
 **Optional Tools:**
 
 - [ ] Configuration management tools (for automated data extraction)
 - [ ] SIEM access (for authentication log analysis)
 - [ ] PowerShell / Azure CLI / Okta API (for automated data collection)
-
 
 ---
 
@@ -241,7 +223,6 @@ Before starting the assessment, gather the following information:
 
       - Track SSO adoption by application
       - Identify SSO gaps and roadmap
-
 
 3. ANALYZE & SCORE
    â†' Automated compliance calculations
@@ -279,7 +260,6 @@ Option B - Manual:
 - Use Excel template (provided in ISMS repository)
 - Save as: `ISMS-IMP-A.8.2-3-5.1_Authentication_Inventory_[DATE].xlsx`
 
-
 **Step 2: Complete Sheet 1 - Authentication Mechanism Inventory**
 
 For each system/application/service:
@@ -291,14 +271,12 @@ For each system/application/service:
    - System Type: Dropdown (Web App, Database, API, Network Device, etc.)
    - System Owner: Person/team responsible
 
-
 2. **Authentication Method** (Columns E-H):
 
    - Authentication Provider: Where authentication happens (Entra ID, Okta, AD, Local, etc.)
    - Authentication Method: How users authenticate (Password, Password+MFA, SSO, Certificate, API Key, etc.)
    - Authentication Protocol: Technical protocol (SAML 2.0, OAuth 2.0/OIDC, Kerberos, LDAP, etc.)
    - Protocol Version: Specific version if applicable (e.g., TLS 1.3, SAML 2.0)
-
 
 3. **Security Assessment** (Columns I-L):
 
@@ -307,12 +285,10 @@ For each system/application/service:
    - SSO Integrated: Yes/No (is system integrated with SSO platform?)
    - Compliance Status: Auto-calculated (Compliant, Partial, Non-Compliant)
 
-
 4. **Notes & Evidence** (Columns M-N):
 
    - Configuration Notes: Brief notes on authentication setup
    - Evidence Location: Link to evidence (screenshot, config export, documentation)
-
 
 **Step 3: Complete Sheet 2 - Password Policy Compliance**
 
@@ -327,12 +303,10 @@ For each system using password authentication:
    - Password History: Number of passwords remembered
    - Breach Detection: Yes/No (integration with HaveIBeenPwned or similar)
 
-
 2. **Compliance Check** (Columns G-H):
 
    - Policy Compliance: Auto-calculated (meets ISMS-POL-A.8.2-3-5 requirements?)
    - Gap Description: If non-compliant, what's missing?
-
 
 **Step 4: Complete Sheet 3 - SSO Integration Status**
 
@@ -345,7 +319,6 @@ For each application:
    - User Count: Number of users
    - Business Criticality: High/Medium/Low
 
-
 2. **SSO Status** (Columns E-H):
 
    - SSO Integrated: Yes/No
@@ -353,13 +326,11 @@ For each application:
    - Integration Method: SAML, OIDC, etc.
    - Integration Date: When SSO was implemented
 
-
 3. **Gap Analysis** (Columns I-K):
 
    - SSO Support: Yes/No (does application support SSO?)
    - Planned Integration Date: If not integrated, when will it be?
    - Blocking Issue: Why not integrated? (No SSO support, budget, priority, etc.)
-
 
 **Step 5: Review Calculated Metrics**
 
@@ -369,7 +340,6 @@ The workbook automatically calculates:
 - **MFA Coverage**: Percentage of systems with MFA enforcement
 - **Password Policy Compliance**: Percentage of systems with compliant password policies
 - **SSO Adoption**: Percentage of applications integrated with SSO
-
 
 Review these metrics and validate accuracy.
 
@@ -382,7 +352,6 @@ Required evidence for each system:
 - **SSO Integration Documentation**: SAML metadata, OAuth configuration, attribute mapping
 - **Password Policy Configuration**: Group Policy exports, Entra ID policy screenshots
 
-
 Store evidence in: `/evidence/authentication/[system_id]/`
 
 **Step 7: Complete Evidence Register (Sheet 4)**
@@ -390,7 +359,6 @@ Store evidence in: `/evidence/authentication/[system_id]/`
 Document all collected evidence:
 
 - Evidence ID, Type, Description, Location, Collection Date
-
 
 **Step 8: Approval & Sign-Off (Sheet 5)**
 
@@ -413,20 +381,17 @@ Three-level approval process:
    - Identity provider user object (redacted credentials)
    - Authentication flow diagram (for complex setups)
 
-
 2. **Password Policy Evidence**:
 
    - Group Policy export (for AD-based systems)
    - Entra ID password policy screenshot
    - Application password policy configuration
 
-
 3. **SSO Integration Evidence**:
 
    - SAML metadata export
    - OAuth/OIDC application configuration
    - Attribute mapping documentation
-
 
 ## Evidence Storage
 
@@ -455,7 +420,6 @@ For each piece of evidence:
 - [ ] Linked in workbook (Evidence Register sheet)
 - [ ] Stored securely (access-controlled directory)
 
-
 ---
 
 # Common Pitfalls & How to Avoid Them
@@ -471,7 +435,6 @@ For each piece of evidence:
 - Check application portfolio (find all web applications)
 - Ask system owners: "What authenticates to your system?"
 
-
 ## Pitfall 2: Confusing Authentication Method vs. Protocol
 
 **Problem**: Mixing up high-level method (SSO) with low-level protocol (SAML)
@@ -481,14 +444,12 @@ For each piece of evidence:
 - Authentication Method: "SSO" or "Password + MFA"
 - Authentication Protocol: "SAML 2.0" or "OAuth 2.0/OIDC"
 
-
 **Example**:
 
 - System: "Corporate Intranet"
 - Authentication Method: "SSO"
 - Authentication Provider: "Entra ID"
 - Authentication Protocol: "SAML 2.0"
-
 
 ## Pitfall 3: Assuming All Entra ID Users Have MFA
 
@@ -499,7 +460,6 @@ For each piece of evidence:
 - Check Conditional Access policies (Entra ID Premium P1/P2)
 - Verify MFA enforcement per application
 - Use IMP.2 (MFA Coverage Assessment) to validate actual MFA enrollment
-
 
 ## Pitfall 4: Missing Legacy Systems
 
@@ -512,7 +472,6 @@ For each piece of evidence:
 - Check database authentication (SQL Server, Oracle, PostgreSQL)
 - Check file server authentication (SMB/CIFS, NFS)
 
-
 ## Pitfall 5: Not Tracking SSO Gaps
 
 **Problem**: Knowing an application doesn't have SSO, but not tracking WHY or WHEN it will be fixed
@@ -523,7 +482,6 @@ For each piece of evidence:
 - Document remediation plan: "Migrate to alternative SaaS app with SSO by Q3 2026"
 - Track in SSO Integration Status sheet
 
-
 ## Pitfall 6: Redacting Too Much
 
 **Problem**: Evidence so heavily redacted it's not useful for audit
@@ -532,7 +490,6 @@ For each piece of evidence:
 
 - Redact passwords, secrets, API keys (YES)
 - Redact usernames, system names, configuration details (NO - these are needed for audit)
-
 
 ## Pitfall 7: Not Validating with System Owners
 
@@ -544,7 +501,6 @@ For each piece of evidence:
 - Ask: "Is this authentication configuration correct?"
 - Get confirmation before final approval
 
-
 ## Pitfall 8: Forgetting Service Accounts
 
 **Problem**: Only inventorying interactive user authentication, missing service account authentication
@@ -555,7 +511,6 @@ For each piece of evidence:
 - Document in Authentication Mechanism Inventory
 - Note: Service account privilege is tracked in IMP.3 (Privileged Account Inventory)
 
-
 ## Pitfall 9: Not Updating Monthly
 
 **Problem**: Assessment becomes stale, doesn't reflect current state
@@ -564,7 +519,6 @@ For each piece of evidence:
 
 - Set calendar reminder: "Update authentication inventory - 1st of every month"
 - Integrate with change management: "New system deployed? Update authentication inventory."
-
 
 ## Pitfall 10: Checkbox Compliance Without Understanding
 
@@ -575,7 +529,6 @@ For each piece of evidence:
 - Read ISMS-POL-A.8.2-3-5 Section 2.1 (Authentication Requirements) FIRST
 - Understand WHY MFA matters, WHY SSO reduces risk
 - This is EVIDENCE-DRIVEN SECURITY, not checkbox compliance
-
 
 ---
 
@@ -591,14 +544,12 @@ Before submitting assessment for approval, verify:
 - [ ] All SSO status documented (for web applications)
 - [ ] All evidence collected and linked
 
-
 ## Accuracy
 
 - [ ] Authentication methods validated with system owners
 - [ ] Password policies verified (not assumed)
 - [ ] SSO integration status confirmed (tested login)
 - [ ] Calculated metrics reviewed (make sense?)
-
 
 ## Evidence Quality
 
@@ -607,7 +558,6 @@ Before submitting assessment for approval, verify:
 - [ ] All evidence linked in Evidence Register
 - [ ] Evidence storage location documented
 
-
 ## Compliance
 
 - [ ] Systems without MFA identified and tracked
@@ -615,14 +565,12 @@ Before submitting assessment for approval, verify:
 - [ ] Applications without SSO identified with remediation plan
 - [ ] High-risk authentication gaps flagged for immediate remediation
 
-
 ## Professional Presentation
 
 - [ ] No spelling errors
 - [ ] Consistent formatting (dates in DD.MM.YYYY format)
 - [ ] Clear and concise notes
 - [ ] Proper capitalization and grammar
-
 
 ---
 
@@ -637,20 +585,17 @@ Before submitting assessment for approval, verify:
 - **60-74%**: Moderate - Significant legacy authentication, modernization needed
 - **<60%**: Poor - Major authentication security gaps, immediate action required
 
-
 **MFA Coverage**:
 
 - **100%**: All systems enforce MFA (ideal state)
 - **80-99%**: Most systems have MFA, some exceptions (acceptable with documented compensating controls)
 - **<80%**: Insufficient MFA coverage (high risk)
 
-
 **SSO Adoption**:
 
 - **80-100%**: Most applications integrated (ideal state)
 - **60-79%**: Good progress, continue SSO rollout
 - **<60%**: Low SSO adoption (password sprawl risk)
-
 
 ## Gap Prioritization
 
@@ -660,25 +605,21 @@ Before submitting assessment for approval, verify:
 - Systems with weak password policies (length <12, no breach detection)
 - Systems using deprecated authentication protocols (NTLM v1, Telnet, FTP)
 
-
 **Priority 2 - High (Within 90 Days)**:
 
 - Systems without MFA that handle Confidential data
 - Applications without SSO (high user count, frequent logins)
 - Systems with password expiration (migrate to no-expiration + MFA)
 
-
 **Priority 3 - Medium (Within 180 Days)**:
 
 - Applications without SSO (moderate user count)
 - Systems with suboptimal password policies (expiration but compliant length/complexity)
 
-
 **Priority 4 - Low (Ongoing Improvement)**:
 
 - Legacy systems scheduled for decommissioning
 - Systems with documented exceptions and compensating controls
-
 
 ---
 
@@ -693,7 +634,6 @@ Before submitting assessment for approval, verify:
 - Perform initial quality check
 - Submit for review
 
-
 **Level 2 - Reviewer (Senior Security / IAM Lead)**:
 
 - Validate completeness and accuracy
@@ -702,7 +642,6 @@ Before submitting assessment for approval, verify:
 - Request corrections if needed
 - Approve and forward to CISO
 
-
 **Level 3 - Approver (CISO)**:
 
 - Review summary metrics
@@ -710,7 +649,6 @@ Before submitting assessment for approval, verify:
 - Approve remediation priorities
 - Sign off on assessment
 - Present to Executive Management (if required)
-
 
 ## Approval Criteria
 
@@ -722,7 +660,6 @@ Assessment is approved when:
 - [ ] Compliance scores calculated and reviewed
 - [ ] Critical gaps identified and prioritized
 - [ ] Remediation plan documented
-
 
 ## Post-Approval Actions
 
@@ -770,14 +707,12 @@ After CISO approval:
 - 🔴 **Red (Non-Compliant)**: RGB(255, 199, 206) - Does not meet policy requirements
 - ⚪ **Gray (N/A)**: RGB(217, 217, 217) - Not applicable
 
-
 **Priority Colors (Applied to Gap Priority columns)**:
 
 - 🔴 **Critical**: RGB(255, 0, 0) - Immediate action required
 - 🟠 **High**: RGB(255, 153, 0) - Action within 90 days
 - 🟡 **Medium**: RGB(255, 255, 0) - Action within 180 days
 - 🟢 **Low**: RGB(146, 208, 80) - Ongoing improvement
-
 
 ---
 
@@ -870,13 +805,11 @@ List: Yes, No, N/A
 - **Partial**: MFA = Partial OR (MFA = No AND Password Policy = Yes)
 - **Non-Compliant**: All other combinations
 
-
 **Conditional Formatting:**
 
 - Compliant → Green background
 - Partial → Yellow background
 - Non-Compliant → Red background
-
 
 ## Data Rows
 
@@ -926,12 +859,10 @@ Track password policy compliance for systems using password-based authentication
 - Expiration: No requirement (modern guidance: no forced expiration)
 - Complexity: Optional (length more important than complexity)
 
-
 **Conditional Formatting:**
 
 - Compliant → Green
 - Non-Compliant → Red
-
 
 ---
 
@@ -966,13 +897,11 @@ Track SSO adoption across all web applications.
 - Yes → Green
 - No → Red
 
-
 **Business Criticality (Column D):**
 
 - High → Red (if SSO = No)
 - Medium → Yellow (if SSO = No)
 - Low → No special formatting
-
 
 ---
 
@@ -1064,16 +993,13 @@ Track all evidence collected for authentication assessment.
 
 - Name, Title, Date, Signature
 
-
 **Level 2 - Reviewer:**
 
 - Name, Title, Date, Signature
 
-
 **Level 3 - Approver (CISO):**
 
 - Name, Title, Date, Signature
-
 
 ---
 
@@ -1093,7 +1019,6 @@ Automated generation of authentication inventory workbook with pre-configured st
 - Adds formulas for compliance calculations
 - Sets column widths and freeze panes
 - Generates professional formatting
-
 
 ## Running the Script
 
@@ -1116,7 +1041,6 @@ Marked with `# CUSTOMIZE:` in script:
 - Dropdown options (additional authentication providers, methods)
 - Data validation rules (custom compliance criteria)
 - Conditional formatting thresholds (different scoring)
-
 
 ---
 
@@ -1162,7 +1086,6 @@ ISMS-IMP-A.8.2-3-5.1 - Authentication Inventory v1.0
 - [ ] Technical specification matches Python script
 - [ ] User guide provides clear, actionable guidance
 - [ ] Evidence requirements clearly documented
-
 
 ---
 

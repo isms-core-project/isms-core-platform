@@ -42,14 +42,12 @@
 - Defines validation criteria for technique effectiveness
 - Establishes evidence collection requirements
 
-
 **What This Document Does NOT Do:**
 
 - Recommend specific vendor products or tools (vendor-agnostic approach)
 - Provide implementation tutorials for masking tools (see vendor documentation)
 - Replace data inventory assessment (prerequisite: complete IMP-A.8.11.1 first)
 - Define data classification (prerequisite: complete IMP-A.8.11.1 first)
-
 
 ---
 
@@ -89,14 +87,12 @@ This assessment evaluates [Organization]'s **masking technique selection and imp
 - **Performance:** Masking overhead does not degrade system performance unacceptably
 - **Compliance:** Technique selection meets regulatory requirements (GDPR, FADP, PCI-DSS, HIPAA)
 
-
 **Business Impact:**
 
 - **Data Breaches Prevented:** Properly masked non-production environments eliminate 80%+ of preventable data leaks
 - **Regulatory Compliance:** GDPR Art.32, FADP Art.8, PCI-DSS Req.3.4 mandate masking
 - **Development Velocity:** Realistic test data enables faster development without privacy risk
 - **Third-Party Risk Reduction:** Masked data safe to share with vendors, contractors, offshore teams
-
 
 ## Who Should Complete This Assessment
 
@@ -110,13 +106,11 @@ This assessment evaluates [Organization]'s **masking technique selection and imp
 - Understanding of regulatory requirements (GDPR, FADP, PCI-DSS, HIPAA as applicable)
 - Basic cryptography concepts (hashing, encryption, tokenization)
 
-
 **Required Authority:**
 
 - Ability to approve masking technique selection
 - Authority to implement masking solutions
 - Access to test/validate masking effectiveness
-
 
 **Support Roles:**
 
@@ -124,7 +118,6 @@ This assessment evaluates [Organization]'s **masking technique selection and imp
 - **Application Teams:** Validate masked data maintains application functionality
 - **Compliance Officers:** Verify regulatory compliance
 - **Quality Assurance:** Test masking effectiveness and data integrity
-
 
 ## Time Estimate
 
@@ -138,7 +131,6 @@ This assessment evaluates [Organization]'s **masking technique selection and imp
 - **Validation Planning:** 1-2 hours (defining test criteria)
 - **Evidence Collection:** 1 hour
 - **Quality Review:** 30-60 minutes
-
 
 **Pro Tip:** For organizations with multiple data domains (finance, HR, customer data, etc.), assign different team members to assess their respective domains in parallel, then consolidate results.
 
@@ -160,13 +152,11 @@ ISMS-POL-A.8.11 (Data Masking Policy)
 
 - ✅ **ISMS-IMP-A.8.11.1** (Data Inventory & Classification) - You must know WHAT data exists and its sensitivity level before selecting masking techniques
 
-
 **Feeds Into (complete next):**
 
 - ➡️ **ISMS-IMP-A.8.11.3** (Environment Coverage Assessment) - Uses technique selections to verify implementation across environments
 - ➡️ **ISMS-IMP-A.8.11.4** (Testing & Validation Framework) - Tests effectiveness of selected techniques
 - ➡️ **ISMS-IMP-A.8.11.5** (Compliance Dashboard) - Consolidates all assessment results
-
 
 **Integration Point:** This assessment uses data inventory from IMP-A.8.11.1 to map data elements → masking techniques → implementation status.
 
@@ -189,13 +179,11 @@ This assessment focuses on **WHICH masking techniques** are appropriate for your
 - Multiple tools may implement same technique differently
 - Custom scripts can be as effective as commercial products if properly implemented
 
-
 **Acceptable Tool References:**
 
 - Document tool names in "Masking Tool Inventory" sheet for operational tracking
 - Use generic descriptions in technique selection rationale
 - Focus evidence on technique configuration, not product screenshots
-
 
 ---
 
@@ -212,13 +200,11 @@ This assessment focuses on **WHICH masking techniques** are appropriate for your
 - Data owners assigned
 - Workbook available for reference
 
-
 **Quality Check:** Open IMP-A.8.11.1 workbook and verify:
 
 - Sensitive_Data_Inventory sheet populated (minimum 10 data elements)
 - Classification_Matrix sheet shows approved classifications
 - Data_Owner_Assignment sheet shows assigned owners
-
 
 **If IMP-A.8.11.1 incomplete:** STOP. Complete data inventory first. You cannot select masking techniques without knowing what data exists and its sensitivity level.
 
@@ -231,7 +217,6 @@ This assessment focuses on **WHICH masking techniques** are appropriate for your
 - [ ] Access to non-production environments (dev, test, UAT) for validation
 - [ ] Access to data refresh/migration scripts (to understand current processes)
 
-
 **Documentation Access:**
 
 - [ ] Database schema documentation (ERD diagrams, data dictionaries)
@@ -240,14 +225,12 @@ This assessment focuses on **WHICH masking techniques** are appropriate for your
 - [ ] Data retention and archival policies
 - [ ] Regulatory compliance requirements (GDPR, FADP, PCI-DSS, HIPAA as applicable)
 
-
 **Stakeholder Access:**
 
 - [ ] Data owners (for technique approval)
 - [ ] Application development teams (for functionality validation)
 - [ ] Database administrators (for implementation planning)
 - [ ] Compliance officers (for regulatory guidance)
-
 
 ## Knowledge Required
 
@@ -260,14 +243,12 @@ This assessment focuses on **WHICH masking techniques** are appropriate for your
 - Format preservation requirements
 - Referential integrity concepts
 
-
 **Data Relationships:**
 
 - Primary keys and foreign keys
 - Parent-child table relationships
 - Cross-table data dependencies
 - Application data validation rules
-
 
 **Regulatory Context:**
 
@@ -276,14 +257,12 @@ This assessment focuses on **WHICH masking techniques** are appropriate for your
 - PCI-DSS Req.3.4 - Primary Account Number (PAN) masking
 - HIPAA 164.514(b) - De-identification methods
 
-
 **Technical Skills:**
 
 - Ability to read database schemas
 - Understanding of SQL joins and relationships
 - Basic understanding of encryption vs. hashing vs. tokenization
 - Ability to test data transformations
-
 
 ## Tools and Resources
 
@@ -293,20 +272,17 @@ This assessment focuses on **WHICH masking techniques** are appropriate for your
 - **Use Case Decision Tree:** See Section 4.2 of this guide
 - **Regulatory Requirement Mapping:** Reference ISMS-POL-A.8.11, Section 2.2 (Masking Technique Standards)
 
-
 **Testing Tools:**
 
 - **SQL Query Tools:** For testing masked data, checking for reversibility
 - **Data Profiling Tools:** To analyze masked data distribution (optional)
 - **Application Test Environment:** To validate functionality with masked data
 
-
 **Reference Materials:**
 
 - **NIST SP 800-122:** Guide to Protecting the Confidentiality of PII
 - **ISO/IEC 20889:2018:** Privacy Enhancing Data De-identification Terminology and Classification
 - **ENISA Data Pseudonymisation Guide:** Advanced techniques and use cases
-
 
 ## Common Misconceptions to Avoid
 
@@ -377,7 +353,6 @@ END → Feed results into IMP-A.8.11.3 (Environment Coverage)
 - Typical use cases (when to use each technique)
 - Regulatory alignment (which regulations require/prefer which techniques)
 
-
 **Decision Point:** Familiarize yourself with ALL techniques before selecting. Don't prematurely narrow to one technique.
 
 **Output:** Mental model of technique landscape and capabilities.
@@ -395,7 +370,6 @@ END → Feed results into IMP-A.8.11.3 (Environment Coverage)
 - Copy data element list from IMP-A.8.11.1 (Sensitive_Data_Inventory sheet)
 - OR manually list top 20-30 most critical sensitive data elements
 - Include: Data Element ID, Field Name, Data Category, Sensitivity Level
-
 
 **2.2 Analyze Use Cases (30 minutes)**
 For each data element, identify:
@@ -417,7 +391,6 @@ For each data element, identify:
   - Authorized users only (DDM or tokenization)?
   - Specific scenarios (decryption with key)?
 
-
 **2.3 Apply Selection Criteria (1-2 hours)**
 
 Use the **Technique Selection Decision Tree** (Section 4.2) to select techniques.
@@ -428,7 +401,6 @@ Use the **Technique Selection Decision Tree** (Section 4.2) to select techniques
 - **Specific Method:** Configuration details (e.g., "Format-preserving substitution with Luhn check")
 - **Alternative Techniques:** Backup options if primary doesn't meet all requirements
 - **Selection Rationale:** WHY this technique was chosen (3-5 sentences)
-
 
 **Example Entry:**
 ```
@@ -450,7 +422,6 @@ Selection Rationale: Tokenization chosen because:
 - Document approval status in Technique_Selection_Matrix sheet
 - Address any concerns or alternative suggestions
 
-
 **Output:** Completed Technique_Selection_Matrix sheet with approved techniques for all critical data elements.
 
 ---
@@ -471,7 +442,6 @@ Selection Rationale: Tokenization chosen because:
   - When was it last refreshed?
   - Is it working correctly? (validation status)
 
-
 **3.2 Dynamic Data Masking (DDM) - 30 minutes**
 
 - Open "Dynamic_Masking_DDM" sheet
@@ -480,7 +450,6 @@ Selection Rationale: Tokenization chosen because:
   - What roles see masked data vs. clear data?
   - What masking method is applied? (partial masking, full masking, etc.)
   - What is the performance impact?
-
 
 **3.3 Tokenization - 30 minutes** (if applicable)
 
@@ -491,14 +460,12 @@ Selection Rationale: Tokenization chosen because:
   - Token format (format-preserving or random?)
   - De-tokenization process and authorization
 
-
 **3.4 Other Techniques - 30 minutes**
 
 - Encryption for Masking: Document encrypted fields, key management
 - Hashing: Document hashed fields (passwords, etc.), salt usage
 - Redaction: Document nullified/blanked fields
 - Data Shuffling: Document shuffled datasets (for analytics)
-
 
 **Output:** Complete implementation documentation across all technique sheets.
 
@@ -517,7 +484,6 @@ Selection Rationale: Tokenization chosen because:
 - Data substitution sources (where to get realistic synthetic data)
 - Irreversibility validation criteria (how to prove data cannot be reversed)
 
-
 **For Dynamic Data Masking:**
 
 - Role definitions (which roles see masked data)
@@ -525,14 +491,12 @@ Selection Rationale: Tokenization chosen because:
 - Performance thresholds (maximum acceptable latency)
 - Audit logging requirements (log DDM policy evaluations)
 
-
 **For Tokenization:**
 
 - Token format standards (format-preserving vs. random)
 - Vault security requirements (encryption, access control, backup)
 - De-tokenization authorization workflow
 - Token lifecycle (expiration, rotation policies)
-
 
 **Example Standard:**
 ```
@@ -564,24 +528,20 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - Technique selected but not yet implemented
 - Example: "Selected tokenization for SSN, but currently using SDM"
 
-
 **Coverage Gaps:**
 
 - Technique implemented in some environments but not all
 - Example: "Credit cards masked in Dev, but NOT masked in UAT"
-
 
 **Configuration Gaps:**
 
 - Technique implemented but incorrectly configured
 - Example: "Masking breaks referential integrity between orders and payments tables"
 
-
 **Validation Gaps:**
 
 - Technique implemented but effectiveness not validated
 - Example: "No test proving masked data is irreversible"
-
 
 **For Each Gap, Document:**
 
@@ -590,7 +550,6 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - Remediation Plan
 - Target Date
 - Owner
-
 
 **Output:** Complete Gap_Analysis sheet with prioritized remediation roadmap.
 
@@ -608,14 +567,12 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - Data owner approval emails/sign-offs
 - Regulatory requirement mapping
 
-
 **Implementation Evidence:**
 
 - Masking tool configuration exports
 - Masking script source code (if custom scripts)
 - Before/after masking sample data (sanitized examples only)
 - DDM policy exports
-
 
 **Validation Evidence:**
 
@@ -624,13 +581,11 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - Referential integrity tests (cross-table relationships maintained)
 - Performance test results (masking overhead acceptable)
 
-
 **Approval Evidence:**
 
 - Data owner approval records
 - Security team sign-off
 - Compliance officer approval
-
 
 **Storage:** Store evidence files in secure location, document file path in Evidence_Register.
 
@@ -651,14 +606,12 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - Gaps identified with remediation plans
 - Evidence collected and registered
 
-
 **Common Issues to Fix:**
 
 - Missing rationale (WHY was this technique chosen?)
 - Incomplete implementation documentation (which environments?)
 - Generic gap descriptions (be specific about what's wrong)
 - Missing evidence (cannot prove masking works)
-
 
 **Output:** Quality-validated assessment ready for final approval.
 
@@ -730,14 +683,12 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - **Pros:** No data duplication, real-time access control
 - **Cons:** Performance overhead, requires DDM-capable infrastructure
 
-
 **Option B: Secure vault with tokenization**
 
 - ✅ **Technique:** Tokenization
 - **Use Case:** Payment cards, reversible for authorized payment processing
 - **Pros:** PCI-DSS compliant, format-preserving optional
 - **Cons:** Vault infrastructure required, vault is single point of failure
-
 
 **Option C: Encryption with key management**
 
@@ -746,13 +697,11 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - **Pros:** Standard cryptographic controls, mature key management
 - **Cons:** Not format-preserving, key management overhead
 
-
 **Decision Criteria:**
 
 - Choose **DDM** if: Production system, role-based access control required
 - Choose **Tokenization** if: Format preservation critical, PCI-DSS scope, limited authorized de-masking
 - Choose **Encryption** if: Regulatory requirement (HIPAA), batch de-masking acceptable
-
 
 ➡️ **SELECTED TECHNIQUE** → Document in Technique_Selection_Matrix
 
@@ -774,14 +723,12 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - **Use Case:** Realistic test data for application testing
 - **Validation:** Data passes application validation rules (e.g., Luhn check for credit cards)
 
-
 **Option B: Analytics/reporting with statistical properties**
 
 - ✅ **Technique:** Data Shuffling
 - **Configuration:** Randomize values within dataset, preserve distribution
 - **Use Case:** Analytics, machine learning training data
 - **Validation:** Statistical properties preserved (mean, variance, distribution)
-
 
 **Option C: Realistic synthetic data generation**
 
@@ -790,13 +737,11 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - **Use Case:** Demo environments, third-party data sharing
 - **Validation:** Data looks real but is completely fabricated
 
-
 **Decision Criteria:**
 
 - Choose **SDM** if: Need referential integrity across tables, application validation required
 - Choose **Data Shuffling** if: Analytics/ML use case, statistical properties matter
 - Choose **Data Substitution** if: Demo/external sharing, need realistic-looking fake data
-
 
 ➡️ **SELECTED TECHNIQUE** → Document in Technique_Selection_Matrix
 
@@ -811,7 +756,6 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - **Use Case:** GDPR Right to Erasure, data minimization
 - **Validation:** Original data cannot be recovered
 
-
 **Option B: One-way transformation for verification**
 
 - ✅ **Technique:** Hashing (one-way)
@@ -819,12 +763,10 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - **Use Case:** Password storage, integrity verification
 - **Validation:** Cannot reverse hash to original value
 
-
 **Decision Criteria:**
 
 - Choose **Redaction** if: Data not needed at all, GDPR erasure requirement
 - Choose **Hashing** if: Verification/authentication use case, password storage
-
 
 ➡️ **SELECTED TECHNIQUE** → Document in Technique_Selection_Matrix
 
@@ -843,13 +785,11 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
    - Data substitution for free-text fields (names, addresses)
    - Referential integrity maintained across tables
 
-
 2. **Alternative:** Data Shuffling
 
    - For analytics/reporting environments
    - Preserves statistical properties
    - Destroys individual-level relationships
-
 
 **Configuration Standards:**
 
@@ -858,13 +798,11 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - Referential integrity (same customer ID → same masked name across tables)
 - Refresh cycle: Quarterly or on-demand
 
-
 **Validation Criteria:**
 
 - ✅ Application functionality works with masked data
 - ✅ Masked data is irreversible (prove via testing)
 - ✅ No production data visible in logs, error messages, debugging output
-
 
 ---
 
@@ -876,14 +814,12 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 
 - **Primary:** Dynamic Data Masking (DDM)
 
-
 **Configuration Standards:**
 
 - Policy-based masking rules (define per role)
 - Performance acceptable (<10ms overhead per query)
 - Audit logging enabled (log who accessed what data)
 - Fallback to "deny" if DDM service unavailable
-
 
 **Example DDM Policies:**
 
@@ -901,7 +837,6 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - ✅ Performance impact measured and acceptable
 - ✅ Audit logs capture DDM policy evaluations
 
-
 ---
 
 **Use Case 3: Payment Card Data (PCI-DSS Compliance)**
@@ -917,14 +852,12 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - First 6 digits (BIN - Bank Identification Number) + last 4 may be visible
 - Example: 4532-XXXX-XXXX-1234
 
-
 **Configuration Standards (Tokenization):**
 
 - Format-preserving tokens (16 digits, Luhn-valid)
 - Secure token vault (PCI-DSS compliant)
 - De-tokenization only for authorized payment processing
 - Token lifecycle: Expire tokens on card expiration date
-
 
 **Configuration Standards (SDM Alternative):**
 
@@ -933,14 +866,12 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - Referential integrity: Same card → same masked value
 - Irreversible: Prove middle 6 cannot be derived
 
-
 **Validation Criteria:**
 
 - ✅ Masked PAN passes Luhn check
 - ✅ Application accepts masked PAN for non-financial testing
 - ✅ Referential integrity maintained across transactions
 - ✅ PCI-DSS assessor approves masking method
-
 
 ---
 
@@ -972,13 +903,11 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - Photos → Redact faces or exclude
 - Other unique identifiers → Assess case-by-case
 
-
 **Expert Determination Method:**
 
 - Statistical de-identification by qualified expert
 - Risk of re-identification reduced to "very small"
 - Document expert methodology and conclusions
-
 
 **Validation Criteria:**
 
@@ -986,7 +915,6 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - ✅ Re-identification risk assessment performed
 - ✅ Data utility maintained for research/analytics
 - ✅ HIPAA Privacy Officer approves de-identification method
-
 
 ---
 
@@ -1005,7 +933,6 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - Maintain data type and format
 - Document shuffle algorithm and seed (for reproducibility)
 
-
 **Configuration Standards (Synthetic Data):**
 
 - Generate synthetic data matching production distributions
@@ -1013,14 +940,12 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - Validate synthetic data resembles production statistically
 - Ensure no individual production records can be reverse-engineered
 
-
 **Validation Criteria:**
 
 - ✅ Statistical properties match production (within 5% variance)
 - ✅ ML model performance comparable to production data
 - ✅ Individual-level re-identification impossible
 - ✅ Data scientists confirm data utility maintained
-
 
 ---
 
@@ -1039,7 +964,6 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - Identifiers: Replace with pseudonyms (random IDs)
 - Audit trail: Log what data was shared, when, with whom
 
-
 **Example Sharing Scenarios:**
 
 | Scenario | Data Shared | Masking Approach |
@@ -1055,7 +979,6 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - ✅ Only necessary fields shared (data minimization)
 - ✅ Sensitive fields masked or removed
 - ✅ Legal/Compliance review approved data sharing
-
 
 ---
 
@@ -1083,7 +1006,6 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - ✅ Compliant: Tokenization with vault, SDM with irreversibility
 - ❌ Non-Compliant: Simple obfuscation (e.g., "XXX"), reversible encoding
 
-
 **PCI-DSS Masking (Req.3.4):**
 
 - Masking required in non-production AND for display purposes
@@ -1092,7 +1014,6 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - ✅ Compliant: Format-preserving tokenization, SDM with irreversibility
 - ❌ Non-Compliant: Simple truncation without irreversibility proof
 
-
 **HIPAA De-Identification (164.514):**
 
 - Safe Harbor: Remove all 18 identifiers (exhaustive list)
@@ -1100,7 +1021,6 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - De-identified data no longer PHI (relaxed controls)
 - ✅ Compliant: Documented Safe Harbor compliance, expert determination letter
 - ❌ Non-Compliant: Partial masking leaving some identifiers visible
-
 
 ---
 
@@ -1124,7 +1044,6 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - **Typical Use Cases:** When to use this technique
 - **Regulatory Alignment:** Which regulations accept/prefer this technique
 
-
 **Action Required:** None (reference only)
 
 ---
@@ -1145,7 +1064,6 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - Field Name
 - Data Category
 - Sensitivity Level
-
 
 **If NOT auto-populated:**
 1. Open IMP-A.8.11.1 workbook
@@ -1170,20 +1088,17 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
   - Archival/Long-Term Storage
   - Other (specify in notes)
 
-
 **How to Select:**
 
 - Ask: "What will the masked data primarily be used for?"
 - If multiple use cases, select the most critical/restrictive
 - Document secondary use cases in Notes column
 
-
 **Example:**
 
 - Credit card numbers → "Non-Production Testing" (dev/test/UAT environments)
 - Customer SSN → "Production Role-Based Access" (customer service sees masked, supervisors see clear)
 - Health records → "Regulatory Compliance (HIPAA)" (de-identification for research)
-
 
 ---
 
@@ -1193,14 +1108,12 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 
 - **Free Text Field** - Document what must work with masked data
 
-
 **What to Document:**
 
 - Application validation rules (e.g., "Must pass Luhn check")
 - Referential integrity (e.g., "Same customer ID must have same masked name across all tables")
 - Sorting/searching requirements (e.g., "Must be sortable by masked value")
 - Statistical properties (e.g., "Must preserve mean and variance for analytics")
-
 
 **Examples:**
 
@@ -1225,7 +1138,6 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
   - Specific Scenarios (Tokenization/Encryption)
   - Emergency Only (Break-Glass)
 
-
 **Decision Criteria:**
 
 **Select "Never (Irreversible)" if:**
@@ -1234,13 +1146,11 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - Regulatory requirement (GDPR pseudonymization)
 - Data minimization principle
 
-
 **Select "Authorized Users Only (DDM)" if:**
 
 - Production environment with role-based access
 - Customer service needs conditional access
 - Real-time business operations require selective unmasking
-
 
 **Select "Specific Scenarios (Tokenization/Encryption)" if:**
 
@@ -1248,13 +1158,11 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 - Compliance requirement (auditor needs access with proper authorization)
 - Batch processing (decrypt for processing, re-encrypt after)
 
-
 **Select "Emergency Only (Break-Glass)" if:**
 
 - Incident response (security team needs access during investigation)
 - Regulatory audit (provide access with full audit trail)
 - Legal hold (litigation requires access to original data)
-
 
 ---
 
@@ -1271,7 +1179,6 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
   - Encryption (for masking)
   - Data Shuffling
   - Hashing (one-way)
-
 
 **Selection Process:**
 1. Use Decision Tree (Section 4.2) to guide selection
@@ -1297,14 +1204,12 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 
 - **Free Text Field** - Document HOW the technique will be configured
 
-
 **What to Document:**
 
 - Masking algorithm (e.g., "Replace middle 6 digits with 'X', preserve first 6 + last 4")
 - Format specifications (e.g., "Maintain 16-digit format, Luhn-valid")
 - Referential integrity rules (e.g., "Same card → same token across all tables")
 - Performance considerations (e.g., "Pre-compute tokens for batch load")
-
 
 **Examples:**
 
@@ -1325,13 +1230,11 @@ Irreversibility: Prove middle 6 digits cannot be derived from masked value (if S
 
 - **Optional** - Document backup technique if primary doesn't meet all requirements
 
-
 **When to Use:**
 
 - Primary technique has performance issues → Document fallback
 - Regulatory flexibility → Document acceptable alternatives
 - Transitional period → Document current technique until primary implemented
-
 
 **Example:**
 ```
@@ -1348,7 +1251,6 @@ Rationale: If tokenization vault becomes unavailable or performance overhead too
 **Column K: Selection Rationale**
 
 - **Free Text Field (200-300 words)** - Explain WHY this technique was chosen
-
 
 **What to Include:**
 1. **Regulatory Requirement:** Which regulation requires/prefers this technique?
@@ -1381,13 +1283,11 @@ ALTERNATIVES CONSIDERED:
 - Encryption: Rejected because not format-preserving (would require application code changes)
 - Dynamic Data Masking: Rejected for non-production (unnecessary overhead for static test data)
 
-
 TRADE-OFFS ACCEPTED:
 
 - Token vault is single point of failure (mitigated with HA architecture, backup vault)
 - De-tokenization process adds latency (acceptable for infrequent authorized access)
 - Vault infrastructure cost (justified by PCI scope reduction and security benefits)
-
 
 APPROVAL: CFO approved as data owner for financial data category (approval email dated 15.01.2026)
 ```
@@ -1402,7 +1302,6 @@ APPROVAL: CFO approved as data owner for financial data category (approval email
 
 - **Text Field** - Name and role of data owner
 
-
 **Column M: Approval Status**
 
 - **Dropdown:**
@@ -1411,11 +1310,9 @@ APPROVAL: CFO approved as data owner for financial data category (approval email
   - ❌ Rejected
   - 📋 Under Review
 
-
 **Column N: Approval Date**
 
 - **Date Field** - Date of approval
-
 
 **Approval Process:**
 1. For each data category (Finance, HR, Customer, etc.), identify data owner
@@ -1432,7 +1329,6 @@ APPROVAL: CFO approved as data owner for financial data category (approval email
 - Propose alternative technique
 - Re-submit for approval
 
-
 **Evidence:** Save approval emails/sign-offs in Evidence_Register sheet
 
 ---
@@ -1443,14 +1339,12 @@ APPROVAL: CFO approved as data owner for financial data category (approval email
 
 - **Free Text Field** - Any additional context, caveats, implementation notes
 
-
 **What to Document:**
 
 - Special considerations (e.g., "Performance testing required before production")
 - Dependencies (e.g., "Requires token vault upgrade to v2.0")
 - Timeline (e.g., "Implement by Q2 2026")
 - Open questions (e.g., "Confirm with legal if anonymization level sufficient for GDPR")
-
 
 ---
 
@@ -1470,33 +1364,27 @@ APPROVAL: CFO approved as data owner for financial data category (approval email
 
 - **Text Field** - Which environment? (Dev, Test, UAT, Training, Analytics, DR)
 
-
 **Column B: Data Element ID**
 
 - **Lookup** - Reference from IMP-A.8.11.1 Sensitive_Data_Inventory
-
 
 **Column C: Field Name**
 
 - **Auto-populate** - From Data Element ID
 
-
 **Column D: Masking Required?**
 
 - **Dropdown:** Yes, No, Conditional, Under Review
 
-
 **Column E: Currently Masked?**
 
 - **Dropdown:** Yes, No, Partial
-
 
 **Completion Guidance:**
 
 - Start with Production-like environments first (UAT, Training)
 - Then complete Test, Dev environments
 - Document "Partial" if some instances masked but not all (e.g., masked in DB but not in logs)
-
 
 ---
 
@@ -1514,7 +1402,6 @@ APPROVAL: CFO approved as data owner for financial data category (approval email
   - Hashing
   - Other (specify in notes)
 
-
 **Column G: Masking Tool/Script**
 
 - **Text Field** - What implements the masking?
@@ -1522,13 +1409,11 @@ APPROVAL: CFO approved as data owner for financial data category (approval email
   - Script name: "mask_customer_data.py", "refresh_uat_masked.sql"
   - Manual: "Manual SQL UPDATE statements"
 
-
 **IMPORTANT:** Document generic process, not product marketing names. Focus on WHAT is done, not which product does it.
 
 **Column H: Masking Configuration**
 
 - **Free Text** - Describe HOW masking is configured
-
 
 **Example:**
 ```
@@ -1545,7 +1430,6 @@ Credit card PAN masking:
 
 - **Dropdown:** Yes, No, Partial, N/A
 
-
 **Referential Integrity Examples:**
 
 **YES:**
@@ -1554,31 +1438,26 @@ Credit card PAN masking:
 - Customer ID 12345 has name "John Doe" in orders table
 - After masking: Both tables show "Jane Smith" (same masked name)
 
-
 **NO:**
 
 - Customer table masked: "Jane Smith"
 - Orders table masked differently: "Bob Jones"
 - Problem: Reports showing customer name from orders won't match customer master
 
-
 **PARTIAL:**
 
 - Referential integrity maintained within database
 - BUT not maintained in log files, backup exports, etc.
 
-
 **Column J: Last Masking Date**
 
 - **Date Field** - When was data last masked/refreshed?
-
 
 **Guidance:**
 
 - For automated masking: Date of last data refresh
 - For one-time masking: Date of initial masking
 - If unknown: Document "Unknown - needs investigation"
-
 
 ---
 
@@ -1588,25 +1467,21 @@ Credit card PAN masking:
 
 - **Dropdown:** Yes, No, Partial, Pending
 
-
 **Validation Types:**
 
 - **Irreversibility:** Confirmed masked data cannot be reversed to original
 - **Functionality:** Application works correctly with masked data
 - **Format:** Masked data passes validation rules
 
-
 **Column L: Validation Evidence**
 
 - **Text Field** - Reference to evidence files
-
 
 **Examples:**
 
 - "Test results in /compliance/sdm-validation-uat-20260115.pdf"
 - "Screenshot of irreversibility test in Evidence_Register EV-042"
 - "QA sign-off email dated 15.01.2026"
-
 
 **Column M: Compliance Status**
 
@@ -1616,7 +1491,6 @@ Credit card PAN masking:
   - ❌ Non-Compliant
   - 📋 Under Review
   - N/A
-
 
 **Determination:**
 
@@ -1628,19 +1502,16 @@ Credit card PAN masking:
 - Functionality validated
 - Evidence documented
 
-
 **⚠️ Partial IF:**
 
 - Masking works but minor issues (e.g., some referential integrity breaks)
 - Validation incomplete (need more testing)
-
 
 **❌ Non-Compliant IF:**
 
 - Masking required but not implemented
 - Masking reversible (can derive original data)
 - Functionality broken (application errors with masked data)
-
 
 ---
 
@@ -1650,18 +1521,15 @@ Credit card PAN masking:
 
 - **Text Field** - Document any problems
 
-
 **Examples:**
 
 - "Performance degradation during masking refresh (8 hours instead of expected 4)"
 - "Referential integrity broken for customer_id in archived_orders table"
 - "Masked data occasionally fails Luhn validation (1% of records)"
 
-
 **Column O: Notes**
 
 - **Free Text** - Additional context
-
 
 ---
 
@@ -1679,21 +1547,17 @@ Credit card PAN masking:
 
 - **Text Field** - Which production system has DDM?
 
-
 **Column B: Data Element ID**
 
 - **Lookup** - Reference from IMP-A.8.11.1
-
 
 **Column C: Field Name**
 
 - **Auto-populate**
 
-
 **Column D: DDM Policy Name**
 
 - **Text Field** - Name of DDM policy/rule
-
 
 **Example:** "SSN_Masking_Policy_v1", "CreditCard_RoleBasedMasking"
 
@@ -1705,7 +1569,6 @@ Credit card PAN masking:
 
 - **Text Field** - Which role/group does this rule apply to?
 
-
 **Examples:**
 
 - "Customer_Service_Agents"
@@ -1713,11 +1576,9 @@ Credit card PAN masking:
 - "Database_Administrators"
 - "Executive_Dashboards"
 
-
 **Column F: Masking Rule**
 
 - **Free Text** - Describe masking transformation for this role
-
 
 **Examples:**
 
@@ -1738,18 +1599,15 @@ Credit card PAN masking:
   - All Access
   - Other (specify)
 
-
 **Column H: Exceptions/Bypass**
 
 - **Text Field** - Are there any bypass conditions?
-
 
 **Examples:**
 
 - "BREAK-GLASS: Security team can bypass with 2FA + manager approval"
 - "AUDIT: Auditors see unmasked during annual audit (logged)"
 - "NONE: No bypass allowed"
-
 
 ---
 
@@ -1764,16 +1622,13 @@ Credit card PAN masking:
   - High (>50ms)
   - Not Measured
 
-
 **Column J: Performance Acceptable?**
 
 - **Dropdown:** Yes, No, Needs Optimization
 
-
 **Column K: DDM Tested?**
 
 - **Dropdown:** Yes, No, Partial, Pending
-
 
 **Testing Validation:**
 
@@ -1781,11 +1636,9 @@ Credit card PAN masking:
 - ⚠️ **Partial:** Some roles tested, others not yet
 - ❌ **NO:** Testing not performed
 
-
 **Column L: Audit Logging Enabled?**
 
 - **Dropdown:** Yes, No, Partial
-
 
 **Why This Matters:** DDM policy evaluations should be logged (who accessed what data, when, which policy applied)
 
@@ -1797,11 +1650,9 @@ Credit card PAN masking:
 
 - **Dropdown:** ✅ Compliant, ⚠️ Partial, ❌ Non-Compliant, 📋 Under Review
 
-
 **Column N: Notes**
 
 - **Free Text**
-
 
 ---
 
@@ -1821,23 +1672,19 @@ Credit card PAN masking:
 
 - **Lookup** - Reference from IMP-A.8.11.1
 
-
 **Column B: Field Name**
 
 - **Auto-populate**
 
-
 **Column C: Token Vault System**
 
 - **Text Field** - Name/description of token vault
-
 
 **Examples:**
 
 - "Internal Token Vault (PostgreSQL + AES-256)"
 - "Third-Party Service: [Provider Name]"
 - "Hardware Security Module (HSM) - Model XYZ"
-
 
 **Column D: Token Format**
 
@@ -1847,17 +1694,14 @@ Credit card PAN masking:
   - Custom Format
   - Other
 
-
 **Format-Preserving Examples:**
 
 - Credit card: 16 digits, Luhn-valid → Token: 16 digits, Luhn-valid
 - SSN: XXX-XX-XXXX format → Token: XXX-XX-XXXX format
 
-
 **Random Examples:**
 
 - Token: 8a7f3c2e-9d41-4b1f-a5c3-1e8f6d9c2b4a (UUID)
-
 
 ---
 
@@ -1867,18 +1711,15 @@ Credit card PAN masking:
 
 - **Text Field** - Which algorithm/method?
 
-
 **Examples:**
 
 - "FF3-1 (NIST SP 800-38G) with AES-128"
 - "Deterministic encryption with key derivation"
 - "Vault-based lookup table (random tokens)"
 
-
 **Column F: Deterministic?**
 
 - **Dropdown:** Yes (same input → same token), No (same input → different tokens)
-
 
 **Deterministic = YES:**
 
@@ -1886,18 +1727,15 @@ Credit card PAN masking:
 - **Benefit:** Referential integrity maintained
 - **Risk:** Token collision possible (limited token space)
 
-
 **Deterministic = NO:**
 
 - Same credit card tokenized multiple times → different tokens each time
 - **Benefit:** No token collision risk
 - **Risk:** Referential integrity lost (same card → different tokens in different tables)
 
-
 **Column G: Token Lifecycle**
 
 - **Text Field** - When do tokens expire/rotate?
-
 
 **Examples:**
 
@@ -1905,18 +1743,15 @@ Credit card PAN masking:
 - "Tokens rotated annually"
 - "Indefinite (no expiration)"
 
-
 **Column H: De-tokenization Authorization**
 
 - **Text Field** - Who can de-tokenize and how?
-
 
 **Examples:**
 
 - "Payment Gateway API with client certificate authentication"
 - "Database Administrators with 2FA + manager approval (logged)"
 - "Automated payment processing (service account with HSM key)"
-
 
 ---
 
@@ -1926,13 +1761,11 @@ Credit card PAN masking:
 
 - **Text Field** - How is vault data encrypted?
 
-
 **Example:** "AES-256 encryption at rest, TLS 1.3 in transit, HSM-managed keys"
 
 **Column J: Vault Access Controls**
 
 - **Text Field** - Who/what can access vault?
-
 
 **Example:** "Service accounts only, no human access. MFA required for vault admin console."
 
@@ -1940,13 +1773,11 @@ Credit card PAN masking:
 
 - **Text Field** - Backup strategy?
 
-
 **Example:** "Daily encrypted backups to offsite storage. DR site with vault replica (async replication)."
 
 **Column L: Compliance Status**
 
 - **Dropdown:** ✅ Compliant, ⚠️ Partial, ❌ Non-Compliant
-
 
 ---
 
@@ -1964,13 +1795,11 @@ Jumping to a technique selection ("We'll use tokenization for everything!") befo
 - What functionality must be preserved
 - What regulatory requirements apply
 
-
 **Why This Fails:**
 
 - Tokenization may be overkill for simple non-production masking
 - One technique doesn't fit all data types
 - Over-engineering leads to complexity, cost, delays
-
 
 **How to Avoid:**
 ✅ **ALWAYS start with requirements:**
@@ -2039,7 +1868,6 @@ customer_name: "Bob Williams"  ← Randomized independently (DIFFERENT!)
 - Same input → same output (consistent transformation)
 - Document parent-child table relationships
 - Test cross-table queries after masking
-
 
 **CORRECT Approach:**
 ```
@@ -2110,13 +1938,11 @@ Problem: International dialing code lost, SMS functionality breaks
 - Maintain BIN (first 6 digits) for card type identification
 - Preserve IIN range (different for Visa, Mastercard, Amex)
 
-
 **For Email Addresses:**
 
 - Must match regex: `[username]@[domain].[tld]`
 - Use masked domain: `masked_[hash]@example-test.com`
 - Maintain uniqueness (same email → same masked email)
-
 
 **For Phone Numbers:**
 
@@ -2124,13 +1950,11 @@ Problem: International dialing code lost, SMS functionality breaks
 - Maintain digit count per region
 - Use valid area codes (avoid reserved ranges like 555-0100)
 
-
 **For Dates:**
 
 - Maintain valid calendar dates (no February 30th)
 - Preserve date format (DD.MM.YYYY vs MM/DD/YYYY)
 - Age calculations should remain reasonable (no 200-year-old patients)
-
 
 **Testing Validation:**
 ```
@@ -2243,7 +2067,6 @@ Problem: Release schedule impacted, business frustrated
 - [ ] Load test: Can system handle peak concurrent users with DDM?
 - [ ] Set performance threshold: <10ms overhead acceptable, >50ms unacceptable
 
-
 **For Tokenization:**
 
 - [ ] Measure vault response time (round-trip latency)
@@ -2252,7 +2075,6 @@ Problem: Release schedule impacted, business frustrated
 - [ ] Network latency: Vault in different datacenter/cloud region?
 - [ ] Set performance threshold: <20ms per token lookup acceptable
 
-
 **For SDM (Batch Masking):**
 
 - [ ] Measure masking time for full dataset
@@ -2260,7 +2082,6 @@ Problem: Release schedule impacted, business frustrated
 - [ ] Verify referential integrity maintained during masking
 - [ ] Test parallel masking (can multiple tables be masked concurrently?)
 - [ ] Set performance threshold: Masking completes within maintenance window
-
 
 **Performance Acceptance Criteria:**
 ```
@@ -2328,7 +2149,6 @@ Acceptance Criteria:
 - Phone numbers: 100% valid format per region
 - Dates: 100% valid calendar dates
 
-
 Evidence: Validation test results with 100% pass rate
 ```
 
@@ -2347,7 +2167,6 @@ Test Cases:
 - Process payment with masked card data → SUCCESS
 - Generate report with masked data → SUCCESS
 - Search for customer by masked name → SUCCESS
-
 
 Evidence: QA test results with 0 functional defects
 ```
@@ -2443,7 +2262,6 @@ Production database credentials:
   - Used for: Extracting data to mask in non-production
   - Cannot accidentally modify production
 
-
 Non-production database credentials:
 
   - Full write access
@@ -2471,13 +2289,11 @@ Non-production database credentials:
 - [ ] **Regulatory alignment verified:** Technique selections comply with applicable regulations (GDPR, PCI-DSS, HIPAA, etc.)
 - [ ] **Alternative techniques considered:** Documented what alternatives were evaluated and why rejected
 
-
 **Quality Questions:**
 
 - Can an auditor understand WHY each technique was chosen by reading the rationale?
 - Would this technique selection still be valid if [Organization] changed masking tools?
 - Are regulatory requirements explicitly referenced (not just "compliance required")?
-
 
 ---
 
@@ -2491,14 +2307,12 @@ Non-production database credentials:
 - [ ] Last masking date documented (<30 days old ideal)
 - [ ] Validation status current (tested within last quarter)
 
-
 **Dynamic Data Masking (DDM):**
 
 - [ ] All DDM policies documented with role-based rules
 - [ ] Performance impact measured (not "unknown")
 - [ ] Audit logging enabled and verified
 - [ ] DDM policies tested for each role
-
 
 **Tokenization (if applicable):**
 
@@ -2507,20 +2321,17 @@ Non-production database credentials:
 - [ ] De-tokenization authorization process defined
 - [ ] Vault security controls documented (encryption, access control, backup)
 
-
 **Other Techniques:**
 
 - [ ] Encryption key management documented
 - [ ] Hashing algorithms specified (SHA-256, bcrypt, etc.)
 - [ ] Redaction/nullification scope documented
 
-
 **Quality Questions:**
 
 - Can someone unfamiliar with the system understand how masking is implemented?
 - Is enough detail provided to replicate the masking configuration?
 - Are there any "TBD" or "Unknown" entries? (If yes, investigate before submission)
-
 
 ---
 
@@ -2532,12 +2343,10 @@ Non-production database credentials:
 - [ ] Irreversibility validation criteria defined
 - [ ] Performance thresholds established
 
-
 **Quality Questions:**
 
 - Are standards specific enough to implement consistently?
 - Would different teams implement masking the same way following these standards?
-
 
 ---
 
@@ -2549,13 +2358,11 @@ Non-production database credentials:
 - [ ] Target dates realistic and approved
 - [ ] Gap ownership assigned to specific individuals
 
-
 **Quality Questions:**
 
 - Are gaps prioritized correctly (critical gaps have earliest target dates)?
 - Are remediation plans actionable (specific steps, not vague intentions)?
 - Are target dates achievable given resource constraints?
-
 
 ---
 
@@ -2567,7 +2374,6 @@ Non-production database credentials:
 - [ ] Evidence ownership assigned
 - [ ] Evidence retention periods appropriate
 
-
 **Evidence Type Distribution (Ideal):**
 
 - 30% Technique selection evidence (decision matrices, approvals)
@@ -2575,13 +2381,11 @@ Non-production database credentials:
 - 30% Validation evidence (test results, irreversibility proofs)
 - 10% Approval evidence (sign-offs, emails)
 
-
 **Quality Questions:**
 
 - Can an auditor access each evidence item within 5 minutes?
 - Is evidence storage secure and backed up?
 - Does evidence actually prove what it claims to prove?
-
 
 ---
 
@@ -2591,7 +2395,6 @@ Non-production database credentials:
 - [ ] Technique coverage by data category summarized
 - [ ] Gaps prioritized and visible
 - [ ] Approval sign-off section complete
-
 
 ---
 
@@ -2638,7 +2441,6 @@ during quarterly UAT refresh. Validation: 100% of masked cards pass Luhn check (
 - WHEN? (last masking date)
 - VALIDATED? (proof it works)
 
-
 ---
 
 **Issue 3: Unrealistic Gap Remediation Plans**
@@ -2670,7 +2472,6 @@ Owner: Jane Doe (Database Administrator), john.smith@example.com
 - **R**elevant: Addresses root cause
 - **T**ime-bound: Specific deadline
 
-
 ---
 
 # Evidence Collection Guide
@@ -2686,7 +2487,6 @@ Owner: Jane Doe (Database Administrator), john.smith@example.com
 - Regulatory requirement analysis
 - Alternatives evaluation documentation
 
-
 **Storage Location:** `/compliance/data-masking/technique-selection/`
 
 **Retention Period:** 7 years (regulatory audit retention requirement)
@@ -2696,7 +2496,6 @@ Owner: Jane Doe (Database Administrator), john.smith@example.com
 - `Technique_Selection_Rationale_Finance_Domain_20260115.pdf` - Documented decision analysis for financial data
 - `DataOwner_Approval_CFO_20260115.pdf` - CFO approval email for credit card tokenization
 - `PCI_DSS_Compliance_Mapping_20260115.xlsx` - Mapping of PCI-DSS requirements to masking techniques
-
 
 ---
 
@@ -2709,7 +2508,6 @@ Owner: Jane Doe (Database Administrator), john.smith@example.com
 - DDM policy exports
 - Token vault architecture diagrams
 
-
 **Storage Location:** `/compliance/data-masking/implementation/`
 
 **Retention Period:** Current version + 2 prior versions
@@ -2720,7 +2518,6 @@ Owner: Jane Doe (Database Administrator), john.smith@example.com
 - `DDM_Policies_Production_20260115.json` - Dynamic data masking policy export from database
 - `TokenVault_Architecture_v2.pdf` - Token vault infrastructure diagram with security controls
 - `mask_customer_data.py` - Custom Python masking script with version control history
-
 
 ---
 
@@ -2734,7 +2531,6 @@ Owner: Jane Doe (Database Administrator), john.smith@example.com
 - Functionality test results (QA sign-off)
 - Performance test results
 
-
 **Storage Location:** `/compliance/data-masking/validation/`
 
 **Retention Period:** 3 years
@@ -2747,7 +2543,6 @@ Owner: Jane Doe (Database Administrator), john.smith@example.com
 - `QA_Signoff_UAT_Functionality_20260115.pdf` - QA team confirmation application works with masked data
 - `Performance_Impact_DDM_20260115.pdf` - DDM overhead measurement (<10ms per query)
 
-
 ---
 
 **Category 4: Approval Evidence**
@@ -2759,7 +2554,6 @@ Owner: Jane Doe (Database Administrator), john.smith@example.com
 - Compliance officer approval
 - CISO final approval
 
-
 **Storage Location:** `/compliance/data-masking/approvals/`
 
 **Retention Period:** 7 years
@@ -2770,7 +2564,6 @@ Owner: Jane Doe (Database Administrator), john.smith@example.com
 - `Security_Review_Signoff_20260115.pdf` - Security team approval of technique selections
 - `Compliance_Officer_Review_20260115.pdf` - Compliance confirmation of regulatory alignment
 - `CISO_Final_Approval_20260115.pdf` - CISO sign-off for deployment authorization
-
 
 ---
 
@@ -2786,20 +2579,17 @@ As you complete each assessment step, immediately collect corresponding evidence
 - Collect regulatory requirement mappings
 - Document data owner review meetings (meeting minutes)
 
-
 **While documenting implementations:**
 
 - Export masking tool configurations
 - Screenshot DDM policies
 - Backup masking scripts with version control commit hash
 
-
 **While validating masking:**
 
 - Run validation tests and save results
 - Capture test outputs (SQL query results, validation reports)
 - Document QA sign-offs
-
 
 ---
 
@@ -2847,14 +2637,12 @@ Notes: Test performed post-UAT refresh. Re-test quarterly with each refresh.
 - [ ] Verify files open correctly and content is as described
 - [ ] If any files inaccessible, update file location or regenerate evidence
 
-
 **Common Issues:**
 
 - File moved → Update file location in Evidence_Register
 - File deleted → Regenerate evidence or mark as "Missing - Needs Regeneration"
 - Access denied → Verify permissions, add evidence owner to access list
 - Wrong file → Correct file location reference
-
 
 ---
 
@@ -2869,7 +2657,6 @@ Notes: Test performed post-UAT refresh. Re-test quarterly with each refresh.
 - Example: "Irreversibility test" should show attempted reversal attempts and 0% success rate
 - Not just: "Masking completed successfully" (doesn't prove irreversibility)
 
-
 ✅ **Completeness:** Evidence includes all necessary context
 
 - Who performed the test?
@@ -2877,20 +2664,17 @@ Notes: Test performed post-UAT refresh. Re-test quarterly with each refresh.
 - What was the methodology?
 - What were the results?
 
-
 ✅ **Authenticity:** Evidence is original and unaltered
 
 - Avoid screenshots that could be easily faked (prefer system-generated reports)
 - Include metadata (timestamps, author, version)
 - Digital signatures if available
 
-
 ✅ **Accessibility:** Evidence can be retrieved within 5 minutes
 
 - File path is correct
 - Permissions allow access by auditors/compliance team
 - Evidence not stored on personal devices (use shared repositories)
-
 
 **Poor Quality Evidence Example:**
 ```
@@ -2922,14 +2706,12 @@ Problem: Vague description, inaccessible location, no context
 - Encryption at rest recommended (AES-256)
 - Access logging enabled (who accessed what evidence when)
 
-
 **Backup:**
 
 - Evidence is required for audits (must not be lost)
 - Daily backups to offsite storage
 - Backup retention matches evidence retention period (7 years)
 - Test restore process quarterly
-
 
 **Organization:**
 ```
@@ -2977,7 +2759,6 @@ Problem: Vague description, inaccessible location, no context
   - [ ] Performance implications considered
   - [ ] Implementation details sufficient for deployment
 
-
 **Reviewer 2: Data Owner Review (Business)**
 
 - **Who:** Data owner for each data domain (Finance, HR, Customer, etc.)
@@ -2988,7 +2769,6 @@ Problem: Vague description, inaccessible location, no context
   - [ ] Data utility maintained for intended use cases
   - [ ] Risks acceptable
 
-
 **Reviewer 3: Compliance Officer Review (Regulatory)**
 
 - **Who:** DPO, Compliance Officer, or Legal Counsel
@@ -2998,7 +2778,6 @@ Problem: Vague description, inaccessible location, no context
   - [ ] PCI-DSS masking requirements met (if applicable)
   - [ ] HIPAA de-identification requirements met (if applicable)
   - [ ] Other applicable regulations addressed
-
 
 ---
 
@@ -3012,13 +2791,11 @@ Problem: Vague description, inaccessible location, no context
 - **What:** Data owner approves techniques for their data domain
 - **Evidence:** Approval email or signed Technique_Selection_Matrix sheet
 
-
 **Step 2: Security Team Approval**
 
 - **When:** After implementation documentation complete
 - **What:** Security team confirms masking implementations adequate
 - **Evidence:** Security review sign-off document
-
 
 **Step 3: Compliance Officer Approval**
 
@@ -3026,13 +2803,11 @@ Problem: Vague description, inaccessible location, no context
 - **What:** Compliance confirms regulatory requirements met
 - **Evidence:** Compliance approval memo
 
-
 **Step 4: CISO Final Approval**
 
 - **When:** After all above approvals obtained
 - **What:** CISO authorizes deployment of masking implementations
 - **Evidence:** CISO sign-off in Summary_Dashboard sheet
-
 
 ---
 
@@ -3056,7 +2831,6 @@ Problem: Vague description, inaccessible location, no context
 - **Electronic:** Email approval with reference to workbook version
 - **Digital signature:** DocuSign or equivalent (if available)
 
-
 **Store Approvals:** Save approval emails/documents in Evidence_Register
 
 ---
@@ -3073,20 +2847,17 @@ Problem: Vague description, inaccessible location, no context
 - Verify implementation across all environments (Prod, Dev, Test, UAT, etc.)
 - Document coverage gaps
 
-
 ➡️ **ISMS-IMP-A.8.11.4 (Testing & Validation Framework)**
 
 - Use validation criteria from this assessment
 - Implement comprehensive testing (irreversibility, functionality, performance)
 - Document test results
 
-
 ➡️ **ISMS-IMP-A.8.11.5 (Compliance Dashboard)**
 
 - Technique selection status feeds into overall compliance score
 - Gap analysis feeds into remediation roadmap
 - Evidence register consolidates with other assessments
-
 
 ---
 
@@ -3103,13 +2874,11 @@ Problem: Vague description, inaccessible location, no context
 - [ ] Major system changes (new applications, database migrations)
 - [ ] Gap remediation completed (update compliance status)
 
-
 **Regular Review Cycle:**
 
 - **Semi-Annual (every 6 months):** Review and update technique selections
 - **Annual:** Full re-assessment with updated data inventory
 - **After major changes:** Ad-hoc re-assessment
-
 
 ---
 
@@ -3124,18 +2893,15 @@ Problem: Vague description, inaccessible location, no context
 - Name: ISMS Implementation Team
 - Date: [Date]
 
-
 **Assessment Guide Reviewed By:**
 
 - CISO: ___________________________ Date: __________
 - Data Protection Officer: ___________________________ Date: __________
 - Compliance Officer: ___________________________ Date: __________
 
-
 **Assessment Guide Approved By:**
 
 - CISO: ___________________________ Date: __________
-
 
 **Next Review Date:** 20.07.2026 (6 months)
 
@@ -3189,14 +2955,12 @@ This document provides the **complete technical blueprint** for generating the I
 - Python script integration requirements
 - Quality assurance validation criteria
 
-
 **Target Audience:**
 
 - Python developers implementing the generator script
 - Excel power users creating manual workbooks
 - Quality assurance teams validating workbook structure
 - Technical auditors verifying implementation accuracy
-
 
 ## Workbook Generation Approach
 
@@ -3212,7 +2976,6 @@ python3 generate_a811_2_masking_techniques.py
 - Error-prone, time-consuming, difficult to maintain
 - Use only if Python environment unavailable
 
-
 ## Key Design Principles
 
 **Technique-Centric, Not Tool-Centric:**
@@ -3221,7 +2984,6 @@ python3 generate_a811_2_masking_techniques.py
 - Tool/product-agnostic (works with any masking solution or custom scripts)
 - Technique selection decisions remain valid even if tools change
 
-
 **Evidence-Based Assessment:**
 
 - Every technique selection requires justification rationale
@@ -3229,13 +2991,11 @@ python3 generate_a811_2_masking_techniques.py
 - Every configuration requires approval
 - Audit trail maintained throughout
 
-
 **Scalability:**
 
 - 50-100 row templates per sheet (expandable)
 - Supports organizations with simple masking (1-2 techniques) or complex (all 8 techniques)
 - Formula references use dynamic ranges where possible
-
 
 ---
 
@@ -3281,7 +3041,6 @@ Provide user guidance, technique taxonomy overview, use case guidance, status le
 - Rows 67-90: Acceptable Evidence Examples
 - Rows 91-110: Key Definitions
 
-
 ## Header Section (Rows 1-2)
 
 **Row 1: Main Title**
@@ -3293,7 +3052,6 @@ Provide user guidance, technique taxonomy overview, use case guidance, status le
 - **Alignment:** Center, Vertical Center
 - **Row Height:** 40px
 
-
 **Row 2: Subtitle**
 
 - **Cell A2:** "ISO/IEC 27001:2022 - Control A.8.11: Data Masking"
@@ -3302,7 +3060,6 @@ Provide user guidance, technique taxonomy overview, use case guidance, status le
 - **Fill:** RGB(68, 114, 196) - Medium Blue (#4472C4)
 - **Alignment:** Center, Vertical Center
 - **Row Height:** 25px
-
 
 ## Document Metadata (Rows 4-11)
 
@@ -3325,7 +3082,6 @@ Provide user guidance, technique taxonomy overview, use case guidance, status le
 - **Font:** Calibri 10pt
 - **Border:** Thin border around each cell
 
-
 ## How to Use This Workbook (Rows 13-28)
 
 **Row 13: Section Header**
@@ -3335,7 +3091,6 @@ Provide user guidance, technique taxonomy overview, use case guidance, status le
 - **Font:** Calibri 12pt Bold
 - **Fill:** RGB(217, 217, 217) - Light Gray (#D9D9D9)
 - **Alignment:** Left
-
 
 **Rows 14-28: Numbered Instructions**
 ```
@@ -3363,7 +3118,6 @@ Provide user guidance, technique taxonomy overview, use case guidance, status le
 - **Wrap Text:** Enabled
 - **Indentation:** 1 level
 
-
 ## Technique Taxonomy Quick Reference (Rows 30-42)
 
 **Row 30: Section Header**
@@ -3372,7 +3126,6 @@ Provide user guidance, technique taxonomy overview, use case guidance, status le
 - **Merge:** A30:F30
 - **Font:** Calibri 12pt Bold
 - **Fill:** Light Gray
-
 
 **Rows 31-42: Taxonomy Table**
 
@@ -3395,12 +3148,10 @@ Provide user guidance, technique taxonomy overview, use case guidance, status le
 - **Column D (Format-Preserving?):** Width 18
 - **Column E (Typical Use Case):** Width 30, Wrap Text
 
-
 **Conditional Formatting:**
 
 - Reversible = "Yes" → Light blue fill (RGB 180, 199, 231)
 - Reversible = "No" → Light green fill (RGB 198, 239, 206)
-
 
 ## Use Case Guidance (Rows 44-56)
 
@@ -3410,7 +3161,6 @@ Provide user guidance, technique taxonomy overview, use case guidance, status le
 - **Merge:** A44:D44
 - **Font:** Calibri 12pt Bold
 - **Fill:** Light Gray
-
 
 **Rows 45-56: Use Case Table**
 
@@ -3437,7 +3187,6 @@ Provide user guidance, technique taxonomy overview, use case guidance, status le
 - **Cell A58:** "Implementation Status Legend"
 - **Merge:** A58:D58
 
-
 **Rows 59-66: Status Symbols**
 
 | Symbol | Status | Description | Color Code (RGB) |
@@ -3454,7 +3203,6 @@ Provide user guidance, technique taxonomy overview, use case guidance, status le
 
 - **Cell A68:** "Acceptable Evidence Examples"
 - **Merge:** A68:D68
-
 
 **Rows 69-90: Bulleted List**
 ```
@@ -3487,14 +3235,12 @@ Provide user guidance, technique taxonomy overview, use case guidance, status le
 - **Bullet Character:** ✓
 - **Line Spacing:** 1.2
 
-
 ## Key Definitions (Rows 92-110)
 
 **Row 92: Section Header**
 
 - **Cell A92:** "Key Definitions & Terminology"
 - **Merge:** A92:C92
-
 
 **Rows 93-110: Definition Table**
 
@@ -3535,7 +3281,6 @@ Comprehensive reference taxonomy for all approved masking techniques. **Read-onl
 - **Fill:** Dark Blue (#003366)
 - **Alignment:** Center
 
-
 **Row 2: Instructions**
 
 - **Cell A2:** "Reference Guide - Use Technique IDs when documenting masking implementations (e.g., TECH-SDM for Static Data Masking)"
@@ -3544,7 +3289,6 @@ Comprehensive reference taxonomy for all approved masking techniques. **Read-onl
 - **Fill:** Medium Blue (#4472C4), White Text
 - **Alignment:** Center
 
-
 **Row 3: Warning Note**
 
 - **Cell A3:** "⚠️ This is a REFERENCE sheet. Do not modify. Use these Technique IDs in Technique_Selection_Matrix and implementation sheets."
@@ -3552,7 +3296,6 @@ Comprehensive reference taxonomy for all approved masking techniques. **Read-onl
 - **Font:** Calibri 10pt Bold
 - **Fill:** Light Yellow (#FFFFCC)
 - **Border:** Thick border
-
 
 ## Column Headers (Row 5)
 
@@ -3577,7 +3320,6 @@ Comprehensive reference taxonomy for all approved masking techniques. **Read-onl
 - **Alignment:** Center, Vertical Center, Wrap Text
 - **Border:** All borders, medium weight
 - **Freeze Panes:** Row 6
-
 
 ## Data Rows (Rows 6-13) - The 8 Approved Techniques
 
@@ -3701,7 +3443,6 @@ Comprehensive reference taxonomy for all approved masking techniques. **Read-onl
 - **Alignment:** Left for text, Center for Column A, D, E, J
 - **Protection:** Locked (read-only reference)
 
-
 ## Technique Comparison Matrix (Rows 15-28)
 
 **Row 15: Section Header**
@@ -3710,7 +3451,6 @@ Comprehensive reference taxonomy for all approved masking techniques. **Read-onl
 - **Merge:** A15:J15
 - **Font:** Calibri 12pt Bold
 - **Fill:** Medium Blue (#4472C4), White Text
-
 
 **Row 16: Comparison Table Headers**
 
@@ -3734,13 +3474,11 @@ Comprehensive reference taxonomy for all approved masking techniques. **Read-onl
 - ⚠️ = Conditional (depends on configuration)
 - Partial = Limited support
 
-
 **Conditional Formatting:**
 
 - ✅ cells → Green fill (RGB 198, 239, 206)
 - ❌ cells → Red fill (RGB 255, 199, 206)
 - ⚠️ cells → Yellow fill (RGB 255, 235, 156)
-
 
 ---
 
@@ -3759,7 +3497,6 @@ Map each sensitive data element to appropriate masking technique(s) with documen
 - **Fill:** Dark Blue (#003366)
 - **Alignment:** Center
 
-
 **Row 2: Instructions**
 
 - **Cell A2:** "For each sensitive data element, select appropriate masking technique(s) with documented rationale (100 row template)"
@@ -3768,7 +3505,6 @@ Map each sensitive data element to appropriate masking technique(s) with documen
 - **Fill:** Medium Blue (#4472C4), White Text
 - **Alignment:** Center
 
-
 **Row 3: Assessment Question**
 
 - **Cell A3:** "Has [Organization] completed technique selection for all sensitive data elements?"
@@ -3776,13 +3512,11 @@ Map each sensitive data element to appropriate masking technique(s) with documen
 - **Font:** Calibri 10pt Bold
 - **Fill:** Light Yellow (#FFFFCC)
 
-
 **Row 4: Response**
 
 - **Cell L4:** [Dropdown: Yes / No / Partial / Planned / N/A]
 - **Merge:** L4:O4
 - **Fill:** Light Yellow (#FFFFCC)
-
 
 ## Column Headers (Row 6)
 
@@ -3813,7 +3547,6 @@ Map each sensitive data element to appropriate masking technique(s) with documen
 - **Border:** All borders, medium weight
 - **Freeze Panes:** Row 7
 
-
 ## Example Row (Row 7)
 
 | Col | Value |
@@ -3839,7 +3572,6 @@ Map each sensitive data element to appropriate masking technique(s) with documen
 - **Fill:** Light Gray (#E7E6E6)
 - **Font:** Calibri 10pt Italic
 
-
 ## Data Entry Rows (Rows 8-107)
 
 **100 Template Rows:**
@@ -3847,7 +3579,6 @@ Map each sensitive data element to appropriate masking technique(s) with documen
 - **Fill:** Light Yellow (#FFFFCC)
 - **Font:** Calibri 10pt Regular
 - **Protection:** Unlocked for E-O; Locked for A-D (auto-populate from IMP-A.8.11.1)
-
 
 **Auto-populate Formulas:**
 
@@ -3874,7 +3605,6 @@ Explanation: Lookup Data Element ID, return Field Name from IMP-A.8.11.1 workboo
 - ❌ Rejected → Red fill (RGB 255, 199, 206)
 - 📋 Under Review → Blue fill (RGB 180, 199, 231)
 
-
 **Data Validation (Column K - Selection Rationale):**
 ```excel
 Custom: =LEN(K8)>=100
@@ -3900,7 +3630,6 @@ Document all Static Data Masking (SDM) implementations across non-production and
 - **Fill:** Dark Blue (#003366)
 - **Alignment:** Center
 
-
 **Row 2: Instructions**
 
 - **Cell A2:** "Document SDM implementations across all non-production environments (50 row template)"
@@ -3909,7 +3638,6 @@ Document all Static Data Masking (SDM) implementations across non-production and
 - **Fill:** Medium Blue (#4472C4), White Text
 - **Alignment:** Center
 
-
 **Row 3: Assessment Question**
 
 - **Cell A3:** "Is Static Data Masking implemented and validated for all required environments and data elements?"
@@ -3917,13 +3645,11 @@ Document all Static Data Masking (SDM) implementations across non-production and
 - **Font:** Calibri 10pt Bold
 - **Fill:** Light Yellow (#FFFFCC)
 
-
 **Row 4: Response**
 
 - **Cell M4:** [Dropdown: Yes / No / Partial / Planned / N/A]
 - **Merge:** M4:P4
 - **Fill:** Light Yellow (#FFFFCC)
-
 
 ## Column Headers (Row 6)
 
@@ -3955,7 +3681,6 @@ Document all Static Data Masking (SDM) implementations across non-production and
 - **Border:** All borders, medium weight
 - **Freeze Panes:** Row 7
 
-
 ## Example Row (Row 7)
 
 | Col | Value |
@@ -3982,7 +3707,6 @@ Document all Static Data Masking (SDM) implementations across non-production and
 - **Fill:** Light Gray (#E7E6E6)
 - **Font:** Calibri 10pt Italic
 
-
 ## Data Entry Rows (Rows 8-57)
 
 **50 Template Rows:**
@@ -3990,7 +3714,6 @@ Document all Static Data Masking (SDM) implementations across non-production and
 - **Fill:** Light Yellow (#FFFFCC)
 - **Font:** Calibri 10pt Regular
 - **Protection:** Unlocked for A, D-P; Locked for B-C (auto-populate)
-
 
 **Auto-populate Formulas:**
 
@@ -4007,14 +3730,12 @@ Document all Static Data Masking (SDM) implementations across non-production and
 - 📋 Under Review → Blue fill (RGB 180, 199, 231)
 - N/A → Gray fill (RGB 217, 217, 217)
 
-
 **Conditional Formatting (Column J - Referential Integrity):**
 
 - Yes (Maintained) → Green fill (RGB 198, 239, 206)
 - No (Broken) → Red fill (RGB 255, 199, 206)
 - Partial → Yellow fill (RGB 255, 235, 156)
 - N/A → Gray fill (RGB 217, 217, 217)
-
 
 ## SDM Implementation Checklist (Rows 59-72)
 
@@ -4024,7 +3745,6 @@ Document all Static Data Masking (SDM) implementations across non-production and
 - **Merge:** A59:E59
 - **Font:** Calibri 11pt Bold
 - **Fill:** Medium Blue (#4472C4), White Text
-
 
 **Row 60: Table Headers**
 
@@ -4058,7 +3778,6 @@ Document all Static Data Masking (SDM) implementations across non-production and
 - Same status dropdown as other checklists
 - Conditional formatting: Green/Yellow/Red based on status
 
-
 ## SDM Performance Metrics (Rows 74-82)
 
 **Row 74: Section Header**
@@ -4067,7 +3786,6 @@ Document all Static Data Masking (SDM) implementations across non-production and
 - **Merge:** A74:E74
 - **Font:** Calibri 11pt Bold
 - **Fill:** Light Gray
-
 
 **Rows 75-82: Metrics Table**
 
@@ -4087,7 +3805,6 @@ Document all Static Data Masking (SDM) implementations across non-production and
 - Yellow: Metric within acceptable range
 - Red: Metric below target
 
-
 ---
 
 # Sheet 5: Dynamic_Masking_DDM
@@ -4105,7 +3822,6 @@ Document Dynamic Data Masking (DDM) implementations in production environments. 
 - **Fill:** Dark Blue (#003366)
 - **Alignment:** Center
 
-
 **Row 2: Instructions**
 
 - **Cell A2:** "Document DDM implementations in production environments with role-based masking policies (30 row template)"
@@ -4114,7 +3830,6 @@ Document Dynamic Data Masking (DDM) implementations in production environments. 
 - **Fill:** Medium Blue (#4472C4), White Text
 - **Alignment:** Center
 
-
 **Row 3: Assessment Question**
 
 - **Cell A3:** "Is Dynamic Data Masking implemented for all production systems requiring role-based access control?"
@@ -4122,13 +3837,11 @@ Document Dynamic Data Masking (DDM) implementations in production environments. 
 - **Font:** Calibri 10pt Bold
 - **Fill:** Light Yellow (#FFFFCC)
 
-
 **Row 4: Response**
 
 - **Cell K4:** [Dropdown: Yes / No / Partial / Planned / N/A]
 - **Merge:** K4:N4
 - **Fill:** Light Yellow (#FFFFCC)
-
 
 ## Column Headers (Row 6)
 
@@ -4158,7 +3871,6 @@ Document Dynamic Data Masking (DDM) implementations in production environments. 
 - **Border:** All borders, medium weight
 - **Freeze Panes:** Row 7
 
-
 ## Example Row (Row 7)
 
 | Col | Value |
@@ -4183,7 +3895,6 @@ Document Dynamic Data Masking (DDM) implementations in production environments. 
 - **Fill:** Light Gray (#E7E6E6)
 - **Font:** Calibri 10pt Italic
 
-
 ## Data Entry Rows (Rows 8-37)
 
 **30 Template Rows:**
@@ -4191,7 +3902,6 @@ Document Dynamic Data Masking (DDM) implementations in production environments. 
 - **Fill:** Light Yellow (#FFFFCC)
 - **Font:** Calibri 10pt Regular
 - **Protection:** Unlocked for A, D-N; Locked for B-C (auto-populate)
-
 
 **Auto-populate Formula:**
 
@@ -4208,11 +3918,9 @@ Document Dynamic Data Masking (DDM) implementations in production environments. 
 - High (>50ms) → Red fill (RGB 255, 199, 206)
 - Not Measured → Gray fill (RGB 217, 217, 217)
 
-
 **Conditional Formatting (Column M - Compliance Status):**
 
 - Same as SDM sheet (Green/Yellow/Red/Blue/Gray)
-
 
 ## DDM Role Matrix (Rows 39-52)
 
@@ -4222,7 +3930,6 @@ Document Dynamic Data Masking (DDM) implementations in production environments. 
 - **Merge:** A39:F39
 - **Font:** Calibri 11pt Bold
 - **Fill:** Light Gray
-
 
 **Row 40: Column Headers**
 
@@ -4252,7 +3959,6 @@ Document Dynamic Data Masking (DDM) implementations in production environments. 
 - Masked values → Yellow fill (RGB 255, 235, 156)
 - "Not exposed" / "N/A" → Gray fill (RGB 217, 217, 217)
 
-
 ## DDM Implementation Checklist (Rows 54-65)
 
 **Row 54: Section Header**
@@ -4261,7 +3967,6 @@ Document Dynamic Data Masking (DDM) implementations in production environments. 
 - **Merge:** A54:E54
 - **Font:** Calibri 11pt Bold
 - **Fill:** Medium Blue (#4472C4), White Text
-
 
 **Rows 55-65: Checklist Items**
 
@@ -4295,7 +4000,6 @@ Document tokenization implementations including token vault architecture, token 
 - **Fill:** Dark Blue (#003366)
 - **Alignment:** Center
 
-
 **Row 2: Instructions**
 
 - **Cell A2:** "Document tokenization implementations including vault architecture and de-tokenization procedures (30 row template). Mark N/A if tokenization not used."
@@ -4304,7 +4008,6 @@ Document tokenization implementations including token vault architecture, token 
 - **Fill:** Medium Blue (#4472C4), White Text
 - **Alignment:** Center
 
-
 **Row 3: Assessment Question**
 
 - **Cell A3:** "Is tokenization properly implemented with secure vault architecture and controlled de-tokenization?"
@@ -4312,13 +4015,11 @@ Document tokenization implementations including token vault architecture, token 
 - **Font:** Calibri 10pt Bold
 - **Fill:** Light Yellow (#FFFFCC)
 
-
 **Row 4: Response**
 
 - **Cell K4:** [Dropdown: Yes / No / Partial / Planned / N/A - Not Using Tokenization]
 - **Merge:** K4:N4
 - **Fill:** Light Yellow (#FFFFCC)
-
 
 ## Column Headers (Row 6)
 
@@ -4348,7 +4049,6 @@ Document tokenization implementations including token vault architecture, token 
 - **Border:** All borders, medium weight
 - **Freeze Panes:** Row 7
 
-
 ## Example Row (Row 7)
 
 | Col | Value |
@@ -4373,7 +4073,6 @@ Document tokenization implementations including token vault architecture, token 
 - **Fill:** Light Gray (#E7E6E6)
 - **Font:** Calibri 10pt Italic
 
-
 ## Data Entry Rows (Rows 8-37)
 
 **30 Template Rows:**
@@ -4381,7 +4080,6 @@ Document tokenization implementations including token vault architecture, token 
 - **Fill:** Light Yellow (#FFFFCC)
 - **Font:** Calibri 10pt Regular
 - **Protection:** Unlocked for C-N; Locked for A-B (auto-populate)
-
 
 **Auto-populate Formula:**
 
@@ -4396,11 +4094,9 @@ Document tokenization implementations including token vault architecture, token 
 - 20-50ms → Yellow fill (RGB 255, 235, 156)
 - >50ms → Red fill (RGB 255, 199, 206)
 
-
 **Conditional Formatting (Column M - Compliance Status):**
 
 - Same as previous sheets (Green/Yellow/Red/Blue/Gray)
-
 
 ## Token Vault Architecture Diagram (Rows 39-55)
 
@@ -4410,7 +4106,6 @@ Document tokenization implementations including token vault architecture, token 
 - **Merge:** A39:F39
 - **Font:** Calibri 11pt Bold
 - **Fill:** Light Gray
-
 
 **Rows 40-55: Architecture Description (Text Block)**
 ```
@@ -4471,7 +4166,6 @@ SECURITY CONTROLS:
 - **Font:** Calibri 11pt Bold
 - **Fill:** Medium Blue (#4472C4), White Text
 
-
 **Rows 58-68: Checklist Items**
 
 | # | Checklist Item | Status | Evidence | Notes |
@@ -4504,7 +4198,6 @@ Document encryption implementations used for masking purposes (distinct from tra
 - **Fill:** Dark Blue (#003366)
 - **Alignment:** Center
 
-
 **Row 2: Instructions**
 
 - **Cell A2:** "Document encryption used for masking (reversible data protection). Mark N/A if encryption not used for masking. (20 row template)"
@@ -4513,7 +4206,6 @@ Document encryption implementations used for masking purposes (distinct from tra
 - **Fill:** Medium Blue (#4472C4), White Text
 - **Alignment:** Center
 
-
 **Row 3: Assessment Question**
 
 - **Cell A3:** "Is encryption for masking properly implemented with secure key management and controlled de-encryption?"
@@ -4521,13 +4213,11 @@ Document encryption implementations used for masking purposes (distinct from tra
 - **Font:** Calibri 10pt Bold
 - **Fill:** Light Yellow (#FFFFCC)
 
-
 **Row 4: Response**
 
 - **Cell J4:** [Dropdown: Yes / No / Partial / Planned / N/A - Not Using Encryption for Masking]
 - **Merge:** J4:M4
 - **Fill:** Light Yellow (#FFFFCC)
-
 
 ## Column Headers (Row 6)
 
@@ -4556,7 +4246,6 @@ Document encryption implementations used for masking purposes (distinct from tra
 - **Border:** All borders, medium weight
 - **Freeze Panes:** Row 7
 
-
 ## Example Row (Row 7)
 
 | Col | Value |
@@ -4580,7 +4269,6 @@ Document encryption implementations used for masking purposes (distinct from tra
 - **Fill:** Light Gray (#E7E6E6)
 - **Font:** Calibri 10pt Italic
 
-
 ## Data Entry Rows (Rows 8-27)
 
 **20 Template Rows:**
@@ -4588,7 +4276,6 @@ Document encryption implementations used for masking purposes (distinct from tra
 - **Fill:** Light Yellow (#FFFFCC)
 - **Font:** Calibri 10pt Regular
 - **Protection:** Unlocked for C-M; Locked for A-B (auto-populate)
-
 
 **Auto-populate Formula:**
 
@@ -4600,7 +4287,6 @@ Document encryption implementations used for masking purposes (distinct from tra
 **Conditional Formatting (Column L - Compliance Status):**
 
 - Same as previous sheets (Green/Yellow/Red/Blue/Gray)
-
 
 **Data Validation (Column G - Last Key Rotation):**
 ```excel
@@ -4616,7 +4302,6 @@ Warning: "Key rotation older than 1 year. Consider rotating keys."
 - **Merge:** A29:D29
 - **Font:** Calibri 11pt Bold
 - **Fill:** Light Gray
-
 
 **Rows 30-45: Best Practices Table**
 
@@ -4643,7 +4328,6 @@ Warning: "Key rotation older than 1 year. Consider rotating keys."
 - **Merge:** A47:E47
 - **Font:** Calibri 11pt Bold
 - **Fill:** Medium Blue (#4472C4), White Text
-
 
 **Rows 48-58: Checklist Items**
 
@@ -4679,7 +4363,6 @@ Inventory of all masking tools, scripts, and solutions used by [Organization]. V
 - **Fill:** Dark Blue (#003366)
 - **Alignment:** Center
 
-
 **Row 2: Instructions**
 
 - **Cell A2:** "Document all masking tools/scripts (commercial, open-source, custom). Focus on capabilities used, not product names. (20 row template)"
@@ -4688,7 +4371,6 @@ Inventory of all masking tools, scripts, and solutions used by [Organization]. V
 - **Fill:** Medium Blue (#4472C4), White Text
 - **Alignment:** Center
 
-
 **Row 3: Assessment Question**
 
 - **Cell A3:** "Are all masking tools/scripts documented with version control and access controls?"
@@ -4696,13 +4378,11 @@ Inventory of all masking tools, scripts, and solutions used by [Organization]. V
 - **Font:** Calibri 10pt Bold
 - **Fill:** Light Yellow (#FFFFCC)
 
-
 **Row 4: Response**
 
 - **Cell I4:** [Dropdown: Yes / No / Partial / Planned / N/A]
 - **Merge:** I4:L4
 - **Fill:** Light Yellow (#FFFFCC)
-
 
 ## Column Headers (Row 6)
 
@@ -4730,7 +4410,6 @@ Inventory of all masking tools, scripts, and solutions used by [Organization]. V
 - **Border:** All borders, medium weight
 - **Freeze Panes:** Row 7
 
-
 ## Example Row (Row 7)
 
 | Col | Value |
@@ -4753,7 +4432,6 @@ Inventory of all masking tools, scripts, and solutions used by [Organization]. V
 - **Fill:** Light Gray (#E7E6E6)
 - **Font:** Calibri 10pt Italic
 
-
 ## Data Entry Rows (Rows 8-27)
 
 **20 Template Rows:**
@@ -4761,7 +4439,6 @@ Inventory of all masking tools, scripts, and solutions used by [Organization]. V
 - **Fill:** Light Yellow (#FFFFCC)
 - **Font:** Calibri 10pt Regular
 - **Protection:** Unlocked (all user input)
-
 
 ## Tool Capabilities Matrix (Rows 29-42)
 
@@ -4771,7 +4448,6 @@ Inventory of all masking tools, scripts, and solutions used by [Organization]. V
 - **Merge:** A29:J29
 - **Font:** Calibri 11pt Bold
 - **Fill:** Light Gray
-
 
 **Row 30: Table Headers**
 
@@ -4795,7 +4471,6 @@ Use checkmarks (✓) to indicate which techniques each tool supports:
 - ✓ cells → Green fill (RGB 198, 239, 206)
 - ❌ cells → Light gray fill (RGB 217, 217, 217)
 
-
 ## Tool Inventory Checklist (Rows 44-52)
 
 **Row 44: Section Header**
@@ -4804,7 +4479,6 @@ Use checkmarks (✓) to indicate which techniques each tool supports:
 - **Merge:** A44:E44
 - **Font:** Calibri 11pt Bold
 - **Fill:** Medium Blue (#4472C4), White Text
-
 
 **Rows 45-52: Checklist Items**
 
@@ -4836,7 +4510,6 @@ Organization-specific configuration standards for each masking technique. Define
 - **Fill:** Dark Blue (#003366)
 - **Alignment:** Center
 
-
 **Row 2: Instructions**
 
 - **Cell A2:** "Define organization-specific configuration standards for each masking technique to ensure consistency (variable row count)"
@@ -4845,7 +4518,6 @@ Organization-specific configuration standards for each masking technique. Define
 - **Fill:** Medium Blue (#4472C4), White Text
 - **Alignment:** Center
 
-
 **Row 3: Assessment Question**
 
 - **Cell A3:** "Are masking configuration standards documented and enforced across all implementations?"
@@ -4853,13 +4525,11 @@ Organization-specific configuration standards for each masking technique. Define
 - **Font:** Calibri 10pt Bold
 - **Fill:** Light Yellow (#FFFFCC)
 
-
 **Row 4: Response**
 
 - **Cell E4:** [Dropdown: Yes / No / Partial / Planned / N/A]
 - **Merge:** E4:F4
 - **Fill:** Light Yellow (#FFFFCC)
-
 
 ## Sheet Structure (Sections by Technique)
 
@@ -4876,7 +4546,6 @@ Organization-specific configuration standards for each masking technique. Define
 - **Font:** Calibri 12pt Bold
 - **Fill:** Medium Blue (#4472C4), White Text
 
-
 **Rows 7-25: Standards Documentation (Free Text with Subsections)**
 ```markdown
 **Format Preservation Requirements:**
@@ -4889,13 +4558,11 @@ When REQUIRED:
 - Dates (application date calculations)
 - Numeric fields with business logic (account numbers, etc.)
 
-
 When ACCEPTABLE to change format:
 
 - Free-text fields (names, addresses, comments)
 - Internal identifiers with no validation logic
 - Fields not displayed to end users
-
 
 **Referential Integrity Standards:**
 
@@ -4905,13 +4572,11 @@ MANDATORY Referential Integrity:
 - Product ID → Product Name (across all tables)
 - Account Number → Account Holder (across all tables)
 
-
 Implementation Method:
 
 - Use deterministic masking (same input → same output)
 - Document masking seed per environment (ensures consistency)
 - Test cross-table queries after masking
-
 
 **Irreversibility Validation:**
 
@@ -4931,7 +4596,6 @@ Evidence Required:
 - Methodology documentation
 - Sample dataset (sanitized)
 
-
 **Data Substitution Source Standards:**
 
 Names:
@@ -4940,20 +4604,17 @@ Names:
 - Maintain gender consistency (male name → male name)
 - Maintain cultural appropriateness where possible
 
-
 Addresses:
 
 - Source: USPS postal database (valid street addresses)
 - Maintain country/region consistency
 - Use realistic ZIP/postal codes
 
-
 Email Addresses:
 
 - Format: [firstname].[lastname]@example-masked.com
 - Domain: Use organization-controlled test domain
 - Uniqueness: Same email → same masked email
-
 
 **Performance Standards:**
 
@@ -4963,13 +4624,11 @@ Masking Window:
 - Acceptable: Up to 12 hours for very large databases (>1TB)
 - Unacceptable: >12 hours (requires optimization)
 
-
 Throughput:
 
 - Target: 50GB/hour minimum
 - Acceptable: 25-50GB/hour
 - Unacceptable: <25GB/hour
-
 
 **Refresh Frequency:**
 
@@ -4979,7 +4638,6 @@ Production → Non-Production:
 - Test: Monthly
 - Dev: Bi-weekly or on-demand
 - Training: Quarterly
-
 
 Validation After Refresh:
 
@@ -4995,7 +4653,6 @@ Validation After Refresh:
 - **Wrap Text:** Enabled
 - **Borders:** Light borders around section
 
-
 ---
 
 ## Section 2: Dynamic Data Masking (DDM) Standards (Rows 27-42)
@@ -5007,7 +4664,6 @@ Validation After Refresh:
 - **Font:** Calibri 12pt Bold
 - **Fill:** Medium Blue (#4472C4), White Text
 
-
 **Rows 28-42: Standards Documentation**
 ```markdown
 **Role-Based Policy Standards:**
@@ -5017,13 +4673,11 @@ Policy Naming Convention:
 - Format: [DataType]_[RoleType]_[MaskingLevel]_v[Version]
 - Example: SSN_CustomerService_PartialMask_v1
 
-
 Policy Structure:
 
 - Default: DENY (mask everything unless explicitly allowed)
 - Role-Specific: Define what each role can see
 - Break-Glass: Emergency access with full logging
-
 
 **Performance Standards:**
 
@@ -5033,20 +4687,17 @@ Acceptable Overhead:
 - Overall System Impact: <5% CPU increase
 - Concurrent Users: Support existing user base without degradation
 
-
 Unacceptable Performance:
 
 - Per-Query Latency: >50ms
 - Overall System Impact: >15% CPU increase
 - User complaints about system slowness
 
-
 Optimization Strategies:
 
 - Cache policy evaluation results (5-minute TTL)
 - Index frequently queried masked columns
 - Limit DDM to truly sensitive columns (not all columns)
-
 
 **Audit Logging Standards:**
 
@@ -5059,13 +4710,11 @@ What to Log:
 - Whether data was masked or unmasked (role-based)
 - Query executed (sanitized)
 
-
 Log Retention:
 
 - Minimum: 7 years (regulatory requirement)
 - Storage: Secure log aggregation system (SIEM)
 - Access: Audit team and Security team only
-
 
 **Break-Glass Procedures:**
 
@@ -5076,14 +4725,12 @@ When Allowed:
 - Regulatory audit (with proper authorization)
 - Legal hold / litigation
 
-
 Authorization Required:
 
 - Manager approval (email or ticket)
 - 2-Factor Authentication
 - Justification documented
 - Time-limited access (revoke after 24-48 hours)
-
 
 Post-Access Review:
 
@@ -5104,7 +4751,6 @@ Post-Access Review:
 - **Font:** Calibri 12pt Bold
 - **Fill:** Medium Blue (#4472C4), White Text
 
-
 **Rows 45-58: Standards Documentation**
 ```markdown
 **Token Format Standards:**
@@ -5116,20 +4762,17 @@ Credit Cards (PCI-DSS):
 - Middle 6: Tokenize
 - Example: 4532-XXXX-XXXX-1234 (real) → 4532-7891-2345-1234 (token)
 
-
 SSN/Tax ID:
 
 - Format-Preserving: Optional
 - Format: XXX-XX-XXXX maintained OR UUID
 - Decision: Based on application validation requirements
 
-
 Generic Identifiers:
 
 - Format-Preserving: NOT required
 - Use UUID/GUID for simplicity
 - Example: 12345 → a1b2c3d4-e5f6-7890-abcd-ef1234567890
-
 
 **Token Vault Security Standards:**
 
@@ -5139,13 +4782,11 @@ Infrastructure:
 - Dedicated network segment (VLAN isolation)
 - No direct internet access (internal only)
 
-
 Encryption:
 
 - At Rest: AES-256 (transparent data encryption)
 - In Transit: TLS 1.3 minimum
 - Master Key: HSM-managed (never in software)
-
 
 Access Control:
 
@@ -5153,7 +4794,6 @@ Access Control:
 - Service Account: Client certificate authentication
 - Admin Console: 2FA + IP whitelist
 - Break-Glass: Requires 2-of-3 quorum (key custodians)
-
 
 **De-tokenization Authorization Standards:**
 
@@ -5163,14 +4803,12 @@ Automated De-tokenization:
 - Rate Limit: 10,000 de-tokenizations/minute
 - Alert: >1,000 de-tokenizations/minute from single source
 
-
 Manual De-tokenization:
 
 - Requires: CISO or CFO approval (email or ticketing system)
 - 2-Factor Authentication required
 - Justification: Business case documented
 - Audit: All manual de-tokenizations reviewed monthly
-
 
 **Token Lifecycle Standards:**
 
@@ -5180,12 +4818,10 @@ Token Expiration:
 - Permanent Identifiers (SSN): No expiration
 - Temporary Identifiers: 90-day expiration
 
-
 Token Rotation:
 
 - Not Required (tokens are references, not keys)
 - Exception: If tokenization algorithm changed, re-tokenize
-
 
 Token Deletion:
 
@@ -5205,7 +4841,6 @@ Token Deletion:
 - **Font:** Calibri 12pt Bold
 - **Fill:** Medium Blue (#4472C4), White Text
 
-
 **Rows 61-75: Standards for Remaining Techniques**
 ```markdown
 **Data Shuffling Standards:**
@@ -5216,18 +4851,15 @@ When Used:
 - Machine learning training data
 - Statistical reporting
 
-
 Shuffle Scope:
 
 - Within same column only (e.g., shuffle all salary values)
 - Do NOT shuffle across columns (breaks data consistency)
 
-
 Validation:
 
 - Statistical properties preserved (mean, variance within 5%)
 - Individual records cannot be reconstructed
-
 
 **Hashing Standards:**
 
@@ -5237,13 +4869,11 @@ Password Hashing:
 - NEVER: MD5, SHA-1, plain SHA-256 (not suitable for passwords)
 - Salt: Unique per password (auto-generated by bcrypt/Argon2)
 
-
 General Hashing:
 
 - Algorithm: SHA-256 minimum (SHA-512 preferred)
 - Salt: Required for all hashing (prevents rainbow tables)
 - Use Case: Non-reversible identifiers, integrity checks
-
 
 **Redaction Standards:**
 
@@ -5253,12 +4883,10 @@ NULL vs Blank vs Fixed String:
 - Blank (""): When field is NOT NULL in database
 - Fixed String ("REDACTED"): When visual clarity needed (reports, UI)
 
-
 Field-Level vs Record-Level:
 
 - Field-Level: Redact specific fields only (preferred)
 - Record-Level: Delete entire record (GDPR Right to Erasure)
-
 
 **Encryption for Masking Standards:**
 
@@ -5268,13 +4896,11 @@ When Used (Encryption NOT Preferred for Masking):
 - HIPAA compliance (specific regulatory requirement)
 - Temporary masking (will be decrypted later)
 
-
 Key Management:
 
 - Keys stored in HSM or cloud KMS (never in database)
 - Key rotation: Annually minimum
 - Separate key custodians from data administrators
-
 
 Algorithm:
 
@@ -5300,7 +4926,6 @@ Document gaps between desired technique selections (from Technique_Selection_Mat
 - **Fill:** Dark Blue (#003366)
 - **Alignment:** Center
 
-
 **Row 2: Instructions**
 
 - **Cell A2:** "Document gaps between desired masking techniques and actual implementation (30 row template)"
@@ -5309,7 +4934,6 @@ Document gaps between desired technique selections (from Technique_Selection_Mat
 - **Fill:** Medium Blue (#4472C4), White Text
 - **Alignment:** Center
 
-
 **Row 3: Assessment Question**
 
 - **Cell A3:** "Are all technique selection/implementation gaps documented with remediation plans and target dates?"
@@ -5317,13 +4941,11 @@ Document gaps between desired technique selections (from Technique_Selection_Mat
 - **Font:** Calibri 10pt Bold
 - **Fill:** Light Yellow (#FFFFCC)
 
-
 **Row 4: Response**
 
 - **Cell K4:** [Dropdown: Yes / No / Partial / Planned / N/A]
 - **Merge:** K4:N4
 - **Fill:** Light Yellow (#FFFFCC)
-
 
 ## Column Headers (Row 6)
 
@@ -5353,7 +4975,6 @@ Document gaps between desired technique selections (from Technique_Selection_Mat
 - **Border:** All borders, medium weight
 - **Freeze Panes:** Row 7
 
-
 ## Example Row (Row 7)
 
 | Col | Value |
@@ -5378,7 +4999,6 @@ Document gaps between desired technique selections (from Technique_Selection_Mat
 - **Fill:** Light Gray (#E7E6E6)
 - **Font:** Calibri 10pt Italic
 
-
 ## Data Entry Rows (Rows 8-37)
 
 **30 Template Rows:**
@@ -5387,14 +5007,12 @@ Document gaps between desired technique selections (from Technique_Selection_Mat
 - **Font:** Calibri 10pt Regular
 - **Protection:** Unlocked
 
-
 **Conditional Formatting (Column G - Risk Level):**
 
 - Critical → Red fill (RGB 255, 199, 206)
 - High → Orange fill (RGB 255, 235, 156)
 - Medium → Yellow fill (RGB 255, 242, 204)
 - Low → Light green (RGB 226, 239, 218)
-
 
 **Conditional Formatting (Column L - Status):**
 
@@ -5404,7 +5022,6 @@ Document gaps between desired technique selections (from Technique_Selection_Mat
 - 🚫 Blocked → Dark red fill (RGB 192, 0, 0), White text
 - 📋 Planned → Gray fill (RGB 217, 217, 217)
 
-
 ## Gap Summary Statistics (Rows 39-52)
 
 **Row 39: Section Header**
@@ -5413,7 +5030,6 @@ Document gaps between desired technique selections (from Technique_Selection_Mat
 - **Merge:** A39:E39
 - **Font:** Calibri 12pt Bold
 - **Fill:** Medium Blue (#4472C4), White Text
-
 
 **Rows 40-52: Statistics Table**
 
@@ -5448,7 +5064,6 @@ Central repository for all compliance evidence supporting technique selection, i
 - **Fill:** Dark Blue (#003366)
 - **Alignment:** Center
 
-
 **Row 2: Instructions**
 
 - **Cell A2:** "Document all evidence supporting masking technique selection and implementation compliance (40 row template)"
@@ -5457,7 +5072,6 @@ Central repository for all compliance evidence supporting technique selection, i
 - **Fill:** Medium Blue (#4472C4), White Text
 - **Alignment:** Center
 
-
 **Row 3: Assessment Question**
 
 - **Cell A3:** "Is compliance evidence documented, stored securely, and retrievable for audit purposes?"
@@ -5465,13 +5079,11 @@ Central repository for all compliance evidence supporting technique selection, i
 - **Font:** Calibri 10pt Bold
 - **Fill:** Light Yellow (#FFFFCC)
 
-
 **Row 4: Response**
 
 - **Cell I4:** [Dropdown: Yes / No / Partial / Planned / N/A]
 - **Merge:** I4:L4
 - **Fill:** Light Yellow (#FFFFCC)
-
 
 ## Column Headers (Row 6)
 
@@ -5499,7 +5111,6 @@ Central repository for all compliance evidence supporting technique selection, i
 - **Border:** All borders, medium weight
 - **Freeze Panes:** Row 7
 
-
 ## Example Row (Row 7)
 
 | Col | Value |
@@ -5522,7 +5133,6 @@ Central repository for all compliance evidence supporting technique selection, i
 - **Fill:** Light Gray (#E7E6E6)
 - **Font:** Calibri 10pt Italic
 
-
 ## Data Entry Rows (Rows 8-47)
 
 **40 Template Rows:**
@@ -5530,7 +5140,6 @@ Central repository for all compliance evidence supporting technique selection, i
 - **Fill:** Light Yellow (#FFFFCC)
 - **Font:** Calibri 10pt Regular
 - **Protection:** Unlocked for B-L; Locked for A (formula)
-
 
 **Column A (Evidence ID) - Auto-Generate:**
 ```excel
@@ -5544,7 +5153,6 @@ Central repository for all compliance evidence supporting technique selection, i
 - Internal → Light blue (RGB 180, 199, 231)
 - Public → White (no fill)
 
-
 ## Evidence Type Distribution (Rows 49-60)
 
 **Row 49: Section Header**
@@ -5553,7 +5161,6 @@ Central repository for all compliance evidence supporting technique selection, i
 - **Merge:** A49:D49
 - **Font:** Calibri 11pt Bold
 - **Fill:** Light Gray
-
 
 **Rows 50-60: Distribution Table**
 
@@ -5583,7 +5190,6 @@ Executive summary consolidating all masking technique assessment data into actio
 - **Alignment:** Center
 - **Row Height:** 50px
 
-
 **Row 2: Assessment Period**
 
 - **Cell A2:** "Assessment Period:"
@@ -5591,13 +5197,11 @@ Executive summary consolidating all masking technique assessment data into actio
 - **Merge:** B2:D2
 - **Fill:** Light Yellow (#FFFFCC)
 
-
 **Row 3: Last Updated**
 
 - **Cell A3:** "Last Updated:"
 - **Cell B3:** `=TODAY()`
 - **Format:** DD.MM.YYYY
-
 
 ## Overall Compliance Summary (Rows 5-14)
 
@@ -5607,7 +5211,6 @@ Executive summary consolidating all masking technique assessment data into actio
 - **Merge:** A5:G5
 - **Font:** Calibri 14pt Bold
 - **Fill:** Medium Blue (#4472C4), White Text
-
 
 **Rows 6-14: Key Metrics**
 
@@ -5628,7 +5231,6 @@ Executive summary consolidating all masking technique assessment data into actio
 - 80-94% → Yellow fill (RGB 255, 235, 156)
 - <80% → Red fill (RGB 255, 199, 206)
 
-
 ## Technique Coverage Summary (Rows 16-27)
 
 **Row 16: Section Header**
@@ -5637,7 +5239,6 @@ Executive summary consolidating all masking technique assessment data into actio
 - **Merge:** A16:G16
 - **Font:** Calibri 12pt Bold
 - **Fill:** Light Gray
-
 
 **Rows 17-27: Technique Usage Table**
 
@@ -5657,7 +5258,6 @@ Executive summary consolidating all masking technique assessment data into actio
 - **Merge:** A29:G29
 - **Font:** Calibri 12pt Bold
 - **Fill:** Light Gray
-
 
 **Rows 30-38: Environment Table**
 
@@ -5679,7 +5279,6 @@ Executive summary consolidating all masking technique assessment data into actio
 - **Font:** Calibri 12pt Bold
 - **Fill:** Light Gray
 
-
 **Rows 41-48: Gap Metrics**
 
 | Gap Category | Total | Open | In Progress | Closed | % Closed | Overdue |
@@ -5699,7 +5298,6 @@ Executive summary consolidating all masking technique assessment data into actio
 - **Font:** Calibri 12pt Bold
 - **Fill:** Light Gray
 
-
 **Rows 51-56: Gap List**
 
 | Rank | Gap ID | Gap Description | Risk Level | Target Date | Owner | Status |
@@ -5715,7 +5313,6 @@ Executive summary consolidating all masking technique assessment data into actio
 - **Merge:** A58:E58
 - **Font:** Calibri 12pt Bold
 - **Fill:** Medium Blue (#4472C4), White Text
-
 
 **Rows 59-66: Sign-Off Table**
 
@@ -5876,13 +5473,11 @@ Validates:
 - **Example Rows:** Calibri 10pt Italic
 - **Monospace (ASCII art):** Courier New 9pt
 
-
 ## Border Standards
 
 - **Outer borders:** Medium weight (2pt)
 - **Inner borders:** Thin weight (1pt)
 - **Header separator:** Thick bottom border (3pt)
-
 
 ## Cell Protection Strategy
 
@@ -5894,14 +5489,12 @@ Validates:
 - Instructions and legend text
 - Auto-populated cells (B-D in Technique_Selection_Matrix)
 
-
 **Unprotected (Unlocked):**
 
 - All yellow input cells
 - All user data entry rows
 - Sign-off fields
 - Free-text configuration sections
-
 
 ---
 
@@ -5953,13 +5546,11 @@ Before finalizing the workbook, verify:
 - [ ] All column headers match specification exactly
 - [ ] Row counts match template specifications
 
-
 **Data Validation:**
 
 - [ ] All dropdown lists applied correctly
 - [ ] Custom validation rules working
 - [ ] Error messages appropriate and helpful
-
 
 **Formulas:**
 
@@ -5968,7 +5559,6 @@ Before finalizing the workbook, verify:
 - [ ] Auto-calculation formulas (Evidence ID, dates) accurate
 - [ ] Summary Dashboard formulas consolidate correctly
 
-
 **Formatting:**
 
 - [ ] Color palette consistent across all sheets
@@ -5976,13 +5566,11 @@ Before finalizing the workbook, verify:
 - [ ] Fonts and borders match standards
 - [ ] Freeze panes set on all assessment sheets
 
-
 **Protection:**
 
 - [ ] Formula cells locked, input cells unlocked
 - [ ] Sheet protection enabled (optional password)
 - [ ] Allow filter and sort even when protected
-
 
 **Content:**
 
@@ -5990,7 +5578,6 @@ Before finalizing the workbook, verify:
 - [ ] Configuration standards documented
 - [ ] Example rows present on assessment sheets
 - [ ] Cell comments/notes on complex fields
-
 
 ---
 
@@ -6032,7 +5619,6 @@ Before finalizing the workbook, verify:
 - **Author:** ISMS Implementation Team
 - **Approver:** CISO / Data Protection Officer
 - **Review Cycle:** Annual or when Control A.8.11 requirements change
-
 
 ---
 

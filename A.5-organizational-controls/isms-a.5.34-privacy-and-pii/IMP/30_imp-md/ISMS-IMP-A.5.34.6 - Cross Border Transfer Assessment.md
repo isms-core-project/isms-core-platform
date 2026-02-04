@@ -49,14 +49,12 @@ This implementation guide provides comprehensive procedures for assessing, docum
 - Cloud services with multi-region data storage or processing
 - Remote access to PII systems by personnel in third countries
 
-
 **Out of Scope:**
 
 - Purely domestic data transfers within EU/EEA or within Switzerland
 - Transfers between EU/EEA member states (free movement of data per GDPR Article 45)
 - Anonymized data (GDPR does not apply if truly anonymized per GDPR Recital 26)
 - Data physically transported by data subjects themselves (e.g., employee traveling with laptop)
-
 
 ### Regulatory Context
 
@@ -69,13 +67,11 @@ This implementation guide provides comprehensive procedures for assessing, docum
 - **Article 49**: Derogations for specific situations (limited use, not routine transfers)
 - **Article 50**: International cooperation for mutual administrative assistance
 
-
 **Swiss FADP Requirements:**
 
 - **Article 16**: Disclosure of personal data abroad (similar to GDPR but separate adequacy list)
 - **Article 17**: Processor obligations (applies to processors outside Switzerland)
 - Adequacy recognized by Swiss Federal Council (NOT identical to EU adequacy list)
-
 
 **Post-Schrems II Landscape:**
 
@@ -83,7 +79,6 @@ This implementation guide provides comprehensive procedures for assessing, docum
 - **Transfer Impact Assessment (TIA)**: Mandatory for transfers to countries without adequacy decision
 - **Supplementary Measures**: Technical (encryption, pseudonymization) and contractual measures required
 - **Continuous Monitoring**: Reassess TIAs if legal/political situation changes
-
 
 ---
 
@@ -110,13 +105,11 @@ Before starting, gather:
 - Sheet 2: PII Data Flow Mapping (source = cross-border transfers)
 - Sheet 3: Record of Processing Activities (ROPA) with processor locations
 
-
 **2. Processor Contracts:**
 
 - Data Processing Agreements (DPAs) per GDPR Article 28
 - Standard Contractual Clauses (SCCs) if processor in non-adequate country
 - Subprocessor lists (if processor uses subprocessors in third countries)
-
 
 **3. Technical Documentation:**
 
@@ -125,13 +118,11 @@ Before starting, gather:
 - Remote access logs (VPN access from which countries?)
 - Backup/DR configurations (are backups replicated internationally?)
 
-
 **4. Legal Basis Documentation:**
 
 - Consent records (if relying on Art. 49 derogations)
 - Contract necessity evidence (if using Art. 49(1)(b) derogation)
 - Legitimate interest assessments (if using Art. 49(1)(f) occasional transfer derogation)
-
 
 **5. Regulatory Resources:**
 
@@ -139,7 +130,6 @@ Before starting, gather:
 - Swiss Federal Council adequacy list (https://www.edoeb.admin.ch/edoeb/en/home/data-protection/handel-und-wirtschaft/transborder-data-flows.html)
 - EU-US Data Privacy Framework (DPF) participant list (https://www.dataprivacyframework.gov/s/participant-search)
 - EDPB Guidelines on TIAs (https://edpb.europa.eu/our-work-tools/our-documents/recommendations/recommendations-012020-measures-supplement-transfer_en)
-
 
 ---
 
@@ -203,13 +193,11 @@ python3 generate_a5346_cross_border_transfer_assessment.py
 - **Transfer:** EU (primary) → US (replica) = cross-border transfer
 - **Mechanism:** Review AWS DPA for SCCs, check if DPF certification applies
 
-
 **Scenario 2: Remote Access by International Employees**
 
 - **Example:** Software developer in India accessing EU-hosted database via VPN
 - **Transfer:** EU database → India (accessed remotely) = cross-border transfer
 - **Mechanism:** Assess if employment contract covers transfer, consider internal BCRs if multinational company
-
 
 **Scenario 3: Processor Using Subprocessors in Third Countries**
 
@@ -217,20 +205,17 @@ python3 generate_a5346_cross_border_transfer_assessment.py
 - **Transfer:** EU processor → US subprocessor = onward transfer
 - **Mechanism:** Verify processor's DPA includes subprocessor authorization, check if SCCs flow down
 
-
 **Scenario 4: Marketing Tools and Analytics**
 
 - **Example:** Google Analytics tracking website visitors
 - **Transfer:** EU website → Google servers (US/worldwide) = cross-border transfer
 - **Mechanism:** Check Google's DPA, review if Google Analytics 4 with EU data hosting option enabled
 
-
 **Scenario 5: Customer Support Platforms**
 
 - **Example:** Zendesk ticketing system
 - **Transfer:** EU support tickets → Zendesk (US headquarters, but may have EU data residency option)
 - **Mechanism:** Review Zendesk contract, verify if EU data hosting selected, check SCCs
-
 
 ---
 
@@ -245,19 +230,16 @@ For each transfer, identify the legal mechanism per GDPR Article 44-46:
 - Andorra, Argentina, Canada (commercial organizations), Faroe Islands, Guernsey, Israel, Isle of Man, Japan, Jersey, New Zealand, Republic of Korea, Switzerland, United Kingdom, Uruguay
 - **EU-US Data Privacy Framework (DPF)**: US companies that self-certify (check https://www.dataprivacyframework.gov/s/participant-search)
 
-
 **Swiss Adequacy List (separate from EU):**
 
 - Similar to EU but NOT identical - check Swiss Federal Council decisions
 - Notable: UK adequacy from Switzerland post-Brexit requires separate assessment
-
 
 **If Destination Country = Adequate:**
 
 - **Transfer Mechanism:** "Adequacy Decision (GDPR Art. 45)" or "EU-US DPF Certification"
 - **TIA Required?** NO (adequacy decision means appropriate safeguards guaranteed)
 - **Action:** Verify adequacy decision still valid (can be revoked)
-
 
 **If Destination Country = NOT Adequate:**
 
@@ -269,7 +251,6 @@ For each transfer, identify the legal mechanism per GDPR Article 44-46:
   - Derogation (Article 49 - only for non-routine, infrequent transfers)
 - **TIA Required?** YES (Transfer Impact Assessment per Schrems II requirements)
 
-
 #### 3.2 Standard Contractual Clauses (SCCs) Identification
 
 **EU SCCs (2021 Modernized Version):**
@@ -278,7 +259,6 @@ For each transfer, identify the legal mechanism per GDPR Article 44-46:
 - **Module 2:** Controller-to-Processor (most common for cloud services)
 - **Module 3:** Processor-to-Processor (subprocessor relationships)
 - **Module 4:** Processor-to-Controller (rare - e.g., analytics services)
-
 
 **Action:** Review processor contracts for SCC annexes:
 1. Check if SCCs present in DPA
@@ -292,7 +272,6 @@ For each transfer, identify the legal mechanism per GDPR Article 44-46:
 - Switzerland has separate SCC templates (not identical to EU)
 - If processing Swiss personal data, verify Swiss SCCs or adequacy applies
 
-
 #### 3.3 Binding Corporate Rules (BCRs)
 
 **Applicability:** Multinational companies with intra-group transfers
@@ -302,7 +281,6 @@ For each transfer, identify the legal mechanism per GDPR Article 44-46:
 - Check if company has BCRs approved by EU supervisory authority
 - BCRs must cover all entities in group involved in processing
 - Document BCR approval date and approving authority
-
 
 **Rare:** Most organizations use SCCs instead of BCRs (BCRs require multi-year approval process)
 
@@ -325,7 +303,6 @@ For each transfer, identify the legal mechanism per GDPR Article 44-46:
 - Claiming "legitimate interest" derogation for SaaS tool used daily = **UNLAWFUL**
 - Blanket consent for all future transfers without specific risk disclosure = **INVALID**
 
-
 **If Derogation Claimed:** Document detailed justification in Sheet 2 Notes field, link to legal assessment
 
 ---
@@ -339,7 +316,6 @@ For each transfer, identify the legal mechanism per GDPR Article 44-46:
 - Transfer to country WITHOUT EU adequacy decision
 - Even if SCCs in place (SCCs alone insufficient post-Schrems II)
 - US transfers especially scrutinized (FISA 702, EO 12333 surveillance concerns)
-
 
 #### 4.1 TIA Methodology (Sheet 3 Assessment)
 
@@ -379,7 +355,6 @@ If TIA reveals risks, implement supplementary measures:
 - **Access controls:** Restrict importer personnel access to minimum necessary
 - **Multi-party encryption:** Split key approach requiring multiple parties to decrypt
 
-
 **Contractual Measures:**
 
 - **Obligation to challenge:** Importer must challenge unlawful government data access requests
@@ -388,14 +363,12 @@ If TIA reveals risks, implement supplementary measures:
 - **Audit rights:** Exporter can audit importer's compliance with safeguards
 - **Data return/deletion:** Upon termination, importer returns or deletes all data
 
-
 **Organizational Measures:**
 
 - **Data governance:** Clear accountability for transfer compliance
 - **Staff training:** Importer personnel trained on GDPR obligations
 - **Incident response:** Procedures for government access request scenarios
 - **Regular monitoring:** Quarterly review of destination country legal developments
-
 
 #### 4.2 TIA Documentation in Sheet 3
 
@@ -424,20 +397,17 @@ If TIA reveals risks, implement supplementary measures:
 - **Non-DPF US Transfers:** TIA required, focus on FISA 702/EO 12333 risks
 - **US Government Contracts:** Extremely high risk - consider if transfer can be avoided
 
-
 **China Transfers:**
 
 - High risk due to National Security Law, Cybersecurity Law, Data Security Law
 - Cross-Border Transfer Security Assessment (CBTSA) required for large volumes
 - Consider alternatives (process data in Hong Kong/Singapore instead if possible)
 
-
 **UK Post-Brexit:**
 
 - UK has EU adequacy decision (valid until June 2025, renewable)
 - Monitor for adequacy decision renewal
 - If adequacy lapses, UK transfers require SCCs + TIA
-
 
 ---
 
@@ -594,11 +564,9 @@ If TIA reveals risks, implement supplementary measures:
 - Derogations
 - Missing/Unknown
 
-
 **Chart 2: Transfer Destinations (Bar Chart)**
 
 - Top 10 countries by number of transfers
-
 
 **Chart 3: Gap Status (Stacked Bar Chart)**
 
@@ -606,12 +574,10 @@ If TIA reveals risks, implement supplementary measures:
 - High: Open vs. In Progress vs. Completed
 - Medium: Open vs. In Progress vs. Completed
 
-
 **Chart 4: TIA Status Over Time (Line Chart)**
 
 - TIAs Completed (cumulative)
 - TIAs Overdue for Review
-
 
 ---
 
@@ -658,7 +624,6 @@ Once Sheet 6 (Gap Analysis) is complete:
    - Critical gaps = stop transfers immediately until remediated (if feasible) OR document explicit risk acceptance by senior management
    - High gaps = remediate within 1-3 months
 
-
 2. **Assign Remediation Owners**
 
    - Legal: Negotiate SCCs with processors
@@ -666,20 +631,17 @@ Once Sheet 6 (Gap Analysis) is complete:
    - Procurement: Identify alternative processors in adequate jurisdictions
    - Business Owners: Approve changes to business processes
 
-
 3. **Set Up Tracking Meetings**
 
    - Weekly for Critical gaps
    - Bi-weekly for High gaps
    - Monthly for Medium/Low gaps
 
-
 4. **Escalation Procedures**
 
    - If Critical gap not resolved in 4 weeks → escalate to CISO + Legal Counsel
    - If High gap not resolved in 3 months → escalate to Privacy Committee
    - If persistent non-compliance → consider suspending transfer per GDPR Art. 46 obligations
-
 
 ### Ongoing Monitoring (Quarterly)
 
@@ -689,13 +651,11 @@ Once Sheet 6 (Gap Analysis) is complete:
    - Update TIA conclusion if risks increased
    - Reassess supplementary measures effectiveness
 
-
 2. **Monitor Processor Compliance** (Sheet 4)
 
    - Review processor transparency reports
    - Check if processor added new subprocessors (should be notified per DPA)
    - Conduct audits per DPA audit clause (annually or bi-annually)
-
 
 3. **Update Transfer Register** (Sheet 2)
 
@@ -703,20 +663,17 @@ Once Sheet 6 (Gap Analysis) is complete:
    - Remove terminated transfers
    - Update transfer volumes and frequencies
 
-
 4. **Gap Remediation Progress** (Sheet 6)
 
    - Update gap status (Open → In Progress → Completed)
    - Close completed gaps
    - Escalate overdue gaps
 
-
 5. **Dashboard Review** (Sheet 7)
 
    - Present to Privacy Committee quarterly
    - Track trends (are gaps increasing or decreasing?)
    - Celebrate wins (gaps closed, TIAs completed)
-
 
 ### Annual Reassessment
 
@@ -728,13 +685,11 @@ Once Sheet 6 (Gap Analysis) is complete:
    - Re-validate transfer mechanisms (adequacy decisions can change)
    - Re-conduct TIAs for high-risk transfers
 
-
 2. **Regulatory Updates:**
 
    - Check for new EU Commission adequacy decisions
    - Review EDPB guidance updates
    - Monitor supervisory authority enforcement actions (learn from others' mistakes)
-
 
 3. **Processor Audits:**
 
@@ -742,12 +697,10 @@ Once Sheet 6 (Gap Analysis) is complete:
    - Review SOC 2 / ISO 27001 audit reports from processors
    - Verify supplementary measures still in place
 
-
 4. **Training:**
 
    - Train Legal, IT, Privacy teams on GDPR Chapter V updates
    - Educate business owners on cross-border transfer requirements
-
 
 ### Integration with A.5.34.7 (Privacy Compliance Dashboard)
 
@@ -756,7 +709,6 @@ Export key metrics from Sheet 7 (Dashboard) to feed into overall privacy program
 - **Cross-Border Transfer Compliance Rate**: % of transfers with valid mechanism + TIA
 - **Critical Gaps Outstanding**: Count of Critical gaps in Sheet 6
 - **TIAs Overdue**: Count of TIAs needing review
-
 
 Consolidation script (`consolidate_a534_privacy_dashboard.py`) will read this workbook and aggregate with other A.5.34 assessments.
 
@@ -773,7 +725,6 @@ Consolidation script (`consolidate_a534_privacy_dashboard.py`) will read this wo
 - AWS support teams may access data from US
 - AWS Backup may replicate to US regions if not configured correctly
 - Remote access by AWS engineers from non-EU locations
-
 
 **Solution:** Review cloud service provider DPA, confirm data residency guarantees, check backup/DR configurations
 
@@ -877,7 +828,6 @@ Pre-populated reference sheet with GDPR Chapter V guidance, transfer mechanism d
 - Background: Dark Blue (#1F4E78)
 - Alignment: Center, Middle
 
-
 **Section 1: GDPR Chapter V Overview (A5:P25)**
 
 | Row | Content | Formatting |
@@ -939,12 +889,10 @@ Formatted as checklist table:
 - ❌ No DPA with processor
 - ❌ Processor uses subprocessor without SCCs
 
-
 **Worksheet Protection:**
 
 - Entire sheet protected (read-only)
 - No password required (reference material)
-
 
 ---
 
@@ -1114,7 +1062,6 @@ Note: This will update every time workbook recalculates. For true "last edited" 
 - Data rows: Height 30 (increased for wrapped text in multi-line fields)
 - Wrap text enabled for: C, Q, V, X, AC, AD, AE
 
-
 ### Freeze Panes
 ```
 Freeze at: B2 (freeze row 1 header + column A Transfer ID)
@@ -1132,7 +1079,6 @@ Freeze at: B2 (freeze row 1 header + column A Transfer ID)
   - Use AutoFilter: YES
 - **Unlock ranges:** B2:F1000, H2:L1000, N2:AB1000 (input fields only)
 - **Lock ranges:** A2:A1000 (Transfer ID), G2:G1000 (Adequacy Status), M2:M1000 (TIA Required) - calculated fields
-
 
 ---
 
@@ -1275,7 +1221,6 @@ Logic: Calculate next review based on frequency
 - Data rows: Height 35 (taller for multi-line fields)
 - Wrap text: G, I, M, N, O, R, W, X, Y
 
-
 ### Freeze Panes
 ```
 Freeze at: B2
@@ -1286,7 +1231,6 @@ Freeze at: B2
 - Protected with password "privacy2024"
 - Unlock: B2:C1000, E2:F1000, G2:Y1000 (input fields)
 - Lock: A2:A1000 (TIA ID), D2:D1000 (Destination Country - calculated)
-
 
 ---
 
@@ -1409,7 +1353,6 @@ Condition: ="Non-Compliant" → Light Red
 - Data rows: Height 30
 - Wrap text: D, E, H, AA, AB, AE
 
-
 ### Freeze Panes
 ```
 Freeze at: B2
@@ -1420,7 +1363,6 @@ Freeze at: B2
 - Protected with password "privacy2024"
 - Unlock: B2:H1000, I2:AE1000 (all input fields)
 - Lock: A2:A1000 (Processor ID - auto-generated)
-
 
 ---
 
@@ -1510,7 +1452,6 @@ Purpose: Warn of upcoming expiry (e.g., DPF cert renewal needed)
 - Data rows: Height 25
 - Wrap text: F, G, H, N
 
-
 ### Freeze Panes
 ```
 Freeze at: B2
@@ -1521,7 +1462,6 @@ Freeze at: B2
 - Protected with password "privacy2024"
 - Unlock: B2:N1000 (all input fields)
 - Lock: A2:A1000 (Evidence ID)
-
 
 ---
 
@@ -1630,7 +1570,6 @@ Risk Score Interpretation:
 - 5-11 = Medium
 - 1-4 = Low
 
-
 ### Conditional Formatting
 
 **Rule 1: Critical Gaps**
@@ -1679,7 +1618,6 @@ Condition: <5 → Light Green (#C6EFCE)
 - Data rows: Height 35
 - Wrap text: D, E, N, T, V, Y
 
-
 ### Freeze Panes
 ```
 Freeze at: B2
@@ -1690,7 +1628,6 @@ Freeze at: B2
 - Protected with password "privacy2024"
 - Unlock: B2:Y1000 (all input fields)
 - Lock: A2:A1000 (Gap ID), J2:J1000 (Risk Score - calculated)
-
 
 ---
 
@@ -1707,7 +1644,6 @@ Auto-calculated metrics for executive oversight of cross-border transfer complia
 - Title: "Cross-Border Transfer Compliance Dashboard"
 - Font: Arial 18pt Bold, White
 - Background: Dark Blue (#1F4E78)
-
 
 ### Metrics Section (A5:L40)
 
@@ -1751,7 +1687,6 @@ Auto-calculated metrics for executive oversight of cross-border transfer complia
 - B26 (Critical Gaps) > 0
 - B37 (Evidence Expired) > 0
 
-
 **Warnings (Orange):**
 
 - B10 (% Non-Adequate) >= 50%
@@ -1761,11 +1696,9 @@ Auto-calculated metrics for executive oversight of cross-border transfer complia
 - B34 (Average Gap Age) > 60 days
 - B38 (Evidence Expiring) > 0
 
-
 **Good Status (Green):**
 
 - B14 (% Transfers Compliant) = 100%
-
 
 ### Charts
 
@@ -1776,7 +1709,6 @@ Auto-calculated metrics for executive oversight of cross-border transfer complia
 - Labels: Adequacy, EU-US DPF, SCCs, BCRs, Derogations, Missing
 - Colors: Green (Adequacy/DPF), Blue (SCCs/BCRs), Yellow (Derogations), Red (Missing)
 
-
 **Chart 2: Transfer Destinations (Bar Chart - Top 10)**
 
 - Location: D17:K27
@@ -1785,7 +1717,6 @@ Auto-calculated metrics for executive oversight of cross-border transfer complia
 - Y-axis: Number of transfers
 - Colors: Green bars if adequate, Red bars if non-adequate
 
-
 **Chart 3: Gap Status (Stacked Bar Chart)**
 
 - Location: D29:K39
@@ -1793,7 +1724,6 @@ Auto-calculated metrics for executive oversight of cross-border transfer complia
 - Bars: Critical/High/Medium/Low
 - Stack segments: Open, In Progress, Completed
 - Colors: Red (Critical Open), Orange (High Open), Yellow (Medium Open), Green (Completed)
-
 
 ### Dashboard Notes Section (A42:L50)
 
@@ -1808,7 +1738,6 @@ GREEN = Good
 - All DPAs in place
 - Zero critical/high gaps
 
-
 ORANGE = Warning
 
 - Some non-adequate transfers without TIA
@@ -1816,14 +1745,12 @@ ORANGE = Warning
 - High-risk gaps present
 - Evidence expiring soon
 
-
 RED = Critical Issue
 
 - Transfers without mechanism (unlawful)
 - Processors without DPA (Art. 28 violation)
 - Old SCCs (invalid)
 - Critical gaps unresolved
-
 
 ACTION REQUIRED:
 
@@ -1837,7 +1764,6 @@ ACTION REQUIRED:
 - Entire sheet protected (all formulas locked)
 - No user editing allowed (read-only dashboard)
 - No password required (calculations only)
-
 
 ---
 
@@ -1936,7 +1862,6 @@ Purpose: Time-limited approval expired (e.g., annual TIA approval)
 - Data rows: Height 25
 - Wrap text: D, J, K, M, N
 
-
 ### Freeze Panes
 ```
 Freeze at: B2
@@ -1947,7 +1872,6 @@ Freeze at: B2
 - Protected with password "privacy2024"
 - Unlock: B2:N1000 (all input fields)
 - Lock: A2:A1000 (Approval ID)
-
 
 ---
 
@@ -1986,7 +1910,6 @@ python3 generate_a5346_cross_border_transfer_assessment.py --date 20250130
 - CHANGE HISTORY
 - IMPORTANT NOTES (6+ subsections)
 - Closing banner
-
 
 #### 2. Imports (Lines 252-260)
 ```python
@@ -2113,7 +2036,6 @@ def create_named_range(wb, name, sheet_name, range_ref):
 - Create named range "EUAdequacyCountries"
 - Format as reference material (no inputs)
 
-
 **create_transfer_register_sheet(wb)**
 
 - Create Sheet 2 with 31 columns (A-AE)
@@ -2123,7 +2045,6 @@ def create_named_range(wb, name, sheet_name, range_ref):
 - Add dropdowns for all validated columns
 - Add conditional formatting (5 rules: missing mechanism, missing TIA, old SCCs, status colors, derogation alert)
 - Protect sheet with unlocked input ranges
-
 
 **create_tia_register_sheet(wb)**
 
@@ -2135,7 +2056,6 @@ def create_named_range(wb, name, sheet_name, range_ref):
 - Add conditional formatting (4 rules: high residual risk, TIA overdue, FAIL conclusion, status colors)
 - Protect sheet
 
-
 **create_processor_tracker_sheet(wb)**
 
 - Create Sheet 4 with 31 columns (A-AE)
@@ -2143,7 +2063,6 @@ def create_named_range(wb, name, sheet_name, range_ref):
 - Add dropdowns
 - Add conditional formatting (5 rules: no DPA, old SCCs, missing SCCs for non-adequate, overdue audit, compliance status)
 - Protect sheet
-
 
 **create_evidence_repository_sheet(wb)**
 
@@ -2153,7 +2072,6 @@ def create_named_range(wb, name, sheet_name, range_ref):
 - Add conditional formatting (2 rules: expired evidence, expiry warning)
 - Protect sheet
 
-
 **create_gap_analysis_sheet(wb)**
 
 - Create Sheet 6 with 25 columns (A-Y)
@@ -2162,7 +2080,6 @@ def create_named_range(wb, name, sheet_name, range_ref):
 - Add dropdowns
 - Add conditional formatting (5 rules: critical gaps, high gaps, overdue remediation, status colors, risk score heat map)
 - Protect sheet
-
 
 **create_dashboard_sheet(wb)**
 
@@ -2176,7 +2093,6 @@ def create_named_range(wb, name, sheet_name, range_ref):
 - Add dashboard notes section
 - Protect entire sheet (read-only)
 
-
 **create_approval_sheet(wb)**
 
 - Create Sheet 8 with 14 columns (A-N)
@@ -2184,7 +2100,6 @@ def create_named_range(wb, name, sheet_name, range_ref):
 - Add dropdowns
 - Add conditional formatting (4 rules: pending, rejected, approved, expired)
 - Protect sheet
-
 
 #### 6. Main Function (Lines 1802-1900)
 

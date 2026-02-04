@@ -58,14 +58,12 @@ This assessment evaluates [Organization]'s implementation of **cryptographic key
 - **IMP-3 (Authentication):** Requires password hashing and MFA → Key Management underpins cryptographic authentication
 - **IMP-4 (Key Management - THIS ASSESSMENT):** Protects ALL cryptographic keys used in IMP-1, IMP-2, IMP-3
 
-
 **Regulatory Context:**
 
 - **Swiss nFADP (Art. 8):** Requires appropriate technical measures including key management
 - **EU GDPR (Art. 32):** Mandates encryption with proper key management
 - **PCI DSS (Req. 3):** Extensive key management requirements for cardholder data
 - **Industry Standards:** SOC 2, ISO 27018, NIST 800-57 mandate cryptographic key management
-
 
 **Business Impact:**
 
@@ -75,12 +73,10 @@ This assessment evaluates [Organization]'s implementation of **cryptographic key
 - **Certificate Expiration:** Expired certificates break services organization-wide
 - **Compliance Violations:** Poor key management results in audit failures and regulatory fines
 
-
 **The Security Hierarchy:**
 
 - **Weakest:** Strong encryption with weak key management = Compromisable
 - **Strongest:** Strong encryption + strong key management = Defense-in-depth
-
 
 ## Who Should Complete This Assessment
 
@@ -96,7 +92,6 @@ This assessment evaluates [Organization]'s implementation of **cryptographic key
 - Key backup and recovery procedures
 - Certificate management systems
 
-
 **Support Roles:**
 
 - **HSM Administrators:** For hardware security module management
@@ -104,7 +99,6 @@ This assessment evaluates [Organization]'s implementation of **cryptographic key
 - **PKI Team:** For certificate authority operations
 - **Disaster Recovery Team:** For key backup and recovery procedures
 - **Compliance Team:** For regulatory key management requirements
-
 
 ## Time Estimate
 
@@ -118,13 +112,11 @@ This assessment evaluates [Organization]'s implementation of **cryptographic key
 - Evidence Collection: 1-1.5 hours (screenshots, configs, test results)
 - Quality Review: 30-60 minutes
 
-
 **Complexity Factors:**
 
 - **Simple:** Single KMS (cloud provider), certificate automation in place, documented procedures - 6 hours
 - **Complex:** On-premise HSM, multiple PKIs, manual certificate management, multiple cloud providers - 8+ hours
 - **Very Complex:** Multi-site HSM cluster, complex CA hierarchy, extensive certificate inventory, legacy key management - consider team approach
-
 
 ## Connection to Policy
 
@@ -139,7 +131,6 @@ This assessment implements **ISMS-POL-A.8.24, Section 6.5 (Key Management)** whi
 - Certificate lifecycle management (automation required for <100-day validity)
 - Certificate expiration monitoring (90-day advance alerts)
 
-
 **Policy Authority:** Chief Information Security Officer (CISO)  
 **Compliance Status:** Mandatory for all cryptographic key management
 
@@ -152,13 +143,11 @@ This assessment implements **ISMS-POL-A.8.24, Section 6.5 (Key Management)** whi
 - **Key Strength:** Minimum 128-bit security strength (equivalent)
 - **Random Number Testing:** NIST SP 800-22 compliance for custom RNG implementations
 
-
 **Key Storage (Section 3.2):**
 
 - **High-Value Keys (Restricted data, CA signing keys):** HSM REQUIRED (FIPS 140-2 Level 2+ or Common Criteria EAL4+)
 - **Standard Keys (Confidential data):** Cloud KMS (AWS KMS, Azure Key Vault, GCP KMS) or software keystore with strong access controls
 - **Prohibited:** Keys stored in plaintext, code repositories, config files, environment variables without secrets management
-
 
 **Key Rotation (Section 3.3):**
 
@@ -168,14 +157,12 @@ This assessment implements **ISMS-POL-A.8.24, Section 6.5 (Key Management)** whi
 - **API Keys:** Quarterly (90 days) minimum
 - **Automation:** REQUIRED for certificate validity <100 days (ACME protocol)
 
-
 **Key Backup & Recovery (Section 3.4):**
 
 - **Backup Frequency:** After key generation, before deployment, after rotation
 - **Escrow Requirements:** Dual-control (2 persons required for recovery), split-knowledge (key split across multiple escrow locations)
 - **Recovery Testing:** Annually minimum, after DR exercises, after personnel changes
 - **Backup Encryption:** Backed-up keys MUST be encrypted with separate key (not self-encrypted)
-
 
 **Certificate Management (Section 3.5):**
 
@@ -184,7 +171,6 @@ This assessment implements **ISMS-POL-A.8.24, Section 6.5 (Key Management)** whi
 - **Certificate Inventory:** Complete inventory maintained and reviewed quarterly
 - **Automation:** REQUIRED for public CA certificates (approaching 47-day validity by 2029)
 - **Certificate Lifecycle:** Automated issuance, renewal, revocation using ACME or equivalent
-
 
 ---
 
@@ -201,7 +187,6 @@ Before starting this assessment, ensure you have access to:
 - [ ] Software keystores (Java KeyStore, PKCS#12 files, OpenSSL directories)
 - [ ] Secrets management systems (HashiCorp Vault, CyberArk, etc.)
 
-
 **Certificate Authority (CA):**
 
 - [ ] CA management console (Microsoft CA, OpenSSL CA, Let's Encrypt)
@@ -209,13 +194,11 @@ Before starting this assessment, ensure you have access to:
 - [ ] Certificate lifecycle management tools
 - [ ] CRL/OCSP responder configuration
 
-
 **Key Generation Systems:**
 
 - [ ] Entropy source verification (TPM, HSM, /dev/random)
 - [ ] Key generation documentation
 - [ ] Random number generator (RNG) test results (if custom implementation)
-
 
 **Key Backup Systems:**
 
@@ -224,14 +207,12 @@ Before starting this assessment, ensure you have access to:
 - [ ] Recovery procedures documentation
 - [ ] DR runbooks
 
-
 **Monitoring & Logging:**
 
 - [ ] Certificate expiration monitoring system
 - [ ] Key usage logs
 - [ ] Key lifecycle audit trails
 - [ ] Security information and event management (SIEM) for key events
-
 
 ## Knowledge Required
 
@@ -244,7 +225,6 @@ Before starting this assessment, ensure you have access to:
 - Key backup and recovery procedures
 - Entropy sources and random number generation
 
-
 **Technical Skills:**
 
 - Ability to inspect HSM or KMS key inventories
@@ -252,7 +232,6 @@ Before starting this assessment, ensure you have access to:
 - Certificate lifecycle management concepts
 - Key escrow and split-knowledge principles
 - DR testing procedures for key recovery
-
 
 ## Tools Needed
 
@@ -304,7 +283,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 - **Certificate Expiration Reports:** Certificate lifecycle management tools
 - **Key Usage Audit Logs:** SIEM queries for key access events
 
-
 ## Estimated Time Commitment
 
 **Phase 1: Information Gathering (2-2.5 hours)**
@@ -315,7 +293,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 - Review key rotation schedules
 - Collect key backup and recovery documentation
 
-
 **Phase 2: Technical Verification (1.5-2 hours)**
 
 - Verify entropy source (hardware RNG, /dev/random)
@@ -323,7 +300,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 - Test certificate expiration monitoring
 - Verify key backup encryption
 - Test key recovery procedure (if possible)
-
 
 **Phase 3: Assessment Completion (2.5-3 hours)**
 
@@ -333,14 +309,12 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 - Create remediation plans
 - Collect evidence files
 
-
 **Phase 4: Quality Review (30-60 minutes)**
 
 - Self-check using Quality Checklist (Section 7)
 - Verify evidence completeness
 - Review Summary Dashboard
 - Ensure all gaps have remediation plans
-
 
 **Total:** 6-8 hours for comprehensive assessment
 
@@ -367,7 +341,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
    - **CRITICAL:** Weak key generation undermines all other controls
    - **Evidence:** Entropy source verification, key generation logs, algorithm documentation
 
-
 **STEP 3: Key Storage (60-75 minutes - PROTECTION)**
 2. **Sheet 2: Key Storage**
 
@@ -378,7 +351,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
    - Identify plaintext keys (immediate remediation required)
    - **CRITICAL:** HSM required for CA signing keys and Restricted data encryption keys
    - **Evidence:** HSM inventory, KMS key list, access control policies, audit logs
-
 
 **STEP 4: Key Rotation (45-60 minutes)**
 3. **Sheet 3: Key Rotation**
@@ -391,7 +363,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
    - **CRITICAL:** Certificate automation REQUIRED before 15.03.2026 for public CAs
    - **Evidence:** Rotation schedule, certificate validity reports, automation configuration
 
-
 **STEP 5: Key Backup & Recovery (60-90 minutes - BUSINESS CONTINUITY)**
 4. **Sheet 4: Key Backup & Recovery**
 
@@ -402,7 +373,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
    - Test key recovery procedure (if safe to do so)
    - **CRITICAL:** Key loss = permanent data loss, recovery MUST be tested
    - **Evidence:** Backup procedures, escrow documentation, recovery test results
-
 
 **STEP 6: Certificate Management (60-90 minutes - LIFECYCLE)**
 5. **Sheet 5: Certificate Management**
@@ -416,7 +386,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
    - **CRITICAL:** Certificate expiration breaks services, automation essential
    - **Evidence:** Certificate inventory, expiration monitoring config, ACME setup, CRL/OCSP tests
 
-
 **STEP 7: Summary & Evidence (30-45 minutes)**
 6. **Summary Dashboard** (auto-calculated, review only)
 
@@ -425,20 +394,17 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
    - Note critical gaps requiring immediate attention
    - Verify calculations make sense
 
-
 7. **Evidence Register**
 
    - List all evidence files collected during assessment
    - Ensure evidence naming is consistent
    - Verify all evidence is accessible
 
-
 8. **Approval Sign-Off**
 
    - Complete assessment summary
    - Sign as assessment owner
    - Route to Information Security Officer for review
-
 
 **STEP 8: Final Quality Check (30 minutes)**
 9. Run through Quality Checklist (Section 7 of this guide)
@@ -456,7 +422,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 - Review all key rotation schedules in one session
 - Test key recovery procedures together (if multiple keys)
 
-
 **Use Automation:**
 
 - Cloud CLI tools for key inventory (aws kms, az keyvault, gcloud kms)
@@ -464,20 +429,17 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 - SIEM queries for key usage and access logs
 - Automated entropy testing tools
 
-
 **Leverage Existing Documentation:**
 
 - If recent SOC 2 or ISO audit: Extract key management evidence
 - If PKI infrastructure documented: Reuse certificate lifecycle documentation
 - If DR testing performed: Extract key recovery test results
 
-
 **Mark Sections N/A Appropriately:**
 
 - If no HSM: Mark HSM rows as N/A (but note if HSM should be used)
 - If no on-premise CA: Mark internal CA rows as N/A
 - N/A is acceptable with justification; blank is not acceptable
-
 
 ---
 
@@ -494,7 +456,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 - **"No":** Only if [Organization] uses exclusively pre-shared keys from vendors (extremely rare)
 - **"Not Applicable":** Not appropriate for this section
 
-
 **Where to Find This Information:**
 
 - HSM management console (key generation logs)
@@ -502,7 +463,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 - Certificate authority key generation logs
 - Entropy source documentation (/proc/sys/kernel/random/entropy_avail)
 - Key generation procedures documentation
-
 
 **Field-by-Field Guidance:**
 
@@ -546,7 +506,6 @@ cat /proc/sys/kernel/random/entropy_avail
 - FIPS 140-2 or Common Criteria certified
 - Best entropy source for high-value keys
 
-
 **Status Determination:**
 
 **✅ Compliant:** All of these must be true:
@@ -557,7 +516,6 @@ cat /proc/sys/kernel/random/entropy_avail
 - Key generation documented and auditable
 - No predictable keys (sequential, timestamp-based, weak seeds)
 
-
 **⚠️ Partial:** Some requirements met but gaps exist:
 
 - Entropy source: /dev/urandom used for long-term keys (should use /dev/random or hardware RNG)
@@ -565,14 +523,12 @@ cat /proc/sys/kernel/random/entropy_avail
 - Key strength: 128-bit equivalent (acceptable but 256-bit preferred)
 - Key generation not fully documented
 
-
 **❌ Non-Compliant:** Critical failures:
 
 - Weak algorithms (RSA 1024-bit, DES, 3DES, MD5-based key derivation)
 - Predictable entropy source (timestamp, sequential, weak PRNG)
 - No documentation of key generation procedures
 - Keys generated on insecure systems (developer laptops without TPM)
-
 
 **N/A:** Keys not generated by organization (all keys provided by external vendors)
 
@@ -618,7 +574,6 @@ cat /proc/sys/kernel/random/entropy_avail
 - HSM key generation log: `EV-1-HSM-KeyGen-Log-20260115.pdf`
 - Key generation procedures: `EV-1-KeyGen-Procedures-20260115.pdf`
 
-
 **Common Issues:**
 
 **Issue:** /dev/urandom used for CA root key generation  
@@ -643,7 +598,6 @@ cat /proc/sys/kernel/random/entropy_avail
 - **"No":** Not possible if organization generates or uses keys
 - **"Not Applicable":** Not appropriate
 
-
 **Where to Find This Information:**
 
 - HSM inventory reports
@@ -651,7 +605,6 @@ cat /proc/sys/kernel/random/entropy_avail
 - Software keystore locations (Java KeyStore, PKCS#12 files, OpenSSL directories)
 - Secrets management systems (HashiCorp Vault, CyberArk)
 - Code repositories (check for hardcoded keys - PROHIBITED)
-
 
 **Key Storage Security Hierarchy (Best to Worst):**
 
@@ -662,7 +615,6 @@ cat /proc/sys/kernel/random/entropy_avail
    - Keys never leave HSM in plaintext
    - **Use for:** CA signing keys, Restricted data encryption keys, payment processing keys
 
-
 2. **Cloud KMS (Key Management Service) - GOOD**
 
    - AWS KMS, Azure Key Vault, GCP KMS
@@ -670,13 +622,11 @@ cat /proc/sys/kernel/random/entropy_avail
    - Strong access controls and audit logging
    - **Use for:** Confidential data encryption keys, standard TLS keys, database encryption keys
 
-
 3. **Software Keystore - ACCEPTABLE (with strong access controls)**
 
    - Java KeyStore (JKS), PKCS#12 files, OpenSSL key files
    - Protected by file system permissions and encryption
    - **Use for:** Internal data encryption keys, development/test keys
-
 
 4. **Secrets Management - ACCEPTABLE**
 
@@ -684,19 +634,16 @@ cat /proc/sys/kernel/random/entropy_avail
    - Centralized secrets storage with access controls
    - **Use for:** Application secrets, API keys, service account credentials
 
-
 5. **Config Files (encrypted) - POOR (but better than plaintext)**
 
    - Configuration files with encrypted keys
    - Requires separate key to decrypt (key-encryption-key)
    - **Use for:** Low-sensitivity keys only, temporary keys
 
-
 6. **Config Files (plaintext), Code Repositories - PROHIBITED**
 
    - Plaintext keys in files, hardcoded in code, committed to git
    - **IMMEDIATE REMEDIATION REQUIRED**
-
 
 **Field-by-Field Guidance:**
 
@@ -718,7 +665,6 @@ cat /proc/sys/kernel/random/entropy_avail
 - All key access logged and auditable
 - No plaintext keys in config files or code repositories
 
-
 **⚠️ Partial:**
 
 - High-value keys in Cloud KMS (should be in HSM)
@@ -726,14 +672,12 @@ cat /proc/sys/kernel/random/entropy_avail
 - Some key access not logged
 - Key storage locations not fully documented
 
-
 **❌ Non-Compliant:**
 
 - Plaintext keys in config files or code repositories
 - No access controls on key files
 - CA signing keys not in HSM
 - No audit logging of key access
-
 
 **Compliance Checklist:**
 
@@ -777,7 +721,6 @@ cat /proc/sys/kernel/random/entropy_avail
 - Access control policies: `EV-2-IAM-KMS-Policies-20260115.json`
 - Audit log sample: `EV-2-HSM-Audit-Log-Sample-20260115.pdf`
 
-
 **Common Issues:**
 
 **Issue:** CA signing key in software keystore (not HSM)  
@@ -811,7 +754,6 @@ cat /proc/sys/kernel/random/entropy_avail
 - **4.5: Key Backup & Recovery** (Escrow, dual-control, split-knowledge, recovery testing)
 - **4.6: Certificate Management** (Lifecycle automation, expiration monitoring, CRL/OCSP, ACME protocol)
 
-
 **Key Principles Applied to All Sections:**
 
 - Key lifecycle management is continuous, not one-time
@@ -819,7 +761,6 @@ cat /proc/sys/kernel/random/entropy_avail
 - Recovery testing must be performed (not just documented)
 - Evidence must be specific and verifiable
 - Common pitfalls identified and solutions provided
-
 
 ---
 
@@ -840,14 +781,12 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - `EV-4-Key-Recovery-Test-20260115.pdf`
 - `EV-5-Certificate-Expiration-Report-20260115.xlsx`
 
-
 **Storage Requirements:**
 
 - **Location:** Centralized evidence repository (same as IMP-1, IMP-2, IMP-3)
 - **Folder Structure:** Organize by assessment section
 - **Retention:** Audit cycle + 1 year minimum
 - **Sensitivity:** Key management documentation is highly sensitive - strict access controls
-
 
 **Evidence Quality Criteria:**
 
@@ -856,7 +795,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - **Attributable:** Clear which system/key it documents
 - **Verifiable:** Auditor can reproduce
 - **Protected:** Stored securely, NO private keys in evidence
-
 
 ## Evidence Types by Section
 
@@ -868,7 +806,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - Key generation logs (HSM, KMS, CA logs - sanitized)
 - Key generation procedures documentation
 
-
 **2. Key Storage:**
 
 - HSM inventory report (key count, types, FIPS level)
@@ -877,14 +814,12 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - Access control policies (IAM policies, file ACLs)
 - Audit log samples (HSM audit log, CloudTrail, Azure Monitor)
 
-
 **3. Key Rotation:**
 
 - Key rotation schedule documentation
 - Certificate validity reports (expiring certificates list)
 - Rotation automation configuration (ACME setup, automated scripts)
 - Historical rotation evidence (key retirement logs)
-
 
 **4. Key Backup & Recovery:**
 
@@ -893,7 +828,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - Recovery test results (most recent test)
 - Backup encryption verification
 
-
 **5. Certificate Management:**
 
 - Complete certificate inventory (all active certificates)
@@ -901,7 +835,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - CRL/OCSP configuration and test results
 - ACME protocol setup (Let's Encrypt, Sectigo, DigiCert)
 - Certificate lifecycle automation documentation
-
 
 ## Tools for Evidence Collection
 
@@ -950,7 +883,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 - Backup passphrases
 - HSM administrator passwords
 
-
 **Safe to Include:**
 
 - Public keys and public certificates
@@ -960,7 +892,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 - Key rotation schedules
 - Entropy source specifications
 - Access control policies (redact credentials)
-
 
 ---
 
@@ -1075,7 +1006,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 - [ ] Evidence Register populated
 - [ ] All evidence files exist and are accessible (NO PRIVATE KEYS)
 
-
 ## Accuracy Checks
 
 - [ ] Entropy sources verified (hardware RNG, /dev/random, /dev/urandom)
@@ -1085,7 +1015,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 - [ ] Certificate expiration dates verified (not estimated)
 - [ ] Recovery testing dates documented (actual test results)
 - [ ] No plaintext keys anywhere (config files, code repos checked)
-
 
 ## Policy Alignment Checks
 
@@ -1100,7 +1029,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 - [ ] Recovery testing performed annually minimum
 - [ ] Certificate expiration monitoring: 90-day advance alerts
 
-
 ## Audit Readiness Checks
 
 - [ ] Evidence is verifiable (auditor could reproduce)
@@ -1109,7 +1037,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 - [ ] Evidence organized logically and consistently named
 - [ ] Assessment tells clear story from beginning to end
 - [ ] Key management practices not "assumed" - all verified with evidence
-
 
 ## Red Flags to Address BEFORE Submission
 
@@ -1121,7 +1048,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 - [ ] No untested key recovery procedures
 - [ ] Overall compliance rate >80% (if <80%, indicates systemic issue)
 
-
 ## Final Sanity Checks
 
 - [ ] Summary Dashboard totals match manual count
@@ -1130,7 +1056,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 - [ ] Organization name filled in
 - [ ] Next Review Date set (quarterly)
 - [ ] Assessment status set to "Draft"
-
 
 **If ANY checkbox above is unchecked: STOP. Complete missing item before submitting.**
 
@@ -1148,7 +1073,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 - Set status to "Draft"
 - Submit to Information Security Officer
 
-
 **Step 2: Technical Review** (Information Security Officer)
 
 - Verify entropy sources documented
@@ -1158,13 +1082,11 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 - Verify recovery testing performed
 - Provide feedback
 
-
 **Step 3: Remediation (if needed)** (Assessment Owner)
 
 - Address review feedback
 - Update assessment
 - Re-submit if significant changes
-
 
 **Step 4: Final Approval** (CISO)
 
@@ -1173,7 +1095,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 - Accept documented risks
 - Sign off assessment
 - Set Next Review Date
-
 
 ## Approval Timeline
 
@@ -1185,7 +1106,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 - Remediation: 1-2 hours (owner)
 - Final approval: 1-2 business days (CISO)
 - **Total:** 1-2 weeks start to finish
-
 
 ## After Approval
 
@@ -1203,7 +1123,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 - Key backup testing (annually)
 - Entropy source health checks (quarterly)
 
-
 **Triggers for Immediate Re-Assessment:**
 
 - Key compromise or suspected compromise
@@ -1213,7 +1132,6 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 - CA/B Forum ballot changes (certificate validity)
 - Failed audit findings on key management
 - Major infrastructure changes (new HSM, KMS migration)
-
 
 ## Continuous Improvement
 
@@ -1225,13 +1143,11 @@ find /etc/ssl/certs -name "*.crt" -exec openssl x509 -checkend 7776000 -noout -i
 - No recovery testing? → Schedule annual recovery drills
 - CA signing key not in HSM? → Plan HSM procurement and CA migration
 
-
 **Feedback Loop:**
 
 - Assessment owner provides feedback on this guide
 - ISO reviews common questions/issues
 - Update guide for next assessment cycle
-
 
 ---
 
@@ -1283,7 +1199,6 @@ Acceptable evidence includes:
 - ACME protocol configuration (Let's Encrypt, etc.)
 - Audit logs (HSM logs, CloudTrail, Azure Monitor)
 
-
 ---
 
 # Common Column Structure (All Assessment Sheets)
@@ -1323,7 +1238,6 @@ All 5 assessment sheets use this standard column layout:
 - [ ] No → Skip to Section 2
 - [ ] Not Applicable
 
-
 ---
 
 **If Yes, complete the assessment:**
@@ -1345,7 +1259,6 @@ All 5 assessment sheets use this standard column layout:
 - **Total keys generated annually:** _________
 - **Primary key generation system:** [ ] HSM [ ] Cloud KMS [ ] OpenSSL [ ] Let's Encrypt [ ] Other: _____
 - **Entropy source health monitoring:** [ ] Continuous [ ] Periodic [ ] None
-
 
 ---
 
@@ -1374,14 +1287,12 @@ All 5 assessment sheets use this standard column layout:
   - [ ] Key rotation more frequent than policy minimum
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
 - **Budget required:** [ ] Yes [ ] No  Amount: _________
-
 
 ---
 
@@ -1396,7 +1307,6 @@ All 5 assessment sheets use this standard column layout:
 - [ ] Yes → Complete assessment below
 - [ ] No → Skip to Section 3
 - [ ] Not Applicable
-
 
 ---
 
@@ -1419,7 +1329,6 @@ All 5 assessment sheets use this standard column layout:
 - **Total keys stored:** _________
 - **Storage systems in use:** [ ] HSM [ ] AWS KMS [ ] Azure Key Vault [ ] GCP KMS [ ] Software Keystore [ ] Other: _____
 - **Plaintext keys found:** [ ] Yes (immediate remediation) [ ] No
-
 
 ---
 
@@ -1448,13 +1357,11 @@ All 5 assessment sheets use this standard column layout:
   - [ ] Key isolated to specific environment
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -1469,7 +1376,6 @@ All 5 assessment sheets use this standard column layout:
 - [ ] Yes → Complete assessment below
 - [ ] No → Skip to Section 4
 - [ ] Not Applicable
-
 
 ---
 
@@ -1494,7 +1400,6 @@ All 5 assessment sheets use this standard column layout:
 - **Keys overdue for rotation:** _________
 - **Certificate automation status:** [ ] Fully automated [ ] Partially automated [ ] Manual (requires migration) [ ] N/A
 - **ACME protocol in use:** [ ] Yes [ ] No [ ] Planned
-
 
 ---
 
@@ -1523,13 +1428,11 @@ All 5 assessment sheets use this standard column layout:
   - [ ] Automation implementation in progress (target date: ________)
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -1544,7 +1447,6 @@ All 5 assessment sheets use this standard column layout:
 - [ ] Yes → Complete assessment below
 - [ ] No → Skip to Section 5
 - [ ] Not Applicable
-
 
 ---
 
@@ -1569,7 +1471,6 @@ All 5 assessment sheets use this standard column layout:
 - **Keys without backup:** _________ (HIGH RISK - data loss if key lost)
 - **Last recovery test date:** _________
 - **Recovery testing frequency:** [ ] Annually [ ] After DR exercises [ ] Never (non-compliant)
-
 
 ---
 
@@ -1598,13 +1499,11 @@ All 5 assessment sheets use this standard column layout:
   - [ ] Recovery testing scheduled (target date: ________)
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -1619,7 +1518,6 @@ All 5 assessment sheets use this standard column layout:
 - [ ] Yes → Complete assessment below
 - [ ] No → Skip to Section 6
 - [ ] Not Applicable
-
 
 ---
 
@@ -1645,7 +1543,6 @@ All 5 assessment sheets use this standard column layout:
 - **Certificates expiring within 90 days:** _________ (URGENT if >0)
 - **Certificate automation status:** [ ] Fully automated (ACME) [ ] Partially automated [ ] Manual
 - **CRL/OCSP testing date:** _________
-
 
 ---
 
@@ -1674,13 +1571,11 @@ All 5 assessment sheets use this standard column layout:
   - [ ] Certificates renewed proactively (>90 days in advance)
   - [ ] Other: _______________________________
 
-
 **Remediation Plan:**
 
 - **Remediation actions required:** _________________________________
 - **Responsible person:** _________________________________
 - **Target completion date:** _________________________________
-
 
 ---
 
@@ -1706,7 +1601,6 @@ All 5 assessment sheets use this standard column layout:
 - Exclude N/A items from total when calculating compliance percentage
 - Target: ≥90% Compliant for mature ISMS
 
-
 ## Critical Gaps Identified
 
 List the most critical gaps that require immediate attention:
@@ -1727,7 +1621,6 @@ List the most critical gaps that require immediate attention:
   - ❌ No certificate automation with <100-day validity approaching
   - ❌ CRL/OCSP not configured or not tested
 
-
 ## Top Remediation Priorities
 
 | Priority | Gap Description | Target Date | Responsible Person |
@@ -1741,7 +1634,6 @@ List the most critical gaps that require immediate attention:
 - **High:** Key compromise risk, data loss risk, compliance violation, or operational failure imminent
 - **Medium:** Compliance gap with planned remediation, low immediate risk
 - **Low:** Best practice improvement, no compliance impact
-
 
 ---
 
@@ -1769,7 +1661,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - `EV-4-Key-Recovery-Test-20260115.pdf`
 - `EV-5-Certificate-Expiration-Report-20260115.xlsx`
 
-
 **Evidence Types:**
 
 - Entropy source verification
@@ -1784,14 +1675,12 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - ACME protocol setup
 - CRL/OCSP tests
 
-
 **Evidence Storage:**
 
 - **Location:** [Organization's evidence repository path]
 - **Retention:** Audit cycle + 1 year minimum
 - **Access Control:** Restricted to security team and auditors
 - **Sensitivity:** CRITICAL - NO PRIVATE KEYS IN EVIDENCE
-
 
 ---
 
@@ -1811,7 +1700,6 @@ EV-[Section]-[System]-[Date]-[Type].[ext]
 - Controls requiring remediation: _______
 - Critical gaps identified: _______
 - High-priority remediation items: _______
-
 
 ---
 
@@ -1844,7 +1732,6 @@ _________________________________________________________________
 - [ ] Approved with minor corrections - Specific items to address: _______
 - [ ] Requires revision - Significant issues identified, re-submit required
 
-
 ---
 
 ## Approved By (CISO)
@@ -1859,7 +1746,6 @@ _________________________________________________________________
 - [ ] Approved with conditions - Remediation must be completed by: _______
 - [ ] Rejected - Re-assessment required due to: _______
 
-
 **Risk Acceptance:**
 For any documented exceptions/deviations, I accept the residual risk based on:
 
@@ -1867,7 +1753,6 @@ For any documented exceptions/deviations, I accept the residual risk based on:
 - Approved compensating controls
 - Business justification
 - Compliance with exception approval process (ISMS-POL-A.8.24-S5.B)
-
 
 ---
 
@@ -1885,7 +1770,6 @@ For any documented exceptions/deviations, I accept the residual risk based on:
 - Failed audit findings on key management
 - Major infrastructure changes
 
-
 **Interim Monitoring:**
 
 - Certificate expiration: Continuous (90-day alerts)
@@ -1894,7 +1778,6 @@ For any documented exceptions/deviations, I accept the residual risk based on:
 - Entropy source health: Quarterly
 - Key backup testing: Annually
 - Remediation progress: Monthly
-
 
 ---
 
@@ -1913,12 +1796,10 @@ This assessment shall be distributed to:
 - [ ] IT Management
 - [ ] Other: _______________________
 
-
 **Storage Location:**
 
 - **ISMS Repository:** `ISMS/Controls/A.8.24_Use_of_Cryptography/Assessments/`
 - **Filename:** `ISMS-IMP-A.8.24.4_Key_Management_[DATE]_APPROVED.xlsx`
-
 
 ---
 
@@ -1944,26 +1825,21 @@ This assessment shall be distributed to:
 - Formula: `"✅ Compliant,⚠️ Partial,❌ Non-Compliant,N/A"`
 - Applied to: Column G (Status) in all assessment sheets
 
-
 **Generation Method Dropdown:**
 
 - Formula: `"HSM,AWS KMS,Azure Key Vault,GCP KMS,OpenSSL,Let's Encrypt ACME,Manual,N/A"`
-
 
 **Algorithm Dropdown:**
 
 - Formula: `"RSA-2048,RSA-3072,RSA-4096,ECDSA P-256,ECDSA P-384,AES-256,AES-128,N/A"`
 
-
 **Storage Location Dropdown:**
 
 - Formula: `"HSM,AWS KMS,Azure Key Vault,GCP KMS,Software Keystore,Config File,N/A"`
 
-
 **Storage Security Level Dropdown:**
 
 - Formula: `"HSM (FIPS 140-2 L2+),Cloud KMS,Software Keystore,Plaintext (Non-compliant),N/A"`
-
 
 ## A.3 Conditional Formatting
 
@@ -2013,14 +1889,12 @@ This assessment shall be distributed to:
 - `create_key_backup_sheet()` (columns Q-T)
 - `create_certificate_mgmt_sheet()` (columns Q-U)
 
-
 **QA Script:** `excel_sanity_check_a824_4.py`
 
 ## A.8 Version Control
 
 - Filename: `ISMS-IMP-A.8.24.4_Key_Management_YYYYMMDD.xlsx`
 - v2.0: Added User Guide, entropy guidance, SC-081v3 timeline
-
 
 ---
 
@@ -2037,7 +1911,6 @@ This assessment shall be distributed to:
 - [ ] Entropy source guidance clear (hardware RNG or /dev/random)
 - [ ] Certificate automation deadline (15.03.2026) prominent
 - [ ] NO PRIVATE KEYS IN EVIDENCE (repeated throughout)
-
 
 ---
 

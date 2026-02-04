@@ -55,7 +55,6 @@ This assessment **consolidates and visualizes** compliance data from all four DL
 - Evidence completeness verification
 - Executive summary for board reporting
 
-
 ## Why This Matters
 
 **ISO 27001:2022 Control A.8.12 Requirement:**
@@ -75,7 +74,6 @@ This assessment **consolidates and visualizes** compliance data from all four DL
 - **EU GDPR (Art. 32):** Requires ability to demonstrate compliance with technical measures
 - **Industry Standards:** PCI DSS, HIPAA, SOC 2 all require consolidated security control reporting
 
-
 **Business Impact:**
 
 - **Executive Decision-Making:** Resource allocation, budget approval, risk acceptance based on consolidated view
@@ -83,14 +81,12 @@ This assessment **consolidates and visualizes** compliance data from all four DL
 - **Gap Prioritization:** Consolidated critical gaps enable focused remediation efforts
 - **Board Reporting:** Executive summary suitable for board cybersecurity reporting
 
-
 **Why Dashboard Consolidation Matters:**
 
 - **Single Source of Truth:** One definitive view of DLP compliance status
 - **Trend Analysis:** Quarter-over-quarter comparison shows improvement/degradation
 - **Evidence Verification:** Confirms all required evidence collected across all assessments
 - **Audit Readiness:** Pre-audit verification that DLP controls are documented and compliant
-
 
 ## Who Should Complete This Assessment
 
@@ -103,7 +99,6 @@ This assessment **consolidates and visualizes** compliance data from all four DL
 - Excel external workbook linking (how to create and update links)
 - Executive reporting requirements (what CISO/board needs to see)
 
-
 **Support Roles:**
 
 - **DLP Administrators:** Provide technical context for consolidated findings
@@ -111,14 +106,12 @@ This assessment **consolidates and visualizes** compliance data from all four DL
 - **Compliance Officers:** Review regulatory alignment
 - **CISO/Security Leadership:** Review executive summary and approve risk acceptances
 
-
 **CRITICAL PREREQUISITE:** All 4 source assessments MUST be completed before dashboard consolidation:
 
 - [ ] A.8.12.1 - Infrastructure Assessment completed
 - [ ] A.8.12.2 - Classification Assessment completed
 - [ ] A.8.12.3 - Channel Coverage Assessment completed
 - [ ] A.8.12.4 - Monitoring & Response Assessment completed
-
 
 ## Time Estimate
 
@@ -133,7 +126,6 @@ This assessment **consolidates and visualizes** compliance data from all four DL
 - **Executive Summary Generation:** 30 minutes (write summary for CISO/board)
 - **Evidence Verification:** 15 minutes (confirm all evidence present across all assessments)
 - **Quality Review:** 15 minutes (self-check using Section 7 quality checklist)
-
 
 **IMPORTANT:** If source assessments are incomplete or have data quality issues, dashboard consolidation will take longer (4-6 hours) to identify and resolve data issues.
 
@@ -151,7 +143,6 @@ This assessment implements **ISMS-POL-A.8.12 (Data Leakage Prevention Policy)** 
 - **Section 4.2 - Implementation Resources:** Evidence completeness verified
 - **Section 5.1 - Review Cycle:** Quarterly dashboard updates per policy requirement
 
-
 **Policy Authority:** Chief Information Security Officer (CISO)  
 **Compliance Status:** Mandatory quarterly deliverable to Executive Management
 
@@ -160,7 +151,6 @@ This assessment implements **ISMS-POL-A.8.12 (Data Leakage Prevention Policy)** 
 - **A.8.12.1-4:** Source assessments → THIS dashboard consolidates all
 - **Executive Reporting:** THIS dashboard provides board-ready summary
 - **Audit Process:** THIS dashboard is primary artifact for ISO 27001/SOC 2 auditors
-
 
 ## Critical: Consolidation Methodology
 
@@ -199,7 +189,6 @@ Dashboard Workbook (this file):
 - Source workbooks must be **closed** when updating dashboard links (Excel limitation)
 - When source data changes, dashboard formulas auto-update (if links valid)
 
-
 **Common Linking Issues:**
 
 - **#REF! errors:** Source workbook moved or renamed → Update links via Edit Links dialog
@@ -207,13 +196,11 @@ Dashboard Workbook (this file):
 - **Circular reference:** Dashboard references itself → Review formula references
 - **File path too long:** Windows 260-character path limit → Shorten directory path
 
-
 **Quality Dependency:**
 
 - If source assessment has ❌ Non-Compliant items → Dashboard shows ❌
 - If source assessment missing evidence → Dashboard shows evidence gap
 - If source assessment formulas broken → Dashboard shows #REF! or #VALUE!
-
 
 **Best Practice:**
 1. Complete ALL source assessments to high quality standard BEFORE creating dashboard
@@ -236,7 +223,6 @@ Dashboard Workbook (this file):
 - [ ] `ISMS-IMP-A.8.12.3_Channel_Coverage_YYYYMMDD.xlsx` - Completed and approved
 - [ ] `ISMS-IMP-A.8.12.4_Monitoring_Response_YYYYMMDD.xlsx` - Completed and approved
 
-
 **All Source Workbooks Requirements:**
 
 - Summary_Dashboard sheet completed (formulas calculated, no errors)
@@ -244,12 +230,10 @@ Dashboard Workbook (this file):
 - Evidence_Register populated (evidence IDs assigned)
 - Approval_Sign-Off completed (signed by appropriate authorities)
 
-
 **Policy Documentation:**
 
 - [ ] ISMS-POL-A.8.12 Data Leakage Prevention Policy (current approved version)
 - [ ] Previous quarter dashboard (if exists, for trend comparison)
-
 
 ## Knowledge Required
 
@@ -260,7 +244,6 @@ Dashboard Workbook (this file):
 - Executive reporting requirements (what CISO/board needs)
 - Risk prioritization (Critical vs High vs Medium gaps)
 
-
 **Technical Skills:**
 
 - Excel formula auditing (trace precedents, evaluate formulas)
@@ -268,13 +251,11 @@ Dashboard Workbook (this file):
 - Data validation (verify consolidated data matches source)
 - Conditional formatting (understand color coding rules)
 
-
 **NOT Required:**
 
 - Deep DLP technical expertise (source assessments have details)
 - Advanced Excel VBA/macros
 - Business intelligence tool expertise
-
 
 ## Tools Needed
 
@@ -284,12 +265,10 @@ Dashboard Workbook (this file):
 - **File system access** to directory containing all 5 workbooks
 - **Read/write permissions** on all workbook files
 
-
 **Optional but Recommended:**
 
 - **Excel Formula Auditing toolbar** (for link troubleshooting)
 - **PDF export capability** (for executive summary distribution)
-
 
 ## Estimated Time Commitment
 
@@ -300,14 +279,12 @@ Dashboard Workbook (this file):
 - Place all files in single directory
 - Note exact filenames for linking
 
-
 **Phase 2: Dashboard Creation (30 minutes)**
 
 - Open dashboard template (or generate via Python script)
 - Establish external links to 4 source workbooks
 - Verify formulas calculate correctly (no #REF! errors)
 - Test link updates (modify source data, verify dashboard updates)
-
 
 **Phase 3: Consolidation Verification (30-60 minutes)**
 
@@ -316,14 +293,12 @@ Dashboard Workbook (this file):
 - Verify critical gaps consolidated from all sources
 - Confirm evidence count matches sources
 
-
 **Phase 4: Critical Gaps Review & Prioritization (30 minutes)**
 
 - Review all critical gaps from 4 source assessments
 - Prioritize for executive attention (top 5-10 gaps)
 - Verify remediation plans exist and are realistic
 - Check owners and target dates assigned
-
 
 **Phase 5: Executive Summary Generation (30 minutes)**
 
@@ -333,14 +308,12 @@ Dashboard Workbook (this file):
 - Provide trend analysis (vs. previous quarter)
 - Recommend executive actions (budget, risk acceptance, remediation)
 
-
 **Phase 6: Quality Assurance (15 minutes)**
 
 - Self-check using quality checklist (Section 7)
 - Verify all external links active
 - Check for formula errors
 - Confirm evidence completeness
-
 
 **Total:** 2-3 hours
 
@@ -380,7 +353,6 @@ Dashboard Workbook (this file):
 4. Generate dashboard workbook, save to same directory:
 
    - `ISMS-IMP-A.8.12.5_Compliance_Dashboard_20260121.xlsx`
-
 
 **STEP 3: Dashboard Setup (30 minutes)**
 1. Open dashboard workbook: `ISMS-IMP-A.8.12.5_Compliance_Dashboard_20260121.xlsx`
@@ -447,7 +419,6 @@ Dashboard Workbook (this file):
    - Test results (bypass testing, SIEM end-to-end tests)
    - Metrics (alert volume, MTTR, FP rate)
 
-
 **STEP 7: Executive Summary Generation (30 minutes)**
 1. Navigate to Executive_Summary sheet
 2. Write executive summary (1-2 pages):
@@ -474,7 +445,6 @@ Dashboard Workbook (this file):
 
    - Example: "Compliance improved from 75% to 85% due to SIEM integration completion"
    - Example: "Critical gaps increased from 2 to 5 due to new regulatory requirements"
-
 
 **STEP 9: Quality Assurance (15 minutes)**
 1. Complete quality checklist (Section 7)
@@ -540,7 +510,6 @@ This sheet provides board-ready executive summary suitable for CISO reporting to
 - Total evidence ≥50 items
 - All approvals signed
 
-
 **⚠️ Partially Ready (Yellow):**
 
 - Overall compliance 80-89%
@@ -549,7 +518,6 @@ This sheet provides board-ready executive summary suitable for CISO reporting to
 - Evidence ≥40 items
 - Minor documentation gaps
 
-
 **❌ Not Audit-Ready (Red):**
 
 - Overall compliance <80%
@@ -557,7 +525,6 @@ This sheet provides board-ready executive summary suitable for CISO reporting to
 - Critical gaps >5
 - Evidence <40 items
 - Major gaps requiring immediate remediation
-
 
 **Executive Summary Template:**
 
@@ -585,19 +552,16 @@ Previous Quarter: 75% → Current: 85% (+10% improvement)
 - Improvement drivers: SIEM integration, SOC playbook deployment
 - Remaining challenges: Data classification scheme incomplete, mobile DLP gaps
 
-
 RESOURCE REQUIREMENTS:
 
 - Budget: CHF [amount] for [purpose]
 - Staffing: [FTE] additional SOC analysts for alert management
 - Tools: [tool name] for [capability gap]
 
-
 RISK ACCEPTANCE RECOMMENDATIONS:
 
 - Accept: [Gap X] - Low risk, high cost to remediate, compensating controls in place
 - Remediate: [Gap Y] - High regulatory risk (GDPR), must fix before audit
-
 
 AUDIT READINESS: PARTIALLY READY
 
@@ -619,7 +583,6 @@ AUDIT READINESS: PARTIALLY READY
 - Board presentation (if created)
 - All 4 source assessment workbooks (linked evidence)
 
-
 **Evidence Naming Convention:**
 ```
 EV-DASH-[Date]-[Description].[ext]
@@ -631,7 +594,6 @@ EV-DASH-[Date]-[Description].[ext]
 - `EV-DASH-20260121-Executive-Summary.pdf`
 - `EV-DASH-20260121-Board-Presentation.pptx`
 - `EV-DASH-20260121-Trend-Analysis-Q4-2025-vs-Q1-2026.xlsx`
-
 
 **Storage:** `ISMS/Controls/A.8.12_DLP/Dashboards/Q1_2026/`  
 **Retention:** 3 years (audit cycle + 1 year)  
@@ -645,19 +607,16 @@ EV-DASH-[Date]-[Description].[ext]
 - Executive summary (PDF for board)
 - Trend analysis (quarter-over-quarter)
 
-
 **Source Assessment Evidence:**
 
 - All 4 source workbooks (linked as evidence)
 - ~55 total evidence items across all assessments
-
 
 **Approval Evidence:**
 
 - CISO approval signature on dashboard
 - Board meeting minutes showing DLP status review
 - Risk acceptance decisions documented
-
 
 **Minimum Evidence:** Dashboard + Executive Summary + 4 Source Workbooks = **6 items**
 
@@ -675,7 +634,6 @@ EV-DASH-[Date]-[Description].[ext]
 - Check each source has Summary_Dashboard, Gap_Analysis, Evidence_Register completed
 - Review source workbook approvals (signed and dated)
 
-
 ## "External links broken after moving files"
 
 **Problem:** Dashboard shows #REF! errors after file path changes
@@ -685,7 +643,6 @@ EV-DASH-[Date]-[Description].[ext]
 - Keep all 5 workbooks in same directory (never move separately)
 - Use relative paths if possible (Excel limitation: external links usually absolute)
 - If must move: Data → Edit Links → Change Source → Browse to new location for each link
-
 
 ## "Dashboard shows stale data from old source assessments"
 
@@ -697,7 +654,6 @@ EV-DASH-[Date]-[Description].[ext]
 - LibreOffice: Edit → Links → Update (refresh all links)
 - Enable automatic link updates: File → Options → Advanced → Update automatic links
 
-
 ## "Compliance % calculation doesn't match manual review"
 
 **Problem:** Formula errors, weighting incorrect, source data wrong
@@ -708,7 +664,6 @@ EV-DASH-[Date]-[Description].[ext]
 - Check formula references correct cells in source Summary_Dashboard sheets
 - Manually calculate 1-2 domains to verify formula logic
 - Trace precedents: Excel Formula Auditing → Trace Precedents
-
 
 ## "Executive summary too technical for board"
 
@@ -722,7 +677,6 @@ EV-DASH-[Date]-[Description].[ext]
 - Limit to 1-2 pages maximum
 - Highlight "So what?" for each item (why board should care)
 
-
 ## "Critical gaps not prioritized, everything marked Critical"
 
 **Problem:** 20+ "critical" gaps → executive overwhelmed, nothing gets addressed
@@ -734,7 +688,6 @@ EV-DASH-[Date]-[Description].[ext]
 - Downgrade some to High (important but not immediate regulatory risk)
 - For each Critical gap: Justify why it's truly critical
 - Focus executive attention on top 5 Critical gaps only
-
 
 ---
 
@@ -748,7 +701,6 @@ EV-DASH-[Date]-[Description].[ext]
 - [ ] Each source has Evidence_Register populated (evidence IDs assigned)
 - [ ] Each source has Approval_Sign-Off signed and dated
 
-
 **Dashboard Technical Quality:**
 
 - [ ] All external links functional (no #REF! errors)
@@ -757,14 +709,12 @@ EV-DASH-[Date]-[Description].[ext]
 - [ ] Conditional formatting working (colors correct)
 - [ ] Link update test passed (modified source, verified dashboard updated)
 
-
 **Data Accuracy:**
 
 - [ ] Compliance % by domain matches source workbooks exactly
 - [ ] Critical gaps count matches sum across all sources
 - [ ] Evidence count matches sum across all sources
 - [ ] Trend analysis (if applicable) uses correct previous quarter data
-
 
 **Executive Summary Quality:**
 
@@ -776,7 +726,6 @@ EV-DASH-[Date]-[Description].[ext]
 - [ ] Risk acceptance recommendations provided
 - [ ] Audit readiness assessment included
 
-
 **Evidence Completeness:**
 
 - [ ] Dashboard workbook saved in approved directory
@@ -785,7 +734,6 @@ EV-DASH-[Date]-[Description].[ext]
 - [ ] File naming convention followed
 - [ ] Evidence stored per retention policy (3 years)
 
-
 **Approval Workflow:**
 
 - [ ] Completed By: DLP Program Manager signed
@@ -793,14 +741,12 @@ EV-DASH-[Date]-[Description].[ext]
 - [ ] Approved By: CISO signed
 - [ ] Distribution list completed
 
-
 **Final Checks:**
 
 - [ ] Filename: `ISMS-IMP-A.8.12.5_Compliance_Dashboard_20260121.xlsx`
 - [ ] All sheets present and populated
 - [ ] No placeholder text ([TBD], [FILL IN], etc.)
 - [ ] Ready for board presentation
-
 
 ---
 
@@ -816,7 +762,6 @@ EV-DASH-[Date]-[Description].[ext]
 - [ ] A.8.12.2 Classification (Date: _______)
 - [ ] A.8.12.3 Channel Coverage (Date: _______)
 - [ ] A.8.12.4 Monitoring & Response (Date: _______)
-
 
 ## Completed By (DLP Program Manager)
 
@@ -835,7 +780,6 @@ I confirm:
 - Critical gaps consolidated and prioritized
 - Executive summary suitable for board presentation
 
-
 ## Reviewed By (Compliance Officer / Internal Audit)
 
 **Name:** _______________________  
@@ -849,13 +793,11 @@ I confirm:
 - Evidence completeness verified
 - Gap remediation plans realistic
 
-
 **Review Outcome:**
 
 - [ ] Approved - Ready for CISO presentation
 - [ ] Approved with minor corrections: _______
 - [ ] Requires revision: _______
-
 
 ## Approved By (CISO)
 
@@ -869,7 +811,6 @@ I confirm:
 - [ ] Approved with conditions - Address [gaps] before audit
 - [ ] Rejected - Insufficient compliance, remediation required before approval
 
-
 **Risk Acceptance Decisions:**
 For critical gaps documented:
 
@@ -877,12 +818,10 @@ For critical gaps documented:
 - [ ] Remediate (budget approved, timeline agreed): _______
 - [ ] Escalate to Board (gaps exceed CISO authority to accept): _______
 
-
 **Board Presentation:**
 
 - [ ] Schedule board presentation for: _______
 - [ ] Provide executive summary to board on: _______
-
 
 ## Next Review Date
 
@@ -893,14 +832,12 @@ For critical gaps documented:
 - **Quarterly:** Regular dashboard update
 - **Ad-hoc:** When major changes occur (new DLP deployment, incident, audit, regulatory change)
 
-
 **Source Assessment Update Triggers:**
 
 - Network changes → Update A.8.12.3 Channel Coverage
 - DLP tuning → Update A.8.12.2 Classification, A.8.12.4 Monitoring
 - SOC changes → Update A.8.12.4 Monitoring
 - New DLP technology → Update A.8.12.1 Infrastructure
-
 
 ## Distribution List
 
@@ -914,7 +851,6 @@ This dashboard shall be distributed to:
 - [ ] Compliance Officer
 - [ ] Internal Audit
 - [ ] External Auditors (upon request)
-
 
 **Storage Location:**
 `ISMS/Controls/A.8.12_DLP/Dashboards/Q1_2026/ISMS-IMP-A.8.12.5_Compliance_Dashboard_20260121_APPROVED.xlsx`
@@ -968,7 +904,6 @@ This dashboard shall be distributed to:
 - Rows 16-30: How to use dashboard
 - Rows 32-40: External link troubleshooting guide
 - Rows 42-45: Color coding legend
-
 
 **Organization Metadata:**
 
@@ -1090,14 +1025,12 @@ status_format = {
 - Email DLP Coverage (%)
 - Cloud DLP Coverage (%)
 
-
 **From A.8.12.2 Classification:**
 
 - Data Classification Scheme Maturity Level
 - Sensitive Data Categories Inventoried (#)
 - DLP Pattern Accuracy (%)
 - False Positive Rate (%)
-
 
 **From A.8.12.3 Channel Coverage:**
 
@@ -1106,7 +1039,6 @@ status_format = {
 - Shadow IT Channels Identified (#)
 - Unprotected Restricted Data Channels (#)
 
-
 **From A.8.12.4 Monitoring & Response:**
 
 - Alert Backlog (#)
@@ -1114,7 +1046,6 @@ status_format = {
 - SIEM Integration Status
 - SOC Playbooks Documented (Yes/No)
 - GDPR 72-Hour Compliance (%)
-
 
 **External Link Formula Pattern:**
 
@@ -1160,7 +1091,6 @@ status_format = {
 - Gap_Analysis rows are user-populated (not pre-defined structure)
 - Need to filter for Risk Level = "Critical" only
 
-
 **Two Implementation Options:**
 
 **Option A: Manual Consolidation (Recommended for initial dashboard)**
@@ -1184,7 +1114,6 @@ status_format = {
 - Include commented-out Power Query code
 - Provide manual consolidation instructions as default
 - Note that full automation requires VBA or Power Query
-
 
 **Data Rows:** 60 total (accommodate up to 15 critical gaps per source × 4 sources)
 
@@ -1290,7 +1219,6 @@ status_formula = {
 - ➡️ Stable = Yellow
 - ⬇️ Degrading = Red
 
-
 ---
 
 ## Sheet: Approval_Sign-Off
@@ -1343,7 +1271,6 @@ LibreOffice: Edit → Links → Shows status
 - **Error:** File not found, moved, or renamed
 - **Unknown:** Excel can't determine status (may need manual update)
 
-
 **Troubleshooting Guide (Rows 15-30):**
 
 | Issue | Cause | Solution |
@@ -1374,7 +1301,6 @@ LibreOffice: Edit → Links → Shows status
 - `SheetName` - Sheet name in source workbook
 - `!` - Separator
 - `CellReference` - Cell address (use $ for absolute reference)
-
 
 **Full Path External Link (when workbooks in different directories):**
 ```excel
@@ -1440,13 +1366,11 @@ LibreOffice: Edit → Links → Shows status
 - File → Options → Advanced → General → "Update automatic links at open"
 - Warning: May slow workbook opening if many links
 
-
 **Breaking Links (Converting to Values):**
 
 - Data → Edit Links → Select link → Break Link
 - Converts formulas to static values (loses connection to source)
 - Use when archiving historical dashboards
-
 
 ---
 
@@ -1459,7 +1383,6 @@ LibreOffice: Edit → Links → Shows status
 - Executive Summary Text (rows 40-50): Free-form text, no validation
 - Resource Requirements: Free-form text
 - Risk Acceptance Decisions: Free-form text
-
 
 **Dropdown Validations:**
 ```python
@@ -1485,7 +1408,6 @@ validation_audit = {
 - Manual entry (copied from previous quarter dashboard)
 - Numeric validation for percentages (0-100)
 - Date validation for timestamps
-
 
 ---
 
@@ -1540,7 +1462,6 @@ evidence_format = {
 - All auto-generated IDs
 - Pre-populated metric names
 
-
 **Unprotected Cells (User Input):**
 
 - Organization metadata (yellow cells)
@@ -1549,13 +1470,11 @@ evidence_format = {
 - Risk acceptance decisions
 - Approval signatures and dates
 
-
 **Sheet Protection:**
 
 - Enable protection on all sheets
 - Allow: Format cells, Sort, Filter
 - Disallow: Delete rows, Modify formulas, Unprotect sheet
-
 
 ---
 
@@ -1864,12 +1783,10 @@ This dashboard is the CONSOLIDATION LAYER. Its value depends entirely on the qua
 - After major DLP changes: Update relevant source assessment, dashboard auto-reflects change
 - Before audit: Verify all links functional, evidence complete, gaps documented
 
-
 **Archive Strategy:**
 
 - Keep historical dashboards (one per quarter) for trend analysis
 - Break links in archived dashboards (convert formulas to values) to prevent link errors when source files archived
-
 
 ---
 

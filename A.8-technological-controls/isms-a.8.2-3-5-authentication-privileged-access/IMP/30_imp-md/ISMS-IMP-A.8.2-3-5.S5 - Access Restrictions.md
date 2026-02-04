@@ -45,7 +45,6 @@ This document consists of two parts:
   - Formulas & Calculations
   - Python Script Integration
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -68,13 +67,11 @@ This document consists of two parts:
 - Validates encryption-based access restriction (encryption at rest, in transit)
 - Tests access control effectiveness (penetration testing, configuration scanning)
 
-
 **What This Assessment Does NOT Do:**
 
 - Manage user identities (see ISMS-POL-A.5.15-16-18 - IAM Foundation)
 - Authenticate users (see IMP.1 - Authentication Inventory, IMP.2 - MFA Coverage)
 - Track privileged accounts (see IMP.3 - Privileged Account Inventory)
-
 
 **Primary ISO 27001 Control:** A.8.3 - Information Access Restriction
 
@@ -85,7 +82,6 @@ This document consists of two parts:
 - A.8.24 - Use of Cryptography (encryption-based access restriction)
 - A.8.20 - Networks Security (network segmentation)
 
-
 **Why Access Restrictions Matter:**
 Authentication proves WHO you are. Access restrictions enforce WHAT you can access. Without effective access restrictions:
 
@@ -93,7 +89,6 @@ Authentication proves WHO you are. Access restrictions enforce WHAT you can acce
 - Applications access databases with excessive permissions (SQL injection = full database compromise)
 - APIs allow unauthorized operations (business logic bypass)
 - Network segmentation failures allow lateral movement
-
 
 ## When to Use This Assessment
 
@@ -106,13 +101,11 @@ Authentication proves WHO you are. Access restrictions enforce WHAT you can acce
 - After security incidents (access control bypass, unauthorized access)
 - Demonstrating GDPR Article 32 compliance (security of processing)
 
-
 **Assessment Frequency:**
 
 - **Continuous**: Configuration monitoring via vulnerability scanners, CSPM tools
 - **Quarterly**: Comprehensive access control audit, permission review
 - **Annual**: Penetration testing (access control bypass testing), full compliance validation
-
 
 ## Who Completes This Assessment
 
@@ -126,7 +119,6 @@ Authentication proves WHO you are. Access restrictions enforce WHAT you can acce
 - **Network Team**: Network segmentation, firewall rules
 - **Cloud Team**: Cloud IAM policies, resource access controls
 - **System Owners**: Validate access controls for owned systems
-
 
 **Approval Authority:** Chief Information Security Officer (CISO)
 
@@ -143,7 +135,6 @@ Authentication proves WHO you are. Access restrictions enforce WHAT you can acce
 - Evidence collection: 2-3 hours
 - **Total**: 23-33 hours (spread over 2-3 weeks)
 
-
 **Quarterly Assessment**:
 
 - Configuration audit updates: 3-4 hours
@@ -153,13 +144,11 @@ Authentication proves WHO you are. Access restrictions enforce WHAT you can acce
 - Evidence updates: 1-2 hours
 - **Total**: 9-14 hours per quarter
 
-
 **Continuous Monitoring** (ongoing):
 
 - Automated configuration scanning (daily/weekly)
 - Alert on permission changes (real-time)
 - Quarterly manual validation
-
 
 ---
 
@@ -175,7 +164,6 @@ Before starting the assessment, gather the following information:
 - [ ] Data classification per system (Public, Internal, Confidential, Restricted)
 - [ ] System owners and responsible teams
 
-
 **Access Control Configuration:**
 
 - [ ] OS-level access controls (NTFS permissions, Linux ACLs)
@@ -184,20 +172,17 @@ Before starting the assessment, gather the following information:
 - [ ] API access controls (OAuth scopes, API key policies)
 - [ ] Network segmentation (firewall rules, VLANs, security groups)
 
-
 **Encryption Configuration:**
 
 - [ ] Encryption at rest status (BitLocker, LUKS, TDE, S3 encryption)
 - [ ] Encryption in transit status (TLS, IPsec, VPN)
 - [ ] Key management integration (which systems use encryption-based access)
 
-
 **Baseline Expectations:**
 
 - [ ] Expected access patterns (who should access what)
 - [ ] Default deny configuration (explicit allow required)
 - [ ] Least privilege implementation (minimal permissions)
-
 
 ## Required Access
 
@@ -210,14 +195,12 @@ Before starting the assessment, gather the following information:
 - [ ] Read access to network configuration (firewall rules, security groups)
 - [ ] Read access to encryption configuration (BitLocker, TDE status)
 
-
 **People Access Needed:**
 
 - [ ] System owners (validate access control intent)
 - [ ] DBAs (database permission review)
 - [ ] Application teams (application access control review)
 - [ ] Network team (firewall rule review)
-
 
 ## Required Tools
 
@@ -228,13 +211,11 @@ Before starting the assessment, gather the following information:
 - [ ] Configuration audit tools (Nessus, Qualys, Microsoft Defender for Cloud, AWS Config)
 - [ ] Permission analysis tools (AccessChk, PowerShell, SQL scripts)
 
-
 **Optional Tools:**
 
 - [ ] Penetration testing tools (for access control bypass testing)
 - [ ] CSPM (Cloud Security Posture Management) tools
 - [ ] Database audit tools (DBDefence, Imperva)
-
 
 ---
 
@@ -256,7 +237,6 @@ Before starting the assessment, gather the following information:
       - Default permissions (umask, default ACLs)
       - Permission inheritance
 
-
 3. AUDIT DATABASE ACCESS CONTROLS
    → Sheet 2: Database Access Controls
 
@@ -265,14 +245,12 @@ Before starting the assessment, gather the following information:
       - Row-level security (if applicable)
       - Column-level security (if applicable)
 
-
 4. AUDIT APPLICATION ACCESS CONTROLS
    → Sheet 3: Application Access Controls
 
       - RBAC implementation (roles, permissions)
       - Application-level permissions (read, write, delete, admin)
       - Permission enforcement (backend + frontend)
-
 
 5. AUDIT API ACCESS CONTROLS
    → Sheet 4: API Access Controls
@@ -282,7 +260,6 @@ Before starting the assessment, gather the following information:
       - Rate limiting and throttling
       - API authentication requirements
 
-
 6. VERIFY NETWORK SEGMENTATION
    → Sheet 5: Network Segmentation
 
@@ -290,14 +267,12 @@ Before starting the assessment, gather the following information:
       - Firewall rules enforcing restrictions
       - VLAN segmentation
 
-
 7. VERIFY ENCRYPTION-BASED RESTRICTION
    → Sheet 6: Encryption-Based Access
 
       - Encryption at rest (who has keys = who has access)
       - Encryption in transit (TLS enforcement)
       - Key-based access control
-
 
 8. TEST ACCESS CONTROL EFFECTIVENESS
    → Penetration testing (access control bypass attempts)
@@ -329,7 +304,6 @@ Option B - Manual:
 - Use Excel template
 - Save as: `ISMS-IMP-A.8.2-3-5.5_Access_Restrictions_[DATE].xlsx`
 
-
 **Step 2: Complete Sheet 1 - OS Access Controls**
 
 For each system with OS-level access controls:
@@ -341,13 +315,11 @@ For each system with OS-level access controls:
    - Operating System: Windows Server, Linux (distro), macOS
    - Data Classification: Public, Internal, Confidential, Restricted
 
-
 2. **Access Control Type** (Columns E-G):
 
    - Access Control Type: NTFS, ext4 ACL, XFS ACL, ZFS ACL, NFS ACL
    - Default Deny Configured: Yes, No (requires explicit allow?)
    - Permission Inheritance: Yes, No (do subfolders inherit?)
-
 
 3. **Permission Audit** (Columns H-K):
 
@@ -356,11 +328,9 @@ For each system with OS-level access controls:
    - Permission Cleanup Completed: Yes, No, N/A
    - Compliance Status: Compliant, Non-Compliant
 
-
 4. **Evidence** (Column L):
 
    - Evidence Location: Link to permission audit export
-
 
 **Example - Windows File Server:**
 ```
@@ -384,7 +354,6 @@ For each database:
    - Database Type: SQL Server, Oracle, PostgreSQL, MySQL, MongoDB, other
    - Data Classification
 
-
 2. **Access Control Implementation** (Columns E-H):
 
    - Role-Based Access: Yes, No (database roles used?)
@@ -392,14 +361,12 @@ For each database:
    - Row-Level Security: Yes, No, N/A
    - Column-Level Security: Yes, No, N/A
 
-
 3. **Grant Audit** (Columns I-L):
 
    - Last Grant Audit Date
    - Excessive Grants Found: Yes, No (users with more than SELECT on sensitive tables?)
    - Public Role Grants: Yes - Review, No (dangerous: grants to PUBLIC)
    - Compliance Status: Compliant, Non-Compliant
-
 
 **Example - SQL Server Database:**
 ```
@@ -424,7 +391,6 @@ For each application:
    - Application Type: Web App, Desktop App, Mobile App, API
    - Data Classification
 
-
 2. **Access Control Model** (Columns E-H):
 
    - Access Control Model: RBAC, ABAC, ACL, Custom
@@ -432,14 +398,12 @@ For each application:
    - Permissions Matrix: Yes, No (is permission model documented?)
    - Enforcement: Backend Only, Frontend Only, Both (where is access checked?)
 
-
 3. **Access Control Testing** (Columns I-K):
 
    - Last Access Control Test: Date of last test (pen test, security test)
    - Access Control Bypass Found: Yes, No (vulnerabilities discovered?)
    - Remediation Completed: Yes, No, N/A
    - Compliance Status: Compliant, Non-Compliant
-
 
 **Example - Web Application:**
 ```
@@ -464,7 +428,6 @@ For each API:
    - API Type: REST, GraphQL, SOAP, gRPC
    - Data Classification
 
-
 2. **Authentication & Authorization** (Columns E-H):
 
    - Authentication Method: OAuth 2.0, API Key, JWT, mTLS, None
@@ -472,14 +435,12 @@ For each API:
    - Rate Limiting: Yes, No (requests per minute/hour limited?)
    - Rate Limit Value: [requests/minute]
 
-
 3. **Access Control Testing** (Columns I-K):
 
    - Last API Security Test
    - IDOR Vulnerability: Yes, No (Insecure Direct Object Reference - can users access other users' data?)
    - Broken Access Control: Yes, No (OWASP Top 10 A01:2021)
    - Compliance Status: Compliant, Non-Compliant
-
 
 **Example - REST API:**
 ```
@@ -503,7 +464,6 @@ For each network zone:
    - Zone Purpose: Purpose of this network segment
    - Data Classification: What sensitivity of data resides here?
 
-
 2. **Segmentation Implementation** (Columns D-G):
 
    - Segmentation Method: Firewall, VLAN, Security Group, Subnet
@@ -511,14 +471,12 @@ For each network zone:
    - Default Deny: Yes, No (deny all, allow specific?)
    - VLAN Segmentation: Yes, No, N/A
 
-
 3. **Segmentation Effectiveness** (Columns H-J):
 
    - Last Rule Review Date
    - Unnecessary Rules Found: Yes, No (overly permissive rules?)
    - Segmentation Tested: Yes, No (penetration tested?)
    - Compliance Status: Compliant, Non-Compliant
-
 
 **Example - Database Network Zone:**
 ```
@@ -556,7 +514,6 @@ For cloud platforms (AWS, Azure, GCP) access control policies:
    - Last Policy Audit Date
    - Compliance Status: Compliant, Non-Compliant
 
-
 **Example - Azure Storage Account:**
 ```
 Platform: Azure
@@ -566,7 +523,6 @@ Default Deny: Yes (private endpoints only)
 MFA on Access: Yes (Conditional Access enforced)
 Compliance: Compliant
 ```
-
 
 **Step 8: Complete Sheet 7 - Encryption-Based Access**
 
@@ -579,7 +535,6 @@ For systems using encryption as access control:
    - System Type
    - Data Classification
 
-
 2. **Encryption at Rest** (Columns E-H):
 
    - Encryption at Rest: Yes, No
@@ -587,18 +542,15 @@ For systems using encryption as access control:
    - Key Management: Who has keys? (defines access)
    - Encryption Required: Yes, No (per data classification policy)
 
-
 3. **Encryption in Transit** (Columns I-K):
 
    - Encryption in Transit: Yes, No
    - Protocol: TLS 1.2, TLS 1.3, IPsec, VPN
    - TLS Enforcement: Mandatory, Optional, None
 
-
 4. **Compliance** (Column L):
 
    - Compliance Status: Compliant, Non-Compliant
-
 
 **Example - File Server with Encryption:**
 ```
@@ -614,7 +566,6 @@ Compliance: Compliant
 **Step 9: Complete Sheet 8 - Network Segmentation**
 
 For network zone configuration and verification (detailed guidance in Part I Assessment Workflow, Step 5).
-
 
 **Step 10: Complete Sheet 9 - Penetration Test Results**
 
@@ -641,7 +592,6 @@ For access control security testing findings:
    - Remediation Status: Not Started, In Progress, Completed
    - Follow-up Test Date: Scheduled retest
 
-
 **Example - Web Application Penetration Test:**
 ```
 Test Date: 15.01.2026
@@ -654,7 +604,6 @@ Findings: 0
 Remediation: Completed
 Compliance: Passed
 ```
-
 
 **Step 11: Review Calculated Metrics**
 
@@ -669,7 +618,6 @@ The workbook automatically calculates:
 - **Cloud IAM Compliance**: % of cloud services with least privilege policies
 - **Penetration Test Compliance**: Access control vulnerabilities identified and remediated
 
-
 **Step 12: Collect Evidence**
 
 Required evidence:
@@ -680,7 +628,6 @@ Required evidence:
 - **API Security Configuration**: OAuth scope definitions, rate limit configuration
 - **Firewall Rules**: Export of firewall rules per zone
 - **Encryption Configuration**: BitLocker/LUKS status reports, TDE configuration
-
 
 Store evidence in: `/evidence/access-restrictions/[date]/`
 
@@ -782,7 +729,6 @@ For each piece of evidence:
 - [ ] Sensitive data redacted (passwords, keys)
 - [ ] Linked in Evidence Register
 
-
 ---
 
 # Common Pitfalls & How to Avoid Them
@@ -798,7 +744,6 @@ For each piece of evidence:
 - Authorization = WHAT can you access?
 - Both are required
 
-
 ## Pitfall 2: "Everyone" Group with Permissions
 
 **Problem**: Windows file server has "Everyone" group with Read access (any authenticated user can read)
@@ -808,7 +753,6 @@ For each piece of evidence:
 - Remove "Everyone" group
 - Use specific security groups
 - Default deny: No permissions by default, explicitly grant to specific groups
-
 
 ## Pitfall 3: Database "PUBLIC" Role with Grants
 
@@ -820,7 +764,6 @@ For each piece of evidence:
 - PUBLIC should have minimal permissions (CONNECT only)
 - Grant specific permissions to specific roles
 
-
 ## Pitfall 4: Application Frontend-Only Access Controls
 
 **Problem**: Application UI hides "Delete" button from non-admins, but API endpoint allows delete (Insecure Direct Object Reference)
@@ -830,7 +773,6 @@ For each piece of evidence:
 - Enforce access controls in BACKEND (API, database)
 - Frontend controls are convenience, NOT security
 - Test: Can user call API directly and bypass UI?
-
 
 ## Pitfall 5: API Authentication Without Authorization
 
@@ -842,7 +784,6 @@ For each piece of evidence:
 - API key permissions (per-key access control)
 - Rate limiting per API key
 
-
 ## Pitfall 6: Overly Permissive Firewall Rules
 
 **Problem**: Firewall rule "Allow Any → Database Server:3306" (anyone can connect to database)
@@ -852,7 +793,6 @@ For each piece of evidence:
 - Specify source: "Allow Application Servers → Database Server:3306"
 - Default deny: Deny all, allow specific
 - Review quarterly: Are all rules still necessary?
-
 
 ## Pitfall 7: Not Testing Access Controls
 
@@ -864,7 +804,6 @@ For each piece of evidence:
 - Functional testing: Can user access data outside their role?
 - Automated testing: Configuration scanning (excessive permissions)
 
-
 ## Pitfall 8: Encryption Without Key Management
 
 **Problem**: Database encrypted with TDE, but database service account has access to keys (encryption doesn't restrict access)
@@ -874,7 +813,6 @@ For each piece of evidence:
 - Encryption protects data AT REST (disk theft, backup theft)
 - Encryption does NOT restrict application access (if app has key)
 - Use encryption + access controls (both required)
-
 
 ## Pitfall 9: Not Documenting Access Control Model
 
@@ -886,7 +824,6 @@ For each piece of evidence:
 - Document permissions matrix: Role → Permission mapping
 - Keep documentation updated
 
-
 ## Pitfall 10: Legacy Systems with Weak Access Controls
 
 **Problem**: Old application doesn't support RBAC (all users are admins or users, nothing in between)
@@ -896,7 +833,6 @@ For each piece of evidence:
 - Compensating controls: Network segmentation (limit who can access), enhanced monitoring
 - Migration plan: Migrate to modern application with proper RBAC
 - Risk acceptance: Document risk, CISO approval
-
 
 ---
 
@@ -914,7 +850,6 @@ Before submitting assessment for approval, verify:
 - [ ] Network segmentation verified
 - [ ] Encryption-based access documented
 
-
 ## Accuracy
 
 - [ ] Permission audit data validated (spot-check actual permissions)
@@ -922,7 +857,6 @@ Before submitting assessment for approval, verify:
 - [ ] Access control models accurately documented
 - [ ] Firewall rules reviewed with network team
 - [ ] Encryption status verified (not assumed)
-
 
 ## Evidence Quality
 
@@ -932,7 +866,6 @@ Before submitting assessment for approval, verify:
 - [ ] Penetration test reports linked (if available)
 - [ ] Evidence dated and linked
 
-
 ## Compliance
 
 - [ ] Systems with excessive permissions flagged
@@ -941,14 +874,12 @@ Before submitting assessment for approval, verify:
 - [ ] APIs without rate limiting flagged
 - [ ] Unencrypted confidential data flagged
 
-
 ## Professional Presentation
 
 - [ ] No spelling errors
 - [ ] Consistent formatting
 - [ ] Clear and concise notes
 - [ ] Evidence clearly linked
-
 
 ---
 
@@ -962,13 +893,11 @@ Before submitting assessment for approval, verify:
 - **75-89%**: Good - Most systems compliant, some cleanup needed
 - **<75%**: POOR - Widespread permission issues
 
-
 **Database Access Control Compliance:**
 
 - **100%**: Ideal - Least privilege everywhere
 - **90-99%**: Good - Minor excessive grants
 - **<90%**: CONCERN - Significant excessive grants (data breach risk)
-
 
 **Application Access Control Effectiveness:**
 
@@ -976,20 +905,17 @@ Before submitting assessment for approval, verify:
 - **80-99% tested, low bypass**: Good
 - **<80% tested or high bypass rate**: CRITICAL - Major access control gaps
 
-
 **API Security Score:**
 
 - **100%**: All APIs with auth + authz + rate limiting
 - **80-99%**: Most APIs secure
 - **<80%**: HIGH RISK - API security gaps
 
-
 **Network Segmentation Effectiveness:**
 
 - **100%**: All zones segmented with firewall rules
 - **80-99%**: Minor segmentation gaps
 - **<80%**: POOR - Network segmentation not enforced
-
 
 ## Gap Prioritization
 
@@ -1001,7 +927,6 @@ Before submitting assessment for approval, verify:
 - Confidential data unencrypted on disk
 - Firewall rule allowing ANY → sensitive system
 
-
 **Priority 2 - HIGH (Within 30 Days):**
 
 - Excessive OS permissions (too many users with write access)
@@ -1010,20 +935,17 @@ Before submitting assessment for approval, verify:
 - API without rate limiting (DoS risk)
 - Network zone without segmentation
 
-
 **Priority 3 - MEDIUM (Within 90 Days):**
 
 - Permission cleanup (remove orphaned permissions)
 - Application access controls not tested recently (>1 year)
 - API with weak authentication (API key only, no OAuth)
 
-
 **Priority 4 - LOW (Ongoing Improvement):**
 
 - Documentation improvements (RBAC model documentation)
 - Permission audit automation
 - Enhanced monitoring
-
 
 ---
 
@@ -1040,7 +962,6 @@ Before submitting assessment for approval, verify:
 - Collect evidence
 - Submit for review
 
-
 **Level 2 - Reviewer (Senior Security Engineer / System Owner)**:
 
 - Validate access control configurations
@@ -1049,7 +970,6 @@ Before submitting assessment for approval, verify:
 - Confirm evidence completeness
 - Approve and forward to CISO
 
-
 **Level 3 - Approver (CISO)**:
 
 - Review access control metrics
@@ -1057,7 +977,6 @@ Before submitting assessment for approval, verify:
 - Approve remediation priorities
 - Sign off on assessment
 - Present to Executive Management (if required)
-
 
 ## Approval Criteria
 
@@ -1069,7 +988,6 @@ Assessment is approved when:
 - [ ] Critical gaps identified and prioritized
 - [ ] Evidence collected and linked
 - [ ] Remediation timeline defined
-
 
 ## Post-Approval Actions
 
@@ -1116,14 +1034,12 @@ After CISO approval:
 - 🟡 **Yellow (Partial)**: RGB(255, 235, 156) - Meets some requirements, gaps exist
 - 🔴 **Red (Non-Compliant)**: RGB(255, 199, 206) - Does not meet requirements
 
-
 **Gap Priority Colors:**
 
 - 🔴 **Critical**: RGB(255, 0, 0) - Immediate action
 - 🟠 **High**: RGB(255, 153, 0) - Within 30 days
 - 🟡 **Medium**: RGB(255, 255, 0) - Within 90 days
 - 🟢 **Low**: RGB(146, 208, 80) - Ongoing improvement
-
 
 ---
 

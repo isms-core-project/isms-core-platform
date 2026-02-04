@@ -2986,7 +2986,6 @@ if __name__ == "__main__":
 # Document Control:
 #   Version: 1.0
 #   Created: 05.01.226
-#   Author: Gregory Griffin / Claude AI
 #
 # Change History:
 #   1.0 - Initial version

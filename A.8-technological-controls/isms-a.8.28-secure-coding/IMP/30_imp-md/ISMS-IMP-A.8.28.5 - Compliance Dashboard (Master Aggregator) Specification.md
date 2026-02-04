@@ -30,7 +30,6 @@
 - Chief Information Security Officer (Executive Approval)
 - Chief Technology Officer (Stakeholder Review)
 
-
 **Related Documents**:
 
 - ISMS-POL-A.8.28 - Secure Coding Policy (Master Policy)
@@ -38,7 +37,6 @@
 - ISMS-IMP-A.8.28.2 - Standards & Tools Assessment
 - ISMS-IMP-A.8.28.3 - Code Review & Testing Assessment
 - ISMS-IMP-A.8.28.4 - Third-Party & OSS Assessment
-
 
 ---
 
@@ -55,7 +53,6 @@ This is the **master compliance dashboard** for ISO/IEC 27001:2022 Control A.8.2
 - **Prioritized remediation roadmap** for organizational improvement
 - **Compliance metrics** for board reporting and audit readiness
 - **Trend analysis** for continuous improvement tracking
-
 
 **Core Philosophy**: As Feynman said, *"If you cannot measure it, you cannot improve it."*
 
@@ -74,14 +71,12 @@ This dashboard transforms individual assessment data into actionable intelligenc
 - **Board / Audit Committee**: Governance and risk oversight
 - **Application Security Leadership**: Program management and improvement
 
-
 **Supporting Users**:
 
 - Engineering leadership (remediation planning)
 - Compliance team (audit readiness)
 - Risk management (risk appetite alignment)
 - External auditors (compliance verification)
-
 
 **Not for**: Individual developers (use source assessment workbooks instead)
 
@@ -96,12 +91,10 @@ This dashboard transforms individual assessment data into actionable intelligenc
 - **Before Audits**: Ensure current compliance posture is documented
 - **After Major Incidents**: Reflect updated risk posture
 
-
 **Historical Tracking**:
 
 - Archive previous dashboard versions for trend analysis
 - Maintain historical data for year-over-year comparison
-
 
 ## Prerequisites
 
@@ -130,7 +123,6 @@ The dashboard pulls data via Excel formulas (external links) from these source w
 - Prioritized remediation roadmap
 - Historical trend tracking
 - CISO approval sign-off
-
 
 ---
 
@@ -172,7 +164,6 @@ This script:
 - Moves files to common directory
 - Validates all required sheets exist
 
-
 ## Step 3: Generate Dashboard Workbook
 
 ```bash
@@ -189,7 +180,6 @@ python3 generate_a828_5_compliance_dashboard.py
 - Pre-configured charts and visualizations
 - Template for manual data entry (historical trends, etc.)
 
-
 ## Step 4: Open Dashboard and Update Links
 
 **Open the generated workbook**:
@@ -201,7 +191,6 @@ python3 generate_a828_5_compliance_dashboard.py
 
 - Go to: Data → Edit Links → Update Values
 - Or: Data → Edit Links → Change Source (point to correct files)
-
 
 **Formulas will auto-populate** data from source assessments into dashboard.
 
@@ -221,7 +210,6 @@ python3 generate_a828_5_compliance_dashboard.py
 - Not Implemented: XX
 - N/A: XX
 
-
 **Section 2: Domain-by-Domain Breakdown**
 | Domain | Compliance % | Status | Critical Gaps |
 |--------|--------------|--------|---------------|
@@ -236,7 +224,6 @@ python3 generate_a828_5_compliance_dashboard.py
 - 🟡 Yellow (60-79%): Needs attention
 - 🔴 Red (<60%): Critical gaps
 
-
 **Section 3: Key Findings** (auto-summarized):
 
 - Highest compliance domain
@@ -245,13 +232,11 @@ python3 generate_a828_5_compliance_dashboard.py
 - Total high-priority gaps
 - Recommended focus areas
 
-
 **Section 4: Compliance Trend** (if historical data available):
 
 - Quarter-over-quarter compliance trajectory
 - Improvement velocity (gaps closed per quarter)
 - Areas of consistent weakness
-
 
 ## Step 6: Review Gap Analysis
 
@@ -269,7 +254,6 @@ python3 generate_a828_5_compliance_dashboard.py
 - Target Date
 - Status
 
-
 **Critical Analysis**:
 
 - How many critical gaps across all domains?
@@ -277,14 +261,12 @@ python3 generate_a828_5_compliance_dashboard.py
 - Are there cross-cutting themes (e.g., "lack of automation")?
 - Are target dates realistic and committed?
 
-
 **Cross-Cutting Pattern Detection**:
 Look for common themes:
 
 - "Automation gaps" appearing in multiple assessments?
 - "Training needs" across multiple domains?
 - "Tool effectiveness" issues in Tools + Review/Testing?
-
 
 ## Step 7: Review Risk Register
 
@@ -298,7 +280,6 @@ Look for common themes:
 - Review/Testing Coverage Risks (from IMP-A.8.28.3)
 - Supply Chain Risks (from IMP-A.8.28.4)
 
-
 **For Each Risk**:
 
 - Risk description
@@ -307,7 +288,6 @@ Look for common themes:
 - Risk score (calculated)
 - Mitigation status
 - Owner
-
 
 ## Step 8: Review Remediation Roadmap
 
@@ -323,13 +303,11 @@ Look for common themes:
 - Target completion dates
 - Dependencies
 
-
 **Phase 2: High-Priority Gaps (31-90 days)**
 
 - High-priority items
 - Resource requirements
 - Dependencies on Phase 1
-
 
 **Phase 3: Medium-Priority Gaps (91-180 days)**
 
@@ -337,20 +315,17 @@ Look for common themes:
 - Process changes
 - Training initiatives
 
-
 **Phase 4: Low-Priority / Continuous Improvement (181+ days)**
 
 - Long-term improvements
 - Optimization initiatives
 - Nice-to-have enhancements
 
-
 **Resource Requirements**:
 
 - FTE estimate for remediation
 - Budget requirements (tools, training, consulting)
 - Timeline dependencies
-
 
 ## Step 9: Review KPIs & Metrics
 
@@ -365,13 +340,11 @@ Look for common themes:
 - Threat modeling coverage (% projects with threat models)
 - Security sign-off compliance
 
-
 **Tool Metrics** (from IMP-A.8.28.2):
 
 - SAST/DAST/SCA coverage (% applications scanned)
 - Tool effectiveness (vulnerabilities found vs. false positives)
 - Developer adoption rate
-
 
 **Review/Testing Metrics** (from IMP-A.8.28.3):
 
@@ -379,19 +352,16 @@ Look for common themes:
 - Security test coverage (% security tests executed)
 - Vulnerabilities caught in review vs. production
 
-
 **Supply Chain Metrics** (from IMP-A.8.28.4):
 
 - SBOM coverage (% applications with current SBOM)
 - Vulnerability remediation MTTR (mean time to remediate)
 - License compliance rate (% dependencies compliant)
 
-
 **Overall Maturity Score**:
 
 - Calculated based on all metrics
 - Trend analysis (improving/declining)
-
 
 ## Step 10: Update Evidence Register
 
@@ -411,13 +381,11 @@ Look for common themes:
 - Last verified date
 - Verification status
 
-
 **Audit Readiness Check**:
 
 - Are all "Implemented" claims backed by evidence?
 - Is evidence current (verified within last quarter)?
 - Are evidence links accessible?
-
 
 ## Step 11: Update Action Items & Follow-up
 
@@ -433,7 +401,6 @@ Look for common themes:
 - Tool procurement/configuration
 - Policy updates
 
-
 **For Each Action**:
 
 - Action description
@@ -442,7 +409,6 @@ Look for common themes:
 - Status (Not Started/In Progress/Complete/Blocked)
 - Blockers (if any)
 - Completion date (when done)
-
 
 ## Step 12: Update Audit & Compliance Log
 
@@ -459,13 +425,11 @@ Look for common themes:
 - Next audit date
 - Compliance status
 
-
 **Historical Tracking**:
 
 - Trend in audit findings (improving?)
 - Recurring findings (not being fixed?)
 - Compliance trajectory
-
 
 ## Step 13: Obtain CISO Approval
 
@@ -486,7 +450,6 @@ Look for common themes:
 - Risk register reflects current risk posture
 - CISO acknowledges compliance status and accepts residual risk
 
-
 **Approval Statement**:
 "I acknowledge the current Control A.8.28 compliance status as reflected in this dashboard. I approve the remediation roadmap and commit organizational resources to address identified gaps in accordance with the proposed timeline."
 
@@ -506,13 +469,11 @@ Look for common themes:
 - **40-54%**: Needs Improvement - Major compliance gaps, high risk
 - **<40%**: Critical - Fundamental security controls missing
 
-
 **Reality Check**:
 
 - Don't celebrate 85% if critical gaps exist
 - Focus on gap severity, not just percentage
 - Look for cross-cutting weaknesses (same issue across multiple domains)
-
 
 ## Domain Analysis
 
@@ -524,7 +485,6 @@ Look for:
 - Highest count of critical gaps
 - Declining trend (getting worse, not better)
 
-
 **Common Patterns**:
 
 **If SDLC (IMP-1) is weakest**:
@@ -533,13 +493,11 @@ Look for:
 - Impact: Security defects introduced in requirements/design
 - Fix: Invest in security requirements, threat modeling, secure design
 
-
 **If Tools (IMP-2) is weakest**:
 
 - Problems: Tools not deployed or not effective
 - Impact: Vulnerabilities not detected automatically
 - Fix: Deploy/configure SAST/DAST/SCA, improve effectiveness
-
 
 **If Review/Testing (IMP-3) is weakest**:
 
@@ -547,13 +505,11 @@ Look for:
 - Impact: Vulnerabilities slip through to production
 - Fix: Improve code review, expand security testing, Security Champions
 
-
 **If Supply Chain (IMP-4) is weakest**:
 
 - Problems: Third-party risk not managed
 - Impact: Supply chain attacks, unpatched dependencies
 - Fix: Deploy SCA, maintain SBOM, vendor security assessments
-
 
 ## Gap Prioritization
 
@@ -565,14 +521,12 @@ Look for:
 - Critical vulnerabilities >30 days unpatched
 - GPL license contamination
 
-
 **High-Priority Gaps (Fix Within Quarter)**:
 
 - Incomplete SBOM (missing transitive deps)
 - SAST/DAST not integrated in CI/CD
 - Security testing gaps (API testing, auth testing)
 - Vendor security assessments overdue
-
 
 **Medium-Priority Gaps (Fix Within 6 Months)**:
 
@@ -581,13 +535,11 @@ Look for:
 - Security Champion program immature
 - Training needs
 
-
 **Low-Priority Gaps (Continuous Improvement)**:
 
 - Process documentation improvements
 - Tool optimization
 - Efficiency enhancements
-
 
 ## Trend Analysis (If Historical Data Available)
 
@@ -598,7 +550,6 @@ Look for:
 - Remediation velocity improving (gaps closed faster)
 - Tool effectiveness improving (more real issues, fewer false positives)
 
-
 **Negative Trends** (Warning Signs):
 
 - Compliance percentage declining
@@ -606,13 +557,11 @@ Look for:
 - Remediation velocity slowing
 - New gap introduction rate exceeds closure rate
 
-
 **Stagnant (Neither Improving nor Declining)**:
 
 - Compliance percentage flat
 - Gaps shuffling (closing old, opening new)
 - Resource constraints preventing progress
-
 
 ---
 
@@ -629,7 +578,6 @@ Look for:
 - Assessments not refreshed (stale data)
 - Cherry-picking good results
 
-
 ✅ **Good Practice**:
 
 - Source assessments are honest and evidence-based
@@ -637,13 +585,11 @@ Look for:
 - Evidence verified by auditors
 - Trends reflect reality, not wishful thinking
 
-
 **How to Detect**:
 
 - If overall compliance >90% but production incidents reveal gaps
 - If no critical gaps but obvious security issues exist
 - If compliance has been "85%" for 2 years straight (no improvement)
-
 
 ## Dashboard Theater
 
@@ -656,14 +602,12 @@ Look for:
 - Gaps marked "Complete" without verification
 - CISO approval without reading dashboard
 
-
 ✅ **Good Practice**:
 
 - Dashboard reviewed quarterly by CISO/CTO
 - Remediation roadmap actively tracked
 - Gap closure verified with evidence
 - Dashboard drives actual security improvements
-
 
 ## "Aggregate and Forget"
 
@@ -676,14 +620,12 @@ Look for:
 - Remediation roadmap exists, no owners assigned
 - Same dashboard findings quarter after quarter
 
-
 ✅ **Good Practice**:
 
 - Board expects quarterly progress updates
 - Critical gaps have committed owners and dates
 - Remediation progress tracked and reported
 - Dashboard drives accountability
-
 
 ## Missing the Forest for the Trees
 
@@ -695,13 +637,11 @@ Look for:
 - Ignoring that 15% includes critical gaps like "no SBOM"
 - Celebrating improvement in low-priority areas while critical gaps persist
 
-
 ✅ **Good Practice**:
 
 - Critical gaps addressed first, regardless of percentage
 - Cross-cutting themes identified and addressed
 - Focus on risk reduction, not just compliance percentage
-
 
 ---
 
@@ -718,14 +658,12 @@ Look for:
    - Re-assess all requirements
    - Obtain fresh approvals
 
-
 2. **Update Dashboard**:
 
    - Open dashboard workbook
    - Click "Update Links" (pulls fresh data from source assessments)
    - Review auto-populated metrics
    - Add new historical trend data point
-
 
 3. **Review with CISO/CTO**:
 
@@ -734,7 +672,6 @@ Look for:
    - Discuss remediation progress
    - Identify new priorities
 
-
 4. **Update Remediation Roadmap**:
 
    - Mark completed gaps as "Complete"
@@ -742,12 +679,10 @@ Look for:
    - Re-prioritize based on current risk
    - Assign owners for new gaps
 
-
 5. **Archive Previous Version**:
 
    - Save previous dashboard with date suffix
    - Maintain historical record for trend analysis
-
 
 ## Annual Deep Dive
 
@@ -759,7 +694,6 @@ Look for:
 - Board presentation on secure coding maturity
 - Budget planning for next year's improvements
 
-
 ## Event-Driven Updates
 
 **Update Dashboard After**:
@@ -768,7 +702,6 @@ Look for:
 - Significant process changes (new tools, new SDLC)
 - Audit findings requiring remediation
 - Regulatory changes affecting compliance
-
 
 ---
 
@@ -784,7 +717,6 @@ Look for:
 - [ ] Remediation roadmap has owners and dates
 - [ ] Evidence register consolidated from source assessments
 
-
 **Data Accuracy**:
 
 - [ ] Overall compliance calculation verified manually
@@ -793,14 +725,12 @@ Look for:
 - [ ] Metrics are current (not stale)
 - [ ] Trend data is accurate (matches archived dashboards)
 
-
 **Stakeholder Engagement**:
 
 - [ ] CISO reviewed and approved dashboard
 - [ ] CTO committed to remediation roadmap
 - [ ] Board/Audit Committee received executive summary
 - [ ] Engineering leadership engaged on remediation
-
 
 **Actionability**:
 
@@ -810,7 +740,6 @@ Look for:
 - [ ] Progress tracking mechanism established
 - [ ] Next review date scheduled
 
-
 **Anti-Cargo-Cult Check**:
 
 - [ ] Dashboard reflects reality (not aspirations)
@@ -818,7 +747,6 @@ Look for:
 - [ ] Remediation commitments are realistic
 - [ ] Trends show actual progress (or lack thereof)
 - [ ] Dashboard drives actual improvements (not just reporting)
-
 
 ---
 
@@ -883,7 +811,6 @@ Look for:
 - 60-79%: Yellow (#FFEB9C)
 - <60%: Red (#FFC7CE)
 
-
 **Section 3: Critical Findings (Rows 20-30)**
 
 - Highest compliance domain (auto-identified with MAX formula)
@@ -891,13 +818,11 @@ Look for:
 - Total critical gaps (SUM from all Gap_Analysis sheets)
 - Recommended focus areas (conditional text based on lowest domain)
 
-
 **Section 4: Compliance Trend Chart (Rows 32-40)**
 
 - Line chart showing quarterly compliance trajectory
 - Manual data entry for historical quarters
 - Auto-populated for current quarter
-
 
 ---
 
@@ -925,14 +850,12 @@ Gaps are NOT linked via formulas (too complex). Instead:
 - Manual consolidation from source assessments
 - OR: Python script can extract gaps and populate
 
-
 **Conditional Formatting (Priority)**:
 
 - Critical: Dark red (#C00000) white bold
 - High: Red (#FF6666)
 - Medium: Yellow (#FFEB9C)
 - Low: Green (#C6EFCE)
-
 
 **Summary Metrics (Bottom of Sheet)**:
 
@@ -941,7 +864,6 @@ Gaps are NOT linked via formulas (too complex). Instead:
 - High: `=COUNTIF(F:F,"High")`
 - Medium: `=COUNTIF(F:F,"Medium")`
 - Low: `=COUNTIF(F:F,"Low")`
-
 
 ---
 
@@ -1001,7 +923,6 @@ Gaps are NOT linked via formulas (too complex). Instead:
 - **Phase 3** (91-180 days): Medium-priority gaps
 - **Phase 4** (181+ days): Low-priority/continuous improvement
 
-
 **Filtering**: Enable auto-filter to view by phase, status, owner
 
 ---
@@ -1018,7 +939,6 @@ Gaps are NOT linked via formulas (too complex). Instead:
 - Threat modeling coverage (%)
 - Security sign-off compliance (%)
 
-
 **Tool Metrics** (from IMP-2):
 
 - SAST coverage (%)
@@ -1026,13 +946,11 @@ Gaps are NOT linked via formulas (too complex). Instead:
 - SCA coverage (%)
 - Tool effectiveness (vulnerabilities found / false positives)
 
-
 **Review/Testing Metrics** (from IMP-3):
 
 - Code review coverage (%)
 - Security test coverage (%)
 - Vulnerabilities caught in review vs. production (ratio)
-
 
 **Supply Chain Metrics** (from IMP-4):
 
@@ -1040,12 +958,10 @@ Gaps are NOT linked via formulas (too complex). Instead:
 - Vulnerability remediation MTTR (days)
 - License compliance rate (%)
 
-
 **Overall Maturity Score**:
 
 - Calculated as weighted average of all metrics
 - Trend chart showing quarterly improvement
-
 
 **Formulas**: Link to specific cells in source assessment KPI sheets
 
@@ -1078,14 +994,12 @@ Gaps are NOT linked via formulas (too complex). Instead:
 - Policy Document
 - Configuration Screenshot
 
-
 **Verification Status**:
 
 - Current (verified within 90 days)
 - Expiring Soon (91-180 days)
 - Expired (>180 days)
 - Not Verified
-
 
 ---
 
@@ -1112,13 +1026,11 @@ Gaps are NOT linked via formulas (too complex). Instead:
 - Complete
 - Blocked
 
-
 **Conditional Formatting (Due Date)**:
 
 - Overdue: Red background
 - Due within 7 days: Yellow background
 - Future: No formatting
-
 
 ---
 
@@ -1147,7 +1059,6 @@ Gaps are NOT linked via formulas (too complex). Instead:
 - Remediation rate (%)
 - Compliance trend
 
-
 ---
 
 ## Sheet 9: Approval Sign-Off
@@ -1167,7 +1078,6 @@ Gaps are NOT linked via formulas (too complex). Instead:
 - Remediation roadmap has committed owners and dates
 - Risk register reflects current risk posture
 - CISO acknowledges compliance status
-
 
 **Approval Statement Template**:
 "I acknowledge the current Control A.8.28 compliance status as XX%. I approve the remediation roadmap and commit organizational resources to address identified gaps. Residual risks are accepted in accordance with organizational risk appetite."
@@ -1206,7 +1116,6 @@ python3 generate_a828_5_compliance_dashboard.py
 - `[filename]`: Source workbook file name
 - `SheetName`: Sheet name in source workbook
 - `$B$10`: Cell reference (absolute)
-
 
 **Updating Links**:
 When source files are updated:
@@ -1261,20 +1170,17 @@ Data → Edit Links → Update Values
 - Heat map for gap distribution
 - Burndown chart for remediation progress
 
-
 **Custom Metrics**:
 
 - Security incident rate vs. compliance %
 - Cost of security defects vs. prevention investment
 - Developer productivity vs. tool adoption
 
-
 **Executive Reporting**:
 
 - One-page PDF export for board
 - PowerPoint export with key charts
 - Email summary automation
-
 
 ## Integration with Other Tools
 

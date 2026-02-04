@@ -101,7 +101,6 @@ This assessment evaluates [Organization]'s **data subject rights (DSR) managemen
 - **Reputational Damage:** Ignoring data subject rights undermines trust and brand
 - **Operational Risk:** Inefficient DSR handling consumes resources, increases legal exposure
 
-
 ## Who Should Complete This Assessment
 
 **Primary Responsibility:** Data Protection Officer (DPO) or Privacy Officer
@@ -114,7 +113,6 @@ This assessment evaluates [Organization]'s **data subject rights (DSR) managemen
 - SLA tracking and compliance monitoring
 - Exception and rejection legal bases (GDPR Art. 17(3), 21(1))
 
-
 **Support Roles:**
 
 - **Customer Service Team Lead:** Request receipt procedures, identity verification
@@ -122,7 +120,6 @@ This assessment evaluates [Organization]'s **data subject rights (DSR) managemen
 - **Legal Counsel:** Exception review, rejection legal bases, complex requests
 - **Compliance Team:** Evidence management, audit preparation
 - **Business Process Owners:** Request scope assessment, data location identification
-
 
 ## Time Estimate
 
@@ -140,7 +137,6 @@ This assessment evaluates [Organization]'s **data subject rights (DSR) managemen
 - **Dashboard Review (Sheet 8):** 30 minutes (interpret metrics)
 - **Approval & Sign-Off (Sheet 9):** 1 hour (stakeholder review)
 
-
 **Pro Tip:** This assessment should be completed QUARTERLY to monitor DSR trends and identify process improvements. Annual assessment is minimum requirement.
 
 ## Connection to Policy
@@ -157,7 +153,6 @@ This assessment implements **ISMS-POL-A.5.34, Section 2.3 (Data Subject Rights)*
 - Response quality SHALL meet GDPR Article 12 requirements (clear, concise, transparent)
 - Request fulfillment SHALL be tracked and evidence retained for audit
 - SLA compliance rate target: ≥95%
-
 
 **Policy Authority:** Data Protection Officer (DPO) / Chief Privacy Officer (CPO)  
 **Compliance Status:** Mandatory for all data subject interactions
@@ -187,18 +182,15 @@ Organizations must support ALL data subject rights under GDPR and Swiss FADP. Fa
 - **Access:** Comprehensive overview of ALL processing (purpose, categories, recipients, retention, rights, source). Includes data not provided by data subject. Format: Human-readable (PDF, letter).
 - **Portability:** ONLY data "provided by data subject" (directly given or observed through use of service). Machine-readable format (JSON, CSV, XML). Subset of access right. May include right to transmit directly to another controller.
 
-
 **Example:**
 
 - Access request: Customer requests "all data you hold about me" → Provide: account info, purchase history, support tickets, marketing preferences, system logs, IP addresses, cookies.
 - Portability request: Customer requests "my data in CSV format to transfer to competitor" → Provide: account info, purchase history (data customer gave you), NOT system logs, IP addresses (not provided by customer).
 
-
 **Erasure (Art. 17) vs. Restriction (Art. 18):**
 
 - **Erasure:** Permanent deletion. Data cannot be recovered. Typically irreversible.
 - **Restriction:** Temporary suspension. Data retained but NOT processed (except storage and with data subject's consent for specific purposes). Used when: accuracy disputed, processing unlawful but data subject opposes erasure, data no longer needed for controller's purposes but data subject needs it for legal claims, data subject objects to processing pending verification of controller's legitimate grounds.
-
 
 **When to Use Restriction Instead of Erasure:**
 
@@ -207,12 +199,10 @@ Organizations must support ALL data subject rights under GDPR and Swiss FADP. Fa
 - Data subject needs data for legal claims but controller doesn't need it anymore
 - Data subject objects to legitimate interest processing → Restrict while assessing objection
 
-
 **Object (Art. 21) vs. Withdrawal of Consent:**
 
 - **Object:** Used for legitimate interest processing (Art. 6(1)(f)) or public task (Art. 6(1)(e)). Data subject must provide "grounds relating to their particular situation" EXCEPT for direct marketing (unconditional right to object).
 - **Withdrawal of Consent:** Used for consent-based processing (Art. 6(1)(a)). Data subject can withdraw consent at any time without providing reasons. Withdrawal does NOT affect lawfulness of past processing.
-
 
 **Direct Marketing Special Rule (GDPR Art. 21(2-3)):**
 > *"Where personal data are processed for direct marketing purposes, the data subject shall have the right to object at any time to processing of personal data concerning him or her for such marketing, which includes profiling to the extent that it is related to such direct marketing."*
@@ -235,7 +225,6 @@ Before starting this assessment, you must have:
    - Phone call logs (if requests received verbally)
    - Postal mail (if physical letters received)
 
-
 2. **Request Correspondence**
 
    - Original request emails/letters
@@ -244,13 +233,11 @@ Before starting this assessment, you must have:
    - Extension notifications (if 30-day deadline extended)
    - Rejection notifications (if requests refused)
 
-
 3. **Identity Verification Records**
 
    - Verification method used (account login, email confirmation, ID document)
    - Verification outcome (verified, failed, escalated)
    - Verification date
-
 
 4. **Exception Documentation** (if applicable)
 
@@ -258,13 +245,11 @@ Before starting this assessment, you must have:
    - Extended timelines with justification (Art. 12(3) - complexity, high volume)
    - Fee charges with calculation (Art. 12(5) - manifestly unfounded/excessive)
 
-
 5. **Communication Templates**
 
    - Standard response templates for each right type
    - Rejection notification templates
    - Extension notification templates (Art. 12(3) - 2-month extension notice)
-
 
 ## Access Required
 
@@ -278,7 +263,6 @@ You will need access to:
 - [ ] Data extraction tools (for fulfilling access/portability requests)
 - [ ] Identity verification system (e.g., ID verification service, secure portal)
 
-
 **Documents:**
 
 - [ ] DSR request logs (spreadsheet or database export)
@@ -287,14 +271,12 @@ You will need access to:
 - [ ] Exception documentation (rejection letters, legal analysis)
 - [ ] SLA tracking reports (if available)
 
-
 **People:**
 
 - [ ] Customer Service Team Lead (for request receipt procedures)
 - [ ] IT Support (for technical fulfillment processes, data extraction, system access)
 - [ ] Legal Counsel (for exception review, rejection legal bases)
 - [ ] DPO (for oversight, approval, escalation)
-
 
 ## Tools and Resources
 
@@ -306,7 +288,6 @@ You will need access to:
 - **Swiss FDPIC:** Guidance on data subject rights under FADP
 - **Art. 29 Working Party:** Opinion on automated individual decision-making and profiling (relevant for Art. 22)
 - **CNIL (France):** Guidance on data portability (machine-readable formats)
-
 
 **Assessment Workbook Sheets:**
 1. **Instructions & Legend** - This guide, assessment methodology, legal framework
@@ -402,7 +383,6 @@ Gather all DSR requests from:
 - Phone call logs (if requests received verbally - GDPR allows oral requests)
 - Postal mail (if physical letters received)
 
-
 **For EACH request, record:**
 
 **Column A - Request ID:** Unique identifier
@@ -411,37 +391,31 @@ Gather all DSR requests from:
 - Example: DSR-2026-0001, DSR-2026-0002
 - Sequential numbering ensures auditability
 
-
 **Column B - Receipt Date:** When request was received
 
 - Format: YYYY-MM-DD (ISO date format)
 - **Critical for SLA calculation:** 30-day clock starts from receipt date
 - If request received via multiple channels, use earliest receipt date
 
-
 **Column C - Request Channel:** How request was received
 
 - Dropdown: Email, Web Portal, Phone, Postal Mail, In-Person
 - Helps identify channel trends (e.g., most requests via email → improve email handling)
-
 
 **Column D - Right Type:** Which right was exercised
 
 - Dropdown: Access (Art. 15), Rectification (Art. 16), Erasure (Art. 17), Restriction (Art. 18), Data Portability (Art. 20), Object (Art. 21), Automated Decision-Making (Art. 22)
 - **If multiple rights in single request:** Create separate rows for each right (e.g., DSR-2026-0001a for access, DSR-2026-0001b for erasure)
 
-
 **Column E - Requester Name:** Data subject's name
 
 - Use name as provided in request
 - If anonymous request (rare), enter "Anonymous - Identity Verification Pending"
 
-
 **Column F - Requester Contact:** Email or phone
 
 - Primary contact method for response
 - Used for identity verification and response delivery
-
 
 **Column G - Request Description:** Brief summary of request (2-3 sentences)
 
@@ -452,18 +426,15 @@ Gather all DSR requests from:
 - "Object to processing for direct marketing purposes. Wants email/SMS marketing stopped immediately."
 - "Request data in CSV format for account portability to competitor service."
 
-
 **Column H - Request Scope:** Systems/data categories involved
 
 - Helps determine complexity and effort required
-
 
 **Examples:**
 
 - "Customer account data (CRM), purchase history (e-commerce platform), support tickets (Zendesk)"
 - "Employee HR records (BambooHR), payroll data (ADP), time tracking (Toggl)"
 - "Marketing preferences (Mailchimp), website analytics (Google Analytics cookies)"
-
 
 ---
 
@@ -478,7 +449,6 @@ Gather all DSR requests from:
 
 - Dropdown: Account Login, Email Confirmation, ID Document, Phone Verification, In-Person, Not Required
 
-
 **When to Use Each Method:**
 
 - **Account Login:** Data subject logs into account → Identity verified through existing authentication
@@ -488,17 +458,14 @@ Gather all DSR requests from:
 - **In-Person:** Data subject visits office in person → Present ID
 - **Not Required:** Request from authenticated account with no reasonable doubts
 
-
 **Column J - Verification Status:**
 
 - Dropdown: Verified, Verification Failed, Verification Pending, Not Required
-
 
 **Column K - Verification Date:**
 
 - Format: YYYY-MM-DD
 - Date when identity verification completed
-
 
 **⚠️ CRITICAL:** Do NOT fulfill request until identity verified. Unauthorized disclosure = GDPR Art. 5(1)(f) violation (integrity and confidentiality principle).
 
@@ -511,30 +478,25 @@ Gather all DSR requests from:
 - Name of person responsible for fulfilling request
 - Enables accountability and workload tracking
 
-
 **Column M - Response Date:** When was response sent to data subject?
 
 - Format: YYYY-MM-DD
 - **Used for SLA compliance calculation**
-
 
 **Column N - Days to Respond:** Auto-calculated
 
 - Formula: `=M2-B2` (Response Date - Receipt Date)
 - Shows number of days taken to respond
 
-
 **Column O - SLA Status:** Auto-calculated
 
 - Formula: `=IF(M2="", "Pending", IF(N2<=30, "Met", "Breached"))`
 - Dropdown: Met, Breached, Pending, Extended (if 2-month extension granted per Art. 12(3))
 
-
 **Column P - Response Method:** How was response delivered?
 
 - Dropdown: Email, Secure Portal, Postal Mail, In-Person, Download Link
 - **Best practice:** Secure portal or encrypted email for access/portability responses (data security)
-
 
 ---
 
@@ -544,7 +506,6 @@ Gather all DSR requests from:
 
 - Dropdown: Fulfilled, Partially Fulfilled, Rejected, Extended, Withdrawn
 
-
 **When to Use Each:**
 
 - **Fulfilled:** Request fully satisfied. All requested actions completed.
@@ -552,7 +513,6 @@ Gather all DSR requests from:
 - **Rejected:** Request refused with legal basis. Example: Erasure rejected due to legal obligation (GDPR Art. 17(3)(b)).
 - **Extended:** 2-month extension granted due to complexity/high volume (GDPR Art. 12(3)). Data subject notified.
 - **Withdrawn:** Data subject withdrew request before fulfillment.
-
 
 **Column R - Fulfillment Details:** What was provided/done?
 
@@ -563,7 +523,6 @@ Gather all DSR requests from:
 - "Corrected shipping address from '123 Old St' to '456 New Ave' in CRM and billing system."
 - "Provided CSV file with account info, purchase history. Excluded system logs per GDPR Art. 20(3) (not data provided by data subject)."
 
-
 **Column S - Rejection Reason:** If rejected, what is legal basis?
 
 **GDPR Article 17(3) - Exceptions to Right to Erasure:**
@@ -573,7 +532,6 @@ Gather all DSR requests from:
 - (c) Public interest in public health
 - (d) Archiving purposes in public interest, scientific/historical research, statistics
 - (e) Establishment, exercise, defense of legal claims
-
 
 **GDPR Article 21(1) - Objection to Legitimate Interest:**
 > *"Where personal data are processed for direct marketing purposes, the data subject shall have the right to object at any time..."*
@@ -594,7 +552,6 @@ Controller can refuse objection to legitimate interest processing (NOT direct ma
 
 - Used for resource planning and process improvement
 
-
 **Typical Effort by Right Type:**
 
 - Access: 2-4 hours (data extraction from multiple systems)
@@ -605,11 +562,9 @@ Controller can refuse objection to legitimate interest processing (NOT direct ma
 - Object: 0.5-2 hours (stop processing, assess compelling legitimate grounds)
 - Automated Decision-Making: 2-4 hours (human review, explain decision logic)
 
-
 **Column U - Complexity:**
 
 - Dropdown: Low, Medium, High, Very High
-
 
 **Factors Affecting Complexity:**
 
@@ -618,7 +573,6 @@ Controller can refuse objection to legitimate interest processing (NOT direct ma
 - Special category data involved (Yes = +1 complexity level)
 - Third-party data sharing (requires Art. 19 notifications = +1 level)
 - Legal uncertainty (novel request, unclear legal basis = High)
-
 
 ---
 
@@ -629,7 +583,6 @@ Controller can refuse objection to legitimate interest processing (NOT direct ma
 - Format: "EV-A533-###" (matches Evidence ID in Sheet 7)
 - Example: "EV-A533-001, EV-A533-005"
 
-
 **Column W - Notes:** Any additional context
 
 **Examples:**
@@ -637,7 +590,6 @@ Controller can refuse objection to legitimate interest processing (NOT direct ma
 - "Requester initially provided insufficient ID. Requested passport copy. Verified on 2026-01-15."
 - "Extended deadline by 2 months due to high volume (50+ requests in January). Data subject notified on 2026-01-20."
 - "Consulted Legal Counsel on erasure rejection. Confirmed legal obligation applies per employment law."
-
 
 ---
 
@@ -676,20 +628,17 @@ Controller can refuse objection to legitimate interest processing (NOT direct ma
 - [ ] All systems checked (no data sources missed)?
 - [ ] Response sent within 30 days of receipt?
 
-
 **Common Issues:**
 
 - Incomplete data exports (missed systems) → Use ROPA to ensure all systems checked
 - Lack of transparency information (just data dump) → Include all Art. 15(1) information
 - Excessive response time (complex data architecture) → Automate data extraction where possible
 
-
 **Tools Used:**
 
 - Data extraction scripts/tools
 - ROPA (from A.5.34.1) to identify all data locations
 - Secure file transfer (encrypted email, secure portal)
-
 
 ---
 
@@ -711,12 +660,10 @@ Controller can refuse objection to legitimate interest processing (NOT direct ma
 - [ ] Data subject informed of correction completion?
 - [ ] If correction disputed: Was restriction applied during verification?
 
-
 **Common Issues:**
 
 - Correction in one system but not others (data inconsistency) → Use centralized data management or sync processes
 - Failure to notify third parties (Art. 19 violation) → Maintain recipient list in ROPA
-
 
 **Art. 19 Requirement:**
 > *"The controller shall communicate any rectification or erasure of personal data or restriction of processing carried out in accordance with Article 16, Article 17(1) and Article 18 to each recipient to whom the personal data have been disclosed, unless this proves impossible or involves disproportionate effort."*
@@ -742,13 +689,11 @@ Controller can refuse objection to legitimate interest processing (NOT direct ma
 - [ ] Deletion audit trail retained (for compliance evidence)?
 - [ ] If rejected: Legal basis documented, data subject informed of rejection and appeal rights?
 
-
 **Common Issues:**
 
 - Data retained in backups (GDPR allows reasonable time for backup deletion but active restoration prohibited)
 - Failure to assess Art. 17(3) exceptions (arbitrary deletion may violate legal obligations)
 - No audit trail of deletion (cannot prove compliance)
-
 
 **Backup Restoration Prohibition:**
 Even if data remains in backups, controller MUST NOT actively restore it for processing purposes. Data is considered "deleted" if no longer accessible for processing.
@@ -777,7 +722,6 @@ Even if data remains in backups, controller MUST NOT actively restore it for pro
 - [ ] Data subject informed when restriction will be lifted?
 - [ ] Consent obtained before lifting restriction?
 
-
 **Art. 18(2) - Permitted Processing During Restriction:**
 > *"Where processing has been restricted under paragraph 1, such personal data shall, with the exception of storage, only be processed with the data subject's consent or for the establishment, exercise or defence of legal claims or for the protection of the rights of another natural person or legal person or for reasons of important public interest of the Union or of a Member State."*
 
@@ -804,7 +748,6 @@ Even if data remains in backups, controller MUST NOT actively restore it for pro
 - [ ] If direct transmission requested: Technical feasibility assessed?
 - [ ] Third-party personal data excluded (Art. 20(4))?
 
-
 **Art. 20(3) - Scope Limitation:**
 > *"The right to data portability shall not adversely affect the rights and freedoms of others."*
 
@@ -815,7 +758,6 @@ Excludes third-party personal data (e.g., email threads with other people, share
 - JSON (preferred for complex nested data)
 - CSV (preferred for tabular data)
 - XML (structured data, less common)
-
 
 ---
 
@@ -842,7 +784,6 @@ Excludes third-party personal data (e.g., email threads with other people, share
 - [ ] Balancing test conducted for legitimate interest objections?
 - [ ] If objection refused: Compelling legitimate grounds documented?
 - [ ] Data subject informed of outcome and appeal rights?
-
 
 **Art. 21(1) - Objection Right:**
 > *"The data subject shall have the right to object, on grounds relating to his or her particular situation, at any time to processing of personal data concerning him or her which is based on point (e) or (f) of Article 6(1), including profiling based on those provisions."*
@@ -876,7 +817,6 @@ Excludes third-party personal data (e.g., email threads with other people, share
 - [ ] Data subject allowed to express point of view?
 - [ ] Decision logic explained?
 
-
 **Art. 22(1):**
 > *"The data subject shall have the right not to be subject to a decision based solely on automated processing, including profiling, which produces legal effects concerning him or her or similarly significantly affects him or her."*
 
@@ -887,12 +827,10 @@ Excludes third-party personal data (e.g., email threads with other people, share
 - Algorithmic performance evaluation (firing decision)
 - Automated insurance premium calculation with significant price impact
 
-
 **NOT Art. 22:**
 
 - Automated decision with human review (human can override)
 - Decision without significant effects (product recommendations, non-binding risk scores)
-
 
 ---
 
@@ -919,7 +857,6 @@ Excludes third-party personal data (e.g., email threads with other people, share
 - If <95%: Investigate root causes in Section 3 (SLA Breach Root Cause)
 - **Average Response Time Target:** ≤20 days (buffer before 30-day deadline)
 
-
 **Section 2: Breakdown by Right Type (Rows 12-20)**
 
 For each of the 7 rights, calculate:
@@ -929,14 +866,12 @@ For each of the 7 rights, calculate:
 - SLA breached count
 - Average response time
 
-
 **Example Formulas (Access Requests):**
 
 - Total Access Requests: `=COUNTIF('2. DSR Request Inventory'!D2:D10000, "Access*")`
 - SLA Met (Access): `=COUNTIFS('2. DSR Request Inventory'!D2:D10000, "Access*", '2. DSR Request Inventory'!O2:O10000, "Met")`
 - SLA Breached (Access): `=COUNTIFS('2. DSR Request Inventory'!D2:D10000, "Access*", '2. DSR Request Inventory'!O2:O10000, "Breached")`
 - Avg Response Time (Access): `=AVERAGEIF('2. DSR Request Inventory'!D2:D10000, "Access*", '2. DSR Request Inventory'!N2:N10000)`
-
 
 **Repeat for:** Rectification, Erasure, Restriction, Data Portability, Object, Automated Decision-Making
 
@@ -953,7 +888,6 @@ For each SLA breach, document:
   - Examples: "Complex data extraction from 10+ systems", "Identity verification delayed (requester didn't respond to verification request)", "High request volume (50+ requests in month)", "Technical issue with data extraction tool", "Staff shortage (2 team members on leave)"
 - Corrective Action Taken
   - Examples: "Automated data extraction script deployed", "Hired additional DSR coordinator", "Implemented priority queue for urgent requests", "Improved identity verification process (faster turnaround)"
-
 
 **Purpose:** Root cause analysis enables process improvement and prevents future breaches.
 
@@ -975,7 +909,6 @@ For each SLA breach, document:
 
 - Dropdown with GDPR/FADP exception provisions
 
-
 **Complete Dropdown List:**
 
 - Legal Obligation (Art. 17(3)(b) - Tax, Employment Law)
@@ -989,11 +922,9 @@ For each SLA breach, document:
 - Consent Exception (Art. 17(3) - Processing Based on Consent, Data No Longer Needed)
 - Other (specify)
 
-
 **Column D - Detailed Justification:**
 
 - Specific facts justifying rejection (2-3 sentences minimum)
-
 
 **Example (Erasure Rejection - Employment Law):**
 > "Requester is current employee. Swiss Code of Obligations Art. 328b requires retention of personnel records (employment contract, payroll data, performance reviews) during employment and for 10 years after termination for potential legal claims (wrongful termination, discrimination). Retention necessary to defend against potential employment-related litigation. Legal basis: GDPR Art. 17(3)(b) (legal obligation) and Art. 17(3)(e) (defense of legal claims)."
@@ -1009,7 +940,6 @@ For each SLA breach, document:
 - Was data subject informed of rejection and reason?
 - Dropdown: Yes, No, Pending
 
-
 **GDPR Art. 12(4) Requirement:**
 > *"If the controller does not take action on the request of the data subject, the controller shall inform the data subject without delay and at the latest within one month of receipt of the request of the reasons for not taking action and on the possibility of lodging a complaint with a supervisory authority and seeking a judicial remedy."*
 
@@ -1018,13 +948,11 @@ For each SLA breach, document:
 - Did you inform data subject of right to complain to supervisory authority and seek judicial remedy?
 - Dropdown: Yes, No
 
-
 **⚠️ CRITICAL:** GDPR Art. 12(4) requires informing data subject of appeal rights when rejecting requests. Failure to do so = procedural violation.
 
 **Column G - Alternative Measures Offered:**
 
 - What alternatives were provided (if any)?
-
 
 **Examples:**
 
@@ -1032,12 +960,10 @@ For each SLA breach, document:
 - "Could not provide full erasure due to legal obligation, but offered to restrict processing for non-essential purposes. Marketing preferences deleted."
 - "Portability request rejected (data not 'provided by data subject'), but offered access request (GDPR Art. 15) as alternative. Data subject accepted."
 
-
 **Column H - DPO Review:**
 
 - Was rejection reviewed by DPO before sending to data subject?
 - Dropdown: Yes, No, N/A
-
 
 **Best Practice:** All rejections should have DPO approval before communication to data subject. Reduces risk of erroneous rejections.
 
@@ -1046,7 +972,6 @@ For each SLA breach, document:
 - For complex exceptions, was Legal Counsel consulted?
 - Dropdown: Yes, No, N/A
 
-
 **When to Involve Legal Counsel:**
 
 - Novel/untested legal basis
@@ -1054,19 +979,16 @@ For each SLA breach, document:
 - Ambiguous legal obligation (e.g., conflicting laws)
 - Potential regulatory scrutiny
 
-
 **Column J - Requester Response:**
 
 - Did data subject appeal or accept rejection?
 - Dropdown: Accepted, Appealed to Supervisory Authority, Disputed, No Response
-
 
 **If "Appealed to Supervisory Authority":**
 
 - Escalate to DPO/Legal immediately
 - Prepare comprehensive case file for supervisory authority
 - May need to reconsider rejection if authority disagrees
-
 
 ---
 
@@ -1104,13 +1026,11 @@ For each SLA breach, document:
 - [ ] Were third-party personal data redacted (Art. 15(4))?
 - [ ] Were all systems checked (no data sources missed)?
 
-
 **Common Issues Identified:**
 
 - Incomplete data exports (missed systems) → Solution: Use ROPA to systematically check all data locations
 - Lack of transparency information (just data dump) → Solution: Create standard transparency template
 - Excessive response time (complex data architecture) → Solution: Automate data extraction where possible
-
 
 ---
 
@@ -1124,13 +1044,11 @@ For each SLA breach, document:
 - Common issues identified
 - Quality checks specific to that right
 
-
 **Rectification (Art. 16) Quality Checks:**
 
 - [ ] Correction propagated to all systems holding the data?
 - [ ] Third parties notified of correction (Art. 19)?
 - [ ] Data subject informed of correction completion?
-
 
 **Erasure (Art. 17) Quality Checks:**
 
@@ -1139,13 +1057,11 @@ For each SLA breach, document:
 - [ ] Third parties notified (Art. 19)?
 - [ ] Deletion audit trail retained?
 
-
 **Restriction (Art. 18) Quality Checks:**
 
 - [ ] Processing fully restricted (only storage allowed)?
 - [ ] Data subject informed when restriction will be lifted?
 - [ ] Consent obtained before lifting restriction?
-
 
 **Data Portability (Art. 20) Quality Checks:**
 
@@ -1153,13 +1069,11 @@ For each SLA breach, document:
 - [ ] Machine-readable format (JSON, CSV, XML)?
 - [ ] Third-party personal data excluded (Art. 20(4))?
 
-
 **Object (Art. 21) Quality Checks:**
 
 - [ ] Direct marketing objections processed immediately?
 - [ ] Balancing test conducted for legitimate interest objections?
 - [ ] If objection refused: Compelling legitimate grounds documented?
-
 
 **Automated Decision-Making (Art. 22) Quality Checks:**
 
@@ -1167,7 +1081,6 @@ For each SLA breach, document:
 - [ ] Human intervention provided?
 - [ ] Data subject allowed to express point of view?
 - [ ] Decision logic explained?
-
 
 ---
 
@@ -1182,16 +1095,13 @@ For each SLA breach, document:
 - Auto-generated: `="EVID-A533-"&TEXT(ROW()-3,"000")`
 - Example: EVID-A533-001, EVID-A533-002
 
-
 **Column B - Evidence Type:**
 
 - Dropdown: Request Email/Letter, Response Email/Letter, Identity Verification Record, Rejection Notification, Extension Notification, Data Export File, Deletion Confirmation, Correction Confirmation, Restriction Notification, Legal Counsel Opinion, DPO Approval, Other
 
-
 **Column C - Evidence Description:**
 
 - Brief summary of evidence (2-3 sentences)
-
 
 **Examples:**
 
@@ -1199,7 +1109,6 @@ For each SLA breach, document:
 - "Identity verification: Copy of requester's passport submitted 2026-01-12, verified against account details."
 - "Response email with PDF data export sent 2026-01-25 via secure download link."
 - "Rejection notification for erasure request (DSR-2026-0023). Legal basis: Employment law retention requirement per Swiss CO Art. 328b."
-
 
 **Column D - File Location:**
 
@@ -1209,41 +1118,34 @@ For each SLA breach, document:
   - "Email: privacy@organization.com, subject 'DSR Request - John Doe', dated 2026-01-10"
   - "Secure Portal: https://privacy.organization.com/requests/DSR-2026-0001"
 
-
 **Column E - Related Request IDs:**
 
 - Comma-separated list of Request IDs from Sheet 2
 - Example: "DSR-2026-0001, DSR-2026-0005"
-
 
 **Column F - Evidence Date:**
 
 - Date of evidence creation/receipt
 - Format: YYYY-MM-DD
 
-
 **Column G - Uploaded By:**
 
 - Name of person who registered evidence
 - Accountability and contact for questions
 
-
 **Column H - Verification Status:**
 
 - Dropdown: Verified, Pending Verification, Expired, Requires Update
-
 
 **Column I - Verified By:**
 
 - Name of DPO or Privacy Officer who verified evidence
 - Ensures evidence quality
 
-
 **Column J - Verification Date:**
 
 - Date when evidence was verified
 - Format: YYYY-MM-DD
-
 
 **Purpose of Evidence Repository:**
 1. **Audit Trail:** Demonstrates compliance to ISO 27001 auditors
@@ -1284,7 +1186,6 @@ Pie chart or bar chart showing:
 - Object: X requests (Y%)
 - Automated Decision-Making: X requests (Y%)
 
-
 **Section 3: SLA Compliance Trend (Rows 24-30)**
 
 If multiple quarters assessed, show trend:
@@ -1293,7 +1194,6 @@ If multiple quarters assessed, show trend:
 - Q2 2026: 94% SLA compliance
 - Q3 2026: 97% SLA compliance → Improving trend
 
-
 **Section 4: Top DSR Channels (Rows 32-36)**
 
 - Email: X% of requests
@@ -1301,7 +1201,6 @@ If multiple quarters assessed, show trend:
 - Phone: Z% of requests
 - Postal Mail: A% of requests
 - In-Person: B% of requests
-
 
 **Interpretation:** If 80% of requests via email, prioritize email response process optimization.
 
@@ -1314,7 +1213,6 @@ Breakdown of rejection reasons:
 - Manifestly Unfounded/Excessive (Art. 12(5)): Z rejections
 - Compelling Legitimate Grounds (Art. 21(1)): A rejections
 
-
 **Interpretation:** If high rejection rate (>10%), review if legitimate or process improvement needed.
 
 **Section 6: Effort Analysis (Rows 46-50)**
@@ -1322,7 +1220,6 @@ Breakdown of rejection reasons:
 - Average effort per request type (hours)
 - Total effort spent on DSR requests (quarter)
 - Cost implications (if hourly rate available)
-
 
 **Interpretation:** If erasure requests consistently high effort (5+ hours), consider automation of deletion process.
 
@@ -1345,7 +1242,6 @@ Breakdown of rejection reasons:
 **Additional Approvers (Rows 9-15):**
 
 - Add as needed (e.g., Head of Compliance, General Counsel, Business Unit Leads)
-
 
 **Approval Process:**
 1. Complete Sheets 2-7 (data entry and analysis)
@@ -1450,7 +1346,6 @@ Breakdown of rejection reasons:
 - [ ] Effort and complexity assessed
 - [ ] Evidence references link to Sheet 7
 
-
 **Sheet 3 (Request Processing Procedures):**
 
 - [ ] Procedures documented for all 7 rights
@@ -1458,13 +1353,11 @@ Breakdown of rejection reasons:
 - [ ] Common issues identified
 - [ ] Tools and resources listed
 
-
 **Sheet 4 (SLA Compliance Tracking):**
 
 - [ ] Overall SLA compliance rate calculated
 - [ ] Breakdown by right type complete
 - [ ] SLA breach root causes documented
-
 
 **Sheet 5 (Exception & Rejection Tracking):**
 
@@ -1475,13 +1368,11 @@ Breakdown of rejection reasons:
 - [ ] Appeal rights communicated
 - [ ] DPO review obtained
 
-
 **Sheet 6 (Rights-Specific Analysis):**
 
 - [ ] Metrics calculated for all 7 rights
 - [ ] Quality checks completed
 - [ ] Common issues identified
-
 
 **Sheet 7 (Evidence Repository):**
 
@@ -1490,13 +1381,11 @@ Breakdown of rejection reasons:
 - [ ] Evidence linked to related requests
 - [ ] Verification status updated
 
-
 **Sheet 8 (Dashboard):**
 
 - [ ] Executive summary metrics reviewed
 - [ ] Trends analyzed
 - [ ] Recommendations documented
-
 
 **Sheet 9 (Approval & Sign-Off):**
 
@@ -1505,7 +1394,6 @@ Breakdown of rejection reasons:
 - [ ] Customer Service Lead approval obtained
 - [ ] IT Support Lead approval obtained
 - [ ] Executive Sponsor approval obtained
-
 
 ## Regulatory Compliance Checks
 
@@ -1524,7 +1412,6 @@ Breakdown of rejection reasons:
 - [ ] Rejected requests include legal basis, data subject informed of appeal rights (Art. 12(4))
 - [ ] Extensions justified and data subject notified within 1 month (Art. 12(3))
 
-
 **Swiss FADP Articles 25-28:**
 
 - [ ] Access requests fulfilled per Art. 25
@@ -1532,13 +1419,11 @@ Breakdown of rejection reasons:
 - [ ] Objection rights honored per Art. 28
 - [ ] Data portability supported per Art. 26
 
-
 **ISO 27001:2022 Control A.5.34:**
 
 - [ ] DSR procedures documented and implemented
 - [ ] Evidence retained for audit
 - [ ] SLA compliance monitored and reported
-
 
 ## Quality Assurance Checks
 
@@ -1549,13 +1434,11 @@ Breakdown of rejection reasons:
 - [ ] Third-party personal data redacted (Art. 15(4))
 - [ ] All systems checked (ROPA used to ensure completeness)
 
-
 **Rectification Requests:**
 
 - [ ] Correction propagated to all systems
 - [ ] Third parties notified (Art. 19)
 - [ ] Data subject informed of completion
-
 
 **Erasure Requests:**
 
@@ -1564,13 +1447,11 @@ Breakdown of rejection reasons:
 - [ ] Third parties notified (Art. 19)
 - [ ] Deletion audit trail retained
 
-
 **Restriction Requests:**
 
 - [ ] Processing fully restricted (only storage allowed)
 - [ ] Data subject informed when restriction will be lifted
 - [ ] Consent obtained before lifting restriction
-
 
 **Data Portability Requests:**
 
@@ -1578,13 +1459,11 @@ Breakdown of rejection reasons:
 - [ ] Machine-readable format (JSON, CSV, XML)
 - [ ] Third-party personal data excluded (Art. 20(4))
 
-
 **Objection Requests:**
 
 - [ ] Direct marketing objections processed immediately
 - [ ] Balancing test conducted for legitimate interest objections
 - [ ] If objection refused: Compelling legitimate grounds documented
-
 
 **Automated Decision-Making Requests:**
 
@@ -1592,7 +1471,6 @@ Breakdown of rejection reasons:
 - [ ] Human intervention provided
 - [ ] Data subject allowed to express point of view
 - [ ] Decision logic explained
-
 
 ---
 
@@ -1628,12 +1506,10 @@ Breakdown of rejection reasons:
 - **ISMS-IMP-A.5.34.5 (DPIA):** Automated decision-making DSRs may trigger DPIA requirements
 - **ISMS-IMP-A.5.34.7 (Privacy Compliance Dashboard):** DSR metrics aggregate into master privacy dashboard
 
-
 **Depends On:**
 
 - **ISMS-IMP-A.5.34.1 (PII Identification):** ROPA shows what data exists → enables access/portability fulfillment
 - **ISMS-IMP-A.5.34.2 (Legal Basis):** Legal basis determines rejection eligibility (e.g., legal obligation prevents erasure)
-
 
 ## Prepare for Audits
 
@@ -1659,7 +1535,6 @@ Breakdown of rejection reasons:
 
 - `ISMS_A_5_34_3_DSR_Management_Assessment_20260128.xlsx`
 - `ISMS_A_5_34_3_DSR_Management_Assessment_20260430.xlsx`
-
 
 **Rationale:** Date suffix enables version tracking, quarterly comparison, and audit trail.
 
@@ -1690,7 +1565,6 @@ Breakdown of rejection reasons:
 - Sheet 6 (Rights-Specific Analysis)
 - Sheet 8 (Dashboard)
 
-
 **Partially Protected:**
 
 - Sheet 2: Rows 1-3 locked (headers), Columns A-W unlocked (data entry)
@@ -1699,7 +1573,6 @@ Breakdown of rejection reasons:
 - Sheet 5: Rows 1-3 locked (headers), Columns A-J unlocked (data entry)
 - Sheet 7: Rows 1-3 locked (headers), Columns A-J unlocked (data entry)
 - Sheet 9: Rows 1-3 locked (headers), approval fields unlocked
-
 
 ---
 
@@ -1769,7 +1642,6 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - Conditional formatting legend
 - Support contacts
 
-
 ## Sheet Structure
 
 **Dimensions:**
@@ -1777,7 +1649,6 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - Rows: 100
 - Columns: A-G (7 columns)
 - All cells: Read-only (sheet protection enabled)
-
 
 **Section Breakdown:**
 
@@ -1801,7 +1672,6 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - Style: Font=Calibri 16pt Bold, Fill=#1F4E78, Font Color=White, Alignment=Center Middle
 - Height: 25
 
-
 **Rows 3-10: Assessment Overview**
 
 - Cell A3: "1. ASSESSMENT OVERVIEW" (Bold, #1F4E78, 14pt)
@@ -1820,12 +1690,10 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - Cell A10: "Completed By:"
 - Cell B10:G10 (merged): "[User fills in: Data Protection Officer name, completion date]"
 
-
 **Rows 12-35: The 7 Data Subject Rights**
 
 - Cell A12: "2. THE 7 DATA SUBJECT RIGHTS FRAMEWORK" (Bold, #1F4E78, 14pt)
 - Cell A13: "Organizations must support ALL data subject rights. Failure to implement even one right = compliance violation." (Bold, #C00000)
-
 
 **Table Structure (Rows 14-35):**
 
@@ -1844,7 +1712,6 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - Style: Fill=#1F4E78, Font=White Bold, Alignment=Center Middle
 - Border: Medium bottom border
 
-
 **Rows 15-21: Data Subject Rights (one row per right)**
 
 **Row 15: Access (Art. 15)**
@@ -1857,7 +1724,6 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - F15: "30 days"
 - G15: "Must include ALL Art. 15(1)(a)-(h) information. Redact third-party personal data (Art. 15(4)). Provide in intelligible form."
 
-
 **Row 16: Rectification (Art. 16)**
 
 - A16: "2"
@@ -1867,7 +1733,6 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - E16: "Confirmation of correction, updated data"
 - F16: "30 days"
 - G16: "Propagate correction to all systems. Notify third parties (Art. 19). If accuracy disputed, consider restriction (Art. 18)."
-
 
 **Row 17: Erasure (Art. 17)**
 
@@ -1879,7 +1744,6 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - F17: "30 days"
 - G17: "Check Art. 17(3) exceptions (legal obligation, legal claims, public interest) BEFORE deletion. Notify third parties (Art. 19). Retain deletion audit trail."
 
-
 **Row 18: Restriction (Art. 18)**
 
 - A18: "4"
@@ -1889,7 +1753,6 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - E18: "Confirmation of restriction, lift notification"
 - F18: "30 days"
 - G18: "Allow only storage (no processing except with consent or for legal claims). Inform data subject when restriction lifted (Art. 18(3))."
-
 
 **Row 19: Data Portability (Art. 20)**
 
@@ -1901,7 +1764,6 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - F19: "30 days"
 - G19: "ONLY data 'provided by data subject' (not inferred/derived data). Machine-readable format. Exclude third-party personal data (Art. 20(4))."
 
-
 **Row 20: Object (Art. 21)**
 
 - A20: "6"
@@ -1912,7 +1774,6 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - F20: "Immediate (direct marketing), 30 days (other)"
 - G20: "Direct marketing: UNCONDITIONAL right, process IMMEDIATELY (Art. 21(3)). Legitimate interest: Conduct balancing test. Can refuse if compelling legitimate grounds override."
 
-
 **Row 21: Automated Decision-Making (Art. 22)**
 
 - A21: "7"
@@ -1922,7 +1783,6 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - E21: "Human review outcome, explanation of decision logic"
 - F21: "30 days"
 - G21: "Applies to 'solely' automated decisions producing legal/significant effects. Provide human intervention, explain decision logic, allow data subject to express views."
-
 
 **Rows 23-35: Key Distinctions**
 
@@ -1939,7 +1799,6 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - Cell B32:G32 (merged): "Controllers must verify data subject identity before fulfilling requests to prevent unauthorized disclosure. Request additional information only if reasonable doubts exist. Do NOT request excessive ID documents."
 - Cell A34: "Third-Party Notification (Art. 19):"
 - Cell B34:G34 (merged): "Controllers must inform recipients of any rectification, erasure, or restriction unless impossible or disproportionate effort. Maintain recipient list in ROPA (A.5.34.1)."
-
 
 **Rows 37-45: SLA Requirements**
 
@@ -1959,12 +1818,10 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - Cell A44: "Pending Request Handling:"
 - Cell B44:G44 (merged): "Pending requests (not yet fulfilled) excluded from SLA compliance rate calculation. Track separately and escalate if >30 days pending."
 
-
 **Rows 47-65: Dropdown Reference**
 
 - Cell A47: "4. DROPDOWN REFERENCE" (Bold, #1F4E78, 14pt)
 - Cell A48: "All dropdown validation lists used in Sheet 2 (DSR Request Inventory):" (Bold)
-
 
 **Table Structure (Rows 49-65):**
 
@@ -1978,7 +1835,6 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 
 - Style: Fill=#305496, Font=White Bold
 
-
 **Rows 50-65: Dropdown Definitions**
 
 **Row 50: Request Channel (Column C)**
@@ -1987,13 +1843,11 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - B50: "Request Channel"
 - C50: "Email, Web Portal, Phone, Postal Mail, In-Person"
 
-
 **Row 51: Right Type (Column D)**
 
 - A51: "D - Right Type"
 - B51: "Right Type"
 - C51: "Access (Art. 15), Rectification (Art. 16), Erasure (Art. 17), Restriction (Art. 18), Data Portability (Art. 20), Object (Art. 21), Automated Decision-Making (Art. 22)"
-
 
 **Row 52: Identity Verification Method (Column I)**
 
@@ -2001,13 +1855,11 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - B52: "Identity Verification Method"
 - C52: "Account Login, Email Confirmation, ID Document, Phone Verification, In-Person, Not Required"
 
-
 **Row 53: Verification Status (Column J)**
 
 - A53: "J - Verification Status"
 - B53: "Verification Status"
 - C53: "Verified, Verification Failed, Verification Pending, Not Required"
-
 
 **Row 54: Response Method (Column P)**
 
@@ -2015,13 +1867,11 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - B54: "Response Method"
 - C54: "Email, Secure Portal, Postal Mail, In-Person, Download Link"
 
-
 **Row 55: Request Outcome (Column Q)**
 
 - A55: "Q - Request Outcome"
 - B55: "Request Outcome"
 - C55: "Fulfilled, Partially Fulfilled, Rejected, Extended, Withdrawn"
-
 
 **Row 56: SLA Status (Column O)**
 
@@ -2029,13 +1879,11 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - B56: "SLA Status"
 - C56: "Met, Breached, Pending, Extended"
 
-
 **Row 57: Complexity (Column U)**
 
 - A57: "U - Complexity"
 - B57: "Complexity"
 - C57: "Low, Medium, High, Very High"
-
 
 **Row 58: Rejection Reason (Column S)**
 
@@ -2043,12 +1891,10 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - B58: "Rejection Reason"
 - C58: "Legal Obligation (Art. 17(3)(b) - Tax, Employment Law), Legal Claims (Art. 17(3)(e) - Litigation, Defense), Public Interest (Art. 17(3)(d) - Research, Statistics), Freedom of Expression (Art. 17(3)(a)), Vital Interests (Art. 17(1)(d)), Manifestly Unfounded/Excessive (Art. 12(5)), Compelling Legitimate Grounds (Art. 21(1) - Override Objection), No Direct Transfer (Art. 20(3) - Technical Infeasibility), Other"
 
-
 **Rows 67-80: Conditional Formatting Legend**
 
 - Cell A67: "5. CONDITIONAL FORMATTING LEGEND" (Bold, #1F4E78, 14pt)
 - Cell A68: "Color codes used throughout the workbook:" (Bold)
-
 
 **Table Structure (Rows 69-80):**
 
@@ -2079,7 +1925,6 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - Cell A88: "Supervisory Authority:"
 - Cell B88:G88 (merged): "[Switzerland: FDPIC (https://www.edoeb.admin.ch/) | EU: Find your DPA (https://edpb.europa.eu/about-edpb/about-edpb/members_en)]"
 
-
 **Rows 92-100: Document Information**
 
 - Cell A92: "7. DOCUMENT INFORMATION" (Bold, #1F4E78, 14pt)
@@ -2095,7 +1940,6 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - Cell B97: "ISMS_A_5_34_3_DSR_Management_Assessment_20260128.xlsx"
 - Cell A98: "Related Assessments:"
 - Cell B98:G98 (merged): "ISMS-IMP-A.5.34.1 (PII Identification), ISMS-IMP-A.5.34.2 (Legal Basis), ISMS-IMP-A.5.34.7 (Privacy Compliance Dashboard)"
-
 
 ## Sheet Protection
 
@@ -2121,14 +1965,12 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - Header Rows: 1-3
 - Data Rows: 4-10000
 
-
 **Row Heights:**
 
 - Row 1: 25 (sheet title)
 - Row 2: 5 (spacer)
 - Row 3: 30 (column headers, wrap text)
 - Rows 4-10000: Auto (fit content)
-
 
 **Freeze Panes:** Row 4, Column A (headers always visible)
 
@@ -2171,19 +2013,16 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - Style: Font=Calibri 16pt Bold, Fill=#1F4E78, Font Color=White, Alignment=Center Middle
 - Height: 25
 
-
 **Row 2: Spacer**
 
 - Empty row for visual separation
 - Height: 5
-
 
 **Row 3: Column Headers**
 
 - Style: Fill=#1F4E78, Font=Calibri 11pt Bold White, Alignment=Center Middle, Wrap Text=Yes
 - Border: Medium bottom border (#000000)
 - Height: 30
-
 
 **Column Header Text (Row 3):**
 
@@ -2210,7 +2049,6 @@ Embedded reference guide for assessment completion. Read-only sheet with:
 - U3: "Complexity"
 - V3: "Evidence Reference"
 - W3: "Notes"
-
 
 ## Data Validation (Dropdowns)
 
@@ -2302,7 +2140,6 @@ Error Message: "Please select a valid complexity level from the dropdown list."
 - Otherwise, calculate: Response Date - Receipt Date
 - Result: Number of days taken to respond
 
-
 **Copy formula down to N10000**
 
 **Column O: SLA Status (Auto-calculated)**
@@ -2317,7 +2154,6 @@ Error Message: "Please select a valid complexity level from the dropdown list."
 - If Response Date (M4) is empty → "Pending"
 - If Days to Respond ≤30 → "Met"
 - If Days to Respond >30 → "Breached"
-
 
 **Note:** Users can manually override to "Extended" if 2-month extension granted per GDPR Art. 12(3) and data subject notified.
 
@@ -2334,12 +2170,10 @@ Error Message: "Please select a valid complexity level from the dropdown list."
 - Formula: `=O4="Met"`
 - Format: Fill=#C6EFCE (light green), Font=Bold
 
-
 **Condition 2: SLA Breached (Red)**
 
 - Formula: `=O4="Breached"`
 - Format: Fill=#FFC7CE (light red), Font=Bold
-
 
 **Condition 3: Critical Breach (Dark Red) - Days >45**
 
@@ -2347,18 +2181,15 @@ Error Message: "Please select a valid complexity level from the dropdown list."
 - Format: Fill=#C00000 (dark red), Font=White Bold, Border=Thick Red
 - Purpose: Highlight requests >45 days overdue for immediate escalation
 
-
 **Condition 4: Pending (Yellow)**
 
 - Formula: `=O4="Pending"`
 - Format: Fill=#FFEB9C (yellow)
 
-
 **Condition 5: Extended (Light Blue)**
 
 - Formula: `=O4="Extended"`
 - Format: Fill=#D6DCE4 (light blue)
-
 
 **Rule 2: Request Outcome Color Coding (Column Q)**
 
@@ -2369,18 +2200,15 @@ Error Message: "Please select a valid complexity level from the dropdown list."
 - Formula: `=Q4="Fulfilled"`
 - Format: Fill=#C6EFCE (light green)
 
-
 **Condition 2: Rejected (Light Orange)**
 
 - Formula: `=Q4="Rejected"`
 - Format: Fill=#FDE9D9 (light orange)
 
-
 **Condition 3: Partially Fulfilled (Yellow)**
 
 - Formula: `=Q4="Partially Fulfilled"`
 - Format: Fill=#FFEB9C (yellow)
-
 
 **Rule 3: Missing Identity Verification (CRITICAL)**
 
@@ -2392,7 +2220,6 @@ Error Message: "Please select a valid complexity level from the dropdown list."
 - Format: Fill=#FFD966 (orange), Font=Bold, Border=Medium Red
 - Purpose: Highlight requests with incomplete identity verification (GDPR Art. 12(6) requirement)
 
-
 **Rule 4: Missing Rejection Reason (CRITICAL)**
 
 **Range:** S4:S10000
@@ -2402,7 +2229,6 @@ Error Message: "Please select a valid complexity level from the dropdown list."
 - Formula: `=AND(Q4="Rejected", S4="")`
 - Format: Fill=#C00000 (dark red), Font=White Bold, Border=Thick Red
 - Purpose: Every rejected request MUST have documented legal basis (GDPR Art. 12(4) requirement)
-
 
 **Rule 5: Calculated Fields (Read-Only Indicator)**
 
@@ -2414,7 +2240,6 @@ Error Message: "Please select a valid complexity level from the dropdown list."
 - Format: Fill=#F2F2F2 (light gray), Font=Italic #4472C4
 - Purpose: Visual indicator that these fields are auto-calculated (users should not manually edit unless overriding)
 
-
 **Rule 6: Direct Marketing Objections (Urgent)**
 
 **Range:** D4:D10000
@@ -2424,7 +2249,6 @@ Error Message: "Please select a valid complexity level from the dropdown list."
 - Formula: `=ISNUMBER(SEARCH("Object", D4))`
 - Format: Fill=#FF6600 (orange), Font=White Bold
 - Note: Add conditional icon or flag in adjacent cell to highlight immediate processing requirement (Art. 21(3))
-
 
 ## Cell Styling
 
@@ -2437,7 +2261,6 @@ Error Message: "Please select a valid complexity level from the dropdown list."
 - Alignment: Left (text), Center (dates), Right (numbers)
 - Wrap Text: Yes (for multiline columns G, H, R, W)
 
-
 **Calculated Cells (Auto-Generated):**
 
 - Columns: N, O
@@ -2446,7 +2269,6 @@ Error Message: "Please select a valid complexity level from the dropdown list."
 - Border: Thin light gray (#D9D9D9) on all sides
 - Alignment: Right (N), Center (O)
 - Protection: Locked (users cannot edit)
-
 
 ## Sheet Protection
 
@@ -2457,7 +2279,6 @@ Error Message: "Please select a valid complexity level from the dropdown list."
 - Rows 1-3 (header rows)
 - Column N (Days to Respond - formula)
 - Column O (SLA Status - formula, but allow manual override if needed for "Extended")
-
 
 **Unlocked Cells:** A4:M10000, P4:W10000 (all user input columns)
 
@@ -2470,7 +2291,6 @@ Error Message: "Please select a valid complexity level from the dropdown list."
 - Sort: Yes
 - Filter: Yes
 
-
 ## Freeze Panes
 
 **Freeze:** Row 4, Column A
@@ -2480,7 +2300,6 @@ Error Message: "Please select a valid complexity level from the dropdown list."
 - Rows 1-3 (title and headers) always visible when scrolling down
 - Column A (Request ID) always visible when scrolling right
 - User can view request details while keeping context
-
 
 ---
 
@@ -2497,7 +2316,6 @@ Document standardized workflow for each of the 7 data subject rights to ensure c
 - Rows: 100
 - Columns: A-F (6 columns)
 - Data organized by right type (7 sections)
-
 
 **Section Breakdown:**
 
@@ -2533,13 +2351,11 @@ Document standardized workflow for each of the 7 data subject rights to ensure c
 - Style: Font=Calibri 16pt Bold, Fill=#1F4E78, Font Color=White, Alignment=Center Middle
 - Height: 25
 
-
 **Row 3: Column Headers** (applies to all sections)
 
 - Style: Fill=#305496, Font=Calibri 11pt Bold White, Alignment=Center Middle
 - Border: Medium bottom border (#000000)
 - Height: 25
-
 
 **Column Header Text:**
 
@@ -2549,7 +2365,6 @@ Document standardized workflow for each of the 7 data subject rights to ensure c
 - D3: "Tools/Systems"
 - E3: "Quality Check"
 - F3: "Common Issues"
-
 
 ## Section Template (Repeat for Each Right)
 
@@ -2562,11 +2377,9 @@ Document standardized workflow for each of the 7 data subject rights to ensure c
 - Style: Font=Calibri 14pt Bold, Fill=#305496, Font Color=White, Alignment=Left Middle
 - Height: 20
 
-
 **Row 5: Column Headers**
 
 - (Use standard column headers from Row 3 specification)
-
 
 **Rows 6-12: Procedure Steps**
 
@@ -2579,7 +2392,6 @@ Document standardized workflow for each of the 7 data subject rights to ensure c
 - E6: "Verification status = 'Verified' before proceeding. Check GDPR Art. 12(6) compliance."
 - F6: "Issue: Excessive ID requests. Solution: Request only necessary documents (passport OR utility bill, not both)."
 
-
 **Row 7:**
 
 - A7: "2"
@@ -2588,7 +2400,6 @@ Document standardized workflow for each of the 7 data subject rights to ensure c
 - D7: "ROPA (A.5.34.1), Data mapping documentation"
 - E7: "All systems listed in ROPA checked. No data sources missed."
 - F7: "Issue: Incomplete data exports (missed systems). Solution: Use ROPA systematically to check all locations."
-
 
 **Row 8:**
 
@@ -2599,7 +2410,6 @@ Document standardized workflow for each of the 7 data subject rights to ensure c
 - E8: "Data export includes all PII categories documented in ROPA. Verify completeness."
 - F8: "Issue: Manual extraction time-consuming (5+ hours). Solution: Automate data extraction with scripts."
 
-
 **Row 9:**
 
 - A9: "4"
@@ -2608,7 +2418,6 @@ Document standardized workflow for each of the 7 data subject rights to ensure c
 - D9: "Transparency template, ROPA, Privacy notices"
 - E9: "ALL Art. 15(1)(a)-(h) information included. Use checklist to verify completeness."
 - F9: "Issue: Just data dump without transparency info. Solution: Use standard template with all 8 elements."
-
 
 **Row 10:**
 
@@ -2619,7 +2428,6 @@ Document standardized workflow for each of the 7 data subject rights to ensure c
 - E10: "Third-party names, emails, phone numbers removed. Art. 15(4) compliance verified."
 - F10: "Issue: Disclosure of third-party data. Solution: Review all email threads and shared documents for third-party info."
 
-
 **Row 11:**
 
 - A11: "6"
@@ -2629,7 +2437,6 @@ Document standardized workflow for each of the 7 data subject rights to ensure c
 - E11: "Data provided in clear, readable format. Not raw database dump."
 - F11: "Issue: Raw JSON/CSV difficult for data subject to read. Solution: Provide formatted PDF with sections."
 
-
 **Row 12:**
 
 - A12: "7"
@@ -2638,7 +2445,6 @@ Document standardized workflow for each of the 7 data subject rights to ensure c
 - D12: "Secure file transfer system, Encrypted email, Portal"
 - E12: "Response sent securely. Data subject confirms receipt. Document response date (Column M in Sheet 2)."
 - F12: "Issue: Unencrypted email transmission. Solution: Use secure portal or encrypted email for sensitive data."
-
 
 **Section 2-7: Repeat Similar Structure**
 
@@ -2652,38 +2458,31 @@ Document standardized workflow for each of the 7 data subject rights to ensure c
 - Quality checks
 - Common issues and solutions
 
-
 ## Section Headers for Rights 2-7
 
 **Row 14: Rectification (Art. 16)**
 
 - Content: "2. RECTIFICATION (GDPR Art. 16, FADP Art. 27) - Right to Correct Inaccurate Personal Data"
 
-
 **Row 24: Erasure (Art. 17)**
 
 - Content: "3. ERASURE (GDPR Art. 17, FADP Art. 27) - Right to be Forgotten"
-
 
 **Row 34: Restriction (Art. 18)**
 
 - Content: "4. RESTRICTION OF PROCESSING (GDPR Art. 18) - Right to Suspend Processing"
 
-
 **Row 44: Data Portability (Art. 20)**
 
 - Content: "5. DATA PORTABILITY (GDPR Art. 20, FADP Art. 26) - Right to Receive Data in Machine-Readable Format"
-
 
 **Row 54: Object (Art. 21)**
 
 - Content: "6. OBJECT TO PROCESSING (GDPR Art. 21, FADP Art. 28) - Right to Stop Processing"
 
-
 **Row 64: Automated Decision-Making (Art. 22)**
 
 - Content: "7. AUTOMATED DECISION-MAKING (GDPR Art. 22) - Right to Challenge Automated Decisions"
-
 
 ## Sheet Protection
 
@@ -2709,7 +2508,6 @@ Auto-calculated dashboard for 30-day response deadline monitoring. Includes over
 - Columns: A-E (5 columns)
 - Fully auto-calculated EXCEPT breach analysis table (rows 22-30)
 
-
 **Section Breakdown:**
 
 | Rows | Section | Content |
@@ -2729,12 +2527,10 @@ Auto-calculated dashboard for 30-day response deadline monitoring. Includes over
 - Style: Font=Calibri 16pt Bold, Fill=#1F4E78, Font Color=White, Alignment=Center Middle
 - Height: 25
 
-
 **Row 2: Spacer**
 
 - Empty row for visual separation
 - Height: 5
-
 
 ## Section 1: Overall SLA Compliance (Rows 3-10)
 
@@ -2745,7 +2541,6 @@ Auto-calculated dashboard for 30-day response deadline monitoring. Includes over
 - Style: Font=Calibri 14pt Bold, Fill=#305496, Font Color=White
 - Height: 20
 
-
 **Column Headers (Row 4):**
 
 - A4: "Metric"
@@ -2754,7 +2549,6 @@ Auto-calculated dashboard for 30-day response deadline monitoring. Includes over
 - D4: "Status"
 - E4: "Notes"
 - Style: Fill=#305496, Font=White Bold, Alignment=Center
-
 
 **Row 5: Total Requests**
 
@@ -2765,7 +2559,6 @@ Auto-calculated dashboard for 30-day response deadline monitoring. Includes over
 - E5: "All requests in assessment period"
 - Style: B5 Font=Bold 12pt
 
-
 **Row 6: Requests Met SLA**
 
 - A6: "Requests Met SLA (≤30 days)"
@@ -2773,7 +2566,6 @@ Auto-calculated dashboard for 30-day response deadline monitoring. Includes over
 - C6: "≥95%"
 - D6: `=IF(B9>=0.95, "✓ On Target", "✗ Below Target")`
 - E6: "Fulfilled within 30 days"
-
 
 **Row 7: Requests Breached SLA**
 
@@ -2783,7 +2575,6 @@ Auto-calculated dashboard for 30-day response deadline monitoring. Includes over
 - D7: (blank)
 - E7: "Exceeded 30-day deadline"
 
-
 **Row 8: Requests Pending**
 
 - A8: "Requests Pending (Not Yet Fulfilled)"
@@ -2791,7 +2582,6 @@ Auto-calculated dashboard for 30-day response deadline monitoring. Includes over
 - C8: "N/A"
 - D8: (blank)
 - E8: "Excluded from SLA rate calculation"
-
 
 **Row 9: SLA Compliance Rate**
 
@@ -2802,7 +2592,6 @@ Auto-calculated dashboard for 30-day response deadline monitoring. Includes over
 - E9: "% of fulfilled requests within 30 days"
 - Style: B9 Format=Percentage (0.0%), Font=Bold 14pt, Fill=Conditional (green if ≥95%, red if <95%)
 
-
 **Row 10: Average Response Time**
 
 - A10: "Average Response Time (Days)"
@@ -2812,12 +2601,10 @@ Auto-calculated dashboard for 30-day response deadline monitoring. Includes over
 - E10: "Target: 20 days (buffer before deadline)"
 - Style: B10 Format=Number (0.0), Font=Bold
 
-
 **Conditional Formatting for B9 (SLA Compliance Rate):**
 
 - Condition 1: `=B9>=0.95` → Fill=#C6EFCE (green), Font=Bold
 - Condition 2: `=B9<0.95` → Fill=#FFC7CE (red), Font=Bold
-
 
 ## Section 2: Breakdown by Right Type (Rows 12-20)
 
@@ -2828,7 +2615,6 @@ Auto-calculated dashboard for 30-day response deadline monitoring. Includes over
 - Style: Font=Calibri 14pt Bold, Fill=#305496, Font Color=White
 - Height: 20
 
-
 **Column Headers (Row 13):**
 
 - A13: "Right Type"
@@ -2838,7 +2624,6 @@ Auto-calculated dashboard for 30-day response deadline monitoring. Includes over
 - E13: "Avg Response Time (Days)"
 - Style: Fill=#305496, Font=White Bold, Alignment=Center
 
-
 **Row 14: Access (Art. 15)**
 
 - A14: "Access (Art. 15)"
@@ -2846,7 +2631,6 @@ Auto-calculated dashboard for 30-day response deadline monitoring. Includes over
 - C14: `=COUNTIFS('2. DSR Request Inventory'!D4:D10000, "Access*", '2. DSR Request Inventory'!O4:O10000, "Met")`
 - D14: `=COUNTIFS('2. DSR Request Inventory'!D4:D10000, "Access*", '2. DSR Request Inventory'!O4:O10000, "Breached")`
 - E14: `=AVERAGEIF('2. DSR Request Inventory'!D4:D10000, "Access*", '2. DSR Request Inventory'!N4:N10000)`
-
 
 **Row 15: Rectification (Art. 16)**
 
@@ -2856,7 +2640,6 @@ Auto-calculated dashboard for 30-day response deadline monitoring. Includes over
 - D15: `=COUNTIFS('2. DSR Request Inventory'!D4:D10000, "Rectification*", '2. DSR Request Inventory'!O4:O10000, "Breached")`
 - E15: `=AVERAGEIF('2. DSR Request Inventory'!D4:D10000, "Rectification*", '2. DSR Request Inventory'!N4:N10000)`
 
-
 **Row 16: Erasure (Art. 17)**
 
 - A16: "Erasure (Art. 17)"
@@ -2864,7 +2647,6 @@ Auto-calculated dashboard for 30-day response deadline monitoring. Includes over
 - C16: `=COUNTIFS('2. DSR Request Inventory'!D4:D10000, "Erasure*", '2. DSR Request Inventory'!O4:O10000, "Met")`
 - D16: `=COUNTIFS('2. DSR Request Inventory'!D4:D10000, "Erasure*", '2. DSR Request Inventory'!O4:O10000, "Breached")`
 - E16: `=AVERAGEIF('2. DSR Request Inventory'!D4:D10000, "Erasure*", '2. DSR Request Inventory'!N4:N10000)`
-
 
 **Row 17: Restriction (Art. 18)**
 
@@ -2874,7 +2656,6 @@ Auto-calculated dashboard for 30-day response deadline monitoring. Includes over
 - D17: `=COUNTIFS('2. DSR Request Inventory'!D4:D10000, "Restriction*", '2. DSR Request Inventory'!O4:O10000, "Breached")`
 - E17: `=AVERAGEIF('2. DSR Request Inventory'!D4:D10000, "Restriction*", '2. DSR Request Inventory'!N4:N10000)`
 
-
 **Row 18: Data Portability (Art. 20)**
 
 - A18: "Data Portability (Art. 20)"
@@ -2882,7 +2663,6 @@ Auto-calculated dashboard for 30-day response deadline monitoring. Includes over
 - C18: `=COUNTIFS('2. DSR Request Inventory'!D4:D10000, "Data Portability*", '2. DSR Request Inventory'!O4:O10000, "Met")`
 - D18: `=COUNTIFS('2. DSR Request Inventory'!D4:D10000, "Data Portability*", '2. DSR Request Inventory'!O4:O10000, "Breached")`
 - E18: `=AVERAGEIF('2. DSR Request Inventory'!D4:D10000, "Data Portability*", '2. DSR Request Inventory'!N4:N10000)`
-
 
 **Row 19: Object (Art. 21)**
 
@@ -2892,7 +2672,6 @@ Auto-calculated dashboard for 30-day response deadline monitoring. Includes over
 - D19: `=COUNTIFS('2. DSR Request Inventory'!D4:D10000, "Object*", '2. DSR Request Inventory'!O4:O10000, "Breached")`
 - E19: `=AVERAGEIF('2. DSR Request Inventory'!D4:D10000, "Object*", '2. DSR Request Inventory'!N4:N10000)`
 
-
 **Row 20: Automated Decision-Making (Art. 22)**
 
 - A20: "Automated Decision-Making (Art. 22)"
@@ -2900,7 +2679,6 @@ Auto-calculated dashboard for 30-day response deadline monitoring. Includes over
 - C20: `=COUNTIFS('2. DSR Request Inventory'!D4:D10000, "Automated*", '2. DSR Request Inventory'!O4:O10000, "Met")`
 - D20: `=COUNTIFS('2. DSR Request Inventory'!D4:D10000, "Automated*", '2. DSR Request Inventory'!O4:O10000, "Breached")`
 - E20: `=AVERAGEIF('2. DSR Request Inventory'!D4:D10000, "Automated*", '2. DSR Request Inventory'!N4:N10000)`
-
 
 ## Section 3: SLA Breach Root Cause Analysis (Rows 22-30)
 
@@ -2911,7 +2689,6 @@ Auto-calculated dashboard for 30-day response deadline monitoring. Includes over
 - Style: Font=Calibri 14pt Bold, Fill=#305496, Font Color=White
 - Height: 20
 
-
 **Column Headers (Row 23):**
 
 - A23: "Request ID"
@@ -2920,7 +2697,6 @@ Auto-calculated dashboard for 30-day response deadline monitoring. Includes over
 - D23: "Breach Reason"
 - E23: "Corrective Action Taken"
 - Style: Fill=#305496, Font=White Bold, Alignment=Center
-
 
 **Rows 24-30: User Input Table**
 
@@ -2933,20 +2709,17 @@ Auto-calculated dashboard for 30-day response deadline monitoring. Includes over
   - Column E: Corrective Action Taken
     - Examples: "Automated data extraction script deployed", "Hired additional DSR coordinator", "Implemented priority queue", "Improved identity verification process"
 
-
 **Cell Styling:**
 
 - Fill: #FFFFFF (white)
 - Border: Thin light gray (#D9D9D9)
 - Alignment: Left (text), Right (numbers)
 
-
 **Conditional Formatting:**
 
 - Range: C24:C30
 - Condition: `>45` → Fill=#C00000 (dark red), Font=White Bold
 - Purpose: Highlight critical breaches (>45 days overdue)
-
 
 ## Sheet Protection
 
@@ -2976,7 +2749,6 @@ Document all rejected or restricted data subject rights requests with legal basi
 - Rows: 1,000 (scalable for high-rejection scenarios)
 - Columns: A-J (10 columns)
 - All user input (no auto-calculated fields)
-
 
 **Section Breakdown:**
 
@@ -3012,19 +2784,16 @@ Document all rejected or restricted data subject rights requests with legal basi
 - Style: Font=Calibri 16pt Bold, Fill=#1F4E78, Font Color=White, Alignment=Center Middle
 - Height: 25
 
-
 **Row 2: Spacer**
 
 - Empty row for visual separation
 - Height: 5
-
 
 **Row 3: Column Headers**
 
 - Style: Fill=#1F4E78, Font=Calibri 11pt Bold White, Alignment=Center Middle, Wrap Text=Yes
 - Border: Medium bottom border (#000000)
 - Height: 30
-
 
 **Column Header Text (Row 3):**
 
@@ -3038,7 +2807,6 @@ Document all rejected or restricted data subject rights requests with legal basi
 - H3: "DPO Review?"
 - I3: "Legal Counsel Review?"
 - J3: "Requester Response"
-
 
 ## Data Validation (Dropdowns)
 
@@ -3122,7 +2890,6 @@ Error Message: "Please select requester response. If 'Appealed to Supervisory Au
 - Format: Fill=#FFC7CE (light red), Font=Bold, Border=Medium Red (#C00000)
 - Purpose: GDPR Art. 12(4) violation if appeal rights not communicated
 
-
 **Rule 2: Data Subject Not Notified (CRITICAL)**
 
 **Range:** E4:E1000
@@ -3131,7 +2898,6 @@ Error Message: "Please select requester response. If 'Appealed to Supervisory Au
 
 - Format: Fill=#C00000 (dark red), Font=White Bold, Border=Thick Red
 - Purpose: Rejection without notification = GDPR procedural violation
-
 
 **Rule 3: DPO Review Missing for Rejections**
 
@@ -3142,7 +2908,6 @@ Error Message: "Please select requester response. If 'Appealed to Supervisory Au
 - Format: Fill=#FFD966 (orange), Font=Bold
 - Purpose: All rejections should have DPO review before communication
 
-
 **Rule 4: Appealed to Supervisory Authority (URGENT)**
 
 **Range:** J4:J1000
@@ -3152,7 +2917,6 @@ Error Message: "Please select requester response. If 'Appealed to Supervisory Au
 - Format: Fill=#C00000 (dark red), Font=White Bold, Border=Thick Red
 - Purpose: Immediate escalation required. Prepare case file for supervisory authority.
 
-
 **Rule 5: Missing Detailed Justification (CRITICAL)**
 
 **Range:** D4:D1000
@@ -3161,7 +2925,6 @@ Error Message: "Please select requester response. If 'Appealed to Supervisory Au
 
 - Format: Fill=#FFD966 (orange), Font=Bold
 - Purpose: Justification should be 2-3 sentences minimum (≥50 characters). Generic reasons insufficient.
-
 
 ## Cell Styling
 
@@ -3174,11 +2937,9 @@ Error Message: "Please select requester response. If 'Appealed to Supervisory Au
 - Alignment: Left (text), Center (dropdowns)
 - Wrap Text: Yes (for Column D - Detailed Justification)
 
-
 **Rejected Request Row Highlighting:**
 
 - Entire rows (A4:J1000) with data → Light orange background (#FDE9D9) to distinguish from regular requests
-
 
 ## Sheet Protection
 
@@ -3209,7 +2970,6 @@ Deep-dive metrics for each of the 7 data subject rights to identify patterns, qu
 - Columns: A-F (6 columns)
 - Fully auto-calculated (no user input)
 
-
 **Section Breakdown:**
 
 | Rows | Section | Right Type |
@@ -3233,7 +2993,6 @@ Deep-dive metrics for each of the 7 data subject rights to identify patterns, qu
 - Style: Font=Calibri 16pt Bold, Fill=#1F4E78, Font Color=White, Alignment=Center Middle
 - Height: 25
 
-
 ## Section Template (Repeat for Each Right)
 
 **Section 1: Access (Art. 15) - Rows 4-14**
@@ -3244,7 +3003,6 @@ Deep-dive metrics for each of the 7 data subject rights to identify patterns, qu
 - Content: "1. ACCESS (GDPR Art. 15, FADP Art. 25) - Right to Obtain Copy of Personal Data"
 - Style: Font=Calibri 14pt Bold, Fill=#305496, Font Color=White, Alignment=Left Middle
 - Height: 20
-
 
 **Rows 5-14: Metrics and Quality Checks**
 
@@ -3258,7 +3016,6 @@ Deep-dive metrics for each of the 7 data subject rights to identify patterns, qu
 - F5: (blank)
 - Style: B5 Font=Bold 12pt
 
-
 **Row 6: SLA Compliance**
 
 - A6: "SLA Compliance Rate"
@@ -3268,7 +3025,6 @@ Deep-dive metrics for each of the 7 data subject rights to identify patterns, qu
 - E6: (blank)
 - F6: (blank)
 - Style: B6 Format=Percentage (0.0%)
-
 
 **Row 7: Average Response Time**
 
@@ -3280,7 +3036,6 @@ Deep-dive metrics for each of the 7 data subject rights to identify patterns, qu
 - F7: (blank)
 - Style: B7 Format=Number (0.0)
 
-
 **Row 8: Average Effort**
 
 - A8: "Avg Effort (Hours)"
@@ -3291,7 +3046,6 @@ Deep-dive metrics for each of the 7 data subject rights to identify patterns, qu
 - F8: (blank)
 - Style: B8 Format=Number (0.0)
 
-
 **Row 9: Complexity Breakdown**
 
 - A9: "Complexity Distribution"
@@ -3301,7 +3055,6 @@ Deep-dive metrics for each of the 7 data subject rights to identify patterns, qu
 - E9: `="Very High: "&COUNTIFS('2. DSR Request Inventory'!D4:D10000, "Access*", '2. DSR Request Inventory'!U4:U10000, "Very High")`
 - F9: (blank)
 
-
 **Row 10: Blank Separator**
 
 **Row 11: Quality Check Header**
@@ -3310,25 +3063,21 @@ Deep-dive metrics for each of the 7 data subject rights to identify patterns, qu
 - B11:F11 (merged, blank)
 - Style: Font=Calibri 12pt Bold, Fill=#D6DCE4
 
-
 **Row 12: Quality Check 1**
 
 - A12: "☐"
 - B12:F12 (merged): "Did response include ALL Art. 15(1) transparency information? (a) purposes, (b) categories, (c) recipients, (d) retention, (e) rights, (f) source, (g) automated decisions, (h) safeguards"
 - Style: Alignment=Left, Wrap Text=Yes
 
-
 **Row 13: Quality Check 2**
 
 - A13: "☐"
 - B13:F13 (merged): "Was data provided in 'intelligible form' (human-readable PDF/document, not raw database dump)?"
 
-
 **Row 14: Quality Check 3**
 
 - A14: "☐"
 - B14:F14 (merged): "Were third-party personal data redacted per GDPR Art. 15(4) (names, emails, identifiable info in email threads, shared documents)?"
-
 
 **Section 2-7: Similar Structure for Remaining Rights**
 
@@ -3342,7 +3091,6 @@ Deep-dive metrics for each of the 7 data subject rights to identify patterns, qu
 - Complexity distribution
 - 3-5 quality checks specific to that right
 
-
 ## Quality Checks for Each Right
 
 **Rectification (Art. 16) - Rows 16-24:**
@@ -3351,7 +3099,6 @@ Deep-dive metrics for each of the 7 data subject rights to identify patterns, qu
 - Quality Check 2: "Were third parties notified of correction per GDPR Art. 19 (if data was disclosed)?"
 - Quality Check 3: "Was data subject informed of correction completion?"
 
-
 **Erasure (Art. 17) - Rows 26-34:**
 
 - Quality Check 1: "Were all GDPR Art. 17(3) exceptions considered before deletion (legal obligation, legal claims, public interest, freedom of expression, vital interests)?"
@@ -3359,13 +3106,11 @@ Deep-dive metrics for each of the 7 data subject rights to identify patterns, qu
 - Quality Check 3: "Were third parties notified of erasure per GDPR Art. 19 (if data was disclosed)?"
 - Quality Check 4: "Was deletion audit trail retained for compliance evidence (NOT the personal data itself)?"
 
-
 **Restriction (Art. 18) - Rows 36-44:**
 
 - Quality Check 1: "Was processing fully restricted (only storage allowed, no processing except with consent or for legal claims per Art. 18(2))?"
 - Quality Check 2: "Was data subject informed when restriction will be lifted per GDPR Art. 18(3)?"
 - Quality Check 3: "Was consent obtained before lifting restriction?"
-
 
 **Data Portability (Art. 20) - Rows 46-54:**
 
@@ -3374,13 +3119,11 @@ Deep-dive metrics for each of the 7 data subject rights to identify patterns, qu
 - Quality Check 3: "Was third-party personal data excluded per GDPR Art. 20(4) (email threads with others, shared documents)?"
 - Quality Check 4: "If direct transmission requested: Was technical feasibility assessed?"
 
-
 **Object (Art. 21) - Rows 56-64:**
 
 - Quality Check 1: "Were direct marketing objections processed IMMEDIATELY (24-48 hours)? Art. 21(3) requires unconditional cessation."
 - Quality Check 2: "For legitimate interest objections: Was balancing test conducted (can controller demonstrate compelling legitimate grounds that override data subject's interests)?"
 - Quality Check 3: "If objection refused: Were compelling legitimate grounds documented (e.g., fraud prevention, legal claims)?"
-
 
 **Automated Decision-Making (Art. 22) - Rows 66-74:**
 
@@ -3389,7 +3132,6 @@ Deep-dive metrics for each of the 7 data subject rights to identify patterns, qu
 - Quality Check 3: "Was human intervention provided (human can override automated decision)?"
 - Quality Check 4: "Was data subject allowed to express their point of view?"
 - Quality Check 5: "Was decision logic explained per GDPR Art. 13(2)(f) and 14(2)(g)?"
-
 
 ## Sheet Protection
 
@@ -3420,14 +3162,12 @@ Centralized evidence tracking for DSR audit readiness. Links supporting document
 - Columns: A-J (10 columns)
 - All user input
 
-
 **Row Heights:**
 
 - Row 1: 25 (sheet title)
 - Row 2: 5 (spacer)
 - Row 3: 30 (column headers)
 - Rows 4-300: Auto (fit content)
-
 
 ## Column Definitions
 
@@ -3455,19 +3195,16 @@ Centralized evidence tracking for DSR audit readiness. Links supporting document
 - Style: Font=Calibri 16pt Bold, Fill=#1F4E78, Font Color=White, Alignment=Center Middle
 - Height: 25
 
-
 **Row 2: Spacer**
 
 - Empty row for visual separation
 - Height: 5
-
 
 **Row 3: Column Headers**
 
 - Style: Fill=#1F4E78, Font=Calibri 11pt Bold White, Alignment=Center Middle, Wrap Text=Yes
 - Border: Medium bottom border (#000000)
 - Height: 30
-
 
 **Column Header Text (Row 3):**
 
@@ -3481,7 +3218,6 @@ Centralized evidence tracking for DSR audit readiness. Links supporting document
 - H3: "Verification Status"
 - I3: "Verified By (DPO/Privacy Officer)"
 - J3: "Verification Date"
-
 
 ## Formulas
 
@@ -3497,7 +3233,6 @@ Centralized evidence tracking for DSR audit readiness. Links supporting document
 - Format: EVID-A533-001, EVID-A533-002, EVID-A533-003...
 - ROW()-3 calculates: Row 4 → 4-3=1 → 001, Row 5 → 5-3=2 → 002
 - TEXT function formats number as 3-digit with leading zeros
-
 
 **Copy formula down to A300**
 
@@ -3546,24 +3281,20 @@ Error Message: "Please select a valid verification status from the dropdown list
 - Formula: `=H4="Verified"`
 - Format: Fill=#C6EFCE (light green), Font=Bold
 
-
 **Condition 2: Pending Verification (Yellow)**
 
 - Formula: `=H4="Pending Verification"`
 - Format: Fill=#FFEB9C (yellow)
-
 
 **Condition 3: Expired (Red)**
 
 - Formula: `=H4="Expired"`
 - Format: Fill=#FFC7CE (light red), Font=Bold
 
-
 **Condition 4: Requires Update (Orange)**
 
 - Formula: `=H4="Requires Update"`
 - Format: Fill=#FFD966 (orange)
-
 
 **Rule 2: Old Evidence Warning (>2 Years)**
 
@@ -3575,7 +3306,6 @@ Error Message: "Please select a valid verification status from the dropdown list
 - Format: Fill=#FFD966 (light orange), Font=Italic
 - Purpose: Flag old evidence that may need refresh for current compliance status
 
-
 **Rule 3: Missing Verification (Warning)**
 
 **Range:** H4:J300
@@ -3585,7 +3315,6 @@ Error Message: "Please select a valid verification status from the dropdown list
 - Formula: `=AND(B4<>"", OR(H4="", AND(H4="Verified", OR(I4="", J4=""))))`
 - Format: Fill=#FFD966 (orange)
 - Purpose: Highlight evidence lacking proper DPO/Privacy Officer verification
-
 
 ## Cell Styling
 
@@ -3597,7 +3326,6 @@ Error Message: "Please select a valid verification status from the dropdown list
 - Alignment: Left
 - Protection: Locked (auto-generated)
 
-
 **Input Cells (Columns B-J):**
 
 - Fill: #FFFFFF (white)
@@ -3605,7 +3333,6 @@ Error Message: "Please select a valid verification status from the dropdown list
 - Border: Thin light gray (#D9D9D9) on all sides
 - Alignment: Left (text), Center (dates and dropdowns)
 - Wrap Text: Yes (for Column C - Evidence Description, Column D - File Location)
-
 
 ## Sheet Protection
 
@@ -3636,7 +3363,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - Columns: A-F (6 columns)
 - Fully auto-calculated (no user input)
 
-
 **Section Breakdown:**
 
 | Rows | Section | Content |
@@ -3658,7 +3384,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - Style: Font=Calibri 16pt Bold, Fill=#1F4E78, Font Color=White, Alignment=Center Middle
 - Height: 25
 
-
 ## Section 1: Executive Summary (Rows 4-15)
 
 **Row 4: Section Header**
@@ -3667,7 +3392,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - Content: "1. EXECUTIVE SUMMARY - Overall DSR Compliance Metrics"
 - Style: Font=Calibri 14pt Bold, Fill=#305496, Font Color=White
 - Height: 20
-
 
 **Column Headers (Row 5):**
 
@@ -3679,7 +3403,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - F5: "Notes"
 - Style: Fill=#305496, Font=White Bold, Alignment=Center
 
-
 **Row 6: Total DSR Requests (Quarter)**
 
 - A6: "Total DSR Requests (Quarter)"
@@ -3689,7 +3412,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - E6: (User input: ↑↓→ compared to previous quarter)
 - F6: "All requests in assessment period"
 - Style: B6 Font=Bold 14pt
-
 
 **Row 7: SLA Compliance Rate**
 
@@ -3701,7 +3423,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - F7: "% of fulfilled requests within 30 days"
 - Style: B7 Format=Percentage (0.0%), Font=Bold 14pt, Conditional Fill (green if ≥95%, red if <95%)
 
-
 **Row 8: Requests Met SLA**
 
 - A8: "Requests Met SLA (≤30 days)"
@@ -3710,7 +3431,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - D8: (blank)
 - E8: (blank)
 - F8: "Fulfilled within deadline"
-
 
 **Row 9: Requests Breached SLA**
 
@@ -3721,7 +3441,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - E9: (blank)
 - F9: "Exceeded 30-day deadline"
 
-
 **Row 10: Requests Pending**
 
 - A10: "Requests Pending (Not Yet Fulfilled)"
@@ -3730,7 +3449,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - D10: (blank)
 - E10: (blank)
 - F10: "Excluded from SLA rate calculation"
-
 
 **Row 11: Average Response Time**
 
@@ -3742,7 +3460,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - F11: "Target: 20 days (buffer before deadline)"
 - Style: B11 Format=Number (0.0)
 
-
 **Row 12: Requests Rejected**
 
 - A12: "Requests Rejected (Total)"
@@ -3751,7 +3468,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - D12: (blank)
 - E12: (blank)
 - F12: "Rejected with documented legal basis"
-
 
 **Row 13: Rejection Rate**
 
@@ -3763,7 +3479,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - F13: "High rejection rate (>10%) may indicate overly broad data collection"
 - Style: B13 Format=Percentage (0.0%)
 
-
 **Row 14: Critical SLA Breaches (>45 Days)**
 
 - A14: "Critical SLA Breaches (>45 days overdue)"
@@ -3774,7 +3489,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - F14: "Requires immediate escalation to DPO and senior management"
 - Style: B14 Font=Bold, Conditional Fill (green if 0, dark red if >0)
 
-
 **Row 15: Evidence Documents Uploaded**
 
 - A15: "Evidence Documents Uploaded"
@@ -3784,7 +3498,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - E15: (blank)
 - F15: "Supporting documentation for audit"
 
-
 ## Section 2: Breakdown by Right Type (Rows 17-25)
 
 **Row 17: Section Header**
@@ -3793,7 +3506,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - Content: "2. BREAKDOWN BY RIGHT TYPE - Request Distribution"
 - Style: Font=Calibri 14pt Bold, Fill=#305496, Font Color=White
 - Height: 20
-
 
 **Column Headers (Row 18):**
 
@@ -3805,7 +3517,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - F18: "Common Issues"
 - Style: Fill=#305496, Font=White Bold, Alignment=Center
 
-
 **Row 19: Access (Art. 15)**
 
 - A19: "Access (Art. 15)"
@@ -3816,7 +3527,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - F19: "Incomplete data exports, missing transparency info"
 - Style: C19 Format=Percentage (0%), D19 Format=Number (0.0), E19 Format=Percentage (0%)
 
-
 **Rows 20-25: Repeat for Remaining Rights**
 
 - Row 20: Rectification (Art. 16)
@@ -3825,7 +3535,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - Row 23: Data Portability (Art. 20)
 - Row 24: Object (Art. 21)
 - Row 25: Automated Decision-Making (Art. 22)
-
 
 **Same formula pattern as Row 19, changing "Access*" to "Rectification*", "Erasure*", etc.**
 
@@ -3838,7 +3547,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - Style: Font=Calibri 14pt Bold, Fill=#305496, Font Color=White
 - Height: 20
 
-
 **Column Headers (Row 28):**
 
 - A28: "Request Channel"
@@ -3849,7 +3557,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - F28: "Process Optimization Opportunity"
 - Style: Fill=#305496, Font=White Bold, Alignment=Center
 
-
 **Row 29: Email**
 
 - A29: "Email"
@@ -3859,14 +3566,12 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - E29: (blank)
 - F29: `=IF(C29>0.5, "Primary channel (>50%): Prioritize email response optimization", "")`
 
-
 **Row 30: Web Portal**
 
 - A30: "Web Portal"
 - B30: `=COUNTIF('2. DSR Request Inventory'!C4:C10000, "Web Portal")`
 - C30: `=IF($B$6=0, 0, B30/$B$6)`
 - D30: `=AVERAGEIF('2. DSR Request Inventory'!C4:C10000, "Web Portal", '2. DSR Request Inventory'!N4:N10000)`
-
 
 **Row 31: Phone**
 
@@ -3875,11 +3580,9 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - C31: `=IF($B$6=0, 0, B31/$B$6)`
 - D31: `=AVERAGEIF('2. DSR Request Inventory'!C4:C10000, "Phone", '2. DSR Request Inventory'!N4:N10000)`
 
-
 **Row 32: Postal Mail / In-Person**
 
 - Similar pattern for remaining channels
-
 
 ## Section 4: Rejection Analysis (Rows 34-40)
 
@@ -3889,7 +3592,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - Content: "4. REJECTION ANALYSIS - Exception and Refusal Patterns"
 - Style: Font=Calibri 14pt Bold, Fill=#305496, Font Color=White
 - Height: 20
-
 
 **Column Headers (Row 35):**
 
@@ -3901,7 +3603,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - F35: "Notes"
 - Style: Fill=#305496, Font=White Bold, Alignment=Center
 
-
 **Row 36: Legal Obligation (Art. 17(3)(b))**
 
 - A36: "Legal Obligation (Art. 17(3)(b))"
@@ -3911,13 +3612,11 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - E36: (blank)
 - F36: "Tax law, employment law retention requirements"
 
-
 **Row 37: Legal Claims (Art. 17(3)(e))**
 
 - A37: "Legal Claims (Art. 17(3)(e))"
 - B37: `=COUNTIF('5. Exception & Rejection Tracking'!C4:C1000, "Legal Claims*")`
 - C37: `=IF($B$12=0, 0, B37/$B$12)`
-
 
 **Row 38: Manifestly Unfounded/Excessive (Art. 12(5))**
 
@@ -3926,7 +3625,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - C38: `=IF($B$12=0, 0, B38/$B$12)`
 - F38: "Repeated requests without valid reason"
 
-
 **Row 39: Compelling Legitimate Grounds (Art. 21(1))**
 
 - A39: "Compelling Legitimate Grounds (Art. 21(1))"
@@ -3934,13 +3632,11 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - C39: `=IF($B$12=0, 0, B39/$B$12)`
 - F39: "Objection overridden (fraud prevention, legal claims)"
 
-
 **Row 40: Other**
 
 - A40: "Other"
 - B40: `=COUNTIF('5. Exception & Rejection Tracking'!C4:C1000, "Other*")`
 - C40: `=IF($B$12=0, 0, B40/$B$12)`
-
 
 ## Section 5: Effort Analysis (Rows 42-48)
 
@@ -3950,7 +3646,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - Content: "5. EFFORT ANALYSIS - Resource Requirements & Cost Implications"
 - Style: Font=Calibri 14pt Bold, Fill=#305496, Font Color=White
 - Height: 20
-
 
 **Column Headers (Row 43):**
 
@@ -3962,7 +3657,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - F43: "Notes"
 - Style: Fill=#305496, Font=White Bold, Alignment=Center
 
-
 **Row 44: Average Effort per Request**
 
 - A44: "Average Effort per Request"
@@ -3972,7 +3666,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - E44: (blank)
 - F44: "Average across all request types"
 - Style: B44 Format=Number (0.0)
-
 
 **Row 45: Total Effort (Quarter)**
 
@@ -3984,7 +3677,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - F45: "Total staff time spent on DSR requests"
 - Style: B45 Format=Number (0.0)
 
-
 **Row 46: Estimated Cost (if hourly rate available)**
 
 - A46: "Estimated Cost (Quarter)"
@@ -3993,7 +3685,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - D46: (blank)
 - E46: (blank)
 - F46: "Assume hourly rate for privacy/IT staff (e.g., 100 CHF/hour)"
-
 
 **Row 47: Highest Effort Right Type**
 
@@ -4004,7 +3695,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - E47: (blank)
 - F47: "Automation opportunity if effort >4 hours avg"
 
-
 **Row 48: Automation ROI**
 
 - A48: "Automation ROI Calculation"
@@ -4014,7 +3704,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - E48: (blank)
 - F48: "Consider data extraction scripts, identity verification automation"
 
-
 ## Section 6: Trend Analysis (Rows 50-60)
 
 **Row 50: Section Header**
@@ -4023,7 +3712,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - Content: "6. TREND ANALYSIS - Quarterly Comparison (If Available)"
 - Style: Font=Calibri 14pt Bold, Fill=#305496, Font Color=White
 - Height: 20
-
 
 **Column Headers (Row 51):**
 
@@ -4035,7 +3723,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - F51: "Interpretation"
 - Style: Fill=#305496, Font=White Bold, Alignment=Center
 
-
 **Row 52: Total Requests Trend**
 
 - A52: "Total Requests"
@@ -4044,7 +3731,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - D52: `=IF(C52="", "", B52-C52)`
 - E52: `=IF(D52="", "", IF(D52>0, "↑", IF(D52<0, "↓", "→")))`
 - F52: `=IF(E52="↑", "Increasing requests may indicate data minimization opportunity", IF(E52="↓", "Decreasing requests - process improvements effective?", ""))`
-
 
 **Row 53: SLA Compliance Trend**
 
@@ -4055,7 +3741,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - E53: `=IF(D53="", "", IF(D53>0, "↑", IF(D53<0, "↓", "→")))`
 - F53: `=IF(E53="↑", "✓ Improving compliance", IF(E53="↓", "✗ Deteriorating - investigate root causes", ""))`
 
-
 **Row 54: Average Response Time Trend**
 
 - A54: "Avg Response Time (Days)"
@@ -4064,7 +3749,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - D54: `=IF(C54="", "", B54-C54)`
 - E54: `=IF(D54="", "", IF(D54>0, "↑", IF(D54<0, "↓", "→")))`
 - F54: `=IF(E54="↓", "✓ Faster response times", IF(E54="↑", "⚠ Slower response - capacity issue?", ""))`
-
 
 **Row 55: Rejection Rate Trend**
 
@@ -4075,7 +3759,6 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - E55: `=IF(D55="", "", IF(D55>0, "↑", IF(D55<0, "↓", "→")))`
 - F55: `=IF(E55="↑", "⚠ Increasing rejections - review if legitimate", IF(E55="↓", "✓ Fewer rejections", ""))`
 
-
 ## Conditional Formatting for Dashboard
 
 **SLA Compliance Rate (B7):**
@@ -4083,19 +3766,16 @@ Executive summary with auto-calculated compliance metrics and KPIs. Provides hig
 - Condition 1: `=B7>=0.95` → Fill=#C6EFCE (green), Font=Bold
 - Condition 2: `=B7<0.95` → Fill=#FFC7CE (red), Font=Bold
 
-
 **Critical SLA Breaches (B14):**
 
 - Condition 1: `=B14=0` → Fill=#C6EFCE (green), Font=Bold
 - Condition 2: `=B14>0` → Fill=#C00000 (dark red), Font=White Bold
-
 
 **Rejection Rate (B13):**
 
 - Condition 1: `=B13<=0.05` → Fill=#C6EFCE (green)
 - Condition 2: `=AND(B13>0.05, B13<=0.10)` → Fill=#FFEB9C (yellow)
 - Condition 3: `=B13>0.10` → Fill=#FFC7CE (red)
-
 
 ## Sheet Protection
 
@@ -4125,7 +3805,6 @@ Formal stakeholder validation and approval documentation. Required signatories i
 - Rows: 20
 - Columns: A-G (7 columns)
 - User input for approvals
-
 
 **Section Breakdown:**
 
@@ -4160,19 +3839,16 @@ Formal stakeholder validation and approval documentation. Required signatories i
 - Style: Font=Calibri 16pt Bold, Fill=#1F4E78, Font Color=White, Alignment=Center Middle
 - Height: 25
 
-
 **Row 2: Spacer**
 
 - Empty row for visual separation
 - Height: 5
-
 
 **Row 3: Column Headers**
 
 - Style: Fill=#1F4E78, Font=Calibri 11pt Bold White, Alignment=Center Middle, Wrap Text=Yes
 - Border: Medium bottom border (#000000)
 - Height: 30
-
 
 **Column Header Text (Row 3):**
 
@@ -4183,7 +3859,6 @@ Formal stakeholder validation and approval documentation. Required signatories i
 - E3: "Approval Scope"
 - F3: "Comments"
 - G3: "Contact Email"
-
 
 ## Pre-Populated Required Approvals (Rows 4-8)
 
@@ -4197,7 +3872,6 @@ Formal stakeholder validation and approval documentation. Required signatories i
 - F4: "[User input: Comments]" (Unlocked)
 - G4: "[User input: DPO email]" (Unlocked)
 
-
 **Row 5: Legal Counsel**
 
 - A5: "Legal Counsel" (Locked)
@@ -4207,7 +3881,6 @@ Formal stakeholder validation and approval documentation. Required signatories i
 - E5: "Exception legal bases, rejection justifications, regulatory compliance, Art. 17(3) exception interpretations, balancing test validity (Art. 21)" (Locked)
 - F5: "[User input: Comments]" (Unlocked)
 - G5: "[User input: Legal email]" (Unlocked)
-
 
 **Row 6: Customer Service Team Lead**
 
@@ -4219,7 +3892,6 @@ Formal stakeholder validation and approval documentation. Required signatories i
 - F6: "[User input: Comments]" (Unlocked)
 - G6: "[User input: Customer Service email]" (Unlocked)
 
-
 **Row 7: IT Support Lead**
 
 - A7: "IT Support Lead" (Locked)
@@ -4230,7 +3902,6 @@ Formal stakeholder validation and approval documentation. Required signatories i
 - F7: "[User input: Comments]" (Unlocked)
 - G7: "[User input: IT Support email]" (Unlocked)
 
-
 **Row 8: Executive Sponsor (CPO/CISO)**
 
 - A8: "Executive Sponsor (CPO/CISO)" (Locked)
@@ -4240,7 +3911,6 @@ Formal stakeholder validation and approval documentation. Required signatories i
 - E8: "Final approval, resource allocation for gap remediation, overall accountability for DSR compliance, commitment to corrective actions, ISO 27001 audit readiness" (Locked)
 - F8: "[User input: Comments]" (Unlocked)
 - G8: "[User input: Executive email]" (Unlocked)
-
 
 ## Additional Approvers (Rows 9-15)
 
@@ -4266,13 +3936,11 @@ Error Message: "Please select a signatory role from the dropdown or specify 'Oth
 - All columns (A-G) unlocked for user to add additional approvers as needed
 - Same column structure as rows 4-8
 
-
 ## Sign-Off Summary (Rows 17-20)
 
 **Row 17: Blank Separator**
 
 - Height: 10
-
 
 **Row 18: Completion Status**
 
@@ -4280,20 +3948,17 @@ Error Message: "Please select a signatory role from the dropdown or specify 'Oth
 - B18: `=IF(COUNTBLANK(D4:D8)=0, "✓ All Required Approvals Obtained", "✗ Pending Approvals: "&COUNTBLANK(D4:D8)&" of 5 required signatories")`
 - Style: B18 Font=Bold 12pt, Conditional Fill (green if all signed, red if any missing)
 
-
 **Row 19: Final Approval Date**
 
 - A19: "Final Approval Date:"
 - B19: `=MAX(D4:D8)`
 - Style: B19 Format=Date, Font=Bold
 
-
 **Row 20: Assessment Status**
 
 - A20: "Assessment Status:"
 - B20: `=IF(B18="✓ All Required Approvals Obtained", "APPROVED - Assessment Complete", "DRAFT - Awaiting Approvals")`
 - Style: B20 Font=Bold 14pt, Conditional Fill (green if approved, yellow if draft)
-
 
 ## Conditional Formatting Rules
 
@@ -4307,7 +3972,6 @@ Error Message: "Please select a signatory role from the dropdown or specify 'Oth
 - Format: Fill=#FFC7CE (light red), Border=Medium Red (#C00000)
 - Purpose: Highlight unsigned required approvals that are blocking assessment completion
 
-
 **Rule 2: Signed Approvals (Green)**
 
 **Range:** A4:G15
@@ -4318,7 +3982,6 @@ Error Message: "Please select a signatory role from the dropdown or specify 'Oth
 - Format: Fill=#C6EFCE (light green)
 - Purpose: Visual confirmation of completed approvals
 
-
 **Rule 3: Overdue Approvals (if assessment completion date specified)**
 
 **Range:** D4:D8
@@ -4328,7 +3991,6 @@ Error Message: "Please select a signatory role from the dropdown or specify 'Oth
 - Formula: (Requires user to set target completion date in a reference cell)
 - Format: Fill=#FFD966 (orange), Font=Bold
 - Purpose: Highlight delayed approvals
-
 
 ## Cell Styling
 
@@ -4341,7 +4003,6 @@ Error Message: "Please select a signatory role from the dropdown or specify 'Oth
 - Alignment: Left, Wrap Text=Yes
 - Protection: Locked
 
-
 **Input Cells (Unlocked):**
 
 - Columns B, C, D, F, G (rows 4-8)
@@ -4352,7 +4013,6 @@ Error Message: "Please select a signatory role from the dropdown or specify 'Oth
 - Alignment: Left (text), Center (dates)
 - Wrap Text: Yes (for multiline columns E, F)
 
-
 ## Sheet Protection
 
 **Protection:** Enabled  
@@ -4362,7 +4022,6 @@ Error Message: "Please select a signatory role from the dropdown or specify 'Oth
 
 - B4:D8, F4:G8 (required approver input fields)
 - A9:G15 (additional approvers, fully unlocked)
-
 
 **Allow:** Select locked/unlocked cells, Sort, Filter
 
@@ -4646,7 +4305,6 @@ def create_dashboard_metrics(ws):
    - Add/remove required approvers
    - Customize approval scope descriptions
 
-
 ## Main Function
 
 ```python
@@ -4838,7 +4496,6 @@ def test_complete_workbook():
 - [ ] Assessment period placeholder filled (Instructions sheet)
 - [ ] Support contacts customized (Instructions sheet)
 
-
 ---
 
 # Deliverable Summary
@@ -4872,7 +4529,6 @@ def test_complete_workbook():
 - ✅ **Integration with A.5.34.7** consolidation dashboard
 - ✅ **ISO 27001 audit-ready** with complete evidence chain
 
-
 ## Quality Verification
 
 **Reference Quality Standards Met:**
@@ -4884,13 +4540,11 @@ def test_complete_workbook():
 - Exact conditional formatting rules with formulas
 - Complete Python implementation architecture
 
-
 **Zero Interpretation Required:**
 
 - Python developer can implement directly from specification
 - Excel user can build workbook manually from specification
 - No ambiguity in any technical detail
-
 
 ---
 

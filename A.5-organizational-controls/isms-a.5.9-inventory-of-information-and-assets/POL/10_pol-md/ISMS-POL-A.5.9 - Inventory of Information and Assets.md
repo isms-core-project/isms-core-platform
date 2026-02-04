@@ -34,7 +34,6 @@
 - Compliance: Legal/Compliance Officer
 - Final Authority: Executive Management
 
-
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -42,7 +41,6 @@
 - ISMS-POL-A.8.x (Technical Controls)
 - ISMS-IMP-A.5.9 (Implementation Guidance Suite)
 - ISO/IEC 27001:2022 Control A.5.9
-
 
 ---
 
@@ -86,7 +84,6 @@ This policy establishes [Organization]'s requirements for maintaining an invento
 - Integration with other ISMS controls and organizational systems
 - Assessment methodology and compliance verification
 
-
 ## What This Policy Does
 
 This policy:
@@ -98,7 +95,6 @@ This policy:
 - **Identifies** organizational roles and responsibilities for asset inventory
 - **References** applicable regulatory requirements per ISMS-POL-00
 
-
 ## What This Policy Does NOT Do
 
 This policy does NOT:
@@ -109,14 +105,12 @@ This policy does NOT:
 - **Describe maintenance workflows** (see ISMS-IMP-A.5.9-2 Inventory Maintenance)
 - **Replace risk assessment** (inventory provides input to risk assessment process)
 
-
 **Rationale**: Separating policy requirements from implementation guidance enables:
 
 - Policy stability despite organizational changes
 - Technical agility for tool and process updates without policy revision
 - Clear distinction between governance (policy) and execution (implementation)
 - Adaptability to different organizational contexts and risk profiles
-
 
 ## Scope
 
@@ -129,7 +123,6 @@ This policy does NOT:
 - All personnel assets critical to operations (key roles, specialized competencies)
 - All third-party services processing [Organization]'s information
 
-
 **In Scope Asset Categories**:
 
 1. **Information Assets**: Any data, content, or knowledge with value to [Organization]
@@ -141,7 +134,6 @@ This policy does NOT:
    - Configuration and parameters (system configurations)
    - Authentication and cryptographic materials (keys, certificates, credentials)
 
-
 2. **Associated Assets - IT Infrastructure**: Systems that process, store, or transmit information
 
    - Physical servers and virtual machines
@@ -149,7 +141,6 @@ This policy does NOT:
    - Network infrastructure (routers, switches, firewalls, load balancers)
    - Endpoints (workstations, laptops, mobile devices)
    - Cloud infrastructure and services
-
 
 3. **Associated Assets - Applications**: Software that processes information
 
@@ -159,7 +150,6 @@ This policy does NOT:
    - Development tools and CI/CD pipelines
    - APIs and integration platforms
 
-
 4. **Associated Assets - Physical**: Tangible resources supporting operations
 
    - Facilities and data centers
@@ -167,13 +157,11 @@ This policy does NOT:
    - Physical security equipment (access control, surveillance)
    - Paper documents and printed materials
 
-
 5. **Associated Assets - Personnel**: Human resources and competencies
 
    - Key personnel roles (critical to operations)
    - Specialized competencies (unique skills, certifications)
    - NOT individual person records (privacy compliance)
-
 
 **Out of Scope**:
 
@@ -181,7 +169,6 @@ This policy does NOT:
 - Personal devices not used for [Organization] work (unless BYOD policy applies)
 - Public information with no confidentiality, integrity, or availability requirements
 - Commodity office supplies with no security impact
-
 
 ## Regulatory Applicability
 
@@ -193,7 +180,6 @@ Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicabil
 - **EU GDPR (Art. 5, 32)**: Data protection by design requires documented data inventory
 - **ISO/IEC 27001:2022 (Control A.5.9)**: Explicit control requirement for certification
 
-
 **Tier 2: Conditional Applicability** (triggered by specific business activities):
 
 - **PCI DSS (Req. 2.4, 12.5)**: Inventory of system components in cardholder data environment
@@ -203,7 +189,6 @@ Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicabil
 - **SOX**: IT general controls require documented system inventory for financial reporting
 - **Industry-specific regulations**: May require specialized asset categorization
 
-
 **Tier 3: Informational Reference** (best practices, not legally binding):
 
 - **ISO/IEC 19770-1**: IT Asset Management systems requirements
@@ -211,7 +196,6 @@ Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicabil
 - **NIST SP 800-53 (CM-8, PM-5)**: System component and inventory controls
 - **CIS Controls (1, 2)**: Inventory and Control of Enterprise Assets and Software
 - **COBIT 2019 (BAI09)**: Managed Assets framework
-
 
 **United States Federal Requirements**: References to US federal frameworks (FISMA, FIPS, FedRAMP, NIST cybersecurity requirements) apply only where [Organization] has explicit US federal contractual obligations, as defined in ISMS-POL-00.
 
@@ -233,7 +217,6 @@ For complete regulatory categorization and applicability determination methodolo
 - All physical assets supporting security (facilities, media, equipment)
 - All personnel assets critical to operations (key roles, competencies)
 
-
 **Implementation Approach**: [Organization] determines appropriate inventory structure based on risk assessment. Inventory may consist of multiple specialized inventories (CMDB for IT, HRIS for personnel, document repositories) provided they collectively satisfy control requirements.
 
 **Verification Method**: Completeness assessment per ISMS-IMP-A.5.9-3 (Quality & Compliance Assessment).
@@ -252,14 +235,12 @@ For complete regulatory categorization and applicability determination methodolo
    - Physical Assets (tangible resources)
    - Personnel Assets (competencies and roles)
 
-
 2. **By Criticality** (for risk-based treatment):
 
    - Critical: Loss would cause severe business impact (operational disruption, regulatory breach)
    - High: Loss would cause significant business impact (financial loss, reputational damage)
    - Medium: Loss would cause moderate business impact (efficiency reduction, customer inconvenience)
    - Low: Loss would cause minimal business impact (minor inconvenience, easily replaceable)
-
 
 3. **By Lifecycle State** (for maintenance planning):
 
@@ -268,7 +249,6 @@ For complete regulatory categorization and applicability determination methodolo
    - Maintenance: Scheduled for updates or patches
    - Retired: Scheduled for decommissioning
    - Archived: Retained for compliance but not actively used
-
 
 **Decision Support**: Annex A provides categorization decision framework and examples.
 
@@ -336,7 +316,6 @@ For complete regulatory categorization and applicability determination methodolo
 - **Acknowledgment Required**: Owners must acknowledge ownership and responsibilities
 - **Change Management**: Ownership changes trigger inventory update
 
-
 **Owner Responsibilities**:
 
 - Classify asset according to business value and risk
@@ -346,7 +325,6 @@ For complete regulatory categorization and applicability determination methodolo
 - Report security incidents affecting owned assets
 - Participate in asset lifecycle decisions (decommissioning, archival)
 - Maintain awareness of regulatory requirements affecting owned assets
-
 
 **When Ownership is Unclear**:
 
@@ -376,7 +354,6 @@ Unowned asset escalations tracked in exception register. Target: ≥95% assets a
 - Sample testing for missing assets
 - Management attestation
 
-
 **Acceptable Granularity**: Determined by asset criticality and risk. High-value/high-risk assets require detailed individual records. Low-risk commodity assets may be grouped (e.g., "standard employee laptops - quantity 50" vs. individual serial numbers).
 
 **Initial Certification Target**: 85% completeness for critical assets, 80% for standard assets, assessed within 90 days of policy approval via baseline inventory assessment (ISMS-IMP-A.5.9-1).
@@ -393,7 +370,6 @@ Unowned asset escalations tracked in exception register. Target: ≥95% assets a
 - Statistical sampling for data accuracy validation
 - Automated validation where technically feasible
 - Incident-based verification (inventory checked when incidents occur)
-
 
 **Initial Certification Accuracy Targets** (baseline + 90 days):
 
@@ -423,7 +399,6 @@ Accuracy improvement tracked quarterly. Sampling methodology defined in ISMS-IMP
 - Ownership change
 - Classification change
 - Scheduled periodic review
-
 
 **Maximum Staleness** (update triggers - how quickly inventory is updated after a change event):
 
@@ -511,13 +486,11 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 - Receive annual inventory compliance reports
 - Ensure organizational culture supports asset accountability
 
-
 **Specific Responsibilities**:
 
 - Approve RACI matrix for asset inventory governance
 - Resolve ownership disputes escalated from business unit level
 - Approve exceptions to inventory requirements (rare, documented)
-
 
 **3.1.2 Chief Information Security Officer (CISO)**
 
@@ -529,7 +502,6 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 - Report inventory compliance status to Executive Management
 - Coordinate with other control owners (Classification A.5.12, Access Control A.5.15)
 
-
 **Specific Responsibilities**:
 
 - Approve inventory categorization framework
@@ -537,7 +509,6 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 - Review and approve assessment findings
 - Escalate significant gaps to Executive Management
 - Maintain awareness of regulatory changes affecting inventory
-
 
 **3.1.3 Information Security Manager**
 
@@ -549,7 +520,6 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 - Track and report metrics (completeness, accuracy, owner assignment)
 - Coordinate periodic reviews and validation activities
 
-
 **Specific Responsibilities**:
 
 - Generate assessment workbooks
@@ -557,7 +527,6 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 - Conduct sampling and validation activities
 - Maintain assessment evidence
 - Prepare compliance reports for CISO
-
 
 **3.1.4 IT Operations / Infrastructure Teams**
 
@@ -569,7 +538,6 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 - Update inventory for IT asset lifecycle events
 - Support inventory validation and reconciliation
 
-
 **Specific Responsibilities**:
 
 - Configure and maintain discovery tools
@@ -577,7 +545,6 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 - Provide technical accuracy verification
 - Support incident investigations requiring asset information
 - Coordinate with procurement for new asset onboarding
-
 
 **3.1.5 Application Owners / System Owners**
 
@@ -589,7 +556,6 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 - Update inventory for application changes (versions, configurations, decommissions)
 - Ensure application-to-information asset relationships documented
 
-
 **Specific Responsibilities**:
 
 - Review and validate application inventory accuracy
@@ -597,7 +563,6 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 - Participate in application risk assessments
 - Document application-to-infrastructure dependencies
 - Notify Security Team of application lifecycle changes
-
 
 **3.1.6 Information Owners / Data Owners**
 
@@ -610,7 +575,6 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 - Participate in information risk assessments
 - Make retention and disposal decisions per A.8.10 (Information Deletion)
 
-
 **Specific Responsibilities**:
 
 - Acknowledge ownership formally
@@ -618,7 +582,6 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 - Report changes affecting owned information (location, classification, storage)
 - Approve exceptions for owned information
 - Participate in incident investigations
-
 
 **3.1.7 Asset Custodians**
 
@@ -629,7 +592,6 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 - Update inventory records for routine changes
 - Report issues to asset owner
 - Implement security controls as directed by owner
-
 
 **Distinction**: Custodians have operational responsibility but accountability remains with owner.
 
@@ -643,7 +605,6 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 - Return assets upon departure or role change
 - Participate in periodic asset verification when requested
 
-
 **3.1.9 Internal Audit / Compliance**
 
 **Independent Verification**:
@@ -653,7 +614,6 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 - Test control effectiveness (accuracy, completeness, owner assignment)
 - Report findings to Executive Management and CISO
 - Recommend improvements to inventory framework
-
 
 ## RACI Matrix
 
@@ -697,7 +657,6 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 - Gap identification
 - Evidence registers
 - Trend tracking
-
 
 **Implementation Note**: Detailed assessment specifications, user guides, and Python script generators are documented in ISMS-IMP-A.5.9 series.
 
@@ -743,7 +702,6 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 - **CISO**: Approve exceptions ≤12 months (strategic)
 - **Executive Management**: Approve exceptions >12 months (rare, documented at board level)
 
-
 **Maximum Exception Duration**: 12 months (must be renewed or remediated)
 
 **Verification Method**: Exception register reviewed per ISMS-IMP-A.5.9-5 (Compliance Dashboard).
@@ -761,7 +719,6 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 - **Recovery**: Prioritize recovery based on asset criticality classification
 - **Root Cause Analysis**: Cross-reference asset configurations and relationships
 
-
 **Incident-Triggered Inventory Actions**:
 
 - Verify affected asset inventory records are current
@@ -769,7 +726,6 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 - Document incident in asset history
 - Review and update risk classification if warranted
 - Conduct post-incident inventory validation
-
 
 **Integration**: Incident management system SHALL reference asset inventory for affected assets.
 
@@ -782,7 +738,6 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 - Audit findings requiring policy updates
 - Risk assessment identifying policy gaps
 - Technology changes affecting inventory approach
-
 
 **Review Process**:
 1. Information Security Manager proposes policy updates
@@ -799,7 +754,6 @@ Phase progression documented in ISMS-IMP-A.5.9-2 Inventory Maintenance. Current 
 - Significant security incident exposing inventory gaps
 - External audit findings
 - Material business model changes
-
 
 **Approval Authority**: Executive Management (CEO or designated authority)
 
@@ -820,13 +774,11 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - Threat-asset-vulnerability analysis requires complete asset inventory
 - Risk treatment plans reference inventoried assets
 
-
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
 - Control A.5.9 applicability justified in [Organization]'s SoA
 - Implementation status tracked and reported
 - Asset inventory enables other Annex A control implementation
-
 
 **Related Controls**:
 
@@ -865,14 +817,12 @@ This policy integrates with [Organization]'s Information Security Management Sys
 - Evidence tracking
 - Trend analysis
 
-
 **Supporting Materials**:
 
 - Asset categorization decision framework (Annex A)
 - Owner acknowledgment form template
 - Asset discovery checklist
 - Quick reference guide for asset owners (Annex B)
-
 
 ## Regulatory Mapping
 
@@ -898,7 +848,6 @@ This policy addresses asset inventory requirements from multiple regulatory fram
 - Acceptable use and asset handling
 - Privacy considerations (especially for personnel assets)
 
-
 **Asset Owner Training**:
 
 - Ownership responsibilities and accountability
@@ -906,7 +855,6 @@ This policy addresses asset inventory requirements from multiple regulatory fram
 - Access approval workflow
 - Classification guidance per A.5.12
 - Exception request process
-
 
 **Technical Training** (IT/Security Staff):
 
@@ -916,14 +864,12 @@ This policy addresses asset inventory requirements from multiple regulatory fram
 - Integration with CMDB and other systems
 - Evidence collection for audits
 
-
 **Custodian Training**:
 
 - Operational responsibilities
 - Inventory update procedures
 - Incident reporting
 - Delegation boundaries
-
 
 ---
 
@@ -977,7 +923,6 @@ Evidence required to demonstrate this policy is adequately documented and approv
 - ✅ Governance and review procedures defined (Section 3.3)
 - ✅ Integration with related controls documented (Section 4.1)
 
-
 **Stage 2 (Operational Effectiveness) Evidence:**
 
 Evidence required to demonstrate this policy is operationally effective:
@@ -1016,7 +961,6 @@ This policy establishes asset inventory requirements (identification, categoriza
 - **Asset protection controls** (addressed in A.8.x Technical Controls - inventory identifies scope of control application)
 - **Risk assessment methodology** (addressed in Clause 6.1 Risk Assessment - inventory provides asset input to risk assessment)
 - **Configuration management procedures** (addressed in A.8.9 Configuration Management - inventory tracks configuration items)
-
 
 The boundary is: POL-A.5.9 defines what must be inventoried and ownership accountability → Other controls define how to protect, classify, and control access to inventoried assets → Inventory is the foundation, controls build upon it.
 
@@ -1078,14 +1022,12 @@ This annex provides practical decision framework for categorizing assets within 
 - Asset is unique or specialized
 - Asset value justifies tracking overhead
 
-
 **Low Granularity** (grouped records) when:
 
 - Assets are commodity/standardized
 - Assets are low-risk and easily replaceable
 - Individual tracking creates excessive maintenance burden
 - Assets are homogeneous (identical model, configuration, purpose)
-
 
 **Examples**:
 
@@ -1113,7 +1055,6 @@ This annex provides practical decision framework for categorizing assets within 
 - Email archives
 - Audit logs
 
-
 **Unstructured Documents**:
 
 - Contracts and agreements
@@ -1124,7 +1065,6 @@ This annex provides practical decision framework for categorizing assets within 
 - Meeting recordings
 - Design specifications
 
-
 **Intellectual Property**:
 
 - Source code repositories
@@ -1134,7 +1074,6 @@ This annex provides practical decision framework for categorizing assets within 
 - Brand assets (logos, trademarks)
 - Proprietary research data
 
-
 **Configuration & Parameters**:
 
 - System configuration files
@@ -1142,7 +1081,6 @@ This annex provides practical decision framework for categorizing assets within 
 - Network device configurations (router, firewall rules)
 - Infrastructure-as-Code templates
 - Database schemas and stored procedures
-
 
 ## IT Infrastructure Categorization Examples
 
@@ -1154,7 +1092,6 @@ This annex provides practical decision framework for categorizing assets within 
 - Desktop workstations
 - Laptops and mobile devices
 
-
 **Storage**:
 
 - SAN/NAS systems
@@ -1162,7 +1099,6 @@ This annex provides practical decision framework for categorizing assets within 
 - Archive storage
 - Cloud storage buckets
 - File servers
-
 
 **Networking**:
 
@@ -1172,7 +1108,6 @@ This annex provides practical decision framework for categorizing assets within 
 - VPN concentrators
 - Wireless access points
 - DNS/DHCP servers
-
 
 ## Application Categorization Examples
 
@@ -1185,7 +1120,6 @@ This annex provides practical decision framework for categorizing assets within 
 - Project management tools
 - Collaboration platforms
 
-
 **SaaS and Cloud Services**:
 
 - Email service (Microsoft 365, Google Workspace)
@@ -1193,14 +1127,12 @@ This annex provides practical decision framework for categorizing assets within 
 - Communication tools (Slack, Teams, Zoom)
 - Development platforms (GitHub, GitLab, Jira)
 
-
 **Custom Developed Applications**:
 
 - Customer portal
 - Internal management applications
 - Mobile applications
 - APIs and integration services
-
 
 ## Personnel Asset Categorization
 
@@ -1211,7 +1143,6 @@ This annex provides practical decision framework for categorizing assets within 
 - Regulatory compliance roles (DPO, compliance officer)
 - Security operations roles (SOC lead, incident response)
 
-
 **Specialized Competencies**:
 
 - Deep technical expertise (specific technologies, legacy systems)
@@ -1219,7 +1150,6 @@ This annex provides practical decision framework for categorizing assets within 
 - Vendor relationships (key vendor contacts, negotiation history)
 - Certifications (specialized certifications required for operations)
 - Language skills (critical for international operations)
-
 
 **Privacy Note**: Personnel assets document ROLES and COMPETENCIES, never individual person records. "Database Administrator competency (3 qualified staff)" NOT "John Smith - DBA".
 
@@ -1249,14 +1179,12 @@ Before diving into responsibilities, be aware of these frequent errors:
 - Consider business impact if asset compromised
 - Document classification in inventory
 
-
 **2. Review Inventory Records**
 
 - **Frequency**: At least annually, or after significant changes
 - **Verify**: Asset description, location, classification, dependencies accurate
 - **Update**: Submit updates if information changes
 - **Attest**: Confirm accuracy by signing review record
-
 
 **3. Approve Access Requests**
 
@@ -1265,7 +1193,6 @@ Before diving into responsibilities, be aware of these frequent errors:
 - Approve/deny based on least privilege principle
 - Document approval rationale
 
-
 **4. Report Security Incidents**
 
 - Immediately report incidents affecting owned assets
@@ -1273,14 +1200,12 @@ Before diving into responsibilities, be aware of these frequent errors:
 - Approve recovery and restoration procedures
 - Review and update asset classification if incident reveals new risks
 
-
 **5. Manage Asset Lifecycle**
 
 - Participate in decisions: retention, archival, disposal
 - Ensure proper disposal per ISMS-POL-A.8.10 (Information Deletion)
 - Update inventory when assets retired or archived
 - Transfer ownership when changing roles
-
 
 ## When You Need Help
 
@@ -1297,30 +1222,25 @@ Before diving into responsibilities, be aware of these frequent errors:
 - **Action**: Submit inventory update request within 3 business days
 - **How**: [Organization-specific procedure]
 
-
 **Scenario 2: Asset No Longer Needed**
 
 - **Action**: Request decommissioning through change management
 - **Remember**: Ensure data properly disposed per A.8.10
-
 
 **Scenario 3: Not Sure Who Should Own Asset**
 
 - **Action**: Contact CISO for ownership determination
 - **Timeline**: Resolved within 30 days maximum
 
-
 **Scenario 4: Asset Criticality Changed**
 
 - **Action**: Update criticality classification in inventory
 - **Trigger**: Update risk assessment for this asset
 
-
 **Scenario 5: Received Access Request**
 
 - **Action**: Verify requestor business need, approve/deny within defined SLA
 - **Document**: Rationale for decision
-
 
 ## Annual Review Checklist
 
@@ -1336,7 +1256,6 @@ When conducting annual inventory review:
 - [ ] Sign attestation form
 - [ ] Submit to Information Security Manager
 
-
 ## Owner Acknowledgment
 
 When assigned as asset owner:
@@ -1347,7 +1266,6 @@ When assigned as asset owner:
 - [ ] Complete owner training (if required)
 - [ ] Sign owner acknowledgment form
 - [ ] Add asset to your review schedule
-
 
 ## Owner Transition (Changing Roles)
 
@@ -1360,7 +1278,6 @@ When leaving role or changing positions:
 - [ ] Update inventory with new owner
 - [ ] Confirm new owner acknowledgment received
 
-
 ## Key Policy References
 
 - **Full Policy**: ISMS-POL-A.5.9 (this document)
@@ -1368,7 +1285,6 @@ When leaving role or changing positions:
 - **Classification Policy**: ISMS-POL-A.5.12 (if implemented)
 - **Deletion Policy**: ISMS-POL-A.8.10 (if implemented)
 - **Access Control Policy**: ISMS-POL-A.5.15 (if implemented)
-
 
 ## Questions or Exceptions?
 

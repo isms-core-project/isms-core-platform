@@ -43,7 +43,6 @@ This document provides **practical, step-by-step guidance** for creating and mai
 - **Operational Requirements**: Troubleshooting, capacity planning, change management, disaster recovery
 - **Audit and Compliance**: Demonstrating network security controls to auditors
 
-
 Without accurate, up-to-date documentation, network security cannot be effectively managed or assessed.
 
 ## Scope
@@ -57,7 +56,6 @@ This guidance covers:
 - **IP Address Management (IPAM)** (subnet allocation, VLAN-to-subnet mapping)
 - **Change management** (documentation update triggers, version control, approval workflows)
 
-
 ## Applicability
 
 This guidance is **technology-agnostic** and applies to:
@@ -67,7 +65,6 @@ This guidance is **technology-agnostic** and applies to:
 - Cloud environments (AWS VPCs, Azure VNets, GCP VPCs)
 - Hybrid architectures (on-premise + cloud, interconnected via VPN/DirectConnect)
 
-
 ## Who Should Use This Guidance
 
 - Network architects designing network documentation standards
@@ -75,7 +72,6 @@ This guidance is **technology-agnostic** and applies to:
 - Security teams documenting security zones and trust boundaries
 - ISMS implementers preparing documentation for A.8.20/8.22 assessments
 - Auditors verifying network documentation completeness and accuracy
-
 
 ---
 
@@ -129,7 +125,6 @@ Phase 5: Ongoing Maintenance
 - **Currency**: Documentation must be updated promptly when the network changes (within 5 business days)
 - **Version Control**: Maintain history of changes (who, what, when, why)
 
-
 ---
 
 # Prerequisites and Tools
@@ -139,7 +134,6 @@ Phase 5: Ongoing Maintenance
 - **Network access**: Ability to access network devices to verify configurations
 - **Documentation repository access**: Ability to create/edit documents in centralized storage
 - **Source data access**: Access to network discovery data (from IMP-S1), configuration backups, IPAM systems
-
 
 ## Recommended Documentation Tools
 
@@ -186,7 +180,6 @@ Phase 5: Ongoing Maintenance
 - **GCP Architecture Icons**: For GCP cloud resources
   - Download: cloud.google.com/icons
 
-
 **Generic Symbols** (for vendor-agnostic diagrams):
 
 - Router: Circle with arrows
@@ -195,7 +188,6 @@ Phase 5: Ongoing Maintenance
 - Server: Tower or rack icon
 - Cloud: Cloud shape (generic)
 - Network segment: Cylinder or line
-
 
 ---
 
@@ -213,13 +205,11 @@ Phase 5: Ongoing Maintenance
    - Focus: How data flows logically
    - Example: Router → Firewall → Switch → Subnet
 
-
 2. **Physical Topology Diagram** (Layer 1/2):
 
    - Shows physical connections, cable types, port assignments
    - Focus: Physical infrastructure
    - Example: Device in Rack A, Port 1 → Device in Rack B, Port 5
-
 
 3. **Security Zone Diagram** (A.8.22 requirement):
 
@@ -227,20 +217,17 @@ Phase 5: Ongoing Maintenance
    - Focus: Segmentation architecture
    - Example: DMZ → Internal → Management zones with firewall between each
 
-
 4. **Data Flow Diagrams**:
 
    - Shows application-level traffic flows
    - Focus: How applications communicate across the network
    - Example: Web User → Load Balancer → Web Servers → Database
 
-
 **Optional Documentation Types** (for complex environments):
 
 - High-Availability Diagrams (failover paths, redundancy)
 - Capacity Planning Diagrams (bandwidth utilization, growth projections)
 - Disaster Recovery Diagrams (backup links, failover sites)
-
 
 ### Establish Documentation Standards
 
@@ -258,19 +245,16 @@ Every network diagram should include:
    - Approved By: Network Manager
    - Classification: Internal / Confidential
 
-
 2. **Legend** (explain symbols and colors):
 
    - Symbol key (router, switch, firewall, server, cloud)
    - Color key (security zones: Red = DMZ, Blue = Internal, Green = Management)
-
 
 3. **Notes Section**:
 
    - IP addressing scheme notes
    - VLAN numbering notes
    - Caveats or exceptions
-
 
 **Color Coding Standards** (for security zones):
 
@@ -289,7 +273,6 @@ Every network diagram should include:
 - **Layer 2 (Mid Level)**: Per-site diagrams (HQ, Branch Office A, Branch Office B)
 - **Layer 3 (Detailed)**: Per-segment diagrams (Data Center, User Networks, DMZ)
 
-
 ---
 
 ## Phase 2: Creating Logical Topology Diagrams
@@ -303,12 +286,10 @@ Every network diagram should include:
 - Routing information (static routes, dynamic routing protocols)
 - Inter-device connections (which port connects to which device)
 
-
 **Configuration Files** (backup configs from network devices):
 
 - Router/Switch configs: Interface IPs, VLAN assignments, routing tables
 - Firewall configs: Security zones, rules, NAT translations
-
 
 ### Create Logical Topology Diagram
 
@@ -335,18 +316,15 @@ Every network diagram should include:
    - Cloud symbol: "Internet"
    - Line down to...
 
-
 5. **Add Perimeter Router**:
 
    - Cisco router symbol: "Gateway-HQ" (10.1.0.1)
    - Label: Management IP, Model
 
-
 6. **Add Perimeter Firewall**:
 
    - Firewall symbol: "FW-Perimeter" (10.1.0.3)
    - Note interfaces: Outside (public IP), Inside (10.1.0.3)
-
 
 7. **Add DMZ** (orange box):
 
@@ -354,12 +332,10 @@ Every network diagram should include:
    - Inside: Add server symbols for web servers, mail servers
    - Lines from firewall to DMZ servers
 
-
 8. **Add Core Switch**:
 
    - Switch symbol: "Core-SW-01" (10.1.0.2)
    - Lines from firewall to core switch
-
 
 9. **Add VLANs/Subnets** (as separate boxes branching from switch):
 
@@ -367,19 +343,16 @@ Every network diagram should include:
    - Blue box: "Server VLAN 20 (10.1.20.0/24)"
    - Green box: "Management VLAN 100 (192.168.100.0/24)"
 
-
 10. **Add Network Services** (as server icons):
 
     - DNS Server (10.1.0.10)
     - DHCP Server (10.1.0.20)
     - NTP Server (10.1.0.30)
 
-
 11. **Add Cloud Resources** (if applicable):
 
     - AWS VPC symbol: "AWS Production VPC (10.100.0.0/16)"
     - VPN tunnel line from firewall to AWS VPC
-
 
 12. **Add Legend** (bottom-left corner):
     ```
@@ -403,13 +376,11 @@ Every network diagram should include:
     - Ensure lines are orthogonal (straight, 90-degree angles)
     - Add labels to all connections (interface names, bandwidths)
 
-
 14. **Export**:
 
     - File → Export as → PNG (for presentations)
     - File → Export as → PDF (for documentation)
     - Save source file: `.drawio` format (for future editing)
-
 
 **Example Logical Topology** (text-based for reference):
 
@@ -445,7 +416,6 @@ Every network diagram should include:
 - A security zone is a logical grouping of network segments with similar trust levels
 - Traffic between zones is controlled by firewalls/ACLs
 
-
 **Common Zones**:
 1. **Internet/Untrusted**: Public internet, partner networks
 2. **DMZ**: Public-facing services (web, email, DNS)
@@ -465,7 +435,6 @@ Every network diagram should include:
    - Use colored rectangles to represent zones
    - Color-code per standards (DMZ = Orange, Internal = Blue, etc.)
 
-
 2. **Add Zone Labels**:
 
    - Zone Name: "DMZ"
@@ -473,12 +442,10 @@ Every network diagram should include:
    - Networks: "172.16.10.0/24"
    - Purpose: "Public-facing web services"
 
-
 3. **Add Firewalls Between Zones**:
 
    - Firewall icon at zone boundary
    - Label with firewall name and management IP
-
 
 4. **Add Inter-Zone Traffic Policies**:
 
@@ -486,7 +453,6 @@ Every network diagram should include:
    - Green arrow = Allowed
    - Red X = Denied
    - Label arrows with protocols/ports (e.g., "HTTPS (443)")
-
 
 5. **Add Legend**:
    ```
@@ -543,7 +509,6 @@ Every network diagram should include:
 - **DHCP Scope Documentation**: DHCP ranges within each subnet
 - **Reserved IP Addresses**: Statically assigned IPs (devices, services)
 
-
 ### Create Subnet Allocation Table
 
 **Format**: Excel/Google Sheets or NetBox.
@@ -579,7 +544,6 @@ Every network diagram should include:
    - Site Name: "Corporate HQ"
    - Site Name: "Branch Office A"
 
-
 4. **Add IP Prefixes** (subnets):
 
    - IPAM → Prefixes → Add
@@ -588,14 +552,12 @@ Every network diagram should include:
    - Site: Corporate HQ
    - Description: User Network
 
-
 5. **Add IP Addresses**:
 
    - IPAM → IP Addresses → Add
    - IP Address: 10.1.10.10
    - Status: Active
    - Description: Printer 1
-
 
 6. **Add Devices**:
 
@@ -605,11 +567,9 @@ Every network diagram should include:
    - Site: Corporate HQ
    - Primary IP: 192.168.100.2
 
-
 7. **Associate IPs with Devices**:
 
    - Go to device → Interfaces → Assign IP addresses to interfaces
-
 
 **NetBox API** (for automation):
 ```bash
@@ -699,7 +659,6 @@ d2 network_topology.d2 network_topology.svg
 - Easy to update (edit text file, regenerate)
 - Can be automated (generate from network discovery data)
 
-
 ### Using Mermaid (GitHub/Markdown-Friendly)
 
 **Example Mermaid Diagram** (in Markdown file):
@@ -735,7 +694,6 @@ graph TD
 - ✅ Firewall rule changes (affecting inter-zone traffic)
 - ✅ New network segment added (new office, new cloud VPC)
 - ✅ Significant configuration changes (routing protocol changes, VPN tunnels)
-
 
 **Update Timeline**: Within **5 business days** of network change.
 
@@ -776,7 +734,6 @@ graph TD
 - Document version in filename: `Network_Topology_v1.2_2026-01-08.pdf`
 - Maintain change log in separate document
 
-
 ---
 
 # Automation Opportunities
@@ -788,7 +745,6 @@ graph TD
 - **NetBox**: Generate topology diagrams from device relationships
 - **Network Weathermap**: Auto-generate network maps from monitoring data
 - **Commercial tools**: SolarWinds Network Topology Mapper, NetBrain
-
 
 **Example: Parse Cisco Config to Generate Diagram**:
 
@@ -885,18 +841,15 @@ d2 switch_topology.d2 switch_topology.svg
 - Discovered devices → added to topology diagrams
 - Discovered IP ranges → added to IPAM
 
-
 ## Integration with IMP-S5 (Segmentation Implementation)
 
 - Security zone diagrams inform segmentation implementation
 - Segmentation changes → update security zone diagrams
 
-
 ## Integration with Change Management
 
 - Network changes (RFC) → trigger documentation updates
 - Documentation updates reviewed and approved as part of RFC process
-
 
 ---
 
@@ -915,7 +868,6 @@ d2 switch_topology.d2 switch_topology.svg
 - [ ] Centralized storage (SharePoint, Confluence, Git)
 - [ ] Access controls configured (only authorized personnel can edit)
 
-
 ---
 
 # Common Pitfalls and Solutions
@@ -930,7 +882,6 @@ d2 switch_topology.d2 switch_topology.svg
 - Automated alerts when devices are added (NAC systems can notify)
 - Quarterly documentation review (verify against actual network state)
 
-
 ## Pitfall: Diagrams Are Too Complex
 
 **Cause**: Trying to show everything on one diagram.
@@ -941,7 +892,6 @@ d2 switch_topology.d2 switch_topology.svg
 - Create multiple diagrams (logical, physical, security zones)
 - Focus each diagram on specific audience (executive vs. engineer)
 
-
 ## Pitfall: Inconsistent Symbols/Colors
 
 **Cause**: Multiple people create diagrams without standards.
@@ -951,7 +901,6 @@ d2 switch_topology.d2 switch_topology.svg
 - Establish and publish documentation standards (Section 4.1.2)
 - Provide templates (Visio/draw.io templates with pre-defined symbols/colors)
 - Peer review all new diagrams before publication
-
 
 ---
 
@@ -967,7 +916,6 @@ d2 switch_topology.d2 switch_topology.svg
 - [ ] Firewall rule documentation (separate document, but related)
 - [ ] Physical topology diagram (for physical security assessment)
 
-
 ## Documentation Storage and Access
 
 **Centralized Storage**:
@@ -975,13 +923,11 @@ d2 switch_topology.d2 switch_topology.svg
 - Store in: SharePoint, Confluence, Git repository, ISMS document repository
 - Path: `ISMS/Network_Security/Documentation/`
 
-
 **Access Controls**:
 
 - View: All IT staff
 - Edit: Network architects, network engineers only
 - Approve: Network manager, security manager
-
 
 ---
 
@@ -993,12 +939,10 @@ d2 switch_topology.d2 switch_topology.svg
 - **Diagram Accuracy**: % of devices in diagrams vs. actual network (target: 100%)
 - **Update Compliance**: % of network changes with documentation updates (target: 100%)
 
-
 ## Periodic Review
 
 - **Quarterly**: Verify diagrams match actual network state
 - **Annually**: Full documentation refresh (regenerate all diagrams from scratch)
-
 
 ---
 
@@ -1017,7 +961,6 @@ See Section 4.5.1 for detailed example.
 - AWS: https://aws.amazon.com/architecture/icons/
 - Azure: https://docs.microsoft.com/azure/architecture/icons/
 - GCP: https://cloud.google.com/icons
-
 
 ## Documentation Review Checklist
 
@@ -1065,7 +1008,6 @@ This document provides **practical, step-by-step guidance** for creating and mai
 - **Operational Requirements**: Troubleshooting, capacity planning, change management, disaster recovery
 - **Audit and Compliance**: Demonstrating network security controls to auditors
 
-
 Without accurate, up-to-date documentation, network security cannot be effectively managed or assessed.
 
 ## Scope
@@ -1079,7 +1021,6 @@ This guidance covers:
 - **IP Address Management (IPAM)** (subnet allocation, VLAN-to-subnet mapping)
 - **Change management** (documentation update triggers, version control, approval workflows)
 
-
 ## Applicability
 
 This guidance is **technology-agnostic** and applies to:
@@ -1089,7 +1030,6 @@ This guidance is **technology-agnostic** and applies to:
 - Cloud environments (AWS VPCs, Azure VNets, GCP VPCs)
 - Hybrid architectures (on-premise + cloud, interconnected via VPN/DirectConnect)
 
-
 ## Who Should Use This Guidance
 
 - Network architects designing network documentation standards
@@ -1097,7 +1037,6 @@ This guidance is **technology-agnostic** and applies to:
 - Security teams documenting security zones and trust boundaries
 - ISMS implementers preparing documentation for A.8.20/8.22 assessments
 - Auditors verifying network documentation completeness and accuracy
-
 
 ---
 
@@ -1151,7 +1090,6 @@ Phase 5: Ongoing Maintenance
 - **Currency**: Documentation must be updated promptly when the network changes (within 5 business days)
 - **Version Control**: Maintain history of changes (who, what, when, why)
 
-
 ---
 
 # Prerequisites and Tools
@@ -1161,7 +1099,6 @@ Phase 5: Ongoing Maintenance
 - **Network access**: Ability to access network devices to verify configurations
 - **Documentation repository access**: Ability to create/edit documents in centralized storage
 - **Source data access**: Access to network discovery data (from IMP-S1), configuration backups, IPAM systems
-
 
 ## Recommended Documentation Tools
 
@@ -1208,7 +1145,6 @@ Phase 5: Ongoing Maintenance
 - **GCP Architecture Icons**: For GCP cloud resources
   - Download: cloud.google.com/icons
 
-
 **Generic Symbols** (for vendor-agnostic diagrams):
 
 - Router: Circle with arrows
@@ -1217,7 +1153,6 @@ Phase 5: Ongoing Maintenance
 - Server: Tower or rack icon
 - Cloud: Cloud shape (generic)
 - Network segment: Cylinder or line
-
 
 ---
 
@@ -1235,13 +1170,11 @@ Phase 5: Ongoing Maintenance
    - Focus: How data flows logically
    - Example: Router → Firewall → Switch → Subnet
 
-
 2. **Physical Topology Diagram** (Layer 1/2):
 
    - Shows physical connections, cable types, port assignments
    - Focus: Physical infrastructure
    - Example: Device in Rack A, Port 1 → Device in Rack B, Port 5
-
 
 3. **Security Zone Diagram** (A.8.22 requirement):
 
@@ -1249,20 +1182,17 @@ Phase 5: Ongoing Maintenance
    - Focus: Segmentation architecture
    - Example: DMZ → Internal → Management zones with firewall between each
 
-
 4. **Data Flow Diagrams**:
 
    - Shows application-level traffic flows
    - Focus: How applications communicate across the network
    - Example: Web User → Load Balancer → Web Servers → Database
 
-
 **Optional Documentation Types** (for complex environments):
 
 - High-Availability Diagrams (failover paths, redundancy)
 - Capacity Planning Diagrams (bandwidth utilization, growth projections)
 - Disaster Recovery Diagrams (backup links, failover sites)
-
 
 ### Establish Documentation Standards
 
@@ -1280,19 +1210,16 @@ Every network diagram should include:
    - Approved By: Network Manager
    - Classification: Internal / Confidential
 
-
 2. **Legend** (explain symbols and colors):
 
    - Symbol key (router, switch, firewall, server, cloud)
    - Color key (security zones: Red = DMZ, Blue = Internal, Green = Management)
-
 
 3. **Notes Section**:
 
    - IP addressing scheme notes
    - VLAN numbering notes
    - Caveats or exceptions
-
 
 **Color Coding Standards** (for security zones):
 
@@ -1311,7 +1238,6 @@ Every network diagram should include:
 - **Layer 2 (Mid Level)**: Per-site diagrams (HQ, Branch Office A, Branch Office B)
 - **Layer 3 (Detailed)**: Per-segment diagrams (Data Center, User Networks, DMZ)
 
-
 ---
 
 ## Phase 2: Creating Logical Topology Diagrams
@@ -1325,12 +1251,10 @@ Every network diagram should include:
 - Routing information (static routes, dynamic routing protocols)
 - Inter-device connections (which port connects to which device)
 
-
 **Configuration Files** (backup configs from network devices):
 
 - Router/Switch configs: Interface IPs, VLAN assignments, routing tables
 - Firewall configs: Security zones, rules, NAT translations
-
 
 ### Create Logical Topology Diagram
 
@@ -1357,18 +1281,15 @@ Every network diagram should include:
    - Cloud symbol: "Internet"
    - Line down to...
 
-
 5. **Add Perimeter Router**:
 
    - Cisco router symbol: "Gateway-HQ" (10.1.0.1)
    - Label: Management IP, Model
 
-
 6. **Add Perimeter Firewall**:
 
    - Firewall symbol: "FW-Perimeter" (10.1.0.3)
    - Note interfaces: Outside (public IP), Inside (10.1.0.3)
-
 
 7. **Add DMZ** (orange box):
 
@@ -1376,12 +1297,10 @@ Every network diagram should include:
    - Inside: Add server symbols for web servers, mail servers
    - Lines from firewall to DMZ servers
 
-
 8. **Add Core Switch**:
 
    - Switch symbol: "Core-SW-01" (10.1.0.2)
    - Lines from firewall to core switch
-
 
 9. **Add VLANs/Subnets** (as separate boxes branching from switch):
 
@@ -1389,19 +1308,16 @@ Every network diagram should include:
    - Blue box: "Server VLAN 20 (10.1.20.0/24)"
    - Green box: "Management VLAN 100 (192.168.100.0/24)"
 
-
 10. **Add Network Services** (as server icons):
 
     - DNS Server (10.1.0.10)
     - DHCP Server (10.1.0.20)
     - NTP Server (10.1.0.30)
 
-
 11. **Add Cloud Resources** (if applicable):
 
     - AWS VPC symbol: "AWS Production VPC (10.100.0.0/16)"
     - VPN tunnel line from firewall to AWS VPC
-
 
 12. **Add Legend** (bottom-left corner):
     ```
@@ -1425,13 +1341,11 @@ Every network diagram should include:
     - Ensure lines are orthogonal (straight, 90-degree angles)
     - Add labels to all connections (interface names, bandwidths)
 
-
 14. **Export**:
 
     - File → Export as → PNG (for presentations)
     - File → Export as → PDF (for documentation)
     - Save source file: `.drawio` format (for future editing)
-
 
 **Example Logical Topology** (text-based for reference):
 
@@ -1467,7 +1381,6 @@ Every network diagram should include:
 - A security zone is a logical grouping of network segments with similar trust levels
 - Traffic between zones is controlled by firewalls/ACLs
 
-
 **Common Zones**:
 1. **Internet/Untrusted**: Public internet, partner networks
 2. **DMZ**: Public-facing services (web, email, DNS)
@@ -1487,7 +1400,6 @@ Every network diagram should include:
    - Use colored rectangles to represent zones
    - Color-code per standards (DMZ = Orange, Internal = Blue, etc.)
 
-
 2. **Add Zone Labels**:
 
    - Zone Name: "DMZ"
@@ -1495,12 +1407,10 @@ Every network diagram should include:
    - Networks: "172.16.10.0/24"
    - Purpose: "Public-facing web services"
 
-
 3. **Add Firewalls Between Zones**:
 
    - Firewall icon at zone boundary
    - Label with firewall name and management IP
-
 
 4. **Add Inter-Zone Traffic Policies**:
 
@@ -1508,7 +1418,6 @@ Every network diagram should include:
    - Green arrow = Allowed
    - Red X = Denied
    - Label arrows with protocols/ports (e.g., "HTTPS (443)")
-
 
 5. **Add Legend**:
    ```
@@ -1565,7 +1474,6 @@ Every network diagram should include:
 - **DHCP Scope Documentation**: DHCP ranges within each subnet
 - **Reserved IP Addresses**: Statically assigned IPs (devices, services)
 
-
 ### Create Subnet Allocation Table
 
 **Format**: Excel/Google Sheets or NetBox.
@@ -1601,7 +1509,6 @@ Every network diagram should include:
    - Site Name: "Corporate HQ"
    - Site Name: "Branch Office A"
 
-
 4. **Add IP Prefixes** (subnets):
 
    - IPAM → Prefixes → Add
@@ -1610,14 +1517,12 @@ Every network diagram should include:
    - Site: Corporate HQ
    - Description: User Network
 
-
 5. **Add IP Addresses**:
 
    - IPAM → IP Addresses → Add
    - IP Address: 10.1.10.10
    - Status: Active
    - Description: Printer 1
-
 
 6. **Add Devices**:
 
@@ -1627,11 +1532,9 @@ Every network diagram should include:
    - Site: Corporate HQ
    - Primary IP: 192.168.100.2
 
-
 7. **Associate IPs with Devices**:
 
    - Go to device → Interfaces → Assign IP addresses to interfaces
-
 
 **NetBox API** (for automation):
 ```bash
@@ -1721,7 +1624,6 @@ d2 network_topology.d2 network_topology.svg
 - Easy to update (edit text file, regenerate)
 - Can be automated (generate from network discovery data)
 
-
 ### Using Mermaid (GitHub/Markdown-Friendly)
 
 **Example Mermaid Diagram** (in Markdown file):
@@ -1757,7 +1659,6 @@ graph TD
 - ✅ Firewall rule changes (affecting inter-zone traffic)
 - ✅ New network segment added (new office, new cloud VPC)
 - ✅ Significant configuration changes (routing protocol changes, VPN tunnels)
-
 
 **Update Timeline**: Within **5 business days** of network change.
 
@@ -1798,7 +1699,6 @@ graph TD
 - Document version in filename: `Network_Topology_v1.2_2026-01-08.pdf`
 - Maintain change log in separate document
 
-
 ---
 
 # Automation Opportunities
@@ -1810,7 +1710,6 @@ graph TD
 - **NetBox**: Generate topology diagrams from device relationships
 - **Network Weathermap**: Auto-generate network maps from monitoring data
 - **Commercial tools**: SolarWinds Network Topology Mapper, NetBrain
-
 
 **Example: Parse Cisco Config to Generate Diagram**:
 
@@ -1907,18 +1806,15 @@ d2 switch_topology.d2 switch_topology.svg
 - Discovered devices → added to topology diagrams
 - Discovered IP ranges → added to IPAM
 
-
 ## Integration with IMP-S5 (Segmentation Implementation)
 
 - Security zone diagrams inform segmentation implementation
 - Segmentation changes → update security zone diagrams
 
-
 ## Integration with Change Management
 
 - Network changes (RFC) → trigger documentation updates
 - Documentation updates reviewed and approved as part of RFC process
-
 
 ---
 
@@ -1937,7 +1833,6 @@ d2 switch_topology.d2 switch_topology.svg
 - [ ] Centralized storage (SharePoint, Confluence, Git)
 - [ ] Access controls configured (only authorized personnel can edit)
 
-
 ---
 
 # Common Pitfalls and Solutions
@@ -1952,7 +1847,6 @@ d2 switch_topology.d2 switch_topology.svg
 - Automated alerts when devices are added (NAC systems can notify)
 - Quarterly documentation review (verify against actual network state)
 
-
 ## Pitfall: Diagrams Are Too Complex
 
 **Cause**: Trying to show everything on one diagram.
@@ -1963,7 +1857,6 @@ d2 switch_topology.d2 switch_topology.svg
 - Create multiple diagrams (logical, physical, security zones)
 - Focus each diagram on specific audience (executive vs. engineer)
 
-
 ## Pitfall: Inconsistent Symbols/Colors
 
 **Cause**: Multiple people create diagrams without standards.
@@ -1973,7 +1866,6 @@ d2 switch_topology.d2 switch_topology.svg
 - Establish and publish documentation standards (Section 4.1.2)
 - Provide templates (Visio/draw.io templates with pre-defined symbols/colors)
 - Peer review all new diagrams before publication
-
 
 ---
 
@@ -1989,7 +1881,6 @@ d2 switch_topology.d2 switch_topology.svg
 - [ ] Firewall rule documentation (separate document, but related)
 - [ ] Physical topology diagram (for physical security assessment)
 
-
 ## Documentation Storage and Access
 
 **Centralized Storage**:
@@ -1997,13 +1888,11 @@ d2 switch_topology.d2 switch_topology.svg
 - Store in: SharePoint, Confluence, Git repository, ISMS document repository
 - Path: `ISMS/Network_Security/Documentation/`
 
-
 **Access Controls**:
 
 - View: All IT staff
 - Edit: Network architects, network engineers only
 - Approve: Network manager, security manager
-
 
 ---
 
@@ -2015,12 +1904,10 @@ d2 switch_topology.d2 switch_topology.svg
 - **Diagram Accuracy**: % of devices in diagrams vs. actual network (target: 100%)
 - **Update Compliance**: % of network changes with documentation updates (target: 100%)
 
-
 ## Periodic Review
 
 - **Quarterly**: Verify diagrams match actual network state
 - **Annually**: Full documentation refresh (regenerate all diagrams from scratch)
-
 
 ---
 
@@ -2039,7 +1926,6 @@ See Section 4.5.1 for detailed example.
 - AWS: https://aws.amazon.com/architecture/icons/
 - Azure: https://docs.microsoft.com/azure/architecture/icons/
 - GCP: https://cloud.google.com/icons
-
 
 ## Documentation Review Checklist
 

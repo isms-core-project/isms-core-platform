@@ -43,7 +43,6 @@
 - ISO/IEC 27002:2022 Control A.5.25
 - NIST SP 800-61 Rev. 2 Section 3.2 (Detection and Analysis)
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -64,14 +63,12 @@ This assessment evaluates [Organization]'s **incident detection and classificati
 - Detection coverage gaps
 - Mean Time to Detect (MTTD) and Mean Time to Triage (MTTT) metrics
 
-
 **What This Assessment Does NOT Cover:**
 
 - Incident management governance (see S1 - Framework Assessment)
 - Response execution and containment (see S3 - Response Assessment)
 - Forensic evidence collection (see S4 - Forensic Assessment)
 - Post-incident learning (see S5 - Learning Assessment)
-
 
 **Assessment Output:**
 
@@ -81,7 +78,6 @@ This assessment evaluates [Organization]'s **incident detection and classificati
 - Classification consistency evaluation
 - Detection effectiveness metrics
 - Gap analysis and tuning recommendations
-
 
 ## Why This Matters
 
@@ -100,7 +96,6 @@ This assessment evaluates [Organization]'s **incident detection and classificati
 - **Regulatory Non-Compliance:** Failure to detect data breaches within notification windows
 - **Resource Waste:** Investigating false positives wastes expensive analyst time
 
-
 **This Assessment Addresses:**
 
 - Do we detect security incidents across all threat categories?
@@ -108,7 +103,6 @@ This assessment evaluates [Organization]'s **incident detection and classificati
 - Can we classify incidents consistently and accurately?
 - Do we triage alerts quickly enough to enable timely response?
 - Are severity assignments appropriate and actionable?
-
 
 ## Who Should Complete This Assessment
 
@@ -122,7 +116,6 @@ This assessment evaluates [Organization]'s **incident detection and classificati
 - Detection rule development and tuning processes
 - Integration with monitoring infrastructure (A.8.16)
 
-
 **Support Roles:**
 
 - **Detection Engineers:** Rule development, tuning, threat hunting
@@ -131,14 +124,12 @@ This assessment evaluates [Organization]'s **incident detection and classificati
 - **IT Operations:** Log sources, network visibility, endpoint coverage
 - **CSIRT Manager:** Incident escalation criteria, severity thresholds
 
-
 **Collaboration Required:**
 
 - This is NOT a solo assessment
 - Requires input from SOC analysts (frontline perspective)
 - Requires metrics data (SIEM, ticketing system)
 - Review sessions with detection team and CSIRT
-
 
 ## Time Estimate
 
@@ -168,13 +159,11 @@ This assessment evaluates [Organization]'s **incident detection and classificati
   - Prioritize tuning requirements
   - Develop improvement recommendations
 
-
 **Complexity Factors:**
 
 - **Simple (6 hours):** Mature SOC, comprehensive SIEM, documented procedures
 - **Moderate (8 hours):** Growing SOC, some detection gaps, basic metrics
 - **Complex (10+ hours):** Immature SOC, limited detection, inconsistent classification
-
 
 ## Connection to Policy
 
@@ -188,7 +177,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - Automated alerting with defined thresholds
 - Integration with threat intelligence feeds
 
-
 **Classification Requirements:**
 
 - Consistent use of 11 primary incident categories (per ISMS-REF-A.5.24-28 Section 1)
@@ -196,7 +184,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - Documented classification procedures
 - Classification accuracy tracking
 - Reclassification process for evolving incidents
-
 
 **Triage Requirements:**
 
@@ -206,7 +193,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - False positive handling procedures
 - Analyst training on triage methodology
 
-
 **Metrics Requirements:**
 
 - Mean Time to Detect (MTTD) tracked monthly
@@ -214,7 +200,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - False positive rate monitored and trended
 - Detection coverage assessed quarterly
 - Alert volume and handling capacity tracked
-
 
 **Policy Authority:** Chief Information Security Officer (CISO)  
 **Compliance Status:** Mandatory for all [Organization] security incidents
@@ -232,7 +217,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - User reporting mechanisms (A.6.8 integration)
 - Threat intelligence integration
 
-
 ✅ **Alert Handling:**
 
 - Triage procedures and workflows
@@ -241,7 +225,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - Queue management
 - Analyst training
 
-
 ✅ **Classification & Severity:**
 
 - Category assignment consistency
@@ -249,14 +232,12 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - Reclassification procedures
 - Correlation of related events
 
-
 ✅ **Detection Effectiveness:**
 
 - False positive/negative rates
 - MTTD and MTTT metrics
 - Detection coverage by threat type
 - Alert quality assessment
-
 
 **Excluded from This Assessment:**
 
@@ -276,7 +257,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
    - ISMS-REF-A.5.24-28 Section 1 (Incident Classification Taxonomy)
    - ISMS-IMP-A.8.16 (Security Monitoring Assessment - if available)
 
-
 2. ✅ **Gather Documentation:**
 
    - SIEM rule catalog and alert configurations
@@ -285,7 +265,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
    - Severity assignment criteria
    - SOC playbooks for common incident types
    - Detection coverage matrix (threat categories mapped to detection tools)
-
 
 3. ✅ **Extract Metrics (Last 90 Days):**
 
@@ -297,7 +276,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
    - MTTT (time from alert to triage/classification)
    - Incidents by category and severity
 
-
 4. ✅ **Identify Stakeholders:**
 
    - SOC Manager (primary assessor)
@@ -306,12 +284,10 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
    - Threat Intelligence Analyst (IOC integration)
    - CSIRT Manager (escalation, severity validation)
 
-
 5. ✅ **Prepare Evidence Folder:**
 
    - Create folder: `/Evidence/A.5.24-28/S2_Detection/`
    - Collect: SIEM rule exports, alert reports, classification examples, metrics dashboards
-
 
 ---
 
@@ -367,7 +343,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - Detection effectiveness metrics definitions
 - Color coding and validation rules
 
-
 **Sheet 2: Detection Mechanisms**
 
 - SIEM rule inventory and coverage
@@ -377,7 +352,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - User reporting integration
 - Threat intelligence integration
 
-
 **Sheet 3: Alert Handling**
 
 - Triage procedures completeness
@@ -385,7 +359,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - Queue management processes
 - Escalation triggers and workflows
 - Analyst training assessment
-
 
 **Sheet 4: Classification & Severity**
 
@@ -395,7 +368,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - Category/severity correlation matrix
 - Classification training adequacy
 
-
 **Sheet 5: Detection Effectiveness**
 
 - MTTD metrics (overall and by severity)
@@ -404,14 +376,12 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - Alert volume and handling capacity
 - Detection coverage by threat category
 
-
 **Sheet 6: Gap Analysis**
 
 - Detection blind spots identification
 - Alert tuning requirements
 - Procedure gaps and improvements
 - Prioritization and remediation
-
 
 **Sheet 7: Evidence Register**
 
@@ -420,7 +390,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - Classification examples
 - Playbook documentation
 
-
 **Sheet 8: Dashboard**
 
 - Detection effectiveness summary
@@ -428,12 +397,10 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - Classification accuracy
 - Top detection gaps
 
-
 **Sheet 9: Approval Sign-Off**
 
 - SOC Manager approval
 - CISO review and approval
-
 
 ---
 
@@ -455,7 +422,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - **Format:** Free text (e.g., "Splunk Enterprise", "Microsoft Sentinel", "QRadar")
 - **Evidence:** SIEM platform documentation, license information
 
-
 **Q2: SIEM_Rule_Count**
 
 - **Question:** How many active detection rules/alerts are configured in the SIEM?
@@ -466,13 +432,11 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
   - Large/complex: 500-2000+ rules
 - **Evidence:** SIEM rule catalog export
 
-
 **Q3: SIEM_Rule_Categories**
 
 - **Question:** Which threat categories have SIEM detection rules? (Select all: Malware/Unauthorized Access/Data Breach/DoS/Social Engineering/Web Attack/Network Attack/Endpoint/Physical/Config-Patch/Other)
 - **Format:** Checkbox (multiple selections)
 - **Target:** Coverage across all 11 primary categories (ISMS-REF-A.5.24-28 Section 1)
-
 
 **Q4: SIEM_Tuning_Frequency**
 
@@ -480,7 +444,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - **Dropdown:** Weekly / Monthly / Quarterly / Annually / Ad-Hoc Only / Never
 - **Best Practice:** Monthly minimum, weekly for high-noise rules
 - **Gap if "Annually" or "Never":** HIGH - Stale rules increase false positive rate
-
 
 **Q5: SIEM_Custom_Rules**
 
@@ -492,7 +455,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
   - >50%: Strong custom detection capability
 - **Note:** No right answer, depends on threat landscape and resources
 
-
 **Q6: SIEM_Threat_Intel_Integration**
 
 - **Question:** Is threat intelligence integrated into SIEM for automated alerting?
@@ -501,7 +463,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
   - IOC feeds (malicious IPs, domains, file hashes) auto-enriched
   - SIEM alerts when log event matches IOC
 - **Evidence:** Threat intel feed configuration, example enriched alerts
-
 
 **Q7: SIEM_Alert_Volume**
 
@@ -513,14 +474,12 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
   - >1000/day: High volume, assess if manageable or needs tuning
 - **Cross-Check:** Compare to analyst capacity (Q20)
 
-
 **Q8: SIEM_Log_Sources**
 
 - **Question:** How many log sources feed the SIEM?
 - **Format:** Number
 - **Cross-Reference:** Should align with ISMS-IMP-A.8.16 (Monitoring Assessment)
 - **Evidence:** SIEM log source inventory
-
 
 ---
 
@@ -535,7 +494,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
   - XDR: Extended (endpoints + network + cloud + email)
 - **Evidence:** EDR/XDR platform documentation, deployment scope
 
-
 **Q10: EDR_Coverage**
 
 - **Question:** What percentage of endpoints have EDR/XDR agent deployed?
@@ -543,13 +501,11 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - **Target:** >95% for Critical/High systems, >90% overall
 - **Gap if <90%:** HIGH - Incomplete endpoint visibility
 
-
 **Q11: EDR_Alert_Types**
 
 - **Question:** What types of EDR alerts are enabled? (Select all: Malware Detection/Suspicious Behavior/Lateral Movement/Privilege Escalation/Data Exfiltration/Persistence/Other)
 - **Format:** Checkbox (multiple selections)
 - **Best Practice:** Enable all applicable alert types, tune to reduce noise
-
 
 **Q12: EDR_Automated_Response**
 
@@ -557,14 +513,12 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - **Dropdown:** Yes - Fully Automated / Yes - Semi-Automated (Analyst Approval) / Manual Only
 - **Trade-off:** Automation speeds response but risks false positive impact
 
-
 **Q13: EDR_Forensic_Data_Retention**
 
 - **Question:** How long does EDR retain forensic data (process execution, network connections, file activity)?
 - **Dropdown:** 30 days / 60 days / 90 days / 180 days / 1 year+ / Not Defined
 - **Best Practice:** 90 days minimum (supports investigation of delayed detection)
 - **Evidence:** EDR retention policy configuration
-
 
 ---
 
@@ -576,13 +530,11 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - **Dropdown:** Yes - IPS (Blocking) / Yes - IDS (Alerting Only) / No
 - **Note:** IPS blocks threats, IDS only alerts (analyst investigates)
 
-
 **Q15: IDS_IPS_Coverage**
 
 - **Question:** Where is IDS/IPS deployed? (Select all: Network Perimeter/Internal Network Segments/Data Center/Cloud Environments/Not Applicable)
 - **Format:** Checkbox
 - **Best Practice:** Perimeter + critical internal segments
-
 
 **Q16: IDS_IPS_Signature_Updates**
 
@@ -591,14 +543,12 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - **Best Practice:** Daily automated updates
 - **Gap if "Monthly" or less:** MEDIUM - Delayed protection against new threats
 
-
 **Q17: Network_Detection_Response_NDR**
 
 - **Question:** Is Network Detection and Response (NDR) or Network Traffic Analysis (NTA) deployed?
 - **Dropdown:** Yes / No
 - **NDR/NTA:** ML-based network threat detection (east-west traffic, anomaly detection)
 - **Evidence:** NDR platform documentation, deployment scope
-
 
 ---
 
@@ -611,7 +561,6 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - **Cross-Reference:** ISMS-IMP-A.5.24-28.S1 (Framework Assessment) Q106-Q108
 - **Evidence:** User reporting process documentation
 
-
 **Q19: User_Reports_Volume**
 
 - **Question:** What is the average monthly volume of user-reported security events?
@@ -621,13 +570,11 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
   - Moderate (10-50/month): Healthy user awareness
   - Very high (>100/month): May need better user training (reduce noise)
 
-
 **Q20: DLP_Alerts**
 
 - **Question:** Does Data Loss Prevention (DLP) generate security alerts?
 - **Dropdown:** Yes - Integrated with Incident Management / Yes - Separate Process / No DLP
 - **Integration:** DLP alerts should feed incident management for data exfiltration incidents
-
 
 **Q21: CASB_Alerts**
 
@@ -635,14 +582,12 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.2 (Incident Assessmen
 - **Dropdown:** Yes - Integrated / Yes - Separate Process / No CASB / N/A (No Cloud)
 - **Use Case:** Detect cloud app misuse, shadow IT, data exfiltration via cloud
 
-
 **Q22: Honeypots_Deception**
 
 - **Question:** Are honeypots or deception technology deployed for threat detection?
 - **Dropdown:** Yes / No
 - **Purpose:** High-fidelity detection (any activity = malicious)
 - **Evidence:** Honeypot deployment documentation
-
 
 ---
 
@@ -656,7 +601,6 @@ For each of the 11 primary threat categories, assess:
 - **Primary Detection Method:** SIEM / EDR / IDS/IPS / NDR / User Reporting / Multiple / None
 - **Coverage Quality:** Good / Fair / Poor
 
-
 **Q23: Category_1_Malware_Detection**
 
 - **Category:** Malware (Ransomware, Trojan, Worm, Spyware, Cryptojacking, Adware)
@@ -664,56 +608,45 @@ For each of the 11 primary threat categories, assess:
 - **Primary Detection Method:** Dropdown
 - **Coverage Quality:** Dropdown (Good = multiple layers, Fair = single layer, Poor = gaps)
 
-
 **Q24: Category_2_Unauthorized_Access_Detection**
 
 - **Category:** Unauthorized Access (Compromised Credentials, Brute Force, Privilege Escalation, Insider Threat, Supply Chain)
-
 
 **Q25: Category_3_Data_Breach_Detection**
 
 - **Category:** Data Breach/Exfiltration (Unauthorized Access, Exfiltration, Accidental Loss, Privacy Breach)
 
-
 **Q26: Category_4_DoS_Detection**
 
 - **Category:** Denial of Service (Volumetric, Application-Layer, Resource Exhaustion)
-
 
 **Q27: Category_5_Social_Engineering_Detection**
 
 - **Category:** Social Engineering (Phishing, Vishing, Smishing, BEC, Physical)
 
-
 **Q28: Category_6_Web_Attack_Detection**
 
 - **Category:** Web Application Attack (SQLi, XSS, Auth Bypass, API Abuse, File Upload)
-
 
 **Q29: Category_7_Network_Attack_Detection**
 
 - **Category:** Network-Based Attack (MITM, Scanning, Protocol Exploitation, Rogue Device)
 
-
 **Q30: Category_8_Endpoint_Compromise_Detection**
 
 - **Category:** Endpoint Compromise (Laptop/Workstation, Mobile, Server, IoT/OT)
-
 
 **Q31: Category_9_Physical_Security_Detection**
 
 - **Category:** Physical Security (Theft/Loss, Unauthorized Access, Hardware Tampering)
 
-
 **Q32: Category_10_Config_Patch_Detection**
 
 - **Category:** Configuration/Patch (Misconfiguration, Unpatched Vulnerability, Shadow IT)
 
-
 **Q33: Category_11_Other_Detection**
 
 - **Category:** Other (Policy Violation, False Positive, Non-Incident Event)
-
 
 ---
 
@@ -734,7 +667,6 @@ For each of the 11 primary threat categories, assess:
 - **Comprehensive:** Procedures for each severity, decision trees, escalation triggers
 - **Evidence:** Triage procedure document, SOC runbook
 
-
 **Q35: Triage_SLA_Defined**
 
 - **Question:** Are triage time SLAs defined for each severity level?
@@ -746,7 +678,6 @@ For each of the 11 primary threat categories, assess:
   - Low: 24 hours
 - **Evidence:** SLA documentation
 
-
 **Q36: Triage_SLA_Compliance**
 
 - **Question:** What percentage of alerts are triaged within SLA? (Last 90 days)
@@ -755,13 +686,11 @@ For each of the 11 primary threat categories, assess:
 - **Gap if <80%:** HIGH - Slow triage delays response
 - **Evidence:** Ticketing system SLA compliance report
 
-
 **Q37: Triage_Queue_Management**
 
 - **Question:** How are alerts prioritized in the triage queue?
 - **Dropdown:** Automated (Severity-Based) / Manual (Analyst Discretion) / FIFO (First In First Out) / No Defined Process
 - **Best Practice:** Automated severity-based prioritization with analyst override
-
 
 **Q38: Triage_Shift_Handoff**
 
@@ -769,20 +698,17 @@ For each of the 11 primary threat categories, assess:
 - **Dropdown:** Yes - Formal Process / Informal / No
 - **Risk if "Informal" or "No":** Alerts dropped during handoff, continuity lost
 
-
 **Q39: Triage_Training**
 
 - **Question:** Do all SOC analysts receive triage procedure training?
 - **Dropdown:** Yes - Regular / Yes - Onboarding Only / No
 - **Best Practice:** Onboarding + annual refresher + on-the-job mentoring
 
-
 **Q40: Triage_Tools**
 
 - **Question:** What tools do analysts use for alert triage? (Select all: SIEM/Ticketing System/EDR Console/Threat Intel Platform/SOAR/Other)
 - **Format:** Checkbox
 - **Best Practice:** Integrated workflow (SIEM alert → auto-create ticket → enrich with threat intel)
-
 
 ---
 
@@ -794,13 +720,11 @@ For each of the 11 primary threat categories, assess:
 - **Dropdown:** Yes - Comprehensive / Yes - Limited / No
 - **Evidence:** Playbook library (SOAR platform or document repository)
 
-
 **Q42: Playbook_Coverage**
 
 - **Question:** Which incident categories have documented playbooks? (Select all: Malware/Unauthorized Access/Data Breach/DoS/Social Engineering/Web Attack/Network Attack/Endpoint/Physical/Config-Patch/Other)
 - **Format:** Checkbox
 - **Target:** Playbooks for top 5-7 incident categories (based on historical volume)
-
 
 **Q43: Playbook_Format**
 
@@ -808,13 +732,11 @@ For each of the 11 primary threat categories, assess:
 - **Dropdown:** SOAR Automated / Written Documents / Flowcharts / Checklist / Not Documented
 - **Best Practice:** SOAR automated (fastest, most consistent) > Written/Flowcharts
 
-
 **Q44: Playbook_Update_Frequency**
 
 - **Question:** How often are playbooks reviewed and updated?
 - **Dropdown:** Quarterly / Semi-Annually / Annually / After Major Incidents / Never
 - **Best Practice:** Annually + after major incidents (lessons learned)
-
 
 **Q45-Q48:** **Example Playbook Assessment (4 most common incident types)**
 
@@ -824,26 +746,21 @@ For each common incident type:
 - **Playbook Completeness:** Comprehensive / Basic / Missing Steps
 - **Analyst Feedback:** Effective / Needs Improvement / Not Used
 
-
 **Q45: Playbook_Malware**
 
 - **Incident Type:** Malware/Ransomware
-
 
 **Q46: Playbook_Phishing**
 
 - **Incident Type:** Phishing/BEC
 
-
 **Q47: Playbook_Unauthorized_Access**
 
 - **Incident Type:** Unauthorized Access/Compromised Credentials
 
-
 **Q48: Playbook_Data_Exfiltration**
 
 - **Incident Type:** Data Exfiltration/Breach
-
 
 ---
 
@@ -860,13 +777,11 @@ For each common incident type:
   - Requires forensic investigation
   - Regulatory notification may be required
 
-
 **Q50: Escalation_Process**
 
 - **Question:** How are incidents escalated from SOC to CSIRT?
 - **Dropdown:** Automated (Ticketing System) / Manual (Email/Phone) / Informal / No Process
 - **Best Practice:** Automated escalation via ticketing system with notifications
-
 
 **Q51: CSIRT_Handoff_Documentation**
 
@@ -879,7 +794,6 @@ For each common incident type:
   - Evidence collected so far
   - Recommended next steps
 
-
 **Q52: False_Positive_Handling**
 
 - **Question:** Is there a documented process for handling false positives?
@@ -890,13 +804,11 @@ For each common incident type:
   - Rule tuned or suppression created
   - Feedback loop tracked
 
-
 **Q53: False_Positive_Tuning_Loop**
 
 - **Question:** Is there a feedback loop from false positive identification to rule tuning?
 - **Dropdown:** Yes - Systematic / Informal / No
 - **Best Practice:** Monthly false positive review → rule tuning → measure improvement
-
 
 ---
 
@@ -910,7 +822,6 @@ For each common incident type:
   - Alert volume / Analyst capacity
   - Target: <50 alerts per analyst per shift (allows proper investigation time)
 
-
 **Q55: Analyst_Tier_Structure**
 
 - **Question:** Is there a tiered analyst structure (Tier 1, Tier 2, Tier 3)?
@@ -920,13 +831,11 @@ For each common incident type:
   - Tier 2: Deep investigation, escalated incidents
   - Tier 3: Threat hunting, complex investigations
 
-
 **Q56: Analyst_Training_Frequency**
 
 - **Question:** How often do SOC analysts receive training on triage and investigation?
 - **Dropdown:** Quarterly / Semi-Annually / Annually / Onboarding Only / Never
 - **Best Practice:** Quarterly (threat landscape evolves rapidly)
-
 
 **Q57: Analyst_Burnout_Assessment**
 
@@ -938,13 +847,11 @@ For each common incident type:
   - Decreased alert handling quality
   - Staff feedback negative
 
-
 **Q58: Analyst_Tool_Training**
 
 - **Question:** Do analysts receive training on all detection and investigation tools?
 - **Dropdown:** Yes - Comprehensive / Partial / No
 - **Tools:** SIEM, EDR, Ticketing, Threat Intel Platform, SOAR, Forensic Tools
-
 
 ---
 
@@ -964,7 +871,6 @@ For each common incident type:
 - **Dropdown:** Yes - Fully Adopted / Partially Adopted / No - Different Taxonomy
 - **Note:** Consistency with reference guide enables better tracking and comparison
 
-
 **Q60: Classification_Procedure_Documented**
 
 - **Question:** Is the incident classification procedure documented?
@@ -975,20 +881,17 @@ For each common incident type:
   - When to use multiple categories
   - Reclassification triggers
 
-
 **Q61: Classification_Training**
 
 - **Question:** Do analysts receive training on incident classification?
 - **Dropdown:** Yes - Regular / Yes - Onboarding Only / No
 - **Best Practice:** Onboarding + annual refresher + classification examples
 
-
 **Q62: Classification_Consistency_Check**
 
 - **Question:** Is classification consistency periodically reviewed (e.g., QA sampling)?
 - **Dropdown:** Yes - Monthly / Yes - Quarterly / Yes - Annually / No
 - **QA Process:** Sample 20-30 incidents, verify classification accuracy, provide feedback
-
 
 **Q63: Classification_Accuracy**
 
@@ -997,20 +900,17 @@ For each common incident type:
 - **Target:** >90% accuracy
 - **Gap if <80%:** MEDIUM - Inconsistent classification affects metrics and response
 
-
 **Q64: Reclassification_Process**
 
 - **Question:** Is there a documented process for reclassifying incidents as more information becomes available?
 - **Dropdown:** Yes / No
 - **Example:** Initial classification "Malware" reclassified to "Data Breach" upon discovering exfiltration
 
-
 **Q65: Multi_Category_Incidents**
 
 - **Question:** How are incidents with multiple categories handled (e.g., Phishing + Malware)?
 - **Dropdown:** Primary + Secondary Categories / Multiple Incident Tickets / Single Best-Fit Category / No Process
 - **Best Practice:** Primary + Secondary categories in single ticket
-
 
 ---
 
@@ -1022,7 +922,6 @@ For each common incident type:
 - **Dropdown:** 4 (Critical/High/Medium/Low) / 3 (High/Medium/Low) / 5 (Critical/High/Medium/Low/Info) / Other
 - **Recommendation:** 4 levels (aligns with ISMS-POL-A.5.24-28)
 
-
 **Q67: Severity_Criteria_Documented**
 
 - **Question:** Are severity assignment criteria documented?
@@ -1033,24 +932,20 @@ For each common incident type:
   - Regulatory implications (breach notification required?)
   - Recoverability (ease of containment and recovery)
 
-
 **Q68: Critical_Severity_Criteria**
 
 - **Question:** What defines a "Critical" severity incident? (Select all: Data Breach (Restricted/Confidential)/Ransomware/Widespread System Outage/Regulatory Notification Required/Executive/C-Suite Compromise/Other)
 - **Format:** Checkbox
-
 
 **Q69: Severity_Assignment_Training**
 
 - **Question:** Do analysts receive training on severity assignment?
 - **Dropdown:** Yes - Regular / Yes - Onboarding Only / No
 
-
 **Q70: Severity_Consistency_QA**
 
 - **Question:** Is severity assignment consistency periodically reviewed?
 - **Dropdown:** Yes - Monthly / Yes - Quarterly / Yes - Annually / No
-
 
 **Q71: Severity_Upgrade_Process**
 
@@ -1058,12 +953,10 @@ For each common incident type:
 - **Dropdown:** Yes - Documented / Informal / No
 - **Example:** Initial "Medium" upgraded to "High" when scope expands
 
-
 **Q72: Severity_Downgrade_Process**
 
 - **Question:** Is there a process for downgrading severity (e.g., false alarm, contained quickly)?
 - **Dropdown:** Yes - Documented / Informal / No
-
 
 **Q73-Q75:** **Severity Distribution Analysis (Last 90 Days)**
 
@@ -1073,18 +966,15 @@ For each common incident type:
 - **Format:** Percentage
 - **Typical Distribution:** 1-5% Critical, 10-20% High, 40-50% Medium, 30-40% Low
 
-
 **Q74: Severity_Distribution_High**
 
 - **Question:** What percentage of incidents were classified as High?
 - **Format:** Percentage
 
-
 **Q75: Severity_Distribution_Medium**
 
 - **Question:** What percentage of incidents were classified as Medium?
 - **Format:** Percentage
-
 
 **Note:** Low severity calculated as 100% - (Critical + High + Medium)
 
@@ -1102,7 +992,6 @@ Assess the top incident categories by volume and their typical severity:
 - **Incident Count:** Number
 - **Typical Severity:** Critical / High / Medium / Low
 - **Example:** "Malware - 45 incidents - Typical Severity: High"
-
 
 **Q77-Q83:** Repeat for Top Categories 2-8
 
@@ -1127,7 +1016,6 @@ Assess the top incident categories by volume and their typical severity:
 - **MTTD Definition:** Time from actual event occurrence to alert generation
 - **Note:** Requires correlation between event timestamp and alert timestamp
 
-
 **Q85: MTTD_Overall**
 
 - **Question:** What is the overall MTTD (all incidents, last 90 days)?
@@ -1138,13 +1026,11 @@ Assess the top incident categories by volume and their typical severity:
   - 4-24 hours: Fair
   - >24 hours: Poor (long dwell time before detection)
 
-
 **Q86: MTTD_Critical**
 
 - **Question:** What is the MTTD for Critical severity incidents?
 - **Format:** Duration
 - **Target:** <15 minutes (near real-time detection)
-
 
 **Q87: MTTD_High**
 
@@ -1152,13 +1038,11 @@ Assess the top incident categories by volume and their typical severity:
 - **Format:** Duration
 - **Target:** <1 hour
 
-
 **Q88: MTTD_Improvement_Trend**
 
 - **Question:** Is MTTD improving, stable, or worsening over time?
 - **Dropdown:** Improving / Stable / Worsening / Not Tracked
 - **Evidence:** MTTD trend chart (last 6-12 months)
-
 
 ---
 
@@ -1170,7 +1054,6 @@ Assess the top incident categories by volume and their typical severity:
 - **Dropdown:** Yes / No
 - **MTTT Definition:** Time from alert generation to triage completion (classification + severity assignment)
 
-
 **Q90: MTTT_Overall**
 
 - **Question:** What is the overall MTTT (all alerts, last 90 days)?
@@ -1181,13 +1064,11 @@ Assess the top incident categories by volume and their typical severity:
   - 2-8 hours: Fair
   - >8 hours: Poor
 
-
 **Q91: MTTT_Critical**
 
 - **Question:** What is the MTTT for Critical alerts?
 - **Format:** Duration
 - **Target:** <15 minutes (per ISMS-POL-A.5.24-28 SLA)
-
 
 **Q92: MTTT_High**
 
@@ -1195,14 +1076,12 @@ Assess the top incident categories by volume and their typical severity:
 - **Format:** Duration
 - **Target:** <1 hour
 
-
 **Q93: MTTT_SLA_Compliance**
 
 - **Question:** What percentage of alerts meet MTTT SLA (per severity)?
 - **Format:** Percentage
 - **Target:** >90%
 - **Evidence:** Ticketing system SLA compliance report
-
 
 ---
 
@@ -1214,19 +1093,16 @@ Assess the top incident categories by volume and their typical severity:
 - **Dropdown:** Yes / No
 - **Importance:** High false positive rate = analyst burnout + missed real threats
 
-
 **Q95: Total_Alerts_90_Days**
 
 - **Question:** How many total alerts were generated in the last 90 days?
 - **Format:** Number
 - **Use:** Denominator for false positive rate calculation
 
-
 **Q96: False_Positives_90_Days**
 
 - **Question:** How many alerts were determined to be false positives (last 90 days)?
 - **Format:** Number
-
 
 **Q97: False_Positive_Rate**
 
@@ -1238,13 +1114,11 @@ Assess the top incident categories by volume and their typical severity:
   - 15-30%: Fair (tuning needed)
   - >30%: Poor (high noise, analyst fatigue risk)
 
-
 **Q98: False_Positive_Trend**
 
 - **Question:** Is the false positive rate improving, stable, or worsening?
 - **Dropdown:** Improving / Stable / Worsening / Not Tracked
 - **Goal:** Continuous improvement through tuning
-
 
 **Q99: Top_False_Positive_Source**
 
@@ -1252,13 +1126,11 @@ Assess the top incident categories by volume and their typical severity:
 - **Dropdown:** SIEM / EDR / IDS/IPS / NDR / User Reports / Other
 - **Action:** Prioritize tuning for top source
 
-
 **Q100: False_Positive_Tuning_Backlog**
 
 - **Question:** Is there a backlog of false positive alerts needing tuning?
 - **Dropdown:** Yes - Large Backlog / Yes - Small Backlog / No Backlog / Not Tracked
 - **Risk if "Large Backlog":** Noise continues, analyst fatigue increases
-
 
 ---
 
@@ -1269,13 +1141,11 @@ Assess the top incident categories by volume and their typical severity:
 - **Question:** How many alerts were confirmed as true positives (actual incidents) in last 90 days?
 - **Format:** Number
 
-
 **Q102: True_Positive_Rate**
 
 - **Question:** What is the true positive rate? (Auto-calculate: Q101 / Q95 × 100)
 - **Format:** Percentage (calculated)
 - **Interpretation:** Inverse of false positive rate (approximately)
-
 
 **Q103: Incident_Volume_Trend**
 
@@ -1285,20 +1155,17 @@ Assess the top incident categories by volume and their typical severity:
   - Increasing: Growing threat activity OR improved detection
   - Decreasing: Better security posture OR under-detection
 
-
 **Q104: Alert_to_Incident_Ratio**
 
 - **Question:** What is the alert-to-incident ratio? (Total Alerts / True Positives)
 - **Format:** Ratio (e.g., "10:1" means 10 alerts per actual incident)
 - **Benchmark:** Lower is better (less noise per real incident)
 
-
 **Q105: Handling_Capacity_Assessment**
 
 - **Question:** Can the SOC handle the current alert/incident volume?
 - **Dropdown:** Yes - Comfortably / Yes - At Capacity / No - Overwhelmed
 - **Cross-Check:** Alert volume vs. Analyst FTE (Q54)
-
 
 ---
 
@@ -1313,20 +1180,17 @@ Assess the top incident categories by volume and their typical severity:
   - No cloud app monitoring (shadow IT)
   - No detection for insider threat (behavioral analytics)
 
-
 **Q107: Coverage_Gap_Priority**
 
 - **Question:** Are coverage gaps prioritized for remediation?
 - **Dropdown:** Yes / No
 - **Prioritization Criteria:** Threat likelihood × Impact
 
-
 **Q108: Coverage_Improvement_Plan**
 
 - **Question:** Is there a plan to address detection coverage gaps?
 - **Dropdown:** Yes - Funded / Planned - Not Funded / No Plan
 - **Plan May Include:** New detection tools, additional rules, threat hunting capability
-
 
 ---
 
@@ -1351,7 +1215,6 @@ Assess the top incident categories by volume and their typical severity:
 - **Medium:** Moderate gap, remediate within 6-12 months
 - **Low:** Minor gap, address when feasible
 
-
 ---
 
 ## Sheet 7: Evidence Register
@@ -1369,7 +1232,6 @@ Assess the top incident categories by volume and their typical severity:
 - EDR deployment report
 - IDS/IPS signature version report
 
-
 ---
 
 ## Sheet 8: Dashboard
@@ -1384,7 +1246,6 @@ Assess the top incident categories by volume and their typical severity:
 - True Positive Rate: [%]
 - Detection Coverage: [X out of 11 categories]
 
-
 **B. Alert Handling Performance**
 
 - Total Alerts (90 days): [#]
@@ -1393,13 +1254,11 @@ Assess the top incident categories by volume and their typical severity:
 - Analyst FTE: [#]
 - Alerts per Analyst per Day: [#]
 
-
 **C. Classification Accuracy**
 
 - Classification Accuracy Rate: [%]
 - Severity Assignment Consistency: [%]
 - Reclassifications (90 days): [#]
-
 
 **D. Top Detection Gaps**
 1. [Gap description]
@@ -1417,13 +1276,11 @@ Assess the top incident categories by volume and their typical severity:
 - Overall Detection Maturity: [Score/Level]
 - Critical Gaps: [Count]
 
-
 **Approval Workflow:**
 
 - SOC Manager: [Name, Date, Signature]
 - CISO: [Name, Date, Approval Decision, Signature]
 - Next Review Date: [Date + 12 months]
-
 
 ---
 
@@ -1440,7 +1297,6 @@ MTTD = Σ(Alert Timestamp - Event Timestamp) / Number of Incidents
 
 - Event timestamp (actual malicious activity)
 - Alert timestamp (when SIEM/EDR generated alert)
-
 
 **Challenge:** Event timestamp often unknown (requires log analysis or forensics)
 
@@ -1460,7 +1316,6 @@ MTTT = Σ(Triage Complete Timestamp - Alert Timestamp) / Number of Alerts
 - Alert timestamp
 - Triage complete timestamp (when classification + severity assigned)
 
-
 **Source:** Incident ticketing system (workflow timestamps)
 
 ---
@@ -1476,7 +1331,6 @@ False Positive Rate = (False Positives / Total Alerts) × 100
 
 - Total alerts generated
 - Alerts marked as false positive
-
 
 **Best Practice:** Track by detection source (SIEM, EDR, etc.) to identify tuning priorities
 
@@ -1522,14 +1376,12 @@ Coverage = (Categories with Detection / Total Categories) × 100
 - Day 3-4: Review detection mechanisms and coverage
 - Day 5: Review triage procedures and playbooks
 
-
 **Week 2:**
 
 - Day 6-7: Complete assessment (Detection through Effectiveness sheets)
 - Day 8: Gap analysis
 - Day 9: Evidence collection
 - Day 10: Quality review and approval
-
 
 **Total:** 2 weeks (part-time) or 1 week (dedicated full-time)
 
@@ -1565,7 +1417,6 @@ Coverage = (Categories with Detection / Total Categories) × 100
 - Yellow: Medium thresholds
 - Green: Good performance
 
-
 **Data Validation:**
 
 - Dropdowns for all categorical questions
@@ -1573,10 +1424,7 @@ Coverage = (Categories with Detection / Total Categories) × 100
 - Percentage validation (0-100%)
 - Duration format guidance
 
-
 ---
-
-
 
 **END OF SPECIFICATION**
 

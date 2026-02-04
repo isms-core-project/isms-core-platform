@@ -48,7 +48,6 @@ This document provides **practical, step-by-step guidance** for testing and vali
 - Service security testing to validate service hardening
 - Continuous validation to maintain security posture
 
-
 ## Scope
 
 This guidance covers:
@@ -61,7 +60,6 @@ This guidance covers:
 - **Network Service Testing** - Testing security of DNS, DHCP, NTP, proxy, and other services
 - **Test Documentation** - Recording test procedures, results, and remediation
 
-
 ## Applicability
 
 This guidance is **technology-agnostic** with specific examples for:
@@ -72,7 +70,6 @@ This guidance is **technology-agnostic** with specific examples for:
 - Hybrid and multi-cloud architectures
 - Network security appliances (firewalls, IDS/IPS)
 
-
 ## Who Should Use This Guidance
 
 - Security teams conducting network security assessments
@@ -80,7 +77,6 @@ This guidance is **technology-agnostic** with specific examples for:
 - Network engineers testing segmentation and device hardening
 - ISMS implementers preparing for A.8.20/8.21/8.22 assessments
 - Auditors verifying network security testing processes
-
 
 ---
 
@@ -172,7 +168,6 @@ Phase 8: Test Documentation and Remediation
 - Credentials for authenticated scanning (SNMP, SSH, API access)
 - Test network or lab environment for disruptive tests
 
-
 ## Required Tools
 
 **Vulnerability Scanning**:
@@ -182,13 +177,11 @@ Phase 8: Test Documentation and Remediation
 - **OpenVAS** (open-source vulnerability scanner)
 - **Nipper** (network device configuration auditor - Cisco, Juniper, etc.)
 
-
 **Network Discovery and Reconnaissance**:
 
 - **nmap** (open-source port scanner, service detection)
 - **Masscan** (fast port scanner for large networks)
 - **Shodan** (internet-connected device search engine)
-
 
 **Penetration Testing**:
 
@@ -197,12 +190,10 @@ Phase 8: Test Documentation and Remediation
 - **Cobalt Strike** (commercial, advanced threat emulation)
 - **BloodHound** (Active Directory attack path analysis)
 
-
 **Layer 2 Attacks (VLAN Hopping)**:
 
 - **Yersinia** (layer 2 attack tool - DTP, DHCP, STP, etc.)
 - **Scapy** (packet crafting for custom attacks)
-
 
 **Traffic Analysis**:
 
@@ -210,13 +201,11 @@ Phase 8: Test Documentation and Remediation
 - **tcpdump** (command-line packet capture)
 - **tshark** (command-line Wireshark)
 
-
 **Configuration Management and Auditing**:
 
 - **RANCID** (Really Awesome New Cisco confIg Differ - config backup and comparison)
 - **Ansible** (configuration management, compliance checking)
 - **Puppet/Chef** (configuration management)
-
 
 **Cloud Security Testing**:
 
@@ -224,14 +213,12 @@ Phase 8: Test Documentation and Remediation
 - **Prowler** (AWS security best practices assessment)
 - **CloudMapper** (AWS network diagram and security analysis)
 
-
 **Network Service Testing**:
 
 - **dig** (DNS query tool)
 - **nslookup** (DNS query tool)
 - **dnsenum** (DNS enumeration)
 - **DHCPig** (DHCP exhaustion and testing)
-
 
 ## Required Skills and Knowledge
 
@@ -241,7 +228,6 @@ Phase 8: Test Documentation and Remediation
 - Layer 2 attack techniques (VLAN hopping, ARP spoofing, etc.)
 - Packet analysis (Wireshark, tcpdump)
 - Scripting (Python, Bash) for automation
-
 
 ---
 
@@ -261,25 +247,21 @@ Phase 8: Test Documentation and Remediation
    - Development/test networks (if separate)
    - Cloud networks (AWS VPCs, Azure VNets, GCP VPCs)
 
-
 2. **Identify devices in scope**:
 
    - Network devices (routers, switches, firewalls, wireless APs)
    - Network security appliances (IDS/IPS, network monitoring)
    - Load balancers, VPN concentrators
 
-
 3. **Identify services in scope**:
 
    - DNS, DHCP, NTP, proxy, RADIUS/TACACS+, SNMP, syslog
-
 
 4. **Identify exclusions** (out of scope):
 
    - Legacy systems (if can't be safely tested)
    - Third-party managed networks (if no access)
    - Production systems during business hours (if disruptive testing)
-
 
 **Example Scope Statement**:
 ```
@@ -309,7 +291,6 @@ Out of Scope: Branch Office 2 (third-party managed)
 
 - **Non-Disruptive**: Vulnerability scanning (read-only), configuration auditing, packet capture
 - **Disruptive**: Penetration testing (active exploitation), VLAN hopping attacks, DoS testing
-
 
 **Risk Management**: For disruptive tests, use test/lab environments when possible.
 
@@ -390,7 +371,6 @@ After scan completes:
    - Low: [number]
    - Info: [number]
 
-
 2. Review **Vulnerabilities** tab:
 
    - Sort by **Severity** (Critical first)
@@ -400,14 +380,12 @@ After scan completes:
      - Affected hosts
      - Solution (patch, workaround)
 
-
 3. Prioritize remediation:
 
    - **Critical**: Immediate action (within 24-48 hours)
    - **High**: Urgent action (within 7 days)
    - **Medium**: Scheduled action (within 30 days)
    - **Low**: Tracked for future remediation
-
 
 **Step 4: Generate Report**
 
@@ -429,7 +407,6 @@ Findings:
 - High: 8 (weak SNMP community strings, default credentials on 3 switches)
 - Medium: 15 (SSH protocol v1 enabled, weak SSL ciphers)
 - Low: 22 (banner message missing, unnecessary services enabled)
-
 
 Recommended Actions:
 1. Upgrade firmware on routers (Critical priority)
@@ -480,7 +457,6 @@ Open `router-audit-report.html` in browser:
   - Access control issues (overly permissive ACLs)
   
 - **Recommendations**: Specific config commands to fix issues
-
 
 **Example Nipper Findings**:
 ```
@@ -897,11 +873,9 @@ tcpdump -r dmz-internal.pcap -n
 - If native VLAN = VLAN 1 (default), outer tag is stripped by first switch, inner tag is processed by second switch
 - Attacker can access target VLAN without authorization
 
-
 **Prevention** (implemented in ISMS-IMP-A.8.20-21-22-S5):
 
 - Change native VLAN to unused VLAN (not VLAN 1)
-
 
 **Testing Procedure**:
 
@@ -928,7 +902,6 @@ sudo scapy
 - **If attack fails**: Native VLAN is NOT VLAN 1 → Control working
 - **If attack succeeds**: Native VLAN is still VLAN 1 → CRITICAL vulnerability, change native VLAN immediately
 
-
 ### Switch Spoofing (DTP) Attack Testing
 
 **Objective**: Verify prevention of VLAN hopping via DTP (Dynamic Trunking Protocol).
@@ -938,12 +911,10 @@ sudo scapy
 - Attacker sends DTP packets to negotiate trunk with switch
 - If DTP enabled and switch accepts, attacker gains access to all VLANs
 
-
 **Prevention** (implemented in ISMS-IMP-A.8.20-21-22-S5):
 
 - Disable DTP (`switchport nonegotiate`)
 - Hardcode switchport mode (`switchport mode access` or `switchport mode trunk`)
-
 
 **Testing Procedure**:
 
@@ -967,7 +938,6 @@ sudo yersinia -G   # Launch GUI
 - **If attack fails**: DTP disabled → Control working
 - **If attack succeeds**: DTP still enabled → HIGH vulnerability, disable DTP immediately
 
-
 ---
 
 ## Phase 6: Configuration Auditing
@@ -989,7 +959,6 @@ sudo yersinia -G   # Launch GUI
    - **Policy Name**: Cisco Router Hardening Compliance
    - **Audit File**: Upload custom audit file (defines checks)
    - **Credentials**: Add SSH credentials
-
 
 **Example Audit File** (Nessus .audit format):
 ```
@@ -1029,7 +998,6 @@ Nessus reports compliance status per check:
 
 - **PASSED**: Configuration matches baseline
 - **FAILED**: Configuration does not match baseline (gap identified)
-
 
 Example Output:
 ```
@@ -1247,7 +1215,6 @@ Summary:
 - Configuration Audit: 15 devices audited, 10 gaps identified
 - Service Testing: 5 services tested, 2 gaps (DNS filtering, DHCP rate limiting)
 
-
 Critical Findings:
 1. Outdated firmware on 2 routers (CVE-2023-XXXXX) - Remote code execution
 2. Database accessible from all workstations (should be restricted to web servers)
@@ -1330,7 +1297,6 @@ mysql -h 10.1.20.50 -u webapp -p
 
 0 2 * * 0 /usr/local/bin/run-nessus-scan.sh
 
-
 # run-nessus-scan.sh:
 #!/bin/bash
 python3 /opt/scripts/nessus_scan.py
@@ -1389,7 +1355,6 @@ Findings Summary:
 - Critical: {critical_findings}
 - High: {high_findings}
 
-
 Segmentation Status: {"PASS" if seg_results['status'] == 'pass' else "FAIL"}
 """
 
@@ -1411,14 +1376,12 @@ print(report)
 - Track remediation progress
 - Re-scan to verify fixes
 
-
 ## Incident Response (A.6.8)
 
 **Integration**: Testing may uncover security incidents (e.g., rogue devices, unauthorized changes).
 
 - If testing finds compromised device → trigger incident response
 - Penetration testing simulates real attacks → informs incident response playbooks
-
 
 ## Change Management (A.8.32)
 
@@ -1427,7 +1390,6 @@ print(report)
 - Unexpected config changes → investigate (authorized change or security incident?)
 - Configuration drift → submit change request to bring back to baseline
 
-
 ## Logging and Monitoring (A.8.15, A.8.16)
 
 **Integration**: Testing validates logging and monitoring effectiveness.
@@ -1435,7 +1397,6 @@ print(report)
 - Verify firewall logs capture denied traffic
 - Verify SIEM alerts on suspicious network activity
 - Testing generates test data for SIEM tuning
-
 
 ---
 
@@ -1455,7 +1416,6 @@ print(report)
 - [ ] Remediation plan developed (owner, timeline, validation)
 - [ ] Test report distributed to stakeholders
 
-
 ---
 
 # Common Pitfalls and Solutions
@@ -1467,24 +1427,20 @@ print(report)
 - **Problem**: Disruptive testing (port scanning, exploitation) affects business
 - **Solution**: Schedule testing during off-hours (nights, weekends)
 
-
 **Mistake 2: No Test Plan**
 
 - **Problem**: Ad-hoc testing, missing scope, stakeholders unaware
 - **Solution**: Always create test plan, get approvals
-
 
 **Mistake 3: Not Validating Fixes**
 
 - **Problem**: Assume fix worked, but vulnerability still present
 - **Solution**: Always re-test after remediation
 
-
 **Mistake 4: Over-Reliance on Automated Scanning**
 
 - **Problem**: Scanners miss complex issues (logic flaws, custom configs)
 - **Solution**: Combine automated + manual testing
-
 
 ## False Positives
 
@@ -1495,7 +1451,6 @@ print(report)
 - Manually verify findings (attempt exploitation)
 - Mark false positives in scanner (so they're not reported again)
 - Tune scanner settings (reduce false positive rate)
-
 
 ---
 
@@ -1508,7 +1463,6 @@ print(report)
 - Test schedule (when testing will occur)
 - Test approvals (who approved testing)
 
-
 ## Test Results Documentation
 
 - Test execution log (what was done, when, by whom)
@@ -1516,13 +1470,11 @@ print(report)
 - Evidence (screenshots, packet captures, logs)
 - Recommendations (how to fix findings)
 
-
 ## Remediation Documentation
 
 - Remediation plan (owner, timeline, status)
 - Remediation evidence (configs after fix, re-test results)
 - Lessons learned (what went wrong, how to improve)
-
 
 ---
 
@@ -1534,7 +1486,6 @@ print(report)
 - **Quarterly**: Segmentation testing, VLAN hopping testing, service testing
 - **Annual**: Full penetration testing (external + internal)
 
-
 ## Metrics to Track
 
 - **Vulnerability Trends**: Are vulnerabilities decreasing over time?
@@ -1542,7 +1493,6 @@ print(report)
 - **Critical/High Findings**: Count of severe findings (goal: 0)
 - **Segmentation Effectiveness**: Percentage of successful lateral movement tests (goal: 0%)
 - **Configuration Drift**: Count of unauthorized config changes (goal: 0)
-
 
 ## Testing Process Improvement
 
@@ -1552,7 +1502,6 @@ After each testing cycle:
 - Update test plan based on lessons learned
 - Tune tools (reduce false positives, improve coverage)
 - Train team (new techniques, tools)
-
 
 ---
 
@@ -1625,7 +1574,6 @@ This document provides **practical, step-by-step guidance** for testing and vali
 - Service security testing to validate service hardening
 - Continuous validation to maintain security posture
 
-
 ## Scope
 
 This guidance covers:
@@ -1638,7 +1586,6 @@ This guidance covers:
 - **Network Service Testing** - Testing security of DNS, DHCP, NTP, proxy, and other services
 - **Test Documentation** - Recording test procedures, results, and remediation
 
-
 ## Applicability
 
 This guidance is **technology-agnostic** with specific examples for:
@@ -1649,7 +1596,6 @@ This guidance is **technology-agnostic** with specific examples for:
 - Hybrid and multi-cloud architectures
 - Network security appliances (firewalls, IDS/IPS)
 
-
 ## Who Should Use This Guidance
 
 - Security teams conducting network security assessments
@@ -1657,7 +1603,6 @@ This guidance is **technology-agnostic** with specific examples for:
 - Network engineers testing segmentation and device hardening
 - ISMS implementers preparing for A.8.20/8.21/8.22 assessments
 - Auditors verifying network security testing processes
-
 
 ---
 
@@ -1749,7 +1694,6 @@ Phase 8: Test Documentation and Remediation
 - Credentials for authenticated scanning (SNMP, SSH, API access)
 - Test network or lab environment for disruptive tests
 
-
 ## Required Tools
 
 **Vulnerability Scanning**:
@@ -1759,13 +1703,11 @@ Phase 8: Test Documentation and Remediation
 - **OpenVAS** (open-source vulnerability scanner)
 - **Nipper** (network device configuration auditor - Cisco, Juniper, etc.)
 
-
 **Network Discovery and Reconnaissance**:
 
 - **nmap** (open-source port scanner, service detection)
 - **Masscan** (fast port scanner for large networks)
 - **Shodan** (internet-connected device search engine)
-
 
 **Penetration Testing**:
 
@@ -1774,12 +1716,10 @@ Phase 8: Test Documentation and Remediation
 - **Cobalt Strike** (commercial, advanced threat emulation)
 - **BloodHound** (Active Directory attack path analysis)
 
-
 **Layer 2 Attacks (VLAN Hopping)**:
 
 - **Yersinia** (layer 2 attack tool - DTP, DHCP, STP, etc.)
 - **Scapy** (packet crafting for custom attacks)
-
 
 **Traffic Analysis**:
 
@@ -1787,13 +1727,11 @@ Phase 8: Test Documentation and Remediation
 - **tcpdump** (command-line packet capture)
 - **tshark** (command-line Wireshark)
 
-
 **Configuration Management and Auditing**:
 
 - **RANCID** (Really Awesome New Cisco confIg Differ - config backup and comparison)
 - **Ansible** (configuration management, compliance checking)
 - **Puppet/Chef** (configuration management)
-
 
 **Cloud Security Testing**:
 
@@ -1801,14 +1739,12 @@ Phase 8: Test Documentation and Remediation
 - **Prowler** (AWS security best practices assessment)
 - **CloudMapper** (AWS network diagram and security analysis)
 
-
 **Network Service Testing**:
 
 - **dig** (DNS query tool)
 - **nslookup** (DNS query tool)
 - **dnsenum** (DNS enumeration)
 - **DHCPig** (DHCP exhaustion and testing)
-
 
 ## Required Skills and Knowledge
 
@@ -1818,7 +1754,6 @@ Phase 8: Test Documentation and Remediation
 - Layer 2 attack techniques (VLAN hopping, ARP spoofing, etc.)
 - Packet analysis (Wireshark, tcpdump)
 - Scripting (Python, Bash) for automation
-
 
 ---
 
@@ -1838,25 +1773,21 @@ Phase 8: Test Documentation and Remediation
    - Development/test networks (if separate)
    - Cloud networks (AWS VPCs, Azure VNets, GCP VPCs)
 
-
 2. **Identify devices in scope**:
 
    - Network devices (routers, switches, firewalls, wireless APs)
    - Network security appliances (IDS/IPS, network monitoring)
    - Load balancers, VPN concentrators
 
-
 3. **Identify services in scope**:
 
    - DNS, DHCP, NTP, proxy, RADIUS/TACACS+, SNMP, syslog
-
 
 4. **Identify exclusions** (out of scope):
 
    - Legacy systems (if can't be safely tested)
    - Third-party managed networks (if no access)
    - Production systems during business hours (if disruptive testing)
-
 
 **Example Scope Statement**:
 ```
@@ -1886,7 +1817,6 @@ Out of Scope: Branch Office 2 (third-party managed)
 
 - **Non-Disruptive**: Vulnerability scanning (read-only), configuration auditing, packet capture
 - **Disruptive**: Penetration testing (active exploitation), VLAN hopping attacks, DoS testing
-
 
 **Risk Management**: For disruptive tests, use test/lab environments when possible.
 
@@ -1967,7 +1897,6 @@ After scan completes:
    - Low: [number]
    - Info: [number]
 
-
 2. Review **Vulnerabilities** tab:
 
    - Sort by **Severity** (Critical first)
@@ -1977,14 +1906,12 @@ After scan completes:
      - Affected hosts
      - Solution (patch, workaround)
 
-
 3. Prioritize remediation:
 
    - **Critical**: Immediate action (within 24-48 hours)
    - **High**: Urgent action (within 7 days)
    - **Medium**: Scheduled action (within 30 days)
    - **Low**: Tracked for future remediation
-
 
 **Step 4: Generate Report**
 
@@ -2006,7 +1933,6 @@ Findings:
 - High: 8 (weak SNMP community strings, default credentials on 3 switches)
 - Medium: 15 (SSH protocol v1 enabled, weak SSL ciphers)
 - Low: 22 (banner message missing, unnecessary services enabled)
-
 
 Recommended Actions:
 1. Upgrade firmware on routers (Critical priority)
@@ -2057,7 +1983,6 @@ Open `router-audit-report.html` in browser:
   - Access control issues (overly permissive ACLs)
   
 - **Recommendations**: Specific config commands to fix issues
-
 
 **Example Nipper Findings**:
 ```
@@ -2474,11 +2399,9 @@ tcpdump -r dmz-internal.pcap -n
 - If native VLAN = VLAN 1 (default), outer tag is stripped by first switch, inner tag is processed by second switch
 - Attacker can access target VLAN without authorization
 
-
 **Prevention** (implemented in ISMS-IMP-A.8.20-21-22-S5):
 
 - Change native VLAN to unused VLAN (not VLAN 1)
-
 
 **Testing Procedure**:
 
@@ -2505,7 +2428,6 @@ sudo scapy
 - **If attack fails**: Native VLAN is NOT VLAN 1 → Control working
 - **If attack succeeds**: Native VLAN is still VLAN 1 → CRITICAL vulnerability, change native VLAN immediately
 
-
 ### Switch Spoofing (DTP) Attack Testing
 
 **Objective**: Verify prevention of VLAN hopping via DTP (Dynamic Trunking Protocol).
@@ -2515,12 +2437,10 @@ sudo scapy
 - Attacker sends DTP packets to negotiate trunk with switch
 - If DTP enabled and switch accepts, attacker gains access to all VLANs
 
-
 **Prevention** (implemented in ISMS-IMP-A.8.20-21-22-S5):
 
 - Disable DTP (`switchport nonegotiate`)
 - Hardcode switchport mode (`switchport mode access` or `switchport mode trunk`)
-
 
 **Testing Procedure**:
 
@@ -2544,7 +2464,6 @@ sudo yersinia -G   # Launch GUI
 - **If attack fails**: DTP disabled → Control working
 - **If attack succeeds**: DTP still enabled → HIGH vulnerability, disable DTP immediately
 
-
 ---
 
 ## Phase 6: Configuration Auditing
@@ -2566,7 +2485,6 @@ sudo yersinia -G   # Launch GUI
    - **Policy Name**: Cisco Router Hardening Compliance
    - **Audit File**: Upload custom audit file (defines checks)
    - **Credentials**: Add SSH credentials
-
 
 **Example Audit File** (Nessus .audit format):
 ```
@@ -2606,7 +2524,6 @@ Nessus reports compliance status per check:
 
 - **PASSED**: Configuration matches baseline
 - **FAILED**: Configuration does not match baseline (gap identified)
-
 
 Example Output:
 ```
@@ -2824,7 +2741,6 @@ Summary:
 - Configuration Audit: 15 devices audited, 10 gaps identified
 - Service Testing: 5 services tested, 2 gaps (DNS filtering, DHCP rate limiting)
 
-
 Critical Findings:
 1. Outdated firmware on 2 routers (CVE-2023-XXXXX) - Remote code execution
 2. Database accessible from all workstations (should be restricted to web servers)
@@ -2907,7 +2823,6 @@ mysql -h 10.1.20.50 -u webapp -p
 
 0 2 * * 0 /usr/local/bin/run-nessus-scan.sh
 
-
 # run-nessus-scan.sh:
 #!/bin/bash
 python3 /opt/scripts/nessus_scan.py
@@ -2966,7 +2881,6 @@ Findings Summary:
 - Critical: {critical_findings}
 - High: {high_findings}
 
-
 Segmentation Status: {"PASS" if seg_results['status'] == 'pass' else "FAIL"}
 """
 
@@ -2988,14 +2902,12 @@ print(report)
 - Track remediation progress
 - Re-scan to verify fixes
 
-
 ## Incident Response (A.6.8)
 
 **Integration**: Testing may uncover security incidents (e.g., rogue devices, unauthorized changes).
 
 - If testing finds compromised device → trigger incident response
 - Penetration testing simulates real attacks → informs incident response playbooks
-
 
 ## Change Management (A.8.32)
 
@@ -3004,7 +2916,6 @@ print(report)
 - Unexpected config changes → investigate (authorized change or security incident?)
 - Configuration drift → submit change request to bring back to baseline
 
-
 ## Logging and Monitoring (A.8.15, A.8.16)
 
 **Integration**: Testing validates logging and monitoring effectiveness.
@@ -3012,7 +2923,6 @@ print(report)
 - Verify firewall logs capture denied traffic
 - Verify SIEM alerts on suspicious network activity
 - Testing generates test data for SIEM tuning
-
 
 ---
 
@@ -3032,7 +2942,6 @@ print(report)
 - [ ] Remediation plan developed (owner, timeline, validation)
 - [ ] Test report distributed to stakeholders
 
-
 ---
 
 # Common Pitfalls and Solutions
@@ -3044,24 +2953,20 @@ print(report)
 - **Problem**: Disruptive testing (port scanning, exploitation) affects business
 - **Solution**: Schedule testing during off-hours (nights, weekends)
 
-
 **Mistake 2: No Test Plan**
 
 - **Problem**: Ad-hoc testing, missing scope, stakeholders unaware
 - **Solution**: Always create test plan, get approvals
-
 
 **Mistake 3: Not Validating Fixes**
 
 - **Problem**: Assume fix worked, but vulnerability still present
 - **Solution**: Always re-test after remediation
 
-
 **Mistake 4: Over-Reliance on Automated Scanning**
 
 - **Problem**: Scanners miss complex issues (logic flaws, custom configs)
 - **Solution**: Combine automated + manual testing
-
 
 ## False Positives
 
@@ -3072,7 +2977,6 @@ print(report)
 - Manually verify findings (attempt exploitation)
 - Mark false positives in scanner (so they're not reported again)
 - Tune scanner settings (reduce false positive rate)
-
 
 ---
 
@@ -3085,7 +2989,6 @@ print(report)
 - Test schedule (when testing will occur)
 - Test approvals (who approved testing)
 
-
 ## Test Results Documentation
 
 - Test execution log (what was done, when, by whom)
@@ -3093,13 +2996,11 @@ print(report)
 - Evidence (screenshots, packet captures, logs)
 - Recommendations (how to fix findings)
 
-
 ## Remediation Documentation
 
 - Remediation plan (owner, timeline, status)
 - Remediation evidence (configs after fix, re-test results)
 - Lessons learned (what went wrong, how to improve)
-
 
 ---
 
@@ -3111,7 +3012,6 @@ print(report)
 - **Quarterly**: Segmentation testing, VLAN hopping testing, service testing
 - **Annual**: Full penetration testing (external + internal)
 
-
 ## Metrics to Track
 
 - **Vulnerability Trends**: Are vulnerabilities decreasing over time?
@@ -3119,7 +3019,6 @@ print(report)
 - **Critical/High Findings**: Count of severe findings (goal: 0)
 - **Segmentation Effectiveness**: Percentage of successful lateral movement tests (goal: 0%)
 - **Configuration Drift**: Count of unauthorized config changes (goal: 0)
-
 
 ## Testing Process Improvement
 
@@ -3129,7 +3028,6 @@ After each testing cycle:
 - Update test plan based on lessons learned
 - Tune tools (reduce false positives, improve coverage)
 - Train team (new techniques, tools)
-
 
 ---
 

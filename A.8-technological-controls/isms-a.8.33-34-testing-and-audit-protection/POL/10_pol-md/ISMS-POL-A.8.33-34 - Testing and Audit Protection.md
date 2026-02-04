@@ -35,7 +35,6 @@
 - Compliance: Legal/Compliance Officer
 - Final Authority: Executive Management (CEO)
 
-
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -45,7 +44,6 @@
 - ISMS-IMP-A.8.33-34.2 (Audit Testing Assessment)
 - ISMS-IMP-A.8.33-34.3 (Compliance Dashboard)
 - ISO/IEC 27001:2022 Controls A.8.33 and A.8.34
-
 
 ---
 
@@ -64,7 +62,6 @@ This policy establishes [Organization]'s requirements for protecting test inform
 - Test environments SHALL be isolated from production systems
 - Audit testing SHALL be planned to minimize operational disruption
 - Audit tools and logs SHALL be protected and controlled
-
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022, with conditional sector-specific requirements (PCI DSS, HIPAA, FINMA) where applicable.
 
@@ -86,7 +83,6 @@ This policy applies to:
 - Performance and load testing datasets
 - Security testing data
 
-
 **Control A.8.34 - Audit Testing**:
 
 - Internal security audits and assessments
@@ -96,7 +92,6 @@ This policy applies to:
 - Third-party security assessments
 - Regulatory compliance audits
 
-
 **Environments**:
 
 - Development environments
@@ -104,7 +99,6 @@ This policy applies to:
 - Staging/Pre-production environments
 - Training and demonstration environments
 - Sandbox and experimental environments
-
 
 **Personnel**:
 
@@ -114,7 +108,6 @@ This policy applies to:
 - Penetration testing teams
 - Third-party assessors and consultants
 
-
 ## Out of Scope
 
 This policy does NOT apply to:
@@ -123,7 +116,6 @@ This policy does NOT apply to:
 - Routine monitoring activities (covered by A.8.16)
 - Data masking technique specifications (covered by A.8.11)
 - Environment architecture requirements (covered by A.8.31)
-
 
 ---
 
@@ -154,7 +146,6 @@ Test data SHALL be classified according to [Organization]'s data classification 
 - Classification determines protection requirements and access controls
 - Data Owner approval required for Confidential or Restricted test data
 
-
 ---
 
 ## Data Protection Requirements
@@ -168,7 +159,6 @@ When production data is required for testing, [Organization] SHALL apply data ma
 - Credentials and secrets SHALL be replaced with test values
 - Health information SHALL be de-identified per applicable regulations
 
-
 **Masking Validation**: Masked data SHALL be validated to confirm:
 
 - Original sensitive values are not recoverable through pattern matching, dictionary attacks, or re-identification techniques
@@ -181,7 +171,6 @@ When production data is required for testing, [Organization] SHALL apply data ma
 - Validation results SHALL be documented and approved by Information Security Manager before test environment use
 - Validation procedures are documented in ISMS-IMP-A.8.33-34.1
 
-
 ---
 
 **REQ-TEST-004: Test Data Isolation**
@@ -192,7 +181,6 @@ Test data SHALL be isolated from production:
 - No direct access paths between test and production data stores
 - Test data exports SHALL be controlled and logged
 - Data refresh procedures SHALL include re-masking
-
 
 ---
 
@@ -207,7 +195,6 @@ Test data SHALL be isolated from production:
 - Separate credentials SHALL be required for each environment
 - Clear environment identification SHALL prevent confusion
 
-
 ---
 
 **REQ-TEST-006: Access Controls**
@@ -218,7 +205,6 @@ Access to test environments containing sensitive data SHALL:
 - Require explicit authorization based on job function
 - Be reviewed at least annually
 - Be revoked upon role change or termination
-
 
 ---
 
@@ -244,7 +230,6 @@ Test data SHALL:
 - Follow documented retention and deletion procedures
 - Be included in data deletion verification
 
-
 ---
 
 **REQ-TEST-008: Test Data Refresh**
@@ -255,7 +240,6 @@ When test data is refreshed from production:
 - Refresh procedures SHALL be documented and approved
 - Refresh activities SHALL be logged for audit purposes
 - Data Owner approval required for scheduled refreshes
-
 
 ---
 
@@ -273,7 +257,6 @@ When test data is refreshed from production:
 - Escalation procedures for issues discovered
 - Confidentiality requirements for audit findings
 
-
 **Agreement Parties**: Management and auditor/assessor SHALL jointly approve testing scope and methods before testing begins.
 
 ---
@@ -286,7 +269,6 @@ Audit testing activities SHALL be scheduled to minimize operational impact:
 - Testing windows SHALL be coordinated with IT Operations
 - Stakeholders SHALL be notified of planned testing activities
 - Emergency testing SHALL follow expedited approval process
-
 
 ---
 
@@ -302,7 +284,6 @@ Access granted to auditors and assessors SHALL:
 - Be time-limited to the audit duration
 - Be logged and monitored throughout the engagement
 
-
 ---
 
 **REQ-AUDIT-004: Device Security**
@@ -313,7 +294,6 @@ Devices used by auditors to access [Organization]'s systems SHALL:
 - Have current endpoint protection and patching
 - Not introduce malware or unauthorized software
 - Be verified before access is granted
-
 
 ---
 
@@ -328,7 +308,6 @@ Audit testing activities SHALL:
 - Stop immediately if unintended impact occurs
 - Be suspended if critical issues are discovered affecting operations
 
-
 ---
 
 **REQ-AUDIT-006: Penetration Testing Controls**
@@ -340,7 +319,6 @@ Penetration testing and active security testing SHALL:
 - Include rollback and recovery procedures
 - Have IT Operations on standby during active testing
 - Follow agreed rules of engagement
-
 
 ---
 
@@ -355,7 +333,6 @@ Data accessed or collected during audits SHALL:
 - Be securely deleted after audit completion
 - Be subject to confidentiality agreements
 
-
 ---
 
 **REQ-AUDIT-008: Audit Log Protection**
@@ -366,7 +343,6 @@ Logs generated during audit activities SHALL:
 - Be retained per [Organization]'s log retention policy
 - Be available for review if audit findings are questioned
 - Be included in security monitoring during testing period
-
 
 ---
 
@@ -381,7 +357,6 @@ If audit testing causes unintended impact:
 - Root cause SHALL be documented
 - Resumption requires explicit approval from IT Operations Manager
 
-
 ---
 
 **REQ-AUDIT-010: Vulnerability Discovery**
@@ -392,7 +367,6 @@ Vulnerabilities discovered during audit testing SHALL:
 - Be documented in audit findings
 - Be handled per [Organization]'s vulnerability management process
 - Not be exploited beyond scope necessary for verification
-
 
 ---
 
@@ -441,7 +415,6 @@ Vulnerabilities discovered during audit testing SHALL:
 - Test data masking effectiveness validation
 - Pre-audit checklist completion verification
 
-
 ## Evidence Requirements
 
 [Organization] SHALL maintain evidence including:
@@ -453,7 +426,6 @@ Vulnerabilities discovered during audit testing SHALL:
 - Penetration testing authorization and rules of engagement
 - Incident reports from testing activities
 
-
 ## Non-Compliance
 
 Violations of this policy may result in:
@@ -463,7 +435,6 @@ Violations of this policy may result in:
 - Disciplinary action per HR policies
 - Contract termination for third-party violators
 - Incident reporting where regulatory breach occurs
-
 
 ---
 
@@ -476,7 +447,6 @@ Exceptions MAY be approved only for:
 - Legacy systems requiring production data for specific debugging
 - Regulatory requirements mandating specific testing approaches
 - Technical limitations preventing standard masking approaches
-
 
 ## Exception Process
 
@@ -494,7 +464,6 @@ When exceptions are approved, compensating controls SHALL include:
 - Reduced data retention periods
 - Additional access restrictions
 - Increased oversight and review frequency
-
 
 ---
 
@@ -544,7 +513,6 @@ When exceptions are approved, compensating controls SHALL include:
 - ISO/IEC 27002:2022 - Implementation guidance for A.8.33, A.8.34
 - NIST SP 800-53 Rev. 5 - SA-11 (Developer Testing), AU-11 (Audit Record Retention)
 
-
 ---
 
 # Definitions
@@ -574,7 +542,6 @@ Evidence required to demonstrate this policy is adequately documented and approv
 - ✅ Audit protection requirements documented
 - ✅ Penetration testing requirements specified
 - ✅ Roles and responsibilities assigned
-
 
 **Stage 2 (Operational Effectiveness) Evidence:**
 

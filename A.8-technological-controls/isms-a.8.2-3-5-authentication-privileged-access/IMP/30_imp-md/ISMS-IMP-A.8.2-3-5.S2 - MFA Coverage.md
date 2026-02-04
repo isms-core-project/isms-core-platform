@@ -45,7 +45,6 @@ This document consists of two parts:
   - Formulas & Calculations
   - Python Script Integration
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -65,13 +64,11 @@ This document consists of two parts:
 - Verifies compliance with NIS2 Article 21(2)(e) if applicable (mandatory MFA for essential/important entities)
 - Tracks MFA method distribution (authenticator app, hardware token, SMS, biometric)
 
-
 **What This Assessment Does NOT Do:**
 
 - Inventory authentication mechanisms per system (see IMP.1 - Authentication Inventory)
 - Track privileged account details (see IMP.3 - Privileged Account Inventory)
 - Test MFA effectiveness (penetration testing is separate)
-
 
 **Primary ISO 27001 Control:** A.8.5 - Secure Authentication
 
@@ -80,14 +77,12 @@ This document consists of two parts:
 - A.8.2 - Privileged Access Rights (MFA mandatory for privileged users)
 - A.5.16 - Identity Management (user inventory foundation)
 
-
 **Regulatory Drivers:**
 
 - **NIS2 Article 21(2)(e)**: MANDATORY MFA for essential/important entities (if applicable)
 - **FINMA Margin 56**: MFA for critical systems access (if Swiss financial institution)
 - **DORA Article 9(3)**: Strong authentication mechanisms (if EU financial entity)
 - **GDPR Article 32**: MFA as appropriate security measure
-
 
 ## When to Use This Assessment
 
@@ -101,13 +96,11 @@ This document consists of two parts:
 - Investigating authentication security incidents
 - Executive reporting (MFA deployment KPIs)
 
-
 **Assessment Frequency:**
 
 - **Monthly**: MFA enrollment updates, new user onboarding, enrollment gap tracking
 - **Quarterly**: Comprehensive coverage analysis, compliance reporting, trend analysis
 - **Annual**: Deep assessment, MFA effectiveness testing, policy compliance verification
-
 
 ## Who Completes This Assessment
 
@@ -119,7 +112,6 @@ This document consists of two parts:
 - **HR**: User type classification (employee, contractor, temporary)
 - **Managers**: Privileged user identification, approval of exceptions
 - **Help Desk**: MFA troubleshooting, device replacement
-
 
 **Approval Authority:** Chief Information Security Officer (CISO)
 
@@ -133,7 +125,6 @@ This document consists of two parts:
 - Gap analysis: 30-60 minutes
 - **Total**: 3-6 hours
 
-
 **Monthly Updates** (ongoing enrollment tracking):
 
 - User data refresh: 15-30 minutes
@@ -141,14 +132,12 @@ This document consists of two parts:
 - Gap analysis update: 15-30 minutes
 - **Total**: 1-2 hours per month
 
-
 **Quarterly Comprehensive Review**:
 
 - Full enrollment validation: 1-2 hours
 - Trend analysis: 30-60 minutes
 - Compliance reporting: 1 hour
 - **Total**: 3-4 hours per quarter
-
 
 ---
 
@@ -165,7 +154,6 @@ Before starting the assessment, gather the following information:
 - [ ] User role classification (privileged, standard, remote access, confidential data access)
 - [ ] User manager/department information
 
-
 **MFA Enrollment Data:**
 
 - [ ] MFA enrollment status per user (enrolled, not enrolled, exempt)
@@ -173,20 +161,17 @@ Before starting the assessment, gather the following information:
 - [ ] MFA enrollment date per user
 - [ ] Backup MFA method registered (yes/no)
 
-
 **MFA Platform Details:**
 
 - [ ] MFA platform in use (Azure MFA, Okta MFA, Duo, Google Authenticator, etc.)
 - [ ] MFA methods supported (TOTP, FIDO2, SMS, biometric, etc.)
 - [ ] MFA enforcement policies (who is required to have MFA)
 
-
 **Regulatory Requirements:**
 
 - [ ] NIS2 applicability status (essential entity, important entity, not applicable)
 - [ ] FINMA applicability (Swiss financial institution license holder)
 - [ ] DORA applicability (EU financial entity)
-
 
 ## Required Access
 
@@ -197,13 +182,11 @@ Before starting the assessment, gather the following information:
 - [ ] Read access to HR system (user type, manager, department)
 - [ ] Optional: SIEM access (MFA authentication logs for usage analysis)
 
-
 **People Access Needed:**
 
 - [ ] HR team (for user classification verification)
 - [ ] Managers (for privileged user identification)
 - [ ] Help Desk (for MFA enrollment support statistics)
-
 
 ## Required Tools
 
@@ -213,13 +196,11 @@ Before starting the assessment, gather the following information:
 - [ ] Python 3.8+ (if using automated workbook generation)
 - [ ] PowerShell / Azure CLI / Okta API (for automated data collection)
 
-
 **Identity Provider Reports:**
 
 - [ ] Entra ID: "MFA Registration Details" report
 - [ ] Okta: "MFA Enrollment Report"
 - [ ] Google Workspace: "2-Step Verification Enrollment"
-
 
 ---
 
@@ -246,7 +227,6 @@ Before starting the assessment, gather the following information:
    → Sheet 3: MFA Gap Analysis
 
       - Users without MFA, High-priority gaps, Remediation timeline
-
 
 3. ANALYZE & SCORE
    → Calculate MFA coverage percentages
@@ -304,7 +284,6 @@ curl -X GET "https://your-domain.okta.com/api/v1/users?limit=200" \
 - Select "2-Step Verification" enrollment report
 - Export to CSV
 
-
 **Step 2: Generate Workbook**
 
 Option A - Automated (Recommended):
@@ -319,7 +298,6 @@ Option B - Manual:
 - Import user data manually
 - Save as: `ISMS-IMP-A.8.2-3-5.2_MFA_Coverage_[DATE].xlsx`
 
-
 **Step 3: Complete Sheet 1 - User MFA Enrollment Status**
 
 For each user:
@@ -332,14 +310,12 @@ For each user:
    - User Type: Employee, Contractor, Vendor, Service Account
    - Department: User's department/business unit
 
-
 2. **User Role Classification** (Columns F-I):
 
    - Privileged User: Yes/No (admin rights anywhere?)
    - Remote Access User: Yes/No (VPN, remote desktop?)
    - Confidential Data Access: Yes/No (access to restricted data?)
    - Manager: User's direct manager
-
 
 3. **MFA Enrollment Status** (Columns J-O):
 
@@ -350,12 +326,10 @@ For each user:
    - Last MFA Authentication: Date of last successful MFA auth
    - MFA Exemption Reason: If exempt, why? (documented exception)
 
-
 4. **Compliance Assessment** (Columns P-Q):
 
    - MFA Requirement: Required, Optional, N/A (auto-calculated based on user role)
    - Compliance Status: Compliant, Non-Compliant, Exempt (auto-calculated)
-
 
 **Step 4: Complete Sheet 2 - MFA Coverage by User Type**
 
@@ -368,13 +342,11 @@ This sheet auto-calculates from Sheet 1:
 - MFA coverage percentage
 - Privileged users without MFA (critical gap)
 
-
 **Standard Users:**
 
 - Total standard users
 - Standard users with MFA
 - MFA coverage percentage
-
 
 **Remote Access Users:**
 
@@ -382,20 +354,17 @@ This sheet auto-calculates from Sheet 1:
 - Remote access users with MFA
 - MFA coverage percentage
 
-
 **Contractors/Vendors:**
 
 - Total contractors/vendors
 - Contractors with MFA
 - MFA coverage percentage
 
-
 **Overall:**
 
 - Total users
 - Total users with MFA
 - Overall MFA coverage percentage
-
 
 **Step 5: Complete Sheet 3 - MFA Gap Analysis**
 
@@ -409,7 +378,6 @@ For each user WITHOUT MFA:
    - User Role (Privileged, Remote, Confidential Data)
    - Gap Priority: Critical, High, Medium, Low (auto-calculated)
 
-
 2. **Gap Remediation** (Columns F-I):
 
    - Reason for No MFA: Never enrolled, Lost device, Technical issue, Refused, Other
@@ -417,14 +385,12 @@ For each user WITHOUT MFA:
    - Target Enrollment Date: Deadline for MFA enrollment
    - Remediation Status: Not Started, In Progress, Blocked, Completed
 
-
 **Gap Priority Rules:**
 
 - **Critical**: Privileged user without MFA
 - **High**: Remote access user without MFA OR Confidential data access without MFA
 - **Medium**: Standard employee without MFA
 - **Low**: Service account or documented exception
-
 
 **Step 6: Complete Sheet 5 - Enrollment Campaign**
 
@@ -447,7 +413,6 @@ For tracking MFA enrollment communications:
    - Users Enrolled During Campaign: Count
    - Campaign Enrollment %: Percentage from target audience
 
-
 **Step 7: Complete Sheet 6 - Backup Method Status**
 
 For tracking secondary MFA methods:
@@ -468,7 +433,6 @@ For tracking secondary MFA methods:
    - Users with Backup Methods: Count and %
    - Recovery Code Distribution: Users with printed/saved codes
 
-
 **Step 8: Review Calculated Metrics**
 
 The workbook automatically calculates:
@@ -480,7 +444,6 @@ The workbook automatically calculates:
 - **Enrollment Trend**: Month-over-month MFA enrollment progress
 - **Backup Method Coverage**: % of MFA users with secondary authentication method
 
-
 **Step 9: Collect Evidence**
 
 Required evidence:
@@ -491,7 +454,6 @@ Required evidence:
 - **Exception Approvals**: CISO-approved exceptions for MFA exemptions
 - **Backup Method Report**: Backup method registration status
 
-
 Store evidence in: `/evidence/mfa/[date]/`
 
 **Step 10: Complete Evidence Register (Sheet 9)**
@@ -499,7 +461,6 @@ Store evidence in: `/evidence/mfa/[date]/`
 Document all collected evidence:
 
 - Evidence ID, Type, Description, Location, Collection Date
-
 
 **Step 11: Approval & Sign-Off (Sheet 10)**
 
@@ -524,26 +485,22 @@ Three-level approval process:
    - Export CSV with user MFA data
    - Date/time stamp visible
 
-
 2. **MFA Enforcement Policies**:
 
    - Entra ID Conditional Access policies (if Azure)
    - Okta MFA policies (if Okta)
    - Screenshot showing which users/groups require MFA
 
-
 3. **MFA Method Distribution**:
 
    - Report showing breakdown by MFA method
    - Authenticator app usage, hardware token usage, SMS usage, etc.
-
 
 4. **Enrollment Campaign Documentation**:
 
    - Email communications to users
    - Training materials (how to enroll in MFA)
    - Help desk tickets related to MFA enrollment
-
 
 ## Evidence Storage
 
@@ -572,7 +529,6 @@ For each piece of evidence:
 - [ ] Redacted appropriately (no passwords or secrets)
 - [ ] Linked in Evidence Register
 
-
 ---
 
 # Common Pitfalls & How to Avoid Them
@@ -587,7 +543,6 @@ For each piece of evidence:
 - Check "Registered" status, not "Capable" status
 - Verify: Has user completed MFA registration? Has user authenticated with MFA at least once?
 
-
 ## Pitfall 2: Not Tracking Backup MFA Methods
 
 **Problem**: User enrolled in MFA but no backup method (single point of failure)
@@ -597,7 +552,6 @@ For each piece of evidence:
 - Track backup method registration in Column M (Sheet 1)
 - Best practice: Every user should have 2+ MFA methods registered
 - Common backup: Authenticator app + hardware token OR Authenticator app + recovery codes
-
 
 ## Pitfall 3: Assuming All Privileged Users Are Known
 
@@ -609,7 +563,6 @@ For each piece of evidence:
 - Check group memberships (Domain Admins, Enterprise Admins, local admins)
 - Ask system owners: "Who has admin rights to your system?"
 
-
 ## Pitfall 4: SMS as Primary MFA Method
 
 **Problem**: SMS is weakest MFA method (SIM swapping attacks, interception)
@@ -620,7 +573,6 @@ For each piece of evidence:
 - Encourage migration to authenticator app or hardware token
 - SMS acceptable as backup method ONLY
 
-
 ## Pitfall 5: Not Tracking MFA Exemptions
 
 **Problem**: Users exempt from MFA with no documentation
@@ -630,7 +582,6 @@ For each piece of evidence:
 - Every MFA exemption requires CISO approval
 - Document reason in Column O (Sheet 1)
 - Review exemptions quarterly (are they still necessary?)
-
 
 ## Pitfall 6: Service Accounts Without MFA
 
@@ -645,7 +596,6 @@ For each piece of evidence:
   - Network restriction (service account can only auth from specific IPs)
   - Enhanced monitoring (alert on service account usage from unexpected location)
 
-
 ## Pitfall 7: Not Celebrating Progress
 
 **Problem**: MFA rollout is a multi-month effort, team morale suffers
@@ -655,7 +605,6 @@ For each piece of evidence:
 - Track month-over-month improvement (e.g., "MFA coverage increased from 45% to 72% this quarter!")
 - Celebrate milestones (80% coverage, 90% coverage, 100% privileged user coverage)
 - Share success stories (security incidents prevented by MFA)
-
 
 ## Pitfall 8: Forgetting NIS2 Compliance
 
@@ -668,7 +617,6 @@ For each piece of evidence:
 - Document NIS2 applicability in assessment
 - Present MFA coverage as NIS2 compliance metric
 
-
 ## Pitfall 9: MFA Fatigue
 
 **Problem**: Users complain about excessive MFA prompts
@@ -680,7 +628,6 @@ For each piece of evidence:
 - Use push notifications (easier than typing codes)
 - User training (explain why MFA is worth the inconvenience)
 
-
 ## Pitfall 10: Not Testing MFA Effectiveness
 
 **Problem**: MFA enrolled but never actually used
@@ -690,7 +637,6 @@ For each piece of evidence:
 - Track "Last MFA Authentication" (Column N, Sheet 1)
 - Users with MFA enrolled but never authenticated = suspicious
 - Test: Force MFA challenge, verify user can complete
-
 
 ---
 
@@ -707,7 +653,6 @@ Before submitting assessment for approval, verify:
 - [ ] Backup MFA method status tracked
 - [ ] All gaps identified with remediation plan
 
-
 ## Accuracy
 
 - [ ] MFA enrollment data validated against identity provider
@@ -716,14 +661,12 @@ Before submitting assessment for approval, verify:
 - [ ] MFA exemptions have documented CISO approval
 - [ ] Calculated metrics reviewed (make sense?)
 
-
 ## Evidence Quality
 
 - [ ] Identity provider MFA report collected
 - [ ] MFA enforcement policies documented
 - [ ] Exception approvals collected
 - [ ] Evidence dated and linked in Evidence Register
-
 
 ## Compliance
 
@@ -733,14 +676,12 @@ Before submitting assessment for approval, verify:
 - [ ] NIS2 compliance status documented (if applicable)
 - [ ] Remediation timeline defined for all gaps
 
-
 ## Professional Presentation
 
 - [ ] No spelling errors
 - [ ] Consistent formatting (dates in DD.MM.YYYY format)
 - [ ] Clear and concise notes
 - [ ] User-friendly (can HR or manager understand it?)
-
 
 ---
 
@@ -755,20 +696,17 @@ Before submitting assessment for approval, verify:
 - **70-84%**: Moderate - MFA deployment in progress, significant gaps remain
 - **<70%**: Poor - Insufficient MFA coverage, major security risk
 
-
 **Privileged User MFA Coverage:**
 
 - **100%**: Target state - All privileged users have MFA (MANDATORY)
 - **95-99%**: Nearly there - Document exemptions, set deadline for 100%
 - **<95%**: CRITICAL RISK - Privileged users without MFA = high-value targets
 
-
 **Remote Access User MFA Coverage:**
 
 - **100%**: Target state - All remote users have MFA (MANDATORY)
 - **90-99%**: Good progress - Prioritize remaining gaps
 - **<90%**: HIGH RISK - Remote access without MFA = easy attack vector
-
 
 **MFA Method Quality Score:**
 
@@ -778,7 +716,6 @@ Before submitting assessment for approval, verify:
 - **Push Notification**: Acceptable - 60 points
 - **SMS/Voice**: Weak - 40 points (acceptable as backup only)
 
-
 ## Gap Prioritization
 
 **Priority 1 - CRITICAL (Immediate Action - Within 7 Days):**
@@ -787,13 +724,11 @@ Before submitting assessment for approval, verify:
 - Break-glass accounts without MFA
 - Security administrator accounts without MFA
 
-
 **Priority 2 - HIGH (Within 30 Days):**
 
 - Tier 1/2 privileged users without MFA (Server admins, DBAs, Application admins)
 - Remote access users without MFA (VPN, external access)
 - Users with access to confidential/restricted data without MFA
-
 
 **Priority 3 - MEDIUM (Within 90 Days):**
 
@@ -801,12 +736,10 @@ Before submitting assessment for approval, verify:
 - Contractors without MFA
 - Users with SMS as primary MFA method (encourage migration to authenticator app)
 
-
 **Priority 4 - LOW (Ongoing Improvement):**
 
 - Service accounts (evaluate compensating controls)
 - Documented exceptions with CISO approval
-
 
 ## Regulatory Compliance Interpretation
 
@@ -817,20 +750,17 @@ Before submitting assessment for approval, verify:
 - Exemptions must be documented with compensating controls
 - MFA Coverage Score directly maps to NIS2 compliance
 
-
 **FINMA Compliance** (if Swiss financial institution):
 
 - Margin 56 requires authentication for critical systems
 - MFA strongly recommended for privileged access
 - Target: 100% privileged user MFA, 95%+ overall
 
-
 **DORA Compliance** (if EU financial entity):
 
 - Article 9(3) requires strong authentication mechanisms
 - MFA is primary strong authentication method
 - Target: 100% privileged user MFA, 90%+ overall
-
 
 ---
 
@@ -846,7 +776,6 @@ Before submitting assessment for approval, verify:
 - Collect evidence
 - Submit for review
 
-
 **Level 2 - Reviewer (IAM Team Lead / Senior Security Engineer)**:
 
 - Validate user classification accuracy
@@ -855,7 +784,6 @@ Before submitting assessment for approval, verify:
 - Confirm evidence completeness
 - Approve and forward to CISO
 
-
 **Level 3 - Approver (CISO)**:
 
 - Review MFA coverage metrics
@@ -863,7 +791,6 @@ Before submitting assessment for approval, verify:
 - Approve remediation priorities and timeline
 - Sign off on assessment
 - Present to Executive Management (if required)
-
 
 ## Approval Criteria
 
@@ -875,7 +802,6 @@ Assessment is approved when:
 - [ ] Remediation timeline defined for all gaps
 - [ ] Evidence collected and linked
 - [ ] NIS2/FINMA/DORA compliance status documented (if applicable)
-
 
 ## Post-Approval Actions
 
@@ -920,7 +846,6 @@ After CISO approval:
 - 🔴 **Red (Not Enrolled)**: RGB(255, 199, 206) - User does not have MFA
 - 🟡 **Yellow (Exempt)**: RGB(255, 235, 156) - User exempt from MFA (documented exception)
 
-
 **Gap Priority Colors:**
 
 - 🔴 **Critical**: RGB(255, 0, 0) - Privileged user without MFA
@@ -928,14 +853,12 @@ After CISO approval:
 - 🟡 **Medium**: RGB(255, 255, 0) - Standard user without MFA
 - 🟢 **Low**: RGB(146, 208, 80) - Service account or documented exception
 
-
 **MFA Method Quality Colors:**
 
 - 🟢 **Green (Phishing-Resistant)**: FIDO2, WebAuthn
 - 🟡 **Yellow (Good)**: Authenticator App, Hardware Token
 - 🟠 **Orange (Acceptable)**: Push Notification
 - 🔴 **Red (Weak)**: SMS, Voice
-
 
 ---
 
@@ -1016,7 +939,6 @@ List: Yes, No, N/A
 - **Tier 3 - Acceptable**: Push notifications (can be phished but better than SMS)
 - **Tier 4 - Weak**: SMS, Voice (vulnerable to SIM swapping, interception)
 
-
 ## MFA Requirement Calculation (Column Q)
 
 **Formula Logic:**
@@ -1036,7 +958,6 @@ List: Yes, No, N/A
 - Standard users: MANDATORY (if NIS2 applicable) or RECOMMENDED
 - Service accounts: Optional (use compensating controls)
 
-
 ## Compliance Status Calculation (Column R)
 
 **Formula Logic:**
@@ -1053,7 +974,6 @@ List: Yes, No, N/A
 - Non-Compliant → Red
 - Exempt → Yellow
 - N/A → Gray
-
 
 ## Data Rows
 
@@ -1207,7 +1127,6 @@ This sheet auto-populates from Sheet 2 - only users with `MFA Enrolled = No`:
 - Medium → Yellow background
 - Low → Green background
 
-
 ---
 
 # Sheet 5: MFA Method Distribution
@@ -1287,7 +1206,6 @@ User manually enters historical data for trend analysis:
 - February 2026: 1010 users, 800 with MFA (79%)
 - March 2026: 1020 users, 900 with MFA (88%)
 
-
 ---
 
 # Sheet 7: Evidence Register
@@ -1313,16 +1231,13 @@ User manually enters historical data for trend analysis:
 
 - Name, Title, Date, Signature
 
-
 **Level 2 - Reviewer (IAM Lead):**
 
 - Name, Title, Date, Signature
 
-
 **Level 3 - Approver (CISO):**
 
 - Name, Title, Date, Signature
-
 
 ---
 
@@ -1343,7 +1258,6 @@ Automated generation of MFA coverage workbook with user data import from identit
 - Adds formulas for coverage calculations
 - Generates MFA gap analysis automatically
 - Sets column widths and freeze panes
-
 
 ## Running the Script
 
@@ -1367,7 +1281,6 @@ Expected columns in input CSV:
 - MFAStatus (required: "Enabled", "Disabled", "Enforced")
 - MFAMethod (optional: "Authenticator App", "SMS", etc.)
 - UserType (optional: "Employee", "Contractor", etc.)
-
 
 ---
 
@@ -1415,7 +1328,6 @@ ISMS-IMP-A.8.2-3-5.2 - MFA Coverage Assessment v1.0
 - [ ] Dates in DD.MM.YYYY format
 - [ ] Technical specification matches Python script
 - [ ] User guide provides clear, actionable guidance
-
 
 ---
 

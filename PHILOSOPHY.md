@@ -3,8 +3,8 @@
 > *"The first principle is that you must not fool yourself—and you are the easiest person to fool."*
 > — Richard Feynman
 
-[![Anti-Cargo-Cult](https://img.shields.io/badge/Anti--Cargo--Cult-Engineering-orange?style=flat-square)](#the-cargo-cult-problem)
-[![Feynman Approved](https://img.shields.io/badge/Feynman-Approved-blue?style=flat-square)](#references)
+[![Anti-Cargo-Cult](https://img.shields.io/badge/Anti--Cargo--Cult-Engineering-orange?style=flat-square)](#-the-cargo-cult-problem)
+[![Feynman Inspired](https://img.shields.io/badge/Feynman-Inspired-blue?style=flat-square)](#-references)
 
 *Grows fast. Bends, doesn't break. Built to last.* 🎋
 
@@ -14,17 +14,17 @@
 
 In his 1974 Caltech commencement address, Richard Feynman described South Seas islanders who built elaborate bamboo control towers with wooden headphones and bamboo antennas. They had observed American military operations and replicated the form perfectly—but the planes never landed.
 
-Feynman called this "cargo cult science": activities that have the appearance of science but lack the substance.
+Feynman called this **"cargo cult science"**: activities that have the appearance of science but lack the substance.
 
-**Traditional ISMS implementations often follow this pattern:**
+**ISMS programmes can fall into the same trap when security is treated as documentation-first rather than evidence-first:**
 
-| ❌ Cargo Cult Compliance | ✅ Engineering Approach |
-|--------------------------|-------------------------|
-| "Policy: Use strong encryption" | Certificate inventory, algorithm analysis, compliance metrics |
-| "Policy: Patch within 30 days" | Automated scanner integration, aging analysis, measured compliance |
-| "Policy: Monitor threats" | CTI feed integration, IOC correlation, MITRE ATT&CK mapping |
+| ❌ Form (Cargo Cult) | ✅ Substance (Engineering) |
+|----------------------|---------------------------|
+| "Policy: Use strong encryption" | Certificate inventory, algorithm review, measured compliance |
+| "Policy: Patch within 30 days" | Scanner integration, patch aging metrics, exception management |
+| "Policy: Monitor threats" | Threat intel inputs, correlation/triage workflow, technique mapping (where applicable) |
 | Subjective assertions | Quantitative evidence |
-| Point-in-time audits | Continuous monitoring |
+| Point-in-time audits | Continuous monitoring and trend visibility |
 | Documentation = done | Implementation = verified |
 
 ---
@@ -34,81 +34,68 @@ Feynman called this "cargo cult science": activities that have the appearance of
 ISMS CORE inverts Feynman's metaphor:
 
 - **Cargo Cult**: Bamboo antennas that look right but don't work
-- **ISMS CORE**: Bamboo engineering that actually works in production
+- **ISMS CORE**: Control engineering that works in production
 
-Like bamboo, ISMS CORE:
+Like bamboo, ISMS CORE aims to be:
 
 | Property | Application |
 |----------|-------------|
-| 🌱 **Grows fast** | Engineering methodology enables rapid implementation |
-| 🌿 **Bends without breaking** | Flexible framework adapts to context |
-| 🎍 **Builds real strength** | Production-quality, audit-ready systems |
-| 🔗 **Interconnected roots** | Controls link together as a system |
-
-The cargo cult islanders' bamboo antennas didn't bring the planes. But real bamboo, properly engineered, builds structures that last.
+| **Grows fast** | Templates + automation accelerate implementation |
+| **Bends without breaking** | Controls adapt to organizational context and risk |
+| **Builds real strength** | Evidence-oriented, operationally useful security controls |
+| **Interconnected roots** | Controls link together as a system, not isolated documents |
 
 ---
 
 ## 🛡️ Anti-Cargo-Cult Principles
 
-### 1. Measure, Don't Assert
+### 1) Measure, Don't Assert
+Every control should have measurable indicators, such as:
+- compliance percentages
+- evidence counts
+- gap analysis and remediation status
+- trend tracking over time
 
-Every control has quantitative metrics:
-- ✅ Compliance percentages
-- ✅ Evidence counts
-- ✅ Gap analysis
-- ✅ Trend tracking
-
-### 2. Automate Evidence Collection
-
-| ❌ Manual Collection | ✅ Automated Collection |
-|----------------------|-------------------------|
+### 2) Automate Evidence Collection (Where Reasonable)
+| ❌ Manual collection | ✅ Automated / repeatable collection |
+|----------------------|--------------------------------------|
 | Error-prone | Reproducible results |
-| Time-consuming | Continuous monitoring |
-| Point-in-time snapshots | Real-time visibility |
+| Time-consuming | Continuous or scheduled monitoring |
+| Point-in-time snapshots | Time-series visibility |
 | Difficult to verify | Auditable trails |
 
-### 3. Verify, Don't Trust
-
+### 3) Verify, Don't Assume
 Feynman's principle operationalized:
-- 🔍 Automation reveals uncomfortable truths
-- 📊 Data contradicts assumptions
-- 🕵️ Systematic discovery finds hidden gaps
-- ⚖️ Empirical verification over management assertions
+- automation reveals uncomfortable truths
+- data contradicts assumptions
+- systematic discovery finds hidden gaps
+- empirical verification beats management assertions
 
-### 4. Engineer, Don't Consult
-
-Compliance is an engineering problem:
-- 🔧 Systematic methodology
-- ♻️ Reusable frameworks
-- 📈 Quantitative assessment
-- 🤖 Automated validation
+### 4) Engineer, Don't Perform
+Compliance works best when treated like engineering:
+- systematic methods
+- reusable patterns
+- measurable outcomes
+- automated validation
 
 ---
 
-## 🎯 The ~10 per 1000
+## 🎯 Who This Is Built For
 
-Feynman observed that only about 10 people per thousand actually think critically rather than accepting comfortable falsehoods.
-
-ISMS CORE is built for that **1%**:
-
-- Those who want **real security**, not compliance theater
-- Those who question whether the planes will actually land
-- Those who **measure results** rather than activities
-- Those tired of fooling themselves
+ISMS CORE is built for teams who want:
+- real security outcomes, not compliance theater
+- controls that hold up under scrutiny
+- evidence that demonstrates effectiveness over time
+- continuous improvement driven by data
 
 ---
 
 ## 📚 References
 
-**Feynman's Cargo Cult Science Address:**
-
-Feynman, R. P. (1974). "Cargo Cult Science." *Engineering and Science*, 37(7), 10-13.
-
-🔗 https://calteches.library.caltech.edu/51/2/CargoCult.htm
+Feynman, R. P. (1974). "Cargo Cult Science." *Engineering and Science*, 37(7), 10–13.
+https://calteches.library.caltech.edu/51/2/CargoCult.htm
 
 ---
 
-**Copyright © 2025-2026 Gregory Griffin. All rights reserved.**
-
+**Copyright © 2025–2026 Gregory Griffin. All rights reserved.**
 *Where bamboo antennas actually work.* 🎋

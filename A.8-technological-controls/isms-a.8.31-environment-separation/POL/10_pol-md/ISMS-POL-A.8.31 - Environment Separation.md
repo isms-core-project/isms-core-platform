@@ -42,7 +42,6 @@ This policy establishes [Organization]'s requirements for separating development
 - Changes SHALL flow through defined promotion paths before reaching production
 - Developer access to production SHALL be restricted to emergency situations only
 
-
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including ISO/IEC 27001:2022, Swiss FADP, EU GDPR, and sector-specific requirements where applicable.
 
 ---
@@ -60,7 +59,6 @@ This policy applies to:
 - Staging/Pre-production environments (final validation before production)
 - Production environments (live business operations)
 
-
 **Technology Scope**:
 
 - All information systems and applications operated by [Organization]
@@ -68,11 +66,9 @@ This policy applies to:
 - Internal and customer-facing systems
 - Third-party managed systems processing organizational data
 
-
 **Personnel**:
 
 - All employees, contractors, and third parties with access to organizational systems
-
 
 ## Out of Scope
 
@@ -81,7 +77,6 @@ This policy does NOT apply to:
 - Single-user isolated research environments not connected to organizational networks
 - Temporary proof-of-concept systems with no organizational data
 - Vendor demonstration systems managed entirely by vendors
-
 
 Once research or proof-of-concept systems transition to organizational use, they SHALL comply with this policy.
 
@@ -99,7 +94,6 @@ Once research or proof-of-concept systems transition to organizational use, they
 - Each environment tier SHALL have defined purpose, infrastructure resources, data handling restrictions, and access controls
 - Environment naming SHALL clearly distinguish environment type to prevent confusion
 
-
 **3.1.2 Network Separation**
 
 - Environments SHALL be isolated through network segmentation
@@ -107,13 +101,11 @@ Once research or proof-of-concept systems transition to organizational use, they
 - Controlled promotion paths SHALL be the only permitted cross-environment connectivity
 - Production environments SHALL NOT have direct network connectivity to development environments
 
-
 **3.1.3 Infrastructure Separation**
 
 - Compute, storage, and database resources SHALL be separated per environment
 - Production and non-production workloads SHALL NOT share infrastructure resources
 - Credentials and secrets SHALL be unique per environment
-
 
 **3.1.4 Configuration Management**
 
@@ -128,7 +120,6 @@ Once research or proof-of-concept systems transition to organizational use, they
 - Staging configuration SHALL be validated against production configuration before each production deployment
 - Configuration drift detection SHALL be performed weekly with violations reported to IT Operations Manager
 
-
 ## Environment Access Control Requirements
 
 **3.2.1 Role-Based Access**
@@ -138,14 +129,12 @@ Once research or proof-of-concept systems transition to organizational use, they
 - Developers SHALL have full access to development environments only
 - Operations team SHALL have primary access to production environments
 
-
 **3.2.2 Production Access Restrictions**
 
 - Developers SHALL NOT have standing access to production infrastructure
 - Production access SHALL require privileged access management controls
 - Multi-factor authentication SHALL be required for all production access
 - Production access sessions SHALL be logged and monitored
-
 
 **3.2.3 Emergency Access (Break-Glass)**
 
@@ -172,14 +161,12 @@ Break-glass logs SHALL be:
 - Reviewed monthly by Information Security Manager for patterns and policy compliance
 - Included in quarterly CISO dashboard with trend analysis (frequency, duration, justification categories)
 
-
 **3.2.4 Access Reviews**
 
 - Production environment access SHALL be reviewed quarterly
 - Staging environment access SHALL be reviewed semi-annually
 - Development/test environment access SHALL be reviewed annually
 - Terminated employee access SHALL be revoked within 24 hours
-
 
 ## Data Handling Requirements
 
@@ -188,7 +175,6 @@ Break-glass logs SHALL be:
 - Production data SHALL NOT be copied to development or test environments
 - Production database backups SHALL NOT be restored in non-production environments
 - Production credentials SHALL NOT be used in non-production environments
-
 
 **3.3.2 Approved Data for Non-Production**
 
@@ -210,7 +196,6 @@ Before DPO approves anonymized data for non-production use:
 - Anonymization procedures SHALL be reviewed and approved by CISO and DPO before first use
 - Failed validation SHALL result in rejection or additional anonymization measures
 
-
 **3.3.3 Data Classification Enforcement**
 
 - Confidential and Restricted data classifications SHALL be prohibited in development and test environments
@@ -225,7 +210,6 @@ Before DPO approves anonymized data for non-production use:
 - Violations SHALL trigger alerts to Information Security Manager within 24 hours
 - Scanning coverage and effectiveness SHALL be verified during quarterly self-assessments
 
-
 ## Environment Promotion Requirements
 
 **3.4.1 Mandatory Promotion Path**
@@ -233,7 +217,6 @@ Before DPO approves anonymized data for non-production use:
 - Changes SHALL follow the standard promotion path: Development -> Testing -> Staging -> Production
 - Direct deployment to production SHALL be prohibited except for approved emergency fixes
 - Skipping environment tiers SHALL require documented exception and CISO approval
-
 
 **3.4.2 Approval Requirements**
 
@@ -243,13 +226,11 @@ Before DPO approves anonymized data for non-production use:
 - Rollback plans SHALL be documented and available before production deployment
 - Emergency changes MAY bypass CAB approval with post-implementation review within 48 hours
 
-
 **3.4.3 Rollback Capability**
 
 - Previous versions SHALL be retained for rollback purposes
 - Rollback procedures SHALL be documented and tested periodically
 - Operations team SHALL be authorized to execute rollbacks without additional approval during incidents
-
 
 ## Production Support Requirements
 
@@ -259,20 +240,17 @@ Before DPO approves anonymized data for non-production use:
 - Sensitive data SHALL be redacted from logs accessible to non-operations personnel
 - Credentials SHALL NOT be included in logs
 
-
 **3.5.2 Remote Troubleshooting**
 
 - Troubleshooting procedures SHALL enable issue resolution without developer production access
 - Runbooks SHALL be maintained for common operational scenarios
 - Screen sharing MAY be used with operations team controlling production systems
 
-
 **3.5.3 Incident Response Integration**
 
 - Environment separation requirements SHALL be integrated with incident response procedures
 - Tiered escalation SHALL be followed before granting emergency production access
 - Break-glass usage SHALL be tracked and trended for continuous improvement
-
 
 ---
 
@@ -356,7 +334,6 @@ Assessment results SHALL be documented in Compliance Assessment Register (ISMS-I
 - Data handling procedure documentation
 - Compliance assessment reports
 
-
 ## Non-Compliance
 
 Violations of this policy may result in:
@@ -365,7 +342,6 @@ Violations of this policy may result in:
 - Disciplinary action per HR policies
 - Incident reporting to regulatory authorities where required
 - Corrective action tracking in the risk register
-
 
 ---
 
@@ -378,7 +354,6 @@ Exceptions MAY be approved only for:
 - Legacy systems scheduled for decommission within 12 months
 - Technical limitations where separation is not feasible (with documented justification)
 - Temporary exceptions during migration or transformation projects
-
 
 ## Exception Process
 
@@ -398,7 +373,6 @@ When exceptions are approved, compensating controls SHALL include one or more of
 - Data masking requirements
 - Increased change management rigor
 - More frequent security assessments
-
 
 ---
 
@@ -435,7 +409,6 @@ When exceptions are approved, compensating controls SHALL include one or more of
 - ISO/IEC 27002:2022 - Implementation guidance for A.8.31
 - NIST SP 800-53 Rev. 5 - CM-7 (Least Functionality), SA-11 (Developer Testing)
 
-
 ---
 
 # Definitions
@@ -467,7 +440,6 @@ Evidence required to demonstrate this policy is adequately documented and approv
 - ✅ Data handling requirements specified
 - ✅ Roles and responsibilities assigned
 - ✅ Assessment requirements documented
-
 
 **Stage 2 (Operational Effectiveness) Evidence:**
 

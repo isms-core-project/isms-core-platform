@@ -47,7 +47,6 @@ This document consists of two parts:
   - Cell Styling Reference
   - Integration Points
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -79,14 +78,12 @@ Cloud security is NOT a one-time implementation—it requires ongoing vigilance.
 - Privileged access recertification
 - Service account ownership verification
 
-
 **2. Change Management (Sheet 3)**
 
 - Provider-initiated changes (service updates, acquisitions, policy changes)
 - Organization-initiated changes (configuration updates, integrations)
 - Emergency change tracking
 - Change impact assessment and rollback capability
-
 
 **3. Incident Management (Sheet 4)**
 
@@ -95,14 +92,12 @@ Cloud security is NOT a one-time implementation—it requires ongoing vigilance.
 - Incident lessons learned and remediation
 - Post-incident security improvements
 
-
 **4. Business Continuity & Disaster Recovery (Sheet 5)**
 
 - BC/DR plan existence and testing
 - Recovery Time Objective (RTO) / Recovery Point Objective (RPO) validation
 - Failover testing for critical services
 - Annual BC/DR plan review
-
 
 **5. Vendor Risk Monitoring (Sheet 6)**
 
@@ -112,7 +107,6 @@ Cloud security is NOT a one-time implementation—it requires ongoing vigilance.
 - Financial health monitoring for critical vendors
 - Sub-processor change tracking
 
-
 **6. Exit Strategy Review (Sheet 7)**
 
 - Annual exit plan validation
@@ -120,14 +114,12 @@ Cloud security is NOT a one-time implementation—it requires ongoing vigilance.
 - Alternative provider viability assessment
 - Exit trigger condition monitoring
 
-
 **7. Jurisdictional Risk Assessment (Sheet 8)**
 
 - Ongoing monitoring of US CLOUD Act exposure
 - Transfer mechanism validity (SCCs, BCRs, TIAs)
 - Vendor jurisdiction changes (acquisitions, data center moves)
 - Regulatory landscape changes
-
 
 ---
 
@@ -214,7 +206,6 @@ IT Operations Manager → Compliance Officer → CISO
 - Evidence register populated with audit trails (Sheet 10)
 - Approval sign-offs from IT Ops, Compliance, CISO (Sheet 11)
 
-
 **2. Governance Metrics Summary:**
 
 - Access review completion rate (target: 100%)
@@ -223,14 +214,12 @@ IT Operations Manager → Compliance Officer → CISO
 - BC/DR tests completed (target: 100% for critical services)
 - Vendor risk escalations (flagged for CISO review)
 
-
 **3. Gap Remediation Plan:**
 
 - Overdue access reviews → Target completion dates
 - Untested BC/DR plans → Test scheduling
 - High-risk vendor concerns → Mitigation actions or vendor replacement plan
 - Jurisdictional risks → TIA completion or risk acceptance
-
 
 **4. Continuous Monitoring Evidence:**
 
@@ -239,7 +228,6 @@ IT Operations Manager → Compliance Officer → CISO
 - Incident response tickets (as needed)
 - BC/DR test reports (annual minimum, quarterly for critical)
 - Vendor performance scorecards (quarterly)
-
 
 ---
 
@@ -256,7 +244,6 @@ IT Operations Manager → Compliance Officer → CISO
 - ✅ All changes documented with impact assessment and rollback plan
 - ✅ Evidence is current (<90 days old for quarterly items)
 
-
 **Auditor Perspective:**
 
 - ✅ Timestamps on evidence match claimed dates (not backdated)
@@ -265,7 +252,6 @@ IT Operations Manager → Compliance Officer → CISO
 - ✅ Incident lessons learned show actionable improvements (not "no issues found")
 - ✅ Vendor risk assessments reference objective evidence (certifications, breach notifications, not just "vendor is good")
 - ✅ Jurisdictional risk assessments updated when vendor circumstances change
-
 
 ---
 
@@ -286,7 +272,6 @@ IT Operations Manager → Compliance Officer → CISO
 - **Personnel:** 6-8 stakeholders (see Section 1.3)
 - **Tools:** Access to cloud admin consoles, ITSM system, SIEM, vendor portals
 - **Budget:** Minimal (staff time only, unless BC/DR testing requires vendor support)
-
 
 ---
 
@@ -394,14 +379,12 @@ WEEK BEFORE QUARTERLY ASSESSMENT KICKOFF
 
   - [Role]: [Sheet Name] - [Key deliverables]
   
-
   Prerequisites:
 
   - Review last quarter's findings (attached)
   - Ensure access to [relevant systems]
   - Block [X hours] over next 3 weeks
   
-
   Questions? Reply to this email.
   
   Thanks,
@@ -719,14 +702,12 @@ Each assessment sheet (2-8) has 7 additional columns (R-X) tailored to that gove
 - ❌ Non-Compliant: Review overdue by 45 days, no action taken
 - N/A: Service doesn't have user access (API-only integration)
 
-
 **Sheet 4 (Incidents):**
 
 - ✅ Compliant: Incident detected, responded to within SLA, lessons learned documented
 - ⚠️ Partial: Incident responded to but lessons learned not yet documented
 - ❌ Non-Compliant: Incident occurred but no formal response, no ticket created
 - N/A: No incidents this quarter
-
 
 **Implementer Perspective:**
 *"Don't mark something compliant just because you want it to be. If evidence is missing, it's Partial at best. Auditors will check."*
@@ -748,14 +729,12 @@ Each assessment sheet (2-8) has 7 additional columns (R-X) tailored to that gove
 - **Recent:** <90 days old for quarterly items, <365 days for annual
 - **Retrievable:** Stored in accessible location, not on someone's laptop
 
-
 **❌ Poor Evidence:**
 
 - "Trust me, we do access reviews" (no documentation)
 - Screenshot with no timestamp or context
 - "We have a BC plan" (but can't produce it or show it was tested)
 - Vendor marketing material claiming "99.99% uptime" (without actual SLA report)
-
 
 **Evidence by Sheet:**
 
@@ -780,12 +759,10 @@ This first delivery covers:
 - ✅ Section 2: Prerequisites & Preparation
 - ✅ Section 3: Understanding the Assessment Sheets
 
-
 **Next delivery will cover:**
 
 - Section 4: Completing Each Sheet (Detailed Guidance) - Sheets 2-8
 - Section 5: Evidence Collection Guide
-
 
 **Ready for next part?** 🚀
 
@@ -888,13 +865,11 @@ Q: 2026-01-15
 - Manager attestation emails (signed)
 - Remediation tickets (account disablement proof)
 
-
 **Common Pitfalls:**
 
 - ❌ Marking "Passed" when orphans were found (even if remediated—that's "Issues Found")
 - ❌ Not documenting orphan remediation (auditors will ask for disable timestamps)
 - ❌ Manager attestations collected but not dated (need timestamps)
-
 
 ---
 
@@ -1009,13 +984,11 @@ Q: 2026-01-18
 - Rollback test results (for CHG-10234, CHG-10567)
 - Post-implementation review notes (for emergency CHG-10899)
 
-
 **Common Pitfalls:**
 
 - ❌ Not tracking provider-initiated changes (AWS announces new features—still needs documentation)
 - ❌ Emergency changes marked "Compliant" (always Partial if testing bypassed, even if acceptable)
 - ❌ No evidence of post-implementation review for emergency changes
-
 
 ---
 
@@ -1105,7 +1078,6 @@ Q: 2026-01-12 (lessons learned meeting date)
 - Post-incident report with lessons learned
 - Action item tracker (showing 2/3 complete)
 - MFA enforcement evidence (screenshots of Salesforce admin console)
-
 
 **Special Case: No Incidents This Quarter**
 ```
@@ -1221,7 +1193,6 @@ Q: 2025-12-05
   - Screenshots of failover process
   - Issues found and resolutions
   - Sign-off from BC team and service owner
-
 
 **Special Case: Service Without BC Plan (Medium/Low Criticality)**
 ```
@@ -1347,13 +1318,11 @@ Q: 2026-01-20 (quarterly check date)
 - Sub-processor list (from DPA)
 - QBR meeting notes (if applicable)
 
-
 **Common Pitfalls:**
 
 - ❌ Trusting vendor claims without verifying (download certs, don't just check website)
 - ❌ Not tracking cert expiry dates (certification lapses can occur between reviews)
 - ❌ Ignoring vendor "minor" incidents (patterns matter—5 minor incidents = problem)
-
 
 ---
 
@@ -1462,7 +1431,6 @@ Q: 2025-10-15 (PoC test date)
   - Effort estimates
   - Screenshots of migrated repositories
 - Exit trigger monitoring process (email forwarding rules, status page subscriptions)
-
 
 **Special Case: Low/Medium Criticality Services (PoC Not Required)**
 ```
@@ -1579,14 +1547,12 @@ Q: 2026-01-18 (quarterly review date)
 - Risk acceptance memo (CISO/DPO signature)
 - Data residency verification (Salesforce Hyperforce instance configuration screenshot)
 
-
 **Common Pitfalls:**
 
 - ❌ Assuming US vendor = automatic CLOUD Act violation (EU data residency + mitigations can be acceptable)
 - ❌ Using outdated SCC template (Schrems II invalidated old templates)
 - ❌ TIA not renewed annually (risk landscape changes)
 - ❌ No risk acceptance documentation (DPO/CISO must formally accept residual risk)
-
 
 ---
 
@@ -1596,13 +1562,11 @@ This delivery covers:
 
 - ✅ Section 4: Completing Each Sheet (Detailed Guidance) - All 7 sheets (2-8)
 
-
 **Next delivery will cover:**
 
 - Section 5: Evidence Collection Guide
 - Section 6: Common Pitfalls & How to Avoid Them
 - Section 7: Quality Checklist
-
 
 **Ready for next part?** 🚀
 
@@ -2170,7 +2134,6 @@ Week 4: Panic, incomplete assessment, missing evidence, delayed approval
 - No time for remediation
 - Approval delays (CISO unavailable at deadline)
 
-
 **Fix:**
 ```
 Week 1: Kickoff + assign ownership + start data collection
@@ -2195,7 +2158,6 @@ Auditor checks current state: Finds gap, questions all "Compliant" statuses
 - False compliance claims
 - Audit findings
 - Loss of credibility
-
 
 **Fix:**
 ```
@@ -2224,7 +2186,6 @@ Auditor: *Marks as Non-Compliant due to unverified claim*
 
 - Failed audit check
 - Undetected incidents (security gaps)
-
 
 **Fix:**
 ```
@@ -2255,7 +2216,6 @@ Gap description: "5 orphans identified"
 - Security vulnerability (terminated employee access)
 - Repeated quarterly findings
 - Compliance failure
-
 
 **Fix:**
 ```
@@ -2290,7 +2250,6 @@ Auditor: "Emergency process requires post-review within 48 hours - Non-Compliant
 - Policy violation
 - Missed lessons learned
 - Audit finding
-
 
 **Fix:**
 ```
@@ -2328,7 +2287,6 @@ Auditor: *Marks Non-Compliant*
 - Audit failure
 - Unproven RTO/RPO
 
-
 **Fix:**
 ```
 BC/DR "Test" MUST include:
@@ -2343,7 +2301,6 @@ Acceptable test levels:
 - Full DR region failover (best)
 - Partial failover (test environment)
 - Backup restore to test environment (minimum)
-
 
 NOT acceptable:
 
@@ -2371,7 +2328,6 @@ Auditor: "You're required to monitor quarterly"
 - Vendor using expired certification (marketing fraud)
 - Compliance violation
 - Vendor risk not managed
-
 
 **Fix:**
 ```
@@ -2406,7 +2362,6 @@ Regulator: *GDPR Article 32 violation fine*
 - Regulatory violation
 - No legal defense
 - Potential fines
-
 
 **Fix:**
 ```
@@ -2445,7 +2400,6 @@ Auditor: *Non-Compliant*
 - Cannot respond to vendor issues (price hikes, security incidents, acquisition)
 - Policy violation
 
-
 **Fix:**
 ```
 Exit plan MUST be documented:
@@ -2480,7 +2434,6 @@ Actually approved: Week 10 (7 weeks delay)
 
 - Assessment data stale (6+ weeks old at approval)
 - Audit cycle broken (Q2 starts before Q1 approved)
-
 
 **Fix:**
 ```
@@ -2791,7 +2744,6 @@ Example conditions:
 - "Approved contingent on BC/DR test for AWS RDS scheduled by [date]"
 - "Approved with condition: Emergency change post-review completed within 5 days"
 
-
 Conditions documented in Column J (Gap Description) and tracked separately.
 ```
 
@@ -2803,7 +2755,6 @@ Example rejection reasons:
 - "BC/DR test claimed but no test report provided"
 - "Change tickets referenced don't exist in ServiceNow"
 - "Remediation timelines unrealistic (300-hour project scheduled for 2 days)"
-
 
 Return to Assessment Coordinator with specific items to fix.
 Do not proceed to Compliance review until issues resolved.
@@ -2876,7 +2827,6 @@ Example conditions:
 - "Approved contingent on TIA renewal for Salesforce completed by [date]"
 - "Approved with condition: DORA exit plan testing completed within 90 days"
 
-
 Conditions tracked in separate tracking sheet (not just in comments).
 ```
 
@@ -2888,7 +2838,6 @@ Example rejection reasons:
 - "DORA exit testing requirement not met for Critical financial services"
 - "Risk acceptance for jurisdictional risk lacks DPO signature"
 - "Evidence insufficient for audit (screenshots without timestamps)"
-
 
 Return to Assessment Coordinator with compliance gaps to address.
 ```
@@ -2943,7 +2892,6 @@ Assessment complete. CISO signature authorizes:
 - Remediation budget allocation
 - Continuation of quarterly governance cycle
 
-
 File assessment as official quarterly record.
 Export metrics to IMP-5.23.5 (Dashboard).
 ```
@@ -2956,7 +2904,6 @@ Example conditions:
 - "Approved contingent on hiring additional IAM admin for sustainable access reviews"
 - "Approved with requirement: DORA exit testing to be budgeted in Q2"
 
-
 Executive conditions trigger separate project planning (not just task tracking).
 ```
 
@@ -2968,7 +2915,6 @@ CISO rejection indicates significant concerns, typically:
 - Remediation plans lack credibility
 - Major regulatory compliance issue not addressed
 - Resource requirements exceed available budget significantly
-
 
 Requires executive discussion before resubmission.
 ```
@@ -3095,13 +3041,11 @@ Requires executive discussion before resubmission.
 - Sheet 2 (Access Review) → CMDB Service Owner field
 - Sheet 6 (Vendor Risk) → CMDB Vendor Risk Score
 
-
 **Integration Method:**
 
 - **Manual:** Weekly export from this workbook → import to CMDB (error-prone)
 - **Automated (Preferred):** Python script reads Excel, updates CMDB via API
 - **Bidirectional:** CMDB is source of truth, this workbook for governance details
-
 
 **Example API Integration (Python):**
 
@@ -3140,13 +3084,11 @@ for row in range(7, 31):  # Data rows 7-30
 - Sheet 4 (Incident Management) → ITSM Incident Records
 - Column M (Exception_ID) → ITSM Exception/Risk Ticket
 
-
 **Integration Method:**
 
 - **Automated ticket creation:** Python script reads non-compliant items → creates ITSM tickets
 - **Bidirectional sync:** ITSM ticket status updates Excel "Status" column
 - **Governance triggers:** ITSM change/incident events trigger governance assessment updates
-
 
 **Example ITSM Integration (ServiceNow):**
 
@@ -3189,13 +3131,11 @@ for row in range(7, 31):
 - Column N (Risk_ID) → Risk Management System risk ID
 - Column O (Compensating_Controls) → Risk mitigation controls
 
-
 **Integration Method:**
 
 - Export vendor risk ratings → import to enterprise risk register
 - Link governance gaps to operational risks
 - Trigger risk reassessment when vendor risk rating changes
-
 
 ---
 
@@ -3207,13 +3147,11 @@ for row in range(7, 31):
 - Sheet 3 (Change Management) → Vendor Change Notifications
 - Column W (Last_Assessment_Date) → Vendor reassessment schedule
 
-
 **Integration Method:**
 
 - Automated vendor risk score sync
 - Vendor certification expiry alerts from vendor portal → update Sheet 6 Column U
 - Vendor security incident feeds → auto-populate Sheet 4 Column R
-
 
 ---
 
@@ -3439,7 +3377,6 @@ Current State (Manual):
 - Average 2 weeks to complete all access reviews
 - High coordinator overhead
 
-
 Proposed State (Automated):
 
 - Python script reads Sheet 2, checks last review dates
@@ -3448,14 +3385,12 @@ Proposed State (Automated):
 - Updates Excel when reviews submitted
 - Dashboard shows real-time completion status
 
-
 ROI Analysis:
 
 - Development time: 8 hours (one-time)
 - Time saved per quarter: 6 hours (coordinator time)
 - Improved completion rate: 40% → 80%
 - Payback period: < 2 quarters
-
 
 Approval Status: ✅ APPROVED (CISO 01.02.2026)
 Implementation: Q2 2026
@@ -3556,7 +3491,6 @@ Examples:
 - **3-5 years:** Archive (compress to ZIP, store evidence separately)
 - **>5 years:** Dispose per retention schedule (retain only approved/signed PDFs)
 
-
 ---
 
 **END OF SECTION 9: INTEGRATION & MAINTENANCE**
@@ -3626,18 +3560,15 @@ Examples:
 - ISMS-POL-A.5.19-23-S5: Cloud Services Security (Section 6: Operational Management)
 - ISMS-POL-A.5.19-23-S6: Assessment Methodology & Automation
 
-
 **Assessment Layer (Upstream Dependencies):**
 
 - ISMS-IMP-A.5.23.S1: Cloud Service Inventory & Classification
 - ISMS-IMP-A.5.23.S2: Vendor Due Diligence & Contracts
 - ISMS-IMP-A.5.23.S3: Secure Configuration & Deployment
 
-
 **Assessment Layer (Downstream Consumers):**
 
 - ISMS-IMP-A.5.23.S5: Compliance Monitoring & Exit Planning
-
 
 **Related Controls:**
 
@@ -3645,14 +3576,12 @@ Examples:
 - ISMS-POL-A.5.30: ICT Readiness for Business Continuity
 - ISMS-POL-A.8.8: Management of Technical Vulnerabilities
 
-
 **Procedures:**
 
 - ISMS Incident Management Procedure
 - ISMS Change Management Procedure
 - ISMS Access Review Procedure
 - ISMS Business Continuity Plan
-
 
 ---
 
@@ -3664,7 +3593,6 @@ Examples:
 - ISO/IEC 27002:2022 - Information Security Controls (Guidance for A.5.23)
 - ISO/IEC 27005:2022 - Information Security Risk Management
 - ISO 22301:2019 - Business Continuity Management Systems
-
 
 **Regulatory Frameworks:**
 
@@ -3682,14 +3610,12 @@ Examples:
   - Allows US government to compel US companies to produce data stored anywhere
   - Addressed in Sheet 7 (Jurisdictional Risk Assessment)
 
-
 **Compliance Frameworks:**
 
 - CIS Controls v8 - Center for Internet Security benchmarks
 - NIST Cybersecurity Framework (CSF)
 - SOC 2 Type II - Service Organization Control audit reports
 - PCI DSS 4.0 - Payment Card Industry Data Security Standard
-
 
 ---
 
@@ -3719,7 +3645,6 @@ Examples:
 - Vendor risk assessments done at onboarding only
 - **Improvement Target:** Implement quarterly access reviews, basic change tracking
 
-
 **Level 2: Repeatable (Documented)**
 
 - Governance activities follow documented procedures
@@ -3727,7 +3652,6 @@ Examples:
 - Changes tracked in spreadsheet or ticketing system
 - Vendor risk monitored annually
 - **Improvement Target:** Automate reminders, integrate with CMDB/ITSM
-
 
 **Level 3: Defined (Standardized)**
 
@@ -3737,7 +3661,6 @@ Examples:
 - Vendor risk scoring methodology consistent
 - **Improvement Target:** Metrics-driven improvement, predictive analytics
 
-
 **Level 4: Managed (Measured)**
 
 - Governance KPIs tracked and reported to management
@@ -3746,7 +3669,6 @@ Examples:
 - BC/DR testing includes multi-vendor failover scenarios
 - **Improvement Target:** Full automation, AI-assisted risk assessment
 
-
 **Level 5: Optimized (Continuous Improvement)**
 
 - Governance is fully automated with human oversight
@@ -3754,7 +3676,6 @@ Examples:
 - Industry-leading governance practices
 - Governance framework continuously evolves
 - **Maintain excellence, share best practices**
-
 
 ---
 
@@ -4019,7 +3940,6 @@ TOOL/WORKBOOK TECHNICAL ISSUES:
 - **Sheet 9:** Dashboard +1 table for exit strategy readiness
 - **Sheet 11:** +DPO and CRO approval sections
 
-
 ## Regulatory Compliance Coverage
 
 | Regulation | Affected Sheets | Key Requirements |
@@ -4050,7 +3970,6 @@ All styles use **NEW object creation per cell** to avoid Excel "shared object" r
 - **All cells:** Thin borders (1px solid) on all sides
 - **Merged cells:** Apply border to entire merged range
 - **Data rows:** Consistent thin borders for professional appearance
-
 
 ## Row Heights
 
@@ -4083,7 +4002,6 @@ All styles use **NEW object creation per cell** to avoid Excel "shared object" r
 - Column O (Compensating_Controls): 30
 - Column P (Responsible_Team): 20
 - Column Q (Target_Remediation_Date): 18
-
 
 **Extended columns (R-X)** - Vary by sheet (see individual sheet specs)
 
@@ -4308,7 +4226,6 @@ XMARK = '\u274C'      # ❌ Red X (Non-Compliant)
 - **SharePoint:** `https://[org].sharepoint.com/sites/ISMS/Evidence/A.5.23.4/[Service]/[File]`
 - **ITSM:** Ticket IDs (INC-###, CHG-###, RITM-###)
 
-
 ### Regulatory Applicability Guide (v2.1 UPDATE)
 
 **When to Complete Regulatory Sheets/Columns:**
@@ -4494,11 +4411,9 @@ Row 2 (merged A2:X2):
 - Column R (Last_Review_Date): Overdue review tracking
 - Column T (Admin_Recertified): Admin recertification compliance
 
-
 **Exports to Sheet 10 (Evidence Register):**
 
 - Column J (Evidence_Location): Access review evidence tracking
-
 
 ---
 
@@ -4883,18 +4798,15 @@ Row 2 (merged A2:X2):
 
 - Cloud provider has US nexus (HQ, subsidiary, or significant US operations)
 
-
 **Examples of US-nexus providers:**
 
 - Microsoft, AWS, Google Cloud, Oracle Cloud, Salesforce, Adobe, Snowflake, ServiceNow, Workday, Okta, Zoom, Slack, Box, Dropbox, etc.
-
 
 **Skip this sheet if:**
 
 - Provider is EU/EEA-only (OVH, Hetzner, IONOS)
 - Provider is Swiss (Proton, Infomaniak)
 - Provider is UK-only with no US parent
-
 
 ### Example Data Row
 
@@ -5025,7 +4937,6 @@ Legend:
 - "Invalid" → Orange fill (FFC7CE)
 - "Missing" → Red fill (FF0000), white text
 
-
 ### Data Rows
 
 **Rows:** 5-124 (120 evidence entries capacity)
@@ -5061,7 +4972,6 @@ Legend:
 - Exit Strategies Not Tested: `='9. Summary Dashboard'!B19` (NEW v2.1)
 - Assessment Status: [Dropdown: Draft, Ready for Review, In Approval, Approved, Requires Remediation]
 
-
 **Approval Sections (Rows 14+):**
 
 **1. IT OPERATIONS REVIEW (Rows 14-22)**
@@ -5074,7 +4984,6 @@ Legend:
 - IT Ops Comments: [Long text]
 - IT Ops Approval: [Dropdown: Approved, Approved with Conditions, Rejected]
 
-
 **2. COMPLIANCE OFFICER REVIEW (Rows 24-32)**
 
 - Reviewed By (Compliance Officer): [Input]
@@ -5084,7 +4993,6 @@ Legend:
 - Remediation Plans Adequate: [Dropdown: Yes, No, N/A]
 - Compliance Comments: [Long text]
 - Compliance Approval: [Dropdown: Approved, Approved with Conditions, Rejected]
-
 
 **3. DPO REVIEW (Rows 34-42)**
 
@@ -5096,7 +5004,6 @@ Legend:
 - DPO Comments: [Long text]
 - DPO Approval: [Dropdown: Approved, Approved with Conditions, Rejected]
 
-
 **4. CRO REVIEW (Rows 44-52)**
 
 - Reviewed By (CRO): [Input]
@@ -5106,7 +5013,6 @@ Legend:
 - Vendor Concentration Risk: [Dropdown: Acceptable, Requires Diversification, Critical]
 - CRO Comments: [Long text]
 - CRO Approval: [Dropdown: Approved, Approved with Conditions, Rejected]
-
 
 **5. CISO APPROVAL (Rows 54-62)**
 
@@ -5118,14 +5024,12 @@ Legend:
 - CISO Comments: [Long text]
 - **FINAL DECISION**: [Dropdown: **Approved, Approved with Conditions, Rejected - Remediation Required, Deferred**]
 
-
 **Next Review Details (Rows 64-68):**
 
 - Next Review Date: `=B57+90` (90 days after CISO approval)
 - Next Review Type: [Dropdown: Quarterly, Annual, Triggered]
 - Review Owner: [Input]
 - Calendar Invite Sent: [Dropdown: Yes, No]
-
 
 ---
 
@@ -5158,13 +5062,11 @@ Legend:
 - Export: Cloud service governance status → CMDB compliance field
 - Import: Service owner changes → Update Sheet 2 responsible teams
 
-
 **ITSM (IT Service Management):**
 
 - Export: Non-compliant items → Auto-create ITSM remediation tickets
 - Import: Change ticket IDs → Populate Sheet 3 change references
 - Import: Incident ticket IDs → Populate Sheet 4 incident references
-
 
 **Risk Management System:**
 
@@ -5172,19 +5074,16 @@ Legend:
 - Export: Jurisdictional risks (Sheet 8) → Operational risk register
 - Import: Risk IDs → Column N (Risk_ID) across all sheets
 
-
 **IAM (Identity & Access Management):**
 
 - Import: Access review reports → Evidence for Sheet 2
 - Import: Admin account counts → Sheet 2 Column S
-
 
 **Vendor Management Portal:**
 
 - Import: Vendor cert expiry dates → Sheet 6 Column U
 - Import: Vendor security incidents → Sheet 6 Column S
 - Export: Vendor risk ratings → Vendor portal dashboards
-
 
 ---
 
@@ -5299,7 +5198,6 @@ wb.properties.version = "2.1"
 - **Unlocked Cells:** All yellow input cells, Column J (Evidence_Location)
 - **Allow:** Select unlocked cells, Select locked cells, Format cells
 
-
 **Print Settings (All Assessment Sheets):**
 
 - Page orientation: Landscape
@@ -5309,7 +5207,6 @@ wb.properties.version = "2.1"
 - Print gridlines: Yes
 - Print quality: High
 
-
 **Freeze Panes:**
 
 - **Assessment Sheets (2-8):** Row 5 frozen (headers rows 1-4 visible when scrolling)
@@ -5317,13 +5214,11 @@ wb.properties.version = "2.1"
 - **Evidence Register (10):** Row 5 frozen
 - **Approval (11):** No freeze
 
-
 **Expected File Size:**
 
 - Empty workbook: ~200-250 KB
 - Fully populated: ~1.5-2.5 MB (depends on evidence volume)
 - With images: Up to 10 MB (if screenshots embedded)
-
 
 ---
 

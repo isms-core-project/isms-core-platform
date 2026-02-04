@@ -61,7 +61,6 @@ This assessment evaluates [Organization]'s **data classification scheme and DLP 
 - **EU GDPR (Art. 30):** Mandates records of processing activities (knowing data inventory)
 - **Industry Standards:** PCI DSS (Req. 3), HIPAA (§164.308), SOC 2 all require data discovery and classification
 
-
 **Business Impact:**
 
 - **Ineffective DLP:** Without classification, DLP either blocks everything (false positives → business disruption) or nothing (false negatives → data breaches)
@@ -69,14 +68,12 @@ This assessment evaluates [Organization]'s **data classification scheme and DLP 
 - **Incident Response:** Data breach notification obligations depend on knowing what data was leaked
 - **Risk Prioritization:** Can't assess data leakage risk without knowing data sensitivity
 
-
 **Why Classification Assessment Matters:**
 
 - **Accuracy Verification:** Are DLP patterns actually detecting the data they should?
 - **Coverage Validation:** Have we identified ALL sensitive data types in the organization?
 - **Governance Check:** Do data owners understand their classification responsibilities?
 - **False Positive Management:** Are classification rules too broad (everything flagged) or too narrow (nothing detected)?
-
 
 ## Who Should Complete This Assessment
 
@@ -89,7 +86,6 @@ This assessment evaluates [Organization]'s **data classification scheme and DLP 
 - DLP detection methods in use (content inspection, labeling, fingerprinting)
 - Data ownership structure (who owns which data categories)
 
-
 **Support Roles:**
 
 - **Data Owners:** Business leaders responsible for specific data categories (HR data, customer data, financial data)
@@ -97,7 +93,6 @@ This assessment evaluates [Organization]'s **data classification scheme and DLP 
 - **DPO (Data Protection Officer):** Personal data processing inventory, GDPR/nDSG compliance
 - **DLP Administrators:** Technical pattern configuration, detection accuracy, false positive tuning
 - **Application Owners:** Where sensitive data resides (databases, file shares, SaaS applications)
-
 
 ## Time Estimate
 
@@ -110,7 +105,6 @@ This assessment evaluates [Organization]'s **data classification scheme and DLP 
 - **Testing & Validation:** 1 hour (test DLP patterns against sample data, verify detection)
 - **Evidence Collection:** 30-60 minutes (screenshots, policy exports, test results)
 - **Quality Review:** 30 minutes (self-check using Section 7 quality checklist)
-
 
 **Pro Tip:** For organizations without formal data classification program, this assessment will take longer (8-10 hours) as you'll need to conduct discovery of sensitive data types during the assessment itself.
 
@@ -126,7 +120,6 @@ This assessment implements **ISMS-POL-A.8.12 (Data Leakage Prevention Policy)** 
 - **Section 3.2 - Assessment & Verification:** Quarterly data classification review
 - **Section 4.2 - Implementation Resources:** Structured assessment workbooks
 
-
 **Policy Authority:** Chief Information Security Officer (CISO)  
 **Compliance Status:** Mandatory for all DLP deployments
 
@@ -136,7 +129,6 @@ This assessment implements **ISMS-POL-A.8.12 (Data Leakage Prevention Policy)** 
 - **A.8.12.3 (Channel Coverage):** Verifies DLP policies deployed → THIS assessment verifies policies detect correct data
 - **A.8.12.4 (Monitoring & Response):** Assesses alert effectiveness → THIS assessment ensures alerts are for REAL sensitive data (not false positives)
 - **A.8.12.5 (Compliance Dashboard):** Consolidates all assessments
-
 
 ## Critical: Data Classification Maturity Model
 
@@ -159,7 +151,6 @@ Organizations fall into different data classification maturity levels. DLP effec
 - **Level 2-3 organizations:** Assessment focuses on optimization and edge case detection
 - **Honest assessment critical:** Don't inflate maturity level to "look good" - audit will expose gaps
 
-
 **Common Issue:** Organizations implement DLP before establishing data classification. Result = DLP deployed but doesn't know what to protect = waste of money and creates false sense of security.
 
 **Best Practice:** If this assessment reveals Level 0-1 maturity, PAUSE DLP deployment, fix data classification FIRST, then resume DLP.
@@ -177,14 +168,12 @@ Organizations fall into different data classification maturity levels. DLP effec
 - [ ] Data ownership register (RACI matrix for data categories)
 - [ ] Information asset register (inventory of systems and data)
 
-
 **Technical Documentation:**
 
 - [ ] DLP pattern library (regex patterns, fingerprints, dictionaries)
 - [ ] DLP rule configuration (content inspection rules, labeling rules)
 - [ ] Data discovery scan results (if data discovery tools deployed)
 - [ ] Classification automation configuration (if automated classification tools deployed)
-
 
 **System Access:**
 
@@ -194,13 +183,11 @@ Organizations fall into different data classification maturity levels. DLP effec
 - [ ] Database query access (to sample data for classification verification)
 - [ ] File share access (to verify classification labels on documents)
 
-
 **Stakeholder Access:**
 
 - [ ] Data Owners (interviews/meetings to verify understanding of classification responsibilities)
 - [ ] DPO/Legal (to review personal data inventory, regulatory obligations)
 - [ ] Application Owners (to identify where sensitive data resides)
-
 
 ## Knowledge Required
 
@@ -211,7 +198,6 @@ Organizations fall into different data classification maturity levels. DLP effec
 - What constitutes PII, financial data, IP, credentials in [Organization]'s context
 - Basic understanding of DLP detection methods (pattern matching, labeling, contextual)
 
-
 **Technical Skills:**
 
 - Ability to read and understand regex patterns (for pattern library review)
@@ -219,14 +205,12 @@ Organizations fall into different data classification maturity levels. DLP effec
 - Document metadata inspection (to verify classification labels)
 - Understanding of false positive vs. false negative tradeoffs
 
-
 **NOT Required:**
 
 - DLP rule development expertise (covered in A.8.12.3 Channel Coverage)
 - Advanced regex programming
 - Machine learning algorithm expertise
 - Data science or analytics skills
-
 
 ## Tools Needed
 
@@ -236,20 +220,17 @@ Organizations fall into different data classification maturity levels. DLP effec
 - **Data sampling:** Access to sample real data for classification verification
 - **Pattern testing:** Tools to test regex patterns against sample data
 
-
 **Evidence Collection:**
 
 - **Screenshot tool:** Classification policy, DLP pattern library, test results
 - **Export capability:** Pattern library exports, classification statistics
 - **Document access:** Sample classified documents for evidence
 
-
 **Optional but Recommended:**
 
 - **Data discovery tool:** Automated sensitive data discovery (Spirion, Varonis, BigID, etc.)
 - **Classification automation:** Microsoft Purview Information Protection, Boldon James, etc.
 - **Pattern testing tool:** Regex testing website (regex101.com) or DLP vendor testing tool
-
 
 ## Estimated Time Commitment
 
@@ -260,14 +241,12 @@ Organizations fall into different data classification maturity levels. DLP effec
 - Review data ownership register
 - Collect classification governance documentation
 
-
 **Phase 2: Data Inventory Verification (2-3 hours)**
 
 - Review sensitive data categories defined in policy
 - Conduct gap analysis (are there data types NOT classified?)
 - Verify data discovery completeness (do we know where sensitive data resides?)
 - Sample data from key systems to verify classification accuracy
-
 
 **Phase 3: DLP Pattern Assessment (1-2 hours)**
 
@@ -276,13 +255,11 @@ Organizations fall into different data classification maturity levels. DLP effec
 - Calculate false positive and false negative rates (if data available)
 - Review pattern maintenance procedures
 
-
 **Phase 4: Classification Enforcement Verification (30-60 minutes)**
 
 - Check document labeling implementation (% of documents with classification labels)
 - Verify automated classification coverage (which systems have auto-classification)
 - Test classification workflows (create document, verify label applied)
-
 
 **Phase 5: Assessment Completion & Evidence (1 hour)**
 
@@ -291,7 +268,6 @@ Organizations fall into different data classification maturity levels. DLP effec
 - Collect evidence files
 - Populate Evidence Register
 - Review Summary Dashboard
-
 
 **Total:** 5-7 hours (Level 2-3 maturity), 8-10 hours (Level 0-1 maturity - significant discovery work)
 
@@ -444,7 +420,6 @@ Organizations fall into different data classification maturity levels. DLP effec
 - **"No":** If no formal classification scheme
 - **"N/A":** Not applicable (rare - even smallest organizations need basic classification)
 
-
 **Understanding the Requirement:**
 
 **Policy (ISMS-POL-A.8.12 Section 2.1):**
@@ -455,14 +430,12 @@ Organizations fall into different data classification maturity levels. DLP effec
 - Handling requirements per classification level
 - User training on classification responsibilities
 
-
 **Why Classification Scheme Matters:**
 
 - **DLP foundation:** DLP protection requirements mapped to classification levels
 - **Risk-based approach:** Apply strongest DLP controls to highest classification (Restricted), proportionate controls to lower levels
 - **User understanding:** Users need clear guidance on what data is sensitive
 - **Audit evidence:** Demonstrates systematic approach to data protection
-
 
 **Field Guidance:**
 
@@ -491,7 +464,6 @@ Organizations fall into different data classification maturity levels. DLP effec
 - User training provided annually with >80% completion rate
 - Classification scheme reviewed annually and updated as needed
 
-
 **⚠️ Partial:**
 
 - Classification scheme exists but definitions unclear or incomplete
@@ -501,7 +473,6 @@ Organizations fall into different data classification maturity levels. DLP effec
 - Classification scheme outdated (>2 years since last review)
 - Some data categories lack clear classification (e.g., customer data not clearly classified)
 
-
 **❌ Non-Compliant:**
 
 - No formal classification scheme
@@ -510,11 +481,9 @@ Organizations fall into different data classification maturity levels. DLP effec
 - No user training on classification
 - DLP deployed without alignment to classification scheme
 
-
 **N/A:**
 
 - Not applicable (extremely rare)
-
 
 **Compliance Checklist:**
 
@@ -615,7 +584,6 @@ Organizations fall into different data classification maturity levels. DLP effec
 - Implement automated classification where possible  
 - Enforce through DLP (unclassified sensitive data = DLP alert)  
 
-
 **Pitfall 2:** "Everything is marked Confidential to be safe"  
 **Problem:** Over-classification makes DLP unusable (everything flagged = alert fatigue)  
 **Root causes:**  
@@ -630,7 +598,6 @@ Organizations fall into different data classification maturity levels. DLP effec
 - Regular audits of classification accuracy (sample documents, verify correctness)  
 - Proportionate DLP controls (don't block Internal data transfers, users won't over-classify)  
 - Data owner review of classification decisions for their data category  
-
 
 **Pitfall 3:** "IT is the data owner for all data"  
 **Problem:** Wrong accountability model, business disengaged from data protection  
@@ -650,7 +617,6 @@ Organizations fall into different data classification maturity levels. DLP effec
 - User training completion report: `EV-1-Scheme-20260121-Training-Completion-Q4-2025.pdf`
 - Classification workflow diagram: `EV-1-Scheme-20260121-Workflow-Diagram.png`
 
-
 ---
 
 ## Sheet: Sensitive_Data_Inventory
@@ -663,7 +629,6 @@ Organizations fall into different data classification maturity levels. DLP effec
 - **"Partial":** If inventory exists but incomplete (some data types not inventoried, or inventory not maintained)
 - **"No":** If no systematic data inventory, relying on ad-hoc knowledge
 - **"N/A":** Not applicable (extremely rare - all organizations process some sensitive data)
-
 
 **Understanding the Requirement:**
 
@@ -678,14 +643,12 @@ Sensitive data categories requiring DLP protection:
 - Customer Data - Customer lists, contracts, pricing, CRM data
 - Employee Data - HR records, payroll, performance reviews
 
-
 **Why Data Inventory Matters:**
 
 - **DLP scope definition:** Can't protect data you don't know exists
 - **Regulatory compliance:** GDPR Art. 30 requires records of processing activities (data inventory)
 - **Risk assessment:** Need to know where sensitive data resides to assess leakage risk
 - **Incident response:** Data breach notification requires knowing what data was exposed
-
 
 **Field Guidance:**
 
@@ -715,7 +678,6 @@ Sensitive data categories requiring DLP protection:
 - Data inventory maintained and reviewed quarterly
 - Data owners assigned and engaged for each category
 
-
 **⚠️ Partial:**
 
 - Data inventory exists but incomplete (some categories missing)
@@ -723,7 +685,6 @@ Sensitive data categories requiring DLP protection:
 - DLP coverage gaps (some inventoried data types not protected by DLP)
 - Data discovery manual only (no automated scanning, likely incomplete)
 - Data owners assigned but not actively maintaining inventory
-
 
 **❌ Non-Compliant:**
 
@@ -733,11 +694,9 @@ Sensitive data categories requiring DLP protection:
 - No data discovery performed (unknown where sensitive data resides)
 - DLP deployed without understanding what data to protect
 
-
 **N/A:**
 
 - Specific data category not applicable to organization (e.g., healthcare data for non-healthcare organization)
-
 
 **Compliance Checklist:**
 
@@ -838,7 +797,6 @@ Sensitive data categories requiring DLP protection:
 - Remediation process for findings (risk assessment, action plan, ownership)  
 - Integration with DLP (discovery findings → DLP policy updates)  
 
-
 **Pitfall 2:** "We only inventory structured data (databases)"  
 **Problem:** Unstructured data (documents, emails, file shares) often contains more sensitive data than databases  
 **Statistics:** 80% of organizational data is unstructured, 90% of sensitive data breaches involve unstructured data  
@@ -847,7 +805,6 @@ Sensitive data categories requiring DLP protection:
 - Expand discovery to unstructured data stores (file shares, SharePoint, email archives, endpoints)  
 - Use content-aware discovery (not just file name, but inspect file contents)  
 - Prioritize high-risk locations (shared drives, contractor endpoints, personal cloud storage)  
-
 
 **Pitfall 3:** "Data inventory is DPO's job, not DLP team's job"  
 **Problem:** Siloed approach, inventory not used for DLP  
@@ -866,7 +823,6 @@ Sensitive data categories requiring DLP protection:
 - Data flow diagram: `EV-2-Inventory-20260121-Data-Flow-Diagram.png`
 - DLP coverage test results: `EV-2-Inventory-20260121-DLP-Detection-Tests.xlsx`
 - Regulatory mapping table: `EV-2-Inventory-20260121-Regulatory-Requirements.pdf`
-
 
 ---
 
@@ -887,7 +843,6 @@ EV-[Domain]-[Category]-[Date]-[Description].[ext]
 - 4 = Classification Enforcement
 - 5 = Pattern Library
 
-
 **Examples:**
 
 - `EV-1-Scheme-20260121-Classification-Policy-v2.0.pdf`
@@ -896,14 +851,12 @@ EV-[Domain]-[Category]-[Date]-[Description].[ext]
 - `EV-4-Enforcement-20260121-Document-Labeling-Statistics.png`
 - `EV-5-Patterns-20260121-Credit-Card-Pattern-Accuracy-Tests.xlsx`
 
-
 **Storage Requirements:**
 
 - **Location:** `ISMS/Controls/A.8.12_DLP/Assessments/Data_Classification/Evidence/`
 - **Retention:** Audit cycle + 1 year (typically 2-3 years)
 - **Sensitivity:** Internal (may contain sample data, sanitize if needed)
 - **Access Control:** Security Team, DPO, Auditors
-
 
 **Evidence Quality Criteria:**
 
@@ -912,7 +865,6 @@ EV-[Domain]-[Category]-[Date]-[Description].[ext]
 - **Attributable:** Clear which system/process documented
 - **Verifiable:** Auditor can reproduce collection
 - **Protected:** Sanitize sensitive data in evidence files
-
 
 ## Evidence Types by Domain
 
@@ -923,14 +875,12 @@ EV-[Domain]-[Category]-[Date]-[Description].[ext]
 - User training materials and completion reports
 - Classification workflow diagrams
 
-
 **2. Sensitive Data Inventory:**
 
 - Data inventory spreadsheet (all categories)
 - Data discovery scan results
 - Data flow diagrams
 - Regulatory mapping documentation
-
 
 **3. Detection Methods:**
 
@@ -939,14 +889,12 @@ EV-[Domain]-[Category]-[Date]-[Description].[ext]
 - DLP console screenshots showing rules
 - False positive/negative analysis
 
-
 **4. Classification Enforcement:**
 
 - Document labeling statistics
 - Classification automation configuration
 - Label application workflow screenshots
 - Label accuracy audit results
-
 
 **5. Pattern Library:**
 
@@ -955,7 +903,6 @@ EV-[Domain]-[Category]-[Date]-[Description].[ext]
 - Pattern maintenance procedures
 - Pattern testing tools/scripts
 
-
 **Minimum Evidence Required:**
 
 - Classification Scheme: 4 items (policy, ownership, training, workflow)
@@ -963,7 +910,6 @@ EV-[Domain]-[Category]-[Date]-[Description].[ext]
 - Detection Methods: 3 items (test results per method)
 - Classification Enforcement: 2 items (labeling stats, automation config)
 - Pattern Library: 3 items (library export, accuracy tests, procedures)
-
 
 **Total Minimum:** 15 evidence items
 
@@ -979,7 +925,6 @@ EV-[Domain]-[Category]-[Date]-[Description].[ext]
 - DLP alert fatigue (security team ignores alerts)  
 - Business disruption (legitimate work blocked)  
 - Wasted DLP investment (can't differentiate real threats from normal work)
-
 
 **Root Cause:** Users don't understand classification or fear consequences of under-classification
 
@@ -999,13 +944,11 @@ EV-[Domain]-[Category]-[Date]-[Description].[ext]
 - Real data leakage missed in noise
 - Users lose trust in DLP, find workarounds
 
-
 **Root Causes:**
 
 - Overly broad regex (e.g., `\d{16}` matches ANY 16 digits, not just credit cards)
 - No contextual analysis (credit card in test environment vs. production)
 - No pattern accuracy testing before deployment
-
 
 **Solution:**
 1. **Baseline false positive rate** - Measure current FP rate (FP / Total Alerts × 100)
@@ -1035,13 +978,11 @@ Critical threshold: >30% (DLP ineffective)
 - Compliance violations (promised protection not delivered)
 - False sense of security ("We have DLP, we're safe")
 
-
 **Root Causes:**
 
 - Incomplete data inventory (don't know all sensitive data types)
 - Pattern gaps (missing detection logic for specific data formats)
 - Evasion techniques (users/attackers obfuscate data to bypass DLP)
-
 
 **Solution:**
 1. **Comprehensive data inventory** - Discovery scans + manual review
@@ -1069,13 +1010,11 @@ Target: 100% for Restricted/Confidential data
 - Incorrect classification
 - DLP protecting wrong data or missing sensitive data
 
-
 **Root Causes:**
 
 - Too many prompts (prompt fatigue)
 - Unclear options (users don't understand choices)
 - No consequences (wrong classification = no impact on user)
-
 
 **Solution:**
 1. **Reduce prompt frequency:**
@@ -1099,7 +1038,6 @@ Target: 100% for Restricted/Confidential data
    - Unclassified document upload to external site = blocked
    - User must classify before upload (forces engagement)
 
-
 ## "We don't have budget for data discovery tools"
 
 **Problem:** Manual data inventory is incomplete and quickly outdated  
@@ -1108,7 +1046,6 @@ Target: 100% for Restricted/Confidential data
 - Unknown sensitive data locations
 - DLP coverage gaps
 - Compliance risk (GDPR requires knowing what data you process)
-
 
 **Solution (without expensive tools):**
 1. **Use built-in capabilities:**
@@ -1133,14 +1070,12 @@ Target: 100% for Restricted/Confidential data
    - Simple grep/regex scripts to search for SSN patterns, credit cards, etc.
    - Not as sophisticated as commercial tools but free
 
-
 **Free/Open Source Options:**
 
 - **Maigret:** OSINT tool for finding data leakage
 - **GitLeaks:** Find secrets in Git repos
 - **TruffleHog:** Find credentials in code
 - **PowerShell scripts:** Custom regex search scripts
-
 
 ## "Classification scheme is too complex (7 levels), nobody uses it correctly"
 
@@ -1150,7 +1085,6 @@ Target: 100% for Restricted/Confidential data
 - Users confused, classify incorrectly
 - Inconsistent classification across organization
 - DLP rules complex, error-prone
-
 
 **Solution:**
 1. **Simplify to 3-4 levels maximum:**
@@ -1173,7 +1107,6 @@ Target: 100% for Restricted/Confidential data
    - Consolidate rarely-used levels
    - Migrate documents from retired levels
 
-
 ---
 
 # Quality Checklist (Self-Review Before Submission)
@@ -1188,7 +1121,6 @@ Target: 100% for Restricted/Confidential data
 - [ ] Remediation plans include: Gap description, Risk level, Action, Owner, Target Date
 - [ ] Summary Dashboard shows compliance percentage calculated
 
-
 **Accuracy Check:**
 
 - [ ] Classification scheme levels match current approved policy (not outdated version)
@@ -1197,7 +1129,6 @@ Target: 100% for Restricted/Confidential data
 - [ ] False positive rates calculated from real DLP alert data
 - [ ] Data owner names verified (not "TBD" or generic roles)
 - [ ] Regulatory drivers confirmed with Legal/DPO
-
 
 **Evidence Quality:**
 
@@ -1208,14 +1139,12 @@ Target: 100% for Restricted/Confidential data
 - [ ] Sensitive data sanitized in evidence files (no real credit cards, SSNs, etc.)
 - [ ] Evidence Register links verified (files actually exist at specified paths)
 
-
 **Policy Alignment:**
 
 - [ ] Assessment covers all data categories from ISMS-POL-A.8.12 Section 2.1 table
 - [ ] DLP protection requirements per classification level verified
 - [ ] Classification maturity level honestly assessed (don't inflate to look good)
 - [ ] Gaps mapped to specific policy requirements
-
 
 **Detection Verification:**
 
@@ -1224,7 +1153,6 @@ Target: 100% for Restricted/Confidential data
 - [ ] False positive and false negative rates measured (if data available)
 - [ ] Pattern accuracy verified through testing (not just pattern existence)
 
-
 **Stakeholder Engagement:**
 
 - [ ] Data owners consulted for their data categories
@@ -1232,14 +1160,12 @@ Target: 100% for Restricted/Confidential data
 - [ ] Legal reviewed regulatory drivers
 - [ ] Users surveyed or interviewed about classification understanding
 
-
 **Final Checks:**
 
 - [ ] Workbook filename includes date: `ISMS-IMP-A.8.12.2_Data_Classification_20260121.xlsx`
 - [ ] All formulas calculate correctly (no #REF, #DIV/0, #VALUE errors)
 - [ ] Conditional formatting working (✅=Green, ⚠️=Yellow, ❌=Red)
 - [ ] Sheet protection enabled (formula cells locked)
-
 
 ---
 
@@ -1255,7 +1181,6 @@ Target: 100% for Restricted/Confidential data
 - [ ] Quarterly Review
 - [ ] Ad-Hoc Assessment (trigger: _____)
 - [ ] Post-Policy Update
-
 
 ## Completed By (Primary Assessor)
 
@@ -1274,7 +1199,6 @@ I confirm that:
 - DLP detection tested, not assumed
 - Classification maturity level honestly assessed
 
-
 ## Reviewed By (Information Security Manager / CISO)
 
 **Name:** _______________________  
@@ -1289,7 +1213,6 @@ _________________________________________________________________
 - [ ] Approved - Ready for deployment
 - [ ] Approved with minor corrections: _______
 - [ ] Requires revision: _______
-
 
 ## Consulted Stakeholders
 
@@ -1317,7 +1240,6 @@ _________________________________________________________________
 - [ ] Approved with conditions - Remediation required by: _______
 - [ ] Rejected - Re-assessment required: _______
 
-
 **Risk Acceptance:**
 For documented gaps (classification maturity, pattern accuracy, coverage):
 
@@ -1325,14 +1247,12 @@ For documented gaps (classification maturity, pattern accuracy, coverage):
 - [ ] Remediation required before DLP deployment
 - [ ] Escalation to Executive Management required (Critical gaps)
 
-
 **Budget Approval (if remediation requires funding):**
 Estimated cost: _______
 
 - [ ] Approved (data discovery tools, classification automation, consulting)
 - [ ] Requires business case
 - [ ] Deferred to next budget cycle
-
 
 ## Next Review Date
 
@@ -1346,13 +1266,11 @@ Estimated cost: _______
 - Data breaches involving DLP failures
 - Regulatory changes (new data protection laws)
 
-
 **Interim Monitoring:**
 
 - Pattern accuracy: Monthly testing of critical patterns
 - Classification compliance: Quarterly audits of document labeling
 - Data inventory: Continuous updates as new systems deployed
-
 
 ## Distribution List
 
@@ -1366,7 +1284,6 @@ This assessment shall be distributed to:
 - [ ] Data Owners (executive summary only)
 - [ ] Internal Audit
 - [ ] IT Management
-
 
 **Storage Location:**
 `ISMS/Controls/A.8.12_DLP/Assessments/Data_Classification/ISMS-IMP-A.8.12.2_Data_Classification_[DATE]_APPROVED.xlsx`
@@ -1420,7 +1337,6 @@ This assessment shall be distributed to:
 - Rows 27-35: Legend - Response values
 - Rows 37-45: Color coding guide
 
-
 **Organization Metadata Fields:**
 
 | Row | Field | Type | Example |
@@ -1436,7 +1352,6 @@ This assessment shall be distributed to:
 
 - Organization metadata (B7:B12): Yellow fill, unlocked for user input
 - All other cells: Locked, gray or white fill
-
 
 **No Data Validation:** Informational sheet only
 
@@ -1590,7 +1505,6 @@ validation_status = {
   - "No" = Light red background
   - "Partial" = Light yellow background
 
-
 ---
 
 ## Sheet: Detection_Methods
@@ -1667,7 +1581,6 @@ validation_status = {
   - ≤5% = Green
   - 6-15% = Yellow
   - >15% = Red
-
 
 ---
 
@@ -1756,7 +1669,6 @@ validation_status = {
   - ≥85% = Green
   - 70-84% = Yellow
   - <70% = Red
-
 
 ---
 
@@ -1858,7 +1770,6 @@ validation_status = {
   - "Medium" = Yellow
   - "Low" = Red
 
-
 ---
 
 ## Sheet: Gap_Analysis
@@ -1931,7 +1842,6 @@ validation_status = {
   - "In Progress" = Yellow fill
   - "Open" = Red fill
   - "Accepted" = Gray fill
-
 
 ---
 
@@ -2007,7 +1917,6 @@ validation_sensitivity = {
 
 - Dashboard title, assessment date, organization
 
-
 **Rows 7-15: Key Metrics (Large display)**
 
 | Metric | Formula | Target |
@@ -2034,7 +1943,6 @@ validation_sensitivity = {
 **Rows 27-35: Top 5 Critical Gaps (if any)**
 
 - Dynamically pulled from Gap_Analysis sheet (filtered by "Critical" risk level)
-
 
 **Key Formulas:**
 
@@ -2083,7 +1991,6 @@ validation_sensitivity = {
   - 0 = Green
   - 1-2 = Yellow
   - ≥3 = Red
-
 
 ---
 
@@ -2197,7 +2104,6 @@ risk_formatting = {
 - Pre-populated examples (gray rows)
 - Summary_Dashboard calculations
 
-
 **Unprotected Cells (User Input):**
 
 - All yellow-highlighted fields (organization metadata)
@@ -2207,13 +2113,11 @@ risk_formatting = {
 - Evidence Register descriptions
 - Gap Analysis fields
 
-
 **Sheet Protection Password:**
 
 - Use organization-specific password
 - Allow: Format cells, Insert rows, Sort, Filter
 - Disallow: Delete rows, Modify formulas, Unprotect sheet
-
 
 ---
 
@@ -2228,7 +2132,6 @@ Each domain has a weight based on importance:
 - Detection Methods: 20% (technical capability)
 - Classification Enforcement: 15% (operational)
 - Pattern Library: 20% (accuracy)
-
 
 ```python
 overall_compliance = (
@@ -2370,13 +2273,11 @@ def create_summary_dashboard(wb):
    - Sensitive data categories may vary (add organization-specific categories)
    - Pattern library will be unique (replace examples with actual patterns)
 
-
 2. **Adjust Validation Lists:**
 
    - Data categories: Add organization-specific categories
    - Systems/Applications: Replace generic examples with actual systems
    - Detection methods: Add any custom detection methods
-
 
 3. **Tune Thresholds:**
 
@@ -2384,12 +2285,10 @@ def create_summary_dashboard(wb):
    - False positive targets (<10%) may be aspirational for immature programs
    - Coverage targets (80%, 100%) should align with policy requirements
 
-
 4. **Customize Formulas:**
 
    - Weighted compliance calculation may need different weights
    - Summary dashboard KPIs may need additions/removals based on stakeholder needs
-
 
 ## A.3 Quality Assurance
 
@@ -2430,7 +2329,6 @@ def check_formulas():
 - [ ] No #REF or #VALUE errors
 - [ ] File saves and reopens without errors
 
-
 ## A.4 Deployment Instructions
 
 **Step 1: Generate Workbook**
@@ -2456,20 +2354,17 @@ python3 excel_sanity_check_a812_2.py ISMS-IMP-A.8.12.2_Data_Classification_Asses
 - Check conditional formatting (enter values triggering different colors)
 - Verify sheet protection (try to modify locked cells - should fail)
 
-
 **Step 4: Distribute to Assessment Team**
 
 - Provide workbook + PART I User Completion Guide
 - Conduct brief training session (30 min)
 - Set completion deadline (typically 2-4 weeks)
 
-
 **Step 5: Collect Completed Assessments**
 
 - Review for completeness (no blank mandatory fields)
 - Validate evidence exists (files referenced in Evidence Register)
 - Approve or request corrections
-
 
 ---
 
@@ -2492,7 +2387,6 @@ To create complete ISMS-IMP-A.8.12.2 specification:
 
 - openpyxl library (`pip install openpyxl`)
 - Python 3.7+
-
 
 ---
 

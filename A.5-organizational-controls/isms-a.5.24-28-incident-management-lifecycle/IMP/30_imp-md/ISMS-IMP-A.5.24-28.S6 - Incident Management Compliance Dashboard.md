@@ -44,7 +44,6 @@
 - NIST SP 800-61 Rev. 2 (Computer Security Incident Handling Guide)
 - ISO/IEC 27035-1:2023 (Incident Management Principles)
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -72,7 +71,6 @@ This dashboard consolidates incident management compliance metrics from all five
 - Real-time security monitoring (use SIEM/SOC dashboard)
 - Threat intelligence feeds (see A.5.7 Threat Intelligence)
 
-
 **Dashboard Output:**
 
 - Consolidated Excel workbook with executive summary
@@ -81,7 +79,6 @@ This dashboard consolidates incident management compliance metrics from all five
 - KPI scorecards with traffic light indicators
 - Evidence traceability across all assessment domains
 - Management approval workflow
-
 
 ## Why This Matters
 
@@ -105,7 +102,6 @@ This dashboard consolidates incident management compliance metrics from all five
 - **Regulatory Gaps:** Compliance with GDPR, Swiss nDSG, PCI DSS requires demonstrable incident management capability
 - **Insurance Requirements:** Cyber insurance policies increasingly require evidence of mature incident response
 
-
 **This Dashboard Addresses:**
 
 - What is our overall incident management compliance posture?
@@ -113,7 +109,6 @@ This dashboard consolidates incident management compliance metrics from all five
 - Are we meeting our incident response KPIs?
 - What evidence supports our compliance claims?
 - How has our compliance posture changed over time?
-
 
 ## Who Should Complete This Dashboard
 
@@ -126,7 +121,6 @@ This dashboard consolidates incident management compliance metrics from all five
 - Familiarity with organisational KPI reporting requirements
 - Understanding of regulatory compliance requirements
 
-
 **Support Roles:**
 
 - **CSIRT Manager:** Domain-specific assessment data, incident statistics
@@ -135,13 +129,11 @@ This dashboard consolidates incident management compliance metrics from all five
 - **IT Operations:** Integration metrics, system availability data
 - **Legal/Privacy:** Breach notification compliance, regulatory reporting
 
-
 **Collaboration Required:**
 
 - Requires input from owners of S1-S5 assessments
 - Coordination with compliance team for regulatory mapping
 - Review sessions with executive leadership for KPI validation
-
 
 ## Time Estimate
 
@@ -185,7 +177,6 @@ This dashboard consolidates incident management compliance metrics from all five
 - **Moderate (5 hours):** Some assessment data requires updating, moderate gaps requiring analysis
 - **Complex (6+ hours):** Significant gaps across multiple domains, regulatory audit pending, first-time consolidation
 
-
 ## Connection to Policy
 
 This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring & Reporting)** which defines mandatory requirements for:
@@ -197,14 +188,12 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 - Identification and remediation of gaps
 - Trend analysis over time
 
-
 **Executive Reporting:**
 
 - Quarterly compliance summary to CISO
 - Annual compliance report to Board/Audit Committee
 - Exception reporting for critical gaps
 - Regulatory compliance attestation
-
 
 **Evidence Management:**
 
@@ -213,7 +202,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 - Evidence retention per policy requirements
 - Audit-ready documentation
 
-
 **Continuous Improvement:**
 
 - Gap remediation tracking
@@ -221,10 +209,8 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 - Lessons learned integration
 - Process improvement recommendations
 
-
 **Policy Authority:** Chief Information Security Officer (CISO)
 **Compliance Status:** Mandatory for ISO 27001 certification and regulatory compliance
-
 
 ## Assessment Scope
 
@@ -238,14 +224,12 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 - A.5.27 compliance score (Learning & Improvement)
 - A.5.28 compliance score (Evidence Collection)
 
-
 ✅ **Gap Analysis:**
 
 - Consolidated gap inventory from all domains
 - Gap severity classification (Critical, High, Medium, Low)
 - Remediation status tracking
 - Gap aging analysis
-
 
 ✅ **Key Performance Indicators:**
 
@@ -258,14 +242,12 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 - Training completion rate
 - Exercise frequency compliance
 
-
 ✅ **Evidence Register:**
 
 - Cross-reference to S1-S5 workbooks
 - Evidence completeness tracking
 - Evidence currency validation
 - Audit trail maintenance
-
 
 **Excluded from This Dashboard:**
 
@@ -274,7 +256,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 ❌ Real-time operational metrics (use SOC dashboard)
 ❌ Threat intelligence data (see A.5.7)
 ❌ Business continuity metrics (see A.5.29-30)
-
 
 ## Prerequisites
 
@@ -288,14 +269,12 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
    - ISMS-IMP-A.5.24-28.S4_Forensic_Evidence completed
    - ISMS-IMP-A.5.24-28.S5_Learning_Improvement completed
 
-
 2. ✅ **Gather Incident Statistics:**
 
    - Number of incidents by severity (12-month period)
    - Average detection, response, containment, recovery times
    - Incident closure rates
    - Post-incident review completion rates
-
 
 3. ✅ **Identify Stakeholders:**
 
@@ -304,20 +283,17 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
    - Compliance Officer (regulatory mapping)
    - Internal Audit (audit evidence requirements)
 
-
 4. ✅ **Establish KPI Targets:**
 
    - Review organisational risk appetite
    - Align targets with industry benchmarks
    - Validate targets with executive leadership
 
-
 5. ✅ **Prepare Evidence Repository:**
 
    - Create folder: `/Evidence/A.5.24-28/S6_Dashboard/`
    - Ensure access to all S1-S5 evidence folders
    - Verify evidence currency
-
 
 ---
 
@@ -381,7 +357,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 - Data source references
 - Colour coding and legend
 
-
 **Sheet 2: Executive Summary**
 
 - Overall compliance score
@@ -389,7 +364,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 - Top 5 gaps requiring attention
 - KPI scorecard summary
 - Next steps and recommendations
-
 
 **Sheet 3: Compliance Scores by Control**
 
@@ -400,7 +374,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 - A.5.28 compliance breakdown (Evidence Collection)
 - Weighted overall compliance calculation
 
-
 **Sheet 4: Gap Analysis**
 
 - Consolidated gap inventory (100 items capacity)
@@ -409,7 +382,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 - Gap owner assignment
 - Due date tracking
 - Aging analysis
-
 
 **Sheet 5: Incident KPIs**
 
@@ -422,7 +394,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 - Post-incident review completion
 - Training and exercise compliance
 
-
 **Sheet 6: Evidence Register**
 
 - Evidence inventory (100 items capacity)
@@ -432,7 +403,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 - Verification status
 - Last updated dates
 
-
 **Sheet 7: Approval Sign-Off**
 
 - Assessment summary
@@ -440,7 +410,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 - CISO approval
 - Next review date
 - Distribution list
-
 
 ---
 
@@ -468,14 +437,12 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
   - 75-89%: AMBER - Partially Compliant
   - <75%: RED - Non-Compliant
 
-
 ### **Control Heat Map**
 
 - **Visual representation** of compliance by control
 - **Row:** Control number (A.5.24 through A.5.28)
 - **Columns:** Assessment domains within each control
 - **Cell colour:** GREEN/AMBER/RED based on compliance level
-
 
 ### **Top 5 Gaps**
 
@@ -487,7 +454,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
   - Remediation effort (quick wins first)
 - **Information captured:** Gap ID, Description, Severity, Owner, Due Date
 
-
 ### **KPI Scorecard Summary**
 
 - **Key metrics** with target comparison
@@ -498,12 +464,10 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
   - Incident closure rate (target: >95%)
   - Post-incident review completion (target: 100%)
 
-
 ### **Recommendations**
 
 - **Top 3 recommendations** for improvement
 - **Format:** Action, Owner, Timeline, Expected Benefit
-
 
 ---
 
@@ -533,7 +497,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 
 **Data Source:** ISMS-IMP-A.5.24-28.S1_Framework_Assessment (Dashboard sheet)
 
-
 ---
 
 ### **A.5.25 - Assessment and Decision on Information Security Events**
@@ -553,7 +516,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 | **A.5.25 Total** | **100%** | **[Score]%** | **[Status]** |
 
 **Data Source:** ISMS-IMP-A.5.24-28.S2_Detection_Classification (Dashboard sheet)
-
 
 ---
 
@@ -575,7 +537,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 
 **Data Source:** ISMS-IMP-A.5.24-28.S3_Response_Capabilities (Dashboard sheet)
 
-
 ---
 
 ### **A.5.27 - Learning from Information Security Incidents**
@@ -596,7 +557,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 
 **Data Source:** ISMS-IMP-A.5.24-28.S5_Learning_Improvement (Dashboard sheet)
 
-
 ---
 
 ### **A.5.28 - Collection of Evidence**
@@ -616,7 +576,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 | **A.5.28 Total** | **100%** | **[Score]%** | **[Status]** |
 
 **Data Source:** ISMS-IMP-A.5.24-28.S4_Forensic_Evidence (Dashboard sheet)
-
 
 ---
 
@@ -651,13 +610,11 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 - **Medium:** Moderate gap, improvements recommended within 90 days
 - **Low:** Minor observation, improvement opportunity, no immediate risk
 
-
 **Gap Status Workflow:**
 
 1. **Open:** Gap identified, not yet addressed
 2. **In Progress:** Remediation underway, owner assigned
 3. **Closed:** Remediation complete, evidence documented
-
 
 **Gap Aging Thresholds:**
 
@@ -665,7 +622,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 - High: >60 days = OVERDUE (RED)
 - Medium: >90 days = OVERDUE (AMBER)
 - Low: >180 days = OVERDUE (AMBER)
-
 
 ---
 
@@ -687,7 +643,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 | Detection Source Coverage | [Value]% | >80% | [Status] | [Trend] |
 | False Positive Rate | [Value]% | <10% | [Status] | [Trend] |
 
-
 ---
 
 ### **Response Metrics**
@@ -699,7 +654,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 | Mean Time to Respond (MTTR) - Medium | [Value] | <4 hours | [Status] | [Trend] |
 | First Contact Resolution Rate | [Value]% | >60% | [Status] | [Trend] |
 | Escalation Rate | [Value]% | <20% | [Status] | [Trend] |
-
 
 ---
 
@@ -713,7 +667,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 | Mean Time to Recover (MTTRec) - High | [Value] | <24 hours | [Status] | [Trend] |
 | Business Impact Duration (avg) | [Value] | <2 hours | [Status] | [Trend] |
 
-
 ---
 
 ### **Operational Metrics**
@@ -725,7 +678,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 | High Incidents | [Value] | <10 | [Status] | [Trend] |
 | Incident Closure Rate | [Value]% | >95% | [Status] | [Trend] |
 | SLA Compliance Rate | [Value]% | >95% | [Status] | [Trend] |
-
 
 ---
 
@@ -739,7 +691,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 | Tabletop Exercise Frequency | [Value]/year | 2/year | [Status] | [Trend] |
 | Policy Review Currency | [Value] | <12 months | [Status] | [Trend] |
 
-
 ---
 
 ### **Trend Analysis**
@@ -752,7 +703,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 | [Month-11] | [Value] | [Value] | [Value] | [Value] | [Value] | [Value]% |
 | ... | ... | ... | ... | ... | ... | ... |
 | [Current] | [Value] | [Value] | [Value] | [Value] | [Value] | [Value]% |
-
 
 ---
 
@@ -785,13 +735,11 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 - **Record:** Log extract, incident ticket, training record
 - **Attestation:** Signed statement, certification, approval
 
-
 **Evidence Status Definitions:**
 
 - **Verified:** Evidence reviewed and confirmed current
 - **Pending:** Evidence identified but not yet collected or verified
 - **Expired:** Evidence older than acceptable threshold (typically 12 months)
-
 
 **Evidence Linkage by Control:**
 
@@ -802,7 +750,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 | A.5.26 | S3_Response_Capabilities | Runbooks, playbooks, communication plans, incident logs |
 | A.5.27 | S5_Learning_Improvement | PIR reports, lessons learned register, improvement tracker |
 | A.5.28 | S4_Forensic_Evidence | Evidence handling procedures, chain of custody forms, forensic reports |
-
 
 ---
 
@@ -824,7 +771,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 | Critical Gaps Identified | [Number] |
 | Recommendations Count | [Number] |
 
-
 ---
 
 ### **Approval Chain**
@@ -834,7 +780,6 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 | [Name] | CSIRT Manager | [ ] Approved [ ] Approved with Comments | [Date] | [Signature] |
 | [Name] | CISO | [ ] Approved [ ] Approved with Comments | [Date] | [Signature] |
 | [Name] | Internal Audit (optional) | [ ] Reviewed | [Date] | [Signature] |
-
 
 ---
 
@@ -849,13 +794,11 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 | KPI targets confirmed | [ ] Yes [ ] No |
 | Recommendations reviewed | [ ] Yes [ ] No |
 
-
 ---
 
 ### **Comments and Conditions**
 
 _[Space for approver comments, conditions of approval, or follow-up actions]_
-
 
 ---
 
@@ -868,7 +811,6 @@ _[Space for approver comments, conditions of approval, or follow-up actions]_
 | [Name] | Compliance Officer | [Date] |
 | [Name] | Internal Audit | [Date] |
 
-
 ---
 
 ### **Next Review**
@@ -878,7 +820,6 @@ _[Space for approver comments, conditions of approval, or follow-up actions]_
 | Next Review Date | [Current Date + 12 months] |
 | Review Trigger Events | Major incident, organisational change, audit finding |
 | Review Reminder Set | [ ] Yes [ ] No |
-
 
 ---
 
@@ -897,7 +838,6 @@ _[Space for approver comments, conditions of approval, or follow-up actions]_
 5. Training records and certificates
 6. Exercise logs and after-action reports
 
-
 ### **A.5.25 Evidence (Detection & Classification)**
 
 1. Incident classification matrix
@@ -905,7 +845,6 @@ _[Space for approver comments, conditions of approval, or follow-up actions]_
 3. Triage procedures
 4. Escalation matrix
 5. Sample incident categorisation records
-
 
 ### **A.5.26 Evidence (Response Capabilities)**
 
@@ -915,7 +854,6 @@ _[Space for approver comments, conditions of approval, or follow-up actions]_
 4. Sample incident response logs
 5. Third-party coordination agreements
 
-
 ### **A.5.27 Evidence (Learning & Improvement)**
 
 1. Post-incident review procedure
@@ -924,7 +862,6 @@ _[Space for approver comments, conditions of approval, or follow-up actions]_
 4. Improvement action tracker
 5. Training updates based on incidents
 
-
 ### **A.5.28 Evidence (Evidence Collection)**
 
 1. Evidence handling procedures
@@ -932,7 +869,6 @@ _[Space for approver comments, conditions of approval, or follow-up actions]_
 3. Forensic tool inventory
 4. Sample evidence logs
 5. Evidence storage procedures
-
 
 ## Evidence Storage
 
@@ -964,7 +900,6 @@ S6_Dashboard/
     └── S5_Learning_Improvement/
 ```
 
-
 ---
 
 # Common Pitfalls
@@ -983,7 +918,6 @@ S6_Dashboard/
 ❌ **MISTAKE:** Importing scores without understanding the weighting methodology from source workbooks.
 ✅ **CORRECT:** Document the calculation methodology for each imported score and validate against source data.
 
-
 ## Compliance Scoring Errors
 
 ❌ **MISTAKE:** Applying equal weighting to all five controls regardless of organisational risk profile.
@@ -997,7 +931,6 @@ S6_Dashboard/
 
 ❌ **MISTAKE:** Reporting compliance scores without confidence indicators or data quality notes.
 ✅ **CORRECT:** Include data quality indicators and note any assumptions or limitations with reported scores.
-
 
 ## Gap Analysis Errors
 
@@ -1013,7 +946,6 @@ S6_Dashboard/
 ❌ **MISTAKE:** Closing gaps without evidence of remediation completion.
 ✅ **CORRECT:** Require documented evidence before marking any gap as "Closed."
 
-
 ## KPI Calculation Errors
 
 ❌ **MISTAKE:** Calculating MTTD/MTTR using clock time instead of business hours or incident severity adjustments.
@@ -1028,7 +960,6 @@ S6_Dashboard/
 ❌ **MISTAKE:** Using sample data instead of complete incident datasets.
 ✅ **CORRECT:** Calculate KPIs from complete incident datasets for the reporting period.
 
-
 ## Evidence Management Errors
 
 ❌ **MISTAKE:** Referencing evidence by vague descriptions (e.g., "incident policy") without specific file paths.
@@ -1042,7 +973,6 @@ S6_Dashboard/
 
 ❌ **MISTAKE:** Not maintaining version control for updated evidence.
 ✅ **CORRECT:** Use version numbering or date stamps for all evidence and maintain change history.
-
 
 ---
 
@@ -1059,7 +989,6 @@ S6_Dashboard/
 - [ ] No placeholder or sample data remains in production cells
 - [ ] All "N/A" entries have documented justification
 
-
 ## Calculations
 
 - [ ] Control weighting percentages sum to 100%
@@ -1069,7 +998,6 @@ S6_Dashboard/
 - [ ] Traffic light thresholds are consistently applied
 - [ ] Trend indicators match historical data comparison
 
-
 ## Evidence
 
 - [ ] All evidence references point to valid, accessible files
@@ -1077,7 +1005,6 @@ S6_Dashboard/
 - [ ] Evidence currency dates are populated
 - [ ] Expired evidence (>12 months) is flagged for update
 - [ ] Sensitive evidence has appropriate access controls
-
 
 ## Completeness
 
@@ -1088,7 +1015,6 @@ S6_Dashboard/
 - [ ] Executive summary reflects current data
 - [ ] Recommendations are actionable and specific
 
-
 ## Formatting
 
 - [ ] Consistent date format (DD.MM.YYYY) throughout
@@ -1098,7 +1024,6 @@ S6_Dashboard/
 - [ ] Conditional formatting applied correctly
 - [ ] Print areas defined for key sheets
 
-
 ## Approval Readiness
 
 - [ ] Assessment period is clearly stated
@@ -1106,7 +1031,6 @@ S6_Dashboard/
 - [ ] Approval chain is identified
 - [ ] Distribution list is current
 - [ ] Next review date is set
-
 
 ---
 
@@ -1120,13 +1044,11 @@ S6_Dashboard/
 - Verify evidence linkages
 - Check completeness against checklist
 
-
 **Step 2: Technical Review (CSIRT Manager)**
 
 - Validate KPI calculations against incident data
 - Confirm gap prioritisation is appropriate
 - Review recommendations for technical feasibility
-
 
 **Step 3: Compliance Review (Compliance Officer)**
 
@@ -1134,13 +1056,11 @@ S6_Dashboard/
 - Confirm evidence supports compliance claims
 - Review for audit readiness
 
-
 **Step 4: Executive Review (CISO)**
 
 - Review executive summary
 - Approve recommendations
 - Authorise distribution
-
 
 ## Approval Criteria
 
@@ -1153,13 +1073,11 @@ S6_Dashboard/
 5. KPI targets validated
 6. Recommendations agreed
 
-
 **Conditional approval may be granted with:**
 
 - Minor formatting corrections required
 - Clarifications needed on specific items
 - Additional evidence collection in progress
-
 
 **Rejection criteria:**
 
@@ -1167,7 +1085,6 @@ S6_Dashboard/
 - Missing evidence for critical controls
 - Significant gaps without remediation plans
 - KPI data incomplete or inaccurate
-
 
 ---
 
@@ -1183,7 +1100,6 @@ S6_Dashboard/
 4. Prior to internal or external audit
 5. After significant organisational change
 
-
 ## Refresh Procedure
 
 **Step 1: Data Update**
@@ -1192,13 +1108,11 @@ S6_Dashboard/
 - Refresh any external data links
 - Update KPI data from incident ticketing system
 
-
 **Step 2: Validation**
 
 - Verify compliance scores match sources
 - Update gap status (check for closures)
 - Add any new gaps identified
-
 
 **Step 3: Trend Update**
 
@@ -1206,20 +1120,17 @@ S6_Dashboard/
 - Update trend indicators
 - Recalculate KPI averages
 
-
 **Step 4: Review**
 
 - Update executive summary
 - Review recommendations currency
 - Update "Last Refreshed" timestamp
 
-
 **Step 5: Re-Approval (if significant changes)**
 
 - Document changes made
 - Obtain required approvals
 - Distribute updated version
-
 
 ---
 
@@ -1241,7 +1152,6 @@ S6_Dashboard/
 | 6 | Evidence_Register | Evidence tracking | ~120 | 100 evidence items, status tracking |
 | 7 | Approval_Sign_Off | Approval workflow | ~50 | Signature fields, distribution |
 
-
 ## Column Specifications
 
 ### Sheet 1: Instructions
@@ -1251,7 +1161,6 @@ S6_Dashboard/
 | A | 25 | Labels |
 | B | 60 | Content/Instructions |
 | C | 20 | Notes |
-
 
 ### Sheet 2: Executive_Summary
 
@@ -1263,7 +1172,6 @@ S6_Dashboard/
 | D | 15 | Status (traffic light) |
 | E | 15 | Trend |
 | F | 25 | Notes |
-
 
 ### Sheet 3: Compliance_Scores
 
@@ -1277,7 +1185,6 @@ S6_Dashboard/
 | F | 12 | Status |
 | G | 35 | Source Reference |
 | H | 35 | Notes |
-
 
 ### Sheet 4: Gap_Analysis
 
@@ -1299,7 +1206,6 @@ S6_Dashboard/
 | N | 20 | Evidence |
 | O | 30 | Notes |
 
-
 ### Sheet 5: Incident_KPIs
 
 | Column | Width | Content |
@@ -1311,7 +1217,6 @@ S6_Dashboard/
 | E | 15 | Trend |
 | F | 12 | Period |
 | G | 30 | Notes |
-
 
 ### Sheet 6: Evidence_Register
 
@@ -1331,7 +1236,6 @@ S6_Dashboard/
 | L | 12 | Expiry_Date |
 | M | 30 | Notes |
 
-
 ### Sheet 7: Approval_Sign_Off
 
 | Column | Width | Content |
@@ -1340,7 +1244,6 @@ S6_Dashboard/
 | B | 25 | Values |
 | C | 20 | Status/Date |
 | D | 30 | Signature/Notes |
-
 
 ---
 
@@ -1360,7 +1263,6 @@ S6_Dashboard/
 | Red (Bad) | #FFC7CE | Non-compliant/critical |
 | White (Read-only) | #FFFFFF | Information/labels |
 
-
 ## Font Specifications
 
 | Element | Font | Size | Bold | Colour |
@@ -1371,14 +1273,12 @@ S6_Dashboard/
 | Body Text | Calibri | 10 | No | Black |
 | KPI Value | Calibri | 12 | Yes | Black |
 
-
 ## Border Specifications
 
 | Border Type | Style | Colour | Usage |
 |-------------|-------|--------|-------|
 | Thin | Solid 1pt | Black (#000000) | All data cells |
 | None | - | - | Merged header cells |
-
 
 ## Alignment
 
@@ -1389,7 +1289,6 @@ S6_Dashboard/
 | Numbers | Centre | Centre | No |
 | Descriptions | Left | Top | Yes |
 | Dates | Centre | Centre | No |
-
 
 ---
 
@@ -1403,13 +1302,11 @@ S6_Dashboard/
 A.5.24,A.5.25,A.5.26,A.5.27,A.5.28
 ```
 
-
 ### Source Dropdown (Sheet 4, 6)
 
 ```
 S1-Framework,S2-Detection,S3-Response,S4-Forensic,S5-Learning
 ```
-
 
 ### Severity Dropdown (Sheet 4)
 
@@ -1417,13 +1314,11 @@ S1-Framework,S2-Detection,S3-Response,S4-Forensic,S5-Learning
 Critical,High,Medium,Low
 ```
 
-
 ### Status Dropdown (Gaps) (Sheet 4)
 
 ```
 Open,In Progress,Closed
 ```
-
 
 ### Verification Status Dropdown (Sheet 6)
 
@@ -1431,13 +1326,11 @@ Open,In Progress,Closed
 Verified,Pending,Expired
 ```
 
-
 ### Evidence Type Dropdown (Sheet 6)
 
 ```
 Document,Screenshot,Record,Attestation
 ```
-
 
 ### Trend Dropdown (Sheet 2, 5)
 
@@ -1445,13 +1338,11 @@ Document,Screenshot,Record,Attestation
 ▲ Improving,▬ Stable,▼ Declining
 ```
 
-
 ### Status (Traffic Light) Dropdown (Sheet 2, 3, 5)
 
 ```
 GREEN - Compliant,AMBER - Partial,RED - Non-Compliant
 ```
-
 
 ---
 
@@ -1470,13 +1361,11 @@ B_A527 = 'Compliance_Scores'!E[A.5.27 Total Row]
 B_A528 = 'Compliance_Scores'!E[A.5.28 Total Row]
 ```
 
-
 ## Status Traffic Light (Sheet 2, 3, 5)
 
 ```excel
 =IF(B5>=90,"GREEN - Compliant",IF(B5>=75,"AMBER - Partial","RED - Non-Compliant"))
 ```
-
 
 ## Gap Aging (Sheet 4, Column M)
 
@@ -1487,7 +1376,6 @@ Alternative (if no open date in Gap_ID):
 =IF(K5="Closed","N/A",TODAY()-L5)
 ```
 
-
 ## Gap Count by Severity (Sheet 2)
 
 ```excel
@@ -1497,20 +1385,17 @@ Medium Gaps = COUNTIFS('Gap_Analysis'!F:F,"Medium",'Gap_Analysis'!K:K,"<>Closed"
 Low Gaps = COUNTIFS('Gap_Analysis'!F:F,"Low",'Gap_Analysis'!K:K,"<>Closed")
 ```
 
-
 ## Evidence Currency Check (Sheet 6)
 
 ```excel
 =IF(K5="","",IF(TODAY()-K5>365,"EXPIRED",IF(TODAY()-K5>300,"DUE SOON","CURRENT")))
 ```
 
-
 ## KPI Status (Sheet 5)
 
 ```excel
 =IF(B5="","",IF(VALUE(B5)<=VALUE(C5),"GREEN - Met",IF(VALUE(B5)<=VALUE(C5)*1.2,"AMBER - Warning","RED - Critical")))
 ```
-
 
 ---
 
@@ -1524,7 +1409,6 @@ Low Gaps = COUNTIFS('Gap_Analysis'!F:F,"Low",'Gap_Analysis'!K:K,"<>Closed")
 | Value 75-89 | Amber fill (#FFEB9C) |
 | Value < 75 | Red fill (#FFC7CE) |
 
-
 ## Gap Severity (Sheet 4, Column F)
 
 | Value | Format |
@@ -1534,7 +1418,6 @@ Low Gaps = COUNTIFS('Gap_Analysis'!F:F,"Low",'Gap_Analysis'!K:K,"<>Closed")
 | "Medium" | Amber fill (#FFEB9C) |
 | "Low" | Green fill (#C6EFCE) |
 
-
 ## Gap Status (Sheet 4, Column K)
 
 | Value | Format |
@@ -1542,7 +1425,6 @@ Low Gaps = COUNTIFS('Gap_Analysis'!F:F,"Low",'Gap_Analysis'!K:K,"<>Closed")
 | "Open" | Red fill (#FFC7CE) |
 | "In Progress" | Amber fill (#FFEB9C) |
 | "Closed" | Green fill (#C6EFCE) |
-
 
 ## Days Open (Sheet 4, Column M)
 
@@ -1553,7 +1435,6 @@ Low Gaps = COUNTIFS('Gap_Analysis'!F:F,"Low",'Gap_Analysis'!K:K,"<>Closed")
 | 30-59 days | Amber fill (#FFEB9C) |
 | <30 days | No special formatting |
 
-
 ## Evidence Verification (Sheet 6, Column J)
 
 | Value | Format |
@@ -1561,7 +1442,6 @@ Low Gaps = COUNTIFS('Gap_Analysis'!F:F,"Low",'Gap_Analysis'!K:K,"<>Closed")
 | "Verified" | Green fill (#C6EFCE) |
 | "Pending" | Amber fill (#FFEB9C) |
 | "Expired" | Red fill (#FFC7CE) |
-
 
 ---
 
@@ -1579,14 +1459,12 @@ Low Gaps = COUNTIFS('Gap_Analysis'!F:F,"Low",'Gap_Analysis'!K:K,"<>Closed")
 | Evidence_Register | Yes (no password) | All data entry rows |
 | Approval_Sign_Off | Yes (no password) | All input fields |
 
-
 ## Locked Cells
 
 - All calculated cells
 - Headers and labels
 - Formula cells
 - Instructions text
-
 
 ---
 
@@ -1595,7 +1473,6 @@ Low Gaps = COUNTIFS('Gap_Analysis'!F:F,"Low",'Gap_Analysis'!K:K,"<>Closed")
 **Format:** `ISMS-IMP-A.5.24-28.S6_Compliance_Dashboard_YYYYMMDD.xlsx`
 
 **Example:** `ISMS-IMP-A.5.24-28.S6_Compliance_Dashboard_20260203.xlsx`
-
 
 ---
 
@@ -1611,14 +1488,12 @@ Low Gaps = COUNTIFS('Gap_Analysis'!F:F,"Low",'Gap_Analysis'!K:K,"<>Closed")
 - Cell Protection
 - Basic formulas (IF, COUNTIF, COUNTIFS, SUMIF, DATEDIF)
 
-
 **Compatibility Notes:**
 
 - All formulas compatible with Excel 2016+
 - Conditional Formatting tested for Excel 2016 compatibility
 - No Power Query or Pivot Tables (keep simple for broad compatibility)
 - DATEDIF function may not appear in function wizard but is supported
-
 
 ---
 
@@ -1632,7 +1507,6 @@ Low Gaps = COUNTIFS('Gap_Analysis'!F:F,"Low",'Gap_Analysis'!K:K,"<>Closed")
 - `datetime` (date handling)
 - `logging` (standard logging)
 
-
 **Script Structure:**
 
 1. Create workbook
@@ -1645,9 +1519,7 @@ Low Gaps = COUNTIFS('Gap_Analysis'!F:F,"Low",'Gap_Analysis'!K:K,"<>Closed")
 8. Protect sheets (leave input cells unlocked)
 9. Save workbook with timestamp
 
-
 **Script Length:** ~600-800 lines (comprehensive header documentation + implementation)
-
 
 ---
 
@@ -1663,7 +1535,6 @@ Low Gaps = COUNTIFS('Gap_Analysis'!F:F,"Low",'Gap_Analysis'!K:K,"<>Closed")
 | S4 | ISMS-IMP-A.5.24-28.S4_Forensic_Evidence | Dashboard, Gap Analysis | A.5.28 compliance scores, evidence gaps |
 | S5 | ISMS-IMP-A.5.24-28.S5_Learning_Improvement | Dashboard, Gap Analysis | A.5.27 compliance scores, learning gaps |
 
-
 ## External Data Sources
 
 | Data Element | Source System | Refresh Frequency |
@@ -1672,7 +1543,6 @@ Low Gaps = COUNTIFS('Gap_Analysis'!F:F,"Low",'Gap_Analysis'!K:K,"<>Closed")
 | MTTD/MTTR metrics | SIEM/SOAR platform | Quarterly |
 | Training completion | LMS/HR system | Quarterly |
 | Exercise data | Exercise management system | Per exercise |
-
 
 ---
 

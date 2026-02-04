@@ -45,12 +45,10 @@ This document consists of two parts:
   - Formula Specifications for Aggregation
   - Cell Styling Reference
 
-
 **Target Audiences:**
 
 - **Part I:** Dashboard users (CISO, Security Manager, Auditors)
 - **Part II:** Workbook developers (Python/Excel script maintainers)
-
 
 ---
 
@@ -79,7 +77,6 @@ This dashboard AGGREGATES data from two detailed assessments to provide executiv
    - Deprovisioning
    - Orphaned accounts
 
-
 2. **IMP-S2**: Branch Protection Assessment
 
    - Branch protection rules
@@ -87,7 +84,6 @@ This dashboard AGGREGATES data from two detailed assessments to provide executiv
    - Status checks
    - Signed commits
    - Exceptions
-
 
 **Dashboard Outputs:**
 
@@ -97,7 +93,6 @@ This dashboard AGGREGATES data from two detailed assessments to provide executiv
 - **Gap Priority Matrix** (critical → low priority)
 - **Action Items** (prioritized remediation tasks)
 - **Executive Summary** (1-page view for leadership)
-
 
 #### Key Principle
 
@@ -109,7 +104,6 @@ This dashboard is **NOT a new assessment** - it's an AGGREGATOR. You don't colle
 - Configuring branch protection (done in IMP-S2)
 - Collecting new evidence (comes from S1 and S2)
 
-
 **This IS about:**
 
 - Synthesizing S1 and S2 results
@@ -117,7 +111,6 @@ This dashboard is **NOT a new assessment** - it's an AGGREGATOR. You don't colle
 - Identifying cross-cutting gaps
 - Prioritizing remediation
 - Executive reporting
-
 
 #### What You'll Document
 
@@ -130,7 +123,6 @@ This dashboard is **NOT a new assessment** - it's an AGGREGATOR. You don't colle
 - **Action Items**: Remediation tasks with owners and dates
 - **Evidence Summary**: Audit readiness checklist
 - **Approval Sign-Off**: CISO certification
-
 
 #### How This Relates to Other A.8.4 Assessments
 
@@ -164,13 +156,11 @@ This dashboard is **NOT a new assessment** - it's an AGGREGATOR. You don't colle
 - Executive communication skills
 - Risk prioritization judgment
 
-
 #### Time Commitment
 
 - **Initial setup:** 4-6 hours (first time, configure formulas)
 - **Quarterly updates:** 2-3 hours (import S1/S2 data, review results)
 - **Monthly KPI refresh:** 1 hour (update trends)
-
 
 ### Expected Outputs
 
@@ -207,7 +197,6 @@ Before starting this dashboard, ensure you have:
   - Status: Approved by CISO
   - Contains: Branch inventory, protection details, PR configuration, status checks
 
-
 **CRITICAL:** S1 and S2 must be COMPLETED and APPROVED before starting S3. This dashboard aggregates their data.
 
 #### 2. Historical Data (for trend analysis)
@@ -216,20 +205,17 @@ Before starting this dashboard, ensure you have:
 - **12-month compliance score history** (if available)
 - **Remediation completion records**
 
-
 #### 3. Organizational Information
 
 - **Executive priorities** (what matters most to CISO/CTO)
 - **Upcoming audits** (audit readiness requirements)
 - **Budget/resource constraints** (for remediation prioritization)
 
-
 ### Tools You'll Use
 
 - **Excel or compatible spreadsheet application**
 - **Previous quarter S1 and S2 workbooks** (for trend analysis)
 - **Presentation software** (PowerPoint/Google Slides - for executive summary)
-
 
 ### Skills Assessment
 
@@ -241,13 +227,11 @@ Before starting this dashboard, ensure you have:
 - [ ] Create executive summaries
 - [ ] Prioritize gaps by severity
 
-
 **If you answered NO to any item**, get help from:
 
 - Information Security Manager (for score interpretation)
 - Excel support (for formula assistance)
 - CISO office (for prioritization guidance)
-
 
 ---
 
@@ -302,7 +286,6 @@ Step 10: Obtain CISO Approval
 - 6 component metrics
 - Compliance status (✅/⚠️/❌)
 
-
 #### Step 2: Import S2 Data - Branch Protection (30 minutes)
 
 **What to do:**
@@ -323,7 +306,6 @@ Step 10: Obtain CISO Approval
 - Branch Protection Score (0-100%)
 - 4 component metrics
 - Compliance status (✅/⚠️/❌)
-
 
 #### Step 3: Calculate Overall Compliance Score (automated)
 
@@ -353,13 +335,11 @@ Target: ≥85%
   - Status checks
   - Signed commits
 
-
 **What you do:**
 
 - Review calculated score
 - Understand drivers (which component is low?)
 - Assess risk level (🟢 Green ≥85%, 🟡 Yellow 70-84%, 🔴 Red <70%)
-
 
 #### Step 4: Generate Repository Overview (1 hour)
 
@@ -381,13 +361,11 @@ Target: ≥85%
    - Compliant repositories (%)
    - Non-compliant repositories (count)
 
-
 **Outputs:**
 
 - Repository_Overview sheet populated
 - Summary statistics calculated
 - Visual dashboard (chart showing compliance by classification)
-
 
 #### Step 5: Create Trend Analysis (30 minutes)
 
@@ -412,7 +390,6 @@ Target: ≥85%
 - 12-month score history
 - Trend direction (↗/→/↘)
 - Improvement/decline analysis
-
 
 #### Step 6: Build Gap Priority Matrix (1 hour)
 
@@ -441,14 +418,12 @@ Target: ≥85%
 - No code review enforcement (0 required approvals)
 - Critical secrets exposed in code
 
-
 **High Gaps** (🟠 - remediate within 30 days):
 
 - Access reviews >90 days overdue
 - Branch protection partial (missing status checks)
 - Service accounts not documented
 - Contractor access without end dates
-
 
 **Medium Gaps** (🟡 - remediate within 90 days):
 
@@ -457,14 +432,12 @@ Target: ≥85%
 - Signed commit adoption <80%
 - Internal tools without protection
 
-
 **Low Gaps** (🟢 - continuous improvement):
 
 - Optimization of access request workflow
 - Enhanced monitoring
 - Additional CI/CD checks
 - Documentation improvements
-
 
 #### Step 7: Compile Action Items (30 minutes)
 
@@ -488,7 +461,6 @@ Target: ≥85%
 - ACT-002: Enable branch protection on backend-api repository (Critical, DevOps, 2026-02-05)
 - ACT-003: Complete Q4 access review for 15 overdue repositories (High, Repository Owners, 2026-02-15)
 - ACT-004: Configure CodeQL security checks on all production repos (High, Security Team, 2026-03-01)
-
 
 #### Step 8: Assess Audit Readiness (30 minutes)
 
@@ -515,7 +487,6 @@ Target: ≥85%
 - ⚠️ **Needs Work**: Score 70-84%, some critical gaps remain, evidence mostly complete
 - ❌ **Not Ready**: Score <70%, multiple critical gaps, evidence incomplete
 
-
 #### Step 9: Generate Executive Summary (1 hour)
 
 **What to do:**
@@ -535,7 +506,6 @@ Target: ≥85%
    - Gauge chart showing overall score
    - Trend line chart (12 months)
    - Gap priority pie chart
-
 
 **Executive Summary Template:**
 ```
@@ -610,7 +580,6 @@ AUDIT READINESS: ⚠️ Needs Work
 - Action items (top 5 by priority)
 - Audit readiness assessment
 
-
 **Layout:**
 
 - Row 1-5: Title, date, overall score (visual gauge)
@@ -619,14 +588,12 @@ AUDIT READINESS: ⚠️ Needs Work
 - Row 22-28: Top 5 action items (table)
 - Row 30-35: Audit readiness summary
 
-
 **Visual Elements:**
 
 - Gauge chart for overall score (0-100%)
 - Traffic light (🟢/🟡/🔴) for risk level
 - Trend arrow (↗/→/↘)
 - Small sparkline charts for KPIs
-
 
 ---
 
@@ -644,7 +611,6 @@ AUDIT READINESS: ⚠️ Needs Work
 - F: Overall Security Score (average of access + protection)
 - G: Status (✅ Compliant if both D and E are ✅)
 
-
 **Summary Statistics** (below data):
 
 - Total repositories
@@ -652,7 +618,6 @@ AUDIT READINESS: ⚠️ Needs Work
 - Repositories by classification (Production: X, Internal: Y, etc.)
 - Compliant repositories (%)
 - Non-compliant repositories (count)
-
 
 ---
 
@@ -670,14 +635,12 @@ AUDIT READINESS: ⚠️ Needs Work
 - Deprovisioning SLA Compliance
 - Overall Repository Access Score
 
-
 **Additional analysis:**
 
 - Repositories with access control issues (list)
 - Orphaned accounts by platform
 - Overdue access reviews (count)
 - Deprovisioning violations (count)
-
 
 ---
 
@@ -693,14 +656,12 @@ AUDIT READINESS: ⚠️ Needs Work
 - Signed Commit Adoption Rate
 - Overall Branch Protection Score
 
-
 **Additional analysis:**
 
 - Repositories without branch protection (list)
 - Pull request bypasses (count)
 - Missing status checks (by repository)
 - Signed commit adoption by repository
-
 
 ---
 
@@ -717,13 +678,11 @@ AUDIT READINESS: ⚠️ Needs Work
 - E: Change from Previous Quarter (%)
 - F: Trend Direction (↗/→/↘)
 
-
 **Chart:**
 
 - Line chart showing all 3 scores over 12 months
 - Target line at 85%
 - Annotations for significant events
-
 
 ---
 
@@ -741,7 +700,6 @@ AUDIT READINESS: ⚠️ Needs Work
 - F: Remediation Effort (hours/days)
 - G: Priority Score (calculated: risk × repos affected ÷ effort)
 - H: Status (Open/In Progress/Completed)
-
 
 **Sorted by:** Priority Score (highest to lowest)
 
@@ -762,7 +720,6 @@ AUDIT READINESS: ⚠️ Needs Work
 - G: Days Overdue (if past target date)
 - H: Notes
 
-
 **Sorted by:** Priority (Critical → Low), then by Target Date
 
 ---
@@ -780,7 +737,6 @@ AUDIT READINESS: ⚠️ Needs Work
 - [ ] ISMS-IMP-A.8.4.2 (Branch Protection) - completed
 - [ ] ISMS-IMP-A.8.4.3 (Dashboard) - this document
 
-
 **2. Evidence Availability:**
 
 - [ ] S1 Evidence Register - complete
@@ -789,14 +745,12 @@ AUDIT READINESS: ⚠️ Needs Work
 - [ ] Access review records - archived
 - [ ] Deprovisioning logs - retained
 
-
 **3. Compliance Metrics:**
 
 - [ ] Overall score ≥85%
 - [ ] Critical gaps remediated
 - [ ] High gaps in remediation
 - [ ] Evidence organized for audit
-
 
 **4. Audit Readiness Score:**
 ```
@@ -819,12 +773,10 @@ AUDIT READINESS: ⚠️ Needs Work
 - Risk Level: [Link to Executive_Summary]
 - Audit Readiness: [Link to Evidence_Summary]
 
-
 **Dashboard Compiled By:**
 
 - Name: [Information Security Manager]
 - Date: [Completion date]
-
 
 **Information Security Manager Review:**
 
@@ -833,7 +785,6 @@ AUDIT READINESS: ⚠️ Needs Work
 - Review Notes:
 - Recommendation: Approve / Approve with Conditions / Reject
 
-
 **CISO Approval:**
 
 - Name:
@@ -841,7 +792,6 @@ AUDIT READINESS: ⚠️ Needs Work
 - Decision: Approved / Approved with Conditions / Rejected
 - Conditions (if any):
 - Next Review Date: [Date + 90 days]
-
 
 ---
 
@@ -855,14 +805,12 @@ AUDIT READINESS: ⚠️ Needs Work
 - Completed S2 workbook (approved by CISO)
 - Previous quarter S3 dashboards (for trend analysis)
 
-
 **Supporting Evidence:**
 
 - S1 Evidence Register (repository access evidence)
 - S2 Evidence Register (branch protection evidence)
 - Gap remediation completion records
 - Executive presentation slides (if presented to leadership)
-
 
 **Evidence Naming:**
 ```
@@ -885,14 +833,12 @@ ISMS-IMP-A.8.4.3_CISO_Presentation_Q4-2025.pptx
 - Scores are incomplete or estimated
 - Dashboard shows inaccurate compliance
 
-
 **How to avoid:**
 
 - Complete S1 FIRST (Repository Access)
 - Complete S2 SECOND (Branch Protection)
 - Only then create S3 Dashboard
 - Verify S1 and S2 have CISO approval
-
 
 ---
 
@@ -906,13 +852,11 @@ ISMS-IMP-A.8.4.3_CISO_Presentation_Q4-2025.pptx
 - Not dynamic (doesn't update if S1/S2 change)
 - Breaks traceability
 
-
 **How to avoid:**
 
 - Use Excel formulas to link to S1 and S2 workbooks
 - Example: `='[ISMS-IMP-A.8.4.1_Repository_Access_20251231.xlsx]Compliance_Scoring'!B23`
 - Dashboard auto-updates when S1/S2 change
-
 
 ---
 
@@ -926,14 +870,12 @@ ISMS-IMP-A.8.4.3_CISO_Presentation_Q4-2025.pptx
 - Example: 90% access control + 80% branch protection = 85% overall (looks good)
 - But 80% branch protection might include "0% of production repos protected" (CRITICAL)
 
-
 **How to avoid:**
 
 - Review ALL component scores
 - Identify which specific metric is low
 - Read Gap_Priority_Matrix for details
 - Don't declare victory based on aggregate score alone
-
 
 ---
 
@@ -946,14 +888,12 @@ ISMS-IMP-A.8.4.3_CISO_Presentation_Q4-2025.pptx
 - Q3: 92% → Q4: 87% = **Declining** ↘ (even though 87% is "compliant")
 - This indicates worsening, requires investigation
 
-
 **How to avoid:**
 
 - Always populate Trend_Analysis sheet
 - Compare quarter-over-quarter
 - Investigate declines (why did score drop?)
 - Celebrate improvements (share wins)
-
 
 ---
 
@@ -967,13 +907,11 @@ ISMS-IMP-A.8.4.3_CISO_Presentation_Q4-2025.pptx
 - Every gap needs owner
 - Every gap needs target date
 
-
 **How to avoid:**
 
 - 1 gap = 1 action item (minimum)
 - Large gaps may need multiple action items
 - Track progress on ALL gaps, not just critical
-
 
 ---
 
@@ -987,14 +925,12 @@ ISMS-IMP-A.8.4.3_CISO_Presentation_Q4-2025.pptx
 - CISO doesn't have time to read 50 pages
 - Key points get lost in data
 
-
 **How to succeed:**
 
 - Create 1-page Executive_Summary sheet
 - Present KEY findings only (top 3-5 issues)
 - Use visuals (charts, traffic lights)
 - Save details for backup slides
-
 
 ---
 
@@ -1008,14 +944,12 @@ ISMS-IMP-A.8.4.3_CISO_Presentation_Q4-2025.pptx
 - But if 2 critical gaps remain = NOT audit ready
 - Auditor samples 10 repos, finds 1 critical gap = audit finding
 
-
 **How to avoid:**
 
 - Remediate ALL critical gaps before audit
 - Review Evidence_Summary checklist
 - Conduct mock audit (spot-check repositories)
 - Don't schedule audit with open critical gaps
-
 
 ---
 
@@ -1029,13 +963,11 @@ ISMS-IMP-A.8.4.3_CISO_Presentation_Q4-2025.pptx
 - Score becomes outdated
 - Dashboard loses credibility
 
-
 **How to avoid:**
 
 - Monthly KPI refresh (update key scores)
 - Quarterly comprehensive update (full S1+S2 refresh)
 - Continuous gap tracking (update Action_Items as remediated)
-
 
 ---
 
@@ -1050,7 +982,6 @@ ISMS-IMP-A.8.4.3_CISO_Presentation_Q4-2025.pptx
 - Resources not allocated
 - Remediation stalls
 
-
 **How to succeed:**
 
 - Schedule quarterly CISO review
@@ -1058,7 +989,6 @@ ISMS-IMP-A.8.4.3_CISO_Presentation_Q4-2025.pptx
 - Discuss critical findings
 - Request resources for remediation
 - Get buy-in for action items
-
 
 ---
 
@@ -1073,14 +1003,12 @@ ISMS-IMP-A.8.4.3_CISO_Presentation_Q4-2025.pptx
 - Gaps need closure
 - Continuous monitoring required
 
-
 **How to avoid:**
 
 - Weekly action item status updates
 - Monthly gap remediation reviews
 - Continuous monitoring (don't wait for quarter)
 - Celebrate wins (share gap closure)
-
 
 ---
 
@@ -1097,7 +1025,6 @@ Before submitting dashboard for CISO approval:
 - [ ] Trend analysis includes historical data
 - [ ] Gap priority matrix includes ALL gaps from S1 and S2
 
-
 ### Completeness
 
 - [ ] Executive_Summary sheet populated
@@ -1110,7 +1037,6 @@ Before submitting dashboard for CISO approval:
 - [ ] Evidence_Summary checklist complete
 - [ ] Approval_Sign_Off ready for signatures
 
-
 ### Accuracy
 
 - [ ] Overall score matches calculation (spot-check)
@@ -1118,7 +1044,6 @@ Before submitting dashboard for CISO approval:
 - [ ] Repository counts consistent across sheets
 - [ ] Gap counts match S1 + S2 gap totals
 - [ ] Action item count ≥ gap count
-
 
 ### Executive Readiness
 
@@ -1128,7 +1053,6 @@ Before submitting dashboard for CISO approval:
 - [ ] Action items prioritized
 - [ ] Audit readiness assessed
 
-
 ### Presentation Quality
 
 - [ ] Dashboard is visually clear
@@ -1136,7 +1060,6 @@ Before submitting dashboard for CISO approval:
 - [ ] Color coding consistent (🟢/🟡/🔴)
 - [ ] No typos or formatting errors
 - [ ] Professional appearance
-
 
 ---
 
@@ -1150,7 +1073,6 @@ Before submitting dashboard for CISO approval:
    - Review prioritization
    - Confirm evidence completeness
 
-
 2. **CISO Presentation** (1 hour meeting)
 
    - Present 1-page executive summary
@@ -1159,14 +1081,12 @@ Before submitting dashboard for CISO approval:
    - Request resource allocation
    - Obtain approval
 
-
 3. **Post-Approval Actions**
 
    - File dashboard as official record
    - Communicate results to stakeholders
    - Initiate action item tracking
    - Schedule monthly reviews
-
 
 **Approval Criteria:**
 
@@ -1175,7 +1095,6 @@ Before submitting dashboard for CISO approval:
 - Action items have owners and dates
 - Audit readiness assessed realistically
 - Executive summary is clear and actionable
-
 
 ---
 
@@ -1209,7 +1128,6 @@ Before submitting dashboard for CISO approval:
 - `create_gap_matrix()`: Consolidated gap prioritization
 - `create_action_items()`: Remediation task tracking
 
-
 **File Naming:** `ISMS-IMP-A.8.4.3_Compliance_Dashboard_YYYYMMDD.xlsx`
 
 **Critical Design Pattern:**
@@ -1217,7 +1135,6 @@ This workbook LINKS to S1 and S2 workbooks using Excel external references. Form
 
 - `[ISMS-IMP-A.8.4.1_Repository_Access_YYYYMMDD.xlsx]Compliance_Scoring`
 - `[ISMS-IMP-A.8.4.2_Branch_Protection_YYYYMMDD.xlsx]Compliance_Scoring`
-
 
 ---
 
@@ -1321,13 +1238,11 @@ Row 37: [Recommendation]
 - Data: Overall score vs. 100%
 - Colors: Green (score), Gray (remaining)
 
-
 **Chart 2: KPI Trend (Rows 11-16)**
 
 - Type: Sparkline charts in Column E
 - Data: Last 4 quarters for each KPI
 - Shows trend direction visually
-
 
 ### Conditional Formatting
 
@@ -1337,13 +1252,11 @@ Row 37: [Recommendation]
 - 70-84%: Yellow fill, large font
 - <70%: Red fill, large font
 
-
 **Cell C8 (Risk Level):**
 
 - 🟢 Low Risk: Green background
 - 🟡 Medium Risk: Yellow background
 - 🔴 High Risk: Red background
-
 
 ---
 
@@ -1458,12 +1371,10 @@ Row 19: Deprovisioning Violations
 - ≥Target: Green background
 - <Target: Red background
 
-
 **Column D (Status):**
 
 - ✅ Compliant: Green background
 - ❌ Non-Compliant: Red background
-
 
 ---
 
@@ -1537,7 +1448,6 @@ Track compliance scores over time (12 months).
 - Rows 4-15: Previous 12 quarters (oldest to newest)
 - Current quarter data: Linked from Access_Control_Metrics and Branch_Protection_Metrics
 
-
 **Current Quarter (Row 15 - example):**
 ```
 Cell A15: "Q4 2025"
@@ -1558,7 +1468,6 @@ Cell F15: =IF(E15>5,"↗",IF(E15<-5,"↘","→"))
 - Series 2: Repository Access (green line)
 - Series 3: Branch Protection (orange line)
 - Horizontal line at 85% (target)
-
 
 ---
 
@@ -1623,13 +1532,11 @@ Higher score = Higher priority (high risk × many repos ÷ low effort)
 - 🟡 Medium: Yellow background
 - 🟢 Low: Green background
 
-
 **Column H (Status):**
 
 - 🔴 Open: Red background
 - 🟡 In Progress: Yellow background
 - 🟢 Completed: Green background
-
 
 ---
 
@@ -1674,7 +1581,6 @@ Format: Red fill (overdue)
 - >30 days: Red fill (critical delay)
 - 15-30 days: Orange fill (attention needed)
 - 1-14 days: Yellow fill (monitor)
-
 
 ### Sorting
 
@@ -1765,7 +1671,6 @@ Same as IMP-S1 and IMP-S2 Approval sheets:
 - CISO Approval
 - Next Review Date (+90 days)
 
-
 **Reference IMP-S1 PART II for detailed approval sheet specification.**
 
 ---
@@ -1781,19 +1686,16 @@ Same as IMP-S1 and IMP-S2 Approval sheets:
 - Border: Thick black box
 - Fill: Conditional (green/yellow/red)
 
-
 **Section Headers:**
 
 - Font: Calibri 14pt bold
 - Fill: #003366 (dark blue)
 - Text: White
 
-
 **KPI Table:**
 
 - Header row: #4472C4 (medium blue), white text
 - Data rows: Alternating white and light gray
-
 
 ### Standard Styling
 
@@ -1821,7 +1723,6 @@ Same as IMP-S1 and IMP-S2 Approval sheets:
 - Links must be updated when S1/S2 filenames change
 - Excel → Data → Edit Links → Update Source
 - Or use VBA/Python to update links automatically
-
 
 **For Python Script:**
 ```python
@@ -1870,11 +1771,9 @@ python excel_sanity_check_a84_3.py ISMS-IMP-A.8.4.3_Compliance_Dashboard_2026012
 - Q3 2025: `_20250930.xlsx`
 - Q4 2025: `_20251231.xlsx`
 
-
 **Change Log:**
 
 - v1.0: Initial dashboard structure (2026-01-25)
-
 
 ---
 

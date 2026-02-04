@@ -34,15 +34,11 @@
 - Compliance: Legal/Compliance Officer
 - Finale Autorität: Geschäftsleitung (GL)
 
-
-
 **Zugehörige Dokumente**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-IMP-A.8.24 (Implementation Guidance Suite)
 - ISO/IEC 27001:2022 Control A.8.24
-
-
 
 ---
 
@@ -75,8 +71,6 @@ Diese Richtlinie definiert die Anforderungen von [Organisation] für kryptograph
 - Frameworks für Exception Management und Incident Management
 - Integration mit Risk Assessment und Treatment Prozessen der [Organisation]
 
-
-
 ## Was diese Richtlinie tut
 
 Diese Richtlinie:
@@ -85,8 +79,6 @@ Diese Richtlinie:
 - **Etabliert** Governance-Framework für kryptographische Entscheidungsfindung
 - **Spezifiziert** Verantwortlichkeit für Implementierung kryptographischer Kontrollen
 - **Referenziert** anwendbare regulatorische Anforderungen gemäss ISMS-POL-00
-
-
 
 ## Was diese Richtlinie NICHT tut
 
@@ -97,15 +89,11 @@ Diese Richtlinie tut NICHT:
 - **Bereitstellen systemspezifischer Konfigurationsprozeduren** (siehe ISMS-IMP-A.8.24 Assessment Guides)
 - **Ersetzen von Risk Assessment** (kryptographische Kontrollen werden basierend auf Risk Treatment der [Organisation] ausgewählt)
 
-
-
 **Rationale**: Trennung von Richtlinienanforderungen und Implementierungsleitlinien ermöglicht:
 
 - Richtlinienstabilität trotz sich entwickelnder kryptographischer Standards
 - Technische Agilität für Algorithmus-Updates ohne Richtlinienrevision
 - Klare Unterscheidung zwischen Governance (Richtlinie) und Execution (Implementierung)
-
-
 
 ## Geltungsbereich
 
@@ -117,14 +105,10 @@ Diese Richtlinie tut NICHT:
 - Alle Mitarbeiter (Angestellte, Auftragnehmer, Drittparteien) mit Zugang zu organisatorischen Informationen
 - Alle Drittanbieter-Services, die organisatorische Daten handhaben
 
-
-
 **Nicht im Geltungsbereich**:
 
 - Öffentliche Informationen (kein kryptographischer Schutz erforderlich)
 - Nicht-kryptographische Sicherheitskontrollen (durch andere ISMS-Richtlinien abgedeckt)
-
-
 
 ## Regulatorische Anwendbarkeit
 
@@ -158,8 +142,6 @@ Diese Frameworks informieren Implementierung, stellen aber keine obligatorische 
 - ENISA (Algorithms and Key Sizes)
 - OWASP (Cryptographic Storage)
 
-
-
 **Compliance-Bestimmung**: [Organisation] bestimmt anwendbare Tier 2 Regulierungen durch periodische Geschäftsaktivitäts-Assessments. Die strengsten Anforderungen gelten bei Überschneidung mehrerer Regulierungen.
 
 ---
@@ -192,8 +174,6 @@ Diese Frameworks informieren Implementierung, stellen aber keine obligatorische 
 - Datenbank-Verbindungs-Verschlüsselung
 - API-Sicherheit
 
-
-
 **Data Storage Protection**:
 
 - Full Disk Encryption (mobile Geräte, Laptops)
@@ -202,8 +182,6 @@ Diese Frameworks informieren Implementierung, stellen aber keine obligatorische 
 - Cloud Storage Verschlüsselung
 - Wechselmedien-Verschlüsselung
 
-
-
 **Authentifizierung & Identität**:
 
 - Passwort-Hashing (keine Klartext-Speicherung)
@@ -211,15 +189,11 @@ Diese Frameworks informieren Implementierung, stellen aber keine obligatorische 
 - Digitale Signaturen
 - Certificate-basierte Authentifizierung
 
-
-
 **Key Management**:
 
 - Kryptographischer Key-Lebenszyklus (Generierung, Speicherung, Verteilung, Rotation, Vernichtung)
 - Key-Daten-Trennung
 - Hardware Security Modules (HSM) oder Key Management Services (KMS) für hochsichere Keys
-
-
 
 **Drittanbieter-Kryptographische-Anforderungen**: 
 Drittanbieter-Services, die Vertrauliche oder Eingeschränkte Daten handhaben, müssen kryptographische Kontrollen nachweisen, die dieser Richtlinie entsprechen. "Verifizierung erfolgt während Lieferanten-Security-Assessment gemäss ISMS-POL-A.5.19 (Lieferantensicherheit). Vertragliche Anforderungen werden basierend auf Datenklassifizierung definiert.
@@ -238,8 +212,6 @@ Systeme der [Organisation] sollen so konzipiert sein, dass Algorithmus-Austausch
 - Algorithmus-Deprecation löst formalen Migrationsprozess aus
 - System Owners erhalten formale Notifikation minimum 180 Tage vor Algorithmus-Verbot zur Ermöglichung von Migrationsplanung. Kritische Systeme, die Eingeschränkte Daten unterstützen, erhalten 270-Tage-Vorlaufzeit.
 
-
-
 **Rationale**: Kryptographische Standards entwickeln sich aufgrund von Kryptanalyse-Fortschritten, regulatorischen Änderungen und Post-Quantum-Kryptographie-Migration. Crypto-agile Systeme reduzieren Risiko und Kosten von Algorithmus-Transitionen.
 
 **Prozess**: Algorithmus-Lifecycle-Management-Prozeduren sind definiert in ISMS-IMP-A.8.24 Technical Standards.
@@ -256,8 +228,6 @@ Systeme der [Organisation] sollen so konzipiert sein, dass Algorithmus-Austausch
 - Private Key Schutz
 - Zertifikatsrevokations-Fähigkeit (OCSP/CRL)
 
-
-
 **Industrie-Kontext**: Zertifikatsgültigkeits-Anforderungen ändern sich periodisch aufgrund von CA/Browser Forum Policy-Updates und Browser-Vendor-Anforderungen. [Organisation] monitort Industrie-Entwicklungen und passt Certificate Management Prozesse entsprechend an.
 
 **Implementierung**: Certificate Management Prozeduren sind definiert in ISMS-IMP-A.8.24 Key Management Assessment.
@@ -273,8 +243,6 @@ Folgende Praktiken sind **streng verboten**:
 - Entwicklung eigener kryptographischer Algorithmen ohne kryptographische Expertise
 - Umgehen oder Deaktivieren kryptographischer Kontrollen ohne formale Exception-Genehmigung
 
-
-
 ---
 
 # Governance & Verantwortlichkeit
@@ -288,16 +256,12 @@ Folgende Praktiken sind **streng verboten**:
 - Regulatorische Compliance-Überwachung
 - Algorithmus-Deprecation-Autorität
 
-
-
 **Information Security Manager**:
 
 - Tägliche Richtlinien-Implementierungs-Koordination
 - Technische Leitlinien für System Owners
 - Assessment-Programm-Management
 - Incident-Koordination
-
-
 
 **System Owners**:
 
@@ -306,16 +270,12 @@ Folgende Praktiken sind **streng verboten**:
 - Assessment- und Audit-Teilnahme
 - Remediationsplan-Ausführung
 
-
-
 **IT Security Team**:
 
 - Technischer Implementierungs-Support
 - Key Management Infrastruktur (HSM/KMS)
 - Kryptographische Assessment-Ausführung
 - Algorithmus-Monitoring
-
-
 
 **Development Teams**:
 
@@ -324,15 +284,11 @@ Folgende Praktiken sind **streng verboten**:
 - Security Code Review Teilnahme
 - Schwachstellen-Remediation
 
-
-
 **Legal/Compliance**:
 
 - Regulatorische Anforderungs-Interpretation
 - Externe Audit-Koordination
 - Regulatorische Notifikation (bei Incidents)
-
-
 
 **Key Ownership vs System Ownership**:
 
@@ -341,8 +297,6 @@ Folgende Praktiken sind **streng verboten**:
 - **Key Owners**: Autorisieren Key-Erzeugung und definieren Key-Nutzungs-Policies (Governance)
 - **Key Custodians**: Führen physisches Key Management aus (HSM-Administration, Key-Generierung)
 - **System Owners**: Betreiben Systeme, die Keys verwenden (verwalten Keys nicht direkt)
-
-
 
 Diese Trennung gewährleistet Verantwortlichkeit, Aufgabentrennung und klare Audit-Trails.
 
@@ -355,15 +309,11 @@ Diese Trennung gewährleistet Verantwortlichkeit, Aufgabentrennung und klare Aud
 - Authentifizierungs-Mechanismen
 - Key Management Praktiken
 
-
-
 **Assessment-Frequenz**:
 
 - **Initial**: Innerhalb 90 Tagen nach Richtlinien-Genehmigung oder neuem System-Deployment
 - **Regulär**: Jährlich Minimum
 - **Triggered**: Nach signifikanten System-Änderungen, Security-Incidents oder Algorithmus-Deprecations
-
-
 
 **Assessment-Tools**: [Organisation] verwendet ISMS-IMP-A.8.24 Assessment Workbooks zur systematischen Compliance-Verifizierung, Nachweis-Dokumentation und Remediation-Tracking.
 
@@ -381,16 +331,12 @@ Exceptions zu kryptographischen Richtlinienanforderungen erfordern:
 - Timeline für Erreichung vollständiger Compliance
 - Formale Genehmigung gemäss Autoritäts-Matrix
 
-
-
 **Genehmigungs-Autorität**:
 
 - **Technische Exceptions** (Algorithmus, Konfiguration): CISO-Genehmigung
 - **Richtlinien-Level Exceptions** (Anforderungs-Verzicht): Geschäftsleitung-Genehmigung
 - **Maximale Dauer**: 12 Monate
 - **Erneuerung**: Erfordert aktualisiertes Risk Assessment und Begründung
-
-
 
 **Monitoring**: Aktive Exceptions werden vierteljährlich vom CISO überprüft. Effektivität kompensierender Kontrollen wird verifiziert. Exceptions werden widerrufen, wenn sich Risikoprofil ändert oder kompensierende Kontrollen versagen.
 
@@ -406,16 +352,12 @@ Exceptions zu kryptographischen Richtlinienanforderungen erfordern:
 - Entdeckung verbotener Algorithmen in Produktion
 - Kryptographische Control-Ausfälle
 
-
-
 **Schweregrad-Klassifizierung**:
 
 - **Critical**: Bestätigte Kompromittierung von Produktions-Verschlüsselungs-Keys, Certificate Private Keys oder HSM/KMS-Zugangsdaten. Response: 4 Stunden.
 - **High**: Verdacht auf Key-Kompromittierung, Entdeckung verbotener Algorithmen für Vertrauliche/Eingeschränkte Daten oder kryptographischer Control-Ausfall, der mehrere Systeme betrifft. Response: 24 Stunden.
 - **Medium**: Entdeckung veralteter Algorithmen, Zertifikatsablauf mit Service-Disruption oder isolierte Control-Ausfälle. Response: 48 Stunden.
 - **Low**: Richtlinienabweichungen ohne aktive Ausnutzung, geringfügige Konfigurations-Abweichungen. Response: 72 Stunden.
-
-
 
 Falls Response-Timelines nicht eingehalten werden können, Eskalation an CISO (für High/Medium/Low Schweregrad) oder CEO (für Critical Schweregrad) innerhalb des ursprünglichen Timeline-Fensters.
 
@@ -437,23 +379,17 @@ Falls Response-Timelines nicht eingehalten werden können, Eskalation an CISO (f
 - **Reviewer**: CISO, IT Security Team, Legal/Compliance, ausgewählte System Owners
 - **Genehmigung**: CISO (technisch), Geschäftsleitung (strategisch)
 
-
-
 **Technical Standards Review**:
 
 - **Frequenz**: Halbjährlich (kryptographische Landschaft entwickelt sich schnell)
 - **Autorität**: IT Security Team schlägt Updates vor, CISO genehmigt
 - **Hinweis**: Technical Standard Updates (ISMS-IMP-A.8.24) erfordern keine Richtlinien-Revision
 
-
-
 **Richtlinien-Updates**:
 
 - **Minor** (Klarstellungen, Referenzen): CISO-Genehmigung, 30-Tage-Kommunikation
 - **Major** (Scope-Änderungen, neue Anforderungen): Vollständige Freigabekette, 90-Tage-Implementierung
 - **Emergency** (kritische Schwachstellen): CISO-Genehmigung, sofortige Kommunikation
-
-
 
 **Kommunikation**: Richtlinie publiziert in ISMS-Dokumenten-Repository. Änderungen organisationsweit kommuniziert. Training für signifikante Änderungen bereitgestellt.
 
@@ -471,14 +407,10 @@ Diese Richtlinie integriert mit dem Informationssicherheits-Managementsystem der
 - Datenklassifizierung bestimmt minimale kryptographische Anforderungen
 - Risk Treatment Plans dokumentieren kryptographische Control-Implementierung
 
-
-
 **Statement of Applicability** (ISO 27001 Clause 6.1.3):
 
 - Control A.8.24 Anwendbarkeit in SoA der [Organisation] begründet
 - Implementierungs-Status getrackt und berichtet
-
-
 
 **Zugehörige Controls**:
 
@@ -488,8 +420,6 @@ Diese Richtlinie integriert mit dem Informationssicherheits-Managementsystem der
 - A.8.9 (Configuration Management): Kryptographisches Configuration Management
 - A.8.15 (Logging): Kryptographisches Event Logging
 - A.8.23 (Web Filtering): Sichere Kommunikation für Web-Traffic
-
-
 
 ## Implementierungs-Ressourcen
 
@@ -501,8 +431,6 @@ Diese Richtlinie integriert mit dem Informationssicherheits-Managementsystem der
 - Key Management Assessment: Key-Lebenszyklus, HSM/KMS, Zugriffs-Kontrollen
 - Compliance Summary Dashboard: Konsolidiertes Compliance-Reporting
 
-
-
 **Technical Standards**:
 
 - Genehmigte kryptographische Algorithmen und Schlüssellängen
@@ -511,16 +439,12 @@ Diese Richtlinie integriert mit dem Informationssicherheits-Managementsystem der
 - Certificate-Gültigkeits- und Lebenszyklus-Anforderungen
 - Algorithmus-Deprecation-Schedules
 
-
-
 **Assessment-Tools**:
 
 - Excel-basierte Assessment Workbooks mit automatisierten Compliance-Berechnungen
 - Evidence-Register
 - Gap Analysis Templates
 - Remediation-Tracking
-
-
 
 ## Regulatorisches Mapping
 
@@ -545,23 +469,17 @@ Diese Richtlinie adressiert kryptographische Anforderungen von:
 - Datenklassifizierung und Verschlüsselungsanforderungen
 - Incident-Reporting-Prozeduren
 
-
-
 **Technisches Training** (Entwickler, IT-Personal):
 
 - Sichere kryptographische Implementierung
 - Genehmigte kryptographische Libraries und APIs
 - Häufige kryptographische Schwachstellen
 
-
-
 **Operatives Training** (IT Operations):
 
 - Key Management Prozeduren
 - Certificate Lifecycle Management
 - Kryptographische Incident Response
-
-
 
 ---
 

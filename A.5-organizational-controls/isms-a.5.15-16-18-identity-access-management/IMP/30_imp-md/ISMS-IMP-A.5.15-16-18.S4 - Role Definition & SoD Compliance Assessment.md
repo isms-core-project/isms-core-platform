@@ -39,7 +39,6 @@ This assessment evaluates Role-Based Access Control (RBAC) maturity and Segregat
 - **SoD Compliance**: Are users assigned to conflicting role combinations?
 - **Role Governance**: Are roles reviewed regularly and obsolete roles deactivated?
 
-
 ### Key Outputs
 
 Upon completion, you will have:
@@ -67,13 +66,11 @@ Upon completion, you will have:
    - Role definitions (description, business owner, access rights)
    - Role hierarchy (if applicable)
 
-
 2. **Role Assignment Data**:
 
    - Identity system exports (AD groups, Entra ID roles, Okta groups)
    - User-to-role mapping
    - Direct access users (no role assignments)
-
 
 3. **SoD Matrix**:
 
@@ -81,20 +78,17 @@ Upon completion, you will have:
    - SoD exception approvals (CISO-approved violations)
    - SoD policy (ISMS-POL-A.5.15-16-18, Section 2.1.4)
 
-
 4. **Supporting Data**:
 
    - User inventory (from ISMS-IMP-A.5.15-16-18.S1)
    - Access rights data (from ISMS-IMP-A.5.15-16-18.S2)
    - Access review results (from ISMS-IMP-A.5.15-16-18.S3)
 
-
 ### Time Commitment
 
 - **Initial assessment**: 12-20 hours
 - **Quarterly updates**: 3-5 hours
 - **Annual comprehensive review**: 8-12 hours
-
 
 ---
 
@@ -165,7 +159,6 @@ Upon completion, you will have:
 - ✓ Review dates recent (< 12 months)
 - ✓ Obsolete roles flagged
 
-
 ### Phase 3: Role Assignment Documentation (2-4 hours)
 
 **Steps**:
@@ -190,7 +183,6 @@ Upon completion, you will have:
 - ✓ Approvers documented
 - ✓ Expired roles flagged
 - ✓ Cross-referenced with user inventory
-
 
 ### Phase 4: Direct Access User Identification (2-3 hours)
 
@@ -218,7 +210,6 @@ Upon completion, you will have:
 - ✓ Approvals obtained (security/CISO)
 - ✓ Quarterly review frequency
 - ✓ Unauthorized direct access flagged
-
 
 **Target**: Direct access < 20% of total users
 
@@ -253,7 +244,6 @@ Upon completion, you will have:
 - ✓ Mitigation controls documented
 - ✓ Validated by security team
 
-
 ### Phase 6: SoD Violation Detection (3-5 hours)
 
 **Steps**:
@@ -283,7 +273,6 @@ Upon completion, you will have:
 - ✓ Justified violations have CISO approval
 - ✓ Unjustified violations have remediation plans
 - ✓ High-risk violations prioritized (30 days)
-
 
 **Target**: Zero unresolved SoD violations
 
@@ -316,7 +305,6 @@ Upon completion, you will have:
 
    - = (RBAC Adoption × 40%) + ((100 - SoD %) × 30%) + (Role Review % × 20%) + (Direct Access Justification % × 10%)
 
-
 **Deliverable**: Complete Sheet 7 with RBAC metrics
 
 **Quality Check**:
@@ -327,7 +315,6 @@ Upon completion, you will have:
 - ✓ Role review >= 95% (target)
 - ✓ Maturity score >= 80 (Excellent), >= 60 (Good)
 
-
 **Benchmark Maturity**:
 
 - **90-100**: Excellent
@@ -335,7 +322,6 @@ Upon completion, you will have:
 - **70-79**: Good
 - **60-69**: Fair
 - **<60**: Poor
-
 
 ### Phase 8: Gap Analysis (2-3 hours)
 
@@ -363,7 +349,6 @@ Upon completion, you will have:
    - **Medium**: Obsolete roles active, roles not reviewed annually
    - **Low**: Minor improvements
 
-
 **Deliverable**: Complete Sheet 8 with prioritized gaps
 
 **Quality Check**:
@@ -374,7 +359,6 @@ Upon completion, you will have:
 - ✓ Remediation plans specific (not vague)
 - ✓ Target dates realistic (30/60/90 days)
 - ✓ Critical gaps within 30 days
-
 
 ### Phase 9: Evidence Collection (2-3 hours)
 
@@ -409,7 +393,6 @@ Upon completion, you will have:
 - ✓ Audit-ready format
 - ✓ Retention period documented
 
-
 ### Phase 10: Review & Approval (1-2 hours)
 
 **Steps**:
@@ -420,7 +403,6 @@ Upon completion, you will have:
    - Run quality checklist
    - Document self-review
 
-
 2. **IAM Team Lead Review**:
 
    - Verify role catalog accuracy
@@ -430,7 +412,6 @@ Upon completion, you will have:
    - Assess RBAC metrics
    - Approve or request revisions
 
-
 3. **CISO Review & Approval**:
 
    - Review RBAC maturity score
@@ -439,7 +420,6 @@ Upon completion, you will have:
    - Validate SoD exception approvals
    - Approve assessment
    - Schedule next review
-
 
 **Deliverable**: Complete Sheet 10 with three-level approval
 
@@ -549,7 +529,6 @@ Upon completion, you will have:
 - [ ] User inventory available
 - [ ] Working folder created
 
-
 ### Sheet 2: Role Catalog
 
 - [ ] All standard roles documented (30+)
@@ -561,7 +540,6 @@ Upon completion, you will have:
 - [ ] Obsolete roles flagged
 - [ ] No "TBD" values
 
-
 ### Sheet 3: Role Assignments
 
 - [ ] All users accounted for
@@ -572,7 +550,6 @@ Upon completion, you will have:
 - [ ] Cross-referenced with user inventory
 - [ ] Identity exports collected
 
-
 ### Sheet 4: Role Access Mapping
 
 - [ ] All roles mapped to system access rights
@@ -580,7 +557,6 @@ Upon completion, you will have:
 - [ ] Business justifications documented
 - [ ] Access rights reviewed and current
 - [ ] Maps aligned with role definitions
-
 
 ### Sheet 5: SoD Matrix
 
@@ -590,7 +566,6 @@ Upon completion, you will have:
 - [ ] Mitigation controls documented
 - [ ] Validated by security team
 - [ ] 6-12 conflict pairs defined
-
 
 ### Sheet 6: SoD Violations
 
@@ -602,7 +577,6 @@ Upon completion, you will have:
 - [ ] High-risk prioritized (30 days)
 - [ ] Target: Zero unresolved
 
-
 ### Sheet 7: Compensating Controls
 
 - [ ] All SoD violations with exceptions documented
@@ -612,7 +586,6 @@ Upon completion, you will have:
 - [ ] Effectiveness tracked
 - [ ] Controls verified and tested
 
-
 ### Sheet 8: RBAC Coverage
 
 - [ ] All systems assessed for RBAC adoption
@@ -620,7 +593,6 @@ Upon completion, you will have:
 - [ ] RBAC adoption percentages accurate
 - [ ] Target thresholds defined
 - [ ] Non-compliant systems identified
-
 
 ### Sheet 9: Gap Analysis
 
@@ -632,7 +604,6 @@ Upon completion, you will have:
 - [ ] Critical gaps 30 days
 - [ ] Status tracked
 
-
 ### Sheet 10: Evidence Register
 
 - [ ] Evidence for all findings
@@ -642,7 +613,6 @@ Upon completion, you will have:
 - [ ] Retention documented
 - [ ] Critical evidence collected
 
-
 ### Sheet 11: Approval Sign-Off
 
 - [ ] Self-review completed
@@ -651,7 +621,6 @@ Upon completion, you will have:
 - [ ] CISO approval obtained
 - [ ] Feedback addressed
 - [ ] Next review scheduled
-
 
 ---
 
@@ -690,14 +659,12 @@ Upon completion, you will have:
 - SoD Violations (Sheet 6): Policy enforcement
 - Gap Analysis (Sheet 8): Policy violations
 
-
 **A.5.18 - Access Rights**:
 
 - Role Catalog (Sheet 2): Standard access rights
 - Role Assignments (Sheet 3): Role-based provisioning
 - RBAC Metrics (Sheet 7): Maturity measurement
 - Gap Analysis (Sheet 8): Governance gaps
-
 
 ### FINMA Circular 2023/1 (Swiss Financial)
 
@@ -707,13 +674,11 @@ Upon completion, you will have:
 - Role Assignments (Sheet 3): Role-based provisioning
 - RBAC Metrics (Sheet 7): Maturity measurement
 
-
 **Margin 58 - Segregation of Duties**:
 
 - SoD Matrix (Sheet 5): Incompatible role combinations
 - SoD Violations (Sheet 6): Detection and remediation
 - SoD Exception Approvals: CISO approval with controls
-
 
 ### GDPR Article 32 (EU)
 
@@ -723,14 +688,12 @@ Upon completion, you will have:
 - SoD Matrix: Segregation prevents unauthorized combinations
 - RBAC Metrics: Access is role-based (not ad-hoc)
 
-
 **Article 32(1)(d) - Regular Testing**:
 
 - Quarterly/Semi-Annual/Annual review cycles
 - Role accuracy assessment
 - SoD violation detection
 - Gap analysis and remediation
-
 
 ### NIS2 Article 21 (EU)
 
@@ -740,14 +703,12 @@ Upon completion, you will have:
 - SoD Matrix: Access control restrictions
 - RBAC Maturity: Access control effectiveness
 
-
 **Article 21(2)(f) - Identity and Access Management**:
 
 - RBAC maturity assessment
 - Role governance
 - SoD compliance
 - Continuous monitoring
-
 
 ---
 
@@ -803,7 +764,6 @@ Upon completion, you will have:
 - **Rows 62-75**: Risk Level Legends
 - **Rows 77-90**: Conditional Formatting Guide
 - **Rows 92-105**: Sheet Navigation Links
-
 
 #### Document Control Section (Rows 1-15)
 
@@ -1072,7 +1032,6 @@ Upon completion, you will have:
 
 ---
 
-
 ## Cell Styling Reference
 
 ### Color Palette
@@ -1119,7 +1078,6 @@ Upon completion, you will have:
 - Freeze Panes: Row 2 (header row always visible when scrolling)
 - Selection before freezing: Cell A2
 
-
 **How to Apply**:
 1. Select cell A2
 2. View → Freeze Panes → Freeze Panes
@@ -1136,13 +1094,11 @@ Upon completion, you will have:
 - `ISMS-IMP-A.5.15-16-18.S4_RoleCompliance_2025-10.xlsx` (October 2025 assessment)
 - `ISMS-IMP-A.5.15-16-18.S4_RoleCompliance_2026-01.xlsx` (January 2026 assessment)
 
-
 **Versioning**:
 
 - Monthly assessments: YYYY-MM
 - Quarterly assessments: YYYY-Q1, YYYY-Q2, etc.
 - Annual assessments: YYYY-Annual
-
 
 ---
 
@@ -1158,14 +1114,12 @@ Upon completion, you will have:
    - Update Status for expired/removed assignments
    - Recalculate Users_Assigned in Sheet 2 Role_Catalog (formula auto-updates)
 
-
 2. **Detect New SoD Violations** (Sheet 6):
 
    - Cross-reference updated Sheet 3 against Sheet 5 SoD_Matrix
    - Add new violations (users who gained conflicting roles)
    - Update Status for remediated violations
    - Remediate or justify new violations
-
 
 3. **Update Direct Access Users** (Sheet 4):
 
@@ -1174,13 +1128,11 @@ Upon completion, you will have:
    - Update Last_Review_Date for quarterly reviews
    - Target: Migrate direct access users to roles
 
-
 4. **Recalculate RBAC Metrics** (Sheet 7):
 
    - Formulas auto-update based on Sheet 2, 3, 4, 6 changes
    - Compare to previous quarter (trending?)
    - Update gap analysis if new gaps identified
-
 
 5. **Update Gap Analysis** (Sheet 8):
 
@@ -1188,7 +1140,6 @@ Upon completion, you will have:
    - Add new gaps identified during quarterly review
    - Verify Target_Date for overdue gaps
    - Update remediation progress
-
 
 **Time Required**: 3-5 hours
 
@@ -1204,14 +1155,12 @@ Upon completion, you will have:
    - Create new roles (emerging job functions)
    - Update Last_Review_Date for reviewed roles
 
-
 2. **Role Owner Validation**:
 
    - Contact all role owners (email or meeting)
    - Confirm role definitions still accurate
    - Update role descriptions if job functions changed
    - Document role owner sign-off (evidence)
-
 
 3. **Comprehensive SoD Review** (Sheet 6):
 
@@ -1220,7 +1169,6 @@ Upon completion, you will have:
    - Verify compensating controls still in place (logging, audits)
    - Remediate violations where justification expired
 
-
 4. **Role Accuracy Assessment**:
 
    - Sample 10-20 users per role
@@ -1228,14 +1176,12 @@ Upon completion, you will have:
    - Identify role drift (users have more/less access than role defines)
    - Remediate discrepancies (update role definitions or fix access)
 
-
 5. **RBAC Adoption Improvement Plan** (Sheet 8):
 
    - If RBAC Adoption < 80%: Create plan to improve
    - Identify 3-5 new roles to create (common direct access patterns)
    - Target 20-30 users to migrate from direct access to roles
    - Document improvement plan in Gap Analysis
-
 
 **Time Required**: 5-8 hours
 
@@ -1252,7 +1198,6 @@ Upon completion, you will have:
    - Update role hierarchy if needed (junior → senior)
    - Document Last_Review_Date for all roles
 
-
 2. **Complete Role Accuracy Assessment**:
 
    - For EVERY role: Sample 10-20 users
@@ -1260,7 +1205,6 @@ Upon completion, you will have:
    - Calculate role accuracy score: (Correct access / Sampled) × 100
    - Target: >= 95% role accuracy
    - Remediate all role drift
-
 
 3. **SoD Matrix Review** (Sheet 5):
 
@@ -1270,7 +1214,6 @@ Upon completion, you will have:
    - Document new mitigation controls
    - Validate with regulatory requirements (FINMA, SOX, etc.)
 
-
 4. **RBAC Maturity Strategic Plan**:
 
    - Review RBAC Maturity trend (Sheet 7): Improving? Stagnant?
@@ -1279,14 +1222,12 @@ Upon completion, you will have:
    - Identify technology investments (IAM platforms, role mining)
    - Document strategic plan in Gap Analysis
 
-
 5. **Audit Preparation**:
 
    - Ensure all evidence collected (Sheet 9)
    - Verify evidence accessible (SharePoint, not laptops)
    - Confirm approvals up to date (CISO sign-off)
    - Prepare executive summary (one-page RBAC maturity overview)
-
 
 **Time Required**: 8-12 hours
 
@@ -1303,20 +1244,17 @@ Upon completion, you will have:
    - User status (active/inactive)
    - User type (employee/contractor)
 
-
 2. **From ISMS-IMP-A.5.15-16-18.S2 (Access Rights Matrix)**:
 
    - Actual user access (for role accuracy validation)
    - System-level access (Read/Write/Admin)
    - Direct access identification
 
-
 3. **From ISMS-IMP-A.5.15-16-18.S3 (Access Review Results)**:
 
    - Role review dates (when roles last validated)
    - Review findings (role accuracy)
    - Role owner sign-offs
-
 
 **Outputs to Other Assessments**:
 1. **To ISMS-IMP-A.5.15-16-18.S5 (IAM Governance Dashboard)**:
@@ -1327,13 +1265,11 @@ Upon completion, you will have:
    - Overall RBAC Maturity Score (0-100)
    - Critical Gaps (Unresolved SoD, Low RBAC Adoption)
 
-
 2. **To ISMS-IMP-A.5.15-16-18.S3 (Access Review Results)**:
 
    - Role definitions (baseline for role-based reviews)
    - Role owners (who reviews role assignments)
    - Role-based review scope (review by role vs. individual users)
-
 
 ### Cross-Reference Formulas
 

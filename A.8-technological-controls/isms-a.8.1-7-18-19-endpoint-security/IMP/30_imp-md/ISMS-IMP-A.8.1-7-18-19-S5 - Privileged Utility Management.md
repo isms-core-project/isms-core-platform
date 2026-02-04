@@ -44,7 +44,6 @@ This document consists of two parts:
   - Cell Styling Reference
   - Appendix: Python Developer Notes
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -67,14 +66,12 @@ This assessment evaluates [Organization]'s controls over privileged utility prog
 - What security bypass tools exist (can disable antivirus, edit logs, etc.)?
 - What gaps exist in privileged utility controls?
 
-
 #### Key Principle
 
 **Privileged utilities are HIGH-RISK tools that require strong controls:**
 
 - ❌ Weak: "Admins can use any tools they need"
 - ✅ Strong: "Registry Editor requires PAM approval, usage logged, reviewed monthly"
-
 
 Privileged utilities can disable security controls, modify system configurations, access sensitive data, and cover tracks. They must be strictly controlled.
 
@@ -89,7 +86,6 @@ Privileged utilities can disable security controls, modify system configurations
 - Network tools (Wireshark, port scanners, protocol analyzers)
 - Security bypass tools (anti-malware disablers, log editors, rootkit detectors)
 
-
 **Access Controls:**
 
 - Who can access each utility (RBAC groups)
@@ -97,14 +93,12 @@ Privileged utilities can disable security controls, modify system configurations
 - Access approval workflows
 - Standing vs. temporary vs. emergency access
 
-
 **Usage Monitoring:**
 
 - Logging mechanisms (event logs, SIEM, PAM logs)
 - Usage review processes
 - Anomaly detection
 - Incident response for unauthorized usage
-
 
 #### How This Relates to Other Assessments
 
@@ -133,7 +127,6 @@ Privileged utilities can disable security controls, modify system configurations
 - **Monthly updates:** 2-3 hours (usage monitoring review)
 - **Quarterly updates:** 4-6 hours (full assessment with recertification)
 
-
 ### Expected Outputs
 
 Upon completion, you will have:
@@ -159,14 +152,12 @@ Upon completion, you will have:
 - **From S1:** Complete endpoint inventory
 - Required: Device name, OS type, endpoint type (admin workstation, standard user, server)
 
-
 #### 2. Privileged Utility Access
 
 - Access to endpoint management platforms
 - Access to PAM solution (if deployed)
 - Access to Active Directory / identity management
 - Access to SIEM for usage logs
-
 
 #### 3. Documentation
 
@@ -176,7 +167,6 @@ Upon completion, you will have:
 - PAM solution documentation
 - Audit/logging configurations
 
-
 #### 4. Access Control Data
 
 - RBAC group memberships (who's in admin groups)
@@ -184,7 +174,6 @@ Upon completion, you will have:
 - PAM access grants and approvals
 - sudo configurations (Linux)
 - MDM restrictions (mobile)
-
 
 ### Tools You'll Use
 
@@ -196,7 +185,6 @@ Upon completion, you will have:
 - sudo (Linux)
 - MDM (Intune, Jamf, etc.)
 
-
 **Monitoring:**
 
 - SIEM platform
@@ -205,7 +193,6 @@ Upon completion, you will have:
 - PAM session recordings
 - Endpoint detection and response (EDR)
 
-
 ### Access Requirements
 
 - Read access to identity management systems
@@ -213,7 +200,6 @@ Upon completion, you will have:
 - Read access to SIEM
 - Read access to endpoint management consoles
 - Access to approval workflow systems
-
 
 ---
 
@@ -352,7 +338,6 @@ Document all privileged utilities present on endpoints.
 - Risk classification
 - Business justification
 
-
 #### How to Complete
 
 **Step 1: Identify Privileged Utilities by Category**
@@ -363,12 +348,10 @@ Document all privileged utilities present on endpoints.
 - macOS: Terminal (sudo), System Preferences (privileged), Disk Utility, Activity Monitor
 - Linux: sudoedit, visudo, systemctl, service management, package managers (apt, yum with sudo)
 
-
 **Category 2: Remote Access Tools**
 
 - RDP (Remote Desktop), VNC, SSH, TeamViewer, AnyDesk, LogMeIn, Remote Assistance
 - Note: Distinguish authorized (corporate-approved) vs. unauthorized remote access
-
 
 **Category 3: Debugging & Development Tools**
 
@@ -377,7 +360,6 @@ Document all privileged utilities present on endpoints.
 - Linux: gdb, strace, ltrace
 - Cross-platform: IDA Pro, Ghidra, OllyDbg
 
-
 **Category 4: Password & Credential Tools**
 
 - Password reset utilities (built-in OS tools)
@@ -385,14 +367,12 @@ Document all privileged utilities present on endpoints.
 - Hash dumpers (Mimikatz, pwdump - should be prohibited except security team)
 - Keychain/credential manager access
 
-
 **Category 5: Network Analysis Tools**
 
 - Wireshark, tcpdump, tshark
 - Nmap, port scanners
 - Network protocol analyzers
 - Packet injection tools
-
 
 **Category 6: Security Bypass Tools (HIGH RISK)**
 
@@ -402,7 +382,6 @@ Document all privileged utilities present on endpoints.
 - Forensic tools (FTK, EnCase - authorized security use only)
 - Boot manipulation tools (BCDEdit, bootloaders)
 
-
 **Step 2: Determine Endpoint Prevalence**
 
 For each utility:
@@ -410,7 +389,6 @@ For each utility:
 - Which endpoints have it (count and percentage)
 - Is it pre-installed (OS default) or added?
 - Installation method (built-in, centrally deployed, user-installed)
-
 
 **Example:**
 ```
@@ -429,7 +407,6 @@ Installation: Pre-installed (Windows OS default)
 - Can cover tracks (delete logs)? (Critical)
 - Commonly used legitimately? (Lower risk if yes)
 
-
 **Risk Levels:**
 ```
 CRITICAL: Security bypass tools (AV disablers, log editors, rootkits)
@@ -446,7 +423,6 @@ For each utility:
 - Who needs it? (IT admins, developers, security team)
 - Frequency of use? (daily, weekly, rarely)
 - Alternatives? (can task be done without this tool?)
-
 
 #### Common Mistakes to Avoid
 
@@ -466,7 +442,6 @@ For each utility:
 - [ ] Security bypass tools specifically identified
 - [ ] Pre-installed vs. added utilities distinguished
 
-
 ---
 
 ### Sheet 2: Access_Control
@@ -483,7 +458,6 @@ For each privileged utility:
 - Enforcement verification
 - Access testing results
 
-
 #### How to Complete
 
 **Step 1: Identify Access Control Mechanisms**
@@ -498,14 +472,12 @@ For each privileged utility:
 - User Account Control (UAC)
 - Local admin rights removal
 
-
 **macOS:**
 
 - Gatekeeper
 - MDM restrictions (Jamf, Intune)
 - Privilege escalation controls
 - sudo restrictions
-
 
 **Linux:**
 
@@ -514,12 +486,10 @@ For each privileged utility:
 - User/group permissions
 - PAM (Pluggable Authentication Modules)
 
-
 **Mobile:**
 
 - MDM application restrictions
 - Enterprise app catalog controls
-
 
 **Step 2: Document Who Has Access**
 
@@ -531,13 +501,11 @@ For each privileged utility:
 - Specific individuals (if not group-based)
 - Count of users with access
 
-
 **Access Type:**
 
 - Standing access (permanent, ongoing)
 - Temporary access (time-limited, expires)
 - Emergency/break-glass (for critical incidents)
-
 
 **Example:**
 ```
@@ -569,7 +537,6 @@ Access Type: Standing (Tier1/Tier2), Emergency (Break-Glass)
 - ⚠️ Partial: Can launch but limited functionality
 - ❌ Fail: Standard user can access fully
 
-
 **Step 4: Document Access Control Configuration**
 
 **Configuration Details:**
@@ -578,7 +545,6 @@ Access Type: Standing (Tier1/Tier2), Emergency (Break-Glass)
 - PAM policy configuration
 - sudo rules (/etc/sudoers entries)
 - MDM profile settings
-
 
 **Example AppLocker Rule:**
 ```
@@ -598,7 +564,6 @@ Audit: Log all executions
 - Too many users have access (over-privileged)
 - No group-based control (individual grants)
 - Inconsistent enforcement (some endpoints yes, some no)
-
 
 #### Common Mistakes to Avoid
 
@@ -621,7 +586,6 @@ Audit: Log all executions
 - [ ] Emergency access documented
 - [ ] PAM integration (if applicable)
 
-
 ---
 
 ### Sheet 3: Approval_Workflow
@@ -638,7 +602,6 @@ For access requests:
 - Standing vs. temporary access policies
 - Recertification process
 
-
 #### How to Complete
 
 **Step 1: Document Approval Workflow**
@@ -650,13 +613,11 @@ For access requests:
 - How does user request access? (Ticket, form, PAM self-service)
 - What information required? (Business justification, utility needed, duration)
 
-
 **2. Approval Chain:**
 
 - **Level 1:** Manager approval (business need)
 - **Level 2:** Security review (risk assessment)
 - **Level 3:** Final approval (IT Director, CISO for high-risk)
-
 
 **3. Access Grant:**
 
@@ -664,13 +625,11 @@ For access requests:
 - Notification to user
 - Documentation of approval
 
-
 **4. Time Limits:**
 
 - Standing access: Permanent, recertified quarterly/annually
 - Temporary access: Time-limited (24 hours, 7 days, 30 days)
 - Emergency access: Immediate grant, reviewed retrospectively
-
 
 **Step 2: Review Recent Approvals**
 
@@ -684,7 +643,6 @@ For access requests:
 - Approval chain (who approved at each level)
 - Access type (standing/temporary/emergency)
 - Grant date and expiration (if temporary)
-
 
 **Metrics:**
 ```
@@ -714,7 +672,6 @@ Requests by Type:
 - ✅ Time limit appropriate
 - ✅ Recertification date set
 
-
 **Poorly-Documented Approval:**
 
 - ❌ Vague justification ("Need admin access")
@@ -722,7 +679,6 @@ Requests by Type:
 - ❌ Rubber-stamp approvals (approved in 5 minutes)
 - ❌ Standing access when temporary appropriate
 - ❌ No recertification
-
 
 **Step 4: Document Recertification Process**
 
@@ -738,14 +694,12 @@ Requests by Type:
   - Any security incidents involving this user?
 - Actions: Approve continuation, reduce access, revoke access
 
-
 **Recent Recertification:**
 
 - Last recertification date
 - Number of users recertified
 - Access revoked (count and %)
 - Access reduced (count and %)
-
 
 **Step 5: Identify Process Gaps**
 
@@ -756,7 +710,6 @@ Requests by Type:
 - No time limits (all access is standing)
 - No recertification (access never reviewed)
 - Approvals not documented (verbal approvals)
-
 
 #### Common Mistakes to Avoid
 
@@ -779,7 +732,6 @@ Requests by Type:
 - [ ] Emergency access process defined
 - [ ] Gaps identified
 
-
 ---
 
 ### Sheet 4: Usage_Monitoring
@@ -797,7 +749,6 @@ For each privileged utility:
 - Anomaly detection
 - Usage review process
 
-
 #### How to Complete
 
 **Step 1: Verify Logging Configuration**
@@ -812,7 +763,6 @@ For each privileged utility:
 - EDR process execution logs
 - SIEM
 
-
 **What's Logged:**
 
 - User (who executed)
@@ -822,7 +772,6 @@ For each privileged utility:
 - Command-line arguments (how - if applicable)
 - Duration (session length for remote access)
 - Exit status (success/failure)
-
 
 **Example:**
 ```
@@ -851,7 +800,6 @@ Events Logged:
 - Retention period (how long stored)
 - Alerting configured? (anomaly detection, unauthorized usage)
 
-
 **Test SIEM Integration:**
 1. Execute privileged utility on test endpoint
 2. Wait 5-15 minutes (log forwarding delay)
@@ -868,7 +816,6 @@ Events Logged:
 - Unique users (who used it)
 - Unique endpoints (where used)
 - Usage frequency distribution (who's using it most)
-
 
 **Example:**
 ```
@@ -896,13 +843,11 @@ Usage Pattern: Normal (consistent with IT workload)
 - Unusual endpoint (admin tool on non-admin workstation)
 - Unusual sequence (multiple bypass tools in succession)
 
-
 **Anomaly Detection:**
 
 - Automated (SIEM rules, UEBA)
 - Manual (periodic review)
 - Combination
-
 
 **Recent Anomalies:**
 
@@ -910,7 +855,6 @@ Usage Pattern: Normal (consistent with IT workload)
 - False positive rate
 - True positives (actual incidents)
 - Response actions taken
-
 
 **Step 5: Document Usage Review Process**
 
@@ -921,20 +865,17 @@ Usage Pattern: Normal (consistent with IT workload)
 - Weekly: Summary report to security management
 - Monthly: Detailed usage audit
 
-
 **Review Responsibilities:**
 
 - SOC: Real-time monitoring, alert triage
 - Security Engineering: Weekly/monthly review
 - Management: Monthly summary review
 
-
 **Recent Review:**
 
 - Last review date
 - Findings (anomalies, policy violations, incidents)
 - Actions taken (investigations, access revoked, training)
-
 
 #### Common Mistakes to Avoid
 
@@ -958,7 +899,6 @@ Usage Pattern: Normal (consistent with IT workload)
 - [ ] Review findings documented
 - [ ] Log retention adequate (≥90 days)
 
-
 ---
 
 ### Sheet 5: Security_Bypass_Tools
@@ -976,7 +916,6 @@ Tools that can:
 - Install rootkits or bypass kernel protections
 - Dump credentials or passwords
 
-
 #### How to Complete
 
 **Step 1: Identify Security Bypass Tools**
@@ -987,13 +926,11 @@ Tools that can:
 - Tamper protection bypass tools
 - Service control utilities used maliciously (sc.exe, net.exe)
 
-
 **Category 2: Audit Log Manipulation**
 
 - Event log editors/clearers (wevtutil, Clear-EventLog)
 - Log file deletion tools
 - Timestamp modification tools
-
 
 **Category 3: Credential Access**
 
@@ -1002,7 +939,6 @@ Tools that can:
 - Keyloggers
 - Credential editors
 
-
 **Category 4: Rootkits & Kernel Manipulation**
 
 - Rootkit installers
@@ -1010,13 +946,11 @@ Tools that can:
 - Kernel debuggers (if unauthorized)
 - Boot manipulation (BCDEdit for malicious purposes)
 
-
 **Category 5: Forensic Anti-Analysis**
 
 - Anti-forensic tools (data wiping, secure delete)
 - Counter-surveillance tools
 - Encryption bypass tools
-
 
 **Step 2: Assess Prevalence and Risk**
 
@@ -1028,19 +962,16 @@ Tools that can:
 - Authorized use? (Security team only, or prohibited)
 - Access controlled? (Who can use)
 
-
 **Risk Assessment:**
 ```
 CRITICAL: Malicious use can completely compromise security
 
   - Examples: Mimikatz on non-security endpoints, AV disablers
   
-
 HIGH: Legitimate use exists but very dangerous
 
   - Examples: Event log clearers (wevtutil), service control for AV services
   
-
 MEDIUM: Can be used maliciously but has legitimate admin uses
 
   - Examples: BCDEdit, kernel debuggers on authorized admin workstations
@@ -1055,7 +986,6 @@ MEDIUM: Can be used maliciously but has legitimate admin uses
 - Incident response (forensic tools, memory dumpers)
 - Security research (rootkit detectors, malware analysis tools)
 
-
 **Requirements for Authorized Use:**
 
 - Explicitly approved by CISO
@@ -1063,7 +993,6 @@ MEDIUM: Can be used maliciously but has legitimate admin uses
 - Usage heavily logged and monitored
 - Users background-checked and trained
 - Session recording (PAM)
-
 
 **Step 4: Document Controls**
 
@@ -1075,13 +1004,11 @@ MEDIUM: Can be used maliciously but has legitimate admin uses
 - Session recording mandatory
 - Usage reviewed after each use
 
-
 **For Prohibited Tools:**
 
 - Blocklisted (cannot execute)
 - Detection via EDR (alert if found)
 - Immediate incident response (presence = incident)
-
 
 **Step 5: Identify Gaps**
 
@@ -1092,7 +1019,6 @@ MEDIUM: Can be used maliciously but has legitimate admin uses
 - No detection (EDR doesn't alert on bypass tools)
 - Authorized use not restricted (security tools on production)
 - No session recording (can't audit what was done)
-
 
 #### Common Mistakes to Avoid
 
@@ -1113,7 +1039,6 @@ MEDIUM: Can be used maliciously but has legitimate admin uses
 - [ ] Prohibited tools blocklisted
 - [ ] Detection configured (EDR alerts)
 - [ ] Gaps identified
-
 
 ---
 
@@ -1152,7 +1077,6 @@ Evidence repository for audit.
 - Recertification records
 - Security bypass tool assessments
 
-
 ---
 
 ### Sheet 8: Privileged_Utility_Dashboard
@@ -1172,7 +1096,6 @@ Executive summary dashboard.
 - Security bypass tools (count and control status)
 - Critical gaps
 
-
 **Thresholds:**
 
 **Green:**
@@ -1183,7 +1106,6 @@ Executive summary dashboard.
 - Recertification current (≤90 days)
 - No uncontrolled security bypass tools
 
-
 **Yellow:**
 
 - Access control 85-94%
@@ -1192,7 +1114,6 @@ Executive summary dashboard.
 - Recertification 90-180 days
 - Security bypass tools controlled but present
 
-
 **Red:**
 
 - Access control <85%
@@ -1200,7 +1121,6 @@ Executive summary dashboard.
 - Approval workflow <90%
 - Recertification >180 days
 - Uncontrolled security bypass tools
-
 
 ---
 
@@ -1495,7 +1415,6 @@ For each active privileged account:
 - [ ] Evidence registered
 - [ ] Dashboard calculated
 
-
 ### Accuracy (10 items)
 
 - [ ] Utility categorization correct
@@ -1509,7 +1428,6 @@ For each active privileged account:
 - [ ] Test results documented
 - [ ] Metrics calculated correctly
 
-
 ### Honesty (6 items)
 
 - [ ] Access control status accurate (not aspirational)
@@ -1519,7 +1437,6 @@ For each active privileged account:
 - [ ] Enforcement mode accurate (audit vs enforce)
 - [ ] Recertification compliance honest
 
-
 ### Evidence (5 items)
 
 - [ ] Access control configs
@@ -1527,7 +1444,6 @@ For each active privileged account:
 - [ ] Approval records
 - [ ] Recertification evidence
 - [ ] All evidence sanitized
-
 
 ### Remediation (5 items)
 
@@ -1537,14 +1453,12 @@ For each active privileged account:
 - [ ] Dates realistic
 - [ ] Priority assigned
 
-
 ### Integration (4 items)
 
 - [ ] PAM integrated (if deployed)
 - [ ] SIEM integrated
 - [ ] Identity management integrated
 - [ ] EDR integrated
-
 
 ### Stakeholder Input (4 items)
 
@@ -1553,13 +1467,11 @@ For each active privileged account:
 - [ ] Sysadmins reviewed
 - [ ] Management reviewed
 
-
 ### Consistency (3 items)
 
 - [ ] No contradictions
 - [ ] Access control status matches tests
 - [ ] Dashboard matches details
-
 
 ---
 
@@ -1577,14 +1489,12 @@ For each active privileged account:
 - Access control accuracy
 - Usage monitoring verification
 
-
 **Checklist:**
 
 - [ ] Privileged utilities identified
 - [ ] Access controls verified
 - [ ] Logging confirmed
 - [ ] Technical evidence present
-
 
 **Outcome:** Approve → Level 2 / Request Changes
 
@@ -1598,14 +1508,12 @@ For each active privileged account:
 - Risk assessments
 - Evidence quality
 
-
 **Checklist:**
 
 - [ ] All requirements addressed
 - [ ] Risk levels justified
 - [ ] Gaps documented
 - [ ] Evidence audit-ready
-
 
 **Outcome:** Approve → Level 3 / Request Changes
 
@@ -1619,14 +1527,12 @@ For each active privileged account:
 - Resource allocation
 - Risk acceptance
 
-
 **Checklist:**
 
 - [ ] Gap priorities acceptable
 - [ ] Remediation funded
 - [ ] Accepted risks documented
 - [ ] Timelines realistic
-
 
 **Outcome:** Approve / Request Changes / Escalate
 
@@ -1784,12 +1690,10 @@ By Installation:
 - If "Medium" → Yellow #FFEB9C
 - If "Low" → Green #C6EFCE
 
-
 **Category Column (C):**
 
 - If "Security Bypass" → Red #FFC7CE
 - Else → Light blue #D9E1F2
-
 
 ---
 
@@ -1866,13 +1770,11 @@ Targets:
 - If "🟡 Partial" → Yellow #FFEB9C
 - If "🔴 Not Deployed" → Red #FFC7CE
 
-
 **Enforcement Mode Column (D):**
 
 - If "Enforce" → Green #C6EFCE
 - If "Audit" → Yellow #FFEB9C
 - If "Disabled" → Red #FFC7CE
-
 
 **Control Status Column (N):**
 
@@ -1880,13 +1782,11 @@ Targets:
 - If "⚠️ Audit" → Yellow #FFEB9C
 - If "❌ Uncontrolled" → Red #FFC7CE
 
-
 **Test Result Column (L):**
 
 - If "✅ Pass" → Green #C6EFCE
 - If "❌ Fail" → Red #FFC7CE
 - If "Not Tested" → Light gray #D9D9D9
-
 
 ---
 
@@ -1967,26 +1867,22 @@ Recertification:
 - If "Denied" → Red #FFC7CE
 - If "Pending" → Yellow #FFEB9C
 
-
 **Days to Approve Column (O):**
 
 - If ≤3 → Green #C6EFCE
 - If 4-7 → Yellow #FFEB9C
 - If >7 → Red #FFC7CE
 
-
 **Status Column (S):**
 
 - If "Active" → Green #C6EFCE
 - If "Expired" or "Revoked" → Light gray #D9D9D9
-
 
 **Recertification Date Column (R):**
 
 - If ≤30 days → Yellow #FFEB9C (due soon)
 - If <TODAY → Red #FFC7CE (overdue)
 - Else → Green #C6EFCE
-
 
 ---
 
@@ -2081,32 +1977,27 @@ Targets:
 - If "Partial" → Yellow #FFEB9C
 - If "No" → Red #FFC7CE
 
-
 **SIEM Integration Column (E):**
 
 - If "Yes" → Green #C6EFCE
 - If "In Progress" → Yellow #FFEB9C
 - If "No" → Red #FFC7CE
 
-
 **SIEM Verified Column (F):**
 
 - If "Yes" → Green #C6EFCE
 - If "No" or "Not Tested" → Red #FFC7CE
-
 
 **Monitoring Status Column (S):**
 
 - If "✅ Complete" → Green #C6EFCE
 - If "⚠️ Partial" → Yellow #FFEB9C
 
-
 **Log Retention Column (H):**
 
 - If ≥90 → Green #C6EFCE
 - If 30-89 → Yellow #FFEB9C
 - If <30 → Red #FFC7CE
-
 
 ---
 
@@ -2190,25 +2081,21 @@ TARGET: 0 uncontrolled security bypass tools
 - If "Yes" → Yellow #FFEB9C (requires investigation)
 - If "No" → Green #C6EFCE
 
-
 **Access Control Column (H):**
 
 - If "PAM" or "Blocklisted" → Green #C6EFCE
 - If "No Control" → Red #FFC7CE
-
 
 **Detection Configured Column (I):**
 
 - If "Yes" → Green #C6EFCE
 - If "No" → Red #FFC7CE
 
-
 **Control Status Column (O):**
 
 - If "✅ Blocked" or "✅ Controlled" → Green #C6EFCE
 - If "⚠️ Partial" → Yellow #FFEB9C
 - If "🔴 Critical" → Dark red #C00000, white text
-
 
 ---
 
@@ -2295,7 +2182,6 @@ Row 3: "Executive Summary - [=Instructions!B8]"
 - From Sheet 5: Logging %, SIEM %
 - From Sheet 4: Approval workflow %
 - From Sheet 6: Security bypass tool status
-
 
 **Overall Status Logic:**
 ```

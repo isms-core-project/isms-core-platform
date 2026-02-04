@@ -43,7 +43,6 @@ This document is provided for informational and awareness purposes only.
 - This document does NOT mandate the use, prohibition, or configuration of specific cloud platforms, architectures, or tools.
 - This document does NOT override or extend any ISMS policy.
 
-
 All binding environment separation requirements, obligations, and governance decisions are defined exclusively in **ISMS-POL-A.8.31 (Environment Separation Policy)** and other approved ISMS documentation.
 
 This document serves solely as a technical reference to:
@@ -53,7 +52,6 @@ This document serves solely as a technical reference to:
 - Support architecture decision-making during implementation
 - Inform technical discussions and future implementation planning
 - **This document must not be used as audit evidence of implementation**
-
 
 Use of this document does not imply implementation, compliance, or operational maturity.
 
@@ -74,7 +72,6 @@ This document provides technical reference patterns for implementing environment
 - Future implementation planning discussions
 - Tool and platform evaluation criteria
 
-
 ## What This Document Is NOT
 
 This document does NOT:
@@ -85,7 +82,6 @@ This document does NOT:
 - Replace ISMS-POL-A.8.31 policy requirements
 - Mandate specific cloud providers or platforms
 - Replace vendor documentation or best practices
-
 
 ## Relationship to ISMS Policy
 
@@ -135,7 +131,6 @@ Root Organization
 - **Service Limits**: Separate service quotas per account
 - **Audit Trail**: CloudTrail logs separate per account
 
-
 ## Network Separation
 
 **VPC (Virtual Private Cloud) per Environment**:
@@ -147,7 +142,6 @@ Recommended CIDR blocks (RFC 1918 private address space):
 - Staging VPC: 10.3.0.0/16 (65,536 IPs)
 - Production VPC: 10.4.0.0/16 (65,536 IPs)
 
-
 **VPC Peering Configuration**:
 
 Controlled peering between adjacent environments only:
@@ -157,7 +151,6 @@ Controlled peering between adjacent environments only:
 - ✅ Staging ↔ Production peering: Allowed (deployment automation)
 - ❌ Dev ↔ Production peering: **PROHIBITED** (direct connection violates separation)
 
-
 **Security Groups**:
 
 - Default deny (no inbound traffic unless explicitly allowed)
@@ -165,13 +158,11 @@ Controlled peering between adjacent environments only:
 - Production security groups: managed via Terraform/CloudFormation only (prevent manual drift)
 - Security group naming: `{environment}-{service}-{direction}` (e.g., `prod-web-inbound`)
 
-
 **Route Tables**:
 
 - Default route to Internet Gateway for public subnets
 - NAT Gateway for private subnet outbound
 - No routes between non-adjacent VPCs
-
 
 ## Access Control (IAM)
 
@@ -197,7 +188,6 @@ Controlled peering between adjacent environments only:
 - Require MFA for console access
 - Session duration: 4 hours maximum
 - Require approval workflow (ServiceNow, Jira) before AssumeRole
-
 
 **Cross-Account AssumeRole** (Deployment Pipeline):
 ```json
@@ -236,7 +226,6 @@ Controlled peering between adjacent environments only:
   - `test-webapp-data-234567890123`
   - `prod-webapp-data-345678901234`
 
-
 **S3 Bucket Policies** (production - prevent cross-account access):
 ```json
 {
@@ -266,14 +255,12 @@ Controlled peering between adjacent environments only:
   - Single-AZ acceptable
   - Shorter backup retention (7 days)
 
-
 **AWS Secrets Manager**:
 
 - Separate secrets per environment
 - Naming convention: `{environment}/{service}/{secret}` (e.g., `prod/webapp/db-password`)
 - Production secrets: automatic rotation enabled (30-90 days)
 - Cross-account secret access: **PROHIBITED** via resource policies
-
 
 ## Deployment Pipeline Integration
 
@@ -298,7 +285,6 @@ Deploy to Production Account (Manual approval + CAB)
 - Pipeline in Dev account assumes role in target accounts
 - Time-limited credentials (1 hour session)
 - Audit trail in CloudTrail for all deployments
-
 
 ---
 
@@ -335,7 +321,6 @@ Tenant Root Group
 - **Service Limits**: Separate quota limits per subscription
 - **Blast Radius Containment**: Dev subscription compromise isolated from production
 
-
 ## Network Separation
 
 **Virtual Networks (VNets)** per subscription:
@@ -345,13 +330,11 @@ Tenant Root Group
 - Staging VNet: 10.30.0.0/16
 - Production VNet: 10.40.0.0/16
 
-
 **Network Security Groups (NSGs)**:
 
 - Default deny all inbound
 - Explicit allow rules for required traffic
 - Production NSG: managed via Azure Policy (prevent manual override)
-
 
 **VNet Peering**:
 
@@ -359,7 +342,6 @@ Tenant Root Group
 - Spoke VNets (Dev, Test, Staging, Prod) peer to Hub only
 - Transitive routing disabled (Dev cannot reach Prod via Hub)
 - User-Defined Routes (UDRs) control traffic flow
-
 
 ## Access Control (Azure RBAC)
 
@@ -371,12 +353,10 @@ Tenant Root Group
 - Scope: Resource Groups in Dev Subscription
 - Cannot access Test/Staging/Prod subscriptions
 
-
 **QA Team** (Test Subscription):
 
 - Role: Reader (view resources) + specific app access
 - Scope: Test Subscription Resource Groups
-
 
 **Operations** (Production Subscription):
 
@@ -385,7 +365,6 @@ Tenant Root Group
 - Session: 4-hour maximum
 - Audit: All actions logged to Log Analytics
 
-
 **Azure AD Conditional Access**:
 
 - Production access requires:
@@ -393,7 +372,6 @@ Tenant Root Group
   - Multi-Factor Authentication (MFA)
   - Trusted network location
   - Risk-based policies (Azure AD Identity Protection)
-
 
 ## Data Separation
 
@@ -404,7 +382,6 @@ Tenant Root Group
   - `devwebappdata001abc`
   - `testwebappdata002xyz`
   - `prodwebappdata003pqr`
-
 
 **Azure SQL Database**:
 
@@ -418,7 +395,6 @@ Tenant Root Group
   - Lower performance tiers acceptable
   - No geo-replication required
 
-
 **Azure Key Vault**:
 
 - Separate Key Vaults per environment
@@ -428,7 +404,6 @@ Tenant Root Group
   - Purge protection enabled (prevent permanent deletion)
   - Private endpoint (no public access)
   - Firewall rules (allow specific VNets only)
-
 
 ## Azure Policy Enforcement
 
@@ -455,7 +430,6 @@ Translation: Production storage accounts MUST use customer-managed encryption ke
 - Azure DevOps Pipelines or GitHub Actions
 - Service Principal per environment (limited to subscription)
 - Pipeline: Dev → Test → Staging → Prod (manual gates between stages)
-
 
 ---
 
@@ -491,7 +465,6 @@ Organization (example.com)
 - **Quotas**: Separate resource quotas per project
 - **Audit**: Separate Cloud Audit Logs per project
 
-
 ## Network Separation
 
 **VPC Networks** (per project):
@@ -502,13 +475,11 @@ Organization (example.com)
 - Staging VPC: 10.120.0.0/16
 - Production VPC: 10.130.0.0/16
 
-
 **VPC Peering**:
 
 - Controlled peering between adjacent environments
 - Private Google Access enabled (access GCP services without public IPs)
 - No transitive peering (Dev cannot reach Prod)
-
 
 **Firewall Rules**:
 
@@ -516,7 +487,6 @@ Organization (example.com)
 - Explicit allow rules required
 - Production firewall rules: managed via Terraform (prevent manual changes)
 - Priority: 1000 (deny all) → 100-500 (explicit allows)
-
 
 ## Access Control (Cloud IAM)
 
@@ -528,13 +498,11 @@ Organization (example.com)
 - Scope: Dev project only
 - Cannot access other projects
 
-
 **Operations** (Production Project):
 
 - Role: `roles/compute.admin` + `roles/storage.admin` (limited scope)
 - Requires: Context-Aware Access + MFA
 - Session: Time-bound (4 hours via temporary credentials)
-
 
 **Service Accounts** (for applications):
 
@@ -542,13 +510,11 @@ Organization (example.com)
 - Naming: `{env}-{app}-sa@{project-id}.iam.gserviceaccount.com`
 - Production service accounts: key rotation enforced (90 days)
 
-
 **Deployment Service Account** (CI/CD):
 
 - Service account in Dev project
 - Can impersonate service accounts in Test/Staging/Prod (cross-project deployment)
 - Workload Identity Federation (no JSON keys stored in pipeline)
-
 
 ## Data Separation
 
@@ -560,7 +526,6 @@ Organization (example.com)
   - Retention policy (30-day minimum)
   - Customer-managed encryption keys (Cloud KMS)
 
-
 **Cloud SQL**:
 
 - Separate Cloud SQL instances per project
@@ -570,13 +535,11 @@ Organization (example.com)
   - Private IP only (no public IP)
   - Database encryption with Cloud KMS
 
-
 **Secret Manager**:
 
 - Separate secrets per project
 - Naming: `{environment}_{service}_{secret}` (e.g., `prod_webapp_db_password`)
 - Production secrets: automatic rotation (Secret Manager Rotation)
-
 
 ---
 
@@ -691,14 +654,12 @@ roleRef:
 - Node size: Smaller instance types (cost optimization)
 - Monitoring: Basic (Prometheus)
 
-
 **Production Cluster**:
 
 - Node count: Auto-scaling 5-50 nodes
 - Node size: Performance-optimized instances
 - Monitoring: Full observability (Prometheus, Grafana, Jaeger tracing)
 - High Availability: Multi-AZ node pools
-
 
 **Pod Security Standards**:
 
@@ -707,13 +668,11 @@ roleRef:
 - Test: `baseline`
 - Dev: `privileged` (developers need flexibility)
 
-
 **Service Mesh** (Istio/Linkerd):
 
 - mTLS between services (automatic encryption)
 - Traffic policies (rate limiting, circuit breakers)
 - Observability (distributed tracing)
-
 
 ---
 
@@ -737,13 +696,11 @@ Core Network (192.168.0.0/16)
 - ACLs (Access Control Lists) permit deployment traffic (dev → test → staging → prod)
 - Production VLAN: no inbound from dev/test VLANs
 
-
 **Physical Switches**:
 
 - VLAN tagging (IEEE 802.1Q)
 - Private VLANs (PVLAN) for additional isolation
 - Spanning Tree Protocol (STP) for loop prevention
-
 
 ## Physical Separation (High Security)
 
@@ -755,14 +712,12 @@ Core Network (192.168.0.0/16)
 - Separate network switch
 - Separate internet connection (optional)
 
-
 **Production Data Center** (separate physical location):
 
 - Dedicated production servers
 - Separate network infrastructure
 - Physical access controls (badge readers, biometric)
 - 24/7 monitoring
-
 
 **Use Case**: Financial institutions, government, healthcare (high compliance requirements)
 
@@ -792,7 +747,6 @@ Database Tier VLAN (most restricted)
 - Mirrors production architecture (same tiers, same firewall rules)
 - Validates production deployment before actual production
 
-
 ---
 
 # Hybrid Cloud Patterns
@@ -804,12 +758,10 @@ Database Tier VLAN (most restricted)
 - Development/Test: Cloud-based (AWS/Azure/GCP)
 - Production: On-premises data center (regulatory requirement)
 
-
 **Connectivity**:
 
 - VPN or Direct Connect / ExpressRoute / Cloud Interconnect
 - Deployment pipeline deploys to cloud dev/test, then to on-premises prod
-
 
 **Use Case**: Organizations migrating to cloud (keep production on-prem during transition)
 
@@ -821,13 +773,11 @@ Database Tier VLAN (most restricted)
 - Testing: Azure (PaaS services)
 - Production: GCP (high-performance compute)
 
-
 **Challenges**:
 
 - Complex IAM (separate identity systems)
 - Network connectivity (VPN between clouds)
 - Cost management (multi-cloud billing)
-
 
 **Use Case**: Vendor diversification, best-of-breed services
 

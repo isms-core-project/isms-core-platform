@@ -55,12 +55,10 @@ This document consists of three parts:
   - Integration with A.5.34.7 Dashboard
   - Testing & Validation
 
-
 **Target Audiences:**
 
 - **Part 1:** Assessment users (CISO, DPO, Security Team, Compliance Officers)
 - **Parts 2-3:** Workbook developers (Python/Excel script maintainers)
-
 
 ---
 
@@ -79,7 +77,6 @@ This assessment evaluates **Technical and Organizational Measures (TOMs)** prote
 - **GDPR Article 32** - Security of Processing
 - **Swiss FADP Article 8** - Data Security  
 - **ISO/IEC 27001:2022 Control A.5.34** - Privacy and Protection of PII
-
 
 **The 20 TOM Categories:**
 
@@ -116,7 +113,6 @@ This assessment evaluates **Technical and Organizational Measures (TOMs)** prote
 - Remediation action plans
 - Executive compliance dashboard
 
-
 ## Why This Matters
 
 **ISO 27001:2022 Control A.5.34 Requirement:**
@@ -136,14 +132,12 @@ This assessment evaluates **Technical and Organizational Measures (TOMs)** prote
 - Swiss FADP fines up to CHF 250,000 for inadequate security measures
 - ISO 27001 certification requires demonstrable control implementation
 
-
 **Business Impact:**
 
 - Data breaches cost organizations an average of $4.45M (IBM 2023)
 - 60% of SMBs go out of business within 6 months of a major breach
 - Customer trust and brand reputation are irreplaceable
 - Regulatory investigations are costly and time-consuming
-
 
 ## What You'll Document
 
@@ -186,14 +180,12 @@ Before starting this assessment, gather:
 - PII locations (systems, databases, file shares)
 - Data flow maps
 
-
 ### Security Architecture Documentation
 
 - Network architecture diagrams
 - System architecture diagrams
 - Data flow diagrams
 - Integration maps
-
 
 ### Technical Security Controls Documentation
 
@@ -205,7 +197,6 @@ Before starting this assessment, gather:
 - Endpoint security deployments (EDR, anti-malware)
 - Backup & DR configurations
 - Physical security controls
-
 
 ### Organizational Security Documentation
 
@@ -220,7 +211,6 @@ Before starting this assessment, gather:
 - ROPA (Record of Processing Activities)
 - Business continuity plan
 
-
 ### Evidence & Proof of Implementation
 
 - Configuration screenshots
@@ -231,7 +221,6 @@ Before starting this assessment, gather:
 - Vendor due diligence reports
 - ISO 27001 audit reports
 - Supervisory authority correspondence (if any)
-
 
 ## Access Required
 
@@ -248,7 +237,6 @@ You will need access to:
 - Vulnerability management system
 - Data loss prevention (DLP) console (if deployed)
 
-
 **Administrative Systems:**
 
 - Policy management system / SharePoint
@@ -260,7 +248,6 @@ You will need access to:
 - HR system (for training records)
 - Physical access control system (if applicable)
 
-
 **Documentation Repositories:**
 
 - Security documentation library
@@ -268,7 +255,6 @@ You will need access to:
 - Audit evidence repository
 - Policy repository
 - Procedure repository
-
 
 ## Who Should Complete This Assessment
 
@@ -290,7 +276,6 @@ You will need access to:
 - **Compliance Auditing:** Experience with control testing and evidence evaluation
 - **Documentation Skills:** Ability to write clear, audit-ready documentation
 
-
 ### Time Commitment
 
 - **Initial assessment:** 40-60 hours total across all stakeholders
@@ -302,7 +287,6 @@ You will need access to:
 
 - **Annual updates:** 16-24 hours (review changes, update evidence, remediation progress)
 - **Quarterly reviews:** 4-8 hours (spot checks, dashboard updates, remediation tracking)
-
 
 ## Expected Outputs
 
@@ -334,14 +318,12 @@ Complete the assessment in **4 phases**:
 - Rate effectiveness
 - Link to evidence
 
-
 **PHASE 2: EVIDENCE (Sheet 5)** - Collect proof of implementation
 
 - Gather technical evidence (configs, logs, tests)
 - Gather organizational evidence (policies, training, audits)
 - Document evidence locations
 - Verify evidence adequacy
-
 
 **PHASE 3: ANALYSIS (Sheets 6-7)** - Assess gaps and plan remediation
 
@@ -350,14 +332,12 @@ Complete the assessment in **4 phases**:
 - Prioritize remediation
 - Assign ownership and timelines
 
-
 **PHASE 4: REPORTING (Sheet 8)** - Generate compliance metrics
 
 - Calculate implementation rate
 - Calculate effectiveness rate
 - Calculate GDPR Art. 32 compliance score
 - Prepare executive summary
-
 
 ## Step-by-Step Completion Sequence
 
@@ -367,7 +347,6 @@ Complete the assessment in **4 phases**:
 - Review status definitions
 - Review effectiveness ratings
 - Review risk rating methodology
-
 
 **Step 2: Complete Sheet 2 (TOM Control Inventory)** [8-12 hours]
 
@@ -383,7 +362,6 @@ Complete the assessment in **4 phases**:
   - Note remediation plan
   - Assign remediation owner
   - Set target completion date
-
 
 **Step 3: Complete Sheets 3-4 (Deep-Dive Analysis)** [12-16 hours]
 
@@ -401,7 +379,6 @@ Complete the assessment in **4 phases**:
   - Explain monitoring methods
   - Describe improvement processes
 
-
 **Step 4: Complete Sheet 5 (Evidence Repository)** [8-12 hours]
 
 - For EACH TOM, document evidence:
@@ -413,7 +390,6 @@ Complete the assessment in **4 phases**:
   - Verification status
   - Verifier
   - Notes
-
 
 **Step 5: Complete Sheet 6 (Gap Analysis)** [4-6 hours]
 
@@ -428,7 +404,6 @@ Complete the assessment in **4 phases**:
   - Document residual risk (post-remediation)
   - Justify risk acceptance (if applicable)
 
-
 **Step 6: Complete Sheet 7 (Remediation Action Plan)** [4-6 hours]
 
 - For EACH gap requiring remediation:
@@ -441,7 +416,6 @@ Complete the assessment in **4 phases**:
   - Update % complete
   - Record completion date
 
-
 **Step 7: Review Sheet 8 (Compliance Dashboard)** [1-2 hours]
 
 - Verify auto-calculated metrics
@@ -451,7 +425,6 @@ Complete the assessment in **4 phases**:
 - Review remediation progress
 - Review GDPR Art. 32 compliance score
 - Identify areas for improvement
-
 
 **Step 8: Quality Review** [2-4 hours]
 
@@ -463,7 +436,6 @@ Complete the assessment in **4 phases**:
 - Verify evidence links
 - Test formulas
 
-
 **Step 9: Approval & Sign-Off** [1-2 hours]
 
 - Security review (CISO)
@@ -473,7 +445,6 @@ Complete the assessment in **4 phases**:
 - Document approval in workbook
 - Set next review date
 
-
 ## Phase-by-Phase Dependencies
 
 **PHASE 1 Dependencies:**
@@ -482,13 +453,11 @@ Complete the assessment in **4 phases**:
 - Requires access to all technical systems
 - Requires access to all policy documentation
 
-
 **PHASE 2 Dependencies:**
 
 - Cannot complete Sheet 5 until TOMs are documented in Sheet 2
 - Evidence collection requires system access
 - Evidence validation requires technical expertise
-
 
 **PHASE 3 Dependencies:**
 
@@ -496,13 +465,11 @@ Complete the assessment in **4 phases**:
 - Risk assessment requires gap identification
 - Remediation planning requires gap risk ratings
 
-
 **PHASE 4 Dependencies:**
 
 - Dashboard requires all sheets completed
 - Compliance score calculation requires evidence verification
 - Executive reporting requires DPO/CISO review
-
 
 ---
 
@@ -546,7 +513,6 @@ Complete the assessment in **4 phases**:
 - **Rows 12-21:** O1-O10 (Organizational Measures) - pre-filled in Columns A-B
 - **Columns A-B:** TOM ID and TOM Category (locked - do not edit)
 
-
 **For EACH TOM (Rows 2-21), Complete Columns C-N:**
 
 ### Column C - TOM Type
@@ -561,7 +527,6 @@ Complete the assessment in **4 phases**:
 - **Partially Implemented (⚠️):** 50-89% coverage, functional but with gaps
 - **Planned (📄):** <50% coverage, approved project in flight
 - **Not Implemented (❌):** <50% coverage, no approved plan
-
 
 **Example Decision Tree (T1 - Encryption):**
 ```
@@ -598,7 +563,6 @@ Rationale:
 - Email encryption (TLS opportunistic) for external email (90%)
 - VPN encryption (AES-256) for remote access (100%)
 
-
 ⚠️ ENCRYPTION AT REST (70% coverage):
 
 - Database TDE enabled on 14/20 production databases (70%)
@@ -609,7 +573,6 @@ Rationale:
 - Cloud storage encrypted (S3 default encryption, Azure Storage SSE)
 - Backup encryption via Veeam (100%)
 - File share encryption: Only confidential/restricted shares encrypted (50%)
-
 
 OVERALL COVERAGE: (95% + 70%) / 2 = 82.5% → Partially Implemented ⚠️
 
@@ -633,7 +596,6 @@ Rationale:
 - Quiz requirement: 80% passing score, unlimited retakes allowed
 - Certificate issued upon completion
 
-
 ✅ ROLE-SPECIFIC TRAINING (100% of PII handlers):
 
 - Deep-dive training: 90 minutes, mandatory for PII handlers (350 employees)
@@ -641,19 +603,16 @@ Rationale:
 - 2025 completion rate: 100% (350/350)
 - Includes practical exercises (mock DSR requests)
 
-
 ✅ PHISHING AWARENESS (quarterly):
 
 - Simulated phishing campaigns: Quarterly via KnowBe4
 - Q1 2025: 12% click rate → Q4 2025: 3% click rate (75% improvement)
 - Clickers receive immediate micro-training (5 minutes)
 
-
 ✅ DPO CERTIFICATION:
 
 - DPO certified: CIPP/E (Certified Information Privacy Professional/Europe)
 - Recertification: Annual CPE requirements met
-
 
 COVERAGE: 100% of staff trained, 98.4% completion rate → Implemented ✅
 ```
@@ -670,7 +629,6 @@ Rationale:
 - No vendor onboarding checklist
 - Procurement lacks privacy review step
 
-
 ⚠️ AD-HOC DPA COLLECTION (30% coverage):
 
 - DPAs executed with 6/20 processors (30%)
@@ -680,20 +638,17 @@ Rationale:
 - 14 processors lack DPAs (email marketing tools, analytics providers, payment processors)
 - DPAs not centrally tracked or monitored
 
-
 ❌ NO VENDOR AUDIT RIGHTS EXERCISED:
 
 - No vendor audits conducted (internal or external)
 - No SOC 2 reports requested or reviewed
 - No vendor security assessments
 
-
 ❌ NO PROCESSOR INVENTORY:
 
 - No comprehensive list of processors
 - Marketing and IT maintain separate (incomplete) vendor lists
 - No classification of processors vs. controllers vs. sub-processors
-
 
 COVERAGE: 30% DPA coverage, 0% formal risk assessment → Not Implemented ❌
 
@@ -709,13 +664,11 @@ Risk: HIGH - Material GDPR non-compliance (Art. 28), regulatory risk, vendor bre
 - If enhanced over time, use original deployment date
 - If not yet implemented, leave blank
 
-
 **Examples:**
 
 - T1 Encryption: 2020-03-15 (when first TLS deployment completed)
 - O2 Training: 2021-06-01 (when first annual training launched)
 - O4 Vendor Mgmt: [blank] (not implemented)
-
 
 ### Column F - Description of Implementation
 **Length:** 3-5 paragraphs (400-800 words)
@@ -730,7 +683,6 @@ Risk: HIGH - Material GDPR non-compliance (Art. 28), regulatory risk, vendor bre
 
 - ✅ **GOOD:** Specific, measurable, verifiable (e.g., "TLS 1.3 on 95/100 web services")
 - ❌ **BAD:** Vague, generic, unverifiable (e.g., "We use encryption")
-
 
 **Example (T2 - Access Control):**
 ```
@@ -766,7 +718,6 @@ COVERAGE: Incident response process operational 24/7/365. 12/12 incident respons
 - T1 Encryption: EV-T1-001, EV-T1-002, EV-T1-003 (TLS configs, TDE configs, FDE reports)
 - O2 Training: EV-O2-001, EV-O2-002 (training completion report, quiz results)
 
-
 ### Column H - Effectiveness Rating
 **Dropdown Options:** Effective, Partially Effective, Ineffective, Not Tested
 
@@ -776,7 +727,6 @@ COVERAGE: Incident response process operational 24/7/365. 12/12 incident respons
 - **Partially Effective (⚠️):** Control operating but with limitations, some failures identified
 - **Ineffective (❌):** Control failing to meet objectives, significant failures, needs replacement
 - **Not Tested (🔍):** Control existence not verified through testing (testing required)
-
 
 **Testing Methods by TOM:**
 
@@ -801,7 +751,6 @@ COVERAGE: Incident response process operational 24/7/365. 12/12 incident respons
 - **O9 Documentation:** ROPA completeness check, consent log audit, DSR log review
 - **O10 Business Continuity:** BC/DR test (annual), RTO/RPO validation
 
-
 **Examples:**
 ```
 T5 - Security Monitoring: EFFECTIVE ✅
@@ -822,12 +771,10 @@ Test Results: Incident response team activated within 30 minutes (✅). Communic
 - **Organizational controls (O1-O10):** Annually or after major changes
 - **Critical controls (T1, T2, T5, O3):** Quarterly minimum
 
-
 **Examples:**
 
 - T1 Encryption: 2025-12-15 (TLS test via SSL Labs)
 - O2 Training: 2025-11-01 (training completion report generated)
-
 
 ### Column J - Gaps Identified
 **Format:** Narrative description (2-5 paragraphs)
@@ -875,14 +822,12 @@ Low         Low     Low     Medium   High
 - **Medium:** Gap may be exploited or control failure possible within 12-24 months  
 - **Low:** Gap unlikely to be exploited or control failure unlikely within 24+ months
 
-
 **Impact Assessment:**
 
 - **Critical:** Massive PII breach (>100,000 records), material regulatory enforcement, business-ending event
 - **High:** Large PII breach (10,000-100,000 records), regulatory investigation, significant financial/reputational harm
 - **Medium:** Moderate PII breach (1,000-10,000 records), supervisory authority inquiry, manageable financial/reputational harm
 - **Low:** Small PII breach (<1,000 records), minor supervisory authority concern, minimal financial/reputational harm
-
 
 **Examples:**
 ```
@@ -918,7 +863,6 @@ Phase 1 (Q1 2026): Implement vendor privacy risk assessment process. Tasks: (1) 
 - "John Doe, Data Protection Officer"  
 - "Alice Johnson, CISO"
 
-
 ### Column N - Target Completion Date
 **Format:** YYYY-MM-DD
 **Guidance:** When should gap be closed?
@@ -928,7 +872,6 @@ Phase 1 (Q1 2026): Implement vendor privacy risk assessment process. Tasks: (1) 
 - **High risk gaps:** 90-180 days
 - **Medium risk gaps:** 6-12 months
 - **Low risk gaps:** 12-24 months
-
 
 ---
 
@@ -955,7 +898,6 @@ ENCRYPTION IN TRANSIT:
 - File transfer: SFTP (OpenSSH 8.9p1), AWS S3 Transfer Acceleration (TLS 1.2), Azure Files (SMB 3.1.1 with AES-256-GCM encryption)
 - VPN: Cisco AnyConnect with IKEv2, AES-256-GCM, SHA-384 HMAC, DH Group 20 (ECDH 384-bit)
 - Database connections: TLS 1.2 enforced for all database connections (SQL Server, Oracle, PostgreSQL)
-
 
 ENCRYPTION AT REST:
 
@@ -996,7 +938,6 @@ RBAC CONFIGURATION:
 - Group membership: Managed via HR system integration (Workday), automatic provisioning/deprovisioning, manual approval for privileged groups (System_Administrator, Database_Admin, Network_Admin)
 - Application permissions: Salesforce (12 permission sets mapped to 6 security groups), AWS (8 IAM roles mapped via SAML federation), Azure (15 Azure RBAC roles via Entra ID groups), SAP (6 SAP roles mapped to 4 security groups)
 
-
 PAM (CyberArk) CONFIGURATION:
 
 - CyberArk version: Privileged Access Security 13.2
@@ -1022,7 +963,6 @@ FIREWALL COVERAGE:
 
 - Firewall vendors: Palo Alto Networks PA-5260 (primary datacenter), Palo Alto Networks PA-3260 (secondary datacenter), Palo Alto Networks PA-440 (branch offices), AWS Network Firewall (cloud VPCs)
 
-
 INTRUSION DETECTION COVERAGE:
 
 - Network IDS: Sensors deployed at 12/15 critical network locations (80%)
@@ -1031,7 +971,6 @@ INTRUSION DETECTION COVERAGE:
   → Not covered: Guest WLAN (low-risk, internet-only), Legacy OT network (air-gapped), Internal LAN inter-VLAN traffic (future deployment)
 
 - IDS vendor: Cisco Secure IDS (formerly Cisco FireSIGHT)
-
 
 NETWORK SEGMENTATION COVERAGE:
 
@@ -1057,13 +996,11 @@ ENDPOINT SECURITY EXCLUSIONS:
    - Justification: Servers scheduled for decommissioning Q2 2026, isolated network VLAN, compensating controls (network IDS, firewall rules, manual patching)
    - Risk: MEDIUM - Servers contain minimal PII, limited internet access, monitored via SIEM
 
-
 2. **Industrial control systems (ICS/SCADA)** - air-gapped OT network (8 systems)
 
    - Systems: Building management system (BMS), HVAC controllers (3), Physical access control system (PACS), Video surveillance system (2), Fire alarm system (1)
    - Justification: OT systems incompatible with EDR agent (vendor certification requirements, real-time performance constraints), air-gapped from corporate network
    - Risk: LOW - No PII on OT systems, physical access required for exploitation, monitored via ICS-specific monitoring (Nozomi Networks)
-
 
 3. **50 contractor laptops** (managed by contractor employer, not by [Organization])
 
@@ -1071,13 +1008,11 @@ ENDPOINT SECURITY EXCLUSIONS:
    - Justification: Contractors prohibited from installing company software on personal devices per contractor agreement
    - Risk: LOW - Contractors access only cloud apps via VPN (Salesforce, Microsoft 365), no local PII storage, conditional access enforces device compliance checks (managed by contractor employer)
 
-
 4. **15 mobile hotspots** (cellular routers for remote/field workers)
 
    - Systems: Netgear Nighthawk M6 mobile routers, used by field technicians
    - Justification: Routers are IoT devices, no EDR support, provide internet connectivity only
    - Risk: LOW - Routers provide internet only, no PII storage, VPN required for corporate access, firewall enforced
-
 
 Total Exceptions: 78 devices excluded from EDR coverage (78/1,400 endpoints = 5.6% exception rate)
 ```
@@ -1098,7 +1033,6 @@ SIEM DATA SOURCES (42 log sources integrated with Splunk Enterprise Security):
 - Applications: Salesforce Event Monitoring (user login, data export, API calls), SAP Security Audit Log (transaction logs, authorization changes), GitHub Audit Log (code commits, access changes)
 - Security tools: CrowdStrike Falcon EDR (endpoint detections, process execution, file modifications), CyberArk (privileged session logs, password retrieval), Okta (authentication events via SIEM integration)
 
-
 ALERT WORKFLOWS:
 
 - Splunk ES generates 150-200 notable events per day (automated enrichment via Splunk SOAR)
@@ -1106,7 +1040,6 @@ ALERT WORKFLOWS:
 - P1/P2 incidents escalated via PagerDuty (on-call rotation: SOC Manager → Security Architect → CISO)
 - Incident cases created in ServiceNow SIRT module (bidirectional sync with Splunk ES)
 - Threat intelligence enrichment via MISP (Malware Information Sharing Platform), integration with Splunk Threat Intelligence Management
-
 
 RETENTION & COMPLIANCE:
 
@@ -1165,7 +1098,6 @@ PROCEDURES (25 procedures):
 
 - Data classification procedure, Data subject rights request procedure, Consent collection procedure, Cookie management procedure, Data deletion procedure, Data breach notification procedure, DPIA procedure, Privacy impact assessment procedure, Vendor onboarding procedure, Vulnerability scanning procedure, Patch management procedure, Incident response procedure, Access request procedure, Password reset procedure, Account provisioning/deprovisioning procedure, Log review procedure, Security monitoring procedure, Firewall change procedure, Network access procedure, Application deployment procedure, Code review procedure, Penetration testing procedure, Backup restoration procedure, Disaster recovery procedure, Physical access procedure
 
-
 All policies reviewed annually, approved by CISO/DPO, published on company intranet, version-controlled in SharePoint.
 ```
 
@@ -1191,7 +1123,6 @@ ANNUAL MANDATORY PRIVACY TRAINING:
 - Training deadline: January 31 annually (Q4 prior year for new hires)
 - Recordkeeping: Completion tracked in KnowBe4, certificate stored in employee record (HR system), audit report generated quarterly
 
-
 ROLE-SPECIFIC DEEP-DIVE TRAINING:
 
 - Target audience: PII handlers (350 employees: Customer Service, Marketing, HR, Finance, Legal, IT)
@@ -1201,7 +1132,6 @@ ROLE-SPECIFIC DEEP-DIVE TRAINING:
 - Practical exercises: Mock DSR requests (access request, erasure request, portability request), mock breach assessment, mock DPIA scoping
 - 2025 Completion: 350/350 (100%)
 - Delivery: Q2 annually (April-June), mandatory for new PII handlers within 60 days of role assignment
-
 
 PHISHING AWARENESS PROGRAM:
 
@@ -1219,7 +1149,6 @@ PHISHING AWARENESS PROGRAM:
 
 - Leaderboard: Monthly leaderboard published (department-level, no individual shaming), recognition for top-performing departments
 
-
 DPO CERTIFICATION & CONTINUING EDUCATION:
 
 - DPO: Jane Doe (Data Protection Officer)
@@ -1229,7 +1158,6 @@ DPO CERTIFICATION & CONTINUING EDUCATION:
   → 2025 CPE: 22 credits (IAPP Europe Data Protection Congress 10 credits, IAPP webinars 6 credits, self-study 6 credits)
 
 - Professional membership: IAPP (International Association of Privacy Professionals), Swiss Privacy Officers Association
-
 
 COMMUNICATION CHANNELS:
 
@@ -1257,7 +1185,6 @@ PRIVACY GOVERNANCE ROLES:
 - **Chief Information Officer (CIO):** Owns IT systems and data infrastructure, implements DPO's technical requirements, allocates resources for privacy projects
 - **Chief Human Resources Officer (CHRO):** Owns employee data processing, implements HR-specific privacy controls, manages employee consent, handles employee DSRs
 
-
 PRIVACY COMMITTEE (cross-functional governance):
 
 - **Members (10):** DPO (Chair), CISO, General Counsel, CIO, CHRO, CFO, Chief Marketing Officer (CMO), Chief Product Officer (CPO), Head of Internal Audit, Chief Risk Officer (CRO)
@@ -1267,13 +1194,11 @@ PRIVACY COMMITTEE (cross-functional governance):
 - **Minutes:** Recorded by DPO's office, stored in SharePoint (retained 7 years), reviewed/approved at next meeting
 - **Escalation:** Critical issues escalated to Board of Directors within 48 hours (data breaches, supervisory authority inquiries, high-risk processing without mitigations)
 
-
 BOARD OF DIRECTORS OVERSIGHT:
 
 - **Audit Committee:** Receives annual privacy report (presented by DPO), reviews privacy risks in enterprise risk register, approves privacy budget
 - **Privacy report content:** Compliance status (GDPR, FADP, ISO 27001), DSR metrics, breach incidents, supervisory authority interactions, privacy risk landscape, remediation status, budget requests
 - **Meeting frequency:** Quarterly Audit Committee meetings include privacy update (15-minute DPO presentation), annual deep-dive (60-minute session)
-
 
 DATA OWNERSHIP FRAMEWORK:
 
@@ -1294,7 +1219,6 @@ DATA OWNERSHIP FRAMEWORK:
 
 - **Accountability:** Data Owners accountable for: Lawfulness of processing, Data quality, Data minimization, Retention compliance, Vendor management (processors), DPIA approval, DSR handling, Breach reporting
 - **RACI Matrix:** Documented in ISMS-IMP-A.5.34.1 (PII Identification Assessment), updated quarterly, reviewed by Privacy Committee
-
 
 INTERNAL AUDIT FUNCTION:
 
@@ -1318,7 +1242,6 @@ INTERNAL PRIVACY AUDITS:
 - **2025 Audit results:** 95% compliance score, 12 findings (2 High, 6 Medium, 4 Low), all findings remediated within SLA (High: 60 days, Medium: 90 days, Low: 180 days)
 - **Audit methodology:** ISO 27001 audit approach, evidence-based testing, sample-based for large populations (e.g., 30 DSR requests tested from 250 total), 100% testing for critical controls (e.g., all DPAs reviewed)
 - **Audit report:** Shared with DPO, CISO, General Counsel, Privacy Committee, Audit Committee (Board of Directors), documented recommendations and management responses
-
 
 QUARTERLY COMPLIANCE MONITORING:
 
@@ -1353,7 +1276,6 @@ COMPLIANCE DASHBOARD (ISMS-IMP-A.5.34.7):
 
 - **Dashboard frequency:** Updated monthly, reviewed by Privacy Committee, quarterly Board reporting
 - **Trend analysis:** YoY comparison, quarterly trend charts, red/yellow/green status indicators
-
 
 EXTERNAL AUDITS & CERTIFICATIONS:
 
@@ -1486,7 +1408,6 @@ DPO CONTINUING EDUCATION:
 - EV-T1-002 (second evidence item for T1 Encryption)
 - EV-O2-001 (first evidence item for O2 Training)
 
-
 ### Column B - TOM ID
 **Format:** T1, T2, ..., T10, O1, O2, ..., O10
 **Purpose:** Links evidence to specific TOM in Sheet 2
@@ -1512,12 +1433,10 @@ DPO CONTINUING EDUCATION:
 - Disaster Recovery Test
 - Other
 
-
 **Examples:**
 
 - T1 Encryption → Evidence Type: Configuration Screenshot (TLS settings)
 - O2 Training → Evidence Type: Training Report (completion statistics)
-
 
 ### Column D - Description
 **Length:** 1-3 sentences
@@ -1568,7 +1487,6 @@ Deloitte: SOC 2 Type II Report October 2024 - September 2025 (PDF, stored ShareP
 - Training report: Date report was generated
 - Test results: Date test was conducted
 
-
 ### Column G - Verification Status
 **Dropdown Options:** Verified, Pending Verification, Invalid, Expired
 
@@ -1578,7 +1496,6 @@ Deloitte: SOC 2 Type II Report October 2024 - September 2025 (PDF, stored ShareP
 - **Pending Verification (⏳):** Evidence collected but not yet reviewed for adequacy
 - **Invalid (❌):** Evidence inadequate (poor quality screenshot, incomplete report, outdated information)
 - **Expired (⏳):** Evidence no longer current (stale screenshot, expired certificate, outdated audit report)
-
 
 **Examples:**
 ```
@@ -1602,7 +1519,6 @@ EV-T7-003 (Application penetration test report from external consultant): INVALI
 - "Alice Johnson, Security Architect"
 - "Bob Williams, Internal Audit Manager"
 
-
 ### Column I - Notes
 **Format:** Additional context, caveats, follow-up actions
 **Examples:**
@@ -1623,7 +1539,6 @@ Evidence EV-O3-001 (Incident response tabletop exercise): Exercise identified 2 
 - **Currency:** Update evidence regularly (technical configs quarterly, audit reports annually)
 - **Accessibility:** Store evidence in centralized, access-controlled repository (SharePoint recommended)
 - **Auditability:** Ensure evidence can be easily retrieved for audits (clear file naming, logical folder structure)
-
 
 ---
 
@@ -1651,14 +1566,12 @@ GAP-T1-001: Unencrypted Databases (6/20 production databases lack TDE)
 - 1 database: Employee records (name, SSN, salary, performance reviews) for 1,200 employees
 - 2 databases: Financial transaction history (credit card tokens, transaction amounts, merchant names) for 100,000 transactions
 
-
 Current compensating controls:
 
 - Network segmentation (databases in isolated VLAN, firewall rules restrict access)
 - Access control (database access via AD groups, least privilege, privileged accounts in CyberArk)
 - Encryption in transit (TLS 1.2 for all database connections)
 - Security monitoring (database audit logs forwarded to Splunk SIEM)
-
 
 Gap impact: If database server is compromised (OS-level access gained), attacker could read database files directly (bypassing database access controls), exposing PII in cleartext. This violates GDPR Article 32 requirement for encryption of personal data.
 ```
@@ -1671,7 +1584,6 @@ Gap impact: If database server is compromised (OS-level access gained), attacker
 - **High:** Vulnerability actively exploited, significant attack surface, known threat actor interest, weak compensating controls
 - **Medium:** Vulnerability known but not actively exploited, moderate attack surface, some compensating controls
 - **Low:** Vulnerability theoretical, small attack surface, strong compensating controls
-
 
 **Example Decision:**
 ```
@@ -1687,7 +1599,6 @@ Rationale:
 - SOC monitoring for unusual database access patterns (SIEM alerts configured)
 - Compensating controls significantly reduce likelihood of successful exploitation
 
-
 Conclusion: While gap exists, likelihood of exploitation is LOW due to defense-in-depth architecture.
 ```
 
@@ -1700,7 +1611,6 @@ Conclusion: While gap exists, likelihood of exploitation is LOW due to defense-i
 - **High:** 10,000-100,000 PII records exposed, significant regulatory investigation, major financial/reputational harm
 - **Medium:** 1,000-10,000 PII records exposed, supervisory authority inquiry, manageable financial/reputational harm
 - **Low:** <1,000 PII records exposed, minor supervisory authority concern, minimal financial/reputational harm
-
 
 **Example Decision:**
 ```
@@ -1715,7 +1625,6 @@ Rationale:
 - Potential Swiss FADP fine: Up to CHF 250,000 per Article 60
 - Reputational harm: Customer trust erosion, media coverage, competitor advantage
 - Financial harm: Breach response costs ($500K-$1M estimated), legal fees, regulatory fines, customer compensation, business interruption
-
 
 Conclusion: Impact is HIGH due to large number of PII records and significant financial/regulatory/reputational consequences.
 ```
@@ -1748,7 +1657,6 @@ GAP-T1-001: Likelihood=LOW, Impact=HIGH → Overall Risk=MEDIUM
 - Medium = 2
 - Low = 1
 
-
 **Purpose:** Enables sorting and prioritization (sort by risk score descending to prioritize remediation)
 
 ### Column H - Remediation Priority
@@ -1760,7 +1668,6 @@ GAP-T1-001: Likelihood=LOW, Impact=HIGH → Overall Risk=MEDIUM
 - High risk → HIGH (90-180 days)
 - Medium risk → MEDIUM (6-12 months)
 - Low risk → LOW (12-24 months)
-
 
 ### Column I - Residual Risk (Post-Remediation)
 **Dropdown Options:** Critical, High, Medium, Low, N/A
@@ -1779,7 +1686,6 @@ After remediation (database upgrade to Oracle 19c + TDE enabled):
 - Even if OS-level access gained, database files unreadable without TDE keys
 - TDE keys protected by database master key (stored in HSM or OS keystore with restrictive permissions)
 - Defense-in-depth: Encryption at rest + network segmentation + access control + monitoring
-
 
 Post-remediation risk: LOW (encryption eliminates primary risk vector)
 ```
@@ -1846,7 +1752,6 @@ PHASE 1 - DATABASE ASSESSMENT (January 2026, 2 weeks):
 - Calculate storage impact (TDE increases database size ~5-10%, ensure sufficient disk space)
 - Prioritize databases by PII sensitivity and business criticality
 
-
 PHASE 2 - PILOT UPGRADE (February 2026, 4 weeks):
 
 - Select 1 low-risk database for pilot (non-production database or lowest-criticality production database)
@@ -1854,7 +1759,6 @@ PHASE 2 - PILOT UPGRADE (February 2026, 4 weeks):
 - Enable TDE on upgraded database
 - Conduct functional testing (application connectivity, query performance, backup/restore)
 - Document lessons learned and refine procedure
-
 
 PHASE 3 - PRODUCTION ROLLOUT (March-August 2026, 24 weeks):
 
@@ -1885,7 +1789,6 @@ PHASE 4 - VALIDATION & DOCUMENTATION (September 2026, 2 weeks):
 - Conduct post-implementation review (lessons learned, process improvements)
 - Close remediation action (mark Status=Complete in Column H)
 
-
 BUDGET:
 
 - Oracle 19c licenses: $90,000 (6 databases × $15,000 license)
@@ -1893,7 +1796,6 @@ BUDGET:
 - Disk storage expansion: $10,000 (TDE overhead ~10% × 2TB total data)
 - Testing environment: $5,000 (temporary cloud infrastructure for pilot testing)
 - Total: $130,000
-
 
 RISKS & MITIGATION:
 
@@ -1929,7 +1831,6 @@ ALTERNATIVE CONSIDERED:
 - **Organizational measures (O1-O10):** Compliance/Legal teams (DPO, Compliance Officer, Legal Counsel)
 - **Cross-functional measures:** Collaboration required (e.g., O4 Vendor Management requires Legal + Procurement + DPO)
 
-
 ### Column F - Start Date
 **Format:** YYYY-MM-DD
 **Guidance:** When will remediation begin?
@@ -1938,7 +1839,6 @@ ALTERNATIVE CONSIDERED:
 
 - ACT-T1-001 (Database upgrade): 2026-01-15 (Phase 1 assessment starts)
 - ACT-O4-001 (Vendor risk assessment process): 2026-02-01 (Project kickoff)
-
 
 ### Column G - Target Date
 **Format:** YYYY-MM-DD
@@ -1951,12 +1851,10 @@ ALTERNATIVE CONSIDERED:
 - **Medium risk gaps:** 6-12 months from start
 - **Low risk gaps:** 12-24 months from start
 
-
 **Examples:**
 
 - ACT-T1-001 (MEDIUM risk): Start 2026-01-15 → Target 2026-09-01 (8 months)
 - ACT-O4-001 (HIGH risk): Start 2026-02-01 → Target 2026-08-01 (6 months)
-
 
 ### Column H - Status
 **Dropdown Options:** Not Started, In Progress, Blocked, Complete, Cancelled
@@ -1968,7 +1866,6 @@ ALTERNATIVE CONSIDERED:
 - **Blocked:** Impediment preventing progress (e.g., budget approval pending, vendor unresponsive, technical blocker)
 - **Complete:** Remediation finished and validated (evidence in Sheet 5, status updated in Sheet 2)
 - **Cancelled:** Action cancelled (e.g., risk accepted, alternative solution implemented, requirements changed)
-
 
 ### Column I - % Complete
 **Format:** 0-100%
@@ -1982,7 +1879,6 @@ ALTERNATIVE CONSIDERED:
 - 75%: Phase 3 in progress (2/3 batches complete)
 - 100%: Complete (all phases finished, validated)
 
-
 **Update Frequency:** Monthly (or more frequently for urgent/high-priority actions)
 
 ### Column J - Completion Date
@@ -1994,7 +1890,6 @@ ALTERNATIVE CONSIDERED:
 **Example:**
 
 - ACT-T1-001: Start 2026-01-15, Target 2026-09-01, Completion 2026-08-20 (11 days early)
-
 
 ---
 
@@ -2018,7 +1913,6 @@ ALTERNATIVE CONSIDERED:
   - **Target:** ≥90%
   - **Conditional formatting:** Green if ≥90%, Yellow if 80-89%, Red if <80%
 
-
 ### Section 2: Technical vs. Organizational (Rows 14-21)
 
 - **Technical Measures Implemented:** `=COUNTIFS('2. TOM Control Inventory'!C2:C21,"Technical",'2. TOM Control Inventory'!D2:D21,"Implemented")`
@@ -2028,7 +1922,6 @@ ALTERNATIVE CONSIDERED:
 - **Organizational Measures Total:** 10
 - **Organizational Implementation Rate:** `=Organizational Implemented / 10`
 - **Analysis:** Technical measures typically easier to implement (buy tools/deploy technology), organizational measures require culture change and sustained effort
-
 
 ### Section 3: Control Effectiveness (Rows 23-30)
 
@@ -2043,7 +1936,6 @@ ALTERNATIVE CONSIDERED:
 - **Testing Coverage:** `=(Effective + Partially Effective + Ineffective) / Total Implemented`
   - Formula explanation: Percentage of implemented controls that have been tested
   - **Target:** 100% (all implemented controls should be tested)
-
 
 ### Section 4: Gap Analysis (Rows 32-40)
 
@@ -2060,7 +1952,6 @@ ALTERNATIVE CONSIDERED:
   - High Gaps: Orange background
   - Medium/Low Gaps: No special formatting
 
-
 ### Section 5: Remediation Progress (Rows 42-50)
 
 - **Total Actions:** `=COUNTA('7. Remediation Action Plan'!A2:A100)-1`
@@ -2075,7 +1966,6 @@ ALTERNATIVE CONSIDERED:
   - **Target:** ≥80% (most actions should be complete)
   - **Conditional formatting:** Green if ≥80%, Yellow if 60-79%, Red if <60%
 - **Average % Complete:** `=AVERAGE('7. Remediation Action Plan'!I2:I100)` (for In Progress actions only)
-
 
 ### Section 6: GDPR Art. 32 Compliance Score (Rows 52-60)
 
@@ -2111,7 +2001,6 @@ GDPR Art. 32 Compliance Score:
 - **60-69%:** Poor compliance (major gaps, urgent action required)
 - **<60%:** Critical non-compliance (material GDPR violation risk)
 
-
 **Conditional Formatting:**
 
 - ≥90%: Dark green background (#006400), white bold text
@@ -2119,7 +2008,6 @@ GDPR Art. 32 Compliance Score:
 - 70-79%: Yellow background (#FFEB9C)
 - 60-69%: Orange background (#FFA500)
 - <60%: Red background (#C00000), white bold text
-
 
 ### Section 7: Evidence Summary (Rows 62-68)
 
@@ -2130,7 +2018,6 @@ GDPR Art. 32 Compliance Score:
 - **Expired Evidence:** `=COUNTIF('5. Evidence Repository'!G2:G1000,"Expired")`
 - **Evidence Verification Rate:** `=Verified / Total Evidence Items`
   - **Target:** ≥95%
-
 
 **Dashboard Charts (inserted manually after workbook generation):**
 1. **TOM Implementation Status** (Pie Chart):
@@ -2147,7 +2034,6 @@ GDPR Art. 32 Compliance Score:
 
    - Data: Not Started, In Progress, Blocked, Complete, Cancelled
    - Colors: Gray, Blue, Red, Green, Black
-
 
 ---
 
@@ -2167,7 +2053,6 @@ GDPR Art. 32 Compliance Score:
 - ✅ Cloud storage encryption configuration (AWS S3 default encryption, Azure SSE)
 - ✅ SSL Labs test results (A+ rating for public-facing web services)
 
-
 **T2 - Access Control:**
 
 - ✅ Entra ID user/group report (user list, group memberships, role assignments)
@@ -2178,7 +2063,6 @@ GDPR Art. 32 Compliance Score:
 - ✅ Access review results (quarterly access review reports)
 - ✅ Least privilege validation (sample privilege escalation tests)
 
-
 **T3 - Pseudonymization/Anonymization:**
 
 - ✅ Data masking configuration (database masking rules, application-level masking)
@@ -2186,14 +2070,12 @@ GDPR Art. 32 Compliance Score:
 - ✅ Test results (query results showing PII properly masked)
 - ✅ Code review (application code implementing masking)
 
-
 **T4 - Data Minimization:**
 
 - ✅ Privacy audit report (data collection vs. required fields analysis)
 - ✅ Data retention policy (approved policy document)
 - ✅ Automated deletion logs (scheduled deletion jobs, records deleted)
 - ✅ Form/application review (web forms, mobile apps - data collection limited to necessary fields)
-
 
 **T5 - Security Monitoring & Logging:**
 
@@ -2204,7 +2086,6 @@ GDPR Art. 32 Compliance Score:
 - ✅ Log retention configuration (Splunk retention policies)
 - ✅ SIEM data source inventory (list of 42 log sources)
 
-
 **T6 - Network Security:**
 
 - ✅ Firewall rule exports (Palo Alto firewall rule base)
@@ -2212,7 +2093,6 @@ GDPR Art. 32 Compliance Score:
 - ✅ IDS alert log samples (Cisco Secure IDS detections)
 - ✅ Network scan results (Nmap scan, vulnerability scan)
 - ✅ Penetration test report (external pen test results)
-
 
 **T7 - Application Security:**
 
@@ -2222,14 +2102,12 @@ GDPR Art. 32 Compliance Score:
 - ✅ WAF configuration (web application firewall rules)
 - ✅ Bug bounty findings (if applicable)
 
-
 **T8 - Endpoint Security:**
 
 - ✅ EDR deployment report (CrowdStrike agent deployment status)
 - ✅ Anti-malware scan logs (detection logs, quarantine logs)
 - ✅ Endpoint compliance report (device compliance status)
 - ✅ Mobile device management report (Intune/JAMF device inventory)
-
 
 **T9 - Backup & Recovery:**
 
@@ -2238,14 +2116,12 @@ GDPR Art. 32 Compliance Score:
 - ✅ RTO/RPO documentation (documented recovery objectives)
 - ✅ Disaster recovery plan (approved BC/DR plan)
 
-
 **T10 - Physical Security:**
 
 - ✅ Datacenter access logs (physical access control system logs)
 - ✅ Video surveillance documentation (camera locations, retention periods)
 - ✅ Equipment disposal certificates (certificate of destruction for decommissioned hardware)
 - ✅ Physical security policy (approved policy document)
-
 
 **For Organizational Measures (O1-O10), Gather:**
 
@@ -2257,7 +2133,6 @@ GDPR Art. 32 Compliance Score:
 - ✅ Policy review logs (annual review documentation)
 - ✅ Policy version history (document control)
 
-
 **O2 - Training:**
 
 - ✅ Training completion reports (KnowBe4 completion statistics)
@@ -2267,7 +2142,6 @@ GDPR Art. 32 Compliance Score:
 - ✅ DPO certification (CIPP/E certificate, CPE records)
 - ✅ Training records (employee training history)
 
-
 **O3 - Incident Response:**
 
 - ✅ Incident response plan (approved IRP document)
@@ -2275,7 +2149,6 @@ GDPR Art. 32 Compliance Score:
 - ✅ Breach register (log of all security incidents)
 - ✅ 72-hour notification templates (GDPR Art. 33/34 templates)
 - ✅ Incident response team roster (contact list, roles)
-
 
 **O4 - Vendor Management:**
 
@@ -2285,14 +2158,12 @@ GDPR Art. 32 Compliance Score:
 - ✅ Processor inventory (list of all processors, sub-processors)
 - ✅ Vendor due diligence documentation
 
-
 **O5 - Privacy by Design:**
 
 - ✅ DPIA documentation (completed DPIAs for high-risk processing)
 - ✅ Privacy requirements in project documentation (requirements docs, design docs)
 - ✅ Privacy architecture review checklists
 - ✅ Privacy by default configuration proof (system settings)
-
 
 **O6 - Accountability:**
 
@@ -2301,14 +2172,12 @@ GDPR Art. 32 Compliance Score:
 - ✅ Privacy Committee meeting minutes (monthly meeting records)
 - ✅ Board reporting materials (annual privacy report to Board)
 
-
 **O7 - Risk Management:**
 
 - ✅ Privacy risk assessment reports (risk registers)
 - ✅ DPIA documentation (high-risk processing assessments)
 - ✅ Privacy risk register (centralized risk tracking)
 - ✅ Risk acceptance sign-offs (risk acceptance documentation)
-
 
 **O8 - Compliance Monitoring:**
 
@@ -2318,7 +2187,6 @@ GDPR Art. 32 Compliance Score:
 - ✅ ISO 27001 certificate (current certification, audit reports)
 - ✅ SOC 2 report (SOC 2 Type II report)
 
-
 **O9 - Documentation:**
 
 - ✅ ROPA (Record of Processing Activities from A.5.34.1)
@@ -2326,14 +2194,12 @@ GDPR Art. 32 Compliance Score:
 - ✅ DSR logs (data subject request logs from A.5.34.3)
 - ✅ Consent logs (consent management records)
 
-
 **O10 - Business Continuity:**
 
 - ✅ Business continuity plan (approved BC plan)
 - ✅ Disaster recovery plan (approved DR plan)
 - ✅ BC/DR test reports (annual test documentation)
 - ✅ RTO/RPO documentation (recovery objectives)
-
 
 ## Where to Find Evidence
 
@@ -2348,7 +2214,6 @@ GDPR Art. 32 Compliance Score:
 - **AWS:** CloudTrail > Event history, S3 > Bucket properties
 - **Azure:** Activity Log, Storage > Encryption settings
 
-
 **Administrative Systems:**
 
 - **SharePoint:** Policy library, Evidence repository, Audit reports folder
@@ -2356,14 +2221,12 @@ GDPR Art. 32 Compliance Score:
 - **ServiceNow:** Incident Management > SIRT module
 - **HR System:** Employee training records
 
-
 **Physical Documents:**
 
 - **Policies:** Intranet/SharePoint policy library
 - **Contracts/DPAs:** Legal SharePoint library /Legal/Contracts/
 - **Audit Reports:** Compliance SharePoint library /Compliance/Audits/
 - **Certificates:** Compliance SharePoint library /Compliance/Certifications/
-
 
 ## How to Document Evidence
 
@@ -2387,7 +2250,6 @@ GDPR Art. 32 Compliance Score:
   - Document in Sheet 5 (Evidence Repository)
   - Include: Description, date, source system, file path, verification status
 
-
 ---
 
 # Common Pitfalls
@@ -2400,7 +2262,6 @@ GDPR Art. 32 Compliance Score:
 - **Implemented:** Control is deployed (e.g., EDR agent installed on all laptops)
 - **Effective:** Control is working as intended (e.g., EDR agent detecting and blocking malware)
 
-
 **Gap:** Many organizations deploy controls but never test them. Result: False sense of security.
 
 **Remediation:** 
@@ -2409,7 +2270,6 @@ GDPR Art. 32 Compliance Score:
 - Document test results in Sheet 5 (Evidence Repository)
 - Update Column H (Effectiveness Rating) based on test results
 - Example: T8 Endpoint Security → Implemented (EDR deployed) → Test effectiveness (inject malware sample, verify detection/blocking) → Update rating (Effective if 100% detection, Partially Effective if 80-99%, Ineffective if <80%)
-
 
 ---
 
@@ -2427,7 +2287,6 @@ GDPR Art. 32 Compliance Score:
 - Current evidence (configs from last 3 months, audit reports from last 12 months)
 - Example: T1 Encryption → Evidence should include: (1) TLS config screenshot, (2) Database TDE query, (3) FDE deployment report, (4) SSL Labs test result, (5) Backup encryption config
 
-
 ---
 
 ## Pitfall 3: Overestimating Implementation Coverage
@@ -2443,7 +2302,6 @@ GDPR Art. 32 Compliance Score:
 - Document exceptions/exclusions explicitly (Column F in Sheet 2)
 - If 80% coverage, rate as "Partially Implemented" and document gap in Column J
 - Example: T2 Access Control → 95/100 applications integrated with Entra ID (95%) → "Implemented ✅". If only 85/100 (85%) → "Partially Implemented ⚠️" with gap documentation for 15 non-integrated applications.
-
 
 ---
 
@@ -2462,7 +2320,6 @@ GDPR Art. 32 Compliance Score:
 - Calculate overall risk using matrix
 - Prioritize remediation based on risk score
 - Example: T1 Encryption gap (6 unencrypted databases) → Sheet 6 entry: Likelihood=LOW (strong compensating controls), Impact=HIGH (150K PII records), Overall Risk=MEDIUM, Remediation Priority=6 months
-
 
 ---
 
@@ -2483,7 +2340,6 @@ GDPR Art. 32 Compliance Score:
 - Define success criteria (how will you know when gap is closed?)
 - Example: ACT-T1-001 (Database TDE) → 4 phases, 8-month timeline, $130K budget, owner: Database Admin, success criteria: TDE enabled on all 6 databases + evidence in Sheet 5
 
-
 ---
 
 ## Pitfall 6: Treating All Gaps as Equal Priority
@@ -2500,7 +2356,6 @@ GDPR Art. 32 Compliance Score:
 - Low risk gaps last (12-24 months)
 - Accept low-risk gaps if remediation cost exceeds risk (risk acceptance in Column J)
 - Example: Critical risk gap (public S3 bucket with PII) → Immediate remediation (24-48 hours). Low risk gap (no vendor audits) → Risk accepted with compensating controls (SOC 2 reports)
-
 
 ---
 
@@ -2519,7 +2374,6 @@ GDPR Art. 32 Compliance Score:
 - Reject inadequate evidence (mark "Invalid" in Column G), request replacement evidence
 - Example: EV-T1-001 (TLS config screenshot) → DPO reviews screenshot → Verifies TLS 1.3 enabled, HSTS header present, cipher suite strong → Marks "Verified" → Documents verifier "Jane Doe, DPO"
 
-
 ---
 
 ## Pitfall 8: Confusing Policy Existence with Control Implementation
@@ -2535,7 +2389,6 @@ GDPR Art. 32 Compliance Score:
 - Rate T1-T10, O2-O10 based on actual control implementation (policies FOLLOWED, controls DEPLOYED)
 - Example: ISMS-POL-A.8.24 Cryptography Policy (O1) states "TLS 1.3 shall be used" → Rate O1="Implemented" (policy exists) → T1 Encryption implementation checks if TLS 1.3 actually deployed → If yes, T1="Implemented"; if no, T1="Not Implemented" + gap documented
 
-
 ---
 
 ## Pitfall 9: Ignoring Organizational Measures (O1-O10)
@@ -2550,7 +2403,6 @@ GDPR Art. 32 Compliance Score:
 - Give equal attention to O1-O10
 - Ensure organizational measures support technical measures
 - Example: T2 Access Control requires O2 Training (users must understand least privilege), O6 Accountability (data ownership), O8 Compliance Monitoring (access reviews)
-
 
 ---
 
@@ -2569,7 +2421,6 @@ GDPR Art. 32 Compliance Score:
 - Update after major incidents (data breach, audit finding, regulatory inquiry)
 - Example: New cloud application deployed in Q2 2026 → Update Sheet 2 (assess TOMs for new application), update Sheet 3/4 (describe how TOMs apply to new application), update Sheet 5 (collect evidence), update Sheet 6 (identify new gaps), update Sheet 7 (remediation for new gaps)
 
-
 ---
 
 # Quality Checklist
@@ -2581,7 +2432,6 @@ GDPR Art. 32 Compliance Score:
 - [ ] Implementation status definitions understood (Implemented/Partially/Planned/Not Implemented)
 - [ ] Effectiveness rating definitions understood (Effective/Partially Effective/Ineffective/Not Tested)
 - [ ] Risk rating methodology understood (likelihood × impact matrix)
-
 
 ## Sheet 2: TOM Control Inventory
 
@@ -2600,7 +2450,6 @@ GDPR Art. 32 Compliance Score:
 - [ ] Column M (Remediation Owner) assigned for all gaps requiring remediation
 - [ ] Column N (Target Completion Date) set for all gaps requiring remediation
 
-
 **Quality:**
 
 - [ ] Implementation status decisions justified with coverage percentages
@@ -2614,7 +2463,6 @@ GDPR Art. 32 Compliance Score:
 - [ ] Risk assessments justified (likelihood and impact rationale documented)
 - [ ] Remediation plans actionable (phases, timelines, budgets)
 
-
 ## Sheet 3: Technical Measures Deep-Dive
 
 **Completeness:**
@@ -2626,7 +2474,6 @@ GDPR Art. 32 Compliance Score:
 - [ ] "Exceptions" documented where applicable
 - [ ] "Integration Notes" completed for all T1-T10
 
-
 **Quality:**
 
 - [ ] Technologies: Specific product names, vendors, versions listed
@@ -2634,7 +2481,6 @@ GDPR Art. 32 Compliance Score:
 - [ ] Coverage: Percentages calculated with numerators/denominators
 - [ ] Exceptions: Justified (business reason, compensating controls, remediation plan)
 - [ ] Integration: Dependencies and data flows clearly described
-
 
 ## Sheet 4: Organizational Measures Deep-Dive
 
@@ -2647,7 +2493,6 @@ GDPR Art. 32 Compliance Score:
 - [ ] "Monitoring Method" completed for all O1-O10
 - [ ] "Improvement Process" completed for all O1-O10
 
-
 **Quality:**
 
 - [ ] Policies: Specific policy names, versions, approval dates listed
@@ -2655,7 +2500,6 @@ GDPR Art. 32 Compliance Score:
 - [ ] Governance: Organizational chart, reporting lines, meeting frequency clear
 - [ ] Monitoring: KPIs defined, measurement methods described
 - [ ] Improvement: Continuous improvement process documented
-
 
 ## Sheet 5: Evidence Repository
 
@@ -2672,7 +2516,6 @@ GDPR Art. 32 Compliance Score:
 - [ ] Column H (Verified By) filled for all "Verified" entries
 - [ ] Column I (Notes) completed where additional context needed
 
-
 **Quality:**
 
 - [ ] Evidence variety (mix of configs, policies, audits, tests for each TOM)
@@ -2681,7 +2524,6 @@ GDPR Art. 32 Compliance Score:
 - [ ] Evidence adequacy verified by DPO/CISO/Internal Auditor
 - [ ] Verification rate ≥95% (minimal "Pending Verification" entries)
 - [ ] Expired evidence replaced or refreshed
-
 
 ## Sheet 6: Gap Analysis & Risk Assessment
 
@@ -2699,7 +2541,6 @@ GDPR Art. 32 Compliance Score:
 - [ ] Column I (Residual Risk) documented for remediation-planned gaps
 - [ ] Column J (Acceptance Justification) completed for risk-accepted gaps
 
-
 **Quality:**
 
 - [ ] Gap descriptions detailed (what's missing, impact, affected systems)
@@ -2708,7 +2549,6 @@ GDPR Art. 32 Compliance Score:
 - [ ] Risk calculations verified (formula correct, manual check of 10% sample)
 - [ ] Residual risk realistic (post-remediation risk should be LOW for most gaps)
 - [ ] Risk acceptances properly justified and approved by management
-
 
 ## Sheet 7: Remediation Action Plan
 
@@ -2727,7 +2567,6 @@ GDPR Art. 32 Compliance Score:
 - [ ] Column I (% Complete) estimated for all In Progress actions
 - [ ] Column J (Completion Date) filled for all Complete actions
 
-
 **Quality:**
 
 - [ ] Proposed solutions detailed (phases, steps, deliverables)
@@ -2738,7 +2577,6 @@ GDPR Art. 32 Compliance Score:
 - [ ] Target dates aligned with risk priority (Critical: 30-60 days, High: 90-180 days, Medium: 6-12 months)
 - [ ] Status updates current (monthly updates minimum)
 - [ ] Completion dates validated (evidence updated in Sheet 5)
-
 
 ## Sheet 8: Compliance Dashboard
 
@@ -2754,14 +2592,12 @@ GDPR Art. 32 Compliance Score:
 - [ ] Evidence Verification Rate ≥95% (minimal pending verification)
 - [ ] Dashboard charts inserted (Pie chart: TOM status, Bar charts: Gap risk, Remediation progress)
 
-
 **Conditional Formatting:**
 
 - [ ] Implementation Rate: Green if ≥90%, Yellow if 80-89%, Red if <80%
 - [ ] Effectiveness Rate: Green if ≥95%, Yellow if 85-94%, Red if <85%
 - [ ] GDPR Compliance Score: Green if ≥90%, Light green if 80-89%, Yellow if 70-79%, Orange if 60-69%, Red if <60%
 - [ ] Gap counts: Critical Gaps in red bold, High Gaps in orange
-
 
 ## General Quality Checks
 
@@ -2773,7 +2609,6 @@ GDPR Art. 32 Compliance Score:
 - [ ] Action IDs consistent (Sheet 6 gaps match Sheet 7 actions)
 - [ ] Dates logical (Implementation Date < Last Test Date < Evidence Date < Current Date)
 
-
 **Completeness:**
 
 - [ ] No blank required fields (all mandatory columns completed)
@@ -2781,7 +2616,6 @@ GDPR Art. 32 Compliance Score:
 - [ ] All 20 TOMs documented
 - [ ] All gaps risk-assessed
 - [ ] All Medium/High/Critical gaps remediated or risk-accepted
-
 
 **Evidence:**
 
@@ -2791,7 +2625,6 @@ GDPR Art. 32 Compliance Score:
 - [ ] Evidence current (technical: <3 months, organizational: <12 months)
 - [ ] Evidence verified (≥95% verification rate)
 
-
 **Realism:**
 
 - [ ] Coverage percentages realistic (not inflated)
@@ -2800,7 +2633,6 @@ GDPR Art. 32 Compliance Score:
 - [ ] Budget estimates realistic (not under-estimated)
 - [ ] Ownership assignments appropriate (owners have authority/capacity)
 
-
 **Auditability:**
 
 - [ ] Descriptions specific and verifiable
@@ -2808,7 +2640,6 @@ GDPR Art. 32 Compliance Score:
 - [ ] Justifications clear and documented
 - [ ] Decisions traceable (who, what, when, why)
 - [ ] Document version-controlled and date-stamped
-
 
 ---
 
@@ -2829,7 +2660,6 @@ GDPR Art. 32 Compliance Score:
   - [ ] Dashboard metrics calculated
   - [ ] No obvious errors or omissions
 
-
 **Step 2: Peer Review (Security Team)**
 
 - **Who:** Security Architect, Security Engineer, SOC Manager (peers)
@@ -2840,7 +2670,6 @@ GDPR Art. 32 Compliance Score:
   - Evidence adequacy (screenshots readable, configs current)
   - Gap identification (any missed gaps?)
   - Risk assessments (likelihood and impact reasonable?)
-
 
 **Step 3: DPO Review (Privacy Perspective)**
 
@@ -2854,7 +2683,6 @@ GDPR Art. 32 Compliance Score:
   - Gap prioritization (Critical/High risks addressed?)
   - Regulatory risk (any material non-compliance?)
 
-
 **Step 4: CISO Review (Security Posture)**
 
 - **Who:** Chief Information Security Officer
@@ -2866,7 +2694,6 @@ GDPR Art. 32 Compliance Score:
   - Remediation plans (realistic timelines, budgets?)
   - Resource allocation (owners assigned appropriately?)
   - Executive summary (Dashboard metrics acceptable?)
-
 
 **Step 5: Internal Audit Verification (Independent Check)**
 
@@ -2880,7 +2707,6 @@ GDPR Art. 32 Compliance Score:
   - Formula validation (spot-check calculations)
   - Audit readiness (will external auditors accept this?)
 
-
 ## Approval Workflow
 
 **Approval Level 1: CISO (Security Approval)**
@@ -2893,7 +2719,6 @@ GDPR Art. 32 Compliance Score:
   - [ ] Critical/High risk gaps addressed or remediation in flight
   - [ ] Dashboard metrics acceptable (Implementation Rate ≥80%, Effectiveness Rate ≥85%)
 
-
 **Approval Level 2: DPO (Privacy Approval)**
 
 - **Who:** Data Protection Officer
@@ -2904,7 +2729,6 @@ GDPR Art. 32 Compliance Score:
   - [ ] Privacy risks identified and remediated/accepted
   - [ ] GDPR Art. 32 Compliance Score ≥80%
 
-
 **Approval Level 3: Compliance Officer (Regulatory Approval)**
 
 - **Who:** Compliance Officer (if separate from DPO)
@@ -2914,7 +2738,6 @@ GDPR Art. 32 Compliance Score:
   - [ ] Documentation completeness
   - [ ] Risk acceptance properly documented and justified
 
-
 **Approval Level 4: Executive Management (Budget/Resource Approval)**
 
 - **Who:** CEO or CFO (for remediation budget >$100K)
@@ -2923,7 +2746,6 @@ GDPR Art. 32 Compliance Score:
   - [ ] Resource allocation reasonable (staffing, external consultants)
   - [ ] Timeline achievable
   - [ ] Business impact acceptable (downtime, user impact)
-
 
 **Approval Level 5: Audit Committee / Board (Governance Oversight)**
 
@@ -2935,7 +2757,6 @@ GDPR Art. 32 Compliance Score:
   - [ ] Compliance status acceptable
   - [ ] Budget allocation approved
   - [ ] Regulatory exposure acceptable
-
 
 ## Sign-Off Documentation
 
@@ -2949,13 +2770,11 @@ GDPR Art. 32 Compliance Score:
   - [ ] Budget approved by CFO: [Name, Date, Signature] (if >$100K)
   - [ ] Presented to Audit Committee: [Date, Signature]
 
-
 **Next review scheduled:**
 
 - [ ] Next annual review: [Date] (12 months from completion)
 - [ ] Next quarterly update: [Date] (3 months from completion)
 - [ ] Remediation progress review: [Date] (monthly during active remediation)
-
 
 ---
 
@@ -2979,7 +2798,6 @@ GDPR Art. 32 Compliance Score:
 
 - `ISMS_A_5_34_4_TOMs_Assessment_20260115.xlsx`
 - `ISMS_A_5_34_4_TOMs_Assessment_20260630.xlsx`
-
 
 **Versioning:** Date-based (YYYYMMDD in filename represents assessment date)
 
@@ -3009,13 +2827,11 @@ GDPR Art. 32 Compliance Score:
 - Allow: Format cells, Insert rows, Sort, Filter, AutoFilter
 - Disallow: Delete rows, Modify formulas, Unprotect sheet, Delete columns
 
-
 **Protected Cells within Unprotected Sheets:**
 
 - Column headers (Row 1)
 - Formula cells (auto-calculated fields)
 - Pre-populated data (TOM IDs, TOM Categories in Sheet 2)
-
 
 ---
 
@@ -3047,7 +2863,6 @@ GDPR Art. 32 Compliance Score:
 - Height: 40px
 - Border: Thin black on all sides
 
-
 **Level 2 Headers (Section Titles):**
 
 - Font: Calibri 12pt, Bold, White
@@ -3056,7 +2871,6 @@ GDPR Art. 32 Compliance Score:
 - Height: 30px
 - Border: Thin black on all sides
 
-
 **Column Headers:**
 
 - Font: Calibri 10pt, Bold, Black
@@ -3064,7 +2878,6 @@ GDPR Art. 32 Compliance Score:
 - Alignment: Center, Vertical Center, Wrap Text
 - Border: Thin black on all sides
 - Height: Auto (wrap text determines height)
-
 
 ## Data Cell Styling
 
@@ -3076,7 +2889,6 @@ GDPR Art. 32 Compliance Score:
 - Border: Thin gray on all sides
 - Protection: Unlocked
 
-
 **Formula Cells:**
 
 - Font: Calibri 10pt, Regular, Black
@@ -3085,7 +2897,6 @@ GDPR Art. 32 Compliance Score:
 - Border: Thin gray on all sides
 - Protection: Locked
 
-
 **Protected/Pre-Filled Cells:**
 
 - Font: Calibri 10pt, Regular, Gray (RGB: 128, 128, 128)
@@ -3093,7 +2904,6 @@ GDPR Art. 32 Compliance Score:
 - Alignment: Left
 - Border: Thin black on all sides
 - Protection: Locked
-
 
 ## Status Color Coding
 
@@ -3104,7 +2914,6 @@ GDPR Art. 32 Compliance Score:
 - **Planned (📄):** Font: Black, Fill: #B4C7E7 (Light Blue)
 - **Not Implemented (❌):** Font: Black, Fill: #FFC7CE (Red)
 
-
 **Effectiveness Rating (Sheet 2 Column H):**
 
 - **Effective (✅):** Font: Black, Fill: #C6EFCE (Green)
@@ -3112,14 +2921,12 @@ GDPR Art. 32 Compliance Score:
 - **Ineffective (❌):** Font: Black, Fill: #FFC7CE (Red)
 - **Not Tested (🔍):** Font: Black, Fill: #B4C7E7 (Light Blue)
 
-
 **Risk Level (Sheet 2 Column K, Sheet 6 Column F):**
 
 - **Critical:** Font: #C00000 (Dark Red), Bold, Fill: #FFC7CE (Red)
 - **High:** Font: Black, Fill: #FFA500 (Orange)
 - **Medium:** Font: Black, Fill: #FFEB9C (Yellow)
 - **Low:** Font: Black, Fill: #C6EFCE (Green)
-
 
 ## Dropdown Styling
 
@@ -3131,13 +2938,11 @@ GDPR Art. 32 Compliance Score:
 - Border: Thin gray on all sides
 - Validation: List (dropdown arrow visible)
 
-
 **Dropdown with Emoji:**
 
 - Include emoji in dropdown text (e.g., "✅ Implemented", "⚠️ Partial", "❌ Non-Compliant")
 - Font: Calibri 10pt (emoji renders at system default)
 - Color coding applies to entire cell (background fill)
-
 
 ---
 
@@ -3156,7 +2961,6 @@ Read-only reference guide embedded in workbook. Contains TOM definitions, status
 - Alignment: Center, Vertical Center
 - Height: 40px
 
-
 **Row 2:** "ISO/IEC 27001:2022 - Control A.5.34: Privacy and Protection of PII"
 
 - Merged: A2:G2
@@ -3164,7 +2968,6 @@ Read-only reference guide embedded in workbook. Contains TOM definitions, status
 - Fill: #305496 (Medium Blue)
 - Alignment: Center, Vertical Center
 - Height: 25px
-
 
 **Row 3:** [Blank spacer row, height: 15px]
 
@@ -3177,7 +2980,6 @@ Read-only reference guide embedded in workbook. Contains TOM definitions, status
 - Fill: #D9D9D9 (Light Gray)
 - Alignment: Left, Vertical Center
 - Height: 25px
-
 
 **Rows 5-12:** Two-column layout (Label | Value)
 
@@ -3199,14 +3001,12 @@ Read-only reference guide embedded in workbook. Contains TOM definitions, status
 - Alignment: Left, Vertical Center
 - Width: 20
 
-
 **Column B:G Styling (Merged):**
 
 - Font: Calibri 10pt, Regular, Black
 - Fill: #FFFFFF (White) for pre-filled, #FFFFCC (Yellow) for user input
 - Alignment: Left, Vertical Center
 - Width: B=25, C=25, D=25, E=25, F=25, G=25
-
 
 **Row 13:** [Blank spacer, height: 15px]
 
@@ -3220,7 +3020,6 @@ Read-only reference guide embedded in workbook. Contains TOM definitions, status
 - Alignment: Left, Vertical Center
 - Height: 25px
 
-
 **Row 15:** "Technical Measures (T1-T10)" (subsection header)
 
 - Merged: A15:G15
@@ -3228,7 +3027,6 @@ Read-only reference guide embedded in workbook. Contains TOM definitions, status
 - Fill: #305496 (Medium Blue)
 - Alignment: Left, Vertical Center
 - Height: 20px
-
 
 **Rows 16-25:** T1-T10 list (two-column: TOM ID | Description)
 
@@ -3252,13 +3050,11 @@ Read-only reference guide embedded in workbook. Contains TOM definitions, status
 - Alignment: Center, Vertical Center
 - Width: 8
 
-
 **Column B:G Styling (Merged):**
 
 - Font: Calibri 10pt, Regular, Black
 - Fill: #FFFFFF (White)
 - Alignment: Left, Vertical Center
-
 
 **Row 26:** [Blank spacer, height: 10px]
 
@@ -3269,7 +3065,6 @@ Read-only reference guide embedded in workbook. Contains TOM definitions, status
 - Fill: #305496 (Medium Blue)
 - Alignment: Left, Vertical Center
 - Height: 20px
-
 
 **Rows 28-37:** O1-O10 list
 
@@ -3300,7 +3095,6 @@ Read-only reference guide embedded in workbook. Contains TOM definitions, status
 - Alignment: Left, Vertical Center
 - Height: 25px
 
-
 **Rows 40-47:** Status definitions (three-column: Symbol | Status | Definition)
 
 | Row | Column A (Symbol) | Column B (Status) | Column C:G (Definition - Merged) |
@@ -3322,7 +3116,6 @@ Read-only reference guide embedded in workbook. Contains TOM definitions, status
 - Alignment: Center, Vertical Center
 - Width: 5
 
-
 **Column B Styling (Status):**
 
 - Font: Calibri 10pt, Bold, Black
@@ -3330,13 +3123,11 @@ Read-only reference guide embedded in workbook. Contains TOM definitions, status
 - Alignment: Left, Vertical Center
 - Width: 20
 
-
 **Column C:G Styling (Definition - Merged):**
 
 - Font: Calibri 10pt, Regular, Black
 - Fill: #FFFFFF (White)
 - Alignment: Left, Vertical Center, Wrap Text
-
 
 **Row 49:** [Blank spacer, height: 15px]
 
@@ -3349,7 +3140,6 @@ Read-only reference guide embedded in workbook. Contains TOM definitions, status
 - Fill: #D9D9D9 (Light Gray)
 - Alignment: Left, Vertical Center
 - Height: 25px
-
 
 **Rows 51-56:** Risk matrix table
 
@@ -3367,14 +3157,12 @@ Read-only reference guide embedded in workbook. Contains TOM definitions, status
 - Alignment: Center, Vertical Center
 - Border: Thin black on all sides
 
-
 **Column A (Rows 52-54 - Likelihood labels):**
 
 - Font: Calibri 10pt, Bold, Black
 - Fill: #D9D9D9 (Light Gray)
 - Alignment: Center, Vertical Center
 - Width: 15
-
 
 **Risk Cells (B52:E54):**
 
@@ -3386,7 +3174,6 @@ Read-only reference guide embedded in workbook. Contains TOM definitions, status
   - Low: #C6EFCE (Green)
 - Alignment: Center, Vertical Center
 - Border: Thin black on all sides
-
 
 **Row 56:** [Blank spacer, height: 10px]
 
@@ -3406,13 +3193,11 @@ Read-only reference guide embedded in workbook. Contains TOM definitions, status
 - Alignment: Center, Vertical Center
 - Width: 15
 
-
 **Column B:G Styling:**
 
 - Font: Calibri 10pt, Regular, Black
 - Fill: #FFFFFF (White)
 - Alignment: Left, Vertical Center, Wrap Text
-
 
 **Row 61:** [Blank spacer, height: 15px]
 
@@ -3426,7 +3211,6 @@ Read-only reference guide embedded in workbook. Contains TOM definitions, status
 - Alignment: Left, Vertical Center
 - Height: 25px
 
-
 **Row 63:** "Each TOM must have supporting evidence in Sheet 5 (Evidence Repository). Minimum 5 evidence items per TOM."
 
 - Merged: A63:G63
@@ -3434,7 +3218,6 @@ Read-only reference guide embedded in workbook. Contains TOM definitions, status
 - Fill: #FFEB9C (Yellow)
 - Alignment: Left, Vertical Center, Wrap Text
 - Height: Auto
-
 
 **Row 64:** [Blank spacer, height: 10px]
 
@@ -3466,13 +3249,11 @@ Read-only reference guide embedded in workbook. Contains TOM definitions, status
 - Alignment: Left, Vertical Center
 - Width: A=15, B=15
 
-
 **Column C:G Styling (Examples - Merged):**
 
 - Font: Calibri 10pt, Regular, Black
 - Fill: #FFFFFF (White)
 - Alignment: Left, Vertical Center, Wrap Text
-
 
 **Row 81:** [Blank spacer, height: 15px]
 
@@ -3485,7 +3266,6 @@ Read-only reference guide embedded in workbook. Contains TOM definitions, status
 - Fill: #D9D9D9 (Light Gray)
 - Alignment: Left, Vertical Center
 - Height: 25px
-
 
 **Rows 83-100:** Step-by-step instructions (numbered list)
 
@@ -3517,11 +3297,9 @@ Read-only reference guide embedded in workbook. Contains TOM definitions, status
 - Alignment: Left, Top, Wrap Text
 - Height: Auto (wrap text determines height)
 
-
 **Bold Items (Step numbers, Target Metrics label):**
 
 - Font: Calibri 10pt, Bold, Black
-
 
 ## Sheet Protection
 
@@ -3531,7 +3309,6 @@ Read-only reference guide embedded in workbook. Contains TOM definitions, status
 - All cells locked (read-only)
 - Allow: Select locked cells, Select unlocked cells
 - Disallow: Everything else
-
 
 ## Freeze Panes
 
@@ -3554,7 +3331,6 @@ Main assessment sheet documenting implementation status, effectiveness, gaps, an
 - Alignment: Center, Vertical Center
 - Height: 40px
 
-
 **Row 2:** "Assess implementation status and effectiveness for all 20 TOMs"
 
 - Merged: A2:N2
@@ -3562,7 +3338,6 @@ Main assessment sheet documenting implementation status, effectiveness, gaps, an
 - Fill: #305496 (Medium Blue)
 - Alignment: Center, Vertical Center
 - Height: 25px
-
 
 **Row 3:** [Blank spacer row, height: 15px]
 
@@ -3592,7 +3367,6 @@ Main assessment sheet documenting implementation status, effectiveness, gaps, an
 - Alignment: Center, Vertical Center, Wrap Text
 - Border: Thin black on all sides
 - Height: 60px (allows multi-line headers)
-
 
 ## Data Rows (Rows 5-24)
 
@@ -3635,7 +3409,6 @@ Main assessment sheet documenting implementation status, effectiveness, gaps, an
 - Alignment: Center (Col A), Left (Col B-C), Vertical Center
 - Border: Thin gray on all sides
 - Protection: Locked (cannot be edited)
-
 
 ## Data Validation Rules
 
@@ -3797,13 +3570,11 @@ Description: Highlights overdue remediation targets (target date passed, gap sti
 - Protection: Unlocked
 - Text Wrap: Enabled for multiline fields (F, J, L)
 
-
 **Multiline Text Fields (Columns F, J, L):**
 
 - Minimum Row Height: 60px (allows ~3 lines of text at default font size)
 - Text Wrap: Enabled
 - Vertical Alignment: Top (text starts at top of cell)
-
 
 ## Helper Text / Instructions (Row 25)
 
@@ -3817,7 +3588,6 @@ Description: Highlights overdue remediation targets (target date passed, gap sti
 - Alignment: Left, Vertical Center
 - Height: 25px
 
-
 **Row 27:** Instruction text
 
 - Merged: A27:N27
@@ -3827,7 +3597,6 @@ Description: Highlights overdue remediation targets (target date passed, gap sti
 - Height: Auto
 - Text: "Complete all 20 rows. Columns A-C are pre-filled (do not edit). For detailed guidance, see Sheet 1 (Instructions & Legend) and User Completion Guide (PART 1, Section 4.2). Link evidence to Sheet 5 (Evidence Repository) using format EV-[TOM ID]-###."
 
-
 ## Sheet Protection
 
 **Sheet 2 Protection:** OFF (user data entry sheet)
@@ -3835,14 +3604,12 @@ Description: Highlights overdue remediation targets (target date passed, gap sti
 - Individual cell protection: ON for Columns A-C (pre-filled data locked)
 - Individual cell protection: OFF for Columns D-N (user input unlocked)
 
-
 ## Freeze Panes
 
 **Freeze:** Row 5, Column C
 
 - Rows 1-4 always visible (headers)
 - Columns A-B always visible (TOM ID, TOM Category)
-
 
 ---
 
@@ -3861,7 +3628,6 @@ Detailed technical documentation of T1-T10 implementation with specific technolo
 - Alignment: Center, Vertical Center
 - Height: 40px
 
-
 **Row 2:** "Document detailed technical implementation for each technical measure"
 
 - Merged: A2:F2
@@ -3869,7 +3635,6 @@ Detailed technical documentation of T1-T10 implementation with specific technolo
 - Fill: #305496 (Medium Blue)
 - Alignment: Center, Vertical Center
 - Height: 25px
-
 
 **Row 3:** [Blank spacer row, height: 15px]
 
@@ -3887,7 +3652,6 @@ Each technical measure (T1-T10) has a dedicated section with the following struc
 - Height: 30px
 - Text: "[TOM ID] - [TOM Category]" (e.g., "T1 - ENCRYPTION")
 
-
 **Field Rows (5 rows per TOM):**
 
 | Field | Label (Column A:B - Merged) | User Input (Column C:F - Merged) |
@@ -3901,7 +3665,6 @@ Each technical measure (T1-T10) has a dedicated section with the following struc
 **Spacer Row (1 row):**
 
 - Blank row, height: 15px
-
 
 **Total rows per TOM section:** 7 rows (1 header + 5 fields + 1 spacer)
 
@@ -3917,7 +3680,6 @@ Each technical measure (T1-T10) has a dedicated section with the following struc
 - Row 9: Integration Notes | [User input]
 - Row 10: [Blank spacer]
 
-
 **T2 - Access Control (Rows 11-17):**
 
 - Row 11: Section header "T2 - ACCESS CONTROL"
@@ -3928,13 +3690,11 @@ Each technical measure (T1-T10) has a dedicated section with the following struc
 - Row 16: Integration Notes | [User input]
 - Row 17: [Blank spacer]
 
-
 **T3 - Pseudonymization/Anonymization (Rows 18-24):**
 
 - Row 18: Section header "T3 - PSEUDONYMIZATION/ANONYMIZATION"
 - Row 19-23: Field rows
 - Row 24: Spacer
-
 
 **T4 - Data Minimization (Rows 25-31):**
 
@@ -3942,13 +3702,11 @@ Each technical measure (T1-T10) has a dedicated section with the following struc
 - Row 26-30: Field rows
 - Row 31: Spacer
 
-
 **T5 - Security Monitoring & Logging (Rows 32-38):**
 
 - Row 32: Section header "T5 - SECURITY MONITORING & LOGGING"
 - Row 33-37: Field rows
 - Row 38: Spacer
-
 
 **T6 - Network Security (Rows 39-45):**
 
@@ -3956,13 +3714,11 @@ Each technical measure (T1-T10) has a dedicated section with the following struc
 - Row 40-44: Field rows
 - Row 45: Spacer
 
-
 **T7 - Application Security (Rows 46-52):**
 
 - Row 46: Section header "T7 - APPLICATION SECURITY"
 - Row 47-51: Field rows
 - Row 52: Spacer
-
 
 **T8 - Endpoint Security (Rows 53-59):**
 
@@ -3970,20 +3726,17 @@ Each technical measure (T1-T10) has a dedicated section with the following struc
 - Row 54-58: Field rows
 - Row 59: Spacer
 
-
 **T9 - Backup & Recovery (Rows 60-66):**
 
 - Row 60: Section header "T9 - BACKUP & RECOVERY"
 - Row 61-65: Field rows
 - Row 66: Spacer
 
-
 **T10 - Physical Security (Rows 67-73):**
 
 - Row 67: Section header "T10 - PHYSICAL SECURITY"
 - Row 68-72: Field rows
 - Row 73: Spacer
-
 
 ## Field Label Styling (Column A:B - Merged)
 
@@ -3994,7 +3747,6 @@ Each technical measure (T1-T10) has a dedicated section with the following struc
 - Width: A=15, B=15
 - Height: 60px (allows multiline labels)
 - Protection: Locked
-
 
 ## User Input Styling (Column C:F - Merged)
 
@@ -4007,7 +3759,6 @@ Each technical measure (T1-T10) has a dedicated section with the following struc
 - Protection: Unlocked
 - Text Wrap: Enabled
 
-
 ## Section Header Styling
 
 - Font: Calibri 12pt, Bold, White
@@ -4016,7 +3767,6 @@ Each technical measure (T1-T10) has a dedicated section with the following struc
 - Border: Thin black on all sides
 - Height: 30px
 - Protection: Locked
-
 
 ## Data Validation
 
@@ -4032,7 +3782,6 @@ Each technical measure (T1-T10) has a dedicated section with the following struc
 
 - Individual cell protection: ON for section headers and field labels (locked)
 - Individual cell protection: OFF for user input cells (Column C:F merged cells unlocked)
-
 
 ## Freeze Panes
 
@@ -4050,7 +3799,6 @@ Each technical measure (T1-T10) has a dedicated section with the following struc
 - Alignment: Left, Vertical Center
 - Height: 25px
 
-
 **Row 76:** Instruction text
 
 - Merged: A76:F76
@@ -4059,7 +3807,6 @@ Each technical measure (T1-T10) has a dedicated section with the following struc
 - Alignment: Left, Top, Wrap Text
 - Height: Auto
 - Text: "Complete all 5 fields for each technical measure (T1-T10). Be specific: include vendor names, product versions, configuration parameters, exact coverage percentages (numerator/denominator), and system integrations. For detailed guidance and examples, see User Completion Guide (PART 1, Section 4.3)."
-
 
 ---
 
@@ -4078,7 +3825,6 @@ Detailed organizational documentation of O1-O10 implementation with specific pol
 - Alignment: Center, Vertical Center
 - Height: 40px
 
-
 **Row 2:** "Document detailed organizational implementation for each organizational measure"
 
 - Merged: A2:F2
@@ -4086,7 +3832,6 @@ Detailed organizational documentation of O1-O10 implementation with specific pol
 - Fill: #305496 (Medium Blue)
 - Alignment: Center, Vertical Center
 - Height: 25px
-
 
 **Row 3:** [Blank spacer row, height: 15px]
 
@@ -4104,7 +3849,6 @@ Each organizational measure (O1-O10) has a dedicated section with the following 
 - Height: 30px
 - Text: "[TOM ID] - [TOM Category]" (e.g., "O1 - POLICIES & PROCEDURES")
 
-
 **Field Rows (5 rows per TOM):**
 
 | Field | Label (Column A:B - Merged) | User Input (Column C:F - Merged) |
@@ -4118,7 +3862,6 @@ Each organizational measure (O1-O10) has a dedicated section with the following 
 **Spacer Row (1 row):**
 
 - Blank row, height: 15px
-
 
 **Total rows per TOM section:** 7 rows (1 header + 5 fields + 1 spacer)
 
@@ -4134,7 +3877,6 @@ Each organizational measure (O1-O10) has a dedicated section with the following 
 - Row 9: Improvement Process | [User input]
 - Row 10: [Blank spacer]
 
-
 **O2 - Staff Training & Awareness (Rows 11-17):**
 
 - Row 11: Section header "O2 - STAFF TRAINING & AWARENESS"
@@ -4145,13 +3887,11 @@ Each organizational measure (O1-O10) has a dedicated section with the following 
 - Row 16: Improvement Process | [User input]
 - Row 17: [Blank spacer]
 
-
 **O3 - Incident Response & Breach Notification (Rows 18-24):**
 
 - Row 18: Section header "O3 - INCIDENT RESPONSE & BREACH NOTIFICATION"
 - Row 19-23: Field rows
 - Row 24: Spacer
-
 
 **O4 - Vendor Management (Rows 25-31):**
 
@@ -4159,13 +3899,11 @@ Each organizational measure (O1-O10) has a dedicated section with the following 
 - Row 26-30: Field rows
 - Row 31: Spacer
 
-
 **O5 - Data Protection by Design/Default (Rows 32-38):**
 
 - Row 32: Section header "O5 - DATA PROTECTION BY DESIGN/DEFAULT"
 - Row 33-37: Field rows
 - Row 38: Spacer
-
 
 **O6 - Accountability & Governance (Rows 39-45):**
 
@@ -4173,13 +3911,11 @@ Each organizational measure (O1-O10) has a dedicated section with the following 
 - Row 40-44: Field rows
 - Row 45: Spacer
 
-
 **O7 - Risk Management (Rows 46-52):**
 
 - Row 46: Section header "O7 - RISK MANAGEMENT"
 - Row 47-51: Field rows
 - Row 52: Spacer
-
 
 **O8 - Compliance Monitoring & Audit (Rows 53-59):**
 
@@ -4187,20 +3923,17 @@ Each organizational measure (O1-O10) has a dedicated section with the following 
 - Row 54-58: Field rows
 - Row 59: Spacer
 
-
 **O9 - Documentation & Records (Rows 60-66):**
 
 - Row 60: Section header "O9 - DOCUMENTATION & RECORDS"
 - Row 61-65: Field rows
 - Row 66: Spacer
 
-
 **O10 - Business Continuity (Rows 67-73):**
 
 - Row 67: Section header "O10 - BUSINESS CONTINUITY"
 - Row 68-72: Field rows
 - Row 73: Spacer
-
 
 ## Field Label Styling (Column A:B - Merged)
 
@@ -4211,7 +3944,6 @@ Each organizational measure (O1-O10) has a dedicated section with the following 
 - Width: A=15, B=15
 - Height: 60px (allows multiline labels)
 - Protection: Locked
-
 
 ## User Input Styling (Column C:F - Merged)
 
@@ -4224,7 +3956,6 @@ Each organizational measure (O1-O10) has a dedicated section with the following 
 - Protection: Unlocked
 - Text Wrap: Enabled
 
-
 ## Section Header Styling
 
 - Font: Calibri 12pt, Bold, White
@@ -4233,7 +3964,6 @@ Each organizational measure (O1-O10) has a dedicated section with the following 
 - Border: Thin black on all sides
 - Height: 30px
 - Protection: Locked
-
 
 ## Data Validation
 
@@ -4249,7 +3979,6 @@ Each organizational measure (O1-O10) has a dedicated section with the following 
 
 - Individual cell protection: ON for section headers and field labels (locked)
 - Individual cell protection: OFF for user input cells (Column C:F merged cells unlocked)
-
 
 ## Freeze Panes
 
@@ -4267,7 +3996,6 @@ Each organizational measure (O1-O10) has a dedicated section with the following 
 - Alignment: Left, Vertical Center
 - Height: 25px
 
-
 **Row 76:** Instruction text
 
 - Merged: A76:F76
@@ -4276,7 +4004,6 @@ Each organizational measure (O1-O10) has a dedicated section with the following 
 - Alignment: Left, Top, Wrap Text
 - Height: Auto
 - Text: "Complete all 5 fields for each organizational measure (O1-O10). Be specific: include policy names/versions/dates, training completion rates, governance meeting frequency, monitoring KPIs, and continuous improvement mechanisms. For detailed guidance and examples, see User Completion Guide (PART 1, Section 4.4)."
-
 
 ---
 
@@ -4291,7 +4018,6 @@ Each organizational measure (O1-O10) has a dedicated section with the following 
 - Sheet 5 Column G (Verification Status) via COUNTIF
 - Sheet 6 Column F (Overall Risk) via COUNTIF
 - Sheet 7 Column H (Status) via COUNTIF
-
 
 **Example formula from Sheet 8:**
 ```excel
@@ -4311,7 +4037,6 @@ Each organizational measure (O1-O10) has a dedicated section with the following 
 - `Gap_Overall_Risk` = '6. Gap Analysis'!$F$2:$F$201
 - `Action_Status` = '7. Remediation Action Plan'!$H$2:$H$201
 
-
 **Usage in formulas:**
 ```excel
 =COUNTIF(TOM_Implementation_Status,"Implemented")
@@ -4328,7 +4053,6 @@ Each organizational measure (O1-O10) has a dedicated section with the following 
 - Column C: Risk_Level (Critical, High, Medium, Low, N/A)
 - Column D: Verification_Status (Verified, Pending Verification, Invalid, Expired)
 - Column E: Action_Status (Not Started, In Progress, Blocked, Complete, Cancelled)
-
 
 **Data Validation Source Reference:**
 ```
@@ -4378,7 +4102,6 @@ def create_sheet4_organizational_deep_dive():
 - Column widths (if different monitor resolutions)
 - Protection passwords
 
-
 ---
 
 # Quality Assurance Notes
@@ -4398,7 +4121,6 @@ Before generating workbook, verify:
 - [ ] All column widths optimized for readability
 - [ ] All row heights sufficient for multiline content
 
-
 ## Post-Generation Testing Checklist
 
 After generating workbook, test:
@@ -4411,7 +4133,6 @@ After generating workbook, test:
 - [ ] Test formulas in Sheet 8 (enter test data in Sheet 2, verify calculations)
 - [ ] Test freeze panes (scroll right/down, verify headers remain visible)
 - [ ] Save workbook, reopen, verify all settings preserved
-
 
 ## User Acceptance Testing Scenarios
 
@@ -4429,7 +4150,6 @@ After generating workbook, test:
 - Enter owner name → Verify accepted
 - Enter target date → Verify date format accepted
 
-
 **Scenario 2: Test Validation Rules**
 
 - Attempt to enter invalid implementation date (year 3000) → Verify rejected
@@ -4437,14 +4157,12 @@ After generating workbook, test:
 - Attempt to select non-existent dropdown option → Verify not possible
 - Leave required dropdown blank → Verify error message (if configured)
 
-
 **Scenario 3: Test Protection**
 
 - Attempt to edit TOM ID (Column A) → Verify blocked
 - Attempt to edit TOM Category (Column B) → Verify blocked
 - Attempt to delete row → Verify blocked (if sheet protection ON)
 - Attempt to insert column → Verify blocked (if sheet protection ON)
-
 
 ---
 
@@ -4521,7 +4239,6 @@ Centralized repository documenting all evidence proving TOM implementation and e
 - Alignment: Center, Vertical Center
 - Height: 40px
 
-
 **Row 2:** "Document all evidence proving TOM implementation and effectiveness (minimum 5 items per TOM)"
 
 - Merged: A2:I2
@@ -4529,7 +4246,6 @@ Centralized repository documenting all evidence proving TOM implementation and e
 - Fill: #305496 (Medium Blue)
 - Alignment: Center, Vertical Center
 - Height: 25px
-
 
 **Row 3:** [Blank spacer row, height: 15px]
 
@@ -4555,7 +4271,6 @@ Centralized repository documenting all evidence proving TOM implementation and e
 - Border: Thin black on all sides
 - Height: 60px
 
-
 ## Data Rows (Rows 5-1004)
 
 **Row Range:** 1,000 evidence entries (Rows 5-1004)
@@ -4569,7 +4284,6 @@ Centralized repository documenting all evidence proving TOM implementation and e
 - Row 6: EV-002
 - Row 1004: EV-1000
 
-
 **Cell Styling:**
 
 - Font: Calibri 10pt, Regular, #505050 (Dark Gray)
@@ -4577,7 +4291,6 @@ Centralized repository documenting all evidence proving TOM implementation and e
 - Alignment: Center, Vertical Center
 - Border: Thin gray on all sides
 - Protection: Locked (formula cell)
-
 
 **Columns B-I (User Input Cells):**
 
@@ -4588,7 +4301,6 @@ Centralized repository documenting all evidence proving TOM implementation and e
 - Protection: Unlocked
 - Text Wrap: Enabled for columns D, E, I
 - Minimum Row Height: 45px (allows 2-3 lines of text)
-
 
 ## Data Validation Rules
 
@@ -4675,7 +4387,6 @@ Description: Highlights evidence dates more than 30 days in the future (likely d
 - Alignment: Left, Vertical Center
 - Height: 25px
 
-
 **Row 1007:** Instruction text
 
 - Merged: A1007:I1007
@@ -4685,7 +4396,6 @@ Description: Highlights evidence dates more than 30 days in the future (likely d
 - Height: Auto
 - Text: "Document minimum 5 evidence items per TOM (100+ total for 20 TOMs). Evidence ID auto-generates (do not edit Column A). Link evidence to TOM ID in Column B (T1-T10, O1-O10). Technical evidence freshness: <3 months. Organizational evidence freshness: <12 months. Store evidence files in centralized repository (SharePoint/network drive). Reference file location in Column E (e.g., SharePoint > Security > TOMs Evidence > T1-Encryption). All evidence requires verification by DPO, CISO, or Internal Auditor. For detailed evidence collection guidance and examples, see User Completion Guide (PART 1, Section 5)."
 
-
 ## Sheet Protection
 
 **Sheet 5 Protection:** OFF (user data entry sheet)
@@ -4693,14 +4403,12 @@ Description: Highlights evidence dates more than 30 days in the future (likely d
 - Individual cell protection: ON for Column A (Evidence ID formula locked)
 - Individual cell protection: OFF for Columns B-I (user input unlocked)
 
-
 ## Freeze Panes
 
 **Freeze:** Row 5, Column B
 
 - Rows 1-4 always visible (headers)
 - Column A always visible (Evidence ID)
-
 
 ---
 
@@ -4719,7 +4427,6 @@ Document all identified gaps from Sheet 2 with comprehensive risk assessment usi
 - Alignment: Center, Vertical Center
 - Height: 40px
 
-
 **Row 2:** "Assess risk for all identified gaps using likelihood × impact matrix (see Sheet 1)"
 
 - Merged: A2:J2
@@ -4727,7 +4434,6 @@ Document all identified gaps from Sheet 2 with comprehensive risk assessment usi
 - Fill: #305496 (Medium Blue)
 - Alignment: Center, Vertical Center
 - Height: 25px
-
 
 **Row 3:** [Blank spacer row, height: 15px]
 
@@ -4754,7 +4460,6 @@ Document all identified gaps from Sheet 2 with comprehensive risk assessment usi
 - Border: Thin black on all sides
 - Height: 60px
 
-
 ## Data Rows (Rows 5-204)
 
 **Row Range:** 200 gap entries (Rows 5-204)
@@ -4766,7 +4471,6 @@ Document all identified gaps from Sheet 2 with comprehensive risk assessment usi
 - Font: Calibri 10pt, Bold, Black
 - Fill: #FFFFCC (Light Yellow)
 - Alignment: Center, Vertical Center
-
 
 **Column F - Overall Risk (Formula):**
 ```excel
@@ -4783,7 +4487,6 @@ Document all identified gaps from Sheet 2 with comprehensive risk assessment usi
 - Alignment: Center, Vertical Center
 - Protection: Locked (formula cell)
 
-
 **Column G - Risk Score (Formula):**
 ```excel
 =IF(F5="Critical", 4, IF(F5="High", 3, IF(F5="Medium", 2, IF(F5="Low", 1, 0))))
@@ -4794,7 +4497,6 @@ Document all identified gaps from Sheet 2 with comprehensive risk assessment usi
 - Alignment: Center, Vertical Center
 - Protection: Locked (formula cell)
 
-
 **Column H - Remediation Priority (Formula):**
 ```excel
 =IF(G5=4, "URGENT (30 days)", IF(G5=3, "HIGH (90 days)", IF(G5=2, "MEDIUM (6 months)", IF(G5=1, "LOW (12 months)", ""))))
@@ -4804,7 +4506,6 @@ Document all identified gaps from Sheet 2 with comprehensive risk assessment usi
 - Fill: Priority-based color (conditional formatting)
 - Alignment: Center, Vertical Center
 - Protection: Locked (formula cell)
-
 
 ## Data Validation Rules
 
@@ -4907,7 +4608,6 @@ Description: Highlights gaps that need either remediation plan (Sheet 7) OR risk
 - Alignment: Left, Vertical Center
 - Height: 25px
 
-
 **Row 207:** Instruction text
 
 - Merged: A207:J207
@@ -4917,7 +4617,6 @@ Description: Highlights gaps that need either remediation plan (Sheet 7) OR risk
 - Height: Auto
 - Text: "Document ALL gaps identified in Sheet 2 Column J. Use risk matrix from Sheet 1 (likelihood × impact). Formulas in Columns F-H auto-calculate risk level, risk score, and remediation priority. Critical/High risks REQUIRE remediation plans in Sheet 7 (30-90 day SLA). Medium risks should be remediated (6 month SLA). Low risks may be accepted with executive approval and justification in Column J. For detailed risk assessment guidance, likelihood/impact definitions, and examples, see User Completion Guide (PART 1, Section 4.6)."
 
-
 ## Sheet Protection
 
 **Sheet 6 Protection:** OFF (user data entry sheet)
@@ -4925,14 +4624,12 @@ Description: Highlights gaps that need either remediation plan (Sheet 7) OR risk
 - Individual cell protection: ON for Columns F, G, H (formula cells locked)
 - Individual cell protection: OFF for Columns A-E, I-J (user input unlocked)
 
-
 ## Freeze Panes
 
 **Freeze:** Row 5, Column C
 
 - Rows 1-4 always visible (headers)
 - Columns A-B always visible (Gap ID, TOM ID)
-
 
 ---
 
@@ -4951,7 +4648,6 @@ Track remediation actions for closing gaps with ownership, timelines, status tra
 - Alignment: Center, Vertical Center
 - Height: 40px
 
-
 **Row 2:** "Define and track remediation actions for all Medium/High/Critical risk gaps"
 
 - Merged: A2:J2
@@ -4959,7 +4655,6 @@ Track remediation actions for closing gaps with ownership, timelines, status tra
 - Fill: #305496 (Medium Blue)
 - Alignment: Center, Vertical Center
 - Height: 25px
-
 
 **Row 3:** [Blank spacer row, height: 15px]
 
@@ -4986,7 +4681,6 @@ Track remediation actions for closing gaps with ownership, timelines, status tra
 - Border: Thin black on all sides
 - Height: 60px
 
-
 ## Data Rows (Rows 5-204)
 
 **Row Range:** 200 action entries (Rows 5-204)
@@ -4998,7 +4692,6 @@ Track remediation actions for closing gaps with ownership, timelines, status tra
 - Font: Calibri 10pt, Bold, Black
 - Fill: #FFFFCC (Light Yellow)
 - Alignment: Center, Vertical Center
-
 
 **Column D - Proposed Solution (User Input - Critical Field):**
 
@@ -5014,14 +4707,12 @@ Track remediation actions for closing gaps with ownership, timelines, status tra
 - Alignment: Left, Top, Wrap Text
 - Minimum Row Height: 100px (allows ~6-8 lines)
 
-
 **Column H - Status (Dropdown):**
 
 - Options: Not Started, In Progress, Blocked, Complete, Cancelled
 - Font: Calibri 10pt, Regular, Black
 - Fill: Status-based color (conditional formatting)
 - Alignment: Center, Vertical Center
-
 
 ## Data Validation Rules
 
@@ -5167,7 +4858,6 @@ Description: Highlights invalid date range (target date before start date)
 - Alignment: Left, Vertical Center
 - Height: 25px
 
-
 **Row 207:** Instruction text
 
 - Merged: A207:J207
@@ -5177,13 +4867,11 @@ Description: Highlights invalid date range (target date before start date)
 - Height: Auto
 - Text: "Create remediation actions for ALL Medium/High/Critical risk gaps from Sheet 6. SLA based on risk: Critical (30-60 days), High (90-180 days), Medium (6-12 months), Low (12-24 months). Proposed Solution (Column D) MUST be detailed with 5 components: (1) Phase breakdown, (2) Timeline with dates, (3) Budget with cost estimate, (4) Risks and mitigation strategies, (5) Alternative solutions considered. Update Status and % Complete monthly during active remediation. When Status = Complete: (a) Update Sheet 2 Column D (implementation status), (b) Add evidence to Sheet 5, (c) Update Sheet 6 Column I (residual risk). For detailed remediation planning guidance, phase templates, and examples, see User Completion Guide (PART 1, Section 4.7)."
 
-
 ## Sheet Protection
 
 **Sheet 7 Protection:** OFF (user data entry sheet)
 
 - All cells unlocked (user input throughout)
-
 
 ## Freeze Panes
 
@@ -5191,7 +4879,6 @@ Description: Highlights invalid date range (target date before start date)
 
 - Rows 1-4 always visible (headers)
 - Columns A-B always visible (Action ID, TOM ID)
-
 
 ---
 
@@ -5210,7 +4897,6 @@ Executive summary of TOM compliance with auto-calculated metrics, KPIs, and GDPR
 - Alignment: Center, Vertical Center
 - Height: 40px
 
-
 **Row 2:** "Auto-calculated metrics from Sheets 2-7 (no data entry required)"
 
 - Merged: A2:F2
@@ -5218,7 +4904,6 @@ Executive summary of TOM compliance with auto-calculated metrics, KPIs, and GDPR
 - Fill: #305496 (Medium Blue)
 - Alignment: Center, Vertical Center
 - Height: 25px
-
 
 **Row 3:** [Blank spacer row, height: 15px]
 
@@ -5231,7 +4916,6 @@ Executive summary of TOM compliance with auto-calculated metrics, KPIs, and GDPR
 - Fill: #D9D9D9 (Light Gray)
 - Alignment: Left, Vertical Center
 - Height: 25px
-
 
 **Metrics Table (Rows 5-12):**
 
@@ -5252,7 +4936,6 @@ Executive summary of TOM compliance with auto-calculated metrics, KPIs, and GDPR
 - Number Format: 0% (percentage, no decimals)
 - Alignment: Center, Vertical Center
 - Conditional Formatting (see below)
-
 
 **Column D11 Conditional Formatting:**
 ```
@@ -5279,7 +4962,6 @@ Stop If True: Yes
 - Alignment: Left, Vertical Center
 - Height: 25px
 
-
 **Metrics Table (Rows 15-22):**
 
 | Row | Metric (A:C Merged) | Value (D) | Formula/Notes (E:F Merged) |
@@ -5304,7 +4986,6 @@ Stop If True: Yes
 - Fill: #D9D9D9 (Light Gray)
 - Alignment: Left, Vertical Center
 - Height: 25px
-
 
 **Metrics Table (Rows 25-33):**
 
@@ -5345,7 +5026,6 @@ Stop If True: Yes
 - Alignment: Left, Vertical Center
 - Height: 25px
 
-
 **Metrics Table (Rows 36-44):**
 
 | Row | Metric (A:C Merged) | Value (D) | Formula/Notes (E:F Merged) |
@@ -5383,7 +5063,6 @@ Stop If True: Yes
 - Fill: #D9D9D9 (Light Gray)
 - Alignment: Left, Vertical Center
 - Height: 25px
-
 
 **Metrics Table (Rows 47-56):**
 
@@ -5425,7 +5104,6 @@ Stop If True: Yes
 - Alignment: Center, Vertical Center
 - Height: 30px
 
-
 **Formula Components (Rows 59-62):**
 
 | Row | Component (A:C Merged) | Weight | Calculation (D:F Merged) |
@@ -5456,7 +5134,6 @@ Stop If True: Yes
 - Alignment: Center, Vertical Center
 - Border: Thick black border on all sides
 - Height: 35px
-
 
 **Column D64 Conditional Formatting (5-level scale):**
 ```
@@ -5495,7 +5172,6 @@ Stop If True: Yes
 - Alignment: Left, Vertical Center
 - Height: 25px
 
-
 **Metrics Table (Rows 73-78):**
 
 | Row | Metric (A:C Merged) | Value (D) | Formula/Notes (E:F Merged) |
@@ -5532,7 +5208,6 @@ Stop If True: Yes
 - Alignment: Left, Vertical Center
 - Height: 25px
 
-
 **Row 81:** Instructions
 
 - Merged: A81:F81
@@ -5540,7 +5215,6 @@ Stop If True: Yes
 - Fill: #FFFFFF (White)
 - Alignment: Left, Vertical Center
 - Text: "Insert charts manually after workbook generation using Excel's Insert > Chart. Recommended visualizations:"
-
 
 **Chart Recommendations (Rows 82-87):**
 
@@ -5558,7 +5232,6 @@ Stop If True: Yes
 - Height: 150px total
 - Fill: #F2F2F2 (Very Light Gray) - indicates chart placeholder area
 
-
 ## Sheet Protection
 
 **Sheet 8 Protection:** ON (formula-driven, read-only)
@@ -5567,7 +5240,6 @@ Stop If True: Yes
 - All cells locked
 - Allow: Select locked cells, Select unlocked cells
 - Disallow: Everything else
-
 
 ## Freeze Panes
 
@@ -6046,7 +5718,6 @@ if __name__ == "__main__":
 - Sheet 7: Remediation Action Plan (200 rows, status tracking)
 - Sheet 8: Compliance Dashboard (7 sections, GDPR Art. 32 score)
 - Complete Python script (openpyxl implementation)
-
 
 **Quality Level:** REFERENCE QUALITY - Developer-ready specifications with exact formulas, conditional formatting, and Python implementation.
 

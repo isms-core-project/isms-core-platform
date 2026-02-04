@@ -35,7 +35,6 @@
 - Compliance: Legal/Compliance Officer
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -44,7 +43,6 @@
 - ISMS-IMP-A.8.30.1-4 (Implementation Assessment Suite)
 - ISO/IEC 27001:2022 Control A.8.30
 - ISO/IEC 27002:2022 Control 8.30
-
 
 ---
 
@@ -63,7 +61,6 @@ This policy establishes [Organization]'s requirements for managing security in o
 - **Mandatory**: Swiss FADP (Art. 8), EU GDPR (Art. 32), ISO 27001:2022
 - **Conditional**: FINMA, DORA (Art. 28-30 ICT third-party risk), NIS2 (Art. 21 supply chain)
 - **Informational**: NIST SP 800-218 SSDF, ISO/IEC 27036 (Supplier Relationships)
-
 
 ---
 
@@ -87,7 +84,6 @@ This policy establishes [Organization]'s requirements for managing security in o
 - Security testing of third-party code
 - Subcontractor and supply chain management
 
-
 ## Scope Definition
 
 **In Scope**:
@@ -100,14 +96,12 @@ This policy establishes [Organization]'s requirements for managing security in o
 - Development platform providers (where [Organization] code is hosted)
 - Managed development services
 
-
 **Out of Scope**:
 
 - Commercial off-the-shelf (COTS) software without customization (see A.8.31)
 - Internal development by employees (see A.8.28)
 - Cloud service providers for infrastructure only (see A.5.23)
 - General supplier management (see A.5.19-22)
-
 
 ## Document Hierarchy
 
@@ -154,7 +148,6 @@ Prior to engaging any outsourced development vendor, [Organization] SHALL conduc
 - Annual reassessment required for active vendors
 - Removal from registry upon contract termination, security incident, or failed reassessment
 
-
 **Verification**: Approved vendor registry maintained by Procurement with Security input; quarterly review of active vendors.
 
 ---
@@ -172,14 +165,12 @@ All outsourced development contracts SHALL include the following security requir
 - Use of approved development tools and environments
 - Security training completion requirements
 
-
 **Intellectual Property and Code Protection**:
 
 - Clear ownership of developed code and documentation
 - Source code escrow arrangements for critical projects
 - Protection of [Organization]'s proprietary information
 - Non-disclosure and confidentiality obligations
-
 
 **Security Verification Rights**:
 
@@ -188,7 +179,6 @@ All outsourced development contracts SHALL include the following security requir
 - Right to request security certifications and attestations
 - Right to access security incident information
 
-
 **Incident Notification**:
 
 - Notification of security incidents within 24 hours
@@ -196,14 +186,12 @@ All outsourced development contracts SHALL include the following security requir
 - Cooperation with incident investigation
 - Post-incident remediation requirements
 
-
 **Subcontractor Management**:
 
 - Prior written approval required for subcontractors
 - Flow-down of security requirements to subcontractors
 - [Organization] right to reject subcontractors
 - Subcontractor audit rights
-
 
 ## Vulnerability Remediation SLAs
 
@@ -223,7 +211,6 @@ Contracts SHALL specify vulnerability remediation timeframes aligned with ISMS-P
 - Chronic non-compliance may result in contract review or termination
 - SLA exceptions require documented risk acceptance (CISO approval for Critical/High)
 
-
 **Verification**: Contract templates maintained by Legal with Security input; compliance tracked in Workbook 2.
 
 ## Termination and Transition
@@ -236,7 +223,6 @@ Contracts SHALL address security requirements for termination:
 - Knowledge transfer period for critical projects
 - Post-termination confidentiality obligations
 - Certification of data destruction
-
 
 ---
 
@@ -256,7 +242,6 @@ Outsourced developers SHALL comply with [Organization]'s secure coding standards
 - Secure error handling (no sensitive data in logs)
 - No hardcoded secrets in source code
 
-
 **Prohibited Practices**:
 
 - Hardcoded credentials, API keys, or secrets
@@ -265,7 +250,6 @@ Outsourced developers SHALL comply with [Organization]'s secure coding standards
 - Disabled security controls
 - Committing secrets to version control
 - Ignoring security tool findings without exception
-
 
 **Verification**: Secure coding compliance verified via code review and security testing; findings documented in Workbook 3.
 
@@ -291,14 +275,12 @@ Prior to accessing [Organization] systems or code, outsourced developers SHALL:
 - Acknowledge [Organization]'s security policies and acceptable use requirements
 - Demonstrate understanding of project-specific security requirements
 
-
 **Training Verification**:
 
 - Training completion tracked in vendor onboarding checklist **and recorded in [HR/Vendor Management System]**
 - **Access requests cross-checked against training records before approval** (system-enforced where feasible, procedural review for manual access provisioning)
 - Annual refresher required for long-term engagements
 - Training records retained for audit
-
 
 **Verification**: Training completion confirmed before access granted; records in Workbook 4.
 
@@ -324,7 +306,6 @@ All outsourced code SHALL be subject to security review before acceptance:
 - Error handling and logging
 - Third-party component usage
 
-
 **Verification**: Code review records retained in version control system; review statistics in Workbook 3.
 
 ## Security Testing Requirements
@@ -337,12 +318,10 @@ Outsourced deliverables SHALL undergo security testing before production deploym
 - SCA (Software Composition Analysis): Scan all third-party dependencies
 - Secret scanning: Verify no secrets in codebase
 
-
 **Manual Testing**:
 
 - DAST (Dynamic Application Security Testing): Run on staging environment
 - Penetration testing: Required for Critical projects before go-live
-
 
 **Testing Responsibility**:
 
@@ -359,7 +338,6 @@ Outsourced deliverables SHALL undergo security testing before production deploym
 - All security requirements verified
 - Security test reports documented and retained
 
-
 **Verification**: Test results documented in Workbook 3; acceptance sign-off required.
 
 ## Software Bill of Materials (SBOM)
@@ -370,7 +348,6 @@ For all outsourced development, [Organization] SHALL receive:
 - Component versions and licenses
 - Known vulnerability status at time of delivery
 - Update plan for components with known vulnerabilities
-
 
 **SBOM Format**: CycloneDX or SPDX format preferred; spreadsheet acceptable for simple projects.
 
@@ -390,7 +367,6 @@ For all outsourced development, [Organization] SHALL receive:
 - Security checkpoints defined in project milestones
 - Regular security guidance and clarification
 
-
 **Monitoring**:
 
 - Regular status updates on security activities
@@ -398,13 +374,11 @@ For all outsourced development, [Organization] SHALL receive:
 - Participation in security-related discussions
 - Alert monitoring for security incidents
 
-
 **Reviewing**:
 
 - Security deliverables reviewed at each milestone
 - Final security review before acceptance
 - Lessons learned captured for future projects
-
 
 ## Monitoring Frequency
 
@@ -445,7 +419,6 @@ Outsourced development vendors SHALL NOT engage subcontractors without:
 - Direct audit rights over subcontractor (or vendor-conducted audit)
 - Confidentiality and IP protection obligations
 
-
 ## Subcontractor Approval Process
 
 **Approval Requirements**:
@@ -469,7 +442,6 @@ Outsourced development vendors SHALL NOT engage subcontractors without:
 - Review high-risk vendor engagements
 - Escalation point for critical security issues
 
-
 ## Chief Information Security Officer (CISO)
 
 - Overall accountability for outsourced development security
@@ -477,7 +449,6 @@ Outsourced development vendors SHALL NOT engage subcontractors without:
 - Approve security exceptions
 - Review security metrics and vendor performance
 - Escalation for security incidents involving vendors
-
 
 ## IT Security Manager
 
@@ -487,7 +458,6 @@ Outsourced development vendors SHALL NOT engage subcontractors without:
 - Approve standard-risk vendor engagements
 - Manage vendor security incident response
 
-
 ## Application Security Team
 
 - Define secure development requirements
@@ -495,7 +465,6 @@ Outsourced development vendors SHALL NOT engage subcontractors without:
 - Review security-sensitive code changes
 - Provide security guidance to project teams
 - Maintain security testing tools and procedures
-
 
 ## Procurement/Vendor Management
 
@@ -505,7 +474,6 @@ Outsourced development vendors SHALL NOT engage subcontractors without:
 - Manage vendor performance including security metrics
 - Coordinate vendor offboarding
 
-
 ## Project Managers
 
 - Ensure security requirements included in project scope
@@ -514,14 +482,12 @@ Outsourced development vendors SHALL NOT engage subcontractors without:
 - Ensure security milestones are met
 - Coordinate security reviews and testing
 
-
 ## Development Team Leads
 
 - Review outsourced code before acceptance
 - Verify security testing completed
 - Ensure integration with internal security practices
 - Report security concerns to Security team
-
 
 ---
 
@@ -535,13 +501,11 @@ Outsourced development vendors SHALL NOT engage subcontractors without:
 - Contract security clause compliance verified
 - Security testing results reviewed
 
-
 **Periodic Assessment**:
 
 - Quarterly: Active vendor security status review
 - Annual: Full vendor security reassessment
 - Annual: Policy effectiveness review
-
 
 ## Non-Compliance Handling
 
@@ -561,7 +525,6 @@ Outsourced development vendors SHALL NOT engage subcontractors without:
 - Removed from approved vendor registry
 - Subject to contract termination
 
-
 ## Exception Management
 
 - All exceptions require documented business justification
@@ -569,7 +532,6 @@ Outsourced development vendors SHALL NOT engage subcontractors without:
 - Approval authority based on risk level (Security Lead for Medium, CISO for High/Critical)
 - Exceptions tracked in central register (Workbook 4)
 - Maximum duration: 90 days (renewable with re-approval)
-
 
 **Compensating Controls Adequacy Criteria**:
 
@@ -579,7 +541,6 @@ Outsourced development vendors SHALL NOT engage subcontractors without:
 - **Scope**: Control covers all affected systems/data flows
 
 **Exceptions require documented risk assessment** quantifying residual risk with and without proposed compensating controls. Risk assessment SHALL be prepared by project team and validated by IT Security Manager before approval authority review.
-
 
 ---
 
@@ -596,7 +557,6 @@ Evidence required to demonstrate this policy is adequately documented and approv
 - ✅ Security testing requirements specified
 - ✅ Roles and responsibilities assigned
 - ✅ Assessment workbook references documented (ISMS-IMP-A.8.30)
-
 
 **Stage 2 (Operational Effectiveness) Evidence:**
 
@@ -623,7 +583,6 @@ Evidence required to demonstrate this policy is operationally effective:
 - Security testing results: 5 years (aligned with DORA Art. 28(6) where applicable) or project lifecycle + 3 years
 - Code review records: Project lifecycle + 2 years
 - Incident records: 5 years
-
 
 ---
 

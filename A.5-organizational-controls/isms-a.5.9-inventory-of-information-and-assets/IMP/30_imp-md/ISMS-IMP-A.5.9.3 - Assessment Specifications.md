@@ -44,12 +44,10 @@ This document consists of two parts:
   - Formula Definitions
   - Python Script Implementation
 
-
 **Target Audiences:**
 
 - **Part I:** Assessment users (Security Team, QA, Auditors)
 - **Part II:** Workbook developers (Python/Excel script maintainers)
-
 
 ---
 
@@ -73,7 +71,6 @@ This assessment verifies that the asset inventory meets quality standards and po
 - Does the inventory COMPLY with policy requirements?
 - Where are the quality GAPS? (what needs improvement)
 
-
 **Assessment Philosophy**: Trust, but verify. Don't assume inventory is accurate just because it exists. Sample and validate.
 
 ### Why This Matters
@@ -84,7 +81,6 @@ This assessment verifies [Organization]'s compliance with:
 - **ISMS-POL-A.5.9, Section 2.5**: Quality standards (accuracy ≥95% for information assets, ≥98% for IT infrastructure)
 - **ISMS-POL-A.5.9, Section 2.5.3**: Currency standards (maximum staleness by criticality)
 - **ISMS-POL-A.5.9, Section 3.2**: Assessment methodology requirements
-
 
 **From Implementer Perspective**: Identifies data quality issues requiring remediation.
 
@@ -124,7 +120,6 @@ This assessment covers **5 quality dimensions**:
 - Currency compliance (% within staleness thresholds)
 - Policy compliance percentage (% of SHALL requirements met)
 
-
 ---
 
 ## Prerequisites
@@ -136,14 +131,12 @@ This assessment covers **5 quality dimensions**:
 - **ISMS-IMP-A.5.9.1**: Asset Discovery (know what's supposed to be inventoried)
 - **ISMS-IMP-A.5.9.2**: Inventory Maintenance (know where inventory data lives)
 
-
 **2. Access to Inventory and Source Systems**:
 
 - Read access to inventory system(s)
 - Access to source systems for verification (CMDB, HR, procurement)
 - Access to physical assets (for physical verification if applicable)
 - Network access for IT infrastructure validation
-
 
 **3. Personnel**:
 
@@ -152,7 +145,6 @@ This assessment covers **5 quality dimensions**:
 - **System Owners**: Validates accuracy of sampled assets
 - **QA/Audit Team**: Provides independent verification (if available)
 
-
 **4. Tools**:
 
 - Inventory system query/export capability
@@ -160,20 +152,17 @@ This assessment covers **5 quality dimensions**:
 - Verification tools (network scanners, asset discovery tools)
 - Comparison tools (for consistency checks)
 
-
 **5. Documentation**:
 
 - ISMS-POL-A.5.9 (reference for requirements)
 - Inventory data model/schema (from IMP-A.5.9-2)
 - Previous quality assessment (if exists - for trending)
 
-
 **6. Time Allocation**:
 
 - **Initial Assessment**: 20-30 hours (extensive sampling)
 - **Quarterly Updates**: 8-12 hours (smaller sample, focused checks)
 - **Evidence Collection**: 4-6 hours per quarter
-
 
 ---
 
@@ -249,7 +238,6 @@ Phase 8: Review & Approval (Day 19-20)
 - Review the sampling methodology
 - Note the scoring criteria
 
-
 **No data entry required** - informational only.
 
 ---
@@ -266,7 +254,6 @@ Phase 8: Review & Approval (Day 19-20)
 - Root cause analysis
 - Accuracy rates by asset category
 
-
 **Sampling Methodology**:
 
 **Sample Size Calculation**:
@@ -280,7 +267,6 @@ Phase 8: Review & Approval (Day 19-20)
   - Medium inventory (100-500 assets): 100-150 records
   - Large inventory (>500 assets): 150-250 records
 - Stratify by asset category (with n=30 minimum floor per category)
-
 
 **Stratification Example** (with n=30 minimum per category):
 ```
@@ -301,7 +287,6 @@ Total Sample: 190 assets (not 150, due to minimum floors)
 - Use Excel `=RAND()` function or Python `random.sample()`
 - No cherry-picking! True random selection required for statistical validity
 - Generate random sample within each category stratum separately
-
 
 **Column Definitions**:
 
@@ -352,7 +337,6 @@ Total Sample: 190 assets (not 150, due to minimum floors)
 - **Verification Date**: [Date]
 - **Verified By**: Security Team
 
-
 **Example 2: Information Asset - Database**
 
 - **Sample ID**: QA-002
@@ -370,7 +354,6 @@ Total Sample: 190 assets (not 150, due to minimum floors)
 - **Verification Date**: 22.01.2026
 - **Verified By**: Information Security Manager
 
-
 **Example 3: Application - SaaS**
 
 - **Sample ID**: QA-003
@@ -387,7 +370,6 @@ Total Sample: 190 assets (not 150, due to minimum floors)
 - **Verification Method**: Salesforce admin console screenshot
 - **Verification Date**: 22.01.2026
 - **Verified By**: IT Operations
-
 
 **Example 4: Physical Asset - Cannot Verify**
 
@@ -407,7 +389,6 @@ Total Sample: 190 assets (not 150, due to minimum floors)
 - **Verified By**: Security Team
 - **Notes**: Follow up with Iron Mountain, escalate if no response within 1 week
 
-
 **Step 3: Calculate Accuracy Rates**
 
 Sheet will auto-calculate:
@@ -417,7 +398,6 @@ Sheet will auto-calculate:
 - Discrepancy breakdown by type
 - Impact distribution
 
-
 **Accuracy Targets (from policy)**:
 
 - Information Assets: ≥95%
@@ -425,7 +405,6 @@ Sheet will auto-calculate:
 - Applications: ≥90%
 - Physical Assets: ≥90%
 - Personnel Assets: 100%
-
 
 **Common Pitfalls**:
 
@@ -435,7 +414,6 @@ Sheet will auto-calculate:
 - ✅ Exclude "Cannot Verify" from accuracy calculation (separate category)
 - ❌ Not documenting verification method
 - ✅ Clear documentation of HOW each sample was verified (audit trail)
-
 
 ---
 
@@ -449,7 +427,6 @@ Sheet will auto-calculate:
 - Population rate for each attribute
 - Missing data counts
 - Completeness percentage by category
-
 
 **Column Definitions**:
 
@@ -493,14 +470,12 @@ From ISMS-POL-A.5.9 Section 2.3, mandatory attributes include:
 - Last Reviewed Date
 - Next Review Date
 
-
 **Information Assets (additional)**:
 
 - Data Classification (Public, Internal, Confidential, Restricted)
 - Data Format (structured/unstructured)
 - Storage Location (system/repository)
 - Retention Period
-
 
 **IT Infrastructure (additional)**:
 
@@ -509,7 +484,6 @@ From ISMS-POL-A.5.9 Section 2.3, mandatory attributes include:
 - Physical/Virtual designation
 - Serial Number / Asset Tag
 
-
 **Applications (additional)**:
 
 - Vendor/Developer
@@ -517,13 +491,11 @@ From ISMS-POL-A.5.9 Section 2.3, mandatory attributes include:
 - License Type (perpetual, subscription, open-source)
 - License Count
 
-
 **Physical Assets (additional)**:
 
 - Asset Tag / Serial Number
 - Purchase Date
 - Condition (New, Good, Fair, Poor)
-
 
 **Personnel Assets (additional)**:
 
@@ -531,7 +503,6 @@ From ISMS-POL-A.5.9 Section 2.3, mandatory attributes include:
 - Current Capacity (headcount)
 - Required Capacity
 - Succession Plan Status
-
 
 **Step 2: Query Inventory for Population Rates**
 
@@ -552,7 +523,6 @@ From ISMS-POL-A.5.9 Section 2.3, mandatory attributes include:
 - **Responsible Party**: Information Security Manager
 - **Evidence Reference**: QUAL-010 (query results showing 24 missing)
 
-
 **Example 2: IT Infrastructure - IP Address**
 
 - **Asset Category**: IT Infrastructure
@@ -569,7 +539,6 @@ From ISMS-POL-A.5.9 Section 2.3, mandatory attributes include:
 - **Target Date**: 15.02.2026
 - **Responsible Party**: IT Operations
 
-
 **Example 3: Applications - License Count (Pass)**
 
 - **Asset Category**: Applications
@@ -584,7 +553,6 @@ From ISMS-POL-A.5.9 Section 2.3, mandatory attributes include:
 - **Root Cause**: N/A
 - **Remediation Plan**: N/A (maintain compliance)
 
-
 **Step 3: Calculate Overall Completeness**
 
 Sheet auto-calculates:
@@ -592,7 +560,6 @@ Sheet auto-calculates:
 - Overall completeness (average across all mandatory attributes)
 - Completeness by asset category
 - Top 10 missing attributes (prioritize remediation)
-
 
 **Target**: 100% mandatory attribute completeness (policy requirement)
 
@@ -604,7 +571,6 @@ Sheet auto-calculates:
 - ✅ "Unknown" = missing data, requires remediation
 - ❌ Not distinguishing "N/A" from missing
 - ✅ "N/A" is valid for some fields (e.g., IP address for offline device), document rationale
-
 
 ---
 
@@ -618,7 +584,6 @@ Sheet auto-calculates:
 - Staleness (days since last update)
 - Compliance with policy thresholds by criticality
 - Currency compliance percentage
-
 
 **Column Definitions**:
 
@@ -646,7 +611,6 @@ Sheet auto-calculates:
 - **Standard criticality**: 7 days max staleness
 - **Low criticality**: 30 days max staleness
 
-
 **How to Complete**:
 
 **Step 1: Export Inventory with Last Updated Dates**
@@ -656,7 +620,6 @@ Query inventory for:
 - Asset ID, Name, Category, Criticality
 - Last Updated Date (when record last modified)
 - Calculate Staleness = TODAY() - Last Updated Date
-
 
 **Step 2: Group by Category and Criticality**
 
@@ -676,7 +639,6 @@ Query inventory for:
 - **Target Date**: 23.01.2026 (immediate - critical assets)
 - **Responsible Party**: Information Security Manager
 
-
 **Example 2: IT Infrastructure - Standard**
 
 - **Asset Category**: IT Infrastructure
@@ -693,7 +655,6 @@ Query inventory for:
 - **Target Date**: 29.01.2026
 - **Responsible Party**: IT Operations
 
-
 **Example 3: Personnel Assets - All Criticalities**
 
 - **Asset Category**: Personnel Assets
@@ -706,7 +667,6 @@ Query inventory for:
 - **Compliance Status**: Pass
 - **Notes**: "Weekly HR system sync keeps personnel assets current"
 
-
 **Step 3: Identify Stale Records**
 
 Create list of stale records (exceeding threshold):
@@ -714,7 +674,6 @@ Create list of stale records (exceeding threshold):
 - Asset ID, Name, Criticality, Days Stale
 - Prioritize by criticality (Critical → High → Standard → Low)
 - Assign to owners for refresh
-
 
 **Common Pitfalls**:
 
@@ -724,7 +683,6 @@ Create list of stale records (exceeding threshold):
 - ✅ Calendar days, not business days (policy specifies calendar days)
 - ❌ Refreshing only high-profile assets
 - ✅ Systematic refresh process for all stale records regardless of visibility
-
 
 ---
 
@@ -738,7 +696,6 @@ Create list of stale records (exceeding threshold):
 - Logical contradictions (e.g., retired asset still in production)
 - Cross-field validation failures
 - Duplicate detection
-
 
 **Column Definitions**:
 
@@ -779,7 +736,6 @@ Create list of stale records (exceeding threshold):
 - **Responsible Party**: CMDB Administrator
 - **Evidence Reference**: QUAL-020 (full query results)
 
-
 **Check 2: Active Retired Assets**
 
 - **Check ID**: CHK-002
@@ -796,7 +752,6 @@ Create list of stale records (exceeding threshold):
 - **Responsible Party**: IT Operations
 - **Evidence Reference**: QUAL-021 (network scan vs. CMDB comparison)
 
-
 **Check 3: Future Dates**
 
 - **Check ID**: CHK-003
@@ -811,7 +766,6 @@ Create list of stale records (exceeding threshold):
 - **Root Cause**: Manual data entry error or timezone issue
 - **Remediation Plan**: "Correct dates to actual creation date, add data validation to prevent future dates"
 - **Responsible Party**: CMDB Administrator
-
 
 **Check 4: Duplicate Detection**
 
@@ -828,7 +782,6 @@ Create list of stale records (exceeding threshold):
 - **Remediation Plan**: "Investigate each pair - merge if true duplicate, rename if distinct assets. Add unique constraint on (Name + AssetTag)"
 - **Responsible Party**: CMDB Administrator
 
-
 **Check 5: Owner Exists**
 
 - **Check ID**: CHK-005
@@ -844,7 +797,6 @@ Create list of stale records (exceeding threshold):
 - **Remediation Plan**: "Reassign assets with departed owners to current staff, eliminate 'TBD' placeholders"
 - **Responsible Party**: Information Security Manager
 
-
 **Check 6: Logical Capacity**
 
 - **Check ID**: CHK-006
@@ -859,7 +811,6 @@ Create list of stale records (exceeding threshold):
 - **Root Cause**: Data migration error from legacy system
 - **Remediation Plan**: "Correct LastUpdated to match CreatedDate or later actual update"
 
-
 **Common Pitfalls**:
 
 - ❌ Running checks once and never repeating
@@ -868,7 +819,6 @@ Create list of stale records (exceeding threshold):
 - ✅ Fix ALL inconsistencies (even low-impact) - they indicate process gaps
 - ❌ Manual inconsistency hunting
 - ✅ Automated SQL queries, scheduled reports
-
 
 ---
 
@@ -882,7 +832,6 @@ Create list of stale records (exceeding threshold):
 - Evidence of compliance
 - Compliance status (Met / Partially Met / Not Met)
 - Gap analysis for non-compliance
-
 
 **Column Definitions**:
 
@@ -919,7 +868,6 @@ From ISMS-POL-A.5.9, the SHALL requirements are:
 - **A.5.9-R8**: [Organization] SHALL conduct periodic assessments of inventory quality
 - **A.5.9-R9**: [Organization] SHALL report inventory metrics to management
 
-
 **Step 2: Verify Each Requirement**
 
 **Example 1: A.5.9-R1 (Inventory Exists)**
@@ -934,7 +882,6 @@ From ISMS-POL-A.5.9, the SHALL requirements are:
 - **Compliance %**: 100%
 - **Gap Description**: N/A
 - **Gap Severity**: N/A
-
 
 **Example 2: A.5.9-R3 (Mandatory Attributes) - Partially Met**
 
@@ -952,7 +899,6 @@ From ISMS-POL-A.5.9, the SHALL requirements are:
 - **Target Date**: 22.02.2026 (30 days)
 - **Responsible Party**: Information Security Manager, CMDB Administrator
 
-
 **Example 3: A.5.9-R4 (Ownership Assignment)**
 
 - **Requirement ID**: A.5.9-R4
@@ -969,7 +915,6 @@ From ISMS-POL-A.5.9, the SHALL requirements are:
 - **Target Date**: 05.02.2026 (2 weeks)
 - **Responsible Party**: Information Security Manager
 
-
 **Example 4: A.5.9-R8 (Periodic Assessments) - Met**
 
 - **Requirement ID**: A.5.9-R8
@@ -982,7 +927,6 @@ From ISMS-POL-A.5.9, the SHALL requirements are:
 - **Compliance %**: 100%
 - **Gap Description**: N/A
 
-
 **Step 3: Calculate Overall Policy Compliance**
 
 Sheet auto-calculates:
@@ -990,7 +934,6 @@ Sheet auto-calculates:
 - Overall compliance percentage (% of requirements fully met)
 - Breakdown: Met / Partially Met / Not Met
 - Weighted compliance score (accounting for partial compliance)
-
 
 **Target**: 100% compliance with all SHALL requirements
 
@@ -1002,7 +945,6 @@ Sheet auto-calculates:
 - ✅ Specific, quantified gaps ("24 assets missing classification, list provided in Evidence Register")
 - ❌ Unrealistic remediation timelines
 - ✅ Achievable target dates with assigned responsibilities
-
 
 ---
 
@@ -1016,7 +958,6 @@ Sheet auto-calculates:
 - Weighted overall quality score
 - Compliance status summary
 - Trending vs. previous assessments
-
 
 **This sheet is MOSTLY auto-populated** from other sheets.
 
@@ -1043,13 +984,11 @@ Sheet auto-calculates:
 - Actual: Weighted average from Sheet 2 (Accuracy Sampling)
 - Formula: `=(Info_Accuracy*0.3 + IT_Accuracy*0.4 + App_Accuracy*0.2 + Physical_Accuracy*0.1) / 1.0`
 
-
 **2. Completeness (Weight: 25%)**
 
 - Target: 100% mandatory attributes populated
 - Actual: Average completeness from Sheet 3
 - Formula: `=AVERAGE(Sheet3!Completeness_Percentages)`
-
 
 **3. Currency (Weight: 20%)**
 
@@ -1057,20 +996,17 @@ Sheet auto-calculates:
 - Actual: Weighted average from Sheet 4
 - Formula: `=AVERAGE(Sheet4!Currency_Compliance_Percentages)`
 
-
 **4. Consistency (Weight: 15%)**
 
 - Target: 0% inconsistencies (or <1% acceptable)
 - Actual: `= 100% - Average(Failure Rates from Sheet 5)`
 - Formula: `=100 - AVERAGE(Sheet5!Failure_Rates)`
 
-
 **5. Policy Compliance (Weight: 10%)**
 
 - Target: 100% SHALL requirements met
 - Actual: Percentage from Sheet 6
 - Formula: `=COUNTIF(Sheet6!Compliance_Status,"✅ Met") / COUNTA(Sheet6!Compliance_Status) * 100`
-
 
 **Overall Quality Score**:
 ```
@@ -1084,7 +1020,6 @@ Overall = (Accuracy × 30%) + (Completeness × 25%) + (Currency × 20%) +
 - **80-89%**: Good (acceptable, minor improvements needed)
 - **70-79%**: Fair (significant improvements required)
 - **<70%**: Poor (major quality issues, immediate action required)
-
 
 **Example Quality Scorecard**:
 
@@ -1117,7 +1052,6 @@ Interpretation: Good quality (94.2%), close to target. Main gaps: Completeness (
 - Quality Metrics
 - All Domains
 
-
 **Evidence ID format**: `QUAL-NNN` (e.g., QUAL-001, QUAL-002, etc.)
 
 **Example Evidence Items**:
@@ -1144,20 +1078,17 @@ Interpretation: Good quality (94.2%), close to target. Main gaps: Completeness (
 - Network scan results
 - Physical inspection checklists
 
-
 **Completeness Evidence**:
 
 - SQL queries or reports showing missing attributes
 - Inventory exports with NULL/empty field counts
 - Remediation tracking logs
 
-
 **Currency Evidence**:
 
 - Staleness reports (LastUpdated date queries)
 - Owner notification emails for stale records
 - Refresh activity logs
-
 
 **Consistency Evidence**:
 
@@ -1166,14 +1097,12 @@ Interpretation: Good quality (94.2%), close to target. Main gaps: Completeness (
 - Duplicate investigation results
 - Cross-reference reports (inventory vs. HR, inventory vs. discovery)
 
-
 **Policy Compliance Evidence**:
 
 - Policy document (ISMS-POL-A.5.9) with requirement mapping
 - Compliance verification reports
 - Gap analysis documentation
 - Remediation plans and tracking
-
 
 ### Evidence Organization
 
@@ -1287,7 +1216,6 @@ Before submitting this assessment, verify:
 - [ ] Verification methods documented for each sample
 - [ ] "Cannot Verify" properly excluded from accuracy calculation
 
-
 ### Completeness Checks
 
 - [ ] All mandatory attributes from policy listed
@@ -1296,7 +1224,6 @@ Before submitting this assessment, verify:
 - [ ] Missing data counts accurate
 - [ ] Remediation plans specific and actionable
 
-
 ### Currency Checks
 
 - [ ] Staleness calculated correctly (TODAY - LastUpdated)
@@ -1304,14 +1231,12 @@ Before submitting this assessment, verify:
 - [ ] Stale records identified and prioritized
 - [ ] Remediation assigned to responsible parties
 
-
 ### Consistency Checks
 
 - [ ] Automated checks documented (logic, results)
 - [ ] All major contradiction types checked
 - [ ] Root causes analyzed
 - [ ] Remediation plans developed
-
 
 ### Policy Compliance Checks
 
@@ -1321,7 +1246,6 @@ Before submitting this assessment, verify:
 - [ ] Gaps documented honestly
 - [ ] Remediation plans realistic
 
-
 ### Metrics Checks
 
 - [ ] Quality scores calculated correctly
@@ -1330,14 +1254,12 @@ Before submitting this assessment, verify:
 - [ ] Trending vs. previous quarter documented
 - [ ] Scorecard interpretation provided
 
-
 ### Evidence Checks
 
 - [ ] All evidence items documented in register
 - [ ] Evidence metadata complete (date, collector, location)
 - [ ] Evidence quality assessed
 - [ ] Evidence stored securely per retention policy
-
 
 ---
 
@@ -1351,7 +1273,6 @@ Before submitting this assessment, verify:
 - Verify calculations and formulas
 - Check evidence completeness
 
-
 **Step 2: Statistical Review** (QA/Audit Team if available)
 
 - Validate sampling methodology
@@ -1359,13 +1280,11 @@ Before submitting this assessment, verify:
 - Check statistical calculations
 - Review extrapolation from sample to population
 
-
 **Step 3: Technical Review** (CMDB Administrator, IT Operations)
 
 - Validate consistency check results
 - Confirm remediation plans are feasible
 - Review resource requirements
-
 
 **Step 4: Security Review** (Information Security Manager)
 
@@ -1373,7 +1292,6 @@ Before submitting this assessment, verify:
 - Assess gap severity and priorities
 - Verify policy compliance verification
 - Review remediation timeline
-
 
 **Step 5: CISO Approval**
 
@@ -1383,14 +1301,12 @@ Before submitting this assessment, verify:
 - Escalate critical gaps to Executive Management
 - Sign approval
 
-
 **Step 6: Submission to Compliance Dashboard**
 
 - Export metrics to dashboard consolidation
 - Update ISMS-IMP-A.5.9.5 (Compliance Dashboard)
 - Archive assessment workbook
 - Store evidence per retention policy
-
 
 ### Approval Criteria
 
@@ -1402,13 +1318,11 @@ Before submitting this assessment, verify:
 - ✅ Evidence quality rated "Complete" or "Partial"
 - ✅ Sampling methodology valid
 
-
 **Conditional Approval** (with immediate remediation) if:
 
 - ⚠️ Overall quality score 70-79%
 - ⚠️ Some high-severity gaps (but remediation in progress)
 - ⚠️ Evidence quality "Partial" (sufficient for now, needs improvement)
-
 
 **Reject** if:
 
@@ -1416,7 +1330,6 @@ Before submitting this assessment, verify:
 - ❌ Critical gaps with no remediation plan
 - ❌ Sampling methodology invalid (biased, insufficient size)
 - ❌ Evidence insufficient
-
 
 ---
 
@@ -1460,7 +1373,6 @@ This section provides complete technical specifications for developers creating 
 - **Created**: [Generation Date]
 - **Version**: 1.0
 
-
 ### Sheet Summary
 
 | Sheet # | Sheet Name | Purpose | User Input | Formulas | Protection |
@@ -1495,7 +1407,6 @@ Same pattern as IMP-A.5.9-1 and IMP-A.5.9-2, adapted for quality assessment:
 - Workflow diagram: 8-phase assessment process
 - Color coding legend
 - Support information
-
 
 ---
 
@@ -2579,7 +2490,6 @@ Same structure as IMP-A.5.9-1/2 Evidence Registers with adjusted Related Domain:
 - Quality Metrics
 - All Domains
 
-
 **Evidence ID format**: `QUAL-NNN`
 
 ---
@@ -2712,7 +2622,6 @@ def create_workbook():
     
     return wb
 
-
 # ... (sheet creation functions per specifications above)
 
 if __name__ == '__main__':
@@ -2731,7 +2640,6 @@ Required columns for dashboard consolidation:
 - Actual Score
 - Compliance Status
 - Trend
-
 
 **Export procedure**:
 1. Select rows 3-7 in Quality Metrics & Scoring sheet

@@ -42,7 +42,6 @@
 - Quality assurance and troubleshooting
 - Appendices, glossary, and regulatory references
 
-
 **Part II: Technical Specification** (~4,000 lines target)
 
 - Python generator script architecture breakdown
@@ -53,7 +52,6 @@
 - Testing and validation procedures
 - Extension and customization guidance
 
-
 ### Target Audience
 
 **Primary Users:**
@@ -63,14 +61,12 @@
 - **Compliance Officer:** Dashboard generation, validation, and evidence management
 - **DPO (Data Protection Officer):** Cross-border data transfer risk monitoring
 
-
 **Secondary Users:**
 
 - **Internal Auditors:** ISO 27001 A.5.23 audit evidence
 - **External Auditors:** Third-party compliance verification
 - **Board of Directors:** Annual strategic risk reporting
 - **IT Operations:** Remediation action planning and tracking
-
 
 ### Dual Perspective Approach
 
@@ -127,20 +123,17 @@
 - **Identifies** high-risk services requiring immediate attention
 - **Provides** actionable recommendations for executive decision-making
 
-
 **What This Dashboard Does NOT Do:**
 
 - Does NOT replace detailed assessments (use IMP-A.5.23.1-4 for that)
 - Does NOT collect new data (it reads existing workbooks)
 - Does NOT have manual input fields (100% auto-generated)
 
-
 **Target Audience:**
 
 - **Primary:** CISO, CIO, Risk Committee
 - **Secondary:** Compliance Officer, DPO, IT Management
 - **Tertiary:** Auditors (for compliance overview)
-
 
 ## Dashboard Architecture
 
@@ -222,7 +215,6 @@ Example: ISMS-IMP-A.5.23.S5_Dashboard_20260120.xlsx
 - Workbooks MUST be the most recent versions (check timestamps)
 - Workbooks MUST be complete (not in-progress drafts)
 
-
 ## Data Quality Requirements
 
 **IMP-A.5.23.1 (Inventory) - Sheet 4:**
@@ -231,13 +223,11 @@ Example: ISMS-IMP-A.5.23.S5_Dashboard_20260120.xlsx
 - All services must have `Lock-In Risk` assessment (Column X)
 - Critical services must have `Export Tested` status (Column U)
 
-
 **IMP-A.5.23.4 (Governance) - Sheet 7:**
 
 - Critical services must have `PoC Test Result` (Column J)
 - `PoC Testing Required?` must be set for Critical services (Column H)
 - `PoC Test Next Due` must be populated (Column N)
-
 
 **Data Quality Validation:**
 The generator script performs automatic validation and will:
@@ -245,7 +235,6 @@ The generator script performs automatic validation and will:
 - ✅ **PASS:** If all required data present
 - ⚠️ **WARNING:** If optional data missing (continues generation)
 - ❌ **FAIL:** If critical sheets or columns missing (stops generation)
-
 
 ## Python Environment Setup
 
@@ -259,7 +248,6 @@ pip install openpyxl
 - Python 3.8+
 - 50 MB free disk space (for dashboard workbook)
 - Source workbooks accessible (same directory or specify path)
-
 
 ---
 
@@ -390,18 +378,15 @@ print(f"   Row {row}: {service_name} -> {exit_strategy}")
 
 - Example: On-Premises = 3.1% (target: <5%) → ✅ Good
 
-
 **⚠️ Yellow Warning:** Approaching policy limit or minor deviation
 
 - Example: Cloud-to-Cloud = 87.5% (target: ≥90%) → ⚠️ Close to target but not quite there
 - **Action:** Monitor, trend toward compliance
 
-
 **❌ Red X:** Non-compliant, requires immediate action
 
 - Example: CRITICAL Lock-In Risk = 1 (target: 0) → ❌ Unacceptable
 - **Action:** Escalate to CISO, implement mitigation immediately
-
 
 **Exit Strategy Types Explained:**
 
@@ -417,7 +402,6 @@ print(f"   Row {row}: {service_name} -> {exit_strategy}")
 - **Cloud-to-Cloud 90%+:** Maximizes flexibility, minimizes lock-in to specific infrastructure
 - **Hybrid 5-10%:** Allows for data sovereignty edge cases without over-committing to on-prem
 - **On-Premises <5%:** On-prem defeats cloud benefits; only acceptable if TCO justifies it
-
 
 ### Section 2: DORA PoC Testing Compliance
 
@@ -438,7 +422,6 @@ print(f"   Row {row}: {service_name} -> {exit_strategy}")
 - These MUST have exit strategies tested via Proof-of-Concept (PoC) annually
 - DORA Article 28.6 requirement for financial institutions
 
-
 **PoC Test Result Values:**
 
 - **Pass:** PoC successfully demonstrated data export and service migration
@@ -446,12 +429,10 @@ print(f"   Row {row}: {service_name} -> {exit_strategy}")
 - **In Progress:** PoC started but not completed (counts as "Overdue" if past due date)
 - **Fail:** PoC attempted but failed (requires remediation plan)
 
-
 **Overdue Calculation:**
 
 - Script compares `PoC Test Next Due` date (Column N in IMP-5.23.4 Sheet 7) against today's date
 - If Next Due < Today AND Result ≠ Pass → **Overdue** (escalate to CISO)
-
 
 **Example Interpretation:**
 ```
@@ -498,14 +479,12 @@ EXECUTIVE ACTION REQUIRED:
    - Export Tested = No (for Critical services)
    - Exit Strategy = On-Premises (without TCO justification)
 
-
 3. **Executive Actions:**
 
    - Critical Lock-In → Immediate migration planning (add to risk register)
    - PoC Fail → Root cause analysis, remediation plan to CISO
    - Export Not Tested → Schedule export test within 30 days
    - On-Premises without justification → Re-evaluate strategy or document TCO
-
 
 ---
 
@@ -631,11 +610,9 @@ High Priority (Next 90 Days):
 - Attach: Sheet 1 (Exit Strategy Dashboard) screenshot
 - Attach: Sheet 2 (Risk Overview) filtered to Critical/High risks only
 
-
 **Recommendations:**
 
 - Copy from Sheet 3 (Recommendations), Priority 1-2 only
-
 
 **Next Review:** [DATE] (Quarterly cycle)
 
@@ -1005,7 +982,6 @@ Row 19-24: POC TESTING METRICS
 - D: 12 (Status symbols)
 - E: 25 (Policy targets)
 
-
 **Conditional Formatting:**
 
 | Condition | Cell Range | Fill Color | Font Color |
@@ -1336,18 +1312,15 @@ wb.properties.version = "2.0"
 - Add vendor concentration risk metrics (from IMP-5.23.2)
 - Add configuration compliance summary (from IMP-5.23.3)
 
-
 **Version 2.2 (Q3 2026):**
 
 - Quarterly trend charts (compare last 4 quarters)
 - Email automation (send dashboard to distribution list)
 
-
 **Version 3.0 (Q4 2026):**
 
 - Real-time dashboard (web-based, not Excel)
 - Integration with CMDB/ITSM for live data
-
 
 ---
 

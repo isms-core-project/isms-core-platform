@@ -36,7 +36,6 @@
 - Compliance: Legal/Compliance Officer
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -45,7 +44,6 @@
 - ISMS-CTX-A.8.2-3-5 (Authentication & PAM Technology Landscape) *if created*
 - ISO/IEC 27001:2022 Controls A.8.2, A.8.3, A.8.5
 - ISO/IEC 27002:2022 (Implementation Guidance)
-
 
 ---
 
@@ -59,7 +57,6 @@ This policy establishes [Organization]'s requirements for authentication securit
 - **A.8.2 - Privileged Access Rights**: Restriction and management of privileged access
 - **A.8.3 - Information Access Restriction**: Technical enforcement of access controls
 
-
 **Scope**: All authentication mechanisms, privileged accounts, and technical access controls across all systems, platforms, and environments owned or operated by [Organization].
 
 **Purpose**: Define WHAT authentication and access controls are required and WHO is accountable. Implementation procedures (HOW) are documented in ISMS-IMP-A.8.2-3-5.
@@ -70,7 +67,6 @@ This policy establishes [Organization]'s requirements for authentication securit
 
 - **Mandatory**: Swiss FADP (Art. 8), EU GDPR (Art. 32), ISO 27001:2022
 - **Conditional**: FINMA, DORA, NIS2 (Art. 21(2)(e) - MFA mandate), PCI DSS
-
 
 ---
 
@@ -97,13 +93,11 @@ This policy establishes [Organization]'s requirements for authentication securit
 - All deployment models (on-premises, cloud, hybrid, SaaS)
 - All user types (employees, contractors, vendors, customers where applicable)
 
-
 **Out of Scope**:
 
 - Physical access controls (addressed in A.7.x Physical Security)
 - Network segmentation details (addressed in A.8.20-22 Network Security)
 - Cryptographic key management (addressed in A.8.24 Cryptography)
-
 
 ## Statement of Applicability (SoA) Independence
 
@@ -112,7 +106,6 @@ Each control maintains independent applicability:
 - A.8.5 may be applicable without A.8.2 (standard user authentication only)
 - A.8.2 requires A.8.5 (privileged access needs authentication)
 - A.8.3 requires both A.8.5 and A.8.2 (enforcement needs authentication and privilege definition)
-
 
 ---
 
@@ -140,7 +133,6 @@ Each control maintains independent applicability:
 - Breach detection: Passwords checked against known breach databases (e.g., Have I Been Pwned API or equivalent); compromised passwords require immediate reset
 - No password reuse: Minimum 24 password history
 
-
 **Verification**: Password policy enforcement validated via identity provider configuration exports; breach detection alerts reviewed weekly.
 
 ## Multi-Factor Authentication (MFA)
@@ -152,7 +144,6 @@ Each control maintains independent applicability:
 - All access to sensitive data (personal data, financial, intellectual property)
 - All external-facing applications with authentication
 - All cloud platform administrative consoles
-
 
 **Acceptable MFA Methods** (in order of preference with phishing resistance rating):
 
@@ -171,7 +162,6 @@ Each control maintains independent applicability:
 - All users: 95%+ MFA enrollment within 12 months of policy adoption
 - Remote access: 100% MFA enforcement
 
-
 **Baseline Assessment**: Prior to target enforcement, [Organization] SHALL establish current MFA coverage baseline via identity provider enrollment reports. Baseline documented in Workbook 2; gap closure plan required if baseline <80%.
 
 **Deployment Roadmap**: If current MFA coverage is below target, deployment milestones SHALL be documented in Workbook 2 with target dates (e.g., 80% by Month 3, 90% by Month 6, 95% by Month 12). Progress tracked quarterly.
@@ -187,7 +177,6 @@ Each control maintains independent applicability:
 - Reduces password fatigue and improves security posture
 - Enables centralized access revocation upon termination
 
-
 **Exceptions**: Applications without SSO capability require documented exception with compensating controls (e.g., individual MFA, enhanced monitoring).
 
 **Verification**: SSO application inventory maintained in Workbook 1; integration percentage tracked quarterly.
@@ -201,7 +190,6 @@ All authentication events SHALL be logged:
 - Password changes and resets
 - Account lockouts and unlocks
 - Session creation and termination
-
 
 **Verification**: Authentication logs reviewed via SIEM integration; anomalies investigated within 24 hours.
 
@@ -217,7 +205,6 @@ All authentication events SHALL be logged:
 - **Need-to-Know**: Access only to information required for specific tasks
 - **Separation of Duties**: Critical functions split across multiple individuals
 - **Time-Limited Access**: Just-in-Time (JIT) provisioning where possible
-
 
 ## Privileged Account Classification
 
@@ -235,13 +222,11 @@ All authentication events SHALL be logged:
 - Tier 1 accounts SHALL NEVER authenticate to Tier 2 systems
 - Separate credentials required per tier (e.g., john.doe.t0, john.doe.t1)
 
-
 **Tier Isolation Enforcement**:
 
 - Technical controls: Conditional Access policies, GPO restrictions, or firewall rules preventing cross-tier authentication
 - Monitoring: SIEM alerts configured for tier violation attempts
 - PAW deployment: Tier 0 Privileged Access Workstations physically or logically separated from standard network
-
 
 **Implementation Status Documentation**: Admin Tiering deployment phase (planning, pilot, partial enforcement, full enforcement) SHALL be documented in Workbook 3. If phased deployment, compensating controls documented for non-enforced tiers.
 
@@ -258,7 +243,6 @@ All authentication events SHALL be logged:
 - Session recording: Tier 0 sessions recorded; Tier 1 recording recommended
 - Just-in-Time access: Temporary privilege elevation with automatic revocation
 - Credential rotation: Service account passwords rotated per defined schedule
-
 
 **Credential Rotation Requirements**:
 
@@ -277,7 +261,6 @@ All authentication events SHALL be logged:
 - Session recording: Tier 0 sessions recorded via PAM or equivalent; recordings retained per Section 8.3
 - Just-in-Time (JIT): Privilege elevation requests logged; automatic revocation after defined period
 
-
 **Deployment Status Documentation**: PAM deployment phase (evaluation, pilot, Tier 0 onboarding, Tier 1 onboarding, full operation) SHALL be documented in Workbook 3. If PAM not fully operational, compensating controls (e.g., manual credential rotation, alternative session logging) SHALL be documented with target deployment completion date.
 
 **Verification**: PAM solution deployment status documented in Workbook 3; vaulted account percentage tracked; session recording samples reviewed quarterly by IT Security Manager.
@@ -290,7 +273,6 @@ All authentication events SHALL be logged:
 - Immediately: Upon role change, termination, or security incident
 - Annually: Full privileged access audit with external validation
 
-
 **Review Process**:
 
 - Access review campaigns initiated via identity governance tool or manual process
@@ -298,7 +280,6 @@ All authentication events SHALL be logged:
 - Review period: 10 business days to complete review
 - Non-response: Automated reminder at day 5; escalation to reviewer's manager at day 8; access suspended at day 15 if no response
 - Attestation: Reviewer confirms each access is still required; removal requests processed within 48 hours
-
 
 **Verification**: Quarterly access reviews documented in Workbook 4 with attestation signatures; review completion rates tracked as KPI (target: 100%); sample attestations retained for audit.
 
@@ -310,7 +291,6 @@ All authentication events SHALL be logged:
 - Multi-person authorization required for break-glass use (dual control)
 - All break-glass usage logged, alerted, and reviewed within 24 hours
 - Credentials rotated immediately after use
-
 
 **Periodic Testing**: Break-glass accounts tested semi-annually (Q1 and Q3, e.g., January and July) to ensure credentials work and procedures are current. Testing documented with date, tester, successful authentication confirmation, and post-test credential rotation.
 
@@ -329,7 +309,6 @@ All authentication events SHALL be logged:
 - **Attribute-Based Access Control (ABAC)**: Context-aware access where supported
 - **Data Classification Alignment**: Access restrictions match data sensitivity
 
-
 ## Technical Access Controls
 
 **Operating System Access**:
@@ -338,20 +317,17 @@ All authentication events SHALL be logged:
 - Privileged commands restricted to authorized administrators
 - Local administrator rights removed from standard users
 
-
 **Database Access**:
 
 - Direct database access restricted to DBAs
 - Application access via service accounts with minimum privileges
 - Sensitive columns encrypted or masked for non-privileged access
 
-
 **Application Access**:
 
 - Role-based access within applications
 - Sensitive functions require additional authentication (step-up MFA)
 - Session timeouts enforced:
-
 
 | Classification | Idle Timeout | Absolute Timeout |
 |---------------|--------------|------------------|
@@ -368,20 +344,17 @@ All authentication events SHALL be logged:
 - Rate limiting enforced
 - Sensitive APIs require additional authorization
 
-
 **Cloud Resource Access**:
 
 - Cloud IAM policies follow least privilege
 - Cross-account access restricted and logged
 - Resource-level permissions enforced
 
-
 ## Network-Based Access Restrictions
 
 - Network segmentation separates trust zones
 - Firewall rules enforce access boundaries
 - Network Access Control (NAC) verifies endpoint compliance before access
-
 
 ## Access Control Testing
 
@@ -390,7 +363,6 @@ All authentication events SHALL be logged:
 - Annual penetration testing includes access control bypass attempts
 - Quarterly permission audits for critical systems
 - Automated compliance scanning for configuration drift
-
 
 **Verification**: Penetration test reports document access control effectiveness; findings remediated per risk rating.
 
@@ -405,7 +377,6 @@ All authentication events SHALL be logged:
 - Review privileged access security metrics quarterly
 - Escalation point for major privileged access incidents
 
-
 ## Chief Information Security Officer (CISO)
 
 - Overall accountability for authentication and access security
@@ -413,7 +384,6 @@ All authentication events SHALL be logged:
 - Approve Admin Tiering Model implementation
 - Approve privileged access exceptions (Medium/High risk)
 - Review quarterly privileged access reports
-
 
 **Delegation**: CISO may delegate approval authority to Deputy CISO or IT Security Manager for operational decisions. Delegated approvals require retrospective CISO review within 5 business days.
 
@@ -425,7 +395,6 @@ All authentication events SHALL be logged:
 - Approve low-risk exceptions
 - Coordinate incident response for credential compromise
 
-
 ## Identity & Access Management (IAM) Team
 
 - Manage identity provider and SSO infrastructure
@@ -433,7 +402,6 @@ All authentication events SHALL be logged:
 - Maintain MFA enrollment and support
 - Execute access provisioning and deprovisioning
 - Generate access certification reports
-
 
 ## System Administrators
 
@@ -443,7 +411,6 @@ All authentication events SHALL be logged:
 - Report access control anomalies
 - Participate in access reviews for owned systems
 
-
 ## All Users
 
 - Protect authentication credentials
@@ -451,7 +418,6 @@ All authentication events SHALL be logged:
 - Complete MFA enrollment within required timeframe
 - Not share accounts or credentials
 - Not attempt to bypass access controls
-
 
 ---
 
@@ -465,13 +431,11 @@ All authentication events SHALL be logged:
 - Privileged access activity monitored in real-time
 - Authentication failures correlated in SIEM
 
-
 **Periodic Assessment**:
 
 - Quarterly: Privileged access review completion
 - Quarterly: MFA coverage metrics
 - Annual: Full authentication and access control assessment
-
 
 ## Exception Management
 
@@ -481,7 +445,6 @@ All authentication events SHALL be logged:
 - Risk assessment required for Medium/High risk exceptions
 - Compensating controls mandatory for all exceptions
 - Maximum exception duration: 12 months (renewable with re-approval)
-
 
 **Exception Approval Authority**:
 
@@ -508,13 +471,11 @@ All authentication events SHALL be logged:
 - Bypassing security controls
 - Tier isolation violations
 
-
 **Phishing Simulation Failures** (within rolling 12-month period):
 
 - 1 failure: Targeted awareness training (within 7 days)
 - 2 failures: Manager notification + additional training (within 5 days)
 - 3+ failures: Privileged access suspended; standard access restricted pending demonstrated improvement
-
 
 **Verification**: Non-compliance incidents tracked in security incident register; response timelines auditable.
 
@@ -576,7 +537,6 @@ Evidence required to demonstrate this policy is adequately documented and approv
 - ✅ Roles and responsibilities assigned
 - ✅ Assessment workbook references documented (ISMS-IMP-A.8.2-3-5)
 
-
 **Stage 2 (Operational Effectiveness) Evidence:**
 
 Evidence required to demonstrate this policy is operationally effective:
@@ -615,7 +575,6 @@ Evidence required to demonstrate this policy is operationally effective:
 - Privileged session recordings: 12 months minimum
 - Assessment workbooks: Current + 2 prior versions
 
-
 ---
 
 # Annex A: Admin Tiering Quick Reference
@@ -638,13 +597,11 @@ Evidence required to demonstrate this policy is operationally effective:
 - Tier 1 accounts on Tier 2 systems
 - Daily work (email, browsing) on PAWs
 
-
 **ALWAYS**:
 
 - Separate credentials per tier
 - Different passwords per tier account
 - Dedicated PAWs for Tier 0 administration
-
 
 ## Tier Violation Response
 

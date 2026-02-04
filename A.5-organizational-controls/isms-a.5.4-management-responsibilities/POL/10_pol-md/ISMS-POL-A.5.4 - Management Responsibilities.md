@@ -33,14 +33,12 @@
 - Secondary: Chief Information Officer (CIO)
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-POL-A.5.1 (Information Security Policy - via A.5.1-2-6.1-2)
 - ISMS-IMP-A.5.4 (Implementation Guidance)
 - ISO/IEC 27001:2022 Control A.5.4
-
 
 ---
 
@@ -76,14 +74,12 @@ This policy establishes [Organization]'s requirements for management responsibil
 - Policy enforcement expectations
 - Security performance oversight
 
-
 **This Policy Does NOT Address** (HOW - see ISMS-IMP-A.5.4):
 
 - Specific management review procedures
 - Assessment questionnaire details
 - KPI calculation methodologies
 - Training program curricula
-
 
 ---
 
@@ -99,7 +95,6 @@ All management personnel SHALL demonstrate active commitment to information secu
 - Participating in security awareness activities
 - Acknowledging and recognizing security-conscious behavior
 - Allocating time for security-related activities
-
 
 **Resource Allocation**:
 
@@ -124,7 +119,6 @@ Disputes over resource adequacy escalate per Section "Escalation Path."
 - Escalating security concerns appropriately
 - Not requesting or approving policy bypasses without formal exception
 
-
 **Verification**: Management commitment assessed annually via ISMS-IMP-A.5.4.1 Management Commitment Assessment workbook, measured against objective criteria:
 
 - Attendance at mandatory security reviews (≥80% attendance required)
@@ -146,7 +140,6 @@ Management SHALL foster a positive security culture by:
 - Reporting security concerns without hesitation
 - Treating security as a business priority, not a hindrance
 
-
 **Encouraging Reporting**:
 
 - Creating an environment where personnel feel safe reporting security issues
@@ -154,13 +147,11 @@ Management SHALL foster a positive security culture by:
 - Not penalizing good-faith security reporting
 - Recognizing employees who identify security improvements
 
-
 **Continuous Improvement**:
 
 - Participating in post-incident reviews
 - Supporting lessons learned implementation
 - Advocating for security improvements based on risk
-
 
 **Recognition Program**: Management SHALL implement recognition for security-conscious behaviour:
 
@@ -181,7 +172,6 @@ Management SHALL ensure personnel under their authority comply with information 
 - Verifying understanding of role-specific security responsibilities
 - Confirming acknowledgment of acceptable use policies
 
-
 **Ongoing Oversight**:
 
 - Monitoring for completion of mandatory security training via:
@@ -193,13 +183,11 @@ Management SHALL ensure personnel under their authority comply with information 
 - Including security compliance in performance evaluations where role includes security responsibilities (defined in role description)
 - Conducting periodic security discussions in team meetings
 
-
 **Offboarding**:
 
 - Ensuring timely access revocation for departing personnel
 - Verifying return of organizational assets
 - Confirming data handling obligations post-employment
-
 
 **Verification**: Personnel compliance tracked via ISMS-IMP-A.5.4 Compliance Oversight workbook.
 
@@ -228,13 +216,11 @@ Participation tracked in ISMS-IMP-A.5.4.3 Leadership Dashboard.
 - Proposing security improvements
 - Reporting resource constraints affecting security
 
-
 **Decision Authority**:
 
 - Approving risk treatment decisions within delegated authority
 - Accepting residual risks with documented justification
 - Prioritizing security investments based on business impact
-
 
 ---
 
@@ -255,7 +241,6 @@ Participation tracked in ISMS-IMP-A.5.4.3 Leadership Dashboard.
 - Security concerns: Team Lead → Department Head → CISO → Executive Management
 - Resource requests: Team Lead → Department Head → Executive Management → CISO (advisory)
 - Policy exceptions: Requestor → CISO → Executive Management (for approval)
-
 
 ---
 
@@ -290,13 +275,11 @@ Exceptions to management responsibility requirements are NOT generally acceptabl
 - Temporary delegation during extended absence (documented handover required)
 - Role transition periods (maximum 30 days overlap)
 
-
 **Not Acceptable**:
 
 - Delegating all security responsibilities to subordinates
 - Refusing participation in management reviews
 - Exemption from security policies applicable to personnel
-
 
 ## Remediation for Non-Compliance
 
@@ -308,7 +291,6 @@ When management personnel fail to meet their security responsibilities:
 - Repeated policy enforcement failures: Performance management process initiated (HR involvement per [HR Policy Reference])
 - Refusal to participate in mandatory reviews: Escalation to Executive Management for role suitability review
 
-
 **Gap Tracking**: All management responsibility gaps recorded in central ISMS Gap Register (per ISMS-IMP-00 Gap Management Process) with:
 
 - Finding description and severity
@@ -316,7 +298,6 @@ When management personnel fail to meet their security responsibilities:
 - Remediation plan with milestones
 - Target closure date
 - Escalation path if unresolved within 60 days
-
 
 **Escalation Timeline**: Management responsibility gaps unresolved after 60 days automatically escalate to Executive Management for resolution decision.
 
@@ -339,7 +320,6 @@ When management personnel fail to meet their security responsibilities:
 - **Triggers**: Organizational changes, audit findings, regulatory updates
 - **Reviewers**: CISO, HR Director, selected Department Heads
 - **Approval**: Executive Management
-
 
 ---
 
@@ -369,7 +349,6 @@ Evidence required to demonstrate this policy is adequately documented and approv
 - ✅ Training completion requirements specified
 - ✅ Roles and responsibilities assigned (Section 3)
 
-
 **Stage 2 (Operational Effectiveness) Evidence:**
 
 Evidence required to demonstrate this policy is operationally effective:
@@ -380,7 +359,6 @@ Evidence required to demonstrate this policy is operationally effective:
 - Security budget allocation evidence
 - Policy enforcement examples (anonymized)
 - Security culture survey results
-
 
 ---
 

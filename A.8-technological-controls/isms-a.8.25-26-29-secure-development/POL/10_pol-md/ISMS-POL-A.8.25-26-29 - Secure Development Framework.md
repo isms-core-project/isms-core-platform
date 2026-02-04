@@ -48,13 +48,11 @@ This policy establishes [Organization]'s Secure Development Framework, implement
 - Acquired applications requiring customization or integration
 - Infrastructure-as-Code (IaC) and configuration management code
 
-
 **Development Activities**:
 
 - New application development
 - Application enhancements and security patches
 - Application modernization and cloud migration
-
 
 **Development Models**:
 
@@ -62,19 +60,16 @@ This policy establishes [Organization]'s Secure Development Framework, implement
 - Outsourced development (contractors, offshore teams)
 - Hybrid development models
 
-
 **SDLC Methodologies**:
 
 - Waterfall, Agile/Scrum, DevOps/DevSecOps
 - Continuous delivery and continuous deployment (CI/CD)
-
 
 ## Out of Scope
 
 - Commercial Off-The-Shelf (COTS) software without customization (covered by vendor security assessment)
 - Production vulnerability management post-deployment (covered by ISMS-POL-A.8.8)
 - Operational security monitoring (covered by ISMS-POL-A.8.15-16)
-
 
 ---
 
@@ -105,7 +100,6 @@ This policy establishes [Organization]'s Secure Development Framework, implement
 - Critical business function or financial transaction processing
 - Payment card information (PCI DSS scope)
 
-
 **Medium-Risk Applications** meet ANY of these criteria:
 
 - Processes Internal Use data
@@ -113,13 +107,11 @@ This policy establishes [Organization]'s Secure Development Framework, implement
 - Internal-only access
 - Important but not critical business function
 
-
 **Low-Risk Applications** meet ALL of these criteria:
 
 - Processes only Public data
 - No PII, no sensitive business data
 - Non-critical business function
-
 
 ## Security Requirements Specification (A.8.26)
 
@@ -147,7 +139,6 @@ This policy establishes [Organization]'s Secure Development Framework, implement
 **Threat Modeling Methodology**:
 High-Risk applications SHALL use a structured threat modeling methodology (e.g., STRIDE, PASTA, or Attack Trees). Threat modeling templates and guidance are provided in **ISMS-IMP-A.8.25-26-29-S1 (Security Requirements Process)**.
 
-
 ## Secure Development Lifecycle Integration (A.8.25)
 
 [Organization] SHALL integrate security activities into all SDLC phases.
@@ -169,7 +160,6 @@ High-Risk applications SHALL use a structured threat modeling methodology (e.g.,
 - Deploy security tools (SAST, SCA, secret scanning)
 - Track and remediate security defects
 - Complete developer security training
-
 
 ## Security Testing Requirements (A.8.29)
 
@@ -246,7 +236,6 @@ Security testing tools SHALL be selected based on criteria documented in **ISMS-
 - **Access to contractor tools**: [Organization] SHALL maintain read-only access to contractor SAST/DAST platforms or receive exported reports
 - **Periodic audits**: High-Risk outsourced projects SHALL undergo security review by [Organization] Security Architects at major milestones (design approval, pre-production)
 - **Contractual audit rights**: Contracts SHALL include [Organization] right to audit contractor security practices upon 30-day notice
-
 
 ## Developer Security Training (A.8.25)
 
@@ -397,7 +386,6 @@ Assessment procedures are documented in **ISMS-IMP-A.8.25-26-29-S5 (Secure Devel
 - Proposed compensating controls
 - Timeline for achieving full compliance
 
-
 **Approval Authority**:
 
 | Application Risk | Approval Authority |
@@ -416,12 +404,10 @@ Assessment procedures are documented in **ISMS-IMP-A.8.25-26-29-S5 (Secure Devel
 - Significant SDLC methodology or technology changes
 - Audit findings requiring policy updates
 
-
 **Update Authority**:
 
 - Minor updates (clarifications, references): CISO approval
 - Major updates (scope, requirements changes): Full approval chain
-
 
 ---
 
@@ -434,18 +420,15 @@ Assessment procedures are documented in **ISMS-IMP-A.8.25-26-29-S5 (Secure Devel
 - Controls: A.8.25, A.8.26, A.8.29
 - Requirements: Documented policies, procedures, evidence of implementation
 
-
 **Swiss Federal Data Protection Act (FADP/nDSG)**
 
 - Article 8: Technical and organizational measures for data protection
 - Article 26: Security by design and by default
 
-
 **EU General Data Protection Regulation (GDPR)**
 
 - Article 25: Data protection by design and by default
 - Article 32: Security of processing
-
 
 ## Conditional Compliance (Tier 2)
 

@@ -44,7 +44,6 @@ This guidance covers:
 - **Network Services Discovery** (A.8.21): DNS, DHCP, NTP, proxy services, authentication services (RADIUS/TACACS+), monitoring services
 - **Network Segmentation Discovery** (A.8.22): VLANs, subnets, security zones, trust boundaries, firewall rulesets
 
-
 ## Target Audience
 
 - Network administrators and engineers
@@ -52,14 +51,12 @@ This guidance covers:
 - ISMS implementation teams
 - Infrastructure teams responsible for network documentation
 
-
 ## Prerequisites
 
 - Administrative access to network management systems
 - Access to network documentation (if available)
 - Understanding of [Organization]'s network topology (high-level)
 - Authorization to perform network scanning activities
-
 
 ---
 
@@ -86,13 +83,11 @@ Phase 4: Data Consolidation & Validation
 - **Validated Data**: Cross-reference multiple sources to ensure accuracy
 - **Technology-Agnostic**: Works for any network architecture (traditional, SDN, cloud, hybrid)
 
-
 ## Timeline
 
 - **Initial Discovery** (comprehensive): 2-4 weeks
 - **Periodic Discovery** (quarterly updates): 1-3 days
 - **Continuous Discovery** (automated): Ongoing
-
 
 ---
 
@@ -105,7 +100,6 @@ Phase 4: Data Consolidation & Validation
 - **Cloud Console Access**: AWS/Azure/GCP console access (if using cloud infrastructure)
 - **Network Documentation Access**: Access to existing diagrams, IP address management (IPAM) systems
 - **Scanning Authorization**: Documented approval to perform network scans (avoid triggering IDS/IPS)
-
 
 ## Recommended Tools
 
@@ -139,7 +133,6 @@ Phase 4: Data Consolidation & Validation
 - Familiarity with cloud platforms (if applicable)
 - Data analysis skills (consolidating results from multiple sources)
 
-
 ---
 
 # Step-by-Step Procedures
@@ -155,7 +148,6 @@ Identify the network boundaries to be discovered:
 - **Wireless networks**: Guest Wi-Fi, corporate Wi-Fi, IoT networks
 - **Out-of-band management**: Management VLANs, console servers
 
-
 **Deliverable**: Discovery scope document listing all network segments
 
 ### Identify Discovery Constraints
@@ -166,7 +158,6 @@ Document constraints that may affect discovery:
 - **Security controls**: IDS/IPS that may block scans
 - **Regulatory compliance**: Networks with special compliance requirements (PCI DSS, HIPAA)
 
-
 **Deliverable**: Discovery constraints matrix
 
 ### Obtain Scanning Authorization
@@ -175,7 +166,6 @@ Obtain written approval for scanning activities:
 - **Change ticket** (if required by change management process)
 - **Security team notification** (to whitelist scanning source IPs)
 - **Stakeholder communication** (notify network admins, service owners)
-
 
 **Deliverable**: Scanning authorization document
 
@@ -266,7 +256,6 @@ nmap -sn 10.1.0.0/24 -oA scan_results
 - If results are incomplete, ensure firewall rules allow scanning traffic
 - If nmap is blocked by IDS/IPS, coordinate with security team to whitelist scan source
 
-
 ---
 
 ### SNMP-Based Discovery
@@ -337,7 +326,6 @@ snmpwalk -v2c -c public 10.1.0.1 ipNetToMediaNetAddress | \
 - Check SNMP community string (default "public" is often changed for security)
 - Ensure SNMP ACLs allow queries from your scanning host
 - If SNMPv3 fails, verify username and authentication credentials
-
 
 ---
 
@@ -503,7 +491,6 @@ nfdump -R /var/cache/nfdump/flows -s dstport/bytes -n 20
 - NetFlow data is sampled (1:100 or 1:1000) - full traffic isn't captured
 - Use NetFlow as supplementary discovery method, not primary
 
-
 ---
 
 ## Phase 3: Manual Discovery
@@ -520,7 +507,6 @@ nfdump -R /var/cache/nfdump/flows -s dstport/bytes -n 20
 - Service catalogs (DNS, DHCP, NTP servers, etc.)
 - Vendor contracts (for managed services)
 
-
 **Extract Asset Data from Documentation**:
 
 - Device hostnames and IP addresses
@@ -529,13 +515,11 @@ nfdump -R /var/cache/nfdump/flows -s dstport/bytes -n 20
 - Management interfaces (how to access devices)
 - Service dependencies (what depends on what)
 
-
 **Validate Documentation Accuracy**:
 
 - Compare documented assets against discovered assets
 - Flag discrepancies (documented but not discovered = potentially offline or decommissioned)
 - Flag discoveries not documented (shadow IT, undocumented changes)
-
 
 **Deliverable**: Consolidated asset list from documentation sources
 
@@ -594,13 +578,11 @@ nfdump -R /var/cache/nfdump/flows -s dstport/bytes -n 20
 - [ ] Out-of-band management network (console servers, IPMI/iLO)
 - [ ] Legacy equipment (old switches still in rack but powered off)
 
-
 **Document with Photos**:
 
 - Rack layout photos (label device positions)
 - Cable management (identify uplink connections)
 - Serial numbers and model numbers (for warranty tracking)
-
 
 **Deliverable**: Site survey report with photos and notes
 
@@ -617,7 +599,6 @@ nfdump -R /var/cache/nfdump/flows -s dstport/bytes -n 20
 - Administrator interviews
 - Physical site surveys
 
-
 **Deduplication Strategy**:
 1. **Normalize IP addresses**: Ensure consistent format (remove leading zeros, standardize notation)
 2. **Normalize hostnames**: Convert to lowercase, remove domain suffixes if inconsistent
@@ -629,7 +610,6 @@ nfdump -R /var/cache/nfdump/flows -s dstport/bytes -n 20
 - **Spreadsheets** (Excel, Google Sheets): Simple, manual deduplication
 - **Database** (SQLite, PostgreSQL): Import all sources, use SQL to deduplicate
 - **Python scripts**: Automate deduplication logic
-
 
 **Example Deduplication Python Script**:
 ```python
@@ -695,7 +675,6 @@ grep -vE '^([0-9]{1,3}\.){3}[0-9]{1,3}$' consolidated_inventory.csv
 - Ensure VLAN IDs are in valid range (1-4094)
 - Flag reserved VLANs (1 = default, 1002-1005 = reserved)
 
-
 **Validate Subnet CIDR Notation**:
 ```bash
 # Check for valid CIDR notation
@@ -707,7 +686,6 @@ grep -vE '^([0-9]{1,3}\.){3}[0-9]{1,3}/[0-9]{1,2}$' subnets.csv
 - Device IDs referenced in multiple sheets must exist in master inventory
 - Zone IDs must be consistent across segmentation documentation
 - Service IDs must link to valid services
-
 
 **Reachability Testing**:
 ```bash
@@ -733,20 +711,17 @@ done < <(tail -n +2 consolidated_inventory.csv | cut -d',' -f1,2)
 - Investigate ownership and purpose
 - Add to official inventory if legitimate
 
-
 **Identify Documented-But-Not-Discovered Assets**:
 
 - Devices in documentation but not found by scanning (possibly offline, decommissioned, or unreachable)
 - Investigate status (powered off, network issue, scheduled for decommissioning)
 - Update documentation if decommissioned
 
-
 **Identify Missing Critical Information**:
 
 - Devices without hostname (assign naming convention)
 - Devices without location (physical or logical location unknown)
 - Devices without owner (assign responsibility)
-
 
 **Deliverable**: Gap analysis report
 
@@ -838,7 +813,6 @@ terraform show -json | jq '.values.root_module.resources[] | select(.type=="aws_
 - **Nagios**: Parse Nagios configuration for monitored hosts
 - **PRTG**: Export device list from PRTG sensor tree
 
-
 **Example: Export from Zabbix**:
 ```bash
 # Zabbix API call to get all hosts
@@ -866,13 +840,11 @@ curl -X POST https://zabbix.example.com/api_jsonrpc.php \
 - Device inventory populates **WB1: Infrastructure Inventory** workbook
 - Discovery identifies unmanaged/rogue devices requiring security review
 
-
 ## Integration with A.8.21 (Network Services)
 
 - Discovered services feed into **Network Services Catalog** (WB3)
 - Service enumeration (DNS, DHCP, NTP) from automated scans
 - Port scanning identifies unexpected services requiring investigation
-
 
 ## Integration with A.8.22 (Network Segregation)
 
@@ -880,14 +852,12 @@ curl -X POST https://zabbix.example.com/api_jsonrpc.php \
 - Network topology discovery informs segmentation architecture review
 - ARP tables and traffic flow reveal inter-zone communication patterns
 
-
 ## Integration with Other ISMS Controls
 
 - **A.8.8 (Vulnerability Management)**: Discovery feeds into vulnerability scanning scope
 - **A.8.9 (Configuration Management)**: Discovered devices must have baseline configurations
 - **A.8.15 (Logging)**: Discovered devices should be checked for logging capability
 - **A.8.16 (Monitoring)**: Discovered devices should be enrolled in monitoring systems
-
 
 ---
 
@@ -901,7 +871,6 @@ curl -X POST https://zabbix.example.com/api_jsonrpc.php \
 - [ ] Administrator interviews conducted
 - [ ] Physical site surveys completed (if applicable)
 
-
 ## Accuracy Checks
 
 - [ ] IP address format validation passed
@@ -909,7 +878,6 @@ curl -X POST https://zabbix.example.com/api_jsonrpc.php \
 - [ ] Reachability testing completed (ping test or equivalent)
 - [ ] Cross-reference consistency validated (no orphaned references)
 - [ ] Deduplication completed (no duplicate IP addresses or hostnames)
-
 
 ## Coverage Metrics
 Calculate discovery coverage:
@@ -919,7 +887,6 @@ Coverage % = (Discovered Devices / Expected Devices) * 100
 
 - If Coverage < 90%, investigate gaps
 - If Coverage > 110%, investigate false positives or scope creep
-
 
 ---
 
@@ -934,7 +901,6 @@ Coverage % = (Discovered Devices / Expected Devices) * 100
 - Perform scans during maintenance windows if blocking cannot be avoided
 - Use passive discovery methods (NetFlow, SNMP polling) as alternative
 
-
 ---
 
 ## Pitfall: SNMP Access Denied
@@ -946,7 +912,6 @@ Coverage % = (Discovered Devices / Expected Devices) * 100
 - If SNMPv2c is disabled, use SNMPv3 with proper authentication
 - Test SNMP access with simple query first (sysName) before full walk
 
-
 ---
 
 ## Pitfall: Cloud Discovery Misses Resources
@@ -956,7 +921,6 @@ Coverage % = (Discovered Devices / Expected Devices) * 100
 - Loop through all regions (AWS: `aws ec2 describe-regions`, Azure: `az account list-locations`)
 - Loop through all accounts (AWS Organizations, Azure Management Groups)
 - Use cloud-native discovery tools (AWS Config, Azure Resource Graph)
-
 
 ---
 
@@ -968,7 +932,6 @@ Coverage % = (Discovered Devices / Expected Devices) * 100
 - Cross-reference multiple attributes (IP + MAC + hostname)
 - Manually review devices with similar names (e.g., router1, router01, router-1)
 
-
 ---
 
 ## Pitfall: Discovery Disrupts Production
@@ -979,7 +942,6 @@ Coverage % = (Discovered Devices / Expected Devices) * 100
 - Scan outside business hours
 - Coordinate with operations team before scanning
 - Use passive discovery methods where possible
-
 
 ---
 
@@ -999,7 +961,6 @@ Document the following:
   - Gaps identified (undocumented devices, unreachable documented devices)
 - **Next Discovery Date**: Scheduled date for next periodic discovery
 
-
 **Template**: See `/templates/network_discovery_report_template.docx`
 
 ---
@@ -1017,7 +978,6 @@ The consolidated inventory should be stored in a structured format (CSV or datab
 - Discovery Date
 - Discovery Method
 
-
 **Recommended Additional Fields**:
 
 - MAC Address
@@ -1029,7 +989,6 @@ The consolidated inventory should be stored in a structured format (CSV or datab
 - Device Owner/Responsible Team
 - Criticality (Critical, High, Medium, Low)
 - Status (Active, Offline, Decommissioned)
-
 
 **Storage Location**: [Organization] CMDB / Network Documentation Repository
 
@@ -1046,7 +1005,6 @@ Document all gaps identified during discovery:
 - **Responsible Person**: Who will remediate
 - **Target Date**: When gap will be closed
 
-
 **Template**: See `/templates/network_discovery_gap_analysis_template.xlsx`
 
 ---
@@ -1060,7 +1018,6 @@ Document all gaps identified during discovery:
 - **Documentation Drift**: Number of devices discovered but not documented (shadow IT indicator)
 - **Discovery Cycle Time**: Time required to complete discovery (target: reduce over time)
 
-
 ## Lessons Learned Capture
 After each discovery cycle, document:
 
@@ -1068,14 +1025,12 @@ After each discovery cycle, document:
 - What didn't work (blocked scans, access issues)
 - Improvements for next cycle (better tools, refined scope)
 
-
 ## Process Refinement
 
 - Review discovery process annually
 - Incorporate feedback from network admins and security team
 - Update tool recommendations based on new technologies
 - Automate repetitive tasks (scheduled scans, data consolidation)
-
 
 ---
 
@@ -1163,14 +1118,12 @@ gcloud dns managed-zones list                 # List DNS zones
 - Day 3: Obtain scanning authorization
 - Day 4-5: Prepare tools, test scanning in lab environment
 
-
 **Week 2: Automated Discovery**
 
 - Day 1-2: nmap scans (host discovery, service enumeration)
 - Day 3: SNMP walks (managed devices)
 - Day 4: Cloud infrastructure discovery (AWS/Azure/GCP)
 - Day 5: NetFlow analysis (if applicable)
-
 
 **Week 3: Manual Discovery**
 
@@ -1179,14 +1132,12 @@ gcloud dns managed-zones list                 # List DNS zones
 - Day 4: Physical site surveys (if applicable)
 - Day 5: Begin data consolidation
 
-
 **Week 4: Consolidation & Validation**
 
 - Day 1-2: Consolidate data from all sources
 - Day 3: Deduplication and validation
 - Day 4: Gap analysis
 - Day 5: Generate discovery report, update inventory
-
 
 ---
 
@@ -1197,7 +1148,6 @@ gcloud dns managed-zones list                 # List DNS zones
 - ISMS-IMP-A.8.20-21-22-S2 (Architecture Documentation) → Next process
 - ISMS-IMP-A.8.20-21-22-S3 (Device Hardening) → Uses inventory from this process
 - ISMS-POL-A.8.20-21-22, Section 3 (Governance & Operations) → Parent policy document
-
 
 **Revision History:**
 | Version | Date | Changes | Author |
@@ -1225,7 +1175,6 @@ This guidance covers:
 - **Network Services Discovery** (A.8.21): DNS, DHCP, NTP, proxy services, authentication services (RADIUS/TACACS+), monitoring services
 - **Network Segmentation Discovery** (A.8.22): VLANs, subnets, security zones, trust boundaries, firewall rulesets
 
-
 ## Target Audience
 
 - Network administrators and engineers
@@ -1233,14 +1182,12 @@ This guidance covers:
 - ISMS implementation teams
 - Infrastructure teams responsible for network documentation
 
-
 ## Prerequisites
 
 - Administrative access to network management systems
 - Access to network documentation (if available)
 - Understanding of [Organization]'s network topology (high-level)
 - Authorization to perform network scanning activities
-
 
 ---
 
@@ -1267,13 +1214,11 @@ Phase 4: Data Consolidation & Validation
 - **Validated Data**: Cross-reference multiple sources to ensure accuracy
 - **Technology-Agnostic**: Works for any network architecture (traditional, SDN, cloud, hybrid)
 
-
 ## Timeline
 
 - **Initial Discovery** (comprehensive): 2-4 weeks
 - **Periodic Discovery** (quarterly updates): 1-3 days
 - **Continuous Discovery** (automated): Ongoing
-
 
 ---
 
@@ -1286,7 +1231,6 @@ Phase 4: Data Consolidation & Validation
 - **Cloud Console Access**: AWS/Azure/GCP console access (if using cloud infrastructure)
 - **Network Documentation Access**: Access to existing diagrams, IP address management (IPAM) systems
 - **Scanning Authorization**: Documented approval to perform network scans (avoid triggering IDS/IPS)
-
 
 ## Recommended Tools
 
@@ -1320,7 +1264,6 @@ Phase 4: Data Consolidation & Validation
 - Familiarity with cloud platforms (if applicable)
 - Data analysis skills (consolidating results from multiple sources)
 
-
 ---
 
 # Step-by-Step Procedures
@@ -1336,7 +1279,6 @@ Identify the network boundaries to be discovered:
 - **Wireless networks**: Guest Wi-Fi, corporate Wi-Fi, IoT networks
 - **Out-of-band management**: Management VLANs, console servers
 
-
 **Deliverable**: Discovery scope document listing all network segments
 
 ### Identify Discovery Constraints
@@ -1347,7 +1289,6 @@ Document constraints that may affect discovery:
 - **Security controls**: IDS/IPS that may block scans
 - **Regulatory compliance**: Networks with special compliance requirements (PCI DSS, HIPAA)
 
-
 **Deliverable**: Discovery constraints matrix
 
 ### Obtain Scanning Authorization
@@ -1356,7 +1297,6 @@ Obtain written approval for scanning activities:
 - **Change ticket** (if required by change management process)
 - **Security team notification** (to whitelist scanning source IPs)
 - **Stakeholder communication** (notify network admins, service owners)
-
 
 **Deliverable**: Scanning authorization document
 
@@ -1447,7 +1387,6 @@ nmap -sn 10.1.0.0/24 -oA scan_results
 - If results are incomplete, ensure firewall rules allow scanning traffic
 - If nmap is blocked by IDS/IPS, coordinate with security team to whitelist scan source
 
-
 ---
 
 ### SNMP-Based Discovery
@@ -1518,7 +1457,6 @@ snmpwalk -v2c -c public 10.1.0.1 ipNetToMediaNetAddress | \
 - Check SNMP community string (default "public" is often changed for security)
 - Ensure SNMP ACLs allow queries from your scanning host
 - If SNMPv3 fails, verify username and authentication credentials
-
 
 ---
 
@@ -1684,7 +1622,6 @@ nfdump -R /var/cache/nfdump/flows -s dstport/bytes -n 20
 - NetFlow data is sampled (1:100 or 1:1000) - full traffic isn't captured
 - Use NetFlow as supplementary discovery method, not primary
 
-
 ---
 
 ## Phase 3: Manual Discovery
@@ -1701,7 +1638,6 @@ nfdump -R /var/cache/nfdump/flows -s dstport/bytes -n 20
 - Service catalogs (DNS, DHCP, NTP servers, etc.)
 - Vendor contracts (for managed services)
 
-
 **Extract Asset Data from Documentation**:
 
 - Device hostnames and IP addresses
@@ -1710,13 +1646,11 @@ nfdump -R /var/cache/nfdump/flows -s dstport/bytes -n 20
 - Management interfaces (how to access devices)
 - Service dependencies (what depends on what)
 
-
 **Validate Documentation Accuracy**:
 
 - Compare documented assets against discovered assets
 - Flag discrepancies (documented but not discovered = potentially offline or decommissioned)
 - Flag discoveries not documented (shadow IT, undocumented changes)
-
 
 **Deliverable**: Consolidated asset list from documentation sources
 
@@ -1775,13 +1709,11 @@ nfdump -R /var/cache/nfdump/flows -s dstport/bytes -n 20
 - [ ] Out-of-band management network (console servers, IPMI/iLO)
 - [ ] Legacy equipment (old switches still in rack but powered off)
 
-
 **Document with Photos**:
 
 - Rack layout photos (label device positions)
 - Cable management (identify uplink connections)
 - Serial numbers and model numbers (for warranty tracking)
-
 
 **Deliverable**: Site survey report with photos and notes
 
@@ -1798,7 +1730,6 @@ nfdump -R /var/cache/nfdump/flows -s dstport/bytes -n 20
 - Administrator interviews
 - Physical site surveys
 
-
 **Deduplication Strategy**:
 1. **Normalize IP addresses**: Ensure consistent format (remove leading zeros, standardize notation)
 2. **Normalize hostnames**: Convert to lowercase, remove domain suffixes if inconsistent
@@ -1810,7 +1741,6 @@ nfdump -R /var/cache/nfdump/flows -s dstport/bytes -n 20
 - **Spreadsheets** (Excel, Google Sheets): Simple, manual deduplication
 - **Database** (SQLite, PostgreSQL): Import all sources, use SQL to deduplicate
 - **Python scripts**: Automate deduplication logic
-
 
 **Example Deduplication Python Script**:
 ```python
@@ -1876,7 +1806,6 @@ grep -vE '^([0-9]{1,3}\.){3}[0-9]{1,3}$' consolidated_inventory.csv
 - Ensure VLAN IDs are in valid range (1-4094)
 - Flag reserved VLANs (1 = default, 1002-1005 = reserved)
 
-
 **Validate Subnet CIDR Notation**:
 ```bash
 # Check for valid CIDR notation
@@ -1888,7 +1817,6 @@ grep -vE '^([0-9]{1,3}\.){3}[0-9]{1,3}/[0-9]{1,2}$' subnets.csv
 - Device IDs referenced in multiple sheets must exist in master inventory
 - Zone IDs must be consistent across segmentation documentation
 - Service IDs must link to valid services
-
 
 **Reachability Testing**:
 ```bash
@@ -1914,20 +1842,17 @@ done < <(tail -n +2 consolidated_inventory.csv | cut -d',' -f1,2)
 - Investigate ownership and purpose
 - Add to official inventory if legitimate
 
-
 **Identify Documented-But-Not-Discovered Assets**:
 
 - Devices in documentation but not found by scanning (possibly offline, decommissioned, or unreachable)
 - Investigate status (powered off, network issue, scheduled for decommissioning)
 - Update documentation if decommissioned
 
-
 **Identify Missing Critical Information**:
 
 - Devices without hostname (assign naming convention)
 - Devices without location (physical or logical location unknown)
 - Devices without owner (assign responsibility)
-
 
 **Deliverable**: Gap analysis report
 
@@ -2019,7 +1944,6 @@ terraform show -json | jq '.values.root_module.resources[] | select(.type=="aws_
 - **Nagios**: Parse Nagios configuration for monitored hosts
 - **PRTG**: Export device list from PRTG sensor tree
 
-
 **Example: Export from Zabbix**:
 ```bash
 # Zabbix API call to get all hosts
@@ -2047,13 +1971,11 @@ curl -X POST https://zabbix.example.com/api_jsonrpc.php \
 - Device inventory populates **WB1: Infrastructure Inventory** workbook
 - Discovery identifies unmanaged/rogue devices requiring security review
 
-
 ## Integration with A.8.21 (Network Services)
 
 - Discovered services feed into **Network Services Catalog** (WB3)
 - Service enumeration (DNS, DHCP, NTP) from automated scans
 - Port scanning identifies unexpected services requiring investigation
-
 
 ## Integration with A.8.22 (Network Segregation)
 
@@ -2061,14 +1983,12 @@ curl -X POST https://zabbix.example.com/api_jsonrpc.php \
 - Network topology discovery informs segmentation architecture review
 - ARP tables and traffic flow reveal inter-zone communication patterns
 
-
 ## Integration with Other ISMS Controls
 
 - **A.8.8 (Vulnerability Management)**: Discovery feeds into vulnerability scanning scope
 - **A.8.9 (Configuration Management)**: Discovered devices must have baseline configurations
 - **A.8.15 (Logging)**: Discovered devices should be checked for logging capability
 - **A.8.16 (Monitoring)**: Discovered devices should be enrolled in monitoring systems
-
 
 ---
 
@@ -2082,7 +2002,6 @@ curl -X POST https://zabbix.example.com/api_jsonrpc.php \
 - [ ] Administrator interviews conducted
 - [ ] Physical site surveys completed (if applicable)
 
-
 ## Accuracy Checks
 
 - [ ] IP address format validation passed
@@ -2090,7 +2009,6 @@ curl -X POST https://zabbix.example.com/api_jsonrpc.php \
 - [ ] Reachability testing completed (ping test or equivalent)
 - [ ] Cross-reference consistency validated (no orphaned references)
 - [ ] Deduplication completed (no duplicate IP addresses or hostnames)
-
 
 ## Coverage Metrics
 Calculate discovery coverage:
@@ -2100,7 +2018,6 @@ Coverage % = (Discovered Devices / Expected Devices) * 100
 
 - If Coverage < 90%, investigate gaps
 - If Coverage > 110%, investigate false positives or scope creep
-
 
 ---
 
@@ -2115,7 +2032,6 @@ Coverage % = (Discovered Devices / Expected Devices) * 100
 - Perform scans during maintenance windows if blocking cannot be avoided
 - Use passive discovery methods (NetFlow, SNMP polling) as alternative
 
-
 ---
 
 ## Pitfall: SNMP Access Denied
@@ -2127,7 +2043,6 @@ Coverage % = (Discovered Devices / Expected Devices) * 100
 - If SNMPv2c is disabled, use SNMPv3 with proper authentication
 - Test SNMP access with simple query first (sysName) before full walk
 
-
 ---
 
 ## Pitfall: Cloud Discovery Misses Resources
@@ -2137,7 +2052,6 @@ Coverage % = (Discovered Devices / Expected Devices) * 100
 - Loop through all regions (AWS: `aws ec2 describe-regions`, Azure: `az account list-locations`)
 - Loop through all accounts (AWS Organizations, Azure Management Groups)
 - Use cloud-native discovery tools (AWS Config, Azure Resource Graph)
-
 
 ---
 
@@ -2149,7 +2063,6 @@ Coverage % = (Discovered Devices / Expected Devices) * 100
 - Cross-reference multiple attributes (IP + MAC + hostname)
 - Manually review devices with similar names (e.g., router1, router01, router-1)
 
-
 ---
 
 ## Pitfall: Discovery Disrupts Production
@@ -2160,7 +2073,6 @@ Coverage % = (Discovered Devices / Expected Devices) * 100
 - Scan outside business hours
 - Coordinate with operations team before scanning
 - Use passive discovery methods where possible
-
 
 ---
 
@@ -2180,7 +2092,6 @@ Document the following:
   - Gaps identified (undocumented devices, unreachable documented devices)
 - **Next Discovery Date**: Scheduled date for next periodic discovery
 
-
 **Template**: See `/templates/network_discovery_report_template.docx`
 
 ---
@@ -2198,7 +2109,6 @@ The consolidated inventory should be stored in a structured format (CSV or datab
 - Discovery Date
 - Discovery Method
 
-
 **Recommended Additional Fields**:
 
 - MAC Address
@@ -2210,7 +2120,6 @@ The consolidated inventory should be stored in a structured format (CSV or datab
 - Device Owner/Responsible Team
 - Criticality (Critical, High, Medium, Low)
 - Status (Active, Offline, Decommissioned)
-
 
 **Storage Location**: [Organization] CMDB / Network Documentation Repository
 
@@ -2227,7 +2136,6 @@ Document all gaps identified during discovery:
 - **Responsible Person**: Who will remediate
 - **Target Date**: When gap will be closed
 
-
 **Template**: See `/templates/network_discovery_gap_analysis_template.xlsx`
 
 ---
@@ -2241,7 +2149,6 @@ Document all gaps identified during discovery:
 - **Documentation Drift**: Number of devices discovered but not documented (shadow IT indicator)
 - **Discovery Cycle Time**: Time required to complete discovery (target: reduce over time)
 
-
 ## Lessons Learned Capture
 After each discovery cycle, document:
 
@@ -2249,14 +2156,12 @@ After each discovery cycle, document:
 - What didn't work (blocked scans, access issues)
 - Improvements for next cycle (better tools, refined scope)
 
-
 ## Process Refinement
 
 - Review discovery process annually
 - Incorporate feedback from network admins and security team
 - Update tool recommendations based on new technologies
 - Automate repetitive tasks (scheduled scans, data consolidation)
-
 
 ---
 
@@ -2344,14 +2249,12 @@ gcloud dns managed-zones list                 # List DNS zones
 - Day 3: Obtain scanning authorization
 - Day 4-5: Prepare tools, test scanning in lab environment
 
-
 **Week 2: Automated Discovery**
 
 - Day 1-2: nmap scans (host discovery, service enumeration)
 - Day 3: SNMP walks (managed devices)
 - Day 4: Cloud infrastructure discovery (AWS/Azure/GCP)
 - Day 5: NetFlow analysis (if applicable)
-
 
 **Week 3: Manual Discovery**
 
@@ -2360,14 +2263,12 @@ gcloud dns managed-zones list                 # List DNS zones
 - Day 4: Physical site surveys (if applicable)
 - Day 5: Begin data consolidation
 
-
 **Week 4: Consolidation & Validation**
 
 - Day 1-2: Consolidate data from all sources
 - Day 3: Deduplication and validation
 - Day 4: Gap analysis
 - Day 5: Generate discovery report, update inventory
-
 
 ---
 
@@ -2378,7 +2279,6 @@ gcloud dns managed-zones list                 # List DNS zones
 - ISMS-IMP-A.8.20-21-22-S2 (Architecture Documentation) → Next process
 - ISMS-IMP-A.8.20-21-22-S3 (Device Hardening) → Uses inventory from this process
 - ISMS-POL-A.8.20-21-22-S5 (Assessment Framework) → Parent policy document
-
 
 **Revision History:**
 | Version | Date | Changes | Author |

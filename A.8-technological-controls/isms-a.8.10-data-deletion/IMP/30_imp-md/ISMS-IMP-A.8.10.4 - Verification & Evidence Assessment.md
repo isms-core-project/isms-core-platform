@@ -58,7 +58,6 @@ Organizations must prove deletion occurred **without retaining the deleted data 
 - ❌ **Wrong Approach:** Keep no evidence → Cannot prove compliance to auditors
 - ✅ **Correct Approach:** Retain **metadata about deletion** (who/what/when/how) + test deletion **methods** (not actual data)
 
-
 **Regulatory Context:**
 
 - **EU GDPR (Article 5.1.f):** "Integrity and confidentiality" principle - organizations must demonstrate data processing security including deletion
@@ -67,7 +66,6 @@ Organizations must prove deletion occurred **without retaining the deleted data 
 - **Swiss FADP (Article 7):** Data security principle - deletion must be demonstrably effective
 - **ISO 27001 Clause 9.1:** "Monitoring, measurement, analysis and evaluation" - deletion effectiveness must be measurable
 
-
 **Business Impact:**
 
 - **Audit Failures:** Without verifiable evidence, ISO 27001 certification audits may fail A.8.10 compliance
@@ -75,7 +73,6 @@ Organizations must prove deletion occurred **without retaining the deleted data 
 - **Legal Liability:** Data breach investigations examine whether "deleted" data was truly deleted - weak verification = extended liability
 - **Operational Efficiency:** Systematic verification prevents "delete but not really deleted" scenarios (data in backups, archives, shadow IT)
 - **Trust & Reputation:** Customers/partners increasingly require deletion certificates and audit evidence as part of due diligence
-
 
 ## Who Should Complete This Assessment
 
@@ -89,7 +86,6 @@ Organizations must prove deletion occurred **without retaining the deleted data 
 - Audit requirements for ISO 27001, GDPR, FADP, and industry-specific regulations
 - Third-party vendor certificate validation procedures
 
-
 **Support Roles:**
 
 - **IT Operations:** For deletion logging system configuration and forensic test execution
@@ -98,7 +94,6 @@ Organizations must prove deletion occurred **without retaining the deleted data 
 - **Data Protection Officer:** For GDPR Article 17 erasure evidence requirements
 - **External Auditors:** For certification audit evidence acceptance criteria (if available)
 - **Forensic Specialists:** For deletion method testing and verification procedures (if in-house capability exists)
-
 
 ## Time Estimate
 
@@ -114,7 +109,6 @@ Organizations must prove deletion occurred **without retaining the deleted data 
 - **Evidence Collection (1-2 hours):** Gather supporting documentation
 - **Quality Review (1 hour):** Final validation and approval preparation
 
-
 **Pro Tip:** If [Organization] has no formal verification testing program, the assessment will reveal this gap quickly (~2 hours). The remaining time should be spent documenting current ad-hoc verification practices and planning remediation.
 
 ## Connection to Policy
@@ -127,7 +121,6 @@ This assessment implements **ISMS-POL-A.8.10, Section 2.4 (Verification & Eviden
 - **Certificate Validation:** Third-party deletion certificates must be validated for completeness and authenticity
 - **Audit Trail:** Complete reconstruction of "who deleted what, when, how, and with what result" must be possible
 
-
 **Policy Authority:** Chief Information Security Officer (CISO) / Compliance Officer  
 **Compliance Status:** Mandatory for all systems processing personal data, confidential data, or data subject to regulatory retention requirements
 
@@ -139,18 +132,15 @@ This assessment implements **ISMS-POL-A.8.10, Section 2.4 (Verification & Eviden
 - **A.8.10.2 (Deletion Methods):** Identifies which deletion methods require verification testing
 - **A.8.10.3 (Third-Party & Cloud):** Identifies vendors from whom deletion certificates must be obtained
 
-
 **Dependencies:**
 
 - **From A.8.10.1:** Evidence retention schedules (typically 7 years for deletion logs per Swiss OR)
 - **From A.8.10.2:** List of deletion methods requiring forensic verification (e.g., crypto-erasure, SSD sanitization)
 - **From A.8.10.3:** Vendor list requiring certificate validation and deletion SLA monitoring
 
-
 **Feeds Into:**
 
 - **A.8.10.5 (Compliance Dashboard):** Verification metrics, audit readiness score, evidence quality ratings
-
 
 ---
 
@@ -168,7 +158,6 @@ Before starting this assessment, ensure you have access to:
 - [ ] Backup and archive systems (to verify deletion from these systems as well)
 - [ ] Third-party vendor portals (to retrieve deletion certificates)
 
-
 **Documentation:**
 
 - [ ] Deletion logging policy and configuration standards
@@ -178,14 +167,12 @@ Before starting this assessment, ensure you have access to:
 - [ ] Previous deletion verification test results (if available)
 - [ ] Audit findings related to deletion verification (if any)
 
-
 **Subject Matter Experts:**
 
 - [ ] IT Operations (for logging system configuration)
 - [ ] Security Operations (for log analysis and forensic testing)
 - [ ] Compliance Team (for evidence quality standards)
 - [ ] External Auditor (for audit trail acceptance criteria - if available)
-
 
 ## Required Knowledge
 
@@ -196,7 +183,6 @@ Before starting this assessment, ensure you have access to:
 - Basic understanding of NIST SP 800-88 verification methodologies
 - Knowledge of cryptographic deletion verification (if crypto-erasure is used)
 
-
 **Regulatory & Compliance:**
 
 - Understanding of GDPR Article 17 evidence requirements for erasure requests
@@ -204,14 +190,12 @@ Before starting this assessment, ensure you have access to:
 - Knowledge of evidence retention requirements (Swiss OR, GDPR Article 30)
 - Audit trail best practices for compliance audits
 
-
 **Operational:**
 
 - How [Organization] currently logs deletion events (if at all)
 - Where deletion evidence is stored and who has access
 - Whether forensic testing is performed and by whom
 - How third-party deletion certificates are validated (if at all)
-
 
 ## Tools & Resources
 
@@ -221,14 +205,12 @@ Before starting this assessment, ensure you have access to:
 - NIST SP 800-88 Rev. 1: Guidelines for Media Sanitization (Appendix A - Verification)
 - GDPR Article 17 guidance: Evidence of erasure requirements
 
-
 **Reference Materials (Included in Workbook):**
 
 - Log completeness checklist (20 required fields)
 - Forensic testing effectiveness criteria
 - Certificate quality scoring rubric
 - Audit trail reconstruction test procedure
-
 
 ---
 
@@ -246,7 +228,6 @@ Before starting this assessment, ensure you have access to:
    - Document tamper protection mechanisms (if any)
    - Assess log completeness using 20-item checklist
 
-
 2. **Sheet 3 - Verification Testing Program**
 
    - Document whether forensic testing is performed
@@ -254,7 +235,6 @@ Before starting this assessment, ensure you have access to:
    - Analyze recent test results (pass/fail rates)
    - Identify which deletion methods are tested vs. untested
    - Assess testing coverage against NIST SP 800-88 requirements
-
 
 **Phase 2: Evidence Quality Assessment (3-4 hours)**
 
@@ -266,7 +246,6 @@ Before starting this assessment, ensure you have access to:
    - Assess evidence integrity protection (versioning, audit trails)
    - Document backup and disaster recovery for evidence repository
 
-
 4. **Sheet 5 - Certificate Management**
 
    - Review third-party deletion certificates received
@@ -274,7 +253,6 @@ Before starting this assessment, ensure you have access to:
    - Document certificate validation procedures (or lack thereof)
    - Check certificate retention and accessibility
    - Identify vendors with missing or low-quality certificates
-
 
 **Phase 3: Audit Readiness Testing (2-3 hours)**
 
@@ -286,7 +264,6 @@ Before starting this assessment, ensure you have access to:
    - Assess time required to produce evidence for auditor
    - Document gaps in reconstruction capability
 
-
 **Phase 4: Summary & Evidence (2-3 hours)**
 
 6. **Sheet 7 - Verification Dashboard**
@@ -296,20 +273,17 @@ Before starting this assessment, ensure you have access to:
    - Identify top 3 critical gaps
    - Document remediation priorities
 
-
 7. **Sheet 8 - Evidence Register**
 
    - Document all evidence collected during assessment
    - Link evidence to specific findings
    - Ensure evidence is accessible for audit
 
-
 8. **Sheet 9 - Approval Sign-Off**
 
    - Complete three-level approval workflow
    - Attach supporting evidence
    - Archive completed assessment
-
 
 ## Parallel vs. Sequential Approach
 
@@ -319,13 +293,11 @@ Before starting this assessment, ensure you have access to:
 - Easier to understand verification infrastructure holistically
 - Allows learning from early sheets to inform later sheets
 
-
 **Parallel (For Mature Organizations):**
 
 - Assign different team members to different sheets
 - Faster completion (5-7 hours total with 3+ people)
 - Requires pre-coordination to avoid duplicate effort
-
 
 ---
 
@@ -344,7 +316,6 @@ Before starting this assessment, ensure you have access to:
 - Mark Gap Severity (Column D) as "High" or "Critical"
 - This is a common finding for organizations starting A.8.10 implementation
 
-
 **Q: "How complete do logs need to be to score 'Good' in Evidence Quality (Column F)?"**
 
 - A: Use the 20-item checklist in the reference table below the assessment rows
@@ -352,7 +323,6 @@ Before starting this assessment, ensure you have access to:
 - "Fair" = 11-15 items captured (55-79%)
 - "Poor" = 6-10 items captured (30-54%)
 - "None" = <6 items captured (<30%)
-
 
 **Q: "What's the difference between 'Tamper Protection' values?"**
 
@@ -363,13 +333,11 @@ Before starting this assessment, ensure you have access to:
   - **Immutable:** WORM storage, blockchain, or append-only systems
   - **N/A:** Not applicable (e.g., no logging system exists yet)
 
-
 **Q: "Should we assess deletion logs from third-party vendors (e.g., cloud providers)?"**
 
 - A: **No** - Third-party deletion logging is assessed in Sheet 5 (Certificate Management)
 - Sheet 2 focuses on [Organization]'s own logging infrastructure
 - However, if [Organization] ingests vendor logs into a centralized SIEM, assess that integration here
-
 
 **Common Mistakes to Avoid:**
 
@@ -378,18 +346,15 @@ Before starting this assessment, ensure you have access to:
    - Deletion logs must specifically capture deletion events
    - General "data access" logs are not sufficient
 
-
 2. ❌ **Assuming application-level logging is sufficient**
 
    - Application logs may not survive application deletion/decommissioning
    - Centralized logging ensures logs outlive the systems they monitor
 
-
 3. ❌ **Forgetting to assess log retention periods**
 
    - Logs must be retained per ISMS-POL-A.8.10, Section 2.1 (Retention & Deletion Triggers) schedules (typically 7 years)
    - 30-day log retention = audit failure
-
 
 ## Sheet 3: Verification Testing Program (13 Assessment Rows)
 
@@ -412,7 +377,6 @@ Instead of testing whether production data was deleted (which requires keeping t
 - Mark Gap Severity (Column D) as "High" - forensic testing is mandatory per NIST SP 800-88
 - Use Assessor Notes (Column Q) to propose testing program: "Recommend engaging third-party forensic lab or developing in-house capability"
 
-
 **Q: "What's the minimum testing frequency to be compliant?"**
 
 - A: Per NIST SP 800-88 and ISMS-POL-A.8.10, Section 2.4 (Verification & Evidence Requirements):
@@ -420,14 +384,12 @@ Instead of testing whether production data was deleted (which requires keeping t
   - **Periodic verification:** Re-test annually or after method/system changes
   - **Incident-driven:** Re-test if deletion failure suspected
 
-
 **Q: "Who performs forensic testing - IT Operations or external labs?"**
 
 - A: Either approach is acceptable:
   - **In-house:** Requires forensic tools (e.g., EnCase, FTK, dd, hdparm) and trained staff
   - **External:** Third-party forensic labs provide certificates of sanitization
   - Document approach in Column I (Responsible Party)
-
 
 **Q: "What's considered a 'pass' for a forensic test?"**
 
@@ -437,7 +399,6 @@ Instead of testing whether production data was deleted (which requires keeping t
   - **Cloud/VMs:** Verify no snapshots/backups remain post-deletion
   - Failure = ANY remnant data discoverable = method is ineffective
 
-
 **Common Mistakes to Avoid:**
 
 1. ❌ **Confusing vendor certification with forensic testing**
@@ -445,18 +406,15 @@ Instead of testing whether production data was deleted (which requires keeping t
    - Vendor certificates (e.g., "AWS says they deleted it") ≠ forensic verification
    - Forensic testing requires [Organization] or third-party lab to verify
 
-
 2. ❌ **Testing only hard drives, ignoring SSDs**
 
    - SSDs require different verification approaches (crypto-erasure validation or destruction)
    - Testing HDD methods on SSDs = false confidence
 
-
 3. ❌ **One-time testing years ago**
 
    - Testing results expire (systems change, methods degrade)
    - Annual re-testing is minimum per NIST SP 800-88
-
 
 ## Sheet 4: Evidence Repository Assessment (13 Assessment Rows)
 
@@ -474,7 +432,6 @@ Instead of testing whether production data was deleted (which requires keeping t
   - Legal hold suspension records
   - Audit trail queries/reports
 
-
 **Q: "Where should evidence be stored?"**
 
 - A: Acceptable options (document actual approach in Column Q):
@@ -484,7 +441,6 @@ Instead of testing whether production data was deleted (which requires keeping t
   - Records management system (RMS)
   - Unacceptable: Personal drives, email attachments, uncontrolled file shares
 
-
 **Q: "How long must we retain deletion evidence?"**
 
 - A: Per ISMS-POL-A.8.10, Section 2.1 (Retention & Deletion Triggers) and applicable regulations:
@@ -492,7 +448,6 @@ Instead of testing whether production data was deleted (which requires keeping t
   - **GDPR compliance:** Evidence may be needed for 3+ years after deletion to defend against enforcement actions
   - **Best practice:** 7 years for most deletion evidence
   - Document retention period in Column S (Log Retention Period)
-
 
 **Q: "Who should have access to the evidence repository?"**
 
@@ -503,7 +458,6 @@ Instead of testing whether production data was deleted (which requires keeping t
   - NOT general IT staff, NOT business users
   - Document in Column I (Responsible Party) and assess access controls
 
-
 **Common Mistakes to Avoid:**
 
 1. ❌ **Storing evidence in the same system as the deleted data**
@@ -511,18 +465,15 @@ Instead of testing whether production data was deleted (which requires keeping t
    - If the system is decommissioned, evidence is lost
    - Evidence repository must be independent and long-lived
 
-
 2. ❌ **No backups of the evidence repository**
 
    - Evidence loss = unable to prove compliance
    - Evidence repository must have backup/DR per Sheet 4 checklist
 
-
 3. ❌ **Deleting deletion evidence too early**
 
    - "We deleted the logs about deletions" = audit failure
    - Evidence retention must match or exceed original data retention
-
 
 ## Sheet 5: Certificate Management (13 Assessment Rows)
 
@@ -539,7 +490,6 @@ Instead of testing whether production data was deleted (which requires keeping t
   - **Poor (2 points):** Email confirmation only ("we deleted it")
   - **None (1 point):** No certificate provided
 
-
 **Q: "How do we validate certificates are authentic?"**
 
 - A: Validation procedures should include:
@@ -549,7 +499,6 @@ Instead of testing whether production data was deleted (which requires keeping t
   - Store original certificate (not just screenshot/summary)
   - Document validation in Column Q (Assessor Notes)
 
-
 **Common Mistakes to Avoid:**
 
 1. ❌ **Accepting email confirmations as sufficient**
@@ -557,12 +506,10 @@ Instead of testing whether production data was deleted (which requires keeping t
    - "Data deleted per your request" email ≠ formal certificate
    - Formal certificates are signed, dated, with method details
 
-
 2. ❌ **Not requesting certificates from vendors**
 
    - Assumption: "They deleted it per contract" without evidence
    - Always request formal deletion certificate
-
 
 ## Sheet 6: Audit Trail Completeness (13 Assessment Rows)
 
@@ -588,7 +535,6 @@ Instead of testing whether production data was deleted (which requires keeping t
   - **Poor:** Evidence incomplete even after 8+ hours
   - **None:** Cannot reconstruct (logs missing, not retained)
 
-
 ---
 
 # Evidence Collection
@@ -604,14 +550,12 @@ For each sheet, collect and document in Sheet 8 (Evidence Register):
 - [ ] Log retention policy document
 - [ ] Access control list for logging system
 
-
 **Sheet 3 (Verification Testing):**
 
 - [ ] Forensic test reports (most recent 3)
 - [ ] Testing procedure document
 - [ ] Test schedule showing annual/periodic testing
 - [ ] Forensic tool inventory (if in-house testing)
-
 
 **Sheet 4 (Evidence Repository):**
 
@@ -620,7 +564,6 @@ For each sheet, collect and document in Sheet 8 (Evidence Register):
 - [ ] Backup/DR procedures for evidence repository
 - [ ] Evidence repository system documentation
 
-
 **Sheet 5 (Certificate Management):**
 
 - [ ] Sample deletion certificates from 3 vendors (high/medium/low quality)
@@ -628,14 +571,12 @@ For each sheet, collect and document in Sheet 8 (Evidence Register):
 - [ ] Vendor contract clauses requiring certificates
 - [ ] Certificate request template
 
-
 **Sheet 6 (Audit Trail):**
 
 - [ ] Sample audit trail reconstruction test results
 - [ ] Time log for reconstruction exercise
 - [ ] Evidence chain of custody documentation
 - [ ] Gap analysis for incomplete reconstructions
-
 
 ## Evidence Quality Standards
 
@@ -647,7 +588,6 @@ For each sheet, collect and document in Sheet 8 (Evidence Register):
 - Traceable to source system
 - Stored in evidence repository (not just email)
 
-
 **Unacceptable Evidence:**
 
 - Verbal confirmations with no documentation
@@ -655,7 +595,6 @@ For each sheet, collect and document in Sheet 8 (Evidence Register):
 - Screenshots with no context
 - Draft policies "under development"
 - Evidence older than retention period
-
 
 ---
 
@@ -673,7 +612,6 @@ For each sheet, collect and document in Sheet 8 (Evidence Register):
 - Reference A.8.10.2 assessment to identify which methods need testing
 - Propose remediation timeline in Columns M-O
 
-
 ## Cargo Cult Compliance
 
 **Pitfall:** Assuming vendor certificates = sufficient proof without validation.
@@ -684,7 +622,6 @@ For each sheet, collect and document in Sheet 8 (Evidence Register):
 - Request formal certificates (not email confirmations)
 - Sample-test vendor claims (e.g., request proof of snapshot deletion)
 - Document validation procedures in Sheet 5
-
 
 ## Evidence Repository = File Share Dump
 
@@ -697,7 +634,6 @@ For each sheet, collect and document in Sheet 8 (Evidence Register):
 - Access controls must exist (not open to all staff)
 - Backups must protect evidence long-term
 
-
 ## One-Time Assessment Never Updated
 
 **Pitfall:** Complete assessment once, file it away, never revisit.
@@ -708,7 +644,6 @@ For each sheet, collect and document in Sheet 8 (Evidence Register):
 - Trigger updates after major deletion events
 - Feed results into A.8.10.5 dashboard for trend analysis
 - Include in annual ISMS management review
-
 
 ---
 
@@ -723,7 +658,6 @@ Before submitting assessment for approval (Sheet 9), verify:
 - [ ] Assessor Notes (Column Q) provided for Critical/High gaps
 - [ ] Evidence Register (Sheet 8) documents all supporting evidence
 
-
 **Accuracy:**
 
 - [ ] Current State reflects actual implementation (not aspirational)
@@ -731,14 +665,12 @@ Before submitting assessment for approval (Sheet 9), verify:
 - [ ] Remediation timelines realistic (Columns M-O)
 - [ ] Evidence linked correctly to findings
 
-
 **Audit Readiness:**
 
 - [ ] Can demonstrate completion to external auditor within 2 hours
 - [ ] Evidence accessible and traceable
 - [ ] Gaps documented with remediation plans
 - [ ] Summary Dashboard (Sheet 7) accurately reflects detailed findings
-
 
 ---
 
@@ -761,7 +693,6 @@ Before submitting assessment for approval (Sheet 9), verify:
 - Findings supported by evidence
 - Remediation plans documented
 
-
 **Level 2 → Level 3:**
 
 - Assessment findings validated against policy requirements
@@ -769,13 +700,11 @@ Before submitting assessment for approval (Sheet 9), verify:
 - Remediation priorities aligned with risk appetite
 - Evidence quality acceptable for external audit
 
-
 **Level 3 (Final):**
 
 - Critical gaps have approved remediation plans with budgets
 - Overall compliance status acceptable or improvement plan approved
 - Results ready for publication to A.8.10.5 dashboard
-
 
 ## Rejection Scenarios
 
@@ -786,7 +715,6 @@ Assessment may be rejected if:
 - ❌ Current State assessments appear inaccurate (too optimistic)
 - ❌ Verification testing coverage <50% of deletion methods (per A.8.10.2)
 - ❌ Deletion logs not retained per policy (typically 7 years)
-
 
 ---
 
@@ -841,14 +769,12 @@ Provide comprehensive user guidance and dropdown value definitions to ensure con
 - Target audience and time estimate
 - Connection to ISMS-POL-A.8.10, Section 2.4 (Verification & Evidence Requirements)
 
-
 **Section 2: The Verification Paradox (Rows 12-20)**
 
 - Explanation of verification challenge
 - Metadata over data principle
 - Method testing over data testing principle
 - Time-bound evidence retention principle
-
 
 **Section 3: How to Complete This Assessment (Rows 22-40)**
 
@@ -857,14 +783,12 @@ Provide comprehensive user guidance and dropdown value definitions to ensure con
 - Common pitfalls and how to avoid them
 - Quality checklist before approval
 
-
 **Section 4: Dropdown Value Definitions (Rows 42-120)**
 
 - Standard columns (A-Q) dropdown values with explanations
 - Extended columns (R-U) sheet-specific dropdown values
 - When to use N/A vs. specific values
 - Scoring impact of each dropdown choice
-
 
 **Section 5: Integration with Other A.8.10 Assessments (Rows 122-135)**
 
@@ -873,7 +797,6 @@ Provide comprehensive user guidance and dropdown value definitions to ensure con
 - Prerequisites from A.8.10.3 (vendor certificate requirements)
 - How results feed A.8.10.5 dashboard
 
-
 **Section 6: Reference Standards (Rows 137-150)**
 
 - NIST SP 800-88 verification methodology overview
@@ -881,14 +804,12 @@ Provide comprehensive user guidance and dropdown value definitions to ensure con
 - ISO 27001 Clause 9.1 monitoring requirements
 - Swiss OR evidence retention periods
 
-
 ## Formatting
 
 - Title: Bold, 16pt, Blue fill
 - Section headers: Bold, 12pt, Light blue fill
 - Dropdown definitions: Table format with alternating row colors
 - All text cells: Wrap text enabled
-
 
 ---
 
@@ -918,7 +839,6 @@ Evaluate the completeness, centralization, and reliability of deletion logging i
 - Immutable (WORM/blockchain)
 - N/A
 
-
 ## Assessment Rows (13 Total)
 
 **Pre-filled in Column A (Verification Area):**
@@ -947,7 +867,6 @@ Evaluate the completeness, centralization, and reliability of deletion logging i
 - [ ] Log storage capacity planning accounts for retention requirements
 - [ ] Backup and disaster recovery procedures exist for log systems
 
-
 **Log Content Completeness (5 items):**
 
 - [ ] Logs capture: Who deleted (user/system identity)
@@ -955,7 +874,6 @@ Evaluate the completeness, centralization, and reliability of deletion logging i
 - [ ] Logs capture: When deletion occurred (timestamp with timezone)
 - [ ] Logs capture: How deletion occurred (method: overwrite, crypto-erase, physical destruction)
 - [ ] Logs capture: Verification result (success/failure, certificate ID if applicable)
-
 
 **Log Management (5 items):**
 
@@ -965,7 +883,6 @@ Evaluate the completeness, centralization, and reliability of deletion logging i
 - [ ] Logs integrated into SIEM or security monitoring platform
 - [ ] Regular log review performed (quarterly minimum)
 
-
 **Regulatory Compliance (5 items):**
 
 - [ ] GDPR Article 30 compliance: Deletion activities documented
@@ -973,7 +890,6 @@ Evaluate the completeness, centralization, and reliability of deletion logging i
 - [ ] ISO 27001 Clause 9.1 compliance: Deletion monitoring operational
 - [ ] Logs support data subject erasure request evidence (GDPR Article 17)
 - [ ] Logs retained per legal requirements (Swiss OR: 7 years minimum)
-
 
 ## Reference Table: Required Log Fields
 
@@ -1009,20 +925,17 @@ Evaluate the completeness, centralization, and reliability of deletion logging i
 - Orange fill: 30-54% (6-10 fields)
 - Red fill: <30% (<6 fields)
 
-
 **Column T (Centralized System):**
 
 - Green text: "Yes"
 - Yellow text: "Partial"
 - Red text: "No"
 
-
 **Column U (Tamper Protection):**
 
 - Green text: "Immutable" or "Advanced"
 - Yellow text: "Basic"
 - Red text: "None"
-
 
 ---
 
@@ -1050,7 +963,6 @@ Evaluate whether [Organization] performs forensic testing to verify deletion met
 - After Each Use (Every deletion event)
 - On-Demand (Ad-hoc testing)
 
-
 **Column U - NIST Verification Level Dropdown:**
 
 - None (No verification)
@@ -1059,7 +971,6 @@ Evaluate whether [Organization] performs forensic testing to verify deletion met
 - Advanced (Full disk forensic scan)
 - Laboratory (Third-party forensic lab)
 - N/A
-
 
 ## Assessment Rows (13 Total)
 
@@ -1089,7 +1000,6 @@ Evaluate whether [Organization] performs forensic testing to verify deletion met
 - [ ] Responsible parties assigned (in-house or third-party lab)
 - [ ] Testing budget allocated and approved
 
-
 **Test Execution (5 items):**
 
 - [ ] Test datasets created with known data patterns
@@ -1097,7 +1007,6 @@ Evaluate whether [Organization] performs forensic testing to verify deletion met
 - [ ] Forensic analysis performed using industry-standard tools
 - [ ] Test results documented with screenshots/reports
 - [ ] Pass/fail criteria clearly defined per NIST
-
 
 **Forensic Tools & Capabilities (5 items):**
 
@@ -1107,7 +1016,6 @@ Evaluate whether [Organization] performs forensic testing to verify deletion met
 - [ ] SSD-specific tools for crypto-erase verification
 - [ ] Test lab environment isolated from production
 
-
 **Coverage & Completeness (5 items):**
 
 - [ ] All deletion methods in use tested (per A.8.10.2 inventory)
@@ -1115,7 +1023,6 @@ Evaluate whether [Organization] performs forensic testing to verify deletion met
 - [ ] SSD crypto-erase methods tested (if used)
 - [ ] Cloud/VM deletion methods tested (snapshot verification)
 - [ ] Physical destruction methods verified (if used)
-
 
 ## Reference Table: NIST SP 800-88 Verification Methods
 
@@ -1149,20 +1056,17 @@ Evaluate whether [Organization] performs forensic testing to verify deletion met
 - Yellow: "One-Time" (needs ongoing testing)
 - Red: "Never" (critical gap)
 
-
 **Column T (Test Pass Rate):**
 
 - Green: ≥95% pass rate
 - Yellow: 80-94% pass rate
 - Red: <80% pass rate
 
-
 **Column U (NIST Verification Level):**
 
 - Green: "Advanced" or "Laboratory"
 - Yellow: "Standard"
 - Red: "Basic" or "None"
-
 
 ---
 
@@ -1190,7 +1094,6 @@ Evaluate secure storage, retention, and access control for deletion evidence (lo
 - SIEM / Log Management System
 - Multiple Systems (Fragmented)
 
-
 **Column S - Access Control Level Dropdown:**
 
 - None (Open access)
@@ -1198,7 +1101,6 @@ Evaluate secure storage, retention, and access control for deletion evidence (lo
 - Role-Based (RBAC implemented)
 - Privileged (Restricted to compliance/audit team)
 - Time-Limited (External auditor access only)
-
 
 ## Assessment Rows (13 Total)
 
@@ -1228,7 +1130,6 @@ Evaluate secure storage, retention, and access control for deletion evidence (lo
 - [ ] Evidence indexed for rapid retrieval (searchable)
 - [ ] Repository capacity planning accounts for 7+ year retention
 
-
 **Access Controls (5 items):**
 
 - [ ] Access restricted to compliance/audit/legal personnel only
@@ -1236,7 +1137,6 @@ Evaluate secure storage, retention, and access control for deletion evidence (lo
 - [ ] Access logging tracks who accessed which evidence
 - [ ] External auditor access time-limited (e.g., 30-day audit window)
 - [ ] Evidence modification prevented (read-only or version-controlled)
-
 
 **Evidence Retention (5 items):**
 
@@ -1246,7 +1146,6 @@ Evaluate secure storage, retention, and access control for deletion evidence (lo
 - [ ] Certificates retained per vendor SLA + 3 years
 - [ ] DSR evidence retained minimum 3 years (GDPR enforcement window)
 
-
 **Backup & Disaster Recovery (5 items):**
 
 - [ ] Evidence repository backed up daily/weekly
@@ -1254,7 +1153,6 @@ Evaluate secure storage, retention, and access control for deletion evidence (lo
 - [ ] Backup retention matches evidence retention requirements
 - [ ] Disaster recovery tested annually
 - [ ] Recovery Time Objective (RTO) <24 hours for audit support
-
 
 ## Reference Table: Evidence Types & Retention
 
@@ -1275,20 +1173,17 @@ Evaluate secure storage, retention, and access control for deletion evidence (lo
 - Yellow: "SharePoint / Document Management System"
 - Red: "File Share" or "None" or "Multiple Systems (Fragmented)"
 
-
 **Column S (Access Control Level):**
 
 - Green: "Privileged" or "Time-Limited"
 - Yellow: "Role-Based"
 - Red: "Basic" or "None"
 
-
 **Column U (Evidence Retention Years):**
 
 - Green: ≥7 years
 - Yellow: 3-6 years
 - Red: <3 years
-
 
 ---
 
@@ -1342,13 +1237,11 @@ Evaluate quality and validation procedures for third-party deletion certificates
 - Yellow: 3.0-3.9 (Fair average)
 - Red: <3.0 (Poor average)
 
-
 **Column U (Missing Certificates Count):**
 
 - Green: 0 missing
 - Yellow: 1-5 missing
 - Red: >5 missing
-
 
 ---
 
@@ -1372,7 +1265,6 @@ Test ability to reconstruct complete deletion audit trail for external auditor: 
 - Mostly Ready (Evidence complete, 1-4 hours retrieval)
 - Partially Ready (Evidence incomplete or >4 hours retrieval)
 - Not Ready (Cannot reconstruct audit trail)
-
 
 ## Assessment Rows (13 Total)
 
@@ -1411,20 +1303,17 @@ Test ability to reconstruct complete deletion audit trail for external auditor: 
 - Yellow: 1-4 hours
 - Red: >4 hours
 
-
 **Column S (Evidence Completeness):**
 
 - Green: 100%
 - Yellow: 80-99%
 - Red: <80%
 
-
 **Column U (Audit Readiness):**
 
 - Green: "Fully Ready"
 - Yellow: "Mostly Ready"
 - Red: "Partially Ready" or "Not Ready"
-
 
 ---
 
@@ -1512,13 +1401,11 @@ Document all evidence collected during assessment to support audit defense.
 - Orange: "Partially Implemented"
 - Red: "Not Implemented"
 
-
 **Column D (Gap Severity):**
 
 - Red bold: "High" or "Critical"
 - Orange: "Medium"
 - Green: "None (No Gap)"
-
 
 **Column F (Evidence Quality):**
 
@@ -1526,13 +1413,11 @@ Document all evidence collected during assessment to support audit defense.
 - Yellow: "Fair"
 - Red: "Poor" or "None"
 
-
 **Column G (Compliance Status):**
 
 - Green: "Fully Compliant"
 - Yellow: "Substantially Compliant"
 - Red: "Non-Compliant" or "Partially Compliant"
-
 
 ---
 
@@ -1552,7 +1437,6 @@ Document all evidence collected during assessment to support audit defense.
    - Sheet 5: Quality Score, Certificates Count, Validation Exists, Missing Count
    - Sheet 6: Reconstruction Time, Completeness %, Chain of Custody, Readiness
 
-
 2. **Reference Tables:**
 
    - Sheet 2: 20 Required Log Fields table
@@ -1562,12 +1446,10 @@ Document all evidence collected during assessment to support audit defense.
    - Sheet 5: Certificate Quality Scoring Rubric table
    - Sheet 6: Reconstruction Test Procedure table
 
-
 3. **Assessment Row Pre-fills:**
 
    - Each sheet has specific 13 verification areas in Column A
    - Do NOT copy generic assessment rows from other controls
-
 
 4. **Dashboard Formulas (Sheet 7):**
 
@@ -1575,12 +1457,10 @@ Document all evidence collected during assessment to support audit defense.
    - Use AVERAGE, COUNTIF, conditional logic
    - No external workbook links (self-contained)
 
-
 5. **Conditional Formatting:**
 
    - Sheet-specific rules for extended columns R-U
    - Global rules for standard columns A-Q (consistent across all A.8.10 assessments)
-
 
 ## Integration with A.8.10.5 Dashboard
 

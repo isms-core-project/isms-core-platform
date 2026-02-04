@@ -35,7 +35,6 @@
 - Compliance: Legal/Compliance Officer
 - Final Authority: Executive Management (GL)
 
-
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -44,7 +43,6 @@
 - ISMS-IMP-A.8.16 (Implementation Guidance Suite)
 - ISO/IEC 27001:2022 Control A.8.16
 - ISO/IEC 27002:2022 Control 8.16
-
 
 ---
 
@@ -84,7 +82,6 @@ This policy establishes [Organization]'s requirements for monitoring activities 
 - Exception and incident management frameworks
 - Integration with [Organization]'s risk assessment and incident response processes
 
-
 ## What This Policy Does
 
 This policy:
@@ -95,7 +92,6 @@ This policy:
 - **References** applicable regulatory requirements per ISMS-POL-00
 - **Identifies** organizational roles and responsibilities for monitoring controls
 - **Provides** framework for managing exceptions and monitoring gaps
-
 
 ## What This Policy Does NOT Do
 
@@ -109,14 +105,12 @@ This policy does NOT:
 - **Replace risk assessment** (monitoring controls selected based on [Organization]'s risk treatment decisions)
 - **Define detailed incident response procedures** (see ISMS-POL-A.5.24-5.28 Incident Management)
 
-
 **Rationale**: Separating policy requirements from implementation guidance enables:
 
 - Policy stability despite evolving threat landscape and technology changes
 - Technical agility for tool updates and detection rule refinement without policy revision
 - Clear distinction between governance (policy) and execution (implementation)
 - Focused audit scope (auditors audit policy compliance, not technical implementation details)
-
 
 ## Scope
 
@@ -129,14 +123,12 @@ This policy does NOT:
 - All monitoring technologies regardless of vendor or deployment model (SIEM, IDS/IPS, NDR, EDR, UEBA, log management)
 - All third-party service providers with access to organizational systems or data
 
-
 **Out of Scope**:
 
 - Application performance monitoring for non-security purposes (covered under IT operations policies)
 - Business intelligence and analytics unrelated to security (covered under data analytics policies)
 - Network traffic optimization and capacity planning (covered under network management policies)
 - User productivity monitoring (covered under HR policies, distinct from security monitoring)
-
 
 **Critical Systems Requiring Mandatory Monitoring**:
 
@@ -148,7 +140,6 @@ This policy does NOT:
 - File servers containing business-critical or sensitive data
 - Security monitoring infrastructure itself (SIEM, IDS/IPS, EDR)
 - Cloud infrastructure and platform services (where [Organization] has monitoring visibility)
-
 
 ## Regulatory Applicability
 
@@ -184,7 +175,6 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - MITRE ATT&CK Framework (Detection tactics and techniques)
 - SANS Critical Security Controls
 
-
 **Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment documented in ISMS-POL-00. The most stringent requirements apply where multiple regulations overlap.
 
 ## Integration with ISMS
@@ -195,7 +185,6 @@ These frameworks inform implementation but do not constitute mandatory complianc
 - Monitoring gaps identified through risk assessment and documented in risk register
 - Risk treatment decisions determine monitoring scope and priority
 - Residual risks from monitoring limitations tracked and accepted by management
-
 
 **Related ISMS Controls**:
 
@@ -232,7 +221,6 @@ Monitoring platforms (SIEM, IDS/IPS, EDR, NDR, UEBA, or equivalent) SHALL provid
 - Secure log transmission (encrypted channels, authenticated sources)
 - Scalable collection supporting organizational growth
 
-
 **Analysis Capabilities**:
 
 - Real-time event correlation across multiple log sources
@@ -242,7 +230,6 @@ Monitoring platforms (SIEM, IDS/IPS, EDR, NDR, UEBA, or equivalent) SHALL provid
 - Threat intelligence integration and enrichment
 - Custom detection rule creation and tuning
 
-
 **Storage and Retention**:
 
 - Hot storage for active monitoring (minimum 90 days operational logs, 12 months security alerts)
@@ -250,7 +237,6 @@ Monitoring platforms (SIEM, IDS/IPS, EDR, NDR, UEBA, or equivalent) SHALL provid
 - Indexed search capabilities for rapid investigation
 - Data integrity protection (tamper-evident logging)
 - Backup and disaster recovery for monitoring data
-
 
 **Alerting and Notification**:
 
@@ -260,7 +246,6 @@ Monitoring platforms (SIEM, IDS/IPS, EDR, NDR, UEBA, or equivalent) SHALL provid
 - Escalation workflows based on severity and response time
 - Integration with incident management systems
 
-
 **Reporting and Dashboards**:
 
 - Real-time security operations dashboards
@@ -268,7 +253,6 @@ Monitoring platforms (SIEM, IDS/IPS, EDR, NDR, UEBA, or equivalent) SHALL provid
 - Compliance reporting aligned with regulatory requirements
 - Forensic investigation capabilities (timeline reconstruction, evidence collection)
 - Customizable reporting for stakeholder needs
-
 
 ### Log Source Coverage
 
@@ -283,7 +267,6 @@ Monitoring platforms (SIEM, IDS/IPS, EDR, NDR, UEBA, or equivalent) SHALL provid
 - Wireless access points (client associations, authentication failures, rogue AP detection)
 - Intrusion Detection/Prevention Systems (IDS/IPS signatures, blocked attacks)
 
-
 **Security Appliances**:
 
 - Web application firewalls (WAF) - HTTP/HTTPS traffic, attack attempts, rule violations
@@ -292,7 +275,6 @@ Monitoring platforms (SIEM, IDS/IPS, EDR, NDR, UEBA, or equivalent) SHALL provid
 - Email security gateways - spam, phishing, malware, data leakage attempts
 - Endpoint protection platforms (EPP/EDR) - malware detection, behavioral analysis, remediation actions
 - Network Detection and Response (NDR) - lateral movement, anomalous traffic, C2 communication
-
 
 **Systems and Servers**:
 
@@ -303,7 +285,6 @@ Monitoring platforms (SIEM, IDS/IPS, EDR, NDR, UEBA, or equivalent) SHALL provid
 - Directory services (Active Directory, LDAP) - authentication, group changes, policy modifications
 - Virtualization platforms (VM creation/deletion, resource allocation, migration events)
 
-
 **Cloud Infrastructure**:
 
 - Cloud platform logs (AWS CloudTrail, Azure Monitor, GCP Cloud Logging)
@@ -311,7 +292,6 @@ Monitoring platforms (SIEM, IDS/IPS, EDR, NDR, UEBA, or equivalent) SHALL provid
 - Serverless function executions (invocations, errors, resource consumption)
 - Cloud storage access (bucket access, object downloads, permission changes)
 - Identity and access management (IAM policy changes, role assignments, authentication events)
-
 
 ### Monitoring Coverage Assessment
 
@@ -323,7 +303,6 @@ Monitoring platforms (SIEM, IDS/IPS, EDR, NDR, UEBA, or equivalent) SHALL provid
 - Identify and document monitoring gaps with risk assessment and remediation timelines
 - Review coverage quarterly and after significant infrastructure changes
 
-
 ### Monitoring Infrastructure Resilience
 
 Monitoring infrastructure SHALL be:
@@ -333,7 +312,6 @@ Monitoring infrastructure SHALL be:
 - **Secured**: Hardened configurations, restricted access, multi-factor authentication required
 - **Monitored**: Monitoring infrastructure itself subject to health checks and alerting
 - **Tested**: Regular testing of detection capabilities, failover procedures, backup restoration
-
 
 ## Baseline & Anomaly Detection Requirements
 
@@ -349,12 +327,10 @@ Monitoring infrastructure SHALL be:
 - ✅ "User authentication rate during business hours (08:00-18:00 CET): Mean 145 logins/hour, Std Dev 23, 95th percentile 189"
 - ✅ "Database query rate: Baseline 450 queries/minute ±50, alert threshold 600 queries/minute (95th percentile × 1.3)"
 
-
 **Unacceptable "Baseline"**:
 
 - ❌ "Normal authentication activity is around 100-200 logins per hour" (imprecise)
 - ❌ "Database seems busy during the day" (subjective, unmeasurable)
-
 
 ### Baseline Establishment Requirements
 
@@ -368,7 +344,6 @@ Baselines SHALL be established for:
 - Network bandwidth consumption (ingress/egress)
 - Process and service resource consumption
 
-
 **Access Pattern Baselines**:
 
 - User authentication timing (time of day, day of week patterns)
@@ -377,7 +352,6 @@ Baselines SHALL be established for:
 - Privileged access patterns (administrator logins, sudo usage, elevation requests)
 - Failed authentication attempts baseline (normal failure rate vs. attack indicators)
 
-
 **Application Behavior Baselines**:
 
 - Transaction volumes and timing
@@ -385,7 +359,6 @@ Baselines SHALL be established for:
 - Database query patterns
 - File access and modification patterns
 - Network connection patterns (internal, external, protocols used)
-
 
 ### Baseline Documentation
 
@@ -418,7 +391,6 @@ Monitoring systems SHALL be configured to detect anomalous behavior including:
 - Unauthorized software installation or execution
 - Unusual network connections (new destinations, protocols, ports)
 
-
 **Malicious Activity Indicators**:
 
 - Known malware signatures and behavior patterns
@@ -427,7 +399,6 @@ Monitoring systems SHALL be configured to detect anomalous behavior including:
 - Lateral movement patterns (internal reconnaissance, credential dumping, pass-the-hash)
 - Data exfiltration indicators (large outbound transfers, unauthorized cloud uploads, DNS tunneling)
 
-
 **Attack Signatures**:
 
 - Denial-of-service attack patterns (SYN floods, UDP floods, application-layer attacks)
@@ -435,7 +406,6 @@ Monitoring systems SHALL be configured to detect anomalous behavior including:
 - Network scanning and reconnaissance (port scans, vulnerability scans, ping sweeps)
 - Brute-force authentication attempts
 - Protocol anomalies and malformed requests
-
 
 **Unusual User/Entity Behavior**:
 
@@ -447,7 +417,6 @@ Monitoring systems SHALL be configured to detect anomalous behavior including:
 - Privilege escalation outside normal workflows
 - Disabled logging or monitoring on systems (anti-forensics indicators)
 
-
 **Unauthorized Access**:
 
 - Successful authentication with compromised credentials
@@ -455,7 +424,6 @@ Monitoring systems SHALL be configured to detect anomalous behavior including:
 - Privilege escalation without approval
 - Access to systems/data outside user's job function
 - After-hours access to business-critical systems without approval
-
 
 ### Detection Effectiveness Requirements
 
@@ -467,7 +435,6 @@ Monitoring systems SHALL be configured to detect anomalous behavior including:
 - Target false positive rates: <20% for critical alerts, <30% for high-severity alerts
 - Document detection gaps (what cannot be detected) and implement compensating controls
 - Continuously tune detection rules to improve accuracy
-
 
 ## Alert Management & Response Requirements
 
@@ -494,7 +461,6 @@ For each severity level, [Organization] defines:
 - **Investigation SLA**: Maximum time to complete investigation and determine root cause
 - **Containment SLA**: Maximum time to contain active threats (for Critical/High severity)
 - **Resolution SLA**: Maximum time to fully resolve incident
-
 
 **Minimum SLA Requirements**:
 
@@ -526,14 +492,12 @@ For each severity level, [Organization] defines:
 - Legal or regulatory reporting obligations triggered
 - Executive management notification required per incident management policy
 
-
 **False Positive Handling**:
 
 - Document reason for false positive (baseline issue, detection rule overly sensitive, legitimate activity miscategorized)
 - Submit detection rule tuning request to Security Engineering
 - Track false positive rates per rule and overall
 - Review high-FP rules quarterly for tuning or deactivation
-
 
 ### Alert Tuning and Optimization
 
@@ -545,7 +509,6 @@ For each severity level, [Organization] defines:
 - Document tuning decisions with rationale and approval
 - Validate tuning effectiveness through post-change monitoring
 - Balance detection coverage (recall) vs. alert noise (precision)
-
 
 **Tuning Methodology**:
 1. Identify high-noise alerts (>10 instances/day with <50% true positive rate)
@@ -566,12 +529,10 @@ For each severity level, [Organization] defines:
 - **Hot Storage** (indexed, searchable, real-time access): 90 days minimum
 - **Warm/Cold Storage** (archived, slower retrieval): 12 months total retention
 
-
 **Security Alerts and Incidents**:
 
 - **Hot Storage**: 12 months minimum
 - **Long-Term Archive**: Aligned with legal and regulatory requirements
-
 
 **Compliance-Driven Retention**:
 
@@ -580,7 +541,6 @@ For each severity level, [Organization] defines:
 - **PCI DSS** (if applicable): 12 months hot storage, 3 months immediately available
 - **HIPAA** (if applicable): 6 years minimum
 - **Litigation Hold**: Indefinite retention until hold released
-
 
 ### Archival Process
 
@@ -593,7 +553,6 @@ Monitoring data archival SHALL:
 - Test archival restoration quarterly to validate recoverability
 - Document archival locations, formats, and retrieval procedures
 
-
 ### Data Protection and Privacy
 
 Monitoring data SHALL be:
@@ -604,7 +563,6 @@ Monitoring data SHALL be:
 - **Protected from Tampering**: Write-once-read-many (WORM) storage or equivalent integrity protection
 - **Segregated**: Monitoring logs on separate infrastructure from monitored systems
 
-
 **Employee Privacy Considerations** (Swiss nDSG Art. 328b CO, GDPR Art. 88):
 
 - Monitoring scope limited to security and compliance objectives (no performance management, personal activity surveillance)
@@ -612,7 +570,6 @@ Monitoring data SHALL be:
 - Proportionality assessed: monitoring breadth and depth justified by security needs
 - Data minimization: collect only security-relevant events, limit log verbosity to necessary fields
 - Purpose limitation: monitoring data not used for HR performance evaluations without separate legal basis
-
 
 ---
 
@@ -649,7 +606,6 @@ This policy SHALL be reviewed:
 - **When new monitoring technologies** are deployed or existing tools are significantly upgraded
 - **Upon regulatory changes** affecting monitoring requirements (new laws, updated standards, guidance publications)
 
-
 Policy updates require:
 
 - Proposal with business/security justification
@@ -658,7 +614,6 @@ Policy updates require:
 - Approval by CISO
 - Communication to relevant personnel
 - Update to related implementation documentation (ISMS-IMP-A.8.16)
-
 
 ### Exception Management
 
@@ -672,20 +627,17 @@ Exceptions to monitoring requirements SHALL be:
 - **Reviewed** quarterly to validate continued necessity and effectiveness of compensating controls
 - **Tracked** in exception register with status, remediation plan, and responsible party
 
-
 **Valid Exception Examples**:
 
 - Legacy system without logging capability, scheduled for decommissioning in 6 months (compensating control: network monitoring of all traffic to/from system)
 - Cloud service with limited logging visibility (compensating control: monitor API activity, configure maximum available logging)
 - High-volume low-value alerts temporarily disabled for tuning (compensating control: enhanced manual review of related metrics)
 
-
 **Invalid Exception Examples**:
 
 - "Monitoring is too expensive" (cost is not a valid exception to security requirement)
 - "We don't have time to configure logging" (resource constraints require escalation, not exception)
 - "This system is not important" (criticality assessment required, not assumption-based exception)
-
 
 ### Compliance Verification
 
@@ -697,7 +649,6 @@ Compliance with monitoring requirements SHALL be verified through:
 - **Detection Testing**: Quarterly purple team exercises or simulated attacks to validate detection capabilities
 - **Metrics Review**: Monthly review of MTTD, MTTR, false positive rates, coverage percentages, SLA compliance
 
-
 **Compliance Evidence**:
 
 - Completed assessment workbooks with supporting evidence
@@ -708,7 +659,6 @@ Compliance with monitoring requirements SHALL be verified through:
 - Exception register with approvals and compensating controls
 - Incident response tickets showing monitoring-triggered investigations
 
-
 ## Integration with Risk Management
 
 **Risk Assessment**:
@@ -717,13 +667,11 @@ Compliance with monitoring requirements SHALL be verified through:
 - Monitoring gaps identified as risks in risk register
 - Risk treatment decisions determine monitoring investment and priorities
 
-
 **Risk Register**:
 
 - Monitoring risks documented: blind spots, alert fatigue, insufficient coverage, detection gaps
 - Risk scores drive remediation urgency (Critical gaps addressed within 30 days, High within 90 days)
 - Quarterly risk reassessment based on monitoring effectiveness metrics and incident trends
-
 
 **Risk Treatment**:
 
@@ -731,7 +679,6 @@ Compliance with monitoring requirements SHALL be verified through:
 - Mitigate: Implement monitoring controls, enhance detection coverage, reduce alert noise
 - Transfer: Third-party SOC services, managed detection and response (MDR)
 - Avoid: Decommission unmonitorable high-risk systems
-
 
 ---
 
@@ -756,14 +703,12 @@ Compliance with monitoring requirements SHALL be verified through:
 - Remediation tracking and reporting capabilities
 - Automated compliance calculations and status dashboards
 
-
 **Supporting Materials** (ISMS-IMP-A.8.16 Annexes):
 
 - Alert Response Procedures (operational incident handling playbooks, documented within ISMS-IMP-A.8.16.4 Alert Management & Response Assessment, Annex A)
 - Detection Rule Library (organization-specific detection rules and use cases)
 - Tuning Playbook (procedures for alert tuning and optimization)
 - Baseline Review Template (structured baseline review process)
-
 
 ## Related ISMS Policies
 
@@ -788,13 +733,11 @@ This policy integrates with:
 - ISO/IEC 27002:2022 - Information Security Controls (Control 8.16 guidance)
 - ISO/IEC 27035 - Incident Management (integration with monitoring)
 
-
 **Technical Standards**:
 
 - NIST SP 800-92 - Guide to Computer Security Log Management
 - NIST SP 800-137 - Information Security Continuous Monitoring (ISCM)
 - CIS Controls v8 - Control 8 (Audit Log Management), Control 13 (Network Monitoring)
-
 
 **Regulatory**:
 
@@ -805,13 +748,11 @@ This policy integrates with:
 - NIS2 Directive - if applicable
 - Industry-specific regulations (PCI DSS, HIPAA, etc.) - as applicable
 
-
 **Framework Alignment**:
 
 - NIST Cybersecurity Framework (CSF) - Detect function
 - MITRE ATT&CK Framework - Detection tactics and techniques
 - SANS Critical Security Controls
-
 
 ---
 
@@ -914,7 +855,6 @@ Regardless of technology category, monitoring solutions SHALL provide:
 - Scalable collection (support organizational growth without architecture redesign)
 - Reliable delivery (acknowledgment, retry mechanisms, queue management)
 
-
 **Analysis**:
 
 - Real-time event processing (sub-second latency for critical events)
@@ -922,13 +862,11 @@ Regardless of technology category, monitoring solutions SHALL provide:
 - Filtering and querying (flexible query language for investigation)
 - Correlation (ability to link related events across time and sources)
 
-
 **Storage**:
 
 - Data integrity protection (tamper-evident logging, checksums)
 - Appropriate retention (hot storage ≥90 days, archival per compliance requirements)
 - Backup and recovery (monitoring data included in backup strategy)
-
 
 **Alerting**:
 
@@ -937,13 +875,11 @@ Regardless of technology category, monitoring solutions SHALL provide:
 - Multi-channel notification (email, SMS, ticketing system, SOAR integration)
 - Alert deduplication (prevent alert storms from single event)
 
-
 **Reporting**:
 
 - Compliance reporting (pre-built or customizable reports for regulatory requirements)
 - Executive dashboards (high-level KPIs for management visibility)
 - Forensic capabilities (timeline reconstruction, evidence export)
-
 
 ## A.3 Recommended Capabilities (Enhanced Monitoring)
 
@@ -955,13 +891,11 @@ Organizations SHOULD consider solutions providing:
 - Behavioral analytics (UEBA for user and entity anomaly detection)
 - Machine learning (adaptive baselines, automatic anomaly detection)
 
-
 **Threat Intelligence Integration**:
 
 - Automatic enrichment (correlate events with threat intel feeds)
 - IOC matching (match logs against indicators of compromise)
 - Threat hunting (proactive search for adversary TTPs)
-
 
 **Orchestration and Automation**:
 
@@ -969,13 +903,11 @@ Organizations SHOULD consider solutions providing:
 - Workflow automation (ticket creation, notification, escalation)
 - Playbook execution (standardized response procedures)
 
-
 **Cloud-Native Capabilities**:
 
 - Cloud platform integration (AWS, Azure, GCP native log collection)
 - Container monitoring (Kubernetes audit logs, pod events)
 - Serverless monitoring (Lambda, Azure Functions, Cloud Functions)
-
 
 ## A.4 Technology Selection Criteria
 
@@ -988,7 +920,6 @@ When evaluating monitoring technologies, [Organization] SHALL assess:
 - Scalability (handles current and projected log volumes)
 - Integration capabilities (APIs, SIEM connectors, third-party tools)
 
-
 **Operational Effectiveness**:
 
 - Detection accuracy (low false positive rates, high true positive rates)
@@ -996,20 +927,17 @@ When evaluating monitoring technologies, [Organization] SHALL assess:
 - Usability (intuitive interface, efficient workflows, minimal training required)
 - Reliability (high availability, disaster recovery capabilities)
 
-
 **Security**:
 
 - Access controls (RBAC, MFA, audit logging of administrative actions)
 - Data protection (encryption at rest and in transit, data masking)
 - Isolation (monitoring infrastructure security hardening)
 
-
 **Cost**:
 
 - Total cost of ownership (licensing, infrastructure, staffing, training)
 - Licensing model (per GB, per asset, per user, unlimited)
 - Scalability cost (incremental costs as log volumes increase)
-
 
 **Vendor Factors**:
 
@@ -1018,7 +946,6 @@ When evaluating monitoring technologies, [Organization] SHALL assess:
 - Support quality and responsiveness
 - Community and documentation
 - Strategic alignment with organizational technology direction
-
 
 ## A.5 Capability Maturity Assessment
 
@@ -1031,14 +958,12 @@ Organizations SHOULD assess monitoring capability maturity:
 - No baselines, detection rules, or alerting
 - Minimal monitoring infrastructure
 
-
 **Level 2 - Developing (Repeatable)**:
 
 - Centralized log collection (SIEM or equivalent)
 - Basic alerting rules configured
 - Some baselines documented
 - Incident response triggered by alerts (sometimes)
-
 
 **Level 3 - Defined (Standardized)**:
 
@@ -1048,7 +973,6 @@ Organizations SHOULD assess monitoring capability maturity:
 - Defined response procedures and SLAs
 - Quarterly detection testing
 
-
 **Level 4 - Managed (Quantitatively Managed)**:
 
 - Near-complete coverage (>95% critical systems, >80% standard systems)
@@ -1056,7 +980,6 @@ Organizations SHOULD assess monitoring capability maturity:
 - Low false positive rates (<20% critical alerts)
 - Metrics-driven optimization (MTTD, MTTR, detection rates tracked)
 - Monthly tuning and continuous improvement
-
 
 **Level 5 - Optimizing (Continuous Improvement)**:
 
@@ -1066,7 +989,6 @@ Organizations SHOULD assess monitoring capability maturity:
 - Orchestrated response (SOAR)
 - Proactive threat hunting
 - Industry-leading metrics (MTTD <1 hour, MTTR <4 hours for critical incidents)
-
 
 ---
 
@@ -1097,14 +1019,12 @@ Organizations SHOULD assess monitoring capability maturity:
 - [ ] Network Traffic (protocols, destinations, bandwidth)
 - [ ] Other: [Specify]
 
-
 **Environment**:  
 
 - [ ] Production
 - [ ] Staging/QA
 - [ ] Development
 - [ ] Other: [Specify]
-
 
 ---
 
@@ -1134,13 +1054,11 @@ Organizations SHOULD assess monitoring capability maturity:
 - [ ] Includes peak business periods (e.g., tax season, holiday shopping)
 - [ ] Includes typical maintenance windows
 
-
 **Exclusions**: [Document any periods excluded from baseline calculation]
 
 - Scheduled maintenance windows: [List dates/times]
 - Known incidents or anomalies: [Describe and justify exclusion]
 - System downtime: [List dates/times]
-
 
 ---
 
@@ -1199,7 +1117,6 @@ If behavior differs significantly by time period, document separate baselines:
 - **Absolute Value**: Alert threshold = [Fixed value] based on capacity limits or business rules
 - **Rate of Change**: Alert when value increases/decreases by [X]% within [Y minutes]
 
-
 **Calculated Thresholds**:
 
 | Threshold Level | Methodology | Calculated Value | Justification |
@@ -1218,7 +1135,6 @@ If behavior differs significantly by time period, document separate baselines:
 - [ ] No significant business process changes during observation period
 - [ ] System performance within normal operational parameters
 
-
 **Outlier Analysis**: [Describe any outliers identified and how they were handled]
 
 **Peer Review**: [Name and role of reviewer who validated baseline accuracy]
@@ -1235,7 +1151,6 @@ If behavior differs significantly by time period, document separate baselines:
 - [ ] Business process changes (new workflows, organizational restructuring)
 - [ ] Persistent deviations from baseline (sustained shift in normal behavior)
 - [ ] Seasonal variations (adjust baselines for known seasonal patterns)
-
 
 **Next Review Date**: [DD.MM.YYYY]
 
@@ -1265,7 +1180,6 @@ If behavior differs significantly by time period, document separate baselines:
 - "Baseline reflects current 100-user organization. Re-baseline required if user count increases >20%."
 - "Application version 2.5 deployed during observation period. Baseline may need adjustment if performance characteristics change in future versions."
 
-
 ---
 
 **END OF BASELINE TEMPLATE**
@@ -1292,13 +1206,11 @@ Monitoring is the continuous observation of networks, systems, and applications 
 - ✅ Investigate alerts, document findings, escalate confirmed incidents
 - ✅ Report false positives for tuning
 
-
 **System Owner**:
 
 - ✅ Ensure your systems log to monitoring platforms
 - ✅ Provide domain expertise during incident investigations
 - ✅ Coordinate baseline establishment for your systems
-
 
 **Security Engineer**:
 
@@ -1306,13 +1218,11 @@ Monitoring is the continuous observation of networks, systems, and applications 
 - ✅ Manage monitoring infrastructure, integrate log sources
 - ✅ Test detection effectiveness quarterly
 
-
 **Executive/Management**:
 
 - ✅ Review quarterly compliance dashboards
 - ✅ Allocate resources for monitoring program
 - ✅ Accept residual risks from monitoring gaps
-
 
 ## Alert Severity & Response Times
 
@@ -1329,7 +1239,6 @@ Monitoring is the continuous observation of networks, systems, and applications 
 - ✅ **>80%** of Tier 2 (Standard) systems monitored
 - ✅ **<20%** false positive rate for critical alerts
 - ✅ **>90%** true positive rate for high-severity threats
-
 
 ## Common Monitoring Gaps (What to Watch For)
 
@@ -1357,7 +1266,6 @@ Monitoring is the continuous observation of networks, systems, and applications 
 - **False Positive Rate**: What percentage of alerts are false positives?
 - **Detection Rate**: What percentage of attacks are detected? (test quarterly)
 
-
 ## Quarterly Assessments
 
 All stakeholders SHALL complete quarterly monitoring assessments:
@@ -1367,7 +1275,6 @@ All stakeholders SHALL complete quarterly monitoring assessments:
 - **ISMS-IMP-A.8.16.3**: Coverage (System Owners, Network Team)
 - **ISMS-IMP-A.8.16.4**: Alert Management & Response (SOC, Incident Response)
 - **ISMS-IMP-A.8.16.5**: Compliance Dashboard (CISO, Management)
-
 
 ## Remember
 

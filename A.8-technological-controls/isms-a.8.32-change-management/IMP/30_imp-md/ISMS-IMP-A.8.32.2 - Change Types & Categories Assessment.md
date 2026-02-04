@@ -44,12 +44,10 @@ This document consists of two parts:
   - Formula Definitions
   - Cell Styling Reference
 
-
 **Target Audiences:**
 
 - **Part I:** Assessment users (Change Manager, Risk Assessors, CAB Members, System Owners)
 - **Part II:** Workbook developers (Python/Excel script maintainers)
-
 
 ---
 
@@ -71,7 +69,6 @@ This assessment documents HOW your organization classifies changes into differen
 - **Risk Assessment Methodology:** How you calculate change risk (Impact x Likelihood)
 - **Change Calendar Management:** How you schedule changes and manage blackout windows
 
-
 ### Why This Matters
 
 This assessment verifies [Organization]'s compliance with:
@@ -79,7 +76,6 @@ This assessment verifies [Organization]'s compliance with:
 - ISO/IEC 27001:2022 Control A.8.32: Change Management
 - ISMS-POL-A.8.32, Section 2.2 (Change Classification Requirements)
 - ISO 27002:2022 element (f): Emergency and contingency procedures
-
 
 Proper change classification ensures appropriate oversight - low-risk changes move quickly, high-risk changes get scrutiny. Risk assessment enables informed approval decisions.
 
@@ -103,7 +99,6 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - [ ] Risk assessment methodology documentation
 - [ ] Change calendar or freeze period documentation
 
-
 **Recommended:**
 
 - [ ] Interview Change Manager about classification decisions
@@ -111,7 +106,6 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - [ ] Gather emergency change approvals
 - [ ] Review change failure analysis by type
 - [ ] Identify risk assessment training materials
-
 
 ### Who Should Complete This Assessment
 
@@ -125,12 +119,10 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - IT Operations (emergency change procedures)
 - Compliance Officer (risk acceptance documentation)
 
-
 **Reviewers:**
 
 - CISO (risk assessment validation)
 - Internal Audit (classification effectiveness)
-
 
 ---
 
@@ -144,14 +136,12 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - Gather existing classification documentation
 - Review completion timeline (2-3 weeks)
 
-
 **Step 2: Standard Change Catalog Documentation (Days 2-5)**
 
 - Document all pre-approved standard changes (Sheet 2)
 - Include procedure, risk assessment, success rate
 - Verify catalog is actively used
 - Document catalog review frequency
-
 
 **Step 3: Normal Change Classification (Days 3-6)**
 
@@ -160,14 +150,12 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - Review sample normal changes
 - Verify risk assessment completion
 
-
 **Step 4: Emergency Change Assessment (Days 4-7)**
 
 - Document emergency change triggers (Sheet 4)
 - Review emergency approval procedures
 - Assess emergency change frequency
 - Verify post-implementation reviews
-
 
 **Step 5: Risk Assessment Methodology (Days 5-8)**
 
@@ -176,14 +164,12 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - Document risk matrix (Impact x Likelihood)
 - Verify approval authority alignment
 
-
 **Step 6: Change Calendar Management (Days 6-9)**
 
 - Document change scheduling approach (Sheet 6)
 - Identify blackout windows and freeze periods
 - Assess conflict management
 - Review change calendar effectiveness
-
 
 **Step 7: Classification Metrics (Days 7-10)**
 
@@ -192,13 +178,11 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - Assess classification accuracy
 - Analyze emergency change trends
 
-
 **Step 8: Evidence Collection (Days 8-11)**
 
 - Compile supporting evidence (Sheet 8)
 - Link evidence to requirements
 - Verify evidence accessibility
-
 
 **Step 9: Summary Review (Days 9-12)**
 
@@ -206,18 +190,15 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - Validate gap analysis
 - Prioritize remediation
 
-
 **Step 10: Quality Review (Days 10-13)**
 
 - Self-review against checklist
 - Peer review by CAB members
 
-
 **Step 11: Final Approval (Days 11-15)**
 
 - Change Manager approval
 - CISO review and sign-off (Sheet 10)
-
 
 **Total Duration:** 2-3 weeks
 
@@ -238,14 +219,12 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - Risk level, success rate, last review date
 - Owner and usage frequency
 
-
 **Tips:**
 
 - If you have NO standard change catalog, this is a gap - document as finding
 - Common standard changes: password resets, certificate renewals, routine patches, standard software installs
 - Each catalog entry should have documented procedure (not just "do the needful")
 - If standard changes frequently fail, they shouldn't be standard - reclassify
-
 
 **Common Questions:**
 
@@ -256,14 +235,12 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - **Q:** "Do standard changes need CAB approval?"
   - **A:** No - they're pre-approved. Log them, execute them, no CAB review needed.
 
-
 **Evidence to provide:**
 
 - Standard Change Catalog document
 - Sample standard change tickets
 - Procedures for each catalog entry
 - Catalog review meeting minutes
-
 
 ### Sheet 3: Normal_Change_Classification
 
@@ -274,14 +251,12 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - Who performs initial classification
 - Reclassification procedures
 
-
 **Tips:**
 
 - Normal changes = everything that isn't standard or emergency
 - Most changes should be normal (60-80% typical)
 - Classification should happen early (at request submission)
 - Misclassification should trigger process review
-
 
 **Common Questions:**
 
@@ -290,14 +265,12 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - **Q:** "Can normal changes become standard over time?"
   - **A:** Yes! That's continuous improvement. Document promotion criteria.
 
-
 **Evidence to provide:**
 
 - Classification criteria documentation
 - Sample normal change requests
 - CAB review records
 - Reclassification examples
-
 
 ### Sheet 4: Emergency_Change_Procedures
 
@@ -309,14 +282,12 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - Post-implementation review requirements
 - Emergency change frequency and trends
 
-
 **Tips:**
 
 - Emergency changes should be RARE (<5% of all changes is target)
 - High emergency % indicates planning problems
 - "Urgent because we forgot" is NOT emergency - it's poor planning
 - Document actual emergency criteria honestly
-
 
 **Common Questions:**
 
@@ -327,14 +298,12 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - **Q:** "Do emergencies need PIR?"
   - **A:** YES - mandatory per policy. This is how you learn and prevent future emergencies.
 
-
 **Evidence to provide:**
 
 - Emergency change procedure document
 - E-CAB approval examples
 - Emergency PIR reports
 - Emergency change trend analysis
-
 
 ### Sheet 5: Risk_Assessment_Matrix
 
@@ -346,14 +315,12 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - Approval authority by risk level
 - Risk mitigation strategies
 
-
 **Tips:**
 
 - Be specific in definitions - "High Impact" needs concrete criteria
 - Document YOUR organization's risk tolerance
 - Risk matrix should align with approval authority (ISMS-POL-A.8.32, Section 2.1)
 - Consistency matters - same risk assessment regardless of who performs it
-
 
 **Common Questions:**
 
@@ -364,14 +331,12 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - **Q:** "Can we reassess risk during the change process?"
   - **A:** Yes - if scope changes, risk changes. Document reassessment triggers.
 
-
 **Evidence to provide:**
 
 - Risk assessment methodology document
 - Risk matrix (can reference ISMS-REF-A.8.32)
 - Sample risk assessments
 - Training materials for risk assessors
-
 
 ### Sheet 6: Change_Calendar_Management
 
@@ -383,14 +348,12 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - Conflict management (overlapping changes)
 - Change calendar tool/system
 
-
 **Tips:**
 
 - If you don't have change calendar, mark as gap
 - Freeze periods protect critical business periods
 - Too many freeze periods = changes back up
 - Document exceptions process (emergency changes during freeze)
-
 
 **Common Questions:**
 
@@ -399,14 +362,12 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - **Q:** "What if two changes conflict?"
   - **A:** Document YOUR conflict resolution process (defer one, coordinate timing, etc.).
 
-
 **Evidence to provide:**
 
 - Change calendar (screenshot or export)
 - Freeze period documentation
 - Conflict resolution examples
 - Change scheduling policy
-
 
 ### Sheet 7: Classification_Metrics
 
@@ -418,14 +379,12 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - Emergency change trend
 - Success rate by change type
 
-
 **Tips:**
 
 - If you don't track this, mark as gap - these are key metrics
 - Emergency % is KEY indicator - rising trend means problems
 - Low standard change utilization = catalog not valuable
 - Success rate should be HIGHEST for standard, lowest acceptable for emergency
-
 
 **Common Questions:**
 
@@ -434,13 +393,11 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - **Q:** "Should standard changes have 100% success rate?"
   - **A:** Near 100% - if standard changes fail regularly, they shouldn't be standard.
 
-
 **Evidence to provide:**
 
 - Change metrics reports
 - Trend analysis charts
 - Classification audit results
-
 
 ### Sheet 8: Evidence_Register
 
@@ -450,12 +407,10 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - Evidence type and last verification date
 - Accessibility for auditors
 
-
 **Tips:**
 
 - Be specific with evidence locations
 - Reference actual documents, not hypothetical ones
-
 
 ### Sheet 9: Summary_Dashboard
 
@@ -466,7 +421,6 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - Critical gaps
 - Audit readiness
 
-
 ### Sheet 10: Approval_Sign_Off
 
 **What to complete:**
@@ -475,7 +429,6 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - Change Manager sign-off
 - CISO approval
 - Next review date
-
 
 ---
 
@@ -490,14 +443,12 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - Success rate data
 - Catalog review minutes
 
-
 **Classification Evidence:**
 
 - Classification criteria documentation
 - Risk assessment methodology
 - Sample changes (all types)
 - CAB review notes showing classifications
-
 
 **Emergency Evidence:**
 
@@ -506,7 +457,6 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - Emergency PIR reports
 - Emergency change log
 
-
 **Risk Assessment Evidence:**
 
 - Risk matrix documentation
@@ -514,13 +464,11 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - Sample risk assessments
 - Risk assessor training materials
 
-
 **Calendar Evidence:**
 
 - Change calendar screenshots
 - Freeze period announcements
 - Conflict resolution examples
-
 
 ### Evidence Best Practices
 
@@ -531,14 +479,12 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - ? Reference risk assessments with actual change examples
 - ? Show catalog is actively maintained (review dates)
 
-
 **Don't:**
 
 - ? Create "catalog" just for audit with entries never used
 - ? Classify everything as emergency to skip process
 - ? Hide high emergency change percentage
 - ? Reference non-existent risk methodology
-
 
 ---
 
@@ -619,14 +565,12 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - [ ] Last review date recorded
 - [ ] Catalog is actively used (evidence)
 
-
 **Normal Changes:**
 
 - [ ] Classification criteria documented
 - [ ] Sample normal changes provided
 - [ ] CAB review process verified
 - [ ] Reclassification procedures defined
-
 
 **Emergency Changes:**
 
@@ -636,7 +580,6 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - [ ] PIR completion verified
 - [ ] Emergency trend analyzed
 
-
 **Risk Assessment:**
 
 - [ ] Impact levels defined with criteria
@@ -645,14 +588,12 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - [ ] Approval authorities aligned with risk
 - [ ] Assessor training documented
 
-
 **Change Calendar:**
 
 - [ ] Calendar system/method documented
 - [ ] Freeze periods identified
 - [ ] Conflict resolution process defined
 - [ ] Calendar effectiveness assessed
-
 
 **Metrics:**
 
@@ -661,20 +602,17 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - [ ] Success rates by type tracked
 - [ ] Trends analyzed
 
-
 **Evidence:**
 
 - [ ] Evidence Register complete
 - [ ] All evidence accessible
 - [ ] Evidence current (<6 months)
 
-
 **Dashboard:**
 
 - [ ] Compliance percentage validated
 - [ ] Critical gaps identified
 - [ ] Remediation priorities set
-
 
 ---
 
@@ -688,13 +626,11 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - Validate all data
 - Check formula calculations
 
-
 **Step 2: Peer Review (CAB Members)**
 
 - Distribute to CAB members
 - Request feedback on classification approach
 - Typical turnaround: 3-5 days
-
 
 **Step 3: Compliance Review (Compliance Officer)**
 
@@ -703,7 +639,6 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - Regulatory requirement coverage
 - Typical turnaround: 2-3 days
 
-
 **Step 4: CISO Approval**
 
 - Risk assessment methodology review
@@ -711,14 +646,12 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - Critical gap risk acceptance
 - Typical turnaround: 2-3 days
 
-
 **Step 5: Documentation & Communication**
 
 - Set status to "Final"
 - Set next review date (+3 months)
 - File in document management
 - Notify gap owners
-
 
 **Approval Timeline:** 2-3 weeks
 
@@ -729,7 +662,6 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - High emergency % without remediation plan
 - Missing emergency PIR evidence
 - Classification criteria too vague
-
 
 ---
 
@@ -743,13 +675,11 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - High utilization -> Promote successful normal changes to standard
 - Failures -> Demote to normal change
 
-
 **Risk Assessment Refinement:**
 
 - Assess risk assessment accuracy - do assessed-low-risk changes succeed?
 - If high-risk changes succeed without issues, criteria may be too conservative
 - If low-risk changes fail, criteria too lenient
-
 
 **Emergency Change Reduction:**
 
@@ -757,12 +687,10 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - Implement preventive measures
 - Track emergency % trend - should decrease over time
 
-
 **Classification Training:**
 
 - If misclassifications common -> Training needed
 - If risk assessments inconsistent -> Assessor calibration needed
-
 
 ---
 
@@ -805,7 +733,6 @@ This assessment is **completely technology-agnostic**. You document YOUR specifi
 - **Subtitle:** "ISO/IEC 27001:2022 - Control A.8.32: Change Management"
 - **Styling:** Dark blue header (003366), white text, centered, 40px height
 
-
 #### Document Information Block
 ```
 Document ID:           ISMS-IMP-A.8.32.2
@@ -837,7 +764,6 @@ Review Cycle:          Quarterly
 | [PLANNED] | Planned | Definition planned with target date | Blue (B4C7E7) |
 | N/A | Not Applicable | Not applicable to this environment | Gray |
 
-
 #### Change Type Decision Tree
 ```
 Is this change:
@@ -853,7 +779,6 @@ Is this change:
     `- Regulatory deadline?
 ```
 
-
 #### Acceptable Evidence (Examples)
 
 - ✓ Standard changes catalog/library
@@ -868,7 +793,6 @@ Is this change:
 - ✓ Exception/deviation records
 - ✓ Change type definitions document
 - ✓ Historical change data (by type)
-
 
 ---
 
@@ -897,7 +821,6 @@ Document all pre-approved standard changes that can be executed without CAB appr
 - **Description:** Unique identifier for standard change
 - **Example:** STD-001, STD-002, etc.
 
-
 #### Column: Change Title
 
 - **Data Type:** Text
@@ -905,7 +828,6 @@ Document all pre-approved standard changes that can be executed without CAB appr
 - **Width:** 30
 - **Description:** Short, descriptive title
 - **Example:** "Password Reset - End User", "Patch Deployment - Workstations"
-
 
 #### Column: Description
 
@@ -915,7 +837,6 @@ Document all pre-approved standard changes that can be executed without CAB appr
 - **Description:** Full description of the change
 - **Example:** "Reset end user password in Active Directory following identity verification"
 
-
 #### Column: Category
 
 - **Data Type:** Dropdown
@@ -923,7 +844,6 @@ Document all pre-approved standard changes that can be executed without CAB appr
 - **Width:** 18
 - **Validation:** Infrastructure, Application, Security, Data, Network, Cloud, User Access, Configuration, Other
 - **Description:** Type of change for classification purposes
-
 
 #### Column: Frequency
 
@@ -933,7 +853,6 @@ Document all pre-approved standard changes that can be executed without CAB appr
 - **Validation:** Daily, Weekly, Monthly, Quarterly, Annual, On-Demand, Rare
 - **Description:** How often this change typically occurs
 
-
 #### Column: Pre-requisites
 
 - **Data Type:** Text
@@ -941,7 +860,6 @@ Document all pre-approved standard changes that can be executed without CAB appr
 - **Width:** 30
 - **Description:** Conditions that must be met before executing
 - **Example:** "User identity verified via two-factor authentication"
-
 
 #### Column: Procedure Location
 
@@ -951,7 +869,6 @@ Document all pre-approved standard changes that can be executed without CAB appr
 - **Description:** Where detailed procedure is documented
 - **Example:** "Wiki: /IT/Procedures/Password-Reset", "ServiceNow KB12345"
 
-
 #### Column: Owner
 
 - **Data Type:** Text
@@ -960,7 +877,6 @@ Document all pre-approved standard changes that can be executed without CAB appr
 - **Description:** Role or person responsible for this standard change
 - **Example:** "Service Desk Team", "Network Operations"
 
-
 #### Column: Approval Date
 
 - **Data Type:** Date (DD.MM.YYYY)
@@ -968,14 +884,12 @@ Document all pre-approved standard changes that can be executed without CAB appr
 - **Width:** 15
 - **Description:** When this change was approved as standard
 
-
 #### Column: Review Date
 
 - **Data Type:** Date (DD.MM.YYYY)
 - **Required:** Yes
 - **Width:** 15
 - **Description:** Next scheduled review (typically annually)
-
 
 #### Column: Risk Level
 
@@ -986,7 +900,6 @@ Document all pre-approved standard changes that can be executed without CAB appr
 - **Description:** Only Low and Medium risk changes qualify as Standard
 - **Note:** High/Critical changes CANNOT be Standard Changes per policy
 
-
 #### Column: Status
 
 - **Data Type:** Dropdown
@@ -995,14 +908,12 @@ Document all pre-approved standard changes that can be executed without CAB appr
 - **Validation:** ✅ Active, ⚠️ Under Review, ❌ Retired, 📋 Proposed
 - **Description:** Current status of this standard change
 
-
 #### Column: Evidence
 
 - **Data Type:** Text
 - **Required:** No
 - **Width:** 25
 - **Description:** Reference to evidence (procedure docs, approvals, etc.)
-
 
 ### Standard Change Summary Metrics (Rows 55-62)
 
@@ -1185,7 +1096,6 @@ Document the risk classification matrix and assessment methodology.
 - Yellow (FFEB9C): MEDIUM RISK - Standard CAB review
 - Orange (FFD966): HIGH RISK - Enhanced scrutiny, senior approval
 - Red (FFC7CE): CRITICAL RISK - CISO/CIO approval required
-
 
 ### Risk Assessment Process (Rows 30-42)
 
@@ -1376,7 +1286,6 @@ Centralized evidence repository linking to all supporting documentation.
 - Verification Status: 18
 - Auditor Notes: 30
 
-
 ---
 
 ## Sheet 9: Approval_Sign_Off
@@ -1447,13 +1356,11 @@ External Audit Scheduled:       [Date]
 - **Section Header:** Font: Calibri 11pt bold white, Fill: 4472C4 (light blue), Alignment: center, Height: 20px
 - **Column Header:** Font: Calibri 10pt bold black, Fill: D9D9D9 (light gray), Alignment: centered/wrapped, Border: thin all sides
 
-
 ### Input Cell Styles
 
 - **Editable (User Input):** Fill: FFFFCC (light yellow), Border: thin black, Alignment: left/wrap
 - **Calculated/Formula:** Fill: E0E0E0 (light gray), Border: thin black, Protection: locked
 - **Dropdown:** Fill: FFFFCC (light yellow), Border: thin black, Data validation applied
-
 
 ### Status Color Coding
 
@@ -1463,14 +1370,12 @@ External Audit Scheduled:       [Date]
 - **📋 Planned:** B4C7E7 (light blue)
 - **N/A:** F2F2F2 (light gray)
 
-
 ### Risk Level Colors
 
 - **LOW RISK:** C6EFCE (green)
 - **MEDIUM RISK:** FFEB9C (yellow)
 - **HIGH RISK:** FFD966 (orange)
 - **CRITICAL RISK:** FFC7CE (red)
-
 
 ---
 
@@ -1480,7 +1385,6 @@ External Audit Scheduled:       [Date]
 - **Standard Changes Catalog:** Freeze at row 5 (includes column headers)
 - **Evidence Register:** Freeze at row 5
 - **Approval Sign-Off:** Freeze at row 3
-
 
 ---
 
@@ -1492,7 +1396,6 @@ External Audit Scheduled:       [Date]
 
 - `ISMS_A_8_32_2_Change_Types_Categories_Assessment_20260115.xlsx`
 - `ISMS_A_8_32_2_Change_Types_Categories_Assessment_20260401_FINAL.xlsx`
-
 
 ---
 
@@ -1520,7 +1423,6 @@ External Audit Scheduled:       [Date]
 - Internal/external audit findings
 - Regulatory requirement changes
 
-
 ---
 
 ## Integration Points
@@ -1534,13 +1436,11 @@ External Audit Scheduled:       [Date]
 - **ISMS-IMP-A.8.32.4:** Testing & Validation Assessment
 - **ISMS-IMP-A.8.32.5:** Compliance Dashboard (consolidates this data)
 
-
 ### Related ISO 27001:2022 Controls
 
 - **Control 5.7:** Threat intelligence (risk assessment inputs)
 - **Control 8.29:** Configuration management (change classification consistency)
 - **Control 8.31:** Separation of environments (standard vs. normal change criteria)
-
 
 ### External Integrations
 
@@ -1549,7 +1449,6 @@ External Audit Scheduled:       [Date]
 - **Change Management System:** Standard changes catalog synchronized
 - **Metrics Dashboard:** Change distribution and classification accuracy metrics
 - **Training Register:** Track training on change classification
-
 
 ### Audit Trail Requirements
 

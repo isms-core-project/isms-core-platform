@@ -42,14 +42,12 @@
 - Defines validation criteria for masking deployment effectiveness
 - Establishes gap identification and remediation workflows
 
-
 **What This Document Does NOT Do:**
 
 - Replace data inventory assessment (prerequisite: complete IMP-A.8.11.1 first)
 - Replace masking technique selection (prerequisite: complete IMP-A.8.11.2 first)
 - Provide masking tool implementation guides (see vendor documentation)
 - Define data classification criteria (see IMP-A.8.11.1)
-
 
 ---
 
@@ -98,7 +96,6 @@ Organizations often implement masking in some environments while leaving critica
 - **Vendor data shares** lack masking (third-party risk exposure)
 - **Backup systems** contain unmasked archives (disaster recovery = compliance disaster)
 
-
 **Regulatory Context:**
 
 - **Swiss nFADP (Art. 8):** Data controllers must implement appropriate technical measures (masking) across ALL data processing
@@ -107,7 +104,6 @@ Organizations often implement masking in some environments while leaving critica
 - **PCI-DSS v4.0 (Req. 3.4):** Cardholder data MUST be masked in non-production environments (no exceptions)
 - **HIPAA (§164.514):** De-identification required for test/development use of Protected Health Information (PHI)
 
-
 **Business Impact:**
 
 - **Data Breaches Prevented:** 80% of preventable data leaks occur in non-production environments (Verizon DBIR)
@@ -115,7 +111,6 @@ Organizations often implement masking in some environments while leaving critica
 - **Audit Findings:** "Why does your UAT environment have production customer data?" - common audit failure
 - **Third-Party Risk:** Unmasked data shared with vendors = your compliance violation, their potential breach
 - **Development Velocity:** Properly masked environments enable faster development without compliance delays
-
 
 ## Who Should Complete This Assessment
 
@@ -129,14 +124,12 @@ Organizations often implement masking in some environments while leaving critica
 - Cloud infrastructure (AWS, Azure, GCP accounts, resource groups, subscriptions)
 - External data sharing arrangements (vendors, auditors, partners)
 
-
 **Required Authority:**
 
 - Ability to inventory ALL environments (including shadow IT)
 - Access to environment documentation and configuration management databases (CMDBs)
 - Authority to request masking implementation for non-compliant environments
 - Ability to approve/reject environment deployment without masking
-
 
 **Support Roles:**
 
@@ -148,7 +141,6 @@ Organizations often implement masking in some environments while leaving critica
 - **Data Owners:** Approval for environment-specific masking requirements and exceptions
 - **Compliance Officers:** Regulatory requirement validation, exception approval process
 - **Third-Party Risk Team:** Vendor data sharing agreements, external access controls
-
 
 ## Time Estimate
 
@@ -167,14 +159,12 @@ Organizations often implement masking in some environments while leaving critica
 - **Evidence Collection:** 1-2 hours
 - **Quality Review:** 1 hour
 
-
 **Pro Tip for Large Organizations (>100 environments):**
 
 - **Phase 1 (Week 1):** Production + critical non-production (top 20-30 environments)
 - **Phase 2 (Week 2):** All non-production environments (dev/test/UAT/staging/training)
 - **Phase 3 (Week 3):** Cloud environments, analytics platforms, backup systems
 - **Phase 4 (Ongoing):** External sharing, data flow mapping, continuous monitoring
-
 
 ## Connection to Policy and Other Assessments
 
@@ -195,19 +185,16 @@ ISMS-POL-A.8.11 (Data Masking Policy)
 - ✅ **ISMS-IMP-A.8.11.1** (Data Inventory & Classification) - You must know WHAT data exists and WHERE before assessing masking coverage
 - ✅ **ISMS-IMP-A.8.11.2** (Masking Technique Selection) - You should have approved masking techniques before verifying deployment
 
-
 **Feeds Into (complete next):**
 
 - ➡️ **ISMS-IMP-A.8.11.4** (Testing & Validation Framework) - Tests masking effectiveness in environments identified here
 - ➡️ **ISMS-IMP-A.8.11.5** (Compliance Dashboard) - Consolidates environment coverage metrics with other assessments
-
 
 **Integration Points:**
 
 - Uses data inventory from IMP-A.8.11.1 to verify which environments contain sensitive data
 - Uses technique selections from IMP-A.8.11.2 to validate appropriate techniques deployed per environment
 - Provides environment list to IMP-A.8.11.4 for masking effectiveness testing
-
 
 **Policy Requirements Implemented:**
 
@@ -241,7 +228,6 @@ This assessment implements **ISMS-POL-A.8.11, Section 2.3 (Environment Coverage 
 - Backup/DR systems documented (what's backed up = what exists)
 - External sharing destinations cataloged (vendors, auditors, partners)
 
-
 ✅ **100% Non-Production Masking Coverage:**
 
 - Development environments: 100% masked (no production data copies)
@@ -251,14 +237,12 @@ This assessment implements **ISMS-POL-A.8.11, Section 2.3 (Environment Coverage 
 - Training environments: 100% masked + synthetic data preferred
 - Sandbox/POC environments: 100% masked
 
-
 ✅ **Production Environment Role-Based Masking:**
 
 - DDM deployed for role-based access where applicable
 - Unmasked access logged and monitored
 - Privileged access requires business justification
 - Production reports use masked views for non-privileged users
-
 
 ✅ **Clear Gap Identification:**
 
@@ -267,14 +251,12 @@ This assessment implements **ISMS-POL-A.8.11, Section 2.3 (Environment Coverage 
 - Gap owners assigned with remediation target dates
 - Critical gaps (unmasked non-production) have ≤30 day remediation SLA
 
-
 ✅ **Audit-Ready Evidence:**
 
 - Environment discovery methodology documented
 - Masking deployment verification evidence collected
 - Exception approvals formally documented
 - Review dates and next actions clearly defined
-
 
 ---
 
@@ -292,7 +274,6 @@ This assessment implements **ISMS-POL-A.8.11, Section 2.3 (Environment Coverage 
 - Data owners assigned per category
 - Workbook available for reference
 
-
 ✅ **ISMS-IMP-A.8.11.2 (Masking Technique Selection)**  
 
 - Approved masking techniques documented per data type
@@ -300,13 +281,11 @@ This assessment implements **ISMS-POL-A.8.11, Section 2.3 (Environment Coverage 
 - Masking tool inventory (if tools already deployed)
 - Workbook available for reference
 
-
 **Quality Check:** Verify completion of prerequisites:
 
 - Open IMP-A.8.11.1 workbook → Check System_Inventory sheet populated
 - Open IMP-A.8.11.1 workbook → Verify Sensitive_Data_Inventory has ≥10 data elements
 - Open IMP-A.8.11.2 workbook → Confirm approved techniques documented
-
 
 **If Prerequisites Incomplete:** STOP. Complete data inventory and technique selection first. You cannot assess environment coverage without knowing:
 1. Which systems contain sensitive data (from IMP-A.8.11.1)
@@ -323,7 +302,6 @@ This assessment implements **ISMS-POL-A.8.11, Section 2.3 (Environment Coverage 
 - [ ] SaaS application inventory (Salesforce, Workday, etc.)
 - [ ] Backup/DR system documentation
 
-
 **System Access:**
 
 - [ ] Read access to environment configuration (database servers, application servers)
@@ -331,7 +309,6 @@ This assessment implements **ISMS-POL-A.8.11, Section 2.3 (Environment Coverage 
 - [ ] Masking tool administration console (if tools deployed)
 - [ ] CI/CD pipeline access (to understand environment provisioning)
 - [ ] Data refresh script repository (how production data gets to non-production)
-
 
 **Stakeholder Access:**
 
@@ -341,7 +318,6 @@ This assessment implements **ISMS-POL-A.8.11, Section 2.3 (Environment Coverage 
 - [ ] DevOps team availability (CI/CD pipelines, infrastructure-as-code)
 - [ ] Application Owner contact list (business context for environments)
 - [ ] Third-Party Risk team (external data sharing agreements)
-
 
 ## Knowledge Required
 
@@ -353,7 +329,6 @@ This assessment implements **ISMS-POL-A.8.11, Section 2.3 (Environment Coverage 
 - Cloud architecture (resource groups, subscriptions, accounts, VPCs, regions)
 - Regulatory requirements for environment masking (GDPR Art. 32, PCI-DSS Req. 3.4, etc.)
 
-
 **Technical Skills:**
 
 - Infrastructure discovery methodologies (CMDB queries, cloud inventory tools, network scanning)
@@ -361,13 +336,11 @@ This assessment implements **ISMS-POL-A.8.11, Section 2.3 (Environment Coverage 
 - Data flow analysis (ETL/ELT pipelines, data replication, API integrations)
 - Cloud resource management (AWS RDS, Azure SQL, GCP BigQuery inventory)
 
-
 **NOT Required (but helpful):**
 
 - Deep masking tool configuration expertise (Security Engineers handle technical implementation)
 - Database administration expertise (DBAs provide environment details)
 - Cloud platform certifications (Cloud Architects provide cloud inventory)
-
 
 ## Tools Needed
 
@@ -379,7 +352,6 @@ This assessment implements **ISMS-POL-A.8.11, Section 2.3 (Environment Coverage 
 - **Open Source:** Ralph, netbox, Collins
 - **Purpose:** Authoritative source for environment inventory
 
-
 **Cloud Resource Discovery:**
 
 - **AWS:** AWS Config, AWS Systems Manager Inventory, CloudMapper
@@ -387,13 +359,11 @@ This assessment implements **ISMS-POL-A.8.11, Section 2.3 (Environment Coverage 
 - **GCP:** Cloud Asset Inventory, GCP Resource Manager
 - **Multi-Cloud:** CloudHealth, Morpheus, Flexera
 
-
 **Network Discovery (if no CMDB):**
 
 - **Commercial:** Nmap, SolarWinds Network Discovery, Lansweeper
 - **Open Source:** Nmap, Netdisco, OpenAudIT
 - **Purpose:** Discover databases, servers, services on network
-
 
 **Data Flow Mapping:**
 
@@ -401,13 +371,11 @@ This assessment implements **ISMS-POL-A.8.11, Section 2.3 (Environment Coverage 
 - **Open Source:** Apache Atlas, DataHub (LinkedIn), Amundsen (Lyft)
 - **Purpose:** Map data movement between environments
 
-
 **Evidence Collection:**
 
 - **Screenshot tool:** For capturing environment configuration, masking status
 - **Export capability:** CMDB exports, cloud resource inventory CSV/JSON
 - **Secure storage:** Evidence repository (some evidence contains infrastructure details)
-
 
 **Critical Tool Selection Note:**
 This assessment is **tool-agnostic**. [Organization] may use any environment discovery methodology (CMDB, cloud APIs, manual inventory, network scanning). The IMPORTANT part is documenting WHICH environments exist and WHETHER they are masked, not HOW you discovered them.
@@ -424,7 +392,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
 - [ ] DBA team committed to provide database refresh schedules
 - [ ] Assessment timeline communicated to affected teams
 
-
 ✅ **Technical Preparation:**
 
 - [ ] CMDB access provisioned (read-only minimum)
@@ -432,7 +399,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
 - [ ] Assessment workbook downloaded and unprotected
 - [ ] Evidence repository created (folder structure for screenshots, exports)
 - [ ] IMP-A.8.11.1 and IMP-A.8.11.2 workbooks available for reference
-
 
 ✅ **Coordination:**
 
@@ -442,7 +408,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
 - [ ] DevOps team notified (CI/CD pipeline review)
 - [ ] Change freeze awareness (avoid running during critical deployments)
 - [ ] Escalation path defined (for environment discovery disputes, masking gaps)
-
 
 ---
 
@@ -458,7 +423,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
 - Section 7: Review & Approval Process
 - Section 8: Maintenance & Updates
 - Section 9: Integration with Other Assessments
-
 
 **Shall I continue with Section 2: Assessment Workflow?**
 
@@ -557,7 +521,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
    - Include: Environment Name, Environment Type, Hosting Location, Owner
    - Filter to systems that potentially store or process data (exclude pure network devices, load balancers)
 
-
 **2. Supplement with Cloud Provider Inventory:**
    
    **AWS Discovery:**
@@ -608,7 +571,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
    - **Data Scientists:** "Where do you build ML models?" → Analytics sandbox
    - **DevOps:** "What CI/CD test environments exist?" → Ephemeral test environments
 
-
 **4. Identify Shadow IT (High Risk Area):**
 
    - Developer workstations with local database copies
@@ -616,7 +578,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
    - Forgotten POC/pilot environments (never decommissioned)
    - Old staging environments (replaced but still running)
    - Contractor/vendor-managed environments (out of sight, out of mind)
-
 
 **5. Document SaaS Platforms:**
 
@@ -626,14 +587,12 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
    - Jira/Confluence (may contain sensitive project data)
    - Office 365/Google Workspace (SharePoint, OneDrive, Drive contain files)
 
-
 **6. Don't Forget Backup & DR:**
 
    - Backup systems (what's backed up = what exists in production)
    - Disaster Recovery sites (hot standby, warm standby, cold standby)
    - Archive systems (long-term retention, compliance archives)
    - Decommissioned systems awaiting deletion (retention period not yet expired)
-
 
 **7. Complete Excel Rows (8-57, 50 row template):**
    
@@ -657,7 +616,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
    - **Notes/Comments:** Any special considerations
    - **Evidence ID:** Link to Evidence_Register (e.g., EV-ENV-001)
 
-
 **Quality Checks:**
 
 - [ ] All production systems from IMP-A.8.11.1 System_Inventory present
@@ -668,7 +626,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
 - [ ] No "Unknown" masking status without gap entry
 - [ ] Environment owners assigned to all environments
 
-
 **Common Mistakes to Avoid:**
 
 - ❌ Only documenting production (80% of data breach risk is non-production)
@@ -676,7 +633,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
 - ❌ Missing contractor/vendor-managed environments (third-party risk)
 - ❌ Not including SaaS platforms (they store YOUR sensitive data)
 - ❌ Overlooking decommissioned systems still running (retention compliance issue)
-
 
 ## Phase 2: Production Environment Assessment (2-3 hours)
 
@@ -696,7 +652,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
    - Do non-privileged users need access? (customer service, helpdesk, business analysts)
    - Example: Customer service reps need to VIEW customer records but NOT see full credit card numbers
 
-
 **2. Verify DDM Implementation:**
    
    For EACH production environment:
@@ -706,7 +661,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
    - **Which fields are masked?** Credit card (last 4 digits visible), SSN (XXX-XX-1234), Email (j***@example.com)
    - **Is unmasked access logged?** Audit trail for privileged users accessing full data
    - **Access control method?** RBAC (Role-Based), ABAC (Attribute-Based), ACL, Database roles
-
 
 **3. Document in Excel (Rows 8-37, 30 row template):**
    
@@ -720,14 +674,12 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
    - **Risk Level:** High / Medium / Low / None
    - **Remediation Target Date:** If gaps identified
 
-
 **4. Verify Access Logging:**
    
    - Are privileged users accessing unmasked production data logged?
    - Log format: Who, What (which table/field), When, Why (business justification)
    - Log review frequency: Monthly minimum
    - Anomaly detection: Unusual access patterns flagged
-
 
 **Quality Checks:**
 
@@ -738,14 +690,12 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
 - [ ] Privileged access requires business justification
 - [ ] Exceptions documented with Data Owner + CISO approval
 
-
 **Common Mistakes to Avoid:**
 
 - ❌ "We don't need DDM, only admins access production" → Customer service? Helpdesk? Business analysts?
 - ❌ DDM configured but not enabled (configuration drift)
 - ❌ Logging unmasked access but never reviewing logs (checkbox compliance)
 - ❌ Assuming production can be unmasked (policy is conditional, not automatic exemption)
-
 
 ## Phase 3: Non-Production Coverage - CRITICAL! (2-4 hours)
 
@@ -772,7 +722,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
    - Performance Testing
    - Integration Testing
 
-
 **2. Verify Masking Status:**
    
    For EACH non-production environment:
@@ -782,20 +731,17 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
    - If NO → Still document, but masking requirement = N/A
    - If YES → Masking is MANDATORY
    
-
    **Question 2:** Is masking deployed?
 
    - Check data refresh scripts (do they include masking step?)
    - Visual inspection (connect to database, SELECT * from sensitive tables, verify masked)
    - Automated validation (run masking verification script)
    
-
    **Question 3:** Coverage percentage?
 
    - % of sensitive fields masked = (Masked Fields / Total Sensitive Fields) × 100
    - Target: 100%
    - Anything <100% is a gap requiring remediation
-
 
 **3. Understand Data Refresh Process:**
    
@@ -817,7 +763,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
    - "What's the masking step in your data refresh script?"
    - "If I connect to dev database right now, will I see real customer names?"
 
-
 **4. Document in Excel (Rows 8-37, 30 row template):**
    
    Standard columns A-Q, PLUS extended columns:
@@ -830,7 +775,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
    - **Developer Access Count:** How many people have access?
    - **Contractor Access?:** Yes / No (third-party risk)
 
-
 **5. Red Flags (Immediate Escalation to CISO):**
    
    ⚠️ **CRITICAL GAP:** Non-production contains unmasked production data
@@ -839,14 +783,12 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
    - Audit finding: Guaranteed ISO 27001 certification failure
    - Data breach risk: 80% of preventable breaches occur in test systems
    
-
    **Immediate Actions:**
 
    - Document as P1 gap (highest priority)
    - Restrict access to environment (emergency ACL change)
    - Schedule masking implementation (≤30 day SLA for non-production)
    - Notify CISO and Data Owner
-
 
 **Quality Checks:**
 
@@ -857,7 +799,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
 - [ ] Any <100% coverage documented as gap with remediation plan
 - [ ] Critical gaps (unmasked non-prod) have ≤30 day remediation SLA
 
-
 **Common Mistakes to Avoid:**
 
 - ❌ "It's just dev, we trust our developers" → Trust is not a control, policy requires masking
@@ -865,7 +806,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
 - ❌ "UAT needs real data for realistic testing" → Use masked data with realistic patterns
 - ❌ Missing developer workstations (they copy production data locally)
 - ❌ Forgetting ephemeral CI/CD environments (they may contain test data from production)
-
 
 ## Phase 4: Analytics & Reporting Coverage (1-2 hours)
 
@@ -885,7 +825,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
    - ML/AI Platforms: SageMaker, Azure ML, Vertex AI, custom Jupyter notebooks
    - Reporting: SSRS, Crystal Reports, custom dashboards
 
-
 **2. Assess Data Granularity:**
    
    **Individual-Level Data (Requires Masking):**
@@ -894,13 +833,11 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
    - Employee records with salaries, performance reviews
    - Transaction details with account numbers
    
-
    **Aggregate Data (May Not Require Masking):**
 
    - "Total sales by region" (no individual identification)
    - "Average salary by department" (>5 people per group)
    - "Customer count by age range" (no PII)
-
 
 **3. Verify Masking or Anonymization:**
    
@@ -910,20 +847,17 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
    - Data warehouse ETL includes masking step
    - Example: Analysts see "Customer ID: 12345" not "John Smith"
    
-
    **Option 2: Aggregation**
 
    - Data is aggregated before storage in analytics platform
    - k-anonymity: Each record indistinguishable from ≥4 others
    - Example: "Age range 30-40, ZIP 12XXX, Male" not individual records
    
-
    **Option 3: Anonymization**
 
    - Irreversible transformation (not just masking)
    - Statistical disclosure control
    - Example: Differential privacy, data synthesis
-
 
 **4. Document in Excel (Rows 8-37, 30 row template):**
    
@@ -935,7 +869,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
    - **External Access?:** Vendors / Consultants (Yes / No)
    - **PII Visible?:** Yes / No / Partial (if yes, requires masking or exception)
 
-
 **Quality Checks:**
 
 - [ ] All analytics platforms inventoried (don't forget personal Excel exports)
@@ -943,7 +876,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
 - [ ] Data warehouse ETL includes masking step (verify scripts)
 - [ ] BI dashboards use masked views (test by logging in as analyst)
 - [ ] ML platforms anonymize training data (model outputs don't leak PII)
-
 
 ## Phase 5: Cloud Environment Coverage (2-3 hours)
 
@@ -962,7 +894,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
    - GCP: Cloud SQL, BigQuery, Cloud Storage, Datastore
    - SaaS: Salesforce, Workday, ServiceNow (vendor-hosted)
 
-
 **2. Classify by Environment Type:**
 
    - Cloud Production → Same rules as on-prem production (DDM conditional)
@@ -970,13 +901,11 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
    - Cloud Analytics → Masking or aggregation required
    - Cloud Backup → Encryption required, masking conditional
 
-
 **3. Verify Masking Coverage:**
 
    - Do cloud dev/test databases have masked data?
    - Do S3 buckets contain masked exports?
    - Do cloud-based BI tools query masked views?
-
 
 **4. Document in Excel (Rows 8-37, 30 row template):**
    Extended columns:
@@ -986,13 +915,11 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
    - **Region/Location:** us-east-1, eu-central-1 (data residency)
    - **Multi-Tenant?:** Yes / No (SaaS platforms)
 
-
 **Common Mistakes:**
 
 - ❌ "Cloud is vendor's responsibility" → NO, you're data controller, vendor is processor
 - ❌ Forgetting cloud sandbox accounts (developers spin up test databases)
 - ❌ S3 buckets with unmasked exports (accessible to anyone with URL if misconfigured)
-
 
 ---
 
@@ -1004,7 +931,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
 - Section 4: Evidence Collection
 - Section 5: Common Pitfalls & Troubleshooting
 - Section 6: Quality Checklist
-
 
 **Shall I continue with Section 3?**
 
@@ -1031,7 +957,6 @@ Backups present a unique challenge:
 - **Reality:** Most backup systems cannot mask during backup without breaking disaster recovery
 - **Solution:** Encryption + Access Control is minimum requirement; masking where technically feasible
 
-
 **Step-by-Step:**
 
 **1. Inventory ALL Backup Systems:**
@@ -1043,7 +968,6 @@ Backups present a unique challenge:
    - Offline backups (tapes, removable media)
    - Developer/team backups (local exports, ad-hoc dumps)
 
-
 **2. Assess Backup Content:**
    
    For EACH backup system:
@@ -1053,7 +977,6 @@ Backups present a unique challenge:
    - **Backup format:** Full database dump / File-level backup / Block-level snapshot
    - **Restore requirement:** Must restore to exact original state? (Yes = masking may break recovery)
 
-
 **3. Evaluate Masking Feasibility:**
    
    **Masking Feasible:**
@@ -1062,14 +985,12 @@ Backups present a unique challenge:
    - Archive for compliance only (no restore needed) → Can mask archive
    - File-level backups of reports/exports → Mask files before backup
    
-
    **Masking NOT Feasible (Require Encryption Instead):**
 
    - Full database backups (byte-for-byte restore requirement)
    - Transaction log backups (point-in-time recovery breaks if masked)
    - DR hot standby (must be exact replica for failover)
    - Incremental backups (delta changes, masking would break chain)
-
 
 **4. Verify Encryption (MANDATORY if not masked):**
    
@@ -1079,19 +1000,16 @@ Backups present a unique challenge:
    - Encryption keys managed securely? (KMS, Hardware Security Module)
    - Key rotation policy? (annual minimum)
    
-
    **Encryption in Transit:**
 
    - Backup transfer encrypted? (TLS 1.2+ for network backups)
    - Offline media encryption? (Tape encryption, encrypted USB)
    
-
    **Access Controls:**
 
    - Who can restore backups? (Principle of least privilege)
    - Restore operations logged? (Audit trail)
    - Backup admin access restricted? (Separate from production access)
-
 
 **5. Document in Excel (Rows 8-37, 30 row template):**
    
@@ -1108,7 +1026,6 @@ Backups present a unique challenge:
    - **Masking Feasible?:** Yes / No / Conditional
    - **Masking Applied?:** Yes / No / N/A (if not feasible)
 
-
 **6. Risk Assessment:**
    
    **High Risk (Requires Mitigation):**
@@ -1117,20 +1034,17 @@ Backups present a unique challenge:
    - Backup access not logged → Cannot detect unauthorized restore
    - Weak encryption (DES, 3DES, <128-bit keys) → Upgrade required
    
-
    **Medium Risk (Monitor):**
 
    - Encrypted but not masked (acceptable if access-controlled)
    - Long retention periods (>7 years) → Data minimization concern
    - Offshore backups (cross-border data transfer) → GDPR/FADP concern
    
-
    **Low Risk:**
 
    - Encrypted, access-controlled, retention aligned with policy
    - DR site has same controls as production
    - Regular restore testing (proves encryption doesn't break recovery)
-
 
 **Quality Checks:**
 
@@ -1141,14 +1055,12 @@ Backups present a unique challenge:
 - [ ] Masking applied where technically feasible (export backups for testing)
 - [ ] High-risk gaps (unencrypted backups) escalated to CISO
 
-
 **Common Mistakes to Avoid:**
 
 - ❌ "Backups are offline, we don't need encryption" → Stolen tapes = data breach
 - ❌ "Masking backups breaks restore" → True for full backups, but mask EXPORT copies
 - ❌ "We never restore backups, low priority" → Disaster happens when you least expect it
 - ❌ Not inventorying developer backups (local SQL dumps on laptops)
-
 
 ## Phase 7: External Sharing Review (1-2 hours)
 
@@ -1167,7 +1079,6 @@ Third-party data sharing is a major compliance blind spot:
 - Customer requests "their data for migration" → Oversharing (includes other customers' data)
 - Partner receives "analytics feed" → Individual-level records instead of aggregates
 
-
 **Step-by-Step:**
 
 **1. Inventory ALL External Data Sharing:**
@@ -1179,27 +1090,23 @@ Third-party data sharing is a major compliance blind spot:
    - Managed service providers with production access (outsourced operations)
    - Business partners receiving data feeds (B2B integrations, EDI)
    
-
    **Auditor/Regulator Access:**
 
    - External auditors (ISO 27001, SOC 2, financial audits)
    - Regulatory authorities (data requests, investigations)
    - Legal discovery (litigation, e-discovery)
    
-
    **Customer Data Exports:**
 
    - "Download your data" features (GDPR Art. 20 portability)
    - Customer migration exports (switching providers)
    - Customer reporting/analytics access
    
-
    **Offshore/Outsourced Operations:**
 
    - Offshore development teams (India, Eastern Europe, Latin America)
    - Offshore customer support (call centers)
    - Outsourced data entry/processing
-
 
 **2. Assess Contractual Obligations:**
    
@@ -1210,20 +1117,17 @@ Third-party data sharing is a major compliance blind spot:
    - **Example - YES:** Auditor needs to verify specific transactions (must see real values)
    - **Example - NO:** Vendor testing integration (can use masked data)
    
-
    **Question 2:** Is Data Processing Agreement (DPA) in place?
 
    - GDPR Art. 28 requires DPA with all processors
    - DPA specifies security measures (including masking where applicable)
    - DPA includes data breach notification requirements
    
-
    **Question 3:** Is risk formally accepted?
 
    - If sharing unmasked data, who approved? (Data Owner + CISO minimum)
    - Risk assessment documented?
    - Compensating controls? (NDA, access logging, time-limited access)
-
 
 **3. Verify Masking Implementation:**
    
@@ -1245,7 +1149,6 @@ Third-party data sharing is a major compliance blind spot:
    - **Time-Limited Access:** Revoke access after project completion
    - **Access Logging:** Track what external party accessed
 
-
 **4. Document in Excel (Rows 8-37, 30 row template):**
    
    Extended columns:
@@ -1262,7 +1165,6 @@ Third-party data sharing is a major compliance blind spot:
    - **Risk Assessment Done?:** Yes / No
    - **CISO Approval Date:** When was sharing approved?
 
-
 **5. Red Flags (Immediate Escalation):**
    
    ⚠️ **CRITICAL GAPS:**
@@ -1273,7 +1175,6 @@ Third-party data sharing is a major compliance blind spot:
    - No access logging for external parties → Cannot detect data exfiltration
    - Sharing continues after contract ends → No legal basis for processing
 
-
 **Quality Checks:**
 
 - [ ] All external data sharing arrangements documented (vendors, auditors, customers)
@@ -1283,14 +1184,12 @@ Third-party data sharing is a major compliance blind spot:
 - [ ] Access is time-limited where possible (revoke after project)
 - [ ] Access logging enabled (audit trail for external access)
 
-
 **Common Mistakes to Avoid:**
 
 - ❌ "Vendor signed NDA, we're covered" → NDA is legal, not technical control
 - ❌ "It's just a sample for testing" → Sample may still contain real PII
 - ❌ "Customer requested their data, we had to provide it" → Provide THEIR data, not everyone's data
 - ❌ Forgetting to revoke access after project ends (vendor still has credentials)
-
 
 ## Phase 8: Data Flow Mapping (2-3 hours)
 
@@ -1310,7 +1209,6 @@ Data moves between environments constantly:
 - Production → External (vendor integrations, customer exports)
 - Non-Production → Production (code deployment, reverse flow)
 
-
 **Step-by-Step:**
 
 **1. Identify Major Data Flows:**
@@ -1321,26 +1219,22 @@ Data moves between environments constantly:
    - Production → UAT (monthly refresh for user testing)
    - Production → Training (quarterly refresh for employee training)
    
-
    **Analytics/Reporting Flows:**
 
    - Production → Data Warehouse (nightly ETL)
    - Production → BI Tool (real-time query or cached extracts)
    - Production → ML Platform (model training datasets)
    
-
    **Backup/DR Flows:**
 
    - Production → Backup System (hourly/daily backups)
    - Production → DR Site (real-time replication or periodic sync)
    
-
    **External Integration Flows:**
 
    - Production → Vendor API (B2B integrations)
    - Production → Customer Portal (data exports)
    - Production → Auditor (compliance data requests)
-
 
 **2. Map Each Flow:**
    
@@ -1352,7 +1246,6 @@ Data moves between environments constantly:
    - **Flow Mechanism:** ETL tool / Database replication / API / File transfer / Manual export
    - **Data Volume:** Number of records transferred per flow
    - **Sensitive Data Included?:** Yes / No (check against IMP-A.8.11.1)
-
 
 **3. Identify Masking Checkpoints:**
    
@@ -1366,7 +1259,6 @@ Data moves between environments constantly:
    - Advantage: Impossible to accidentally export unmasked data
    - Example: ETL queries masked production views, not raw tables
    
-
    **Option 2: In Pipeline (Good)**
    ```
    Production DB → Extract → Masking Step → Load → Destination
@@ -1375,7 +1267,6 @@ Data moves between environments constantly:
    - Advantage: Flexible masking rules per destination
    - Example: ETL tool includes masking transformation
    
-
    **Option 3: At Destination (Acceptable if Audited)**
    ```
    Production DB → Extract → Load → Destination → Mask on Arrival
@@ -1384,14 +1275,12 @@ Data moves between environments constantly:
    - Disadvantage: Temporary window where unmasked data exists in destination
    - Requires: Immediate masking on arrival, access restricted until masked
    
-
    **Option 4: None (NON-COMPLIANT for Non-Prod Destinations)**
    ```
    Production DB → Direct Copy → Destination (NO MASKING)
    ```
 
    - This is a CRITICAL GAP if destination is non-production
-
 
 **4. Verify Checkpoint Implementation:**
    
@@ -1402,20 +1291,17 @@ Data moves between environments constantly:
    - Verify masking runs BEFORE data writes to destination
    - Check error handling (if masking fails, does pipeline stop or continue?)
    
-
    **For Database Replication:**
 
    - Real-time replication (e.g., AWS DMS, Oracle GoldenGate) → Masking at destination
    - Snapshot replication → Masking step between snapshot and restore
    - Log shipping → Cannot mask without breaking chain (requires destination-side masking)
    
-
    **For API Integrations:**
 
    - API returns masked data (application layer masking)
    - API access controlled by role (DDM)
    - API logging (audit trail of data shared)
-
 
 **5. Document in Excel (Rows 8-37, 30 row template):**
    
@@ -1434,7 +1320,6 @@ Data moves between environments constantly:
    - **Checkpoint Validation:** How is masking verified? (automated tests, manual checks)
    - **Failure Handling:** What happens if masking fails? (Stop flow / Alert / Continue)
 
-
 **6. Risk Assessment:**
    
    **Critical Risks:**
@@ -1443,13 +1328,11 @@ Data moves between environments constantly:
    - Masking checkpoint can be bypassed (manual override) → P1 GAP
    - Masking failure allows unmasked data through → P2 GAP
    
-
    **Medium Risks:**
 
    - Manual masking step (human error risk) → Automate
    - No validation that masking worked → Add checkpoint validation
    - Temporary unmasked window at destination → Minimize duration
-
 
 **Quality Checks:**
 
@@ -1460,14 +1343,12 @@ Data moves between environments constantly:
 - [ ] Failure handling defined (masking fails → flow stops)
 - [ ] Bypass controls (cannot skip masking step)
 
-
 **Common Mistakes to Avoid:**
 
 - ❌ "We mask at destination, so it's fine" → Temporary window of unmasked data = risk
 - ❌ "It's an automated script, we trust it" → Scripts fail, need validation step
 - ❌ "Manual process, very careful" → Humans make mistakes, automate masking
 - ❌ Not documenting reverse flows (non-production → production should NOT happen with sensitive data)
-
 
 ## Phase 9: Gap Analysis & Remediation Planning (1-2 hours)
 
@@ -1492,7 +1373,6 @@ Data moves between environments constantly:
    - External_Sharing: Unmasked vendor data
    - Data_Flow_Mapping: Missing masking checkpoints
 
-
 **2. Assign Gap Priority:**
    
    **P1 - Critical (Remediate ≤30 days):**
@@ -1502,7 +1382,6 @@ Data moves between environments constantly:
    - External sharing of unmasked data without DPA
    - No masking checkpoint for production → non-production flow
    
-
    **P2 - High (Remediate ≤90 days):**
 
    - Production DDM missing where required
@@ -1510,7 +1389,6 @@ Data moves between environments constantly:
    - Cloud non-production environment <100% coverage
    - Manual masking checkpoint (needs automation)
    
-
    **P3 - Medium (Remediate ≤180 days):**
 
    - Access logging missing
@@ -1518,13 +1396,11 @@ Data moves between environments constantly:
    - Masking coverage 90-99% (almost compliant)
    - Data flow mapping incomplete
    
-
    **P4 - Low (Remediate ≤365 days):**
 
    - Documentation gaps (coverage exists, evidence missing)
    - Process improvements (automation opportunities)
    - Nice-to-have enhancements
-
 
 **3. Assign Gap Owners:**
    
@@ -1535,7 +1411,6 @@ Data moves between environments constantly:
    - **Data Owner Approval:** Required for Critical/High gaps
    - **CISO Escalation:** If gap remediation blocked or delayed
 
-
 **4. Define Remediation Actions:**
    
    For EACH gap:
@@ -1545,7 +1420,6 @@ Data moves between environments constantly:
    - **Dependencies:** What must happen first? (tool procurement, approvals, etc.)
    - **Resource Requirements:** Budget, headcount, tools needed
    - **Success Criteria:** How will we know gap is closed? (evidence required)
-
 
 **5. Document in Excel (Rows 8-47, 40 row template):**
    
@@ -1566,7 +1440,6 @@ Data moves between environments constantly:
    - **Verification Method:** How gap closure verified
    - **Evidence ID:** Link to Evidence_Register (proof gap closed)
 
-
 **6. Risk Acceptance Process (If Remediation Not Feasible):**
    
    **When Risk Acceptance Needed:**
@@ -1575,7 +1448,6 @@ Data moves between environments constantly:
    - Business requirement for unmasked data (e.g., fraud investigation)
    - Remediation cost exceeds risk (rare, requires CFO approval)
    
-
    **Risk Acceptance Requirements:**
 
    - Data Owner approval (business accountability)
@@ -1583,7 +1455,6 @@ Data moves between environments constantly:
    - Compensating controls defined (access logging, encryption, monitoring)
    - Review period (risk acceptance expires, requires renewal)
    - Documentation in Exception Register (audit trail)
-
 
 **Quality Checks:**
 
@@ -1594,7 +1465,6 @@ Data moves between environments constantly:
 - [ ] Remediation actions specific and actionable
 - [ ] Target dates realistic (not aspirational)
 - [ ] Risk acceptance only for infeasible remediations (not laziness)
-
 
 ## Phase 10: Evidence & Approval (1-2 hours)
 
@@ -1613,7 +1483,6 @@ Data moves between environments constantly:
    - Network discovery scan results
    - SaaS subscription list
    
-
    **Masking Deployment Evidence:**
 
    - Masking tool configuration screenshots
@@ -1621,27 +1490,23 @@ Data moves between environments constantly:
    - Data refresh script with masking step
    - DDM role configuration
    
-
    **Access Control Evidence:**
 
    - Access logs (who accessed unmasked production data)
    - Role definitions (which roles see masked vs. unmasked)
    - Exception approval forms (Data Owner + CISO signatures)
    
-
    **Encryption Evidence:**
 
    - Backup encryption certificates
    - Key management policy
    - Encryption verification (storage encrypted status)
    
-
    **External Sharing Evidence:**
 
    - Data Processing Agreements (DPAs)
    - Risk acceptance forms
    - Data transfer logs
-
 
 **2. Complete Evidence_Register:**
    
@@ -1657,7 +1522,6 @@ Data moves between environments constantly:
    - **Retention Period:** How long to keep (align with records management)
    - **Location:** Folder path or document repository location
 
-
 **3. Complete Summary_Dashboard:**
    
    **Dashboard Auto-Calculates:**
@@ -1668,13 +1532,11 @@ Data moves between environments constantly:
    - Critical gap count (target: 0)
    - Average remediation time
    
-
    **Review Dashboard and Verify:**
 
    - Do numbers match reality? (sanity check formulas)
    - Are critical gaps highlighted in red? (visual indicator for executives)
    - Is overall compliance score accurate? (weighted average)
-
 
 **4. Obtain Approvals:**
    
@@ -1685,7 +1547,6 @@ Data moves between environments constantly:
    - **Data Protection Officer (DPO):** Regulatory compliance validated
    - **CFO (if needed):** Budget approved for masking tools/resources
 
-
 **5. Post-Approval Actions:**
    
    **Immediate:**
@@ -1694,20 +1555,17 @@ Data moves between environments constantly:
    - Schedule weekly gap remediation tracking meetings
    - Assign resources for masking implementation
    
-
    **Within 30 Days:**
 
    - Close all P1 gaps (unmasked non-production is non-negotiable)
    - Implement automated masking checkpoints
    - Procure masking tools if needed
    
-
    **Quarterly:**
 
    - Re-run environment inventory (new systems, decommissioned systems)
    - Verify P2/P3 gap remediation progress
    - Update assessment workbook
-
 
 ---
 
@@ -1720,7 +1578,6 @@ Data moves between environments constantly:
 - Section 6: Quality Checklist
 - Section 7: Review & Approval Process
 - Section 8: Maintenance & Updates
-
 
 **Shall I continue with Section 4: Common Pitfalls & Troubleshooting?**
 
@@ -1744,13 +1601,11 @@ Data moves between environments constantly:
 - Backup systems (what's being backed up = what exists)
 - Change management records (what was deployed in last 24 months)
 
-
 **Step 2: Follow the Money**
 
 - AWS/Azure/GCP billing console → List all charged resources
 - SaaS subscriptions (procurement records, credit card statements)
 - Datacenter colocation invoices (what racks are you renting?)
-
 
 **Step 3: Follow the People**
 
@@ -1759,13 +1614,11 @@ Data moves between environments constantly:
 - Ask DBAs: "Which databases do you administer?"
 - Ask cloud team: "Which cloud accounts exist?"
 
-
 **Step 4: Network Discovery (Last Resort)**
 
 - Port scanning (with management approval, during maintenance window)
 - DNS enumeration (find database.dev.company.com patterns)
 - Cloud provider APIs (programmatic resource enumeration)
-
 
 **Document in Gap_Analysis:**
 
@@ -1774,13 +1627,11 @@ Data moves between environments constantly:
 - Owner: IT Operations Manager
 - Target: 90 days
 
-
 **Accept Reality:**
 
 - First pass may only find 60-70% of environments (that's normal)
 - Quarterly reviews will discover forgotten environments
 - Shadow IT is called "shadow" for a reason (hard to find by definition)
-
 
 ---
 
@@ -1798,24 +1649,20 @@ Data moves between environments constantly:
   - Referential integrity preserved (Customer_ID 12345 masked to 98765 consistently across all tables)
   - Realistic patterns (masked emails still @validomain.com, phone numbers valid format)
 
-
 **Argument 2: "We need to debug production issues"**
 
 - **Response:** Debug in production with role-based DDM (masked for most, unmasked for authorized debuggers only)
 - **Alternative:** Reproduce issue in test environment with synthetic data matching production scenario
-
 
 **Argument 3: "Masking is too slow, we can't wait for data refresh"**
 
 - **Response:** Static Data Masking (SDM) is one-time cost, subsequent refreshes are fast (copy masked database)
 - **Solution:** Pre-masked "golden copy" environment (mask once, clone many times)
 
-
 **Argument 4: "We need production scale for performance testing"**
 
 - **Response:** Data synthesis can generate millions of realistic records faster than copying production
 - **Tools:** Mockaroo, Faker libraries, custom data generators
-
 
 **Escalation Path:**
 1. Developer request → DBA rejects (policy requirement)
@@ -1827,7 +1674,6 @@ Data moves between environments constantly:
 
 - "Developer request for unmasked dev data - DENIED per policy ISMS-POL-A.8.11, Section 2.3 (Environment Coverage Requirements)"
 - Approval chain: Developer → Manager → CISO (DENIED)
-
 
 ---
 
@@ -1844,24 +1690,20 @@ Data moves between environments constantly:
    - Account purpose documented (what project, how long needed)
    - Auto-expire after 90 days unless renewed
 
-
 2. **Tagging Requirements:**
 
    - All cloud resources tagged: Owner, Environment (dev/test/prod), Project, Expiry Date
    - Untagged resources = terminated after 7-day warning
-
 
 3. **Cost Alerts:**
 
    - Alert if account spend >$100/month (indicates significant usage)
    - Monthly account review (are all accounts still needed?)
 
-
 4. **Data Residency Controls:**
 
    - Block production data copy to cloud dev accounts (DLP rules)
    - Allow only masked data exports to cloud sandbox
-
 
 **Detective Controls:**
 1. **Quarterly Cloud Inventory:**
@@ -1871,19 +1713,16 @@ Data moves between environments constantly:
    - GCP: `gcloud projects list`
    - Reconcile with approved account list
 
-
 2. **Automated Scanning:**
 
    - Cloud Security Posture Management (CSPM) tools
    - Detect unencrypted databases, public S3 buckets, overprivileged IAM
-
 
 **Document as Ongoing Process:**
 
 - Not a one-time assessment, continuous monitoring
 - Add to quarterly review cycle
 - Assign cloud team ownership
-
 
 ---
 
@@ -1899,13 +1738,11 @@ Data moves between environments constantly:
 - **Often:** They only need system IDs, timestamps, error messages (not customer PII)
 - **Propose:** Mask PII, provide real system metadata
 
-
 **Step 2: Propose Alternatives**
 
 - **Synthetic Data:** Generate realistic test data matching production patterns
 - **Data Sampling:** Provide subset (1,000 records, not full production dump)
 - **On-Site Support:** Vendor accesses production on YOUR systems (VPN, time-limited, logged)
-
 
 **Step 3: Escalate Internally**
 
@@ -1913,13 +1750,11 @@ Data moves between environments constantly:
 - Procurement: Can we use different vendor? (competitive pressure)
 - Risk acceptance: If truly required, CISO + Data Owner + Legal approval (document compensating controls)
 
-
 **Step 4: Amend Contract (If Renewing)**
 
 - Add clause: "Vendor shall accept masked/synthetic data for non-production testing"
 - Add clause: "Vendor data access must comply with our data protection policy"
 - Add clause: "Vendor breaches = contract termination + liability"
-
 
 **Document Risk Acceptance (If Unavoidable):**
 
@@ -1927,7 +1762,6 @@ Data moves between environments constantly:
 - **Compensating Controls:** NDA, DPA, encrypted transfer, access logging, time-limited access (delete after support resolved), audit rights
 - **Approvals:** Data Owner + CISO + Legal + CFO (if contract >$X value)
 - **Review:** Quarterly (is this still necessary?)
-
 
 ---
 
@@ -1943,7 +1777,6 @@ Data moves between environments constantly:
 - Transaction logs: Sequential, masking breaks chain
 - Incremental backups: Delta changes, masking invalidates baseline
 
-
 **Acceptable Approach:**
 
 **Primary Backups (Production Recovery):**
@@ -1953,13 +1786,11 @@ Data moves between environments constantly:
 - MUST have strict access controls (only backup admins can restore)
 - MUST have audit logging (who restored what, when)
 
-
 **Secondary Backups (Non-Production Use):**
 
 - Create separate masked backup for testing purposes
 - Process: Restore to staging → Mask → Export as "test dataset"
 - This is acceptable (separate use case from disaster recovery)
-
 
 **DR/Standby Sites:**
 
@@ -1967,12 +1798,10 @@ Data moves between environments constantly:
 - Warm/Cold standby: Can mask if acceptable RTO (restore time objective) increases
 - Decision: Trade-off between compliance and recovery time
 
-
 **Document in Backup_Archive Sheet:**
 
 - "Production backups unmasked (required for restore), encrypted AES-256, access restricted to 3 backup admins, restore operations logged"
 - "Test backups created monthly from masked staging copy, no production backup restore to dev/test"
-
 
 **Risk Acceptance:**
 
@@ -1980,7 +1809,6 @@ Data moves between environments constantly:
 - Rationale: "Technical limitation, no masking solution exists for byte-level backups"
 - Compensating Controls: Encryption, access restriction, logging
 - Review: Annual (check if new technology enables backup masking)
-
 
 ---
 
@@ -1998,7 +1826,6 @@ Data moves between environments constantly:
 - Explain risk: GDPR/FADP violation, PCI-DSS non-compliance, ISO 27001 audit failure
 - Request resources: Budget, priority, executive support
 
-
 **Day 2-3: Triage**
 
 - Priority 1 (10-15 environments): Contain highest risk
@@ -2010,13 +1837,11 @@ Data moves between environments constantly:
 - Priority 3 (10-15 environments): Lower risk
   - Training, sandbox with anonymized or old data → 90-day remediation SLA
 
-
 **Day 4-5: Quick Wins**
 
 - Shutdown unused environments (if nobody needs it, delete it)
 - Restrict access to non-compliant environments (until masking deployed)
 - Enable audit logging (detect if anyone accesses unmasked data)
-
 
 **Sprint Remediation (30 Days):**
 
@@ -2026,13 +1851,11 @@ Data moves between environments constantly:
 - If have masking tool → Expand licenses, train additional DBAs
 - Setup masking "factory" (standardized process for masking non-prod)
 
-
 **Week 3-4: Bulk Masking**
 
 - Mask P1 environments (high risk)
 - Parallel track: Mask P2 environments (standard risk)
 - Quality checks: Verify masking worked (automated validation)
-
 
 **Post-Sprint: Process Fix**
 
@@ -2042,13 +1865,11 @@ Data moves between environments constantly:
   - Masking tool too complicated?
 - Solution: Mandatory masking in data refresh scripts (cannot copy prod data without masking step)
 
-
 **Document as Case Study:**
 
 - "Initial assessment found 47 non-compliant environments (2024-Q1)"
 - "30-day sprint remediation: 15 P1 environments masked, 25 P2 environments masked, 7 decommissioned"
 - "Process improvement: Automated masking checkpoint in all data refresh scripts (prevents recurrence)"
-
 
 ---
 
@@ -2064,14 +1885,12 @@ Data moves between environments constantly:
 - [ ] Network discovery scan results (if used)
 - [ ] Billing records (proof of cloud accounts, SaaS platforms)
 
-
 **For Production Environment DDM:**
 
 - [ ] DDM configuration screenshots (masked fields per role)
 - [ ] User role definitions (who sees what)
 - [ ] Access logs (privileged users accessing unmasked data)
 - [ ] Masking policy enforcement screenshots (application layer)
-
 
 **For Non-Production Coverage:**
 
@@ -2080,20 +1899,17 @@ Data moves between environments constantly:
 - [ ] Coverage validation report (100% of sensitive fields masked)
 - [ ] Before/after comparison (production vs. masked, redacted)
 
-
 **For Analytics/Reporting:**
 
 - [ ] BI tool configuration (masked views, aggregated datasets)
 - [ ] Data warehouse ETL job definition (masking transformation step)
 - [ ] Sample reports (verify individual-level PII not visible)
 
-
 **For Cloud Environments:**
 
 - [ ] Cloud account inventory (AWS Organizations, Azure Management Groups, GCP Projects)
 - [ ] Cloud resource tagging compliance (Owner, Environment, Expiry tags)
 - [ ] Cloud masking configuration (RDS instance settings, BigQuery column-level security)
-
 
 **For Backup/Archive:**
 
@@ -2102,7 +1918,6 @@ Data moves between environments constantly:
 - [ ] Backup access control list (who can restore)
 - [ ] Restore operation logs (audit trail)
 
-
 **For External Sharing:**
 
 - [ ] Data Processing Agreements (DPAs) with vendors
@@ -2110,14 +1925,12 @@ Data moves between environments constantly:
 - [ ] Data transfer logs (SFTP logs, API logs)
 - [ ] Vendor access review (quarterly access certification)
 
-
 **For Data Flow Mapping:**
 
 - [ ] ETL job definitions (Informatica, Talend, Airflow DAGs)
 - [ ] Data flow diagrams (Visio, Lucidchart)
 - [ ] Masking checkpoint validation scripts (automated tests)
 - [ ] Pipeline failure alerts (proof masking failures are detected)
-
 
 ## Evidence Storage & Organization
 
@@ -2178,7 +1991,6 @@ Evidence/ISMS-A.8.11.3_Environment_Coverage/
 - Superseded assessments: 1 year (historical reference)
 - Critical evidence (DPAs, risk acceptances): 7 years (legal requirement)
 
-
 ---
 
 # Quality Checklist
@@ -2199,7 +2011,6 @@ Evidence/ISMS-A.8.11.3_Environment_Coverage/
 - [ ] Environment owners assigned (all environments)
 - [ ] No "Unknown" masking status without gap entry
 
-
 **Production Environment Assessment:**
 
 - [ ] DDM deployed where role-based access required
@@ -2208,7 +2019,6 @@ Evidence/ISMS-A.8.11.3_Environment_Coverage/
 - [ ] Access logs reviewed monthly (process documented)
 - [ ] Exceptions formally approved (Data Owner + CISO)
 - [ ] Production Environment Checklist (18 items) all addressed
-
 
 **Non-Production Coverage (CRITICAL):**
 
@@ -2219,7 +2029,6 @@ Evidence/ISMS-A.8.11.3_Environment_Coverage/
 - [ ] No unmasked production data in dev/test/UAT (verified via spot checks)
 - [ ] Non-Production Checklist (20 items) all addressed
 
-
 **Analytics/Reporting:**
 
 - [ ] Individual-level PII masked or aggregated
@@ -2227,7 +2036,6 @@ Evidence/ISMS-A.8.11.3_Environment_Coverage/
 - [ ] Data warehouse ETL includes masking step (job definitions reviewed)
 - [ ] Analytics platform access counts documented
 - [ ] Analytics Checklist (15 items) all addressed
-
 
 **Cloud Environments:**
 
@@ -2237,7 +2045,6 @@ Evidence/ISMS-A.8.11.3_Environment_Coverage/
 - [ ] SaaS platforms data protection verified (vendor questionnaires)
 - [ ] Cloud Environment Checklist (18 items) all addressed
 
-
 **Backup/Archive:**
 
 - [ ] Encryption verified for all backups containing sensitive data (AES-256 minimum)
@@ -2245,7 +2052,6 @@ Evidence/ISMS-A.8.11.3_Environment_Coverage/
 - [ ] Restore operations logged (audit trail)
 - [ ] Masking applied where technically feasible (export backups for testing)
 - [ ] Backup Checklist (12 items) all addressed
-
 
 **External Sharing:**
 
@@ -2255,7 +2061,6 @@ Evidence/ISMS-A.8.11.3_Environment_Coverage/
 - [ ] Access time-limited where possible (revoke after project ends)
 - [ ] External Sharing Checklist (15 items) all addressed
 
-
 **Data Flow Mapping:**
 
 - [ ] Major data flows mapped (production → non-prod, analytics, external)
@@ -2263,7 +2068,6 @@ Evidence/ISMS-A.8.11.3_Environment_Coverage/
 - [ ] Checkpoint implementation verified (not just documented)
 - [ ] Failure handling defined (masking fails → flow stops)
 - [ ] Data Flow Checklist (12 items) all addressed
-
 
 **Gap Analysis:**
 
@@ -2275,7 +2079,6 @@ Evidence/ISMS-A.8.11.3_Environment_Coverage/
 - [ ] Target dates realistic
 - [ ] Risk acceptance only for infeasible remediations (with compensating controls)
 
-
 ## Evidence Checks
 
 - [ ] Minimum 20 evidence items in Evidence_Register (one per major finding)
@@ -2285,7 +2088,6 @@ Evidence/ISMS-A.8.11.3_Environment_Coverage/
 - [ ] Evidence retention period defined (align with records management policy)
 - [ ] Evidence stored securely (some evidence contains infrastructure details)
 
-
 ## Approval Checks
 
 - [ ] Assessment completed by qualified personnel (IT Operations Manager, Infrastructure Lead, or designee)
@@ -2294,7 +2096,6 @@ Evidence/ISMS-A.8.11.3_Environment_Coverage/
 - [ ] CISO has reviewed and approved overall assessment and gap remediation plan
 - [ ] Sign-off sheet completed with signatures and dates
 - [ ] Next review date scheduled (quarterly for environment updates)
-
 
 ---
 
@@ -2387,7 +2188,6 @@ Evidence/ISMS-A.8.11.3_Environment_Coverage/
 - **CFO:** If significant budget required for masking tools or cloud resources
 - **CTO / VP Engineering:** If infrastructure changes required (new environments, decommissions)
 
-
 ## Post-Approval Actions
 
 **Immediate (Within 1 Week):**
@@ -2397,20 +2197,17 @@ Evidence/ISMS-A.8.11.3_Environment_Coverage/
 - [ ] Schedule weekly gap remediation status meetings (track progress)
 - [ ] Add to ISMS audit evidence repository
 
-
 **Short-Term (Within 30 Days):**
 
 - [ ] Close all P1 gaps (unmasked non-production, unencrypted backups, high-risk external sharing)
 - [ ] Implement automated masking checkpoints in data refresh scripts
 - [ ] Procure masking tools if needed (vendor selection, licensing, deployment)
 
-
 **Medium-Term (Within 90 Days):**
 
 - [ ] Close all P2 gaps (production DDM, analytics masking, cloud coverage)
 - [ ] Document remediation evidence (proof gaps closed)
 - [ ] Update environment inventory (capture new environments, decommission old)
-
 
 **Ongoing (Quarterly):**
 
@@ -2419,14 +2216,12 @@ Evidence/ISMS-A.8.11.3_Environment_Coverage/
 - [ ] Update assessment workbook
 - [ ] Track compliance trend (improving or degrading?)
 
-
 **Annual:**
 
 - [ ] Full environment coverage re-assessment (comprehensive review)
 - [ ] Re-validate masking coverage (schema changes may have introduced gaps)
 - [ ] Audit previous year's environment changes
 - [ ] Update assessment and obtain re-approval
-
 
 ---
 
@@ -2442,7 +2237,6 @@ Evidence/ISMS-A.8.11.3_Environment_Coverage/
 - External sharing arrangements (new vendors, contract renewals)
 - Regulatory changes (new GDPR guidance, PCI-DSS updates)
 
-
 **Quarterly Review Checklist:**
 
 - [ ] Update Environment_Inventory (add new, remove decommissioned)
@@ -2451,7 +2245,6 @@ Evidence/ISMS-A.8.11.3_Environment_Coverage/
 - [ ] Update cloud account inventory (AWS/Azure/GCP quarterly reconciliation)
 - [ ] Review P2/P3 gap remediation progress (on track for deadlines?)
 - [ ] Update Summary_Dashboard metrics (compliance trend)
-
 
 **Duration:** 3-4 hours per quarter (maintenance, not full re-assessment)
 
@@ -2499,14 +2292,12 @@ Evidence/ISMS-A.8.11.3_Environment_Coverage/
 - [ ] Backup failures (encryption not applied, backup access anomalies)
 - [ ] Access log review (unusual production data access patterns)
 
-
 **Manual Checks (Monthly):**
 
 - [ ] Data refresh script review (verify masking step still present)
 - [ ] External sharing access review (who still has access, should it be revoked?)
 - [ ] Exception renewals (quarterly exceptions expiring, need approval renewal)
 - [ ] Gap remediation status (P2/P3 gaps on track?)
-
 
 ---
 
@@ -2520,24 +2311,20 @@ This assessment (IMP-A.8.11.3) integrates with:
 - **Input:** Sensitive data categories (PII, financial, health, credentials)
 - **Usage:** Determine which environments require masking based on data sensitivity
 
-
 **ISMS-IMP-A.8.11.2 (Masking Technique Selection):**
 
 - **Input:** Approved masking techniques per data type (SDM, DDM, tokenization, etc.)
 - **Usage:** Verify appropriate techniques deployed in each environment type
-
 
 **ISMS-IMP-A.8.11.4 (Testing & Validation):**
 
 - **Output:** Environment list for testing (which environments to validate masking effectiveness)
 - **Output:** Coverage gaps requiring testing priority (P1 gaps test first)
 
-
 **ISMS-IMP-A.8.11.5 (Compliance Dashboard):**
 
 - **Output:** Environment coverage metrics (% non-production masked, % production DDM, etc.)
 - **Output:** Gap count and remediation status (feeds into executive dashboard)
-
 
 **Cross-Reference Example:**
 
@@ -2546,7 +2333,6 @@ This assessment (IMP-A.8.11.3) integrates with:
 - **IMP-A.8.11.3 verifies:** "Dev/Test/UAT customer databases 100% masked using SDM"
 - IMP-A.8.11.4 tests: "Masked dev database passed completeness test (100% coverage)"
 - IMP-A.8.11.5 reports: "Non-production coverage: 100% (Compliant)"
-
 
 ---
 
@@ -2594,7 +2380,6 @@ This assessment (IMP-A.8.11.3) integrates with:
 - Data validation dropdown lists
 - Cell protection strategies
 - Quality assurance requirements
-
 
 **Implementation Note:** This specification is designed for openpyxl-based generation. All sheet names, column headers, cell references, and formulas must match exactly for dashboard consolidation scripts to work correctly.
 
@@ -2683,13 +2468,11 @@ These standard columns appear on assessment sheets 2-9 with consistent definitio
 - **Data Cells:** Calibri 10pt Regular, Black text
 - **Example Rows:** Calibri 10pt Italic, Gray text on #E7E6E6 background
 
-
 ## Border Standards
 
 - **Outer borders:** Medium weight (2pt), black
 - **Inner borders:** Thin weight (1pt), black
 - **Header separator:** Thick bottom border (3pt), black
-
 
 ## Cell Protection Strategy
 
@@ -2700,13 +2483,11 @@ These standard columns appear on assessment sheets 2-9 with consistent definitio
 - All reference tables and legends
 - All instructions and example rows
 
-
 **Unprotected (Unlocked):**
 
 - All yellow input cells (#FFFFCC background)
 - All user data entry rows
 - Sign-off fields in Summary_Dashboard
-
 
 ---
 
@@ -2723,7 +2504,6 @@ These standard columns appear on assessment sheets 2-9 with consistent definitio
 - **Alignment:** Center, Vertical Center
 - **Row Height:** 40px
 
-
 **Row 2 - Subtitle:**
 
 - **Merge:** A2:Q2
@@ -2732,7 +2512,6 @@ These standard columns appear on assessment sheets 2-9 with consistent definitio
 - **Fill:** #4472C4 (Medium Blue)
 - **Alignment:** Center, Vertical Center
 - **Row Height:** 25px
-
 
 ## Document Information Block (Rows 4-12)
 
@@ -2754,14 +2533,12 @@ These standard columns appear on assessment sheets 2-9 with consistent definitio
 - Font: Calibri 10pt Bold
 - Alignment: Right-aligned
 
-
 **Columns B-D Styling:**
 
 - Font: Calibri 10pt Regular
 - Fill: #FFFFCC (Yellow) for input rows 8-10
 - Fill: White for static values
 - Borders: Thin all sides
-
 
 ## How to Use This Workbook Section (Rows 14-25)
 
@@ -2772,7 +2549,6 @@ These standard columns appear on assessment sheets 2-9 with consistent definitio
 - **Font:** Calibri 12pt Bold
 - **Fill:** #4472C4 (Medium Blue), White text
 - **Row Height:** 30px
-
 
 **Rows 16-25 - Instructions (Numbered List):**
 
@@ -2794,14 +2570,12 @@ These standard columns appear on assessment sheets 2-9 with consistent definitio
 - Font: Calibri 10pt Regular
 - Row Height: Auto (wrapped text)
 
-
 ## Color Legend Section (Rows 27-32)
 
 **Row 27 - Section Header:**
 
 - **Text:** "COLOR LEGEND"
 - **Styling:** Same as Row 14
-
 
 **Rows 29-32 - Legend Items:**
 
@@ -2822,7 +2596,6 @@ These standard columns appear on assessment sheets 2-9 with consistent definitio
 
 - **Text:** "ENVIRONMENT CLASSIFICATION REFERENCE"
 - **Styling:** #4472C4 header
-
 
 **Row 37 - Column Headers:**
 
@@ -2859,14 +2632,12 @@ These standard columns appear on assessment sheets 2-9 with consistent definitio
 - All cells: Thin borders
 - Alternating row shading (optional): Light gray on even rows
 
-
 ## Policy Requirements Summary (Rows 51-67)
 
 **Row 51 - Section Header:**
 
 - **Text:** "POLICY REQUIREMENTS SUMMARY - KEY POINTS"
 - **Styling:** #4472C4 header
-
 
 **Rows 53-67 - Requirements (Numbered List with Icons):**
 
@@ -2894,7 +2665,6 @@ These standard columns appear on assessment sheets 2-9 with consistent definitio
 - Columns B-Q: Requirement text (wrapped)
 - Important requirements (1-5) in Bold
 
-
 ---
 
 # Sheet 2: Environment_Inventory
@@ -2910,7 +2680,6 @@ These standard columns appear on assessment sheets 2-9 with consistent definitio
 - **Alignment:** Center, Vertical Center
 - **Row Height:** 35px
 
-
 **Row 2 - Policy Reference:**
 
 - **Merge:** A2:Q2
@@ -2919,7 +2688,6 @@ These standard columns appear on assessment sheets 2-9 with consistent definitio
 - **Fill:** #E7E6E6 (Light Gray)
 - **Alignment:** Center, Vertical Center, Wrapped
 - **Row Height:** Auto (wrapped)
-
 
 ## Assessment Question (Rows 4-5)
 
@@ -2930,7 +2698,6 @@ These standard columns appear on assessment sheets 2-9 with consistent definitio
 - **Font:** Calibri 10pt Bold
 - **Alignment:** Left, Vertical Center, Wrapped
 
-
 **Cell P4 - Response:**
 
 - **Data Validation:** Dropdown list: "Yes, No, Partial, In Progress"
@@ -2938,13 +2705,11 @@ These standard columns appear on assessment sheets 2-9 with consistent definitio
 - **Font:** Calibri 10pt Regular
 - **Alignment:** Center
 
-
 **Cell Q4 - Label:**
 
 - **Text:** "Response:"
 - **Font:** Calibri 10pt Bold
 - **Alignment:** Right
-
 
 ## Column Headers (Row 6)
 
@@ -2957,7 +2722,6 @@ These standard columns appear on assessment sheets 2-9 with consistent definitio
 - **Alignment:** Center, Vertical Center, Wrapped
 - **Border:** Thick bottom border (3pt)
 - **Row Height:** 40px (to accommodate wrapped text)
-
 
 ## Example Row (Row 7) - Gray Italic
 
@@ -2983,14 +2747,12 @@ These standard columns appear on assessment sheets 2-9 with consistent definitio
 - P7: "DDM applied for customer service reps"
 - Q7: "EV-ENV-001"
 
-
 **Row 7 Styling:**
 
 - **Fill:** #E7E6E6 (Light Gray)
 - **Font:** Calibri 10pt Italic, Gray text (#808080)
 - **Border:** Thin all sides
 - **Cell Protection:** Locked (user cannot edit example)
-
 
 ## Data Entry Rows (8-57)
 
@@ -3003,7 +2765,6 @@ These standard columns appear on assessment sheets 2-9 with consistent definitio
 - **Border:** Thin all sides
 - **Cell Protection:** Unlocked (user input)
 - **Row Height:** 20px (standard)
-
 
 **Data Validation per Column:**
 
@@ -3052,13 +2813,11 @@ SDM, DDM, Tokenization, Encryption, Redaction, Substitution, Anonymization, None
 - Maximum: 100
 - Format: "0%"
 
-
 **Column K (Last Verified Date):** Date validation:
 
 - Type: Date
 - Format: "dd.mm.yyyy"
 - Allow blank: Yes
-
 
 **Columns L-M (Owners):** Text, no validation
 
@@ -3079,7 +2838,6 @@ Yes, No, N/A
 - If "❌ Non-Compliant" → Fill #FFC7CE (Red)
 - If "N/A" → No fill (white)
 
-
 **Columns P-Q:** Text, no validation
 
 ## Compliance Checklist (Rows 60-76)
@@ -3091,7 +2849,6 @@ Yes, No, N/A
 - **Font:** Calibri 12pt Bold
 - **Fill:** #4472C4 (Medium Blue), White text
 - **Row Height:** 30px
-
 
 **Row 62 - Checklist Column Headers:**
 
@@ -3136,7 +2893,6 @@ Yes, No, N/A
 - ❌ Missing → Fill #FFC7CE (Red)
 - N/A → No fill
 
-
 ---
 
 # Sheet 3: Production_Environment
@@ -3151,7 +2907,6 @@ Yes, No, N/A
 - **Fill:** #003366 (Dark Blue)
 - **Row Height:** 35px
 
-
 **Row 2 - Policy Reference:**
 
 - **Merge:** A2:X2
@@ -3159,7 +2914,6 @@ Yes, No, N/A
 - **Font:** Calibri 10pt Italic
 - **Fill:** #E7E6E6 (Light Gray)
 - **Row Height:** Auto (wrapped)
-
 
 ## Assessment Question (Rows 4-5)
 
@@ -3169,19 +2923,16 @@ Yes, No, N/A
 - **Text:** "Does your organization implement role-based masking (DDM) in production environments to restrict access to sensitive data?"
 - **Font:** Calibri 10pt Bold
 
-
 **Cell V4 - Response:**
 
 - **Data Validation:** Dropdown: "Yes, No, Partial, Planned"
 - **Fill:** #FFFFCC (Yellow)
-
 
 **Cell W4-X4 - Label:**
 
 - **Merge:** W4:X4
 - **Text:** "Response:"
 - **Alignment:** Right
-
 
 ## Column Headers (Row 6)
 
@@ -3230,7 +2981,6 @@ Yes, No, N/A
 - W7: "Low"
 - X7: "N/A"
 
-
 **Styling:** Same gray italic example row format as Sheet 2
 
 ## Data Entry Rows (8-37)
@@ -3263,7 +3013,6 @@ High, Medium, Low, None
 - Low → Fill #C6EFCE (Green)
 - None → No fill
 
-
 **Column X (Remediation Target Date):** Date format "dd.mm.yyyy"
 
 ## Compliance Checklist (Rows 40-59)
@@ -3272,7 +3021,6 @@ High, Medium, Low, None
 
 - **Text:** "PRODUCTION ENVIRONMENT CHECKLIST"
 - **Styling:** #4472C4 header
-
 
 **Rows 42-59 - Checklist Items (18 items):**
 
@@ -3308,7 +3056,6 @@ High, Medium, Low, None
 - Section 4: Sheets 10-12 (Gap_Analysis, Evidence_Register, Summary_Dashboard)
 - Section 5: Python Script Integration Notes, Quality Assurance Requirements
 
-
 **Shall I continue with Section 2?**
 
 # ISMS-IMP-A.8.11.3 - Environment Coverage Assessment
@@ -3330,7 +3077,6 @@ High, Medium, Low, None
 - **Fill:** #003366 (Dark Blue)
 - **Row Height:** 35px
 
-
 **Row 2 - Policy Reference:**
 
 - **Merge:** A2:X2
@@ -3340,7 +3086,6 @@ High, Medium, Low, None
 - **Alignment:** Center, Vertical Center, Wrapped
 - **Row Height:** Auto (wrapped)
 
-
 ## Assessment Question (Rows 4-5)
 
 **Row 4:**
@@ -3349,20 +3094,17 @@ High, Medium, Low, None
 - **Text:** "Are ALL non-production environments (Dev/Test/UAT/Staging/Training/Sandbox) masked at 100% coverage?"
 - **Font:** Calibri 10pt Bold, Red text
 
-
 **Cell V4 - Response:**
 
 - **Data Validation:** Dropdown: "Yes (100%), No (<100%), Partial, In Progress"
 - **Fill:** #FFFFCC (Yellow)
 - **Font:** Calibri 10pt Regular
 
-
 **Cell W4-X4 - Label:**
 
 - **Merge:** W4:X4
 - **Text:** "Response:"
 - **Alignment:** Right
-
 
 **Row 5 - Warning:**
 
@@ -3371,7 +3113,6 @@ High, Medium, Low, None
 - **Font:** Calibri 9pt Bold, Red text
 - **Fill:** #FFC7CE (Light Red)
 - **Alignment:** Center
-
 
 ## Column Headers (Row 7)
 
@@ -3396,7 +3137,6 @@ High, Medium, Low, None
 - **Alignment:** Center, Vertical Center, Wrapped
 - **Border:** Thick bottom border (3pt)
 - **Row Height:** 50px (more wrapped text due to longer headers)
-
 
 ## Example Row (Row 8)
 
@@ -3427,7 +3167,6 @@ High, Medium, Low, None
 - W8: "15"
 - X8: "No"
 
-
 **Styling:** Gray italic example row format (same as previous sheets)
 
 ## Data Entry Rows (9-38)
@@ -3440,7 +3179,6 @@ High, Medium, Low, None
 - **Font:** Calibri 10pt Regular, Black
 - **Border:** Thin all sides
 - **Cell Protection:** Unlocked (user input)
-
 
 **Data Validation for Extended Columns:**
 
@@ -3465,7 +3203,6 @@ Yes, No, N/A
 - If "No" → Fill #FFC7CE (Red) + Bold Red text
 - If "N/A" → No fill
 
-
 **Columns U-V (Dates):** Date format "dd.mm.yyyy"
 
 **Column W (Developer Access Count):** Number validation:
@@ -3473,7 +3210,6 @@ Yes, No, N/A
 - Type: Whole number
 - Minimum: 0
 - Maximum: 1000
-
 
 **Column X (Contractor Access?):** Dropdown:
 ```
@@ -3484,19 +3220,16 @@ Yes, No, N/A
 
 - If "Yes" → Fill #FFEB9C (Yellow) - Warning, third-party risk
 
-
 **CRITICAL: Conditional Formatting for Column J (Coverage %):**
 
 - If <100% → Fill #FFC7CE (Red) + Bold Red text + Red border (thick 3pt)
 - If =100% → Fill #C6EFCE (Green)
 - This visual indicator is CRITICAL for identifying gaps
 
-
 **Conditional Formatting for Column O (Compliance Status):**
 
 - Enhanced for this sheet:
 - If "❌ Non-Compliant" → Fill #FFC7CE (Red) + Bold + Red border (thick 3pt all sides)
-
 
 ## Compliance Checklist (Rows 41-62)
 
@@ -3507,7 +3240,6 @@ Yes, No, N/A
 - **Font:** Calibri 12pt Bold
 - **Fill:** #FF0000 (Red), White text
 - **Row Height:** 30px
-
 
 **Rows 43-62 - Checklist Items (20 items):**
 
@@ -3550,7 +3282,6 @@ Yes, No, N/A
 - **Fill:** #003366 (Dark Blue)
 - **Row Height:** 35px
 
-
 **Row 2 - Policy Reference:**
 
 - **Merge:** A2:W2
@@ -3558,7 +3289,6 @@ Yes, No, N/A
 - **Font:** Calibri 10pt Italic
 - **Fill:** #E7E6E6 (Light Gray)
 - **Row Height:** Auto (wrapped)
-
 
 ## Assessment Question (Rows 4-5)
 
@@ -3568,19 +3298,16 @@ Yes, No, N/A
 - **Text:** "Are analytics and reporting environments configured to mask or aggregate individual-level PII?"
 - **Font:** Calibri 10pt Bold
 
-
 **Cell U4 - Response:**
 
 - **Data Validation:** Dropdown: "Yes (Masked), Yes (Aggregated), Partial, No"
 - **Fill:** #FFFFCC (Yellow)
-
 
 **Cell V4-W4 - Label:**
 
 - **Merge:** V4:W4
 - **Text:** "Response:"
 - **Alignment:** Right
-
 
 ## Column Headers (Row 6)
 
@@ -3627,7 +3354,6 @@ Yes, No, N/A
 - V7: "No"
 - W7: "k≥10"
 
-
 **Styling:** Gray italic example row
 
 ## Data Entry Rows (8-37)
@@ -3653,13 +3379,11 @@ Individual-level, Aggregated, Anonymized, Mixed
 - If "Individual-level" AND Column V="Yes" (PII Visible) → Fill #FFC7CE (Red) + Bold
 - If "Aggregated" OR "Anonymized" → Fill #C6EFCE (Green)
 
-
 **Column T (Analyst Access Count):** Number validation:
 
 - Type: Whole number
 - Minimum: 0
 - Maximum: 1000
-
 
 **Column U (External Access?):** Dropdown:
 ```
@@ -3669,7 +3393,6 @@ Yes (Vendors/Consultants), No, N/A
 **Conditional Formatting for Column U:**
 
 - If "Yes (Vendors/Consultants)" → Fill #FFEB9C (Yellow) - Warning flag
-
 
 **Column V (PII Visible?):** Dropdown:
 ```
@@ -3681,7 +3404,6 @@ Yes, No, Partial
 - If "Yes" → Fill #FFC7CE (Red) + Bold Red text
 - If "No" → Fill #C6EFCE (Green)
 - If "Partial" → Fill #FFEB9C (Yellow)
-
 
 **Column W (Aggregation Level):** Dropdown:
 ```
@@ -3696,7 +3418,6 @@ Row-level, k≥5, k≥10, k≥20, Fully Aggregated, N/A
 
 - **Text:** "ANALYTICS & REPORTING CHECKLIST"
 - **Styling:** #4472C4 header
-
 
 **Rows 42-56 - Checklist Items (15 items):**
 
@@ -3732,7 +3453,6 @@ Row-level, k≥5, k≥10, k≥20, Fully Aggregated, N/A
 - **Fill:** #003366 (Dark Blue)
 - **Row Height:** 35px
 
-
 **Row 2 - Policy Reference:**
 
 - **Merge:** A2:X2
@@ -3740,7 +3460,6 @@ Row-level, k≥5, k≥10, k≥20, Fully Aggregated, N/A
 - **Font:** Calibri 10pt Italic
 - **Fill:** #E7E6E6 (Light Gray)
 - **Row Height:** Auto (wrapped)
-
 
 ## Assessment Question (Rows 4-5)
 
@@ -3750,18 +3469,15 @@ Row-level, k≥5, k≥10, k≥20, Fully Aggregated, N/A
 - **Text:** "Are all backups containing sensitive data encrypted at rest? Is masking applied where technically feasible?"
 - **Font:** Calibri 10pt Bold
 
-
 **Cell V4 - Response (Encryption):**
 
 - **Data Validation:** Dropdown: "Yes (All Encrypted), Partial, No"
 - **Fill:** #FFFFCC (Yellow)
 
-
 **Cell W4 - Label:**
 
 - **Text:** "Encryption:"
 - **Alignment:** Right
-
 
 **Row 5:**
 
@@ -3769,18 +3485,15 @@ Row-level, k≥5, k≥10, k≥20, Fully Aggregated, N/A
 - **Text:** "Secondary question: Are export backups for testing purposes masked before distribution?"
 - **Font:** Calibri 10pt Italic
 
-
 **Cell V5 - Response (Masking):**
 
 - **Data Validation:** Dropdown: "Yes, Partial, No, N/A (No exports)"
 - **Fill:** #FFFFCC (Yellow)
 
-
 **Cell W5 - Label:**
 
 - **Text:** "Masking:"
 - **Alignment:** Right
-
 
 ## Column Headers (Row 7)
 
@@ -3842,7 +3555,6 @@ Row-level, k≥5, k≥10, k≥20, Fully Aggregated, N/A
 - Z8: "No"
 - AA8: "N/A"
 
-
 **Styling:** Gray italic example row
 
 ## Data Entry Rows (9-38)
@@ -3881,7 +3593,6 @@ AES-256, TDE, Disk Encryption, None
 - If "AES-256" OR "TDE" → Fill #C6EFCE (Green)
 - If "Disk Encryption" → Fill #FFEB9C (Yellow) - Less secure than application-level
 
-
 **Column V (Encryption at Rest?):** Dropdown:
 ```
 Yes, No, Partial
@@ -3891,7 +3602,6 @@ Yes, No, Partial
 
 - If "No" → Fill #FFC7CE (Red) + Bold Red text
 - If "Yes" → Fill #C6EFCE (Green)
-
 
 **Column W (Encryption in Transit?):** Dropdown:
 ```
@@ -3914,7 +3624,6 @@ Restricted (≤3 people), General (>3 people), None
 - If "Restricted (≤3 people)" → Fill #C6EFCE (Green)
 - If "General (>3 people)" → Fill #FFEB9C (Yellow)
 
-
 **Column Z (Masking Feasible?):** Dropdown:
 ```
 Yes, No, Conditional
@@ -3930,14 +3639,12 @@ Yes, No, N/A
 - If Z="Yes" (feasible) AND AA="No" (not applied) → Red flag, potential gap
 - If Z="No" (not feasible) AND V="Yes" (encrypted) → Acceptable (compensating control)
 
-
 ## Compliance Checklist (Rows 41-54)
 
 **Row 41 - Section Header:**
 
 - **Text:** "BACKUP & ARCHIVE CHECKLIST"
 - **Styling:** #4472C4 header
-
 
 **Rows 43-54 - Checklist Items (12 items):**
 
@@ -3994,13 +3701,11 @@ Yes, No, N/A
 - Sheet 5: Analytics_Reporting ✅
 - Sheet 6: Backup_Archive ✅
 
-
 **Next Section 3:**
 
 - Sheet 7: External_Sharing
 - Sheet 8: Cloud_Environments
 - Sheet 9: Data_Flow_Mapping
-
 
 **Shall I continue with Section 3?**
 
@@ -4021,7 +3726,6 @@ Yes, No, N/A
 - **Fill:** #003366 (Dark Blue)
 - **Row Height:** 35px
 
-
 **Row 2 - Policy Reference:**
 
 - **Merge:** A2:Y2
@@ -4029,7 +3733,6 @@ Yes, No, N/A
 - **Font:** Calibri 10pt Italic
 - **Fill:** #E7E6E6 (Light Gray)
 - **Row Height:** Auto (wrapped)
-
 
 ## Assessment Question (Rows 4-5)
 
@@ -4039,19 +3742,16 @@ Yes, No, N/A
 - **Text:** "Is all external data sharing (vendors, auditors, customers, partners) properly masked or formally approved as exception?"
 - **Font:** Calibri 10pt Bold
 
-
 **Cell W4 - Response:**
 
 - **Data Validation:** Dropdown: "Yes (All Masked), Yes (Approved Exceptions), Partial, No"
 - **Fill:** #FFFFCC (Yellow)
-
 
 **Cell X4-Y4 - Label:**
 
 - **Merge:** X4:Y4
 - **Text:** "Response:"
 - **Alignment:** Right
-
 
 **Row 5 - Reminder:**
 
@@ -4060,7 +3760,6 @@ Yes, No, N/A
 - **Font:** Calibri 9pt Bold, Blue text (#003366)
 - **Fill:** #B4C7E7 (Light Blue)
 - **Alignment:** Center
-
 
 ## Column Headers (Row 7)
 
@@ -4122,7 +3821,6 @@ Yes, No, N/A
 - AA8: "Yes"
 - AB8: "05.12.2025"
 
-
 **Styling:** Gray italic example row
 
 ## Data Entry Rows (9-38)
@@ -4143,7 +3841,6 @@ Vendor, Partner, Auditor, Regulator, Customer, Offshore Team, Other
 - If "Offshore Team" → Fill #FFEB9C (Yellow) - Cross-border risk flag
 - If "Regulator" → Fill #B4C7E7 (Blue) - Special handling
 
-
 **Column U (Contractual Requirement?):** Dropdown:
 ```
 Yes (Unmasked Required), No (Can Be Masked), Conditional
@@ -4153,7 +3850,6 @@ Yes (Unmasked Required), No (Can Be Masked), Conditional
 
 - If "Yes (Unmasked Required)" → Fill #FFEB9C (Yellow) - Requires exception approval
 - If "No (Can Be Masked)" AND Column G="No" → Fill #FFC7CE (Red) - Should be masked
-
 
 **Column V (DPA in Place?):** Dropdown:
 ```
@@ -4166,7 +3862,6 @@ Yes, No, N/A
   - **Rationale:** GDPR Art. 28 violation
 - If "Yes" → Fill #C6EFCE (Green)
 
-
 **Column W (Data Transfer Method):** Dropdown:
 ```
 SFTP, API, Email (encrypted), Physical Media, Portal, Other
@@ -4175,7 +3870,6 @@ SFTP, API, Email (encrypted), Physical Media, Portal, Other
 **Conditional Formatting for Column W:**
 
 - If contains "Email" AND NOT "encrypted" → Flag as potential risk (note: requires text parsing)
-
 
 **Column X (Transfer Frequency):** Dropdown:
 ```
@@ -4191,7 +3885,6 @@ Permanent, Temporary (specify end date in notes)
 
 - If "Temporary" → Fill #B4C7E7 (Blue) - Ensure end date in notes
 
-
 **Column AA (Risk Assessment Done?):** Dropdown:
 ```
 Yes, No, N/A
@@ -4201,7 +3894,6 @@ Yes, No, N/A
 
 - If "No" AND Column U = "Yes (Unmasked Required)" → Fill #FFC7CE (Red)
   - **Rationale:** Unmasked sharing without risk assessment = policy violation
-
 
 **Column AB (CISO Approval Date):** Date format "dd.mm.yyyy"
 
@@ -4213,14 +3905,12 @@ Yes, No, N/A
   - AND Column AB (CISO Approval Date) MUST NOT be blank
   - **Otherwise:** Red flag for gap analysis
 
-
 ## Compliance Checklist (Rows 41-57)
 
 **Row 41 - Section Header:**
 
 - **Text:** "EXTERNAL SHARING CHECKLIST"
 - **Styling:** #4472C4 header
-
 
 **Rows 43-57 - Checklist Items (15 items):**
 
@@ -4270,7 +3960,6 @@ Yes, No, N/A
 - **Fill:** #003366 (Dark Blue)
 - **Row Height:** 35px
 
-
 **Row 2 - Policy Reference:**
 
 - **Merge:** A2:X2
@@ -4278,7 +3967,6 @@ Yes, No, N/A
 - **Font:** Calibri 10pt Italic
 - **Fill:** #E7E6E6 (Light Gray)
 - **Row Height:** Auto (wrapped)
-
 
 ## Assessment Question (Rows 4-5)
 
@@ -4288,19 +3976,16 @@ Yes, No, N/A
 - **Text:** "Are cloud-hosted environments (AWS, Azure, GCP, SaaS) classified and masked according to same requirements as on-premises?"
 - **Font:** Calibri 10pt Bold
 
-
 **Cell V4 - Response:**
 
 - **Data Validation:** Dropdown: "Yes (Same Rules), Partial, No"
 - **Fill:** #FFFFCC (Yellow)
-
 
 **Cell W4-X4 - Label:**
 
 - **Merge:** W4:X4
 - **Text:** "Response:"
 - **Alignment:** Right
-
 
 **Row 5 - Reminder:**
 
@@ -4309,7 +3994,6 @@ Yes, No, N/A
 - **Font:** Calibri 9pt Bold
 - **Fill:** #B4C7E7 (Light Blue)
 - **Alignment:** Center
-
 
 ## Column Headers (Row 7)
 
@@ -4358,7 +4042,6 @@ Yes, No, N/A
 - W8: "Yes"
 - X8: "RDS encryption, IAM policies, CloudTrail logging"
 
-
 **Styling:** Gray italic example row
 
 ## Data Entry Rows (9-38)
@@ -4383,7 +4066,6 @@ Yes (SaaS), No (Dedicated), N/A
 
 - If "Yes (SaaS)" → Fill #FFEB9C (Yellow) - Vendor-managed risk
 
-
 **Column W (Data Residency Compliant?):** Dropdown:
 ```
 Yes, No, N/A
@@ -4393,14 +4075,12 @@ Yes, No, N/A
 
 - If "No" → Fill #FFC7CE (Red) - GDPR/FADP data residency violation
 
-
 ## Compliance Checklist (Rows 41-60)
 
 **Row 41 - Section Header:**
 
 - **Text:** "CLOUD ENVIRONMENT CHECKLIST"
 - **Styling:** #4472C4 header
-
 
 **Rows 43-60 - Checklist Items (18 items):**
 
@@ -4460,7 +4140,6 @@ Yes, No, N/A
 - **Fill:** #003366 (Dark Blue)
 - **Row Height:** 35px
 
-
 **Row 2 - Policy Reference:**
 
 - **Merge:** A2:Z2
@@ -4468,7 +4147,6 @@ Yes, No, N/A
 - **Font:** Calibri 10pt Italic
 - **Fill:** #E7E6E6 (Light Gray)
 - **Row Height:** Auto (wrapped)
-
 
 ## Assessment Question (Rows 4-5)
 
@@ -4478,19 +4156,16 @@ Yes, No, N/A
 - **Text:** "Are all data flows mapped with masking checkpoints identified and validated?"
 - **Font:** Calibri 10pt Bold
 
-
 **Cell X4 - Response:**
 
 - **Data Validation:** Dropdown: "Yes (All Flows), Partial, No"
 - **Fill:** #FFFFCC (Yellow)
-
 
 **Cell Y4-Z4 - Label:**
 
 - **Merge:** Y4:Z4
 - **Text:** "Response:"
 - **Alignment:** Right
-
 
 **Row 5 - Critical Reminder:**
 
@@ -4499,7 +4174,6 @@ Yes, No, N/A
 - **Font:** Calibri 9pt Bold, Red text
 - **Fill:** #FFC7CE (Light Red)
 - **Alignment:** Center
-
 
 ## Column Headers (Row 7)
 
@@ -4534,7 +4208,6 @@ Yes, No, N/A
 - **Border:** Thick bottom border (3pt)
 - **Row Height:** 60px (accommodate wrapped text)
 
-
 ## Example Row (Row 8)
 
 **Sample Data Flow:**
@@ -4557,7 +4230,6 @@ Yes, No, N/A
 - P8: "✅ Compliant"
 - Q8: "Informatica ETL job includes masking transformation step"
 - R8: "EV-FLOW-001"
-
 
 **Styling:** Gray italic example row
 
@@ -4588,7 +4260,6 @@ Yes, No, Unknown
 
 - If "Unknown" → Fill #FFEB9C (Yellow) - Requires investigation
 
-
 **Column H (Masking Checkpoint Exists?):** Dropdown:
 ```
 Yes, No, N/A
@@ -4598,7 +4269,6 @@ Yes, No, N/A
 
 - If "No" AND Column G="Yes" (sensitive data) AND Destination is non-production → Fill #FFC7CE (Red) + Bold Red text + Thick red border
   - **Rationale:** Production → Non-Production flow WITHOUT masking = P1 GAP
-
 
 **Column I (Checkpoint Location):** Dropdown:
 ```
@@ -4619,7 +4289,6 @@ Yes, Manual, N/A
 
 - If "Manual" → Fill #FFEB9C (Yellow) - Manual process = error risk
 
-
 **Column M (Failure Handling):** Dropdown:
 ```
 Stop Flow, Alert Only, Continue (Non-Compliant), N/A
@@ -4629,7 +4298,6 @@ Stop Flow, Alert Only, Continue (Non-Compliant), N/A
 
 - If "Continue (Non-Compliant)" → Fill #FFC7CE (Red) - Unmasked data could leak
 - If "Stop Flow" → Fill #C6EFCE (Green) - Best practice
-
 
 **Column P (Compliance Status):** Dropdown:
 ```
@@ -4644,7 +4312,6 @@ Stop Flow, Alert Only, Continue (Non-Compliant), N/A
 
 - **Text:** "DATA FLOW MAPPING CHECKLIST"
 - **Styling:** #4472C4 header
-
 
 **Rows 43-54 - Checklist Items (12 items):**
 
@@ -4704,7 +4371,6 @@ Stop Flow, Alert Only, Continue (Non-Compliant), N/A
 - Sheet 8: Cloud_Environments ✅
 - Sheet 9: Data_Flow_Mapping ✅
 
-
 **Next Section 4 (FINAL Technical Spec Section):**
 
 - Sheet 10: Gap_Analysis
@@ -4712,7 +4378,6 @@ Stop Flow, Alert Only, Continue (Non-Compliant), N/A
 - Sheet 12: Summary_Dashboard
 - Python Script Integration Notes
 - Quality Assurance Requirements
-
 
 **Shall the Grand ISMS Guru continue to enlighten you with the final sacred section? 🙏**
 
@@ -4733,7 +4398,6 @@ Stop Flow, Alert Only, Continue (Non-Compliant), N/A
 - **Fill:** #003366 (Dark Blue)
 - **Row Height:** 35px
 
-
 **Row 2 - Policy Reference:**
 
 - **Merge:** A2:O2
@@ -4741,7 +4405,6 @@ Stop Flow, Alert Only, Continue (Non-Compliant), N/A
 - **Font:** Calibri 10pt Italic
 - **Fill:** #E7E6E6 (Light Gray)
 - **Row Height:** Auto (wrapped)
-
 
 ## Assessment Question (Rows 4-5)
 
@@ -4751,19 +4414,16 @@ Stop Flow, Alert Only, Continue (Non-Compliant), N/A
 - **Text:** "Have ALL gaps from all assessment sheets been consolidated and assigned to owners with remediation plans?"
 - **Font:** Calibri 10pt Bold
 
-
 **Cell M4 - Response:**
 
 - **Data Validation:** Dropdown: "Yes (All Documented), Partial, No"
 - **Fill:** #FFFFCC (Yellow)
-
 
 **Cell N4-O4 - Label:**
 
 - **Merge:** N4:O4
 - **Text:** "Response:"
 - **Alignment:** Right
-
 
 ## Column Headers (Row 6)
 
@@ -4793,7 +4453,6 @@ Stop Flow, Alert Only, Continue (Non-Compliant), N/A
 - Border: Thick bottom (3pt)
 - Row Height: 50px
 
-
 ## Data Entry Rows (7-46)
 
 **40 rows for gaps**
@@ -4807,14 +4466,12 @@ Stop Flow, Alert Only, Continue (Non-Compliant), N/A
 - P3 → #E7E6E6 (Light Gray)
 - P4 → White
 
-
 **Column K (Status):**
 
 - Completed → #C6EFCE (Green) + Strikethrough
 - Blocked → #FFC7CE (Red) + Bold
 - In Progress → #B4C7E7 (Blue)
 - Not Started → #FFEB9C (Yellow)
-
 
 ## Reference Tables (Starting Row 50)
 
@@ -4839,13 +4496,11 @@ Stop Flow, Alert Only, Continue (Non-Compliant), N/A
 - Text: "EVIDENCE REGISTER"
 - Styling: #003366 header
 
-
 **Row 2:**
 
 - Merge: A2:J2
 - Text: "Complete audit trail - Supporting documentation for all assessments"
 - Styling: #E7E6E6 italic
-
 
 ## Columns (Row 4)
 
@@ -4869,7 +4524,6 @@ Stop Flow, Alert Only, Continue (Non-Compliant), N/A
 **Evidence Type Examples:**
 
 - Configuration, Screenshot, Log, Agreement, Script, Report, Audit Trail
-
 
 ---
 
@@ -4971,20 +4625,17 @@ def create_workbook():
 - Test formulas with sample data
 - Handle division by zero (empty sheets)
 
-
 **Conditional Formatting:**
 
 - Non-Production <100% → Red + Bold + Thick border
 - Missing DPAs → Red + Bold
 - P1 gaps → Red highlighting
 
-
 **Cell Protection:**
 
 - Lock all formula cells
 - Unlock yellow input cells
 - Enable sheet protection
-
 
 ---
 
@@ -4999,14 +4650,12 @@ def create_workbook():
 - [ ] Column headers match spec
 - [ ] Row counts correct
 
-
 **Formulas:**
 
 - [ ] Dashboard calculates correctly
 - [ ] No #REF! errors
 - [ ] No #DIV/0! errors
 - [ ] Conditional formulas trigger
-
 
 **Formatting:**
 
@@ -5015,13 +4664,11 @@ def create_workbook():
 - [ ] Borders applied
 - [ ] Protection set
 
-
 **Data Validation:**
 
 - [ ] All dropdowns work
 - [ ] Date formats correct
 - [ ] No typos in options
-
 
 ## Post-Deployment
 
@@ -5059,7 +4706,6 @@ def create_workbook():
 - Part I: ~1,800 lines (User Guide)
 - Part II: ~2,500 lines (Technical Spec)
 - Total: ~4,300 lines
-
 
 **Status:** APPROVED FOR IMPLEMENTATION
 

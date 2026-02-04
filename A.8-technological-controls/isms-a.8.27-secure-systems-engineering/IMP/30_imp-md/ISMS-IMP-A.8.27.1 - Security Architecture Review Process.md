@@ -41,7 +41,6 @@
 - NIST SP 800-160 Vol. 1 Rev. 1 (Engineering Trustworthy Secure Systems)
 - INCOSE Systems Engineering Handbook, 5th Edition (2023)
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -62,14 +61,12 @@ This assessment evaluates [Organisation]'s **security architecture review proces
 - Review quality and effectiveness metrics
 - Integration with SDLC and project management
 
-
 **What This Assessment Does NOT Cover:**
 
 - Threat modelling methodology details (see ISMS-IMP-A.8.27.2)
 - Secure architecture pattern definitions (see ISMS-IMP-A.8.27.3)
 - Zero Trust implementation specifics (see ISMS-IMP-A.8.27.4)
 - Secure coding standards (see ISMS-IMP-A.8.28)
-
 
 **Assessment Output:**
 
@@ -78,7 +75,6 @@ This assessment evaluates [Organisation]'s **security architecture review proces
 - Process compliance evaluation
 - Documentation completeness analysis
 - Metrics and KPI tracking baseline
-
 
 ## Why This Matters
 
@@ -96,7 +92,6 @@ This assessment evaluates [Organisation]'s **security architecture review proces
 - **Breach Risk:** Architectural weaknesses create systemic vulnerabilities
 - **Project Delays:** Late-stage security findings force redesign
 
-
 **This Assessment Addresses:**
 
 - Do we have a defined process for security architecture reviews?
@@ -104,7 +99,6 @@ This assessment evaluates [Organisation]'s **security architecture review proces
 - Is the review methodology comprehensive and consistent?
 - Are review findings documented and tracked to closure?
 - Do we measure the effectiveness of our architecture reviews?
-
 
 ## Who Should Complete This Assessment
 
@@ -118,7 +112,6 @@ This assessment evaluates [Organisation]'s **security architecture review proces
 - Threat modelling methodologies in use
 - Security patterns and reference architectures
 
-
 **Support Roles:**
 
 - **CISO:** Governance framework, exception authority
@@ -127,13 +120,11 @@ This assessment evaluates [Organisation]'s **security architecture review proces
 - **Project Management Office:** Project lifecycle triggers
 - **IT Operations:** Operational security requirements
 
-
 **Collaboration Required:**
 
 - Review process owners and stakeholders
 - Sample review documentation
 - Metrics and tracking data
-
 
 ## Time Estimate
 
@@ -164,7 +155,6 @@ This assessment evaluates [Organisation]'s **security architecture review proces
   - Remediation planning
   - Stakeholder review
 
-
 ## Connection to Policy
 
 This assessment implements **ISMS-POL-A.8.27, Section 2.2 (System Architecture Requirements)** which mandates:
@@ -177,7 +167,6 @@ This assessment implements **ISMS-POL-A.8.27, Section 2.2 (System Architecture R
 - Integration of new external services or data flows
 - Changes to authentication or authorisation mechanisms
 
-
 **Review Process Requirements:**
 
 1. Threat modelling using structured methodology
@@ -187,7 +176,6 @@ This assessment implements **ISMS-POL-A.8.27, Section 2.2 (System Architecture R
 5. Risk assessment and residual risk documentation
 6. CISO or Security Architect approval
 
-
 **Review Documentation Requirements:**
 
 - Security Architecture Document (SAD)
@@ -195,7 +183,6 @@ This assessment implements **ISMS-POL-A.8.27, Section 2.2 (System Architecture R
 - Security Requirements Traceability Matrix
 - Risk Assessment and Treatment Plan
 - Architecture approval record
-
 
 ---
 
@@ -213,7 +200,6 @@ Before starting this assessment, ensure you have access to:
 | SDLC tooling | Integration evidence | Development Manager |
 | Metrics/reporting tools | Effectiveness data | Security Operations |
 
-
 ## Pre-Assessment Checklist
 
 ✅ Architecture review policy reviewed and understood
@@ -222,7 +208,6 @@ Before starting this assessment, ensure you have access to:
 ✅ Review metrics and tracking data available
 ✅ Process stakeholders identified for consultation
 ✅ Assessment timeframe scheduled and communicated
-
 
 ## Information Gathering Requirements
 
@@ -236,7 +221,6 @@ Before starting this assessment, ensure you have access to:
 | **Samples** | 3+ completed reviews from past 12 months | Project files |
 | **Metrics** | Review counts, timing, findings data | ISMS dashboard |
 | **Training** | Reviewer training records | HR/Training |
-
 
 ---
 
@@ -258,7 +242,6 @@ The assessment workbook contains the following sheets:
 | **GapRegister** | Identified gaps and remediation | Last |
 | **Dashboard** | Summary view and status | Auto-calculated |
 
-
 ## Sheet Descriptions
 
 ### Instructions Sheet
@@ -270,7 +253,6 @@ Read-only sheet containing:
 - Rating scale definitions
 - Evidence requirements
 - Contact information for questions
-
 
 ### Governance Sheet
 
@@ -286,7 +268,6 @@ Documents the architecture review governance framework:
 | Gap | If not implemented, describe gap | N/A |
 | Owner | Responsible party | Security Architect |
 
-
 ### Process Sheet
 
 Assesses the architecture review process:
@@ -300,7 +281,6 @@ Assesses the architecture review process:
 | Implemented | Is activity performed? | Yes |
 | Evidence | How is it evidenced? | JIRA workflow |
 | Effectiveness | Rating (1-5) | 4 |
-
 
 ### Templates Sheet
 
@@ -316,7 +296,6 @@ Evaluates documentation templates:
 | Usability | Ease of use (1-5) | 3 |
 | Gaps | Missing elements | Cloud-specific sections |
 
-
 ### Integration Sheet
 
 Assesses SDLC and project integration:
@@ -329,7 +308,6 @@ Assesses SDLC and project integration:
 | Automated | Is trigger automated? | Partial |
 | Tracked | Is review tracked? | Yes, in JIRA |
 | Enforced | Can projects bypass? | No, gate enforced |
-
 
 ### Metrics Sheet
 
@@ -345,7 +323,6 @@ Records review effectiveness metrics:
 | Trend | Up/Down/Stable | Up |
 | Action | If below target | Additional reviewer training |
 
-
 ### Compliance Sheet
 
 Calculates compliance with policy requirements:
@@ -358,7 +335,6 @@ Calculates compliance with policy requirements:
 | Compliant | Yes/Partial/No | Yes |
 | Evidence | Compliance evidence | Q4 review log |
 | Score | Compliance score (0-100) | 100 |
-
 
 ### GapRegister Sheet
 
@@ -375,7 +351,6 @@ Documents identified gaps and remediation:
 | Due Date | Target completion | 2026-03-31 |
 | Status | Current status | In Progress |
 
-
 ### Dashboard Sheet
 
 Auto-calculated summary view:
@@ -385,7 +360,6 @@ Auto-calculated summary view:
 - Gap summary by risk level
 - Trend indicators
 - Key metrics snapshot
-
 
 ---
 
@@ -397,7 +371,6 @@ Auto-calculated summary view:
 2. Read the purpose, scope, and methodology
 3. Understand the rating scales used throughout
 4. Note the evidence requirements for each section
-
 
 ## Step 2: Complete Governance Assessment
 
@@ -425,7 +398,6 @@ For each governance element:
 | Authority | Is approval authority clearly defined? |
 | Exceptions | Is there an exception process? |
 
-
 ## Step 3: Complete Process Assessment
 
 **Navigate to the Process sheet**
@@ -448,7 +420,6 @@ For each process phase (Trigger, Planning, Execution, Documentation, Approval, F
 | 4 | Managed process, good effectiveness |
 | 5 | Optimised process, excellent effectiveness |
 
-
 ## Step 4: Complete Templates Assessment
 
 **Navigate to the Templates sheet**
@@ -470,7 +441,6 @@ For each documentation template:
 - Risk Assessment Template
 - Architecture Decision Record (ADR)
 
-
 ## Step 5: Complete Integration Assessment
 
 **Navigate to the Integration sheet**
@@ -490,7 +460,6 @@ For each SDLC integration point:
 - Pre-production release
 - Major change requests
 - Acquisitions/third-party integration
-
 
 ## Step 6: Complete Metrics Assessment
 
@@ -514,7 +483,6 @@ For each metric:
 | Bypass Rate | % of projects bypassing review | 0% |
 | Rework Rate | % of projects requiring re-review | <10% |
 
-
 ## Step 7: Complete Compliance Scoring
 
 **Navigate to the Compliance sheet**
@@ -533,7 +501,6 @@ For each policy requirement:
 - No = 0%
 
 **Overall Compliance = Average of all requirement scores**
-
 
 ## Step 8: Document Gaps and Remediation
 
@@ -556,7 +523,6 @@ For each identified gap:
 | Medium | Process gap, moderate security risk, improvement needed |
 | Low | Minor gap, low security risk, enhancement opportunity |
 
-
 ## Step 9: Review Dashboard
 
 **Navigate to the Dashboard sheet**
@@ -565,7 +531,6 @@ For each identified gap:
 2. **Review Summary:** Check overall compliance posture
 3. **Identify Focus Areas:** Note categories needing attention
 4. **Prepare Report:** Extract key findings for stakeholders
-
 
 ---
 
@@ -586,7 +551,6 @@ For a complete assessment, collect the following evidence:
 | **Training Records** | Reviewer training evidence | HR/Training System |
 | **Exception Records** | Any review exceptions granted | Exception Register |
 
-
 ## Evidence Naming Convention
 
 Use the following naming convention for evidence files:
@@ -600,7 +564,6 @@ ISMS-IMP-A.8.27.1_[EvidenceType]_[Description]_YYYYMMDD.[ext]
 - `ISMS-IMP-A.8.27.1_Policy_ArchitectureReviewPolicy_20260115.pdf`
 - `ISMS-IMP-A.8.27.1_Sample_ProjectXReview_20260115.docx`
 - `ISMS-IMP-A.8.27.1_Metrics_Q4ReviewData_20260115.xlsx`
-
 
 ## Evidence Storage
 
@@ -616,7 +579,6 @@ Store all evidence in the designated ISMS Evidence Library:
       /Samples/
       /Metrics/
 ```
-
 
 ---
 
@@ -654,7 +616,6 @@ Avoid these common mistakes when completing this assessment:
 ❌ **MISTAKE:** Completing assessment in isolation without stakeholder input
 ✅ **CORRECT:** Engage process owners, reviewers, and consumers
 
-
 ---
 
 # Quality Checklist
@@ -672,14 +633,12 @@ Before submitting the assessment, verify:
 - [ ] All gaps documented in register
 - [ ] Dashboard reflects current data
 
-
 **Evidence:**
 
 - [ ] Each compliance claim has supporting evidence
 - [ ] Sample reviews collected (minimum 3)
 - [ ] Evidence properly named and stored
 - [ ] Evidence referenced in assessment
-
 
 **Quality:**
 
@@ -690,14 +649,12 @@ Before submitting the assessment, verify:
 - [ ] No duplicate entries
 - [ ] Formulas calculating correctly
 
-
 **Review:**
 
 - [ ] Self-review completed
 - [ ] Peer review completed
 - [ ] Stakeholder validation obtained
 - [ ] Ready for management approval
-
 
 ---
 
@@ -719,7 +676,6 @@ Before submitting the assessment, verify:
 | 3 | Stakeholders | Process accuracy | 3 business days |
 | 4 | CISO | Final approval | 2 business days |
 
-
 ## Sign-Off Record
 
 | Role | Name | Date | Signature |
@@ -728,7 +684,6 @@ Before submitting the assessment, verify:
 | Peer Reviewer | | | |
 | Security Architect | | | |
 | CISO | | | |
-
 
 ---
 
@@ -744,7 +699,6 @@ Before submitting the assessment, verify:
 | **Sheets** | 9 |
 | **Purpose** | Security architecture review process assessment |
 | **Generator** | generate_a827_1_architecture_review.py |
-
 
 ## Sheet Specifications
 
@@ -765,7 +719,6 @@ Before submitting the assessment, verify:
 5. Evidence requirements
 6. Contact information
 7. Version and date information
-
 
 ### Sheet 2: Governance
 
@@ -790,7 +743,6 @@ Before submitting the assessment, verify:
 
 **Pre-populated Rows:** 15 governance requirements from ISMS-POL-A.8.27
 
-
 ### Sheet 3: Process
 
 | Property | Specification |
@@ -813,7 +765,6 @@ Before submitting the assessment, verify:
 | H | Notes | 30 | Text | Optional |
 
 **Pre-populated Rows:** 25 process activities
-
 
 ### Sheet 4: Templates
 
@@ -838,7 +789,6 @@ Before submitting the assessment, verify:
 
 **Pre-populated Rows:** 8 expected templates
 
-
 ### Sheet 5: Integration
 
 | Property | Specification |
@@ -861,7 +811,6 @@ Before submitting the assessment, verify:
 | H | Notes | 25 | Text | Optional |
 
 **Pre-populated Rows:** 8 integration points
-
 
 ### Sheet 6: Metrics
 
@@ -886,7 +835,6 @@ Before submitting the assessment, verify:
 
 **Pre-populated Rows:** 10 recommended metrics
 
-
 ### Sheet 7: Compliance
 
 | Property | Specification |
@@ -908,7 +856,6 @@ Before submitting the assessment, verify:
 | G | Notes | 25 | Text | Optional |
 
 **Pre-populated Rows:** 20 compliance requirements from ISMS-POL-A.8.27
-
 
 ### Sheet 8: GapRegister
 
@@ -933,7 +880,6 @@ Before submitting the assessment, verify:
 | I | Closure Date | 12 | Date | Date validation |
 | J | Notes | 25 | Text | Optional |
 
-
 ### Sheet 9: Dashboard
 
 | Property | Specification |
@@ -950,7 +896,6 @@ Before submitting the assessment, verify:
 4. **Status Summary:** Open/In Progress/Closed gaps
 5. **Trend Chart:** Placeholder for compliance trend
 6. **Key Metrics:** Top 5 metrics with status indicators
-
 
 ## Styling Specifications
 
@@ -970,7 +915,6 @@ Before submitting the assessment, verify:
 | Medium Risk | #FFA500 | Medium risk gaps |
 | Low Risk | #FFFF00 | Low risk gaps |
 
-
 ### Font Standards
 
 | Element | Font | Size | Style |
@@ -980,7 +924,6 @@ Before submitting the assessment, verify:
 | Body Text | Calibri | 11 | Regular |
 | Notes | Calibri | 10 | Italic |
 
-
 ### Cell Formatting
 
 - All cells with borders (thin, black)
@@ -988,7 +931,6 @@ Before submitting the assessment, verify:
 - Alternating row shading for readability (optional)
 - Frozen panes for headers on all data sheets
 - Column auto-filter enabled on data sheets
-
 
 ## Data Validation
 
@@ -1007,14 +949,12 @@ Create named ranges for dropdown validation:
 | ProcessPhase | Trigger, Planning, Execution, Documentation, Approval, Follow-up |
 | GovCategory | Policy, Procedures, Roles, Authority, Exceptions |
 
-
 ### Input Validation Rules
 
 - Date fields: Valid date format, not in past for due dates
 - Percentage fields: 0-100%
 - Required fields: Cannot be blank
 - Conditional: Evidence required when status is "Implemented"
-
 
 ## Formulas
 
@@ -1045,7 +985,6 @@ Create named ranges for dropdown validation:
 =AVERAGEIF(Compliance!C:C,"*GOV*",Compliance!F:F)
 ```
 
-
 ---
 
 # Generator Script Reference
@@ -1058,7 +997,6 @@ Create named ranges for dropdown validation:
 | **Location** | 10-isms-scr-base/isms-a.8.27-secure-systems-engineering/10_generator-master/ |
 | **Output** | ISMS-IMP-A.8.27.1_Security_Architecture_Review_Process_YYYYMMDD.xlsx |
 
-
 ## Script Structure
 
 ```python
@@ -1070,7 +1008,6 @@ WORKBOOK_NAME = "Security Architecture Review Process"
 CONTROL_ID = "A.8.27"
 CONTROL_NAME = "Secure System Architecture and Engineering Principles"
 ```
-
 
 ## Pre-populated Data
 
@@ -1094,11 +1031,9 @@ The generator should pre-populate the following:
 14. Metrics and reporting requirements
 15. Continuous improvement process
 
-
 **Process Activities (25 rows):**
 
 Organised by phase: Trigger (5), Planning (4), Execution (6), Documentation (4), Approval (3), Follow-up (3)
-
 
 **Templates (8 rows):**
 
@@ -1111,7 +1046,6 @@ Organised by phase: Trigger (5), Planning (4), Execution (6), Documentation (4),
 7. Exception Request Form
 8. Review Completion Report
 
-
 **Integration Points (8 rows):**
 
 1. Project initiation
@@ -1122,7 +1056,6 @@ Organised by phase: Trigger (5), Planning (4), Execution (6), Documentation (4),
 6. Third-party integration
 7. Cloud service adoption
 8. Post-incident architecture review
-
 
 **Metrics (10 rows):**
 
@@ -1137,11 +1070,9 @@ Organised by phase: Trigger (5), Planning (4), Execution (6), Documentation (4),
 9. Time to approval (days from submission to approval)
 10. Finding recurrence (% findings repeating)
 
-
 **Compliance Requirements (20 rows):**
 
 Mapped from ISMS-POL-A.8.27 Sections 2.2 and 4
-
 
 ---
 

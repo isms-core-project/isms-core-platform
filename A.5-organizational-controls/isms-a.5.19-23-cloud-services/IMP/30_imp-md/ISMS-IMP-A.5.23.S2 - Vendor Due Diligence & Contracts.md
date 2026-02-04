@@ -45,7 +45,6 @@ This document consists of two parts:
   - Validation Rules & Formulas
   - Integration Points
 
-
 **Key Changes in v2.1:**
 
 - Section 4 uses tables instead of column-by-column paragraphs
@@ -53,7 +52,6 @@ This document consists of two parts:
 - Regulatory references point to POL-00 (removed duplication)
 - Evidence collection streamlined (removed screenshot tutorials)
 - Appendix reduced to IMP-specific content only
-
 
 ---
 
@@ -80,7 +78,6 @@ This is NOT about:
 - ❌ Assuming contracts protect you without reading them
 - ❌ Skipping verification of vendor security claims
 
-
 This IS about:
 
 - ✅ Verifying vendor certifications are current and scoped correctly
@@ -89,7 +86,6 @@ This IS about:
 - ✅ Validating data residency and sovereignty requirements
 - ✅ Confirming audit rights are exercisable, not just written
 - ✅ Assessing jurisdictional risks (US CLOUD Act exposure)
-
 
 #### What You'll Document
 
@@ -102,7 +98,6 @@ For EACH cloud service provider:
 - Penetration testing and security audit results
 - Incident history and breach notifications
 
-
 **Contract Adequacy (Sheet 3):**
 
 - Contract type and key clauses
@@ -112,7 +107,6 @@ For EACH cloud service provider:
 - Subprocessor authorization and notification
 - Exit and data portability clauses
 
-
 **SLA Compliance (Sheet 4):**
 
 - Availability commitments and actual uptime
@@ -121,14 +115,12 @@ For EACH cloud service provider:
 - SLA credits claimed vs. received
 - Breach notification timing
 
-
 **Data Sovereignty (Sheet 5):**
 
 - Data storage and processing locations
 - Cross-border transfer mechanisms (SCCs, BCRs)
 - Encryption and key management
 - Government access risks (CLOUD Act, FISA)
-
 
 **Audit Rights (Sheet 6):**
 
@@ -138,7 +130,6 @@ For EACH cloud service provider:
 - Security questionnaire completion
 - Incident investigation cooperation
 
-
 **Jurisdictional Risk (Sheet 7):**
 
 - Vendor headquarters and ownership structure
@@ -146,7 +137,6 @@ For EACH cloud service provider:
 - Transfer Impact Assessment (TIA) results
 - Risk mitigation measures
 - Residual risk acceptance
-
 
 #### How This Relates to Other A.5.23 Assessments
 
@@ -184,13 +174,11 @@ For EACH cloud service provider:
 - Provides criticality and data classification
 - Base columns (A-E) populated from inventory
 
-
 **Downstream Consumers:**
 
 - IMP-5.23.3 (Secure Configuration) - uses vendor certification data
 - IMP-5.23.4 (Governance) - uses SLA and contract renewal data
 - IMP-5.23.5 (Dashboard) - aggregates compliance metrics
-
 
 ### Who Should Complete This Assessment
 
@@ -211,20 +199,17 @@ For EACH cloud service provider:
 - Negotiation experience with cloud vendors
 - Understanding of SLA structures and remedies
 
-
 **Security/Compliance:**
 
 - ISO 27001, SOC 2, and common security frameworks
 - Data protection regulations (GDPR, FADP, NIS2, DORA)
 - Risk assessment methodologies
 
-
 **IT Operations:**
 
 - Vendor portal access and monitoring tools
 - Performance metrics collection
 - Incident tracking systems
-
 
 #### Time Commitment
 
@@ -236,7 +221,6 @@ For EACH cloud service provider:
 - Review and approval: 1 week
 - **Total:** 4-6 weeks
 
-
 **Quarterly Updates:**
 
 - Review changes: 3-5 days
@@ -244,13 +228,11 @@ For EACH cloud service provider:
 - Approval: 1-2 days
 - **Total:** 1-2 weeks
 
-
 **Assumptions:**
 
 - ~15-25 cloud vendors to assess
 - Vendors generally cooperative
 - Contracts and certifications are accessible
-
 
 #### Collaboration Model
 
@@ -260,14 +242,12 @@ For EACH cloud service provider:
 - Security: Collect certifications, verify validity
 - IT Ops: Pull SLA performance data from monitoring
 
-
 **Week 3-4: Vendor Engagement**
 
 - Request missing certifications
 - Request SOC 2 reports under NDA
 - Clarify contract ambiguities
 - Verify data residency claims
-
 
 **Week 5: Gap Analysis**
 
@@ -276,7 +256,6 @@ For EACH cloud service provider:
 - Identify SLA breaches
 - Risk assessment for gaps
 
-
 **Week 6: Review & Approval**
 
 - ISMS Coordinator consolidates findings
@@ -284,13 +263,11 @@ For EACH cloud service provider:
 - CISO approval
 - Risk exceptions documented
 
-
 ### Expected Outputs
 
 **Primary Deliverable:**
 
 - **ISMS-IMP-A.5.23.S2_VendorDD_YYYYMMDD.xlsx** (10-sheet workbook)
-
 
 **Workbook Contents:**
 
@@ -313,7 +290,6 @@ For EACH cloud service provider:
 - Gap analysis with remediation plan
 - Risk register entries for accepted exceptions
 
-
 ### Assessment Success Criteria
 
 **Completeness:**
@@ -324,7 +300,6 @@ For EACH cloud service provider:
 - ✅ All gaps identified with remediation plans
 - ✅ All approvals obtained
 
-
 **Quality:**
 
 - ✅ Certifications verified directly with issuing bodies
@@ -332,7 +307,6 @@ For EACH cloud service provider:
 - ✅ SLA data from objective monitoring (not vendor self-reporting)
 - ✅ Data residency verified (not assumed from marketing)
 - ✅ Jurisdictional risks assessed with Transfer Impact Assessment
-
 
 **Compliance:**
 
@@ -342,14 +316,12 @@ For EACH cloud service provider:
 - ✅ DORA/NIS2 requirements met for in-scope services
 - ✅ Residual risks formally accepted by CISO
 
-
 **Traceability:**
 
 - ✅ Every "Compliant" status → Evidence file exists
 - ✅ Every gap → Remediation plan or risk exception
 - ✅ Every vendor → Linked to IMP-5.23.1 inventory
 - ✅ Evidence register → All links work, files accessible
-
 
 ### Common Use Cases
 
@@ -419,7 +391,6 @@ For EACH cloud service provider:
 - ✅ Service owner assignments
 - ✅ Contract owner identification
 
-
 **Internal Systems Access:**
 
 - ✅ Contract management system (SharePoint, DocuSign, etc.)
@@ -427,13 +398,11 @@ For EACH cloud service provider:
 - ✅ Monitoring/ITSM (SLA performance data)
 - ✅ Evidence repository (file share or document management)
 
-
 **Vendor Access/Credentials:**
 
 - ✅ Vendor admin portals (to verify configurations)
 - ✅ Trust centers (AWS Artifact, Microsoft Trust Center, etc.)
 - ✅ Support portals (to request certifications under NDA)
-
 
 ### Required Materials
 
@@ -470,20 +439,17 @@ For EACH cloud service provider:
    - Assign sheets to responsible parties
    - Establish communication channel (Slack, Teams)
 
-
 2. **Establish Evidence Repository**
 
    - Create folder structure: `/ISMS/Evidence/A.5.23.2/[Vendor_Name]/`
    - Set permissions (Legal, Security, Auditors)
    - Document naming convention: `[Vendor]_[DocType]_YYYYMMDD.pdf`
 
-
 3. **Prepare Vendor Communication**
 
    - Draft template email requesting certifications
    - Identify vendor contacts (account manager, compliance, legal)
    - Set expectations: 2-week response time for requests
-
 
 ### Tool Requirements
 
@@ -493,14 +459,12 @@ For EACH cloud service provider:
 - PDF reader (for contracts, certifications)
 - Screenshot tool (Snipping Tool, Greenshot, Snagit)
 
-
 **Access:**
 
 - Vendor admin consoles (Service Owners)
 - Contract management system (Legal, Procurement)
 - Monitoring dashboards (IT Ops)
 - ITSM/ticketing system (IT Ops)
-
 
 ---
 
@@ -572,7 +536,6 @@ For EACH cloud service provider:
 - Status (Column H) is **sheet-specific** (varies by assessment focus)
 - Evidence Location (Column I) references **Sheet 9** (centralized evidence tracking)
 
-
 ### Extended Columns (R+) - Sheet-Specific
 
 Each data collection sheet has **extended columns** specific to its assessment focus:
@@ -609,7 +572,6 @@ IMP-5.23.1 Inventory (Columns A-E)
 - Sheet 8 (Dashboard) ← Compliance metrics from Sheets 2-7
 - Sheet 10 (Approvals) ← Triggered after Sheets 2-9 complete
 
-
 ### Status Flag Meanings
 
 **Consistent across all sheets:**
@@ -627,7 +589,6 @@ IMP-5.23.1 Inventory (Columns A-E)
 - ⚠️ → Gap description required (Column J)
 - ❌ → Gap + remediation plan required (Columns J, K, P)
 - N/A → Rationale documented (Column J)
-
 
 ### Sheet Completion Order
 
@@ -700,7 +661,6 @@ For each vendor:
 - Incident history (breaches in last 24 months, notification compliance)
 - Other relevant certifications (PCI-DSS, HIPAA, FedRAMP, etc.)
 
-
 ### How to Complete
 
 **Step 1: Request Certifications from Vendor**
@@ -741,14 +701,12 @@ Thank you,
 - Confirm service is within certification scope
 - Check expiry date (≥3 months remaining)
 
-
 **SOC 2 Type II:**
 
 - Verify auditor is reputable (Big 4, recognized regional firm)
 - Check audit period (must be ≥12 months for Type II)
 - Review opinion (unqualified/clean opinion required)
 - Check scope covers relevant Trust Service Criteria
-
 
 **Step 3: Complete Extended Columns**
 
@@ -814,7 +772,6 @@ For each contract:
 - Exit and data portability clauses
 - Contract renewal dates and auto-renewal terms
 
-
 ### How to Complete
 
 **Step 1: Gather Contract Documents**
@@ -834,7 +791,6 @@ Master Services Agreement (MSA)
 - Procurement records (PO references)
 - Vendor portal (signed agreements often downloadable)
 - Legal department files
-
 
 **Step 2: Review Contract Clauses**
 
@@ -908,7 +864,6 @@ For each service:
 - SLA breach events (count, duration, impact)
 - SLA credits (owed vs. claimed vs. received)
 
-
 ### How to Complete
 
 **Step 1: Identify SLA Commitments**
@@ -918,7 +873,6 @@ For each service:
 - Contract Annex B (Service Level Agreement)
 - Vendor service description document
 - Public SLA page (AWS, Azure, GCP publish SLAs)
-
 
 **Common SLA Types:**
 
@@ -1028,7 +982,6 @@ For each service:
 - Encryption status (at-rest, in-transit, key management)
 - Data residency controls (ability to restrict to specific regions)
 
-
 ### How to Complete
 
 **Step 1: Verify Data Storage Location**
@@ -1062,7 +1015,6 @@ For each service:
 - Vendor uses subprocessors in non-adequate countries
 - CDN caches data globally
 
-
 **Example Scenarios:**
 
 **Scenario 1: Salesforce (EU Instance)**
@@ -1074,7 +1026,6 @@ For each service:
 - **Transfer:** YES (if US support access enabled)
 - **Mechanism Required:** SCCs
 
-
 **Scenario 2: AWS S3 (EU-Only)**
 
 - Bucket region: eu-west-1 (Ireland)
@@ -1082,7 +1033,6 @@ For each service:
 - Processing: eu-west-1 only
 - **Transfer:** NO
 - **Mechanism Required:** N/A
-
 
 **Step 3: Verify Transfer Mechanism**
 
@@ -1102,7 +1052,6 @@ For each service:
 - Must assess US surveillance law risk (FISA 702, EO 12333)
 - Additional safeguards may be required (encryption + key control)
 
-
 **Step 4: Assess Encryption & Key Management**
 
 | Encryption Type | Purpose | Verification |
@@ -1116,7 +1065,6 @@ For each service:
 - Vendor cannot decrypt data without your key
 - Mitigates some US CLOUD Act risks
 - Adds complexity (key rotation, backup)
-
 
 **Step 5: Complete Extended Columns**
 
@@ -1179,7 +1127,6 @@ For each service:
 - Incident investigation cooperation
 - Forensics data availability (logs, access records)
 
-
 ### How to Complete
 
 **Step 1: Review Contract Audit Clauses**
@@ -1216,7 +1163,6 @@ For each service:
    - Opinion is unqualified (clean)
    - Scope covers relevant Trust Service Criteria
 
-
 **Trust Service Criteria (SOC 2):**
 
 - **Security** (required for all SOC 2)
@@ -1224,7 +1170,6 @@ For each service:
 - **Confidentiality** (data protection)
 - **Processing Integrity** (data accuracy)
 - **Privacy** (personal data handling)
-
 
 **Step 3: Assess Incident Investigation Support**
 
@@ -1295,7 +1240,6 @@ For each vendor:
 - Risk mitigation measures (encryption, data residency controls)
 - Residual risk acceptance
 
-
 ### How to Complete
 
 **Step 1: Determine Vendor Jurisdiction**
@@ -1326,14 +1270,12 @@ For each vendor:
 - Any company with substantial US presence
 - Foreign subsidiaries of US companies (Microsoft Ireland, AWS Europe, Google Ireland)
 
-
 **Risk:**
 
 - US government can demand data from US companies
 - Includes data stored outside USA (extraterritorial reach)
 - Conflicts with GDPR prohibition on transfers without legal basis
 - Vendor must comply with US law (even if violates GDPR)
-
 
 **Step 3: Conduct Transfer Impact Assessment (TIA)**
 
@@ -1342,7 +1284,6 @@ For each vendor:
 - Transfer to USA or US-owned company
 - Using SCCs as transfer mechanism
 - Processing personal data (GDPR/FADP scope)
-
 
 **TIA Process (see EDPB Recommendations 01/2020):**
 
@@ -1375,7 +1316,6 @@ For each vendor:
 - ❌ "We'll anonymize data" (re-identification risk)
 - ❌ "Vendor promises not to give US data" (cannot override CLOUD Act)
 - ❌ "Data is encrypted" (if vendor holds keys, US can compel disclosure)
-
 
 **Step 5: Complete Extended Columns**
 
@@ -1437,7 +1377,6 @@ For each vendor:
 - **Attributable:** Clear which vendor/service it applies to
 - **Accessible:** Reviewable by auditors (proper permissions)
 
-
 ### Evidence Repository Structure
 
 **Folder Organization:**
@@ -1481,7 +1420,6 @@ For each vendor:
 - Vendor trust center (publicly available certifications)
 - Support portal (SLA credit requests)
 
-
 **Required Elements in Screenshot:**
 
 - Full URL visible (top of browser)
@@ -1490,13 +1428,11 @@ For each vendor:
 - Relevant setting/configuration clearly shown
 - Your organization's account context visible (if applicable)
 
-
 **Tools:**
 
 - Windows: Snipping Tool (Win+Shift+S), Snagit
 - Mac: Screenshot (Cmd+Shift+4), CleanShot
 - Browser: Full-page screenshot extensions
-
 
 ### Document Collection Checklist
 
@@ -1581,60 +1517,50 @@ For each vendor:
 - ❌ Problem: "Vendor website says ISO 27001 certified" → assumed compliant
 - ✅ Solution: Request actual certificate, verify with certification body database
 
-
 **2. Accepting Expired Certifications**
 
 - ❌ Problem: ISO 27001 was valid at contract signing 3 years ago, now expired
 - ✅ Solution: Check expiry dates, set calendar reminders for renewal verification
-
 
 **3. Not Checking Certification Scope**
 
 - ❌ Problem: Vendor has ISO 27001 for "IT infrastructure" but cloud service not in scope
 - ✅ Solution: Read certificate scope statement carefully, request clarification if unclear
 
-
 **4. SOC 2 Type I vs Type II Confusion**
 
 - ❌ Problem: Accepted SOC 2 Type I (point-in-time) for Critical service
 - ✅ Solution: Require Type II (12-month operational effectiveness) for Critical/High services
-
 
 **5. Missing or Inadequate DPA**
 
 - ❌ Problem: Contract has generic "data protection" clause but no formal DPA
 - ✅ Solution: Request standalone DPA with Standard Contractual Clauses (EU transfers)
 
-
 **6. Assuming EU Vendor = EU Data**
 
 - ❌ Problem: Vendor HQ in Germany but uses AWS us-east-1 for data storage
 - ✅ Solution: Verify actual data location in admin console, don't trust vendor location
-
 
 **7. Not Completing Transfer Impact Assessment (TIA)**
 
 - ❌ Problem: Using SCCs for US transfer without TIA (post-Schrems II requirement)
 - ✅ Solution: Engage DPO/Legal to conduct TIA for all US-jurisdiction vendors
 
-
 **8. Relying on Vendor SLA Self-Reporting**
 
 - ❌ Problem: "Vendor says 99.99% uptime" but no independent monitoring
 - ✅ Solution: Implement YOUR monitoring (Pingdom, Datadog, etc.), track objectively
-
 
 **9. Not Claiming SLA Credits**
 
 - ❌ Problem: Vendor breaches SLA, credits owed but not claimed ("too much paperwork")
 - ✅ Solution: Claim ALL credits (principle of accountability + budget recovery)
 
-
 **10. Shadow IT / Undocumented Services**
 
 - ❌ Problem: Business unit adopted Notion without IT approval, no assessment
 - ✅ Solution: Regular discovery scans (CASB, egress monitoring), add to inventory → assess
-
 
 ### Sheet-Specific Gotchas
 
@@ -1644,7 +1570,6 @@ For each vendor:
 - ⚠️ Penetration test report is 3 years old (should be annual)
 - ⚠️ SOC 2 report doesn't include "Confidentiality" criteria (only "Security")
 
-
 **Sheet 3 (Contracts):**
 
 - ⚠️ DPA allows subprocessors without notification requirement
@@ -1652,13 +1577,11 @@ For each vendor:
 - ⚠️ Exit clause requires 12-month notice (unacceptably long)
 - ⚠️ Auto-renewal with 90-day notice (easy to miss renewal deadline)
 
-
 **Sheet 4 (SLA):**
 
 - ⚠️ SLA commitment is "reasonable efforts" not specific percentage
 - ⚠️ SLA excludes "third-party issues" (but vendor uses third-party CDN)
 - ⚠️ Credits are capped at 1 month service fee (even for 100% downtime)
-
 
 **Sheet 5 (Data Sovereignty):**
 
@@ -1667,20 +1590,17 @@ For each vendor:
 - ⚠️ SCCs present but Transfer Impact Assessment not conducted
 - ⚠️ Encryption enabled but vendor manages keys (CLOUD Act risk)
 
-
 **Sheet 6 (Audit Rights):**
 
 - ⚠️ Audit clause allows audit "at vendor's discretion" (not a right)
 - ⚠️ SOC 2 available but only via vendor portal (expires annually, must re-request)
 - ⚠️ On-site audit prohibited, only virtual/questionnaire allowed
 
-
 **Sheet 7 (Jurisdictional Risk):**
 
 - ⚠️ Vendor is EU subsidiary but parent company is US (CLOUD Act applies)
 - ⚠️ TIA not updated after US-EU Data Privacy Framework adoption
 - ⚠️ Risk acceptance expired (was accepted for 1 year, now past date)
-
 
 ### Data Quality Issues
 
@@ -1689,18 +1609,15 @@ For each vendor:
 - Problem: Missing values in base columns (Criticality, Data Classification)
 - Fix: Cross-reference IMP-5.23.1 inventory, populate ALL base columns
 
-
 **Inconsistent Data:**
 
 - Problem: Service marked "Critical" in IMP-5.23.1 but "Medium" in IMP-5.23.2
 - Fix: Base columns should be READ-ONLY from IMP-5.23.1 (copy, don't edit)
 
-
 **Stale Data:**
 
 - Problem: Assessment completed Q1 2025, now Q4 2025, certifications expired
 - Fix: Quarterly reviews, calendar reminders for cert expiry dates
-
 
 ---
 
@@ -1774,14 +1691,12 @@ For each vendor:
 - ☐ Certification expiry dates ≥3 months in future
 - ☐ Service explicitly listed in certification scope
 
-
 **Sheet 3 (Contract Terms):**
 
 - ☐ All Confidential/Restricted services have DPA
 - ☐ Liability caps appropriate for service criticality
 - ☐ Exit clauses present with data portability
 - ☐ Subprocessor notification requirements documented
-
 
 **Sheet 4 (SLA Performance):**
 
@@ -1790,7 +1705,6 @@ For each vendor:
 - ☐ All SLA credits claimed (none outstanding)
 - ☐ SLA commitments match contract (Sheet 3)
 
-
 **Sheet 5 (Data Sovereignty):**
 
 - ☐ Data locations verified in admin console
@@ -1798,13 +1712,11 @@ For each vendor:
 - ☐ SCCs/BCRs present for all non-adequate country transfers
 - ☐ Encryption status verified (not assumed)
 
-
 **Sheet 6 (Audit Rights):**
 
 - ☐ Audit rights exist in contract (not discretionary)
 - ☐ SOC 2 reports current (<18 months old)
 - ☐ Incident investigation support verified (not assumed)
-
 
 **Sheet 7 (Jurisdictional Risk):**
 
@@ -1812,7 +1724,6 @@ For each vendor:
 - ☐ TIA completed for all US transfers
 - ☐ Risk acceptance signed by appropriate authority
 - ☐ Mitigation measures actually implemented (not just planned)
-
 
 ### Approval Workflow Quality Gate
 
@@ -1823,14 +1734,12 @@ For each vendor:
 - ☐ Liability and indemnification terms acceptable
 - ☐ Exit clauses protect organization interests
 
-
 **Security Review:**
 
 - ☐ All certifications verified authentic
 - ☐ Security gaps documented and acceptable
 - ☐ Compensating controls adequate (if gaps exist)
 - ☐ Vendor security posture matches criticality
-
 
 **Compliance Review:**
 
@@ -1839,14 +1748,12 @@ For each vendor:
 - ☐ All residual risks formally accepted
 - ☐ Evidence audit-ready
 
-
 **CISO Approval:**
 
 - ☐ Overall risk profile acceptable
 - ☐ Critical gaps remediated or accepted
 - ☐ Assessment methodology followed
 - ☐ Ready for external audit
-
 
 ---
 
@@ -1894,7 +1801,6 @@ Step 6: Archive & Publish (Evidence repository, ISMS folder)
 - ✅ Dashboard formulas calculate correctly
 - ❌ Reject if: Missing evidence, incomplete sheets, broken links
 
-
 **Legal (Quality Gate 2):**
 
 - ✅ All Confidential/Restricted services have DPA
@@ -1902,7 +1808,6 @@ Step 6: Archive & Publish (Evidence repository, ISMS folder)
 - ✅ Exit clauses protect organization
 - ✅ Subprocessor controls documented
 - ❌ Reject if: No DPA for personal data, inadequate liability, missing critical clauses
-
 
 **Security / CISO (Quality Gate 3):**
 
@@ -1912,7 +1817,6 @@ Step 6: Archive & Publish (Evidence repository, ISMS folder)
 - ✅ Vendor security posture matches risk tolerance
 - ❌ Reject if: Critical service without certification, unacceptable risk gap, no remediation plan
 
-
 **Compliance / DPO (Quality Gate 4):**
 
 - ✅ All EU personal data: DPA with SCCs or Adequacy
@@ -1921,14 +1825,12 @@ Step 6: Archive & Publish (Evidence repository, ISMS folder)
 - ✅ All residual risks documented and justified
 - ❌ Reject if: GDPR violation, missing TIA, regulatory non-compliance
 
-
 **CISO (Final Approval):**
 
 - ✅ Overall risk profile acceptable
 - ✅ Budget approved for remediation actions
 - ✅ Critical gaps remediated or formally accepted
 - ✅ Assessment ready for external audit
-
 
 ### Approval Documentation (Sheet 10)
 
@@ -1971,7 +1873,6 @@ Step 6: Archive & Publish (Evidence repository, ISMS folder)
 - Budget needed for remediation exceeds approval authority
 - Risk acceptance required above CISO level (Board approval)
 
-
 **Escalation Path:**
 1. ISMS Coordinator → CISO (initial escalation)
 2. CISO → Risk Committee (if risk acceptance needed)
@@ -2013,7 +1914,6 @@ Step 6: Archive & Publish (Evidence repository, ISMS folder)
 - Verify contracts still current (Sheet 3)
 - Review any new subprocessors (Sheet 3)
 
-
 **Week 2: Assessment Updates**
 
 - Update changed data in Sheets 2-7
@@ -2021,20 +1921,17 @@ Step 6: Archive & Publish (Evidence repository, ISMS folder)
 - Update status flags if changes
 - Document new gaps or closed gaps
 
-
 **Week 3: Review & Approval**
 
 - ISMS Coordinator quality check
 - Stakeholder review (if significant changes)
 - CISO approval (if new risks identified)
 
-
 **Week 4: Reporting**
 
 - Update IMP-5.23.5 dashboard
 - Report to risk committee (if material changes)
 - Archive previous quarter version
-
 
 **Triggers for Out-of-Cycle Review:**
 
@@ -2044,7 +1941,6 @@ Step 6: Archive & Publish (Evidence repository, ISMS folder)
 - Regulatory change (new DORA standards, etc.)
 - Certification expiry or suspension
 - Vendor acquisition / change of ownership
-
 
 ### Annual Comprehensive Review
 
@@ -2059,14 +1955,12 @@ Step 6: Archive & Publish (Evidence repository, ISMS folder)
 - Review risk acceptances (re-approve or remediate)
 - Update evidence repository (purge old files)
 
-
 **Deliverables:**
 
 - Updated IMP-5.23.2 workbook (new version)
 - Risk committee annual report
 - Remediation plan for year ahead
 - Vendor performance scorecards
-
 
 ### Data Retention
 
@@ -2076,19 +1970,16 @@ Step 6: Archive & Publish (Evidence repository, ISMS folder)
 - Archive: Older versions to long-term storage
 - Reason: Audit trail, trend analysis, contract disputes
 
-
 **Evidence Files:**
 
 - Retain: Current + 1 expired version (e.g., 2024 + 2023 ISO cert)
 - Archive: After 3 years post-expiry
 - Reason: Audit evidence, legal defense
 
-
 **Approval Records:**
 
 - Retain: Indefinitely (part of ISMS audit trail)
 - Archive: After 7 years (legal retention)
-
 
 ### System Integration Points
 
@@ -2108,7 +1999,6 @@ Step 6: Archive & Publish (Evidence repository, ISMS folder)
 - SOC 2 report collection (vendor portal)
 - TIA completion (DPO/Legal assessment)
 - Risk exception approvals (risk committee meetings)
-
 
 ---
 
@@ -2133,7 +2023,6 @@ Step 6: Archive & Publish (Evidence repository, ISMS folder)
 - **ISMS-POL-00:** Regulatory Applicability Framework (master regulatory mapping)
 - **ISMS-POL-A.5.19-23:** Supplier and Cloud Services Security Policy (policy requirements)
 
-
 **Key Regulations:**
 
 - **GDPR** (EU Regulation 2016/679): General Data Protection Regulation
@@ -2141,7 +2030,6 @@ Step 6: Archive & Publish (Evidence repository, ISMS folder)
 - **DORA** (EU Regulation 2022/2554): Digital Operational Resilience Act (financial sector)
 - **NIS2** (EU Directive 2022/2555): Network and Information Security Directive
 - **US CLOUD Act** (18 USC §2713): US extraterritorial data access law
-
 
 ### Certification Verification Resources
 
@@ -2152,13 +2040,11 @@ Step 6: Archive & Publish (Evidence repository, ISMS folder)
 - **DAkkS:** https://www.dakks.de/ (German accreditation)
 - **ANAB:** https://anab.ansi.org/accreditation/ (US accreditation)
 
-
 **SOC 2 Auditor Verification:**
 
 - **AICPA Firm Search:** https://us.aicpa.org/forthepublic/findacpa (verify auditor licensed)
 - Big 4: Deloitte, PwC, EY, KPMG
 - Reputable Regional: Moss Adams, BDO, RSM, Grant Thornton
-
 
 **Vendor Trust Centers:**
 
@@ -2166,7 +2052,6 @@ Step 6: Archive & Publish (Evidence repository, ISMS folder)
 - **Azure:** https://servicetrust.microsoft.com/
 - **Google Cloud:** https://cloud.google.com/security/compliance
 - **Salesforce:** https://trust.salesforce.com/
-
 
 ### Assessment Completion Checklist (Quick Reference)
 
@@ -2258,7 +2143,6 @@ Calculation:
 - Excess downtime: [X - 43.2] minutes
 - Credit amount: €[Amount] per contract formula
 
-
 Please process this SLA credit and confirm receipt.
 
 Incident reference: [Ticket #]
@@ -2279,14 +2163,12 @@ Thank you,
 - Section 10: IMP-specific content only (removed regulatory duplication)
 - All regulatory references now point to POL-00 (eliminated duplication)
 
-
 **Alignment with IMP-5.23.1 Quality Standard:**
 
 - Consistent structure across all A.5.23 assessments
 - Table-heavy presentation for scannability
 - ONE example per sheet (not multiple good/bad comparisons)
 - Concise, actionable guidance (not encyclopedia)
-
 
 ---
 
@@ -2347,7 +2229,6 @@ Sheet 10: Approval Sign-Off (workflow, signatures)
 - Row with H = ✅ → Green background (#CCFFCC)
 - Row with H = N/A → Gray background (#EEEEEE)
 
-
 ---
 
 ## Sheet-Specific Extended Columns
@@ -2398,7 +2279,6 @@ Sheet 10: Approval Sign-Off (workflow, signatures)
 **Formula (Auto-Calculate):**
 
 - Column T: `=COUNTIF([monthly_data], "<"&R:R)` (count months below SLA)
-
 
 ---
 
@@ -2470,7 +2350,6 @@ Sheet 10: Approval Sign-Off (workflow, signatures)
 - Overall Compliance % 90-95%: Yellow
 - Overall Compliance % >95%: Green
 
-
 ---
 
 ## Sheet 9: Evidence Register (Columns A-H)
@@ -2513,14 +2392,12 @@ Sheet 10: Approval Sign-Off (workflow, signatures)
 - Sheet 8 formula cells (auto-calculated)
 - Sheet 10 header rows
 
-
 **Unprotected Cells (User Input):**
 
 - Extended columns (R+) in Sheets 2-7
 - Columns F-Q in all data sheets
 - Sheet 9 evidence register
 - Sheet 10 approval fields
-
 
 **Workbook Password:** Optional (recommend if sharing externally)
 
@@ -2534,7 +2411,6 @@ Sheet 10: Approval Sign-Off (workflow, signatures)
 - Maintain service order consistency
 - Update quarterly (sync with inventory)
 
-
 **Data Export (To Downstream Systems):**
 
 - Sheet 8 Dashboard → IMP-5.23.5 (Compliance Dashboard)
@@ -2542,13 +2418,11 @@ Sheet 10: Approval Sign-Off (workflow, signatures)
 - Sheet 3 Contract Renewal Dates → Procurement calendar
 - Sheet 7 TIA Results → Risk Register
 
-
 **API Integration (Future Enhancement):**
 
 - ITSM: Auto-import SLA performance (Sheet 4)
 - Contract Management: Auto-populate contract data (Sheet 3)
 - Monitoring: Real-time uptime % (Sheet 4)
-
 
 ---
 
@@ -2570,14 +2444,12 @@ Sheet 10: Approval Sign-Off (workflow, signatures)
 - `create_9_evidence_register()` - Sheet 9 with auto-numbering
 - `create_10_approval()` - Sheet 10 workflow
 
-
 **Customization Points:**
 
 - Dropdown lists (modify vendor names, service types)
 - Formula ranges (adjust for more/fewer rows)
 - Conditional formatting rules (risk thresholds)
 - Dashboard metrics (add custom KPIs)
-
 
 **Usage:**
 ```bash
@@ -2599,7 +2471,6 @@ See Part I, Section 4 for detailed column-by-column guidance.
 - Sheet 8: Dashboard (formulas)
 - Sheet 9: Evidence register A-H
 - Sheet 10: Approval workflow (custom layout)
-
 
 **Total Workbook Columns:** 27 columns max (Sheet 7)
 

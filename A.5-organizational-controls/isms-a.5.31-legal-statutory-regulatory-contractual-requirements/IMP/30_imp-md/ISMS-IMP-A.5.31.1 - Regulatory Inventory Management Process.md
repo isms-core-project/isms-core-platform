@@ -44,13 +44,11 @@ This implementation guide provides step-by-step instructions for establishing an
 - Review and update processes
 - Integration with applicability assessments (IMP-5.31.2)
 
-
 **What This Guide Is Not**:
 
 - How to assess applicability (that's IMP-5.31.2)
 - How to extract requirements (that's IMP-5.31.3)
 - Legal interpretation guidance (consult legal counsel)
-
 
 ## The Regulatory Inventory Explained
 
@@ -62,7 +60,6 @@ This implementation guide provides step-by-step instructions for establishing an
 - **Tier 2 (Conditional)**: Regulations that would apply if conditions met
 - **Tier 3 (Informational)**: Voluntary frameworks for guidance
 
-
 ## Who Manages This Process
 
 **Primary Roles**:
@@ -70,7 +67,6 @@ This implementation guide provides step-by-step instructions for establishing an
 - **Compliance Officer**: Owns inventory, ensures accuracy
 - **ISMS Manager**: Approves changes affecting ISMS scope
 - **Legal Counsel**: Reviews Tier 1 regulations, validates citations
-
 
 ## Process Flowchart
 
@@ -126,13 +122,11 @@ This implementation guide provides step-by-step instructions for establishing an
 - CUST = Customer contractual
 - VOL = Voluntary frameworks
 
-
 **Examples**:
 
 - `REG-EU-001`: GDPR
 - `REG-CH-001`: Swiss FADP
 - `REG-INT-003`: ISO 27001
-
 
 ---
 
@@ -150,7 +144,6 @@ This implementation guide provides step-by-step instructions for establishing an
 - Assessment Reference (link to Workbook 2)
 - Next Review Date
 - Responsible Party, Notes, Last Updated
-
 
 ---
 
@@ -185,7 +178,6 @@ Tier 1 and Tier 2 regulations must be added to ISMS-POL-00 (master regulatory fr
 - After extraction → Control Mapping (IMP-5.31.4)
 - After mapping → Evidence Collection (IMP-5.31.5)
 
-
 ---
 
 # Ongoing Maintenance
@@ -196,13 +188,11 @@ Tier 1 and Tier 2 regulations must be added to ISMS-POL-00 (master regulatory fr
 - Identify new regulations
 - Clean up stale/repealed entries
 
-
 **Continuous Monitoring**:
 
 - Regulatory changes (amendments, new regs)
 - Business changes (new markets, services, thresholds)
 - Tier 2 condition triggers (quarterly check)
-
 
 **Amendment Management**:
 
@@ -210,13 +200,11 @@ Tier 1 and Tier 2 regulations must be added to ISMS-POL-00 (master regulatory fr
 - Update inventory fields
 - Trigger re-extraction if requirements changed
 
-
 **Archiving**:
 
 - Archive (don't delete) regulations no longer applicable
 - Status → "Archived - [Reason]"
 - Preserves audit trail
-
 
 ---
 
@@ -243,7 +231,6 @@ Tier 1 and Tier 2 regulations must be added to ISMS-POL-00 (master regulatory fr
 - ISMS-POL-A.5.31.2: Regulatory Applicability Methodology
 - ISMS-POL-00: Regulatory Applicability Framework
 
-
 **Implementation Guides**:
 
 - ISMS-IMP-A.5.31.2: Regulatory Applicability Assessment Process
@@ -251,13 +238,11 @@ Tier 1 and Tier 2 regulations must be added to ISMS-POL-00 (master regulatory fr
 - ISMS-IMP-A.5.31.4: Control Mapping Process
 - ISMS-IMP-A.5.31.5: Evidence Management Process
 
-
 **Assessment Tools**:
 
 - Assessment Workbook 1: Regulatory Inventory (this guide's output)
 - Assessment Workbook 2: Applicability Matrix
 - Assessment Workbook 6: Compliance Dashboard
-
 
 ---
 
@@ -290,13 +275,11 @@ Tier 1 and Tier 2 regulations must be added to ISMS-POL-00 (master regulatory fr
 - CUST = Customer contractual
 - VOL = Voluntary frameworks
 
-
 **Examples**:
 
 - `REG-EU-001`: GDPR
 - `REG-CH-001`: Swiss FADP
 - `REG-INT-003`: ISO 27001
-
 
 ---
 
@@ -314,7 +297,6 @@ Tier 1 and Tier 2 regulations must be added to ISMS-POL-00 (master regulatory fr
 - Assessment Reference (link to Workbook 2)
 - Next Review Date
 - Responsible Party, Notes, Last Updated
-
 
 ---
 
@@ -349,7 +331,6 @@ Tier 1 and Tier 2 regulations must be added to ISMS-POL-00 (master regulatory fr
 - After extraction → Control Mapping (IMP-S4)
 - After mapping → Evidence Collection (IMP-S5)
 
-
 ---
 
 # Ongoing Maintenance
@@ -360,13 +341,11 @@ Tier 1 and Tier 2 regulations must be added to ISMS-POL-00 (master regulatory fr
 - Identify new regulations
 - Clean up stale/repealed entries
 
-
 **Continuous Monitoring**:
 
 - Regulatory changes (amendments, new regs)
 - Business changes (new markets, services, thresholds)
 - Tier 2 condition triggers (quarterly check)
-
 
 **Amendment Management**:
 
@@ -374,13 +353,11 @@ Tier 1 and Tier 2 regulations must be added to ISMS-POL-00 (master regulatory fr
 - Update inventory fields
 - Trigger re-extraction if requirements changed
 
-
 **Archiving**:
 
 - Archive (don't delete) regulations no longer applicable
 - Status → "Archived - [Reason]"
 - Preserves audit trail
-
 
 ---
 
@@ -407,7 +384,6 @@ Tier 1 and Tier 2 regulations must be added to ISMS-POL-00 (master regulatory fr
 - ISMS-POL-A.5.31-S2: Regulatory Applicability Methodology
 - ISMS-POL-00: Regulatory Applicability Framework
 
-
 **Implementation Guides**:
 
 - ISMS-IMP-A.5.31-S2: Regulatory Applicability Assessment Process
@@ -415,13 +391,11 @@ Tier 1 and Tier 2 regulations must be added to ISMS-POL-00 (master regulatory fr
 - ISMS-IMP-A.5.31-S4: Control Mapping Process
 - ISMS-IMP-A.5.31-S5: Evidence Management Process
 
-
 **Assessment Tools**:
 
 - Assessment Workbook 1: Regulatory Inventory (this guide's output)
 - Assessment Workbook 2: Applicability Matrix
 - Assessment Workbook 6: Compliance Dashboard
-
 
 ---
 

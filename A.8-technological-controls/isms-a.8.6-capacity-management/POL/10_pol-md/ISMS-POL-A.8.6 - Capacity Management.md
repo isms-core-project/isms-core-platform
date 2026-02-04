@@ -34,7 +34,6 @@
 - Financial Review: Chief Financial Officer (CFO)
 - Final Authority: Chief Information Officer (CIO)
 
-
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
@@ -42,7 +41,6 @@
 - ISMS-IMP-A.8.6.2 (Capacity Forecasting and Planning)
 - ISMS-IMP-A.8.6.3 (Capacity Management Assessment)
 - ISO/IEC 27001:2022 Control A.8.6
-
 
 ---
 
@@ -71,14 +69,12 @@ This policy establishes [Organization]'s requirements for capacity management to
 - Cloud capacity (cloud service quotas, limits, instance counts)
 - Physical infrastructure (power capacity, cooling capacity, rack space per A.7.11)
 
-
 **Coverage**:
 
 - All infrastructure supporting production business operations (mandatory)
 - Development, test, and quality assurance environments (recommended)
 - Business continuity and disaster recovery sites (per A.5.30)
 - Third-party hosted infrastructure (where [Organization] has capacity management responsibility)
-
 
 **Personnel**:
 
@@ -88,12 +84,10 @@ This policy establishes [Organization]'s requirements for capacity management to
 - Application owners / system owners (business growth projections)
 - Financial controller / CFO (capacity budget approval)
 
-
 **Out of Scope**:
 
 - Application performance tuning (covered under application optimization)
 - Software licensing management (covered under asset management)
-
 
 ## ISO/IEC 27001:2022 Control Alignment
 
@@ -112,7 +106,6 @@ This control integrates with:
 - **A.8.13 - Information Backup**: Backup storage capacity planning
 - **A.7.11 - Supporting Utilities**: Physical infrastructure capacity (power, cooling)
 - **A.5.30 - ICT Readiness for Business Continuity**: Recovery site capacity
-
 
 ---
 
@@ -135,13 +128,11 @@ This control integrates with:
 - Network infrastructure: Bandwidth, throughput, and connections monitored
 - Physical infrastructure: Power and cooling capacity monitored per A.7.11
 
-
 **Data Retention Requirements**:
 
 - Raw metrics: Minimum 30 days for incident investigation
 - Aggregated metrics: Minimum 12 months for trend analysis
 - Historical data: Minimum 36 months for strategic planning
-
 
 ## Capacity Threshold Requirements
 
@@ -153,7 +144,6 @@ This control integrates with:
 - **Critical threshold**: Triggers immediate action to prevent exhaustion
 - **Maximum capacity**: Absolute limit requiring immediate response
 
-
 Thresholds SHALL be reviewed quarterly and tuned based on false positive rates, near-miss incidents, and workload pattern changes.
 
 ## Capacity Alerting Requirements
@@ -163,7 +153,6 @@ Thresholds SHALL be reviewed quarterly and tuned based on false positive rates, 
 - Routing to appropriate teams based on severity
 - Escalation procedures for unacknowledged alerts
 - Integration with incident management processes
-
 
 ## Capacity Forecasting Requirements
 
@@ -175,13 +164,11 @@ Thresholds SHALL be reviewed quarterly and tuned based on false positive rates, 
 - Medium-term forecasts: 6-12 months (budget planning)
 - Long-term forecasts: 12-24 months (strategic planning)
 
-
 **Update Frequency**:
 
 - Monthly: Short-term forecast updates
 - Quarterly: Comprehensive forecast review
 - Annually: Strategic forecast aligned with budget cycle
-
 
 **Accuracy Target**: Forecasts within ±15% of actual utilization (measured quarterly).
 
@@ -205,13 +192,11 @@ Thresholds SHALL be reviewed quarterly and tuned based on false positive rates, 
 - Quarterly planning: Comprehensive planning with 12-month horizon
 - Annual budget: Long-term planning aligned with budget cycle
 
-
 **Approval Requirements**:
 
 - Routine capacity: IT Director/CIO within approved budget
 - Major capacity: CFO approval for budget impact
 - Emergency capacity: CIO fast-track approval with executive notification
-
 
 ## Capacity Reporting Requirements
 
@@ -289,7 +274,6 @@ All capacity management non-conformances SHALL be logged in Gap Register with:
 - Approve major capacity investments and strategic capacity plans
 - Ensure adequate budget allocation for capacity management program
 
-
 ## Chief Information Officer (CIO)
 
 **Accountabilities**:
@@ -301,13 +285,11 @@ All capacity management non-conformances SHALL be logged in Gap Register with:
   - Network bandwidth: Minimum 30% headroom during business hours
 - Balance capacity requirements with budget constraints
 
-
 **Authorities**:
 
 - Approve capacity expansion plans within budget
 - Authorize emergency capacity procurement
 - Allocate IT resources for capacity planning
-
 
 ## Chief Information Security Officer (CISO)
 
@@ -317,13 +299,11 @@ All capacity management non-conformances SHALL be logged in Gap Register with:
 - Risk assessment for capacity-related security issues
 - Compliance verification for capacity management controls (ISO 27001 A.8.6)
 
-
 **Authorities**:
 
 - Require capacity planning for security systems
 - Approve capacity management policy
 - Escalate capacity risks that impact security posture
-
 
 ## Capacity Planning Team / Infrastructure Manager
 
@@ -334,13 +314,11 @@ All capacity management non-conformances SHALL be logged in Gap Register with:
 - Capacity expansion planning and coordination
 - Capacity reporting to management
 
-
 **Authorities**:
 
 - Implement capacity monitoring for all resources
 - Define capacity thresholds and alerting rules
 - Recommend capacity expansion plans
-
 
 ## IT Operations Team
 
@@ -350,13 +328,11 @@ All capacity management non-conformances SHALL be logged in Gap Register with:
 - Immediate response to capacity incidents
 - Deployment of approved capacity expansions
 
-
 **Authorities**:
 
 - Execute emergency capacity mitigation actions
 - Implement approved capacity tuning and optimization
 - Escalate capacity issues per procedures
-
 
 ## Application Owners / System Owners
 
@@ -366,7 +342,6 @@ All capacity management non-conformances SHALL be logged in Gap Register with:
 - Participate in capacity planning for their applications
 - Budget for application capacity requirements
 
-
 ## Chief Financial Officer (CFO)
 
 **Accountabilities**:
@@ -374,7 +349,6 @@ All capacity management non-conformances SHALL be logged in Gap Register with:
 - Approve capacity management budgets (CapEx and OpEx)
 - Financial reporting on capacity investments
 - Cost optimization oversight
-
 
 ---
 
@@ -397,13 +371,11 @@ All capacity management non-conformances SHALL be logged in Gap Register with:
 - Frequency: Monthly
 - Purpose: Review capacity status, forecasts, plan expansions, align with business roadmap
 
-
 **IT Leadership Team** (Strategic):
 
 - Members: CIO, CISO, CFO, IT Director
 - Frequency: Quarterly
 - Purpose: Review capacity reports, approve budgets, strategic decisions
-
 
 ## Regulatory Compliance
 
@@ -413,19 +385,16 @@ This policy satisfies requirements per **ISMS-POL-00 (Regulatory Applicability F
 
 - **ISO/IEC 27001:2022**: Control A.8.6 (Capacity Management)
 
-
 **Tier 2 - Conditional Applicability** (where business activities trigger):
 
 - **FINMA Circular 2023/1** (Swiss financial institutions): ICT operational resilience
 - **DORA Article 11** (EU financial entities): ICT capacity planning
 - **NIS2 Article 21(2)** (Essential/important entities): Business continuity capacity
 
-
 **Tier 3 - Informational Reference**:
 
 - ITIL 4 Capacity Management
 - NIST SP 800-53 AU-6
-
 
 ## Policy Exceptions
 
@@ -446,7 +415,6 @@ This policy satisfies requirements per **ISMS-POL-00 (Regulatory Applicability F
 - Approved by: CIO + CISO + Executive Management
 - Documentation: Formal risk acceptance, compensating controls
 - Review: Annual re-approval required
-
 
 ## Compliance Verification
 
@@ -496,7 +464,6 @@ This policy satisfies requirements per **ISMS-POL-00 (Regulatory Applicability F
 
 KPIs SHALL be reported quarterly to IT Leadership Team and annually to Executive Management
 
-
 ## Non-Compliance Consequences
 
 **Operational**: Service outages, performance degradation, emergency procurement
@@ -513,13 +480,11 @@ KPIs SHALL be reported quarterly to IT Leadership Team and annually to Executive
 - Regulatory changes affecting capacity requirements
 - Major capacity-related incidents
 
-
 **Update Approval**:
 
 - Minor updates (clarifications): Information Security Manager
 - Major updates (requirement changes): CISO and IT Director
 - Strategic changes: Executive Management
-
 
 ---
 
@@ -533,7 +498,6 @@ KPIs SHALL be reported quarterly to IT Leadership Team and annually to Executive
 - ISMS-IMP-A.8.6.2: Capacity Forecasting and Planning
 - ISMS-IMP-A.8.6.3: Capacity Management Assessment
 
-
 **Related Policies**:
 
 - ISMS-POL-00: Regulatory Applicability Framework
@@ -542,7 +506,6 @@ KPIs SHALL be reported quarterly to IT Leadership Team and annually to Executive
 - ISMS-POL-A.8.13: Information Backup
 - ISMS-POL-A.7.11: Supporting Utilities
 - ISMS-POL-A.5.30: ICT Readiness for Business Continuity
-
 
 ## External Standards
 
@@ -553,7 +516,6 @@ KPIs SHALL be reported quarterly to IT Leadership Team and annually to Executive
 - FINMA Circular 2023/1 (if applicable)
 - DORA - Regulation (EU) 2022/2554 (if applicable)
 - NIS2 - Directive (EU) 2022/2555 (if applicable)
-
 
 ---
 

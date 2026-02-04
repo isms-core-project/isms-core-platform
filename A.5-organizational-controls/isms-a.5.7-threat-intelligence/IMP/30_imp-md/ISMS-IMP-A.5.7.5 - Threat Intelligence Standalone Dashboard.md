@@ -46,7 +46,6 @@ This document consists of two parts:
   - Risk Summary Format
   - ROI Calculation Methodology
 
-
 ---
 
 # PART I: USER COMPLETION GUIDE
@@ -65,7 +64,6 @@ This is a **STANDALONE, SELF-CONTAINED** executive dashboard for threat intellig
 - **Executive briefings**: Monthly leadership summaries without technical detail
 - **External reporting**: Shareable without exposing operational details (no references to internal workbooks)
 - **Rapid assessment**: 10-minute monthly updates via manual data entry (no complex workbook dependencies)
-
 
 #### Key Differences vs. ISMS-IMP-A.5.7.4
 
@@ -88,13 +86,11 @@ This is a **STANDALONE, SELF-CONTAINED** executive dashboard for threat intellig
 - ✅ Quick monthly snapshots without workbook dependencies
 - ✅ Environments where full assessment workbooks (A.5.7.1/2/3) aren't maintained
 
-
 **When to Use A.5.7.4 (Comprehensive Dashboard):**
 
 - Use when full operational workbooks (A.5.7.1, A.5.7.2, A.5.7.3) are maintained
 - Use for detailed program management and KPI tracking
 - Use for audits requiring granular evidence
-
 
 #### What You'll Document
 
@@ -111,7 +107,6 @@ This is a **STANDALONE, SELF-CONTAINED** executive dashboard for threat intellig
 - Top 5-10 critical actions requiring executive attention
 - Quarterly cost-benefit analysis
 
-
 **Auto-Generated (From Manual Entries):**
 
 - Executive dashboard (one-page visual summary)
@@ -119,7 +114,6 @@ This is a **STANDALONE, SELF-CONTAINED** executive dashboard for threat intellig
 - Quarterly summary reports
 - ROI calculations
 - Risk and action tracking
-
 
 ---
 
@@ -137,13 +131,11 @@ This is a **STANDALONE, SELF-CONTAINED** executive dashboard for threat intellig
 - **Top Risks**: What are the top 3-5 program risks right now?
 - **Top Actions**: What are the 5-10 most critical actions needing executive attention?
 
-
 **Quarterly Prerequisites (Additional 30 Minutes):**
 
 - **Costs**: Total TI program costs this quarter (staffing, tools, services)
 - **Benefits**: Estimated value of prevented incidents, decisions, efficiency gains
 - **ROI Calculation**: Cost vs. benefit analysis
-
 
 ### Required Tools
 
@@ -151,7 +143,6 @@ This is a **STANDALONE, SELF-CONTAINED** executive dashboard for threat intellig
 - Basic understanding of program metrics (no deep technical knowledge required)
 - 10 minutes per month for data entry
 - 30 minutes per quarter for quarterly summary
-
 
 ### Dependencies
 
@@ -174,7 +165,6 @@ Optional: Can reference data from A.5.7.1, A.5.7.2, A.5.7.3 if available, but NO
 1. **Open Dashboard Workbook**
 
    - File: `ISMS_A_5_7_5_Standalone_Dashboard_YYYY.xlsx`
-
 
 2. **Navigate to Sheet 2: Monthly_Data_Entry**
 
@@ -210,12 +200,10 @@ Optional: Can reference data from A.5.7.1, A.5.7.2, A.5.7.3 if available, but NO
    - Sheet 4: Trend_History (appends new month)
    - Charts update automatically
 
-
 5. **Review Executive Dashboard (Sheet 3)**:
 
    - Verify data looks correct
    - Check for any errors or anomalies
-
 
 6. **Save Workbook**
 
@@ -241,7 +229,6 @@ Optional: Can reference data from A.5.7.1, A.5.7.2, A.5.7.3 if available, but NO
    - Key metrics aggregated
    - Prevention and decision totals calculated
 
-
 4. **Complete Quarterly-Specific Fields** (manual entry):
 
 | Field | Instructions | Example |
@@ -264,7 +251,6 @@ Optional: Can reference data from A.5.7.1, A.5.7.2, A.5.7.3 if available, but NO
    - Document risk mitigation actions
    - Assess risk trend (Increasing, Stable, Decreasing)
 
-
 7. **Navigate to Sheet 8: ROI_Summary**
 
 8. **Review Auto-Generated ROI Analysis**:
@@ -274,20 +260,17 @@ Optional: Can reference data from A.5.7.1, A.5.7.2, A.5.7.3 if available, but NO
    - ROI calculation and trend
    - Verify calculations accurate
 
-
 9. **Export Quarterly Summary for Board**:
 
    - Sheet 6: Quarterly_Summary → Export to PDF
    - Sheet 3: Executive_Dashboard → Export to PowerPoint (screenshot)
    - Prepare 1-slide summary for board deck
 
-
 10. **CISO/Executive Review & Approval**:
 
    - CISO reviews quarterly summary
    - Executive/Board approves (if presented)
    - Document approval in workbook
-
 
 **Deliverable:** Quarterly summary report, board-ready presentation materials, ROI analysis
 
@@ -305,20 +288,17 @@ Optional: Can reference data from A.5.7.1, A.5.7.2, A.5.7.3 if available, but NO
   * "TI program ROI: 3.2:1 (CHF 800K benefit on CHF 250K investment)"
   * "75% of critical incidents used threat intelligence (target: 70%)"
 
-
 **Slide 2: Prevented Incidents & Decisions** (Optional, 2 minutes)
 
 - Top 2-3 prevented incidents (brief descriptions)
 - Top 2-3 intelligence-driven decisions
 - Demonstrates tangible program value
 
-
 **Slide 3: Program Health & Priorities** (Optional, 2 minutes)
 
 - Top 3 risks and mitigation actions
 - Top 3 priorities for next quarter
 - Resource requests (if any)
-
 
 **Total Presentation Time:** 1-5 minutes depending on board engagement
 
@@ -329,7 +309,6 @@ Optional: Can reference data from A.5.7.1, A.5.7.2, A.5.7.3 if available, but NO
 - ✅ "Intelligence is integrated into incident response (W% usage rate)"
 - ✅ "Program is mature and well-managed (Maturity Level: X)"
 - ✅ "Seeking approval for [specific resource/decision if applicable]"
-
 
 ---
 
@@ -342,20 +321,17 @@ Optional: Can reference data from A.5.7.1, A.5.7.2, A.5.7.3 if available, but NO
 - Screenshot of Sheet 3 (Executive_Dashboard) each month
 - Save monthly snapshot of workbook
 
-
 **Quarterly:**
 
 - PDF export of Sheet 6 (Quarterly_Summary)
 - Board presentation slides (if presented)
 - Evidence of prevention/decisions (brief documentation, not exhaustive)
 
-
 **Annual:**
 
 - 12-month trend chart from Sheet 4
 - Annual ROI summary from Sheet 8
 - Progression of maturity level
-
 
 **Storage:**
 ```
@@ -386,7 +362,6 @@ Evidence/
 - Approves dashboard for executive distribution
 - Timeline: Within 5 business days of month-end
 
-
 ### Quarterly Review
 
 **Level 1: CISO**
@@ -395,7 +370,6 @@ Evidence/
 - Prepares board presentation (if applicable)
 - Approves quarterly report
 
-
 **Level 2: Executive Management / Board**
 
 - Reviews quarterly summary and dashboard
@@ -403,12 +377,10 @@ Evidence/
 - Provides feedback or approvals
 - Timeline: Within 15 business days of quarter-end
 
-
 **Approval Documentation:**
 
 - Monthly: CISO initials in Sheet 2 (Monthly_Data_Entry)
 - Quarterly: Executive/Board approval in Sheet 6 (Quarterly_Summary)
-
 
 ---
 
@@ -434,7 +406,6 @@ Evidence/
 - Macros: None (VBA-free for security)
 - **External Links: NONE** - Completely standalone
 
-
 **Total Sheets:** 9
 
 **Tab Colors:**
@@ -449,7 +420,6 @@ Evidence/
 - ROI Summary (Sheet 8): Green (#70AD47)
 - Metadata (Sheet 9): Gray (#D9D9D9)
 
-
 **Key Design Principles:**
 1. **Simplicity**: 10-minute monthly data entry (one row per month)
 2. **Automation**: All charts, trends, summaries auto-generate from Sheet 2
@@ -458,7 +428,6 @@ Evidence/
 5. **Board-Ready**: Quarterly summaries formatted for board presentations
 
 ---
-
 
 ## Sheet-by-Sheet Technical Specifications
 
@@ -476,7 +445,6 @@ Evidence/
 - Data entry instructions for Sheet 2
 - How to interpret executive dashboard (Sheet 3)
 - Troubleshooting guide
-
 
 **Protection:** Read-only
 
@@ -525,14 +493,12 @@ Evidence/
 - P1P2_TI_Usage_Percent <70 → Orange (below target)
 - Any required field blank → Red
 
-
 **Data Validation:**
 
 - All integer fields: Whole numbers only
 - All percentage fields: 0-100 range
 - All currency fields: Non-negative
 - Text fields: Character limits enforced
-
 
 ---
 
@@ -550,7 +516,6 @@ Evidence/
 - Current Month: `=TEXT(MAX(Monthly_Data_Entry!Month),"MMMM YYYY")`
 - Dashboard Status: "Current" / "Out of Date" (based on last update)
 
-
 **B. Key Metrics Summary (Rows 4-10, Columns A-D):**
 
 - **This Month:**
@@ -567,13 +532,11 @@ Evidence/
   * Total Decisions: `=SUMIFS(Decisions_Made, Quarter, current_quarter)`
   * Average P1/P2 TI Usage: `=AVERAGE(IF(Quarter=current_quarter, P1P2_TI_Usage_Percent))`
 
-
 **C. Status Indicators (Rows 4-10, Columns I-J):**
 
 - **Prevention Target:** ≥3/quarter → Green checkmark or Red X
 - **P1/P2 TI Usage Target:** ≥70% → Green checkmark or Red X
 - **Decision Target:** ≥5/quarter → Green checkmark or Red X
-
 
 **D. Charts (Rows 11-30):**
 
@@ -582,16 +545,13 @@ Evidence/
 - **Chart 3 (Rows 21-30):** 12-Month Trend - P1/P2 TI Usage % (Line chart with 70% target line)
 - **Chart 4 (Rows 21-30):** Quarterly Comparison - Incidents, Decisions, Value (Clustered column)
 
-
 **E. Top Risks (Rows 31-35):**
 
 - Lists Top_Risk_1, Top_Risk_2, Top_Risk_3 from current month
 
-
 **F. Critical Actions (Rows 36-40):**
 
 - Lists Critical_Action_1, Critical_Action_2, Critical_Action_3 from current month
-
 
 **Protection:** Fully protected (read-only, auto-generated)
 
@@ -599,7 +559,6 @@ Evidence/
 
 - Status indicators: Green (✓) if target met, Red (✗) if not met
 - Value cells: Green if >0, Gray if 0
-
 
 ---
 
@@ -614,19 +573,16 @@ Evidence/
 - All columns from Sheet 2 (Monthly_Data_Entry)
 - Filtered to show last 12 complete months
 
-
 **Formulas:**
 
 - Uses `=FILTER(Monthly_Data_Entry!A:Z, Monthly_Data_Entry!Month >= TODAY()-365)`
 - Sorted by Month descending (most recent first)
-
 
 **Charts:**
 
 - 12-month trend for each key metric
 - Month-over-month change calculations
 - Moving averages (3-month)
-
 
 **Protection:** Read-only (auto-generated)
 
@@ -655,7 +611,6 @@ Evidence/
 - Status "Open" + Due_Date overdue → Red
 - Status "Completed" → Green
 
-
 ---
 
 ### Sheet 6: Quarterly_Summary
@@ -670,7 +625,6 @@ Evidence/
 
 - Quarter: "YYYY-QX"
 - Date Range: "01.MM.YYYY - DD.MM.YYYY"
-
 
 **B. Key Metrics (Auto-Calculated from Sheet 2):**
 | Metric | Formula |
@@ -737,7 +691,6 @@ Evidence/
 - Risk_Score 8-14 → Yellow
 - Status "Mitigated" → Green
 
-
 ---
 
 ### Sheet 8: ROI_Summary
@@ -778,7 +731,6 @@ Evidence/
 - Chart: ROI trend over time (line chart)
 - Sparklines: Quick ROI trend for executive summary
 
-
 **Protection:** Yellow cells editable (cost/benefit estimates)
 
 ---
@@ -798,7 +750,6 @@ Evidence/
 - Change log
 - Dependencies: NONE (standalone)
 
-
 **Protection:** Read-only
 
 ---
@@ -811,24 +762,20 @@ Evidence/
 - **ISMS-POL-A.5.7, Section 2.7** (Effectiveness Measurement Requirements)
 - **ISMS-POL-A.5.7, Section 3.4** (Policy Governance)
 
-
 **Implementation Specifications:**
 
 - **ISMS-IMP-A.5.7.1** (Sources Assessment) - Optional reference (not required)
 - **ISMS-IMP-A.5.7.2** (Collection & Analysis Assessment) - Optional reference (not required)
 - **ISMS-IMP-A.5.7.3** (Integration & Distribution Assessment) - Optional reference (not required)
 
-
 **Comprehensive Alternative:**
 
 - **ISMS-IMP-A.5.7.4** (Effectiveness Dashboard) - Comprehensive dashboard with external references (use if full workbooks maintained)
-
 
 **Standards References:**
 
 - ISO/IEC 27001:2022 Annex A Control A.5.7
 - ISO/IEC 27002:2022 Control 5.7 Implementation Guidance
-
 
 ---
 
