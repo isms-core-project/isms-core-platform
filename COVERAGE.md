@@ -27,6 +27,7 @@ ISMS CORE uses *control packs* to implement multiple Annex A controls through a 
 - **SCR** Scripts/generators/workbooks
 - **REF** Reference materials
 - **CTX** Context documents
+- **FORM** Forms, templates and checklists
 
 ---
 
@@ -71,7 +72,7 @@ ISMS CORE uses *control packs* to implement multiple Annex A controls through a 
 | P35 | `isms-a.8.6-capacity-management` | POL, IMP, SCR |
 | P36 | `isms-a.8.8-vulnerability-management` | POL, IMP, SCR |
 | P37 | `isms-a.8.9-configuration-management` | POL, IMP, SCR |
-| P38 | `isms-a.8.10-data-deletion` | POL, IMP, SCR |
+| P38 | `isms-a.8.10-data-deletion` | POL, IMP, SCR, REF, FORM |
 | P39 | `isms-a.8.11-data-masking` | POL, IMP, SCR |
 | P40 | `isms-a.8.12-data-leakage-prevention` | POL, IMP, SCR |
 | P41 | `isms-a.8.15-logging` | POL, IMP, SCR |

@@ -42,6 +42,7 @@ It is organized into a consistent control "stack":
 <td align="center"><strong>🐍 SCR</strong><br/>Scripts</td>
 <td align="center"><strong>📚 REF</strong><br/>Reference</td>
 <td align="center"><strong>🏢 CTX</strong><br/>Context</td>
+<td align="center"><strong>📝 FORM</strong><br/>Forms</td>
 </tr>
 <tr>
 <td>Requirements<br/>and governance</td>
@@ -49,6 +50,7 @@ It is organized into a consistent control "stack":
 <td>Python generators<br/>and automation</td>
 <td>Mappings and notes<br/>to support implementation</td>
 <td>Organizational<br/>assumptions & scope context</td>
+<td>Templates, checklists<br/>and operational forms</td>
 </tr>
 </table>
 

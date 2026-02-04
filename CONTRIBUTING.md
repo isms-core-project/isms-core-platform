@@ -70,6 +70,13 @@ ISMS CORE applies appropriate rigor based on what matters for **reliability**, *
 <td><code>&lt;!-- QA_VERIFIED --&gt;</code></td>
 <td><img src="https://img.shields.io/badge/Accuracy_Verified-0066CC?style=flat-square" alt="Verified"/></td>
 </tr>
+<tr>
+<td><strong>📝 FORM</strong> (Forms)</td>
+<td>🟡 Moderate</td>
+<td>Low</td>
+<td><code>&lt;!-- QA_VERIFIED --&gt;</code></td>
+<td><img src="https://img.shields.io/badge/Template_Verified-32CD32?style=flat-square" alt="Template"/></td>
+</tr>
 </table>
 
 ---

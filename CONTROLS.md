@@ -132,7 +132,7 @@ isms-a.X.X-control-name/
 | [A.8.6](A.8-technological-controls/isms-a.8.6-capacity-management/) | Capacity Management | POL, IMP, SCR |
 | [A.8.8](A.8-technological-controls/isms-a.8.8-vulnerability-management/) | Vulnerability Management | POL, IMP, SCR |
 | [A.8.9](A.8-technological-controls/isms-a.8.9-configuration-management/) | Configuration Management | POL, IMP, SCR, REF |
-| [A.8.10](A.8-technological-controls/isms-a.8.10-data-deletion/) | Data Deletion | POL, IMP, SCR |
+| [A.8.10](A.8-technological-controls/isms-a.8.10-data-deletion/) | Data Deletion | POL, IMP, SCR, REF, FORM |
 | [A.8.11](A.8-technological-controls/isms-a.8.11-data-masking/) | Data Masking | POL, IMP, SCR |
 | [A.8.12](A.8-technological-controls/isms-a.8.12-data-leakage-prevention/) | Data Leakage Prevention | POL, IMP, SCR |
 | [A.8.15](A.8-technological-controls/isms-a.8.15-logging/) | Logging | POL, IMP, SCR, REF |
