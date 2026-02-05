@@ -31,7 +31,7 @@
 
 ## 🎯 What is ISMS CORE?
 
-ISMS CORE is a production-grade **control engineering** repository for building and operating an ISO/IEC 27001:2022-aligned ISMS. It treats ISMS implementation as an **engineering problem** (verifiable controls + repeatable evidence), not a slide deck exercise.
+ISMS CORE is a production-grade **control engineering** repository for building and operating an ISO/IEC 27001:2022-aligned ISMS. It treats ISMS implementation as an **engineering problem** (verifiable controls + repeatable evidence), not a consulting exercise.
 
 It is organized into a consistent control "stack":
 
