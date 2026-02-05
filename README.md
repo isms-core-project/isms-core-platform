@@ -16,8 +16,8 @@
 </p>
 
 <p align="center">
-  <a href="#-framework-integration"><img src="https://img.shields.io/badge/NIST_CSF-2.0-Mapped-FF6600?style=flat-square" alt="NIST CSF"/></a>
-  <a href="#-framework-integration"><img src="https://img.shields.io/badge/MITRE_ATT&CK-v18-Mapped-DC143C?style=flat-square" alt="MITRE ATT&CK"/></a>
+  <a href="#-framework-integration"><img src="https://img.shields.io/badge/NIST_CSF_2.0-Mapped-FF6600?style=flat-square" alt="NIST CSF"/></a>
+  <a href="#-framework-integration"><img src="https://img.shields.io/badge/MITRE_ATT&CK_v18-Mapped-DC143C?style=flat-square" alt="MITRE ATT&CK"/></a>
   <a href="#-framework-integration"><img src="https://img.shields.io/badge/GDPR-Mapped-FFD700?style=flat-square" alt="GDPR"/></a>
   <a href="#-framework-integration"><img src="https://img.shields.io/badge/Swiss_nDSG-Toolkit-FF0000?style=flat-square" alt="Swiss nDSG"/></a>
   <a href="#-framework-integration"><img src="https://img.shields.io/badge/EU_AI_Act-Mapped-0066CC?style=flat-square" alt="EU AI Act"/></a>
