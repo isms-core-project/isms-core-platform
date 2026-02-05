@@ -223,9 +223,9 @@ Demo-ready controls with sample data:
 
 ---
 
-## 🗓️ Certification Timeline
+## 🗓️ Project Roadmap
 
-This is an internal target timeline and not a guarantee of certification outcome.
+This is an internal target timeline and not a guarantee.
 
 <table>
 <tr>
@@ -234,23 +234,28 @@ This is an internal target timeline and not a guarantee of certification outcome
 <th>Status</th>
 </tr>
 <tr>
-<td>Complete all control packs</td>
+<td>Controls Complete</td>
 <td>Q1 2026</td>
 <td><img src="https://img.shields.io/badge/✅_Complete-00AA00?style=flat-square" alt="Complete"/></td>
 </tr>
 <tr>
-<td>Stage 1 audit (documentation)</td>
+<td>Pilot Deployment</td>
 <td>Q2 2026</td>
 <td><img src="https://img.shields.io/badge/Ready-00AA00?style=flat-square" alt="Ready"/></td>
 </tr>
 <tr>
-<td>Stage 2 audit (effectiveness)</td>
+<td>Public Release (Github)</td>
 <td>Q3 2026</td>
 <td><img src="https://img.shields.io/badge/Planned-0066CC?style=flat-square" alt="Planned"/></td>
 </tr>
 <tr>
-<td>ISO 27001:2022 certification</td>
+<td>ISMS CORE Plaform</td>
 <td>Q4 2026</td>
+<td><img src="https://img.shields.io/badge/Goal-00AA00?style=flat-square" alt="Goal"/></td>
+</tr>
+<tr>
+<td>ISMS CORE Console</td>
+<td>Q1 2027</td>
 <td><img src="https://img.shields.io/badge/Goal-00AA00?style=flat-square" alt="Goal"/></td>
 </tr>
 </table>
