@@ -88,7 +88,7 @@ Workbook (Output)    → Evidence and compliance metrics
 isms-core-platform/
 ├── A.5-organizational-controls/     # 21 control packs (covers 37 Annex A controls)
 │   ├── isms-a.5.7-threat-intelligence/
-│   │   ├── POL/    ├── IMP/    ├── SCR/    └── REF/
+│   │   ├── POL/    ├── IMP/    ├── SCR/    ├── WKBK/    └── REF/
 │   └── ...
 ├── A.6-people-controls/             # 4 control packs (covers 8 Annex A controls)
 ├── A.7-physical-controls/           # 6 control packs (covers 14 Annex A controls)
