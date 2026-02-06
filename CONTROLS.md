@@ -159,6 +159,7 @@ isms-a.X.X-control-name/
 | **SCR** | Scripts | Python generators, validators, and Excel workbooks | <img src="https://img.shields.io/badge/SCR-3776AB?style=flat-square" alt="SCR"/> |
 | **REF** | Reference | Regulatory and framework reference materials | <img src="https://img.shields.io/badge/REF-FF6600?style=flat-square" alt="REF"/> |
 | **CTX** | Context | Organizational context documents | <img src="https://img.shields.io/badge/CTX-32CD32?style=flat-square" alt="CTX"/> |
+| **FORM** | Form | Templates, checklists and operational forms | <img src="https://img.shields.io/badge/FORM-FF8C00?style=flat-square" alt="FORM"/> |
 
 ---
 
