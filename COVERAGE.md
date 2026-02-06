@@ -47,13 +47,13 @@ ISMS CORE uses *control packs* to implement multiple Annex A controls through a 
 | P10 | `isms-a.5.14-information-transfer` | POL, IMP, SCR |
 | P11 | `isms-a.5.15-16-18-identity-access-management` | POL, IMP, SCR |
 | P12 | `isms-a.5.17-authentication-information` | POL, IMP, SCR |
-| P13 | `isms-a.5.19-23-cloud-services` | POL, IMP, SCR |
+| P13 | `isms-a.5.19-23-cloud-services` | POL, IMP, SCR, REF |
 | P14 | `isms-a.5.24-28-incident-management-lifecycle` | POL, IMP, SCR |
 | P15 | `isms-a.5.29-security-during-disruption` | POL, IMP, SCR |
 | P16 | `isms-a.5.30-8.13-14-business-continuity-dr` | POL, IMP, SCR |
 | P17 | `isms-a.5.31-legal-statutory-regulatory-contractual-requirements` | POL, IMP, SCR |
 | P18 | `isms-a.5.32-33-information-protection` | POL, IMP, SCR |
-| P19 | `isms-a.5.34-privacy-and-pii` | POL, IMP, SCR |
+| P19 | `isms-a.5.34-privacy-and-pii` | POL, IMP, SCR, CTX |
 | P20 | `isms-a.5.35-36-compliance-review` | POL, IMP, SCR |
 | P21 | `isms-a.5.37-documented-procedures` | POL, IMP, SCR |
 | P22 | `isms-a.6.3-awareness-and-training` | POL, IMP, SCR |
@@ -71,22 +71,22 @@ ISMS CORE uses *control packs* to implement multiple Annex A controls through a 
 | P34 | `isms-a.8.4-access-to-source-code` | POL, IMP, SCR |
 | P35 | `isms-a.8.6-capacity-management` | POL, IMP, SCR |
 | P36 | `isms-a.8.8-vulnerability-management` | POL, IMP, SCR |
-| P37 | `isms-a.8.9-configuration-management` | POL, IMP, SCR |
+| P37 | `isms-a.8.9-configuration-management` | POL, IMP, SCR, CTX |
 | P38 | `isms-a.8.10-data-deletion` | POL, IMP, SCR, REF, FORM |
-| P39 | `isms-a.8.11-data-masking` | POL, IMP, SCR |
+| P39 | `isms-a.8.11-data-masking` | POL, IMP, SCR, CTX |
 | P40 | `isms-a.8.12-data-leakage-prevention` | POL, IMP, SCR |
-| P41 | `isms-a.8.15-logging` | POL, IMP, SCR |
+| P41 | `isms-a.8.15-logging` | POL, IMP, SCR, REF |
 | P42 | `isms-a.8.16-monitoring` | POL, IMP, SCR |
 | P43 | `isms-a.8.17-clock-synchronization` | POL, IMP, SCR |
 | P44 | `isms-a.8.20-22-network-security` | POL, IMP, SCR |
 | P45 | `isms-a.8.23-web-filtering` | POL, IMP, SCR |
-| P46 | `isms-a.8.24-use-of-cryptography` | POL, IMP, SCR |
+| P46 | `isms-a.8.24-use-of-cryptography` | POL, IMP, SCR, CTX |
 | P47 | `isms-a.8.25-26-29-secure-development` | POL, IMP, SCR |
 | P48 | `isms-a.8.27-secure-systems-engineering` | POL, IMP, SCR |
-| P49 | `isms-a.8.28-secure-coding` | POL, IMP, SCR |
+| P49 | `isms-a.8.28-secure-coding` | POL, IMP, SCR, REF, CTX |
 | P50 | `isms-a.8.30-outsourced-development` | POL, IMP, SCR |
-| P51 | `isms-a.8.31-environment-separation` | POL, IMP, SCR |
-| P52 | `isms-a.8.32-change-management` | POL, IMP, SCR |
+| P51 | `isms-a.8.31-environment-separation` | POL, IMP, SCR, REF |
+| P52 | `isms-a.8.32-change-management` | POL, IMP, SCR, REF |
 | P53 | `isms-a.8.33-34-testing-and-audit-protection` | POL, IMP, SCR |
 
 ---

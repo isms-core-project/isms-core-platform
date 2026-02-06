@@ -14,7 +14,7 @@
 # =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.5.10-11.2 - Usage Rules Inventory Excel Generator
+ISMS-IMP-A.5.10-11.S2 - Usage Rules Inventory Excel Generator
 ================================================================================
 
 ISO/IEC 27001:2022 Control A.5.10: Acceptable Use of Information and Other
@@ -70,7 +70,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.5.10-11.2"
+DOCUMENT_ID = "ISMS-IMP-A.5.10-11.S2"
 WORKBOOK_NAME = "Usage Rules Inventory"
 CONTROL_ID = "A.5.10"
 CONTROL_NAME = "Acceptable Use of Information and Other Associated Assets"
@@ -755,5 +755,5 @@ if __name__ == "__main__":
 # QA_VERIFIED: 2026-02-01
 # QA_STATUS: PASSED
 # QA_TOOL: Claude Code
-# CHANGES: Initial creation per ISMS-IMP-A.5.10-11.2 specification
+# CHANGES: Initial creation per ISMS-IMP-A.5.10-11.S2 specification
 # =============================================================================

@@ -51,7 +51,7 @@ WORKBOOK_DIR = Path(__file__).parent.parent / "90_workbooks"
 # Expected workbook structure
 EXPECTED_WORKBOOKS = {
     "A.5.12-13.1": {
-        "pattern": "ISMS-IMP-A.5.12-13.1_Classification_Scheme*.xlsx",
+        "pattern": "ISMS-IMP-A.5.12-13.S1_Classification_Scheme*.xlsx",
         "required_sheets": [
             "Instructions",
             "Classification_Levels",
@@ -63,7 +63,7 @@ EXPECTED_WORKBOOKS = {
         ]
     },
     "A.5.12-13.2": {
-        "pattern": "ISMS-IMP-A.5.12-13.2_Labelling_Procedures*.xlsx",
+        "pattern": "ISMS-IMP-A.5.12-13.S2_Labelling_Procedures*.xlsx",
         "required_sheets": [
             "Instructions",
             "Labelling_Standards",
@@ -75,7 +75,7 @@ EXPECTED_WORKBOOKS = {
         ]
     },
     "A.5.12-13.3": {
-        "pattern": "ISMS-IMP-A.5.12-13.3_Asset_Classification*.xlsx",
+        "pattern": "ISMS-IMP-A.5.12-13.S3_Asset_Classification*.xlsx",
         "required_sheets": [
             "Instructions",
             "Asset_Inventory",
@@ -87,7 +87,7 @@ EXPECTED_WORKBOOKS = {
         ]
     },
     "A.5.12-13.4": {
-        "pattern": "ISMS-IMP-A.5.12-13.4_Classification_and_Labelling*.xlsx",
+        "pattern": "ISMS-IMP-A.5.12-13.S4_Classification_and_Labelling*.xlsx",
         "required_sheets": [
             "Executive_Summary",
             "Compliance_Metrics",

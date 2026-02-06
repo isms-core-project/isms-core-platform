@@ -6,7 +6,7 @@
 # =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.6.4-5.1 - Disciplinary Process Assessment Excel Generator
+ISMS-IMP-A.6.4-5.S1 - Disciplinary Process Assessment Excel Generator
 ================================================================================
 
 ISO/IEC 27001:2022 Control A.6.4: Disciplinary Process
@@ -51,7 +51,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.6.4-5.1"
+DOCUMENT_ID = "ISMS-IMP-A.6.4-5.S1"
 WORKBOOK_NAME = "Disciplinary Process Assessment"
 CONTROL_ID = "A.6.4-5"
 CONTROL_NAME = "Disciplinary Process and Employment Exit"
@@ -606,5 +606,5 @@ if __name__ == "__main__":
 # QA_VERIFIED: 2026-02-03
 # QA_STATUS: PASSED - STANDARDIZATION COMPLETE
 # QA_TOOL: Claude Code
-# CHANGES: Initial creation per ISMS-IMP-A.6.4-5.1 specification
+# CHANGES: Initial creation per ISMS-IMP-A.6.4-5.S1 specification
 # =============================================================================

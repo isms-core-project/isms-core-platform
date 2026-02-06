@@ -6,7 +6,7 @@
 # =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.5.35-36.2 - Compliance Assessment Excel Generator
+ISMS-IMP-A.5.35-36.S2 - Compliance Assessment Excel Generator
 ================================================================================
 
 ISO/IEC 27001:2022 Control A.5.36: Compliance with Policies, Rules and Standards
@@ -44,7 +44,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-DOCUMENT_ID = "ISMS-IMP-A.5.35-36.2"
+DOCUMENT_ID = "ISMS-IMP-A.5.35-36.S2"
 WORKBOOK_NAME = "Compliance Assessment"
 CONTROL_ID = "A.5.36"
 CONTROL_NAME = "Compliance with Policies, Rules and Standards"
@@ -643,5 +643,5 @@ if __name__ == "__main__":
 # QA_VERIFIED: 2026-02-01
 # QA_STATUS: PASSED
 # QA_TOOL: Claude Code
-# CHANGES: Initial creation per ISMS-IMP-A.5.35-36.2 specification
+# CHANGES: Initial creation per ISMS-IMP-A.5.35-36.S2 specification
 # =============================================================================

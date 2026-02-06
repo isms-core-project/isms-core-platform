@@ -28,19 +28,19 @@ WORKBOOK_DIR = Path(__file__).parent.parent / "90_workbooks"
 
 EXPECTED_WORKBOOKS = {
     "A.5.5-6.1": {
-        "pattern": "ISMS-IMP-A.5.5-6.1_Authority_Contacts*.xlsx",
+        "pattern": "ISMS-IMP-A.5.5-6.S1_Authority_Contacts*.xlsx",
         "required_sheets": ["Instructions", "Authority_Registry", "Contact_Types", "Communication_Log", "Verification_Register", "Evidence_Register", "Approval_SignOff"]
     },
     "A.5.5-6.2": {
-        "pattern": "ISMS-IMP-A.5.5-6.2_Special_Interest*.xlsx",
+        "pattern": "ISMS-IMP-A.5.5-6.S2_Special_Interest*.xlsx",
         "required_sheets": ["Instructions", "Groups_Registry", "Membership_Details", "Engagement_Log", "Intelligence_Received", "Contribution_Log", "Evidence_Register", "Approval_SignOff"]
     },
     "A.5.5-6.3": {
-        "pattern": "ISMS-IMP-A.5.5-6.3_External_Communication*.xlsx",
+        "pattern": "ISMS-IMP-A.5.5-6.S3_External_Communication*.xlsx",
         "required_sheets": ["Instructions", "Communication_Scenarios", "Notification_Requirements", "Escalation_Matrix", "Approval_Workflow", "Communication_Templates", "Evidence_Register", "Approval_SignOff"]
     },
     "A.5.5-6.4": {
-        "pattern": "ISMS-IMP-A.5.5-6.4_External_Communications*.xlsx",
+        "pattern": "ISMS-IMP-A.5.5-6.S4_External_Communications*.xlsx",
         "required_sheets": ["Instructions", "Executive_Summary", "Authority_KPIs", "SIG_KPIs", "Compliance_Scorecard", "Gap_Analysis", "Audit_Readiness", "Trend_Analysis", "Evidence_Register", "Approval_SignOff"]
     },
 }

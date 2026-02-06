@@ -6,7 +6,7 @@
 # =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.5.32-33.2 - Records Protection Assessment Excel Generator
+ISMS-IMP-A.5.32-33.S2 - Records Protection Assessment Excel Generator
 ================================================================================
 
 ISO/IEC 27001:2022 Control A.5.33: Protection of Records
@@ -67,7 +67,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.5.32-33.2"
+DOCUMENT_ID = "ISMS-IMP-A.5.32-33.S2"
 WORKBOOK_NAME = "Records Protection Assessment"
 CONTROL_ID = "A.5.33"
 CONTROL_NAME = "Protection of Records"
@@ -731,7 +731,7 @@ def main():
     """Main entry point."""
     try:
         logger.info("=" * 70)
-        logger.info("ISMS-IMP-A.5.32-33.2 Records Protection Assessment Generator")
+        logger.info("ISMS-IMP-A.5.32-33.S2 Records Protection Assessment Generator")
         logger.info("=" * 70)
 
         wb = Workbook()

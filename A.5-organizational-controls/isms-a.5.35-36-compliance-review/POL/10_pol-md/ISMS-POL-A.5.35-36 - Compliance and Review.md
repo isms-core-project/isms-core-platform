@@ -38,10 +38,10 @@
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.5.35-36.1 (Independent Review Planning & Tracking)
-- ISMS-IMP-A.5.35-36.2 (Compliance Assessment)
-- ISMS-IMP-A.5.35-36.3 (Findings & Remediation Management)
-- ISMS-IMP-A.5.35-36.4 (Compliance & Review Dashboard)
+- ISMS-IMP-A.5.35-36.S1 (Independent Review Planning & Tracking)
+- ISMS-IMP-A.5.35-36.S2 (Compliance Assessment)
+- ISMS-IMP-A.5.35-36.S3 (Findings & Remediation Management)
+- ISMS-IMP-A.5.35-36.S4 (Compliance & Review Dashboard)
 - ISO/IEC 27001:2022 Controls A.5.35 and A.5.36
 - ISO/IEC 27007 (Guidelines for information security management systems auditing)
 - ISO/IEC TS 27008 (Guidelines for the assessment of information security controls)
@@ -151,7 +151,7 @@ This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulat
 
 Reviewer qualifications SHALL be verified and documented in the Reviewer Registry before assignment to review activities.
 
-**Verification**: Reviewer qualifications verified before engagement; documented in ISMS-IMP-A.5.35-36.1 Reviewer Registry.
+**Verification**: Reviewer qualifications verified before engagement; documented in ISMS-IMP-A.5.35-36.S1 Reviewer Registry.
 
 ### 1.2 Review Scope
 
@@ -170,7 +170,7 @@ Reviewer qualifications SHALL be verified and documented in the Reviewer Registr
 - Documentation and evidence requirements
 - Planned interviews and assessments
 
-**Verification**: Review scope documented using ISMS-IMP-A.5.35-36.1 Review Scope sheet before each review commences.
+**Verification**: Review scope documented using ISMS-IMP-A.5.35-36.S1 Review Scope sheet before each review commences.
 
 ### 1.3 Review Execution
 
@@ -191,13 +191,13 @@ Reviewer qualifications SHALL be verified and documented in the Reviewer Registr
 - Technical assessment results
 - Sampling methodology and sample records
 
-**PS-1.3.3 Review Tracking**: Review execution progress SHALL be tracked and monitored using the ISMS-IMP-A.5.35-36.1 Review Execution sheet, recording actual vs. planned progress.
+**PS-1.3.3 Review Tracking**: Review execution progress SHALL be tracked and monitored using the ISMS-IMP-A.5.35-36.S1 Review Execution sheet, recording actual vs. planned progress.
 
 **Verification**: Review evidence retained in ISMS Evidence Library (SharePoint/Confluence or equivalent) with reference recorded in Evidence Register.
 
 ### 1.4 Review Findings
 
-**PS-1.4.1 Finding Documentation**: All review findings SHALL be documented in the ISMS-IMP-A.5.35-36.3 Findings Register, including:
+**PS-1.4.1 Finding Documentation**: All review findings SHALL be documented in the ISMS-IMP-A.5.35-36.S3 Findings Register, including:
 
 - Finding ID and description
 - Control or area affected
@@ -238,7 +238,7 @@ Reviewer qualifications SHALL be verified and documented in the Reviewer Registr
 | Medium | Within 10 business days | 90 days maximum |
 | Low | Within 30 business days | Next review cycle |
 
-**PS-1.5.3 Action Tracking**: Corrective actions SHALL be tracked in ISMS-IMP-A.5.35-36.3 Remediation Actions sheet until verified closure.
+**PS-1.5.3 Action Tracking**: Corrective actions SHALL be tracked in ISMS-IMP-A.5.35-36.S3 Remediation Actions sheet until verified closure.
 
 **PS-1.5.4 Closure Verification**: Corrective actions SHALL not be marked as complete until:
 
@@ -271,7 +271,7 @@ Reviewer qualifications SHALL be verified and documented in the Reviewer Registr
 - Compliance with technical security standards
 - User compliance with acceptable use requirements
 
-**Verification**: Review completion recorded in ISMS-IMP-A.5.35-36.2 compliance assessment sheets.
+**Verification**: Review completion recorded in ISMS-IMP-A.5.35-36.S2 compliance assessment sheets.
 
 ### 2.2 Manager Responsibilities
 
@@ -292,7 +292,7 @@ Reviewer qualifications SHALL be verified and documented in the Reviewer Registr
 - Evidence of compliance or non-compliance
 - Planned actions for non-compliant areas
 
-**Verification**: Manager review records maintained using ISMS-IMP-A.5.35-36.2 Department Assessment sheet.
+**Verification**: Manager review records maintained using ISMS-IMP-A.5.35-36.S2 Department Assessment sheet.
 
 ### 2.3 Compliance Verification Methods
 
@@ -315,7 +315,7 @@ Reviewer qualifications SHALL be verified and documented in the Reviewer Registr
 
 ### 2.4 Non-Compliance Management
 
-**PS-2.4.1 Non-Compliance Identification**: Instances of non-compliance SHALL be recorded in the ISMS-IMP-A.5.35-36.2 NonCompliance Register with:
+**PS-2.4.1 Non-Compliance Identification**: Instances of non-compliance SHALL be recorded in the ISMS-IMP-A.5.35-36.S2 NonCompliance Register with:
 
 - Description of non-compliance
 - Policy, rule, or standard violated
@@ -340,13 +340,13 @@ Reviewer qualifications SHALL be verified and documented in the Reviewer Registr
 - 60 days overdue: Escalate to CISO
 - 90 days overdue: Escalate to Executive Management
 
-**Verification**: Escalation triggers tracked in ISMS-IMP-A.5.35-36.4 Dashboard; overdue items highlighted automatically.
+**Verification**: Escalation triggers tracked in ISMS-IMP-A.5.35-36.S4 Dashboard; overdue items highlighted automatically.
 
 ## 3. Consolidated Findings Management
 
 ### 3.1 Unified Findings Register
 
-**PS-3.1.1 Single Register**: All findings from independent reviews (A.5.35) and compliance assessments (A.5.36) SHALL be consolidated in a single Findings Register (ISMS-IMP-A.5.35-36.3).
+**PS-3.1.1 Single Register**: All findings from independent reviews (A.5.35) and compliance assessments (A.5.36) SHALL be consolidated in a single Findings Register (ISMS-IMP-A.5.35-36.S3).
 
 **PS-3.1.2 Finding Classification**: Each finding SHALL be classified by:
 
@@ -366,7 +366,7 @@ Reviewer qualifications SHALL be verified and documented in the Reviewer Registr
 - Recurring findings (same or similar finding in two consecutive reviews)
 - Findings with systemic implications
 
-**PS-3.2.2 RCA Documentation**: Root cause analysis SHALL be documented in ISMS-IMP-A.5.35-36.3 Root Cause Analysis sheet, including:
+**PS-3.2.2 RCA Documentation**: Root cause analysis SHALL be documented in ISMS-IMP-A.5.35-36.S3 Root Cause Analysis sheet, including:
 
 - Finding reference
 - RCA methodology used (5 Whys, Fishbone, etc.)
@@ -378,7 +378,7 @@ Reviewer qualifications SHALL be verified and documented in the Reviewer Registr
 
 ### 3.3 Remediation Management
 
-**PS-3.3.1 Action Planning**: Each finding requiring remediation SHALL have documented corrective action(s) in ISMS-IMP-A.5.35-36.3 Remediation Actions sheet, including:
+**PS-3.3.1 Action Planning**: Each finding requiring remediation SHALL have documented corrective action(s) in ISMS-IMP-A.5.35-36.S3 Remediation Actions sheet, including:
 
 - Action description
 - Owner accountable for completion
@@ -441,7 +441,7 @@ Renewal requests must demonstrate re-assessment of risk and continued justificat
 - Remediation progress
 - Trend analysis
 
-**PS-4.1.2 Dashboard Components**: The dashboard (ISMS-IMP-A.5.35-36.4) SHALL include:
+**PS-4.1.2 Dashboard Components**: The dashboard (ISMS-IMP-A.5.35-36.S4) SHALL include:
 
 - Executive summary with key metrics
 - Review status tracking
@@ -471,7 +471,7 @@ Renewal requests must demonstrate re-assessment of risk and continued justificat
 - Quarterly to Executive Management
 - Annually in Management Review
 
-**Verification**: KPI calculations documented in ISMS-IMP-A.5.35-36.4 KPI Scorecard sheet.
+**Verification**: KPI calculations documented in ISMS-IMP-A.5.35-36.S4 KPI Scorecard sheet.
 
 ### 4.3 Trend Analysis
 
@@ -623,6 +623,6 @@ Changes to this policy follow ISMS document change management:
 
 ---
 
-*This policy establishes requirements for independent review and compliance verification. Implementation procedures are documented in ISMS-IMP-A.5.35-36.1-4.*
+*This policy establishes requirements for independent review and compliance verification. Implementation procedures are documented in ISMS-IMP-A.5.35-36.S1-4.*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

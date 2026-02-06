@@ -450,8 +450,8 @@ Assessment of A.6.4-5 should reference stacked control assessments for complete 
 
 | Document ID | Title | Purpose |
 |-------------|-------|---------|
-| **ISMS-IMP-A.6.4-5.1** | Disciplinary Process Guide | Investigation procedures, documentation templates |
-| **ISMS-IMP-A.6.4-5.2** | Employment Exit Procedures | Leaver process, checklists, verification |
+| **ISMS-IMP-A.6.4-5.S1** | Disciplinary Process Guide | Investigation procedures, documentation templates |
+| **ISMS-IMP-A.6.4-5.S2** | Employment Exit Procedures | Leaver process, checklists, verification |
 
 ---
 

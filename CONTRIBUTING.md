@@ -175,12 +175,13 @@ isms-a.X.X-control-name/
 │   └── 10_pol-md/
 ├── IMP/                      # 📋 Implementation guides
 │   └── 30_imp-md/
-├── SCR/                      # 🐍 Scripts & workbooks
+├── SCR/                      # 🐍 Scripts
 │   ├── 10_generator-master/  # Python generators
 │   ├── 11_normalize/         # Normalization scripts
 │   ├── 12_consolidator/      # Dashboard consolidation
 │   ├── 13_presentation/      # CISO demo data
-│   ├── 50_sanity/            # Validation scripts
+│   └── 50_sanity/            # Validation scripts
+├── WKBK/                     # 📊 Generated workbooks
 │   └── 90_workbooks/         # Excel output
 ├── REF/                      # 📚 Reference materials (if applicable)
 │   └── 70_ref-md/
@@ -260,6 +261,60 @@ def safe_cell_write(ws, cell_ref, value):
 
 ---
 
+## 🔬 Triple-Validation Process
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Adversarial-Multi--Model_QA-DC143C?style=for-the-badge" alt="Adversarial Multi-Model QA"/>
+</p>
+
+Every control pack undergoes adversarial multi-model validation. Controls are reviewed by competing AI models to ensure no single model's blind spots compromise quality.
+
+```
+  ┌─────────────────────────┐
+  │    Gregory Griffin       │
+  │    (Architect / Owner)   │
+  └────────────┬────────────┘
+               │ Requirements + Domain Expertise
+               ▼
+  ┌─────────────────────────┐
+  │    Claude Code (Opus)    │──── Implementation
+  │    Build + Code Review   │     POL, IMP, SCR, REF, CTX
+  └────────────┬────────────┘
+               │
+       ┌───────┴───────┐
+       ▼               ▼
+  ┌──────────┐   ┌──────────┐
+  │ Copilot X │   │  GPT-4   │
+  │ Blue Team │   │ Red Team │
+  │  (Audit)  │   │ (Attack) │
+  └─────┬─────┘   └─────┬────┘
+        │               │
+        └───────┬───────┘
+                ▼
+  ┌─────────────────────────┐
+  │    Gregory Griffin       │
+  │    Final Approval Gate   │
+  └─────────────────────────┘
+```
+
+| Model | Role | Focus |
+|-------|------|-------|
+| **Claude Code (Opus)** | Implementation + QA | Policy writing, Python generators, code review, pattern analysis |
+| **ISMS Copilot X** | Blue Team Audit | Stage 1 documentation adequacy, Stage 2 implementation effectiveness |
+| **ChatGPT GPT-4** | Red Team Auditor | Attack surface review, gap identification, adversarial testing |
+| **Gregory Griffin** | Architect + Final Gate | Methodology, domain expertise, IP ownership, approval authority |
+
+### Finding Classification
+
+| Severity | Criteria | Action |
+|----------|----------|--------|
+| **Critical** | Missing control implementation, audit blocker | Must resolve before promotion |
+| **High** | Significant gap in evidence or coverage | Must resolve before promotion |
+| **Medium** | Incomplete guidance, minor inconsistency | Resolve during QA pass |
+| **Low** | Style, formatting, enhancement opportunity | Track for future iteration |
+
+---
+
 ## 🤖 AI-Assisted Development
 
 <table>
@@ -272,12 +327,16 @@ def safe_cell_write(ws, cell_ref, value):
 <td>Methodology, architecture, domain expertise, IP ownership</td>
 </tr>
 <tr>
-<td><strong>Claude AI</strong></td>
-<td>Policy framework, Python automation, documentation</td>
+<td><strong>Claude Code (Opus)</strong></td>
+<td>Policy framework, Python automation, code review, documentation</td>
 </tr>
 <tr>
-<td><strong>Claude Code</strong></td>
-<td>Script QA, pattern analysis, formula verification</td>
+<td><strong>ISMS Copilot X</strong></td>
+<td>Blue team audit, documentation adequacy, implementation review</td>
+</tr>
+<tr>
+<td><strong>ChatGPT GPT-4</strong></td>
+<td>Red team audit, adversarial testing, gap identification</td>
 </tr>
 </table>
 

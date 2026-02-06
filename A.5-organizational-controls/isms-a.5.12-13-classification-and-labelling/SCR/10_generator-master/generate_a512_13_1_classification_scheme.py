@@ -6,7 +6,7 @@
 # =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.5.12-13.1 - Classification Scheme Definition Excel Generator
+ISMS-IMP-A.5.12-13.S1 - Classification Scheme Definition Excel Generator
 ================================================================================
 
 ISO/IEC 27001:2022 Control A.5.12: Classification of Information
@@ -64,7 +64,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.5.12-13.1"
+DOCUMENT_ID = "ISMS-IMP-A.5.12-13.S1"
 WORKBOOK_NAME = "Classification Scheme Definition"
 CONTROL_ID = "A.5.12"
 CONTROL_NAME = "Classification of Information"
@@ -634,7 +634,7 @@ def main():
     """Main entry point."""
     try:
         logger.info("=" * 70)
-        logger.info("ISMS-IMP-A.5.12-13.1 Classification Scheme Definition Generator")
+        logger.info("ISMS-IMP-A.5.12-13.S1 Classification Scheme Definition Generator")
         logger.info("=" * 70)
 
         wb = Workbook()

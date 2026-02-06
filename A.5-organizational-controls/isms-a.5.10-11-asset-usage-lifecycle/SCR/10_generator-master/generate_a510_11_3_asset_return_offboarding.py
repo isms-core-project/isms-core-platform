@@ -14,7 +14,7 @@
 # =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.5.10-11.3 - Asset Return & Offboarding Assessment Excel Generator
+ISMS-IMP-A.5.10-11.S3 - Asset Return & Offboarding Assessment Excel Generator
 ================================================================================
 
 ISO/IEC 27001:2022 Control A.5.11: Return of Assets
@@ -74,7 +74,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.5.10-11.3"
+DOCUMENT_ID = "ISMS-IMP-A.5.10-11.S3"
 WORKBOOK_NAME = "Asset Return and Offboarding Assessment"
 CONTROL_ID = "A.5.11"
 CONTROL_NAME = "Return of Assets"
@@ -814,5 +814,5 @@ if __name__ == "__main__":
 # QA_VERIFIED: 2026-02-01
 # QA_STATUS: PASSED
 # QA_TOOL: Claude Code
-# CHANGES: Initial creation per ISMS-IMP-A.5.10-11.3 specification
+# CHANGES: Initial creation per ISMS-IMP-A.5.10-11.S3 specification
 # =============================================================================

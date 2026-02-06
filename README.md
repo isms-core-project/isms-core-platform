@@ -31,7 +31,7 @@
 
 ## 🎯 What is ISMS CORE?
 
-ISMS CORE is a production-grade **control engineering** repository for building and operating an ISO/IEC 27001:2022-aligned ISMS. It treats ISMS implementation as an **engineering problem** (verifiable controls + repeatable evidence), not a consulting exercise.
+ISMS CORE is a production-grade **control engineering** repository for building and operating an ISO/IEC 27001:2022-aligned ISMS. It treats ISMS implementation as an **engineering problem** — not a consulting exercise.
 
 It is organized into a consistent control "stack":
 
@@ -210,6 +210,55 @@ See [PHILOSOPHY.md](PHILOSOPHY.md) for the full methodology.
 
 ---
 
+## 🔬 Quality Assurance
+
+Every control pack undergoes **adversarial multi-model validation** — controls are reviewed by competing AI models to ensure no single model's blind spots compromise quality.
+
+```
+┌─────────────────┐     ┌──────────────────┐     ┌──────────────────┐
+│  Claude Code     │────▶│  ISMS Copilot X   │────▶│  GPT-4 Red Team  │
+│  (Build + QA)    │     │  (Blue Team Audit) │     │  (Attack Surface) │
+└─────────────────┘     └──────────────────┘     └──────────────────┘
+         │                        │                        │
+         ▼                        ▼                        ▼
+   Implementation          Stage 1: Docs            Stage 2: Gaps
+   + Code Review           adequacy review          + adversarial test
+                                  │                        │
+                                  └──────────┬─────────────┘
+                                             ▼
+                                  ┌──────────────────┐
+                                  │  Gregory Griffin   │
+                                  │  (Final Approval)  │
+                                  └──────────────────┘
+```
+
+<table>
+<tr>
+<th>Stage</th>
+<th>Method</th>
+<th>Focus</th>
+</tr>
+<tr>
+<td><strong>Stage 1</strong></td>
+<td>Documentation adequacy</td>
+<td>Policy completeness, control coverage, artifact consistency</td>
+</tr>
+<tr>
+<td><strong>Stage 2</strong></td>
+<td>Implementation effectiveness</td>
+<td>Gap analysis, evidence sufficiency, audit readiness</td>
+</tr>
+<tr>
+<td><strong>Findings</strong></td>
+<td>Classified: Critical / High / Medium / Low</td>
+<td>Iterated until all Critical and High findings resolved</td>
+</tr>
+</table>
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
+
+---
+
 ## 📊 Status
 
 To avoid ambiguity, ISMS CORE tracks three different things:
@@ -235,7 +284,7 @@ To avoid ambiguity, ISMS CORE tracks three different things:
 </tr>
 <tr>
 <td>Python scripts</td>
-<td><strong>456</strong> (410K+ lines)</td>
+<td><strong>454</strong> (410K+ lines)</td>
 <td><img src="https://img.shields.io/badge/Validated-0066CC?style=flat-square" alt="Validated"/></td>
 </tr>
 <tr>

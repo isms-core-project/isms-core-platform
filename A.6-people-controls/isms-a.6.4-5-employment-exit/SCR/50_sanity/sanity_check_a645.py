@@ -50,7 +50,7 @@ WORKBOOK_DIR = Path(__file__).parent.parent / "90_workbooks"
 # Expected workbook structure
 EXPECTED_WORKBOOKS = {
     "A.6.4-5.1": {
-        "pattern": "ISMS-IMP-A.6.4-5.1_Disciplinary_Process*.xlsx",
+        "pattern": "ISMS-IMP-A.6.4-5.S1_Disciplinary_Process*.xlsx",
         "required_sheets": [
             "Instructions",
             "Violation_Categories",
@@ -62,7 +62,7 @@ EXPECTED_WORKBOOKS = {
         ]
     },
     "A.6.4-5.2": {
-        "pattern": "ISMS-IMP-A.6.4-5.2_Employment_Exit*.xlsx",
+        "pattern": "ISMS-IMP-A.6.4-5.S2_Employment_Exit*.xlsx",
         "required_sheets": [
             "Instructions",
             "Exit_Procedures",
@@ -75,7 +75,7 @@ EXPECTED_WORKBOOKS = {
         ]
     },
     "A.6.4-5.3": {
-        "pattern": "ISMS-IMP-A.6.4-5.3_Post_Employment*.xlsx",
+        "pattern": "ISMS-IMP-A.6.4-5.S3_Post_Employment*.xlsx",
         "required_sheets": [
             "Instructions",
             "Obligation_Types",
@@ -89,7 +89,7 @@ EXPECTED_WORKBOOKS = {
         ]
     },
     "A.6.4-5.4": {
-        "pattern": "ISMS-IMP-A.6.4-5.4_Employment_Exit_Dashboard*.xlsx",
+        "pattern": "ISMS-IMP-A.6.4-5.S4_Employment_Exit_Dashboard*.xlsx",
         "required_sheets": [
             "Executive_Dashboard",
             "Exit_Metrics",

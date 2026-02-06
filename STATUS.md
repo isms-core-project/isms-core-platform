@@ -7,7 +7,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Control_Packs-53_of_53-00AA00?style=flat-square" alt="Control Packs"/>
   <img src="https://img.shields.io/badge/Annex_A_Controls-93_Mapped-32CD32?style=flat-square" alt="93 Mapped"/>
-  <img src="https://img.shields.io/badge/Scripts-400+-3776AB?style=flat-square" alt="Scripts"/>
+  <img src="https://img.shields.io/badge/Scripts-454-3776AB?style=flat-square" alt="Scripts"/>
   <img src="https://img.shields.io/badge/ISMS_Copilot-100%25_Audited-00AA00?style=flat-square" alt="Copilot Audited"/>
 </p>
 
@@ -51,7 +51,7 @@ This status file tracks **control packs**, not ISO certification status.
 </tr>
 <tr>
 <td>Scripts Validated</td>
-<td><strong>400+</strong></td>
+<td><strong>454</strong></td>
 <td><img src="https://img.shields.io/badge/Validated-3776AB?style=flat-square" alt="Validated"/></td>
 </tr>
 <tr>
@@ -74,7 +74,7 @@ This status file tracks **control packs**, not ISO certification status.
 
 <p>
 <img src="https://img.shields.io/badge/Section_5-100%25_🎉-00AA00?style=flat-square" alt="100%"/>
-<strong>20/20 packs complete</strong>
+<strong>21/21 packs complete</strong>
 </p>
 
 | Pack (covers Annex A controls) | Status | POL | IMP | SCR |
@@ -191,7 +191,7 @@ This status file tracks **control packs**, not ISO certification status.
 </tr>
 <tr>
 <td>📚 REF (Reference)</td>
-<td align="center"><strong>10</strong></td>
+<td align="center"><strong>6</strong></td>
 <td><img src="https://img.shields.io/badge/Reference-FF6600?style=flat-square" alt="Reference"/></td>
 </tr>
 <tr>
@@ -201,7 +201,7 @@ This status file tracks **control packs**, not ISO certification status.
 </tr>
 <tr>
 <td>🏢 CTX (Context)</td>
-<td align="center"><strong>3</strong></td>
+<td align="center"><strong>5</strong></td>
 <td><img src="https://img.shields.io/badge/Context-0066CC?style=flat-square" alt="Context"/></td>
 </tr>
 </table>
@@ -276,7 +276,7 @@ This is an internal target timeline and not a guarantee.
 </tr>
 <tr>
 <td rowspan="3"><strong>🐍 Scripts</strong></td>
-<td>400+ generators validated</td>
+<td>454 generators validated</td>
 <td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
 </tr>
 <tr>

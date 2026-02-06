@@ -94,9 +94,9 @@ This policy:
 
 This policy does NOT:
 
-- **Specify detailed usage rules per asset type** (see ISMS-IMP-A.5.10-11.2 Usage Rules Inventory)
+- **Specify detailed usage rules per asset type** (see ISMS-IMP-A.5.10-11.S2 Usage Rules Inventory)
 - **Define technical enforcement mechanisms** (see ISMS-IMP-A.5.10-11 Implementation Guides)
-- **Provide offboarding checklists** (see ISMS-IMP-A.5.10-11.3 Asset Return Assessment)
+- **Provide offboarding checklists** (see ISMS-IMP-A.5.10-11.S3 Asset Return Assessment)
 - **Select monitoring or enforcement technologies** (technology selection based on risk assessment)
 
 **Rationale**: Separating policy requirements from implementation guidance enables:
@@ -172,7 +172,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 | Updates communicated | Email notification, training update | Distribution records, training completion |
 | New hire acknowledgment | During onboarding, before access granted | HR onboarding checklist |
 
-**Verification Mechanism**: AUP acknowledgment rates tracked in ISMS-IMP-A.5.10-11.1 (Acceptable Use Policy Assessment). Target: 100% acknowledgment within 30 days of hire/annual refresh date.
+**Verification Mechanism**: AUP acknowledgment rates tracked in ISMS-IMP-A.5.10-11.S1 (Acceptable Use Policy Assessment). Target: 100% acknowledgment within 30 days of hire/annual refresh date.
 
 *Exception: Personnel on approved leave >30 days at time of policy refresh are flagged as "deferred" in acknowledgment register; acknowledgment required within 14 days of return to work. Deferred acknowledgments excluded from compliance rate calculation during absence period.*
 
@@ -201,7 +201,7 @@ Non-compliance >30 days (excluding deferred): escalated to manager; >60 days esc
 | **Cloud Services** | Approved services only | Data classification requirements respected |
 | **Physical Assets** | Business purposes | Proper care and security; no modifications |
 
-**Implementation Reference**: Detailed usage rules per asset category documented in ISMS-IMP-A.5.10-11.2 (Usage Rules Inventory).
+**Implementation Reference**: Detailed usage rules per asset category documented in ISMS-IMP-A.5.10-11.S2 (Usage Rules Inventory).
 
 ## Prohibited Use Requirements
 
@@ -265,7 +265,7 @@ All personnel are informed that:
 | **Medium** (policy violation without breach) | Written warning; manager notification; monitoring | Line Manager |
 | **Low** (minor infraction, first occurrence) | Verbal warning; reminder of policy | Line Manager |
 
-**Verification**: Violations tracked in incident register; trends reported quarterly to CISO; patterns informing policy updates documented in ISMS-IMP-A.5.10-11.4 (Compliance Dashboard).
+**Verification**: Violations tracked in incident register; trends reported quarterly to CISO; patterns informing policy updates documented in ISMS-IMP-A.5.10-11.S4 (Compliance Dashboard).
 
 ---
 
@@ -328,7 +328,7 @@ All personnel are informed that:
 4. Full revocation within 72 hours maximum (no exceptions beyond this)
 5. Exception reviewed in quarterly access control audit
 
-**Verification Mechanism**: Access revocation verified via AD query, system logs, or login attempt verification; documented in ISMS-IMP-A.5.10-11.3 (Access Revocation sheet).
+**Verification Mechanism**: Access revocation verified via AD query, system logs, or login attempt verification; documented in ISMS-IMP-A.5.10-11.S3 (Access Revocation sheet).
 
 ## BYOD and Personal Device Data
 
@@ -419,7 +419,7 @@ If return is not completed:
 **Compliance Scoring**:
 - AUP acknowledgment rate calculated by HR; reported monthly
 - Asset return completion rate calculated by IT; reported quarterly
-- Trends tracked in ISMS-IMP-A.5.10-11.4 (Compliance Dashboard)
+- Trends tracked in ISMS-IMP-A.5.10-11.S4 (Compliance Dashboard)
 - Gaps >5% below target escalated to Executive Management
 
 **Policy Change Management**:
@@ -451,10 +451,10 @@ This policy is supported by the following assessment workbooks:
 
 | Workbook | Purpose | Primary Users |
 |----------|---------|---------------|
-| **ISMS-IMP-A.5.10-11.1** | Acceptable Use Policy Assessment | Security Team, HR |
-| **ISMS-IMP-A.5.10-11.2** | Usage Rules Inventory | IT Security, Asset Owners |
-| **ISMS-IMP-A.5.10-11.3** | Asset Return & Offboarding Assessment | IT Operations, HR |
-| **ISMS-IMP-A.5.10-11.4** | Compliance Dashboard | CISO, Management |
+| **ISMS-IMP-A.5.10-11.S1** | Acceptable Use Policy Assessment | Security Team, HR |
+| **ISMS-IMP-A.5.10-11.S2** | Usage Rules Inventory | IT Security, Asset Owners |
+| **ISMS-IMP-A.5.10-11.S3** | Asset Return & Offboarding Assessment | IT Operations, HR |
+| **ISMS-IMP-A.5.10-11.S4** | Compliance Dashboard | CISO, Management |
 
 **Assessment Components**:
 

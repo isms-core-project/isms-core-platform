@@ -23,6 +23,7 @@ Feynman called this **"cargo cult science"**: activities that have the appearanc
 | "Policy: Use strong encryption" | Certificate inventory, algorithm review, measured compliance |
 | "Policy: Patch within 30 days" | Scanner integration, patch aging metrics, exception management |
 | "Policy: Monitor threats" | Threat intel inputs, correlation/triage workflow, technique mapping (where applicable) |
+| Copy-pasted Word templates from consultants | Python generators that produce consistent, auditable workbooks |
 | Subjective assertions | Quantitative evidence |
 | Point-in-time audits | Continuous monitoring and trend visibility |
 | Documentation = done | Implementation = verified |
@@ -77,6 +78,18 @@ Compliance works best when treated like engineering:
 - reusable patterns
 - measurable outcomes
 - automated validation
+
+### 5) DRY Compliance — Don't Repeat Yourself
+The same principle that prevents code duplication applies to compliance:
+
+| Consultant Model | Engineering Model |
+|------------------|-------------------|
+| 93 separate Word documents | 53 domain packs with shared resources |
+| Copy-paste guidance across controls | Single source of truth, inherited by related controls |
+| Change one → must update 3-5 others | Change one → all related controls update |
+| Inconsistencies accumulate over time | Structural consistency enforced by design |
+
+When authentication guidance lives in one pack (A.8.2-3-5), every control that references authentication points to the same source. No drift, no contradictions, no stale copies.
 
 ---
 

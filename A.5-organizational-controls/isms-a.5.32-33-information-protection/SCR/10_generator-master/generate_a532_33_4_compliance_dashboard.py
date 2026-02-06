@@ -6,7 +6,7 @@
 # =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.5.32-33.4 - Information Protection Compliance Dashboard Generator
+ISMS-IMP-A.5.32-33.S4 - Information Protection Compliance Dashboard Generator
 ================================================================================
 
 ISO/IEC 27001:2022 Controls A.5.32 & A.5.33
@@ -63,7 +63,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.5.32-33.4"
+DOCUMENT_ID = "ISMS-IMP-A.5.32-33.S4"
 WORKBOOK_NAME = "Information Protection Compliance Dashboard"
 CONTROL_ID = "A.5.32-33"
 CONTROL_NAME = "Intellectual Property Rights & Protection of Records"
@@ -927,7 +927,7 @@ def main():
     """Main entry point."""
     try:
         logger.info("=" * 70)
-        logger.info("ISMS-IMP-A.5.32-33.4 Compliance Dashboard Generator")
+        logger.info("ISMS-IMP-A.5.32-33.S4 Compliance Dashboard Generator")
         logger.info("=" * 70)
 
         wb = Workbook()

@@ -14,7 +14,7 @@
 # =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.5.10-11.1 - Acceptable Use Policy Assessment Excel Generator
+ISMS-IMP-A.5.10-11.S1 - Acceptable Use Policy Assessment Excel Generator
 ================================================================================
 
 ISO/IEC 27001:2022 Control A.5.10: Acceptable Use of Information and Other
@@ -40,7 +40,7 @@ Key customization areas:
 DO NOT use this script without reviewing and adapting all sections marked
 with "# CUSTOMIZE:" comments throughout the code.
 
-Reference Pattern: Based on ISMS-IMP-A.5.10-11.1 specification
+Reference Pattern: Based on ISMS-IMP-A.5.10-11.S1 specification
 
 --------------------------------------------------------------------------------
 DESCRIPTION
@@ -102,7 +102,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.5.10-11.1"
+DOCUMENT_ID = "ISMS-IMP-A.5.10-11.S1"
 WORKBOOK_NAME = "Acceptable Use Policy Assessment"
 CONTROL_ID = "A.5.10"
 CONTROL_NAME = "Acceptable Use of Information and Other Associated Assets"
@@ -921,5 +921,5 @@ if __name__ == "__main__":
 # QA_VERIFIED: 2026-02-01
 # QA_STATUS: PASSED
 # QA_TOOL: Claude Code
-# CHANGES: Initial creation per ISMS-IMP-A.5.10-11.1 specification
+# CHANGES: Initial creation per ISMS-IMP-A.5.10-11.S1 specification
 # =============================================================================

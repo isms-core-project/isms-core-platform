@@ -6,7 +6,7 @@
 # =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.5.35-36.4 - Compliance & Review Dashboard Excel Generator
+ISMS-IMP-A.5.35-36.S4 - Compliance & Review Dashboard Excel Generator
 ================================================================================
 
 ISO/IEC 27001:2022 Controls A.5.35-36: Compliance & Review
@@ -46,7 +46,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-DOCUMENT_ID = "ISMS-IMP-A.5.35-36.4"
+DOCUMENT_ID = "ISMS-IMP-A.5.35-36.S4"
 WORKBOOK_NAME = "Compliance and Review Dashboard"
 CONTROL_ID = "A.5.35-36"
 CONTROL_NAME = "Compliance & Review"
@@ -800,5 +800,5 @@ if __name__ == "__main__":
 # QA_VERIFIED: 2026-02-01
 # QA_STATUS: PASSED
 # QA_TOOL: Claude Code
-# CHANGES: Initial creation per ISMS-IMP-A.5.35-36.4 specification
+# CHANGES: Initial creation per ISMS-IMP-A.5.35-36.S4 specification
 # =============================================================================

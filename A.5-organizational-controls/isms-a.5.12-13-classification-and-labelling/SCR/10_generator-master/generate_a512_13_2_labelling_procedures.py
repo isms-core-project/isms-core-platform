@@ -6,7 +6,7 @@
 # =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.5.12-13.2 - Labelling Procedures and Standards Excel Generator
+ISMS-IMP-A.5.12-13.S2 - Labelling Procedures and Standards Excel Generator
 ================================================================================
 
 ISO/IEC 27001:2022 Control A.5.13: Labelling of Information
@@ -64,7 +64,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.5.12-13.2"
+DOCUMENT_ID = "ISMS-IMP-A.5.12-13.S2"
 WORKBOOK_NAME = "Labelling Procedures and Standards"
 CONTROL_ID = "A.5.13"
 CONTROL_NAME = "Labelling of Information"
@@ -596,7 +596,7 @@ def main():
     """Main entry point."""
     try:
         logger.info("=" * 70)
-        logger.info("ISMS-IMP-A.5.12-13.2 Labelling Procedures Generator")
+        logger.info("ISMS-IMP-A.5.12-13.S2 Labelling Procedures Generator")
         logger.info("=" * 70)
 
         wb = Workbook()

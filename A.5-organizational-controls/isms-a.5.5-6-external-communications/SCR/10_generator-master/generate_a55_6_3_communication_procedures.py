@@ -6,7 +6,7 @@
 # =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.5.5-6.3 - External Communication Procedures
+ISMS-IMP-A.5.5-6.S3 - External Communication Procedures
 ================================================================================
 
 ISO/IEC 27001:2022 Controls A.5.5 & A.5.6: External Communications
@@ -38,7 +38,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.5.5-6.3"
+DOCUMENT_ID = "ISMS-IMP-A.5.5-6.S3"
 WORKBOOK_NAME = "External Communication Procedures"
 CONTROL_ID = "A.5.5-6"
 CONTROL_NAME = "Contact with Authorities & Special Interest Groups"
@@ -77,7 +77,7 @@ def create_instructions_sheet(ws):
     ws.title = "Instructions"
 
     instructions = [
-        ["ISMS-IMP-A.5.5-6.3 - External Communication Procedures"],
+        ["ISMS-IMP-A.5.5-6.S3 - External Communication Procedures"],
         [""],
         ["PURPOSE"],
         ["This workbook documents procedures for external communications with authorities"],

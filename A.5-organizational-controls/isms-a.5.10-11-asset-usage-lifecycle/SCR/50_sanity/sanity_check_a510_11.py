@@ -24,22 +24,22 @@ WORKBOOK_DIR = Path(__file__).parent.parent / "90_workbooks"
 
 # Expected workbooks and their required sheets
 EXPECTED_WORKBOOKS = {
-    "ISMS-IMP-A.5.10-11.1": [
+    "ISMS-IMP-A.5.10-11.S1": [
         "Instructions", "Policy_Assessment", "Asset_Coverage",
         "Awareness_Tracking", "Communication_Matrix", "Evidence_Register",
         "Approval_SignOff"
     ],
-    "ISMS-IMP-A.5.10-11.2": [
+    "ISMS-IMP-A.5.10-11.S2": [
         "Instructions", "Usage_Rules", "Permitted_Activities",
         "Prohibited_Activities", "Handling_Requirements", "Evidence_Register",
         "Approval_SignOff"
     ],
-    "ISMS-IMP-A.5.10-11.3": [
+    "ISMS-IMP-A.5.10-11.S3": [
         "Instructions", "Return_Process", "Asset_Checklist",
         "Offboarding_Tracking", "Access_Revocation", "Evidence_Register",
         "Approval_SignOff"
     ],
-    "ISMS-IMP-A.5.10-11.4": [
+    "ISMS-IMP-A.5.10-11.S4": [
         "Instructions", "Executive_Summary", "A510_Compliance",
         "A511_Compliance", "Gap_Register", "Remediation_Tracker",
         "Trend_Analysis", "Approval_SignOff"

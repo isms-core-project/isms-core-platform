@@ -6,7 +6,7 @@
 # =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.5.32-33.3 - Retention and Disposal Schedule Excel Generator
+ISMS-IMP-A.5.32-33.S3 - Retention and Disposal Schedule Excel Generator
 ================================================================================
 
 ISO/IEC 27001:2022 Control A.5.33: Protection of Records
@@ -68,7 +68,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.5.32-33.3"
+DOCUMENT_ID = "ISMS-IMP-A.5.32-33.S3"
 WORKBOOK_NAME = "Retention Disposal Schedule"
 CONTROL_ID = "A.5.33"
 CONTROL_NAME = "Protection of Records"
@@ -796,7 +796,7 @@ def main():
     """Main entry point."""
     try:
         logger.info("=" * 70)
-        logger.info("ISMS-IMP-A.5.32-33.3 Retention and Disposal Schedule Generator")
+        logger.info("ISMS-IMP-A.5.32-33.S3 Retention and Disposal Schedule Generator")
         logger.info("=" * 70)
 
         wb = Workbook()

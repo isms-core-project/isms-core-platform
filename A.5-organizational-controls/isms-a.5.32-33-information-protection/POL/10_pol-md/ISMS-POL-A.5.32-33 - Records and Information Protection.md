@@ -229,14 +229,14 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 - All software SHALL be properly licensed
 - Software Asset Management (SAM) inventory maintained
-- License compliance verified quarterly: verification includes full inventory reconciliation against procurement records, identification of exceptions, exception remediation with documented SLA (30 days critical/90 days standard), and management sign-off; evidence stored per ISMS-IMP-A.5.32-33.1
+- License compliance verified quarterly: verification includes full inventory reconciliation against procurement records, identification of exceptions, exception remediation with documented SLA (30 days critical/90 days standard), and management sign-off; evidence stored per ISMS-IMP-A.5.32-33.S1
 - Unlicensed software use is PROHIBITED
 
 **Third-Party Content**:
 
 - Copyright verification before use
 - Proper attribution and licensing
-- Open source license compliance (GPL, Apache, MIT, etc.); open-source use must follow the approved OSS review process including SBOM generation, license scanning, and approval gates as defined in ISMS-IMP-A.5.32-33.1 and Secure Development controls
+- Open source license compliance (GPL, Apache, MIT, etc.); open-source use must follow the approved OSS review process including SBOM generation, license scanning, and approval gates as defined in ISMS-IMP-A.5.32-33.S1 and Secure Development controls
 - Creative commons restrictions honoured
 
 ## Records Protection (A.5.33)
@@ -458,8 +458,8 @@ Assessment of A.5.32-33 should reference stacked control assessments for complet
 
 | Document ID | Title | Purpose |
 |-------------|-------|---------|
-| **ISMS-IMP-A.5.32-33.1** | IP Protection Implementation Guide | IP registration, protection controls, compliance procedures |
-| **ISMS-IMP-A.5.32-33.2** | Records Management Implementation Guide | Retention schedule, disposal procedures, integrity controls |
+| **ISMS-IMP-A.5.32-33.S1** | IP Protection Implementation Guide | IP registration, protection controls, compliance procedures |
+| **ISMS-IMP-A.5.32-33.S2** | Records Management Implementation Guide | Retention schedule, disposal procedures, integrity controls |
 
 ---
 

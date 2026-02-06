@@ -6,7 +6,7 @@
 # =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.5.5-6.2 - Special Interest Groups Register
+ISMS-IMP-A.5.5-6.S2 - Special Interest Groups Register
 ================================================================================
 
 ISO/IEC 27001:2022 Controls A.5.5 & A.5.6: External Communications
@@ -38,7 +38,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.5.5-6.2"
+DOCUMENT_ID = "ISMS-IMP-A.5.5-6.S2"
 WORKBOOK_NAME = "Special Interest Groups Register"
 CONTROL_ID = "A.5.5-6"
 CONTROL_NAME = "Contact with Authorities & Special Interest Groups"
@@ -77,7 +77,7 @@ def create_instructions_sheet(ws):
     ws.title = "Instructions"
 
     instructions = [
-        ["ISMS-IMP-A.5.5-6.2 - Special Interest Groups Register"],
+        ["ISMS-IMP-A.5.5-6.S2 - Special Interest Groups Register"],
         [""],
         ["PURPOSE"],
         ["This workbook maintains a register of special interest groups, professional forums,"],

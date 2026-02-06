@@ -14,7 +14,7 @@
 # =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.5.12-13.5 - Classification & Labelling Consolidation Dashboard
+ISMS-IMP-A.5.12-13.S5 - Classification & Labelling Consolidation Dashboard
 ================================================================================
 
 ISO/IEC 27001:2022 Controls A.5.12 & A.5.13: Classification and Labelling
@@ -69,7 +69,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.5.12-13.5"
+DOCUMENT_ID = "ISMS-IMP-A.5.12-13.S5"
 WORKBOOK_NAME = "Consolidation Dashboard"
 CONTROL_ID = "A.5.12-13"
 CONTROL_NAME = "Information Classification and Labelling"
@@ -104,7 +104,7 @@ def apply_header_style(ws, row, start_col, end_col):
 def create_instructions_sheet(ws):
     ws.title = "Instructions"
     instructions = [
-        [f"ISMS-IMP-A.5.12-13.5 - Classification & Labelling Consolidation Dashboard"],
+        [f"ISMS-IMP-A.5.12-13.S5 - Classification & Labelling Consolidation Dashboard"],
         [""],
         ["PURPOSE"],
         ["This dashboard consolidates compliance data from all four A.5.12-13 assessment domains"],

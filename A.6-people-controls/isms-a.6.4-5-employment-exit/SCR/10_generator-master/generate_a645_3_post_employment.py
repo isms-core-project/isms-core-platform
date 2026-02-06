@@ -6,7 +6,7 @@
 # =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.6.4-5.3 - Post-Employment Obligations Excel Generator
+ISMS-IMP-A.6.4-5.S3 - Post-Employment Obligations Excel Generator
 ================================================================================
 
 ISO/IEC 27001:2022 Control A.6.5: Responsibilities After Termination
@@ -52,7 +52,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.6.4-5.3"
+DOCUMENT_ID = "ISMS-IMP-A.6.4-5.S3"
 WORKBOOK_NAME = "Post Employment Obligations"
 CONTROL_ID = "A.6.4-5"
 CONTROL_NAME = "Disciplinary Process and Employment Exit"
@@ -685,5 +685,5 @@ if __name__ == "__main__":
 # QA_VERIFIED: 2026-02-03
 # QA_STATUS: PASSED - STANDARDIZATION COMPLETE
 # QA_TOOL: Claude Code
-# CHANGES: Initial creation per ISMS-IMP-A.6.4-5.3 specification
+# CHANGES: Initial creation per ISMS-IMP-A.6.4-5.S3 specification
 # =============================================================================

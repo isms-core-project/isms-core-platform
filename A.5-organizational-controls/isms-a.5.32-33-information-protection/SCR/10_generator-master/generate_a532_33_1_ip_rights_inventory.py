@@ -6,7 +6,7 @@
 # =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.5.32-33.1 - IP Rights Inventory and Compliance Excel Generator
+ISMS-IMP-A.5.32-33.S1 - IP Rights Inventory and Compliance Excel Generator
 ================================================================================
 
 ISO/IEC 27001:2022 Control A.5.32: Intellectual Property Rights
@@ -65,7 +65,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.5.32-33.1"
+DOCUMENT_ID = "ISMS-IMP-A.5.32-33.S1"
 WORKBOOK_NAME = "IP Rights Inventory"
 CONTROL_ID = "A.5.32"
 CONTROL_NAME = "Intellectual Property Rights"
@@ -659,7 +659,7 @@ def main():
     """Main entry point."""
     try:
         logger.info("=" * 70)
-        logger.info("ISMS-IMP-A.5.32-33.1 IP Rights Inventory Generator")
+        logger.info("ISMS-IMP-A.5.32-33.S1 IP Rights Inventory Generator")
         logger.info("=" * 70)
 
         wb = Workbook()

@@ -6,7 +6,7 @@
 # =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.5.12-13.3 - Asset Classification Inventory Excel Generator
+ISMS-IMP-A.5.12-13.S3 - Asset Classification Inventory Excel Generator
 ================================================================================
 
 ISO/IEC 27001:2022 Controls A.5.12 & A.5.13
@@ -60,7 +60,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.5.12-13.3"
+DOCUMENT_ID = "ISMS-IMP-A.5.12-13.S3"
 WORKBOOK_NAME = "Asset Classification Inventory"
 CONTROL_ID = "A.5.12-13"
 CONTROL_NAME = "Classification and Labelling of Information"
@@ -615,7 +615,7 @@ def main():
     """Main entry point."""
     try:
         logger.info("=" * 70)
-        logger.info("ISMS-IMP-A.5.12-13.3 Asset Classification Inventory Generator")
+        logger.info("ISMS-IMP-A.5.12-13.S3 Asset Classification Inventory Generator")
         logger.info("=" * 70)
 
         wb = Workbook()

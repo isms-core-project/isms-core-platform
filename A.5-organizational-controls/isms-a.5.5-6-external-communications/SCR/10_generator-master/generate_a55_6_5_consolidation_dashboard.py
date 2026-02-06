@@ -14,7 +14,7 @@
 # =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.5.5-6.5 - External Communications Consolidation Dashboard
+ISMS-IMP-A.5.5-6.S5 - External Communications Consolidation Dashboard
 ================================================================================
 
 ISO/IEC 27001:2022 Controls A.5.5 & A.5.6: Contact with Authorities & SIGs
@@ -95,7 +95,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.5.5-6.5"
+DOCUMENT_ID = "ISMS-IMP-A.5.5-6.S5"
 WORKBOOK_NAME = "Consolidation Dashboard"
 CONTROL_ID = "A.5.5-6"
 CONTROL_NAME = "Contact with Authorities & Special Interest Groups"
@@ -170,7 +170,7 @@ def create_instructions_sheet(ws):
     ws.title = "Instructions"
 
     instructions = [
-        [f"ISMS-IMP-A.5.5-6.5 - External Communications Consolidation Dashboard"],
+        [f"ISMS-IMP-A.5.5-6.S5 - External Communications Consolidation Dashboard"],
         [""],
         ["PURPOSE"],
         ["This dashboard consolidates compliance data from all four A.5.5-6 assessment domains"],
@@ -416,7 +416,7 @@ def create_authority_compliance_sheet(ws):
     title_cell.fill = TITLE_FILL
     title_cell.alignment = Alignment(horizontal="center")
 
-    ws.cell(row=2, column=1, value="Source: ISMS-IMP-A.5.5-6.1 Authority Contacts Register").font = Font(italic=True)
+    ws.cell(row=2, column=1, value="Source: ISMS-IMP-A.5.5-6.S1 Authority Contacts Register").font = Font(italic=True)
 
     headers = ["Authority_Type", "Authority_Name", "Contact_Status", "Last_Verified",
                "Next_Review", "Compliance_Status", "Gap_Notes", "Action_Required", "Owner"]
@@ -464,7 +464,7 @@ def create_sig_compliance_sheet(ws):
     title_cell.fill = TITLE_FILL
     title_cell.alignment = Alignment(horizontal="center")
 
-    ws.cell(row=2, column=1, value="Source: ISMS-IMP-A.5.5-6.2 Special Interest Groups Register").font = Font(italic=True)
+    ws.cell(row=2, column=1, value="Source: ISMS-IMP-A.5.5-6.S2 Special Interest Groups Register").font = Font(italic=True)
 
     headers = ["SIG_Category", "Group_Name", "Membership_Status", "Value_Rating",
                "Last_Engagement", "Intelligence_Received", "Compliance_Status", "Gap_Notes", "Owner"]
@@ -506,7 +506,7 @@ def create_procedure_compliance_sheet(ws):
     title_cell.fill = TITLE_FILL
     title_cell.alignment = Alignment(horizontal="center")
 
-    ws.cell(row=2, column=1, value="Source: ISMS-IMP-A.5.5-6.3 External Communication Procedures").font = Font(italic=True)
+    ws.cell(row=2, column=1, value="Source: ISMS-IMP-A.5.5-6.S3 External Communication Procedures").font = Font(italic=True)
 
     headers = ["Procedure_Type", "Procedure_Name", "Status", "Last_Reviewed",
                "Compliance_Status", "Gap_Description", "Remediation_Action", "Owner"]

@@ -14,7 +14,7 @@
 # =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.5.35-36.1 - Independent Review Planning & Tracking Excel Generator
+ISMS-IMP-A.5.35-36.S1 - Independent Review Planning & Tracking Excel Generator
 ================================================================================
 
 ISO/IEC 27001:2022 Control A.5.35: Independent Review of Information Security
@@ -71,7 +71,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.5.35-36.1"
+DOCUMENT_ID = "ISMS-IMP-A.5.35-36.S1"
 WORKBOOK_NAME = "Independent Review Planning and Tracking"
 CONTROL_ID = "A.5.35"
 CONTROL_NAME = "Independent Review of Information Security"
@@ -781,5 +781,5 @@ if __name__ == "__main__":
 # QA_VERIFIED: 2026-02-01
 # QA_STATUS: PASSED
 # QA_TOOL: Claude Code
-# CHANGES: Initial creation per ISMS-IMP-A.5.35-36.1 specification
+# CHANGES: Initial creation per ISMS-IMP-A.5.35-36.S1 specification
 # =============================================================================

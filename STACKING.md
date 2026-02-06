@@ -24,6 +24,35 @@ In practice, many ISMS programmes maintain ~20–25 top-level policy documents, 
 
 ---
 
+## Why 53 Packs, Not 93 Folders?
+
+Most ISMS implementations create one folder per Annex A control — 93 separate structures with massive duplication. Authentication guidance repeated in A.5.17, A.8.2, A.8.3, and A.8.5. Access control policies scattered across A.5.15, A.5.16, and A.5.18.
+
+ISMS CORE applies the **DRY principle** (Don't Repeat Yourself) to compliance:
+
+| Approach | Controls | Duplication | Maintenance |
+|----------|----------|-------------|-------------|
+| 93 separate folders | 93 | High — same guidance repeated across related controls | Change one → must update 3-5 others |
+| **53 domain packs** | 93 (grouped) | **None** — shared resources, single source of truth | Change one → all related controls update |
+
+Every pack maintains **full audit traceability** back to individual Annex A controls via [COVERAGE.md](COVERAGE.md). An auditor can trace any of the 93 controls to its primary pack and supporting packs.
+
+### Implementation Priority: SSE Scoring
+
+Controls were built in order of **SSE (Structured Security Engineering) score**, prioritizing high-automation controls first:
+
+| SSE Score | Characteristics | Examples | Build Order |
+|:---------:|-----------------|----------|:-----------:|
+| **5** | Technical, inventory-based, highly automatable | A.8.24 Cryptography, A.8.8 Vulnerability Mgmt | First |
+| **4** | Technical with organizational overlap | A.8.15 Logging, A.8.9 Configuration Mgmt | Second |
+| **3** | Mixed technical and organizational | A.5.24-28 Incident Mgmt, A.5.29 Disruption | Third |
+| **2** | Primarily organizational, some automation | A.5.7 Threat Intel, A.6.3 Awareness | Fourth |
+| **1** | Governance, legal, largely manual | A.5.31 Legal Requirements, A.5.35-36 Compliance | Last |
+
+This strategy means the hardest, most technically complex controls were built and validated first, creating a strong foundation for the simpler governance controls to layer on top.
+
+---
+
 ## Our Approach: Domain-Based Stacking
 
 <p>

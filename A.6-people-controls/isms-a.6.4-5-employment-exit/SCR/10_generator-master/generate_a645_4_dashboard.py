@@ -6,7 +6,7 @@
 # =============================================================================
 """
 ================================================================================
-ISMS-IMP-A.6.4-5.4 - Employment Exit Compliance Dashboard Excel Generator
+ISMS-IMP-A.6.4-5.S4 - Employment Exit Compliance Dashboard Excel Generator
 ================================================================================
 
 ISO/IEC 27001:2022 Control A.6.4, A.6.5
@@ -52,7 +52,7 @@ logger = logging.getLogger(__name__)
 # =============================================================================
 # DOCUMENT METADATA
 # =============================================================================
-DOCUMENT_ID = "ISMS-IMP-A.6.4-5.4"
+DOCUMENT_ID = "ISMS-IMP-A.6.4-5.S4"
 WORKBOOK_NAME = "Employment Exit Dashboard"
 CONTROL_ID = "A.6.4-5"
 CONTROL_NAME = "Disciplinary Process and Employment Exit"
@@ -564,11 +564,11 @@ def create_data_sources_sheet(ws, styles):
         ws.column_dimensions[col].width = width
 
     sources = [
-        ("ISMS-IMP-A.6.4-5.1", "Case_Tracker", "", "", "Manual", ""),
-        ("ISMS-IMP-A.6.4-5.2", "Exit_Tracker", "", "", "Manual", ""),
-        ("ISMS-IMP-A.6.4-5.2", "Leaver_Reconciliation", "", "", "Manual", ""),
-        ("ISMS-IMP-A.6.4-5.3", "Active_Obligations", "", "", "Manual", ""),
-        ("ISMS-IMP-A.6.4-5.3", "Acknowledgement_Log", "", "", "Manual", ""),
+        ("ISMS-IMP-A.6.4-5.S1", "Case_Tracker", "", "", "Manual", ""),
+        ("ISMS-IMP-A.6.4-5.S2", "Exit_Tracker", "", "", "Manual", ""),
+        ("ISMS-IMP-A.6.4-5.S2", "Leaver_Reconciliation", "", "", "Manual", ""),
+        ("ISMS-IMP-A.6.4-5.S3", "Active_Obligations", "", "", "Manual", ""),
+        ("ISMS-IMP-A.6.4-5.S3", "Acknowledgement_Log", "", "", "Manual", ""),
         ("HRIS", "Termination Records", "", "", "Export", ""),
         ("IAM System", "Account Disable Logs", "", "", "Export", ""),
         ("Asset Management", "Asset Return Records", "", "", "Export", ""),
@@ -612,9 +612,9 @@ def create_instructions_sheet(ws, styles):
         "",
         "DATA SOURCES",
         "This dashboard aggregates data from:",
-        "- ISMS-IMP-A.6.4-5.1: Disciplinary Process Assessment",
-        "- ISMS-IMP-A.6.4-5.2: Employment Exit Assessment",
-        "- ISMS-IMP-A.6.4-5.3: Post-Employment Obligations",
+        "- ISMS-IMP-A.6.4-5.S1: Disciplinary Process Assessment",
+        "- ISMS-IMP-A.6.4-5.S2: Employment Exit Assessment",
+        "- ISMS-IMP-A.6.4-5.S3: Post-Employment Obligations",
         "",
         "UPDATE PROCESS",
         "1. Update Data_Sources sheet with latest source data",
@@ -708,5 +708,5 @@ if __name__ == "__main__":
 # QA_VERIFIED: 2026-02-03
 # QA_STATUS: PASSED - STANDARDIZATION COMPLETE
 # QA_TOOL: Claude Code
-# CHANGES: Initial creation per ISMS-IMP-A.6.4-5.4 specification
+# CHANGES: Initial creation per ISMS-IMP-A.6.4-5.S4 specification
 # =============================================================================

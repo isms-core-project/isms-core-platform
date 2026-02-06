@@ -19,7 +19,7 @@
 ## Repository Structure
 
 ```
-isms-core/
+isms-core-platform/
 ├── A.5-organizational-controls/     # 21 control packs (covers 37 Annex A controls)
 ├── A.6-people-controls/             # 4 control packs (covers 8 Annex A controls)
 ├── A.7-physical-controls/           # 6 control packs (covers 14 Annex A controls)
@@ -71,7 +71,7 @@ isms-a.X.X-control-name/
 | [A.5.30, 8.13-14](A.5-organizational-controls/isms-a.5.30-8.13-14-business-continuity-dr/) | Business Continuity & DR | POL, IMP, SCR |
 | [A.5.31](A.5-organizational-controls/isms-a.5.31-legal-statutory-regulatory-contractual-requirements/) | Legal, Statutory, Regulatory & Contractual | POL, IMP, SCR |
 | [A.5.32-33](A.5-organizational-controls/isms-a.5.32-33-information-protection/) | Records and Information Protection | POL, IMP, SCR |
-| [A.5.34](A.5-organizational-controls/isms-a.5.34-privacy-and-pii/) | Privacy and PII | POL, IMP, SCR, REF |
+| [A.5.34](A.5-organizational-controls/isms-a.5.34-privacy-and-pii/) | Privacy and PII | POL, IMP, SCR, CTX |
 | [A.5.35-36](A.5-organizational-controls/isms-a.5.35-36-compliance-review/) | Compliance Review | POL, IMP, SCR |
 | [A.5.37](A.5-organizational-controls/isms-a.5.37-documented-procedures/) | Documented Operating Procedures | POL, IMP, SCR |
 
@@ -88,10 +88,10 @@ isms-a.X.X-control-name/
 
 | Control | Name | Artifacts |
 |---------|------|-----------|
-| [A.6.3](A.6-people-controls/isms-a.6.3-awareness-and-training/) | Awareness and Training | POL, IMP, SCR, REF |
+| [A.6.3](A.6-people-controls/isms-a.6.3-awareness-and-training/) | Awareness and Training | POL, IMP, SCR |
 | [A.6.4-5](A.6-people-controls/isms-a.6.4-5-employment-exit/) | Disciplinary Process & Employment Exit | POL, IMP, SCR |
 | [A.6.6](A.6-people-controls/isms-a.6.6-confidentiality-nda/) | Confidentiality / NDA | POL, IMP, SCR |
-| [A.6.7-8](A.6-people-controls/isms-a.6.7-8-remote-working-and-reporting/) | Remote Working and Reporting | POL, IMP, SCR, REF |
+| [A.6.7-8](A.6-people-controls/isms-a.6.7-8-remote-working-and-reporting/) | Remote Working and Reporting | POL, IMP, SCR |
 
 ---
 
@@ -127,21 +127,23 @@ isms-a.X.X-control-name/
 
 | Control | Name | Artifacts |
 |---------|------|-----------|
-| [A.8.1, 7, 18-19](A.8-technological-controls/isms-a.8.1-7-18-19-endpoint-security/) | Endpoint Security | POL, IMP, SCR, REF |
-| [A.8.2-3, 5](A.8-technological-controls/isms-a.8.2-3-5-authentication-privileged-access/) | Authentication & Privileged Access | POL, IMP, SCR, REF |
+| [A.8.1, 7, 18-19](A.8-technological-controls/isms-a.8.1-7-18-19-endpoint-security/) | Endpoint Security | POL, IMP, SCR |
+| [A.8.2-3, 5](A.8-technological-controls/isms-a.8.2-3-5-authentication-privileged-access/) | Authentication & Privileged Access | POL, IMP, SCR |
+| [A.8.4](A.8-technological-controls/isms-a.8.4-access-to-source-code/) | Access to Source Code | POL, IMP, SCR |
 | [A.8.6](A.8-technological-controls/isms-a.8.6-capacity-management/) | Capacity Management | POL, IMP, SCR |
 | [A.8.8](A.8-technological-controls/isms-a.8.8-vulnerability-management/) | Vulnerability Management | POL, IMP, SCR |
-| [A.8.9](A.8-technological-controls/isms-a.8.9-configuration-management/) | Configuration Management | POL, IMP, SCR, REF |
+| [A.8.9](A.8-technological-controls/isms-a.8.9-configuration-management/) | Configuration Management | POL, IMP, SCR, CTX |
 | [A.8.10](A.8-technological-controls/isms-a.8.10-data-deletion/) | Data Deletion | POL, IMP, SCR, REF, FORM |
-| [A.8.11](A.8-technological-controls/isms-a.8.11-data-masking/) | Data Masking | POL, IMP, SCR |
+| [A.8.11](A.8-technological-controls/isms-a.8.11-data-masking/) | Data Masking | POL, IMP, SCR, CTX |
 | [A.8.12](A.8-technological-controls/isms-a.8.12-data-leakage-prevention/) | Data Leakage Prevention | POL, IMP, SCR |
 | [A.8.15](A.8-technological-controls/isms-a.8.15-logging/) | Logging | POL, IMP, SCR, REF |
 | [A.8.16](A.8-technological-controls/isms-a.8.16-monitoring/) | Monitoring | POL, IMP, SCR |
 | [A.8.17](A.8-technological-controls/isms-a.8.17-clock-synchronization/) | Clock Synchronization | POL, IMP, SCR |
 | [A.8.20-22](A.8-technological-controls/isms-a.8.20-22-network-security/) | Network Security | POL, IMP, SCR |
-| [A.8.23](A.8-technological-controls/isms-a.8.23-web-filtering/) | Web Filtering | POL, IMP, SCR, REF |
+| [A.8.23](A.8-technological-controls/isms-a.8.23-web-filtering/) | Web Filtering | POL, IMP, SCR |
 | [A.8.24](A.8-technological-controls/isms-a.8.24-use-of-cryptography/) | Use of Cryptography | POL, IMP, SCR, CTX |
 | [A.8.25-26, 29](A.8-technological-controls/isms-a.8.25-26-29-secure-development/) | Secure Development | POL, IMP, SCR |
+| [A.8.27](A.8-technological-controls/isms-a.8.27-secure-systems-engineering/) | Secure Systems Engineering | POL, IMP, SCR |
 | [A.8.28](A.8-technological-controls/isms-a.8.28-secure-coding/) | Secure Coding | POL, IMP, SCR, REF, CTX |
 | [A.8.30](A.8-technological-controls/isms-a.8.30-outsourced-development/) | Outsourced Development | POL, IMP, SCR |
 | [A.8.31](A.8-technological-controls/isms-a.8.31-environment-separation/) | Environment Separation | POL, IMP, SCR, REF |

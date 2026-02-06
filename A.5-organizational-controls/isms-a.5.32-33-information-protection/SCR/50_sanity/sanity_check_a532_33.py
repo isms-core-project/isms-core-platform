@@ -51,7 +51,7 @@ WORKBOOK_DIR = Path(__file__).parent.parent / "90_workbooks"
 # Expected workbook structure
 EXPECTED_WORKBOOKS = {
     "A.5.32-33.1": {
-        "pattern": "ISMS-IMP-A.5.32-33.1_IP_Rights*.xlsx",
+        "pattern": "ISMS-IMP-A.5.32-33.S1_IP_Rights*.xlsx",
         "required_sheets": [
             "Instructions",
             "IP_Asset_Inventory",
@@ -64,7 +64,7 @@ EXPECTED_WORKBOOKS = {
         ]
     },
     "A.5.32-33.2": {
-        "pattern": "ISMS-IMP-A.5.32-33.2_Records_Protection*.xlsx",
+        "pattern": "ISMS-IMP-A.5.32-33.S2_Records_Protection*.xlsx",
         "required_sheets": [
             "Instructions",
             "Records_Category_Inventory",
@@ -79,7 +79,7 @@ EXPECTED_WORKBOOKS = {
         ]
     },
     "A.5.32-33.3": {
-        "pattern": "ISMS-IMP-A.5.32-33.3_Retention_Disposal*.xlsx",
+        "pattern": "ISMS-IMP-A.5.32-33.S3_Retention_Disposal*.xlsx",
         "required_sheets": [
             "Instructions",
             "Retention_Schedule",
@@ -95,7 +95,7 @@ EXPECTED_WORKBOOKS = {
         ]
     },
     "A.5.32-33.4": {
-        "pattern": "ISMS-IMP-A.5.32-33.4_Information_Protection*.xlsx",
+        "pattern": "ISMS-IMP-A.5.32-33.S4_Information_Protection*.xlsx",
         "required_sheets": [
             "Instructions",
             "Executive_Summary",
