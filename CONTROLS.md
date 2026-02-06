@@ -56,17 +56,17 @@ isms-a.X.X-control-name/
 | [A.5.1-2, 6.1-2](A.5-organizational-controls/isms-a.5.1-2-6.1-2-secure-employment-and-roles/) | Secure Employment and Roles | POL, IMP, SCR |
 | [A.5.3](A.5-organizational-controls/isms-a.5.3-segregation-of-duties/) | Segregation of Duties | POL, IMP, SCR |
 | [A.5.4](A.5-organizational-controls/isms-a.5.4-management-responsibilities/) | Management Responsibilities | POL, IMP, SCR |
-| [A.5.5-6](A.5-organizational-controls/isms-a.5.5-6-external-communications/) | External Communications | IMP, SCR |
+| [A.5.5-6](A.5-organizational-controls/isms-a.5.5-6-external-communications/) | External Communications | POL, IMP, SCR |
 | [A.5.7](A.5-organizational-controls/isms-a.5.7-threat-intelligence/) | Threat Intelligence | POL, IMP, SCR |
 | [A.5.8](A.5-organizational-controls/isms-a.5.8-information-security-in-project-management/) | Information Security in Project Management | POL, IMP, SCR |
-| [A.5.9](A.5-organizational-controls/isms-a.5.9-inventory-of-information-and-assets/) | Inventory of Information and Assets | IMP, SCR |
+| [A.5.9](A.5-organizational-controls/isms-a.5.9-inventory-of-information-and-assets/) | Inventory of Information and Assets | POL, IMP, SCR |
 | [A.5.10-11](A.5-organizational-controls/isms-a.5.10-11-asset-usage-lifecycle/) | Asset Usage Lifecycle | POL, IMP, SCR |
-| [A.5.12-13](A.5-organizational-controls/isms-a.5.12-13-classification-and-labelling/) | Classification and Labelling | IMP, SCR |
-| [A.5.14](A.5-organizational-controls/isms-a.5.14-information-transfer/) | Information Transfer | IMP, SCR |
-| [A.5.15-16, 18](A.5-organizational-controls/isms-a.5.15-16-18-identity-access-management/) | Identity Access Management | IMP, SCR |
-| [A.5.17](A.5-organizational-controls/isms-a.5.17-authentication-information/) | Authentication Information | IMP, SCR |
+| [A.5.12-13](A.5-organizational-controls/isms-a.5.12-13-classification-and-labelling/) | Classification and Labelling | POL, IMP, SCR |
+| [A.5.14](A.5-organizational-controls/isms-a.5.14-information-transfer/) | Information Transfer | POL, IMP, SCR |
+| [A.5.15-16, 18](A.5-organizational-controls/isms-a.5.15-16-18-identity-access-management/) | Identity Access Management | POL, IMP, SCR |
+| [A.5.17](A.5-organizational-controls/isms-a.5.17-authentication-information/) | Authentication Information | POL, IMP, SCR |
 | [A.5.19-23](A.5-organizational-controls/isms-a.5.19-23-cloud-services/) | Cloud Services | POL, IMP, SCR, REF |
-| [A.5.24-28](A.5-organizational-controls/isms-a.5.24-28-incident-management-lifecycle/) | Incident Management Lifecycle | IMP, SCR |
+| [A.5.24-28](A.5-organizational-controls/isms-a.5.24-28-incident-management-lifecycle/) | Incident Management Lifecycle | POL, IMP, SCR |
 | [A.5.29](A.5-organizational-controls/isms-a.5.29-security-during-disruption/) | Security During Disruption | POL, IMP, SCR |
 | [A.5.30, 8.13-14](A.5-organizational-controls/isms-a.5.30-8.13-14-business-continuity-dr/) | Business Continuity & DR | POL, IMP, SCR |
 | [A.5.31](A.5-organizational-controls/isms-a.5.31-legal-statutory-regulatory-contractual-requirements/) | Legal, Statutory, Regulatory & Contractual | POL, IMP, SCR |
