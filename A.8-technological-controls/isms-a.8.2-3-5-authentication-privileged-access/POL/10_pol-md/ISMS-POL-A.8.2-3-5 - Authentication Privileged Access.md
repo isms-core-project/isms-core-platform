@@ -40,7 +40,12 @@
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-POL-A.5.15-16-18 (Identity & Access Management Foundation)
-- ISMS-IMP-A.8.2-3-5 (Implementation Assessment Suite - S1-S6)
+- ISMS-IMP-A.8.2-3-5.S1-UG/TG (Authentication Inventory)
+- ISMS-IMP-A.8.2-3-5.S2-UG/TG (MFA Coverage)
+- ISMS-IMP-A.8.2-3-5.S3-UG/TG (Privileged Accounts)
+- ISMS-IMP-A.8.2-3-5.S4-UG/TG (Privileged Monitoring)
+- ISMS-IMP-A.8.2-3-5.S5-UG/TG (Access Restrictions)
+- ISMS-IMP-A.8.2-3-5.S6-UG/TG (Compliance Dashboard)
 - ISMS-CTX-A.8.2-3-5 (Authentication & PAM Technology Landscape) *if created*
 - ISO/IEC 27001:2022 Controls A.8.2, A.8.3, A.8.5
 - ISO/IEC 27002:2022 (Implementation Guidance)
@@ -628,6 +633,6 @@ All tier violations generate CRITICAL alerts. Repeated violations result in:
 
 ---
 
-*This policy establishes requirements for authentication security, privileged access management, and technical access enforcement. Implementation procedures, assessment methodologies, and workbook specifications are documented in ISMS-IMP-A.8.2-3-5 (S1-S6).*
+*This policy establishes requirements for authentication security, privileged access management, and technical access enforcement. Implementation procedures, assessment methodologies, and workbook specifications are documented in ISMS-IMP-A.8 (UG/TG).2-3-5 (S1-S6).*
 
 <!-- QA_VERIFIED: 2026-02-01 -->

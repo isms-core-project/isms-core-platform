@@ -32,7 +32,7 @@
 
 This policy establishes [Organization]'s Secure Development Framework, implementing ISO/IEC 27001:2022 Controls A.8.26 (Application Security Requirements), A.8.25 (Secure Development Lifecycle), and A.8.29 (Security Testing in Development and Acceptance) as a unified security framework.
 
-**Purpose**: Define organizational requirements for secure software development throughout the software development lifecycle (SDLC). This policy establishes WHAT security practices are required, WHEN they must be applied, and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.25-26-29 Implementation Guides.
+**Purpose**: Define organizational requirements for secure software development throughout the software development lifecycle (SDLC). This policy establishes WHAT security practices are required, WHEN they must be applied, and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8 (UG/TG variants).25-26-29 Implementation Guides.
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG (data protection by design), EU GDPR Article 25 (data protection by design and default), and ISO/IEC 27001:2022.
 
@@ -508,6 +508,6 @@ Sector-specific requirements apply where [Organization]'s business activities tr
 
 ---
 
-*This policy establishes requirements for secure software development. Implementation procedures (HOW) are documented in ISMS-IMP-A.8.25-26-29 Implementation Guides. Technical tool guidance is provided in ISMS-REF-A.8.25-26-29.*
+*This policy establishes requirements for secure software development. Implementation procedures (HOW) are documented in ISMS-IMP-A.8 (UG/TG).25-26-29 Implementation Guides. Technical tool guidance is provided in ISMS-REF-A.8.25-26-29.*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

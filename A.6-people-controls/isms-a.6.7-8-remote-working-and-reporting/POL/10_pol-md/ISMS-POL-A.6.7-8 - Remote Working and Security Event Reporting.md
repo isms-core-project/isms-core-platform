@@ -37,7 +37,7 @@
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.6.7-8.S1 through .S5 (Implementation & Assessment Guidance Suite)
+- ISMS-IMP-A.6.7-8.-UG/TGS1 through .S5 (Implementation & Assessment Guidance Suite)
 - ISO/IEC 27001:2022 Controls A.6.7, A.6.8
 - ISO/IEC 27002:2022 Sections 6.7, 6.8 (Implementation Guidance)
 - ISMS-POL-A.5.1-2-6.1-2 (Secure Employment and Roles)
@@ -53,7 +53,7 @@ This policy establishes [Organization]'s requirements for remote working securit
 
 **Scope**: This policy applies to all personnel who work remotely or outside [Organization]'s premises, all devices used for remote work (corporate and personal), all information accessed or processed remotely, and all personnel responsible for reporting security events regardless of work location.
 
-**Purpose**: Define organizational requirements for secure remote working and timely security event reporting. This policy establishes WHAT security measures are required for remote work, WHO may work remotely and under what conditions, WHAT constitutes a reportable security event, and WHO is responsible for reporting and responding. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.6.7-8.S1 through .S5.
+**Purpose**: Define organizational requirements for secure remote working and timely security event reporting. This policy establishes WHAT security measures are required for remote work, WHO may work remotely and under what conditions, WHAT constitutes a reportable security event, and WHO is responsible for reporting and responding. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.6.7-8 (UG/TG variants).S1 through .S5.
 
 **Combined Control Framework**: These two controls are implemented as a unified framework because:
 
@@ -942,6 +942,6 @@ Optional reference templates and examples may be provided in:
 
 ---
 
-*This policy establishes requirements for remote working and information security event reporting. Implementation procedures, assessment templates, and detailed guidance are documented in ISMS-IMP-A.6.7-8.*
+*This policy establishes requirements for remote working and information security event reporting. Implementation procedures, assessment templates, and detailed guidance are documented in ISMS-IMP-A.6.7-8 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-01 -->

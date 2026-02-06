@@ -144,8 +144,6 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 ---
 
-**[Continue to Section 2: Policy Documents...]**
-
 ## 2. Policy Documents
 
 ### 2.1 Policy Structure

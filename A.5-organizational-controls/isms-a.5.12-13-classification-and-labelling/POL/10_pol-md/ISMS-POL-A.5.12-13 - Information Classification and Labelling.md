@@ -41,7 +41,11 @@
 - ISMS-POL-A.5.34 (Privacy and Protection of PII)
 - ISMS-POL-A.8.10 (Information Deletion)
 - ISMS-POL-A.8.12 (Data Leakage Prevention)
-- ISMS-IMP-A.5.12-13 (Implementation Guidance)
+- ISMS-IMP-A.5.12-13.S1-UG/TG (Classification Scheme Definition)
+- ISMS-IMP-A.5.12-13.S2-UG/TG (Labelling Procedures and Standards)
+- ISMS-IMP-A.5.12-13.S3-UG/TG (Asset Classification Inventory)
+- ISMS-IMP-A.5.12-13.S4-UG/TG (Compliance Dashboard)
+- ISMS-IMP-A.5.12-13.S5-UG/TG (Consolidation Dashboard)
 - ISO/IEC 27001:2022 Controls A.5.12, A.5.13
 
 ---
@@ -52,7 +56,7 @@ This policy establishes [Organization]'s information classification scheme and l
 
 **Scope**: This policy applies to all information created, received, processed, stored, or transmitted by [Organization], regardless of format (electronic, physical, verbal).
 
-**Purpose**: Define organizational requirements for information classification and labelling. This policy establishes WHAT classification levels apply and WHO is responsible. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.12-13.
+**Purpose**: Define organizational requirements for information classification and labelling. This policy establishes WHAT classification levels apply and WHO is responsible. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.12-13 (UG/TG variants).
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, Swiss Banking Secrecy) apply where [Organization]'s business activities trigger applicability.
 
@@ -449,7 +453,7 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 | Document ID | Title | Purpose |
 |-------------|-------|---------|
-| **ISMS-IMP-A.5.12-13** | Classification and Labelling Implementation Guide | Detailed procedures, templates, and tools |
+| **ISMS-IMP-A.5.12-13-UG/TG** | Classification and Labelling Implementation Guide | Detailed procedures, templates, and tools |
 
 **Cross-References**:
 
@@ -518,6 +522,6 @@ Evidence required to demonstrate this policy is operationally effective:
 
 ---
 
-*This policy establishes requirements for information classification and labelling. Implementation procedures are documented in ISMS-IMP-A.5.12-13.*
+*This policy establishes requirements for information classification and labelling. Implementation procedures are documented in ISMS-IMP-A.5.12-13 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-04 -->

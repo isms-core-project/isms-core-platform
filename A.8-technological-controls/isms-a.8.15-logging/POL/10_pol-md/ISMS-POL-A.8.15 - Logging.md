@@ -39,7 +39,11 @@
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.8.15 (Implementation Guidance Suite)
+- ISMS-IMP-A.8.15.1-UG/TG (Log Source Inventory Assessment)
+- ISMS-IMP-A.8.15.2-UG/TG (Log Collection & Centralization Assessment)
+- ISMS-IMP-A.8.15.3-UG/TG (Log Protection & Retention Assessment)
+- ISMS-IMP-A.8.15.4-UG/TG (Log Analysis & Review Assessment)
+- ISMS-IMP-A.8.15.5-UG/TG (Logging Compliance Dashboard)
 - ISMS-REF-A.8.15 (Logging Standards Reference)
 - ISMS-POL-A.8.16 (Monitoring Activities)
 - ISMS-POL-A.8.17 (Clock Synchronization)
@@ -58,7 +62,7 @@ This policy establishes [Organization]'s requirements for event logging to suppo
 - WHO is accountable for log management
 - WHEN logs must be reviewed
 
-Implementation procedures (HOW logs are technically configured) are documented separately in ISMS-IMP-A.8.15.
+Implementation procedures (HOW logs are technically configured) are documented separately in ISMS-IMP-A.8.15 (UG/TG variants).
 
 **ISO/IEC 27001:2022 Control A.8.15 - Logging**:
 > *Event logs recording user activities, exceptions, faults and information security events shall be produced, kept and regularly reviewed.*
@@ -348,11 +352,11 @@ The following SHALL be classified as security incidents:
 
 | Document | Purpose |
 |----------|---------|
-| **ISMS-IMP-A.8.15.1** | Log Source Inventory Assessment |
-| **ISMS-IMP-A.8.15.2** | Log Collection & Centralization Assessment |
-| **ISMS-IMP-A.8.15.3** | Log Protection & Retention Assessment |
-| **ISMS-IMP-A.8.15.4** | Log Analysis & Review Assessment |
-| **ISMS-IMP-A.8.15.5** | Compliance Dashboard |
+| **ISMS-IMP-A.8.15.1-UG/TG** | Log Source Inventory Assessment |
+| **ISMS-IMP-A.8.15.2-UG/TG** | Log Collection & Centralization Assessment |
+| **ISMS-IMP-A.8.15.3-UG/TG** | Log Protection & Retention Assessment |
+| **ISMS-IMP-A.8.15.4-UG/TG** | Log Analysis & Review Assessment |
+| **ISMS-IMP-A.8.15.5-UG/TG** | Compliance Dashboard |
 | **ISMS-REF-A.8.15** | Logging Standards Reference (formats, schemas, technical specifications) |
 
 ## Related Controls
@@ -372,11 +376,11 @@ The following SHALL be classified as security incidents:
 
 | Domain | Frequency | Procedure | Evidence Output |
 |--------|-----------|-----------|-----------------|
-| Log Source Inventory | Annual (quarterly updates) | ISMS-IMP-A.8.15.1 | Inventory workbook with coverage % |
-| Collection & Centralization | Annual (quarterly metrics) | ISMS-IMP-A.8.15.2 | Forwarding compliance report |
-| Protection & Retention | Semi-annual | ISMS-IMP-A.8.15.3 | Retention compliance workbook |
-| Analysis & Review | Quarterly | ISMS-IMP-A.8.15.4 | Review completion records |
-| Compliance Dashboard | Quarterly | ISMS-IMP-A.8.15.5 | Executive dashboard report |
+| Log Source Inventory | Annual (quarterly updates) | ISMS-IMP-A.8.15.1-UG/TG | Inventory workbook with coverage % |
+| Collection & Centralization | Annual (quarterly metrics) | ISMS-IMP-A.8.15.2-UG/TG | Forwarding compliance report |
+| Protection & Retention | Semi-annual | ISMS-IMP-A.8.15.3-UG/TG | Retention compliance workbook |
+| Analysis & Review | Quarterly | ISMS-IMP-A.8.15.4-UG/TG | Review completion records |
+| Compliance Dashboard | Quarterly | ISMS-IMP-A.8.15.5-UG/TG | Executive dashboard report |
 
 ## Evidence Location and Access
 
@@ -446,6 +450,6 @@ The following SHALL be classified as security incidents:
 
 ---
 
-*This policy establishes requirements for event logging controls. Implementation procedures are documented in ISMS-IMP-A.8.15. Technical standards are documented in ISMS-REF-A.8.15.*
+*This policy establishes requirements for event logging controls. Implementation procedures are documented in ISMS-IMP-A.8.15 (UG/TG). Technical standards are documented in ISMS-REF-A.8.15.*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

@@ -41,7 +41,10 @@
 - ISMS-POL-A.5.34 (Privacy and Protection of PII)
 - ISMS-POL-A.8.10 (Information Deletion)
 - ISMS-POL-A.8.12 (Data Leakage Prevention)
-- ISMS-IMP-A.5.32-33 (Implementation Guidance)
+- ISMS-IMP-A.5.32-33.S1-UG/TG (IP Rights Inventory and Compliance Assessment)
+- ISMS-IMP-A.5.32-33.S2-UG/TG (Records Protection Assessment)
+- ISMS-IMP-A.5.32-33.S3-UG/TG (Retention and Disposal Schedule Assessment)
+- ISMS-IMP-A.5.32-33.S4-UG/TG (Information Protection Compliance Dashboard)
 - ISO/IEC 27001:2022 Controls A.5.32, A.5.33
 
 ---
@@ -52,7 +55,7 @@ This policy establishes [Organization]'s requirements for protecting intellectua
 
 **Scope**: This policy applies to all intellectual property, proprietary information, trade secrets, and records created, processed, stored, or transmitted by [Organization], including both physical and electronic formats.
 
-**Purpose**: Define organisational requirements for intellectual property protection and records management. This policy establishes WHAT protection is required and WHO is responsible. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.32-33.
+**Purpose**: Define organisational requirements for intellectual property protection and records management. This policy establishes WHAT protection is required and WHO is responsible. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.32-33 (UG/TG variants).
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss CO (Code of Obligations), Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, healthcare regulations) apply where [Organization]'s business activities trigger applicability.
 
@@ -458,8 +461,8 @@ Assessment of A.5.32-33 should reference stacked control assessments for complet
 
 | Document ID | Title | Purpose |
 |-------------|-------|---------|
-| **ISMS-IMP-A.5.32-33.S1** | IP Protection Implementation Guide | IP registration, protection controls, compliance procedures |
-| **ISMS-IMP-A.5.32-33.S2** | Records Management Implementation Guide | Retention schedule, disposal procedures, integrity controls |
+| **ISMS-IMP-A.5.32-33.S1-UG/TG** | IP Protection Implementation Guide | IP registration, protection controls, compliance procedures |
+| **ISMS-IMP-A.5.32-33.S2-UG/TG** | Records Management Implementation Guide | Retention schedule, disposal procedures, integrity controls |
 
 ---
 
@@ -522,6 +525,6 @@ Evidence required to demonstrate this policy is operationally effective:
 
 ---
 
-*This policy establishes requirements for intellectual property and records protection. Implementation procedures are documented in ISMS-IMP-A.5.32-33.*
+*This policy establishes requirements for intellectual property and records protection. Implementation procedures are documented in ISMS-IMP-A.5.32-33 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-04 -->

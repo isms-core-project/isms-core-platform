@@ -39,7 +39,11 @@
 - ISMS-POL-A.5.15-16-18 (Identity & Access Management)
 - ISMS-POL-A.8.2-3-5 (Authentication & Privileged Access)
 - ISMS-POL-A.8.24 (Use of Cryptography)
-- ISMS-IMP-A.5.17 (Implementation Guidance)
+- ISMS-IMP-A.5.17.1-UG/TG (Password Policy Implementation Guide)
+- ISMS-IMP-A.5.17.2-UG/TG (MFA Deployment Assessment)
+- ISMS-IMP-A.5.17.3-UG/TG (Authentication Management Procedures)
+- ISMS-IMP-A.5.17.4-UG/TG (Compliance and Audit Dashboard)
+- ISMS-IMP-A.5.17.5-UG/TG (Consolidation Dashboard)
 - ISO/IEC 27001:2022 Control A.5.17
 
 ---
@@ -50,7 +54,7 @@ This policy establishes [Organization]'s requirements for the management and pro
 
 **Scope**: This policy applies to all authentication information including passwords, PINs, cryptographic keys, tokens, biometric templates, and other authentication secrets used to access [Organization]'s systems and data.
 
-**Purpose**: Define organizational requirements for authentication information management. This policy establishes WHAT authentication controls are required and WHO is responsible. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.17.
+**Purpose**: Define organizational requirements for authentication information management. This policy establishes WHAT authentication controls are required and WHO is responsible. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.17 (UG/TG variants).
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, PCI DSS, NIS2, DORA) apply where [Organization]'s business activities trigger applicability.
 
@@ -451,9 +455,9 @@ Assessment of A.5.17 should reference stacked control assessments for complete c
 
 | Document ID | Title | Purpose |
 |-------------|-------|---------|
-| **ISMS-IMP-A.5.17.1** | Password Policy Implementation Guide | Technical configuration procedures |
-| **ISMS-IMP-A.5.17.2** | MFA Deployment Assessment | MFA rollout and verification |
-| **ISMS-IMP-A.5.17.3** | Authentication Management Procedures | Operational procedures for credential lifecycle |
+| **ISMS-IMP-A.5.17.1-UG/TG** | Password Policy Implementation Guide | Technical configuration procedures |
+| **ISMS-IMP-A.5.17.2-UG/TG** | MFA Deployment Assessment | MFA rollout and verification |
+| **ISMS-IMP-A.5.17.3-UG/TG** | Authentication Management Procedures | Operational procedures for credential lifecycle |
 
 ---
 
@@ -518,6 +522,6 @@ Evidence required to demonstrate this policy is operationally effective:
 
 ---
 
-*This policy establishes requirements for authentication information management. Implementation procedures are documented in ISMS-IMP-A.5.17.*
+*This policy establishes requirements for authentication information management. Implementation procedures are documented in ISMS-IMP-A.5.17 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-04 -->

@@ -38,7 +38,11 @@
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.5.7 (Implementation Guidance Suite)
+- ISMS-IMP-A.5.7.1-UG/TG (Threat Intelligence Sources Assessment)
+- ISMS-IMP-A.5.7.2-UG/TG (Intelligence Collection & Analysis Assessment)
+- ISMS-IMP-A.5.7.3-UG/TG (Intelligence Integration & Distribution Assessment)
+- ISMS-IMP-A.5.7.4-UG/TG (Threat Intelligence Effectiveness Dashboard)
+- ISMS-IMP-A.5.7.5-UG/TG (Threat Intelligence Standalone Dashboard)
 - ISO/IEC 27001:2022 Control A.5.7
 
 ---
@@ -47,7 +51,7 @@
 
 This policy establishes [Organization]'s requirements for threat intelligence to enable proactive defense, inform risk management, and enhance security operations in accordance with ISO/IEC 27001:2022 Control A.5.7.
 
-**Purpose**: Define organizational requirements for threat intelligence governance. This policy establishes WHAT threat intelligence capabilities are required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.7.
+**Purpose**: Define organizational requirements for threat intelligence governance. This policy establishes WHAT threat intelligence capabilities are required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.7 (UG/TG variants).
 
 **Scope**: This policy applies to:
 
@@ -409,11 +413,11 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 ## Implementation Resources
 
-- **ISMS-IMP-A.5.7.1**: Threat Intelligence Sources Assessment
-- **ISMS-IMP-A.5.7.2**: Intelligence Collection & Analysis Assessment
-- **ISMS-IMP-A.5.7.3**: Intelligence Integration & Distribution Assessment
-- **ISMS-IMP-A.5.7.4**: Effectiveness Dashboard
-- **ISMS-IMP-A.5.7.5**: Standalone Executive Dashboard
+- **ISMS-IMP-A.5.7.1-UG/TG**: Threat Intelligence Sources Assessment
+- **ISMS-IMP-A.5.7.2-UG/TG**: Intelligence Collection & Analysis Assessment
+- **ISMS-IMP-A.5.7.3-UG/TG**: Intelligence Integration & Distribution Assessment
+- **ISMS-IMP-A.5.7.4-UG/TG**: Effectiveness Dashboard
+- **ISMS-IMP-A.5.7.5-UG/TG**: Standalone Executive Dashboard
 
 ---
 
@@ -507,6 +511,6 @@ The boundary is: POL-A.5.7 defines governance framework for threat intelligence 
 
 ---
 
-*This policy establishes requirements for threat intelligence. Implementation procedures are documented in ISMS-IMP-A.5.7.*
+*This policy establishes requirements for threat intelligence. Implementation procedures are documented in ISMS-IMP-A.5.7 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

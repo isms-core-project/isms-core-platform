@@ -1,7 +1,7 @@
 <h1 align="center">🎋 ISMS CORE Implementation Status</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-4.4-2E8B57?style=for-the-badge" alt="Version 4.4"/>
+  <img src="https://img.shields.io/badge/Version-4.5-2E8B57?style=for-the-badge" alt="Version 4.5"/>
 </p>
 
 <p align="center">
@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <strong>Last Updated:</strong> 2026-02-04
+  <strong>Last Updated:</strong> 2026-02-06
 </p>
 
 ---
@@ -55,9 +55,9 @@ This status file tracks **control packs**, not ISO certification status.
 <td><img src="https://img.shields.io/badge/Validated-3776AB?style=flat-square" alt="Validated"/></td>
 </tr>
 <tr>
-<td>IMP Documents Verified</td>
-<td><strong>250+</strong></td>
-<td><img src="https://img.shields.io/badge/QA_Complete-9400D3?style=flat-square" alt="QA"/></td>
+<td>IMP Documents (UG + TG)</td>
+<td><strong>504</strong> (252 UG + 252 TG)</td>
+<td><img src="https://img.shields.io/badge/UG%2FTG_Split-9400D3?style=flat-square" alt="UG/TG Split"/></td>
 </tr>
 <tr>
 <td>Excel Formulas Validated</td>
@@ -266,7 +266,7 @@ This is an internal target timeline and not a guarantee.
 
 ---
 
-## ✅ Quality Metrics (v4.4)
+## ✅ Quality Metrics (v4.5)
 
 <table>
 <tr>
@@ -297,8 +297,8 @@ This is an internal target timeline and not a guarantee.
 <td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
 </tr>
 <tr>
-<td rowspan="4"><strong>📋 IMP QA (v4.4)</strong></td>
-<td>250+ files verified</td>
+<td rowspan="4"><strong>📋 IMP QA (v4.5)</strong></td>
+<td>504 files (252 UG + 252 TG) — split complete</td>
 <td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
 </tr>
 <tr>
@@ -310,7 +310,7 @@ This is an internal target timeline and not a guarantee.
 <td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
 </tr>
 <tr>
-<td>Standard structure verified</td>
+<td>UG/TG split structure verified, headers normalized</td>
 <td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
 </tr>
 <tr>

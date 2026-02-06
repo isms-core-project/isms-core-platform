@@ -11,7 +11,7 @@
 | **Dokument-ID** | ISMS-POL-A.8.23 |
 | **Dokumenteneigentümer/in** | Chief Information Security Officer (CISO) |
 | **Freigabe durch** | Geschäftsleitung (GL) |
-| **Erstellt** | 13.01.2026 |
+| **Erstellt** | [Datum] |
 | **Version** | 1.0 |
 | **Versionsdatum** | [Zu bestimmen] |
 | **Klassifizierung** | Intern |

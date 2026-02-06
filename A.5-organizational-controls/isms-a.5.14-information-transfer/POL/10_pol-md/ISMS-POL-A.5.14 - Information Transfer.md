@@ -40,7 +40,11 @@
 - ISMS-POL-A.8.24 (Use of Cryptography)
 - ISMS-POL-A.5.19-23 (Cloud Services)
 - ISMS-POL-A.6.6 (Confidentiality and Non-Disclosure Agreements)
-- ISMS-IMP-A.5.14 (Implementation Guidance)
+- ISMS-IMP-A.5.14.1-UG/TG (Transfer Rules and Procedures)
+- ISMS-IMP-A.5.14.2-UG/TG (Channel Security Assessment)
+- ISMS-IMP-A.5.14.3-UG/TG (Transfer Agreements Register)
+- ISMS-IMP-A.5.14.4-UG/TG (Compliance Monitoring Dashboard)
+- ISMS-IMP-A.5.14.5-UG/TG (Consolidation Dashboard)
 - ISO/IEC 27001:2022 Control A.5.14
 
 ---
@@ -51,7 +55,7 @@ This policy establishes [Organization]'s requirements for secure information tra
 
 **Scope**: This policy applies to all information transfers, whether electronic, physical, or verbal, including transfers within [Organization] and with external parties.
 
-**Purpose**: Define organizational requirements for information transfer security. This policy establishes WHAT transfer methods are approved and WHO is authorized. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.14.
+**Purpose**: Define organizational requirements for information transfer security. This policy establishes WHAT transfer methods are approved and WHO is authorized. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.14 (UG/TG variants).
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, PCI DSS) apply where [Organization]'s business activities trigger applicability.
 
@@ -449,7 +453,7 @@ Assessment of A.5.14 should reference stacked control assessments for complete c
 
 | Document ID | Title | Purpose |
 |-------------|-------|---------|
-| **ISMS-IMP-A.5.14** | Information Transfer Implementation Guide | Detailed procedures for secure information transfer |
+| **ISMS-IMP-A.5.14-UG/TG** | Information Transfer Implementation Guide | Detailed procedures for secure information transfer |
 
 **Cross-References**:
 
@@ -518,6 +522,6 @@ Evidence required to demonstrate this policy is operationally effective:
 
 ---
 
-*This policy establishes requirements for information transfer. Implementation procedures are documented in ISMS-IMP-A.5.14.*
+*This policy establishes requirements for information transfer. Implementation procedures are documented in ISMS-IMP-A.5.14 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-04 -->

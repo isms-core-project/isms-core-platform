@@ -38,7 +38,10 @@
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-POL-A.8.32 (Change Management)
 - ISMS-POL-A.5.1-2-6.1-2 (Information Security Policies)
-- ISMS-IMP-A.5.37 (Implementation Guidance)
+- ISMS-IMP-A.5.37.1-UG/TG (Procedure Inventory Assessment)
+- ISMS-IMP-A.5.37.2-UG/TG (Procedure Quality Assessment)
+- ISMS-IMP-A.5.37.3-UG/TG (Procedure Review and Update Tracking)
+- ISMS-IMP-A.5.37.4-UG/TG (Compliance Dashboard)
 - ISO/IEC 27001:2022 Control A.5.37
 - ISO/IEC 27001:2022 Clause 7.5 (Documented Information)
 
@@ -50,7 +53,7 @@ This policy establishes [Organization]'s requirements for documenting and mainta
 
 **Scope**: This policy applies to all operating procedures for information processing facilities, systems, applications, and security controls operated by or on behalf of [Organization].
 
-**Purpose**: Define organisational requirements for procedure documentation. This policy establishes WHAT procedures must be documented and WHO is responsible for maintaining them. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.37.
+**Purpose**: Define organisational requirements for procedure documentation. This policy establishes WHAT procedures must be documented and WHO is responsible for maintaining them. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.37 (UG/TG variants).
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including ISO/IEC 27001:2022 and quality management principles. Conditional sector-specific requirements (FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
 
@@ -457,10 +460,10 @@ Assessment of A.5.37 should reference stacked control assessments for complete c
 
 | Document ID | Title | Purpose |
 |-------------|-------|---------|
-| **ISMS-IMP-A.5.37.1** | Procedure Inventory Assessment | Identify and track all procedures |
-| **ISMS-IMP-A.5.37.2** | Procedure Quality Assessment | Verify documentation standards |
-| **ISMS-IMP-A.5.37.3** | Review Tracking Assessment | Monitor review compliance |
-| **ISMS-IMP-A.5.37.4** | Compliance Dashboard | Consolidated reporting |
+| **ISMS-IMP-A.5.37.1-UG/TG** | Procedure Inventory Assessment | Identify and track all procedures |
+| **ISMS-IMP-A.5.37.2-UG/TG** | Procedure Quality Assessment | Verify documentation standards |
+| **ISMS-IMP-A.5.37.3-UG/TG** | Review Tracking Assessment | Monitor review compliance |
+| **ISMS-IMP-A.5.37.4-UG/TG** | Compliance Dashboard | Consolidated reporting |
 
 ---
 
@@ -521,6 +524,6 @@ Evidence required to demonstrate this policy is operationally effective:
 
 ---
 
-*This policy establishes requirements for documented operating procedures. Implementation procedures are documented in ISMS-IMP-A.5.37.*
+*This policy establishes requirements for documented operating procedures. Implementation procedures are documented in ISMS-IMP-A.5.37 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-04 -->

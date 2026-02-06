@@ -40,7 +40,10 @@
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-POL-A.8.28 (Secure Coding)
 - ISMS-POL-A.5.19-23 (Supplier Relationships & Cloud Services)
-- ISMS-IMP-A.8.30.1-4 (Implementation Assessment Suite)
+- ISMS-IMP-A.8.30.1-UG/TG (Vendor Assessment and Registry)
+- ISMS-IMP-A.8.30.2-UG/TG (Contract Compliance)
+- ISMS-IMP-A.8.30.3-UG/TG (Security Testing and Acceptance)
+- ISMS-IMP-A.8.30.4-UG/TG (Monitoring and Exceptions Dashboard)
 - ISO/IEC 27001:2022 Control A.8.30
 - ISO/IEC 27002:2022 Control 8.30
 
@@ -630,6 +633,6 @@ Evidence required to demonstrate this policy is operationally effective:
 
 ---
 
-*This policy establishes requirements for outsourced development security. Implementation procedures, assessment methodologies, and workbook specifications are documented in ISMS-IMP-A.8.30.1-4.*
+*This policy establishes requirements for outsourced development security. Implementation procedures, assessment methodologies, and workbook specifications are documented in ISMS-IMP-A.8.30.1-4 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

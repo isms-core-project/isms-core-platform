@@ -37,7 +37,10 @@
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.6.3 (Implementation Guidance Suite - 4 assessment workbooks)
+- ISMS-IMP-A.6.3.1-UG/TG (Training Needs Assessment)
+- ISMS-IMP-A.6.3.2-UG/TG (Training Program Design)
+- ISMS-IMP-A.6.3.3-UG/TG (Training Delivery and Tracking)
+- ISMS-IMP-A.6.3.4-UG/TG (Training Compliance Dashboard)
 - ISO/IEC 27001:2022 Control A.6.3
 - ISO/IEC 27002:2022 Section 6.3 (Implementation Guidance)
 - ISMS-POL-A.5.1-2-6.1-2 (Information Security Policies and Roles)
@@ -52,7 +55,7 @@ This policy establishes [Organization]'s requirements for information security a
 
 **Scope**: This policy applies to all personnel who work under [Organization]'s control, including employees, contractors, temporary staff, and relevant third parties who access [Organization]'s information systems or handle organizational data. The policy covers initial onboarding awareness, role-specific training, ongoing education, and regular policy updates.
 
-**Purpose**: Define organizational requirements for information security awareness, education, and training programs. This policy establishes WHAT training is required, WHO must receive training, and WHEN training must be completed. Implementation procedures (HOW to deliver and track training) are documented separately in ISMS-IMP-A.6.3.
+**Purpose**: Define organizational requirements for information security awareness, education, and training programs. This policy establishes WHAT training is required, WHO must receive training, and WHEN training must be completed. Implementation procedures (HOW to deliver and track training) are documented separately in ISMS-IMP-A.6.3 (UG/TG variants).
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including ISO/IEC 27001:2022 (Clause 7.2 Competence, Clause 7.3 Awareness), Swiss nDSG, EU GDPR (Art. 29, 32), and industry-specific requirements where applicable. Security awareness training is a foundational control required by virtually all regulatory frameworks.
 
@@ -1106,6 +1109,6 @@ The boundary is: POL-A.6.3 defines WHAT training is required and WHO must comple
 
 ---
 
-*This policy establishes requirements for information security awareness, education, and training. Implementation procedures, assessment templates, and detailed guidance are documented in ISMS-IMP-A.6.3.*
+*This policy establishes requirements for information security awareness, education, and training. Implementation procedures, assessment templates, and detailed guidance are documented in ISMS-IMP-A.6.3 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-01 -->

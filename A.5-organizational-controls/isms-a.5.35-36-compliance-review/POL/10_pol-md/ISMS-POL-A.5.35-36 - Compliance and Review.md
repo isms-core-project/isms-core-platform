@@ -38,10 +38,10 @@
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.5.35-36.S1 (Independent Review Planning & Tracking)
-- ISMS-IMP-A.5.35-36.S2 (Compliance Assessment)
-- ISMS-IMP-A.5.35-36.S3 (Findings & Remediation Management)
-- ISMS-IMP-A.5.35-36.S4 (Compliance & Review Dashboard)
+- ISMS-IMP-A.5.35-36.-UG/TGS1 (Independent Review Planning & Tracking)
+- ISMS-IMP-A.5.35-36.-UG/TGS2 (Compliance Assessment)
+- ISMS-IMP-A.5.35-36.-UG/TGS3 (Findings & Remediation Management)
+- ISMS-IMP-A.5.35-36.-UG/TGS4 (Compliance & Review Dashboard)
 - ISO/IEC 27001:2022 Controls A.5.35 and A.5.36
 - ISO/IEC 27007 (Guidelines for information security management systems auditing)
 - ISO/IEC TS 27008 (Guidelines for the assessment of information security controls)
@@ -52,7 +52,7 @@
 
 This policy establishes [Organisation]'s requirements for independent review of information security and compliance with information security policies, rules, and standards in accordance with ISO/IEC 27001:2022 Controls A.5.35 and A.5.36.
 
-**Purpose**: Define organisational requirements for ensuring information security management is independently reviewed and that compliance with established policies is verified. This policy establishes WHAT review and compliance capabilities are required, WHO is accountable, and WHEN actions must occur. Implementation procedures (HOW to execute reviews and compliance verification) are documented separately in ISMS-IMP-A.5.35-36 Implementation Guides.
+**Purpose**: Define organisational requirements for ensuring information security management is independently reviewed and that compliance with established policies is verified. This policy establishes WHAT review and compliance capabilities are required, WHO is accountable, and WHEN actions must occur. Implementation procedures (HOW to execute reviews and compliance verification) are documented separately in ISMS-IMP-A.5 (UG/TG variants).35-36 Implementation Guides.
 
 **Scope**: This policy applies to all information security management activities, controls, policies, and standards within [Organisation]'s ISMS scope, including all personnel, systems, processes, and third parties subject to [Organisation]'s information security requirements.
 
@@ -623,6 +623,6 @@ Changes to this policy follow ISMS document change management:
 
 ---
 
-*This policy establishes requirements for independent review and compliance verification. Implementation procedures are documented in ISMS-IMP-A.5.35-36.S1-4.*
+*This policy establishes requirements for independent review and compliance verification. Implementation procedures are documented in ISMS-IMP-A.5.35-36.S1-4 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

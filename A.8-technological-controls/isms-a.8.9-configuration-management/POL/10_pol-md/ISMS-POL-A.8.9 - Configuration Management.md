@@ -38,11 +38,11 @@
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.8.9.1 (Baseline Configuration Assessment)
-- ISMS-IMP-A.8.9.2 (Change Control Assessment)
-- ISMS-IMP-A.8.9.3 (Configuration Monitoring Assessment)
-- ISMS-IMP-A.8.9.4 (Security Hardening Assessment)
-- ISMS-IMP-A.8.9.5 (Compliance Dashboard)
+- ISMS-IMP-A.8.9.1-UG/TG (Baseline Configuration Assessment)
+- ISMS-IMP-A.8.9.2-UG/TG (Change Control Assessment)
+- ISMS-IMP-A.8.9.3-UG/TG (Configuration Monitoring Assessment)
+- ISMS-IMP-A.8.9.4-UG/TG (Security Hardening Assessment)
+- ISMS-IMP-A.8.9.5-UG/TG (Compliance Dashboard)
 - ISMS-CTX-A.8.9 (Configuration Management Reference - NOT ISMS)
 - ISO/IEC 27001:2022 Control A.8.9
 
@@ -819,6 +819,6 @@ Exceptions to configuration requirements SHALL:
 
 ---
 
-*This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.8.9. Technical reference information is provided in ISMS-CTX-A.8.9 (NOT ISMS).*
+*This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.8.9 (UG/TG). Technical reference information is provided in ISMS-CTX-A.8.9 (NOT ISMS).*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

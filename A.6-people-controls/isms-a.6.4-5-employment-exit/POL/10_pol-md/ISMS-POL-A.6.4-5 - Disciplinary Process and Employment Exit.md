@@ -40,7 +40,10 @@
 - ISMS-POL-A.5.1-2-6.1-2 (Secure Employment and Roles)
 - ISMS-POL-A.5.15-16-18 (Identity & Access Management)
 - ISMS-POL-A.6.6 (Confidentiality and Non-Disclosure Agreements)
-- ISMS-IMP-A.6.4-5 (Implementation Guidance)
+- ISMS-IMP-A.6.4-5.S1-UG/TG (Disciplinary Process Assessment)
+- ISMS-IMP-A.6.4-5.S2-UG/TG (Employment Exit Assessment)
+- ISMS-IMP-A.6.4-5.S3-UG/TG (Post Employment Obligations)
+- ISMS-IMP-A.6.4-5.S4-UG/TG (Employment Exit Dashboard)
 - ISO/IEC 27001:2022 Controls A.6.4, A.6.5
 
 ---
@@ -51,7 +54,7 @@ This policy establishes [Organization]'s requirements for handling security poli
 
 **Scope**: This policy applies to all employees, contractors, and temporary workers throughout the disciplinary process and employment termination lifecycle, regardless of reason for termination.
 
-**Purpose**: Define organisational requirements for disciplinary actions related to information security and secure employment exit. This policy establishes WHAT processes apply and WHO is responsible. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.6.4-5.
+**Purpose**: Define organisational requirements for disciplinary actions related to information security and secure employment exit. This policy establishes WHAT processes apply and WHO is responsible. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.6.4-5 (UG/TG variants).
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss employment law, Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA) apply where [Organization]'s business activities trigger applicability.
 
@@ -450,8 +453,8 @@ Assessment of A.6.4-5 should reference stacked control assessments for complete 
 
 | Document ID | Title | Purpose |
 |-------------|-------|---------|
-| **ISMS-IMP-A.6.4-5.S1** | Disciplinary Process Guide | Investigation procedures, documentation templates |
-| **ISMS-IMP-A.6.4-5.S2** | Employment Exit Procedures | Leaver process, checklists, verification |
+| **ISMS-IMP-A.6.4-5.S1-UG/TG** | Disciplinary Process Guide | Investigation procedures, documentation templates |
+| **ISMS-IMP-A.6.4-5.S2-UG/TG** | Employment Exit Procedures | Leaver process, checklists, verification |
 
 ---
 
@@ -515,6 +518,6 @@ Evidence required to demonstrate this policy is operationally effective:
 
 ---
 
-*This policy establishes requirements for disciplinary processes and employment exit. Implementation procedures are documented in ISMS-IMP-A.6.4-5.*
+*This policy establishes requirements for disciplinary processes and employment exit. Implementation procedures are documented in ISMS-IMP-A.6.4-5 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-04 -->

@@ -2371,13 +2371,13 @@ Despite leveraging overlaps, [Organization] can still report compliance status p
 
 **Implementation Guides**:
 
-- **ISMS-IMP-A.5.31.3**: Requirements Extraction Process
+- **ISMS-IMP-A.5.31.3-UG/TG**: Requirements Extraction Process
   - Step-by-step operational guide for extracting requirements
   - Implements requirements extraction methodology (Section 2)
-- **ISMS-IMP-A.5.31.3**: Control Mapping Process
+- **ISMS-IMP-A.5.31.3-UG/TG**: Control Mapping Process
   - Step-by-step operational guide for mapping requirements to controls
   - Implements control mapping methodology (Section 3)
-- **ISMS-IMP-A.5.31.5**: Evidence Management Process (subsequent)
+- **ISMS-IMP-A.5.31.5-UG/TG**: Evidence Management Process (subsequent)
   - Operational guide for collecting and managing evidence
   - Uses traceability framework defined in Section 5
 

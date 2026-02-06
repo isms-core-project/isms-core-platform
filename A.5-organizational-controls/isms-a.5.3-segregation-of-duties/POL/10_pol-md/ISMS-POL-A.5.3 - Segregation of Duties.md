@@ -38,7 +38,10 @@
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-POL-A.5.15-16-18 (Identity & Access Management)
 - ISMS-POL-A.8.2-3-5 (Authentication & Privileged Access)
-- ISMS-IMP-A.5.3 (Implementation Guidance)
+- ISMS-IMP-A.5.3.1-UG/TG (SoD Matrix Assessment)
+- ISMS-IMP-A.5.3.2-UG/TG (Conflict Analysis)
+- ISMS-IMP-A.5.3.3-UG/TG (Role-Function Mapping)
+- ISMS-IMP-A.5.3.4-UG/TG (Compliance Dashboard)
 - ISO/IEC 27001:2022 Control A.5.3
 
 ---
@@ -49,7 +52,7 @@ This policy establishes [Organization]'s requirements for segregation of duties 
 
 **Scope**: This policy applies to all business processes, information systems, and activities where conflicting duties could lead to fraud, error, or security breaches if performed by a single individual.
 
-**Purpose**: Define organizational requirements for segregation of duties. This policy establishes WHAT segregation is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.3.
+**Purpose**: Define organizational requirements for segregation of duties. This policy establishes WHAT segregation is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.3 (UG/TG variants).
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss CO, ISO/IEC 27001:2022, and EU GDPR. Conditional sector-specific requirements (FINMA, SOX, PCI DSS) apply where [Organization]'s business activities trigger applicability.
 
@@ -368,7 +371,7 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 | Document ID | Title | Purpose |
 |-------------|-------|---------|
-| **ISMS-IMP-A.5.3** | Segregation of Duties Implementation Guide | Duty matrices, technical controls, monitoring procedures |
+| **ISMS-IMP-A.5.3-UG/TG** | Segregation of Duties Implementation Guide | Duty matrices, technical controls, monitoring procedures |
 
 ---
 
@@ -431,6 +434,6 @@ Evidence required to demonstrate this policy is operationally effective:
 
 ---
 
-*This policy establishes requirements for segregation of duties. Implementation procedures are documented in ISMS-IMP-A.5.3.*
+*This policy establishes requirements for segregation of duties. Implementation procedures are documented in ISMS-IMP-A.5.3 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-04 -->

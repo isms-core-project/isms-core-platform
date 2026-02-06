@@ -38,7 +38,7 @@ It is organized into a consistent control "stack":
 <table>
 <tr>
 <td align="center"><strong>📜 POL</strong><br/>Policy</td>
-<td align="center"><strong>📋 IMP</strong><br/>Implementation</td>
+<td align="center"><strong>📋 IMP</strong><br/>Implementation<br/><em>(UG + TG)</em></td>
 <td align="center"><strong>🐍 SCR</strong><br/>Scripts</td>
 <td align="center"><strong>📚 REF</strong><br/>Reference</td>
 <td align="center"><strong>🏢 CTX</strong><br/>Context</td>
@@ -46,7 +46,7 @@ It is organized into a consistent control "stack":
 </tr>
 <tr>
 <td>Requirements<br/>and governance</td>
-<td>Procedures, assessments<br/>and verification</td>
+<td>User Guides (UG)<br/>+ Technical Specs (TG)</td>
 <td>Python generators<br/>and automation</td>
 <td>Mappings and notes<br/>to support implementation</td>
 <td>Organizational<br/>assumptions & scope context</td>
@@ -73,11 +73,11 @@ It is organized into a consistent control "stack":
 ```
 POL (Policy)         → Requirements and accountability
        ↓
-IMP (Implementation) → Verification procedures and assessment guides
+IMP (Implementation) → User Guides (UG) + Technical Specifications (TG)
        ↓
 SCR (Scripts)        → Assessment workbook generators
        ↓
-Workbook (Output)    → Evidence and compliance metrics
+WKBK (Workbooks)     → Evidence and compliance metrics
 ```
 
 ---
@@ -88,7 +88,7 @@ Workbook (Output)    → Evidence and compliance metrics
 isms-core-platform/
 ├── A.5-organizational-controls/     # 21 control packs (covers 37 Annex A controls)
 │   ├── isms-a.5.7-threat-intelligence/
-│   │   ├── POL/    ├── IMP/    ├── SCR/    ├── WKBK/    └── REF/
+│   │   ├── POL/    ├── IMP/    ├── SCR/    ├── WKBK/    └── REF/    └── FORM/
 │   └── ...
 ├── A.6-people-controls/             # 4 control packs (covers 8 Annex A controls)
 ├── A.7-physical-controls/           # 6 control packs (covers 14 Annex A controls)
@@ -290,8 +290,8 @@ To avoid ambiguity, ISMS CORE tracks three different things:
 </tr>
 <tr>
 <td>IMP documents</td>
-<td><strong>250+</strong></td>
-<td><img src="https://img.shields.io/badge/QA_Complete-9400D3?style=flat-square" alt="QA Complete"/></td>
+<td><strong>504</strong> (252 UG + 252 TG)</td>
+<td><img src="https://img.shields.io/badge/UG%2FTG_Split-9400D3?style=flat-square" alt="UG/TG Split"/></td>
 </tr>
 </table>
 

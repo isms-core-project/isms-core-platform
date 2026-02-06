@@ -37,11 +37,11 @@
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.8.32.1 (Change Process Assessment)
-- ISMS-IMP-A.8.32.2 (Change Types & Categories Assessment)
-- ISMS-IMP-A.8.32.3 (Environment Separation Assessment)
-- ISMS-IMP-A.8.32.4 (Testing & Validation Assessment)
-- ISMS-IMP-A.8.32.5 (Compliance Dashboard)
+- ISMS-IMP-A.8.32.1-UG/TG (Change Process Assessment)
+- ISMS-IMP-A.8.32.2-UG/TG (Change Types & Categories Assessment)
+- ISMS-IMP-A.8.32.3-UG/TG (Environment Separation Assessment)
+- ISMS-IMP-A.8.32.4-UG/TG (Testing & Validation Assessment)
+- ISMS-IMP-A.8.32.5-UG/TG (Compliance Dashboard)
 - ISMS-REF-A.8.32 (Change Management Reference - Templates, Tools, Quick Guides)
 - ISO/IEC 27001:2022 Control A.8.32
 
@@ -1200,11 +1200,11 @@ Change management (A.8.32) integrates with six related ISO 27001 controls:
 
 [Organization] implements change management controls using structured assessment workbooks:
 
-- **ISMS-IMP-A.8.32.1**: Change Process Assessment (process maturity, tools, workflows, approvals, documentation)
-- **ISMS-IMP-A.8.32.2**: Change Types & Categories Assessment (standard change catalog, normal change workflows, risk classification)
-- **ISMS-IMP-A.8.32.3**: Environment Separation Assessment (dev/test/prod architecture, promotion workflows, access controls)
-- **ISMS-IMP-A.8.32.4**: Testing & Validation Assessment (testing procedures, acceptance criteria, security testing integration)
-- **ISMS-IMP-A.8.32.5**: Compliance Dashboard (consolidated metrics, gap analysis, executive reporting, KPI tracking)
+- **ISMS-IMP-A.8.32.1-UG/TG**: Change Process Assessment (process maturity, tools, workflows, approvals, documentation)
+- **ISMS-IMP-A.8.32.2-UG/TG**: Change Types & Categories Assessment (standard change catalog, normal change workflows, risk classification)
+- **ISMS-IMP-A.8.32.3-UG/TG**: Environment Separation Assessment (dev/test/prod architecture, promotion workflows, access controls)
+- **ISMS-IMP-A.8.32.4-UG/TG**: Testing & Validation Assessment (testing procedures, acceptance criteria, security testing integration)
+- **ISMS-IMP-A.8.32.5-UG/TG**: Compliance Dashboard (consolidated metrics, gap analysis, executive reporting, KPI tracking)
 
 **Technical Reference** (non-ISMS):
 

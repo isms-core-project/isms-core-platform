@@ -37,7 +37,11 @@
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-POL-A.5.1 (Information Security Policy - via A.5.1-2-6.1-2)
-- ISMS-IMP-A.5.4 (Implementation Guidance)
+- ISMS-IMP-A.5.4.1-UG/TG (Management Commitment Assessment)
+- ISMS-IMP-A.5.4.2-UG/TG (Compliance Oversight Tracker)
+- ISMS-IMP-A.5.4.3-UG/TG (Leadership Dashboard)
+- ISMS-IMP-A.5.4.4-UG/TG (Security Culture Survey)
+- ISMS-IMP-A.5.4.5-UG/TG (Compliance Dashboard)
 - ISO/IEC 27001:2022 Control A.5.4
 
 ---
@@ -329,10 +333,10 @@ When management personnel fail to meet their security responsibilities:
 
 | Document | Purpose |
 |----------|---------|
-| ISMS-IMP-A.5.4.1 | Management Commitment Assessment workbook (annual scoring rubric with objective criteria per Section "Management Commitment → Verification") |
-| ISMS-IMP-A.5.4.2 | Compliance Oversight Tracker workbook (quarterly personnel compliance metrics including training completion, policy violations, manager actions) |
-| ISMS-IMP-A.5.4.3 | Leadership Dashboard workbook (real-time KPI monitoring for management review participation, resource allocation approvals, incident response engagement) |
-| ISMS-IMP-A.5.4.4 | Security Culture Survey instrument (annual employee perception assessment referenced in "Security Culture Leadership") |
+| ISMS-IMP-A.5.4.1-UG/TG | Management Commitment Assessment workbook (annual scoring rubric with objective criteria per Section "Management Commitment → Verification") |
+| ISMS-IMP-A.5.4.2-UG/TG | Compliance Oversight Tracker workbook (quarterly personnel compliance metrics including training completion, policy violations, manager actions) |
+| ISMS-IMP-A.5.4.3-UG/TG | Leadership Dashboard workbook (real-time KPI monitoring for management review participation, resource allocation approvals, incident response engagement) |
+| ISMS-IMP-A.5.4.4-UG/TG | Security Culture Survey instrument (annual employee perception assessment referenced in "Security Culture Leadership") |
 
 ---
 
@@ -388,6 +392,6 @@ Evidence required to demonstrate this policy is operationally effective:
 
 ---
 
-*This policy establishes requirements for management responsibilities. Implementation procedures are documented in ISMS-IMP-A.5.4.*
+*This policy establishes requirements for management responsibilities. Implementation procedures are documented in ISMS-IMP-A.5.4 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

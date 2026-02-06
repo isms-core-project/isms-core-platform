@@ -40,9 +40,12 @@
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-POL-A.8.11 (Data Masking)
 - ISMS-POL-A.8.31 (Environment Separation)
-- ISMS-IMP-A.8.33-34.1 (Test Information Assessment)
-- ISMS-IMP-A.8.33-34.2 (Audit Testing Assessment)
-- ISMS-IMP-A.8.33-34.3 (Compliance Dashboard)
+- ISMS-IMP-A.8.33-34.1-UG (Test Data Protection - User Guide)
+- ISMS-IMP-A.8.33-34.1-TG (Test Data Protection - Technical Specification)
+- ISMS-IMP-A.8.33-34.2-UG (Audit Activity Management - User Guide)
+- ISMS-IMP-A.8.33-34.2-TG (Audit Activity Management - Technical Specification)
+- ISMS-IMP-A.8.33-34.3-UG (Compliance Dashboard - User Guide)
+- ISMS-IMP-A.8.33-34.3-TG (Compliance Dashboard - Technical Specification)
 - ISO/IEC 27001:2022 Controls A.8.33 and A.8.34
 
 ---
@@ -503,9 +506,12 @@ When exceptions are approved, compensating controls SHALL include:
 
 | Document ID | Title |
 |-------------|-------|
-| ISMS-IMP-A.8.33-34.1 | Test Information Assessment |
-| ISMS-IMP-A.8.33-34.2 | Audit Testing Assessment |
-| ISMS-IMP-A.8.33-34.3 | Compliance Dashboard |
+| ISMS-IMP-A.8.33-34.1-UG | Test Data Protection - User Guide |
+| ISMS-IMP-A.8.33-34.1-TG | Test Data Protection - Technical Specification |
+| ISMS-IMP-A.8.33-34.2-UG | Audit Activity Management - User Guide |
+| ISMS-IMP-A.8.33-34.2-TG | Audit Activity Management - Technical Specification |
+| ISMS-IMP-A.8.33-34.3-UG | Compliance Dashboard - User Guide |
+| ISMS-IMP-A.8.33-34.3-TG | Compliance Dashboard - Technical Specification |
 
 ## External Standards
 
@@ -574,6 +580,6 @@ Evidence required to demonstrate this policy is operationally effective:
 
 ---
 
-*This policy establishes requirements for testing and audit protection. Implementation procedures are documented in ISMS-IMP-A.8.33-34.1, .2, and .3.*
+*This policy establishes requirements for testing and audit protection. Implementation procedures are documented in ISMS-IMP-A.8.33-34.1-UG/TG, .2-UG/TG, and .3-UG/TG.*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

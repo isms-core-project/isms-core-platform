@@ -81,13 +81,18 @@ ISMS CORE applies appropriate rigor based on what matters for **reliability**, *
 
 ---
 
-### 📋 IMP QA Criteria (v3.2+)
+### 📋 IMP QA Criteria (v4.5+)
+
+Each IMP is split into two files:
+- **UG** (User Completion Guide) — assessment overview, prerequisites, walkthrough, evidence collection, common pitfalls
+- **TG** (Technical Specification) — Excel workbook structure, sheet specs, cell styling, generator reference
 
 | Requirement | Description |
 |-------------|-------------|
+| ✅ UG/TG split | Each IMP exists as `-UG` and `-TG` file pair |
+| ✅ Standard header | 3-line format: bold title, subtitle (UG/TG), ISO control reference |
 | ✅ Control quotes | Use "should" (not "shall") per ISO 27001:2022 Annex A |
 | ✅ British spelling | organisation, authorised, standardised |
-| ✅ Document structure | PART I (User Guide) + PART II (Technical Specification) |
 | ✅ Standard ending | `**END OF SPECIFICATION**` + separator + quote with em-dash (—) |
 | ✅ QA tag | `<!-- QA_VERIFIED: YYYY-MM-DD -->` after bamboo tag |
 
@@ -173,8 +178,8 @@ Each control is self-contained with all artifact types:
 isms-a.X.X-control-name/
 ├── POL/                      # 📜 Policy documents
 │   └── 10_pol-md/
-├── IMP/                      # 📋 Implementation guides
-│   └── 30_imp-md/
+├── IMP/                      # 📋 Implementation guides (UG + TG pairs)
+│   └── 30_imp-md/            # ISMS-IMP-A.X.X.N-UG/TG - Title.md
 ├── SCR/                      # 🐍 Scripts
 │   ├── 10_generator-master/  # Python generators
 │   ├── 11_normalize/         # Normalization scripts

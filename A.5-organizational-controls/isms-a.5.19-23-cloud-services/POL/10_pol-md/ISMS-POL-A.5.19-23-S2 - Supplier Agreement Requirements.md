@@ -41,7 +41,7 @@
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-POL-A.5.19-23 (Parent Policy - Supplier & Cloud Services Security)
 - ISMS-POL-A.5.19-23-S1 (Supplier Relationship Fundamentals)
-- ISMS-IMP-A.5.23-2 (Vendor Due Diligence & Contracts)
+- ISMS-IMP-A.5.23-2-UG/TG (Vendor Due Diligence & Contracts)
 - ISO/IEC 27001:2022 Control A.5.20
 - ISO/IEC 27036-2 (Requirements)
 - GDPR Article 28 (Processor requirements)
@@ -577,7 +577,7 @@ For suppliers processing personal data, Data Processing Agreement (DPA) must inc
 | **ISMS-POL-A.5.19-23** | Parent policy framework |
 | **ISMS-POL-A.5.19-23-S1** | Supplier classification (determines clause requirements) |
 | **ISMS-POL-A.5.19-23-S3** | Supply chain security (subcontractor requirements) |
-| **ISMS-IMP-A.5.23-2** | Contract review assessment workbook |
+| **ISMS-IMP-A.5.23-2-UG/TG** | Contract review assessment workbook |
 | **ISO/IEC 27036-2:2022** | Information security for supplier relationships - Requirements |
 
 ---

@@ -39,7 +39,10 @@
 - ISMS-POL-A.5.12-13 (Information Classification and Labelling)
 - ISMS-POL-A.7.6-7-14 (Secure Areas and Media Handling)
 - ISMS-POL-A.8.10 (Information Deletion)
-- ISMS-IMP-A.7.10 (Implementation Guidance)
+- ISMS-IMP-A.7.10.1-UG/TG (Storage Media Inventory)
+- ISMS-IMP-A.7.10.2-UG/TG (Media Handling Procedures)
+- ISMS-IMP-A.7.10.3-UG/TG (Media Lifecycle Tracking)
+- ISMS-IMP-A.7.10.4-UG/TG (Compliance Dashboard)
 - ISO/IEC 27001:2022 Control A.7.10
 
 ---
@@ -442,9 +445,9 @@ Assessment of A.7.10 should reference stacked control assessments for complete c
 
 | Document ID | Title | Purpose |
 |-------------|-------|---------|
-| **ISMS-IMP-A.7.10.1** | Media Inventory Procedures | Registration and tracking procedures |
-| **ISMS-IMP-A.7.10.2** | Media Handling Procedures | Use and transportation procedures |
-| **ISMS-IMP-A.7.10.3** | Media Disposal Procedures | Disposal and destruction procedures |
+| **ISMS-IMP-A.7.10.1-UG/TG** | Media Inventory Procedures | Registration and tracking procedures |
+| **ISMS-IMP-A.7.10.2-UG/TG** | Media Handling Procedures | Use and transportation procedures |
+| **ISMS-IMP-A.7.10.3-UG/TG** | Media Disposal Procedures | Disposal and destruction procedures |
 
 ---
 
@@ -505,6 +508,6 @@ Evidence required to demonstrate this policy is operationally effective:
 
 ---
 
-*This policy establishes requirements for storage media management. Implementation procedures are documented in ISMS-IMP-A.7.10.*
+*This policy establishes requirements for storage media management. Implementation procedures are documented in ISMS-IMP-A.7.10 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-04 -->

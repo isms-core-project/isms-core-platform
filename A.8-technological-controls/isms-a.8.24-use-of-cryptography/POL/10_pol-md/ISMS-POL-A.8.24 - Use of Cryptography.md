@@ -37,7 +37,11 @@
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.8.24 (Implementation Guidance Suite)
+- ISMS-IMP-A.8.24.1-UG/TG (Data Transmission Assessment)
+- ISMS-IMP-A.8.24.2-UG/TG (Data Storage Assessment)
+- ISMS-IMP-A.8.24.3-UG/TG (Authentication Assessment)
+- ISMS-IMP-A.8.24.4-UG/TG (Key Management Assessment)
+- ISMS-IMP-A.8.24.5-UG/TG (Compliance Summary Dashboard)
 - ISO/IEC 27001:2022 Control A.8.24
 
 ---
@@ -48,7 +52,7 @@ This policy establishes [Organization]'s requirements for cryptographic controls
 
 **Scope**: This policy applies to all information assets, systems, and personnel handling classified information (Internal, Confidential, or Restricted).
 
-**Purpose**: Define organizational requirements for cryptographic control selection, implementation, and governance. This policy establishes WHAT cryptographic protection is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.24.
+**Purpose**: Define organizational requirements for cryptographic control selection, implementation, and governance. This policy establishes WHAT cryptographic protection is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.24 (UG/TG variants).
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
 
@@ -579,11 +583,11 @@ Assessment of A.8.24 should reference stacked control assessments for complete c
 
 | Document ID | Title | Purpose | Content |
 |-------------|-------|---------|---------|
-| **ISMS-IMP-A.8.24-1** | Data Transmission Assessment | Verify encryption controls for data in transit | TLS/SSL configuration, VPN settings, wireless encryption, API security, cipher suite verification |
-| **ISMS-IMP-A.8.24-2** | Data Storage Assessment | Verify encryption controls for data at rest | Full disk encryption, database encryption, backup encryption, cloud storage encryption, key separation |
-| **ISMS-IMP-A.8.24-3** | Authentication Assessment | Verify cryptographic authentication mechanisms | Password hashing algorithms, MFA implementation, certificate-based authentication, digital signatures |
-| **ISMS-IMP-A.8.24-4** | Key Management Assessment | Verify key lifecycle management | Key generation, storage, distribution, rotation, backup, destruction, HSM/KMS configuration |
-| **ISMS-IMP-A.8.24-5** | Compliance Summary Dashboard | Consolidated compliance reporting | Aggregated scores across all domains, gap analysis, regulatory mapping, remediation tracking |
+| **ISMS-IMP-A.8.24-1-UG/TG** | Data Transmission Assessment | Verify encryption controls for data in transit | TLS/SSL configuration, VPN settings, wireless encryption, API security, cipher suite verification |
+| **ISMS-IMP-A.8.24-2-UG/TG** | Data Storage Assessment | Verify encryption controls for data at rest | Full disk encryption, database encryption, backup encryption, cloud storage encryption, key separation |
+| **ISMS-IMP-A.8.24-3-UG/TG** | Authentication Assessment | Verify cryptographic authentication mechanisms | Password hashing algorithms, MFA implementation, certificate-based authentication, digital signatures |
+| **ISMS-IMP-A.8.24-4-UG/TG** | Key Management Assessment | Verify key lifecycle management | Key generation, storage, distribution, rotation, backup, destruction, HSM/KMS configuration |
+| **ISMS-IMP-A.8.24-5-UG/TG** | Compliance Summary Dashboard | Consolidated compliance reporting | Aggregated scores across all domains, gap analysis, regulatory mapping, remediation tracking |
 
 **Technical Reference Document** (ISMS-CTX-A.8.24):
 
@@ -694,6 +698,6 @@ This policy addresses cryptographic requirements from:
 
 ---
 
-*This policy establishes requirements for use of cryptography. Implementation procedures are documented in ISMS-IMP-A.8.24.*
+*This policy establishes requirements for use of cryptography. Implementation procedures are documented in ISMS-IMP-A.8.24 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

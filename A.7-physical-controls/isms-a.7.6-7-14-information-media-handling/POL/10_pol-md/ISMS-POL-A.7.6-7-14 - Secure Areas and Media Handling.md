@@ -39,7 +39,10 @@
 - ISMS-POL-A.7.1-2-3 (Physical Access Control)
 - ISMS-POL-A.7.10 (Storage Media)
 - ISMS-POL-A.8.10 (Information Deletion)
-- ISMS-IMP-A.7.6-7-14 (Implementation Guidance)
+- ISMS-IMP-A.7.6-7-14-S1-UG/TG (Secure Areas Working Assessment)
+- ISMS-IMP-A.7.6-7-14-S2-UG/TG (Clear Desk Screen Compliance)
+- ISMS-IMP-A.7.6-7-14-S3-UG/TG (Equipment Disposal Assessment)
+- ISMS-IMP-A.7.6-7-14-S4-UG/TG (Compliance Dashboard)
 - ISO/IEC 27001:2022 Controls A.7.6, A.7.7, A.7.14
 
 ---
@@ -473,9 +476,9 @@ Assessment of A.7.6-7-14 should reference stacked control assessments for comple
 
 | Document ID | Title | Purpose |
 |-------------|-------|---------|
-| **ISMS-IMP-A.7.6-7-14.1** | Secure Area Procedures | Working procedures and conduct requirements |
-| **ISMS-IMP-A.7.6-7-14.2** | Clear Desk Audit Procedures | Audit checklists and enforcement |
-| **ISMS-IMP-A.7.6-7-14.3** | Equipment Disposal Procedures | Disposal execution and verification |
+| **ISMS-IMP-A.7.6-7-14.1-UG/TG** | Secure Area Procedures | Working procedures and conduct requirements |
+| **ISMS-IMP-A.7.6-7-14.2-UG/TG** | Clear Desk Audit Procedures | Audit checklists and enforcement |
+| **ISMS-IMP-A.7.6-7-14.3-UG/TG** | Equipment Disposal Procedures | Disposal execution and verification |
 
 ---
 
@@ -536,6 +539,6 @@ Evidence required to demonstrate this policy is operationally effective:
 
 ---
 
-*This policy establishes requirements for secure areas and media handling. Implementation procedures are documented in ISMS-IMP-A.7.6-7-14.*
+*This policy establishes requirements for secure areas and media handling. Implementation procedures are documented in ISMS-IMP-A.7.6-7-14 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-04 -->

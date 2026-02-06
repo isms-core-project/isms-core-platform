@@ -37,9 +37,9 @@
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.8.6.1 (Capacity Monitoring Implementation)
-- ISMS-IMP-A.8.6.2 (Capacity Forecasting and Planning)
-- ISMS-IMP-A.8.6.3 (Capacity Management Assessment)
+- ISMS-IMP-A.8.6.1-UG/TG (Capacity Monitoring Implementation)
+- ISMS-IMP-A.8.6.2-UG/TG (Capacity Forecasting and Planning)
+- ISMS-IMP-A.8.6.3-UG/TG (Capacity Management Assessment)
 - ISO/IEC 27001:2022 Control A.8.6
 
 ---
@@ -547,6 +547,6 @@ KPIs SHALL be reported quarterly to IT Leadership Team and annually to Executive
 
 ---
 
-*This policy establishes capacity management requirements. Implementation procedures are documented in ISMS-IMP-A.8.6.1 (Capacity Monitoring Implementation), ISMS-IMP-A.8.6.2 (Capacity Forecasting and Planning), and ISMS-IMP-A.8.6.3 (Capacity Management Assessment).*
+*This policy establishes capacity management requirements. Implementation procedures are documented in ISMS-IMP-A.8.6 (UG/TG).1 (Capacity Monitoring Implementation), ISMS-IMP-A.8.6.2 (Capacity Forecasting and Planning), and ISMS-IMP-A.8.6.3 (Capacity Management Assessment).*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

@@ -41,7 +41,7 @@
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-POL-A.5.19-23 (Parent Policy - Supplier & Cloud Services Security)
 - ISMS-POL-A.5.19-23-S1 (Supplier Relationship Fundamentals)
-- ISMS-IMP-A.5.23-4 (Ongoing Governance & Risk Management)
+- ISMS-IMP-A.5.23-4-UG/TG (Ongoing Governance & Risk Management)
 - ISMS-REF-A.5.23 (Cloud Service Provider Registry)
 - ISO/IEC 27001:2022 Control A.5.22
 - ISO/IEC 27036-4 (Cloud services)
@@ -539,7 +539,7 @@ A change is considered **material** if it meets any of the following criteria:
 | **ISMS-POL-A.5.19-23-S1** | Supplier classification determines monitoring frequency |
 | **ISMS-POL-A.5.19-23-S2** | Contract terms being monitored for compliance |
 | **ISMS-POL-A.5.19-23-S3** | Sub-supplier monitoring requirements |
-| **ISMS-IMP-A.5.23-4** | Operational governance assessment workbook |
+| **ISMS-IMP-A.5.23-4-UG/TG** | Operational governance assessment workbook |
 | **ISO/IEC 27036-4:2016** | Information security for supplier relationships - Cloud services |
 
 ---

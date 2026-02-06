@@ -39,7 +39,10 @@
 - ISMS-POL-A.7.4-5-11 (Physical Infrastructure Security)
 - ISMS-POL-A.7.8-9 (Equipment Siting and Protection)
 - ISMS-POL-A.8.6 (Capacity Management)
-- ISMS-IMP-A.7.12-13 (Implementation Guidance)
+- ISMS-IMP-A.7.12-13.S1-UG/TG (Cabling Security Assessment)
+- ISMS-IMP-A.7.12-13.S2-UG/TG (Equipment Maintenance Assessment)
+- ISMS-IMP-A.7.12-13.S3-UG/TG (Maintenance Schedule Tracking)
+- ISMS-IMP-A.7.12-13.S4-UG/TG (Infrastructure Compliance Dashboard)
 - ISO/IEC 27001:2022 Controls A.7.12, A.7.13
 
 ---
@@ -432,9 +435,9 @@ Assessment of A.7.12-13 should reference stacked control assessments for complet
 
 | Document ID | Title | Purpose |
 |-------------|-------|---------|
-| **ISMS-IMP-A.7.12-13.1** | Cabling Standards and Procedures | Cable installation and protection procedures |
-| **ISMS-IMP-A.7.12-13.2** | Maintenance Programme Management | Maintenance scheduling and tracking |
-| **ISMS-IMP-A.7.12-13.3** | Vendor Maintenance Procedures | Third-party maintenance management |
+| **ISMS-IMP-A.7.12-13.1-UG/TG** | Cabling Standards and Procedures | Cable installation and protection procedures |
+| **ISMS-IMP-A.7.12-13.2-UG/TG** | Maintenance Programme Management | Maintenance scheduling and tracking |
+| **ISMS-IMP-A.7.12-13.3-UG/TG** | Vendor Maintenance Procedures | Third-party maintenance management |
 
 ---
 
@@ -493,6 +496,6 @@ Evidence required to demonstrate this policy is operationally effective:
 
 ---
 
-*This policy establishes requirements for cabling security and equipment maintenance. Implementation procedures are documented in ISMS-IMP-A.7.12-13.*
+*This policy establishes requirements for cabling security and equipment maintenance. Implementation procedures are documented in ISMS-IMP-A.7.12-13 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-04 -->

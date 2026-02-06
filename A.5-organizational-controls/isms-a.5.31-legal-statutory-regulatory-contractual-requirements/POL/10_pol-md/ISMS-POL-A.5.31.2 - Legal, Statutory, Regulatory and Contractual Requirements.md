@@ -1503,7 +1503,7 @@ This policy requires approval from the following roles:
 
 **Implementation Guides:**
 
-- **ISMS-IMP-A.5.31.2**: Regulatory Applicability Assessment Process (step-by-step procedures for executing this methodology)
+- **ISMS-IMP-A.5.31.2-UG/TG**: Regulatory Applicability Assessment Process (step-by-step procedures for executing this methodology)
 
 **Assessment Tools:**
 

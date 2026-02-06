@@ -33,7 +33,7 @@
 
 This policy establishes [Organization]'s requirements for separating development, test, and production environments to reduce risks associated with unauthorized changes and data exposure in accordance with ISO/IEC 27001:2022 Control A.8.31.
 
-**Purpose**: Define organizational requirements for environment separation, establishing WHAT separation is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.31.
+**Purpose**: Define organizational requirements for environment separation, establishing WHAT separation is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.31 (UG/TG variants).
 
 **Core Principles**:
 
@@ -473,6 +473,6 @@ Evidence required to demonstrate this policy is operationally effective:
 
 ---
 
-*This policy establishes requirements for separation of development, test and production environments. Implementation procedures are documented in ISMS-IMP-A.8.31-S1, S2, and S3.*
+*This policy establishes requirements for separation of development, test and production environments. Implementation procedures are documented in ISMS-IMP-A.8 (UG/TG).31-S1, S2, and S3.*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

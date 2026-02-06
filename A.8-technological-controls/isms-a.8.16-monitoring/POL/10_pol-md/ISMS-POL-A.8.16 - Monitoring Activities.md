@@ -40,7 +40,11 @@
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-POL-A.8.15 (Logging)
 - ISMS-POL-A.5.24-5.28 (Incident Management)
-- ISMS-IMP-A.8.16 (Implementation Guidance Suite)
+- ISMS-IMP-A.8.16.1-UG/TG (Monitoring Infrastructure Assessment)
+- ISMS-IMP-A.8.16.2-UG/TG (Baseline & Detection Assessment)
+- ISMS-IMP-A.8.16.3-UG/TG (Coverage Assessment)
+- ISMS-IMP-A.8.16.4-UG/TG (Alert Management & Response Assessment)
+- ISMS-IMP-A.8.16.5-UG/TG (Compliance Dashboard Specification)
 - ISO/IEC 27001:2022 Control A.8.16
 - ISO/IEC 27002:2022 Control 8.16
 
@@ -52,7 +56,7 @@ This policy establishes [Organization]'s requirements for monitoring activities 
 
 **Scope**: This policy applies to all networks, systems, and applications where monitoring is technically feasible; all users (employees, contractors, service accounts); and all monitoring technologies regardless of vendor or deployment model.
 
-**Purpose**: Define organizational requirements for monitoring activities control implementation and governance. This policy establishes WHAT monitoring is required, WHERE monitoring must be implemented, and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.16.
+**Purpose**: Define organizational requirements for monitoring activities control implementation and governance. This policy establishes WHAT monitoring is required, WHERE monitoring must be implemented, and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.16 (UG/TG variants).
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
 
@@ -1270,11 +1274,11 @@ Monitoring is the continuous observation of networks, systems, and applications 
 
 All stakeholders SHALL complete quarterly monitoring assessments:
 
-- **ISMS-IMP-A.8.16.1**: Monitoring Infrastructure (Security Engineering)
-- **ISMS-IMP-A.8.16.2**: Baselines & Detection (SOC, Security Team)
-- **ISMS-IMP-A.8.16.3**: Coverage (System Owners, Network Team)
-- **ISMS-IMP-A.8.16.4**: Alert Management & Response (SOC, Incident Response)
-- **ISMS-IMP-A.8.16.5**: Compliance Dashboard (CISO, Management)
+- **ISMS-IMP-A.8.16.1-UG/TG**: Monitoring Infrastructure (Security Engineering)
+- **ISMS-IMP-A.8.16.2-UG/TG**: Baselines & Detection (SOC, Security Team)
+- **ISMS-IMP-A.8.16.3-UG/TG**: Coverage (System Owners, Network Team)
+- **ISMS-IMP-A.8.16.4-UG/TG**: Alert Management & Response (SOC, Incident Response)
+- **ISMS-IMP-A.8.16.5-UG/TG**: Compliance Dashboard (CISO, Management)
 
 ## Remember
 
@@ -1305,6 +1309,6 @@ All stakeholders SHALL complete quarterly monitoring assessments:
 
 ---
 
-*This policy establishes requirements for monitoring activities. Implementation procedures, technical standards, and assessment workbooks are documented in ISMS-IMP-A.8.16.*
+*This policy establishes requirements for monitoring activities. Implementation procedures, technical standards, and assessment workbooks are documented in ISMS-IMP-A.8.16 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

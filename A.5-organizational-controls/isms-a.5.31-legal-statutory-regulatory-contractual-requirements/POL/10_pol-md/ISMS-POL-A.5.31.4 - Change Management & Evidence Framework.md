@@ -3021,9 +3021,9 @@ Compliance records must be retained for specified periods to support audits, reg
 
 **Implementation Guides**:
 
-- **ISMS-IMP-A.5.31.4**: Regulatory Monitoring Process
+- **ISMS-IMP-A.5.31.4-UG/TG**: Regulatory Monitoring Process
   - Step-by-step operational guide for regulatory monitoring (implements Section 2)
-- **ISMS-IMP-A.5.31.5**: Evidence Management Process
+- **ISMS-IMP-A.5.31.5-UG/TG**: Evidence Management Process
   - Step-by-step operational guide for evidence management (implements Section 5)
 
 **Assessment Workbooks**:

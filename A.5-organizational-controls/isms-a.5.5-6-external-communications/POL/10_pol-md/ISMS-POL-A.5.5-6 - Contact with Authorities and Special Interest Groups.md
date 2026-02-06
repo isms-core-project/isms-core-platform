@@ -38,7 +38,11 @@
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-POL-A.5.24-28 (Incident Management Lifecycle)
 - ISMS-POL-A.5.7 (Threat Intelligence)
-- ISMS-IMP-A.5.5-6 (Implementation Guidance)
+- ISMS-IMP-A.5.5-6.S1-UG/TG (Authority Contacts Register)
+- ISMS-IMP-A.5.5-6.S2-UG/TG (Special Interest Groups Register)
+- ISMS-IMP-A.5.5-6.S3-UG/TG (External Communication Procedures)
+- ISMS-IMP-A.5.5-6.S4-UG/TG (Compliance Dashboard)
+- ISMS-IMP-A.5.5-6.S5-UG/TG (Consolidation Dashboard)
 - ISO/IEC 27001:2022 Controls A.5.5, A.5.6
 
 ---
@@ -49,7 +53,7 @@ This policy establishes [Organization]'s requirements for maintaining appropriat
 
 **Scope**: This policy applies to all communications with external authorities, law enforcement, regulatory bodies, and information security special interest groups regarding security matters.
 
-**Purpose**: Define organizational requirements for external authority contacts and security community engagement. This policy establishes WHAT contacts are required and WHO is authorized to engage. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.5-6.
+**Purpose**: Define organizational requirements for external authority contacts and security community engagement. This policy establishes WHAT contacts are required and WHO is authorized to engage. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.5-6 (UG/TG variants).
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, NIS2, DORA) apply where [Organization]'s business activities trigger applicability.
 
@@ -402,7 +406,7 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 | Document ID | Title | Purpose |
 |-------------|-------|---------|
-| **ISMS-IMP-A.5.5-6** | External Communications Implementation Guide | Contact procedures, templates, register maintenance |
+| **ISMS-IMP-A.5.5-6-UG/TG** | External Communications Implementation Guide | Contact procedures, templates, register maintenance |
 
 ---
 
@@ -466,6 +470,6 @@ Where no notifiable incidents occurred in the audit period, evidence may include
 
 ---
 
-*This policy establishes requirements for external communications with authorities and special interest groups. Implementation procedures are documented in ISMS-IMP-A.5.5-6.*
+*This policy establishes requirements for external communications with authorities and special interest groups. Implementation procedures are documented in ISMS-IMP-A.5.5-6 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-04 -->

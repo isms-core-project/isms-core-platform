@@ -37,9 +37,9 @@
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.8.4.1 (Repository Access Control Implementation)
-- ISMS-IMP-A.8.4.2 (Branch Protection Configuration)
-- ISMS-IMP-A.8.4.3 (Source Code Access Assessment)
+- ISMS-IMP-A.8.4.1-UG/TG (Repository Access Control Implementation)
+- ISMS-IMP-A.8.4.2-UG/TG (Branch Protection Configuration)
+- ISMS-IMP-A.8.4.3-UG/TG (Source Code Access Assessment)
 - ISO/IEC 27001:2022 Control A.8.4
 - ISMS-POL-A.8.25-26-29 (Secure Development Lifecycle)
 - ISMS-POL-A.5.15-16-18 (Access Control / Identity and Access Management)
@@ -52,7 +52,7 @@ This policy establishes [Organization]'s requirements for source code access con
 
 **Scope**: This policy applies to all source code repositories (production, internal tools, infrastructure-as-code, open source contributions, archived); all development artifacts (libraries, build scripts, test code); all repository platforms (GitHub, GitLab, Bitbucket, Azure DevOps, self-hosted); and all organizational personnel, contractors, and third parties with source code access.
 
-**Purpose**: Define organizational requirements for source code access control implementation and governance. This policy establishes WHAT access controls are required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.4 suite.
+**Purpose**: Define organizational requirements for source code access control implementation and governance. This policy establishes WHAT access controls are required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8 (UG/TG variants).4 suite.
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
 
@@ -794,6 +794,6 @@ This policy SHALL be distributed to all personnel with source code repository ac
 
 ---
 
-*This policy establishes requirements for source code access control. Implementation procedures are documented in ISMS-IMP-A.8.4.1 (Repository Access Control), ISMS-IMP-A.8.4.2 (Branch Protection), and ISMS-IMP-A.8.4.3 (Source Code Access Assessment).*
+*This policy establishes requirements for source code access control. Implementation procedures are documented in ISMS-IMP-A.8.4 (UG/TG).1 (Repository Access Control), ISMS-IMP-A.8.4.2 (Branch Protection), and ISMS-IMP-A.8.4.3 (Source Code Access Assessment).*
 
 <!-- QA_VERIFIED: 2026-02-01 -->

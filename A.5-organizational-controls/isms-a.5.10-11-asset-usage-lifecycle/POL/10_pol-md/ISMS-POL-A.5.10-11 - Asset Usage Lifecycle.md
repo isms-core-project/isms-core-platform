@@ -38,7 +38,10 @@
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-POL-A.5.9 (Inventory of Information and Other Associated Assets)
-- ISMS-IMP-A.5.10-11 (Implementation Guidance Suite)
+- ISMS-IMP-A.5.10-11.S1-UG/TG (Acceptable Use Policy Assessment)
+- ISMS-IMP-A.5.10-11.S2-UG/TG (Usage Rules Inventory)
+- ISMS-IMP-A.5.10-11.S3-UG/TG (Asset Return and Offboarding Assessment)
+- ISMS-IMP-A.5.10-11.S4-UG/TG (Compliance Dashboard)
 - ISO/IEC 27001:2022 Controls A.5.10, A.5.11
 
 ---
@@ -49,7 +52,7 @@ This policy establishes [Organisation]'s requirements for the acceptable use of 
 
 **Scope**: This policy applies to all personnel (employees, contractors, consultants, temporary staff), all organisational assets (physical, digital, information), and all phases of employment/engagement lifecycle.
 
-**Purpose**: Define organisational requirements for asset usage governance and return procedures. This policy establishes WHAT acceptable use and return requirements apply and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.10-11.
+**Purpose**: Define organisational requirements for asset usage governance and return procedures. This policy establishes WHAT acceptable use and return requirements apply and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.10-11 (UG/TG variants).
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS, FINMA, DORA, NIS2) apply where [Organisation]'s business activities trigger applicability.
 
@@ -451,10 +454,10 @@ This policy is supported by the following assessment workbooks:
 
 | Workbook | Purpose | Primary Users |
 |----------|---------|---------------|
-| **ISMS-IMP-A.5.10-11.S1** | Acceptable Use Policy Assessment | Security Team, HR |
-| **ISMS-IMP-A.5.10-11.S2** | Usage Rules Inventory | IT Security, Asset Owners |
-| **ISMS-IMP-A.5.10-11.S3** | Asset Return & Offboarding Assessment | IT Operations, HR |
-| **ISMS-IMP-A.5.10-11.S4** | Compliance Dashboard | CISO, Management |
+| **ISMS-IMP-A.5.10-11.S1-UG/TG** | Acceptable Use Policy Assessment | Security Team, HR |
+| **ISMS-IMP-A.5.10-11.S2-UG/TG** | Usage Rules Inventory | IT Security, Asset Owners |
+| **ISMS-IMP-A.5.10-11.S3-UG/TG** | Asset Return & Offboarding Assessment | IT Operations, HR |
+| **ISMS-IMP-A.5.10-11.S4-UG/TG** | Compliance Dashboard | CISO, Management |
 
 **Assessment Components**:
 
@@ -530,6 +533,6 @@ This policy addresses asset management requirements from:
 
 ---
 
-*This policy establishes requirements for acceptable use and return of assets. Implementation procedures are documented in ISMS-IMP-A.5.10-11.*
+*This policy establishes requirements for acceptable use and return of assets. Implementation procedures are documented in ISMS-IMP-A.5.10-11 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

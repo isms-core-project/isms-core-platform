@@ -40,7 +40,10 @@
 - ISMS-POL-A.5.30-8.13-14 (Business Continuity & Disaster Recovery Framework)
 - ISMS-POL-A.5.24-28 (Incident Management Lifecycle)
 - ISMS-POL-A.8.14 (Redundancy of Information Processing Facilities)
-- ISMS-IMP-A.5.29 (Implementation Guidance)
+- ISMS-IMP-A.5.29.1-UG/TG (Security Controls During Disruption Assessment)
+- ISMS-IMP-A.5.29.2-UG/TG (Degraded Mode Security Requirements)
+- ISMS-IMP-A.5.29.3-UG/TG (Recovery Security Verification)
+- ISMS-IMP-A.5.29.4-UG/TG (Compliance Dashboard)
 - ISO/IEC 27001:2022 Control A.5.29
 
 ---
@@ -51,7 +54,7 @@ This policy establishes [Organization]'s requirements for maintaining informatio
 
 **Scope**: This policy applies to all disruptive events affecting [Organization]'s ability to operate normally, including natural disasters, infrastructure failures, cyber incidents, pandemics, supply chain disruptions, and civil unrest.
 
-**Purpose**: Define organizational requirements for security during disruption. This policy establishes WHAT security controls must be maintained and WHO is responsible for security during adverse conditions. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.29.
+**Purpose**: Define organizational requirements for security during disruption. This policy establishes WHAT security controls must be maintained and WHO is responsible for security during adverse conditions. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.29 (UG/TG variants).
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (DORA, NIS2, FINMA) apply where [Organization]'s business activities trigger applicability.
 
@@ -470,9 +473,9 @@ Assessment of A.5.29 should reference stacked control assessments for complete c
 
 | Document ID | Title | Purpose |
 |-------------|-------|---------|
-| **ISMS-IMP-A.5.29.1** | Security Requirements for BC/DR Plans | BC/DR security integration procedures |
-| **ISMS-IMP-A.5.29.2** | Emergency Access Procedures | Break-glass activation and deactivation |
-| **ISMS-IMP-A.5.29.3** | Post-Disruption Security Validation Checklist | Recovery validation procedures |
+| **ISMS-IMP-A.5.29.1-UG/TG** | Security Requirements for BC/DR Plans | BC/DR security integration procedures |
+| **ISMS-IMP-A.5.29.2-UG/TG** | Emergency Access Procedures | Break-glass activation and deactivation |
+| **ISMS-IMP-A.5.29.3-UG/TG** | Post-Disruption Security Validation Checklist | Recovery validation procedures |
 
 ---
 
@@ -540,6 +543,6 @@ Evidence required to demonstrate this policy is operationally effective:
 
 ---
 
-*This policy establishes requirements for maintaining information security during disruption. Implementation procedures are documented in ISMS-IMP-A.5.29.*
+*This policy establishes requirements for maintaining information security during disruption. Implementation procedures are documented in ISMS-IMP-A.5.29 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-04 -->

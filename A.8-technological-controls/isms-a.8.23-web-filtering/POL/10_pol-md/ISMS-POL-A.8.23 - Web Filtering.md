@@ -12,7 +12,7 @@
 | **Document Creator** | Chief Information Security Officer (CISO) |
 | **Document Owner** | Chief Executive Officer (CEO) |
 | **Approved By** | Executive Management |
-| **Created Date** | 13.01.2026 |
+| **Created Date** | [Date] |
 | **Version** | 1.0 |
 | **Version Date** | [To Be Determined] |
 | **Classification** | Internal |
@@ -37,7 +37,9 @@
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.8.23 (Implementation Guidance Suite)
+- ISMS-IMP-A.8.23.1-UG/TG (Filtering Infrastructure Assessment)
+- ISMS-IMP-A.8.23.2-UG/TG (Network Coverage Assessment)
+- ISMS-IMP-A.8.23.3-UG/TG (Policy Configuration Assessment)
 - ISO/IEC 27001:2022 Control A.8.23
 
 ---
@@ -48,7 +50,7 @@ This policy establishes [Organization]'s requirements for web filtering controls
 
 **Scope**: This policy applies to all network segments where users access internet resources, all organizational personnel, and all web filtering technologies regardless of deployment model.
 
-**Purpose**: Define organizational requirements for web filtering control implementation and governance. This policy establishes WHAT web filtering protection is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.23.
+**Purpose**: Define organizational requirements for web filtering control implementation and governance. This policy establishes WHAT web filtering protection is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.23 (UG/TG variants).
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
 
@@ -524,5 +526,5 @@ This policy addresses web filtering requirements from:
 
 ---
 
-*This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.8.23.*
+*This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.8.23 (UG/TG).*
 <!-- QA_VERIFIED: 2026-02-01 -->

@@ -45,7 +45,11 @@
 - ISMS-POL-A.5.19-23-S4 (Supplier Monitoring & Change Management)
 - ISMS-POL-A.5.19-23-S5 (Cloud Services Security)
 - ISMS-POL-A.5.19-23-S6 (Assessment Methodology & Automation)
-- ISMS-IMP-A.5.23 (Implementation Guidance Suite)
+- ISMS-IMP-A.5.23.S1-UG/TG (Cloud Service Inventory & Classification)
+- ISMS-IMP-A.5.23.S2-UG/TG (Vendor Due Diligence & Contracts)
+- ISMS-IMP-A.5.23.S3-UG/TG (Secure Configuration & Deployment)
+- ISMS-IMP-A.5.23.S4-UG/TG (Ongoing Governance & Risk Management)
+- ISMS-IMP-A.5.23.S5-UG/TG (Compliance Monitoring Dashboard)
 - ISMS-REF-A.5.23 (Cloud Service Provider Registry)
 - ISO/IEC 27001:2022 Controls A.5.19-23
 - ISO/IEC 27036 (Supplier Relationships)

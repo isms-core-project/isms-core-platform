@@ -31,7 +31,7 @@ Each control folder contains:
 ```
 isms-a.X.X-control-name/
 ├── POL/10_pol-md/        ← Policy documents
-├── IMP/30_imp-md/        ← Implementation guides
+├── IMP/30_imp-md/        ← Implementation guides (UG + TG pairs)
 ├── SCR/                  ← Scripts
 │   ├── 10_generator-master/
 │   └── ...
@@ -157,7 +157,7 @@ isms-a.X.X-control-name/
 | Code | Type | Description | Badge |
 |------|------|-------------|-------|
 | **POL** | Policy | Defines WHAT is required and WHO is accountable | <img src="https://img.shields.io/badge/POL-9400D3?style=flat-square" alt="POL"/> |
-| **IMP** | Implementation | Defines HOW to implement with assessment workbooks | <img src="https://img.shields.io/badge/IMP-0066CC?style=flat-square" alt="IMP"/> |
+| **IMP** | Implementation | User Guides (UG) + Technical Specifications (TG) — split pairs per assessment | <img src="https://img.shields.io/badge/IMP-0066CC?style=flat-square" alt="IMP"/> |
 | **SCR** | Scripts | Python generators, validators, and Excel workbooks | <img src="https://img.shields.io/badge/SCR-3776AB?style=flat-square" alt="SCR"/> |
 | **REF** | Reference | Regulatory and framework reference materials | <img src="https://img.shields.io/badge/REF-FF6600?style=flat-square" alt="REF"/> |
 | **CTX** | Context | Organizational context documents | <img src="https://img.shields.io/badge/CTX-32CD32?style=flat-square" alt="CTX"/> |

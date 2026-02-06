@@ -40,11 +40,11 @@
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-POL-A.5.19-23 (Parent Policy - Supplier & Cloud Services Security)
-- ISMS-IMP-A.5.23-1 (Cloud Service Inventory & Classification)
-- ISMS-IMP-A.5.23-2 (Vendor Due Diligence & Contracts)
-- ISMS-IMP-A.5.23-3 (Secure Configuration & Deployment)
-- ISMS-IMP-A.5.23-4 (Ongoing Governance & Risk Management)
-- ISMS-IMP-A.5.23-5 (Compliance Monitoring Dashboard)
+- ISMS-IMP-A.5.23-1-UG/TG (Cloud Service Inventory & Classification)
+- ISMS-IMP-A.5.23-2-UG/TG (Vendor Due Diligence & Contracts)
+- ISMS-IMP-A.5.23-3-UG/TG (Secure Configuration & Deployment)
+- ISMS-IMP-A.5.23-4-UG/TG (Ongoing Governance & Risk Management)
+- ISMS-IMP-A.5.23-5-UG/TG (Compliance Monitoring Dashboard)
 - ISMS-REF-A.5.23 (Cloud Service Provider Registry)
 - ISO/IEC 27001:2022 Control A.5.23
 - ISO/IEC 27017:2015 (Cloud security controls)
@@ -841,8 +841,8 @@ Exit strategy viability SHALL be reviewed and tested annually to ensure assumpti
 
 All testing results SHALL be documented in:
 
-- **ISMS-IMP-A.5.23.4** (Governance & Risk Management workbook) - "Exit Strategy" sheet
-- **ISMS-IMP-A.5.23.5** (Compliance Monitoring Dashboard workbook) - "Exit Planning" sheet
+- **ISMS-IMP-A.5.23.4-UG/TG** (Governance & Risk Management workbook) - "Exit Strategy" sheet
+- **ISMS-IMP-A.5.23.5-UG/TG** (Compliance Monitoring Dashboard workbook) - "Exit Planning" sheet
 
 **Required Evidence:**
 

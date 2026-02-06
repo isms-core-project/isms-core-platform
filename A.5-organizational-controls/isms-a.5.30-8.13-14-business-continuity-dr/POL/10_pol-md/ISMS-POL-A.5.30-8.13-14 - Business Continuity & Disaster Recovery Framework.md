@@ -38,7 +38,11 @@
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.5.30-8.13-14 (Implementation Guidance Suite)
+- ISMS-IMP-A.5.30-8.13-14-S1-UG/TG (BIA and RPO:RTO Process)
+- ISMS-IMP-A.5.30-8.13-14-S2-UG/TG (Backup Implementation)
+- ISMS-IMP-A.5.30-8.13-14-S3-UG/TG (Redundancy Implementation)
+- ISMS-IMP-A.5.30-8.13-14-S4-UG/TG (Recovery Testing Process)
+- ISMS-IMP-A.5.30-8.13-14-S5-UG/TG (BC:DR Assessment)
 - ISO/IEC 27001:2022 Controls A.8.13, A.8.14, A.5.30
 - ISMS-POL-A.5.19-23 (Supplier/Cloud Services - supplier BC/DR requirements)
 - ISMS-POL-A.5.24 (Incident Management)
@@ -52,7 +56,7 @@ This policy establishes [Organization]'s requirements for Business Continuity an
 
 **Scope**: This policy applies to all information assets, ICT systems, and business processes regardless of deployment model (on-premises, cloud, hybrid) or technology platform.
 
-**Purpose**: Define organizational requirements for BC/DR control implementation and governance. This policy establishes WHAT recovery capabilities are required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.30-8.13-14. Technical standards and configurations are intentionally defined outside this policy to preserve technological agility.
+**Purpose**: Define organizational requirements for BC/DR control implementation and governance. This policy establishes WHAT recovery capabilities are required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.30-8.13-14 (UG/TG variants). Technical standards and configurations are intentionally defined outside this policy to preserve technological agility.
 
 **Combined Control Approach**: These three controls are implemented as a unified framework because they operate as an integrated BC/DR ecosystem: backup provides data recovery capability (A.8.13), redundancy provides system availability capability (A.8.14), and ICT BC readiness provides overall preparedness and governance (A.5.30). Attempting separate implementation would create disconnected strategies where backup policies ignore redundancy architecture and business continuity plans don't reflect actual technical capabilities. Despite unified implementation, each control maintains distinct requirements for Statement of Applicability (SoA) purposes.
 
@@ -1505,6 +1509,6 @@ This policy addresses BC/DR requirements from applicable regulations:
 
 ---
 
-*This policy establishes BC/DR requirements. Implementation procedures are documented in ISMS-IMP-A.5.30-8.13-14. Assessment workbooks for compliance verification are available in ISMS-IMP-A.5.30-8.13-14-S5.*
+*This policy establishes BC/DR requirements. Implementation procedures are documented in ISMS-IMP-A.5.30-8.13-14 (UG/TG). Assessment workbooks for compliance verification are available in ISMS-IMP-A.5.30-8.13-14-S5.*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

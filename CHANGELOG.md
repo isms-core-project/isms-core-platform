@@ -10,6 +10,18 @@ This project uses a simple versioning approach:
 ## [Unreleased]
 - TBD
 
+## [4.5] - 2026-02-06
+### Added
+- IMP UG/TG split: all 252 IMP files split into User Guide (UG) + Technical Specification (TG) pairs (504 total)
+- Header normalization across all 504 split files (standard 3-line format)
+- POL files updated with UG/TG references (59 files)
+
+### Changed
+- IMP document structure: each IMP now exists as two files (-UG and -TG) instead of one combined document
+- POL Related Documents sections expanded with individual UG/TG sub-document references
+- STATUS.md, README.md, CONTRIBUTING.md updated to reflect UG/TG architecture
+- A.8.8 document control headers normalized to standard table format (18 files)
+
 ## [4.4] - 2026-02-04
 ### Added
 - COVERAGE.md - canonical mapping of 93 Annex A controls to 53 control packs

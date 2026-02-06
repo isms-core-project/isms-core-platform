@@ -39,7 +39,7 @@
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-REF-A.5.24-28 (Incident Response Reference Guide)
-- ISMS-IMP-A.5.24-28.S1 through S5 (Implementation Assessments)
+- ISMS-IMP-A.5.24-28.-UG/TGS1 through S5 (Implementation Assessments)
 - ISO/IEC 27001:2022 Controls A.5.24, A.5.25, A.5.26, A.5.27, A.5.28
 - ISMS-POL-A.8.15 (Logging)
 - ISMS-POL-A.8.16 (Monitoring Activities)
@@ -53,7 +53,7 @@
 
 This policy establishes [Organization]'s requirements for managing information security incidents throughout their complete lifecycle in accordance with ISO/IEC 27001:2022 Controls A.5.24 through A.5.28.
 
-**Purpose**: Define organizational requirements for incident management control implementation and governance. This policy establishes WHAT incident management capabilities are required, WHO is accountable, and WHEN actions must occur. Implementation procedures (HOW to execute incident response) are documented separately in ISMS-IMP-A.5.24-28 Implementation Guides.
+**Purpose**: Define organizational requirements for incident management control implementation and governance. This policy establishes WHAT incident management capabilities are required, WHO is accountable, and WHEN actions must occur. Implementation procedures (HOW to execute incident response) are documented separately in ISMS-IMP-A.5 (UG/TG variants).24-28 Implementation Guides.
 
 **Scope**: This policy applies to all information security events and incidents affecting [Organization]'s information assets, systems, networks, and services, regardless of source (internal, external, third-party) or deployment model (on-premises, cloud, hybrid).
 
@@ -437,11 +437,11 @@ Non-compliance with this policy may result in:
 
 | Document | Purpose |
 |----------|---------|
-| **ISMS-IMP-A.5.24-28.S1** | Incident Management Framework Assessment (governance, structure, procedures, training, tools) |
-| **ISMS-IMP-A.5.24-28.S2** | Event Detection & Classification Assessment (assessment procedures, classification accuracy, escalation) |
-| **ISMS-IMP-A.5.24-28.S3** | Incident Response Capabilities Assessment (response procedures, SLAs, playbooks, communications) |
-| **ISMS-IMP-A.5.24-28.S4** | Forensic Evidence Management Assessment (evidence procedures, chain of custody, preservation) |
-| **ISMS-IMP-A.5.24-28.S5** | Learning & Continuous Improvement Assessment (PIR, root cause analysis, improvement tracking, metrics) |
+| **ISMS-IMP-A.5.24-28.S1-UG/TG** | Incident Management Framework Assessment (governance, structure, procedures, training, tools) |
+| **ISMS-IMP-A.5.24-28.S2-UG/TG** | Event Detection & Classification Assessment (assessment procedures, classification accuracy, escalation) |
+| **ISMS-IMP-A.5.24-28.S3-UG/TG** | Incident Response Capabilities Assessment (response procedures, SLAs, playbooks, communications) |
+| **ISMS-IMP-A.5.24-28.S4-UG/TG** | Forensic Evidence Management Assessment (evidence procedures, chain of custody, preservation) |
+| **ISMS-IMP-A.5.24-28.S5-UG/TG** | Learning & Continuous Improvement Assessment (PIR, root cause analysis, improvement tracking, metrics) |
 
 ## Reference Materials
 
@@ -575,6 +575,6 @@ The boundary is: POL-A.5.24-28 defines WHAT incident management capabilities are
 
 ---
 
-*This policy establishes requirements for information security incident management covering the complete lifecycle (A.5.24-28). Implementation procedures are documented in ISMS-IMP-A.5.24-28.S1 through S5.*
+*This policy establishes requirements for information security incident management covering the complete lifecycle (A.5.24-28). Implementation procedures are documented in ISMS-IMP-A.5.24-28 (UG/TG).S1 through S5.*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

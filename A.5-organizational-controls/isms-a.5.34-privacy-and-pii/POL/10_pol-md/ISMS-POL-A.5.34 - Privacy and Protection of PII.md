@@ -39,7 +39,13 @@
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-CTX-A.5.34 (Privacy Regulatory Landscape Reference)
-- ISMS-IMP-A.5.34 (Implementation Guidance Suite)
+- ISMS-IMP-A.5.34.1-UG/TG (PII Identification and Classification Assessment)
+- ISMS-IMP-A.5.34.2-UG/TG (Legal Basis and Lawful Processing Assessment)
+- ISMS-IMP-A.5.34.3-UG/TG (Data Subject Rights Management Assessment)
+- ISMS-IMP-A.5.34.4-UG/TG (Technical and Organizational Measures (TOMs) Assessment)
+- ISMS-IMP-A.5.34.5-UG/TG (DPIA Assessment)
+- ISMS-IMP-A.5.34.6-UG/TG (Cross Border Transfer Assessment)
+- ISMS-IMP-A.5.34.7-UG/TG (Privacy Compliance Dashboard)
 - ISMS-POL-A.5.9 (Inventory of Information and Assets)
 - ISMS-POL-A.5.12 (Classification of Information)
 - ISMS-POL-A.5.15-16-18 (Identity and Access Management)
@@ -56,7 +62,7 @@
 
 This policy establishes [Organization]'s requirements for privacy and protection of personally identifiable information (PII) in accordance with ISO/IEC 27001:2022 Control A.5.34.
 
-**Purpose**: Define WHAT privacy requirements must be met and WHO is accountable for privacy compliance. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.34.
+**Purpose**: Define WHAT privacy requirements must be met and WHO is accountable for privacy compliance. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.34 (UG/TG variants).
 
 **Scope**: All processing of personal data / PII by [Organization], including data relating to customers, employees, contractors, vendors, and other natural persons, regardless of format or location.
 
@@ -512,11 +518,11 @@ Training records maintained per A.7.2 requirements and reviewed during Privacy S
 | Evidence Type | Source | Verification |
 |---------------|--------|--------------|
 | ROPA | ISMS-IMP-A.5.34.1; maintained in [GRC Platform/Tool] | Quarterly update by DPO; annual validation by Legal and CISO |
-| DSR Records | DSR tracking system; ISMS-IMP-A.5.34.3 | Monthly metrics review by DPO |
-| Legal Basis Documentation | ISMS-IMP-A.5.34.2 | Audit sampling annually |
-| DPIA Records | ISMS-IMP-A.5.34.5 | DPO review and approval per DPIA |
-| Transfer Impact Assessments | ISMS-IMP-A.5.34.6 | Legal review before transfer |
-| Breach Register | CISO with ISMS-IMP-A.5.34.4 | Quarterly review by Privacy Steering Committee |
+| DSR Records | DSR tracking system; ISMS-IMP-A.5.34.3-UG/TG | Monthly metrics review by DPO |
+| Legal Basis Documentation | ISMS-IMP-A.5.34.2-UG/TG | Audit sampling annually |
+| DPIA Records | ISMS-IMP-A.5.34.5-UG/TG | DPO review and approval per DPIA |
+| Transfer Impact Assessments | ISMS-IMP-A.5.34.6-UG/TG | Legal review before transfer |
+| Breach Register | CISO with ISMS-IMP-A.5.34.4-UG/TG | Quarterly review by Privacy Steering Committee |
 | Consent Records | Consent management system | Annual audit sampling |
 | Processor Agreements | Legal department | Annual contract review |
 
@@ -575,12 +581,12 @@ Suspected violations SHALL be reported to DPO and investigated. Privacy violatio
 |-------------|---------------|
 | ISMS-POL-00 | Regulatory Applicability Framework |
 | ISMS-CTX-A.5.34 | Privacy Regulatory Landscape Reference |
-| ISMS-IMP-A.5.34.1 | PII Identification and Classification Assessment |
-| ISMS-IMP-A.5.34.2 | Legal Basis and Lawful Processing Assessment |
-| ISMS-IMP-A.5.34.3 | Data Subject Rights Management |
-| ISMS-IMP-A.5.34.4 | Technical and Organizational Measures Assessment |
-| ISMS-IMP-A.5.34.5 | Data Protection Impact Assessment |
-| ISMS-IMP-A.5.34.6 | Cross-Border Transfer Assessment |
+| ISMS-IMP-A.5.34.1-UG/TG | PII Identification and Classification Assessment |
+| ISMS-IMP-A.5.34.2-UG/TG | Legal Basis and Lawful Processing Assessment |
+| ISMS-IMP-A.5.34.3-UG/TG | Data Subject Rights Management |
+| ISMS-IMP-A.5.34.4-UG/TG | Technical and Organizational Measures Assessment |
+| ISMS-IMP-A.5.34.5-UG/TG | Data Protection Impact Assessment |
+| ISMS-IMP-A.5.34.6-UG/TG | Cross-Border Transfer Assessment |
 | ISMS-POL-A.5.33 | Protection of Records |
 | ISMS-POL-A.8.10 | Information Deletion |
 | ISMS-POL-A.8.11 | Data Masking |
@@ -604,6 +610,6 @@ Suspected violations SHALL be reported to DPO and investigated. Privacy violatio
 
 ---
 
-*This policy establishes requirements for privacy and protection of personally identifiable information. Implementation procedures are documented in ISMS-IMP-A.5.34.1 through A.5.34.6.*
+*This policy establishes requirements for privacy and protection of personally identifiable information. Implementation procedures are documented in ISMS-IMP-A.5.34 (UG/TG).1 through A.5.34.6.*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

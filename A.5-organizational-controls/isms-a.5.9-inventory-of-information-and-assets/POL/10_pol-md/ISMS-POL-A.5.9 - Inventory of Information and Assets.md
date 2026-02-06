@@ -39,7 +39,11 @@
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-POL-A.5.10 through A.5.18 (Asset Management Controls)
 - ISMS-POL-A.8.x (Technical Controls)
-- ISMS-IMP-A.5.9 (Implementation Guidance Suite)
+- ISMS-IMP-A.5.9.1-UG/TG (Asset Identification & Discovery)
+- ISMS-IMP-A.5.9.2-UG/TG (Inventory Structure & Maintenance)
+- ISMS-IMP-A.5.9.3-UG/TG (Assessment Specifications)
+- ISMS-IMP-A.5.9.4-UG/TG (Owner Accountability Assessment)
+- ISMS-IMP-A.5.9.5-UG/TG (Compliance Dashboard Specification)
 - ISO/IEC 27001:2022 Control A.5.9
 
 ---
@@ -52,7 +56,7 @@ This policy establishes [Organization]'s requirements for maintaining an invento
 
 **Scope**: This policy applies to all information assets (data, content, intellectual property) and associated assets (IT infrastructure, applications, physical facilities, personnel competencies) within [Organization]'s information security management scope. The policy establishes WHAT must be inventoried, WHO is accountable, and HOW compliance is verified.
 
-**Purpose**: Define organizational requirements for asset inventory creation, maintenance, and governance. This policy establishes the governance framework (WHAT and WHY). Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.9 suite, and assessment tools provide objective verification mechanisms.
+**Purpose**: Define organizational requirements for asset inventory creation, maintenance, and governance. This policy establishes the governance framework (WHAT and WHY). Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5 (UG/TG variants).9 suite, and assessment tools provide objective verification mechanisms.
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS, FINMA, DORA, NIS2, HIPAA) apply where [Organization]'s business activities trigger applicability.
 
@@ -803,11 +807,11 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 | Document ID | Title | Purpose | Target Audience |
 |-------------|-------|---------|----------------|
-| **ISMS-IMP-A.5.9-1** | Asset Identification & Discovery | Procedures for identifying assets, discovery methods, completeness verification | Security Team, IT Operations |
-| **ISMS-IMP-A.5.9-2** | Inventory Maintenance | Inventory structure design, update procedures, integration methods | Security Team, IT Operations, System Owners |
-| **ISMS-IMP-A.5.9-3** | Quality & Compliance Assessment | Accuracy sampling, currency verification, gap analysis | Security Team, Audit, Compliance |
-| **ISMS-IMP-A.5.9-4** | Owner Accountability Assessment | Owner assignment, acknowledgment tracking, responsibility verification | Security Team, Management, Asset Owners |
-| **ISMS-IMP-A.5.9-5** | Compliance Dashboard | Executive summary, consolidated metrics, compliance reporting | CISO, Executive Management, Audit |
+| **ISMS-IMP-A.5.9-1-UG/TG** | Asset Identification & Discovery | Procedures for identifying assets, discovery methods, completeness verification | Security Team, IT Operations |
+| **ISMS-IMP-A.5.9-2-UG/TG** | Inventory Maintenance | Inventory structure design, update procedures, integration methods | Security Team, IT Operations, System Owners |
+| **ISMS-IMP-A.5.9-3-UG/TG** | Quality & Compliance Assessment | Accuracy sampling, currency verification, gap analysis | Security Team, Audit, Compliance |
+| **ISMS-IMP-A.5.9-4-UG/TG** | Owner Accountability Assessment | Owner assignment, acknowledgment tracking, responsibility verification | Security Team, Management, Asset Owners |
+| **ISMS-IMP-A.5.9-5-UG/TG** | Compliance Dashboard | Executive summary, consolidated metrics, compliance reporting | CISO, Executive Management, Audit |
 
 **Assessment Tools**:
 
@@ -1298,6 +1302,6 @@ When leaving role or changing positions:
 
 ---
 
-*This policy establishes requirements for inventory of information and associated assets. Implementation procedures are documented in ISMS-IMP-A.5.9-1 through A.5.9-5.*
+*This policy establishes requirements for inventory of information and associated assets. Implementation procedures are documented in ISMS-IMP-A.5 (UG/TG).9-1 through A.5.9-5.*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

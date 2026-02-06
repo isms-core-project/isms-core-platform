@@ -39,11 +39,11 @@
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.5.1-2-6.1-2.S1 (Policy Framework Assessment)
-- ISMS-IMP-A.5.1-2-6.1-2.S2 (Roles and Responsibilities Assessment)
-- ISMS-IMP-A.5.1-2-6.1-2.S3 (Screening Assessment)
-- ISMS-IMP-A.5.1-2-6.1-2.S4 (Employment Contract Assessment)
-- ISMS-IMP-A.5.1-2-6.1-2.S5 (Governance Dashboard)
+- ISMS-IMP-A.5.1-2-6.1-2.-UG/TGS1 (Policy Framework Assessment)
+- ISMS-IMP-A.5.1-2-6.1-2.-UG/TGS2 (Roles and Responsibilities Assessment)
+- ISMS-IMP-A.5.1-2-6.1-2.-UG/TGS3 (Screening Assessment)
+- ISMS-IMP-A.5.1-2-6.1-2.-UG/TGS4 (Employment Contract Assessment)
+- ISMS-IMP-A.5.1-2-6.1-2.-UG/TGS5 (Governance Dashboard)
 - ISO/IEC 27001:2022 Controls A.5.1, A.5.2, A.6.1, A.6.2
 - Swiss Code of Obligations (OR) Art. 328, 328b
 - Swiss Federal Data Protection Act (nDSG/FADP)
@@ -710,11 +710,11 @@ Non-compliance SHALL be remediated:
 | Document ID | Title | Relationship |
 |-------------|-------|--------------|
 | ISMS-POL-00 | Regulatory Applicability Framework | Regulatory requirements reference |
-| ISMS-IMP-A.5.1-2-6.1-2.S1 | Policy Framework Assessment | Implementation procedures and assessment |
-| ISMS-IMP-A.5.1-2-6.1-2.S2 | Roles and Responsibilities Assessment | Role catalog and RACI matrix |
-| ISMS-IMP-A.5.1-2-6.1-2.S3 | Screening Assessment | Screening procedures, checklists, evidence |
-| ISMS-IMP-A.5.1-2-6.1-2.S4 | Employment Contract Assessment | Contract templates and clause library |
-| ISMS-IMP-A.5.1-2-6.1-2.S5 | Governance Dashboard | Consolidated compliance metrics |
+| ISMS-IMP-A.5.1-2-6.1-2.S1-UG/TG | Policy Framework Assessment | Implementation procedures and assessment |
+| ISMS-IMP-A.5.1-2-6.1-2.S2-UG/TG | Roles and Responsibilities Assessment | Role catalog and RACI matrix |
+| ISMS-IMP-A.5.1-2-6.1-2.S3-UG/TG | Screening Assessment | Screening procedures, checklists, evidence |
+| ISMS-IMP-A.5.1-2-6.1-2.S4-UG/TG | Employment Contract Assessment | Contract templates and clause library |
+| ISMS-IMP-A.5.1-2-6.1-2.S5-UG/TG | Governance Dashboard | Consolidated compliance metrics |
 | ISO/IEC 27001:2022 | ISMS Requirements | Primary standard |
 | ISO/IEC 27002:2022 | Information Security Controls | Implementation guidance |
 
@@ -745,6 +745,6 @@ Non-compliance SHALL be remediated:
 
 ---
 
-*This policy establishes requirements for secure employment and security roles. Implementation procedures are documented in ISMS-IMP-A.5.1-2-6.1-2.*
+*This policy establishes requirements for secure employment and security roles. Implementation procedures are documented in ISMS-IMP-A.5.1-2-6.1-2 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

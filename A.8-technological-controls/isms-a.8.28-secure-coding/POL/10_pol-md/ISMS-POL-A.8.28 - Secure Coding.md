@@ -37,7 +37,11 @@
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.8.28.1-5 (Implementation Assessment Suite)
+- ISMS-IMP-A.8.28.1-UG/TG (SDLC Assessment Specification)
+- ISMS-IMP-A.8.28.2-UG/TG (Standards & Tools Assessment Specification)
+- ISMS-IMP-A.8.28.3-UG/TG (Code Review & Testing Assessment Specification)
+- ISMS-IMP-A.8.28.4-UG/TG (Third-Party & Open Source Software Assessment Specification)
+- ISMS-IMP-A.8.28.5-UG/TG (Compliance Dashboard (Master Aggregator) Specification)
 - ISMS-CTX-A.8.28 (Language-Specific Secure Coding Guidelines)
 - ISMS-REF-A.8.28 (Code Review Technical Reference)
 - ISO/IEC 27001:2022 Control A.8.28
@@ -578,7 +582,7 @@ Evidence required to demonstrate this policy is operationally effective:
 
 | Document | Purpose |
 |----------|---------|
-| **ISMS-IMP-A.8.28.1-5** | Assessment specifications and workbooks |
+| **ISMS-IMP-A.8.28.1-5-UG/TG** | Assessment specifications and workbooks |
 | **ISMS-CTX-A.8.28** | Language-specific guidelines (Python, Java, JS, C#, Go, SQL) |
 | **ISMS-REF-A.8.28** | Code review checklists and technical reference |
 
@@ -606,6 +610,6 @@ Evidence required to demonstrate this policy is operationally effective:
 
 ---
 
-*This policy establishes requirements for secure software development. Implementation procedures, assessment methodologies, and workbook specifications are documented in ISMS-IMP-A.8.28. Language-specific guidelines are in ISMS-CTX-A.8.28. Code review checklists are in ISMS-REF-A.8.28.*
+*This policy establishes requirements for secure software development. Implementation procedures, assessment methodologies, and workbook specifications are documented in ISMS-IMP-A.8.28 (UG/TG). Language-specific guidelines are in ISMS-CTX-A.8.28. Code review checklists are in ISMS-REF-A.8.28.*
 
 <!-- QA_VERIFIED: 2026-02-01 -->

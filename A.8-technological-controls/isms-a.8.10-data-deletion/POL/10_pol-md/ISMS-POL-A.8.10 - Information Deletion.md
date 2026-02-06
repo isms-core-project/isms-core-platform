@@ -332,11 +332,11 @@ All exceptions must be submitted via the designated exception request form and a
 | Document ID | Document Title |
 |-------------|---------------|
 | ISMS-POL-00 | Regulatory Applicability Framework |
-| ISMS-IMP-A.8.10.1 | Retention and Deletion Triggers Assessment |
-| ISMS-IMP-A.8.10.2 | Deletion Methods Assessment |
-| ISMS-IMP-A.8.10.3 | Third-Party and Cloud Deletion Assessment |
-| ISMS-IMP-A.8.10.4 | Verification and Evidence Assessment |
-| ISMS-IMP-A.8.10.5 | Compliance Dashboard Consolidation |
+| ISMS-IMP-A.8.10.1-UG/TG | Retention and Deletion Triggers Assessment |
+| ISMS-IMP-A.8.10.2-UG/TG | Deletion Methods Assessment |
+| ISMS-IMP-A.8.10.3-UG/TG | Third-Party and Cloud Deletion Assessment |
+| ISMS-IMP-A.8.10.4-UG/TG | Verification and Evidence Assessment |
+| ISMS-IMP-A.8.10.5-UG/TG | Compliance Dashboard Consolidation |
 | ISMS-REF-A.8.10 | Deletion Methods Reference |
 | ISMS-REF-A.5.23 | Cloud Service Provider Registry |
 | ISMS-FORM-A.8.10-GDPR | Information Deletion Forms and Templates |
@@ -409,6 +409,6 @@ Evidence required to demonstrate this policy is operationally effective:
 
 ---
 
-*This policy establishes requirements for information deletion. Implementation procedures are documented in ISMS-IMP-A.8.10.1 through A.8.10.5.*
+*This policy establishes requirements for information deletion. Implementation procedures are documented in ISMS-IMP-A.8.10 (UG/TG).1 through A.8.10.5.*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

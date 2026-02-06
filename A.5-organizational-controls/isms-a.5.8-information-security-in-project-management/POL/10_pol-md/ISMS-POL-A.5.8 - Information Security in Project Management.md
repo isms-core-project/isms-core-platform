@@ -450,7 +450,7 @@ Non-compliance with this policy may result in:
 | Document ID | Document Title |
 |-------------|----------------|
 | ISMS-POL-00 | Regulatory Applicability Framework |
-| ISMS-IMP-A.5.8 | Information Security in Project Management - Implementation Guide |
+| ISMS-IMP-A.5.8-UG/TG | Information Security in Project Management - Implementation Guide |
 | ISMS-POL-A.5.15-18 | Identity and Access Management |
 | ISMS-POL-A.5.19-22 | Supplier Relationship Security |
 | ISMS-POL-A.8.24 | Use of Cryptography |
@@ -531,6 +531,6 @@ The boundary is: POL-A.5.8 defines WHAT security activities must occur at each p
 
 ---
 
-*This policy establishes requirements for information security integration into project management. Implementation procedures, assessment templates, and detailed guidance are documented in ISMS-IMP-A.5.8.*
+*This policy establishes requirements for information security integration into project management. Implementation procedures, assessment templates, and detailed guidance are documented in ISMS-IMP-A.5.8 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

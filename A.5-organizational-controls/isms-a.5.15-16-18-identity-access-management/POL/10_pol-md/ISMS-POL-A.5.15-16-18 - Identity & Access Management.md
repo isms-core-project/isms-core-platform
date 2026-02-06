@@ -38,7 +38,12 @@
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.5.15-16-18 (Implementation Guidance Suite)
+- ISMS-IMP-A.5.15-16-18.S1-UG/TG (User Inventory & Lifecycle Compliance Assessment)
+- ISMS-IMP-A.5.15-16-18.S2-UG/TG (Access Rights Matrix Assessment)
+- ISMS-IMP-A.5.15-16-18.S3-UG/TG (Access Review Results Assessment)
+- ISMS-IMP-A.5.15-16-18.S4-UG/TG (Role Definition & SoD Compliance Assessment)
+- ISMS-IMP-A.5.15-16-18.S5-UG/TG (IAM Governance Compliance Dashboard)
+- ISMS-IMP-A.5.15-16-18.S6-UG/TG (IAM Compliance Dashboard)
 - ISMS-POL-A.8.2-3-5 (Authentication & Privileged Access)
 - ISO/IEC 27001:2022 Controls A.5.15, A.5.16, A.5.18
 
@@ -48,7 +53,7 @@
 
 This policy establishes [Organization]'s requirements for identity and access management controls to ensure appropriate access governance throughout the complete identity lifecycle in accordance with ISO/IEC 27001:2022 Controls A.5.15, A.5.16, and A.5.18.
 
-**Purpose**: Define organizational requirements for identity and access management governance. This policy establishes WHAT IAM controls are required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.15-16-18.
+**Purpose**: Define organizational requirements for identity and access management governance. This policy establishes WHAT IAM controls are required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.15-16-18 (UG/TG variants).
 
 **Scope**: This policy applies to all user identities (employees, contractors, vendors, service accounts), all identity systems, and all access types regardless of deployment model or technology.
 
@@ -418,8 +423,8 @@ Policy changes require CISO approval; major revisions require Executive Manageme
 
 | Control | Status | Implementation Reference |
 |---------|--------|-------------------------|
-| **A.5.15 - Access Control** | Applicable | Section 2.1, ISMS-IMP-A.5.15-16-18.1 |
-| **A.5.16 - Identity Management** | Applicable | Section 2.2, ISMS-IMP-A.5.15-16-18.2 |
+| **A.5.15 - Access Control** | Applicable | Section 2.1, ISMS-IMP-A.5.15-16-18.1-UG/TG |
+| **A.5.16 - Identity Management** | Applicable | Section 2.2, ISMS-IMP-A.5.15-16-18.2-UG/TG |
 | **A.5.18 - Access Rights** | Applicable | Section 2.3, ISMS-IMP-A.5.15-16-18.3/4 |
 
 ## Related Controls
@@ -432,11 +437,11 @@ Policy changes require CISO approval; major revisions require Executive Manageme
 
 | Document | Purpose |
 |----------|---------|
-| **ISMS-IMP-A.5.15-16-18.1** | Access Control Governance |
-| **ISMS-IMP-A.5.15-16-18.2** | Identity Lifecycle Process |
-| **ISMS-IMP-A.5.15-16-18.3** | Role Definition and Assignment |
-| **ISMS-IMP-A.5.15-16-18.4** | Access Review Process |
-| **ISMS-IMP-A.5.15-16-18.5** | IAM Assessment Procedures |
+| **ISMS-IMP-A.5.15-16-18.1-UG/TG** | Access Control Governance |
+| **ISMS-IMP-A.5.15-16-18.2-UG/TG** | Identity Lifecycle Process |
+| **ISMS-IMP-A.5.15-16-18.3-UG/TG** | Role Definition and Assignment |
+| **ISMS-IMP-A.5.15-16-18.4-UG/TG** | Access Review Process |
+| **ISMS-IMP-A.5.15-16-18.5-UG/TG** | IAM Assessment Procedures |
 
 ---
 
@@ -525,6 +530,6 @@ The boundary is: **This policy defines WHO gets WHAT access, WHEN, and HOW it is
 
 ---
 
-*This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.5.15-16-18.*
+*This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.5.15-16-18 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

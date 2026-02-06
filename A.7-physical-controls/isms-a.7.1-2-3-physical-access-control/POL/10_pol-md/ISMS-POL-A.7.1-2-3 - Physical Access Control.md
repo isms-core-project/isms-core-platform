@@ -38,7 +38,10 @@
 - ISMS-POL-00 (Regulatory Applicability Framework)
 - ISMS-POL-A.7.4-5-11 (Physical Infrastructure Security)
 - ISMS-POL-A.6.7-8 (Remote Working and Reporting)
-- ISMS-IMP-A.7.1-2-3 (Implementation Guidance)
+- ISMS-IMP-A.7.1-2-3-S1-UG/TG (Perimeter Security Assessment)
+- ISMS-IMP-A.7.1-2-3-S2-UG/TG (Entry Control Assessment)
+- ISMS-IMP-A.7.1-2-3-S3-UG/TG (Secure Areas Assessment)
+- ISMS-IMP-A.7.1-2-3-S4-UG/TG (Compliance Dashboard)
 - ISO/IEC 27001:2022 Controls A.7.1, A.7.2, A.7.3
 
 ---
@@ -462,9 +465,9 @@ Assessment of A.7.1-2-3 should reference stacked control assessments for complet
 
 | Document ID | Title | Purpose |
 |-------------|-------|---------|
-| **ISMS-IMP-A.7.1-2-3.1** | Physical Security Assessment | Zone assessment and perimeter verification |
-| **ISMS-IMP-A.7.1-2-3.2** | Access Control Configuration | Access system setup and management |
-| **ISMS-IMP-A.7.1-2-3.3** | Visitor Management Procedures | Visitor processing and escort procedures |
+| **ISMS-IMP-A.7.1-2-3.1-UG/TG** | Physical Security Assessment | Zone assessment and perimeter verification |
+| **ISMS-IMP-A.7.1-2-3.2-UG/TG** | Access Control Configuration | Access system setup and management |
+| **ISMS-IMP-A.7.1-2-3.3-UG/TG** | Visitor Management Procedures | Visitor processing and escort procedures |
 
 ---
 
@@ -525,6 +528,6 @@ Evidence required to demonstrate this policy is operationally effective:
 
 ---
 
-*This policy establishes requirements for physical access control. Implementation procedures are documented in ISMS-IMP-A.7.1-2-3.*
+*This policy establishes requirements for physical access control. Implementation procedures are documented in ISMS-IMP-A.7.1-2-3 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-04 -->

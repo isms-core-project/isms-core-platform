@@ -37,7 +37,10 @@
 **Related Documents**:
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.6.6.1-4 (Implementation Assessments)
+- ISMS-IMP-A.6.6.1-UG/TG (NDA Template Registry and Inventory)
+- ISMS-IMP-A.6.6.2-UG/TG (NDA Execution and Tracking)
+- ISMS-IMP-A.6.6.3-UG/TG (NDA Review and Compliance)
+- ISMS-IMP-A.6.6.4-UG/TG (NDA Compliance Dashboard)
 - ISO/IEC 27001:2022 Control A.6.6
 - ISMS-POL-A.6.1 (Screening)
 - ISMS-POL-A.6.2 (Terms and Conditions of Employment)
@@ -49,7 +52,7 @@
 
 This policy establishes [Organisation]'s requirements for confidentiality and non-disclosure agreements to protect information accessible by personnel and external parties in accordance with ISO/IEC 27001:2022 Control A.6.6.
 
-**Purpose**: Define organisational requirements for confidentiality agreements governance. This policy establishes WHAT agreements are required, WHO must sign them, and WHEN they must be executed. Implementation procedures (HOW to manage the NDA program) are documented separately in ISMS-IMP-A.6.6 Implementation Guides.
+**Purpose**: Define organisational requirements for confidentiality agreements governance. This policy establishes WHAT agreements are required, WHO must sign them, and WHEN they must be executed. Implementation procedures (HOW to manage the NDA program) are documented separately in ISMS-IMP-A.6 (UG/TG variants).6 Implementation Guides.
 
 **Scope**: This policy applies to all personnel and external parties who have or may have access to [Organisation]'s confidential information, including:
 
@@ -546,10 +549,10 @@ The boundary is: POL-A.6.6 defines WHAT NDA requirements apply and WHEN → Lega
 
 ## Implementation Resources
 
-- **ISMS-IMP-A.6.6.1**: NDA Template Registry & Inventory
-- **ISMS-IMP-A.6.6.2**: NDA Execution & Tracking
-- **ISMS-IMP-A.6.6.3**: NDA Review & Compliance
-- **ISMS-IMP-A.6.6.4**: NDA Compliance Dashboard
+- **ISMS-IMP-A.6.6.1-UG/TG**: NDA Template Registry & Inventory
+- **ISMS-IMP-A.6.6.2-UG/TG**: NDA Execution & Tracking
+- **ISMS-IMP-A.6.6.3-UG/TG**: NDA Review & Compliance
+- **ISMS-IMP-A.6.6.4-UG/TG**: NDA Compliance Dashboard
 
 ## Compliance Metrics (Dashboard KPIs)
 
@@ -604,6 +607,6 @@ The following metrics SHALL be tracked and reported via ISMS-IMP-A.6.6.4:
 
 ---
 
-*This policy establishes requirements for confidentiality and non-disclosure agreements. Implementation procedures are documented in ISMS-IMP-A.6.6.1-4.*
+*This policy establishes requirements for confidentiality and non-disclosure agreements. Implementation procedures are documented in ISMS-IMP-A.6.6.1-4 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

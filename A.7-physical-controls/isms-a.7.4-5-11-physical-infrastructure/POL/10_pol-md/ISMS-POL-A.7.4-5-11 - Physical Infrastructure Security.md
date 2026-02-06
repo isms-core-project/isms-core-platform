@@ -40,7 +40,10 @@
 - ISMS-POL-A.5.19-23 (Cloud Services)
 - ISMS-POL-A.5.24-28 (Incident Management)
 - ISMS-POL-A.5.30-8.13-14 (Business Continuity)
-- ISMS-IMP-A.7.4-5-11 (Implementation Guidance)
+- ISMS-IMP-A.7.4-5-11-S1-UG/TG (Physical Monitoring Assessment)
+- ISMS-IMP-A.7.4-5-11-S2-UG/TG (Environmental Protection Implementation)
+- ISMS-IMP-A.7.4-5-11-S3-UG/TG (Utility Resilience Implementation)
+- ISMS-IMP-A.7.4-5-11-S4-UG/TG (Facilities Assessment)
 - ISO/IEC 27001:2022 Controls A.7.4, A.7.5, A.7.11
 
 ---
@@ -423,6 +426,6 @@ Refer to ISMS-POL-00 (Regulatory Applicability Framework) for complete regulator
 
 ---
 
-*This policy establishes [Organisation]'s requirements for physical infrastructure security. Implementation procedures are documented in ISMS-IMP-A.7.4-5-11.*
+*This policy establishes [Organisation]'s requirements for physical infrastructure security. Implementation procedures are documented in ISMS-IMP-A.7.4-5-11 (UG/TG).*
 
 <!-- QA_VERIFIED: [Date] -->

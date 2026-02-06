@@ -38,7 +38,11 @@
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.8.11 (Implementation Guidance Suite)
+- ISMS-IMP-A.8.11.1-UG/TG (Data Inventory & Classification Assessment)
+- ISMS-IMP-A.8.11.2-UG/TG (Masking Technique Selection & Requirements)
+- ISMS-IMP-A.8.11.3-UG/TG (Environment Coverage Assessment)
+- ISMS-IMP-A.8.11.4-UG/TG (Testing & Validation Framework)
+- ISMS-IMP-A.8.11.5-UG/TG (Compliance Dashboard)
 - ISMS-CTX-A.8.11 (Data Masking Technical Reference - Technical Reference Only)
 - ISO/IEC 27001:2022 Control A.8.11
 
@@ -50,7 +54,7 @@ This policy establishes [Organization]'s requirements for data masking controls 
 
 **Scope**: This policy applies to all sensitive data categories (PII, financial, health, credentials, proprietary) across all environments (production, test, development, analytics, training, backup); all masking techniques (redaction, substitution, tokenization, pseudonymization, anonymization); and all organizational personnel, contractors, and third parties handling sensitive data.
 
-**Purpose**: Define organizational requirements for data masking control implementation and governance. This policy establishes WHAT data requires masking, WHICH techniques are approved, and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.11.
+**Purpose**: Define organizational requirements for data masking control implementation and governance. This policy establishes WHAT data requires masking, WHICH techniques are approved, and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.11 (UG/TG variants).
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS, HIPAA, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
 
@@ -1309,6 +1313,6 @@ Examples:
 
 ---
 
-*This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.8.11. Technical reference information is provided in ISMS-CTX-A.8.11 (NOT ISMS).*
+*This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.8.11 (UG/TG). Technical reference information is provided in ISMS-CTX-A.8.11 (NOT ISMS).*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

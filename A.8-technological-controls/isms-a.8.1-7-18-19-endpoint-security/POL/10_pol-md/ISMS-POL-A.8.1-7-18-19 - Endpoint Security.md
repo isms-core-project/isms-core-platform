@@ -38,7 +38,12 @@
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.8.1-7-18-19 (Implementation Guidance Suite)
+- ISMS-IMP-A.8.1-7-18-19-S1-UG/TG (Endpoint Discovery Process)
+- ISMS-IMP-A.8.1-7-18-19-S2-UG/TG (Security Baseline Implementation)
+- ISMS-IMP-A.8.1-7-18-19-S3-UG/TG (Malware Protection Deployment)
+- ISMS-IMP-A.8.1-7-18-19-S4-UG/TG (Software Control Process)
+- ISMS-IMP-A.8.1-7-18-19-S5-UG/TG (Privileged Utility Management)
+- ISMS-IMP-A.8.1-7-18-19-S6-UG/TG (Endpoint Security Assessment)
 - ISMS-POL-A.5.9 (Asset Inventory)
 - ISMS-POL-A.8.2 (Privileged Access Rights)
 - ISMS-POL-A.8.8 (Vulnerability Management)
@@ -55,7 +60,7 @@ This policy establishes [Organization]'s requirements for endpoint security, imp
 
 **Scope**: This policy applies to all user endpoint devices regardless of type (laptops, desktops, mobile devices, tablets, IoT devices), operating system (Windows, macOS, Linux, iOS, Android, ChromeOS), or ownership model (corporate-owned, BYOD, contractor, guest).
 
-**Purpose**: Define organizational requirements for endpoint security control implementation and governance. This policy establishes WHAT endpoint security protection is required, WHEN it must be implemented, and WHO is accountable. Implementation procedures (HOW controls are implemented) are documented separately in ISMS-IMP-A.8.1-7-18-19 Implementation Guides.
+**Purpose**: Define organizational requirements for endpoint security control implementation and governance. This policy establishes WHAT endpoint security protection is required, WHEN it must be implemented, and WHO is accountable. Implementation procedures (HOW controls are implemented) are documented separately in ISMS-IMP-A.8 (UG/TG variants).1-7-18-19 Implementation Guides.
 
 **Combined Control Rationale**: A.8.1 (endpoint devices), A.8.7 (malware protection), A.8.18 (privileged utilities), and A.8.19 (software installation) are implemented as a unified framework because:
 
@@ -958,5 +963,5 @@ This policy addresses endpoint security requirements from multiple regulatory fr
 
 ---
 
-*This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.8.1-7-18-19.*
+*This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.8.1-7-18-19 (UG/TG).*
 <!-- QA_VERIFIED: 2026-02-01 -->

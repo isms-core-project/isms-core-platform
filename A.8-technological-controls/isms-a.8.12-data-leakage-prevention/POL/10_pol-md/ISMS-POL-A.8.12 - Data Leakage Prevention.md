@@ -46,7 +46,11 @@
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.8.12 (Implementation Guidance Suite - 5 assessment workbooks)
+- ISMS-IMP-A.8.12.1-UG/TG (DLP Infrastructure Assessment)
+- ISMS-IMP-A.8.12.2-UG/TG (Data Classification Assessment)
+- ISMS-IMP-A.8.12.3-UG/TG (Channel Coverage Assessment)
+- ISMS-IMP-A.8.12.4-UG/TG (Monitoring & Response Assessment)
+- ISMS-IMP-A.8.12.5-UG/TG (Compliance Dashboard)
 - ISO/IEC 27001:2022 Control A.8.12
 - Swiss FADP (Federal Act on Data Protection)
 - EU GDPR (General Data Protection Regulation)
@@ -59,7 +63,7 @@ This policy establishes [Organization]'s requirements for data leakage preventio
 
 **Scope**: This policy applies to all information assets classified as Internal, Confidential, or Restricted; all data egress channels including email, web, endpoints, network, cloud, and mobile; all organizational personnel; and all DLP technologies regardless of deployment model.
 
-**Purpose**: Define organizational requirements for DLP control implementation and governance. This policy establishes WHAT data leakage prevention protection is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.12. DLP controls address both malicious exfiltration (insider threats, compromised systems) and accidental disclosure (user error, misconfiguration).
+**Purpose**: Define organizational requirements for DLP control implementation and governance. This policy establishes WHAT data leakage prevention protection is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.12 (UG/TG variants). DLP controls address both malicious exfiltration (insider threats, compromised systems) and accidental disclosure (user error, misconfiguration).
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG (employee monitoring Art. 328b CO), EU GDPR (lawful processing Art. 5, security Art. 32), and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS, FINMA, DORA, NIS2, HIPAA) apply where [Organization]'s business activities trigger applicability.
 
@@ -1185,6 +1189,6 @@ Data Leakage Prevention (DLP) protects [Organization]'s sensitive information fr
 
 ---
 
-*This policy establishes requirements for data leakage prevention. Implementation procedures, technical standards, and assessment workbooks are documented in ISMS-IMP-A.8.12.*
+*This policy establishes requirements for data leakage prevention. Implementation procedures, technical standards, and assessment workbooks are documented in ISMS-IMP-A.8.12 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-02 -->
