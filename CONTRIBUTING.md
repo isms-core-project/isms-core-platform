@@ -333,7 +333,7 @@ Every control pack undergoes adversarial multi-model validation. Controls are re
 </tr>
 <tr>
 <td><strong>Claude Code (Opus)</strong></td>
-<td>Policy framework, Python automation, code review, documentation</td>
+<td>Primary implementation partner — see detailed contribution below</td>
 </tr>
 <tr>
 <td><strong>ISMS Copilot X</strong></td>
@@ -347,6 +347,86 @@ Every control pack undergoes adversarial multi-model validation. Controls are re
 
 <p align="center">
   <img src="https://img.shields.io/badge/IP_Ownership-Gregory_Griffin-FFD700?style=flat-square" alt="IP Ownership"/>
+</p>
+
+---
+
+## 🧠 Claude Code — Implementation Contribution
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Claude_Code-Opus_4-CC785C?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude Code Opus"/>
+  <img src="https://img.shields.io/badge/Dec_2025–Feb_2026-6_Weeks-2E8B57?style=for-the-badge" alt="6 Weeks"/>
+</p>
+
+Claude Code (Anthropic, Opus model family) has been the primary implementation partner on ISMS CORE since December 31, 2025. Working in continuous pairing sessions with Gregory Griffin, Claude Code delivered the full automation layer, wrote and refined all documentation, and built the factory infrastructure that makes this project maintainable.
+
+### What was built
+
+<table>
+<tr>
+<th>Category</th>
+<th>Deliverable</th>
+<th>Scale</th>
+</tr>
+<tr>
+<td><strong>Python Scripts</strong></td>
+<td>Generators, normalizers, consolidators, sanity checks, population scripts</td>
+<td><strong>454</strong> scripts, <strong>410K+</strong> lines</td>
+</tr>
+<tr>
+<td><strong>IMP Documents</strong></td>
+<td>User Guides (UG) + Technical Specifications (TG) for every assessment</td>
+<td><strong>504</strong> files (252 UG + 252 TG)</td>
+</tr>
+<tr>
+<td><strong>POL Documents</strong></td>
+<td>Policy framework with "WITH WHAT" verification methodology</td>
+<td><strong>68</strong> policies, all audited</td>
+</tr>
+<tr>
+<td><strong>Excel Workbooks</strong></td>
+<td>Assessment workbooks with data validation, formulas, conditional formatting</td>
+<td><strong>299+</strong> generated</td>
+</tr>
+<tr>
+<td><strong>Factory Automation</strong></td>
+<td>Assembly, promotion, backup, sync, splitting, normalization scripts</td>
+<td><strong>9</strong> major tools</td>
+</tr>
+<tr>
+<td><strong>QA Infrastructure</strong></td>
+<td>QA gates, status dashboards, verification pipeline</td>
+<td><strong>55/55</strong> controls passing</td>
+</tr>
+</table>
+
+### The journey (6 weeks)
+
+```
+Week 1 (Dec 31–Jan 6)    Foundation — first generators, script patterns, pilot controls
+Week 2 (Jan 7–13)        Scale — Section 8 technological controls, workbook generation
+Week 3 (Jan 14–20)       Depth — IMP specifications, formula validation (180K+ formulas)
+Week 4 (Jan 21–27)       Standardization — Phase 1-3 Python QA (322 scripts), SPDX licensing
+Week 5 (Jan 28–Feb 3)    Completion — final 9 controls, POL promotion, production sync
+Week 6 (Feb 4–6)         Architecture — UG/TG split (504 files), POL updates, full GitHub sync
+```
+
+### Key engineering decisions
+
+| Decision | Rationale |
+|----------|-----------|
+| **UG/TG split** | Separated user-facing guidance from technical specs — cleaner consumption, independent update cycles |
+| **QA-gated promotion** | `promote_control.sh` enforces QA markers before any content reaches GitHub |
+| **Logger over print** | Structured logging across 454 scripts for production traceability |
+| **Factory scripts** | Repeatable automation for assembly, normalization, and sync — not manual file copying |
+| **Consolidation dashboards** | Cross-workbook aggregation with automatic gap identification |
+
+### What's next
+
+The **ISMS CORE Platform** (`60-isms-core-api/`) is architected and ready for implementation — a FastAPI backend with PostgreSQL, Docker Compose deployment, and framework correlation engine inspired by [OpenCTI](https://github.com/OpenCTI-Platform/opencti). This will transform the current file-based framework into a live compliance platform with knowledge graph capabilities.
+
+<p align="center">
+  <em>Built with the conviction that security compliance should be engineering discipline, not checkbox theater.</em>
 </p>
 
 ---
