@@ -39,6 +39,14 @@ ehthumbs.db
 credentials*
 config.ini
 
+# Allow ISMS documents and generators that legitimately contain these words
+!ISMS-*password*
+!ISMS-*secret*
+!ISMS-*token*
+!generate_*password*
+!generate_*secret*
+!generate_*token*
+
 # Temporary Files
 *.tmp
 *.log
