@@ -591,9 +591,9 @@ Diese Richtlinie unterstützt folgende SoA-Einträge:
 
 | Control | Status | Justifikation | Implementierung |
 |---------|--------|---------------|-----------------|
-| **A.8.20 - Networks Security** | ☑ Anwendbar | [Organisation] betreibt Netzwerkinfrastruktur, die Sicherheits-Kontrollen erfordert | Abschnitt 2.1, ISMS-IMP-A.8.20-21-22 |
-| **A.8.21 - Security of Network Services** | ☑ Anwendbar | [Organisation] betreibt kritische Netzwerk-Services, die Sicherheits-Kontrollen erfordern | Abschnitt 2.2, ISMS-IMP-A.8.20-21-22 |
-| **A.8.22 - Segregation of Networks** | ☑ Anwendbar | [Organisation] erfordert Netzwerk-Segmentierung zur Risiko-Limitierung und zur Erfüllung regulatorischer Anforderungen | Abschnitt 2.3, ISMS-IMP-A.8.20-21-22 |
+| **A.8.20 - Networks Security** | ☑ Anwendbar | [Organisation] betreibt Netzwerkinfrastruktur, die Sicherheits-Kontrollen erfordert | Abschnitt 2.1, ISMS-IMP-A.8.20-21-22-UG/TG |
+| **A.8.21 - Security of Network Services** | ☑ Anwendbar | [Organisation] betreibt kritische Netzwerk-Services, die Sicherheits-Kontrollen erfordern | Abschnitt 2.2, ISMS-IMP-A.8.20-21-22-UG/TG |
+| **A.8.22 - Segregation of Networks** | ☑ Anwendbar | [Organisation] erfordert Netzwerk-Segmentierung zur Risiko-Limitierung und zur Erfüllung regulatorischer Anforderungen | Abschnitt 2.3, ISMS-IMP-A.8.20-21-22-UG/TG |
 
 **Verwandte Controls** (Integrations-Punkte):
 
@@ -807,3 +807,5 @@ Frequenz-Reduktionen erfordern CISO-Genehmigung und dokumentierte Risk Acceptanc
 **Dokumenten-Location**: [Organisation] Internes Richtlinien-Portal
 
 ---
+
+<!-- QA_VERIFIED: 2026-02-06 -->

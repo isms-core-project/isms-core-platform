@@ -599,3 +599,5 @@ Diese Policy adressiert folgende regulatorische Anforderungen:
 ---
 
 **END OF DOCUMENT**
+
+<!-- QA_VERIFIED: 2026-02-06 -->

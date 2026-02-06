@@ -38,7 +38,12 @@
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.8.20-21-22 (Implementation Guidance Suite)
+- ISMS-IMP-A.8.20-21-22.S1-UG/TG (Network Discovery)
+- ISMS-IMP-A.8.20-21-22.S2-UG/TG (Architecture Documentation)
+- ISMS-IMP-A.8.20-21-22.S3-UG/TG (Device Hardening)
+- ISMS-IMP-A.8.20-21-22.S4-UG/TG (Services Security)
+- ISMS-IMP-A.8.20-21-22.S5-UG/TG (Segmentation Implementation)
+- ISMS-IMP-A.8.20-21-22.S6-UG/TG (Security Testing)
 - ISO/IEC 27001:2022 Controls A.8.20, A.8.21, A.8.22
 - ISMS-POL-A.8.15 (Logging)
 - ISMS-POL-A.8.16 (Monitoring Activities)
@@ -52,7 +57,7 @@ This policy establishes [Organization]'s requirements for network security contr
 
 **Scope**: This policy applies to all network infrastructure, network devices, network services, and network segments regardless of deployment model (on-premises, cloud, hybrid) or technology (traditional networking, software-defined networking).
 
-**Purpose**: Define organizational requirements for network security control implementation and governance. This policy establishes WHAT network security protection is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.20-21-22. Technical standards and configurations are intentionally defined outside this policy to preserve technological agility.
+**Purpose**: Define organizational requirements for network security control implementation and governance. This policy establishes WHAT network security protection is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.20-21-22 (UG/TG variants). Technical standards and configurations are intentionally defined outside this policy to preserve technological agility.
 
 **Combined Control Approach**: These three controls are implemented as a unified framework because they operate on the same network infrastructure and share common discovery, assessment, and evidence collection processes. Despite unified implementation, each control maintains distinct requirements for Statement of Applicability (SoA) purposes.
 
@@ -604,9 +609,9 @@ This policy supports the following SoA entries:
 
 | Control | Status | Justification | Implementation |
 |---------|--------|---------------|----------------|
-| **A.8.20 - Networks Security** | ☑ Applicable | [Organization] operates network infrastructure requiring security controls | Section 2.1, ISMS-IMP-A.8.20-21-22 |
-| **A.8.21 - Security of Network Services** | ☑ Applicable | [Organization] operates critical network services requiring security controls | Section 2.2, ISMS-IMP-A.8.20-21-22 |
-| **A.8.22 - Segregation of Networks** | ☑ Applicable | [Organization] requires network segmentation to limit risk and meet regulatory requirements | Section 2.3, ISMS-IMP-A.8.20-21-22 |
+| **A.8.20 - Networks Security** | ☑ Applicable | [Organization] operates network infrastructure requiring security controls | Section 2.1, ISMS-IMP-A.8.20-21-22-UG/TG |
+| **A.8.21 - Security of Network Services** | ☑ Applicable | [Organization] operates critical network services requiring security controls | Section 2.2, ISMS-IMP-A.8.20-21-22-UG/TG |
+| **A.8.22 - Segregation of Networks** | ☑ Applicable | [Organization] requires network segmentation to limit risk and meet regulatory requirements | Section 2.3, ISMS-IMP-A.8.20-21-22-UG/TG |
 
 **Related Controls** (integration points):
 
@@ -819,6 +824,6 @@ Frequency reductions require CISO approval and documented risk acceptance.
 
 ---
 
-*This policy establishes requirements for network security controls covering network infrastructure (A.8.20), network services (A.8.21), and network segmentation (A.8.22). Implementation procedures are documented in ISMS-IMP-A.8.20-21-22.*
+*This policy establishes requirements for network security controls covering network infrastructure (A.8.20), network services (A.8.21), and network segmentation (A.8.22). Implementation procedures are documented in ISMS-IMP-A.8.20-21-22 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-02 -->

@@ -1284,3 +1284,5 @@ Solution: Enforce masking server-side (database or application layer)
 **Feedback**: Technical corrections, additions, or improvements should be submitted to Security Architecture team for review and incorporation.
 
 **Reminder**: This document is NOT ISMS. Binding requirements are in ISMS-POL-A.8.11 (Data Masking Policy).
+
+<!-- QA_VERIFIED: 2026-02-06 -->

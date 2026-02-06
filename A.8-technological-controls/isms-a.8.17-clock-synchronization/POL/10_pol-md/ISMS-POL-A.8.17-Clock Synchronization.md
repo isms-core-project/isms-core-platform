@@ -37,7 +37,10 @@
 **Related Documents**: 
 
 - ISMS-POL-00 (Regulatory Applicability Framework)
-- ISMS-IMP-A.8.17 (Implementation Guidance Suite)
+- ISMS-IMP-A.8.17-S1-UG/TG (Time Source Configuration)
+- ISMS-IMP-A.8.17-S2-UG/TG (Synchronization Verification Process)
+- ISMS-IMP-A.8.17-S3-UG/TG (Exception Management)
+- ISMS-IMP-A.8.17-S4-UG/TG (Compliance Dashboard)
 - ISO/IEC 27001:2022 Control A.8.17
 - ISMS-POL-A.8.21 (Network Services Security)
 - ISMS-POL-A.8.15 (Logging)
@@ -51,7 +54,7 @@ This policy establishes [Organization]'s requirements for clock synchronization 
 
 **Scope**: This policy applies to all information processing systems that generate logs or participate in security-relevant operations, including servers, network devices, security systems, and cloud instances.
 
-**Purpose**: Define organizational requirements for time synchronization implementation and governance. This policy establishes WHAT time synchronization is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.17.
+**Purpose**: Define organizational requirements for time synchronization implementation and governance. This policy establishes WHAT time synchronization is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.17 (UG/TG variants).
 
 **Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
 
@@ -613,6 +616,6 @@ This policy addresses clock synchronization requirements from:
 
 ---
 
-*This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.8.17.*
+*This policy establishes requirements. Implementation procedures are documented in ISMS-IMP-A.8.17 (UG/TG).*
 
 <!-- QA_VERIFIED: 2026-02-02 -->
