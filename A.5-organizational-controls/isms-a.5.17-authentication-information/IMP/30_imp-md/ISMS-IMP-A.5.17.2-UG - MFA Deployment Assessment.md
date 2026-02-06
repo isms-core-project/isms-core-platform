@@ -18,26 +18,9 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-1. [PART I: USER COMPLETION GUIDE](#part-i-user-completion-guide)
-   - [1.1 Assessment Overview](#11-assessment-overview)
-   - [1.2 Control Requirements](#12-control-requirements)
-   - [1.3 Prerequisites](#13-prerequisites)
-   - [1.4 Workbook Structure](#14-workbook-structure)
-   - [1.5 Completion Walkthrough](#15-completion-walkthrough)
-   - [1.6 Evidence Collection](#16-evidence-collection)
-   - [1.7 Common Pitfalls](#17-common-pitfalls)
-   - [1.8 Quality Checklist](#18-quality-checklist)
-   - [1.9 Review and Approval](#19-review-and-approval)
-2. [PART II: TECHNICAL SPECIFICATION](#part-ii-technical-specification)
-   - [2.1 Workbook Technical Details](#21-workbook-technical-details)
-   - [2.2 Sheet Specifications](#22-sheet-specifications)
-   - [2.3 Conditional Formatting](#23-conditional-formatting)
-   - [2.4 Integration Points](#24-integration-points)
-   - [2.5 Related Documents](#25-related-documents)
-
----
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.17.2-TG.
 
 ---
 
