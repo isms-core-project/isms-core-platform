@@ -309,6 +309,8 @@ Every control pack undergoes adversarial multi-model validation. Controls are re
 | **ChatGPT GPT-4** | Red Team Auditor | Attack surface review, gap identification, adversarial testing |
 | **Gregory Griffin** | Architect + Final Gate | Methodology, domain expertise, IP ownership, approval authority |
 
+Each model operates under **purpose-built instruction sets** authored by Gregory Griffin — structured prompts defining scope, constraints, output format, and audit criteria. These aren't casual prompts; they are controlled operational documents specifying exactly what each model must check, what to ignore (e.g., placeholder dates), and how to classify findings. The instruction sets themselves represent a reusable methodology for AI-governed compliance engineering.
+
 ### Finding Classification
 
 | Severity | Criteria | Action |
@@ -358,7 +360,7 @@ Every control pack undergoes adversarial multi-model validation. Controls are re
   <img src="https://img.shields.io/badge/Dec_2025–Feb_2026-6_Weeks-2E8B57?style=for-the-badge" alt="6 Weeks"/>
 </p>
 
-Claude Code (Anthropic, Opus model family) has been the primary implementation partner on ISMS CORE since December 31, 2025. Working in continuous pairing sessions with Gregory Griffin, Claude Code delivered the full automation layer, wrote and refined all documentation, and built the factory infrastructure that makes this project maintainable.
+Claude Code (Anthropic, Opus model family) has been the primary implementation partner on ISMS CORE since December 31, 2025. Working in continuous pairing sessions directed by Gregory Griffin — who authored all methodology, architectural decisions, prompt instruction sets, and multi-model orchestration — Claude Code delivered the full automation layer, wrote and refined all documentation, and built the factory infrastructure that makes this project maintainable.
 
 ### What was built
 
