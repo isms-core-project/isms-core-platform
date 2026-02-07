@@ -448,7 +448,7 @@ Claude Code (Anthropic, Opus model family) has been the primary implementation p
 <tr>
 <td><strong>QA Infrastructure</strong></td>
 <td>QA gates, status dashboards, verification pipeline</td>
-<td><strong>55/55</strong> controls passing</td>
+<td><strong>53/53</strong> controls passing</td>
 </tr>
 </table>
 
