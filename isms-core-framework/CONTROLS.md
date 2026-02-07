@@ -110,7 +110,7 @@ isms-a.X.X-control-name/
 | [A.7.4-5, 11](A.7-physical-controls/isms-a.7.4-5-11-physical-infrastructure/) | Physical Infrastructure | POL, IMP, SCR |
 | [A.7.6-7, 14](A.7-physical-controls/isms-a.7.6-7-14-information-media-handling/) | Information & Media Handling | POL, IMP, SCR |
 | [A.7.8-9](A.7-physical-controls/isms-a.7.8-9-equipment-location-security/) | Equipment Location Security | POL, IMP, SCR |
-| [A.7.10](A.7-physical-controls/isms-a.7.10-delivery-and-loading-areas/) | Delivery and Loading Areas | POL, IMP, SCR |
+| [A.7.10](A.7-physical-controls/isms-a.7.10-storage-media/) | Storage Media | POL, IMP, SCR |
 | [A.7.12-13](A.7-physical-controls/isms-a.7.12-13-infrastructure-maintenance/) | Infrastructure Maintenance | POL, IMP, SCR |
 
 ---

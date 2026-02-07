@@ -64,7 +64,7 @@ ISMS CORE uses *control packs* to implement multiple Annex A controls through a 
 | P27 | `isms-a.7.4-5-11-physical-infrastructure` | POL, IMP, SCR |
 | P28 | `isms-a.7.6-7-14-information-media-handling` | POL, IMP, SCR |
 | P29 | `isms-a.7.8-9-equipment-location-security` | POL, IMP, SCR |
-| P30 | `isms-a.7.10-delivery-and-loading-areas` | POL, IMP, SCR |
+| P30 | `isms-a.7.10-storage-media` | POL, IMP, SCR |
 | P31 | `isms-a.7.12-13-infrastructure-maintenance` | POL, IMP, SCR |
 | P32 | `isms-a.8.1-7-18-19-endpoint-security` | POL, IMP, SCR |
 | P33 | `isms-a.8.2-3-5-authentication-privileged-access` | POL, IMP, SCR |
