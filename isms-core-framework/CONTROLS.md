@@ -47,6 +47,7 @@ isms-a.X.X-control-name/
 <p>
 <img src="https://img.shields.io/badge/A.5-Organizational-9400D3?style=flat-square" alt="Organizational"/>
 <img src="https://img.shields.io/badge/21_packs-0066CC?style=flat-square" alt="21 packs"/>
+<img src="https://img.shields.io/badge/100%25_Complete-00AA00?style=flat-square" alt="100% Complete"/>
 </p>
 
 📁 **[A.5-organizational-controls/](A.5-organizational-controls/)**
@@ -82,6 +83,7 @@ isms-a.X.X-control-name/
 <p>
 <img src="https://img.shields.io/badge/A.6-People-FF6600?style=flat-square" alt="People"/>
 <img src="https://img.shields.io/badge/4_packs-0066CC?style=flat-square" alt="4 packs"/>
+<img src="https://img.shields.io/badge/100%25_Complete-00AA00?style=flat-square" alt="100% Complete"/>
 </p>
 
 📁 **[A.6-people-controls/](A.6-people-controls/)**
@@ -100,6 +102,7 @@ isms-a.X.X-control-name/
 <p>
 <img src="https://img.shields.io/badge/A.7-Physical-32CD32?style=flat-square" alt="Physical"/>
 <img src="https://img.shields.io/badge/6_packs-0066CC?style=flat-square" alt="6 packs"/>
+<img src="https://img.shields.io/badge/100%25_Complete-00AA00?style=flat-square" alt="100% Complete"/>
 </p>
 
 📁 **[A.7-physical-controls/](A.7-physical-controls/)**
