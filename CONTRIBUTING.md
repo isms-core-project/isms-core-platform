@@ -339,7 +339,7 @@ Every control pack undergoes adversarial multi-model validation. Controls are re
        ┌───────┴───────┐
        ▼               ▼
   ┌──────────┐   ┌──────────┐
-  │ Copilot X │   │  GPT-4   │
+  │ Copilot X │   │  GPT-5   │
   │ Blue Team │   │ Red Team │
   │  (Audit)  │   │ (Attack) │
   └─────┬─────┘   └─────┬────┘
@@ -356,7 +356,7 @@ Every control pack undergoes adversarial multi-model validation. Controls are re
 |-------|------|-------|
 | **Claude Code (Opus)** | Implementation + QA | Policy writing, Python generators, code review, pattern analysis |
 | **ISMS Copilot X** | Blue Team Audit | Stage 1 documentation adequacy, Stage 2 implementation effectiveness |
-| **ChatGPT GPT-4** | Red Team Auditor | Attack surface review, gap identification, adversarial testing |
+| **ChatGPT GPT-5** | Red Team Auditor | Attack surface review, gap identification, adversarial testing |
 | **Gregory Griffin** | Architect + Final Gate | Methodology, domain expertise, IP ownership, approval authority |
 
 Each model operates under **purpose-built instruction sets** authored by Gregory Griffin — structured prompts defining scope, constraints, output format, and audit criteria. These aren't casual prompts; they are controlled operational documents specifying exactly what each model must check, what to ignore (e.g., placeholder dates), and how to classify findings. The instruction sets themselves represent a reusable methodology for AI-governed compliance engineering.
@@ -392,7 +392,7 @@ Each model operates under **purpose-built instruction sets** authored by Gregory
 <td>Blue team audit, documentation adequacy, implementation review</td>
 </tr>
 <tr>
-<td><strong>ChatGPT GPT-4</strong></td>
+<td><strong>ChatGPT GPT-5</strong></td>
 <td>Red team audit, adversarial testing, gap identification</td>
 </tr>
 </table>
