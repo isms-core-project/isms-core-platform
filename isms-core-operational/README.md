@@ -140,7 +140,7 @@ All policies are aligned to **Swiss nFADP (revDSG)** as the primary data protect
 - **Swiss nFADP** as primary data protection framework
 - **GDPR** referenced where applicable (cross-border, EU customers)
 - **SOC 2** trust service criteria mapped where relevant
-- **Technical standards modernised** — TLS 1.2+, 12-char passwords, MFA required, same-day leaver revocation
+- **Technical standards** updated to reflect current industry best practices
 - **PCI DSS** gated or removed from baseline (opt-in for organisations in scope)
 
 ---
