@@ -124,12 +124,23 @@ A.8-technological-controls/
         └── 90_workbooks/
 ```
 
-### 2) Prerequisites
+### 2) Understand IMP documents (UG / TG)
+
+Each assessment has two companion documents in `IMP/30_imp-md/`:
+
+| File | Type | Purpose |
+|------|------|---------|
+| `ISMS-IMP-A.X.X.N-UG - Title.md` | **User Guide** | How to complete the assessment — walkthrough, evidence, pitfalls |
+| `ISMS-IMP-A.X.X.N-TG - Title.md` | **Technical Spec** | What the Excel workbook contains — sheets, columns, validations (auto-generated from Python) |
+
+Start with the **UG** if you're completing an assessment. Refer to the **TG** if you're developing or modifying a generator script. See [CONTRIBUTING.md](CONTRIBUTING.md#-imp-document-structure-ug--tg) for full details.
+
+### 3) Prerequisites
 - Python 3.11+ recommended (3.10+ may work depending on dependencies)
 - A virtual environment (`python -m venv .venv`)
 - `pip install openpyxl` (primary dependency)
 
-### 3) Generate a workbook (example)
+### 4) Generate a workbook (example)
 ```bash
 cd A.8-technological-controls/isms-a.8.24-use-of-cryptography/SCR/10_generator-master
 python3 generate_a824_1_data_transmission_assessment.py
