@@ -137,7 +137,7 @@ All 53 ISO 27001:2022 Annex A control groups are covered:
 
 All policies are aligned to **Swiss nFADP (revDSG)** as the primary data protection baseline, with GDPR referenced where applicable. Key design decisions:
 
-- **Swiss nFADP** as primary data protection framework (not UK DPA or GDPR-only)
+- **Swiss nFADP** as primary data protection framework
 - **GDPR** referenced where applicable (cross-border, EU customers)
 - **SOC 2** trust service criteria mapped where relevant
 - **Technical standards modernised** — TLS 1.2+, 12-char passwords, MFA required, same-day leaver revocation
