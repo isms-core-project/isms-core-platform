@@ -43,7 +43,7 @@ The platform provides **two products** at different levels of depth:
 <tr>
 <td><strong>What</strong></td>
 <td>Full engineering product — governance policies with implementation guides, assessment scripts, and generated workbooks</td>
-<td>Lightweight SME product — one operational policy per control group</td>
+<td>Lightweight SME product — operational policies with compliance checklists per control group</td>
 </tr>
 <tr>
 <td><strong>For</strong></td>
@@ -53,7 +53,7 @@ The platform provides **two products** at different levels of depth:
 <tr>
 <td><strong>Per control</strong></td>
 <td>POL + IMP (UG/TG) + SCR + WKBK + REF + CTX</td>
-<td>One OP-POL</td>
+<td>OP-POL + SCR + WKBK</td>
 </tr>
 <tr>
 <td><strong>Coverage</strong></td>
@@ -63,7 +63,7 @@ The platform provides **two products** at different levels of depth:
 <tr>
 <td><strong>Artifacts</strong></td>
 <td>504 IMP docs, 454 Python scripts, Excel workbooks</td>
-<td>53 operational policies</td>
+<td>53 operational policies, compliance checklist scripts and workbooks</td>
 </tr>
 </table>
 
