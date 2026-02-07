@@ -136,8 +136,8 @@ python3 generate_a824_1_data_transmission_assessment.py
 
 ### Operational (lightweight SME product)
 
-1. Browse [isms-core-operational/](isms-core-operational/) and navigate to the relevant control group
-2. Read the operational policy: `ISMS-OP-POL-A.X.X - Title.md`
+1. Browse [isms-core-operational/CONTROLS.md](isms-core-operational/CONTROLS.md) for the control pack index
+2. Navigate to a control folder and read POL
 3. Generate the compliance checklist and work through each requirement
 4. Record status, evidence, and owners — that's your audit evidence
 
