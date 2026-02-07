@@ -221,7 +221,7 @@ Every control pack undergoes **adversarial multi-model validation** — controls
 
 ```
 ┌─────────────────┐     ┌──────────────────┐     ┌──────────────────┐
-│  Claude Code     │────▶│  ISMS Copilot X   │────▶│  GPT-4 Red Team  │
+│  Claude Code     │────▶│  ISMS Copilot X   │────▶│  GPT-5.x Red Team │
 │  (Build + QA)    │     │  (Blue Team Audit) │     │  (Attack Surface) │
 └─────────────────┘     └──────────────────┘     └──────────────────┘
          │                        │                        │
