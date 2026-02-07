@@ -68,19 +68,6 @@ Before completing this assessment:
 - [ ] Previous review reports (if any exist)
 - [ ] Understanding of ISO 27007 / ISO 27008 guidance
 
-### Workbook Structure
-
-| Sheet | Purpose | Key Actions |
-|-------|---------|-------------|
-| Instructions | Guidance and metadata | Review before starting |
-| Review_Schedule | Multi-year planning | Define review schedule |
-| Reviewer_Registry | Qualified reviewers | Register qualified reviewers |
-| Review_Scope | Scope per review | Define each review's scope |
-| Review_Execution | Tracking progress | Track review execution |
-| Findings_Summary | Key findings | Record review outcomes |
-| Evidence_Register | Evidence tracking | Link supporting evidence |
-| Approval_SignOff | Authorisation | Obtain approvals |
-
 ### Completion Walkthrough
 
 **Step 1: Review_Schedule Sheet**
@@ -299,7 +286,6 @@ Before submitting:
 | Final Report | CISO | Within 10 days of draft |
 
 ---
-
 
 **END OF USER GUIDE**
 

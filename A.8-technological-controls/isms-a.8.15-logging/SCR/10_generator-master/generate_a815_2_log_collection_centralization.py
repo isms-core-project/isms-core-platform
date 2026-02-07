@@ -266,6 +266,8 @@ BULLET = "\u2022"          # •
 
 # Document identification constants
 DOCUMENT_ID = "ISMS-IMP-A.8.15.2"
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_Log_Collection_Centralization_{GENERATED_TIMESTAMP}.xlsx"
 CONTROL_REF = "ISO/IEC 27001:2022 - Control A.8.15: Logging"
 
 from openpyxl.chart import BarChart, LineChart, Reference

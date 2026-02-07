@@ -1310,9 +1310,6 @@ Before submitting this assessment, verify:
 
 ---
 
-**END OF ISMS-IMP-A.5.9.3 PART I - USER COMPLETION GUIDE**
-
-
 **END OF USER GUIDE**
 
 ---

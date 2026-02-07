@@ -12,11 +12,11 @@
 | **Version** | 1.0 |
 | **Assessment Area** | Secure Configuration & Deployment |
 | **Related Policy** | ISMS-POL-A.5.19-23-S5 (Cloud Services Security - Sections 5, 9) |
-| **Purpose** | Assess and document secure configuration of cloud services across identity, data protection, network, logging, and backup controls |
+| **Purpose** | Assess and document secure configuration of cloud services across identity, data protection, network, logging, backup, and jurisdictional risk controls |
 | **Target Audience** | IT Operations, Cloud Operations, DevOps Engineers, Cloud Security Engineers, Platform Engineering |
 | **Assessment Type** | Technical Configuration Assessment |
 | **Review Cycle** | Quarterly (with continuous monitoring) |
-| **Date** | [Date] |
+| **Date** | [Date to be set] |
 
 ### Version History
 
@@ -24,138 +24,217 @@
 |---------|------|---------|--------|
 | 1.0 | [Date] | Initial Excel workbook specification | ISMS Implementation Team |
 
-### Document Structure
+---
 
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.5.23.S3-UG.
+
+> Auto-generated from `generate_reg_a523_3_secure_config.py`
+> Re-generate with: `python3 generate_tg_from_scr.py --apply`
+
+## Workbook Overview
+
+| Property | Value |
+|----------|-------|
+| **Document ID** | `ISMS-IMP-A.5.23.S3` |
+| **Output Filename** | `ISMS-IMP-A.5.23.S3_Secure_Configuration_&_Deployment_YYYYMMDD.xlsx` |
+| **Workbook Title** | Secure Configuration & Deployment |
+| **Total Sheets** | 23 (23 visible) |
+| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
+
+## Color Palette
+
+| Hex Code | Style Name | Description |
+|----------|-----------|-------------|
+| #003366 | 003366 | Dark Blue (Headers) |
+| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
+| #FF0000 | color | Red (Critical/Alert) |
+| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | end_color | Light Yellow/Amber (Partial) |
+| #FFFFCC | FFFFCC | Light Yellow (User Input) |
+
+## Sheet 1: Instructions & Legend
 
 ---
 
-# Technical Specification
-
-## Workbook Structure Overview
-
-**File:** `ISMS-IMP-A.5.23.S3_SecureConfig_YYYYMMDD.xlsx`
-
-**Total Sheets:** 10
-
-**Architecture:**
-```
-Sheet 1:  Instructions & Legend (read-only reference)
-Sheet 2:  Identity & Access Configuration (IAM layer)
-Sheet 3:  Data Protection Configuration (encryption, DLP)
-Sheet 4:  Network Security Configuration (firewall, VPN, API)
-Sheet 5:  Logging & Monitoring Configuration (audit logs, SIEM)
-Sheet 6:  Backup & Recovery Configuration (BC/DR)
-Sheet 7:  Jurisdictional Risk Configuration Alignment (links to IMP-5.23.2)
-Sheet 8:  Summary Dashboard (formulas, auto-calculated)
-Sheet 9:  Evidence Register (central evidence tracking)
-Sheet 10: Approval Sign-Off (workflow, signatures)
-```
+## Sheet 2: 2. Configuration Baseline
 
 ---
 
-## Standard Column Definitions (A-Q)
-
-**Present in ALL configuration sheets (Sheets 2-6):**
-
-| Col | Header | Type | Validation | Default/Formula |
-|-----|--------|------|------------|-----------------|
-| A | Cloud Service Name | Text | Dropdown (from IMP-5.23.1) | - |
-| B | Vendor Name | Text | Dropdown (from IMP-5.23.1) | - |
-| C | Service Type | Text | Dropdown: SaaS, IaaS, PaaS, Security Service | - |
-| D | Service Criticality | Text | Dropdown: Critical, High, Medium, Low | From IMP-5.23.1 |
-| E | Data Classification | Text | Dropdown: Restricted, Confidential, Internal, Public | From IMP-5.23.1 |
-| F | Deployment Environment | Text | Dropdown: Production, Staging, Development, Test | - |
-| G | IaC Managed? | Text | Dropdown: Yes (Terraform/CF/ARM), No (Manual), Partial | - |
-| H | Status | Text | Dropdown: ✅ Compliant, ⚠️ Partial, ❌ Non-Compliant, N/A | - |
-| I | Evidence Location | Text | Hyperlink or file path | - |
-| J | Gap Description | Text | Free text (required if H ≠ ✅) | - |
-| K | Remediation Needed | Text | Dropdown: Yes, No | - |
-| L | Exception ID | Text | Pattern: EXC-YYYY-NNN | - |
-| M | Risk ID | Text | Pattern: RISK-YYYY-NNN | - |
-| N | Compensating Controls | Text | Free text | - |
-| O | Configuration Owner | Text | Free text (team/person) | - |
-| P | Target Remediation Date | Date | Date picker (DD.MM.YYYY) | - |
-| Q | Last Config Review Date | Date | Date picker (auto: today) | - |
+## Sheet 3: 3. Access Control Setup
 
 ---
 
-## Sheet-Specific Extended Columns (Summary)
-
-### Sheet 2: Identity & Access (Columns R-AA)
-
-- R: SSO Integration, S: SSO Protocol, T: MFA Enforcement, U: MFA Methods
-- V: RBAC Implemented, W: Privileged Access Mgmt, X: Access Review Frequency
-- Y: Last Access Review Date, Z: Session Timeout, AA: Password Policy
-
-### Sheet 3: Data Protection (Columns R-Z)
-
-- R: Encryption At-Rest, S: Key Management, T: Key Rotation
-- U: Encryption In-Transit, V: Certificate Validation, W: DLP Configured
-- X: DLP Rules Count, Y: Classification Labels Applied, Z: Backup Encrypted
-
-### Sheet 4: Network Security (Columns R-X)
-
-- R: IP Access Control, S: IP Ranges Allowed, T: VPN Required
-- U: Private Connectivity, V: API Authentication, W: API Rate Limiting, X: Network Segmentation
-
-### Sheet 5: Logging & Monitoring (Columns R-W)
-
-- R: Audit Logging Enabled, S: Events Logged, T: Log Retention (Days)
-- U: SIEM Integration, V: SIEM Tool, W: Alerts Configured
-
-### Sheet 6: Backup & Recovery (Columns R-Y)
-
-- R: Backup Frequency, S: Backup Scope, T: Backup Encrypted
-- U: Backup Storage Location, V: RTO (Hours), W: RPO (Hours)
-- X: Last DR Test Date, Y: DR Test Result
-
-**See Part I, Section 4 for detailed column definitions and validation rules.**
+## Sheet 4: 4. Network Security
 
 ---
 
-## Sheet 8: Summary Dashboard (Formulas)
-
-**Auto-Calculated Metrics:**
-
-| Metric | Formula Example | Description |
-|--------|-----------------|-------------|
-| Total Services Assessed | `=COUNTA(Sheet2!A:A)-1` | Row count |
-| Overall Compliance % | `=(SUM(COUNTIF(Sheet2!H:H,"✅"), COUNTIF(Sheet3!H:H,"✅"), ...) / Total_Rows) * 100` | Avg compliance across all layers |
-| Identity Compliance % | `=COUNTIF(Sheet2!H:H,"✅")/COUNTA(Sheet2!H:H)*100` | Sheet 2 specific |
-| Data Protection Compliance % | `=COUNTIF(Sheet3!H:H,"✅")/COUNTA(Sheet3!H:H)*100` | Sheet 3 specific |
-| Critical Services Compliant | `=COUNTIFS(Sheet2!D:D,"Critical", Sheet2!H:H,"✅")` | Critical + compliant |
-| Services Without MFA | `=COUNTIF(Sheet2!T:T,"None")` | MFA gap count |
-| Services Without Encryption | `=COUNTIF(Sheet3!R:R,"None")` | Encryption gap count |
-| Services Not Logging to SIEM | `=COUNTIF(Sheet5!U:U,"None")` | SIEM integration gap |
+## Sheet 5: 5. Encryption Configuration
 
 ---
 
-## Python Generator Script Notes
+## Sheet 6: 6. Deployment Checklist
 
-**Script:** `generate_reg_a523_3_secure_config.py`
+---
 
-**Key Functions:**
+## Sheet 7: 7. Jurisdictional Risk
 
-- `create_2_identity_access()` - Sheet 2 with IAM columns
-- `create_3_data_protection()` - Sheet 3 with encryption columns
-- `create_4_network_security()` - Sheet 4 with network columns
-- `create_5_logging_monitoring()` - Sheet 5 with logging columns
-- `create_6_backup_recovery()` - Sheet 6 with BC/DR columns
-- `create_8_dashboard()` - Sheet 8 with aggregation formulas
+### Columns
 
-**Customization Points:**
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Assessment_ID | 14 |
+| B | Cloud_Service_Name | 25 |
+| C | Provider_Name | 22 |
+| D | Provider_HQ_Country | 18 |
+| E | Provider_HQ_Jurisdiction | 20 |
+| F | US_Parent_Company | 14 |
+| G | CLOUD_Act_Applicability | 20 |
+| H | Data_Processing_Locations | 25 |
+| I | EU_Data_Boundary_Available | 18 |
+| J | Customer_Managed_Keys | 16 |
+| K | Legal_Challenge_Commitment | 18 |
+| L | Adequacy_Decision_Status | 18 |
+| M | Transfer_Mechanism | 16 |
+| N | Risk_Level | 14 |
+| O | Risk_Accepted_By | 18 |
+| P | Risk_Acceptance_Date | 16 |
+| Q | Compensating_Controls | 28 |
+| R | Review_Date | 14 |
+| S | Evidence_Reference | 20 |
+| T | Notes | 30 |
 
-- Dropdown lists (service names, vendors)
-- Conditional formatting (risk-based coloring)
-- Dashboard metrics (add custom KPIs)
-- Compliance thresholds (≥90% vs ≥95%)
+---
 
-**Usage:**
-```bash
-python3 generate_reg_a523_3_secure_config.py
-# Output: ISMS-IMP-A.5.23.S3_SecureConfig_20260120.xlsx
-```
+## Sheet 8: 8. Summary Dashboard
+
+---
+
+## Sheet 9: 9. Evidence Register
+
+---
+
+## Sheet 10: 10. Approval Sign-Of
+
+---
+
+## Sheet 11: Instructions
+
+**Frozen Panes:** A4
+
+---
+
+## Sheet 12: 2_Configuration_Baseline
+
+---
+
+## Sheet 13: 3_Access_Control
+
+---
+
+## Sheet 14: 4_Network_Security
+
+---
+
+## Sheet 15: 5_Encryption_Config
+
+---
+
+## Sheet 16: 6_Deployment_Checklist
+
+---
+
+## Sheet 17: 7_Jurisdictional_Risk
+
+**Data Rows:** 25 (rows 6–30) | **Frozen Panes:** A6
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Assessment_ID | 14 |
+| B | Cloud_Service_Name | 25 |
+| C | Provider_Name | 22 |
+| D | Provider_HQ_Country | 18 |
+| E | Provider_HQ_Jurisdiction | 20 |
+| F | US_Parent_Company | 14 |
+| G | CLOUD_Act_Applicability | 20 |
+| H | Data_Processing_Locations | 25 |
+| I | EU_Data_Boundary_Available | 18 |
+| J | Customer_Managed_Keys | 16 |
+| K | Legal_Challenge_Commitment | 18 |
+| L | Adequacy_Decision_Status | 18 |
+| M | Transfer_Mechanism | 16 |
+| N | Risk_Level | 14 |
+| O | Risk_Accepted_By | 18 |
+| P | Risk_Acceptance_Date | 16 |
+| Q | Compensating_Controls | 28 |
+| R | Review_Date | 14 |
+| S | Evidence_Reference | 20 |
+| T | Notes | 30 |
+
+---
+
+## Sheet 18: 8_Summary_Dashboard
+
+**Data Rows:** 26 (rows 5–30) | **Frozen Panes:** A4
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Configuration Area |
+| B | Total Items |
+| C | {...} Compliant |
+| D | {...} Partial |
+| E | {...} Non-Compliant |
+| F | N/A |
+| G | Compliance % |
+
+### Formulas
+
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| — | `=COUNTIF(` | US-HQ Providers (CLOUD Act Scope) |
+| — | `=COUNTIFS(` | CLOUD Act Mitigated |
+
+---
+
+## Sheet 19: 9_Evidence_Register
+
+**Data Rows:** 37 (rows 4–40) | **Frozen Panes:** A4
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Evidence ID | 18 |
+| B | Cloud Service Name | 25 |
+| C | Configuration Area | 22 |
+| D | Evidence Type | 25 |
+| E | Description | 35 |
+| F | File Location | 35 |
+| G | Capture Date | 16 |
+| H | Captured By | 18 |
+| I | Status | 14 |
+
+---
+
+## Sheet 20: 10_Approval_Signoff
+
+**Frozen Panes:** A3
+
+---
+
+## Sheet 21: Base_Validations
+
+---
+
+## Sheet 22: Regulatory_Validations
+
+---
+
+## Sheet 23: Config_Assessment
+
+**Data Rows:** 26 (rows 5–30)
 
 ---
 

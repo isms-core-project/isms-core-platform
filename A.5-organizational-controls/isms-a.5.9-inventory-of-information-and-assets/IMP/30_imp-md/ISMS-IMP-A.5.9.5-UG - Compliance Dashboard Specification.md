@@ -862,9 +862,6 @@ Before presenting dashboard, verify:
 
 ---
 
-**END OF ISMS-IMP-A.5.9.5 PART I - USER COMPLETION GUIDE**
-
-
 **END OF USER GUIDE**
 
 ---

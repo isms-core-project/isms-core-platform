@@ -87,6 +87,13 @@ from datetime import datetime
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 
+# =============================================================================
+# DOCUMENT METADATA
+# =============================================================================
+DOCUMENT_ID = "ISMS-IMP-A.5.24-28.S4"
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_Forensic_Evidence_{GENERATED_TIMESTAMP}.xlsx"
+
 
 # ============================================================================
 # SECTION 1: WORKBOOK CREATION & STYLE DEFINITIONS
@@ -994,11 +1001,10 @@ def main():
     print("[10/10] Creating Approval Sign-Off...")
     create_approval_signoff(wb["Approval Sign-Off"], styles)
 
-    filename = f"ISMS-IMP-A.5.24-28.S4_Forensic_Evidence_{datetime.now().strftime('%Y%m%d')}.xlsx"
-    wb.save(filename)
+    wb.save(OUTPUT_FILENAME)
 
     print(f"\n{'=' * 80}")
-    print(f"✅  SUCCESS: {filename}")
+    print(f"✅  SUCCESS: {OUTPUT_FILENAME}")
     print(f"{'=' * 80}")
     print("\nWorkbook Structure:")
     print("  • 10 sheets (Instructions through Approval)")

@@ -33,9 +33,9 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ---
 
-## 1. Dashboard Overview
+## Dashboard Overview
 
-### 1.1 Purpose
+### Purpose
 
 This compliance dashboard consolidates metrics from the four component assessments (S1-S4) to provide:
 - Executive-level visibility into remote working and event reporting compliance
@@ -44,7 +44,7 @@ This compliance dashboard consolidates metrics from the four component assessmen
 - Audit-ready compliance evidence
 - Integration with Statement of Applicability (SoA) reporting
 
-### 1.2 Scope
+### Scope
 
 This dashboard consolidates:
 - **S1 Metrics**: Remote work authorization compliance
@@ -52,7 +52,7 @@ This dashboard consolidates:
 - **S3 Metrics**: Endpoint and physical security compliance
 - **S4 Metrics**: Event reporting mechanisms effectiveness
 
-### 1.3 Key Metrics
+### Key Metrics
 
 | Metric | Source | Target |
 |--------|--------|--------|
@@ -65,14 +65,14 @@ This dashboard consolidates:
 | Response SLA Compliance | S4 | ≥90% |
 | Overall Control Compliance | All | ≥90% |
 
-### 1.4 Target Audience
+### Target Audience
 
 - **Primary Users**: CISO, IT Security Manager
 - **Executive Consumers**: Executive Management, Board
 - **Auditors**: Internal and External Auditors
 - **Operational Users**: IT Security Team
 
-### 1.5 Update Frequency
+### Update Frequency
 
 | Trigger | Frequency |
 |---------|-----------|
@@ -81,7 +81,7 @@ This dashboard consolidates:
 | Management Review | Before management review meetings |
 | Audit Preparation | Before Stage 1/Stage 2 audits |
 
-## 2. Prerequisites
+## Prerequisites
 
 Before updating this dashboard, ensure:
 
@@ -94,7 +94,7 @@ Before updating this dashboard, ensure:
 | S1-S4 workbooks accessible | ☐ | For data import |
 | Previous dashboard version | ☐ | For trend comparison |
 
-## 3. Data Import Workflow
+## Data Import Workflow
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -133,13 +133,13 @@ Before updating this dashboard, ensure:
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-## 4. Sheet-by-Sheet Completion Guide
+## Sheet-by-Sheet Completion Guide
 
-### 4.1 Instructions Sheet
+### Instructions Sheet
 
 **Purpose**: Provides guidance for dashboard users.
 
-### 4.2 Executive_Summary Sheet
+### Executive_Summary Sheet
 
 **Purpose**: High-level compliance status for executive consumption.
 
@@ -152,7 +152,7 @@ Before updating this dashboard, ensure:
 
 **Presentation**: Designed for presentation to executive management and board.
 
-### 4.3 Metrics_Import Sheet
+### Metrics_Import Sheet
 
 **Purpose**: Import metrics from S1-S4 component assessments.
 
@@ -169,7 +169,7 @@ Before updating this dashboard, ensure:
 | Source Cell | Cell reference in source | Free text |
 | Notes | Any adjustments or notes | Free text |
 
-### 4.4 Control_Compliance Sheet
+### Control_Compliance Sheet
 
 **Purpose**: Detailed compliance breakdown by control (A.6.7 and A.6.8).
 
@@ -186,7 +186,7 @@ Before updating this dashboard, ensure:
   - Awareness coverage
   - Response effectiveness
 
-### 4.5 Gap_Consolidation Sheet
+### Gap_Consolidation Sheet
 
 **Purpose**: Consolidated view of all open gaps from S1-S4.
 
@@ -205,7 +205,7 @@ Before updating this dashboard, ensure:
 | Days Open | Days since identified | Calculated |
 | Overdue | Is remediation overdue | Formula |
 
-### 4.6 Trend_Analysis Sheet
+### Trend_Analysis Sheet
 
 **Purpose**: Track compliance metrics over time.
 
@@ -225,7 +225,7 @@ Before updating this dashboard, ensure:
 
 **Visualization**: Line chart showing compliance trends over time.
 
-### 4.7 Risk_Assessment Sheet
+### Risk_Assessment Sheet
 
 **Purpose**: Risk-based view of non-compliance.
 
@@ -242,7 +242,7 @@ Before updating this dashboard, ensure:
 | Mitigation Status | Mitigation progress | Dropdown |
 | Risk Owner | Accountable executive | Free text |
 
-### 4.8 SoA_Integration Sheet
+### SoA_Integration Sheet
 
 **Purpose**: Map dashboard results to Statement of Applicability.
 
@@ -259,7 +259,7 @@ Before updating this dashboard, ensure:
 | Last Assessment | Date of last assessment | Date |
 | Notes | SoA notes | Free text |
 
-### 4.9 Audit_Summary Sheet
+### Audit_Summary Sheet
 
 **Purpose**: Audit-ready summary for Stage 1/Stage 2 audits.
 
@@ -270,7 +270,7 @@ Before updating this dashboard, ensure:
 - Improvement opportunities
 - Management commitment evidence
 
-### 4.10 Evidence_Index Sheet
+### Evidence_Index Sheet
 
 **Purpose**: Master index of evidence across all S1-S4 assessments.
 
@@ -286,7 +286,7 @@ Before updating this dashboard, ensure:
 | Audit Relevance | Stage 1/Stage 2/Both | Dropdown |
 | Last Updated | When evidence was collected | Date |
 
-### 4.11 Dashboard Sheet
+### Dashboard Sheet
 
 **Purpose**: Visual dashboard for at-a-glance status.
 
@@ -297,7 +297,7 @@ Before updating this dashboard, ensure:
 - Trend sparklines for key metrics
 - RAG status indicators
 
-### 4.12 Approval_Sign_Off Sheet
+### Approval_Sign_Off Sheet
 
 **Purpose**: Document formal review and approval.
 
@@ -307,9 +307,9 @@ Before updating this dashboard, ensure:
 3. **Distribution Authorization**: Approval for distribution
 4. **Next Review Date**: Scheduled next update
 
-## 5. Metric Interpretation
+## Metric Interpretation
 
-### 5.1 Compliance Thresholds
+### Compliance Thresholds
 
 | Threshold | Status | Action |
 |-----------|--------|--------|
@@ -317,7 +317,7 @@ Before updating this dashboard, ensure:
 | 80-94% | Yellow | Improvement needed, track closely |
 | <80% | Red | Immediate attention required |
 
-### 5.2 Trend Indicators
+### Trend Indicators
 
 | Trend | Meaning | Action |
 |-------|---------|--------|
@@ -325,7 +325,7 @@ Before updating this dashboard, ensure:
 | → Stable | Metrics consistent | Look for improvement opportunities |
 | ↓ Declining | Metrics worsening | Investigate root cause, escalate |
 
-### 5.3 Risk Prioritization
+### Risk Prioritization
 
 | Risk Score | Priority | Response Time |
 |------------|----------|---------------|
@@ -333,37 +333,37 @@ Before updating this dashboard, ensure:
 | Medium (8-15) | High | Within 30 days |
 | Low (<8) | Normal | Within 90 days |
 
-## 6. Reporting Use Cases
+## Reporting Use Cases
 
-### 6.1 Executive Reporting
+### Executive Reporting
 
 **Frequency**: Quarterly
 **Content**: Executive_Summary, Dashboard
 **Audience**: Executive Management, Board
 **Format**: PDF export or presentation
 
-### 6.2 Management Review
+### Management Review
 
 **Frequency**: Per ISMS management review cycle
 **Content**: Control_Compliance, Gap_Consolidation, Trend_Analysis
 **Audience**: CISO, IT Security Manager
 **Format**: Full workbook with discussion
 
-### 6.3 Audit Support
+### Audit Support
 
 **Frequency**: As needed for audits
 **Content**: SoA_Integration, Audit_Summary, Evidence_Index
 **Audience**: Internal/External Auditors
 **Format**: Full workbook with evidence package
 
-### 6.4 Operational Tracking
+### Operational Tracking
 
 **Frequency**: Monthly
 **Content**: Gap_Consolidation, Metrics_Import
 **Audience**: IT Security Team
 **Format**: Workbook for operational tracking
 
-## 7. Quality Checklist
+## Quality Checklist
 
 Before distributing dashboard, verify:
 

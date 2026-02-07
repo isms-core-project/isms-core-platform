@@ -27,38 +27,15 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-### PART I: USER COMPLETION GUIDE
-1. [Assessment Overview](#1-assessment-overview)
-2. [Control Requirements](#2-control-requirements)
-3. [Prerequisites](#3-prerequisites)
-4. [Policy Content Framework](#4-policy-content-framework)
-5. [Asset Category Coverage](#5-asset-category-coverage)
-6. [Workbook Structure](#6-workbook-structure)
-7. [Completion Walkthrough](#7-completion-walkthrough)
-8. [User Awareness and Acknowledgement](#8-user-awareness-and-acknowledgement)
-9. [Communication Effectiveness](#9-communication-effectiveness)
-10. [Evidence Collection](#10-evidence-collection)
-11. [Common Pitfalls](#11-common-pitfalls)
-12. [Quality Checklist](#12-quality-checklist)
-13. [Review and Approval](#13-review-and-approval)
-14. [Related Controls](#14-related-controls)
-
-### PART II: TECHNICAL SPECIFICATION
-15. [Workbook Architecture](#15-workbook-architecture)
-16. [Sheet Specifications](#16-sheet-specifications)
-17. [Data Validation Rules](#17-data-validation-rules)
-18. [Conditional Formatting](#18-conditional-formatting)
-19. [Formula Specifications](#19-formula-specifications)
-20. [Cell Styling Standards](#20-cell-styling-standards)
-21. [Generator Script Reference](#21-generator-script-reference)
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.10-11.S1-TG.
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 The Acceptable Use Policy (AUP) Assessment workbook evaluates the completeness and effectiveness of your organisation's Acceptable Use Policy framework. It verifies that rules for acceptable use of information and other associated assets are:
 
@@ -69,7 +46,7 @@ The Acceptable Use Policy (AUP) Assessment workbook evaluates the completeness a
 
 This assessment supports ISO 27001:2022 Control A.5.10 by providing a systematic evaluation of the AUP and its implementation.
 
-### 1.2 Scope
+### Scope
 
 This assessment covers:
 - **Policy Content Completeness**: All required topics addressed in the AUP
@@ -78,7 +55,7 @@ This assessment covers:
 - **Communication Effectiveness**: How well the policy is disseminated
 - **Gap Identification**: Deficiencies requiring remediation
 
-### 1.3 Benefits
+### Benefits
 
 | Stakeholder | Benefit |
 |-------------|---------|
@@ -89,7 +66,7 @@ This assessment covers:
 | **Auditors** | Documented assessment of control effectiveness |
 | **Users** | Clear understanding of acceptable behaviour |
 
-### 1.4 Assessment Frequency
+### Assessment Frequency
 
 | Activity | Frequency |
 |----------|-----------|
@@ -101,9 +78,9 @@ This assessment covers:
 
 ---
 
-## 2. Control Requirements
+## Control Requirements
 
-### 2.1 ISO 27001:2022 A.5.10 Requirements
+### ISO 27001:2022 A.5.10 Requirements
 
 Control A.5.10 requires that acceptable use rules be identified, documented, and implemented. ISO 27002:2022 provides detailed implementation guidance:
 
@@ -115,7 +92,7 @@ Control A.5.10 requires that acceptable use rules be identified, documented, and
 | **Communication** | Policy is accessible and regularly reinforced |
 | **Enforcement** | Monitoring and consequences are defined |
 
-### 2.2 Policy Content Requirements
+### Policy Content Requirements
 
 ISO 27002:2022 guidance specifies that the AUP should address:
 
@@ -130,7 +107,7 @@ ISO 27002:2022 guidance specifies that the AUP should address:
 | **Responsibilities** | User obligations and accountabilities |
 | **Asset Handling** | Requirements by classification level |
 
-### 2.3 Compliance Indicators
+### Compliance Indicators
 
 | Indicator | Target | Measurement |
 |-----------|:------:|-------------|
@@ -142,9 +119,9 @@ ISO 27002:2022 guidance specifies that the AUP should address:
 
 ---
 
-## 3. Prerequisites
+## Prerequisites
 
-### 3.1 Required Inputs
+### Required Inputs
 
 Before starting the assessment, gather:
 
@@ -157,7 +134,7 @@ Before starting the assessment, gather:
 | **Communication Records** | Email archives, intranet logs | Assess dissemination |
 | **Previous Assessment** | ISMS Evidence Library | Compare improvements |
 
-### 3.2 Access Requirements
+### Access Requirements
 
 | System/Resource | Access Level | Purpose |
 |-----------------|--------------|---------|
@@ -167,7 +144,7 @@ Before starting the assessment, gather:
 | **Email System** | Read | Communication distribution records |
 | **ISMS Evidence Library** | Write | Store assessment evidence |
 
-### 3.3 Stakeholder Contacts
+### Stakeholder Contacts
 
 Identify and confirm availability of:
 
@@ -181,9 +158,9 @@ Identify and confirm availability of:
 
 ---
 
-## 4. Policy Content Framework
+## Policy Content Framework
 
-### 4.1 Required Policy Sections
+### Required Policy Sections
 
 The AUP should contain the following sections to be considered complete:
 
@@ -204,7 +181,7 @@ The AUP should contain the following sections to be considered complete:
 | **13. Exceptions** | How to request exceptions | Process documented |
 | **14. Acknowledgement** | User sign-off requirement | Enforcement mechanism |
 
-### 4.2 Policy Quality Criteria
+### Policy Quality Criteria
 
 | Criterion | Definition | Assessment Method |
 |-----------|------------|-------------------|
@@ -215,7 +192,7 @@ The AUP should contain the following sections to be considered complete:
 | **Actionability** | Users know what to do | Clear instructions present |
 | **Enforceability** | Can be monitored and enforced | Enforcement mechanisms defined |
 
-### 4.3 Common AUP Content Gaps
+### Common AUP Content Gaps
 
 | Gap Type | Example | Remediation |
 |----------|---------|-------------|
@@ -228,9 +205,9 @@ The AUP should contain the following sections to be considered complete:
 
 ---
 
-## 5. Asset Category Coverage
+## Asset Category Coverage
 
-### 5.1 Standard Asset Categories
+### Standard Asset Categories
 
 Ensure the AUP addresses usage rules for each category:
 
@@ -249,7 +226,7 @@ Ensure the AUP addresses usage rules for each category:
 | **IoT Devices** | Connected devices | Cameras, sensors, smart devices | Secure configuration, monitoring |
 | **Intellectual Property** | Created or licensed IP | Code, designs, documentation | Protection, attribution |
 
-### 5.2 Asset Coverage Matrix
+### Asset Coverage Matrix
 
 For each asset category, verify:
 
@@ -264,53 +241,7 @@ For each asset category, verify:
 
 ---
 
-## 6. Workbook Structure
-
-### 6.1 Sheet Overview
-
-| Sheet # | Sheet Name | Purpose | Primary Users |
-|:-------:|------------|---------|---------------|
-| 1 | Instructions | Guidance and metadata | All assessors |
-| 2 | Policy_Assessment | AUP content completeness | ISM, Assessors |
-| 3 | Asset_Coverage | Coverage by asset category | ISM, Assessors |
-| 4 | Awareness_Tracking | User acknowledgement status | ISM, HR |
-| 5 | Communication_Matrix | Dissemination assessment | ISM, Comms |
-| 6 | Evidence_Register | Audit evidence linking | ISM, Auditors |
-| 7 | Approval_SignOff | Assessment approval | ISM, CISO |
-
-### 6.2 Data Flow
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    ASSESSMENT DATA FLOW                          │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  INPUTS                                                         │
-│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐    │
-│  │ AUP Document   │  │ Asset Inventory│  │ User Directory │    │
-│  └───────┬────────┘  └───────┬────────┘  └───────┬────────┘    │
-│          │                   │                   │              │
-│          ▼                   ▼                   ▼              │
-│  ┌────────────────────────────────────────────────────────┐    │
-│  │                    ASSESSMENT                           │    │
-│  ├──────────────┬──────────────┬──────────────────────────┤    │
-│  │ Policy_      │ Asset_       │ Awareness_               │    │
-│  │ Assessment   │ Coverage     │ Tracking                 │    │
-│  └──────────────┴──────────────┴──────────────────────────┘    │
-│          │                   │                   │              │
-│          ▼                   ▼                   ▼              │
-│  ┌────────────────────────────────────────────────────────┐    │
-│  │                    OUTPUTS                              │    │
-│  │  • Compliance Score    • Gap Register                   │    │
-│  │  • Evidence Package    • Remediation Plan               │    │
-│  └────────────────────────────────────────────────────────┘    │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 7. Completion Walkthrough
+## Completion Walkthrough
 
 ### Step 1: Document Information (Instructions Sheet)
 
@@ -494,9 +425,9 @@ For each asset category, verify:
 
 ---
 
-## 8. User Awareness and Acknowledgement
+## User Awareness and Acknowledgement
 
-### 8.1 Acknowledgement Requirements
+### Acknowledgement Requirements
 
 | User Type | Timing | Method | Renewal |
 |-----------|--------|--------|---------|
@@ -506,7 +437,7 @@ For each asset category, verify:
 | **Temporary Staff** | Before access granted | Abbreviated acknowledgement | Per engagement |
 | **Third-Party Users** | Before access granted | Contractual terms | Per agreement |
 
-### 8.2 Acknowledgement Content
+### Acknowledgement Content
 
 The acknowledgement should confirm the user:
 
@@ -516,7 +447,7 @@ The acknowledgement should confirm the user:
 4. Acknowledges that usage may be monitored
 5. Will report any policy violations observed
 
-### 8.3 Tracking and Escalation
+### Tracking and Escalation
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -542,9 +473,9 @@ The acknowledgement should confirm the user:
 
 ---
 
-## 9. Communication Effectiveness
+## Communication Effectiveness
 
-### 9.1 Multi-Channel Strategy
+### Multi-Channel Strategy
 
 Effective AUP communication uses multiple channels:
 
@@ -558,7 +489,7 @@ Effective AUP communication uses multiple channels:
 | **Posters** | Constant visibility | Limited content | Reminders |
 | **Security Newsletters** | Regular touchpoint | Low engagement | Ongoing awareness |
 
-### 9.2 Measuring Effectiveness
+### Measuring Effectiveness
 
 | Metric | Measurement Method | Target |
 |--------|-------------------|--------|
@@ -570,9 +501,9 @@ Effective AUP communication uses multiple channels:
 
 ---
 
-## 10. Evidence Collection
+## Evidence Collection
 
-### 10.1 Evidence Requirements
+### Evidence Requirements
 
 | Evidence Type | Description | Retention |
 |---------------|-------------|-----------|
@@ -584,7 +515,7 @@ Effective AUP communication uses multiple channels:
 | **Exception Records** | Approved policy exceptions | 3 years |
 | **Assessment Workbook** | This completed assessment | 3 years |
 
-### 10.2 Evidence Storage
+### Evidence Storage
 
 | Evidence Type | Storage Location | Naming Convention |
 |---------------|------------------|-------------------|
@@ -594,7 +525,7 @@ Effective AUP communication uses multiple channels:
 | Communication | ISMS Evidence Library/A.5.10-11/Communication/ | AUP_Comm_[Type]_YYYYMMDD.pdf |
 | Assessments | ISMS Evidence Library/A.5.10-11/Assessments/ | A.5.10-11.1_Assessment_YYYYMMDD.xlsx |
 
-### 10.3 Evidence Quality Standards
+### Evidence Quality Standards
 
 | Standard | Requirement |
 |----------|-------------|
@@ -606,7 +537,7 @@ Effective AUP communication uses multiple channels:
 
 ---
 
-## 11. Common Pitfalls
+## Common Pitfalls
 
 ### Policy Content Pitfalls
 
@@ -672,7 +603,7 @@ Effective AUP communication uses multiple channels:
 
 ---
 
-## 12. Quality Checklist
+## Quality Checklist
 
 ### Pre-Submission Checklist
 
@@ -719,9 +650,9 @@ Effective AUP communication uses multiple channels:
 
 ---
 
-## 13. Review and Approval
+## Review and Approval
 
-### 13.1 Assessment Review Workflow
+### Assessment Review Workflow
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -741,7 +672,7 @@ Effective AUP communication uses multiple channels:
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-### 13.2 Approval Authorities
+### Approval Authorities
 
 | Assessment Component | Reviewer | Approver |
 |---------------------|----------|----------|
@@ -751,7 +682,7 @@ Effective AUP communication uses multiple channels:
 | Communication Matrix | Communications (consulted) | ISM |
 | Overall Assessment | ISM | CISO |
 
-### 13.3 Sign-off Record
+### Sign-off Record
 
 | Role | Name | Signature | Date |
 |------|------|-----------|------|
@@ -761,9 +692,9 @@ Effective AUP communication uses multiple channels:
 
 ---
 
-## 14. Related Controls
+## Related Controls
 
-### 14.1 Primary Dependencies
+### Primary Dependencies
 
 | Control | Relationship | Integration |
 |---------|--------------|-------------|
@@ -773,7 +704,7 @@ Effective AUP communication uses multiple channels:
 | **A.5.10-11.4** | Compliance Dashboard | Aggregates assessment metrics |
 | **A.6.3** | Awareness and Training | Training delivery mechanism |
 
-### 14.2 Related Controls
+### Related Controls
 
 | Control | Relevance |
 |---------|-----------|
@@ -783,7 +714,6 @@ Effective AUP communication uses multiple channels:
 | **A.8.3** | Information Access Restriction | Access tied to AUP compliance |
 
 ---
-
 
 **END OF USER GUIDE**
 

@@ -26,13 +26,13 @@
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 The **Compliance Monitoring Dashboard** (ISMS-IMP-A.5.14.4) provides ongoing visibility into information transfer security compliance. This dashboard tracks key performance indicators (KPIs), security incidents related to transfers, audit findings, and remediation progress. It serves as the central monitoring tool for A.5.14 control effectiveness.
 
-### 1.2 Scope
+### Scope
 
 This dashboard covers:
 - **Executive summary**: High-level compliance overview and key metrics
@@ -41,7 +41,7 @@ This dashboard covers:
 - **Audit findings**: Internal and external audit findings related to A.5.14
 - **Remediation tracking**: Gap and finding remediation progress
 
-### 1.3 Business Value
+### Business Value
 
 Maintaining this dashboard delivers:
 - **Real-time compliance visibility** for management reporting
@@ -50,7 +50,7 @@ Maintaining this dashboard delivers:
 - **Continuous improvement** through KPI tracking
 - **Risk-based prioritisation** of security investments
 
-### 1.4 Control Requirement
+### Control Requirement
 
 > *ISO/IEC 27001:2022 Annex A.5.14 — Information Transfer*
 >
@@ -60,11 +60,11 @@ This dashboard monitors ongoing compliance with established transfer rules and p
 
 ---
 
-## 2. Prerequisites
+## Prerequisites
 
 Before starting this dashboard, ensure you have:
 
-### 2.1 Required Documents
+### Required Documents
 - [ ] ISMS-IMP-A.5.14.1 (Transfer Rules) — defines compliance requirements
 - [ ] ISMS-IMP-A.5.14.2 (Channel Assessment) — provides baseline status
 - [ ] ISMS-IMP-A.5.14.3 (Agreements Register) — third-party compliance data
@@ -72,14 +72,14 @@ Before starting this dashboard, ensure you have:
 - [ ] Audit reports (internal and external)
 - [ ] Previous dashboard versions (if any)
 
-### 2.2 Required Access
+### Required Access
 - [ ] Security incident management system (SIEM, ServiceNow)
 - [ ] DLP reporting tools
 - [ ] Audit finding database
 - [ ] Risk register
 - [ ] Transfer system audit logs
 
-### 2.3 Required Personnel
+### Required Personnel
 - [ ] Information Security Officer (dashboard owner)
 - [ ] IT Security Analyst (incident data)
 - [ ] Internal Audit Representative
@@ -88,24 +88,7 @@ Before starting this dashboard, ensure you have:
 
 ---
 
-## 3. Workbook Structure
-
-The workbook contains **8 sheets** organised as follows:
-
-| Sheet | Purpose | Update Frequency |
-|-------|---------|------------------|
-| Instructions | Guidance and frequency recommendations | N/A |
-| Executive_Summary | High-level compliance overview | Monthly |
-| Compliance_KPIs | Key performance indicators | Monthly |
-| Transfer_Incidents | Security incident tracking | Real-time |
-| Audit_Findings | Audit findings management | After each audit |
-| Remediation_Tracker | Gap remediation tracking | Weekly |
-| Evidence_Register | Supporting documentation | As needed |
-| Approval_SignOff | Dashboard approval | Monthly |
-
----
-
-## 4. Completion Walkthrough
+## Completion Walkthrough
 
 ### Sheet 1: Instructions
 
@@ -356,9 +339,9 @@ Document top 5 priority actions:
 
 ---
 
-## 5. Evidence Collection
+## Evidence Collection
 
-### 5.1 Evidence by Sheet
+### Evidence by Sheet
 
 | Sheet | Required Evidence |
 |-------|-------------------|
@@ -368,7 +351,7 @@ Document top 5 priority actions:
 | Audit_Findings | Audit reports, finding documentation |
 | Remediation_Tracker | Remediation evidence, test results |
 
-### 5.2 Evidence Storage
+### Evidence Storage
 
 Store all evidence in:
 ```
@@ -381,7 +364,7 @@ Store all evidence in:
 │   └── Remediation-Evidence/
 ```
 
-### 5.3 Evidence Naming
+### Evidence Naming
 
 Format: `EV-514-CMD-[Type]-[Period]-[YYYYMMDD].[ext]`
 
@@ -392,7 +375,7 @@ Examples:
 
 ---
 
-## 6. Common Pitfalls
+## Common Pitfalls
 
 ### ❌ MISTAKE: Updating dashboard only before audits
 ✅ CORRECT: Maintain continuous updates per recommended frequency
@@ -426,7 +409,7 @@ Examples:
 
 ---
 
-## 7. Quality Checklist
+## Quality Checklist
 
 Before submitting the dashboard, verify:
 
@@ -472,29 +455,28 @@ Before submitting the dashboard, verify:
 
 ---
 
-## 8. Review and Approval
+## Review and Approval
 
-### 8.1 Update Schedule
+### Update Schedule
 - **Executive Summary**: Monthly (first week)
 - **KPIs**: Monthly (end of month)
 - **Incidents**: Real-time (within 24 hours)
 - **Audit Findings**: After each audit
 - **Remediation**: Weekly
 
-### 8.2 Approval Workflow
+### Approval Workflow
 1. **Dashboard Owner** updates all sheets
 2. **IT Security Manager** validates data
 3. **ISO** reviews and approves
 4. **Executive distribution** after approval
 
-### 8.3 Post-Approval Actions
+### Post-Approval Actions
 - Distribute to stakeholder list
 - Archive copy for audit trail
 - Update risk register if needed
 - Schedule next update cycle
 
 ---
-
 
 **END OF USER GUIDE**
 

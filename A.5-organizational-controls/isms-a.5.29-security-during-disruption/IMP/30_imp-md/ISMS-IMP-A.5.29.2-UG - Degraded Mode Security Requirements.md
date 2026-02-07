@@ -19,35 +19,13 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-1. [PART I: USER COMPLETION GUIDE](#part-i-user-completion-guide)
-   - [1.1 Assessment Overview](#11-assessment-overview)
-   - [1.2 Control Requirements](#12-control-requirements)
-   - [1.3 Prerequisites](#13-prerequisites)
-   - [1.4 Degradation Scenarios](#14-degradation-scenarios)
-   - [1.5 Workbook Structure](#15-workbook-structure)
-   - [1.6 Completion Walkthrough](#16-completion-walkthrough)
-   - [1.7 Break-Glass Procedures](#17-break-glass-procedures)
-   - [1.8 Evidence Collection](#18-evidence-collection)
-   - [1.9 Common Pitfalls](#19-common-pitfalls)
-   - [1.10 Quality Checklist](#110-quality-checklist)
-   - [1.11 Review and Approval](#111-review-and-approval)
-   - [1.12 Integration with Other Controls](#112-integration-with-other-controls)
-2. [PART II: TECHNICAL SPECIFICATION](#part-ii-technical-specification)
-   - [2.1 Workbook Architecture](#21-workbook-architecture)
-   - [2.2 Sheet Specifications](#22-sheet-specifications)
-   - [2.3 Data Validations](#23-data-validations)
-   - [2.4 Conditional Formatting](#24-conditional-formatting)
-   - [2.5 Formula Specifications](#25-formula-specifications)
-   - [2.6 Cell Styling Standards](#26-cell-styling-standards)
-   - [2.7 Generator Script Reference](#27-generator-script-reference)
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.29.2-TG.
 
 ---
 
----
-
-## 1.1 Assessment Overview
+## Assessment Overview
 
 ### Purpose
 
@@ -107,7 +85,7 @@ Well-documented degraded mode requirements deliver:
 
 ---
 
-## 1.2 Control Requirements
+## Control Requirements
 
 ### ISO 27001:2022 Control A.5.29
 
@@ -155,7 +133,7 @@ ISO 27001 auditors examining degraded mode requirements will verify:
 
 ---
 
-## 1.3 Prerequisites
+## Prerequisites
 
 ### Before Starting This Assessment
 
@@ -189,7 +167,7 @@ Before proceeding, verify:
 
 ---
 
-## 1.4 Degradation Scenarios
+## Degradation Scenarios
 
 ### Scenario Categories
 
@@ -215,65 +193,7 @@ Before proceeding, verify:
 
 ---
 
-## 1.5 Workbook Structure
-
-### Sheet Overview
-
-The workbook consists of eight sheets:
-
-| Sheet | Purpose | Primary User | Update Frequency |
-|-------|---------|--------------|------------------|
-| **Instructions** | Guidance and orientation | All users | As needed |
-| **Degradation_Scenarios** | Acceptable degradation documentation | Security Team | Annual |
-| **BreakGlass_Accounts** | Emergency account inventory | IAM Team | Upon change |
-| **BreakGlass_Activation** | Activation log and procedures | Security Team | Per activation |
-| **Elevated_Monitoring** | Enhanced monitoring requirements | SOC | Annual |
-| **Personnel_Availability** | Security team succession | CISO | Quarterly |
-| **Security_Debt_Register** | Deferred security tracking | Security Team | Ongoing |
-| **Evidence_Register** | Evidence tracking | Security Team | Ongoing |
-| **Approval_SignOff** | Assessment authorisation | Approvers | At completion |
-
-### Sheet Relationships
-
-```
-┌─────────────────────┐
-│    Instructions     │ ◄── Start here
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐     ┌─────────────────────┐
-│Degradation_Scenarios│────►│Elevated_Monitoring  │
-└──────────┬──────────┘     └─────────────────────┘
-           │
-           ▼
-┌─────────────────────┐     ┌─────────────────────┐
-│BreakGlass_Accounts  │────►│BreakGlass_Activation│
-└──────────┬──────────┘     └─────────────────────┘
-           │
-           ▼
-┌─────────────────────┐
-│Personnel_Availability│
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│Security_Debt_Register│
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│  Evidence_Register  │
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│  Approval_SignOff   │ ◄── Complete here
-└─────────────────────┘
-```
-
----
-
-## 1.6 Completion Walkthrough
+## Completion Walkthrough
 
 ### Step-by-Step Process
 
@@ -391,7 +311,7 @@ The workbook consists of eight sheets:
 
 ---
 
-## 1.7 Break-Glass Procedures
+## Break-Glass Procedures
 
 ### Break-Glass Account Requirements
 
@@ -443,7 +363,7 @@ The workbook consists of eight sheets:
 
 ---
 
-## 1.8 Evidence Collection
+## Evidence Collection
 
 ### Evidence Requirements
 
@@ -457,7 +377,7 @@ The workbook consists of eight sheets:
 
 ---
 
-## 1.9 Common Pitfalls
+## Common Pitfalls
 
 Avoid these common mistakes when completing this assessment:
 
@@ -527,7 +447,7 @@ Avoid these common mistakes when completing this assessment:
 
 ---
 
-## 1.10 Quality Checklist
+## Quality Checklist
 
 Before submitting this assessment, verify:
 
@@ -575,7 +495,7 @@ Before submitting this assessment, verify:
 
 ---
 
-## 1.11 Review and Approval
+## Review and Approval
 
 ### Approval Workflow
 
@@ -597,7 +517,7 @@ Assessment Published to ISMS Evidence Library
 
 ---
 
-## 1.12 Integration with Other Controls
+## Integration with Other Controls
 
 ### Related ISMS Controls
 
@@ -618,7 +538,6 @@ Assessment Published to ISMS Evidence Library
 | **ISMS-IMP-A.5.29.4** | Compliance dashboard (tracking degradation metrics) |
 
 ---
-
 
 **END OF USER GUIDE**
 

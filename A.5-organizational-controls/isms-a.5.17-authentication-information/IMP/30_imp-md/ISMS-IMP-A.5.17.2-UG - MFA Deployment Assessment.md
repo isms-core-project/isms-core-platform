@@ -24,7 +24,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ---
 
-## 1.1 Assessment Overview
+## Assessment Overview
 
 ### Purpose
 
@@ -89,7 +89,7 @@ The MFA Deployment Assessment covers:
 
 ---
 
-## 1.2 Control Requirements
+## Control Requirements
 
 ### ISO 27001:2022 Control A.5.17
 
@@ -128,7 +128,7 @@ Multi-factor authentication is a critical implementation of this control, provid
 
 ---
 
-## 1.3 Prerequisites
+## Prerequisites
 
 ### Required Access
 
@@ -161,51 +161,7 @@ Multi-factor authentication is a critical implementation of this control, provid
 
 ---
 
-## 1.4 Workbook Structure
-
-### Sheet Overview
-
-| Sheet | Purpose | Assessor Action |
-|-------|---------|-----------------|
-| **Instructions** | Guidance and methodology | Read before starting |
-| **System_MFA_Inventory** | Systems requiring MFA | Populate with MFA status |
-| **User_Enrollment** | User MFA registration status | Import from IdP |
-| **Method_Analysis** | MFA methods in use | Document method distribution |
-| **Conditional_Access** | IdP policies enforcing MFA | Document active policies |
-| **Gap_Analysis** | Coverage gaps | Review and validate |
-| **Remediation_Tracker** | Actions to address gaps | Plan and track |
-| **Exception_Register** | Systems/users without MFA | Document with controls |
-| **Approval_SignOff** | Assessment authorisation | Obtain signatures |
-
-### Data Flow
-
-```
-Asset Inventory (A.5.9)          IdP Reports
-        │                              │
-        ▼                              ▼
-System_MFA_Inventory ◄─────────► User_Enrollment
-        │                              │
-        ▼                              ▼
-        └──────────► Method_Analysis ◄─┘
-                           │
-                           ▼
-                   Conditional_Access
-                           │
-                           ▼
-                     Gap_Analysis
-                           │
-                 ┌─────────┴─────────┐
-                 ▼                   ▼
-        Remediation_Tracker   Exception_Register
-                 │                   │
-                 └─────────┬─────────┘
-                           ▼
-                   Approval_SignOff
-```
-
----
-
-## 1.5 Completion Walkthrough
+## Completion Walkthrough
 
 ### Step 1: Inventory Systems Requiring MFA
 
@@ -454,7 +410,7 @@ For Okta:
 
 ---
 
-## 1.6 Evidence Collection
+## Evidence Collection
 
 ### Evidence Requirements
 
@@ -496,7 +452,7 @@ A.5.17/
 
 ---
 
-## 1.7 Common Pitfalls
+## Common Pitfalls
 
 Avoid these common mistakes when completing the MFA Deployment assessment:
 
@@ -543,7 +499,7 @@ Avoid these common mistakes when completing the MFA Deployment assessment:
 
 ---
 
-## 1.8 Quality Checklist
+## Quality Checklist
 
 Before submitting the assessment, verify:
 
@@ -580,7 +536,7 @@ Before submitting the assessment, verify:
 
 ---
 
-## 1.9 Review and Approval
+## Review and Approval
 
 ### Review Workflow
 
@@ -624,7 +580,6 @@ CISO Final Approval ────────────────────
    - Date and signature
 
 ---
-
 
 **END OF USER GUIDE**
 

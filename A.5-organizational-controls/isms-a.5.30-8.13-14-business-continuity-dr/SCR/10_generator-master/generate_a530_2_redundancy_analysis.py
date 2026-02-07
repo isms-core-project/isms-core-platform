@@ -290,6 +290,7 @@ ARROW = '\u2192'      # → Right arrow
 
 DOCUMENT_ID = "ISMS-IMP-A.5.30.S2"
 GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_Redundancy_Analysis_{GENERATED_TIMESTAMP}.xlsx"
 
 # Color scheme
 HEADER_FILL = PatternFill(start_color='003366', end_color='003366', fill_type='solid')

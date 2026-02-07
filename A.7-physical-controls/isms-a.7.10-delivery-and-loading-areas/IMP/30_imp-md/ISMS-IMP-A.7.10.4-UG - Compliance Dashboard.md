@@ -421,7 +421,7 @@ Example: EV-D1-001-CERT-Encryption_Certificate
 
 # Common Pitfalls
 
-## 1. Dashboard Data Staleness
+## Dashboard Data Staleness
 
 **❌ MISTAKE:** Dashboard not updated when source assessments change
 
@@ -435,7 +435,7 @@ Example: EV-D1-001-CERT-Encryption_Certificate
 - Automated data links where possible
 - Dashboard owner assigned
 
-## 2. Incomplete Gap Consolidation
+## Incomplete Gap Consolidation
 
 **❌ MISTAKE:** Gaps from some assessments not transferred to consolidated view
 
@@ -449,7 +449,7 @@ Example: EV-D1-001-CERT-Encryption_Certificate
 - Cross-reference checklist
 - Validation before executive review
 
-## 3. No Risk Owner Assignment
+## No Risk Owner Assignment
 
 **❌ MISTAKE:** Risks in register without assigned owners
 
@@ -463,7 +463,7 @@ Example: EV-D1-001-CERT-Encryption_Certificate
 - Owner confirmation process
 - Escalation for unassigned risks
 
-## 4. Remediation Tracking Abandonment
+## Remediation Tracking Abandonment
 
 **❌ MISTAKE:** Roadmap created but not maintained
 
@@ -477,7 +477,7 @@ Example: EV-D1-001-CERT-Encryption_Certificate
 - Automated deadline reminders
 - Management review of progress
 
-## 5. KPI Targets Not Realistic
+## KPI Targets Not Realistic
 
 **❌ MISTAKE:** Setting 100% targets without baseline
 
@@ -491,7 +491,7 @@ Example: EV-D1-001-CERT-Encryption_Certificate
 - Set progressive improvement targets
 - Celebrate milestone achievements
 
-## 6. Evidence Not Linked
+## Evidence Not Linked
 
 **❌ MISTAKE:** Evidence exists but not referenced in dashboard
 
@@ -505,7 +505,7 @@ Example: EV-D1-001-CERT-Encryption_Certificate
 - Central evidence repository
 - Regular evidence verification
 
-## 7. No Trend Analysis
+## No Trend Analysis
 
 **❌ MISTAKE:** Point-in-time metrics without historical comparison
 
@@ -519,7 +519,7 @@ Example: EV-D1-001-CERT-Encryption_Certificate
 - Include trend charts
 - Period-over-period commentary
 
-## 8. Executive Disengagement
+## Executive Disengagement
 
 **❌ MISTAKE:** Dashboard produced but not reviewed at executive level
 
@@ -533,7 +533,7 @@ Example: EV-D1-001-CERT-Encryption_Certificate
 - Dashboard on management committee agenda
 - Sign-off requirement enforced
 
-## 9. Risk Scores Not Calibrated
+## Risk Scores Not Calibrated
 
 **❌ MISTAKE:** Inconsistent risk scoring across different gaps
 
@@ -547,7 +547,7 @@ Example: EV-D1-001-CERT-Encryption_Certificate
 - Calibration workshops
 - Peer review of high/critical scores
 
-## 10. Remediation Dependencies Ignored
+## Remediation Dependencies Ignored
 
 **❌ MISTAKE:** Actions planned without considering dependencies
 
@@ -561,7 +561,7 @@ Example: EV-D1-001-CERT-Encryption_Certificate
 - Identify critical path
 - Prioritise enabling actions
 
-## 11. KPI Gaming
+## KPI Gaming
 
 **❌ MISTAKE:** Metrics improved by changing measurement rather than control
 
@@ -575,7 +575,7 @@ Example: EV-D1-001-CERT-Encryption_Certificate
 - Independent verification of metrics
 - Focus on outcomes not just numbers
 
-## 12. Gap Closure Without Verification
+## Gap Closure Without Verification
 
 **❌ MISTAKE:** Marking gaps as closed without verifying remediation
 
@@ -589,7 +589,7 @@ Example: EV-D1-001-CERT-Encryption_Certificate
 - Evidence of effective remediation
 - Post-implementation review
 
-## 13. Evidence Repository Inaccessible
+## Evidence Repository Inaccessible
 
 **❌ MISTAKE:** Evidence stored but auditors cannot access
 
@@ -603,7 +603,7 @@ Example: EV-D1-001-CERT-Encryption_Certificate
 - Read access for appropriate roles
 - Location documented in index
 
-## 14. No Risk Acceptance Documentation
+## No Risk Acceptance Documentation
 
 **❌ MISTAKE:** Risks accepted verbally without documentation
 
@@ -617,7 +617,7 @@ Example: EV-D1-001-CERT-Encryption_Certificate
 - Signature required
 - Retention with risk register
 
-## 15. Metrics Not Actionable
+## Metrics Not Actionable
 
 **❌ MISTAKE:** KPIs reported but no response to declining trends
 
@@ -631,7 +631,7 @@ Example: EV-D1-001-CERT-Encryption_Certificate
 - Action required when threshold breached
 - Escalation path documented
 
-## 16. Quarterly Review Skipped
+## Quarterly Review Skipped
 
 **❌ MISTAKE:** Executive review postponed or cancelled
 
@@ -645,7 +645,7 @@ Example: EV-D1-001-CERT-Encryption_Certificate
 - Deputy attendance if principal unavailable
 - Written review if meeting impossible
 
-## 17. Domain Assessment Timing Misaligned
+## Domain Assessment Timing Misaligned
 
 **❌ MISTAKE:** Domain assessments completed at different times with large gaps
 
@@ -659,7 +659,7 @@ Example: EV-D1-001-CERT-Encryption_Certificate
 - Rolling assessment window (e.g., 30 days)
 - Note assessment dates on dashboard
 
-## 18. No Continuous Improvement Loop
+## No Continuous Improvement Loop
 
 **❌ MISTAKE:** Same issues appearing repeatedly without process improvement
 

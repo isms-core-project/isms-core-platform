@@ -109,6 +109,8 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 DOCUMENT_ID = "ISMS-IMP-A.5.8.2"
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_Security_Requirements_Register_{GENERATED_TIMESTAMP}.xlsx"
 CONTROL_REF = "ISO/IEC 27001:2022 Control A.5.8"
 
 def setup_styles():

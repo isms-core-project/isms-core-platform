@@ -18,7 +18,7 @@
 
 ---
 
-### 1. Assessment Overview
+### Assessment Overview
 
 #### 1.1 Purpose
 
@@ -60,7 +60,7 @@ This workbook operationalises management oversight of that requirement by tracki
 - Escalation records proving the organisation acts on non-compliance
 - Correlation between training gaps and violation patterns
 
-### 2. Prerequisites
+### Prerequisites
 
 Before beginning this assessment, ensure access to:
 
@@ -89,18 +89,7 @@ Before beginning this assessment, ensure access to:
    - Documenting any open violations as "inherited"
    - Marking prior access reviews as "historical reference"
 
-### 3. Workbook Structure
-
-| Sheet | Purpose | Update Frequency |
-|-------|---------|------------------|
-| **Instructions** | Guidance and escalation thresholds | Reference |
-| **Training Oversight** | Track team training completion | Monthly |
-| **Policy Violations** | Log violations and manager response | As occurred |
-| **Access Reviews** | Record access review participation | Per review cycle |
-| **Escalation Triggers** | Monitor thresholds and log escalations | Continuous |
-| **Quarterly Summary** | Aggregate metrics for reporting | Quarterly |
-
-### 4. Escalation Triggers
+### Escalation Triggers
 
 **Per ISMS Copilot Audit Requirements:**
 
@@ -116,7 +105,7 @@ When thresholds are breached:
 3. Track resolution and document outcome
 4. Review root cause to prevent recurrence
 
-### 5. Completion Walkthrough
+### Completion Walkthrough
 
 #### Step 1: Training Oversight (Monthly)
 
@@ -168,7 +157,7 @@ Aggregate all data quarterly:
 4. Verify **Access_Reviews_Completed** (target: 100%)
 5. Assign **Overall_Rating**: Exceeds, Meets, Below, N/A
 
-### 6. Worked Examples
+### Worked Examples
 
 #### Example A: High-Performing Manager (Sarah Chen, Engineering)
 
@@ -254,7 +243,7 @@ Aggregate all data quarterly:
 - Why "Partial" status? Which systems incomplete?
 - Zero changes on finance systems is unusual (staff turnover, role changes typically require adjustments)
 
-### 7. Escalation Workflow Details
+### Escalation Workflow Details
 
 #### Escalation Level 1: Training Compliance (<90%)
 
@@ -321,7 +310,7 @@ Aggregate all data quarterly:
 
 **Repeat Offenders**: Managers with 3+ response time escalations in 12 months require HR involvement.
 
-### 8. Evidence Collection
+### Evidence Collection
 
 | Data Type | Source | Retention |
 |-----------|--------|-----------|
@@ -333,7 +322,7 @@ Aggregate all data quarterly:
 
 **Evidence Storage**: `[SharePoint/Evidence Library]/A.5.4/Compliance-Oversight/[Year]/[Quarter]/`
 
-### 7. Common Pitfalls
+### Common Pitfalls
 
 ❌ **MISTAKE**: Waiting until quarter-end to update training data
 ✅ **CORRECT**: Update Training Oversight sheet monthly
@@ -365,7 +354,7 @@ Aggregate all data quarterly:
 ❌ **MISTAKE**: Treating all violations equally regardless of severity
 ✅ **CORRECT**: Apply proportionate responses - Critical violations require immediate action, Low violations may be addressed in regular 1:1s
 
-### 9. Trend Analysis
+### Trend Analysis
 
 #### Quarterly Trend Indicators
 
@@ -407,7 +396,7 @@ Create quarterly department comparison to identify outliers:
 
 **Investigation Priority**: Sales department requires immediate attention across all metrics.
 
-### 10. Quality Checklist
+### Quality Checklist
 
 Before quarterly reporting:
 
@@ -423,7 +412,7 @@ Before quarterly reporting:
 - [ ] Department comparison chart updated
 - [ ] All escalations have documented resolution or status update
 
-### 11. Review and Approval
+### Review and Approval
 
 | Role | Responsibility | Frequency |
 |------|----------------|-----------|
@@ -433,7 +422,6 @@ Before quarterly reporting:
 | Department Heads | Address escalations in their departments | As needed |
 
 ---
-
 
 **END OF USER GUIDE**
 

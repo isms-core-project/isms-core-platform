@@ -2205,11 +2205,6 @@ Full Year 2024 Highlights:
 
 ---
 
-[DOCUMENT CONTINUES - Part II Technical Specification will complete to 2000-2500 lines]
-
----
-
-
 **END OF USER GUIDE**
 
 ---

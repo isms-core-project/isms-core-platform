@@ -46,9 +46,9 @@
 
 ---
 
-## 1. Purpose and Scope
+## Purpose and Scope
 
-### 1.1 Assessment Objective
+### Assessment Objective
 
 This assessment verifies [Organization]'s compliance with ISO/IEC 27001:2022 Control A.6.1 (Screening) as implemented through ISMS-POL-A.5.1-2-6.1-2, Section 6.
 
@@ -69,7 +69,7 @@ This assessment verifies [Organization]'s compliance with ISO/IEC 27001:2022 Con
 - Screening provider governance (where third-party screening services are used)
 - Contractor and third-party workforce screening
 
-### 1.2 Relationship to Parent Policy
+### Relationship to Parent Policy
 
 This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2, Section 6: Screening & Vetting Requirements**.
 
@@ -83,7 +83,7 @@ This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2,
 
 **Evidence Collected**: Screening process documentation, screening completion records, consent forms, screening provider contracts, legal review documentation, re-screening schedules, individual screening files
 
-### 1.3 Assessment Frequency
+### Assessment Frequency
 
 **Standard Schedule:**
 - **Quarterly**: All organizations (routine screening compliance verification)
@@ -97,7 +97,7 @@ This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2,
 - Screening provider performance must be monitored regularly
 - Supports continuous compliance posture required by ISO 27001
 
-### 1.4 Assessment Ownership
+### Assessment Ownership
 
 **Primary Owner**: CISO and CHRO (joint ownership — security defines requirements, HR executes)
 
@@ -115,9 +115,9 @@ This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2,
 
 ---
 
-## 2. Assessment Methodology
+## Assessment Methodology
 
-### 2.1 Assessment Approach
+### Assessment Approach
 
 This assessment uses a **process-then-person verification approach** — first verify the screening process is properly defined, then verify each individual has been screened per the process.
 
@@ -157,7 +157,7 @@ This assessment uses a **process-then-person verification approach** — first v
 - Assess risk level per gap
 - Define remediation actions
 
-### 2.2 Data Sources
+### Data Sources
 
 **Primary Sources:**
 - Screening process documentation (procedure manuals, flowcharts)
@@ -175,7 +175,7 @@ This assessment uses a **process-then-person verification approach** — first v
 - DPO sign-off documentation
 - Legal review memos
 
-### 2.3 Compliance Criteria
+### Compliance Criteria
 
 **Compliant Individual Screening** meets ALL criteria:
 - ✅ Screening level assigned based on role tier and information access
@@ -198,7 +198,7 @@ This assessment uses a **process-then-person verification approach** — first v
 - ❌ Re-screening overdue by > 90 days
 - ❌ Screening documentation missing or destroyed prematurely
 
-### 2.4 Scoring Methodology
+### Scoring Methodology
 
 **Overall Compliance Score** = Weighted average across assessment domains
 
@@ -218,9 +218,9 @@ This assessment uses a **process-then-person verification approach** — first v
 
 ---
 
-## 3. Screening Level Framework
+## Screening Level Framework
 
-### 3.1 Proportionality Principle
+### Proportionality Principle
 
 ISO 27001:2022 Control A.6.1 explicitly requires screening to be **proportionate**. This means:
 - Screening depth increases with role sensitivity
@@ -230,7 +230,7 @@ ISO 27001:2022 Control A.6.1 explicitly requires screening to be **proportionate
 
 **Swiss FADP Constraint**: Under Art. 6(7), **explicit consent** is required before processing sensitive personal data. Criminal record information is explicitly classified as sensitive personal data under Art. 4(c)(5). Therefore, criminal record checks require documented explicit consent from the candidate — consent cannot be implied by signing an employment contract.
 
-### 3.2 Screening Level Definitions
+### Screening Level Definitions
 
 **Four screening levels, mapped to role tiers from .S2:**
 
@@ -267,7 +267,7 @@ Required checks:
 
 Scope: CISO, DPO, Security Committee members, C-suite roles with security oversight. Roles with unrestricted access to Restricted information or critical security infrastructure.
 
-### 3.3 Contractor and Third-Party Screening
+### Contractor and Third-Party Screening
 
 Contractors and third-party workers must be screened at a level matching their **access requirements**, not their employment type. A contractor with admin access to critical systems requires the same screening as an employee in an equivalent role.
 
@@ -276,7 +276,7 @@ Contractors and third-party workers must be screened at a level matching their *
 - **Direct contractors**: Organization performs screening directly, same process as employees
 - **Vendor personnel with site/system access**: Vendor must confirm screening at required level; organization retains right to audit vendor screening records
 
-### 3.4 Screening Exemptions
+### Screening Exemptions
 
 In exceptional cases, screening may be delayed or modified. All exemptions require:
 - Written justification documenting the business necessity
@@ -288,44 +288,9 @@ In exceptional cases, screening may be delayed or modified. All exemptions requi
 
 ---
 
-## 4. Assessment Workbook Structure
+## Assessment Workbook Structure
 
-### 4.1 Workbook Overview
-
-**File Name**: `ISMS-IMP-A.5.1-2-6.1-2.S3_Screening_Vetting_YYYYMMDD.xlsx`
-
-**Sheet Count**: 10 sheets
-
-**Sheet Summary**:
-
-| Sheet # | Sheet Name | Purpose | Rows (Approx) |
-|---------|------------|---------|---------------|
-| 1 | Dashboard | Executive summary and overall metrics | 80 |
-| 2 | Screening_Process_Assessment | Screening process documentation verification | 40 |
-| 3 | Screening_Level_Matrix | Role tier → screening level mapping | 60 |
-| 4 | Personnel_Screening_Registry | Master registry: all personnel screening status | 150 (dynamic) |
-| 5 | Screening_Compliance_Verification | Per-person compliance gap identification | 150 (dynamic) |
-| 6 | Continuous_Screening_Assessment | Re-screening schedule and compliance | 150 (dynamic) |
-| 7 | Legal_Compliance_Review | FADP/GDPR screening legality verification | 40 |
-| 8 | Gap_Analysis | All gaps consolidated with risk and remediation | 80 |
-| 9 | Evidence_Register | Supporting evidence documentation | 80 |
-| 10 | Approval_Sign_Off | Three-level approval workflow | 60 |
-
-**Assessment Flow:**
-1. Complete **Sheet 2** (Screening Process Assessment) — verify the process exists
-2. Complete **Sheet 3** (Screening Level Matrix) — verify levels are correctly mapped
-3. Complete **Sheet 4** (Personnel Screening Registry) — populate all personnel
-4. Review **Sheet 5** (Screening Compliance Verification) — auto-populated from Sheets 3–4
-5. Complete **Sheet 6** (Continuous Screening Assessment) — re-screening status
-6. Complete **Sheet 7** (Legal Compliance Review) — FADP/GDPR verification
-7. Review **Sheet 8** (Gap Analysis) — consolidated gaps
-8. Document **Sheet 9** (Evidence Register) — supporting evidence
-9. Review **Sheet 1** (Dashboard) — auto-calculated executive summary
-10. Obtain **Sheet 10** (Approval Sign-Off) — three-level sign-off
-
----
-
-## 5. Sheet-by-Sheet Completion Guide
+## Sheet-by-Sheet Completion Guide
 
 ### Sheet 1: Dashboard
 
@@ -1109,7 +1074,7 @@ Auto-calculated summary block:
 
 ---
 
-## 6. Quality Checklist
+## Quality Checklist
 
 **Before submitting assessment for approval, verify:**
 
@@ -1168,9 +1133,9 @@ Auto-calculated summary block:
 
 ---
 
-## 7. Evidence Collection Guide
+## Evidence Collection Guide
 
-### 7.1 Evidence Organization
+### Evidence Organization
 
 **Folder Structure:**
 ```
@@ -1212,7 +1177,7 @@ Evidence/A.6.1_Screening_Vetting/
 
 **CRITICAL**: Criminal check reports (folder 03) must be stored with enhanced access controls — restricted to HR Manager, CISO, DPO, and Legal only. These files contain sensitive personal data under Swiss FADP Art. 4(c)(5).
 
-### 7.2 Evidence Types by Assessment Sheet
+### Evidence Types by Assessment Sheet
 
 **Sheet 2 (Screening Process Assessment):**
 - Screening process documentation
@@ -1246,7 +1211,7 @@ Evidence/A.6.1_Screening_Vetting/
 
 ---
 
-## 8. Integration with Other Assessments
+## Integration with Other Assessments
 
 This assessment (.S3 — Screening & Vetting) is part of the stacked control framework for A.5.1 + A.5.2 + A.6.1 + A.6.2.
 

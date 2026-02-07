@@ -489,7 +489,7 @@ Before media is re-used internally:
 
 # Common Pitfalls
 
-## 1. No Certificates of Destruction
+## No Certificates of Destruction
 
 **❌ MISTAKE:** Disposing of CONFIDENTIAL media without obtaining certificates
 
@@ -503,7 +503,7 @@ Before media is re-used internally:
 - Track certificate receipt in asset management
 - Retain certificates per retention schedule
 
-## 2. SSD Overwriting Ineffective
+## SSD Overwriting Ineffective
 
 **❌ MISTAKE:** Using traditional overwrite methods on SSDs
 
@@ -517,7 +517,7 @@ Before media is re-used internally:
 - Or physical destruction (shredding)
 - Verify with manufacturer guidance
 
-## 3. Vendor Certifications Expired
+## Vendor Certifications Expired
 
 **❌ MISTAKE:** Using disposal vendors with lapsed certifications
 
@@ -531,7 +531,7 @@ Before media is re-used internally:
 - Annual vendor review process
 - Contract renewal tied to certification
 
-## 4. No Re-use Verification
+## No Re-use Verification
 
 **❌ MISTAKE:** Re-assigning media without erasure verification
 
@@ -545,7 +545,7 @@ Before media is re-used internally:
 - Documentation of erasure and verification
 - Spot audits of re-used media
 
-## 5. Incomplete Chain of Custody
+## Incomplete Chain of Custody
 
 **❌ MISTAKE:** Media disposal without documented handoffs
 
@@ -559,7 +559,7 @@ Before media is re-used internally:
 - Signed handoff at each transfer
 - Reconciliation of media sent vs. certificates received
 
-## 6. Paper Shredding Gaps
+## Paper Shredding Gaps
 
 **❌ MISTAKE:** CONFIDENTIAL paper in standard recycling
 
@@ -573,7 +573,7 @@ Before media is re-used internally:
 - Regular collection schedule
 - Awareness training on document handling
 
-## 7. Delayed Disposal
+## Delayed Disposal
 
 **❌ MISTAKE:** Media awaiting disposal for extended periods
 
@@ -587,7 +587,7 @@ Before media is re-used internally:
 - Secure holding area with access controls
 - Regular disposal batches scheduled
 
-## 8. No Environmental Compliance
+## No Environmental Compliance
 
 **❌ MISTAKE:** E-waste disposed without proper handling
 
@@ -601,7 +601,7 @@ Before media is re-used internally:
 - Obtain environmental compliance certificates
 - Track disposal through proper channels
 
-## 9. Erasure Tool Not Validated
+## Erasure Tool Not Validated
 
 **❌ MISTAKE:** Using erasure software without verification of effectiveness
 
@@ -615,7 +615,7 @@ Before media is re-used internally:
 - Validate tool effectiveness periodically
 - Document tool version and settings
 
-## 10. Failed Drive Warranty Conflicts
+## Failed Drive Warranty Conflicts
 
 **❌ MISTAKE:** Returning failed drives to vendor without data removal
 
@@ -629,7 +629,7 @@ Before media is re-used internally:
 - Destroy failed drives internally
 - Document warranty vs. security decisions
 
-## 11. No Procurement Tracking
+## No Procurement Tracking
 
 **❌ MISTAKE:** Media purchased outside approved channels
 
@@ -643,7 +643,7 @@ Before media is re-used internally:
 - Approved supplier list enforced
 - Registration requirement before deployment
 
-## 12. Incomplete Asset Disposal Records
+## Incomplete Asset Disposal Records
 
 **❌ MISTAKE:** Disposing media without updating asset management system
 
@@ -657,7 +657,7 @@ Before media is re-used internally:
 - Regular reconciliation audits
 - Mandatory closure step in process
 
-## 13. Cross-Cut Shredder Misconfigured
+## Cross-Cut Shredder Misconfigured
 
 **❌ MISTAKE:** Shredder particle size not appropriate for classification
 
@@ -671,7 +671,7 @@ Before media is re-used internally:
 - Regular maintenance and blade checks
 - Periodic particle size verification
 
-## 14. No Degausser for Magnetic Media
+## No Degausser for Magnetic Media
 
 **❌ MISTAKE:** Disposing magnetic tapes without degaussing
 
@@ -685,7 +685,7 @@ Before media is re-used internally:
 - Verify degausser field strength
 - Document degaussing in disposal record
 
-## 15. Missing Retention Period Consideration
+## Missing Retention Period Consideration
 
 **❌ MISTAKE:** Disposing media before retention period expires
 
@@ -699,7 +699,7 @@ Before media is re-used internally:
 - Legal hold verification process
 - Retention schedule integration
 
-## 16. No Disposal Approval Workflow
+## No Disposal Approval Workflow
 
 **❌ MISTAKE:** IT staff disposing media without management approval
 
@@ -713,7 +713,7 @@ Before media is re-used internally:
 - Approval levels based on classification/value
 - Audit trail of approvals
 
-## 17. Uncontrolled Media Donation
+## Uncontrolled Media Donation
 
 **❌ MISTAKE:** Donating old equipment without proper data erasure
 
@@ -727,7 +727,7 @@ Before media is re-used internally:
 - Verification before release
 - Consider physical destruction instead
 
-## 18. Paper Shredding Overflow
+## Paper Shredding Overflow
 
 **❌ MISTAKE:** Overfull shredding bins with documents visible
 

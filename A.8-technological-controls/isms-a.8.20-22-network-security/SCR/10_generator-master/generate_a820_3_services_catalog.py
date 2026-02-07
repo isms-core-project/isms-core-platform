@@ -370,6 +370,7 @@ DOCUMENT_ID = "ISMS-IMP-A.8.20-21-22.S3"
 CONTROL_REF = "ISO/IEC 27001:2022 - Controls A.8.20, A.8.21, A.8.22: Network Security"
 GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")
 GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_Network_Services_Catalog_{GENERATED_TIMESTAMP}.xlsx"
 
 # Service catalog constants
 SERVICE_ROW_COUNT = 100         # Main service catalog rows

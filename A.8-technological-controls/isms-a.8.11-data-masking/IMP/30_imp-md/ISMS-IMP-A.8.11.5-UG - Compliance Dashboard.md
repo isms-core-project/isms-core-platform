@@ -64,25 +64,6 @@
 
 ---
 
-## Workbook Structure
-
-### Sheet Overview (12 Sheets)
-
-1. **Instructions_Legend** - Dashboard usage guidance
-2. **Executive_Summary** - One-page CISO/Board overview
-3. **Domain_1_Summary** - Data Inventory rollup
-4. **Domain_2_Summary** - Masking Techniques rollup
-5. **Domain_3_Summary** - Environment Coverage rollup
-6. **Domain_4_Summary** - Testing & Validation rollup
-7. **Consolidated_Gap_Analysis** - All gaps from all domains
-8. **Risk_Register** - Masking-related risks
-9. **Remediation_Roadmap** - Prioritized action plan
-10. **Evidence_Master_Index** - All evidence from all domains
-11. **KPI_Dashboard** - 20+ key metrics with targets
-12. **CISO_DPO_Approval** - Executive sign-off
-
----
-
 ## Cell Styling Reference
 
 ### Header Styles
@@ -763,7 +744,6 @@ Review Cycle:          Quarterly
 **END OF SPECIFICATION**
 
 ---
-
 
 **END OF USER GUIDE**
 

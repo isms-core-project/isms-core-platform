@@ -33,7 +33,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
 #### 1.1 Purpose
 
@@ -69,7 +69,7 @@ This assessment covers:
 | Periodic Review | Annual |
 | Triggered Review | After significant policy changes, security incidents, or organizational restructuring |
 
-### 2. Prerequisites
+### Prerequisites
 
 Before starting this assessment, ensure:
 
@@ -81,7 +81,7 @@ Before starting this assessment, ensure:
 | Access to IT access provisioning records | ☐ | VPN/remote access grants |
 | List of personnel currently working remotely | ☐ | From HR/IT systems |
 
-### 3. Assessment Workflow
+### Assessment Workflow
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -120,7 +120,7 @@ Before starting this assessment, ensure:
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-### 4. Sheet-by-Sheet Completion Guide
+### Sheet-by-Sheet Completion Guide
 
 #### 4.1 Instructions Sheet
 
@@ -300,7 +300,7 @@ Before starting this assessment, ensure:
 3. **Management Approval**: CISO approval
 4. **Next Steps**: Agreed actions and timeline
 
-### 5. Evidence Collection Guidelines
+### Evidence Collection Guidelines
 
 #### 5.1 Required Evidence Types
 
@@ -322,7 +322,7 @@ Evidence must be:
 - **Current**: Reflects current state (within assessment period)
 - **Authentic**: Original or verified copy
 
-### 6. Common Pitfalls
+### Common Pitfalls
 
 #### ❌ MISTAKE #1: Assessing Policy Without Verifying Implementation
 
@@ -446,7 +446,7 @@ Evidence must be:
 
 ---
 
-### 7. Quality Checklist
+### Quality Checklist
 
 Before submitting assessment, verify:
 
@@ -509,7 +509,7 @@ Before submitting assessment, verify:
 
 ---
 
-### 8. Review and Approval Process
+### Review and Approval Process
 
 #### 8.1 Review Workflow
 

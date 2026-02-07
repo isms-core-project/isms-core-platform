@@ -290,6 +290,8 @@ from openpyxl.worksheet.datavalidation import DataValidation
 # =============================================================================
 DOCUMENT_ID = "ISMS-IMP-A.8.25-26-29.S1"
 CONTROL_REF = "ISO/IEC 27001:2022 - Controls A.8.25, A.8.26, A.8.29: Secure Development"
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_Security_Requirements_Assessment_{GENERATED_TIMESTAMP}.xlsx"
 
 
 # ============================================================================
@@ -1517,7 +1519,7 @@ def main():
     build_approval_sheet(wb, styles)
     
     # Save workbook
-    filename = f"ISMS-IMP-A.8.25-26-29.S1_Security_Requirements_Assessment_{datetime.now().strftime('%Y%m%d')}.xlsx"
+    filename = OUTPUT_FILENAME
     logger.info(f"\n💾 Saving workbook: {filename}")
     wb.save(filename)
     

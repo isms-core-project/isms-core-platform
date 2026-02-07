@@ -111,6 +111,8 @@ logger = logging.getLogger(__name__)
 
 DOCUMENT_ID = "ISMS-IMP-A.5.8.1"
 CONTROL_REF = "ISO/IEC 27001:2022 Control A.5.8"
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_Project_Lifecycle_Assessment_{GENERATED_TIMESTAMP}.xlsx"
 
 def setup_styles():
     border = Border(left=Side(style="thin"), right=Side(style="thin"),
@@ -595,7 +597,7 @@ def main():
     create_evidence_register(wb["9. Evidence Register"], styles)
     logger.info("[10/10] Creating Sign-Off sheet...")
     create_signoff_sheet(wb["10. Sign-Off"], styles)
-    filename = f"{DOCUMENT_ID}_Project_Lifecycle_Assessment_{datetime.now().strftime('%Y%m%d')}.xlsx"
+    filename = OUTPUT_FILENAME
     wb.save(filename)
     logger.info(f"\\n✅ SUCCESS: {filename}")
     logger.info(f"📄 File: {filename}")

@@ -3012,7 +3012,7 @@ Once approved:
 
 ## Next Steps After Completion
 
-### 1. Proceed to Other A.8.23 Assessments
+### Proceed to Other A.8.23 Assessments
 
 This assessment (A.8.23.1) is now complete. Use the data collected here as INPUT to:
 
@@ -3036,7 +3036,7 @@ This assessment (A.8.23.1) is now complete. Use the data collected here as INPUT
 - This assessment's data feeds into the consolidated compliance view
 - Gap analysis from Sheet 8 is a key input
 
-### 2. Execute Remediation Plans
+### Execute Remediation Plans
 
 From Sheet 8 (Gap Analysis):
 1. Review prioritized gaps with management
@@ -3046,7 +3046,7 @@ From Sheet 8 (Gap Analysis):
 5. Track progress
 6. Update assessment as gaps are closed
 
-### 3. Quarterly Updates
+### Quarterly Updates
 
 This assessment should be updated quarterly:
 
@@ -3066,7 +3066,7 @@ This assessment should be updated quarterly:
 - After solution upgrades
 - Before audits
 
-### 4. Continuous Improvement
+### Continuous Improvement
 
 Use this assessment to drive improvements:
 

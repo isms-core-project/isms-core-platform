@@ -47,36 +47,214 @@
 
 # Technical Specification
 
-# Workbook Structure
 
-**Sheet 1: Instructions & Legend** - Assessment guidance
-**Sheet 2: Detection Mechanisms** - 33 questions (SIEM, EDR, IDS/IPS, NDR, user reporting, coverage by category)
-**Sheet 3: Alert Handling** - 25 questions (triage, playbooks, escalation, capacity)
-**Sheet 4: Classification & Severity** - 25 questions (category assignment, severity criteria, consistency)
-**Sheet 5: Detection Effectiveness** - 25 questions (MTTD, MTTT, false positives, coverage gaps)
-**Sheet 6: Gap Analysis** - 40 gap capacity
-**Sheet 7: Evidence Register** - 60 evidence capacity
-**Sheet 8: Dashboard** - Detection effectiveness summary
-**Sheet 9: Approval Sign-Off** - SOC Manager + CISO approval
+> Auto-generated from `generate_a524_28_s2_detection_classification.py`
+> Re-generate with: `python3 generate_tg_from_scr.py --apply`
+
+## Workbook Overview
+
+| Property | Value |
+|----------|-------|
+| **Document ID** | `ISMS-IMP-A.5.24-28.S2` |
+| **Output Filename** | `ISMS-IMP-A.5.24-28.S2_Detection_&_Classification_YYYYMMDD.xlsx` |
+| **Workbook Title** | Detection & Classification |
+| **Total Sheets** | 17 (17 visible) |
+| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
+
+## Color Palette
+
+| Hex Code | Style Name | Description |
+|----------|-----------|-------------|
+| #003366 | 003366 | Dark Blue (Headers) |
+| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
+| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
+| #D8E4F8 | D8E4F8 | Pale Blue (Sub-section) |
+| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFD9B3 | FFD9B3 | Custom |
+| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | FFFFCC | Light Yellow (User Input) |
+
+## Sheet 1: Instructions & Legend
 
 ---
 
-# Python Script Specifications
+## Sheet 2: Detection Mechanisms
 
-**Total Questions:** 108 (33+25+25+25)
-**Calculated Metrics:** MTTD, MTTT, False Positive Rate, Coverage %, Alert-to-Incident Ratio
-**Conditional Formatting:** 
+---
 
-- Red: High false positive rate (>30%), Poor MTTD (>24h), Low coverage (<60%)
-- Yellow: Medium thresholds
-- Green: Good performance
+## Sheet 3: Alert Handling
 
-**Data Validation:**
+---
 
-- Dropdowns for all categorical questions
-- Date format validation
-- Percentage validation (0-100%)
-- Duration format guidance
+## Sheet 4: Classification & Severity
+
+---
+
+## Sheet 5: Detection Effectiveness
+
+---
+
+## Sheet 6: Gap Analysis
+
+---
+
+## Sheet 7: Evidence Register
+
+---
+
+## Sheet 8: Dashboard
+
+---
+
+## Sheet 9: Approval Sign-Off
+
+---
+
+## Sheet 10: Instructions
+
+**Frozen Panes:** A3
+
+---
+
+## Sheet 11: Detection_Mechanisms
+
+**Frozen Panes:** A5
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Question_ID |
+| B | Section |
+| C | Question |
+| D | Answer |
+| E | Evidence_Reference |
+| F | Comments |
+| G | Gap_Identified |
+
+### Formulas
+
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| GN | `=IF(OR(D{row}=` |  |
+
+---
+
+## Sheet 12: Alert_Handling
+
+**Frozen Panes:** A5
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Question_ID |
+| B | Section |
+| C | Question |
+| D | Answer |
+| E | Evidence_Reference |
+| F | Comments |
+| G | Gap_Identified |
+
+### Formulas
+
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| GN | `=IF(OR(D{row}=` |  |
+
+---
+
+## Sheet 13: Classification_Severity
+
+**Data Rows:** 8 (rows 76–83) | **Frozen Panes:** A5
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Question_ID |
+| B | Section |
+| C | Question |
+| D | Answer |
+| E | Evidence_Reference |
+| F | Comments |
+| G | Gap_Identified |
+
+### Formulas
+
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| GN | `=IF(OR(D{row}=` |  |
+
+---
+
+## Sheet 14: Detection_Effectiveness
+
+**Frozen Panes:** A5
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Question_ID |
+| B | Section |
+| C | Question |
+| D | Answer |
+| E | Evidence_Reference |
+| F | Comments |
+| G | Gap_Identified |
+
+### Formulas
+
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| GN | `=IF(OR(D{row}=` |  |
+
+---
+
+## Sheet 15: Gap_Analysis
+
+**Data Rows:** 9 (rows 2–10) | **Frozen Panes:** A5
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Gap_ID |
+| B | Section |
+| C | Gap_Description |
+| D | Risk_Level |
+| E | Current_State |
+| F | Target_State |
+| G | Remediation |
+| H | Owner |
+| I | Target_Date |
+| J | Status |
+
+---
+
+## Sheet 16: Evidence_Register
+
+**Data Rows:** 7 (rows 2–8) | **Frozen Panes:** A5
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Evidence_ID |
+| B | Evidence_Type |
+| C | Description |
+| D | Related_Section |
+| E | Storage_Location |
+| F | Date_Collected |
+| G | Collected_By |
+| H | Verification |
+
+---
+
+## Sheet 17: Approval_Signoff
+
+**Frozen Panes:** A3
 
 ---
 

@@ -19,37 +19,13 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-1. [PART I: USER COMPLETION GUIDE](#part-i-user-completion-guide)
-   - [1.1 Assessment Overview](#11-assessment-overview)
-   - [1.2 Control Requirements](#12-control-requirements)
-   - [1.3 Prerequisites](#13-prerequisites)
-   - [1.4 Violation Categories](#14-violation-categories)
-   - [1.5 Workbook Structure](#15-workbook-structure)
-   - [1.6 Completion Walkthrough](#16-completion-walkthrough)
-   - [1.7 Investigation Framework](#17-investigation-framework)
-   - [1.8 Due Process Requirements](#18-due-process-requirements)
-   - [1.9 Evidence Collection](#19-evidence-collection)
-   - [1.10 Common Pitfalls](#110-common-pitfalls)
-   - [1.11 Quality Checklist](#111-quality-checklist)
-   - [1.12 Review and Approval](#112-review-and-approval)
-   - [1.13 Regulatory Compliance](#113-regulatory-compliance)
-   - [1.14 Related Controls](#114-related-controls)
-2. [PART II: TECHNICAL SPECIFICATION](#part-ii-technical-specification)
-   - [2.1 Workbook Architecture](#21-workbook-architecture)
-   - [2.2 Sheet Specifications](#22-sheet-specifications)
-   - [2.3 Data Validations](#23-data-validations)
-   - [2.4 Conditional Formatting](#24-conditional-formatting)
-   - [2.5 Formula Specifications](#25-formula-specifications)
-   - [2.6 Cell Styling Standards](#26-cell-styling-standards)
-   - [2.7 Generator Script Reference](#27-generator-script-reference)
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.6.4-5.S1-TG.
 
 ---
 
----
-
-## 1.1 Assessment Overview
+## Assessment Overview
 
 ### Purpose
 
@@ -111,7 +87,7 @@ A well-defined disciplinary process delivers:
 
 ---
 
-## 1.2 Control Requirements
+## Control Requirements
 
 ### ISO 27001:2022 Control A.6.4 - Disciplinary Process
 
@@ -167,7 +143,7 @@ ISO 27001 auditors examining Control A.6.4 will verify:
 
 ---
 
-## 1.3 Prerequisites
+## Prerequisites
 
 ### Before Starting This Assessment
 
@@ -216,7 +192,7 @@ Before proceeding, verify:
 
 ---
 
-## 1.4 Violation Categories
+## Violation Categories
 
 ### Understanding Violation Severity
 
@@ -288,56 +264,7 @@ Is information security policy implicated?
 
 ---
 
-## 1.5 Workbook Structure
-
-### Sheet Overview
-
-The workbook consists of seven sheets, each serving a specific purpose in the disciplinary process framework:
-
-| Sheet | Purpose | Primary User | Update Frequency |
-|-------|---------|--------------|------------------|
-| **Instructions** | Guidance and orientation | All users | As needed |
-| **Violation_Categories** | Standardised violation classification | ISM, HR | Annual |
-| **Response_Matrix** | Violation-to-consequence mapping | HR, Legal | Annual |
-| **Investigation_Process** | Investigation procedure documentation | HR, Security | Annual |
-| **Case_Tracker** | Active and historical case tracking | HR | Ongoing |
-| **Evidence_Register** | Evidence tracking and links | HR, ISM | Ongoing |
-| **Approval_SignOff** | Assessment authorisation | Approvers | At completion |
-
-### Sheet Relationships
-
-```
-┌─────────────────┐
-│  Instructions   │ ◄── Start here
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐     ┌─────────────────┐
-│Violation_       │────►│ Response_Matrix │
-│Categories       │     │                 │
-└────────┬────────┘     └─────────────────┘
-         │                      │
-         │                      │ (links by Category)
-         ▼                      │
-┌─────────────────┐     ┌───────┴─────────┐
-│Investigation_   │◄────┤  Case_Tracker   │
-│Process          │     │                 │
-└────────┬────────┘     └─────────────────┘
-         │
-         ▼
-┌─────────────────┐
-│Evidence_Register│
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ Approval_SignOff│ ◄── Complete here
-└─────────────────┘
-```
-
----
-
-## 1.6 Completion Walkthrough
+## Completion Walkthrough
 
 ### Step 1: Review Instructions Sheet
 
@@ -562,7 +489,7 @@ Obtain required authorisations:
 
 ---
 
-## 1.7 Investigation Framework
+## Investigation Framework
 
 ### Investigation Principles
 
@@ -629,7 +556,7 @@ All investigations must adhere to these principles:
 
 ---
 
-## 1.8 Due Process Requirements
+## Due Process Requirements
 
 ### Employee Rights
 
@@ -673,7 +600,7 @@ All individuals subject to disciplinary investigation have the following rights:
 
 ---
 
-## 1.9 Evidence Collection
+## Evidence Collection
 
 ### Evidence Requirements
 
@@ -724,7 +651,7 @@ EVD-A.6.4.1_[EvidenceType]_[YYYYMMDD].[ext]
 
 ---
 
-## 1.10 Common Pitfalls
+## Common Pitfalls
 
 Avoid these common mistakes when implementing the disciplinary process:
 
@@ -780,7 +707,7 @@ Avoid these common mistakes when implementing the disciplinary process:
 
 ---
 
-## 1.11 Quality Checklist
+## Quality Checklist
 
 Before submitting the completed assessment, verify all items:
 
@@ -827,7 +754,7 @@ Before submitting the completed assessment, verify all items:
 
 ---
 
-## 1.12 Review and Approval
+## Review and Approval
 
 ### Review Process
 
@@ -891,7 +818,7 @@ Upon approval:
 
 ---
 
-## 1.13 Regulatory Compliance
+## Regulatory Compliance
 
 ### Employment Law Requirements
 
@@ -924,7 +851,7 @@ Upon approval:
 
 ---
 
-## 1.14 Related Controls
+## Related Controls
 
 ### Primary Control Relationships
 
@@ -946,7 +873,6 @@ Upon approval:
 | ISMS-IMP-A.5.24-28.x | Incident Management | Incident-disciplinary interface |
 
 ---
-
 
 **END OF USER GUIDE**
 

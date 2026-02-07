@@ -18,32 +18,13 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-1. [PART I: USER COMPLETION GUIDE](#part-i-user-completion-guide)
-   - [1.1 Assessment Overview](#11-assessment-overview)
-   - [1.2 Control Requirements](#12-control-requirements)
-   - [1.3 Prerequisites](#13-prerequisites)
-   - [1.4 Workbook Structure](#14-workbook-structure)
-   - [1.5 Completion Walkthrough](#15-completion-walkthrough)
-   - [1.6 Exploitation Scenario Library](#16-exploitation-scenario-library)
-   - [1.7 Evidence Collection](#17-evidence-collection)
-   - [1.8 Common Pitfalls](#18-common-pitfalls)
-   - [1.9 Quality Checklist](#19-quality-checklist)
-   - [1.10 Review and Approval](#110-review-and-approval)
-2. [PART II: TECHNICAL SPECIFICATION](#part-ii-technical-specification)
-   - [2.1 Workbook Technical Details](#21-workbook-technical-details)
-   - [2.2 Sheet Specifications](#22-sheet-specifications)
-   - [2.3 Conditional Formatting](#23-conditional-formatting)
-   - [2.4 Formulas](#24-formulas)
-   - [2.5 Integration Points](#25-integration-points)
-   - [2.6 Related Documents](#26-related-documents)
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.3.2-TG.
 
 ---
 
----
-
-## 1.1 Assessment Overview
+## Assessment Overview
 
 ### Purpose
 
@@ -101,7 +82,7 @@ A thorough conflict analysis delivers:
 
 ---
 
-## 1.2 Control Requirements
+## Control Requirements
 
 ### ISO 27001:2022 Control A.5.3
 
@@ -147,7 +128,7 @@ Auditors expect to see evidence that conflicts have been analysed, not just list
 
 ---
 
-## 1.3 Prerequisites
+## Prerequisites
 
 ### Required Documents
 
@@ -191,121 +172,7 @@ Before proceeding, verify:
 
 ---
 
-## 1.4 Workbook Structure
-
-| Sheet | Purpose | Completion Order |
-|-------|---------|------------------|
-| **Instructions** | Guidance and methodology | Read first |
-| **Conflict_Register** | Master list of all conflicts | Step 1 |
-| **Impact_Assessment** | Detailed impact analysis | Step 2 |
-| **Exploitation_Scenarios** | How conflicts could be exploited | Step 3 |
-| **Control_Mapping** | Controls mitigating each conflict | Step 4 |
-| **Trend_Analysis** | Historical conflict patterns | Step 5 |
-| **Prioritisation_Matrix** | Risk-based ranking | Step 6 |
-| **Evidence_Register** | Supporting documentation | Final |
-
-### Sheet Dependencies
-
-```
-Instructions (Reference)
-       |
-       v
-Conflict_Register (Step 1) <---- Import from A.5.3.1
-       |
-       v
-Impact_Assessment (Step 2) <---- Quantify impact
-       |
-       v
-Exploitation_Scenarios (Step 3) <---- Document attack paths
-       |
-       v
-Control_Mapping (Step 4) <---- Map mitigations
-       |
-       v
-Trend_Analysis (Step 5) <---- Historical tracking
-       |
-       v
-Prioritisation_Matrix (Step 6) <---- Risk-based ranking
-       |
-       v
-Evidence_Register (Final) <---- Supporting documentation
-```
-
-### Sheet-by-Sheet Summary
-
-#### 1. Instructions Sheet
-
-Provides orientation including:
-- Document purpose and scope
-- Impact scoring methodology
-- Conflict categorisation guidance
-- Evidence requirements
-- Contact information
-
-#### 2. Conflict_Register Sheet
-
-Master registry containing:
-- Conflict identifiers linked to A.5.3.1
-- Conflict categories
-- Affected roles and processes
-- Person counts
-- Analysis status
-
-#### 3. Impact_Assessment Sheet
-
-Impact quantification containing:
-- Financial impact scores
-- Operational impact scores
-- Reputational impact scores
-- Compliance impact scores
-- Data impact scores
-- Overall impact ratings
-
-#### 4. Exploitation_Scenarios Sheet
-
-Attack path documentation containing:
-- Scenario descriptions
-- Threat actors
-- Exploitation methods
-- Detection difficulty ratings
-- Historical precedents
-
-#### 5. Control_Mapping Sheet
-
-Mitigation documentation containing:
-- Control identifiers
-- Control types (preventive, detective, corrective)
-- Effectiveness ratings
-- Implementation status
-- Gap notes
-
-#### 6. Trend_Analysis Sheet
-
-Historical tracking containing:
-- Period-over-period conflict counts
-- Resolution rates
-- New conflict tracking
-- Trend indicators
-
-#### 7. Prioritisation_Matrix Sheet
-
-Risk-based ranking containing:
-- Priority scores
-- Priority levels
-- Action timelines
-- Owner assignments
-
-#### 8. Evidence_Register Sheet
-
-Supporting documentation containing:
-- Evidence identifiers
-- Evidence types
-- Storage locations
-- Collection dates
-
----
-
-## 1.5 Completion Walkthrough
+## Completion Walkthrough
 
 ### Step 1: Populate Conflict Register
 
@@ -597,7 +464,7 @@ Where:
 
 ---
 
-## 1.6 Exploitation Scenario Library
+## Exploitation Scenario Library
 
 ### Financial Process Conflicts
 
@@ -700,7 +567,7 @@ Where:
 
 ---
 
-## 1.7 Evidence Collection
+## Evidence Collection
 
 ### Evidence Requirements
 
@@ -745,7 +612,7 @@ EVD-A.5.3.2_[EvidenceType]_[Reference]_[YYYYMMDD].[ext]
 
 ---
 
-## 1.8 Common Pitfalls
+## Common Pitfalls
 
 Avoid these common mistakes when completing the Conflict Analysis:
 
@@ -821,7 +688,7 @@ Avoid these common mistakes when completing the Conflict Analysis:
 
 ---
 
-## 1.9 Quality Checklist
+## Quality Checklist
 
 Before submitting the completed workbook, verify all items:
 
@@ -875,7 +742,7 @@ Before submitting the completed workbook, verify all items:
 
 ---
 
-## 1.10 Review and Approval
+## Review and Approval
 
 ### Review Workflow
 
@@ -925,7 +792,6 @@ Upon approval:
 5. Update A.5.3.4 Dashboard with new data
 
 ---
-
 
 **END OF USER GUIDE**
 

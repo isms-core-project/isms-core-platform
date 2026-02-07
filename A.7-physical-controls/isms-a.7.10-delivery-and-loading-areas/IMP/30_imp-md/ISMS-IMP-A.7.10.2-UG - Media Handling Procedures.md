@@ -475,7 +475,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 
 # Common Pitfalls
 
-## 1. No Chain of Custody Documentation
+## No Chain of Custody Documentation
 
 **❌ MISTAKE:** Transferring media without documenting handoffs
 
@@ -489,7 +489,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 - Digital tracking for courier shipments
 - Acknowledgment of receipt required
 
-## 2. Inadequate Transportation Security
+## Inadequate Transportation Security
 
 **❌ MISTAKE:** Using standard mail or unauthorised couriers for CONFIDENTIAL media
 
@@ -503,7 +503,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 - Use tamper-evident packaging
 - Require tracking and delivery confirmation
 
-## 3. Environmental Control Gaps
+## Environmental Control Gaps
 
 **❌ MISTAKE:** Storing backup tapes in unsuitable conditions
 
@@ -517,7 +517,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 - Use appropriate storage containers
 - Regular media integrity verification
 
-## 4. Missing Access Reviews
+## Missing Access Reviews
 
 **❌ MISTAKE:** Access lists not reviewed after personnel changes
 
@@ -531,7 +531,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 - Immediate revocation on personnel change
 - Least privilege principle enforced
 
-## 5. No Malware Scanning
+## No Malware Scanning
 
 **❌ MISTAKE:** Using received media without scanning
 
@@ -545,7 +545,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 - Disable AutoRun/AutoPlay
 - Quarantine procedures for suspicious media
 
-## 6. Incident Response Not Tested
+## Incident Response Not Tested
 
 **❌ MISTAKE:** Lost media procedures exist but never exercised
 
@@ -559,7 +559,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 - Clear escalation contacts
 - Regular procedure reviews
 
-## 7. Personal Transport Violations
+## Personal Transport Violations
 
 **❌ MISTAKE:** Media in checked baggage during travel
 
@@ -573,7 +573,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 - Encryption mandatory for travel
 - Travel notification to security
 
-## 8. Inconsistent Packaging
+## Inconsistent Packaging
 
 **❌ MISTAKE:** Different packaging standards used by departments
 
@@ -587,7 +587,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 - Packaging guidance by classification
 - Centralised media shipping function
 
-## 9. Uncontrolled Key Distribution
+## Uncontrolled Key Distribution
 
 **❌ MISTAKE:** Cabinet keys duplicated without authorisation
 
@@ -601,7 +601,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 - Key sign-out register maintained
 - Regular key inventory audits
 
-## 10. Missing Visitor Escort Procedures
+## Missing Visitor Escort Procedures
 
 **❌ MISTAKE:** Visitors left unescorted in media storage areas
 
@@ -615,7 +615,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 - Visitor badges clearly visible
 - Sign-in/sign-out logging
 
-## 11. Inadequate After-Hours Security
+## Inadequate After-Hours Security
 
 **❌ MISTAKE:** Storage areas accessible after business hours without additional controls
 
@@ -629,7 +629,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 - Additional approval required
 - CCTV review of off-hours access
 
-## 12. No Emergency Evacuation Procedures for Media
+## No Emergency Evacuation Procedures for Media
 
 **❌ MISTAKE:** No plan for protecting media during emergency evacuations
 
@@ -643,7 +643,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 - Designated personnel for media security
 - Post-incident media verification
 
-## 13. Cross-Contamination of Classifications
+## Cross-Contamination of Classifications
 
 **❌ MISTAKE:** CONFIDENTIAL and PUBLIC media stored in same location
 
@@ -657,7 +657,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 - Clear labelling of storage areas
 - Regular storage audits
 
-## 14. Unverified Courier Credentials
+## Unverified Courier Credentials
 
 **❌ MISTAKE:** Releasing media to couriers without verifying identity
 
@@ -671,7 +671,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 - Known courier personnel where possible
 - Photo ID and company verification
 
-## 15. Missing Insurance Documentation
+## Missing Insurance Documentation
 
 **❌ MISTAKE:** Media transported without adequate insurance coverage
 
@@ -685,7 +685,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 - Coverage verification before shipment
 - Claims process documented
 
-## 16. No Media Handling Training
+## No Media Handling Training
 
 **❌ MISTAKE:** Staff handling media without formal training
 
@@ -699,7 +699,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 - Training records maintained
 - Refresher training scheduled
 
-## 17. Uncontrolled Media Pooling
+## Uncontrolled Media Pooling
 
 **❌ MISTAKE:** Shared media pools without individual accountability
 
@@ -713,7 +713,7 @@ Step 8: Quality Check & Approval (Sheet 9)
 - Check-out/check-in logging
 - Regular pool inventory
 
-## 18. Delayed Incident Reporting
+## Delayed Incident Reporting
 
 **❌ MISTAKE:** Media loss not reported promptly
 

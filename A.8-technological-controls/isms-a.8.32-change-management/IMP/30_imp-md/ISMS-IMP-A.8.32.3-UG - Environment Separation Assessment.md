@@ -685,6 +685,10 @@ This assessment is **technology-agnostic**. Whether you use physical servers, VM
 
 ---
 
+**END OF USER GUIDE**
+
+---
+
 *"The measure of intelligence is the ability to change."*
 — Albert Einstein
 

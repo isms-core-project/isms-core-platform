@@ -96,6 +96,8 @@ WARNING = '\u26A0'    # ⚠️
 BULLET = '\u2022'     # •
 
 DOCUMENT_ID = "ISMS-IMP-A.8.2-3-5.6"
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_Compliance_Dashboard_{GENERATED_TIMESTAMP}.xlsx"
 CONTROL_REF = "ISO/IEC 27001:2022 A.8.2, A.8.3, A.8.5"
 
 # Source workbook names (normalized)

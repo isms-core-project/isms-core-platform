@@ -19,37 +19,13 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-1. [PART I: USER COMPLETION GUIDE](#part-i-user-completion-guide)
-   - [1.1 Assessment Overview](#11-assessment-overview)
-   - [1.2 Control Requirements](#12-control-requirements)
-   - [1.3 Prerequisites](#13-prerequisites)
-   - [1.4 Procedure Categories](#14-procedure-categories)
-   - [1.5 Workbook Structure](#15-workbook-structure)
-   - [1.6 Completion Walkthrough](#16-completion-walkthrough)
-   - [1.7 Procedure Identification Methods](#17-procedure-identification-methods)
-   - [1.8 Accessibility Requirements](#18-accessibility-requirements)
-   - [1.9 Evidence Collection](#19-evidence-collection)
-   - [1.10 Common Pitfalls](#110-common-pitfalls)
-   - [1.11 Quality Checklist](#111-quality-checklist)
-   - [1.12 Review and Approval](#112-review-and-approval)
-   - [1.13 Integration with Other Controls](#113-integration-with-other-controls)
-   - [1.14 Related Controls](#114-related-controls)
-2. [PART II: TECHNICAL SPECIFICATION](#part-ii-technical-specification)
-   - [2.1 Workbook Architecture](#21-workbook-architecture)
-   - [2.2 Sheet Specifications](#22-sheet-specifications)
-   - [2.3 Data Validations](#23-data-validations)
-   - [2.4 Conditional Formatting](#24-conditional-formatting)
-   - [2.5 Formula Specifications](#25-formula-specifications)
-   - [2.6 Cell Styling Standards](#26-cell-styling-standards)
-   - [2.7 Generator Script Reference](#27-generator-script-reference)
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.37.1-TG.
 
 ---
 
----
-
-## 1.1 Assessment Overview
+## Assessment Overview
 
 ### Purpose
 
@@ -117,7 +93,7 @@ A well-maintained procedure inventory delivers:
 
 ---
 
-## 1.2 Control Requirements
+## Control Requirements
 
 ### ISO 27001:2022 Control A.5.37
 
@@ -182,7 +158,7 @@ Auditors frequently ask:
 
 ---
 
-## 1.3 Prerequisites
+## Prerequisites
 
 ### Before Starting This Assessment
 
@@ -233,7 +209,7 @@ Before proceeding, verify:
 
 ---
 
-## 1.4 Procedure Categories
+## Procedure Categories
 
 ### Understanding Procedure Categories
 
@@ -278,126 +254,7 @@ Operating procedures must be categorised for effective management and gap analys
 
 ---
 
-## 1.5 Workbook Structure
-
-### Sheet Overview
-
-The workbook consists of seven sheets, each serving a specific purpose in procedure inventory management:
-
-| Sheet | Purpose | Primary User | Update Frequency |
-|-------|---------|--------------|------------------|
-| **Instructions** | Guidance and orientation | All users | As needed |
-| **Procedure_Inventory** | Master catalogue of procedures | ISM/Procedure Owners | Upon change |
-| **Required_Procedures** | Reference list for compliance | ISM | Annual |
-| **Accessibility_Matrix** | Role-based access mapping | ISM | Upon change |
-| **Gap_Analysis** | Gap tracking and remediation | ISM | Ongoing |
-| **Evidence_Register** | Evidence tracking and links | ISM | Ongoing |
-| **Approval_SignOff** | Assessment authorisation | Approvers | At completion |
-
-### Sheet Relationships
-
-```
-┌─────────────────┐
-│  Instructions   │ ◄── Start here
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐     ┌─────────────────┐
-│Procedure_       │────►│Required_        │
-│Inventory        │     │Procedures       │
-└────────┬────────┘     └─────────────────┘
-         │                      ▲
-         │                      │ (gap comparison)
-         ▼                      │
-┌─────────────────┐     ┌─────────────────┐
-│Accessibility_   │     │  Gap_Analysis   │
-│Matrix           │     │                 │
-└────────┬────────┘     └─────────────────┘
-         │
-         ▼
-┌─────────────────┐
-│Evidence_Register│
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ Approval_SignOff│ ◄── Complete here
-└─────────────────┘
-```
-
-### Sheet-by-Sheet Summary
-
-#### 1. Instructions Sheet
-
-Provides orientation including:
-- Document purpose and scope
-- Sheet navigation guide
-- Completion timeline
-- Contact information for queries
-- Version history of the workbook
-
-#### 2. Procedure_Inventory Sheet
-
-The master registry containing:
-- Unique procedure identifiers
-- Procedure names and descriptions
-- Category classifications
-- Ownership information
-- Document locations
-- Review dates and cycles
-- Approval status and history
-- Related ISO 27001 controls
-- Criticality ratings
-
-#### 3. Required_Procedures Sheet
-
-Reference list containing:
-- ISO 27001-required procedures
-- Industry best practice procedures
-- Regulatory-required procedures
-- Mapping to Procedure_Inventory
-- Gap status indicators
-
-#### 4. Accessibility_Matrix Sheet
-
-Access mapping containing:
-- Procedure to role mappings
-- Access method documentation
-- Verification dates
-- Distribution channels
-
-#### 5. Gap_Analysis Sheet
-
-Gap tracking containing:
-- Gap identifiers
-- Gap types and descriptions
-- Severity ratings
-- Remediation assignments
-- Target dates and status
-- Evidence of closure
-
-#### 6. Evidence_Register Sheet
-
-Evidence tracking:
-- Evidence identifiers
-- Evidence descriptions
-- Evidence types
-- Storage locations
-- Collection dates
-- Validity periods
-
-#### 7. Approval_SignOff Sheet
-
-Assessment authorisation:
-- Assessor information
-- Assessment dates
-- Reviewer sign-offs
-- Approval status
-- Comments and notes
-
----
-
-## 1.6 Completion Walkthrough
+## Completion Walkthrough
 
 ### Step 1: Review Instructions Sheet
 
@@ -606,7 +463,7 @@ Obtain required authorisations:
 
 ---
 
-## 1.7 Procedure Identification Methods
+## Procedure Identification Methods
 
 ### Discovery Approaches
 
@@ -654,7 +511,7 @@ For each discovered procedure, verify:
 
 ---
 
-## 1.8 Accessibility Requirements
+## Accessibility Requirements
 
 ### Accessibility Verification
 
@@ -694,7 +551,7 @@ Common accessibility problems:
 
 ---
 
-## 1.9 Evidence Collection
+## Evidence Collection
 
 ### Evidence Requirements
 
@@ -760,7 +617,7 @@ ISMS Evidence Library/
 
 ---
 
-## 1.10 Common Pitfalls
+## Common Pitfalls
 
 Avoid these common mistakes when completing the Procedure Inventory assessment:
 
@@ -830,7 +687,7 @@ Avoid these common mistakes when completing the Procedure Inventory assessment:
 
 ---
 
-## 1.11 Quality Checklist
+## Quality Checklist
 
 Before submitting the completed assessment, verify all items:
 
@@ -889,7 +746,7 @@ Before submitting the completed assessment, verify all items:
 
 ---
 
-## 1.12 Review and Approval
+## Review and Approval
 
 ### Review Process
 
@@ -987,7 +844,7 @@ Upon approval:
 
 ---
 
-## 1.13 Integration with Other Controls
+## Integration with Other Controls
 
 ### Document Management Integration
 
@@ -1026,7 +883,7 @@ Procedures must connect to training programmes:
 
 ---
 
-## 1.14 Related Controls
+## Related Controls
 
 ### Primary Control Relationships
 
@@ -1072,7 +929,6 @@ A.5.37 Procedures (How to do it)
 | ISMS-IMP-A.5.24.x | Incident Management | Incident response procedures |
 
 ---
-
 
 **END OF USER GUIDE**
 

@@ -19,36 +19,13 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-1. [PART I: USER COMPLETION GUIDE](#part-i-user-completion-guide)
-   - [1.1 Assessment Overview](#11-assessment-overview)
-   - [1.2 Control Requirements](#12-control-requirements)
-   - [1.3 Prerequisites](#13-prerequisites)
-   - [1.4 Dashboard Metrics](#14-dashboard-metrics)
-   - [1.5 Workbook Structure](#15-workbook-structure)
-   - [1.6 Completion Walkthrough](#16-completion-walkthrough)
-   - [1.7 KPI Definitions](#17-kpi-definitions)
-   - [1.8 Trend Analysis](#18-trend-analysis)
-   - [1.9 Evidence Collection](#19-evidence-collection)
-   - [1.10 Common Pitfalls](#110-common-pitfalls)
-   - [1.11 Quality Checklist](#111-quality-checklist)
-   - [1.12 Review and Approval](#112-review-and-approval)
-   - [1.13 Related Controls](#113-related-controls)
-2. [PART II: TECHNICAL SPECIFICATION](#part-ii-technical-specification)
-   - [2.1 Workbook Architecture](#21-workbook-architecture)
-   - [2.2 Sheet Specifications](#22-sheet-specifications)
-   - [2.3 Data Validations](#23-data-validations)
-   - [2.4 Conditional Formatting](#24-conditional-formatting)
-   - [2.5 Formula Specifications](#25-formula-specifications)
-   - [2.6 Cell Styling Standards](#26-cell-styling-standards)
-   - [2.7 Generator Script Reference](#27-generator-script-reference)
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.6.4-5.S4-TG.
 
 ---
 
----
-
-## 1.1 Assessment Overview
+## Assessment Overview
 
 ### Purpose
 
@@ -107,7 +84,7 @@ The dashboard aggregates data from:
 
 ---
 
-## 1.2 Control Requirements
+## Control Requirements
 
 ### ISO 27001:2022 Control A.6.4 and A.6.5
 
@@ -132,7 +109,7 @@ This dashboard supports demonstration of effective implementation of both contro
 
 ---
 
-## 1.3 Prerequisites
+## Prerequisites
 
 ### Data Sources Required
 
@@ -156,7 +133,7 @@ This dashboard supports demonstration of effective implementation of both contro
 
 ---
 
-## 1.4 Dashboard Metrics
+## Dashboard Metrics
 
 ### Executive Summary KPIs
 
@@ -211,25 +188,7 @@ This dashboard supports demonstration of effective implementation of both contro
 
 ---
 
-## 1.5 Workbook Structure
-
-### Sheet Overview
-
-| Sheet | Purpose | Primary User | Update Frequency |
-|-------|---------|--------------|------------------|
-| **Executive_Dashboard** | High-level KPI summary | Executive Management | Monthly |
-| **Exit_Metrics** | Detailed exit process metrics | HR, IT | Monthly |
-| **Access_Revocation_Metrics** | Access revocation compliance | IAM Team | Monthly |
-| **Asset_Metrics** | Asset recovery tracking | IT Operations | Monthly |
-| **Disciplinary_Metrics** | Disciplinary case analysis | HR, CISO | Monthly |
-| **Obligation_Metrics** | Post-employment tracking | Legal, ISM | Monthly |
-| **Trend_Analysis** | Historical trend data | ISM | Monthly |
-| **Data_Sources** | Source data references | ISM | Per update |
-| **Instructions** | Guidance | All users | As needed |
-
----
-
-## 1.6 Completion Walkthrough
+## Completion Walkthrough
 
 ### Step 1: Update Data_Sources Sheet
 
@@ -468,7 +427,7 @@ Verify all KPIs are calculating correctly:
 
 ---
 
-## 1.7 KPI Definitions
+## KPI Definitions
 
 ### Exit Process Completion Rate
 
@@ -561,7 +520,7 @@ Asset Recovery Rate = (Assets returned / Assets assigned to leavers) x 100
 
 ---
 
-## 1.8 Trend Analysis
+## Trend Analysis
 
 ### Trend Indicators
 
@@ -603,7 +562,7 @@ Rolling Avg = (Month 1 + Month 2 + Month 3) / 3
 
 ---
 
-## 1.9 Evidence Collection
+## Evidence Collection
 
 ### Evidence Requirements
 
@@ -628,7 +587,7 @@ EVD-A.6.4-5.4_[EvidenceType]_[YYYYMM].[ext]
 
 ---
 
-## 1.10 Common Pitfalls
+## Common Pitfalls
 
 ### Data Quality Pitfalls
 
@@ -674,7 +633,7 @@ EVD-A.6.4-5.4_[EvidenceType]_[YYYYMM].[ext]
 
 ---
 
-## 1.11 Quality Checklist
+## Quality Checklist
 
 ### Data Quality Checks
 
@@ -709,7 +668,7 @@ EVD-A.6.4-5.4_[EvidenceType]_[YYYYMM].[ext]
 
 ---
 
-## 1.12 Review and Approval
+## Review and Approval
 
 ### Monthly Review Process
 
@@ -729,7 +688,7 @@ Dashboard should be included in:
 
 ---
 
-## 1.13 Related Controls
+## Related Controls
 
 | Control | Dashboard Integration |
 |---------|----------------------|
@@ -739,7 +698,6 @@ Dashboard should be included in:
 | **A.8.1** User Endpoints | Asset recovery metrics |
 
 ---
-
 
 **END OF USER GUIDE**
 

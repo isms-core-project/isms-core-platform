@@ -519,61 +519,61 @@ For audit purposes, maintain the following evidence:
 
 ## Common Pitfalls (10 Mistakes to Avoid)
 
-### 1. Generic Baselines Not Tailored to OS
+### Generic Baselines Not Tailored to OS
 
 **Mistake:** Using same baseline requirements for Windows, macOS, Linux  
 **Why It's Wrong:** Different OS have different hardening mechanisms (GPO vs. Jamf profiles vs. Ansible), generic baselines are unenforceable  
 **Solution:** Create OS-specific baselines based on vendor security guides and CIS Benchmarks
 
-### 2. Baselines Not Actually Deployed
+### Baselines Not Actually Deployed
 
 **Mistake:** Documenting security baseline requirements without deploying via GPO/MDM  
 **Why It's Wrong:** Baseline document is meaningless if not enforced - endpoints remain insecure  
 **Solution:** Deploy baselines via GPO (Windows), MDM profiles (macOS/mobile), configuration management (Linux), verify deployment
 
-### 3. No Compliance Monitoring
+### No Compliance Monitoring
 
 **Mistake:** Deploying baselines but never scanning for compliance  
 **Why It's Wrong:** Cannot verify baselines are effective, drift goes undetected, users can bypass controls  
 **Solution:** Weekly automated compliance scans, monthly compliance reporting, automatic remediation where possible
 
-### 4. Encryption Without Key Escrow
+### Encryption Without Key Escrow
 
 **Mistake:** Deploying BitLocker/FileVault without escrowing recovery keys  
 **Why It's Wrong:** User forgets password → data permanently lost, cannot recover encrypted device  
 **Solution:** Centralized key escrow (Active Directory, Intune, Jamf) for all corporate devices, verify escrow before encryption deployment
 
-### 5. BYOD Same Baseline as Corporate
+### BYOD Same Baseline as Corporate
 
 **Mistake:** Applying full corporate baseline to BYOD devices  
 **Why It's Wrong:** Violates user privacy (full device control), GDPR/FADP violation, users reject BYOD program  
 **Solution:** BYOD baseline limited to corporate container (MAM), no full device encryption requirement, user privacy protections
 
-### 6. No Exception Process
+### No Exception Process
 
 **Mistake:** Blanket baseline enforcement with no exceptions  
 **Why It's Wrong:** Legacy devices, technical incompatibilities, business requirements require exceptions  
 **Solution:** Documented exception request process, CISO approval required, compensating controls mandatory
 
-### 7. Compliance Calculated Incorrectly
+### Compliance Calculated Incorrectly
 
 **Mistake:** Calculating compliance as "all controls pass" (binary) vs. percentage  
 **Why It's Wrong:** Endpoint with 89% compliance (45/50 controls) marked "non-compliant" same as 10% compliance (5/50)  
 **Solution:** Calculate compliance percentage, set thresholds (Green ≥90%, Yellow 70-89%, Red <70%)
 
-### 8. Configuration Drift Ignored
+### Configuration Drift Ignored
 
 **Mistake:** Detecting configuration drift but not investigating or remediating  
 **Why It's Wrong:** Drift indicates security control failure, potential malware, user bypassing controls  
 **Solution:** Weekly drift scans, investigate root cause, automatic remediation, prevent recurrence
 
-### 9. Spot-Check Not Performed
+### Spot-Check Not Performed
 
 **Mistake:** Trusting automated compliance scans without manual verification  
 **Why It's Wrong:** Compliance scanners have false positives/negatives, scan tools can be bypassed  
 **Solution:** Random sample spot-check (20 endpoints), manually verify compliance scan accuracy
 
-### 10. No Remediation Tracking
+### No Remediation Tracking
 
 **Mistake:** Identifying non-compliant endpoints but not tracking remediation to completion  
 **Why It's Wrong:** Gaps identified but never fixed, compliance does not improve over time  

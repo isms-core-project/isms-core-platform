@@ -44,9 +44,9 @@
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 This assessment evaluates [Organization]'s **incident response execution capabilities**, focusing on the **response and recovery** phase of incident management (A.5.26).
 
@@ -75,7 +75,7 @@ This assessment evaluates [Organization]'s **incident response execution capabil
 - Resource adequacy analysis
 - Gap analysis and capability improvements
 
-### 1.2 Why This Matters
+### Why This Matters
 
 **ISO/IEC 27001:2022 Control A.5.26 Requirement:**
 > *"Information security incidents should be responded to in accordance with documented procedures."*
@@ -99,7 +99,7 @@ This assessment evaluates [Organization]'s **incident response execution capabil
 - Are our response playbooks effective?
 - Do we meet response time SLAs?
 
-### 1.3 Who Should Complete This Assessment
+### Who Should Complete This Assessment
 
 **Primary Responsibility:** CSIRT Manager, Incident Response Lead, or Senior Incident Responder
 
@@ -125,7 +125,7 @@ This assessment evaluates [Organization]'s **incident response execution capabil
 - Requires metrics data (MTTR, MTTC, response times)
 - Review sessions with CSIRT and IT Operations
 
-### 1.4 Time Estimate
+### Time Estimate
 
 **Total Assessment Time:** 8-12 hours (depending on incident response maturity)
 
@@ -157,7 +157,7 @@ This assessment evaluates [Organization]'s **incident response execution capabil
 - **Moderate (10 hours):** Growing capability, some playbook gaps, basic metrics
 - **Complex (12+ hours):** Immature response, limited playbooks, poor metrics tracking
 
-### 1.5 Connection to Policy
+### Connection to Policy
 
 This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response & Recovery)** which defines mandatory requirements for:
 
@@ -198,7 +198,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
 **Policy Authority:** Chief Information Security Officer (CISO)  
 **Compliance Status:** Mandatory for all [Organization] security incidents
 
-### 1.6 Assessment Scope
+### Assessment Scope
 
 **Included in This Assessment:**
 
@@ -243,7 +243,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
 ❌ Forensic evidence collection (see S4)
 ❌ Post-incident review (see S5)
 
-### 1.7 Prerequisites
+### Prerequisites
 
 **Before Starting This Assessment:**
 
@@ -278,9 +278,9 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
 
 ---
 
-## 2. Assessment Workflow
+## Assessment Workflow
 
-### 2.1 High-Level Process
+### High-Level Process
 
 ```
 1. Containment Assessment (2-3 hours)
@@ -319,7 +319,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
    └── Develop recommendations
 ```
 
-### 2.2 Assessment Sections Overview
+### Assessment Sections Overview
 
 **Sheet 1: Instructions & Legend**
 **Sheet 2: Containment Capabilities** (30 questions)
@@ -335,9 +335,9 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
 
 ---
 
-## 3. Section-by-Section Guidance
+## Section-by-Section Guidance
 
-### 3.1 Sheet 2: Containment Capabilities (30 Questions)
+### Sheet 2: Containment Capabilities (30 Questions)
 
 **Purpose:** Assess ability to contain incidents quickly and effectively
 
@@ -526,7 +526,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
 
 ---
 
-### 3.2 Sheet 3: Eradication & Remediation (20 Questions)
+### Sheet 3: Eradication & Remediation (20 Questions)
 
 **Purpose:** Assess eradication and root cause remediation
 
@@ -631,7 +631,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
 
 ---
 
-### 3.3 Sheet 4: Recovery & Restoration (20 Questions)
+### Sheet 4: Recovery & Restoration (20 Questions)
 
 **Purpose:** Assess recovery and service restoration
 
@@ -740,7 +740,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
 
 ---
 
-### 3.4 Sheet 5: Communication (20 Questions)
+### Sheet 5: Communication (20 Questions)
 
 **Purpose:** Assess communication during incidents
 
@@ -840,7 +840,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
 
 ---
 
-### 3.5 Sheet 6: Resources & Authority (20 Questions)
+### Sheet 6: Resources & Authority (20 Questions)
 
 **Purpose:** Assess resource availability and decision authority
 
@@ -944,7 +944,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
 
 ---
 
-### 3.6 Sheet 7: Playbook Effectiveness (15 Questions)
+### Sheet 7: Playbook Effectiveness (15 Questions)
 
 **Purpose:** Assess quality and effectiveness of response playbooks
 
@@ -1000,15 +1000,15 @@ For each:
 
 ---
 
-### 3.7 Sheets 8-11: Gap Analysis, Evidence, Dashboard, Approval
+### Sheets 8-11: Gap Analysis, Evidence, Dashboard, Approval
 
 **(Similar structure to S1 and S2, adapted for response capabilities)**
 
 ---
 
-## 4. Metrics Calculation Guide
+## Metrics Calculation Guide
 
-### 4.1 Mean Time to Contain (MTTC)
+### Mean Time to Contain (MTTC)
 
 **Formula:**
 ```
@@ -1019,7 +1019,7 @@ MTTC = Σ(Containment Timestamp - Incident Start Timestamp) / Number of Incident
 
 ---
 
-### 4.2 Mean Time to Remediate/Recover (MTTR)
+### Mean Time to Remediate/Recover (MTTR)
 
 **Formula:**
 ```
@@ -1028,7 +1028,7 @@ MTTR = Σ(Recovery Complete Timestamp - Incident Start Timestamp) / Number of In
 
 ---
 
-### 4.3 Response SLA Compliance
+### Response SLA Compliance
 
 **Formula:**
 ```
@@ -1037,7 +1037,7 @@ SLA Compliance = (Incidents Meeting SLA / Total Incidents) × 100
 
 ---
 
-## 5. Common Mistakes to Avoid
+## Common Mistakes to Avoid
 
 **❌ Mistake:** Focusing on documentation without validating actual capability
 **✅ Solution:** Test containment capabilities through exercises
@@ -1053,7 +1053,7 @@ SLA Compliance = (Incidents Meeting SLA / Total Incidents) × 100
 
 ---
 
-## 6. Assessment Timeline
+## Assessment Timeline
 
 **Week 1:** Containment + Eradication assessment (4-5 hours)
 **Week 2:** Recovery + Communication assessment (4-5 hours)

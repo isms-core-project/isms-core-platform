@@ -309,6 +309,7 @@ CONTROL_ID = "A.5.15 & A.5.18"
 CONTROL_NAME = "Access Control & Access Rights"
 GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")
 GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_Access_Review_Results_{GENERATED_TIMESTAMP}.xlsx"
 
 # Data row counts
 SCHEDULED_REVIEWS = 80        # Annual review schedule

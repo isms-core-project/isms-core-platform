@@ -224,41 +224,6 @@ The following asset scenarios may be excluded from baseline requirements with ap
 
 ---
 
-# Workbook Structure Overview
-
-**Generated Workbook Name**: `ISMS_A_8_9_1_Baseline_Configuration_Assessment_YYYYMMDD.xlsx`
-
-**Total Sheets**: 11
-
-| Sheet # | Sheet Name | Purpose | Row Count |
-|---------|------------|---------|-----------|
-| 1 | Instructions | Usage guidance, roles, workflow, legend | N/A |
-| 2 | Asset_Inventory | All assets requiring baseline management | 100 data rows |
-| 3 | Baseline_Repository | Documented configuration baselines | 50 data rows |
-| 4 | Baseline_Coverage_Matrix | Coverage analysis by asset type | 43 data rows (one per asset type) |
-| 5 | Approval_Tracking | Baseline approval status and workflow | 50 data rows |
-| 6 | Documentation_Assessment | Quality evaluation of baseline docs | 30 data rows |
-| 7 | Version_Control | Baseline version history | 50 data rows |
-| 8 | Deviation_Register | Authorized deviations from baselines | 50 data rows |
-| 9 | Metrics_Summary | Auto-calculated compliance metrics | N/A (formulas) |
-| 10 | Evidence_Register | Supporting evidence and documentation links | 100 data rows |
-| 11 | Approval_Sign_Off | Three-tier approval signatures | N/A (3 rows) |
-
-**Sheet Relationship Flow**:
-```
-Asset_Inventory → (asset list) → Baseline_Coverage_Matrix
-                                        ↓
-Baseline_Repository → (baseline definitions) → Approval_Tracking
-                                                       ↓
-Documentation_Assessment → (quality scores) → Metrics_Summary
-                                                       ↓
-Version_Control → (history tracking) ← Deviation_Register
-                                                       ↓
-Evidence_Register → (audit trail) → Approval_Sign_Off
-```
-
----
-
 # Detailed Sheet Specifications
 
 ## Sheet 1: Instructions
@@ -1953,7 +1918,6 @@ This assessment workbook should be updated when:
 
 **Document Owner**: Configuration Manager  
 ---
-
 
 **END OF USER GUIDE**
 

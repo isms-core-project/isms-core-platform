@@ -24,176 +24,138 @@
 |---------|------|---------|--------|
 | 1.0 | [Date] | Initial technical specification for Perimeter Security assessment workbook | ISMS Implementation Team |
 
-### Document Structure
-
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.7.1-2-3-S1-UG.
 
 ---
-
 # Technical Specification
 
-## Excel Workbook Structure
 
-### Workbook Overview
+> Auto-generated from `generate_a71_1_perimeter_security.py`
+> Re-generate with: `python3 generate_tg_from_scr.py --apply`
 
-**File Name:** ISMS-IMP-A.7.1.1_Perimeter_Security_YYYYMMDD.xlsx
+## Workbook Overview
 
-**Generation:** Automated via Python script (generate_a71_1_perimeter_security.py)
+| Property | Value |
+|----------|-------|
+| **Document ID** | `ISMS-IMP-A.7.1.1` |
+| **Output Filename** | `ISMS-IMP-A.7.1.1_Perimeter_Security_Assessment_YYYYMMDD.xlsx` |
+| **Workbook Title** | Perimeter Security Assessment |
+| **Total Sheets** | 16 (16 visible) |
+| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
 
-**Sheet Count:** 8 worksheets
+## Color Palette
 
-**Data Capacity:** 100 data rows per assessment sheet (Sheets 2-5)
+| Hex Code | Style Name | Description |
+|----------|-----------|-------------|
+| #0000FF | 0000FF | Custom |
+| #003366 | 003366 | Dark Blue (Headers) |
+| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
+| #808080 | 808080 | Gray (Disabled) |
+| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
+| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | FFFFCC | Light Yellow (User Input) |
 
-**Styling:** Navy blue headers, yellow input cells, conditional formatting for compliance status (green/amber/red)
-
-### Sheet Organisation
-
-| Sheet # | Sheet Name | Purpose | Type | Row Count |
-|---------|------------|---------|------|-----------|
-| 1 | Instructions & Legend | Assessment metadata and status legend | Read-only Reference | ~30 rows |
-| 2 | Security Zones | Security zone inventory and classification | Data Entry | 100 data rows |
-| 3 | Building Perimeter | External perimeter construction assessment | Data Entry | 100 data rows |
-| 4 | Internal Perimeters | Internal zone boundary assessment | Data Entry | 100 data rows |
-| 5 | Perimeter Monitoring | CCTV and intrusion detection coverage | Data Entry | 100 data rows |
-| 6 | Summary Dashboard | Automated compliance scoring | Formula-driven | ~20 rows |
-| 7 | Evidence Register | Supporting evidence documentation | Data Entry | 100 data rows |
-| 8 | Approval Sign-Off | Four-level approval workflow | Data Entry | ~20 rows |
-
-### Workbook Features
-
-**Data Validation:**
-
-- Dropdown lists for standardised input (Zone Types, Perimeter Elements, Status)
-- Date validation (valid date format)
-
-**Conditional Formatting:**
-
-- Compliance Status columns: Green (Compliant), Amber (Partial), Red (Non-Compliant)
-- Summary Dashboard scores: Colour-coded thresholds
-
-**Formulas:**
-
-- Summary Dashboard auto-calculates from Sheets 2-5
-- Compliance Status derived from entry data
-
-**Freeze Panes:**
-
-- Header rows frozen
-- First column frozen for horizontal scrolling
+## Sheet 1: Instructions & Legend
 
 ---
 
-## Sheet-by-Sheet Specifications
-
-### Sheet 2: Security Zones
-
-**Columns:**
-
-| Col | Field Name | Type | Width | Validation |
-|-----|------------|------|-------|------------|
-| A | Zone ID | Text | 12 | None |
-| B | Zone Name | Text | 25 | None |
-| C | Zone Type | Dropdown | 18 | Public/Controlled/Restricted/High-Security |
-| D | Location/Building | Text | 25 | None |
-| E | Classification | Dropdown | 18 | Tier 1/Tier 2/Tier 3 |
-| F | Access Requirements | Text | 30 | None |
-| G | Perimeter Defined | Dropdown | 15 | Yes/Partial/No |
-| H | Status | Dropdown | 18 | Compliant/Partial/Non-Compliant/N/A |
-| I | Notes | Text | 35 | None |
-
-### Sheet 3: Building Perimeter
-
-**Columns:**
-
-| Col | Field Name | Type | Width | Validation |
-|-----|------------|------|-------|------------|
-| A | Building/Facility | Text | 25 | None |
-| B | Perimeter Element | Dropdown | 20 | Wall/Roof/Floor/Window/Door/Exit/Dock/Other |
-| C | Construction Type | Text | 20 | None |
-| D | Solid Construction | Dropdown | 15 | Yes/No/Partial |
-| E | Gap/Breach Points | Text | 20 | None |
-| F | Security Controls | Text | 25 | None |
-| G | Last Inspection | Date | 15 | Date format |
-| H | Inspector | Text | 18 | None |
-| I | Status | Dropdown | 18 | Compliant/Partial/Non-Compliant/N/A |
-| J | Notes | Text | 35 | None |
-
-### Sheet 4: Internal Perimeters
-
-**Columns:**
-
-| Col | Field Name | Type | Width | Validation |
-|-----|------------|------|-------|------------|
-| A | From Zone | Text | 20 | None |
-| B | To Zone | Text | 20 | None |
-| C | Barrier Type | Dropdown | 20 | Wall/Glass/Partition/Cage/Other |
-| D | Floor-to-Ceiling | Dropdown | 15 | Yes/No/N/A |
-| E | Above Ceiling Check | Dropdown | 18 | Yes/No/N/A |
-| F | Below Floor Check | Dropdown | 18 | Yes/No/N/A |
-| G | Access Control | Text | 20 | None |
-| H | Status | Dropdown | 18 | Compliant/Partial/Non-Compliant/N/A |
-| I | Notes | Text | 35 | None |
-
-### Sheet 5: Perimeter Monitoring
-
-**Columns:**
-
-| Col | Field Name | Type | Width | Validation |
-|-----|------------|------|-------|------------|
-| A | Entry Point ID | Text | 15 | None |
-| B | Location | Text | 25 | None |
-| C | Entry Type | Dropdown | 20 | Entrance/Door/Exit/Window/Dock/Roof/Vent |
-| D | CCTV Coverage | Dropdown | 15 | Yes/No/Partial |
-| E | Intrusion Detection | Dropdown | 18 | Yes/No/Partial |
-| F | Alert Response | Text | 20 | None |
-| G | Last Tested | Date | 15 | Date format |
-| H | Status | Dropdown | 18 | Compliant/Partial/Non-Compliant/N/A |
-| I | Notes | Text | 35 | None |
+## Sheet 2: Security Zones
 
 ---
 
-## Cell Styling Reference
-
-### Colour Palette
-
-**Headers:**
-
-- Primary Header: #003366 (Navy blue), White text
-- Column Header: #D9D9D9 (Light grey), Black text
-
-**Data Cells:**
-
-- Input Cell: #FFFFCC (Light yellow)
-- Read-Only: White
-
-**Compliance Status:**
-
-- Compliant: #C6EFCE (Light green)
-- Partial: #FFEB9C (Light amber)
-- Non-Compliant: #FFC7CE (Light red)
+## Sheet 3: Building Perimeter
 
 ---
 
-## Integration Points
+## Sheet 4: Internal Perimeters
 
-### Integration with Policy (ISMS-POL-A.7.1-2-3)
+---
 
-| Policy Section | Assessment Sheet | Focus |
-|----------------|------------------|-------|
-| 2.1.1 Perimeter Definition | Sheet 2: Security Zones | Zone classification and definition |
-| 2.1.2 Perimeter Construction | Sheet 3: Building Perimeter | External perimeter assessment |
-| 2.1.2 Internal Perimeters | Sheet 4: Internal Perimeters | Zone boundary construction |
-| 2.1.3 Perimeter Monitoring | Sheet 5: Perimeter Monitoring | CCTV and intrusion detection |
+## Sheet 5: Perimeter Monitoring
 
-### Integration with Other Assessments
+---
 
-**Feeds into:**
+## Sheet 6: Summary Dashboard
 
-- ISMS-IMP-A.7.1-2-3-S4 (Compliance Dashboard) - Perimeter compliance score
+---
 
-**Dependencies from:**
+## Sheet 7: Evidence Register
 
-- None - this is the foundational assessment
+---
+
+## Sheet 8: Approval Sign-Off
+
+---
+
+## Sheet 9: Instructions
+
+---
+
+## Sheet 10: Security_Zones
+
+**Data Rows:** 100 (rows 7–106)
+
+---
+
+## Sheet 11: Building_Perimeter
+
+**Data Rows:** 100 (rows 7–106)
+
+---
+
+## Sheet 12: Internal_Perimeters
+
+**Data Rows:** 100 (rows 7–106)
+
+---
+
+## Sheet 13: Perimeter_Monitoring
+
+**Data Rows:** 100 (rows 7–106)
+
+---
+
+## Sheet 14: Summary_Dashboard
+
+**Data Rows:** 5 (rows 2–6)
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Assessment Area |
+| B | Count |
+| C | {...} Compliant |
+| D | {...} Partial |
+| E | {...} Non-Compliant |
+| F | N/A |
+| G | % Compliant |
+
+---
+
+## Sheet 15: Evidence_Register
+
+**Data Rows:** 100 (rows 5–104)
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Evidence ID |
+| B | Assessment Area |
+| C | Evidence Type |
+| D | Description |
+| E | Location/Path |
+| F | Date Collected |
+| G | Collected By |
+| H | Verification Status |
+
+---
+
+## Sheet 16: Approval_Signoff
+
+**Data Rows:** 3 (rows 2–4)
 
 ---
 

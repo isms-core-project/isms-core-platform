@@ -322,6 +322,7 @@ CONTROL_ID = "A.5.15 & A.5.18"
 CONTROL_NAME = "Access Control & Access Rights (RBAC/SoD)"
 GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")
 GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_Role_Compliance_SoD_{GENERATED_TIMESTAMP}.xlsx"
 
 # Data row counts
 ROLE_COUNT = 30                # Defined roles

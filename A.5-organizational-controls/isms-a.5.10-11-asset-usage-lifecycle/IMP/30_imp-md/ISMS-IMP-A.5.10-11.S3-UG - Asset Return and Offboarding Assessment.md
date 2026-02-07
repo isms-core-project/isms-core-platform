@@ -18,31 +18,9 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-**PART I: USER COMPLETION GUIDE**
-1. [Assessment Overview](#assessment-overview)
-2. [Control Requirement](#control-requirement)
-3. [Prerequisites](#prerequisites)
-4. [Key Terminology](#key-terminology)
-5. [Return Process Framework](#return-process-framework)
-6. [Asset Return Requirements](#asset-return-requirements)
-7. [Workbook Structure](#workbook-structure)
-8. [Completion Walkthrough](#completion-walkthrough)
-9. [Access Revocation Framework](#access-revocation-framework)
-10. [Offboarding Scenarios](#offboarding-scenarios)
-11. [Evidence Collection](#evidence-collection)
-12. [Common Pitfalls](#common-pitfalls)
-13. [Quality Checklist](#quality-checklist)
-14. [Review & Approval](#review-approval)
-
-**PART II: TECHNICAL SPECIFICATION**
-1. [Workbook Architecture](#workbook-architecture)
-2. [Sheet Specifications](#sheet-specifications)
-3. [Data Validations](#data-validations)
-4. [Conditional Formatting Rules](#conditional-formatting-rules)
-5. [Formula Specifications](#formula-specifications)
-6. [Generator Reference](#generator-reference)
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.10-11.S3-TG.
 
 ---
 
@@ -265,18 +243,6 @@ For employees working remotely:
 | Switzerland | FADP requirements; cross-border data handling |
 | USA | State-specific wage/final pay requirements |
 | APAC | Various labour law requirements |
-
-### Workbook Structure
-
-| Sheet | Purpose | Key Actions |
-|-------|---------|-------------|
-| Instructions | Guidance and metadata | Complete document information |
-| Return_Process | Process assessment | Evaluate procedure completeness |
-| Asset_Checklist | Standard return checklist | Define returnable asset types |
-| Offboarding_Tracking | Individual tracking | Track each departure |
-| Access_Revocation | Access removal verification | Verify access termination |
-| Evidence_Register | Audit evidence linking | Document evidence locations |
-| Approval_SignOff | Assessment approval | Obtain required signatures |
 
 ### Completion Walkthrough
 
@@ -695,7 +661,6 @@ Before submitting this assessment:
 | Access not revoked by LWD | IT Security Manager | Immediately |
 
 ---
-
 
 **END OF USER GUIDE**
 

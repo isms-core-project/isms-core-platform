@@ -25,9 +25,9 @@ This section provides step-by-step guidance for completing the Vendor Assessment
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 The Vendor Assessment and Registry workbook serves as the central control point for managing outsourced development security. It captures vendor security posture, tracks approval status, maintains due diligence records, and provides the evidentiary foundation for demonstrating A.8.30 compliance.
 
@@ -37,7 +37,7 @@ ISO/IEC 27001:2022 Control A.8.30 states:
 
 This control ensures that when development activities are outsourced, appropriate security requirements are established, communicated, and verified with external development partners.
 
-### 1.2 Scope and Applicability
+### Scope and Applicability
 
 **This workbook applies to:**
 
@@ -58,7 +58,7 @@ This control ensures that when development activities are outsourced, appropriat
 - Internal development teams (covered by A.8.25-29)
 - Staff augmentation where developers work under organisation's direct supervision and processes
 
-### 1.3 Business Context
+### Business Context
 
 **Why Vendor Assessment Matters:**
 
@@ -80,7 +80,7 @@ Outsourced development introduces significant security risks that must be system
 | GDPR Article 28 | Processor obligations, sub-processor controls |
 | FINMA | Third-party risk management for financial services |
 
-### 1.4 Assessment Outputs
+### Assessment Outputs
 
 Upon completion, this workbook provides:
 
@@ -95,9 +95,9 @@ Upon completion, this workbook provides:
 
 ---
 
-## 2. Prerequisites
+## Prerequisites
 
-### 2.1 Required Inputs
+### Required Inputs
 
 Before beginning vendor assessment, ensure you have collected:
 
@@ -112,7 +112,7 @@ Before beginning vendor assessment, ensure you have collected:
 | Previous engagement history (if applicable) | Internal records | Risk assessment |
 | Data classification of systems accessed | Data Owner | Risk tier determination |
 
-### 2.2 Required Approvals Before Assessment
+### Required Approvals Before Assessment
 
 | Approval Type | Approver | Purpose |
 |---------------|----------|---------|
@@ -121,7 +121,7 @@ Before beginning vendor assessment, ensure you have collected:
 | Data Sharing Approval | Data Owner | Authorises data access for vendor |
 | Security Assessment Initiation | IT Security Lead | Confirms assessment resources available |
 
-### 2.3 Required Knowledge
+### Required Knowledge
 
 Assessment personnel should understand:
 
@@ -132,7 +132,7 @@ Assessment personnel should understand:
 - Organisation's security policies and standards
 - Regulatory requirements applicable to the development scope
 
-### 2.4 Tool Requirements
+### Tool Requirements
 
 | Tool | Purpose | Access Required |
 |------|---------|-----------------|
@@ -144,46 +144,9 @@ Assessment personnel should understand:
 
 ---
 
-## 3. Workbook Structure Overview
+## Completion Walkthrough
 
-### 3.1 Sheet Summary
-
-The workbook contains four sheets, each serving a distinct purpose in the assessment process:
-
-| Sheet | Purpose | Primary Owner | Update Frequency |
-|-------|---------|---------------|------------------|
-| 1: Vendor Registry | Master list of assessed vendors | IT Security | Per engagement, annual review |
-| 2: Security Assessment | Detailed assessment results | IT Security Assessor | Per assessment |
-| 3: Due Diligence Checklist | Comprehensive verification tracking | IT Security Assessor | Per assessment |
-| 4: Environment Security Assessment | Technical environment review | IT Security Engineer | Per assessment, upon changes |
-
-### 3.2 Sheet Dependencies
-
-```
-Sheet 1: Vendor Registry (Master)
-         ↓ (Vendor_ID reference)
-Sheet 2: Security Assessment
-         ↓ (informs)
-Sheet 3: Due Diligence Checklist
-         ↓ (verifies)
-Sheet 4: Environment Security Assessment
-         ↓ (feeds back to)
-Sheet 1: Registry Status Update
-```
-
-### 3.3 Data Flow
-
-1. **New Vendor Entry**: Created in Sheet 1 with status "Pending"
-2. **Assessment Execution**: Recorded in Sheets 2, 3, 4
-3. **Recommendation Generated**: From Sheet 2 assessment results
-4. **Registry Updated**: Sheet 1 status changed based on recommendation
-5. **Evidence Linked**: All sheets reference evidence repository
-
----
-
-## 4. Completion Walkthrough
-
-### 4.1 Sheet 1: Vendor Registry – Completion Guide
+### Sheet 1: Vendor Registry – Completion Guide
 
 **Purpose**: Maintain the authoritative list of development vendors with their approval status, risk tier, and assessment dates.
 
@@ -276,7 +239,7 @@ Record vendor security certifications:
 | Approved_By | Full name and role of approver |
 | Notes | Any restrictions, conditions, or special considerations |
 
-### 4.2 Sheet 2: Security Assessment – Completion Guide
+### Sheet 2: Security Assessment – Completion Guide
 
 **Purpose**: Document detailed security assessment findings for each vendor evaluation.
 
@@ -405,7 +368,7 @@ Document tools used by vendor for security testing:
 | Conditional | Acceptable risk with specific conditions | Document conditions, set review date |
 | Reject | High/Critical risk, critical requirements not met | Document rationale, suggest alternatives |
 
-### 4.3 Sheet 3: Due Diligence Checklist – Completion Guide
+### Sheet 3: Due Diligence Checklist – Completion Guide
 
 **Purpose**: Track completion of all due diligence verification items with evidence references.
 
@@ -516,7 +479,7 @@ For each completed check, record:
 - Evidence reference (file path or document ID)
 - Verifier name and date
 
-### 4.4 Sheet 4: Environment Security Assessment – Completion Guide
+### Sheet 4: Environment Security Assessment – Completion Guide
 
 **Purpose**: Evaluate the security of the vendor's development environment, particularly when they will have access to organisation systems or data.
 
@@ -598,9 +561,9 @@ Enter Vendor_ID and current date.
 
 ---
 
-## 5. Evidence Collection
+## Evidence Collection
 
-### 5.1 Evidence Requirements
+### Evidence Requirements
 
 Evidence must be collected and stored for all assessment activities:
 
@@ -613,7 +576,7 @@ Evidence must be collected and stored for all assessment activities:
 | Interview notes | 3 years | Assessment folder |
 | Approval records | 7 years | Approval folder |
 
-### 5.2 Evidence Folder Structure
+### Evidence Folder Structure
 
 ```
 ISMS-Evidence-Library/
@@ -638,7 +601,7 @@ ISMS-Evidence-Library/
                 └── Security-Schedule-[Date].pdf
 ```
 
-### 5.3 Evidence Quality Requirements
+### Evidence Quality Requirements
 
 All evidence must be:
 
@@ -651,7 +614,7 @@ All evidence must be:
 | Attributable | Author/source identified |
 | Dated | Clear date of creation |
 
-### 5.4 Evidence for Audit
+### Evidence for Audit
 
 During ISO 27001 audit, be prepared to demonstrate:
 
@@ -667,9 +630,9 @@ During ISO 27001 audit, be prepared to demonstrate:
 
 ---
 
-## 6. Common Pitfalls
+## Common Pitfalls
 
-### 6.1 Assessment Errors
+### Assessment Errors
 
 ❌ **MISTAKE: Accepting vendor self-attestation without verification**
 Vendors claiming ISO 27001 certification must provide certificate copy with verification via certification body registry.
@@ -686,7 +649,7 @@ Type I is point-in-time; Type II covers operational effectiveness over a period.
 ❌ **MISTAKE: Not documenting conditional approval conditions**
 When approving with conditions, failing to document specific conditions and review dates leads to gaps in follow-up.
 
-### 6.2 Registry Management Errors
+### Registry Management Errors
 
 ❌ **MISTAKE: Not updating registry when vendor status changes**
 Vendor certifications expiring, acquisitions, or incidents must trigger immediate registry review.
@@ -697,7 +660,7 @@ Vendor certifications expiring, acquisitions, or incidents must trigger immediat
 ❌ **MISTAKE: Not tracking reassessment due dates**
 Critical and High tier vendors require more frequent reassessment. Missing these dates creates compliance gaps.
 
-### 6.3 Due Diligence Errors
+### Due Diligence Errors
 
 ❌ **MISTAKE: Skipping reference checks for "known" vendors**
 Prior experience doesn't replace current reference checks. Vendor quality can change over time.
@@ -708,7 +671,7 @@ Assessment covers vendor organisation, but specific personnel should meet securi
 ❌ **MISTAKE: Not checking for subcontractor usage**
 Vendors using subcontractors extend your supply chain risk. Must be disclosed and assessed.
 
-### 6.4 Environment Assessment Errors
+### Environment Assessment Errors
 
 ❌ **MISTAKE: Accepting "yes" responses without evidence**
 Environment security responses must be verified through configuration evidence or attestation, not just questionnaire answers.
@@ -718,9 +681,9 @@ If vendor will access production data for testing/support, data handling practic
 
 ---
 
-## 7. Quality Checklist
+## Quality Checklist
 
-### 7.1 Pre-Submission Checklist
+### Pre-Submission Checklist
 
 Before submitting assessment for approval, verify:
 
@@ -757,7 +720,7 @@ Before submitting assessment for approval, verify:
 - [ ] Attestation received (if required)
 - [ ] Compliance status justified
 
-### 7.2 Evidence Completeness Check
+### Evidence Completeness Check
 
 - [ ] All referenced evidence files exist in repository
 - [ ] Evidence is current (within validity periods)
@@ -765,7 +728,7 @@ Before submitting assessment for approval, verify:
 - [ ] Evidence naming follows convention
 - [ ] Evidence organised in proper folder structure
 
-### 7.3 Approval Readiness Check
+### Approval Readiness Check
 
 - [ ] Assessment workbook complete
 - [ ] All critical fields populated
@@ -776,9 +739,9 @@ Before submitting assessment for approval, verify:
 
 ---
 
-## 8. Review and Approval
+## Review and Approval
 
-### 8.1 Approval Authority Matrix
+### Approval Authority Matrix
 
 | Vendor Risk Tier | Approval Authority | Escalation |
 |------------------|-------------------|------------|
@@ -786,7 +749,7 @@ Before submitting assessment for approval, verify:
 | High | CISO | Executive Management |
 | Standard | IT Security Manager | CISO |
 
-### 8.2 Approval Workflow
+### Approval Workflow
 
 ```
 Assessor Completes Assessment
@@ -806,7 +769,7 @@ Submit to Approval Authority
     └── Rejected → Document Rationale, Notify Requestor
 ```
 
-### 8.3 Review Timeline
+### Review Timeline
 
 | Risk Tier | Assessment SLA | Approval SLA | Total SLA |
 |-----------|---------------|--------------|-----------|
@@ -814,7 +777,7 @@ Submit to Approval Authority
 | High | 10 business days | 3 business days | 13 business days |
 | Standard | 7 business days | 2 business days | 9 business days |
 
-### 8.4 Post-Approval Actions
+### Post-Approval Actions
 
 | Action | Responsibility | Timeline |
 |--------|----------------|----------|
@@ -825,7 +788,6 @@ Submit to Approval Authority
 | Archive evidence | IT Security | Within 5 days |
 
 ---
-
 
 **END OF USER GUIDE**
 

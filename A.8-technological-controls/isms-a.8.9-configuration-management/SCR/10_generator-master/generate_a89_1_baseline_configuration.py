@@ -266,6 +266,8 @@ FILENAME = f"ISMS-IMP-A.8.9.1_Baseline_Configuration_Assessment_{datetime.now().
 WORKBOOK_TITLE = "Baseline Configuration Assessment"
 WORKBOOK_VERSION = "1.0"
 DOCUMENT_ID = "ISMS-IMP-A.8.9.1"
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_Baseline_Configuration_{GENERATED_TIMESTAMP}.xlsx"
 CONTROL_REF = "ISO/IEC 27001:2022 - Control A.8.9: Configuration Management"
 
 # CUSTOMIZE: Dropdown values for your organization

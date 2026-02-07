@@ -26,13 +26,13 @@
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 The **Consolidation Dashboard** (ISMS-IMP-A.5.14.5) aggregates compliance data from all four A.5.14 assessment workbooks into a unified executive view. This dashboard provides holistic visibility into information transfer control compliance, enabling management reporting, audit preparation, and strategic decision-making.
 
-### 1.2 Scope
+### Scope
 
 This dashboard consolidates:
 - **Domain 1**: Transfer Rules and Procedures (A.5.14.1)
@@ -40,7 +40,7 @@ This dashboard consolidates:
 - **Domain 3**: Transfer Agreements Register (A.5.14.3)
 - **Domain 4**: Compliance Monitoring Dashboard (A.5.14.4)
 
-### 1.3 Business Value
+### Business Value
 
 Maintaining this consolidation delivers:
 - **Unified compliance view** across all transfer domains
@@ -49,7 +49,7 @@ Maintaining this consolidation delivers:
 - **Audit efficiency** through pre-consolidated evidence
 - **Trend visibility** showing compliance over time
 
-### 1.4 Control Requirement
+### Control Requirement
 
 > *ISO/IEC 27001:2022 Annex A.5.14 — Information Transfer*
 >
@@ -59,23 +59,23 @@ This dashboard provides a consolidated view of A.5.14 compliance across all impl
 
 ---
 
-## 2. Prerequisites
+## Prerequisites
 
 Before completing this dashboard, ensure you have:
 
-### 2.1 Required Workbooks
+### Required Workbooks
 - [ ] ISMS-IMP-A.5.14.1 (Transfer Rules and Procedures) — current version
 - [ ] ISMS-IMP-A.5.14.2 (Channel Security Assessment) — current version
 - [ ] ISMS-IMP-A.5.14.3 (Transfer Agreements Register) — current version
 - [ ] ISMS-IMP-A.5.14.4 (Compliance Monitoring Dashboard) — current version
 
-### 2.2 Required Access
+### Required Access
 - [ ] All source workbook locations
 - [ ] Previous consolidation reports (if available)
 - [ ] Management reporting templates
 - [ ] Risk register for cross-referencing
 
-### 2.3 Required Personnel
+### Required Personnel
 - [ ] Information Security Officer (consolidation owner)
 - [ ] Security Analysts (source workbook owners)
 - [ ] Risk Manager (gap prioritisation)
@@ -83,28 +83,7 @@ Before completing this dashboard, ensure you have:
 
 ---
 
-## 3. Workbook Structure
-
-The workbook contains **12 sheets** organised as follows:
-
-| Sheet | Purpose | Source Data |
-|-------|---------|-------------|
-| Instructions | Guidance and scoring methodology | N/A |
-| Executive_Summary | High-level compliance overview | All domains |
-| Domain_Overview | Domain-by-domain compliance view | A.5.14.1-4 |
-| Transfer_Compliance | Transfer methods compliance | A.5.14.1 |
-| Channel_Compliance | Channel security compliance | A.5.14.2 |
-| Agreements_Compliance | Third-party agreement status | A.5.14.3 |
-| Cross_Domain_Gaps | Gaps spanning multiple domains | Analysis |
-| Remediation_Tracker | Consolidated remediation tracking | A.5.14.4 |
-| KPI_Summary | Key performance indicators | A.5.14.4 |
-| Evidence_Index | Cross-reference to source evidence | All domains |
-| Trend_Dashboard | Historical compliance trends | Historical |
-| Approval_SignOff | Consolidation approval | N/A |
-
----
-
-## 4. Completion Walkthrough
+## Completion Walkthrough
 
 ### Sheet 1: Instructions
 
@@ -385,9 +364,9 @@ The workbook contains **12 sheets** organised as follows:
 
 ---
 
-## 5. Evidence Collection
+## Evidence Collection
 
-### 5.1 Evidence Sources
+### Evidence Sources
 
 | Domain | Source Workbook | Evidence Type |
 |--------|-----------------|---------------|
@@ -396,7 +375,7 @@ The workbook contains **12 sheets** organised as follows:
 | Agreements | A.5.14.3 | Signed agreements, certificates |
 | Monitoring | A.5.14.4 | Incident records, KPI data |
 
-### 5.2 Evidence Storage
+### Evidence Storage
 
 Store consolidation evidence in:
 ```
@@ -408,7 +387,7 @@ Store consolidation evidence in:
 │   └── Approval-Records/
 ```
 
-### 5.3 Evidence Naming
+### Evidence Naming
 
 Format: `EV-514-CON-[Type]-[Period]-[YYYYMMDD].[ext]`
 
@@ -419,7 +398,7 @@ Examples:
 
 ---
 
-## 6. Common Pitfalls
+## Common Pitfalls
 
 ### ❌ MISTAKE: Consolidating without updated source workbooks
 ✅ CORRECT: Verify all source workbooks are current before consolidating
@@ -453,7 +432,7 @@ Examples:
 
 ---
 
-## 7. Quality Checklist
+## Quality Checklist
 
 Before submitting the consolidation, verify:
 
@@ -495,20 +474,20 @@ Before submitting the consolidation, verify:
 
 ---
 
-## 8. Review and Approval
+## Review and Approval
 
-### 8.1 Consolidation Schedule
+### Consolidation Schedule
 - **Frequency**: Quarterly
 - **Timing**: First week after quarter end
 - **Triggers**: Major changes, pre-audit preparation
 
-### 8.2 Approval Workflow
+### Approval Workflow
 1. **Security Analyst** compiles data from sources
 2. **Domain Owners** validate their sections
 3. **ISO** reviews overall consolidation
 4. **CISO** provides executive approval
 
-### 8.3 Post-Approval Actions
+### Post-Approval Actions
 - Distribute to executive stakeholders
 - Present at management review
 - Archive for audit trail
@@ -516,7 +495,6 @@ Before submitting the consolidation, verify:
 - Schedule next consolidation
 
 ---
-
 
 **END OF USER GUIDE**
 

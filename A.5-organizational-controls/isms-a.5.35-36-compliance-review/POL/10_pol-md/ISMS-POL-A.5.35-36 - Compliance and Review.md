@@ -122,9 +122,9 @@ This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulat
 
 # Policy Statements
 
-## 1. Independent Review of Information Security (A.5.35)
+## Independent Review of Information Security (A.5.35)
 
-### 1.1 Review Requirements
+### Review Requirements
 
 **PS-1.1.1 Planned Interval Reviews**: [Organisation] SHALL conduct independent reviews of its approach to managing information security at planned intervals. Reviews SHALL occur at least annually.
 
@@ -153,7 +153,7 @@ Reviewer qualifications SHALL be verified and documented in the Reviewer Registr
 
 **Verification**: Reviewer qualifications verified before engagement; documented in ISMS-IMP-A.5.35-36.S1 Reviewer Registry.
 
-### 1.2 Review Scope
+### Review Scope
 
 **PS-1.2.1 Comprehensive Scope**: Independent reviews SHALL assess whether [Organisation]'s information security approach:
 
@@ -172,7 +172,7 @@ Reviewer qualifications SHALL be verified and documented in the Reviewer Registr
 
 **Verification**: Review scope documented using ISMS-IMP-A.5.35-36.S1 Review Scope sheet before each review commences.
 
-### 1.3 Review Execution
+### Review Execution
 
 **PS-1.3.1 Review Planning**: Independent reviews SHALL follow a documented plan that includes:
 
@@ -195,7 +195,7 @@ Reviewer qualifications SHALL be verified and documented in the Reviewer Registr
 
 **Verification**: Review evidence retained in ISMS Evidence Library (SharePoint/Confluence or equivalent) with reference recorded in Evidence Register.
 
-### 1.4 Review Findings
+### Review Findings
 
 **PS-1.4.1 Finding Documentation**: All review findings SHALL be documented in the ISMS-IMP-A.5.35-36.S3 Findings Register, including:
 
@@ -225,7 +225,7 @@ Reviewer qualifications SHALL be verified and documented in the Reviewer Registr
 
 **Verification**: Finding reports distributed per reporting requirements; receipt confirmed.
 
-### 1.5 Management Action
+### Management Action
 
 **PS-1.5.1 Corrective Action Requirement**: When independent reviews identify inadequacies in [Organisation]'s approach to information security or its implementation, management SHALL initiate corrective actions.
 
@@ -249,9 +249,9 @@ Reviewer qualifications SHALL be verified and documented in the Reviewer Registr
 
 **Verification**: Closure documented in Verification Log; Critical/High closures verified by person independent of action owner.
 
-## 2. Compliance with Policies, Rules and Standards (A.5.36)
+## Compliance with Policies, Rules and Standards (A.5.36)
 
-### 2.1 Compliance Review Requirements
+### Compliance Review Requirements
 
 **PS-2.1.1 Regular Review Requirement**: Compliance with [Organisation]'s information security policy, topic-specific policies, rules, and standards SHALL be regularly reviewed.
 
@@ -273,7 +273,7 @@ Reviewer qualifications SHALL be verified and documented in the Reviewer Registr
 
 **Verification**: Review completion recorded in ISMS-IMP-A.5.35-36.S2 compliance assessment sheets.
 
-### 2.2 Manager Responsibilities
+### Manager Responsibilities
 
 **PS-2.2.1 Manager Accountability**: Managers SHALL be accountable for ensuring the teams and departments for which they are responsible maintain compliance with security policies and rules.
 
@@ -294,7 +294,7 @@ Reviewer qualifications SHALL be verified and documented in the Reviewer Registr
 
 **Verification**: Manager review records maintained using ISMS-IMP-A.5.35-36.S2 Department Assessment sheet.
 
-### 2.3 Compliance Verification Methods
+### Compliance Verification Methods
 
 **PS-2.3.1 Verification Approaches**: Compliance SHALL be verified through appropriate methods, including:
 
@@ -313,7 +313,7 @@ Reviewer qualifications SHALL be verified and documented in the Reviewer Registr
 
 **PS-2.3.3 Evidence Storage**: Compliance evidence SHALL be stored in the ISMS Evidence Library (SharePoint/Confluence or equivalent) with references recorded in the relevant Evidence Register.
 
-### 2.4 Non-Compliance Management
+### Non-Compliance Management
 
 **PS-2.4.1 Non-Compliance Identification**: Instances of non-compliance SHALL be recorded in the ISMS-IMP-A.5.35-36.S2 NonCompliance Register with:
 
@@ -342,9 +342,9 @@ Reviewer qualifications SHALL be verified and documented in the Reviewer Registr
 
 **Verification**: Escalation triggers tracked in ISMS-IMP-A.5.35-36.S4 Dashboard; overdue items highlighted automatically.
 
-## 3. Consolidated Findings Management
+## Consolidated Findings Management
 
-### 3.1 Unified Findings Register
+### Unified Findings Register
 
 **PS-3.1.1 Single Register**: All findings from independent reviews (A.5.35) and compliance assessments (A.5.36) SHALL be consolidated in a single Findings Register (ISMS-IMP-A.5.35-36.S3).
 
@@ -357,7 +357,7 @@ Reviewer qualifications SHALL be verified and documented in the Reviewer Registr
 
 **PS-3.1.3 Finding Uniqueness**: Duplicate findings from multiple sources SHALL be consolidated to prevent redundant remediation tracking.
 
-### 3.2 Root Cause Analysis
+### Root Cause Analysis
 
 **PS-3.2.1 RCA Requirement**: Root cause analysis (RCA) SHALL be conducted for:
 
@@ -376,7 +376,7 @@ Reviewer qualifications SHALL be verified and documented in the Reviewer Registr
 
 **Verification**: RCA completion tracked; Critical/High findings require RCA before closure.
 
-### 3.3 Remediation Management
+### Remediation Management
 
 **PS-3.3.1 Action Planning**: Each finding requiring remediation SHALL have documented corrective action(s) in ISMS-IMP-A.5.35-36.S3 Remediation Actions sheet, including:
 
@@ -403,7 +403,7 @@ Reviewer qualifications SHALL be verified and documented in the Reviewer Registr
 
 **Verification**: Verification completion documented in Verification Log with evidence reference.
 
-### 3.4 Risk Acceptance
+### Risk Acceptance
 
 **PS-3.4.1 Risk Acceptance Option**: Findings that cannot be remediated within acceptable timeframes or where remediation cost exceeds risk may be submitted for risk acceptance.
 
@@ -429,9 +429,9 @@ Renewal requests must demonstrate re-assessment of risk and continued justificat
 
 **Verification**: Risk acceptances recorded in Findings Register with status "Risk Accepted" and documented in risk register.
 
-## 4. Compliance Dashboard and Reporting
+## Compliance Dashboard and Reporting
 
-### 4.1 Executive Dashboard
+### Executive Dashboard
 
 **PS-4.1.1 Dashboard Maintenance**: An executive compliance dashboard SHALL be maintained providing consolidated visibility into:
 
@@ -452,7 +452,7 @@ Renewal requests must demonstrate re-assessment of risk and continued justificat
 
 **Verification**: Dashboard updated monthly; presented to CISO monthly and Executive Management quarterly.
 
-### 4.2 Key Performance Indicators
+### Key Performance Indicators
 
 **PS-4.2.1 Compliance KPIs**: The following KPIs SHALL be tracked:
 
@@ -473,7 +473,7 @@ Renewal requests must demonstrate re-assessment of risk and continued justificat
 
 **Verification**: KPI calculations documented in ISMS-IMP-A.5.35-36.S4 KPI Scorecard sheet.
 
-### 4.3 Trend Analysis
+### Trend Analysis
 
 **PS-4.3.1 Trend Tracking**: Compliance and review metrics SHALL be tracked over time to identify:
 

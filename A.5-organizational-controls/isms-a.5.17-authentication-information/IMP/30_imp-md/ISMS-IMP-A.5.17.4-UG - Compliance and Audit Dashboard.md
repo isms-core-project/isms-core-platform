@@ -26,13 +26,13 @@
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 The **Compliance and Audit Dashboard** (ISMS-IMP-A.5.17.4) provides ongoing visibility into authentication security compliance. This dashboard tracks key performance indicators (KPIs), authentication events, audit findings, and remediation progress. It serves as the central monitoring tool for A.5.17 control effectiveness.
 
-### 1.2 Scope
+### Scope
 
 This dashboard covers:
 - **Executive summary**: High-level compliance metrics and status
@@ -41,7 +41,7 @@ This dashboard covers:
 - **Audit findings**: Internal and external audit finding management
 - **Remediation tracking**: Gap and finding remediation progress
 
-### 1.3 Business Value
+### Business Value
 
 Maintaining this dashboard delivers:
 - **Real-time compliance visibility** for management reporting
@@ -50,7 +50,7 @@ Maintaining this dashboard delivers:
 - **Continuous improvement** through KPI tracking
 - **Risk-based prioritisation** of security investments
 
-### 1.4 Control Requirement
+### Control Requirement
 
 > *ISO/IEC 27001:2022 Annex A.5.17 — Authentication Information*
 >
@@ -60,25 +60,25 @@ This dashboard monitors ongoing compliance with authentication information manag
 
 ---
 
-## 2. Prerequisites
+## Prerequisites
 
 Before starting this dashboard, ensure you have:
 
-### 2.1 Required Documents
+### Required Documents
 - [ ] ISMS-IMP-A.5.17.1 (Password Policy) — policy compliance baseline
 - [ ] ISMS-IMP-A.5.17.2 (MFA Deployment) — MFA coverage baseline
 - [ ] ISMS-IMP-A.5.17.3 (Authentication Management) — process compliance
 - [ ] Incident management records
 - [ ] Audit reports (internal and external)
 
-### 2.2 Required Access
+### Required Access
 - [ ] SIEM/security monitoring dashboards
 - [ ] Identity provider admin console (Azure AD, Okta)
 - [ ] Authentication log data
 - [ ] Audit finding database
 - [ ] Risk register
 
-### 2.3 Required Personnel
+### Required Personnel
 - [ ] Information Security Officer (dashboard owner)
 - [ ] IT Security Analyst (event data)
 - [ ] Identity & Access Management Team
@@ -87,24 +87,7 @@ Before starting this dashboard, ensure you have:
 
 ---
 
-## 3. Workbook Structure
-
-The workbook contains **8 sheets** organised as follows:
-
-| Sheet | Purpose | Update Frequency |
-|-------|---------|------------------|
-| Instructions | Guidance and methodology | N/A |
-| Executive_Summary | High-level compliance overview | Monthly |
-| Compliance_KPIs | Key performance indicators | Monthly |
-| Authentication_Events | Event monitoring summary | Weekly/Real-time |
-| Audit_Findings | Audit finding tracking | After each audit |
-| Remediation_Tracker | Gap remediation progress | Weekly |
-| Evidence_Register | Supporting documentation | As needed |
-| Approval_SignOff | Dashboard approval | Monthly |
-
----
-
-## 4. Completion Walkthrough
+## Completion Walkthrough
 
 ### Sheet 1: Instructions
 
@@ -315,9 +298,9 @@ Document top 5 priority actions with owner, due date, and status.
 
 ---
 
-## 5. Evidence Collection
+## Evidence Collection
 
-### 5.1 Evidence by Sheet
+### Evidence by Sheet
 
 | Sheet | Required Evidence |
 |-------|-------------------|
@@ -327,7 +310,7 @@ Document top 5 priority actions with owner, due date, and status.
 | Audit_Findings | Audit reports, finding documentation |
 | Remediation_Tracker | Remediation evidence, completion proof |
 
-### 5.2 Evidence Storage
+### Evidence Storage
 
 Store all evidence in:
 ```
@@ -342,7 +325,7 @@ Store all evidence in:
 
 ---
 
-## 6. Common Pitfalls
+## Common Pitfalls
 
 ### ❌ MISTAKE: Updating dashboard only before audits
 ✅ CORRECT: Maintain continuous updates per recommended frequency
@@ -376,7 +359,7 @@ Store all evidence in:
 
 ---
 
-## 7. Quality Checklist
+## Quality Checklist
 
 Before submitting the dashboard, verify:
 
@@ -417,23 +400,22 @@ Before submitting the dashboard, verify:
 
 ---
 
-## 8. Review and Approval
+## Review and Approval
 
-### 8.1 Update Schedule
+### Update Schedule
 - **Executive Summary**: Monthly
 - **KPIs**: Monthly (end of month)
 - **Authentication Events**: Weekly minimum, real-time preferred
 - **Audit Findings**: After each audit
 - **Remediation**: Weekly
 
-### 8.2 Approval Workflow
+### Approval Workflow
 1. **Dashboard Owner** updates all sheets
 2. **IT Security Manager** validates technical accuracy
 3. **ISO** reviews and approves
 4. **CISO** signs off for executive reporting
 
 ---
-
 
 **END OF USER GUIDE**
 

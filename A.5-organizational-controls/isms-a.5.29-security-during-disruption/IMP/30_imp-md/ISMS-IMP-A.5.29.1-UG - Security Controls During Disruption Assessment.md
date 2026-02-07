@@ -19,35 +19,13 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-1. [PART I: USER COMPLETION GUIDE](#part-i-user-completion-guide)
-   - [1.1 Assessment Overview](#11-assessment-overview)
-   - [1.2 Control Requirements](#12-control-requirements)
-   - [1.3 Prerequisites](#13-prerequisites)
-   - [1.4 Disruption Categories](#14-disruption-categories)
-   - [1.5 Workbook Structure](#15-workbook-structure)
-   - [1.6 Completion Walkthrough](#16-completion-walkthrough)
-   - [1.7 Security Control Classification](#17-security-control-classification)
-   - [1.8 Evidence Collection](#18-evidence-collection)
-   - [1.9 Common Pitfalls](#19-common-pitfalls)
-   - [1.10 Quality Checklist](#110-quality-checklist)
-   - [1.11 Review and Approval](#111-review-and-approval)
-   - [1.12 Integration with Other Controls](#112-integration-with-other-controls)
-2. [PART II: TECHNICAL SPECIFICATION](#part-ii-technical-specification)
-   - [2.1 Workbook Architecture](#21-workbook-architecture)
-   - [2.2 Sheet Specifications](#22-sheet-specifications)
-   - [2.3 Data Validations](#23-data-validations)
-   - [2.4 Conditional Formatting](#24-conditional-formatting)
-   - [2.5 Formula Specifications](#25-formula-specifications)
-   - [2.6 Cell Styling Standards](#26-cell-styling-standards)
-   - [2.7 Generator Script Reference](#27-generator-script-reference)
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.29.1-TG.
 
 ---
 
----
-
-## 1.1 Assessment Overview
+## Assessment Overview
 
 ### Purpose
 
@@ -113,7 +91,7 @@ A well-maintained security control inventory during disruption delivers:
 
 ---
 
-## 1.2 Control Requirements
+## Control Requirements
 
 ### ISO 27001:2022 Control A.5.29
 
@@ -176,7 +154,7 @@ Auditors frequently ask:
 
 ---
 
-## 1.3 Prerequisites
+## Prerequisites
 
 ### Before Starting This Assessment
 
@@ -225,7 +203,7 @@ Before proceeding, verify:
 
 ---
 
-## 1.4 Disruption Categories
+## Disruption Categories
 
 ### Understanding Disruption Types
 
@@ -257,62 +235,7 @@ Disruptions affecting information security vary in nature, severity, and require
 
 ---
 
-## 1.5 Workbook Structure
-
-### Sheet Overview
-
-The workbook consists of seven sheets, each serving a specific purpose in security control during disruption assessment:
-
-| Sheet | Purpose | Primary User | Update Frequency |
-|-------|---------|--------------|------------------|
-| **Instructions** | Guidance and orientation | All users | As needed |
-| **Security_Control_Inventory** | Master security control catalogue | Security Team | Upon change |
-| **Minimum_Baseline** | Non-negotiable security controls | CISO | Annual |
-| **Security_Posture_Levels** | Tiered security definitions | CISO | Annual |
-| **Compensating_Controls** | Alternative control measures | Security Team | Upon change |
-| **BCDR_Security_Review** | BC/DR plan security approval | CISO | Annual + updates |
-| **Evidence_Register** | Evidence tracking and links | Security Team | Ongoing |
-| **Approval_SignOff** | Assessment authorisation | Approvers | At completion |
-
-### Sheet Relationships
-
-```
-┌─────────────────┐
-│  Instructions   │ ◄── Start here
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐     ┌─────────────────┐
-│Security_Control_│────►│Minimum_         │
-│Inventory        │     │Baseline         │
-└────────┬────────┘     └─────────────────┘
-         │                      │
-         ▼                      ▼
-┌─────────────────┐     ┌─────────────────┐
-│Security_Posture_│     │Compensating_    │
-│Levels           │     │Controls         │
-└────────┬────────┘     └─────────────────┘
-         │
-         ▼
-┌─────────────────┐
-│BCDR_Security_   │
-│Review           │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│Evidence_Register│
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ Approval_SignOff│ ◄── Complete here
-└─────────────────┘
-```
-
----
-
-## 1.6 Completion Walkthrough
+## Completion Walkthrough
 
 ### Step-by-Step Process
 
@@ -378,7 +301,7 @@ The workbook consists of seven sheets, each serving a specific purpose in securi
 
 ---
 
-## 1.7 Security Control Classification
+## Security Control Classification
 
 ### Control Categories
 
@@ -403,7 +326,7 @@ The workbook consists of seven sheets, each serving a specific purpose in securi
 
 ---
 
-## 1.8 Evidence Collection
+## Evidence Collection
 
 ### Evidence Requirements
 
@@ -426,7 +349,7 @@ The workbook consists of seven sheets, each serving a specific purpose in securi
 
 ---
 
-## 1.9 Common Pitfalls
+## Common Pitfalls
 
 Avoid these common mistakes when completing this assessment:
 
@@ -496,7 +419,7 @@ Avoid these common mistakes when completing this assessment:
 
 ---
 
-## 1.10 Quality Checklist
+## Quality Checklist
 
 Before submitting this assessment, verify:
 
@@ -543,7 +466,7 @@ Before submitting this assessment, verify:
 
 ---
 
-## 1.11 Review and Approval
+## Review and Approval
 
 ### Approval Workflow
 
@@ -572,7 +495,7 @@ Assessment Published to ISMS Evidence Library
 
 ---
 
-## 1.12 Integration with Other Controls
+## Integration with Other Controls
 
 ### Related ISMS Controls
 
@@ -595,7 +518,6 @@ Assessment Published to ISMS Evidence Library
 | **ISMS-IMP-A.5.30-8.13-14** | BC/DR implementation with security integration |
 
 ---
-
 
 **END OF USER GUIDE**
 

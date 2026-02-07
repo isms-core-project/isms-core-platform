@@ -18,7 +18,7 @@
 
 ---
 
-### 1. Assessment Overview
+### Assessment Overview
 
 #### 1.1 Purpose
 
@@ -107,7 +107,7 @@ Management disengagement creates significant risks:
 
 ---
 
-### 2. Prerequisites
+### Prerequisites
 
 #### 2.1 Required Access
 
@@ -151,30 +151,7 @@ Before beginning this assessment, ensure access to:
 
 ---
 
-### 3. Workbook Structure
-
-| Sheet | Purpose | Completion Order |
-|-------|---------|------------------|
-| **Instructions** | Guidance and scoring methodology | Read first |
-| **Manager Inventory** | Register all managers to assess | Step 1 |
-| **Commitment Assessment** | Score each manager against criteria | Step 2 |
-| **Summary Scores** | View aggregated results and status | Step 3 |
-
-#### 3.1 Sheet Dependencies
-
-```
-Instructions (Reference)
-       ↓
-Manager Inventory (Step 1)
-       ↓
-Commitment Assessment (Step 2)
-       ↓
-Summary Scores (Step 3 - Auto-calculated)
-```
-
----
-
-### 4. Completion Walkthrough
+### Completion Walkthrough
 
 #### Step 1: Populate Manager Inventory
 
@@ -339,7 +316,7 @@ The Summary Scores sheet auto-calculates:
 
 ---
 
-### 5. Evidence Collection
+### Evidence Collection
 
 #### 5.1 Evidence Requirements by Category
 
@@ -390,7 +367,7 @@ A.5.4/
 
 ---
 
-### 6. Scoring Calibration
+### Scoring Calibration
 
 #### 6.1 Calibration Sessions
 
@@ -423,7 +400,7 @@ To ensure consistent scoring across assessors:
 
 ---
 
-### 7. Common Pitfalls
+### Common Pitfalls
 
 ❌ **MISTAKE**: Scoring based on intentions rather than demonstrated actions
 ✅ **CORRECT**: Score only observable, documented behaviours with evidence
@@ -457,7 +434,7 @@ To ensure consistent scoring across assessors:
 
 ---
 
-### 8. Quality Checklist
+### Quality Checklist
 
 Before submitting the completed workbook:
 
@@ -487,7 +464,7 @@ Before submitting the completed workbook:
 
 ---
 
-### 9. Review and Approval
+### Review and Approval
 
 #### 9.1 Review Workflow
 
@@ -527,7 +504,6 @@ The Approval & Sign-Off sheet requires:
    - Date and signature
 
 ---
-
 
 **END OF USER GUIDE**
 

@@ -44,9 +44,9 @@
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 This assessment evaluates [Organization]'s **digital forensic evidence management capabilities**, focusing on the collection, preservation, analysis, and legal admissibility of evidence throughout the incident lifecycle (A.5.28).
 
@@ -75,7 +75,7 @@ This assessment evaluates [Organization]'s **digital forensic evidence managemen
 - Storage and retention compliance check
 - Gap analysis and capability improvement plan
 
-### 1.2 Why This Matters
+### Why This Matters
 
 **ISO/IEC 27001:2022 Control A.5.28 Requirement:**
 > *"The organisation should establish and implement procedures for the identification, collection, acquisition and preservation of evidence related to information security events."*
@@ -99,7 +99,7 @@ This assessment evaluates [Organization]'s **digital forensic evidence managemen
 - Can evidence withstand legal challenge?
 - Are forensics integrated into the incident response workflow?
 
-### 1.3 Who Should Complete This Assessment
+### Who Should Complete This Assessment
 
 **Primary Responsibility:** Digital Forensics Lead, Incident Response Manager, or Senior Security Analyst with forensic experience
 
@@ -124,7 +124,7 @@ This assessment evaluates [Organization]'s **digital forensic evidence managemen
 - Legal review of evidence procedures
 - Validation of storage and retention compliance
 
-### 1.4 Time Estimate
+### Time Estimate
 
 **Total Assessment Time:** 6-10 hours
 
@@ -155,7 +155,7 @@ This assessment evaluates [Organization]'s **digital forensic evidence managemen
 - **Moderate (8 hours):** Some forensic capability, basic procedures
 - **Complex (10+ hours):** Limited forensic capability, ad-hoc procedures, no dedicated tools
 
-### 1.5 Connection to Policy
+### Connection to Policy
 
 This assessment implements **ISMS-POL-A.5.24-28, Section 2.4 (Forensic Evidence Management)** which defines mandatory requirements for:
 
@@ -195,7 +195,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.4 (Forensic Evidence 
 **Policy Authority:** Chief Information Security Officer (CISO)  
 **Compliance Status:** Mandatory for all [Organization] security incidents
 
-### 1.6 Assessment Scope
+### Assessment Scope
 
 **Included in This Assessment:**
 
@@ -212,7 +212,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.4 (Forensic Evidence 
 ❌ Post-incident review (see S5)
 ❌ Detailed forensic tool configuration
 
-### 1.7 Prerequisites
+### Prerequisites
 
 1. ✅ Read ISMS-REF-A.5.24-28 Section 3 (Forensic Collection Techniques Library)
 2. ✅ Gather: Forensic procedures, chain of custody forms, tool inventory, recent investigation reports
@@ -222,9 +222,9 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.4 (Forensic Evidence 
 
 ---
 
-## 2. Assessment Workflow
+## Assessment Workflow
 
-### 2.1 High-Level Process
+### High-Level Process
 
 ```
 1. Evidence Collection Assessment (2 hours)
@@ -259,7 +259,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.4 (Forensic Evidence 
 6. Gap Analysis & Review (1 hour)
 ```
 
-### 2.2 Assessment Sections Overview
+### Assessment Sections Overview
 
 **Sheet 1: Instructions & Legend**
 **Sheet 2: Evidence Collection** — 25 questions
@@ -274,9 +274,9 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.4 (Forensic Evidence 
 
 ---
 
-## 3. Section-by-Section Guidance
+## Section-by-Section Guidance
 
-### 3.1 Sheet 2: Evidence Collection (25 Questions)
+### Sheet 2: Evidence Collection (25 Questions)
 
 ---
 
@@ -425,7 +425,7 @@ For each evidence source, assess collection capability:
 
 ---
 
-### 3.2 Sheet 3: Chain of Custody (20 Questions)
+### Sheet 3: Chain of Custody (20 Questions)
 
 ---
 
@@ -534,7 +534,7 @@ For each evidence source, assess collection capability:
 
 ---
 
-### 3.3 Sheet 4: Forensic Analysis (20 Questions)
+### Sheet 4: Forensic Analysis (20 Questions)
 
 ---
 
@@ -647,7 +647,7 @@ For each evidence source, assess collection capability:
 
 ---
 
-### 3.4 Sheet 5: Storage & Retention (15 Questions)
+### Sheet 5: Storage & Retention (15 Questions)
 
 ---
 
@@ -729,7 +729,7 @@ For each evidence source, assess collection capability:
 
 ---
 
-### 3.5 Sheet 6: Legal & Regulatory Readiness (15 Questions)
+### Sheet 6: Legal & Regulatory Readiness (15 Questions)
 
 ---
 
@@ -813,27 +813,27 @@ For each evidence source, assess collection capability:
 
 ---
 
-## 4. Metrics Calculation Guide
+## Metrics Calculation Guide
 
-### 4.1 Evidence Collection Completeness
+### Evidence Collection Completeness
 ```
 Completeness = (Incidents with Adequate Evidence / Total Incidents) × 100
 Target: >85%
 ```
 
-### 4.2 Chain of Custody Integrity Rate
+### Chain of Custody Integrity Rate
 ```
 CoC Integrity = (Incidents with Unbroken CoC / Total Incidents) × 100
 Target: >95% (legal requirement)
 ```
 
-### 4.3 Root Cause Identification Rate
+### Root Cause Identification Rate
 ```
 RCI Rate = (Incidents with Root Cause Found / Incidents Requiring Forensics) × 100
 Target: >80%
 ```
 
-### 4.4 Forensic Analysis Cycle Time
+### Forensic Analysis Cycle Time
 ```
 Analysis Time = Σ(Analysis Complete - Evidence Received) / Number of Analyses
 Target: <72 hours for Critical incidents
@@ -841,7 +841,7 @@ Target: <72 hours for Critical incidents
 
 ---
 
-## 5. Common Mistakes to Avoid
+## Common Mistakes to Avoid
 
 **❌ Mistake:** Containment before evidence collection (volatile evidence lost)
 **✅ Solution:** Collect RAM and network captures before isolating endpoints
@@ -860,7 +860,7 @@ Target: <72 hours for Critical incidents
 
 ---
 
-## 6. Assessment Timeline
+## Assessment Timeline
 
 **Week 1:** Evidence Collection + Chain of Custody assessment (3-4 hours)
 **Week 2:** Forensic Analysis + Storage/Retention assessment (3-4 hours)

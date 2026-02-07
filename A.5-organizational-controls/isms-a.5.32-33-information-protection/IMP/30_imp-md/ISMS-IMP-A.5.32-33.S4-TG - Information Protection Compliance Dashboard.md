@@ -23,242 +23,177 @@
 
 ---
 
-### Document Structure
-
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.5.32-33.S4-UG.
 
 ---
-
 # Technical Specification
-
 **Audience:** Workbook Developers, Python/Excel Script Maintainers
 
+
+> Auto-generated from `generate_a532_33_4_compliance_dashboard.py`
+> Re-generate with: `python3 generate_tg_from_scr.py --apply`
+
+## Workbook Overview
+
+| Property | Value |
+|----------|-------|
+| **Document ID** | `ISMS-IMP-A.5.32-33.S4` |
+| **Output Filename** | `ISMS-IMP-A.5.32-33.S4_Information_Protection_Compliance_Dashboard_YYYYMMDD.xlsx` |
+| **Workbook Title** | Information Protection Compliance Dashboard |
+| **Total Sheets** | 10 (10 visible) |
+| **Control Reference** | ISO/IEC 27001:2022 - Controls {...}: {...} |
+
+## Color Palette
+
+| Hex Code | Style Name | Description |
+|----------|-----------|-------------|
+| #1F4E79 | 1F4E79 | Custom |
+| #2E75B6 | 2E75B6 | Custom |
+| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
+| #D6DCE4 | D6DCE4 | Silver (Neutral) |
+| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | FFFFCC | Light Yellow (User Input) |
+
+## Sheet 1: Instructions
+
 ---
-
-# Workbook Structure
-
-## Generated File
-
-**Filename:** `ISMS-IMP-A.5.32-33.S4_Information_Protection_Compliance_Dashboard_[YYYYMMDD].xlsx`
-
-**Generator Script:** `generate_a532_33_4_compliance_dashboard.py`
-
-## Sheet Overview
-
-| Sheet # | Sheet Name | Purpose | Rows (Est.) |
-|---------|------------|---------|-------------|
-| 1 | Instructions | Usage guidance | ~50 |
-| 2 | Executive_Summary | High-level status | ~30 |
-| 3 | Compliance_Metrics | KPIs and targets | 30+ |
-| 4 | Control_Assessment | A.5.32-33 evaluation | 30+ |
-| 5 | Maturity_Assessment | CMMI scoring | ~15 |
-| 6 | Risk_Register | Current risks | 20+ |
-| 7 | Remediation_Tracker | Gap closure | 30+ |
-| 8 | Trend_Analysis | Period comparison | 20+ |
-| 9 | Evidence_Register | Audit evidence | 30+ |
-| 10 | Approval_SignOff | Formal approval | ~30 |
-
----
-
-# Sheet-by-Sheet Specifications
 
 ## Sheet 2: Executive_Summary
 
-### Layout
-- Row 1: Merged header
-- Row 2: Merged subheader
-- Rows 4-6: Assessment period and dates
-- Rows 8-12: Overall status indicators
-- Rows 14-18: Key achievements
-- Rows 20-24: Key concerns
+**Data Rows:** 6 (rows 19–24)
 
-### Status Fields
-
-| Cell | Field | Data Validation |
-|------|-------|-----------------|
-| B4 | Assessment Period | - |
-| B5 | Review Date | Date |
-| B6 | Next Review Date | Date |
-| B9 | Overall Status | List: Compliant, Partial, Non-Compliant |
-| B10 | IP Protection Status | List: Effective, Partial, Ineffective |
-| B11 | Records Protection Status | List: Effective, Partial, Ineffective |
-| B12 | Retention Compliance Status | List: Compliant, At Risk, Non-Compliant |
+---
 
 ## Sheet 3: Compliance_Metrics
 
-### Column Structure
+**Data Rows:** 31 (rows 5–35)
 
-| Column | Header | Width | Data Validation |
-|--------|--------|-------|-----------------|
-| A | Metric ID | 12 | - |
-| B | Category | 15 | List: IP Protection, Records Protection, Retention/Disposal |
-| C | Metric Name | 30 | - |
-| D | Description | 40 | - |
-| E | Target | 12 | - |
-| F | Current Value | 12 | - |
-| G | Previous Value | 15 | - |
-| H | Trend | 12 | List: Improving, Stable, Declining, New |
-| I | Status | 15 | List: On Target, At Risk, Below Target |
-| J | Owner | 20 | - |
-| K | Notes | 30 | - |
+### Columns
 
-### Conditional Formatting
-- Status "On Target": Green fill (#C6EFCE)
-- Status "At Risk": Yellow fill (#FFEB9C)
-- Status "Below Target": Red fill (#FFC7CE)
+| Col | Header |
+|-----|--------|
+| A | Metric ID |
+| B | Category |
+| C | Metric Name |
+| D | Description |
+| E | Target |
+| F | Current Value |
+| G | Previous Value |
+| H | Trend |
+| I | Status |
+| J | Owner |
+| K | Notes |
+
+---
 
 ## Sheet 4: Control_Assessment
 
-### Column Structure
+**Data Rows:** 9 (rows 17–25)
 
-| Column | Header | Width | Data Validation |
-|--------|--------|-------|-----------------|
-| A | Control | 12 | - |
-| B | Requirement | 40 | - |
-| C | Implementation | 35 | - |
-| D | Evidence | 30 | - |
-| E | Gap | 30 | - |
-| F | Score | 12 | List: 5 - Optimised, 4 - Managed, 3 - Defined, 2 - Developing, 1 - Initial, 0 - Non-existent |
-| G | Status | 15 | List: Compliant, Partial, Non-Compliant |
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Requirement |
+| B | Implementation |
+| C | Evidence |
+| D | Gap |
+| E | Score |
+| F | Status |
+
+---
 
 ## Sheet 5: Maturity_Assessment
 
-### Column Structure
+**Data Rows:** 10 (rows 15–24)
 
-| Column | Header | Width | Data Validation |
-|--------|--------|-------|-----------------|
-| A | Domain | 30 | - |
-| B | Current Level | 18 | List: 5 - Optimised, 4 - Managed, 3 - Defined, 2 - Developing, 1 - Initial, 0 - Non-existent |
-| C | Target Level | 18 | Same as B |
-| D | Gap | 8 | Number |
-| E | Priority | 12 | List: Critical, High, Medium, Low |
-| F | Key Actions | 40 | - |
-| G | Notes | 30 | - |
+---
 
 ## Sheet 6: Risk_Register
 
-### Column Structure
+**Data Rows:** 26 (rows 5–30)
 
-| Column | Header | Width | Data Validation |
-|--------|--------|-------|-----------------|
-| A | Risk ID | 12 | - |
-| B | Risk Description | 40 | - |
-| C | Risk Category | 15 | List: IP Protection, Records Protection, Compliance |
-| D | Likelihood | 18 | List: 5 - Almost Certain, 4 - Likely, 3 - Possible, 2 - Unlikely, 1 - Rare |
-| E | Impact | 18 | List: 5 - Catastrophic, 4 - Major, 3 - Moderate, 2 - Minor, 1 - Insignificant |
-| F | Risk Score | 12 | Formula |
-| G | Current Mitigation | 35 | - |
-| H | Residual Risk | 12 | List: High, Medium, Low |
-| I | Owner | 20 | - |
-| J | Status | 15 | List: Open, Mitigated, Accepted, Transferred |
-| K | Review Date | 12 | Date |
+### Columns
 
-### Formulas
-- Column F (Risk Score): `=VALUE(LEFT(D[row],1))*VALUE(LEFT(E[row],1))`
+| Col | Header |
+|-----|--------|
+| A | Risk ID |
+| B | Risk Description |
+| C | Risk Category |
+| D | Likelihood |
+| E | Impact |
+| F | Risk Score |
+| G | Current Mitigation |
+| H | Residual Risk |
+| I | Owner |
+| J | Status |
+| K | Review Date |
+
+---
 
 ## Sheet 7: Remediation_Tracker
 
-### Column Structure
+**Data Rows:** 46 (rows 5–50)
 
-| Column | Header | Width | Data Validation |
-|--------|--------|-------|-----------------|
-| A | Action ID | 12 | - |
-| B | Source | 20 | List: A.5.32-33.1, A.5.32-33.2, A.5.32-33.3, Risk Assessment, Audit Finding |
-| C | Description | 45 | - |
-| D | Priority | 12 | List: Critical, High, Medium, Low |
-| E | Owner | 20 | - |
-| F | Due Date | 12 | Date |
-| G | Progress | 12 | List: 0%, 25%, 50%, 75%, 100% |
-| H | Status | 15 | List: Open, In Progress, Complete, Overdue, On Hold |
-| I | Blocker | 25 | - |
-| J | Notes | 25 | - |
+### Columns
 
-### Conditional Formatting
-- Status "Complete": Green fill (#C6EFCE)
-- Status "In Progress": Yellow fill (#FFEB9C)
-- Status "Overdue": Red fill (#FFC7CE)
+| Col | Header |
+|-----|--------|
+| A | Action ID |
+| B | Source |
+| C | Description |
+| D | Priority |
+| E | Owner |
+| F | Due Date |
+| G | Progress |
+| H | Status |
+| I | Blocker |
+| J | Notes |
+
+---
 
 ## Sheet 8: Trend_Analysis
 
-### Column Structure
+**Data Rows:** 16 (rows 5–20)
 
-| Column | Header | Width | Data Validation |
-|--------|--------|-------|-----------------|
-| A | Metric | 30 | - |
-| B | Q1 | 10 | - |
-| C | Q2 | 10 | - |
-| D | Q3 | 10 | - |
-| E | Q4 | 10 | - |
-| F | YoY Change | 12 | - |
-| G | Trend | 12 | List: Improving, Stable, Declining |
-| H | Target | 10 | - |
-| I | On Track | 10 | List: Yes, No, At Risk |
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Metric |
+| B | Q1 |
+| C | Q2 |
+| D | Q3 |
+| E | Q4 |
+| F | YoY Change |
+| G | Trend |
+| H | Target |
+| I | On Track |
+
+---
 
 ## Sheet 9: Evidence_Register
 
-### Column Structure
+**Data Rows:** 46 (rows 5–50)
 
-| Column | Header | Width | Data Validation |
-|--------|--------|-------|-----------------|
-| A | Evidence ID | 12 | - |
-| B | Description | 40 | - |
-| C | Evidence Type | 18 | List: Assessment, Report, Metrics, Approval, Other |
-| D | Related Item | 20 | - |
-| E | Storage Location | 35 | - |
-| F | Collected Date | 12 | Date |
-| G | Collected By | 20 | - |
-| H | Verification Status | 18 | List: Verified, Pending, Expired |
+### Columns
 
-## Sheet 10: Approval_SignOff
-
-### Approver Roles
-1. Chief Information Security Officer
-2. Legal Counsel
-3. Records Manager
-4. Compliance Officer
-5. Internal Audit Representative
-6. Executive Management Representative
+| Col | Header |
+|-----|--------|
+| A | Evidence ID |
+| B | Description |
+| C | Evidence Type |
+| D | Related Item |
+| E | Storage Location |
+| F | Collected Date |
+| G | Collected By |
+| H | Verification Status |
 
 ---
 
-# Cell Styling Reference
+## Sheet 10: Approval
 
-## Colour Palette
-
-| Style Name | Hex Code | Usage |
-|------------|----------|-------|
-| Header Fill | #1F4E79 | Sheet headers |
-| Subheader Fill | #2E75B6 | Secondary headers |
-| Column Header | #D6DCE4 | Table headers |
-| Input Cell | #FFFFCC | User input |
-| Good/Compliant | #C6EFCE | Positive status |
-| Warning/At Risk | #FFEB9C | Attention needed |
-| Bad/Non-Compliant | #FFC7CE | Negative status |
-| High Risk | #FF6B6B | High priority |
-| Medium Risk | #FFA94D | Medium priority |
-| Low Risk | #69DB7C | Low priority |
-
----
-
-# Integration Points
-
-## Source Assessments
-
-| Assessment | Metrics Provided |
-|------------|------------------|
-| A.5.32-33.1 | IP asset count, protection status, third-party compliance, license compliance |
-| A.5.32-33.2 | Records count, protection effectiveness, integrity results, access control status |
-| A.5.32-33.3 | Retention compliance, disposal completion, exception count |
-
-## Related ISMS Controls
-
-| Control | Relationship |
-|---------|--------------|
-| A.5.12-13 | Classification scheme alignment |
-| A.5.34 | Privacy requirements for records |
-| A.8.10 | Secure deletion alignment |
-| A.8.12 | DLP for IP protection |
-| A.8.13 | Backup for records availability |
+**Data Rows:** 9 (rows 14–22)
 
 ---
 

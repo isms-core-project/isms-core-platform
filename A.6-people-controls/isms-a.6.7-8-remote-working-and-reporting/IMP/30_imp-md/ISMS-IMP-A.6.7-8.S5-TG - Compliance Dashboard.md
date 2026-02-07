@@ -23,179 +23,94 @@
 
 ---
 
-### Document Structure
-
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.6.7-8.S5-UG.
 
 ---
-
 # Technical Specification
-
 **Audience:** Workbook Developers (Python/Excel Script Maintainers)
 
----
 
-## 8. Workbook Architecture
+> Auto-generated from `generate_a678_s5_compliance_dashboard.py`
+> Re-generate with: `python3 generate_tg_from_scr.py --apply`
 
-### 8.1 Sheet Structure
+## Workbook Overview
 
-| Sheet Name | Purpose | Sheet Type |
-|------------|---------|------------|
-| Instructions | User guidance | Static |
-| Executive_Summary | Executive overview | Summary |
-| Metrics_Import | Data import from S1-S4 | Import |
-| Control_Compliance | Detailed compliance | Analysis |
-| Gap_Consolidation | Consolidated gaps | Analysis |
-| Trend_Analysis | Trend tracking | Analysis |
-| Risk_Assessment | Risk-based view | Analysis |
-| SoA_Integration | SoA mapping | Integration |
-| Audit_Summary | Audit support | Summary |
-| Evidence_Index | Evidence master list | Register |
-| Dashboard | Visual dashboard | Calculated |
-| Approval_Sign_Off | Formal approvals | Governance |
+| Property | Value |
+|----------|-------|
+| **Document ID** | `ISMS-IMP-A.6.7-8.S5` |
+| **Output Filename** | `ISMS-IMP-A.6.7-8.S5_Compliance_Dashboard_YYYYMMDD.xlsx` |
+| **Workbook Title** | Compliance Dashboard |
+| **Total Sheets** | 11 (11 visible) |
+| **Control Reference** | ISO/IEC 27001:2022 - Controls {...}: {...} |
 
-### 8.2 Data Dependencies
+## Color Palette
 
-```
-S1 Workbook ──┐
-S2 Workbook ──┼──→ Metrics_Import ──→ Control_Compliance
-S3 Workbook ──┤                   └──→ Dashboard
-S4 Workbook ──┘                   └──→ Executive_Summary
+| Hex Code | Style Name | Description |
+|----------|-----------|-------------|
+| #003366 | 003366 | Dark Blue (Headers) |
+| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
+| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
+| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | FFFFCC | Light Yellow (User Input) |
 
-S1 Gap_Analysis ──┐
-S2 Gap_Analysis ──┼──→ Gap_Consolidation ──→ Risk_Assessment
-S3 Gap_Analysis ──┤
-S4 Gap_Analysis ──┘
-
-Historical Data ──→ Trend_Analysis
-```
-
-## 9. Column Specifications
-
-### 9.1 Metrics_Import Sheet
-
-| Column | Header | Width | Type | Validation |
-|--------|--------|-------|------|------------|
-| A | Source Workbook | 12 | Dropdown | S1/S2/S3/S4 |
-| B | Metric Name | 40 | Text | Free text |
-| C | Metric Value | 15 | Number | Percentage or number |
-| D | Target Value | 15 | Number | Percentage or number |
-| E | Compliant | 12 | Formula | =C>=D |
-| F | Assessment Date | 15 | Date | Date format |
-| G | Source Cell | 15 | Text | Cell reference |
-| H | Notes | 40 | Text | Free text |
-
-### 9.2 Gap_Consolidation Sheet
-
-| Column | Header | Width | Type | Validation |
-|--------|--------|-------|------|------------|
-| A | Gap ID | 15 | Text | From source |
-| B | Source | 8 | Dropdown | S1/S2/S3/S4 |
-| C | Gap Description | 50 | Text | Free text |
-| D | Risk Level | 12 | Dropdown | High/Medium/Low |
-| E | Remediation Action | 50 | Text | Free text |
-| F | Owner | 20 | Text | Free text |
-| G | Target Date | 12 | Date | Date format |
-| H | Status | 15 | Dropdown | Open/In Progress/Closed |
-| I | Days Open | 12 | Formula | =TODAY()-[Created Date] |
-| J | Overdue | 10 | Formula | =AND(G<TODAY(),H<>"Closed") |
-
-## 10. Formula Specifications
-
-### 10.1 Overall Compliance Calculation
-
-**Weighted Average**:
-```
-Overall = (S1_Compliance * 0.20) + (S2_Compliance * 0.30) +
-          (S3_Compliance * 0.30) + (S4_Compliance * 0.20)
-```
-
-Weights reflect relative importance:
-- S1 (Authorization): 20%
-- S2 (Technical): 30%
-- S3 (Endpoint/Physical): 30%
-- S4 (Event Reporting): 20%
-
-### 10.2 Control-Level Compliance
-
-**A.6.7 Compliance**:
-```
-= AVERAGE(S1_Compliance, S2_Compliance, S3_Compliance)
-```
-
-**A.6.8 Compliance**:
-```
-= S4_Compliance
-```
-
-### 10.3 Gap Metrics
-
-**Open Gaps by Severity**:
-```
-High: =COUNTIFS(Gap_Consolidation!D:D,"High",Gap_Consolidation!H:H,"<>Closed")
-Medium: =COUNTIFS(Gap_Consolidation!D:D,"Medium",Gap_Consolidation!H:H,"<>Closed")
-Low: =COUNTIFS(Gap_Consolidation!D:D,"Low",Gap_Consolidation!H:H,"<>Closed")
-```
-
-**Overdue Gaps**:
-```
-=COUNTIF(Gap_Consolidation!J:J,TRUE)
-```
-
-## 11. Visualization Specifications
-
-### 11.1 Gauge Charts
-
-**Compliance Gauges**:
-- Red zone: 0-79%
-- Yellow zone: 80-94%
-- Green zone: 95-100%
-- Needle position based on current value
-
-### 11.2 Trend Chart
-
-**Line Chart Configuration**:
-- X-axis: Assessment periods
-- Y-axis: Compliance percentage (0-100%)
-- Series: Overall, S1, S2, S3, S4
-- Target line at 95%
-
-### 11.3 Gap Distribution
-
-**Pie Chart**:
-- Segments: High, Medium, Low (by count)
-- Colors: Red, Yellow, Green
-
-## 12. Pre-Populated Content
-
-### 12.1 Metrics to Import
-
-| Source | Metric | Target |
-|--------|--------|--------|
-| S1 | Authorization Compliance Rate | ≥95% |
-| S1 | Policy Framework Score | ≥90% |
-| S2 | VPN Compliance Score | 100% |
-| S2 | MFA Coverage | 100% |
-| S2 | MFA Enforcement Rate | ≥98% |
-| S2 | Encryption Compliance | 100% |
-| S3 | Encryption Status | 100% |
-| S3 | Endpoint Protection Coverage | ≥98% |
-| S3 | Patch Compliance Rate | ≥95% |
-| S3 | Physical Security Compliance | ≥90% |
-| S4 | Channel Accessibility | 100% |
-| S4 | Response SLA Compliance | ≥90% |
-| S4 | Awareness Coverage | ≥95% |
-
-### 12.2 SoA Mapping
-
-| Control | Name | Assessment Source |
-|---------|------|-------------------|
-| A.6.7 | Remote Working | S1, S2, S3 |
-| A.6.8 | Information Security Event Reporting | S4 |
+## Sheet 1: Instructions
 
 ---
 
-## END OF SPECIFICATION
+## Sheet 2: Executive_Summary
+
+---
+
+## Sheet 3: Assessment_Status
+
+---
+
+## Sheet 4: A67_Compliance
+
+---
+
+## Sheet 5: A68_Compliance
+
+---
+
+## Sheet 6: Gap_Consolidation
+
+---
+
+## Sheet 7: Evidence_Summary
+
+---
+
+## Sheet 8: Trend_Analysis
+
+---
+
+## Sheet 9: Recommendations
+
+---
+
+## Sheet 10: Approval_Sign_Off
+
+---
+
+## Sheet 11: Approval
+
+**Data Rows:** 4 (rows 2–5)
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Role |
+| B | Name |
+| C | Signature |
+| D | Date |
+| E | Comments |
+
+---
+
+**END OF SPECIFICATION**
 
 ---
 

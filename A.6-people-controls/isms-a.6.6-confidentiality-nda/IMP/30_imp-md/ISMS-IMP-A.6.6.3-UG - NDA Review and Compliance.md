@@ -25,9 +25,9 @@ This section provides step-by-step guidance for completing the NDA Review and Co
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 The NDA Review and Compliance workbook enables systematic periodic review of NDA adequacy and compliance. It ensures that confidentiality agreements remain fit for purpose, coverage is complete across all stakeholder categories, and gaps are identified and remediated in a timely manner.
 
@@ -37,7 +37,7 @@ ISO/IEC 27001:2022 Control A.6.6 states:
 
 This workbook directly supports the "regularly reviewed" requirement by establishing a structured review process with documented evidence.
 
-### 1.2 Scope and Applicability
+### Scope and Applicability
 
 **This workbook covers:**
 
@@ -63,7 +63,7 @@ This workbook directly supports the "regularly reviewed" requirement by establis
 | Interns/Trainees | Temporary personnel with information access |
 | Board Members | Non-executive directors and advisors |
 
-### 1.3 Business Context
+### Business Context
 
 **Why NDA Review Matters:**
 
@@ -86,7 +86,7 @@ NDAs require ongoing review and maintenance:
 | GDPR | Processor agreements must include confidentiality |
 | Employment Law | Employment NDAs may have specific requirements |
 
-### 1.4 Assessment Outputs
+### Assessment Outputs
 
 Upon completion, this workbook provides:
 
@@ -101,9 +101,9 @@ Upon completion, this workbook provides:
 
 ---
 
-## 2. Prerequisites
+## Prerequisites
 
-### 2.1 Required Inputs
+### Required Inputs
 
 Before beginning the review process, ensure you have:
 
@@ -118,7 +118,7 @@ Before beginning the review process, ensure you have:
 | Partner agreements | Business Development | Partner coverage analysis |
 | Previous review findings | ISMS Evidence Library | Trend analysis |
 
-### 2.2 Required Approvals
+### Required Approvals
 
 | Approval Type | Approver | Purpose |
 |---------------|----------|---------|
@@ -127,7 +127,7 @@ Before beginning the review process, ensure you have:
 | Gap Remediation | Relevant Department Head | Resource allocation |
 | Review Completion | CISO | Sign-off on review results |
 
-### 2.3 Required Knowledge
+### Required Knowledge
 
 Review personnel should understand:
 
@@ -138,7 +138,7 @@ Review personnel should understand:
 - Regulatory requirements for confidentiality
 - Gap remediation processes
 
-### 2.4 Tool Requirements
+### Tool Requirements
 
 | Tool | Purpose | Access Required |
 |------|---------|-----------------|
@@ -150,51 +150,9 @@ Review personnel should understand:
 
 ---
 
-## 3. Workbook Structure Overview
+## Completion Walkthrough
 
-### 3.1 Sheet Summary
-
-The workbook contains eight sheets for comprehensive review management:
-
-| Sheet | Purpose | Primary Owner | Update Frequency |
-|-------|---------|---------------|------------------|
-| 1: Instructions | Usage guidance | N/A | Reference only |
-| 2: Periodic_Review | Review scheduling | ISM | Per review cycle |
-| 3: Template_Adequacy | Template assessment | Legal/ISM | Annual |
-| 4: Coverage_Analysis | Coverage verification | ISM | Quarterly |
-| 5: Compliance_Check | Individual NDA compliance | ISM | Annual |
-| 6: Gap_Register | Gap tracking | Remediation Owners | As needed |
-| 7: Evidence_Register | Evidence linking | ISM | Per activity |
-| 8: Approval_SignOff | Formal approvals | CISO | Per review cycle |
-
-### 3.2 Sheet Dependencies
-
-```
-Sheet 2: Periodic_Review (Schedule)
-         ↓ (triggers)
-Sheet 3: Template_Adequacy + Sheet 4: Coverage_Analysis + Sheet 5: Compliance_Check
-         ↓ (feed gaps to)
-Sheet 6: Gap_Register
-         ↓ (evidence to)
-Sheet 7: Evidence_Register
-         ↓ (approval in)
-Sheet 8: Approval_SignOff
-```
-
-### 3.3 Data Flow
-
-1. **Review Scheduled**: Review planned in Sheet 2
-2. **Assessments Conducted**: Sheets 3, 4, 5 completed
-3. **Gaps Identified**: Documented in Sheet 6
-4. **Evidence Linked**: Recorded in Sheet 7
-5. **Approval Obtained**: Sign-off in Sheet 8
-6. **Review Completed**: Status updated in Sheet 2
-
----
-
-## 4. Completion Walkthrough
-
-### 4.1 Sheet 2: Periodic_Review – Completion Guide
+### Sheet 2: Periodic_Review – Completion Guide
 
 **Purpose**: Schedule, track, and document all NDA review activities.
 
@@ -273,7 +231,7 @@ Document what the review covers:
 | Template Update | When changes occur | Within 30 days of change |
 | Triggered | When trigger occurs | Within 14 days of trigger |
 
-### 4.2 Sheet 3: Template_Adequacy – Completion Guide
+### Sheet 3: Template_Adequacy – Completion Guide
 
 **Purpose**: Assess whether NDA templates remain legally and operationally adequate.
 
@@ -382,7 +340,7 @@ Assess whether template covers all necessary elements:
 | Inadequate | Significant deficiencies | Immediate update required |
 | Not Assessed | Assessment not completed | Complete assessment |
 
-### 4.3 Sheet 4: Coverage_Analysis – Completion Guide
+### Sheet 4: Coverage_Analysis – Completion Guide
 
 **Purpose**: Verify that all required parties have current, executed NDAs.
 
@@ -463,7 +421,7 @@ Coverage_Rate = (NDA_Signed / NDA_Required) × 100%
 | Partners | Business Development |
 | Board | Corporate Secretary |
 
-### 4.4 Sheet 5: Compliance_Check – Completion Guide
+### Sheet 5: Compliance_Check – Completion Guide
 
 **Purpose**: Verify individual NDA execution and storage compliance.
 
@@ -566,7 +524,7 @@ For each non-compliant NDA:
 - Set target date
 - Add to Gap Register
 
-### 4.5 Sheet 6: Gap_Register – Completion Guide
+### Sheet 6: Gap_Register – Completion Guide
 
 **Purpose**: Track all identified gaps from coverage analysis and compliance checks to resolution.
 
@@ -651,7 +609,7 @@ Before marking verified closed:
 - Collect evidence
 - Update source workbooks
 
-### 4.6 Sheet 7: Evidence_Register – Completion Guide
+### Sheet 7: Evidence_Register – Completion Guide
 
 **Purpose**: Link review activities to supporting evidence for audit purposes.
 
@@ -701,7 +659,7 @@ Before linking evidence, verify:
 - Evidence is properly dated
 - Evidence is securely stored
 
-### 4.7 Sheet 8: Approval_SignOff – Completion Guide
+### Sheet 8: Approval_SignOff – Completion Guide
 
 **Purpose**: Obtain formal approval of review completion and findings.
 
@@ -737,9 +695,9 @@ Summarise review results:
 
 ---
 
-## 5. Evidence Collection
+## Evidence Collection
 
-### 5.1 Evidence Requirements
+### Evidence Requirements
 
 Evidence must be collected for all review activities:
 
@@ -752,7 +710,7 @@ Evidence must be collected for all review activities:
 | Approval records | 7 years | ISMS Evidence Library |
 | Source data | 3 years | ISMS Evidence Library |
 
-### 5.2 Evidence Folder Structure
+### Evidence Folder Structure
 
 ```
 ISMS-Evidence-Library/
@@ -768,7 +726,7 @@ ISMS-Evidence-Library/
                 └── Approval-SignOff.pdf
 ```
 
-### 5.3 Evidence for Audit
+### Evidence for Audit
 
 During ISO 27001 audit, be prepared to demonstrate:
 
@@ -783,9 +741,9 @@ During ISO 27001 audit, be prepared to demonstrate:
 
 ---
 
-## 6. Common Pitfalls
+## Common Pitfalls
 
-### 6.1 Review Process Errors
+### Review Process Errors
 
 ❌ **MISTAKE: Reviews not conducted regularly**
 NDAs must be reviewed at least annually with quarterly checks. Missing reviews creates compliance gaps.
@@ -799,7 +757,7 @@ Legal Counsel must review template adequacy. ISM cannot assess legal sufficiency
 ❌ **MISTAKE: Reviews not documented**
 Undocumented reviews have no audit value. Formal records with findings required.
 
-### 6.2 Gap Management Errors
+### Gap Management Errors
 
 ❌ **MISTAKE: Gaps identified but not remediated**
 Every gap must be tracked to verified closure. Unfixed gaps remain as risks.
@@ -813,7 +771,7 @@ Gaps without severity are prioritised incorrectly. Critical gaps may not be addr
 ❌ **MISTAKE: No trend analysis of gaps**
 Track gap trends over time to identify systemic issues. Recurring gaps indicate process failures.
 
-### 6.3 Coverage Analysis Errors
+### Coverage Analysis Errors
 
 ❌ **MISTAKE: Compliance check only on sample**
 Annual review should check all NDAs. Sampling may miss compliance issues.
@@ -824,7 +782,7 @@ Coverage analysis must verify NDAs actually exist and are valid, not just count 
 ❌ **MISTAKE: Excluding categories from coverage analysis**
 All categories requiring NDAs must be included. Exclusions create blind spots.
 
-### 6.4 Template Assessment Errors
+### Template Assessment Errors
 
 ❌ **MISTAKE: Assuming templates are adequate without assessment**
 Templates require periodic legal review. Laws change, templates may become inadequate.
@@ -837,9 +795,9 @@ Templates must be appropriate for all jurisdictions used. Multi-jurisdiction use
 
 ---
 
-## 7. Quality Checklist
+## Quality Checklist
 
-### 7.1 Pre-Review Checklist
+### Pre-Review Checklist
 
 Before starting review:
 
@@ -850,7 +808,7 @@ Before starting review:
 - [ ] NDA execution register current
 - [ ] Reviewers identified and available
 
-### 7.2 Review Completion Checklist
+### Review Completion Checklist
 
 Before marking review complete:
 
@@ -861,7 +819,7 @@ Before marking review complete:
 - [ ] Evidence register updated
 - [ ] Approval sign-offs obtained
 
-### 7.3 Gap Closure Checklist
+### Gap Closure Checklist
 
 Before marking gap verified closed:
 
@@ -873,9 +831,9 @@ Before marking gap verified closed:
 
 ---
 
-## 8. Review and Approval
+## Review and Approval
 
-### 8.1 Review Authority
+### Review Authority
 
 | Review Activity | Authority |
 |-----------------|-----------|
@@ -884,7 +842,7 @@ Before marking gap verified closed:
 | Gap remediation assignment | Relevant Department Head |
 | Review sign-off | CISO |
 
-### 8.2 Escalation Process
+### Escalation Process
 
 | Trigger | Escalation Path |
 |---------|-----------------|
@@ -893,7 +851,7 @@ Before marking gap verified closed:
 | Coverage below 90% | ISM → CISO → Executive |
 | Review overdue by 30 days | ISM → CISO |
 
-### 8.3 Review Workflow
+### Review Workflow
 
 ```
 Review Scheduled
@@ -918,7 +876,6 @@ Next Review Scheduling
 ```
 
 ---
-
 
 **END OF USER GUIDE**
 

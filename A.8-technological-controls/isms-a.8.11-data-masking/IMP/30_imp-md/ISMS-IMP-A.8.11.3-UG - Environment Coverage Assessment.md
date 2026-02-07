@@ -407,21 +407,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
 
 ---
 
-**END OF USER GUIDE**
-
-**Next Sections to Deliver:**
-
-- Section 2: Assessment Workflow (Phase-by-Phase Process)
-- Section 3: Sheet-by-Sheet Completion Guide
-- Section 4: Evidence Collection
-- Section 5: Common Pitfalls & Troubleshooting
-- Section 6: Quality Checklist
-- Section 7: Review & Approval Process
-- Section 8: Maintenance & Updates
-- Section 9: Integration with Other Assessments
-
----
-
 # Assessment Workflow
 
 ## High-Level Process Flow
@@ -911,12 +896,6 @@ This assessment is **tool-agnostic**. [Organization] may use any environment dis
 - ❌ "Cloud is vendor's responsibility" → NO, you're data controller, vendor is processor
 - ❌ Forgetting cloud sandbox accounts (developers spin up test databases)
 - ❌ S3 buckets with unmasked exports (accessible to anyone with URL if misconfigured)
-
----
-
-**END OF USER GUIDE**
-
-**Next Sections:**
 
 ---
 
@@ -1547,12 +1526,6 @@ Data moves between environments constantly:
    - Re-run environment inventory (new systems, decommissioned systems)
    - Verify P2/P3 gap remediation progress
    - Update assessment workbook
-
----
-
-**END OF USER GUIDE**
-
-**Next Sections:**
 
 ---
 

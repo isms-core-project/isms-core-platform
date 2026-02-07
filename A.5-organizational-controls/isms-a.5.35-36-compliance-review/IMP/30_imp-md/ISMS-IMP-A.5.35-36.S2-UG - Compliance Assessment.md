@@ -66,18 +66,6 @@ Before completing this assessment:
 - [ ] Contact information for department managers
 - [ ] Evidence collection capability
 
-### Workbook Structure
-
-| Sheet | Purpose | Key Actions |
-|-------|---------|-------------|
-| Instructions | Guidance and metadata | Review before starting |
-| Policy_Compliance | Policy adherence | Assess each policy |
-| Control_Compliance | Control implementation | Verify controls |
-| Department_Assessment | Area self-assessment | Complete per department |
-| NonCompliance_Register | Gap tracking | Record non-compliance |
-| Evidence_Register | Evidence management | Link evidence |
-| Approval_SignOff | Authorisation | Obtain sign-offs |
-
 ### Completion Walkthrough
 
 **Step 1: Policy_Compliance Sheet**
@@ -297,7 +285,6 @@ Before submitting:
 | Department Self-Assessment | ISM | Department Head + ISM |
 
 ---
-
 
 **END OF USER GUIDE**
 

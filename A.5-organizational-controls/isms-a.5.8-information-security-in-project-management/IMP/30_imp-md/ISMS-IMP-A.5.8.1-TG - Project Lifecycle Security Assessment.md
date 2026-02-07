@@ -24,252 +24,153 @@
 | 1.0 | Initial | Initial specification for Project Lifecycle Security Assessment workbook | ISMS Implementation Team |
 
 ---
-
 # Technical Specification
-
 **Audience:** Workbook Developers (Python/Excel script maintainers)
 
----
 
-# Workbook Structure
+> Auto-generated from `generate_a58_1_project_lifecycle_assessment.py`
+> Re-generate with: `python3 generate_tg_from_scr.py --apply`
 
-## Overall Design Philosophy
+## Workbook Overview
 
-This workbook implements a **phase-based progressive assessment model** where:
-1. Each project phase has dedicated sheet
-2. Sheets unlock/enable as project progresses
-3. Compliance scores auto-calculate from checklist completion
-4. Dashboard auto-aggregates from all phase sheets
-5. Evidence centrally tracked but linked from phase activities
+| Property | Value |
+|----------|-------|
+| **Document ID** | `ISMS-IMP-A.5.8.1` |
+| **Output Filename** | `ISMS-IMP-A.5.8.1_Project_Lifecycle_Assessment_YYYYMMDD.xlsx` |
+| **Total Sheets** | 16 (16 visible) |
+| **Control Reference** | ISO/IEC 27001:2022 Control A.5.8 |
 
-**Design Principles:**
+## Color Palette
 
-- **Iterative:** Not a one-time completion, updated throughout project lifecycle
-- **Automated:** Maximum use of formulas to reduce manual calculation
-- **Evidence-centric:** Every activity has evidence link field
-- **Audit-ready:** Clear traceability from requirement → implementation → test → evidence
-- **Flexible:** Works with any project methodology (Waterfall, Agile, hybrid)
+| Hex Code | Style Name | Description |
+|----------|-----------|-------------|
+| #003366 | 003366 | Dark Blue (Headers) |
+| #305496 | 305496 | Custom |
+| #808080 | 808080 | Gray (Disabled) |
+| #B4C7E7 | B4C7E7 | Light Blue (Planned/Info) |
+| #D9E1F2 | D9E1F2 | Custom |
+| #E2EFDA | E2EFDA | Pale Green (Success Background) |
+| #FF0000 | FF0000 | Red (Critical/Alert) |
+| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFF00 | FFFF00 | Yellow (Warning) |
 
-## Sheet Layout
-
-| Sheet # | Sheet Name | Purpose | User Interaction | Dependencies |
-|---------|------------|---------|------------------|--------------|
-| 1 | Instructions | Guide, legend, methodology | Read-only | None |
-| 2 | Project Classification | Risk level determination | Fill criteria, get approval | None |
-| 3 | Initiation Phase | Stakeholder ID, initial risks, budget | Complete checklist, link evidence | Sheet 2 (classification) |
-| 4 | Planning Phase | Requirements, threat model, test plan | Complete checklist, link evidence | Sheet 2 (classification) |
-| 5 | Execution Phase | Testing, remediation, documentation | Complete checklist, link evidence | Sheet 2, 4 (test plan) |
-| 6 | Monitoring Phase | Risk updates, change assessment, metrics | Update regularly | Sheet 2, 3 (risks) |
-| 7 | Closure Phase | Handover, risk acceptance, lessons learned | Complete checklist, link evidence | Sheet 2, 5 (findings) |
-| 8 | Compliance Dashboard | Executive summary, scoring, gaps | Auto-populated (read-only) | All phase sheets |
-| 9 | Evidence Register | Centralized evidence tracking | Link evidence items | All phases |
-| 10 | Sign-Off | Approval workflow | Signatures and approvals | Sheet 8 (summary) |
-
-**Total Sheets:** 10
+## Sheet 1: Instructions & Legend
 
 ---
 
-# Cell Styling Reference
-
-## Standard Styling Conventions
-
-| Element | Cell Format | Color Code | Font | Protection |
-|---------|-------------|------------|------|------------|
-| **Main Headers (Level 1)** | Dark blue fill, white text, bold | Fill: #003366, Font: #FFFFFF | Calibri 16pt bold | Protected |
-| **Section Headers (Level 2)** | Medium blue fill, white text, bold | Fill: #305496, Font: #FFFFFF | Calibri 14pt bold | Protected |
-| **Column Headers** | Light blue fill, dark text, bold | Fill: #B4C7E7, Font: #000000 | Calibri 11pt bold | Protected |
-| **User Input Cells** | Yellow fill, black text | Fill: #FFEB9C, Font: #000000 | Calibri 11pt | Unprotected |
-| **Protected Formula Cells** | White or light gray fill | Fill: #FFFFFF or #F2F2F2 | Calibri 11pt | Protected |
-| **Example Cells** | Light gray, italic | Fill: #D9D9D9, Font: #595959 | Calibri 11pt italic | Protected |
-
-## Status Color Coding
-
-| Status | Symbol | Background Color | Use Case |
-|--------|--------|------------------|----------|
-| Complete | ✅ | Green #C6EFCE | Activity completed with evidence |
-| In Progress | 🔄 | Blue #B4C7E7 | Activity started but not complete |
-| Warning/Incomplete | ⚠️ | Yellow #FFEB9C | Activity required but missing |
-| Not Done | ❌ | Red #FFC7CE | Activity not started |
-| Not Applicable | N/A | Gray #D9D9D9 | Activity not required for this classification |
-
-## Dropdown Styling
-
-**Best Practices:**
-
-- Use data validation with dropdown lists for consistency
-- Include emoji symbols in options where appropriate (✅ ⚠️ ❌ 🔄)
-- Provide "N/A" option where applicability varies by classification
-- Error alerts: Show warning (not stop) if invalid entry
-- Input message: Brief hint about what to select
-
-**Example Dropdown Setup:**
-```
-Field: Status
-List Source: ✅ Complete, 🔄 In Progress, ⚠️ Incomplete, ❌ Not Done, N/A
-Allow: List
-Error Alert: Warning style, "Please select from dropdown"
-Input Message: "Select activity completion status"
-```
-
-## Conditional Formatting Rules
-
-**1. Compliance Scores:**
-```
-Range: Compliance score cells
-Rules:
-
-- If ≥90: Dark green background (#00B050)
-- If ≥75 AND <90: Light green background (#C6EFCE)
-- If ≥60 AND <75: Yellow background (#FFEB9C)
-- If ≥40 AND <60: Orange background (#FFC000)
-- If <40: Red background (#FFC7CE)
-
-```
-
-**2. Status Cells:**
-```
-Range: Status dropdown cells
-Rules:
-
-- If "✅": Green background (#C6EFCE)
-- If "🔄": Blue background (#B4C7E7)
-- If "⚠️": Yellow background (#FFEB9C)
-- If "❌": Red background (#FFC7CE)
-- If "N/A": Gray background (#D9D9D9)
-
-```
-
-**3. Date Cells:**
-```
-Range: Target date cells
-Rules:
-
-- If < TODAY() AND status <> "✅": Red text (past due)
-- If < TODAY()+7 AND status <> "✅": Orange text (due within 7 days)
-- If > TODAY()+7: Black text (future)
-
-```
-
-**4. Finding Severity:**
-```
-Range: Severity cells
-Rules:
-
-- If "Critical": Red background (#FFC7CE), bold
-- If "High": Orange background (#FFC000)
-- If "Medium": Yellow background (#FFEB9C)
-- If "Low": White background (default)
-
-```
+## Sheet 2: 2. Project Classification
 
 ---
 
-# Integration Points
-
-## With ISMS-IMP-A.5.8.2 (Security Requirements Register)
-
-**Data Flow:**
-
-- **Sheet 2 (Classification)** → A.5.8.2 header (project name, classification, PM)
-- **Sheet 4 (Planning Phase)** → A.5.8.2 requirements count
-- **A.5.8.2 (Requirements status)** → Sheet 5 (Execution) implementation rate
-
-**Integration Methods:**
-1. **Manual:** Hyperlink from Sheet 4 to A.5.8.2 workbook
-2. **Semi-automated:** Copy/paste requirement counts from A.5.8.2 to Sheet 4
-3. **Fully automated:** If workbooks in same directory, use INDIRECT or external reference formulas
-
-**Recommended:** Manual hyperlink for simplicity, avoiding external reference complexity
-
-## With ISMS-IMP-A.5.8.3 (Portfolio Dashboard)
-
-**Data Extraction (Read by A.5.8.3 script):**
-
-A.5.8.3 consolidation script reads this workbook and extracts:
-
-**From Sheet 2 (Classification):**
-
-- Cell B5: Project Name
-- Cell H58: Final Classification
-- Cell B7: Project Manager
-- Cell B8: Business Owner
-
-**From Sheet 8 (Dashboard):**
-
-- Overall Compliance Score cell
-- Current Phase cell
-- Critical gaps count
-- Open Critical/High findings count
-
-**From Sheet 7 (Closure):**
-
-- Residual risk level cell
-- Closure status cell
-
-**Integration Method:** Python script (openpyxl) with read_only=True, data_only=True
-
-**Cell References Must Be Stable:** Script expects specific cell addresses, don't move key cells
-
-## With Project Management Tools
-
-**Export Capabilities:**
-
-- **Risk Register (Sheet 3, 6)** → Export to enterprise risk register (Jira Risk Register, ServiceNow, etc.)
-- **Findings (Sheet 5)** → Export to issue tracker (Jira, Azure DevOps)
-- **Evidence Register (Sheet 9)** → Index for project document repository
-
-**Import Capabilities:**
-
-- **Project Details** → Import from PMO system (project name, PM, dates, budget)
-- **Risk Data** → Import from enterprise risk tool if organization uses centralized risk management
-
-**Recommended:** Keep this assessment as single source of truth for project security status, sync to other tools but don't create circular dependencies
-
-## With ISMS Asset Inventory (A.5.9)
-
-**Data Flow:**
-
-- **Sheet 7 (Closure, Section C)** lists assets created/modified by project
-- These assets → registered in ISMS Asset Inventory
-- Process: Manual (export asset list, import to inventory) or API integration if inventory system supports it
+## Sheet 3: 3. Initiation Phase
 
 ---
 
-# Maintenance and Version Control
+## Sheet 4: 4. Planning Phase
 
-## Annual Template Review
+---
 
-**Review Checklist:**
+## Sheet 5: 5. Execution Phase
 
-- [ ] ISMS-POL-A.5.8 policy changes → update required activities
-- [ ] New regulatory requirements → add compliance checks
-- [ ] User feedback → improve usability, add clarifications
-- [ ] Dropdown options → add new project types, methodologies, tools
-- [ ] Scoring thresholds → calibrate based on organizational maturity
-- [ ] Example content → update for relevance, add new examples
+---
 
-**Version Control:**
+## Sheet 6: 6. Monitoring Phase
 
-- Maintain template in version control (Git or document management system)
-- Track changes: version number, date, change description, approver
-- Test new template versions with pilot projects before rollout
-- Provide migration guide if structure changes significantly
+---
 
-## Customization Guidance
+## Sheet 7: 7. Closure Phase
 
-**Organizations SHOULD customize:**
+---
 
-- **Project Type dropdown** (Sheet 2): Add organization-specific project categories
-- **Stakeholder Roles** (Sheet 3): Add custom security roles (e.g., Cloud Security Engineer)
-- **Evidence Types** (Sheet 9): Add organization-specific evidence systems
-- **Approval Workflow** (Sheet 10): Match organization's approval hierarchy
+## Sheet 8: 8. Compliance Dashboard
 
-**Organizations MUST NOT customize (breaks comparability/integration):**
+---
 
-- **Compliance scoring formulas:** Changing weights or calculation breaks cross-project comparison
-- **Required activities list:** Must match ISMS-POL-A.5.8 requirements
-- **Sheet structure for integration:** Changing key cell locations breaks Portfolio Dashboard (A.5.8.3)
-- **Classification criteria:** Organizational standard, changes require CISO approval
+## Sheet 9: 9. Evidence Register
+
+---
+
+## Sheet 10: 10. Sign-Off
+
+---
+
+## Sheet 11: Instructions
+
+---
+
+## Sheet 12: Classification
+
+### Formulas
+
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| EN | `=SUM(E{factor_start_row}:E{factor_start_row+5})` |  |
+| BN | `=IF(E{row-1}>=15,` |  |
+
+---
+
+## Sheet 13: Phase
+
+**Frozen Panes:** A4
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Activity |
+| B | Status |
+| C | Completion Date |
+| D | Evidence Link |
+| E | Notes |
+
+---
+
+## Sheet 14: Dashboard
+
+### Formulas
+
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| BN | `=TODAY()` |  |
+| BN | `=COUNTIF({sheet_ref}!B{start_row}:B{end_row},` |  |
+| BN | `=AVERAGE(B{row-5}:B{row-1})` |  |
+
+---
+
+## Sheet 15: Evidence_Register
+
+**Frozen Panes:** A4
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Evidence ID |
+| B | Phase |
+| C | Description |
+| D | Location/Path |
+| E | Date Collected |
+| F | Status |
+
+### Formulas
+
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| AN | `=TEXT(ROW()-3,\` |  |
+
+---
+
+## Sheet 16: Signoff
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Role |
+| B | Name |
+| C | Signature |
+| D | Date |
+| E | Decision |
 
 ---
 

@@ -19,37 +19,13 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-1. [PART I: USER COMPLETION GUIDE](#part-i-user-completion-guide)
-   - [1.1 Assessment Overview](#11-assessment-overview)
-   - [1.2 Control Requirements](#12-control-requirements)
-   - [1.3 Prerequisites](#13-prerequisites)
-   - [1.4 Stakeholder Categories](#14-stakeholder-categories)
-   - [1.5 Workbook Structure](#15-workbook-structure)
-   - [1.6 Completion Walkthrough](#16-completion-walkthrough)
-   - [1.7 NDA Template Types](#17-nda-template-types)
-   - [1.8 Standard Clause Library](#18-standard-clause-library)
-   - [1.9 Evidence Collection](#19-evidence-collection)
-   - [1.10 Common Pitfalls](#110-common-pitfalls)
-   - [1.11 Quality Checklist](#111-quality-checklist)
-   - [1.12 Review and Approval](#112-review-and-approval)
-   - [1.13 Regulatory Compliance](#113-regulatory-compliance)
-   - [1.14 Related Controls](#114-related-controls)
-2. [PART II: TECHNICAL SPECIFICATION](#part-ii-technical-specification)
-   - [2.1 Workbook Architecture](#21-workbook-architecture)
-   - [2.2 Sheet Specifications](#22-sheet-specifications)
-   - [2.3 Data Validations](#23-data-validations)
-   - [2.4 Conditional Formatting](#24-conditional-formatting)
-   - [2.5 Formula Specifications](#25-formula-specifications)
-   - [2.6 Cell Styling Standards](#26-cell-styling-standards)
-   - [2.7 Generator Script Reference](#27-generator-script-reference)
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.6.6.1-TG.
 
 ---
 
----
-
-## 1.1 Assessment Overview
+## Assessment Overview
 
 ### Purpose
 
@@ -112,7 +88,7 @@ A well-maintained NDA template registry delivers:
 
 ---
 
-## 1.2 Control Requirements
+## Control Requirements
 
 ### ISO 27001:2022 Control A.6.6
 
@@ -163,7 +139,7 @@ ISO 27001 auditors examining Control A.6.6 will verify:
 
 ---
 
-## 1.3 Prerequisites
+## Prerequisites
 
 ### Before Starting This Assessment
 
@@ -213,7 +189,7 @@ Before proceeding, verify:
 
 ---
 
-## 1.4 Stakeholder Categories
+## Stakeholder Categories
 
 ### Understanding Stakeholder Categories
 
@@ -281,128 +257,7 @@ Is the party accessing confidential information?
 
 ---
 
-## 1.5 Workbook Structure
-
-### Sheet Overview
-
-The workbook consists of seven sheets, each serving a specific purpose in the NDA template management lifecycle:
-
-| Sheet | Purpose | Primary User | Update Frequency |
-|-------|---------|--------------|------------------|
-| **Instructions** | Guidance and orientation | All users | As needed |
-| **Template_Registry** | Master list of all templates | Legal Counsel | Quarterly |
-| **Template_Versions** | Version history tracking | Legal Counsel | Upon changes |
-| **Applicability_Matrix** | Template selection guidance | ISM, HR, Procurement | As needed |
-| **Clause_Library** | Standard clause repository | Legal Counsel | Annual |
-| **Evidence_Register** | Evidence tracking and links | ISMS Administrator | Ongoing |
-| **Approval_SignOff** | Assessment authorisation | Approvers | At completion |
-
-### Sheet Relationships
-
-```
-┌─────────────────┐
-│  Instructions   │ ◄── Start here
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐     ┌─────────────────┐
-│Template_Registry│────►│Template_Versions│
-└────────┬────────┘     └─────────────────┘
-         │                      ▲
-         │                      │ (links by Template_ID)
-         ▼                      │
-┌─────────────────┐     ┌─────────────────┐
-│Applicability_   │     │  Clause_Library │
-│Matrix           │     │                 │
-└────────┬────────┘     └─────────────────┘
-         │
-         ▼
-┌─────────────────┐
-│Evidence_Register│
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ Approval_SignOff│ ◄── Complete here
-└─────────────────┘
-```
-
-### Sheet-by-Sheet Summary
-
-#### 1. Instructions Sheet
-
-Provides orientation including:
-- Document purpose and scope
-- Sheet navigation guide
-- Completion timeline
-- Contact information for queries
-- Version history of the workbook
-
-#### 2. Template_Registry Sheet
-
-The master registry containing:
-- Unique template identifiers
-- Template names and descriptions
-- Template types and categories
-- Stakeholder applicability
-- Current versions and effective dates
-- Legal review status and dates
-- Ownership and storage information
-- Template status (Active, Draft, Superseded, Archived)
-
-#### 3. Template_Versions Sheet
-
-Version control tracking:
-- Link to Template_Registry
-- Version numbers and dates
-- Change descriptions and rationale
-- Who made changes
-- Legal approval status
-- Approval dates and approvers
-
-#### 4. Applicability_Matrix Sheet
-
-Decision guidance containing:
-- Stakeholder categories
-- Access types and levels
-- Information classification requirements
-- Recommended templates
-- Timing requirements (when to execute)
-- Duration and post-termination periods
-- Mandatory vs. optional status
-
-#### 5. Clause_Library Sheet
-
-Standard clause repository:
-- Clause identifiers and names
-- Clause categories (Definitions, Obligations, etc.)
-- Purpose descriptions
-- Approved standard text
-- Mandatory vs. recommended status
-- Related template references
-
-#### 6. Evidence_Register Sheet
-
-Evidence tracking:
-- Evidence identifiers
-- Evidence descriptions
-- Evidence types
-- Storage locations
-- Collection dates
-- Responsible parties
-
-#### 7. Approval_SignOff Sheet
-
-Assessment authorisation:
-- Assessor information
-- Assessment dates
-- Reviewer sign-offs
-- Approval status
-- Comments and notes
-
----
-
-## 1.6 Completion Walkthrough
+## Completion Walkthrough
 
 ### Step 1: Review Instructions Sheet
 
@@ -746,7 +601,7 @@ Obtain required authorisations:
 
 ---
 
-## 1.7 NDA Template Types
+## NDA Template Types
 
 ### Standard NDA Types
 
@@ -845,7 +700,7 @@ Obtain required authorisations:
 
 ---
 
-## 1.8 Standard Clause Library
+## Standard Clause Library
 
 ### Essential Clauses
 
@@ -963,7 +818,7 @@ For Swiss organisations:
 
 ---
 
-## 1.9 Evidence Collection
+## Evidence Collection
 
 ### Evidence Requirements
 
@@ -1036,7 +891,7 @@ ISMS Evidence Library/
 
 ---
 
-## 1.10 Common Pitfalls
+## Common Pitfalls
 
 Avoid these common mistakes when completing the NDA Template Registry assessment:
 
@@ -1104,7 +959,7 @@ Avoid these common mistakes when completing the NDA Template Registry assessment
 
 ---
 
-## 1.11 Quality Checklist
+## Quality Checklist
 
 Before submitting the completed assessment, verify all items:
 
@@ -1160,7 +1015,7 @@ Before submitting the completed assessment, verify all items:
 
 ---
 
-## 1.12 Review and Approval
+## Review and Approval
 
 ### Review Process
 
@@ -1257,7 +1112,7 @@ Upon approval:
 
 ---
 
-## 1.13 Regulatory Compliance
+## Regulatory Compliance
 
 ### Data Protection Requirements
 
@@ -1318,7 +1173,7 @@ NDA templates must address data protection requirements when personal data may b
 
 ---
 
-## 1.14 Related Controls
+## Related Controls
 
 ### Primary Control Relationships
 
@@ -1372,7 +1227,6 @@ Control A.6.6 works in conjunction with these ISO 27001:2022 controls:
 | ISMS-IMP-A.5.14.x | Information Transfer | Transfer agreements using NDAs |
 
 ---
-
 
 **END OF USER GUIDE**
 

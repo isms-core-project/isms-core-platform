@@ -336,39 +336,6 @@ This assessment uses a **systematic inventory and verification approach**:
 
 # Assessment Workbook Structure
 
-## Workbook Overview
-
-**File Name**: `ISMS-IMP-A.5.1-2-6.1-2.S1_Policy_Framework_YYYYMMDD.xlsx`
-
-**Sheet Count**: 11 sheets
-
-**Sheet Summary**:
-
-| Sheet # | Sheet Name | Purpose | Rows (Approx) |
-|---------|------------|---------|---------------|
-| 1 | Dashboard | Executive summary and overall metrics | 120 |
-| 2 | Policy_Inventory | Master list of all policies with metadata | 150+ (dynamic) |
-| 3 | Lifecycle_Compliance | Policy lifecycle stage verification | 100+ (dynamic) |
-| 4 | Governance_Assessment | Ownership, approval, accountability | 100+ (dynamic) |
-| 5 | Classification_Review | Policy classification and access control | 80+ (dynamic) |
-| 6 | Communication_Tracking | Publication, acknowledgment, training | 100+ (dynamic) |
-| 7 | Repository_Assessment | Policy repository structure and access | 60 |
-| 8 | Gap_Analysis | Identified gaps with risk and remediation | 100 |
-| 9 | Evidence_Register | Supporting evidence documentation | 100 |
-| 10 | Action_Items | Remediation tracking | 50 |
-| 11 | Approval_Sign_Off | Three-level approval workflow | 50 |
-
-**Assessment Flow**:
-1. Complete **Sheet 2** (Policy Inventory) - foundation
-2. Complete **Sheets 3-7** (Assessment domains) - detailed verification
-3. Review **Sheet 8** (Gap Analysis) - automatically populated from Sheets 2-7
-4. Document **Sheet 9** (Evidence) - supporting documentation
-5. Plan **Sheet 10** (Action Items) - remediation roadmap
-6. Review **Sheet 1** (Dashboard) - auto-calculated summary
-7. Obtain **Sheet 11** (Approval) - three-level sign-off
-
----
-
 # Sheet-by-Sheet Completion Guide
 
 ## Sheet 1: Dashboard

@@ -1859,42 +1859,7 @@ For non-sensitive data:
 
 ---
 
-**Document Assembly Note:**
-This is **PART I** of ISMS-IMP-A.8.11.1. 
-
-**PART II (Technical Specification)** follows in the next deliverable and contains:
-
-- Detailed Excel sheet structure (10 sheets)
-- Column definitions and data types
-- Data validation rules (dropdowns, formulas)
-- Conditional formatting specifications
-- Python script integration notes
-- Formula examples and calculations
-- Styling and formatting standards
-
-**To create complete ISMS-IMP-A.8.11.1 v1.0 document:**
-1. PART I: User Completion Guide (this file)
-2. PART II: Technical Specification (next deliverable)
-
----
-
-**Document Control:**
-
-- **Version:** 1.0
-- **Date:** [Date]
-- **Status:** Draft for Review
-- **Author:** ISMS Implementation Team
-- **Approver:** CISO / CDO / DPO
-
----
-
 *"You cannot protect what you do not know exists. Data inventory is the foundation of all data protection controls."*
-
-# ISMS-IMP-A.8.11.1 - Data Inventory & Classification Assessment
-
----
-
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+— Security Maxim
 
 <!-- QA_VERIFIED: 2026-02-06 -->

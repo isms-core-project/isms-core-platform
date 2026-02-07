@@ -295,6 +295,7 @@ CONTROL_ID = "A.5.18"
 CONTROL_NAME = "Access Rights"
 GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")
 GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_Access_Rights_Matrix_{GENERATED_TIMESTAMP}.xlsx"
 
 # Data row counts
 ACCESS_MAPPING_COUNT = 150     # User-to-system access mappings

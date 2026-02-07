@@ -21,13 +21,13 @@
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 This workbook provides a comprehensive dashboard for monitoring compliance with ISO 27001:2022 Controls A.5.5 (Contact with Authorities) and A.5.6 (Contact with Special Interest Groups). It aggregates KPIs from the underlying assessment workbooks, tracks gaps, monitors trends, and provides audit readiness status.
 
-### 1.2 Scope
+### Scope
 
 The Compliance Dashboard covers:
 
@@ -39,7 +39,7 @@ The Compliance Dashboard covers:
 - **Audit Readiness**: Evidence checklist for certification audits
 - **Trend Analysis**: Historical compliance performance
 
-### 1.3 Control Requirements
+### Control Requirements
 
 This dashboard monitors compliance with both controls:
 
@@ -49,7 +49,7 @@ This dashboard monitors compliance with both controls:
 **Control A.5.6:**
 > *"Appropriate contacts with special interest groups or other specialist security forums and professional associations should be maintained."*
 
-### 1.4 Assessment Domains
+### Assessment Domains
 
 This workbook is **Domain 4 of 5** in the A.5.5-6 External Communications assessment series:
 
@@ -63,11 +63,11 @@ This workbook is **Domain 4 of 5** in the A.5.5-6 External Communications assess
 
 ---
 
-## 2. Prerequisites
+## Prerequisites
 
 Before completing this assessment, ensure you have:
 
-### 2.1 Documentation Requirements
+### Documentation Requirements
 
 - [ ] Completed Authority Contacts Register (A.5.5-6.1)
 - [ ] Completed Special Interest Groups Register (A.5.5-6.2)
@@ -76,7 +76,7 @@ Before completing this assessment, ensure you have:
 - [ ] Internal audit findings related to A.5.5-6
 - [ ] Management review records
 
-### 2.2 Stakeholder Involvement
+### Stakeholder Involvement
 
 | Role | Responsibility |
 |------|----------------|
@@ -86,7 +86,7 @@ Before completing this assessment, ensure you have:
 | **Internal Audit** | Independent verification |
 | **DPO** | Data protection requirements validation |
 
-### 2.3 Data Sources
+### Data Sources
 
 Map data sources for each metric:
 
@@ -99,57 +99,9 @@ Map data sources for each metric:
 
 ---
 
-## 3. Workbook Structure
+## Completion Walkthrough
 
-### 3.1 Sheet Overview
-
-| Sheet | Purpose | Input Required |
-|-------|---------|----------------|
-| Instructions | Guidance for completing the dashboard | Read only |
-| Executive_Summary | High-level compliance status | Manual entry |
-| Authority_KPIs | A.5.5 performance metrics | Manual entry |
-| SIG_KPIs | A.5.6 performance metrics | Manual entry |
-| Compliance_Scorecard | Requirement-level assessment | Manual entry |
-| Gap_Analysis | Gap tracking and remediation | Manual entry |
-| Audit_Readiness | Evidence checklist | Manual entry |
-| Trend_Analysis | Historical performance | Manual entry |
-| Evidence_Register | Dashboard evidence | Manual entry |
-| Approval_SignOff | Management approval | Manual entry |
-
-### 3.2 Sheet Dependencies
-
-```
-Instructions (Read First)
-        ↓
-Source Workbooks (A.5.5-6.1, .2, .3)
-        ↓
-   ┌────┼────┐
-   ↓    ↓    ↓
-Authority  SIG   Compliance
-KPIs      KPIs   Scorecard
-   ↓    ↓    ↓
-   └────┬────┘
-        ↓
-   ┌────┼────┐
-   ↓         ↓
-Gap_Analysis  Audit_Readiness
-   ↓         ↓
-   └────┬────┘
-        ↓
-Executive_Summary (Consolidate)
-        ↓
-Trend_Analysis
-        ↓
-Evidence_Register
-        ↓
-Approval_SignOff (Complete Last)
-```
-
----
-
-## 4. Completion Walkthrough
-
-### 4.1 Executive_Summary Sheet
+### Executive_Summary Sheet
 
 High-level compliance view for management.
 
@@ -177,7 +129,7 @@ High-level compliance view for management.
 - Partially Compliant (Amber): 50-99% of target
 - Non-Compliant (Red): <50% of target
 
-### 4.2 Authority_KPIs Sheet
+### Authority_KPIs Sheet
 
 Metrics for A.5.5 authority contact management.
 
@@ -208,7 +160,7 @@ Metrics for A.5.5 authority contact management.
 | AUTH-KPI-004 | Communication Log Currency | >= 1/authority/6mo | Count per authority |
 | AUTH-KPI-005 | Procedure Test Success | >= 90% | Successful tests / Total |
 
-### 4.3 SIG_KPIs Sheet
+### SIG_KPIs Sheet
 
 Metrics for A.5.6 special interest group engagement.
 
@@ -222,7 +174,7 @@ Metrics for A.5.6 special interest group engagement.
 | SIG-KPI-004 | Contribution Rate | >= 4/year | Count contributions |
 | SIG-KPI-005 | Membership ROI | Positive | Value rating vs cost |
 
-### 4.4 Compliance_Scorecard Sheet
+### Compliance_Scorecard Sheet
 
 Requirement-by-requirement compliance assessment.
 
@@ -265,7 +217,7 @@ Requirement-by-requirement compliance assessment.
 | Not Implemented | 0% |
 | Not Applicable | N/A (excluded) |
 
-### 4.5 Gap_Analysis Sheet
+### Gap_Analysis Sheet
 
 Track identified gaps and remediation.
 
@@ -292,7 +244,7 @@ Track identified gaps and remediation.
 - Medium: Moderate impact, manageable risk
 - Low: Minor impact, improvement opportunity
 
-### 4.6 Audit_Readiness Sheet
+### Audit_Readiness Sheet
 
 Evidence checklist for certification audits.
 
@@ -325,7 +277,7 @@ Evidence checklist for certification audits.
 | AUD-009 | Notification procedures documented | Notification Requirements |
 | AUD-010 | Management approval of registers | Approval SignOff sheets |
 
-### 4.7 Trend_Analysis Sheet
+### Trend_Analysis Sheet
 
 Track historical compliance performance.
 
@@ -347,7 +299,7 @@ Track historical compliance performance.
 - Support management review reporting
 - Demonstrate continuous improvement
 
-### 4.8 Evidence_Register Sheet
+### Evidence_Register Sheet
 
 Document dashboard evidence.
 
@@ -367,7 +319,7 @@ Document dashboard evidence.
 | Status | Current status | Current |
 | Notes | Additional context | Approved by CISO |
 
-### 4.9 Approval_SignOff Sheet
+### Approval_SignOff Sheet
 
 Management approval for the dashboard.
 
@@ -383,9 +335,9 @@ Management approval for the dashboard.
 
 ---
 
-## 5. Evidence Collection
+## Evidence Collection
 
-### 5.1 Required Evidence
+### Required Evidence
 
 | Evidence Type | Description | Storage Location |
 |---------------|-------------|------------------|
@@ -395,7 +347,7 @@ Management approval for the dashboard.
 | Audit Checklists | Pre-audit verification | ISMS Evidence Library |
 | Approval Records | Management sign-offs | ISMS Evidence Library |
 
-### 5.2 Evidence Storage Guidelines
+### Evidence Storage Guidelines
 
 - Use consistent naming: `A.5.5-6.4-[Type]-[Period].pdf`
 - Store in ISMS Evidence Library
@@ -405,9 +357,9 @@ Management approval for the dashboard.
 
 ---
 
-## 6. Common Pitfalls
+## Common Pitfalls
 
-### 6.1 Mistakes to Avoid
+### Mistakes to Avoid
 
 ❌ **MISTAKE:** Calculating KPIs only before audits
 ✅ **CORRECT:** Calculate KPIs quarterly and track trends continuously
@@ -441,32 +393,32 @@ Management approval for the dashboard.
 
 ---
 
-## 7. Quality Checklist
+## Quality Checklist
 
 Before submitting for approval, verify:
 
-### 7.1 Data Quality
+### Data Quality
 
 - [ ] All KPI values calculated from source workbook data
 - [ ] KPI calculations documented and repeatable
 - [ ] No data more than 90 days old
 - [ ] Discrepancies investigated and resolved
 
-### 7.2 Completeness
+### Completeness
 
 - [ ] All required KPIs measured
 - [ ] Compliance scorecard fully assessed
 - [ ] All known gaps documented
 - [ ] Audit readiness checklist complete
 
-### 7.3 Accuracy
+### Accuracy
 
 - [ ] Status indicators consistent with scores
 - [ ] Trends reflect actual direction of change
 - [ ] Gap remediation status current
 - [ ] Evidence references verified
 
-### 7.4 Governance
+### Governance
 
 - [ ] Reporting period clearly stated
 - [ ] Preparer identified
@@ -475,9 +427,9 @@ Before submitting for approval, verify:
 
 ---
 
-## 8. Review and Approval
+## Review and Approval
 
-### 8.1 Review Frequency
+### Review Frequency
 
 | Review Type | Frequency | Triggered By |
 |-------------|-----------|--------------|
@@ -486,7 +438,7 @@ Before submitting for approval, verify:
 | Gap Review | Monthly | Remediation tracking |
 | Audit Readiness | Before audits | Audit schedule |
 
-### 8.2 Approval Authority
+### Approval Authority
 
 | Action | Approval Required |
 |--------|-------------------|
@@ -496,7 +448,6 @@ Before submitting for approval, verify:
 | Trend report | Security Manager |
 
 ---
-
 
 **END OF USER GUIDE**
 

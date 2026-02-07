@@ -18,30 +18,13 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-1. [PART I: USER COMPLETION GUIDE](#part-i-user-completion-guide)
-   - [1.1 Assessment Overview](#11-assessment-overview)
-   - [1.2 Control Requirements](#12-control-requirements)
-   - [1.3 Prerequisites](#13-prerequisites)
-   - [1.4 Workbook Structure](#14-workbook-structure)
-   - [1.5 Completion Walkthrough](#15-completion-walkthrough)
-   - [1.6 Evidence Collection](#16-evidence-collection)
-   - [1.7 Common Pitfalls](#17-common-pitfalls)
-   - [1.8 Quality Checklist](#18-quality-checklist)
-   - [1.9 Review and Approval](#19-review-and-approval)
-2. [PART II: TECHNICAL SPECIFICATION](#part-ii-technical-specification)
-   - [2.1 Workbook Technical Details](#21-workbook-technical-details)
-   - [2.2 Sheet Specifications](#22-sheet-specifications)
-   - [2.3 Conditional Formatting](#23-conditional-formatting)
-   - [2.4 Integration Points](#24-integration-points)
-   - [2.5 Related Documents](#25-related-documents)
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.12-13.S4-TG.
 
 ---
 
----
-
-## 1.1 Assessment Overview
+## Assessment Overview
 
 ### Purpose
 
@@ -101,7 +84,7 @@ The Compliance Dashboard covers:
 
 ---
 
-## 1.2 Control Requirements
+## Control Requirements
 
 ### ISO 27001:2022 Controls A.5.12 & A.5.13
 
@@ -141,7 +124,7 @@ Per ISO/IEC 27001:2022:
 
 ---
 
-## 1.3 Prerequisites
+## Prerequisites
 
 ### Required Access
 
@@ -173,50 +156,7 @@ Per ISO/IEC 27001:2022:
 
 ---
 
-## 1.4 Workbook Structure
-
-### Sheet Overview
-
-| Sheet | Purpose | Assessor Action |
-|-------|---------|-----------------|
-| **Executive_Summary** | High-level status | Complete key metrics |
-| **Compliance_Metrics** | Detailed KPIs | Populate all metrics |
-| **Control_Assessment** | A.5.12/A.5.13 evaluation | Assess each requirement |
-| **Maturity_Assessment** | Program maturity | Score each domain |
-| **Risk_Register** | Classification risks | Document risks |
-| **Remediation_Tracker** | Action tracking | Track remediation |
-| **Evidence_Register** | Audit evidence | Document evidence |
-| **Approval_SignOff** | Authorisation | Obtain signatures |
-
-### Data Flow
-
-```
-A.5.12-13.1 (Scheme) ────────┐
-                             │
-A.5.12-13.2 (Labelling) ────►│──► Compliance_Metrics
-                             │          │
-A.5.12-13.3 (Inventory) ────┘          ▼
-                                  Executive_Summary
-                                       │
-        ┌──────────────────────────────┼──────────────────────────────┐
-        │                              │                              │
-        ▼                              ▼                              ▼
-Control_Assessment           Maturity_Assessment              Risk_Register
-        │                              │                              │
-        └──────────────────────────────┼──────────────────────────────┘
-                                       ▼
-                              Remediation_Tracker
-                                       │
-                                       ▼
-                              Evidence_Register
-                                       │
-                                       ▼
-                              Approval_SignOff
-```
-
----
-
-## 1.5 Completion Walkthrough
+## Completion Walkthrough
 
 ### Step 1: Complete Executive Summary
 
@@ -421,7 +361,7 @@ Control_Assessment           Maturity_Assessment              Risk_Register
 
 ---
 
-## 1.6 Evidence Collection
+## Evidence Collection
 
 ### Evidence Requirements
 
@@ -458,7 +398,7 @@ A.5.12-13/
 
 ---
 
-## 1.7 Common Pitfalls
+## Common Pitfalls
 
 Avoid these common mistakes when completing the compliance dashboard:
 
@@ -508,7 +448,7 @@ Avoid these common mistakes when completing the compliance dashboard:
 
 ---
 
-## 1.8 Quality Checklist
+## Quality Checklist
 
 Before submitting the dashboard, verify:
 
@@ -554,7 +494,7 @@ Before submitting the dashboard, verify:
 
 ---
 
-## 1.9 Review and Approval
+## Review and Approval
 
 ### Review Workflow
 
@@ -605,7 +545,6 @@ The Approval_SignOff sheet requires:
    - Date and signature
 
 ---
-
 
 **END OF USER GUIDE**
 

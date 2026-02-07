@@ -47,175 +47,144 @@
 
 # Technical Specification
 
-# Excel Workbook Specification
+
+> Auto-generated from `generate_a827_4_zero_trust.py`
+> Re-generate with: `python3 generate_tg_from_scr.py --apply`
 
 ## Workbook Overview
 
 | Property | Value |
 |----------|-------|
-| **Filename** | ISMS-IMP-A.8.27.4_Zero_Trust_Implementation_Assessment_YYYYMMDD.xlsx |
-| **Sheets** | 12 |
-| **Purpose** | Zero Trust maturity assessment |
-| **Generator** | generate_a827_4_zero_trust.py |
+| **Document ID** | `ISMS-IMP-A.8.27.4` |
+| **Output Filename** | `ISMS-IMP-A.8.27.4_Zero_Trust_Implementation_Assessment_YYYYMMDD.xlsx` |
+| **Workbook Title** | Zero Trust Implementation Assessment |
+| **Total Sheets** | 13 (13 visible) |
+| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
 
-## Sheet Specifications
+## Color Palette
 
-### Sheet 1: Instructions
+| Hex Code | Style Name | Description |
+|----------|-----------|-------------|
+| #1F4E79 | header_bg | Custom |
+| #2E75B6 | subheader_bg | Custom |
+| #2ECC71 | optimal | Custom |
+| #4ECDC4 | advanced | Custom |
+| #E2EFDA | input_cell | Pale Green (Success Background) |
+| #FF6B6B | traditional | Custom |
+| #FFE66D | initial | Custom |
+| #FFF2CC | formula_cell | Cream (Input Alt) |
 
-| Property | Specification |
-|----------|---------------|
-| **Sheet Name** | Instructions |
-| **Purpose** | ZT overview and guidance |
-| **Protection** | Read-only |
-
-**Content:**
-
-- Zero Trust overview
-- NIST SP 800-207 summary
-- CISA Maturity Model explanation
-- Pillar definitions
-- Rating scales
-
-### Sheet 2: Strategy
-
-| Property | Specification |
-|----------|---------------|
-| **Sheet Name** | Strategy |
-| **Purpose** | ZT strategy assessment |
-
-**Column Definitions:**
-
-| Column | Header | Width | Type | Validation |
-|--------|--------|-------|------|------------|
-| A | Strat-ID | 10 | Auto | STRAT-001 |
-| B | Element | 25 | Text | Required |
-| C | Status | 15 | Dropdown | Implemented/Partial/Not Started |
-| D | Evidence | 30 | Text | Required |
-| E | Gap | 30 | Text | Optional |
-| F | Owner | 20 | Text | Required |
-| G | Notes | 25 | Text | Optional |
-
-**Pre-populated Rows:** 12 strategy elements
-
-### Sheets 3-7: Pillar Assessments (Identity, Device, Network, Workload, Data)
-
-| Property | Specification |
-|----------|---------------|
-| **Sheet Names** | Identity, Device, Network, Workload, Data |
-| **Purpose** | Pillar maturity assessment |
-
-**Column Definitions (consistent across pillars):**
-
-| Column | Header | Width | Type | Validation |
-|--------|--------|-------|------|------------|
-| A | [Pillar]-ID | 10 | Auto | ID-001, DEV-001, etc. |
-| B | Capability | 30 | Text | Required |
-| C | Traditional | 12 | Dropdown | 0/1/2/3 |
-| D | Initial | 12 | Dropdown | 0/1/2/3 |
-| E | Advanced | 12 | Dropdown | 0/1/2/3 |
-| F | Optimal | 12 | Dropdown | 0/1/2/3 |
-| G | Current | 12 | Formula | Calculated from C-F |
-| H | Target | 12 | Dropdown | Traditional/Initial/Advanced/Optimal |
-| I | Evidence | 30 | Text | Required |
-| J | Gap | 30 | Text | If Current < Target |
-
-**Pre-populated Capabilities per Pillar:**
-
-- **Identity:** 10 capabilities (Authentication, Authorisation, Lifecycle, PAM, etc.)
-- **Device:** 8 capabilities (Inventory, Compliance, Threat Protection, etc.)
-- **Network:** 8 capabilities (Segmentation, Encryption, Access, Monitoring, etc.)
-- **Workload:** 10 capabilities (Identity, Isolation, Security Testing, etc.)
-- **Data:** 10 capabilities (Classification, Encryption, Access, DLP, etc.)
-
-### Sheet 8: Visibility
-
-| Property | Specification |
-|----------|---------------|
-| **Sheet Name** | Visibility |
-| **Purpose** | Visibility and analytics maturity |
-
-**Same structure as pillar sheets with 8 visibility capabilities**
-
-### Sheet 9: Automation
-
-| Property | Specification |
-|----------|---------------|
-| **Sheet Name** | Automation |
-| **Purpose** | Automation and orchestration maturity |
-
-**Same structure as pillar sheets with 8 automation capabilities**
-
-### Sheet 10: Compliance
-
-Standard compliance sheet with ZT-specific requirements from ISMS-POL-A.8.27
-
-### Sheet 11: GapRegister
-
-Standard gap register structure
-
-### Sheet 12: Dashboard
-
-| Property | Specification |
-|----------|---------------|
-| **Sheet Name** | Dashboard |
-| **Purpose** | ZT maturity summary |
-| **Protection** | Read-only (formulas) |
-
-**Dashboard Elements:**
-
-1. **Maturity Radar Data Table:** Scores by pillar for radar chart
-2. **Overall ZT Maturity Score:** Weighted average of pillars
-3. **CISA Maturity Level:** Derived from scores (Traditional/Initial/Advanced/Optimal)
-4. **Pillar Summary Table:** Current vs Target with gap indicator
-5. **Gap Priority Matrix:** High/Medium/Low gaps by pillar
-6. **Strategy Progress:** Roadmap milestone tracking
-7. **Trend Indicators:** If baseline exists
-
-## Maturity Scoring
-
-**Pillar Score Calculation:**
-
-Each capability scored 0-3 for each maturity level. Current level is the highest level where score ≥ 2.
-
-```excel
-# Current maturity level formula
-=IF(F2>=2,"Optimal",IF(E2>=2,"Advanced",IF(D2>=2,"Initial","Traditional")))
-```
-
-**Overall ZT Score:**
-
-Weighted average across pillars (Identity weighted higher per CISA model)
-
-| Pillar | Weight |
-|--------|--------|
-| Identity | 20% |
-| Device | 15% |
-| Network | 15% |
-| Workload | 15% |
-| Data | 15% |
-| Visibility | 10% |
-| Automation | 10% |
-
-## Styling Specifications
-
-**CISA Maturity Level Colours:**
-
-| Level | Colour Code |
-|-------|-------------|
-| Traditional | #FF6B6B (Red) |
-| Initial | #FFE66D (Yellow) |
-| Advanced | #4ECDC4 (Teal) |
-| Optimal | #2ECC71 (Green) |
+## Sheet 1: Instructions
 
 ---
 
-# Generator Script Reference
+## Sheet 2: Strategy
 
-| Property | Value |
-|----------|-------|
-| **Script Name** | generate_a827_4_zero_trust.py |
-| **Location** | 10-isms-scr-base/isms-a.8.27-secure-systems-engineering/10_generator-master/ |
-| **Output** | ISMS-IMP-A.8.27.4_Zero_Trust_Implementation_Assessment_YYYYMMDD.xlsx |
+**Data Rows:** 7 (rows 1–7)
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Strat-ID |
+| B | Element |
+| C | Status |
+| D | Evidence |
+| E | Gap |
+| F | Owner |
+| G | Notes |
+
+---
+
+## Sheet 3: Pillar
+
+**Data Rows:** 10 (rows 1–10)
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | {...}-ID |
+| B | Capability |
+| C | Traditional |
+| D | Initial |
+| E | Advanced |
+| F | Optimal |
+| G | Current |
+| H | Target |
+| I | Evidence |
+| J | Gap |
+
+---
+
+## Sheet 4: Identity
+
+---
+
+## Sheet 5: Device
+
+---
+
+## Sheet 6: Network
+
+---
+
+## Sheet 7: Workload
+
+---
+
+## Sheet 8: Data
+
+---
+
+## Sheet 9: Visibility
+
+---
+
+## Sheet 10: Automation
+
+---
+
+## Sheet 11: Compliance
+
+**Data Rows:** 7 (rows 1–7)
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Comp-ID |
+| B | Requirement |
+| C | Source |
+| D | Compliant |
+| E | Evidence |
+| F | Score |
+| G | Notes |
+
+---
+
+## Sheet 12: Gap_Register
+
+**Data Rows:** 20 (rows 4–23)
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Gap-ID |
+| B | Pillar |
+| C | Description |
+| D | Risk |
+| E | Remediation |
+| F | Owner |
+| G | Due Date |
+| H | Status |
+| I | Closure Date |
+| J | Notes |
+
+---
+
+## Sheet 13: Dashboard
 
 ---
 

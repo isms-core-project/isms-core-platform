@@ -26,13 +26,13 @@
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 The **Transfer Agreements Register Workbook** (ISMS-IMP-A.5.14.3) maintains a comprehensive record of all information transfer agreements with third parties. This register tracks data sharing agreements, interconnection security agreements (ISAs), memoranda of understanding (MOUs), data processing agreements (DPAs), and other contractual arrangements governing information exchange.
 
-### 1.2 Scope
+### Scope
 
 This register covers:
 - **Agreement inventory**: Master list of all transfer agreements
@@ -41,7 +41,7 @@ This register covers:
 - **Review schedule**: Agreement renewal and review tracking
 - **Compliance evidence**: Documentation supporting agreement management
 
-### 1.3 Business Value
+### Business Value
 
 Maintaining this register delivers:
 - **Complete visibility** into third-party transfer relationships
@@ -50,7 +50,7 @@ Maintaining this register delivers:
 - **Audit readiness** with centralised agreement tracking
 - **Renewal management** preventing agreement lapses
 
-### 1.4 Control Requirement
+### Control Requirement
 
 > *ISO/IEC 27001:2022 Annex A.5.14 — Information Transfer*
 >
@@ -60,11 +60,11 @@ This register specifically addresses the "agreements" component for transfers wi
 
 ---
 
-## 2. Prerequisites
+## Prerequisites
 
 Before starting this assessment, ensure you have:
 
-### 2.1 Required Documents
+### Required Documents
 - [ ] ISMS-POL-A.5.14 (Information Transfer Policy)
 - [ ] ISMS-POL-A.6.6 (NDA Policy) — standard NDA terms
 - [ ] Legal contract templates (DPA, SCC, ISA)
@@ -72,14 +72,14 @@ Before starting this assessment, ensure you have:
 - [ ] Existing agreement inventory (if any)
 - [ ] Data flow documentation showing external transfers
 
-### 2.2 Required Access
+### Required Access
 - [ ] Contract management system
 - [ ] Vendor management database
 - [ ] Legal document repository
 - [ ] Third-party risk management system
 - [ ] Procurement records
 
-### 2.3 Required Personnel
+### Required Personnel
 - [ ] Legal Counsel / Contract Manager
 - [ ] Procurement/Vendor Manager
 - [ ] Data Protection Officer
@@ -88,23 +88,7 @@ Before starting this assessment, ensure you have:
 
 ---
 
-## 3. Workbook Structure
-
-The workbook contains **7 sheets** organised as follows:
-
-| Sheet | Purpose | Input Required |
-|-------|---------|----------------|
-| Instructions | Guidance and agreement type definitions | None (read-only) |
-| Agreement_Register | Master list of all transfer agreements | All agreement details |
-| Agreement_Requirements | Standard security clauses | Applicability notes |
-| Third_Party_Assessment | Security posture of partners | Assessment data |
-| Review_Schedule | Renewal and review tracking | Dates, Status |
-| Evidence_Register | Supporting documentation | Location, Status |
-| Approval_SignOff | Register approval workflow | Signatures, Dates |
-
----
-
-## 4. Completion Walkthrough
+## Completion Walkthrough
 
 ### Sheet 1: Instructions
 
@@ -311,9 +295,9 @@ The workbook contains **7 sheets** organised as follows:
 
 ---
 
-## 5. Evidence Collection
+## Evidence Collection
 
-### 5.1 Evidence by Agreement Type
+### Evidence by Agreement Type
 
 | Agreement Type | Required Evidence |
 |----------------|-------------------|
@@ -324,7 +308,7 @@ The workbook contains **7 sheets** organised as follows:
 | NDA | Signed NDA, scope documentation |
 | All | Third-party security certificates |
 
-### 5.2 Evidence Storage
+### Evidence Storage
 
 Store all evidence in:
 ```
@@ -337,7 +321,7 @@ Store all evidence in:
 │   └── Review-Documentation/
 ```
 
-### 5.3 Evidence Naming
+### Evidence Naming
 
 Format: `EV-514-AGR-[AgreementID]-[Type]-[YYYYMMDD].[ext]`
 
@@ -348,7 +332,7 @@ Examples:
 
 ---
 
-## 6. Common Pitfalls
+## Common Pitfalls
 
 ### ❌ MISTAKE: Tracking only formal agreements, missing informal data sharing
 ✅ CORRECT: Include all data sharing relationships, even those pending formalisation
@@ -382,7 +366,7 @@ Examples:
 
 ---
 
-## 7. Quality Checklist
+## Quality Checklist
 
 Before submitting the register, verify:
 
@@ -421,27 +405,26 @@ Before submitting the register, verify:
 
 ---
 
-## 8. Review and Approval
+## Review and Approval
 
-### 8.1 Register Maintenance
+### Register Maintenance
 - **Frequency**: Continuous (update as agreements change)
 - **Full review**: Quarterly
 - **Triggers**: New agreements, renewals, terminations, incidents
 
-### 8.2 Approval Workflow
+### Approval Workflow
 1. **Register Owner** maintains entries
 2. **Legal Representative** validates compliance
 3. **ISO** approves security requirements
 4. **DPO** validates data protection aspects
 
-### 8.3 Post-Approval Actions
+### Post-Approval Actions
 - Notify stakeholders of new agreements
 - Update risk register for high-risk relationships
 - Schedule assessments for new third parties
 - Configure monitoring for expiring agreements
 
 ---
-
 
 **END OF USER GUIDE**
 

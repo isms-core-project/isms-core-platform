@@ -323,6 +323,7 @@ CONTROL_ID = "A.5.16"
 CONTROL_NAME = "Identity Management"
 GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")
 GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_Lifecycle_Compliance_Detailed_{GENERATED_TIMESTAMP}.xlsx"
 
 # Data row counts
 JOINER_EVENTS = 40

@@ -57,27 +57,6 @@
 
 ---
 
-## Workbook Structure
-
-### Sheet Overview (14 Sheets)
-
-1. **Instructions_Legend** - User guidance and testing framework overview
-2. **Testing_Procedures** - Documented test procedures per policy
-3. **PreDeployment_Tests** - Tests before masked data deployment
-4. **PostDeployment_Validation** - Validation after deployment to target env
-5. **Completeness_Testing** - Field coverage and schema drift detection
-6. **Format_Preservation** - Validate masked data format/type requirements
-7. **Referential_Integrity** - Cross-table relationship preservation tests
-8. **ReIdentification_Risk** - Re-ID testing results and risk assessment
-9. **Data_Utility_Validation** - Application functionality and analytics quality
-10. **Performance_Testing** - Masking performance impact measurement
-11. **Ongoing_Monitoring** - Continuous validation and periodic re-testing
-12. **Gap_Analysis** - Testing gaps and remediation plan
-13. **Evidence_Register** - Supporting documentation (100 rows)
-14. **Summary_Dashboard** - Executive overview and test KPIs
-
----
-
 ## Standard Column Structure
 
 ### Base Columns (A-Q, 17 columns) - Used across test sheets
@@ -827,7 +806,6 @@ Base columns A-Q, plus:
 **END OF SPECIFICATION**
 
 ---
-
 
 **END OF USER GUIDE**
 

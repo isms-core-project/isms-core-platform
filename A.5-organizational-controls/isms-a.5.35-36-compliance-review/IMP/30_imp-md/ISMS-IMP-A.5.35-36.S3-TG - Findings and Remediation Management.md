@@ -20,164 +20,185 @@
 
 # Technical Specification
 
-### Workbook Architecture
 
-**File Details**:
+> Auto-generated from `generate_a535_36_3_findings_remediation.py`
+> Re-generate with: `python3 generate_tg_from_scr.py --apply`
 
-- Filename: `ISMS-IMP-A.5.35-36.S3_Findings_and_Remediation_Management_YYYYMMDD.xlsx`
-- Format: Microsoft Excel (.xlsx)
-- Sheets: 8
+## Workbook Overview
 
-### Sheet Specifications
+| Property | Value |
+|----------|-------|
+| **Document ID** | `ISMS-IMP-A.5.35-36.S3` |
+| **Output Filename** | `ISMS-IMP-A.5.35-36.S3_Findings_and_Remediation_Management_YYYYMMDD.xlsx` |
+| **Workbook Title** | Findings and Remediation Management |
+| **Total Sheets** | 9 (9 visible) |
+| **Control Reference** | ISO/IEC 27001:2022 - Controls {...}: {...} |
 
-#### Findings_Register Sheet
+## Color Palette
 
-**Columns**:
+| Hex Code | Style Name | Description |
+|----------|-----------|-------------|
+| #003366 | 003366 | Dark Blue (Headers) |
+| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
+| #808080 | 808080 | Gray (Disabled) |
+| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
+| #E2EFDA | E2EFDA | Pale Green (Success Background) |
+| #FFFFCC | FFFFCC | Light Yellow (User Input) |
 
-| Column | Header | Width | Content |
-|--------|--------|-------|---------|
-| A | Finding_ID | 14 | Auto-format FND-YYYY-NNN |
-| B | Source | 18 | Data validation |
-| C | Source_Ref | 16 | User input |
-| D | Finding_Date | 14 | Date field |
-| E | Control_Ref | 12 | ISO control reference |
-| F | Finding_Title | 35 | User input |
-| G | Finding_Description | 50 | User input |
-| H | Severity | 12 | Data validation |
-| I | Risk_Rating | 12 | User input |
-| J | Affected_Area | 22 | User input |
-| K | Finding_Owner | 22 | User input |
-| L | Target_Resolution | 14 | Date field |
-| M | Status | 16 | Data validation |
-| N | RCA_Required | 10 | Data validation |
-| O | RCA_Ref | 14 | User input |
-| P | Remediation_Ref | 14 | User input |
-| Q | Notes | 30 | User input |
+## Sheet 1: Workbook
 
-#### Remediation_Actions Sheet
+---
 
-**Columns**:
+## Sheet 2: Instructions
 
-| Column | Header | Width | Content |
-|--------|--------|-------|---------|
-| A | Action_ID | 14 | Auto-format ACT-YYYY-NNN |
-| B | Finding_Ref | 14 | Link to Findings_Register |
-| C | Action_Type | 14 | Data validation |
-| D | Action_Description | 45 | User input |
-| E | Action_Owner | 22 | User input |
-| F | Priority | 12 | Data validation |
-| G | Resources_Required | 30 | User input |
-| H | Dependencies | 25 | User input |
-| I | Start_Date | 14 | Date field |
-| J | Target_Date | 14 | Date field |
-| K | Actual_Completion | 14 | Date field |
-| L | Status | 14 | Data validation |
-| M | Percent_Complete | 12 | Percentage |
-| N | Blockers | 30 | User input |
-| O | Evidence_Ref | 16 | User input |
-| P | Verified | 10 | Data validation |
-| Q | Notes | 30 | User input |
+**Frozen Panes:** A4
 
-#### Root_Cause_Analysis Sheet
+---
 
-**Columns**:
+## Sheet 3: Findings_Register
 
-| Column | Header | Width | Content |
-|--------|--------|-------|---------|
-| A | RCA_ID | 14 | Auto-format RCA-YYYY-NNN |
-| B | Finding_Ref | 14 | Link to Findings_Register |
-| C | RCA_Date | 14 | Date field |
-| D | RCA_Lead | 22 | User input |
-| E | RCA_Participants | 35 | User input |
-| F | Methodology | 16 | Data validation |
-| G | Problem_Statement | 45 | User input |
-| H | Immediate_Cause | 40 | User input |
-| I | Contributing_Factors | 40 | User input |
-| J | Root_Cause | 45 | User input |
-| K | Why_1 | 35 | User input |
-| L | Why_2 | 35 | User input |
-| M | Why_3 | 35 | User input |
-| N | Why_4 | 35 | User input |
-| O | Why_5 | 35 | User input |
-| P | Corrective_Actions | 45 | User input |
-| Q | Preventive_Actions | 45 | User input |
-| R | Systemic_Issues | 40 | User input |
-| S | Lessons_Learned | 40 | User input |
-| T | Approval | 22 | User input |
-| U | Approval_Date | 14 | Date field |
+**Data Rows:** 100 (rows 4–103) | **Frozen Panes:** D4
 
-#### Verification_Log Sheet
+### Columns
 
-**Columns**:
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Finding_ID | 14 |
+| B | Source | 18 |
+| C | Source_Ref | 16 |
+| D | Finding_Date | 14 |
+| E | Finding_Type | 16 |
+| F | Severity | 14 |
+| G | Control_Reference | 18 |
+| H | Finding_Description | 50 |
+| I | Root_Cause | 35 |
+| J | Recommendation | 40 |
+| K | Owner | 22 |
+| L | Target_Date | 14 |
+| M | Status | 16 |
+| N | Days_Open | 12 |
 
-| Column | Header | Width | Content |
-|--------|--------|-------|---------|
-| A | Verification_ID | 14 | Auto-format VER-YYYY-NNN |
-| B | Action_Ref | 14 | Link to Remediation_Actions |
-| C | Finding_Ref | 14 | Link to Findings_Register |
-| D | Verification_Type | 18 | Data validation |
-| E | Verification_Date | 14 | Date field |
-| F | Verifier | 22 | User input |
-| G | Verifier_Independence | 16 | Data validation |
-| H | Verification_Method | 18 | Data validation |
-| I | Evidence_Reviewed | 35 | User input |
-| J | Outcome | 14 | Data validation |
-| K | Issues_Found | 35 | User input |
-| L | Retest_Required | 10 | Data validation |
-| M | Retest_Date | 14 | Date field |
-| N | Final_Status | 14 | Data validation |
-| O | Notes | 30 | User input |
+---
 
-#### Trend_Analysis Sheet
+## Sheet 4: Remediation_Actions
 
-**Columns**:
+**Data Rows:** 200 (rows 4–203) | **Frozen Panes:** D4
 
-| Column | Header | Width | Content |
-|--------|--------|-------|---------|
-| A | Period | 14 | User input |
-| B | Period_Start | 14 | Date field |
-| C | Period_End | 14 | Date field |
-| D | Total_Findings | 12 | Numeric |
-| E | Critical_Count | 12 | Numeric |
-| F | High_Count | 12 | Numeric |
-| G | Medium_Count | 12 | Numeric |
-| H | Low_Count | 12 | Numeric |
-| I | Observation_Count | 14 | Numeric |
-| J | Closed_in_Period | 14 | Numeric |
-| K | Overdue_at_Period_End | 14 | Numeric |
-| L | Average_Resolution_Days | 14 | Numeric |
-| M | Top_Control_Area | 20 | User input |
-| N | Top_Department | 20 | User input |
-| O | Recurring_Findings | 14 | Numeric |
-| P | Trend_vs_Prior | 12 | Data validation |
-| Q | Notes | 40 | User input |
+### Columns
 
-### Data Validations
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Action_ID | 14 |
+| B | Finding_Ref | 14 |
+| C | Action_Description | 50 |
+| D | Action_Type | 18 |
+| E | Owner | 22 |
+| F | Start_Date | 14 |
+| G | Target_Date | 14 |
+| H | Actual_Date | 14 |
+| I | Status | 16 |
+| J | % Complete | 12 |
+| K | Verification_Method | 25 |
+| L | Notes | 30 |
 
-| Field | Validation List |
-|-------|-----------------|
-| Source | Independent Review, Compliance Assessment, Internal Audit, External Audit, Incident, Regulatory, Other |
-| Severity | Critical, High, Medium, Low, Observation |
-| Finding_Status | Open, In Progress, Remediated, Verified Closed, Risk Accepted |
-| RCA_Required | Yes, No |
-| Action_Type | Corrective, Preventive, Improvement |
-| Priority | Critical, High, Medium, Low |
-| Action_Status | Not Started, In Progress, On Hold, Completed, Cancelled |
-| Verified | Yes, No, Pending |
-| Methodology | 5 Whys, Fishbone, Fault Tree, FMEA, Other |
-| Verification_Type | Self-Attestation, Peer Review, Independent Verification |
-| Verifier_Independence | Independent, Not Independent |
-| Verification_Method | Document Review, Testing, Interview, Observation, Combined |
-| Verification_Outcome | Verified, Failed, Partial |
-| Retest_Required | Yes, No |
-| Final_Status | Open, Verified Closed |
-| Trend_vs_Prior | Better, Same, Worse |
+---
 
-### Generator Reference
+## Sheet 5: Root_Cause_Analysis
 
-**Script**: `generate_a535_36_3_findings_remediation.py`
+**Data Rows:** 50 (rows 4–53) | **Frozen Panes:** C4
 
-**Location**: `10-isms-scr-base/isms-a.5.35-36-compliance-review/10_generator-master/`
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | RCA_ID | 12 |
+| B | Finding_Ref | 14 |
+| C | Problem_Statement | 40 |
+| D | Analysis_Method | 18 |
+| E | Root_Cause_Category | 22 |
+| F | Root_Cause_Description | 45 |
+| G | Contributing_Factors | 35 |
+| H | Systemic_Issue | 14 |
+| I | Preventive_Actions | 40 |
+| J | Analyst | 22 |
+| K | Analysis_Date | 14 |
+
+---
+
+## Sheet 6: Verification_Log
+
+**Data Rows:** 100 (rows 4–103) | **Frozen Panes:** D4
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Verification_ID | 14 |
+| B | Finding_Ref | 14 |
+| C | Action_Ref | 14 |
+| D | Verification_Date | 16 |
+| E | Verifier | 22 |
+| F | Verification_Method | 25 |
+| G | Evidence_Reviewed | 35 |
+| H | Verification_Result | 18 |
+| I | Closure_Recommendation | 22 |
+| J | Follow_Up_Required | 16 |
+| K | Notes | 30 |
+
+---
+
+## Sheet 7: Trend_Analysis
+
+**Data Rows:** 9 (rows 2–10) | **Frozen Panes:** B4
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Period | 16 |
+| B | Major_NCs | 12 |
+| C | Minor_NCs | 12 |
+| D | Observations | 14 |
+| E | Total_Findings | 14 |
+| F | Closed_This_Period | 16 |
+| G | Open_at_Period_End | 18 |
+| H | Avg_Days_to_Close | 16 |
+| I | Repeat_Findings | 14 |
+| J | Notes | 35 |
+
+---
+
+## Sheet 8: Evidence_Register
+
+**Data Rows:** 100 (rows 4–103) | **Frozen Panes:** C4
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Evidence_ID | 15 |
+| B | Evidence_Type | 22 |
+| C | Description | 45 |
+| D | Related_Finding | 18 |
+| E | Collection_Date | 16 |
+| F | Location | 40 |
+| G | Collected_By | 25 |
+| H | Retention_Until | 16 |
+
+---
+
+## Sheet 9: Approval_Signoff
+
+**Data Rows:** 200 (rows 4–203) | **Frozen Panes:** A3
+
+### Formulas
+
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| — | `=COUNTA(Findings_Register!A4:A103)-COUNTBLANK(Findings_Register!B4:B103)` | Total Findings |
+| — | `=COUNTIFS(Findings_Register!F4:F103,` | Open Major NCs |
+| — | `=COUNTIF(Findings_Register!M4:M103,` | Findings Closed This Period |
+| — | `=COUNTIF(Remediation_Actions!I4:I203,` | Actions In Progress |
 
 ---
 

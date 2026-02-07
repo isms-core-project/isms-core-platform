@@ -44,9 +44,9 @@
 
 ---
 
-## 1. Purpose and Scope
+## Purpose and Scope
 
-### 1.1 Assessment Objective
+### Assessment Objective
 
 This assessment verifies [Organization]'s compliance with ISO/IEC 27001:2022 Control A.5.2 (Information Security Roles and Responsibilities) as implemented through ISMS-POL-A.5.1-2-6.1-2, Section 5.
 
@@ -61,7 +61,7 @@ This assessment verifies [Organization]'s compliance with ISO/IEC 27001:2022 Con
 - Training and awareness for role holders
 - Role-based access alignment
 
-### 1.2 Relationship to Parent Policy
+### Relationship to Parent Policy
 
 This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2, Section 5: Roles & Responsibilities Requirements**.
 
@@ -75,7 +75,7 @@ This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2,
 
 **Evidence Collected**: Role definitions, job descriptions, RACI matrices, organizational charts, training records, role assignments
 
-### 1.3 Assessment Frequency
+### Assessment Frequency
 
 **Standard Schedule:**
 - **Quarterly**: All organizations (routine compliance verification)
@@ -88,7 +88,7 @@ This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2,
 - Ensures role clarity maintained during growth phases
 - Supports audit readiness
 
-### 1.4 Assessment Ownership
+### Assessment Ownership
 
 **Primary Owner**: CISO or HR Manager (joint ownership recommended)
 
@@ -104,9 +104,9 @@ This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2,
 
 ---
 
-## 2. Assessment Methodology
+## Assessment Methodology
 
-### 2.1 Assessment Approach
+### Assessment Approach
 
 This assessment uses a **role-based verification approach**:
 
@@ -145,7 +145,7 @@ This assessment uses a **role-based verification approach**:
 - Identify unassigned roles (accountability gaps)
 - Identify training gaps (untrained role holders)
 
-### 2.2 Data Sources
+### Data Sources
 
 **Primary Sources**:
 - Organizational charts
@@ -162,7 +162,7 @@ This assessment uses a **role-based verification approach**:
 - Performance review documentation
 - Delegation records
 
-### 2.3 Compliance Criteria
+### Compliance Criteria
 
 **Compliant Role** meets ALL criteria:
 - ✅ Role has documented definition (job description or role charter)
@@ -187,7 +187,7 @@ This assessment uses a **role-based verification approach**:
 - ❌ Role-based access does not align with role definition
 - ❌ No role-specific security training
 
-### 2.4 Scoring Methodology
+### Scoring Methodology
 
 **Overall Compliance Score** = Weighted average across assessment domains
 
@@ -208,9 +208,9 @@ This assessment uses a **role-based verification approach**:
 
 ---
 
-## 3. Security Role Taxonomy
+## Security Role Taxonomy
 
-### 3.1 Understanding the Role Hierarchy
+### Understanding the Role Hierarchy
 
 **ISMS-POL-A.5.1-2-6.1-2 defines a four-tier role structure:**
 
@@ -236,7 +236,7 @@ This assessment uses a **role-based verification approach**:
 
 **Assessment Scope**: This assessment focuses on **Tiers 1-3** (leadership, management, operational). Tier 4 (general users) covered in Security Awareness training assessment.
 
-### 3.2 Minimum Required Security Roles
+### Minimum Required Security Roles
 
 **Per ISO 27001:2022 and ISMS-POL-A.5.1-2-6.1-2:**
 
@@ -264,7 +264,7 @@ This assessment uses a **role-based verification approach**:
 
 **Note**: Not all roles required for all organizations. Small organizations may combine roles. Large organizations may split roles further.
 
-### 3.3 Role Discovery Process
+### Role Discovery Process
 
 **For Organizations Starting Fresh:**
 
@@ -306,40 +306,9 @@ This assessment uses a **role-based verification approach**:
 
 ---
 
-## 4. Assessment Workbook Structure
+## Assessment Workbook Structure
 
-### 4.1 Workbook Overview
-
-**File Name**: `ISMS-IMP-A.5.1-2-6.1-2.S2_Roles_Responsibilities_YYYYMMDD.xlsx`
-
-**Sheet Count**: 10 sheets
-
-**Sheet Summary**:
-
-| Sheet # | Sheet Name | Purpose | Rows (Approx) |
-|---------|------------|---------|---------------|
-| 1 | Dashboard | Executive summary and overall metrics | 100 |
-| 2 | Role_Inventory | Master list of all security roles | 100+ (dynamic) |
-| 3 | Role_Definition_Assessment | Role definition completeness verification | 80+ (dynamic) |
-| 4 | RACI_Matrix_Assessment | RACI matrix completeness and accuracy | 100+ (dynamic) |
-| 5 | Role_Assignment_Verification | Current role holders and vacancy tracking | 80+ (dynamic) |
-| 6 | Training_Assessment | Role-specific training completion | 80+ (dynamic) |
-| 7 | Access_Alignment_Review | Role-based access vs. role definition | 80+ (dynamic) |
-| 8 | Gap_Analysis | Identified gaps with risk and remediation | 80 |
-| 9 | Evidence_Register | Supporting evidence documentation | 80 |
-| 10 | Approval_Sign_Off | Three-level approval workflow | 50 |
-
-**Assessment Flow**:
-1. Complete **Sheet 2** (Role Inventory) - foundation
-2. Complete **Sheets 3-7** (Assessment domains) - detailed verification
-3. Review **Sheet 8** (Gap Analysis) - automatically populated from Sheets 2-7
-4. Document **Sheet 9** (Evidence) - supporting documentation
-5. Review **Sheet 1** (Dashboard) - auto-calculated summary
-6. Obtain **Sheet 10** (Approval) - three-level sign-off
-
----
-
-## 5. Sheet-by-Sheet Completion Guide
+## Sheet-by-Sheet Completion Guide
 
 ### Sheet 1: Dashboard
 
@@ -1175,7 +1144,7 @@ For each role, document:
 
 ---
 
-## 6. Quality Checklist
+## Quality Checklist
 
 **Before submitting assessment for approval, verify:**
 
@@ -1238,9 +1207,9 @@ For each role, document:
 
 ---
 
-## 7. Evidence Collection Guide
+## Evidence Collection Guide
 
-### 7.1 Evidence Organization
+### Evidence Organization
 
 **Folder Structure**:
 ```
@@ -1273,7 +1242,7 @@ Evidence/A.5.2_Roles_Responsibilities/
     └── ...
 ```
 
-### 7.2 Evidence Types by Assessment Sheet
+### Evidence Types by Assessment Sheet
 
 **Sheet 2 (Role Inventory)**:
 - Organizational charts
@@ -1309,7 +1278,7 @@ Evidence/A.5.2_Roles_Responsibilities/
 
 ---
 
-## 8. Integration with Other Assessments
+## Integration with Other Assessments
 
 This assessment (.S2 - Roles & Responsibilities) is part of the stacked control framework for A.5.1 + A.5.2 + A.6.1 + A.6.2.
 

@@ -24,156 +24,83 @@
 | 1.0 | Initial | Initial specification for Training Delivery and Tracking workbook | ISMS Implementation Team |
 
 ---
-
 # Technical Specification
 **Audience:** Generator Script Developers
 
----
 
-# Excel Workbook Technical Specification
+> Auto-generated from `generate_a63_3_training_delivery_tracking.py`
+> Re-generate with: `python3 generate_tg_from_scr.py --apply`
 
-## Workbook Metadata
+## Workbook Overview
 
-```python
-DOCUMENT_ID = "ISMS-IMP-A.6.3.3"
-WORKBOOK_NAME = "Training_Delivery_Tracking"
-CONTROL_ID = "A.6.3"
-CONTROL_NAME = "Information Security Awareness, Education and Training"
-```
+| Property | Value |
+|----------|-------|
+| **Document ID** | `ISMS-IMP-A.6.3.3` |
+| **Output Filename** | `ISMS-IMP-A.6.3.3_Training_Delivery_Tracking_YYYYMMDD.xlsx` |
+| **Workbook Title** | Training Delivery Tracking |
+| **Total Sheets** | 12 (12 visible) |
+| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
 
-## Sheet Specifications
+## Color Palette
 
-### Sheet 3: Completion_Tracking
+| Hex Code | Style Name | Description |
+|----------|-----------|-------------|
+| #0000FF | 0000FF | Custom |
+| #003366 | 003366 | Dark Blue (Headers) |
+| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
+| #808080 | 808080 | Gray (Disabled) |
+| #C00000 | C00000 | Dark Red (Blocked) |
+| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
+| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | FFFFCC | Light Yellow (User Input) |
 
-| Column | Header | Width | Type | Validation |
-|--------|--------|-------|------|------------|
-| A | Record_ID | 12 | Text | Unique, auto-increment |
-| B | Employee_ID | 12 | Reference | Must exist in Personnel_Register |
-| C | Employee_Name | 25 | Lookup | Auto from Personnel_Register |
-| D | Module_ID | 15 | Reference | Must exist in Curriculum |
-| E | Module_Title | 35 | Lookup | Auto from Curriculum |
-| F | Assigned_Date | 12 | Date | Required |
-| G | Due_Date | 12 | Date | Required |
-| H | Completion_Date | 12 | Date | If completed |
-| I | Status | 15 | Formula/Dropdown | Completed, In Progress, Overdue, Not Started |
-| J | Days_Overdue | 12 | Formula | =IF(I="Overdue", TODAY()-G, 0) |
-| K | Assessment_Score | 15 | Percentage | 0-100% |
-| L | Pass_Fail | 10 | Formula | Based on threshold |
-| M | Attempts | 10 | Integer | ≥1 |
-| N | Certificate_ID | 20 | Text | If issued |
-| O | Notes | 40 | Text | Optional |
-
-**Status Formula:**
-```excel
-=IF(H<>"","Completed",IF(TODAY()>G,"Overdue",IF(F<>"","In Progress","Not Started")))
-```
-
-**Conditional Formatting:**
-- Overdue: Red background
-- Overdue >14 days: Bold red
-- Completed: Green background
-- Due within 7 days: Yellow background
-
-### Sheet 5: Simulation_Results
-
-| Column | Header | Width | Type |
-|--------|--------|-------|------|
-| A | Campaign_ID | 15 | Text |
-| B | Campaign_Name | 30 | Text |
-| C | Campaign_Date | 12 | Date |
-| D | Employee_ID | 12 | Reference |
-| E | Email_Sent | 10 | Yes/No |
-| F | Email_Opened | 10 | Yes/No |
-| G | Link_Clicked | 10 | Yes/No |
-| H | Credentials_Submitted | 18 | Yes/No |
-| I | Reported_Suspicious | 15 | Yes/No |
-| J | Time_To_Click | 15 | Duration (if clicked) |
-| K | Time_To_Report | 15 | Duration (if reported) |
-| L | Remediation_Assigned | 18 | Yes/No |
-| M | Remediation_Completed | 18 | Yes/No |
-
-**Conditional Formatting:**
-- Credentials_Submitted = Yes: Red (Critical)
-- Link_Clicked = Yes AND Reported_Suspicious = No: Orange (High)
-- Link_Clicked = Yes AND Reported_Suspicious = Yes: Yellow (Learning)
-- Link_Clicked = No AND Reported_Suspicious = Yes: Green (Ideal)
-- Link_Clicked = No AND Reported_Suspicious = No: Gray (Neutral)
-
-### Sheet 6: Remediation_Tracking
-
-| Column | Header | Width | Type | Validation |
-|--------|--------|-------|------|------------|
-| A | Remediation_ID | 15 | Text | Unique |
-| B | Employee_ID | 12 | Reference | Required |
-| C | Trigger_Event | 20 | Dropdown | Failed Assessment, Clicked Phishing, Submitted Credentials, Pattern Failure |
-| D | Trigger_Date | 12 | Date | Required |
-| E | Remediation_Level | 15 | Dropdown | Level 1, Level 2, Level 3 |
-| F | Remediation_Training | 35 | Text | Training assigned |
-| G | Assigned_Date | 12 | Date | Required |
-| H | Due_Date | 12 | Date | Required |
-| I | Completion_Date | 12 | Date | When completed |
-| J | Outcome | 15 | Dropdown | Passed, Failed, Escalated, In Progress |
-| K | Manager_Notified | 15 | Yes/No | Required for Level 2+ |
-| L | HR_Notified | 12 | Yes/No | Required for Level 3 |
-| M | Notes | 50 | Text | Optional |
-
-### Sheet 7: Compliance_Summary
-
-**Metrics Calculated:**
-
-**By Department:**
-```
-Completion_Rate = Completed / Total_Assigned
-On_Time_Rate = Completed_On_Time / Completed
-Average_Score = AVG(Assessment_Score)
-Overdue_Count = COUNT(Status="Overdue")
-```
-
-**By Training Tier:**
-Same metrics grouped by tier
-
-**Dashboard Charts:**
-- Completion rate by department (bar)
-- Compliance trend over time (line)
-- Simulation click rates by campaign (bar)
-- Remediation outcomes (pie)
+## Sheet 1: Instructions
 
 ---
 
-## Integration Notes
-
-**LMS Integration:**
-- Sheet 3 (Completion_Tracking) can be populated via LMS export
-- Consider automated import process for large organizations
-
-**Simulation Platform Integration:**
-- Sheet 5 (Simulation_Results) populated from simulation platform export
-- Standard fields align with common platforms (KnowBe4, Proofpoint, etc.)
-
-**HRIS Integration:**
-- Sheet 2 (Personnel_Register) synced with HR system
-- Status updates when employees join/leave
+## Sheet 2: Personnel_Register
 
 ---
 
-## QA Checklist
-
-- [ ] All 11 sheets created
-- [ ] Formulas calculate correctly
-- [ ] Conditional formatting applied
-- [ ] Status formulas working
-- [ ] Days overdue calculation accurate
-- [ ] Lookup references functional
-- [ ] Dashboard charts render
+## Sheet 3: Completion_Tracking
 
 ---
 
-# Document Control
+## Sheet 4: Assessment_Results
 
-**Document ID:** ISMS-IMP-A.6.3.3
-**Version:** 1.0
-**Classification:** Internal
-**Status:** Draft
+---
+
+## Sheet 5: Simulation_Results
+
+---
+
+## Sheet 6: Remediation_Tracking
+
+---
+
+## Sheet 7: Compliance_Summary
+
+---
+
+## Sheet 8: Overdue_Alerts
+
+---
+
+## Sheet 9: Evidence_Register
+
+---
+
+## Sheet 10: Dashboard
+
+---
+
+## Sheet 11: Approval_Sign_Off
+
+---
+
+## Sheet 12: Approval_Signoff
 
 ---
 

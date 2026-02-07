@@ -123,6 +123,7 @@ VERSION = "1.0"
 CONTROL_REF = "ISO/IEC 27001:2022 - Controls A.8.2, A.8.3, A.8.5: Authentication & Privileged Access"
 GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")
 GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_MFA_Coverage_{GENERATED_TIMESTAMP}.xlsx"
 # Workbook structure
 USER_ROW_COUNT = 200        # Pre-formatted rows for user MFA tracking
 USER_TYPE_COUNT = 20        # User type category rows

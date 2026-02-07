@@ -19,37 +19,13 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-1. [PART I: USER COMPLETION GUIDE](#part-i-user-completion-guide)
-   - [1.1 Assessment Overview](#11-assessment-overview)
-   - [1.2 Control Requirements](#12-control-requirements)
-   - [1.3 Prerequisites](#13-prerequisites)
-   - [1.4 Exit Scenarios](#14-exit-scenarios)
-   - [1.5 Workbook Structure](#15-workbook-structure)
-   - [1.6 Completion Walkthrough](#16-completion-walkthrough)
-   - [1.7 Access Revocation Framework](#17-access-revocation-framework)
-   - [1.8 Asset Recovery Process](#18-asset-recovery-process)
-   - [1.9 Evidence Collection](#19-evidence-collection)
-   - [1.10 Common Pitfalls](#110-common-pitfalls)
-   - [1.11 Quality Checklist](#111-quality-checklist)
-   - [1.12 Review and Approval](#112-review-and-approval)
-   - [1.13 Regulatory Compliance](#113-regulatory-compliance)
-   - [1.14 Related Controls](#114-related-controls)
-2. [PART II: TECHNICAL SPECIFICATION](#part-ii-technical-specification)
-   - [2.1 Workbook Architecture](#21-workbook-architecture)
-   - [2.2 Sheet Specifications](#22-sheet-specifications)
-   - [2.3 Data Validations](#23-data-validations)
-   - [2.4 Conditional Formatting](#24-conditional-formatting)
-   - [2.5 Formula Specifications](#25-formula-specifications)
-   - [2.6 Cell Styling Standards](#26-cell-styling-standards)
-   - [2.7 Generator Script Reference](#27-generator-script-reference)
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.6.4-5.S2-TG.
 
 ---
 
----
-
-## 1.1 Assessment Overview
+## Assessment Overview
 
 ### Purpose
 
@@ -111,7 +87,7 @@ A well-defined employment exit process delivers:
 
 ---
 
-## 1.2 Control Requirements
+## Control Requirements
 
 ### ISO 27001:2022 Control A.6.5
 
@@ -166,7 +142,7 @@ ISO 27001 auditors examining Control A.6.5 will verify:
 
 ---
 
-## 1.3 Prerequisites
+## Prerequisites
 
 ### Before Starting This Assessment
 
@@ -207,7 +183,7 @@ Before proceeding, verify:
 
 ---
 
-## 1.4 Exit Scenarios
+## Exit Scenarios
 
 ### Understanding Exit Types
 
@@ -301,55 +277,7 @@ Is the person leaving the organisation?
 
 ---
 
-## 1.5 Workbook Structure
-
-### Sheet Overview
-
-| Sheet | Purpose | Primary User | Update Frequency |
-|-------|---------|--------------|------------------|
-| **Instructions** | Guidance and orientation | All users | As needed |
-| **Exit_Procedures** | Process by exit type | HR, IT | Annual |
-| **Access_Revocation** | Revocation requirements | IAM Team | Annual |
-| **Asset_Recovery** | Asset return tracking | IT Operations | Ongoing |
-| **Exit_Tracker** | Active and completed exits | HR | Ongoing |
-| **Leaver_Reconciliation** | Orphaned account check | IAM Team | Monthly |
-| **Evidence_Register** | Evidence tracking | ISM | Ongoing |
-| **Approval_SignOff** | Assessment authorisation | Approvers | At completion |
-
-### Sheet Relationships
-
-```
-┌─────────────────┐
-│  Instructions   │ ◄── Start here
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐     ┌─────────────────┐
-│Exit_Procedures  │────►│Access_Revocation│
-└────────┬────────┘     └─────────────────┘
-         │                      │
-         │                      │
-         ▼                      ▼
-┌─────────────────┐     ┌─────────────────┐
-│Asset_Recovery   │◄────┤  Exit_Tracker   │
-└────────┬────────┘     └─────────────────┘
-         │                      │
-         │                      │
-         ▼                      ▼
-┌─────────────────┐     ┌─────────────────┐
-│Leaver_          │     │Evidence_Register│
-│Reconciliation   │     │                 │
-└────────┬────────┘     └─────────────────┘
-         │
-         ▼
-┌─────────────────┐
-│ Approval_SignOff│ ◄── Complete here
-└─────────────────┘
-```
-
----
-
-## 1.6 Completion Walkthrough
+## Completion Walkthrough
 
 ### Step 1: Review Instructions Sheet
 
@@ -581,7 +509,7 @@ Follow standard evidence collection and approval processes as per Section 1.9 an
 
 ---
 
-## 1.7 Access Revocation Framework
+## Access Revocation Framework
 
 ### Access Revocation Scope
 
@@ -621,7 +549,7 @@ After revocation, verify access has been removed:
 
 ---
 
-## 1.8 Asset Recovery Process
+## Asset Recovery Process
 
 ### Asset Categories
 
@@ -679,7 +607,7 @@ If assets are not returned by the deadline:
 
 ---
 
-## 1.9 Evidence Collection
+## Evidence Collection
 
 ### Evidence Requirements
 
@@ -706,7 +634,7 @@ EVD-A.6.4-5.2_[EvidenceType]_[YYYYMMDD].[ext]
 
 ---
 
-## 1.10 Common Pitfalls
+## Common Pitfalls
 
 Avoid these common mistakes when implementing employment exit processes:
 
@@ -762,7 +690,7 @@ Avoid these common mistakes when implementing employment exit processes:
 
 ---
 
-## 1.11 Quality Checklist
+## Quality Checklist
 
 Before submitting the completed assessment:
 
@@ -804,7 +732,7 @@ Before submitting the completed assessment:
 
 ---
 
-## 1.12 Review and Approval
+## Review and Approval
 
 ### Review Process
 
@@ -834,7 +762,7 @@ Before submitting the completed assessment:
 
 ---
 
-## 1.13 Regulatory Compliance
+## Regulatory Compliance
 
 ### Swiss Employment Law
 
@@ -855,7 +783,7 @@ Before submitting the completed assessment:
 
 ---
 
-## 1.14 Related Controls
+## Related Controls
 
 | Control | Relationship |
 |---------|--------------|
@@ -865,7 +793,6 @@ Before submitting the completed assessment:
 | **A.8.1** User Endpoints | Asset recovery |
 
 ---
-
 
 **END OF USER GUIDE**
 

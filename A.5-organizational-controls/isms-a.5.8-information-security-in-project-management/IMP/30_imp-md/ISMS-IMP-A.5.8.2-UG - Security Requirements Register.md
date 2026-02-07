@@ -1594,11 +1594,6 @@ This section provides detailed guidance for each of the 6 requirement categories
 
 ---
 
-[CONTINUING - Next will add Step-by-Step Workflow detail, Part II Technical Specification, completing A.5.8.2 to 2000-2500 lines]
-
----
-
-
 **END OF USER GUIDE**
 
 ---

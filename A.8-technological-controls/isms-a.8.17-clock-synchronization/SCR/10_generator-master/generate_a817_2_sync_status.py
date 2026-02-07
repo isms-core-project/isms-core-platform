@@ -310,6 +310,8 @@ XMARK = '\u274C'      # ❌ Red X
 
 # Document identification constants
 DOCUMENT_ID = "ISMS-IMP-A.8.17.2"
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_Sync_Status_{GENERATED_TIMESTAMP}.xlsx"
 CONTROL_REF = "ISO/IEC 27001:2022 - Control A.8.17: Clock Synchronization"
 WARNING = '\u26A0'    # ⚠️  Warning sign
 CLOCK = '\u23F0'      # ⏰ Alarm clock

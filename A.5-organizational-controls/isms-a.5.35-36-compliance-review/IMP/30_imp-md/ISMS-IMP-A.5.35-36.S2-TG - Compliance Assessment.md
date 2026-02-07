@@ -20,122 +20,162 @@
 
 # Technical Specification
 
-### Workbook Architecture
 
-**File Details**:
+> Auto-generated from `generate_a535_36_2_compliance_assessment.py`
+> Re-generate with: `python3 generate_tg_from_scr.py --apply`
 
-- Filename: `ISMS-IMP-A.5.35-36.S2_Compliance_Assessment_YYYYMMDD.xlsx`
-- Format: Microsoft Excel (.xlsx)
-- Sheets: 7
+## Workbook Overview
 
-### Sheet Specifications
+| Property | Value |
+|----------|-------|
+| **Document ID** | `ISMS-IMP-A.5.35-36.S2` |
+| **Output Filename** | `ISMS-IMP-A.5.35-36.S2_Compliance_Assessment_YYYYMMDD.xlsx` |
+| **Workbook Title** | Compliance Assessment |
+| **Total Sheets** | 8 (8 visible) |
+| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
 
-#### Policy_Compliance Sheet
+## Color Palette
 
-**Columns**:
+| Hex Code | Style Name | Description |
+|----------|-----------|-------------|
+| #003366 | 003366 | Dark Blue (Headers) |
+| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
+| #808080 | 808080 | Gray (Disabled) |
+| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
+| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | FFFFCC | Light Yellow (User Input) |
 
-| Column | Header | Width | Content |
-|--------|--------|-------|---------|
-| A | Policy_ID | 18 | Policy document ID |
-| B | Policy_Title | 35 | Policy name |
-| C | Policy_Version | 12 | Version number |
-| D | Last_Review_Date | 14 | Date field |
-| E | Compliance_Status | 16 | Data validation |
-| F | Score | 10 | Numeric (0, 0.5, 1) |
-| G | Key_Requirement_1 | 35 | User input |
-| H | Req_1_Status | 14 | Data validation |
-| I | Key_Requirement_2 | 35 | User input |
-| J | Req_2_Status | 14 | Data validation |
-| K | Key_Requirement_3 | 35 | User input |
-| L | Req_3_Status | 14 | Data validation |
-| M | Evidence_Ref | 16 | User input |
-| N | Assessor | 20 | User input |
-| O | Assessment_Date | 14 | Date field |
-| P | Notes | 30 | User input |
+## Sheet 1: Workbook
 
-#### Control_Compliance Sheet
+---
 
-**Columns**:
+## Sheet 2: Instructions
 
-| Column | Header | Width | Content |
-|--------|--------|-------|---------|
-| A | Control_ID | 14 | ISO control reference |
-| B | Control_Name | 35 | Control title |
-| C | Control_Objective | 40 | User input |
-| D | Implementation_Status | 18 | Data validation |
-| E | Operating_Effectiveness | 18 | Data validation |
-| F | Compliance_Score | 14 | Numeric |
-| G | Evidence_of_Implementation | 40 | User input |
-| H | Evidence_of_Effectiveness | 40 | User input |
-| I | Evidence_Ref | 16 | User input |
-| J | Gap_Description | 35 | User input |
-| K | Assessor | 20 | User input |
-| L | Assessment_Date | 14 | Date field |
+**Frozen Panes:** A4
 
-#### Department_Assessment Sheet
+---
 
-**Columns**:
+## Sheet 3: Policy_Compliance
 
-| Column | Header | Width | Content |
-|--------|--------|-------|---------|
-| A | Department | 25 | User input |
-| B | Manager | 22 | User input |
-| C | Assessment_Period | 14 | User input |
-| D | Assessment_Date | 14 | Date field |
-| E | Security_Awareness | 14 | Data validation |
-| F | Policy_Knowledge | 14 | Data validation |
-| G | Training_Compliance | 14 | Percentage |
-| H | Incident_Reporting | 14 | Data validation |
-| I | Asset_Management | 14 | Data validation |
-| J | Access_Control | 14 | Data validation |
-| K | Data_Handling | 14 | Data validation |
-| L | Physical_Security | 14 | Data validation |
-| M | Overall_Status | 16 | Data validation |
-| N | Key_Issues | 40 | User input |
-| O | Actions_Planned | 40 | User input |
-| P | Notes | 30 | User input |
+**Data Rows:** 11 (rows 1–11) | **Frozen Panes:** C4
 
-#### NonCompliance_Register Sheet
+### Columns
 
-**Columns**:
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Policy_ID | 16 |
+| B | Policy_Name | 40 |
+| C | Policy_Version | 14 |
+| D | Compliance_Status | 18 |
+| E | Last_Reviewed | 14 |
+| F | Assessed_By | 22 |
+| G | Assessment_Date | 14 |
+| H | Evidence_Ref | 18 |
+| I | NonCompliance_Issues | 30 |
+| J | Remediation_Status | 18 |
+| K | Notes | 30 |
 
-| Column | Header | Width | Content |
-|--------|--------|-------|---------|
-| A | NC_ID | 14 | Auto-format |
-| B | Source | 18 | Data validation |
-| C | Related_Ref | 16 | User input |
-| D | Description | 45 | User input |
-| E | Severity | 12 | Data validation |
-| F | Area_Affected | 22 | User input |
-| G | Root_Cause | 35 | User input |
-| H | Identified_Date | 14 | Date field |
-| I | Owner | 22 | User input |
-| J | Corrective_Action | 40 | User input |
-| K | Target_Date | 14 | Date field |
-| L | Status | 14 | Data validation |
-| M | Closure_Date | 14 | Date field |
-| N | Verification_By | 20 | User input |
-| O | Notes | 30 | User input |
+---
 
-### Data Validations
+## Sheet 4: Control_Compliance
 
-| Field | Validation List |
-|-------|-----------------|
-| Compliance_Status | Compliant, Partial, Non-Compliant, Not Applicable |
-| Requirement_Status | Met, Partially Met, Not Met, Not Applicable |
-| Implementation_Status | Implemented, Partially Implemented, Not Implemented, Not Applicable |
-| Operating_Effectiveness | Effective, Partially Effective, Ineffective |
-| Awareness_Level | High, Medium, Low |
-| Department_Overall | Compliant, Partial, Non-Compliant |
-| NC_Source | Policy Assessment, Control Assessment, Department Assessment, Audit, Other |
-| Severity | Critical, High, Medium, Low |
-| NC_Status | Open, In Progress, Remediated, Verified, Risk Accepted |
+**Data Rows:** 10 (rows 1–10) | **Frozen Panes:** C4
 
-### Generator Reference
+### Columns
 
-**Script**: `generate_a535_36_2_compliance_assessment.py`
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Control_ID | 14 |
+| B | Control_Name | 45 |
+| C | Control_Category | 22 |
+| D | Compliance_Status | 18 |
+| E | Implementation_% | 14 |
+| F | Last_Assessed | 14 |
+| G | Assessed_By | 22 |
+| H | Evidence_Ref | 18 |
+| I | Gaps_Identified | 30 |
+| J | Notes | 30 |
 
-**Location**: `10-isms-scr-base/isms-a.5.35-36-compliance-review/10_generator-master/`
+---
+
+## Sheet 5: Department_Assessment
+
+**Data Rows:** 12 (rows 1–12) | **Frozen Panes:** B4
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Department | 25 |
+| B | Manager | 22 |
+| C | Assessment_Period | 16 |
+| D | AUP_Compliance | 16 |
+| E | Access_Control_Compliance | 20 |
+| F | Incident_Reporting_Compliance | 22 |
+| G | Training_Compliance | 18 |
+| H | Asset_Management_Compliance | 22 |
+| I | Overall_Rating | 16 |
+| J | Issues_Identified | 30 |
+| K | Improvement_Actions | 30 |
+| L | Sign_Off_Date | 14 |
+
+---
+
+## Sheet 6: Noncompliance_Register
+
+**Data Rows:** 100 (rows 4–103) | **Frozen Panes:** D4
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | NC_ID | 12 |
+| B | Identified_Date | 14 |
+| C | Policy_Control_Ref | 20 |
+| D | Department | 20 |
+| E | NC_Description | 45 |
+| F | Root_Cause | 30 |
+| G | Severity | 14 |
+| H | Remediation_Action | 35 |
+| I | Owner | 22 |
+| J | Target_Date | 14 |
+| K | Status | 16 |
+| L | Closure_Date | 14 |
+
+---
+
+## Sheet 7: Evidence_Register
+
+**Data Rows:** 100 (rows 4–103) | **Frozen Panes:** C4
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Evidence_ID | 15 |
+| B | Evidence_Type | 22 |
+| C | Description | 45 |
+| D | Related_Assessment | 20 |
+| E | Collection_Date | 16 |
+| F | Location | 40 |
+| G | Collected_By | 25 |
+| H | Valid_Until | 16 |
+
+---
+
+## Sheet 8: Approval_Signoff
+
+**Data Rows:** 100 (rows 4–103) | **Frozen Panes:** A3
+
+### Formulas
+
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| — | `=COUNTA(Policy_Compliance!A4:A36)-COUNTBLANK(Policy_Compliance!B4:B36)` | Policies Assessed |
+| — | `=COUNTIF(Policy_Compliance!D4:D36,` | Policies Compliant |
+| — | `=COUNTIF(NonCompliance_Register!K4:K103,` | Open Non-Conformances |
 
 ---
 

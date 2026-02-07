@@ -30,7 +30,7 @@
 
 ### What This Document Provides
 
-**Part I: User Completion Guide** (~4,500 lines target)
+**User Completion Guide** (~4,500 lines target)
 
 - Dashboard overview and architecture
 - Source workbook prerequisites and validation

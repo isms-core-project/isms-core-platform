@@ -33,7 +33,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
 #### 1.1 Purpose
 
@@ -72,7 +72,7 @@ This assessment covers:
 | Periodic Review | Quarterly for technical controls, Annual for physical security |
 | Triggered Review | After device security incidents, major endpoint changes |
 
-### 2. Prerequisites
+### Prerequisites
 
 Before starting this assessment, ensure:
 
@@ -85,7 +85,7 @@ Before starting this assessment, ensure:
 | BYOD policy documentation | ☐ | If BYOD is permitted |
 | Physical security guidelines | ☐ | Home office requirements |
 
-### 3. Assessment Workflow
+### Assessment Workflow
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -124,7 +124,7 @@ Before starting this assessment, ensure:
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-### 4. Sheet-by-Sheet Completion Guide
+### Sheet-by-Sheet Completion Guide
 
 #### 4.1 Instructions Sheet
 
@@ -330,7 +330,7 @@ Before starting this assessment, ensure:
 
 **Purpose**: Document formal review and approval.
 
-### 5. Evidence Collection Guidelines
+### Evidence Collection Guidelines
 
 #### 5.1 Required Evidence Types
 
@@ -343,7 +343,7 @@ Before starting this assessment, ensure:
 | Policy Documents | BYOD policy, physical security guidelines |
 | Acknowledgments | Sample signed acknowledgments |
 
-### 6. Common Pitfalls
+### Common Pitfalls
 
 #### ❌ MISTAKE #1: Only Checking Managed Devices
 
@@ -435,7 +435,7 @@ Before starting this assessment, ensure:
 
 ---
 
-### 7. Quality Checklist
+### Quality Checklist
 
 #### Completeness Checks
 
@@ -465,7 +465,7 @@ Before starting this assessment, ensure:
 
 ---
 
-### 8. Review and Approval Process
+### Review and Approval Process
 
 #### 8.1 Review Workflow
 

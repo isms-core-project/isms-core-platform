@@ -286,6 +286,8 @@ BULLET = "\u2022"          # •
 # Document identification constants
 DOCUMENT_ID = "ISMS-IMP-A.8.15.3"
 CONTROL_REF = "ISO/IEC 27001:2022 - Control A.8.15: Logging"
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_Log_Protection_Retention_{GENERATED_TIMESTAMP}.xlsx"
 
 
 # ============================================================================
@@ -2177,7 +2179,7 @@ def main():
     logger.info("Applying conditional formatting...")
     apply_conditional_formatting(wb)
     
-    filename = f"ISMS-IMP-A.8.15.3_Log_Protection_Retention_{datetime.now().strftime('%Y%m%d')}.xlsx"
+    filename = OUTPUT_FILENAME
     
     logger.info("")
     logger.info("Saving workbook...")

@@ -18,7 +18,7 @@
 
 ---
 
-### 1. Assessment Overview
+### Assessment Overview
 
 #### 1.1 Purpose
 
@@ -67,7 +67,7 @@ Dashboard reporting covers:
 - Action items requiring management decisions
 - Trends indicating direction of travel
 
-### 2. Prerequisites
+### Prerequisites
 
 Before populating this dashboard, ensure:
 
@@ -102,17 +102,7 @@ Before consolidating data, verify source workbook quality:
 | Trend Analysis | Historical data | Update quarterly |
 | Action Items | Continuous | Update monthly |
 
-### 3. Workbook Structure
-
-| Sheet | Purpose | Update Frequency |
-|-------|---------|------------------|
-| **Instructions** | Guidance and data sources | Reference |
-| **Executive Summary** | High-level KPIs for leadership | Quarterly |
-| **By Department** | Department-level metrics | Quarterly |
-| **Trend Analysis** | Quarter-over-quarter trends | Quarterly |
-| **Action Items** | Improvement actions tracking | Continuous |
-
-### 4. Completion Walkthrough
+### Completion Walkthrough
 
 #### Step 1: Executive Summary
 
@@ -169,7 +159,7 @@ Track improvement actions:
 6. Update **Status**: Open, In Progress, Completed, Overdue, Cancelled
 7. Record **Completion_Date** and **Evidence** when closed
 
-### 5. Worked Examples
+### Worked Examples
 
 #### Example A: Executive Summary - High-Performing Organisation
 
@@ -262,7 +252,7 @@ Track improvement actions:
 - Open: 1 (20%)
 - Overdue: 0 (0%)
 
-### 6. Dashboard Presentation Tips
+### Dashboard Presentation Tips
 
 #### For Executive Management Meetings
 
@@ -295,7 +285,7 @@ Track improvement actions:
 | "What resources do you need?" | Be specific about budget/headcount asks |
 | "Who is responsible?" | Focus on systemic issues, not individuals (in executive forum) |
 
-### 7. Evidence Collection
+### Evidence Collection
 
 | Dashboard Element | Evidence Required |
 |-------------------|-------------------|
@@ -315,7 +305,7 @@ Track improvement actions:
 | Executive presentations | 5 years | 1 year |
 | Meeting minutes | 7 years | 2 years |
 
-### 8. Common Pitfalls
+### Common Pitfalls
 
 ❌ **MISTAKE**: Presenting dashboard without current source data
 ✅ **CORRECT**: Verify A.5.4.1 and A.5.4.2 are current before dashboard update
@@ -347,7 +337,7 @@ Track improvement actions:
 ❌ **MISTAKE**: Using different definitions of metrics across quarters
 ✅ **CORRECT**: Document metric definitions; apply consistently for trend validity
 
-### 9. Quality Checklist
+### Quality Checklist
 
 Before presenting to executive management:
 
@@ -361,7 +351,7 @@ Before presenting to executive management:
 - [ ] Dashboard saved with correct naming convention
 - [ ] Executive talking points prepared for key findings
 
-### 10. Review and Approval
+### Review and Approval
 
 | Role | Responsibility | Timing |
 |------|----------------|--------|
@@ -370,7 +360,7 @@ Before presenting to executive management:
 | CISO | Approve for management review | Q+10 business days |
 | Executive Management | Review in management review meeting | Per ISMS calendar |
 
-### 11. Audit Preparation
+### Audit Preparation
 
 #### Stage 2 Audit Evidence Requirements
 
@@ -398,7 +388,6 @@ When auditors review management leadership, prepare:
 | "How frequently is this updated?" | Workbook file dates showing quarterly updates |
 
 ---
-
 
 **END OF USER GUIDE**
 

@@ -20,156 +20,147 @@
 
 # Technical Specification
 
-### Workbook Architecture
 
-**File Details**:
+> Auto-generated from `generate_a535_36_4_compliance_dashboard.py`
+> Re-generate with: `python3 generate_tg_from_scr.py --apply`
 
-- Filename: `ISMS-IMP-A.5.35-36.S4_Compliance_and_Review_Dashboard_YYYYMMDD.xlsx`
-- Format: Microsoft Excel (.xlsx)
-- Sheets: 8
+## Workbook Overview
 
-### Sheet Specifications
+| Property | Value |
+|----------|-------|
+| **Document ID** | `ISMS-IMP-A.5.35-36.S4` |
+| **Output Filename** | `ISMS-IMP-A.5.35-36.S4_Compliance_and_Review_Dashboard_YYYYMMDD.xlsx` |
+| **Workbook Title** | Compliance and Review Dashboard |
+| **Total Sheets** | 9 (9 visible) |
+| **Control Reference** | ISO/IEC 27001:2022 - Controls {...}: {...} |
 
-#### Executive_Summary Sheet
+## Color Palette
 
-**KPI Boxes** (merged cells for visual impact):
-- Overall ISMS Status (cells A3:B5)
-- Compliance Score (cells D3:E5)
-- Open Critical Findings (cells G3:H5)
+| Hex Code | Style Name | Description |
+|----------|-----------|-------------|
+| #003366 | 003366 | Dark Blue (Headers) |
+| #2F5496 | 2F5496 | Dark Blue (Alt Headers) |
+| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
+| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
+| #E2EFDA | E2EFDA | Pale Green (Success Background) |
+| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | FFFFCC | Light Yellow (User Input) |
 
-**Key Metrics Table**:
+## Sheet 1: Workbook
 
-| Column | Header | Width | Content |
-|--------|--------|-------|---------|
-| A | Metric | 35 | Pre-populated metrics |
-| B | Value | 14 | User input |
-| C | Target | 14 | Pre-populated targets |
-| D | Status | 12 | Data validation |
-| E | Trend | 12 | Data validation |
+---
 
-**Key Messages Table**:
+## Sheet 2: Instructions
 
-| Column | Header | Width |
-|--------|--------|-------|
-| A-C | Message | 60 (merged) |
-| D | Priority | 14 |
-| E | Owner | 20 |
-| F | Action Required | 14 |
+**Frozen Panes:** A4
 
-#### Review_Status Sheet
+---
 
-**Columns**:
+## Sheet 3: Executive_Summary
 
-| Column | Header | Width | Content |
-|--------|--------|-------|---------|
-| A | Review_ID | 14 | Link to ISMS-IMP-A.5.35-36.S1 |
-| B | Review_Type | 18 | User input |
-| C | Planned_Date | 14 | Date field |
-| D | Actual_Date | 14 | Date field |
-| E | Status | 14 | Data validation |
-| F | Reviewer | 22 | User input |
-| G | Overall_Opinion | 18 | Data validation |
-| H | Findings_Critical | 12 | Numeric |
-| I | Findings_High | 12 | Numeric |
-| J | Findings_Total | 12 | Numeric |
-| K | Report_Issued | 10 | Data validation |
-| L | Actions_Agreed | 10 | Data validation |
-| M | Notes | 30 | User input |
+**Data Rows:** 4 (rows 1–4)
 
-#### Compliance_Status Sheet
+### Columns
 
-**Columns**:
+| Col | Header |
+|-----|--------|
+| A | Metric |
+| B | Current Value |
+| C | Target |
+| D | Status |
 
-| Column | Header | Width | Content |
-|--------|--------|-------|---------|
-| A | Compliance_Area | 30 | User input |
-| B | Last_Assessment | 14 | Date field |
-| C | Next_Assessment | 14 | Date field |
-| D | Compliance_Score | 14 | Percentage |
-| E | Status | 16 | Data validation |
-| F | Trend | 12 | Data validation |
-| G | Open_NonCompliance | 14 | Numeric |
-| H | Key_Issues | 40 | User input |
-| I | Owner | 22 | User input |
-| J | Notes | 30 | User input |
+---
 
-#### Findings_Overview Sheet
+## Sheet 4: Review_Status
 
-**Columns**:
+**Data Rows:** 20 (rows 4–23) | **Frozen Panes:** C4
 
-| Column | Header | Width | Content |
-|--------|--------|-------|---------|
-| A | Period | 14 | User input |
-| B | Total_Open | 12 | Numeric |
-| C | Critical_Open | 12 | Numeric |
-| D | High_Open | 12 | Numeric |
-| E | Medium_Open | 12 | Numeric |
-| F | Low_Open | 12 | Numeric |
-| G | Closed_This_Period | 14 | Numeric |
-| H | Opened_This_Period | 14 | Numeric |
-| I | Overdue | 12 | Numeric |
-| J | Overdue_Critical | 12 | Numeric |
-| K | Overdue_High | 12 | Numeric |
-| L | Avg_Age_Days | 12 | Numeric |
-| M | Oldest_Finding | 14 | Numeric |
-| N | MTTR_Critical | 12 | Numeric |
-| O | MTTR_High | 12 | Numeric |
+### Columns
 
-#### KPI_Scorecard Sheet
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Review_ID | 16 |
+| B | Review_Type | 22 |
+| C | Scope | 35 |
+| D | Planned_Date | 14 |
+| E | Actual_Date | 14 |
+| F | Status | 16 |
+| G | Lead_Reviewer | 22 |
+| H | Findings_Count | 14 |
+| I | Report_Status | 16 |
+| J | Notes | 30 |
 
-**Columns**:
+---
 
-| Column | Header | Width | Content |
-|--------|--------|-------|---------|
-| A | KPI_ID | 10 | Unique identifier |
-| B | KPI_Name | 40 | KPI description |
-| C | Target | 14 | Target value |
-| D | Current_Value | 14 | Actual value |
-| E | Prior_Period | 14 | Previous period |
-| F | Trend | 12 | Data validation |
-| G | Status | 12 | Data validation |
-| H | Owner | 22 | User input |
-| I | Notes | 30 | User input |
+## Sheet 5: Compliance_Status
 
-#### Trend_Analysis Sheet
+**Data Rows:** 7 (rows 2–8) | **Frozen Panes:** B4
 
-**Columns**:
+### Columns
 
-| Column | Header | Width | Content |
-|--------|--------|-------|---------|
-| A | Period | 12 | Pre-populated (Q1 2025, etc.) |
-| B | Period_End_Date | 14 | Date field |
-| C | Reviews_Completed | 14 | Numeric |
-| D | Reviews_Planned | 14 | Numeric |
-| E | Compliance_Score | 14 | Percentage |
-| F | Score_Change | 12 | Numeric (formula) |
-| G | Open_Findings_Total | 14 | Numeric |
-| H | Open_Critical | 12 | Numeric |
-| I | Open_High | 12 | Numeric |
-| J | Closed_in_Period | 14 | Numeric |
-| K | MTTR_Critical | 12 | Numeric |
-| L | MTTR_High | 12 | Numeric |
-| M | Overall_Status | 12 | Data validation |
-| N | Notes | 40 | User input |
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Area | 30 |
+| B | Policies_Total | 14 |
+| C | Policies_Compliant | 16 |
+| D | Compliance_% | 14 |
+| E | Controls_Total | 14 |
+| F | Controls_Implemented | 18 |
+| G | Implementation_% | 16 |
+| H | RAG_Status | 14 |
 
-### Data Validations
+---
 
-| Field | Validation List |
-|-------|-----------------|
-| Overall_Status | Green, Amber, Red |
-| KPI_Status | On Track, At Risk, Behind |
-| Trend | Improving, Stable, Declining |
-| Review_Status | Scheduled, In Progress, Completed, Overdue |
-| Review_Opinion | Effective, Partially Effective, Ineffective |
-| Compliance_Status | Compliant, Partial, Non-Compliant |
-| Yes_No | Yes, No |
-| Trend_Direction | Up, Down, Stable |
+## Sheet 6: Findings_Overview
 
-### Generator Reference
+**Data Rows:** 4 (rows 2–5)
 
-**Script**: `generate_a535_36_4_compliance_dashboard.py`
+---
 
-**Location**: `10-isms-scr-base/isms-a.5.35-36-compliance-review/10_generator-master/`
+## Sheet 7: Kpi_Scorecard
+
+**Data Rows:** 8 (rows 1–8) | **Frozen Panes:** C4
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | KPI_ID | 12 |
+| B | KPI_Name | 40 |
+| C | Category | 20 |
+| D | Current_Value | 16 |
+| E | Target | 14 |
+| F | Threshold_Amber | 16 |
+| G | Threshold_Red | 14 |
+| H | Status | 14 |
+
+---
+
+## Sheet 8: Trend_Analysis
+
+**Data Rows:** 8 (rows 2–9) | **Frozen Panes:** B4
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Period | 14 |
+| B | Policy_Compliance_% | 18 |
+| C | Control_Implementation_% | 20 |
+| D | Reviews_Completed | 16 |
+| E | Open_Findings | 14 |
+| F | Closed_Findings | 14 |
+| G | Avg_Closure_Days | 16 |
+| H | Overall_Score | 14 |
+| I | Notes | 35 |
+
+---
+
+## Sheet 9: Approval_Signoff
+
+**Frozen Panes:** A3
 
 ---
 

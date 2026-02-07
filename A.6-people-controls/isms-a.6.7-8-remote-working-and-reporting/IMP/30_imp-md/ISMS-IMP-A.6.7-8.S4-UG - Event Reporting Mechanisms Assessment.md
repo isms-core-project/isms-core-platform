@@ -33,9 +33,9 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 This assessment workbook evaluates [Organization]'s security event reporting mechanisms, ensuring that:
 - Multiple accessible reporting channels exist
@@ -45,7 +45,7 @@ This assessment workbook evaluates [Organization]'s security event reporting mec
 - Reporting mechanisms are accessible from remote locations
 - Event reporting integrates with incident management
 
-### 1.2 Scope
+### Scope
 
 This assessment covers:
 - Reporting channel inventory and accessibility
@@ -57,14 +57,14 @@ This assessment covers:
 - Integration with incident management (A.5.24-28)
 - Remote accessibility of reporting channels
 
-### 1.3 Target Audience
+### Target Audience
 
 - **Primary Assessors**: IT Security Team, Security Operations
 - **Data Contributors**: Help Desk, HR, Communications
 - **Reviewers**: IT Security Manager, CISO
 - **Approvers**: CISO
 
-### 1.4 Assessment Frequency
+### Assessment Frequency
 
 | Trigger | Frequency |
 |---------|-----------|
@@ -72,7 +72,7 @@ This assessment covers:
 | Periodic Review | Semi-Annual |
 | Triggered Review | After significant security events, reporting failures |
 
-## 2. Prerequisites
+## Prerequisites
 
 Before starting this assessment, ensure:
 
@@ -84,7 +84,7 @@ Before starting this assessment, ensure:
 | Sample of recent event reports | ☐ | For process verification |
 | Response time metrics (if available) | ☐ | SLA compliance data |
 
-## 3. Assessment Workflow
+## Assessment Workflow
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -123,13 +123,13 @@ Before starting this assessment, ensure:
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-## 4. Sheet-by-Sheet Completion Guide
+## Sheet-by-Sheet Completion Guide
 
-### 4.1 Instructions Sheet
+### Instructions Sheet
 
 **Purpose**: Provides guidance for workbook users.
 
-### 4.2 Reporting_Channels Sheet
+### Reporting_Channels Sheet
 
 **Purpose**: Inventory all security event reporting channels.
 
@@ -153,7 +153,7 @@ Before starting this assessment, ensure:
 - At least 1 available 24/7 for critical events
 - All channels accessible from remote locations
 
-### 4.3 Channel_Accessibility Sheet
+### Channel_Accessibility Sheet
 
 **Purpose**: Verify that reporting channels are accessible and functional.
 
@@ -171,7 +171,7 @@ Before starting this assessment, ensure:
 | Issues Found | Any issues during testing | Free text |
 | Evidence | Test evidence reference | Free text |
 
-### 4.4 Reporting_Procedures Sheet
+### Reporting_Procedures Sheet
 
 **Purpose**: Assess documentation of reporting procedures.
 
@@ -198,7 +198,7 @@ Before starting this assessment, ensure:
 - Escalation paths
 - Anonymity options
 
-### 4.5 Event_Categories Sheet
+### Event_Categories Sheet
 
 **Purpose**: Verify that reportable event categories are defined with examples.
 
@@ -226,7 +226,7 @@ Before starting this assessment, ensure:
 - Suspicious activity
 - Remote work specific events
 
-### 4.6 Awareness_Assessment Sheet
+### Awareness_Assessment Sheet
 
 **Purpose**: Assess whether personnel are aware of reporting obligations.
 
@@ -243,7 +243,7 @@ Before starting this assessment, ensure:
 | Compliant | Meets requirements | Formula |
 | Evidence | Training materials, etc. | Free text |
 
-### 4.7 Response_Sampling Sheet
+### Response_Sampling Sheet
 
 **Purpose**: Sample actual event reports to verify process effectiveness.
 
@@ -270,7 +270,7 @@ Before starting this assessment, ensure:
 | Compliant | Overall process compliance | Formula |
 | Notes | Observations | Free text |
 
-### 4.8 NonBlame_Culture Sheet
+### NonBlame_Culture Sheet
 
 **Purpose**: Assess implementation of non-blame reporting culture.
 
@@ -295,7 +295,7 @@ Before starting this assessment, ensure:
 - Management endorsement of reporting
 - No negative examples (blame incidents)
 
-### 4.9 Integration_Assessment Sheet
+### Integration_Assessment Sheet
 
 **Purpose**: Assess integration with incident management.
 
@@ -317,7 +317,7 @@ Before starting this assessment, ensure:
 - Metrics shared between event and incident management
 - Common ticketing/tracking system (if applicable)
 
-### 4.10 Gap_Analysis Sheet
+### Gap_Analysis Sheet
 
 **Purpose**: Consolidate all event reporting gaps.
 
@@ -335,11 +335,11 @@ Before starting this assessment, ensure:
 | Target Date | Remediation deadline | Date |
 | Status | Current status | Dropdown |
 
-### 4.11 Evidence_Register Sheet
+### Evidence_Register Sheet
 
 **Purpose**: Catalog all evidence collected.
 
-### 4.12 Dashboard Sheet
+### Dashboard Sheet
 
 **Purpose**: Provide executive summary.
 
@@ -352,13 +352,13 @@ Before starting this assessment, ensure:
 - Non-blame culture score
 - Gap count by severity
 
-### 4.13 Approval_Sign_Off Sheet
+### Approval_Sign_Off Sheet
 
 **Purpose**: Document formal review and approval.
 
-## 5. Evidence Collection Guidelines
+## Evidence Collection Guidelines
 
-### 5.1 Required Evidence Types
+### Required Evidence Types
 
 | Evidence Category | Examples |
 |-------------------|----------|
@@ -369,7 +369,7 @@ Before starting this assessment, ensure:
 | Response Logs | Acknowledgment records, ticket history |
 | Communications | Awareness communications, policy announcements |
 
-## 6. Common Pitfalls
+## Common Pitfalls
 
 #### ❌ MISTAKE #1: Only Testing Primary Reporting Channel
 
@@ -461,7 +461,7 @@ Before starting this assessment, ensure:
 
 ---
 
-## 7. Quality Checklist
+## Quality Checklist
 
 #### Completeness Checks
 
@@ -491,15 +491,15 @@ Before starting this assessment, ensure:
 
 ---
 
-## 8. Review and Approval Process
+## Review and Approval Process
 
-### 8.1 Review Workflow
+### Review Workflow
 
 **Step 1: Self-Review** (Assessor) - Complete Quality Checklist
 **Step 2: Technical Review** (Security Operations) - 2-3 days
 **Step 3: Management Approval** (CISO) - 1-2 days
 
-### 8.2 After Approval
+### After Approval
 
 1. **Store Assessment:** `ISMS/Controls/A.6.7-8/Event_Reporting/`
 2. **Distribute:** Security Operations, Help Desk, Communications

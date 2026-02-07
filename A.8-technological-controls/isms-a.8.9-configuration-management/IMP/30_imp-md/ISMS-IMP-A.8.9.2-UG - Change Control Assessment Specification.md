@@ -242,44 +242,6 @@ Changes are prioritized based on urgency and business impact:
 
 ---
 
-# Workbook Structure Overview
-
-**Generated Workbook Name**: `ISMS_A_8_9_2_Change_Control_Assessment_YYYYMMDD.xlsx`
-
-**Total Sheets**: 12
-
-| Sheet # | Sheet Name | Purpose | Row Count |
-|---------|------------|---------|-----------|
-| 1 | Instructions | Usage guidance, roles, workflow, legend | N/A |
-| 2 | Change_Request_Register | All configuration changes tracking | 100 data rows |
-| 3 | Change_Approval_Workflow | Approval chain tracking | 100 data rows |
-| 4 | Impact_Assessment | Risk and impact analysis per change | 100 data rows |
-| 5 | Testing_Validation | Pre-deployment testing records | 100 data rows |
-| 6 | Implementation_Log | Deployment execution records | 100 data rows |
-| 7 | Rollback_Capability | Rollback procedures and testing | 100 data rows |
-| 8 | Emergency_Changes | Emergency change tracking | 50 data rows |
-| 9 | Change_Success_Metrics | Auto-calculated success rates, trends | N/A (formulas) |
-| 10 | Compliance_Dashboard | Process adherence metrics | N/A (formulas) |
-| 11 | Evidence_Register | Supporting evidence and documentation | 100 data rows |
-| 12 | Approval_Sign_Off | Three-tier approval signatures | N/A (3 rows) |
-
-**Sheet Relationship Flow**:
-```
-Change_Request_Register → (change list) → Change_Approval_Workflow
-                                                  ↓
-Impact_Assessment → (risk analysis) → Testing_Validation
-                                              ↓
-Implementation_Log → (execution) → Rollback_Capability
-                                              ↓
-Emergency_Changes → (expedited tracking) → Change_Success_Metrics
-                                                      ↓
-Compliance_Dashboard → (process metrics) → Evidence_Register
-                                                      ↓
-Approval_Sign_Off
-```
-
----
-
 # Detailed Sheet Specifications
 
 ## Sheet 1: Instructions
@@ -1687,7 +1649,6 @@ Retain versions:
 **END OF SPECIFICATION - ISMS-IMP-A.8.9.2**
 
 ---
-
 
 **END OF USER GUIDE**
 

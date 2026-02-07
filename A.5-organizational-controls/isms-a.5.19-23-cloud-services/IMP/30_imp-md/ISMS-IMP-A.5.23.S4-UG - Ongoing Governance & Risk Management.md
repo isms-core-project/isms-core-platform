@@ -22,7 +22,7 @@
 
 | Version | Date | Changes | Author |
 |---------|------|---------|--------|
-| 1.0 | [Date] | Initial Excel workbook specification (Part II only) | ISMS Implementation Team |
+| 1.0 | [Date] | Initial User Completion Guide | ISMS Implementation Team |
 
 ### Document Structure
 
@@ -32,7 +32,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ## Section 1: Assessment Overview
 
-### 1.1 Purpose & Scope
+### Purpose & Scope
 
 **Assessment Name:** ISMS-IMP-A.5.23.S4 - Ongoing Governance & Risk Management
 
@@ -102,7 +102,7 @@ Cloud security is NOT a one-time implementation—it requires ongoing vigilance.
 
 ---
 
-### 1.2 What Makes This Different from Other Assessments
+### What Makes This Different from Other Assessments
 
 **Integration with the A.5.19-23 Framework:**
 ```
@@ -146,7 +146,7 @@ Cloud security is NOT a one-time implementation—it requires ongoing vigilance.
 
 ---
 
-### 1.3 Who Needs to Complete This Assessment
+### Who Needs to Complete This Assessment
 
 **Primary Stakeholders:**
 
@@ -174,7 +174,7 @@ IT Operations Manager → Compliance Officer → CISO
 
 ---
 
-### 1.4 What You'll Deliver
+### What You'll Deliver
 
 **Quarterly Deliverables:**
 
@@ -210,7 +210,7 @@ IT Operations Manager → Compliance Officer → CISO
 
 ---
 
-### 1.5 Success Criteria
+### Success Criteria
 
 **What "Good" Looks Like:**
 
@@ -234,7 +234,7 @@ IT Operations Manager → Compliance Officer → CISO
 
 ---
 
-### 1.6 Time Commitment & Resources
+### Time Commitment & Resources
 
 **Quarterly Assessment Cycle:**
 
@@ -254,7 +254,7 @@ IT Operations Manager → Compliance Officer → CISO
 
 ---
 
-### 1.7 Key Concepts & Terminology
+### Key Concepts & Terminology
 
 **Governance vs. Initial Assessment:**
 
@@ -272,7 +272,7 @@ IT Operations Manager → Compliance Officer → CISO
 
 ## Section 2: Prerequisites & Preparation
 
-### 2.1 Prerequisites - What You MUST Have Before Starting
+### Prerequisites - What You MUST Have Before Starting
 
 **❌ DO NOT start this assessment until you have:**
 
@@ -320,7 +320,7 @@ IT Operations Manager → Compliance Officer → CISO
 
 ---
 
-### 2.2 Preparation Checklist (Week Before Assessment Starts)
+### Preparation Checklist (Week Before Assessment Starts)
 
 **For Assessment Coordinator:**
 ```
@@ -384,7 +384,7 @@ WEEK BEFORE QUARTERLY ASSESSMENT KICKOFF
 
 ---
 
-### 2.3 Understanding the Assessment Workflow
+### Understanding the Assessment Workflow
 
 **Quarterly Governance Cycle:**
 ```
@@ -475,7 +475,7 @@ WEEK BEFORE QUARTERLY ASSESSMENT KICKOFF
 
 ---
 
-### 2.4 Data Sources & Integration Points
+### Data Sources & Integration Points
 
 **Where Data Comes From:**
 
@@ -511,7 +511,7 @@ ISMS-IMP-A.5.23.S4 (This Assessment)
 
 ---
 
-### 2.5 Common Mistakes to Avoid (Before You Even Start)
+### Common Mistakes to Avoid (Before You Even Start)
 
 **❌ Pitfall 1: Starting Without Previous Quarter's Data**
 ```
@@ -552,66 +552,7 @@ Fix: Multi-stakeholder collaboration (see Section 1.3), clear ownership per shee
 
 ## Section 3: Understanding the Assessment Sheets
 
-### 3.1 Workbook Architecture Overview
-
-**The 11-Sheet Structure:**
-
-┌──────────────────────────────────────────────────────────────────┐
-│           ISMS-IMP-A.5.23.S4 WORKBOOK ARCHITECTURE                │
-├──────────────────────────────────────────────────────────────────┤
-│                                                                   │
-│  LAYER 1: ORIENTATION                                            │
-│  ┌────────────────────────────────────────────────────────────┐  │
-│  │ Sheet 1: Instructions & Legend                             │  │
-│  │          How to use workbook, status symbols, dropdowns    │  │
-│  └────────────────────────────────────────────────────────────┘  │
-│                                                                   │
-│  LAYER 2: OPERATIONAL GOVERNANCE ASSESSMENTS (Core)              │
-│  ┌────────────────────────────────────────────────────────────┐  │
-│  │ Sheet 2: Access Review & Recertification                   │  │
-│  │          Quarterly access reviews, orphan accounts, PAM    │  │
-│  ├────────────────────────────────────────────────────────────┤  │
-│  │ Sheet 3: Change Management                                 │  │
-│  │          Provider changes, org changes, impact assessment  │  │
-│  ├────────────────────────────────────────────────────────────┤  │
-│  │ Sheet 4: Incident Management                               │  │
-│  │          Security incidents, response, lessons learned     │  │
-│  ├────────────────────────────────────────────────────────────┤  │
-│  │ Sheet 5: Business Continuity & DR                          │  │
-│  │          BC/DR plans, RTO/RPO, testing, failover           │  │
-│  ├────────────────────────────────────────────────────────────┤  │
-│  │ Sheet 6: Vendor Risk Monitoring                            │  │
-│  │          Cert tracking, vendor incidents, financial health │  │
-│  ├────────────────────────────────────────────────────────────┤  │
-│  │ Sheet 7: Exit Strategy Review                   │  │
-│  │          Annual plan validation, PoC testing, alternatives │  │
-│  └────────────────────────────────────────────────────────────┘  │
-│                                                                   │
-│  LAYER 3: REGULATORY COMPLIANCE                       │
-│  ┌────────────────────────────────────────────────────────────┐  │
-│  │ Sheet 8: Jurisdictional Risk Assessment                    │  │
-│  │          CLOUD Act, transfer mechanisms, TIAs, DPO review  │  │
-│  └────────────────────────────────────────────────────────────┘  │
-│                                                                   │
-│  LAYER 4: REPORTING & EVIDENCE                                   │
-│  ┌────────────────────────────────────────────────────────────┐  │
-│  │ Sheet 9: Summary Dashboard                                 │  │
-│  │          Auto-calculated metrics, compliance %, gaps       │  │
-│  ├────────────────────────────────────────────────────────────┤  │
-│  │ Sheet 10: Evidence Register                                │  │
-│  │          Audit trail (EV-GOV-###), evidence tracking       │  │
-│  └────────────────────────────────────────────────────────────┘  │
-│                                                                   │
-│  LAYER 5: APPROVAL WORKFLOW                                      │
-│  ┌────────────────────────────────────────────────────────────┐  │
-│  │ Sheet 11: Approval Sign-Off                                │  │
-│  │          IT Ops → Compliance → CISO approval chain         │  │
-│  └────────────────────────────────────────────────────────────┘  │
-└──────────────────────────────────────────────────────────────────┘
-
----
-
-### 3.2 Sheet-by-Sheet Purpose Summary
+### Sheet-by-Sheet Purpose Summary
 
 **Quick Reference:**
 
@@ -631,7 +572,7 @@ Fix: Multi-stakeholder collaboration (see Section 1.3), clear ownership per shee
 
 ---
 
-### 3.3 Column Structure - Standard Across All Assessment Sheets
+### Column Structure - Standard Across All Assessment Sheets
 
 **Base Columns (A-Q) - Present on ALL Assessment Sheets (2-8):**
 
@@ -661,7 +602,7 @@ Each assessment sheet (2-8) has 7 additional columns (R-X) tailored to that gove
 
 ---
 
-### 3.4 Status Symbols & Color Coding
+### Status Symbols & Color Coding
 
 **Universal Status Legend (Column H on all sheets):**
 
@@ -696,7 +637,7 @@ Each assessment sheet (2-8) has 7 additional columns (R-X) tailored to that gove
 
 ---
 
-### 3.5 Evidence Requirements - What "Counts"
+### Evidence Requirements - What "Counts"
 
 **General Evidence Principles:**
 
@@ -731,7 +672,7 @@ Each assessment sheet (2-8) has 7 additional columns (R-X) tailored to that gove
 
 ## Section 4: Completing Each Sheet (Detailed Guidance)
 
-### 4.1 Sheet 2: Access Review & Recertification
+### Sheet 2: Access Review & Recertification
 
 **Purpose:** Validate that user access to cloud services remains appropriate and authorized. Detect and remediate orphan accounts within 24 hours.
 
@@ -857,7 +798,7 @@ Q: 2026-01-15
 
 ---
 
-### 4.2 Sheet 3: Change Management
+### Sheet 3: Change Management
 
 **Purpose:** Track and validate that all changes to cloud services (provider-initiated or org-initiated) follow change management procedures.
 
@@ -953,7 +894,7 @@ Q: 2026-01-18
 
 ---
 
-### 4.3 Sheet 4: Incident Management
+### Sheet 4: Incident Management
 
 **Purpose:** Track security incidents involving cloud services and verify proper incident response procedures were followed.
 
@@ -1064,7 +1005,7 @@ S-X: N/A
 
 ---
 
-### 4.4 Sheet 5: Business Continuity & Disaster Recovery
+### Sheet 5: Business Continuity & Disaster Recovery
 
 **Purpose:** Validate that BC/DR plans exist, are current, and have been tested for critical cloud services.
 
@@ -1179,7 +1120,7 @@ J: BC plan waived per policy (Medium criticality, non-essential service)
 
 ---
 
-### 4.5 Sheet 6: Vendor Risk Monitoring
+### Sheet 6: Vendor Risk Monitoring
 
 **Purpose:** Continuously monitor vendor security posture, certifications, incidents, and financial health.
 
@@ -1287,7 +1228,7 @@ Q: 2026-01-20 (quarterly check date)
 
 ---
 
-### 4.6 Sheet 7: Exit Strategy Review
+### Sheet 7: Exit Strategy Review
 
 **Purpose:** Validate that exit plans remain viable and test feasibility annually for critical services.
 
@@ -1415,7 +1356,7 @@ H: ✅ Compliant (plan adequate for Medium criticality service)
 
 ---
 
-### 4.7 Sheet 8: Jurisdictional Risk Assessment
+### Sheet 8: Jurisdictional Risk Assessment
 
 **Purpose:** Monitor ongoing jurisdictional risks (CLOUD Act exposure, transfer mechanisms, vendor jurisdiction changes).
 
@@ -1519,7 +1460,7 @@ Q: 2026-01-18 (quarterly review date)
 
 ## Section 5: Evidence Collection Guide
 
-### 5.1 Evidence Collection Strategy
+### Evidence Collection Strategy
 
 **Core Principle:** Evidence must be **objective, timestamped, retrievable, and verifiable**. "We did it" is not evidence—a dated report showing what was done is evidence.
 
@@ -1638,7 +1579,7 @@ Q: 2026-01-18 (quarterly review date)
 
 ---
 
-### 5.2 Evidence Collection by Sheet
+### Evidence Collection by Sheet
 
 #### Sheet 2: Access Review Evidence
 
@@ -2024,7 +1965,7 @@ Example: /evidence/jurisdictional/Q1_2026/Salesforce_Hyperforce_EU_data_residenc
 
 ---
 
-### 5.3 Evidence Register (Sheet 10) - How to Use
+### Evidence Register (Sheet 10) - How to Use
 
 **Purpose:** Centralized audit trail linking every assessment finding to its evidence.
 
@@ -2061,7 +2002,7 @@ Column I (Verification Status): Has auditor reviewed? (Pending/Verified/Rejected
 
 ## Section 6: Common Pitfalls & How to Avoid Them
 
-### 6.1 Top 10 Governance Assessment Mistakes
+### Top 10 Governance Assessment Mistakes
 
 #### Pitfall 1: Waiting Until Week 4 to Start
 
@@ -2391,7 +2332,7 @@ Actually approved: Week 10 (7 weeks delay)
 
 ---
 
-### 6.2 Red Flags That Signal Cargo Cult Compliance
+### Red Flags That Signal Cargo Cult Compliance
 
 **Watch for these warning signs:**
 ```
@@ -2417,7 +2358,7 @@ Actually approved: Week 10 (7 weeks delay)
 
 ## Section 7: Quality Checklist
 
-### 7.1 Pre-Submission Quality Review
+### Pre-Submission Quality Review
 
 **Before submitting assessment for approval, verify:**
 
@@ -2546,7 +2487,7 @@ EVIDENCE STORAGE
 
 ---
 
-### 7.2 Approval Readiness Checklist
+### Approval Readiness Checklist
 
 **Before sending to IT Operations Manager:**
 ```
@@ -2575,7 +2516,7 @@ APPROVAL PACKAGE CONTENTS
 
 ## Section 8: Review & Approval Process
 
-### 8.1 Approval Workflow Overview
+### Approval Workflow Overview
 
 **Three-Stage Sequential Approval:**
 ```
@@ -2634,7 +2575,7 @@ APPROVAL PACKAGE CONTENTS
 
 ---
 
-### 8.2 Stage 1: IT Operations Manager Review
+### Stage 1: IT Operations Manager Review
 
 **Review Focus:** Operational feasibility and technical accuracy
 
@@ -2707,7 +2648,7 @@ Do not proceed to Compliance review until issues resolved.
 
 ---
 
-### 8.3 Stage 2: Compliance Officer Review
+### Stage 2: Compliance Officer Review
 
 **Review Focus:** Regulatory alignment and audit readiness
 
@@ -2789,7 +2730,7 @@ Return to Assessment Coordinator with compliance gaps to address.
 
 ---
 
-### 8.4 Stage 3: CISO Approval
+### Stage 3: CISO Approval
 
 **Review Focus:** Executive risk acceptance and strategic alignment
 
@@ -2866,7 +2807,7 @@ Requires executive discussion before resubmission.
 
 ---
 
-### 8.5 Handling Rejections & Resubmissions
+### Handling Rejections & Resubmissions
 
 **If Assessment Rejected at Any Stage:**
 
@@ -2926,7 +2867,7 @@ Requires executive discussion before resubmission.
 
 ## Section 9: Integration & Maintenance
 
-### 9.1 Integration with Other ISMS Assessments
+### Integration with Other ISMS Assessments
 
 **Critical Context:** This assessment (ISMS-IMP-A.5.23.S4) is ONE component of the comprehensive A.5.19-23 supplier/cloud security framework. It does not operate in isolation.
 
@@ -2972,7 +2913,7 @@ Requires executive discussion before resubmission.
 
 ---
 
-### 9.2 Integration with Organizational Systems
+### Integration with Organizational Systems
 
 **Cloud governance assessment should NOT be a standalone spreadsheet.** To avoid creating "shadow IT governance," integrate with existing organizational systems:
 
@@ -3100,7 +3041,7 @@ for row in range(7, 31):
 
 ---
 
-### 9.3 Quarterly Maintenance Procedures
+### Quarterly Maintenance Procedures
 
 **Cloud governance is NOT "set and forget."** Quarterly reviews keep governance current as services evolve.
 
@@ -3192,7 +3133,7 @@ Quarterly Review Status: ☐ Complete  ☐ In Progress  ☐ Overdue
 
 ---
 
-### 9.4 Annual Comprehensive Review
+### Annual Comprehensive Review
 
 **In addition to quarterly maintenance, conduct a thorough annual review.**
 
@@ -3278,7 +3219,7 @@ Date: _________________
 
 ---
 
-### 9.5 Continuous Improvement Methodology
+### Continuous Improvement Methodology
 
 **Governance should improve over time, not stagnate.**
 
@@ -3343,7 +3284,7 @@ Implementation: Q2 2026
 
 ---
 
-### 9.6 Change Management: When Vendors/Services Evolve
+### Change Management: When Vendors/Services Evolve
 
 **Cloud services don't stay static. The governance framework must adapt.**
 
@@ -3396,7 +3337,7 @@ Implementation: Q2 2026
 
 ---
 
-### 9.7 Workbook Versioning & Archive Strategy
+### Workbook Versioning & Archive Strategy
 
 **As governance assessments evolve, maintain historical record for audit trail.**
 
@@ -3440,7 +3381,7 @@ Examples:
 
 ## Section 10: Appendices & Glossary
 
-### 10.1 Glossary of Terms
+### Glossary of Terms
 
 **Comprehensive terminology reference for ongoing governance and risk management.**
 
@@ -3467,7 +3408,7 @@ Examples:
 
 ---
 
-### 10.2 Acronyms & Abbreviations
+### Acronyms & Abbreviations
 
 | Acronym | Full Form | Usage Context |
 |---------|-----------|---------------|
@@ -3490,7 +3431,7 @@ Examples:
 
 ---
 
-### 10.3 Related ISMS Documents
+### Related ISMS Documents
 
 **Policy Layer:**
 
@@ -3524,7 +3465,7 @@ Examples:
 
 ---
 
-### 10.4 External Standards & Regulations
+### External Standards & Regulations
 
 **International Standards:**
 
@@ -3558,7 +3499,7 @@ Examples:
 
 ---
 
-### 10.5 Regulatory Applicability Decision Matrix
+### Regulatory Applicability Decision Matrix
 
 **Quick reference to determine which regulatory columns apply to your organization.**
 
@@ -3572,7 +3513,7 @@ Examples:
 
 ---
 
-### 10.6 Governance Maturity Model
+### Governance Maturity Model
 
 **Assess your organization's governance maturity level:**
 
@@ -3618,7 +3559,7 @@ Examples:
 
 ---
 
-### 10.7 Common Governance Metrics (KPIs)
+### Common Governance Metrics (KPIs)
 
 **Track these KPIs quarterly to measure governance effectiveness:**
 
@@ -3673,7 +3614,7 @@ ACTION ITEMS:
 
 ---
 
-### 10.8 Troubleshooting Guide
+### Troubleshooting Guide
 
 **Common issues and resolutions when completing this assessment.**
 
@@ -3689,7 +3630,7 @@ ACTION ITEMS:
 
 ---
 
-### 10.9 Contact Information & Escalation Path
+### Contact Information & Escalation Path
 
 **Template - Customize for [Organization].**
 
@@ -3758,7 +3699,7 @@ TOOL/WORKBOOK TECHNICAL ISSUES:
 
 ---
 
-### 10.10 Document Revision History
+### Document Revision History
 
 **Tracking changes to this IMP document.**
 

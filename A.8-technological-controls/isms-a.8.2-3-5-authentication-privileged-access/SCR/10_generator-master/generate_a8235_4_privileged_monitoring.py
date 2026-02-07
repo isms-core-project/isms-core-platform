@@ -126,6 +126,7 @@ VERSION = "1.0"
 CONTROL_REF = "ISO/IEC 27001:2022 - Controls A.8.2, A.8.3, A.8.5: Authentication & Privileged Access"
 GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")
 GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_Privileged_Monitoring_{GENERATED_TIMESTAMP}.xlsx"
 # Workbook structure
 SESSION_RECORDING_COUNT = 150    # Session recording coverage tracking
 COMMAND_LOGGING_COUNT = 100      # Command logging verification

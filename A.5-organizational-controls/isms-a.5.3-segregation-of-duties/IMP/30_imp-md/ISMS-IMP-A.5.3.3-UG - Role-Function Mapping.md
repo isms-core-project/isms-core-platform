@@ -18,32 +18,13 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-1. [PART I: USER COMPLETION GUIDE](#part-i-user-completion-guide)
-   - [1.1 Assessment Overview](#11-assessment-overview)
-   - [1.2 Control Requirements](#12-control-requirements)
-   - [1.3 Prerequisites](#13-prerequisites)
-   - [1.4 Workbook Structure](#14-workbook-structure)
-   - [1.5 Completion Walkthrough](#15-completion-walkthrough)
-   - [1.6 Function-Level Conflict Analysis](#16-function-level-conflict-analysis)
-   - [1.7 Evidence Collection](#17-evidence-collection)
-   - [1.8 Common Pitfalls](#18-common-pitfalls)
-   - [1.9 Quality Checklist](#19-quality-checklist)
-   - [1.10 Review and Approval](#110-review-and-approval)
-2. [PART II: TECHNICAL SPECIFICATION](#part-ii-technical-specification)
-   - [2.1 Workbook Technical Details](#21-workbook-technical-details)
-   - [2.2 Sheet Specifications](#22-sheet-specifications)
-   - [2.3 Conditional Formatting](#23-conditional-formatting)
-   - [2.4 Formulas](#24-formulas)
-   - [2.5 Integration Points](#25-integration-points)
-   - [2.6 Related Documents](#26-related-documents)
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.3.3-TG.
 
 ---
 
----
-
-## 1.1 Assessment Overview
+## Assessment Overview
 
 ### Purpose
 
@@ -110,7 +91,7 @@ Detailed role-function mapping delivers:
 
 ---
 
-## 1.2 Control Requirements
+## Control Requirements
 
 ### ISO 27001:2022 Control A.5.3
 
@@ -160,7 +141,7 @@ Auditors increasingly ask for function-level analysis. This workbook provides:
 
 ---
 
-## 1.3 Prerequisites
+## Prerequisites
 
 ### Required Access
 
@@ -203,134 +184,7 @@ Before proceeding, verify:
 
 ---
 
-## 1.4 Workbook Structure
-
-| Sheet | Purpose | Completion Order |
-|-------|---------|------------------|
-| **Instructions** | Guidance and methodology | Read first |
-| **Business_Roles** | Organisational role definitions | Step 1 |
-| **Application_Roles** | System-specific role inventory | Step 2 |
-| **Functions** | Discrete capability definitions | Step 3 |
-| **Permissions** | Technical permission details | Step 4 |
-| **Role_Function_Map** | Role-to-function relationships | Step 5 |
-| **Function_Conflicts** | Function-level conflicts | Step 6 |
-| **Validation_Status** | RBAC validation tracking | Step 7 |
-| **Change_Log** | Permission change history | Ongoing |
-
-### Sheet Dependencies
-
-```
-Instructions (Reference)
-       |
-       v
-Business_Roles (Step 1) <---- Organisational positions
-       |
-       v
-Application_Roles (Step 2) <---- System-specific roles
-       |
-       v
-Functions (Step 3) <---- Capabilities/actions
-       |
-       v
-Permissions (Step 4) <---- Technical access rights
-       |
-       v
-Role_Function_Map (Step 5) <---- Connect roles to functions
-       |
-       v
-Function_Conflicts (Step 6) <---- Identify function conflicts
-       |
-       v
-Validation_Status (Step 7) <---- Verify against systems
-       |
-       v
-Change_Log (Ongoing) <---- Track changes
-```
-
-### Sheet-by-Sheet Summary
-
-#### 1. Instructions Sheet
-
-Provides orientation including:
-- Document purpose and scope
-- Mapping methodology
-- Function categorisation guidance
-- Evidence requirements
-- Contact information
-
-#### 2. Business_Roles Sheet
-
-Organisational role registry containing:
-- Unique role identifiers
-- Role names and descriptions
-- Department assignments
-- Role owners
-- Risk classifications
-
-#### 3. Application_Roles Sheet
-
-System-specific role inventory containing:
-- Application identifiers
-- Role names
-- Role types (composite/single)
-- Linked business roles
-- Criticality ratings
-
-#### 4. Functions Sheet
-
-Capability definitions containing:
-- Function identifiers
-- Function names
-- Categories (CRUD+A)
-- Risk levels
-- SoD sensitivity flags
-
-#### 5. Permissions Sheet
-
-Technical permission details containing:
-- Permission identifiers
-- Permission names
-- Permission types
-- Data scope restrictions
-- Special conditions
-
-#### 6. Role_Function_Map Sheet
-
-Role-to-function mappings containing:
-- Mapping identifiers
-- Role-function links
-- Grant types
-- Justifications
-- Effective dates
-
-#### 7. Function_Conflicts Sheet
-
-Function-level conflicts containing:
-- Conflict identifiers
-- Conflicting functions
-- Conflict types
-- Risk levels
-- Mitigations
-
-#### 8. Validation_Status Sheet
-
-RBAC validation tracking containing:
-- Validation dates
-- Validators
-- Discrepancies
-- Resolution status
-
-#### 9. Change_Log Sheet
-
-Permission change history containing:
-- Change identifiers
-- Change dates
-- Change descriptions
-- Approvals
-
----
-
-## 1.5 Completion Walkthrough
+## Completion Walkthrough
 
 ### Step 1: Define Business Roles
 
@@ -603,7 +457,7 @@ Permission change history containing:
 
 ---
 
-## 1.6 Function-Level Conflict Analysis
+## Function-Level Conflict Analysis
 
 ### Identifying Hidden Conflicts
 
@@ -669,7 +523,7 @@ For SAP environments, analyse transaction code combinations:
 
 ---
 
-## 1.7 Evidence Collection
+## Evidence Collection
 
 ### Evidence Requirements
 
@@ -712,7 +566,7 @@ EVD-A.5.3.3_[EvidenceType]_[Reference]_[YYYYMMDD].[ext]
 
 ---
 
-## 1.8 Common Pitfalls
+## Common Pitfalls
 
 Avoid these common mistakes when completing the Role-Function Mapping:
 
@@ -788,7 +642,7 @@ Avoid these common mistakes when completing the Role-Function Mapping:
 
 ---
 
-## 1.9 Quality Checklist
+## Quality Checklist
 
 Before submitting the completed workbook, verify all items:
 
@@ -848,7 +702,7 @@ Before submitting the completed workbook, verify all items:
 
 ---
 
-## 1.10 Review and Approval
+## Review and Approval
 
 ### Review Workflow
 
@@ -903,7 +757,6 @@ Upon approval:
 6. Integrate change log updates into permission change process
 
 ---
-
 
 **END OF USER GUIDE**
 

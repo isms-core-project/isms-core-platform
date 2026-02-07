@@ -689,6 +689,10 @@ This assessment is **technology-agnostic**. Whether you use manual testing, auto
 
 ---
 
+**END OF USER GUIDE**
+
+---
+
 *"The measure of intelligence is the ability to change."*
 — Albert Einstein
 

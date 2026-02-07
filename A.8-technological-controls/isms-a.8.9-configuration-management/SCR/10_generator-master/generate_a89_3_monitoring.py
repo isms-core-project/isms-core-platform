@@ -264,6 +264,8 @@ FILENAME = f"ISMS-IMP-A.8.9.3_Configuration_Monitoring_{datetime.now().strftime(
 WORKBOOK_TITLE = "Configuration Monitoring Assessment"
 WORKBOOK_VERSION = "1.0"
 DOCUMENT_ID = "ISMS-IMP-A.8.9.3"
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_Monitoring_{GENERATED_TIMESTAMP}.xlsx"
 CONTROL_REF = "ISO/IEC 27001:2022 - Control A.8.9: Configuration Management"
 
 # CUSTOMIZE: Configuration monitoring dropdown values

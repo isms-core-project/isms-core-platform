@@ -306,41 +306,6 @@ Not all assets require identical monitoring:
 
 ---
 
-# Workbook Structure Overview
-
-**Generated Workbook Name**: `ISMS_A_8_9_3_Configuration_Monitoring_Assessment_YYYYMMDD.xlsx`
-
-**Total Sheets**: 11
-
-| Sheet # | Sheet Name | Purpose | Row Count |
-|---------|------------|---------|-----------|
-| 1 | Instructions | Usage guidance, monitoring tiers, drift categories | N/A |
-| 2 | Monitoring_Coverage_Register | Asset monitoring inventory | 100 data rows |
-| 3 | Drift_Detection_Log | Chronological drift incident records | 150 data rows |
-| 4 | Monitoring_Tool_Inventory | Tools and capabilities tracking | 30 data rows |
-| 5 | Drift_Remediation_Tracking | Remediation action tracking | 150 data rows |
-| 6 | False_Positive_Register | False alert tracking and tuning | 75 data rows |
-| 7 | Monitoring_Effectiveness_Metrics | Auto-calculated KPIs (dashboard) | N/A (formulas) |
-| 8 | Coverage_Gap_Analysis | Monitoring coverage analysis (dashboard) | N/A (formulas) |
-| 9 | Drift_Trend_Analysis | Temporal trend visualization (dashboard) | N/A (formulas) |
-| 10 | Evidence_Register | Supporting evidence and documentation | 100 data rows |
-| 11 | Approval_Sign_Off | Three-tier approval signatures | N/A (3 rows) |
-
-**Sheet Relationship Flow**:
-```
-Monitoring_Coverage_Register → (what's monitored) → Drift_Detection_Log
-                                                           ↓
-Monitoring_Tool_Inventory → (detection tools) → Drift_Remediation_Tracking
-                                                           ↓
-False_Positive_Register → (alert quality) → Monitoring_Effectiveness_Metrics
-                                                           ↓
-Coverage_Gap_Analysis → (coverage analysis) → Drift_Trend_Analysis
-                                                           ↓
-Evidence_Register → (audit trail) → Approval_Sign_Off
-```
-
----
-
 # Detailed Sheet Specifications
 
 ## Sheet 1: Instructions
@@ -1474,7 +1439,6 @@ Retain versions:
 **END OF SPECIFICATION - ISMS-IMP-A.8.9.3**
 
 ---
-
 
 **END OF USER GUIDE**
 

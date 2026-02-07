@@ -18,7 +18,7 @@
 
 ---
 
-### 1. Assessment Overview
+### Assessment Overview
 
 #### 1.1 Purpose
 
@@ -80,7 +80,7 @@ This dashboard provides consolidated evidence that management actively enforces 
 | Full assessment consolidation | Annual | Before surveillance audit |
 | Gap remediation tracking | Ongoing | As gaps identified |
 
-### 2. Prerequisites
+### Prerequisites
 
 Before completing this dashboard, ensure:
 
@@ -91,21 +91,7 @@ Before completing this dashboard, ensure:
 - [ ] Prior period dashboard available (for trend comparison)
 - [ ] Gap register from previous audit (if applicable)
 
-### 3. Workbook Structure
-
-| Sheet | Purpose | When to Complete |
-|-------|---------|------------------|
-| **Instructions** | Guidance, source workbooks, scoring methodology | Reference |
-| **Executive_Summary** | High-level status by assessment domain | Monthly |
-| **Compliance_KPIs** | Key performance indicators with targets | Quarterly |
-| **Compliance_Scorecard** | Requirement-level implementation scores | Quarterly |
-| **Gap_Analysis** | Identified gaps with remediation tracking | Ongoing |
-| **Audit_Readiness** | Evidence checklist for audit preparation | Before audits |
-| **Trend_Analysis** | Historical compliance trends by quarter | Quarterly |
-| **Evidence_Register** | Audit evidence documentation | Ongoing |
-| **Approval_SignOff** | Management approval workflow | Each assessment |
-
-### 4. Compliance Scoring Methodology
+### Compliance Scoring Methodology
 
 #### 4.1 Overall Compliance Score
 
@@ -137,7 +123,7 @@ Each requirement in the Compliance Scorecard is scored:
 | Not Implemented | 0% |
 | Not Applicable | N/A (excluded) |
 
-### 5. Completion Walkthrough
+### Completion Walkthrough
 
 #### Step 1: Gather Source Data
 
@@ -337,7 +323,7 @@ For each piece of evidence collected:
 5. Each approver signs with name, date, and comments
 6. Confirm declaration checkbox
 
-### 6. Worked Examples
+### Worked Examples
 
 #### Example A: Strong Compliance Status
 
@@ -410,7 +396,7 @@ For each piece of evidence collected:
 
 **Audit Readiness**: 7/10 checks Ready, 3 Action Required
 
-### 7. Evidence Collection
+### Evidence Collection
 
 #### 7.1 Required Evidence
 
@@ -444,7 +430,7 @@ ISMS Evidence Library/
         └── [Quarter-over-quarter reports]
 ```
 
-### 8. Common Pitfalls
+### Common Pitfalls
 
 ❌ **MISTAKE: Using stale source data**
 Complete all source workbooks (A.5.4.1-4) before consolidating. Data older than one quarter skews compliance scores.
@@ -476,7 +462,7 @@ Use the weighted formula: (Commitment × 0.25) + (Oversight × 0.30) + (Leadersh
 ❌ **MISTAKE: Not updating after gap remediation**
 When gaps are closed, update both Gap_Analysis and Compliance_Scorecard. The overall compliance score should improve as gaps close.
 
-### 9. Quality Checklist
+### Quality Checklist
 
 Before submitting the dashboard for approval:
 
@@ -493,7 +479,7 @@ Before submitting the dashboard for approval:
 - [ ] All approval signatures obtained
 - [ ] Dashboard saved to ISMS Evidence Library
 
-### 10. Review and Approval
+### Review and Approval
 
 #### 10.1 Review Workflow
 
@@ -511,7 +497,6 @@ Before submitting the dashboard for approval:
 - **Pre-Audit Submission**: All four signatures required
 
 ---
-
 
 **END OF USER GUIDE**
 

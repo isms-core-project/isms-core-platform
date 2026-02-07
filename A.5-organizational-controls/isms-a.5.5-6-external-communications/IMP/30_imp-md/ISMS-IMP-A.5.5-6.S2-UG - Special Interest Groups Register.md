@@ -21,13 +21,13 @@
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 This workbook provides a structured framework for documenting and managing memberships in special interest groups (SIGs), security forums, and professional associations as required by ISO 27001:2022 Control A.5.6. Active participation in these groups helps organisations stay informed about emerging threats, best practices, and industry developments in information security.
 
-### 1.2 Scope
+### Scope
 
 The Special Interest Groups Register covers:
 
@@ -38,7 +38,7 @@ The Special Interest Groups Register covers:
 - **Academic and Research Networks**: Security research collaborations
 - **Industry Working Groups**: Standards development and best practice groups
 
-### 1.3 Control Requirement
+### Control Requirement
 
 ISO 27001:2022 Control A.5.6 states:
 
@@ -46,7 +46,7 @@ ISO 27001:2022 Control A.5.6 states:
 
 This control ensures that the organisation benefits from external knowledge networks, receives timely threat intelligence, and contributes to the broader security community.
 
-### 1.4 Assessment Domains
+### Assessment Domains
 
 This workbook is **Domain 2 of 5** in the A.5.5-6 External Communications assessment series:
 
@@ -60,11 +60,11 @@ This workbook is **Domain 2 of 5** in the A.5.5-6 External Communications assess
 
 ---
 
-## 2. Prerequisites
+## Prerequisites
 
 Before completing this assessment, ensure you have:
 
-### 2.1 Documentation Requirements
+### Documentation Requirements
 
 - [ ] List of current SIG memberships and subscriptions
 - [ ] Membership agreements and contracts
@@ -73,7 +73,7 @@ Before completing this assessment, ensure you have:
 - [ ] Contributions made to SIGs (presentations, reports, data)
 - [ ] Threat intelligence received in past 12 months
 
-### 2.2 Stakeholder Involvement
+### Stakeholder Involvement
 
 | Role | Responsibility |
 |------|----------------|
@@ -84,7 +84,7 @@ Before completing this assessment, ensure you have:
 | **Budget Owner** | Membership cost approval |
 | **Subject Matter Experts** | Domain-specific group participation |
 
-### 2.3 Information Gathering
+### Information Gathering
 
 Collect the following information for each SIG membership:
 
@@ -99,47 +99,9 @@ Collect the following information for each SIG membership:
 
 ---
 
-## 3. Workbook Structure
+## Completion Walkthrough
 
-### 3.1 Sheet Overview
-
-| Sheet | Purpose | Input Required |
-|-------|---------|----------------|
-| Instructions | Guidance for completing the workbook | Read only |
-| Groups_Registry | Master list of all SIG memberships | Manual entry |
-| Membership_Details | Detailed membership information | Manual entry |
-| Engagement_Log | Record of participation activities | Ongoing entry |
-| Intelligence_Received | Threat intelligence tracking | Ongoing entry |
-| Contribution_Log | Record of contributions made | Ongoing entry |
-| Evidence_Register | Audit evidence documentation | Manual entry |
-| Approval_SignOff | Management approval workflow | Manual entry |
-
-### 3.2 Sheet Dependencies
-
-```
-Instructions (Read First)
-        ↓
-Groups_Registry (Complete First)
-        ↓
-Membership_Details (Expand Registry)
-        ↓
-   ┌────┼────┐
-   ↓    ↓    ↓
-Engagement  Intelligence  Contribution
-   Log       Received        Log
-   ↓    ↓    ↓
-   └────┼────┘
-        ↓
-Evidence_Register
-        ↓
-Approval_SignOff (Complete Last)
-```
-
----
-
-## 4. Completion Walkthrough
-
-### 4.1 Groups_Registry Sheet
+### Groups_Registry Sheet
 
 This is the master list of all SIG memberships.
 
@@ -170,7 +132,7 @@ This is the master list of all SIG memberships.
 4. **Assign Engagement Owners**: Each membership needs an internal champion
 5. **Assess Value**: Rate each membership's contribution to security posture
 
-### 4.2 Membership_Details Sheet
+### Membership_Details Sheet
 
 Expanded information for each membership.
 
@@ -193,7 +155,7 @@ Expanded information for each membership.
 | Payment_Method | How fees are paid | Annual invoice |
 | Budget_Code | Internal budget reference | SEC-001-EXT |
 
-### 4.3 Engagement_Log Sheet
+### Engagement_Log Sheet
 
 Track all participation activities.
 
@@ -222,7 +184,7 @@ Track all participation activities.
 - Incident Coordination
 - Social Event/Networking
 
-### 4.4 Intelligence_Received Sheet
+### Intelligence_Received Sheet
 
 Track threat intelligence received from SIGs.
 
@@ -253,7 +215,7 @@ Track threat intelligence received from SIGs.
 - Strategic Intelligence
 - Research Paper
 
-### 4.5 Contribution_Log Sheet
+### Contribution_Log Sheet
 
 Track contributions made to SIGs.
 
@@ -284,7 +246,7 @@ Track contributions made to SIGs.
 - Mentoring/Training
 - Committee Service
 
-### 4.6 Evidence_Register Sheet
+### Evidence_Register Sheet
 
 Document evidence for audit purposes.
 
@@ -304,7 +266,7 @@ Document evidence for audit purposes.
 | Status | Current evidence status | Current |
 | Notes | Additional information | Includes attendee list and topics |
 
-### 4.7 Approval_SignOff Sheet
+### Approval_SignOff Sheet
 
 Management approval for the assessment.
 
@@ -319,9 +281,9 @@ Management approval for the assessment.
 
 ---
 
-## 5. Evidence Collection
+## Evidence Collection
 
-### 5.1 Required Evidence
+### Required Evidence
 
 | Evidence Type | Description | Storage Location |
 |---------------|-------------|------------------|
@@ -332,7 +294,7 @@ Management approval for the assessment.
 | Contribution Records | Approved sharing documentation | ISMS Evidence Library |
 | Value Assessment Reports | ROI analysis | ISMS Evidence Library |
 
-### 5.2 Evidence Storage Guidelines
+### Evidence Storage Guidelines
 
 - Use consistent naming: `SIG-[GroupID]-[Year]-[Type]-[Seq].pdf`
 - Store in ISMS Evidence Library (SharePoint/Confluence or equivalent)
@@ -342,9 +304,9 @@ Management approval for the assessment.
 
 ---
 
-## 6. Common Pitfalls
+## Common Pitfalls
 
-### 6.1 Mistakes to Avoid
+### Mistakes to Avoid
 
 ❌ **MISTAKE:** Joining SIGs without assigning an engagement owner
 ✅ **CORRECT:** Every membership must have a designated internal champion responsible for active participation
@@ -378,11 +340,11 @@ Management approval for the assessment.
 
 ---
 
-## 7. Quality Checklist
+## Quality Checklist
 
 Before submitting for approval, verify:
 
-### 7.1 Completeness
+### Completeness
 
 - [ ] All active memberships documented in Groups_Registry
 - [ ] Membership details complete for all groups
@@ -390,21 +352,21 @@ Before submitting for approval, verify:
 - [ ] Intelligence received log is current
 - [ ] Contribution log demonstrates reciprocal participation
 
-### 7.2 Value Assessment
+### Value Assessment
 
 - [ ] All memberships have value rating assigned
 - [ ] Low-value memberships flagged for review
 - [ ] Cost-benefit analysis available for high-cost memberships
 - [ ] Coverage gaps identified and addressed
 
-### 7.3 Evidence
+### Evidence
 
 - [ ] Membership proof available for all active groups
 - [ ] Engagement evidence documented
 - [ ] Intelligence handling properly classified
 - [ ] Contribution approvals documented
 
-### 7.4 Governance
+### Governance
 
 - [ ] All required approvals obtained
 - [ ] Renewal schedule maintained
@@ -413,9 +375,9 @@ Before submitting for approval, verify:
 
 ---
 
-## 8. Review and Approval
+## Review and Approval
 
-### 8.1 Review Frequency
+### Review Frequency
 
 | Review Type | Frequency | Triggered By |
 |-------------|-----------|--------------|
@@ -424,7 +386,7 @@ Before submitting for approval, verify:
 | Membership Renewal | As per renewal dates | Calendar reminder |
 | Ad-hoc Update | As needed | New membership, change in value |
 
-### 8.2 Approval Authority
+### Approval Authority
 
 | Action | Approval Required |
 |--------|-------------------|
@@ -435,7 +397,6 @@ Before submitting for approval, verify:
 | Membership discontinuation | CISO |
 
 ---
-
 
 **END OF USER GUIDE**
 

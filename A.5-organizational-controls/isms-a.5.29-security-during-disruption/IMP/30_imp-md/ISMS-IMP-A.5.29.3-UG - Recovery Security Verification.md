@@ -19,35 +19,13 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-1. [PART I: USER COMPLETION GUIDE](#part-i-user-completion-guide)
-   - [1.1 Assessment Overview](#11-assessment-overview)
-   - [1.2 Control Requirements](#12-control-requirements)
-   - [1.3 Prerequisites](#13-prerequisites)
-   - [1.4 Recovery Phases](#14-recovery-phases)
-   - [1.5 Workbook Structure](#15-workbook-structure)
-   - [1.6 Completion Walkthrough](#16-completion-walkthrough)
-   - [1.7 Security Validation Activities](#17-security-validation-activities)
-   - [1.8 Evidence Collection](#18-evidence-collection)
-   - [1.9 Common Pitfalls](#19-common-pitfalls)
-   - [1.10 Quality Checklist](#110-quality-checklist)
-   - [1.11 Review and Approval](#111-review-and-approval)
-   - [1.12 Integration with Other Controls](#112-integration-with-other-controls)
-2. [PART II: TECHNICAL SPECIFICATION](#part-ii-technical-specification)
-   - [2.1 Workbook Architecture](#21-workbook-architecture)
-   - [2.2 Sheet Specifications](#22-sheet-specifications)
-   - [2.3 Data Validations](#23-data-validations)
-   - [2.4 Conditional Formatting](#24-conditional-formatting)
-   - [2.5 Formula Specifications](#25-formula-specifications)
-   - [2.6 Cell Styling Standards](#26-cell-styling-standards)
-   - [2.7 Generator Script Reference](#27-generator-script-reference)
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.29.3-TG.
 
 ---
 
----
-
-## 1.1 Assessment Overview
+## Assessment Overview
 
 ### Purpose
 
@@ -110,7 +88,7 @@ Systematic recovery verification delivers:
 
 ---
 
-## 1.2 Control Requirements
+## Control Requirements
 
 ### ISO 27001:2022 Control A.5.29
 
@@ -160,7 +138,7 @@ ISO 27001 auditors examining recovery verification will verify:
 
 ---
 
-## 1.3 Prerequisites
+## Prerequisites
 
 ### Before Starting This Assessment
 
@@ -197,7 +175,7 @@ Before proceeding, verify:
 
 ---
 
-## 1.4 Recovery Phases
+## Recovery Phases
 
 ### Phase Definitions
 
@@ -228,68 +206,7 @@ Before proceeding, verify:
 
 ---
 
-## 1.5 Workbook Structure
-
-### Sheet Overview
-
-The workbook consists of nine sheets:
-
-| Sheet | Purpose | Primary User | Update Frequency |
-|-------|---------|--------------|------------------|
-| **Instructions** | Guidance and orientation | All users | As needed |
-| **Recovery_Checklist** | Phase-based validation activities | Security Team | Per disruption |
-| **Emergency_Access_Closure** | Deactivation verification | Security Team | Per disruption |
-| **Control_Validation** | Security control restoration | Security Team | Per disruption |
-| **Anomaly_Detection** | Post-disruption log analysis | SOC/Security Team | Per disruption |
-| **Security_Debt_Closure** | Debt item resolution tracking | Security Team | Per disruption |
-| **Lessons_Learned** | Security review findings | CISO | Per disruption |
-| **Evidence_Register** | Evidence tracking | Security Team | Ongoing |
-| **Approval_SignOff** | Phase and final sign-off | Approvers | Per phase |
-
-### Sheet Relationships
-
-```
-┌─────────────────────┐
-│    Instructions     │ ◄── Start here (after disruption)
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│  Recovery_Checklist │ ◄── Work through phases
-└──────────┬──────────┘
-           │
-     ┌─────┴─────┬───────────────┐
-     ▼           ▼               ▼
-┌────────────┐ ┌────────────┐ ┌────────────┐
-│Emergency_  │ │Control_    │ │Anomaly_    │
-│Access_     │ │Validation  │ │Detection   │
-│Closure     │ │            │ │            │
-└────────────┘ └────────────┘ └────────────┘
-           │
-           ▼
-┌─────────────────────┐
-│Security_Debt_Closure│
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│  Lessons_Learned    │
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│  Evidence_Register  │
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│  Approval_SignOff   │ ◄── Complete here
-└─────────────────────┘
-```
-
----
-
-## 1.6 Completion Walkthrough
+## Completion Walkthrough
 
 ### Step-by-Step Process
 
@@ -393,7 +310,7 @@ The workbook consists of nine sheets:
 
 ---
 
-## 1.7 Security Validation Activities
+## Security Validation Activities
 
 ### Control Validation Checklist
 
@@ -420,7 +337,7 @@ The workbook consists of nine sheets:
 
 ---
 
-## 1.8 Evidence Collection
+## Evidence Collection
 
 ### Evidence Requirements
 
@@ -436,7 +353,7 @@ The workbook consists of nine sheets:
 
 ---
 
-## 1.9 Common Pitfalls
+## Common Pitfalls
 
 Avoid these common mistakes:
 
@@ -455,7 +372,7 @@ Avoid these common mistakes:
 
 ---
 
-## 1.10 Quality Checklist
+## Quality Checklist
 
 Before declaring return to normal operations, verify:
 
@@ -489,7 +406,7 @@ Before declaring return to normal operations, verify:
 
 ---
 
-## 1.11 Review and Approval
+## Review and Approval
 
 ### Approval Workflow
 
@@ -523,7 +440,7 @@ Return to Normal Operations Declared
 
 ---
 
-## 1.12 Integration with Other Controls
+## Integration with Other Controls
 
 ### Related ISMS Controls
 
@@ -544,7 +461,6 @@ Return to Normal Operations Declared
 | **ISMS-IMP-A.5.29.4** | Compliance dashboard for recovery metrics |
 
 ---
-
 
 **END OF USER GUIDE**
 

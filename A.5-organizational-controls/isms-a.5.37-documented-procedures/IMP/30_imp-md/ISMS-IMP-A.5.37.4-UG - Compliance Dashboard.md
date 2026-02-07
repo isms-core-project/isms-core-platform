@@ -27,39 +27,15 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-### PART I: USER COMPLETION GUIDE
-1. [Dashboard Overview](#1-dashboard-overview)
-2. [Control Requirements](#2-control-requirements)
-3. [Prerequisites](#3-prerequisites)
-4. [Dashboard Views](#4-dashboard-views)
-5. [Key Performance Indicators](#5-key-performance-indicators)
-6. [Workbook Structure](#6-workbook-structure)
-7. [Completion Walkthrough](#7-completion-walkthrough)
-8. [Data Refresh Process](#8-data-refresh-process)
-9. [Reporting and Export](#9-reporting-and-export)
-10. [Evidence Collection](#10-evidence-collection)
-11. [Common Pitfalls](#11-common-pitfalls)
-12. [Quality Checklist](#12-quality-checklist)
-13. [Review and Approval](#13-review-and-approval)
-14. [Related Controls](#14-related-controls)
-
-### PART II: TECHNICAL SPECIFICATION
-15. [Workbook Architecture](#15-workbook-architecture)
-16. [Sheet Specifications](#16-sheet-specifications)
-17. [Data Validation Rules](#17-data-validation-rules)
-18. [Conditional Formatting](#18-conditional-formatting)
-19. [Formula Specifications](#19-formula-specifications)
-20. [Chart Specifications](#20-chart-specifications)
-21. [Cell Styling Standards](#21-cell-styling-standards)
-22. [Generator Script Reference](#22-generator-script-reference)
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.37.4-TG.
 
 ---
 
-## 1. Dashboard Overview
+## Dashboard Overview
 
-### 1.1 Purpose
+### Purpose
 
 The Compliance Dashboard consolidates procedure management metrics from the A.5.37.1-3 workbooks into executive-ready visualisations. It provides real-time visibility into:
 
@@ -71,14 +47,14 @@ The Compliance Dashboard consolidates procedure management metrics from the A.5.
 
 This dashboard serves as the primary management reporting tool for documented operating procedures, providing the metrics needed for ISMS management reviews and audit evidence.
 
-### 1.2 Scope
+### Scope
 
 The dashboard aggregates data from:
 - **A.5.37.1 Procedure Inventory Assessment**: Procedure counts, coverage, approval status
 - **A.5.37.2 Procedure Quality Assessment**: Quality scores, dimension ratings, gaps
 - **A.5.37.3 Procedure Review and Update Tracking**: Review status, change requests, escalations
 
-### 1.3 Audience and Use Cases
+### Audience and Use Cases
 
 | Audience | Primary Use |
 |----------|-------------|
@@ -88,7 +64,7 @@ The dashboard aggregates data from:
 | **Auditors** | Compliance evidence, control effectiveness assessment |
 | **Process Owners** | Individual procedure status, action items |
 
-### 1.4 Dashboard Refresh Frequency
+### Dashboard Refresh Frequency
 
 | Activity | Frequency | Owner |
 |----------|-----------|-------|
@@ -99,9 +75,9 @@ The dashboard aggregates data from:
 
 ---
 
-## 2. Control Requirements
+## Control Requirements
 
-### 2.1 ISO 27001:2022 A.5.37 Dashboard Requirements
+### ISO 27001:2022 A.5.37 Dashboard Requirements
 
 While A.5.37 focuses on documented procedures, the ISMS requires monitoring and measurement (Clause 9.1). The dashboard supports:
 
@@ -112,7 +88,7 @@ While A.5.37 focuses on documented procedures, the ISMS requires monitoring and 
 | **9.3 Management review** | Performance metrics for executive review |
 | **10.1 Continual improvement** | Trend analysis for improvement opportunities |
 
-### 2.2 Key Metrics Framework
+### Key Metrics Framework
 
 | Metric Category | What It Measures | Why It Matters |
 |-----------------|------------------|----------------|
@@ -122,7 +98,7 @@ While A.5.37 focuses on documented procedures, the ISMS requires monitoring and 
 | **Gaps** | Open issues and remediation status | Shows active improvement efforts |
 | **Change Velocity** | Rate of procedure updates | Indicates organisational agility and maturity |
 
-### 2.3 Compliance Thresholds
+### Compliance Thresholds
 
 | Metric | Target | Warning | Critical |
 |--------|:------:|:-------:|:--------:|
@@ -135,9 +111,9 @@ While A.5.37 focuses on documented procedures, the ISMS requires monitoring and 
 
 ---
 
-## 3. Prerequisites
+## Prerequisites
 
-### 3.1 Required Source Workbooks
+### Required Source Workbooks
 
 Before populating the dashboard, ensure the following are complete and current:
 
@@ -147,7 +123,7 @@ Before populating the dashboard, ensure the following are complete and current:
 | **A.5.37.2 Quality Assessment** | Quality scores, dimension ratings, gaps | Quality_Scores, Gap_Analysis, Dimension_Summary |
 | **A.5.37.3 Review Tracking** | Review status, change requests, escalations | Review_Schedule, Change_Requests, Metrics_Summary |
 
-### 3.2 Data Currency Requirements
+### Data Currency Requirements
 
 | Source | Maximum Age | Refresh Before |
 |--------|-------------|----------------|
@@ -155,7 +131,7 @@ Before populating the dashboard, ensure the following are complete and current:
 | Quality Assessment | 7 days | Dashboard refresh |
 | Review Tracking | 7 days | Dashboard refresh |
 
-### 3.3 Access Requirements
+### Access Requirements
 
 | System/Resource | Access Level | Purpose |
 |-----------------|--------------|---------|
@@ -166,9 +142,9 @@ Before populating the dashboard, ensure the following are complete and current:
 
 ---
 
-## 4. Dashboard Views
+## Dashboard Views
 
-### 4.1 Executive Summary View
+### Executive Summary View
 
 High-level metrics designed for quick review by senior management:
 
@@ -180,7 +156,7 @@ High-level metrics designed for quick review by senior management:
 | **Trend Arrows** | Direction of change from previous period | Monthly |
 | **Period Summary** | Brief narrative of key changes | Monthly |
 
-### 4.2 Category Performance View
+### Category Performance View
 
 Breakdown of metrics by procedure category:
 
@@ -195,7 +171,7 @@ Breakdown of metrics by procedure category:
 | **IT Operations** | Count, coverage %, approval %, quality avg, open gaps |
 | **Network Operations** | Count, coverage %, approval %, quality avg, open gaps |
 
-### 4.3 Quality Deep-Dive View
+### Quality Deep-Dive View
 
 Detailed quality analysis:
 
@@ -206,7 +182,7 @@ Detailed quality analysis:
 | **Category Comparison** | Quality scores compared across categories |
 | **Improvement Trends** | Quality score changes over time |
 
-### 4.4 Review Compliance View
+### Review Compliance View
 
 Procedure currency status:
 
@@ -217,7 +193,7 @@ Procedure currency status:
 | **Overdue List** | Top 10 most overdue procedures |
 | **Upcoming Reviews** | Reviews due in next 30 days |
 
-### 4.5 Gap Remediation View
+### Gap Remediation View
 
 Gap management status:
 
@@ -229,7 +205,7 @@ Gap management status:
 | **Closure Trend** | Gap closure rate over time |
 | **Overdue Gaps** | Gaps past remediation target date |
 
-### 4.6 Change Activity View
+### Change Activity View
 
 Procedure change metrics:
 
@@ -242,9 +218,9 @@ Procedure change metrics:
 
 ---
 
-## 5. Key Performance Indicators
+## Key Performance Indicators
 
-### 5.1 Primary KPIs
+### Primary KPIs
 
 | KPI | Definition | Formula | Target |
 |-----|------------|---------|:------:|
@@ -255,7 +231,7 @@ Procedure change metrics:
 | **Average Quality Score** | Mean quality score across inventory | SUM(Scores)/COUNT(Procedures) | ≥4.0 |
 | **Open Gap Count** | Total open gaps | COUNT(Status="Open") | 0 |
 
-### 5.2 Overall Compliance Score Formula
+### Overall Compliance Score Formula
 
 The Overall Compliance Score is a weighted composite:
 
@@ -274,7 +250,7 @@ Overall Compliance Score =
 | Quality Score | 25% | Ensures procedures are effective |
 | Gap Remediation | 25% | Ensures continuous improvement |
 
-### 5.3 Secondary KPIs
+### Secondary KPIs
 
 | KPI | Definition | Target |
 |-----|------------|:------:|
@@ -285,7 +261,7 @@ Overall Compliance Score =
 | Training Completion | Training completion for major changes | 100% |
 | Zero L3 Escalations | Count of L3 escalations | 0 |
 
-### 5.4 Trend Indicators
+### Trend Indicators
 
 | Indicator | Meaning |
 |-----------|---------|
@@ -297,67 +273,7 @@ Trend calculation: Compare current period to previous period (month-over-month o
 
 ---
 
-## 6. Workbook Structure
-
-### 6.1 Sheet Overview
-
-| Sheet # | Sheet Name | Purpose | Primary Users |
-|:-------:|------------|---------|---------------|
-| 1 | Executive_Dashboard | High-level summary with KPIs | CISO, Management |
-| 2 | Category_Analysis | Performance by procedure category | Department Heads, ISM |
-| 3 | Review_Status | Review compliance tracking | ISM, Procedure Owners |
-| 4 | Quality_Overview | Quality assessment summary | ISM, Quality team |
-| 5 | Gap_Tracking | Gap remediation status | ISM, Process Owners |
-| 6 | Change_Activity | Change request metrics | ISM, Change Management |
-| 7 | Trend_History | Historical trend data | ISM, Auditors |
-| 8 | Data_Sources | Source workbook links | ISM (technical) |
-| 9 | Instructions | User guidance | All users |
-
-### 6.2 Data Flow Architecture
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                      DASHBOARD DATA FLOW                        │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  SOURCE WORKBOOKS                                               │
-│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐    │
-│  │ A.5.37.1       │  │ A.5.37.2       │  │ A.5.37.3       │    │
-│  │ Inventory      │  │ Quality        │  │ Review         │    │
-│  └───────┬────────┘  └───────┬────────┘  └───────┬────────┘    │
-│          │                   │                   │              │
-│          ▼                   ▼                   ▼              │
-│  ┌────────────────────────────────────────────────────────┐    │
-│  │                    Data_Sources Sheet                   │    │
-│  │              (External references/links)                │    │
-│  └─────────────────────────┬──────────────────────────────┘    │
-│                            │                                    │
-│          ┌─────────────────┼─────────────────┐                 │
-│          ▼                 ▼                 ▼                 │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐         │
-│  │ Category_    │  │ Quality_     │  │ Review_      │         │
-│  │ Analysis     │  │ Overview     │  │ Status       │         │
-│  └──────────────┘  └──────────────┘  └──────────────┘         │
-│          │                 │                 │                 │
-│          ▼                 ▼                 ▼                 │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐         │
-│  │ Gap_         │  │ Change_      │  │ Trend_       │         │
-│  │ Tracking     │  │ Activity     │  │ History      │         │
-│  └──────────────┘  └──────────────┘  └──────────────┘         │
-│          │                 │                 │                 │
-│          └─────────────────┼─────────────────┘                 │
-│                            ▼                                    │
-│                  ┌──────────────────┐                          │
-│                  │ Executive_       │                          │
-│                  │ Dashboard        │                          │
-│                  └──────────────────┘                          │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 7. Completion Walkthrough
+## Completion Walkthrough
 
 ### Step 1: Verify Source Data Currency
 
@@ -493,9 +409,9 @@ Trend calculation: Compare current period to previous period (month-over-month o
 
 ---
 
-## 8. Data Refresh Process
+## Data Refresh Process
 
-### 8.1 Manual Refresh Procedure
+### Manual Refresh Procedure
 
 1. **Open Source Workbooks**: Open all three source workbooks (read-only)
 2. **Open Dashboard Workbook**: Open the dashboard for editing
@@ -506,7 +422,7 @@ Trend calculation: Compare current period to previous period (month-over-month o
 7. **Update Timestamp**: Update Last_Refreshed date in Data_Sources sheet
 8. **Save Dashboard**: Save and close
 
-### 8.2 Automated Refresh (If Configured)
+### Automated Refresh (If Configured)
 
 | Setting | Value |
 |---------|-------|
@@ -515,7 +431,7 @@ Trend calculation: Compare current period to previous period (month-over-month o
 | Notification | Email on completion or error |
 | Log Location | [System path] |
 
-### 8.3 Troubleshooting Data Issues
+### Troubleshooting Data Issues
 
 | Issue | Possible Cause | Resolution |
 |-------|----------------|------------|
@@ -527,9 +443,9 @@ Trend calculation: Compare current period to previous period (month-over-month o
 
 ---
 
-## 9. Reporting and Export
+## Reporting and Export
 
-### 9.1 Standard Reports
+### Standard Reports
 
 | Report | Content | Frequency | Distribution |
 |--------|---------|-----------|--------------|
@@ -538,7 +454,7 @@ Trend calculation: Compare current period to previous period (month-over-month o
 | **Gap Status Report** | Sheet 5 as PDF | Weekly | ISM, Gap Owners |
 | **Audit Evidence Package** | All sheets as PDF | On request | Auditors |
 
-### 9.2 Export Procedure
+### Export Procedure
 
 1. Select sheet to export
 2. File > Print > Save as PDF
@@ -546,7 +462,7 @@ Trend calculation: Compare current period to previous period (month-over-month o
 4. Store in: ISMS Evidence Library/A.5.37/Dashboard Reports/
 5. Distribute via secure email or SharePoint
 
-### 9.3 Management Review Input
+### Management Review Input
 
 For ISMS Management Review (ISO 27001 Clause 9.3), provide:
 
@@ -559,9 +475,9 @@ For ISMS Management Review (ISO 27001 Clause 9.3), provide:
 
 ---
 
-## 10. Evidence Collection
+## Evidence Collection
 
-### 10.1 Evidence Requirements
+### Evidence Requirements
 
 | Evidence Type | Format | Retention |
 |---------------|--------|-----------|
@@ -570,7 +486,7 @@ For ISMS Management Review (ISO 27001 Clause 9.3), provide:
 | **Management Reports** | PDF exports per distribution | 3 years |
 | **Audit Evidence Packages** | Complete PDF bundle | Per audit cycle |
 
-### 10.2 Evidence Storage
+### Evidence Storage
 
 | Evidence Type | Storage Location | Naming Convention |
 |---------------|------------------|-------------------|
@@ -578,7 +494,7 @@ For ISMS Management Review (ISO 27001 Clause 9.3), provide:
 | Quarterly reports | ISMS Evidence Library/A.5.37/Reports/ | A.5.37.4_QtrReport_YYYYQN.pdf |
 | Audit packages | ISMS Evidence Library/Audits/[Year]/ | A.5.37_AuditEvidence_YYYYMMDD.pdf |
 
-### 10.3 Audit Evidence Checklist
+### Audit Evidence Checklist
 
 For auditors requesting evidence of A.5.37 compliance:
 
@@ -591,7 +507,7 @@ For auditors requesting evidence of A.5.37 compliance:
 
 ---
 
-## 11. Common Pitfalls
+## Common Pitfalls
 
 ### Dashboard Design Pitfalls
 
@@ -651,7 +567,7 @@ For auditors requesting evidence of A.5.37 compliance:
 
 ---
 
-## 12. Quality Checklist
+## Quality Checklist
 
 ### Pre-Distribution Checklist
 
@@ -690,9 +606,9 @@ For auditors requesting evidence of A.5.37 compliance:
 
 ---
 
-## 13. Review and Approval
+## Review and Approval
 
-### 13.1 Dashboard Review Workflow
+### Dashboard Review Workflow
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -712,7 +628,7 @@ For auditors requesting evidence of A.5.37 compliance:
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-### 13.2 Approval Authorities
+### Approval Authorities
 
 | Dashboard Activity | Owner | Reviewer |
 |--------------------|-------|----------|
@@ -721,7 +637,7 @@ For auditors requesting evidence of A.5.37 compliance:
 | Audit evidence package | ISM | CISO |
 | Methodology changes | ISM | CISO approval required |
 
-### 13.3 Sign-off Record
+### Sign-off Record
 
 | Activity | Name | Date |
 |----------|------|------|
@@ -731,9 +647,9 @@ For auditors requesting evidence of A.5.37 compliance:
 
 ---
 
-## 14. Related Controls
+## Related Controls
 
-### 14.1 Primary Dependencies
+### Primary Dependencies
 
 | Control | Relationship | Integration |
 |---------|--------------|-------------|
@@ -742,7 +658,7 @@ For auditors requesting evidence of A.5.37 compliance:
 | **A.5.37.3** | Review Tracking | Source of review status and change metrics |
 | **A.5.1** | Information Security Policy | Policy framework governance |
 
-### 14.2 Downstream Consumers
+### Downstream Consumers
 
 | Consumer | What They Use |
 |----------|---------------|
@@ -751,7 +667,7 @@ For auditors requesting evidence of A.5.37 compliance:
 | **Risk Management** | Gap data for risk assessment |
 | **Improvement Planning** | Trend analysis for improvement priorities |
 
-### 14.3 Related ISMS Dashboards
+### Related ISMS Dashboards
 
 | Dashboard | Relationship |
 |-----------|--------------|
@@ -760,7 +676,6 @@ For auditors requesting evidence of A.5.37 compliance:
 | **Gap Register Dashboard** | A.5.37.4 contributes procedure gaps |
 
 ---
-
 
 **END OF USER GUIDE**
 

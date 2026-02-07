@@ -18,32 +18,13 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-1. [PART I: USER COMPLETION GUIDE](#part-i-user-completion-guide)
-   - [1.1 Assessment Overview](#11-assessment-overview)
-   - [1.2 Control Requirements](#12-control-requirements)
-   - [1.3 Prerequisites](#13-prerequisites)
-   - [1.4 Workbook Structure](#14-workbook-structure)
-   - [1.5 Completion Walkthrough](#15-completion-walkthrough)
-   - [1.6 Dashboard Refresh Process](#16-dashboard-refresh-process)
-   - [1.7 Evidence Collection](#17-evidence-collection)
-   - [1.8 Common Pitfalls](#18-common-pitfalls)
-   - [1.9 Quality Checklist](#19-quality-checklist)
-   - [1.10 Review and Approval](#110-review-and-approval)
-2. [PART II: TECHNICAL SPECIFICATION](#part-ii-technical-specification)
-   - [2.1 Workbook Technical Details](#21-workbook-technical-details)
-   - [2.2 Sheet Specifications](#22-sheet-specifications)
-   - [2.3 Conditional Formatting](#23-conditional-formatting)
-   - [2.4 Formulas](#24-formulas)
-   - [2.5 Integration Points](#25-integration-points)
-   - [2.6 Related Documents](#26-related-documents)
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.3.4-TG.
 
 ---
 
----
-
-## 1.1 Assessment Overview
+## Assessment Overview
 
 ### Purpose
 
@@ -102,7 +83,7 @@ A well-maintained compliance dashboard delivers:
 
 ---
 
-## 1.2 Control Requirements
+## Control Requirements
 
 ### ISO 27001:2022 Control A.5.3
 
@@ -155,7 +136,7 @@ ISO 27001 requires management review of ISMS effectiveness. This dashboard provi
 
 ---
 
-## 1.3 Prerequisites
+## Prerequisites
 
 ### Required Data Sources
 
@@ -197,133 +178,7 @@ Before proceeding, verify:
 
 ---
 
-## 1.4 Workbook Structure
-
-| Sheet | Purpose | Update Frequency |
-|-------|---------|------------------|
-| **Executive_Dashboard** | High-level summary for leadership | Monthly |
-| **KPI_Scorecard** | Detailed KPI tracking | Monthly |
-| **Conflict_Status** | Current conflict breakdown | Monthly |
-| **Remediation_Progress** | Remediation tracking | Weekly |
-| **Exception_Monitoring** | Active exceptions tracking | Monthly |
-| **Trend_Analysis** | Historical trends | Quarterly |
-| **Department_View** | Per-department metrics | Monthly |
-| **Audit_Evidence** | Evidence compilation | Per audit |
-| **Data_Sources** | Source data references | Each refresh |
-
-### Sheet Dependencies
-
-```
-Data_Sources (Reference) <---- Source workbooks
-       |
-       v
-Conflict_Status (Step 1) <---- Import conflict data
-       |
-       v
-Remediation_Progress (Step 2) <---- Import remediation data
-       |
-       v
-Exception_Monitoring (Step 3) <---- Import exception data
-       |
-       v
-KPI_Scorecard (Step 4) <---- Calculate metrics
-       |
-       v
-Trend_Analysis (Step 5) <---- Update trends
-       |
-       v
-Department_View (Step 6) <---- Calculate by department
-       |
-       v
-Executive_Dashboard (Step 7) <---- Summarise for executives
-       |
-       v
-Audit_Evidence (Final) <---- Compile evidence
-```
-
-### Sheet-by-Sheet Summary
-
-#### 1. Executive_Dashboard Sheet
-
-High-level summary containing:
-- Traffic light status indicators
-- Key metrics summary
-- Executive summary narrative
-- Quick trend chart
-- Recommended actions
-
-#### 2. KPI_Scorecard Sheet
-
-Detailed KPI tracking containing:
-- KPI definitions and targets
-- Quarterly performance
-- Year-to-date status
-- Trend indicators
-- Target comparisons
-
-#### 3. Conflict_Status Sheet
-
-Current conflict breakdown containing:
-- Conflict counts by type
-- Conflict counts by process
-- Status distribution
-- Aging analysis
-- Department breakdown
-
-#### 4. Remediation_Progress Sheet
-
-Remediation tracking containing:
-- Active remediations
-- Overdue items
-- Burndown tracking
-- Escalation status
-- Owner performance
-
-#### 5. Exception_Monitoring Sheet
-
-Active exceptions tracking containing:
-- Exception inventory
-- Expiry tracking
-- Compensating control status
-- Review schedule
-- Effectiveness ratings
-
-#### 6. Trend_Analysis Sheet
-
-Historical trends containing:
-- Quarterly trend data
-- Resolution rates
-- Mean time to resolution
-- Compliance percentages
-- Trend indicators
-
-#### 7. Department_View Sheet
-
-Per-department metrics containing:
-- Department compliance scores
-- Department conflict counts
-- Department exception counts
-- Department-specific trends
-
-#### 8. Audit_Evidence Sheet
-
-Evidence compilation containing:
-- Evidence inventory
-- Location references
-- Status indicators
-- Audit trail
-
-#### 9. Data_Sources Sheet
-
-Source data references containing:
-- Source workbook references
-- Last refresh dates
-- Responsible parties
-- Refresh frequencies
-
----
-
-## 1.5 Completion Walkthrough
+## Completion Walkthrough
 
 ### Step 1: Update Executive Dashboard
 
@@ -624,7 +479,7 @@ For each exception, track whether compensating controls are working:
 
 ---
 
-## 1.6 Dashboard Refresh Process
+## Dashboard Refresh Process
 
 ### Monthly Refresh Checklist
 
@@ -672,7 +527,7 @@ Before publishing refresh:
 
 ---
 
-## 1.7 Evidence Collection
+## Evidence Collection
 
 ### Evidence Requirements
 
@@ -715,7 +570,7 @@ ISMS-IMP-A.5.3.4_Compliance_Dashboard_YYYYMM.xlsx
 
 ---
 
-## 1.8 Common Pitfalls
+## Common Pitfalls
 
 Avoid these common mistakes when maintaining the Compliance Dashboard:
 
@@ -791,7 +646,7 @@ Avoid these common mistakes when maintaining the Compliance Dashboard:
 
 ---
 
-## 1.9 Quality Checklist
+## Quality Checklist
 
 Before distributing the dashboard, verify all items:
 
@@ -841,7 +696,7 @@ Before distributing the dashboard, verify all items:
 
 ---
 
-## 1.10 Review and Approval
+## Review and Approval
 
 ### Dashboard Review Workflow
 
@@ -888,7 +743,6 @@ Upon approval:
 6. Communicate any escalation items
 
 ---
-
 
 **END OF USER GUIDE**
 

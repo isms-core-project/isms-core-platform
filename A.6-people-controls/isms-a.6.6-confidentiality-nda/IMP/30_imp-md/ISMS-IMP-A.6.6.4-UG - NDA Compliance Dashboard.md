@@ -25,9 +25,9 @@ This section provides step-by-step guidance for using and maintaining the NDA Co
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 The NDA Compliance Dashboard provides executive-level visibility into NDA program compliance, coverage metrics, and key performance indicators. It aggregates data from the NDA management workbooks to present a consolidated view of confidentiality agreement status across the organisation.
 
@@ -37,7 +37,7 @@ ISO/IEC 27001:2022 Control A.6.6 states:
 
 This dashboard demonstrates that the organisation is actively managing and monitoring its NDA program, providing evidence of control effectiveness for management and auditors.
 
-### 1.2 Scope and Applicability
+### Scope and Applicability
 
 **This dashboard consolidates:**
 
@@ -58,7 +58,7 @@ This dashboard demonstrates that the organisation is actively managing and monit
 | KPI Tracker | Performance indicator tracking over time |
 | Trend Analysis | Historical trend data for pattern identification |
 
-### 1.3 Business Context
+### Business Context
 
 **Why Dashboard Visibility Matters:**
 
@@ -82,7 +82,7 @@ Effective NDA management requires ongoing monitoring and executive attention:
 | Legal Counsel | Template currency, adequacy status |
 | External Auditors | Compliance evidence, control effectiveness |
 
-### 1.4 Dashboard Outputs
+### Dashboard Outputs
 
 The dashboard produces the following outputs:
 
@@ -98,9 +98,9 @@ The dashboard produces the following outputs:
 
 ---
 
-## 2. Prerequisites
+## Prerequisites
 
-### 2.1 Required Inputs
+### Required Inputs
 
 Before using the dashboard, ensure:
 
@@ -113,7 +113,7 @@ Before using the dashboard, ensure:
 | Current vendor count | Procurement | Vendor metrics denominator |
 | Previous dashboard | ISMS Evidence Library | Trend comparison |
 
-### 2.2 Required Approvals
+### Required Approvals
 
 | Activity | Approver | Purpose |
 |----------|----------|---------|
@@ -122,7 +122,7 @@ Before using the dashboard, ensure:
 | External distribution | CISO | Control sensitive metrics |
 | Process changes | ISM | Maintain consistency |
 
-### 2.3 Required Knowledge
+### Required Knowledge
 
 Dashboard maintainers should understand:
 
@@ -133,7 +133,7 @@ Dashboard maintainers should understand:
 - Executive reporting requirements
 - Audit evidence requirements
 
-### 2.4 Access Requirements
+### Access Requirements
 
 | Role | Access Level | Capabilities |
 |------|--------------|--------------|
@@ -146,52 +146,9 @@ Dashboard maintainers should understand:
 
 ---
 
-## 3. Workbook Structure Overview
+## Completion Walkthrough
 
-### 3.1 Sheet Summary
-
-The workbook contains eight sheets for comprehensive dashboard management:
-
-| Sheet | Purpose | Primary Owner | Update Frequency |
-|-------|---------|---------------|------------------|
-| 1: Instructions | Usage guidance | N/A | Reference only |
-| 2: Executive_Summary | High-level KPIs | ISM | Monthly |
-| 3: Coverage_Metrics | Coverage by category | ISM | Monthly |
-| 4: Expiration_Status | Expiration tracking | ISM | Weekly |
-| 5: Compliance_Scorecard | Compliance scoring | ISM | Monthly |
-| 6: KPI_Tracker | KPI tracking | ISM | Quarterly |
-| 7: Trend_Analysis | Historical trends | ISM | Quarterly |
-| 8: Approval_SignOff | Publication approval | CISO | Per publication |
-
-### 3.2 Sheet Dependencies
-
-```
-Source Workbooks (A.6.6.1, A.6.6.2, A.6.6.3)
-         ↓ (data aggregation)
-Sheet 3: Coverage_Metrics + Sheet 4: Expiration_Status + Sheet 5: Compliance_Scorecard
-         ↓ (feeds)
-Sheet 2: Executive_Summary
-         ↓ (historical tracking)
-Sheet 6: KPI_Tracker + Sheet 7: Trend_Analysis
-         ↓ (approval)
-Sheet 8: Approval_SignOff
-```
-
-### 3.3 Data Flow
-
-1. **Data Collection**: Pull data from source workbooks
-2. **Metrics Calculation**: Calculate coverage, compliance scores
-3. **Status Determination**: Apply RAG thresholds
-4. **Summary Generation**: Populate executive summary
-5. **Trend Update**: Add to historical tracking
-6. **Approval**: Obtain sign-off before publication
-7. **Distribution**: Publish to stakeholders
-
----
-
-## 4. Completion Walkthrough
-
-### 4.1 Sheet 2: Executive_Summary – Completion Guide
+### Sheet 2: Executive_Summary – Completion Guide
 
 **Purpose**: Provide leadership with at-a-glance visibility into NDA program status.
 
@@ -265,7 +222,7 @@ Record 3-5 key messages for management attention:
 | Prepared By | ISM name |
 | Preparation Date | Date prepared |
 
-### 4.2 Sheet 3: Coverage_Metrics – Completion Guide
+### Sheet 3: Coverage_Metrics – Completion Guide
 
 **Purpose**: Provide detailed NDA coverage analysis by stakeholder category.
 
@@ -339,7 +296,7 @@ For categories not at 100%:
 | Consultants | [n] | [n] | [n] | [%] | [RAG] |
 | **Total Vendors** | [n] | [n] | [n] | [%] | [RAG] |
 
-### 4.3 Sheet 4: Expiration_Status – Completion Guide
+### Sheet 4: Expiration_Status – Completion Guide
 
 **Purpose**: Track NDA expirations to enable proactive renewal management.
 
@@ -389,7 +346,7 @@ For Expired and <30 Days categories, list details:
 | Renewal rate (90 day) | [%] | >95% | [RAG] |
 | Average renewal lead time | [days] | >45 | [RAG] |
 
-### 4.4 Sheet 5: Compliance_Scorecard – Completion Guide
+### Sheet 5: Compliance_Scorecard – Completion Guide
 
 **Purpose**: Provide multi-dimensional compliance assessment of NDA program.
 
@@ -449,7 +406,7 @@ Overall Score = Σ (Weighted Scores)
 | Gap SLA | >95% | [%] | [/100] | 10% | [/10] | [RAG] |
 | **OVERALL** | - | - | - | 100% | **[/100]** | [RAG] |
 
-### 4.5 Sheet 6: KPI_Tracker – Completion Guide
+### Sheet 6: KPI_Tracker – Completion Guide
 
 **Purpose**: Track key performance indicators over time for trend analysis.
 
@@ -505,7 +462,7 @@ For each KPI, record:
 | Stable | Within 2% of previous 3 periods average | → |
 | Declining | Worse than previous 3 periods average | ↓ |
 
-### 4.6 Sheet 7: Trend_Analysis – Completion Guide
+### Sheet 7: Trend_Analysis – Completion Guide
 
 **Purpose**: Maintain historical data for pattern identification and reporting.
 
@@ -555,7 +512,7 @@ Document significant patterns:
 | Expired at Period End | [n] | [n] | [+/-%] | [↑↓→] |
 | Compliance Score | [n] | [n] | [+/-] | [↑↓→] |
 
-### 4.7 Sheet 8: Approval_SignOff – Completion Guide
+### Sheet 8: Approval_SignOff – Completion Guide
 
 **Purpose**: Obtain formal approval before publishing dashboard to stakeholders.
 
@@ -598,9 +555,9 @@ Document significant patterns:
 
 ---
 
-## 5. Evidence Collection
+## Evidence Collection
 
-### 5.1 Evidence Requirements
+### Evidence Requirements
 
 Evidence must be maintained for all dashboard activities:
 
@@ -612,7 +569,7 @@ Evidence must be maintained for all dashboard activities:
 | Trend data | 7 years | ISMS Evidence Library |
 | Presentation materials | 3 years | ISMS Evidence Library |
 
-### 5.2 Evidence Folder Structure
+### Evidence Folder Structure
 
 ```
 ISMS-Evidence-Library/
@@ -628,7 +585,7 @@ ISMS-Evidence-Library/
                     └── [YYYY-MM]-Approval.pdf
 ```
 
-### 5.3 Evidence for Audit
+### Evidence for Audit
 
 During ISO 27001 audit, be prepared to demonstrate:
 
@@ -643,9 +600,9 @@ During ISO 27001 audit, be prepared to demonstrate:
 
 ---
 
-## 6. Common Pitfalls
+## Common Pitfalls
 
-### 6.1 Data Quality Errors
+### Data Quality Errors
 
 ❌ **MISTAKE: Dashboard with outdated data**
 Dashboard must be updated at defined frequency. Outdated data misleads stakeholders.
@@ -659,7 +616,7 @@ Use same calculation method each period. Methodology changes break trend analysi
 ❌ **MISTAKE: Not validating source data**
 Verify source workbooks are current and accurate before aggregating.
 
-### 6.2 Presentation Errors
+### Presentation Errors
 
 ❌ **MISTAKE: Complex dashboard obscuring key messages**
 Keep executive summary clear and focused. Details in supporting sheets.
@@ -673,7 +630,7 @@ Apply same thresholds consistently. Document threshold definitions.
 ❌ **MISTAKE: Missing action items for Red status**
 Red status without action plan shows lack of response. Always include remediation.
 
-### 6.3 Process Errors
+### Process Errors
 
 ❌ **MISTAKE: Dashboard not reviewed before presentation**
 ISM and CISO must verify accuracy before management presentation.
@@ -689,9 +646,9 @@ Trend analysis requires consistent historical data. Don't overwrite previous per
 
 ---
 
-## 7. Quality Checklist
+## Quality Checklist
 
-### 7.1 Pre-Publication Checklist
+### Pre-Publication Checklist
 
 Before publishing dashboard:
 
@@ -704,7 +661,7 @@ Before publishing dashboard:
 - [ ] All Red items have documented actions
 - [ ] Approval signatures obtained
 
-### 7.2 Monthly Update Checklist
+### Monthly Update Checklist
 
 Monthly dashboard activities:
 
@@ -717,7 +674,7 @@ Monthly dashboard activities:
 - [ ] Trend data point added
 - [ ] Previous month archived
 
-### 7.3 Quarterly Checklist
+### Quarterly Checklist
 
 Additional quarterly activities:
 
@@ -730,9 +687,9 @@ Additional quarterly activities:
 
 ---
 
-## 8. Review and Approval
+## Review and Approval
 
-### 8.1 Publication Authority
+### Publication Authority
 
 | Dashboard Type | Preparer | Approver | Distribution |
 |----------------|----------|----------|--------------|
@@ -741,7 +698,7 @@ Additional quarterly activities:
 | Quarterly Summary | ISM | CISO | Management + Board |
 | Annual Report | ISM | CISO + Executive | Board, Audit Committee |
 
-### 8.2 Presentation Cadence
+### Presentation Cadence
 
 | Frequency | Audience | Content | Format |
 |-----------|----------|---------|--------|
@@ -750,7 +707,7 @@ Additional quarterly activities:
 | Quarterly | Executive Management | Executive summary + trends | Presentation |
 | Annually | Board/Audit Committee | Annual summary | Formal report |
 
-### 8.3 Escalation Triggers
+### Escalation Triggers
 
 | Trigger | Escalation Path | Timing |
 |---------|-----------------|--------|
@@ -760,7 +717,6 @@ Additional quarterly activities:
 | Critical gaps > 0 | ISM → CISO → Executive | Immediate |
 
 ---
-
 
 **END OF USER GUIDE**
 

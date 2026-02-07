@@ -23,235 +23,228 @@
 
 ---
 
-### Document Structure
-
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.5.32-33.S3-UG.
 
 ---
-
 # Technical Specification
-
 **Audience:** Workbook Developers, Python/Excel Script Maintainers
 
+
+> Auto-generated from `generate_a532_33_3_retention_disposal.py`
+> Re-generate with: `python3 generate_tg_from_scr.py --apply`
+
+## Workbook Overview
+
+| Property | Value |
+|----------|-------|
+| **Document ID** | `ISMS-IMP-A.5.32-33.S3` |
+| **Output Filename** | `ISMS-IMP-A.5.32-33.S3_Retention_Disposal_Schedule_YYYYMMDD.xlsx` |
+| **Workbook Title** | Retention Disposal Schedule |
+| **Total Sheets** | 11 (11 visible) |
+| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
+
+## Color Palette
+
+| Hex Code | Style Name | Description |
+|----------|-----------|-------------|
+| #1F4E79 | 1F4E79 | Custom |
+| #2E75B6 | 2E75B6 | Custom |
+| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
+| #D6DCE4 | D6DCE4 | Silver (Neutral) |
+| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | FFFFCC | Light Yellow (User Input) |
+
+## Sheet 1: Instructions
+
 ---
-
-# Workbook Structure
-
-## Generated File
-
-**Filename:** `ISMS-IMP-A.5.32-33.S3_Retention_Disposal_Schedule_[YYYYMMDD].xlsx`
-
-**Generator Script:** `generate_a532_33_3_retention_disposal.py`
-
-## Sheet Overview
-
-| Sheet # | Sheet Name | Purpose | Rows (Est.) |
-|---------|------------|---------|-------------|
-| 1 | Instructions | Usage guidance | ~50 |
-| 2 | Retention_Schedule | Retention periods | 50+ |
-| 3 | Regulatory_Mapping | Regulation reference | 30+ |
-| 4 | Disposal_Queue | Records for disposal | 50+ |
-| 5 | Disposal_Method_Matrix | Methods per classification | ~10 |
-| 6 | Destruction_Verification | Destruction evidence | 100+ |
-| 7 | Exception_Register | Extensions/early disposal | 30+ |
-| 8 | Compliance_Dashboard | Metrics | ~20 |
-| 9 | Gap_Analysis | Issues | 30+ |
-| 10 | Evidence_Register | Audit evidence | 50+ |
-| 11 | Approval_SignOff | Formal approval | ~30 |
-
----
-
-# Sheet-by-Sheet Specifications
 
 ## Sheet 2: Retention_Schedule
 
-### Column Structure
+**Data Rows:** 46 (rows 5–50)
 
-| Column | Header | Width | Data Validation |
-|--------|--------|-------|-----------------|
-| A | Record Category ID | 18 | - |
-| B | Category Name | 30 | - |
-| C | Retention Period | 15 | - |
-| D | Retention Basis | 20 | List: Regulatory, Contractual, Business, Mixed |
-| E | Basis Detail | 35 | - |
-| F | Retention Trigger | 20 | List: Creation, Year-End, Contract End, Last Activity, Event-Based |
-| G | Grace Period | 12 | - |
-| H | Review Cycle | 12 | List: Annual, Biennial, Triennial |
-| I | Last Review | 12 | Date |
-| J | Next Review | 12 | Date |
-| K | Notes | 35 | - |
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Record Category ID |
+| B | Category Name |
+| C | Retention Period |
+| D | Retention Basis |
+| E | Basis Detail |
+| F | Retention Trigger |
+| G | Grace Period |
+| H | Review Cycle |
+| I | Last Review |
+| J | Next Review |
+| K | Notes |
+
+---
 
 ## Sheet 3: Regulatory_Mapping
 
-### Column Structure
+**Data Rows:** 22 (rows 8–29)
 
-| Column | Header | Width | Data Validation |
-|--------|--------|-------|-----------------|
-| A | Regulation ID | 12 | - |
-| B | Regulation Name | 30 | - |
-| C | Section/Article | 15 | - |
-| D | Record Types Affected | 35 | - |
-| E | Required Retention | 15 | - |
-| F | Retention Trigger | 20 | - |
-| G | Penalty for Non-Compliance | 30 | - |
-| H | Last Review | 12 | Date |
-| I | Reviewer | 20 | - |
-| J | Notes | 35 | - |
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Regulation ID |
+| B | Regulation Name |
+| C | Section/Article |
+| D | Record Types Affected |
+| E | Required Retention |
+| F | Retention Trigger |
+| G | Penalty for Non-Compliance |
+| H | Last Review |
+| I | Reviewer |
+| J | Notes |
+
+---
 
 ## Sheet 4: Disposal_Queue
 
-### Column Structure
+**Data Rows:** 46 (rows 5–50)
 
-| Column | Header | Width | Data Validation |
-|--------|--------|-------|-----------------|
-| A | Queue ID | 12 | - |
-| B | Record Category | 30 | - |
-| C | Retention End Date | 15 | Date |
-| D | Volume - Physical | 15 | - |
-| E | Volume - Electronic | 15 | - |
-| F | Legal Hold Status | 12 | List: Yes, No, Checking |
-| G | Disposal Priority | 12 | List: High, Medium, Low |
-| H | Target Disposal Date | 15 | Date |
-| I | Assigned To | 20 | - |
-| J | Status | 15 | List: Pending, In Progress, Complete, On Hold |
-| K | Notes | 30 | - |
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Queue ID |
+| B | Record Category |
+| C | Retention End Date |
+| D | Volume - Physical |
+| E | Volume - Electronic |
+| F | Legal Hold Status |
+| G | Disposal Priority |
+| H | Target Disposal Date |
+| I | Assigned To |
+| J | Status |
+| K | Notes |
+
+---
 
 ## Sheet 5: Disposal_Method_Matrix
 
-### Column Structure
+### Columns
 
-| Column | Header | Width | Data Validation |
-|--------|--------|-------|-----------------|
-| A | Classification | 15 | List: Restricted, Confidential, Internal, Public |
-| B | Physical - Paper | 25 | - |
-| C | Physical - Media | 25 | - |
-| D | Electronic - On-Prem | 25 | - |
-| E | Electronic - Cloud | 25 | - |
-| F | Verification Required | 20 | - |
-| G | Approved Vendors | 25 | - |
-| H | Special Handling | 25 | - |
+| Col | Header |
+|-----|--------|
+| A | Classification |
+| B | Physical - Paper |
+| C | Physical - Media |
+| D | Electronic - On-Prem |
+| E | Electronic - Cloud |
+| F | Verification Required |
+| G | Approved Vendors |
+| H | Special Handling |
+
+---
 
 ## Sheet 6: Destruction_Verification
 
-### Column Structure
+**Data Rows:** 56 (rows 5–60)
 
-| Column | Header | Width | Data Validation |
-|--------|--------|-------|-----------------|
-| A | Destruction ID | 18 | - |
-| B | Record Category | 25 | - |
-| C | Volume | 15 | - |
-| D | Destruction Date | 15 | Date |
-| E | Method Used | 25 | - |
-| F | Performed By | 20 | - |
-| G | Witness | 20 | - |
-| H | Certificate Reference | 20 | - |
-| I | Storage Location | 30 | - |
-| J | Verification Status | 15 | List: Verified, Pending, Not Verified |
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Destruction ID |
+| B | Record Category |
+| C | Volume |
+| D | Destruction Date |
+| E | Method Used |
+| F | Performed By |
+| G | Witness |
+| H | Certificate Reference |
+| I | Storage Location |
+| J | Verification Status |
+
+---
 
 ## Sheet 7: Exception_Register
 
-### Column Structure
+**Data Rows:** 36 (rows 5–40)
 
-| Column | Header | Width | Data Validation |
-|--------|--------|-------|-----------------|
-| A | Exception ID | 15 | - |
-| B | Exception Type | 15 | List: Extension, Early Disposal |
-| C | Record Category | 25 | - |
-| D | Original Retention | 15 | - |
-| E | New Retention | 15 | - |
-| F | Reason | 35 | - |
-| G | Requested By | 20 | - |
-| H | Approved By | 20 | - |
-| I | Approval Date | 12 | Date |
-| J | Expiration | 15 | - |
-| K | Status | 12 | List: Active, Expired, Cancelled |
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Exception ID |
+| B | Exception Type |
+| C | Record Category |
+| D | Original Retention |
+| E | New Retention |
+| F | Reason |
+| G | Requested By |
+| H | Approved By |
+| I | Approval Date |
+| J | Expiration |
+| K | Status |
+
+---
 
 ## Sheet 8: Compliance_Dashboard
 
-### Column Structure
+**Data Rows:** 21 (rows 5–25)
 
-| Column | Header | Width | Data Validation |
-|--------|--------|-------|-----------------|
-| A | Metric ID | 10 | - |
-| B | Metric Name | 25 | - |
-| C | Description | 40 | - |
-| D | Target | 12 | - |
-| E | Current Value | 12 | - |
-| F | Trend | 12 | List: Improving, Stable, Declining, New |
-| G | Status | 15 | List: On Target, At Risk, Below Target |
-| H | Owner | 20 | - |
-| I | Last Updated | 12 | Date |
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Metric ID |
+| B | Metric Name |
+| C | Description |
+| D | Target |
+| E | Current Value |
+| F | Trend |
+| G | Status |
+| H | Owner |
+| I | Last Updated |
+
+---
 
 ## Sheet 9: Gap_Analysis
 
-### Column Structure
+**Data Rows:** 36 (rows 5–40)
 
-| Column | Header | Width | Data Validation |
-|--------|--------|-------|-----------------|
-| A | Gap ID | 10 | - |
-| B | Gap Category | 18 | List: Retention, Disposal, Verification, Process |
-| C | Description | 45 | - |
-| D | Related Item | 20 | - |
-| E | Risk Rating | 12 | List: High, Medium, Low |
-| F | Remediation Action | 40 | - |
-| G | Owner | 20 | - |
-| H | Due Date | 12 | Date |
-| I | Status | 15 | List: Open, In Progress, Complete |
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Gap ID |
+| B | Gap Category |
+| C | Description |
+| D | Related Item |
+| E | Risk Rating |
+| F | Remediation Action |
+| G | Owner |
+| H | Due Date |
+| I | Status |
+
+---
 
 ## Sheet 10: Evidence_Register
 
-### Column Structure
+**Data Rows:** 46 (rows 5–50)
 
-| Column | Header | Width | Data Validation |
-|--------|--------|-------|-----------------|
-| A | Evidence ID | 12 | - |
-| B | Description | 40 | - |
-| C | Evidence Type | 18 | List: Certificate, Log, Approval, Report, Other |
-| D | Related Item | 20 | - |
-| E | Storage Location | 35 | - |
-| F | Collected Date | 12 | Date |
-| G | Collected By | 20 | - |
-| H | Verification Status | 18 | List: Verified, Pending, Expired |
+### Columns
 
-## Sheet 11: Approval_SignOff
-
-### Approver Roles
-1. Records Manager
-2. Legal Counsel
-3. Chief Information Security Officer
-4. IT Operations Manager
-5. Compliance Officer
+| Col | Header |
+|-----|--------|
+| A | Evidence ID |
+| B | Description |
+| C | Evidence Type |
+| D | Related Item |
+| E | Storage Location |
+| F | Collected Date |
+| G | Collected By |
+| H | Verification Status |
 
 ---
 
-# Cell Styling Reference
+## Sheet 11: Approval
 
-## Colour Palette
-
-| Style Name | Hex Code | Usage |
-|------------|----------|-------|
-| Header Fill | #1F4E79 | Sheet headers |
-| Subheader Fill | #2E75B6 | Secondary headers |
-| Column Header | #D6DCE4 | Table headers |
-| Input Cell | #FFFFCC | User input cells |
-| High Priority | #FF6B6B | Overdue/high risk |
-| Medium Priority | #FFA94D | Approaching deadline |
-| Low Priority | #69DB7C | On track |
-| Compliant | #C6EFCE | Compliant status |
-| Warning | #FFEB9C | Attention needed |
-| Non-Compliant | #FFC7CE | Non-compliant |
-
----
-
-# Integration Points
-
-## Related Workbooks
-
-| Workbook | Integration Type | Data Exchange |
-|----------|-----------------|---------------|
-| ISMS-IMP-A.5.32-33.S2 | Record categories | Uses protection classification |
-| ISMS-IMP-A.5.32-33.S4 | Dashboard | Retention metrics feed dashboard |
-| ISMS-IMP-A.8.10 | Secure deletion | Deletion methods alignment |
+**Data Rows:** 7 (rows 14–20)
 
 ---
 

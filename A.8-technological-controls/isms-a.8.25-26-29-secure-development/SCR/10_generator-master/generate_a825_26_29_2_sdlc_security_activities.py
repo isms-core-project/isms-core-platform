@@ -298,6 +298,8 @@ from openpyxl.worksheet.datavalidation import DataValidation
 # Document Constants
 # =============================================================================
 DOCUMENT_ID = "ISMS-IMP-A.8.25-26-29.S2"
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_SDLC_Security_Activities_Assessment_{GENERATED_TIMESTAMP}.xlsx"
 CONTROL_REF = "ISO/IEC 27001:2022 - Controls A.8.25, A.8.26, A.8.29: Secure Development"
 
 

@@ -48,9 +48,9 @@
 
 ---
 
-## 1. Purpose and Scope
+## Purpose and Scope
 
-### 1.1 Assessment Objective
+### Assessment Objective
 
 This assessment verifies [Organization]'s compliance with ISO/IEC 27001:2022 Controls A.6.2 (Terms and Conditions of Employment) and A.6.5 (Responsibilities at Termination or Change of Employment).
 
@@ -73,7 +73,7 @@ This assessment verifies [Organization]'s compliance with ISO/IEC 27001:2022 Con
 - Contractor and third-party agreement compliance
 - Legal alignment (Swiss OR, FADP transparency requirements)
 
-### 1.2 Relationship to Parent Policy
+### Relationship to Parent Policy
 
 This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2, Section 7: Employment Contract Requirements**.
 
@@ -87,13 +87,13 @@ This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2,
 - **Section 7.7**: Post-Employment Obligations (what survives termination)
 - **Section 7.8**: Contractor and Third-Party Agreements
 
-### 1.3 Assessment Frequency
+### Assessment Frequency
 
 - **Quarterly**: Routine compliance verification (are new hires' contracts compliant? Are post-employment obligations being tracked?)
 - **Annual**: Full template review and legal alignment re-assessment
 - **Triggered**: After contract template changes, new regulatory requirements, or audit findings
 
-### 1.4 Assessment Ownership
+### Assessment Ownership
 
 **Primary Owner**: CISO and CHRO (joint ownership)
 
@@ -109,9 +109,9 @@ This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2,
 
 ---
 
-## 2. Assessment Methodology
+## Assessment Methodology
 
-### 2.1 Assessment Approach
+### Assessment Approach
 
 **Template-first, then person-level:** First verify the contract templates are correct, then verify every individual has signed a current template.
 
@@ -152,7 +152,7 @@ This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2,
 - Assess risk levels
 - Define remediation actions
 
-### 2.2 Compliance Criteria
+### Compliance Criteria
 
 **Compliant Contract** meets ALL criteria:
 - ✅ Contract template is current (reviewed within 12 months, legally signed off)
@@ -176,7 +176,7 @@ This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2,
 - ❌ Contractor/vendor with system access and no security agreement
 - ❌ Post-employment obligations not specified in contract for roles with sensitive access
 
-### 2.3 Scoring Methodology
+### Scoring Methodology
 
 **Domain Weights:**
 - Contract Template Completeness: 20%
@@ -194,9 +194,9 @@ This assessment implements verification procedures for **ISMS-POL-A.5.1-2-6.1-2,
 
 ---
 
-## 3. Required Security Clauses
+## Required Security Clauses
 
-### 3.1 Universal Clauses (All Employment Contracts)
+### Universal Clauses (All Employment Contracts)
 
 Every employment contract at [Organization] must contain the following security-related clauses, regardless of role:
 
@@ -235,7 +235,7 @@ Every employment contract at [Organization] must contain the following security-
 - Obligation to return all organizational assets (devices, documents, access credentials) upon termination
 - Policy Reference: ISMS-POL-A.5.1-2-6.1-2, Section 7.7
 
-### 3.2 Role-Specific Clauses
+### Role-Specific Clauses
 
 **For Roles with Access to Confidential or Restricted Data (Tier 1–3):**
 
@@ -257,7 +257,7 @@ Every employment contract at [Organization] must contain the following security-
 - Defines what constitutes a reportable conflict
 - Policy Reference: ISMS-POL-A.5.1-2-6.1-2, Section 7.2
 
-### 3.3 Contractor-Specific Clauses
+### Contractor-Specific Clauses
 
 **For All Contractors and Consultants:**
 
@@ -281,42 +281,9 @@ Every employment contract at [Organization] must contain the following security-
 
 ---
 
-## 4. Assessment Workbook Structure
+## Assessment Workbook Structure
 
-### 4.1 Workbook Overview
-
-**File Name**: `ISMS-IMP-A.5.1-2-6.1-2.S4_Employment_Contract_YYYYMMDD.xlsx`
-
-**Sheet Count**: 10 sheets
-
-| Sheet # | Sheet Name | Purpose | Rows (Approx) |
-|---------|------------|---------|---------------|
-| 1 | Dashboard | Executive summary and metrics | 80 |
-| 2 | Contract_Template_Assessment | Verify contract templates are complete and current | 40 |
-| 3 | Required_Clause_Registry | Master list of required clauses and template coverage | 30 |
-| 4 | Personnel_Contract_Compliance | Per-person contract status verification | 150 |
-| 5 | Confidentiality_NDA_Tracking | NDA / confidentiality status per individual | 150 |
-| 6 | Post_Employment_Obligations | Track individuals with ongoing obligations | 80 |
-| 7 | Contractor_Agreement_Assessment | Third-party agreement verification | 60 |
-| 8 | Gap_Analysis | Consolidated gaps with risk and remediation | 80 |
-| 9 | Evidence_Register | Supporting evidence documentation | 80 |
-| 10 | Approval_Sign_Off | Three-level approval workflow | 60 |
-
-**Assessment Flow:**
-1. Complete **Sheet 2** — verify contract templates
-2. Complete **Sheet 3** — verify all required clauses are in templates
-3. Complete **Sheet 4** — verify each individual's contract
-4. Complete **Sheet 5** — verify NDA/confidentiality for each individual
-5. Complete **Sheet 6** — verify post-employment obligations are tracked
-6. Complete **Sheet 7** — verify contractor/third-party agreements
-7. Review **Sheet 8** — consolidated gaps
-8. Document **Sheet 9** — evidence
-9. Review **Sheet 1** — auto-calculated dashboard
-10. Obtain **Sheet 10** — approval sign-off
-
----
-
-## 5. Sheet-by-Sheet Completion Guide
+## Sheet-by-Sheet Completion Guide
 
 ### Sheet 1: Dashboard
 
@@ -803,7 +770,7 @@ Employment-Contract / Contract-Template / NDA-Agreement / DPA-Agreement / IP-Ass
 
 ---
 
-## 6. Quality Checklist
+## Quality Checklist
 
 **Before submitting for approval, verify:**
 
@@ -852,9 +819,9 @@ Employment-Contract / Contract-Template / NDA-Agreement / DPA-Agreement / IP-Ass
 
 ---
 
-## 7. Evidence Collection Guide
+## Evidence Collection Guide
 
-### 7.1 Evidence Organization
+### Evidence Organization
 
 **Folder Structure:**
 ```
@@ -893,7 +860,7 @@ Evidence/A.6.2_Employment_Contracts/
 
 ---
 
-## 8. Integration with Other Assessments
+## Integration with Other Assessments
 
 **Input from .S2 (Roles & Responsibilities):**
 - Role Inventory provides role tiers, which drive which clauses are required (e.g., Tier 1 requires conflict of interest clause)

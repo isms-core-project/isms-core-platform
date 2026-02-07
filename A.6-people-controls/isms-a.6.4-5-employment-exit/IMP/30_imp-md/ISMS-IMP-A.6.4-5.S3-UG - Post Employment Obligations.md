@@ -19,37 +19,13 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-1. [PART I: USER COMPLETION GUIDE](#part-i-user-completion-guide)
-   - [1.1 Assessment Overview](#11-assessment-overview)
-   - [1.2 Control Requirements](#12-control-requirements)
-   - [1.3 Prerequisites](#13-prerequisites)
-   - [1.4 Obligation Types](#14-obligation-types)
-   - [1.5 Workbook Structure](#15-workbook-structure)
-   - [1.6 Completion Walkthrough](#16-completion-walkthrough)
-   - [1.7 NDA Tracking Framework](#17-nda-tracking-framework)
-   - [1.8 Enforcement Procedures](#18-enforcement-procedures)
-   - [1.9 Evidence Collection](#19-evidence-collection)
-   - [1.10 Common Pitfalls](#110-common-pitfalls)
-   - [1.11 Quality Checklist](#111-quality-checklist)
-   - [1.12 Review and Approval](#112-review-and-approval)
-   - [1.13 Regulatory Compliance](#113-regulatory-compliance)
-   - [1.14 Related Controls](#114-related-controls)
-2. [PART II: TECHNICAL SPECIFICATION](#part-ii-technical-specification)
-   - [2.1 Workbook Architecture](#21-workbook-architecture)
-   - [2.2 Sheet Specifications](#22-sheet-specifications)
-   - [2.3 Data Validations](#23-data-validations)
-   - [2.4 Conditional Formatting](#24-conditional-formatting)
-   - [2.5 Formula Specifications](#25-formula-specifications)
-   - [2.6 Cell Styling Standards](#26-cell-styling-standards)
-   - [2.7 Generator Script Reference](#27-generator-script-reference)
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.6.4-5.S3-TG.
 
 ---
 
----
-
-## 1.1 Assessment Overview
+## Assessment Overview
 
 ### Purpose
 
@@ -111,7 +87,7 @@ Effective post-employment obligation management delivers:
 
 ---
 
-## 1.2 Control Requirements
+## Control Requirements
 
 ### ISO 27001:2022 Control A.6.5
 
@@ -156,7 +132,7 @@ Control A.6.5 requires organisations to:
 
 ---
 
-## 1.3 Prerequisites
+## Prerequisites
 
 ### Required Access
 
@@ -186,7 +162,7 @@ Control A.6.5 requires organisations to:
 
 ---
 
-## 1.4 Obligation Types
+## Obligation Types
 
 ### Understanding Post-Employment Obligations
 
@@ -266,25 +242,7 @@ Control A.6.5 requires organisations to:
 
 ---
 
-## 1.5 Workbook Structure
-
-### Sheet Overview
-
-| Sheet | Purpose | Primary User | Update Frequency |
-|-------|---------|--------------|------------------|
-| **Instructions** | Guidance | All users | As needed |
-| **Obligation_Types** | Obligation definitions | Legal, ISM | Annual |
-| **Former_Personnel** | Registry of former staff with obligations | HR | Ongoing |
-| **Active_Obligations** | Current active obligations | ISM | Ongoing |
-| **Expiration_Tracker** | Approaching and expired obligations | ISM | Monthly |
-| **Acknowledgement_Log** | Exit acknowledgement records | HR | Ongoing |
-| **Enforcement_Register** | Enforcement actions | Legal | As needed |
-| **Evidence_Register** | Evidence tracking | ISM | Ongoing |
-| **Approval_SignOff** | Assessment authorisation | Approvers | At completion |
-
----
-
-## 1.6 Completion Walkthrough
+## Completion Walkthrough
 
 ### Step 1: Complete Obligation_Types Sheet
 
@@ -548,7 +506,7 @@ Complete per standard processes.
 
 ---
 
-## 1.7 NDA Tracking Framework
+## NDA Tracking Framework
 
 ### NDA Lifecycle Post-Employment
 
@@ -598,7 +556,7 @@ Expiration Tracking
 
 ---
 
-## 1.8 Enforcement Procedures
+## Enforcement Procedures
 
 ### Enforcement Triggers
 
@@ -642,7 +600,7 @@ Expiration Tracking
 
 ---
 
-## 1.9 Evidence Collection
+## Evidence Collection
 
 ### Evidence Requirements
 
@@ -664,7 +622,7 @@ EVD-A.6.4-5.3_[EvidenceType]_[YYYYMMDD].[ext]
 
 ---
 
-## 1.10 Common Pitfalls
+## Common Pitfalls
 
 ### Obligation Definition Pitfalls
 
@@ -724,7 +682,7 @@ EVD-A.6.4-5.3_[EvidenceType]_[YYYYMMDD].[ext]
 
 ---
 
-## 1.11 Quality Checklist
+## Quality Checklist
 
 ### Obligation Framework Checks
 
@@ -765,7 +723,7 @@ EVD-A.6.4-5.3_[EvidenceType]_[YYYYMMDD].[ext]
 
 ---
 
-## 1.12 Review and Approval
+## Review and Approval
 
 ### Review Process
 
@@ -795,7 +753,7 @@ EVD-A.6.4-5.3_[EvidenceType]_[YYYYMMDD].[ext]
 
 ---
 
-## 1.13 Regulatory Compliance
+## Regulatory Compliance
 
 ### Swiss Employment Law
 
@@ -817,7 +775,7 @@ EVD-A.6.4-5.3_[EvidenceType]_[YYYYMMDD].[ext]
 
 ---
 
-## 1.14 Related Controls
+## Related Controls
 
 | Control | Relationship |
 |---------|--------------|
@@ -827,7 +785,6 @@ EVD-A.6.4-5.3_[EvidenceType]_[YYYYMMDD].[ext]
 | **A.5.31** | Legal and regulatory requirements |
 
 ---
-
 
 **END OF USER GUIDE**
 

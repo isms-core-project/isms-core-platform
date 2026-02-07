@@ -18,30 +18,13 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-1. [PART I: USER COMPLETION GUIDE](#part-i-user-completion-guide)
-   - [1.1 Assessment Overview](#11-assessment-overview)
-   - [1.2 Control Requirements](#12-control-requirements)
-   - [1.3 Prerequisites](#13-prerequisites)
-   - [1.4 Workbook Structure](#14-workbook-structure)
-   - [1.5 Completion Walkthrough](#15-completion-walkthrough)
-   - [1.6 Evidence Collection](#16-evidence-collection)
-   - [1.7 Common Pitfalls](#17-common-pitfalls)
-   - [1.8 Quality Checklist](#18-quality-checklist)
-   - [1.9 Review and Approval](#19-review-and-approval)
-2. [PART II: TECHNICAL SPECIFICATION](#part-ii-technical-specification)
-   - [2.1 Workbook Technical Details](#21-workbook-technical-details)
-   - [2.2 Sheet Specifications](#22-sheet-specifications)
-   - [2.3 Conditional Formatting](#23-conditional-formatting)
-   - [2.4 Integration Points](#24-integration-points)
-   - [2.5 Related Documents](#25-related-documents)
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.12-13.S2-TG.
 
 ---
 
----
-
-## 1.1 Assessment Overview
+## Assessment Overview
 
 ### Purpose
 
@@ -99,7 +82,7 @@ The Labelling Procedures Assessment covers:
 
 ---
 
-## 1.2 Control Requirements
+## Control Requirements
 
 ### ISO 27001:2022 Control A.5.13
 
@@ -135,7 +118,7 @@ Per ISO/IEC 27001:2022 Control A.5.13:
 
 ---
 
-## 1.3 Prerequisites
+## Prerequisites
 
 ### Required Access
 
@@ -166,45 +149,7 @@ Per ISO/IEC 27001:2022 Control A.5.13:
 
 ---
 
-## 1.4 Workbook Structure
-
-### Sheet Overview
-
-| Sheet | Purpose | Assessor Action |
-|-------|---------|-----------------|
-| **Instructions** | Guidance and methodology | Read before starting |
-| **Labelling_Standards** | Visual label formats per level | Define visual standards |
-| **Digital_Labelling** | Electronic labelling requirements | Complete per asset type |
-| **Physical_Labelling** | Paper and media labelling | Complete per asset type |
-| **Automation_Tools** | Tool inventory and status | Document tool deployment |
-| **Evidence_Register** | Audit evidence tracking | Document evidence sources |
-| **Approval_SignOff** | Procedures authorisation | Obtain signatures |
-
-### Data Flow
-
-```
-Classification_Scheme (A.5.12-13.1)
-        │
-        ▼
-Labelling_Standards ────────► Visual format definitions
-        │
-        ├──────► Digital_Labelling
-        │               │
-        │               ▼
-        │        Automation_Tools
-        │
-        └──────► Physical_Labelling
-                        │
-                        ▼
-                Evidence_Register
-                        │
-                        ▼
-                Approval_SignOff
-```
-
----
-
-## 1.5 Completion Walkthrough
+## Completion Walkthrough
 
 ### Step 1: Define Visual Labelling Standards
 
@@ -367,7 +312,7 @@ Labelling_Standards ────────► Visual format definitions
 
 ---
 
-## 1.6 Evidence Collection
+## Evidence Collection
 
 ### Evidence Requirements
 
@@ -406,7 +351,7 @@ A.5.12-13/
 
 ---
 
-## 1.7 Common Pitfalls
+## Common Pitfalls
 
 Avoid these common mistakes when defining labelling procedures:
 
@@ -459,7 +404,7 @@ Avoid these common mistakes when defining labelling procedures:
 
 ---
 
-## 1.8 Quality Checklist
+## Quality Checklist
 
 Before submitting the assessment, verify:
 
@@ -504,7 +449,7 @@ Before submitting the assessment, verify:
 
 ---
 
-## 1.9 Review and Approval
+## Review and Approval
 
 ### Review Workflow
 
@@ -555,7 +500,6 @@ The Approval_SignOff sheet requires:
    - Date and signature
 
 ---
-
 
 **END OF USER GUIDE**
 

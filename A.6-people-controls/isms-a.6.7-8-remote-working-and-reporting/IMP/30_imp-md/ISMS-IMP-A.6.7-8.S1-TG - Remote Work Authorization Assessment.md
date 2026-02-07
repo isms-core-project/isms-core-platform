@@ -23,187 +23,120 @@
 
 ---
 
-### Document Structure
-
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.6.7-8.S1-UG.
 
 ---
-
 # Technical Specification
 
-### 9. Workbook Architecture
 
-#### 9.1 Sheet Structure
+> Auto-generated from `generate_a678_s1_remote_work_authorization.py`
+> Re-generate with: `python3 generate_tg_from_scr.py --apply`
 
-| Sheet Name | Purpose | Sheet Type |
-|------------|---------|------------|
-| Instructions | User guidance | Static |
-| Policy_Framework | Policy documentation assessment | Assessment |
-| Authorization_Process | Workflow assessment | Assessment |
-| Authorization_Criteria | Criteria definition assessment | Assessment |
-| Sample_Testing | Sample authorization testing | Assessment |
-| Periodic_Review | Review cycle assessment | Assessment |
-| Gap_Analysis | Consolidated gaps | Analysis |
-| Evidence_Register | Evidence catalog | Register |
-| Dashboard | Executive summary | Calculated |
-| Approval_Sign_Off | Formal approvals | Governance |
+## Workbook Overview
 
-#### 9.2 Sheet Dependencies
+| Property | Value |
+|----------|-------|
+| **Document ID** | `ISMS-IMP-A.6.7-8.S1` |
+| **Output Filename** | `ISMS-IMP-A.6.7-8.S1_Remote_Work_Authorization_Assessment_YYYYMMDD.xlsx` |
+| **Workbook Title** | Remote Work Authorization Assessment |
+| **Total Sheets** | 12 (12 visible) |
+| **Control Reference** | ISO/IEC 27001:2022 - Controls {...}: {...} |
 
-```
-Policy_Framework ─────┐
-Authorization_Process ─┼──→ Gap_Analysis ──→ Dashboard
-Authorization_Criteria ┤
-Sample_Testing ────────┤
-Periodic_Review ───────┘
+## Color Palette
 
-All Sheets ──→ Evidence_Register
-```
+| Hex Code | Style Name | Description |
+|----------|-----------|-------------|
+| #003366 | 003366 | Dark Blue (Headers) |
+| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
+| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
+| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | FFFFCC | Light Yellow (User Input) |
 
-### 10. Column Specifications
-
-#### 10.1 Policy_Framework Sheet
-
-| Column | Header | Width | Type | Validation |
-|--------|--------|-------|------|------------|
-| A | Policy Element | 30 | Text | Pre-populated |
-| B | Requirement | 50 | Text | Pre-populated |
-| C | Status | 15 | Dropdown | Exists/Partial/Missing |
-| D | Evidence Reference | 30 | Text | Free text |
-| E | Gap Description | 40 | Text | Free text |
-| F | Remediation | 40 | Text | Free text |
-| G | Priority | 12 | Dropdown | High/Medium/Low |
-
-#### 10.2 Sample_Testing Sheet
-
-| Column | Header | Width | Type | Validation |
-|--------|--------|-------|------|------------|
-| A | Sample ID | 12 | Text | Auto-generated (RWA-###) |
-| B | Employee ID | 15 | Text | Free text |
-| C | Department | 20 | Text | Free text |
-| D | Role | 25 | Text | Free text |
-| E | Authorization Date | 15 | Date | Date format |
-| F | Approval Obtained | 12 | Dropdown | Yes/No |
-| G | Approved By | 20 | Text | Free text |
-| H | Documentation Complete | 15 | Dropdown | Yes/No/Partial |
-| I | Risk Assessment Done | 15 | Dropdown | Yes/No/N/A |
-| J | Acknowledgment Signed | 15 | Dropdown | Yes/No |
-| K | Compliant | 12 | Formula | =AND(F="Yes",H="Yes",J="Yes") |
-| L | Notes | 40 | Text | Free text |
-
-#### 10.3 Gap_Analysis Sheet
-
-| Column | Header | Width | Type | Validation |
-|--------|--------|-------|------|------------|
-| A | Gap ID | 15 | Text | GAP-RWA-### format |
-| B | Source Sheet | 20 | Text | Sheet name |
-| C | Gap Description | 50 | Text | Free text |
-| D | Control Reference | 25 | Text | Policy section |
-| E | Risk Level | 12 | Dropdown | High/Medium/Low |
-| F | Remediation Action | 50 | Text | Free text |
-| G | Owner | 20 | Text | Free text |
-| H | Target Date | 15 | Date | Date format |
-| I | Status | 15 | Dropdown | Open/In Progress/Closed |
-
-### 11. Formula Specifications
-
-#### 11.1 Dashboard Calculations
-
-**Overall Compliance %**:
-```
-=COUNTIF(Sample_Testing!K:K,"TRUE")/COUNTA(Sample_Testing!K2:K100)
-```
-
-**Gaps by Severity**:
-```
-High: =COUNTIF(Gap_Analysis!E:E,"High")
-Medium: =COUNTIF(Gap_Analysis!E:E,"Medium")
-Low: =COUNTIF(Gap_Analysis!E:E,"Low")
-```
-
-**Policy Framework Score**:
-```
-=COUNTIF(Policy_Framework!C:C,"Exists")/(COUNTIF(Policy_Framework!C:C,"Exists")+COUNTIF(Policy_Framework!C:C,"Partial")+COUNTIF(Policy_Framework!C:C,"Missing"))
-```
-
-### 12. Styling Specifications
-
-#### 12.1 Color Coding
-
-| Element | Fill Color | Font Color | Use |
-|---------|------------|------------|-----|
-| Header Row | #003366 (Navy) | #FFFFFF (White) | Column headers |
-| Input Cell | #FFFF00 (Yellow) | #000000 (Black) | User input |
-| Calculated Cell | #DCE6F1 (Light Blue) | #000000 (Black) | Formulas |
-| Label Cell | #D9D9D9 (Gray) | #000000 (Black) | Row labels |
-| Compliant | #C6EFCE (Light Green) | #006100 (Dark Green) | Pass status |
-| Non-Compliant | #FFC7CE (Light Red) | #9C0006 (Dark Red) | Fail status |
-| Partial | #FFEB9C (Light Yellow) | #9C5700 (Dark Yellow) | Partial status |
-
-#### 12.2 Conditional Formatting
-
-**Status Column (Policy_Framework)**:
-- "Exists" → Green fill
-- "Partial" → Yellow fill
-- "Missing" → Red fill
-
-**Compliant Column (Sample_Testing)**:
-- TRUE → Green fill
-- FALSE → Red fill
-
-**Risk Level (Gap_Analysis)**:
-- "High" → Red fill
-- "Medium" → Yellow fill
-- "Low" → Green fill
-
-### 13. Data Validation Lists
-
-#### 13.1 Dropdown Options
-
-| Field | Options |
-|-------|---------|
-| Status (Policy) | Exists, Partial, Missing |
-| Implemented | Yes, No, Partial |
-| Priority | High, Medium, Low |
-| Risk Level | High, Medium, Low |
-| Gap Status | Open, In Progress, Closed, Deferred |
-| Evidence Type | Document, Screenshot, Interview, System Export, Email |
-| Yes/No | Yes, No |
-| Yes/No/Partial | Yes, No, Partial |
-| Yes/No/N/A | Yes, No, N/A |
-
-### 14. Pre-Populated Content
-
-#### 14.1 Policy Framework Elements
-
-| Policy Element | Requirement |
-|----------------|-------------|
-| Remote Work Policy | Formal policy document approved and published |
-| Authorization Procedure | Documented process for requesting/approving remote work |
-| Security Requirements | Technical and physical security requirements defined |
-| Eligibility Criteria | Criteria for remote work eligibility documented |
-| Data Handling Rules | Data classification handling for remote work |
-| Device Requirements | Corporate and BYOD device requirements |
-| Termination Procedure | Process for revoking remote work authorization |
-| Review Cycle | Periodic review requirements defined |
-
-#### 14.2 Authorization Process Steps
-
-| Step | Description |
-|------|-------------|
-| Request Initiation | Employee/manager initiates remote work request |
-| Eligibility Check | HR/Manager verifies role eligibility |
-| Risk Assessment | Security assesses risk for sensitive roles |
-| Technical Approval | IT confirms technical capability |
-| Manager Approval | Line manager approves arrangement |
-| Security Acknowledgment | Employee signs security requirements |
-| Access Provisioning | IT provisions remote access |
-| Documentation | Records filed in HR system |
-| Periodic Review | Authorization reviewed per schedule |
+## Sheet 1: Instructions
 
 ---
 
-## END OF SPECIFICATION
+## Sheet 2: Eligibility_Criteria
+
+---
+
+## Sheet 3: Authorization_Register
+
+---
+
+## Sheet 4: Risk_Assessment
+
+---
+
+## Sheet 5: Physical_Security
+
+---
+
+## Sheet 6: Acknowledgments
+
+---
+
+## Sheet 7: Gap_Analysis
+
+---
+
+## Sheet 8: Evidence_Register
+
+---
+
+## Sheet 9: Dashboard
+
+---
+
+## Sheet 10: Approval_Sign_Off
+
+---
+
+## Sheet 11: Eligibility
+
+**Data Rows:** 3 (rows 4–6)
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Criterion |
+| B | Description |
+| C | Importance |
+| D | Documented |
+| E | Evidence |
+| F | Notes |
+
+---
+
+## Sheet 12: Approval
+
+**Data Rows:** 4 (rows 2–5)
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Role |
+| B | Name |
+| C | Signature |
+| D | Date |
+| E | Comments |
+
+---
+
+## Data Validation Dropdown Lists
+
+All dropdown value lists defined in the generator:
+
+| Variable | Values |
+|----------|--------|
+| `AUTHORIZATION_STATUS` | Pending, Approved, Conditionally Approved, Denied, Revoked, Expired |
+
+---
+
+**END OF SPECIFICATION**
 
 ---
 

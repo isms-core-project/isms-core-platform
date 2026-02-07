@@ -19,37 +19,13 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-1. [PART I: USER COMPLETION GUIDE](#part-i-user-completion-guide)
-   - [1.1 Assessment Overview](#11-assessment-overview)
-   - [1.2 Control Requirements](#12-control-requirements)
-   - [1.3 Prerequisites](#13-prerequisites)
-   - [1.4 NDA Execution Process](#14-nda-execution-process)
-   - [1.5 Workbook Structure](#15-workbook-structure)
-   - [1.6 Completion Walkthrough](#16-completion-walkthrough)
-   - [1.7 Signatory Management](#17-signatory-management)
-   - [1.8 Expiration and Renewal Management](#18-expiration-and-renewal-management)
-   - [1.9 Evidence Collection](#19-evidence-collection)
-   - [1.10 Common Pitfalls](#110-common-pitfalls)
-   - [1.11 Quality Checklist](#111-quality-checklist)
-   - [1.12 Review and Approval](#112-review-and-approval)
-   - [1.13 Integration with HR and Procurement](#113-integration-with-hr-and-procurement)
-   - [1.14 Related Controls](#114-related-controls)
-2. [PART II: TECHNICAL SPECIFICATION](#part-ii-technical-specification)
-   - [2.1 Workbook Architecture](#21-workbook-architecture)
-   - [2.2 Sheet Specifications](#22-sheet-specifications)
-   - [2.3 Data Validations](#23-data-validations)
-   - [2.4 Conditional Formatting](#24-conditional-formatting)
-   - [2.5 Formula Specifications](#25-formula-specifications)
-   - [2.6 Cell Styling Standards](#26-cell-styling-standards)
-   - [2.7 Generator Script Reference](#27-generator-script-reference)
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.6.6.2-TG.
 
 ---
 
----
-
-## 1.1 Assessment Overview
+## Assessment Overview
 
 ### Purpose
 
@@ -112,7 +88,7 @@ Effective NDA execution and tracking delivers:
 
 ---
 
-## 1.2 Control Requirements
+## Control Requirements
 
 ### ISO 27001:2022 Control A.6.6
 
@@ -173,7 +149,7 @@ Auditors frequently ask:
 
 ---
 
-## 1.3 Prerequisites
+## Prerequisites
 
 ### Before Starting This Assessment
 
@@ -222,7 +198,7 @@ Before proceeding, verify:
 
 ---
 
-## 1.4 NDA Execution Process
+## NDA Execution Process
 
 ### Standard Execution Workflow
 
@@ -296,63 +272,7 @@ For NDAs with multiple signatories (e.g., mutual NDAs between companies with mul
 
 ---
 
-## 1.5 Workbook Structure
-
-### Sheet Overview
-
-The workbook consists of seven sheets, each serving a specific purpose in NDA execution tracking:
-
-| Sheet | Purpose | Primary User | Update Frequency |
-|-------|---------|--------------|------------------|
-| **Instructions** | Guidance and orientation | All users | As needed |
-| **Active_NDAs** | Master list of executed NDAs | Legal/HR | Upon execution |
-| **Signatory_Register** | Individual signatory tracking | HR/Contract Mgr | Upon change |
-| **Expiration_Monitor** | Expiration tracking and alerts | ISMS Admin | Weekly |
-| **Renewal_Tracking** | Renewal workflow management | Contract Owner | As needed |
-| **Evidence_Register** | Evidence tracking and links | ISMS Admin | Ongoing |
-| **Approval_SignOff** | Assessment authorisation | Approvers | At completion |
-
-### Sheet Relationships
-
-```
-┌─────────────────┐
-│  Instructions   │ ◄── Start here
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐     ┌─────────────────┐
-│   Active_NDAs   │────►│Signatory_Register│
-└────────┬────────┘     └─────────────────┘
-         │                      ▲
-         │                      │ (links by NDA_ID)
-         ▼                      │
-┌─────────────────┐     ┌─────────────────┐
-│Expiration_      │     │ Renewal_Tracking│
-│Monitor          │────►│                 │
-└────────┬────────┘     └─────────────────┘
-         │
-         ▼
-┌─────────────────┐
-│Evidence_Register│
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ Approval_SignOff│ ◄── Complete here
-└─────────────────┘
-```
-
-### Data Flow
-
-1. New NDA executed → Register in **Active_NDAs**
-2. Each signatory → Record in **Signatory_Register** (linked to Active_NDAs)
-3. Weekly review → **Expiration_Monitor** updated automatically
-4. Expiring NDA → Renewal initiated in **Renewal_Tracking**
-5. Renewal complete → New NDA registered, old NDA marked "Renewed"
-
----
-
-## 1.6 Completion Walkthrough
+## Completion Walkthrough
 
 ### Step 1: Review Instructions Sheet
 
@@ -801,7 +721,7 @@ Document all evidence supporting the assessment:
 
 ---
 
-## 1.7 Signatory Management
+## Signatory Management
 
 ### Individual Tracking Requirements
 
@@ -885,7 +805,7 @@ When a signatory's relationship ends:
 
 ---
 
-## 1.8 Expiration and Renewal Management
+## Expiration and Renewal Management
 
 ### Expiration Alert Thresholds
 
@@ -955,7 +875,7 @@ If an NDA expires before renewal is complete:
 
 ---
 
-## 1.9 Evidence Collection
+## Evidence Collection
 
 ### Evidence Requirements
 
@@ -1017,7 +937,7 @@ Document Repository/
 
 ---
 
-## 1.10 Common Pitfalls
+## Common Pitfalls
 
 Avoid these common mistakes when tracking NDA execution:
 
@@ -1087,7 +1007,7 @@ Avoid these common mistakes when tracking NDA execution:
 
 ---
 
-## 1.11 Quality Checklist
+## Quality Checklist
 
 Before submitting the completed assessment, verify all items:
 
@@ -1137,7 +1057,7 @@ Before submitting the completed assessment, verify all items:
 
 ---
 
-## 1.12 Review and Approval
+## Review and Approval
 
 ### Review Process
 
@@ -1204,7 +1124,7 @@ ISM Final Approval ──────────────────┘
 
 ---
 
-## 1.13 Integration with HR and Procurement
+## Integration with HR and Procurement
 
 ### HR Integration
 
@@ -1252,7 +1172,7 @@ NDA execution must be integrated with procurement processes:
 
 ---
 
-## 1.14 Related Controls
+## Related Controls
 
 ### Primary Control Relationships
 
@@ -1281,7 +1201,6 @@ Procurement → A.6.6.2 NDA Execution → A.5.15 Vendor Access → Contract
 ```
 
 ---
-
 
 **END OF USER GUIDE**
 

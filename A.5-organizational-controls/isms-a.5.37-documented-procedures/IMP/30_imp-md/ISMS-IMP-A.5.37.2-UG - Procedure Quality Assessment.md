@@ -21,7 +21,7 @@
 
 ## Table of Contents
 
-1. [PART I: USER COMPLETION GUIDE](#part-i-user-completion-guide)
+1. [USER COMPLETION GUIDE](#user-completion-guide)
    - [1.1 Assessment Overview](#11-assessment-overview)
    - [1.2 Control Requirements](#12-control-requirements)
    - [1.3 Prerequisites](#13-prerequisites)
@@ -36,7 +36,7 @@
    - [1.12 Review and Approval](#112-review-and-approval)
    - [1.13 Improvement Action Management](#113-improvement-action-management)
    - [1.14 Related Controls](#114-related-controls)
-2. [PART II: TECHNICAL SPECIFICATION](#part-ii-technical-specification)
+2. [TECHNICAL SPECIFICATION](#technical-specification) *(see companion TG document)*
    - [2.1 Workbook Architecture](#21-workbook-architecture)
    - [2.2 Sheet Specifications](#22-sheet-specifications)
    - [2.3 Data Validations](#23-data-validations)
@@ -49,7 +49,7 @@
 
 ---
 
-## 1.1 Assessment Overview
+## Assessment Overview
 
 ### Purpose
 
@@ -112,7 +112,7 @@ Effective procedure quality assessment delivers:
 
 ---
 
-## 1.2 Control Requirements
+## Control Requirements
 
 ### ISO 27001:2022 Control A.5.37
 
@@ -159,7 +159,7 @@ Auditors frequently ask:
 
 ---
 
-## 1.3 Prerequisites
+## Prerequisites
 
 ### Before Starting This Assessment
 
@@ -207,7 +207,7 @@ Before proceeding, verify:
 
 ---
 
-## 1.4 Quality Framework
+## Quality Framework
 
 ### Quality Dimensions
 
@@ -344,66 +344,7 @@ Procedure quality is assessed across five equally-weighted dimensions:
 
 ---
 
-## 1.5 Workbook Structure
-
-### Sheet Overview
-
-The workbook consists of seven sheets for comprehensive quality assessment:
-
-| Sheet | Purpose | Primary User | Update Frequency |
-|-------|---------|--------------|------------------|
-| **Instructions** | Guidance and orientation | All users | As needed |
-| **Quality_Assessment** | Quality scoring for procedures | ISM/Assessor | Per assessment |
-| **Quality_Checklist** | Detailed checklist evaluation | Assessor | Per procedure |
-| **Improvement_Actions** | Track quality improvements | Procedure Owners | Ongoing |
-| **Trend_Analysis** | Historical quality trends | ISM | Quarterly |
-| **Evidence_Register** | Evidence tracking and links | ISM | Ongoing |
-| **Approval_SignOff** | Assessment authorisation | Approvers | At completion |
-
-### Sheet Relationships
-
-```
-┌─────────────────┐
-│  Instructions   │ ◄── Start here
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐     ┌─────────────────┐
-│Quality_         │────►│Quality_         │
-│Assessment       │     │Checklist        │
-└────────┬────────┘     └─────────────────┘
-         │                      │
-         │                      │ (findings feed)
-         ▼                      ▼
-┌─────────────────┐     ┌─────────────────┐
-│Improvement_     │◄────│  Trend_Analysis │
-│Actions          │     │                 │
-└────────┬────────┘     └─────────────────┘
-         │
-         ▼
-┌─────────────────┐
-│Evidence_Register│
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ Approval_SignOff│ ◄── Complete here
-└─────────────────┘
-```
-
-### Data Flow
-
-1. **Procedures Identified**: From A.5.37.1 inventory
-2. **Quality Assessed**: Scored in Quality_Assessment
-3. **Checklist Applied**: Detailed review in Quality_Checklist
-4. **Actions Created**: Improvements in Improvement_Actions
-5. **Trends Updated**: Historical tracking in Trend_Analysis
-6. **Evidence Linked**: Documentation in Evidence_Register
-7. **Approval Obtained**: Sign-off in Approval_SignOff
-
----
-
-## 1.6 Completion Walkthrough
+## Completion Walkthrough
 
 ### Step 1: Review Instructions Sheet
 
@@ -584,7 +525,7 @@ Obtain required authorisations:
 
 ---
 
-## 1.7 Quality Scoring Methodology
+## Quality Scoring Methodology
 
 ### Scoring Process
 
@@ -640,7 +581,7 @@ To ensure consistent scoring across assessors:
 
 ---
 
-## 1.8 Quality Checklist Elements
+## Quality Checklist Elements
 
 ### Document Structure Checklist
 
@@ -682,7 +623,7 @@ To ensure consistent scoring across assessors:
 
 ---
 
-## 1.9 Evidence Collection
+## Evidence Collection
 
 ### Evidence Requirements
 
@@ -742,7 +683,7 @@ ISMS Evidence Library/
 
 ---
 
-## 1.10 Common Pitfalls
+## Common Pitfalls
 
 Avoid these common mistakes when assessing procedure quality:
 
@@ -804,7 +745,7 @@ Avoid these common mistakes when assessing procedure quality:
 
 ---
 
-## 1.11 Quality Checklist
+## Quality Checklist
 
 Before submitting the completed assessment, verify all items:
 
@@ -855,7 +796,7 @@ Before submitting the completed assessment, verify all items:
 
 ---
 
-## 1.12 Review and Approval
+## Review and Approval
 
 ### Review Process
 
@@ -925,7 +866,7 @@ ISM Final Approval ──────────────────┘
 
 ---
 
-## 1.13 Improvement Action Management
+## Improvement Action Management
 
 ### Action Priority Matrix
 
@@ -970,7 +911,7 @@ Verified Closed
 
 ---
 
-## 1.14 Related Controls
+## Related Controls
 
 ### Primary Control Relationships
 
@@ -1016,7 +957,6 @@ A.5.37.4 Dashboard
 | ISMS-IMP-A.5.37.4 | Compliance Dashboard | Quality metrics reported |
 
 ---
-
 
 **END OF USER GUIDE**
 

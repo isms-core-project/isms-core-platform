@@ -167,25 +167,6 @@ Target: **≥95% overall compliance**
 
 ---
 
-## Excel Workbook Structure
-
-**Workbook Name:** `ISMS_A_8_9_5_Compliance_Dashboard_YYYYMMDD.xlsx`
-
-**Normalization Note:** After generation, run `normalize_assessment_files_a89.py` to 
-create `ISMS-IMP-A.8.9.5.xlsx` (date-free) for consistent references in future cycles.
-
-**Sheets:**
-1. Instructions
-2. Workbook_Integration_Settings
-3. Overall_Compliance_Dashboard
-4. Asset_Compliance_Summary
-5. Gap_Prioritization
-6. Trend_Analysis
-7. Evidence_Register (100 rows)
-8. Approval_Sign_Off
-
----
-
 ## Sheet 1: Instructions
 
 ### Purpose
@@ -1669,7 +1650,6 @@ Configuration management team, system administrators, IT operations, security en
 - ISMS-CTX-A.8.9: Configuration Management Reference (NOT ISMS)
 
 ---
-
 
 **END OF USER GUIDE**
 

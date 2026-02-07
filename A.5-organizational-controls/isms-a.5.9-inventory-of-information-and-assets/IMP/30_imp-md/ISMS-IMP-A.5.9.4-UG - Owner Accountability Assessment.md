@@ -1105,9 +1105,6 @@ Before submitting this assessment, verify:
 
 ---
 
-**END OF ISMS-IMP-A.5.9.4 PART I - USER COMPLETION GUIDE**
-
-
 **END OF USER GUIDE**
 
 ---

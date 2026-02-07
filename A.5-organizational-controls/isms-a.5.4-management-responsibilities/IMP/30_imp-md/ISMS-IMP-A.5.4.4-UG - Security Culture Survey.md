@@ -18,7 +18,7 @@
 
 ---
 
-### 1. Assessment Overview
+### Assessment Overview
 
 #### 1.1 Purpose
 
@@ -76,7 +76,7 @@ Per ISO/IEC 27001:2022 Control A.5.4, management must ensure personnel apply inf
 | Results analysis | Within 30 days of survey close | |
 | Action plan development | Within 60 days of survey close | |
 
-### 2. Prerequisites
+### Prerequisites
 
 Before deploying the survey, ensure:
 
@@ -86,18 +86,7 @@ Before deploying the survey, ensure:
 - [ ] Prior year results available (for comparison)
 - [ ] Analysis resources allocated
 
-### 3. Workbook Structure
-
-| Sheet | Purpose | When to Complete |
-|-------|---------|------------------|
-| **Instructions** | Guidance and scoring methodology | Reference |
-| **Survey Questions** | Standard 20-question survey template | Survey design |
-| **Response Data** | Aggregated responses by department | Post-survey |
-| **YoY Trend Analysis** | Year-over-year comparison | Post-survey |
-| **Action Plan** | Improvement actions for low-scoring areas | Post-analysis |
-| **Executive Summary** | High-level results for leadership | Reporting |
-
-### 4. Survey Categories and Questions
+### Survey Categories and Questions
 
 The survey covers 5 categories with 4 questions each (20 questions total):
 
@@ -111,7 +100,7 @@ The survey covers 5 categories with 4 questions each (20 questions total):
 
 **Response Scale**: 1 (Strongly Disagree) to 5 (Strongly Agree)
 
-### 5. Completion Walkthrough
+### Completion Walkthrough
 
 #### Step 1: Deploy Survey
 
@@ -166,7 +155,7 @@ Compile results for leadership:
 5. Summarise each category with score and priority action
 6. Set **Status**: Exceeds Target, Meets Target, Below Target, Critical
 
-### 6. Worked Examples
+### Worked Examples
 
 #### Example A: Strong Security Culture Results
 
@@ -264,7 +253,7 @@ When one department consistently underperforms, investigate:
 | Are policies unclear for this function? | Compare Policy score + interviews | Policy revision |
 | Is there fear of reporting? | Compare Reporting score + exit interviews | Culture intervention |
 
-### 7. Survey Administration Best Practices
+### Survey Administration Best Practices
 
 #### Pre-Survey Communication
 
@@ -326,7 +315,7 @@ When one department consistently underperforms, investigate:
 - ❌ Promise actions you can't deliver
 - ❌ Skip the follow-up communication
 
-### 8. Scoring Thresholds
+### Scoring Thresholds
 
 | Score Range | Status | Action Required |
 |:-----------:|--------|-----------------|
@@ -335,7 +324,7 @@ When one department consistently underperforms, investigate:
 | 3.0-3.4 | Below Target | Action plan required |
 | <3.0 | Critical | Immediate intervention; executive escalation |
 
-### 7. Evidence Collection
+### Evidence Collection
 
 | Evidence Type | Description | Retention |
 |---------------|-------------|-----------|
@@ -347,7 +336,7 @@ When one department consistently underperforms, investigate:
 
 **Evidence Storage**: `[SharePoint/Evidence Library]/A.5.4/Security-Culture-Survey/[Year]/`
 
-### 8. Common Pitfalls
+### Common Pitfalls
 
 ❌ **MISTAKE**: Deploying survey without executive sponsorship
 ✅ **CORRECT**: Have CEO/CISO send announcement emphasising importance
@@ -379,7 +368,7 @@ When one department consistently underperforms, investigate:
 ❌ **MISTAKE**: Surveying too frequently (quarterly full surveys cause fatigue)
 ✅ **CORRECT**: Annual full survey with optional quarterly pulse surveys (5 questions max)
 
-### 10. Trend Analysis Methodology
+### Trend Analysis Methodology
 
 #### Calculating Meaningful Trends
 
@@ -423,7 +412,7 @@ Look for correlations between categories:
 - Different question wording invalidates comparisons
 - Focus on internal improvement rather than external comparison
 
-### 11. Quality Checklist
+### Quality Checklist
 
 Before presenting results to leadership:
 
@@ -437,7 +426,7 @@ Before presenting results to leadership:
 - [ ] Workbook saved with correct naming convention
 - [ ] Presentation prepared for management review
 
-### 12. Review and Approval
+### Review and Approval
 
 | Role | Responsibility | Timing |
 |------|----------------|--------|
@@ -447,7 +436,7 @@ Before presenting results to leadership:
 | CISO | Approve action plan and summary | +30 days |
 | Executive Management | Review in management meeting | Per calendar |
 
-### 13. Audit Preparation
+### Audit Preparation
 
 #### Stage 2 Audit Evidence Requirements
 
@@ -476,7 +465,6 @@ When auditors review security culture, prepare:
 | "Can you show improvement over time?" | YoY Trend Analysis with 2+ years of data |
 
 ---
-
 
 **END OF USER GUIDE**
 

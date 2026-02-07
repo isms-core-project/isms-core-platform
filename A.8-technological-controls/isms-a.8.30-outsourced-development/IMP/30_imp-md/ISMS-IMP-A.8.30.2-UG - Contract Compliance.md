@@ -25,9 +25,9 @@ This section provides step-by-step guidance for completing the Contract Complian
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 The Contract Compliance workbook tracks security clause inclusion in outsourced development contracts, monitors ongoing compliance with contractual obligations, and manages subcontractor approvals. It provides the contractual foundation that converts security requirements into legally binding vendor commitments.
 
@@ -37,7 +37,7 @@ ISO/IEC 27001:2022 Control A.8.30 states:
 
 Contracts are the primary mechanism for directing vendor security behaviour and establishing the legal framework for monitoring and review activities.
 
-### 1.2 Scope and Applicability
+### Scope and Applicability
 
 **This workbook applies to:**
 
@@ -59,7 +59,7 @@ Contracts are the primary mechanism for directing vendor security behaviour and 
 - Consulting agreements without code delivery
 - Internal development projects
 
-### 1.3 Business Context
+### Business Context
 
 **Why Contract Compliance Matters:**
 
@@ -82,7 +82,7 @@ Contracts establish the legal foundation for security requirements:
 | FINMA | Third-party contract provisions |
 | PCI DSS | Service provider contracts |
 
-### 1.4 Assessment Outputs
+### Assessment Outputs
 
 Upon completion, this workbook provides:
 
@@ -97,9 +97,9 @@ Upon completion, this workbook provides:
 
 ---
 
-## 2. Prerequisites
+## Prerequisites
 
-### 2.1 Required Inputs
+### Required Inputs
 
 Before beginning contract compliance tracking, ensure you have:
 
@@ -113,7 +113,7 @@ Before beginning contract compliance tracking, ensure you have:
 | Security questionnaire | Vendor | Clause compliance verification |
 | Statement of Work (SOW) | Project Manager | Scope verification |
 
-### 2.2 Required Approvals Before Contract Execution
+### Required Approvals Before Contract Execution
 
 | Approval Type | Approver | Purpose |
 |---------------|----------|---------|
@@ -124,7 +124,7 @@ Before beginning contract compliance tracking, ensure you have:
 | Commercial Approval | Procurement/Finance | Budget and terms |
 | Final Execution | Authorised Signatory | Contract binding |
 
-### 2.3 Required Knowledge
+### Required Knowledge
 
 Personnel completing this workbook should understand:
 
@@ -135,7 +135,7 @@ Personnel completing this workbook should understand:
 - Vulnerability classification and SLA structures
 - Subcontractor risk implications
 
-### 2.4 Tool Requirements
+### Tool Requirements
 
 | Tool | Purpose | Access Required |
 |------|---------|-----------------|
@@ -147,47 +147,9 @@ Personnel completing this workbook should understand:
 
 ---
 
-## 3. Workbook Structure Overview
+## Completion Walkthrough
 
-### 3.1 Sheet Summary
-
-The workbook contains five sheets covering the contract lifecycle:
-
-| Sheet | Purpose | Primary Owner | Update Frequency |
-|-------|---------|---------------|------------------|
-| 1: Contract Inventory | Master list of development contracts | Procurement/IT Security | Per contract, quarterly review |
-| 2: Security Clause Checklist | Clause inclusion verification | IT Security/Legal | Per contract |
-| 3: SLA Compliance Tracking | Vulnerability remediation SLAs | IT Security | Continuous |
-| 4: Subcontractor Approvals | Sub-processor management | IT Security | As requested |
-| 5: Termination Checklist | Contract closure verification | IT Security | At termination |
-
-### 3.2 Sheet Dependencies
-
-```
-Sheet 1: Contract Inventory (Master)
-         ↓ (Contract_ID reference)
-Sheet 2: Security Clause Checklist
-         ↓ (establishes SLA obligations)
-Sheet 3: SLA Compliance Tracking
-         ↓ (parallel)
-Sheet 4: Subcontractor Approvals
-         ↓ (at contract end)
-Sheet 5: Termination Checklist
-```
-
-### 3.3 Data Flow
-
-1. **Contract Registration**: New contract added to Sheet 1
-2. **Clause Verification**: Security clauses reviewed in Sheet 2
-3. **Ongoing Monitoring**: SLA compliance tracked in Sheet 3
-4. **Subcontractor Management**: Approvals processed in Sheet 4
-5. **Termination**: Checklist completed in Sheet 5
-
----
-
-## 4. Completion Walkthrough
-
-### 4.1 Sheet 1: Contract Inventory – Completion Guide
+### Sheet 1: Contract Inventory – Completion Guide
 
 **Purpose**: Maintain the authoritative list of outsourced development contracts with key dates and status.
 
@@ -243,7 +205,7 @@ Security review must be complete BEFORE contract execution.
 | Completed | Deliverables accepted, obligations fulfilled | After termination checklist |
 | Terminated | Contract ended early | For-cause or convenience termination |
 
-### 4.2 Sheet 2: Security Clause Checklist – Completion Guide
+### Sheet 2: Security Clause Checklist – Completion Guide
 
 **Purpose**: Verify that all mandatory security clauses are included in the contract before execution.
 
@@ -405,7 +367,7 @@ For each clause, document:
 - Any modifications and approval
 - Reviewer name and date
 
-### 4.3 Sheet 3: SLA Compliance Tracking – Completion Guide
+### Sheet 3: SLA Compliance Tracking – Completion Guide
 
 **Purpose**: Track vendor compliance with vulnerability remediation SLAs established in contracts.
 
@@ -462,7 +424,7 @@ When SLA cannot be met:
 | CISO | High | 30 days |
 | CISO + Executive | Critical | 14 days |
 
-### 4.4 Sheet 4: Subcontractor Approvals – Completion Guide
+### Sheet 4: Subcontractor Approvals – Completion Guide
 
 **Purpose**: Track approval of subcontractors used by primary vendors.
 
@@ -521,7 +483,7 @@ Confirm that:
 | Medium (Direct access to standard systems) | IT Security Manager |
 | Low (Via Vendor or No access) | IT Security Lead |
 
-### 4.5 Sheet 5: Termination Checklist – Completion Guide
+### Sheet 5: Termination Checklist – Completion Guide
 
 **Purpose**: Verify all security requirements are met when contracts terminate.
 
@@ -630,9 +592,9 @@ Complete all 10 standard termination items:
 
 ---
 
-## 5. Evidence Collection
+## Evidence Collection
 
-### 5.1 Evidence Requirements
+### Evidence Requirements
 
 Evidence must be collected and stored for all contract compliance activities:
 
@@ -645,7 +607,7 @@ Evidence must be collected and stored for all contract compliance activities:
 | Termination records | 10 years | ISMS Evidence Library |
 | Destruction certificates | 10 years | ISMS Evidence Library |
 
-### 5.2 Evidence Folder Structure
+### Evidence Folder Structure
 
 ```
 ISMS-Evidence-Library/
@@ -669,7 +631,7 @@ ISMS-Evidence-Library/
                 └── Destruction-Certificate.pdf
 ```
 
-### 5.3 Evidence for Audit
+### Evidence for Audit
 
 During ISO 27001 audit, be prepared to demonstrate:
 
@@ -683,9 +645,9 @@ During ISO 27001 audit, be prepared to demonstrate:
 
 ---
 
-## 6. Common Pitfalls
+## Common Pitfalls
 
-### 6.1 Contract Review Errors
+### Contract Review Errors
 
 ❌ **MISTAKE: Executing contracts before security review**
 Security clause review must be complete BEFORE contract execution. Post-execution amendments are difficult and costly.
@@ -699,7 +661,7 @@ Contract templates must be reviewed annually. Regulatory changes (GDPR, FADP) re
 ❌ **MISTAKE: Not involving Legal in clause modifications**
 Modified security clauses have legal implications. All modifications require Legal approval.
 
-### 6.2 SLA Management Errors
+### SLA Management Errors
 
 ❌ **MISTAKE: Not tracking SLA start dates accurately**
 The SLA clock starts when the vulnerability is reported to the vendor. Document notification date with evidence.
@@ -710,7 +672,7 @@ All SLA extensions must be formally documented with approver and new due date. V
 ❌ **MISTAKE: Not escalating repeated SLA misses**
 Pattern of SLA non-compliance should trigger contract review. Track vendor performance over time.
 
-### 6.3 Subcontractor Management Errors
+### Subcontractor Management Errors
 
 ❌ **MISTAKE: Discovering subcontractors after engagement**
 Require upfront disclosure of all subcontractors. Undisclosed subcontractors are a contract breach.
@@ -721,7 +683,7 @@ Security requirements must flow down to subcontractors. Verify before approval.
 ❌ **MISTAKE: Not tracking subcontractor approval expiry**
 Approvals have expiration dates. Lapsed approvals require re-evaluation.
 
-### 6.4 Termination Errors
+### Termination Errors
 
 ❌ **MISTAKE: Not revoking access immediately**
 Access revocation must occur within 24 hours of termination. Delays create security exposure.
@@ -734,9 +696,9 @@ Verify all code, documentation, and build artifacts are received before final pa
 
 ---
 
-## 7. Quality Checklist
+## Quality Checklist
 
-### 7.1 Pre-Contract Execution Checklist
+### Pre-Contract Execution Checklist
 
 Before executing any outsourced development contract:
 
@@ -757,7 +719,7 @@ Before executing any outsourced development contract:
 - [ ] Clause checklist completed
 - [ ] Approval emails archived
 
-### 7.2 Ongoing Compliance Checklist
+### Ongoing Compliance Checklist
 
 Monthly verification:
 
@@ -766,7 +728,7 @@ Monthly verification:
 - [ ] Subcontractor approvals current
 - [ ] Contract expiry alerts configured
 
-### 7.3 Termination Checklist
+### Termination Checklist
 
 Before marking contract complete:
 
@@ -778,9 +740,9 @@ Before marking contract complete:
 
 ---
 
-## 8. Review and Approval
+## Review and Approval
 
-### 8.1 Contract Approval Authority
+### Contract Approval Authority
 
 | Contract Value | Clause Compliance | Final Approval |
 |----------------|-------------------|----------------|
@@ -788,7 +750,7 @@ Before marking contract complete:
 | > CHF 500K | CISO review | Executive approval |
 | Critical systems | CISO mandatory | Executive approval |
 
-### 8.2 Exception Approval Authority
+### Exception Approval Authority
 
 | Exception Type | Approver |
 |----------------|----------|
@@ -797,7 +759,7 @@ Before marking contract complete:
 | SLA extension (Medium/Low) | IT Security Manager |
 | SLA extension (High/Critical) | CISO |
 
-### 8.3 Review Workflow
+### Review Workflow
 
 ```
 Contract Drafted (Procurement/Legal)
@@ -818,7 +780,6 @@ Contract Execution
 ```
 
 ---
-
 
 **END OF USER GUIDE**
 

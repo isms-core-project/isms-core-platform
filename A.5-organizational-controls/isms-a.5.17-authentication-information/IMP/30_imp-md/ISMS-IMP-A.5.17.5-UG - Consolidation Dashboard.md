@@ -26,13 +26,13 @@
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 The **Consolidation Dashboard** (ISMS-IMP-A.5.17.5) aggregates compliance data from all four A.5.17 assessment workbooks into a unified executive view. This dashboard provides holistic visibility into authentication information control compliance, enabling management reporting, audit preparation, and strategic decision-making.
 
-### 1.2 Scope
+### Scope
 
 This dashboard consolidates:
 - **Domain 1**: Authentication Policy and Standards (A.5.17.1)
@@ -40,7 +40,7 @@ This dashboard consolidates:
 - **Domain 3**: Password System Assessment (A.5.17.3)
 - **Domain 4**: Compliance and Audit Dashboard (A.5.17.4)
 
-### 1.3 Business Value
+### Business Value
 
 Maintaining this consolidation delivers:
 - **Unified compliance view** across all authentication domains
@@ -49,7 +49,7 @@ Maintaining this consolidation delivers:
 - **Audit efficiency** through pre-consolidated evidence
 - **Trend visibility** showing compliance over time
 
-### 1.4 Control Requirement
+### Control Requirement
 
 > *ISO/IEC 27001:2022 Annex A.5.17 — Authentication Information*
 >
@@ -59,23 +59,23 @@ This dashboard provides a consolidated view of A.5.17 compliance across all impl
 
 ---
 
-## 2. Prerequisites
+## Prerequisites
 
 Before completing this dashboard, ensure you have:
 
-### 2.1 Required Workbooks
+### Required Workbooks
 - [ ] ISMS-IMP-A.5.17.1 (Password Policy Implementation Guide) — current version
 - [ ] ISMS-IMP-A.5.17.2 (MFA Deployment Assessment) — current version
 - [ ] ISMS-IMP-A.5.17.3 (Authentication Management Procedures) — current version
 - [ ] ISMS-IMP-A.5.17.4 (Compliance and Audit Dashboard) — current version
 
-### 2.2 Required Access
+### Required Access
 - [ ] All source workbook locations
 - [ ] Previous consolidation reports (if available)
 - [ ] Management reporting templates
 - [ ] Risk register for cross-referencing
 
-### 2.3 Required Personnel
+### Required Personnel
 - [ ] Information Security Officer (consolidation owner)
 - [ ] IAM Team Lead (source workbook owner)
 - [ ] IT Security Analyst (data compilation)
@@ -84,28 +84,7 @@ Before completing this dashboard, ensure you have:
 
 ---
 
-## 3. Workbook Structure
-
-The workbook contains **12 sheets** organised as follows:
-
-| Sheet | Purpose | Source Data |
-|-------|---------|-------------|
-| Instructions | Guidance and scoring methodology | N/A |
-| Executive_Summary | High-level compliance overview | All domains |
-| Domain_Overview | Domain-by-domain compliance | A.5.17.1-4 |
-| Policy_Compliance | Policy element compliance | A.5.17.1 |
-| Lifecycle_Compliance | Credential lifecycle compliance | A.5.17.2 |
-| System_Compliance | System authentication compliance | A.5.17.3 |
-| Cross_Domain_Gaps | Gaps spanning multiple domains | Analysis |
-| Remediation_Tracker | Consolidated remediation | A.5.17.4 |
-| KPI_Summary | Key performance indicators | A.5.17.4 |
-| Evidence_Index | Cross-reference to evidence | All domains |
-| Trend_Dashboard | Historical compliance trends | Historical |
-| Approval_SignOff | Consolidation approval | N/A |
-
----
-
-## 4. Completion Walkthrough
+## Completion Walkthrough
 
 ### Sheet 1: Instructions
 
@@ -390,9 +369,9 @@ The workbook contains **12 sheets** organised as follows:
 
 ---
 
-## 5. Evidence Collection
+## Evidence Collection
 
-### 5.1 Evidence Sources
+### Evidence Sources
 
 | Domain | Source Workbook | Evidence Type |
 |--------|-----------------|---------------|
@@ -401,7 +380,7 @@ The workbook contains **12 sheets** organised as follows:
 | Systems | A.5.17.3 | Assessment reports, configs |
 | Monitoring | A.5.17.4 | Dashboard reports, KPI data |
 
-### 5.2 Evidence Storage
+### Evidence Storage
 
 Store consolidation evidence in:
 ```
@@ -415,7 +394,7 @@ Store consolidation evidence in:
 
 ---
 
-## 6. Common Pitfalls
+## Common Pitfalls
 
 ### ❌ MISTAKE: Consolidating without updated source workbooks
 ✅ CORRECT: Verify all source workbooks are current before consolidating
@@ -449,7 +428,7 @@ Store consolidation evidence in:
 
 ---
 
-## 7. Quality Checklist
+## Quality Checklist
 
 Before submitting the consolidation, verify:
 
@@ -487,27 +466,26 @@ Before submitting the consolidation, verify:
 
 ---
 
-## 8. Review and Approval
+## Review and Approval
 
-### 8.1 Consolidation Schedule
+### Consolidation Schedule
 - **Frequency**: Quarterly
 - **Timing**: First week after quarter end
 - **Triggers**: Major changes, pre-audit preparation
 
-### 8.2 Approval Workflow
+### Approval Workflow
 1. **Security Analyst** compiles data
 2. **Domain Owners** validate their sections
 3. **ISO** reviews overall consolidation
 4. **CISO** provides executive approval
 
-### 8.3 Post-Approval Actions
+### Post-Approval Actions
 - Distribute to executive stakeholders
 - Present at management review
 - Archive for audit trail
 - Update risk register with findings
 
 ---
-
 
 **END OF USER GUIDE**
 

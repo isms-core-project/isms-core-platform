@@ -23,333 +23,167 @@
 
 # Technical Specification
 
-This section provides technical details for the NDA Compliance Dashboard workbook implementation.
 
----
+> Auto-generated from `generate_a66_4_nda_dashboard.py`
+> Re-generate with: `python3 generate_tg_from_scr.py --apply`
 
-## 9. Workbook Technical Structure
-
-### 9.1 Workbook Properties
+## Workbook Overview
 
 | Property | Value |
 |----------|-------|
-| File Format | .xlsx (Excel 2016+) |
-| Sheet Protection | Structure protected, cells unlocked for input |
-| Workbook Protection | Structure only |
-| File Naming | ISMS-IMP-A.6.6.4_NDA_Compliance_Dashboard_YYYYMMDD.xlsx |
+| **Document ID** | `ISMS-IMP-A.6.6.4` |
+| **Output Filename** | `ISMS-IMP-A.6.6.4_NDA_Compliance_Dashboard_YYYYMMDD.xlsx` |
+| **Workbook Title** | NDA Compliance Dashboard |
+| **Total Sheets** | 9 (9 visible) |
+| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
 
-### 9.2 Sheet Configuration
+## Color Palette
 
-| Sheet | Tab Colour | Protection Level | Hidden |
-|-------|------------|------------------|--------|
-| Instructions | Grey (#A6A6A6) | Full protection | No |
-| Executive_Summary | Dark Blue (#002060) | Full (display only) | No |
-| Coverage_Metrics | Green (#70AD47) | Input cells unlocked | No |
-| Expiration_Status | Orange (#ED7D31) | Input cells unlocked | No |
-| Compliance_Scorecard | Purple (#7030A0) | Input cells unlocked | No |
-| KPI_Tracker | Blue (#4472C4) | Input cells unlocked | No |
-| Trend_Analysis | Teal (#00B0F0) | Input cells unlocked | No |
-| Approval_SignOff | Gold (#FFC000) | Input cells unlocked | No |
-| Validation Lists | Grey (#A6A6A6) | Full protection | Yes |
+| Hex Code | Style Name | Description |
+|----------|-----------|-------------|
+| #003366 | 003366 | Dark Blue (Headers) |
+| #2F5496 | 2F5496 | Dark Blue (Alt Headers) |
+| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
+| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
+| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | FFFFCC | Light Yellow (User Input) |
 
----
-
-## 10. Sheet Specifications
-
-### 10.1 Sheet 2: Executive_Summary – Technical Specification
-
-**Layout Configuration:**
-
-| Section | Position | Content |
-|---------|----------|---------|
-| Header | Row 1-3 | Title, Report Period |
-| KPI Boxes | Row 5-8 | 4 key metric boxes |
-| Summary Table | Row 10-18 | Metric summary |
-| Key Messages | Row 20-25 | Management messages |
-| Footer | Row 27-28 | Prepared by, Date |
-
-**KPI Box Structure:**
-
-```
-┌─────────────────┐
-│ [METRIC NAME]   │
-│ [VALUE] [TREND] │
-│ Target: [TARGET]│
-│ Status: [RAG]   │
-└─────────────────┘
-```
-
-**Data Links:**
-
-| Metric | Source Formula |
-|--------|----------------|
-| Overall Coverage | =Coverage_Metrics!$E$12 |
-| Active NDAs | =COUNTIF(Source!Status,"Active") |
-| Expiring 30 Days | =Expiration_Status!$B$3 |
-| Open Gaps | =COUNTIF(Gap_Register!Status,"Open") |
-
-### 10.2 Sheet 3: Coverage_Metrics – Technical Specification
-
-**Column Definitions:**
-
-| Column | Header | Width | Data Type | Validation | Required |
-|--------|--------|-------|-----------|------------|----------|
-| A | Category | 25 | Text | Fixed | Yes |
-| B | Sub_Category | 20 | Text | Fixed | Yes |
-| C | Total_Population | 10 | Number | Integer >= 0 | Yes |
-| D | NDA_Required | 10 | Number | Integer >= 0 | Yes |
-| E | NDA_Signed | 10 | Number | Integer >= 0 | Yes |
-| F | Coverage_Rate | 10 | Percentage | Calculated | Auto |
-| G | Gap_Count | 10 | Number | Calculated | Auto |
-| H | Expired_Count | 10 | Number | Integer >= 0 | Yes |
-| I | Status | 12 | List | Green,Amber,Red | Auto |
-| J | Action_Required | 40 | Text | If not Green | Conditional |
-| K | Owner | 20 | Text | If action needed | Conditional |
-| L | Target_Date | 15 | Date | DD.MM.YYYY | Conditional |
-
-**Formulas:**
-
-```excel
-Coverage_Rate (F2):
-=IF(D2=0,0,E2/D2)
-
-Gap_Count (G2):
-=MAX(0,D2-E2)
-
-Status (I2):
-=IF(F2>=1,"Green",IF(F2>=0.95,"Amber","Red"))
-```
-
-**Conditional Formatting:**
-
-| Condition | Format |
-|-----------|--------|
-| Status = "Red" | Red fill |
-| Status = "Amber" | Yellow fill |
-| Status = "Green" | Green fill |
-
-### 10.3 Sheet 4: Expiration_Status – Technical Specification
-
-**Column Definitions:**
-
-| Column | Header | Width | Data Type | Validation | Required |
-|--------|--------|-------|-----------|------------|----------|
-| A | Expiration_Bucket | 20 | Text | Fixed buckets | Yes |
-| B | Count | 10 | Number | Integer >= 0 | Yes |
-| C | Percentage | 10 | Percentage | Calculated | Auto |
-| D | Status | 12 | List | Green,Amber,Red | Auto |
-| E | Priority | 12 | List | Immediate,Urgent,High,Medium,Low | Auto |
-
-**Bucket Definitions (Row 2-8):**
-
-```
-Row 2: Expired (Red, Immediate)
-Row 3: <30 Days (Red, Urgent)
-Row 4: 30-60 Days (Amber, High)
-Row 5: 60-90 Days (Amber, Medium)
-Row 6: 90-180 Days (Green, Low)
-Row 7: >180 Days (Green, Monitor)
-Row 8: Perpetual (Green, N/A)
-```
-
-**Critical Expirations List (Row 12+):**
-
-| Column | Header | Width | Data Type | Required |
-|--------|--------|-------|-----------|----------|
-| A | NDA_ID | 15 | Text | Yes |
-| B | Counterparty | 30 | Text | Yes |
-| C | Category | 20 | Text | Yes |
-| D | Expiry_Date | 15 | Date | Yes |
-| E | Days_Remaining | 10 | Number | Calculated |
-| F | Owner | 20 | Text | Yes |
-| G | Renewal_Status | 15 | List | Yes |
-
-### 10.4 Sheet 5: Compliance_Scorecard – Technical Specification
-
-**Column Definitions:**
-
-| Column | Header | Width | Data Type | Validation | Required |
-|--------|--------|-------|-----------|------------|----------|
-| A | Compliance_Area | 30 | Text | Fixed | Yes |
-| B | Target | 10 | Percentage | Fixed | Yes |
-| C | Actual | 10 | Percentage | Calculated | Yes |
-| D | Score | 10 | Number | 0-100 | Calculated |
-| E | Weight | 10 | Percentage | Fixed | Yes |
-| F | Weighted_Score | 10 | Number | Calculated | Auto |
-| G | Status | 12 | List | Green,Amber,Red | Auto |
-| H | Trend | 10 | List | ↑,→,↓ | Yes |
-| I | Notes | 40 | Text | Optional | No |
-
-**Formulas:**
-
-```excel
-Score (D2):
-=MIN(100,C2/B2*100)
-
-Weighted_Score (F2):
-=D2*E2
-
-Overall_Score (F12):
-=SUM(F2:F9)
-
-Status (G2):
-=IF(D2>=100,"Green",IF(D2>=90,"Amber","Red"))
-```
-
-### 10.5 Sheet 6: KPI_Tracker – Technical Specification
-
-**Column Definitions:**
-
-| Column | Header | Width | Data Type | Validation | Required |
-|--------|--------|-------|-----------|------------|----------|
-| A | KPI_ID | 10 | Text | Format: KPI-## | Yes |
-| B | KPI_Name | 30 | Text | Name | Yes |
-| C | Target | 12 | Text | Target value | Yes |
-| D | Jan | 10 | Varies | By KPI | Yes |
-| E | Feb | 10 | Varies | By KPI | Yes |
-| F | Mar | 10 | Varies | By KPI | Yes |
-| ... | ... | ... | ... | ... | ... |
-| O | Dec | 10 | Varies | By KPI | Yes |
-| P | YTD_Avg | 10 | Calculated | Average | Auto |
-| Q | Trend | 10 | List | ↑,→,↓ | Calculated |
-| R | Status | 12 | List | On Track,At Risk,Behind | Calculated |
-
-### 10.6 Sheet 7: Trend_Analysis – Technical Specification
-
-**Quarterly Data Table:**
-
-| Column | Header | Width | Data Type | Required |
-|--------|--------|-------|-----------|----------|
-| A | Metric | 25 | Text | Yes |
-| B | Q1 | 10 | Varies | Yes |
-| C | Q2 | 10 | Varies | Yes |
-| D | Q3 | 10 | Varies | Yes |
-| E | Q4 | 10 | Varies | Yes |
-| F | YoY_Change | 15 | Calculated | Auto |
-| G | Trend | 10 | List | Auto |
-
-**Year-Over-Year Table:**
-
-| Column | Header | Width | Data Type | Required |
-|--------|--------|-------|-----------|----------|
-| A | Metric | 25 | Text | Yes |
-| B | Prior_Year | 15 | Varies | Yes |
-| C | Current_Year | 15 | Varies | Yes |
-| D | Change | 15 | Calculated | Auto |
-| E | Status | 12 | List | Auto |
+## Sheet 1: Workbook
 
 ---
 
-## 11. Automation Requirements
-
-### 11.1 Automated Alerts
-
-| Trigger | Alert Type | Recipients | Timing |
-|---------|------------|------------|--------|
-| Coverage < 95% | Email | ISM, Category Owner | Daily |
-| Expired NDA count > 0 | Email | ISM, CISO | Daily |
-| Compliance Score < 80% | Email | ISM, CISO | Weekly |
-| Dashboard update overdue | Email | ISM | 3 days after due |
-
-### 11.2 Data Refresh Automation
-
-| Data Element | Refresh Method | Frequency |
-|--------------|----------------|-----------|
-| Source workbook links | Manual refresh | Weekly |
-| Coverage calculations | Auto-calculate | Real-time |
-| Expiration counts | Manual update | Weekly |
-| Compliance scores | Auto-calculate | Real-time |
-| Trend data | Manual entry | Quarterly |
-
-### 11.3 Report Generation
-
-| Report | Format | Generation | Distribution |
-|--------|--------|------------|--------------|
-| Monthly Dashboard | PDF | Manual export | Email |
-| Executive Summary | PowerPoint | Manual | Presentation |
-| Quarterly Report | PDF | Manual | Management meeting |
+## Sheet 2: Instructions
 
 ---
 
-## 12. Metrics and KPIs
+## Sheet 3: Executive_Summary
 
-### 12.1 Coverage KPIs
+**Data Rows:** 5 (rows 13–17)
 
-| KPI | Target | Threshold | Owner |
-|-----|--------|-----------|-------|
-| Overall Coverage | 100% | <95% critical | ISM |
-| Employee Coverage | 100% | <98% warning | HR |
-| Vendor Coverage | 100% | <90% critical | Procurement |
-| New Joiner Completion | 100% | <95% warning | HR |
+### Columns
 
-### 12.2 Compliance KPIs
-
-| KPI | Target | Threshold | Owner |
-|-----|--------|-----------|-------|
-| Compliance Score | >90% | <80% critical | ISM |
-| Expired NDA Count | 0 | >0 critical | ISM |
-| Template Currency | 100% | <90% warning | Legal |
-| Secure Storage | 100% | <95% warning | ISM |
-
-### 12.3 Process KPIs
-
-| KPI | Target | Threshold | Owner |
-|-----|--------|-----------|-------|
-| Renewal Rate | >95% | <90% warning | ISM |
-| Gap Closure SLA | >95% | <90% warning | ISM |
-| Review Completion | 100% | <90% warning | ISM |
-| Dashboard Timeliness | 100% | Late = warning | ISM |
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Message | 50 |
+| B | Priority | 12 |
+| C | Owner | 20 |
+| D | Action Required | 14 |
 
 ---
 
-## 13. Evidence Package for ISO 27001 Audit
+## Sheet 4: Coverage_Metrics
 
-### 13.1 Standard Evidence Package
+**Data Rows:** 10 (rows 3–12) | **Frozen Panes:** A3
 
-| Document | Purpose | Preparation |
-|----------|---------|-------------|
-| 12-month dashboard archive | Program monitoring evidence | Monthly PDF exports |
-| Coverage trend analysis | Coverage management evidence | Sheet 7 export |
-| Compliance score history | Compliance tracking | Sheet 5 history |
-| KPI reports | Performance management | Sheet 6 export |
-| Approval records | Governance evidence | Sheet 8 export |
-| Executive presentations | Management engagement | Presentation archive |
+### Columns
 
-### 13.2 Audit Preparation Checklist
-
-- [ ] Archive current dashboard state
-- [ ] Export 12-month trend data
-- [ ] Compile KPI history
-- [ ] Gather approval records
-- [ ] Prepare coverage analysis summary
-- [ ] Document methodology
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Category | 22 |
+| B | Total_Required | 14 |
+| C | NDA_Signed | 14 |
+| D | Coverage_% | 12 |
+| E | Status | 12 |
+| F | Missing | 12 |
+| G | Expired | 12 |
+| H | Notes | 35 |
 
 ---
 
-## 14. Generator Script Reference
+## Sheet 5: Expiration_Status
 
-### 14.1 Script Location
+**Frozen Panes:** A3
 
-```
-10-isms-scr-base/
-└── isms-a.6.6-confidentiality-nda/
-    └── 10_generator-master/
-        └── generate_a66_4_nda_dashboard.py
-```
+### Columns
 
-### 14.2 Script Execution
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Time_Period | 20 |
+| B | Count | 12 |
+| C | Counterparties | 40 |
+| D | Renewal_Started | 14 |
+| E | Renewal_Complete | 16 |
+| F | At_Risk | 12 |
+| G | Notes | 30 |
 
-```bash
-cd 10-isms-scr-base/isms-a.6.6-confidentiality-nda/10_generator-master
-python3 generate_a66_4_nda_dashboard.py
-mv *.xlsx ../90_workbooks/
-```
+---
 
-### 14.3 Output
+## Sheet 6: Compliance_Scorecard
 
-```
-ISMS-IMP-A.6.6.4_NDA_Compliance_Dashboard_YYYYMMDD.xlsx
-```
+**Data Rows:** 13 (rows 3–15) | **Frozen Panes:** A3
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Compliance_Area | 35 |
+| B | Target | 12 |
+| C | Current | 12 |
+| D | Status | 12 |
+| E | Trend | 12 |
+| F | Owner | 20 |
+| G | Notes | 30 |
+
+---
+
+## Sheet 7: Kpi_Tracker
+
+**Data Rows:** 13 (rows 3–15) | **Frozen Panes:** A3
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | KPI_ID | 10 |
+| B | KPI_Name | 40 |
+| C | Target | 12 |
+| D | Current | 12 |
+| E | Prior_Period | 14 |
+| F | Trend | 12 |
+| G | Status | 12 |
+| H | Owner | 20 |
+| I | Notes | 30 |
+
+---
+
+## Sheet 8: Trend_Analysis
+
+**Data Rows:** 13 (rows 3–15) | **Frozen Panes:** A3
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Period | 12 |
+| B | Total_NDAs | 12 |
+| C | New_Signed | 12 |
+| D | Renewed | 12 |
+| E | Expired | 12 |
+| F | Coverage_% | 12 |
+| G | Gaps_Open | 12 |
+| H | Gaps_Closed | 12 |
+| I | Reviews_Done | 12 |
+| J | Status | 12 |
+| K | Notes | 35 |
+
+---
+
+## Sheet 9: Approval
+
+**Frozen Panes:** A3
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Approval_Type | 25 |
+| B | Approver_Role | 25 |
+| C | Approver_Name | 25 |
+| D | Signature | 20 |
+| E | Date | 14 |
+| F | Comments | 35 |
 
 ---
 

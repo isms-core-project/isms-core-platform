@@ -21,13 +21,13 @@
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 This workbook provides a structured framework for documenting procedures governing external communications with authorities and special interest groups. It defines scenarios requiring external contact, mandatory notification requirements, escalation matrices, approval workflows, and communication templates to ensure consistent, compliant, and timely external communications.
 
-### 1.2 Scope
+### Scope
 
 The External Communication Procedures workbook covers:
 
@@ -37,7 +37,7 @@ The External Communication Procedures workbook covers:
 - **Approval Workflows**: Who must authorise external communications
 - **Communication Templates**: Standardised message formats
 
-### 1.3 Control Requirements
+### Control Requirements
 
 This workbook supports implementation of both ISO 27001:2022 Controls A.5.5 and A.5.6:
 
@@ -49,7 +49,7 @@ This workbook supports implementation of both ISO 27001:2022 Controls A.5.5 and 
 
 This workbook ensures that when contact is needed, proper procedures exist to execute communications correctly, securely, and in compliance with regulatory requirements.
 
-### 1.4 Assessment Domains
+### Assessment Domains
 
 This workbook is **Domain 3 of 5** in the A.5.5-6 External Communications assessment series:
 
@@ -63,11 +63,11 @@ This workbook is **Domain 3 of 5** in the A.5.5-6 External Communications assess
 
 ---
 
-## 2. Prerequisites
+## Prerequisites
 
 Before completing this assessment, ensure you have:
 
-### 2.1 Documentation Requirements
+### Documentation Requirements
 
 - [ ] Completed Authority Contacts Register (A.5.5-6.1)
 - [ ] Completed Special Interest Groups Register (A.5.5-6.2)
@@ -77,7 +77,7 @@ Before completing this assessment, ensure you have:
 - [ ] Regulatory compliance requirements mapping
 - [ ] Legal department contact protocols
 
-### 2.2 Stakeholder Involvement
+### Stakeholder Involvement
 
 | Role | Responsibility |
 |------|----------------|
@@ -88,7 +88,7 @@ Before completing this assessment, ensure you have:
 | **CEO** | Executive-level authorisations |
 | **Compliance Officer** | Regulatory notification tracking |
 
-### 2.3 Regulatory Mapping
+### Regulatory Mapping
 
 Identify all applicable notification requirements:
 
@@ -102,49 +102,9 @@ Identify all applicable notification requirements:
 
 ---
 
-## 3. Workbook Structure
+## Completion Walkthrough
 
-### 3.1 Sheet Overview
-
-| Sheet | Purpose | Input Required |
-|-------|---------|----------------|
-| Instructions | Guidance for completing the workbook | Read only |
-| Communication_Scenarios | When to contact which party | Manual entry |
-| Notification_Requirements | Mandatory notification obligations | Manual entry |
-| Escalation_Matrix | Internal escalation before external contact | Manual entry |
-| Approval_Workflow | Who must approve communications | Manual entry |
-| Communication_Templates | Standard message templates | Manual entry |
-| Evidence_Register | Audit evidence documentation | Manual entry |
-| Approval_SignOff | Management approval workflow | Manual entry |
-
-### 3.2 Sheet Dependencies
-
-```
-Instructions (Read First)
-        ↓
-   ┌────┴────┐
-   ↓         ↓
-Communication    Notification
-Scenarios        Requirements
-   ↓         ↓
-   └────┬────┘
-        ↓
-Escalation_Matrix
-        ↓
-Approval_Workflow
-        ↓
-Communication_Templates
-        ↓
-Evidence_Register
-        ↓
-Approval_SignOff (Complete Last)
-```
-
----
-
-## 4. Completion Walkthrough
-
-### 4.1 Communication_Scenarios Sheet
+### Communication_Scenarios Sheet
 
 Define when to contact external parties.
 
@@ -184,7 +144,7 @@ Define when to contact external parties.
 4. Define response timelines based on regulatory requirements
 5. Document required approvals and procedure steps
 
-### 4.2 Notification_Requirements Sheet
+### Notification_Requirements Sheet
 
 Document mandatory notification obligations.
 
@@ -216,7 +176,7 @@ Document mandatory notification obligations.
 | NIS2 Art. 23 | Significant incident | 24h/72h | CSIRT |
 | FINMA Circular | Cyber incident | 24 hours | FINMA |
 
-### 4.3 Escalation_Matrix Sheet
+### Escalation_Matrix Sheet
 
 Define internal escalation before external contact.
 
@@ -246,7 +206,7 @@ Define internal escalation before external contact.
 | L6 | Regulatory Inquiry | Compliance → Legal → CEO | Legal+CEO |
 | L7 | Physical Emergency | Facility → HR → CEO | Facility Manager |
 
-### 4.4 Approval_Workflow Sheet
+### Approval_Workflow Sheet
 
 Define approval requirements for external communications.
 
@@ -275,7 +235,7 @@ Define approval requirements for external communications.
 | Regulatory Response | Regulator | Legal+CEO | Sequential |
 | Media/Public Statement | Media | CEO+Communications | Parallel |
 
-### 4.5 Communication_Templates Sheet
+### Communication_Templates Sheet
 
 Reference standardised message templates.
 
@@ -305,7 +265,7 @@ Reference standardised message templates.
 | TPL-ISAC-001 | Threat report | ISAC |
 | TPL-PHYS-001 | Physical incident report | Emergency Services |
 
-### 4.6 Evidence_Register Sheet
+### Evidence_Register Sheet
 
 Document evidence for audit purposes.
 
@@ -325,7 +285,7 @@ Document evidence for audit purposes.
 | Status | Current status | Current |
 | Notes | Additional context | Approved by executive team |
 
-### 4.7 Approval_SignOff Sheet
+### Approval_SignOff Sheet
 
 Management approval for procedures.
 
@@ -341,9 +301,9 @@ Management approval for procedures.
 
 ---
 
-## 5. Evidence Collection
+## Evidence Collection
 
-### 5.1 Required Evidence
+### Required Evidence
 
 | Evidence Type | Description | Storage Location |
 |---------------|-------------|------------------|
@@ -354,7 +314,7 @@ Management approval for procedures.
 | Training Records | Staff trained on procedures | ISMS Evidence Library |
 | Test Records | Procedure test/drill results | ISMS Evidence Library |
 
-### 5.2 Evidence Storage Guidelines
+### Evidence Storage Guidelines
 
 - Use consistent naming: `PROC-[Category]-[Year]-[Seq].pdf`
 - Store in ISMS Evidence Library
@@ -364,9 +324,9 @@ Management approval for procedures.
 
 ---
 
-## 6. Common Pitfalls
+## Common Pitfalls
 
-### 6.1 Mistakes to Avoid
+### Mistakes to Avoid
 
 ❌ **MISTAKE:** Creating procedures without testing them through tabletop exercises
 ✅ **CORRECT:** Conduct annual tabletop exercises to validate procedures work under pressure
@@ -400,11 +360,11 @@ Management approval for procedures.
 
 ---
 
-## 7. Quality Checklist
+## Quality Checklist
 
 Before submitting for approval, verify:
 
-### 7.1 Completeness
+### Completeness
 
 - [ ] All applicable notification requirements documented
 - [ ] Scenarios cover all incident types in IRP
@@ -412,21 +372,21 @@ Before submitting for approval, verify:
 - [ ] Approval workflows documented for all communication types
 - [ ] Templates available for all standard communications
 
-### 7.2 Accuracy
+### Accuracy
 
 - [ ] Notification timelines align with current regulations
 - [ ] Approval authorities match organisational structure
 - [ ] Contact references link to Authority/SIG registers
 - [ ] Templates meet regulatory format requirements
 
-### 7.3 Operability
+### Operability
 
 - [ ] Procedures tested through tabletop exercise
 - [ ] Staff trained on procedures
 - [ ] Out-of-hours coverage established
 - [ ] Delegate authorities documented and briefed
 
-### 7.4 Evidence
+### Evidence
 
 - [ ] All procedures formally approved
 - [ ] Training records available
@@ -435,9 +395,9 @@ Before submitting for approval, verify:
 
 ---
 
-## 8. Review and Approval
+## Review and Approval
 
-### 8.1 Review Frequency
+### Review Frequency
 
 | Review Type | Frequency | Triggered By |
 |-------------|-----------|--------------|
@@ -446,7 +406,7 @@ Before submitting for approval, verify:
 | Procedure Test | Annual | Tabletop exercise |
 | Ad-hoc Update | As needed | Regulatory change, incident learning |
 
-### 8.2 Approval Authority
+### Approval Authority
 
 | Action | Approval Required |
 |--------|-------------------|
@@ -456,7 +416,6 @@ Before submitting for approval, verify:
 | Full assessment sign-off | CISO |
 
 ---
-
 
 **END OF USER GUIDE**
 

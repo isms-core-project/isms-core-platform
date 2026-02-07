@@ -47,13 +47,13 @@
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 This assessment evaluates [Organization]'s **post-incident learning and continuous improvement capabilities**, focusing on the **learning** phase of the incident management lifecycle (A.5.27). It determines whether knowledge gained from information security incidents is systematically captured, analysed, and fed back into controls, playbooks, training, and risk assessments.
 
-### 1.2 What This Assessment Measures
+### What This Assessment Measures
 
 **Scope - 5 learning and improvement domains:**
 
@@ -65,7 +65,7 @@ This assessment evaluates [Organization]'s **post-incident learning and continuo
 
 **Assessment Output:** Excel workbook documenting PIR effectiveness, RCA quality, lessons learned coverage, improvement tracking status, trend metrics, compliance gaps, and remediation plans.
 
-### 1.3 Why This Matters
+### Why This Matters
 
 **ISO 27001:2022 Control A.5.27 Requirement:**
 > *"Knowledge gained from information security incidents should be used to strengthen and improve the information security controls."*
@@ -93,7 +93,7 @@ Without a functioning learning loop, the same incidents recur, playbooks stagnat
 - **No trend visibility** prevents proactive risk treatment and budget justification
 - **Audit failure** - A.5.27 is commonly cited in ISO 27001 non-conformities when PIR/RCA evidence is missing
 
-### 1.4 Who Should Complete This Assessment
+### Who Should Complete This Assessment
 
 **Primary Responsibility:** Incident Response Team Lead / CSIRT Manager
 
@@ -112,7 +112,7 @@ Without a functioning learning loop, the same incidents recur, playbooks stagnat
 - **IT Management:** For remediation budget and resource allocation status
 - **Risk Management:** For risk register update verification
 
-### 1.5 Time Estimate
+### Time Estimate
 
 **Total Assessment Time:** 6-10 hours (depending on incident volume and documentation maturity)
 
@@ -128,7 +128,7 @@ Without a functioning learning loop, the same incidents recur, playbooks stagnat
 - **Moderate:** Moderate volume (20-100/year), multiple incident types, some trend reporting - 8 hours
 - **Complex:** High volume (100+/year), multi-team CSIRT, mature trend analytics, regulatory reporting - 10+ hours
 
-### 1.6 Connection to Policy
+### Connection to Policy
 
 This assessment implements **ISMS-POL-A.5.24-28, Section on A.5.27 (Learning)** which defines mandatory requirements for:
 - Post-Incident Review completion within defined timeframes per severity
@@ -141,7 +141,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section on A.5.27 (Learning)** 
 **Policy Authority:** Chief Information Security Officer (CISO)
 **Compliance Status:** Mandatory for all information security incidents
 
-### 1.7 Critical Policy Requirements Summary
+### Critical Policy Requirements Summary
 
 **PIR Process:**
 - **Critical/High incidents:** PIR within 5 business days of resolution
@@ -173,9 +173,9 @@ This assessment implements **ISMS-POL-A.5.24-28, Section on A.5.27 (Learning)** 
 
 ---
 
-## 2. Prerequisites
+## Prerequisites
 
-### 2.1 Information Required
+### Information Required
 
 Before starting this assessment, gather the following:
 
@@ -211,7 +211,7 @@ Before starting this assessment, gather the following:
 - [ ] KPI dashboards or reports (MTTD, MTTR, recurrence, etc.)
 - [ ] Executive/Board incident reporting records
 
-### 2.2 Access Required
+### Access Required
 
 - [ ] Incident ticketing system (read access to all incidents, last 12 months)
 - [ ] PIR/RCA document repository
@@ -219,7 +219,7 @@ Before starting this assessment, gather the following:
 - [ ] Remediation action tracking system
 - [ ] Trend reporting dashboards or report storage
 
-### 2.3 Knowledge Required
+### Knowledge Required
 
 **Essential Understanding:**
 - [Organization]'s incident management lifecycle and ticketing workflow
@@ -228,7 +228,7 @@ Before starting this assessment, gather the following:
 - Remediation action lifecycle (creation -> assignment -> tracking -> closure -> verification)
 - Incident reporting cadence and distribution
 
-### 2.4 Estimated Time Commitment
+### Estimated Time Commitment
 
 **Phase 1: Information Gathering (2-3 hours)**
 - Export incident log (12-month window)
@@ -259,9 +259,9 @@ Before starting this assessment, gather the following:
 
 ---
 
-## 3. Assessment Workflow
+## Assessment Workflow
 
-### 3.1 Recommended Completion Sequence
+### Recommended Completion Sequence
 
 **STEP 1: Initial Setup (10 minutes)**
 1. Download assessment Excel workbook (`ISMS-IMP-A.5.24-28.S5_Learning_Improvement_[DATE].xlsx`)
@@ -330,7 +330,7 @@ Before starting this assessment, gather the following:
 8. **Sheet: Summary Dashboard** - review overall compliance rates and critical gap flags
 9. **Sheet: Approval Sign-Off** - route for three-level approval
 
-### 3.2 Quality Checkpoints
+### Quality Checkpoints
 
 After completing each domain sheet, pause and verify:
 
@@ -344,9 +344,9 @@ After completing each domain sheet, pause and verify:
 
 ---
 
-## 4. Question-by-Question Guidance
+## Question-by-Question Guidance
 
-### 4.1 Sheet: PIR Process
+### Sheet: PIR Process
 
 This sheet assesses whether Post-Incident Reviews are conducted systematically, on time, and with sufficient participation.
 
@@ -392,7 +392,7 @@ Score each completed PIR on a 1-5 scale:
 - **Average PIR quality score:** [formula]
 - **Average days to PIR (all completed):** [formula]
 
-### 4.2 Sheet: Root Cause Analysis
+### Sheet: Root Cause Analysis
 
 This sheet assesses whether root causes are systematically identified and whether findings are deep enough to prevent recurrence.
 
@@ -435,7 +435,7 @@ Identify all root causes that appear in more than one incident during the assess
 - **Corrective_Action_Status:** Is a systemic corrective action in progress or completed?
 - **Risk_Register_Update:** Has this recurring pattern been documented in the organisational risk register?
 
-### 4.3 Sheet: Lessons Learned & Knowledge Management
+### Sheet: Lessons Learned & Knowledge Management
 
 This sheet assesses whether learning is captured, distributed, and institutionalised.
 
@@ -479,7 +479,7 @@ Assess the current state of the knowledge base:
 - Is the knowledge base reviewed and curated on a quarterly basis? (Yes / No - Evidence: ___)
 - Are incident teams informed when relevant knowledge base entries are updated? (Yes / No)
 
-### 4.4 Sheet: Control Improvement Tracking
+### Sheet: Control Improvement Tracking
 
 This sheet assesses whether remediation actions from incidents are tracked, owned, and closed with verification.
 
@@ -528,7 +528,7 @@ For each action with Status = Blocked:
 - **Escalation_Path:** Who has been notified?
 - **Expected_Unblock_Date:** When is resolution expected?
 
-### 4.5 Sheet: Trend Analysis & Metrics
+### Sheet: Trend Analysis & Metrics
 
 This sheet assesses whether incident trends are tracked, reported, and used for decision-making.
 
@@ -580,9 +580,9 @@ Verify that trend reports include comparison to prior periods:
 
 ---
 
-## 5. Evidence Collection Guide
+## Evidence Collection Guide
 
-### 5.1 Evidence Types for This Assessment
+### Evidence Types for This Assessment
 
 | Evidence Type | Description | Where to Find |
 |---------------|-------------|---------------|
@@ -597,7 +597,7 @@ Verify that trend reports include comparison to prior periods:
 | Trend Reports | Monthly, quarterly, and annual incident reports | Reporting repository |
 | KPI Dashboards | Real-time or periodic incident metrics dashboards | SIEM / BI tool screenshots |
 
-### 5.2 Evidence Naming Convention
+### Evidence Naming Convention
 
 All evidence files should follow this naming convention:
 
@@ -610,7 +610,7 @@ Examples:
 - `EV-S5-RA-20260131-Register.xlsx`
 - `EV-S5-TREND-Q4-2025-Report.pdf`
 
-### 5.3 Evidence Storage
+### Evidence Storage
 
 - **Location:** [Organization's evidence repository path]
 - **Retention:** Audit cycle + 1 year minimum
@@ -619,7 +619,7 @@ Examples:
 
 ---
 
-## 6. Common Mistakes to Avoid
+## Common Mistakes to Avoid
 
 | Mistake | Why It Matters | How to Avoid |
 |---------|----------------|--------------|
@@ -633,7 +633,7 @@ Examples:
 
 ---
 
-## 7. Quality Checklist
+## Quality Checklist
 
 Before submitting for approval, verify:
 
@@ -653,9 +653,9 @@ Before submitting for approval, verify:
 
 ---
 
-## 8. Approval and Sign-Off
+## Approval and Sign-Off
 
-### 8.1 Assessment Summary
+### Assessment Summary
 
 **Assessment Document:** ISMS-IMP-A.5.24-28.S5 - Learning & Continuous Improvement Assessment
 **Assessment Period:** From __________ To __________
@@ -675,7 +675,7 @@ Before submitting for approval, verify:
 
 ---
 
-### 8.2 Assessment Completed By
+### Assessment Completed By
 
 **Name:** _______________________
 **Role:** _______________________
@@ -689,7 +689,7 @@ I certify that this assessment was completed with due diligence, all incident le
 
 ---
 
-### 8.3 Reviewed By (Information Security Officer)
+### Reviewed By (Information Security Officer)
 
 **Name:** _______________________
 **Date:** _______________________
@@ -705,7 +705,7 @@ _________________________________________________________________
 
 ---
 
-### 8.4 Approved By (CISO)
+### Approved By (CISO)
 
 **Name:** _______________________
 **Date:** _______________________
@@ -721,7 +721,7 @@ For any documented exceptions or gaps where immediate remediation is not feasibl
 
 ---
 
-### 8.5 Next Review Date
+### Next Review Date
 
 **Next Scheduled Assessment:** _______________________
 
@@ -741,7 +741,7 @@ For any documented exceptions or gaps where immediate remediation is not feasibl
 
 ---
 
-### 8.6 Distribution List
+### Distribution List
 
 This assessment shall be distributed to:
 - [ ] Chief Information Security Officer (CISO)

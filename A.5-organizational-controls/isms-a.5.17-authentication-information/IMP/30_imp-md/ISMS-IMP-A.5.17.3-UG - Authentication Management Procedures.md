@@ -24,7 +24,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ---
 
-## 1.1 Assessment Overview
+## Assessment Overview
 
 ### Purpose
 
@@ -85,7 +85,7 @@ The Authentication Management Procedures Assessment covers:
 
 ---
 
-## 1.2 Control Requirements
+## Control Requirements
 
 ### ISO 27001:2022 Control A.5.17
 
@@ -125,7 +125,7 @@ This control explicitly requires documented management processes for authenticat
 
 ---
 
-## 1.3 Prerequisites
+## Prerequisites
 
 ### Required Access
 
@@ -158,52 +158,7 @@ This control explicitly requires documented management processes for authenticat
 
 ---
 
-## 1.4 Workbook Structure
-
-### Sheet Overview
-
-| Sheet | Purpose | Assessor Action |
-|-------|---------|-----------------|
-| **Instructions** | Guidance and methodology | Read before starting |
-| **Procedure_Inventory** | List all credential procedures | Inventory existing procedures |
-| **Lifecycle_Assessment** | Assess each lifecycle phase | Evaluate procedures per phase |
-| **Identity_Verification** | Review verification methods | Document verification controls |
-| **Communication_Security** | Assess credential delivery | Verify secure channels |
-| **Audit_Trail_Review** | Verify logging and monitoring | Sample audit trails |
-| **Gap_Analysis** | Identify procedural gaps | Document findings |
-| **Remediation_Tracker** | Track gap closure | Plan and monitor |
-| **Approval_SignOff** | Assessment authorisation | Obtain signatures |
-
-### Data Flow
-
-```
-ISMS-POL-A.5.17 Requirements
-        │
-        ▼
-Procedure_Inventory
-        │
-        ▼
-Lifecycle_Assessment ──► Identity_Verification
-        │                       │
-        ▼                       ▼
-Communication_Security ◄────────┘
-        │
-        ▼
-Audit_Trail_Review
-        │
-        ▼
-Gap_Analysis
-        │
-        ▼
-Remediation_Tracker
-        │
-        ▼
-Approval_SignOff
-```
-
----
-
-## 1.5 Completion Walkthrough
+## Completion Walkthrough
 
 ### Step 1: Inventory Existing Procedures
 
@@ -515,7 +470,7 @@ Select 5-10 recent terminations and verify:
 
 ---
 
-## 1.6 Evidence Collection
+## Evidence Collection
 
 ### Evidence Requirements
 
@@ -558,7 +513,7 @@ A.5.17/
 
 ---
 
-## 1.7 Common Pitfalls
+## Common Pitfalls
 
 Avoid these common mistakes when completing the Authentication Management Procedures assessment:
 
@@ -605,7 +560,7 @@ Avoid these common mistakes when completing the Authentication Management Proced
 
 ---
 
-## 1.8 Quality Checklist
+## Quality Checklist
 
 Before submitting the assessment, verify:
 
@@ -643,7 +598,7 @@ Before submitting the assessment, verify:
 
 ---
 
-## 1.9 Review and Approval
+## Review and Approval
 
 ### Review Workflow
 
@@ -692,7 +647,6 @@ CISO Final Approval ────────────────────
    - Date and signature
 
 ---
-
 
 **END OF USER GUIDE**
 

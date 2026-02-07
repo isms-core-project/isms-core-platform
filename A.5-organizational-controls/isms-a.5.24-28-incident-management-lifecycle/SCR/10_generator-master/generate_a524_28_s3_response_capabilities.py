@@ -88,6 +88,13 @@ from datetime import datetime
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 
+# =============================================================================
+# DOCUMENT METADATA
+# =============================================================================
+DOCUMENT_ID = "ISMS-IMP-A.5.24-28.S3"
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_Response_Capabilities_{GENERATED_TIMESTAMP}.xlsx"
+
 
 def create_workbook() -> Workbook:
     """Create workbook with all required sheets."""
@@ -668,10 +675,9 @@ def main():
     print("[11/11] Creating Approval Sign-Off...")
     create_approval_signoff(wb["Approval Sign-Off"], styles)
     
-    filename = f"ISMS-IMP-A.5.24-28.S3_Response_Capabilities_{datetime.now().strftime('%Y%m%d')}.xlsx"
-    wb.save(filename)
-    
-    print(f"\n✅ SUCCESS: {filename}")
+    wb.save(OUTPUT_FILENAME)
+
+    print(f"\n✅ SUCCESS: {OUTPUT_FILENAME}")
     print("\nWorkbook Structure:")
     print("  • 11 sheets (Instructions through Approval)")
     print("  • 125 assessment questions (30+20+20+20+20+15)")

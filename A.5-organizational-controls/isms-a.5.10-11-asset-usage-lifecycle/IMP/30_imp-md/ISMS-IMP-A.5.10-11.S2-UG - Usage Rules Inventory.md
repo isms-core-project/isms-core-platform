@@ -27,38 +27,15 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-### PART I: USER COMPLETION GUIDE
-1. [Assessment Overview](#1-assessment-overview)
-2. [Control Requirements](#2-control-requirements)
-3. [Prerequisites](#3-prerequisites)
-4. [Rule Classification Framework](#4-rule-classification-framework)
-5. [Asset Category Rules](#5-asset-category-rules)
-6. [Workbook Structure](#6-workbook-structure)
-7. [Completion Walkthrough](#7-completion-walkthrough)
-8. [Handling Requirements by Classification](#8-handling-requirements-by-classification)
-9. [Enforcement and Monitoring](#9-enforcement-and-monitoring)
-10. [Evidence Collection](#10-evidence-collection)
-11. [Common Pitfalls](#11-common-pitfalls)
-12. [Quality Checklist](#12-quality-checklist)
-13. [Review and Approval](#13-review-and-approval)
-14. [Related Controls](#14-related-controls)
-
-### PART II: TECHNICAL SPECIFICATION
-15. [Workbook Architecture](#15-workbook-architecture)
-16. [Sheet Specifications](#16-sheet-specifications)
-17. [Data Validation Rules](#17-data-validation-rules)
-18. [Conditional Formatting](#18-conditional-formatting)
-19. [Formula Specifications](#19-formula-specifications)
-20. [Cell Styling Standards](#20-cell-styling-standards)
-21. [Generator Script Reference](#21-generator-script-reference)
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.10-11.S2-TG.
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 The Usage Rules Inventory workbook provides a comprehensive catalogue of specific usage rules by asset category. While the Acceptable Use Policy (AUP) provides high-level guidance, this inventory documents the detailed rules that govern day-to-day asset usage.
 
@@ -69,7 +46,7 @@ This workbook documents:
 - **Handling Requirements**: How assets must be handled by classification
 - **Enforcement Methods**: How compliance is monitored and enforced
 
-### 1.2 Scope
+### Scope
 
 This inventory covers usage rules for:
 - All asset categories defined in the asset inventory
@@ -77,7 +54,7 @@ This inventory covers usage rules for:
 - All usage contexts (office, remote, mobile, travel)
 - All data classifications (Public, Internal, Confidential, Restricted)
 
-### 1.3 Benefits
+### Benefits
 
 | Stakeholder | Benefit |
 |-------------|---------|
@@ -88,7 +65,7 @@ This inventory covers usage rules for:
 | **Auditors** | Evidence of control implementation |
 | **Training** | Content source for awareness materials |
 
-### 1.4 Assessment Frequency
+### Assessment Frequency
 
 | Activity | Frequency |
 |----------|-----------|
@@ -99,9 +76,9 @@ This inventory covers usage rules for:
 
 ---
 
-## 2. Control Requirements
+## Control Requirements
 
-### 2.1 ISO 27001:2022 A.5.10 Requirements
+### ISO 27001:2022 A.5.10 Requirements
 
 Control A.5.10 requires that acceptable use rules be identified, documented, and implemented:
 
@@ -111,7 +88,7 @@ Control A.5.10 requires that acceptable use rules be identified, documented, and
 | **Documented** | Rules recorded in this inventory |
 | **Implemented** | Rules enforced through technical and administrative controls |
 
-### 2.2 Rule Types
+### Rule Types
 
 | Rule Type | Purpose | Example |
 |-----------|---------|---------|
@@ -120,7 +97,7 @@ Control A.5.10 requires that acceptable use rules be identified, documented, and
 | **Prohibited** | Explicitly forbidden activities | "Connecting personal storage devices prohibited" |
 | **Handling** | Requirements for asset handling | "Confidential data must be encrypted at rest" |
 
-### 2.3 Rule Quality Criteria
+### Rule Quality Criteria
 
 | Criterion | Description | Example |
 |-----------|-------------|---------|
@@ -132,9 +109,9 @@ Control A.5.10 requires that acceptable use rules be identified, documented, and
 
 ---
 
-## 3. Prerequisites
+## Prerequisites
 
-### 3.1 Required Inputs
+### Required Inputs
 
 Before completing the inventory, gather:
 
@@ -147,7 +124,7 @@ Before completing the inventory, gather:
 | **Operational Input** | IT, HR, Operations | Practical rule validation |
 | **Previous Inventory** | ISMS Evidence Library | Reference for updates |
 
-### 3.2 Stakeholder Input Required
+### Stakeholder Input Required
 
 | Stakeholder | Input Needed |
 |-------------|--------------|
@@ -160,9 +137,9 @@ Before completing the inventory, gather:
 
 ---
 
-## 4. Rule Classification Framework
+## Rule Classification Framework
 
-### 4.1 Rule Classifications
+### Rule Classifications
 
 | Classification | Definition | Consequence Level |
 |----------------|------------|-------------------|
@@ -171,7 +148,7 @@ Before completing the inventory, gather:
 | **Prohibited** | Activity is not allowed under any circumstances | Defined by severity |
 | **Not Applicable** | Rule not relevant to this context | N/A |
 
-### 4.2 Risk-Based Categorisation
+### Risk-Based Categorisation
 
 For prohibited activities, categorise by risk level:
 
@@ -182,7 +159,7 @@ For prohibited activities, categorise by risk level:
 | **Medium** | Moderate risk requiring correction | Unapproved software | Formal warning |
 | **Low** | Minor policy deviation | Minor personal use | Verbal coaching |
 
-### 4.3 Applies-To Matrix
+### Applies-To Matrix
 
 Rules should specify who they apply to:
 
@@ -197,9 +174,9 @@ Rules should specify who they apply to:
 
 ---
 
-## 5. Asset Category Rules
+## Asset Category Rules
 
-### 5.1 Standard Asset Categories
+### Standard Asset Categories
 
 | Category | Description | Typical Rules Focus |
 |----------|-------------|---------------------|
@@ -214,7 +191,7 @@ Rules should specify who they apply to:
 | **Development Assets** | IDEs, repositories, test environments | Code handling, data protection |
 | **Personal Devices (BYOD)** | Personal phones, laptops | Separation, security requirements |
 
-### 5.2 Rule Template Structure
+### Rule Template Structure
 
 For each asset category, document:
 
@@ -232,52 +209,7 @@ For each asset category, document:
 
 ---
 
-## 6. Workbook Structure
-
-### 6.1 Sheet Overview
-
-| Sheet # | Sheet Name | Purpose | Primary Users |
-|:-------:|------------|---------|---------------|
-| 1 | Instructions | Guidance and metadata | All assessors |
-| 2 | Usage_Rules | Master inventory of all rules | ISM, Policy owners |
-| 3 | Permitted_Activities | Detailed permitted use | Users, Training |
-| 4 | Prohibited_Activities | Forbidden actions with consequences | Users, HR, Legal |
-| 5 | Handling_Requirements | Asset handling by classification | Users, IT |
-| 6 | Evidence_Register | Audit evidence linking | ISM, Auditors |
-| 7 | Approval_SignOff | Inventory approval | ISM, CISO |
-
-### 6.2 Data Flow
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    USAGE RULES DATA FLOW                         │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  INPUTS                                                         │
-│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐    │
-│  │ AUP Policy     │  │ Asset Inventory│  │ Classification │    │
-│  └───────┬────────┘  └───────┬────────┘  └───────┬────────┘    │
-│          │                   │                   │              │
-│          ▼                   ▼                   ▼              │
-│  ┌────────────────────────────────────────────────────────┐    │
-│  │              USAGE RULES INVENTORY                      │    │
-│  ├────────────┬────────────┬───────────────────────────────┤    │
-│  │ Permitted  │ Prohibited │ Handling                      │    │
-│  │ Activities │ Activities │ Requirements                  │    │
-│  └────────────┴────────────┴───────────────────────────────┘    │
-│          │                   │                   │              │
-│          ▼                   ▼                   ▼              │
-│  ┌────────────────────────────────────────────────────────┐    │
-│  │  • AUP Supporting Detail  • Training Content            │    │
-│  │  • Technical Controls     • Enforcement Configuration   │    │
-│  └────────────────────────────────────────────────────────┘    │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 7. Completion Walkthrough
+## Completion Walkthrough
 
 ### Step 1: Document Information (Instructions Sheet)
 
@@ -410,9 +342,9 @@ For each asset category, document:
 
 ---
 
-## 8. Handling Requirements by Classification
+## Handling Requirements by Classification
 
-### 8.1 Public Information
+### Public Information
 
 | Aspect | Requirement |
 |--------|-------------|
@@ -423,7 +355,7 @@ For each asset category, document:
 | **Encryption** | Not required |
 | **Labelling** | Recommended but not required |
 
-### 8.2 Internal Information
+### Internal Information
 
 | Aspect | Requirement |
 |--------|-------------|
@@ -434,7 +366,7 @@ For each asset category, document:
 | **Encryption** | Required for external transmission |
 | **Labelling** | "Internal" label recommended |
 
-### 8.3 Confidential Information
+### Confidential Information
 
 | Aspect | Requirement |
 |--------|-------------|
@@ -445,7 +377,7 @@ For each asset category, document:
 | **Encryption** | Required at rest and in transit |
 | **Labelling** | "Confidential" label required |
 
-### 8.4 Restricted Information
+### Restricted Information
 
 | Aspect | Requirement |
 |--------|-------------|
@@ -458,9 +390,9 @@ For each asset category, document:
 
 ---
 
-## 9. Enforcement and Monitoring
+## Enforcement and Monitoring
 
-### 9.1 Enforcement Methods
+### Enforcement Methods
 
 | Method | Description | Example Use |
 |--------|-------------|-------------|
@@ -470,7 +402,7 @@ For each asset category, document:
 | **Physical** | Physical access restrictions | Locked server room |
 | **Administrative** | Policy and training | AUP acknowledgement |
 
-### 9.2 Monitoring Requirements
+### Monitoring Requirements
 
 | Rule Type | Monitoring Need | Method |
 |-----------|-----------------|--------|
@@ -479,7 +411,7 @@ For each asset category, document:
 | **Medium-Risk Rules** | Periodic sampling | Audit sampling |
 | **Low-Risk Rules** | Incident-triggered | Complaint investigation |
 
-### 9.3 Exception Management
+### Exception Management
 
 | Element | Requirement |
 |---------|-------------|
@@ -492,9 +424,9 @@ For each asset category, document:
 
 ---
 
-## 10. Evidence Collection
+## Evidence Collection
 
-### 10.1 Evidence Requirements
+### Evidence Requirements
 
 | Evidence Type | Description | Retention |
 |---------------|-------------|-----------|
@@ -504,7 +436,7 @@ For each asset category, document:
 | **Technical Configurations** | Enforcement control configs | Current + 1 year |
 | **Exception Records** | Approved exceptions | Duration + 2 years |
 
-### 10.2 Evidence Storage
+### Evidence Storage
 
 | Evidence Type | Storage Location | Naming Convention |
 |---------------|------------------|-------------------|
@@ -514,7 +446,7 @@ For each asset category, document:
 
 ---
 
-## 11. Common Pitfalls
+## Common Pitfalls
 
 ### Rule Quality Pitfalls
 
@@ -574,7 +506,7 @@ For each asset category, document:
 
 ---
 
-## 12. Quality Checklist
+## Quality Checklist
 
 ### Pre-Submission Checklist
 
@@ -613,9 +545,9 @@ For each asset category, document:
 
 ---
 
-## 13. Review and Approval
+## Review and Approval
 
-### 13.1 Approval Workflow
+### Approval Workflow
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -636,7 +568,7 @@ For each asset category, document:
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-### 13.2 Approval Authorities
+### Approval Authorities
 
 | Inventory Component | Consulted | Approver |
 |---------------------|-----------|----------|
@@ -646,7 +578,7 @@ For each asset category, document:
 | Handling Requirements | IT, Data Owners | ISM |
 | Overall Inventory | All stakeholders | CISO |
 
-### 13.3 Sign-off Record
+### Sign-off Record
 
 | Role | Name | Signature | Date |
 |------|------|-----------|------|
@@ -659,9 +591,9 @@ For each asset category, document:
 
 ---
 
-## 14. Related Controls
+## Related Controls
 
-### 14.1 Primary Dependencies
+### Primary Dependencies
 
 | Control | Relationship | Integration |
 |---------|--------------|-------------|
@@ -671,7 +603,7 @@ For each asset category, document:
 | **A.5.10-11.3** | Asset Return | Rules for offboarding |
 | **A.5.10-11.4** | Compliance Dashboard | Aggregates compliance metrics |
 
-### 14.2 Related Controls
+### Related Controls
 
 | Control | Relevance |
 |---------|-----------|
@@ -681,7 +613,6 @@ For each asset category, document:
 | **A.8.12** | Data Leakage Prevention | DLP rule enforcement |
 
 ---
-
 
 **END OF USER GUIDE**
 

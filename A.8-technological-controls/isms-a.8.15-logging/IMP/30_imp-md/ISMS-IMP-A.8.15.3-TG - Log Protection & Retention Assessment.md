@@ -24,538 +24,582 @@
 |---------|------|--------|---------|
 | 1.0 | [Date] | Initial technical specification | ISMS Implementation Team |
 
-### Document Structure
-
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.8.15.3-UG.
 
 ---
-
 # Technical Specification
-
 **Audience:** Workbook Developers (Python/Excel script maintainers)
 
----
 
-# Document Overview
+> Auto-generated from `generate_a815_3_log_protection_retention.py`
+> Re-generate with: `python3 generate_tg_from_scr.py --apply`
 
-**Document ID:** ISMS-IMP-A.8.15.3-TG  
-**Assessment Area:** Log Protection, Integrity, Access Control & Retention Compliance  
-**Related Policy:** ISMS-POL-A.8.15, Sections 2.2, 2.3, 2.5  
-**Purpose:** Technical specification for Excel workbook structure and Python generation script  
+## Workbook Overview
 
----
+| Property | Value |
+|----------|-------|
+| **Document ID** | `ISMS-IMP-A.8.15.3` |
+| **Output Filename** | `ISMS-IMP-A.8.15.3_Log_Protection_Retention_YYYYMMDD.xlsx` |
+| **Total Sheets** | 30 (30 visible) |
+| **Control Reference** | ISO/IEC 27001:2022 - Control A.8.15: Logging |
 
-# Workbook Structure Overview
+## Color Palette
 
-| Sheet # | Sheet Name | Purpose | User Input Required | Formula-Driven | Protected |
-|---------|------------|---------|-------------------|----------------|-----------|
-| 1 | Instructions_Legend | Usage guide, scoring methodology | No | No | Yes (Read-Only) |
-| 2 | Access_Control | User access verification, RBAC assessment | Yes | Yes (Compliance scoring) | Partial |
-| 3 | Integrity_Protection | WORM, crypto, tamper protection assessment | Yes | Yes (Compliance scoring) | Partial |
-| 4 | Tamper_Detection | Alert testing, integrity verification | Yes | Yes (Test pass/fail) | Partial |
-| 5 | Retention_Compliance | Policy vs. actual retention per category | Yes | Yes (Compliance calculation) | Partial |
-| 6 | Disposal_Procedures | Secure deletion verification | Yes | Yes (Compliance scoring) | Partial |
-| 7 | Privacy_Assessment | GDPR/nDSG compliance, prohibited data check | Yes | Yes (Privacy compliance score) | Partial |
-| 8 | Legal_Hold | Active holds, chain of custody | Yes | No | No (Input Area) |
-| 9 | Gap_Analysis | Consolidated gaps with remediation | Partial | Yes (Auto-populated) | Partial |
-| 10 | Evidence_Register | Evidence documentation index | Yes | No | No (Input Area) |
-| 11 | Approval_Sign_Off | Three-level approval with summary | Yes | Yes (Summary metrics) | Partial |
+| Hex Code | Style Name | Description |
+|----------|-----------|-------------|
+| #4472C4 | end_color | Medium Blue (Sub-headers) |
+| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
+| #FFC000 | FFC000 | Custom |
+| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
 
-**Total Sheets**: 11
+## Sheet 1: Instructions & Legend
 
 ---
 
-# Sheet Specifications
-
-## Sheet 1: Instructions_Legend
-
-**Purpose**: Assessment methodology and scoring guide
-
-**Key Sections**:
-
-- Document information (ID, Version, Date, Organization, Assessment Period)
-- Completion steps (8-step process)
-- Scoring methodology (0-100% scale with color coding)
-- Color coding guide (Yellow=Input, Blue=Formula, Green=Compliant, Red=Critical)
-
-**Scoring Scale**:
-| Score | Rating | Color | Meaning |
-|-------|--------|-------|---------|
-| 90-100% | Excellent | Green | Fully compliant |
-| 75-89% | Good | Light Green | Substantially compliant |
-| 50-74% | Adequate | Yellow | Partially compliant |
-| 25-49% | Poor | Orange | Minimally compliant |
-| 0-24% | Critical | Red | Non-compliant |
+## Sheet 2: Access Control Assessment
 
 ---
 
-## Sheet 2: Access_Control
-
-**Purpose**: Verify log access restricted to authorized personnel
-
-**Column Structure** (15 columns):
-
-- A: User ID / Service Account
-- B: User Name
-- C: Role (SOC Analyst, Security Engineer, InfoSec Manager, CISO, Auditor, System Admin, Other)
-- D: Access Level (Read-Only, Read-Write, Admin, No Access)
-- E: Access Scope (All Logs, Security Only, Specific Systems, Time-Limited)
-- F: Business Justification (Why access needed)
-- G: Last Access Date (From audit logs)
-- H: Access Review Date (When last reviewed)
-- I: Access Approved By (Who authorized)
-- J: Separation of Duties Check - Formula: `=IF(C="System Admin","VIOLATION - SoD Breach","OK")`
-- K: Access Appropriate - Formula: `=IF(OR(D="Read-Write",D="Admin",G<TODAY()-180),"Review Required","Appropriate")`
-- L: Compliance Status - Formula: `=IF(AND(J="OK",K="Appropriate"),"Y Compliant","N Non-Compliant")`
-- M: Gap Notes (If non-compliant, why?)
-- N: Remediation Action (If non-compliant, what to do?)
-- O: Target Date (When fixed)
-
-**Compliance Calculations**:
-
-- Total Users with Log Access = `COUNTA(A:A) - 1` (exclude header)
-- Access Justified = `COUNTIF(F:F,"<>")` (has justification)
-- Separation of Duties Compliant = `COUNTIF(J:J,"OK")/Total*100`
-- Access Appropriate = `COUNTIF(K:K,"Appropriate")/Total*100`
-- **Overall Access Control Compliance** = `COUNTIF(L:L,"Y Compliant")/Total*100`
-
-**Conditional Formatting**:
-
-- Column J (SoD Check): Red fill if "VIOLATION", Green if "OK"
-- Column K (Appropriateness): Yellow if "Review Required", Green if "Appropriate"
-- Column L (Compliance): Green if "Y", Red if "N"
+## Sheet 3: Integrity Protection
 
 ---
 
-## Sheet 3: Integrity_Protection
-
-**Purpose**: Verify logs protected from tampering
-
-**Section 1: Storage Tier Protection** (Rows 4-30):
-
-Columns:
-
-- A: Storage Tier (Hot, Warm, Cold)
-- B: Storage System Name
-- C: WORM Enabled (Yes, No, Partial, N/A)
-- D: WORM Technology (Hardware WORM, Software WORM, Object Lock, Tape, N/A)
-- E: Cryptographic Protection (Digital Signatures, Hashing, Hash Chain, None)
-- F: Algorithm Used (SHA-256, SHA-3, RSA-2048, Ed25519, None)
-- G: Access Control (Write-Protected? Yes/No)
-- H: Centralized Collection (Immediate Forwarding? Yes/No/Partial)
-- I: Compliance Status - Formula: `=IF(OR(C="Yes",AND(E<>"None",F<>"None")),"Y Protected","N Not Protected")`
-
-**Section 2: Critical Systems Enhanced Protection** (Rows 33-60):
-
-Columns:
-
-- A: System ID (from IMP-A.8.15.1)
-- B: System Name
-- C: System Criticality (from IMP-A.8.15.1 - filter for "Critical" only)
-- D: Log Storage Tier (Which tier are these logs in?)
-- E: Protection Method (WORM, Digital Signature, Hash Chain, Centralized Only, None)
-- F: Policy Requirement Met - Formula: `=IF(OR(E="WORM",E="Digital Signature",E="Hash Chain"),"Y Yes","N No")`
-- G: Gap Identified - Formula: `=IF(F="N No","GAP: Critical system requires WORM or crypto signing","")`
-
-**Compliance Calculations**:
-
-- Total Storage Tiers = `COUNTA(Section1!A:A)`
-- Tiers Protected = `COUNTIF(Section1!I:I,"Y Protected")`
-- Storage Tier Protection % = `(Tiers Protected / Total Tiers) * 100`
-- Total Critical Systems = `COUNTA(Section2!A:A)`
-- Critical Systems Protected = `COUNTIF(Section2!F:F,"Y Yes")`
-- Critical System Protection % = `(Protected / Total) * 100`
-- **Overall Integrity Protection Score** = `AVERAGE(Storage Tier %, Critical System %)`
+## Sheet 4: Secure Transmission
 
 ---
 
-## Sheet 4: Tamper_Detection
-
-**Purpose**: Verify tamper detection operational
-
-**Column Structure** (12 columns):
-
-- A: Test Scenario (Log Modification, Log Deletion, Integrity Verification, Alert Generation)
-- B: Test Environment (Production, Staging, Test, Not Tested)
-- C: Test Date
-- D: Test Conducted By
-- E: Test Procedure (Brief description of what was tested)
-- F: Expected Result (What should happen)
-- G: Actual Result (What actually happened)
-- H: Test Pass/Fail - Formula: `=IF(G=F,"Y PASS","N FAIL")`
-- I: Alert Generated (Yes, No, N/A)
-- J: Alert Destination (SOC Email, SIEM Alert, Ticketing System, N/A)
-- K: Response Procedure Documented (Yes, No)
-- L: Overall Status - Formula: `=IF(AND(H="Y PASS",OR(I="Yes",I="N/A"),K="Yes"),"Y Compliant","N Non-Compliant")`
-
-**Summary Section**:
-
-- Total Tests = `COUNTA(A:A) - 1`
-- Tests Passed = `COUNTIF(H:H,"Y PASS")`
-- Tests Failed = `COUNTIF(H:H,"N FAIL")`
-- Alerts Configured = `COUNTIF(I:I,"Yes")`
-- Response Procedures Documented = `COUNTIF(K:K,"Yes")`
-- **Tamper Detection Effectiveness Score** = `(Tests Passed / Total Tests) * 100`
-
-**Conditional Formatting**:
-
-- Column H: Green if "Y PASS", Red if "N FAIL"
-- Column L: Green if "Y Compliant", Red if "N Non-Compliant"
+## Sheet 5: Retention Period Compliance
 
 ---
 
-## Sheet 5: Retention_Compliance
-
-**Purpose**: Validate actual vs. policy retention requirements
-
-**Column Structure** (13 columns):
-
-- A: Log Category (Security Events, Authentication, Admin Actions, Database Logs, Application Logs, Network Logs, System Logs)
-- B: Policy Requirement - Online (months, from ISMS-POL-A.8.15 Section 2.3)
-- C: Policy Requirement - Archive (years total, from policy)
-- D: Regulatory Driver (ISO 27001, GDPR, PCI DSS, HIPAA, SOX, nDSG)
-- E: Actual - Hot Storage (months, from IMP-A.8.15.2 Sheet 3 if available)
-- F: Actual - Warm Storage (months)
-- G: Actual - Cold Archive (years)
-- H: Total Actual Retention - Formula: `=E+F+(G*12)` (convert to months)
-- I: Total Required Retention - Formula: `=B+(C*12)` (convert to months)
-- J: Compliance Status - Formula: `=IF(H>=I,"Y Compliant","N Non-Compliant")`
-- K: Gap (if non-compliant) - Formula: `=IF(J="N Non-Compliant",I-H,0)` (months short)
-- L: Over-Retention (privacy risk) - Formula: `=IF(AND(J="Y Compliant",H>I+24),H-I,0)` (months over)
-- M: Justification (If over-retained, why? Business need, legal hold, other)
-
-**Regulatory-Specific Section** (Below main table):
-
-| Regulation | Applicable? | Log Types Affected | Minimum Retention | Actual Retention | Compliant? |
-|-----------|-------------|-------------------|-------------------|------------------|------------|
-| PCI DSS 10.5.1 | [Y/N] | Payment system logs | 12 months online | [From Sheet] | `=IF(Actual>=12,"Y","N")` |
-| HIPAA Sec.164.316 | [Y/N] | ePHI access logs | 6 years total | [From Sheet] | `=IF(Actual>=72,"Y","N")` |
-| SOX | [Y/N] | Financial audit trails | 7 years total | [From Sheet] | `=IF(Actual>=84,"Y","N")` |
-
-**Compliance Summary**:
-
-- Total Categories = `COUNTA(A:A) - 1`
-- Categories Compliant = `COUNTIF(J:J,"Y Compliant")`
-- Categories Non-Compliant = `COUNTIF(J:J,"N Non-Compliant")`
-- Categories Over-Retained = `COUNTIF(L:L,">0")`
-- **Overall Retention Compliance %** = `(Compliant / Total) * 100`
-
-**Conditional Formatting**:
-
-- Column J: Green if "Y Compliant", Red if "N Non-Compliant"
-- Column L: Orange fill if >0 (over-retention privacy risk)
+## Sheet 6: Storage Tier Implementation
 
 ---
 
-## Sheet 6: Disposal_Procedures
-
-**Purpose**: Verify secure log disposal implementation
-
-**Column Structure** (11 columns):
-
-- A: Storage Tier (Hot, Warm, Cold)
-- B: Disposal Method (Automated Deletion, Manual Deletion, Crypto Erasure, Physical Destruction, None)
-- C: Disposal Trigger (Automated After Retention, Scheduled Quarterly, On-Demand Manual, Never)
-- D: NIST SP 800-88 Compliant (Yes, No, Unknown)
-- E: Disposal Logged (Yes, No)
-- F: Legal Hold Check (Pre-Disposal Check? Yes/No)
-- G: Disposal Verification (How verified? Audit logs, Capacity monitoring, Manual inspection)
-- H: Last Disposal Date (When last disposal occurred)
-- I: Disposal Volume (GB or TB disposed)
-- J: Disposal Records Retained (Yes, No)
-- K: Compliance Status - Formula: `=IF(AND(B<>"None",D="Yes",E="Yes",F="Yes"),"Y Compliant","N Non-Compliant")`
-
-**Summary Section**:
-
-- Total Storage Tiers = `COUNTA(A:A) - 1`
-- Tiers with Disposal Process = `COUNTIF(B:B,"<>None")`
-- NIST Compliant Disposal = `COUNTIF(D:D,"Yes")`
-- Disposal Logged = `COUNTIF(E:E,"Yes")`
-- Legal Hold Check Implemented = `COUNTIF(F:F,"Yes")`
-- **Overall Disposal Compliance %** = `COUNTIF(K:K,"Y Compliant") / Total * 100`
-
-**Conditional Formatting**:
-
-- Column B: Red if "None" (no disposal = gap)
-- Column K: Green if "Y Compliant", Red if "N Non-Compliant"
+## Sheet 7: Log Backup & Recovery
 
 ---
 
-## Sheet 7: Privacy_Assessment
-
-**Purpose**: GDPR/nDSG compliance verification
-
-**Section 1: Data Minimization** (Rows 4-20):
-
-Columns:
-
-- A: Log Category
-- B: Personal Data Present (Yes/No)
-- C: Personal Data Types (User IDs, IP addresses, Email, Location, Other)
-- D: Data Necessary (Yes/No - is all logged data necessary?)
-- E: Minimization Compliant - Formula: `=IF(OR(B="No",D="Yes"),"Y Yes","N No")`
-
-**Section 2: Prohibited Data Check** (Rows 23-35):
-
-| Prohibited Data Type | Found in Logs? | Where Found? | Remediation Required? | Remediation Plan | Target Date |
-|---------------------|----------------|--------------|---------------------|------------------|-------------|
-| Passwords (cleartext) | [Y/N] | [Log source] | [Y/N] | [Action] | [Date] |
-| Full credit card numbers | [Y/N] | [Log source] | [Y/N] | [Action] | [Date] |
-| National ID numbers | [Y/N] | [Log source] | [Y/N] | [Action] | [Date] |
-| Full health information | [Y/N] | [Log source] | [Y/N] | [Action] | [Date] |
-| Biometric templates | [Y/N] | [Log source] | [Y/N] | [Action] | [Date] |
-| Session tokens/API keys | [Y/N] | [Log source] | [Y/N] | [Action] | [Date] |
-
-**Prohibited Data Compliance** = `=IF(COUNTIF(B23:B35,"Yes")=0,"Y No Prohibited Data","N VIOLATION - Prohibited Data Found")`
-
-**Section 3: GDPR Compliance Checklist** (Rows 38-50):
-
-| GDPR Article | Requirement | Compliant? | Evidence | Gap Notes |
-|--------------|-------------|------------|----------|-----------|
-| Art. 5(1)(c) - Data Minimization | Log only necessary data | [Y/N] | [Evidence ref] | [Notes] |
-| Art. 5(1)(b) - Purpose Limitation | Use logs only for security/compliance | [Y/N] | [Evidence ref] | [Notes] |
-| Art. 5(1)(e) - Storage Limitation | Retention justified | [Y/N] | [Evidence ref] | [Notes] |
-| Art. 32 - Security | Logs protected (integrity, access control) | [Y/N] | [Evidence ref] | [Notes] |
-| Transparency | Users informed of logging | [Y/N] | [Evidence ref] | [Notes] |
-
-**Privacy Compliance Score** = `COUNTIF(C38:C50,"Yes") / 5 * 100`
+## Sheet 8: Disposal Procedures
 
 ---
 
-## Sheet 8: Legal_Hold
-
-**Purpose**: Legal hold management verification
-
-**Active Holds Inventory** (if any):
-
-Columns:
-
-- A: Hold ID
-- B: Hold Initiation Date
-- C: Hold Requestor (Legal counsel, case ref)
-- D: Scope - Log Categories Affected
-- E: Scope - Time Period (date range)
-- F: Scope - Systems Affected
-- G: Hold Status (Active, Released, Partial)
-- H: Estimated Duration
-- I: Hold Documentation Location
-- J: Chain of Custody Maintained (Yes/No)
-- K: Disposal Suspended Verified (Yes/No)
-- L: Last Review Date
-- M: Notes
-
-**Legal Hold Process Assessment**:
-
-| Process Element | Implemented? | Documented? | Tested? | Compliance Status |
-|-----------------|--------------|-------------|---------|-------------------|
-| Hold notification process | [Y/N] | [Y/N] | [Y/N] | Formula: `=IF(AND(B,C,D),"Y","N")` |
-| Disposal suspension | [Y/N] | [Y/N] | [Y/N] | Formula |
-| Chain of custody | [Y/N] | [Y/N] | [Y/N] | Formula |
-| Quarterly reviews | [Y/N] | [Y/N] | [Y/N] | Formula |
-| Hold release process | [Y/N] | [Y/N] | [Y/N] | Formula |
-
-**Legal Hold Compliance Score** = `COUNTIF(E:E,"Y") / 5 * 100`
+## Sheet 9: Separation of Duties
 
 ---
 
-## Sheet 9: Gap_Analysis
-
-**Purpose**: Consolidated gaps with remediation tracking
-
-**Column Structure** (20 columns):
-
-- A: Gap ID (PROT-001, PROT-002...)
-- B: Gap Category (Access Control, Integrity Protection, Tamper Detection, Retention, Disposal, Privacy, Legal Hold)
-- C: Gap Description
-- D: Affected System/Process
-- E: Source Sheet (2-8)
-- F: Policy Reference (ISMS-POL-A.8.15 Section X.X)
-- G: Impact Level (High, Medium, Low)
-- H: Likelihood (Likely, Possible, Unlikely)
-- I: Risk Rating - Formula: Risk matrix from IMP-A.8.15.2
-- J: Business Impact
-- K: Proposed Solution
-- L: Responsible Party
-- M: Target Completion Date
-- N: Estimated Effort (Hours)
-- O: Budget Required
-- P: Compensating Controls
-- Q: Exception ID (if approved exception exists)
-- R: Status (Open, In Progress, Resolved, Accepted, Deferred)
-- S: Tracking Ticket ID
-- T: Notes
-
-**Auto-Population from Other Sheets**:
-
-- FROM Sheet 2: WHERE Compliance Status = "N Non-Compliant"
-- FROM Sheet 3: WHERE Integrity Protection = "N Not Protected" AND Critical System
-- FROM Sheet 5: WHERE Retention Compliance = "N Non-Compliant"
-- FROM Sheet 7: WHERE Prohibited Data Found = "Yes"
-
-**Summary by Category**:
-| Category | Total | Critical | High | Medium | Low |
-|----------|-------|----------|------|--------|-----|
-| Access Control | COUNT | COUNTIFS(I,"CRITICAL") | ... | ... | ... |
-| Integrity Protection | COUNT | ... | ... | ... | ... |
-| Retention | COUNT | ... | ... | ... | ... |
-| Privacy | COUNT | ... | ... | ... | ... |
+## Sheet 10: Legal Hold Management
 
 ---
 
-## Sheet 10: Evidence_Register
-
-**Purpose**: Evidence documentation index
-
-**Columns** (12 columns):
-
-- A: Evidence ID (EV-PROT-001...)
-- B: Evidence Type (Screenshot, Config Export, Report, Document, Test Result)
-- C: Description
-- D: Related Sheet (2-8)
-- E: Related System/Topic
-- F: File Name
-- G: File Location (folder path)
-- H: Date Collected
-- I: Collected By
-- J: Sensitivity (Public, Internal, Confidential, Restricted)
-- K: Retention Period (7 years)
-- L: Notes
+## Sheet 11: Privacy Impact Assessment
 
 ---
 
-## Sheet 11: Approval_Sign_Off
-
-**Purpose**: Three-level approval with summary dashboard
-
-**Summary Metrics** (Rows 5-20):
-
-| Metric | Value | Target | Status |
-|--------|-------|--------|--------|
-| Access Control Compliance % | =Sheet2!Summary | 100% | IF check |
-| Integrity Protection Score | =Sheet3!Summary | >=95% | IF check |
-| Tamper Detection Effectiveness | =Sheet4!Summary | 100% | IF check |
-| Retention Compliance % | =Sheet5!Summary | 100% | IF check |
-| Disposal Compliance % | =Sheet6!Summary | 100% | IF check |
-| Privacy Compliance Score | =Sheet7!Summary | 100% | IF check |
-| Legal Hold Compliance | =Sheet8!Summary | 100% | IF check |
-| **Overall Compliance Score** | =AVERAGE(All) | **>=90%** | Color code |
-
-**Gap Summary**:
-
-- Total Gaps = COUNT(Sheet9!A:A)
-- Critical = COUNTIF(Sheet9!I:I,"CRITICAL")
-- High = COUNTIF(Sheet9!I:I,"HIGH")
-
-**Approval Sections**:
-
-- Level 1: InfoSec Manager + SIEM Admin
-- Level 2: DPO + Legal/Compliance
-- Level 3: CISO
+## Sheet 12: Gap Analysis
 
 ---
 
-# Integration Points
-
-## Referenced Documents
-
-**From IMP-A.8.15.1**:
-
-- Critical systems list (for Sheet 3 enhanced protection requirement)
-
-**From IMP-A.8.15.2**:
-
-- Sheet 3 (Storage Architecture) for actual retention periods (referenced in Sheet 5)
-
-**To IMP-A.8.15.5**:
-
-- Sheet 11 (Approval Sign-Off) summary metrics for dashboard
-
-## Policy References
-
-- ISMS-POL-A.8.15 Section 2.2 (Log Protection & Integrity)
-- ISMS-POL-A.8.15 Section 2.3 (Log Retention & Storage)
-- ISMS-POL-A.8.15 Section 2.5 (Privacy & Data Protection)
-- ISMS-POL-A.8.15 Section 3.3 (Exception Management)
-- ISMS-POL-00 (Regulatory Applicability Framework)
+## Sheet 13: Evidence Register
 
 ---
 
-# Python Script Usage
-
-## Script Name
-`generate_a815_3_log_protection_retention.py`
-
-## Critical Customization Points
-
-**Line 20-30: Organization-Specific Defaults**
-```python
-# CUSTOMIZE: Organization defaults
-DEFAULT_ORG_NAME = "[Organization]"
-DEFAULT_ASSESSMENT_PERIOD = "Semi-Annual 2026-H1"
-```
-
-**Line 100-120: Regulatory Applicability**
-```python
-# CUSTOMIZE: Which regulations apply to your organization
-APPLICABLE_REGULATIONS = {
-    'PCI_DSS': False,  # Set True if processing payment cards
-    'HIPAA': False,    # Set True if US healthcare data
-    'SOX': False,      # Set True if publicly traded company
-    'GDPR': True,      # Set True if processing EU personal data
-    'nDSG': True       # Set True for Swiss operations
-}
-```
-
-**Line 200-250: Retention Requirements Matrix**
-```python
-# CUSTOMIZE: Based on policy Section 2.3 and ISMS-POL-00
-RETENTION_REQUIREMENTS = {
-    'Security Events': {'online': 12, 'archive': 7, 'driver': 'ISO 27001'},
-    'Authentication': {'online': 12, 'archive': 7, 'driver': 'ISO 27001'},
-    # ... add all categories from policy
-}
-```
-
-## Key Functions
-
-1. `create_workbook()`: Initialize 11-sheet structure
-2. `populate_access_control()`: Sheet 2 with user list template
-3. `populate_integrity_protection()`: Sheet 3 with storage tiers
-4. `generate_retention_matrix()`: Sheet 5 with policy requirements pre-filled
-5. `populate_privacy_checklist()`: Sheet 7 with GDPR checklist
-6. `apply_conditional_formatting()`: All traffic lights and risk colors
-7. `set_data_validation()`: Dropdowns for all required fields
-8. `protect_cells()`: Lock formula cells, allow input cells
-
-## Testing Checklist
-
-- [ ] All formulas calculate correctly
-- [ ] Conditional formatting triggers properly
-- [ ] Dropdowns contain correct values
-- [ ] Risk matrix works (Sheet 9)
-- [ ] Summary metrics aggregate correctly (Sheet 11)
-- [ ] Cell protection appropriate
+## Sheet 14: Summary Dashboard
 
 ---
 
-# Document Assembly Complete
+## Sheet 15: Approval & Sign-Off
 
-**Total Document Length**: ~1,600 lines
+---
 
-**Structure**:
+## Sheet 16: Instructions
 
-- Part I: User Completion Guide (~800 lines)
-- Part II: Technical Specification (~800 lines)
+**Frozen Panes:** A3
 
-**Quality Verification**:
+---
 
-- [X] Policy references to ISMS-POL-A.8.15 v1.0 consolidated policy
-- [X] Privacy assessment (GDPR/nDSG) comprehensive
-- [X] Retention compliance validation per policy Section 2.3
-- [X] Legal hold management included
-- [X] All 11 sheets specified with formulas, validation, formatting
-- [X] Completely generic language (no industry/size/technology assumptions)
-- [X] Follows IMP-A.8.15.1 and IMP-A.8.15.2 structure exactly
+## Sheet 17: Access_Control
+
+**Purpose:** "Security is a process, not a product." - Bruce Schneier
+
+**Data Rows:** 92 (rows 9–100) | **Frozen Panes:** A8
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Log Source / SIEM Component | 30 |
+| B | Access Control Type | 20 |
+| C | Authentication Required | 18 |
+| D | Authorization Model | 20 |
+| E | Read Access Controlled | 18 |
+| F | Write Access Prevented | 20 |
+| G | Delete Access Controlled | 20 |
+| H | Admin Separation | 20 |
+| I | Access Logged (Meta) | 20 |
+| J | MFA Required for Admin | 20 |
+| K | Last Access Review | 18 |
+| L | Review Frequency | 20 |
+| M | Non-Compliance Issues | 40 |
+| N | Compliance Score | 15 |
+| O | Remediation Required | 18 |
+| P | Notes | 40 |
+
+### Data Validations
+
+| Column | Range | Validation Variable |
+|--------|-------|---------------------|
+| B | B9:B100 | `access_type_dv` |
+| C | C9:C100 | `yes_no_dv` |
+| O | O9:O100 | `yes_no_dv` |
+| D | D9:D100 | `auth_model_dv` |
+| E | E9:E100 | `read_dv` |
+| F | F9:F100 | `write_dv` |
+| G | G9:G100 | `delete_dv` |
+| H | H9:H100 | `admin_sep_dv` |
+| I | I9:I100 | `logged_dv` |
+| J | J9:J100 | `mfa_dv` |
+| L | L9:L100 | `frequency_dv` |
+
+### Formulas
+
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| NN | `=IF(A{data_row}=` |  |
+
+---
+
+## Sheet 18: Integrity_Protection
+
+**Data Rows:** 92 (rows 9–100) | **Frozen Panes:** A8
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Log Source / Storage | 30 |
+| B | Log Criticality | 18 |
+| C | Write-Once Storage (WORM) | 20 |
+| D | WORM Technology | 25 |
+| E | Cryptographic Hashing | 20 |
+| F | Hash Algorithm | 18 |
+| G | Hash Storage Location | 25 |
+| H | Digital Signatures | 18 |
+| I | File Sealing | 18 |
+| J | Integrity Check Frequency | 20 |
+| K | Last Integrity Check | 18 |
+| L | Tampering Detected | 18 |
+| M | Backup Protected | 18 |
+| N | Compliance with Policy | 20 |
+| O | Gap Description | 40 |
+| P | Remediation Plan | 40 |
+| Q | Notes | 40 |
+
+### Data Validations
+
+| Column | Range | Validation Variable |
+|--------|-------|---------------------|
+| B | B9:B100 | `criticality_dv` |
+| C | C9:C100 | `yes_no_dv` |
+| E | E9:E100 | `yes_no_dv` |
+| H | H9:H100 | `yes_no_dv` |
+| I | I9:I100 | `yes_no_dv` |
+| M | M9:M100 | `yes_no_dv` |
+| D | D9:D100 | `worm_tech_dv` |
+| F | F9:F100 | `hash_algo_dv` |
+| J | J9:J100 | `frequency_dv` |
+| L | L9:L100 | `tampering_dv` |
+
+---
+
+## Sheet 19: Secure_Transmission
+
+**Data Rows:** 192 (rows 9–200) | **Frozen Panes:** A8
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Source System | 30 |
+| B | Destination (SIEM) | 25 |
+| C | Transport Protocol | 20 |
+| D | Encryption in Transit | 18 |
+| E | TLS Version | 15 |
+| F | Certificate Validation | 20 |
+| G | Network Segment | 20 |
+| H | Firewall Protection | 18 |
+| I | Source Authentication | 20 |
+| J | Vulnerability Risk | 18 |
+| K | Compliance Status | 18 |
+| L | Remediation Required | 18 |
+| M | Target Date | 15 |
+| N | Notes | 40 |
+
+### Data Validations
+
+| Column | Range | Validation Variable |
+|--------|-------|---------------------|
+| C | C9:C200 | `protocol_dv` |
+| D | D9:D200 | `encryption_dv` |
+| E | E9:E200 | `tls_version_dv` |
+| F | F9:F200 | `cert_val_dv` |
+| G | G9:G200 | `network_dv` |
+| H | H9:H200 | `yes_no_dv` |
+| L | L9:L200 | `yes_no_dv` |
+| I | I9:I200 | `auth_dv` |
+| J | J9:J200 | `risk_dv` |
+
+---
+
+## Sheet 20: Retention_Period
+
+**Data Rows:** 92 (rows 9–100) | **Frozen Panes:** A8
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Log Source / Type | 30 |
+| B | Log Category | 20 |
+| C | Regulatory Requirement | 25 |
+| D | Policy Retention (months) | 20 |
+| E | Hot Storage Period (months) | 22 |
+| F | Warm Storage Period (months) | 22 |
+| G | Cold Storage Period (years) | 20 |
+| H | Total Retention (months) | 20 |
+| I | Meets Policy Requirement | 20 |
+| J | Retention Gap (months) | 20 |
+| K | Over-Retention (months) | 20 |
+| L | Automated Disposal | 18 |
+| M | Last Disposal Date | 18 |
+| N | Legal Hold Capability | 18 |
+| O | Compliance Status | 18 |
+| P | Remediation Action | 40 |
+| Q | Target Date | 15 |
+| R | Notes | 40 |
+
+### Data Validations
+
+| Column | Range | Validation Variable |
+|--------|-------|---------------------|
+| B | B9:B100 | `category_dv` |
+| C | C9:C100 | `regulatory_dv` |
+| L | L9:L100 | `yes_no_dv` |
+| N | N9:N100 | `yes_no_dv` |
+
+### Formulas
+
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| HN | `=IF(A{data_row}=` |  |
+| JN | `=IF(I{data_row}=` |  |
+| KN | `=IF(H{data_row}<=D{data_row}*1.5,0,H{data_row}-D{data_row})` |  |
+
+---
+
+## Sheet 21: Storage_Tier
+
+**Data Rows:** 22 (rows 9–30) | **Frozen Panes:** A8
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Storage Tier | 20 |
+| B | Technology | 25 |
+| C | Capacity (TB) | 15 |
+| D | Used (TB) | 15 |
+| E | % Used | 12 |
+| F | Retention Period | 20 |
+| G | Access Performance | 20 |
+| H | Encryption at Rest | 18 |
+| I | Encryption Method | 20 |
+| J | Geographic Location | 25 |
+| K | Redundancy | 20 |
+| L | Backup Implemented | 18 |
+| M | Meets Policy Requirements | 20 |
+| N | Issues | 40 |
+| O | Notes | 40 |
+
+### Data Validations
+
+| Column | Range | Validation Variable |
+|--------|-------|---------------------|
+| A | A9:A30 | `tier_dv` |
+| B | B9:B30 | `tech_dv` |
+| G | G9:G30 | `performance_dv` |
+| H | H9:H30 | `yes_no_dv` |
+| L | L9:L30 | `yes_no_dv` |
+| M | M9:M30 | `yes_no_dv` |
+| I | I9:I30 | `encryption_dv` |
+| K | K9:K30 | `redundancy_dv` |
+
+### Formulas
+
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| EN | `=IF(C{data_row}=0,0,D{data_row}/C{data_row})` |  |
+
+---
+
+## Sheet 22: Backup_Recovery
+
+**Purpose:** "Hope is not a strategy." - Ancient Sysadmin Proverb
+
+**Data Rows:** 17 (rows 9–25) | **Frozen Panes:** A8
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Backup Scope | 30 |
+| B | Backup Frequency | 20 |
+| C | Backup Technology | 25 |
+| D | Backup Location | 30 |
+| E | Backup Encrypted | 18 |
+| F | Encryption Algorithm | 20 |
+| G | Backup Integrity Verified | 20 |
+| H | Last Backup Date | 18 |
+| I | Last Restore Test Date | 18 |
+| J | Restore Test Frequency | 20 |
+| K | Last Restore Success | 18 |
+| L | RTO (Recovery Time) | 20 |
+| M | RPO (Recovery Point) | 20 |
+| N | Backup Retention Period | 20 |
+| O | Compliance Status | 18 |
+| P | Notes | 40 |
+
+### Data Validations
+
+| Column | Range | Validation Variable |
+|--------|-------|---------------------|
+| A | A9:A25 | `scope_dv` |
+| B | B9:B25 | `frequency_dv` |
+| D | D9:D25 | `location_dv` |
+| E | E9:E25 | `yes_no_dv` |
+| K | K9:K25 | `yes_no_dv` |
+| F | F9:F25 | `encryption_dv` |
+| G | G9:G25 | `verified_dv` |
+| J | J9:J25 | `test_freq_dv` |
+
+---
+
+## Sheet 23: Disposal_Procedures
+
+**Data Rows:** 42 (rows 9–50) | **Frozen Panes:** A8
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Log Type / Source | 30 |
+| B | Retention Period Expired | 20 |
+| C | Automated Disposal | 18 |
+| D | Disposal Method | 25 |
+| E | Disposal Approval Required | 22 |
+| F | Legal Hold Check | 18 |
+| G | Disposal Logged | 18 |
+| H | Last Disposal Date | 18 |
+| I | Volume Disposed (GB) | 20 |
+| J | Disposal Verification | 20 |
+| K | Compliance with Policy | 20 |
+| L | Issues | 40 |
+| M | Remediation | 40 |
+| N | Notes | 40 |
+
+### Data Validations
+
+| Column | Range | Validation Variable |
+|--------|-------|---------------------|
+| C | C9:C50 | `automated_dv` |
+| D | D9:D50 | `method_dv` |
+| E | E9:E50 | `approval_dv` |
+| F | F9:F50 | `legal_hold_dv` |
+| G | G9:G50 | `logged_dv` |
+| J | J9:J50 | `verified_dv` |
+
+---
+
+## Sheet 24: Separation_Of_Duties
+
+**Data Rows:** 42 (rows 9–50) | **Frozen Panes:** A8
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | System / Component | 30 |
+| B | System Administrator(s) | 30 |
+| C | Log Administrator(s) | 30 |
+| D | Roles Separated | 18 |
+| E | Sys Admin Can Modify Logs | 25 |
+| F | Compensating Controls | 40 |
+| G | Break-Glass Procedure | 20 |
+| H | Break-Glass Usage Logged | 22 |
+| I | Independent Review | 20 |
+| J | Last Review Date | 18 |
+| K | Violations Detected | 18 |
+| L | Compliance Status | 18 |
+| M | Remediation Plan | 40 |
+| N | Notes | 40 |
+
+### Data Validations
+
+| Column | Range | Validation Variable |
+|--------|-------|---------------------|
+| D | D9:D50 | `separated_dv` |
+| E | E9:E50 | `modify_dv` |
+| G | G9:G50 | `breakglass_dv` |
+| H | H9:H50 | `yes_no_dv` |
+| I | I9:I50 | `yes_no_dv` |
+| K | K9:K50 | `violations_dv` |
+
+---
+
+## Sheet 25: Legal_Hold
+
+**Data Rows:** 22 (rows 9–30) | **Frozen Panes:** A8
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Hold ID | 15 |
+| B | Hold Name / Matter | 30 |
+| C | Initiation Date | 15 |
+| D | Initiated By | 25 |
+| E | Scope Description | 40 |
+| F | Systems/Sources Affected | 30 |
+| G | Date Range | 20 |
+| H | Hold Status | 15 |
+| I | Review Date | 15 |
+| J | Disposal Prevented | 18 |
+| K | Release Date | 15 |
+| L | Release Authorized By | 25 |
+| M | Notes | 40 |
+
+### Data Validations
+
+| Column | Range | Validation Variable |
+|--------|-------|---------------------|
+| H | H9:H30 | `status_dv` |
+| J | J9:J30 | `prevented_dv` |
+
+### Formulas
+
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| AN | `=IF(B{data_row}<>` |  |
+
+---
+
+## Sheet 26: Privacy_Impact
+
+**Frozen Panes:** A6
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Log Category |
+| B | PII/Sensitive Data Present |
+| C | Data Types |
+| D | Minimization Applied |
+| E | Justification |
+| F | Retention Period |
+| G | GDPR Article |
+| H | Compliance Status |
+| I | Review Date |
+| J | Owner |
+| K | Notes |
+
+---
+
+## Sheet 27: Evidence_Register
+
+**Data Rows:** 95 (rows 6–100) | **Frozen Panes:** A6
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Evidence ID | 12 |
+| B | Assessment Sheet | 24 |
+| C | Evidence Type | 20 |
+| D | Evidence Title | 35 |
+| E | Description | 40 |
+| F | File Location/Link | 35 |
+| G | Date Collected | 14 |
+| H | Collected By | 18 |
+| I | Retention Period | 15 |
+| J | Review Date | 14 |
+| K | Status | 12 |
+| L | Notes | 30 |
+
+### Data Validations
+
+| Column | Range | Validation Variable |
+|--------|-------|---------------------|
+| C | C6:C100 | `type_dv` |
+| B | B6:B100 | `sheet_dv` |
+| K | K6:K100 | `status_dv` |
+
+---
+
+## Sheet 28: Gap_Analysis
+
+**Data Rows:** 92 (rows 9–100) | **Frozen Panes:** A8
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Gap ID | 12 |
+| B | Gap Category | 25 |
+| C | Description | 50 |
+| D | Affected Systems | 30 |
+| E | Policy Requirement | 30 |
+| F | Risk Level | 15 |
+| G | Remediation Action | 50 |
+| H | Owner | 25 |
+| I | Target Date | 15 |
+| J | Budget Required | 15 |
+| K | Status | 15 |
+| L | Notes | 40 |
+
+### Data Validations
+
+| Column | Range | Validation Variable |
+|--------|-------|---------------------|
+| B | B9:B100 | `category_dv` |
+| F | F9:F100 | `risk_dv` |
+| J | J9:J100 | `budget_dv` |
+| K | K9:K100 | `status_dv` |
+
+### Formulas
+
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| AN | `=IF(B{data_row}<>` |  |
+
+---
+
+## Sheet 29: Summary_Dashboard
+
+### Formulas
+
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| — | `=COUNTIF(` | Access Controls Compliant |
+| DN | `=IF(B{row}>0,\` |  |
+| BN | `=COUNTIFS(\` |  |
+| EN | `=IF((B{row}+C{row}+D{row})=0,0,B{row}/(B{row}+C{row}+D{row}))` |  |
+| NN | `=SUM({col}{row-4}:{col}{row-1})` |  |
+| EN | `=SUMPRODUCT((\` |  |
+
+---
+
+## Sheet 30: Approval_Signoff
 
 ---
 

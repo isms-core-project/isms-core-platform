@@ -23,310 +23,183 @@
 
 # Technical Specification
 
-This section provides technical details for the NDA Review and Compliance workbook implementation.
 
----
+> Auto-generated from `generate_a66_3_nda_review_compliance.py`
+> Re-generate with: `python3 generate_tg_from_scr.py --apply`
 
-## 9. Workbook Technical Structure
-
-### 9.1 Workbook Properties
+## Workbook Overview
 
 | Property | Value |
 |----------|-------|
-| File Format | .xlsx (Excel 2016+) |
-| Sheet Protection | Structure protected, cells unlocked for input |
-| Workbook Protection | Structure only |
-| File Naming | ISMS-IMP-A.6.6.3_NDA_Review_and_Compliance_YYYYMMDD.xlsx |
+| **Document ID** | `ISMS-IMP-A.6.6.3` |
+| **Output Filename** | `ISMS-IMP-A.6.6.3_NDA_Review_and_Compliance_YYYYMMDD.xlsx` |
+| **Workbook Title** | NDA Review and Compliance |
+| **Total Sheets** | 9 (9 visible) |
+| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
 
-### 9.2 Sheet Configuration
+## Color Palette
 
-| Sheet | Tab Colour | Protection Level | Hidden |
-|-------|------------|------------------|--------|
-| Instructions | Grey (#A6A6A6) | Full protection | No |
-| Periodic_Review | Blue (#4472C4) | Input cells unlocked | No |
-| Template_Adequacy | Green (#70AD47) | Input cells unlocked | No |
-| Coverage_Analysis | Orange (#ED7D31) | Input cells unlocked | No |
-| Compliance_Check | Purple (#7030A0) | Input cells unlocked | No |
-| Gap_Register | Red (#C00000) | Input cells unlocked | No |
-| Evidence_Register | Teal (#00B0F0) | Input cells unlocked | No |
-| Approval_SignOff | Gold (#FFC000) | Input cells unlocked | No |
-| Validation Lists | Grey (#A6A6A6) | Full protection | Yes |
+| Hex Code | Style Name | Description |
+|----------|-----------|-------------|
+| #003366 | 003366 | Dark Blue (Headers) |
+| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
+| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | FFFFCC | Light Yellow (User Input) |
 
----
-
-## 10. Sheet Specifications
-
-### 10.1 Sheet 2: Periodic_Review – Technical Specification
-
-**Column Definitions:**
-
-| Column | Header | Width | Data Type | Validation | Required |
-|--------|--------|-------|-----------|------------|----------|
-| A | Review_ID | 15 | Text | Format: REV-YYYY-NNN | Yes |
-| B | Review_Type | 25 | List | See validation list | Yes |
-| C | Review_Scope | 50 | Text | Description | Yes |
-| D | Planned_Date | 15 | Date | DD.MM.YYYY | Yes |
-| E | Actual_Date | 15 | Date | DD.MM.YYYY | Conditional |
-| F | Reviewer | 25 | Text | Name | Yes |
-| G | Findings_Count | 10 | Number | Integer >= 0 | Conditional |
-| H | Gaps_Identified | 10 | Number | Integer >= 0 | Conditional |
-| I | Status | 15 | List | See validation list | Yes |
-| J | Next_Review | 15 | Date | DD.MM.YYYY | Yes |
-| K | Notes | 40 | Text | Optional | No |
-
-**Validation Lists:**
-
-```
-Review_Type: Annual Full Review, Quarterly Check, Template Update Review, Triggered Review, Ad-hoc Review
-Status: Scheduled, In Progress, Completed, Overdue, Cancelled
-```
-
-**Conditional Formatting:**
-
-| Condition | Format |
-|-----------|--------|
-| Status = "Overdue" | Red fill |
-| Planned_Date < TODAY() AND Status = "Scheduled" | Orange fill |
-| Status = "Completed" | Green fill |
-
-### 10.2 Sheet 3: Template_Adequacy – Technical Specification
-
-**Column Definitions:**
-
-| Column | Header | Width | Data Type | Validation | Required |
-|--------|--------|-------|-----------|------------|----------|
-| A | Template_ID | 15 | Text | From registry | Yes |
-| B | Template_Name | 35 | Text | Name | Yes |
-| C | Template_Version | 10 | Text | Version | Yes |
-| D | Last_Legal_Review | 15 | Date | DD.MM.YYYY | Yes |
-| E | Legal_Review_Due | 15 | Date | Calculated | Auto |
-| F | Regulatory_Current | 12 | List | Yes,Partial,No | Yes |
-| G | Covers_All_Info_Types | 12 | List | Yes,Partial,No | Yes |
-| H | Post_Term_Adequate | 12 | List | Yes,No,Partial | Yes |
-| I | Remedies_Adequate | 12 | List | Yes,No,Partial | Yes |
-| J | Jurisdiction_Correct | 12 | List | Yes,No | Yes |
-| K | Overall_Adequacy | 20 | List | See validation | Yes |
-| L | Action_Required | 40 | Text | If inadequate | Conditional |
-| M | Action_Owner | 20 | Text | If action required | Conditional |
-| N | Notes | 40 | Text | Optional | No |
-
-**Formulas:**
-
-```excel
-Legal_Review_Due (E2):
-=EDATE(D2,12)
-```
-
-**Conditional Formatting:**
-
-| Condition | Format |
-|-----------|--------|
-| Overall_Adequacy = "Inadequate" | Red fill |
-| Overall_Adequacy = "Partially Adequate" | Yellow fill |
-| Legal_Review_Due < TODAY() | Orange fill |
-
-### 10.3 Sheet 4: Coverage_Analysis – Technical Specification
-
-**Column Definitions:**
-
-| Column | Header | Width | Data Type | Validation | Required |
-|--------|--------|-------|-----------|------------|----------|
-| A | Stakeholder_Category | 25 | Text | Category name | Yes |
-| B | Total_Count | 10 | Number | Integer >= 0 | Yes |
-| C | NDA_Required | 10 | Number | Integer >= 0 | Yes |
-| D | NDA_Signed | 10 | Number | Integer >= 0 | Yes |
-| E | Coverage_Rate | 10 | Percentage | Calculated | Auto |
-| F | Expired_NDAs | 10 | Number | Integer >= 0 | Yes |
-| G | Missing_NDAs | 10 | Number | Calculated | Auto |
-| H | Gap_Status | 20 | List | See validation | Yes |
-| I | Remediation_Owner | 20 | Text | If gap | Conditional |
-| J | Target_Date | 15 | Date | If gap | Conditional |
-| K | Notes | 40 | Text | Optional | No |
-
-**Formulas:**
-
-```excel
-Coverage_Rate (E2):
-=IF(C2=0,0,D2/C2)
-
-Missing_NDAs (G2):
-=MAX(0,C2-D2)
-```
-
-**Conditional Formatting:**
-
-| Condition | Format |
-|-----------|--------|
-| Coverage_Rate < 90% | Red fill |
-| Coverage_Rate < 100% AND >= 90% | Yellow fill |
-| Coverage_Rate = 100% | Green fill |
-
-### 10.4 Sheet 5: Compliance_Check – Technical Specification
-
-**Column Definitions:**
-
-| Column | Header | Width | Data Type | Validation | Required |
-|--------|--------|-------|-----------|------------|----------|
-| A | NDA_ID | 15 | Text | From execution tracking | Yes |
-| B | Counterparty | 30 | Text | Name | Yes |
-| C | Category | 20 | Text | Stakeholder category | Yes |
-| D | Correctly_Executed | 12 | List | Yes,No | Yes |
-| E | Within_Validity | 12 | List | Yes,No,Perpetual | Yes |
-| F | Appropriate_Template | 12 | List | Yes,No | Yes |
-| G | All_Parties_Signed | 12 | List | Yes,No | Yes |
-| H | Securely_Stored | 12 | List | Yes,No | Yes |
-| I | Overall_Compliance | 15 | List | See validation | Yes |
-| J | Issues_Found | 40 | Text | If non-compliant | Conditional |
-| K | Action_Required | 40 | Text | If action needed | Conditional |
-| L | Notes | 40 | Text | Optional | No |
-
-**Conditional Formatting:**
-
-| Condition | Format |
-|-----------|--------|
-| Overall_Compliance = "Non-Compliant" | Red fill |
-| Overall_Compliance = "Partially Compliant" | Yellow fill |
-| Overall_Compliance = "Compliant" | Green fill |
-
-### 10.5 Sheet 6: Gap_Register – Technical Specification
-
-**Column Definitions:**
-
-| Column | Header | Width | Data Type | Validation | Required |
-|--------|--------|-------|-----------|------------|----------|
-| A | Gap_ID | 15 | Text | Format: GAP-YYYY-NNN | Yes |
-| B | Gap_Type | 20 | List | See validation | Yes |
-| C | Description | 50 | Text | Gap details | Yes |
-| D | Affected_Area | 30 | Text | Who/what affected | Yes |
-| E | Severity | 12 | List | Critical,High,Medium,Low | Yes |
-| F | Identified_Date | 15 | Date | DD.MM.YYYY | Yes |
-| G | Source_Review | 15 | Text | Review ID | Yes |
-| H | Owner | 20 | Text | Remediation owner | Yes |
-| I | Remediation_Action | 50 | Text | What to do | Yes |
-| J | Target_Date | 15 | Date | DD.MM.YYYY | Yes |
-| K | Status | 20 | List | See validation | Yes |
-| L | Closure_Date | 15 | Date | DD.MM.YYYY | Conditional |
-| M | Evidence_Reference | 30 | Text | Evidence ID | Conditional |
-| N | Notes | 40 | Text | Optional | No |
-
-**Validation Lists:**
-
-```
-Gap_Type: Missing NDA, Expired NDA, Inadequate Template, Unsigned, Wrong Template, Storage Issue, Execution Error, Coverage Gap, Other
-Severity: Critical, High, Medium, Low
-Status: Open, In Progress, Remediated, Verified Closed, Risk Accepted
-```
-
-**Conditional Formatting:**
-
-| Condition | Format |
-|-----------|--------|
-| Status = "Open" AND Severity = "Critical" | Red fill, bold |
-| Status = "Open" AND Target_Date < TODAY() | Red fill |
-| Status = "Verified Closed" | Green fill |
+## Sheet 1: Workbook
 
 ---
 
-## 11. Automation Requirements
-
-### 11.1 Automated Alerts
-
-| Trigger | Alert Type | Recipients | Timing |
-|---------|------------|------------|--------|
-| Review overdue | Email | ISM | Daily |
-| Critical gap open > 3 days | Email | ISM, CISO | Daily |
-| High gap open > 20 days | Email | ISM, Owner | Daily |
-| Coverage below 95% | Dashboard flag | ISM | Continuous |
-| Template legal review due | Email | ISM, Legal | 30 days before |
-
-### 11.2 Data Validation Automation
-
-| Validation | Action | Frequency |
-|------------|--------|-----------|
-| Review_ID uniqueness | Prevent duplicate | On entry |
-| Gap_ID uniqueness | Prevent duplicate | On entry |
-| Date format | Auto-format to DD.MM.YYYY | On entry |
-| Coverage calculation | Auto-calculate | Real-time |
-| Required field completion | Highlight | Real-time |
+## Sheet 2: Instructions
 
 ---
 
-## 12. Metrics and KPIs
+## Sheet 3: Periodic_Review
 
-### 12.1 Review Metrics
+**Data Rows:** 48 (rows 3–50) | **Frozen Panes:** A3
 
-| Metric | Target | Formula | Owner |
-|--------|--------|---------|-------|
-| Review completion rate | 100% on schedule | Completed on time / Total | ISM |
-| Annual review completion | 100% | Annual review done / Required | ISM |
-| Quarterly checks | 4 per year | Checks completed | ISM |
+### Columns
 
-### 12.2 Coverage Metrics
-
-| Metric | Target | Formula | Owner |
-|--------|--------|---------|-------|
-| Overall coverage | 100% | Total signed / Total required | ISM |
-| Employee coverage | 100% | Employee signed / Employee required | HR |
-| Vendor coverage | 100% | Vendor signed / Vendor required | Procurement |
-
-### 12.3 Gap Metrics
-
-| Metric | Target | Formula | Owner |
-|--------|--------|---------|-------|
-| Open critical gaps | 0 | Count Critical + Open | ISM |
-| Gap closure SLA | >95% | Closed in SLA / Total | ISM |
-| Gap trend | Declining | Current - Previous | ISM |
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Review_ID | 14 |
+| B | Review_Type | 20 |
+| C | Review_Scope | 30 |
+| D | Planned_Date | 14 |
+| E | Actual_Date | 14 |
+| F | Reviewer | 22 |
+| G | Findings_Count | 14 |
+| H | Gaps_Identified | 14 |
+| I | Status | 14 |
+| J | Next_Review | 14 |
+| K | Notes | 35 |
 
 ---
 
-## 13. Evidence Package for ISO 27001 Audit
+## Sheet 4: Template_Adequacy
 
-### 13.1 Standard Evidence Package
+**Data Rows:** 48 (rows 3–50) | **Frozen Panes:** A3
 
-| Document | Purpose | Preparation |
-|----------|---------|-------------|
-| Review schedule | Review planning evidence | Export Sheet 2 |
-| Template assessment | Template adequacy evidence | Export Sheet 3 |
-| Coverage analysis | Coverage verification | Export Sheet 4 |
-| Compliance check | Individual NDA compliance | Export Sheet 5 |
-| Gap register | Gap management | Export Sheet 6 |
-| Approval records | Governance evidence | Export Sheet 8 |
+### Columns
 
-### 13.2 Audit Preparation Checklist
-
-- [ ] Export current review status
-- [ ] Generate coverage analysis summary
-- [ ] Prepare gap statistics and trends
-- [ ] Gather approval evidence
-- [ ] Compile template assessment summary
-- [ ] Document remediation completion
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Template_ID | 14 |
+| B | Template_Name | 30 |
+| C | Last_Legal_Review | 16 |
+| D | Regulatory_Current | 16 |
+| E | Covers_All_Info_Types | 18 |
+| F | Post_Term_Adequate | 16 |
+| G | Remedies_Adequate | 16 |
+| H | Jurisdiction_Correct | 16 |
+| I | Overall_Adequacy | 16 |
+| J | Score | 10 |
+| K | Action_Required | 30 |
+| L | Notes | 30 |
 
 ---
 
-## 14. Generator Script Reference
+## Sheet 5: Coverage_Analysis
 
-### 14.1 Script Location
+**Data Rows:** 18 (rows 3–20) | **Frozen Panes:** A3
 
-```
-10-isms-scr-base/
-└── isms-a.6.6-confidentiality-nda/
-    └── 10_generator-master/
-        └── generate_a66_3_nda_review_compliance.py
-```
+### Columns
 
-### 14.2 Script Execution
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Stakeholder_Category | 22 |
+| B | Total_Count | 12 |
+| C | NDA_Required | 12 |
+| D | NDA_Signed | 12 |
+| E | Coverage_Rate | 14 |
+| F | Expired_NDAs | 12 |
+| G | Missing_NDAs | 12 |
+| H | Gap_Status | 14 |
+| I | Remediation_Owner | 20 |
+| J | Notes | 35 |
 
-```bash
-cd 10-isms-scr-base/isms-a.6.6-confidentiality-nda/10_generator-master
-python3 generate_a66_3_nda_review_compliance.py
-mv *.xlsx ../90_workbooks/
-```
+---
 
-### 14.3 Output
+## Sheet 6: Compliance_Check
 
-```
-ISMS-IMP-A.6.6.3_NDA_Review_and_Compliance_YYYYMMDD.xlsx
-```
+**Data Rows:** 98 (rows 3–100) | **Frozen Panes:** A3
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | NDA_ID | 14 |
+| B | Counterparty | 25 |
+| C | Correctly_Executed | 16 |
+| D | Within_Validity | 14 |
+| E | Appropriate_Template | 18 |
+| F | All_Parties_Signed | 16 |
+| G | Securely_Stored | 14 |
+| H | Overall_Compliance | 16 |
+| I | Issues_Found | 35 |
+| J | Action_Required | 30 |
+| K | Status | 14 |
+
+---
+
+## Sheet 7: Gap_Register
+
+**Data Rows:** 48 (rows 3–50) | **Frozen Panes:** A3
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Gap_ID | 12 |
+| B | Gap_Type | 18 |
+| C | Description | 45 |
+| D | Affected_Area | 22 |
+| E | Severity | 12 |
+| F | Identified_Date | 14 |
+| G | Owner | 20 |
+| H | Remediation_Action | 40 |
+| I | Target_Date | 14 |
+| J | Status | 14 |
+| K | Closure_Date | 14 |
+| L | Notes | 30 |
+
+---
+
+## Sheet 8: Evidence_Register
+
+**Data Rows:** 48 (rows 3–50) | **Frozen Panes:** A3
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Evidence_ID | 14 |
+| B | Review_Ref | 14 |
+| C | Evidence_Type | 22 |
+| D | Description | 40 |
+| E | Storage_Location | 35 |
+| F | Collected_Date | 14 |
+| G | Collected_By | 20 |
+| H | Retention_Until | 14 |
+
+---
+
+## Sheet 9: Approval
+
+**Frozen Panes:** A3
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Approval_Type | 25 |
+| B | Approver_Role | 25 |
+| C | Approver_Name | 25 |
+| D | Signature | 20 |
+| E | Date | 14 |
+| F | Comments | 35 |
 
 ---
 

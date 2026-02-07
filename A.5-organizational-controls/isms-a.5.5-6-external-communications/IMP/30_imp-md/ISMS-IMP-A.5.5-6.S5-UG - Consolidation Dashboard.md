@@ -21,13 +21,13 @@
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 This workbook provides a consolidation dashboard that aggregates compliance data from all four A.5.5-6 assessment workbooks into a unified executive view. It enables senior management and auditors to quickly assess the organisation's compliance posture for external communications with authorities and special interest groups.
 
-### 1.2 Scope
+### Scope
 
 The Consolidation Dashboard aggregates data from:
 
@@ -43,7 +43,7 @@ The consolidation provides:
 - Historical trend analysis
 - Evidence traceability for audits
 
-### 1.3 Control Requirements
+### Control Requirements
 
 This dashboard consolidates compliance for both ISO 27001:2022 controls:
 
@@ -53,7 +53,7 @@ This dashboard consolidates compliance for both ISO 27001:2022 controls:
 **Control A.5.6:**
 > *"Appropriate contacts with special interest groups or other specialist security forums and professional associations should be maintained."*
 
-### 1.4 Assessment Domains
+### Assessment Domains
 
 This workbook is **Domain 5 of 5** in the A.5.5-6 External Communications assessment series:
 
@@ -67,11 +67,11 @@ This workbook is **Domain 5 of 5** in the A.5.5-6 External Communications assess
 
 ---
 
-## 2. Prerequisites
+## Prerequisites
 
 Before completing this consolidation, ensure you have:
 
-### 2.1 Documentation Requirements
+### Documentation Requirements
 
 - [ ] **COMPLETED** Authority Contacts Register (A.5.5-6.1)
 - [ ] **COMPLETED** Special Interest Groups Register (A.5.5-6.2)
@@ -80,7 +80,7 @@ Before completing this consolidation, ensure you have:
 - [ ] Previous consolidation (if available, for trend analysis)
 - [ ] Management review action items
 
-### 2.2 Stakeholder Involvement
+### Stakeholder Involvement
 
 | Role | Responsibility |
 |------|----------------|
@@ -90,7 +90,7 @@ Before completing this consolidation, ensure you have:
 | **Internal Audit** | Independent verification |
 | **Executive Sponsor** | Acknowledgement and escalation |
 
-### 2.3 Data Sources
+### Data Sources
 
 | Dashboard Sheet | Source Workbook | Source Sheet(s) |
 |-----------------|-----------------|-----------------|
@@ -104,69 +104,9 @@ Before completing this consolidation, ensure you have:
 
 ---
 
-## 3. Workbook Structure
+## Completion Walkthrough
 
-### 3.1 Sheet Overview
-
-| Sheet | Purpose | Input Required |
-|-------|---------|----------------|
-| Instructions | Guidance for completing the dashboard | Read only |
-| Executive_Summary | High-level compliance across all domains | Manual entry |
-| Domain_Overview | Status summary from each workbook | Manual entry |
-| Authority_Compliance | Consolidated A.5.5 status | Manual entry |
-| SIG_Compliance | Consolidated A.5.6 status | Manual entry |
-| Procedure_Compliance | Communication procedure status | Manual entry |
-| Cross_Domain_Gaps | Gaps across all domains | Manual entry |
-| Remediation_Tracker | Consolidated action items | Manual entry |
-| KPI_Summary | Key metrics from all domains | Manual entry |
-| Evidence_Index | Cross-reference to source evidence | Manual entry |
-| Trend_Dashboard | Historical compliance trends | Manual entry |
-| Approval_SignOff | Executive sign-off workflow | Manual entry |
-
-### 3.2 Consolidation Flow
-
-```
-Source Workbooks
-        ↓
-   ┌────┼────┬────┐
-   ↓    ↓    ↓    ↓
-A.5.5-6.1  .2   .3   .4
-   ↓    ↓    ↓    ↓
-   └────┼────┴────┘
-        ↓
-Domain_Overview (Consolidate Status)
-        ↓
-   ┌────┼────┬────┐
-   ↓    ↓    ↓    ↓
-Authority  SIG  Procedure  KPI
-Compliance Compliance  Compliance  Summary
-   ↓    ↓    ↓    ↓
-   └────┼────┴────┘
-        ↓
-   ┌────┼────┐
-   ↓         ↓
-Cross_Domain  Remediation
-Gaps          Tracker
-   ↓         ↓
-   └────┬────┘
-        ↓
-Executive_Summary (Final Consolidation)
-        ↓
-   ┌────┼────┐
-   ↓         ↓
-Evidence   Trend
-Index      Dashboard
-   ↓         ↓
-   └────┬────┘
-        ↓
-Approval_SignOff (Complete Last)
-```
-
----
-
-## 4. Completion Walkthrough
-
-### 4.1 Executive_Summary Sheet
+### Executive_Summary Sheet
 
 Top-level compliance view for senior management.
 
@@ -207,7 +147,7 @@ Top-level compliance view for senior management.
 | Compliance Manager | [Name] | [Signature] | [Date] |
 | Legal Counsel | [Name] | [Signature] | [Date] |
 
-### 4.2 Domain_Overview Sheet
+### Domain_Overview Sheet
 
 Detailed compliance status from each source workbook.
 
@@ -233,7 +173,7 @@ Detailed compliance status from each source workbook.
 |-------------|--------|--------------|-----------------|-------------|
 | [Requirement text] | [Dropdown] | [Reference] | [Description] | [Status] |
 
-### 4.3 Authority_Compliance Sheet
+### Authority_Compliance Sheet
 
 Consolidated view of A.5.5 compliance.
 
@@ -265,7 +205,7 @@ Consolidated view of A.5.5 compliance.
 | Cyber Security Agency | NCSC |
 | Government Security Centre | Federal Security Service |
 
-### 4.4 SIG_Compliance Sheet
+### SIG_Compliance Sheet
 
 Consolidated view of A.5.6 compliance.
 
@@ -296,7 +236,7 @@ Consolidated view of A.5.6 compliance.
 | Vendor Security Group | Microsoft security community |
 | Academic Research Group | University research partnerships |
 
-### 4.5 Procedure_Compliance Sheet
+### Procedure_Compliance Sheet
 
 Communication procedure completeness.
 
@@ -323,7 +263,7 @@ Communication procedure completeness.
 | Escalation | External contact escalation matrix |
 | Templates | Authority templates, regulatory submission templates |
 
-### 4.6 Cross_Domain_Gaps Sheet
+### Cross_Domain_Gaps Sheet
 
 Gaps identified across all domains.
 
@@ -342,7 +282,7 @@ Gaps identified across all domains.
 | Owner | Responsible person | Security Manager |
 | Target_Date | Deadline | 2026-03-15 |
 
-### 4.7 Remediation_Tracker Sheet
+### Remediation_Tracker Sheet
 
 Consolidated action items with status.
 
@@ -362,7 +302,7 @@ Consolidated action items with status.
 | Progress_% | Completion | 50% |
 | Notes | Additional context | 3 of 6 contacts verified |
 
-### 4.8 KPI_Summary Sheet
+### KPI_Summary Sheet
 
 Key metrics from all domains.
 
@@ -393,7 +333,7 @@ Key metrics from all domains.
 | % of notification requirements covered | 100% | [%] | [%] | [Trend] | [Status] |
 | Template availability score | 100% | [%] | [%] | [Trend] | [Status] |
 
-### 4.9 Evidence_Index Sheet
+### Evidence_Index Sheet
 
 Cross-reference to source workbook evidence.
 
@@ -410,7 +350,7 @@ Cross-reference to source workbook evidence.
 | Date_Captured | When created | 2026-01-15 |
 | Validation_Status | Verification status | Validated |
 
-### 4.10 Trend_Dashboard Sheet
+### Trend_Dashboard Sheet
 
 Historical compliance trends.
 
@@ -427,7 +367,7 @@ Historical compliance trends.
 | Remediation_Rate | Closure rate | 75% |
 | Notes | Context | New ISAC membership added |
 
-### 4.11 Approval_SignOff Sheet
+### Approval_SignOff Sheet
 
 Executive sign-off workflow.
 
@@ -454,9 +394,9 @@ Executive sign-off workflow.
 
 ---
 
-## 5. Evidence Collection
+## Evidence Collection
 
-### 5.1 Required Evidence
+### Required Evidence
 
 | Evidence Type | Description | Storage Location |
 |---------------|-------------|------------------|
@@ -466,7 +406,7 @@ Executive sign-off workflow.
 | Sign-off Records | Approval documentation | ISMS Evidence Library |
 | Audit Reports | Internal/external audit findings | ISMS Evidence Library |
 
-### 5.2 Evidence Storage Guidelines
+### Evidence Storage Guidelines
 
 - Use consistent naming: `A.5.5-6.5-Consolidation-[Period].xlsx`
 - Store in ISMS Evidence Library
@@ -476,9 +416,9 @@ Executive sign-off workflow.
 
 ---
 
-## 6. Common Pitfalls
+## Common Pitfalls
 
-### 6.1 Mistakes to Avoid
+### Mistakes to Avoid
 
 ❌ **MISTAKE:** Consolidating before source workbooks are complete
 ✅ **CORRECT:** Verify all four source workbooks are signed off before consolidation
@@ -512,18 +452,18 @@ Executive sign-off workflow.
 
 ---
 
-## 7. Quality Checklist
+## Quality Checklist
 
 Before submitting for approval, verify:
 
-### 7.1 Source Data
+### Source Data
 
 - [ ] All four source workbooks completed and approved
 - [ ] Data extracted correctly from each source
 - [ ] No stale data (all within 90 days)
 - [ ] Discrepancies investigated and resolved
 
-### 7.2 Completeness
+### Completeness
 
 - [ ] Executive summary reflects all domains
 - [ ] All authority types covered
@@ -532,14 +472,14 @@ Before submitting for approval, verify:
 - [ ] All gaps tracked
 - [ ] All KPIs reported
 
-### 7.3 Accuracy
+### Accuracy
 
 - [ ] Compliance scores match source calculations
 - [ ] Gap counts reconcile with source workbooks
 - [ ] Remediation status current
 - [ ] Evidence index references valid
 
-### 7.4 Governance
+### Governance
 
 - [ ] Reporting period clearly stated
 - [ ] Assessor identified
@@ -548,9 +488,9 @@ Before submitting for approval, verify:
 
 ---
 
-## 8. Review and Approval
+## Review and Approval
 
-### 8.1 Review Frequency
+### Review Frequency
 
 | Review Type | Frequency | Triggered By |
 |-------------|-----------|--------------|
@@ -559,7 +499,7 @@ Before submitting for approval, verify:
 | Pre-Audit Review | Before audits | Audit schedule |
 | Ad-hoc Update | As needed | Significant changes |
 
-### 8.2 Approval Authority
+### Approval Authority
 
 | Action | Approval Required |
 |--------|-------------------|
@@ -569,7 +509,6 @@ Before submitting for approval, verify:
 | Executive presentation | Executive Sponsor acknowledgement |
 
 ---
-
 
 **END OF USER GUIDE**
 

@@ -43,292 +43,394 @@
 # Technical Specification
 **Audience:** Workbook developers, Python script maintainers, Technical reviewers
 
----
 
-## 9. Workbook Technical Specification
+> Auto-generated from `generate_a5_1_2_6_1_2_s2_roles_responsibilities.py`
+> Re-generate with: `python3 generate_tg_from_scr.py --apply`
 
-### 9.1 Workbook Metadata
+## Workbook Overview
 
-**File Name Convention**: `ISMS-IMP-A.5.1-2-6.1-2.S2_Roles_Responsibilities_YYYYMMDD.xlsx`  
-**Example**: `ISMS-IMP-A.5.1-2-6.1-2.S2_Roles_Responsibilities_20260130.xlsx`
+| Property | Value |
+|----------|-------|
+| **Document ID** | `ISMS-IMP-A.5.1-2-6.1-2.S2` |
+| **Output Filename** | `ISMS-IMP-A.5.1-2-6.1-2.S2_Roles_Responsibilities_Assessment_Workbook_YYYYMMDD.xlsx` |
+| **Workbook Title** | Roles Responsibilities Assessment Workbook |
+| **Total Sheets** | 10 (10 visible) |
+| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
 
-**Excel Version Requirements**:
-- Microsoft Excel 2016 or later
-- Excel for Microsoft 365
-- Compatible with LibreOffice Calc 7.0+ (with minor formula adjustments)
+## Color Palette
 
-**Workbook Properties**:
-- **Title**: ISMS-IMP-A.5.1-2-6.1-2.S2 - Roles & Responsibilities Assessment
-- **Author**: [Organization] Information Security Team
-- **Subject**: ISO/IEC 27001:2022 Control A.5.2 Assessment
-- **Keywords**: Roles, Responsibilities, RACI, ISMS, ISO27001, A.5.2
-- **Comments**: Generated via Python script `generate_a5_1_2_6_1_2_s2_roles_responsibilities.py`
+| Hex Code | Style Name | Description |
+|----------|-----------|-------------|
+| #003366 | 003366 | Dark Blue (Headers) |
+| #92D050 | 92D050 | Green (Complete) |
+| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
+| #DCE6F1 | DCE6F1 | Pale Blue (Info) |
+| #FF0000 | FF0000 | Red (Critical/Alert) |
+| #FFFF00 | FFFF00 | Yellow (Warning) |
 
-**Workbook Settings**:
-- **Calculation**: Automatic
-- **Iteration**: Enabled (Max 100 iterations, Max change 0.001)
-- **Save AutoRecover**: Every 10 minutes
-- **Sheet Protection**: Protect formulas, allow data entry in input cells
+## Sheet 1: Dashboard
 
----
+**Purpose:** Auto-calculated metrics pulling from other sheets.
 
-### 9.2 Sheet Structure Summary
+**Data Rows:** 5 (rows 32–36)
 
-| Sheet # | Sheet Name | Row Count | Input Cells | Formula Cells | Dropdowns |
-|---------|------------|-----------|-------------|---------------|-----------|
-| 1 | Dashboard | 100 | 6 | 40+ | 1 |
-| 2 | Role_Inventory | 100 | 1,800+ | 200 | 6 |
-| 3 | Role_Definition_Assessment | 90 | 800+ | 300 | 7 |
-| 4 | RACI_Matrix_Assessment | 50 | 400 | 120 | 5 |
-| 5 | Role_Assignment_Verification | 90 | 900+ | 200 | 8 |
-| 6 | Training_Assessment | 90 | 900+ | 150 | 8 |
-| 7 | Access_Alignment_Review | 90 | 700+ | 150 | 7 |
-| 8 | Gap_Analysis | 80 | 640 | 160 | 3 |
-| 9 | Evidence_Register | 80 | 640 | 80 | 2 |
-| 10 | Approval_Sign_Off | 70 | 30 | 15 | 2 |
+### Columns
 
-**Total Estimated Lines in Python Script**: ~900 lines (following A.8.23/A.8.24 quality standards)
+| Col | Header |
+|-----|--------|
+| A | Domain |
+| B | Weight |
+| C | Score (%) |
+| D | Weighted Score |
+| E | Status |
 
----
+### Formulas
 
-### 9.3 Color Scheme & Styling
-
-**Consistent with .S1 (Policy Framework Assessment)**:
-
-- **User Input Cells**: Yellow fill (RGB 255, 255, 0), Arial 10pt
-- **Auto-Calculated Cells**: Light Blue fill (RGB 220, 230, 241), Arial 10pt
-- **Labels/Headers**: Gray fill (RGB 217, 217, 217), Arial 10pt Bold
-- **Section Headers**: Dark Blue fill (RGB 0, 51, 102), White text, Arial 14pt Bold
-- **Conditional Formatting**:
-  - Compliant: Green (RGB 146, 208, 80)
-  - Partial: Yellow (RGB 255, 255, 0)
-  - Non-Compliant: Red (RGB 255, 0, 0)
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| DN | `=IF(B{0}>=C{0},` |  |
+| EN | `=IF(C{row_num}>=0.9,` |  |
+| C38 | `=SUM(D32:D36)` |  |
 
 ---
 
-### 9.4 Key Formula Patterns
+## Sheet 2: Role_Inventory
 
-**Role Assignment Status (Sheet 5)**:
-```excel
-=IF(B5="[VACANT]","Vacant",IF(B5="","Pending-Hire","Assigned"))
-```
+**Purpose:** Master list of all security roles with metadata.
 
-**RACI Compliance Rating (Sheet 4)**:
-```excel
-=IF(AND(C5="Yes",E5="Complete",F5="Clear",G5="Accurate",I5="Current"),"Compliant",
-  IF(OR(C5="No",E5="Incomplete",F5="Ambiguous"),"Non-Compliant","Partial"))
-```
+**Data Rows:** 100 (rows 5–104) | **Frozen Panes:** A5
 
-**Training Status Auto-Calculate (Sheet 6)**:
-```excel
-=IF(I5="","N/A",IF(I5>=TODAY()-365,"Complete",IF(A5<90,"Incomplete","Overdue")))
-```
+### Columns
 
-**Overall Compliance Score (Dashboard)**:
-```excel
-=AVERAGE(B30,B31,B32,B33,B34,B35)
-```
-Where B30-B35 are domain compliance scores (25%, 25%, 20%, 15%, 10%, 5% weighted)
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Role_ID | 15 |
+| B | Role_Title | 30 |
+| C | Role_Category | 20 |
+| D | Role_Type | 15 |
+| E | Department | 20 |
+| F | Reports_To | 25 |
+| G | Security_Clearance_Required | 15 |
+| H | ISO_Control_Mapping | 20 |
+| I | Role_Created_Date | 12 |
+| J | Last_Review_Date | 12 |
+| K | Role_Status | 15 |
+| L | Criticality | 15 |
+| M | Backup_Required | 15 |
+| N | Backup_Role_ID | 15 |
+| O | Role_Description | 50 |
+| P | Notes | 40 |
 
----
+### Data Validations
 
-### 9.5 Data Validation Rules
-
-**Role Tier (Sheet 2, Column C)**:
-```
-List: Tier-1-Leadership,Tier-2-Management,Tier-3-Operational
-```
-
-**Employment Type (Sheet 2, Column G)**:
-```
-List: Full-Time,Part-Time,Contractor,External-Consultant,Vacant
-```
-
-**Definition Type (Sheet 3, Column D)**:
-```
-List: Job-Description,Role-Charter,Policy-Section,Org-Chart-Only,None
-```
-
-**RACI Clarity (Sheet 4, Column F)**:
-```
-List: Clear,Partially-Clear,Ambiguous
-```
-
-**Assignment Status (Sheet 5, Column D)**:
-```
-List: Assigned,Vacant,Pending-Hire,Pending-Transition
-```
-
-**Training Frequency (Sheet 6, Column G)**:
-```
-List: Annual,Biennial,One-Time,As-Needed
-```
-
-**Access Review Frequency (Sheet 7, Column I)**:
-```
-List: Quarterly,Semi-Annual,Annual,Not-Defined
-```
+| Column | Range | Validation Variable |
+|--------|-------|---------------------|
+| C | C5:C104 | `category_dv` |
+| D | D5:D104 | `type_dv` |
+| G | G5:G104 | `clearance_dv` |
+| K | K5:K104 | `status_dv` |
+| L | L5:L104 | `crit_dv` |
+| M | M5:M104 | `backup_dv` |
 
 ---
 
-### 9.6 Named Ranges
+## Sheet 3: Role_Definition_Assessment
 
-**Workbook-level Named Ranges**:
+**Purpose:** Verify role definition completeness for each security role.
 
-| Named Range | Reference | Purpose |
-|-------------|-----------|---------|
-| `Role_ID_List` | Role_Inventory!$A$5:$A$104 | Validation list for Role ID dropdowns |
-| `Role_Inventory_Data` | Role_Inventory!$A$5:$S$104 | Full role inventory data range |
-| `Process_List` | RACI_Matrix_Assessment!$B$5:$B$24 | List of processes requiring RACI |
+**Data Rows:** 100 (rows 5–104) | **Frozen Panes:** A5
 
----
+### Columns
 
-### 9.7 Sheet Protection Settings
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Role_ID | 15 |
+| B | Role_Title | 30 |
+| C | Role_Category | 20 |
+| D | Responsibilities_Documented | 15 |
+| E | Authority_Level_Defined | 15 |
+| F | Reporting_Lines_Clear | 15 |
+| G | Competency_Requirements | 15 |
+| H | Training_Requirements | 15 |
+| I | Access_Requirements | 15 |
+| J | Accountability_Defined | 15 |
+| K | Segregation_of_Duties | 15 |
+| L | Definition_Documentation | 20 |
+| M | Definition_Compliance_Rating | 20 |
+| N | Gap_Description | 40 |
+| O | Evidence_Reference | 30 |
 
-**All Sheets**:
-- Protect sheet: TRUE
-- Password: [Optional - set during generation]
-- Allow: Sort, AutoFilter
-- Disallow: Delete rows, Modify formulas, Unprotect sheet
+### Data Validations
 
-**Unlocked Cells** (user can edit):
-- Yellow-filled input cells
-- Date fields
-- Dropdown selections
-- Free text fields (Notes, Gap Descriptions, Evidence References)
+| Column | Range | Validation Variable |
+|--------|-------|---------------------|
+| K | K5:K104 | `sod_dv` |
 
----
+### Formulas
 
-### 9.8 Conditional Formatting Rules
-
-**Sheet 2 (Role_Inventory), Column K (Next_Review_Date)**:
-- If < TODAY(): Red fill, "Overdue"
-- If between TODAY() and (TODAY()+30): Yellow fill, "Due Soon"
-- If > (TODAY()+30): No fill
-
-**Sheet 2 (Role_Inventory), Column R (Gap_Identified)**:
-- No-Gap: Green fill
-- Minor-Gap: Yellow fill
-- Significant-Gap: Orange fill (RGB 255, 192, 0)
-- Critical-Gap: Red fill
-
-**Sheet 3 (Role_Definition_Assessment), Column L (Definition_Completeness_Rating)**:
-- Complete: Green fill
-- Partial: Yellow fill
-- Incomplete: Red fill
-
-**Sheet 4 (RACI_Matrix_Assessment), Column J (RACI_Compliance_Rating)**:
-- Compliant: Green fill
-- Partial: Yellow fill
-- Non-Compliant: Red fill
-
-**Sheet 5 (Role_Assignment_Verification), Column L (Assignment_Compliance_Rating)**:
-- Compliant: Green fill
-- Partial: Yellow fill
-- Non-Compliant: Red fill
-
-**Sheet 6 (Training_Assessment), Column L (Training_Compliance_Rating)**:
-- Compliant: Green fill
-- Partial: Yellow fill
-- Non-Compliant: Red fill
-
-**Sheet 7 (Access_Alignment_Review), Column J (Access_Compliance_Rating)**:
-- Compliant: Green fill
-- Partial: Yellow fill
-- Non-Compliant: Red fill
-
-**Sheet 8 (Gap_Analysis), Column F (Risk_Level)**:
-- Critical: Red fill
-- High: Orange fill (RGB 255, 192, 0)
-- Medium: Yellow fill
-- Low: No fill
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| AN | `=IF(ROW()-4<=COUNTA(Role_Inventory!$A:$A)-4,INDEX(Role_Inventory!$A:$A,ROW()-3),` |  |
+| BN | `=IF(A{row}<>` |  |
 
 ---
 
-### 9.9 Freeze Panes Configuration
+## Sheet 4: RACI_Matrix_Assessment
 
-- **Sheet 1 (Dashboard)**: No freeze (entire dashboard visible without scroll)
-- **Sheets 2-9**: Freeze at A5 (keep column headers visible when scrolling)
-- **Sheet 10 (Approval)**: Freeze at A3
+**Purpose:** RACI matrix completeness and accuracy verification.
 
----
+**Data Rows:** 150 (rows 25–174) | **Frozen Panes:** A26
 
-### 9.10 Print Settings
+### Columns
 
-**For all sheets**:
-- Orientation: Landscape
-- Fit to: 1 page wide by [auto] pages tall
-- Margins: Narrow (0.5" all sides)
-- Header: Sheet name + Date
-- Footer: Page X of Y + File name
-- Print titles: Repeat row 4 (column headers) on every page
-- Print area: Data range only (exclude empty rows)
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Activity_ID | 15 |
+| B | Security_Activity | 40 |
+| C | Activity_Category | 20 |
+| D | Responsible_Role | 25 |
+| E | Accountable_Role | 25 |
+| F | Consulted_Roles | 30 |
+| G | Informed_Roles | 30 |
+| H | Responsible_Assigned | 12 |
+| I | Accountable_Assigned | 12 |
+| J | Multiple_Accountables | 12 |
+| K | RACI_Documented | 12 |
+| L | RACI_Score | 12 |
+| M | RACI_Status | 15 |
+| N | RACI_Conflict | 15 |
 
----
+### Data Validations
 
-### 9.11 File Naming & Version Control
+| Column | Range | Validation Variable |
+|--------|-------|---------------------|
+| C | C26:C175 | `category_dv` |
+| K | K26:K175 | `documented_dv` |
 
-**File Naming Convention**:
-```
-ISMS-IMP-A.5.1-2-6.1-2.S2_Roles_Responsibilities_YYYYMMDD.xlsx
-```
+### Formulas
 
-**Version Control**:
-- Date in filename serves as version identifier
-- Previous assessments archived with date suffix
-- Repository: Store in version-controlled location (SharePoint, Git, DMS)
-
----
-
-### 9.12 Integration with Python Script
-
-**Generator Script**: `generate_a5_1_2_6_1_2_s2_roles_responsibilities.py`
-
-**Script Responsibilities**:
-1. Create workbook with 10 sheets
-2. Apply all formatting (colors, fonts, borders)
-3. Write all headers and labels
-4. Create all data validation rules
-5. Write all formulas
-6. Apply conditional formatting
-7. Create named ranges
-8. Set print settings
-9. Protect sheets
-10. Set freeze panes
-11. Save workbook with correct filename
-
-**Script does NOT**:
-- Populate data (user's responsibility)
-- Create macros (optional enhancement)
-- Require external dependencies beyond `openpyxl`
-
-**Script Execution**:
-```bash
-python generate_a5_1_2_6_1_2_s2_roles_responsibilities.py
-```
-
-**Output**:
-```
-ISMS-IMP-A.5.1-2-6.1-2.S2_Roles_Responsibilities_20260130.xlsx
-```
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| HN | `=IF(D{row}<>` |  |
+| IN | `=IF(E{row}<>` |  |
+| JN | `=IF(ISERROR(FIND(` |  |
+| MN | `=IF(B{row}=` |  |
+| NN | `=IF(J{row}=` |  |
 
 ---
 
-**[END OF IMPLEMENTATION SPECIFICATION]**
+## Sheet 5: Role_Assignment_Verification
+
+**Purpose:** Current role holders and vacancy tracking.
+
+**Data Rows:** 100 (rows 5–104) | **Frozen Panes:** A5
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Role_ID | 15 |
+| B | Role_Title | 30 |
+| C | Role_Category | 20 |
+| D | Current_Holder_Name | 25 |
+| E | Current_Holder_Employee_ID | 15 |
+| F | Assignment_Date | 12 |
+| G | Assignment_Documentation | 15 |
+| H | Formal_Acceptance | 15 |
+| I | Background_Check_Status | 15 |
+| J | Assignment_Status | 15 |
+| K | Backup_Holder_Name | 25 |
+| L | Backup_Assignment_Status | 15 |
+| M | Last_Verification_Date | 12 |
+| N | Gap_Description | 40 |
+| O | Evidence_Reference | 30 |
+
+### Data Validations
+
+| Column | Range | Validation Variable |
+|--------|-------|---------------------|
+| G | G5:G104 | `doc_status_dv` |
+| H | H5:H104 | `acceptance_dv` |
+| I | I5:I104 | `bg_check_dv` |
+| L | L5:L104 | `backup_status_dv` |
+
+### Formulas
+
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| AN | `=IF(ROW()-4<=COUNTA(Role_Inventory!$A:$A)-4,INDEX(Role_Inventory!$A:$A,ROW()-3),` |  |
+| BN | `=IF(A{row}<>` |  |
 
 ---
 
-**Document Summary**:
-- **Part I: User Guide** (~900 lines) - How to complete assessment
-- **Part II: Technical Specification** (~700 lines) - Excel workbook structure
-- **Total**: ~1,600 lines
-- **Complexity**: Moderate (10 sheets, RACI focus, role-centric assessment)
+## Sheet 6: Training_Assessment
 
-**Next Steps**: 
-1. Review and approve this specification
-2. Generate Python script: `generate_a5_1_2_6_1_2_s2_roles_responsibilities.py`
-3. Test workbook generation
-4. Proceed to next assessment: ISMS-IMP-A.5.1-2-6.1-2.S3 (Screening & Vetting)
+**Purpose:** Role-specific training completion tracking.
+
+**Data Rows:** 100 (rows 25–124) | **Frozen Panes:** A26
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Role_ID | 15 |
+| B | Role_Title | 30 |
+| C | Role_Holder_Name | 25 |
+| D | Required_Training_1 | 25 |
+| E | Training_1_Status | 12 |
+| F | Training_1_Date | 12 |
+| G | Required_Training_2 | 25 |
+| H | Training_2_Status | 12 |
+| I | Training_2_Date | 12 |
+| J | Required_Training_3 | 25 |
+| K | Training_3_Status | 12 |
+| L | Training_Expiry_Status | 15 |
+| M | Training_Records_Available | 12 |
+| N | Training_Compliance_Rating | 20 |
+| O | Gap_Description | 40 |
+| P | Evidence_Reference | 30 |
+
+### Data Validations
+
+| Column | Range | Validation Variable |
+|--------|-------|---------------------|
+| L | L26:L125 | `expiry_dv` |
+| M | M26:M125 | `records_dv` |
+
+### Formulas
+
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| AN | `=IF(ROW()-25<=COUNTA(Role_Assignment_Verification!$A:$A)-4,INDEX(Role_Assignment` |  |
+| BN | `=IF(A{row}<>` |  |
+
+---
+
+## Sheet 7: Access_Alignment_Review
+
+**Purpose:** Role-based access vs. role definition alignment verification.
+
+**Data Rows:** 100 (rows 25–124) | **Frozen Panes:** A26
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Role_ID | 15 |
+| B | Role_Title | 30 |
+| C | Role_Holder_Name | 25 |
+| D | Defined_Access_Level | 20 |
+| E | Actual_Access_Level | 20 |
+| F | Systems_Access_Defined | 30 |
+| G | Systems_Access_Actual | 30 |
+| H | Excess_Privileges | 12 |
+| I | Missing_Access | 12 |
+| J | Access_Review_Date | 12 |
+| K | SoD_Conflict | 12 |
+| L | Access_Documentation | 12 |
+| M | Access_Alignment_Status | 15 |
+| N | Gap_Description | 40 |
+| O | Evidence_Reference | 30 |
+
+### Data Validations
+
+| Column | Range | Validation Variable |
+|--------|-------|---------------------|
+| L | L26:L125 | `doc_dv` |
+
+### Formulas
+
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| AN | `=IF(ROW()-25<=COUNTA(Role_Assignment_Verification!$A:$A)-4,INDEX(Role_Assignment` |  |
+| BN | `=IF(A{row}<>` |  |
+
+---
+
+## Sheet 8: Gap_Analysis
+
+**Purpose:** Consolidated gaps from all assessment domains.
+
+**Data Rows:** 100 (rows 5–104) | **Frozen Panes:** A5
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Gap_ID | 12 |
+| B | Role_ID | 15 |
+| C | Role_Title | 30 |
+| D | Gap_Category | 20 |
+| E | Gap_Description | 40 |
+| F | Risk_Level | 15 |
+| G | Impact_Assessment | 35 |
+| H | Affected_Stakeholders | 25 |
+| I | Remediation_Action | 40 |
+| J | Responsible_Party | 25 |
+| K | Target_Completion_Date | 15 |
+| L | Estimated_Effort | 15 |
+| M | Dependencies | 30 |
+| N | Status | 15 |
+| O | Completion_Evidence | 30 |
+| P | Risk_Acceptance | 40 |
+
+### Data Validations
+
+| Column | Range | Validation Variable |
+|--------|-------|---------------------|
+| D | D5:D104 | `gap_category_dv` |
+| F | F5:F104 | `risk_level_dv` |
+| L | L5:L104 | `effort_dv` |
+| N | N5:N104 | `status_dv` |
+
+### Formulas
+
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| AN | `=IF(ROW()<=4,` |  |
+
+---
+
+## Sheet 9: Evidence_Register
+
+**Purpose:** Supporting evidence documentation.
+
+**Data Rows:** 100 (rows 5–104) | **Frozen Panes:** A5
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Evidence_ID | 12 |
+| B | Evidence_Type | 20 |
+| C | Description | 40 |
+| D | Related_Role_ID | 15 |
+| E | Related_Assessment_Sheet | 25 |
+| F | File_Location | 40 |
+| G | Date_Collected | 12 |
+| H | Collected_By | 25 |
+| I | Verification_Status | 15 |
+| J | Notes | 40 |
+
+### Data Validations
+
+| Column | Range | Validation Variable |
+|--------|-------|---------------------|
+| B | B5:B104 | `evidence_type_dv` |
+| E | E5:E104 | `sheet_dv` |
+| I | I5:I104 | `verification_dv` |
+
+### Formulas
+
+| Cell | Formula | Purpose |
+|------|---------|---------|
+| AN | `=IF(ROW()<=4,` |  |
+
+---
+
+## Sheet 10: Approval_Sign_Off
+
+**Purpose:** Three-level approval workflow.
 
 ---
 

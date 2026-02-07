@@ -393,6 +393,8 @@ logger = logging.getLogger(__name__)
 
 DOCUMENT_ID = "ISMS-IMP-A.5.31.2"
 CONTROL_REF = "ISO/IEC 27001:2022 - Control A.5.31: Legal, Statutory, Regulatory and Contractual Requirements"
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_Applicability_Matrix_{GENERATED_TIMESTAMP}.xlsx"
 
 # ============================================================================
 # UNICODE SYMBOLS - PROPER UTF-8 ENCODING
@@ -1106,7 +1108,7 @@ def main():
     populate_assessment_sheet(wb, styles, sheet_name="Template_Blank", with_sample_data=False)
     
     # Save workbook
-    output_path = f"ISMS-IMP-A.5.31.2_Applicability_Matrix_{datetime.now().strftime('%Y%m%d')}.xlsx"
+    output_path = OUTPUT_FILENAME
     logger.info(f"💾 Saving workbook to: {output_path}")
     wb.save(output_path)
     

@@ -28,207 +28,229 @@
 
 # Technical Specification
 
-## 9. Workbook Technical Details
 
-### 9.1 File Information
+> Auto-generated from `generate_a514_5_consolidation_dashboard.py`
+> Re-generate with: `python3 generate_tg_from_scr.py --apply`
 
-| Attribute | Value |
-|-----------|-------|
-| **Document ID** | ISMS-IMP-A.5.14.5 |
-| **Generated Filename** | `ISMS-IMP-A.5.14.5_Consolidation_Dashboard_YYYYMMDD.xlsx` |
-| **Generator Script** | `generate_a514_5_consolidation_dashboard.py` |
-| **Sheet Count** | 12 |
-| **Primary Control** | A.5.14 (Information Transfer) |
+## Workbook Overview
 
-### 9.2 Sheet Specifications
+| Property | Value |
+|----------|-------|
+| **Document ID** | `ISMS-IMP-A.5.14.5` |
+| **Output Filename** | `ISMS-IMP-A.5.14.5_Consolidation_Dashboard_YYYYMMDD.xlsx` |
+| **Workbook Title** | Consolidation Dashboard |
+| **Total Sheets** | 12 (12 visible) |
+| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
 
-#### Sheet 1: Instructions
-- **Type**: Read-only guidance
-- **Content**: Purpose, methodology, scoring
-- **Column width**: A=90
+## Color Palette
 
-#### Sheet 2: Executive_Summary
-- **Type**: Summary display
-- **Row 1**: Title banner (merged A1:H1)
-- **Rows 3-5**: Reporting period
-- **Rows 6-11**: Domain compliance table
-- **Rows 13+**: Key metrics table
-- **Column widths**: A=35, B=35, C=18, D=12, E=15, F=15
+| Hex Code | Style Name | Description |
+|----------|-----------|-------------|
+| #002060 | 002060 | Custom |
+| #1F4E79 | 1F4E79 | Custom |
+| #FFFFCC | FFFFCC | Light Yellow (User Input) |
 
-#### Sheet 3: Domain_Overview
-- **Type**: Detailed breakdown
-- **Row 1**: Title banner (merged A1:F1)
-- **Sections**: Three domain sections with headers
-- **Data validation**: Status dropdown
-- **Column widths**: A=40, B=18, C=15, D=35, E=35
-
-#### Sheet 4: Transfer_Compliance
-- **Type**: Compliance matrix
-- **Row 1**: Title banner (merged A1:H1)
-- **Row 3**: Column headers (8 columns)
-- **Rows 4+**: Transfer method entries
-- **Column widths**: A=22, B=16, C=18, D=18, E=16, F=18, G=30, H=18
-
-#### Sheet 5: Channel_Compliance
-- **Type**: Compliance matrix
-- **Row 1**: Title banner (merged A1:H1)
-- **Row 3**: Column headers (8 columns)
-- **Rows 4+**: Channel entries
-- **Column widths**: A=22, B=22, C=16, D=15, E=12, F=18, G=30, H=18
-
-#### Sheet 6: Agreements_Compliance
-- **Type**: Compliance matrix
-- **Row 1**: Title banner (merged A1:H1)
-- **Row 3**: Column headers (8 columns)
-- **Rows 4+**: Third-party entries
-- **Column widths**: A=25, B=20, C=18, D=15, E=15, F=18, G=30, H=18
-
-#### Sheet 7: Cross_Domain_Gaps
-- **Type**: Gap tracking
-- **Row 1**: Title banner (merged A1:J1)
-- **Row 3**: Column headers (10 columns)
-- **Rows 4+**: Gap entries (15 rows)
-- **Data validation**: Risk, Priority dropdowns
-- **Column widths**: A=10, B=22, C=40, D=12, E=10, F=18, G=30, H=35, I=18, J=15
-
-#### Sheet 8: Remediation_Tracker
-- **Type**: Action tracking
-- **Row 1**: Title banner (merged A1:K1)
-- **Row 3**: Column headers (11 columns)
-- **Rows 4+**: Action entries (15 rows)
-- **Data validation**: Priority, Status dropdowns
-- **Column widths**: A=10, B=12, C=20, D=40, E=10, F=18, G=12, H=12, I=12, J=10, K=30
-
-#### Sheet 9: KPI_Summary
-- **Type**: KPI display
-- **Row 1**: Title banner (merged A1:F1)
-- **Row 3**: Column headers (6 columns)
-- **Rows 4+**: KPI entries
-- **Column widths**: A=42, B=15, C=12, D=12, E=10, F=15
-
-#### Sheet 10: Evidence_Index
-- **Type**: Evidence reference
-- **Row 1**: Title banner (merged A1:H1)
-- **Row 3**: Column headers (8 columns)
-- **Rows 4+**: Evidence entries (15 rows)
-- **Column widths**: A=12, B=25, C=22, D=18, E=40, F=30, G=15, H=18
-
-#### Sheet 11: Trend_Dashboard
-- **Type**: Historical data
-- **Row 1**: Title banner (merged A1:H1)
-- **Row 3**: Column headers (8 columns)
-- **Rows 4+**: Period entries (8 quarters)
-- **Column widths**: A=12, B=16, C=14, D=14, E=12, F=12, G=18, H=35
-
-#### Sheet 12: Approval_SignOff
-- **Type**: Sign-off form
-- **Row 1**: Title banner (merged A1:E1)
-- **Rows 3-5**: Document information
-- **Rows 6+**: Approval table
-- **Column widths**: A=30, B=25, C=15, D=20, E=40
-
-### 9.3 Styling Specifications
-
-| Style Element | Specification |
-|--------------|---------------|
-| Title Fill | Dark Navy (#002060) |
-| Header Fill | Navy (#1F4E79) |
-| Section Font | Blue Bold (#1F4E79) |
-| Input Fill | Light Yellow (#FFFFCC) |
-| Compliant Fill | Green (#C6EFCE) |
-| Partial Fill | Amber (#FFEB9C) |
-| Non-Compliant Fill | Red (#FFC7CE) |
-| Title Font | Calibri 16pt Bold White |
-| Header Font | Calibri 11pt Bold White |
-| Body Font | Calibri 11pt |
-
-### 9.4 Data Validation Rules
-
-| Field | Type | Values |
-|-------|------|--------|
-| Compliance Status | List | Compliant, Partial, Non-Compliant, N/A |
-| Risk Rating | List | Low, Medium, High, Critical |
-| Priority | List | Critical, High, Medium, Low |
-| Remediation Status | List | Not Started, Planning, In Progress, Testing, Completed, On Hold |
-| KPI Trend | List | ↑, →, ↓ |
-| Evidence Status | List | Pending, Collected, Verified, Expired |
+## Sheet 1: Instructions
 
 ---
 
-## 10. Integration Points
+## Sheet 2: Executive_Summary
 
-### 10.1 Source Workbook Dependencies
+### Columns
 
-| Source | Data Pulled |
-|--------|-------------|
-| A.5.14.1 | Transfer method policies, compliance status |
-| A.5.14.2 | Channel assessments, security ratings |
-| A.5.14.3 | Agreement status, third-party assessments |
-| A.5.14.4 | KPIs, incidents, audit findings, remediation |
-
-### 10.2 Data Flow
-
-```
-A.5.14.1 (Rules) ──────┐
-                       │
-A.5.14.2 (Channels) ───┼──► A.5.14.5 (This Consolidation)
-                       │         │
-A.5.14.3 (Agreements) ─┤         │
-                       │         ▼
-A.5.14.4 (Monitoring) ─┘    Executive Reports
-                            Audit Evidence
-                            Management Review
-```
+| Col | Header |
+|-----|--------|
+| A | Domain |
+| B | Workbook |
+| C | Status |
+| D | Score % |
+| E | Critical Gaps |
+| F | Last Updated |
 
 ---
 
-## 11. Audit Considerations
+## Sheet 3: Domain_Overview
 
-### 11.1 Stage 1 Evidence
-- Consolidation methodology documented
-- Source workbook availability
-- Consolidation schedule established
+**Data Rows:** 4 (rows 2–5)
 
-### 11.2 Stage 2 Evidence
-- 4 quarters of consolidated dashboards
-- Trend analysis showing improvement
-- Cross-domain gap remediation evidence
-- Management review meeting minutes
+### Columns
 
-### 11.3 Common Auditor Questions
-1. "Show me how compliance has changed over the past year."
-2. "How do you identify gaps that span multiple control areas?"
-3. "What is your process for executive reporting on transfer security?"
-4. "How does this consolidation support management review?"
+| Col | Header |
+|-----|--------|
+| A | Requirement |
+| B | Status |
+| C | Evidence Ref |
+| D | Gap Description |
+| E | Remediation |
 
 ---
 
-## 12. Generator Script Reference
+## Sheet 4: Transfer_Compliance
 
-**Script**: `generate_a514_5_consolidation_dashboard.py`
+**Data Rows:** 7 (rows 2–8)
 
-**Location**: `10-isms-scr-base/isms-a.5.14-information-transfer/10_generator-master/`
+### Columns
 
-**Key Functions**:
-- `create_instructions_sheet()`: Methodology guidance
-- `create_executive_summary_sheet()`: Management overview
-- `create_domain_overview_sheet()`: Domain breakdown
-- `create_transfer_compliance_sheet()`: Method compliance
-- `create_channel_compliance_sheet()`: Channel status
-- `create_agreements_compliance_sheet()`: Agreement status
-- `create_cross_domain_gaps_sheet()`: Gap analysis
-- `create_remediation_tracker_sheet()`: Action tracking
-- `create_kpi_summary_sheet()`: KPI consolidation
-- `create_evidence_index_sheet()`: Evidence cross-reference
-- `create_trend_dashboard_sheet()`: Historical trends
-- `create_approval_signoff_sheet()`: Executive approval
+| Col | Header |
+|-----|--------|
+| A | Transfer_Method |
+| B | Policy_Defined |
+| C | Security_Controls |
+| D | Encryption_Status |
+| E | Monitoring_Active |
+| F | Compliance_Status |
+| G | Gap_Notes |
+| H | Owner |
 
-**Execution**:
-```bash
-cd 10-isms-scr-base/isms-a.5.14-information-transfer/10_generator-master
-python3 generate_a514_5_consolidation_dashboard.py
-mv *.xlsx ../90_workbooks/
-```
+---
+
+## Sheet 5: Channel_Compliance
+
+**Data Rows:** 7 (rows 2–8)
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Channel_Type |
+| B | Service/Platform |
+| C | Security_Rating |
+| D | Last_Assessed |
+| E | Risk_Level |
+| F | Compliance_Status |
+| G | Gap_Notes |
+| H | Owner |
+
+---
+
+## Sheet 6: Agreements_Compliance
+
+**Data Rows:** 10 (rows 4–13)
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Third_Party |
+| B | Agreement_Type |
+| C | Transfer_Type |
+| D | Expiry_Date |
+| E | Review_Status |
+| F | Compliance_Status |
+| G | Gap_Notes |
+| H | Owner |
+
+---
+
+## Sheet 7: Cross_Domain_Gaps
+
+**Data Rows:** 15 (rows 4–18)
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Gap_ID |
+| B | Source_Domain |
+| C | Gap_Description |
+| D | Risk_Rating |
+| E | Priority |
+| F | Affected_Controls |
+| G | Root_Cause |
+| H | Remediation_Action |
+| I | Owner |
+| J | Target_Date |
+
+---
+
+## Sheet 8: Remediation_Tracker
+
+**Data Rows:** 15 (rows 4–18)
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Action_ID |
+| B | Related_Gap |
+| C | Source_Domain |
+| D | Action_Description |
+| E | Priority |
+| F | Owner |
+| G | Start_Date |
+| H | Target_Date |
+| I | Status |
+| J | Progress_% |
+| K | Notes |
+
+---
+
+## Sheet 9: KPI_Summary
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | KPI |
+| B | Target |
+| C | Current |
+| D | Previous |
+| E | Trend |
+| F | Status |
+
+---
+
+## Sheet 10: Evidence_Index
+
+**Data Rows:** 15 (rows 4–18)
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Evidence_ID |
+| B | Source_Workbook |
+| C | Source_Sheet |
+| D | Evidence_Type |
+| E | Evidence_Description |
+| F | Location/Reference |
+| G | Date_Captured |
+| H | Validation_Status |
+
+---
+
+## Sheet 11: Trend_Dashboard
+
+**Data Rows:** 7 (rows 2–8)
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Period |
+| B | Transfer Rules % |
+| C | Channels % |
+| D | Agreements % |
+| E | Overall % |
+| F | Incidents |
+| G | Remediation Rate |
+| H | Notes |
+
+---
+
+## Sheet 12: Approval_SignOff
+
+**Data Rows:** 4 (rows 2–5)
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Role |
+| B | Name |
+| C | Date |
+| D | Signature |
+| E | Comments |
 
 ---
 

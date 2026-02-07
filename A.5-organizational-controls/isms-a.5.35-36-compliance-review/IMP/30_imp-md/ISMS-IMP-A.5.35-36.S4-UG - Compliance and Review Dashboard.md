@@ -59,19 +59,6 @@ Before completing this dashboard:
 - [ ] Access to compliance metrics from underlying assessments
 - [ ] Finding and remediation status from responsible parties
 
-### Workbook Structure
-
-| Sheet | Purpose | Key Actions |
-|-------|---------|-------------|
-| Instructions | Guidance and metadata | Complete document information |
-| Executive_Summary | High-level overview | Enter KPIs, key messages |
-| Review_Status | Review tracking | Track review completion |
-| Compliance_Status | Compliance metrics | Record compliance scores |
-| Findings_Overview | Findings analysis | Track findings metrics |
-| KPI_Scorecard | Performance indicators | Update KPI values |
-| Trend_Analysis | Historical trends | Record periodic data |
-| Approval_SignOff | Dashboard approval | Obtain sign-offs |
-
 ### Completion Walkthrough
 
 **Step 1: Executive_Summary Sheet**
@@ -321,7 +308,6 @@ Before presenting:
 | Annually | Board/Audit Committee | Annual summary, outlook |
 
 ---
-
 
 **END OF USER GUIDE**
 

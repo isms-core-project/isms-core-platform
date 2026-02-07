@@ -283,6 +283,7 @@ CONTROL_ID = "A.5.16"
 CONTROL_NAME = "Identity Management"
 GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")
 GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_User_Inventory_Assessment_{GENERATED_TIMESTAMP}.xlsx"
 
 # Data row counts
 USER_ROW_COUNT = 100          # Sample users

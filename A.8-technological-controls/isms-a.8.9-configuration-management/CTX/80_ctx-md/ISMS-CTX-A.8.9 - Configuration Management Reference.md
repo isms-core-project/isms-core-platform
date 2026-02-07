@@ -58,7 +58,7 @@
 
 ## Part 1: Configuration Standards Reference
 
-### 1.1 Hardening Standards Landscape
+### Hardening Standards Landscape
 
 Configuration hardening applies security-focused configurations based on recognized industry standards. [Organization] selects applicable standards based on asset type, regulatory requirements, and risk assessment.
 
@@ -125,7 +125,7 @@ Configuration hardening applies security-focused configurations based on recogni
 - **CMMC**: Cybersecurity Maturity Model Certification (defense contractors)
 - **SWIFT CSC**: Financial messaging security controls
 
-### 1.2 Configuration Standards by Asset Type
+### Configuration Standards by Asset Type
 
 **1.2.1 Operating Systems**
 
@@ -291,7 +291,7 @@ Configuration hardening applies security-focused configurations based on recogni
   - Audit logging enabled
   - Unnecessary services disabled
 
-### 1.3 Standard Selection Decision Tree
+### Standard Selection Decision Tree
 
 ```
 START: Which hardening standard should I use?
@@ -315,7 +315,7 @@ START: Which hardening standard should I use?
 ALWAYS: Document standard selection in baseline documentation
 ```
 
-### 1.4 Verification Methods
+### Verification Methods
 
 **Automated Scanning**:
 
@@ -344,7 +344,7 @@ ALWAYS: Document standard selection in baseline documentation
 
 ## Part 2: Change Management Implementation Guide
 
-### 2.1 Change Request Form Template
+### Change Request Form Template
 
 **Change Request Form Fields**:
 
@@ -417,7 +417,7 @@ ALWAYS: Document standard selection in baseline documentation
 - Resolution: [How issues resolved]
 - Lessons Learned: [What could be improved]
 
-### 2.2 CAB Meeting Procedures
+### CAB Meeting Procedures
 
 **Pre-Meeting (CAB Chair Responsibilities)**:
 
@@ -444,7 +444,7 @@ ALWAYS: Document standard selection in baseline documentation
 
 **CAB Meeting Frequency**: Weekly or bi-weekly based on change volume
 
-### 2.3 Standard Change Catalog
+### Standard Change Catalog
 
 Standard Changes are pre-approved by CAB and executable without individual review. Examples:
 
@@ -478,7 +478,7 @@ Standard Changes are pre-approved by CAB and executable without individual revie
 
 Organizations maintain their own Standard Change Catalog based on operational needs and risk appetite.
 
-### 2.4 Emergency Change Procedures
+### Emergency Change Procedures
 
 **When to Use Emergency Change Process**:
 
@@ -510,7 +510,7 @@ Organizations maintain their own Standard Change Catalog based on operational ne
 
 ## Part 3: Configuration Deviation Response Procedures
 
-### 3.1 Drift Detection and Triage
+### Drift Detection and Triage
 
 **Step 1: Alert Reception**
 
@@ -565,7 +565,7 @@ Organizations maintain their own Standard Change Catalog based on operational ne
 - Implement preventive measures
 - Close incident ticket
 
-### 3.2 Exception Request Process
+### Exception Request Process
 
 **When to Request Exception**:
 
@@ -613,7 +613,7 @@ Organizations maintain their own Standard Change Catalog based on operational ne
 - Options: Renew exception, achieve full compliance, accept risk and document
 - Renewal requires same approval process
 
-### 3.3 Remediation Workflows
+### Remediation Workflows
 
 **Critical Drift Remediation** (<4 hours):
 1. SOC and Configuration Manager alerted immediately
@@ -651,7 +651,7 @@ Organizations maintain their own Standard Change Catalog based on operational ne
 
 ## Part 4: Quick Reference
 
-### 4.1 When Do I Need to Submit a Change Request?
+### When Do I Need to Submit a Change Request?
 
 **YES - Change Request Required**:
 
@@ -674,7 +674,7 @@ Organizations maintain their own Standard Change Catalog based on operational ne
 
 **If Unsure**: Contact Configuration Manager
 
-### 4.2 Change Classification Decision Tree
+### Change Classification Decision Tree
 
 ```
 START: What type of change is this?
@@ -700,7 +700,7 @@ If NORMAL CHANGE, what is the risk level?
    └─ HIGH RISK → Three-tier approval (CAB)
 ```
 
-### 4.3 Who Approves What?
+### Who Approves What?
 
 | Change Risk | Approver(s) | Timeline |
 |-------------|-------------|----------|
@@ -710,7 +710,7 @@ If NORMAL CHANGE, what is the risk level?
 | **Normal - High** | CAB (3-tier) | 5-10 days |
 | **Emergency** | CIO or CISO (verbal) | <4 hours |
 
-### 4.4 Common Configuration Tasks
+### Common Configuration Tasks
 
 **View Baseline for Asset Type**:
 
@@ -742,7 +742,7 @@ If NORMAL CHANGE, what is the risk level?
 - Requires: Deployment team permissions
 - Always verify image version and approval status before use
 
-### 4.5 Contact Information
+### Contact Information
 
 **Configuration Manager**: [Name], [Email], [Phone]  
 **CAB Chair**: [Name], [Email], [Phone]  
@@ -752,7 +752,7 @@ If NORMAL CHANGE, what is the risk level?
 **CAB Meeting Schedule**: [Day/Time], [Meeting Link/Location]  
 **Emergency Contact**: [24/7 Hotline]
 
-### 4.6 FAQs
+### FAQs
 
 **Q: My change request was rejected. What now?**  
 A: Review rejection reason, address CAB concerns, resubmit with updates.

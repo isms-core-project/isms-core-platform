@@ -459,43 +459,6 @@ For EACH cloud service, across 5 security layers:
 
 ## Understanding the Assessment Sheets
 
-### Workbook Structure Overview
-
-**10-Sheet Architecture:**
-
-```
-┌──────────────────────────────────────────────────────────────┐
-│         IMP-5.23.3 WORKBOOK STRUCTURE                        │
-├──────────────────────────────────────────────────────────────┤
-│                                                              │
-│  Sheet 1: Instructions & Legend                             │
-│           [Read-only reference]                              │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐ │
-│  │    CONFIGURATION ASSESSMENT SHEETS (2-6)               │ │
-│  │    Base Columns A-Q + Config-Specific Columns          │ │
-│  ├────────────────────────────────────────────────────────┤ │
-│  │  Sheet 2: Identity & Access Configuration             │ │
-│  │  Sheet 3: Data Protection Configuration               │ │
-│  │  Sheet 4: Network Security Configuration              │ │
-│  │  Sheet 5: Logging & Monitoring Configuration          │ │
-│  │  Sheet 6: Backup & Recovery Configuration             │ │
-│  └────────────────────────────────────────────────────────┘ │
-│                                                              │
-│  Sheet 7: Jurisdictional Risk Configuration Alignment       │
-│           [Links to IMP-5.23.2 Sheet 7]                      │
-│                                                              │
-│  Sheet 8: Summary Dashboard                                 │
-│           [Auto-calculated from Sheets 2-7]                  │
-│                                                              │
-│  Sheet 9: Evidence Register                                 │
-│           [Central evidence tracking]                        │
-│                                                              │
-│  Sheet 10: Approval Sign-Off                                │
-│            [Cloud Ops, Security, CISO approvals]             │
-└──────────────────────────────────────────────────────────────┘
-```
-
 ### Base Columns (A-Q) - Standard Across All Sheets
 
 **All configuration sheets (2-6) share these base columns:**
@@ -1758,7 +1721,6 @@ Step 5: Archive & Implement (Config remediation, IaC updates)
 - **ISMS-POL-A.5.19-23:** Supplier and Cloud Services Security Policy
 
 ---
-
 
 **END OF USER GUIDE**
 

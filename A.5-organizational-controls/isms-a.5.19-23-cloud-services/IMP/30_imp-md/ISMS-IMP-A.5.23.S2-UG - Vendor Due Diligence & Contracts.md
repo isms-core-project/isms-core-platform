@@ -441,41 +441,6 @@ For EACH cloud service provider:
 
 ## Understanding the Assessment Sheets
 
-### Workbook Structure Overview
-
-**10-Sheet Architecture:**
-
-```
-┌──────────────────────────────────────────────────────────────┐
-│              IMP-5.23.2 WORKBOOK STRUCTURE                   │
-├──────────────────────────────────────────────────────────────┤
-│                                                              │
-│  Sheet 1: Instructions & Legend                             │
-│           [Read-only reference]                              │
-│                                                              │
-│  ┌────────────────────────────────────────────────────────┐ │
-│  │       DATA COLLECTION SHEETS (2-7)                     │ │
-│  │       Base Columns A-Q + Extended Columns              │ │
-│  ├────────────────────────────────────────────────────────┤ │
-│  │  Sheet 2: Vendor Security Certifications              │ │
-│  │  Sheet 3: Contract Terms Analysis                     │ │
-│  │  Sheet 4: SLA Requirements & Performance              │ │
-│  │  Sheet 5: Data Sovereignty Compliance                 │ │
-│  │  Sheet 6: Forensics & Audit Rights                    │ │
-│  │  Sheet 7: Jurisdictional Risk Assessment              │ │
-│  └────────────────────────────────────────────────────────┘ │
-│                                                              │
-│  Sheet 8: Summary Dashboard                                 │
-│           [Auto-calculated from Sheets 2-7]                  │
-│                                                              │
-│  Sheet 9: Evidence Register                                 │
-│           [Central evidence tracking]                        │
-│                                                              │
-│  Sheet 10: Approval Sign-Off                                │
-│            [Legal, Security, CISO approvals]                 │
-└──────────────────────────────────────────────────────────────┘
-```
-
 ### Base Columns (A-Q) - Standard Across All Sheets
 
 **All data collection sheets (2-7) share these base columns:**

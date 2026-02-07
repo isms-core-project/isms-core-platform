@@ -1035,9 +1035,6 @@ Document approvals in Sheet 9 (Evidence Register):
 
 ---
 
-**End of PART I: USER COMPLETION GUIDE**
-
-
 **END OF USER GUIDE**
 
 ---

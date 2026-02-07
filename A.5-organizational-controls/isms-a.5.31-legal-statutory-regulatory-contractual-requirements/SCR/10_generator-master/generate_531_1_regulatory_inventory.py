@@ -313,6 +313,8 @@ logger = logging.getLogger(__name__)
 
 DOCUMENT_ID = "ISMS-IMP-A.5.31.1"
 CONTROL_REF = "ISO/IEC 27001:2022 - Control A.5.31: Legal, Statutory, Regulatory and Contractual Requirements"
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_Regulatory_Inventory_{GENERATED_TIMESTAMP}.xlsx"
 
 # ============================================================================
 # UNICODE SYMBOLS - PROPER UTF-8 ENCODING
@@ -993,7 +995,7 @@ def main():
     populate_summary_sheet(wb)
     
     # Save workbook
-    output_path = f"ISMS-IMP-A.5.31.1_Regulatory_Inventory_{datetime.now().strftime('%Y%m%d')}.xlsx"
+    output_path = OUTPUT_FILENAME
     logger.info(f"💾 Saving workbook to: {output_path}")
     wb.save(output_path)
     

@@ -26,13 +26,13 @@
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 The **Channel Security Assessment Workbook** (ISMS-IMP-A.5.14.2) provides a structured evaluation of security controls across all information transfer channels. This assessment verifies that email systems, cloud services, file transfer platforms, and physical transfer methods meet security requirements defined in ISMS-POL-A.5.14.
 
-### 1.2 Scope
+### Scope
 
 This assessment covers:
 - **Email systems**: Corporate email security controls and configuration
@@ -41,7 +41,7 @@ This assessment covers:
 - **Physical channels**: USB, courier, and physical media security
 - **Risk assessment**: Channel-specific risk analysis and scoring
 
-### 1.3 Business Value
+### Business Value
 
 Completing this assessment delivers:
 - **Security gap identification** across transfer channels
@@ -50,7 +50,7 @@ Completing this assessment delivers:
 - **Baseline documentation** for continuous improvement
 - **Audit preparation** with structured assessment data
 
-### 1.4 Control Requirement
+### Control Requirement
 
 > *ISO/IEC 27001:2022 Annex A.5.14 — Information Transfer*
 >
@@ -60,25 +60,25 @@ The Channel Security Assessment verifies that transfer facilities meet the rules
 
 ---
 
-## 2. Prerequisites
+## Prerequisites
 
 Before starting this assessment, ensure you have:
 
-### 2.1 Required Documents
+### Required Documents
 - [ ] ISMS-IMP-A.5.14.1 (Transfer Rules and Procedures) — defines expected configurations
 - [ ] ISMS-POL-A.8.24 (Cryptography Policy) — encryption standards
 - [ ] IT Asset Inventory — list of transfer systems
 - [ ] Network diagrams showing transfer data flows
 - [ ] Previous assessment results (if available)
 
-### 2.2 Required Access
+### Required Access
 - [ ] Email administration console (Exchange, Google Workspace)
 - [ ] Cloud service admin portals (Microsoft 365, AWS, Azure)
 - [ ] File transfer system configuration
 - [ ] Security tool dashboards (DLP, CASB, endpoint protection)
 - [ ] Audit log access for all transfer systems
 
-### 2.3 Required Personnel
+### Required Personnel
 - [ ] Email/Messaging Administrator
 - [ ] Cloud Services Administrator
 - [ ] Network Security Engineer
@@ -88,24 +88,7 @@ Before starting this assessment, ensure you have:
 
 ---
 
-## 3. Workbook Structure
-
-The workbook contains **8 sheets** organised as follows:
-
-| Sheet | Purpose | Input Required |
-|-------|---------|----------------|
-| Instructions | Guidance and rating legend | None (read-only) |
-| Email_Assessment | Corporate email security evaluation | Configuration, Status, Gaps |
-| Cloud_Services | Cloud storage and sharing assessment | Configuration, Status, Gaps |
-| File_Transfer | SFTP, MFT, API systems assessment | Current State, Status |
-| Physical_Channels | Physical media and courier evaluation | Current Practice, Status |
-| Risk_Assessment | Channel-specific risk analysis | Likelihood, Impact, Treatment |
-| Evidence_Register | Supporting documentation tracking | Location, Status |
-| Approval_SignOff | Assessment approval workflow | Signatures, Dates |
-
----
-
-## 4. Completion Walkthrough
+## Completion Walkthrough
 
 ### Sheet 1: Instructions
 
@@ -341,9 +324,9 @@ The workbook contains **8 sheets** organised as follows:
 
 ---
 
-## 5. Evidence Collection
+## Evidence Collection
 
-### 5.1 Evidence by Assessment Area
+### Evidence by Assessment Area
 
 | Area | Required Evidence |
 |------|-------------------|
@@ -353,7 +336,7 @@ The workbook contains **8 sheets** organised as follows:
 | Physical_Channels | USB inventory, courier contracts, encryption verification |
 | Risk_Assessment | Risk register extract, control effectiveness testing results |
 
-### 5.2 Evidence Storage
+### Evidence Storage
 
 Store all evidence in:
 ```
@@ -366,7 +349,7 @@ Store all evidence in:
 │   └── Risk/
 ```
 
-### 5.3 Evidence Naming
+### Evidence Naming
 
 Format: `EV-514-CSA-[Area]-[Description]-[YYYYMMDD].[ext]`
 
@@ -377,7 +360,7 @@ Examples:
 
 ---
 
-## 6. Common Pitfalls
+## Common Pitfalls
 
 ### ❌ MISTAKE: Assessing only production systems, ignoring dev/test environments
 ✅ CORRECT: Include all environments that handle real data or connect to production
@@ -411,7 +394,7 @@ Examples:
 
 ---
 
-## 7. Quality Checklist
+## Quality Checklist
 
 Before submitting the assessment, verify:
 
@@ -454,27 +437,26 @@ Before submitting the assessment, verify:
 
 ---
 
-## 8. Review and Approval
+## Review and Approval
 
-### 8.1 Assessment Frequency
+### Assessment Frequency
 - **Full assessment**: Annual
 - **High-risk channels**: Quarterly review
 - **Ad-hoc**: After security incidents or major changes
 
-### 8.2 Approval Workflow
+### Approval Workflow
 1. **Assessment Lead** completes technical evaluation
 2. **IT Security Manager** validates findings
 3. **ISO** approves final assessment
 4. **Remediation tracking** initiated for gaps
 
-### 8.3 Post-Assessment Actions
+### Post-Assessment Actions
 - Generate remediation action items
 - Update risk register with residual risks
 - Schedule follow-up assessment for critical gaps
 - Report executive summary to management
 
 ---
-
 
 **END OF USER GUIDE**
 

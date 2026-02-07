@@ -1556,7 +1556,7 @@ This completes **PART I: USER COMPLETION GUIDE** for SDLC Security Activities As
 - Be practical - recommendations must be achievable
 
 **Next Steps:**
-1. Read PART II: Technical Specification
+1. Read the companion Technical Specification (TG)
 2. Gather prerequisites for your first assessment
 3. Schedule interviews with Development Manager, Security Champion, developers
 4. Begin assessment!

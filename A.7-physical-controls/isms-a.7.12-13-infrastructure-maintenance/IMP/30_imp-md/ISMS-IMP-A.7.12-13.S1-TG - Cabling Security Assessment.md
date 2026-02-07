@@ -24,232 +24,205 @@
 |---------|------|---------|--------|
 | 1.0 | [Date] | Initial technical specification for Cabling Security assessment workbook | ISMS Implementation Team |
 
-### Document Structure
-
-This is the **Technical Specification**. The companion User Completion Guide is documented in ISMS-IMP-A.7.12-13.S1-UG.
 
 ---
-
 # Technical Specification
 
-## Excel Workbook Structure
 
-### Workbook Overview
+> Auto-generated from `generate_a712_1_cabling_security.py`
+> Re-generate with: `python3 generate_tg_from_scr.py --apply`
 
-**File Name:** ISMS-IMP-A.7.12-13.S1_Cabling_Security_YYYYMMDD.xlsx
+## Workbook Overview
 
-**Generation:** Automated via Python script (generate_a712_1_cabling_security.py)
+| Property | Value |
+|----------|-------|
+| **Document ID** | `ISMS-IMP-A.7.12-13.S1` |
+| **Output Filename** | `ISMS-IMP-A.7.12-13.S1_Cabling_Security_Assessment_YYYYMMDD.xlsx` |
+| **Workbook Title** | Cabling Security Assessment |
+| **Total Sheets** | 16 (16 visible) |
+| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
 
-**Sheet Count:** 8 worksheets
+## Color Palette
 
-**Data Capacity:** 100 data rows per assessment sheet
+| Hex Code | Style Name | Description |
+|----------|-----------|-------------|
+| #0000FF | 0000FF | Custom |
+| #003366 | 003366 | Dark Blue (Headers) |
+| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
+| #808080 | 808080 | Gray (Disabled) |
+| #C6EFCE | C6EFCE | Light Green (Compliant/Pass) |
+| #D9D9D9 | D9D9D9 | Light Gray (Column Headers) |
+| #FFC7CE | FFC7CE | Light Red (Non-Compliant/Fail) |
+| #FFEB9C | FFEB9C | Light Yellow/Amber (Partial) |
+| #FFFFCC | FFFFCC | Light Yellow (User Input) |
 
-**Styling:** Navy blue headers, yellow input cells, conditional formatting for compliance status
-
-### Sheet Organisation
-
-| Sheet # | Sheet Name | Purpose | Type | Row Count |
-|---------|------------|---------|------|-----------|
-| 1 | Instructions & Legend | Assessment metadata and status legend | Read-only Reference | ~30 rows |
-| 2 | Cable Pathways | Cable pathway inventory and compliance | Data Entry | 100 data rows |
-| 3 | Physical Protection | Physical and environmental protection | Data Entry | 100 data rows |
-| 4 | Access Controls | Infrastructure access control assessment | Data Entry | 100 data rows |
-| 5 | Documentation | Cable documentation compliance | Data Entry | 50 data rows |
-| 6 | Summary Dashboard | Automated compliance scoring | Formula-driven | ~40 rows |
-| 7 | Evidence Register | Supporting evidence documentation | Data Entry | 100 data rows |
-| 8 | Approval Sign-Off | Four-level approval workflow | Data Entry | ~20 rows |
-
----
-
-## Sheet-by-Sheet Specifications
-
-### Sheet 1: Instructions & Legend
-
-**Purpose:** Assessment metadata and status legend
-
-**Structure:**
-
-**Row 1:** Header
-- Merged cells A1:G1
-- Text: "ISMS-IMP-A.7.12-13.S1 - Cabling Security Assessment\nISO/IEC 27001:2022 - Control A.7.12: Cabling Security"
-- Style: Navy blue background (#003366), white bold text, 14pt
-
-**Rows 3-11:** Document Information Table
-- Labels in Column A, Values in Column B
-- User input fields (yellow): Assessment Date, Completed By, Organisation
-
-**Rows 13-17:** Status Legend
-- Colour-coded status definitions
-
-### Sheet 2: Cable Pathways
-
-**Purpose:** Document all cable pathways and assess protection status
-
-**Columns:**
-
-| Col | Field Name | Type | Width | Validation |
-|-----|------------|------|-------|------------|
-| A | Pathway ID | Text | 12 | None |
-| B | Facility/Building | Text | 25 | None |
-| C | Pathway Type | Dropdown | 18 | List: Conduit, Cable Tray, Raised Floor, Underground, Ceiling Void, Wall Chase |
-| D | Start Location | Text | 25 | None |
-| E | End Location | Text | 25 | None |
-| F | Cable Types | Text | 20 | None |
-| G | Protection Type | Dropdown | 18 | List: Enclosed - Metal, Enclosed - Plastic, Open Tray, Armoured, None |
-| H | Length (metres) | Number | 12 | Integer >0 |
-| I | Segregation Compliant | Dropdown | 15 | List: Yes, No, N/A |
-| J | Documentation Current | Dropdown | 15 | List: Yes, Partial, No |
-| K | Last Inspection | Date | 15 | Date format |
-| L | Compliance Status | Formula | 18 | Auto-calculated |
-| M | Notes | Text | 40 | None |
-
-**Compliance Status Formula:**
-```excel
-=IF(AND(G2<>"None", I2<>"No", J2<>"No"), "✅ Compliant",
-   IF(OR(G2="None", I2="No"), "❌ Non-Compliant",
-   "⚠️ Partial"))
-```
-
-### Sheet 3: Physical Protection
-
-**Purpose:** Assess physical and environmental protection measures
-
-**Columns:**
-
-| Col | Field Name | Type | Width | Validation |
-|-----|------------|------|-------|------------|
-| A | Area ID | Text | 12 | None |
-| B | Facility/Building | Text | 25 | None |
-| C | Area Name | Text | 25 | None |
-| D | EMI Protection | Dropdown | 15 | List: Yes - Shielded, Partial, No, N/A |
-| E | Physical Damage Protection | Dropdown | 20 | List: Yes - Armoured, Yes - Enclosed, Partial, No |
-| F | Water Protection | Dropdown | 15 | List: Yes, Partial, No, N/A |
-| G | Heat Protection | Dropdown | 15 | List: Yes, Partial, No, N/A |
-| H | Cable Route Risk Level | Dropdown | 15 | List: Low, Medium, High |
-| I | Fibre Used for High Security | Dropdown | 15 | List: Yes, No, N/A |
-| J | Compliance Status | Formula | 18 | Auto-calculated |
-| K | Notes | Text | 40 | None |
-
-### Sheet 4: Access Controls
-
-**Purpose:** Document access controls for cabling infrastructure
-
-**Columns:**
-
-| Col | Field Name | Type | Width | Validation |
-|-----|------------|------|-------|------------|
-| A | Location ID | Text | 12 | None |
-| B | Facility/Building | Text | 25 | None |
-| C | Infrastructure Type | Dropdown | 18 | List: Wiring Closet, Patch Panel, Distribution Frame, Manhole, Duct Access |
-| D | Location Description | Text | 30 | None |
-| E | Lock Type | Dropdown | 20 | List: Electronic Access Card, Keyed Lock, Combination Lock, No Lock, Cage/Enclosure |
-| F | Access Restricted | Dropdown | 25 | List: Yes - IT Only, Yes - Facilities Only, Yes - Authorised Personnel, No |
-| G | Access Logged | Dropdown | 15 | List: Yes - Electronic, Yes - Manual, No |
-| H | Occupied Monitoring | Dropdown | 15 | List: Yes - CCTV, Yes - Guards, No |
-| I | Last Access Review | Date | 15 | Date format |
-| J | Compliance Status | Formula | 18 | Auto-calculated |
-| K | Notes | Text | 40 | None |
-
-### Sheet 5: Documentation
-
-**Purpose:** Audit cable documentation compliance
-
-**Columns:**
-
-| Col | Field Name | Type | Width | Validation |
-|-----|------------|------|-------|------------|
-| A | Document Type | Dropdown | 20 | List: Cable Schedule, Network Diagram, Labelling Standard, Change Log, Audit Report |
-| B | Document Name | Text | 35 | None |
-| C | Document Location | Text | 40 | None |
-| D | Owner | Text | 25 | None |
-| E | Last Updated | Date | 15 | Date format |
-| F | Review Cycle | Dropdown | 15 | List: Annual, Quarterly, On Change |
-| G | Current | Dropdown | 10 | List: Yes, No |
-| H | Accessible | Dropdown | 15 | List: Yes - Online, Yes - Restricted, No |
-| I | Compliance Status | Formula | 18 | Auto-calculated |
-| J | Notes | Text | 40 | None |
-
-### Sheet 6: Summary Dashboard
-
-**Purpose:** Automated compliance scoring and metrics
-
-**Structure:**
-- Overall Compliance Score (weighted average)
-- Domain Scores (Pathways, Protection, Access, Documentation)
-- Gap Summary (auto-generated from non-compliant items)
-
-**Weighting:**
-- Cable Pathways: 30%
-- Physical Protection: 25%
-- Access Controls: 25%
-- Documentation: 20%
-
-### Sheet 7: Evidence Register
-
-**Purpose:** Document supporting evidence for audit
-
-**Columns:**
-- Evidence ID, Evidence Type, Description, Related Sheet/Item
-- File Name, File Location, Collection Date, Collected By
-- Retention Period, Notes
-
-### Sheet 8: Approval Sign-Off
-
-**Purpose:** Four-level approval workflow
-
-**Structure:**
-- Assessment summary section
-- Approval table (Role, Name, Signature, Date, Comments)
+## Sheet 1: Instructions & Legend
 
 ---
 
-## Cell Styling Reference
-
-### Colour Palette
-
-**Headers:**
-- Primary Header: #003366 (Navy blue), white text
-- Column Header: #D9D9D9 (Light grey), black text
-
-**Data Cells:**
-- Input Cell: #FFFFCC (Light yellow)
-- Formula Cell: #FFFFFF (White)
-
-**Compliance Status:**
-- Compliant: #C6EFCE (Light green)
-- Partial: #FFEB9C (Light amber)
-- Non-Compliant: #FFC7CE (Light red)
-
-### Font Specifications
-
-- Headers: Calibri, 14pt (primary), 10pt (column), Bold
-- Data Cells: Calibri, 10pt, Regular
+## Sheet 2: Cable Pathways
 
 ---
 
-## Integration Points
+## Sheet 3: Physical Protection
 
-### Integration with Policy
+---
 
-**Policy Section → Assessment Sheet Mapping:**
+## Sheet 4: Access Controls
 
-| Policy Section | Assessment Sheet | Focus |
-|----------------|------------------|-------|
-| Section 2.1.1: Cable Protection | Sheet 2, Sheet 3 | Pathways and protection measures |
-| Section 2.1.2: Access Control | Sheet 4 | Infrastructure access controls |
-| Section 2.1.3: Segregation Requirements | Sheet 2, Sheet 3 | Power/data segregation, fibre for security |
-| Section 2.1.4: Documentation | Sheet 5 | Cable schedules, diagrams, labelling |
-| Section 2.1.5: Inspection and Maintenance | Sheet 2 | Last inspection dates |
+---
 
-### Integration with Other Assessments
+## Sheet 5: Documentation
 
-**Feeds into:**
-- ISMS-IMP-A.7.12-13.S4 (Compliance Dashboard)
-- Network security assessments
+---
 
-**Dependencies from:**
-- Facility inventory
-- Network documentation
+## Sheet 6: Summary Dashboard
+
+---
+
+## Sheet 7: Evidence Register
+
+---
+
+## Sheet 8: Approval Sign-Off
+
+---
+
+## Sheet 9: Instructions
+
+---
+
+## Sheet 10: Cable_Pathways
+
+**Data Rows:** 100 (rows 4–103)
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Pathway ID | 12 |
+| B | Facility/Building | 25 |
+| C | Pathway Type | 18 |
+| D | Start Location | 25 |
+| E | End Location | 25 |
+| F | Cable Types | 20 |
+| G | Protection Type | 20 |
+| H | Length (m) | 12 |
+| I | Segregation Compliant | 18 |
+| J | Documentation Current | 18 |
+| K | Last Inspection | 15 |
+| L | Compliance Status | 18 |
+| M | Notes | 40 |
+
+---
+
+## Sheet 11: Physical_Protection
+
+**Data Rows:** 100 (rows 4–103)
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Area ID | 12 |
+| B | Facility/Building | 25 |
+| C | Area Name | 25 |
+| D | EMI Protection | 15 |
+| E | Physical Damage Protection | 22 |
+| F | Water Protection | 15 |
+| G | Heat Protection | 15 |
+| H | Cable Route Risk Level | 18 |
+| I | Fibre for High Security | 18 |
+| J | Compliance Status | 18 |
+| K | Notes | 40 |
+
+---
+
+## Sheet 12: Access_Controls
+
+**Data Rows:** 100 (rows 4–103)
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Location ID | 12 |
+| B | Facility/Building | 25 |
+| C | Infrastructure Type | 20 |
+| D | Location Description | 30 |
+| E | Lock Type | 22 |
+| F | Access Restricted | 25 |
+| G | Access Logged | 18 |
+| H | Occupied Monitoring | 18 |
+| I | Last Access Review | 18 |
+| J | Compliance Status | 18 |
+| K | Notes | 40 |
+
+---
+
+## Sheet 13: Documentation
+
+**Data Rows:** 50 (rows 4–53)
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Document Type | 22 |
+| B | Document Name | 35 |
+| C | Document Location | 40 |
+| D | Owner | 25 |
+| E | Last Updated | 15 |
+| F | Review Cycle | 15 |
+| G | Current | 12 |
+| H | Accessible | 18 |
+| I | Compliance Status | 18 |
+| J | Notes | 40 |
+
+---
+
+## Sheet 14: Summary_Dashboard
+
+**Data Rows:** 5 (rows 2–6)
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Domain |
+| B | Total Items |
+| C | {...} Compliant |
+| D | {...} Partial |
+| E | {...} Non-Compliant |
+| F | N/A |
+| G | % Compliant |
+
+---
+
+## Sheet 15: Evidence_Register
+
+**Data Rows:** 100 (rows 5–104)
+
+### Columns
+
+| Col | Header | Width |
+|-----|--------|-------|
+| A | Evidence ID | 12 |
+| B | Evidence Type | 18 |
+| C | Description | 40 |
+| D | Related Sheet/Item | 25 |
+| E | File Name | 30 |
+| F | File Location | 45 |
+| G | Collection Date | 15 |
+| H | Collected By | 20 |
+| I | Retention Period | 15 |
+| J | Notes | 40 |
+
+---
+
+## Sheet 16: Approval_Signoff
+
+**Data Rows:** 4 (rows 2–5)
 
 ---
 

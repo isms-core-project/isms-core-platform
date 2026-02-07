@@ -26,156 +26,165 @@ This is the **Technical Specification**. The companion User Completion Guide is 
 
 # Technical Specification
 
----
 
-## 2.1 Workbook Technical Details
+> Auto-generated from `generate_a517_2_credential_lifecycle_management.py`
+> Re-generate with: `python3 generate_tg_from_scr.py --apply`
 
-### File Information
+## Workbook Overview
 
 | Property | Value |
 |----------|-------|
-| Filename | `ISMS-IMP-A.5.17.2_MFA_Deployment_Assessment_YYYYMMDD.xlsx` |
-| Generator | `generate_a517_2_mfa_deployment.py` |
-| Sheets | 9 |
-| Protected | No (input cells unlocked) |
-| Format | Microsoft Excel Open XML (.xlsx) |
+| **Document ID** | `ISMS-IMP-A.5.17.2` |
+| **Output Filename** | `ISMS-IMP-A.5.17.2_Credential_Lifecycle_Management_YYYYMMDD.xlsx` |
+| **Workbook Title** | Credential Lifecycle Management |
+| **Total Sheets** | 9 (9 visible) |
+| **Control Reference** | ISO/IEC 27001:2022 - Control {...}: {...} |
 
-### Sheet Architecture
+## Color Palette
 
-| Sheet Index | Sheet Name | Purpose | Rows (est.) | Columns |
-|-------------|------------|---------|-------------|---------|
-| 1 | Instructions | Guidance | 50 | 8 |
-| 2 | System_MFA_Inventory | System MFA status | 200+ | 12 |
-| 3 | User_Enrollment | User MFA status | 1000+ | 10 |
-| 4 | Method_Analysis | MFA method distribution | 20 | 8 |
-| 5 | Conditional_Access | IdP policies | 30+ | 10 |
-| 6 | Gap_Analysis | Coverage gaps | 50+ | 10 |
-| 7 | Remediation_Tracker | Fix tracking | 50+ | 10 |
-| 8 | Exception_Register | Exceptions | 20+ | 12 |
-| 9 | Approval_SignOff | Authorisation | 15 | 5 |
+| Hex Code | Style Name | Description |
+|----------|-----------|-------------|
+| #003366 | 003366 | Dark Blue (Headers) |
+| #4472C4 | 4472C4 | Medium Blue (Sub-headers) |
+| #FFFFCC | FFFFCC | Light Yellow (User Input) |
+
+## Sheet 1: Instructions
+
+**Frozen Panes:** A3
 
 ---
 
-## 2.2 Sheet Specifications
+## Sheet 2: Allocation_Process
 
-### Sheet 2: System_MFA_Inventory
+**Frozen Panes:** A4
 
-| Column | Header | Width | Type | Validation |
-|:------:|--------|:-----:|------|------------|
-| A | System_ID | 12 | Text | Required |
-| B | System_Name | 30 | Text | Required |
-| C | Access_Category | 20 | List | Privileged Access, Remote Access, CONFIDENTIAL, Internet-Facing, Standard Internal |
-| D | MFA_Requirement | 15 | List | Required, Risk-Based, Not Required |
-| E | MFA_Enabled | 10 | List | Yes, No, Partial |
-| F | MFA_Method | 25 | Text | None |
-| G | Enforcement | 20 | List | Conditional Access, Application Native, Manual, None |
-| H | Compliant | 10 | Formula | Auto-calculated |
-| I | Owner | 25 | Text | None |
-| J | Last_Assessed | 15 | Date | None |
-| K | Evidence_Ref | 25 | Text | None |
-| L | Notes | 40 | Text | None |
+### Columns
 
-### Sheet 3: User_Enrollment
-
-| Column | Header | Width | Type | Validation |
-|:------:|--------|:-----:|------|------------|
-| A | User_ID | 30 | Text | Required |
-| B | Display_Name | 25 | Text | None |
-| C | Department | 20 | Text | None |
-| D | Role_Category | 20 | List | Administrator, Privileged User, Standard User, External User |
-| E | MFA_Required | 10 | List | Yes, No |
-| F | Enrollment_Status | 20 | List | Enrolled - Active, Enrolled - Inactive, Not Enrolled - Required, Not Enrolled - Exempt |
-| G | Method_Registered | 25 | Text | None |
-| H | Last_MFA_Used | 15 | Date | None |
-| I | Compliant | 10 | Formula | Auto-calculated |
-| J | Notes | 40 | Text | None |
-
-### Sheet 4: Method_Analysis
-
-| Column | Header | Width | Type | Validation |
-|:------:|--------|:-----:|------|------------|
-| A | MFA_Method | 25 | Text | Pre-populated |
-| B | Approval_Status | 20 | List | Approved - Preferred, Approved, Approved (with controls), Not Approved (legacy), Prohibited |
-| C | User_Count | 12 | Number | Input |
-| D | Percentage | 12 | Formula | Auto-calculated |
-| E | Phishing_Resistant | 10 | List | Yes, No |
-| F | Migration_Required | 10 | List | Yes, No |
-| G | Migration_Deadline | 15 | Date | None |
-| H | Notes | 40 | Text | None |
-
-### Sheet 5: Conditional_Access
-
-| Column | Header | Width | Type | Validation |
-|:------:|--------|:-----:|------|------------|
-| A | Policy_ID | 15 | Text | None |
-| B | Policy_Name | 35 | Text | None |
-| C | Status | 12 | List | Enabled, Report-Only, Disabled |
-| D | Scope_Users | 30 | Text | None |
-| E | Scope_Apps | 30 | Text | None |
-| F | Conditions | 30 | Text | None |
-| G | MFA_Requirement | 20 | List | Require MFA, Require Compliant Device, Block, Allow |
-| H | Last_Modified | 15 | Date | None |
-| I | Evidence_Ref | 25 | Text | None |
-| J | Notes | 40 | Text | None |
-
-### Sheet 6: Gap_Analysis
-
-| Column | Header | Width | Type | Validation |
-|:------:|--------|:-----:|------|------------|
-| A | Gap_ID | 18 | Text | None |
-| B | Gap_Type | 15 | List | System Gap, User Gap, Method Gap, Policy Gap, Enforcement Gap |
-| C | System_ID | 12 | Text | None |
-| D | User_ID | 30 | Text | None |
-| E | Description | 50 | Text | None |
-| F | Risk_Level | 12 | List | Critical, High, Medium, Low |
-| G | Identified_Date | 15 | Date | None |
-| H | Status | 15 | List | Open, Remediation Planned, Remediated, Exception |
-| I | Remediation_ID | 18 | Text | None |
-| J | Notes | 40 | Text | None |
+| Col | Header |
+|-----|--------|
+| A | Process Step |
+| B | Description |
+| C | Responsible Role |
+| D | Verification Required |
+| E | SLA |
+| F | System/Tool |
+| G | Status |
+| H | Notes |
 
 ---
 
-## 2.3 Conditional Formatting
+## Sheet 3: Change_Management
 
-| Sheet | Range | Condition | Format |
-|-------|-------|-----------|--------|
-| System_MFA_Inventory | D:D | ="Required" | Bold |
-| System_MFA_Inventory | E:E | ="No" | Red fill (#FFC7CE) |
-| System_MFA_Inventory | H:H | ="No" | Red fill (#FFC7CE), Bold |
-| User_Enrollment | F:F | ="Not Enrolled - Required" | Red fill (#FFC7CE) |
-| User_Enrollment | I:I | ="No" | Red fill (#FFC7CE) |
-| Method_Analysis | B:B | ="Not Approved (legacy)" | Orange fill (#FABF8F) |
-| Method_Analysis | B:B | ="Prohibited" | Red fill (#FFC7CE), Bold |
-| Conditional_Access | C:C | ="Disabled" | Red fill (#FFC7CE) |
-| Conditional_Access | C:C | ="Report-Only" | Yellow fill (#FFEB9C) |
-| Gap_Analysis | F:F | ="Critical" | Red fill (#FFC7CE), Bold |
-| Gap_Analysis | H:H | ="Open" | Red fill (#FFC7CE) |
+**Frozen Panes:** A4
 
----
+### Columns
 
-## 2.4 Integration Points
-
-| System | Integration | Data Flow |
-|--------|-------------|-----------|
-| Azure AD / Entra ID | Enrollment reports, CA policies | IdP -> This workbook |
-| Okta | Factor enrollment, policies | IdP -> This workbook |
-| Asset Inventory (A.5.9) | System list | A.5.9 -> System_MFA_Inventory |
-| A.5.17.1 Workbook | Password compliance | Bidirectional |
-| A.5.17.3 Workbook | Credential lifecycle | Bidirectional |
-| PAM Solution | Privileged account MFA | PAM -> User_Enrollment |
-| SIEM | MFA bypass monitoring | SIEM -> Evidence |
+| Col | Header |
+|-----|--------|
+| A | Change Type |
+| B | Trigger |
+| C | Process Steps |
+| D | Verification |
+| E | SLA |
+| F | Notification |
+| G | Status |
+| H | Notes |
 
 ---
 
-## 2.5 Related Documents
+## Sheet 4: Recovery_Process
 
-| Document ID | Title | Relationship |
-|-------------|-------|--------------|
-| ISMS-POL-A.5.17 | Authentication Information | Parent policy |
-| ISMS-IMP-A.5.17.1 | Password Policy Implementation | Password controls |
-| ISMS-IMP-A.5.17.3 | Authentication Management Procedures | Credential lifecycle |
-| ISMS-POL-A.8.2-3-5 | Authentication & Privileged Access | Privileged MFA |
-| ISMS-IMP-A.5.15-16-18 | IAM Assessment | Identity management |
+**Frozen Panes:** A4
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Recovery Method |
+| B | Use Case |
+| C | Process Steps |
+| D | Identity Verification |
+| E | Security Controls |
+| F | SLA |
+| G | Status |
+| H | Notes |
+
+---
+
+## Sheet 5: Revocation_Process
+
+**Frozen Panes:** A4
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Revocation Trigger |
+| B | SLA Requirement |
+| C | Actions Required |
+| D | Verification |
+| E | Systems Affected |
+| F | Responsible |
+| G | Status |
+| H | Notes |
+
+---
+
+## Sheet 6: Audit_Log_Requirements
+
+**Frozen Panes:** A4
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Event Type |
+| B | Details to Log |
+| C | Retention Period |
+| D | Alerting Required |
+| E | Review Frequency |
+| F | Status |
+| G | Notes |
+
+---
+
+## Sheet 7: Evidence_Register
+
+**Data Rows:** 8 (rows 1–8) | **Frozen Panes:** A4
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Evidence ID |
+| B | Evidence Type |
+| C | Description |
+| D | Related Process |
+| E | Location/Link |
+| F | Date Collected |
+| G | Collected By |
+| H | Status |
+
+---
+
+## Sheet 8: Approval_SignOff
+
+**Frozen Panes:** A4
+
+### Columns
+
+| Col | Header |
+|-----|--------|
+| A | Role |
+| B | Name |
+| C | Signature |
+| D | Date |
+| E | Status |
+| F | Comments |
+
+---
+
+## Sheet 9: Header_Row
 
 ---
 

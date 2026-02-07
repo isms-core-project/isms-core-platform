@@ -21,13 +21,13 @@
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 This workbook provides a structured framework for documenting and maintaining contacts with relevant authorities as required by ISO 27001:2022 Control A.5.5. Effective authority contacts ensure that your organisation can respond appropriately to security incidents, comply with regulatory notification obligations, and coordinate with external agencies when necessary.
 
-### 1.2 Scope
+### Scope
 
 The Authority Contacts Register covers:
 
@@ -38,7 +38,7 @@ The Authority Contacts Register covers:
 - **Certification Bodies**: ISO certification auditors and accreditation bodies
 - **Industry Regulators**: Sector-specific oversight bodies
 
-### 1.3 Control Requirement
+### Control Requirement
 
 ISO 27001:2022 Control A.5.5 states:
 
@@ -46,7 +46,7 @@ ISO 27001:2022 Control A.5.5 states:
 
 This control ensures that the organisation establishes and maintains relationships with external authorities who may need to be contacted or who may need to contact the organisation in relation to information security matters.
 
-### 1.4 Assessment Domains
+### Assessment Domains
 
 This workbook is **Domain 1 of 5** in the A.5.5-6 External Communications assessment series:
 
@@ -60,11 +60,11 @@ This workbook is **Domain 1 of 5** in the A.5.5-6 External Communications assess
 
 ---
 
-## 2. Prerequisites
+## Prerequisites
 
 Before completing this assessment, ensure you have:
 
-### 2.1 Documentation Requirements
+### Documentation Requirements
 
 - [ ] List of applicable regulations requiring authority notification
 - [ ] Current organisational contact lists
@@ -72,7 +72,7 @@ Before completing this assessment, ensure you have:
 - [ ] Business continuity plans with emergency contact provisions
 - [ ] Regulatory correspondence from the past 12 months
 
-### 2.2 Stakeholder Involvement
+### Stakeholder Involvement
 
 | Role | Responsibility |
 |------|----------------|
@@ -83,7 +83,7 @@ Before completing this assessment, ensure you have:
 | **Facility Manager** | Emergency services contacts |
 | **Security Manager** | Law enforcement coordination |
 
-### 2.3 Information Gathering
+### Information Gathering
 
 Collect the following information for each authority contact:
 
@@ -97,45 +97,9 @@ Collect the following information for each authority contact:
 
 ---
 
-## 3. Workbook Structure
+## Completion Walkthrough
 
-### 3.1 Sheet Overview
-
-| Sheet | Purpose | Input Required |
-|-------|---------|----------------|
-| Instructions | Guidance for completing the workbook | Read only |
-| Authority_Registry | Master list of all authority contacts | Manual entry |
-| Contact_Types | Categorisation of authority types | Reference/customise |
-| Communication_Log | Record of communications with authorities | Ongoing entry |
-| Verification_Register | Contact verification tracking | Manual entry |
-| Evidence_Register | Audit evidence documentation | Manual entry |
-| Approval_SignOff | Management approval workflow | Manual entry |
-
-### 3.2 Sheet Dependencies
-
-```
-Instructions (Read First)
-        ↓
-Contact_Types (Reference)
-        ↓
-Authority_Registry (Complete First)
-        ↓
-   ┌────┴────┐
-   ↓         ↓
-Communication_Log  Verification_Register
-        ↓         ↓
-   └────┬────┘
-        ↓
-Evidence_Register
-        ↓
-Approval_SignOff (Complete Last)
-```
-
----
-
-## 4. Completion Walkthrough
-
-### 4.1 Authority_Registry Sheet
+### Authority_Registry Sheet
 
 This is the core sheet documenting all authority contacts.
 
@@ -168,7 +132,7 @@ This is the core sheet documenting all authority contacts.
 4. **Assign Internal Owners**: Designate who maintains each relationship
 5. **Set Verification Schedule**: Establish verification frequency (minimum annual)
 
-### 4.2 Contact_Types Sheet
+### Contact_Types Sheet
 
 Pre-populated reference sheet for authority categorisation.
 
@@ -190,7 +154,7 @@ Pre-populated reference sheet for authority categorisation.
 - Add organisation-specific categories as needed
 - Ensure all Authority_Registry entries reference valid types
 
-### 4.3 Communication_Log Sheet
+### Communication_Log Sheet
 
 Track all communications with authorities.
 
@@ -219,7 +183,7 @@ Track all communications with authorities.
 - Update status as communications progress
 - Link to evidence storage location
 
-### 4.4 Verification_Register Sheet
+### Verification_Register Sheet
 
 Track periodic verification of contact details.
 
@@ -245,7 +209,7 @@ Track periodic verification of contact details.
 - **Semi-annual** for critical contacts (emergency services, regulators)
 - **Immediate** re-verification after failed contact attempts
 
-### 4.5 Evidence_Register Sheet
+### Evidence_Register Sheet
 
 Document evidence for audit purposes.
 
@@ -265,7 +229,7 @@ Document evidence for audit purposes.
 | Status | Current evidence status | Current |
 | Notes | Additional information | Includes delivery confirmation |
 
-### 4.6 Approval_SignOff Sheet
+### Approval_SignOff Sheet
 
 Management approval for the assessment.
 
@@ -280,9 +244,9 @@ Management approval for the assessment.
 
 ---
 
-## 5. Evidence Collection
+## Evidence Collection
 
-### 5.1 Required Evidence
+### Required Evidence
 
 | Evidence Type | Description | Storage Location |
 |---------------|-------------|------------------|
@@ -292,7 +256,7 @@ Management approval for the assessment.
 | Notification Acknowledgements | Confirmation from authorities | ISMS Evidence Library |
 | Relationship Review Minutes | Annual relationship review records | ISMS Evidence Library |
 
-### 5.2 Evidence Storage Guidelines
+### Evidence Storage Guidelines
 
 - Use consistent naming: `EV-[YEAR]-[SEQ]_[Authority]_[Type].pdf`
 - Store in ISMS Evidence Library (SharePoint/Confluence or equivalent)
@@ -302,9 +266,9 @@ Management approval for the assessment.
 
 ---
 
-## 6. Common Pitfalls
+## Common Pitfalls
 
-### 6.1 Mistakes to Avoid
+### Mistakes to Avoid
 
 ❌ **MISTAKE:** Using generic department emails instead of specific contact addresses
 ✅ **CORRECT:** Document official, verified contact channels including named contacts where possible
@@ -338,11 +302,11 @@ Management approval for the assessment.
 
 ---
 
-## 7. Quality Checklist
+## Quality Checklist
 
 Before submitting for approval, verify:
 
-### 7.1 Completeness
+### Completeness
 
 - [ ] All applicable authority types have at least one contact documented
 - [ ] All mandatory fields in Authority_Registry are completed
@@ -350,21 +314,21 @@ Before submitting for approval, verify:
 - [ ] Internal relationship owners assigned for all authorities
 - [ ] Communication log includes recent entries (evidence of active management)
 
-### 7.2 Accuracy
+### Accuracy
 
 - [ ] Contact details verified against official sources
 - [ ] Authority types correctly categorised
 - [ ] Jurisdiction information accurate
 - [ ] Communication protocols align with authority requirements
 
-### 7.3 Evidence
+### Evidence
 
 - [ ] Evidence exists for all documented communications
 - [ ] Evidence properly stored and accessible
 - [ ] Evidence naming convention followed
 - [ ] Evidence retention periods applied
 
-### 7.4 Governance
+### Governance
 
 - [ ] All required approvals obtained
 - [ ] Review schedule established
@@ -372,9 +336,9 @@ Before submitting for approval, verify:
 
 ---
 
-## 8. Review and Approval
+## Review and Approval
 
-### 8.1 Review Frequency
+### Review Frequency
 
 | Review Type | Frequency | Triggered By |
 |-------------|-----------|--------------|
@@ -382,7 +346,7 @@ Before submitting for approval, verify:
 | Contact Verification | Semi-annual | Scheduled verification |
 | Ad-hoc Update | As needed | Regulatory change, incident, failed contact |
 
-### 8.2 Approval Authority
+### Approval Authority
 
 | Action | Approval Required |
 |--------|-------------------|
@@ -392,7 +356,6 @@ Before submitting for approval, verify:
 | Regulatory notification | DPO + Legal + CISO |
 
 ---
-
 
 **END OF USER GUIDE**
 

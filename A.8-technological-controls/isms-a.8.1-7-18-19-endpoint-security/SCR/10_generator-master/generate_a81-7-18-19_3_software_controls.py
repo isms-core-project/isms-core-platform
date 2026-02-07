@@ -143,6 +143,8 @@ ARROW = '\u2192'      # → Right arrow
 # DOCUMENT IDENTIFICATION
 # ============================================================================
 DOCUMENT_ID = "ISMS-IMP-A.8.1-7-18-19.3"
+GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"ISMS-IMP-A.8.1-7-18-19.S3_Software_Controls_{GENERATED_TIMESTAMP}.xlsx"
 CONTROL_REF = "ISO/IEC 27001:2022 - Controls A.8.1, A.8.7, A.8.18, A.8.19: Endpoint Security"
 
 def create_workbook() -> Workbook:

@@ -304,6 +304,7 @@ ARROW = '\u2192'      # → Right arrow
 
 DOCUMENT_ID = "ISMS-IMP-A.5.30.S3"
 GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_RPO_RTO_Compliance_{GENERATED_TIMESTAMP}.xlsx"
 
 # Color scheme (consistent with reference implementations)
 HEADER_FILL = PatternFill(start_color='003366', end_color='003366', fill_type='solid')

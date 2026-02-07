@@ -26,7 +26,7 @@ This is the **User Completion Guide**. The companion Technical Specification is 
 
 ---
 
-## 1.1 Assessment Overview
+## Assessment Overview
 
 ### Purpose
 
@@ -85,7 +85,7 @@ The Password Policy Implementation Assessment covers:
 
 ---
 
-## 1.2 Control Requirements
+## Control Requirements
 
 ### ISO 27001:2022 Control A.5.17
 
@@ -122,7 +122,7 @@ Per ISO/IEC 27001:2022 Control A.5.17:
 
 ---
 
-## 1.3 Prerequisites
+## Prerequisites
 
 ### Required Access
 
@@ -155,46 +155,7 @@ Per ISO/IEC 27001:2022 Control A.5.17:
 
 ---
 
-## 1.4 Workbook Structure
-
-### Sheet Overview
-
-| Sheet | Purpose | Assessor Action |
-|-------|---------|-----------------|
-| **Instructions** | Guidance and methodology | Read before starting |
-| **System_Inventory** | List all systems requiring password auth | Populate from asset inventory |
-| **Policy_Requirements** | Password policy requirements reference | Reference (pre-populated) |
-| **Compliance_Assessment** | Document configuration per system | Complete for each system |
-| **Gap_Analysis** | Auto-identified non-compliance | Review and validate |
-| **Remediation_Tracker** | Actions to address gaps | Plan and track fixes |
-| **Exception_Register** | Systems unable to comply | Document with compensating controls |
-| **Approval_SignOff** | Assessment authorisation | Obtain signatures |
-
-### Data Flow
-
-```
-Asset Inventory (A.5.9)
-        │
-        ▼
-System_Inventory ────────► Policy_Requirements
-        │                         │
-        ▼                         ▼
-Compliance_Assessment ◄───────────┘
-        │
-        ▼
-Gap_Analysis
-        │
-        ├────────► Remediation_Tracker
-        │
-        └────────► Exception_Register
-                          │
-                          ▼
-                  Approval_SignOff
-```
-
----
-
-## 1.5 Completion Walkthrough
+## Completion Walkthrough
 
 ### Step 1: Populate System Inventory
 
@@ -407,7 +368,7 @@ SHOW password_encryption;
 
 ---
 
-## 1.6 Evidence Collection
+## Evidence Collection
 
 ### Evidence Requirements
 
@@ -455,7 +416,7 @@ EVD-A.5.17.1_[SystemID]_[EvidenceType]_[YYYYMMDD].[ext]
 
 ---
 
-## 1.7 Common Pitfalls
+## Common Pitfalls
 
 Avoid these common mistakes when completing the Password Policy assessment:
 
@@ -502,7 +463,7 @@ Avoid these common mistakes when completing the Password Policy assessment:
 
 ---
 
-## 1.8 Quality Checklist
+## Quality Checklist
 
 Before submitting the assessment, verify:
 
@@ -541,7 +502,7 @@ Before submitting the assessment, verify:
 
 ---
 
-## 1.9 Review and Approval
+## Review and Approval
 
 ### Review Workflow
 
@@ -595,7 +556,6 @@ The Approval_SignOff sheet requires:
    - Date and signature
 
 ---
-
 
 **END OF USER GUIDE**
 

@@ -19,35 +19,13 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-1. [PART I: USER COMPLETION GUIDE](#part-i-user-completion-guide)
-   - [1.1 Assessment Overview](#11-assessment-overview)
-   - [1.2 Control Requirements](#12-control-requirements)
-   - [1.3 Prerequisites](#13-prerequisites)
-   - [1.4 Metrics and KPIs](#14-metrics-and-kpis)
-   - [1.5 Workbook Structure](#15-workbook-structure)
-   - [1.6 Completion Walkthrough](#16-completion-walkthrough)
-   - [1.7 Data Sources](#17-data-sources)
-   - [1.8 Evidence Collection](#18-evidence-collection)
-   - [1.9 Common Pitfalls](#19-common-pitfalls)
-   - [1.10 Quality Checklist](#110-quality-checklist)
-   - [1.11 Review and Approval](#111-review-and-approval)
-   - [1.12 Integration with Other Controls](#112-integration-with-other-controls)
-2. [PART II: TECHNICAL SPECIFICATION](#part-ii-technical-specification)
-   - [2.1 Workbook Architecture](#21-workbook-architecture)
-   - [2.2 Sheet Specifications](#22-sheet-specifications)
-   - [2.3 Data Validations](#23-data-validations)
-   - [2.4 Conditional Formatting](#24-conditional-formatting)
-   - [2.5 Formula Specifications](#25-formula-specifications)
-   - [2.6 Cell Styling Standards](#26-cell-styling-standards)
-   - [2.7 Generator Script Reference](#27-generator-script-reference)
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.29.4-TG.
 
 ---
 
----
-
-## 1.1 Assessment Overview
+## Assessment Overview
 
 ### Purpose
 
@@ -104,7 +82,7 @@ The Compliance Dashboard delivers:
 
 ---
 
-## 1.2 Control Requirements
+## Control Requirements
 
 ### ISO 27001:2022 Control A.5.29
 
@@ -146,7 +124,7 @@ ISO 27001 auditors reviewing governance metrics will verify:
 
 ---
 
-## 1.3 Prerequisites
+## Prerequisites
 
 ### Before Starting This Dashboard
 
@@ -179,7 +157,7 @@ Before proceeding, verify:
 
 ---
 
-## 1.4 Metrics and KPIs
+## Metrics and KPIs
 
 ### Primary Metrics
 
@@ -212,66 +190,7 @@ Before proceeding, verify:
 
 ---
 
-## 1.5 Workbook Structure
-
-### Sheet Overview
-
-The workbook consists of ten sheets:
-
-| Sheet | Purpose | Primary User | Update Frequency |
-|-------|---------|--------------|------------------|
-| **Executive_Dashboard** | High-level summary | Executive Management | Monthly |
-| **BCDR_Security_Status** | BC/DR plan coverage | CISO | Quarterly |
-| **Emergency_Access_Status** | Break-glass readiness | Security Manager | Quarterly |
-| **Personnel_Status** | Team availability | CISO | Quarterly |
-| **Security_Debt_Status** | Debt aging analysis | Security Manager | Monthly |
-| **Disruption_History** | Past incident analysis | Security Team | Per incident |
-| **Trend_Analysis** | Historical performance | CISO | Quarterly |
-| **Data_Sources** | Source workbook references | Security Administrator | Monthly |
-| **Instructions** | Guidance | All users | As needed |
-| **Approval_SignOff** | Dashboard approval | Approvers | Monthly |
-
-### Sheet Relationships
-
-```
-┌─────────────────────┐
-│    Instructions     │
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│   Data_Sources      │ ◄── Link source workbooks
-└──────────┬──────────┘
-           │
-     ┌─────┴─────┬─────────┬─────────┬─────────┐
-     ▼           ▼         ▼         ▼         ▼
-┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐
-│BCDR_    │ │Emergency│ │Personnel│ │Security_│ │Disruption
-│Security │ │_Access_ │ │_Status  │ │Debt_    │ │_History │
-│_Status  │ │Status   │ │         │ │Status   │ │         │
-└────┬────┘ └────┬────┘ └────┬────┘ └────┬────┘ └────┬────┘
-     │           │           │           │           │
-     └─────┬─────┴───────────┴───────────┴───────────┘
-           │
-           ▼
-┌─────────────────────┐
-│  Trend_Analysis     │
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│Executive_Dashboard  │ ◄── Summary view
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│  Approval_SignOff   │
-└─────────────────────┘
-```
-
----
-
-## 1.6 Completion Walkthrough
+## Completion Walkthrough
 
 ### Step-by-Step Process
 
@@ -377,7 +296,7 @@ The workbook consists of ten sheets:
 
 ---
 
-## 1.7 Data Sources
+## Data Sources
 
 ### Source Workbook Mapping
 
@@ -393,7 +312,7 @@ The workbook consists of ten sheets:
 
 ---
 
-## 1.8 Evidence Collection
+## Evidence Collection
 
 ### Evidence Requirements
 
@@ -406,7 +325,7 @@ The workbook consists of ten sheets:
 
 ---
 
-## 1.9 Common Pitfalls
+## Common Pitfalls
 
 Avoid these common mistakes when completing this dashboard:
 
@@ -476,7 +395,7 @@ Avoid these common mistakes when completing this dashboard:
 
 ---
 
-## 1.10 Quality Checklist
+## Quality Checklist
 
 Before publishing the dashboard, verify:
 
@@ -530,7 +449,7 @@ Before publishing the dashboard, verify:
 
 ---
 
-## 1.11 Review and Approval
+## Review and Approval
 
 ### Approval Workflow
 
@@ -552,7 +471,7 @@ Archive to ISMS Evidence Library
 
 ---
 
-## 1.12 Integration with Other Controls
+## Integration with Other Controls
 
 ### Related ISMS Controls
 
@@ -572,7 +491,6 @@ Archive to ISMS Evidence Library
 | **ISMS-IMP-A.5.29.3** | Primary source for recovery metrics |
 
 ---
-
 
 **END OF USER GUIDE**
 

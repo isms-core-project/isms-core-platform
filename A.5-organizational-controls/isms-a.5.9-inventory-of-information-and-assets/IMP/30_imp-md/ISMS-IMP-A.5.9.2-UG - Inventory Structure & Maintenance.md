@@ -1132,9 +1132,6 @@ Document approval in assessment workbook:
 
 ---
 
-**END OF ISMS-IMP-A.5.9.2 PART I - USER COMPLETION GUIDE**
-
-
 **END OF USER GUIDE**
 
 ---

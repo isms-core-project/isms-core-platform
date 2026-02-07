@@ -62,19 +62,6 @@ Before completing this assessment:
 - [ ] Access to corrective action owners
 - [ ] Evidence storage capability
 
-### Workbook Structure
-
-| Sheet | Purpose | Key Actions |
-|-------|---------|-------------|
-| Instructions | Guidance and metadata | Review before starting |
-| Findings_Register | Consolidated findings | Record all findings |
-| Remediation_Actions | Action tracking | Plan and track actions |
-| Root_Cause_Analysis | RCA documentation | Conduct RCA |
-| Verification_Log | Closure verification | Verify remediation |
-| Trend_Analysis | Pattern analysis | Analyse trends |
-| Evidence_Register | Evidence management | Link evidence |
-| Approval_SignOff | Authorisation | Obtain sign-offs |
-
 ### Completion Walkthrough
 
 **Step 1: Findings_Register Sheet**
@@ -350,7 +337,6 @@ Before submitting:
 | 90 days | Executive Management |
 
 ---
-
 
 **END OF USER GUIDE**
 

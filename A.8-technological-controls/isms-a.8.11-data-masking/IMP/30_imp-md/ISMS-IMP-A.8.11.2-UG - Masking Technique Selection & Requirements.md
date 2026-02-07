@@ -2874,8 +2874,6 @@ Problem: Vague description, inaccessible location, no context
 
 ---
 
-**END OF USER GUIDE**
-
 ---
 
 # Document Sign-Off
@@ -2899,15 +2897,11 @@ Problem: Vague description, inaccessible location, no context
 
 ---
 
-*"The right masking technique is the one that protects data, maintains functionality, meets regulations, and can be validated. If you can't prove it works, it doesn't work."*
-
-**END OF ISMS-IMP-A.8.11.2 PART I: USER COMPLETION GUIDE**
-
-# ISMS-IMP-A.8.11.2 - Masking Technique Selection & Requirements
+**END OF USER GUIDE**
 
 ---
 
-*"The measure of intelligence is the ability to change."*
-— Albert Einstein
+*"The right masking technique is the one that protects data, maintains functionality, meets regulations, and can be validated. If you can't prove it works, it doesn't work."*
+— Data Protection Maxim
 
 <!-- QA_VERIFIED: 2026-02-06 -->

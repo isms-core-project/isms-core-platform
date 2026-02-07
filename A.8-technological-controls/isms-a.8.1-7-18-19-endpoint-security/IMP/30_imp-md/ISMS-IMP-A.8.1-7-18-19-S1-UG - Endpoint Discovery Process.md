@@ -637,61 +637,61 @@ For audit purposes, maintain the following evidence:
 
 ## Common Pitfalls (10 Mistakes to Avoid)
 
-### 1. Single Discovery Method Only
+### Single Discovery Method Only
 
 **Mistake:** Relying on only MDM export or only network scanning  
 **Why It's Wrong:** No single method achieves 100% coverage - managed devices miss BYOD, network scans miss offline devices  
 **Solution:** Use minimum 3 discovery methods (MDM + AD + Network Scan recommended)
 
-### 2. Ignoring BYOD Devices
+### Ignoring BYOD Devices
 
 **Mistake:** Not implementing BYOD discovery method  
 **Why It's Wrong:** BYOD devices access corporate data but remain undiscovered, cannot verify malware protection or software controls  
 **Solution:** Implement user self-service BYOD enrollment, conduct user surveys
 
-### 3. No Deduplication Process
+### No Deduplication Process
 
 **Mistake:** Importing discovery data without deduplication  
 **Why It's Wrong:** Same endpoint discovered multiple times (MDM + AD + Network Scan), inflates counts, creates data quality issues  
 **Solution:** Implement deduplication by Device_ID, merge duplicate records, track merge history
 
-### 4. Stale Endpoints Not Flagged
+### Stale Endpoints Not Flagged
 
 **Mistake:** Not tracking Last_Seen date, no process to investigate stale endpoints  
 **Why It's Wrong:** Inventory contains lost/stolen devices, disposed devices, inactive devices (inflates counts, reduces accuracy)  
 **Solution:** Flag endpoints not seen >30 days, investigate monthly, remove disposed/lost devices
 
-### 5. No Classification Rules
+### No Classification Rules
 
 **Mistake:** Subjective/inconsistent endpoint classification  
 **Why It's Wrong:** Same device type classified differently by different administrators, criticality not based on data accessed  
 **Solution:** Document classification rules, apply consistently, use decision trees
 
-### 6. Forgetting Air-Gapped Devices
+### Forgetting Air-Gapped Devices
 
 **Mistake:** Assuming all endpoints are network-connected  
 **Why It's Wrong:** Air-gapped lab devices, isolated security environments, OT devices exist but undiscovered  
 **Solution:** Manual discovery process for air-gapped devices, physical inventory walks
 
-### 7. Privacy Violations in BYOD Discovery
+### Privacy Violations in BYOD Discovery
 
 **Mistake:** Deep-scanning BYOD devices, collecting personal data without consent  
 **Why It's Wrong:** Violates GDPR/FADP privacy requirements, creates legal liability  
 **Solution:** BYOD discovery limited to corporate container only, user consent required, privacy notice provided
 
-### 8. No Ongoing Maintenance
+### No Ongoing Maintenance
 
 **Mistake:** One-time discovery, no weekly/monthly updates  
 **Why It's Wrong:** Inventory becomes stale (new devices added, old devices removed), coverage degrades over time  
 **Solution:** Weekly automated synchronization, monthly reconciliation, quarterly review
 
-### 9. Coverage Calculation Errors
+### Coverage Calculation Errors
 
 **Mistake:** Calculating coverage as (Discovered / All Devices in MDM) instead of (Discovered / Expected Total)  
 **Why It's Wrong:** Misses unmanaged devices entirely, falsely high coverage rate  
 **Solution:** Estimate expected total endpoints (asset database + user count + BYOD estimates), calculate coverage against expected total
 
-### 10. No Approval Workflow
+### No Approval Workflow
 
 **Mistake:** Endpoint inventory not reviewed or approved by stakeholders  
 **Why It's Wrong:** Data quality issues not caught, classification errors not corrected, no stakeholder buy-in  

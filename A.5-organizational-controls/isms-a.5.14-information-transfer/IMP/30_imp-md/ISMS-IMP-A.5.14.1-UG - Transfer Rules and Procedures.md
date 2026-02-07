@@ -26,13 +26,13 @@
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 The **Transfer Rules and Procedures Assessment Workbook** (ISMS-IMP-A.5.14.1) documents your organisation's information transfer policies, procedures, and acceptable methods for each classification level. This assessment ensures that appropriate transfer rules exist for electronic, physical, and verbal information exchanges.
 
-### 1.2 Scope
+### Scope
 
 This assessment covers:
 - **Transfer policy elements**: Overarching policy requirements for information transfer
@@ -42,7 +42,7 @@ This assessment covers:
 - **Verbal transfer protocols**: Meetings, calls, and discussion guidelines
 - **Supporting evidence**: Documentation demonstrating rule implementation
 
-### 1.3 Business Value
+### Business Value
 
 Completing this assessment delivers:
 - **Clear transfer guidelines** mapped to classification levels
@@ -51,7 +51,7 @@ Completing this assessment delivers:
 - **Consistent handling** across all transfer channels
 - **Audit readiness** with documented rules and approvals
 
-### 1.4 Control Requirement
+### Control Requirement
 
 > *ISO/IEC 27001:2022 Annex A.5.14 — Information Transfer*
 >
@@ -59,25 +59,25 @@ Completing this assessment delivers:
 
 ---
 
-## 2. Prerequisites
+## Prerequisites
 
 Before starting this assessment, ensure you have:
 
-### 2.1 Required Documents
+### Required Documents
 - [ ] ISMS-POL-A.5.14 (Information Transfer Policy) — approved and current
 - [ ] ISMS-POL-A.5.12-13 (Classification Scheme) — defines classification levels
 - [ ] ISMS-POL-A.8.24 (Cryptography Policy) — encryption requirements
 - [ ] Existing transfer procedures (if any)
 - [ ] IT architecture documentation showing transfer systems
 
-### 2.2 Required Access
+### Required Access
 - [ ] Access to email system administration (Exchange, M365)
 - [ ] Cloud storage configuration (SharePoint, OneDrive)
 - [ ] File transfer system documentation (SFTP, MFT)
 - [ ] DLP system configuration
 - [ ] Security policy repository
 
-### 2.3 Required Personnel
+### Required Personnel
 - [ ] IT Security Manager
 - [ ] Email/Messaging Administrator
 - [ ] Cloud Services Administrator
@@ -86,24 +86,7 @@ Before starting this assessment, ensure you have:
 
 ---
 
-## 3. Workbook Structure
-
-The workbook contains **8 sheets** organised as follows:
-
-| Sheet | Purpose | Input Required |
-|-------|---------|----------------|
-| Instructions | Guidance and colour coding reference | None (read-only) |
-| Transfer_Policy | Overarching policy element documentation | Owner, Status |
-| Transfer_Methods | Acceptable methods by classification level | Approval flags, Notes |
-| Electronic_Transfer | Email, cloud, messaging, and file sharing rules | Notes, Customisations |
-| Physical_Transfer | Media, courier, document transfer procedures | Notes, Customisations |
-| Verbal_Transfer | Meeting, call, and discussion protocols | Notes, Customisations |
-| Evidence_Register | Supporting documentation references | Location, Status |
-| Approval_SignOff | Formal sign-off and version history | Signatures, Dates |
-
----
-
-## 4. Completion Walkthrough
+## Completion Walkthrough
 
 ### Sheet 1: Instructions
 
@@ -302,9 +285,9 @@ Columns contain classification levels (PUBLIC, INTERNAL, CONFIDENTIAL, RESTRICTE
 
 ---
 
-## 5. Evidence Collection
+## Evidence Collection
 
-### 5.1 Evidence Requirements by Sheet
+### Evidence Requirements by Sheet
 
 | Sheet | Required Evidence |
 |-------|-------------------|
@@ -314,7 +297,7 @@ Columns contain classification levels (PUBLIC, INTERNAL, CONFIDENTIAL, RESTRICTE
 | Physical_Transfer | Courier contracts, packaging procedures, chain of custody forms |
 | Verbal_Transfer | Meeting room booking system config, video platform settings |
 
-### 5.2 Evidence Storage
+### Evidence Storage
 
 Store all evidence in the ISMS Evidence Repository with the following structure:
 ```
@@ -326,7 +309,7 @@ Store all evidence in the ISMS Evidence Repository with the following structure:
 │   └── Audit-Logs/
 ```
 
-### 5.3 Evidence Naming Convention
+### Evidence Naming Convention
 
 Use format: `EV-514-[Type]-[Description]-[YYYYMMDD].[ext]`
 
@@ -337,7 +320,7 @@ Examples:
 
 ---
 
-## 6. Common Pitfalls
+## Common Pitfalls
 
 ### ❌ MISTAKE: Allowing personal email for "emergency" transfers without controls
 ✅ CORRECT: Define specific conditions, require post-facto documentation within 24 hours, and manager notification
@@ -371,7 +354,7 @@ Examples:
 
 ---
 
-## 7. Quality Checklist
+## Quality Checklist
 
 Before submitting the completed workbook, verify:
 
@@ -412,27 +395,26 @@ Before submitting the completed workbook, verify:
 
 ---
 
-## 8. Review and Approval
+## Review and Approval
 
-### 8.1 Review Cycle
+### Review Cycle
 - **Frequency**: Annual, or upon significant change
 - **Triggers**: New transfer systems, policy updates, security incidents
 
-### 8.2 Approval Workflow
+### Approval Workflow
 1. **Preparer** completes all sheets
 2. **IT Security Manager** validates technical accuracy
 3. **ISO** verifies policy alignment
 4. **Department Heads** confirm operational feasibility
 5. **CISO** provides final approval (if RESTRICTED content)
 
-### 8.3 Post-Approval Actions
+### Post-Approval Actions
 - Communicate rules to all personnel
 - Update training materials
 - Configure technical controls to enforce rules
 - Schedule next review date
 
 ---
-
 
 **END OF USER GUIDE**
 

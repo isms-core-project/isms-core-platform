@@ -281,6 +281,7 @@ ARROW = '\u2192'      # → Right arrow
 
 DOCUMENT_ID = "ISMS-IMP-A.5.30.S1"
 GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")
+OUTPUT_FILENAME = f"{DOCUMENT_ID}_Backup_Inventory_{GENERATED_TIMESTAMP}.xlsx"
 
 # Color scheme (consistent with 8.23/8.20 reference implementations)
 HEADER_FILL = PatternFill(start_color='003366', end_color='003366', fill_type='solid')

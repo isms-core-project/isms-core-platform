@@ -193,25 +193,6 @@ applicable standards during risk assessment based on:
 
 ---
 
-## Excel Workbook Structure
-
-**Workbook Name:** `ISMS_A_8_9_4_Security_Hardening_Assessment_YYYYMMDD.xlsx`
-
-**Sheets:**
-1. Instructions
-2. Hardening_Standard_Register
-3. Asset_Type_Hardening_Matrix
-4. Asset_Hardening_Assessment
-5. Control_Compliance_Detail
-6. Exception_Management
-7. Remediation_Tracking
-8. Compliance_Dashboard
-9. Gap_Prioritization
-10. Evidence_Register (100 rows)
-11. Approval_Sign_Off
-
----
-
 ## Sheet 1: Instructions
 
 ### Purpose
@@ -2393,7 +2374,6 @@ Configuration management team, system administrators, IT operations, security en
 - ISMS-CTX-A.8.9: Configuration Management Reference (NOT ISMS)
 
 ---
-
 
 **END OF USER GUIDE**
 

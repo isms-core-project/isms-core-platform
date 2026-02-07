@@ -27,38 +27,15 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-### PART I: USER COMPLETION GUIDE
-1. [Assessment Overview](#1-assessment-overview)
-2. [Control Requirements](#2-control-requirements)
-3. [Prerequisites](#3-prerequisites)
-4. [Review Triggers and Cycles](#4-review-triggers-and-cycles)
-5. [Change Management Framework](#5-change-management-framework)
-6. [Workbook Structure](#6-workbook-structure)
-7. [Completion Walkthrough](#7-completion-walkthrough)
-8. [Escalation Management](#8-escalation-management)
-9. [Communication Requirements](#9-communication-requirements)
-10. [Evidence Collection](#10-evidence-collection)
-11. [Common Pitfalls](#11-common-pitfalls)
-12. [Quality Checklist](#12-quality-checklist)
-13. [Review and Approval](#13-review-and-approval)
-14. [Related Controls](#14-related-controls)
-
-### PART II: TECHNICAL SPECIFICATION
-15. [Workbook Architecture](#15-workbook-architecture)
-16. [Sheet Specifications](#16-sheet-specifications)
-17. [Data Validation Rules](#17-data-validation-rules)
-18. [Conditional Formatting](#18-conditional-formatting)
-19. [Formula Specifications](#19-formula-specifications)
-20. [Cell Styling Standards](#20-cell-styling-standards)
-21. [Generator Script Reference](#21-generator-script-reference)
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.37.3-TG.
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 The Procedure Review and Update Tracking workbook manages the complete lifecycle of procedure maintenance, from scheduled reviews through change implementation and communication. Procedures are living documents that require systematic review to remain accurate, relevant, and aligned with current systems and processes.
 
@@ -70,7 +47,7 @@ This assessment tracks:
 - **Communication**: Distribution and acknowledgement of updates
 - **Escalations**: Management of overdue reviews and blocked changes
 
-### 1.2 Scope
+### Scope
 
 This workbook covers:
 - All procedures documented in the Procedure Inventory (ISMS-IMP-A.5.37.1)
@@ -80,7 +57,7 @@ This workbook covers:
 - Update communication and acknowledgement
 - Escalation of overdue or blocked items
 
-### 1.3 Benefits
+### Benefits
 
 | Stakeholder | Benefit |
 |-------------|---------|
@@ -90,7 +67,7 @@ This workbook covers:
 | **Auditors** | Evidence of systematic review and change control |
 | **Personnel** | Access to current, accurate operating procedures |
 
-### 1.4 Assessment Frequency
+### Assessment Frequency
 
 | Activity | Frequency |
 |----------|-----------|
@@ -103,9 +80,9 @@ This workbook covers:
 
 ---
 
-## 2. Control Requirements
+## Control Requirements
 
-### 2.1 ISO 27001:2022 A.5.37 Requirements for Review
+### ISO 27001:2022 A.5.37 Requirements for Review
 
 The control requirement for documented operating procedures includes implicit requirements for maintaining procedure currency:
 
@@ -117,7 +94,7 @@ The control requirement for documented operating procedures includes implicit re
 | **Accessibility** | Updated versions available to personnel who need them |
 | **Version Control** | Clear identification of current authoritative version |
 
-### 2.2 ISO 27002:2022 Implementation Guidance
+### ISO 27002:2022 Implementation Guidance
 
 ISO 27002 provides guidance on maintaining documented procedures:
 
@@ -129,7 +106,7 @@ ISO 27002 provides guidance on maintaining documented procedures:
 | **Communication** | Personnel informed of significant changes |
 | **Version Management** | Clear version numbering and history |
 
-### 2.3 Review Trigger Matrix
+### Review Trigger Matrix
 
 | Trigger Category | Trigger Event | Review Type | Timeframe |
 |------------------|---------------|-------------|-----------|
@@ -148,9 +125,9 @@ ISO 27002 provides guidance on maintaining documented procedures:
 
 ---
 
-## 3. Prerequisites
+## Prerequisites
 
-### 3.1 Required Inputs
+### Required Inputs
 
 Before starting the Review and Update Tracking assessment, ensure you have:
 
@@ -164,7 +141,7 @@ Before starting the Review and Update Tracking assessment, ensure you have:
 | **Change Calendar** | IT change management | System changes requiring review |
 | **Regulatory Updates** | Legal/compliance | Regulatory changes affecting procedures |
 
-### 3.2 Access Requirements
+### Access Requirements
 
 | System/Resource | Access Level | Purpose |
 |-----------------|--------------|---------|
@@ -175,7 +152,7 @@ Before starting the Review and Update Tracking assessment, ensure you have:
 | **Communication System** | Send | Distribute update notifications |
 | **Training System** | Read/Update | Track training requirements |
 
-### 3.3 Stakeholder Contacts
+### Stakeholder Contacts
 
 Identify and confirm availability of:
 
@@ -189,9 +166,9 @@ Identify and confirm availability of:
 
 ---
 
-## 4. Review Triggers and Cycles
+## Review Triggers and Cycles
 
-### 4.1 Review Cycle by Criticality
+### Review Cycle by Criticality
 
 | Criticality | Review Cycle | Rationale | Example Procedures |
 |-------------|:------------:|-----------|-------------------|
@@ -200,7 +177,7 @@ Identify and confirm availability of:
 | **Medium** | 12 months | Standard operational procedures | User onboarding, equipment maintenance, documentation updates |
 | **Low** | 24 months | Stable procedures with infrequent changes | Office procedures, archive management |
 
-### 4.2 Mandatory Review Triggers
+### Mandatory Review Triggers
 
 | Trigger | Review Scope | Timeframe | Escalation If Missed |
 |---------|--------------|-----------|----------------------|
@@ -211,7 +188,7 @@ Identify and confirm availability of:
 | **Audit Finding** | Finding-related sections | Per CAR timeline | L2 if CAR at risk |
 | **Personnel Change** | Owner verification | Within 30 days of notice | L1 at 14 days |
 
-### 4.3 Review Outcomes
+### Review Outcomes
 
 | Outcome | Definition | Actions Required |
 |---------|------------|------------------|
@@ -224,9 +201,9 @@ Identify and confirm availability of:
 
 ---
 
-## 5. Change Management Framework
+## Change Management Framework
 
-### 5.1 Change Categories
+### Change Categories
 
 | Category | Description | Examples | Approval Authority |
 |----------|-------------|----------|-------------------|
@@ -235,7 +212,7 @@ Identify and confirm availability of:
 | **Major** | Process or content change | New steps, changed sequence, tool changes, scope changes | Management Approval (within 14 days) |
 | **Emergency** | Urgent operational necessity | Immediate safety/security requirements | Expedited approval + retrospective review (within 24 hours) |
 
-### 5.2 Change Request Workflow
+### Change Request Workflow
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -272,7 +249,7 @@ Identify and confirm availability of:
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
-### 5.3 Impact Assessment Checklist
+### Impact Assessment Checklist
 
 For each change request, assess:
 
@@ -288,65 +265,7 @@ For each change request, assess:
 
 ---
 
-## 6. Workbook Structure
-
-### 6.1 Sheet Overview
-
-| Sheet # | Sheet Name | Purpose | Primary Users |
-|:-------:|------------|---------|---------------|
-| 1 | Review_Schedule | Track scheduled and completed reviews | ISM, Procedure Owners |
-| 2 | Change_Requests | Log and track change requests | All stakeholders |
-| 3 | Version_History | Historical record of procedure versions | Auditors, ISM |
-| 4 | Communication_Log | Track update notifications | ISM, Training |
-| 5 | Overdue_Escalation | Manage escalations for overdue items | ISM, Management |
-| 6 | Evidence_Register | Link to review and change evidence | ISM, Auditors |
-| 7 | Metrics_Summary | KPIs and trend data | Management, ISM |
-| 8 | Instructions | User guidance | All users |
-
-### 6.2 Sheet Relationships
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    WORKBOOK DATA FLOW                           │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  ┌────────────────┐      ┌────────────────┐                     │
-│  │ A.5.37.1       │      │ Change_Requests│                     │
-│  │ Inventory      │─────▶│ Sheet 2        │                     │
-│  └────────────────┘      └────────────────┘                     │
-│         │                        │                              │
-│         ▼                        ▼                              │
-│  ┌────────────────┐      ┌────────────────┐                     │
-│  │ Review_Schedule│◀─────│ Version_History│                     │
-│  │ Sheet 1        │      │ Sheet 3        │                     │
-│  └────────────────┘      └────────────────┘                     │
-│         │                        │                              │
-│         ▼                        ▼                              │
-│  ┌────────────────┐      ┌────────────────┐                     │
-│  │ Overdue_       │      │ Communication_ │                     │
-│  │ Escalation     │      │ Log Sheet 4    │                     │
-│  │ Sheet 5        │      └────────────────┘                     │
-│  └────────────────┘              │                              │
-│         │                        │                              │
-│         ▼                        ▼                              │
-│  ┌────────────────┐      ┌────────────────┐                     │
-│  │ Evidence_      │      │ Metrics_       │                     │
-│  │ Register       │◀─────│ Summary        │                     │
-│  │ Sheet 6        │      │ Sheet 7        │                     │
-│  └────────────────┘      └────────────────┘                     │
-│                                  │                              │
-│                                  ▼                              │
-│                         ┌────────────────┐                      │
-│                         │ A.5.37.4       │                      │
-│                         │ Dashboard      │                      │
-│                         └────────────────┘                      │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 7. Completion Walkthrough
+## Completion Walkthrough
 
 ### Step 1: Initialise Review Schedule (Sheet 1)
 
@@ -475,9 +394,9 @@ Example: CR-202602-001
 
 ---
 
-## 8. Escalation Management
+## Escalation Management
 
-### 8.1 Escalation Matrix
+### Escalation Matrix
 
 | Condition | Level | Escalate To | Timeframe | Required Action |
 |-----------|:-----:|-------------|-----------|-----------------|
@@ -488,7 +407,7 @@ Example: CR-202602-001
 | CR blocked >30 days | L2 | Management | At day 30 | Management decision required |
 | Emergency CR pending >24h | L2 | CISO | At 24 hours | Emergency approval process |
 
-### 8.2 Escalation Response Requirements
+### Escalation Response Requirements
 
 | Level | Response SLA | Resolution SLA |
 |:-----:|--------------|----------------|
@@ -496,7 +415,7 @@ Example: CR-202602-001
 | L2 | Acknowledge within 1 business day | Resolve within 5 business days |
 | L3 | Acknowledge same business day | Executive decision within 2 business days |
 
-### 8.3 Risk Acceptance for Overdue Reviews
+### Risk Acceptance for Overdue Reviews
 
 When a procedure review cannot be completed within the extended escalation timeframe:
 
@@ -508,9 +427,9 @@ When a procedure review cannot be completed within the extended escalation timef
 
 ---
 
-## 9. Communication Requirements
+## Communication Requirements
 
-### 9.1 Notification Matrix
+### Notification Matrix
 
 | Change Type | Notification Scope | Method | Timing | Acknowledgement |
 |-------------|-------------------|--------|--------|-----------------|
@@ -519,7 +438,7 @@ When a procedure review cannot be completed within the extended escalation timef
 | Major | All users | Email + Intranet | Before effective date | Required |
 | Emergency | Affected users | Alert/Immediate | Immediately | Confirmation required |
 
-### 9.2 Communication Content Requirements
+### Communication Content Requirements
 
 | Change Type | Required Content |
 |-------------|------------------|
@@ -527,7 +446,7 @@ When a procedure review cannot be completed within the extended escalation timef
 | **Major** | Procedure name, version, detailed changes, rationale, effective date, training requirements, link to procedure |
 | **Emergency** | URGENT flag, immediate actions required, procedure link, escalation contact |
 
-### 9.3 Training Requirements
+### Training Requirements
 
 | Change Impact | Training Requirement |
 |---------------|---------------------|
@@ -539,9 +458,9 @@ When a procedure review cannot be completed within the extended escalation timef
 
 ---
 
-## 10. Evidence Collection
+## Evidence Collection
 
-### 10.1 Evidence Requirements by Activity
+### Evidence Requirements by Activity
 
 | Activity | Required Evidence | Retention |
 |----------|-------------------|-----------|
@@ -552,7 +471,7 @@ When a procedure review cannot be completed within the extended escalation timef
 | **Training** | Attendance/completion records, materials | 3 years |
 | **Escalation** | Escalation notices, responses, resolution records | 3 years |
 
-### 10.2 Evidence Storage
+### Evidence Storage
 
 | Evidence Type | Storage Location | Naming Convention |
 |---------------|------------------|-------------------|
@@ -562,7 +481,7 @@ When a procedure review cannot be completed within the extended escalation timef
 | Communications | ISMS Evidence Library/A.5.37/Communications/ | PROC-ID_Comm_YYYYMMDD |
 | Training records | Training System + backup copy | PROC-ID_Training_YYYYMMDD |
 
-### 10.3 Evidence Quality Standards
+### Evidence Quality Standards
 
 | Standard | Requirement |
 |----------|-------------|
@@ -574,7 +493,7 @@ When a procedure review cannot be completed within the extended escalation timef
 
 ---
 
-## 11. Common Pitfalls
+## Common Pitfalls
 
 ### Procedure Review Pitfalls
 
@@ -640,7 +559,7 @@ When a procedure review cannot be completed within the extended escalation timef
 
 ---
 
-## 12. Quality Checklist
+## Quality Checklist
 
 ### Pre-Submission Checklist
 
@@ -692,9 +611,9 @@ When a procedure review cannot be completed within the extended escalation timef
 
 ---
 
-## 13. Review and Approval
+## Review and Approval
 
-### 13.1 Assessment Review Workflow
+### Assessment Review Workflow
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -714,7 +633,7 @@ When a procedure review cannot be completed within the extended escalation timef
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-### 13.2 Approval Authorities
+### Approval Authorities
 
 | Assessment Component | Reviewer | Approver |
 |---------------------|----------|----------|
@@ -726,7 +645,7 @@ When a procedure review cannot be completed within the extended escalation timef
 | Escalation Resolution | Department Head | CISO |
 | Quarterly Assessment | Compliance Officer | ISM |
 
-### 13.3 Sign-off Record
+### Sign-off Record
 
 | Role | Name | Signature | Date |
 |------|------|-----------|------|
@@ -736,9 +655,9 @@ When a procedure review cannot be completed within the extended escalation timef
 
 ---
 
-## 14. Related Controls
+## Related Controls
 
-### 14.1 Primary Dependencies
+### Primary Dependencies
 
 | Control | Relationship | Integration |
 |---------|--------------|-------------|
@@ -748,7 +667,7 @@ When a procedure review cannot be completed within the extended escalation timef
 | **A.5.1** | Information Security Policy | Policy framework for procedures |
 | **A.8.32** | Change Management | Aligns with IT change processes |
 
-### 14.2 Related Controls
+### Related Controls
 
 | Control | Relevance |
 |---------|-----------|
@@ -758,7 +677,6 @@ When a procedure review cannot be completed within the extended escalation timef
 | **A.6.3** | Information Security Awareness | Training on procedure changes |
 
 ---
-
 
 **END OF USER GUIDE**
 

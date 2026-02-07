@@ -18,35 +18,9 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-**PART I: USER COMPLETION GUIDE**
-1. [Assessment Overview](#assessment-overview)
-2. [Control Requirements](#control-requirements)
-3. [Prerequisites](#prerequisites)
-4. [Key Terminology](#key-terminology)
-5. [Dashboard Architecture](#dashboard-architecture)
-6. [Key Performance Indicators](#key-performance-indicators)
-7. [Data Aggregation Framework](#data-aggregation-framework)
-8. [Workbook Structure](#workbook-structure)
-9. [Completion Walkthrough](#completion-walkthrough)
-10. [Gap Management Framework](#gap-management-framework)
-11. [Remediation Management](#remediation-management)
-12. [Trend Analysis Framework](#trend-analysis-framework)
-13. [Reporting and Export](#reporting-and-export)
-14. [Evidence Collection](#evidence-collection)
-15. [Common Pitfalls](#common-pitfalls)
-16. [Quality Checklist](#quality-checklist)
-17. [Review & Approval](#review-approval)
-
-**PART II: TECHNICAL SPECIFICATION**
-1. [Workbook Architecture](#workbook-architecture)
-2. [Sheet Specifications](#sheet-specifications)
-3. [Data Validations](#data-validations)
-4. [Conditional Formatting Rules](#conditional-formatting-rules)
-5. [Formula Specifications](#formula-specifications)
-6. [Chart Specifications](#chart-specifications)
-7. [Generator Reference](#generator-reference)
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.10-11.S4-TG.
 
 ---
 
@@ -305,19 +279,6 @@ Risk Status:
 - High: Risk Score 11-20
 - Critical: Risk Score > 20
 ```
-
-### Workbook Structure
-
-| Sheet | Purpose | Key Actions |
-|-------|---------|-------------|
-| Instructions | Guidance and metadata | Complete document information |
-| Executive_Summary | High-level overview | Enter KPIs, key findings |
-| A510_Compliance | Acceptable use scoring | Complete compliance checklist |
-| A511_Compliance | Asset return scoring | Complete compliance checklist |
-| Gap_Register | Consolidated gaps | Track all identified gaps |
-| Remediation_Tracker | Action tracking | Monitor remediation progress |
-| Trend_Analysis | Historical trends | Record periodic compliance |
-| Approval_SignOff | Dashboard approval | Obtain sign-offs |
 
 ### Completion Walkthrough
 
@@ -762,7 +723,6 @@ Before presenting this dashboard:
 | Audit Submission | ISM + CISO |
 
 ---
-
 
 **END OF USER GUIDE**
 

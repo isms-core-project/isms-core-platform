@@ -25,9 +25,9 @@ This section provides step-by-step guidance for completing the Security Testing 
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 The Security Testing and Acceptance workbook tracks security testing activities, manages software composition analysis, and documents acceptance criteria verification for all outsourced development deliverables. It ensures that code delivered by external vendors meets security requirements before integration into production systems.
 
@@ -37,7 +37,7 @@ ISO/IEC 27001:2022 Control A.8.30 states:
 
 Security testing and formal acceptance are critical monitoring activities that verify vendors have met security requirements specified in contracts and policies.
 
-### 1.2 Scope and Applicability
+### Scope and Applicability
 
 **This workbook applies to:**
 
@@ -59,7 +59,7 @@ Security testing and formal acceptance are critical monitoring activities that v
 - SaaS platform configuration (no code delivery)
 - Maintenance patches from software vendors
 
-### 1.3 Business Context
+### Business Context
 
 **Why Security Testing Matters:**
 
@@ -82,7 +82,7 @@ Outsourced code introduces unique risks that require verification before accepta
 | Risk-based | Testing depth proportional to criticality |
 | Evidence-driven | All findings documented and tracked |
 
-### 1.4 Assessment Outputs
+### Assessment Outputs
 
 Upon completion, this workbook provides:
 
@@ -97,9 +97,9 @@ Upon completion, this workbook provides:
 
 ---
 
-## 2. Prerequisites
+## Prerequisites
 
-### 2.1 Required Inputs
+### Required Inputs
 
 Before beginning security testing, ensure you have:
 
@@ -114,7 +114,7 @@ Before beginning security testing, ensure you have:
 | Contract security requirements | Legal | Acceptance criteria |
 | Project classification | Project Manager | Testing depth determination |
 
-### 2.2 Required Approvals Before Testing
+### Required Approvals Before Testing
 
 | Approval Type | Approver | Purpose |
 |---------------|----------|---------|
@@ -123,7 +123,7 @@ Before beginning security testing, ensure you have:
 | Budget approval (external testing) | Finance | If external pentest required |
 | Vendor notification | Project Manager | Inform vendor testing will occur |
 
-### 2.3 Required Knowledge
+### Required Knowledge
 
 Testing personnel should understand:
 
@@ -135,7 +135,7 @@ Testing personnel should understand:
 - Acceptance criteria interpretation
 - Evidence documentation requirements
 
-### 2.4 Tool Requirements
+### Tool Requirements
 
 | Tool Category | Example Tools | Purpose |
 |---------------|---------------|---------|
@@ -148,48 +148,9 @@ Testing personnel should understand:
 
 ---
 
-## 3. Workbook Structure Overview
+## Completion Walkthrough
 
-### 3.1 Sheet Summary
-
-The workbook contains five sheets covering the testing and acceptance lifecycle:
-
-| Sheet | Purpose | Primary Owner | Update Frequency |
-|-------|---------|---------------|------------------|
-| 1: Deliverable Inventory | Track all deliverables | Project Manager | Per delivery |
-| 2: Code Review Tracking | Document review findings | Security Reviewer | Per review |
-| 3: Security Testing Results | Capture test findings | Security Tester | Per test |
-| 4: SBOM Management | Track third-party components | IT Security | Per deliverable |
-| 5: Acceptance Sign-off | Document acceptance decisions | Acceptance Authority | Per acceptance |
-
-### 3.2 Sheet Dependencies
-
-```
-Sheet 1: Deliverable Inventory (Master)
-         ↓ (Deliverable_ID reference)
-Sheet 2: Code Review Tracking
-         ↓ (parallel)
-Sheet 3: Security Testing Results
-         ↓ (parallel)
-Sheet 4: SBOM Management
-         ↓ (all feed into)
-Sheet 5: Acceptance Sign-off
-```
-
-### 3.3 Data Flow
-
-1. **Deliverable Received**: Registered in Sheet 1
-2. **Testing Initiated**: Code review (Sheet 2), security testing (Sheet 3), SBOM review (Sheet 4)
-3. **Findings Triaged**: Critical/High findings sent to vendor
-4. **Remediation Verified**: Retesting completed
-5. **Acceptance Determined**: Criteria verified in Sheet 5
-6. **Sign-off Recorded**: Formal acceptance documented
-
----
-
-## 4. Completion Walkthrough
-
-### 4.1 Sheet 1: Deliverable Inventory – Completion Guide
+### Sheet 1: Deliverable Inventory – Completion Guide
 
 **Purpose**: Maintain a comprehensive list of all deliverables from outsourced development with their testing and acceptance status.
 
@@ -248,7 +209,7 @@ Create a unique identifier using the format `DEL-XXXX`:
 | Rejected | Critical issues, requires remediation | Acceptance authority |
 | Conditional | Accepted with documented conditions | Acceptance authority + CISO |
 
-### 4.2 Sheet 2: Code Review Tracking – Completion Guide
+### Sheet 2: Code Review Tracking – Completion Guide
 
 **Purpose**: Document code review activities and findings for outsourced deliverables.
 
@@ -314,7 +275,7 @@ Record findings by severity:
 | Approved with Findings | No Critical, minor High acceptable | Proceed with remediation tracked |
 | Rejected | Critical or multiple High findings | Return to vendor for remediation |
 
-### 4.3 Sheet 3: Security Testing Results – Completion Guide
+### Sheet 3: Security Testing Results – Completion Guide
 
 **Purpose**: Track security testing activities and findings across all test types.
 
@@ -401,7 +362,7 @@ For each test, document:
 | Medium/Low remediated | Optional | Risk-based |
 | No changes | No | N/A |
 
-### 4.4 Sheet 4: SBOM Management – Completion Guide
+### Sheet 4: SBOM Management – Completion Guide
 
 **Purpose**: Track Software Bill of Materials for all deliverables, identifying third-party component risks.
 
@@ -493,7 +454,7 @@ For issues requiring remediation:
 | License issue | Legal review and decision |
 | Outdated component | Update recommended |
 
-### 4.5 Sheet 5: Acceptance Sign-off – Completion Guide
+### Sheet 5: Acceptance Sign-off – Completion Guide
 
 **Purpose**: Document formal acceptance decision for each deliverable based on testing results.
 
@@ -582,9 +543,9 @@ When criteria cannot be met:
 
 ---
 
-## 5. Evidence Collection
+## Evidence Collection
 
-### 5.1 Evidence Requirements
+### Evidence Requirements
 
 Evidence must be collected for all testing activities:
 
@@ -597,7 +558,7 @@ Evidence must be collected for all testing activities:
 | Waiver approvals | 7 years | ISMS Evidence Library |
 | Finding remediation | 7 years | ISMS Evidence Library |
 
-### 5.2 Evidence Folder Structure
+### Evidence Folder Structure
 
 ```
 ISMS-Evidence-Library/
@@ -622,7 +583,7 @@ ISMS-Evidence-Library/
                 └── ACC-XXXX-Sign-off.pdf
 ```
 
-### 5.3 Evidence for Audit
+### Evidence for Audit
 
 During ISO 27001 audit, be prepared to demonstrate:
 
@@ -637,9 +598,9 @@ During ISO 27001 audit, be prepared to demonstrate:
 
 ---
 
-## 6. Common Pitfalls
+## Common Pitfalls
 
-### 6.1 Testing Coverage Errors
+### Testing Coverage Errors
 
 ❌ **MISTAKE: Accepting code without any security testing**
 All outsourced code must undergo security testing proportional to risk. Skipping testing creates unquantified risk.
@@ -653,7 +614,7 @@ When vendors remediate findings, retest is required to verify fixes. Accepting w
 ❌ **MISTAKE: Skipping DAST for "internal" applications**
 Internal applications still require DAST. Insider threats and lateral movement make internal apps targets.
 
-### 6.2 Finding Management Errors
+### Finding Management Errors
 
 ❌ **MISTAKE: Accepting "won't fix" without risk acceptance**
 If vendor won't fix a finding, formal risk acceptance is required. Never leave findings in limbo.
@@ -664,7 +625,7 @@ False positives should be documented, not deleted. They may need re-evaluation i
 ❌ **MISTAKE: Treating all findings equally**
 Critical findings must block acceptance. Low findings should not block acceptance but should be tracked.
 
-### 6.3 SBOM Errors
+### SBOM Errors
 
 ❌ **MISTAKE: Not requiring SBOM from vendors**
 SBOMs are essential for vulnerability management. Require them contractually and verify delivery.
@@ -675,7 +636,7 @@ SBOMs should be updated with each delivery. New vulnerabilities affect previousl
 ❌ **MISTAKE: Ignoring transitive dependencies**
 Vulnerabilities in transitive dependencies (dependencies of dependencies) are just as dangerous as direct ones.
 
-### 6.4 Acceptance Errors
+### Acceptance Errors
 
 ❌ **MISTAKE: Accepting with open Critical findings**
 Critical findings must be remediated before acceptance. No exceptions without CISO + Executive approval.
@@ -688,9 +649,9 @@ Critical system acceptance requires multiple sign-offs (technical and management
 
 ---
 
-## 7. Quality Checklist
+## Quality Checklist
 
-### 7.1 Pre-Testing Checklist
+### Pre-Testing Checklist
 
 Before beginning security testing:
 
@@ -702,7 +663,7 @@ Before beginning security testing:
 - [ ] SBOM received from vendor
 - [ ] Testing tools configured
 
-### 7.2 Testing Completeness Checklist
+### Testing Completeness Checklist
 
 Before proceeding to acceptance:
 
@@ -735,7 +696,7 @@ Before proceeding to acceptance:
 - [ ] Report received
 - [ ] Critical findings addressed
 
-### 7.3 Acceptance Readiness Checklist
+### Acceptance Readiness Checklist
 
 Before sign-off:
 
@@ -751,9 +712,9 @@ Before sign-off:
 
 ---
 
-## 8. Review and Approval
+## Review and Approval
 
-### 8.1 Testing Approval Authority
+### Testing Approval Authority
 
 | Testing Activity | Approver |
 |------------------|----------|
@@ -761,7 +722,7 @@ Before sign-off:
 | Test plan for High/Standard | IT Security Manager |
 | Penetration test scope | System Owner + IT Security |
 
-### 8.2 Acceptance Authority
+### Acceptance Authority
 
 | Project Classification | Acceptance Authority |
 |------------------------|---------------------|
@@ -769,7 +730,7 @@ Before sign-off:
 | High | IT Security Manager + System Owner |
 | Standard | IT Security Lead + Project Manager |
 
-### 8.3 Acceptance Workflow
+### Acceptance Workflow
 
 ```
 All Testing Complete
@@ -788,7 +749,6 @@ Acceptance Authority Review
 ```
 
 ---
-
 
 **END OF USER GUIDE**
 

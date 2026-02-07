@@ -25,9 +25,9 @@ This section provides step-by-step guidance for using and maintaining the Monito
 
 ---
 
-## 1. Assessment Overview
+## Assessment Overview
 
-### 1.1 Purpose
+### Purpose
 
 The Monitoring and Exceptions Dashboard consolidates outsourced development security status, tracks policy exceptions, monitors vendor performance, and provides executive reporting on compliance posture. It serves as the central command centre for A.8.30 control effectiveness.
 
@@ -37,7 +37,7 @@ ISO/IEC 27001:2022 Control A.8.30 states:
 
 This dashboard directly supports the "monitor and review" requirements by providing consolidated visibility into vendor security compliance and enabling evidence-based management decisions.
 
-### 1.2 Scope and Applicability
+### Scope and Applicability
 
 **This dashboard aggregates data from:**
 
@@ -58,7 +58,7 @@ This dashboard directly supports the "monitor and review" requirements by provid
 | Incident Log | Security incident documentation |
 | Compliance Score Calculation | Weighted overall compliance metric |
 
-### 1.3 Business Context
+### Business Context
 
 **Why Monitoring Matters:**
 
@@ -82,7 +82,7 @@ Effective monitoring transforms outsourced development from a risk liability int
 | Auditors | Compliance evidence, monitoring records |
 | Risk Committee | Exception register, incident trends |
 
-### 1.4 Assessment Outputs
+### Assessment Outputs
 
 Upon completion and regular maintenance, this dashboard provides:
 
@@ -97,9 +97,9 @@ Upon completion and regular maintenance, this dashboard provides:
 
 ---
 
-## 2. Prerequisites
+## Prerequisites
 
-### 2.1 Required Inputs
+### Required Inputs
 
 Before using the dashboard, ensure:
 
@@ -112,7 +112,7 @@ Before using the dashboard, ensure:
 | Monitoring activity records | IT Security | Monitoring log |
 | Incident reports | Incident Management | Incident log |
 
-### 2.2 Required Approvals
+### Required Approvals
 
 | Activity | Approver | Purpose |
 |----------|----------|---------|
@@ -121,7 +121,7 @@ Before using the dashboard, ensure:
 | Dashboard modifications | IT Security Manager | Maintain integrity |
 | Incident classification | CISO | Ensure appropriate handling |
 
-### 2.3 Required Knowledge
+### Required Knowledge
 
 Dashboard users should understand:
 
@@ -132,7 +132,7 @@ Dashboard users should understand:
 - Incident classification criteria
 - Reporting cadences and audiences
 
-### 2.4 Access Requirements
+### Access Requirements
 
 | Role | Access Level | Capabilities |
 |------|--------------|--------------|
@@ -145,54 +145,9 @@ Dashboard users should understand:
 
 ---
 
-## 3. Workbook Structure Overview
+## Completion Walkthrough
 
-### 3.1 Sheet Summary
-
-The workbook contains six sheets providing comprehensive monitoring:
-
-| Sheet | Purpose | Primary Owner | Update Frequency |
-|-------|---------|---------------|------------------|
-| 1: Executive Dashboard | High-level metrics | IT Security | Weekly |
-| 2: Vendor Performance | Individual vendor scorecards | IT Security | Monthly |
-| 3: Exception Register | Policy exception tracking | IT Security | As needed |
-| 4: Monitoring Log | Activity tracking | IT Security | Per activity |
-| 5: Incident Log | Security incident records | IT Security | Per incident |
-| 6: Compliance Score | Weighted scoring | IT Security | Weekly |
-
-### 3.2 Sheet Dependencies
-
-```
-Workbooks 1, 2, 3 (Data Sources)
-         ↓ (aggregation)
-Sheet 6: Compliance Score Calculation
-         ↓ (feeds)
-Sheet 1: Executive Dashboard
-         ↓ (parallel)
-Sheet 2: Vendor Performance
-         ↓ (exceptions from)
-Sheet 3: Exception Register
-         ↓ (activities in)
-Sheet 4: Monitoring Log
-         ↓ (incidents in)
-Sheet 5: Incident Log
-```
-
-### 3.3 Data Flow
-
-1. **Source Data Collection**: Pull metrics from Workbooks 1-3
-2. **Score Calculation**: Compute compliance score in Sheet 6
-3. **Dashboard Update**: Refresh executive metrics in Sheet 1
-4. **Performance Update**: Update vendor scores in Sheet 2
-5. **Exception Management**: Track exceptions in Sheet 3
-6. **Activity Recording**: Document monitoring in Sheet 4
-7. **Incident Documentation**: Record incidents in Sheet 5
-
----
-
-## 4. Completion Walkthrough
-
-### 4.1 Sheet 1: Executive Dashboard – Completion Guide
+### Sheet 1: Executive Dashboard – Completion Guide
 
 **Purpose**: Provide leadership with at-a-glance visibility into outsourced development security status.
 
@@ -265,7 +220,7 @@ Add brief commentary for:
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### 4.2 Sheet 2: Vendor Performance – Completion Guide
+### Sheet 2: Vendor Performance – Completion Guide
 
 **Purpose**: Track individual vendor security performance for management and renewal decisions.
 
@@ -338,7 +293,7 @@ For each vendor, record:
 - Planned actions
 - Relationship status
 
-### 4.3 Sheet 3: Exception Register – Completion Guide
+### Sheet 3: Exception Register – Completion Guide
 
 **Purpose**: Track all approved exceptions to A.8.30 requirements with proper governance.
 
@@ -434,7 +389,7 @@ If exception needs renewal:
 | Medium | 3 | Risk acceptance required |
 | Low | 4 | Management review required |
 
-### 4.4 Sheet 4: Monitoring Log – Completion Guide
+### Sheet 4: Monitoring Log – Completion Guide
 
 **Purpose**: Track all monitoring activities for outsourced development relationships.
 
@@ -499,7 +454,7 @@ Document evidence location for all monitoring activities:
 | High | Quarterly security review, bi-weekly status |
 | Standard | Annual security review, monthly status |
 
-### 4.5 Sheet 5: Incident Log – Completion Guide
+### Sheet 5: Incident Log – Completion Guide
 
 **Purpose**: Track security incidents involving outsourced development vendors.
 
@@ -580,7 +535,7 @@ Document notification timeline:
 | Suspension | Serious breach | Suspend new work |
 | Termination | Egregious or repeated | Contract termination |
 
-### 4.6 Sheet 6: Compliance Score Calculation – Completion Guide
+### Sheet 6: Compliance Score Calculation – Completion Guide
 
 **Purpose**: Calculate weighted overall compliance score for outsourced development security.
 
@@ -620,9 +575,9 @@ For transparency and actionability, document:
 
 ---
 
-## 5. Evidence Collection
+## Evidence Collection
 
-### 5.1 Evidence Requirements
+### Evidence Requirements
 
 Evidence must be maintained for all dashboard activities:
 
@@ -635,7 +590,7 @@ Evidence must be maintained for all dashboard activities:
 | Incident records | 10 years | ISMS Evidence Library |
 | Compliance score history | 7 years | ISMS Evidence Library |
 
-### 5.2 Evidence Folder Structure
+### Evidence Folder Structure
 
 ```
 ISMS-Evidence-Library/
@@ -660,7 +615,7 @@ ISMS-Evidence-Library/
             └── [YYYY-MM]-Score.xlsx
 ```
 
-### 5.3 Evidence for Audit
+### Evidence for Audit
 
 During ISO 27001 audit, be prepared to demonstrate:
 
@@ -675,9 +630,9 @@ During ISO 27001 audit, be prepared to demonstrate:
 
 ---
 
-## 6. Common Pitfalls
+## Common Pitfalls
 
-### 6.1 Dashboard Management Errors
+### Dashboard Management Errors
 
 ❌ **MISTAKE: Infrequent dashboard updates**
 Dashboard must be updated at least weekly. Stale data leads to missed risks and poor decisions.
@@ -691,7 +646,7 @@ Absolute numbers without trends miss important patterns. Always track direction 
 ❌ **MISTAKE: Dashboard manipulation**
 Never adjust metrics to look better. Accurate reporting is essential for risk management.
 
-### 6.2 Exception Management Errors
+### Exception Management Errors
 
 ❌ **MISTAKE: Exceptions without compensating controls**
 Every exception must have compensating controls. Exceptions without controls are unmanaged risk.
@@ -705,7 +660,7 @@ Repeated renewals indicate permanent exceptions. Require root cause remediation 
 ❌ **MISTAKE: Approving without proper authority**
 Exception approval must follow authority matrix. Unauthorised approvals are invalid.
 
-### 6.3 Monitoring Errors
+### Monitoring Errors
 
 ❌ **MISTAKE: Monitoring without documentation**
 Undocumented monitoring has limited audit value. Always record activities and findings.
@@ -716,7 +671,7 @@ Identified actions must be tracked to completion. Untracked actions may never co
 ❌ **MISTAKE: Inconsistent monitoring cadence**
 Monitoring frequency must match risk tier. Critical vendors need more attention.
 
-### 6.4 Incident Management Errors
+### Incident Management Errors
 
 ❌ **MISTAKE: Delayed incident recording**
 Incidents must be recorded immediately. Delayed recording loses details and delays response.
@@ -729,9 +684,9 @@ Every incident is a learning opportunity. Document and implement improvements.
 
 ---
 
-## 7. Quality Checklist
+## Quality Checklist
 
-### 7.1 Weekly Dashboard Checklist
+### Weekly Dashboard Checklist
 
 Before publishing weekly dashboard:
 
@@ -742,7 +697,7 @@ Before publishing weekly dashboard:
 - [ ] Commentary updated for Red items
 - [ ] Dashboard snapshot saved to evidence
 
-### 7.2 Monthly Activities Checklist
+### Monthly Activities Checklist
 
 Monthly governance activities:
 
@@ -753,7 +708,7 @@ Monthly governance activities:
 - [ ] Monthly report generated and distributed
 - [ ] Actions from previous month verified complete
 
-### 7.3 Quarterly Review Checklist
+### Quarterly Review Checklist
 
 Quarterly governance activities:
 
@@ -766,9 +721,9 @@ Quarterly governance activities:
 
 ---
 
-## 8. Review and Approval
+## Review and Approval
 
-### 8.1 Dashboard Approval
+### Dashboard Approval
 
 | Report | Approver | Distribution |
 |--------|----------|--------------|
@@ -777,7 +732,7 @@ Quarterly governance activities:
 | Quarterly Vendor Performance | CISO | Procurement, Management |
 | Annual Compliance Report | CISO + Executive | Audit Committee |
 
-### 8.2 Exception Approval Authority
+### Exception Approval Authority
 
 | Exception Risk | Approver | Documentation |
 |----------------|----------|---------------|
@@ -786,7 +741,7 @@ Quarterly governance activities:
 | Medium | IT Security Manager | Email approval |
 | Low | IT Security Lead | Documented approval |
 
-### 8.3 Reporting Cadence
+### Reporting Cadence
 
 | Report | Frequency | Audience | Due Date |
 |--------|-----------|----------|----------|
@@ -797,7 +752,6 @@ Quarterly governance activities:
 | Incident Summary | As needed | Executive Management | Within 48 hours |
 
 ---
-
 
 **END OF USER GUIDE**
 

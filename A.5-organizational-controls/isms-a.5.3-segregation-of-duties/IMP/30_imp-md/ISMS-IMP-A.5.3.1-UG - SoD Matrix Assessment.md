@@ -18,30 +18,13 @@
 
 ---
 
-## Table of Contents
+### Document Structure
 
-1. [PART I: USER COMPLETION GUIDE](#part-i-user-completion-guide)
-   - [1.1 Assessment Overview](#11-assessment-overview)
-   - [1.2 Control Requirements](#12-control-requirements)
-   - [1.3 Prerequisites](#13-prerequisites)
-   - [1.4 Workbook Structure](#14-workbook-structure)
-   - [1.5 Completion Walkthrough](#15-completion-walkthrough)
-   - [1.6 Evidence Collection](#16-evidence-collection)
-   - [1.7 Common Pitfalls](#17-common-pitfalls)
-   - [1.8 Quality Checklist](#18-quality-checklist)
-   - [1.9 Review and Approval](#19-review-and-approval)
-2. [PART II: TECHNICAL SPECIFICATION](#part-ii-technical-specification)
-   - [2.1 Workbook Technical Details](#21-workbook-technical-details)
-   - [2.2 Sheet Specifications](#22-sheet-specifications)
-   - [2.3 Conditional Formatting](#23-conditional-formatting)
-   - [2.4 Integration Points](#24-integration-points)
-   - [2.5 Related Documents](#25-related-documents)
+This is the **User Completion Guide**. The companion Technical Specification is documented in ISMS-IMP-A.5.3.1-TG.
 
 ---
 
----
-
-## 1.1 Assessment Overview
+## Assessment Overview
 
 ### Purpose
 
@@ -103,7 +86,7 @@ A well-maintained SoD matrix delivers:
 
 ---
 
-## 1.2 Control Requirements
+## Control Requirements
 
 ### ISO 27001:2022 Control A.5.3
 
@@ -154,7 +137,7 @@ The key principle is that **no single person should have enough authority to exe
 
 ---
 
-## 1.3 Prerequisites
+## Prerequisites
 
 ### Required Access
 
@@ -219,118 +202,7 @@ Before proceeding, verify:
 
 ---
 
-## 1.4 Workbook Structure
-
-| Sheet | Purpose | Completion Order |
-|-------|---------|------------------|
-| **Instructions** | Guidance and methodology | Read first |
-| **Role_Inventory** | Complete list of organisational roles | Step 1 |
-| **Conflict_Matrix** | Role-to-role conflict identification | Step 2 |
-| **Current_Assignments** | Actual role assignments by person | Step 3 |
-| **Gap_Analysis** | Identified violations and conflicts | Step 4 |
-| **Remediation_Tracker** | Actions to resolve gaps | Step 5 |
-| **Exception_Register** | Documented compensating controls | Step 6 |
-| **Approval_SignOff** | Review and approval | Final |
-
-### Sheet Dependencies
-
-```
-Instructions (Reference)
-       |
-       v
-Role_Inventory (Step 1)
-       |
-       v
-Conflict_Matrix (Step 2) <---- Uses roles from Step 1
-       |
-       v
-Current_Assignments (Step 3) <---- Maps people to roles
-       |
-       v
-Gap_Analysis (Step 4) <---- Compares Step 2 conflicts with Step 3 assignments
-       |
-       v
-Remediation_Tracker (Step 5) + Exception_Register (Step 6)
-       |
-       v
-Approval_SignOff (Final)
-```
-
-### Sheet-by-Sheet Summary
-
-#### 1. Instructions Sheet
-
-Provides orientation including:
-- Document purpose and scope
-- Sheet navigation guide
-- Conflict classification definitions
-- Evidence requirements
-- Contact information
-
-#### 2. Role_Inventory Sheet
-
-Master registry containing:
-- Unique role identifiers
-- Role names and descriptions
-- Department assignments
-- Process domain mappings
-- Risk level classifications
-- System access summaries
-
-#### 3. Conflict_Matrix Sheet
-
-The role-to-role conflict matrix showing:
-- All role combinations
-- Conflict classifications (X, C, M, -)
-- Justification for each conflict designation
-
-#### 4. Current_Assignments Sheet
-
-Personnel-to-role mapping:
-- Employee identifiers
-- Assigned roles (primary and secondary)
-- Assignment dates
-- Review dates
-- Manager information
-
-#### 5. Gap_Analysis Sheet
-
-Identified violations:
-- Gap identifiers
-- Affected personnel
-- Conflicting role combinations
-- Risk levels
-- Current status
-
-#### 6. Remediation_Tracker Sheet
-
-Actions to resolve gaps:
-- Remediation identifiers
-- Action descriptions
-- Owners and deadlines
-- Status tracking
-- Evidence references
-
-#### 7. Exception_Register Sheet
-
-Documented exceptions:
-- Exception identifiers
-- Justifications
-- Compensating controls
-- Approval records
-- Expiry dates
-
-#### 8. Approval_SignOff Sheet
-
-Assessment authorisation:
-- Assessor certification
-- Reviewer sign-offs
-- CISO approval
-- Comments
-
----
-
-## 1.5 Completion Walkthrough
+## Completion Walkthrough
 
 ### Step 1: Populate Role Inventory
 
@@ -610,7 +482,7 @@ Per ISO 27001 guidance, when segregation is not possible:
 
 ---
 
-## 1.6 Evidence Collection
+## Evidence Collection
 
 ### Evidence Requirements
 
@@ -690,7 +562,7 @@ EVD-A.5.3.1_[EvidenceType]_[Reference]_[YYYYMMDD].[ext]
 
 ---
 
-## 1.7 Common Pitfalls
+## Common Pitfalls
 
 Avoid these common mistakes when completing the SoD Matrix assessment:
 
@@ -766,7 +638,7 @@ Avoid these common mistakes when completing the SoD Matrix assessment:
 
 ---
 
-## 1.8 Quality Checklist
+## Quality Checklist
 
 Before submitting the completed workbook, verify all items:
 
@@ -831,7 +703,7 @@ Before submitting the completed workbook, verify all items:
 
 ---
 
-## 1.9 Review and Approval
+## Review and Approval
 
 ### Review Workflow
 
@@ -913,7 +785,6 @@ Upon approval:
 7. Update related controls (A.5.3.2, A.5.3.4) as needed
 
 ---
-
 
 **END OF USER GUIDE**
 

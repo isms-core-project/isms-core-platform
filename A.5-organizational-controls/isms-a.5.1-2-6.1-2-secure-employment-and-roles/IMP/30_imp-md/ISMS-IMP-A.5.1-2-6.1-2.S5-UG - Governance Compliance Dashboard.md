@@ -48,9 +48,9 @@
 
 ---
 
-## 1. Purpose and Scope
+## Purpose and Scope
 
-### 1.1 What This Dashboard Is
+### What This Dashboard Is
 
 This dashboard **does not collect new data**. It aggregates, synthesizes, and presents the findings from assessments S1–S4 into a single executive-ready compliance view for the stacked personnel security control framework.
 
@@ -58,13 +58,13 @@ This dashboard **does not collect new data**. It aggregates, synthesizes, and pr
 
 > *"Are we compliant with ISO 27001:2022 Controls A.5.1, A.5.2, A.6.1, and A.6.2 — and if not, what is the plan to get there?"*
 
-### 1.2 What This Dashboard Is NOT
+### What This Dashboard Is NOT
 
 - It is not a data entry workbook. Source data comes from S1–S4.
 - It is not a risk register. It surfaces risk indicators derived from source assessments, but the detailed risk assessment lives in S1–S4.
 - It is not an audit trail. Evidence documentation is in S1–S4 Evidence Registers.
 
-### 1.3 Dashboard Design Philosophy
+### Dashboard Design Philosophy
 
 **Lifecycle-weighted scoring.** The four source assessments are not equal in architectural importance. The personnel security lifecycle has a dependency chain:
 
@@ -91,7 +91,7 @@ Each stage depends on the integrity of the stage before it. The dashboard reflec
 
 ---
 
-## 2. Common Pitfalls
+## Common Pitfalls
 
 1. **Populating the dashboard before S1–S4 are final.** Scores will change and the dashboard will be inaccurate.
 2. **Copying scores manually instead of referencing source workbooks.** Manual entry introduces transcription errors. Where possible, reference source workbook cells directly or use a documented extraction procedure.
@@ -103,7 +103,7 @@ Each stage depends on the integrity of the stage before it. The dashboard reflec
 
 ---
 
-## 3. Dashboard Navigation
+## Dashboard Navigation
 
 ### Sheet 1: Instructions & Legend
 Navigation guide, color coding, dropdown reference. Read this first.
@@ -203,7 +203,7 @@ The CISO certification statement includes:
 
 ---
 
-## 4. Troubleshooting
+## Troubleshooting
 
 | Symptom | Likely Cause | Resolution |
 |---------|--------------|------------|
@@ -215,9 +215,9 @@ The CISO certification statement includes:
 
 ---
 
-## 5. Interpreting Results
+## Interpreting Results
 
-### 5.1 Reading the Weighted Compliance Score
+### Reading the Weighted Compliance Score
 
 The weighted compliance score on Sheet 2 is a single number (0–100%) calculated as:
 
@@ -234,7 +234,7 @@ Score = (S1_compliance × 0.35) + (S2_compliance × 0.25) + (S3_compliance × 0.
 | 70–84% | 🟠 Orange | Significant gaps. Active remediation required. CISO attention needed. |
 | <70% | 🔴 Red | Critical deficiencies. Immediate executive action required. |
 
-### 5.2 Reading Cross-Domain Gaps
+### Reading Cross-Domain Gaps
 
 Cross-domain gaps indicate a cascade risk. Example scenarios:
 
@@ -242,7 +242,7 @@ Cross-domain gaps indicate a cascade risk. Example scenarios:
 - **Contract clause updated but existing employees not re-signed:** A.6.2 template is correct but per-employee compliance lags. The gap exists in S4 but the root cause may be in S2 (role change process).
 - **Policy updated but acknowledgment not re-collected:** A.5.1 gap. But if the policy change affects screening procedures (A.6.1), the Screening Summary should flag that new screening criteria apply.
 
-### 5.3 Maturity vs. Compliance
+### Maturity vs. Compliance
 
 A high compliance score does not necessarily mean high maturity. Maturity also considers:
 - Whether processes are documented and repeatable (not just outcomes)
@@ -254,7 +254,7 @@ A score of 90% with ad hoc evidence collection = Level 3 (Defined), not Level 4 
 
 ---
 
-## 6. Common Questions
+## Common Questions
 
 **Q: Can I approve the dashboard if gaps exist?**
 A: Yes. Gaps are expected and do not prevent approval. The certification confirms that gaps are identified, documented, and have remediation plans. Risk acceptance (accepting a gap without remediation) requires explicit CISO sign-off with written rationale.
@@ -273,9 +273,9 @@ A: This dashboard (S5) is the **specification** — it defines what the workbook
 
 ---
 
-## 7. Dashboard Maintenance
+## Dashboard Maintenance
 
-### 7.1 Quarterly Cycle
+### Quarterly Cycle
 
 | Task | When | Who | Time |
 |------|------|-----|------|
@@ -287,7 +287,7 @@ A: This dashboard (S5) is the **specification** — it defines what the workbook
 | CISO certification | Week 3–4 | CISO | 15 minutes |
 | Board/management presentation | Week 4 | CISO | 5 minutes |
 
-### 7.2 Version Control
+### Version Control
 
 - Filename includes date: `ISMS-IMP-A.5.1-2-6.1-2.S5_Governance_Dashboard_YYYYMMDD.xlsx`
 - Previous quarter's dashboard is archived (do not delete)
@@ -296,7 +296,7 @@ A: This dashboard (S5) is the **specification** — it defines what the workbook
 
 ---
 
-## 8. Quality Checklist
+## Quality Checklist
 
 Before submitting for CISO certification:
 
@@ -324,7 +324,7 @@ Before submitting for CISO certification:
 
 ---
 
-## 9. Review & Approval
+## Review & Approval
 
 ### Approval Workflow
 
@@ -359,7 +359,7 @@ Gaps do not prevent certification. The certification confirms that:
 
 ---
 
-## 10. Audit Readiness Checklist
+## Audit Readiness Checklist
 
 **Use before declaring the dashboard audit-ready:**
 
