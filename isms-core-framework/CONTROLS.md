@@ -19,7 +19,7 @@
 ## Repository Structure
 
 ```
-isms-core-platform/
+isms-core-framework/
 ├── A.5-organizational-controls/     # 21 control packs (covers 37 Annex A controls)
 ├── A.6-people-controls/             # 4 control packs (covers 8 Annex A controls)
 ├── A.7-physical-controls/           # 6 control packs (covers 14 Annex A controls)

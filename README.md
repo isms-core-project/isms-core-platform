@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/🎋_ISMS_CORE-Control_Oriented_Real_World_Engineering-2E8B57?style=for-the-badge" alt="ISMS CORE"/>
+  <img src="https://img.shields.io/badge/🎋_ISMS_CORE-Platform-2E8B57?style=for-the-badge" alt="ISMS CORE Platform"/>
 </p>
 
-<h1 align="center">🎋 ISMS CORE</h1>
+<h1 align="center">🎋 ISMS CORE Platform</h1>
 
 <p align="center">
   <strong>Control-Oriented Real-world Engineering for ISO/IEC 27001:2022</strong>
@@ -10,8 +10,7 @@
 
 <p align="center">
   <a href="https://www.iso.org/standard/27001"><img src="https://img.shields.io/badge/ISO_27001-2022-0066CC?style=flat-square&logo=iso&logoColor=white" alt="ISO 27001:2022"/></a>
-  <a href="#-status"><img src="https://img.shields.io/badge/Progress-100%25-00AA00?style=flat-square" alt="Progress"/></a>
-  <a href="#-status"><img src="https://img.shields.io/badge/Control_Packs-53_of_53-00AA00?style=flat-square" alt="Control Packs"/></a>
+  <a href="isms-core-framework/STATUS.md"><img src="https://img.shields.io/badge/Control_Packs-53_of_53-00AA00?style=flat-square" alt="Control Packs"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-AGPL_3.0-9400D3?style=flat-square" alt="License"/></a>
 </p>
 
@@ -31,35 +30,52 @@
 
 ## 🎯 What is ISMS CORE?
 
-ISMS CORE is a production-grade **control engineering** repository for building and operating an ISO/IEC 27001:2022-aligned ISMS. It treats ISMS implementation as an **engineering problem** — not a consulting exercise.
+ISMS CORE is a production-grade **control engineering** platform for building and operating an ISO/IEC 27001:2022-aligned ISMS. It treats ISMS implementation as an **engineering problem** — not a consulting exercise.
 
-It is organized into a consistent control "stack":
+The platform provides **two products** at different levels of depth:
 
 <table>
 <tr>
-<td align="center"><strong>📜 POL</strong><br/>Policy</td>
-<td align="center"><strong>📋 IMP</strong><br/>Implementation<br/><em>(UG + TG)</em></td>
-<td align="center"><strong>🐍 SCR</strong><br/>Scripts</td>
-<td align="center"><strong>📚 REF</strong><br/>Reference</td>
-<td align="center"><strong>🏢 CTX</strong><br/>Context</td>
-<td align="center"><strong>📝 FORM</strong><br/>Forms</td>
+<th></th>
+<th>🏗️ <a href="isms-core-framework/">ISMS CORE Framework</a></th>
+<th>⚡ <a href="isms-core-operational/">ISMS CORE Operational</a></th>
 </tr>
 <tr>
-<td>Requirements<br/>and governance</td>
-<td>User Guides (UG)<br/>+ Technical Specs (TG)</td>
-<td>Python generators<br/>and automation</td>
-<td>Mappings and notes<br/>to support implementation</td>
-<td>Organizational<br/>assumptions & scope context</td>
-<td>Templates, checklists<br/>and operational forms</td>
+<td><strong>What</strong></td>
+<td>Full engineering product — governance policies with implementation guides, assessment scripts, and generated workbooks</td>
+<td>Lightweight SME product — one operational policy per control group</td>
+</tr>
+<tr>
+<td><strong>For</strong></td>
+<td>Mature security teams, consultants, auditors</td>
+<td>SMEs and startups</td>
+</tr>
+<tr>
+<td><strong>Per control</strong></td>
+<td>POL + IMP (UG/TG) + SCR + WKBK + REF + CTX</td>
+<td>One OP-POL</td>
+</tr>
+<tr>
+<td><strong>Coverage</strong></td>
+<td>53 control packs / 93 Annex A controls</td>
+<td>53 control groups / 93 Annex A controls</td>
+</tr>
+<tr>
+<td><strong>Artifacts</strong></td>
+<td>504 IMP docs, 454 Python scripts, Excel workbooks</td>
+<td>53 operational policies</td>
 </tr>
 </table>
+
+Both products cover **all 93 ISO 27001:2022 Annex A controls** organised into the same 53 control groups.
 
 ### 🧭 Who this is for (and not for)
 
 **This is for:**
 - Security teams building an ISMS and wanting **repeatable evidence**
 - Engineers who prefer **automation + tests** over "security theater"
-- Consultants/auditors who need **structured control packs** (policy + implementation + assessment artifacts)
+- SMEs that need **practical, audit-ready policies** without over-engineering
+- Consultants/auditors who need **structured control packs**
 
 **This is not for:**
 - "One-click compliance" expectations
@@ -68,91 +84,69 @@ It is organized into a consistent control "stack":
 
 ---
 
-## 🏗️ Architecture
-
-```
-POL (Policy)         → Requirements and accountability
-       ↓
-IMP (Implementation) → User Guides (UG) + Technical Specifications (TG)
-       ↓
-SCR (Scripts)        → Assessment workbook generators
-       ↓
-WKBK (Workbooks)     → Evidence and compliance metrics
-```
-
----
-
 ## 📂 Repository Structure
 
 ```
 isms-core-platform/
-├── A.5-organizational-controls/     # 21 control packs (covers 37 Annex A controls)
-│   ├── isms-a.5.7-threat-intelligence/
-│   │   ├── POL/    ├── IMP/    ├── SCR/    ├── WKBK/    └── REF/    └── FORM/
-│   └── ...
-├── A.6-people-controls/             # 4 control packs (covers 8 Annex A controls)
-├── A.7-physical-controls/           # 6 control packs (covers 14 Annex A controls)
-├── A.8-technological-controls/      # 22 control packs (covers 34 Annex A controls)
-├── CONTROLS.md
-├── COVERAGE.md
-├── STATUS.md
-├── STACKING.md
-├── PHILOSOPHY.md
-└── CONTRIBUTING.md
+├── README.md                           # This file
+├── CONTRIBUTING.md                     # QA process and standards
+├── PHILOSOPHY.md                       # Anti-cargo-cult methodology
+├── CODE_OF_CONDUCT.md                  # Community standards
+├── SECURITY.md                         # Vulnerability reporting
+├── LICENSE                             # AGPL-3.0
+├── COPYRIGHT
+│
+├── isms-core-framework/                # 🏗️ Full Engineering Product
+│   ├── README.md                       # Framework overview
+│   ├── CONTROLS.md                     # 53 control pack index
+│   ├── COVERAGE.md                     # 93 Annex A → 53 pack mapping
+│   ├── STATUS.md                       # Implementation metrics
+│   ├── STACKING.md                     # Control grouping methodology
+│   ├── CHANGELOG.md                    # Version history
+│   ├── A.0-regulatory-control/         # Regulatory framework
+│   ├── A.5-organizational-controls/    # 21 control packs
+│   ├── A.6-people-controls/            # 4 control packs
+│   ├── A.7-physical-controls/          # 6 control packs
+│   └── A.8-technological-controls/     # 22 control packs
+│
+└── isms-core-operational/              # ⚡ Lightweight SME Product
+    ├── README.md                       # Operational overview
+    ├── A.5-organizational-controls/    # 21 control groups
+    ├── A.6-people-controls/            # 4 control groups
+    ├── A.7-physical-controls/          # 6 control groups
+    └── A.8-technological-controls/     # 22 control groups
 ```
-
-Controls are organized by ISO/IEC 27001:2022 Annex A section (A.5–A.8).
 
 ---
 
 ## 🚀 Quick Start
 
-### 1) Browse controls
-Start with [CONTROLS.md](CONTROLS.md) for the index and navigate to a control folder.
+### Framework (full engineering product)
 
-Each control folder contains everything needed:
+1. Browse [isms-core-framework/CONTROLS.md](isms-core-framework/CONTROLS.md) for the control pack index
+2. Navigate to a control folder and read POL → IMP-UG → IMP-TG
+3. Run generators to produce assessment workbooks:
 
-```
-A.8-technological-controls/
-└── isms-a.8.24-use-of-cryptography/
-    ├── POL/10_pol-md/
-    ├── IMP/30_imp-md/
-    ├── SCR/
-    │   ├── 10_generator-master/
-    │   └── 13_presentation/
-    └── WKBK/
-        └── 90_workbooks/
-```
-
-### 2) Understand IMP documents (UG / TG)
-
-Each assessment has two companion documents in `IMP/30_imp-md/`:
-
-| File | Type | Purpose |
-|------|------|---------|
-| `ISMS-IMP-A.X.X.N-UG - Title.md` | **User Guide** | How to complete the assessment — walkthrough, evidence, pitfalls |
-| `ISMS-IMP-A.X.X.N-TG - Title.md` | **Technical Spec** | What the Excel workbook contains — sheets, columns, validations (auto-generated from Python) |
-
-Start with the **UG** if you're completing an assessment. Refer to the **TG** if you're developing or modifying a generator script. See [CONTRIBUTING.md](CONTRIBUTING.md#-imp-document-structure-ug--tg) for full details.
-
-### 3) Prerequisites
-- Python 3.11+ recommended (3.10+ may work depending on dependencies)
-- A virtual environment (`python -m venv .venv`)
-- `pip install openpyxl` (primary dependency)
-
-### 4) Generate a workbook (example)
 ```bash
-cd A.8-technological-controls/isms-a.8.24-use-of-cryptography/SCR/10_generator-master
+cd isms-core-framework/A.8-technological-controls/isms-a.8.24-use-of-cryptography/SCR/10_generator-master
 python3 generate_a824_1_data_transmission_assessment.py
 ```
 
-**Tip:** Treat generated workbooks as potential evidence. Don't commit workbooks containing secrets, production identifiers, or personal data.
+**Prerequisites:** Python 3.11+, `pip install openpyxl`
+
+### Operational (lightweight SME product)
+
+1. Browse `isms-core-operational/` and navigate to the relevant control group
+2. Each folder contains one operational policy: `ISMS-OP-POL-A.X.X - Title.md`
+3. Implement the "shall" requirements and collect the evidence listed
+
+No scripts, no generators, no dependencies — just policies.
 
 ---
 
 ## 🔗 Framework Integration
 
-This repo provides **mappings and implementation material** to support multiple frameworks. Your compliance outcome depends on how you implement, operate, and evidence controls in your own environment.
+Both products provide mappings to support multiple frameworks:
 
 <table>
 <tr>
@@ -162,12 +156,12 @@ This repo provides **mappings and implementation material** to support multiple 
 </tr>
 <tr>
 <td>ISO/IEC 27001:2022</td>
-<td>Annex A control packs (policy + implementation + assessment structure)</td>
+<td>Annex A control packs (policy + implementation + assessment)</td>
 <td><img src="https://img.shields.io/badge/Mapped-0066CC?style=flat-square" alt="Mapped"/></td>
 </tr>
 <tr>
 <td>ISO/IEC 27002:2022</td>
-<td>Implementation-oriented guidance (original wording, not a copy of the standard)</td>
+<td>Implementation-oriented guidance</td>
 <td><img src="https://img.shields.io/badge/Coverage-0066CC?style=flat-square" alt="Coverage"/></td>
 </tr>
 <tr>
@@ -177,12 +171,12 @@ This repo provides **mappings and implementation material** to support multiple 
 </tr>
 <tr>
 <td>NIST SP 800-53 Rev. 5</td>
-<td>Security control mapping (where applicable)</td>
+<td>Security control mapping</td>
 <td><img src="https://img.shields.io/badge/Mapped-FF6600?style=flat-square" alt="Mapped"/></td>
 </tr>
 <tr>
 <td>MITRE ATT&CK</td>
-<td>Threat technique mapping (Enterprise / ICS / Mobile as used)</td>
+<td>Threat technique mapping (Enterprise / ICS / Mobile)</td>
 <td><img src="https://img.shields.io/badge/v18-Mapped-DC143C?style=flat-square" alt="Mapped"/></td>
 </tr>
 <tr>
@@ -192,12 +186,12 @@ This repo provides **mappings and implementation material** to support multiple 
 </tr>
 <tr>
 <td>DORA / NIS2</td>
-<td>Operational resilience mapping (risk mgmt, incident handling, continuity)</td>
+<td>Operational resilience mapping</td>
 <td><img src="https://img.shields.io/badge/Mapped-FFD700?style=flat-square" alt="Mapped"/></td>
 </tr>
 <tr>
 <td>EU AI Act</td>
-<td>AI risk management mapping (where relevant)</td>
+<td>AI risk management mapping</td>
 <td><img src="https://img.shields.io/badge/Mapped-0066CC?style=flat-square" alt="Mapped"/></td>
 </tr>
 </table>
@@ -244,69 +238,21 @@ Every control pack undergoes **adversarial multi-model validation** — controls
                                   └──────────────────┘
 ```
 
-<table>
-<tr>
-<th>Stage</th>
-<th>Method</th>
-<th>Focus</th>
-</tr>
-<tr>
-<td><strong>Stage 1</strong></td>
-<td>Documentation adequacy</td>
-<td>Policy completeness, control coverage, artifact consistency</td>
-</tr>
-<tr>
-<td><strong>Stage 2</strong></td>
-<td>Implementation effectiveness</td>
-<td>Gap analysis, evidence sufficiency, audit readiness</td>
-</tr>
-<tr>
-<td><strong>Findings</strong></td>
-<td>Classified: Critical / High / Medium / Low</td>
-<td>Iterated until all Critical and High findings resolved</td>
-</tr>
-</table>
-
 See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 
 ---
 
 ## 📊 Status
 
-To avoid ambiguity, ISMS CORE tracks three different things:
-- **Controls:** ISO/IEC 27001:2022 Annex A controls (93 total in A.5–A.8)
-- **Control packs:** our implementation bundles (53 packs covering all 93 controls)
-- **Artifacts:** POL/IMP/SCR per pack
+| Metric | Value | Status |
+|--------|-------|--------|
+| Framework control packs | **53 of 53** | ![100%](https://img.shields.io/badge/100%25-00AA00?style=flat-square) |
+| Operational policies | **53 of 53** | ![100%](https://img.shields.io/badge/100%25-00AA00?style=flat-square) |
+| Annex A controls mapped | **93 of 93** | ![Mapped](https://img.shields.io/badge/Mapped-32CD32?style=flat-square) |
+| Python scripts (Framework) | **454** (410K+ lines) | ![Validated](https://img.shields.io/badge/Validated-0066CC?style=flat-square) |
+| IMP documents (Framework) | **504** (252 UG + 252 TG) | ![Split](https://img.shields.io/badge/UG%2FTG-9400D3?style=flat-square) |
 
-<table>
-<tr>
-<th>Metric</th>
-<th>Value</th>
-<th>Status</th>
-</tr>
-<tr>
-<td>Control packs complete</td>
-<td><strong>53 of 53</strong></td>
-<td><img src="https://img.shields.io/badge/100%25_🎉-00AA00?style=flat-square" alt="100%"/></td>
-</tr>
-<tr>
-<td>Annex A controls mapped</td>
-<td><strong>93 of 93</strong></td>
-<td><img src="https://img.shields.io/badge/Mapped-32CD32?style=flat-square" alt="Mapped"/></td>
-</tr>
-<tr>
-<td>Python scripts</td>
-<td><strong>454</strong> (410K+ lines)</td>
-<td><img src="https://img.shields.io/badge/Validated-0066CC?style=flat-square" alt="Validated"/></td>
-</tr>
-<tr>
-<td>IMP documents</td>
-<td><strong>504</strong> (252 UG + 252 TG)</td>
-<td><img src="https://img.shields.io/badge/UG%2FTG_Split-9400D3?style=flat-square" alt="UG/TG Split"/></td>
-</tr>
-</table>
-
-See [STATUS.md](STATUS.md) for detailed progress.
+See [isms-core-framework/STATUS.md](isms-core-framework/STATUS.md) for detailed Framework metrics.
 
 ---
 
@@ -322,14 +268,14 @@ See [STATUS.md](STATUS.md) for detailed progress.
 
 | Document | Description |
 |----------|-------------|
-| [CONTROLS.md](CONTROLS.md) | 📋 **Start here.** Index of control packs and implementations |
-| [COVERAGE.md](COVERAGE.md) | 🗺️ Canonical mapping: 93 Annex A controls → 53 control packs |
-| [STATUS.md](STATUS.md) | 📊 Current progress and metrics |
-| [STACKING.md](STACKING.md) | 🔗 Control grouping approaches (e.g., Domain vs NIST CSF) |
+| [isms-core-framework/CONTROLS.md](isms-core-framework/CONTROLS.md) | 📋 Control pack index (Framework) |
+| [isms-core-framework/COVERAGE.md](isms-core-framework/COVERAGE.md) | 🗺️ 93 Annex A → 53 pack mapping |
+| [isms-core-framework/STATUS.md](isms-core-framework/STATUS.md) | 📊 Framework metrics |
+| [isms-core-framework/STACKING.md](isms-core-framework/STACKING.md) | 🔗 Control grouping approaches |
 | [PHILOSOPHY.md](PHILOSOPHY.md) | ✈️ Anti-cargo-cult methodology |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | 🔧 QA process and standards |
 | [SECURITY.md](SECURITY.md) | 🔒 Vulnerability reporting policy |
-| [CHANGELOG.md](CHANGELOG.md) | 📝 Version history and release notes |
+| [isms-core-framework/CHANGELOG.md](isms-core-framework/CHANGELOG.md) | 📝 Version history |
 | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | 🤝 Community standards |
 
 ---
