@@ -34,9 +34,9 @@ import sys
 from pathlib import Path
 from collections import OrderedDict
 
-# Engine: 10-isms-core-operational/SCR/op_checklist_engine.py
+# Engine: 10-isms-core-operational/A.0-checklist-engine/op_checklist_engine.py
 _OP_ROOT = Path(__file__).resolve().parents[4]
-sys.path.insert(0, str(_OP_ROOT / 'SCR'))
+sys.path.insert(0, str(_OP_ROOT / 'A.0-checklist-engine'))
 from op_checklist_engine import generate_checklist
 
 # =============================================================================
