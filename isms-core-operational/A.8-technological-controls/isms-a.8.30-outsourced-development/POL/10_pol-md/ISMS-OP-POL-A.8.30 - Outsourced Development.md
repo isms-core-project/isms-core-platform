@@ -117,9 +117,57 @@ Before engaging an external development partner, the organisation shall conduct 
 | **Tier 2 — Medium-Risk** | Vendor develops internal tools; limited data access; no direct production access | Security questionnaire + evidence review + biennial reassessment |
 | **Tier 3 — Low-Risk** | Vendor develops non-critical utilities; no access to sensitive data | Security questionnaire + self-attestation + reassessment at contract renewal |
 
+**Vendor Tier Determination**:
+
+Vendors shall be classified based on the highest risk factor present:
+
+**Tier 1 triggers** (any one qualifies):
+- Develops applications processing Confidential or Restricted data
+- Direct access to production environments or databases
+- Develops internet-facing systems with user authentication
+- Processes personal data of >1,000 individuals
+- Customises payment processing or financial systems
+- Access to source code repositories containing proprietary algorithms
+
+**Tier 2 triggers** (none of Tier 1, any of these):
+- Develops internal-only applications
+- Read-only access to non-production data
+- Processes personal data of <1,000 individuals
+- Integration work with third-party APIs
+- Reporting and analytics tool development
+
+**Tier 3** (default):
+- Utility development (scripts, CLI tools, non-critical automation)
+- Static website development with no user data collection
+- Documentation and UI/UX design (no code access)
+- Prototype/proof-of-concept work with synthetic data only
+
+Tier determination shall be documented in the vendor security assessment record and reviewed upon scope changes.
+
 Assessment results shall be documented and retained for the duration of the vendor relationship plus 3 years.
 
 Vendors that fail the security assessment shall not be engaged until identified deficiencies are remediated and verified.
+
+### Vendor Security Red Flags
+
+During vendor assessment, the following are disqualifying findings unless remediated:
+
+| Red Flag | Risk | Remediation Required |
+|----------|------|----------------------|
+| **No formal SDLC** | Unstructured development; inconsistent security practices | Document SDLC with security gates; demonstrate 3+ months consistent application |
+| **No SAST/SCA tooling** | Vulnerabilities not detected before delivery | Implement automated security scanning; demonstrate ≥3 scans with remediation |
+| **Vendor refuses audit rights clause** | Inability to verify security claims | Accept audit rights or provide SOC 2 Type II / ISO 27001 certification |
+| **Outsources to undisclosed subcontractors** | Unknown security posture in supply chain | Full transparency on subcontractors; flow-down security requirements; assessment of each |
+| **No incident response capability** | Unable to detect or respond to compromise | Document IR plan; provide 24hr notification commitment; demonstrate IR testing |
+| **Previous significant breach (unresolved)** | Pattern of poor security | Demonstrate post-incident improvements; third-party validation of remediation |
+| **Lack of background checks** | Insider threat risk | Implement background checks for personnel with data access |
+| **Uses personal email for work** | No separation of corporate/personal data | Provide corporate email; document acceptable use policy |
+
+**During engagement, these are escalation triggers**:
+- Vendor provides false information in security assessment
+- Unauthorised data exfiltration detected
+- Vendor refuses vulnerability remediation
+- Security testing results withheld or falsified
 
 ---
 
@@ -151,6 +199,26 @@ All outsourced development agreements shall include security requirements as con
 | **Security training** | Vendor personnel shall complete the organisation's security awareness briefing or demonstrate equivalent training |
 | **Liability and indemnification** | Vendor liability for security breaches caused by non-compliance with contractual security requirements |
 | **Insurance** | Professional indemnity and cyber liability insurance appropriate to engagement value and risk |
+
+**Subcontractor Approval Process**:
+
+When a vendor requests subcontracting approval:
+1. **Notification**: Vendor submits written request ≥30 days before subcontractor engagement, including:
+   - Subcontractor name and location
+   - Scope of work to be subcontracted
+   - Data access required by subcontractor
+   - Subcontractor security assessment results
+   - Flow-down of contractual security requirements confirmation
+
+2. **Assessment**: Organisation reviews subcontractor against same security criteria as primary vendor (tier-appropriate assessment)
+
+3. **Approval**:
+   - Tier 1 vendors: CISO approval required
+   - Tier 2/3 vendors: Development Manager approval with CISO notification
+
+4. **Documentation**: Approved subcontractors added to vendor security assessment record; same monitoring and access management requirements apply
+
+Unapproved subcontracting is a material breach and grounds for contract termination.
 
 ---
 
@@ -190,6 +258,64 @@ Vendors shall implement controls to mitigate software supply chain risks in acco
 - Vendors shall monitor dependencies against vulnerability databases (NVD, OSV, GitHub Advisory Database) and remediate identified vulnerabilities within the agreed SLAs.
 - Use of unmaintained or end-of-life components shall require documented risk acceptance from the organisation.
 
+**SBOM Requirements Detail**:
+- **Format**: CycloneDX 1.4+ (preferred) or SPDX 2.3+
+- **Depth**: Include transitive dependencies (not just direct dependencies)
+- **Contents**: Component name, version, licence, supplier, cryptographic hash
+- **Delivery**: SBOM provided with each release and updated for any dependency changes
+- **Tool**: Generated via automated SBOM tool (CycloneDX CLI, Syft, SPDX tools, or equivalent) — not manually created spreadsheets
+- **Validation**: Organisation verifies SBOM completeness using SCA tool before acceptance
+
+## Typical Vendor Development Workflow
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│ ENGAGEMENT PHASE                                                 │
+├─────────────────────────────────────────────────────────────────┤
+│ 1. Vendor Security Assessment (CISO) ──────────────────────────┐│
+│ 2. Contract with Security Clauses (Legal + CISO) ─────────────┐││
+│ 3. DPA Execution (DPO) ────────────────────────────────────────┘││
+│ 4. Secure Development Package Delivery (Dev Manager) ──────────┘│
+│ 5. Vendor Access Provisioning (IT Ops) ─────────────────────────│
+└─────────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ DEVELOPMENT PHASE (iterative)                                    │
+├─────────────────────────────────────────────────────────────────┤
+│ 6. Vendor Development + Security Testing (Vendor) ──────────────│
+│    - SAST/SCA per build                                          │
+│    - Security test results shared with Org                       │
+│ 7. Milestone Delivery (Vendor → Dev Manager) ───────────────────│
+│ 8. Organisation Code Review (Security Team) ────────────────────│
+│ 9. Vulnerability Remediation (Vendor) ──────────────────────────│
+│    ↺ Repeat until acceptance criteria met                       │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ ACCEPTANCE PHASE                                                 │
+├─────────────────────────────────────────────────────────────────┤
+│ 10. Independent Security Testing (Org / Third Party) ───────────│
+│     - SAST/SCA/DAST                                              │
+│     - Penetration testing (Tier 1)                              │
+│ 11. SBOM Delivery and Review (Dev Manager) ─────────────────────│
+│ 12. Acceptance Checklist Completion (Dev Manager) ──────────────│
+│ 13. Sign-Off (Risk-based: CISO/Dev Manager/App Owner) ─────────│
+│ 14. Code Escrow Deposit (if applicable) ────────────────────────│
+└─────────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ POST-DEPLOYMENT PHASE                                            │
+├─────────────────────────────────────────────────────────────────┤
+│ 15. Vendor Access Deprovisioning (IT Ops) ──────────────────────│
+│ 16. Data Return/Destruction Verification (DPO) ─────────────────│
+│ 17. Ongoing Support Contract (if applicable) ───────────────────│
+│ 18. Annual Security Reassessment (Tier 1) ──────────────────────│
+└─────────────────────────────────────────────────────────────────┘
+```
+
 ---
 
 ## Code Review and Security Testing
@@ -200,7 +326,7 @@ All outsourced code shall undergo independent security validation by the organis
 
 | Test Type | Requirement | Timing |
 |-----------|-------------|--------|
-| **SAST** | Scan all source code for security vulnerabilities using [SAST Tool] (e.g., SonarQube, Semgrep, Checkmarx, or equivalent) | Per build or at minimum weekly during active development |
+| **SAST** | Scan all source code for security vulnerabilities using [SAST Tool] (examples: SonarQube, Semgrep, Checkmarx, Veracode, or CISO-approved equivalent) | Per build or at minimum weekly during active development |
 | **SCA** | Scan all dependencies for known vulnerabilities and licence compliance | Per build or at minimum weekly during active development |
 | **Unit/integration tests** | Demonstrate security control effectiveness (authentication, authorisation, input validation) | Continuous |
 | **Secret scanning** | Verify no credentials, API keys, or tokens in source code or configuration | Pre-commit and per build |
@@ -218,9 +344,43 @@ Vendor-side test results shall be shared with the organisation at agreed interva
 
 **Minimum testing baseline**: All security testing shall, at a minimum, cover the OWASP Top 10:2025 categories.
 
-All penetration testing shall be conducted by a qualified external specialist company, independent of the development vendor, with relevant certifications (e.g., CREST, OSCP, CEH).
+All penetration testing shall be conducted by an independent external specialist company meeting at least one of:
+- CREST certification (CREST Registered Penetration Tester or higher)
+- Team members holding OSCP, GPEN, or CEH certifications
+- Demonstrated experience with ≥5 comparable penetration tests in the past 2 years with verifiable references
+- ISO 27001 certified pentesting firm with public client portfolio
+
+Penetration test provider shall not be the same entity as the development vendor to ensure independence.
 
 Vulnerabilities identified during testing shall be remediated by the vendor at the vendor's cost before the organisation accepts the deliverable. Critical and High vulnerabilities shall block acceptance.
+
+### Vulnerability Remediation Management
+
+All vulnerabilities identified in vendor deliverables shall be tracked through resolution:
+
+**Tracking Process**:
+1. **Discovery**: Vulnerability identified via SAST/SCA/DAST/pentest
+2. **Assignment**: Vulnerability assigned to vendor with remediation SLA
+3. **Verification**: Vendor provides fix + re-test results
+4. **Validation**: Organisation validates fix effectiveness
+5. **Closure**: Documented closure with test evidence
+
+**Remediation SLA Tracking**:
+
+| Severity | SLA | SLA Breach Response |
+|----------|-----|---------------------|
+| **Critical** | 7 days | Immediate CISO escalation; block acceptance; vendor performance review |
+| **High** | 30 days | Development Manager escalation; acceptance conditional on remediation plan |
+| **Medium** | 90 days | Track in weekly status meetings; may accept with documented risk acceptance and remediation commitment |
+| **Low** | 180 days | Track in project backlog; may accept with planned future sprint for remediation |
+
+**SLA Clock**:
+- Starts from vulnerability disclosure to vendor
+- Pauses for reasonable vendor clarification requests (<5 business days)
+- Resets upon vendor request for SLA extension with justification (CISO approval)
+
+**SLA Compliance Reporting**:
+Tracked per vendor, per engagement. <70% compliance triggers vendor performance review.
 
 ---
 
@@ -235,13 +395,23 @@ Outsourced deliverables shall not be accepted or deployed to production until al
 | 1 | All contractually required security testing completed and results provided | Development Manager |
 | 2 | No unresolved Critical or High vulnerabilities in SAST, SCA, DAST, or penetration test results | CISO / Security Team |
 | 3 | Organisation's independent code review completed with no blocking findings | Development Manager |
-| 4 | SBOM provided in CycloneDX or SPDX format; no components with known Critical/High vulnerabilities | Development Manager |
+| 4 | SBOM provided in CycloneDX or SPDX format; no components with unpatched Critical or High vulnerabilities where patches are available; vulnerabilities without patches require documented risk acceptance and compensating controls | Development Manager |
 | 5 | No hardcoded secrets, credentials, or test data present in delivered code | Security Team |
 | 6 | Code meets the organisation's secure coding standards | Security Champion / Senior Developer |
 | 7 | All documentation delivered (architecture, API specifications, deployment guides, configuration) | Development Manager |
 | 8 | Source code and all artifacts delivered to the organisation's repository or escrow agent | Development Manager |
 | 9 | Data protection requirements met; no unauthorised personal data retained by vendor | Data Protection Officer / CISO |
 | 10 | Licensing and intellectual property ownership confirmed per contract | Legal / Procurement |
+
+*Blocking findings include:*
+- Hardcoded credentials, API keys, or secrets
+- SQL injection vulnerabilities (any severity)
+- Authentication bypass vulnerabilities
+- Authorisation flaws allowing privilege escalation
+- Use of cryptographically broken algorithms (MD5, SHA-1 for security, DES, RC4)
+- Exposure of sensitive data in logs or error messages
+- Missing input validation on user-supplied data
+- Critical or High severity findings from SAST/DAST unaddressed
 
 **Acceptance sign-off**:
 
@@ -261,7 +431,7 @@ Acceptance records shall be retained for the duration of the application lifecyc
 
 The development agreement shall clearly define ownership of all work products, including source code, documentation, designs, and related intellectual property.
 
-Where the organisation commissions bespoke development, the default position shall be that the organisation owns all intellectual property rights in the deliverables upon payment. Any deviation from full ownership shall be documented, approved by Legal and the CISO, and justified by business need.
+Where the organisation commissions bespoke development, the default position shall be that the organisation owns all intellectual property rights in the deliverables upon final payment or upon delivery if payment-on-delivery, whichever occurs first. Any deviation from full ownership shall be documented, approved by Legal and the CISO, and justified by business need.
 
 **Licensing**:
 
@@ -284,6 +454,16 @@ For Tier 1 vendor engagements where the organisation does not hold the source co
 | **Release conditions** | Vendor insolvency, cessation of business, material breach of maintenance obligations, or failure to provide contracted services |
 | **Verification** | Escrow deposits verified annually by the escrow agent (build verification — confirming the deposited code compiles and produces a working build) |
 
+**Escrow Deposit Verification Criteria**:
+- Source code compiles without errors using documented build instructions
+- All dependencies resolvable from public or documented private repositories
+- Build environment specifications include all required tools, SDKs, and versions
+- Resulting build artifact (executable, container image, deployable package) can be deployed to a test environment
+- Basic smoke test passes (application starts, health check endpoint responds)
+- No proprietary vendor-only tools required for build process
+
+Verification performed by escrow agent annually. Failed verification requires vendor to correct deposit within 30 days.
+
 Where the organisation holds source code directly in its own repositories, code escrow is not required, but the organisation shall maintain its own verified backups.
 
 ---
@@ -297,11 +477,13 @@ The organisation shall continuously monitor outsourced development activities th
 | Activity | Frequency | Responsible |
 |----------|-----------|-------------|
 | **Security testing report review** | Per milestone or sprint delivery | Development Manager |
-| **Progress and quality review** | Fortnightly or per sprint | Development Manager / Project Manager |
+| **Progress and quality review** | Every 2 weeks or per sprint (for agile engagements) | Development Manager / Project Manager |
 | **Vendor security posture review** | Annually (Tier 1); biennially (Tier 2); at renewal (Tier 3) | CISO / Information Security Manager |
 | **Access review** | Quarterly — verify vendor personnel with active access still require it | IT Operations / Development Manager |
 | **Compliance spot check** | Semi-annually — verify vendor adherence to secure coding standards | Security Team |
 | **Incident and near-miss review** | Per occurrence | CISO |
+
+Vendor performance scorecard shall be maintained quarterly, tracking: security testing compliance, SLA adherence, incident count, and audit findings. Results shall be reported to management annually.
 
 **Escalation triggers**:
 
@@ -312,6 +494,33 @@ The organisation shall continuously monitor outsourced development activities th
 | Vendor security incident affecting the organisation's data or systems | Activate incident management process (A.5.24-28); notify CISO within 1 hour |
 | Vendor fails annual security reassessment | Suspend new work assignments; remediation plan within 30 days; contract review |
 | Evidence of unauthorised subcontracting | Escalate to CISO and Legal; contract review |
+
+---
+
+## Vendor Security Incident Response
+
+When a vendor experiences a security incident affecting the organisation's engagement:
+
+**Vendor Notification Obligation**:
+- **Within 24 hours**: Initial notification of incident occurrence, nature, and potential impact
+- **Within 72 hours**: Detailed incident report including scope, root cause analysis (preliminary), affected systems/data, and remediation actions
+
+**Organisation Response**:
+
+| Incident Type | Response Action |
+|---------------|-----------------|
+| **Vendor code repository compromise** | 1. Suspend vendor access to org systems 2. Forensic review of all vendor-delivered code 3. Full security re-testing before any further acceptance 4. Consider code re-write if malicious code suspected |
+| **Vendor personnel credential theft** | 1. Revoke all vendor access credentials immediately 2. Review access logs for unauthorised activity 3. Re-issue credentials after vendor confirms compromise remediated 4. MFA mandatory for re-access |
+| **Vendor data breach (org data exposed)** | 1. Activate org incident response process 2. Assess data protection authority notification requirements 3. Joint incident investigation 4. Contract review for liability and remediation costs |
+| **Vendor supply chain compromise** | 1. Suspend acceptance of any deliverables using affected component 2. Review SBOM for affected dependency across all vendor work 3. Require vendor to remove/replace compromised component 4. Independent security re-testing |
+
+CISO shall notify Executive Management within 24 hours of any vendor incident affecting organisational data or systems.
+
+**Post-Incident Actions**:
+- Vendor must provide post-incident report within 30 days
+- Organisation conducts vendor security reassessment
+- Contract continuation contingent on satisfactory remediation
+- Significant incidents may trigger contract termination clause
 
 ---
 
@@ -347,6 +556,31 @@ Where vendor development occurs outside Switzerland:
 - Where realistic data is required, sanitised, anonymised, or pseudonymised data shall be used.
 - Synthetic data (artificially generated) is the preferred approach.
 - Any use of transformed personal data shall be documented and approved by the Data Protection Officer or CISO.
+
+**Synthetic Data Generation Approaches**:
+- **Faker libraries**: Realistic but fake data (names, addresses, emails) — suitable for UI testing, reporting development
+- **Data masking tools**: Retain data structure and referential integrity while obscuring values — suitable for complex schema testing
+- **Rule-based generation**: Generate data matching production patterns and distributions — suitable for performance testing
+- **AI-generated data**: ML models trained on production data to generate statistically similar synthetic datasets — suitable for analytics development
+
+Tool examples: Faker (Python/JavaScript), Mockaroo (web-based), Tonic.ai, Gretel.ai (enterprise)
+
+Where absolutely necessary to use production data (complex data relationships, rare edge cases), data shall be:
+1. Subset to minimum records required (not full production dump)
+2. Anonymised or pseudonymised per nFADP Art. 5
+3. Approved by Data Protection Officer with documented justification
+4. Encrypted at rest and in transit to vendor environment
+5. Deleted from vendor systems within 30 days of development completion
+
+**Swiss Federal Data Protection and Information Commissioner (FDPIC) Notification**:
+
+Where a vendor security incident results in high risk to data subjects (nFADP Art. 24), the organisation shall notify the FDPIC without undue delay. High risk indicators include:
+- Unauthorised access to special categories of personal data (Art. 5 para. 2)
+- Data breach affecting >500 Swiss residents
+- Compromise of sensitive personal data (health, financial, biometric)
+- Incident involving systematic profiling or automated decision-making data
+
+Vendor DPA shall require vendor to provide all information necessary for FDPIC notification within 48 hours of incident discovery.
 
 ---
 
@@ -438,6 +672,32 @@ This policy is reviewed and updated as part of the continual improvement process
 
 ---
 
+## Implementation Checklist (For Organisations New to Outsourcing)
+
+**Before Engaging First Vendor**:
+- [ ] Vendor security assessment questionnaire template created
+- [ ] Standard outsourced development contract template with security clauses drafted (Legal review)
+- [ ] DPA template compliant with nFADP Art. 9 prepared (DPO review)
+- [ ] Secure coding standards documented and published
+- [ ] SAST/SCA/DAST tooling selected and operational
+- [ ] Security acceptance checklist template created
+- [ ] Vendor access provisioning process documented
+- [ ] Code escrow agent selected (if applicable for Tier 1)
+
+**Per Engagement**:
+- [ ] Vendor tier determined and documented
+- [ ] Security assessment completed and approved
+- [ ] Contract with security clauses signed
+- [ ] DPA executed (if vendor accesses personal data)
+- [ ] Secure development package delivered to vendor
+- [ ] Vendor personnel background checks verified (Tier 1)
+- [ ] Vendor access provisioned with least privilege
+- [ ] Security testing cadence scheduled (milestone/sprint reviews)
+- [ ] Acceptance criteria communicated to vendor
+- [ ] Code repository or escrow arrangement established
+
+---
+
 # Areas of the ISO 27001 Standard Addressed
 
 Outsourced Development Policy — ISO 27001 Controls Mapping
@@ -476,4 +736,4 @@ Outsourced Development Policy — ISO 27001 Controls Mapping
 
 ---
 
-<!-- QA_VERIFIED: 2026-02-07 -->
+<!-- QA_VERIFIED: 2026-02-08 -->

@@ -1513,7 +1513,7 @@ def apply_conditional_formatting(wb):
     green_fill = PatternFill(start_color='C6EFCE', end_color='C6EFCE', fill_type='solid')
     yellow_fill = PatternFill(start_color='FFEB9C', end_color='FFEB9C', fill_type='solid')
     red_fill = PatternFill(start_color='FFC7CE', end_color='FFC7CE', fill_type='solid')
-    orange_fill = PatternFill(start_color='FFC000', end_color='FFC000', fill_type='solid')
+    orange_fill = PatternFill(start_color='FFEB9C', end_color='FFEB9C', fill_type='solid')
     
     # Alert Management - True Positive Rate
     ws = wb['Alert Management']

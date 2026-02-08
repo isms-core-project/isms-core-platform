@@ -158,7 +158,44 @@ Cable infrastructure shall be documented and maintained:
 
 ### Cabling Change Control
 
-- All cabling installations, modifications, and removals shall follow the organisation's change management process (A.8.32).
+All cabling installations, modifications, and removals shall follow the organisation's change management process (A.8.32) with the following specific requirements:
+
+#### Change Request Requirements
+
+Cabling change requests shall include:
+- **Business justification**: Why the change is needed
+- **Scope**: Specific cables, pathways, and termination points affected
+- **Service impact assessment**: Potential downtime, affected systems/services
+- **Implementation plan**: Step-by-step procedure including testing plan
+- **Rollback plan**: How to restore service if implementation fails
+- **Documentation updates**: What diagrams and registers will be updated
+
+#### Approval Requirements
+
+| Change Type | Approval Required | Testing Required | Documentation Update Deadline |
+|-------------|------------------|-----------------|------------------------------|
+| **New cable installation** | IT Operations Manager + Facilities Manager | Cable testing (continuity, performance) per IEC/TIA standards | 5 business days |
+| **Cable removal** | IT Operations Manager | Verify no active connections before removal | 5 business days |
+| **Cable route modification** | IT Operations Manager + Facilities Manager | Cable testing post-modification | 5 business days |
+| **Fibre optic installation/modification** | CISO + IT Operations Manager (high-security infrastructure) | Fibre testing (attenuation, continuity) | 5 business days |
+| **Emergency repair** | IT Operations Manager (post-implementation approval within 24 hours) | Post-repair testing mandatory | 2 business days |
+
+#### Testing and Validation
+
+All cabling changes shall include post-implementation testing:
+- **Copper cable**: Continuity, wire-map, length, attenuation, near-end crosstalk (NEXT), return loss per TIA-568 Category 6A requirements minimum
+- **Fibre optic cable**: Optical loss, continuity, polarity per TIA-568 or manufacturer specifications
+- **Test results documentation**: Test reports retained with change record; failed tests require remediation before acceptance
+- **Acceptance criteria**: Must meet or exceed relevant cabling standard performance specifications
+
+#### Post-Implementation Review
+
+Within 30 days of cabling changes affecting >10 connections or critical infrastructure:
+- Review actual vs. planned service impact
+- Review testing results and any deviations from plan
+- Update cabling standards or procedures based on lessons learned
+- Document review results in change record
+
 - Unused cables shall be disconnected, documented, and either removed or clearly marked as inactive.
 - Quarterly physical walkthroughs shall be conducted to identify unauthorised additions, modifications, or damage. Findings shall be reconciled against as-built diagrams and change records, with results documented and signed off by the Facilities Manager.
 
@@ -223,6 +260,86 @@ Maintenance schedules shall be adjusted based on equipment age, environmental co
 
 ---
 
+## Availability and Service Continuity
+
+Cabling and equipment infrastructure directly supports the organisation's service availability commitments to customers. Maintenance activities shall be planned and executed to minimise service disruption.
+
+### Service Impact Assessment
+
+All maintenance activities shall be assessed for potential service impact before scheduling:
+
+| Impact Level | Definition | Customer Notification | Approval Required |
+|--------------|-----------|---------------------|-------------------|
+| **Zero impact** | Redundant system; no service disruption | None | IT Operations Manager |
+| **Minor impact** | Possible brief performance degradation (<5 minutes) | Advance notice 48 hours | IT Operations Manager |
+| **Moderate impact** | Planned service interruption (5-60 minutes) | Advance notice 5 business days | CISO + Business Owner |
+| **Major impact** | Extended outage (>60 minutes) or customer-facing service offline | Advance notice 10 business days | Executive Management + Customer approval (if contractual) |
+
+### Maintenance Windows
+
+- **Standard maintenance window**: [Define: e.g., "Sundays 02:00-06:00 local time" or "First Saturday of each month 20:00-midnight"]
+- All non-emergency maintenance that may impact services shall be scheduled during approved maintenance windows
+- Emergency maintenance outside maintenance windows requires CISO approval and immediate customer notification (where impact exceeds SLA thresholds)
+
+### Availability Target Impact
+
+Infrastructure maintenance programme shall support the organisation's availability commitments:
+
+| Service | Availability Commitment | Maximum Allowable Downtime per Year | Infrastructure Contribution |
+|---------|------------------------|-------------------------------------|----------------------------|
+| [Primary Service] | 99.5% uptime | 43.8 hours | Planned maintenance: <24 hours annually; Unplanned failures: <20 hours annually |
+| [Secondary Service] | 99.0% uptime | 87.6 hours | Planned maintenance: <40 hours annually; Unplanned failures: <48 hours annually |
+
+**Preventive maintenance scheduling constraint**: Total planned downtime for infrastructure maintenance shall not exceed 50% of the annual allowable downtime budget, reserving capacity for unplanned failures.
+
+### Redundancy Requirements
+
+Equipment maintenance programme shall account for redundancy design:
+
+- **Single points of failure**: Equipment with no redundancy shall have maintenance scheduled during low-usage periods with advance customer notification
+- **Redundant systems**: Where N+1 or 2N redundancy exists, maintenance shall be staggered to maintain at least N capacity at all times
+- **Critical path equipment** (UPS, network core, primary servers): Maintenance shall include pre-maintenance verification of redundancy status and post-maintenance failover testing
+
+### Capacity During Maintenance
+
+When redundant equipment is taken offline for maintenance, remaining capacity shall be verified sufficient for current load plus 20% buffer:
+- If capacity would fall below buffer threshold, maintenance shall be rescheduled or additional temporary capacity provisioned
+- Load testing after maintenance shall verify full redundancy restored before marking equipment "in service"
+
+### Business Continuity and Disaster Recovery Dependencies
+
+Infrastructure maintenance programme shall support business continuity planning:
+
+#### Critical Infrastructure Identification
+
+Equipment and cabling critical to business continuity shall be identified and prioritised:
+
+| Classification | Definition | Maintenance Priority | Spare Parts |
+|----------------|-----------|---------------------|-------------|
+| **Tier 1 - Mission Critical** | Equipment whose failure causes immediate service outage with no workaround | Highest priority; preventive maintenance never deferred | Critical spares on-site or <4h availability |
+| **Tier 2 - Business Critical** | Equipment whose failure causes service degradation or affects subset of users | High priority; maintenance may be deferred max 30 days with CISO approval | Spare parts available within 24 hours |
+| **Tier 3 - Important** | Equipment whose failure causes inconvenience but services remain operational | Standard priority; maintenance deferrals permitted with documented justification | Spare parts ordered on-demand |
+
+#### Disaster Recovery Infrastructure Testing
+
+- **Annual DR failover test** shall include infrastructure components:
+  - Backup power systems (UPS, generator if equipped)
+  - Redundant network paths
+  - Backup cooling systems
+  - Critical cabling paths (verify documented alternate routes exist)
+- DR test shall verify maintenance programme has maintained infrastructure in DR-ready state
+- DR test findings that reveal infrastructure gaps shall trigger maintenance programme updates
+
+#### Alternate Site Infrastructure
+
+If the organisation maintains a disaster recovery site:
+- All maintenance programme requirements apply to DR site equipment
+- DR site cabling infrastructure documented to same standards as primary site
+- Synchronisation of maintenance activities (if primary UPS batteries replaced, DR site batteries assessed and replaced if needed)
+- DR site equipment maintenance may be lower frequency if environment controlled and equipment lightly used (with documented justification)
+
+---
+
 ## Maintenance Personnel Authorisation
 
 ### Internal Personnel
@@ -242,6 +359,58 @@ Maintenance schedules shall be adjusted based on equipment age, environmental co
 - Third-party maintenance personnel shall be supervised when accessing equipment that processes or stores sensitive or confidential information, unless a documented risk assessment concludes that unsupervised access is acceptable (e.g., dedicated maintenance contract with background-checked personnel, isolated equipment).
 - Unsupervised third-party maintenance access shall be logged with individual identification, time in/out, and equipment accessed.
 - Supervision records shall be maintained as evidence.
+
+---
+
+## Third-Party Maintenance Provider Management
+
+### Contract Requirements
+
+Maintenance contracts with third-party providers shall include:
+
+| Contract Element | Requirement |
+|-----------------|-------------|
+| **Service Level Agreement (SLA)** | Response time (on-site arrival); resolution time; escalation procedures |
+| **Coverage hours** | 24x7 for critical equipment; business hours for non-critical |
+| **Spare parts availability** | Critical spares on-site or <4 hour delivery commitment |
+| **Security requirements** | Background checks for personnel; confidentiality obligations; supervision acceptance |
+| **Data protection** | Data handling procedures; secure erasure capabilities; data breach notification obligations |
+| **Reporting** | Monthly service reports; annual performance review meetings |
+| **Insurance** | Professional liability; cyber liability (for remote access providers) |
+| **Termination rights** | Termination for security breach; transition assistance obligations |
+
+### Vendor Performance Monitoring
+
+Maintenance provider performance shall be tracked and reviewed:
+
+| Metric | Target | Review Frequency |
+|--------|--------|------------------|
+| **SLA compliance (response time)** | >95% | Quarterly |
+| **SLA compliance (resolution time)** | >90% | Quarterly |
+| **Maintenance quality** | <5% repeat failures within 30 days | Quarterly |
+| **Security incident rate** | 0 | Per occurrence |
+| **Customer satisfaction** (internal users) | >4/5 rating | Per service event |
+| **Documentation compliance** | 100% of service reports received on time | Quarterly |
+
+### Annual Vendor Review
+
+Each maintenance provider shall receive an annual review covering:
+- SLA performance against targets
+- Security compliance (supervision adherence, incident-free record)
+- Cost-effectiveness compared to alternatives
+- Responsiveness and communication quality
+- Recommendation: Continue, renegotiate, or replace
+
+**Review documentation**: Retained 3 years; renewal/replacement decisions documented with justification.
+
+### Vendor Security Incidents
+
+If a maintenance provider causes or contributes to a security incident:
+1. **Immediate action**: Suspend vendor access pending investigation
+2. **Investigation**: Root cause analysis; determine if contractual breach occurred
+3. **Corrective action**: Vendor-provided remediation plan; enhanced supervision if access restored
+4. **Contract review**: Assess whether termination warranted; document decision
+5. **Lessons learned**: Update vendor management procedures or contract requirements
 
 ---
 
@@ -293,6 +462,59 @@ When equipment must be removed from premises for off-site maintenance:
 
 ---
 
+## Infrastructure Failure Incident Response
+
+Infrastructure failures (cable damage, equipment malfunction) that impact or may impact services shall be managed through the organisation's incident management process.
+
+### Incident Classification for Infrastructure Events
+
+| Severity | Definition | Examples | Response Time | Notification |
+|----------|-----------|----------|---------------|--------------|
+| **P1 - Critical** | Complete service outage or imminent risk | Primary power failure, core network switch failure, complete cable cut | Immediate response; 1-hour restoration target | CISO, Executive Management, affected customers immediately |
+| **P2 - High** | Significant service degradation; redundancy lost | UPS failure (mains power operational), backup link failure, partial cable damage | 2-hour response; 4-hour restoration target | IT Operations Manager, CISO, customer notification if SLA impacted |
+| **P3 - Medium** | Minor degradation; redundancy intact | Single server failure (clustered), cooling unit failure (backup operational) | 4-hour response; 24-hour restoration target | IT Operations Manager |
+| **P4 - Low** | No current service impact; monitoring alerts | Aging UPS battery, equipment running hot but within tolerances | Next business day response; scheduled maintenance | IT Operations |
+
+### Infrastructure Incident Response Workflow
+
+1. **Detection and Logging**
+   - Infrastructure monitoring alerts or user reports trigger incident creation
+   - Incident ticket created in [Incident Management System] with severity classification
+   - Initial assessment: scope of impact, affected services, affected customers
+
+2. **Escalation**
+   - P1: Immediate escalation to CISO and IT Operations Manager
+   - P2: Escalation to IT Operations Manager within 30 minutes
+   - P3/P4: Assigned to on-duty engineer
+
+3. **Communication**
+   - **Internal**: Incident status updates every 2 hours (P1), every 4 hours (P2) until resolution
+   - **Customer**: Notification per service impact assessment table above; status updates per SLA terms
+   - **Vendors**: Engage maintenance providers per contract escalation procedures
+
+4. **Investigation and Remediation**
+   - Root cause analysis mandatory for all P1/P2 incidents
+   - Temporary workarounds documented with permanent fix scheduled
+   - Equipment failures: Determine maintenance history, warranty status, replacement requirements
+
+5. **Post-Incident Review**
+   - P1/P2 incidents: Post-incident review within 5 business days
+   - Lessons learned: Identify preventive measures, maintenance programme improvements
+   - Documentation: Update maintenance procedures, cabling standards, or monitoring thresholds based on findings
+
+### Infrastructure Incident Evidence Collection
+
+Infrastructure incidents shall document:
+- Timeline of events (detection, escalation, actions taken, resolution)
+- Impact assessment (services affected, customer impact, downtime duration)
+- Root cause analysis (equipment age, maintenance history, environmental factors)
+- Resolution actions (repairs, replacements, configuration changes)
+- Preventive actions (maintenance schedule adjustments, monitoring improvements)
+
+Post-incident review documentation retained 3 years minimum.
+
+---
+
 ## Maintenance Records
 
 ### Documentation Requirements
@@ -314,6 +536,52 @@ All maintenance — preventive and corrective — shall be documented:
 - Maintenance records shall be reviewed quarterly for trends: recurring faults, equipment approaching end-of-life, increasing failure frequency, or maintenance SLA breaches.
 - Trend analysis shall inform equipment replacement planning and maintenance programme adjustments.
 - Quarterly trend reports shall be provided to the IT Operations Manager and CISO.
+
+---
+
+## Infrastructure Performance Monitoring
+
+Beyond maintenance completion metrics, the organisation shall monitor infrastructure health indicators to enable predictive maintenance and demonstrate availability effectiveness.
+
+### Equipment Health Monitoring
+
+| Metric | Monitoring Method | Alert Threshold | Review Frequency |
+|--------|------------------|-----------------|------------------|
+| **UPS battery health** | Battery impedance testing | >20% degradation from baseline | Monthly trend analysis |
+| **UPS runtime capacity** | Annual load bank testing | <90% of rated runtime | Annual with trend |
+| **Equipment temperature** | Environmental monitoring system | >80% of maximum operating temperature | Continuous alerting |
+| **Network equipment errors** | SNMP monitoring / syslog | >0.1% interface error rate | Daily review |
+| **Server hardware health** | Management interface monitoring (iDRAC, iLO) | Predictive failure alerts | Continuous alerting |
+| **HVAC performance** | Temperature/humidity sensors | Temp >24C or <18C; RH >60% or <40% | Continuous alerting |
+| **Power consumption trends** | PDU monitoring | >80% of rated capacity | Monthly trend |
+| **Cable infrastructure issues** | Help desk tickets, walkthrough findings | Any damage, unauthorised modifications | Quarterly review |
+
+### Predictive Maintenance Triggers
+
+Health monitoring shall trigger early maintenance actions before failure:
+
+| Indicator | Trigger Threshold | Action |
+|-----------|------------------|---------|
+| UPS battery degradation | 15-20% capacity loss | Schedule battery replacement within 30 days |
+| Equipment temperature trending up | 3-month average increase >5C | Investigate cooling, schedule deep cleaning |
+| Network interface errors increasing | 3-month trend shows doubling of errors | Schedule cable testing, interface inspection |
+| Server hardware predictive failure alert | SMART error, memory ECC errors | Schedule replacement before failure; backup verification |
+
+### Availability Metrics Dashboard
+
+Monthly reporting to IT Operations Manager and CISO:
+
+| Metric | Target | Calculation |
+|--------|--------|-------------|
+| **Unplanned infrastructure downtime** | <20 hours annually | Sum of all P1/P2 incident durations |
+| **Planned maintenance downtime** | <24 hours annually | Sum of all maintenance window durations impacting services |
+| **Infrastructure availability** | >99.5% | (Total hours - downtime hours) / Total hours x 100% |
+| **Mean Time Between Failures (MTBF)** | Increasing trend | Track by equipment category |
+| **Mean Time To Repair (MTTR)** | <4 hours (P1/P2) | Average time from detection to resolution |
+| **Preventive maintenance compliance** | 100% | Completed on-schedule / Total scheduled x 100% |
+| **Equipment past end-of-life** | 0 critical equipment | Count of critical equipment exceeding manufacturer EOL date |
+
+**Quarterly trend analysis**: Review metrics for deteriorating trends; adjust maintenance programme or schedule equipment replacements.
 
 ---
 
@@ -356,24 +624,45 @@ All maintenance — preventive and corrective — shall be documented:
 
 ## Evidence
 
-The following evidence demonstrates compliance with this policy:
+The following evidence demonstrates compliance with this policy. **For SOC 2 Type II audits**, auditors will test operating effectiveness over the audit period (typically 12 months).
 
-| # | Evidence | Owner | Frequency |
-|---|----------|-------|-----------|
-| 1 | **Cable register / cable management database** documenting all structured cabling with type, endpoints, route, and classification | Facilities Manager | *Maintained continuously; reviewed annually* |
-| 2 | **As-built cabling diagrams** for all facilities, current and version-controlled | Facilities Manager | *Updated within 5 business days of changes; reviewed annually* |
-| 3 | **Quarterly cable walkthrough reports** with findings, reconciliation against diagrams, and sign-off | Facilities Manager | *Quarterly; retained 3 years* |
-| 4 | **Cable testing records** (continuity, performance) for new installations and annual verification | Facilities Manager | *Annually and per installation; retained 3 years* |
-| 5 | **Maintenance programme** showing all in-scope equipment with schedules aligned to manufacturer recommendations | IT Operations Manager | *Reviewed quarterly; retained 3 years* |
-| 6 | **Quarterly reconciliation** of asset inventory against maintenance programme coverage | IT Operations Manager | *Quarterly; retained 3 years* |
-| 7 | **Preventive maintenance records** documenting completed maintenance with findings and next scheduled date | IT Operations | *Per maintenance event; retained 3 years minimum* |
-| 8 | **Corrective maintenance records** documenting faults, root cause, repair actions, and post-repair verification | IT Operations | *Per event; retained 3 years minimum* |
-| 9 | **Maintenance personnel authorisation records** (internal and third-party) | IT Operations Manager | *Reviewed annually; retained 3 years* |
-| 10 | **Third-party maintenance provider register** with contract details and annual review | IT Operations Manager | *Reviewed annually; retained active + 2 years* |
-| 11 | **Remote maintenance session logs** with individual identification, times, and actions | IT Operations | *Per session; retained 3 years* |
-| 12 | **Equipment removal and return records** with chain of custody, data protection evidence, and return inspection | IT Operations | *Per event; retained 3 years* |
-| 13 | **Maintenance trend analysis reports** identifying recurring issues and equipment lifecycle recommendations | IT Operations Manager | *Quarterly; retained 3 years* |
-| 14 | **Exception register** for approved deviations from maintenance schedules or cabling standards | CISO | *Per event; reviewed quarterly; retained active + 2 years* |
+| # | Evidence | Owner | Frequency | Audit Trail Requirements |
+|---|----------|-------|-----------|--------------------------|
+| 1 | **Cable register / cable management database** documenting all structured cabling with type, endpoints, route, and classification | Facilities Manager | *Maintained continuously; reviewed annually* | Current register with version history showing updates |
+| 2 | **As-built cabling diagrams** for all facilities, current and version-controlled | Facilities Manager | *Updated within 5 business days of changes; reviewed annually* | Diagram versions correlated with change records |
+| 3 | **Quarterly cable walkthrough reports** with findings, reconciliation against diagrams, and sign-off | Facilities Manager | *Quarterly; retained 3 years* | Signed walkthrough report with findings and remediation actions |
+| 4 | **Cable testing records** (continuity, performance) for new installations and annual verification | Facilities Manager | *Annually and per installation; retained 3 years* | Test reports with pass/fail results per cabling standard |
+| 5 | **Maintenance programme** showing all in-scope equipment with schedules aligned to manufacturer recommendations | IT Operations Manager | *Reviewed quarterly; retained 3 years* | Programme document with quarterly review sign-off |
+| 6 | **Quarterly reconciliation** of asset inventory against maintenance programme coverage | IT Operations Manager | *Quarterly; retained 3 years* | Reconciliation report with coverage percentage and gap remediation |
+| 7 | **Preventive maintenance records** documenting completed maintenance with findings and next scheduled date | IT Operations | *Per maintenance event; retained 3 years minimum* | Individual maintenance records with completion timestamps |
+| 8 | **Corrective maintenance records** documenting faults, root cause, repair actions, and post-repair verification | IT Operations | *Per event; retained 3 years minimum* | Incident-linked maintenance records with root cause analysis |
+| 9 | **Maintenance personnel authorisation records** (internal and third-party) | IT Operations Manager | *Reviewed annually; retained 3 years* | Authorisation register with annual review sign-off |
+| 10 | **Third-party maintenance provider register** with contract details and annual review | IT Operations Manager | *Reviewed annually; retained active + 2 years* | Provider register with contract summaries and review dates |
+| 11 | **Remote maintenance session logs** with individual identification, times, and actions | IT Operations | *Per session; retained 3 years* | Session logs with authorisation records |
+| 12 | **Equipment removal and return records** with chain of custody, data protection evidence, and return inspection | IT Operations | *Per event; retained 3 years* | Chain of custody forms with inspection sign-off |
+| 13 | **Maintenance trend analysis reports** identifying recurring issues and equipment lifecycle recommendations | IT Operations Manager | *Quarterly; retained 3 years* | Trend report with actionable recommendations and management response |
+| 14 | **Exception register** for approved deviations from maintenance schedules or cabling standards | CISO | *Per event; reviewed quarterly; retained active + 2 years* | Exception records with risk assessment and compensating controls |
+| 15 | **Service impact assessments** for maintenance activities | IT Operations | *Per maintenance event impacting services* | Change request showing impact assessment, approval, customer notification (if applicable) |
+| 16 | **Maintenance window utilisation report** | IT Operations Manager | *Quarterly* | Summary showing: planned downtime vs. availability budget, SLA compliance, customer notifications sent |
+| 17 | **Infrastructure availability metrics** | IT Operations Manager | *Monthly; aggregated quarterly* | Dashboard showing uptime %, unplanned downtime, MTBF, MTTR by equipment category |
+| 18 | **Infrastructure incident records** (P1/P2) | IT Operations | *Per incident* | Incident ticket with: timeline, root cause analysis, customer impact, resolution, post-incident review |
+| 19 | **Equipment health monitoring reports** | IT Operations | *Monthly* | UPS battery health trends, temperature monitoring, error rate trends, predictive failure alerts |
+| 20 | **Vendor performance scorecards** | IT Operations Manager | *Quarterly per vendor* | SLA compliance data, quality metrics, security incident tracking, customer satisfaction |
+| 21 | **Annual vendor reviews** | IT Operations Manager | *Annual per vendor* | Review document with performance assessment, renewal/replacement recommendation, approval signature |
+| 22 | **DR infrastructure test results** | IT Operations Manager | *Annual (or per DR test)* | DR test report covering infrastructure failover testing, findings, corrective actions |
+| 23 | **Cabling change management records** | Facilities Manager | *Per cabling change* | Change request, approval, testing results, as-built diagram updates, completion sign-off |
+
+### SOC 2 Type II Testing Expectations
+
+Auditors will typically sample:
+- **25 preventive maintenance events** across audit period (verify scheduled, completed on-time, documented)
+- **All P1/P2 infrastructure incidents** (verify classification, escalation, customer notification, post-incident review)
+- **All vendor performance reviews** (verify completed, metrics tracked, decisions documented)
+- **All cable infrastructure changes** (verify change approval, testing, documentation updates)
+- **Quarterly reconciliations** (asset inventory vs. maintenance programme coverage)
+- **Monthly availability metrics** (verify accuracy, trend analysis, escalation of issues)
+
+**Completeness is critical**: Missing evidence for any item in the sample = audit finding.
 
 ---
 
@@ -461,4 +750,4 @@ Cabling Security and Equipment Maintenance Policy — ISO 27001 Controls Mapping
 
 ---
 
-<!-- QA_VERIFIED: 2026-02-07 -->
+<!-- QA_VERIFIED: 2026-02-08 -->

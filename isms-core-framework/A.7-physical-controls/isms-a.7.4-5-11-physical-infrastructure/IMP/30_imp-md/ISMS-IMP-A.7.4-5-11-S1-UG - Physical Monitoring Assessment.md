@@ -1408,7 +1408,6 @@ Before submitting for Level 2 approval (Security Operations Manager), complete t
 
 ---
 
-
 **END OF USER GUIDE**
 
 ---

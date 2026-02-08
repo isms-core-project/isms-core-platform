@@ -232,7 +232,7 @@ def setup_styles():
             'border': {'left': 'medium', 'right': 'medium', 'top': 'medium', 'bottom': 'medium'}
         },
         'metric_warning': {
-            'font': {'name': 'Calibri', 'size': 14, 'bold': True, 'color': 'FFC000'},
+            'font': {'name': 'Calibri', 'size': 14, 'bold': True, 'color': 'FFEB9C'},
             'fill': {'patternType': 'solid', 'fgColor': 'FFF2CC'},
             'alignment': {'horizontal': 'center', 'vertical': 'center'},
             'border': {'left': 'medium', 'right': 'medium', 'top': 'medium', 'bottom': 'medium'}

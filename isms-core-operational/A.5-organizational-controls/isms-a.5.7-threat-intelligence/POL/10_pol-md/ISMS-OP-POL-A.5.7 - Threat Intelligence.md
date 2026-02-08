@@ -200,6 +200,56 @@ Sources that consistently provide inaccurate, irrelevant, or excessively noisy i
 
 ---
 
+## Vendor-Provided Intelligence Management
+
+Where the organisation subscribes to commercial threat intelligence services or platforms, vendor management requirements apply.
+
+### Vendor Selection Criteria
+
+Commercial threat intelligence vendors shall be evaluated against:
+
+| Criterion | Evaluation Method | Acceptance Threshold |
+|-----------|------------------|---------------------|
+| **Intelligence quality** | Trial period review of 30-day sample data; false positive rate analysis | <10% false positive rate; >90% relevance to organisation's sector |
+| **Timeliness** | Time from threat emergence to feed availability | <24 hours for critical IOCs; <72 hours for tactical intelligence |
+| **Source transparency** | Vendor discloses intelligence collection methods and sourcing | Methodology documented; primary sources identified |
+| **Data protection compliance** | Vendor processing of personal data in IOCs complies with nFADP/GDPR | Data processing agreement in place; documented lawful basis |
+| **Platform integration** | Compatibility with organisation's security tools (SIEM, EDR, firewall) | Standard integration protocols supported (STIX/TAXII, API, syslog) |
+| **Vendor stability** | Financial viability, customer base, industry reputation | Established vendor with >2 years operation; references available |
+
+### Ongoing Vendor Performance Monitoring
+
+| Metric | Target | Review Frequency | Owner |
+|--------|--------|-----------------|-------|
+| **Feed uptime** | >99% | Monthly | IT Operations |
+| **False positive rate** | <10% | Quarterly | CISO |
+| **True positive contribution** | >5 validated detections per quarter | Quarterly | CISO |
+| **Timeliness vs. OSINT sources** | Commercial feed provides intelligence ≥24 hours earlier than free sources | Quarterly | CISO |
+| **Support responsiveness** | Support inquiries resolved within vendor SLA | Per incident | IT Operations |
+| **Data protection compliance** | No unauthorised personal data processing incidents | Continuous | Data Protection Advisor |
+
+### Vendor Contract Requirements
+
+Contracts with commercial threat intelligence vendors shall include:
+
+- **Service level agreement (SLA)** specifying uptime, feed freshness, and support response times
+- **Data processing agreement (DPA)** addressing personal data in IOCs (processor obligations under nFADP Art. 9 or GDPR Art. 28)
+- **Intellectual property terms** clarifying permitted use of intelligence (internal security only; no redistribution without approval)
+- **Termination and data portability** — ability to export intelligence data in standard format upon contract termination
+- **Incident notification** — vendor obligation to notify organisation of any security incident affecting the intelligence service within 24 hours
+
+### Annual Vendor Review
+
+Commercial intelligence vendors shall be reviewed annually covering:
+- Performance against SLAs and quality metrics
+- Cost-benefit analysis (value delivered vs. subscription cost)
+- Comparison against alternative vendors or OSINT sources
+- Contract renewal recommendation with documented justification
+
+**Review documentation retained 3 years; renewal decisions documented in vendor risk register.**
+
+---
+
 ## Collection and Analysis
 
 ### Collection Process
@@ -236,6 +286,51 @@ All threat intelligence — whether produced internally or consumed from externa
 - **Actionable**: Accompanied by clear guidance on detection, prevention, or response actions.
 
 Intelligence that does not meet these criteria shall be flagged, investigated, or discarded. Source evaluation records shall document quality issues.
+
+---
+
+## Intelligence Data Lifecycle Management
+
+### Retention Requirements
+
+Threat intelligence data shall be retained according to operational and regulatory requirements:
+
+| Intelligence Type | Retention Period | Rationale |
+|-------------------|-----------------|-----------|
+| **Operational IOCs** (in active detection) | As long as threat remains relevant; minimum 90 days | Active detection requires current indicators |
+| **Historical IOCs** (no longer active) | 12 months after deactivation | Historical context for incident investigation; trend analysis |
+| **Strategic and tactical intelligence reports** | 3 years | Risk assessment audit trail; programme maturity assessment; historical context |
+| **Internal intelligence from incidents** | Per incident retention schedule (typically 5 years) | Regulatory compliance; potential legal proceedings |
+| **Source evaluation records** | 3 years | Audit trail for source selection decisions |
+| **Intelligence sharing agreements** | 7 years after termination | Legal record retention requirements |
+
+### IOC Lifecycle Management
+
+Indicators of compromise deployed to detection systems shall be managed through a lifecycle process:
+
+1. **Ingestion** — IOC received from source, validated, and classified (TLP, threat type, severity)
+2. **Deployment** — IOC deployed to relevant detection systems (SIEM, EDR, firewall, web filter)
+3. **Active monitoring** — IOC generates alerts when matched; alerts triaged and investigated
+4. **Review** — IOCs reviewed quarterly for continued relevance:
+   - Has indicator been observed in alerts? (Active vs. dormant)
+   - Is threat still current? (Intelligence source updated or deprecated?)
+   - False positive rate acceptable? (If >20% false positives, consider removal)
+5. **Deactivation** — IOC removed from detection systems when no longer relevant
+6. **Archival** — IOC moved to historical database for trend analysis and incident investigation reference
+7. **Purging** — IOC permanently deleted after retention period expires
+
+**Automation**: Where technically feasible, IOC lifecycle management should be automated through threat intelligence platform (TIP) or SIEM functionality. Manual IOC management acceptable for organisations without TIP capability.
+
+### Data Protection Considerations
+
+Where threat intelligence contains personal data (e.g., email addresses in phishing indicators, IP addresses of compromised systems):
+
+- **Lawful basis**: Processing justified under legitimate interest for information security (nFADP Art. 6 para. 2; GDPR Art. 6(1)(f) where applicable)
+- **Purpose limitation**: Personal data in IOCs processed only for threat detection and incident response; not used for other purposes
+- **Retention minimisation**: Personal data retained only as long as operationally necessary; IOCs containing personal data prioritised for lifecycle review
+- **Access restriction**: Intelligence databases containing personal data restricted to authorised security personnel only
+
+**DPIA**: If threat intelligence processing involves large-scale systematic monitoring or special categories of personal data, a Data Protection Impact Assessment may be required under nFADP Art. 22.
 
 ---
 
@@ -297,6 +392,22 @@ Threat intelligence shall inform the organisation's risk assessment process per 
 3. Changes to threat likelihood or impact based on intelligence shall be documented with traceable references to supporting intelligence reports.
 4. Risk treatment decisions influenced by threat intelligence shall be recorded in the risk register.
 
+### Privacy and Confidentiality Threat Assessment
+
+Where the organisation processes personal data subject to nFADP or GDPR, threat intelligence shall specifically address threats to data confidentiality and privacy:
+
+| Threat Category | Privacy Impact | Intelligence Requirements |
+|-----------------|---------------|---------------------------|
+| **Data exfiltration** | Unauthorised disclosure of personal data | IOCs for data theft malware, exfiltration techniques (DNS tunnelling, steganography), attacker infrastructure used for data staging |
+| **Credential theft** | Unauthorised access to systems processing personal data | Phishing campaign indicators, credential-stealing malware signatures, compromised credential databases |
+| **Insider threats** | Intentional or accidental data misuse | Behavioural indicators, privileged access abuse patterns, data access anomaly detection |
+| **Third-party breaches** | Personal data compromise via processors/vendors | Intelligence on breached service providers, compromised SaaS platforms, supply chain data leakage |
+
+**Risk register impact:**
+- Risks related to personal data processing (e.g., “R-DATA-01: Unauthorised access to customer personal data”) shall be reviewed quarterly against threat intelligence findings
+- Threat intelligence indicating increased targeting of data controllers in the organisation’s sector shall trigger re-assessment of data protection control adequacy
+- Detection rules for data exfiltration attempts shall be updated based on observed attacker techniques
+
 ---
 
 ## Incident Management Integration
@@ -345,6 +456,41 @@ The organisation shall track the following to assess integration effectiveness:
 
 ---
 
+## Availability and Business Continuity Integration
+
+Threat intelligence shall inform business continuity planning and service availability protection per Controls A.5.29-30.
+
+### Availability Threat Monitoring
+
+The following threat categories shall be prioritised for detection and response due to their potential impact on service availability:
+
+| Threat Type | Availability Impact | Detection Priority | Response Action |
+|-------------|-------------------|-------------------|-----------------|
+| **Distributed Denial of Service (DDoS)** | Direct service disruption | High | Activate DDoS mitigation service; traffic filtering; upstream ISP coordination |
+| **Ransomware** | Data and system unavailability | Critical | Immediate containment; backup restoration; no ransom payment |
+| **Wiper malware** | Permanent data destruction | Critical | Immediate isolation; forensic preservation; disaster recovery activation |
+| **Supply chain attacks** | Third-party dependency disruption | High | Alternative provider evaluation; service degradation procedures |
+| **Resource exhaustion attacks** | Capacity degradation | Medium | Capacity scaling; rate limiting; malicious actor blocking |
+
+### Continuity Planning Inputs
+
+Threat intelligence shall provide the following inputs to business continuity and disaster recovery planning:
+
+1. **Threat scenarios** — Annual review of plausible threat scenarios (ransomware, DDoS, data destruction) based on observed industry incidents shall inform business impact analysis (BIA) and recovery strategies.
+
+2. **Recovery time objectives (RTO) validation** — Observed attack speeds in the wild (e.g., ransomware encryption time, DDoS attack duration) shall be compared against RTO assumptions to validate recovery feasibility.
+
+3. **Third-party dependency risks** — Intelligence on supply chain attacks or cloud service provider incidents shall trigger reviews of vendor contingency plans and alternative provider readiness.
+
+4. **Tabletop exercise scenarios** — Annual business continuity exercises shall incorporate realistic threat scenarios derived from current threat intelligence.
+
+**Integration process:**
+- Quarterly review of availability-impacting threats by CISO and Business Continuity Manager
+- Annual update of BIA threat assumptions based on intelligence findings
+- Business continuity plan updates documented with reference to supporting threat intelligence
+
+---
+
 ## Effectiveness Measurement
 
 The organisation shall measure threat intelligence programme effectiveness to justify investment, identify improvement opportunities, and demonstrate value to stakeholders.
@@ -373,6 +519,76 @@ The CISO shall conduct an annual review of the threat intelligence programme cov
 - Resource adequacy (personnel, tools, budget).
 - Maturity assessment against the organisation's target maturity level.
 - Recommendations for programme improvement.
+
+---
+
+## Testing and Validation
+
+The organisation shall test threat intelligence effectiveness to validate that intelligence sources and detection integrations perform as intended.
+
+### Intelligence Detection Testing
+
+| Test Type | Frequency | Method | Success Criteria | Owner |
+|-----------|-----------|--------|------------------|-------|
+| **IOC detection validation** | Quarterly | Deploy test IOCs (non-malicious simulation) to security tools; verify alerts generated | >90% of deployed IOCs trigger expected alerts | IT Security |
+| **Threat intelligence feed integrity** | Monthly | Verify automated feeds are ingesting successfully; check for stale data | All feeds updated within 24 hours; no ingestion failures >48 hours old | IT Operations |
+| **TTP detection coverage** | Semi-annually | Map organisation’s detection rules to MITRE ATT&CK; identify coverage gaps | >70% of MITRE ATT&CK techniques relevant to organisation’s threat profile covered by detection rules | CISO |
+| **False positive analysis** | Quarterly | Sample 20 threat intelligence-sourced alerts; investigate true positive rate | >70% true positive rate | IT Security |
+| **Escalation path test** | Annually | Simulate critical threat scenario; test escalation to CISO and Executive Management | Escalation completed within 1 hour; all stakeholders engaged | CISO |
+| **Source utility assessment** | Annually | For each intelligence source, identify actionable intelligence produced in past 12 months | Each source produced ≥1 actionable intelligence item or documented reason for retention | CISO |
+
+### Purple Team Exercises
+
+Where resources permit, the organisation should conduct annual purple team exercises:
+- **Red team** simulates attack based on current threat intelligence (realistic adversary TTPs)
+- **Blue team** (detection and response) attempts to detect and respond using threat intelligence-informed detections
+- **Debrief** identifies gaps in intelligence coverage, detection rules, or response procedures
+- **Improvement actions** documented and tracked through corrective action process
+
+**For organisations without purple team capability:** Tabletop exercises simulating threat intelligence-driven incident scenarios serve as an acceptable alternative.
+
+### Testing Documentation
+
+All testing activities shall be documented with:
+- Test date, scope, and participants
+- Test results (pass/fail, metrics achieved, gaps identified)
+- Corrective actions assigned (where gaps identified)
+- Follow-up validation of corrective actions
+
+Testing documentation retained 3 years; reported in annual programme review.
+
+---
+
+## Customer Threat Intelligence Sharing (If Applicable)
+
+*Note: This section applies only if the organisation provides managed security services or has contractual commitments to share threat intelligence with customers.*
+
+### Customer Intelligence Deliverables
+
+Where the organisation has contractually committed to provide threat intelligence to customers:
+
+| Deliverable | Frequency | Content | Audience |
+|-------------|-----------|---------|----------|
+| **Threat briefing** | Quarterly | Strategic intelligence summary relevant to customer’s sector; emerging threats; recommended actions | Customer security leadership |
+| **IOC feed** | Continuous or daily | Operational IOCs relevant to customer environment | Customer SOC or IT security |
+| **Incident notifications** | Immediate | Notification of threats actively targeting customer’s sector or technology stack | Customer security contact |
+| **Annual threat report** | Annually | Comprehensive threat landscape analysis; attack trend data; sector-specific threat actor profiles | Customer executive management |
+
+### Customer-Specific Intelligence
+
+For customers with dedicated service agreements, the organisation shall:
+- Tailor intelligence to customer’s specific technology stack, geography, and threat profile
+- Provide actionable recommendations specific to customer environment
+- Coordinate with customer’s security team on intelligence application
+- Maintain confidentiality of customer-specific intelligence (not shared with other customers unless anonymised)
+
+### Customer Intelligence Feedback Loop
+
+- Customers shall be invited to provide feedback on intelligence utility and relevance
+- Customer feedback incorporated into quarterly intelligence programme review
+- Adjustments to deliverables made based on customer needs and feedback
+
+**Evidence**: Customer intelligence deliverables documented with delivery confirmation; customer feedback recorded; service level compliance tracked.
 
 ---
 
@@ -431,24 +647,41 @@ Not all organisations have dedicated threat intelligence teams or SOC capabiliti
 
 ---
 
-## Evidence
+## Evidence (Enhanced for Audit)
 
-The following evidence demonstrates compliance with this policy:
+The following evidence demonstrates compliance with this policy. **For SOC 2 Type II audits**, auditors will test operating effectiveness by sampling evidence from the audit period (typically 12 months).
 
-| # | Evidence | Owner | Frequency |
-|---|----------|-------|-----------|
-| 1 | **Threat intelligence source inventory** documenting all active sources, categories, and evaluation status | CISO | *Reviewed annually; updated upon source change* |
-| 2 | **Source evaluation records** documenting reliability, relevance, and false positive assessment for each source | CISO | *Annual evaluation; documented per source* |
-| 3 | **Strategic intelligence reports or briefings** delivered to Executive Management | CISO | *Quarterly at minimum* |
-| 4 | **Tactical intelligence advisories** distributed to security and IT operations staff | IT Manager / Security Lead | *Monthly at minimum; ad hoc for emerging threats* |
-| 5 | **IOC deployment records** showing indicators deployed to detection and blocking systems with timestamps | IT Operations | *Per deployment; retained for 12 months* |
-| 6 | **Risk register entries** referencing threat intelligence as input to likelihood or impact assessment | Risk Management | *Per risk assessment update; retained per retention schedule* |
-| 7 | **Incident investigation records** showing threat intelligence context applied during investigation | Incident Response | *Per P1/P2 incident; retained per retention schedule* |
-| 8 | **Post-incident intelligence feedback records** documenting IOCs and TTPs extracted from incidents | Incident Response | *Per P1/P2 incident* |
-| 9 | **Threat intelligence sharing agreements** with external parties (NDA, ISAC membership, or equivalent) | CISO | *Per agreement; reviewed annually* |
-| 10 | **TLP compliance records** documenting adherence to TLP designations on received and shared intelligence | CISO | *Per sharing event; audit trail retained* |
-| 11 | **Annual programme review report** covering source performance, integration effectiveness, and improvement recommendations | CISO | *Annually* |
-| 12 | **Threat intelligence metrics dashboard** showing KPIs and trend data | CISO | *Quarterly; retained for 3 years* |
+| # | Evidence | Owner | Frequency | Audit Trail Details |
+|---|----------|-------|-----------|---------------------|
+| 1 | **Threat intelligence source inventory** | CISO | *Annual review; updated upon change* | Inventory document with version history; change log showing source additions/removals with dates and approvals |
+| 2 | **Source evaluation records** | CISO | *Annual per source* | Evaluation template completed for each source; scoring documented; decision to retain/replace source with justification |
+| 3 | **Strategic intelligence reports** | CISO | *Quarterly minimum* | Report documents with distribution list and delivery confirmation; executive management meeting minutes showing receipt and discussion |
+| 4 | **Tactical intelligence advisories** | IT Manager / Security Lead | *Monthly minimum; ad hoc* | Advisory documents with distribution timestamp; acknowledgment of receipt by key stakeholders |
+| 5 | **IOC deployment records** | IT Operations | *Per deployment* | Deployment tickets or TIP logs showing: IOC identifier, source, deployment date/time, target systems, deployment method, validation test results |
+| 6 | **Risk register updates** | Risk Management | *Per update* | Risk register entries with “last updated” timestamp; “intelligence source” field documenting threat intelligence report that triggered update |
+| 7 | **Incident investigation records** | Incident Response | *Per P1/P2 incident* | Incident tickets with “threat intelligence context” section populated; IOC correlation results; threat actor attribution assessment (where feasible) |
+| 8 | **Post-incident intelligence feedback** | Incident Response | *Per P1/P2 incident* | Incident post-mortem section documenting: new IOCs discovered, TTPs observed, intelligence gaps identified, recommendations for detection improvement |
+| 9 | **External sharing agreements** | CISO | *Per agreement; annual review* | Signed NDAs, ISAC membership agreements, information sharing MoUs; annual review notes confirming agreements current |
+| 10 | **TLP compliance records** | CISO | *Per sharing event* | Sharing log documenting: date, recipient, TLP classification assigned, approval (if TLP:AMBER or above), confirmation of recipient TLP acknowledgment |
+| 11 | **Vendor performance reviews** | CISO | *Annual per vendor* | Vendor review template with SLA compliance data, false positive rates, cost-benefit analysis, renewal recommendation with approval signature |
+| 12 | **Intelligence testing results** | IT Security | *Per test (quarterly/semi-annual)* | Test reports documenting: test date, test scope, test results (pass/fail metrics), gaps identified, corrective actions assigned with due dates |
+| 13 | **Metrics dashboard** | CISO | *Quarterly* | Dashboard screenshot or report showing all KPIs; trend charts for year-over-year comparison; red threshold breaches highlighted with corrective action status |
+| 14 | **Annual programme review** | CISO | *Annual* | Comprehensive review document covering source performance, integration effectiveness, maturity assessment, resource adequacy, executive presentation slides with approval signatures |
+
+### Audit Trail Requirements
+
+For SOC 2 Type II operating effectiveness testing, ensure:
+
+- **Completeness**: All required evidence exists for the entire audit period (typically 12 months)
+- **Accuracy**: Evidence reflects actual activities (not templated placeholders)
+- **Timestamps**: All evidence clearly dated; electronic evidence includes metadata showing creation/modification dates
+- **Approvals**: Where policy requires approval (e.g., exceptions, vendor selections, sharing agreements), approval documented with approver name and date
+- **Population vs. Sample**: Auditors will typically test:
+  - **All** strategic reports (should be 4 per year minimum)
+  - **Sample** of IOC deployments (20-25 samples)
+  - **All** incidents rated P1/P2 (should have threat intelligence context)
+  - **All** sources (should have annual evaluation)
+  - **All** vendor contracts (should have annual performance review)
 
 ---
 
@@ -525,4 +758,65 @@ Threat Intelligence Policy — ISO 27001 Controls Mapping
 
 ---
 
-<!-- QA_VERIFIED: 2026-02-07 -->
+## Appendix A: Threat Intelligence Metrics Dashboard Template
+
+**Report Period:** Q[X] [YEAR]
+**Report Date:** [Date]
+**Prepared by:** [CISO/Security Lead]
+
+### Executive Summary
+[2-3 paragraph summary of threat landscape, key threats identified, actions taken]
+
+### Source Portfolio Status
+
+| Source Category | Required | Active | Status | Action Required |
+|-----------------|----------|--------|--------|-----------------|
+| Government/CERT | ≥1 | [X] | Green | None |
+| OSINT | ≥2 | [X] | Green | None |
+| Internal Telemetry | All | [X] | Green | None |
+| Commercial | [As budgeted] | [X] | Green | None |
+| Vendor Advisories | All critical vendors | [X] | Amber | [Vendor X] advisory feed not monitored; action: subscribe by [date] |
+
+### Key Performance Indicators
+
+| Metric | Target | Q[X] Actual | Trend | Status |
+|--------|--------|-------------|-------|--------|
+| Active sources (all required categories) | 100% | 100% | Stable | Pass |
+| Source evaluations completed | 100% annually | 25% YTD (on track) | Up | Pass |
+| Strategic briefings delivered | ≥1 per quarter | 1 | Stable | Pass |
+| IOC deployment timeliness | <24h average | 18h average | Improved | Pass |
+| Risk register updates from intelligence | ≥1 per quarter | 3 | Up | Pass |
+| True positive rate (intelligence-sourced alerts) | >70% | 78% | Up | Pass |
+| Post-incident feedback completion (P1/P2) | 100% | 100% (2/2 incidents) | Stable | Pass |
+
+### Threat Intelligence Activity Summary
+
+- **IOCs deployed this quarter:** [X] indicators (breakdown: [Y] IP addresses, [Z] domains, [N] file hashes)
+- **Alerts generated from intelligence:** [X] alerts; [Y] true positives, [Z] false positives
+- **Incidents leveraging intelligence:** [X] investigations used threat intelligence context
+- **Intelligence-driven risk updates:** [X] risk register entries updated based on intelligence
+- **External intelligence shared:** [X] sharing events (all TLP-compliant)
+
+### Top Threats Identified This Quarter
+
+1. **[Threat Name]** — [Brief description, relevance to organisation, action taken]
+2. **[Threat Name]** — [Brief description, relevance to organisation, action taken]
+3. **[Threat Name]** — [Brief description, relevance to organisation, action taken]
+
+### Intelligence Programme Improvements This Quarter
+
+- [Improvement action 1 with completion status]
+- [Improvement action 2 with completion status]
+
+### Next Quarter Priorities
+
+- [Priority action 1]
+- [Priority action 2]
+
+**Prepared by:** [Name, Role]
+**Reviewed by:** [CISO]
+**Distribution:** Executive Management, Risk Management, IT Operations Manager
+
+---
+
+<!-- QA_VERIFIED: 2026-02-08 -->

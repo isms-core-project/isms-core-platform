@@ -1093,7 +1093,7 @@ def create_ioc_deployment(ws, styles, validations):
     gray_fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
     green_fill = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
     red_fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
-    orange_fill = PatternFill(start_color="FFC000", end_color="FFC000", fill_type="solid")
+    orange_fill = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid")
     
     for row in range(5, 105):
         rule1 = CellIsRule(operator='equal', formula=['"Expired"'], fill=gray_fill)
@@ -2485,7 +2485,7 @@ def create_action_items(ws, styles, validations):
     
     # Conditional formatting for Priority
     critical_fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
-    high_fill = PatternFill(start_color="FFC000", end_color="FFC000", fill_type="solid")
+    high_fill = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid")
     medium_fill = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid")
     low_fill = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
     
@@ -2504,7 +2504,7 @@ def create_action_items(ws, styles, validations):
     
     # Status conditional formatting
     resolved_fill = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
-    blocked_fill = PatternFill(start_color="FFC000", end_color="FFC000", fill_type="solid")
+    blocked_fill = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid")
     
     for row in range(5, 55):
         rule1 = CellIsRule(operator='equal', formula=['"Resolved"'], fill=resolved_fill)

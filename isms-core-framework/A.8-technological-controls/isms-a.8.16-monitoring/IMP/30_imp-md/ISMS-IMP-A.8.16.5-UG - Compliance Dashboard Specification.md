@@ -1270,7 +1270,6 @@ Infrastructure Capability: 75/100 (calculated via weighted average of Sheet 2, C
 
 ---
 
-
 **END OF USER GUIDE**
 
 ---

@@ -130,7 +130,7 @@ STYLES = {
     },
     'input_cell': {
         'font': Font(name='Calibri', size=10, color='000000'),
-        'fill': PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid'),
+        'fill': PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid'),
         'alignment': Alignment(horizontal='left', vertical='top', wrap_text=True),
         'border': Border(
             left=Side(style='thin'), right=Side(style='thin'),
@@ -295,7 +295,7 @@ def create_instructions_sheet(ws):
         ws[f'A{current_row}'].font = Font(bold=True)
         ws[f'B{current_row}'].value = value
         if "[" in value:
-            ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+            ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         current_row += 1
 
     current_row += 1
@@ -333,7 +333,7 @@ def create_instructions_sheet(ws):
 
     legend_data = [
         ("Blue Header", "Column headers - Do not edit", "003366"),
-        ("Yellow", "Data entry cells - Complete these fields", "FFFF00"),
+        ("Yellow", "Data entry cells - Complete these fields", "FFFFCC"),
         ("Light Blue", "Section headers - Read-only", "D8E4F8"),
         ("Grey", "Reference information - Read-only", "F2F2F2"),
         ("White", "Optional fields - Complete if relevant", "FFFFFF")
@@ -618,7 +618,7 @@ def create_summary_dashboard(ws):
     for label, value in inventory_metrics:
         ws[f'A{current_row}'].value = label
         ws[f'B{current_row}'].value = value
-        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         current_row += 1
 
     current_row += 1
@@ -647,8 +647,8 @@ def create_summary_dashboard(ws):
         ws[f'A{current_row}'].value = label
         ws[f'B{current_row}'].value = count
         ws[f'C{current_row}'].value = pct
-        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
-        ws[f'C{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
+        ws[f'C{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         current_row += 1
 
     current_row += 1
@@ -671,7 +671,7 @@ def create_summary_dashboard(ws):
         ws[f'A{current_row}'].value = label
         ws[f'B{current_row}'].value = value
         ws[f'C{current_row}'].value = target
-        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         current_row += 1
 
     current_row += 1
@@ -693,7 +693,7 @@ def create_summary_dashboard(ws):
     for label, value in kpi_metrics:
         ws[f'A{current_row}'].value = label
         ws[f'B{current_row}'].value = value
-        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         current_row += 1
 
     # Set column widths
@@ -798,7 +798,7 @@ def create_approval_signoff(ws):
     for label, value in control_fields:
         ws[f'A{current_row}'].value = label
         ws[f'B{current_row}'].value = value
-        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         current_row += 1
 
     current_row += 2
@@ -823,7 +823,7 @@ def create_approval_signoff(ws):
 
     for field in approval_fields:
         ws[f'A{current_row}'].value = field
-        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         if field == "Approval Status:":
             dv = DataValidation(type="list", formula1='"Approved,Approved with Conditions,Rejected"', allow_blank=True)
             ws.add_data_validation(dv)
@@ -850,7 +850,7 @@ def create_approval_signoff(ws):
 
     for field in approval_fields:
         ws[f'A{current_row}'].value = field
-        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         if field == "Approval Status:":
             dv = DataValidation(type="list", formula1='"Approved,Approved with Conditions,Rejected"', allow_blank=True)
             ws.add_data_validation(dv)
@@ -877,7 +877,7 @@ def create_approval_signoff(ws):
 
     for field in approval_fields:
         ws[f'A{current_row}'].value = field
-        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         if field == "Approval Status:":
             dv = DataValidation(type="list", formula1='"Approved,Approved with Conditions,Rejected"', allow_blank=True)
             ws.add_data_validation(dv)

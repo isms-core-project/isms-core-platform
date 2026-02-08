@@ -132,25 +132,25 @@ def setup_styles():
 
     # Header styles
     styles['header_main'] = {
-        'font': Font(name='Arial', size=18, bold=True, color='FFFFFF'),
+        'font': Font(name='Calibri', size=18, bold=True, color='FFFFFF'),
         'fill': PatternFill(start_color='003366', end_color='003366', fill_type='solid'),
         'alignment': Alignment(horizontal='center', vertical='center', wrap_text=True)
     }
 
     styles['header_sub'] = {
-        'font': Font(name='Arial', size=12, bold=False, color='FFFFFF'),
+        'font': Font(name='Calibri', size=12, bold=False, color='FFFFFF'),
         'fill': PatternFill(start_color='003366', end_color='003366', fill_type='solid'),
         'alignment': Alignment(horizontal='center', vertical='center', wrap_text=True)
     }
 
     styles['section_header'] = {
-        'font': Font(name='Arial', size=14, bold=True, color='FFFFFF'),
+        'font': Font(name='Calibri', size=14, bold=True, color='FFFFFF'),
         'fill': PatternFill(start_color='003366', end_color='003366', fill_type='solid'),
         'alignment': Alignment(horizontal='center', vertical='center', wrap_text=True)
     }
 
     styles['column_header'] = {
-        'font': Font(name='Arial', size=10, bold=True, color='000000'),
+        'font': Font(name='Calibri', size=10, bold=True, color='000000'),
         'fill': PatternFill(start_color='D9D9D9', end_color='D9D9D9', fill_type='solid'),
         'alignment': Alignment(horizontal='center', vertical='center', wrap_text=True),
         'border': Border(
@@ -163,8 +163,8 @@ def setup_styles():
 
     # Data cell styles
     styles['input_cell'] = {
-        'font': Font(name='Arial', size=10, color='000000'),
-        'fill': PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid'),  # Yellow
+        'font': Font(name='Calibri', size=10, color='000000'),
+        'fill': PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid'),  # Yellow
         'alignment': Alignment(horizontal='left', vertical='top', wrap_text=True),
         'border': Border(
             left=Side(style='thin', color='000000'),
@@ -175,7 +175,7 @@ def setup_styles():
     }
 
     styles['calculated_cell'] = {
-        'font': Font(name='Arial', size=10, color='000000'),
+        'font': Font(name='Calibri', size=10, color='000000'),
         'fill': PatternFill(start_color='DCE6F1', end_color='DCE6F1', fill_type='solid'),  # Light Blue
         'alignment': Alignment(horizontal='left', vertical='top', wrap_text=True),
         'border': Border(
@@ -187,7 +187,7 @@ def setup_styles():
     }
 
     styles['label_cell'] = {
-        'font': Font(name='Arial', size=10, bold=True, color='000000'),
+        'font': Font(name='Calibri', size=10, bold=True, color='000000'),
         'fill': PatternFill(start_color='D9D9D9', end_color='D9D9D9', fill_type='solid'),  # Gray
         'alignment': Alignment(horizontal='left', vertical='center', wrap_text=True),
         'border': Border(
@@ -199,9 +199,9 @@ def setup_styles():
     }
 
     # Status fills (for conditional formatting reference)
-    styles['status_compliant'] = PatternFill(start_color='92D050', end_color='92D050', fill_type='solid')  # Green
-    styles['status_partial'] = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')  # Yellow
-    styles['status_non_compliant'] = PatternFill(start_color='FF0000', end_color='FF0000', fill_type='solid')  # Red
+    styles['status_compliant'] = PatternFill(start_color='C6EFCE', end_color='C6EFCE', fill_type='solid')  # Green
+    styles['status_partial'] = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')  # Yellow
+    styles['status_non_compliant'] = PatternFill(start_color='FFC7CE', end_color='FFC7CE', fill_type='solid')  # Red
 
     return styles
 
@@ -414,7 +414,7 @@ def create_dashboard_sheet(wb, styles):
     ws['B38'] = '100%'
     ws['C38'] = '=SUM(D32:D36)'
     ws['C38'].number_format = '0.00%'
-    ws['C38'].font = Font(name='Arial', size=10, bold=True)
+    ws['C38'].font = Font(name='Calibri', size=10, bold=True)
 
     # Set column widths
     set_column_widths(ws, {'A': 40, 'B': 15, 'C': 15, 'D': 15, 'E': 15, 'F': 5, 'G': 5, 'H': 5, 'I': 5, 'J': 5, 'K': 5})

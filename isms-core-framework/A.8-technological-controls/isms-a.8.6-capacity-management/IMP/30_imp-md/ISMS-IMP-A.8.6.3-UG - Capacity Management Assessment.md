@@ -1172,7 +1172,6 @@ Use conservative: 60% ⚠️ PARTIAL COMPLIANCE
 
 ---
 
-
 **END OF USER GUIDE**
 
 ---

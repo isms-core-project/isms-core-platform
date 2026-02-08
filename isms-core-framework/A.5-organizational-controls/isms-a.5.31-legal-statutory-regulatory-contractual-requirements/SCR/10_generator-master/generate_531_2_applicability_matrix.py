@@ -494,7 +494,7 @@ def setup_styles():
             "fill": PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid"),
         },
         "rating_high": {
-            "fill": PatternFill(start_color="FF0000", end_color="FF0000", fill_type="solid"),
+            "fill": PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid"),
         },
     }
     return styles
@@ -936,7 +936,7 @@ def add_conditional_formatting(ws):
     # Rating cells - color code based on value
     low_fill = PatternFill(start_color="00FF00", end_color="00FF00", fill_type="solid")
     moderate_fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-    high_fill = PatternFill(start_color="FF0000", end_color="FF0000", fill_type="solid")
+    high_fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
     
     # Apply to potential rating cells (column C)
     ws.conditional_formatting.add(

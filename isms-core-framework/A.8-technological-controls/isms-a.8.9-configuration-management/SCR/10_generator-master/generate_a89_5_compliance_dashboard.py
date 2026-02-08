@@ -416,7 +416,7 @@ FILL_LIGHT_YELLOW = PatternFill(start_color='FFF2CC', end_color='FFF2CC', fill_t
 FILL_LIGHT_RED = PatternFill(start_color='FCE4D6', end_color='FCE4D6', fill_type='solid')
 FILL_GREEN = PatternFill(start_color='70AD47', end_color='70AD47', fill_type='solid')
 FILL_DARK_GREEN = PatternFill(start_color='375623', end_color='375623', fill_type='solid')
-FILL_YELLOW = PatternFill(start_color='FFC000', end_color='FFC000', fill_type='solid')
+FILL_YELLOW = PatternFill(start_color='FFEB9C', end_color='FFEB9C', fill_type='solid')
 FILL_RED = PatternFill(start_color='C00000', end_color='C00000', fill_type='solid')
 FILL_ORANGE = PatternFill(start_color='ED7D31', end_color='ED7D31', fill_type='solid')
 FILL_GRAY = PatternFill(start_color='D9D9D9', end_color='D9D9D9', fill_type='solid')

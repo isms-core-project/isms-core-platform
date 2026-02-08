@@ -151,6 +151,34 @@ The authority contact register shall be:
 
 > **Contact register location**: [Specify: SharePoint controlled library, ServiceNow CMDB, dedicated contacts database, or "Controlled Excel register in shared drive with quarterly integrity verification"]
 
+### Contact Registry Change Management
+
+Changes to the authority contact register shall follow documented change control:
+
+1. **Change trigger**:
+   - Authority contact person changes role or employer
+   - New regulatory authority becomes applicable (e.g., [Organisation] expands to new jurisdiction)
+   - Contact details change (phone number, email, emergency contact information)
+   - Communication protocol changes (new notification portal, updated escalation procedure)
+
+2. **Change process**:
+   - **Requester** identifies need for change and documents reason
+   - **CISO** reviews and approves change
+   - **Registry owner** updates contact register with change date and version increment
+   - **Distribution** — updated registry distributed to all authorised users within 24 hours
+   - **Offline list** — printed/local copy updated and replaced within 48 hours
+
+3. **Change documentation**:
+   - All changes logged in registry version history
+   - Change date, changed fields, previous values, approver recorded
+   - Reason for change documented (e.g., "Authority contact retired; new contact assigned per NCSC notification dated [date]")
+
+4. **Validation**:
+   - New contact tested (test email or phone call) within 5 business days of change
+   - Confirmation of successful contact test documented in registry
+
+**Version control**: Contact registry shall use date-based versioning (YYYY-MM-DD format) and retain all historical versions for audit trail.
+
 ---
 
 ## Mandatory Notifications
@@ -189,6 +217,66 @@ When a potential notification trigger is identified:
 5. **Follow-up** — Full report completed within the required timeframe (e.g., 14 days for NCSC). Authority responses tracked and actioned.
 
 Where an event triggers multiple notification obligations (e.g., a data breach that also constitutes a cyber incident), each obligation shall be addressed independently but coordinated to ensure consistent messaging.
+
+---
+
+## Customer and Stakeholder Communication
+
+### Customer Notification Requirements
+
+When a security incident affects customer data, systems, or service availability, [Organisation] shall communicate with affected customers according to:
+
+1. **Contractual obligations** — notification timelines and content specified in customer agreements
+2. **Service commitments** — published SLA notification requirements
+3. **Regulatory requirements** — where customers are data subjects, nFADP Art. 24 or GDPR Art. 34 notification obligations may apply
+
+### Customer Notification Triggers
+
+| Event Type | Notification Required | Timeframe | Content |
+|------------|---------------------|-----------|---------|
+| **Customer data breach** (confidentiality loss) | Yes | Within [X hours] of confirmation; target: 24 hours | Nature of breach, categories of data affected, steps taken, customer actions recommended |
+| **Service availability incident** (>SLA threshold) | Yes | Per SLA terms (e.g., within 2 hours of exceeding threshold) | Incident summary, estimated restoration time, workarounds available |
+| **Security incident with potential customer impact** | Yes (proactive) | Within [X hours] of risk identification; target: 12 hours | Nature of incident, potential impact assessment, preventive measures taken |
+| **Near-miss incident** (no actual impact but risk identified) | Discretionary | At next scheduled customer review or immediately if risk remains | Risk identified, preventive actions implemented |
+| **Incident with no customer impact** | No (unless contractually required) | N/A | Internal incident only; no customer notification |
+
+### Customer Communication Process
+
+1. **Initial assessment** — CISO determines customer impact scope and notification requirements
+2. **Customer contact identification** — Customer Success / Account Management provides current customer contact list and any customer-specific notification requirements
+3. **Message preparation** — CISO drafts notification content; Legal Counsel reviews; CEO or designated executive approves before sending
+4. **Notification method** — Per customer preference (email to security contact, customer portal notification, emergency phone call for critical incidents)
+5. **Follow-up communication** — Status updates provided at [defined intervals, e.g., every 24 hours] until incident resolved; final incident report within [X business days] of closure
+6. **Documentation** — All customer communications logged in incident ticket with timestamp, recipients, content, and any customer responses
+
+### Special Considerations
+
+- **B2B customers with their own notification obligations**: Notify within timeframe allowing customer to meet their own regulatory deadlines (coordinate with customer's security team)
+- **Regulatory notification vs. customer notification**: These are independent obligations. Customer notification does not substitute for FDPIC/DPA notification and vice versa.
+- **"No impact" confirmation**: If investigation confirms no customer impact, proactively communicate this to customers who may have been notified of a potential risk
+
+### Communication Ownership
+
+| Customer Type | Primary Contact | Approval Required |
+|---------------|----------------|-------------------|
+| **Enterprise customers** | Assigned Account Manager + CISO | CEO or CTO |
+| **SMB customers** | Customer Success Team + CISO | CISO |
+| **All customers (data breach)** | CISO + Legal Counsel | CEO |
+
+### Third-Party Service Provider Notification
+
+When a security incident involves or affects a third-party service provider, subprocessor, or cloud infrastructure provider:
+
+| Scenario | Notification Required | Timeframe |
+|----------|---------------------|-----------|
+| **Incident originates from vendor system** | Vendor notifies [Organisation] per contract | Vendor obligated to notify within contract terms |
+| **Incident affects data processed by subprocessor** | [Organisation] notifies subprocessor | Within 24 hours if subprocessor action required |
+| **[Organisation] incident may affect vendor's other clients** | [Organisation] notifies vendor | Within 24 hours of identification |
+| **Coordinated incident response required** | Mutual notification and coordination | Immediate upon identification |
+
+**Vendor incident escalation path:**
+- Vendor → [Organisation] CISO → Customer Success (if customer impact) → Customers
+- Documentation of vendor notifications maintained in incident ticket and vendor risk register
 
 ---
 
@@ -347,6 +435,38 @@ Before sharing any information externally, the following controls apply:
 
 ---
 
+## Testing and Exercising
+
+### Contact Registry Operability Testing
+
+Beyond quarterly contact verification, [Organisation] shall conduct:
+
+| Test Type | Frequency | Method | Success Criteria |
+|-----------|-----------|--------|------------------|
+| **Offline contact list accessibility** | Quarterly | Simulate primary systems unavailable; locate and access offline list within 5 minutes | Offline list retrieved successfully; contacts current |
+| **Authority notification drill** | Annually (minimum) | Tabletop exercise simulating breach notification to FDPIC and NCSC | Notification prepared within target timeframe; all stakeholders engaged; no critical information gaps |
+| **Customer notification simulation** | Semi-annually | Simulated incident requiring customer notification; draft notification prepared | Customer list identified; notification drafted and approved within SLA timeframe; communication channels confirmed operational |
+| **24/7 escalation path test** | Annually | Out-of-hours test of on-call escalation to CISO and Legal Counsel | Both contacts reached within 30 minutes; escalation path documented |
+| **Special interest group contact validation** | Annually | Confirm receipt of threat intelligence from subscribed sources; verify monitored inbox operational | Intelligence received and processed; no missed advisories |
+
+### Tabletop Exercise Requirements
+
+Annual tabletop exercise shall include:
+- **Scenario**: Realistic security incident requiring multiple notifications (regulatory authority + customer + possible law enforcement)
+- **Participants**: CISO, Legal Counsel, CEO/designated executive, Customer Success lead, Communications Director
+- **Objectives tested**:
+  - Notification decision-making (threshold determination)
+  - Contact registry use (can participants locate correct contacts quickly?)
+  - Timeframe compliance (can notification be drafted within regulatory deadline?)
+  - Message consistency (do authority, customer, and internal messages align?)
+  - Information sharing controls (TLP classification applied correctly?)
+- **Documentation**: Exercise report with timeline, decisions made, gaps identified, corrective actions assigned
+- **Improvement tracking**: Action items from exercise tracked in ISMS corrective action register
+
+**Note**: If a real notification event occurs during the audit period, it may substitute for the annual tabletop exercise provided it is thoroughly documented and reviewed for lessons learned.
+
+---
+
 ## Training and Awareness
 
 **Annual awareness training** shall be provided to all authorised spokespersons and incident response team members, covering:
@@ -370,6 +490,24 @@ Training completion tracked; target: **100% of authorised spokespersons trained 
 
 ## Evidence
 
+### Evidence Retention Policy
+
+All evidence supporting this policy shall be retained according to the following minimum periods:
+
+| Evidence Type | Retention Period | Rationale |
+|---------------|-----------------|-----------|
+| **Authority notifications** | 5 years from submission | Regulatory audit trail; potential legal proceedings |
+| **Communication logs** | 5 years from last entry | Regulatory audit trail; internal audit needs |
+| **Contact registry versions** | 3 years (all versions with change dates) | Demonstrate continuous compliance; audit trail |
+| **Tabletop exercise records** | 3 years | SOC 2 Type II audit period (typically 12 months, retain 3 years for historical context) |
+| **Threat intelligence decisions** | 3 years | Risk management audit trail |
+| **Training records** | 3 years from training date | Compliance demonstration; employment records |
+| **SIG participation records** | 3 years | Value assessment historical data |
+
+**Backup and accessibility**: All retained evidence shall be backed up and accessible for audit within 24 hours of request.
+
+### Evidence Register
+
 The following evidence demonstrates compliance with this policy:
 
 | # | Evidence | Owner | Frequency |
@@ -377,7 +515,7 @@ The following evidence demonstrates compliance with this policy:
 | 1 | **Authority contact register** with verified contact details and quarterly update records | CISO | *Verified quarterly; updated upon change* |
 | 2 | **Special interest group participation register** with membership status and annual value assessment | CISO | *Reviewed annually; updated upon change* |
 | 3 | **Communication log** documenting all authority interactions (inquiries received, notifications submitted, responses) | CISO | *Per interaction; retained for 5 years* |
-| 4 | **Notification records** — copies of breach notifications submitted to FDPIC, NCSC, or other authorities with submission timestamps and confirmation | CISO / DPO | *Per event; retained for 5 years* |
+| 4 | **Incident notification package** (complete documentation for each notification event) | CISO / DPO | *Per event; retained for 5 years* |
 | 5 | **Threat intelligence intake records** — advisories received, triage decisions, and actions taken | CISO | *Per advisory; retained for 3 years* |
 | 6 | **Information sharing log** — records of information shared externally, TLP classification, and approval | CISO | *Per sharing event; retained for 3 years* |
 | 7 | **Offline contact list** — current printed or locally stored copy of critical authority contacts for incident use | CISO | *Updated quarterly; verified during incident exercises* |
@@ -386,6 +524,19 @@ The following evidence demonstrates compliance with this policy:
 | 10 | **Tabletop exercise records** demonstrating notification readiness (where no real notification events occurred in audit period) | CISO | *Annually at minimum; retained for 3 years* |
 | 11 | **Exception Register entries** for any deviations from contact or notification requirements | CISO | *Per exception; retained for 3 years* |
 | 12 | **Annual SIG value review** documenting assessment of each membership's contribution to security posture | CISO | *Annually; retained for 3 years* |
+| 13 | **Contact registry change log** with approval trail documenting all modifications to authority contacts | CISO | *Per change; retained for 3 years* |
+
+**Each incident notification package (Evidence #4) shall include:**
+- Incident ticket showing discovery timestamp, initial assessment, escalation path
+- Notification decision record (who determined notification required, legal basis, threshold met)
+- Draft notification with review/approval trail (CISO draft → Legal review → Executive approval)
+- Submission confirmation (FDPIC portal screenshot, NCSC email confirmation, certified mail receipt, etc.)
+- Timestamp evidence (email sent timestamp, portal submission confirmation, receipt acknowledgment)
+- Follow-up communications (status updates, final report, authority responses)
+- Customer notification package (if applicable): customer list, notification content, send confirmation, customer responses
+- Lessons learned record (post-incident review notes, improvement actions identified)
+
+**For audit periods with no notification events**: Tabletop exercise documentation demonstrates notification readiness and serves as evidence of control design effectiveness.
 
 ---
 
@@ -405,6 +556,27 @@ The following metrics shall be tracked and reported to the CISO quarterly:
 | Authority inquiry response (acknowledged within 24 hours) | 100% | Any inquiry unacknowledged >48 hours |
 | Authorised spokesperson training completion | 100% annually | <80% trained |
 | Offline contact list currency | Updated quarterly | >6 months since last update |
+
+### Operational Performance Metrics
+
+In addition to governance metrics, the following operational metrics shall be tracked:
+
+| Metric | Target | Measurement Frequency | Owner |
+|--------|--------|---------------------|-------|
+| **Notification compliance** (% of mandatory notifications submitted within required timeframe) | 100% | Per event | CISO |
+| **Customer notification timeliness** (average time from incident confirmation to customer notification) | <24 hours | Per event | CISO + Customer Success |
+| **Authority inquiry response time** (time from receipt to acknowledgment) | <24 hours | Per inquiry | Legal Counsel |
+| **Threat intelligence actionability** (% of received advisories resulting in action or documented decision) | >80% | Monthly | CISO |
+| **Contact registry accuracy** (% of contacts tested and confirmed operational during quarterly verification) | 100% | Quarterly | CISO |
+| **Tabletop exercise participation** (% of designated spokespersons attending annual exercise) | 100% | Per exercise | CISO |
+| **SIG intelligence value** (qualitative assessment: Low/Medium/High value from each SIG membership) | All memberships rated Medium or High | Annual review | CISO |
+
+**Trend analysis**: Metrics tracked over time to identify patterns:
+- Are notification timelines improving or degrading?
+- Are certain authority contacts consistently unavailable during verification?
+- Are specific SIG memberships consistently low-value (candidate for discontinuation)?
+
+**Dashboard delivery**: Quarterly metrics dashboard provided to executive management as part of ISMS performance reporting.
 
 **Reporting requirements**:
 
@@ -475,4 +647,38 @@ Contact with Authorities and Special Interest Groups Policy — ISO 27001 Contro
 
 ---
 
-<!-- QA_VERIFIED: 2026-02-07 -->
+## Appendix A: Customer Security Notification Template
+
+**Subject**: [Security Incident Notification / Data Breach Notification] — [Organisation] — [Date]
+
+**Dear [Customer Contact Name]**,
+
+We are writing to inform you of a security incident that [affected / may have affected] [your data / services provided to you].
+
+**What Happened:**
+[Brief description: On [date], we identified [nature of incident]. The incident was discovered when [how discovered]. We immediately [actions taken].]
+
+**What Information Was Involved:**
+[Categories of data affected: customer names, email addresses, encrypted passwords, etc. Be specific but avoid unnecessary detail.]
+
+**What We Are Doing:**
+[Actions taken: We have [contained the incident / notified authorities / engaged forensic investigators / implemented additional controls]. We are [ongoing actions].]
+
+**What You Should Do:**
+[Customer actions recommended: We recommend that you [change passwords / monitor accounts / review access logs / contact your customers (if B2B)]. We have [provided support resources / set up a dedicated hotline].]
+
+**Additional Information:**
+[How to contact us for questions. Reference number for incident. Link to FAQ or dedicated information page.]
+
+We take the security of your data seriously and sincerely apologise for any inconvenience this incident may have caused.
+
+Sincerely,
+[CEO Name]
+Chief Executive Officer
+[Organisation]
+
+[Contact Information]
+
+---
+
+<!-- QA_VERIFIED: 2026-02-08 -->

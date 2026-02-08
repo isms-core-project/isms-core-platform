@@ -603,7 +603,6 @@ Before submitting for review:
 
 ---
 
-
 **END OF USER GUIDE**
 
 ---

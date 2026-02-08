@@ -678,11 +678,11 @@ def create_styles():
     }
     
     # Status colors (conditional formatting helpers)
-    styles['status_critical'] = PatternFill(start_color='FF0000', end_color='FF0000', fill_type='solid')
-    styles['status_high'] = PatternFill(start_color='FFC000', end_color='FFC000', fill_type='solid')
-    styles['status_medium'] = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
-    styles['status_low'] = PatternFill(start_color='92D050', end_color='92D050', fill_type='solid')
-    styles['status_good'] = PatternFill(start_color='00B050', end_color='00B050', fill_type='solid')
+    styles['status_critical'] = PatternFill(start_color='FFC7CE', end_color='FFC7CE', fill_type='solid')
+    styles['status_high'] = PatternFill(start_color='FFEB9C', end_color='FFEB9C', fill_type='solid')
+    styles['status_medium'] = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
+    styles['status_low'] = PatternFill(start_color='C6EFCE', end_color='C6EFCE', fill_type='solid')
+    styles['status_good'] = PatternFill(start_color='C6EFCE', end_color='C6EFCE', fill_type='solid')
     
     return styles
 

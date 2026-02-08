@@ -181,7 +181,7 @@ def setup_styles():
         },
         "subheader": {
             "font": Font(name="Calibri", size=11, bold=True, color="FFFFFF"),
-            "fill": PatternFill(start_color="00B050", end_color="00B050", fill_type="solid"),
+            "fill": PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid"),
             "alignment": Alignment(horizontal="center", vertical="center", wrap_text=True),
         },
         "column_header": {

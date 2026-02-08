@@ -595,11 +595,11 @@ def setup_styles():
             "font": Font(name="Calibri", size=11, bold=False),
         },
         "critical_fill": {
-            "fill": PatternFill(start_color="FF0000", end_color="FF0000", fill_type="solid"),
+            "fill": PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid"),
             "font": Font(name="Calibri", size=11, bold=True, color="FFFFFF"),
         },
         "high_fill": {
-            "fill": PatternFill(start_color="FFC000", end_color="FFC000", fill_type="solid"),
+            "fill": PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid"),
             "font": Font(name="Calibri", size=11, bold=False),
         },
         "info_box": {

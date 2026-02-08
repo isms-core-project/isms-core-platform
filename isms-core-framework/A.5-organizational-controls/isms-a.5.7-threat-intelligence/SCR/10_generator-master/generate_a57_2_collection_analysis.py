@@ -847,7 +847,7 @@ def create_instructions(ws, styles):
     ws.merge_cells(f"A{row}:G{row}")
     ws[f"A{row}"] = "⚠️ CRITICAL: CONTROL 8.8 INTEGRATION"
     ws[f"A{row}"].font = Font(name="Calibri", size=11, bold=True, color="FF0000")
-    ws[f"A{row}"].fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
+    ws[f"A{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
     ws[f"A{row}"].alignment = Alignment(horizontal="center", vertical="center")
     
     row += 1
@@ -1888,7 +1888,7 @@ def create_vulnerability_linked_threats(ws, styles, validations):
     ws.merge_cells("A1:X1")  # Expanded from T1 to X1 for 24 columns
     ws["A1"] = "WARNING: CRITICAL: Vulnerability-Linked Threats (VTL Schema v1.0 with CVSS - Control 8.8 Integration)"
     ws["A1"].font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
-    ws["A1"].fill = PatternFill(start_color="FF0000", end_color="FF0000", fill_type="solid")
+    ws["A1"].fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
     ws["A1"].alignment = styles["header"]["alignment"]
     ws.row_dimensions[1].height = 35
     
@@ -1904,7 +1904,7 @@ def create_vulnerability_linked_threats(ws, styles, validations):
     ws["A3"] = "v1.0: CVSS-based priority scoring | Bidirectional: 5.7 -> 8.8 (CVSS+context) | 8.8 -> 5.7 (remediation)"
     ws["A3"].font = Font(name="Calibri", size=9, italic=True, bold=True)
     ws["A3"].alignment = Alignment(horizontal="center", vertical="center")
-    ws["A3"].fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
+    ws["A3"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
     
     # Column headers (24 columns - added 3 CVSS columns)
     headers = [
@@ -2097,20 +2097,20 @@ def create_vulnerability_linked_threats(ws, styles, validations):
     ws.conditional_formatting.add(
         'D5:D104',
         CellIsRule(operator='lessThan', formula=['4.0'],
-                   fill=PatternFill(start_color="90EE90", end_color="90EE90", fill_type="solid"))
+                   fill=PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid"))
     )
     
     # Exploitation status formatting
     ws.conditional_formatting.add(
         'H5:H104',
         CellIsRule(operator='equal', formula=['"Active_Exploitation"'],
-                   fill=PatternFill(start_color="FF0000", end_color="FF0000", fill_type="solid"),
+                   fill=PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid"),
                    font=Font(color="FFFFFF", bold=True))
     )
     ws.conditional_formatting.add(
         'H5:H104',
         CellIsRule(operator='equal', formula=['"Mass_Exploitation"'],
-                   fill=PatternFill(start_color="FF0000", end_color="FF0000", fill_type="solid"),
+                   fill=PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid"),
                    font=Font(color="FFFFFF", bold=True))
     )
     

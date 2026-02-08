@@ -1745,7 +1745,7 @@ def create_cost_analysis(ws, styles, validations):
     high_value_fill = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
     good_fill = PatternFill(start_color="D5F5D5", end_color="D5F5D5", fill_type="solid")
     acceptable_fill = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid")
-    reconsider_fill = PatternFill(start_color="FFC000", end_color="FFC000", fill_type="solid")
+    reconsider_fill = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid")
     discontinue_fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
     
     for row in range(5, 45):
@@ -1958,7 +1958,7 @@ def create_compliance_check(ws, styles, validations):
         ws.conditional_formatting.add(f"K{row}", rule4)
     
     # DPA_Review_Date within 30 days → Orange warning
-    orange_fill = PatternFill(start_color="FFC000", end_color="FFC000", fill_type="solid")
+    orange_fill = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid")
     for row in range(5, 45):
         rule = CellIsRule(
             operator='between',
@@ -2140,7 +2140,7 @@ def create_action_items(ws, styles, validations):
     
     # Conditional formatting for Priority
     critical_fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
-    high_fill = PatternFill(start_color="FFC000", end_color="FFC000", fill_type="solid")
+    high_fill = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid")
     medium_fill = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid")
     low_fill = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
     
@@ -2159,7 +2159,7 @@ def create_action_items(ws, styles, validations):
     
     # Status conditional formatting
     resolved_fill = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
-    blocked_fill = PatternFill(start_color="FFC000", end_color="FFC000", fill_type="solid")
+    blocked_fill = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid")
     
     for row in range(5, 55):
         rule1 = CellIsRule(operator='equal', formula=['"Resolved"'], fill=resolved_fill)

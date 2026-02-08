@@ -772,7 +772,7 @@ def populate_regulatory_status(wb):
                 elif "⏳" in value:
                     cell.fill = PatternFill(start_color="FFFFCC", fill_type="solid")
                 elif f"{WARNING}" in value:
-                    cell.fill = PatternFill(start_color="FF0000", fill_type="solid")
+                    cell.fill = PatternFill(start_color="FFC7CE", fill_type="solid")
     
     ws.column_dimensions["A"].width = 12
     ws.column_dimensions["B"].width = 25
@@ -996,7 +996,7 @@ def populate_action_items(wb):
             
             if col_idx == 6:  # Status
                 if f"{XMARK}" in value:
-                    cell.fill = PatternFill(start_color="FF0000", fill_type="solid")
+                    cell.fill = PatternFill(start_color="FFC7CE", fill_type="solid")
                 elif "⏳" in value:
                     cell.fill = PatternFill(start_color="FFFFCC", fill_type="solid")
     

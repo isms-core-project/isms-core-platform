@@ -816,7 +816,7 @@ def add_cvss_metrics_to_executive_summary(ws, styles, start_row=20):
     ws.conditional_formatting.add(
         f'C{row}:D{row}',
         CellIsRule(operator='greaterThan', formula=['0'], 
-                  fill=PatternFill(start_color="FF0000", end_color="FF0000", fill_type="solid"),
+                  fill=PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid"),
                   font=Font(color="FFFFFF", bold=True))
     )
     
@@ -1068,7 +1068,7 @@ def create_executive_summary(ws, styles):
     ws.merge_cells(f"K{row}:L{row}")
     ws[f"K{row}"] = "IOC Effectiveness"
     ws[f"K{row}"].font = Font(name="Calibri", size=10, bold=True, color="FFFFFF")
-    ws[f"K{row}"].fill = PatternFill(start_color="FFC000", end_color="FFC000", fill_type="solid")
+    ws[f"K{row}"].fill = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid")
     ws[f"K{row}"].alignment = Alignment(horizontal="center", vertical="center")
     
     row += 1
@@ -1204,7 +1204,7 @@ def create_executive_summary(ws, styles):
     ws.merge_cells(f"A{row}:L{row+3}")
     ws[f"A{row}"] = get_external_reference_note()
     ws[f"A{row}"].font = Font(name="Calibri", size=9, color="FF0000")
-    ws[f"A{row}"].fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
+    ws[f"A{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
     ws[f"A{row}"].alignment = Alignment(horizontal="left", vertical="top", wrap_text=True)
     ws.row_dimensions[row].height = 100
 
@@ -1409,7 +1409,7 @@ def create_program_kpis(ws, styles, validations):
             ws.conditional_formatting.add(
                 f'K{check_row}:N{check_row}',
                 CellIsRule(operator='greaterThan', formula=['0'],
-                          fill=PatternFill(start_color="FF0000", end_color="FF0000", fill_type="solid"),
+                          fill=PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid"),
                           font=Font(color="FFFFFF", bold=True))
             )
             break
@@ -1491,7 +1491,7 @@ def create_source_portfolio(ws, styles):
     ws.merge_cells("A3:J3")
     ws["A3"] = "⚠️ External Reference: [ISMS-IMP-A.5.7.1.xlsx]"
     ws["A3"].font = Font(name="Calibri", size=10, bold=True, color="FF0000")
-    ws["A3"].fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
+    ws["A3"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
     ws["A3"].alignment = Alignment(horizontal="center", vertical="center")
     
     # Summary metrics (row 5)
@@ -1590,7 +1590,7 @@ def create_intelligence_operations(ws, styles):
     ws.merge_cells("A3:K3")
     ws["A3"] = "⚠️ External Reference: [ISMS-IMP-A.5.7.2.xlsx]"
     ws["A3"].font = Font(name="Calibri", size=10, bold=True, color="FF0000")
-    ws["A3"].fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
+    ws["A3"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
     ws["A3"].alignment = Alignment(horizontal="center", vertical="center")
     
     # Collection Coverage Summary
@@ -1767,7 +1767,7 @@ def create_integration_status(ws, styles):
     ws.merge_cells("A3:J3")
     ws["A3"] = "⚠️ External Reference: [ISMS-IMP-A.5.7.3.xlsx]"
     ws["A3"].font = Font(name="Calibri", size=10, bold=True, color="FF0000")
-    ws["A3"].fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
+    ws["A3"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
     ws["A3"].alignment = Alignment(horizontal="center", vertical="center")
     
     # Tool Integration Summary
@@ -1915,7 +1915,7 @@ def create_stakeholder_engagement(ws, styles):
     ws.merge_cells("A3:H3")
     ws["A3"] = "⚠️ External Reference: [ISMS-IMP-A.5.7.3.xlsx]"
     ws["A3"].font = Font(name="Calibri", size=10, bold=True, color="FF0000")
-    ws["A3"].fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
+    ws["A3"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
     ws["A3"].alignment = Alignment(horizontal="center", vertical="center")
     
     # Stakeholder Registry Summary
@@ -2566,12 +2566,12 @@ def create_quarterly_report(ws, styles):
         ("1. QUARTERLY EXECUTIVE SUMMARY", "70AD47"),
         ("2. STRATEGIC THREAT LANDSCAPE", "5B9BD5"),
         ("3. PROGRAM MATURITY ASSESSMENT", "4472C4"),
-        ("4. QUARTERLY KPI PERFORMANCE", "FFC000"),
+        ("4. QUARTERLY KPI PERFORMANCE", "FFEB9C"),
         ("5. SOURCE PORTFOLIO ROI ANALYSIS", "70AD47"),
         ("6. CONTROL 8.8 INTEGRATION REVIEW", "C00000"),
         ("7. STAKEHOLDER ENGAGEMENT TRENDS", "5B9BD5"),
         ("8. COMPLIANCE STATUS", "4472C4"),
-        ("9. BUDGET VS. ACTUAL", "FFC000"),
+        ("9. BUDGET VS. ACTUAL", "FFEB9C"),
         ("10. NEXT QUARTER PRIORITIES", "C00000"),
     ]
     

@@ -348,7 +348,7 @@ def setup_styles():
         },
         "critical_alert": {
             "font": Font(name="Calibri", size=10, bold=True, color="FFFFFF"),
-            "fill": PatternFill(start_color="FF0000", end_color="FF0000", fill_type="solid"),
+            "fill": PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid"),
         },
     }
     return styles

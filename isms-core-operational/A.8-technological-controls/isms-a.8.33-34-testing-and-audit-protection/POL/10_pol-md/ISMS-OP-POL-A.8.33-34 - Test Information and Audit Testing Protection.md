@@ -115,6 +115,28 @@ The organisation shall establish a clear hierarchy of preference for test data s
 
 Direct production copies shall only be permitted where all other options are demonstrably inadequate, with documented justification, time-limited approval (maximum 30 days), enhanced access controls, and mandatory deletion upon completion.
 
+**Test Data Source Decision Tree**:
+
+To determine the appropriate test data source, apply the following decision logic:
+
+```
+Does the test require real data characteristics (distributions, edge cases)?
++-- NO --> Use Synthetic Data (Priority 1)
++-- YES
+    +-- Can you generate synthetic data with those characteristics?
+        +-- YES --> Use Synthetic Data (Priority 1)
+        +-- NO
+            +-- Is the data personal data under nFADP/GDPR?
+                +-- NO --> Use Masked Production Data (Priority 4)
+                +-- YES
+                    +-- Can re-identification be made impossible?
+                        +-- YES --> Use Anonymised Data (Priority 2)
+                        +-- NO --> Use Pseudonymised Data (Priority 3)
+                            (Requires Information Security Manager + Data Owner approval)
+```
+
+Where a decision results in Priority 3 or higher, the Data Owner and Information Security Manager shall be consulted before proceeding.
+
 **Test Data Classification**: Test data shall be classified according to the organisation's information classification scheme. Production-derived test data inherits the classification of the source data until masking or anonymisation is validated. Synthetic data shall be classified based on business context (typically Internal). Classification determines the protection controls required.
 
 ---
@@ -152,6 +174,20 @@ Data masking shall be applied using [Data Masking Tool] (e.g., Informatica, Delp
 | Dates of birth | Date shifting (consistent offset per record) | Verify age distributions preserved for testing |
 | Free-text fields | Redaction or synthetic replacement | Verify no PII leakage in unstructured text |
 | Addresses | Substitution with synthetic addresses | Verify geographic distribution preserved if needed |
+
+**Data Masking Quick Reference**:
+
+The following table provides a quick reference for common data types and recommended masking approaches:
+
+| Data Type | Recommended Technique | Tool/Method Example |
+|-----------|----------------------|---------------------|
+| Names | Substitution | Faker library: `fake.name()` (Swiss locale) |
+| Emails | Domain swap | `user123@testdomain.example` |
+| Phone numbers | Format-preserving randomisation | Faker library: `fake.phone_number()` |
+| Dates | Consistent offset | All dates shift by random +/- 1-3 years |
+| Addresses | Substitution | Faker library: `fake.address()` (Swiss locale) |
+| Free text | Redaction or NER + replacement | Cloud NLP service + custom replacement logic |
+| Financial values | Format-preserving encryption | FPE algorithm with approved key management |
 
 **Masking Validation**: Masked data shall be validated before release to test environments to confirm that original sensitive values are not recoverable, data format is preserved for application compatibility, referential integrity is maintained across related datasets, and no plaintext personal data exists in the masked output. Validation results shall be documented and approved by the Information Security Manager.
 
@@ -278,6 +314,17 @@ During penetration testing:
 - Testers shall not exploit vulnerabilities beyond the scope necessary for verification and risk assessment.
 - Penetration testing reports shall be classified as Confidential and distributed only to authorised recipients.
 
+### Testing Status Communication
+
+During active penetration testing or extended audit engagements, the tester shall provide daily status updates to the designated organisational contact. Status updates shall include:
+
+- Summary of activities completed during the reporting period.
+- Summary of findings identified (by severity: Critical, High, Medium, Low).
+- Planned activities for the next reporting period.
+- Any issues, concerns, or operational impacts observed.
+
+Critical findings shall be reported immediately by phone to the CISO, in addition to any daily status update. The format and frequency of status reporting shall be agreed in the pre-audit agreement.
+
 ---
 
 ## Audit Tool Management
@@ -324,7 +371,7 @@ If audit or penetration testing causes unintended operational impact:
 5. **Resumption approval**: Testing shall not resume without explicit approval from the IT Operations Manager.
 6. **Lessons learned**: Incident shall be documented and incorporated into future pre-audit planning.
 
-Genuine security incidents discovered during audit testing (e.g., evidence of prior compromise, active threats) shall be escalated immediately per the organisation's incident management process (A.5.24–28).
+Genuine security incidents discovered during audit testing (e.g., evidence of prior compromise, active threats) shall be escalated immediately per the organisation's incident management process (A.5.24-28).
 
 ---
 
@@ -378,7 +425,7 @@ The following evidence demonstrates compliance with this policy:
 | 8 | **Auditor device compliance verification records** (security check results, approval) | IT Operations | Per engagement | 1 year |
 | 9 | **Penetration testing reports and findings** (full reports, remediation tracking, closure evidence) | CISO / Security Team | Per engagement | 3 years |
 | 10 | **Audit tool approval records** (tool name, version, purpose, Information Security Manager approval) | Information Security Manager | Per engagement | 2 years |
-| 11 | **Audit and testing activity logs** (auditor access logs, testing activity records, monitoring alerts) | IT Operations / Security Team | Continuous | Per log retention policy (1–3 years) |
+| 11 | **Audit and testing activity logs** (auditor access logs, testing activity records, monitoring alerts) | IT Operations / Security Team | Continuous | Per log retention policy (1-3 years) |
 | 12 | **Incident reports from testing activities** (unintended impacts, root cause, remediation, lessons learned) | IT Operations / CISO | Per incident | 3 years |
 | 13 | **Exception register** (requests for direct production data use, approvals, compensating controls, expiration) | Information Security Manager | Maintained continuously; reviewed quarterly | Exception duration + 3 years |
 
@@ -410,7 +457,7 @@ The information security management team will verify compliance with this policy
 | Findings Management Compliance | 20% | (Penetration testing and audit findings remediated within SLA) / Total findings x 100 |
 | Data Lifecycle Compliance | 10% | (Test datasets disposed within policy timelines) / Total datasets requiring disposal x 100 |
 
-**Non-Compliance Handling**: Below 70% requires immediate CISO escalation and remediation plan. 70–89% requires Information Security Manager oversight with monthly reviews. 90% and above follows standard quarterly monitoring.
+**Non-Compliance Handling**: Below 70% requires immediate CISO escalation and remediation plan. 70-89% requires Information Security Manager oversight with monthly reviews. 90% and above follows standard quarterly monitoring.
 
 ## Exceptions
 
@@ -446,13 +493,13 @@ Test Information and Audit Testing Protection Policy — ISO 27001 Controls Mapp
 | Framework | Relevance |
 |-----------|-----------|
 | Swiss nFADP (revDSG) | Art. 8 — Technical and organisational measures for data protection; anonymisation and pseudonymisation as data protection measures; test data containing personal data subject to nFADP requirements |
-| Swiss DSV (Data Protection Ordinance) | Art. 1–3 — Minimum requirements for data security, including test environment controls |
+| Swiss DSV (Data Protection Ordinance) | Art. 1-3 — Minimum requirements for data security, including test environment controls |
 | EU GDPR (where applicable) | Art. 5(1)(c) — Data minimisation (no unnecessary production data in test environments); Art. 25 — Data protection by design and by default; Art. 32 — Security of processing (pseudonymisation as a security measure) |
 | ISO/IEC 27001:2022 | Annex A Controls 8.33 and 8.34 |
 | ISO/IEC 27002:2022 | Sections 8.33 and 8.34 — Implementation guidance |
 | NIST SP 800-53 Rev 5 | SA-11 (Developer Testing and Evaluation), CA-8 (Penetration Testing), AU-11 (Audit Record Retention), SI-12 (Information Management and Retention) |
-| CIS Controls v8 | 3.1–3.14 (Data Protection), 18.1–18.5 (Penetration Testing) |
+| CIS Controls v8 | 3.1-3.14 (Data Protection), 18.1-18.5 (Penetration Testing) |
 
 ---
 
-<!-- QA_VERIFIED: 2026-02-07 -->
+<!-- QA_VERIFIED: 2026-02-08 -->

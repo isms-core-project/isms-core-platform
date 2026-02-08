@@ -59,6 +59,7 @@
 - Logging and Monitoring Policy
 - Data Classification and Handling Policy
 - Privacy and Personal Data Protection Policy
+- Incident Response Policy
 
 ---
 
@@ -142,6 +143,20 @@ Where the organisation uses container orchestration platforms, environments shal
 - Namespace-level separation with enforced network policies for non-production environments.
 - Production workloads shall not share a cluster with development or testing workloads.
 - Container image registries shall be separated or access-controlled per environment.
+
+**Production Container Security:**
+
+- Production containers shall not mount host filesystems except for explicitly approved use cases.
+- Production containers shall run as non-root users.
+- Production container images shall be signed and verified before deployment.
+- Container registries shall be separated per environment (e.g., `prod.registry.example.com` vs `dev.registry.example.com`).
+
+**Kubernetes Production Hardening:**
+
+- Production clusters shall use separate control planes and node pools.
+- Pod Security Standards (PSS) shall be enforced at "Restricted" level for production.
+- Network policies shall deny-all by default with explicit allow rules.
+- Service accounts shall be scoped to minimum required permissions.
 
 ---
 
@@ -319,6 +334,17 @@ Environment configurations shall be managed to prevent credential leakage, cross
 - Configuration drift between staging and production shall be detected and reported. Drift detection shall be performed at least weekly.
 - Differences between staging and production shall be documented, justified, and approved by the IT Operations Manager.
 
+**Documented Staging-Production Differences:**
+
+The following table shall be maintained by the IT Operations Manager and reviewed quarterly. Unapproved differences detected through drift detection shall be investigated and resolved.
+
+| Configuration Item | Staging | Production | Justification |
+|-------------------|---------|------------|---------------|
+| Instance sizing | Reduced (cost optimisation) | Full production specification | Cost optimisation; staging validates functionality, not load |
+| Replica count | Minimum (1-2) | Per availability requirements (3+) | Cost optimisation; staging does not require HA |
+| Backup retention | 7 days | Per data retention policy (90+ days) | Compliance requirement for production data only |
+| Monitoring granularity | 5-minute intervals | 1-minute intervals | Production requires finer-grained alerting |
+
 **Environment Identification**:
 
 - Each environment shall display clear visual identification to prevent accidental operations in the wrong environment.
@@ -354,6 +380,41 @@ All cloud resources shall be tagged with environment identification (e.g., `env:
 
 ---
 
+## Environment Separation and Incident Response
+
+Environment separation supports incident response objectives:
+
+| Incident Type | Environment Separation Benefit | Response Procedure |
+|--------------|-------------------------------|-------------------|
+| **Production compromise** | Attacker cannot pivot to development/staging code | Isolate affected production environment; development continues uninterrupted |
+| **Development compromise** | Attacker cannot access production data or systems | Rebuild development environment; no production impact |
+| **Supply chain attack** | Malicious code detected in testing before reaching production | Block promotion; investigate scope; remediate in development |
+| **CI/CD pipeline compromise** | Pipeline credentials scoped per environment limit blast radius | Rotate affected credentials; audit pipeline configuration; rebuild affected artifacts |
+
+During incidents involving environment boundary violations (unauthorised access across environments, production data discovered in non-production), the Information Security Manager shall:
+
+- Immediately notify CISO and DPO.
+- Assess data exposure and regulatory notification requirements under nFADP.
+- Implement containment measures to prevent further cross-environment access.
+- Conduct post-incident review to identify root cause and prevent recurrence.
+- Document the violation in the exception register with corrective actions.
+
+---
+
+## Developer Experience and Productivity
+
+This policy is designed to protect production systems while enabling efficient software delivery. To support developer productivity:
+
+- **Local development environments** are unrestricted (on developer workstations).
+- **Read-only production access** is available for monitoring, logs, and metrics.
+- **Staging environment** closely mirrors production for realistic testing.
+- **Break-glass access** is available during incidents (with approval).
+- **Synthetic test data** is readily available and representative of production patterns.
+
+Developers are encouraged to propose improvements to development and testing environments that maintain security while improving productivity.
+
+---
+
 ## Definitions
 
 | Term | Definition |
@@ -366,6 +427,7 @@ All cloud resources shall be tagged with environment identification (e.g., `env:
 | **Immutable artifact** | A software build artifact that is created once and promoted unchanged through all environments, ensuring consistency |
 | **MFA** | Multi-factor authentication — requiring two or more verification factors to gain access |
 | **PAM** | Privileged Access Management — system for managing, monitoring, and securing access to privileged accounts and credentials |
+| **Pod Security Standards (PSS)** | Kubernetes-native framework for defining security policies at the pod level; defines three levels (Privileged, Baseline, Restricted) |
 | **Production environment** | Live operational environment serving real users with real business data |
 | **Promotion** | Process of moving changes from one environment tier to another through a defined, controlled workflow |
 | **Pseudonymisation** | Reversible process of replacing identifying data with pseudonyms; pseudonymised data remains personal data under nFADP for any party that can access the re-identification key |
@@ -380,13 +442,13 @@ All cloud resources shall be tagged with environment identification (e.g., `env:
 |------|-----------------|
 | **CISO** | Policy ownership; approval of environment separation exceptions; break-glass approval authority; quarterly compliance review; annual policy review; reporting to Executive Management |
 | **CTO / Development Manager** | Development and testing environment management; CI/CD pipeline implementation; promotion workflow enforcement; developer training on environment separation; resource allocation for environment infrastructure |
-| **IT Operations Manager** | Production environment security; production access approval; PAM management; deployment execution; rollback procedures; infrastructure monitoring; configuration drift detection |
-| **Information Security Manager** | Policy maintenance; compliance assessments; break-glass review; exception review; security monitoring; incident investigation; quarterly compliance reporting to CISO |
+| **IT Operations Manager** | Production environment security; production access approval; PAM management; deployment execution; rollback procedures; infrastructure monitoring; configuration drift detection; staging-production parity documentation |
+| **Information Security Manager** | Policy maintenance; compliance assessments; break-glass review; exception review; security monitoring; incident investigation; quarterly compliance reporting to CISO; environment boundary violation response |
 | **Data Protection Officer (DPO)** | Anonymisation approval for non-production data use; re-identification risk assessment; test data compliance with nFADP; data handling audit |
 | **QA Team Lead** | Testing environment management; test data lifecycle management; test environment integrity; QA sign-off for promotion gates |
 | **System Owners** | Environment architecture documentation; compliance evidence for owned systems; exception reporting; promotion approval for their systems |
-| **Developers** | Use assigned environments only; follow data handling requirements; use defined promotion workflows; report environment violations; complete environment separation training |
-| **Security Team** | Environment access log monitoring; production data scanning in non-production; violation investigation; security assessment of environment separation controls |
+| **Developers** | Use assigned environments only; follow data handling requirements; use defined promotion workflows; report environment violations; complete environment separation training; propose productivity improvements within policy boundaries |
+| **Security Team** | Environment access log monitoring; production data scanning in non-production; violation investigation; security assessment of environment separation controls; environment boundary incident response |
 
 ---
 
@@ -410,6 +472,8 @@ The following evidence demonstrates compliance with this policy:
 | 12 | **Exception register** (requests, approvals, compensating controls, expiration dates, quarterly reviews) | Information Security Manager | Maintained continuously; reviewed quarterly | Exception duration + 3 years |
 | 13 | **Environment separation training records** for developers, QA, and operations staff | CISO / HR | Annually | Employment duration + 3 years |
 | 14 | **Emergency deployment records** with justification for bypassing standard promotion path and post-implementation review | IT Operations Manager / Development Manager | Per event | 3 years |
+| 15 | **Staging-production configuration parity documentation** with approved differences and quarterly review records | IT Operations Manager | Quarterly | 2 years |
+| 16 | **Environment boundary incident records** with containment actions, root cause analysis, and corrective actions | Information Security Manager | Per event | 3 years |
 
 ---
 
@@ -431,6 +495,7 @@ The information security management team will verify compliance with this policy
 | Access reviews completed on schedule per environment tier | >= 90% | Quarterly |
 | CI/CD pipelines enforcing promotion gates and separation of duties | >= 95% | Quarterly |
 | Test data purged within 30 days of project completion | >= 90% | Quarterly |
+| Container images in production signed and verified | 100% | Monthly |
 
 **Compliance Scoring**:
 
@@ -440,6 +505,20 @@ The information security management team will verify compliance with this policy
 | Access Control Compliance | 25% | (Environments with correct role-based access + completed reviews) / Total x 100 |
 | Promotion Process Compliance | 25% | (Compliant production deployments with approval + rollback plan) / Total deployments x 100 |
 | Data Handling Compliance | 25% | (Non-production environments with no production data + test data purged on schedule) / Total x 100 |
+
+**Compliance Dashboard (Target):**
+
+The Information Security Manager shall generate this dashboard quarterly and present it during the management review:
+
+| Domain | Score | Status |
+|--------|-------|--------|
+| **Overall Compliance** | [calculated] | GREEN (>=90%) / AMBER (>=70%) / RED (<70%) |
+| Network Separation | [calculated] | |
+| Access Control | [calculated] | |
+| Promotion Process | [calculated] | |
+| Data Handling | [calculated] | |
+
+Items requiring attention and recent improvements shall be highlighted in the dashboard report.
 
 **Non-Compliance Handling**: Below 70% requires immediate CISO escalation and remediation plan. 70-89% requires Information Security Manager oversight with monthly reviews. 90% and above follows standard quarterly monitoring.
 
@@ -504,4 +583,4 @@ Separation of Development, Test and Production Environments Policy — ISO 27001
 
 ---
 
-<!-- QA_VERIFIED: 2026-02-07 -->
+<!-- QA_VERIFIED: 2026-02-08 -->

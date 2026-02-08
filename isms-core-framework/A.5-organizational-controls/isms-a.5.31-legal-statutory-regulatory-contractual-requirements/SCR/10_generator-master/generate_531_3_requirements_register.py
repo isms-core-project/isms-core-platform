@@ -630,7 +630,7 @@ def apply_conditional_formatting(ws):
     from openpyxl.formatting.rule import CellIsRule
     
     # Priority column (H) - Color coding
-    high_fill = PatternFill(start_color="FF0000", end_color="FF0000", fill_type="solid")
+    high_fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
     medium_fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
     low_fill = PatternFill(start_color="00FF00", end_color="00FF00", fill_type="solid")
     
@@ -671,7 +671,7 @@ def apply_conditional_formatting(ws):
     )
     
     # Gap Status column (L) - Color coding
-    complete_gap_fill = PatternFill(start_color="FF0000", end_color="FF0000", fill_type="solid")
+    complete_gap_fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
     partial_gap_fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
     no_gap_fill = PatternFill(start_color="00FF00", end_color="00FF00", fill_type="solid")
     tbd_fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")

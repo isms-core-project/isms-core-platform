@@ -356,7 +356,7 @@ def setup_styles():
     """
     return {
         "header": {
-            "font": Font(name="Arial", size=16, bold=True, color="FFFFFF"),
+            "font": Font(name="Calibri", size=16, bold=True, color="FFFFFF"),
             "fill": PatternFill(start_color=COLOR_HEADER, end_color=COLOR_HEADER, fill_type="solid"),
             "alignment": Alignment(horizontal="center", vertical="center", wrap_text=True),
             "border": Border(
@@ -367,7 +367,7 @@ def setup_styles():
             )
         },
         "subheader": {
-            "font": Font(name="Arial", size=12, bold=True, color="FFFFFF"),
+            "font": Font(name="Calibri", size=12, bold=True, color="FFFFFF"),
             "fill": PatternFill(start_color=COLOR_SUBHEADER, end_color=COLOR_SUBHEADER, fill_type="solid"),
             "alignment": Alignment(horizontal="center", vertical="center", wrap_text=True),
             "border": Border(
@@ -378,7 +378,7 @@ def setup_styles():
             )
         },
         "column_header": {
-            "font": Font(name="Arial", size=10, bold=True),
+            "font": Font(name="Calibri", size=10, bold=True),
             "fill": PatternFill(start_color=COLOR_COLUMN_HEADER, end_color=COLOR_COLUMN_HEADER, fill_type="solid"),
             "alignment": Alignment(horizontal="center", vertical="center", wrap_text=True),
             "border": Border(

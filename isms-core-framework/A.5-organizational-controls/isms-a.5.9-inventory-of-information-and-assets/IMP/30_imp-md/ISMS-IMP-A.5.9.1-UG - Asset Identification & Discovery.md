@@ -1229,7 +1229,6 @@ Document approval in assessment workbook:
 
 ---
 
-
 **END OF USER GUIDE**
 
 ---

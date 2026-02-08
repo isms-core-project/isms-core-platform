@@ -848,7 +848,6 @@ Assess severity of harm to data subjects if risk materializes:
 
 ---
 
-
 **END OF USER GUIDE**
 
 ---

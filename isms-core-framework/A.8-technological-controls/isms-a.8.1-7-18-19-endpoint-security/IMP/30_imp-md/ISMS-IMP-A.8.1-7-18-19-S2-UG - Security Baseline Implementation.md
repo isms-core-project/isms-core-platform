@@ -738,7 +738,6 @@ For audit purposes, maintain the following evidence:
 
 ---
 
-
 **END OF USER GUIDE**
 
 ---

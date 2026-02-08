@@ -115,6 +115,18 @@ Projects shall be classified based on the **highest applicable factor** across t
 
 **Classification rule**: If **any single factor** meets the High Risk criteria, the project shall be classified as **High Risk**. If any factor meets Medium Risk (and no factor is High Risk), classify as **Medium Risk**. Only if **all factors** are Low Risk shall the project be classified as **Low Risk**.
 
+### Classification Examples
+
+To support consistent classification decisions, the following examples illustrate typical project scenarios by classification level:
+
+| Factor | High Risk Example | Medium Risk Example | Low Risk Example |
+|--------|-------------------|---------------------|------------------|
+| **Data sensitivity** | Customer credit card data, employee health records | Employee email addresses, internal financial reports | Marketing brochures, public documentation |
+| **System criticality** | Payment processing system (RTO < 1 hour) | Internal CRM (RTO 8 hours) | Test environment, proof-of-concept system |
+| **Regulatory scope** | GDPR Art. 35 DPIA required (profiling), PCI DSS Level 1 merchant | Swiss nFADP applies (standard personal data) | No regulated data |
+| **External exposure** | Public website, customer-facing API | Partner extranet, VPN-only access | Internal LAN only |
+| **Third-party involvement** | Cloud-hosted payment processor, authentication SaaS | AWS-hosted with organisation management, Office 365 | Fully internal, on-premises |
+
 ### Classification Approval
 
 | Classification | Approval Authority |
@@ -124,6 +136,18 @@ Projects shall be classified based on the **highest applicable factor** across t
 | **Low Risk** | Project Manager self-classifies; Information Security Officer confirms |
 
 Classification shall be reviewed at each phase gate. If project scope, data sensitivity, or external exposure changes materially, the classification shall be updated and re-approved.
+
+### Security Budget Guidance
+
+Project managers shall estimate security costs based on project classification when preparing project budgets:
+
+| Classification | Typical Security Cost | Activities Included |
+|----------------|----------------------|---------------------|
+| **High Risk** | 8–12% of total project cost | Threat modelling, security architecture review, penetration testing, security code review, Information Security Officer time |
+| **Medium Risk** | 4–6% of total project cost | Security requirements analysis, vulnerability scanning, functional security testing, Information Security Officer time |
+| **Low Risk** | 1–2% of total project cost | Security checklist review, basic vulnerability scanning |
+
+Security budget estimates shall be included in the project initiation documentation and approved as part of the project budget. Where actual security costs are expected to exceed the estimated range, the Project Manager shall notify the Information Security Officer and adjust the project budget accordingly.
 
 ---
 
@@ -145,6 +169,16 @@ The Project Manager, with Information Security Officer support, shall assess eac
 | **Privacy and PII** | Project processes personal data | Privacy and PII Protection Policy, nFADP Art. 22 |
 | **Business continuity** | Project affects business-critical systems | Business Continuity and DR Policy |
 | **Logging and monitoring** | Project deploys systems requiring security monitoring | Logging and Monitoring Policy |
+
+### Requirement Source Mapping
+
+The following reference table indicates which policy areas typically apply to common project types, to assist Project Managers in identifying applicable requirements:
+
+| Project Type | Always Applicable | Often Applicable | Conditionally Applicable |
+|-------------|-------------------|------------------|-------------------------|
+| **Software Development** | Secure Development Lifecycle, Access Control, Logging | Application Security, Data Protection, Change Management | Privacy and PII (if personal data), Supplier Security (if outsourced) |
+| **Infrastructure Deployment** | Access Control, Network Security, Logging | Configuration Management, Business Continuity | Supplier Security (if vendor-managed) |
+| **SaaS Procurement** | Supplier Security, Access Control | Data Protection, Privacy and PII | Application Security (if custom integration) |
 
 ### Documentation
 
@@ -181,6 +215,8 @@ Security concerns at phase gates shall be escalated within:
 - **5 business days** for Medium Risk projects.
 
 **Escalation path**: Project Manager -> Information Security Officer -> CISO -> Executive Management.
+
+Projects shall not proceed to the next phase without resolving Critical security concerns. High security concerns may proceed with formal risk acceptance from the appropriate authority. Medium and Low concerns may proceed with a documented mitigation plan.
 
 ---
 
@@ -232,6 +268,11 @@ The security handover package shall include:
 
 The operational owner shall confirm handover completeness via a signed Security Handover Checklist before the Project Manager requests project closure authorisation. For High Risk projects, the CISO shall additionally approve the handover.
 
+Upon handover acceptance, the Project Manager shall ensure:
+- New assets are registered in the asset inventory.
+- Residual risks are transferred to the operational risk register.
+- Security documentation is archived per records management requirements.
+
 ---
 
 ## Project Security Roles
@@ -261,6 +302,19 @@ R = Responsible (does the work), A = Accountable (final decision), C = Consulted
 | **Business Owner / Product Owner** | Define business security requirements; participate in risk assessment; accept residual risks for owned systems (Medium/Low Risk) |
 | **Technical Lead / Solution Architect** | Design security controls into solution architecture; implement security requirements; support threat modelling; address security findings |
 | **Third-Party Vendors** | Comply with contractual security requirements; participate in security assessments; report security incidents or vulnerabilities |
+
+### Security Champions (Optional)
+
+Organisations with 50 or more employees should consider appointing Security Champions within project teams to improve security integration and reduce bottlenecks on the Information Security Officer:
+
+| Aspect | Description |
+|--------|-------------|
+| **Selection** | Trained team member (developer, business analyst, or project manager) who acts as security liaison within the project team |
+| **Training** | Security Champions shall attend security training (minimum 8 hours per year) covering secure development practices, threat identification, and organisational security policies |
+| **Responsibilities** | Help identify security requirements during planning; advocate for security within the project team; escalate security concerns to the Information Security Officer; support security testing coordination |
+| **Benefits** | Reduces bottleneck on the Information Security Officer; builds security awareness across the organisation; creates security advocates embedded in project teams |
+
+The Information Security Officer shall coordinate the Security Champion programme, including selection criteria, training content, and ongoing support.
 
 ---
 
@@ -343,6 +397,7 @@ Projects involving procurement of IT systems, software, or services shall includ
 | **Threat model** | A structured analysis of potential threats to a system or application, identifying attack vectors, threat actors, and required countermeasures |
 | **Residual risk** | The risk remaining after security controls have been implemented, which must be formally accepted by the appropriate authority |
 | **Security handover** | The formal transfer of security documentation, responsibilities, and operational procedures from the project team to the operational team at project closure |
+| **Security Champion** | A trained team member embedded in a project team who acts as a security liaison, helping identify security requirements and advocating for security best practices |
 
 ---
 
@@ -399,6 +454,17 @@ The following metrics shall be tracked and reported to the CISO quarterly:
 | DPIA screening completed for projects processing personal data | 100% | <90% |
 | Lessons learned captured for High/Medium Risk projects | 100% | <80% |
 
+### Metrics Dashboard
+
+The CISO shall maintain a project security metrics dashboard providing at-a-glance programme health visibility. The dashboard shall include:
+
+- **Overall programme compliance score** — aggregate of the seven metrics above, calculated as the weighted average of target achievement.
+- **Per-metric compliance bars** — each metric displayed with current percentage and status indicator (green >= target, amber >= red threshold, red < red threshold).
+- **Active projects by classification** — count of active High, Medium, and Low Risk projects.
+- **Attention items** — projects with overdue security activities or metrics breaching amber/red thresholds.
+
+The dashboard shall be reviewed at the monthly CISO review and included in the quarterly Executive Management report to provide clear visibility of project security programme effectiveness.
+
 **Reporting requirements**:
 - **Monthly CISO dashboard**: Projects by classification and security status (on track / at risk / overdue); open security findings by severity and age; security exceptions granted.
 - **Quarterly Executive Management report**: Total projects and High Risk project count; critical security findings and remediation status; DPIA completion rates; significant security incidents affecting projects.
@@ -453,4 +519,4 @@ Information Security in Project Management Policy — ISO 27001 Controls Mapping
 
 ---
 
-<!-- QA_VERIFIED: 2026-02-07 -->
+<!-- QA_VERIFIED: 2026-02-08 -->

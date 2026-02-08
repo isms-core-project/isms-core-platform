@@ -1975,7 +1975,6 @@ If Critical alert fires at 2 AM and no one responds for 6 hours:
 
 ---
 
-
 **END OF USER GUIDE**
 
 ---

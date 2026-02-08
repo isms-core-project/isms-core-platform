@@ -669,7 +669,7 @@ def create_instructions_sheet(ws, styles):
     row += 1
     for line in decision_tree:
         ws[f"A{row}"] = line
-        ws[f"A{row}"].font = Font(name="Courier New", size=9)
+        ws[f"A{row}"].font = Font(name="Calibri", size=9)
         row += 1
 
     # Acceptable Evidence

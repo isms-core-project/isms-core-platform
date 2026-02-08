@@ -1121,13 +1121,13 @@ def populate_gap_summary(wb):
             
             # Color-code priority column
             if col_idx == 4 and "🔴" in str(value):
-                cell.fill = PatternFill(start_color="FF0000", end_color="FF0000", fill_type="solid")
+                cell.fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
             elif col_idx == 4 and "🟡" in str(value):
                 cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
             
             # Color-code gap type column
             if col_idx == 5 and f"{XMARK}" in str(value):
-                cell.fill = PatternFill(start_color="FF0000", end_color="FF0000", fill_type="solid")
+                cell.fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
             elif col_idx == 5 and f"{WARNING}" in str(value):
                 cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
     

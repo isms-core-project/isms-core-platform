@@ -877,7 +877,6 @@ Raw logs are data. Enriched logs are intelligence.
 
 ---
 
-
 **END OF USER GUIDE**
 
 ---

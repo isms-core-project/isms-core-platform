@@ -147,7 +147,7 @@ CONFIG = {
         'non_compliant': 'FFC7CE',    # Red
         'high_risk': 'FF0000',        # Red
         'medium_risk': 'FFA500',      # Orange
-        'low_risk': 'FFFF00',         # Yellow
+        'low_risk': 'FFFFCC',         # Yellow
     },
 }
 

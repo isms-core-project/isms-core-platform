@@ -1794,7 +1794,6 @@ Before finalizing and submitting applicability assessment for approval:
 
 ---
 
-
 **END OF USER GUIDE**
 
 ---

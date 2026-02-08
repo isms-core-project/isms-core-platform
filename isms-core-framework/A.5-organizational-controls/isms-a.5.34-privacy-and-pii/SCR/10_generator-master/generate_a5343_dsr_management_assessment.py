@@ -353,7 +353,7 @@ MAX_ROWS_EVIDENCE = 1000
 # ============================================================================
 
 def create_header_row(ws, headers, start_col=1, start_row=1, header_color=COLOR_HEADER):
-    header_font = Font(name='Arial', size=11, bold=True, color='FFFFFF')
+    header_font = Font(name='Calibri', size=11, bold=True, color='FFFFFF')
     header_fill = PatternFill(start_color=header_color, end_color=header_color, fill_type='solid')
     header_alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
     border_side = Side(style='thin', color='000000')
@@ -400,11 +400,11 @@ def create_sheet1_instructions(wb):
     ws.title = "1. Instructions & Legend"
     
     ws['A1'] = "ISMS-IMP-A.5.34.3 - Data Subject Rights Management Assessment"
-    ws['A1'].font = Font(name='Arial', size=14, bold=True)
+    ws['A1'].font = Font(name='Calibri', size=14, bold=True)
     ws.merge_cells('A1:F1')
     
     ws['A2'] = "DSR Request Tracking and SLA Compliance Monitoring"
-    ws['A2'].font = Font(name='Arial', size=11, italic=True)
+    ws['A2'].font = Font(name='Calibri', size=11, italic=True)
     ws.merge_cells('A2:F2')
     
     row = 4

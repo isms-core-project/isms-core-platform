@@ -1031,7 +1031,7 @@ def create_gap_analysis_sheet(wb, styles, gaps):
         # Risk level formatting
         risk_cell = ws.cell(row=row, column=5)
         if gap["risk_level"] == "Critical":
-            risk_cell.fill = PatternFill(start_color="FF0000", end_color="FF0000", fill_type="solid")
+            risk_cell.fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
             risk_cell.font = Font(bold=True, color="FFFFFF")
         elif gap["risk_level"] == "High":
             apply_style(risk_cell, styles["non_compliant"])

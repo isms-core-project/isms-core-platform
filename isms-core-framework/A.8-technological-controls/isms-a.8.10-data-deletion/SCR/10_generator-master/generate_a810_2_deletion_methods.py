@@ -397,7 +397,7 @@ def setup_styles():
         },
         'input_cell': {
             'font': Font(name='Calibri', size=10, color='000000'),
-            'fill': PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid'),
+            'fill': PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid'),
             'alignment': Alignment(horizontal='left', vertical='top', wrap_text=True),
             'border': Border(
                 left=Side(style='thin'),
@@ -852,7 +852,7 @@ def create_checklist_section(ws, start_row, checklist_items, styles):
         ws[f'B{current_row}'].alignment = Alignment(horizontal='left', vertical='top', wrap_text=True)
         
         ws[f'T{current_row}'].value = ""
-        ws[f'T{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'T{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         
         ws[f'U{current_row}'].value = ""
         ws[f'U{current_row}'].fill = PatternFill(start_color='FFFFFF', end_color='FFFFFF', fill_type='solid')
@@ -968,7 +968,7 @@ def create_assessment_sheet(ws, styles, section_title, policy_ref,
     ws.merge_cells(f'A{next_row}:U{next_row+2}')
     cell = ws[f'A{next_row}']
     cell.value = "Document any exceptions or deviations from requirements here:"
-    cell.fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+    cell.fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
     cell.alignment = Alignment(horizontal='left', vertical='top', wrap_text=True)
     ws.row_dimensions[next_row].height = 60
     
@@ -1013,7 +1013,7 @@ def create_instructions_sheet(ws, styles):
     for label, value in control_fields:
         ws[f'A{current_row}'].value = label
         ws[f'B{current_row}'].value = value
-        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         current_row += 1
     
     current_row += 2
@@ -1215,7 +1215,7 @@ def create_approval_signoff(ws, styles):
     for label, value in control_fields:
         ws[f'A{current_row}'].value = label
         ws[f'B{current_row}'].value = value
-        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         current_row += 1
     
     current_row += 2
@@ -1242,7 +1242,7 @@ def create_approval_signoff(ws, styles):
     
     for field in approval_fields:
         ws[f'A{current_row}'].value = field
-        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         if field == "Approval Status:":
             dv = DataValidation(type="list", formula1=f'"{CHECK} Approved,⚠️ Approved with Conditions,❌ Rejected"', allow_blank=True)
             ws.add_data_validation(dv)
@@ -1271,7 +1271,7 @@ def create_approval_signoff(ws, styles):
     
     for field in approval_fields:
         ws[f'A{current_row}'].value = field
-        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         if field == "Approval Status:":
             dv = DataValidation(type="list", formula1=f'"{CHECK} Approved,⚠️ Approved with Conditions,❌ Rejected"', allow_blank=True)
             ws.add_data_validation(dv)
@@ -1300,7 +1300,7 @@ def create_approval_signoff(ws, styles):
     
     for field in approval_fields[:-1]:
         ws[f'A{current_row}'].value = field
-        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         if field == "Approval Status:":
             dv = DataValidation(type="list", formula1=f'"{CHECK} Approved,⚠️ Approved with Conditions,❌ Rejected"', allow_blank=True)
             ws.add_data_validation(dv)
@@ -1309,13 +1309,13 @@ def create_approval_signoff(ws, styles):
     
     ws[f'A{current_row}'].value = "Executive Summary:"
     ws.merge_cells(f'B{current_row}:F{current_row + 2}')
-    ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+    ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
     ws[f'B{current_row}'].alignment = Alignment(wrap_text=True, vertical='top')
     ws.row_dimensions[current_row].height = 60
     current_row += 3
     
     ws[f'A{current_row}'].value = "Signature:"
-    ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+    ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
     
     ws.column_dimensions['A'].width = 30
     ws.column_dimensions['B'].width = 40
@@ -1393,7 +1393,7 @@ def create_summary_dashboard(ws, styles):
     
     ws[f'A{current_row}'].value = "Count of SSDs using Overwrite:"
     ws[f'B{current_row}'].value = '[=COUNTIFS(Sheet2!A:A,"*SSD*",Sheet2!D:D,"Overwrite*")]'
-    ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+    ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
     current_row += 3
     
     # NIST Method Distribution
@@ -1429,7 +1429,7 @@ def create_summary_dashboard(ws, styles):
     
     ws[f'A{current_row}'].value = "Overall A.8.10.2 Maturity Level:"
     ws[f'B{current_row}'].value = "[Emerging / Developing / Established / Optimized]"
-    ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+    ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
     current_row += 2
     
     ws[f'A{current_row}'].value = "Key Strengths:"
@@ -1438,7 +1438,7 @@ def create_summary_dashboard(ws, styles):
     for i in range(1, 4):
         ws[f'A{current_row}'].value = f"{i}."
         ws[f'B{current_row}'].value = "[Example strength]"
-        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         current_row += 1
     
     current_row += 1
@@ -1448,7 +1448,7 @@ def create_summary_dashboard(ws, styles):
     for i in range(1, 4):
         ws[f'A{current_row}'].value = f"{i}."
         ws[f'B{current_row}'].value = "[Critical gap]"
-        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         current_row += 1
     
     ws.column_dimensions['A'].width = 35

@@ -228,6 +228,50 @@ Where auto-scaling is not available or not appropriate (on-premises infrastructu
 
 ---
 
+## Capacity and Cost Optimisation
+
+Capacity management shall balance availability, performance, and cost. Over-provisioning wastes budget; under-provisioning creates risk. The organisation shall actively optimise resource allocation based on measured utilisation data.
+
+### Optimisation Strategies
+
+| Strategy | Description | Applicability |
+|----------|-------------|---------------|
+| **Right-sizing** | Eliminate over-provisioned resources where sustained utilisation is below 40% | All environments |
+| **Reserved capacity** | Purchase reserved instances or committed use discounts for steady-state workloads (e.g., AWS RIs, Azure RIs, GCP CUDs) | Cloud environments with predictable baseline |
+| **Spot/preemptible instances** | Use for non-critical, interruptible workloads (batch processing, testing, development) | Cloud environments with fault-tolerant workloads |
+| **Auto-scaling** | Align capacity with demand in real-time to avoid paying for idle resources | Cloud environments with variable demand |
+| **Storage lifecycle** | Tier infrequently accessed data to lower-cost storage classes (e.g., S3 Glacier, Azure Cool/Archive, GCS Nearline/Coldline) | All storage with defined access patterns |
+
+### Quarterly Cost Review
+
+The Infrastructure Manager shall conduct a quarterly cost review that includes:
+
+- Identification of over-provisioned resources (sustained utilisation consistently below 40%).
+- Evaluation of reserved capacity versus on-demand spending ratios.
+- Assessment of storage tiering opportunities.
+- Reporting of cost optimisation actions taken and savings achieved.
+
+Cost optimisation findings shall be included in the quarterly capacity review report presented to the CIO, CISO, and CFO delegate.
+
+---
+
+## Capacity and Service Level Objectives
+
+Capacity thresholds shall be aligned with service level objectives (SLOs) to ensure that capacity constraints do not degrade service quality below agreed levels. The connection between resource utilisation and service performance shall be documented for each critical service.
+
+### SLO Alignment
+
+| Service Type | Typical SLO | Capacity Threshold Alignment |
+|--------------|-------------|------------------------------|
+| Web application | 99.9% availability, <500ms p95 latency | CPU shall remain below 75% average (latency degrades above 75%) |
+| API service | 99.95% availability, <200ms p95 latency | CPU below 70% average; memory below 80% |
+| Database | 99.99% availability, <50ms query response | IOPS below 80% maximum; connections below 90% maximum |
+| Message queue | 99.9% availability, <5s processing delay | Queue depth below 80% maximum; consumer capacity maintained |
+
+Where measured resource utilisation approaches levels that would degrade SLO performance, capacity thresholds shall be adjusted downward to trigger earlier intervention. SLO alignment shall be reviewed quarterly as part of the capacity review process.
+
+---
+
 ## Capacity Reporting
 
 ### Reporting Cadence
@@ -342,6 +386,36 @@ Where external-facing services are exposed to DDoS risk, additional mitigation m
 
 ---
 
+## Capacity Planning Committee
+
+Organisations with complex or large-scale infrastructure (50+ servers or equivalent cloud workloads) should establish a Capacity Planning Committee to coordinate capacity management across teams and ensure alignment between technical capacity decisions and business strategy.
+
+### Committee Structure
+
+| Role | Function |
+|------|----------|
+| **Infrastructure Manager** (chair) | Sets agenda; presents capacity data and forecasts |
+| **Cloud Architect / Platform Engineer** | Cloud capacity trends, auto-scaling effectiveness, cost optimisation |
+| **Database Administrator** | Database storage growth, performance capacity, replication capacity |
+| **Application Owners** (rotating) | Business growth projections, planned launches, demand changes |
+| **CFO delegate** | Budget review, investment approval, cost-benefit analysis |
+
+### Meeting Cadence
+
+The Capacity Planning Committee shall meet quarterly. The agenda shall include:
+
+- Review of capacity forecasts and forecast accuracy.
+- Approval of planned capacity expansions and associated budgets.
+- Review of capacity-related incidents and near-miss events.
+- Budget impact discussion and cost optimisation opportunities.
+- Identification of emerging capacity risks from business growth or technology changes.
+
+Meeting minutes shall be retained as evidence of governance (Evidence #10).
+
+Where the organisation is too small to justify a formal committee, the quarterly capacity review meeting between the Infrastructure Manager and CIO shall fulfil this governance function.
+
+---
+
 ## Definitions
 
 | Term | Definition |
@@ -355,8 +429,10 @@ Where external-facing services are exposed to DDoS risk, additional mitigation m
 | **Growth rate** | The rate at which resource consumption increases over time, typically measured as a percentage per month or absolute units per month |
 | **IOPS** | Input/output operations per second — a storage performance metric measuring the rate of read and write operations |
 | **Load shedding** | Deliberately reducing system load during capacity pressure by deprioritising non-essential workloads or rate-limiting requests |
+| **Right-sizing** | Adjusting resource allocation to match actual utilisation, eliminating over-provisioned or under-provisioned resources |
 | **Scale-in** | Reducing the number of allocated resources (instances, containers) when demand decreases |
 | **Scale-out** | Increasing the number of allocated resources (instances, containers) when demand increases |
+| **SLO** | Service level objective — a measurable target for service performance (e.g., availability, latency) that capacity must support |
 | **Utilisation** | The proportion of a resource's total capacity currently in use, typically expressed as a percentage |
 
 ---
@@ -394,6 +470,7 @@ The following evidence demonstrates compliance with this policy:
 | 10 | **Capacity Planning Committee meeting minutes** or capacity review meeting notes | Infrastructure Manager | Per meeting | 3 years |
 | 11 | **Exception register** for capacity policy exceptions with approvals and compensating controls | Information Security Manager | Maintained continuously; reviewed quarterly | Exception duration + 3 years |
 | 12 | **Storage growth trend reports** (including log, database, and backup storage) | Infrastructure Manager | Monthly | 3 years |
+| 13 | **Cost optimisation reports** documenting right-sizing actions, reserved capacity decisions, and savings achieved | Infrastructure Manager / Cloud Architect | Quarterly | 3 years |
 
 ---
 
@@ -485,4 +562,4 @@ Capacity Management Policy — ISO 27001 Controls Mapping
 
 ---
 
-<!-- QA_VERIFIED: 2026-02-07 -->
+<!-- QA_VERIFIED: 2026-02-08 -->

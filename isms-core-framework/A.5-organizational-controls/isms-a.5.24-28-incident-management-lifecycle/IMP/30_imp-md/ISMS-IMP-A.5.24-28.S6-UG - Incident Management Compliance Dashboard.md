@@ -1132,9 +1132,6 @@ S6_Dashboard/
 
 ---
 
----
-
-
 **END OF USER GUIDE**
 
 ---

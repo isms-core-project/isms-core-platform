@@ -153,31 +153,31 @@ def setup_styles():
 
     # Header styles
     styles['header_main'] = {
-        'font': Font(name='Arial', size=18, bold=True, color='FFFFFF'),
+        'font': Font(name='Calibri', size=18, bold=True, color='FFFFFF'),
         'fill': PatternFill(start_color='003366', end_color='003366', fill_type='solid'),
         'alignment': Alignment(horizontal='center', vertical='center', wrap_text=True)
     }
 
     styles['header_sub'] = {
-        'font': Font(name='Arial', size=12, bold=False, color='FFFFFF'),
+        'font': Font(name='Calibri', size=12, bold=False, color='FFFFFF'),
         'fill': PatternFill(start_color='003366', end_color='003366', fill_type='solid'),
         'alignment': Alignment(horizontal='center', vertical='center', wrap_text=True)
     }
 
     styles['section_header'] = {
-        'font': Font(name='Arial', size=14, bold=True, color='FFFFFF'),
+        'font': Font(name='Calibri', size=14, bold=True, color='FFFFFF'),
         'fill': PatternFill(start_color='003366', end_color='003366', fill_type='solid'),
         'alignment': Alignment(horizontal='center', vertical='center', wrap_text=True)
     }
 
     styles['subsection_header'] = {
-        'font': Font(name='Arial', size=12, bold=True, color='FFFFFF'),
+        'font': Font(name='Calibri', size=12, bold=True, color='FFFFFF'),
         'fill': PatternFill(start_color='4472C4', end_color='4472C4', fill_type='solid'),
         'alignment': Alignment(horizontal='center', vertical='center', wrap_text=True)
     }
 
     styles['column_header'] = {
-        'font': Font(name='Arial', size=10, bold=True, color='000000'),
+        'font': Font(name='Calibri', size=10, bold=True, color='000000'),
         'fill': PatternFill(start_color='D9D9D9', end_color='D9D9D9', fill_type='solid'),
         'alignment': Alignment(horizontal='center', vertical='center', wrap_text=True),
         'border': Border(
@@ -190,8 +190,8 @@ def setup_styles():
 
     # Data cell styles
     styles['input_cell'] = {
-        'font': Font(name='Arial', size=10, color='000000'),
-        'fill': PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid'),
+        'font': Font(name='Calibri', size=10, color='000000'),
+        'fill': PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid'),
         'alignment': Alignment(horizontal='left', vertical='top', wrap_text=True),
         'border': Border(
             left=Side(style='thin', color='000000'),
@@ -202,7 +202,7 @@ def setup_styles():
     }
 
     styles['calculated_cell'] = {
-        'font': Font(name='Arial', size=10, color='000000'),
+        'font': Font(name='Calibri', size=10, color='000000'),
         'fill': PatternFill(start_color='DCE6F1', end_color='DCE6F1', fill_type='solid'),
         'alignment': Alignment(horizontal='left', vertical='top', wrap_text=True),
         'border': Border(
@@ -214,7 +214,7 @@ def setup_styles():
     }
 
     styles['label_cell'] = {
-        'font': Font(name='Arial', size=10, bold=True, color='000000'),
+        'font': Font(name='Calibri', size=10, bold=True, color='000000'),
         'fill': PatternFill(start_color='D9D9D9', end_color='D9D9D9', fill_type='solid'),
         'alignment': Alignment(horizontal='left', vertical='center', wrap_text=True),
         'border': Border(
@@ -226,7 +226,7 @@ def setup_styles():
     }
 
     styles['kpi_value'] = {
-        'font': Font(name='Arial', size=16, bold=True, color='000000'),
+        'font': Font(name='Calibri', size=16, bold=True, color='000000'),
         'fill': PatternFill(start_color='DCE6F1', end_color='DCE6F1', fill_type='solid'),
         'alignment': Alignment(horizontal='center', vertical='center', wrap_text=True),
         'border': Border(
@@ -238,9 +238,9 @@ def setup_styles():
     }
 
     # Status fills (for conditional formatting reference)
-    styles['status_compliant'] = PatternFill(start_color='92D050', end_color='92D050', fill_type='solid')
-    styles['status_partial'] = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
-    styles['status_non_compliant'] = PatternFill(start_color='FF0000', end_color='FF0000', fill_type='solid')
+    styles['status_compliant'] = PatternFill(start_color='C6EFCE', end_color='C6EFCE', fill_type='solid')
+    styles['status_partial'] = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
+    styles['status_non_compliant'] = PatternFill(start_color='FFC7CE', end_color='FFC7CE', fill_type='solid')
     styles['status_fadp'] = PatternFill(start_color='7030A0', end_color='7030A0', fill_type='solid')
 
     return styles
@@ -395,12 +395,12 @@ def create_instructions_legend_sheet(wb, styles):
     merge_and_style(ws, 'A25:H25', 'COLOR LEGEND', styles['section_header'])
 
     colors = [
-        ('Yellow', 'FFFF00', 'User Input - Cells requiring manual entry'),
+        ('Yellow', 'FFFFCC', 'User Input - Cells requiring manual entry'),
         ('Light Blue', 'DCE6F1', 'Calculated - Auto-populated/formula cells'),
         ('Gray', 'D9D9D9', 'Labels - Row/column headers'),
-        ('Green', '92D050', 'Compliant - Meets requirements'),
-        ('Amber/Yellow', 'FFC000', 'Partial - Partially meets requirements'),
-        ('Red', 'FF0000', 'Non-Compliant - Does not meet requirements'),
+        ('Green', 'C6EFCE', 'Compliant - Meets requirements'),
+        ('Amber/Yellow', 'FFEB9C', 'Partial - Partially meets requirements'),
+        ('Red', 'FFC7CE', 'Non-Compliant - Does not meet requirements'),
         ('Purple', '7030A0', 'FADP Relevant - Swiss data protection applicable')
     ]
 
@@ -525,7 +525,7 @@ def create_executive_summary_sheet(wb, styles):
     ws['E6'] = '=ROUND((Policy_Summary!B20*0.35)+(Roles_Summary!B20*0.25)+(Screening_Summary!B20*0.20)+(Contract_Summary!B20*0.20),1)'
     ws['E6'].number_format = '0.0%'
     apply_cell_style(ws['E6'], styles['kpi_value'])
-    ws['E6'].font = Font(name='Arial', size=28, bold=True)
+    ws['E6'].font = Font(name='Calibri', size=28, bold=True)
     ws.row_dimensions[6].height = 30
     ws.row_dimensions[7].height = 30
     ws.row_dimensions[8].height = 30
@@ -537,7 +537,7 @@ def create_executive_summary_sheet(wb, styles):
     ws.merge_cells('I6:J8')
     ws['I6'] = '=IF(Screening_Summary!B22="Yes","COMPLIANT",IF(Screening_Summary!B22="Partial","PARTIAL","REVIEW REQUIRED"))'
     apply_cell_style(ws['I6'], styles['kpi_value'])
-    ws['I6'].font = Font(name='Arial', size=14, bold=True)
+    ws['I6'].font = Font(name='Calibri', size=14, bold=True)
 
     # --- Domain Breakdown ---
     merge_and_style(ws, 'A11:J11', 'DOMAIN COMPLIANCE BREAKDOWN', styles['section_header'])
@@ -579,12 +579,12 @@ def create_executive_summary_sheet(wb, styles):
     # Total row
     ws['A18'] = 'WEIGHTED TOTAL'
     apply_cell_style(ws['A18'], styles['label_cell'])
-    ws['A18'].font = Font(name='Arial', size=10, bold=True)
+    ws['A18'].font = Font(name='Calibri', size=10, bold=True)
 
     ws['B18'] = '100%'
     ws['D18'] = '=SUM(D14:D17)'
     ws['D18'].number_format = '0.0%'
-    ws['D18'].font = Font(name='Arial', size=10, bold=True)
+    ws['D18'].font = Font(name='Calibri', size=10, bold=True)
     apply_cell_style(ws['D18'], styles['calculated_cell'])
 
     # --- Key KPIs ---
@@ -851,7 +851,7 @@ def create_policy_summary_sheet(wb, styles):
 
     # --- Overall Compliance Score ---
     merge_and_style(ws, 'A20:B20', 'OVERALL COMPLIANCE SCORE', styles['subsection_header'])
-    ws['A20'].font = Font(name='Arial', size=12, bold=True, color='FFFFFF')
+    ws['A20'].font = Font(name='Calibri', size=12, bold=True, color='FFFFFF')
 
     # This would normally be calculated from S1 workbook data
     # For dashboard purposes, it's an input that should match S1 dashboard
@@ -960,7 +960,7 @@ def create_roles_summary_sheet(wb, styles):
 
     # --- Overall Compliance Score ---
     merge_and_style(ws, 'A20:B20', 'OVERALL COMPLIANCE SCORE', styles['subsection_header'])
-    ws['A20'].font = Font(name='Arial', size=12, bold=True, color='FFFFFF')
+    ws['A20'].font = Font(name='Calibri', size=12, bold=True, color='FFFFFF')
 
     apply_cell_style(ws['B20'], styles['input_cell'])
     ws['B20'].number_format = '0.0%'

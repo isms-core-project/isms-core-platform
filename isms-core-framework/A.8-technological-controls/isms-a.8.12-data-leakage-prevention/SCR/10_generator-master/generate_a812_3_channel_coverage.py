@@ -398,7 +398,7 @@ def setup_styles():
     """
     styles = {
         "header": {
-            "font": Font(name="Arial", size=16, bold=True, color="FFFFFF"),
+            "font": Font(name="Calibri", size=16, bold=True, color="FFFFFF"),
             "fill": PatternFill(start_color=COLOR_HEADER, end_color=COLOR_HEADER, fill_type="solid"),
             "alignment": Alignment(horizontal="center", vertical="center", wrap_text=True),
             "border": Border(
@@ -409,7 +409,7 @@ def setup_styles():
             )
         },
         "subheader": {
-            "font": Font(name="Arial", size=12, bold=True, color="FFFFFF"),
+            "font": Font(name="Calibri", size=12, bold=True, color="FFFFFF"),
             "fill": PatternFill(start_color=COLOR_SUBHEADER, end_color=COLOR_SUBHEADER, fill_type="solid"),
             "alignment": Alignment(horizontal="center", vertical="center", wrap_text=True),
             "border": Border(
@@ -420,7 +420,7 @@ def setup_styles():
             )
         },
         "column_header": {
-            "font": Font(name="Arial", size=11, bold=True),
+            "font": Font(name="Calibri", size=11, bold=True),
             "fill": PatternFill(start_color=COLOR_COLUMN_HEADER, end_color=COLOR_COLUMN_HEADER, fill_type="solid"),
             "alignment": Alignment(horizontal="center", vertical="center", wrap_text=True),
             "border": Border(
@@ -431,7 +431,7 @@ def setup_styles():
             )
         },
         "input_cell": {
-            "font": Font(name="Arial", size=10),
+            "font": Font(name="Calibri", size=10),
             "fill": PatternFill(start_color=COLOR_INPUT, end_color=COLOR_INPUT, fill_type="solid"),
             "alignment": Alignment(horizontal="left", vertical="center"),
             "border": Border(
@@ -442,7 +442,7 @@ def setup_styles():
             )
         },
         "info_cell": {
-            "font": Font(name="Arial", size=10, italic=True),
+            "font": Font(name="Calibri", size=10, italic=True),
             "fill": PatternFill(start_color=COLOR_INFO, end_color=COLOR_INFO, fill_type="solid"),
             "alignment": Alignment(horizontal="left", vertical="center"),
             "border": Border(
@@ -453,7 +453,7 @@ def setup_styles():
             )
         },
         "normal_cell": {
-            "font": Font(name="Arial", size=10),
+            "font": Font(name="Calibri", size=10),
             "alignment": Alignment(horizontal="left", vertical="center"),
             "border": Border(
                 left=Side(style="thin"),
@@ -463,7 +463,7 @@ def setup_styles():
             )
         },
         "bold_label": {
-            "font": Font(name="Arial", size=10, bold=True),
+            "font": Font(name="Calibri", size=10, bold=True),
             "alignment": Alignment(horizontal="left", vertical="center")
         }
     }

@@ -195,17 +195,17 @@ def setup_styles():
         },
         "score_excellent": {
             "font": Font(name="Calibri", size=18, bold=True, color="FFFFFF"),
-            "fill": PatternFill(start_color="00B050", end_color="00B050", fill_type="solid"),
+            "fill": PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid"),
             "alignment": Alignment(horizontal="center", vertical="center"),
         },
         "score_good": {
             "font": Font(name="Calibri", size=18, bold=True, color="FFFFFF"),
-            "fill": PatternFill(start_color="92D050", end_color="92D050", fill_type="solid"),
+            "fill": PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid"),
             "alignment": Alignment(horizontal="center", vertical="center"),
         },
         "score_fair": {
             "font": Font(name="Calibri", size=18, bold=True),
-            "fill": PatternFill(start_color="FFC000", end_color="FFC000", fill_type="solid"),
+            "fill": PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid"),
             "alignment": Alignment(horizontal="center", vertical="center"),
         },
         "score_poor": {

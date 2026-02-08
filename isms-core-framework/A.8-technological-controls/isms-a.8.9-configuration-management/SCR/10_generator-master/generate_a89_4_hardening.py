@@ -591,7 +591,7 @@ FILL_LIGHT_GREEN = PatternFill(start_color='C6EFCE', end_color='C6EFCE', fill_ty
 FILL_LIGHT_YELLOW = PatternFill(start_color='FFF2CC', end_color='FFF2CC', fill_type='solid')
 FILL_LIGHT_RED = PatternFill(start_color='FCE4D6', end_color='FCE4D6', fill_type='solid')
 FILL_GREEN = PatternFill(start_color='70AD47', end_color='70AD47', fill_type='solid')
-FILL_YELLOW = PatternFill(start_color='FFC000', end_color='FFC000', fill_type='solid')
+FILL_YELLOW = PatternFill(start_color='FFEB9C', end_color='FFEB9C', fill_type='solid')
 FILL_RED = PatternFill(start_color='C00000', end_color='C00000', fill_type='solid')
 FILL_ORANGE = PatternFill(start_color='ED7D31', end_color='ED7D31', fill_type='solid')
 FILL_GRAY = PatternFill(start_color='D9D9D9', end_color='D9D9D9', fill_type='solid')
@@ -2061,10 +2061,10 @@ def create_remediation_tracking(wb: Workbook) -> None:
         FormulaRule(
             formula=['AND($F2="Critical", $AE2<>"Completed")'],
             border=Border(
-                left=Side(style='thin', color='FFC000'),
-                right=Side(style='thin', color='FFC000'),
-                top=Side(style='thin', color='FFC000'),
-                bottom=Side(style='thin', color='FFC000')
+                left=Side(style='thin', color='FFEB9C'),
+                right=Side(style='thin', color='FFEB9C'),
+                top=Side(style='thin', color='FFEB9C'),
+                bottom=Side(style='thin', color='FFEB9C')
             )
         )
     )
@@ -2074,7 +2074,7 @@ def create_remediation_tracking(wb: Workbook) -> None:
     from openpyxl.formatting.rule import ColorScaleRule
     color_scale = ColorScaleRule(
         start_type='num', start_value=0, start_color='C00000',
-        mid_type='num', mid_value=0.5, mid_color='FFC000',
+        mid_type='num', mid_value=0.5, mid_color='FFEB9C',
         end_type='num', end_value=1, end_color='70AD47'
     )
     ws.conditional_formatting.add('AG2:AG101', color_scale)

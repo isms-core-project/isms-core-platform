@@ -1483,7 +1483,7 @@ def apply_conditional_formatting(wb):
         CellIsRule(operator='equal', formula=['"Critical"'], fill=red_fill))
     ws.conditional_formatting.add('F9:F208',
         CellIsRule(operator='equal', formula=['"High"'], 
-                   fill=PatternFill(start_color='FFC000', end_color='FFC000', fill_type='solid')))
+                   fill=PatternFill(start_color='FFEB9C', end_color='FFEB9C', fill_type='solid')))
     ws.conditional_formatting.add('F9:F208',
         CellIsRule(operator='equal', formula=['"Medium"'], fill=yellow_fill))
     ws.conditional_formatting.add('F9:F208',

@@ -1786,7 +1786,6 @@ Not all gaps are equal:
 
 ---
 
-
 **END OF USER GUIDE**
 
 ---

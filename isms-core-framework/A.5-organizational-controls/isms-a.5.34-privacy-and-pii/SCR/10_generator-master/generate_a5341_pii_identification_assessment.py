@@ -428,12 +428,12 @@ SIGNATORY_ROLES = [
 # Color scheme
 COLOR_HEADER = "003366"  # Dark blue
 COLOR_NOT_STARTED = "D3D3D3"  # Gray
-COLOR_IN_PROGRESS = "FFFF00"  # Yellow
-COLOR_COMPLETE = "90EE90"  # Light green
+COLOR_IN_PROGRESS = "FFFFCC"  # Yellow
+COLOR_COMPLETE = "C6EFCE"  # Light green
 COLOR_VALIDATED = "006400"  # Dark green
 COLOR_CRITICAL = "8B0000"  # Dark red
 COLOR_HIGH = "FFA500"  # Orange
-COLOR_MEDIUM = "FFFF00"  # Yellow
+COLOR_MEDIUM = "FFFFCC"  # Yellow
 COLOR_LOW = "87CEEB"  # Light blue
 COLOR_SENSITIVE_PII = "FFA500"  # Orange
 

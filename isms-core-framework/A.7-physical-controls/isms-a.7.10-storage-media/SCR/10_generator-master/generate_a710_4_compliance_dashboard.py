@@ -110,7 +110,7 @@ STYLES = {
     },
     'input_cell': {
         'font': Font(name='Calibri', size=10, color='000000'),
-        'fill': PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid'),
+        'fill': PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid'),
         'alignment': Alignment(horizontal='left', vertical='top', wrap_text=True),
         'border': Border(left=Side(style='thin'), right=Side(style='thin'),
                         top=Side(style='thin'), bottom=Side(style='thin'))
@@ -189,7 +189,7 @@ def create_instructions_sheet(ws):
         ws[f'A{current_row}'].font = Font(bold=True)
         ws[f'B{current_row}'].value = value
         if "[" in value:
-            ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+            ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         current_row += 1
 
     current_row += 1
@@ -270,9 +270,9 @@ def create_executive_summary(ws):
         ws[f'B{current_row}'].value = current
         ws[f'C{current_row}'].value = previous
         ws[f'D{current_row}'].value = trend
-        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
-        ws[f'C{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
-        ws[f'D{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
+        ws[f'C{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
+        ws[f'D{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         current_row += 1
 
     current_row += 1
@@ -295,7 +295,7 @@ def create_executive_summary(ws):
     for label, value in critical_metrics:
         ws[f'A{current_row}'].value = label
         ws[f'B{current_row}'].value = value
-        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         current_row += 1
 
     current_row += 1
@@ -310,7 +310,7 @@ def create_executive_summary(ws):
         ws[f'A{current_row}'].value = f"Finding {i}:"
         ws.merge_cells(f'B{current_row}:D{current_row}')
         ws[f'B{current_row}'].value = "[Enter key finding]"
-        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         current_row += 1
 
     ws.column_dimensions['A'].width = 30
@@ -333,11 +333,11 @@ def create_domain_summary(ws, domain_num, domain_name, source_doc):
     current_row += 1
     ws[f'A{current_row}'].value = "Last Updated:"
     ws[f'B{current_row}'].value = "[Date]"
-    ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+    ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
     current_row += 1
     ws[f'A{current_row}'].value = "Next Review:"
     ws[f'B{current_row}'].value = "[Date]"
-    ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+    ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
     current_row += 2
 
     # Compliance Metrics
@@ -358,7 +358,7 @@ def create_domain_summary(ws, domain_num, domain_name, source_doc):
     for label, value in metrics:
         ws[f'A{current_row}'].value = label
         ws[f'B{current_row}'].value = value
-        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         current_row += 1
 
     current_row += 1
@@ -379,7 +379,7 @@ def create_domain_summary(ws, domain_num, domain_name, source_doc):
 
     for i in range(5):
         for col in ['A', 'B', 'C', 'D']:
-            ws[f'{col}{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+            ws[f'{col}{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         current_row += 1
 
     ws.column_dimensions['A'].width = 40
@@ -652,8 +652,8 @@ def create_kpi_dashboard(ws):
         ws[f'C{current_row}'].value = target
         ws[f'D{current_row}'].value = current
         ws[f'E{current_row}'].value = "[Trend]"
-        ws[f'D{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
-        ws[f'E{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'D{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
+        ws[f'E{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         current_row += 1
 
     current_row += 1
@@ -685,8 +685,8 @@ def create_kpi_dashboard(ws):
         ws[f'C{current_row}'].value = target
         ws[f'D{current_row}'].value = current
         ws[f'E{current_row}'].value = "[Trend]"
-        ws[f'D{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
-        ws[f'E{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'D{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
+        ws[f'E{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         current_row += 1
 
     current_row += 1
@@ -718,8 +718,8 @@ def create_kpi_dashboard(ws):
         ws[f'C{current_row}'].value = target
         ws[f'D{current_row}'].value = current
         ws[f'E{current_row}'].value = "[Trend]"
-        ws[f'D{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
-        ws[f'E{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'D{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
+        ws[f'E{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         current_row += 1
 
     current_row += 1
@@ -750,8 +750,8 @@ def create_kpi_dashboard(ws):
         ws[f'C{current_row}'].value = target
         ws[f'D{current_row}'].value = current
         ws[f'E{current_row}'].value = "[Trend]"
-        ws[f'D{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
-        ws[f'E{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'D{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
+        ws[f'E{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         current_row += 1
 
     ws.column_dimensions['A'].width = 10
@@ -790,7 +790,7 @@ def create_ciso_approval(ws):
         ws[f'A{current_row}'].value = label
         ws[f'B{current_row}'].value = value
         if "[" in value:
-            ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+            ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         current_row += 1
 
     current_row += 2
@@ -811,7 +811,7 @@ def create_ciso_approval(ws):
     for field in summary_fields:
         ws[f'A{current_row}'].value = field
         ws.merge_cells(f'B{current_row}:F{current_row}')
-        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         ws.row_dimensions[current_row].height = 40
         current_row += 1
 
@@ -833,7 +833,7 @@ def create_ciso_approval(ws):
 
     for field in approval_fields:
         ws[f'A{current_row}'].value = field
-        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         if field == "Status:":
             dv = DataValidation(type="list", formula1='"Approved,Approved with Conditions,Rejected"', allow_blank=True)
             ws.add_data_validation(dv)
@@ -856,7 +856,7 @@ def create_ciso_approval(ws):
 
     for field in approval_fields:
         ws[f'A{current_row}'].value = field
-        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFF00', end_color='FFFF00', fill_type='solid')
+        ws[f'B{current_row}'].fill = PatternFill(start_color='FFFFCC', end_color='FFFFCC', fill_type='solid')
         if field == "Status:":
             dv = DataValidation(type="list", formula1='"Approved,Approved with Conditions,Rejected"', allow_blank=True)
             ws.add_data_validation(dv)

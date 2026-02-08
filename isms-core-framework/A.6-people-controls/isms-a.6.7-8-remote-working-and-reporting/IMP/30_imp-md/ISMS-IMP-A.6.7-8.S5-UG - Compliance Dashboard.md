@@ -378,7 +378,6 @@ Before distributing dashboard, verify:
 
 ---
 
-
 **END OF USER GUIDE**
 
 ---

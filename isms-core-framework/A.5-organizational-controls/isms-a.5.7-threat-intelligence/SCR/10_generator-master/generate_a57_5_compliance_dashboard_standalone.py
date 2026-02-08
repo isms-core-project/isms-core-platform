@@ -529,7 +529,7 @@ def get_styles():
         },
         "warning": {
             "font": Font(name="Calibri", size=10, bold=True, color="000000"),
-            "fill": PatternFill(start_color="FFC000", end_color="FFC000", fill_type="solid"),
+            "fill": PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid"),
             "alignment": Alignment(horizontal="center", vertical="center"),
         },
         "success": {

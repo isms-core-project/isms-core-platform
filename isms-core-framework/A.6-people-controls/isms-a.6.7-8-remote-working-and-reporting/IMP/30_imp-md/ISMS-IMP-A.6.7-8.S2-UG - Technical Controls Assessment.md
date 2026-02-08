@@ -576,7 +576,6 @@ When collecting evidence:
 
 ---
 
-
 **END OF USER GUIDE**
 
 ---

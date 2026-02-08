@@ -470,7 +470,7 @@ def create_header_row(ws, headers, start_col=1, start_row=1, header_color=COLOR_
         start_row: Starting row (1-indexed)
         header_color: Hex color code for header background
     """
-    header_font = Font(name='Arial', size=11, bold=True, color='FFFFFF')
+    header_font = Font(name='Calibri', size=11, bold=True, color='FFFFFF')
     header_fill = PatternFill(start_color=header_color, end_color=header_color, fill_type='solid')
     header_alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
     
@@ -629,17 +629,17 @@ def create_sheet1_instructions(wb):
     
     # Title
     ws['A1'] = "ISMS-IMP-A.5.34.2 - Legal Basis and Lawful Processing Assessment"
-    ws['A1'].font = Font(name='Arial', size=14, bold=True)
+    ws['A1'].font = Font(name='Calibri', size=14, bold=True)
     ws.merge_cells('A1:F1')
     
     ws['A2'] = "Assessment Instructions and Legal Basis Selection Framework"
-    ws['A2'].font = Font(name='Arial', size=11, italic=True)
+    ws['A2'].font = Font(name='Calibri', size=11, italic=True)
     ws.merge_cells('A2:F2')
     
     # Section 1: Assessment Overview
     row = 4
     ws[f'A{row}'] = "1. ASSESSMENT OVERVIEW"
-    ws[f'A{row}'].font = Font(name='Arial', size=12, bold=True, color='003366')
+    ws[f'A{row}'].font = Font(name='Calibri', size=12, bold=True, color='003366')
     
     row += 2
     overview_text = """This assessment documents the legal basis for ALL personal data processing activities to ensure compliance with:
@@ -657,7 +657,7 @@ CRITICAL: Processing without documented legal basis is a fundamental data protec
     # Section 2: Legal Basis Selection Framework
     row += 5
     ws[f'A{row}'] = "2. LEGAL BASIS SELECTION FRAMEWORK (GDPR Article 6)"
-    ws[f'A{row}'].font = Font(name='Arial', size=12, bold=True, color='003366')
+    ws[f'A{row}'].font = Font(name='Calibri', size=12, bold=True, color='003366')
     
     row += 2
     framework_text = """Legal basis is NOT a free choice. Selection must align with the ACTUAL purpose and nature of processing.
@@ -702,7 +702,7 @@ LEGITIMATE INTEREST (Art. 6(1)(f)):
     # Section 3: Special Category Data (GDPR Art. 9)
     row += 25
     ws[f'A{row}'] = "3. SPECIAL CATEGORY DATA (GDPR Article 9)"
-    ws[f'A{row}'].font = Font(name='Arial', size=12, bold=True, color='003366')
+    ws[f'A{row}'].font = Font(name='Calibri', size=12, bold=True, color='003366')
     
     row += 2
     special_text = """Special category PII requires ADDITIONAL legal basis under GDPR Art. 9:
@@ -725,7 +725,7 @@ IMPORTANT: General legal basis (Art. 6) + Special category basis (Art. 9) BOTH r
     # Section 4: Dropdown Reference
     row += 12
     ws[f'A{row}'] = "4. DROPDOWN OPTIONS REFERENCE"
-    ws[f'A{row}'].font = Font(name='Arial', size=12, bold=True, color='003366')
+    ws[f'A{row}'].font = Font(name='Calibri', size=12, bold=True, color='003366')
     
     row += 2
     ws[f'A{row}'] = "Legal Basis (GDPR Art. 6):"
@@ -1234,17 +1234,17 @@ def create_sheet7_dashboard(wb):
     
     # Title
     ws['A1'] = "Legal Basis Compliance Dashboard"
-    ws['A1'].font = Font(name='Arial', size=14, bold=True, color='003366')
+    ws['A1'].font = Font(name='Calibri', size=14, bold=True, color='003366')
     ws.merge_cells('A1:F1')
     
     ws['A2'] = f"Generated: {datetime.now().strftime('%d.%m.%Y %H:%M')}"
-    ws['A2'].font = Font(name='Arial', size=10, italic=True)
+    ws['A2'].font = Font(name='Calibri', size=10, italic=True)
     ws.merge_cells('A2:F2')
     
     # Section 1: Legal Basis Coverage
     row = 4
     ws[f'A{row}'] = "LEGAL BASIS COVERAGE"
-    ws[f'A{row}'].font = Font(name='Arial', size=12, bold=True, color='003366')
+    ws[f'A{row}'].font = Font(name='Calibri', size=12, bold=True, color='003366')
     ws[f'A{row}'].fill = PatternFill(start_color=COLOR_INSTRUCTION, end_color=COLOR_INSTRUCTION, fill_type='solid')
     ws.merge_cells(f'A{row}:B{row}')
     
@@ -1268,7 +1268,7 @@ def create_sheet7_dashboard(wb):
     # Section 2: Legal Basis Distribution
     row += 2
     ws[f'A{row}'] = "LEGAL BASIS DISTRIBUTION"
-    ws[f'A{row}'].font = Font(name='Arial', size=12, bold=True, color='003366')
+    ws[f'A{row}'].font = Font(name='Calibri', size=12, bold=True, color='003366')
     ws[f'A{row}'].fill = PatternFill(start_color=COLOR_INSTRUCTION, end_color=COLOR_INSTRUCTION, fill_type='solid')
     ws.merge_cells(f'A{row}:B{row}')
     
@@ -1283,7 +1283,7 @@ def create_sheet7_dashboard(wb):
     # Section 3: Consent Management Metrics
     row += 2
     ws[f'A{row}'] = "CONSENT MANAGEMENT"
-    ws[f'A{row}'].font = Font(name='Arial', size=12, bold=True, color='003366')
+    ws[f'A{row}'].font = Font(name='Calibri', size=12, bold=True, color='003366')
     ws[f'A{row}'].fill = PatternFill(start_color=COLOR_INSTRUCTION, end_color=COLOR_INSTRUCTION, fill_type='solid')
     ws.merge_cells(f'A{row}:B{row}')
     
@@ -1308,7 +1308,7 @@ def create_sheet7_dashboard(wb):
     # Section 4: Legitimate Interest Assessments
     row += 2
     ws[f'A{row}'] = "LEGITIMATE INTEREST ASSESSMENTS (LIA)"
-    ws[f'A{row}'].font = Font(name='Arial', size=12, bold=True, color='003366')
+    ws[f'A{row}'].font = Font(name='Calibri', size=12, bold=True, color='003366')
     ws[f'A{row}'].fill = PatternFill(start_color=COLOR_INSTRUCTION, end_color=COLOR_INSTRUCTION, fill_type='solid')
     ws.merge_cells(f'A{row}:B{row}')
     
@@ -1334,7 +1334,7 @@ def create_sheet7_dashboard(wb):
     # Section 5: Gap Analysis
     row += 2
     ws[f'A{row}'] = "GAP ANALYSIS"
-    ws[f'A{row}'].font = Font(name='Arial', size=12, bold=True, color='003366')
+    ws[f'A{row}'].font = Font(name='Calibri', size=12, bold=True, color='003366')
     ws[f'A{row}'].fill = PatternFill(start_color=COLOR_INSTRUCTION, end_color=COLOR_INSTRUCTION, fill_type='solid')
     ws.merge_cells(f'A{row}:B{row}')
     
@@ -1360,7 +1360,7 @@ def create_sheet7_dashboard(wb):
     # Section 6: Overall Compliance Score
     row += 2
     ws[f'A{row}'] = "OVERALL COMPLIANCE SCORE"
-    ws[f'A{row}'].font = Font(name='Arial', size=12, bold=True, color='003366')
+    ws[f'A{row}'].font = Font(name='Calibri', size=12, bold=True, color='003366')
     ws[f'A{row}'].fill = PatternFill(start_color=COLOR_INSTRUCTION, end_color=COLOR_INSTRUCTION, fill_type='solid')
     ws.merge_cells(f'A{row}:B{row}')
     
@@ -1413,13 +1413,13 @@ def create_sheet8_approval(wb):
     
     # Title
     ws['A1'] = "Legal Basis Assessment - Approval and Sign-Off"
-    ws['A1'].font = Font(name='Arial', size=14, bold=True)
+    ws['A1'].font = Font(name='Calibri', size=14, bold=True)
     ws.merge_cells('A1:E1')
     
     # Section 1: Assessment Completion
     row = 4
     ws[f'A{row}'] = "ASSESSMENT COMPLETION"
-    ws[f'A{row}'].font = Font(name='Arial', size=12, bold=True, color='003366')
+    ws[f'A{row}'].font = Font(name='Calibri', size=12, bold=True, color='003366')
     ws[f'A{row}'].fill = PatternFill(start_color=COLOR_INSTRUCTION, end_color=COLOR_INSTRUCTION, fill_type='solid')
     ws.merge_cells(f'A{row}:E{row}')
     
@@ -1442,7 +1442,7 @@ def create_sheet8_approval(wb):
     # Section 2: Stakeholder Reviews
     row += 3
     ws[f'A{row}'] = "STAKEHOLDER REVIEWS"
-    ws[f'A{row}'].font = Font(name='Arial', size=12, bold=True, color='003366')
+    ws[f'A{row}'].font = Font(name='Calibri', size=12, bold=True, color='003366')
     ws[f'A{row}'].fill = PatternFill(start_color=COLOR_INSTRUCTION, end_color=COLOR_INSTRUCTION, fill_type='solid')
     ws.merge_cells(f'A{row}:E{row}')
     
@@ -1487,7 +1487,7 @@ def create_sheet8_approval(wb):
     # Section 3: Final Approval
     row += 2
     ws[f'A{row}'] = "FINAL APPROVAL"
-    ws[f'A{row}'].font = Font(name='Arial', size=12, bold=True, color='003366')
+    ws[f'A{row}'].font = Font(name='Calibri', size=12, bold=True, color='003366')
     ws[f'A{row}'].fill = PatternFill(start_color=COLOR_INSTRUCTION, end_color=COLOR_INSTRUCTION, fill_type='solid')
     ws.merge_cells(f'A{row}:E{row}')
     

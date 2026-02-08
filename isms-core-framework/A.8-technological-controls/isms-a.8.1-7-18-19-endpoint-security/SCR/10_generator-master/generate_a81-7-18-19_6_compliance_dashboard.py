@@ -212,7 +212,7 @@ def setup_styles():
         },
         "metric_warning": {
             "font": Font(name="Calibri", size=14, bold=True, color="FFFFFF"),
-            "fill": PatternFill(start_color="FFC000", end_color="FFC000", fill_type="solid"),
+            "fill": PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid"),
             "alignment": Alignment(horizontal="center", vertical="center"),
         },
         "metric_critical": {

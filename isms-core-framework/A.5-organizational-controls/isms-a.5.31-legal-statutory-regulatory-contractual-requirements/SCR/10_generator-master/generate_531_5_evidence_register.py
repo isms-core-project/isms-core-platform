@@ -724,7 +724,7 @@ def populate_evidence_register(wb):
     
     verified_fill = PatternFill(start_color="00FF00", fill_type="solid")
     pending_fill = PatternFill(start_color="FFFFCC", fill_type="solid")
-    expired_fill = PatternFill(start_color="FF0000", fill_type="solid")
+    expired_fill = PatternFill(start_color="FFC7CE", fill_type="solid")
     missing_fill = PatternFill(start_color="D9D9D9", fill_type="solid")
     
     ws.conditional_formatting.add("K2:K1000",

@@ -375,7 +375,7 @@ def setup_styles():
             "border": border_thin,
         },
         "tier_1": {
-            "fill": PatternFill(start_color="FF0000", end_color="FF0000", fill_type="solid"),
+            "fill": PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid"),
         },
         "tier_2": {
             "fill": PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid"),
@@ -490,7 +490,7 @@ def apply_conditional_formatting(ws):
     from openpyxl.formatting.rule import CellIsRule
     
     # Tier column (H) - Color coding
-    tier_1_fill = PatternFill(start_color="FF0000", end_color="FF0000", fill_type="solid")
+    tier_1_fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
     tier_2_fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
     tier_3_fill = PatternFill(start_color="00FF00", end_color="00FF00", fill_type="solid")
     

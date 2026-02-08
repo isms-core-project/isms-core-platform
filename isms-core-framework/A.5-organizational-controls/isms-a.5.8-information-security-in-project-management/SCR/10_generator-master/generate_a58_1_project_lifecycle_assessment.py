@@ -289,7 +289,7 @@ def create_classification_sheet(ws, styles):
     ws[f"A{row}"].font = Font(bold=True, size=12)
     ws[f"B{row}"] = f'=IF(E{row-1}>=15,"High",IF(E{row-1}>=10,"Medium","Low"))'
     ws[f"B{row}"].font = Font(bold=True, size=14, color="FF0000")
-    ws[f"B{row}"].fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
+    ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
     row += 1
     ws[f"A{row}"] = "(High: 15-18 pts | Medium: 10-14 pts | Low: 6-9 pts)"
     ws[f"A{row}"].font = Font(italic=True, size=9)
@@ -428,7 +428,7 @@ def create_dashboard_sheet(ws, styles):
     ws[f"B{row}"] = f"=AVERAGE(B{row-5}:B{row-1})"
     ws[f"B{row}"].number_format = "0%"
     ws[f"B{row}"].font = Font(bold=True, size=14)
-    ws[f"B{row}"].fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
+    ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
     ws.column_dimensions["A"].width = 30
     ws.column_dimensions["B"].width = 15
 

@@ -1836,7 +1836,6 @@ Status: CRITICAL - investigate immediately (likely credential theft)
 
 ---
 
-
 **END OF USER GUIDE**
 
 ---

@@ -118,6 +118,14 @@ Systems shall be secure in their default configuration:
 - Optional security features shall be enabled by default unless a documented business justification exists for disabling them.
 - Default-deny shall be applied to access controls, network communications, and system capabilities.
 - Administrative interfaces shall be disabled or restricted by default.
+- Application features requiring elevated privileges shall be explicitly enabled, not enabled by default (e.g., debug logging, remote administration).
+
+**Privacy by Default (nFADP Art. 7)**:
+
+- Default settings shall minimise personal data collection (data minimisation).
+- Privacy-enhancing features shall be enabled by default (e.g., data anonymisation, purpose limitation enforcement).
+- User consent mechanisms shall default to opt-in, not opt-out.
+- Data retention shall default to shortest period unless business justification requires longer retention.
 
 ### Principle 3: Defence in Depth
 
@@ -146,7 +154,7 @@ All users, processes, and systems shall operate with the minimum privileges nece
 
 - Access rights shall be limited to what is required for the specific task.
 - Elevated privileges shall be granted only when needed and revoked when no longer required.
-- Service accounts shall have narrowly scoped permissions, not administrative-level access.
+- Service accounts shall have narrowly scoped permissions limited to specific resources and operations (not full database access, not domain administrator).
 - Administrative access shall be separated from day-to-day operational access.
 
 ### Principle 5: Least Functionality
@@ -166,6 +174,23 @@ Systems shall fail in a secure state that does not expose sensitive data or func
 - Error conditions shall not reveal security-sensitive information (stack traces, internal paths, database details, version numbers).
 - Recovery from failure shall require re-authentication and re-authorisation.
 - Graceful degradation shall maintain security controls even when performance is reduced.
+- Failure events shall be logged for security monitoring and incident investigation.
+
+**Fail Secure Examples**:
+
+Correct (fail secure):
+
+- Database connection failure: Application returns generic error, denies access.
+- Authentication service unavailable: System denies login, does not bypass authentication.
+- Firewall rule processing error: Default deny, block traffic.
+- Encryption key unavailable: Data access denied until key restored.
+
+Incorrect (fail insecure — avoid):
+
+- Database connection failure: Application grants access assuming credentials are valid.
+- Authentication service unavailable: System allows login with cached credentials without expiry check.
+- Firewall rule processing error: Fail open, allow all traffic.
+- Encryption key unavailable: Data served unencrypted.
 
 ### Principle 7: Reduced Complexity
 
@@ -175,6 +200,22 @@ System designs shall favour simplicity — complex systems are harder to secure,
 - Systems shall be designed with independent, loosely coupled modules that can be secured, updated, and validated independently.
 - Shared resources shall be minimised to reduce attack surface and prevent unauthorised information flows between components.
 - Dependencies between components shall be well-defined and documented.
+
+**Complexity Management**:
+
+Complexity shall be managed through:
+
+- **Modular design**: Components with single, well-defined purpose.
+- **Interface limits**: External interfaces limited to minimum necessary (document and justify each external integration).
+- **Dependency tracking**: Maintain dependency map for critical systems; target fewer than 10 external dependencies for Tier 1 systems.
+- **Cyclomatic complexity**: Code complexity metrics tracked during development (target: fewer than 10 per function for security-critical code).
+
+**Complexity Review Triggers**:
+
+- System requires more than 5 different authentication mechanisms.
+- More than 15 external system integrations.
+- Shared resources between trust boundaries without isolation.
+- Development team cannot explain data flow in fewer than 15 minutes.
 
 ---
 
@@ -194,6 +235,7 @@ The organisation shall adopt Zero Trust principles for all new systems and progr
 - Internal network traffic shall be treated as potentially hostile.
 - Lateral movement shall be restricted through segmentation and access controls.
 - Detection capabilities shall assume perimeter controls may have failed.
+- Endpoint Detection and Response (EDR) shall be deployed on all managed devices to detect post-compromise activity.
 
 **Verify Explicitly**:
 
@@ -213,6 +255,14 @@ The organisation shall adopt Zero Trust principles for all new systems and progr
 | **Phase 1: Foundation** | Identity-centric access control, MFA for all users, device health verification | Within 12 months of policy approval |
 | **Phase 2: Network** | Micro-segmentation for critical systems, encrypted internal communications, network access control | Within 24 months |
 | **Phase 3: Continuous** | Continuous access evaluation, behavioural analytics, automated response to anomalies | Within 36 months |
+
+**Zero Trust Implementation Timelines**: The timelines shown assume a medium-sized organisation (50–200 employees) with moderate technical debt. Adjust based on:
+
+- **Small organisations (<50 employees)**: Timelines may be 50% shorter with cloud-native infrastructure.
+- **Large organisations (>200 employees)**: Timelines may be 50% longer due to legacy systems and organisational complexity.
+- **Technical debt level**: Organisations with significant on-premises infrastructure require longer Phase 2 timelines.
+
+Progress shall be assessed annually against the organisation-specific roadmap, not absolute calendar dates.
 
 The organisation is not expected to achieve full Zero Trust maturity immediately. Each phase shall be planned, resourced, and reviewed. Progress shall be reported to Executive Management annually.
 
@@ -244,7 +294,7 @@ All systems classified as High-Risk or Medium-Risk shall have documented securit
 
 - Security design checklist (completed and signed off by CISO or delegate).
 
-**Documentation Storage**: Security architecture documentation shall be stored in [Architecture Tool / Confluence / SharePoint] with access restricted to authorised personnel. Documentation shall be version-controlled.
+**Documentation Storage**: Security architecture documentation shall be stored in [Architecture Tool / Confluence / SharePoint] with access restricted to: CISO, Development Manager, System Owner, and personnel with documented need-to-know approved by the CISO. Documentation shall be version-controlled.
 
 **Documentation Currency**: Security architecture documentation shall be reviewed and updated: when significant changes are made to the system, when new threats are identified that affect the system, and at least annually for High-Risk systems.
 
@@ -285,7 +335,85 @@ A security architecture review is required when:
 - Defence in depth is absent for systems processing Confidential or Restricted data.
 - Deviations from approved architecture patterns lack compensating controls and CISO exception approval.
 
-**Review SLA**: Architecture reviews shall be completed within 10 business days of receiving complete documentation. Incomplete submissions shall be returned within 3 business days with specific feedback on what is missing.
+**Review SLA**:
+
+- High-Risk systems (with full threat model): 15 business days from complete submission.
+- Medium-Risk systems (summary review): 10 business days.
+- Low-Risk systems (checklist review): 5 business days.
+
+Incomplete submissions shall be returned within 3 business days with specific gaps identified. Clock resets upon resubmission of complete documentation.
+
+### Architecture Review Checklist (Medium and High-Risk Systems)
+
+**Identity and Access**:
+
+- [ ] Authentication mechanism documented (SSO, MFA, API keys).
+- [ ] Authorisation model defined (RBAC, ABAC).
+- [ ] Privileged access separation implemented.
+- [ ] Service account permissions minimised.
+
+**Data Protection**:
+
+- [ ] Data classification identified for all processed data.
+- [ ] Encryption at rest implemented for Confidential/Restricted data.
+- [ ] Encryption in transit (TLS 1.2+) for all network communications.
+- [ ] Data retention and deletion mechanisms defined.
+
+**Network Security**:
+
+- [ ] Network segmentation appropriate to system tier.
+- [ ] Inbound/outbound firewall rules documented and justified.
+- [ ] API gateway or WAF for internet-facing applications.
+- [ ] Internal communications encrypted where processing sensitive data.
+
+**Defence in Depth**:
+
+- [ ] At least 3 control layers verified (network, platform, application, data).
+- [ ] Single point of failure analysis conducted.
+- [ ] Complementary controls confirmed (different attack vectors addressed).
+
+**Monitoring and Logging**:
+
+- [ ] Security event logging configured.
+- [ ] Log forwarding to central SIEM/logging platform.
+- [ ] Alerting rules defined for critical events.
+- [ ] Log retention meets policy requirements.
+
+**Resilience**:
+
+- [ ] Backup and recovery procedures documented.
+- [ ] RPO/RTO defined and validated.
+- [ ] Disaster recovery plan exists (Tier 1 systems).
+- [ ] Redundancy implemented for critical components.
+
+**Threat Modelling** (High-Risk only):
+
+- [ ] STRIDE analysis completed.
+- [ ] Attack vectors documented.
+- [ ] Mitigations mapped to each threat.
+- [ ] Residual risks accepted by CISO.
+
+**Compliance**:
+
+- [ ] nFADP/GDPR requirements assessed (if processing personal data).
+- [ ] Industry-specific regulations addressed (if applicable).
+- [ ] Data protection by design and by default demonstrated.
+
+### External Security Architecture Review
+
+Organisations shall engage external security architecture specialists when:
+
+| Trigger | Rationale |
+|---------|-----------|
+| **New High-Risk system** developed in-house without prior secure architecture experience | Independent validation of threat model and design decisions |
+| **Cryptographic system design** (custom implementations, key management) | Specialised cryptography expertise required |
+| **Payment processing system** | PCI DSS compliance and specialised security requirements |
+| **Zero Trust implementation** (initial design) | Complex architecture requiring specialised Zero Trust expertise |
+| **Significant incident** revealed architectural weakness | Independent root cause analysis and remediation guidance |
+| **Merger/acquisition integration** | Third-party assessment of combined architecture security posture |
+| **Regulatory audit finding** related to architecture | Independent validation of remediation design |
+
+External reviewers shall be selected based on: relevant industry certifications (CISSP, CCSP, or equivalent), demonstrated experience with similar architectures, and independence from implementation vendors.
 
 ### Threat Modelling
 
@@ -300,7 +428,10 @@ Where threat modelling is required, the STRIDE methodology shall be used as the 
 | **Denial of Service** | Availability disruption | Resource exhaustion, flooding |
 | **Elevation of Privilege** | Gaining unauthorised access | Privilege escalation, injection attacks |
 
-Threat models shall be documented and retained for the lifecycle of the system plus 1 year.
+Threat models shall be retained for:
+
+- **Active systems**: Lifecycle of the system plus 3 years after decommissioning.
+- **Major incidents**: Threat models for systems involved in security incidents shall be retained permanently (minimum 7 years).
 
 Threat models shall be reviewed and updated: at each major release, when the system architecture changes significantly, when new threat intelligence relevant to the system is identified, and at least annually for High-Risk systems.
 
@@ -340,13 +471,25 @@ The organisation shall maintain security baselines for each system tier, definin
 | **Tier 2 — Important** | Systems processing Internal data; limited external exposure; supporting business function | Internal collaboration tools, project management, internal reporting |
 | **Tier 3 — Standard** | Systems processing Public data only; no PII; non-critical function | Marketing website (static content), internal wikis (non-sensitive) |
 
+**System Tier Re-Classification**:
+
+System tier shall be reviewed and potentially reclassified when:
+
+- **Data classification increases**: System begins processing Confidential or Restricted data (e.g., Tier 3 reclassified to Tier 1).
+- **Internet exposure changes**: Internal system becomes internet-facing (e.g., Tier 2 reclassified to Tier 1).
+- **Business criticality increases**: System becomes revenue-critical or a core operational function (e.g., Tier 2 reclassified to Tier 1).
+- **Security incident occurs**: Incident reveals system is higher risk than originally assessed.
+- **Regulatory scope expands**: System begins processing data subject to regulation (PCI DSS, GDPR).
+
+Re-classification triggers updated security baseline requirements and architecture review. The System Owner shall request a re-classification review from the CISO when any trigger occurs.
+
 ### Baseline Requirements by Tier
 
 | Control Area | Tier 1 (Critical) | Tier 2 (Important) | Tier 3 (Standard) |
 |-------------|-------------------|--------------------|--------------------|
 | **Authentication** | MFA mandatory; SSO integration; session timeouts | MFA mandatory; SSO integration | Password policy compliance |
 | **Encryption in transit** | TLS 1.3 required (TLS 1.2 exception with CISO approval) | TLS 1.2 minimum | TLS 1.2 minimum |
-| **Encryption at rest** | AES-256 mandatory | AES-256 for PII/sensitive data | Recommended |
+| **Encryption at rest** | AES-256 mandatory | AES-256 for PII/sensitive data | Required for systems processing personal data (names, email addresses) even if non-sensitive; not required for truly public data (marketing content, published documentation) |
 | **Network segmentation** | Dedicated segment; micro-segmentation where feasible | Segmented from untrusted networks | Standard network controls |
 | **Logging** | All security events to centralised [SIEM]; real-time alerting | Security events to centralised logging | Basic access logging |
 | **Vulnerability scanning** | Continuous or weekly | Monthly | Quarterly |
@@ -387,7 +530,54 @@ Each approved pattern shall document:
 - Deviations from approved patterns require CISO approval with documented justification and compensating controls.
 - New patterns shall be validated through threat modelling before addition to the catalogue.
 
+**Example Approved Pattern: SSO Integration with SAML 2.0**
+
+**Security Rationale**:
+
+- Centralises authentication, reducing credential sprawl.
+- Enables MFA enforcement at identity provider.
+- Provides audit trail of application access.
+- Supports just-in-time provisioning.
+
+**Implementation Guidance**:
+
+1. Register application with identity provider (Azure AD, Okta, Google Workspace).
+2. Configure SAML assertions to include required attributes (email, groups, MFA status).
+3. Validate SAML response signatures and certificates.
+4. Implement logout propagation (SLO — Single Logout).
+5. Set session timeout aligned with organisational policy (4 hours maximum).
+
+**Common Pitfalls**:
+
+- Accepting unsigned SAML assertions.
+- Not validating certificate expiration.
+- Trusting assertion content without signature verification.
+- Not implementing logout propagation (user remains logged into application after IdP logout).
+
+**Testing Criteria**:
+
+- Login redirects to identity provider.
+- MFA enforcement visible in authentication flow.
+- Invalid SAML response rejected.
+- Session expires after timeout period.
+- Logout from identity provider logs user out of application.
+
+**Reference Implementation**: [Link to code repository / wiki]
+
 **Pattern Catalogue Location**: [Architecture Tool / Confluence / SharePoint] — accessible to all system architects and developers.
+
+### Common Architecture Anti-Patterns to Avoid
+
+| Anti-Pattern | Risk | Alternative |
+|--------------|------|-------------|
+| **Shared database across trust boundaries** | Lateral movement; privilege escalation via SQL injection | Database per service or strong schema-level isolation with separate credentials |
+| **Hardcoded secrets in configuration** | Credential exposure in version control | Secrets management system (Vault, Key Vault, Secrets Manager) |
+| **Authentication bypass for "internal" services** | Assumption that internal network is trusted | Mutual TLS or OAuth 2.0 for service-to-service communication |
+| **Logging sensitive data (passwords, tokens, PII)** | Compliance violation; insider threat | Log redaction or tokenisation before logging |
+| **Single admin account shared across services** | No accountability; credential sprawl | Service-specific admin accounts with least privilege |
+| **Unauthenticated health check endpoints exposing system details** | Information disclosure | Authenticated health checks or minimal response (HTTP 200 only) |
+| **Direct database access from web tier** | SQL injection amplification; no defence in depth | API/service layer between web and database |
+| **Trusting client-side validation** | Trivial bypass | Server-side validation; client-side as UX enhancement only |
 
 ---
 
@@ -413,6 +603,15 @@ Secure engineering principles shall apply to third-party developed and acquired 
 - Integration security review before deployment into the organisation's environment.
 - Annual architecture re-assessment for SaaS and managed services.
 - Vendor non-compliance shall trigger issue escalation per contract terms.
+
+**Ongoing Review Triggers for Third-Party Systems**:
+
+- Major version upgrades (e.g., v2.x to v3.x).
+- Changes to the third-party system's data processing scope.
+- Security incidents affecting the third-party system.
+- Annual review for Tier 1 integrations.
+- Every 2 years for Tier 2 integrations.
+- When vendor SOC 2 or ISO 27001 certification lapses.
 
 ---
 
@@ -462,7 +661,7 @@ The following evidence demonstrates compliance with this policy:
 | 1 | **Documented secure engineering principles** (this policy and any supporting standards documents) | CISO | *Reviewed annually; updated upon threat landscape or regulatory change* |
 | 2 | **Security architecture documentation** (SAD, threat models, security requirements traceability) for High and Medium-Risk systems | CISO / System Owner | *Per system; updated upon significant change; reviewed annually for High-Risk* |
 | 3 | **Architecture review records** (review requests, findings, approval or rejection with rationale) | CISO | *Per review; retained 3 years* |
-| 4 | **Threat model reports** (STRIDE analysis, risk ratings, mitigations, residual risks) | CISO | *Per system; retained for lifecycle of system + 1 year* |
+| 4 | **Threat model reports** (STRIDE analysis, risk ratings, mitigations, residual risks) | CISO | *Per system; retained for lifecycle of system + 3 years; permanently for systems involved in major incidents (minimum 7 years)* |
 | 5 | **Approved architecture pattern catalogue** (documented patterns with security rationale) | CISO / Development Manager | *Maintained continuously; reviewed annually* |
 | 6 | **Security baseline configurations** (per system tier, with documented minimum controls) | CISO / IT Operations | *Reviewed annually; updated upon technology or threat change* |
 | 7 | **Technology selection security assessments** (security evaluation records for new technology procurements) | CISO | *Per procurement; retained 3 years* |
@@ -486,7 +685,7 @@ The following metrics shall be tracked and reported to the CISO quarterly:
 |--------|--------|---------------|
 | New High-Risk systems with completed architecture review | 100% | <100% |
 | New Medium-Risk systems with completed architecture review | 100% | <80% |
-| Architecture review completion within SLA (10 business days) | 90% | <70% |
+| Architecture review completion within SLA (risk-based: 5/10/15 business days) | 90% | <70% |
 | Approved architecture pattern adoption rate for new systems | 80% | <60% |
 | Active architecture exceptions | Minimised; trending downward | >5 concurrent or any >12 months |
 | Security baseline compliance (Tier 1 systems) | 100% | <90% |
@@ -506,6 +705,29 @@ Any exception to this policy shall be approved and recorded by the CISO in advan
 ## Non-Compliance
 
 An employee found to have violated this policy may be subject to disciplinary action, up to and including termination of employment. Systems deployed without required architecture review may be suspended from production pending review and remediation.
+
+## SOC 2 Alignment
+
+This policy supports SOC 2 Trust Services Criteria compliance:
+
+| SOC 2 Criterion | Coverage |
+|-----------------|----------|
+| **CC3.1** (Specification of objectives) | Security objectives in system design |
+| **CC5.2** (General controls over technology) | Architecture controls; architecture changes require change control approval per Configuration Management Policy (A.8.9) |
+| **CC6.1** (Logical access security) | Authentication architecture, least privilege, Zero Trust |
+| **CC6.6** (External threat protection) | Defence in depth, perimeter controls |
+| **CC7.1** (Vulnerability detection) | Vulnerability scanning in baseline requirements |
+| **CC7.2** (Anomaly detection) | Monitoring layer in defence in depth; cross-reference Monitoring Activities Policy (A.8.16) |
+| **CC9.2** (Vendor risk management) | Third-party architecture review; cross-reference Supplier and Cloud Services Policy (A.5.19-23) |
+
+**SOC 2 Evidence Requirements**:
+
+- Architecture review records (Evidence #3).
+- Threat models (Evidence #4).
+- Approved pattern catalogue (Evidence #5).
+- Security baselines (Evidence #6).
+- Security requirements traceability matrix for High-Risk systems.
+- Evidence of CISO approval for architecture exceptions (Evidence #8).
 
 ## Continual Improvement
 
@@ -547,4 +769,4 @@ Secure System Architecture and Engineering Principles Policy — ISO 27001 Contr
 
 ---
 
-<!-- QA_VERIFIED: 2026-02-07 -->
+<!-- QA_VERIFIED: 2026-02-08 -->

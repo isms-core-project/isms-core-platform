@@ -620,9 +620,9 @@ def create_styles():
     }
     
     # RAG Status colors
-    styles['rag_green'] = PatternFill(start_color='00B050', end_color='00B050', fill_type='solid')
-    styles['rag_amber'] = PatternFill(start_color='FFC000', end_color='FFC000', fill_type='solid')
-    styles['rag_red'] = PatternFill(start_color='FF0000', end_color='FF0000', fill_type='solid')
+    styles['rag_green'] = PatternFill(start_color='C6EFCE', end_color='C6EFCE', fill_type='solid')
+    styles['rag_amber'] = PatternFill(start_color='FFEB9C', end_color='FFEB9C', fill_type='solid')
+    styles['rag_red'] = PatternFill(start_color='FFC7CE', end_color='FFC7CE', fill_type='solid')
     styles['rag_grey'] = PatternFill(start_color='D9D9D9', end_color='D9D9D9', fill_type='solid')
     
     # Reference table styles

@@ -598,7 +598,6 @@ Maintenance Score = (Schedule Compliance × 40%) + (Programme × 30%) + (Personn
 
 ---
 
-
 **END OF USER GUIDE**
 
 ---

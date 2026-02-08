@@ -458,7 +458,7 @@ def create_comprehensive_instructions(ws, styles):
             ws[f'A{row}'].font = Font(bold=True, size=10)
         ws[f'B{row}'] = value
         if is_code:
-            ws[f'B{row}'].font = Font(name="Courier New", size=9, color="0000FF")
+            ws[f'B{row}'].font = Font(name="Calibri", size=9, color="0000FF")
         ws.merge_cells(f'B{row}:H{row}')
         row += 1
     
@@ -539,7 +539,7 @@ def create_comprehensive_instructions(ws, styles):
         ws[f'B{row}'] = description
         ws[f'B{row}'].font = Font(bold=True)
         ws[f'C{row}'] = f"Fill: {color_code}"
-        ws[f'C{row}'].font = Font(name="Courier New", size=9)
+        ws[f'C{row}'].font = Font(name="Calibri", size=9)
         ws[f'C{row}'].fill = PatternFill(start_color=color_code, end_color=color_code, fill_type="solid")
         ws.merge_cells(f'C{row}:E{row}')
         row += 1

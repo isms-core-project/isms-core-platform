@@ -362,7 +362,7 @@ def populate_instructions(wb, styles):
         ws.row_dimensions[row].height = 22
         row += 1
     ws[f'A{row}'] = "TIER 1: SERVER / APPLICATION INFRASTRUCTURE"
-    ws[f'A{row}'].font = Font(name='Calibri', size=11, bold=True, color='FFC000')
+    ws[f'A{row}'].font = Font(name='Calibri', size=11, bold=True, color='FFEB9C')
     ws[f'A{row}'].fill = PatternFill(patternType='solid', fgColor='FFF2CC')
     tier1_info = [
         f"{BULLET} Systems: Production servers, databases, ERP/CRM apps, virtualization, cloud infrastructure (non-global)",

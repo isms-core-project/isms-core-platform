@@ -238,7 +238,7 @@ def create_executive_summary(ws, styles):
     ws[f"B{row}"] = "=(SUMPRODUCT('Project Data'!F4:F53,('Project Data'!B4:B53=\"High\")*3+('Project Data'!B4:B53=\"Medium\")*2+('Project Data'!B4:B53=\"Low\")*1))/(SUMPRODUCT(('Project Data'!B4:B53=\"High\")*3+('Project Data'!B4:B53=\"Medium\")*2+('Project Data'!B4:B53=\"Low\")*1))"
     ws[f"B{row}"].number_format = "0%"
     ws[f"B{row}"].font = Font(bold=True, size=14)
-    ws[f"B{row}"].fill = PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid")
+    ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
     row += 2
     ws[f"A{row}"] = "Portfolio Health:"
     ws[f"A{row}"].font = Font(bold=True)

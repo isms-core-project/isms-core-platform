@@ -799,7 +799,7 @@ def create_exit_strategy_sheet(ws, styles):
     # WARNING 1: On-Premises strategy → Orange fill (warn: <5% justified)
     onprem_warning = FormulaRule(
         formula=['$R4="On-Premises"'],
-        fill=PatternFill(start_color="FFC000", end_color="FFC000", fill_type="solid"),
+        fill=PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid"),
         stopIfTrue=False
     )
     ws.conditional_formatting.add('R4:AC100', onprem_warning)
@@ -807,7 +807,7 @@ def create_exit_strategy_sheet(ws, styles):
     # WARNING 2: Critical Lock-In Risk → Red fill
     critical_lock_in = FormulaRule(
         formula=['$X4="Critical"'],
-        fill=PatternFill(start_color="FF0000", end_color="FF0000", fill_type="solid"),
+        fill=PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid"),
         font=Font(color="FFFFFF", bold=True),
         stopIfTrue=False
     )
@@ -816,7 +816,7 @@ def create_exit_strategy_sheet(ws, styles):
     # WARNING 3: Export not tested for Critical services → Yellow fill
     untested_critical = FormulaRule(
         formula=['AND($U4="No", $H4="Critical")'],
-        fill=PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid"),
+        fill=PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid"),
         stopIfTrue=False
     )
     ws.conditional_formatting.add('U4:U100', untested_critical)

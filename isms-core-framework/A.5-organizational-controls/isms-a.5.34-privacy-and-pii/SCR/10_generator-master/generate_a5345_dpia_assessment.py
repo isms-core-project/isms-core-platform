@@ -303,14 +303,14 @@ OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_T
 # Color palette (consistent with A.5.34 assessment suite)
 COLORS = {
     'header_blue': 'FF003366',
-    'header_orange': 'FFC00000', 
+    'header_orange': 'FFEB9C00', 
     'header_green': 'FF70AD47',
-    'header_red': 'FFC00000',
+    'header_red': 'FFEB9C00',
     'header_gold': 'FFED7D31',
     'header_cyan': 'FF00B0F0',
     'white': 'FFFFFFFF',
     'black': 'FF000000',
-    'light_green': 'FF92D050',
+    'light_green': 'FFC6EFCE',
     'dark_green': 'FF006100',
     'light_yellow': 'FFFFD966',
     'dark_orange': 'FF9C5700',
@@ -414,7 +414,7 @@ def create_instructions_sheet(ws):
     ws.merge_cells('A1:P3')
     title_cell = ws['A1']
     title_cell.value = "DPIA Assessment - Instructions & Legend"
-    title_cell.font = Font(name='Arial', size=16, bold=True, color=COLORS['white'])
+    title_cell.font = Font(name='Calibri', size=16, bold=True, color=COLORS['white'])
     title_cell.fill = PatternFill(start_color=COLORS['header_blue'], end_color=COLORS['header_blue'], fill_type='solid')
     title_cell.alignment = Alignment(horizontal='center', vertical='center')
     

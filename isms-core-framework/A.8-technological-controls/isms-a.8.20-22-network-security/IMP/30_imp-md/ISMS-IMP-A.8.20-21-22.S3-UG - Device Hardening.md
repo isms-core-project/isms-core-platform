@@ -1124,7 +1124,6 @@ print("Report generated: compliance_report.csv")
 
 ---
 
-
 **END OF USER GUIDE**
 
 ---

@@ -835,7 +835,6 @@ Assessment approved when:
 
 ---
 
-
 **END OF USER GUIDE**
 
 ---

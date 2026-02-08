@@ -75,6 +75,43 @@ The purpose of this policy is to establish requirements for data leakage prevent
 
 This policy supports Swiss nFADP (revDSG) Art. 8 by implementing technical and organisational measures appropriate to risk to protect personal data processed by the organisation. DLP monitoring is implemented in compliance with Swiss employment law, specifically Art. 26 ArGV 3 (prohibition of behaviour surveillance systems) and Art. 328b CO (proportionate processing of employee data). Where the organisation processes data of individuals in the EU/EEA, GDPR Art. 32 (security of processing) and Art. 88 (processing in employment context) requirements also apply.
 
+## Service Commitments and Customer Data Protection
+
+DLP controls support the organisation's commitments to customers regarding protection of customer data from unauthorised disclosure. Customer agreements typically include commitments such as:
+
+- "Service Provider will implement technical and organisational measures to prevent unauthorised disclosure of Customer Data."
+- "Service Provider will notify Customer within [X hours] of any unauthorised access to or disclosure of Customer Data."
+- "Service Provider will maintain monitoring systems to detect and prevent data exfiltration."
+
+### Customer Data Protection Requirements
+
+Customer data processed by the organisation shall receive DLP protection commensurate with contractual commitments:
+
+| Customer Data Type | DLP Classification | Protection Level | Notification Requirement (if leaked) |
+|--------------------|-------------------|------------------|-------------------------------------|
+| **Customer PII** | Confidential minimum | Email + Web + Endpoint + Cloud monitoring; block to external recipients | Customer notification within [X hours] per contract; regulatory notification per nFADP Art. 24 |
+| **Customer business data** (non-PII) | Confidential or Internal | Email + Web monitoring minimum; block or alert based on contract terms | Customer notification within [X hours] per contract |
+| **Customer credentials/API keys** | Restricted | All channels; immediate block + incident response | Customer notification immediate (within 1 hour) |
+| **Aggregated/anonymised customer data** | Internal | Monitor only; detection focused on re-identification risk | Customer notification if de-anonymisation suspected |
+
+### Customer Notification Procedures
+
+When DLP incidents involve customer data:
+
+1. **Initial assessment** (within 1 hour): Determine scope, affected customers, data types, exposure duration.
+2. **Containment** (immediate): Block transfer, isolate systems, revoke credentials as appropriate.
+3. **Customer notification** (per contract terms, typically 4-24 hours):
+   - Summary of incident (what happened, when discovered)
+   - Data types and volume affected
+   - Customers affected (if multi-tenant)
+   - Actions taken by organisation
+   - Recommended customer actions
+   - Contact for questions
+4. **Regulatory notification** (if applicable): nFADP Art. 24 (without undue delay), GDPR Art. 33 (72 hours).
+5. **Follow-up**: Root cause analysis report provided to affected customers within [X business days].
+
+**Customer-specific requirements**: Where customers have negotiated custom notification timelines, incident severity thresholds, or reporting requirements, these shall be documented in the customer contract register and integrated into DLP alert routing and incident response workflows.
+
 ## Scope
 
 This policy applies to all information assets classified as Internal, Confidential, or Restricted per the organisation's data classification scheme. This includes:
@@ -197,6 +234,76 @@ The organisation shall verify DLP channel coverage through technical testing at 
 - Remediation plan with timeline (if not accepted).
 
 Acceptable coverage exceptions (documented and CISO-approved): guest networks with no access to sensitive data; dedicated B2B partner connections with alternative controls; air-gapped networks with no internet connectivity; specific user groups with documented and approved exceptions (e.g., legal counsel handling privileged communications).
+
+---
+
+## Third-Party DLP Service Provider Management
+
+Where the organisation uses cloud-based DLP solutions (CASB, email security gateway-as-a-service, cloud DLP platforms):
+
+### Vendor Selection Criteria
+
+DLP service providers shall be evaluated against:
+
+| Criterion | Requirement | Validation Method |
+|-----------|-------------|-------------------|
+| **Security certifications** | SOC 2 Type II (current, within 12 months); ISO 27001 | Request and review reports annually |
+| **Data residency** | Data processed and stored within Switzerland or EU/EEA (or adequacy jurisdiction per nFADP) | Confirm in contract; verify in SOC 2 report |
+| **Data protection compliance** | GDPR-compliant data processing agreement; nFADP compliance commitment | Legal review of DPA |
+| **Detection accuracy** | <10% false positive rate during trial; >95% detection rate for known test data sets | 30-day proof-of-concept with production traffic sample |
+| **Performance** | <500ms email latency; <100ms web proxy latency (inline mode) | Load testing during trial |
+| **Integration capabilities** | API integration with [SIEM], [ITSM], identity provider | Technical validation during POC |
+| **Incident response** | Vendor provides 24x7 support; <1 hour response for critical alerts | SLA terms; reference checks |
+
+### Data Processing Agreement Requirements
+
+Cloud DLP vendor contracts shall include:
+
+- **Data processor obligations** (nFADP Art. 9; GDPR Art. 28 where applicable)
+- **Subprocessor disclosure and approval** (list of subprocessors; notification of changes)
+- **Data retention and deletion** (automatic deletion after retention period; deletion confirmation upon request)
+- **Security incident notification** (vendor notifies organisation within 24 hours of any breach affecting customer data)
+- **Audit rights** (organisation or auditor may audit vendor controls; SOC 2 report satisfies if current)
+- **Data portability** (export DLP logs and policies in standard format upon termination)
+- **Jurisdiction and governing law** (Swiss law preferred; EU law acceptable; disputes in Switzerland)
+
+### Ongoing Vendor Performance Monitoring
+
+| Metric | Target | Review Frequency | Owner |
+|--------|--------|------------------|-------|
+| **Service availability** | Per vendor SLA (typically 99.5-99.9%) | Monthly | IT Operations |
+| **False positive rate** | <10% | Monthly | Security Team |
+| **Detection accuracy** | >95% for test scenarios | Quarterly | Security Team |
+| **Performance (latency)** | Per targets above | Weekly | IT Operations |
+| **Support responsiveness** | Per SLA (critical: <1h; high: <4h; medium: <24h) | Per ticket | Security Team Lead |
+| **Vendor security incidents** | 0 affecting customer data | Per occurrence | CISO |
+
+### Annual Vendor Review
+
+Cloud DLP vendors shall receive an annual review covering:
+
+- **SOC 2 Type II report review**: Compare current report against previous; identify any new exceptions or qualifications; verify control environment remains acceptable.
+- **Performance against SLAs**: Availability, latency, support response times.
+- **False positive trends**: Improving, stable, or degrading?
+- **Security incidents**: Any vendor-side breaches or near-misses in past 12 months?
+- **Roadmap alignment**: Vendor's technology direction aligned with organisation's needs?
+- **Cost-benefit**: Value delivered vs. subscription cost; comparison with alternatives.
+- **Recommendation**: Renew, renegotiate, or replace.
+
+**Review documentation**: Retained 3 years; renewal decisions documented with justification.
+
+### Vendor Incident Escalation
+
+If a cloud DLP vendor experiences a security incident affecting the organisation:
+
+1. **Immediate notification**: Vendor shall notify organisation within 24 hours (per contract).
+2. **Impact assessment**: Security Team assesses impact to organisation and customers.
+3. **Customer notification**: If customer data affected, notify customers per service commitments.
+4. **Regulatory notification**: If personal data affected and meets breach criteria (nFADP Art. 24), notify FDPIC.
+5. **Vendor corrective action review**: Vendor provides root cause analysis and remediation plan within 10 business days.
+6. **Contract review**: Assess whether incident constitutes material breach; consider vendor replacement.
+
+**Vendor incident documentation**: Retained 5 years minimum; included in annual vendor review.
 
 ---
 
@@ -414,6 +521,210 @@ The organisation shall track DLP effectiveness through key performance indicator
 
 ---
 
+## DLP System Availability and Performance Impact
+
+DLP systems that introduce latency, block legitimate business operations, or fail in a manner that disrupts services can negatively impact the organisation's availability commitments.
+
+### DLP System Availability Requirements
+
+| Component | Availability Target | Impact of Failure | Failover/Redundancy |
+|-----------|-------------------|-------------------|---------------------|
+| **Email DLP gateway** | 99.5% | Email delivery delays or failures | High availability pair; fail-open option for non-critical classifications |
+| **Web DLP proxy** | 99.5% | Web access degradation or blocking | Redundant proxies; fail-open with logging for non-Restricted data |
+| **Endpoint DLP agents** | 99% (per endpoint) | Offline enforcement only; no network sync | Agents continue offline enforcement; alert on prolonged disconnect (>72h) |
+| **Network DLP sensors** | 99% | Visibility loss; no blocking capability at network layer | Passive monitoring; does not break connectivity |
+| **Cloud DLP (CASB)** | 99.5% (vendor SLA) | Cloud service access may degrade if inline; API mode continues | Vendor-provided redundancy; inline vs. API mode configuration |
+
+### Fail-Safe Modes
+
+DLP systems shall be configured with explicit fail-safe behaviour to prevent service disruption:
+
+| Scenario | Fail-Safe Behaviour | Rationale |
+|----------|-------------------|-----------|
+| **Email DLP gateway failure** | Fail-open for Internal and Confidential data (delivery continues with logging); fail-closed for Restricted data (email queued until system restored) | Balance availability vs. security based on data sensitivity |
+| **Web DLP proxy failure** | Fail-open with full logging; alerts generated for all traffic during fail-open period | Maintain business continuity; investigate activity during failure window |
+| **Endpoint DLP agent crash** | Continue offline policy enforcement; alert IT Operations for remediation | Maintain baseline protection; restore full monitoring ASAP |
+| **DLP database/management console failure** | Agents continue with last-known-good policy; no new rules deployed until restored | Prevent policy enforcement loss |
+
+### Performance Monitoring
+
+DLP system performance shall be monitored to prevent service degradation:
+
+| Metric | Target | Alert Threshold | Review Frequency |
+|--------|--------|-----------------|------------------|
+| **Email processing latency** | <500ms per message | >2 seconds sustained for 5 minutes | Real-time monitoring |
+| **Web proxy latency** | <100ms added latency | >300ms sustained for 5 minutes | Real-time monitoring |
+| **Endpoint agent CPU usage** | <5% average | >15% sustained for 10 minutes | Hourly monitoring |
+| **Endpoint agent memory usage** | <200MB | >500MB | Hourly monitoring |
+| **False positive rate impacting productivity** | <5% of users reporting blocks on legitimate activity | >10% user complaints per month | Monthly user feedback analysis |
+| **DLP system uptime** | Per availability targets above | <99% in any calendar month | Monthly SLA review |
+
+### Capacity Planning
+
+- DLP systems shall be sized to handle peak traffic with 30% headroom.
+- Annual capacity review shall project growth and identify scaling needs.
+- Email volume, web traffic, endpoint count, and data transfer volumes tracked quarterly.
+- Capacity alerts triggered at 70% utilisation; upgrade planned before 85% utilisation.
+
+### Incident Impact on Services
+
+DLP incidents may impact service availability through containment actions:
+
+| Containment Action | Service Impact | Mitigation |
+|-------------------|---------------|------------|
+| **User account disabled** (insider threat) | User unable to work; services may continue for other users | Rapid investigation (<1 hour) to determine if full block justified or partial restriction sufficient |
+| **Endpoint isolated** (data exfiltration in progress) | User unable to access network; cloud services may be accessible | Provide clean loaner device if investigation extends beyond 4 hours |
+| **Service account credential revoked** (API key leaked) | Application or integration may fail | Coordinate with application owner; generate new credentials; test before revocation where feasible |
+| **Network segment quarantined** (bulk exfiltration) | Multiple users affected | Rare; requires CISO approval; customer notification if external-facing services affected |
+
+**Customer notification**: If DLP containment actions impact customer-facing services, customers shall be notified per the incident communication procedures (typically within 1 hour for customer-impacting incidents).
+
+### Business Continuity and Disaster Recovery
+
+DLP controls shall support the organisation's business continuity and disaster recovery objectives:
+
+#### DLP in Disaster Recovery Scenarios
+
+When the organisation activates disaster recovery procedures:
+
+| DR Scenario | DLP Enforcement | Rationale |
+|-------------|----------------|-----------|
+| **Primary datacenter failure; failover to DR site** | Full DLP enforcement maintained (DR site DLP configured identically to primary) | Data protection requirements unchanged |
+| **Email system failure; emergency use of alternate email** | Email DLP applies to alternate system; if not technically feasible, enhanced monitoring and manual review | Prevent data leakage during disruption |
+| **Network infrastructure failure; temporary alternative connectivity** | Network DLP may be reduced; endpoint DLP becomes primary control | Endpoint agents continue enforcement during network disruption |
+| **Ransomware incident; isolated network segments** | DLP may be bypassed temporarily for isolation/remediation; enhanced manual oversight and post-incident review | Security response takes precedence; manual controls substitute |
+
+#### DLP System Recovery Priorities
+
+DLP systems shall be included in disaster recovery planning with defined recovery priorities:
+
+| DLP Component | Recovery Time Objective (RTO) | Recovery Point Objective (RPO) | Priority Tier |
+|---------------|------------------------------|-------------------------------|---------------|
+| **Email DLP** | 4 hours (critical for business operations) | 1 hour (policy/rule changes) | Tier 1 |
+| **Endpoint DLP agents** | N/A (operate independently) | 24 hours (policy sync) | Tier 2 (policy push) |
+| **Network DLP** | 8 hours (monitoring; not blocking) | 24 hours (logs) | Tier 2 |
+| **DLP management console** | 24 hours (for policy changes) | 4 hours (configuration) | Tier 2 |
+| **CASB / Cloud DLP** | Vendor-managed (per vendor SLA) | Vendor-managed | Tier 1 (vendor responsibility) |
+
+#### Temporary DLP Policy Relaxation
+
+In exceptional circumstances (major incident, disaster recovery, emergency operations), temporary relaxation of DLP policies may be authorised:
+
+- **Approval required**: CISO + CIO (or CEO if both unavailable).
+- **Documentation**: Exception documented with justification, compensating controls, duration.
+- **Compensating controls**: Enhanced manual review, restricted to specific users/data types, time-limited.
+- **Maximum duration**: 72 hours; requires re-approval for extension.
+- **Audit trail**: All activity during relaxation period logged and reviewed post-incident.
+
+**Example scenario**: During ransomware recovery, IT team needs to transfer large volumes of data to cloud backup service not normally approved. DLP temporarily allows this specific transfer with enhanced logging and security team oversight.
+
+#### Annual DR Testing
+
+DLP systems shall be included in annual disaster recovery testing:
+- Verify DLP enforcement continues during failover to DR site.
+- Test DLP system recovery within RTO.
+- Validate policy synchronisation after recovery.
+- Document testing results and gaps for remediation.
+
+---
+
+## DLP Effectiveness Testing
+
+The organisation shall conduct structured testing to validate that DLP controls detect and prevent unauthorised data disclosure as designed.
+
+### Testing Programme
+
+| Test Type | Frequency | Method | Success Criteria | Owner |
+|-----------|-----------|--------|------------------|-------|
+| **Positive detection testing** (DLP should block) | Quarterly | Send test emails/files containing simulated sensitive data (test credit card numbers, test PII, test credentials) to external addresses; attempt web uploads; USB transfers | 100% detection and blocking for Restricted data; >95% for Confidential data | Security Team |
+| **Negative testing** (DLP should allow) | Quarterly | Send legitimate business communications that historically generated false positives; verify tuning effectiveness | <5% false positive rate | Security Team |
+| **Channel coverage verification** | Quarterly | Test each monitored channel (email, webmail, cloud upload, USB, printing, mobile) with test data | All in-scope channels detect test data | Security Team |
+| **Bypass attempt testing** | Semi-annually | Attempt to circumvent DLP using common techniques (encryption, obfuscation, alternative channels, protocol tunneling) | Bypass attempts detected or prevented | Security Team + Red Team (if available) |
+| **Performance impact testing** | Annually | Measure email latency, web proxy latency, endpoint CPU/memory usage during peak load | Performance within targets (see availability section) | IT Operations + Security Team |
+| **Alert routing and escalation** | Quarterly | Generate test critical alert; verify incident ticket created, escalation occurs, response time within SLA | 100% of test alerts processed correctly | Security Team |
+
+### Test Data Management
+
+- **Test data sets**: Maintain library of test files containing simulated sensitive data:
+  - Test credit card numbers (using invalid Luhn algorithm results)
+  - Test Swiss social security numbers (AHV) with known invalid check digits
+  - Test PII (names, addresses, emails from fictional personas)
+  - Test credentials (fake passwords, API keys, certificates)
+- **Test email accounts**: Maintain external test email addresses for sending/receiving test messages.
+- **Test documentation**: Each test documented with date, test scenario, expected result, actual result, pass/fail, follow-up actions.
+
+### Red Team / Purple Team Testing
+
+Where resources permit, include DLP in annual security testing exercises:
+
+- **Red Team**: Attempts data exfiltration using realistic adversary techniques (insider threat simulation, compromised account simulation, APT exfiltration patterns).
+- **Blue Team** (SOC/Security Team): Detects and responds using DLP alerts and other monitoring.
+- **Debrief**: Identifies DLP detection gaps, rule improvements, coverage enhancements.
+- **Improvement tracking**: Action items from exercise tracked through corrective action register.
+
+**For organisations without red team capability**: Tabletop exercises simulating data exfiltration scenarios serve as acceptable alternative. Scenarios should cover:
+- Insider threat (disgruntled employee exfiltrating customer data)
+- Compromised account (attacker using stolen credentials to exfiltrate data)
+- Accidental disclosure (user sends sensitive data to wrong recipient)
+- Supply chain attack (third-party system used to exfiltrate data)
+
+### Testing Documentation
+
+All testing activities documented with:
+- Test date, tester, test scope.
+- Test scenarios and expected results.
+- Actual results (pass/fail, detection rates, false positives).
+- Gaps identified and severity assessment.
+- Corrective actions assigned with due dates and owners.
+- Follow-up validation of corrective actions.
+
+**Testing records retained 3 years; testing failures escalated to CISO; critical gaps remediated within 30 days.**
+
+---
+
+## Management Reporting and Oversight
+
+DLP programme effectiveness and compliance shall be reported to executive management to demonstrate governance and oversight.
+
+### Quarterly Executive Dashboard
+
+The CISO shall provide a quarterly DLP programme summary to executive management covering:
+
+| Section | Metrics Included | Purpose |
+|---------|------------------|---------|
+| **Programme Status** | Channel coverage %; active exceptions; false positive rate trend | Overall programme health |
+| **Threat Detection** | Critical/High incidents detected; blocked exfiltration attempts; insider threat indicators | Demonstrate value delivered |
+| **Compliance Status** | Employee notification completion; proportionality assessment current; regulatory requirements met | Legal/regulatory assurance |
+| **Performance** | Availability %; false positive trend; user complaints | Operational effectiveness |
+| **Continuous Improvement** | Policy tuning actions taken; coverage gaps remediated; testing results | Programme maturity |
+
+### Annual Management Review
+
+As part of the ISO 27001 Management Review (Clause 9.3), the CISO shall present an annual DLP programme review covering:
+
+- **Programme effectiveness**: Did DLP prevent data breaches? Incidents detected vs. missed.
+- **Compliance**: Swiss employment law compliance; data protection law compliance; audit findings.
+- **Technology assessment**: Current DLP technology adequate? Vendor performance? Gaps requiring investment?
+- **Risk landscape changes**: New exfiltration threats; new data types requiring protection; new egress channels.
+- **Budget and resources**: Current staffing adequate? Technology refresh needs? Training requirements.
+- **Strategic recommendations**: Programme enhancements; policy changes; investment priorities.
+
+**Review documentation**: Retained 3 years; management decisions and action items tracked.
+
+### Board Reporting (if applicable)
+
+For organisations with audit committees or board-level risk oversight, annual DLP summary provided covering:
+
+- High-level programme effectiveness (critical incidents, regulatory compliance status).
+- Significant DLP incidents and lessons learned.
+- Regulatory risks and compliance posture (employment law, data protection law).
+- Strategic investments and programme maturity progression.
+- Benchmarking against industry peers (if available).
+
+**Board reporting retained 7 years minimum (corporate governance records).**
+
+---
+
 ## Exception Management
 
 Exceptions to DLP policy requirements shall be requested in writing and shall include:
@@ -487,7 +798,7 @@ All active exceptions shall be recorded in the DLP Exception Register (format: D
 
 ## Evidence
 
-The following evidence demonstrates compliance with this policy:
+The following evidence demonstrates compliance with this policy. **For SOC 2 Type II audits**, auditors will test operating effectiveness over the audit period (typically 12 months).
 
 | # | Evidence | Owner | Frequency | Retention |
 |---|----------|-------|-----------|-----------|
@@ -505,6 +816,28 @@ The following evidence demonstrates compliance with this policy:
 | 12 | **DLP rule tuning log** (rules changed, false positive reduction, justification, approval) | Security Team | Per change | 3 years |
 | 13 | **Works council consultation records** (where applicable) | HR | Before deployment; per scope change | Life of deployment + 3 years |
 | 14 | **DLP log access control records** (who has access, justification, review records) | IT Operations / Security Team | Maintained continuously; reviewed quarterly | 3 years |
+| 15 | **Customer data protection mapping** (customer contracts to data classification to DLP rules) | Security Team + Legal | Per customer; reviewed quarterly | 3 years |
+| 16 | **Customer notification records** (DLP incidents involving customer data) | Security Team + Customer Success | Per incident | 7 years |
+| 17 | **DLP system availability reports** (uptime, performance, capacity metrics) | IT Operations | Monthly | 3 years |
+| 18 | **DLP effectiveness testing results** (quarterly positive/negative/bypass tests) | Security Team | Quarterly | 3 years |
+| 19 | **Vendor SOC 2 reports** (for cloud DLP, CASB providers) | IT Operations / Security Team | Annual (vendor report receipt) | 3 years |
+| 20 | **Vendor performance reviews** (for cloud DLP providers) | Security Team Lead | Annually per vendor | 3 years |
+| 21 | **Disaster recovery test results** (DLP recovery testing) | IT Operations Manager | Annual (per DR test) | 3 years |
+| 22 | **Quarterly executive dashboards** (DLP programme status) | CISO | Quarterly | 3 years |
+| 23 | **Annual management review presentation** (DLP programme review) | CISO | Annual | 3 years |
+
+### SOC 2 Type II Audit Sampling Expectations
+
+Auditors will typically sample:
+- **25 DLP alerts** across severity levels (verify response within SLA, documentation complete).
+- **All Critical/High incidents** (verify containment, investigation, customer notification if applicable).
+- **All active exceptions** (verify approval, review schedule followed, compensating controls documented).
+- **All quarterly testing cycles** (verify tests conducted, results documented, gaps remediated).
+- **All vendor reviews** (verify completed, current SOC 2 reports obtained).
+- **Employee notification evidence** for **25 employees** (verify training completion, acknowledgment documented).
+- **Proportionality assessment** (verify current, approved by DPO/CISO).
+
+**Completeness is critical**: Missing evidence for any sampled item constitutes an audit finding. Ensure continuous documentation throughout audit period.
 
 ---
 
@@ -583,4 +916,4 @@ Data Leakage Prevention Policy — ISO 27001 Controls Mapping
 
 ---
 
-<!-- QA_VERIFIED: 2026-02-07 -->
+<!-- QA_VERIFIED: 2026-02-08 -->

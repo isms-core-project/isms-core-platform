@@ -482,7 +482,6 @@ Before starting this assessment, ensure:
 
 ---
 
-
 **END OF USER GUIDE**
 
 ---
