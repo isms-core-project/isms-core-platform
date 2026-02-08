@@ -10,6 +10,27 @@ This project uses a simple versioning approach:
 ## [Unreleased]
 - TBD
 
+## [4.6] - 2026-02-08
+### Added
+- ISMS CORE Operational product: 53 OP-POLs + 53 compliance checklist generators + shared engine
+- Operational Copilot S2 review applied to all 53 OP-POLs
+- Framework palette standardisation script (71 generators normalised)
+- SCR QA factory scripts: `fix_date_formats.py`, `fix_swiss_localisation.py`
+
+### Changed
+- All 253 Framework generators: Swiss DD.MM.YYYY date format enforced
+- All 253 Framework generators: CHF currency localisation (EUR/USD removed)
+- All 253 Framework generators: British English spelling standardised
+- 8 generators: Excel sheet names shortened to ≤31 characters
+- 8 generators: missing OUTPUT_FILENAME constants added
+- 7 generators: non-Swiss sample names replaced with Swiss equivalents
+- 4 generators: monetary value sample labels added (approx./sample)
+- Standard colour palette applied across all 253 Framework + 53 Operational generators
+
+### Fixed
+- Zero runtime errors across all 306 generators (253 Framework + 53 Operational)
+- 698 stale standard references updated across IMP UG files
+
 ## [4.5] - 2026-02-06
 ### Added
 - IMP UG/TG split: all 252 IMP files split into User Guide (UG) + Technical Specification (TG) pairs (504 total)
