@@ -59,11 +59,8 @@ tmp/
 ~$*.xlsx
 ~$*.xls
 
-# Generated Workbooks (output of generators - should not be committed)
-90_workbooks/*.xlsx
-90_workbooks/*.xls
-**/90_workbooks/*.xlsx
-**/90_workbooks/*.xls
+# Generated Workbooks - INCLUDED (these are product deliverables)
+# 90_workbooks/*.xlsx — intentionally tracked
 
 # Test outputs
 test_output/
