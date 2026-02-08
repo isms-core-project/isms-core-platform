@@ -60,7 +60,8 @@
 - Information Classification and Handling Policy
 - Acceptable Use Policy
 - Incident Management Policy
-- Logging and Monitoring Policy
+- Logging Policy
+- Monitoring Activities Policy (A.8.16)
 - Network Security Policy
 - Privacy and PII Protection Policy
 - Web Filtering Policy

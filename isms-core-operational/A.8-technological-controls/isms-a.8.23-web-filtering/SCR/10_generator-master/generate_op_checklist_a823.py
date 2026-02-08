@@ -150,7 +150,7 @@ REQUIREMENTS = OrderedDict([
         ("A.8.23-41", "Purpose Limitation: Web Filtering Data",
          "Purpose limitation: Web filtering data shall not be used for HR performance evaluation, disciplinary action for non-security matters, or general behavioural profiling."),
         ("A.8.23-42", "Data Minimisation: Web Filtering Logs",
-         "Data minimisation: Web filtering logs shall be retained only as long as necessary for security purposes (per log retention schedule in the Logging and Monitoring Policy, A.8.15)."),
+         "Data minimisation: Web filtering logs shall be retained only as long as necessary for security purposes (per log retention schedule in the Logging Policy, A.8.15)."),
     ]),
 
     ("Testing & Validation", [

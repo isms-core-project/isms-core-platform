@@ -58,7 +58,8 @@
 - Change Management Policy
 - Endpoint Security Policy
 - Network Security Policy
-- Logging and Monitoring Policy
+- Logging Policy
+- Monitoring Activities Policy (A.8.16)
 - Vulnerability Management Policy
 - Incident Management Policy
 

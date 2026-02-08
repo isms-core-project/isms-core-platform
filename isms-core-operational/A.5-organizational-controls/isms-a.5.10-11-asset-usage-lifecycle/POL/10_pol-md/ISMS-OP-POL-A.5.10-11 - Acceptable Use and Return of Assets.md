@@ -239,7 +239,7 @@ Monitoring shall comply with Swiss employment law and data protection requiremen
 - **Private communications**: The organisation shall not access private communications on organisation systems, even where limited personal use is permitted (Art. 328b CO).
 - **Keystroke logging and continuous individual surveillance** are prohibited.
 
-IT system logging shall take place in accordance with the Logging and Monitoring Policy. Investigations shall be commenced where **reasonable suspicion** exists of a breach of this or any other policy.
+IT system logging shall take place in accordance with the Logging Policy. Investigations shall be commenced where **reasonable suspicion** exists of a breach of this or any other policy.
 
 **Reasonable suspicion includes**: automated security alerts (DLP, IDS/IPS, antivirus), reports from colleagues or managers, anomalous system behaviour (unusual login times/locations, mass data access/download), observed policy violations (unattended unlocked workstation, data on unapproved media).
 

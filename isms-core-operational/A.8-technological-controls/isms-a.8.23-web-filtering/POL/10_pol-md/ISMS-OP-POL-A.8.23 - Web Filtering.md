@@ -365,7 +365,7 @@ Web filtering that processes employee browsing data shall comply with Swiss empl
   - (a) A security alert indicates a potential incident or policy violation, and
   - (b) The investigation is documented with justification.
 - **Purpose limitation**: Web filtering data shall not be used for HR performance evaluation, disciplinary action for non-security matters, or general behavioural profiling.
-- **Data minimisation**: Web filtering logs shall be retained only as long as necessary for security purposes (per log retention schedule in the Logging and Monitoring Policy, A.8.15).
+- **Data minimisation**: Web filtering logs shall be retained only as long as necessary for security purposes (per log retention schedule in the Logging Policy, A.8.15).
 - **DPIA**: If web filtering includes TLS inspection or detailed user-level logging at scale, a Data Protection Impact Assessment under nFADP Art. 22 may be required.
 
 ---

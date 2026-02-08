@@ -63,7 +63,7 @@
 - Vulnerability Management Policy
 - Use of Cryptography Policy
 - Change Management Policy
-- Logging and Monitoring Policy
+- Logging Policy
 
 ---
 

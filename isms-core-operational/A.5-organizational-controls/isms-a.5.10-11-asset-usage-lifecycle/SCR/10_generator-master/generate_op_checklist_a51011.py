@@ -138,7 +138,7 @@ REQUIREMENTS = OrderedDict([
         ("A.5.10-11-33", "Private Communications: The Organisation",
          "Private communications: The organisation shall not access private communications on organisation systems, even where limited personal use is permitted (Art. 328b CO)."),
         ("A.5.10-11-34", "It System Logging",
-         "IT system logging shall take place in accordance with the Logging and Monitoring Policy. Investigations shall be commenced where reasonable suspicion exists of a breach of this or any other policy."),
+         "IT system logging shall take place in accordance with the Logging Policy. Investigations shall be commenced where reasonable suspicion exists of a breach of this or any other policy."),
         ("A.5.10-11-35", "Be Conducted By The Information Security",
          "Investigations shall be conducted by the information security management team or designated personnel with appropriate authorisation. Employee rights: Employees investigated shall be informed unless doing so would compromise the investigation or violate legal obligations."),
     ]),

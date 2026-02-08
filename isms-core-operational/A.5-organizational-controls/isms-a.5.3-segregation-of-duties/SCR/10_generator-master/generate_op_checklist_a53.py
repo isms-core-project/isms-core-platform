@@ -107,7 +107,7 @@ REQUIREMENTS = OrderedDict([
         ("A.5.3-27", "Timestamp And Action Recording: All",
          "Timestamp and action recording: All approvals, modifications, and process completions shall be recorded with accurate timestamps."),
         ("A.5.3-28", "Log Protection: Audit Logs",
-         "Log protection: Audit logs shall be protected against modification or deletion per the Logging and Monitoring Policy. Acceptable implementations include write-once storage, restricted administrator access with separate log reviewer, retention locks, or centralised log aggregation with integrity verification."),
+         "Log protection: Audit logs shall be protected against modification or deletion per the Logging Policy. Acceptable implementations include write-once storage, restricted administrator access with separate log reviewer, retention locks, or centralised log aggregation with integrity verification."),
     ]),
 
     ("Exception Management", [

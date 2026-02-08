@@ -168,7 +168,7 @@ The Project Manager, with Information Security Officer support, shall assess eac
 | **Supplier security** | Project involves external vendors or cloud services | Supplier Relationship Security Policy |
 | **Privacy and PII** | Project processes personal data | Privacy and PII Protection Policy, nFADP Art. 22 |
 | **Business continuity** | Project affects business-critical systems | Business Continuity and DR Policy |
-| **Logging and monitoring** | Project deploys systems requiring security monitoring | Logging and Monitoring Policy |
+| **Logging and monitoring** | Project deploys systems requiring security monitoring | Logging Policy |
 
 ### Requirement Source Mapping
 

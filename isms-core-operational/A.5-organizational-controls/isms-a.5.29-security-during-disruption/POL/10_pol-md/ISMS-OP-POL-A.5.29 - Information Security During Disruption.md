@@ -53,7 +53,8 @@
 - Business Continuity and Disaster Recovery Policy
 - Incident Management Policy
 - Identity and Access Management Policy
-- Logging and Monitoring Policy
+- Logging Policy
+- Monitoring Activities Policy (A.8.16)
 - Change Management Policy
 
 ---

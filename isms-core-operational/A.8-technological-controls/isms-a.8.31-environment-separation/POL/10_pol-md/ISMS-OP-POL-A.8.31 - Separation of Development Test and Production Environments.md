@@ -56,7 +56,7 @@
 - Identity and Access Management Policy
 - Secure Development Lifecycle Policy
 - Change Management Policy
-- Logging and Monitoring Policy
+- Logging Policy
 - Data Classification and Handling Policy
 - Privacy and Personal Data Protection Policy
 - Incident Response Policy

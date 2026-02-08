@@ -55,7 +55,8 @@
 - Information Transfer Policy
 - Physical and Environmental Security Policy
 - Asset Management Policy
-- Logging and Monitoring Policy
+- Logging Policy
+- Monitoring Activities Policy (A.8.16)
 
 ---
 

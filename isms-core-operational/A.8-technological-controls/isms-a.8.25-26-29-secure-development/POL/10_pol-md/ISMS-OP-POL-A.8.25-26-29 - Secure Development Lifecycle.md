@@ -187,7 +187,7 @@ Threat models shall be reviewed and updated: at each major release; when the app
 - **Input validation and output encoding** — defence against injection attacks (OWASP Top 10 A05:2025).
 - **Cryptography** — encryption of data in transit (TLS 1.2 minimum) and at rest per the Use of Cryptography Policy.
 - **Session management** — secure session tokens, timeouts, invalidation on logout.
-- **Error handling and logging** — no sensitive data in error messages; security events logged per the Logging and Monitoring Policy.
+- **Error handling and logging** — no sensitive data in error messages; security events logged per the Logging Policy.
 - **API security** — authentication, rate limiting, input validation for all API endpoints.
 - **Data protection** — personal data handling per nFADP Art. 7 (privacy by design and default); data minimisation; secure deletion.
 

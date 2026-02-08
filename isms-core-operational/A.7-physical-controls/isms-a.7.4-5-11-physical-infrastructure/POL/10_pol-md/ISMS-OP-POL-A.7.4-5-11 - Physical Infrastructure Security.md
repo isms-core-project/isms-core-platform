@@ -53,7 +53,8 @@
 - Physical Access Control Policy
 - Incident Management Policy
 - Business Continuity and Disaster Recovery Policy
-- Logging and Monitoring Policy
+- Logging Policy
+- Monitoring Activities Policy (A.8.16)
 - Cloud Services and Supplier Security Policy
 - Asset Management Policy
 

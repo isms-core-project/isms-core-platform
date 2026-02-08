@@ -56,7 +56,8 @@
 
 - Identity and Access Management Policy
 - Data Masking Policy
-- Logging and Monitoring Policy
+- Logging Policy
+- Monitoring Activities Policy (A.8.16)
 - Vulnerability Management Policy
 - Incident Management Policy
 - Information Classification and Handling Policy

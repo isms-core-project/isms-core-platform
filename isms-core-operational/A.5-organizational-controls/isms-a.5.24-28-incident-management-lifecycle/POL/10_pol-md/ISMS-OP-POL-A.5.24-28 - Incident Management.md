@@ -48,7 +48,8 @@
 **Related Internal Policies**:
 
 - Access Control Policy
-- Logging and Monitoring Policy
+- Logging Policy
+- Monitoring Activities Policy (A.8.16)
 - Business Continuity Policy
 - Privacy and Protection of PII Policy
 - Information Classification and Handling Policy

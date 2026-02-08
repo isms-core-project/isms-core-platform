@@ -45,8 +45,9 @@
 
 **Related Internal Policies**:
 
-- Logging and Monitoring Policy (A.8.15)
+- Logging Policy (A.8.15)
 - Monitoring Activities Policy (A.8.16)
+
 - Incident Management Policy
 - Network Security Policy
 

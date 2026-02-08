@@ -55,7 +55,8 @@
 - Asset Management Policy
 - Incident Management Policy
 - Cloud Services and Supplier Security Policy
-- Logging and Monitoring Policy
+- Logging Policy
+- Monitoring Activities Policy (A.8.16)
 - Change Management Policy
 
 ---

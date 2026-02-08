@@ -52,7 +52,8 @@
 - Identity and Access Management Policy
 - Authentication and Privileged Access Policy
 - Use of Cryptography Policy
-- Logging and Monitoring Policy
+- Logging Policy
+- Monitoring Activities Policy (A.8.16)
 - Incident Management Policy
 
 ---

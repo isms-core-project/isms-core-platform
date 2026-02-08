@@ -53,7 +53,7 @@
 
 - Identity and Access Management Policy
 - Secure Development Lifecycle Policy
-- Logging and Monitoring Policy
+- Logging Policy
 - Change Management Policy
 - Information Classification and Handling Policy
 

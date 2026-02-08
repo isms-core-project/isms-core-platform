@@ -48,7 +48,7 @@
 
 **Related Internal Policies**:
 
-- Logging and Monitoring Policy (A.8.15)
+- Logging Policy (A.8.15)
 - Incident Management Policy
 - Network Security Policy
 - Endpoint Security Policy
@@ -74,7 +74,7 @@ This policy applies to:
 - All employees and third-party users whose activities generate security-relevant events.
 - All environments: production, staging, and externally-facing systems.
 
-Monitoring of physical security systems (CCTV, badge readers) is covered under the Physical Access Control Policy. Logging configuration and log retention are covered under the Logging and Monitoring Policy (A.8.15).
+Monitoring of physical security systems (CCTV, badge readers) is covered under the Physical Access Control Policy. Logging configuration and log retention are covered under the Logging Policy (A.8.15).
 
 ## Principle
 
@@ -159,7 +159,7 @@ The organisation shall deploy a centralised monitoring platform capable of:
 | **Threat intelligence integration** | Ingest external threat intelligence feeds to enrich detection rules and identify known indicators of compromise |
 | **Dashboards** | Provide real-time visibility into security posture, alert volumes, and trends |
 | **Investigation support** | Enable drill-down from alert to raw events for incident investigation |
-| **Retention** | Retain monitoring data per the Logging and Monitoring Policy (A.8.15) retention schedule |
+| **Retention** | Retain monitoring data per the Logging Policy (A.8.15) retention schedule |
 
 Platform examples: SIEM (e.g., Microsoft Sentinel, Splunk, Elastic SIEM, Wazuh), XDR, or equivalent.
 

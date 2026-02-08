@@ -58,7 +58,8 @@
 - Incident Management Policy
 - Risk Management Policy
 - Vulnerability Management Policy
-- Logging and Monitoring Policy
+- Logging Policy
+- Monitoring Activities Policy (A.8.16)
 - Malware Protection Policy
 - Information Classification and Handling Policy
 

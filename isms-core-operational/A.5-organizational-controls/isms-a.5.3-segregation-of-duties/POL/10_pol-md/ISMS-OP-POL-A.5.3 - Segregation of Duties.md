@@ -56,7 +56,7 @@
 - Identity and Access Management Policy
 - Authentication and Privileged Access Policy
 - Change Management Policy
-- Logging and Monitoring Policy
+- Logging Policy
 - Information Classification and Handling Policy
 
 ---
@@ -291,7 +291,7 @@ Information systems supporting segregated processes shall implement the followin
 - **Immutable logging**: All activities in segregated processes shall be logged to a centralised logging platform ([SIEM] or equivalent) that the process participants cannot modify or delete.
 - **Actor identification**: Logs shall clearly identify the individual performing each action at every stage of the process.
 - **Timestamp and action recording**: All approvals, modifications, and process completions shall be recorded with accurate timestamps.
-- **Log protection**: Audit logs shall be protected against modification or deletion per the Logging and Monitoring Policy. Acceptable implementations include write-once storage, restricted administrator access with separate log reviewer, retention locks, or centralised log aggregation with integrity verification.
+- **Log protection**: Audit logs shall be protected against modification or deletion per the Logging Policy. Acceptable implementations include write-once storage, restricted administrator access with separate log reviewer, retention locks, or centralised log aggregation with integrity verification.
 
 ---
 
