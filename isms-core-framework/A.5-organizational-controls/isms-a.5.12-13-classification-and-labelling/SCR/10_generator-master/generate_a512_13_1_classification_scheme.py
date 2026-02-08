@@ -472,7 +472,7 @@ def create_regulatory_mapping_sheet(ws, styles):
          "RESTRICTED", "Explicit consent required", "As per Art. 17", ""],
         ["Swiss nDSG Art. 8", "Data security", "Personal data (CH)",
          "CONFIDENTIAL", "Appropriate measures", "Purpose-based", ""],
-        ["PCI DSS", "Cardholder data protection", "Credit card data",
+        ["PCI DSS v4.0.1", "Cardholder data protection", "Credit card data",
          "RESTRICTED", "PCI controls required", "Per PCI standards", ""],
         ["SOX", "Financial integrity", "Financial records",
          "CONFIDENTIAL", "Audit trail required", "7 years", ""],

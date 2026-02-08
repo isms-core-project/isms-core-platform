@@ -123,7 +123,7 @@ This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulat
 
 **Tier 2: Conditional Applicability**
 
-- PCI DSS v4.0, FINMA, DORA, NIS2, HIPAA - Apply where [Organization]'s business activities trigger applicability per ISMS-POL-00
+- PCI DSS v4.0.1, FINMA, DORA, NIS2, HIPAA - Apply where [Organization]'s business activities trigger applicability per ISMS-POL-00
 
 ---
 

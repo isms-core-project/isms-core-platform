@@ -264,7 +264,7 @@ Per ISO/IEC 27001:2022 Control A.5.12:
 | GDPR Art. 32 | Personal data | CONFIDENTIAL | Pseudonymisation where possible | Per Art. 17 |
 | GDPR Art. 9 | Special category data | RESTRICTED | Explicit consent required | Per Art. 17 |
 | Swiss nDSG Art. 8 | Personal data (CH) | CONFIDENTIAL | Appropriate measures | Purpose-based |
-| PCI DSS | Cardholder data | RESTRICTED | PCI controls required | Per PCI standards |
+| PCI DSS v4.0.1 | Cardholder data | RESTRICTED | PCI controls required | Per PCI standards |
 | SOX | Financial records | CONFIDENTIAL | Audit trail required | 7 years |
 | Trade Secrets | Proprietary information | RESTRICTED | NDA required | Indefinite |
 

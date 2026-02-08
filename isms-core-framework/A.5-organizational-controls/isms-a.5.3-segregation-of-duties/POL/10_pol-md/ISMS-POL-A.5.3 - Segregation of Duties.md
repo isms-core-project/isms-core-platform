@@ -54,7 +54,7 @@ This policy establishes [Organization]'s requirements for segregation of duties 
 
 **Purpose**: Define organizational requirements for segregation of duties. This policy establishes WHAT segregation is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.3 (UG/TG variants).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss CO, ISO/IEC 27001:2022, and EU GDPR. Conditional sector-specific requirements (FINMA, SOX, PCI DSS) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss CO, ISO/IEC 27001:2022, and EU GDPR. Conditional sector-specific requirements (FINMA, SOX, PCI DSS v4.0.1) apply where [Organization]'s business activities trigger applicability.
 
 ---
 
@@ -138,7 +138,7 @@ Apply only when specific business conditions trigger applicability:
 | **EU GDPR Art. 32** | Processing EU personal data | Appropriate technical and organisational measures |
 | **FINMA** | Swiss regulated financial institution | Strict segregation in trading, settlement, risk management |
 | **SOX Section 404** | US-listed company | Financial controls segregation, internal control attestation |
-| **PCI DSS v4.0** | Payment card processing | Requirement 6.4.2 - Separation of development/test/production |
+| **PCI DSS v4.0.1** | Payment card processing | Requirement 6.4.2 - Separation of development/test/production |
 
 **Tier 3: Informational Guidance**
 

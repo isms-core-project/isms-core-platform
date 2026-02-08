@@ -55,7 +55,7 @@ This policy establishes [Organisation]'s requirements for working in secure area
 
 **Purpose**: Define requirements for secure area procedures, information protection during work activities, and secure equipment disposal. This policy establishes WHAT security requirements apply and WHO is responsible. Implementation procedures (HOW) are documented in ISMS-IMP-A.7.6-7-14.
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, PCI DSS, DORA) apply where [Organisation]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, PCI DSS v4.0.1, DORA) apply where [Organisation]'s business activities trigger applicability.
 
 **Combined Control Approach**: Controls A.7.6 (Working in Secure Areas), A.7.7 (Clear Desk and Clear Screen), and A.7.14 (Secure Disposal or Re-Use of Equipment) are implemented together because they address complementary aspects of physical information protection during work activities and equipment lifecycle.
 
@@ -150,7 +150,7 @@ Apply only when specific business conditions trigger applicability:
 | Regulation | Trigger Condition | Requirements |
 |-----------|-------------------|--------------|
 | **EU GDPR** | Processing EU personal data, EU establishment, or offering services to EU | Art. 5(1)(f) integrity/confidentiality; Art. 32 security |
-| **PCI DSS v4.0** | Payment card processing | Requirement 9 - Physical access restrictions |
+| **PCI DSS v4.0.1** | Payment card processing | Requirement 9 - Physical access restrictions |
 | **FINMA** | Swiss regulated financial institution | Information protection requirements |
 | **DORA** | EU financial services entity | ICT security measures |
 
@@ -158,7 +158,7 @@ Apply only when specific business conditions trigger applicability:
 
 These frameworks inform implementation but do not constitute mandatory compliance unless contractually required:
 
-- NIST SP 800-88 (Media Sanitization Guidelines)
+- NIST SP 800-88 Rev. 2 (Media Sanitization Guidelines)
 - DoD 5220.22-M (Data sanitization standard)
 - ISO/IEC 21964 (Destruction of data carriers)
 - Industry best practices for secure disposal

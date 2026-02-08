@@ -227,7 +227,7 @@ reporting or remediation decisions.
 
 **Regulatory Alignment:**
 Ensure coding standards align with applicable regulatory requirements:
-- Payment processing: PCI DSS secure coding standards (Requirement 6.2)
+- Payment processing: PCI DSS v4.0.1 secure coding standards (Requirement 6.2)
 - Healthcare: HIPAA secure development practices
 - Finance: Regional banking secure coding requirements
 - Government: NIST Secure Software Development Framework (SSDF)

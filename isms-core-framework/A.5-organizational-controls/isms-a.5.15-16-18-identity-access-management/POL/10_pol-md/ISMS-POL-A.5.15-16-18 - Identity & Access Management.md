@@ -105,7 +105,7 @@ This policy establishes [Organization]'s requirements for identity and access ma
 - **FINMA**: If [Organization] holds FINMA license (Circular 2023/1 Margin 50-62)
 - **DORA**: If [Organization] is EU financial entity (Articles 6, 28-30)
 - **NIS2**: If [Organization] is essential or important entity (Article 21)
-- **PCI DSS**: If [Organization] processes payment card data (Requirements 7, 8)
+- **PCI DSS v4.0.1**: If [Organization] processes payment card data (Requirements 7, 8)
 
 Compliance determination per ISMS-POL-00 (Regulatory Applicability Framework).
 

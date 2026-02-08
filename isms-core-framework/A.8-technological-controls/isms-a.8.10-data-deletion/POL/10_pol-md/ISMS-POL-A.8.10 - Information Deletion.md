@@ -118,7 +118,7 @@ This policy establishes [Organization]'s requirements for secure deletion of inf
 - Media destination (internal reuse, external transfer, disposal/destruction)
 - Recovery risk assessment
 
-**POL-8.10-07**: Deletion methods SHALL align with recognized sanitization standards (NIST SP 800-88 or equivalent) providing appropriate protection levels:
+**POL-8.10-07**: Deletion methods SHALL align with recognized sanitization standards (NIST SP 800-88 Rev. 2 or equivalent) providing appropriate protection levels:
 
 - **Clear**: For media remaining in organizational control with lower sensitivity data
 - **Purge**: For media leaving organizational control or containing sensitive data
@@ -128,7 +128,7 @@ This policy establishes [Organization]'s requirements for secure deletion of inf
 
 **POL-8.10-08a**: Backup deletion verification SHALL account for backup technology architecture, including: (a) full/incremental/differential backup dependencies; (b) snapshot-based backups with retention policies; (c) cloud-native backup services with independent retention; (d) application-level backups (database dumps, VM exports) with separate retention. Verification methods include: retention policy enforcement logs, backup catalog queries confirming absence of deleted data identifiers, or documented backup rotation schedules guaranteeing deletion by date certain. Where immediate backup deletion is not technically feasible, maximum retention SHALL be documented and approved by CISO + Data Owner.
 
-**POL-8.10-09**: Where technically feasible, [Organization] SHOULD leverage cryptographic erasure for high-efficiency deletion, with appropriate encryption key management per ISMS-POL-A.8.24 (key lifecycle) and verified key destruction. For cryptographic erasure to constitute deletion per this policy, [Organization] SHALL: (a) document data-to-key mapping enabling identification of encryption keys protecting specific data categories; (b) implement key destruction procedures meeting NIST SP 800-88 'Purge' level (e.g., cryptographic erase of key storage, HSM key zeroization); (c) verify key destruction through key management system audit logs or HSM certificates; (d) retain key destruction evidence per POL-8.10-14 (3+ years).
+**POL-8.10-09**: Where technically feasible, [Organization] SHOULD leverage cryptographic erasure for high-efficiency deletion, with appropriate encryption key management per ISMS-POL-A.8.24 (key lifecycle) and verified key destruction. For cryptographic erasure to constitute deletion per this policy, [Organization] SHALL: (a) document data-to-key mapping enabling identification of encryption keys protecting specific data categories; (b) implement key destruction procedures meeting NIST SP 800-88 Rev. 2 'Purge' level (e.g., cryptographic erase of key storage, HSM key zeroization); (c) verify key destruction through key management system audit logs or HSM certificates; (d) retain key destruction evidence per POL-8.10-14 (3+ years).
 
 ## Third-Party and Cloud Deletion
 
@@ -144,7 +144,7 @@ This policy establishes [Organization]'s requirements for secure deletion of inf
 
 **POL-8.10-12**: [Organization] SHALL obtain verification of deletion from third parties through:
 
-(a) **Certificates of destruction** (for physical media destruction): Must include media serial numbers or asset identifiers, destruction method referencing NIST SP 800-88 level (Clear/Purge/Destroy), destruction date and location, certificate issuer name and accreditation (if applicable)
+(a) **Certificates of destruction** (for physical media destruction): Must include media serial numbers or asset identifiers, destruction method referencing NIST SP 800-88 Rev. 2 level (Clear/Purge/Destroy), destruction date and location, certificate issuer name and accreditation (if applicable)
 
 (b) **Audit reports** (for service provider logical deletion): SOC 2 Type II report with deletion control testing, OR independent audit report verifying deletion procedures, OR ISO 27001 certification with Annex A.8.10 in scope
 
@@ -281,7 +281,7 @@ Evidence generation and aggregation procedures are defined in ISMS-IMP-A.8.10.5 
 **Conditional Compliance (Tier 2)**:
 Apply where business activities trigger applicability (per ISMS-POL-00):
 
-- PCI DSS v4.0 (payment card data processing)
+- PCI DSS v4.0.1 (payment card data processing)
 - HIPAA Security Rule (US healthcare data)
 - FINMA (Swiss financial services)
 - DORA/NIS2 (EU financial services, critical infrastructure)

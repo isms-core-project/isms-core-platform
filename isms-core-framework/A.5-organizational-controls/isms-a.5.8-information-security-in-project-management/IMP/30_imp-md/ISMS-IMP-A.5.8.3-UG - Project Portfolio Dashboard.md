@@ -51,7 +51,7 @@ This dashboard provides **executive-level visibility into project security integ
 4. **Trend Analysis** - Quarter-over-quarter trends in portfolio compliance (charts showing improvement/decline)
 5. **Risk-Based Prioritization** - Projects ranked by risk level requiring immediate attention (Priority 1-4 matrix)
 6. **Lessons Learned Synthesis** - Aggregated insights from all project retrospectives, common themes
-7. **Regulatory Compliance View** - Compliance status by regulation (GDPR, nDSG, PCI DSS, sector-specific)
+7. **Regulatory Compliance View** - Compliance status by regulation (GDPR, nDSG, PCI DSS v4.0.1, sector-specific)
 8. **Resource & Budget Analysis** - Security budget utilization, resource allocation efficiency
 
 **Data Sources:**
@@ -1681,7 +1681,7 @@ Q3-Q4 2025:
 
 ## Component 7: Regulatory Compliance View
 
-**Purpose:** Show compliance status by regulation (GDPR, nDSG, PCI DSS, sector-specific)
+**Purpose:** Show compliance status by regulation (GDPR, nDSG, PCI DSS v4.0.1, sector-specific)
 
 **Applicable Regulations:**
 
@@ -1691,7 +1691,7 @@ From project assessments and organizational context:
 
 - **GDPR (EU General Data Protection Regulation):** If processing EU personal data
 - **nDSG (Swiss Data Protection Act):** If processing Swiss personal data
-- **PCI DSS (Payment Card Industry Data Security Standard):** If processing payment card data
+- **PCI DSS v4.0.1 (Payment Card Industry Data Security Standard):** If processing payment card data
 - **HIPAA (Health Insurance Portability and Accountability Act):** If processing health information (US)
 - **FINMA Circular 2008/21:** If Swiss financial institution
 - **DORA (Digital Operational Resilience Act):** If EU financial institution
@@ -1706,7 +1706,7 @@ Determine which regulations apply to which projects:
 GDPR/nDSG (Personal Data):
   Applicable to: 18 of 25 projects (72%) - all projects processing personal data
   
-PCI DSS (Payment Cards):
+PCI DSS v4.0.1 (Payment Cards):
   Applicable to: 3 of 25 projects (12%) - CustomerPortal, PaymentGateway, MobileApp
 
 FINMA (Swiss Financial):
@@ -1733,7 +1733,7 @@ For each regulation, specific requirements from ISMS-IMP-A.5.8.2 Category 6:
 
 **Overall GDPR/nDSG Compliance:** 86% (Good, but DPIA gap concerning)
 
-**PCI DSS Compliance:**
+**PCI DSS v4.0.1 Compliance:**
 
 | Requirement | Projects Compliant | Projects Non-Compliant | Compliance Rate |
 |-------------|-------------------|----------------------|-----------------|
@@ -1745,7 +1745,7 @@ For each regulation, specific requirements from ISMS-IMP-A.5.8.2 Category 6:
 | Quarterly vulnerability scans | 2 of 3 | 1 (PaymentGateway: overdue) | 67% |
 | Annual penetration test | 1 of 3 | 2 (CustomerPortal, PaymentGateway) | 33% ⚠️ |
 
-**Overall PCI DSS Compliance:** 76% (Needs Improvement - pen test gap critical)
+**Overall PCI DSS v4.0.1 Compliance:** 76% (Needs Improvement - pen test gap critical)
 
 **FINMA Circular 2008/21 Compliance:**
 
@@ -1767,7 +1767,7 @@ For each regulation, specific requirements from ISMS-IMP-A.5.8.2 Category 6:
 
 ```
 GDPR/nDSG:     ████████████████████░░░░  86%
-PCI DSS:       ███████████████░░░░░░░░░  76%
+PCI DSS v4.0.1:       ███████████████░░░░░░░░░  76%
 FINMA:         █████████████████████░░░  89%
 DORA:          █████████████████████░░░  88%
 NIS2:          ██████████████████████░░  92%
@@ -1777,16 +1777,16 @@ NIS2:          █████████████████████�
 
 - 🟢 Green (≥90%): NIS2
 - 🟡 Amber (75-89%): GDPR/nDSG, FINMA, DORA
-- 🔴 Red (<75%): PCI DSS ⚠️ Requires immediate attention
+- 🔴 Red (<75%): PCI DSS v4.0.1 ⚠️ Requires immediate attention
 
 **Step 5: Regulatory Gap Analysis**
 
 **Critical Gaps by Regulation:**
 
-**PCI DSS (Most Concerning):**
+**PCI DSS v4.0.1 (Most Concerning):**
 ```
 Gap: Annual penetration test missing for 2 of 3 PCI projects (CustomerPortal, PaymentGateway)
-Impact: PCI DSS Requirement 11.3 violation, potential compliance failure in audit
+Impact: PCI DSS v4.0.1 Requirement 11.3 violation, potential compliance failure in audit
 Root Cause: Pen test vendor procurement delayed, budget allocated late
 Remediation:
 
@@ -1820,12 +1820,12 @@ Priority: 🟠 HIGH
 **For Audits/Certifications:**
 
 - ISO 27001 Audit: Show systematic compliance across portfolio (evidence of Control A.5.8)
-- PCI DSS QSA (Qualified Security Assessor): Provide PCI-specific compliance evidence for 3 projects
+- PCI DSS v4.0.1 QSA (Qualified Security Assessor): Provide PCI-specific compliance evidence for 3 projects
 - GDPR Supervisory Authority: Demonstrate DPIA process, data protection by design
 
 **For Management:**
 
-- Quarterly compliance report: "PCI DSS compliance below target, remediation plan approved"
+- Quarterly compliance report: "PCI DSS v4.0.1 compliance below target, remediation plan approved"
 - Annual board report: "GDPR compliance strong at 86%, continuous improvement demonstrated"
 
 ---
@@ -1996,7 +1996,7 @@ Security activities that prevented potential incidents:
 
    - Estimated incident cost: $300,000
 
-     (Payment card data breach, PCI DSS non-compliance fines)
+     (Payment card data breach, PCI DSS v4.0.1 non-compliance fines)
 
    - Threat modeling cost: $2,000
    - ROI: $298,000 / $2,000 = 14,900% ROI

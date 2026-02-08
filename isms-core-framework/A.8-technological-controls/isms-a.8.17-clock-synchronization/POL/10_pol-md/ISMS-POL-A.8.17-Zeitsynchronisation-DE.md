@@ -52,7 +52,7 @@ Diese Richtlinie definiert die Anforderungen von [Organisation] für Zeitsynchro
 
 **Zweck**: Definition organisatorischer Anforderungen für Implementierung und Governance von Zeitsynchronisations-Kontrollen. Diese Richtlinie definiert WAS Zeitsynchronisation erforderlich ist und WER verantwortlich ist. Implementierungsprozeduren (WIE) sind separat in ISMS-IMP-A.8.17 dokumentiert.
 
-**Regulatorisches Alignment**: Diese Richtlinie adressiert obligatorische Compliance-Anforderungen gemäss ISMS-POL-00 (Regulatory Applicability Framework), einschliesslich Schweizer nDSG, EU DSGVO und ISO/IEC 27001:2022. Konditionale branchenspezifische Anforderungen (PCI DSS, FINMA, DORA, NIS2) gelten, wo Geschäftsaktivitäten der [Organisation] Anwendbarkeit auslösen.
+**Regulatorisches Alignment**: Diese Richtlinie adressiert obligatorische Compliance-Anforderungen gemäss ISMS-POL-00 (Regulatory Applicability Framework), einschliesslich Schweizer nDSG, EU DSGVO und ISO/IEC 27001:2022. Konditionale branchenspezifische Anforderungen (PCI DSS v4.0.1, FINMA, DORA, NIS2) gelten, wo Geschäftsaktivitäten der [Organisation] Anwendbarkeit auslösen.
 
 ---
 
@@ -131,7 +131,7 @@ Gemäss ISMS-POL-00 (Regulatory Applicability Framework) sind regulatorische Anf
 
 **Tier 2 - Conditional Applicability** (gelten, wo ausgelöst):
 
-- **PCI DSS Req. 10.4** - Time-Synchronization Technology (gilt, wenn Kartenzahlungen verarbeitet werden)
+- **PCI DSS v4.0.1 Req. 10.4** - Time-Synchronization Technology (gilt, wenn Kartenzahlungen verarbeitet werden)
 - **FINMA Rundschreiben 2023/1** - Logging-Anforderungen für Finanzinstitute (gilt bei Finanzdienstleistungen)
 - **DORA Art. 21** - Logging und ICT-Risikomonitoring für Finanzentitäten (gilt bei Finanzdienstleistungen)
 - **NIS2 Art. 21** - Anforderungen an Incident Logging für wesentliche/wichtige Entitäten (gilt bei kritischer Infrastruktur)
@@ -139,7 +139,7 @@ Gemäss ISMS-POL-00 (Regulatory Applicability Framework) sind regulatorische Anf
 **Tier 3 - Informational Reference / Best Practice**:
 
 - **NIST SP 800-53 (AU-8)** - Time Stamps für Audit Records
-- **CIS Controls v8 (Control 8)** - Audit Log Management
+- **CIS Controls v8.1 (Control 8)** - Audit Log Management
 - **RFC 5905** - Network Time Protocol Version 4 Spezifikation
 - **NIST Time Services** - time.nist.gov technische Leitlinien
 
@@ -534,7 +534,7 @@ Diese Policy adressiert folgende regulatorische Anforderungen:
 | **Schweizer nDSG Art. 8** | Datensicherheit, Logging und Audit Trails | Synchronisierte Zeitstempel ermöglichen akkurate Logs und Audit Trails |
 | **EU DSGVO Art. 32** | Logging und Monitoring | Zeitsynchronisation ermöglicht konsistente Logging und Security Monitoring |
 | **ISO 27001:2022 A.8.17** | Clock Synchronization | Direkt implementiert durch diese Policy |
-| **PCI DSS Req. 10.4** | Time-Synchronization Technology | NTP-Infrastruktur-Anforderungen und Zeitabweichungs-Schwellenwerte |
+| **PCI DSS v4.0.1 Req. 10.4** | Time-Synchronization Technology | NTP-Infrastruktur-Anforderungen und Zeitabweichungs-Schwellenwerte |
 | **FINMA/DORA/NIS2** | Audit Trail Integrity, Logging Capability | Zeitstempel-Konsistenz für regulatorisches Logging |
 
 **Compliance-Posture**: Diese Policy etabliert Framework für Clock Synchronization Compliance. Tatsächlicher Compliance-Status gemessen durch:

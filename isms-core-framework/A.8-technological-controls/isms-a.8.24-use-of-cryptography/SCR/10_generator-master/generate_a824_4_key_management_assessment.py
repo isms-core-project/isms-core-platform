@@ -227,7 +227,7 @@ decisions. Key management errors can have catastrophic security consequences.
 
 **Regulatory Alignment:**
 Ensure key management practices align with applicable requirements:
-- Payment processing: PCI DSS key management requirements (especially 3.5-3.7)
+- Payment processing: PCI DSS v4.0.1 key management requirements (especially 3.5-3.7)
 - Healthcare: HIPAA key management for encryption
 - Privacy: GDPR encryption key protection requirements
 - Finance: Regional banking cryptographic key management standards

@@ -384,7 +384,7 @@ def create_instructions_sheet(ws):
         "- ISO/IEC 27002:2022 Control 7.10: Storage Media",
         "- GDPR Article 5(1)(f): Integrity and confidentiality",
         "- Swiss nDSG Article 8: Technical measures",
-        "- PCI DSS v4.0 Requirement 9.4: Media protection"
+        "- PCI DSS v4.0.1 Requirement 9.4: Media protection"
     ]
 
     for ref in references:

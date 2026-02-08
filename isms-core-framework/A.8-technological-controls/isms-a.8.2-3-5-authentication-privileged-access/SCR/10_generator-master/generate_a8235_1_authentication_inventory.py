@@ -29,7 +29,7 @@ your organization's specific authentication infrastructure, identity providers,
 and access control requirements.
 
 Key customization areas:
-1. Identity providers (Azure AD, Okta, AD per your infrastructure)
+1. Identity providers (Microsoft Entra ID (formerly Azure AD), Okta, AD per your infrastructure)
 2. Authentication methods (MFA options specific to your deployment)
 3. Protocol requirements (SAML, OAuth per your integration needs)
 4. Password policy standards (aligned with your security policy)
@@ -52,7 +52,7 @@ of authentication controls per ISO 27001:2022 Control A.8.5 requirements.
 **Assessment Scope:**
 - Authentication mechanism inventory (passwords, MFA, SSO, certificates, biometrics)
 - Authentication protocol usage (SAML, OAuth, OpenID Connect, Kerberos, LDAP)
-- Authentication provider mapping (Azure AD, Okta, Active Directory, local)
+- Authentication provider mapping (Microsoft Entra ID (formerly Azure AD), Okta, Active Directory, local)
 - Password policy compliance per system
 - SSO coverage and integration status
 - Authentication logging and monitoring

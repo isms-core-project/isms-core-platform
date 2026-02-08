@@ -64,7 +64,7 @@ This assessment verifies [Organization]'s compliance with:
 - **ISO/IEC 27001:2022 Control A.8.15**: Logs must be "kept" - centralized collection ensures logs aren't lost when systems fail or are compromised
 - **ISMS-POL-A.8.15, Section 2.2 (Log Protection)**: Immediate forwarding to centralized SIEM prevents local log deletion/tampering
 - **ISMS-POL-A.8.15, Section 2.3 (Log Retention)**: Storage architecture must support minimum retention periods
-- **PCI DSS Requirement 10.5.1** (if applicable): Centralized log management required for payment card systems
+- **PCI DSS v4.0.1 Requirement 10.5.1** (if applicable): Centralized log management required for payment card systems
 - **DORA/NIS2** (if applicable): ICT system monitoring requires centralized logging infrastructure
 
 **Security Impact**: 
@@ -840,7 +840,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 
 **Impact Factors**:
 
-- **High Impact**: Restricted/Confidential data, Critical systems, Compliance-critical logs (PCI DSS, HIPAA, SOX)
+- **High Impact**: Restricted/Confidential data, Critical systems, Compliance-critical logs (PCI DSS v4.0.1, HIPAA, SOX)
 - **Medium Impact**: Internal data, High-value systems, Security monitoring impact
 - **Low Impact**: Public data, Low-value systems, Operational convenience only
 
@@ -1097,7 +1097,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 ## Compliance Alignment
 
 - [ ] Policy references correct (all references point to ISMS-POL-A.8.15 v1.0 consolidated policy)
-- [ ] Regulatory requirements identified (PCI DSS, HIPAA, DORA/NIS2 applicability determined per ISMS-POL-00)
+- [ ] Regulatory requirements identified (PCI DSS v4.0.1, HIPAA, DORA/NIS2 applicability determined per ISMS-POL-00)
 - [ ] Exception approvals documented (any non-compliance has exception reference or remediation plan)
 - [ ] Retention requirements met (storage architecture supports minimum retention periods per policy Section 2.3)
 

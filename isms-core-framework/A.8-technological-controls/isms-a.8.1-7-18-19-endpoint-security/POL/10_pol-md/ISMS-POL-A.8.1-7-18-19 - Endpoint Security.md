@@ -72,7 +72,7 @@ This policy establishes [Organization]'s requirements for endpoint security, imp
 
 **Statement of Applicability Independence**: Despite unified implementation and documentation, Controls A.8.1, A.8.7, A.8.18, and A.8.19 are assessed independently in the Statement of Applicability. Each control maintains distinct requirements, evidence collection, and compliance scoring for audit purposes.
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss Federal Data Protection Act (nDSG/FADP), EU GDPR where applicable, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS, HIPAA, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss Federal Data Protection Act (nDSG/FADP), EU GDPR where applicable, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, HIPAA, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
 
 ---
 
@@ -266,7 +266,7 @@ Apply only when specific business conditions trigger applicability:
 
 | Regulation | Trigger Condition | Endpoint Security Requirements |
 |-----------|-------------------|-------------------------------|
-| **PCI DSS v4.0** | Processing payment card data | Endpoint security for systems accessing cardholder data (Requirements 2, 5, 6, 10, 11) |
+| **PCI DSS v4.0.1** | Processing payment card data | Endpoint security for systems accessing cardholder data (Requirements 2, 5, 6, 10, 11) |
 | **HIPAA** | Processing protected health information (ePHI) | Technical safeguards including encryption, access controls, audit logging (45 CFR § 164.312) |
 | **FINMA** | Swiss regulated financial institution | Technical and organizational measures per risk assessment, operational risk management |
 | **DORA** | EU financial services entity | ICT risk management including endpoint security controls |
@@ -278,7 +278,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 - NIST Cybersecurity Framework 2.0
 - NIST SP 800-53 Rev. 5
-- CIS Controls v8 (Controls 1, 2, 4, 5, 7, 10, 16)
+- CIS Controls v8.1 (Controls 1, 2, 4, 5, 7, 10, 16)
 - MITRE ATT&CK Framework
 
 **Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment documented in ISMS-POL-00. The most stringent requirements apply where multiple regulations overlap.
@@ -393,13 +393,13 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 **Disposal Requirements**:
 
-- Data sanitization: Secure erase (NIST SP 800-88 compliant) or physical destruction
+- Data sanitization: Secure erase (NIST SP 800-88 Rev. 2 compliant) or physical destruction
 - Certificate of destruction: Required for all disposed endpoints
 - Inventory update: Endpoint marked "Disposed" in inventory with certificate attached
 
 **Disposal Methods**:
 
-- Secure Erase: DoD 5220.22-M or NIST SP 800-88 Clear/Purge
+- Secure Erase: DoD 5220.22-M or NIST SP 800-88 Rev. 2 Clear/Purge
 - Degaussing: For magnetic hard drives
 - Physical Destruction: Shredding, crushing, or incineration (certified vendor)
 
@@ -874,7 +874,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 This policy addresses endpoint security requirements from multiple regulatory frameworks:
 
-| Requirement Category | Swiss nDSG | EU GDPR | ISO 27001 | PCI DSS* | HIPAA* | FINMA* | DORA/NIS2* |
+| Requirement Category | Swiss nDSG | EU GDPR | ISO 27001 | PCI DSS v4.0.1* | HIPAA* | FINMA* | DORA/NIS2* |
 |---------------------|-----------|---------|-----------|---------|--------|--------|------------|
 | **Endpoint Inventory** | Art. 8 | Art. 32 | A.8.1 | Req. 2, 11 | §164.310(d)(1) | Risk-Based | Asset Management |
 | **Encryption** | Art. 8 | Art. 32 | A.8.1 | Req. 3 | §164.312(a)(2)(iv) | Risk-Based | Data Protection |

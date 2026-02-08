@@ -73,7 +73,7 @@ Before starting this dashboard, ensure you have:
 
 ### Required Access
 - [ ] SIEM/security monitoring dashboards
-- [ ] Identity provider admin console (Azure AD, Okta)
+- [ ] Identity provider admin console (Microsoft Entra ID (formerly Azure AD), Okta)
 - [ ] Authentication log data
 - [ ] Audit finding database
 - [ ] Risk register

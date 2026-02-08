@@ -56,7 +56,7 @@ This policy establishes [Organization]'s requirements for clock synchronization 
 
 **Purpose**: Define organizational requirements for time synchronization implementation and governance. This policy establishes WHAT time synchronization is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.17 (UG/TG variants).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
 
 ---
 
@@ -140,7 +140,7 @@ Apply only when specific business conditions trigger applicability:
 
 | Regulation | Trigger Condition | Clock Synchronization Requirements |
 |-----------|-------------------|----------------------------|
-| **PCI DSS v4.0** | Processing payment card data | Req. 10.4 - Time synchronization technology, consistent time settings |
+| **PCI DSS v4.0.1** | Processing payment card data | Req. 10.4 - Time synchronization technology, consistent time settings |
 | **FINMA** | Swiss regulated financial institution | Technical and organizational measures including audit trail integrity |
 | **DORA** | EU financial services entity | ICT risk management including logging and monitoring capabilities |
 | **NIS2** | Essential/important entity (EU) | Security measures for network and information systems including logging |
@@ -150,7 +150,7 @@ Apply only when specific business conditions trigger applicability:
 These frameworks inform implementation but do not constitute mandatory compliance unless contractually required:
 
 - NIST SP 800-53 (AU-8: Time Stamps)
-- CIS Controls v8 (Control 8: Audit Log Management)
+- CIS Controls v8.1 (Control 8: Audit Log Management)
 - RFC 5905 (Network Time Protocol Version 4)
 - NIST Time Services (time.nist.gov)
 
@@ -545,7 +545,7 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 This policy addresses clock synchronization requirements from:
 
-| Requirement Category | Swiss nDSG | EU GDPR | ISO 27001 | PCI DSS* | FINMA* | DORA/NIS2* |
+| Requirement Category | Swiss nDSG | EU GDPR | ISO 27001 | PCI DSS v4.0.1* | FINMA* | DORA/NIS2* |
 |---------------------|-----------|---------|-----------|---------|--------|------------|
 | Synchronized time sources | Art. 8 | Art. 32 | A.8.17 | Req. 10.4 | Risk-Based | Logging Capability |
 | Logging and audit trails | Art. 8 | Art. 32 | A.8.15, A.8.17 | Req. 10 | Audit Trail | ICT Risk Mgmt |

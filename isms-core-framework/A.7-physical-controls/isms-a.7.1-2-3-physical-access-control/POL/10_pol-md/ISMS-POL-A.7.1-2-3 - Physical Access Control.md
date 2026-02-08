@@ -54,7 +54,7 @@ This policy establishes [Organisation]'s requirements for physical access contro
 
 **Purpose**: Define requirements for protecting premises and information assets through physical security perimeters, controlled entry points, and secured internal spaces. This policy establishes WHAT physical access requirements apply and WHO is responsible. Implementation procedures (HOW) are documented in ISMS-IMP-A.7.1-2-3.
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, PCI DSS, DORA, NIS2) apply where [Organisation]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, PCI DSS v4.0.1, DORA, NIS2) apply where [Organisation]'s business activities trigger applicability.
 
 **Combined Control Approach**: Controls A.7.1 (Physical Security Perimeters), A.7.2 (Physical Entry), and A.7.3 (Securing Offices, Rooms and Facilities) are implemented together because they form an integrated physical security framework where perimeters define boundaries, entry controls protect access points, and internal security measures protect specific areas.
 
@@ -151,7 +151,7 @@ Apply only when specific business conditions trigger applicability:
 | Regulation | Trigger Condition | Requirements |
 |-----------|-------------------|--------------|
 | **EU GDPR Art. 32** | Processing personal data of EU/EEA individuals as determined in ISMS-POL-00 | Security of processing including physical security |
-| **PCI DSS v4.0** | Payment card processing | Requirement 9 - Physical access restrictions |
+| **PCI DSS v4.0.1** | Payment card processing | Requirement 9 - Physical access restrictions |
 | **FINMA** | Swiss regulated financial institution | Physical security of premises |
 | **DORA** | EU financial services entity | ICT physical security requirements |
 | **NIS2** | Essential/important entity (EU) | Physical security measures |

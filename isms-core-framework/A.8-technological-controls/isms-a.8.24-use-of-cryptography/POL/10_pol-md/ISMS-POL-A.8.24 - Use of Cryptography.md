@@ -54,7 +54,7 @@ This policy establishes [Organization]'s requirements for cryptographic controls
 
 **Purpose**: Define organizational requirements for cryptographic control selection, implementation, and governance. This policy establishes WHAT cryptographic protection is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.24 (UG/TG variants).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
 
 ---
 
@@ -132,7 +132,7 @@ Apply only when specific business conditions trigger applicability:
 
 | Regulation | Trigger Condition | Cryptographic Requirements |
 |-----------|-------------------|----------------------------|
-| **PCI DSS v4.0** | Processing payment card data | Strong cryptography for cardholder data, key management controls |
+| **PCI DSS v4.0.1** | Processing payment card data | Strong cryptography for cardholder data, key management controls |
 | **FINMA** | Swiss regulated financial institution | Encryption per FINMA Circular 2023/1 Margin 62 |
 | **DORA** | EU financial services entity | ICT system encryption, crypto agility |
 | **NIS2** | Essential/important entity (EU) | Encryption as cybersecurity risk management measure |
@@ -628,7 +628,7 @@ While ISMS-CTX-A.8.24 is not subject to ISMS formal approval workflow, it mainta
 
 This policy addresses cryptographic requirements from:
 
-| Requirement Category | Swiss nDSG | EU GDPR | ISO 27001 | PCI DSS* | FINMA* | DORA/NIS2* |
+| Requirement Category | Swiss nDSG | EU GDPR | ISO 27001 | PCI DSS v4.0.1* | FINMA* | DORA/NIS2* |
 |---------------------|-----------|---------|-----------|---------|--------|------------|
 | Encryption at rest | Art. 8 | Art. 32 | A.8.24 | Req. 3.5 | Circ. 2023/1 | ICT Risk Mgmt |
 | Encryption in transit | Art. 8 | Art. 32 | A.8.24 | Req. 4.2 | Circ. 2023/1 | Secure Comms |

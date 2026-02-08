@@ -29,7 +29,7 @@ your organization's specific identity management systems, user lifecycle
 processes, and assessment requirements.
 
 Key customization areas:
-1. Identity system integrations (Active Directory, Azure AD, Okta, custom LDAP)
+1. Identity system integrations (Active Directory, Microsoft Entra ID (formerly Azure AD), Okta, custom LDAP)
 2. User types and classification (employees, contractors, vendors, service accounts)
 3. Provisioning/deprovisioning SLA thresholds (match your IAM policies)
 4. HR system integration points (authoritative source of identity)
@@ -131,7 +131,7 @@ Output:
     Location: Current directory (or specified output path)
 
 Post-Generation Steps:
-    1. Export user data from identity systems (AD, Azure AD, Okta, etc.)
+    1. Export user data from identity systems (AD, Microsoft Entra ID (formerly Azure AD), Okta, etc.)
     2. Export employee data from HR system (authoritative source)
     3. Populate User_Inventory with actual user accounts
     4. Document joiner events in Employee_Lifecycle
@@ -220,7 +220,7 @@ Review and update assessment:
 **Quality Assurance:**
 Cross-validate user inventory against multiple authoritative sources:
 - HR system (employees, contractors)
-- Identity systems (AD, Azure AD, Okta)
+- Identity systems (AD, Microsoft Entra ID (formerly Azure AD), Okta)
 - Access management platforms
 - Ticketing system (access requests/removals)
 

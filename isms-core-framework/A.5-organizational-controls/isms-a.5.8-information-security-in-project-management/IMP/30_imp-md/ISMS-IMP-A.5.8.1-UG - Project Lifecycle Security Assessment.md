@@ -203,7 +203,7 @@ This assessment implements **ISMS-POL-A.5.8 (Information Security in Project Man
 - Access control requirements (IAM, MFA, RBAC, privileged access)
 - Infrastructure security requirements (network segmentation, firewalls, patching, monitoring)
 - Third-party security requirements (vendor assessment, contracts, integration security)
-- Compliance requirements (GDPR, nDSG, PCI DSS, HIPAA, sector-specific regulations)
+- Compliance requirements (GDPR, nDSG, PCI DSS v4.0.1, HIPAA, sector-specific regulations)
 
 **Section 3: Roles and Responsibilities**
 
@@ -290,7 +290,7 @@ Before starting this assessment, ensure you have access to:
   - **Public:** Low sensitivity (publicly available information)
 - What regulatory requirements apply to this data?
   - Personal data → GDPR/nDSG
-  - Payment card data → PCI DSS
+  - Payment card data → PCI DSS v4.0.1
   - Health information → HIPAA (if applicable)
   - Financial sector data → FINMA, DORA (if applicable)
 
@@ -344,7 +344,7 @@ Before starting this assessment, ensure you have access to:
 
 - OWASP Application Security Verification Standard (ASVS) for software projects
 - CIS Benchmarks for infrastructure security
-- NIST Cybersecurity Framework for comprehensive security requirements
+- NIST Cybersecurity Framework (CSF) 2.0 for comprehensive security requirements
 
 **6. Evidence Management:**
 
@@ -517,7 +517,7 @@ Complete Sheet 3, Section A: Security Stakeholder Identification
 
 3. **Compliance Officer** (if regulatory requirements)
 
-   - Required if: Financial sector (FINMA), Healthcare (HIPAA), Payment cards (PCI DSS), NIS2, DORA
+   - Required if: Financial sector (FINMA), Healthcare (HIPAA), Payment cards (PCI DSS v4.0.1), NIS2, DORA
    - Engagement Level: Advisory / Reviewer
    - Notes: Interprets regulatory requirements, provides compliance guidance
 
@@ -775,7 +775,7 @@ Regardless of approach, document requirements in these categories (see ISMS-POL-
 
 6. **Compliance & Regulatory** (if regulatory requirements)
 
-   - Examples: GDPR Art. 25 (privacy by design), PCI DSS requirements, HIPAA safeguards, FINMA requirements, audit trails, regulatory reporting
+   - Examples: GDPR Art. 25 (privacy by design), PCI DSS v4.0.1 requirements, HIPAA safeguards, FINMA requirements, audit trails, regulatory reporting
    - Minimum: Requirements per applicable regulation (varies)
 
 **Requirement Documentation Standard:**
@@ -1009,14 +1009,14 @@ Assessment method based on vendor risk level:
 - Network security (firewalls, intrusion detection, DDoS protection)
 - Incident response (procedures, notification obligations, SLA)
 - Business continuity (backups, disaster recovery, redundancy)
-- Compliance (certifications: ISO 27001, SOC 2, PCI DSS, GDPR compliance)
+- Compliance (certifications: ISO 27001, SOC 2, PCI DSS v4.0.1, GDPR compliance)
 - Subcontractor management (are they using subcontractors? Are those secure?)
 
 **Step 3: Review Vendor Certifications**
 
 - ISO 27001: Information security management certification
 - SOC 2 Type II: Security, availability, confidentiality controls attestation
-- PCI DSS: Payment card data security (if handling payment cards)
+- PCI DSS v4.0.1: Payment card data security (if handling payment cards)
 - FedRAMP: U.S. federal government cloud security (if applicable)
 - Industry-specific: HIPAA for healthcare, FINMA for Swiss financial, etc.
 
@@ -1711,7 +1711,7 @@ For each change:
 
 | Change ID | Change Description | Change Type | Security Impact? | Impact Assessment | Requires Re-classification? | Approved By | Date |
 |-----------|-------------------|-------------|------------------|-------------------|----------------------------|-------------|------|
-| CHG-042 | Add payment processing feature | Scope | ✅ Yes | Payment card data = PCI DSS applicability, increases to High Risk classification | ✅ Yes | CISO | [Date] |
+| CHG-042 | Add payment processing feature | Scope | ✅ Yes | Payment card data = PCI DSS v4.0.1 applicability, increases to High Risk classification | ✅ Yes | CISO | [Date] |
 | CHG-055 | Move deployment date forward 2 weeks | Schedule | ✅ Yes | May skip penetration test - UNACCEPTABLE | ❌ No | PM + InfoSec | [Date] |
 | CHG-061 | Integrate with Vendor X API | Scope | ✅ Yes | New third-party, requires vendor security assessment | ❌ No | InfoSec | [Date] |
 | CHG-073 | Update UI color scheme | Scope | ❌ No | No security impact | ❌ No | PM | [Date] |

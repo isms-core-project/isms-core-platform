@@ -215,8 +215,8 @@ prioritization.
 **Regulatory Alignment:**
 Ensure hardening practices align with applicable requirements:
 - ISO 27001:2022: Control A.8.9 secure configuration
-- CIS Controls v8: Control 4 secure configuration requirements
-- PCI DSS: System hardening and configuration standards
+- CIS Controls v8.1: Control 4 secure configuration requirements
+- PCI DSS v4.0.1: System hardening and configuration standards
 - Sector-specific: Regulatory hardening requirements
 - Internal: Organizational security hardening policies
 

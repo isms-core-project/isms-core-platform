@@ -50,7 +50,7 @@ Diese Richtlinie definiert die Anforderungen von [Organisation] für kryptograph
 
 **Zweck**: Definition organisatorischer Anforderungen für Auswahl, Implementierung und Governance kryptographischer Kontrollen. Diese Richtlinie definiert WAS kryptographischer Schutz erforderlich ist und WER verantwortlich ist. Implementierungsprozeduren (WIE) sind separat in ISMS-IMP-A.8.24 dokumentiert.
 
-**Regulatorisches Alignment**: Diese Richtlinie adressiert obligatorische Compliance-Anforderungen gemäss ISMS-POL-00 (Regulatory Applicability Framework), einschliesslich Schweizer nDSG, EU DSGVO und ISO/IEC 27001:2022. Konditionale branchenspezifische Anforderungen (PCI DSS, FINMA, DORA, NIS2) gelten, wo Geschäftsaktivitäten der [Organisation] Anwendbarkeit auslösen.
+**Regulatorisches Alignment**: Diese Richtlinie adressiert obligatorische Compliance-Anforderungen gemäss ISMS-POL-00 (Regulatory Applicability Framework), einschliesslich Schweizer nDSG, EU DSGVO und ISO/IEC 27001:2022. Konditionale branchenspezifische Anforderungen (PCI DSS v4.0.1, FINMA, DORA, NIS2) gelten, wo Geschäftsaktivitäten der [Organisation] Anwendbarkeit auslösen.
 
 ---
 
@@ -128,7 +128,7 @@ Gelten nur, wenn spezifische Geschäftsbedingungen Anwendbarkeit auslösen:
 
 | Regulierung | Auslöse-Bedingung | Kryptographische Anforderungen |
 |-------------|-------------------|-------------------------------|
-| **PCI DSS v4.0** | Verarbeitung von Zahlungskartendaten | Starke Kryptographie für Karteninhaberdaten, Key Management Kontrollen |
+| **PCI DSS v4.0.1** | Verarbeitung von Zahlungskartendaten | Starke Kryptographie für Karteninhaberdaten, Key Management Kontrollen |
 | **FINMA** | Schweizer regulierte Finanzinstitution | Verschlüsselung gemäss FINMA Rundschreiben 2023/1 Margin 62 |
 | **DORA** | EU-Finanzdienstleistungs-Entität | ICT-System-Verschlüsselung, Crypto Agility |
 | **NIS2** | Essenzielle/wichtige Entität (EU) | Verschlüsselung als Cybersecurity-Risikomassnahme |
@@ -450,7 +450,7 @@ Diese Richtlinie integriert mit dem Informationssicherheits-Managementsystem der
 
 Diese Richtlinie adressiert kryptographische Anforderungen von:
 
-| Anforderungs-Kategorie | Schweizer nDSG | EU DSGVO | ISO 27001 | PCI DSS* | FINMA* | DORA/NIS2* |
+| Anforderungs-Kategorie | Schweizer nDSG | EU DSGVO | ISO 27001 | PCI DSS v4.0.1* | FINMA* | DORA/NIS2* |
 |------------------------|----------------|----------|-----------|---------|---------|------------|
 | Verschlüsselung at Rest | Art. 8 | Art. 32 | A.8.24 | Req. 3.5 | Rundschr. 2023/1 | ICT Risk Mgmt |
 | Verschlüsselung in Transit | Art. 8 | Art. 32 | A.8.24 | Req. 4.2 | Rundschr. 2023/1 | Secure Comms |

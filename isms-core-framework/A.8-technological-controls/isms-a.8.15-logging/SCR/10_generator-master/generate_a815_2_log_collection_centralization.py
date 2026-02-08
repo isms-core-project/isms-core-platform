@@ -220,7 +220,7 @@ collection statistics regularly to identify systemic issues.
 
 **Regulatory Alignment:**
 Ensure log collection meets regulatory requirements:
-- PCI DSS: Centralized logging and monitoring requirements
+- PCI DSS v4.0.1: Centralized logging and monitoring requirements
 - GDPR: Audit trail completeness for data processing activities
 - HIPAA: Audit trail collection and retention requirements
 - SOX: Financial system audit log collection

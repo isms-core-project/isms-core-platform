@@ -66,7 +66,7 @@ This policy establishes [Organization]'s requirements for protecting test inform
 - Audit testing SHALL be planned to minimize operational disruption
 - Audit tools and logs SHALL be protected and controlled
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022, with conditional sector-specific requirements (PCI DSS, HIPAA, FINMA) where applicable.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022, with conditional sector-specific requirements (PCI DSS v4.0.1, HIPAA, FINMA) where applicable.
 
 ---
 
@@ -484,7 +484,7 @@ When exceptions are approved, compensating controls SHALL include:
 
 | Regulation | Trigger | Key Requirements |
 |------------|---------|------------------|
-| **PCI DSS** | Payment card processing | Req. 3.4 - Test data masking; Req. 11 - Security testing requirements |
+| **PCI DSS v4.0.1** | Payment card processing | Req. 3.4 - Test data masking; Req. 11 - Security testing requirements |
 | **HIPAA** | US healthcare data | De-identification standards for test data |
 | **FINMA** | Swiss financial services | Risk-based testing controls; outsourcing security |
 

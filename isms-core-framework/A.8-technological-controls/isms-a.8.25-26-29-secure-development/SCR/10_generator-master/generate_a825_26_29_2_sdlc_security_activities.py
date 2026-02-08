@@ -252,7 +252,7 @@ remediation decisions.
 
 **Regulatory Alignment:**
 SDLC security activities assessment supports regulatory compliance:
-- Payment processing: PCI DSS requirement 6.3 (secure SDLC practices)
+- Payment processing: PCI DSS v4.0.1 requirement 6.3 (secure SDLC practices)
 - Healthcare: HIPAA security requirements for software development
 - Finance: Regional banking requirements for secure development
 - Critical infrastructure: Sector-specific secure development requirements

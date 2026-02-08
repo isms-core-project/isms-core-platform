@@ -402,7 +402,7 @@ Acceptable alternatives to direct audit:
 | Return completeness | All data, metadata, configurations, audit logs |
 | Transition support | Reasonable assistance for migration at agreed rates |
 | Data destruction | Secure deletion after return confirmation by [Organization] |
-| Destruction method | DOD 5220.22-M, NIST SP 800-88, or cryptographic erasure |
+| Destruction method | DOD 5220.22-M, NIST SP 800-88 Rev. 2, or cryptographic erasure |
 | Destruction certificate | Written confirmation of destruction with method and date |
 | Retention exception | Only if legally required, with written notification and duration |
 | Backup destruction | Includes all backup copies and disaster recovery copies |
@@ -410,7 +410,7 @@ Acceptable alternatives to direct audit:
 ## Required Contract Language
 
 **Standard Clause**:
-> "Upon termination or expiration of this Agreement, Supplier shall, at [Organization]'s election, either (a) return or (b) securely destroy all [Organization] data within thirty (30) days. For data return, Supplier shall provide data in [specify format] and assist with migration. For data destruction, Supplier shall provide written certification of destruction using methods consistent with NIST SP 800-88 or equivalent. Supplier shall not retain any copies except as required by law, in which case Supplier shall notify [Organization] in writing."
+> "Upon termination or expiration of this Agreement, Supplier shall, at [Organization]'s election, either (a) return or (b) securely destroy all [Organization] data within thirty (30) days. For data return, Supplier shall provide data in [specify format] and assist with migration. For data destruction, Supplier shall provide written certification of destruction using methods consistent with NIST SP 800-88 Rev. 2 or equivalent. Supplier shall not retain any copies except as required by law, in which case Supplier shall notify [Organization] in writing."
 
 **Enhanced Clause for Regulated Data**:
 > "For personal data subject to GDPR or nDSG, destruction must occur within thirty (30) days and comply with data protection requirements. For data subject to retention regulations, Supplier shall notify [Organization] of retention requirements and duration, maintain data subject to agreement confidentiality obligations, and destroy upon expiration of retention period."

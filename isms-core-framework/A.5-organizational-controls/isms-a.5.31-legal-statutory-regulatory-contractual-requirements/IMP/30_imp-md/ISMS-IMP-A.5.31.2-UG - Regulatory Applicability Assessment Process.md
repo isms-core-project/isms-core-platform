@@ -804,7 +804,7 @@ For Regulation: [Regulation Name / Candidate ID: CAND-XXX]
 - Certifications evidencing regulatory compliance:
   - ISO 27001 (often required for European customers)
   - SOC 2 Type II
-  - Specific regulatory certifications (e.g., HIPAA compliance attestation, PCI DSS certification)
+  - Specific regulatory certifications (e.g., HIPAA compliance attestation, PCI DSS v4.0.1 certification)
 - **Evidence to Gather**:
   - Contract requirements for certifications
   - RFP responses where certifications requested
@@ -913,7 +913,7 @@ Review scores from Sections 4.1, 4.2, 4.3:
 
 - Data protection law in country where [Organization] has office → Tier 1
 - Breach notification law for data processed by [Organization] → Tier 1
-- PCI DSS because [Organization] processes payment cards → Tier 1 (contractual obligation with card brands)
+- PCI DSS v4.0.1 because [Organization] processes payment cards → Tier 1 (contractual obligation with card brands)
 
 **Assign Tier 2 (Conditional Applicability) if**:
 1. Regulation WOULD apply IF [Organization] enters market, launches service, or crosses threshold
@@ -934,7 +934,7 @@ Review scores from Sections 4.1, 4.2, 4.3:
 **For Informational References** (voluntary frameworks, not legal obligations):
 
 **Assign Tier 3 if**:
-1. Best practice framework [Organization] uses for guidance (NIST CSF, CIS Controls, etc.)
+1. Best practice framework [Organization] uses for guidance (NIST CSF 2.0, CIS Controls, etc.)
 2. Industry standard [Organization] references for control design
 3. Regulatory framework from other jurisdiction used for benchmarking
 
@@ -955,7 +955,7 @@ Review scores from Sections 4.1, 4.2, 4.3:
 
 - **Tier 1**: "Legal obligation because [Organization] has office in Country X and regulation applies to all entities operating in Country X"
 - **Tier 2**: "Conditional because [Organization] does not currently serve healthcare sector, but regulation would apply if healthcare services launched per 2025 strategic plan"
-- **Tier 3**: "Informational because NIST CSF is voluntary framework used for maturity benchmarking, not legal requirement"
+- **Tier 3**: "Informational because NIST CSF 2.0 is voluntary framework used for maturity benchmarking, not legal requirement"
 
 ## Escalation for Tier 1
 
@@ -1094,7 +1094,7 @@ Gather and attach all evidence documents:
 
 **Short Name / Acronym**: Commonly used abbreviation (if exists)
 
-- Examples: GDPR, CCPA, HIPAA, SOX, PCI DSS
+- Examples: GDPR, CCPA, HIPAA, SOX, PCI DSS v4.0.1
 
 **Jurisdiction**: Country, state/province, or multi-jurisdictional
 
@@ -1117,7 +1117,7 @@ Gather and attach all evidence documents:
 
 **Applicability Condition** (for Tier 2): What condition would trigger Tier 1 status?
 
-- Example: "Applies if [Organization] processes payment cards" (for PCI DSS)
+- Example: "Applies if [Organization] processes payment cards" (for PCI DSS v4.0.1)
 - Example: "Applies if [Organization] enters healthcare sector" (for healthcare regulation)
 
 **Related Regulations**: Any overlapping or related regulations already in POL-00
@@ -1379,7 +1379,7 @@ Compliance Officer
 
 ## Example 3: Industry Best Practice Framework
 
-**Scenario**: [Organization] decides to use the NIST Cybersecurity Framework (CSF) for internal maturity assessment and continuous improvement benchmarking.
+**Scenario**: [Organization] decides to use the NIST Cybersecurity Framework (CSF) 2.0 for internal maturity assessment and continuous improvement benchmarking.
 
 **Trigger**: Internal initiative (maturity assessment program)
 
@@ -1415,10 +1415,10 @@ Compliance Officer
 
 *Contractual Scope*:
 
-- C1 (Explicit requirement): NO - No contracts require NIST CSF specifically
-- C2 (Certifications): NO - NIST CSF is framework, not certification
+- C1 (Explicit requirement): NO - No contracts require NIST CSF 2.0 specifically
+- C2 (Certifications): NO - NIST CSF 2.0 is framework, not certification
 - C3 (Audit rights): NO
-- C4 (Market expectations): PARTIAL - Some RFPs ask about use of frameworks but don't mandate NIST CSF
+- C4 (Market expectations): PARTIAL - Some RFPs ask about use of frameworks but don't mandate NIST CSF 2.0
 - **Score**: 0/4 = **NONE** to **LOW**
 
 **Determination**: **INFORMATIONAL REFERENCE**
@@ -1443,7 +1443,7 @@ Compliance Officer
 
 **Next Steps**:
 
-- Map NIST CSF functions to ISO 27001 controls (informational mapping)
+- Map NIST CSF 2.0 functions to ISO 27001 controls (informational mapping)
 - Conduct annual maturity assessment using CSF
 - Use CSF to inform control enhancements and roadmap
 

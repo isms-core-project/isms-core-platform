@@ -308,8 +308,8 @@ def create_disposal_tools(ws, styles):
     # Pre-populate common tools
     tools = [
         ("DBAN (Darik's Boot and Nuke)", "Software - Overwrite", "HDD", "DoD 5220.22-M (3-pass)", "Software verification report"),
-        ("Blancco Drive Eraser", "Software - Overwrite", "HDD, SSD", "NIST 800-88 Purge", "Certificate generation"),
-        ("BitRaser", "Software - Crypto Erase", "SSD, Flash", "NIST 800-88 Purge", "Certificate generation"),
+        ("Blancco Drive Eraser", "Software - Overwrite", "HDD, SSD", "NIST 800-88 Rev. 2 Purge", "Certificate generation"),
+        ("BitRaser", "Software - Crypto Erase", "SSD, Flash", "NIST 800-88 Rev. 2 Purge", "Certificate generation"),
         ("Physical Shredder", "Hardware - Shredder", "All Storage Media", "Physical Destruction", "Visual inspection + certificate"),
         ("Degausser", "Hardware - Degausser", "Magnetic Media (HDD, Tape)", "Magnetic Erasure", "Visual inspection"),
     ]

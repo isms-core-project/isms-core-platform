@@ -228,7 +228,7 @@ This assessment implements requirements from:
 - Swiss nDSG (Art. 8): Technical measures including monitoring
 - EU GDPR (Art. 32): Security monitoring capabilities
 - ISO/IEC 27001:2022 (Control A.8.16): Monitoring Activities
-- Industry Standards: NIST SP 800-92, CIS Controls v8 Control 8
+- Industry Standards: NIST SP 800-92, CIS Controls v8.1 Control 8
 
 ## Expected Outputs
 

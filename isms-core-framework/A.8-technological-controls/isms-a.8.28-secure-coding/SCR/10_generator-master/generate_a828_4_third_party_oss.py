@@ -232,7 +232,7 @@ remediation decisions. Legal review is essential for license compliance.
 
 **Regulatory Alignment:**
 Ensure third-party software security aligns with applicable requirements:
-- Payment processing: PCI DSS third-party service provider requirements
+- Payment processing: PCI DSS v4.0.1 third-party service provider requirements
 - Healthcare: HIPAA Business Associate Agreements for software vendors
 - Finance: Regional banking third-party risk management requirements
 - Government: Software supply chain security (SBOM requirements, EO 14028)

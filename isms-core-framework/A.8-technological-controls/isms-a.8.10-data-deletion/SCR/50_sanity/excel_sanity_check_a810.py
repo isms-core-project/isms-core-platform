@@ -126,7 +126,7 @@ WORKBOOK_SPECS = {
         "assessment_items": 100,
         "summary_sheet": "Summary Dashboard",
         "key_cells": ['G10', 'E10', 'B5', 'B6'],
-        "nist_categories": True  # NIST SP 800-88 categories
+        "nist_categories": True  # NIST SP 800-88 Rev. 2 categories
     },
     "Domain_3": {
         "pattern": "ISMS-IMP-A.8.10.3",
@@ -634,14 +634,14 @@ def check_domain_5_external_links(wb):
 
 
 def check_nist_categories(wb, domain_key):
-    """Check for NIST SP 800-88 category references in Domain 2."""
+    """Check for NIST SP 800-88 Rev. 2 category references in Domain 2."""
     issues = []
     warnings = []
     
     if domain_key != "Domain_2":
         return issues, warnings
     
-    # Check Instructions & Legend for NIST SP 800-88
+    # Check Instructions & Legend for NIST SP 800-88 Rev. 2
     if "Instructions & Legend" in wb.sheetnames:
         ws = wb["Instructions & Legend"]
         nist_found = False
@@ -651,15 +651,15 @@ def check_nist_categories(wb, domain_key):
             for cell in row:
                 if cell.value and isinstance(cell.value, str):
                     value_upper = cell.value.upper()
-                    if "NIST SP 800-88" in value_upper or "NIST SP800-88" in value_upper:
+                    if "NIST SP 800-88 Rev. 2" in value_upper or "NIST SP800-88 Rev. 2" in value_upper:
                         nist_found = True
                     if "CLEAR" in value_upper and "PURGE" in value_upper:
                         categories_found.append("Clear/Purge/Destroy")
         
         if nist_found:
-            print_success("Domain 2: NIST SP 800-88 references found")
+            print_success("Domain 2: NIST SP 800-88 Rev. 2 references found")
         else:
-            warnings.append("Domain 2: No NIST SP 800-88 references found")
+            warnings.append("Domain 2: No NIST SP 800-88 Rev. 2 references found")
         
         if categories_found:
             print_success("Domain 2: NIST categories (Clear/Purge/Destroy) found")
@@ -795,7 +795,7 @@ def validate_workbook(filepath, domain_key, spec):
         
         # Domain-specific checks
         if domain_key == "Domain_2" and spec.get("nist_categories"):
-            print_info("\nChecking NIST SP 800-88 compliance features...")
+            print_info("\nChecking NIST SP 800-88 Rev. 2 compliance features...")
             issues, warnings = check_nist_categories(wb, domain_key)
             all_issues.extend(issues)
             all_warnings.extend(warnings)

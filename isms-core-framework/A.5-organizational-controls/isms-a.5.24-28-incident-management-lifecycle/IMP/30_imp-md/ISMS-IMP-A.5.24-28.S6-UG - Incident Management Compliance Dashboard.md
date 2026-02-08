@@ -97,7 +97,7 @@ This dashboard consolidates incident management compliance metrics from all five
 - **Audit Risk:** Stage 2 auditors expect consolidated evidence of incident management maturity
 - **Management Blind Spots:** Executives lack visibility into operational incident response capability
 - **Resource Misallocation:** Without unified metrics, improvement efforts lack prioritisation
-- **Regulatory Gaps:** Compliance with GDPR, Swiss nDSG, PCI DSS requires demonstrable incident management capability
+- **Regulatory Gaps:** Compliance with GDPR, Swiss nDSG, PCI DSS v4.0.1 requires demonstrable incident management capability
 - **Insurance Requirements:** Cyber insurance policies increasingly require evidence of mature incident response
 
 **This Dashboard Addresses:**
@@ -447,7 +447,7 @@ This dashboard implements **ISMS-POL-A.5.24-28, Section 5 (Compliance Monitoring
 - **Prioritised list** of most critical gaps requiring attention
 - **Selection criteria:**
   - Severity (Critical > High > Medium > Low)
-  - Regulatory impact (GDPR, PCI DSS, etc.)
+  - Regulatory impact (GDPR, PCI DSS v4.0.1, etc.)
   - Audit finding likelihood
   - Remediation effort (quick wins first)
 - **Information captured:** Gap ID, Description, Severity, Owner, Due Date

@@ -243,7 +243,7 @@ Apply only when specific business conditions trigger applicability:
 | **NIS2 Directive** | Essential/important entity (EU) | Art. 21 - Cybersecurity practices including remote access security; Art. 23 - Incident notification within 24 hours |
 | **DORA** | EU financial services entity | Art. 9 - ICT security requirements extend to remote access; Art. 19 - Incident reporting to competent authorities |
 | **FINMA Circular 2008/21** | Swiss regulated financial institution | Remote access controls, incident reporting to FINMA |
-| **PCI DSS v4.0** | Processing payment card data | Req. 12.3.1 - Remote access security; Req. 12.10 - Incident response |
+| **PCI DSS v4.0.1** | Processing payment card data | Req. 12.3.1 - Remote access security; Req. 12.10 - Incident response |
 
 **Tier 3: Informational Guidance**
 
@@ -251,7 +251,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 - NIST SP 800-46 Rev 2 - Guide to Enterprise Telework, Remote Access, and BYOD Security
 - NIST SP 800-61 Rev 2 - Computer Security Incident Handling Guide
-- CIS Controls v8 - Control 4 (Secure Configuration), Control 17 (Incident Response)
+- CIS Controls v8.1 - Control 4 (Secure Configuration), Control 17 (Incident Response)
 - ENISA - Teleworking Security Guidelines
 
 **Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment per ISMS-POL-00. The most stringent requirements apply where multiple regulations overlap.

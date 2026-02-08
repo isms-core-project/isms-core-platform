@@ -53,13 +53,13 @@ This assessment evaluates [Organisation]'s implementation of **storage media inv
 
 - **EU GDPR (Article 5.1.f):** Integrity and confidentiality principle - appropriate security for processing
 - **Swiss nDSG (Article 8):** Technical and organisational measures for data protection
-- **PCI DSS v4.0 (Requirement 9.4):** Media protection requirements for cardholder data
+- **PCI DSS v4.0.1 (Requirement 9.4):** Media protection requirements for cardholder data
 - **ISO/IEC 27002:2022:** Control 7.10 implementation guidance
 
 **Business Impact:**
 
 - **Data Breach Risk:** Untracked media increases breach liability and forensic challenges
-- **Regulatory Fines:** Inadequate media controls violate GDPR, PCI DSS requirements
+- **Regulatory Fines:** Inadequate media controls violate GDPR, PCI DSS v4.0.1 requirements
 - **Operational Efficiency:** Clear inventory enables systematic lifecycle management
 - **Audit Readiness:** Documented inventory demonstrates control implementation
 - **Chain of Custody:** Media tracking supports legal hold and e-discovery
@@ -163,7 +163,7 @@ Before starting this assessment, ensure you have access to:
 
 - GDPR Article 5 and 32 requirements
 - Swiss nDSG data protection obligations
-- PCI DSS media protection requirements (if applicable)
+- PCI DSS v4.0.1 media protection requirements (if applicable)
 
 ## Pre-Assessment Checklist
 

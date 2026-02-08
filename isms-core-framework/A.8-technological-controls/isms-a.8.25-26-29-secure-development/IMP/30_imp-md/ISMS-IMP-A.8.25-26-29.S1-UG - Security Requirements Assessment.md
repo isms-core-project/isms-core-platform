@@ -153,7 +153,7 @@ This workbook assesses whether **application security requirements are properly 
 - Threat modeling methodologies (STRIDE, PASTA, etc.)
 - Application security principles (OWASP Top 10, secure design)
 - Organizational security policies and standards
-- Relevant regulations (GDPR, PCI DSS, etc.)
+- Relevant regulations (GDPR, PCI DSS v4.0.1, etc.)
 
 **If you lack this knowledge:**
 
@@ -444,7 +444,7 @@ Data classification drives security requirements. Confidential data requires enc
 
 - GDPR (EU residents' personal data)
 - FADP (Swiss personal data)
-- PCI DSS (payment card data)
+- PCI DSS v4.0.1 (payment card data)
 - HIPAA (US healthcare data)
 - SOX (financial reporting)
 - Industry-specific regulations
@@ -505,7 +505,7 @@ Look at Question 1.4 (Data Types Processed). If processing PII, financial data, 
 
 *Example:*
 Application processes customer payment card data and names/addresses.
-→ Score: **5** (PCI DSS data + PII = highest sensitivity)
+→ Score: **5** (PCI DSS v4.0.1 data + PII = highest sensitivity)
 
 **User Base (Weight: 20%)**
 
@@ -565,8 +565,8 @@ E-commerce platform (primary revenue channel).
 
 *Score 0-5:*
 
-- **5:** Multiple regulations (GDPR + PCI DSS + HIPAA, etc.)
-- **4:** One major regulation (GDPR, PCI DSS, HIPAA, SOX)
+- **5:** Multiple regulations (GDPR + PCI DSS v4.0.1 + HIPAA, etc.)
+- **4:** One major regulation (GDPR, PCI DSS v4.0.1, HIPAA, SOX)
 - **3:** Industry standards (ISO 27001, SOC 2)
 - **2:** Internal policies only
 - **1:** Minimal requirements
@@ -575,7 +575,7 @@ E-commerce platform (primary revenue channel).
 Look at Question 1.4 (Regulatory Scope). Count applicable regulations.
 
 *Example:*
-Application processes EU customer PII (GDPR) and payment cards (PCI DSS).
+Application processes EU customer PII (GDPR) and payment cards (PCI DSS v4.0.1).
 → Score: **5** (two major regulations)
 
 ### Question 2.2: Risk Classification Result

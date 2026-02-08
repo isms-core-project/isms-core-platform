@@ -257,7 +257,7 @@ Validate inventory completeness by:
 
 **Regulatory Alignment:**
 Ensure device inventory supports applicable regulatory requirements:
-- Payment processing: PCI DSS network device inventory requirements
+- Payment processing: PCI DSS v4.0.1 network device inventory requirements
 - Healthcare: HIPAA network infrastructure documentation
 - Finance: Regional banking network security requirements
 - Government: Jurisdiction-specific network mandates

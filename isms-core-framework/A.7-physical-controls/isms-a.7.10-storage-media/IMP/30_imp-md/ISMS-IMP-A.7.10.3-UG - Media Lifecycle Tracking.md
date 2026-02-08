@@ -59,7 +59,7 @@ This assessment evaluates [Organisation]'s implementation of **storage media lif
 **Business Impact:**
 
 - **Data Breach Prevention:** Improper disposal is leading cause of data exposure
-- **Regulatory Compliance:** GDPR, PCI DSS mandate secure destruction
+- **Regulatory Compliance:** GDPR, PCI DSS v4.0.1 mandate secure destruction
 - **Legal Protection:** Certificates provide evidence of proper handling
 - **Environmental Responsibility:** Proper e-waste disposal
 - **Audit Evidence:** Documented lifecycle supports compliance verification
@@ -255,8 +255,8 @@ Before media is re-used internally:
 | Method | Suitable For | Verification |
 |--------|-------------|--------------|
 | Cryptographic Erasure | SSDs with encryption | Key destruction confirmed |
-| NIST 800-88 Clear | Standard re-use | Read verification |
-| NIST 800-88 Purge | High-security re-use | Forensic verification |
+| NIST 800-88 Rev. 2 Clear | Standard re-use | Read verification |
+| NIST 800-88 Rev. 2 Purge | High-security re-use | Forensic verification |
 | Physical Destruction | No re-use intended | Visual confirmation |
 
 **Detailed Erasure Procedures:**

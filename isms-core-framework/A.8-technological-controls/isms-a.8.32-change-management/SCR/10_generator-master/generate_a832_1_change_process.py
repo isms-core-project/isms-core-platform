@@ -228,7 +228,7 @@ Customize assessment criteria to include regulatory-specific requirements:
 - Financial services: SOX change management controls
 - Healthcare: HIPAA security rule change management
 - Government: Jurisdiction-specific change control requirements
-- PCI DSS: Change management for cardholder data environments
+- PCI DSS v4.0.1: Change management for cardholder data environments
 
 Adapt dropdown values and assessment questions to your regulatory context.
 

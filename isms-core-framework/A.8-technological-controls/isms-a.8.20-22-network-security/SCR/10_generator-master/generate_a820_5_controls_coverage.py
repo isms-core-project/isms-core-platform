@@ -269,7 +269,7 @@ Validate controls coverage by:
 
 **Regulatory Alignment:**
 Ensure controls coverage aligns with applicable regulatory requirements:
-- Payment processing: PCI DSS defense-in-depth requirements
+- Payment processing: PCI DSS v4.0.1 defense-in-depth requirements
 - Healthcare: HIPAA security controls coverage
 - Finance: Regional banking controls requirements
 - Government: Jurisdiction-specific control frameworks

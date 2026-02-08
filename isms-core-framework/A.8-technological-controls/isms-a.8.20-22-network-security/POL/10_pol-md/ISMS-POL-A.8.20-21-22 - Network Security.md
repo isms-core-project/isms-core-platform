@@ -61,7 +61,7 @@ This policy establishes [Organization]'s requirements for network security contr
 
 **Combined Control Approach**: These three controls are implemented as a unified framework because they operate on the same network infrastructure and share common discovery, assessment, and evidence collection processes. Despite unified implementation, each control maintains distinct requirements for Statement of Applicability (SoA) purposes.
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
 
 ---
 
@@ -205,7 +205,7 @@ This policy implements network security requirements to comply with regulations 
 
 | Regulation | Requirement | Trigger Condition |
 |------------|-------------|-------------------|
-| **PCI DSS** | Network segmentation (Req. 1), secure network services | Processing payment card data |
+| **PCI DSS v4.0.1** | Network segmentation (Req. 1), secure network services | Processing payment card data |
 | **FINMA** | Network security controls for financial institutions | Swiss financial services operations |
 | **DORA** | ICT network security and resilience | EU financial services operations |
 | **NIS2** | Network security for essential/important entities | Critical infrastructure designation |
@@ -215,7 +215,7 @@ This policy implements network security requirements to comply with regulations 
 Best practice frameworks referenced but not mandatory compliance requirements:
 
 - ISO/IEC 27033 (Network Security)
-- NIST CSF (Cybersecurity Framework)
+- NIST CSF 2.0 (Cybersecurity Framework)
 - CIS Controls (network device hardening benchmarks)
 
 **United States Federal Requirements**: References to US federal frameworks (FISMA, FIPS, FedRAMP, NIST cybersecurity requirements) apply only where [Organization] has explicit US federal contractual obligations, as defined in ISMS-POL-00.
@@ -699,7 +699,7 @@ This policy supports the following SoA entries:
 | **Swiss nDSG** | Technical measures to protect personal data; Access controls; Logging | Section 2.1, 2.2, 2.3 | Network security assessments, logs, segmentation documentation |
 | **EU GDPR (Art. 32)** | Technical measures including network security; Access controls; Encryption of data in transit | Section 2.1, 2.2, 2.3 | Network security assessments, encryption configs |
 | **ISO 27001:2022** | A.8.20 network device security; A.8.21 network services security; A.8.22 network segmentation | Section 2.1, 2.2, 2.3 | All assessment workbooks |
-| **PCI DSS (Req. 1)** | Firewall and router configuration standards; Network segmentation for cardholder data | Section 2.3 | Segmentation matrix (Workbook 4), firewall configs |
+| **PCI DSS v4.0.1 (Req. 1)** | Firewall and router configuration standards; Network segmentation for cardholder data | Section 2.3 | Segmentation matrix (Workbook 4), firewall configs |
 | **FINMA** | Network security controls; Segregation of environments; Monitoring | Section 2.1, 2.2, 2.3 | Network security assessments, monitoring logs |
 | **DORA** | Network and information systems security; Network segmentation | Section 2.1, 2.3 | Network security assessments, segmentation documentation |
 | **NIS2** | Network security measures; Network segmentation; Security monitoring | Section 2.1, 2.2, 2.3 | All assessment workbooks, monitoring evidence |

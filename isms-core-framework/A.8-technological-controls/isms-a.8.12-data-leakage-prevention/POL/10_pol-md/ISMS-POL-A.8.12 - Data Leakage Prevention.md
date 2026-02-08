@@ -65,7 +65,7 @@ This policy establishes [Organization]'s requirements for data leakage preventio
 
 **Purpose**: Define organizational requirements for DLP control implementation and governance. This policy establishes WHAT data leakage prevention protection is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.12 (UG/TG variants). DLP controls address both malicious exfiltration (insider threats, compromised systems) and accidental disclosure (user error, misconfiguration).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG (employee monitoring Art. 328b CO), EU GDPR (lawful processing Art. 5, security Art. 32), and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS, FINMA, DORA, NIS2, HIPAA) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG (employee monitoring Art. 328b CO), EU GDPR (lawful processing Art. 5, security Art. 32), and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, FINMA, DORA, NIS2, HIPAA) apply where [Organization]'s business activities trigger applicability.
 
 ---
 
@@ -158,7 +158,7 @@ Apply only when specific business conditions trigger applicability:
 
 | Regulation | Trigger Condition | DLP Requirements |
 |-----------|-------------------|------------------|
-| **PCI DSS v4.0** | Processing payment card data | Req. 12.10 (Incident response), protect cardholder data from unauthorized disclosure |
+| **PCI DSS v4.0.1** | Processing payment card data | Req. 12.10 (Incident response), protect cardholder data from unauthorized disclosure |
 | **FINMA** | Swiss regulated financial institution | Operational resilience, data protection measures per risk assessment, incident reporting |
 | **DORA** | EU financial services entity | ICT risk management, incident reporting, operational resilience testing |
 | **NIS2** | Essential/important entity (EU) | Security measures for network and information systems, incident notification |
@@ -169,7 +169,7 @@ Apply only when specific business conditions trigger applicability:
 These frameworks inform implementation but do not constitute mandatory compliance unless contractually required:
 
 - NIST SP 800-53 Rev. 5 (SC-7: Boundary Protection, AC-4: Information Flow Enforcement, SI-4: System Monitoring)
-- CIS Controls v8 (Control 13: Network Monitoring and Defense)
+- CIS Controls v8.1 (Control 13: Network Monitoring and Defense)
 - ISO/IEC 27002:2022 (Section 8.12 detailed implementation guidance)
 - OWASP (Data Loss Prevention Guide)
 - Cloud Security Alliance (CSA) - Data Security Lifecycle
@@ -213,7 +213,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 | Data Category | Examples | Regulatory Driver | Detection Method |
 |--------------|----------|-------------------|------------------|
 | **Personal Data (PII)** | Names, addresses, national IDs, phone numbers | Swiss nDSG, GDPR | Content inspection, contextual |
-| **Financial Data** | Bank accounts, credit cards, payment data | PCI DSS (conditional) | Content inspection, pattern matching |
+| **Financial Data** | Bank accounts, credit cards, payment data | PCI DSS v4.0.1 (conditional) | Content inspection, pattern matching |
 | **Healthcare Data** | Medical records, health information | HIPAA (conditional) | Contextual, labeling |
 | **Authentication Credentials** | Passwords, API keys, tokens, certificates | ISO 27001 A.5.17 | Content inspection, pattern matching |
 | **Intellectual Property** | Source code, designs, patents, trade secrets | Business risk | Fingerprinting, contextual |
@@ -853,7 +853,7 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 This policy addresses DLP requirements from multiple regulations:
 
-| Requirement Category | Swiss nDSG | EU GDPR | ISO 27001 | PCI DSS* | FINMA* | DORA/NIS2* |
+| Requirement Category | Swiss nDSG | EU GDPR | ISO 27001 | PCI DSS v4.0.1* | FINMA* | DORA/NIS2* |
 |---------------------|-----------|---------|-----------|---------|--------|------------|
 | Data protection measures | Art. 7, 8 | Art. 32 | A.8.12 | Req. 3, 4 | Risk-Based | Art. 9 (ICT Risk) |
 | Employee monitoring | Art. 328b CO | Art. 88 | A.8.12 | N/A | Proportionality | N/A |

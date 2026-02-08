@@ -313,7 +313,7 @@ This assessment implements requirements from:
 
 - ISO/IEC 27001:2022 A.8.16: Monitoring activities
 - GDPR Article 33: Breach notification timelines (72 hours)
-- PCI DSS 10.6: Response to alerts from security monitoring
+- PCI DSS v4.0.1 10.6: Response to alerts from security monitoring
 - NIS2 Directive: Incident reporting timelines (24 hours initial, 72 hours final)
 
 ## Expected Outputs

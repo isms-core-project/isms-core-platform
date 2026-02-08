@@ -501,7 +501,7 @@ Framework execution follows systematic implementation approach:
 
 - DORA (Digital Operational Resilience Act): Assessed - Not Applicable (not EU financial entity)
 - NIS2 (Network & Information Security Directive 2): Assessed - Not Applicable (not essential/important entity)
-- PCI DSS: Assessed - Not Applicable (no payment card processing)
+- PCI DSS v4.0.1: Assessed - Not Applicable (no payment card processing)
 - FINMA (Swiss Financial Authority): Assessed - Not Applicable (no FINMA license)
 
 **Under Assessment:**
@@ -510,7 +510,7 @@ Framework execution follows systematic implementation approach:
 
 **Tier 3 - Informational Reference (Active Use):**
 
-- NIST SP 800-series, CIS Controls v8, OWASP, ISO/IEC 27002:2022
+- NIST SP 800-series, CIS Controls v8.1, OWASP, ISO/IEC 27002:2022
 
 **Rationale and Monitoring**: See ISMS-POL-00 Section 8 for detailed applicability rationale, assessment methodology, and monitoring triggers for each regulation.
 
@@ -1142,7 +1142,7 @@ This policy establishes the **regulatory compliance framework**—the systematic
 
 - **Specific regulatory compliance activities** (addressed in control-specific policies):
   - GDPR/FADP data protection compliance → Addressed in A.8.11 Data Masking, A.8.10 Information Deletion, A.5.34 Privacy and PII Protection
-  - PCI DSS payment security compliance → Addressed in relevant technical controls if applicable
+  - PCI DSS v4.0.1 payment security compliance → Addressed in relevant technical controls if applicable
   - Industry-specific regulatory requirements → Addressed in applicable technical and organizational controls
   - Contractual security requirements → Addressed through control-specific implementation
 

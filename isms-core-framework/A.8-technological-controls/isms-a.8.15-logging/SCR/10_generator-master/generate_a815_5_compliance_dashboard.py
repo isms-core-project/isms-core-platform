@@ -72,7 +72,7 @@ Use the schema validation approach documented in the code.
 5. Protection Status - Log integrity and retention compliance
 6. Analysis Effectiveness - Security monitoring capability metrics
 7. Remediation Roadmap - Gap closure timeline and ownership
-8. Regulatory Compliance - Compliance mapping to PCI DSS, GDPR, etc.
+8. Regulatory Compliance - Compliance mapping to PCI DSS v4.0.1, GDPR, etc.
 9. Trend Analysis - Historical compliance progression
 10. Evidence Summary - Audit evidence completeness by domain
 11. Action Items - Outstanding tasks with owners and deadlines
@@ -1063,7 +1063,7 @@ def create_regulatory_mapping_sheet(ws, styles):
          "ISMS-POL-A.8.15", "IMP 1-4", "All systems", "Compliant",
          "IMP-A.8.15.x workbooks", "15.12.2025", "15.03.2026", "", "Full compliance"),
         
-        ("PCI DSS 4.0", "Req 10.2.1", "Audit logs for all system components",
+        ("PCI DSS v4.0.1 4.0", "Req 10.2.1", "Audit logs for all system components",
          "S2.1.x", "IMP-1, IMP-4", "Payment systems", "Partial",
          "IMP-1 System Inventory", "15.12.2025", "15.03.2026", "2 card terminals missing logs",
          "Remediation in progress"),
@@ -1088,7 +1088,7 @@ def create_regulatory_mapping_sheet(ws, styles):
     
     # Data validations
     regulation_dv = DataValidation(type="list",
-        formula1='"ISO 27001,PCI DSS,HIPAA,GDPR,SOX,DORA,NIS2,FADP,Other"',
+        formula1='"ISO 27001,PCI DSS v4.0.1,HIPAA,GDPR,SOX,DORA,NIS2,FADP,Other"',
         allow_blank=True)
     ws.add_data_validation(regulation_dv)
     regulation_dv.add('A10:A159')

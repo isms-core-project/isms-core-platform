@@ -78,7 +78,7 @@ This policy applies to:
 
 **Tier 2 - Conditional Applicability** (per ISMS-POL-00):
 
-- NIS2, DORA, FINMA Circular 2008/21, PCI DSS v4.0 - apply when business conditions trigger applicability
+- NIS2, DORA, FINMA Circular 2008/21, PCI DSS v4.0.1 - apply when business conditions trigger applicability
 
 ---
 
@@ -109,7 +109,7 @@ Projects SHALL be classified based on the highest applicable factor:
 |--------|-----------|-------------|----------|
 | **Data Sensitivity** | Critical/Confidential data (PII, payment data, IP, confidential business information per A.5.12) | Internal data (non-public business data, employee records) | Public data (marketing content, published documentation) |
 | **System Criticality** | RTO < 4 hours, revenue-generating system, customer-facing service | RTO 4-24 hours, business-important but not revenue-critical | RTO > 24 hours, operational support system |
-| **Regulatory Scope** | GDPR/PCI DSS/FINMA directly applicable | Swiss nDSG applicable | No regulated data processing |
+| **Regulatory Scope** | GDPR/PCI DSS v4.0.1/FINMA directly applicable | Swiss nDSG applicable | No regulated data processing |
 | **External Exposure** | Internet-facing or accessible to external parties (customers, partners, public) | Controlled external access (VPN, dedicated connection) | Internal-only access |
 | **Technical Complexity** | New architecture pattern, novel integrations, custom security controls | Standard architecture with moderate customization | Standard deployment, proven architecture |
 | **Third-Party Involvement** | Critical function outsourced (hosting, authentication, payment processing) | Vendor-managed components (SaaS integration, managed services) | Fully internal development and hosting |
@@ -185,7 +185,7 @@ All projects SHALL include security testing proportional to project classificati
 
 - **Medium Risk Projects**:
   - **Mandatory**: Automated vulnerability scanning (final pre-deployment scan), functional security testing of authentication, authorization, data validation, and error handling
-  - **Conditional**: Penetration testing required if project is internet-facing OR processes regulated data (GDPR/PCI DSS)
+  - **Conditional**: Penetration testing required if project is internet-facing OR processes regulated data (GDPR/PCI DSS v4.0.1)
   - **Testing Criteria**: All Critical findings and ≥70% of High findings SHALL be remediated before deployment.
 
 - **Low Risk Projects**:

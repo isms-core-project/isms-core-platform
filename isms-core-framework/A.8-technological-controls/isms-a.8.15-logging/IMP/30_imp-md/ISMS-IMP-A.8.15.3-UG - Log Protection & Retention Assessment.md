@@ -63,9 +63,9 @@ This assessment verifies [Organization]'s compliance with:
 
 - **ISO/IEC 27001:2022 Control A.8.15**: Logs must be "kept" - requires protection from tampering and appropriate retention
 - **ISMS-POL-A.8.15, Section 2.2 (Log Protection)**: Integrity protection, access control, tamper detection requirements
-- **ISMS-POL-A.8.15, Section 2.3 (Log Retention)**: Minimum retention periods per regulation (PCI DSS 12 months, HIPAA 6 years, SOX 7 years)
+- **ISMS-POL-A.8.15, Section 2.3 (Log Retention)**: Minimum retention periods per regulation (PCI DSS v4.0.1 12 months, HIPAA 6 years, SOX 7 years)
 - **ISMS-POL-A.8.15, Section 2.5 (Privacy)**: Data minimization, purpose limitation, GDPR/nDSG compliance
-- **PCI DSS Requirement 10.3** (if applicable): Log integrity protection and access control
+- **PCI DSS v4.0.1 Requirement 10.3** (if applicable): Log integrity protection and access control
 - **GDPR Article 32** (if applicable): Security measures including integrity and confidentiality of logs
 
 **Security Impact**:
@@ -78,7 +78,7 @@ This assessment verifies [Organization]'s compliance with:
 **Compliance Impact**:
 
 - **Major non-conformity** if logs not protected from tampering (ISO 27001 audit finding)
-- **Regulatory fines** if retention requirements not met (PCI DSS, HIPAA, SOX violations)
+- **Regulatory fines** if retention requirements not met (PCI DSS v4.0.1, HIPAA, SOX violations)
 - **Privacy violations** if personal data logged unnecessarily (GDPR/nDSG fines)
 
 **Audit Evidence**: This assessment workbook provides **objective evidence** of log protection and retention compliance.
@@ -215,7 +215,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - SIEM access control matrix (roles and permissions)
 - Storage retention configuration (tiered retention settings)
 - Privacy impact assessment (DPIA) for logging
-- Regulatory requirements documentation (PCI DSS, HIPAA, SOX applicability)
+- Regulatory requirements documentation (PCI DSS v4.0.1, HIPAA, SOX applicability)
 - Previous assessment results (if repeat assessment)
 
 ---
@@ -297,7 +297,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 **Retention Compliance Tracking**:
 
 - Compare actual retention (from IMP-A.8.15.2 Sheet 3) to policy requirements
-- Verify regulatory retention periods (PCI DSS, HIPAA, SOX where applicable)
+- Verify regulatory retention periods (PCI DSS v4.0.1, HIPAA, SOX where applicable)
 - Check retention configuration (automated vs. manual enforcement)
 - Review disposal records (evidence retention periods being enforced)
 
@@ -536,7 +536,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Log Category (Security Events, Authentication Logs, Admin Actions, Database Logs, Application Logs, Network Logs, System Logs)
 - Policy Requirement - Online (months required in hot storage)
 - Policy Requirement - Archive (years total retention including offline)
-- Regulatory Driver (ISO 27001, GDPR, PCI DSS, HIPAA, SOX, etc.)
+- Regulatory Driver (ISO 27001, GDPR, PCI DSS v4.0.1, HIPAA, SOX, etc.)
 
 **Actual Implementation** (from IMP-A.8.15.2 Sheet 3 if available):
 
@@ -553,7 +553,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 
 **Regulatory-Specific Requirements** (per ISMS-POL-00 applicability):
 
-**If PCI DSS Applicable**:
+**If PCI DSS v4.0.1 Applicable**:
 
 - Payment system logs: 12 months online minimum (Req. 10.5.1)
 - Actual retention >= 12 months? (yes/no)
@@ -608,7 +608,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 
 - Logs SHALL be securely deleted after retention period expires
 - Cryptographic erasure for encrypted log storage (destroy encryption keys)
-- Physical media destruction for write-once media (NIST SP 800-88 guidelines)
+- Physical media destruction for write-once media (NIST SP 800-88 Rev. 2 guidelines)
 - Disposal events logged (date, log category, retention period, responsible person)
 
 **Disposal Procedures**:
@@ -634,7 +634,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
   - Disposal documentation retained? (Disposal records kept as evidence)
 
 - **Secure Deletion Standard**:
-  - Method meets NIST SP 800-88? (Clear, Purge, Destroy per media type)
+  - Method meets NIST SP 800-88 Rev. 2? (Clear, Purge, Destroy per media type)
   - Overwrite passes (if disk overwrite - how many passes? 7-pass DoD 5220.22-M?)
   - Verification (Is secure deletion verified? How?)
 
@@ -655,7 +655,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 **Compliance Assessment**:
 
 - Disposal procedures documented (yes/no)
-- Disposal method adequate (meets NIST SP 800-88 or equivalent)
+- Disposal method adequate (meets NIST SP 800-88 Rev. 2 or equivalent)
 - Disposal automated (yes/no - automation preferred over manual)
 - Disposal logged (yes/no - required per policy Section 2.3)
 - Legal hold check implemented (yes/no)
@@ -674,7 +674,7 @@ IMP-A.8.15.5 (Compliance Dashboard)
 - Disposal configuration (SIEM auto-purge settings, storage lifecycle policies)
 - Disposal logs (records of past disposals - last 12 months minimum)
 - Legal hold procedures (how logs are protected during legal hold)
-- NIST SP 800-88 compliance documentation (disposal method validation)
+- NIST SP 800-88 Rev. 2 compliance documentation (disposal method validation)
 
 **Time**: 1-2 hours
 
@@ -889,14 +889,14 @@ Check logs for presence of PROHIBITED data types:
 
 - Retention policy configuration (SIEM retention settings, storage lifecycle policies)
 - Retention verification reports (storage reports showing actual log age/retention)
-- Regulatory requirement documentation (PCI DSS, HIPAA, SOX applicability per ISMS-POL-00)
+- Regulatory requirement documentation (PCI DSS v4.0.1, HIPAA, SOX applicability per ISMS-POL-00)
 - Capacity reports (proving retention periods achievable with current storage)
 
 **For Disposal Procedures (Sheet 6)**:
 
 - Disposal procedure documentation (step-by-step disposal process)
 - Disposal logs (records of past disposals - date, volume, category, responsible person)
-- NIST SP 800-88 compliance documentation (disposal method meets standard)
+- NIST SP 800-88 Rev. 2 compliance documentation (disposal method meets standard)
 - Legal hold procedures (how logs protected during litigation)
 - Secure deletion verification (proof disposal method is secure)
 
@@ -1199,7 +1199,7 @@ ISMS-IMP-A.8.15.3_Evidence/
 ## Compliance Alignment
 
 - [ ] Policy references correct (all references to ISMS-POL-A.8.15 v1.0)
-- [ ] Regulatory requirements identified (PCI DSS, HIPAA, SOX, GDPR per ISMS-POL-00)
+- [ ] Regulatory requirements identified (PCI DSS v4.0.1, HIPAA, SOX, GDPR per ISMS-POL-00)
 - [ ] Separation of duties verified (Sheet 2 - system admins NOT log admins)
 - [ ] Critical systems protected (Sheet 3 - critical systems have WORM or crypto signing)
 - [ ] Retention compliance validated (Sheet 5 - all categories meet minimum retention)

@@ -127,7 +127,7 @@ Assessment personnel should understand:
 
 - ISO 27001:2022 control requirements, particularly A.8.25-30
 - Secure software development lifecycle (SSDLC) concepts
-- Common security frameworks (OWASP, NIST CSF, CIS Controls)
+- Common security frameworks (OWASP, NIST CSF 2.0, CIS Controls)
 - Vendor risk assessment methodologies
 - Organisation's security policies and standards
 - Regulatory requirements applicable to the development scope

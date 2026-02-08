@@ -1353,7 +1353,7 @@ Not all gaps are equally urgent. Prioritization ensures [Organization] addresses
 **Factor 1: Regulatory Tier** (from ISMS-POL-00)
 
 - **Tier 1 Mandatory**: Highest priority (legal obligation, direct enforcement)
-- **Tier 2 Conditional**: High priority if condition met (e.g., if processing payment cards, PCI DSS gaps are high priority)
+- **Tier 2 Conditional**: High priority if condition met (e.g., if processing payment cards, PCI DSS v4.0.1 gaps are high priority)
 - **Tier 3 Informational**: Lower priority (best practice, not legally mandated)
 
 **Factor 2: Legal Consequence Severity**
@@ -1424,7 +1424,7 @@ Combine factors into prioritization decision:
 |-----------------|----------|----------|-------------|------------|----------|-----------|
 | No breach notification process for 72hr requirement | Tier 1 | 30 days | Major fines (GDPR) | Low | CRITICAL | Tier 1, imminent deadline, severe penalty |
 | Partial encryption implementation (data at rest only) | Tier 1 | 90 days | Moderate fines | Medium | HIGH | Tier 1, partial gap, medium-term deadline |
-| No penetration testing program | Tier 2 (PCI DSS applies) | 6 months | Lose ability to process cards | High | HIGH | Tier 2 but business-critical, sufficient time to plan |
+| No penetration testing program | Tier 2 (PCI DSS v4.0.1 applies) | 6 months | Lose ability to process cards | High | HIGH | Tier 2 but business-critical, sufficient time to plan |
 | Security awareness training inconsistent | Tier 1 | No specific deadline | Minor (policy violation) | Low | MEDIUM | Implementation gap, low complexity, no deadline pressure |
 | No AI bias testing procedure | Tier 3 (NIST AI guidance) | None | Reputational | High | LOW | Informational only, complex, no legal mandate yet |
 
@@ -1896,9 +1896,9 @@ Source Regulation (in ISMS-POL-00)
 
 **Example**:
 
-- [Organization] acquires company that processes payment cards → PCI DSS now applicable (Tier 2 Conditional → Tier 1 Mandatory because condition met)
-- Trigger applicability re-assessment: PCI DSS is now Tier 1
-- Extract PCI DSS requirements (all 12 requirement categories → dozens of specific requirements)
+- [Organization] acquires company that processes payment cards → PCI DSS v4.0.1 now applicable (Tier 2 Conditional → Tier 1 Mandatory because condition met)
+- Trigger applicability re-assessment: PCI DSS v4.0.1 is now Tier 1
+- Extract PCI DSS v4.0.1 requirements (all 12 requirement categories → dozens of specific requirements)
 - Map to existing controls: Some controls already satisfy (encryption, access control), many gaps identified
 - Prioritize PCI gaps as HIGH (now mandatory, customer card processing depends on compliance)
 - Develop PCI remediation roadmap
@@ -2062,7 +2062,7 @@ Multiple regulations frequently mandate similar or identical security controls. 
 
 **Framework Harmonization**:
 
-- Many regulations reference or align with ISO 27001, NIST Cybersecurity Framework, CIS Controls
+- Many regulations reference or align with ISO 27001, NIST Cybersecurity Framework (CSF) 2.0, CIS Controls
 - Implementing ISO 27001 often satisfies multiple regulatory requirements
 
 ### Overlap Detection Methods

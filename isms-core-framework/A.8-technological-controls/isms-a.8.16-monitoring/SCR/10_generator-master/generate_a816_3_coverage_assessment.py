@@ -479,7 +479,7 @@ def create_base_validations(ws):
         ),
         'identity_system_type': DataValidation(
             type="list",
-            formula1='"Active Directory,Azure AD,LDAP,SAML IdP,OAuth Provider,Database Auth,Application-Specific,Other"',
+            formula1='"Active Directory,Microsoft Entra ID (formerly Azure AD),LDAP,SAML IdP,OAuth Provider,Database Auth,Application-Specific,Other"',
             allow_blank=False
         ),
         'application_type': DataValidation(
@@ -985,7 +985,7 @@ def create_user_identity_coverage_sheet(ws, styles):
     ws[f"A{row}"].alignment = Alignment(horizontal="center", vertical="center")
 
     checklist_items = [
-        "Primary identity system (AD/Azure AD) monitored",
+        "Primary identity system (AD/Microsoft Entra ID (formerly Azure AD)) monitored",
         "All authentication events logged",
         "Failed login attempts monitored and alerted",
         "Privileged account usage monitored",

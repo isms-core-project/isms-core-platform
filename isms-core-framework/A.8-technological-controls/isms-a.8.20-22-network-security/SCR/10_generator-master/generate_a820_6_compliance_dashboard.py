@@ -303,7 +303,7 @@ Validate dashboard accuracy by:
 
 **Regulatory Alignment:**
 Ensure dashboard reporting meets applicable regulatory requirements:
-- Payment processing: PCI DSS reporting requirements
+- Payment processing: PCI DSS v4.0.1 reporting requirements
 - Healthcare: HIPAA security posture reporting
 - Finance: Regional banking compliance reporting
 - Government: Jurisdiction-specific reporting mandates

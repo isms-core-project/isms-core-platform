@@ -89,7 +89,7 @@ def populate_log_collection(wb):
         ["Prisma Access", "Traffic Logs", "Syslog forwarding", "Splunk Cloud", "90 days", "CEF", "~5 GB", "Active"],
         ["Cisco Umbrella", "DNS Query Logs", "S3 export", "Splunk Cloud", "30 days", "CSV", "~2 GB", "Active - Legacy"],
         ["Microsoft Defender", "Endpoint Alerts", "Microsoft 365 Defender API", "Splunk Cloud + Sentinel", "90 days", "JSON", "~500 MB", "Active"],
-        ["Azure AD", "Sign-in Logs", "Diagnostic Settings", "Splunk Cloud + Sentinel", "90 days", "JSON", "~1 GB", "Active"],
+        ["Microsoft Entra ID (formerly Azure AD)", "Sign-in Logs", "Diagnostic Settings", "Splunk Cloud + Sentinel", "90 days", "JSON", "~1 GB", "Active"],
         ["Splunk (Aggregated)", "Correlated Events", "Internal correlation", "Splunk ES", "1 year", "Splunk format", "~5 GB", "Active"],
     ]
 

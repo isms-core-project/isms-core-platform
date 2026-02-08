@@ -205,7 +205,7 @@ def populate_assessment_sheets(wb):
 
         "7.1 Cloud Transmission": [
             ["AWS Services", "TLS 1.3", "AES-256-GCM", "IAM + KMS", "✅ Compliant", "CloudTrail + VPC Flow", "", "No"],
-            ["Azure Services", "TLS 1.3", "AES-256-GCM", "Azure AD + Key Vault", "✅ Compliant", "Azure Monitor", "", "No"],
+            ["Azure Services", "TLS 1.3", "AES-256-GCM", "Microsoft Entra ID (formerly Azure AD) + Key Vault", "✅ Compliant", "Azure Monitor", "", "No"],
             ["GCP Services", "TLS 1.3", "AES-256-GCM", "IAM + Cloud KMS", "✅ Compliant", "Cloud Audit Logs", "", "No"],
             ["AWS VPC Peering", "Encrypted in-transit", "AES-256-GCM", "VPC routing", "✅ Compliant", "VPC peering logs", "", "No"],
             ["Azure ExpressRoute", "Private connection + IPsec", "AES-256", "MACsec enabled", "✅ Compliant", "ExpressRoute metrics", "", "No"],

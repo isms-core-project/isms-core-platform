@@ -220,7 +220,7 @@ remediation decisions.
 
 **Regulatory Alignment:**
 Ensure authentication cryptography aligns with applicable requirements:
-- Payment processing: PCI DSS authentication and password requirements
+- Payment processing: PCI DSS v4.0.1 authentication and password requirements
 - Healthcare: HIPAA authentication and access control standards
 - Privacy: GDPR identity verification and authentication
 - Finance: Regional banking authentication requirements
@@ -1401,10 +1401,10 @@ def _get_example_row(sheet_type, total_cols):
             "Database Service", "Certificate", "Never (Monitored)", "Yes", "Yes", "Disabled", "Yes"
         ],
         "sso": [
-            "Example: Office 365 SSO - Azure AD", "SSO", "End User", "Confidential",
+            "Example: Office 365 SSO - Microsoft Entra ID (formerly Azure AD)", "SSO", "End User", "Confidential",
             "SHA-256", "Encrypted", "N/A", "✅ Compliant",
             "/evidence/auth/o365-sso-config.pdf", "None", "No", "N/A", "N/A", "N/A", "N/A", "N/A", "No",
-            "SAML 2.0", "Azure AD", "Yes", "Enabled", "≤1 hour", "Yes", "Yes"
+            "SAML 2.0", "Microsoft Entra ID (formerly Azure AD)", "Yes", "Enabled", "≤1 hour", "Yes", "Yes"
         ],
     }
     

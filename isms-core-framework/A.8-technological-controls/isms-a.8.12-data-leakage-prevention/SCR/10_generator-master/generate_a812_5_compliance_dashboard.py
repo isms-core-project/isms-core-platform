@@ -264,7 +264,7 @@ Related Standards:
     - Swiss FADP (Federal Act on Data Protection)
     - EU GDPR (General Data Protection Regulation)
     - NIST SP 800-53 (Security and Privacy Controls)
-    - CIS Controls v8 (Center for Internet Security)
+    - CIS Controls v8.1 (Center for Internet Security)
 
 --------------------------------------------------------------------------------
 IMPORTANT NOTES

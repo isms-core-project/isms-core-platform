@@ -45,7 +45,7 @@ The Password Policy Implementation Assessment covers:
 
 | System Category | Examples | Password Requirements |
 |-----------------|----------|----------------------|
-| **Identity Providers** | Azure AD, Okta, on-premises AD | Central policy enforcement |
+| **Identity Providers** | Microsoft Entra ID (formerly Azure AD), Okta, on-premises AD | Central policy enforcement |
 | **Enterprise Applications** | ERP, CRM, HRIS | Federated or local compliance |
 | **Infrastructure** | Servers, network devices, databases | Service account and admin passwords |
 | **Cloud Platforms** | AWS, Azure, GCP console access | IAM policy compliance |
@@ -68,7 +68,7 @@ The Password Policy Implementation Assessment covers:
 | Value Area | Benefit |
 |------------|---------|
 | **Security Posture** | Consistent password strength reduces credential compromise risk by 70% |
-| **Compliance** | Meets ISO 27001, PCI DSS, FINMA password requirements |
+| **Compliance** | Meets ISO 27001, PCI DSS v4.0.1, FINMA password requirements |
 | **Operational Efficiency** | Centralised policy reduces password reset tickets |
 | **Audit Readiness** | Documented evidence accelerates certification |
 | **Risk Reduction** | Weak password elimination closes common attack vector |
@@ -128,7 +128,7 @@ Per ISO/IEC 27001:2022 Control A.5.17:
 
 | System | Purpose | Access Level Needed |
 |--------|---------|---------------------|
-| Identity Provider (Azure AD/Okta/AD) | Password policy configuration | Admin or security reader |
+| Identity Provider (Microsoft Entra ID (formerly Azure AD)/Okta/AD) | Password policy configuration | Admin or security reader |
 | PAM Solution | Privileged account policies | Audit access |
 | Enterprise Applications | Local password settings | Admin access per system |
 | Asset Inventory | System list | Read access |
@@ -168,7 +168,7 @@ Per ISO/IEC 27001:2022 Control A.5.17:
 | Field | Description | Example |
 |-------|-------------|---------|
 | System_ID | Unique identifier from asset inventory | SYS-0042 |
-| System_Name | Descriptive name | Azure Active Directory |
+| System_Name | Descriptive name | Microsoft Entra ID (formerly Azure Active Directory) |
 | System_Type | Category | Identity Provider |
 | Criticality | Business impact rating | Critical |
 | Auth_Method | Primary authentication | Password + MFA |
@@ -186,7 +186,7 @@ Per ISO/IEC 27001:2022 Control A.5.17:
 
 | System_ID | System_Name | System_Type | Criticality | Auth_Method | Federated |
 |-----------|-------------|-------------|-------------|-------------|-----------|
-| SYS-0001 | Azure AD | Identity Provider | Critical | Password + MFA | N/A |
+| SYS-0001 | Microsoft Entra ID (formerly Azure AD) | Identity Provider | Critical | Password + MFA | N/A |
 | SYS-0002 | SAP ERP | Enterprise App | Critical | Password | Yes |
 | SYS-0003 | VMware vCenter | Infrastructure | High | Password + MFA | No |
 | SYS-0004 | AWS Console | Cloud Platform | Critical | Password + MFA | Yes |
@@ -209,11 +209,11 @@ Per ISO/IEC 27001:2022 Control A.5.17:
 | Lockout threshold | 5 attempts | Account lockout policy | Screenshot |
 | Lockout duration | 15 minutes | Account lockout policy | Screenshot |
 
-**Azure AD Example:**
+**Microsoft Entra ID (formerly Azure AD) Example:**
 
-1. Navigate to Azure AD > Security > Authentication methods > Password protection
+1. Navigate to Microsoft Entra ID (formerly Azure AD) > Security > Authentication methods > Password protection
 2. Capture settings for: Custom banned passwords, Lockout threshold, Lockout duration
-3. Navigate to Azure AD > Users > Password reset > Authentication methods
+3. Navigate to Microsoft Entra ID (formerly Azure AD) > Users > Password reset > Authentication methods
 4. Capture password complexity and length requirements
 5. Export conditional access policies affecting password requirements
 
@@ -375,7 +375,7 @@ SHOW password_encryption;
 | Evidence Type | Source | Retention |
 |---------------|--------|-----------|
 | This assessment workbook | Generated | 7 years |
-| IdP configuration exports | Azure AD/Okta/AD | 3 years |
+| IdP configuration exports | Microsoft Entra ID (formerly Azure AD)/Okta/AD | 3 years |
 | System configuration screenshots | Various systems | 3 years |
 | GPO/policy reports | Active Directory | 3 years |
 | Exception approvals | Email/workflow | Duration + 2 years |

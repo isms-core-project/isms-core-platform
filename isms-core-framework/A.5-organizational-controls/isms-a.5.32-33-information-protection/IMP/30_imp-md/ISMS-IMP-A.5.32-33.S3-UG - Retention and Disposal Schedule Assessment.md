@@ -306,8 +306,8 @@ Before starting this assessment, gather:
 
    | Classification | Physical Disposal | Electronic Disposal |
    |----------------|-------------------|---------------------|
-   | Restricted | Cross-cut shredding P-5, witnessed incineration | NIST 800-88 Clear/Purge, cryptographic erasure |
-   | Confidential | Cross-cut shredding P-4 | NIST 800-88 Clear, secure deletion |
+   | Restricted | Cross-cut shredding P-5, witnessed incineration | NIST 800-88 Rev. 2 Clear/Purge, cryptographic erasure |
+   | Confidential | Cross-cut shredding P-4 | NIST 800-88 Rev. 2 Clear, secure deletion |
    | Internal | Standard shredding P-3 | Standard deletion with verification |
    | Public | Recycling | Standard deletion |
 
@@ -486,7 +486,7 @@ Before starting this assessment, gather:
 | Classification | Restricted/Confidential/Internal/Public | Confidential |
 | Physical - Paper | Destruction method | Cross-cut shredding P-4 |
 | Physical - Media | HDDs, tapes, etc. | Degaussing + physical destruction |
-| Electronic - On-Prem | Servers, storage | NIST 800-88 Clear |
+| Electronic - On-Prem | Servers, storage | NIST 800-88 Rev. 2 Clear |
 | Electronic - Cloud | Cloud storage | Provider secure deletion + verification |
 | Verification Required | What proof needed | Certificate of destruction |
 | Approved Vendors | Who can perform | SecureShred AG, IT Internal |

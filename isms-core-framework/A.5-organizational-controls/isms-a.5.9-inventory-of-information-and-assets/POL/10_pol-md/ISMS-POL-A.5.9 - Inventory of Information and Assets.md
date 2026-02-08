@@ -58,7 +58,7 @@ This policy establishes [Organization]'s requirements for maintaining an invento
 
 **Purpose**: Define organizational requirements for asset inventory creation, maintenance, and governance. This policy establishes the governance framework (WHAT and WHY). Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5 (UG/TG variants).9 suite, and assessment tools provide objective verification mechanisms.
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS, FINMA, DORA, NIS2, HIPAA) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, FINMA, DORA, NIS2, HIPAA) apply where [Organization]'s business activities trigger applicability.
 
 ---
 
@@ -186,7 +186,7 @@ Regulatory requirements are categorized per **ISMS-POL-00 (Regulatory Applicabil
 
 **Tier 2: Conditional Applicability** (triggered by specific business activities):
 
-- **PCI DSS (Req. 2.4, 12.5)**: Inventory of system components in cardholder data environment
+- **PCI DSS v4.0.1 (Req. 2.4, 12.5)**: Inventory of system components in cardholder data environment
 - **HIPAA (164.310(d)(1))**: Inventory and asset controls for healthcare information systems
 - **FINMA**: Risk-based asset inventory requirements for Swiss financial institutions
 - **DORA/NIS2**: ICT asset inventory for critical infrastructure and financial entities
@@ -832,7 +832,7 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 This policy addresses asset inventory requirements from multiple regulatory frameworks:
 
-| Requirement Category | Swiss nDSG | EU GDPR | ISO 27001 | PCI DSS* | FINMA* | DORA/NIS2* | HIPAA* |
+| Requirement Category | Swiss nDSG | EU GDPR | ISO 27001 | PCI DSS v4.0.1* | FINMA* | DORA/NIS2* | HIPAA* |
 |---------------------|-----------|---------|-----------|---------|--------|------------|--------|
 | Asset identification | Art. 8 (data inventory) | Art. 5, 30 (records) | A.5.9 | Req. 2.4 | Risk-based | Asset management | 164.310(d)(1) |
 | Owner assignment | Art. 8 (accountability) | Art. 5 (accountability) | A.5.9 | Req. 12.5 | Risk-based | ICT asset register | 164.308(a)(2) |

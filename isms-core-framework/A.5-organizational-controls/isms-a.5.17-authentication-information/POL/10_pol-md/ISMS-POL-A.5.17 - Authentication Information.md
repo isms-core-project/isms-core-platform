@@ -56,7 +56,7 @@ This policy establishes [Organization]'s requirements for the management and pro
 
 **Purpose**: Define organizational requirements for authentication information management. This policy establishes WHAT authentication controls are required and WHO is responsible. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.17 (UG/TG variants).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, PCI DSS, NIS2, DORA) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, PCI DSS v4.0.1, NIS2, DORA) apply where [Organization]'s business activities trigger applicability.
 
 ---
 
@@ -146,7 +146,7 @@ Apply only when specific business conditions trigger applicability:
 |-----------|-------------------|----------------------------|
 | **EU GDPR Art. 32** | Processing EU personal data | Appropriate security measures including authentication |
 | **FINMA** | Swiss regulated financial institution | Enhanced authentication for financial systems |
-| **PCI DSS v4.0** | Payment card processing | Requirement 8 - Strong authentication |
+| **PCI DSS v4.0.1** | Payment card processing | Requirement 8 - Strong authentication |
 | **NIS2** | Essential/important entity (EU) | Strong authentication requirements |
 | **DORA** | EU financial services entity | ICT security including authentication controls |
 
@@ -155,7 +155,7 @@ Apply only when specific business conditions trigger applicability:
 These frameworks inform implementation but do not constitute mandatory compliance unless contractually required:
 
 - NIST SP 800-63B (Digital Identity Guidelines - Authentication)
-- CIS Controls v8 (Control 5 - Account Management, Control 6 - Access Control)
+- CIS Controls v8.1 (Control 5 - Account Management, Control 6 - Access Control)
 - OWASP Authentication Guidelines
 - Microsoft Security Baseline recommendations
 

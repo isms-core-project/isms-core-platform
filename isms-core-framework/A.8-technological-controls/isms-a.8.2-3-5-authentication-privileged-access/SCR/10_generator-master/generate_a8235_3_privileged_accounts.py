@@ -342,7 +342,7 @@ def populate_instructions(wb, styles):
     ws[f'A{row}'] = "TIER 0: DOMAIN / ENTERPRISE / CRITICAL INFRASTRUCTURE"
     ws[f'A{row}'].font = Font(name='Calibri', size=11, bold=True, color='C00000')
     tier0_info = [
-        f"{BULLET} Systems: Domain Controllers, Azure AD tenant, AWS Organization root, PKI CA, SIEM, PAM vault, Backup infrastructure",
+        f"{BULLET} Systems: Domain Controllers, Microsoft Entra ID (formerly Azure AD) tenant, AWS Organization root, PKI CA, SIEM, PAM vault, Backup infrastructure",
         f"{BULLET} Accounts: Domain Admins, Enterprise Admins, Global Administrator, AWS root, Security admins, PAM admins",
         f"{BULLET} Access Level: Can access EVERYTHING - highest privilege in organization",
         f"{BULLET} Security Requirements:",
@@ -540,7 +540,7 @@ def populate_tiering_matrix(wb, styles):
         apply_style(ws[f'{col}{row}'], styles['header'])
     tier0_systems = [
         ("Domain Controllers", "Tier 0", "Critical", "PAWs, Hardware MFA, Session Recording", ""),
-        ("Azure AD Tenant", "Tier 0", "Critical", "Global Admin requires PAW", ""),
+        ("Microsoft Entra ID (formerly Azure AD) Tenant", "Tier 0", "Critical", "Global Admin requires PAW", ""),
         ("AWS Organization Root", "Tier 0", "Critical", "Root user MFA, breakglass only", ""),
         ("PKI Certificate Authority", "Tier 0", "Critical", "CA admins Tier 0", ""),
         ("SIEM Infrastructure", "Tier 0", "Critical", "Security admins Tier 0", ""),

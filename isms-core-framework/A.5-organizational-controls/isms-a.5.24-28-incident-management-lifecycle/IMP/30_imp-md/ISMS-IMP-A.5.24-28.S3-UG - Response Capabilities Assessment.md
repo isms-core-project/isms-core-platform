@@ -790,7 +790,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.3 (Incident Response 
 - **Dropdown:** Yes - Automated / Yes - Manual / No
 
 **Q80: Regulatory_Notification_Preparedness**
-- **Question:** Are regulatory notification templates ready (GDPR, PCI DSS, etc.)?
+- **Question:** Are regulatory notification templates ready (GDPR, PCI DSS v4.0.1, etc.)?
 - **Dropdown:** Yes / No
 
 **Q81: Media_Inquiry_Handling**

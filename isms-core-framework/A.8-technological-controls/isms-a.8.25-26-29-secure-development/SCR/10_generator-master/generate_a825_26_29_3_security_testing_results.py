@@ -259,7 +259,7 @@ remediation decisions.
 
 **Regulatory Alignment:**
 Security testing assessment supports regulatory compliance:
-- Payment processing: PCI DSS requirement 6.3.2 (security testing in SDLC)
+- Payment processing: PCI DSS v4.0.1 requirement 6.3.2 (security testing in SDLC)
 - Healthcare: HIPAA security requirements for application vulnerability assessment
 - Finance: Regional banking requirements for application security testing
 - Critical infrastructure: Sector-specific penetration testing requirements

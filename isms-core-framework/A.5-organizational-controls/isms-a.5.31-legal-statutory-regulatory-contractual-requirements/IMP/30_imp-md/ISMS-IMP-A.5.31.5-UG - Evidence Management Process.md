@@ -957,7 +957,7 @@ Action:
 1. **Regulatory Mandates**: Some regulations specify evidence retention periods
 
    - GDPR: 3 years (typical for demonstrating historical compliance)
-   - PCI DSS: 1 year online, 3 years archived (for logs and audit trails)
+   - PCI DSS v4.0.1: 1 year online, 3 years archived (for logs and audit trails)
    - SOX: 7 years (financial records and controls)
 
 2. **Audit Trail**: Retain evidence for audit history (show compliance over time)

@@ -371,10 +371,10 @@ def create_electronic_transfer_sheet(wb: Workbook):
 
     # Electronic channels
     channels = [
-        ("Corporate Email - Internal", "Exchange Online, Microsoft 365", "TLS 1.2+ in transit", "Azure AD SSO", "Exchange Audit Logs", "CONFIDENTIAL", "Yes", ""),
-        ("Corporate Email - External", "Exchange Online + S/MIME", "S/MIME or TLS 1.2+", "Azure AD + MFA", "Exchange Audit Logs", "CONFIDENTIAL", "Yes", ""),
-        ("SharePoint/OneDrive", "Microsoft 365, Sensitivity Labels", "AES-256 at rest, TLS in transit", "Azure AD + MFA", "Unified Audit Log", "CONFIDENTIAL", "Yes", ""),
-        ("Teams File Sharing", "Microsoft Teams", "AES-256, TLS 1.2+", "Azure AD + MFA", "Teams Audit", "INTERNAL", "Yes", ""),
+        ("Corporate Email - Internal", "Exchange Online, Microsoft 365", "TLS 1.2+ in transit", "Microsoft Entra ID (formerly Azure AD) SSO", "Exchange Audit Logs", "CONFIDENTIAL", "Yes", ""),
+        ("Corporate Email - External", "Exchange Online + S/MIME", "S/MIME or TLS 1.2+", "Microsoft Entra ID (formerly Azure AD) + MFA", "Exchange Audit Logs", "CONFIDENTIAL", "Yes", ""),
+        ("SharePoint/OneDrive", "Microsoft 365, Sensitivity Labels", "AES-256 at rest, TLS in transit", "Microsoft Entra ID (formerly Azure AD) + MFA", "Unified Audit Log", "CONFIDENTIAL", "Yes", ""),
+        ("Teams File Sharing", "Microsoft Teams", "AES-256, TLS 1.2+", "Microsoft Entra ID (formerly Azure AD) + MFA", "Teams Audit", "INTERNAL", "Yes", ""),
         ("SFTP Server", "OpenSSH, key-based auth", "AES-256-CTR", "SSH Keys + IP allowlist", "SFTP Logs", "RESTRICTED", "Manual", ""),
         ("Approved API Gateway", "Kong/Apigee with mTLS", "TLS 1.3, mTLS", "OAuth 2.0 + API Keys", "API Gateway Logs", "RESTRICTED", "Custom", ""),
         ("Managed File Transfer (MFT)", "GoAnywhere/Axway", "AES-256, TLS 1.2+", "SSO + MFA", "MFT Audit Trail", "RESTRICTED", "Yes", ""),
@@ -469,7 +469,7 @@ def create_verbal_transfer_sheet(wb: Workbook):
     verbal = [
         ("In-Person Meeting (internal)", "Secure meeting room, no unauthorized persons", "Badge/employee verification", "No recording without consent", "CONFIDENTIAL", "Meeting minutes if needed", ""),
         ("In-Person Meeting (external)", "Visitor registration, escort required", "ID verification, NDA check", "Recording requires approval", "INTERNAL", "Summary + attendee list", ""),
-        ("Video Conference (internal)", "Approved platform (Teams/Zoom)", "Azure AD authentication", "Recording notification required", "CONFIDENTIAL", "Auto-transcription available", ""),
+        ("Video Conference (internal)", "Approved platform (Teams/Zoom)", "Microsoft Entra ID (formerly Azure AD) authentication", "Recording notification required", "CONFIDENTIAL", "Auto-transcription available", ""),
         ("Video Conference (external)", "Lobby/waiting room enabled", "Host verification of attendees", "Explicit consent required", "INTERNAL", "Host controls recording", ""),
         ("Phone Call (internal)", "Corporate phone system", "Caller ID verification", "Generally not recorded", "INTERNAL", "Notes if sensitive", ""),
         ("Phone Call (external)", "Verify callback number if sensitive", "Ask security questions", "Inform if recorded", "PUBLIC", "Document key points", ""),

@@ -335,7 +335,7 @@ This control explicitly requires documented management processes for authenticat
 
 | System/Access | Revocation Action | Verification |
 |---------------|-------------------|--------------|
-| Primary directory (AD/Azure AD) | Account disabled/deleted | ☐ |
+| Primary directory (AD/Microsoft Entra ID (formerly Azure AD)) | Account disabled/deleted | ☐ |
 | Email/collaboration | Mailbox converted/deleted | ☐ |
 | VPN access | Certificate/token revoked | ☐ |
 | Application access | All app accounts disabled | ☐ |
@@ -478,7 +478,7 @@ Select 5-10 recent terminations and verify:
 |---------------|--------|-----------|
 | This assessment workbook | Generated | 7 years |
 | Procedure documents | Runbooks/SharePoint | 7 years |
-| IdP configuration | Azure AD/Okta | 3 years |
+| IdP configuration | Microsoft Entra ID (formerly Azure AD)/Okta | 3 years |
 | Sample tickets | Service desk | 3 years |
 | Audit logs | SIEM/IdP | Per retention policy |
 | Training records | LMS | 3 years |

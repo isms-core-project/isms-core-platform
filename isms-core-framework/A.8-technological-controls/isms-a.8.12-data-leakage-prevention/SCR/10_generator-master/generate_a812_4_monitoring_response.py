@@ -186,7 +186,7 @@ Related Standards:
     - EU GDPR (General Data Protection Regulation - Articles 33, 34)
     - NIST SP 800-53 (Security and Privacy Controls - IR, SI families)
     - NIST SP 800-61 (Computer Security Incident Handling Guide)
-    - CIS Controls v8 (Center for Internet Security - Controls 8, 17)
+    - CIS Controls v8.1 (Center for Internet Security - Controls 8, 17)
 
 --------------------------------------------------------------------------------
 IMPORTANT NOTES

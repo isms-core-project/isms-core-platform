@@ -26,11 +26,11 @@ SAMPLE SCRIPT - REQUIRES CUSTOMIZATION FOR YOUR ORGANIZATION
 
 This script is a TEMPLATE/SAMPLE implementation and MUST be adapted to match
 your organization's specific storage infrastructure, media types, deletion
-technologies, and NIST SP 800-88 implementation requirements.
+technologies, and NIST SP 800-88 Rev. 2 implementation requirements.
 
 Key customization areas:
 1. Storage media inventory (match your actual HDD, SSD, tape, cloud infrastructure)
-2. NIST SP 800-88 category mappings (adapt to your data classification scheme)
+2. NIST SP 800-88 Rev. 2 category mappings (adapt to your data classification scheme)
 3. Deletion tool specifications (specific to your approved deletion utilities)
 4. Verification testing procedures (based on your forensic testing capability)
 5. SSD-specific crypto-erasure requirements (unique encryption key management)
@@ -45,7 +45,7 @@ DESCRIPTION
 --------------------------------------------------------------------------------
 
 This script generates a comprehensive Excel assessment workbook for evaluating
-media-specific deletion methods against NIST SP 800-88 standards and ISO 27001:2022
+media-specific deletion methods against NIST SP 800-88 Rev. 2 standards and ISO 27001:2022
 Control A.8.10 requirements, supporting evidence-based validation of secure data
 sanitization practices across all storage technologies.
 
@@ -60,13 +60,13 @@ to ensure data cannot be recovered when deleted.
 - Cloud storage deletion policies and provider capabilities
 - File system and backup media deletion procedures
 - Deletion verification testing and forensic validation
-- NIST SP 800-88 category compliance (Clear/Purge/Destroy)
+- NIST SP 800-88 Rev. 2 category compliance (Clear/Purge/Destroy)
 - SSD-specific crypto-erasure requirements
 - Gap analysis for inadequate deletion methods
 - Evidence collection for audit readiness
 
 **Generated Workbook Structure:**
-1. Instructions & Legend - Assessment guidance, NIST SP 800-88 overview, color coding
+1. Instructions & Legend - Assessment guidance, NIST SP 800-88 Rev. 2 overview, color coding
 2. Physical Storage Media - HDD, SSD, removable media, tape deletion methods
 3. Database Systems - Database-specific deletion methods and log management
 4. Cloud Storage - Cloud provider deletion policies and verification
@@ -84,7 +84,7 @@ to ensure data cannot be recovered when deleted.
 - Protected formulas with unprotected input cells
 - Evidence linkage for audit traceability
 - Multi-stakeholder approval workflow
-- Integration with NIST SP 800-88 media sanitization guidelines
+- Integration with NIST SP 800-88 Rev. 2 media sanitization guidelines
 
 **Integration:**
 This assessment feeds into the A.8.10.5 Compliance Dashboard, which
@@ -132,7 +132,7 @@ Post-Generation Steps:
     1. Review and customize NIST categories to match your data classification
     2. Inventory all storage media types across your infrastructure
     3. Complete deletion method assessment for each media type
-    4. Validate deletion methods align with NIST SP 800-88 for data classification
+    4. Validate deletion methods align with NIST SP 800-88 Rev. 2 for data classification
     5. Review SSD crypto-erasure requirements (unique encryption keys)
     6. Document deletion verification testing procedures
     7. Conduct gap analysis for inadequate methods (Confidential + Clear, etc.)
@@ -157,7 +157,7 @@ License:              [Organisation License/Terms]
 
 Related Documents:
     - ISMS-POL-A.8.10: Information Deletion Policy (Governance)
-    - ISMS-REF-A.8.10: Deletion Methods Reference Guide (NIST SP 800-88)
+    - ISMS-REF-A.8.10: Deletion Methods Reference Guide (NIST SP 800-88 Rev. 2)
     - ISMS-IMP-A.8.10.1: Retention & Deletion Triggers Assessment (Domain 1)
     - ISMS-IMP-A.8.10.2: Deletion Methods Implementation Guide
     - ISMS-IMP-A.8.10.3: Third-Party & Cloud Deletion Assessment (Domain 3)
@@ -171,7 +171,7 @@ CHANGE HISTORY
 Version 1.0 - [Date to be set]
     - Initial release
     - Implements full assessment framework per ISMS-IMP-A.8.10.2 specification
-    - Supports comprehensive deletion method evaluation per NIST SP 800-88
+    - Supports comprehensive deletion method evaluation per NIST SP 800-88 Rev. 2
     - Integrated with A.8.10.5 Compliance Dashboard
     - Added SSD-specific crypto-erasure guidance (unique encryption keys required)
     - Enhanced NIST category validation with data classification cross-checks
@@ -185,8 +185,8 @@ Version 1.0 - [Date to be set]
 IMPORTANT NOTES
 --------------------------------------------------------------------------------
 
-**NIST SP 800-88 Media Sanitization Guidelines:**
-This assessment implements NIST SP 800-88 Rev. 1 framework with three categories:
+**NIST SP 800-88 Rev. 2 Media Sanitization Guidelines:**
+This assessment implements NIST SP 800-88 Rev. 2 framework with three categories:
 
 - **CLEAR:** Logical techniques protecting against simple non-invasive data recovery.
   Use when media will be reused within organization.
@@ -245,10 +245,10 @@ decisions.
 
 **Regulatory Alignment:**
 Ensure deletion methods align with applicable regulatory requirements:
-- Payment processing: PCI DSS Requirement 3.1, 9.8 (media destruction)
+- Payment processing: PCI DSS v4.0.1 Requirement 3.1, 9.8 (media destruction)
 - Healthcare: HIPAA 164.310(d)(2)(i) (media disposal and re-use)
 - Finance: GLBA Disposal Rule (proper disposal of consumer information)
-- Government: NIST SP 800-88 compliance mandates
+- Government: NIST SP 800-88 Rev. 2 compliance mandates
 
 Customize assessment criteria to include regulatory-specific requirements.
 
@@ -494,7 +494,7 @@ def get_base_columns():
 def get_extended_columns_sheet2():
     """Sheet 2: Physical Media Deletion extensions."""
     return [
-        ("R", "NIST SP 800-88 Method", 18),
+        ("R", "NIST SP 800-88 Rev. 2 Method", 18),
         ("S", "Verification Method", 22),
         ("T", "Last Forensic Test Result", 20),
         ("U", "Media Disposal Method", 18)
@@ -606,7 +606,7 @@ def create_sheet_specific_validations(ws, sheet_type):
         ws.add_data_validation(dv)
         dv.add('D10:D100')
         
-        # NIST SP 800-88 Method (Column R)
+        # NIST SP 800-88 Rev. 2 Method (Column R)
         dv = DataValidation(
             type="list",
             formula1='"Clear,Purge,Destroy,N/A"',
@@ -1018,10 +1018,10 @@ def create_instructions_sheet(ws, styles):
     
     current_row += 2
     
-    # NIST SP 800-88 Framework
+    # NIST SP 800-88 Rev. 2 Framework
     ws.merge_cells(f'A{current_row}:F{current_row}')
     cell = ws[f'A{current_row}']
-    cell.value = "NIST SP 800-88 FRAMEWORK OVERVIEW"
+    cell.value = "NIST SP 800-88 Rev. 2 FRAMEWORK OVERVIEW"
     apply_cell_style(cell, styles, 'subheader')
     current_row += 1
     
@@ -1157,7 +1157,7 @@ def create_evidence_register(ws, styles):
     # Dropdowns
     dv_type = DataValidation(
         type="list",
-        formula1='"Deletion Tool Documentation,Forensic Test Report,Screenshot/Print Screen,System Log Export,Configuration File,Certificate of Destruction,Vendor Documentation,NIST SP 800-88 Compliance Memo,Test Result (Pass/Fail),Third-Party Audit Report,Other"',
+        formula1='"Deletion Tool Documentation,Forensic Test Report,Screenshot/Print Screen,System Log Export,Configuration File,Certificate of Destruction,Vendor Documentation,NIST SP 800-88 Rev. 2 Compliance Memo,Test Result (Pass/Fail),Third-Party Audit Report,Other"',
         allow_blank=True
     )
     ws.add_data_validation(dv_type)
@@ -1399,7 +1399,7 @@ def create_summary_dashboard(ws, styles):
     # NIST Method Distribution
     ws.merge_cells(f'A{current_row}:G{current_row}')
     cell = ws[f'A{current_row}']
-    cell.value = "NIST SP 800-88 METHOD DISTRIBUTION"
+    cell.value = "NIST SP 800-88 Rev. 2 METHOD DISTRIBUTION"
     apply_cell_style(cell, styles, 'subheader')
     current_row += 1
     
@@ -1472,7 +1472,7 @@ def create_sheet2_physical_media(ws, styles):
         "Magnetic tape deletion uses degaussing OR overwrite OR destruction",
         "Removable media (USB, SD) deletion methods documented",
         "Paper document destruction uses cross-cut shredding (minimum)",
-        "NIST SP 800-88 method classification assigned (Clear/Purge/Destroy)",
+        "NIST SP 800-88 Rev. 2 method classification assigned (Clear/Purge/Destroy)",
         "Deletion tools are approved and maintained",
         "Media disposal procedures documented (reuse, recycle, destroy)",
         "Certificate of Destruction obtained for outsourced destruction",
@@ -1508,7 +1508,7 @@ def create_sheet2_physical_media(ws, styles):
         ws, styles,
         "Sheet 2: Physical Storage Media",
         "ISMS-POL-A.8.10-S2.2, Section 2.2.1",
-        "Do we have effective deletion methods for all types of physical media, validated through testing, and aligned with NIST SP 800-88 guidance?",
+        "Do we have effective deletion methods for all types of physical media, validated through testing, and aligned with NIST SP 800-88 Rev. 2 guidance?",
         get_base_columns(), get_extended_columns_sheet2(),
         checklist, reference_tables,
         "sheet2"
@@ -1748,7 +1748,7 @@ def main():
         logger.info("=" * 78)
         logger.info("ISMS-IMP-A.8.10.2 - Deletion Methods Assessment Generator")
         logger.info("ISO/IEC 27001:2022 Control A.8.10: Information Deletion")
-        logger.info("NIST SP 800-88 Framework Integration")
+        logger.info("NIST SP 800-88 Rev. 2 Framework Integration")
         logger.info("=" * 78)
 
         wb = create_workbook()
@@ -1787,7 +1787,7 @@ def main():
         logger.info("=" * 78)
         logger.info("SUCCESS: %s", filename)
         logger.info("Workbook Structure:")
-        logger.info("  - Instructions & Legend - NIST SP 800-88 framework overview")
+        logger.info("  - Instructions & Legend - NIST SP 800-88 Rev. 2 framework overview")
         logger.info("  - Sheet 2: Physical Storage Media - HDD, SSD, tape, paper (NIST methods)")
         logger.info("  - Sheet 3: Database Systems - Database deletion methods, crypto-shred")
         logger.info("  - Sheet 4: Cloud Storage - AWS, Azure, GCP deletion capabilities")
@@ -1796,7 +1796,7 @@ def main():
         logger.info("  - Summary Dashboard - Compliance overview + SSD overwrite detection")
         logger.info("  - Evidence Register - 100 rows for supporting documentation")
         logger.info("  - Approval Sign-Off - 3-level approval workflow")
-        logger.info("Key Features: NIST SP 800-88 framework, HDD vs SSD distinctions, SSD overwrite detection")
+        logger.info("Key Features: NIST SP 800-88 Rev. 2 framework, HDD vs SSD distinctions, SSD overwrite detection")
         logger.info("=" * 78)
         return 0
     except Exception as e:

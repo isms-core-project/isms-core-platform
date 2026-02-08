@@ -129,7 +129,7 @@ Per ISMS-POL-00 (Regulatory Applicability Framework):
 
 - **DORA (EU) Art. 12** - "Backup policies and procedures...ensuring restoration of ICT systems"
 - **NIS2 (EU) Art. 21** - "Backup management and disaster recovery" for essential entities
-- **PCI DSS Req. 3.4** - "Data at rest shall be rendered unreadable" (encrypted backups for cardholder data)
+- **PCI DSS v4.0.1 Req. 3.4** - "Data at rest shall be rendered unreadable" (encrypted backups for cardholder data)
 - **FINMA (Swiss Financial)** - Backup and recovery capability required
 
 ## Connection to BIA (IMP-S1)
@@ -2906,7 +2906,7 @@ Evidence:
 - Restoration procedures (Section 3.10)
 - Testing results (proves restoration capability)
 
-## PCI DSS Requirement 3.4 - Backup Protection
+## PCI DSS v4.0.1 Requirement 3.4 - Backup Protection
 
 **Requirement (if processing payment cards):** "Data at rest shall be rendered unreadable"
 

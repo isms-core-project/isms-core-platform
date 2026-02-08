@@ -172,7 +172,7 @@ Apply only when specific business conditions trigger applicability:
 | **NIS2 Directive** | Essential/important entity (EU) | Art. 21(2)(g) - Cybersecurity practices, including staff training |
 | **DORA** | EU financial services entity | Art. 13(6) - ICT security awareness programmes and digital operational resilience training |
 | **FINMA Circular 2008/21** | Swiss regulated financial institution | Margin no. 10-12 - Personnel awareness and training on operational risks |
-| **PCI DSS v4.0** | Processing payment card data | Req. 12.6 - Security awareness program for all personnel |
+| **PCI DSS v4.0.1** | Processing payment card data | Req. 12.6 - Security awareness program for all personnel |
 | **HIPAA** | US healthcare data (if applicable) | §164.308(a)(5) - Security awareness and training program |
 
 **Tier 3: Informational Guidance**

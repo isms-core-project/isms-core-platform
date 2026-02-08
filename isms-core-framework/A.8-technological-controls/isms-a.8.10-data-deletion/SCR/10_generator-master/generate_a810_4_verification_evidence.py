@@ -201,7 +201,7 @@ no longer exists without retaining evidence of what was deleted?
    - Extrapolate from sample to population
 
 4. **Process Documentation:**
-   - Document deletion procedures and their NIST SP 800-88 classifications
+   - Document deletion procedures and their NIST SP 800-88 Rev. 2 classifications
    - Maintain evidence of procedure compliance (checklists, approvals)
    - Link procedures to specific systems and data categories
 
@@ -244,7 +244,7 @@ remediation decisions.
 Ensure verification procedures align with applicable regulatory requirements:
 - ISO 27001:2022: Clause 8.10 requires verification that information is properly deleted
 - GDPR: Article 5(2) accountability principle (demonstrate compliance)
-- PCI DSS: Requirement 3.1, 9.8 (verify media destruction)
+- PCI DSS v4.0.1: Requirement 3.1, 9.8 (verify media destruction)
 - HIPAA: 164.310(d)(2)(i) (verify media disposal effectiveness)
 
 Customize assessment criteria to include regulatory-specific requirements.
@@ -1014,7 +1014,7 @@ def populate_sheet2_logging(ws, styles):
         "Logs capture: What was deleted (data classification, record identifiers - NOT actual data)",
         "Logs capture: When deletion occurred (timestamp with timezone)",
         "Logs capture: Where deletion occurred (system/location/media ID)",
-        "Logs capture: How deletion was performed (method reference per NIST SP 800-88)",
+        "Logs capture: How deletion was performed (method reference per NIST SP 800-88 Rev. 2)",
         "Log entries are machine-readable and parseable for audit analysis",
         "Log correlation capability exists across multiple systems/platforms",
         "Log completeness monitoring alerts on missing/failed log entries",
@@ -1028,7 +1028,7 @@ def populate_sheet2_logging(ws, styles):
     ]
     
     reference_tables = {
-        "Table 1: Required Log Fields (NIST SP 800-88 R1 Alignment)": [
+        "Table 1: Required Log Fields (NIST SP 800-88 Rev. 2 R1 Alignment)": [
             {
                 "Log Field": "Deletion Request ID",
                 "Required?": "Mandatory",
@@ -1063,7 +1063,7 @@ def populate_sheet2_logging(ws, styles):
                 "Log Field": "Deletion Method",
                 "Required?": "Mandatory",
                 "Example Value": "ATA Secure Erase",
-                "Purpose": "NIST SP 800-88 reference"
+                "Purpose": "NIST SP 800-88 Rev. 2 reference"
             },
             {
                 "Log Field": "Verification Method",
@@ -1131,7 +1131,7 @@ def populate_sheet3_testing(ws, styles):
     
     checklist_items = [
         "Documented verification testing program with defined scope and frequency",
-        "Testing methodology aligns with NIST SP 800-88 R1 verification guidance",
+        "Testing methodology aligns with NIST SP 800-88 Rev. 2 R1 verification guidance",
         "Test sample selection methodology is risk-based (prioritize high-risk deletions)",
         "Testing uses dedicated test datasets, NOT production data",
         "Test results are documented and retained per evidence retention policy",
@@ -1349,7 +1349,7 @@ def populate_sheet5_certificates(ws, styles):
         "Certificates are cross-referenced with deletion logs for consistency",
         "Generic/template certificates are flagged for additional verification",
         "Certificates include specific deletion details (not generic statements)",
-        "Certificates reference deletion method/standard (e.g., NIST SP 800-88)",
+        "Certificates reference deletion method/standard (e.g., NIST SP 800-88 Rev. 2)",
         "Certificates include unique identifiers (deletion job ID, media serial numbers)",
         "Certificates include attestation of subcontractor deletion",
         "Certificates stored in evidence repository with access controls",
@@ -1373,7 +1373,7 @@ def populate_sheet5_certificates(ws, styles):
             {
                 "Component": "Deletion Method",
                 "Points": "15",
-                "Criteria for Full Points": "References recognized standard (NIST SP 800-88, GDPR method)"
+                "Criteria for Full Points": "References recognized standard (NIST SP 800-88 Rev. 2, GDPR method)"
             },
             {
                 "Component": "Timestamp Accuracy",
@@ -1663,7 +1663,7 @@ def populate_dashboard_sheet(ws, styles):
         ["ISO 27001:2022 A.8.10", "", "", ""],
         ["GDPR Article 17 (Right to Erasure)", "", "", ""],
         ["FADP Article 6 (Accountability)", "", "", ""],
-        ["NIST SP 800-88 R1 (if applicable)", "", "", ""]
+        ["NIST SP 800-88 Rev. 2 R1 (if applicable)", "", "", ""]
     ]
     
     for idx, row_data in enumerate(compliance_readiness, start=35):

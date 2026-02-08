@@ -57,7 +57,7 @@ This policy establishes [Organization]'s requirements for secure information tra
 
 **Purpose**: Define organizational requirements for information transfer security. This policy establishes WHAT transfer methods are approved and WHO is authorized. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.14 (UG/TG variants).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, PCI DSS) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, PCI DSS v4.0.1) apply where [Organization]'s business activities trigger applicability.
 
 ---
 
@@ -146,7 +146,7 @@ Apply only when specific business conditions trigger applicability:
 | **EU GDPR Art. 44-49** | Processing EU personal data | International data transfer safeguards, SCCs |
 | **FINMA** | Swiss regulated financial institution | Enhanced security for financial data transfers |
 | **Swiss Banking Secrecy** | Bank client data | Strict transfer controls |
-| **PCI DSS** | Payment card data | Encryption requirements for cardholder data |
+| **PCI DSS v4.0.1** | Payment card data | Encryption requirements for cardholder data |
 | **HIPAA** | US health data | Business Associate Agreements |
 
 **Tier 3: Informational Guidance**
@@ -155,7 +155,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 - ISO 27002:2022 Implementation Guidance for A.5.14
 - NIST SP 800-53 (System and Communications Protection)
-- CIS Controls v8 (Data Protection)
+- CIS Controls v8.1 (Data Protection)
 - ENISA Guidelines on Data Transfer Security
 
 **Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent transfer requirements apply where multiple regulations overlap.

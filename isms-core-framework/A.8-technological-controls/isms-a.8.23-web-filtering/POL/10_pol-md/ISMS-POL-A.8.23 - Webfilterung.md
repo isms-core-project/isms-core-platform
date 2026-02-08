@@ -49,7 +49,7 @@ Diese Richtlinie definiert die Anforderungen von [Organisation] für Web-Filteri
 
 **Zweck**: Definition organisatorischer Anforderungen für Implementierung und Governance von Web-Filtering-Kontrollen. Diese Richtlinie definiert WAS Web-Filtering-Schutz erforderlich ist und WER verantwortlich ist. Implementierungsprozeduren (WIE) sind separat in ISMS-IMP-A.8.23 dokumentiert.
 
-**Regulatorisches Alignment**: Diese Richtlinie adressiert obligatorische Compliance-Anforderungen gemäss ISMS-POL-00 (Regulatory Applicability Framework), einschliesslich Schweizer nDSG, EU DSGVO und ISO/IEC 27001:2022. Konditionale branchenspezifische Anforderungen (PCI DSS, FINMA, DORA, NIS2) gelten, wo Geschäftsaktivitäten der [Organisation] Anwendbarkeit auslösen.
+**Regulatorisches Alignment**: Diese Richtlinie adressiert obligatorische Compliance-Anforderungen gemäss ISMS-POL-00 (Regulatory Applicability Framework), einschliesslich Schweizer nDSG, EU DSGVO und ISO/IEC 27001:2022. Konditionale branchenspezifische Anforderungen (PCI DSS v4.0.1, FINMA, DORA, NIS2) gelten, wo Geschäftsaktivitäten der [Organisation] Anwendbarkeit auslösen.
 
 ---
 
@@ -131,7 +131,7 @@ Gelten nur, wenn spezifische Geschäftsbedingungen Anwendbarkeit auslösen:
 
 | Regulierung | Auslöse-Bedingung | Web-Filtering-Anforderungen |
 |-------------|-------------------|------------------------------|
-| **PCI DSS v4.0** | Verarbeitung von Zahlungskartendaten | Netzwerksicherheitskontrollen, Malware-Schutz |
+| **PCI DSS v4.0.1** | Verarbeitung von Zahlungskartendaten | Netzwerksicherheitskontrollen, Malware-Schutz |
 | **FINMA** | Schweizer regulierte Finanzinstitution | Technische und organisatorische Massnahmen gemäss Risk Assessment |
 | **DORA** | EU-Finanzdienstleistungs-Entität | Netzwerksicherheitskontrollen, Cyber-Resilienz |
 | **NIS2** | Essenzielle/wichtige Entität (EU) | Sicherheitsmassnahmen für Netzwerk- und Informationssysteme |
@@ -141,7 +141,7 @@ Gelten nur, wenn spezifische Geschäftsbedingungen Anwendbarkeit auslösen:
 Diese Frameworks informieren Implementierung, stellen aber keine obligatorische Compliance dar, sofern nicht vertraglich gefordert:
 
 - NIST Cybersecurity Framework (Protect Function)
-- CIS Controls v8 (Control 9: Email and Web Browser Protections)
+- CIS Controls v8.1 (Control 9: Email and Web Browser Protections)
 - MITRE ATT&CK Framework (Defense Techniques)
 - OWASP (Web Security Testing Guide)
 
@@ -432,7 +432,7 @@ Diese Richtlinie integriert mit dem Informationssicherheits-Managementsystem der
 
 Diese Richtlinie adressiert Web-Filtering-Anforderungen von:
 
-| Anforderungs-Kategorie | Schweizer nDSG | EU DSGVO | ISO 27001 | PCI DSS* | FINMA* | DORA/NIS2* |
+| Anforderungs-Kategorie | Schweizer nDSG | EU DSGVO | ISO 27001 | PCI DSS v4.0.1* | FINMA* | DORA/NIS2* |
 |------------------------|----------------|----------|-----------|---------|---------|------------|
 | Web-Threat-Protection | Art. 8 | Art. 32 | A.8.23 | Req. 1, 2, 5 | Risikobasiert | Network Security |
 | Zugangskontrollen | Art. 8 | Art. 32 | A.8.23 | Req. 7 | Risikobasiert | Access Controls |

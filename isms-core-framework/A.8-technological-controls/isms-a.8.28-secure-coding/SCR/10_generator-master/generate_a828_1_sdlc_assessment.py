@@ -225,7 +225,7 @@ remediation decisions.
 
 **Regulatory Alignment:**
 Ensure SDLC security standards align with applicable regulatory requirements:
-- Payment processing: PCI DSS secure SDLC requirements (Requirement 6)
+- Payment processing: PCI DSS v4.0.1 secure SDLC requirements (Requirement 6)
 - Healthcare: HIPAA application security and risk analysis standards
 - Finance: Regional banking application security requirements
 - Government: Jurisdiction-specific secure development mandates (e.g., NIST SSDF)

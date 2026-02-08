@@ -65,7 +65,7 @@ This assessment verifies [Organization]'s compliance with:
 - **ISO/IEC 27001:2022 Control A.8.15**: Logs must be reviewed - collection without analysis provides no security benefit
 - **ISMS-POL-A.8.15, Section 2.4 (Log Review)**: Regular review required, frequency defined per log category
 - **ISMS-POL-A.8.15, Section 2.1 (Event Logging)**: Seven event categories must be logged AND reviewed
-- **PCI DSS Requirement 10.6** (if applicable): Daily review of security events required
+- **PCI DSS v4.0.1 Requirement 10.6** (if applicable): Daily review of security events required
 - **DORA/NIS2** (if applicable): ICT monitoring and detection capabilities required
 
 **Security Impact**:
@@ -78,7 +78,7 @@ This assessment verifies [Organization]'s compliance with:
 **Compliance Impact**:
 
 - **Major non-conformity** if logs not reviewed per policy requirements (ISO 27001 audit finding)
-- **PCI DSS failure** if daily review not performed and documented
+- **PCI DSS v4.0.1 failure** if daily review not performed and documented
 - **Ineffective control** = wasted resources, poor security posture
 
 **Audit Evidence**: This assessment workbook provides **objective evidence** that logs are being analyzed and reviewed effectively.

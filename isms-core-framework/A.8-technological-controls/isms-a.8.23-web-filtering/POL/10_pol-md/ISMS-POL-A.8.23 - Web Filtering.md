@@ -52,7 +52,7 @@ This policy establishes [Organization]'s requirements for web filtering controls
 
 **Purpose**: Define organizational requirements for web filtering control implementation and governance. This policy establishes WHAT web filtering protection is required and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.23 (UG/TG variants).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
 
 ---
 
@@ -134,7 +134,7 @@ Apply only when specific business conditions trigger applicability:
 
 | Regulation | Trigger Condition | Web Filtering Requirements |
 |-----------|-------------------|----------------------------|
-| **PCI DSS v4.0** | Processing payment card data | Network security controls, malware protection |
+| **PCI DSS v4.0.1** | Processing payment card data | Network security controls, malware protection |
 | **FINMA** | Swiss regulated financial institution | Technical and organizational measures per risk assessment |
 | **DORA** | EU financial services entity | Network security controls, cyber resilience |
 | **NIS2** | Essential/important entity (EU) | Security measures for network and information systems |
@@ -144,7 +144,7 @@ Apply only when specific business conditions trigger applicability:
 These frameworks inform implementation but do not constitute mandatory compliance unless contractually required:
 
 - NIST Cybersecurity Framework (Protect function)
-- CIS Controls v8 (Control 9: Email and Web Browser Protections)
+- CIS Controls v8.1 (Control 9: Email and Web Browser Protections)
 - MITRE ATT&CK Framework (Defense techniques)
 - OWASP (Web Security Testing Guide)
 
@@ -435,7 +435,7 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 This policy addresses web filtering requirements from:
 
-| Requirement Category | Swiss nDSG | EU GDPR | ISO 27001 | PCI DSS* | FINMA* | DORA/NIS2* |
+| Requirement Category | Swiss nDSG | EU GDPR | ISO 27001 | PCI DSS v4.0.1* | FINMA* | DORA/NIS2* |
 |---------------------|-----------|---------|-----------|---------|--------|------------|
 | Web threat protection | Art. 8 | Art. 32 | A.8.23 | Req. 1, 2, 5 | Risk-Based | Network Security |
 | Access controls | Art. 8 | Art. 32 | A.8.23 | Req. 7 | Risk-Based | Access Controls |

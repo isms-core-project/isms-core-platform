@@ -592,7 +592,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - **Format:** Free text
 - **Common Triggers:**
   - **Critical severity incidents:** Ransomware, data breach (Restricted/Confidential data), major system outage
-  - **Regulatory breach notification required:** GDPR, Swiss nDSG, PCI DSS, sector-specific
+  - **Regulatory breach notification required:** GDPR, Swiss nDSG, PCI DSS v4.0.1, sector-specific
   - **Potential legal action:** Law enforcement involvement, subpoena
   - **Media/public attention:** Reputational risk
   - **Financial impact:** Revenue loss, fines, remediation costs >$X threshold
@@ -614,7 +614,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - **Question:** Are procedures defined for external notifications (regulators, law enforcement, customers, media)?
 - **Dropdown:** Yes - Documented / Partially Documented / No
 - **External Parties:**
-  - **Regulators:** GDPR supervisory authority, Swiss FDPIC, PCI DSS payment brands, sector-specific (FINMA, NIS2 CSIRT)
+  - **Regulators:** GDPR supervisory authority, Swiss FDPIC, PCI DSS v4.0.1 payment brands, sector-specific (FINMA, NIS2 CSIRT)
   - **Law Enforcement:** Cybercrime units, FBI (if US presence), Europol
   - **Customers/Partners:** Breach notification if customer data affected
   - **Media:** Public relations, press releases (if material breach)
@@ -631,7 +631,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 - **Dropdown:** Yes - Documented / Partially / No
 - **Regulations to Consider (per ISMS-POL-00):**
   - **Tier 1 Mandatory:** GDPR, Swiss nDSG, ISO 27001
-  - **Tier 2 Conditional:** PCI DSS, FINMA, DORA, NIS2, HIPAA (if applicable)
+  - **Tier 2 Conditional:** PCI DSS v4.0.1, FINMA, DORA, NIS2, HIPAA (if applicable)
 - **Reference:** ISMS-POL-A.5.24-28 Section 1.5, ISMS-REF-A.5.24-28 Section 2
 - **Evidence:** Regulatory requirements matrix, notification timelines documented
 
@@ -665,14 +665,14 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.1 (Incident Managemen
 
 **Q19: PCI_DSS_Incident_Reporting_Procedure**
 
-- **Question:** (If PCI DSS applies) Is PCI DSS incident reporting procedure documented?
-- **Dropdown:** Yes / No / N/A (PCI DSS not applicable)
-- **PCI DSS Requirements:**
+- **Question:** (If PCI DSS v4.0.1 applies) Is PCI DSS v4.0.1 incident reporting procedure documented?
+- **Dropdown:** Yes / No / N/A (PCI DSS v4.0.1 not applicable)
+- **PCI DSS v4.0.1 Requirements:**
   - Immediate notification to payment brands and acquiring bank
   - PFI (PCI Forensic Investigator) engagement if account data compromise suspected
   - Forensic investigation and remediation
 - **Evidence:**
-  - PCI DSS incident reporting procedure
+  - PCI DSS v4.0.1 incident reporting procedure
   - Payment brand contact information (Visa, Mastercard, Amex)
   - Acquiring bank contact
   - PFI list and engagement procedure
@@ -949,7 +949,7 @@ For each role, document:
 - **Typical Responsibilities:**
   - Draft management briefings
   - Coordinate with Legal, PR, HR
-  - Prepare regulatory notifications (GDPR, PCI DSS)
+  - Prepare regulatory notifications (GDPR, PCI DSS v4.0.1)
   - Manage customer communications
 - **RACI:** Responsible for incident communications
 - **Skill Level:** Mid-level, strong writing and stakeholder management
@@ -1137,7 +1137,7 @@ For each role, document:
   - Forensics (specialized training needed)
   - Malware reverse engineering
   - Threat intelligence analysis
-  - Regulatory compliance (GDPR, PCI DSS procedures)
+  - Regulatory compliance (GDPR, PCI DSS v4.0.1 procedures)
 - **Evidence:** Skills assessment matrix, training needs analysis
 - **Remediation:** Training, hiring, or external augmentation (retainers, MSSPs)
 
@@ -1241,7 +1241,7 @@ For each role, document:
   - Digital forensics
   - Malware analysis
   - Threat intelligence
-  - Regulatory compliance (GDPR breach notification, PCI DSS forensics)
+  - Regulatory compliance (GDPR breach notification, PCI DSS v4.0.1 forensics)
   - Tools (SIEM, forensic tools, SOAR)
 - **Best Practice:** CSIRT members receive at least 40 hours specialized training annually
 - **Evidence:** Training records, certifications, course materials
@@ -1354,7 +1354,7 @@ For each role, document:
 
 **Q68: Regulatory_Drills**
 
-- **Question:** Are drills conducted specifically for regulatory breach notification (GDPR 72-hour, PCI DSS, etc.)?
+- **Question:** Are drills conducted specifically for regulatory breach notification (GDPR 72-hour, PCI DSS v4.0.1, etc.)?
 - **Dropdown:** Yes / No
 - **Regulatory Drill Purpose:**
   - Test notification procedures
@@ -1411,7 +1411,7 @@ For each role, document:
   - Tool training (SIEM, ticketing, forensics)
   - Shadowing experienced team members
   - Escalation and communication procedures
-  - Regulatory requirements (GDPR, PCI DSS, sector-specific)
+  - Regulatory requirements (GDPR, PCI DSS v4.0.1, sector-specific)
   - First 30/60/90 day milestones
 - **Duration:** Typical onboarding 30-90 days depending on role complexity
 - **Evidence:** Onboarding checklist, training records
@@ -2042,7 +2042,7 @@ For each role, document:
 - **Low:** Minor gap, address when feasible
 
 **Prioritization Criteria:**
-1. **Regulatory Compliance:** GDPR, PCI DSS, sector-specific requirements
+1. **Regulatory Compliance:** GDPR, PCI DSS v4.0.1, sector-specific requirements
 2. **Operational Impact:** Does gap prevent effective incident response?
 3. **Risk Exposure:** Does gap leave organization vulnerable?
 4. **Effort/Cost:** Quick wins vs. major projects
@@ -2158,7 +2158,7 @@ Assessment Status: [Draft / Under Review / Approved]
 **Regulatory Procedures:**
 
 - GDPR breach notification template (screenshot)
-- PCI DSS incident reporting procedure (export)
+- PCI DSS v4.0.1 incident reporting procedure (export)
 - Contact lists (redact personal info if needed)
 
 ## Organizational Structure Evidence

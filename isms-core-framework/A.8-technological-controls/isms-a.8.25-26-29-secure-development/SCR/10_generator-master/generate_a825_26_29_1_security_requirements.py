@@ -244,7 +244,7 @@ remediation decisions.
 
 **Regulatory Alignment:**
 Security requirements assessment supports regulatory compliance:
-- Payment processing: PCI DSS requirement 6.3 (secure development)
+- Payment processing: PCI DSS v4.0.1 requirement 6.3 (secure development)
 - Healthcare: HIPAA security requirements for applications handling PHI
 - Finance: Regional banking requirements for secure application development
 - Privacy: GDPR/FADP privacy-by-design and data protection requirements
@@ -688,7 +688,7 @@ def build_application_inventory_sheet(wb, styles, validations):
     
     # Example data rows
     example_data = [
-        ["Customer Portal", "APP-001", "Jane Doe", "High", "High Risk", "Java/Spring Boot", "AWS Cloud", "GDPR, PCI DSS", "Yes", "2025-01-15"],
+        ["Customer Portal", "APP-001", "Jane Doe", "High", "High Risk", "Java/Spring Boot", "AWS Cloud", "GDPR, PCI DSS v4.0.1", "Yes", "2025-01-15"],
         ["Internal HR System", "APP-002", "John Smith", "Medium", "Medium Risk", "Python/Django", "On-Premises", "GDPR", "No", "2024-12-10"],
         ["Marketing Website", "APP-003", "Alice Johnson", "Medium", "Medium Risk", "Static HTML/CSS", "CDN (Cloudflare)", "None", "Yes", "2025-01-05"],
         ["Employee Portal", "APP-004", "Bob Williams", "Medium", "Medium Risk", "ASP.NET Core", "Azure Cloud", "GDPR", "No", "2024-11-22"],

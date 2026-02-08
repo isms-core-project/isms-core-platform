@@ -260,7 +260,7 @@ This policy implements BC/DR requirements to comply with regulations per **ISMS-
 | **DORA (Digital Operational Resilience Act)** | ICT business continuity policy, backup policies, disaster recovery plans, testing (Art. 11-12) | EU financial services operations |
 | **NIS2 Directive** | Business continuity and crisis management measures, backup management (Art. 21) | Essential/important entity designation |
 | **FINMA** | Business continuity management for financial institutions | Swiss financial services operations |
-| **PCI DSS v4.0** | Data backup and retention (Req. 12.10), testing of backup/recovery (Req. 12.10.7) | Processing payment card data |
+| **PCI DSS v4.0.1** | Data backup and retention (Req. 12.10), testing of backup/recovery (Req. 12.10.7) | Processing payment card data |
 
 **Tier 3: Informational Guidance**
 
@@ -386,7 +386,7 @@ Backups SHALL be retained according to the following minimum retention periods:
 
 **Extended Retention**: Additional retention requirements may apply based on:
 
-- Regulatory requirements (GDPR, FINMA, PCI DSS, tax law)
+- Regulatory requirements (GDPR, FINMA, PCI DSS v4.0.1, tax law)
 - Legal hold requests
 - Contractual obligations
 - Business needs (historical analytics, compliance audits)
@@ -1372,7 +1372,7 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 This policy addresses BC/DR requirements from applicable regulations:
 
-| Requirement Category | Swiss nDSG | EU GDPR | ISO 27001 | DORA* | NIS2* | PCI DSS* | FINMA* |
+| Requirement Category | Swiss nDSG | EU GDPR | ISO 27001 | DORA* | NIS2* | PCI DSS v4.0.1* | FINMA* |
 |---------------------|-----------|---------|-----------|-------|-------|---------|--------|
 | Backup requirements | Art. 8 | Art. 32 | A.8.13 | Art. 12 | Art. 21 | Req. 12.10 | Risk-Based |
 | Offsite backup | Art. 8 | Art. 32 | A.8.13 | Art. 12 (Required) | Art. 21 (Required) | Req. 12.10 | Risk-Based |

@@ -71,7 +71,7 @@ This policy establishes [Organization]'s requirements for authentication securit
 **Regulatory Alignment**: Per ISMS-POL-00 (Regulatory Applicability Framework):
 
 - **Mandatory**: Swiss FADP (Art. 8), EU GDPR (Art. 32), ISO 27001:2022
-- **Conditional**: FINMA, DORA, NIS2 (Art. 21(2)(e) - MFA mandate), PCI DSS
+- **Conditional**: FINMA, DORA, NIS2 (Art. 21(2)(e) - MFA mandate), PCI DSS v4.0.1
 
 ---
 
@@ -171,7 +171,7 @@ Each control maintains independent applicability:
 
 **Deployment Roadmap**: If current MFA coverage is below target, deployment milestones SHALL be documented in Workbook 2 with target dates (e.g., 80% by Month 3, 90% by Month 6, 95% by Month 12). Progress tracked quarterly.
 
-**Verification**: MFA enrollment status verified via identity provider dashboard exports (Azure AD, Okta, or equivalent); weekly reports for privileged users, monthly for all users.
+**Verification**: MFA enrollment status verified via identity provider dashboard exports (Microsoft Entra ID (formerly Azure AD), Okta, or equivalent); weekly reports for privileged users, monthly for all users.
 
 ## Single Sign-On (SSO)
 

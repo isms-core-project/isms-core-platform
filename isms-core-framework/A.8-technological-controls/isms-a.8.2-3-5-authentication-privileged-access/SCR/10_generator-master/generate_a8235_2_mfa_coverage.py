@@ -705,7 +705,7 @@ def generate_workbook():
     logger.info("=" * 70)
     logger.info("{CHECK} Workbook generated successfully: {filename}")
     logger.info("Next Steps:")
-    logger.info("  1. Export user list from identity provider (Azure AD, Okta, etc.)")
+    logger.info("  1. Export user list from identity provider (Microsoft Entra ID (formerly Azure AD), Okta, etc.)")
     logger.info("  2. Populate User_MFA_Enrollment with current MFA status")
     logger.info("  3. Review MFA_Coverage_By_Type metrics dashboard")
     logger.info("  4. Identify gaps in MFA_Gaps_Priority worksheet")

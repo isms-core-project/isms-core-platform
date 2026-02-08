@@ -155,7 +155,7 @@ Document constraints that may affect discovery:
 - **Production impact**: Scanning schedules to avoid business hours
 - **Access limitations**: Networks inaccessible from scanning location (air-gapped, DMZ)
 - **Security controls**: IDS/IPS that may block scans
-- **Regulatory compliance**: Networks with special compliance requirements (PCI DSS, HIPAA)
+- **Regulatory compliance**: Networks with special compliance requirements (PCI DSS v4.0.1, HIPAA)
 
 **Deliverable**: Discovery constraints matrix
 

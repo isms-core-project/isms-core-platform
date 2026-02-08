@@ -3492,10 +3492,10 @@ Examples:
 
 **Compliance Frameworks:**
 
-- CIS Controls v8 - Center for Internet Security benchmarks
-- NIST Cybersecurity Framework (CSF)
+- CIS Controls v8.1 - Center for Internet Security benchmarks
+- NIST Cybersecurity Framework (CSF) 2.0
 - SOC 2 Type II - Service Organization Control audit reports
-- PCI DSS 4.0 - Payment Card Industry Data Security Standard
+- PCI DSS v4.0.1 - Payment Card Industry Data Security Standard
 
 ---
 

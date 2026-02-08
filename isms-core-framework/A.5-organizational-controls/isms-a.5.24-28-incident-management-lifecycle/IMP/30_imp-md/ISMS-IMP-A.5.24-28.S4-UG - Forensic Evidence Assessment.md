@@ -189,7 +189,7 @@ This assessment implements **ISMS-POL-A.5.24-28, Section 2.4 (Forensic Evidence 
 **Legal Readiness Requirements:**
 - Evidence procedures validated by Legal
 - Court-admissible evidence capabilities
-- Regulatory evidence requirements met (GDPR, PCI DSS, etc.)
+- Regulatory evidence requirements met (GDPR, PCI DSS v4.0.1, etc.)
 - Expert witness capability (if required)
 
 **Policy Authority:** Chief Information Security Officer (CISO)  
@@ -698,7 +698,7 @@ For each evidence source, assess collection capability:
 **Q74: Retention_Regulatory_Compliance**
 - **Question:** Do retention periods meet regulatory requirements?
 - **Dropdown:** Yes / No / Not Assessed
-- **Regulations:** GDPR (as long as needed for investigation), PCI DSS (1 year minimum), national laws
+- **Regulations:** GDPR (as long as needed for investigation), PCI DSS v4.0.1 (1 year minimum), national laws
 
 **Q75: Retention_Legal_Hold**
 - **Question:** Can evidence retention be extended via legal hold?
@@ -783,9 +783,9 @@ For each evidence source, assess collection capability:
 - **GDPR:** Evidence needed for breach notification, data protection impact
 
 **Q90: PCI_DSS_Evidence_Requirements**
-- **Question:** Are forensic procedures compliant with PCI DSS requirements?
+- **Question:** Are forensic procedures compliant with PCI DSS v4.0.1 requirements?
 - **Dropdown:** Yes / No / Not Applicable
-- **PCI DSS:** Requirement 12.10 — Forensic readiness for incident response
+- **PCI DSS v4.0.1:** Requirement 12.10 — Forensic readiness for incident response
 
 **Q91: Industry_Specific_Requirements**
 - **Question:** Are industry-specific forensic requirements met (banking, healthcare, etc.)?

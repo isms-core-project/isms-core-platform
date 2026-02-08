@@ -268,7 +268,7 @@ Validate segmentation effectiveness by:
 
 **Regulatory Alignment:**
 Ensure network segmentation aligns with applicable regulatory requirements:
-- Payment processing: PCI DSS network segmentation requirements (cardholder data)
+- Payment processing: PCI DSS v4.0.1 network segmentation requirements (cardholder data)
 - Healthcare: HIPAA network segmentation for ePHI
 - Finance: Regional banking network segmentation requirements
 - Government: Jurisdiction-specific segmentation mandates

@@ -616,7 +616,7 @@ def create_legal_regulatory(ws, styles):
         # Section B: Regulatory Compliance
         ("Q89", "Regulatory Compliance", "GDPR forensic evidence compliance?",
          "Yes / No / Not Applicable"),
-        ("Q90", "Regulatory Compliance", "PCI DSS forensic evidence compliance?",
+        ("Q90", "Regulatory Compliance", "PCI DSS v4.0.1 forensic evidence compliance?",
          "Yes / No / Not Applicable"),
         ("Q91", "Regulatory Compliance", "Industry-specific forensic requirements met?",
          "Yes / No / Not Applicable"),

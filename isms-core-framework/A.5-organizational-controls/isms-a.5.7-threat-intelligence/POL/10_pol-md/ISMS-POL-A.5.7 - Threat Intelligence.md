@@ -61,7 +61,7 @@ This policy establishes [Organization]'s requirements for threat intelligence to
 - All organizational personnel involved in security operations
 - All security tools integrating threat intelligence
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00, including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Sector-specific requirements (PCI DSS, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00, including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Sector-specific requirements (PCI DSS v4.0.1, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
 
 ---
 

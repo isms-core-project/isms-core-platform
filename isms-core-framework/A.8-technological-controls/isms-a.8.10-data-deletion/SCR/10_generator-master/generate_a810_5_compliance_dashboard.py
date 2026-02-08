@@ -336,7 +336,7 @@ This dashboard supports regulatory compliance reporting for:
 - ISO 27001:2022 certification audits (Clause 8.10 evidence)
 - GDPR Article 5(2) accountability (demonstrating compliance)
 - Swiss FADP Article 6 data processing principles
-- Industry-specific audits (PCI DSS, HIPAA, etc.)
+- Industry-specific audits (PCI DSS v4.0.1, HIPAA, etc.)
 
 **Integration with Other ISMS Controls:**
 A.8.10 Information Deletion integrates with:
@@ -1335,7 +1335,7 @@ def populate_sheet4_methods(ws, styles):
         apply_style(cell, styles['header'])
     
     detailed_metrics = [
-        "NIST SP 800-88 Compliant Methods (%)",
+        "NIST SP 800-88 Rev. 2 Compliant Methods (%)",
         "SSD Secure Erase Available",
         "HDD Degaussing Capability",
         "Cloud Storage Deletion SLA Documented",

@@ -65,7 +65,7 @@ This assessment evaluates [Organization]'s training needs to ensure all personne
 - **EU GDPR (Art. 29, 32):** Personnel processing personal data must act under appropriate instruction/training
 - **NIS2 Directive:** Cybersecurity practices must include staff training (Art. 21)
 - **DORA (Financial Services):** Digital operational resilience training required (Art. 13)
-- **PCI DSS v4.0 (Req. 12.6):** Security awareness program for all personnel
+- **PCI DSS v4.0.1 (Req. 12.6):** Security awareness program for all personnel
 
 **Business Impact:**
 
@@ -430,7 +430,7 @@ HR System Exports:
 
 Access Management:
 - Active Directory: Get-ADGroupMember for group membership reports
-- Azure AD: Export user access from Enterprise Applications
+- Microsoft Entra ID (formerly Azure AD): Export user access from Enterprise Applications
 - IAM platforms: Role-based access reports
 ```
 

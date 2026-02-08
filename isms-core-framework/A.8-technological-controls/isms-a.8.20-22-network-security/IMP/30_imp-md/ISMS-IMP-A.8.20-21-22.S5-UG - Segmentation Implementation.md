@@ -261,7 +261,7 @@ Phase 8: Migration to Segmented Network (For Existing Flat Networks)
 - **Trust boundaries**: Each zone has defined trust level; stricter controls for lower-trust zones
 - **Data classification alignment**: Zones map to data classification (e.g., restricted data → management zone)
 - **Functional separation**: Similar functions grouped together (all web servers in DMZ)
-- **Regulatory compliance**: Isolate regulated data (PCI DSS → payment card zone, HIPAA → healthcare zone)
+- **Regulatory compliance**: Isolate regulated data (PCI DSS v4.0.1 → payment card zone, HIPAA → healthcare zone)
 
 **Example Zone Architecture** (for mid-size organization):
 

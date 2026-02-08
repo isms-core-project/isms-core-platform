@@ -63,7 +63,7 @@ def populate_assessment_sheets(wb):
     sheet_data = {
         "1. Password Security": [
             ["Active Directory", "NIST SP 800-63B compliant", "Argon2id", "12 characters minimum", "Yes - 90 days", "GPO enforced", "Password policy GPO", "✅ Compliant", "AD audit logs", "", "No"],
-            ["Azure AD", "NIST compliant + MFA", "Azure AD hash", "12 characters + complexity", "Yes - Conditional", "Conditional Access", "Azure AD security", "✅ Compliant", "Azure AD logs", "", "No"],
+            ["Microsoft Entra ID (formerly Azure AD)", "NIST compliant + MFA", "Microsoft Entra ID (formerly Azure AD) hash", "12 characters + complexity", "Yes - Conditional", "Conditional Access", "Microsoft Entra ID (formerly Azure AD) security", "✅ Compliant", "Microsoft Entra ID (formerly Azure AD) logs", "", "No"],
             ["Linux PAM", "NIST compliant", "SHA-512 + salt", "14 characters", "Yes - 90 days", "PAM config", "PAM config files", "✅ Compliant", "/etc/pam.d/ audit", "", "No"],
             ["Database Accounts", "Application-specific", "SCRAM-SHA-256", "16 characters", "Yes - 180 days", "DB password policy", "DB security audit", "✅ Compliant", "DB password logs", "", "No"],
             ["Application Users", "OWASP compliant", "bcrypt (cost 12)", "12 characters + 2FA", "Yes - 120 days", "App password policy", "App security config", "✅ Compliant", "App audit logs", "", "No"],
@@ -73,7 +73,7 @@ def populate_assessment_sheets(wb):
         ],
 
         "2. Multi-Factor Authentication": [
-            ["Azure AD MFA", "TOTP + Push + FIDO2", "100% admin, 95% users", "Authenticator app", "Yes - Conditional Access", "Azure AD MFA", "Azure MFA report", "✅ Compliant", "Azure AD MFA logs", "", "No"],
+            ["Microsoft Entra ID (formerly Azure AD) MFA", "TOTP + Push + FIDO2", "100% admin, 95% users", "Authenticator app", "Yes - Conditional Access", "Microsoft Entra ID (formerly Azure AD) MFA", "Azure MFA report", "✅ Compliant", "Microsoft Entra ID (formerly Azure AD) MFA logs", "", "No"],
             ["VPN Access MFA", "TOTP + Push", "100% required", "Duo Security", "Yes - Always", "Duo MFA", "Duo admin dashboard", "✅ Compliant", "Duo authentication logs", "", "No"],
             ["SSH Bastion MFA", "FIDO2 hardware keys", "100% required", "YubiKey 5", "Yes - Always", "PAM + Yubikey", "SSH bastion config", "✅ Compliant", "SSH audit logs", "", "No"],
             ["Admin Portal MFA", "TOTP + Backup codes", "100% required", "Google Authenticator", "Yes - Always", "App-level MFA", "Admin portal config", "✅ Compliant", "Admin access logs", "", "No"],
@@ -93,7 +93,7 @@ def populate_assessment_sheets(wb):
         ],
 
         "4. Service Accounts": [
-            ["Azure Managed Identities", "Azure AD workload identity", "100% Azure resources", "Managed Identity", "N/A - Automatic", "Azure RBAC", "Azure MI configuration", "✅ Compliant", "Azure activity logs", "", "No"],
+            ["Azure Managed Identities", "Microsoft Entra ID (formerly Azure AD) workload identity", "100% Azure resources", "Managed Identity", "N/A - Automatic", "Azure RBAC", "Azure MI configuration", "✅ Compliant", "Azure activity logs", "", "No"],
             ["AWS IAM Roles", "IAM role assumption", "100% AWS resources", "IAM Roles", "N/A - Temporary creds", "IAM policies", "IAM role documentation", "✅ Compliant", "CloudTrail AssumeRole", "", "No"],
             ["GCP Service Accounts", "GCP service account", "100% GCP resources", "Service Account keys", "Key rotation 90 days", "GCP IAM", "GCP SA inventory", "✅ Compliant", "Cloud Audit Logs", "", "No"],
             ["AD Group Managed Service Accounts", "gMSA", "80% Windows services", "gMSA", "N/A - AD managed", "AD gMSA", "gMSA deployment", "⚠️ Partial", "AD service logs", "Migrate remaining services", "Yes"],
@@ -103,9 +103,9 @@ def populate_assessment_sheets(wb):
         ],
 
         "5. SSO & Federation": [
-            ["Azure AD SSO", "SAML 2.0 + OpenID Connect", "95% SaaS apps", "Azure AD", "Conditional Access enforced", "Azure AD SSO", "Azure AD app gallery", "✅ Compliant", "Azure AD sign-ins", "", "No"],
+            ["Microsoft Entra ID (formerly Azure AD) SSO", "SAML 2.0 + OpenID Connect", "95% SaaS apps", "Microsoft Entra ID (formerly Azure AD)", "Conditional Access enforced", "Microsoft Entra ID (formerly Azure AD) SSO", "Microsoft Entra ID (formerly Azure AD) app gallery", "✅ Compliant", "Microsoft Entra ID (formerly Azure AD) sign-ins", "", "No"],
             ["Okta SSO", "SAML 2.0 + OAuth 2.0", "100% federated apps", "Okta", "MFA + Adaptive Auth", "Okta Universal Directory", "Okta app integrations", "✅ Compliant", "Okta system logs", "", "No"],
-            ["ADFS Federation", "WS-Federation + SAML", "100% AD-integrated", "ADFS", "MFA enforced", "ADFS + Azure AD", "ADFS architecture", "✅ Compliant", "ADFS audit logs", "", "No"],
+            ["ADFS Federation", "WS-Federation + SAML", "100% AD-integrated", "ADFS", "MFA enforced", "ADFS + Microsoft Entra ID (formerly Azure AD)", "ADFS architecture", "✅ Compliant", "ADFS audit logs", "", "No"],
             ["Google Workspace SSO", "SAML 2.0", "100% Google apps", "Google SSO", "Security key enforced", "Google Admin", "Google SSO config", "✅ Compliant", "Google Admin logs", "", "No"],
             ["AWS SSO (IAM Identity Center)", "SAML 2.0", "100% AWS accounts", "AWS SSO", "MFA required", "AWS Organizations", "AWS SSO configuration", "✅ Compliant", "CloudTrail SSO events", "", "No"],
             ["Custom Apps with SSO", "SAML 2.0 + OIDC", "80% custom apps", "Various IdPs", "MFA where supported", "App-specific", "Custom app inventory", "⚠️ Partial", "App authentication logs", "Complete SSO integration", "Yes"],
@@ -132,7 +132,7 @@ def populate_evidence_register(wb):
     #          Description, Location/Path, Date Collected, Collected By, Verification Status
     evidence_data = [
         ["EVD-824.3-001", "1. Password Security", "Configuration file", "Active Directory Password Policy GPO", "AD/GPO/Password", "2026-01-10", "Windows Admin", "Verified"],
-        ["EVD-824.3-002", "1. Password Security", "Screenshot", "Azure AD Password Policy Configuration", "Azure/AAD/Security", "2026-01-10", "Cloud Admin", "Verified"],
+        ["EVD-824.3-002", "1. Password Security", "Screenshot", "Microsoft Entra ID (formerly Azure AD) Password Policy Configuration", "Azure/AAD/Security", "2026-01-10", "Cloud Admin", "Verified"],
         ["EVD-824.3-003", "1. Password Security", "Configuration file", "Linux PAM Configuration Audit", "Linux/PAM/Config", "2026-01-09", "Linux Admin", "Verified"],
         ["EVD-824.3-004", "1. Password Security", "Documentation", "Password Security Standard v3.2", "SharePoint/Standards", "2025-08-01", "Security Team", "Verified"],
         ["EVD-824.3-005", "2. Multi-Factor Authentication", "Compliance report", "Azure MFA Adoption Report", "Azure/MFA/Reports", "2026-01-10", "Security Team", "Verified"],
@@ -147,7 +147,7 @@ def populate_evidence_register(wb):
         ["EVD-824.3-014", "4. Service Accounts", "Documentation", "AWS IAM Role Best Practices", "AWS/Documentation", "2025-11-15", "Cloud Team", "Verified"],
         ["EVD-824.3-015", "4. Service Accounts", "Compliance report", "gMSA Deployment Status Report", "AD/gMSA/Reports", "2026-01-08", "Windows Admin", "Verified"],
         ["EVD-824.3-016", "4. Service Accounts", "Certificate inventory", "Service Account Inventory Q1 2026", "SharePoint/Inventory/SA", "2026-01-10", "Security Team", "Verified"],
-        ["EVD-824.3-017", "5. SSO & Federation", "Configuration file", "Azure AD SSO Configuration", "Azure/AAD/SSO", "2026-01-10", "Cloud Admin", "Verified"],
+        ["EVD-824.3-017", "5. SSO & Federation", "Configuration file", "Microsoft Entra ID (formerly Azure AD) SSO Configuration", "Azure/AAD/SSO", "2026-01-10", "Cloud Admin", "Verified"],
         ["EVD-824.3-018", "5. SSO & Federation", "Certificate inventory", "Okta Application Integration List", "Okta/Admin/Apps", "2026-01-09", "IT Admin", "Verified"],
         ["EVD-824.3-019", "5. SSO & Federation", "Configuration file", "ADFS Federation Configuration", "ADFS/Configuration", "2025-12-15", "Identity Team", "Verified"],
         ["EVD-824.3-020", "5. SSO & Federation", "Documentation", "SSO Implementation Standard", "SharePoint/Standards/SSO", "2025-09-01", "Security Team", "Verified"],

@@ -72,7 +72,7 @@ The MFA Deployment Assessment covers:
 | Value Area | Benefit |
 |------------|---------|
 | **Breach Prevention** | MFA blocks 99.9% of credential-based attacks |
-| **Compliance** | Meets ISO 27001, NIST, PCI DSS, FINMA requirements |
+| **Compliance** | Meets ISO 27001, NIST, PCI DSS v4.0.1, FINMA requirements |
 | **Cyber Insurance** | MFA is prerequisite for most cyber insurance policies |
 | **Zero Trust** | Foundation for Zero Trust architecture |
 | **User Trust** | Demonstrates security commitment to customers |
@@ -213,10 +213,10 @@ Multi-factor authentication is a critical implementation of this control, provid
 
 **Data Collection from IdP:**
 
-For Azure AD:
-1. Navigate to Azure AD > Security > Authentication methods > User registration details
+For Microsoft Entra ID (formerly Azure AD):
+1. Navigate to Microsoft Entra ID (formerly Azure AD) > Security > Authentication methods > User registration details
 2. Export registration details report
-3. Navigate to Azure AD > Security > MFA > Per-user MFA
+3. Navigate to Microsoft Entra ID (formerly Azure AD) > Security > MFA > Per-user MFA
 4. Export MFA status report
 
 For Okta:
@@ -375,7 +375,7 @@ For Okta:
 |-------|-------------|---------|
 | Remediation_ID | Unique identifier | REM-MFA-2026-001 |
 | Gap_ID | Related gap | GAP-MFA-2026-001 |
-| Action | Specific steps | Federate legacy payroll to Azure AD |
+| Action | Specific steps | Federate legacy payroll to Microsoft Entra ID (formerly Azure AD) |
 | Owner | Responsible person | Application Owner |
 | Target_Date | Deadline | 31.03.2026 |
 | Status | Progress | In Progress |
@@ -417,7 +417,7 @@ For Okta:
 | Evidence Type | Source | Retention |
 |---------------|--------|-----------|
 | This assessment workbook | Generated | 7 years |
-| IdP MFA configuration | Azure AD/Okta | 3 years |
+| IdP MFA configuration | Microsoft Entra ID (formerly Azure AD)/Okta | 3 years |
 | Enrollment reports | IdP exports | 3 years |
 | Conditional access policies | IdP exports | 3 years |
 | Method distribution reports | IdP reports | 3 years |

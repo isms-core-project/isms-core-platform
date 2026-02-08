@@ -261,7 +261,7 @@ Dashboard accuracy is critical for decision-making.
 
 **Regulatory Alignment:**
 Compliance dashboard supports regulatory reporting requirements:
-- Payment processing: PCI DSS annual secure development attestation
+- Payment processing: PCI DSS v4.0.1 annual secure development attestation
 - Healthcare: HIPAA annual security assessment reporting
 - Finance: Regional banking secure development compliance reporting
 - SOC 2 Type II: Security development controls effectiveness evidence

@@ -213,7 +213,7 @@ before using results for compliance reporting or remediation decisions.
 
 **Regulatory Alignment:**
 Ensure logging requirements align with applicable regulatory requirements:
-- Payment processing: PCI DSS logging and monitoring requirements
+- Payment processing: PCI DSS v4.0.1 logging and monitoring requirements
 - Healthcare: HIPAA audit trail requirements
 - Finance: Regional financial services logging requirements
 - Government: Jurisdiction-specific audit logging mandates
@@ -603,7 +603,7 @@ def create_system_inventory_sheet(ws, styles):
     row = 8
     example_data = [
         "SYS-001", "web-prod-01", "Server", "Linux", "Production",
-        "Confidential", "Critical (T1)", "PCI DSS, GDPR", "P1-Critical",
+        "Confidential", "Critical (T1)", "PCI DSS v4.0.1, GDPR", "P1-Critical",
         "John Doe", "jdoe@example.com", "web-prod-01.example.com",
         "10.0.1.50", "DC1", "Yes", "Yes", "Compliant"
     ]

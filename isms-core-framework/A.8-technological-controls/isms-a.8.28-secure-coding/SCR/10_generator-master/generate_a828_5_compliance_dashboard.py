@@ -319,7 +319,7 @@ Have a second AppSec team member review before publication.
 
 **Regulatory Alignment:**
 Dashboard should reflect regulatory compliance requirements where applicable:
-- PCI DSS: Secure coding compliance status (Requirement 6)
+- PCI DSS v4.0.1: Secure coding compliance status (Requirement 6)
 - HIPAA: Application security posture
 - SOC 2: Secure development controls effectiveness
 - ISO 27001: Evidence for Control A.8.28 implementation

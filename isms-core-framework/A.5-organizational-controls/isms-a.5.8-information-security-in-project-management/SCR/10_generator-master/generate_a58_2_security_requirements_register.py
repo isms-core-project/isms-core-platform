@@ -165,7 +165,7 @@ def create_instructions_sheet(ws, styles):
                      "3. Access Control - Authentication, authorization, privileged access\\n"
                      "4. Infrastructure - Network segmentation, hardening, patching\\n"
                      "5. Third-Party - Vendor assessment, contracts, API security\\n"
-                     "6. Compliance - GDPR, nDSG, PCI DSS, regulations\\n\\n"
+                     "6. Compliance - GDPR, nDSG, PCI DSS v4.0.1, regulations\\n\\n"
                      "13-FIELD MODEL: ID, Category, Statement, Source, Priority, Acceptance Criteria, "
                      "Implementation Status, Assigned To, Target Date, Verification Method, Test Status, "
                      "Evidence Link, Notes")

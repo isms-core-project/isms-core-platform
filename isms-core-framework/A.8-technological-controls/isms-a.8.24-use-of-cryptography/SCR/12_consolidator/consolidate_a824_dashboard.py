@@ -362,7 +362,7 @@ Consider exporting dashboard data to JSON/CSV for integration.
 
 **Regulatory Reporting:**
 Customize consolidation logic to highlight regulatory-specific compliance:
-- PCI DSS: Emphasize payment system cryptography
+- PCI DSS v4.0.1: Emphasize payment system cryptography
 - HIPAA: Highlight healthcare data encryption
 - GDPR: Focus on personal data protection cryptography
 

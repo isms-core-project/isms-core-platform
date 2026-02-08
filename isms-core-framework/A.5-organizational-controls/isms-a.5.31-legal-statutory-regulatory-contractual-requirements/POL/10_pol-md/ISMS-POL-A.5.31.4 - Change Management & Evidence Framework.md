@@ -298,7 +298,7 @@ Regulatory change monitoring is the systematic, ongoing process of detecting cha
 
 **Specialized Regulatory Advisors**:
 
-- Boutique firms specializing in specific regulations (GDPR specialists, HIPAA consultants, PCI DSS QSAs)
+- Boutique firms specializing in specific regulations (GDPR specialists, HIPAA consultants, PCI DSS v4.0.1 QSAs)
 - Deep expertise in narrow domain
 - Valuable for complex, high-stakes regulatory requirements
 
@@ -374,7 +374,7 @@ Monitoring frequency SHALL be risk-based, with higher-risk regulations monitored
 - Monthly or quarterly monitoring
 - If condition triggering applicability met, these become Tier 1 and move to continuous monitoring
 - Until then, periodic check sufficient
-- Example: PCI DSS if [Organization] does not currently process payment cards but may in future
+- Example: PCI DSS v4.0.1 if [Organization] does not currently process payment cards but may in future
 
 **Tier 3 Regulations** (Informational Reference from ISMS-POL-00):
 
@@ -608,7 +608,7 @@ Not every detected regulatory change requires full impact assessment. Clear trig
 
 - Tier 2 = Conditional Applicability
 - If change affects condition triggering applicability, assess
-- Example: PCI DSS is Tier 2 (applies only if processing cards); if PCI DSS changes and [Organization] is considering accepting cards, assess impact
+- Example: PCI DSS v4.0.1 is Tier 2 (applies only if processing cards); if PCI DSS v4.0.1 changes and [Organization] is considering accepting cards, assess impact
 - Action: Compliance Officer evaluates whether Tier 2 change is relevant given business context
 
 **New Regulation in [Organization] Jurisdiction**:
@@ -1604,7 +1604,7 @@ Different types of regulations demand different forms of evidence.
 - **Evidence Package Per Certification Body Requirements**:
   - ISO 27001: Statement of Applicability (SoA), risk assessment and treatment plan, policies, procedures, records
   - SOC 2: System description, control descriptions, evidence of control operation, management assertions
-  - PCI DSS: Attestation of Compliance (AOC), Self-Assessment Questionnaire (SAQ), vulnerability scan reports
+  - PCI DSS v4.0.1: Attestation of Compliance (AOC), Self-Assessment Questionnaire (SAQ), vulnerability scan reports
   - Each certification standard specifies required evidence
 
 - **Policies & Procedures**:
@@ -2499,7 +2499,7 @@ Compliance reporting provides visibility into regulatory compliance status for i
 
 **Audit Types**:
 
-- **Certification Audits**: ISO 27001, SOC 2, PCI DSS QSA, etc.
+- **Certification Audits**: ISO 27001, SOC 2, PCI DSS v4.0.1 QSA, etc.
 - **Customer Audits**: Customer exercising contractual audit rights
 - **Regulatory Audits**: Regulator conducting examination or inspection
 
@@ -2580,7 +2580,7 @@ Compliance reporting provides visibility into regulatory compliance status for i
   - Evidence of control operation (logs, reports, configurations)
   - Management assertions (management's statement of control effectiveness)
   
-- **PCI DSS**:
+- **PCI DSS v4.0.1**:
   - Self-Assessment Questionnaire (SAQ) or Report on Compliance (ROC)
   - Attestation of Compliance (AOC)
   - Quarterly vulnerability scans (by Approved Scanning Vendor)

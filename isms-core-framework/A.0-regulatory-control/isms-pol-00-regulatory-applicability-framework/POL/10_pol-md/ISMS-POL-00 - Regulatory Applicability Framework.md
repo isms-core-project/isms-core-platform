@@ -140,7 +140,7 @@ Requirements that apply only when specific conditions are met (e.g., industry se
 - Applicability depends on organizational context
 - May become mandatory based on business activities
 - Requires periodic re-assessment as business evolves
-- Examples: PCI DSS (only if processing card payments), HIPAA (only if handling US healthcare data)
+- Examples: PCI DSS v4.0.1 (only if processing card payments), HIPAA (only if handling US healthcare data)
 
 **Clarification on Tier Classification**: Tier classification (Mandatory, Conditional, Informational) determines **regulatory binding force** and does not by itself imply implementation obligations. Implementation decisions are made through the risk assessment and treatment process, considering regulatory requirements alongside other factors such as risk appetite, business context, and technical feasibility.
 
@@ -160,7 +160,7 @@ Requirements that apply only when specific conditions are met (e.g., industry se
 │  TIER 2: CONDITIONAL (Context-Dependent)                        │
 │  • DORA (if EU financial services entity)                       │
 │  • NIS2 (if essential/important entity in EU)                   │
-│  • PCI DSS (if processing payment cards)                        │
+│  • PCI DSS v4.0.1 (if processing payment cards)                        │
 │  • HIPAA (if processing US healthcare data)                     │
 │  • Industry regulations (sector-dependent)                      │
 │                                                                 │
@@ -389,9 +389,9 @@ These regulations apply **only when specific business conditions are met**:
 
 **Assessment**: If organization operates in covered sector in EU and meets size/criticality thresholds → **Mandatory Compliance**
 
-## Payment Card Industry Data Security Standard (PCI DSS)
+## Payment Card Industry Data Security Standard (PCI DSS v4.0.1)
 
-**Standard**: PCI DSS v4.0 (effective March 31, 2024)  
+**Standard**: PCI DSS v4.0.1 (effective March 31, 2024)  
 **Governing Body**: PCI Security Standards Council
 
 **Applicability Triggers**:
@@ -604,7 +604,7 @@ These frameworks provide **technical guidance and best practices** but are not l
 ## CIS Controls
 
 **Description**: Center for Internet Security Critical Security Controls  
-**Version**: CIS Controls v8 (18 controls)  
+**Version**: CIS Controls v8.1 (18 controls)  
 **Applicability**: Voluntary adoption for security benchmarking
 
 **Key Controls**:
@@ -688,7 +688,7 @@ Organizations may reference additional frameworks based on industry context:
 
 # United States Federal Requirements (Special Category)
 
-**Principle**: US federal cybersecurity requirements (FISMA, FIPS, FedRAMP, NIST CSF) apply **only where the organization has explicit US federal contractual obligations**.
+**Principle**: US federal cybersecurity requirements (FISMA, FIPS, FedRAMP, NIST CSF 2.0) apply **only where the organization has explicit US federal contractual obligations**.
 
 **Cloud Infrastructure Note:** If organization uses US-based cloud service providers (AWS, Azure, GCP), this does NOT automatically trigger US federal compliance obligations. FedRAMP/FISMA apply only if:
 
@@ -734,7 +734,7 @@ Organizations SHALL conduct annual regulatory applicability assessments:
 | Processing EU resident data | GDPR (mandatory) |
 | Operating in Switzerland | Swiss FADP (mandatory) |
 | ISO 27001 certification goal | ISO 27001 (mandatory) |
-| Processing payment cards | PCI DSS (conditional - if yes, mandatory) |
+| Processing payment cards | PCI DSS v4.0.1 (conditional - if yes, mandatory) |
 | EU financial services | DORA (conditional - if yes, mandatory) |
 | Developing/deploying AI systems affecting EU | EU AI Act (conditional - if yes, mandatory) |
 | US federal contracts | FISMA/FedRAMP (conditional - if yes, mandatory) |
@@ -758,7 +758,7 @@ Organizations should maintain a regulatory applicability matrix:
 | EU GDPR | 1 - Mandatory | Applicable | EU customer data | DPO | [Date] |
 | ISO 27001 | 1 - Mandatory | Applicable | Certification goal | CISO | [Date] |
 | DORA | 2 - Conditional | Not Applicable | Not a financial entity | N/A | [Date] |
-| PCI DSS | 2 - Conditional | Applicable | Card processing | CISO | [Date] |
+| PCI DSS v4.0.1 | 2 - Conditional | Applicable | Card processing | CISO | [Date] |
 | EU AI Act | 2 - Conditional | [To Assess] | AI system development/deployment affecting EU | CISO | [Date] |
 | NIST SP 800-53 | 3 - Informational | Reference Only | Technical guidance | CISO | [Date] |
 
@@ -961,7 +961,7 @@ The boundary is: POL-00 identifies obligations → Risk assessment prioritizes �
 - EU GDPR (Regulation 2016/679)
 - ISO/IEC 27001:2022
 - NIST Special Publications (nist.gov)
-- PCI DSS (pcisecuritystandards.org)
+- PCI DSS v4.0.1 (pcisecuritystandards.org)
 - DORA (Regulation 2022/2554)
 - NIS2 (Directive 2022/2555)
 
@@ -989,7 +989,7 @@ This section documents the organization's current regulatory compliance obligati
 |-----------|------------------|------------------|-------------------|-------|---------------|
 | **DORA** | ✅ Assessed | **Not Applicable** - Organization is not an EU financial entity nor designated critical ICT service provider to financial entities | Business model change (financial services entry), customer contracts requiring DORA compliance | CISO + Legal | [Date] |
 | **NIS2** | ✅ Assessed | **Not Applicable** - Organization does not operate as essential/important entity in covered sectors (energy, transport, banking, health, digital infrastructure) | Expansion into NIS2-covered sectors, designation as essential/important entity | CISO + Legal | [Date] |
-| **PCI DSS** | ✅ Assessed | **Not Applicable** - Organization does not currently store, process, or transmit payment cardholder data | Business decision to accept payment cards, merchant account establishment | CISO | [Date] |
+| **PCI DSS v4.0.1** | ✅ Assessed | **Not Applicable** - Organization does not currently store, process, or transmit payment cardholder data | Business decision to accept payment cards, merchant account establishment | CISO | [Date] |
 | **FINMA** | ✅ Assessed | **Not Applicable** - Organization does not hold FINMA license (not a Swiss bank, securities dealer, insurance company, or regulated financial infrastructure provider) | Acquisition of financial services license, provision of services to FINMA-regulated entities | Legal + CISO | [Date] |
 
 ### Under Assessment (Decision Pending)
@@ -1020,7 +1020,7 @@ This section documents the organization's current regulatory compliance obligati
 | Framework | Usage | Referenced In | Rationale |
 |----------|-------|--------------|-----------|
 | **NIST SP 800-series** | Technical implementation guidance | Multiple Annex A controls (A.8.8 Vulnerability Management references NIST SP 800-40, A.5.24-28 Incident Response references NIST SP 800-61) | Industry-standard technical guidance for control implementation |
-| **CIS Controls v8** | Security benchmarking | Internal security posture assessment, control gap analysis | Widely recognized security baseline for comparison |
+| **CIS Controls v8.1** | Security benchmarking | Internal security posture assessment, control gap analysis | Widely recognized security baseline for comparison |
 | **OWASP** | Secure development practices | A.8.25-28 Secure Development Lifecycle | Web application security best practices |
 | **ISO/IEC 27002:2022** | Control implementation guidance | All Annex A controls | Official implementation guidance for ISO 27001 controls |
 
@@ -1062,16 +1062,16 @@ For conditional regulations with complex requirements (regardless of current app
 | **DORA** | ISMS-REF-DORA - Digital Operational Resilience Act Requirements Reference | Detailed ICT risk management, incident reporting, resilience testing, and third-party risk requirements per DORA Articles 3-49. Maintained for future applicability assessment if organization enters EU financial services. | Maintained (updated when DORA regulatory technical standards published) |
 | **FINMA** | ISMS-REF-FINMA - FINMA Circular 2023/1 Requirements Reference | Operational resilience and outsourcing requirements for Swiss financial institutions. Maintained for future applicability if organization obtains FINMA license or serves FINMA-regulated clients. | Maintained (updated per FINMA circular revisions) |
 | **NIS2** | ISMS-REF-NIS2 - Network and Information Security Directive 2 Requirements Reference | Cybersecurity risk management, incident notification, supply chain security, and governance requirements per NIS2 Articles 20-23. Maintained for future applicability if organization designated as essential/important entity. | Maintained (updated as EU member states transpose NIS2 into national law) |
-| **PCI DSS** | ISMS-REF-PCI-DSS - Payment Card Industry Data Security Standard Requirements Reference | 12 PCI DSS v4.0 requirements covering network security, data protection, vulnerability management, access control, monitoring, and testing. Maintained for future applicability if organization begins processing payment cards. | Maintained (updated per PCI SSC publications, currently v4.0 effective March 2024) |
+| **PCI DSS v4.0.1** | ISMS-REF-PCI-DSS - Payment Card Industry Data Security Standard Requirements Reference | 12 PCI DSS v4.0.1 requirements covering network security, data protection, vulnerability management, access control, monitoring, and testing. Maintained for future applicability if organization begins processing payment cards. | Maintained (updated per PCI SSC publications, currently v4.0 effective March 2024) |
 | **EU AI Act** | ISMS-REF-EU-AI-ACT - EU Artificial Intelligence Act Requirements Reference | Risk-based AI governance framework covering prohibited practices (Article 5), high-risk AI systems (Articles 9-72), limited risk transparency obligations (Article 50), and general-purpose AI model requirements (Articles 53-54). Maintained for future applicability if organization develops or deploys AI systems affecting EU persons. | Maintained (updated as EU AI Act delegated acts and implementing acts published, phased implementation 2025-2027) |
 
 **Rationale for Maintaining "Not Applicable" Requirements References:**
 
 1. **Preparedness:** If business context changes (e.g., obtaining financial services license, entering NIS2-covered sectors, accepting payment cards), organization can rapidly assess gap and implementation effort.
 
-2. **Customer Due Diligence:** Customers may request evidence of preparedness for conditional regulations even if not currently applicable (e.g., "If we require PCI DSS compliance in future, can you achieve it?").
+2. **Customer Due Diligence:** Customers may request evidence of preparedness for conditional regulations even if not currently applicable (e.g., "If we require PCI DSS v4.0.1 compliance in future, can you achieve it?").
 
-3. **Regulatory Monitoring:** Maintaining requirements references enables proactive monitoring of regulatory changes that might affect future applicability (e.g., DORA technical standards, NIS2 national implementations, PCI DSS version updates).
+3. **Regulatory Monitoring:** Maintaining requirements references enables proactive monitoring of regulatory changes that might affect future applicability (e.g., DORA technical standards, NIS2 national implementations, PCI DSS v4.0.1 version updates).
 
 4. **Control Mapping Efficiency:** Requirements references facilitate mapping conditional regulations to existing ISO 27001 Annex A controls, showing overlap and potential reuse (e.g., "If DORA applies, we estimate 70% of requirements already satisfied by existing controls").
 
@@ -1113,7 +1113,7 @@ Maintaining requirements references for non-applicable regulations is a **maturi
 |-----------|-------------------------|-------------------------|
 | **DORA** | **January 17, 2025:** Full application for financial entities | Monitor: If organization becomes EU financial entity or critical ICT service provider before 2025-01-17, DORA becomes Tier 1 immediately |
 | **EU AI Act** | **February 2, 2025:** Prohibitions (unacceptable risk AI)<br>**August 2, 2025:** General-purpose AI obligations<br>**August 2, 2026:** High-risk AI systems<br>**August 2, 2027:** High-risk AI in regulated products<br>**August 2, 2030:** Grace period ends for existing systems | Monitor: If organization develops or deploys AI systems affecting EU persons → Compliance required by applicable phase deadline. Existing systems (pre-August 2026) have grace period until 2030 unless substantially modified |
-| **PCI DSS v4.0** | **March 31, 2024:** v4.0 effective (v3.2.1 retired)<br>**March 31, 2025:** New requirements (marked "future-dated" in v4.0) become mandatory | Not currently applicable. If payment card processing begins → v4.0 requirements apply immediately (v3.2.1 retired). Future-dated requirements (MFA expansion, cryptographic enhancements, anti-phishing) mandatory March 2025 |
+| **PCI DSS v4.0.1** | **March 31, 2024:** v4.0 effective (v3.2.1 retired)<br>**March 31, 2025:** New requirements (marked "future-dated" in v4.0) become mandatory | Not currently applicable. If payment card processing begins → v4.0 requirements apply immediately (v3.2.1 retired). Future-dated requirements (MFA expansion, cryptographic enhancements, anti-phishing) mandatory March 2025 |
 | **NIS2** | **October 17, 2024:** EU member states must transpose into national law<br>**2024-2025:** National implementations vary by member state<br>**Varies by member state:** Application dates depend on national transposition law | Monitor: National implementations may affect applicability determination if organization operates in multiple EU member states. Check national cybersecurity authority for specific effective dates |
 
 ---

@@ -55,7 +55,7 @@ This policy establishes [Organisation]'s requirements for managing storage media
 
 **Purpose**: Define requirements for secure management of storage media in accordance with the organisation's classification scheme and handling requirements. This policy establishes WHAT storage media requirements apply and WHO is responsible. Implementation procedures (HOW) are documented in ISMS-IMP-A.7.10.
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, PCI DSS, DORA) apply where [Organisation]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (FINMA, PCI DSS v4.0.1, DORA) apply where [Organisation]'s business activities trigger applicability.
 
 ---
 
@@ -143,7 +143,7 @@ Apply only when specific business conditions trigger applicability:
 | Regulation | Trigger Condition | Requirements |
 |-----------|-------------------|--------------|
 | **EU GDPR** | Processing EU personal data, EU establishment, or offering services to EU | Art. 5(1)(f) integrity/confidentiality; Art. 17 right to erasure |
-| **PCI DSS v4.0** | Payment card processing | Requirement 9.4 - Media protection |
+| **PCI DSS v4.0.1** | Payment card processing | Requirement 9.4 - Media protection |
 | **FINMA** | Swiss regulated financial institution | Data protection and retention requirements |
 | **DORA** | EU financial services entity | ICT asset management |
 
@@ -151,9 +151,9 @@ Apply only when specific business conditions trigger applicability:
 
 These frameworks inform implementation but do not constitute mandatory compliance unless contractually required:
 
-- NIST SP 800-88 (Media Sanitization Guidelines)
+- NIST SP 800-88 Rev. 2 (Media Sanitization Guidelines)
 - ISO/IEC 27040 (Storage security)
-- CIS Controls v8 (Control 3 - Data Protection)
+- CIS Controls v8.1 (Control 3 - Data Protection)
 - Industry best practices for media management
 
 **Compliance Determination**: [Organisation] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent requirements apply where multiple regulations overlap.
@@ -282,7 +282,7 @@ Disposal and sanitisation SHALL ensure information cannot be recovered, using or
 | **INTERNAL** | Unrecoverable without specialist equipment | Verification of successful erasure documented |
 | **PUBLIC** | Standard deletion acceptable | Documentation of disposal |
 
-**Approved Methods**: Specific sanitisation and destruction methods per media type (HDD, SSD, tape, optical, mobile devices) are defined in ISMS-IMP-A.7.10.3, aligned with NIST SP 800-88 principles. Physical disposal requirements are addressed in ISMS-POL-A.7.6-7-14.
+**Approved Methods**: Specific sanitisation and destruction methods per media type (HDD, SSD, tape, optical, mobile devices) are defined in ISMS-IMP-A.7.10.3, aligned with NIST SP 800-88 Rev. 2 principles. Physical disposal requirements are addressed in ISMS-POL-A.7.6-7-14.
 
 ### Internal Re-Use
 

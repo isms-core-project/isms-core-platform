@@ -472,7 +472,7 @@ Once approved:
 - **Question:** How many days are these logs retained?
 - **Format:** Number of days (e.g., 90, 365, 2555 for 7 years)
 - **Common Requirements:**
-  - PCI DSS: 90 days online, 1 year in archive
+  - PCI DSS v4.0.1: 90 days online, 1 year in archive
   - GDPR: Depends on data processing purposes
   - General security best practice: 90-365 days
   - Forensic investigations: 1-7 years
@@ -544,12 +544,12 @@ Once approved:
 
 - **Question:** Where does this retention requirement come from?
 - **Dropdown Options:**
-  - **Regulatory** - Law, regulation (GDPR, PCI DSS, SOX)
+  - **Regulatory** - Law, regulation (GDPR, PCI DSS v4.0.1, SOX)
   - **Policy** - Internal organizational policy
   - **Contractual** - Customer/vendor contract requirement
   - **Best_Practice** - Industry best practice (NIST, CIS)
 - **Examples:**
-  - "PCI DSS v4.0 Requirement 10.5.1"
+  - "PCI DSS v4.0.1 Requirement 10.5.1"
   - "Swiss nDSG Art. 8"
   - "ISMS-POL-A.8.23, Section 2.4 (Logging and Monitoring)"
   - "Customer contract clause 7.3"
@@ -571,7 +571,7 @@ Once approved:
 - **Format:** Number of days
 - **Common Values:**
   - 30 days - Very short-term
-  - 90 days - PCI DSS minimum
+  - 90 days - PCI DSS v4.0.1 minimum
   - 365 days - 1 year (common)
   - 2555 days - 7 years (long-term compliance)
 - **Tip:** If requirement says "1 year", use 365 days for consistency
@@ -1877,7 +1877,7 @@ These are **calculated automatically:**
   - "No alert for excessive blocked requests from single user (>100/hour) - potential compromise indicator not detected"
   - "SOC operational dashboard not reviewed daily - defeats purpose of real-time monitoring"
   - "No documented runbook for 'Filtering Service Outage' incident category"
-  - "Log retention only 30 days but PCI DSS requires 90 days"
+  - "Log retention only 30 days but PCI DSS v4.0.1 requires 90 days"
 - **Bad Examples:**
   - "Monitoring could be better" (too vague)
   - "Need more logs" (not specific)
@@ -1892,7 +1892,7 @@ These are **calculated automatically:**
   - "Compromised accounts may go undetected for days"
   - "Dashboards exist but provide no operational value"
   - "Incident response delayed due to lack of procedures"
-  - "Regulatory compliance risk - non-compliant with PCI DSS"
+  - "Regulatory compliance risk - non-compliant with PCI DSS v4.0.1"
 - **Auditor Expects:** Clear articulation of risk
 - **Tip:** Impact should justify the priority level
 

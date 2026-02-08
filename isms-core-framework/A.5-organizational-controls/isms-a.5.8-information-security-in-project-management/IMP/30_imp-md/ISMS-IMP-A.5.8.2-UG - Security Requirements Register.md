@@ -41,7 +41,7 @@ This assessment provides a **structured security requirements register** for doc
 3. **Access Control & Authentication** - IAM, MFA, RBAC, privileged access, account lifecycle, access logging
 4. **Infrastructure Security** - Network segmentation, firewalls, patching, monitoring, secure configuration
 5. **Third-Party Security** - Vendor assessment, API security, data sharing, integration controls
-6. **Compliance & Regulatory** - GDPR, nDSG, PCI DSS, HIPAA, FINMA, audit trails, regulatory reporting
+6. **Compliance & Regulatory** - GDPR, nDSG, PCI DSS v4.0.1, HIPAA, FINMA, audit trails, regulatory reporting
 
 **Assessment Output:** Excel workbook providing:
 
@@ -75,7 +75,7 @@ This assessment provides a **structured security requirements register** for doc
 
 - **GDPR Art. 25 (Data Protection by Design):** Requires documented privacy/security requirements
 - **GDPR Art. 32 (Security of Processing):** Requires appropriate technical measures (documented requirements)
-- **PCI DSS Req. 6.3:** Secure SDLC with documented security requirements
+- **PCI DSS v4.0.1 Req. 6.3:** Secure SDLC with documented security requirements
 - **HIPAA § 164.308(a)(8):** Security requirements analysis for systems handling PHI
 - **NIS2 / DORA:** ICT security requirements integrated into development and procurement
 
@@ -240,7 +240,7 @@ This assessment implements **ISMS-POL-A.5.8, Section 2.4 (Security Requirements 
 **Section 2.4.6: Compliance and Regulatory Requirements**
 
 - Regulatory applicability assessment (per ISMS-POL-00 and A.5.31)
-- Specific regulatory controls (GDPR, PCI DSS, HIPAA, FINMA, etc.)
+- Specific regulatory controls (GDPR, PCI DSS v4.0.1, HIPAA, FINMA, etc.)
 - Audit trail and evidence retention
 - Regulatory reporting or notification requirements
 - Certification or attestation requirements (ISO 27001, SOC 2, etc.)
@@ -281,7 +281,7 @@ Before starting this assessment, ensure you have access to:
 - [ ] OWASP ASVS (Application Security Verification Standard) - comprehensive requirement library
 - [ ] CIS Benchmarks (for infrastructure security requirements)
 - [ ] NIST Cybersecurity Framework (if used by [Organization])
-- [ ] Industry-specific standards (PCI DSS for payment cards, HIPAA for healthcare, etc.)
+- [ ] Industry-specific standards (PCI DSS v4.0.1 for payment cards, HIPAA for healthcare, etc.)
 
 **Tools and Systems:**
 
@@ -386,7 +386,7 @@ Key regulations and their security requirements:
 - Art. 8: Appropriate technical and organizational measures
 - Similar requirements to GDPR for Swiss data
 
-**PCI DSS v4.0 (if processing payment card data):**
+**PCI DSS v4.0.1 (if processing payment card data):**
 
 - Req. 3: Protect stored cardholder data (encryption)
 - Req. 4: Encrypt transmission of cardholder data (TLS 1.2+)
@@ -541,7 +541,7 @@ For each of the 6 requirement categories, ask:
 
 **Category 6: Compliance & Regulatory (if regulatory requirements)**
 
-- Which regulations apply? (per ISMS-POL-00: GDPR, nDSG, PCI DSS, HIPAA, FINMA, etc.)
+- Which regulations apply? (per ISMS-POL-00: GDPR, nDSG, PCI DSS v4.0.1, HIPAA, FINMA, etc.)
 - GDPR requirements (if processing personal data):
   - Lawful basis for processing
   - Consent mechanism (if consent-based)
@@ -550,7 +550,7 @@ For each of the 6 requirement categories, ask:
   - DPIA (if high-risk processing)
   - Breach notification (within 72 hours)
   - DPO involvement (if required)
-- PCI DSS requirements (if payment card data):
+- PCI DSS v4.0.1 requirements (if payment card data):
   - Cardholder data encryption
   - Access control to cardholder data
   - Vulnerability management
@@ -607,7 +607,7 @@ From ISMS-POL-A.5.18 (Access Management):
 
 Use security standards as requirement sources:
 
-**OWASP Top 10 2021:**
+**OWASP Top 10:2025:**
 
 - A01: Broken Access Control → Requirements for authorization, access controls
 - A02: Cryptographic Failures → Requirements for encryption
@@ -778,7 +778,7 @@ REQ-010: "Follow security best practices."
 | **Vulnerability Scan** | Infrastructure vulnerabilities | Missing patches, insecure configurations, open ports | Nessus, Qualys, OpenVAS |
 | **Configuration Review** | Security settings | Firewall rules, TLS configuration, hardening applied | Manual review of config files, automated config scanner |
 | **Code Review** | Security-critical code | Cryptographic implementation, authentication logic | Manual peer review by security-aware developer |
-| **Compliance Scan** | Policy compliance | CIS benchmark compliance, PCI DSS compliance | Compliance scanning tool (Nessus, Qualys Policy Compliance) |
+| **Compliance Scan** | Policy compliance | CIS benchmark compliance, PCI DSS v4.0.1 compliance | Compliance scanning tool (Nessus, Qualys Policy Compliance) |
 | **Document Review** | Procedural requirements | Security documentation exists, policies defined | Review documented procedures, confirm completeness |
 | **Inspection** | Physical/visual verification | Encryption enabled, logs generated | Inspect database settings, check log files |
 
@@ -1430,7 +1430,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 |---------------------|--------|--------------|
 | "Vendor security assessment required before contract signature for all vendors: (High risk) Comprehensive questionnaire + certification review + possible audit, (Medium risk) Standard questionnaire + certification review, (Low risk) Contract security terms review only." | ISMS-POL-A.5.19 Section 3.1 | Assessment Completion Log |
 | "Security questionnaire topics: Information security program, data protection, personnel security, physical security, network security, incident response, business continuity, compliance certifications, subcontractor management." | ISMS-POL-A.5.19 Section 3.2 | Questionnaire Template Compliance |
-| "Vendor certifications required: ISO 27001 (information security) OR SOC 2 Type II (security, availability, confidentiality). PCI DSS if handling payment cards." | ISMS-POL-A.5.19 Section 3.3 | Certification Review (valid, current, scope appropriate) |
+| "Vendor certifications required: ISO 27001 (information security) OR SOC 2 Type II (security, availability, confidentiality). PCI DSS v4.0.1 if handling payment cards." | ISMS-POL-A.5.19 Section 3.3 | Certification Review (valid, current, scope appropriate) |
 | "High-risk vendor on-site audit: For vendors processing Restricted data or providing critical services, conduct on-site security audit every 2 years." | ISMS-POL-A.5.19 Section 3.4 | Audit Schedule + Audit Reports |
 | "Vendor risk scoring: Assign vendor risk level (Critical/High/Medium/Low) based on: data sensitivity, service criticality, regulatory scope, vendor maturity." | ISMS-POL-A.5.19 Section 4.1 | Vendor Risk Register |
 
@@ -1503,7 +1503,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 
 - ALL projects (some baseline compliance requirements apply universally)
 - Projects processing personal data (GDPR, nDSG compliance)
-- Sector-specific regulation projects (financial: FINMA/DORA, healthcare: HIPAA, payments: PCI DSS)
+- Sector-specific regulation projects (financial: FINMA/DORA, healthcare: HIPAA, payments: PCI DSS v4.0.1)
 - Projects subject to industry standards or contractual compliance obligations
 
 **Applies To:**
@@ -1530,20 +1530,20 @@ This section provides detailed guidance for each of the 6 requirement categories
 | "Data Protection Impact Assessment (DPIA): Conduct DPIA if processing high-risk personal data (profiling, special categories, large-scale monitoring, innovative technology)." | GDPR Art. 35 | DPIA Completion + DPO Approval |
 | "Data Processing Agreement (DPA): If using third-party data processors, execute DPA documenting processor obligations per GDPR Art. 28." | GDPR Art. 28 | Contract Review (DPA attachment present) |
 
-### Subcategory 6.2: PCI DSS (Payment Card Industry Data Security Standard)
+### Subcategory 6.2: PCI DSS v4.0.1 (Payment Card Industry Data Security Standard)
 
 | Requirement Example | Source | Verification |
 |---------------------|--------|--------------|
-| "Build and Maintain Secure Network: Install and maintain firewall configuration to protect cardholder data environment (CDE)." | PCI DSS Req. 1 | Firewall Config Review |
-| "Do not use vendor-supplied defaults: Change default passwords and security parameters on systems in CDE." | PCI DSS Req. 2 | Config Review (no default passwords) |
-| "Protect stored cardholder data: Encrypt stored PAN (Primary Account Number) using strong cryptography (AES-256). Never store CVV2/CVC2/CID after authorization." | PCI DSS Req. 3 | Database Encryption Review + Storage Audit (no CVV2) |
-| "Encrypt transmission of cardholder data: Use TLS 1.2+ for transmission of cardholder data over public networks." | PCI DSS Req. 4 | Network Traffic Inspection (TLS version) |
-| "Use and regularly update anti-virus software: Deploy anti-malware on all systems in CDE, signatures updated daily." | PCI DSS Req. 5 | Anti-malware Compliance Report |
-| "Develop secure systems and applications: Follow secure SDLC, train developers in secure coding (OWASP Top 10), conduct security testing before deployment." | PCI DSS Req. 6 | Secure SDLC Process Documentation + Training Records |
-| "Restrict access to cardholder data by business need-to-know: Limit access to CDE to minimum necessary, implement RBAC, MFA for all access to CDE." | PCI DSS Req. 7-8 | Access Matrix Review + MFA Verification |
-| "Track and monitor all access to network resources and cardholder data: Implement logging for all access to CDE, retain logs 90 days online + 1 year archive." | PCI DSS Req. 10 | Log Retention Config + Log Sample Review |
-| "Regularly test security systems and processes: Quarterly internal vulnerability scans, annual external penetration test, quarterly security awareness training." | PCI DSS Req. 11 | Vulnerability Scan Schedule + Pen Test Report + Training Records |
-| "Maintain information security policy: Document and maintain PCI DSS security policy, annual policy review, enforce compliance." | PCI DSS Req. 12 | Policy Document Review + Review Log |
+| "Build and Maintain Secure Network: Install and maintain firewall configuration to protect cardholder data environment (CDE)." | PCI DSS v4.0.1 Req. 1 | Firewall Config Review |
+| "Do not use vendor-supplied defaults: Change default passwords and security parameters on systems in CDE." | PCI DSS v4.0.1 Req. 2 | Config Review (no default passwords) |
+| "Protect stored cardholder data: Encrypt stored PAN (Primary Account Number) using strong cryptography (AES-256). Never store CVV2/CVC2/CID after authorization." | PCI DSS v4.0.1 Req. 3 | Database Encryption Review + Storage Audit (no CVV2) |
+| "Encrypt transmission of cardholder data: Use TLS 1.2+ for transmission of cardholder data over public networks." | PCI DSS v4.0.1 Req. 4 | Network Traffic Inspection (TLS version) |
+| "Use and regularly update anti-virus software: Deploy anti-malware on all systems in CDE, signatures updated daily." | PCI DSS v4.0.1 Req. 5 | Anti-malware Compliance Report |
+| "Develop secure systems and applications: Follow secure SDLC, train developers in secure coding (OWASP Top 10), conduct security testing before deployment." | PCI DSS v4.0.1 Req. 6 | Secure SDLC Process Documentation + Training Records |
+| "Restrict access to cardholder data by business need-to-know: Limit access to CDE to minimum necessary, implement RBAC, MFA for all access to CDE." | PCI DSS v4.0.1 Req. 7-8 | Access Matrix Review + MFA Verification |
+| "Track and monitor all access to network resources and cardholder data: Implement logging for all access to CDE, retain logs 90 days online + 1 year archive." | PCI DSS v4.0.1 Req. 10 | Log Retention Config + Log Sample Review |
+| "Regularly test security systems and processes: Quarterly internal vulnerability scans, annual external penetration test, quarterly security awareness training." | PCI DSS v4.0.1 Req. 11 | Vulnerability Scan Schedule + Pen Test Report + Training Records |
+| "Maintain information security policy: Document and maintain PCI DSS v4.0.1 security policy, annual policy review, enforce compliance." | PCI DSS v4.0.1 Req. 12 | Policy Document Review + Review Log |
 
 ### Subcategory 6.3: Sector-Specific Regulations (Financial Services - FINMA, DORA)
 
@@ -1590,7 +1590,7 @@ This section provides detailed guidance for each of the 6 requirement categories
 
 - Low Risk (Standard business, no special regulations): 5-10 requirements (basic GDPR if EU, audit trails, records retention)
 - Medium Risk (Personal data processing, standard industry): 15-30 requirements (comprehensive GDPR, sector-specific basics, privacy controls)
-- High Risk (Financial sector, healthcare, payment processing, multiple jurisdictions): 30-60 requirements (GDPR + PCI DSS OR FINMA/DORA OR HIPAA, extensive audit trails, certifications)
+- High Risk (Financial sector, healthcare, payment processing, multiple jurisdictions): 30-60 requirements (GDPR + PCI DSS v4.0.1 OR FINMA/DORA OR HIPAA, extensive audit trails, certifications)
 
 ---
 

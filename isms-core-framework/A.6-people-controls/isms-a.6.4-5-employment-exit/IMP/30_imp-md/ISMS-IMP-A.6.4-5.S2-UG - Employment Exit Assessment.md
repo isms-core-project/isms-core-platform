@@ -346,7 +346,7 @@ Document access revocation requirements:
 #### Column B: System_Examples
 
 - **Format:** Specific systems of this type
-- **Example:** AD, Azure AD, Okta
+- **Example:** AD, Microsoft Entra ID (formerly Azure AD), Okta
 
 #### Column C: Revocation_Method
 

@@ -206,7 +206,7 @@ For each system, use **ISMS-POL-A.8.15, Annex A (Logging Decision Matrix)** to d
 
 - What event categories are mandatory? (Authentication, Authorization, Administrative, Security, System, Network, Application)
 - What retention period applies? (per ISMS-POL-A.8.15, Section 2.3 + Annex A.2)
-- Are there special regulatory requirements? (PCI DSS, HIPAA, SOX per ISMS-POL-A.8.15, Section 1.5)
+- Are there special regulatory requirements? (PCI DSS v4.0.1, HIPAA, SOX per ISMS-POL-A.8.15, Section 1.5)
 
 **Phase 4: Logging Configuration Verification (Sheets 4-9)**
 
@@ -448,9 +448,9 @@ This sheet links system attributes (from Sheet 2) to logging requirements (from 
 
 **Column O: Special Regulatory Requirements**
 
-- Dropdown: None, PCI DSS, HIPAA, SOX, GDPR/nDSG, Multiple
+- Dropdown: None, PCI DSS v4.0.1, HIPAA, SOX, GDPR/nDSG, Multiple
 - Per ISMS-POL-A.8.15, Section 1.5 (Regulatory Applicability)
-- **PCI DSS**: 12 months minimum online retention
+- **PCI DSS v4.0.1**: 12 months minimum online retention
 - **HIPAA**: 6 years minimum total retention
 - **SOX**: 7 years minimum for financial systems
 

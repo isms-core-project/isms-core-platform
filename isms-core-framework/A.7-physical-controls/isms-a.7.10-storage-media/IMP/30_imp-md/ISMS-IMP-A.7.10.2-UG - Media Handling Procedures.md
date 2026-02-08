@@ -61,7 +61,7 @@ This assessment evaluates [Organisation]'s implementation of **storage media han
 
 - **Data Loss Prevention:** Proper handling prevents accidental exposure
 - **Chain of Custody:** Critical for legal proceedings and investigations
-- **Regulatory Compliance:** GDPR, PCI DSS require handling controls
+- **Regulatory Compliance:** GDPR, PCI DSS v4.0.1 require handling controls
 - **Operational Continuity:** Protected media ensures data availability
 - **Audit Evidence:** Documented procedures demonstrate control implementation
 

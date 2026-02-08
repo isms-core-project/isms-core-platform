@@ -288,7 +288,7 @@ This assessment should be conducted after:
 
 **Column D - Standard/Method:**
 
-- "DoD 5220.22-M (3-pass)", "NIST 800-88 Clear", "NIST 800-88 Purge", "Physical Destruction"
+- "DoD 5220.22-M (3-pass)", "NIST 800-88 Rev. 2 Clear", "NIST 800-88 Rev. 2 Purge", "Physical Destruction"
 
 **Column E - Verification Method:**
 

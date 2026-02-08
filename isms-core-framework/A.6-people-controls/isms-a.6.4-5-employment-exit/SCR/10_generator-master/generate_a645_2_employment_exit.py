@@ -250,7 +250,7 @@ def create_access_revocation_sheet(ws, styles):
     # Pre-populate access types
     access_types = [
         ("Physical Access", "Building badges, keys, biometrics", "Disable badge in access system, collect keys, remove biometric template", "End of last day", "Within 1 hour", "Badge log review, test badge at door", "Facilities Team", "None"),
-        ("AD/Directory", "Active Directory, Azure AD, LDAP", "Disable account, move to Disabled OU, remove from groups", "End of last day", "Within 1 hour", "Login attempt test, access report", "IAM Team", "SSO-integrated apps disabled automatically"),
+        ("AD/Directory", "Active Directory, Microsoft Entra ID (formerly Azure AD), LDAP", "Disable account, move to Disabled OU, remove from groups", "End of last day", "Within 1 hour", "Login attempt test, access report", "IAM Team", "SSO-integrated apps disabled automatically"),
         ("Email", "Exchange, O365, Google Workspace", "Disable account, set auto-reply, configure forwarding if approved", "End of last day", "Within 1 hour", "Login attempt, mail flow test", "IAM Team", "Requires AD disable first"),
         ("VPN", "Corporate VPN, remote access", "Revoke VPN certificate, disable VPN account", "End of last day", "Within 1 hour", "Connection attempt test", "Network Team", "May require AD disable"),
         ("Applications", "Business apps, SaaS (non-SSO)", "Disable/remove user from each application", "End of last day + 24h", "Same day", "Login attempt per app", "Application Owners", "Coordinate with app owners"),

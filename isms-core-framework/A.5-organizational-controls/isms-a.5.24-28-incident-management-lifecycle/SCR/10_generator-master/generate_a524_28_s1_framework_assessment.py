@@ -526,7 +526,7 @@ def create_governance_assessment(ws, styles):
         ("Q16", "Regulatory Compliance", "Have applicable regulatory incident notification requirements been identified?", "Yes - Documented/Partially/No"),
         ("Q17", "Regulatory Compliance", "(If GDPR applies) Is GDPR 72-hour breach notification procedure documented?", "Yes/No/N/A"),
         ("Q18", "Regulatory Compliance", "(If Swiss nDSG applies) Is Swiss nDSG breach notification procedure documented?", "Yes/No/N/A"),
-        ("Q19", "Regulatory Compliance", "(If PCI DSS applies) Is PCI DSS incident reporting procedure documented?", "Yes/No/N/A"),
+        ("Q19", "Regulatory Compliance", "(If PCI DSS v4.0.1 applies) Is PCI DSS v4.0.1 incident reporting procedure documented?", "Yes/No/N/A"),
         ("Q20", "Regulatory Compliance", "Are sector-specific incident reporting requirements documented (FINMA, DORA, NIS2, HIPAA, etc.)?", "Yes/No/N/A"),
         
         # Section E: Exception Management (Q21-Q22)
@@ -721,7 +721,7 @@ def create_training_competency(ws, styles):
         # Section C: Simulation & Testing (Q66-Q68)
         ("Q66", "Simulation & Testing", "Does [Organization] conduct full-scale incident response exercises (beyond tabletop)?", "Yes - Regularly/Yes - Occasionally/No"),
         ("Q67", "Simulation & Testing", "Does [Organization] use breach simulation or attack simulation tools?", "Yes/No"),
-        ("Q68", "Simulation & Testing", "Are drills conducted specifically for regulatory breach notification (GDPR 72-hour, PCI DSS, etc.)?", "Yes/No"),
+        ("Q68", "Simulation & Testing", "Are drills conducted specifically for regulatory breach notification (GDPR 72-hour, PCI DSS v4.0.1, etc.)?", "Yes/No"),
         
         # Section D: Competency & Certification (Q69-Q72)
         ("Q69", "Competency & Certification", "Are competency requirements defined for incident response roles?", "Yes/No"),

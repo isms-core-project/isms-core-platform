@@ -332,7 +332,7 @@ No Data Access      │ Level 4    │ Level 4    │ Level 3    │
 **Alternative Attestations**: If ISO/SOC certifications unavailable, [Organization] may accept:
 
 - Government-issued certifications (FedRAMP, C5 in Germany)
-- Industry-specific certifications (PCI DSS for payment processors, HITRUST for healthcare)
+- Industry-specific certifications (PCI DSS v4.0.1 for payment processors, HITRUST for healthcare)
 - Detailed third-party security audit reports (requires CISO approval)
 
 ## Due Diligence Documentation

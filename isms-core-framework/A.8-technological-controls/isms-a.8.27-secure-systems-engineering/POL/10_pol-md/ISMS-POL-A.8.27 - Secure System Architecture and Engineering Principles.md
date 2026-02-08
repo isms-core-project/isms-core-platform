@@ -118,7 +118,7 @@ This policy establishes [Organisation]'s foundational requirements for Secure Sy
 |-----------|---------|-------------|
 | **DORA** | EU financial services | ICT risk management framework, secure architecture |
 | **NIS2** | Essential/important entity | Security by design requirements |
-| **PCI DSS v4.0** | Payment card processing | Secure systems development requirements |
+| **PCI DSS v4.0.1** | Payment card processing | Secure systems development requirements |
 | **FINMA** | Swiss financial institution | IT architecture security requirements |
 
 Compliance determination per ISMS-POL-00 (Regulatory Applicability Framework).

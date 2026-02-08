@@ -376,7 +376,7 @@ For each SDLC phase, assess whether security activities are:
 - [ ] Security requirements identified and documented
 - [ ] Initial threat identification conducted
 - [ ] Data classification determined
-- [ ] Compliance requirements identified (GDPR, PCI DSS, etc.)
+- [ ] Compliance requirements identified (GDPR, PCI DSS v4.0.1, etc.)
 - [ ] Security acceptance criteria defined
 
 **Phase 2: Design**

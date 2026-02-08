@@ -296,7 +296,7 @@ Regulations and controls have complex relationships:
 - Challenge: Ensure complete coverage (easy to miss controls)
 
 **Many-to-One** (Many requirements → One control):
-- Example: A.8.24 (Cryptography) satisfies encryption requirements from GDPR, PCI DSS, HIPAA, etc.
+- Example: A.8.24 (Cryptography) satisfies encryption requirements from GDPR, PCI DSS v4.0.1, HIPAA, etc.
 - Mapping approach: Use Control_Reuse sheet to identify efficiency
 - Benefit: Implement one control, satisfy multiple requirements
 
@@ -312,7 +312,7 @@ This mapping directly informs SoA decisions:
 
 **Control Selection Justification:**
 - Control included BECAUSE it satisfies regulatory requirements
-- SoA justification: "Required by GDPR Art. 32, PCI DSS Req. 4.1, Customer Contract Sec. 5.3"
+- SoA justification: "Required by GDPR Art. 32, PCI DSS v4.0.1 Req. 4.1, Customer Contract Sec. 5.3"
 
 **Control Exclusion Justification:**
 - Control excluded because no regulatory requirement drives it
@@ -328,7 +328,7 @@ ISO 27001 Annex A is not exhaustive - organizations often need additional contro
 
 **When to Add:**
 - Regulatory requirement not satisfiable by any Annex A control
-- Industry-specific requirement (e.g., PCI DSS physical security requirements)
+- Industry-specific requirement (e.g., PCI DSS v4.0.1 physical security requirements)
 - Customer contractual requirement (e.g., specific encryption algorithm)
 - Organizational policy beyond compliance minimum
 

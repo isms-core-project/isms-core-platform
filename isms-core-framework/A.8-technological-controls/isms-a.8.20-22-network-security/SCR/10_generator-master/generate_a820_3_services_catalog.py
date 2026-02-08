@@ -264,7 +264,7 @@ Validate service security by:
 
 **Regulatory Alignment:**
 Ensure network services security aligns with applicable regulatory requirements:
-- Payment processing: PCI DSS network services requirements
+- Payment processing: PCI DSS v4.0.1 network services requirements
 - Healthcare: HIPAA network services security standards
 - Finance: Regional banking network services requirements
 - Government: Jurisdiction-specific service security mandates

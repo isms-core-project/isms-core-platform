@@ -55,7 +55,7 @@ Diese Richtlinie definiert die Anforderungen von [Organisation] für Netzwerksic
 
 **Kombinierter Control-Ansatz**: Diese drei Controls werden als einheitliches Framework implementiert, da sie auf derselben Netzwerkinfrastruktur operieren und gemeinsame Discovery-, Assessment- und Evidence-Collection-Prozesse teilen. Trotz einheitlicher Implementierung behält jeder Control distinkte Anforderungen für Statement of Applicability (SoA) Zwecke bei.
 
-**Regulatorisches Alignment**: Diese Richtlinie adressiert obligatorische Compliance-Anforderungen gemäss ISMS-POL-00 (Regulatory Applicability Framework), einschliesslich Schweizer nDSG, EU DSGVO und ISO/IEC 27001:2022. Konditionale branchenspezifische Anforderungen (PCI DSS, FINMA, DORA, NIS2) gelten, wo Geschäftsaktivitäten der [Organisation] Anwendbarkeit auslösen.
+**Regulatorisches Alignment**: Diese Richtlinie adressiert obligatorische Compliance-Anforderungen gemäss ISMS-POL-00 (Regulatory Applicability Framework), einschliesslich Schweizer nDSG, EU DSGVO und ISO/IEC 27001:2022. Konditionale branchenspezifische Anforderungen (PCI DSS v4.0.1, FINMA, DORA, NIS2) gelten, wo Geschäftsaktivitäten der [Organisation] Anwendbarkeit auslösen.
 
 ---
 
@@ -194,7 +194,7 @@ Diese Richtlinie implementiert Netzwerksicherheits-Anforderungen zur Compliance 
 
 | Regulation | Anforderung | Trigger-Bedingung |
 |------------|-------------|-------------------|
-| **PCI DSS** | Netzwerk-Segmentierung (Req. 1), sichere Netzwerk-Services | Verarbeitung von Payment Card Data |
+| **PCI DSS v4.0.1** | Netzwerk-Segmentierung (Req. 1), sichere Netzwerk-Services | Verarbeitung von Payment Card Data |
 | **FINMA** | Netzwerksicherheits-Kontrollen für Finanzinstitutionen | Schweizer Finanzdienstleistungs-Operationen |
 | **DORA** | ICT-Netzwerksicherheit und Resilienz | EU-Finanzdienstleistungs-Operationen |
 | **NIS2** | Netzwerksicherheits-Massnahmen für essentielle/wichtige Entities | Critical Infrastructure Designation |
@@ -204,7 +204,7 @@ Diese Richtlinie implementiert Netzwerksicherheits-Anforderungen zur Compliance 
 Best-Practice-Frameworks referenziert, aber keine obligatorischen Compliance-Anforderungen:
 
 - ISO/IEC 27033 (Network Security)
-- NIST CSF (Cybersecurity Framework)
+- NIST CSF 2.0 (Cybersecurity Framework)
 - CIS Controls (Network Device Hardening Benchmarks)
 
 **United States Federal Requirements**: Referenzen auf US Federal Frameworks (FISMA, FIPS, FedRAMP, NIST Cybersecurity Requirements) gelten nur, wo [Organisation] explizite US Federal vertragliche Verpflichtungen hat, wie definiert in ISMS-POL-00.
@@ -681,7 +681,7 @@ Diese Richtlinie unterstützt folgende SoA-Einträge:
 | **Schweizer nDSG** | Technische Massnahmen zum Schutz personenbezogener Daten; Access Controls; Logging | Abschnitt 2.1, 2.2, 2.3 | Netzwerksicherheits-Assessments, Logs, Segmentierungs-Dokumentation |
 | **EU DSGVO (Art. 32)** | Technische Massnahmen inkl. Netzwerksicherheit; Access Controls; Verschlüsselung von Daten im Transit | Abschnitt 2.1, 2.2, 2.3 | Netzwerksicherheits-Assessments, Verschlüsselungs-Configs |
 | **ISO 27001:2022** | A.8.20 Network Device Security; A.8.21 Network Services Security; A.8.22 Network Segmentation | Abschnitt 2.1, 2.2, 2.3 | Alle Assessment Workbooks |
-| **PCI DSS (Req. 1)** | Firewall und Router Configuration Standards; Netzwerk-Segmentierung für Cardholder Data | Abschnitt 2.3 | Segmentation Matrix (Workbook 4), Firewall Configs |
+| **PCI DSS v4.0.1 (Req. 1)** | Firewall und Router Configuration Standards; Netzwerk-Segmentierung für Cardholder Data | Abschnitt 2.3 | Segmentation Matrix (Workbook 4), Firewall Configs |
 | **FINMA** | Netzwerksicherheits-Kontrollen; Segregation von Environments; Monitoring | Abschnitt 2.1, 2.2, 2.3 | Netzwerksicherheits-Assessments, Monitoring Logs |
 | **DORA** | Network und Information Systems Security; Network Segmentation | Abschnitt 2.1, 2.3 | Netzwerksicherheits-Assessments, Segmentierungs-Dokumentation |
 | **NIS2** | Netzwerksicherheits-Massnahmen; Network Segmentation; Security Monitoring | Abschnitt 2.1, 2.2, 2.3 | Alle Assessment Workbooks, Monitoring Evidence |

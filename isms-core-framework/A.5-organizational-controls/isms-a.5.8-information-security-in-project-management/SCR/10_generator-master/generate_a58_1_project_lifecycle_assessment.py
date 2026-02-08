@@ -303,7 +303,7 @@ def create_classification_sheet(ws, styles):
     row += 1
 
     scenarios = [
-        ("Customer-facing web portal with payment processing", "High", "External exposure + PCI DSS + customer PII"),
+        ("Customer-facing web portal with payment processing", "High", "External exposure + PCI DSS v4.0.1 + customer PII"),
         ("Internal HR system with employee data", "Medium", "Internal PII but limited exposure"),
         ("Marketing website refresh (static content)", "Low", "Public data, no integration"),
         ("Cloud migration of core ERP system", "High", "Critical system + complexity + third-party"),

@@ -358,7 +358,7 @@ def create_reuse_sheet(ws):
 
     dv_erasure = DataValidation(
         type="list",
-        formula1='"NIST 800-88 Clear,NIST 800-88 Purge,Cryptographic Erasure,Factory Reset,Full Format,Quick Format,Physical Destruction"',
+        formula1='"NIST 800-88 Rev. 2 Clear,NIST 800-88 Rev. 2 Purge,Cryptographic Erasure,Factory Reset,Full Format,Quick Format,Physical Destruction"',
         allow_blank=True
     )
     ws.add_data_validation(dv_erasure)

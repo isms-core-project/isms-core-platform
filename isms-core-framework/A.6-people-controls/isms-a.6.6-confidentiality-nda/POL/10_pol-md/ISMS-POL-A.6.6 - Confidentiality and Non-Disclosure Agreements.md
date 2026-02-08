@@ -64,7 +64,7 @@ This policy establishes [Organisation]'s requirements for confidentiality and no
 - Board members and advisors
 - Visitors with escorted access to sensitive areas
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00, including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Sector-specific requirements (FINMA, PCI DSS) apply where [Organisation]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00, including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Sector-specific requirements (FINMA, PCI DSS v4.0.1) apply where [Organisation]'s business activities trigger applicability.
 
 ---
 
@@ -127,7 +127,7 @@ The following require specific consideration per ISMS-POL-00:
 | Regulation | Trigger Condition |
 |-----------|-------------------|
 | **FINMA** | Swiss regulated financial institution |
-| **PCI DSS** | Payment card data handling |
+| **PCI DSS v4.0.1** | Payment card data handling |
 
 ---
 

@@ -227,7 +227,7 @@ Review and update assessment:
 
 **Quality Assurance:**
 Cross-validate access data against multiple sources:
-- Identity systems (AD, Azure AD, Okta groups)
+- Identity systems (AD, Microsoft Entra ID (formerly Azure AD), Okta groups)
 - Application-specific access controls
 - Database user privileges
 - Network access controls

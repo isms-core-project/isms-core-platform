@@ -249,7 +249,7 @@ Ensure vendor deletion controls align with applicable regulatory requirements:
 - Privacy laws: GDPR Article 28, Swiss FADP Article 9 processor obligations
 - Financial services: Outsourcing guidelines, third-party risk management
 - Healthcare: HIPAA Business Associate Agreements (BAA) and data disposal
-- Payment processing: PCI DSS third-party service provider requirements
+- Payment processing: PCI DSS v4.0.1 third-party service provider requirements
 
 Customize assessment criteria to include regulatory-specific requirements.
 
@@ -1419,7 +1419,7 @@ def create_sheet4_vendor_contract(ws, styles):
          [
              ["Date of Deletion", "Deleted on: 2025-12-15"],
              ["Scope", "All customer records for Company X"],
-             ["Method", "Secure deletion per NIST SP 800-88"],
+             ["Method", "Secure deletion per NIST SP 800-88 Rev. 2"],
              ["Systems", "Production DB, backups, archives"],
              ["Verification", "Forensic verification completed"],
              ["Authorized Signatory", "Signed by: DPO"]

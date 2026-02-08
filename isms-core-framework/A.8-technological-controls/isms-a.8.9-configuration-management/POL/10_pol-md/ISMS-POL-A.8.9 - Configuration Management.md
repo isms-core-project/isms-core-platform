@@ -56,7 +56,7 @@ This policy establishes [Organization]'s requirements for configuration manageme
 
 **Purpose**: Define organizational requirements for configuration management. This policy establishes WHAT must be configured, WHEN changes require approval, WHO is accountable, and WHICH standards apply. Implementation procedures (HOW) are in ISMS-IMP-A.8.9. Technical reference is in ISMS-CTX-A.8.9 (NOT ISMS).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance per ISMS-POL-00, including Swiss nDSG, EU GDPR (where applicable), and ISO/IEC 27001:2022. Conditional requirements (PCI DSS, HIPAA, FINMA, DORA, NIS2) apply where [Organization]'s activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance per ISMS-POL-00, including Swiss nDSG, EU GDPR (where applicable), and ISO/IEC 27001:2022. Conditional requirements (PCI DSS v4.0.1, HIPAA, FINMA, DORA, NIS2) apply where [Organization]'s activities trigger applicability.
 
 ---
 
@@ -134,7 +134,7 @@ Per **ISMS-POL-00 (Regulatory Applicability Framework)**:
 
 | Regulation | Trigger | Requirements |
 |------------|---------|--------------|
-| PCI DSS v4.0 | Payment card processing | Req. 1-4, 6, 11: Configuration standards |
+| PCI DSS v4.0.1 | Payment card processing | Req. 1-4, 6, 11: Configuration standards |
 | HIPAA | US healthcare data | §164.308(a)(8), §164.310: Configuration controls |
 | FINMA | Swiss financial services | Risk-based configuration management |
 | DORA | EU critical financial | Art. 9, 21: ICT risk & incident management |
@@ -142,7 +142,7 @@ Per **ISMS-POL-00 (Regulatory Applicability Framework)**:
 
 **Tier 3: Informational**
 
-NIST SP 800-53/128, CIS Controls v8, ITIL 4, COBIT 2019, CIS Benchmarks, DISA STIGs
+NIST SP 800-53/128, CIS Controls v8.1, ITIL 4, COBIT 2019, CIS Benchmarks, DISA STIGs
 
 ---
 

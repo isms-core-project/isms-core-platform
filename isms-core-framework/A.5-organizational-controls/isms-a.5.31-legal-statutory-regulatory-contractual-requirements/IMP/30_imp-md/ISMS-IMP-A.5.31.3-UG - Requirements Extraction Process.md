@@ -1130,7 +1130,7 @@ Categories inform resource needs.
 - **Examples**:
   - REG-GDPR-32-001 (First requirement from GDPR Article 32)
   - REG-HIPAA-164-001 (First requirement from HIPAA 45 CFR § 164)
-  - REG-PCI-3-001 (First requirement from PCI DSS Requirement 3)
+  - REG-PCI-3-001 (First requirement from PCI DSS v4.0.1 Requirement 3)
 
 **2. Regulation ID**:
 
@@ -1149,7 +1149,7 @@ Categories inform resource needs.
 - **Examples**:
   - "Article 32, Paragraph 1(a)"
   - "45 CFR § 164.308(a)(1)(i)"
-  - "PCI DSS Requirement 3.4"
+  - "PCI DSS v4.0.1 Requirement 3.4"
 - Enables looking up source text
 
 **5. Original Requirement Text**:
@@ -1939,9 +1939,9 @@ Comments/Caveats: [If any]
 |------------|----------------|----------------|-------|
 | GDPR | Article 32 | REG-GDPR-32-001 | First requirement from GDPR Article 32 |
 | HIPAA | 45 CFR § 164.308 | REG-HIPAA-164-001 | Use just "164" (section number) |
-| PCI DSS | Requirement 3.4 | REG-PCI-3-4-001 | Decimal becomes hyphen |
+| PCI DSS v4.0.1 | Requirement 3.4 | REG-PCI-3-4-001 | Decimal becomes hyphen |
 | SOX | Section 404 | REG-SOX-404-001 | Section 404 |
-| NIST CSF | Function: Protect | REG-NIST-PR-001 | Use function abbreviation |
+| NIST CSF 2.0 | Function: Protect | REG-NIST-PR-001 | Use function abbreviation |
 
 **If Regulation Doesn't Have Article Numbers**:
 

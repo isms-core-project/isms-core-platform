@@ -215,7 +215,7 @@ before using results for compliance reporting or remediation decisions.
 **Regulatory Alignment:**
 Ensure baseline configuration practices align with applicable requirements:
 - ISO 27001:2022: Control A.8.9 compliance
-- PCI DSS: System configuration documentation requirements
+- PCI DSS v4.0.1: System configuration documentation requirements
 - Sector-specific: Regulatory configuration baseline standards
 - Internal: Organizational baseline and hardening policies
 

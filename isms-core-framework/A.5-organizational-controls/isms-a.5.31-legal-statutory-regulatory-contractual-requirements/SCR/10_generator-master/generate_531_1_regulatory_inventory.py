@@ -59,7 +59,7 @@ foundation for the entire regulatory compliance framework.
 - Industry-specific regulatory requirements (financial, healthcare, critical infrastructure)
 - Contractual obligations (customer requirements, supplier agreements, SLAs)
 - International standards adoption (ISO 27001, ISO 27017, ISO 27018)
-- Voluntary frameworks (NIST CSF, CIS Controls, Cloud Security Alliance)
+- Voluntary frameworks (NIST CSF 2.0, CIS Controls, Cloud Security Alliance)
 - Regional/jurisdictional requirements (EU, Swiss, US state laws)
 - Emerging regulations (AI Act, Cyber Resilience Act, NIS2)
 - Tier classification (Mandatory/Conditional/Informational)
@@ -199,12 +199,12 @@ Tier 1 (Mandatory): Legal/contractual obligation - MUST comply
 - Approval: Legal Counsel + Executive Management required
 
 Tier 2 (Conditional): Would apply IF specific conditions met
-- Examples: DORA (if becoming EU financial entity), PCI DSS (if processing cards), NIS2 (if designated critical entity)
+- Examples: DORA (if becoming EU financial entity), PCI DSS v4.0.1 (if processing cards), NIS2 (if designated critical entity)
 - Review: Quarterly (monitor for trigger conditions)
 - Approval: Compliance Officer + ISMS Manager
 
 Tier 3 (Informational): Voluntary framework used for guidance/benchmarking
-- Examples: NIST CSF, CIS Controls, Cloud Security Alliance CCM
+- Examples: NIST CSF 2.0, CIS Controls, Cloud Security Alliance CCM
 - Review: Biennially
 - Approval: ISMS Manager
 
@@ -654,7 +654,7 @@ def generate_sample_data():
             "Short Name / Acronym": "NIST CSF 2.0",
             "Jurisdiction": "International (US-origin)",
             "Issuing Authority": "NIST",
-            "Citation": "NIST Cybersecurity Framework v2.0",
+            "Citation": "NIST Cybersecurity Framework (CSF) 2.0 v2.0",
             "Effective Date": datetime(2024, 2, 26),
             "Tier": "3-Informational",
             "Applicability Status": "Applicable",

@@ -270,7 +270,7 @@ This assessment implements requirements from:
 
 - ISO/IEC 27001:2022 A.8.16: Monitoring activities
 - GDPR Article 32: Technical measures including monitoring
-- PCI DSS 10.2: Audit log coverage requirements
+- PCI DSS v4.0.1 10.2: Audit log coverage requirements
 - HIPAA §164.312(b): Audit controls
 
 ## Expected Outputs

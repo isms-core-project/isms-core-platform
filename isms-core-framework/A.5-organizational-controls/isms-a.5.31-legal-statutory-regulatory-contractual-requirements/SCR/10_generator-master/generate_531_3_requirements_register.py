@@ -262,7 +262,7 @@ Precise citation enables audit traceability and update management:
 
 **Good Citation Format:**
 - GDPR Article 5(1)(f) - Security principle
-- NIST CSF v1.1 PR.AC-4 - Access permissions
+- NIST CSF 2.0 v1.1 PR.AC-4 - Access permissions
 - ISO 27001:2022 A.5.31 - Legal requirements
 - Swiss FADP Article 8 - Data security
 
@@ -335,14 +335,14 @@ Legal counsel should review requirements extraction for:
 
 Particularly critical for:
 - Data protection regulations (GDPR, FADP) - complex legal concepts
-- Financial regulations (DORA, PCI DSS) - technical + legal requirements
+- Financial regulations (DORA, PCI DSS v4.0.1) - technical + legal requirements
 - Emerging regulations (AI Act, Cyber Resilience) - unclear interpretations
 
 **Common Extraction Challenges:**
 
 1. **Principle-Based vs. Rule-Based Regulations**:
    - Principle-based (GDPR): Broad principles requiring interpretation
-   - Rule-based (PCI DSS): Specific technical requirements
+   - Rule-based (PCI DSS v4.0.1): Specific technical requirements
    - Extraction approach differs - principles need more interpretation
 
 2. **Nested Requirements** (requirement within requirement):
@@ -911,7 +911,7 @@ def generate_sample_data():
             "Last Updated": today,
         },
         
-        # NIST CSF (Voluntary/Tier 3)
+        # NIST CSF 2.0 (Voluntary/Tier 3)
         {
             "Requirement ID": "REG-NIST-ID.AM-001",
             "Regulation ID": "REG-VOL-001",

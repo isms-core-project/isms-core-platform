@@ -174,7 +174,7 @@ def create_system_inventory_sheet(wb: Workbook):
         ("Active Directory", "Identity Provider", "Microsoft", "", "", "Password + Kerberos", "", "", "", ""),
         ("Azure AD / Entra ID", "Cloud Identity", "Microsoft", "", "", "Password + MFA", "", "", "", ""),
         ("Okta", "Identity Provider", "Okta", "", "", "SAML/OIDC + MFA", "", "", "", ""),
-        ("Microsoft 365", "Cloud Application", "Microsoft", "", "", "Azure AD SSO", "", "", "", ""),
+        ("Microsoft 365", "Cloud Application", "Microsoft", "", "", "Microsoft Entra ID (formerly Azure AD) SSO", "", "", "", ""),
         ("Salesforce", "Cloud Application", "Salesforce", "", "", "SAML SSO", "", "", "", ""),
         ("AWS Console", "Cloud Infrastructure", "Amazon", "", "", "IAM + MFA", "", "", "", ""),
         ("VPN Gateway", "Network Access", "", "", "", "RADIUS + MFA", "", "", "", ""),
@@ -229,10 +229,10 @@ def create_security_assessment_sheet(wb: Workbook):
         ("Active Directory", "Password Policy", "Password history (12+)", "12 passwords remembered", "", "", "", "", ""),
         ("Active Directory", "Account Lockout", "Lockout threshold", "5 attempts", "", "", "", "", ""),
         ("Active Directory", "Account Lockout", "Lockout duration", "15 minutes", "", "", "", "", ""),
-        ("Azure AD", "MFA Policy", "MFA enforced for all users", "Conditional Access policy", "", "", "", "", ""),
-        ("Azure AD", "MFA Policy", "Approved MFA methods", "Authenticator, FIDO2", "", "", "", "", ""),
-        ("Azure AD", "Risk Detection", "Sign-in risk policy", "Block high risk", "", "", "", "", ""),
-        ("Azure AD", "Password Protection", "Banned password list", "Custom + global list", "", "", "", "", ""),
+        ("Microsoft Entra ID (formerly Azure AD)", "MFA Policy", "MFA enforced for all users", "Conditional Access policy", "", "", "", "", ""),
+        ("Microsoft Entra ID (formerly Azure AD)", "MFA Policy", "Approved MFA methods", "Authenticator, FIDO2", "", "", "", "", ""),
+        ("Microsoft Entra ID (formerly Azure AD)", "Risk Detection", "Sign-in risk policy", "Block high risk", "", "", "", "", ""),
+        ("Microsoft Entra ID (formerly Azure AD)", "Password Protection", "Banned password list", "Custom + global list", "", "", "", "", ""),
         ("VPN Gateway", "Authentication", "MFA required", "RADIUS + TOTP", "", "", "", "", ""),
         ("VPN Gateway", "Logging", "Authentication logging", "All attempts logged", "", "", "", "", ""),
         ("Database", "Authentication", "Strong passwords for service accounts", "24+ characters", "", "", "", "", ""),
@@ -279,7 +279,7 @@ def create_storage_assessment_sheet(wb: Workbook):
 
     storage = [
         ("Active Directory", "NTDS.dit database", "NT Hash (MD4) + Kerberos", "No (legacy)", "DPAPI/TPM", "BitLocker", "", ""),
-        ("Azure AD", "Microsoft cloud", "PBKDF2-SHA256", "Yes (per-user)", "HSM-backed", "AES-256", "", ""),
+        ("Microsoft Entra ID (formerly Azure AD)", "Microsoft cloud", "PBKDF2-SHA256", "Yes (per-user)", "HSM-backed", "AES-256", "", ""),
         ("Web Application (Custom)", "SQL Database", "", "", "", "", "", ""),
         ("Legacy Application", "Local files", "", "", "", "", "", ""),
         ("Service Account Vault", "HashiCorp Vault", "N/A (encrypted storage)", "N/A", "Seal key/HSM", "AES-256-GCM", "", ""),
@@ -327,14 +327,14 @@ def create_integration_assessment_sheet(wb: Workbook):
     create_header_row(ws, 3, headers)
 
     integrations = [
-        ("Microsoft 365", "OIDC/WS-Fed", "Azure AD", "Yes", "Configurable", "Yes", "Automated", "", ""),
-        ("Salesforce", "SAML 2.0", "Azure AD", "Yes", "2 hours", "Yes", "SCIM", "", ""),
-        ("ServiceNow", "SAML 2.0", "Azure AD", "Yes", "8 hours", "Yes", "SCIM", "", ""),
-        ("Workday", "SAML 2.0", "Azure AD", "Yes", "Configurable", "Yes", "API", "", ""),
-        ("AWS Console", "SAML 2.0", "Azure AD", "Yes", "1 hour", "Yes", "Manual", "", ""),
-        ("GitHub Enterprise", "SAML 2.0", "Azure AD", "Yes", "8 hours", "Yes", "SCIM", "", ""),
-        ("Zoom", "SAML 2.0", "Azure AD", "Yes", "24 hours", "Yes", "SCIM", "", ""),
-        ("Slack", "SAML 2.0", "Azure AD", "Yes", "Configurable", "Yes", "SCIM", "", ""),
+        ("Microsoft 365", "OIDC/WS-Fed", "Microsoft Entra ID (formerly Azure AD)", "Yes", "Configurable", "Yes", "Automated", "", ""),
+        ("Salesforce", "SAML 2.0", "Microsoft Entra ID (formerly Azure AD)", "Yes", "2 hours", "Yes", "SCIM", "", ""),
+        ("ServiceNow", "SAML 2.0", "Microsoft Entra ID (formerly Azure AD)", "Yes", "8 hours", "Yes", "SCIM", "", ""),
+        ("Workday", "SAML 2.0", "Microsoft Entra ID (formerly Azure AD)", "Yes", "Configurable", "Yes", "API", "", ""),
+        ("AWS Console", "SAML 2.0", "Microsoft Entra ID (formerly Azure AD)", "Yes", "1 hour", "Yes", "Manual", "", ""),
+        ("GitHub Enterprise", "SAML 2.0", "Microsoft Entra ID (formerly Azure AD)", "Yes", "8 hours", "Yes", "SCIM", "", ""),
+        ("Zoom", "SAML 2.0", "Microsoft Entra ID (formerly Azure AD)", "Yes", "24 hours", "Yes", "SCIM", "", ""),
+        ("Slack", "SAML 2.0", "Microsoft Entra ID (formerly Azure AD)", "Yes", "Configurable", "Yes", "SCIM", "", ""),
     ]
 
     row = 4
@@ -408,7 +408,7 @@ def create_evidence_register_sheet(wb: Workbook):
     evidence = [
         ("EV-517-SA-001", "System List", "Authentication system inventory", "System_Inventory", "", "", "", ""),
         ("EV-517-SA-002", "Config Export", "AD Group Policy settings", "Security_Assessment", "", "", "", ""),
-        ("EV-517-SA-003", "Config Export", "Azure AD conditional access policies", "Security_Assessment", "", "", "", ""),
+        ("EV-517-SA-003", "Config Export", "Microsoft Entra ID (formerly Azure AD) conditional access policies", "Security_Assessment", "", "", "", ""),
         ("EV-517-SA-004", "Vendor Docs", "Password storage documentation", "Storage_Assessment", "", "", "", ""),
         ("EV-517-SA-005", "Config Export", "SSO integration configurations", "Integration_Assessment", "", "", "", ""),
     ]

@@ -1608,7 +1608,7 @@ def create_integration_enrichment_sheet(ws, styles):
         ("Threat Intelligence", "MISP, AlienVault OTX, VirusTotal, Abuse.ch", "IOC detection, malicious IP/domain identification"),
         ("GeoIP", "MaxMind, IP2Location", "Geo-based anomaly detection, compliance"),
         ("Asset Context", "CMDB, ServiceNow, Lansweeper", "Criticality assessment, owner identification"),
-        ("User Context", "Active Directory, Okta, Azure AD", "User behavior analysis, privilege context"),
+        ("User Context", "Active Directory, Okta, Microsoft Entra ID (formerly Azure AD)", "User behavior analysis, privilege context"),
         ("Vulnerability Data", "Qualys, Tenable, Rapid7", "Risk scoring, exploit correlation"),
         ("DNS", "Internal DNS, passive DNS", "Domain reputation, DGA detection"),
     ]

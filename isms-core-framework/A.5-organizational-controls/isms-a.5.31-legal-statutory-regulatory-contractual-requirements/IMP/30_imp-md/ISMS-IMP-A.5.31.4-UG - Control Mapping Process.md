@@ -740,7 +740,7 @@ Not all gaps are equally urgent. Use this framework to prioritize remediation:
 **Factor 2: Legal Consequence Severity**
 
 - **Criminal Liability / Severe Fines**: Highest priority
-  - Example: GDPR up to 4% revenue, PCI DSS loss of card processing
+  - Example: GDPR up to 4% revenue, PCI DSS v4.0.1 loss of card processing
 - **Civil Penalties / Moderate Fines**: High priority
 - **Reputational Damage**: Medium-High priority
 - **Minor Penalties / Warnings**: Lower priority
@@ -782,7 +782,7 @@ Not all gaps are equally urgent. Use this framework to prioritize remediation:
 |-----|------------|------|----------|-------------|------------|-----------------|--------------|
 | No breach notification process | GDPR | 1 | Immediate (72hr legal requirement) | Major fines | Low | Customer-facing | **CRITICAL** |
 | No DPIA process | GDPR | 1 | No specific deadline | Major fines | Medium | Product launch | **HIGH** |
-| Partial encryption (data at rest only) | PCI DSS | 2 (applies if processing cards) | 90 days (next audit) | Lose card processing | Medium | Revenue-critical | **HIGH** |
+| Partial encryption (data at rest only) | PCI DSS v4.0.1 | 2 (applies if processing cards) | 90 days (next audit) | Lose card processing | Medium | Revenue-critical | **HIGH** |
 | Annual penetration test missing | Industry best practice | 3 | None | Reputational | High | Internal | **LOW** |
 
 ### Stakeholder Consultation
@@ -1328,8 +1328,8 @@ Previous Description: "Implement encryption for sensitive data."
 Updated Description: "Implement encryption for sensitive data. Primary control for:
 
 - GDPR Article 32(1)(a) - Personal data encryption
-- PCI DSS Requirement 3.4 - Cardholder data encryption at rest
-- PCI DSS Requirement 4.1 - Cardholder data encryption in transit
+- PCI DSS v4.0.1 Requirement 3.4 - Cardholder data encryption at rest
+- PCI DSS v4.0.1 Requirement 4.1 - Cardholder data encryption in transit
 
 Regulatory compliance CRITICAL. Implementation status: Implemented. Evidence: Encryption policy, key management procedure, system configuration exports."
 ```
@@ -1962,7 +1962,7 @@ Start: Review Requirement X and Candidate Control Y
 - **GDPR**: General Data Protection Regulation
 - **IMP**: Implementation Guide
 - **ISMS**: Information Security Management System
-- **PCI DSS**: Payment Card Industry Data Security Standard
+- **PCI DSS v4.0.1**: Payment Card Industry Data Security Standard
 - **POL**: Policy
 - **SoA**: Statement of Applicability
 

@@ -128,7 +128,7 @@ Anforderungen, die nur gelten, wenn bestimmte Bedingungen erfüllt sind (z.B. Br
 - Anwendbarkeit hängt vom organisatorischen Kontext ab
 - Können mandatory werden basierend auf Geschäftsaktivitäten
 - Erfordern periodisches Re-Assessment bei Business-Entwicklung
-- Beispiele: PCI DSS (nur bei Kreditkartenverarbeitung), HIPAA (nur bei US-Healthcare-Daten)
+- Beispiele: PCI DSS v4.0.1 (nur bei Kreditkartenverarbeitung), HIPAA (nur bei US-Healthcare-Daten)
 
 **Klarstellung zur Tier-Klassifizierung**: Die Tier-Klassifizierung (Mandatory, Conditional, Informational) bestimmt die **regulatorische Bindungskraft** und impliziert nicht per se Implementation-Verpflichtungen. Implementation-Entscheidungen werden durch den Risk Assessment und Treatment Process getroffen, unter Berücksichtigung regulatorischer Anforderungen zusammen mit anderen Faktoren wie Risk Appetite, Business Context und technischer Machbarkeit.
 
@@ -148,7 +148,7 @@ Anforderungen, die nur gelten, wenn bestimmte Bedingungen erfüllt sind (z.B. Br
 │  TIER 2: CONDITIONAL (Context-Dependent)                        │
 │  • DORA (falls EU Financial Services Entity)                    │
 │  • NIS2 (falls Essential/Important Entity in EU)                │
-│  • PCI DSS (bei Kreditkartenverarbeitung)                       │
+│  • PCI DSS v4.0.1 (bei Kreditkartenverarbeitung)                       │
 │  • HIPAA (bei US-Healthcare-Daten)                              │
 │  • Branchen-Regulations (sektorabhängig)                        │
 │                                                                 │
@@ -377,9 +377,9 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
 
 **Assessment**: Falls Organisation in abgedecktem Sektor in der EU tätig ist und Grössen-/Kritikalitätsschwellen erfüllt → **Mandatory Compliance**
 
-## Payment Card Industry Data Security Standard (PCI DSS)
+## Payment Card Industry Data Security Standard (PCI DSS v4.0.1)
 
-**Standard**: PCI DSS v4.0 (in Kraft seit 31. März 2024)  
+**Standard**: PCI DSS v4.0.1 (in Kraft seit 31. März 2024)  
 **Governing Body**: PCI Security Standards Council
 
 **Anwendbarkeits-Trigger**:
@@ -592,7 +592,7 @@ Diese Frameworks bieten **technische Leitlinien und Best Practices**, sind aber 
 ## CIS Controls
 
 **Beschreibung**: Center for Internet Security Critical Security Controls  
-**Version**: CIS Controls v8 (18 Controls)  
+**Version**: CIS Controls v8.1 (18 Controls)  
 **Anwendbarkeit**: Freiwillige Übernahme für Security Benchmarking
 
 **Kern-Controls**:
@@ -676,7 +676,7 @@ Organisationen können zusätzliche Frameworks basierend auf dem Branchen-Kontex
 
 # United States Federal Requirements (Spezielle Kategorie)
 
-**Prinzip**: US Federal Cybersecurity Requirements (FISMA, FIPS, FedRAMP, NIST CSF) gelten **nur, wenn die Organisation explizite US Federal Contractual Obligations hat**.
+**Prinzip**: US Federal Cybersecurity Requirements (FISMA, FIPS, FedRAMP, NIST CSF 2.0) gelten **nur, wenn die Organisation explizite US Federal Contractual Obligations hat**.
 
 **Default-Status**: **Not Applicable**, es sei denn:
 
@@ -715,7 +715,7 @@ Organisationen MÜSSEN jährliche Regulatory Applicability Assessments durchfüh
 | Verarbeitung von EU Resident Data | GDPR (mandatory) |
 | Betrieb in der Schweiz | Swiss FADP (mandatory) |
 | ISO 27001-Zertifizierungsziel | ISO 27001 (mandatory) |
-| Verarbeitung von Payment Cards | PCI DSS (conditional - falls ja, mandatory) |
+| Verarbeitung von Payment Cards | PCI DSS v4.0.1 (conditional - falls ja, mandatory) |
 | EU Financial Services | DORA (conditional - falls ja, mandatory) |
 | Entwicklung/Betrieb von KI-Systemen mit Auswirkung auf EU | EU AI Act (conditional - falls ja, mandatory) |
 | US Federal Contracts | FISMA/FedRAMP (conditional - falls ja, mandatory) |
@@ -739,7 +739,7 @@ Organisationen sollten eine Regulatory Applicability Matrix pflegen:
 | EU GDPR | 1 - Mandatory | Applicable | EU Customer Data | DPO | [Datum] |
 | ISO 27001 | 1 - Mandatory | Applicable | Certification Goal | CISO | [Datum] |
 | DORA | 2 - Conditional | Not Applicable | Kein Financial Entity | N/A | [Datum] |
-| PCI DSS | 2 - Conditional | Applicable | Card Processing | CISO | [Datum] |
+| PCI DSS v4.0.1 | 2 - Conditional | Applicable | Card Processing | CISO | [Datum] |
 | EU AI Act | 2 - Conditional | [To Assess] | AI system development/deployment affecting EU | CISO | [Datum] |
 | NIST SP 800-53 | 3 - Informational | Reference Only | Technical Guidance | CISO | [Datum] |
 
@@ -927,7 +927,7 @@ Diese Policy erfordert NICHT:
 - EU GDPR (Regulation 2016/679)
 - ISO/IEC 27001:2022
 - NIST Special Publications (nist.gov)
-- PCI DSS (pcisecuritystandards.org)
+- PCI DSS v4.0.1 (pcisecuritystandards.org)
 - DORA (Regulation 2022/2554)
 - NIS2 (Directive 2022/2555)
 

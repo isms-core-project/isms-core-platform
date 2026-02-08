@@ -98,7 +98,7 @@ This policy establishes [Organization]'s Secure Development Framework, implement
 - Handles personally identifiable information (PII) subject to GDPR, FADP
 - Internet-facing or accessible by external parties
 - Critical business function or financial transaction processing
-- Payment card information (PCI DSS scope)
+- Payment card information (PCI DSS v4.0.1 scope)
 
 **Medium-Risk Applications** meet ANY of these criteria:
 
@@ -439,7 +439,7 @@ Sector-specific requirements apply where [Organization]'s business activities tr
 | DORA | EU financial entity | ICT risk management, resilience testing |
 | NIS2 | Essential/important entity | Cybersecurity risk management |
 | FINMA Circular 2023/1 | Swiss financial institution | Security for financial applications |
-| PCI DSS | Payment card processing | Requirement 6: Secure development |
+| PCI DSS v4.0.1 | Payment card processing | Requirement 6: Secure development |
 
 **Refer to ISMS-POL-00 (Regulatory Applicability Framework) for complete regulatory categorization.**
 

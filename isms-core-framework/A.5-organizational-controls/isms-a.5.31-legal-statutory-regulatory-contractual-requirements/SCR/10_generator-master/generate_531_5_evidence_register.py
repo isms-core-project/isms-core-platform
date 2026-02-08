@@ -237,7 +237,7 @@ Categorize evidence for efficient management and retrieval:
 - Access logs and authentication records
 - System logs and monitoring data
 - Evidence characteristics: Automated, tamper-proof, time-stamped
-- Typical retention: Varies by regulation (GDPR: 1 year, PCI DSS: 1 year, financial: 7 years)
+- Typical retention: Varies by regulation (GDPR: 1 year, PCI DSS v4.0.1: 1 year, financial: 7 years)
 
 **5. Report Evidence**:
 - Audit reports (internal and external)
@@ -249,7 +249,7 @@ Categorize evidence for efficient management and retrieval:
 
 **6. Certificate Evidence**:
 - ISO 27001 certification
-- Industry-specific certifications (SOC 2, PCI DSS AOC)
+- Industry-specific certifications (SOC 2, PCI DSS v4.0.1 AOC)
 - Personnel certifications (CISSP, CISM)
 - Evidence characteristics: Issued by recognized authority, validity period
 - Typical retention: Indefinite (certification history)
@@ -378,7 +378,7 @@ Different regulations mandate different retention periods:
 
 **Common Retention Periods:**
 - GDPR: Logs 1 year minimum, contracts duration + 3 years, incident records 7 years
-- PCI DSS: Logs 1 year, audit reports 1 year, policies 3 years
+- PCI DSS v4.0.1: Logs 1 year, audit reports 1 year, policies 3 years
 - Financial regulations: 7-10 years for financial records and related evidence
 - Employment law: Employee training records employment duration + 2-7 years
 - General liability: 7 years (statute of limitations in many jurisdictions)

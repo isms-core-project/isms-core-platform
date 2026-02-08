@@ -255,7 +255,7 @@ serious audit and risk management consequences.
 
 **Regulatory Alignment:**
 Ensure dashboard reporting aligns with applicable requirements:
-- Payment processing: PCI DSS quarterly cryptographic reviews
+- Payment processing: PCI DSS v4.0.1 quarterly cryptographic reviews
 - Healthcare: HIPAA encryption accountability documentation
 - Privacy: GDPR encryption accountability under Article 32
 - Finance: Regional banking cryptographic compliance reporting

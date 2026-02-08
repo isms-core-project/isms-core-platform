@@ -921,7 +921,7 @@ def print_workbook_notes(workbook_id, external_refs):
         print("  • Compliance Overview: Traffic light status across 4 domains")
         print("  • Consolidated Gap Register: 120 items from all assessments")
         print("  • Trend Analysis: Historical compliance tracking")
-        print("  • Regulatory Mapping: SOC 2, GDPR, PCI DSS, HIPAA, NIS2")
+        print("  • Regulatory Mapping: SOC 2, GDPR, PCI DSS v4.0.1, HIPAA, NIS2")
         print("  • Action Plan & Roadmap: 60 prioritized remediation tasks")
         print("  • Management Report: CISO-level executive summary")
         print("  • CISO approval workflow")

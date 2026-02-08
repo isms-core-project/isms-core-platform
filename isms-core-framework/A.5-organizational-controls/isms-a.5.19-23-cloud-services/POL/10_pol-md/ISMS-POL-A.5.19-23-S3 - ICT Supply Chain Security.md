@@ -365,7 +365,7 @@ For Level 1 software suppliers, SBOM shall include:
 | Deployment | Secure configuration, firmware updates to current versions, asset registration |
 | Operation | Patch management, firmware updates, environmental monitoring, physical security |
 | Maintenance | Authorized service providers only, witness hardware service, verify post-service integrity |
-| End-of-life | Secure decommissioning, data destruction (NIST SP 800-88), certificate of destruction |
+| End-of-life | Secure decommissioning, data destruction (NIST SP 800-88 Rev. 2), certificate of destruction |
 
 ---
 

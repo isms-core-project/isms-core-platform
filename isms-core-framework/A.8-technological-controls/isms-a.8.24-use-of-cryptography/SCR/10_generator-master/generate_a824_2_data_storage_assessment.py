@@ -218,7 +218,7 @@ before using results for compliance reporting or remediation decisions.
 
 **Regulatory Alignment:**
 Ensure encryption standards align with applicable regulatory requirements:
-- Payment processing: PCI DSS data-at-rest encryption requirements
+- Payment processing: PCI DSS v4.0.1 data-at-rest encryption requirements
 - Healthcare: HIPAA encryption and breach notification rules
 - Privacy: GDPR encryption as appropriate safeguard
 - Finance: Regional banking data protection requirements

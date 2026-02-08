@@ -175,7 +175,7 @@ Columns contain classification levels (PUBLIC, INTERNAL, CONFIDENTIAL, RESTRICTE
 | Channel | Transfer system name | "Corporate Email - External" |
 | Security Controls | Technical controls in place | "Exchange Online + S/MIME" |
 | Encryption Requirement | Minimum encryption standard | "TLS 1.2+ or S/MIME" |
-| Authentication | How users/systems authenticate | "Azure AD + MFA" |
+| Authentication | How users/systems authenticate | "Microsoft Entra ID (formerly Azure AD) + MFA" |
 | Logging | Audit trail mechanism | "Exchange Audit Logs" |
 | Max Classification | Highest permitted classification | "CONFIDENTIAL" |
 | DLP Integration | Whether DLP monitors this channel | "Yes", "Manual", "N/A" |

@@ -194,7 +194,7 @@ Applicability assessment shall be initiated when [Organization]:
 
 **Pursuing New Certifications:**
 
-- Decision to pursue ISO 27001, SOC 2, PCI DSS, or other certification
+- Decision to pursue ISO 27001, SOC 2, PCI DSS v4.0.1, or other certification
 - Certification body specifies regulatory requirements as part of certification
 - Industry-specific accreditations with compliance components
 
@@ -913,7 +913,7 @@ Tier 2 regulations receive moderate priority:
 - Data protection regulation in jurisdiction [Organization] is considering expanding to
 - Industry-specific regulation for vertical market [Organization] may enter
 - Emerging regulation (draft/proposed) likely to affect [Organization] once enacted
-- NIST Cybersecurity Framework adopted voluntarily for maturity assessment
+- NIST Cybersecurity Framework (CSF) 2.0 adopted voluntarily for maturity assessment
 
 ## Tier 3: Informational Reference
 
@@ -1382,7 +1382,7 @@ Applicability assessment shall be revisited (outside of scheduled reviews) when 
 
 **New Certification Pursued:**
 
-- [Organization] decides to pursue new certification (e.g., SOC 2, PCI DSS)
+- [Organization] decides to pursue new certification (e.g., SOC 2, PCI DSS v4.0.1)
 - Trigger: Certification decision
 - Action: Review certification requirements for applicable regulations
 

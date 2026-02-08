@@ -231,7 +231,7 @@ remediation decisions.
 
 **Regulatory Alignment:**
 Ensure testing standards align with applicable regulatory requirements:
-- Payment processing: PCI DSS testing requirements (Requirement 6.3, 11.3)
+- Payment processing: PCI DSS v4.0.1 testing requirements (Requirement 6.3, 11.3)
 - Healthcare: HIPAA security testing and vulnerability management
 - Finance: Regional banking penetration testing requirements
 - Government: Jurisdiction-specific security testing mandates

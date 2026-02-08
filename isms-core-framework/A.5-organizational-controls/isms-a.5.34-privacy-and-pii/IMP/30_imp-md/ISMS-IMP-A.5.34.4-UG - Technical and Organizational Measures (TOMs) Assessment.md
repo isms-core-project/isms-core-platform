@@ -268,7 +268,7 @@ You will need access to:
 ### Required Skills
 
 - **Privacy Regulation Knowledge:** Understanding of GDPR Articles 5, 25, 32-36; Swiss FADP Articles 6-8
-- **Security Controls Expertise:** Familiarity with NIST CSF, ISO 27001 Annex A, CIS Controls
+- **Security Controls Expertise:** Familiarity with NIST CSF 2.0, ISO 27001 Annex A, CIS Controls
 - **Risk Assessment:** Ability to assess likelihood and impact of security risks
 - **Technical Security:** Understanding of encryption, access control, network security, application security
 - **Compliance Auditing:** Experience with control testing and evidence evaluation
@@ -1458,7 +1458,7 @@ SharePoint: /Privacy/Evidence/2025/TLS_Config_Screenshot_20251215.png
 
 KnowBe4 Platform: Dashboard > Reports > Annual Training Completion Report 2025
 
-Azure Portal: Azure Active Directory > Security > Conditional Access > Policies > CA002
+Azure Portal: Microsoft Entra ID (formerly Azure Active Directory) > Security > Conditional Access > Policies > CA002
 
 SharePoint: /Legal/Contracts/Vendors/Salesforce/Salesforce_DPA_v3.1_20230615.pdf
 

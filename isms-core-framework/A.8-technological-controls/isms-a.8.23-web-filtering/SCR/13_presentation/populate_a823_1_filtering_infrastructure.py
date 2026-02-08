@@ -139,7 +139,7 @@ def populate_capability_requirements(wb):
         ["Threat Protection", "Phishing site blocking", "Critical", "✅ Met", "Met", "✅ Compliant", "", "Block reports"],
         ["Threat Protection", "Zero-day threat protection", "Critical", "✅ Met", "Met", "✅ Compliant", "", "Sandbox logs"],
         ["Threat Protection", "Botnet C2 blocking", "High", "✅ Met", "Met", "✅ Compliant", "", "C2 block logs"],
-        ["Cloud Integration", "Azure AD SSO integration", "Critical", "✅ Met", "Met", "✅ Compliant", "", "SSO config"],
+        ["Cloud Integration", "Microsoft Entra ID (formerly Azure AD) SSO integration", "Critical", "✅ Met", "Met", "✅ Compliant", "", "SSO config"],
         ["Cloud Integration", "Microsoft 365 tenant restrictions", "High", "✅ Met", "Met", "✅ Compliant", "", "M365 policy"],
         ["Cloud Integration", "AWS/GCP/Azure egress filtering", "High", "✅ Met", "⚠️ Partial", "Partial", "Prisma Azure gaps", "Cloud configs"],
         ["DLP", "Sensitive data detection", "High", "✅ Met", "Met", "✅ Compliant", "", "DLP rules"],

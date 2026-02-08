@@ -166,7 +166,7 @@ Apply only when specific business conditions trigger applicability:
 | **FINMA Circular 2023/1** | Swiss regulated financial institution | Margin 63-72: Logging, monitoring, and incident detection for operational resilience |
 | **DORA** | EU financial services entity | Art. 17: ICT-related incident detection, logging, and monitoring capabilities |
 | **NIS2** | Essential/important entity (EU) | Art. 21: Security monitoring, incident detection, and response capabilities |
-| **PCI DSS v4.0** | Processing payment card data | Req. 10: Logging and monitoring of access to cardholder data environments |
+| **PCI DSS v4.0.1** | Processing payment card data | Req. 10: Logging and monitoring of access to cardholder data environments |
 | **HIPAA** | Processing US healthcare data | §164.312(b): Audit controls and monitoring of ePHI access |
 
 **Tier 3: Informational Guidance**
@@ -175,7 +175,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 - NIST SP 800-92 (Guide to Computer Security Log Management)
 - NIST SP 800-137 (Information Security Continuous Monitoring)
-- CIS Controls v8 (Control 8: Audit Log Management, Control 13: Network Monitoring and Defense)
+- CIS Controls v8.1 (Control 8: Audit Log Management, Control 13: Network Monitoring and Defense)
 - MITRE ATT&CK Framework (Detection tactics and techniques)
 - SANS Critical Security Controls
 
@@ -542,7 +542,7 @@ For each severity level, [Organization] defines:
 
 - **GDPR/nDSG**: Retention justified by legitimate interest, deleted when no longer needed (typically 12-24 months)
 - **FINMA Circular 2023/1** (if applicable): 10 years for critical operational events
-- **PCI DSS** (if applicable): 12 months hot storage, 3 months immediately available
+- **PCI DSS v4.0.1** (if applicable): 12 months hot storage, 3 months immediately available
 - **HIPAA** (if applicable): 6 years minimum
 - **Litigation Hold**: Indefinite retention until hold released
 
@@ -741,7 +741,7 @@ This policy integrates with:
 
 - NIST SP 800-92 - Guide to Computer Security Log Management
 - NIST SP 800-137 - Information Security Continuous Monitoring (ISCM)
-- CIS Controls v8 - Control 8 (Audit Log Management), Control 13 (Network Monitoring)
+- CIS Controls v8.1 - Control 8 (Audit Log Management), Control 13 (Network Monitoring)
 
 **Regulatory**:
 
@@ -750,7 +750,7 @@ This policy integrates with:
 - FINMA Circular 2023/1 (Operational risks and resilience) - if applicable
 - DORA (Digital Operational Resilience Act) - if applicable
 - NIS2 Directive - if applicable
-- Industry-specific regulations (PCI DSS, HIPAA, etc.) - as applicable
+- Industry-specific regulations (PCI DSS v4.0.1, HIPAA, etc.) - as applicable
 
 **Framework Alignment**:
 

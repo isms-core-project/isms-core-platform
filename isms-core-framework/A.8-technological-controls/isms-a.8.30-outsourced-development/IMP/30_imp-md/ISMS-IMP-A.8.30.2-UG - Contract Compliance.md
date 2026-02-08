@@ -80,7 +80,7 @@ Contracts establish the legal foundation for security requirements:
 | Swiss FADP/nDSG Art. 10a | Data processing agreements, sub-processor controls |
 | GDPR Article 28 | Processor contract requirements |
 | FINMA | Third-party contract provisions |
-| PCI DSS | Service provider contracts |
+| PCI DSS v4.0.1 | Service provider contracts |
 
 ### Assessment Outputs
 
@@ -527,7 +527,7 @@ Complete all 10 standard termination items:
 |--------------|----------|
 | Signed by authorised vendor representative | Officer-level |
 | Lists data types destroyed | Specific enumeration |
-| Specifies destruction method | NIST 800-88 compliant |
+| Specifies destruction method | NIST 800-88 Rev. 2 compliant |
 | Dated within termination period | Within 30 days |
 
 **Item 4: Source Code Transferred (if applicable)**

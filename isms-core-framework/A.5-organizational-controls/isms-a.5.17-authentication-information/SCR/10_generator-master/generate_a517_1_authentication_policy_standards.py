@@ -430,7 +430,7 @@ def create_evidence_register_sheet(wb: Workbook):
 
     evidence = [
         ("EV-517-001", "Policy Document", "Approved Authentication Policy", "Password_Policy", "", "", "", ""),
-        ("EV-517-002", "Configuration Export", "Password policy settings from AD/Azure AD", "Password_Policy", "", "", "", ""),
+        ("EV-517-002", "Configuration Export", "Password policy settings from AD/Microsoft Entra ID (formerly Azure AD)", "Password_Policy", "", "", "", ""),
         ("EV-517-003", "Configuration Export", "MFA configuration settings", "MFA_Requirements", "", "", "", ""),
         ("EV-517-004", "Training Record", "User security awareness completion", "User_Responsibilities", "", "", "", ""),
         ("EV-517-005", "Audit Report", "Authentication controls assessment", "System_Requirements", "", "", "", ""),

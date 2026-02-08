@@ -262,7 +262,7 @@ Validate assessment accuracy by:
 
 **Regulatory Alignment:**
 Ensure hardening standards align with applicable regulatory requirements:
-- Payment processing: PCI DSS network device hardening requirements
+- Payment processing: PCI DSS v4.0.1 network device hardening requirements
 - Healthcare: HIPAA network security configuration standards
 - Finance: Regional banking network security requirements
 - Government: Jurisdiction-specific hardening mandates

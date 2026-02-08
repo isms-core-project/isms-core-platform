@@ -69,7 +69,7 @@ A well-maintained SoD matrix delivers:
 |------------|---------|
 | **Fraud Prevention** | Reduces opportunity for internal fraud by 60-80% |
 | **Error Detection** | Independent verification catches mistakes before impact |
-| **Regulatory Compliance** | Meets SOX, PCI DSS, FINMA, and other regulatory requirements |
+| **Regulatory Compliance** | Meets SOX, PCI DSS v4.0.1, FINMA, and other regulatory requirements |
 | **Audit Efficiency** | Ready evidence reduces audit preparation time by 50% |
 | **Insurance** | Strong controls may reduce cyber insurance premiums |
 | **Due Diligence** | Supports M&A and investor due diligence requirements |
@@ -159,7 +159,7 @@ Before beginning this assessment, ensure access to:
 - [ ] Prior SoD assessments (if applicable)
 - [ ] Risk assessment identifying critical processes
 - [ ] List of privileged/administrator accounts
-- [ ] Compliance requirements (SOX, PCI DSS, FINMA if applicable)
+- [ ] Compliance requirements (SOX, PCI DSS v4.0.1, FINMA if applicable)
 
 ### Required Personnel
 

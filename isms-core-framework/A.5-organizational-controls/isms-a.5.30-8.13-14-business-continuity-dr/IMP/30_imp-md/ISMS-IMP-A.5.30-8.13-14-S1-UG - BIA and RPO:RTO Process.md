@@ -108,7 +108,7 @@ Per ISMS-POL-00 (Regulatory Applicability Framework):
 - **DORA (EU) Art. 12** - "Financial entities shall conduct business impact analysis to identify critical ICT systems"
 - **NIS2 (EU) Art. 21** - "Essential entities shall identify critical ICT systems"
 - **FINMA (Swiss Financial)** - "Financial institutions must ensure operational continuity" requires BIA
-- **PCI DSS Req. 12.10** - "Implement business continuity plan including impact analysis"
+- **PCI DSS v4.0.1 Req. 12.10** - "Implement business continuity plan including impact analysis"
 
 **Tier 3 - Informational:**
 
@@ -718,7 +718,7 @@ Operational Impact: SIGNIFICANT (90% capacity loss)
 - Cybersecurity risk management failure: Up to €10M or 2% of global turnover (essential), €7M or 1.4% (important)
 - Incident reporting failure (24h/72h deadlines)
 
-**PCI DSS (if processing payment cards):**
+**PCI DSS v4.0.1 (if processing payment cards):**
 
 - Non-compliance: Loss of ability to process card payments
 - Data breach: Card brand fines ($5,000-$100,000 per month), card reissuance costs
@@ -1302,7 +1302,7 @@ Application Hosted in Azure
   ↓ Depends on ↓
 
   - Azure Region (West Europe datacenter)
-  - Azure Active Directory (authentication)
+  - Microsoft Entra ID (formerly Azure Active Directory) (authentication)
   - Azure SQL Database (data storage)
   - Internet Connectivity (ISP)
   - Microsoft 365 (email for notifications)
@@ -1706,7 +1706,7 @@ BIA_2026/
 
 # Regulatory Compliance Mapping
 
-[Complete compliance mapping for ISO/DORA/NIS2/PCI DSS/FINMA...]
+[Complete compliance mapping for ISO/DORA/NIS2/PCI DSS v4.0.1/FINMA...]
 
 ---
 

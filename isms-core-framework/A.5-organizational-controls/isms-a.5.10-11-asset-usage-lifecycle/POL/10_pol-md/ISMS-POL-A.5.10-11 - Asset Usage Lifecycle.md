@@ -54,7 +54,7 @@ This policy establishes [Organisation]'s requirements for the acceptable use of 
 
 **Purpose**: Define organisational requirements for asset usage governance and return procedures. This policy establishes WHAT acceptable use and return requirements apply and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.5.10-11 (UG/TG variants).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS, FINMA, DORA, NIS2) apply where [Organisation]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, FINMA, DORA, NIS2) apply where [Organisation]'s business activities trigger applicability.
 
 ---
 
@@ -143,7 +143,7 @@ Apply only when specific business conditions trigger applicability:
 
 | Regulation | Trigger Condition | Asset Management Requirements |
 |-----------|-------------------|-------------------------------|
-| **PCI DSS v4.0** | Processing payment card data | Req. 9 - Restrict physical access; Req. 12 - Security policies |
+| **PCI DSS v4.0.1** | Processing payment card data | Req. 9 - Restrict physical access; Req. 12 - Security policies |
 | **FINMA** | Swiss regulated financial institution | Technical and organisational measures per risk assessment |
 | **DORA** | EU financial services entity | ICT asset management, HR security |
 | **NIS2** | Essential/important entity (EU) | HR security measures, asset management |
@@ -153,7 +153,7 @@ Apply only when specific business conditions trigger applicability:
 These frameworks inform implementation but do not constitute mandatory compliance unless contractually required:
 
 - NIST Cybersecurity Framework (Protect function - PR.AC, PR.DS)
-- CIS Controls v8 (Control 1: Inventory and Control of Enterprise Assets)
+- CIS Controls v8.1 (Control 1: Inventory and Control of Enterprise Assets)
 - ISO/IEC 27002:2022 (Implementation guidance for A.5.10, A.5.11)
 
 **Compliance Determination**: [Organisation] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent requirements apply where multiple regulations overlap.
@@ -472,7 +472,7 @@ This policy is supported by the following assessment workbooks:
 
 This policy addresses asset management requirements from:
 
-| Requirement Category | Swiss nDSG | EU GDPR | ISO 27001 | PCI DSS* | FINMA* | DORA/NIS2* |
+| Requirement Category | Swiss nDSG | EU GDPR | ISO 27001 | PCI DSS v4.0.1* | FINMA* | DORA/NIS2* |
 |---------------------|-----------|---------|-----------|---------|--------|------------|
 | Acceptable use | Art. 8 | Art. 32 | A.5.10 | Req. 12.3 | Risk-Based | Security Policies |
 | Asset return | Art. 8 | Art. 32 | A.5.11 | Req. 9.9 | Risk-Based | HR Security |

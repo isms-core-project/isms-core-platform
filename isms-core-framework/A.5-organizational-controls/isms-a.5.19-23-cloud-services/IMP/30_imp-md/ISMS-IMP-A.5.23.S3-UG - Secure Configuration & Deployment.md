@@ -403,7 +403,7 @@ For EACH cloud service, across 5 security layers:
 | **AWS Security Best Practices** | AWS Well-Architected Framework | https://aws.amazon.com/architecture/well-architected |
 | **Azure Security Baseline** | Azure Cloud Adoption Framework | https://learn.microsoft.com/azure/cloud-adoption-framework |
 | **Google Cloud Security Best Practices** | GCP security foundations | https://cloud.google.com/security/best-practices |
-| **NIST CSF** | Cross-cloud framework | https://www.nist.gov/cyberframework |
+| **NIST CSF 2.0** | Cross-cloud framework | https://www.nist.gov/cyberframework |
 
 **Internal Baselines (Create If Not Exist):**
 

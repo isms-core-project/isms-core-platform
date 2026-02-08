@@ -56,7 +56,7 @@ This policy establishes [Organization]'s requirements for data masking controls 
 
 **Purpose**: Define organizational requirements for data masking control implementation and governance. This policy establishes WHAT data requires masking, WHICH techniques are approved, and WHO is accountable. Implementation procedures (HOW) are documented separately in ISMS-IMP-A.8.11 (UG/TG variants).
 
-**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS, HIPAA, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
+**Regulatory Alignment**: This policy addresses mandatory compliance requirements per ISMS-POL-00 (Regulatory Applicability Framework), including Swiss nDSG, EU GDPR, and ISO/IEC 27001:2022. Conditional sector-specific requirements (PCI DSS v4.0.1, HIPAA, FINMA, DORA, NIS2) apply where [Organization]'s business activities trigger applicability.
 
 ---
 
@@ -173,7 +173,7 @@ Apply only when specific business conditions trigger applicability:
 
 | Regulation | Trigger Condition | Data Masking Requirements |
 |-----------|-------------------|---------------------------|
-| **PCI DSS v4.0** | Processing payment card data | Req. 3.4 - PAN rendered unreadable (masking, truncation, hashing, tokenization); Req. 3.5 - Primary Account Number (PAN) masked when displayed (minimum first 6 and last 4 digits); Req. 12.3 - Data usage policies for non-production environments |
+| **PCI DSS v4.0.1** | Processing payment card data | Req. 3.4 - PAN rendered unreadable (masking, truncation, hashing, tokenization); Req. 3.5 - Primary Account Number (PAN) masked when displayed (minimum first 6 and last 4 digits); Req. 12.3 - Data usage policies for non-production environments |
 | **HIPAA Privacy Rule** | US healthcare data (ePHI) | §164.514(a)-(b) - De-identification standards (Expert Determination or Safe Harbor method); §164.514(c) - Re-identification prohibition; §164.530(c) - Administrative safeguards for de-identified data |
 | **FINMA** | Swiss regulated financial institution | Technical and organizational measures per risk assessment; client data protection requirements; outsourcing risk management (FINMA Circular 2018/3) |
 | **DORA** | EU financial services entity (ICT risk) | Art. 9 - ICT risk management framework including data protection controls; Art. 28 - ICT third-party risk management including data security |
@@ -186,7 +186,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 - NIST SP 800-188 (De-Identifying Government Datasets)
 - ISO/IEC 20889:2018 (Privacy Enhancing Data De-identification Terminology and Classification)
-- CIS Controls v8 (Control 3.3: Data Protection - Configure data access control lists)
+- CIS Controls v8.1 (Control 3.3: Data Protection - Configure data access control lists)
 - OWASP Data Security Cheat Sheet
 - Cloud Security Alliance (CSA) guidance on cloud data protection
 
@@ -269,7 +269,7 @@ The following masking technique categories are approved for use:
 Masking technique selection SHALL consider:
 
 - **Data sensitivity classification**: Higher sensitivity requires stronger masking
-- **Regulatory requirements**: GDPR pseudonymization vs. anonymization, PCI DSS masking rules
+- **Regulatory requirements**: GDPR pseudonymization vs. anonymization, PCI DSS v4.0.1 masking rules
 - **Business use case**: Development/testing vs. analytics vs. external sharing
 - **Reversibility requirements**: Legitimate need to recover original data
 - **Format preservation**: Maintaining data format for application compatibility
@@ -330,7 +330,7 @@ In production environments, masking MAY be implemented where:
 
 - Role-based access requires some users see masked data (DDM)
 - Reports or exports to external parties require masking
-- Compliance requirements mandate masking (e.g., PCI DSS display rules)
+- Compliance requirements mandate masking (e.g., PCI DSS v4.0.1 display rules)
 - User interfaces display sensitive data to unauthorized personnel
 
 Production masking does NOT replace access controls but provides defense in depth.
@@ -373,7 +373,7 @@ Masking implementation is acceptable when:
 - Referential integrity is maintained across related data
 - Application functionality is not impaired by masked data
 - Performance impact is within acceptable limits
-- Regulatory requirements are met (GDPR, PCI DSS, etc.)
+- Regulatory requirements are met (GDPR, PCI DSS v4.0.1, etc.)
 
 **Failure Response**:
 
@@ -537,7 +537,7 @@ Logging SHALL comply with applicable privacy regulations per ISMS-POL-00. Users 
   - New data processing activities or data categories
   - Deployment of new masking solutions
   - Audit findings requiring remediation verification
-  - Regulatory requirement changes (GDPR, PCI DSS updates)
+  - Regulatory requirement changes (GDPR, PCI DSS v4.0.1 updates)
 
 **Assessment Methodology**:
 
@@ -645,7 +645,7 @@ Data exposure incidents SHALL be assessed for breach notification requirements:
 
 - **GDPR**: Notification within 72 hours if risk to rights and freedoms (Art. 33-34)
 - **Swiss nDSG**: Notification if high risk to personality or fundamental rights (Art. 24)
-- **Sector-specific**: PCI DSS breach notification, HIPAA breach notification (if applicable)
+- **Sector-specific**: PCI DSS v4.0.1 breach notification, HIPAA breach notification (if applicable)
 
 DPO and Legal/Compliance SHALL be involved in breach notification decisions.
 
@@ -848,7 +848,7 @@ This policy integrates with [Organization]'s Information Security Management Sys
 
 This policy addresses data masking requirements from:
 
-| Requirement Category | Swiss nDSG | EU GDPR | ISO 27001 | PCI DSS* | HIPAA* | FINMA* | DORA/NIS2* |
+| Requirement Category | Swiss nDSG | EU GDPR | ISO 27001 | PCI DSS v4.0.1* | HIPAA* | FINMA* | DORA/NIS2* |
 |---------------------|-----------|---------|-----------|---------|--------|--------|------------|
 | Data minimization | Art. 8, 25 | Art. 5(1)(c) | A.8.11 | Req. 12.3 | §164.514 | Risk-Based | Art. 21 (NIS2) |
 | Pseudonymization | Art. 8 | Art. 32(1)(a), Art. 89 | A.8.11 | N/A | §164.514(b) | Risk-Based | Risk-Based |
@@ -954,7 +954,7 @@ New masking techniques or modifications to approved techniques SHALL meet the fo
 
 - Technique SHALL meet regulatory requirements for applicable data types:
   - GDPR pseudonymization requirements (Art. 32(1)(a), Art. 89) if used for GDPR compliance
-  - PCI DSS masking requirements (Req. 3.4, 3.5) if used for payment card data
+  - PCI DSS v4.0.1 masking requirements (Req. 3.4, 3.5) if used for payment card data
   - HIPAA de-identification standards (§164.514) if used for healthcare data
   - nDSG data protection requirements (Art. 8) for Swiss personal data
 - Technique SHALL be validated by appropriate authority (Security Team, DPO, Compliance)
@@ -993,7 +993,7 @@ New masking techniques or modifications to approved techniques SHALL meet the fo
 **Selection Considerations**:
 
 1. **Start with data classification**: Higher sensitivity requires stronger masking
-2. **Consider regulatory requirements**: GDPR, PCI DSS, HIPAA have specific technique requirements
+2. **Consider regulatory requirements**: GDPR, PCI DSS v4.0.1, HIPAA have specific technique requirements
 3. **Assess reversibility need**: Legitimate need to recover original data determines technique
 4. **Evaluate data utility**: Masked data must be useful for intended purpose
 5. **Consider performance**: Real-time (DDM) vs. batch (SDM) performance implications
@@ -1183,7 +1183,7 @@ All masking techniques SHALL be validated for:
 [List specific threats enabled by unmasked data in this environment]
 
 **Compliance Impact**:
-[Describe regulatory implications: GDPR, PCI DSS, HIPAA, nDSG, etc.]
+[Describe regulatory implications: GDPR, PCI DSS v4.0.1, HIPAA, nDSG, etc.]
 
 ---
 

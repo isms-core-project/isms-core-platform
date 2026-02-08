@@ -183,7 +183,7 @@ IMPORTANT NOTES
 Retention periods must comply with applicable regulations including:
 - GDPR: Article 5(1)(e) storage limitation principle
 - Swiss FADP: Article 6(3) data processing principles (proportionality)
-- Industry-specific: PCI DSS (payment data), HIPAA (health records), etc.
+- Industry-specific: PCI DSS v4.0.1 (payment data), HIPAA (health records), etc.
 - Jurisdiction-specific: Local data protection and archival laws
 
 This assessment provides a framework - customize retention periods based on
@@ -221,7 +221,7 @@ Ensure retention periods align with applicable regulatory requirements:
 - Privacy laws: GDPR Article 17, Swiss FADP erasure requirements
 - Financial services: Basel III, MiFID II, Dodd-Frank retention requirements
 - Healthcare: HIPAA minimum necessary and retention requirements
-- Payment processing: PCI DSS data retention and disposal requirements
+- Payment processing: PCI DSS v4.0.1 data retention and disposal requirements
 - Public sector: Government archival and public records laws
 
 Customize assessment criteria to include regulatory-specific requirements.
@@ -1003,7 +1003,7 @@ def create_instructions_sheet(ws, styles):
         f"{BULLET} Swiss FADP Article 6: Data Processing Principles",
         f"{BULLET} Swiss Code of Obligations (OR) Article 127, 958f: Record retention",
         f"{BULLET} ISO/IEC 27002:2022 Control A.8.10: Information Deletion",
-        f"{BULLET} NIST SP 800-88 Rev. 1: Guidelines for Media Sanitization (reference only)"
+        f"{BULLET} NIST SP 800-88 Rev. 2: Guidelines for Media Sanitization (reference only)"
     ]
     
     for ref in references:

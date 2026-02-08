@@ -143,13 +143,13 @@ This policy establishes WHAT governance structures are required, WHO holds secur
 - DORA (if EU financial services): Art. 5, 13
 - NIS2 (if essential/important entity): Art. 20, 21
 - FINMA (if Swiss-regulated): Circular 2008/21
-- PCI DSS (if processing cards): Requirement 12.7, 12.8
+- PCI DSS v4.0.1 (if processing cards): Requirement 12.7, 12.8
 
 **Tier 3: Informational Reference**:
 
 - NIST SP 800-53 Rev. 5: PS-Series controls
 - ISO/IEC 27002:2022: Implementation guidance
-- CIS Controls v8: Control 14
+- CIS Controls v8.1: Control 14
 
 For complete regulatory categorization, refer to ISMS-POL-00.
 

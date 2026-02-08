@@ -218,7 +218,7 @@ mechanisms before using results for compliance reporting.
 
 **Regulatory Retention Requirements:**
 Common retention periods by regulation:
-- PCI DSS: 1 year online + 3 months archive minimum
+- PCI DSS v4.0.1: 1 year online + 3 months archive minimum
 - GDPR: Varies by processing purpose (typically 6 months to 3 years)
 - HIPAA: 6 years minimum
 - SOX: 7 years for financial audit logs
@@ -932,7 +932,7 @@ def create_retention_period_sheet(ws, styles):
     category_dv.add('B9:B100')
     
     regulatory_dv = DataValidation(type="list",
-        formula1='"PCI DSS,HIPAA,SOX,GDPR,FADP,ISO 27001,None"', allow_blank=True)
+        formula1='"PCI DSS v4.0.1,HIPAA,SOX,GDPR,FADP,ISO 27001,None"', allow_blank=True)
     ws.add_data_validation(regulatory_dv)
     regulatory_dv.add('C9:C100')
     
@@ -958,11 +958,11 @@ def create_retention_period_sheet(ws, styles):
     row += 1
     reference_data = [
         ("Security Events", "12 months", "ISO 27001, most regulations"),
-        ("Authentication", "12 months", "PCI DSS: 12 months minimum"),
+        ("Authentication", "12 months", "PCI DSS v4.0.1: 12 months minimum"),
         ("Administrative Actions", "12 months", "SOX: audit trail required"),
         ("Financial Transactions", "7 years", "SOX compliance"),
         ("Healthcare Access", "6 years", "HIPAA requirements"),
-        ("Payment Card Data", "12 months", "PCI DSS"),
+        ("Payment Card Data", "12 months", "PCI DSS v4.0.1"),
     ]
     
     for category, retention, notes in reference_data:

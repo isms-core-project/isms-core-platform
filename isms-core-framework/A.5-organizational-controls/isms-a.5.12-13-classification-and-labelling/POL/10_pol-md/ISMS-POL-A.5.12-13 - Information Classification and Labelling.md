@@ -161,7 +161,7 @@ These frameworks inform implementation but do not constitute mandatory complianc
 
 - ISO 27002:2022 Implementation Guidance for A.5.12-13
 - NIST SP 800-53 (Security Categorization)
-- CIS Controls v8 (Data Classification and Protection)
+- CIS Controls v8.1 (Data Classification and Protection)
 - Government classification schemes (for reference in public sector work)
 
 **Compliance Determination**: [Organization] determines applicable Tier 2 regulations through periodic business activity assessment. The most stringent classification requirements apply where multiple regulations overlap.

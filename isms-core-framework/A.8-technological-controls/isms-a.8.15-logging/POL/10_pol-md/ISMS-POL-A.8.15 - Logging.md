@@ -148,11 +148,11 @@ Implementation procedures (HOW logs are technically configured) are documented s
 
 **Regulatory-specific minimums** (when applicable per ISMS-POL-00):
 
-- PCI DSS: 12 months online
+- PCI DSS v4.0.1: 12 months online
 - HIPAA: 6 years total
 - SOX: 7 years total
 
-**Conflict Resolution**: When multiple regulations apply to the same system, the **most stringent requirement** SHALL govern. Example: System processing both payment cards and health data → 12 months online (PCI DSS) + 7 years archive (SOX/nDSG) = 8 years total retention.
+**Conflict Resolution**: When multiple regulations apply to the same system, the **most stringent requirement** SHALL govern. Example: System processing both payment cards and health data → 12 months online (PCI DSS v4.0.1) + 7 years archive (SOX/nDSG) = 8 years total retention.
 
 **Storage and disposal**:
 
@@ -249,7 +249,7 @@ Applies when triggered per ISMS-POL-00:
 |-----------|---------|-------------------------|
 | **DORA** | EU financial services | ICT incident detection and management |
 | **NIS2** | Essential/important entity (EU) | Cybersecurity risk management logging |
-| **PCI DSS v4.0** | Payment card processing | Req. 10: Comprehensive audit trails, 12-month online retention |
+| **PCI DSS v4.0.1** | Payment card processing | Req. 10: Comprehensive audit trails, 12-month online retention |
 | **HIPAA** | US healthcare data | §164.312(b): Audit controls, 6-year retention |
 | **SOX** | Public company financial reporting | Financial system audit trails, 7-year retention |
 

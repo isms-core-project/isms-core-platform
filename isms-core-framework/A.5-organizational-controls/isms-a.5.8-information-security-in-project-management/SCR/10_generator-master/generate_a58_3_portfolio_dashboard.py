@@ -418,7 +418,7 @@ def create_regulatory_compliance_sheet(ws, styles):
         ws[f"{col}{row}"].fill = styles["column_header"]["fill"]
         ws.column_dimensions[col].width = width
     row += 1
-    regulations = ["GDPR", "nDSG (Swiss DPA)", "PCI DSS", "HIPAA", "ISO 27001", "SOC 2"]
+    regulations = ["GDPR", "nDSG (Swiss DPA)", "PCI DSS v4.0.1", "HIPAA", "ISO 27001", "SOC 2"]
     val_status = DataValidation(type="list", formula1='"✅ Compliant,⚠️ Partial,❌ Non-Compliant"', allow_blank=False)
     ws.add_data_validation(val_status)
     for reg in regulations:

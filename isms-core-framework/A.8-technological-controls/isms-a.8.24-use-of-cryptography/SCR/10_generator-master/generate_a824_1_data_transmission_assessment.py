@@ -211,7 +211,7 @@ before using results for compliance reporting or remediation decisions.
 
 **Regulatory Alignment:**
 Ensure cryptographic standards align with applicable regulatory requirements:
-- Payment processing: PCI DSS cryptographic requirements
+- Payment processing: PCI DSS v4.0.1 cryptographic requirements
 - Healthcare: HIPAA encryption standards
 - Finance: Regional banking encryption requirements
 - Government: Jurisdiction-specific cryptographic mandates
