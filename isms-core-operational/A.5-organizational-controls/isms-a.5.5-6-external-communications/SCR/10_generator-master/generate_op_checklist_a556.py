@@ -68,7 +68,7 @@ REQUIREMENTS = OrderedDict([
         ("A.5.5-6-08", "Nfadp Art. 24 Does Not Stipulate",
          "nFADP Art. 24 does not stipulate a fixed notification deadline but requires reporting 'as soon as possible'. The FDPIC has published guidelines clarifying that this means without undue delay once the controller becomes aware of the breach. [Organisation] shall target notification within 72 hours as an internal standard to demonstrate diligence, even though Swiss law does not mandate this specific timeframe."),
         ("A.5.5-6-09", "Swiss Isg (Information Security Act):",
-         "Swiss ISG (Information Security Act): Since 1 April 2025, operators of critical infrastructure must report cyberattacks to the NCSC within 24 hours of discovery. Failure to report may result in fines up to CHF 100,000 (penalties in force since 1 October 2025). [Organisation] shall assess whether it falls within the ISG's definition of critical infrastructure and comply accordingly."),
+         "Swiss ISG (Information Security Act): Since 1 April 2025, operators of critical infrastructure must report cyberattacks to the NCSC within 24 hours of discovery. Failure to report may result in fines up to CHF 100'000 (penalties in force since 1 October 2025). [Organisation] shall assess whether it falls within the ISG's definition of critical infrastructure and comply accordingly."),
         ("A.5.5-6-10", "Fdpic Breach Reporting Portal:",
          "FDPIC breach reporting portal: Notifications shall be submitted via the FDPIC's dedicated portal at databreach.edoeb.admin.ch/report."),
         ("A.5.5-6-11", "Processor Obligations: Where",

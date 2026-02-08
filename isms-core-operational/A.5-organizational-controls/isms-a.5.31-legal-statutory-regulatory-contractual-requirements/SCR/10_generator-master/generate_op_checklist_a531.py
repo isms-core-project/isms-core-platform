@@ -118,7 +118,7 @@ REQUIREMENTS = OrderedDict([
         ("A.5.31-34", "Art. 328 — Employer Duty Of",
          "Art. 328 — Employer duty of care: The employer shall protect and respect the personality rights of employees, including the protection of their personal data and privacy."),
         ("A.5.31-35", "Art. 957-958F — Record-Keeping",
-         "Art. 957-958f — Record-keeping obligations: Legal entities and sole proprietorships with turnover of at least CHF 500,000 shall maintain commercial books and records. Business books, accounting vouchers, business reports, and audit reports shall be retained for 10 years from the end of the business year (Art. 958f CO). Records may be kept on paper, electronically, or in a comparable format provided they can be read at any time."),
+         "Art. 957-958f — Record-keeping obligations: Legal entities and sole proprietorships with turnover of at least CHF 500'000 shall maintain commercial books and records. Business books, accounting vouchers, business reports, and audit reports shall be retained for 10 years from the end of the business year (Art. 958f CO). Records may be kept on paper, electronically, or in a comparable format provided they can be read at any time."),
         ("A.5.31-36", "Monitoring Behaviour, Or As A Processor",
          "Where the organisation processes personal data of individuals located in the EU/EEA — whether through offering goods or services, monitoring behaviour, or as a processor for EU-based controllers — GDPR shall apply in addition to the nFADP."),
         ("A.5.31-37", "Legal Basis Required — A Valid",

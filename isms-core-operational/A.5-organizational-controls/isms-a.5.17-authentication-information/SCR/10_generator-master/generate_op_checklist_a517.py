@@ -105,7 +105,7 @@ REQUIREMENTS = OrderedDict([
         ("A.5.17-26", "Revocation: Biometric Templates",
          "Revocation: Biometric templates shall be deleted upon employment termination or when the individual withdraws consent."),
         ("A.5.17-27", "Accuracy: Biometric Systems",
-         "Accuracy: Biometric systems shall be configured with a false acceptance rate (FAR) appropriate to the risk level (recommended: FAR <= 1:50,000 for standard access, FAR <= 1:1,000,000 for privileged access)."),
+         "Accuracy: Biometric systems shall be configured with a false acceptance rate (FAR) appropriate to the risk level (recommended: FAR <= 1:50'000 for standard access, FAR <= 1:1'000'000 for privileged access)."),
         ("A.5.17-28", "Systems That Cannot Support Mfa",
          "Systems that cannot support MFA shall be documented in the risk register with:."),
     ]),
