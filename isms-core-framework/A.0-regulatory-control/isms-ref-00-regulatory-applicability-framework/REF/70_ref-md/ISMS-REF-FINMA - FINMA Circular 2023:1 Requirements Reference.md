@@ -29,7 +29,7 @@
 **Next Review Date**: [Date + 12 months]  
 **Approvers**: Legal/Compliance / CISO (technical reference, no ISMS approval required)
 
-**Distribution**: Compliance team, CISO, Legal counsel (for organizations subject to FINMA supervision)
+**Distribution**: Compliance team, CISO, Legal counsel (for organisations subject to FINMA supervision)
 
 ---
 
@@ -38,29 +38,29 @@
 This document is provided for informational and awareness purposes only.
 
 - This document is NOT part of the Information Security Management System (ISMS).
-- This document does NOT define mandatory requirements unless [Organization] is a FINMA-regulated entity.
+- This document does NOT define mandatory requirements unless [Organisation] is a FINMA-regulated entity.
 - This document does NOT establish binding requirements, deadlines, KPIs, or SLAs for non-regulated entities.
-- This document does NOT mandate the adoption of FINMA requirements for organizations not subject to FINMA supervision.
+- This document does NOT mandate the adoption of FINMA requirements for organisations not subject to FINMA supervision.
 - This document does NOT override or extend any ISMS policy.
 
 **Applicability Determination**:
-FINMA requirements apply ONLY IF [Organization]:
+FINMA requirements apply ONLY IF [Organisation]:
 
 - Holds a FINMA license (bank, securities dealer, insurance, fund management, payment services)
 - Is subject to FINMA supervision
 - Operates as a Swiss financial institution
 
-For all other organizations, this document serves solely as:
+For all other organisations, this document serves solely as:
 
 - Technical reference for potential FINMA requirements
 - Context for service provider relationships with Swiss financial institutions
 - Awareness of Swiss financial sector security standards
-- **This document must not be used as audit evidence unless [Organization] is FINMA-regulated**
+- **This document must not be used as audit evidence unless [Organisation] is FINMA-regulated**
 
 Use of this document does not imply FINMA applicability, compliance obligations, or regulatory status.
 
 **Critical Positioning Statement**:
-This document intentionally provides regulatory detail beyond what applies to most organizations. Its purpose is awareness only for organizations that MAY become subject to FINMA supervision, or that provide services to FINMA-regulated entities. No auditor conclusions shall be drawn from the presence, absence, or implementation status of any FINMA requirement listed herein unless [Organization] is explicitly FINMA-regulated.
+This document intentionally provides regulatory detail beyond what applies to most organisations. Its purpose is awareness only for organisations that MAY become subject to FINMA supervision, or that provide services to FINMA-regulated entities. No auditor conclusions shall be drawn from the presence, absence, or implementation status of any FINMA requirement listed herein unless [Organisation] is explicitly FINMA-regulated.
 
 ---
 
@@ -72,7 +72,7 @@ This document provides a technical overview of Swiss Financial Market Supervisor
 
 - Awareness of FINMA requirements for Swiss financial institutions
 - Understanding of FINMA margin structure and key requirements
-- Context for organizations providing services to Swiss financial institutions
+- Context for organisations providing services to Swiss financial institutions
 - Potential future applicability assessment
 - Mapping FINMA requirements to ISO 27001:2022 controls
 
@@ -80,32 +80,32 @@ This document provides a technical overview of Swiss Financial Market Supervisor
 
 This document does NOT:
 
-- Establish mandatory requirements for non-FINMA-regulated organizations
-- Define [Organization]'s compliance obligations (see POL-00 for regulatory applicability)
-- Create audit criteria unless [Organization] is FINMA-regulated
+- Establish mandatory requirements for non-FINMA-regulated organisations
+- Define [Organisation]'s compliance obligations (see POL-00 for regulatory applicability)
+- Create audit criteria unless [Organisation] is FINMA-regulated
 - Replace legal or compliance counsel interpretation
 - Constitute legal advice on FINMA compliance
 - Establish implementation procedures or verification processes
 
 ## Relationship to ISMS
 
-This document is a **non-binding technical reference** UNLESS [Organization] is subject to FINMA supervision (as determined in ISMS-POL-00 Section 3.1).
+This document is a **non-binding technical reference** UNLESS [Organisation] is subject to FINMA supervision (as determined in ISMS-POL-00 Section 3.1).
 
-**If [Organization] IS FINMA-regulated:**
+**If [Organisation] IS FINMA-regulated:**
 
 - FINMA requirements become Tier 1 (Mandatory Compliance) per POL-00
 - This document provides implementation guidance
 - ISMS controls must demonstrate FINMA compliance
 - Annual FINMA compliance attestation required
 
-**If [Organization] IS NOT FINMA-regulated:**
+**If [Organisation] IS NOT FINMA-regulated:**
 
 - FINMA remains Tier 3 (Informational Reference) per POL-00
 - This document is for awareness only
 - No FINMA compliance obligations exist
 - ISMS controls follow ISO 27001:2022 only
 
-## Content Organization
+## Content Organisation
 
 This reference organizes FINMA requirements by:
 
@@ -167,7 +167,7 @@ FINMA issues "circulars" that provide binding minimum standards for supervised i
 
 ## Applicability Determination
 
-**FINMA applies to [Organization] IF**:
+**FINMA applies to [Organisation] IF**:
 
 | Criteria | Status | Evidence |
 |----------|--------|----------|
@@ -183,7 +183,7 @@ FINMA issues "circulars" that provide binding minimum standards for supervised i
 **If ALL "No"**: FINMA requirements remain **Tier 3 (Informational Reference)** per POL-00
 
 **Service Provider Status**:
-If [Organization] provides services TO FINMA-regulated entities:
+If [Organisation] provides services TO FINMA-regulated entities:
 
 - FINMA 2008/7 or 2018/3 outsourcing requirements may apply
 - Customer contracts may impose FINMA-equivalent controls
@@ -199,14 +199,14 @@ If [Organization] provides services TO FINMA-regulated entities:
 FINMA Circular 2023/1 Margins 50-62 establish information security requirements for Swiss banks and securities dealers.
 
 **Key Principle**:
-Organizations must implement **risk-based** information security measures appropriate to:
+Organisations must implement **risk-based** information security measures appropriate to:
 
 - Nature and scope of business activities
 - Complexity of IT systems
 - Sensitivity of data processed
 - Threat landscape and risk assessment
 
-FINMA does NOT prescribe specific technical controls but requires "appropriate organizational and technical measures."
+FINMA does NOT prescribe specific technical controls but requires "appropriate organisational and technical measures."
 
 ## Margin 50-55: Information Security Framework
 
@@ -235,10 +235,10 @@ Banks must define and implement an information security strategy aligned with:
 
 ---
 
-**Margin 51: Information Security Organization**
+**Margin 51: Information Security Organisation**
 
 **Requirement**:
-Clear organizational structure for information security with:
+Clear organisational structure for information security with:
 
 - Defined roles and responsibilities
 - Segregation of duties (development, operations, security)
@@ -247,7 +247,7 @@ Clear organizational structure for information security with:
 
 **ISO 27001:2022 Mapping**:
 
-- Clause 5.3: Organizational roles, responsibilities and authorities
+- Clause 5.3: Organisational roles, responsibilities and authorities
 - A.5.2: Information security roles and responsibilities
 
 **Key Roles** (FINMA expectation):
@@ -797,7 +797,7 @@ FINMA Circular 2008/7 establishes requirements for banks outsourcing business fu
 | FINMA Requirement | FINMA Margin | ISO 27001:2022 Control | Implementation Priority |
 |-------------------|--------------|------------------------|-------------------------|
 | Information Security Strategy | 50 | Clause 5.2, A.5.1 | Critical |
-| Security Organization | 51 | Clause 5.3, A.5.2 | Critical |
+| Security Organisation | 51 | Clause 5.3, A.5.2 | Critical |
 | Risk Assessment | 52 | Clause 6.1.2, 6.1.3, 8.2, 8.3 | Critical |
 | Security Policies | 53 | A.5.1, A.5.10, A.5.12 | Critical |
 | Awareness and Training | 54 | A.6.3 | High |
@@ -816,7 +816,7 @@ FINMA Circular 2008/7 establishes requirements for banks outsourcing business fu
 
 ## Gap Analysis Approach
 
-For organizations subject to FINMA:
+For organisations subject to FINMA:
 
 **Step 1**: Confirm FINMA applicability status
 **Step 2**: Conduct ISO 27001:2022 compliance baseline assessment
@@ -846,7 +846,7 @@ FINMA expects documented evidence of:
 
 ## FINMA Compliance Timeline
 
-**If [Organization] becomes FINMA-regulated**:
+**If [Organisation] becomes FINMA-regulated**:
 
 **Month 1-3: Gap Assessment**
 
@@ -1002,7 +1002,7 @@ Estimated additional cost: 15-25% increase over base ISO 27001 compliance for sm
 - Data Protection Act (FADP / nDSG)
 
 **Compliance Consulting**:
-Organizations subject to FINMA supervision should engage:
+Organisations subject to FINMA supervision should engage:
 
 - Legal counsel with Swiss financial regulatory expertise
 - Auditors experienced with FINMA examinations
@@ -1012,7 +1012,7 @@ Organizations subject to FINMA supervision should engage:
 
 # Appendix A: FINMA Compliance Self-Assessment Checklist
 
-This checklist supports initial gap assessment for organizations subject to FINMA supervision:
+This checklist supports initial gap assessment for organisations subject to FINMA supervision:
 
 ## Information Security Framework (Margins 50-55)
 
@@ -1089,12 +1089,12 @@ This checklist supports initial gap assessment for organizations subject to FINM
 
 # Appendix B: FINMA Notification Template
 
-**Subject**: Notification of [Incident Type] - [Organization Name]
+**Subject**: Notification of [Incident Type] - [Organisation Name]
 
 **To**: FINMA Supervision Team  
 **From**: [CISO / Compliance Officer Name]  
 **Date**: [Date]  
-**Organization**: [Legal Entity Name]  
+**Organisation**: [Legal Entity Name]  
 **FINMA License Number**: [Number]
 
 **Incident Summary**:
@@ -1144,5 +1144,5 @@ This checklist supports initial gap assessment for organizations subject to FINM
 
 *This technical reference supports potential FINMA compliance requirements as determined in ISMS-POL-00. All regulatory applicability determinations and binding requirements are defined in ISMS-POL-00 and approved ISMS policy documents.*
 
-*For organizations NOT subject to FINMA supervision, this document is for informational awareness only and does NOT create compliance obligations.*
+*For organisations NOT subject to FINMA supervision, this document is for informational awareness only and does NOT create compliance obligations.*
 <!-- QA_VERIFIED: 2026-02-01 -->

@@ -29,7 +29,7 @@
 **Next Review Date**: [Date + 12 months]  
 **Approvers**: Legal/Compliance / CISO (technical reference, no ISMS approval required)
 
-**Distribution**: Compliance team, CISO, Legal counsel (for organizations subject to NIS2)
+**Distribution**: Compliance team, CISO, Legal counsel (for organisations subject to NIS2)
 
 ---
 
@@ -38,30 +38,30 @@
 This document is provided for informational and awareness purposes only.
 
 - This document is NOT part of the Information Security Management System (ISMS).
-- This document does NOT define mandatory requirements unless [Organization] is a NIS2-regulated entity.
+- This document does NOT define mandatory requirements unless [Organisation] is a NIS2-regulated entity.
 - This document does NOT establish binding requirements, deadlines, KPIs, or SLAs for non-regulated entities.
-- This document does NOT mandate the adoption of NIS2 requirements for organizations not subject to NIS2.
+- This document does NOT mandate the adoption of NIS2 requirements for organisations not subject to NIS2.
 - This document does NOT override or extend any ISMS policy.
 
 **Applicability Determination**:
-NIS2 requirements apply ONLY IF [Organization]:
+NIS2 requirements apply ONLY IF [Organisation]:
 
 - Is an essential or important entity operating in the EU in covered sectors
 - Falls within size thresholds (medium/large enterprises typically)
 - Provides services categorized under NIS2 Annex I (essential) or Annex II (important)
 - Operates in an EU member state that has transposed NIS2 into national law
 
-For all other organizations, this document serves solely as:
+For all other organisations, this document serves solely as:
 
 - Technical reference for potential NIS2 requirements
 - Context for business expansion into EU regulated sectors
 - Awareness of EU cybersecurity standards
-- **This document must not be used as audit evidence unless [Organization] is NIS2-regulated**
+- **This document must not be used as audit evidence unless [Organisation] is NIS2-regulated**
 
 Use of this document does not imply NIS2 applicability, compliance obligations, or regulatory status.
 
 **Critical Positioning Statement**:
-This document intentionally provides regulatory detail beyond what applies to most organizations. Its purpose is awareness only for organizations that MAY become subject to NIS2 as they expand operations, or that provide services to NIS2-regulated entities. No auditor conclusions shall be drawn from the presence, absence, or implementation status of any NIS2 requirement listed herein unless [Organization] is explicitly NIS2-regulated.
+This document intentionally provides regulatory detail beyond what applies to most organisations. Its purpose is awareness only for organisations that MAY become subject to NIS2 as they expand operations, or that provide services to NIS2-regulated entities. No auditor conclusions shall be drawn from the presence, absence, or implementation status of any NIS2 requirement listed herein unless [Organisation] is explicitly NIS2-regulated.
 
 ---
 
@@ -73,7 +73,7 @@ This document provides a technical overview of the Network and Information Secur
 
 - Awareness of NIS2 requirements for covered EU sectors
 - Understanding of NIS2's cybersecurity risk management framework
-- Context for organizations expanding into NIS2-regulated sectors
+- Context for organisations expanding into NIS2-regulated sectors
 - Potential future applicability assessment
 - Mapping NIS2 requirements to ISO 27001:2022 controls
 
@@ -81,9 +81,9 @@ This document provides a technical overview of the Network and Information Secur
 
 This document does NOT:
 
-- Establish mandatory requirements for non-NIS2-regulated organizations
-- Define [Organization]'s compliance obligations (see POL-00 for regulatory applicability)
-- Create audit criteria unless [Organization] is NIS2-regulated
+- Establish mandatory requirements for non-NIS2-regulated organisations
+- Define [Organisation]'s compliance obligations (see POL-00 for regulatory applicability)
+- Create audit criteria unless [Organisation] is NIS2-regulated
 - Replace legal or compliance counsel interpretation
 - Constitute legal advice on NIS2 compliance
 - Cover all national transposition variations (NIS2 is a Directive requiring national implementation)
@@ -91,23 +91,23 @@ This document does NOT:
 
 ## Relationship to ISMS
 
-This document is a **non-binding technical reference** UNLESS [Organization] is subject to NIS2 (as determined in ISMS-POL-00 Section 3.3).
+This document is a **non-binding technical reference** UNLESS [Organisation] is subject to NIS2 (as determined in ISMS-POL-00 Section 3.3).
 
-**If [Organization] IS NIS2-regulated:**
+**If [Organisation] IS NIS2-regulated:**
 
 - NIS2 requirements become Tier 1 (Mandatory Compliance) per POL-00
 - This document provides implementation guidance
 - ISMS controls must demonstrate NIS2 compliance
 - Incident reporting and national CSIRT coordination required
 
-**If [Organization] IS NOT NIS2-regulated:**
+**If [Organisation] IS NOT NIS2-regulated:**
 
 - NIS2 remains Tier 3 (Informational Reference) per POL-00
 - This document is for awareness only
 - No NIS2 compliance obligations exist
 - ISMS controls follow ISO 27001:2022 only
 
-## Content Organization
+## Content Organisation
 
 This reference organizes NIS2 requirements by:
 
@@ -182,7 +182,7 @@ NIS2 establishes two categories of entities:
 | **Food Production, Processing, Distribution** | Food operators (large scale) |
 | **Manufacturing** | Medical devices, computer/electronic/optical products, electrical equipment, machinery, motor vehicles/trailers, other transport equipment |
 | **Digital Providers** | Online marketplaces, online search engines, social networking services platforms |
-| **Research** | Research organizations |
+| **Research** | Research organisations |
 
 ## Size and Scope Criteria
 
@@ -203,7 +203,7 @@ NIS2 establishes two categories of entities:
 
 ## Applicability Determination
 
-**NIS2 applies to [Organization] IF**:
+**NIS2 applies to [Organisation] IF**:
 
 | Criteria | Status | Evidence |
 |----------|--------|----------|
@@ -218,7 +218,7 @@ NIS2 establishes two categories of entities:
 **If Criteria Not Met**: NIS2 requirements remain **Tier 3 (Informational Reference)** per POL-00
 
 **Note on National Transposition**:
-Each EU member state implements NIS2 through national legislation. Organizations must consult their national cybersecurity authority for specific requirements, as implementation details may vary.
+Each EU member state implements NIS2 through national legislation. Organisations must consult their national cybersecurity authority for specific requirements, as implementation details may vary.
 
 ---
 
@@ -229,7 +229,7 @@ Each EU member state implements NIS2 through national legislation. Organizations
 Article 21 establishes **minimum cybersecurity risk management measures** that essential and important entities must implement.
 
 **Legal Obligation** (Article 21(1)):
-Member states shall ensure entities take "appropriate and proportionate" technical, operational, and organizational measures to manage cybersecurity risks and minimize impact of incidents.
+Member states shall ensure entities take "appropriate and proportionate" technical, operational, and organisational measures to manage cybersecurity risks and minimize impact of incidents.
 
 **Proportionality Principle**:
 Measures must be appropriate to:
@@ -824,7 +824,7 @@ ISO 27001:2022 certification provides strong foundation for NIS2 compliance. Mai
 3. Management body oversight and liability framework
 4. National registration and supervision
 
-Organizations with ISO 27001 typically require **10-20% additional effort** to achieve NIS2 compliance, primarily in incident reporting infrastructure and management governance.
+Organisations with ISO 27001 typically require **10-20% additional effort** to achieve NIS2 compliance, primarily in incident reporting infrastructure and management governance.
 
 ---
 
@@ -832,7 +832,7 @@ Organizations with ISO 27001 typically require **10-20% additional effort** to a
 
 ## NIS2 Compliance Timeline
 
-**If [Organization] is NIS2-regulated entity**:
+**If [Organisation] is NIS2-regulated entity**:
 
 **Pre-Application (Before national law takes effect)**:
 
@@ -976,7 +976,7 @@ Non-compliance penalties can be severe (€7-10M or 1.4-2% turnover), making com
 
 ## National Competent Authorities
 
-Organizations must consult their **national cybersecurity authority** for:
+Organisations must consult their **national cybersecurity authority** for:
 
 - National transposition law specifics
 - Registration requirements
@@ -1014,7 +1014,7 @@ Organizations must consult their **national cybersecurity authority** for:
 
 ## Compliance Resources
 
-Organizations subject to NIS2 should engage:
+Organisations subject to NIS2 should engage:
 
 - Legal counsel with EU cybersecurity regulatory expertise
 - Auditors experienced with NIS2 compliance
@@ -1273,5 +1273,5 @@ I confirm that the information provided in this notification is accurate to the 
 
 *This technical reference supports potential NIS2 compliance requirements as determined in ISMS-POL-00. All regulatory applicability determinations and binding requirements are defined in ISMS-POL-00 and approved ISMS policy documents.*
 
-*For organizations NOT subject to NIS2, this document is for informational awareness only and does NOT create compliance obligations.*
+*For organisations NOT subject to NIS2, this document is for informational awareness only and does NOT create compliance obligations.*
 <!-- QA_VERIFIED: 2026-02-01 -->

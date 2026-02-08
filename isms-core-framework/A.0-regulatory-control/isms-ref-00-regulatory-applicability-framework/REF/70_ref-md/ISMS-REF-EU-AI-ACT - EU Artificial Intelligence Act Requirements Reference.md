@@ -29,7 +29,7 @@
 **Next Review Date**: [Date + 6 months]  
 **Approvers**: CISO / Legal/Compliance / Data Protection Officer (technical reference, no ISMS approval required)
 
-**Distribution**: AI/ML development teams, Product management, Legal, CISO, DPO (for organizations developing or deploying AI systems)
+**Distribution**: AI/ML development teams, Product management, Legal, CISO, DPO (for organisations developing or deploying AI systems)
 
 ---
 
@@ -38,30 +38,30 @@
 This document is provided for informational and awareness purposes only.
 
 - This document is NOT part of the Information Security Management System (ISMS).
-- This document does NOT define mandatory requirements unless [Organization] develops or deploys AI systems affecting EU persons.
-- This document does NOT establish binding requirements, deadlines, KPIs, or SLAs for non-AI organizations.
-- This document does NOT mandate the adoption of EU AI Act requirements for organizations not subject to the regulation.
+- This document does NOT define mandatory requirements unless [Organisation] develops or deploys AI systems affecting EU persons.
+- This document does NOT establish binding requirements, deadlines, KPIs, or SLAs for non-AI organisations.
+- This document does NOT mandate the adoption of EU AI Act requirements for organisations not subject to the regulation.
 - This document does NOT override or extend any ISMS policy.
 
 **Applicability Determination**:
-EU AI Act requirements apply ONLY IF [Organization]:
+EU AI Act requirements apply ONLY IF [Organisation]:
 
 - Is a provider (develops or places AI systems on EU market)
 - Is a deployer (uses AI systems under own authority in the EU)
 - Is an importer or distributor of AI systems in the EU
 - Develops/deploys AI systems whose outputs affect persons located in the EU (extraterritorial application)
 
-For all other organizations, this document serves solely as:
+For all other organisations, this document serves solely as:
 
 - Technical reference for potential AI Act requirements
 - Context for business expansion into AI development/deployment
 - Awareness of EU AI regulatory landscape
-- **This document must not be used as audit evidence unless [Organization] is subject to AI Act**
+- **This document must not be used as audit evidence unless [Organisation] is subject to AI Act**
 
 Use of this document does not imply AI Act applicability, compliance obligations, or AI system development/deployment status.
 
 **Critical Positioning Statement**:
-This document intentionally provides regulatory detail beyond what applies to most organizations. Its purpose is awareness only for organizations that MAY become subject to the EU AI Act as they develop or deploy AI systems, or that provide services to AI system providers/deployers. No auditor conclusions shall be drawn from the presence, absence, or implementation status of any AI Act requirement listed herein unless [Organization] explicitly develops or deploys AI systems affecting EU persons.
+This document intentionally provides regulatory detail beyond what applies to most organisations. Its purpose is awareness only for organisations that MAY become subject to the EU AI Act as they develop or deploy AI systems, or that provide services to AI system providers/deployers. No auditor conclusions shall be drawn from the presence, absence, or implementation status of any AI Act requirement listed herein unless [Organisation] explicitly develops or deploys AI systems affecting EU persons.
 
 ---
 
@@ -73,7 +73,7 @@ This document provides a technical overview of the EU Artificial Intelligence Ac
 
 - Awareness of EU AI Act requirements for AI system providers and deployers
 - Understanding of risk-based classification (Unacceptable, High-Risk, Limited Risk, Minimal Risk)
-- Context for organizations considering AI development or deployment
+- Context for organisations considering AI development or deployment
 - Potential future applicability assessment
 - Mapping AI Act requirements to ISO 27001:2022 controls
 
@@ -81,9 +81,9 @@ This document provides a technical overview of the EU Artificial Intelligence Ac
 
 This document does NOT:
 
-- Establish mandatory requirements for non-AI organizations
-- Define [Organization]'s compliance obligations (see POL-00 for regulatory applicability)
-- Create audit criteria unless [Organization] develops/deploys AI systems
+- Establish mandatory requirements for non-AI organisations
+- Define [Organisation]'s compliance obligations (see POL-00 for regulatory applicability)
+- Create audit criteria unless [Organisation] develops/deploys AI systems
 - Replace legal or compliance counsel interpretation
 - Constitute legal advice on EU AI Act compliance
 - Cover all delegated acts and implementing acts (many still in development)
@@ -91,23 +91,23 @@ This document does NOT:
 
 ## Relationship to ISMS
 
-This document is a **non-binding technical reference** UNLESS [Organization] develops or deploys AI systems affecting EU persons (as determined in ISMS-POL-00 Section 3.X - EU AI Act).
+This document is a **non-binding technical reference** UNLESS [Organisation] develops or deploys AI systems affecting EU persons (as determined in ISMS-POL-00 Section 3.X - EU AI Act).
 
-**If [Organization] DOES develop/deploy AI systems affecting EU:**
+**If [Organisation] DOES develop/deploy AI systems affecting EU:**
 
 - AI Act requirements become Tier 1 (Mandatory Compliance) per POL-00
 - This document provides implementation guidance
 - ISMS controls must support AI Act compliance (risk management, data governance, logging, human oversight)
 - Conformity assessment required for high-risk AI systems
 
-**If [Organization] DOES NOT develop/deploy AI systems:**
+**If [Organisation] DOES NOT develop/deploy AI systems:**
 
 - AI Act remains Tier 3 (Informational Reference) per POL-00
 - This document is for awareness only
 - No AI Act compliance obligations exist
 - ISMS controls follow ISO 27001:2022 only
 
-## Content Organization
+## Content Organisation
 
 This reference organizes AI Act requirements by:
 
@@ -117,7 +117,7 @@ This reference organizes AI Act requirements by:
 - Phased implementation timeline (2025-2027)
 - General-purpose AI models (GPAI) requirements
 - Mapping to ISO 27001:2022 and related standards
-- Governance and organizational requirements
+- Governance and organisational requirements
 
 ---
 
@@ -303,15 +303,15 @@ Certain AI practices are **prohibited** due to unacceptable risks to fundamental
 
 **ISO 27001:2022 Mapping**:
 
-- Article 5 prohibitions relate to organizational policies and ethical AI use
+- Article 5 prohibitions relate to organisational policies and ethical AI use
 - No direct ISO 27001 control, but informed by:
   - A.5.1: Policies for information security (ethical use policies)
   - A.5.31: Legal, statutory, regulatory and contractual requirements
-  - Clause 4.1: Understanding the organization and its context (societal expectations)
+  - Clause 4.1: Understanding the organisation and its context (societal expectations)
 
 ## Compliance Requirements
 
-**For All Organizations**:
+**For All Organisations**:
 1. **Inventory AI Systems**: Identify all AI systems in development or deployment
 2. **Article 5 Assessment**: Assess whether any AI systems fall under prohibited practices
 3. **Immediate Cessation**: Stop development/deployment of prohibited AI systems by February 2, 2025
@@ -892,7 +892,7 @@ GPAI model with systemic risk if:
 
 ---
 
-# Organizational Requirements and Governance
+# Organisational Requirements and Governance
 
 ## AI Literacy (Article 4)
 
@@ -933,7 +933,7 @@ GPAI model with systemic risk if:
 
 **ISO 27001:2022 Mapping**:
 
-- Clause 5.3: Organizational roles, responsibilities and authorities
+- Clause 5.3: Organisational roles, responsibilities and authorities
 - A.5.2: Information security roles and responsibilities
 
 ---
@@ -1029,7 +1029,7 @@ ISO 27001:2022 provides strong foundational controls for AI Act compliance, part
 - **ISO/IEC TR 24028:2020**: Overview of trustworthiness in AI
 - **ISO/IEC 38507:2022**: Governance of IT - Governance implications of AI
 
-Organizations with ISO 27001 typically require **40-60% additional effort** to achieve EU AI Act compliance for high-risk systems, primarily in:
+Organisations with ISO 27001 typically require **40-60% additional effort** to achieve EU AI Act compliance for high-risk systems, primarily in:
 
 - AI-specific risk management
 - Data governance for training/validation data
@@ -1043,7 +1043,7 @@ Organizations with ISO 27001 typically require **40-60% additional effort** to a
 
 ## AI Act Compliance Roadmap
 
-**If [Organization] develops or deploys AI systems affecting EU**:
+**If [Organisation] develops or deploys AI systems affecting EU**:
 
 **Phase 1: Inventory and Classification (Months 1-3)**
 
@@ -1178,7 +1178,7 @@ AI Act compliance costs vary significantly by:
 
 **Challenge 1: AI System Identification**
 
-- Organizations underestimate number of AI systems in use
+- Organisations underestimate number of AI systems in use
 - "AI" definition broad - includes rule-based systems, statistical models
 - AI embedded in third-party software often overlooked
 
@@ -1190,8 +1190,8 @@ AI Act compliance costs vary significantly by:
 
 **Challenge 3: Provider vs. Deployer Role Confusion**
 
-- Same organization can be both provider and deployer
-- Customization of third-party AI may make organization a provider
+- Same organisation can be both provider and deployer
+- Customization of third-party AI may make organisation a provider
 - "Substantial modification" triggers provider obligations
 
 **Challenge 4: Data Governance for AI**
@@ -1209,7 +1209,7 @@ AI Act compliance costs vary significantly by:
 **Challenge 6: Conformity Assessment Preparation**
 
 - Technical documentation is extensive (Annex IV)
-- Quality management system requires organizational maturity
+- Quality management system requires organisational maturity
 - Notified body capacity may be limited initially
 
 **Challenge 7: GPAI Model Obligations**
@@ -1366,7 +1366,7 @@ AI Act compliance costs vary significantly by:
 | **If Systemic Risk**: Cybersecurity / model protection (Article 54(1)(c)) | ⬜ Yes ⬜ No ⬜ N/A | | |
 | **If Systemic Risk**: Energy efficiency reporting (Article 54(1)(d)) | ⬜ Yes ⬜ No ⬜ N/A | | |
 
-## Organizational Requirements
+## Organisational Requirements
 
 | Requirement | Status | Evidence | Notes |
 |-------------|--------|----------|-------|
@@ -1466,5 +1466,5 @@ AI Act compliance costs vary significantly by:
 
 *This technical reference supports potential EU AI Act compliance requirements as determined in ISMS-POL-00. All regulatory applicability determinations and binding requirements are defined in ISMS-POL-00 and approved ISMS policy documents.*
 
-*For organizations NOT developing or deploying AI systems affecting EU persons, this document is for informational awareness only and does NOT create compliance obligations.*
+*For organisations NOT developing or deploying AI systems affecting EU persons, this document is for informational awareness only and does NOT create compliance obligations.*
 <!-- QA_VERIFIED: 2026-02-01 -->

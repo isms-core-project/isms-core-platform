@@ -38,7 +38,7 @@
 **Verknüpfte Dokumente**: 
 
 - Alle ISMS Policy-Dokumente (obligatorische Referenz)
-- ISO/IEC 27001:2022 Clause 4.1 (Understanding the organization and its context)
+- ISO/IEC 27001:2022 Clause 4.1 (Understanding the organisation and its context)
 - ISO/IEC 27001:2022 Clause 4.2 (Understanding the needs and expectations of interested parties)
 
 **Verteilung**: Alle ISMS Stakeholder, Policy Authors, System Owners, Auditoren  
@@ -203,7 +203,7 @@ Anforderungen, die nur gelten, wenn bestimmte Bedingungen erfüllt sind (z.B. Br
 
 **ISMS-Impact**:
 
-- Technical and Organizational Measures (TOMs)
+- Technical and Organisational Measures (TOMs)
 - Encryption und Pseudonymization
 - Access Controls und Authentication
 - Data Breach Response Procedures
@@ -218,7 +218,7 @@ Anforderungen, die nur gelten, wenn bestimmte Bedingungen erfüllt sind (z.B. Br
 
 **Kernbestimmungen**:
 
-- Annex A Controls (93 Controls in den Bereichen Organizational, People, Physical, Technological)
+- Annex A Controls (93 Controls in den Bereichen Organisational, People, Physical, Technological)
 - Clause 4: Context der Organisation
 - Clause 5: Leadership und Commitment
 - Clause 6: Risk Assessment und Treatment

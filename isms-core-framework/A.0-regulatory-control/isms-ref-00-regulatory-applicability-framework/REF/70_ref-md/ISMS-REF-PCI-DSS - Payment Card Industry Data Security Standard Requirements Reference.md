@@ -29,7 +29,7 @@
 **Next Review Date**: [Date + 12 months]  
 **Approvers**: CISO / Payment Security Lead (technical reference, no ISMS approval required)
 
-**Distribution**: Payment processing team, CISO, Compliance, IT Operations (for organizations handling payment cards)
+**Distribution**: Payment processing team, CISO, Compliance, IT Operations (for organisations handling payment cards)
 
 ---
 
@@ -38,13 +38,13 @@
 This document is provided for informational and awareness purposes only.
 
 - This document is NOT part of the Information Security Management System (ISMS).
-- This document does NOT define mandatory requirements unless [Organization] processes payment cards.
+- This document does NOT define mandatory requirements unless [Organisation] processes payment cards.
 - This document does NOT establish binding requirements, deadlines, KPIs, or SLAs for non-card-processing entities.
-- This document does NOT mandate the adoption of PCI DSS requirements for organizations not handling payment cards.
+- This document does NOT mandate the adoption of PCI DSS requirements for organisations not handling payment cards.
 - This document does NOT override or extend any ISMS policy.
 
 **Applicability Determination**:
-PCI DSS requirements apply ONLY IF [Organization]:
+PCI DSS requirements apply ONLY IF [Organisation]:
 
 - Stores, processes, or transmits payment cardholder data (CHD)
 - Has access to the Cardholder Data Environment (CDE)
@@ -52,17 +52,17 @@ PCI DSS requirements apply ONLY IF [Organization]:
 - Is a payment service provider or processor
 - Is designated by payment brands (Visa, Mastercard, etc.) as requiring compliance
 
-For all other organizations, this document serves solely as:
+For all other organisations, this document serves solely as:
 
 - Technical reference for potential PCI DSS requirements
 - Context for business expansion into payment processing
 - Awareness of payment card security standards
-- **This document must not be used as audit evidence unless [Organization] is PCI DSS-compliant**
+- **This document must not be used as audit evidence unless [Organisation] is PCI DSS-compliant**
 
 Use of this document does not imply PCI DSS applicability, compliance obligations, or payment card processing status.
 
 **Critical Positioning Statement**:
-This document intentionally provides regulatory detail beyond what applies to most organizations. Its purpose is awareness only for organizations that MAY become subject to PCI DSS, or that provide services to merchants or payment processors. No auditor conclusions shall be drawn from the presence, absence, or implementation status of any PCI DSS requirement listed herein unless [Organization] explicitly processes payment cards.
+This document intentionally provides regulatory detail beyond what applies to most organisations. Its purpose is awareness only for organisations that MAY become subject to PCI DSS, or that provide services to merchants or payment processors. No auditor conclusions shall be drawn from the presence, absence, or implementation status of any PCI DSS requirement listed herein unless [Organisation] explicitly processes payment cards.
 
 ---
 
@@ -74,7 +74,7 @@ This document provides a technical overview of the Payment Card Industry Data Se
 
 - Awareness of PCI DSS requirements for entities handling payment cards
 - Understanding of the 12 PCI DSS requirements across 6 control objectives
-- Context for organizations considering payment card acceptance
+- Context for organisations considering payment card acceptance
 - Potential future applicability assessment
 - Mapping PCI DSS requirements to ISO 27001:2022 controls
 
@@ -82,9 +82,9 @@ This document provides a technical overview of the Payment Card Industry Data Se
 
 This document does NOT:
 
-- Establish mandatory requirements for non-payment-card-processing organizations
-- Define [Organization]'s compliance obligations (see POL-00 for regulatory applicability)
-- Create audit criteria unless [Organization] processes payment cards
+- Establish mandatory requirements for non-payment-card-processing organisations
+- Define [Organisation]'s compliance obligations (see POL-00 for regulatory applicability)
+- Create audit criteria unless [Organisation] processes payment cards
 - Replace Qualified Security Assessor (QSA) guidance
 - Constitute legal or compliance advice on PCI DSS
 - Cover all Self-Assessment Questionnaire (SAQ) variations
@@ -92,23 +92,23 @@ This document does NOT:
 
 ## Relationship to ISMS
 
-This document is a **non-binding technical reference** UNLESS [Organization] processes payment cards (as determined in ISMS-POL-00 Section 3.4).
+This document is a **non-binding technical reference** UNLESS [Organisation] processes payment cards (as determined in ISMS-POL-00 Section 3.4).
 
-**If [Organization] DOES process payment cards:**
+**If [Organisation] DOES process payment cards:**
 
 - PCI DSS requirements become Tier 1 (Mandatory Compliance) per POL-00
 - This document provides implementation guidance
 - ISMS controls must demonstrate PCI DSS compliance
 - Annual validation required (Report on Compliance or Self-Assessment Questionnaire)
 
-**If [Organization] DOES NOT process payment cards:**
+**If [Organisation] DOES NOT process payment cards:**
 
 - PCI DSS remains Tier 3 (Informational Reference) per POL-00
 - This document is for awareness only
 - No PCI DSS compliance obligations exist
 - ISMS controls follow ISO 27001:2022 only
 
-## Content Organization
+## Content Organisation
 
 This reference organizes PCI DSS requirements by:
 
@@ -148,7 +148,7 @@ This reference organizes PCI DSS requirements by:
 
 ## Who Must Comply with PCI DSS?
 
-**Any organization that stores, processes, or transmits cardholder data**:
+**Any organisation that stores, processes, or transmits cardholder data**:
 
 | Entity Type | Description | Examples |
 |-------------|-------------|----------|
@@ -172,7 +172,7 @@ Payment brands (Visa, Mastercard, etc.) classify merchants into levels based on 
 | **Level 3** | 20,000 - 1 million Visa e-commerce transactions | Annual SAQ + Quarterly network scans |
 | **Level 4** | < 20,000 Visa e-commerce OR < 1 million total Visa transactions | Annual SAQ + Quarterly network scans (may vary by acquirer) |
 
-**Note**: Other payment brands (Mastercard, Amex, Discover) have similar but slightly different level definitions. Organizations should check requirements with their acquiring bank.
+**Note**: Other payment brands (Mastercard, Amex, Discover) have similar but slightly different level definitions. Organisations should check requirements with their acquiring bank.
 
 ## Cardholder Data (CHD) and Sensitive Authentication Data (SAD)
 
@@ -211,7 +211,7 @@ Payment brands (Visa, Mastercard, etc.) classify merchants into levels based on 
 
 ## Applicability Determination
 
-**PCI DSS applies to [Organization] IF**:
+**PCI DSS applies to [Organisation] IF**:
 
 | Criteria | Status | Evidence |
 |----------|--------|----------|
@@ -261,7 +261,7 @@ Payment brands (Visa, Mastercard, etc.) classify merchants into levels based on 
 │   11. Test security of systems and networks regularly           │
 ├─────────────────────────────────────────────────────────────────┤
 │  MAINTAIN AN INFORMATION SECURITY POLICY                        │
-│   12. Support information security with organizational policies │
+│   12. Support information security with organisational policies │
 │       and programs                                              │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -510,7 +510,7 @@ Payment brands (Visa, Mastercard, etc.) classify merchants into levels based on 
 **Patch Timelines** (6.3.4):
 
 - **Critical vulnerabilities**: 30 days maximum
-- **High vulnerabilities**: Per organizational risk ranking (typically 30-90 days)
+- **High vulnerabilities**: Per organisational risk ranking (typically 30-90 days)
 - **Other vulnerabilities**: Per risk-based approach
 
 **6.4 Public-facing web applications protected from attacks**
@@ -789,7 +789,7 @@ Payment brands (Visa, Mastercard, etc.) classify merchants into levels based on 
 
 ---
 
-## Requirement 12: Support Information Security with Organizational Policies and Programs
+## Requirement 12: Support Information Security with Organisational Policies and Programs
 
 **Objective**: Security policies and procedures establish expectations and guide personnel in their day-to-day duties.
 
@@ -1036,7 +1036,7 @@ ISO 27001:2022 certification provides foundational security controls. However, P
 4. **Specific logging/monitoring** requirements (12-month retention, daily review)
 5. **Merchant-specific requirements** based on transaction volume
 
-Organizations with ISO 27001 typically require **30-50% additional effort** to achieve PCI DSS compliance, primarily in CDE scoping, prescriptive controls, and validation processes.
+Organisations with ISO 27001 typically require **30-50% additional effort** to achieve PCI DSS compliance, primarily in CDE scoping, prescriptive controls, and validation processes.
 
 ---
 
@@ -1044,7 +1044,7 @@ Organizations with ISO 27001 typically require **30-50% additional effort** to a
 
 ## PCI DSS Compliance Roadmap
 
-**If [Organization] processes payment cards**:
+**If [Organisation] processes payment cards**:
 
 **Phase 1: Scoping (Months 1-2)**
 
@@ -1283,7 +1283,7 @@ PCI DSS compliance costs vary significantly by merchant level and environment co
 
 # Appendix A: PCI DSS Compliance Self-Assessment Checklist
 
-This checklist provides high-level coverage. Organizations should use official SAQs for complete assessment.
+This checklist provides high-level coverage. Organisations should use official SAQs for complete assessment.
 
 ## Build and Maintain Secure Network (Req 1-2)
 
@@ -1370,7 +1370,7 @@ This checklist provides high-level coverage. Organizations should use official S
 
 # Appendix B: Cardholder Data Flow Diagram Template
 
-Organizations should create a detailed data flow diagram showing how CHD enters, flows through, and exits the environment.
+Organisations should create a detailed data flow diagram showing how CHD enters, flows through, and exits the environment.
 
 **Template Elements**:
 
@@ -1406,5 +1406,5 @@ Organizations should create a detailed data flow diagram showing how CHD enters,
 
 *This technical reference supports potential PCI DSS compliance requirements as determined in ISMS-POL-00. All regulatory applicability determinations and binding requirements are defined in ISMS-POL-00 and approved ISMS policy documents.*
 
-*For organizations NOT processing payment cards, this document is for informational awareness only and does NOT create compliance obligations.*
+*For organisations NOT processing payment cards, this document is for informational awareness only and does NOT create compliance obligations.*
 <!-- QA_VERIFIED: 2026-02-01 -->

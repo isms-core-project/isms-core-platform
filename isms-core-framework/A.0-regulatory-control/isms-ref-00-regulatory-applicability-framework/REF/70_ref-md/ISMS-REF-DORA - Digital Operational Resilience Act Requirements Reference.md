@@ -29,7 +29,7 @@
 **Next Review Date**: [Date + 12 months]  
 **Approvers**: Legal/Compliance / CISO (technical reference, no ISMS approval required)
 
-**Distribution**: Compliance team, CISO, Legal counsel (for organizations subject to DORA)
+**Distribution**: Compliance team, CISO, Legal counsel (for organisations subject to DORA)
 
 ---
 
@@ -38,29 +38,29 @@
 This document is provided for informational and awareness purposes only.
 
 - This document is NOT part of the Information Security Management System (ISMS).
-- This document does NOT define mandatory requirements unless [Organization] is a DORA-regulated entity.
+- This document does NOT define mandatory requirements unless [Organisation] is a DORA-regulated entity.
 - This document does NOT establish binding requirements, deadlines, KPIs, or SLAs for non-regulated entities.
-- This document does NOT mandate the adoption of DORA requirements for organizations not subject to DORA.
+- This document does NOT mandate the adoption of DORA requirements for organisations not subject to DORA.
 - This document does NOT override or extend any ISMS policy.
 
 **Applicability Determination**:
-DORA requirements apply ONLY IF [Organization]:
+DORA requirements apply ONLY IF [Organisation]:
 
 - Is a financial entity operating in the EU (banks, payment institutions, investment firms, crypto-asset service providers, insurance, etc.)
 - Is designated as a critical or important ICT third-party service provider to EU financial entities
 - Has contractual obligations to meet DORA requirements
 
-For all other organizations, this document serves solely as:
+For all other organisations, this document serves solely as:
 
 - Technical reference for potential DORA requirements
 - Context for service provider relationships with EU financial entities
 - Awareness of EU financial sector digital resilience standards
-- **This document must not be used as audit evidence unless [Organization] is DORA-regulated**
+- **This document must not be used as audit evidence unless [Organisation] is DORA-regulated**
 
 Use of this document does not imply DORA applicability, compliance obligations, or regulatory status.
 
 **Critical Positioning Statement**:
-This document intentionally provides regulatory detail beyond what applies to most organizations. Its purpose is awareness only for organizations that MAY become subject to DORA, or that provide ICT services to DORA-regulated financial entities. No auditor conclusions shall be drawn from the presence, absence, or implementation status of any DORA requirement listed herein unless [Organization] is explicitly DORA-regulated.
+This document intentionally provides regulatory detail beyond what applies to most organisations. Its purpose is awareness only for organisations that MAY become subject to DORA, or that provide ICT services to DORA-regulated financial entities. No auditor conclusions shall be drawn from the presence, absence, or implementation status of any DORA requirement listed herein unless [Organisation] is explicitly DORA-regulated.
 
 ---
 
@@ -80,9 +80,9 @@ This document provides a technical overview of the Digital Operational Resilienc
 
 This document does NOT:
 
-- Establish mandatory requirements for non-DORA-regulated organizations
-- Define [Organization]'s compliance obligations (see POL-00 for regulatory applicability)
-- Create audit criteria unless [Organization] is DORA-regulated
+- Establish mandatory requirements for non-DORA-regulated organisations
+- Define [Organisation]'s compliance obligations (see POL-00 for regulatory applicability)
+- Create audit criteria unless [Organisation] is DORA-regulated
 - Replace legal or compliance counsel interpretation
 - Constitute legal advice on DORA compliance
 - Establish implementation procedures or verification processes
@@ -90,30 +90,30 @@ This document does NOT:
 
 ## Relationship to ISMS
 
-This document is a **non-binding technical reference** UNLESS [Organization] is subject to DORA (as determined in ISMS-POL-00 Section 3.2).
+This document is a **non-binding technical reference** UNLESS [Organisation] is subject to DORA (as determined in ISMS-POL-00 Section 3.2).
 
-**If [Organization] IS DORA-regulated:**
+**If [Organisation] IS DORA-regulated:**
 
 - DORA requirements become Tier 1 (Mandatory Compliance) per POL-00
 - This document provides implementation guidance
 - ISMS controls must demonstrate DORA compliance
 - Compliance attestation required (supervisory reporting)
 
-**If [Organization] IS NOT DORA-regulated:**
+**If [Organisation] IS NOT DORA-regulated:**
 
 - DORA remains Tier 3 (Informational Reference) per POL-00
 - This document is for awareness only
 - No DORA compliance obligations exist
 - ISMS controls follow ISO 27001:2022 only
 
-**If [Organization] provides ICT services to DORA financial entities:**
+**If [Organisation] provides ICT services to DORA financial entities:**
 
 - May be designated as critical or important third-party service provider
 - DORA oversight framework may apply (Chapter V, Section II)
 - Contractual requirements likely to reference DORA standards
 - Consider as Tier 2 (Conditional) pending designation
 
-## Content Organization
+## Content Organisation
 
 This reference organizes DORA requirements by:
 
@@ -186,7 +186,7 @@ This reference organizes DORA requirements by:
 
 ## Applicability Determination
 
-**DORA applies to [Organization] IF**:
+**DORA applies to [Organisation] IF**:
 
 | Criteria | Status | Evidence |
 |----------|--------|----------|
@@ -204,7 +204,7 @@ This reference organizes DORA requirements by:
 **If ALL "No"**: DORA requirements remain **Tier 3 (Informational Reference)** per POL-00
 
 **ICT Service Provider Assessment**:
-If [Organization] provides ICT services to EU financial entities:
+If [Organisation] provides ICT services to EU financial entities:
 
 - Monitor for potential critical third-party service provider designation
 - Review customer contracts for DORA-referenced requirements
@@ -275,7 +275,7 @@ DORA applies proportionality (Article 4):
 
 Financial entities must establish, maintain, and review an ICT risk management framework ensuring resilience, continuity, and security of ICT systems.
 
-**Article 5: Governance and Organization**
+**Article 5: Governance and Organisation**
 
 **Requirements**:
 
@@ -294,7 +294,7 @@ Financial entities must establish, maintain, and review an ICT risk management f
 **ISO 27001:2022 Mapping**:
 
 - Clause 5.1: Leadership and commitment
-- Clause 5.3: Organizational roles, responsibilities and authorities
+- Clause 5.3: Organisational roles, responsibilities and authorities
 - A.5.1: Policies for information security
 - A.5.2: Information security roles and responsibilities
 
@@ -1018,7 +1018,7 @@ Financial entities may participate in information sharing arrangements to enhanc
 
 ## DORA Compliance Timeline
 
-**If [Organization] is DORA-regulated financial entity**:
+**If [Organisation] is DORA-regulated financial entity**:
 
 **January 2025 (Effective Date)**:
 
@@ -1107,7 +1107,7 @@ Estimated additional cost: 20-35% increase over base ISO 27001 compliance for me
 
 **Challenge 3: TLPT Readiness**
 
-- Organizations not used to red team exercises may struggle
+- Organisations not used to red team exercises may struggle
 - Requires mature detection and response capabilities
 - Blue team readiness critical for realistic testing
 
@@ -1186,7 +1186,7 @@ Estimated additional cost: 20-35% increase over base ISO 27001 compliance for me
 - PCI DSS: Payment Card Industry Data Security Standard (where applicable)
 
 **Compliance Consulting**:
-Organizations subject to DORA should engage:
+Organisations subject to DORA should engage:
 
 - Legal counsel with EU financial regulatory expertise
 - Auditors experienced with DORA compliance
@@ -1372,5 +1372,5 @@ I confirm that the information provided in this notification is accurate to the 
 
 *This technical reference supports potential DORA compliance requirements as determined in ISMS-POL-00. All regulatory applicability determinations and binding requirements are defined in ISMS-POL-00 and approved ISMS policy documents.*
 
-*For organizations NOT subject to DORA, this document is for informational awareness only and does NOT create compliance obligations.*
+*For organisations NOT subject to DORA, this document is for informational awareness only and does NOT create compliance obligations.*
 <!-- QA_VERIFIED: 2026-02-01 -->

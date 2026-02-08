@@ -42,7 +42,7 @@
 **Related Documents**:
 
 - All ISMS policy documents (mandatory reference)
-- ISO/IEC 27001:2022 Clause 4.1 (Understanding the organization and its context)
+- ISO/IEC 27001:2022 Clause 4.1 (Understanding the organisation and its context)
 - ISO/IEC 27001:2022 Clause 4.2 (Understanding the needs and expectations of interested parties)
 
 **Detailed Requirements References** (maintained for conditional regulations - see Section 8.3):
@@ -70,7 +70,7 @@ This document provides the **authoritative reference** for interpreting regulato
 
 **Key Principle**: **Regulatory applicability must be explicit, not assumed.** References to regulations and frameworks fall into three categories:
 
-1. **Mandatory Compliance** - Legal obligations that apply to the organization
+1. **Mandatory Compliance** - Legal obligations that apply to the organisation
 2. **Conditional Applicability** - Requirements that apply only under specific circumstances
 3. **Informational Reference** - Best practices and technical guidance
 
@@ -82,11 +82,11 @@ This document provides the **authoritative reference** for interpreting regulato
 
 ### Purpose and Scope of This Policy
 
-This policy defines the **identification and applicability** of legal, statutory, regulatory, and contractual requirements for the organization's Information Security Management System.
+This policy defines the **identification and applicability** of legal, statutory, regulatory, and contractual requirements for the organisation's Information Security Management System.
 
 **This policy establishes:**
 
-- Which regulations and standards apply to the organization
+- Which regulations and standards apply to the organisation
 - Categorization of regulatory obligations (Mandatory, Conditional, Informational)
 - Assessment methodology for determining applicability
 - Review and update processes for regulatory landscape changes
@@ -113,7 +113,7 @@ The outcome of the regulatory applicability assessment serves as **input** for:
 **Category Definitions**
 
 **Mandatory Compliance**  
-Legal or contractual obligations that the organization MUST comply with. Non-compliance results in legal liability, regulatory fines, contract breach, or certification loss.
+Legal or contractual obligations that the organisation MUST comply with. Non-compliance results in legal liability, regulatory fines, contract breach, or certification loss.
 
 **Characteristics**:
 
@@ -137,7 +137,7 @@ Requirements that apply only when specific conditions are met (e.g., industry se
 
 **Characteristics**:
 
-- Applicability depends on organizational context
+- Applicability depends on organisational context
 - May become mandatory based on business activities
 - Requires periodic re-assessment as business evolves
 - Examples: PCI DSS v4.0.1 (only if processing card payments), HIPAA (only if handling US healthcare data)
@@ -178,12 +178,12 @@ Requirements that apply only when specific conditions are met (e.g., industry se
 
 ## Swiss Federal Data Protection Act (FADP/nDSG)
 
-**Applicability**: All operations of organization based in or serving Switzerland
+**Applicability**: All operations of organisation based in or serving Switzerland
 
 **Key Requirements**:
 
 - Article 6: Principles (lawfulness, proportionality, purpose limitation)
-- Article 7: Data security (appropriate technical and organizational measures)
+- Article 7: Data security (appropriate technical and organisational measures)
 - Article 8: Data processing by processors
 - Article 19: Right to information (data subject rights)
 - Article 328b CO (Code of Obligations): Employee monitoring and personality protection
@@ -215,7 +215,7 @@ Requirements that apply only when specific conditions are met (e.g., industry se
 
 **ISMS Impact**:
 
-- Technical and organizational measures (TOMs)
+- Technical and organisational measures (TOMs)
 - Encryption and pseudonymization
 - Access controls and authentication
 - Data breach response procedures
@@ -226,12 +226,12 @@ Requirements that apply only when specific conditions are met (e.g., industry se
 
 ## ISO/IEC 27001:2022
 
-**Applicability**: Where organization seeks ISO 27001 certification
+**Applicability**: Where organisation seeks ISO 27001 certification
 
 **Key Requirements**:
 
-- Annex A Controls (93 controls across organizational, people, physical, technological)
-- Clause 4: Context of the organization
+- Annex A Controls (93 controls across organisational, people, physical, technological)
+- Clause 4: Context of the organisation
 - Clause 5: Leadership and commitment
 - Clause 6: Risk assessment and treatment
 - Clause 7: Support (resources, competence, awareness, communication, documented information)
@@ -252,7 +252,7 @@ Requirements that apply only when specific conditions are met (e.g., industry se
 
 ## Additional Mandatory Regulations
 
-Organizations should document additional mandatory regulations based on their specific context:
+Organisations should document additional mandatory regulations based on their specific context:
 
 | Regulation | Trigger | Examples |
 |-----------|---------|----------|
@@ -279,7 +279,7 @@ These regulations apply **only when specific business conditions are met**:
 
 **Applicability Triggers**:
 
-- Organization is a **Swiss financial institution** regulated by FINMA:
+- Organisation is a **Swiss financial institution** regulated by FINMA:
   - Banks (banking license from FINMA)
   - Securities dealers (securities dealer license)
   - Insurance companies (insurance license)
@@ -301,7 +301,7 @@ These regulations apply **only when specific business conditions are met**:
 - Incident response and reporting procedures (A.5.24-28)
 - Governance and oversight structures (A.5.1, 5.4)
 
-**Assessment**: If organization holds FINMA license or registration → **Mandatory Compliance**
+**Assessment**: If organisation holds FINMA license or registration → **Mandatory Compliance**
 
 ## Digital Operational Resilience Act (DORA)
 
@@ -310,7 +310,7 @@ These regulations apply **only when specific business conditions are met**:
 
 **Applicability Triggers**:
 
-- Organization is a **financial entity in the EU**:
+- Organisation is a **financial entity in the EU**:
   - Credit institutions (banks)
   - Payment institutions and e-money institutions
   - Investment firms
@@ -334,7 +334,7 @@ These regulations apply **only when specific business conditions are met**:
 - Supplier risk management with regulatory oversight (A.5.19-23)
 - Information sharing arrangements
 
-**Assessment**: If organization is EU financial entity or critical ICT service provider → **Mandatory Compliance**
+**Assessment**: If organisation is EU financial entity or critical ICT service provider → **Mandatory Compliance**
 
 ## Network and Information Security Directive 2 (NIS2)
 
@@ -343,7 +343,7 @@ These regulations apply **only when specific business conditions are met**:
 
 **Applicability Triggers**:
 
-- Organization is an **essential or important entity** in the EU in covered sectors:
+- Organisation is an **essential or important entity** in the EU in covered sectors:
   
 **Essential Entities** (stricter requirements):
 
@@ -365,7 +365,7 @@ These regulations apply **only when specific business conditions are met**:
 - Food production and distribution
 - Manufacturing (medical devices, electronics, machinery, motor vehicles, aerospace)
 - Digital providers (online marketplaces, search engines, social networks)
-- Research organizations
+- Research organisations
 
 **Key Requirements**:
 
@@ -387,7 +387,7 @@ These regulations apply **only when specific business conditions are met**:
 
 **Penalties**: Up to €10 million or 2% of worldwide annual turnover (essential entities), €7 million or 1.4% (important entities)
 
-**Assessment**: If organization operates in covered sector in EU and meets size/criticality thresholds → **Mandatory Compliance**
+**Assessment**: If organisation operates in covered sector in EU and meets size/criticality thresholds → **Mandatory Compliance**
 
 ## Payment Card Industry Data Security Standard (PCI DSS v4.0.1)
 
@@ -396,7 +396,7 @@ These regulations apply **only when specific business conditions are met**:
 
 **Applicability Triggers**:
 
-- Organization **stores, processes, or transmits** payment cardholder data:
+- Organisation **stores, processes, or transmits** payment cardholder data:
   - Merchants accepting credit/debit cards
   - Payment processors and gateways
   - Service providers handling cardholder data
@@ -417,7 +417,7 @@ These regulations apply **only when specific business conditions are met**:
   9. Restrict physical access to cardholder data
   10. Log and monitor all access to system components and cardholder data
   11. Test security of systems and networks regularly
-  12. Support information security with organizational policies and programs
+  12. Support information security with organisational policies and programs
 
 **ISMS Impact**:
 
@@ -430,7 +430,7 @@ These regulations apply **only when specific business conditions are met**:
 
 **Validation**: Annual on-site audit (Level 1), Self-Assessment Questionnaire (SAQ) for smaller merchants
 
-**Assessment**: If organization handles payment cards → **Mandatory Compliance**
+**Assessment**: If organisation handles payment cards → **Mandatory Compliance**
 
 ## Health Insurance Portability and Accountability Act (HIPAA)
 
@@ -439,7 +439,7 @@ These regulations apply **only when specific business conditions are met**:
 
 **Applicability Triggers**:
 
-- Organization is a **covered entity** or **business associate** handling US Protected Health Information (PHI):
+- Organisation is a **covered entity** or **business associate** handling US Protected Health Information (PHI):
   - Healthcare providers (doctors, hospitals, clinics)
   - Health plans (insurance companies, HMOs, Medicare/Medicaid)
   - Healthcare clearinghouses
@@ -467,7 +467,7 @@ These regulations apply **only when specific business conditions are met**:
 
 **Penalties**: $100-$50,000 per violation (up to $1.5 million per year), criminal penalties for willful neglect
 
-**Assessment**: If organization handles US healthcare data (PHI) → **Mandatory Compliance**
+**Assessment**: If organisation handles US healthcare data (PHI) → **Mandatory Compliance**
 
 ## Federal Information Security Management Act (FISMA)
 
@@ -476,10 +476,10 @@ These regulations apply **only when specific business conditions are met**:
 
 **Applicability Triggers**:
 
-- Organization operates **federal information systems** or provides **cloud services to US federal agencies**:
+- Organisation operates **federal information systems** or provides **cloud services to US federal agencies**:
   - Federal agencies and departments
   - Federal contractors and cloud service providers (FedRAMP authorization)
-  - Organizations processing federal information
+  - Organisations processing federal information
 
 **Key Requirements**:
 
@@ -499,7 +499,7 @@ These regulations apply **only when specific business conditions are met**:
 - Supply chain risk management (A.5.19-23)
 - Incident response aligned with NIST frameworks (A.5.24-28)
 
-**Assessment**: If organization has US federal contracts or FedRAMP authorization → **Mandatory Compliance**
+**Assessment**: If organisation has US federal contracts or FedRAMP authorization → **Mandatory Compliance**
 
 ## EU Artificial Intelligence Act (AI Act)
 
@@ -508,9 +508,9 @@ These regulations apply **only when specific business conditions are met**:
 
 **Applicability Triggers**:
 
-- Organization is a **provider** (develops or commissions AI systems placed on EU market)
-- Organization is a **deployer** (uses AI systems under own authority in the EU)
-- Organization is an **importer or distributor** of AI systems in the EU
+- Organisation is a **provider** (develops or commissions AI systems placed on EU market)
+- Organisation is a **deployer** (uses AI systems under own authority in the EU)
+- Organisation is an **importer or distributor** of AI systems in the EU
 - AI system outputs affect persons located in the EU (regardless of provider location)
 
 **Risk Classification** (determines obligation level):
@@ -557,11 +557,11 @@ These regulations apply **only when specific business conditions are met**:
 
 **Penalties**: Up to €35 million or 7% of worldwide annual turnover (prohibited practices), €15 million or 3% (other violations)
 
-**Assessment**: If organization develops, deploys, or distributes AI systems affecting EU persons → Evaluate risk classification and applicable obligations
+**Assessment**: If organisation develops, deploys, or distributes AI systems affecting EU persons → Evaluate risk classification and applicable obligations
 
 ## Additional Conditional Regulations
 
-Organizations should assess applicability based on business context:
+Organisations should assess applicability based on business context:
 
 | Regulation | Applicability Trigger | Region/Scope |
 |-----------|---------------------|--------------|
@@ -623,7 +623,7 @@ These frameworks provide **technical guidance and best practices** but are not l
 - Asset management practices (A.5.9)
 - Configuration management (A.8.9)
 - Vulnerability management (A.8.8)
-- Benchmarking organizational security maturity
+- Benchmarking organisational security maturity
 
 ## OWASP (Open Web Application Security Project)
 
@@ -674,7 +674,7 @@ These frameworks provide **technical guidance and best practices** but are not l
 
 ## Additional Best Practice Frameworks
 
-Organizations may reference additional frameworks based on industry context:
+Organisations may reference additional frameworks based on industry context:
 
 | Framework | Description | Use Case |
 |----------|-------------|----------|
@@ -688,22 +688,22 @@ Organizations may reference additional frameworks based on industry context:
 
 # United States Federal Requirements (Special Category)
 
-**Principle**: US federal cybersecurity requirements (FISMA, FIPS, FedRAMP, NIST CSF 2.0) apply **only where the organization has explicit US federal contractual obligations**.
+**Principle**: US federal cybersecurity requirements (FISMA, FIPS, FedRAMP, NIST CSF 2.0) apply **only where the organisation has explicit US federal contractual obligations**.
 
-**Cloud Infrastructure Note:** If organization uses US-based cloud service providers (AWS, Azure, GCP), this does NOT automatically trigger US federal compliance obligations. FedRAMP/FISMA apply only if:
+**Cloud Infrastructure Note:** If organisation uses US-based cloud service providers (AWS, Azure, GCP), this does NOT automatically trigger US federal compliance obligations. FedRAMP/FISMA apply only if:
 
-- Organization provides services directly to US federal agencies (prime contractor or subcontractor), OR
-- Organization's customer contract explicitly requires FedRAMP authorization or FISMA compliance
+- Organisation provides services directly to US federal agencies (prime contractor or subcontractor), OR
+- Organisation's customer contract explicitly requires FedRAMP authorization or FISMA compliance
 
-Using FedRAMP-authorized cloud providers (e.g., AWS GovCloud) is a **vendor risk management decision** (A.5.19-23), not evidence that FedRAMP applies to the organization.
+Using FedRAMP-authorized cloud providers (e.g., AWS GovCloud) is a **vendor risk management decision** (A.5.19-23), not evidence that FedRAMP applies to the organisation.
 
 **Default Status**: **Not Applicable** unless:
 
-- Organization holds US federal contracts
-- Organization provides services to US federal agencies
+- Organisation holds US federal contracts
+- Organisation provides services to US federal agencies
 - Contract explicitly requires NIST controls or FedRAMP authorization
 
-**Rationale**: US federal requirements are not extraterritorial and do not apply to non-US organizations unless contractually required.
+**Rationale**: US federal requirements are not extraterritorial and do not apply to non-US organisations unless contractually required.
 
 **ISMS Treatment**:
 
@@ -717,7 +717,7 @@ Using FedRAMP-authorized cloud providers (e.g., AWS GovCloud) is a **vendor risk
 
 ## Assessment Process
 
-Organizations SHALL conduct annual regulatory applicability assessments:
+Organisations SHALL conduct annual regulatory applicability assessments:
 
 **Step 1: Identify Business Activities**
 
@@ -750,7 +750,7 @@ Organizations SHALL conduct annual regulatory applicability assessments:
 
 ## Regulatory Applicability Matrix Template
 
-Organizations should maintain a regulatory applicability matrix:
+Organisations should maintain a regulatory applicability matrix:
 
 | Regulation | Tier | Status | Triggers | Owner | Last Reviewed |
 |-----------|------|--------|----------|-------|---------------|
@@ -807,7 +807,7 @@ are categorized per ISMS-POL-00 (Regulatory Applicability Framework):
 
 **United States Federal Requirements:**
 References to US federal frameworks (FISMA, FIPS, FedRAMP, NIST cybersecurity 
-requirements) apply only where the organization has explicit US federal 
+requirements) apply only where the organisation has explicit US federal 
 contractual obligations, as defined in ISMS-POL-00.
 
 For complete regulatory categorization, refer to ISMS-POL-00.
@@ -861,7 +861,7 @@ Evidence required to demonstrate this policy is adequately documented and approv
 **Stage 2 (Operational Effectiveness) Evidence:**
 Evidence required to demonstrate this policy is operationally effective:
 
-- Regulatory applicability matrix populated with current organizational status (Section 8)
+- Regulatory applicability matrix populated with current organisational status (Section 8)
 - Review records: Quarterly monitoring logs, annual comprehensive review meeting minutes
 - Applicability determination documents: Rationale for Tier assignments (especially Tier 2 decisions)
 - Triggered assessment records: Business expansion, regulatory change impact assessments
@@ -885,7 +885,7 @@ The boundary is: POL-00 identifies obligations → Risk assessment prioritizes �
 **Quarterly Review** (CISO + Legal + DPO):
 
 - Monitor regulatory changes (GDPR guidance updates, new directives)
-- Track organizational changes (new services, new markets)
+- Track organisational changes (new services, new markets)
 - Update applicability matrix if triggers change
 - Document review in quarterly ISMS review meeting
 
@@ -971,13 +971,13 @@ The boundary is: POL-00 identifies obligations → Risk assessment prioritizes �
 
 **Applicability Assessment Status (as of [Date]):**
 
-This section documents the organization's current regulatory compliance obligations as determined through the assessment methodology defined in Section 5.
+This section documents the organisation's current regulatory compliance obligations as determined through the assessment methodology defined in Section 5.
 
 ## Tier 1: Mandatory Compliance (Active)
 
 | Regulation | Applicability Rationale | Implementation Status | Next Review |
 |-----------|------------------------|----------------------|-------------|
-| **Swiss FADP (nDSG)** | ✅ Applicable - Swiss-based organization with Swiss operations and employees | Controls implemented per Annex A (A.5.12-14 Data Protection, A.5.34 Privacy Protection) | [Date + 12 months] |
+| **Swiss FADP (nDSG)** | ✅ Applicable - Swiss-based organisation with Swiss operations and employees | Controls implemented per Annex A (A.5.12-14 Data Protection, A.5.34 Privacy Protection) | [Date + 12 months] |
 | **EU GDPR** | ✅ Applicable - Processing personal data of EU residents through customer relationships | Controls implemented per Annex A (A.5.34, A.8.11 Data Masking, A.8.10 Information Deletion) | [Date + 12 months] |
 | **ISO/IEC 27001:2022** | ✅ Applicable - Pursuing certification (certification goal documented in ISMS scope) | 48/93 controls implemented (52%), Stage 1 readiness achieved, Stage 2 preparation in progress | Continuous (certification maintenance) |
 
@@ -987,16 +987,16 @@ This section documents the organization's current regulatory compliance obligati
 
 | Regulation | Assessment Status | Current Decision | Monitoring Trigger | Owner | Last Assessed |
 |-----------|------------------|------------------|-------------------|-------|---------------|
-| **DORA** | ✅ Assessed | **Not Applicable** - Organization is not an EU financial entity nor designated critical ICT service provider to financial entities | Business model change (financial services entry), customer contracts requiring DORA compliance | CISO + Legal | [Date] |
-| **NIS2** | ✅ Assessed | **Not Applicable** - Organization does not operate as essential/important entity in covered sectors (energy, transport, banking, health, digital infrastructure) | Expansion into NIS2-covered sectors, designation as essential/important entity | CISO + Legal | [Date] |
-| **PCI DSS v4.0.1** | ✅ Assessed | **Not Applicable** - Organization does not currently store, process, or transmit payment cardholder data | Business decision to accept payment cards, merchant account establishment | CISO | [Date] |
-| **FINMA** | ✅ Assessed | **Not Applicable** - Organization does not hold FINMA license (not a Swiss bank, securities dealer, insurance company, or regulated financial infrastructure provider) | Acquisition of financial services license, provision of services to FINMA-regulated entities | Legal + CISO | [Date] |
+| **DORA** | ✅ Assessed | **Not Applicable** - Organisation is not an EU financial entity nor designated critical ICT service provider to financial entities | Business model change (financial services entry), customer contracts requiring DORA compliance | CISO + Legal | [Date] |
+| **NIS2** | ✅ Assessed | **Not Applicable** - Organisation does not operate as essential/important entity in covered sectors (energy, transport, banking, health, digital infrastructure) | Expansion into NIS2-covered sectors, designation as essential/important entity | CISO + Legal | [Date] |
+| **PCI DSS v4.0.1** | ✅ Assessed | **Not Applicable** - Organisation does not currently store, process, or transmit payment cardholder data | Business decision to accept payment cards, merchant account establishment | CISO | [Date] |
+| **FINMA** | ✅ Assessed | **Not Applicable** - Organisation does not hold FINMA license (not a Swiss bank, securities dealer, insurance company, or regulated financial infrastructure provider) | Acquisition of financial services license, provision of services to FINMA-regulated entities | Legal + CISO | [Date] |
 
 ### Under Assessment (Decision Pending)
 
 | Regulation | Assessment Status | Expected Completion | Preliminary Findings | Owner |
 |-----------|------------------|---------------------|---------------------|-------|
-| **EU AI Act** | 🔄 In Progress | [Date] | Organization uses AI tools (GitHub Copilot for development assistance, potential future AI-assisted security tools). Assessment focus: Are these systems "AI systems" under Article 3 definition? If yes, risk classification per Annex III. Preliminary: Likely **minimal risk** (Tier 3) or **limited risk** (transparency obligations only). **Recommendation:** Complete detailed assessment by [Date], document in ISMS-REF-AI-ACT if applicable. | CISO + Legal |
+| **EU AI Act** | 🔄 In Progress | [Date] | Organisation uses AI tools (GitHub Copilot for development assistance, potential future AI-assisted security tools). Assessment focus: Are these systems "AI systems" under Article 3 definition? If yes, risk classification per Annex III. Preliminary: Likely **minimal risk** (Tier 3) or **limited risk** (transparency obligations only). **Recommendation:** Complete detailed assessment by [Date], document in ISMS-REF-AI-ACT if applicable. | CISO + Legal |
 
 **Assessment Approach for EU AI Act:**
 1. **Inventory AI Usage** (Due: [Date + 2 weeks])
@@ -1055,19 +1055,19 @@ This section documents the organization's current regulatory compliance obligati
 
 ## Detailed Requirements References
 
-For conditional regulations with complex requirements (regardless of current applicability status), the organization maintains detailed requirements reference documents for future applicability scenarios and preparedness.
+For conditional regulations with complex requirements (regardless of current applicability status), the organisation maintains detailed requirements reference documents for future applicability scenarios and preparedness.
 
 | Regulation | Reference Document | Purpose | Maintenance Status |
 |-----------|-------------------|---------|-------------------|
-| **DORA** | ISMS-REF-DORA - Digital Operational Resilience Act Requirements Reference | Detailed ICT risk management, incident reporting, resilience testing, and third-party risk requirements per DORA Articles 3-49. Maintained for future applicability assessment if organization enters EU financial services. | Maintained (updated when DORA regulatory technical standards published) |
-| **FINMA** | ISMS-REF-FINMA - FINMA Circular 2023/1 Requirements Reference | Operational resilience and outsourcing requirements for Swiss financial institutions. Maintained for future applicability if organization obtains FINMA license or serves FINMA-regulated clients. | Maintained (updated per FINMA circular revisions) |
-| **NIS2** | ISMS-REF-NIS2 - Network and Information Security Directive 2 Requirements Reference | Cybersecurity risk management, incident notification, supply chain security, and governance requirements per NIS2 Articles 20-23. Maintained for future applicability if organization designated as essential/important entity. | Maintained (updated as EU member states transpose NIS2 into national law) |
-| **PCI DSS v4.0.1** | ISMS-REF-PCI-DSS - Payment Card Industry Data Security Standard Requirements Reference | 12 PCI DSS v4.0.1 requirements covering network security, data protection, vulnerability management, access control, monitoring, and testing. Maintained for future applicability if organization begins processing payment cards. | Maintained (updated per PCI SSC publications, currently v4.0 effective March 2024) |
-| **EU AI Act** | ISMS-REF-EU-AI-ACT - EU Artificial Intelligence Act Requirements Reference | Risk-based AI governance framework covering prohibited practices (Article 5), high-risk AI systems (Articles 9-72), limited risk transparency obligations (Article 50), and general-purpose AI model requirements (Articles 53-54). Maintained for future applicability if organization develops or deploys AI systems affecting EU persons. | Maintained (updated as EU AI Act delegated acts and implementing acts published, phased implementation 2025-2027) |
+| **DORA** | ISMS-REF-DORA - Digital Operational Resilience Act Requirements Reference | Detailed ICT risk management, incident reporting, resilience testing, and third-party risk requirements per DORA Articles 3-49. Maintained for future applicability assessment if organisation enters EU financial services. | Maintained (updated when DORA regulatory technical standards published) |
+| **FINMA** | ISMS-REF-FINMA - FINMA Circular 2023/1 Requirements Reference | Operational resilience and outsourcing requirements for Swiss financial institutions. Maintained for future applicability if organisation obtains FINMA license or serves FINMA-regulated clients. | Maintained (updated per FINMA circular revisions) |
+| **NIS2** | ISMS-REF-NIS2 - Network and Information Security Directive 2 Requirements Reference | Cybersecurity risk management, incident notification, supply chain security, and governance requirements per NIS2 Articles 20-23. Maintained for future applicability if organisation designated as essential/important entity. | Maintained (updated as EU member states transpose NIS2 into national law) |
+| **PCI DSS v4.0.1** | ISMS-REF-PCI-DSS - Payment Card Industry Data Security Standard Requirements Reference | 12 PCI DSS v4.0.1 requirements covering network security, data protection, vulnerability management, access control, monitoring, and testing. Maintained for future applicability if organisation begins processing payment cards. | Maintained (updated per PCI SSC publications, currently v4.0 effective March 2024) |
+| **EU AI Act** | ISMS-REF-EU-AI-ACT - EU Artificial Intelligence Act Requirements Reference | Risk-based AI governance framework covering prohibited practices (Article 5), high-risk AI systems (Articles 9-72), limited risk transparency obligations (Article 50), and general-purpose AI model requirements (Articles 53-54). Maintained for future applicability if organisation develops or deploys AI systems affecting EU persons. | Maintained (updated as EU AI Act delegated acts and implementing acts published, phased implementation 2025-2027) |
 
 **Rationale for Maintaining "Not Applicable" Requirements References:**
 
-1. **Preparedness:** If business context changes (e.g., obtaining financial services license, entering NIS2-covered sectors, accepting payment cards), organization can rapidly assess gap and implementation effort.
+1. **Preparedness:** If business context changes (e.g., obtaining financial services license, entering NIS2-covered sectors, accepting payment cards), organisation can rapidly assess gap and implementation effort.
 
 2. **Customer Due Diligence:** Customers may request evidence of preparedness for conditional regulations even if not currently applicable (e.g., "If we require PCI DSS v4.0.1 compliance in future, can you achieve it?").
 
@@ -1085,7 +1085,7 @@ For conditional regulations with complex requirements (regardless of current app
 - **Ownership:** CISO (maintains technical requirements), Legal (maintains legal interpretation and applicability triggers).
 
 **Auditor Note:** 
-Maintaining requirements references for non-applicable regulations is a **maturity indicator** demonstrating proactive compliance management, not evidence of scope creep. ISO 27001 Clause 4.1 (Understanding the organization and its context) encourages understanding both current and potential future compliance obligations.
+Maintaining requirements references for non-applicable regulations is a **maturity indicator** demonstrating proactive compliance management, not evidence of scope creep. ISO 27001 Clause 4.1 (Understanding the organisation and its context) encourages understanding both current and potential future compliance obligations.
 
 ---
 
@@ -1093,7 +1093,7 @@ Maintaining requirements references for non-applicable regulations is a **maturi
 
 | Term | Definition |
 |------|------------|
-| **Applicable** | Regulation applies to organization based on business activities, must comply |
+| **Applicable** | Regulation applies to organisation based on business activities, must comply |
 | **Conditional** | Regulation applies only if specific triggers met (industry, geography, data type) |
 | **Mandatory** | Legal obligation, enforceable by law or contract, non-compliance has consequences |
 | **Informational** | Reference for best practices, not legally enforceable, voluntary adoption |
@@ -1109,18 +1109,18 @@ Maintaining requirements references for non-applicable regulations is a **maturi
 
 **Regulations with Phased Implementation (for Monitoring):**
 
-| Regulation | Key Implementation Dates | Organizational Relevance |
+| Regulation | Key Implementation Dates | Organisational Relevance |
 |-----------|-------------------------|-------------------------|
-| **DORA** | **January 17, 2025:** Full application for financial entities | Monitor: If organization becomes EU financial entity or critical ICT service provider before 2025-01-17, DORA becomes Tier 1 immediately |
-| **EU AI Act** | **February 2, 2025:** Prohibitions (unacceptable risk AI)<br>**August 2, 2025:** General-purpose AI obligations<br>**August 2, 2026:** High-risk AI systems<br>**August 2, 2027:** High-risk AI in regulated products<br>**August 2, 2030:** Grace period ends for existing systems | Monitor: If organization develops or deploys AI systems affecting EU persons → Compliance required by applicable phase deadline. Existing systems (pre-August 2026) have grace period until 2030 unless substantially modified |
+| **DORA** | **January 17, 2025:** Full application for financial entities | Monitor: If organisation becomes EU financial entity or critical ICT service provider before 2025-01-17, DORA becomes Tier 1 immediately |
+| **EU AI Act** | **February 2, 2025:** Prohibitions (unacceptable risk AI)<br>**August 2, 2025:** General-purpose AI obligations<br>**August 2, 2026:** High-risk AI systems<br>**August 2, 2027:** High-risk AI in regulated products<br>**August 2, 2030:** Grace period ends for existing systems | Monitor: If organisation develops or deploys AI systems affecting EU persons → Compliance required by applicable phase deadline. Existing systems (pre-August 2026) have grace period until 2030 unless substantially modified |
 | **PCI DSS v4.0.1** | **March 31, 2024:** v4.0 effective (v3.2.1 retired)<br>**March 31, 2025:** New requirements (marked "future-dated" in v4.0) become mandatory | Not currently applicable. If payment card processing begins → v4.0 requirements apply immediately (v3.2.1 retired). Future-dated requirements (MFA expansion, cryptographic enhancements, anti-phishing) mandatory March 2025 |
-| **NIS2** | **October 17, 2024:** EU member states must transpose into national law<br>**2024-2025:** National implementations vary by member state<br>**Varies by member state:** Application dates depend on national transposition law | Monitor: National implementations may affect applicability determination if organization operates in multiple EU member states. Check national cybersecurity authority for specific effective dates |
+| **NIS2** | **October 17, 2024:** EU member states must transpose into national law<br>**2024-2025:** National implementations vary by member state<br>**Varies by member state:** Application dates depend on national transposition law | Monitor: National implementations may affect applicability determination if organisation operates in multiple EU member states. Check national cybersecurity authority for specific effective dates |
 
 ---
 
 # Closing Statement
 
-This policy establishes regulatory applicability for the organization's Information Security Management System.
+This policy establishes regulatory applicability for the organisation's Information Security Management System.
 
 **What this policy establishes:**
 
