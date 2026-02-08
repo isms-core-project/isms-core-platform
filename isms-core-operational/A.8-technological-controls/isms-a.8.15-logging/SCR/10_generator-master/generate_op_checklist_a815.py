@@ -5,9 +5,9 @@
 # Copyright (c) 2025-2026 ISMS Core Contributors
 # =============================================================================
 """
-ISMS-OP-CHK-A.8.15 — Logging and Monitoring Compliance Checklist
+ISMS-OP-CHK-A.8.15 — Logging Compliance Checklist
 
-Control A.8.15: Logging and Monitoring
+Control A.8.15: Logging
 Product: ISMS CORE Operational (SME Compliance Checklist)
 
 Workbook Structure:
@@ -18,13 +18,14 @@ Workbook Structure:
 5. Protection of Event Log Info (4 reqs)
 6. Centralised Logging (4 reqs)
 7. Administrator and Operator Logs (4 reqs)
-8. Clock Synchronisation (7 reqs)
-9. Event Log Monitoring (3 reqs)
-10. Event Log Retention (3 reqs)
-11. Swiss nFADP — DSV Article 4 (2 reqs)
-12. Personal Privacy (7 reqs)
+8. Event Log Review (3 reqs)
+9. Event Log Retention (3 reqs)
+10. Swiss nFADP — DSV Article 4 (2 reqs)
+11. Personal Privacy (7 reqs)
 
-Total: 39 requirements across 10 domains
+Total: 32 requirements across 9 domains
+
+Note: Clock synchronisation requirements are in ISMS-OP-CHK-A.8.17.
 """
 
 import sys
@@ -41,7 +42,7 @@ from op_checklist_engine import generate_checklist
 # =============================================================================
 DOCUMENT_ID = "ISMS-OP-CHK-A.8.15"
 CONTROL_ID = "A.8.15"
-CONTROL_NAME = "Logging and Monitoring"
+CONTROL_NAME = "Logging"
 SOURCE_POLICY = "ISMS-OP-POL-A.8.15"
 
 # =============================================================================
@@ -57,10 +58,10 @@ REQUIREMENTS = OrderedDict([
     ]),
 
     ("Event Logging Access Control", [
-        ("A.8.15-03", "Event Logging And Monitoring",
-         "Event logging and monitoring shall be performed by authorised personnel only."),
-        ("A.8.15-04", "Event Logs And Monitoring Systems",
-         "Event logs and monitoring systems shall be protected and access restricted in line with the Access Control Policy. Access to raw logs shall be limited to the information security management team and authorised IT personnel."),
+        ("A.8.15-03", "Event Logging Access",
+         "Event logging shall be performed by authorised personnel only."),
+        ("A.8.15-04", "Event Log Protection",
+         "Event logs shall be protected and access restricted in line with the Access Control Policy. Access to raw logs shall be limited to the information security management team and authorised IT personnel."),
         ("A.8.15-05", "System Administrators",
          "System administrators shall not have permission to erase or deactivate logs of their own activities. Where this is not technically enforceable, compensating controls shall be implemented (e.g., forwarding logs to a central system outside the administrator's control, periodic review of administrator activity by a separate role)."),
     ]),
@@ -98,62 +99,45 @@ REQUIREMENTS = OrderedDict([
          "Anomalous privileged activity (e.g., after-hours access, bulk data operations, security configuration changes) shall generate alerts."),
     ]),
 
-    ("Clock Synchronisation", [
-        ("A.8.15-18", "The Clocks Of All Information Processing",
-         "The clocks of all information processing systems within the organisation shall be synchronised to a single, consistent reference time source."),
-        ("A.8.15-19", "An Internal Ntp Server (Or The",
-         "An internal NTP server (or the primary domain controller) shall be designated as the organisation's reference time source."),
-        ("A.8.15-20", "The Internal Reference",
-         "The internal reference shall synchronise to at least two independent external Stratum 1 or Stratum 2 NTP servers (e.g., ch.pool.ntp.org, ntp.metas.ch)."),
-        ("A.8.15-21", "Organisation Systems (Servers,",
-         "All organisation systems (servers, workstations, network devices, cloud services) shall synchronise to the internal reference."),
-        ("A.8.15-22", "Clock Drift Exceeding 1 Second On",
-         "Clock drift exceeding 1 second on any critical system shall generate an alert."),
-        ("A.8.15-23", "Log Timestamps",
-         "Log timestamps shall be recorded in UTC or with a defined timezone offset to enable correlation across systems in different locations."),
-        ("A.8.15-24", "Time Synchronisation Settings",
-         "Time synchronisation settings shall be documented and protected from unauthorised modification."),
-    ]),
-
-    ("Event Log Monitoring", [
-        ("A.8.15-25", "Be Assigned For The Analysis And",
-         "Responsibilities shall be assigned for the analysis and monitoring of security events."),
-        ("A.8.15-26", "The Following Events",
+    ("Event Log Review", [
+        ("A.8.15-18", "Responsibilities For Log Analysis",
+         "Responsibilities shall be assigned for the analysis of security events recorded in logs."),
+        ("A.8.15-19", "Automated Alerts For High-Risk Events",
          "The following events shall trigger immediate automated alerts and be escalated to the incident management process:."),
-        ("A.8.15-27", "The Following Escalation Process",
+        ("A.8.15-20", "Escalation Process For High-Risk Events",
          "When a high-risk event is detected, the following escalation process shall be followed:."),
     ]),
 
     ("Event Log Retention", [
-        ("A.8.15-28", "Archived Logs",
+        ("A.8.15-21", "Archived Logs",
          "Archived logs shall be encrypted, stored in a secure location, and retrievable within the following timeframes:."),
-        ("A.8.15-29", "Retrieval Procedures",
+        ("A.8.15-22", "Retrieval Procedures",
          "Retrieval procedures shall be tested at least annually to verify that archived logs are accessible and intact."),
-        ("A.8.15-30", "Not Be Retained Longer Than Necessary",
+        ("A.8.15-23", "Not Be Retained Longer Than Necessary",
          "Logs shall not be retained longer than necessary. When retention periods expire, logs shall be securely deleted in line with the Information Classification and Handling Policy."),
     ]),
 
     ("Swiss nFADP — DSV Article 4", [
-        ("A.8.15-31", "Log Storage: Logs Of Sensitive Personal",
-         "Log storage: Logs of sensitive personal data processing shall be stored separately from the processing system, retained for a minimum of 1 year*, and access restricted to verifying data security compliance and ensuring confidentiality, integrity, availability, and traceability."),
-        ("A.8.15-32", "Determine Whether Dsv Art. 4 Applies",
+        ("A.8.15-24", "Log Storage: Logs Of Sensitive Personal",
+         "Log storage: Logs of sensitive personal data processing shall be stored separately from the processing system, retained for a minimum of 1 year, and access restricted to verifying data security compliance and ensuring confidentiality, integrity, availability, and traceability."),
+        ("A.8.15-25", "Determine Whether DSV Art. 4 Applies",
          "The organisation shall determine whether DSV Art. 4 applies by assessing the following criteria:."),
     ]),
 
     ("Personal Privacy", [
-        ("A.8.15-33", "The Privacy Of Employees And Customers",
-         "The privacy of employees and customers shall be respected in line with Swiss nFADP and applicable legal requirements when implementing logging and monitoring."),
-        ("A.8.15-34", "Logging Systems",
+        ("A.8.15-26", "The Privacy Of Employees And Customers",
+         "The privacy of employees and customers shall be respected in line with Swiss nFADP and applicable legal requirements when implementing logging."),
+        ("A.8.15-27", "Logging Systems",
          "Logging systems shall serve legitimate security purposes (detecting threats, investigating incidents, verifying compliance) — not primarily for monitoring employee behaviour."),
-        ("A.8.15-35", "Be Informed In Advance That Logging",
+        ("A.8.15-28", "Be Informed In Advance That Logging",
          "Employees shall be informed in advance that logging takes place, what is logged, and why, through the information security awareness programme and employment documentation."),
-        ("A.8.15-36", "Only The Minimum Necessary Data",
+        ("A.8.15-29", "Only The Minimum Necessary Data",
          "Only the minimum necessary data shall be collected and retained (data minimisation)."),
-        ("A.8.15-37", "Access To Logs",
+        ("A.8.15-30", "Access To Logs",
          "Access to logs containing employee data shall be restricted to authorised security and compliance personnel only — not line managers for general browsing."),
-        ("A.8.15-38", "Keystroke Logging And Continuous",
+        ("A.8.15-31", "Keystroke Logging And Continuous",
          "Keystroke logging and continuous individual activity surveillance are disproportionate and shall not be implemented."),
-        ("A.8.15-39", "Vendors For Troubleshooting), Personal",
+        ("A.8.15-32", "Vendors For Troubleshooting",
          "Where logs containing personal data are shared with external parties (e.g., vendors for troubleshooting), personal identifiers shall be masked or anonymised."),
     ]),
 

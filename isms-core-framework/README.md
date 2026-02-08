@@ -102,8 +102,8 @@ ISMS CORE Framework is the **full engineering product**. For organisations that 
 | | Framework | Operational |
 |---|---|---|
 | **Audience** | Mature security teams | SMEs and startups |
-| **Per control group** | POL + IMP (UG/TG) + SCR + WKBK + REF + CTX | One OP-POL |
-| **Depth** | Full assessment workbooks with automated scoring | Policy requirements with evidence guidance |
+| **Per control group** | GOV-POL + IMP (UG/TG) + SCR + WKBK + REF + CTX | OP-POL + SCR + WKBK |
+| **Depth** | Full assessment workbooks with automated scoring | Compliance checklists with evidence tracking |
 | **Effort** | Comprehensive implementation | Practical minimum for audit readiness |
 
 ---

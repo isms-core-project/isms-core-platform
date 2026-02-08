@@ -145,6 +145,16 @@ All policies are aligned to **Swiss nFADP (revDSG)** as the primary data protect
 
 ---
 
+## Documentation
+
+| Document | Description |
+|----------|-------------|
+| [CONTROLS.md](CONTROLS.md) | Control pack index with all 53 packs |
+| [STATUS.md](STATUS.md) | Current progress and metrics |
+| [CHANGELOG.md](CHANGELOG.md) | Version history and release notes |
+
+---
+
 ## Relationship to ISMS CORE Framework
 
 ISMS CORE Operational is the **entry-level product** — everything an SME needs, nothing it doesn't. For organisations that need the full engineering stack (multi-sheet assessment workbooks, implementation guides, technical specifications), see [ISMS CORE Framework](../isms-core-framework/).

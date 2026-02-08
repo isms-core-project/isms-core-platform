@@ -52,7 +52,7 @@ The platform provides **two products** at different levels of depth:
 </tr>
 <tr>
 <td><strong>Per control</strong></td>
-<td>POL + IMP (UG/TG) + SCR + WKBK + REF + CTX</td>
+<td>GOV-POL + IMP (UG/TG) + SCR + WKBK + REF + CTX</td>
 <td>OP-POL + SCR + WKBK</td>
 </tr>
 <tr>
