@@ -221,7 +221,7 @@ Every control pack undergoes **adversarial multi-model validation** — controls
 
 ```
 ┌──────────────────┐     ┌──────────────────┐     ┌──────────────────────┐
-│  Claude Code     │────▶│  ISMS Copilot X  │────▶│  GPT-5.x Red Team   │
+│  Claude Code     │────▶│  ISMS Copilot X  │────▶│  GPT-5.x Red Team    │
 │  (Build + QA)    │     │ (Blue Team Audit)│     │  (Attack Surface)    │
 └──────────────────┘     └──────────────────┘     └──────────────────────┘
          │                        │                         │
@@ -232,8 +232,8 @@ Every control pack undergoes **adversarial multi-model validation** — controls
                                   └────────────┬────────────┘
                                                ▼
                                   ┌──────────────────────┐
-                                  │   Gregory Griffin     │
-                                  │   (Final Approval)    │
+                                  │   Gregory Griffin    │
+                                  │   (Final Approval)   │
                                   └──────────────────────┘
 ```
 
