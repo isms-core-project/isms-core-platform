@@ -111,7 +111,17 @@ isms-core-platform/
 │
 └── isms-core-operational/              # ⚡ Lightweight SME Product
     ├── README.md                       # Operational overview
+    ├── CONTROLS.md                     # 53 control group index
+    ├── STATUS.md                       # Implementation metrics
+    ├── CHANGELOG.md                    # Version history
+    ├── OP-POL-AUDIT-LOG.md             # Per-policy review log
+    ├── A.0-checklist-engine/           # Shared checklist generator engine
+    │   └── op_checklist_engine.py      # Common engine (642 lines)
     ├── A.5-organizational-controls/    # 21 control groups
+    │   └── isms-a.X.X-control-name/
+    │       ├── POL/10_pol-md/          # Operational policy (1 OP-POL)
+    │       ├── SCR/10_generator-master/ # Checklist generator script
+    │       └── WKBK/90_workbooks/      # Generated Excel checklist
     ├── A.6-people-controls/            # 4 control groups
     ├── A.7-physical-controls/          # 6 control groups
     └── A.8-technological-controls/     # 22 control groups
@@ -271,6 +281,8 @@ See [isms-core-framework/STATUS.md](isms-core-framework/STATUS.md) for detailed 
 | [isms-core-framework/COVERAGE.md](isms-core-framework/COVERAGE.md) | 🗺️ 93 Annex A → 53 pack mapping |
 | [isms-core-framework/STATUS.md](isms-core-framework/STATUS.md) | 📊 Framework metrics |
 | [isms-core-framework/STACKING.md](isms-core-framework/STACKING.md) | 🔗 Control grouping approaches |
+| [isms-core-operational/CONTROLS.md](isms-core-operational/CONTROLS.md) | 📋 Control group index (Operational) |
+| [isms-core-operational/STATUS.md](isms-core-operational/STATUS.md) | 📊 Operational metrics |
 | [PHILOSOPHY.md](PHILOSOPHY.md) | ✈️ Anti-cargo-cult methodology |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | 🔧 QA process and standards |
 | [SECURITY.md](SECURITY.md) | 🔒 Vulnerability reporting policy |
