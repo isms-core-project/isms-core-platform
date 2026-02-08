@@ -326,29 +326,29 @@ Every control pack undergoes adversarial multi-model validation. Controls are re
 
 ```
   ┌─────────────────────────┐
-  │    Gregory Griffin       │
-  │    (Architect / Owner)   │
+  │     Gregory Griffin     │
+  │   (Architect / Owner)   │
   └────────────┬────────────┘
                │ Requirements + Domain Expertise
                ▼
   ┌─────────────────────────┐
-  │    Claude Code (Opus)    │──── Implementation
-  │    Build + Code Review   │     POL, IMP, SCR, REF, CTX
+  │   Claude Code (Opus)    │──── Implementation
+  │   Build + Code Review   │     POL, IMP, SCR, REF, CTX
   └────────────┬────────────┘
                │
        ┌───────┴───────┐
        ▼               ▼
-  ┌──────────┐   ┌──────────┐
-  │ Copilot X │   │  GPT-5   │
-  │ Blue Team │   │ Red Team │
-  │  (Audit)  │   │ (Attack) │
-  └─────┬─────┘   └─────┬────┘
-        │               │
-        └───────┬───────┘
-                ▼
+ ┌───────────┐   ┌───────────┐
+ │ Copilot X │   │   GPT-5   │
+ │ Blue Team │   │ Red Team  │
+ │  (Audit)  │   │ (Attack)  │
+ └─────┬─────┘   └─────┬─────┘
+       │               │
+       └───────┬───────┘
+               ▼
   ┌─────────────────────────┐
-  │    Gregory Griffin       │
-  │    Final Approval Gate   │
+  │     Gregory Griffin     │
+  │   Final Approval Gate   │
   └─────────────────────────┘
 ```
 
