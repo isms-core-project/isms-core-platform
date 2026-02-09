@@ -27,6 +27,7 @@ ISMS CORE Framework is the **full engineering product** for building and operati
 <td align="center"><strong>📋 IMP</strong><br/>Implementation<br/><em>(UG + TG)</em></td>
 <td align="center"><strong>🐍 SCR</strong><br/>Scripts</td>
 <td align="center"><strong>📊 WKBK</strong><br/>Workbooks</td>
+<td align="center"><strong>📝 FORM</strong><br/>Forms</td>
 <td align="center"><strong>📚 REF</strong><br/>Reference</td>
 <td align="center"><strong>🏢 CTX</strong><br/>Context</td>
 </tr>
@@ -35,6 +36,7 @@ ISMS CORE Framework is the **full engineering product** for building and operati
 <td>User Guides (UG)<br/>+ Technical Specs (TG)</td>
 <td>Python generators<br/>and automation</td>
 <td>Generated Excel<br/>assessment workbooks</td>
+<td>Templates, checklists<br/>and operational forms</td>
 <td>Mappings and notes<br/>to support implementation</td>
 <td>Organisational<br/>assumptions & scope</td>
 </tr>
@@ -103,7 +105,7 @@ ISMS CORE Framework is the **full engineering product**. For organisations that 
 | | Framework | Operational |
 |---|---|---|
 | **Audience** | Mature security teams | SMEs and startups |
-| **Per control group** | GOV-POL + IMP (UG/TG) + SCR + WKBK + REF + CTX | OP-POL + SCR + WKBK |
+| **Per control group** | GOV-POL + IMP (UG/TG) + SCR + WKBK + FORM + REF + CTX | OP-POL + SCR + WKBK |
 | **Depth** | Full assessment workbooks with automated scoring | Compliance checklists with evidence tracking |
 | **Effort** | Comprehensive implementation | Practical minimum for audit readiness |
 
@@ -112,5 +114,6 @@ ISMS CORE Framework is the **full engineering product**. For organisations that 
 <p align="center">
   <em>Part of <a href="../README.md">ISMS CORE Platform</a></em> 🎋
 </p>
+
 
 
