@@ -56,7 +56,7 @@ isms-core-framework/
 │       ├── SCR/10_generator-master/    # Python generators
 │       ├── WKBK/90_workbooks/          # Generated Excel workbooks
 │       ├── REF/50_ref-md/              # Reference materials
-│       ├── FORM/60_ref-md/             # Templates, checklists and operational forms
+│       ├── FORM/60_form-md/            # Templates, checklists and operational forms
 │       └── CTX/80_ctx-md/              # Context documents
 ├── A.6-people-controls/                # 4 control packs (covers 8 Annex A controls)
 ├── A.7-physical-controls/              # 6 control packs (covers 14 Annex A controls)
@@ -112,4 +112,5 @@ ISMS CORE Framework is the **full engineering product**. For organisations that 
 <p align="center">
   <em>Part of <a href="../README.md">ISMS CORE Platform</a></em> 🎋
 </p>
+
 
