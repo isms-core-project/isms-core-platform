@@ -36,7 +36,8 @@ isms-a.X.X-control-name/
 │   ├── 10_generator-master/
 │   └── ...
 ├── WKBK/90_workbooks/    ← Generated Excel workbooks
-├── REF/70_ref-md/        ← Reference materials (if applicable)
+├── REF/50_ref-md/        ← Reference materials (if applicable)
+├── FORM/70_form-md/      ← Templates, checklists and operational forms (if applicable)
 └── CTX/80_ctx-md/        ← Context documents (if applicable)
 ```
 
