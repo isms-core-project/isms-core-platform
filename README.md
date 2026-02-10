@@ -119,9 +119,9 @@ isms-core-platform/
     │   └── op_checklist_engine.py      # Common engine (642 lines)
     ├── A.5-organizational-controls/    # 21 control groups
     │   └── isms-a.X.X-control-name/
-    │       ├── POL/10_pol-md/          # Operational policy (1 OP-POL)
-    │       ├── SCR/10_generator-master/ # Checklist generator script
-    │       └── WKBK/90_workbooks/      # Generated Excel checklist
+    │       ├── POL/                    # Operational policy (1 OP-POL)
+    │       ├── SCR/                    # Checklist generator script
+    │       └── WKBK/                   # Generated Excel checklist
     ├── A.6-people-controls/            # 4 control groups
     ├── A.7-physical-controls/          # 6 control groups
     └── A.8-technological-controls/     # 22 control groups
@@ -138,7 +138,7 @@ isms-core-platform/
 3. Run generators to produce assessment workbooks:
 
 ```bash
-cd isms-core-framework/A.8-technological-controls/isms-a.8.24-use-of-cryptography/SCR/10_generator-master
+cd isms-core-framework/A.8-technological-controls/isms-a.8.24-use-of-cryptography/SCR
 python3 generate_a824_1_data_transmission_assessment.py
 ```
 

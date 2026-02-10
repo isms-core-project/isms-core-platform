@@ -30,15 +30,13 @@ Each control folder contains:
 
 ```
 isms-a.X.X-control-name/
-├── POL/10_pol-md/        ← Policy documents
-├── IMP/30_imp-md/        ← Implementation guides (UG + TG pairs)
-├── SCR/                  ← Scripts
-│   ├── 10_generator-master/
-│   └── ...
-├── WKBK/90_workbooks/    ← Generated Excel workbooks
-├── REF/50_ref-md/        ← Reference materials (if applicable)
-├── FORM/70_form-md/      ← Templates, checklists and operational forms (if applicable)
-└── CTX/80_ctx-md/        ← Context documents (if applicable)
+├── POL/                  ← Policy documents
+├── IMP/                  ← Implementation guides (UG + TG pairs)
+├── SCR/                  ← Scripts (generators, normalizers, consolidators)
+├── WKBK/                 ← Generated Excel workbooks
+├── REF/                  ← Reference materials (if applicable)
+├── FORM/                 ← Templates, checklists and operational forms (if applicable)
+└── CTX/                  ← Context documents (if applicable)
 ```
 
 ---
@@ -172,9 +170,9 @@ isms-a.X.X-control-name/
 ## Getting Started
 
 1. **Choose a section** - Browse by control category above
-2. **Read the policy** - Start with `POL/10_pol-md/` for requirements
-3. **Follow implementation** - Use `IMP/30_imp-md/` for step-by-step guidance
-4. **Use the workbooks** - Run scripts in `SCR/` or use Excel files in `WKBK/90_workbooks/`
+2. **Read the policy** - Start with `POL/` for requirements
+3. **Follow implementation** - Use `IMP/` for step-by-step guidance
+4. **Use the workbooks** - Run scripts in `SCR/` or use Excel files in `WKBK/`
 
 ---
 

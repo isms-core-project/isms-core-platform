@@ -82,11 +82,11 @@ Every operational policy follows a consistent structure:
 isms-core-operational/
 ├── A.5-organizational-controls/        # 21 control groups
 │   └── isms-a.5.X-control-name/
-│       ├── POL/10_pol-md/
+│       ├── POL/
 │       │   └── ISMS-OP-POL-A.5.X - Policy Title.md
-│       ├── SCR/10_generator-master/
+│       ├── SCR/
 │       │   └── generate_op_checklist_a5X.py
-│       └── WKBK/90_workbooks/
+│       └── WKBK/
 │           └── ISMS-OP-CHK-A.5.X_Compliance_Checklist_YYYYMMDD.xlsx
 ├── A.6-people-controls/                # 4 control groups
 ├── A.7-physical-controls/              # 6 control groups
@@ -102,7 +102,7 @@ Navigate to a control group and read the OP-POL. It tells you what's required, w
 
 ### 2) Generate the checklist
 ```bash
-cd isms-core-operational/A.8-technological-controls/isms-a.8.24-use-of-cryptography/SCR/10_generator-master
+cd isms-core-operational/A.8-technological-controls/isms-a.8.24-use-of-cryptography/SCR
 python3 generate_op_checklist_a824.py
 ```
 

@@ -10,6 +10,14 @@ This project uses a simple versioning approach:
 ## [Unreleased]
 - TBD
 
+## [1.1] - 2026-02-10
+### Changed
+- **Flat folder structure**: removed all numbered subfolders across 53 control packs
+  - Before: `POL/10_pol-md/`, `SCR/10_generator-master/`, `WKBK/90_workbooks/`
+  - After: files directly in `POL/`, `SCR/`, `WKBK/`
+- All 53 generator import paths updated (`parents[4]` to `parents[3]`)
+- README.md and CONTROLS.md updated for flat structure
+
 ## [1.0] - 2026-02-08
 ### Added
 - **53 Operational Policies (OP-POL)** — one self-contained policy per control group

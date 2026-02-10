@@ -30,10 +30,9 @@ Each control folder contains:
 
 ```
 isms-a.X.X-control-name/
-├── POL/10_pol-md/        ← Operational policy
-├── SCR/                  ← Scripts
-│   └── 10_generator-master/
-└── WKBK/90_workbooks/    ← Generated compliance checklist workbook
+├── POL/                  ← Operational policy
+├── SCR/                  ← Generator script
+└── WKBK/                 ← Generated compliance checklist workbook
 ```
 
 ---
@@ -164,9 +163,9 @@ isms-a.X.X-control-name/
 ## Getting Started
 
 1. **Choose a section** - Browse by control category above
-2. **Read the policy** - Start with `POL/10_pol-md/` for requirements
-3. **Generate the checklist** - Run the script in `SCR/10_generator-master/`
-4. **Use the workbook** - Open the Excel file in `WKBK/90_workbooks/` and track compliance
+2. **Read the policy** - Start with `POL/` for requirements
+3. **Generate the checklist** - Run the script in `SCR/`
+4. **Use the workbook** - Open the Excel file in `WKBK/` and track compliance
 
 ---
 

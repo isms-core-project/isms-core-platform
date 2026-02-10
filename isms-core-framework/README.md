@@ -53,13 +53,13 @@ isms-core-framework/
 ├── A.0-regulatory-control/             # 1 regulatory framework pack
 ├── A.5-organizational-controls/        # 21 control packs (covers 37 Annex A controls)
 │   └── isms-a.5.X-control-name/
-│       ├── POL/10_pol-md/              # Governance policies
-│       ├── IMP/30_imp-md/              # UG (User Guide) + TG (Technical Spec)
-│       ├── SCR/10_generator-master/    # Python generators
-│       ├── WKBK/90_workbooks/          # Generated Excel workbooks
-│       ├── REF/50_ref-md/              # Reference materials
-│       ├── FORM/60_form-md/            # Templates, checklists and operational forms
-│       └── CTX/80_ctx-md/              # Context documents
+│       ├── POL/                        # Governance policies
+│       ├── IMP/                        # UG (User Guide) + TG (Technical Spec)
+│       ├── SCR/                        # Python generators + automation scripts
+│       ├── WKBK/                       # Generated Excel workbooks
+│       ├── REF/                        # Reference materials
+│       ├── FORM/                       # Templates, checklists and operational forms
+│       └── CTX/                        # Context documents
 ├── A.6-people-controls/                # 4 control packs (covers 8 Annex A controls)
 ├── A.7-physical-controls/              # 6 control packs (covers 14 Annex A controls)
 ├── A.8-technological-controls/         # 22 control packs (covers 34 Annex A controls)
@@ -80,7 +80,7 @@ isms-core-framework/
 4. Run generators to produce assessment workbooks:
 
 ```bash
-cd A.8-technological-controls/isms-a.8.24-use-of-cryptography/SCR/10_generator-master
+cd A.8-technological-controls/isms-a.8.24-use-of-cryptography/SCR
 python3 generate_a824_1_data_transmission_assessment.py
 ```
 

@@ -10,6 +10,17 @@ This project uses a simple versioning approach:
 ## [Unreleased]
 - TBD
 
+## [4.7] - 2026-02-10
+### Changed
+- **Flat folder structure**: removed all numbered subfolders across 55 control packs
+  - Before: `POL/10_pol-md/`, `IMP/30_imp-md/`, `SCR/10_generator-master/`, `WKBK/90_workbooks/`, `REF/70_ref-md/`, `CTX/80_ctx-md/`, `FORM/60_form-md/`
+  - After: files directly in `POL/`, `IMP/`, `SCR/`, `WKBK/`, `REF/`, `CTX/`, `FORM/`
+- README.md, CONTRIBUTING.md, CONTROLS.md updated for flat structure
+
+### Fixed
+- Endpoint Security POL (A.8.1-7-18-19): corrected malformed IMP reference and removed stale subfolder references
+- A.8.23 and A.8.24 SCR readme files: workbook paths updated from `90_workbooks/` to `WKBK/`
+
 ## [4.6] - 2026-02-08
 ### Added
 - Framework palette standardisation script (71 generators normalised)

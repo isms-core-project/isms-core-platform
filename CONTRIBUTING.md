@@ -86,7 +86,7 @@ ISMS CORE applies appropriate rigor based on what matters for **reliability**, *
 Every IMP (Implementation) document exists as a **paired set** of two files — a User Guide and a Technical Specification. This separation gives auditors, implementers, and developers each a purpose-built document without cross-contamination.
 
 ```
-IMP/30_imp-md/
+IMP/
 ├── ISMS-IMP-A.8.9.1-UG - Baseline Configuration Assessment.md    ← For implementers
 └── ISMS-IMP-A.8.9.1-TG - Baseline Configuration Assessment.md    ← For developers/auditors
 ```
@@ -112,7 +112,7 @@ The UG is the **human-written** document that guides someone through completing 
 
 **Audience:** Python developers, Excel workbook developers, QA engineers
 
-The TG is **auto-generated** from the Python generator script (`SCR/10_generator-master/generate_*.py`). It is a human-readable translation of the generator's code — every sheet, column, data validation dropdown, color style, and formula documented in structured tables.
+The TG is **auto-generated** from the Python generator script (`SCR/generate_*.py`). It is a human-readable translation of the generator's code — every sheet, column, data validation dropdown, color style, and formula documented in structured tables.
 
 | Section | Purpose |
 |---------|---------|
@@ -227,26 +227,17 @@ Each control is self-contained with all artifact types:
 ```
 isms-a.X.X-control-name/
 ├── POL/                      # 📜 Policy documents
-│   └── 10_pol-md/
 ├── IMP/                      # 📋 Implementation guides (UG + TG pairs)
-│   └── 30_imp-md/            # ISMS-IMP-A.X.X.N-UG/TG - Title.md
-├── SCR/                      # 🐍 Scripts
-│   ├── 10_generator-master/  # Python generators
-│   ├── 11_normalize/         # Normalization scripts
-│   ├── 12_consolidator/      # Dashboard consolidation
-│   ├── 13_presentation/      # CISO demo data
-│   └── 50_sanity/            # Validation scripts
-├── WKBK/                     # 📊 Generated workbooks
-│   └── 90_workbooks/         # Excel output
+├── SCR/                      # 🐍 Scripts (generators, normalizers, consolidators)
+├── WKBK/                     # 📊 Generated Excel workbooks
 ├── REF/                      # 📚 Reference materials (if applicable)
-│   └── 70_ref-md/
-└── CTX/                      # 🏢 Context documents (if applicable)
-    └── 80_ctx-md/
+├── CTX/                      # 🏢 Context documents (if applicable)
+└── FORM/                     # 📝 Forms and templates (if applicable)
 ```
 
 ---
 
-## 🎬 Presentation Mode (13_presentation)
+## 🎬 Presentation Mode
 
 <p align="center">
   <img src="https://img.shields.io/badge/CISO_Demo-Ready-DC143C?style=for-the-badge" alt="CISO Demo Ready"/>
