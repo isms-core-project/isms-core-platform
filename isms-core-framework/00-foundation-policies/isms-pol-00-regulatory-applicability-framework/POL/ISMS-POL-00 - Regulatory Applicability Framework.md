@@ -107,6 +107,11 @@ The outcome of the regulatory applicability assessment serves as **input** for:
 
 **Boundary Principle**: This policy establishes regulatory applicability. Implementation, enforcement, and verification are handled through separate ISMS processes.
 
+**Integration with ISO 27001 Clause 4:**
+
+- **Clause 4.1 (Context of the Organisation)**: This policy addresses external context (legal/regulatory environment). Internal context (organisational structure, technology, culture) is addressed in the ISMS Context Document.
+- **Clause 4.2 (Interested Parties)**: Interested party requirements (customer obligations, regulatory expectations) identified through this framework feed the interested party register maintained in the ISMS Context Document.
+
 ---
 
 **Regulatory Applicability Categories**
@@ -294,6 +299,7 @@ These regulations apply **only when specific business conditions are met**:
 - **Data Protection**: Customer data security, confidentiality, availability
 - **Incident Reporting**: Significant operational incidents to FINMA
 - **Internal Controls**: Governance, risk management, internal audit
+- **Sub-Outsourcing Register** (FINMA Circular 2023/1 Section 15): Banks must maintain a register of sub-outsourcing arrangements where service providers further delegate material services. Register must document: sub-outsourcer identity, services provided, data access, geographic location, risk assessment, approval status.
 
 **ISMS Impact**:
 
@@ -301,8 +307,38 @@ These regulations apply **only when specific business conditions are met**:
 - Comprehensive third-party risk management (A.5.19-23)
 - Incident response and reporting procedures (A.5.24-28)
 - Governance and oversight structures (A.5.1, 5.4)
+- Sub-outsourcing transparency and approval (A.5.19-23 S3: ICT Supply Chain Security)
 
 **Assessment**: If organisation holds FINMA license or registration → **Mandatory Compliance**
+
+### FINMA Sub-Outsourcing Requirements (Circular 2023/1)
+
+For Swiss banks subject to FINMA Circular 2023/1, the following sub-outsourcing requirements apply:
+
+**Sub-Outsourcing Definition:**
+Material services outsourced by a bank to a service provider, where the service provider further delegates those services to a sub-outsourcer (sub-supplier).
+
+**Register Requirements:**
+- Maintain comprehensive register of all sub-outsourcing arrangements
+- Update register when sub-outsourcing occurs or changes
+- Include in register:
+  - Sub-outsourcer name and jurisdiction
+  - Services provided (description and criticality)
+  - Data access and processing activities
+  - Geographic location of service delivery
+  - Risk assessment and mitigation measures
+  - FINMA approval status (where required)
+
+**Approval Requirements:**
+- Material sub-outsourcing requires bank approval before implementation
+- Bank must assess sub-outsourcing risks (operational, concentration, data protection, jurisdiction)
+- Contractual flow-down of bank requirements to sub-outsourcers
+- Right to audit sub-outsourcers (direct or via service provider)
+
+**Implementation:**
+- Sub-outsourcing register maintained in ISMS-IMP-A.5.23.2 (Due Diligence workbook - Sub-Supplier Sheet)
+- Sub-outsourcer risk assessment documented in ISMS-IMP-A.5.23.4 (Governance workbook)
+- Approval workflow integrated with supplier onboarding process (Section 8: Lifecycle Management)
 
 ## Digital Operational Resilience Act (DORA)
 
@@ -433,6 +469,64 @@ These regulations apply **only when specific business conditions are met**:
 
 **Assessment**: If organisation handles payment cards → **Mandatory Compliance**
 
+## EU Artificial Intelligence Act (AI Act)
+
+**Regulation**: Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence  
+**Effective Date**: August 1, 2024 (phased implementation through August 2027)
+
+**Applicability Triggers**:
+
+- Organisation is a **provider** (develops or commissions AI systems placed on EU market)
+- Organisation is a **deployer** (uses AI systems under own authority in the EU)
+- Organisation is an **importer or distributor** of AI systems in the EU
+- AI system outputs affect persons located in the EU (regardless of provider location)
+
+**Risk Classification** (determines obligation level):
+
+| Risk Level | Examples | Key Obligations |
+|-----------|----------|-----------------|
+| **Unacceptable** | Social scoring, real-time biometric identification (with exceptions), manipulation techniques | **Prohibited** |
+| **High-Risk** | Employment decisions, credit scoring, access to essential services, biometric categorisation, critical infrastructure | Conformity assessment, risk management, data governance, transparency, human oversight, documentation |
+| **Limited Risk** | Chatbots, emotion recognition, deepfake generation | Transparency obligations (disclosure of AI interaction) |
+| **Minimal Risk** | Spam filters, AI-assisted development tools, internal analytics | No specific obligations (voluntary codes of practice) |
+
+**Key Requirements (High-Risk Systems)**:
+
+- Article 9: Risk management system throughout AI system lifecycle
+- Article 10: Data governance (training, validation, testing datasets)
+- Article 11: Technical documentation
+- Article 12: Record-keeping and logging
+- Article 13: Transparency and information to deployers
+- Article 14: Human oversight measures
+- Article 15: Accuracy, robustness, and cybersecurity
+
+**Key Requirements (All Providers/Deployers)**:
+
+- Article 4: AI literacy for staff operating AI systems
+- Article 50: Transparency for certain AI systems (chatbots, synthetic content)
+
+**Implementation Timeline**:
+
+- **February 2025**: Prohibitions on unacceptable risk AI
+- **August 2025**: Obligations for general-purpose AI models
+- **August 2026**: Full application for high-risk AI systems
+- **August 2027**: High-risk AI in regulated products (medical devices, machinery)
+
+**ISMS Impact**:
+
+- AI system inventory and risk classification (A.5.9)
+- Risk management for AI systems (Clause 6, A.5.7)
+- Data governance and quality controls (A.5.12-14)
+- Logging and monitoring of AI outputs (A.8.15-16)
+- Human oversight procedures (A.5.37)
+- Staff training on AI literacy (A.6.3)
+- Supplier management for AI components (A.5.19-23)
+- Documentation and transparency (A.5.37)
+
+**Penalties**: Up to €35 million or 7% of worldwide annual turnover (prohibited practices), €15 million or 3% (other violations)
+
+**Assessment**: If organisation develops, deploys, or distributes AI systems affecting EU persons → Evaluate risk classification and applicable obligations
+
 ## Health Insurance Portability and Accountability Act (HIPAA)
 
 **Regulation**: US federal law protecting health information  
@@ -502,71 +596,12 @@ These regulations apply **only when specific business conditions are met**:
 
 **Assessment**: If organisation has US federal contracts or FedRAMP authorization → **Mandatory Compliance**
 
-## EU Artificial Intelligence Act (AI Act)
-
-**Regulation**: Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence  
-**Effective Date**: August 1, 2024 (phased implementation through August 2027)
-
-**Applicability Triggers**:
-
-- Organisation is a **provider** (develops or commissions AI systems placed on EU market)
-- Organisation is a **deployer** (uses AI systems under own authority in the EU)
-- Organisation is an **importer or distributor** of AI systems in the EU
-- AI system outputs affect persons located in the EU (regardless of provider location)
-
-**Risk Classification** (determines obligation level):
-
-| Risk Level | Examples | Key Obligations |
-|-----------|----------|-----------------|
-| **Unacceptable** | Social scoring, real-time biometric identification (with exceptions), manipulation techniques | **Prohibited** |
-| **High-Risk** | Employment decisions, credit scoring, access to essential services, biometric categorisation, critical infrastructure | Conformity assessment, risk management, data governance, transparency, human oversight, documentation |
-| **Limited Risk** | Chatbots, emotion recognition, deepfake generation | Transparency obligations (disclosure of AI interaction) |
-| **Minimal Risk** | Spam filters, AI-assisted development tools, internal analytics | No specific obligations (voluntary codes of practice) |
-
-**Key Requirements (High-Risk Systems)**:
-
-- Article 9: Risk management system throughout AI system lifecycle
-- Article 10: Data governance (training, validation, testing datasets)
-- Article 11: Technical documentation
-- Article 12: Record-keeping and logging
-- Article 13: Transparency and information to deployers
-- Article 14: Human oversight measures
-- Article 15: Accuracy, robustness, and cybersecurity
-
-**Key Requirements (All Providers/Deployers)**:
-
-- Article 4: AI literacy for staff operating AI systems
-- Article 50: Transparency for certain AI systems (chatbots, synthetic content)
-
-**Implementation Timeline**:
-
-- **February 2025**: Prohibitions on unacceptable risk AI
-- **August 2025**: Obligations for general-purpose AI models
-- **August 2026**: Full application for high-risk AI systems
-- **August 2027**: High-risk AI in regulated products (medical devices, machinery)
-
-**ISMS Impact**:
-
-- AI system inventory and risk classification (A.5.9)
-- Risk management for AI systems (Clause 6, A.5.7)
-- Data governance and quality controls (A.5.12-14)
-- Logging and monitoring of AI outputs (A.8.15-16)
-- Human oversight procedures (A.5.37)
-- Staff training on AI literacy (A.6.3)
-- Supplier management for AI components (A.5.19-23)
-- Documentation and transparency (A.5.37)
-
-**Penalties**: Up to €35 million or 7% of worldwide annual turnover (prohibited practices), €15 million or 3% (other violations)
-
-**Assessment**: If organisation develops, deploys, or distributes AI systems affecting EU persons → Evaluate risk classification and applicable obligations
-
 ## Additional Conditional Regulations
 
 Organisations should assess applicability based on business context:
 
 | Regulation | Applicability Trigger | Region/Scope |
 |-----------|---------------------|--------------|
-| **EU AI Act** | AI system development/deployment affecting EU persons | European Union |
 | **Sarbanes-Oxley (SOX)** | US publicly traded company | United States |
 | **GLBA (Gramm-Leach-Bliley)** | US financial institution | United States |
 | **CCPA/CPRA** | Processing California resident data | California, US |
@@ -778,6 +813,21 @@ Organisations should maintain a regulatory applicability matrix:
 
 **Responsibility**: CISO + Legal/Compliance + DPO (quarterly monitoring), Executive Management approval (annual comprehensive review)
 
+## Monitoring Approach for Conditional Regulations
+
+Organisations should implement systematic monitoring for Tier 2 conditional regulations to detect applicability triggers early:
+
+| Regulation | Monitoring Method | Frequency | Owner |
+|-----------|-------------------|-----------|-------|
+| **DORA** | Review customer contracts for DORA compliance clauses; monitor if customers become DORA-regulated financial entities | Quarterly (during customer contract reviews) | CISO + Legal |
+| **NIS2** | Monitor business development plans for expansion into covered sectors (energy, transport, digital infrastructure); track EU member state NIS2 national laws | Quarterly (business strategy reviews) + Ad-hoc (national law publications) | CISO + Legal |
+| **FINMA** | Monitor business development for financial services license applications; track if services provided to FINMA-regulated entities (outsourcing rules might trigger) | Quarterly (business strategy reviews) | Legal + CISO |
+| **PCI DSS** | Monitor payment processing decisions; track merchant account applications or payment gateway integrations | Quarterly (finance/business development coordination) | CISO |
+| **EU AI Act** | Monitor AI system development/deployment decisions; track AI tool procurement; assess if AI outputs affect EU persons | Quarterly (technology strategy reviews) + Triggered (new AI tool adoption) | CISO |
+| **HIPAA** | Monitor customer data types; track if US healthcare data processing begins | Quarterly (data processing inventory reviews) | DPO + CISO |
+
+**Escalation:** If monitoring detects likely applicability trigger → Initiate detailed assessment per Section 5 within 30 days → Update Section 8 matrix → Brief Executive Management if Tier 2 → Tier 1 transition.
+
 ---
 
 # Usage in ISMS Policies
@@ -912,6 +962,21 @@ The boundary is: POL-00 identifies obligations → Risk assessment prioritizes �
 - **Matrix Updates**: CISO (owner), DPO (data protection regulations)
 - **Policy Updates**: CISO (author), Executive Management (approval)
 
+## Regulatory Monitoring Sources
+
+**Primary Monitoring Sources:**
+
+- **nDSG/FADP**: Swiss Federal Data Protection and Information Commissioner (FDPIC) website, guidance publications
+- **GDPR**: European Data Protection Board (EDPB) guidelines, national DPA guidance, EU Official Journal
+- **ISO Standards**: ISO publications, BSI (British Standards Institution) updates, certification body notifications
+- **DORA/NIS2**: EU Official Journal, ENISA publications, national competent authorities
+- **PCI DSS**: PCI Security Standards Council (pcisecuritystandards.org), Participating Organisation updates
+- **FINMA**: FINMA circulars and guidance publications (finma.ch)
+- **EU AI Act**: EU Official Journal, AI Office publications, national AI competent authorities
+- **Legal Monitoring**: External legal counsel subscription service, internal Legal department monitoring
+
+**Monitoring Frequency:** Weekly scan of regulatory sources, quarterly comprehensive review
+
 ## Communication
 
 **Policy Updates Communicated Via**:
@@ -997,7 +1062,7 @@ This section documents the organisation's current regulatory compliance obligati
 
 | Regulation | Assessment Status | Expected Completion | Preliminary Findings | Owner |
 |-----------|------------------|---------------------|---------------------|-------|
-| **EU AI Act** | 🔄 In Progress | [Date] | Organisation uses AI tools (GitHub Copilot for development assistance, potential future AI-assisted security tools). Assessment focus: Are these systems "AI systems" under Article 3 definition? If yes, risk classification per Annex III. Preliminary: Likely **minimal risk** (Tier 3) or **limited risk** (transparency obligations only). **Recommendation:** Complete detailed assessment by [Date], document in ISMS-REF-AI-ACT if applicable. | CISO + Legal |
+| **EU AI Act** | 🔄 In Progress | [Date] | Organisation uses AI tools (GitHub Copilot for development assistance, potential future AI-assisted security tools). Assessment focus: Are these systems "AI systems" under Article 3 definition? If yes, risk classification per Annex III. **GDPR Article 22 interaction:** If AI systems involve automated decision-making with legal/significant effects on individuals (GDPR Art. 22), additional requirements apply (right to human review, transparency, data protection impact assessment). Preliminary: Likely **minimal risk** (Tier 3) or **limited risk** (transparency obligations only). **Recommendation:** Complete detailed assessment by [Date], document in ISMS-REF-AI-ACT if applicable. | CISO + Legal |
 
 **Assessment Approach for EU AI Act:**
 1. **Inventory AI Usage** (Due: [Date + 2 weeks])
@@ -1005,12 +1070,21 @@ This section documents the organisation's current regulatory compliance obligati
    - GitHub Copilot (code generation assistant)
    - [List other AI tools if any]
 
-2. **Risk Classification per AI Act Annex III** (Due: [Date + 4 weeks])
+2. **GDPR Article 22 Overlap Assessment** (Due: [Date + 2 weeks])
+   - For each AI system, assess: Does it make automated decisions with legal or similarly significant effects on individuals?
+   - Examples triggering GDPR Art. 22:
+     - Automated CV screening (employment impact)
+     - Automated access control decisions (service denial impact)
+     - Automated security incident classification (affects individual's data protection rights)
+   - If yes → GDPR Art. 22 requirements apply (human review right, transparency, DPIA)
+   - Document overlap in ISMS-REF-AI-ACT assessment
+
+3. **Risk Classification per AI Act Annex III** (Due: [Date + 4 weeks])
 
    - Assess against high-risk categories (employment, credit scoring, biometrics, critical infrastructure, law enforcement)
    - Preliminary determination: None of current AI usage falls under high-risk categories
 
-3. **Document Decision** (Due: [Date + 6 weeks])
+4. **Document Decision** (Due: [Date + 6 weeks])
 
    - If minimal/limited risk → Tier 3 (Informational) with transparency obligations
    - If high-risk → Tier 2 (Conditional → Mandatory if confirmed)
@@ -1041,6 +1115,16 @@ This section documents the organisation's current regulatory compliance obligati
 - **Focus:** Regulatory changes detected, business trigger events, conditional regulation status updates
 - **Deliverable:** Regulatory monitoring log, trigger event assessments
 
+**Regulatory Monitoring Log Contents:**
+- Date of review
+- Regulatory changes detected (new laws, guidance updates, enforcement actions)
+- Organisational trigger events (new services, market expansion, customer contracts)
+- Applicability impact assessment (does change affect Tier 1/2/3 status?)
+- Action required (update POL-00, trigger detailed assessment, no action)
+- Reviewer signatures (CISO, Legal, DPO)
+
+**Maintained in:** [Compliance system - e.g., GRC platform, document repository]
+
 **Triggered Assessments:**
 
 - Business expansion (new markets, services)
@@ -1058,13 +1142,13 @@ This section documents the organisation's current regulatory compliance obligati
 
 For conditional regulations with complex requirements (regardless of current applicability status), the organisation maintains detailed requirements reference documents for future applicability scenarios and preparedness.
 
-| Regulation | Reference Document | Purpose | Maintenance Status |
-|-----------|-------------------|---------|-------------------|
-| **DORA** | ISMS-REF-DORA - Digital Operational Resilience Act Requirements Reference | Detailed ICT risk management, incident reporting, resilience testing, and third-party risk requirements per DORA Articles 3-49. Maintained for future applicability assessment if organisation enters EU financial services. | Maintained (updated when DORA regulatory technical standards published) |
-| **FINMA** | ISMS-REF-FINMA - FINMA Circular 2023/1 Requirements Reference | Operational resilience and outsourcing requirements for Swiss financial institutions. Maintained for future applicability if organisation obtains FINMA license or serves FINMA-regulated clients. | Maintained (updated per FINMA circular revisions) |
-| **NIS2** | ISMS-REF-NIS2 - Network and Information Security Directive 2 Requirements Reference | Cybersecurity risk management, incident notification, supply chain security, and governance requirements per NIS2 Articles 20-23. Maintained for future applicability if organisation designated as essential/important entity. | Maintained (updated as EU member states transpose NIS2 into national law) |
-| **PCI DSS v4.0.1** | ISMS-REF-PCI-DSS - Payment Card Industry Data Security Standard Requirements Reference | 12 PCI DSS v4.0.1 requirements covering network security, data protection, vulnerability management, access control, monitoring, and testing. Maintained for future applicability if organisation begins processing payment cards. | Maintained (updated per PCI SSC publications, currently v4.0 effective March 2024) |
-| **EU AI Act** | ISMS-REF-EU-AI-ACT - EU Artificial Intelligence Act Requirements Reference | Risk-based AI governance framework covering prohibited practices (Article 5), high-risk AI systems (Articles 9-72), limited risk transparency obligations (Article 50), and general-purpose AI model requirements (Articles 53-54). Maintained for future applicability if organisation develops or deploys AI systems affecting EU persons. | Maintained (updated as EU AI Act delegated acts and implementing acts published, phased implementation 2025-2027) |
+| Regulation | Reference Document | Purpose | Maintenance Status | Last Updated | Next Review |
+|-----------|-------------------|---------|-------------------|--------------|-------------|
+| **DORA** | ISMS-REF-DORA - Digital Operational Resilience Act Requirements Reference | Detailed ICT risk management, incident reporting, resilience testing, and third-party risk requirements per DORA Articles 3-49. Maintained for future applicability assessment if organisation enters EU financial services. | Maintained (updated when DORA regulatory technical standards published) | [Date DORA RTS reviewed] | Annually or upon DORA RTS updates |
+| **FINMA** | ISMS-REF-FINMA - FINMA Circular 2023/1 Requirements Reference | Operational resilience and outsourcing requirements for Swiss financial institutions. Maintained for future applicability if organisation obtains FINMA license or serves FINMA-regulated clients. | Maintained (updated per FINMA circular revisions) | [Date Circular 2023/1 reviewed] | Annually or upon FINMA circular revisions |
+| **NIS2** | ISMS-REF-NIS2 - Network and Information Security Directive 2 Requirements Reference | Cybersecurity risk management, incident notification, supply chain security, and governance requirements per NIS2 Articles 20-23. Maintained for future applicability if organisation designated as essential/important entity. | Maintained (updated as EU member states transpose NIS2 into national law) | [Date NIS2 national laws reviewed] | Semi-annually (national transposition monitoring) |
+| **PCI DSS v4.0.1** | ISMS-REF-PCI-DSS - Payment Card Industry Data Security Standard Requirements Reference | 12 PCI DSS v4.0.1 requirements covering network security, data protection, vulnerability management, access control, monitoring, and testing. Maintained for future applicability if organisation begins processing payment cards. | Maintained (updated per PCI SSC publications, currently v4.0 effective March 2024) | [Date v4.0.1 incorporated] | Annually or upon PCI SSC updates |
+| **EU AI Act** | ISMS-REF-EU-AI-ACT - EU Artificial Intelligence Act Requirements Reference | Risk-based AI governance framework covering prohibited practices (Article 5), high-risk AI systems (Articles 9-72), limited risk transparency obligations (Article 50), and general-purpose AI model requirements (Articles 53-54). Maintained for future applicability if organisation develops or deploys AI systems affecting EU persons. | In Development (updated as EU AI Act delegated acts and implementing acts published, phased implementation 2025-2027) | [Date initial draft] | Upon AI Act delegated acts publication |
 
 **Rationale for Maintaining "Not Applicable" Requirements References:**
 
