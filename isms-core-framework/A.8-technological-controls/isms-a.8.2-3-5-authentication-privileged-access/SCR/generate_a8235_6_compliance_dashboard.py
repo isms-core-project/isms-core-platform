@@ -48,7 +48,7 @@ visibility for ISO 27001:2022 Controls A.8.2, A.8.3, and A.8.5.
 
 **Consolidated Data Sources:**
 - Domain 1: Authentication Inventory Assessment (ISMS-IMP-A.8.2-3-5.S1)
-- Domain 2: MFA Coverage Assessment (ISMS-IMP-A.8.2-3-5.S2)
+- Domain 2: MFA Coverage Assessment ()
 - Domain 3: Privileged Account Inventory Assessment (ISMS-IMP-A.8.2-3-5.S3)
 - Domain 4: Privileged Access Monitoring Assessment (ISMS-IMP-A.8.2-3-5.S4)
 - Domain 5: Information Access Restriction Assessment (ISMS-IMP-A.8.2-3-5.S5)
