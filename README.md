@@ -297,7 +297,7 @@ See [isms-core-framework/STATUS.md](isms-core-framework/STATUS.md) for detailed 
 - **AGPL-3.0** for open-source use (see [LICENSE](LICENSE))
 - **Commercial license** available for organizations that cannot (or do not want to) comply with AGPL obligations
 
-Commercial licensing: **infor@isms-core.com**
+Commercial licensing: **info@isms-core.com**
 
 ---
 
