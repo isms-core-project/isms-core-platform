@@ -297,19 +297,19 @@ See [isms-core-framework/STATUS.md](isms-core-framework/STATUS.md) for detailed 
 - **AGPL-3.0** for open-source use (see [LICENSE](LICENSE))
 - **Commercial license** available for organizations that cannot (or do not want to) comply with AGPL obligations
 
-Commercial licensing: **admin@gregorygriffin.org**
+Commercial licensing: **infor@isms-core.com**
 
 ---
 
 ## 📞 Contact
 
 <p align="center">
-  <strong>Gregory Griffin</strong>
+  <strong>The ISMS Core Project</strong>
 </p>
 
 <p align="center">
-  <a href="mailto:admin@gregorygriffin.org"><img src="https://img.shields.io/badge/Email-admin@gregorygriffin.org-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"/></a>
-  <a href="https://github.com/ggriffinorg"><img src="https://img.shields.io/badge/GitHub-ggriffinorg-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/></a>
+  <a href="mailto:infor@isms-core.com"><img src="https://img.shields.io/badge/Email-infor@isms--core.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"/></a>
+  <a href="https://github.com/isms-core-project"><img src="https://img.shields.io/badge/GitHub-isms--core--project-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/></a>
   <a href="https://www.linkedin.com/in/ggriffinorg/"><img src="https://img.shields.io/badge/LinkedIn-ggriffinorg-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
 </p>
 
