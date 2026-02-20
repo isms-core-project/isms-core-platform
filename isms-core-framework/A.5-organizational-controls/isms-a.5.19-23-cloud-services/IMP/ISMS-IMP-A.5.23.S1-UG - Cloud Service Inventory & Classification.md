@@ -106,7 +106,6 @@ For EACH cloud service:
 | ISMS-IMP-A.5.23.S2 | Vendor Due Diligence | WHO provides services (uses this inventory) |
 | ISMS-IMP-A.5.23.S3 | Secure Configuration | HOW services are configured (uses this inventory) |
 | ISMS-IMP-A.5.23.S4 | Ongoing Governance | HOW services are managed (uses this inventory) |
-| ISMS-IMP-A.5.23.S5 | Compliance Dashboard | Consolidated compliance view (aggregates all) |
 
 **Critical Dependency:** This assessment (A.5.23.1) MUST be completed FIRST and kept current. All other A.5.23 assessments depend on having an accurate, complete cloud service inventory.
 
@@ -307,7 +306,7 @@ To build a complete inventory, use MULTIPLE discovery methods:
 
 - Execute all 6 discovery methods
 - Compile raw list of potential cloud services
-- Deduplicate and consolidate
+- Deduplicate and review
 - Identify service owners
 
 **Phase 2: Documentation (Weeks 3-4)**
@@ -365,7 +364,6 @@ To build a complete inventory, use MULTIPLE discovery methods:
 
 - Publish updated inventory
 - Notify dependent teams
-- Update compliance dashboard
 - Archive previous version
 
 ### Triggered Updates
@@ -469,7 +467,6 @@ Ensure you have appropriate access:
 - ISMS-IMP-A.5.23.S2 (Vendor Due Diligence) - Uses service/vendor list
 - ISMS-IMP-A.5.23.S3 (Secure Configuration) - Uses service list and criticality
 - ISMS-IMP-A.5.23.S4 (Ongoing Governance) - Uses service list and ownership
-- ISMS-IMP-A.5.23.S5 (Compliance Dashboard) - Aggregates all assessment data
 
 **External Dependencies:**
 
@@ -488,7 +485,7 @@ Ensure you have appropriate access:
    ↓
 2. DISCOVER SERVICES (Multi-method discovery)
    ↓
-3. CONSOLIDATE & DEDUPLICATE
+3. REVIEW & DEDUPLICATE
    ↓
 4. DOCUMENT SERVICES (Interview owners, collect evidence)
    ↓
@@ -648,7 +645,7 @@ Steps:
 
 2. Send to all department heads
 3. Follow up after 3 days
-4. Consolidate responses
+4. Review responses
 
 Expected Output: 10-40 services + ownership information
 
@@ -665,7 +662,7 @@ Expected Output: Verification + gap identification
 **Discovery Consolidation:**
 
 After all 6 methods:
-1. Consolidate all findings into single master list
+1. Compile all findings into single master list
 2. Deduplicate (same service found by multiple methods)
 3. Flag confidence level:
 
@@ -685,7 +682,7 @@ After all 6 methods:
 **Quality Check:**
 
 - ✓ All 6 discovery methods executed
-- ✓ Results consolidated and deduplicated
+- ✓ Results compiled and deduplicated
 - ✓ No obvious gaps (compare to industry benchmarks)
 - ✓ Confidence ratings assigned
 
@@ -1184,7 +1181,6 @@ See "Review & Approval" section (Part I, Section 7) for detailed process.
 
 **Deliverable:**
 
-- Approved assessment ready for compliance dashboard
 - Signed approval form with all three levels
 - Published inventory as authoritative source
 
@@ -1389,7 +1385,7 @@ After entering all services:
 3. **Verify no duplicates:**
 
    - Same service listed under different names?
-   - Same vendor appearing multiple times (consolidate?)
+   - Same vendor appearing multiple times (deduplicate?)
 
 **Step 3: Identify Service Owners**
 
@@ -2751,7 +2747,7 @@ Map regulatory requirements to cloud services, track compliance status, identify
 
 ### Sheet 7: Summary Dashboard
 
-**Purpose:** Auto-calculated metrics consolidating data from all assessment sheets.
+**Purpose:** Auto-calculated metrics aggregating data from all assessment sheets.
 
 **Key Metrics:**
 
@@ -3257,9 +3253,8 @@ This inventory (A.5.23.1) is complete. Use it as INPUT for:
 - Evaluate change management
 - Review incident procedures
 
-**A.5.23.5 - Compliance Dashboard:**
 
-- Consolidate all assessment data
+- Track assessment data in individual Summary Dashboards
 - Generate executive summary
 - Track compliance metrics
 - Report to management
@@ -3401,7 +3396,6 @@ Move beyond periodic assessments:
 - ISMS-IMP-A.5.23.S2: Vendor Due Diligence & Contracts
 - ISMS-IMP-A.5.23.S3: Secure Configuration & Deployment
 - ISMS-IMP-A.5.23.S4: Ongoing Governance & Risk Management
-- ISMS-IMP-A.5.23.S5: Compliance Monitoring Dashboard
 
 **External Standards:**
 

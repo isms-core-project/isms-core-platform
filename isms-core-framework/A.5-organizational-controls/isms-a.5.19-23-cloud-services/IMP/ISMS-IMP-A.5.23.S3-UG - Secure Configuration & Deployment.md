@@ -154,7 +154,7 @@ For EACH cloud service, across 5 security layers:
 
 | Role | Responsibility | Time Commitment |
 |------|---------------|-----------------|
-| **Cloud Operations Lead** | Coordinate assessment, consolidate results | 8-12 hours |
+| **Cloud Operations Lead** | Coordinate assessment, review results | 8-12 hours |
 | **Cloud Security Engineer** | Complete Sheets 2-6 (technical configuration) | 16-24 hours |
 | **DevOps / Platform Engineer** | Provide IaC templates, configuration exports | 12-16 hours |
 | **IT Operations** | Validate network, logging configurations | 8-12 hours |

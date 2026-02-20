@@ -21,7 +21,7 @@ ISO/IEC 27001:2022 Control A.5.23: Information Security for Use of Cloud Service
 Assessment Domain 3 of 5: Secure Configuration & Deployment
 
 --------------------------------------------------------------------------------
-SAMPLE SCRIPT - REQUIRES CUSTOMIZATION FOR YOUR ORGANIZATION
+SAMPLE SCRIPT - REQUIRES CUSTOMISATION FOR YOUR ORGANISATION
 --------------------------------------------------------------------------------
 
 This script is a TEMPLATE/SAMPLE implementation and MUST be adapted to match
@@ -75,7 +75,7 @@ USAGE
 --------------------------------------------------------------------------------
 
 Basic Usage:
-    python3 generate_reg_a523_3_secure_config.py
+    python3 generate_a523_3_secure_config.py
 
 Requirements:
     - Python 3.8+
@@ -86,6 +86,7 @@ Output:
 """
 
 from datetime import datetime
+from pathlib import Path
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
@@ -112,6 +113,9 @@ CONTROL_ID = "A.5.19-23"
 CONTROL_NAME = "Information Security for Use of Cloud Services"
 CONTROL_REF = f"ISO/IEC 27001:2022 - Control {CONTROL_ID}: {CONTROL_NAME}"
 
+# Row configuration
+MAX_DATA_ROWS = 50  # Standard maximum data rows per DS-005
+
 # Timestamps
 GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")      # For display (Swiss format)
 GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")   # For filenames (sortable)
@@ -125,13 +129,8 @@ OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_T
 
 CHECK = '\u2705'      # ✅ Green checkmark
 XMARK = '\u274C'      # ❌ Red X
-WARNING = '\u26A0'    # ⚠️  Warning sign
-CHART = '\U0001F4CA' # 📊 Chart
-TARGET = '\U0001F3AF' # 🎯 Target
-SHIELD = '\U0001F6E1' # 🛡️  Shield
-LOCK = '\U0001F512'   # 🔒 Lock
-CLOUD = '\u2601'      # ☁️  Cloud
-GLOBE = '\U0001F310'  # 🌐 Globe
+WARNING = '\u26A0'    # ⚠ Warning sign
+CLOUD = '\u2601'      # ☁ Cloud
 BULLET = '\u2022'     # • Bullet point
 ARROW = '\u2192'      # → Right arrow
 
@@ -525,6 +524,7 @@ def get_checklist_config_baseline() -> list:
         ("CFG-AI-03: AI system transparency notices configured", "AI Act: Notice config"),
         ("CFG-AI-04: AI system logging and monitoring enabled", "AI Act: AI logs"),
         ("CFG-AI-05: Human oversight mechanisms configured", "AI Act: Oversight config"),
+        ("Shared responsibility model documented per service — IaaS/PaaS/SaaS boundary for security controls explicitly defined", "Responsibility matrix, cloud provider documentation"),
     ]
 
 
@@ -581,8 +581,9 @@ def get_checklist_deployment() -> list:
         ("Monitoring and alerting configured", "Monitoring config"),
         ("Deployment runbook available", "Runbook document"),
         ("Rollback plan documented and tested", "Rollback procedure"),
-        ("Production deployment authorized", "Change approval"),
+        ("Production deployment authorised", "Change approval"),
         ("Post-deployment validation completed", "Validation report"),
+        ("Infrastructure-as-Code (IaC) templates scanned for misconfigurations prior to deployment (Terraform, ARM, CloudFormation)", "IaC scan report, pipeline security gate evidence"),
     ]
 
 
@@ -608,7 +609,14 @@ logger.info("Part 2 loaded: Validations + Checklists (Regulatory Enhanced)")
 # SECTION 5: INSTRUCTIONS & LEGEND SHEET
 # ============================================================================
 
-def create_instructions_sheet(ws, styles):
+def finalize_validations(ws, validations):
+    """Add only data validations that have cells assigned to avoid Excel repair."""
+    for dv in validations.values():
+        if dv.sqref:
+            ws.add_data_validation(dv)
+
+
+def create_instructions_sheet(ws):
     """Create Instructions & Legend sheet with regulatory compliance info."""
     thin = Side(style="thin")
     border = Border(left=thin, right=thin, top=thin, bottom=thin)
@@ -619,7 +627,10 @@ def create_instructions_sheet(ws, styles):
         "ISMS-IMP-A.5.23.S3  -  Secure Configuration & Deployment\n"
         "ISO/IEC 27001:2022 - Control A.5.23: Information Security for Use of Cloud Services"
     )
-    apply_style(ws["A1"], styles["header"], "header")
+    ws["A1"].font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
+    ws["A1"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+    ws["A1"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+    ws["A1"].border = border
     ws.row_dimensions[1].height = 40
 
     # Document Information
@@ -670,7 +681,7 @@ def create_instructions_sheet(ws, styles):
 
     # How to Use This Workbook
     row += 1
-    ws[f"A{row}"] = "HOW TO USE THIS WORKBOOK"
+    ws[f"A{row}"] = "Instructions"
     ws[f"A{row}"].font = Font(bold=True, size=12)
 
     instructions = [
@@ -693,7 +704,7 @@ def create_instructions_sheet(ws, styles):
 
     # Status Legend — proper table with headers
     row += 1
-    ws[f"A{row}"] = "STATUS LEGEND"
+    ws[f"A{row}"] = "Status Legend"
     ws[f"A{row}"].font = Font(bold=True, size=12)
 
     row += 1
@@ -708,7 +719,7 @@ def create_instructions_sheet(ws, styles):
         (CHECK, "Compliant", "Configuration meets security requirements", "C6EFCE"),
         (WARNING, "Partial", "Some settings correct, gaps exist", "FFEB9C"),
         (XMARK, "Non-Compliant", "Configuration does not meet requirements", "FFC7CE"),
-        ("N/A", "Not Applicable", "Control does not apply to this service", None),
+        ("—", "Not Applicable", "Control does not apply to this service", None),
     ]
 
     row += 1
@@ -780,16 +791,16 @@ def create_config_assessment_sheet(ws, styles, section_title, policy_req,
     col_names = list(all_columns.keys())
     col_widths = list(all_columns.values())
     
-    row = 4
+    row = 3
     for col_idx, (col_name, col_width) in enumerate(zip(col_names, col_widths), start=1):
         cell = ws.cell(row=row, column=col_idx, value=col_name)
         apply_style(cell, styles["column_header"], "header")
         ws.column_dimensions[get_column_letter(col_idx)].width = col_width
-    
-    # Data rows 5-30 (26 entries)
-    for data_row in range(5, 31):
+
+    # Data rows 4-29 (26 entries: row 4 = first/example row, rows 5-29 = 25 empty)
+    for data_row in range(4, 30):
         # Auto-generate Assessment_ID in column A
-        ws.cell(row=data_row, column=1, value=f'=CONCATENATE("{sheet_type[:3].upper()}-",TEXT(ROW()-4,"000"))')
+        ws.cell(row=data_row, column=1, value=f'=CONCATENATE("{sheet_type[:3].upper()}-",TEXT(ROW()-3,"000"))')
         
         for col_idx in range(2, len(col_names) + 1):
             cell = ws.cell(row=data_row, column=col_idx, value="")
@@ -800,18 +811,18 @@ def create_config_assessment_sheet(ws, styles, section_title, policy_req,
     # Apply validations
     if sheet_type != "jurisdictional":
         base_vals = create_base_validations(ws)
-        base_vals['service_type'].add("D5:D30")
-        base_vals['environment'].add("E5:E30")
-        base_vals['criticality'].add("F5:F30")
-        base_vals['data_class'].add("G5:G30")
-        base_vals['status'].add("I5:I30")
-        base_vals['yes_no'].add("L5:L30")
-        base_vals['responsible_team'].add("P5:P30")
+        base_vals['service_type'].add("D4:D29")
+        base_vals['environment'].add("E4:E29")
+        base_vals['criticality'].add("F4:F29")
+        base_vals['data_class'].add("G4:G29")
+        base_vals['status'].add("I4:I29")
+        base_vals['yes_no'].add("L4:L29")
+        base_vals['responsible_team'].add("P4:P29")
     
     _apply_extended_validations(ws, sheet_type)
     
     # Checklist section
-    checklist_row = 33
+    checklist_row = 32
     ws[f"A{checklist_row}"] = "COMPLIANCE CHECKLIST"
     ws[f"A{checklist_row}"].font = Font(bold=True, size=11)
     
@@ -828,8 +839,8 @@ def create_config_assessment_sheet(ws, styles, section_title, policy_req,
         ws[f"B{checklist_row}"] = req
         ws[f"C{checklist_row}"] = evidence
         checklist_row += 1
-    
-    ws.freeze_panes = "A5"
+
+    ws.freeze_panes = "A4"
 
 
 def _apply_extended_validations(ws, sheet_type):
@@ -853,111 +864,111 @@ def _create_config_baseline_validations(ws):
     """Configuration Baseline extended validations (includes DORA/NIS2/AI Act)."""
     dv_yes_no = DataValidation(type="list", formula1='"Yes,No,Partial,N/A"', allow_blank=False)
     ws.add_data_validation(dv_yes_no)
-    dv_yes_no.add("R5:R30")  # Baseline_Version
-    dv_yes_no.add("T5:T30")  # Drift_Monitoring
-    dv_yes_no.add("U5:U30")  # CIS_Benchmark
-    dv_yes_no.add("V5:V30")  # Config_Backup
-    dv_yes_no.add("W5:W30")  # Privileged_Access_Log
-    dv_yes_no.add("X5:X30")  # Security_By_Default
+    dv_yes_no.add("R4:R29")  # Baseline_Version
+    dv_yes_no.add("T4:T29")  # Drift_Monitoring
+    dv_yes_no.add("U4:U29")  # CIS_Benchmark
+    dv_yes_no.add("V4:V29")  # Config_Backup
+    dv_yes_no.add("W4:W29")  # Privileged_Access_Log
+    dv_yes_no.add("X4:X29")  # Security_By_Default
     
     # DORA compliance (column Y)
     reg_vals = create_regulatory_validations(ws)
-    reg_vals['dora_compliance'].add("Y5:Y30")
+    reg_vals['dora_compliance'].add("Y4:Y29")
     
     # NIS2 deployment (column Z)
-    reg_vals['nis2_deployment'].add("Z5:Z30")
+    reg_vals['nis2_deployment'].add("Z4:Z29")
     
     # AI System deployment (column AA)
-    reg_vals['ai_system'].add("AA5:AA30")
+    reg_vals['ai_system'].add("AA4:AA29")
 
 
 def _create_access_control_validations(ws):
     """Access Control Setup extended validations."""
     dv_sso = DataValidation(type="list", formula1='"Yes,No,Partial,N/A"', allow_blank=False)
     ws.add_data_validation(dv_sso)
-    dv_sso.add("R5:R30")
+    dv_sso.add("R4:R29")
     
     dv_mfa = DataValidation(type="list", formula1='"Yes (All Users),Yes (Admins Only),No,N/A"', allow_blank=False)
     ws.add_data_validation(dv_mfa)
-    dv_mfa.add("S5:S30")
+    dv_mfa.add("S4:S29")
     
     dv_rbac = DataValidation(type="list", formula1='"Yes,Partial,No,N/A"', allow_blank=False)
     ws.add_data_validation(dv_rbac)
-    dv_rbac.add("T5:T30")
+    dv_rbac.add("T4:T29")
     
     dv_jit = DataValidation(type="list", formula1='"Yes,No,Planned,N/A"', allow_blank=False)
     ws.add_data_validation(dv_jit)
-    dv_jit.add("U5:U30")
+    dv_jit.add("U4:U29")
     
     dv_svc = DataValidation(type="list", formula1='"Yes,Partial,No,Unknown"', allow_blank=False)
     ws.add_data_validation(dv_svc)
-    dv_svc.add("V5:V30")
+    dv_svc.add("V4:V29")
 
 
 def _create_network_validations(ws):
     """Network Security extended validations."""
     dv_ip = DataValidation(type="list", formula1='"Yes (Allowlist),Yes (Geo),No,N/A"', allow_blank=False)
     ws.add_data_validation(dv_ip)
-    dv_ip.add("R5:R30")
+    dv_ip.add("R4:R29")
     
     dv_private = DataValidation(type="list", formula1='"Yes (Private Link),Yes (VPN),Public Only,N/A"', allow_blank=False)
     ws.add_data_validation(dv_private)
-    dv_private.add("S5:S30")
+    dv_private.add("S4:S29")
     
     dv_seg = DataValidation(type="list", formula1='"Yes,Partial,No,N/A"', allow_blank=False)
     ws.add_data_validation(dv_seg)
-    dv_seg.add("T5:T30")
+    dv_seg.add("T4:T29")
     
     dv_waf = DataValidation(type="list", formula1='"Yes,No,N/A"', allow_blank=False)
     ws.add_data_validation(dv_waf)
-    dv_waf.add("U5:U30")
+    dv_waf.add("U4:U29")
     
     dv_ddos = DataValidation(type="list", formula1='"Yes (Advanced),Yes (Basic),No,N/A"', allow_blank=False)
     ws.add_data_validation(dv_ddos)
-    dv_ddos.add("V5:V30")
+    dv_ddos.add("V4:V29")
     
     dv_fw = DataValidation(type="list", formula1='"Yes,Partial,No,N/A"', allow_blank=False)
     ws.add_data_validation(dv_fw)
-    dv_fw.add("W5:W30")
+    dv_fw.add("W4:W29")
 
 
 def _create_encryption_validations(ws):
     """Encryption Configuration extended validations."""
     dv_enc_rest = DataValidation(type="list", formula1='"Yes (Provider Key),Yes (CMK),No,N/A"', allow_blank=False)
     ws.add_data_validation(dv_enc_rest)
-    dv_enc_rest.add("R5:R30")
+    dv_enc_rest.add("R4:R29")
     
     dv_enc_transit = DataValidation(type="list", formula1='"Yes (TLS 1.3),Yes (TLS 1.2),No,N/A"', allow_blank=False)
     ws.add_data_validation(dv_enc_transit)
-    dv_enc_transit.add("S5:S30")
+    dv_enc_transit.add("S4:S29")
     
     dv_algo = DataValidation(type="list", formula1='"AES-256,AES-128,ChaCha20,Other,Unknown"', allow_blank=False)
     ws.add_data_validation(dv_algo)
-    dv_algo.add("T5:T30")
+    dv_algo.add("T4:T29")
     
     dv_key = DataValidation(type="list", formula1='"Provider Managed,Customer Managed (HSM),Customer Managed (Software),N/A"', allow_blank=False)
     ws.add_data_validation(dv_key)
-    dv_key.add("U5:U30")
+    dv_key.add("U4:U29")
     
     dv_rotation = DataValidation(type="list", formula1='"90 days,180 days,365 days,Manual,N/A"', allow_blank=False)
     ws.add_data_validation(dv_rotation)
-    dv_rotation.add("V5:V30")
+    dv_rotation.add("V4:V29")
     
     dv_hsm = DataValidation(type="list", formula1='"Yes,No,N/A"', allow_blank=False)
     ws.add_data_validation(dv_hsm)
-    dv_hsm.add("W5:W30")
+    dv_hsm.add("W4:W29")
 
 
 def _create_deployment_validations(ws):
     """Deployment Checklist extended validations."""
     dv_yes_no = DataValidation(type="list", formula1='"Yes,No,N/A"', allow_blank=False)
     ws.add_data_validation(dv_yes_no)
-    dv_yes_no.add("R5:R30")  # Pre_Deploy_Scan
-    dv_yes_no.add("S5:S30")  # Security_Approved
-    dv_yes_no.add("T5:T30")  # Backup_Tested
-    dv_yes_no.add("U5:U30")  # Monitoring_Enabled
-    dv_yes_no.add("V5:V30")  # Runbook_Available
-    dv_yes_no.add("W5:W30")  # Rollback_Plan
+    dv_yes_no.add("R4:R29")  # Pre_Deploy_Scan
+    dv_yes_no.add("S4:S29")  # Security_Approved
+    dv_yes_no.add("T4:T29")  # Backup_Tested
+    dv_yes_no.add("U4:U29")  # Monitoring_Enabled
+    dv_yes_no.add("V4:V29")  # Runbook_Available
+    dv_yes_no.add("W4:W29")  # Rollback_Plan
 
 
 def _create_jurisdictional_validations(ws):
@@ -965,24 +976,24 @@ def _create_jurisdictional_validations(ws):
     reg_vals = create_regulatory_validations(ws)
     
     # Column E - Provider HQ Jurisdiction
-    reg_vals['provider_hq_jurisdiction'].add("E5:E30")
+    reg_vals['provider_hq_jurisdiction'].add("E4:E29")
     
     # Column F - US Parent Company
     dv_yes_no_unknown = DataValidation(type="list", formula1='"Yes,No,Unknown"', allow_blank=False)
     ws.add_data_validation(dv_yes_no_unknown)
-    dv_yes_no_unknown.add("F5:F30")
+    dv_yes_no_unknown.add("F4:F29")
     
     # Column G - CLOUD Act Applicability
-    reg_vals['cloud_act_exposure'].add("G5:G30")
+    reg_vals['cloud_act_exposure'].add("G4:G29")
     
     # Column I - EU Data Boundary Available
-    reg_vals['yes_no_planned'].add("I5:I30")
+    reg_vals['yes_no_planned'].add("I4:I29")
     
     # Column J - Customer Managed Keys
     reg_vals['yes_no_planned'].add("J5:J30")
     
     # Column K - Legal Challenge Commitment
-    reg_vals['yes_no_partial_unknown'].add("K5:K30")
+    reg_vals['yes_no_partial_unknown'].add("K4:K29")
     
     # Column M - Transfer Mechanism
     reg_vals['transfer_mechanism'].add("M5:M30")
@@ -1154,7 +1165,11 @@ def create_8_summary_dashboard(ws, styles):
     headers = ["Configuration Area", "Total Items", f"{CHECK} Compliant", f"{WARNING} Partial", f"{XMARK} Non-Compliant", "N/A", "Compliance %"]
     for col_idx, h in enumerate(headers, start=1):
         cell = ws.cell(row=row, column=col_idx, value=h)
-        apply_style(cell, styles["column_header"], "header")
+        cell.font = Font(bold=True, size=10, color="FFFFFF", name="Calibri")
+        cell.fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        thin = Side(style="thin")
+        cell.border = Border(left=thin, right=thin, top=thin, bottom=thin)
     
     areas = [
         ("Configuration Baseline", "'2. Configuration Baseline'"),
@@ -1197,8 +1212,12 @@ def create_8_summary_dashboard(ws, styles):
     metric_headers = ["Metric", "Count", "Status"]
     for col_idx, h in enumerate(metric_headers, start=1):
         cell = ws.cell(row=row, column=col_idx, value=h)
-        apply_style(cell, styles["column_header"], "header")
-    
+        cell.font = Font(bold=True, size=10, color="FFFFFF", name="Calibri")
+        cell.fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        thin = Side(style="thin")
+        cell.border = Border(left=thin, right=thin, top=thin, bottom=thin)
+
     jurisdictional_metrics = [
         ("US-HQ Providers (CLOUD Act Scope)", "=COUNTIF('7. Jurisdictional Risk'!E6:E30,\"United States\")", "=IF(B{row}>0,\"{WARNING} Review\",\"{CHECK} OK\")"),
         ("Providers with US Parent Company", "=COUNTIF('7. Jurisdictional Risk'!F6:F30,\"Yes\")", "=IF(B{row}>0,\"{WARNING} Review\",\"{CHECK} OK\")"),
@@ -1224,12 +1243,16 @@ def create_8_summary_dashboard(ws, styles):
     ws[f"A{row}"] = "TABLE 3: REGULATORY DEPLOYMENT COMPLIANCE"
     ws[f"A{row}"].font = Font(bold=True, size=11, color="FFFFFF")
     ws.merge_cells(f"A{row}:C{row}")
-    ws[f"A{row}"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
-    
+    ws[f"A{row}"].fill = PatternFill(start_color="C00000", end_color="C00000", fill_type="solid")
+
     row += 1
     for col_idx, h in enumerate(metric_headers, start=1):
         cell = ws.cell(row=row, column=col_idx, value=h)
-        apply_style(cell, styles["column_header"], "header")
+        cell.font = Font(bold=True, size=10, color="FFFFFF", name="Calibri")
+        cell.fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        thin = Side(style="thin")
+        cell.border = Border(left=thin, right=thin, top=thin, bottom=thin)
     
     regulatory_metrics = [
         ("DORA Non-Compliant Configurations", "=COUNTIF('2. Configuration Baseline'!Y5:Y30,\"Non-Compliant\")", "=IF(B{row}>0,\"{XMARK} Action\",\"{CHECK} OK\")"),
@@ -1244,40 +1267,6 @@ def create_8_summary_dashboard(ws, styles):
         
         status_formula_final = status_formula.replace("{row}", str(row))
         ws.cell(row=row, column=3, value=status_formula_final)
-        row += 1
-    
-    # TABLE 4: Critical Gaps by Environment
-    row += 3
-    ws[f"A{row}"] = "TABLE 4: CRITICAL GAPS BY ENVIRONMENT"
-    ws[f"A{row}"].font = Font(bold=True, size=11, color="FFFFFF")
-    ws.merge_cells(f"A{row}:C{row}")
-    ws[f"A{row}"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
-    
-    row += 1
-    gap_headers = ["Gap Type", "Count", "Priority"]
-    for col_idx, h in enumerate(gap_headers, start=1):
-        cell = ws.cell(row=row, column=col_idx, value=h)
-        apply_style(cell, styles["column_header"], "header")
-    
-    gaps = [
-        ("Production + Non-Compliant", "[Manual Count]", "Critical"),
-        ("Critical Service + Non-Compliant", "[Manual Count]", "Critical"),
-        ("MFA Not Enforced (Production)", "[Manual Count]", "High"),
-        ("No Encryption at Rest", "[Manual Count]", "High"),
-        ("Logging Not Enabled", "[Manual Count]", "High"),
-        ("No Backup for Critical Services", "[Manual Count]", "High"),
-    ]
-    
-    row += 1
-    for gap, count, priority in gaps:
-        ws.cell(row=row, column=1, value=gap)
-        ws.cell(row=row, column=2, value=count)
-        ws.cell(row=row, column=3, value=priority)
-        
-        if priority == "Critical":
-            ws.cell(row=row, column=3).fill = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
-        else:
-            ws.cell(row=row, column=3).fill = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid")
         row += 1
     
     ws.column_dimensions["A"].width = 40
@@ -1361,7 +1350,7 @@ def create_9_evidence_register(ws, styles):
     ws.add_data_validation(dv_status)
     dv_status.add("I5:I104")
 
-    ws.freeze_panes = "A5"
+    ws.freeze_panes = "A4"
 
 
 # ============================================================================
@@ -1370,12 +1359,18 @@ def create_9_evidence_register(ws, styles):
 
 def create_10_approval_signoff(ws, styles):
     """Sheet 10: Multi-stakeholder Approval Sign-Off with DPO section."""
-    
+
     ws.merge_cells("A1:E1")
     ws["A1"] = "APPROVAL SIGN-OFF - SECURE CONFIGURATION ASSESSMENT"
     apply_style(ws["A1"], styles["header"], "header")
     ws.row_dimensions[1].height = 35
-    
+
+    ws.merge_cells("A2:E2")
+    ws["A2"] = "Secure Configuration Assessment | Approval and sign-off for ISO 27001:2022 Control A.5.23"
+    ws["A2"].font = Font(name="Calibri", italic=True, size=10)
+    ws["A2"].fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+    ws["A2"].alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+
     row = 3
     
     # ASSESSMENT SUMMARY (with regulatory metrics)
@@ -1407,8 +1402,10 @@ def create_10_approval_signoff(ws, styles):
             ws[f"B{row}"] = value
         elif field_type == "input":
             ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+            ws[f"B{row}"].border = Border(left=Side(style="thin"), right=Side(style="thin"), top=Side(style="thin"), bottom=Side(style="thin"))
         elif field_type == "dropdown":
             ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+            ws[f"B{row}"].border = Border(left=Side(style="thin"), right=Side(style="thin"), top=Side(style="thin"), bottom=Side(style="thin"))
             remediation_plan_row = row
         row += 1
     
@@ -1613,7 +1610,7 @@ def main():
     styles = setup_styles()
     
     logger.info("\n[1/10] Creating Instructions & Legend sheet (with regulatory guidance)...")
-    create_instructions_sheet(wb["Instructions & Legend"], styles)
+    create_instructions_sheet(wb["Instructions & Legend"])
     
     logger.info("[2/10] Creating 2. Configuration Baseline sheet (with DORA/NIS2/AI Act cols)...")
     create_2_configuration_baseline(wb["2. Configuration Baseline"], styles)
@@ -1644,12 +1641,14 @@ def main():
     
     timestamp = datetime.now().strftime("%Y%m%d")
     filename = f"ISMS-IMP-A.5.23.S3_SecureConfig_{timestamp}.xlsx"
-    wb.save(filename)
-    
+    _wkbk_dir = Path(__file__).resolve().parent.parent / "WKBK"
+    _wkbk_dir.mkdir(exist_ok=True)
+    wb.save(_wkbk_dir / filename)
+
     logger.info("\n" + "=" * 80)
-    logger.info("{CHECK} Workbook generated successfully: {filename}")
+    logger.info(f"{CHECK} Workbook generated successfully: {filename}")
     logger.info("=" * 80)
-    logger.info("\n📋 WORKBOOK STRUCTURE (10 sheets):")
+    logger.info("\nWORKBOOK STRUCTURE (10 sheets):")
     logger.info("  1. Instructions & Legend (with regulatory applicability guidance)")
     logger.info("  2. Configuration Baseline (27 cols: base + DORA/NIS2/AI Act)")
     logger.info("  3. Access Control Setup (24 cols: SSO, MFA, RBAC, JIT)")
@@ -1666,13 +1665,13 @@ def main():
     logger.info("  • Checklists: +15 regulatory items")
     logger.info("  • Dropdowns: +9 regulatory validation types")
     
-    logger.info("\n📊 REGULATORY COMPLIANCE COVERAGE:")
+    logger.info("\nREGULATORY COMPLIANCE COVERAGE:")
     logger.info("  ✓ DORA (Digital Operational Resilience Act)")
     logger.info("  ✓ NIS2 (Network and Information Security Directive 2)")
     logger.info("  ✓ EU AI Act (High-Risk AI Systems)")
     logger.info("  ✓ US CLOUD Act (Jurisdictional Risk Assessment)")
     
-    logger.info("\n🔧 NEXT STEPS:")
+    logger.info("\nNEXT STEPS:")
     logger.info(f"  1. Run validation: python3 excel_sanity_check_a523.py {filename}")
     logger.info("  2. Open in Excel and verify all 10 sheets present")
     logger.info("  3. Test regulatory dropdowns (DORA/NIS2/AI Act/Jurisdictional)")
@@ -1683,7 +1682,7 @@ def main():
     logger.info("     - DPO (jurisdictional risk assessment)")
     logger.info("     - Legal (CLOUD Act exposure review)")
     
-    logger.info("\n💡 FEYNMAN SAYS:")
+    logger.info("\nFEYNMAN SAYS:")
     logger.info('  "The first principle is that you must not fool yourself about compliance."')
     logger.info('  Translation: Document what you ACTUALLY have, not what you WISH you had!')
     

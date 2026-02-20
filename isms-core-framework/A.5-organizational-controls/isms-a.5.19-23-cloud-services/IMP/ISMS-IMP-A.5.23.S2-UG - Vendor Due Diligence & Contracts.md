@@ -163,7 +163,7 @@ For EACH cloud service provider:
 | **Legal / Procurement Lead** | Complete Sheets 3, 6 (contract analysis) | 8-12 hours |
 | **Security / Compliance Officer** | Complete Sheets 2, 5, 7 (security posture, data sovereignty, jurisdictional risk) | 12-16 hours |
 | **IT Operations / Service Owner** | Complete Sheet 4 (SLA compliance tracking) | 4-6 hours |
-| **ISMS Coordinator** | Coordinate assessment, consolidate results, manage approvals | 6-8 hours |
+| **ISMS Coordinator** | Coordinate assessment, review results, manage approvals | 6-8 hours |
 
 #### Required Skills
 

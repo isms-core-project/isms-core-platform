@@ -537,6 +537,19 @@ For ICT services covered by DORA, maintain comprehensive sub-outsourcing registe
 
 **Concentration Risk**: Assess and document concentration risk from sub-outsourcing arrangements per DORA Article 28.
 
+## FINMA Sub-Outsourcing (Circular 2023/1)
+
+For Swiss banks subject to FINMA Circular 2023/1, sub-outsourcing requirements include:
+
+- Comprehensive register of all sub-outsourcing arrangements
+- Prior approval from bank before material sub-outsourcing
+- Risk assessment covering operational, concentration, data protection, and jurisdictional risks
+- Contractual flow-down of bank's requirements to sub-outsourcers
+- Audit rights extending to sub-outsourcers (direct or via service provider)
+- FINMA approval status tracked where required
+
+**Concentration Risk**: Assess sub-outsourcing concentration risk, particularly where multiple suppliers depend on common sub-outsourcers or where sub-outsourcers are located in jurisdictions with limited enforceability.
+
 ## NIS2 Supply Chain Security (Article 21)
 
 For entities covered by NIS2, supply chain security measures shall include:

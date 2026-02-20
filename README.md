@@ -52,7 +52,7 @@ The platform provides **two products** at different levels of depth:
 </tr>
 <tr>
 <td><strong>Per control</strong></td>
-<td>GOV-POL + IMP (UG/TG) + SCR + WKBK + REF + FORM + CTX</td>
+<td>POL + IMP (UG/TG) + SCR + WKBK + REF + FORM + CTX</td>
 <td>OP-POL + SCR + WKBK</td>
 </tr>
 <tr>
@@ -267,7 +267,7 @@ See [isms-core-framework/STATUS.md](isms-core-framework/STATUS.md) for detailed 
 
 ## 🔒 Security
 
-- **Vulnerability reporting:** Please report security issues to **admin@gregorygriffin.org** (include "ISMS CORE Security" in the subject).
+- **Vulnerability reporting:** Please report security issues to **info@isms-core.com** (include "ISMS CORE Security" in the subject).
 - **Safe usage:** Review scripts before execution. Run in a virtual environment. Treat generated artifacts as sensitive until proven otherwise.
 - **No secrets:** Do not commit credentials, tokens, private keys, or customer data to this repo or to generated workbooks.
 

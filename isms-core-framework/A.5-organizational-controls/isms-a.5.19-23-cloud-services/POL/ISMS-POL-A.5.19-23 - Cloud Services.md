@@ -50,7 +50,6 @@
 - ISMS-IMP-A.5.23.S2-UG/TG (Vendor Due Diligence & Contracts)
 - ISMS-IMP-A.5.23.S3-UG/TG (Secure Configuration & Deployment)
 - ISMS-IMP-A.5.23.S4-UG/TG (Ongoing Governance & Risk Management)
-- ISMS-IMP-A.5.23.S5-UG/TG (Compliance Monitoring Dashboard)
 - ISMS-REF-A.5.23 (Cloud Service Provider Registry)
 - ISO/IEC 27001:2022 Controls A.5.19-23
 - ISO/IEC 27036 (Supplier Relationships)
@@ -75,9 +74,9 @@ This document serves as the **master index** for [Organization]'s Supplier and C
 
 - **Policy Layer:** Governance documents defining requirements (7 policy documents)
 - **Assessment Layer:** Technical evaluation specifications (markdown documentation)
-- **Implementation Layer:** Python-generated Excel workbooks (5 assessment workbooks)
+- **Implementation Layer:** Python-generated Excel workbooks (4 assessment workbooks)
 - **Validation Layer:** Quality assurance and normalization scripts
-- **Integration Layer:** Executive compliance dashboard
+- **Integration Layer:** Individual workbook Summary Dashboards
 
 **Approach**: This framework employs a **documented, systematic process** where assessment tools are programmatically generated from controlled specifications rather than manually created. This ensures consistency, repeatability, and version control - if assessment requirements change, regenerating updated workbooks follows documented procedures rather than error-prone manual editing. The principle is straightforward: what can be created from documented specifications can be understood completely, maintained reliably, and audited objectively.
 
@@ -105,7 +104,7 @@ This policy framework provides organizational governance for five related contro
 - Supplier security requirements shall be defined based on risk classification and data classification
 - Supplier performance and security posture shall be monitored throughout relationship duration
 - Supplier exit procedures shall be established to ensure safe termination and data return
-- Shadow IT and unauthorized supplier usage shall be actively identified and managed
+- Shadow IT and unauthorised supplier usage shall be actively identified and managed (see Shadow IT Detection below)
 - Supplier dependency and concentration risk shall be assessed for critical services
 
 **Policy Reference**: See ISMS-POL-A.5.19-23-S1 (Supplier Relationship Fundamentals) for detailed requirements.
@@ -268,8 +267,7 @@ Implementation Layer (Separate Documents):
 ├── ISMS-IMP-A.5.23.1 (Cloud Service Inventory & Classification)
 ├── ISMS-IMP-A.5.23.2 (Vendor Due Diligence & Contracts)
 ├── ISMS-IMP-A.5.23.3 (Secure Configuration & Deployment)
-├── ISMS-IMP-A.5.23.4 (Ongoing Governance & Risk Management)
-└── ISMS-IMP-A.5.23.5 (Compliance Monitoring Dashboard)
+└── ISMS-IMP-A.5.23.4 (Ongoing Governance & Risk Management)
 
 Reference Data:
 └── ISMS-REF-A.5.23 (Cloud Service Provider Registry)
@@ -290,9 +288,8 @@ The framework includes comprehensive assessment specifications defining structur
 | **ISMS-IMP-A.5.23.2** | Vendor Due Diligence & Contracts | Due diligence criteria, contract security clauses | ~8 |
 | **ISMS-IMP-A.5.23.3** | Secure Configuration & Deployment | Cloud service configuration baselines and deployment | ~8 |
 | **ISMS-IMP-A.5.23.4** | Ongoing Governance & Risk Management | Monitoring, review cycles, incident management | ~8 |
-| **ISMS-IMP-A.5.23.5** | Compliance Monitoring Dashboard | Executive summary with KPIs and trends | ~8 |
 
-**Note**: ISMS-IMP-A.5.23.0 is a specification document for updating workbooks 1-5 with regulatory enhancements, not a standalone workbook.
+**Note**: ISMS-IMP-A.5.23.0 is a specification document for updating workbooks 1-4 with regulatory enhancements, not a standalone workbook.
 
 ## Generated Excel Workbooks
 
@@ -304,9 +301,8 @@ When Python generators are executed, they produce:
 | **ISMS_REG_A523_2_DueDiligence_YYYYMMDD.xlsx** | ~8 | Procurement, Legal, Security | Vendor evaluation, contract review, security clauses |
 | **ISMS_REG_A523_3_Configuration_YYYYMMDD.xlsx** | ~8 | Cloud Architects, Security | Security configuration baselines, deployment compliance |
 | **ISMS_REG_A523_4_Governance_YYYYMMDD.xlsx** | ~8 | IT Operations, Security | Ongoing monitoring, change management, incident tracking |
-| **ISMS_REG_A523_5_Dashboard_YYYYMMDD.xlsx** | ~8 | CISO, Management | Consolidated KPIs, risk register, compliance metrics |
 
-**Total Assessment Output:** ~42 sheets across 5 workbooks
+**Total Assessment Output:** ~34 sheets across 4 workbooks
 
 ## Assessment Domains Explained
 
@@ -364,8 +360,8 @@ When Python generators are executed, they produce:
 ```
 ┌──────────────────────────────────────────────────────────────┐
 │ PHASE 1: GENERATION (Day 1)                                │
-│ • Run 5 Python generator scripts                           │
-│ • Output: 5 Excel workbooks with ~42 sheets total          │
+│ • Run 4 Python generator scripts                           │
+│ • Output: 4 Excel workbooks with ~34 sheets total          │
 │ • Validation: Automated structure and formula verification │
 └──────────────────────────────────────────────────────────────┘
                             ↓
@@ -385,15 +381,7 @@ When Python generators are executed, they produce:
 └──────────────────────────────────────────────────────────────┘
                             ↓
 ┌──────────────────────────────────────────────────────────────┐
-│ PHASE 4: DASHBOARD (Day 16)                                │
-│ • Generate compliance dashboard (workbook 5)               │
-│ • Link to normalized assessment files                      │
-│ • Auto-populate KPIs and compliance metrics                │
-│ • Complete risk register and remediation roadmap           │
-└──────────────────────────────────────────────────────────────┘
-                            ↓
-┌──────────────────────────────────────────────────────────────┐
-│ PHASE 5: EXECUTIVE REVIEW (Week 4)                         │
+│ PHASE 4: EXECUTIVE REVIEW (Week 4)                         │
 │ • CISO reviews dashboard and risk register                 │
 │ • Approve remediation roadmap and budget                   │
 │ • Sign off on assessment package                           │
@@ -413,7 +401,6 @@ When Python generators are executed, they produce:
 | `generate_reg_a523_2_vendor_dd.py` | ISMS-IMP-A.5.23.2_VendorDD_{YYYYMMDD}.xlsx | Vendor evaluation and contract review |
 | `generate_reg_a523_3_secure_config.py` | ISMS-IMP-A.5.23.3_SecureConfig_{YYYYMMDD}.xlsx | Secure configuration and deployment |
 | `generate_reg_a523_4_governance.py` | ISMS-IMP-A.5.23.4_Governance_{YYYYMMDD}.xlsx | Ongoing monitoring and risk management |
-| `generate_reg_a523_5_compliance_dashboard.py` | ISMS-IMP-A.5.23.5_Dashboard_{YYYYMMDD}.xlsx | Compliance monitoring dashboard |
 
 **Regulatory Enhancement**: All generators incorporate fields from ISMS-IMP-A.5.23.0 specification for DORA, NIS2, AI Act, and CLOUD Act compliance requirements.
 
@@ -421,9 +408,6 @@ When Python generators are executed, they produce:
 
 | Script | Purpose |
 |--------|---------|
-| `consolidate_reg_a523_dashboard.py` | Consolidate data from assessment workbooks into unified dashboard |
-| `normalize_assessment_files_reg_a523.py` | Standardize filenames and create audit trail manifest |
-
 **Script Quality Standards**:
 
 - PEP 8 compliant Python code with consistent style
@@ -543,16 +527,25 @@ This framework employs **quantitative, evidence-based assessment** rather than s
 
 | Evidence Type | Required Documentation | Minimum Standard |
 |---------------|----------------------|------------------|
-| **Certification** | SOC 2 Type II, ISO 27001, ISO 27017, CSA STAR | Current (within 12 months) |
+| **Certification** | SOC 2 Type II, ISO 27001, ISO 27017, CSA STAR | Current (see validity rules below) |
 | **Contract** | Signed agreement with security clauses | GDPR Art. 28 compliant minimum |
 | **Configuration** | Baseline security settings documentation | CIS benchmark or vendor hardening guide |
 | **Monitoring** | SLA performance data, incident logs | Quarterly minimum |
 | **Risk Assessment** | Documented due diligence and risk evaluation | Approved by CISO |
 
+**Certification Validity Rules:**
+
+| Certification | Validity Period | Currency Check |
+|---------------|----------------|----------------|
+| **ISO 27001** | 3 years (certificate cycle) | Annual surveillance audit confirmed within 12 months |
+| **SOC 2 Type II** | 1 year (report period) | Report date within 12 months |
+| **CSA STAR** | 2 years (Level 2) | Annual recertification or continuous monitoring |
+| **ISO 27017/27018** | 3 years (aligned with ISO 27001) | Surveillance audit confirmed within 12 months |
+
 **Rejection Criteria**:
 
 - Supplier self-attestation without third-party validation
-- Expired certifications (>12 months old)
+- Expired certifications (beyond validity period above)
 - Contracts without security clauses or audit rights
 - Missing data processing agreement (GDPR violation)
 - No exit strategy or data portability mechanism
@@ -569,6 +562,10 @@ Suppliers are classified using **quantitative scoring** across six dimensions:
 | **Integration Depth** | 15% | Deep integration=100, Moderate=75, Light=50, None=25 |
 | **Regulatory Impact** | 10% | DORA/NIS2 critical=100, GDPR processor=75, Compliance relevant=50, No impact=25 |
 | **Concentration Risk** | 10% | >50% budget=100, 25-50%=75, 10-25%=50, <10%=25 |
+
+> **Note:** Dimension weights may be adjusted based on organisational context. Financial institutions subject to FINMA, DORA, or equivalent supervisory frameworks may increase **Regulatory Impact** weight to 15-20% to reflect heightened supervisory expectations, reducing other dimensions proportionally.
+
+**Concentration Risk Clarification:** Concentration risk is calculated as percentage of **total IT service budget** allocated to a single supplier. For example, if total IT budget is CHF 1M and AWS spend is CHF 400K, concentration risk is 40% (scores 75 points). Where a supplier provides services across multiple budget categories, aggregate spend across all categories.
 
 **Total Score → Classification**:
 
@@ -749,6 +746,13 @@ This framework covers five related controls that work together across the suppli
 - Data destruction verification
 - Lessons learned documentation
 
+**Exit Plan Testing Requirements:**
+
+- Exit plans for **Level 1 (Critical)** suppliers SHALL be tested annually (DORA Art. 28.6 where applicable)
+- Exit plans for **Level 2 (High)** suppliers SHALL be tested biennially or upon major service change
+- Exit plan testing includes: data export validation, service migration simulation, BC/DR integration verification
+- Test results documented in ISMS-IMP-A.5.23.4 (Governance workbook) and reported to CISO
+
 ## Review Cycles
 
 | Supplier Level | Review Frequency | Review Scope |
@@ -792,6 +796,24 @@ This framework covers five related controls that work together across the suppli
 - Single-source critical supplier (concentration risk mitigation)
 - Non-compliant contract inherited from acquisition (renegotiation timeline)
 
+## Shadow IT Detection
+
+Shadow IT (unauthorised cloud services or suppliers used without IT/Security approval) SHALL be actively detected through the following methods:
+
+**Detection Methods:**
+
+- **Firewall/proxy log analysis**: Identify connections to unregistered SaaS/cloud services
+- **DNS query monitoring**: Detect resolution of domains associated with cloud services not in the approved supplier register
+- **Cloud Access Security Broker (CASB)**: Automated discovery of cloud service usage (where deployed)
+- **Expense report review**: Identify cloud service subscriptions in procurement/finance records
+- **User self-reporting**: Encourage voluntary disclosure through awareness campaigns (no-blame policy for existing usage)
+
+**Detection Cadence:**
+
+- Quarterly shadow IT scans SHALL be conducted by IT Operations
+- Results reported to CISO with remediation recommendations
+- Discovered services assessed for risk and either onboarded to the approved register or decommissioned
+
 ---
 
 # Incident Management
@@ -823,10 +845,17 @@ This framework covers five related controls that work together across the suppli
 
 **Supplier Notification Requirements**:
 
-- Suppliers SHALL notify [Organization] within specified timeframe of security incident awareness
+| Incident Severity | Supplier Notification Timeline |
+|-------------------|-------------------------------|
+| **Critical** (data breach, ransomware) | Immediate (within 4 hours of awareness) |
+| **High** (service outage, security event) | Within 24 hours |
+| **Medium** (degraded performance, configuration change) | Within 72 hours |
+| **Low** (maintenance, planned downtime) | 5 business days advance notice |
+
 - Notification must include: incident description, affected systems, data impact, containment measures, estimated resolution
 - Suppliers SHALL cooperate with incident investigation and forensics
 - Suppliers SHALL provide post-incident report within agreed timeline
+- These timelines SHALL be incorporated into supplier contracts (procurement/legal to use as contractual language)
 
 ## Post-Incident Actions
 
@@ -892,8 +921,7 @@ Auditors should expect the following evidence:
 
 **Implementation Evidence:**
 
-- Completed assessment workbooks (5 Excel files)
-- Normalized filenames with audit manifest
+- Completed assessment workbooks (4 Excel files)
 - Supplier inventory with risk ratings
 - Supplier contracts with security clauses highlighted
 - Cloud service agreements with SLA and exit provisions
@@ -1093,7 +1121,6 @@ Supplier and cloud services security integrates with multiple ISO 27001 controls
 
 **Risk Register:**
 
-- Supplier/cloud risks documented in compliance dashboard (Domain 5)
 - Risk categories: Concentration risk, vendor lock-in, data sovereignty, regulatory exposure
 - Risk scores drive remediation urgency and budget allocation
 - Exception risks monitored quarterly and reported to CISO
@@ -1139,7 +1166,6 @@ Supplier and cloud services security integrates with multiple ISO 27001 controls
 **Documentation:** Exit planning integration documented in:
 
 - ISMS-IMP-A.5.23.4 (Governance workbook - Exit Strategy sheet)
-- ISMS-IMP-A.5.23.5 (Dashboard workbook - Exit Planning sheet)
 - ISMS-POL-A.5.30-8.13-14 (BC/DR Policy - Supplier exit scenarios)
 
 **Reference:** See "A.5.19-23 ↔ BC/DR Integration - Critical for Exit Scenarios" alignment document for detailed integration requirements.
@@ -1162,10 +1188,13 @@ This policy implements supplier and cloud service security requirements to compl
 
 | Regulation | Requirement | Trigger Condition |
 |------------|-------------|-------------------|
+| **FINMA Circular 2023/1** | Operational resilience, outsourcing governance, sub-outsourcing register, incident reporting | Swiss FINMA-regulated financial institution |
 | **DORA (Digital Operational Resilience Act)** | ICT third-party risk management (Art. 28-31): risk register, concentration assessment, exit strategies, contractual provisions | EU financial services operations |
 | **NIS2 Directive** | Supply chain security measures (Art. 21), incident reporting (Art. 23): 24h early warning, 72h notification, final report | Essential/important entity designation |
 | **EU AI Act** | High-risk AI system requirements (Art. 9-15): conformity assessment, transparency, human oversight | Providing/deploying AI systems in EU |
 | **US CLOUD Act** | Jurisdictional data access considerations, legal process transparency | Using US-headquartered cloud providers |
+
+> **Multiple Conditional Regulations:** Organisations subject to multiple conditional regulations (e.g., FINMA + DORA, or DORA + NIS2) SHALL implement the most stringent requirement where overlap exists. Assessment workbooks enable parallel tracking of FINMA, DORA, and NIS2 fields to ensure all applicable requirements are met simultaneously.
 
 ## Tier 3: Informational Guidance
 
@@ -1215,7 +1244,6 @@ For EU financial entities subject to DORA, the following additional requirements
 
 - DORA-specific fields in assessment workbook 2 (Due Diligence)
 - Concentration risk analysis in workbook 4 (Governance)
-- ICT register export capability in workbook 5 (Dashboard)
 
 ## NIS2-Specific Requirements
 
@@ -1244,7 +1272,35 @@ For essential/important entities subject to NIS2, the following apply:
 
 - NIS2-specific incident notification workflows in workbook 4 (Governance)
 - Supply chain security measures checklist in workbook 2 (Due Diligence)
-- Management accountability documentation in workbook 5 (Dashboard)
+
+## FINMA Sub-Outsourcing Requirements (Circular 2023/1)
+
+For Swiss banks subject to FINMA Circular 2023/1, the following sub-outsourcing requirements apply:
+
+**Sub-Outsourcing Definition:**
+Material services outsourced by a bank to a service provider, where the service provider further delegates those services to a sub-outsourcer (sub-supplier).
+
+**Register Requirements:**
+- Maintain comprehensive register of all sub-outsourcing arrangements
+- Update register when sub-outsourcing occurs or changes
+- Include in register:
+  - Sub-outsourcer name and jurisdiction
+  - Services provided (description and criticality)
+  - Data access and processing activities
+  - Geographic location of service delivery
+  - Risk assessment and mitigation measures
+  - FINMA approval status (where required)
+
+**Approval Requirements:**
+- Material sub-outsourcing requires bank approval before implementation
+- Bank must assess sub-outsourcing risks (operational, concentration, data protection, jurisdiction)
+- Contractual flow-down of bank requirements to sub-outsourcers
+- Right to audit sub-outsourcers (direct or via service provider)
+
+**Implementation:**
+- Sub-outsourcing register maintained in ISMS-IMP-A.5.23.2 (Due Diligence workbook - Sub-Supplier Sheet)
+- Sub-outsourcer risk assessment documented in ISMS-IMP-A.5.23.4 (Governance workbook)
+- Approval workflow integrated with supplier onboarding process (Section 8: Lifecycle Management)
 
 ## Data Sovereignty & Cross-Border Considerations
 
@@ -1368,7 +1424,6 @@ Evidence required to demonstrate this policy framework is operationally effectiv
 - **Configuration Baselines**: ISMS-IMP-A.5.23.3 workbook showing security configuration compliance against CIS benchmarks or vendor hardening guides
 - **Supplier Review Meeting Minutes**: Quarterly/semi-annual/annual review documentation showing SLA performance, compliance status, remediation tracking
 - **Ongoing Governance Records**: ISMS-IMP-A.5.23.4 workbook tracking monitoring results, change management, incident history, risk assessments
-- **Compliance Dashboard**: ISMS-IMP-A.5.23.5 workbook with consolidated KPIs, traffic-light status, risk register, remediation roadmap
 - **Supplier Certification Evidence**: Current SOC 2 Type II, ISO 27001, CSA STAR certificates for critical/high-risk suppliers (within 12 months)
 - **SLA Performance Reports**: Monthly/quarterly reports showing uptime, support response times, incident resolution metrics
 - **Incident Notifications from Suppliers**: Documented security incidents per contractual notification requirements with response evidence

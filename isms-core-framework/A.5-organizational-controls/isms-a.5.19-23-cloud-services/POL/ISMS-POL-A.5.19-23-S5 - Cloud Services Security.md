@@ -843,7 +843,6 @@ Exit strategy viability SHALL be reviewed and tested annually to ensure assumpti
 All testing results SHALL be documented in:
 
 - **ISMS-IMP-A.5.23.4-UG/TG** (Governance & Risk Management workbook) - "Exit Strategy" sheet
-- **ISMS-IMP-A.5.23.5-UG/TG** (Compliance Monitoring Dashboard workbook) - "Exit Planning" sheet
 
 **Required Evidence:**
 
@@ -976,7 +975,7 @@ Exit strategy reviews and testing results shall be retained for audit purposes:
 |---------|-------------|
 | Policy consistency | Same security policies across providers |
 | Identity federation | Unified identity across clouds |
-| Monitoring | Consolidated security monitoring |
+| Monitoring | Security monitoring via Summary Dashboards |
 | Incident response | Coordinated response procedures |
 | Compliance | Consistent compliance posture |
 

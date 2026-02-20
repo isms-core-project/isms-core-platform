@@ -162,7 +162,7 @@ ISMS CORE Operational is the **entry-level product** — everything an SME needs
 | | Operational | Framework |
 |---|---|---|
 | **Audience** | SMEs and startups (10–500 people) | Mature security teams and consultants |
-| **Per control group** | OP-POL + SCR + WKBK | GOV-POL + IMP (UG/TG) + SCR + WKBK + REF + CTX |
+| **Per control group** | OP-POL + SCR + WKBK | POL + IMP (UG/TG) + SCR + WKBK + REF + CTX |
 | **Policy style** | Self-contained — requirements + guidance in one document | Governance policy (what/who) separated from implementation (how) |
 | **Checklist** | Single-sheet compliance checklist | Multi-sheet assessment workbooks with automated scoring |
 | **Effort to implement** | Weeks | Months |

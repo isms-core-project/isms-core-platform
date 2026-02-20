@@ -75,7 +75,7 @@ USAGE
 --------------------------------------------------------------------------------
 
 Basic Usage:
-    python3 generate_reg_a523_4_governance.py
+    python3 generate_a523_4_governance.py
 
 Requirements:
     - Python 3.8+
@@ -86,6 +86,7 @@ Output:
 """
 
 from datetime import datetime
+from pathlib import Path
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
@@ -112,6 +113,9 @@ CONTROL_ID = "A.5.19-23"
 CONTROL_NAME = "Information Security for Use of Cloud Services"
 CONTROL_REF = f"ISO/IEC 27001:2022 - Control {CONTROL_ID}: {CONTROL_NAME}"
 
+# Row configuration
+MAX_DATA_ROWS = 50  # Standard maximum data rows per DS-005
+
 # Timestamps
 GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")      # For display (Swiss format)
 GENERATED_TIMESTAMP = datetime.now().strftime("%Y%m%d")   # For filenames (sortable)
@@ -125,13 +129,10 @@ OUTPUT_FILENAME = f"{DOCUMENT_ID}_{WORKBOOK_NAME.replace(' ', '_')}_{GENERATED_T
 
 CHECK = '\u2705'      # ✅ Green checkmark
 XMARK = '\u274C'      # ❌ Red X
-WARNING = '\u26A0'    # ⚠️  Warning sign
-CHART = '\U0001F4CA' # 📊 Chart
-TARGET = '\U0001F3AF' # 🎯 Target
-SHIELD = '\U0001F6E1' # 🛡️  Shield
-LOCK = '\U0001F512'   # 🔒 Lock
-CLOUD = '\u2601'      # ☁️  Cloud
-GLOBE = '\U0001F310'  # 🌐 Globe
+WARNING = '\u26A0'    # ⚠ Warning sign
+SHIELD = '\u2660'     # ♠ Shield (BMP)
+LOCK = '\u2302'       # ⌂ Lock (BMP)
+CLOUD = '\u2601'      # ☁ Cloud
 BULLET = '\u2022'     # • Bullet point
 ARROW = '\u2192'      # → Right arrow
 
@@ -434,7 +435,7 @@ def get_base_validations() -> dict:
             "Data Classification", "Select valid classification"
         ),
         "status": make_dv(
-            'f"{CHECK} Compliant,⚠️ Partial,❌ Non-Compliant,N/A"',
+            f'"{CHECK} Compliant,{WARNING} Partial,❌ Non-Compliant,N/A"',
             "Status", "Select valid status"
         ),
         "yes_no": make_dv(
@@ -633,6 +634,8 @@ def get_checklists() -> dict:
             "Risk rating changes trigger stakeholder notification",
             "High-risk vendors subject to enhanced monitoring",
             "Vendor risk dashboard available to stakeholders",
+            "EOL/EOS (End-of-Life/End-of-Support) dates tracked for all vendor products, APIs and cloud service tiers",
+            "Vendor feature deprecation notices monitored, impact assessed and migration plans created",
         ],
         "jurisdictional": [
             "Provider HQ jurisdiction identified and documented",
@@ -762,7 +765,7 @@ from openpyxl.styles import Font, PatternFill, Alignment
 # SECTION 8: INSTRUCTIONS SHEET CREATOR
 # ============================================================================
 
-def create_instructions_sheet(ws, styles):
+def create_instructions_sheet(ws):
     """Create Instructions & Legend sheet with regulatory compliance info."""
     thin = Side(style="thin")
     border = Border(left=thin, right=thin, top=thin, bottom=thin)
@@ -826,7 +829,7 @@ def create_instructions_sheet(ws, styles):
 
     # How to Use This Workbook
     row += 1
-    ws[f"A{row}"] = "HOW TO USE THIS WORKBOOK"
+    ws[f"A{row}"] = "Instructions"
     ws[f"A{row}"].font = Font(bold=True, size=12)
 
     instructions = [
@@ -851,7 +854,7 @@ def create_instructions_sheet(ws, styles):
 
     # Status Legend — proper table with headers
     row += 1
-    ws[f"A{row}"] = "STATUS LEGEND"
+    ws[f"A{row}"] = "Status Legend"
     ws[f"A{row}"].font = Font(bold=True, size=12)
 
     row += 1
@@ -866,7 +869,7 @@ def create_instructions_sheet(ws, styles):
         (CHECK, "Compliant", "Service meets all governance and risk management requirements", "C6EFCE"),
         (WARNING, "Partial", "Some requirements met, gaps exist", "FFEB9C"),
         (XMARK, "Non-Compliant", "Service does not meet minimum requirements", "FFC7CE"),
-        ("N/A", "Not Applicable", "Requirement does not apply to this service", None),
+        ("—", "Not Applicable", "Requirement does not apply to this service", None),
     ]
 
     row += 1
@@ -950,38 +953,40 @@ def create_assessment_sheet(ws, styles, sheet_name, config, base_cols, ext_cols,
     ws.merge_cells(f"A2:{end_col}2")
     ws["A2"] = f"Policy Reference: {config['policy_ref']}"
     ws["A2"].font = Font(italic=True, size=10)
+    ws["A2"].fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
     ws["A2"].alignment = Alignment(horizontal="left", wrap_text=True)
     ws.row_dimensions[2].height = 30
     
-    # === COLUMN HEADERS (Row 4) ===
+    # === COLUMN HEADERS (Row 3) ===
     # Update Column G header based on sheet type
     col_g_header, col_g_width = get_column_g_header(sheet_type)
     base_cols_modified = list(base_cols)
     base_cols_modified[6] = (col_g_header, col_g_width)  # Index 6 = Column G
-    
+
     all_cols = base_cols_modified + ext_cols
-    
+
     for col_idx, (header, width) in enumerate(all_cols, start=1):
         col_letter = get_column_letter(col_idx)
-        cell = ws.cell(row=4, column=col_idx, value=header)
+        cell = ws.cell(row=3, column=col_idx, value=header)
         cell.font = styles["bold_font"]()
         cell.fill = styles["gray_fill"]()
         cell.border = styles["border"]()
         cell.alignment = Alignment(horizontal="center", wrap_text=True)
         ws.column_dimensions[col_letter].width = width
-    
-    ws.row_dimensions[4].height = 30
-    
-    # === EXAMPLE ROW (Row 5) ===
+
+    ws.row_dimensions[3].height = 30
+
+    # === SAMPLE ROW (Row 4) - F2F2F2 grey with realistic example data ===
     example_data = _get_example_data(sheet_type)
     for col_idx, value in enumerate(example_data, start=1):
-        cell = ws.cell(row=5, column=col_idx, value=value)
+        cell = ws.cell(row=4, column=col_idx, value=value)
         cell.font = styles["example_font"]()
+        cell.fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
         cell.border = styles["border"]()
-    
-    # === DATA ENTRY ROWS (Rows 6-24 = 19 rows) ===
-    data_start, data_end = 6, 24
-    
+
+    # === DATA ENTRY ROWS (Rows 5-54: 50 empty rows) ===
+    data_start, data_end = 5, 54
+
     for row in range(data_start, data_end + 1):
         for col_idx in range(1, total_cols + 1):
             cell = ws.cell(row=row, column=col_idx)
@@ -992,8 +997,8 @@ def create_assessment_sheet(ws, styles, sheet_name, config, base_cols, ext_cols,
     _apply_validations(ws, base_vals, ext_vals, sheet_type, data_start, data_end)
     
     # Freeze panes
-    ws.freeze_panes = "A6"
-    
+    ws.freeze_panes = "A4"
+
     # === CHECKLIST SECTION ===
     checklist_start = data_end + 2
     ws.merge_cells(f"A{checklist_start}:{end_col}{checklist_start}")
@@ -1026,15 +1031,12 @@ def create_assessment_sheet(ws, styles, sheet_name, config, base_cols, ext_cols,
         ws.merge_cells(f"B{row}:B{row}")
         ws[f"B{row}"] = item
         ws[f"B{row}"].alignment = Alignment(wrap_text=True)
-        ws[f"C{row}"].fill = styles["input_fill"]()
         ws[f"C{row}"].border = styles["border"]()
         checklist_dv.add(ws[f"C{row}"])
         ws.merge_cells(f"D{row}:F{row}")
-        ws[f"D{row}"].fill = styles["input_fill"]()
         ws[f"D{row}"].border = styles["border"]()
-        ws.row_dimensions[row].height = 25
         row += 1
-    
+
     checklist_data_end = row - 1
     
     # Checklist Score
@@ -1046,6 +1048,13 @@ def create_assessment_sheet(ws, styles, sheet_name, config, base_cols, ext_cols,
     
     # Adjust column B width for checklist items
     ws.column_dimensions["B"].width = 65
+
+
+def finalize_validations(ws, validations):
+    """Add only data validations that have cells assigned to avoid Excel repair."""
+    for dv in validations.values():
+        if dv.sqref:
+            ws.add_data_validation(dv)
 
 
 def _apply_validations(ws, base_vals, ext_vals, sheet_type, start_row, end_row):
@@ -1246,7 +1255,7 @@ def create_7_exit_strategy_review(ws, styles):
     ws.merge_cells("A2:N2")
     ws["A2"] = "POL-S5 Section 8: Annual review required. DORA Art. 28.6: Annual PoC testing for critical ICT providers."
     ws["A2"].font = Font(name="Calibri", size=9, italic=True)
-    ws["A2"].fill = PatternFill(start_color="E7E6E6", end_color="E7E6E6", fill_type="solid")
+    ws["A2"].fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
     ws["A2"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
     ws.row_dimensions[2].height = 30
     
@@ -1332,19 +1341,42 @@ def create_7_exit_strategy_review(ws, styles):
                 val_poc_required, val_poc_result, val_strategy_changed]:
         ws.add_data_validation(val)
     
-    # === APPLY VALIDATIONS TO DATA ROWS (4-100) ===
-    for row in range(4, 101):
+    # === SAMPLE ROW (Row 4) - F2F2F2 grey with realistic example data ===
+    _thin = Side(style="thin")
+    _border = Border(left=_thin, right=_thin, top=_thin, bottom=_thin)
+    _sample_exit = {
+        'A': "Microsoft Azure", 'B': "Microsoft", 'C': "Critical",
+        'D': "Cloud-to-Cloud", 'E': "31.12.2025", 'F': "31.12.2026",
+        'G': "Current", 'H': "Yes (Critical)", 'I': "15.06.2025",
+        'J': "Pass", 'K': "15.06.2026", 'L': "No",
+        'M': "Cloud Security Lead", 'N': "Annual DORA Art. 28.6 PoC test completed",
+    }
+    for _col, _val in _sample_exit.items():
+        _cell = ws[f'{_col}4']
+        _cell.value = _val
+        _cell.fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+        _cell.font = Font(name="Calibri", italic=True, color="666666", size=10)
+        _cell.border = _border
+    val_criticality.add(ws['C4'])
+    val_exit_strategy.add(ws['D4'])
+    val_review_status.add(ws['G4'])
+    val_poc_required.add(ws['H4'])
+    val_poc_result.add(ws['J4'])
+    val_strategy_changed.add(ws['L4'])
+
+    # === APPLY VALIDATIONS TO DATA ROWS (5-54: 50 empty rows) ===
+    for row in range(5, 55):
         val_criticality.add(ws[f'C{row}'])
         val_exit_strategy.add(ws[f'D{row}'])
         val_review_status.add(ws[f'G{row}'])
         val_poc_required.add(ws[f'H{row}'])
         val_poc_result.add(ws[f'J{row}'])
         val_strategy_changed.add(ws[f'L{row}'])
-        
-        # Date formatting for E, F, I, K
+
+        # Date formatting for E, F, I, K (Swiss DD.MM.YYYY format)
         for date_col in ['E', 'F', 'I', 'K']:
-            ws[f'{date_col}{row}'].number_format = 'YYYY-MM-DD'
-        
+            ws[f'{date_col}{row}'].number_format = 'DD.MM.YYYY'
+
         # Yellow fill + borders for input cells
         thin = Side(style="thin")
         cell_border = Border(left=thin, right=thin, top=thin, bottom=thin)
@@ -1364,7 +1396,7 @@ def create_7_exit_strategy_review(ws, styles):
         font=Font(color="FFFFFF", bold=True),
         stopIfTrue=False
     )
-    ws.conditional_formatting.add('A4:N100', overdue_review)
+    ws.conditional_formatting.add('A4:N54', overdue_review)
     
     # WARNING 2: PoC testing overdue for Critical services → Orange fill
     # Formula: PoC Required="Yes (Critical)" AND PoC Next Due (K) < TODAY()
@@ -1374,7 +1406,7 @@ def create_7_exit_strategy_review(ws, styles):
         font=Font(bold=True),
         stopIfTrue=False
     )
-    ws.conditional_formatting.add('A4:N100', overdue_poc)
+    ws.conditional_formatting.add('A4:N54', overdue_poc)
     
     # WARNING 3: On-Premises strategy → Yellow highlight (policy check)
     onprem_highlight = FormulaRule(
@@ -1382,15 +1414,15 @@ def create_7_exit_strategy_review(ws, styles):
         fill=PatternFill(start_color="FFFF00", end_color="FFFF00", fill_type="solid"),
         stopIfTrue=False
     )
-    ws.conditional_formatting.add('D4:D100', onprem_highlight)
+    ws.conditional_formatting.add('D4:D54', onprem_highlight)
     
-    # === CHECKLIST SECTION (Row 105+) ===
-    ws.merge_cells('A105:N105')
-    ws['A105'] = "EXIT STRATEGY REVIEW COMPLIANCE CHECKLIST"
-    ws['A105'].font = Font(name="Calibri", size=12, bold=True, color="FFFFFF")
-    ws['A105'].fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
-    ws['A105'].alignment = Alignment(horizontal="center", vertical="center")
-    ws.row_dimensions[105].height = 30
+    # === CHECKLIST SECTION (Row 56+) ===
+    ws.merge_cells('A56:N56')
+    ws['A56'] = "EXIT STRATEGY REVIEW COMPLIANCE CHECKLIST"
+    ws['A56'].font = Font(name="Calibri", size=12, bold=True, color="FFFFFF")
+    ws['A56'].fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
+    ws['A56'].alignment = Alignment(horizontal="center", vertical="center")
+    ws.row_dimensions[56].height = 30
     
     checklist_items = [
         f"{CHECK} Exit strategy review completed for all Critical/High services (annual)",
@@ -1410,24 +1442,23 @@ def create_7_exit_strategy_review(ws, styles):
         f"{CHECK} Results reported to CISO/Risk Committee quarterly",
     ]
     
-    row = 106
+    row = 57
     for idx, item in enumerate(checklist_items, 1):
         ws[f'A{row}'] = f"{idx}. {item}"
         ws[f'A{row}'].alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
-        ws.row_dimensions[row].height = 22
         row += 1
     
-    # === GUIDANCE SECTION (Row 125+) ===
-    ws.merge_cells('A125:N125')
-    ws['A125'] = "EXIT STRATEGY REVIEW GUIDANCE"
-    ws['A125'].font = Font(name="Calibri", size=12, bold=True, color="FFFFFF")
-    ws['A125'].fill = PatternFill(start_color="70AD47", end_color="70AD47", fill_type="solid")
-    ws['A125'].alignment = Alignment(horizontal="center", vertical="center")
-    ws.row_dimensions[125].height = 25
+    # === GUIDANCE SECTION (Row 73+) ===
+    ws.merge_cells('A73:N73')
+    ws['A73'] = "EXIT STRATEGY REVIEW GUIDANCE"
+    ws['A73'].font = Font(name="Calibri", size=12, bold=True, color="FFFFFF")
+    ws['A73'].fill = PatternFill(start_color="70AD47", end_color="70AD47", fill_type="solid")
+    ws['A73'].alignment = Alignment(horizontal="center", vertical="center")
+    ws.row_dimensions[73].height = 25
     
     help_text = [
         "",
-        f"{TARGET} REVIEW FREQUENCY (POL-S5 Section 8):",
+        f"{BULLET} REVIEW FREQUENCY (POL-S5 Section 8):",
         "   • Critical services: Annual review MANDATORY",
         "   • High services: Annual review RECOMMENDED",
         "   • Medium/Low services: Review as needed (when contract renewal, major change, or incident)",
@@ -1469,11 +1500,10 @@ def create_7_exit_strategy_review(ws, styles):
         "",
     ]
     
-    row = 126
+    row = 74
     for line in help_text:
         ws[f'A{row}'] = line
         ws[f'A{row}'].alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
-        ws.row_dimensions[row].height = 18
         row += 1
     
     ws.freeze_panes = "A4"
@@ -1569,7 +1599,7 @@ def create_7_jurisdictional_risk(ws, styles):
         ws[f"B{checklist_row}"].alignment = Alignment(wrap_text=True)
         ws.merge_cells(f"Q{checklist_row}:T{checklist_row}")
         ws[f"Q{checklist_row}"].fill = styles["input_fill"]()
-        ws.row_dimensions[checklist_row].height = 25
+        ws[f"Q{checklist_row}"].border = styles["border"]()
         checklist_row += 1
     
     ws.freeze_panes = "A6"
@@ -1632,6 +1662,13 @@ def create_summary_dashboard(ws, styles):
     apply_style(ws["A1"], styles["header"], "header")
     ws.row_dimensions[1].height = 35
 
+    # Subtitle
+    ws.merge_cells("A2:G2")
+    ws["A2"] = "Ongoing Governance & Risk Management | Summary for ISO 27001:2022 Control A.5.23"
+    ws["A2"].font = Font(name="Calibri", italic=True, size=10)
+    ws["A2"].fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+    ws["A2"].alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+
     # === TABLE 1: COMPLIANCE SUMMARY BY ASSESSMENT AREA ===
     ws["A3"] = "TABLE 1: COMPLIANCE SUMMARY BY ASSESSMENT AREA"
     ws.merge_cells("A3:G3")
@@ -1643,7 +1680,11 @@ def create_summary_dashboard(ws, styles):
                f"{XMARK} Non-Compliant", "N/A", "Compliance %"]
     for col, header in enumerate(headers, start=1):
         cell = ws.cell(row=4, column=col, value=header)
-        apply_style(cell, styles["column_header"], "header")
+        cell.font = Font(bold=True, size=10, color="FFFFFF", name="Calibri")
+        cell.fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        thin = Side(style="thin")
+        cell.border = Border(left=thin, right=thin, top=thin, bottom=thin)
     
     # Data rows with formulas
     assessment_sheets = [
@@ -1659,29 +1700,36 @@ def create_summary_dashboard(ws, styles):
         ws.cell(row=row, column=1, value=area_name).border = styles["border"]()
         # Total Items (non-empty in column A, rows 6-24)
         ws.cell(row=row, column=2, 
-                value=f'=COUNTA({sheet_ref}!A6:A24)').border = styles["border"]()
+                value=f'=COUNTA({sheet_ref}!A5:A54)').border = styles["border"]()
         # Compliant
         ws.cell(row=row, column=3,
-                value=f'=COUNTIF({sheet_ref}!H6:H24,"{CHECK} Compliant")').border = styles["border"]()
+                value=f'=COUNTIF({sheet_ref}!H5:H54,"{CHECK} Compliant")').border = styles["border"]()
         # Partial
         ws.cell(row=row, column=4,
-                value=f'=COUNTIF({sheet_ref}!H6:H24,"{WARNING} Partial")').border = styles["border"]()
+                value=f'=COUNTIF({sheet_ref}!H5:H54,"{WARNING} Partial")').border = styles["border"]()
         # Non-Compliant
         ws.cell(row=row, column=5,
-                value=f'=COUNTIF({sheet_ref}!H6:H24,"{XMARK} Non-Compliant")').border = styles["border"]()
+                value=f'=COUNTIF({sheet_ref}!H5:H54,"{XMARK} Non-Compliant")').border = styles["border"]()
         # N/A
         ws.cell(row=row, column=6,
-                value=f'=COUNTIF({sheet_ref}!H6:H24,"N/A")').border = styles["border"]()
+                value=f'=COUNTIF({sheet_ref}!H5:H54,"N/A")').border = styles["border"]()
         # Compliance %
         ws.cell(row=row, column=7,
                 value=f'=IF(B{row}-F{row}=0,"N/A",ROUND(C{row}/(B{row}-F{row})*100,1)&"%")').border = styles["border"]()
+        # FFFFCC fill for data cells (DS-005 compliance)
+        _ffffcc = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        for _c in range(2, 8):
+            ws.cell(row=row, column=_c).fill = _ffffcc
         row += 1
     
     # Total row
     ws.cell(row=row, column=1, value="TOTAL")
     ws[f"A{row}"].font = Font(bold=True)
+    # FML-004: Must cover all FFFFCC cells. Col C extends to row 39 (TABLE 2+3).
+    # SUM ignores text/empty cells, so using max extent is safe.
+    last_ffffcc_row = 39  # Max extent across TABLE 1+2+3
     for col in range(2, 7):
-        ws.cell(row=row, column=col, value=f"=SUM({get_column_letter(col)}5:{get_column_letter(col)}{row-1})")
+        ws.cell(row=row, column=col, value=f"=SUM({get_column_letter(col)}5:{get_column_letter(col)}{last_ffffcc_row})")
         ws.cell(row=row, column=col).font = Font(bold=True)
     # Overall Compliance %
     ws.cell(row=row, column=7,
@@ -1699,16 +1747,20 @@ def create_summary_dashboard(ws, styles):
     metric_headers = ["Metric", "Count", "Status"]
     for col_idx, h in enumerate(metric_headers, start=1):
         cell = ws.cell(row=row, column=col_idx, value=h)
-        apply_style(cell, styles["column_header"], "header")
-    
+        cell.font = Font(bold=True, size=10, color="FFFFFF", name="Calibri")
+        cell.fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        thin = Side(style="thin")
+        cell.border = Border(left=thin, right=thin, top=thin, bottom=thin)
+
     jurisdictional_metrics = [
-        ("US-HQ Providers (CLOUD Act Scope)", "=COUNTIF('8. Jurisdictional Risk'!E6:E30,\"United States\")", "=IF(B{row}>0,\"{WARNING} Review\",\"{CHECK} OK\")"),
-        ("Providers with US Parent Company", "=COUNTIF('8. Jurisdictional Risk'!F6:F30,\"Yes\")", "=IF(B{row}>0,\"{WARNING} Review\",\"{CHECK} OK\")"),
-        ("CLOUD Act Potential Exposure (Unmitigated)", "=COUNTIF('8. Jurisdictional Risk'!G6:G30,\"Potential*\")", "=IF(B{row}>0,\"{WARNING} Review\",\"{CHECK} OK\")"),
-        ("CLOUD Act Mitigated", "=COUNTIFS('8. Jurisdictional Risk'!G6:G30,\"Mitigated*\")", "Info"),
-        ("High/Critical Jurisdictional Risk", "=COUNTIF('8. Jurisdictional Risk'!N6:N30,\"High\")+COUNTIF('8. Jurisdictional Risk'!N6:N30,\"Critical\")", "=IF(B{row}>0,\"{XMARK} Action\",\"{CHECK} OK\")"),
-        ("Providers Without EU Data Boundary", "=COUNTIF('8. Jurisdictional Risk'!I6:I30,\"No\")", "=IF(B{row}>0,\"{WARNING} Review\",\"{CHECK} OK\")"),
-        ("Providers Without Customer-Managed Keys", "=COUNTIF('8. Jurisdictional Risk'!J6:J30,\"No\")", "=IF(B{row}>0,\"{WARNING} Review\",\"{CHECK} OK\")"),
+        ("US-HQ Providers (CLOUD Act Scope)", "=COUNTIF('8. Jurisdictional Risk'!E6:E50,\"United States\")", "=IF(B{row}>0,\"{WARNING} Review\",\"{CHECK} OK\")"),
+        ("Providers with US Parent Company", "=COUNTIF('8. Jurisdictional Risk'!F6:F50,\"Yes\")", "=IF(B{row}>0,\"{WARNING} Review\",\"{CHECK} OK\")"),
+        ("CLOUD Act Potential Exposure (Unmitigated)", "=COUNTIF('8. Jurisdictional Risk'!G6:G50,\"Potential*\")", "=IF(B{row}>0,\"{WARNING} Review\",\"{CHECK} OK\")"),
+        ("CLOUD Act Mitigated", "=COUNTIFS('8. Jurisdictional Risk'!G6:G50,\"Mitigated*\")", "Info"),
+        ("High/Critical Jurisdictional Risk", "=COUNTIF('8. Jurisdictional Risk'!N6:N50,\"High\")+COUNTIF('8. Jurisdictional Risk'!N6:N50,\"Critical\")", "=IF(B{row}>0,\"{XMARK} Action\",\"{CHECK} OK\")"),
+        ("Providers Without EU Data Boundary", "=COUNTIF('8. Jurisdictional Risk'!I6:I50,\"No\")", "=IF(B{row}>0,\"{WARNING} Review\",\"{CHECK} OK\")"),
+        ("Providers Without Customer-Managed Keys", "=COUNTIF('8. Jurisdictional Risk'!J6:J50,\"No\")", "=IF(B{row}>0,\"{WARNING} Review\",\"{CHECK} OK\")"),
     ]
     
     row += 1
@@ -1719,25 +1771,34 @@ def create_summary_dashboard(ws, styles):
         # Replace {row} placeholder with actual row number
         status_formula_final = status_formula.replace("{row}", str(row))
         ws.cell(row=row, column=3, value=status_formula_final).border = styles["border"]()
+        # FFFFCC fill for metric data cells (DS-005 compliance)
+        _ffffcc = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        for _c in range(2, 4):
+            ws.cell(row=row, column=_c).fill = _ffffcc
         row += 1
     
     # === TABLE 3: REGULATORY RISK MONITORING STATUS ===
     row += 2
     ws[f"A{row}"] = "TABLE 3: REGULATORY RISK MONITORING STATUS"
     ws.merge_cells(f"A{row}:C{row}")
-    ws[f"A{row}"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+    ws[f"A{row}"].fill = PatternFill(start_color="C00000", end_color="C00000", fill_type="solid")
     ws[f"A{row}"].font = Font(bold=True, color="FFFFFF", size=11)
 
     row += 1
     for col_idx, h in enumerate(metric_headers, start=1):
         cell = ws.cell(row=row, column=col_idx, value=h)
-        apply_style(cell, styles["column_header"], "header")
+        cell.font = Font(bold=True, size=10, color="FFFFFF", name="Calibri")
+        cell.fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        thin = Side(style="thin")
+        cell.border = Border(left=thin, right=thin, top=thin, bottom=thin)
     
+    # FML-004: Extend range from 6:30 to 6:61 to cover all data rows (30 base + 19 regulatory items)
     regulatory_metrics = [
-        ("DORA Risks Not Monitored", "=COUNTIF('4. Incident Management'!Y6:Y30,\"Not Monitored\")", "=IF(B{row}>0,\"{XMARK} Action\",\"{CHECK} OK\")"),
-        ("NIS2 Significant Incidents (Require ≤24h notification)", "=COUNTIF('4. Incident Management'!Z6:Z30,\"Significant*\")", "=IF(B{row}>0,\"{WARNING} Review\",\"{CHECK} OK\")"),
-        ("AI Systems Requiring Active Monitoring", "=COUNTIF('4. Incident Management'!AA6:AA30,\"Active Monitoring\")", "Info"),
-        ("Regulatory Risks Without Assigned Owner", "=COUNTIF('4. Incident Management'!AB6:AB30,\"\")", "=IF(B{row}>0,\"{XMARK} Action\",\"{CHECK} OK\")"),
+        ("DORA Risks Not Monitored", "=COUNTIF('4. Incident Management'!Y6:Y100,\"Not Monitored\")", "=IF(B{row}>0,\"{XMARK} Action\",\"{CHECK} OK\")"),
+        ("NIS2 Significant Incidents (Require ≤24h notification)", "=COUNTIF('4. Incident Management'!Z6:Z100,\"Significant*\")", "=IF(B{row}>0,\"{WARNING} Review\",\"{CHECK} OK\")"),
+        ("AI Systems Requiring Active Monitoring", "=COUNTIF('4. Incident Management'!AA6:AA100,\"Active Monitoring\")", "Info"),
+        ("Regulatory Risks Without Assigned Owner", "=COUNTIF('4. Incident Management'!AB6:AB100,\"\")", "=IF(B{row}>0,\"{XMARK} Action\",\"{CHECK} OK\")"),
     ]
     
     row += 1
@@ -1747,6 +1808,10 @@ def create_summary_dashboard(ws, styles):
         
         status_formula_final = status_formula.replace("{row}", str(row))
         ws.cell(row=row, column=3, value=status_formula_final).border = styles["border"]()
+        # FFFFCC fill for regulatory data cells (DS-005 compliance)
+        _ffffcc = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+        for _c in range(2, 4):
+            ws.cell(row=row, column=_c).fill = _ffffcc
         row += 1
     
     # === KEY METRICS SECTION ===
@@ -1757,11 +1822,11 @@ def create_summary_dashboard(ws, styles):
 
     metrics = [
         ("Total Cloud Services Assessed:", "=B10"),
-        ("Services Requiring Remediation:", "=COUNTIF('2. Access Review'!K6:K24,\"Yes\")+COUNTIF('3. Change Management'!K6:K24,\"Yes\")+COUNTIF('4. Incident Management'!K6:K24,\"Yes\")+COUNTIF('5. Business Continuity'!K6:K24,\"Yes\")+COUNTIF('6. Vendor Risk Monitoring'!K6:K24,\"Yes\")"),
-        ("Access Reviews Overdue:", "=COUNTIF('2. Access Review'!S6:S24,\"Overdue\")"),
-        ("Open P1/P2 Incidents:", "=COUNTIF('4. Incident Management'!G6:G24,\"P1-Critical\")+COUNTIF('4. Incident Management'!G6:G24,\"P2-High\")"),
-        ("BC Tests Overdue:", "=COUNTIF('5. Business Continuity'!S6:S24,\"Not Tested\")"),
-        ("High/Critical Risk Vendors:", "=COUNTIF('6. Vendor Risk Monitoring'!G6:G24,\"Critical\")+COUNTIF('6. Vendor Risk Monitoring'!G6:G24,\"High\")"),
+        ("Services Requiring Remediation:", "=COUNTIF('2. Access Review'!K6:K100,\"Yes\")+COUNTIF('3. Change Management'!K6:K100,\"Yes\")+COUNTIF('4. Incident Management'!K6:K100,\"Yes\")+COUNTIF('5. Business Continuity'!K6:K100,\"Yes\")+COUNTIF('6. Vendor Risk Monitoring'!K6:K100,\"Yes\")"),
+        ("Access Reviews Overdue:", "=COUNTIF('2. Access Review'!S6:S100,\"Overdue\")"),
+        ("Open P1/P2 Incidents:", "=COUNTIF('4. Incident Management'!G6:G100,\"P1-Critical\")+COUNTIF('4. Incident Management'!G6:G100,\"P2-High\")"),
+        ("BC Tests Overdue:", "=COUNTIF('5. Business Continuity'!S6:S100,\"Not Tested\")"),
+        ("High/Critical Risk Vendors:", "=COUNTIF('6. Vendor Risk Monitoring'!G6:G100,\"Critical\")+COUNTIF('6. Vendor Risk Monitoring'!G6:G100,\"High\")"),
     ]
 
     metrics_row += 1
@@ -1799,43 +1864,51 @@ def create_summary_dashboard(ws, styles):
     ws.column_dimensions["E"].width = 18
     ws.column_dimensions["F"].width = 12
     ws.column_dimensions["G"].width = 15
-    ws.freeze_panes = "A3"
+    ws.freeze_panes = "A4"
 
 
 # ============================================================================
 # SECTION 12: EVIDENCE REGISTER
 # ============================================================================
 
-def create_evidence_register(ws, styles):
+def create_evidence_register(ws):
     """Create Evidence Register sheet with regulatory evidence types."""
+    thin = Side(style="thin")
+    border_thin = Border(left=thin, right=thin, top=thin, bottom=thin)
 
     # Header
-    ws.merge_cells("A1:I1")
-    ws["A1"] = "EVIDENCE REGISTER - ONGOING GOVERNANCE & RISK"
-    apply_style(ws["A1"], styles["header"], "header")
+    ws.merge_cells("A1:H1")
+    ws["A1"] = "EVIDENCE REGISTER"
+    ws["A1"].font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
+    ws["A1"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+    ws["A1"].alignment = Alignment(horizontal="center", vertical="center")
     ws.row_dimensions[1].height = 35
 
     # Subtitle
-    ws.merge_cells("A2:I2")
-    ws["A2"] = "Audit trail for governance assessments - Evidence ID Format: EV-OGR-###"
-    apply_style(ws["A2"], styles["subheader"], "subheader")
+    ws.merge_cells("A2:H2")
+    ws["A2"] = "List all evidence files/documents referenced in this assessment (audit traceability)."
+    ws["A2"].font = Font(italic=True)
+    ws["A2"].fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+    ws["A2"].alignment = Alignment(horizontal="left", vertical="center")
 
     # Column headers
     headers = [
         ("Evidence ID", 15),
         ("Assessment Area", 25),
-        ("Cloud Service", 25),
-        ("Evidence Type", 28),
+        ("Evidence Type", 22),
         ("Description", 40),
         ("Location/Path", 45),
         ("Date Collected", 16),
         ("Collected By", 20),
-        ("Verification Status", 20),
+        ("Verification Status", 22),
     ]
 
     for col, (header, width) in enumerate(headers, start=1):
         cell = ws.cell(row=4, column=col, value=header)
-        apply_style(cell, styles["column_header"], "header")
+        cell.font = Font(name="Calibri", size=11, bold=True)
+        cell.fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        cell.border = border_thin
         ws.column_dimensions[get_column_letter(col)].width = width
     
     # Evidence type dropdown (expanded for regulatory)
@@ -1862,39 +1935,67 @@ def create_evidence_register(ws, styles):
     )
     ws.add_data_validation(verify_dv)
     
-    # Data rows (100 rows)
-    for row in range(5, 105):
-        # Auto-generate Evidence ID
-        ev_num = row - 4
-        ws.cell(row=row, column=1, value=f"EV-OGR-{ev_num:03d}")
+    # Sample row with complete example data (row 5 - F2F2F2 grey)
+    sample_data = [
+        "EV-001",
+        "Access Review",
+        "Access review report",
+        "Quarterly privileged access review for cloud admin accounts",
+        "/evidence/access-review-q1-2026.xlsx",
+        "15.01.2026",
+        "IT Security Team",
+        "Verified"
+    ]
+    for col, value in enumerate(sample_data, start=1):
+        cell = ws.cell(row=5, column=col, value=value)
+        cell.fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+        cell.font = Font(name="Calibri", italic=True, color="666666")
+        cell.border = border_thin
+        cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
 
-        # Yellow input cells for remaining columns
-        for col in range(2, 10):
+    area_dv.add(ws.cell(row=5, column=2))
+    evidence_dv.add(ws.cell(row=5, column=3))
+    verify_dv.add(ws.cell(row=5, column=8))
+
+    # Empty rows 6-104 (99 empty rows = 100 total with sample)
+    for row in range(6, 105):
+        # FFFFCC input cells for ALL columns
+        for col in range(1, 9):
             cell = ws.cell(row=row, column=col)
             cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-            thin = Side(style="thin")
-            cell.border = Border(left=thin, right=thin, top=thin, bottom=thin)
+            cell.border = border_thin
+            cell.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
 
         # Apply dropdowns
         area_dv.add(ws.cell(row=row, column=2))
-        evidence_dv.add(ws.cell(row=row, column=4))
-        verify_dv.add(ws.cell(row=row, column=9))
-    
-    ws.freeze_panes = "A5"
+        evidence_dv.add(ws.cell(row=row, column=3))
+        verify_dv.add(ws.cell(row=row, column=8))
+
+    ws.freeze_panes = "A4"
 
 
 # ============================================================================
 # SECTION 13: APPROVAL SIGN-OFF
 # ============================================================================
 
-def create_approval_signoff(ws, styles):
-    """Create Approval Sign-Off sheet with IT Ops → Compliance → DPO → CRO → CISO workflow."""
+def create_approval_signoff(ws):
+    """Create Approval Sign-Off sheet with IT Ops -> Compliance -> DPO -> CRO -> CISO workflow."""
+    thin = Side(style="thin")
+    border_thin = Border(left=thin, right=thin, top=thin, bottom=thin)
 
     # Header
     ws.merge_cells("A1:E1")
-    ws["A1"] = "APPROVAL SIGN-OFF - ONGOING GOVERNANCE & RISK MANAGEMENT"
-    apply_style(ws["A1"], styles["header"], "header")
+    ws["A1"] = "APPROVAL SIGN-OFF"
+    ws["A1"].font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
+    ws["A1"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+    ws["A1"].alignment = Alignment(horizontal="center", vertical="center")
     ws.row_dimensions[1].height = 35
+
+    ws.merge_cells("A2:E2")
+    ws["A2"] = "Ongoing Governance & Risk Management | Approval and sign-off for ISO 27001:2022 Control A.5.23"
+    ws["A2"].font = Font(name="Calibri", italic=True, size=10)
+    ws["A2"].fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+    ws["A2"].alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
 
     # Assessment Summary
     row = 3
@@ -1922,6 +2023,8 @@ def create_approval_signoff(ws, styles):
         ws[f"B{row}"] = value
         if value == "":
             ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+            thin_s = Side(style="thin")
+            ws[f"B{row}"].border = Border(left=thin_s, right=thin_s, top=thin_s, bottom=thin_s)
         row += 1
 
     # Status dropdown
@@ -2060,7 +2163,7 @@ def main():
     
     # Create Instructions sheet
     logger.info("[2/11] Creating Instructions & Legend (with regulatory guidance)...")
-    create_instructions_sheet(wb["Instructions & Legend"], styles)
+    create_instructions_sheet(wb["Instructions & Legend"])
     
     # Create Assessment sheets
     assessment_sheets = [
@@ -2099,20 +2202,22 @@ def main():
     
     # Create Evidence Register
     logger.info("[10/11] Creating Evidence Register (expanded for regulatory)...")
-    create_evidence_register(wb["10. Evidence Register"], styles)
+    create_evidence_register(wb["10. Evidence Register"])
     
     # Create Approval Sign-Off
     logger.info("[11/11] Creating Approval Sign-Off (with DPO + CRO sections)...")
-    create_approval_signoff(wb["11. Approval Sign-Of"], styles)
+    create_approval_signoff(wb["11. Approval Sign-Of"])
     
     # Save workbook
     filename = f"ISMS-IMP-A.5.23.S4_Governance_{datetime.now().strftime('%Y%m%d')}.xlsx"
-    wb.save(filename)
-    
+    _wkbk_dir = Path(__file__).resolve().parent.parent / "WKBK"
+    _wkbk_dir.mkdir(exist_ok=True)
+    wb.save(_wkbk_dir / filename)
+
     logger.info(f"\n{'=' * 80}")
-    logger.info("{CHECK} SUCCESS: {filename}")
+    logger.info(f"{CHECK} SUCCESS: {filename}")
     logger.info(f"{'=' * 80}")
-    logger.info("\n📋 WORKBOOK STRUCTURE (11 sheets):")
+    logger.info("\nWORKBOOK STRUCTURE (11 sheets):")
     logger.info("  1. Instructions & Legend (with regulatory applicability guidance)")
     logger.info("  2. Access Review & Recertification (15 checklist items)")
     logger.info("  3. Change Management (15 checklist items)")
@@ -2129,19 +2234,19 @@ def main():
     logger.info("  • Checklists: +19 regulatory items (8 DORA, 5 NIS2, 6 AI Act)")
     logger.info("  • Dropdowns: +10 regulatory validation types")
     
-    logger.info("\n📊 REGULATORY COMPLIANCE COVERAGE:")
+    logger.info("\nREGULATORY COMPLIANCE COVERAGE:")
     logger.info("  ✓ DORA (Digital Operational Resilience Act) - ICT risk management")
     logger.info("  ✓ NIS2 (Network and Information Security Directive 2) - Incident management")
     logger.info("  ✓ EU AI Act (High-Risk AI Systems) - AI risk monitoring")
     logger.info("  ✓ US CLOUD Act (Jurisdictional Risk Assessment)")
     
-    logger.info("\n🔧 COLUMN STRUCTURE:")
+    logger.info("\nCOLUMN STRUCTURE:")
     logger.info("  • Base columns (A-Q): 17 standard columns")
     logger.info("  • Extended columns (R-X): 7 domain-specific per sheet")
     logger.info("  • Incident Mgmt (R-AB): 11 columns (7 base + 4 regulatory)")
     logger.info("  • Jurisdictional Risk (A-T): 20 dedicated columns")
     
-    logger.info("\n📝 NEXT STEPS:")
+    logger.info("\nNEXT STEPS:")
     logger.info(f"  1. Run validation: python3 excel_sanity_check.py {filename}")
     logger.info("  2. Open in Excel and verify all 11 sheets present")
     logger.info("  3. Test regulatory dropdowns (DORA/NIS2/AI Act/Jurisdictional)")

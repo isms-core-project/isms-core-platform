@@ -342,6 +342,9 @@ Acceptable alternatives to direct audit:
 **Enhanced Clause for DORA-Covered Services**:
 > "For ICT services covered by DORA, Supplier shall maintain a register of all sub-outsourcing arrangements and provide advance notice of any intended sub-outsourcing per DORA Article 30. [Organization] reserves the right to require termination of sub-outsourcing arrangements that do not meet security or concentration risk requirements."
 
+**Enhanced Clause for FINMA-Regulated Institutions (Circular 2023/1)**:
+> "For outsourced services subject to FINMA Circular 2023/1, Supplier shall maintain a register of all sub-outsourcing arrangements and obtain [Organization]'s prior written approval before any material sub-outsourcing. The register shall include sub-outsourcer name, jurisdiction, services provided, data categories, and FINMA approval status where required. [Organization] retains audit rights over sub-outsourcers, exercisable directly or via Supplier."
+
 ---
 
 # Business Continuity Requirements

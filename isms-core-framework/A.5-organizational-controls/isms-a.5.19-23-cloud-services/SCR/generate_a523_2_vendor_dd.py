@@ -21,7 +21,7 @@ ISO/IEC 27001:2022 Control A.5.23: Information Security for Use of Cloud Service
 Assessment Domain 2 of 5: Vendor Due Diligence & Contracts
 
 --------------------------------------------------------------------------------
-SAMPLE SCRIPT - REQUIRES CUSTOMIZATION FOR YOUR ORGANIZATION
+SAMPLE SCRIPT - REQUIRES CUSTOMISATION FOR YOUR ORGANISATION
 --------------------------------------------------------------------------------
 
 This script is a TEMPLATE/SAMPLE implementation and MUST be adapted to match
@@ -73,7 +73,7 @@ USAGE
 --------------------------------------------------------------------------------
 
 Basic Usage:
-    python3 generate_reg_a523_2_vendor_dd.py
+    python3 generate_a523_2_vendor_dd.py
 
 Requirements:
     - Python 3.8+
@@ -84,6 +84,7 @@ Output:
 """
 
 from datetime import datetime
+from pathlib import Path
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
@@ -109,6 +110,9 @@ WORKBOOK_NAME = "Vendor Due Diligence & Contracts"
 CONTROL_ID = "A.5.19-23"
 CONTROL_NAME = "Information Security for Use of Cloud Services"
 CONTROL_REF = f"ISO/IEC 27001:2022 - Control {CONTROL_ID}: {CONTROL_NAME}"
+
+# Row configuration
+MAX_DATA_ROWS = 50  # Standard maximum data rows per DS-005
 
 # Timestamps
 GENERATED_DATE = datetime.now().strftime("%d.%m.%Y")      # For display (Swiss format)
@@ -142,13 +146,8 @@ YES_NO_PLANNED = ["Yes", "No", "Planned"]
 
 CHECK = '\u2705'      # ✅ Green checkmark
 XMARK = '\u274C'      # ❌ Red X
-WARNING = '\u26A0'    # ⚠️  Warning sign
-CHART = '\U0001F4CA' # 📊 Chart
-TARGET = '\U0001F3AF' # 🎯 Target
-SHIELD = '\U0001F6E1' # 🛡️  Shield
-LOCK = '\U0001F512'   # 🔒 Lock
-CLOUD = '\u2601'      # ☁️  Cloud
-GLOBE = '\U0001F310'  # 🌐 Globe
+WARNING = '\u26A0'    # ⚠ Warning sign
+CLOUD = '\u2601'      # ☁ Cloud
 BULLET = '\u2022'     # • Bullet point
 ARROW = '\u2192'      # → Right arrow
 
@@ -239,7 +238,7 @@ def get_extended_columns_certifications() -> dict:
     """Extended columns R-X for security certifications."""
     return {
         "ISO 27001 Certified": 18, "ISO 27001 Cert Number": 22, "ISO 27001 Expiry Date": 18,
-        "SOC 2 Type II Report": 20, "SOC 2 Report Date": 18, "FedRAMP Authorized": 18,
+        "SOC 2 Type II Report": 20, "SOC 2 Report Date": 18, "FedRAMP Authorised": 18,
         "Other Certifications": 30,
     }
 
@@ -431,6 +430,8 @@ def get_checklist_contracts() -> list:
         ("NIS2 Art.21: Supply chain security requirements", "Security annex"),
         ("NIS2: Incident notification ≤24h to customer", "Incident clause"),
         ("NIS2: Vulnerability handling process defined", "Security annex"),
+        ("Supplier incident notification to customer within 24 hours (contractual SLA documented)", "Contract security annex, SLA document"),
+        ("Right to conduct security assessments and penetration testing of supplier infrastructure (contractual right confirmed)", "Audit rights clause, penetration test agreement"),
     ]
     return base_items + dora_items + nis2_items
 
@@ -460,6 +461,7 @@ def get_checklist_sovereignty() -> list:
         ("Swiss nFADP compliance verified", "Compliance attestation"),
         ("Restricted data not processed outside approved regions", "Data mapping"),
         ("Sub-processor locations reviewed and approved", "Sub-processor list"),
+        ("Swiss nFADP Transfer Impact Assessment completed for transfers to non-adequate countries (beyond EU adequacy)", "TIA document, legal counsel sign-off"),
     ]
 
 
@@ -512,7 +514,7 @@ def get_regulatory_eval_criteria() -> list:
 # SECTION 5: INSTRUCTIONS & LEGEND SHEET
 # ============================================================================
 
-def create_instructions_sheet(ws, styles):
+def create_instructions_sheet(ws):
     """Create Instructions & Legend sheet with regulatory compliance info."""
     thin = Side(style="thin")
     border = Border(left=thin, right=thin, top=thin, bottom=thin)
@@ -523,7 +525,10 @@ def create_instructions_sheet(ws, styles):
         "ISMS-IMP-A.5.23.S2  -  Vendor Due Diligence & Contracts\n"
         "ISO/IEC 27001:2022 - Control A.5.23: Information Security for Use of Cloud Services"
     )
-    apply_style(ws["A1"], styles["header"], "header")
+    ws["A1"].font = Font(name="Calibri", size=14, bold=True, color="FFFFFF")
+    ws["A1"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+    ws["A1"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+    ws["A1"].border = border
     ws.row_dimensions[1].height = 40
 
     # Document Information
@@ -574,7 +579,7 @@ def create_instructions_sheet(ws, styles):
 
     # How to Use This Workbook
     row += 1
-    ws[f"A{row}"] = "HOW TO USE THIS WORKBOOK"
+    ws[f"A{row}"] = "Instructions"
     ws[f"A{row}"].font = Font(bold=True, size=12)
 
     instructions = [
@@ -596,7 +601,7 @@ def create_instructions_sheet(ws, styles):
 
     # Status Legend — proper table with headers
     row += 1
-    ws[f"A{row}"] = "STATUS LEGEND"
+    ws[f"A{row}"] = "Status Legend"
     ws[f"A{row}"].font = Font(bold=True, size=12)
 
     row += 1
@@ -611,7 +616,7 @@ def create_instructions_sheet(ws, styles):
         (CHECK, "Compliant", "Vendor meets all security and contractual requirements", "C6EFCE"),
         (WARNING, "Partial", "Some requirements met, gaps exist (e.g., cert pending)", "FFEB9C"),
         (XMARK, "Non-Compliant", "Vendor does not meet minimum requirements", "FFC7CE"),
-        ("N/A", "Not Applicable", "Requirement does not apply to this vendor/service", None),
+        ("—", "Not Applicable", "Requirement does not apply to this vendor/service", None),
     ]
 
     row += 1
@@ -696,47 +701,74 @@ def create_vendor_assessment_sheet(ws, styles, section_title, policy_req,
     apply_style(ws["A2"], styles["subheader"], "subheader")
     ws.row_dimensions[2].height = 30
     
-    # Column Headers (Row 4)
-    row = 4
+    # Column Headers (Row 3)
+    row = 3
     for col_idx, (col_name, col_width) in enumerate(zip(col_names, col_widths), start=1):
         cell = ws.cell(row=row, column=col_idx, value=col_name)
         apply_style(cell, styles["column_header"], "header")
         ws.column_dimensions[get_column_letter(col_idx)].width = col_width
     
-    # Data rows with input formatting (rows 5-24)
-    for data_row in range(5, 25):
+    # Empty data rows (rows 5-54: 50 FFFFCC rows = 51 total with F2F2F2 sample at row 4)
+    for data_row in range(5, 55):
         for col_idx in range(1, len(col_names) + 1):
             cell = ws.cell(row=data_row, column=col_idx, value="")
             cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
             thin = Side(style="thin")
             cell.border = Border(left=thin, right=thin, top=thin, bottom=thin)
-    
+
+    # Sample row (row 4) — F2F2F2 grey with realistic example data
+    thin_s = Side(style="thin")
+    border_s = Border(left=thin_s, right=thin_s, top=thin_s, bottom=thin_s)
+    _sample_values = {
+        "certifications": ["CERT-001", "Vendor Security Certifications", "Amazon Web Services", "Critical",
+                           "Confidential", "Annual", "SaaS/IaaS", "Verified", "AWS Security Team",
+                           "ISO 27001:2022 + SOC 2 Type II + CSA STAR", "", "", "", "", "", "", ""],
+        "contracts": ["CONTRACT-001", "Cloud Service Contract Review", "Microsoft Azure", "Critical",
+                      "Confidential", "Annual", "SaaS/PaaS", "Reviewed", "Legal Team",
+                      "Full contract + DPA + SLA", "", "", "", "", "", "", ""],
+        "sla": ["SLA-001", "SLA Performance Review", "AWS", "Critical", "Internal",
+                "Monthly", "IaaS", "Within SLA", "IT Operations",
+                "SLA performance dashboard export", "", "", "", "", "", "", ""],
+        "sovereignty": ["SOV-001", "Data Sovereignty Assessment", "Microsoft Azure", "Critical",
+                        "Confidential", "Annual", "SaaS", "Compliant", "DPO",
+                        "DPA + Data Residency Confirmation", "", "", "", "", "", "", ""],
+        "forensics": ["FOR-001", "Forensics & Audit Access Review", "AWS", "High", "Internal",
+                      "Annual", "IaaS", "Compliant", "Security Team",
+                      "Audit agreement + IR playbook", "", "", "", "", "", "", ""],
+    }
+    _row4_vals = _sample_values.get(sheet_type, [])
+    for _ci in range(1, len(col_names) + 1):
+        _cell = ws.cell(row=4, column=_ci, value=_row4_vals[_ci - 1] if _ci <= len(_row4_vals) else "")
+        _cell.fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+        _cell.font = Font(italic=True, color="666666")
+        _cell.border = border_s
+
     # Apply base validations
     base_vals = create_base_validations(ws)
-    base_vals['service_type'].add("C5:C24")
-    base_vals['criticality'].add("D5:D24")
-    base_vals['data_classification'].add("E5:E24")
-    base_vals['contract_type'].add("F5:F24")
-    base_vals['status'].add("H5:H24")
-    base_vals['yes_no'].add("K5:K24")
-    
+    base_vals['service_type'].add("C4:C54")
+    base_vals['criticality'].add("D4:D54")
+    base_vals['data_classification'].add("E4:E54")
+    base_vals['contract_type'].add("F4:F54")
+    base_vals['status'].add("H4:H54")
+    base_vals['yes_no'].add("K4:K54")
+
     # Apply sheet-specific extended validations
     ext_vals = None
     if sheet_type == "certifications":
         ext_vals = create_extended_validations_certifications(ws)
-        ext_vals['iso_certified'].add("R5:R24")
-        ext_vals['soc2_report'].add("U5:U24")
-        ext_vals['fedramp'].add("W5:W24")
+        ext_vals['iso_certified'].add("R4:R54")
+        ext_vals['soc2_report'].add("U4:U54")
+        ext_vals['fedramp'].add("W4:W54")
     elif sheet_type == "contracts":
         ext_vals = create_extended_validations_contracts(ws)
-        ext_vals['data_protection'].add("R5:R24")
-        ext_vals['subprocessor'].add("S5:S24")
-        ext_vals['indemnification'].add("U5:U24")
-        ext_vals['termination_notice'].add("V5:V24")
-        ext_vals['data_return'].add("W5:W24")
-        ext_vals['auto_renewal'].add("X5:X24")
-        ext_vals['dora_compliance'].add("Y5:Y24")
-        ext_vals['nis2_clause'].add("Z5:Z24")
+        ext_vals['data_protection'].add("R4:R54")
+        ext_vals['subprocessor'].add("S4:S54")
+        ext_vals['indemnification'].add("U4:U54")
+        ext_vals['termination_notice'].add("V4:V54")
+        ext_vals['data_return'].add("W4:W54")
+        ext_vals['auto_renewal'].add("X4:X54")
+        ext_vals['dora_compliance'].add("Y4:Y54")
+        ext_vals['nis2_clause'].add("Z4:Z54")
     elif sheet_type == "sovereignty":
         _create_sovereignty_validations(ws)
     elif sheet_type == "forensics":
@@ -747,9 +779,9 @@ def create_vendor_assessment_sheet(ws, styles, section_title, policy_req,
     if ext_vals:
         finalize_validations(ws, ext_vals)
     
-    # Checklist Section
+    # Checklist Section (starts after data rows end at 54)
     if checklist_items:
-        checklist_row = 27
+        checklist_row = 57
         ws[f"A{checklist_row}"] = "COMPLIANCE CHECKLIST"
         ws[f"A{checklist_row}"].font = Font(bold=True, size=11)
         ws.merge_cells(f"A{checklist_row}:D{checklist_row}")
@@ -770,62 +802,63 @@ def create_vendor_assessment_sheet(ws, styles, section_title, policy_req,
             ws.cell(row=checklist_row, column=2, value=req)
             status_cell = ws.cell(row=checklist_row, column=3, value="")
             status_cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+            status_cell.border = Border(left=Side(style="thin"), right=Side(style="thin"), top=Side(style="thin"), bottom=Side(style="thin"))
             status_dv.add(status_cell)
             ws.cell(row=checklist_row, column=4, value=evidence)
             checklist_row += 1
-    
-    ws.freeze_panes = "A5"
+
+    ws.freeze_panes = "A4"
 
 
 def _create_sovereignty_validations(ws):
     """Create and apply Data Sovereignty-specific validations."""
     dv_region = DataValidation(type="list", formula1='"Switzerland,EU/EEA,USA,Asia-Pacific,Global,Unknown"', allow_blank=False)
     ws.add_data_validation(dv_region)
-    dv_region.add("R5:R24")
-    
+    dv_region.add("R4:R54")
+
     dv_verified = DataValidation(type="list", formula1='"Yes (Contractual),Yes (Technical),No,Unknown"', allow_blank=False)
     ws.add_data_validation(dv_verified)
-    dv_verified.add("S5:S24")
-    
+    dv_verified.add("S4:S54")
+
     dv_scc = DataValidation(type="list", formula1='"Yes (EU SCC),Yes (Swiss SCC),Yes (Other),No,N/A"', allow_blank=False)
     ws.add_data_validation(dv_scc)
-    dv_scc.add("T5:T24")
-    
+    dv_scc.add("T4:T54")
+
     dv_transfer = DataValidation(type="list", formula1='"Adequacy Decision,SCC,BCR,Derogations,None"', allow_blank=False)
     ws.add_data_validation(dv_transfer)
-    dv_transfer.add("U5:U24")
-    
+    dv_transfer.add("U4:U54")
+
     dv_gdpr = DataValidation(type="list", formula1='"Yes (Certified),Yes (Self-Assessed),No,N/A"', allow_blank=False)
     ws.add_data_validation(dv_gdpr)
-    dv_gdpr.add("V5:V24")
-    dv_gdpr.add("W5:W24")  # Also for nFADP
+    dv_gdpr.add("V4:V54")
+    dv_gdpr.add("W4:W54")  # Also for nFADP
 
 
 def _create_forensics_validations(ws):
     """Create and apply Forensics & Audit-specific validations."""
     dv_forensics = DataValidation(type="list", formula1='"Yes (Full),Yes (Limited),No,Unknown"', allow_blank=False)
     ws.add_data_validation(dv_forensics)
-    dv_forensics.add("R5:R24")
-    
+    dv_forensics.add("R4:R54")
+
     dv_audit = DataValidation(type="list", formula1='"Yes (Unrestricted),Yes (With Notice),No"', allow_blank=False)
     ws.add_data_validation(dv_audit)
-    dv_audit.add("T5:T24")
-    
+    dv_audit.add("T4:T54")
+
     dv_notice = DataValidation(type="list", formula1='"No Notice,≤7 days,8-30 days,>30 days,N/A"', allow_blank=False)
     ws.add_data_validation(dv_notice)
-    dv_notice.add("U5:U24")
-    
+    dv_notice.add("U4:U54")
+
     dv_incident = DataValidation(type="list", formula1='"<1 hour,1-4 hours,4-24 hours,>24 hours,None"', allow_blank=False)
     ws.add_data_validation(dv_incident)
-    dv_incident.add("V5:V24")
-    
+    dv_incident.add("V4:V54")
+
     dv_breach = DataValidation(type="list", formula1='"Yes (72 hours),Yes (Custom),No,Unknown"', allow_blank=False)
     ws.add_data_validation(dv_breach)
-    dv_breach.add("W5:W24")
-    
+    dv_breach.add("W4:W54")
+
     dv_playbook = DataValidation(type="list", formula1='"Yes,No,Upon Request"', allow_blank=False)
     ws.add_data_validation(dv_playbook)
-    dv_playbook.add("X5:X24")
+    dv_playbook.add("X4:X54")
 
 
 # --- END BLOCK 2 ---
@@ -851,7 +884,7 @@ def create_3_contract_terms(ws, styles):
     """Sheet 3: Contract Terms Analysis."""
     create_vendor_assessment_sheet(
         ws=ws, styles=styles,
-        section_title="CONTRACT TERMS ANALYSIS (incl. DORA/NIS2)",
+        section_title="CONTRACT TERMS ANALYSIS (INCL. DORA/NIS2)",
         policy_req="Policy Requirement: All cloud service contracts must include security clauses, data protection terms, and termination rights (Policy S2 Section 3.2)",
         question="Have all cloud service contracts been reviewed for security, data protection, and regulatory clauses (DORA Art.30, NIS2)?",
         sheet_type="contracts",
@@ -937,41 +970,41 @@ def create_7_jurisdictional_risk(ws, styles):
         apply_style(cell, styles["column_header"], "header")
         ws.column_dimensions[get_column_letter(col_idx)].width = col_width
     
-    # Data entry rows (rows 7-30) with pre-filled Assessment IDs
-    start_row, end_row = 7, 30
-    for i, row in enumerate(range(start_row, end_row + 1), start=1):
-        # Pre-fill Assessment ID
-        ws.cell(row=row, column=1, value=f"JRA-{i:03d}")
-        # Yellow input cells for remaining columns
-        for col_idx in range(2, len(col_names) + 1):
+    # Data entry rows (rows 7-57: 1 sample + 50 empty = 51 total)
+    thin = Side(style="thin")
+    border = Border(left=thin, right=thin, top=thin, bottom=thin)
+    start_row, end_row = 7, 57
+    for row in range(start_row, end_row + 1):
+        # FFFFCC input cells for ALL columns (including ID column)
+        for col_idx in range(1, len(col_names) + 1):
             cell = ws.cell(row=row, column=col_idx, value="")
             cell.fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
-            thin = Side(style="thin")
-            cell.border = Border(left=thin, right=thin, top=thin, bottom=thin)
+            cell.border = border
     
     # Create and apply validations
     v = create_jurisdictional_validations(ws)
     
-    # Apply validations to correct columns (by column index)
+    # Apply validations to correct columns (by column index) - updated to 51 rows
     # Col 5: Provider HQ Jurisdiction
-    v['hq_jurisdiction'].add("E7:E30")
+    v['hq_jurisdiction'].add("E7:E57")
     # Col 6: US Parent Company
-    v['yes_no_unknown'].add("F7:F30")
+    v['yes_no_unknown'].add("F7:F57")
     # Col 7: CLOUD Act Applicability
-    v['cloud_act'].add("G7:G30")
+    v['cloud_act'].add("G7:G57")
     # Col 9: EU Data Boundary Available
-    v['yes_no_planned'].add("I7:I30")
+    v['yes_no_planned'].add("I7:I57")
     # Col 10: Customer Managed Keys
-    v['yes_no_planned'].add("J7:J30")
+    v['yes_no_planned'].add("J7:J57")
     # Col 11: Legal Challenge Commitment
-    v['yes_no_partial'].add("K7:K30")
+    v['yes_no_partial'].add("K7:K57")
     # Col 13: Transfer Mechanism
-    v['transfer'].add("M7:M30")
+    v['transfer'].add("M7:M57")
     # Col 14: Risk Level
-    v['risk_level'].add("N7:N30")
-    
+    v['risk_level'].add("N7:N57")
+
     # Example row (row 7) - Microsoft 365 as reference
     example_data = [
+        ("A7", "JRA-001"),
         ("B7", "Microsoft 365"),
         ("C7", "Microsoft Corporation"),
         ("D7", "United States"),
@@ -996,9 +1029,9 @@ def create_7_jurisdictional_risk(ws, styles):
         ws[cell_ref] = value
         ws[cell_ref].font = Font(italic=True, color="666666")
     
-    # Checklist Section
+    # Checklist Section (starts after data rows end at 57)
     checklist = get_checklist_jurisdictional()
-    checklist_row = 33
+    checklist_row = 60
     
     ws[f"A{checklist_row}"] = "JURISDICTIONAL RISK CHECKLIST"
     ws[f"A{checklist_row}"].font = Font(bold=True, size=11)
@@ -1076,7 +1109,11 @@ def create_8_summary_dashboard(ws, styles):
     headers = ["Assessment Area", "Total Vendors", f"{CHECK} Compliant", f"{WARNING} Partial", f"{XMARK} Non-Compliant", "N/A", "Compliance %"]
     for col_idx, h in enumerate(headers, start=1):
         cell = ws.cell(row=row, column=col_idx, value=h)
-        apply_style(cell, styles["column_header"], "header")
+        cell.font = Font(bold=True, size=10, color="FFFFFF", name="Calibri")
+        cell.fill = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        thin = Side(style="thin")
+        cell.border = Border(left=thin, right=thin, top=thin, bottom=thin)
     
     # Assessment areas with formula references
     areas = [
@@ -1092,19 +1129,20 @@ def create_8_summary_dashboard(ws, styles):
     start_formula_row = row
     for label, sheet, status_col in areas:
         ws.cell(row=row, column=1, value=label)
-        ws.cell(row=row, column=2, value=f"=COUNTA({sheet}!A7:A30)-COUNTBLANK({sheet}!B7:B30)")
-        
+        # Updated ranges: vendor assessment sheets to row 80 (max checklist end), Jurisdictional Risk to row 71
         if label == "Jurisdictional Risk":
-            # Different logic for Risk Level column (Low/Medium = OK, High/Critical = Issue)
-            ws.cell(row=row, column=3, value=f'=COUNTIF({sheet}!{status_col}7:{status_col}30,"Low")+COUNTIF({sheet}!{status_col}7:{status_col}30,"Medium")')
-            ws.cell(row=row, column=4, value=f'=COUNTIF({sheet}!{status_col}7:{status_col}30,"High")')
-            ws.cell(row=row, column=5, value=f'=COUNTIF({sheet}!{status_col}7:{status_col}30,"Critical")')
+            ws.cell(row=row, column=2, value=f"=COUNTA({sheet}!A7:A71)-COUNTBLANK({sheet}!B7:B71)")
+            ws.cell(row=row, column=3, value=f'=COUNTIF({sheet}!{status_col}7:{status_col}71,"Low")+COUNTIF({sheet}!{status_col}7:{status_col}71,"Medium")')
+            ws.cell(row=row, column=4, value=f'=COUNTIF({sheet}!{status_col}7:{status_col}71,"High")')
+            ws.cell(row=row, column=5, value=f'=COUNTIF({sheet}!{status_col}7:{status_col}71,"Critical")')
+            ws.cell(row=row, column=6, value="=0")
         else:
-            ws.cell(row=row, column=3, value=f'=COUNTIF({sheet}!{status_col}5:{status_col}24,"{CHECK}*")')
-            ws.cell(row=row, column=4, value=f'=COUNTIF({sheet}!{status_col}5:{status_col}24,"{WARNING}*")')
-            ws.cell(row=row, column=5, value=f'=COUNTIF({sheet}!{status_col}5:{status_col}24,"{XMARK}*")')
-        
-        ws.cell(row=row, column=6, value=f'=COUNTIF({sheet}!{status_col}5:{status_col}24,"N/A")')
+            ws.cell(row=row, column=2, value=f"=COUNTA({sheet}!A5:A80)-COUNTBLANK({sheet}!B5:B80)")
+            ws.cell(row=row, column=3, value=f'=COUNTIF({sheet}!{status_col}5:{status_col}80,"{CHECK}*")')
+            ws.cell(row=row, column=4, value=f'=COUNTIF({sheet}!{status_col}5:{status_col}80,"{WARNING}*")')
+            ws.cell(row=row, column=5, value=f'=COUNTIF({sheet}!{status_col}5:{status_col}80,"{XMARK}*")')
+            ws.cell(row=row, column=6, value=f'=COUNTIF({sheet}!{status_col}5:{status_col}80,"N/A")')
+
         ws.cell(row=row, column=7, value=f'=IF(B{row}=0,"N/A",ROUND((C{row}/(B{row}-F{row}))*100,1)&"%")')
         row += 1
     
@@ -1126,24 +1164,29 @@ def create_8_summary_dashboard(ws, styles):
     row += 2
     for col_idx, h in enumerate(["Metric", "Count", "Status"], start=1):
         cell = ws.cell(row=row, column=col_idx, value=h)
-        apply_style(cell, styles["column_header"], "header")
-    
+        cell.font = Font(bold=True, size=10, color="FFFFFF", name="Calibri")
+        cell.fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        thin = Side(style="thin")
+        cell.border = Border(left=thin, right=thin, top=thin, bottom=thin)
+
     row += 1
+    # FML-004: Extend range from 7:30 to 7:57 to cover all data rows
     jur_metrics = [
-        ("US-HQ Providers (CLOUD Act Scope)", 
-         '=COUNTIF(\'7. Jurisdictional Risk\'!E7:E30,"United States")'),
+        ("US-HQ Providers (CLOUD Act Scope)",
+         '=COUNTIF(\'7. Jurisdictional Risk\'!E7:E71,"United States")'),
         ("Providers with US Parent Company",
-         '=COUNTIF(\'7. Jurisdictional Risk\'!F7:F30,"Yes")'),
+         '=COUNTIF(\'7. Jurisdictional Risk\'!F7:F71,"Yes")'),
         ("CLOUD Act Potential Exposure (Unmitigated)",
-         '=COUNTIF(\'7. Jurisdictional Risk\'!G7:G30,"Potential*")'),
+         '=COUNTIF(\'7. Jurisdictional Risk\'!G7:G71,"Potential*")'),
         ("CLOUD Act Mitigated",
-         '=COUNTIF(\'7. Jurisdictional Risk\'!G7:G30,"Mitigated*")'),
+         '=COUNTIF(\'7. Jurisdictional Risk\'!G7:G71,"Mitigated*")'),
         ("High/Critical Jurisdictional Risk",
-         '=COUNTIF(\'7. Jurisdictional Risk\'!N7:N30,"High")+COUNTIF(\'7. Jurisdictional Risk\'!N7:N30,"Critical")'),
+         '=COUNTIF(\'7. Jurisdictional Risk\'!N7:N71,"High")+COUNTIF(\'7. Jurisdictional Risk\'!N7:N71,"Critical")'),
         ("Providers Without EU Data Boundary",
-         '=COUNTIF(\'7. Jurisdictional Risk\'!I7:I30,"No")'),
+         '=COUNTIF(\'7. Jurisdictional Risk\'!I7:I71,"No")'),
         ("Providers Without Customer-Managed Keys",
-         '=COUNTIF(\'7. Jurisdictional Risk\'!J7:J30,"No")'),
+         '=COUNTIF(\'7. Jurisdictional Risk\'!J7:J71,"No")'),
     ]
     
     for metric, formula in jur_metrics:
@@ -1156,32 +1199,36 @@ def create_8_summary_dashboard(ws, styles):
     row += 2
     ws[f"A{row}"] = "TABLE 3: SECURITY CERTIFICATION STATUS"
     ws.merge_cells(f"A{row}:D{row}")
-    ws[f"A{row}"].fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+    ws[f"A{row}"].fill = PatternFill(start_color="C00000", end_color="C00000", fill_type="solid")
     ws[f"A{row}"].font = Font(bold=True, size=11, color="FFFFFF")
-    
+
     row += 1
     cert_headers = ["Certification", "Yes (Current)", "Expired/Pending", "No/Unknown"]
     for col_idx, h in enumerate(cert_headers, start=1):
         cell = ws.cell(row=row, column=col_idx, value=h)
-        apply_style(cell, styles["column_header"], "header")
+        cell.font = Font(bold=True, size=10, color="FFFFFF", name="Calibri")
+        cell.fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        thin = Side(style="thin")
+        cell.border = Border(left=thin, right=thin, top=thin, bottom=thin)
     
     row += 1
     ws.cell(row=row, column=1, value="ISO 27001")
-    ws.cell(row=row, column=2, value="=COUNTIF('2. Security Certifications'!R5:R24,\"Yes (Current)\")")
-    ws.cell(row=row, column=3, value="=COUNTIF('2. Security Certifications'!R5:R24,\"Yes (Expired)\")")
-    ws.cell(row=row, column=4, value="=COUNTIF('2. Security Certifications'!R5:R24,\"No\")+COUNTIF('2. Security Certifications'!R5:R24,\"Unknown\")")
+    ws.cell(row=row, column=2, value="=COUNTIF('2. Security Certifications'!R5:R67,\"Yes (Current)\")")
+    ws.cell(row=row, column=3, value="=COUNTIF('2. Security Certifications'!R5:R67,\"Yes (Expired)\")")
+    ws.cell(row=row, column=4, value="=COUNTIF('2. Security Certifications'!R5:R67,\"No\")+COUNTIF('2. Security Certifications'!R5:R67,\"Unknown\")")
     
     row += 1
     ws.cell(row=row, column=1, value="SOC 2 Type II")
-    ws.cell(row=row, column=2, value="=COUNTIF('2. Security Certifications'!U5:U24,\"Yes*\")")
+    ws.cell(row=row, column=2, value="=COUNTIF('2. Security Certifications'!U5:U67,\"Yes*\")")
     ws.cell(row=row, column=3, value="=0")
-    ws.cell(row=row, column=4, value="=COUNTIF('2. Security Certifications'!U5:U24,\"No\")+COUNTIF('2. Security Certifications'!U5:U24,\"Unknown\")")
+    ws.cell(row=row, column=4, value="=COUNTIF('2. Security Certifications'!U5:U67,\"No\")+COUNTIF('2. Security Certifications'!U5:U67,\"Unknown\")")
     
     row += 1
     ws.cell(row=row, column=1, value="FedRAMP")
-    ws.cell(row=row, column=2, value="=COUNTIF('2. Security Certifications'!W5:W24,\"Yes*\")")
+    ws.cell(row=row, column=2, value="=COUNTIF('2. Security Certifications'!W5:W67,\"Yes*\")")
     ws.cell(row=row, column=3, value="=0")
-    ws.cell(row=row, column=4, value="=COUNTIF('2. Security Certifications'!W5:W24,\"No\")+COUNTIF('2. Security Certifications'!W5:W24,\"N/A\")")
+    ws.cell(row=row, column=4, value="=COUNTIF('2. Security Certifications'!W5:W67,\"No\")+COUNTIF('2. Security Certifications'!W5:W67,\"N/A\")")
     
     # TABLE 4: Data Sovereignty Risks
     row += 3
@@ -1194,12 +1241,16 @@ def create_8_summary_dashboard(ws, styles):
     risk_headers = ["Risk", "Count", "Severity"]
     for col_idx, h in enumerate(risk_headers, start=1):
         cell = ws.cell(row=row, column=col_idx, value=h)
-        apply_style(cell, styles["column_header"], "header")
+        cell.font = Font(bold=True, size=10, color="FFFFFF", name="Calibri")
+        cell.fill = PatternFill(start_color="003366", end_color="003366", fill_type="solid")
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        thin = Side(style="thin")
+        cell.border = Border(left=thin, right=thin, top=thin, bottom=thin)
     
     risks = [
-        ("Restricted Data Outside Switzerland/EU", "=COUNTIF('5. Data Sovereignty'!R5:R24,\"USA\")+COUNTIF('5. Data Sovereignty'!R5:R24,\"Asia-Pacific\")", "Critical"),
-        ("Confidential Data Without SCCs", "=COUNTIF('5. Data Sovereignty'!T5:T24,\"No\")", "High"),
-        ("GDPR Compliance Not Verified", "=COUNTIF('5. Data Sovereignty'!V5:V24,\"No\")+COUNTIF('5. Data Sovereignty'!V5:V24,\"N/A\")", "High"),
+        ("Restricted Data Outside Switzerland/EU", "=COUNTIF('5. Data Sovereignty'!R5:R67,\"USA\")+COUNTIF('5. Data Sovereignty'!R5:R67,\"Asia-Pacific\")", "Critical"),
+        ("Confidential Data Without SCCs", "=COUNTIF('5. Data Sovereignty'!T5:T67,\"No\")", "High"),
+        ("GDPR Compliance Not Verified", "=COUNTIF('5. Data Sovereignty'!V5:V67,\"No\")+COUNTIF('5. Data Sovereignty'!V5:V67,\"N/A\")", "High"),
     ]
     
     row += 1
@@ -1318,8 +1369,8 @@ def create_9_evidence_register(ws, styles):
     for item in checklist:
         ws[f"A{checklist_row}"] = item
         checklist_row += 1
-    
-    ws.freeze_panes = "A5"
+
+    ws.freeze_panes = "A4"
 
 
 # ============================================================================
@@ -1334,7 +1385,14 @@ def create_10_approval_signoff(ws, styles):
     ws["A1"] = "APPROVAL SIGN-OFF - VENDOR DUE DILIGENCE ASSESSMENT"
     apply_style(ws["A1"], styles["header"], "header")
     ws.row_dimensions[1].height = 35
-    
+
+    # Subtitle (row 2)
+    ws.merge_cells("A2:E2")
+    ws["A2"] = "Vendor Due Diligence & Contracts | Approval and sign-off for ISO 27001:2022 Control A.5.23"
+    ws["A2"].font = Font(name="Calibri", italic=True, size=10)
+    ws["A2"].fill = PatternFill(start_color="F2F2F2", end_color="F2F2F2", fill_type="solid")
+    ws["A2"].alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+
     row = 3
     
     # ASSESSMENT SUMMARY
@@ -1362,8 +1420,9 @@ def create_10_approval_signoff(ws, styles):
             ws[f"B{row}"] = value
         else:
             ws[f"B{row}"].fill = PatternFill(start_color="FFFFCC", end_color="FFFFCC", fill_type="solid")
+            ws[f"B{row}"].border = Border(left=Side(style="thin"), right=Side(style="thin"), top=Side(style="thin"), bottom=Side(style="thin"))
         row += 1
-    
+
     # Dropdown for Remediation Plan
     dv_plan = DataValidation(type="list", formula1='"Yes,No,In Progress"', allow_blank=False)
     ws.add_data_validation(dv_plan)
@@ -1520,7 +1579,7 @@ def main():
     styles = setup_styles()
     
     logger.info("[1/10] Creating Instructions & Legend sheet...")
-    create_instructions_sheet(wb["Instructions & Legend"], styles)
+    create_instructions_sheet(wb["Instructions & Legend"])
     
     logger.info("[2/10] Creating 2. Security Certifications sheet...")
     create_2_security_certifications(wb["2. Security Certifications"], styles)
@@ -1552,10 +1611,12 @@ def main():
     # Save workbook
     timestamp = datetime.now().strftime("%Y%m%d")
     filename = f"ISMS-IMP-A.5.23.S2_VendorDD_{timestamp}.xlsx"
-    wb.save(filename)
-    
+    _wkbk_dir = Path(__file__).resolve().parent.parent / "WKBK"
+    _wkbk_dir.mkdir(exist_ok=True)
+    wb.save(_wkbk_dir / filename)
+
     logger.info("\n" + "=" * 70)
-    logger.info("{CHECK} Workbook generated successfully: {filename}")
+    logger.info(f"{CHECK} Workbook generated successfully: {filename}")
     logger.info("=" * 70)
     logger.info("\nWorkbook contains 10 sheets:")
     logger.info("  1.  Instructions & Legend (with regulatory guidance)")
