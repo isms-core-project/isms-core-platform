@@ -44,8 +44,8 @@ The platform provides **two products** at different levels of depth:
 </tr>
 <tr>
 <td><strong>What</strong></td>
-<td>Full engineering product — governance policies with implementation guides, assessment scripts, and generated workbooks</td>
-<td>Lightweight SME product — operational policies with compliance checklists per control group</td>
+<td>Full SSE engineering product — governance policies with implementation guides, assessment scripts, and generated workbooks</td>
+<td>Foundation ISMS for SMEs — operational policies with compliance checklists per control group</td>
 </tr>
 <tr>
 <td><strong>For</strong></td>
