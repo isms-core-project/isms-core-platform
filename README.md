@@ -261,8 +261,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed QA standards.
 | Framework control packs | **53 of 53** | ![100%](https://img.shields.io/badge/100%25-00AA00?style=flat-square) |
 | Operational policies | **53 of 53** | ![100%](https://img.shields.io/badge/100%25-00AA00?style=flat-square) |
 | Annex A controls mapped | **93 of 93** | ![Mapped](https://img.shields.io/badge/Mapped-32CD32?style=flat-square) |
-| Python scripts (Framework) | **454** (410K+ lines) | ![Validated](https://img.shields.io/badge/Validated-0066CC?style=flat-square) |
-| IMP documents (Framework) | **504** (252 UG + 252 TG) | ![Split](https://img.shields.io/badge/UG%2FTG-9400D3?style=flat-square) |
+| Python scripts (Framework) | **xxx** (xxxK+ lines) | ![Validated](https://img.shields.io/badge/Validated-0066CC?style=flat-square) |
+| IMP documents (Framework) | **xxx** (xxx UG + xxx TG) | ![Split](https://img.shields.io/badge/UG%2FTG-9400D3?style=flat-square) |
 
 See [isms-core-framework/STATUS.md](isms-core-framework/STATUS.md) for detailed Framework metrics.
 
