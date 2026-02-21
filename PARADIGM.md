@@ -44,11 +44,11 @@ This is the core idea behind ISMS CORE. In a traditional ISMS, professional judg
 
 1. Write policy: "Backups shall be encrypted using AES-256 minimum (POL-A.8.24 cryptography standard)"
 2. Implement: Configure backup system for AES-256, document in IMP (FRAMEWORK) or policy (OPERATIONAL)
-3. Build verification: Python script queries backup API (FRAMEWORK) or generates checklist (OPERATIONAL)
-4. Generate evidence: Workbook shows 47 backup jobs, all AES-256, last verified: yesterday
+3. Build verification: Python script generates assessment workbook from policy requirements (OPERATIONAL) or queries backup API (FRAMEWORK Score 4–5)
+4. Generate evidence: Workbook shows compliance status per requirement, last assessed date, Compliant/Non-Compliant per item
 5. Audit time:
    - Auditor: "Show me backup encryption compliance"
-   - You: "Here's the workbook. Generated yesterday. 100% AES-256."
+   - You: "Here's the workbook. Generated from policy. 100% AES-256."
    - Auditor: "Can I verify this?"
    - You: "Run the Python script yourself. Code is documented."
    - Auditor: [Reviews output] "...compliant."
@@ -66,13 +66,17 @@ This is the core idea behind ISMS CORE. In a traditional ISMS, professional judg
 - Teams wanting classical ISMS structure with automation benefits
 
 **What you get:**
-- **Architecture**: POL (policy) → Python Script (requirement extractor) → Assessment Workbook (compliance checklist)
+- **Architecture**: OP-POL (policy) → Python Script (requirement extractor) → Assessment Workbook (compliance checklist)
 - **Coverage**: 53 control packs covering all 93 Annex A controls (100% coverage)
-- **Automation**: Python-generated Excel compliance checklists (requirements auto-extracted from policies)
+- **Automation**: Python-generated Excel compliance checklists (script built to reflect requirements defined in OP-POL)
 - **Evidence**: Quarterly/annual compliance assessments via workbooks
 - **Methodology**: Classical ISMS structure with 1:1 policy stacking (related controls share policies)
 - **Regulatory support**: ISO 27001:2022 + Swiss nFADP + GDPR (when applicable)
 - **Governance**: Embedded in control policies (no separate POL-00/POL-01 meta-layer)
+
+**How the workbook is built:**
+
+Each OP-POL is written to address the control's objectives in a way that is proportionate to SME context and scope. The Python script was built to reflect those requirements — the checklist items in the workbook correspond to the OP-POL because the script was authored that way, not because it parses the policy at runtime. The workbook is **policy-derived** — the OP-POL is the source of truth, and the script is a hand-crafted artefact that embodies it. The assessor then completes the workbook manually, marking each requirement Compliant / Partial / Non-Compliant / N/A and attaching supporting evidence.
 
 **Prerequisites:**
 - Basic Python execution capability (run scripts to generate checklists)
@@ -95,10 +99,14 @@ This is the core idea behind ISMS CORE. In a traditional ISMS, professional judg
   - **POL-01** (ISMS Governance Framework): Authority boundaries, competence requirements, 5-step exception process, 6-step change control, Challenge Protocol
 - **Architecture**: POL (policy) → IMP (implementation spec) → Python (automation) → Workbook (evidence)
 - **Per control pack**: POL + IMP (UG/TG) + SCR + WKBK + REF + FORM + INS + CTX
-- **Coverage**: 53 control packs covering all 93 Annex A controls (100% coverage). Score 4–5 controls have full automation scripts generating live evidence from infrastructure APIs. Score 1–3 controls use assessment workbooks (same approach as OPERATIONAL).
-- **Evidence**: Continuous compliance verification (regenerate workbooks daily/weekly from system APIs)
+- **Coverage**: 53 control packs covering all 93 Annex A controls (100% coverage). Score 4–5 controls have full automation scripts generating live evidence from infrastructure APIs. Score 1–3 controls use comprehensive assessment workbooks (see below).
+- **Evidence**: Score 4–5: continuous compliance verification from live system queries. Score 1–3: structured assessment workbooks completed periodically.
 - **Methodology**: Score 1–5 system (see below)
 - **Regulatory support**: Multi-framework (ISO 27001 + GDPR + DORA + NIS2 + PCI DSS + FINMA)
+
+**How the workbook is built (Score 1–3 controls):**
+
+For controls where full automation is not yet feasible or meaningful, FRAMEWORK uses comprehensive assessment workbooks. Unlike OPERATIONAL workbooks — which are derived from what the OP-POL defines — FRAMEWORK workbooks are **control-derived**: built directly and comprehensively against every area the control addresses, covering the full scope of what ISO 27001 requires. The POL itself is written to the same scope. Policy and workbook are co-designed against the control requirements, not filtered through SME proportionality. The result is a more exhaustive, structured assessment than the OPERATIONAL equivalent, reflecting the control's full depth rather than an SME-appropriate subset of it.
 
 **Prerequisites:**
 - Python development capability (scripts must be maintained, customised, integrated with infrastructure)
@@ -115,7 +123,7 @@ Each Annex A control is scored on automation potential:
 - **Score 2**: Mostly manual (security training, supplier reviews — human judgment required)
 - **Score 1**: Fully manual (physical security, HR processes — no meaningful automation possible)
 
-FRAMEWORK prioritises Score 4–5 controls because these deliver the highest evidence quality through automation. Score 1–3 controls exist in FRAMEWORK but use assessment workbooks (same approach as OPERATIONAL), not live API queries.
+FRAMEWORK prioritises Score 4–5 controls because these deliver the highest evidence quality through automation. Score 1–3 controls use comprehensive assessment workbooks built against the full control scope.
 
 **Best for:** "We're a financial institution, we need DORA + FINMA + ISO 27001 + GDPR compliance, we have technical capacity for heavy automation."
 
@@ -126,13 +134,14 @@ FRAMEWORK prioritises Score 4–5 controls because these deliver the highest evi
 | **Target Audience** | Regulated industries (financial, healthcare, critical infrastructure) | SMEs seeking ISO 27001 certification |
 | **Regulatory Scope** | Multi-framework (ISO 27001 + GDPR + DORA + NIS2 + PCI DSS + FINMA) | Single-framework focused (ISO 27001 + nFADP + GDPR conditionally) |
 | **Foundation Governance** | **POL-00** (Regulatory Applicability Tier 1/2/3) + **POL-01** (Governance Framework with authority boundaries, exception handling, change control) | Classical ISMS structure (governance embedded in control policies, no meta-layer) |
-| **Automation Level** | Heavy (Python queries infrastructure APIs, generates real-time evidence from live systems) | Moderate (Python generates assessment checklists from policy requirements, manual completion) |
-| **Control Coverage** | 53 control packs / 93 Annex A controls (Score 4–5 have live automation; Score 1–3 use assessment workbooks) | 53 control packs / 93 Annex A controls (100% checklist coverage) |
-| **Evidence Type** | Live system queries (firewall rules, backup status, log retention, IAM permissions) | Compliance checklists (assessor marks Compliant/Partial/Non-Compliant per requirement) |
+| **Automation Level** | Heavy (Python queries infrastructure APIs, generates real-time evidence from live systems) | Moderate (Python generates assessment checklists from OP-POL requirements, manual completion) |
+| **Control Coverage** | 53 control packs / 93 Annex A controls (Score 4–5 have live automation; Score 1–3 use comprehensive assessment workbooks) | 53 control packs / 93 Annex A controls (100% checklist coverage) |
+| **Evidence Type** | Score 4–5: live system queries (firewall rules, backup status, log retention, IAM permissions). Score 1–3: comprehensive structured assessments | Policy-derived compliance checklists (script built to reflect OP-POL requirements; assessor marks Compliant/Partial/Non-Compliant) |
+| **Workbook Design** | Control-derived: built comprehensively against full control scope; policy and workbook co-designed | Policy-derived: Python extracts requirements from OP-POL; workbook reflects what policy defines |
 | **Python Skill Required** | Advanced (build/maintain automation, API integration, infrastructure queries) | Basic (run scripts to generate checklists, light customisation) |
 | **Implementation Effort** | High (6–12 months for full implementation with automation) | Moderate (3–6 months for certification readiness) |
 | **Maintenance Burden** | Moderate (scripts must be updated when infrastructure changes, API endpoints evolve) | Low (regenerate checklists quarterly, update policies annually) |
-| **Compliance Verification** | Continuous (regenerate workbooks daily/weekly from live infrastructure) | Periodic (quarterly assessments, annual reviews) |
+| **Compliance Verification** | Continuous (Score 4–5: regenerate workbooks daily/weekly from live infrastructure; Score 1–3: periodic structured assessment) | Periodic (quarterly assessments, annual reviews) |
 | **When You Need This** | Multi-regulatory compliance (DORA + FINMA + PCI DSS + ISO 27001), highly automated evidence required | ISO 27001 certification, want automation help but not full DevOps-for-compliance |
 
 **Can you use both?** Technically yes, but:
@@ -170,7 +179,7 @@ When you are navigating **6+ regulatory frameworks** (ISO 27001, GDPR, DORA, NIS
 When you are implementing **ISO 27001 only** (or ISO 27001 + GDPR conditionally):
 - Regulatory scope is **clear and limited** (no Tier 1/2/3 complexity — ISO 27001 is mandatory, GDPR applies if processing EU data)
 - Control applicability is **documented in SoA** (ISO 27001 Clause 6.1.3 process, standard ISMS approach)
-- Exception handling is **embedded in control policies** (each POL-A.X.XX addresses "if control cannot be implemented" per ISO 27001 guidance)
+- Exception handling is **embedded in control policies** (each OP-POL addresses "if control cannot be implemented" per ISO 27001 guidance)
 - Governance is **classical ISMS structure** (CISO → Management Review → Internal Audit per Clauses 5, 9.2, 9.3)
 
 **Result:** SMEs don't need a governance meta-layer. Classical ISMS structure handles ISO 27001 complexity without additional governance framework.
@@ -220,19 +229,26 @@ When you are implementing **ISO 27001 only** (or ISO 27001 + GDPR conditionally)
 
 **Traditional ISMS:** Screenshots, manual logs, "here's a sample"
 
-**FRAMEWORK (SSE):**
+**FRAMEWORK (SSE) — Score 4–5 controls:**
 - Python script queries log retention settings across 47 servers via API
 - Verifies: retention >= 12 months, integrity protection enabled, log forwarding configured
 - Generates: Workbook showing compliant/non-compliant per server
 - Result: 47/47 compliant (100%)
 - Evidence: Workbook + Python script (auditor can re-run to verify)
 
+**FRAMEWORK (SSE) — Score 1–3 controls:**
+- Python script generates a comprehensive assessment workbook built against the full control scope
+- Assessor completes the assessment: marks Compliant/Partial/Non-Compliant/N/A per requirement area
+- Workbook covers every dimension the control addresses — not filtered by SME proportionality
+- Evidence: Completed workbook + supporting documentation
+
 **OPERATIONAL:**
-- Python script extracts 46 "shall" requirements from POL-A.8.24
-- Generates: Assessment workbook with compliance status per requirement
-- Assessor completes quarterly: Marks Compliant/Partial/Non-Compliant/N/A
-- Result: 44/46 compliant (95.7%)
+- Python script was built to reflect the requirements defined in the OP-POL (written to address the control's objectives proportionate to SME scope)
+- Generates: Assessment workbook as a policy-derived compliance checklist
+- Assessor completes quarterly: marks Compliant/Partial/Non-Compliant/N/A per OP-POL requirement
 - Evidence: Completed workbook + supporting documentation (certificates, configs, attestations)
+
+**The distinction that matters:** OPERATIONAL workbooks are **policy-derived** — the checklist reflects what the OP-POL defines, scoped to SME context. FRAMEWORK Score 1–3 workbooks are **control-derived** — built comprehensively against the full scope of what the control requires, independent of SME scope filtering. Different starting points, different depth, different audit conversations.
 
 **Result:** Evidence is current, traceable, regenerable. Auditor verifies compliance objectively (not "trust me").
 
@@ -251,7 +267,7 @@ When you are implementing **ISO 27001 only** (or ISO 27001 + GDPR conditionally)
 - Stacking rationale documented in each policy
 - Each control's specific ISO 27001 requirements distinctly addressed (not lost in generic bundle)
 
-**FRAMEWORK (SSE):** Organises controls by Score 1–5 automation potential rather than by process similarity. High-score controls get full automation scripts; low-score controls use assessment workbooks.
+**FRAMEWORK (SSE):** Organises controls by Score 1–5 automation potential rather than by process similarity. High-score controls get full automation scripts; low-score controls use comprehensive assessment workbooks built against full control scope.
 
 **Result:** Logical grouping (not arbitrary). Easier maintenance (update one policy, affects related controls). Auditor can still verify each control individually (requirements are traceable).
 
@@ -322,7 +338,7 @@ These questions come up regularly. Read this first.
 No. ISMS CORE is a platform you implement in your environment. Your ISMS evidence touches your infrastructure — it cannot and should not live in a third-party SaaS. The Python scripts run in your environment, against your systems, generating your evidence. That is by design.
 
 **"Why isn't control A.X.XX fully automated in FRAMEWORK?"**
-FRAMEWORK prioritises Score 4–5 controls — those where automation delivers high-quality, real-time evidence. Score 1–3 controls (physical security, HR processes, supplier reviews) use assessment workbooks rather than live API queries. Check the Score assigned to the control before asking.
+FRAMEWORK prioritises Score 4–5 controls — those where automation delivers high-quality, real-time evidence. Score 1–3 controls use comprehensive assessment workbooks built against the full control scope rather than live API queries. Check the Score assigned to the control before asking.
 
 **"Can I use OPERATIONAL and add POL-00/POL-01 later?"**
 You can, but it is not recommended. OPERATIONAL is designed as a self-contained classical ISMS. Adding POL-00/POL-01 mid-implementation creates a hybrid that is more complex than either pure variant. If you think you need POL-00/POL-01, start with FRAMEWORK. If you are an SME and genuinely only need ISO 27001 + GDPR, OPERATIONAL is sufficient without them.
