@@ -51,12 +51,12 @@ This status file tracks **control packs**, not ISO certification status.
 </tr>
 <tr>
 <td>Generator Scripts</td>
-<td><strong>253</strong></td>
+<td><strong>xxx</strong></td>
 <td><img src="https://img.shields.io/badge/QA_Validated-3776AB?style=flat-square" alt="Validated"/></td>
 </tr>
 <tr>
 <td>IMP Documents (UG + TG)</td>
-<td><strong>504</strong> (252 UG + 252 TG)</td>
+<td><strong>xxx</strong> (xxx UG + xxx TG)</td>
 <td><img src="https://img.shields.io/badge/UG%2FTG_Split-9400D3?style=flat-square" alt="UG/TG Split"/></td>
 </tr>
 </table>
