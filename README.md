@@ -134,7 +134,7 @@ isms-core-platform/
 
 ## 🚀 Quick Start
 
-### Framework (full engineering product)
+### Framework (SSE — Secure Systems Engineering)
 
 1. Browse [isms-core-framework/CONTROLS.md](isms-core-framework/CONTROLS.md) for the control pack index
 2. Navigate to a control folder and read POL → IMP-UG → IMP-TG
@@ -147,7 +147,7 @@ python3 generate_a824_1_data_transmission_assessment.py
 
 **Prerequisites:** Python 3.11+, `pip install openpyxl`
 
-### Operational (lightweight SME product)
+### Operational (Foundation ISMS for SMEs)
 
 1. Browse [isms-core-operational/CONTROLS.md](isms-core-operational/CONTROLS.md) for the control pack index
 2. Navigate to a control folder and read POL
