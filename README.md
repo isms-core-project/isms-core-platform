@@ -118,7 +118,7 @@ isms-core-platform/
     ├── STATUS.md                       # Implementation metrics
     ├── CHANGELOG.md                    # Version history
     ├── OP-POL-AUDIT-LOG.md             # Per-policy review log
-    ├── A.0-checklist-engine/           # Shared checklist generator engine
+    ├── 00-checklist-engine/            # Shared checklist generator engine
     │   └── op_checklist_engine.py      # Common engine (642 lines)
     ├── A.5-organizational-controls/    # 21 control groups
     │   └── isms-a.X.X-control-name/
