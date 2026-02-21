@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.14:framework:GOV-POL:a.5.14 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.14:framework:POL:a.5.14 -->
 **ISMS-POL-A.5.14 — Information Transfer**
 
 ---

@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.6.3:framework:GOV-POL:a.6.3 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.6.3:framework:POL:a.6.3 -->
 **ISMS-POL-A.6.3 – Information Security Awareness, Education and Training**
 
 ---

@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.17:framework:GOV-POL:a.8.17 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.17:framework:POL:a.8.17 -->
 **ISMS-POL-A.8.17 — Clock Synchronization**
 
 ---

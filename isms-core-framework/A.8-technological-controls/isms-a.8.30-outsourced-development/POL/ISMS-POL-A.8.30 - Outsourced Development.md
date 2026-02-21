@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.30:framework:GOV-POL:a.8.30 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.30:framework:POL:a.8.30 -->
 **ISMS-POL-A.8.30 – Outsourced Development**
 
 ---

@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.25-26-29:framework:GOV-POL:a.8.25-26-29 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.25-26-29:framework:POL:a.8.25-26-29 -->
 **ISMS-POL-A.8.25-26-29 – Secure Development Framework**
 
 ---

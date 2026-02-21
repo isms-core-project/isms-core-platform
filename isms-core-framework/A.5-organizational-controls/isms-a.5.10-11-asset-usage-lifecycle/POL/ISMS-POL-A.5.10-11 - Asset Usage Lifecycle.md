@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.10-11:framework:GOV-POL:a.5.10-11 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.10-11:framework:POL:a.5.10-11 -->
 **ISMS-POL-A.5.10-11 — Asset Usage Lifecycle**
 
 ---

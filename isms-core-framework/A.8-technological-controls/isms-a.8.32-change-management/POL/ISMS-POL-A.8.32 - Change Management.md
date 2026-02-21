@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.32:framework:GOV-POL:a.8.32 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.32:framework:POL:a.8.32 -->
 **ISMS-POL-A.8.32 – Change Management**
 
 ---

@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.19-23-S4:framework:GOV-POL:a.5.19-23-s4 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.19-23-S4:framework:POL:a.5.19-23-s4 -->
 **ISMS-POL-A.5.19-23-S4 — Supplier Monitoring & Change Management**
 **Control A.5.22: Monitoring, Review and Change Management of Supplier Services**
 

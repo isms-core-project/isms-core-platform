@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.4:framework:GOV-POL:a.8.4 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.4:framework:POL:a.8.4 -->
 **ISMS-POL-A.8.4 – Access to Source Code**
 
 ---

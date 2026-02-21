@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.17-DE:framework:GOV-POL:a.8.17-de -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.17-DE:framework:POL:a.8.17-de -->
 **ISMS-POL-A.8.17 — Zeitsynchronisation**
 
 ---

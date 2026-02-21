@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.9:framework:GOV-POL:a.5.9 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.9:framework:POL:a.5.9 -->
 **ISMS-POL-A.5.9 – Inventory of Information and Assets**
 
 ---

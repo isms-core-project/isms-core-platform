@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.7:framework:GOV-POL:a.5.7 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.7:framework:POL:a.5.7 -->
 **ISMS-POL-A.5.7 – Threat Intelligence**
 
 ---

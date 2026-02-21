@@ -52,7 +52,7 @@ The platform provides **two products** at different levels of depth:
 </tr>
 <tr>
 <td><strong>Per control</strong></td>
-<td>POL + IMP (UG/TG) + SCR + WKBK + REF + FORM + CTX</td>
+<td>POL + IMP (UG/TG) + SCR + WKBK + REF + FORM + INS + CTX</td>
 <td>OP-POL + SCR + WKBK</td>
 </tr>
 <tr>
@@ -103,7 +103,7 @@ isms-core-platform/
 │   ├── STATUS.md                       # Implementation metrics
 │   ├── STACKING.md                     # Control grouping methodology
 │   ├── CHANGELOG.md                    # Version history
-│   ├── A.0-regulatory-control/         # Regulatory framework
+│   ├── 00-foundation-policies/         # Regulatory framework
 │   ├── A.5-organizational-controls/    # 21 control packs
 │   ├── A.6-people-controls/            # 4 control packs
 │   ├── A.7-physical-controls/          # 6 control packs
@@ -115,7 +115,7 @@ isms-core-platform/
     ├── STATUS.md                       # Implementation metrics
     ├── CHANGELOG.md                    # Version history
     ├── OP-POL-AUDIT-LOG.md             # Per-policy review log
-    ├── A.0-checklist-engine/           # Shared checklist generator engine
+    ├── 00-checklist-engine/            # Shared checklist generator engine
     │   └── op_checklist_engine.py      # Common engine (642 lines)
     ├── A.5-organizational-controls/    # 21 control groups
     │   └── isms-a.X.X-control-name/

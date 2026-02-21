@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.7.8-9:framework:GOV-POL:a.7.8-9 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.7.8-9:framework:POL:a.7.8-9 -->
 **ISMS-POL-A.7.8-9 — Equipment Siting and Protection**
 
 ---

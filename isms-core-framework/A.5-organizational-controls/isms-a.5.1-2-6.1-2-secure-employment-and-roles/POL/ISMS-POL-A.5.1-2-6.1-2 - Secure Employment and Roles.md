@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.1-2-6.1-2:framework:GOV-POL:a.5.1-2-6.1-2 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.1-2-6.1-2:framework:POL:a.5.1-2-6.1-2 -->
 **ISMS-POL-A.5.1-2-6.1-2 - Secure Employment and Roles Framework**
 
 ---

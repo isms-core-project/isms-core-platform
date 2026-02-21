@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.29:framework:GOV-POL:a.5.29 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.29:framework:POL:a.5.29 -->
 **ISMS-POL-A.5.29 — Information Security During Disruption**
 
 ---

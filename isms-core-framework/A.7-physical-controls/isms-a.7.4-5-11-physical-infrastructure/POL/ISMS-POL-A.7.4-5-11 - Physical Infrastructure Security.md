@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.7.4-5-11:framework:GOV-POL:a.7.4-5-11 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.7.4-5-11:framework:POL:a.7.4-5-11 -->
 **ISMS-POL-A.7.4-5-11 — Physical Infrastructure Security**
 
 ---

@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.12:framework:GOV-POL:a.8.12 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.12:framework:POL:a.8.12 -->
 **ISMS-POL-A.8.12 — Data Leakage Prevention**
 
 ---

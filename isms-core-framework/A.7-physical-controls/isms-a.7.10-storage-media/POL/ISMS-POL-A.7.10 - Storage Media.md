@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.7.10:framework:GOV-POL:a.7.10 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.7.10:framework:POL:a.7.10 -->
 **ISMS-POL-A.7.10 — Storage Media**
 
 ---

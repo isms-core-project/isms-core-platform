@@ -1,7 +1,7 @@
-<h1 align="center">🎋 ISMS CORE Implementation Status</h1>
+  <h1 align="center">🎋 ISMS CORE Framework — Implementation Status</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-4.6-2E8B57?style=for-the-badge" alt="Version 4.6"/>
+  <img src="https://img.shields.io/badge/Version-1.0-2E8B57?style=for-the-badge" alt="Version 1.0"/>
 </p>
 
 <p align="center">
@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <strong>Last Updated:</strong> 2026-02-08
+  <strong>Last Updated:</strong> 2026-02-10
 </p>
 
 ---
@@ -59,18 +59,13 @@ This status file tracks **control packs**, not ISO certification status.
 <td><strong>504</strong> (252 UG + 252 TG)</td>
 <td><img src="https://img.shields.io/badge/UG%2FTG_Split-9400D3?style=flat-square" alt="UG/TG Split"/></td>
 </tr>
-<tr>
-<td>Excel Formulas Validated</td>
-<td><strong>180,000+</strong></td>
-<td><img src="https://img.shields.io/badge/No_Known_Errors-00AA00?style=flat-square" alt="No Known Errors"/></td>
-</tr>
 </table>
 
 ---
 
 ## 📋 Implementation by Section (Control Packs)
 
-### Section 5: Organizational Controls (A.5.x)
+### Section 5: Organisational Controls (A.5.x)
 
 <p>
 <img src="https://img.shields.io/badge/Section_5-100%25_🎉-00AA00?style=flat-square" alt="100%"/>
@@ -204,6 +199,16 @@ This status file tracks **control packs**, not ISO certification status.
 <td align="center"><strong>5</strong></td>
 <td><img src="https://img.shields.io/badge/Context-0066CC?style=flat-square" alt="Context"/></td>
 </tr>
+<tr>
+<td>📝 FORM (Forms &amp; Checklists)</td>
+<td align="center"><strong>1</strong></td>
+<td><img src="https://img.shields.io/badge/Form-CC6600?style=flat-square" alt="Form"/></td>
+</tr>
+<tr>
+<td>📖 INS (Instructions)</td>
+<td align="center"><strong>1</strong></td>
+<td><img src="https://img.shields.io/badge/Instruction-336699?style=flat-square" alt="Instruction"/></td>
+</tr>
 </table>
 
 ---
@@ -263,74 +268,6 @@ This is an internal target timeline and not a guarantee.
 <p align="center">
 <strong>Goal:</strong> ISMS CORE certified using itself.
 </p>
-
----
-
-## ✅ Quality Metrics (v4.6)
-
-<table>
-<tr>
-<th>Category</th>
-<th>Metric</th>
-<th>Status</th>
-</tr>
-<tr>
-<td rowspan="5"><strong>🐍 Scripts</strong></td>
-<td>253 generators validated (zero runtime errors)</td>
-<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
-</tr>
-<tr>
-<td>Swiss DD.MM.YYYY date format standardised</td>
-<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
-</tr>
-<tr>
-<td>CHF currency localisation (no EUR/USD)</td>
-<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
-</tr>
-<tr>
-<td>British English spelling (ISO convention)</td>
-<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
-</tr>
-<tr>
-<td>Standard colour palette across all generators</td>
-<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
-</tr>
-<tr>
-<td rowspan="2"><strong>📊 Formulas</strong></td>
-<td>180,000+ validated</td>
-<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
-</tr>
-<tr>
-<td>No known errors (as of 2026-02-08)</td>
-<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
-</tr>
-<tr>
-<td rowspan="4"><strong>📋 IMP QA</strong></td>
-<td>504 files (252 UG + 252 TG) — split complete</td>
-<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
-</tr>
-<tr>
-<td>Control intent mapping accuracy (original wording)</td>
-<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
-</tr>
-<tr>
-<td>British spelling compliance</td>
-<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
-</tr>
-<tr>
-<td>UG/TG split structure verified, headers normalised</td>
-<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
-</tr>
-<tr>
-<td rowspan="2"><strong>🤖 ISMS Copilot</strong></td>
-<td>53/53 control packs audited</td>
-<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
-</tr>
-<tr>
-<td>All findings addressed</td>
-<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
-</tr>
-</table>
 
 ---
 

@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.24:framework:GOV-POL:a.8.24 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.24:framework:POL:a.8.24 -->
 **ISMS-POL-A.8.24 — Use of Cryptography**
 
 ---

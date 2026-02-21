@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.19-23:framework:GOV-POL:a.5.19-23 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.19-23:framework:POL:a.5.19-23 -->
 **ISMS-POL-A.5.19-23 — Supplier & Cloud Services Security**
 **Comprehensive Policy & Implementation Framework**
 

@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.19-23-S1:framework:GOV-POL:a.5.19-23-s1 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.19-23-S1:framework:POL:a.5.19-23-s1 -->
 **ISMS-POL-A.5.19-23-S1 — Supplier Relationship Fundamentals**
 **Control A.5.19: Information Security in Supplier Relationships**
 

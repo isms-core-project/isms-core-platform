@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.7.6-7-14:framework:GOV-POL:a.7.6-7-14 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.7.6-7-14:framework:POL:a.7.6-7-14 -->
 **ISMS-POL-A.7.6-7-14 — Secure Areas and Media Handling**
 
 ---

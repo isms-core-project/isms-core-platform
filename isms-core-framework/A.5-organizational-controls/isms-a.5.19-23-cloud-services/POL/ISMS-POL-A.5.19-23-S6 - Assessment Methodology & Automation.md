@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.19-23-S6:framework:GOV-POL:a.5.19-23-s6 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.19-23-S6:framework:POL:a.5.19-23-s6 -->
 **ISMS-POL-A.5.19-23-S6 — Assessment Methodology & Automation**
 **Cloud Services Security - Systems Engineering Approach**
 

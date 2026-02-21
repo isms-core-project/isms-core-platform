@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.31.1:framework:GOV-POL:a.5.31.1 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.31.1:framework:POL:a.5.31.1 -->
 **ISMS-POL-A.5.31.1: Legal, Statutory, Regulatory and Contractual Requirements**
 **Executive Summary & Control Alignment**
 

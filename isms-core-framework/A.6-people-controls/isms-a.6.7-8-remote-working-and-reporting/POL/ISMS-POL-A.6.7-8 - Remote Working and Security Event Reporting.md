@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.6.7-8:framework:GOV-POL:a.6.7-8 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.6.7-8:framework:POL:a.6.7-8 -->
 **ISMS-POL-A.6.7-8 – Remote Working and Security Event Reporting**
 
 ---

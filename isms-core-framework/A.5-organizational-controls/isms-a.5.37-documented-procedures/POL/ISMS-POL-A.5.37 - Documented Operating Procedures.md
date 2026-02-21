@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.37:framework:GOV-POL:a.5.37 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.37:framework:POL:a.5.37 -->
 **ISMS-POL-A.5.37 — Documented Operating Procedures**
 
 ---

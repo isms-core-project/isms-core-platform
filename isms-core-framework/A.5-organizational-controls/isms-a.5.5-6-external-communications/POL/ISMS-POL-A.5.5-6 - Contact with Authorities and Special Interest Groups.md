@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.5-6:framework:GOV-POL:a.5.5-6 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.5-6:framework:POL:a.5.5-6 -->
 **ISMS-POL-A.5.5-6 — Contact with Authorities and Special Interest Groups**
 
 ---

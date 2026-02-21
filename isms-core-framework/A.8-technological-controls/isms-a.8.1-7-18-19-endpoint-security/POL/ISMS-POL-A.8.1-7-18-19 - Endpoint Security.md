@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.1-7-18-19:framework:GOV-POL:a.8.1-7-18-19 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.1-7-18-19:framework:POL:a.8.1-7-18-19 -->
 **ISMS-POL-A.8.1-7-18-19 – Endpoint Security**
 
 ---

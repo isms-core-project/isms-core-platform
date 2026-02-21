@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.31.3:framework:GOV-POL:a.5.31.3 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.31.3:framework:POL:a.5.31.3 -->
 **ISMS-POL-A.5.31.3: Requirements Extraction & Control Mapping Framework**
 **Legal, Statutory, Regulatory and Contractual Requirements**
 

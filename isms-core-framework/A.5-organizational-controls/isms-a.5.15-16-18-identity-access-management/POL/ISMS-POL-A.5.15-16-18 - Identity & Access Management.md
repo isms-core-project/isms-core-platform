@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.15-16-18:framework:GOV-POL:a.5.15-16-18 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.15-16-18:framework:POL:a.5.15-16-18 -->
 **ISMS-POL-A.5.15-16-18 - Identity & Access Management**
 
 ---

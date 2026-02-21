@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.34:framework:GOV-POL:a.5.34 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.34:framework:POL:a.5.34 -->
 **ISMS-POL-A.5.34 - Privacy and Protection of PII**
 
 ---

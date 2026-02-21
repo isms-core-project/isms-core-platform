@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.32-33:framework:GOV-POL:a.5.32-33 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.32-33:framework:POL:a.5.32-33 -->
 **ISMS-POL-A.5.32-33 — Records and Information Protection**
 
 ---

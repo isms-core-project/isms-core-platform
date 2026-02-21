@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.15:framework:GOV-POL:a.8.15 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.15:framework:POL:a.8.15 -->
 **ISMS-POL-A.8.15 – Logging Policy**
 
 ---

@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-00-DE:framework:GOV-POL:00-de -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-00-DE:framework:POL:00-de -->
 **ISMS-POL-00 — Regulatory Applicability Framework**
 **Autoritative Referenz für ISMS Compliance-Verpflichtungen**
 

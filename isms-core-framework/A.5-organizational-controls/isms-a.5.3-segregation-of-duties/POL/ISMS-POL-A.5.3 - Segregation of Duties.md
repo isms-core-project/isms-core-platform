@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.3:framework:GOV-POL:a.5.3 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.3:framework:POL:a.5.3 -->
 **ISMS-POL-A.5.3 — Segregation of Duties**
 
 ---

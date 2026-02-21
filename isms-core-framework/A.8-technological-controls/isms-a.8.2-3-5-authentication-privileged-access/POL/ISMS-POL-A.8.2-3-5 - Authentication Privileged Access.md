@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.2-3-5:framework:GOV-POL:a.8.2-3-5 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.2-3-5:framework:POL:a.8.2-3-5 -->
 **ISMS-POL-A.8.2-3-5 – Authentication & Privileged Access Security**
 
 ---

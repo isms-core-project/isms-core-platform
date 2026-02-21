@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.20-21-22-DE:framework:GOV-POL:a.8.20-21-22-de -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.20-21-22-DE:framework:POL:a.8.20-21-22-de -->
 **ISMS-POL-A.8.20-21-22 — Netzwerksicherheit**
 
 ---

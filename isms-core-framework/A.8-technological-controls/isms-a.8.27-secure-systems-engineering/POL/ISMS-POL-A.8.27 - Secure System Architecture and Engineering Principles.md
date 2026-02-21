@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.27:framework:GOV-POL:a.8.27 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.27:framework:POL:a.8.27 -->
 **ISMS-POL-A.8.27 — Secure System Architecture and Engineering Principles**
 
 ---

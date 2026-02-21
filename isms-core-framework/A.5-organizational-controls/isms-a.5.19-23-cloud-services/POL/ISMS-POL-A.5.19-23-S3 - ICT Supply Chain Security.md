@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.19-23-S3:framework:GOV-POL:a.5.19-23-s3 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.19-23-S3:framework:POL:a.5.19-23-s3 -->
 **ISMS-POL-A.5.19-23-S3 — ICT Supply Chain Security**
 **Control A.5.21: Managing Information Security in the ICT Supply Chain**
 

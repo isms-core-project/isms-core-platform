@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.10:framework:GOV-POL:a.8.10 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.10:framework:POL:a.8.10 -->
 **ISMS-POL-A.8.10 - Information Deletion Policy**
 
 ---

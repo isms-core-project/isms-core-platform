@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.4:framework:GOV-POL:a.5.4 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.4:framework:POL:a.5.4 -->
 **ISMS-POL-A.5.4 — Management Responsibilities**
 
 ---

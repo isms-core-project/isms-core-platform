@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.31.2:framework:GOV-POL:a.5.31.2 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.31.2:framework:POL:a.5.31.2 -->
 **ISMS-POL-A.5.31.2: Legal, Statutory, Regulatory and Contractual Requirements**
 **Regulatory Applicability Methodology**
 

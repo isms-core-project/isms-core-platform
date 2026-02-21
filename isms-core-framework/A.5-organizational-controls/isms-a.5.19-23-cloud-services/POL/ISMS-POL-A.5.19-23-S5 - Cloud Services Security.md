@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.19-23-S5:framework:GOV-POL:a.5.19-23-s5 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.19-23-S5:framework:POL:a.5.19-23-s5 -->
 **ISMS-POL-A.5.19-23-S5 — Cloud Services Security**
 **Control A.5.23: Information Security for Use of Cloud Services**
 

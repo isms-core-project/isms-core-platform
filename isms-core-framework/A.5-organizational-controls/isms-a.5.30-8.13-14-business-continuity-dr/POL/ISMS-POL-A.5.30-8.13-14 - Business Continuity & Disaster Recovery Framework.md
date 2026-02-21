@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.30-8.13-14:framework:GOV-POL:a.5.30-8.13-14 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.30-8.13-14:framework:POL:a.5.30-8.13-14 -->
 **ISMS-POL-A.5.30-8.13-14 – Business Continuity & Disaster Recovery Framework**
 
 ---

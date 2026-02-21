@@ -1,98 +1,14 @@
-# Changelog
+# Changelog — ISMS CORE Framework
 
 All notable changes to ISMS CORE Framework will be documented here.
 
-This project uses a simple versioning approach:
-- **Major**: structural or methodology changes that may require migrations
-- **Minor**: new control packs, significant expansions
-- **Patch**: fixes, QA improvements, clarifications
-
-## [Unreleased]
-- TBD
-
-## [4.7] - 2026-02-10
-### Changed
-- **Flat folder structure**: removed all numbered subfolders across 55 control packs
-  - Before: `POL/10_pol-md/`, `IMP/30_imp-md/`, `SCR/10_generator-master/`, `WKBK/90_workbooks/`, `REF/70_ref-md/`, `CTX/80_ctx-md/`, `FORM/60_form-md/`
-  - After: files directly in `POL/`, `IMP/`, `SCR/`, `WKBK/`, `REF/`, `CTX/`, `FORM/`
-- README.md, CONTRIBUTING.md, CONTROLS.md updated for flat structure
-
-### Fixed
-- Endpoint Security POL (A.8.1-7-18-19): corrected malformed IMP reference and removed stale subfolder references
-- A.8.23 and A.8.24 SCR readme files: workbook paths updated from `90_workbooks/` to `WKBK/`
-
-## [4.6] - 2026-02-08
-### Added
-- Framework palette standardisation script (71 generators normalised)
-- SCR QA factory scripts: `fix_date_formats.py`, `fix_swiss_localisation.py`
-
-### Changed
-- All 253 generators: Swiss DD.MM.YYYY date format enforced
-- All 253 generators: CHF currency localisation (EUR/USD removed)
-- All 253 generators: British English spelling standardised
-- 8 generators: Excel sheet names shortened to ≤31 characters
-- 8 generators: missing OUTPUT_FILENAME constants added
-- 7 generators: non-Swiss sample names replaced with Swiss equivalents
-- 4 generators: monetary value sample labels added (approx./sample)
-- Standard colour palette applied across all 253 generators
-
-### Fixed
-- Zero runtime errors across all 253 generators
-- 698 stale standard references updated across IMP UG files
-
-## [4.5] - 2026-02-06
-### Added
-- IMP UG/TG split: all 252 IMP files split into User Guide (UG) + Technical Specification (TG) pairs (504 total)
-- Header normalization across all 504 split files (standard 3-line format)
-- POL files updated with UG/TG references (59 files)
-
-### Changed
-- IMP document structure: each IMP now exists as two files (-UG and -TG) instead of one combined document
-- POL Related Documents sections expanded with individual UG/TG sub-document references
-- STATUS.md, README.md, CONTRIBUTING.md updated to reflect UG/TG architecture
-- A.8.8 document control headers normalized to standard table format (18 files)
-
-## [4.4] - 2026-02-04
-### Added
-- COVERAGE.md - canonical mapping of 93 Annex A controls to 53 control packs
-- SECURITY.md - vulnerability reporting policy
-- CODE_OF_CONDUCT.md - community standards
-- CHANGELOG.md - version history
-
-### Changed
-- Updated all documentation to use "control packs" terminology (53 packs → 93 controls)
-- PHILOSOPHY.md revised with safer language and clearer positioning
-- STACKING.md updated with accurate pack counts and removed unverifiable overlap claims
-- README.md updated with accurate metrics (456 scripts, 410K+ lines)
-
-## [4.3] - 2026-02-03
-### Added
-- Completed control pack coverage across A.5–A.8 (53 packs)
-- Expanded evidence generation scripts (456 validated)
-- IMP QA v4.3 verification pass (250+ documents)
-
-### Changed
-- Improved QA gating and promotion workflow
-- Refinements to workbook formula validation pipeline
-
-### Fixed
-- Documentation consistency fixes across packs
-- Script reliability improvements and validations
-
-## [4.2] - 2026-01-15
-### Added
-- A.8 Technological Controls section completed (22 packs)
-- Business continuity and DR pack (A.5.30, A.8.13-14)
-
-### Changed
-- Consolidated related controls into unified packs
-- Standardized generator script structure
-
-## [4.1] - 2026-01-01
-### Added
-- Initial A.5 Organizational Controls packs
-- Initial A.6 People Controls packs
-- Core generator framework
+## [1.0] - 2026-02-10
+### Launch
+- 53 control packs covering all 93 Annex A controls
+- 253 generator scripts with shared engine architecture
+- 504 IMP documents (252 UG + 252 TG pairs)
+- 53 POL documents, all ISMS Copilot audited
+- Supporting documentation: README.md, CONTROLS.md, COVERAGE.md, CONTRIBUTING.md
 
 ---
 

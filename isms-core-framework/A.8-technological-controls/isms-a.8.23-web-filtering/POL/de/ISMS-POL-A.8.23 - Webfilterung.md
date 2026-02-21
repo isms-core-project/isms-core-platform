@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.23-DE:framework:GOV-POL:a.8.23-de -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.23-DE:framework:POL:a.8.23-de -->
 **ISMS-POL-A.8.23 — Webfilterung**
 
 ---

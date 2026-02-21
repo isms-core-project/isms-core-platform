@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.28:framework:GOV-POL:a.8.28 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.28:framework:POL:a.8.28 -->
 **ISMS-POL-A.8.28 – Secure Coding**
 
 ---

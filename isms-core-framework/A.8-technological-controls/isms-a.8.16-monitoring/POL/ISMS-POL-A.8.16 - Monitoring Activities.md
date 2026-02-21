@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.16:framework:GOV-POL:a.8.16 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.16:framework:POL:a.8.16 -->
 **ISMS-POL-A.8.16 — Monitoring Activities**
 
 ---

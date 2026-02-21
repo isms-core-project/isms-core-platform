@@ -19,7 +19,7 @@
 
 ## What is ISMS CORE Framework?
 
-ISMS CORE Framework is the **full engineering product** for building and operating an ISO/IEC 27001:2022-aligned ISMS. Each of the 53 control packs contains a complete six-layer control stack:
+ISMS CORE Framework is the **full engineering product** for building and operating an ISO/IEC 27001:2022-aligned ISMS. Each of the 53 control packs contains a complete control stack:
 
 <table>
 <tr>
@@ -29,6 +29,7 @@ ISMS CORE Framework is the **full engineering product** for building and operati
 <td align="center"><strong>📊 WKBK</strong><br/>Workbooks</td>
 <td align="center"><strong>📚 REF</strong><br/>Reference</td>
 <td align="center"><strong>📝 FORM</strong><br/>Forms</td>
+<td align="center"><strong>📖 INS</strong><br/>Instructions</td>
 <td align="center"><strong>🏢 CTX</strong><br/>Context</td>
 </tr>
 <tr>
@@ -38,7 +39,8 @@ ISMS CORE Framework is the **full engineering product** for building and operati
 <td>Generated Excel<br/>assessment workbooks</td>
 <td>Mappings and notes<br/>to support implementation</td>
 <td>Templates, checklists<br/>and operational forms</td>
-<td>Organisational<br/>assumptions & scope</td>
+<td>Step-by-step procedures<br/>for specific policies</td>
+<td>Organisational<br/>assumptions &amp; scope</td>
 </tr>
 </table>
 
@@ -50,7 +52,7 @@ ISMS CORE Framework is the **full engineering product** for building and operati
 
 ```
 isms-core-framework/
-├── A.0-regulatory-control/             # 1 regulatory framework pack
+├── 00-foundation-policies/             # 1 regulatory framework pack
 ├── A.5-organizational-controls/        # 21 control packs (covers 37 Annex A controls)
 │   └── isms-a.5.X-control-name/
 │       ├── POL/                        # Governance policies
@@ -59,6 +61,7 @@ isms-core-framework/
 │       ├── WKBK/                       # Generated Excel workbooks
 │       ├── REF/                        # Reference materials
 │       ├── FORM/                       # Templates, checklists and operational forms
+│       ├── INS/                        # Step-by-step instructions for policies
 │       └── CTX/                        # Context documents
 ├── A.6-people-controls/                # 4 control packs (covers 8 Annex A controls)
 ├── A.7-physical-controls/              # 6 control packs (covers 14 Annex A controls)
@@ -105,7 +108,7 @@ ISMS CORE Framework is the **full engineering product**. For organisations that 
 | | Framework | Operational |
 |---|---|---|
 | **Audience** | Mature security teams | SMEs and startups |
-| **Per control group** | POL + IMP (UG/TG) + SCR + WKBK + REF + FORM + CTX | OP-POL + SCR + WKBK |
+| **Per control group** | POL + IMP (UG/TG) + SCR + WKBK + REF + FORM + INS + CTX | OP-POL + SCR + WKBK |
 | **Depth** | Full assessment workbooks with automated scoring | Compliance checklists with evidence tracking |
 | **Effort** | Comprehensive implementation | Practical minimum for audit readiness |
 
@@ -114,7 +117,3 @@ ISMS CORE Framework is the **full engineering product**. For organisations that 
 <p align="center">
   <em>Part of <a href="../README.md">ISMS CORE Platform</a></em> 🎋
 </p>
-
-
-
-

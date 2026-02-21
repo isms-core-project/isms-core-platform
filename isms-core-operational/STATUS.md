@@ -193,48 +193,6 @@ This status file tracks **control packs**, not ISO certification status.
 
 ---
 
-## ✅ Quality Metrics (v1.0)
-
-<table>
-<tr>
-<th>Category</th>
-<th>Metric</th>
-<th>Status</th>
-</tr>
-<tr>
-<td rowspan="4"><strong>🐍 Generators</strong></td>
-<td>53 generators validated (zero runtime errors)</td>
-<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
-</tr>
-<tr>
-<td>Shared engine architecture (op_checklist_engine.py)</td>
-<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
-</tr>
-<tr>
-<td>Swiss DD.MM.YYYY date format</td>
-<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
-</tr>
-<tr>
-<td>Standard colour palette (identical to Framework)</td>
-<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
-</tr>
-<tr>
-<td rowspan="3"><strong>📜 OP-POLs</strong></td>
-<td>53/53 written</td>
-<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
-</tr>
-<tr>
-<td>53/53 Copilot S2 reviewed</td>
-<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
-</tr>
-<tr>
-<td>Swiss nFADP aligned (GDPR where applicable)</td>
-<td><img src="https://img.shields.io/badge/✓-00AA00?style=flat-square" alt="✓"/></td>
-</tr>
-</table>
-
----
-
 <p align="center">
 <strong>Copyright © 2025-2026 Gregory Griffin. All rights reserved.</strong>
 </p>

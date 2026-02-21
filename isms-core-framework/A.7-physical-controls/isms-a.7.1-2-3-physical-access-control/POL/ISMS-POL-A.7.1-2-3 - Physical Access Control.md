@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.7.1-2-3:framework:GOV-POL:a.7.1-2-3 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.7.1-2-3:framework:POL:a.7.1-2-3 -->
 **ISMS-POL-A.7.1-2-3 — Physical Access Control**
 
 ---

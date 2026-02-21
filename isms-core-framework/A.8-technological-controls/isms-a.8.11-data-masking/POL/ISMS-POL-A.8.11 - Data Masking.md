@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.11:framework:GOV-POL:a.8.11 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.11:framework:POL:a.8.11 -->
 **ISMS-POL-A.8.11 — Data Masking**
 
 ---

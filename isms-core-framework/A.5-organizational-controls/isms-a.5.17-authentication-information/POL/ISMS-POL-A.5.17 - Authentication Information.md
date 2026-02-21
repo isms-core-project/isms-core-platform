@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.17:framework:GOV-POL:a.5.17 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.17:framework:POL:a.5.17 -->
 **ISMS-POL-A.5.17 — Authentication Information**
 
 ---

@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.6:framework:GOV-POL:a.8.6 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.6:framework:POL:a.8.6 -->
 **ISMS-POL-A.8.6 – Capacity Management**
 
 ---

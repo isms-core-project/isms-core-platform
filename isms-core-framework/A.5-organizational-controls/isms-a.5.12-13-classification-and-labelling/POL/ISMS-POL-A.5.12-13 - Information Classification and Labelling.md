@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.12-13:framework:GOV-POL:a.5.12-13 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.5.12-13:framework:POL:a.5.12-13 -->
 **ISMS-POL-A.5.12-13 — Information Classification and Labelling**
 
 ---

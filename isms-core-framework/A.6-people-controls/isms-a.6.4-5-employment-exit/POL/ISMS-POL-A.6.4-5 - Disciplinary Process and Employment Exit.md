@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.6.4-5:framework:GOV-POL:a.6.4-5 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.6.4-5:framework:POL:a.6.4-5 -->
 **ISMS-POL-A.6.4-5 — Disciplinary Process and Employment Exit**
 
 ---

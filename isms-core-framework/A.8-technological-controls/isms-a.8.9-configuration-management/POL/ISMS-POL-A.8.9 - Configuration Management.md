@@ -1,4 +1,4 @@
-<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.9:framework:GOV-POL:a.8.9 -->
+<!-- ISMS-CORE:POLICY:ISMS-POL-A.8.9:framework:POL:a.8.9 -->
 **ISMS-POL-A.8.9 – Configuration Management**
 
 ---
