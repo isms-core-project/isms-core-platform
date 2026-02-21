@@ -5,7 +5,7 @@
 <h1 align="center">🎋 ISMS CORE Framework</h1>
 
 <p align="center">
-  <strong>Governance Policies — Full Engineering Product</strong>
+  <strong>Governance Policies — Full SSE Engineering Product</strong>
 </p>
 
 <p align="center">
@@ -19,7 +19,7 @@
 
 ## What is ISMS CORE Framework?
 
-ISMS CORE Framework is the **full engineering product** for building and operating an ISO/IEC 27001:2022-aligned ISMS. Each of the 53 control packs contains a complete control stack:
+ISMS CORE Framework (SSE — Secure Systems Engineering) is the **full SSE engineering product** for building and operating an ISO/IEC 27001:2022-aligned ISMS. Each of the 53 control packs contains a complete control stack:
 
 <table>
 <tr>
@@ -101,11 +101,11 @@ python3 generate_a824_1_data_transmission_assessment.py
 
 ---
 
-## Relationship to ISMS CORE Operational
+## Relationship to ISMS CORE Operational (Foundation ISMS)
 
-ISMS CORE Framework is the **full engineering product**. For organisations that need a lighter approach, see [ISMS CORE Operational](../isms-core-operational/) — a single operational policy per control group, designed for SMEs.
+ISMS CORE Framework is the **full SSE engineering product**. For organisations that need a lighter approach, see [ISMS CORE Operational (Foundation ISMS)](../isms-core-operational/) — a foundation ISMS with a single operational policy per control group, designed for SMEs.
 
-| | Framework | Operational |
+| | Framework (SSE) | Operational (Foundation ISMS) |
 |---|---|---|
 | **Audience** | Mature security teams | SMEs and startups |
 | **Per control group** | POL + IMP (UG/TG) + SCR + WKBK + REF + FORM + INS + CTX | OP-POL + SCR + WKBK |

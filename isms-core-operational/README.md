@@ -5,7 +5,7 @@
 <h1 align="center">🎋 ISMS CORE Operational</h1>
 
 <p align="center">
-  <strong>Operational Policies + Compliance Checklists — Built for SMEs</strong>
+  <strong>Foundation ISMS for SMEs — Operational Policies + Compliance Checklists</strong>
 </p>
 
 <p align="center">
@@ -19,7 +19,7 @@
 
 ## What is ISMS CORE Operational?
 
-ISMS CORE Operational is a **complete, practical ISMS** for small and mid-size companies. Each of the 53 control groups gets:
+ISMS CORE Operational (Foundation ISMS for SMEs) is a **complete, practical ISMS** for small and mid-size companies. Each of the 53 control groups gets:
 
 1. **One operational policy (OP-POL)** — a self-contained document that combines policy requirements with enough operational guidance to implement
 2. **One compliance checklist workbook (WKBK)** — a single-sheet Excel checklist that extracts every "shall" requirement from the policy, ready to track compliance status and evidence
@@ -155,18 +155,18 @@ All policies are aligned to **Swiss nFADP (revDSG)** as the primary data protect
 
 ---
 
-## Relationship to ISMS CORE Framework
+## Relationship to ISMS CORE Framework (SSE)
 
-ISMS CORE Operational is the **entry-level product** — everything an SME needs, nothing it doesn't. For organisations that need the full engineering stack (multi-sheet assessment workbooks, implementation guides, technical specifications), see [ISMS CORE Framework](../isms-core-framework/).
+ISMS CORE Operational is the **foundation ISMS product** — everything an SME needs, nothing it doesn't. For organisations that need the full SSE engineering stack (multi-sheet assessment workbooks, implementation guides, technical specifications), see [ISMS CORE Framework (SSE)](../isms-core-framework/).
 
-| | Operational | Framework |
+| | Operational (Foundation ISMS) | Framework (SSE) |
 |---|---|---|
 | **Audience** | SMEs and startups (10–500 people) | Mature security teams and consultants |
 | **Per control group** | OP-POL + SCR + WKBK | POL + IMP (UG/TG) + SCR + WKBK + REF + CTX |
 | **Policy style** | Self-contained — requirements + guidance in one document | Governance policy (what/who) separated from implementation (how) |
 | **Checklist** | Single-sheet compliance checklist | Multi-sheet assessment workbooks with automated scoring |
 | **Effort to implement** | Weeks | Months |
-| **Upgrade path** | Migrate to Framework when you outgrow Operational | — |
+| **Upgrade path** | Migrate to Framework (SSE) when you outgrow Operational | — |
 
 ### When to use which
 
@@ -176,7 +176,7 @@ ISMS CORE Operational is the **entry-level product** — everything an SME needs
 - You need to get certified in months, not years
 - You want practical policies your team will actually read
 
-**Start with Framework if:**
+**Start with Framework (SSE) if:**
 - You already have a GRC programme
 - You manage multiple compliance frameworks (ISO + GDPR + DORA + NIS2)
 - You need detailed assessment evidence with automated scoring
