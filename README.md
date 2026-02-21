@@ -32,6 +32,8 @@
 
 ISMS CORE is a production-grade **control engineering** platform for building and operating an ISO/IEC 27001:2022-aligned ISMS. It treats ISMS implementation as an **engineering problem** — not a consulting exercise.
 
+> **New here?** Read [PARADIGM.md](PARADIGM.md) first — it explains how ISMS CORE differs from traditional ISMS approaches, how to choose between the two products, and what to expect.
+
 The platform provides **two products** at different levels of depth:
 
 <table>
@@ -89,6 +91,7 @@ Both products cover **all 93 ISO 27001:2022 Annex A controls** organised into th
 ```
 isms-core-platform/
 ├── README.md                           # This file
+├── PARADIGM.md                         # Product overview and paradigm shift guide
 ├── CONTRIBUTING.md                     # QA process and standards
 ├── PHILOSOPHY.md                       # Anti-cargo-cult methodology
 ├── CODE_OF_CONDUCT.md                  # Community standards
@@ -115,7 +118,7 @@ isms-core-platform/
     ├── STATUS.md                       # Implementation metrics
     ├── CHANGELOG.md                    # Version history
     ├── OP-POL-AUDIT-LOG.md             # Per-policy review log
-    ├── 00-checklist-engine/            # Shared checklist generator engine
+    ├── A.0-checklist-engine/           # Shared checklist generator engine
     │   └── op_checklist_engine.py      # Common engine (642 lines)
     ├── A.5-organizational-controls/    # 21 control groups
     │   └── isms-a.X.X-control-name/
@@ -277,6 +280,7 @@ See [isms-core-framework/STATUS.md](isms-core-framework/STATUS.md) for detailed 
 
 | Document | Description |
 |----------|-------------|
+| [PARADIGM.md](PARADIGM.md) | 🧭 Product overview and paradigm shift guide |
 | [isms-core-framework/CONTROLS.md](isms-core-framework/CONTROLS.md) | 📋 Control pack index (Framework) |
 | [isms-core-framework/COVERAGE.md](isms-core-framework/COVERAGE.md) | 🗺️ 93 Annex A → 53 pack mapping |
 | [isms-core-framework/STATUS.md](isms-core-framework/STATUS.md) | 📊 Framework metrics |
@@ -308,7 +312,7 @@ Commercial licensing: **info@isms-core.com**
 </p>
 
 <p align="center">
-  <a href="mailto:info@isms-core.com"><img src="https://img.shields.io/badge/Email-infor@isms--core.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"/></a>
+  <a href="mailto:infor@isms-core.com"><img src="https://img.shields.io/badge/Email-infor@isms--core.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"/></a>
   <a href="https://github.com/isms-core-project"><img src="https://img.shields.io/badge/GitHub-isms--core--project-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/></a>
   <a href="https://www.linkedin.com/in/ggriffinorg/"><img src="https://img.shields.io/badge/LinkedIn-ggriffinorg-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
 </p>
