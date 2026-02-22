@@ -393,7 +393,7 @@ When implementing **ISO 27001 only** (or ISO 27001 + GDPR conditionally):
 
 <p>
 <img src="https://img.shields.io/badge/Requirements-Explicit_Pass/Fail-00AA00?style=flat-square" alt="Pass Fail"/>
-<img src="https://img.shields.io/badge/No_More-"Appropriate_Measures"-DC143C?style=flat-square" alt="No Vague"/>
+<img src="https://img.shields.io/badge/No_More-%22Appropriate_Measures%22-DC143C?style=flat-square" alt="No Vague"/>
 </p>
 
 **Problem solved:** "Our policy says 'appropriate security measures.' Auditor says that's inadequate."
