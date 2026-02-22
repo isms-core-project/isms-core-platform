@@ -468,7 +468,6 @@ A hosted or SaaS-accessible version of ISMS CORE is not excluded from the roadma
 - ✅ **Opinionated framework**: We made decisions (AES-256 minimum, TLS 1.3, quarterly reviews). You can change them, but they're explicit — not vague.
 - ✅ **Audit-optimised**: Designed to pass Stage 1 + Stage 2 with minimal findings by moving judgment to model design
 - ✅ **Maintainable**: Version-controlled Markdown, regenerable workbooks, testable (not static Word docs rotting on SharePoint)
-- ✅ **Production-grade**: Built by a CISSP/CCSP/Azure Cybersecurity Architect Expert who has implemented this in real organisations and passed real audits
 - ✅ **Continuous improvement**: Lessons learned registers, governance reviews, change control processes (ISMS evolves, not stagnates)
 - ✅ **Data sovereign by design**: On-premises deployment keeps your compliance evidence under your control and your jurisdiction
 
