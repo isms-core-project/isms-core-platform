@@ -24,4 +24,4 @@ Project maintainers may take action when behavior undermines a safe, productive 
 
 ## Reporting
 
-If you experience or witness unacceptable behavior, contact: **admin@gregorygriffin.org**
+If you experience or witness unacceptable behavior, contact: **info@isms-core.com**

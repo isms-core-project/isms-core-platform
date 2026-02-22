@@ -4,7 +4,7 @@ ISMS CORE takes security seriously. If you discover a vulnerability in this repo
 
 ## Reporting a Vulnerability
 
-Please email: **admin@gregorygriffin.org**
+Please email: **info@isms-core.com**
 Subject: **ISMS CORE Security — Vulnerability Report**
 
 Include:

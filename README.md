@@ -312,7 +312,7 @@ Commercial licensing: **info@isms-core.com**
 </p>
 
 <p align="center">
-  <a href="mailto:infor@isms-core.com"><img src="https://img.shields.io/badge/Email-infor@isms--core.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"/></a>
+  <a href="mailto:info@isms-core.com"><img src="https://img.shields.io/badge/Email-infor@isms--core.com-EA4335?style=flat-square&logo=gmail&logoColor=white" alt="Email"/></a>
   <a href="https://github.com/isms-core-project"><img src="https://img.shields.io/badge/GitHub-isms--core--project-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/></a>
   <a href="https://www.linkedin.com/in/ggriffinorg/"><img src="https://img.shields.io/badge/LinkedIn-ggriffinorg-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
 </p>
