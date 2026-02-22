@@ -1,4 +1,25 @@
-# ISMS CORE — Understanding the Paradigm
+<p align="center">
+  <img src="https://img.shields.io/badge/🎋_ISMS_CORE-Paradigm_Guide-2E8B57?style=for-the-badge" alt="ISMS CORE Paradigm Guide"/>
+</p>
+
+<h1 align="center">🧭 Understanding the Paradigm</h1>
+
+<p align="center">
+  <strong>Why ISMS CORE is engineered differently — and how to choose between its two products</strong>
+</p>
+
+<p align="center">
+  <a href="https://www.iso.org/standard/27001"><img src="https://img.shields.io/badge/ISO_27001-2022-0066CC?style=flat-square&logo=iso&logoColor=white" alt="ISO 27001:2022"/></a>
+  <a href="#framework-sse--secure-systems-engineering"><img src="https://img.shields.io/badge/🏗️_FRAMEWORK-SSE_Engineering-9400D3?style=flat-square" alt="FRAMEWORK SSE"/></a>
+  <a href="#operational-foundation-isms-for-smes"><img src="https://img.shields.io/badge/⚡_OPERATIONAL-SME_Foundation-FF6600?style=flat-square" alt="OPERATIONAL"/></a>
+  <a href="PHILOSOPHY.md"><img src="https://img.shields.io/badge/Anti--Cargo--Cult-Engineering-DC143C?style=flat-square" alt="Anti-Cargo-Cult"/></a>
+</p>
+
+<p align="center">
+  <em>Grows fast. Bends, doesn't break. Built to last.</em> 🎋
+</p>
+
+---
 
 > *"The first principle is that you must not fool yourself — and you are the easiest person to fool."*
 > — Richard Feynman
@@ -18,7 +39,13 @@ But within the domain of ISMS *implementation*, there is a genuine architectural
 
 ---
 
-## What Is ISMS CORE?
+## 🎯 What Is ISMS CORE?
+
+<p>
+<img src="https://img.shields.io/badge/🏗️_FRAMEWORK-SSE_Engineering-9400D3?style=flat-square" alt="FRAMEWORK"/>
+<img src="https://img.shields.io/badge/⚡_OPERATIONAL-SME_Foundation-FF6600?style=flat-square" alt="OPERATIONAL"/>
+<img src="https://img.shields.io/badge/Controls-93_Annex_A-32CD32?style=flat-square" alt="93 Controls"/>
+</p>
 
 ISMS CORE provides **two distinct ISMS implementations** designed for different organisational needs:
 
@@ -29,7 +56,13 @@ Both variants use code-driven, evidence-automated, engineer-designed approaches.
 
 ---
 
-## Traditional ISMS vs. ISMS CORE
+## 📊 Traditional ISMS vs. ISMS CORE
+
+<p>
+<img src="https://img.shields.io/badge/Judgment-At_Design_Time-00AA00?style=flat-square" alt="Design Time"/>
+<img src="https://img.shields.io/badge/Evidence-Automated-0066CC?style=flat-square" alt="Automated"/>
+<img src="https://img.shields.io/badge/Requirements-Testable-DC143C?style=flat-square" alt="Testable"/>
+</p>
 
 | Aspect | Traditional ISMS | ISMS CORE (Both Variants) |
 |--------|-----------------|---------------------------|
@@ -46,11 +79,11 @@ Both variants use code-driven, evidence-automated, engineer-designed approaches.
 
 ---
 
-## The Paradigm Shift: Where Does Professional Judgment Live?
+## ⚙️ The Paradigm Shift: Where Does Professional Judgment Live?
 
 This is the core idea behind ISMS CORE. In a traditional ISMS, professional judgment often happens during the audit — the auditor decides what's "adequate." In ISMS CORE, professional judgment happens during policy design — the organisation decides, documents it explicitly, and the auditor verifies the documented decision.
 
-### Traditional ISMS (Judgment During Audit)
+### ❌ Traditional ISMS (Judgment During Audit)
 
 1. Write policy: "Backups shall be encrypted with appropriate algorithms"
 2. Implement: Install backup system, enable encryption
@@ -62,7 +95,7 @@ This is the core idea behind ISMS CORE. In a traditional ISMS, professional judg
    - Auditor: *[Writing finding]* "Encryption adequacy not documented"
 4. Result: Finding raised, remediation required, policy rewrite, re-evidence
 
-### ISMS CORE (Judgment During Model Design)
+### ✅ ISMS CORE (Judgment During Model Design)
 
 1. Write policy: "Backups shall be encrypted using AES-256 minimum, tested quarterly for restore capability"
 2. Implement: Configure backup system, document configuration, record algorithm in use
@@ -77,9 +110,16 @@ This is the core idea behind ISMS CORE. In a traditional ISMS, professional judg
 
 ---
 
-## Two Variants: Choose Based on Your Needs
+## 🔀 Two Variants: Choose Based on Your Needs
 
-### OPERATIONAL (Foundation ISMS for SMEs)
+### ⚡ OPERATIONAL (Foundation ISMS for SMEs)
+
+<p>
+<img src="https://img.shields.io/badge/Target-SME_/_Startup-FF6600?style=flat-square" alt="SME"/>
+<img src="https://img.shields.io/badge/Effort-3–6_months-FFD700?style=flat-square" alt="3-6 months"/>
+<img src="https://img.shields.io/badge/Regulatory-ISO_27001_+_nFADP-0066CC?style=flat-square" alt="ISO 27001"/>
+<img src="https://img.shields.io/badge/Python-Basic-32CD32?style=flat-square" alt="Basic Python"/>
+</p>
 
 **For whom:**
 - Small to medium enterprises seeking ISO 27001 certification
@@ -111,7 +151,14 @@ Each OP-POL is written to address the control's objectives proportionate to SME 
 
 ---
 
-### FRAMEWORK (SSE — Secure Systems Engineering)
+### 🏗️ FRAMEWORK (SSE — Secure Systems Engineering)
+
+<p>
+<img src="https://img.shields.io/badge/Target-Regulated_Industries-9400D3?style=flat-square" alt="Regulated"/>
+<img src="https://img.shields.io/badge/Effort-6–12_months-FF4500?style=flat-square" alt="6-12 months"/>
+<img src="https://img.shields.io/badge/Regulatory-Multi--Framework-DC143C?style=flat-square" alt="Multi-Framework"/>
+<img src="https://img.shields.io/badge/Python-Intermediate-0066CC?style=flat-square" alt="Intermediate Python"/>
+</p>
 
 **For whom:**
 - Regulated industries (financial services, healthcare, critical infrastructure)
@@ -141,6 +188,14 @@ FRAMEWORK workbooks are **control-derived**: built directly and comprehensively 
 
 **The Score 1–5 System (FRAMEWORK only):**
 
+<p>
+<img src="https://img.shields.io/badge/Score_5-Highest_Objectivity-00AA00?style=flat-square" alt="Score 5"/>
+<img src="https://img.shields.io/badge/Score_4-High_Objectivity-32CD32?style=flat-square" alt="Score 4"/>
+<img src="https://img.shields.io/badge/Score_3-Moderate-FFD700?style=flat-square" alt="Score 3"/>
+<img src="https://img.shields.io/badge/Score_2-Lower-FF6600?style=flat-square" alt="Score 2"/>
+<img src="https://img.shields.io/badge/Score_1-Attestation--Based-DC143C?style=flat-square" alt="Score 1"/>
+</p>
+
 Each Annex A control is scored on **evidence objectivity** — the score reflects how directly and measurably a control's requirements can be verified, and therefore how comprehensive and objective the generated workbook can be. This is a scoring of evidence quality, not an organisational principle; both Framework and Operational use the same A.5/A.6/A.7/A.8 structure with 53 control packs.
 
 - **Score 5**: Highest evidence objectivity (log retention, backup status, algorithm in use — requirements are directly measurable, pass/fail criteria are unambiguous)
@@ -155,7 +210,7 @@ FRAMEWORK prioritises rigour across all scores. Higher-score controls produce wo
 
 ---
 
-## Variant Comparison
+## 📋 Variant Comparison
 
 | Feature | FRAMEWORK (SSE) | OPERATIONAL |
 |---------|----------------|-------------|
@@ -179,11 +234,14 @@ FRAMEWORK prioritises rigour across all scores. Higher-score controls produce wo
 
 ---
 
-## Foundation Governance Explained
+## 🏛️ Foundation Governance Explained
 
-### FRAMEWORK (SSE) Foundation
+### 🏗️ FRAMEWORK (SSE) Foundation
 
-**Why POL-00/POL-01 exist in FRAMEWORK:**
+<p>
+<img src="https://img.shields.io/badge/POL--00-Regulatory_Applicability-9400D3?style=flat-square" alt="POL-00"/>
+<img src="https://img.shields.io/badge/POL--01-Governance_Framework-0066CC?style=flat-square" alt="POL-01"/>
+</p>
 
 When navigating **6+ regulatory frameworks** (ISO 27001, GDPR, DORA, NIS2, PCI DSS, FINMA):
 
@@ -203,7 +261,12 @@ When navigating **6+ regulatory frameworks** (ISO 27001, GDPR, DORA, NIS2, PCI D
 
 **Result:** Explicit governance for a complex regulatory landscape. Without POL-00/POL-01, reconciling 6 frameworks consistently is structurally difficult.
 
-### OPERATIONAL Foundation
+### ⚡ OPERATIONAL Foundation
+
+<p>
+<img src="https://img.shields.io/badge/Governance-Classical_ISMS-FF6600?style=flat-square" alt="Classical ISMS"/>
+<img src="https://img.shields.io/badge/No_Meta--Layer-By_Design-32CD32?style=flat-square" alt="No Meta-Layer"/>
+</p>
 
 **Why POL-00/POL-01 do NOT exist in OPERATIONAL:**
 
@@ -222,9 +285,15 @@ When implementing **ISO 27001 only** (or ISO 27001 + GDPR conditionally):
 
 ---
 
-## Key Innovations
+## 🔬 Key Innovations
 
 ### 1. Tier 1/2/3 Regulatory Framework (POL-00 — FRAMEWORK Only)
+
+<p>
+<img src="https://img.shields.io/badge/Tier_1-Mandatory-DC143C?style=flat-square" alt="Tier 1 Mandatory"/>
+<img src="https://img.shields.io/badge/Tier_2-Conditional-FF6600?style=flat-square" alt="Tier 2 Conditional"/>
+<img src="https://img.shields.io/badge/Tier_3-Informational-0066CC?style=flat-square" alt="Tier 3 Informational"/>
+</p>
 
 **Problem solved:** "Does GDPR apply? Does PCI DSS apply? What about DORA?"
 
@@ -244,6 +313,11 @@ When implementing **ISO 27001 only** (or ISO 27001 + GDPR conditionally):
 
 ### 2. Governance with Competence Requirements (POL-01 — FRAMEWORK Only)
 
+<p>
+<img src="https://img.shields.io/badge/FRAMEWORK-Only-9400D3?style=flat-square" alt="Framework Only"/>
+<img src="https://img.shields.io/badge/Authority-Boundaries_Defined-0066CC?style=flat-square" alt="Authority Boundaries"/>
+</p>
+
 **Problem solved:** "Who decides what's adequate internally? What if stakeholders disagree on interpretation?"
 
 **Traditional ISMS:** Undefined authority boundaries, subjective interpretations, stale decisions
@@ -261,6 +335,12 @@ When implementing **ISO 27001 only** (or ISO 27001 + GDPR conditionally):
 ---
 
 ### 3. Structured Evidence Generation
+
+<p>
+<img src="https://img.shields.io/badge/Evidence-Control--Derived_(FW)-9400D3?style=flat-square" alt="Control Derived"/>
+<img src="https://img.shields.io/badge/Evidence-Policy--Derived_(OP)-FF6600?style=flat-square" alt="Policy Derived"/>
+<img src="https://img.shields.io/badge/Format-Python_+_Excel-32CD32?style=flat-square" alt="Python Excel"/>
+</p>
 
 **Problem solved:** "Prove your controls are implemented. Prove your configurations are compliant."
 
@@ -287,6 +367,11 @@ When implementing **ISO 27001 only** (or ISO 27001 + GDPR conditionally):
 
 ### 4. Control Pack Consolidation
 
+<p>
+<img src="https://img.shields.io/badge/53_Packs-93_Controls-0066CC?style=flat-square" alt="53 Packs"/>
+<img src="https://img.shields.io/badge/DRY-Don't_Repeat_Yourself-FF6600?style=flat-square" alt="DRY"/>
+</p>
+
 **Problem solved:** "Why do we have 93 separate policies for 93 Annex A controls? This is document hell."
 
 **Traditional ISMS:** 93 separate Word documents, or one massive 300-page policy (both bad)
@@ -306,6 +391,11 @@ When implementing **ISO 27001 only** (or ISO 27001 + GDPR conditionally):
 
 ### 5. Testable Requirements
 
+<p>
+<img src="https://img.shields.io/badge/Requirements-Explicit_Pass/Fail-00AA00?style=flat-square" alt="Pass Fail"/>
+<img src="https://img.shields.io/badge/No_More-"Appropriate_Measures"-DC143C?style=flat-square" alt="No Vague"/>
+</p>
+
 **Problem solved:** "Our policy says 'appropriate security measures.' Auditor says that's inadequate."
 
 **Traditional ISMS:** Vague requirements ("regular reviews", "sufficient encryption", "adequate monitoring")
@@ -323,7 +413,13 @@ When implementing **ISO 27001 only** (or ISO 27001 + GDPR conditionally):
 
 ---
 
-## Deployment Model: On-Premises First
+## 🖥️ Deployment Model: On-Premises First
+
+<p>
+<img src="https://img.shields.io/badge/Deployment-On--Premises-2E8B57?style=flat-square" alt="On-Premises"/>
+<img src="https://img.shields.io/badge/Data_Sovereignty-By_Design-0066CC?style=flat-square" alt="Data Sovereignty"/>
+<img src="https://img.shields.io/badge/CLOUD_Act-Risk_Mitigated-DC143C?style=flat-square" alt="CLOUD Act"/>
+</p>
 
 ISMS CORE is designed as a **self-hosted, on-premises platform**. This is a deliberate architectural decision, not a roadmap limitation.
 
@@ -350,7 +446,14 @@ A hosted or SaaS-accessible version of ISMS CORE is not excluded from the roadma
 
 ---
 
-## What This Is NOT
+## ⚖️ What This Is NOT
+
+<p>
+<img src="https://img.shields.io/badge/NOT-Plug_and_Play-DC143C?style=flat-square" alt="Not Plug and Play"/>
+<img src="https://img.shields.io/badge/NOT-Beginner_Friendly-DC143C?style=flat-square" alt="Not Beginner Friendly"/>
+<img src="https://img.shields.io/badge/IS-Engineering_Driven-00AA00?style=flat-square" alt="Engineering Driven"/>
+<img src="https://img.shields.io/badge/IS-Audit_Optimised-00AA00?style=flat-square" alt="Audit Optimised"/>
+</p>
 
 **This is NOT:**
 - ❌ **Plug-and-play templates**: You must understand ISO 27001, adapt to your context, make documented decisions (not fill-in-the-blanks)
@@ -371,9 +474,19 @@ A hosted or SaaS-accessible version of ISMS CORE is not excluded from the roadma
 
 ---
 
-## Who Should Use This?
+## 👥 Who Should Use This?
+
+<p>
+<img src="https://img.shields.io/badge/✅_Good_Fit-See_Below-00AA00?style=flat-square" alt="Good Fit"/>
+<img src="https://img.shields.io/badge/❌_Bad_Fit-See_Below-DC143C?style=flat-square" alt="Bad Fit"/>
+</p>
 
 ### ✅ Good Fit
+
+<p>
+<img src="https://img.shields.io/badge/⚡_OPERATIONAL-SMEs_seeking_certification-FF6600?style=flat-square" alt="OPERATIONAL Good Fit"/>
+<img src="https://img.shields.io/badge/🏗️_FRAMEWORK-Regulated_industries-9400D3?style=flat-square" alt="FRAMEWORK Good Fit"/>
+</p>
 
 **OPERATIONAL:**
 - SMEs wanting ISO 27001 certification with clear, testable requirements
@@ -397,7 +510,7 @@ A hosted or SaaS-accessible version of ISMS CORE is not excluded from the roadma
 
 ---
 
-## Before You Open an Issue
+## ❓ Before You Open an Issue
 
 **"Is there a SaaS or hosted version?"**
 
