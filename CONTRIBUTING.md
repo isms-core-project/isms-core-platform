@@ -237,38 +237,6 @@ isms-a.X.X-control-name/
 
 ---
 
-## 🎬 Presentation Mode
-
-<p align="center">
-  <img src="https://img.shields.io/badge/CISO_Demo-Ready-DC143C?style=for-the-badge" alt="CISO Demo Ready"/>
-</p>
-
-Populate scripts fill workbooks with realistic sample data for presentations.
-
-**Pattern for MergedCell handling:**
-
-```python
-from openpyxl.cell.cell import MergedCell
-
-def safe_cell_write(ws, cell_ref, value):
-    """Safely write to a cell, handling merged cells."""
-    try:
-        cell = ws[cell_ref]
-        if not isinstance(cell, MergedCell):
-            cell.value = value
-    except Exception as e:
-        pass
-```
-
-**Reference implementations:**
-
-| Control | Scripts | Data Points |
-|---------|:-------:|:-----------:|
-| A.8.23 Web Filtering | 4 | 250+ |
-| A.8.24 Use of Cryptography | 4 | 350+ |
-
----
-
 ## 🔍 Online Research Requirement
 
 <p align="center">
@@ -414,27 +382,27 @@ Claude Code (Anthropic, Opus model family) has been the primary implementation p
 <tr>
 <td><strong>Python Scripts</strong></td>
 <td>Generators, normalizers, consolidators, sanity checks, population scripts</td>
-<td><strong>454</strong> scripts, <strong>410K+</strong> lines</td>
+<td><strong>xxx4</strong> scripts, <strong>xxxK+</strong> lines</td>
 </tr>
 <tr>
 <td><strong>IMP Documents</strong></td>
 <td>User Guides (UG) + Technical Specifications (TG) for every assessment</td>
-<td><strong>504</strong> files (252 UG + 252 TG)</td>
+<td><strong>xxx</strong> files (xxx UG + xxx TG)</td>
 </tr>
 <tr>
 <td><strong>POL Documents</strong></td>
 <td>Policy framework with "WITH WHAT" verification methodology</td>
-<td><strong>68</strong> policies, all audited</td>
+<td><strong>xx</strong> policies, all audited</td>
 </tr>
 <tr>
 <td><strong>Excel Workbooks</strong></td>
 <td>Assessment workbooks with data validation, formulas, conditional formatting</td>
-<td><strong>299+</strong> generated</td>
+<td><strong>xxx+</strong> generated</td>
 </tr>
 <tr>
 <td><strong>Factory Automation</strong></td>
 <td>Assembly, promotion, backup, sync, splitting, normalization scripts</td>
-<td><strong>9</strong> major tools</td>
+<td><strong>xx</strong> major tools</td>
 </tr>
 <tr>
 <td><strong>QA Infrastructure</strong></td>
@@ -443,26 +411,14 @@ Claude Code (Anthropic, Opus model family) has been the primary implementation p
 </tr>
 </table>
 
-### The journey (6 weeks)
+### The journey
 
 ```
-Week 1 (Dec 31–Jan 6)    Foundation — first generators, script patterns, pilot controls
-Week 2 (Jan 7–13)        Scale — Section 8 technological controls, workbook generation
-Week 3 (Jan 14–20)       Depth — IMP specifications, formula validation (180K+ formulas)
-Week 4 (Jan 21–27)       Standardization — Phase 1-3 Python QA (322 scripts), SPDX licensing
-Week 5 (Jan 28–Feb 3)    Completion — final 9 controls, POL promotion, production sync
-Week 6 (Feb 4–6)         Architecture — UG/TG split (504 files), POL updates, full GitHub sync
+December 31st 2025: Pilot Control Creation -> A.8.24
+January 31st 2026: ISMS CORE Framework -> 93 Controls Completed in 53 Control Packs
+February 7th 2026: ISMS CORE Operational -> 93 Controls Completed in 53 Control Packs
+Februray 8th 2026: Python Scripts QA (Ongoing)
 ```
-
-### Key engineering decisions
-
-| Decision | Rationale |
-|----------|-----------|
-| **UG/TG split** | Separated user-facing guidance from technical specs — cleaner consumption, independent update cycles |
-| **QA-gated promotion** | `promote_control.sh` enforces QA markers before any content reaches GitHub |
-| **Logger over print** | Structured logging across 454 scripts for production traceability |
-| **Factory scripts** | Repeatable automation for assembly, normalization, and sync — not manual file copying |
-| **Consolidation dashboards** | Cross-workbook aggregation with automatic gap identification |
 
 ### What's next
 
