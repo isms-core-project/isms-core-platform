@@ -64,7 +64,7 @@ The platform provides **two products** at different levels of depth:
 </tr>
 <tr>
 <td><strong>Artifacts</strong></td>
-<td>376 IMP docs, 188 Python scripts, 237 Excel workbooks</td>
+<td>376 IMP docs, 188 Python scripts, 188 Excel workbooks</td>
 <td>53 operational policies, compliance checklist scripts and workbooks</td>
 </tr>
 </table>
