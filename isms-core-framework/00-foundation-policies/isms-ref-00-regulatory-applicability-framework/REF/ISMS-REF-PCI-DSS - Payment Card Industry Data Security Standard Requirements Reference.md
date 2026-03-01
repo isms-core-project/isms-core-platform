@@ -111,7 +111,7 @@ This document is a **non-binding technical reference** UNLESS [Organisation] pro
 
 ## Content Organisation
 
-This reference organizes PCI DSS requirements by:
+This reference organises PCI DSS requirements by:
 
 - Applicability and merchant levels
 - 12 requirements across 6 control objectives
@@ -184,13 +184,13 @@ Payment brands (Visa, Mastercard, etc.) classify merchants into levels based on 
 - **Expiration Date**: Card expiration date
 - **Service Code**: 3-digit code on magnetic stripe
 
-**Sensitive Authentication Data (SAD)** - MUST NOT be stored after authorization:
+**Sensitive Authentication Data (SAD)** - MUST NOT be stored after authorisation:
 
 - **Full Magnetic Stripe Data** (Track 1, Track 2, or equivalent chip data)
 - **Card Verification Code/Value** (CVV/CVC/CVV2/CID - 3 or 4 digit code)
 - **PIN / PIN Block**: Personal Identification Number
 
-**Critical Rule**: SAD must NEVER be stored after transaction authorization completes, even if encrypted.
+**Critical Rule**: SAD must NEVER be stored after transaction authorisation completes, even if encrypted.
 
 ## Cardholder Data Environment (CDE)
 
@@ -296,7 +296,7 @@ Payment brands (Visa, Mastercard, etc.) classify merchants into levels based on 
 **1.3 Network access to and from the CDE restricted**
 
 - **1.3.1**: Inbound traffic to CDE restricted
-- **1.3.2**: Outbound traffic from CDE authorized
+- **1.3.2**: Outbound traffic from CDE authorised
 - **1.3.3**: NSCs installed between wireless networks and CDE
 
 **1.4 Network connections between trusted and untrusted networks controlled**
@@ -367,13 +367,13 @@ Payment brands (Visa, Mastercard, etc.) classify merchants into levels based on 
 
 **3.2 Storage of account data is kept to a minimum**
 
-- **3.2.1**: Account data storage minimized
+- **3.2.1**: Account data storage minimised
 - Data retention policies limit storage amount and retention time
 
-**3.3 Sensitive authentication data (SAD) is not stored after authorization**
+**3.3 Sensitive authentication data (SAD) is not stored after authorisation**
 
-- **3.3.1**: SAD not retained after authorization - **CRITICAL RULE**
-- **3.3.2**: SAD rendered unrecoverable if stored before authorization
+- **3.3.1**: SAD not retained after authorisation - **CRITICAL RULE**
+- **3.3.2**: SAD rendered unrecoverable if stored before authorisation
 - **3.3.3**: PANs not displayed when not needed (masking)
 
 **3.4 Access to displays of full PAN is restricted**
@@ -396,7 +396,7 @@ Payment brands (Visa, Mastercard, etc.) classify merchants into levels based on 
 - **3.6.4**: Key management for cryptographic keys that have reached end of cryptoperiod
 - **3.6.5**: Key custodian acknowledgment
 - **3.6.6**: Secure cryptographic key distribution
-- **3.6.7**: Prevention of unauthorized substitution of keys
+- **3.6.7**: Prevention of unauthorised substitution of keys
 - **3.6.8**: Requirement for key custodians to formally acknowledge understanding of responsibilities
 
 **3.7 Where cryptography is used to protect stored account data, key management processes and procedures are implemented**
@@ -407,7 +407,7 @@ Payment brands (Visa, Mastercard, etc.) classify merchants into levels based on 
 - **3.7.4**: Removal or destruction of keys
 - **3.7.5**: Change of keys when integrity compromised
 - **3.7.6**: Key splits stored securely (for manual key management)
-- **3.7.7**: Prevention of unauthorized substitution
+- **3.7.7**: Prevention of unauthorised substitution
 - **3.7.8**: Key custodians formally acknowledge responsibilities
 - **3.7.9**: Hardware and software inventory of cryptographic devices - **[New v4.0.1, Best Practice until March 31, 2025]**
 
@@ -559,7 +559,7 @@ Payment brands (Visa, Mastercard, etc.) classify merchants into levels based on 
 
 - **7.2.1**: Access granted based on job classification and function (need-to-know)
 - **7.2.2**: Access assigned based on least privilege
-- **7.2.3**: Required privileges approved by authorized personnel
+- **7.2.3**: Required privileges approved by authorised personnel
 - **7.2.4**: Access rights reviewed at least once every 6 months
 - **7.2.5**: Privileged accounts assigned to specific user - **[Updated v4.0.1]**
 - **7.2.6**: All user access to query repositories of stored CHD restricted
@@ -648,16 +648,16 @@ Payment brands (Visa, Mastercard, etc.) classify merchants into levels based on 
 **9.2 Physical access controls manage entry into facilities and systems containing cardholder data**
 
 - **9.2.1**: Physical access controls in place to restrict access to systems in CDE
-- **9.2.2**: Logical and physical access controls ensure only authorized personnel have access
+- **9.2.2**: Logical and physical access controls ensure only authorised personnel have access
 - **9.2.3**: Physical access for personnel revoked immediately upon termination
 - **9.2.4**: Visitor access procedures and visitor badge system
 - **9.2.5**: Physical access controls for wireless access points
 - **9.2.6**: Physical access logs reviewed at least once every 3 months
 - **9.2.7**: Video cameras or access control mechanisms monitor sensitive areas
 
-**9.3 Physical access for personnel and visitors is authorized and managed**
+**9.3 Physical access for personnel and visitors is authorised and managed**
 
-- **9.3.1**: Visitors authorized and escorted in areas containing CHD
+- **9.3.1**: Visitors authorised and escorted in areas containing CHD
 - **9.3.2**: Visitor badge system distinguishes visitors from personnel
 - **9.3.3**: Visitor badges surrendered or deactivated before leaving
 
@@ -671,7 +671,7 @@ Payment brands (Visa, Mastercard, etc.) classify merchants into levels based on 
 - **9.4.6**: Media destroyed when no longer needed (crosscut shred, incinerate, purge/degauss magnetic media)
 - **9.4.7**: Media with CHD destroyed when no longer needed for business/legal reasons
 
-**9.5 Point of Interaction (POI) devices are protected from tampering and unauthorized substitution**
+**9.5 Point of Interaction (POI) devices are protected from tampering and unauthorised substitution**
 
 - **9.5.1**: POI devices protected from tampering (tamper-evident seals, etc.)
 - **9.5.2**: Procedures to detect and report tampering/substitution
@@ -692,7 +692,7 @@ Payment brands (Visa, Mastercard, etc.) classify merchants into levels based on 
 
 ## Requirement 10: Log and Monitor All Access to System Components and Cardholder Data
 
-**Objective**: Logging mechanisms and the ability to track user activities are critical for prevention, detection, or minimizing impact of a data compromise.
+**Objective**: Logging mechanisms and the ability to track user activities are critical for prevention, detection, or minimising impact of a data compromise.
 
 **Key Sub-Requirements**:
 
@@ -705,10 +705,10 @@ Payment brands (Visa, Mastercard, etc.) classify merchants into levels based on 
 - **10.2.1**: Audit logs enabled and active for system components
 - **10.2.2**: Audit logs capture: user ID, event type, date/time, success/failure, origination, identity/name of affected data/system component
 
-**10.3 Audit logs are protected from destruction and unauthorized modifications**
+**10.3 Audit logs are protected from destruction and unauthorised modifications**
 
 - **10.3.1**: Read access to audit log files limited to those with job-related need
-- **10.3.2**: Audit log files protected from unauthorized modification
+- **10.3.2**: Audit log files protected from unauthorised modification
 - **10.3.3**: Audit log files promptly backed up to secure centralized log server
 - **10.3.4**: File integrity monitoring or change detection software used on audit logs
 
@@ -754,7 +754,7 @@ Payment brands (Visa, Mastercard, etc.) classify merchants into levels based on 
 
 **11.2 Wireless access points are identified and monitored**
 
-- **11.2.1**: Authorized and unauthorized wireless access points detected
+- **11.2.1**: Authorised and unauthorised wireless access points detected
 - **11.2.2**: Wireless IDS/IPS or equivalent deployed
 
 **11.3 External and internal vulnerabilities are regularly identified, prioritized, and addressed**
@@ -778,7 +778,7 @@ Payment brands (Visa, Mastercard, etc.) classify merchants into levels based on 
 - **11.5.1**: Change detection mechanisms deployed
 - **11.5.2**: Change detection mechanisms configured to alert personnel
 
-**11.6 Unauthorized changes on payment pages are detected and responded to**
+**11.6 Unauthorised changes on payment pages are detected and responded to**
 
 - **11.6.1**: Change and tamper detection mechanism deployed on payment pages - **[Updated v4.0.1]**
 
@@ -1168,7 +1168,7 @@ PCI DSS compliance costs vary significantly by merchant level and environment co
 **Challenge 2: Sensitive Authentication Data (SAD) Storage**
 
 - Accidentally storing CVV/CVV2, full track data, PIN
-- Even encrypted storage of SAD is prohibited post-authorization
+- Even encrypted storage of SAD is prohibited post-authorisation
 - Legacy applications may have hidden SAD storage
 
 **Challenge 3: Multi-Factor Authentication Implementation**
@@ -1301,8 +1301,8 @@ This checklist provides high-level coverage. Organisations should use official S
 
 | Requirement | Status | Evidence | Notes |
 |-------------|--------|----------|-------|
-| CHD storage minimized (only if needed) | ⬜ Yes ⬜ No | | |
-| Sensitive Authentication Data (SAD) NOT stored after authorization | ⬜ Yes ⬜ No | | |
+| CHD storage minimised (only if needed) | ⬜ Yes ⬜ No | | |
+| Sensitive Authentication Data (SAD) NOT stored after authorisation | ⬜ Yes ⬜ No | | |
 | PAN masked when displayed (first 6, last 4 max) | ⬜ Yes ⬜ No | | |
 | PAN encrypted or tokenized when stored | ⬜ Yes ⬜ No | | |
 | Encryption keys secured and managed | ⬜ Yes ⬜ No ⬜ Partial | | |
@@ -1345,7 +1345,7 @@ This checklist provides high-level coverage. Organisations should use official S
 | Audit logs reviewed at least once daily | ⬜ Yes ⬜ No | | |
 | Audit logs retained for at least 12 months | ⬜ Yes ⬜ No | | |
 | Time synchronization implemented (NTP) | ⬜ Yes ⬜ No | | |
-| Wireless access points detected (authorized/unauthorized) | ⬜ Yes ⬜ No ⬜ N/A | | |
+| Wireless access points detected (authorised/unauthorised) | ⬜ Yes ⬜ No ⬜ N/A | | |
 | Internal vulnerability scans every 3 months | ⬜ Yes ⬜ No | | |
 | External vulnerability scans (ASV) every 3 months - 4 passing scans | ⬜ Yes ⬜ No | | |
 | Internal penetration testing at least annually | ⬜ Yes ⬜ No | | |
@@ -1388,7 +1388,7 @@ Organisations should create a detailed data flow diagram showing how CHD enters,
     â†"
 [Transmission: Processor / Acquirer / Payment Brand]
     â†"
-[Exit: Authorization Response / Settlement]
+[Exit: Authorisation Response / Settlement]
 ```
 
 **Required Documentation**:

@@ -116,7 +116,7 @@ This document is a **non-binding technical reference** UNLESS [Organisation] is 
 
 ## Content Organisation
 
-This reference organizes DORA requirements by:
+This reference organises DORA requirements by:
 
 - Five pillar structure (Chapters II-VI of DORA)
 - ICT risk management framework (Chapter II)
@@ -218,7 +218,7 @@ If [Organisation] provides ICT services to EU financial entities:
 
 ## Pillar Structure
 
-DORA organizes requirements into five pillars:
+DORA organises requirements into five pillars:
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐

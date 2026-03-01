@@ -478,7 +478,7 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
 - **Continuous Monitoring**: Laufendes Security Assessment und Authorization (A&A)
 - **FedRAMP (für Cloud)**: Federal Risk and Authorization Management Program
   - Third-Party Assessment durch akkreditierte Assessors (3PAO)
-  - Authorization durch JAB (Joint Authorization Board) oder Agency ATO (Authority to Operate)
+  - Authorisation durch JAB (Joint Authorisation Board) oder Agency ATO (Authority to Operate)
 
 **ISMS-Impact**:
 
@@ -488,7 +488,7 @@ Diese Regulations gelten **nur, wenn bestimmte Geschäftsbedingungen erfüllt si
 - Supply Chain Risk Management (A.5.19-23)
 - Incident Response aligned mit NIST Frameworks (A.5.24-28)
 
-**Assessment**: Falls Organisation US Federal Contracts oder FedRAMP Authorization hat → **Mandatory Compliance**
+**Assessment**: Falls Organisation US Federal Contracts oder FedRAMP Authorisation hat → **Mandatory Compliance**
 
 ## EU-Verordnung über Künstliche Intelligenz (KI-Verordnung)
 
@@ -683,7 +683,7 @@ Organisationen können zusätzliche Frameworks basierend auf dem Branchen-Kontex
 
 - Organisation hält US Federal Contracts
 - Organisation bietet Services für US Federal Agencies
-- Vertrag fordert explizit NIST Controls oder FedRAMP Authorization
+- Vertrag fordert explizit NIST Controls oder FedRAMP Authorisation
 
 **Begründung**: US Federal Requirements sind nicht extraterritorial und gelten nicht für Nicht-US-Organisationen, es sei denn, vertraglich gefordert.
 
@@ -839,7 +839,7 @@ Evidence für diese Policy besteht aus:
 
 Diese Policy erfordert NICHT:
 
-- Compliance Dashboards oder KPIs
+- Summary Dashboards oder KPIs
 - Evidence von Control Implementation
 - Compliance Status Tracking (adressiert in separaten Compliance Monitoring Processes)
 
@@ -979,4 +979,4 @@ Diese Policy etabliert die Anwendbarkeit von Regulations für das Information Se
 
 *"Regulatory Applicability ist das Fundament. Implementation und Compliance sind die darauf aufbauende Struktur."*
 
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

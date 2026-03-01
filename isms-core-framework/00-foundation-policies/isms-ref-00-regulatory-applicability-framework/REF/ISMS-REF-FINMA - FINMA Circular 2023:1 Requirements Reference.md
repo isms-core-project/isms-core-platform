@@ -108,7 +108,7 @@ This document is a **non-binding technical reference** UNLESS [Organisation] is 
 
 ## Content Organisation
 
-This reference organizes FINMA requirements by:
+This reference organises FINMA requirements by:
 
 - FINMA Circular 2023/1 margin structure
 - Information security requirements (Margins 50-62)
@@ -134,7 +134,7 @@ This reference organizes FINMA requirements by:
 
 **Enforcement Authority**:
 
-- Licensing and authorization
+- Licensing and authorisation
 - On-site examinations
 - Off-site supervision
 - Enforcement actions (fines, license revocation)
@@ -443,7 +443,7 @@ Define and implement segregation of duties to prevent conflicts of interest and 
 - Role-based access control (RBAC) with SoD rules
 - Automated SoD conflict detection (e.g., SAP GRC, Oracle GRC)
 - Regular SoD violation reporting and remediation
-- Compensating controls documentation (e.g., enhanced monitoring, dual authorization)
+- Compensating controls documentation (e.g., enhanced monitoring, dual authorisation)
 
 **FINMA Expectations**:
 
@@ -516,7 +516,7 @@ Implement cryptography to protect sensitive data:
 **Requirement**:
 Comprehensive logging of security-relevant events:
 
-- User authentication and authorization
+- User authentication and authorisation
 - Privileged operations
 - System changes and configurations
 - Security incidents and alerts
@@ -597,7 +597,7 @@ Continuous monitoring and real-time alerting for security events:
 
 - Failed authentication attempts (brute force)
 - Privileged account usage
-- Unauthorized access attempts
+- Unauthorised access attempts
 - Malware detection
 - Data exfiltration indicators
 - System configuration changes

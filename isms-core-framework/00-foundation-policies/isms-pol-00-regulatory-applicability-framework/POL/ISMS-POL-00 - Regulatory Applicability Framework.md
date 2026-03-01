@@ -77,6 +77,8 @@ This document provides the **authoritative reference** for interpreting regulato
 
 **Usage**: All ISMS policies SHALL include Section 1.3 referencing this framework, or include a "Regulatory Framework" section directly incorporating these categories.
 
+**Key Terms**: Definitions for terms used throughout this policy (Mandatory, Conditional, Tier 1/2/3, Applicability Trigger, etc.) are provided in the **Glossary** at the end of this document.
+
 ---
 
 ## Policy Authority and Boundaries
@@ -111,6 +113,14 @@ The outcome of the regulatory applicability assessment serves as **input** for:
 
 - **Clause 4.1 (Context of the Organisation)**: This policy addresses external context (legal/regulatory environment). Internal context (organisational structure, technology, culture) is addressed in the ISMS Context Document.
 - **Clause 4.2 (Interested Parties)**: Interested party requirements (customer obligations, regulatory expectations) identified through this framework feed the interested party register maintained in the ISMS Context Document.
+
+**Integration with Risk Assessment (Clause 6):**
+
+Regulatory obligations identified in this policy feed into:
+
+- **ISMS-RISK-METHODOLOGY** (Clause 6.1.2 Risk Assessment): Regulatory requirements are treated as external risk factors with inherent priority (Tier 1 = High priority, Tier 2 conditional = Medium priority if applicable, Tier 3 = Informational input)
+- **ISMS-RISK-TREATMENT** (Clause 6.1.3 Risk Treatment): Control selection and implementation prioritisation considers regulatory obligations alongside technical risk
+- **Statement of Applicability (SoA)**: Justification for control applicability references POL-00 Tier assignments
 
 ---
 
@@ -156,7 +166,7 @@ Requirements that apply only when specific conditions are met (e.g., industry se
 ┌─────────────────────────────────────────────────────────────────┐
 │                    COMPLIANCE HIERARCHY                         │
 ├─────────────────────────────────────────────────────────────────┤
-│  TIER 1: MANDATORY (Legal/Contractual)                         │
+│  TIER 1: MANDATORY (Legal/Contractual)                          │
 │  • Swiss Federal Data Protection Act (FADP)                     │
 │  • EU GDPR (where processing EU personal data)                  │
 │  • ISO/IEC 27001:2022 (for certification)                       │
@@ -166,7 +176,7 @@ Requirements that apply only when specific conditions are met (e.g., industry se
 │  TIER 2: CONDITIONAL (Context-Dependent)                        │
 │  • DORA (if EU financial services entity)                       │
 │  • NIS2 (if essential/important entity in EU)                   │
-│  • PCI DSS v4.0.1 (if processing payment cards)                        │
+│  • PCI DSS v4.0.1 (if processing payment cards)                 │
 │  • HIPAA (if processing US healthcare data)                     │
 │  • Industry regulations (sector-dependent)                      │
 │                                                                 │
@@ -177,6 +187,8 @@ Requirements that apply only when specific conditions are met (e.g., industry se
 │  • Industry frameworks (reference only)                         │
 └─────────────────────────────────────────────────────────────────┘
 ```
+
+> *If box-drawing characters do not render correctly, refer to Sections 3–5 for tier definitions.*
 
 ---
 
@@ -311,7 +323,7 @@ These regulations apply **only when specific business conditions are met**:
 
 **Assessment**: If organisation holds FINMA license or registration → **Mandatory Compliance**
 
-### FINMA Sub-Outsourcing Requirements (Circular 2023/1)
+### Sub-Outsourcing Requirements (FINMA Circular 2023/1)
 
 For Swiss banks subject to FINMA Circular 2023/1, the following sub-outsourcing requirements apply:
 
@@ -573,7 +585,7 @@ Material services outsourced by a bank to a service provider, where the service 
 
 - Organisation operates **federal information systems** or provides **cloud services to US federal agencies**:
   - Federal agencies and departments
-  - Federal contractors and cloud service providers (FedRAMP authorization)
+  - Federal contractors and cloud service providers (FedRAMP authorisation)
   - Organisations processing federal information
 
 **Key Requirements**:
@@ -581,7 +593,7 @@ Material services outsourced by a bank to a service provider, where the service 
 - **Risk-based approach to cybersecurity**: Following NIST SP 800-53 controls
 - **Categorization**: System categorization (Low, Moderate, High) per FIPS 199
 - **Control Implementation**: NIST SP 800-53 security controls based on impact level
-- **Continuous Monitoring**: Ongoing security assessment and authorization (A&A)
+- **Continuous Monitoring**: Ongoing security assessment and authorisation (A&A)
 - **FedRAMP (for cloud)**: Federal Risk and Authorization Management Program
   - Third-party assessment by accredited assessors (3PAO)
   - Authorization by JAB (Joint Authorization Board) or agency ATO (Authority to Operate)
@@ -594,7 +606,7 @@ Material services outsourced by a bank to a service provider, where the service 
 - Supply chain risk management (A.5.19-23)
 - Incident response aligned with NIST frameworks (A.5.24-28)
 
-**Assessment**: If organisation has US federal contracts or FedRAMP authorization → **Mandatory Compliance**
+**Assessment**: If organisation has US federal contracts or FedRAMP authorisation → **Mandatory Compliance**
 
 ## Additional Conditional Regulations
 
@@ -729,15 +741,15 @@ Organisations may reference additional frameworks based on industry context:
 **Cloud Infrastructure Note:** If organisation uses US-based cloud service providers (AWS, Azure, GCP), this does NOT automatically trigger US federal compliance obligations. FedRAMP/FISMA apply only if:
 
 - Organisation provides services directly to US federal agencies (prime contractor or subcontractor), OR
-- Organisation's customer contract explicitly requires FedRAMP authorization or FISMA compliance
+- Organisation's customer contract explicitly requires FedRAMP authorisation or FISMA compliance
 
-Using FedRAMP-authorized cloud providers (e.g., AWS GovCloud) is a **vendor risk management decision** (A.5.19-23), not evidence that FedRAMP applies to the organisation.
+Using FedRAMP-authorised cloud providers (e.g., AWS GovCloud) is a **vendor risk management decision** (A.5.19-23), not evidence that FedRAMP applies to the organisation.
 
 **Default Status**: **Not Applicable** unless:
 
 - Organisation holds US federal contracts
 - Organisation provides services to US federal agencies
-- Contract explicitly requires NIST controls or FedRAMP authorization
+- Contract explicitly requires NIST controls or FedRAMP authorisation
 
 **Rationale**: US federal requirements are not extraterritorial and do not apply to non-US organisations unless contractually required.
 
@@ -746,6 +758,16 @@ Using FedRAMP-authorized cloud providers (e.g., AWS GovCloud) is a **vendor risk
 - NIST frameworks may be used as **informational reference** (Tier 3)
 - FISMA/FedRAMP become **mandatory** (Tier 1) only with federal contracts
 - NIST SP 800-series used for technical guidance without mandatory compliance
+
+**FedRAMP Marketplace Consideration:**
+
+If organisation seeks to list services on FedRAMP Marketplace (fedramp.gov) to market to US federal agencies, FedRAMP authorisation becomes **mandatory** (Tier 1). This decision triggers:
+
+- Tier 2 → Tier 1 transition for FISMA/FedRAMP
+- Mandatory reassessment per Section 5 (When to Re-Assess)
+- Update to Section 8.1 Regulatory Applicability Matrix
+- 3PAO (Third-Party Assessment Organisation) engagement requirement
+- JAB (Joint Authorisation Board) or Agency ATO (Authority to Operate) pursuit
 
 ---
 
@@ -788,15 +810,15 @@ Organisations SHALL conduct annual regulatory applicability assessments:
 
 Organisations should maintain a regulatory applicability matrix:
 
-| Regulation | Tier | Status | Triggers | Owner | Last Reviewed |
-|-----------|------|--------|----------|-------|---------------|
-| Swiss FADP | 1 - Mandatory | Applicable | Swiss operations | DPO | [Date] |
-| EU GDPR | 1 - Mandatory | Applicable | EU customer data | DPO | [Date] |
-| ISO 27001 | 1 - Mandatory | Applicable | Certification goal | CISO | [Date] |
-| DORA | 2 - Conditional | Not Applicable | Not a financial entity | N/A | [Date] |
-| PCI DSS v4.0.1 | 2 - Conditional | Applicable | Card processing | CISO | [Date] |
-| EU AI Act | 2 - Conditional | [To Assess] | AI system development/deployment affecting EU | CISO | [Date] |
-| NIST SP 800-53 | 3 - Informational | Reference Only | Technical guidance | CISO | [Date] |
+| Regulation | Tier | Status | Triggers | Owner | Last Reviewed | Reviewed By | Approved By |
+|-----------|------|--------|----------|-------|---------------|-------------|-------------|
+| Swiss FADP | 1 - Mandatory | Applicable | Swiss operations | DPO | [Date] | [DPO Name] | [Exec Mgmt] |
+| EU GDPR | 1 - Mandatory | Applicable | EU customer data | DPO | [Date] | [DPO Name] | [Exec Mgmt] |
+| ISO 27001 | 1 - Mandatory | Applicable | Certification goal | CISO | [Date] | [CISO Name] | [Exec Mgmt] |
+| DORA | 2 - Conditional | Not Applicable | Not a financial entity | N/A | [Date] | [CISO/Legal] | [CISO] |
+| PCI DSS v4.0.1 | 2 - Conditional | Applicable | Card processing | CISO | [Date] | [CISO Name] | [Exec Mgmt] |
+| EU AI Act | 2 - Conditional | [To Assess] | AI system development/deployment affecting EU | CISO | [Date] | [CISO/Legal] | [TBD] |
+| NIST SP 800-53 | 3 - Informational | Reference Only | Technical guidance | CISO | [Date] | [CISO Name] | [CISO] |
 
 ## When to Re-Assess
 
@@ -828,6 +850,17 @@ Organisations should implement systematic monitoring for Tier 2 conditional regu
 
 **Escalation:** If monitoring detects likely applicability trigger → Initiate detailed assessment per Section 5 within 30 days → Update Section 8 matrix → Brief Executive Management if Tier 2 → Tier 1 transition.
 
+**Regulatory Implementation Timeline Monitoring:** Quarterly monitoring shall reference Appendix A (Regulatory Implementation Timelines) to anticipate upcoming compliance deadlines for conditional regulations with phased implementation (DORA, EU AI Act, PCI DSS v4.0.1, NIS2 national laws).
+
+**False Positive Handling:**
+
+If monitoring detects potential applicability trigger but detailed assessment (per Section 5) determines regulation is **not applicable**:
+
+- Document assessment in **Triggered Assessment Register**
+- Record: Trigger detected, assessment performed, conclusion (not applicable), rationale
+- Retain for audit trail (demonstrates monitoring is functioning, not every trigger = applicability)
+- Example: "Customer contract mentioned DORA. Assessment: Customer is not DORA-regulated entity, contract clause is general security requirement, not DORA-specific. DORA remains Not Applicable."
+
 ---
 
 # Usage in ISMS Policies
@@ -857,9 +890,7 @@ are categorized per ISMS-POL-00 (Regulatory Applicability Framework):
 - [Other frameworks per ISMS-POL-00]
 
 **United States Federal Requirements:**
-References to US federal frameworks (FISMA, FIPS, FedRAMP, NIST cybersecurity 
-requirements) apply only where the organisation has explicit US federal 
-contractual obligations, as defined in ISMS-POL-00.
+US federal frameworks (FISMA, FedRAMP, NIST) apply only where explicit US federal contractual obligations exist (see ISMS-POL-00, US Federal Requirements section).
 
 For complete regulatory categorization, refer to ISMS-POL-00.
 ```
@@ -917,6 +948,8 @@ Evidence required to demonstrate this policy is operationally effective:
 - Applicability determination documents: Rationale for Tier assignments (especially Tier 2 decisions)
 - Triggered assessment records: Business expansion, regulatory change impact assessments
 - Historical versions: Previous POL-00 versions showing framework evolution
+
+**Current Operational Evidence Status**: Quarterly monitoring logs, triggered assessment records, and most recent review evidence are maintained per the format defined in the Assessment Methodology section (see Current Regulatory Status → Assessment Methodology Execution).
 
 **Clarification on Compliance Evidence:**
 This policy establishes regulatory applicability (WHICH regulations apply). It does NOT establish:
@@ -1062,7 +1095,14 @@ This section documents the organisation's current regulatory compliance obligati
 
 | Regulation | Assessment Status | Expected Completion | Preliminary Findings | Owner |
 |-----------|------------------|---------------------|---------------------|-------|
-| **EU AI Act** | 🔄 In Progress | [Date] | Organisation uses AI tools (GitHub Copilot for development assistance, potential future AI-assisted security tools). Assessment focus: Are these systems "AI systems" under Article 3 definition? If yes, risk classification per Annex III. **GDPR Article 22 interaction:** If AI systems involve automated decision-making with legal/significant effects on individuals (GDPR Art. 22), additional requirements apply (right to human review, transparency, data protection impact assessment). Preliminary: Likely **minimal risk** (Tier 3) or **limited risk** (transparency obligations only). **Recommendation:** Complete detailed assessment by [Date], document in ISMS-REF-AI-ACT if applicable. | CISO + Legal |
+| **EU AI Act** | 🔄 In Progress | TBD — pending EU AI Act delegated acts publication (target Q2 2026; see assessment steps below) | Organisation uses AI tools (GitHub Copilot for development assistance, potential future AI-assisted security tools). Assessment focus: Are these systems "AI systems" under Article 3 definition? If yes, risk classification per Annex III. **GDPR Article 22 interaction:** If AI systems involve automated decision-making with legal/significant effects on individuals (GDPR Art. 22), additional requirements apply (right to human review, transparency, data protection impact assessment). Preliminary: Likely **minimal risk** (Tier 3) or **limited risk** (transparency obligations only). **Recommendation:** Complete detailed assessment by [Date], document in ISMS-REF-AI-ACT if applicable. | CISO + Legal |
+
+**Assessment Deliverables to Date:**
+- [Date]: AI System Inventory completed (documented in ISMS-REF-AI-ACT-INVENTORY)
+  - GitHub Copilot (code generation, assessed as minimal risk)
+  - [Other tools if applicable]
+- [Date]: GDPR Article 22 overlap analysis completed (no automated decision-making with legal/significant effects identified)
+- **Next Deliverable:** Risk classification report due [Date + 2 weeks]
 
 **Assessment Approach for EU AI Act:**
 1. **Inventory AI Usage** (Due: [Date + 2 weeks])
@@ -1122,6 +1162,46 @@ This section documents the organisation's current regulatory compliance obligati
 - Applicability impact assessment (does change affect Tier 1/2/3 status?)
 - Action required (update POL-00, trigger detailed assessment, no action)
 - Reviewer signatures (CISO, Legal, DPO)
+
+**Log Format and Location:**
+- Format: Structured spreadsheet or GRC platform records
+- Location: Excel register at [SharePoint]/ISMS/Compliance/POL-00-Monitoring.xlsx (interim solution; to be migrated to GRC platform by [date])
+- Retention: Minimum 3 years (covers full certification cycle)
+- Access: CISO, Legal, DPO, Internal Audit, External Auditors
+
+**Minimum Fields:**
+
+| Field | Description | Example |
+|-------|-------------|---------|
+| Review Date | Quarterly monitoring date | 2024-12-31 |
+| Participants | Names and signatures | [CISO], [Legal], [DPO] |
+| Regulatory Changes | New laws/guidance detected | EU AI Act delegated acts published |
+| Trigger Events | Business changes reviewed | None / New customer contract requiring FINMA compliance |
+| Applicability Impact | Tier changes | None / FINMA Tier 2 → Tier 1 due to customer contract |
+| Actions Required | Follow-up tasks | None / Initiate FINMA compliance assessment |
+| Next Review Date | Quarterly cadence | 2025-03-31 |
+
+**Regulatory Monitoring Execution Evidence:**
+Quarterly monitoring logs maintained in [GRC Platform / Compliance Register] with:
+- Monitoring date and participants (CISO, Legal, DPO signatures)
+- Regulatory changes detected (none/list with impact assessment)
+- Trigger events reviewed (business expansions, customer contracts)
+- Applicability reassessment decisions (Tier changes documented)
+- Escalation records (if Tier 2 → Tier 1 transition detected)
+
+**Most Recent Evidence:**
+- Q4 2024 Monitoring Log: [Date], reviewed by [CISO/Legal/DPO], no Tier changes
+- Annual Review 2024: [Date], approved by Executive Management, POL-00 v1.0 published
+- EU AI Act Assessment: [Date] Step 1 completed (AI inventory documented in [location])
+
+**Triggered Assessment Register:**
+Maintained in [location] with:
+- Trigger event description (customer contract, regulatory change, business expansion)
+- Assessment date and assessor
+- Applicability determination (Applicable / Not Applicable / Requires Further Assessment)
+- Rationale (documented justification for determination)
+- Actions taken (Tier change, control implementation, no action required)
+- Approval authority (CISO, Legal, Executive Management where Tier change)
 
 **Maintained in:** [Compliance system - e.g., GRC platform, document repository]
 
@@ -1187,6 +1267,9 @@ Maintaining requirements references for non-applicable regulations is a **maturi
 | **Tier 3** | Informational reference (best practice, voluntary) |
 | **Binding Force** | Legal or contractual enforceability of a regulation |
 | **Implementation Obligation** | Requirement to implement specific controls (determined through risk assessment) |
+| **Regulatory Monitoring** | Systematic quarterly review of regulatory changes and organisational trigger events to detect applicability changes for Tier 2 conditional regulations |
+| **Applicability Trigger** | Event or condition that causes a conditional regulation (Tier 2) to become mandatory (Tier 1), requiring transition assessment and compliance implementation |
+| **Triggered Assessment** | Unscheduled regulatory applicability assessment initiated by detection of applicability trigger (e.g., business expansion, customer contract, regulatory change) |
 
 ---
 
@@ -1232,4 +1315,4 @@ This policy establishes regulatory applicability for the organisation's Informat
 
 *"Regulatory applicability is the foundation. Implementation and compliance are the structure built upon it."*
 
-<!-- QA_VERIFIED: 2026-02-01 -->
+<!-- QA_VERIFIED: 2026-03-01 -->

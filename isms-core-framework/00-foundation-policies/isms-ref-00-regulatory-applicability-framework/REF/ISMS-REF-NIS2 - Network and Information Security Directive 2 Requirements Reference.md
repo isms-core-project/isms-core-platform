@@ -110,7 +110,7 @@ This document is a **non-binding technical reference** UNLESS [Organisation] is 
 
 ## Content Organisation
 
-This reference organizes NIS2 requirements by:
+This reference organises NIS2 requirements by:
 
 - Scope and applicability (entities, sectors, size thresholds)
 - Cybersecurity risk management measures (Article 21)
@@ -230,7 +230,7 @@ Each EU member state implements NIS2 through national legislation. Organisations
 Article 21 establishes **minimum cybersecurity risk management measures** that essential and important entities must implement.
 
 **Legal Obligation** (Article 21(1)):
-Member states shall ensure entities take "appropriate and proportionate" technical, operational, and organisational measures to manage cybersecurity risks and minimize impact of incidents.
+Member states shall ensure entities take "appropriate and proportionate" technical, operational, and organisational measures to manage cybersecurity risks and minimise impact of incidents.
 
 **Proportionality Principle**:
 Measures must be appropriate to:
@@ -1262,7 +1262,7 @@ Organisations subject to NIS2 should engage:
 
 I confirm that the information provided in this notification is accurate to the best of my knowledge as of [Date/Time].
 
-**Name**: [Authorized Representative]  
+**Name**: [Authorised Representative]  
 **Title**: [Title]  
 **Signature**: [Digital signature if applicable]
 

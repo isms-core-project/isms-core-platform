@@ -110,7 +110,7 @@ This document is a **non-binding technical reference** UNLESS [Organisation] dev
 
 ## Content Organisation
 
-This reference organizes AI Act requirements by:
+This reference organises AI Act requirements by:
 
 - Risk-based classification system (Unacceptable, High-Risk, Limited Risk, Minimal Risk)
 - Provider obligations (developers, manufacturers)
@@ -172,7 +172,7 @@ An AI model, including when trained with a large amount of data using self-super
 | **Deployers** | Located in third country | If AI system outputs used in EU |
 | **Importers and distributors** | In EU | Distributing AI systems |
 | **Product manufacturers** | In EU | Placing AI-containing products on market |
-| **Authorized representatives** | Of providers not in EU | Acting on behalf of non-EU providers |
+| **Authorised representatives** | Of providers not in EU | Acting on behalf of non-EU providers |
 
 **Exclusions** (Article 2(3)):
 
@@ -300,7 +300,7 @@ Certain AI practices are **prohibited** due to unacceptable risks to fundamental
   - Targeted search for specific missing persons, abduction victims
   - Prevention of specific, substantial, imminent threat (terrorist attack)
   - Localization/identification of person suspected of serious criminal offense (defined in Annex II - serious crimes)
-- Requires prior judicial or independent administrative authorization (except emergency)
+- Requires prior judicial or independent administrative authorisation (except emergency)
 
 **ISO 27001:2022 Mapping**:
 
@@ -507,7 +507,7 @@ Requirements:
 Requirements:
 
 - Design AI system to enable **effective oversight by natural persons**
-- Prevent or minimize risks to health, safety, fundamental rights
+- Prevent or minimise risks to health, safety, fundamental rights
 
 **Human Oversight Measures** (Article 14(4)):
 
@@ -631,7 +631,7 @@ Requirements:
 Requirements:
 
 - Establish and document post-market monitoring system
-- Collect, document, analyze data on performance throughout lifetime
+- Collect, document, analyse data on performance throughout lifetime
 
 **Post-Market Monitoring Plan**:
 
@@ -704,7 +704,7 @@ When AI system intended to interact directly with natural persons:
 - **Inform natural persons** they are interacting with AI system
 - **Exceptions**: 
   - Obvious from circumstances and context
-  - Authorized by law for law enforcement (detecting, preventing, investigating crimes)
+  - Authorised by law for law enforcement (detecting, preventing, investigating crimes)
 
 **Examples**:
 
@@ -719,7 +719,7 @@ When AI system intended to interact directly with natural persons:
 When using emotion recognition or biometric categorisation systems:
 
 - **Inform natural persons** exposed to system
-- **Exception**: Authorized by law for law enforcement
+- **Exception**: Authorised by law for law enforcement
 
 **Examples**:
 
@@ -743,7 +743,7 @@ When generating or manipulating image/audio/video content (deep fakes):
 **Exceptions**:
 
 - Content necessary for exercise of right to freedom of expression and arts/literary/artistic/satirical freedom
-- Authorized by law for law enforcement
+- Authorised by law for law enforcement
 - Necessary for detecting/exposing crimes
 
 **Specific Types**:
@@ -853,7 +853,7 @@ For GPAI models with **systemic risk** (see Section 7.3):
 7. **Cybersecurity** (Article 54(1)(c)):
 
    - Ensure adequate level of cybersecurity protection
-   - Protect model weights and other parameters from unauthorized access
+   - Protect model weights and other parameters from unauthorised access
 
 8. **Energy Efficiency** (Article 54(1)(d)):
 
